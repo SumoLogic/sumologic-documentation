@@ -8,7 +8,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 module.exports = {
   title: 'Sumo Logic Docs',
   tagline: '',
-  url: 'https://sumologic.netlify.com',
+  url: process.env.HOSTNAME || "http://localhost:3000",
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -56,7 +56,7 @@ module.exports = {
             from: '/cid=1234',
           },
         ]
-      },]
+      },],
     /* See this site to configure - live editor https://github.com/jlvandenhout/docusaurus-plugin-docs-editor
        Requires adding OAUTH app https://docs.github.com/en/developers/apps/building-oauth-apps/creating-an-oauth-app
     [
