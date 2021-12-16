@@ -80,7 +80,6 @@
   align-items: center;
   margin-right: 1rem;
   background-color: var(--ifm-color-emphasis-200);
-  border-radius: var(--ifm-global-radius);
   width: 2rem;
   height: 2rem;
 }

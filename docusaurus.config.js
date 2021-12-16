@@ -110,15 +110,17 @@ module.exports = {
             label: 'Guides',
             to: '#',
             layout: [
-              '0 1 2 3',
-              '0 1 2 3',
-              '0 1 2 3',
-              '0 1 2 4',
-              '0 1 2 4',
-              '0 1 2 4',
+              '0 1 3 4',
+              '0 1 3 4',
+              '0 1 3 4',
+              '0 1 3 5',
+              '0 2 3 5',
+              '0 2 3 5',
+              '0 2 3 5',
             ],
             items_: [ // Use name codes for icons from the Material Site https://fonts.google.com/icons?query=material
               {
+                // 0
                 label: 'Getting Started',
                 items: [
                   {
@@ -152,6 +154,7 @@ module.exports = {
                 ],
               },
               {
+                // 1
                 label: 'Metrics and Logs',
                 items: [
                   {
@@ -172,12 +175,33 @@ module.exports = {
                     label: 'Metrics and Logs',
                     sublabel: 'Find metrics data with queries',
                     to: 'docs/get-started',
-                    icon: 'auto_graph',
+                    icon: 'timeline',
                     activeBaseRegex: 'hornet/.*',
                   },
                 ],
               },
               {
+                // 2
+                label: 'APM',
+                items: [
+                  {
+                    label: 'Traces',
+                    sublabel: 'Create and configure visuals and alerts',
+                    to: 'docs/get-started',
+                    icon: 'view_timeline',
+                    activeBaseRegex: 'chrysalis-docs.*',
+                  },
+                  {
+                    label: 'Real User Monitoring',
+                    sublabel: 'Create and configure visuals and alerts',
+                    to: 'docs/get-started',
+                    icon: 'contacts',
+                    activeBaseRegex: 'chrysalis-docs.*',
+                  },
+                ],
+              },
+              {
+                // 3
                 label: 'Observability',
                 items: [
                   {
@@ -188,8 +212,8 @@ module.exports = {
                     activeBaseRegex: 'iota.rs/.*',
                   },
                   {
-                    label: 'Configure Observability Collection',
-                    sublabel: 'Configure and deploy collection options',
+                    label: 'Observability Collection',
+                    sublabel: 'Deploy and collect app data',
                     to: 'docs/get-started',
                     icon: 'settings_suggest',
                     activeBaseRegex: 'identity.rs/.*',
@@ -211,6 +235,7 @@ module.exports = {
                 ],
               },
               {
+                // 4
                 label: 'Developers',
                 items: [
                   {
@@ -230,6 +255,7 @@ module.exports = {
                 ],
               },
               {
+                // 5
                 label: 'Support Contacts',
                 items: [
                   {
@@ -255,16 +281,6 @@ module.exports = {
             to: '/docs/contribution',
             position: 'left',
           },
-          {
-            href: 'https://www.sumologic.com/learn/training/',
-            label: 'Training',
-            position: 'left',
-          },
-          /*{
-            href: 'https://github.com/SumoLogic/sumologic-documentation',
-            className: 'navbar-item-github',
-            position: 'right',
-          },*/
         ],
       },
       footer: {
