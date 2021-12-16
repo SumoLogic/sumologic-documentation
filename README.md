@@ -14,8 +14,8 @@ For details on contributions, see [CONTRIBUTING](https://github.com/SumoLogic/su
 
 1. Clone the repo using Git or tools like GitHub Desktop.
 2. Run the install command: `yarn install`
-3. Run the develop command to build and serve the content: `yarn develop`
+3. To build locally while developing content, use start: `yarn start`.
 
-The site was created using Gatsby and supporting React, Rehype, and Remark plugins.
+The site was created using [Docusaurus 2](https://docusaurus.io/) and supporting React, Rehype, and Remark plugins.
 
 More coming soon.

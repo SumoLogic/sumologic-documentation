@@ -1,0 +1,103 @@
+.dropdown--show .link__label,
+.dropdown--show .navbar__link::after {
+  color: var(--ifm-navbar-link-hover-color);
+}
+
+.dropdown--mega {
+  position: static;
+}
+
+.dropdown__col {
+  display: flex;
+  align-items: stretch;
+}
+
+.dropdown__container {
+  position: absolute;
+  padding-top: calc(
+    var(--ifm-navbar-padding-vertical) + var(--ifm-global-border-width) + 5px
+  );
+  width: 100%;
+  opacity: 0;
+  visibility: hidden;
+  display: none;
+  z-index: var(--ifm-z-index-dropdown);
+  top: calc(100% - var(--ifm-navbar-padding-vertical) - 5px);
+  left: 0;
+  transition-property: opacity, visibility;
+  transition-duration: var(--ifm-transition-fast);
+  transition-timing-function: var(--ifm-transition-timing-default);
+}
+
+.dropdown--show .dropdown__container {
+  opacity: 1;
+  visibility: visible;
+  display: block;
+}
+
+.dropdown__label {
+  display: flex;
+  align-items: flex-end;
+  color: var(--ifm-menu-color);
+  border-radius: var(--ifm-global-radius);
+  padding: 0.25rem 0.5rem;
+  margin: 0.2rem 0;
+}
+
+.dropdown__link {
+  color: var(--ifm-dropdown-link-color);
+  width: 100%;
+}
+
+.dropdown__link--active,
+.dropdown__link--active:hover {
+  --ifm-dropdown-link-color: var(--ifm-font-color-base);
+  color: var(--ifm-menu-color-active);
+}
+
+.dropdown--mega .dropdown__menu {
+  visibility: inherit;
+  border-radius: 0;
+  opacity: 1;
+  box-shadow: none;
+  width: 100%;
+  position: static;
+  transform: none;
+  padding: var(--ifm-navbar-padding-vertical)
+    var(--ifm-navbar-padding-horizontal);
+  border-bottom: var(--ifm-global-border-width) solid
+    var(--ifm-color-emphasis-200);
+}
+
+.link {
+  display: inline-flex;
+  align-items: center;
+}
+
+.link__icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 1rem;
+  background-color: var(--ifm-color-emphasis-200);
+  width: 2rem;
+  height: 2rem;
+}
+
+.link__sublabel {
+  color: var(--ifm-menu-color);
+  font-size: 0.8rem;
+}
+
+.link__icon {
+  font-family: 'Material Icons' !important;
+  font-size: 1.5rem;
+}
+
+[data-theme='dark'] .link__icon {
+  color: #fff;
+}
+
+[data-theme='light'] .link__icon {
+  color: #35599d;
+}
