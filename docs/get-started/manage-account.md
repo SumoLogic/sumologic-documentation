@@ -66,7 +66,7 @@ To set up 2-Step Verification you will need to install a Time-based One-Time Pas
 
 ### My Access Keys
 
-Users with a role that grants the **Create Access Keys** capability can create and manage their own Access Keys. For more information see [Access Keys](../../../Manage/Security/Access-Keys/ "Access Keys").
+Users with a role that grants the **Create Access Keys** capability can create and manage their own Access Keys. For more information see [Access Keys].
 
 ### My Preferences
 

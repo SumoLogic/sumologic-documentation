@@ -147,7 +147,7 @@ To activate your Sumo Logic Free Trial account:
 
     In a few minutes, your account is activated and the Sumo Logic Setup Wizard displays in a new browser tab.
 
-Next, use the [Setup Wizard](../../../03Send-Data/Setup-Wizard/) to send your logs to Sumo Logic.
+Next, use the [Setup Wizard] to send your logs to Sumo Logic.
 
 ### Cancel your Account through AWS Marketplace
 
