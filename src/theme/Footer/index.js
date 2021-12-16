@@ -11,7 +11,6 @@ import { useThemeConfig } from '@docusaurus/theme-common';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import PropTypes from 'prop-types';
 import ThemedImage from '@theme/ThemedImage';
-import Social from '@theme/Social';
 
 function FooterLink({ to, href, label, prependBaseUrlToHref, ...props }) {
   const toUrl = useBaseUrl(to);
@@ -72,28 +71,29 @@ function Footer() {
         'footer--dark': footer.style === 'dark',
       })}
     >
-      <div className='container'>
+        <div className="container">
+          <div className="footer-flex">
         {links && links.length > 0 && (
           <div className='row footer__links padding-vert--xl'>
-            <div>
-        {(logo) && (
-          <div>
-            {logo && (logo.src || logo.srcDark) && (
-              <div className='col footer__col'>
-                {logo.href ? (
-                  <Link href={logo.href}>
-                    <FooterLogo alt={logo.alt} sources={sources} />
-                  </Link>
-                ) : (
-                  <FooterLogo alt={logo.alt} sources={sources} />
+            <div className='footer-box'>
+            {(logo) && (
+              <div>
+                {logo && (logo.src || logo.srcDark) && (
+                  <div >
+                    {logo.href ? (
+                      <Link href={logo.href}>
+                        <FooterLogo alt={logo.alt} sources={sources} />
+                      </Link>
+                    ) : (
+                      <FooterLogo alt={logo.alt} sources={sources} />
+                    )}
+                  </div>
                 )}
               </div>
             )}
           </div>
-        )}
-          </div>
             {links.map((linkItem, i) => (
-              <div key={i} className='col footer__col'>
+              <div key={i} className='footer-box'>
                 {linkItem.title != null ? (
                   <h4 className='footer__title'>{linkItem.title}</h4>
                 ) : null}
@@ -123,6 +123,8 @@ function Footer() {
             ))}
           </div>
         )}
+        
+        </div>
         {(copyright) && (
           <div className='footer__bottom'>
             
