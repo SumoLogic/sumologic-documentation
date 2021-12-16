@@ -8,7 +8,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 module.exports = {
   title: 'Sumo Logic Docs',
   tagline: '',
-  url: 'https://help.dumologic.com',
+  url: 'https://help.sumologic.com',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
