@@ -273,22 +273,34 @@ module.exports = {
             title: 'LEARN',
             items: [
               {
-                label: 'Training',
+                label: 'Training & Certifications',
                 to: 'https://www.sumologic.com/learn/training/',
               },
               {
-                label: 'Doc Contributions',
+                label: 'Documentation Contributions',
                 to: '/docs/contribution',
               },
               {
                 label: 'Help Center',
                 to: 'https://support.sumologic.com/hc/en-us',
+              },
+              {
+                label: 'DevOps Glossary',
+                to: 'https://www.sumologic.com/glossary/',
+              },
+              {
+                label: 'Request Demo',
+                to: 'https://www.sumologic.com/request-demo/',
               }
             ],
           },
           {
             title: 'Sumo Community',
             items: [
+              {
+                label: 'About Us',
+                href: 'https://www.sumologic.com/company/about-us/',
+              },
               {
                 label: 'Community',
                 href: 'https://support.sumologic.com/hc/en-us/community/topics',
@@ -299,16 +311,24 @@ module.exports = {
               },
               {
                 label: 'Twitter',
-                href: 'https://twitter.com/docusaurus',
+                href: 'https://twitter.com/SumoLogic',
               },
+              {
+                label: 'YouTube',
+                href: 'https://www.youtube.com/channel/UCI16kViradUnvH6DiQmwdqw',
+              }
             ],
           },
           {
-            title: 'More',
+            title: 'Open Source',
             items: [
               {
-                label: 'Docs GitHub',
+                label: 'Documentation GitHub',
                 href: 'https://github.com/SumoLogic/sumologic-documentation',
+              },
+              {
+                label: 'Sumo Logic GitHub',
+                href: 'https://github.com/SumoLogic',
               },
               {
                 label: 'Sumo Dojo Slack',
