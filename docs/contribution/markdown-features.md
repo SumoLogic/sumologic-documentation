@@ -119,6 +119,18 @@ function HelloDocusaurus() {
 }
 ```
 
+### Import GitHub Repo File
+
+To embed a code sample from a file in a GitHub repositiory, use `reference` in the code block with a link to the file. The code sample is embedded using the language with a link to the original file. 
+
+This code references a script file: ` ```bash reference`, for example:
+
+```bash reference
+https://github.com/ccaum/sumologic-solution-templates/blob/github_getting_started_guide/software-development-optimization-terraform/scripts/getting-started
+```
+
+You can use a link to a file embedding the entire file, or embed a range of code lines using `#L` and a line range at the end of the link, such as `#L105-108`.
+
 ## Tabs
 
 Use the following code to create tabbed content. You can use Markdown in these tabs, including text, code content, images, and more.

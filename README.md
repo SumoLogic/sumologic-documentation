@@ -18,4 +18,8 @@ For details on contributions, see [CONTRIBUTING](https://github.com/SumoLogic/su
 
 The site was created using [Docusaurus 2](https://docusaurus.io/) and supporting React, Rehype, and Remark plugins.
 
+To test links, use build instead: `yarn build`
+
+Any issues with broken links and images are listed according to file. Locate and update those issues, then run again to verify.
+
 More coming soon.

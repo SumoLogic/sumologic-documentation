@@ -35,6 +35,15 @@ module.exports = {
         'get-started/checklist'
       ],
     },
+    {
+      type: 'category',
+      label: 'Quickstarts and Tutorials',
+      collapsible: true,
+      collapsed: false,
+      items: [
+        'quickstart/quickstart-github',
+      ],
+    },
   ],
   contribution: [
     {

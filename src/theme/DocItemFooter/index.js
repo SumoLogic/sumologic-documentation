@@ -8,6 +8,7 @@ import React from 'react';
 import clsx from 'clsx';
 import LastUpdated from '@theme/LastUpdated';
 import EditThisPage from '@theme/EditThisPage';
+import IconBug from '@theme/IconBug';
 import TagsListInline from '@theme/TagsListInline';
 import styles from './styles.module.css';
 import {ThemeClassNames} from '@docusaurus/theme-common';
@@ -32,10 +33,12 @@ function EditMetaRow({
   lastUpdatedBy,
   formattedLastUpdatedAt,
 }) {
+  const mdPath = editUrl.substring(57, );
   return (
     <div className={clsx(ThemeClassNames.docs.docFooterEditMetaRow, 'row')}>
-      <div className="col">{editUrl && <EditThisPage editUrl={editUrl} />}</div>
-
+      <div className="col">{editUrl && <EditThisPage editUrl={editUrl} />} | {mdPath && <a href={'https://github.com/Unity-Technologies/com.unity.multiplayer.docs/issues/new?labels=type:feedback&title=Feedback%20for%20' + mdPath }  target="_blank">
+                    <IconBug />
+                    Submit an issue</a>}</div>
       <div className={clsx('col', styles.lastUpdated)}>
         {(lastUpdatedAt || lastUpdatedBy) && (
           <LastUpdated

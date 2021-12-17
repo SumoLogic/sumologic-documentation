@@ -23,10 +23,12 @@
     "@fortawesome/react-fontawesome": "^0.1.16",
     "@jlvandenhout/docusaurus-plugin-docs-editor": "jlvandenhout/docusaurus-plugin-docs-editor",
     "@mdx-js/react": "^1.6.21",
+    "@saucelabs/theme-github-codeblock": "^0.1.1",
     "clsx": "^1.1.1",
     "docusaurus-plugin-sass": "^0.2.1",
     "mdx-mermaid": "^1.1.1",
     "mermaid": "^8.13.5",
+    "nth-check": "^2.0.1",
     "plugin-image-zoom": "ataft/plugin-image-zoom",
     "prism-react-renderer": "^1.2.0",
     "react": "^17.0.1",
@@ -34,7 +36,6 @@
     "react-iframe": "^1.8.0",
     "sass": "^1.44.0",
     "sass-loader": "^12.4.0",
-    "nth-check": "^2.0.1",
     "trim": "^0.0.3"
   },
   "browserslist": {

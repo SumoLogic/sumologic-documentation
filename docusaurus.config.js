@@ -26,6 +26,8 @@ module.exports = {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           editUrl: 'https://github.com/SumoLogic/sumologic-documentation',
+          showLastUpdateAuthor: true,
+          showLastUpdateTime: true,
           admonitions: {
             customTypes: {
               sumo: {
@@ -44,6 +46,7 @@ module.exports = {
   plugins: [
     'docusaurus-plugin-sass',
     'plugin-image-zoom',
+    '@saucelabs/theme-github-codeblock',
     'react-iframe',
     /* See this site to configure - live editor https://github.com/jlvandenhout/docusaurus-plugin-docs-editor
        Requires adding OAUTH app https://docs.github.com/en/developers/apps/building-oauth-apps/creating-an-oauth-app
@@ -84,6 +87,10 @@ module.exports = {
     ({
     // SEO Global Metadata
     metadata: [{name: 'keywords', content: 'sumo logic, documentation, tutorials, quick starts'}],
+    announcementBar: {
+      id: 'announcementBar',
+      content: `⭐️ This is an example theme, layout, content for a new Sumo Logic Documentation site. ⭐️`,
+    },
     //Algolia Search -- FAKE FOR NOW! Replace.
     algolia: {
       appId: 'R2IYF7ETH7',

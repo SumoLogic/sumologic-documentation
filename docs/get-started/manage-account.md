@@ -88,9 +88,9 @@ Preference settings are only changed for your personal account; they do not affe
 - **Receive email notifications whenever content is shared with you**. 
 - **Enable keyboard shortcuts.** Web Application and [keyboard shortcuts] are enabled by default. Press ? to see the list of shortcuts. To disable keyboard shortcuts, for example, if they conflict with an international keyboard, deselect the check box. 
 
-    :::note
-    Keyboard shortcuts are disabled when typing in the [search text box]. 
-    :::
+  :::note
+  Keyboard shortcuts are disabled when typing in the [search text box]. 
+  :::
 
 - **Automatically run the search after selecting it from a list of saved searches.** Keep this option selected if you'd like to run a saved search as soon as you select it. Deselect the option if you would like to start the search manually.
 - **Show confirmation dialog when closing a search tab.** On the Search page, if you want to be prompted with a confirmation dialog before you can close a search tab, select this check box.
