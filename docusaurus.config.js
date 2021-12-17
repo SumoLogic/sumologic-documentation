@@ -25,7 +25,7 @@ module.exports = {
       ({
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
-          editUrl: 'https://github.com/SumoLogic/sumologic-documentation',
+          editUrl: 'https://github.com/SumoLogic/sumologic-documentation/edit/main/',
           showLastUpdateAuthor: true,
           showLastUpdateTime: true,
           admonitions: {
