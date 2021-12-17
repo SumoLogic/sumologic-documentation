@@ -71,7 +71,7 @@ function Footer() {
         'footer--dark': footer.style === 'dark',
       })}
     >
-        <div className="container">
+        <div className="footer-container">
           <div className="footer-flex">
         {links && links.length > 0 && (
           <div className='row footer__links padding-vert--xl'>

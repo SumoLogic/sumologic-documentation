@@ -671,17 +671,23 @@ article .card {
 }
 
 .footer__copyright {
-  margin: 0 var(--ifm-spacing-horizontal);
-  margin-bottom: 0.9rem;
+  text-align: center;
 }
 
 .footer__bottom {
   border-top: 1px solid;
-  align-items: flex-end;
-  display: flex;
-  flex-wrap: wrap;
-  margin-left: max(1rem, calc(20% - 10rem));
-  margin-right: max(1rem, calc(20% - 10rem));
+  //align-items: flex-end;
+  //display: flex;
+  //flex-wrap: wrap;
+  //margin-left: max(1rem, calc(20% - 10rem));
+  //margin-right: max(1rem, calc(20% - 10rem));
+}
+
+.footer-container {
+  margin: 0 auto;
+  /* max-width: var(--ifm-container-width); */
+  /* padding: 0 var(--ifm-spacing-horizontal); */
+  width: 100%;
 }
 
 .footer__links {
