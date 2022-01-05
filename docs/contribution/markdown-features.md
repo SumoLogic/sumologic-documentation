@@ -8,7 +8,7 @@ Docusaurus supports **[Markdown](https://daringfireball.net/projects/markdown/sy
 
 ## Front Matter
 
-Markdown documents have metadata at the top called [Front Matter](https://jekyllrb.com/docs/front-matter/):
+Markdown documents have metadata at the top called [Front Matter](https://jekyllrb.com/docs/front-matter/). Every page should have an `id` used for sidebar navigation. The title of the page is the only H1 on the page. 
 
 ```text title="my-doc.md"
 // highlight-start
@@ -23,6 +23,10 @@ slug: /my-custom-url
 
 Markdown text with [links](./hello.md)
 ```
+
+Additional options include the following:
+
+
 
 ## Links
 

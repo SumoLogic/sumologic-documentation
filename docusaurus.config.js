@@ -48,6 +48,15 @@ module.exports = {
     'plugin-image-zoom',
     '@saucelabs/theme-github-codeblock',
     'react-iframe',
+    ['@docusaurus/plugin-client-redirects',
+      {
+        redirects: [
+          {
+            to: '/docs/contribution/markdown-features',
+            from: '/cid=1234',
+          },
+        ]
+      },]
     /* See this site to configure - live editor https://github.com/jlvandenhout/docusaurus-plugin-docs-editor
        Requires adding OAUTH app https://docs.github.com/en/developers/apps/building-oauth-apps/creating-an-oauth-app
     [
