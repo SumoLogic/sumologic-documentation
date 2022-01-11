@@ -28,7 +28,7 @@
     "clsx": "^1.1.1",
     "docusaurus-plugin-sass": "^0.2.1",
     "mdx-mermaid": "^1.1.1",
-    "mermaid": "^8.13.5",
+    "mermaid": "^8.13.8",
     "nth-check": "^2.0.1",
     "plugin-image-zoom": "ataft/plugin-image-zoom",
     "prism-react-renderer": "^1.2.0",
