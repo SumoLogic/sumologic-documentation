@@ -39,7 +39,8 @@
     "sass-loader": "^12.4.0",
     "trim": "^0.0.3",
     "postcss": "^8.2.13",
-    "node-forge": "^1.0.0"
+    "node-forge": "^1.0.0",
+    "follow-redirects": "^1.14.7"
   },
   "browserslist": {
     "production": [
