@@ -7,6 +7,10 @@ on:
         description: Host name of the deployed environment
         required: true
         type: string
+      environment:
+        description: GHA environment name
+        required: true
+        type: string
     secrets:
       S3_BUCKET_NAME:
         required: true
@@ -20,6 +24,9 @@ on:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-20.04
+    environment:
+      name: ${{ inputs.environment }}
+      url: ${{ inputs.hostname }}
     env:
       CI: true
       NODE_ENV: production

@@ -10,6 +10,7 @@ jobs:
     uses: SumoLogic/sumologic-documentation/.github/workflows/build_and_deploy.yml@main
     with:
       hostname: https://d3f0cnhsmnxacx.cloudfront.net
+      environment: production
     secrets:
       S3_BUCKET_NAME: ${{ secrets.PRODUCTION_S3_BUCKET_NAME }}
       CLOUDFRONT_DISTRIBUTION_ID: ${{ secrets.PRODUCTION_CLOUDFRONT_DISTRIBUTION_ID }}
