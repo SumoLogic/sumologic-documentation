@@ -46,10 +46,10 @@ The **Preferences** page contains settings that apply just to your account. Opti
 
 Under **My Profile**, the following information is displayed:
 
--   **Organization ID** - Your Sumo Logic org ID
--   **Username** - Your username is the email address associated with the account
--   **Password** -The password you entered when activating your account. You can reset your password. 
--   **Roles** - The Sumo Logic roles assigned to your user account
+* **Organization ID** - Your Sumo Logic org ID
+* **Username** - Your username is the email address associated with the account
+* **Password** -The password you entered when activating your account. You can reset your password. 
+* **Roles** - The Sumo Logic roles assigned to your user account
 
 ### My Security Settings
 
@@ -75,10 +75,10 @@ Preference settings are only changed for your personal account; they do not affe
 - **Default Timezone.** If you want the Sumo Logic user interface to use your local time zone, or a time zone different from the time zone used in the timestamp of your log messages, change the setting here. This is a personal setting, and does not change the time zone for anyone else in your organization. This option overrides the timezone set in your web browser, and affects all hours and minutes displayed in the user interface, including time ranges on the Search page, the Time column in the Messages pane, and in Dashboards. It does not affect the configurations of previously created Scheduled Searches or Real Time Alerts. For more information, see [Timestamps, Time Zones, Time Ranges, and Date Formats].
 - **Always show the timezone offset in displayed timestamps.** This setting is on by default. To not show the timezone offset in displayed timestamps, deactivate this check box. 
 - **Date Format:** Select from the following international date format options:
-    -   Use the browser's default date format.
-    -   MM/DD/YYYY (04/22/2015)
-    -   DD/MM/YYYY (22/04/2015
-    -   YYYY/MM/DD (2015/04/22)
+    * Use the browser's default date format.
+    * MM/DD/YYYY (04/22/2015)
+    * DD/MM/YYYY (22/04/2015
+    * YYYY/MM/DD (2015/04/22)
 
     :::warning
     If you change the date format option, it will affect your saved searches in the Library. Any saved searches that use absolute dates for their time range must be modified to use the new date format. Scheduled searches will continue to run properly. You would need to modify the date format only if you rescheduled the search.

@@ -209,7 +209,7 @@ module.exports = {
               },
               {
                 // 3
-                label: 'Observability',
+                label: 'Infrastructure Monitoring',
                 items: [
                   {
                     label: 'About Observability',
@@ -218,7 +218,7 @@ module.exports = {
                     icon: 'data_exploration',
                   },
                   {
-                    label: 'Observability Collection',
+                    label: 'Kubernetes',
                     sublabel: 'Deploy and collect app data',
                     to: 'docs/get-started',
                     icon: 'settings_suggest',
@@ -239,16 +239,16 @@ module.exports = {
               },
               {
                 // 4
-                label: 'Developers',
+                label: 'Security',
                 items: [
                   {
-                    label: 'Release Notes',
+                    label: 'Security Events',
                     sublabel: 'New features, bug fixes, and more',
                     to: 'docs/get-started',
                     icon: 'format_list_bulleted',
                   },
                   {
-                    label: 'API Guides',
+                    label: 'Security Detection',
                     sublabel: 'Extend the Sumo APIs',
                     to: 'docs/get-started',
                     icon: 'grid_4x4',
@@ -257,17 +257,17 @@ module.exports = {
               },
               {
                 // 5
-                label: 'Support Contacts',
+                label: 'Incidents Management',
                 items: [
                   {
-                    label: 'Online Training',
-                    sublabel: 'Online courses and certifications',
+                    label: 'Incidents',
+                    sublabel: 'Investigate issues',
                     to: 'docs/get-started',
                     icon: 'model_training',
                   },
                   {
-                    label: 'Tickets and Help',
-                    sublabel: 'Contact support and tickets',
+                    label: 'Entities',
+                    sublabel: 'SOAR Entities',
                     to: 'docs/get-started',
                     icon: 'question_answer',
                   },
