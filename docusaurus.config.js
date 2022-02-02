@@ -4,7 +4,7 @@
 const lightCodeTheme = require('prism-react-renderer/themes/github');
 const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
-/** @type {import('@docusaurus/types').Config} */
+/** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
   title: 'Sumo Logic Docs',
   tagline: '',
@@ -18,14 +18,37 @@ module.exports = {
   stylesheets: [
     'https://fonts.googleapis.com/css?family=Material+Icons',
   ],
+  i18n: {
+    // https://docusaurus.io/docs/i18n/tutorial
+    defaultLocale: 'en',
+    locales: ['en', 'ja'],
+    localeConfigs: {
+      en: {
+        htmlLang: 'en-US',
+      },
+      // You can omit a locale (e.g. fr) if you don't need to override the defaults
+      ja: {
+        direction: 'rtl',
+      },
+    },
+  },
   presets: [
     [
       'classic',
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
-          sidebarPath: require.resolve('./sidebars.js'),
+          sidebarPath: require.resolve('./sidebars.ts'),
           editUrl: 'https://github.com/SumoLogic/sumologic-documentation/edit/main/',
+          //sidebarCollapsible: true,
+          //sidebarCollapsed: false,
+          remarkPlugins: [
+            //https://www.npmjs.com/package/remark-code-import
+            require('remark-code-import'),
+            //https://www.npmjs.com/package/remark-import-partial 
+            // snippet support {@import ./my-name.md} relative filepath to md file
+            require('remark-import-partial'),
+          ],
           showLastUpdateAuthor: true,
           showLastUpdateTime: true,
           admonitions: {
@@ -94,6 +117,7 @@ module.exports = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+    autoCollapseSidebarCategories: true,
     // SEO Global Metadata
     metadata: [{name: 'keywords', content: 'sumo logic, documentation, tutorials, quick starts'}],
     announcementBar: {
@@ -142,25 +166,25 @@ module.exports = {
                   {
                     label: 'Sumo Accounts',
                     sublabel: 'Get and configure an account',
-                    to: 'docs/get-started',
+                    to: 'docs/get-started/get-started',
                     icon: 'fact_check',
                   },
                   {
                     label: 'Sumo Concepts',
                     sublabel: 'Learn the basics!',
-                    to: 'docs/get-started',
+                    to: 'docs/get-started/get-started',
                     icon: 'backup_table',
                   },
                   {
                     label: 'Send Data',
                     sublabel: 'Collectors, Sources, and more',
-                    to: 'docs/get-started',
+                    to: 'docs/get-started/get-started',
                     icon: 'open_in_new',
                   },
                   {
                     label: 'Apps & Integrations',
                     sublabel: 'Gain insights from data sources',
-                    to: 'docs/get-started',
+                    to: 'docs/get-started/get-started',
                     icon: 'apps',
                   },
                 ],
@@ -172,19 +196,19 @@ module.exports = {
                   {
                     label: 'Dashboards',
                     sublabel: 'Create and configure visuals and alerts',
-                    to: 'docs/get-started',
+                    to: 'docs/get-started/get-started',
                     icon: 'dashboard',
                   },
                   {
                     label: 'Searches and Logs',
                     sublabel: 'Find log data with queries',
-                    to: 'docs/get-started',
+                    to: 'docs/get-started/get-started',
                     icon: 'view_day',
                   },
                   {
                     label: 'Metrics and Logs',
                     sublabel: 'Find metrics data with queries',
-                    to: 'docs/get-started',
+                    to: 'docs/get-started/get-started',
                     icon: 'timeline',
                   },
                 ],
@@ -196,13 +220,13 @@ module.exports = {
                   {
                     label: 'Traces',
                     sublabel: 'Create and configure visuals and alerts',
-                    to: 'docs/get-started',
+                    to: 'docs/get-started/get-started',
                     icon: 'view_timeline',
                   },
                   {
                     label: 'Real User Monitoring',
                     sublabel: 'Create and configure visuals and alerts',
-                    to: 'docs/get-started',
+                    to: 'docs/get-started/get-started',
                     icon: 'contacts',
                   },
                 ],
@@ -214,25 +238,25 @@ module.exports = {
                   {
                     label: 'About Observability',
                     sublabel: 'Learn about Observability features',
-                    to: 'docs/get-started',
+                    to: 'docs/get-started/get-started',
                     icon: 'data_exploration',
                   },
                   {
                     label: 'Kubernetes',
                     sublabel: 'Deploy and collect app data',
-                    to: 'docs/get-started',
+                    to: 'docs/get-started/get-started',
                     icon: 'settings_suggest',
                   },
                   {
                     label: 'AWS Observability',
                     sublabel: 'Deploy and collect AWS data',
-                    to: 'docs/get-started',
+                    to: 'docs/get-started/get-started',
                     icon: 'polyline',
                   },
                   {
                     label: 'Root Cause Explorer',
                     sublabel: 'Learn what caused issues',
-                    to: 'docs/get-started',
+                    to: 'docs/get-started/get-started',
                     icon: 'widgets',
                   },
                 ],
@@ -244,13 +268,13 @@ module.exports = {
                   {
                     label: 'Security Events',
                     sublabel: 'New features, bug fixes, and more',
-                    to: 'docs/get-started',
+                    to: 'docs/get-started/get-started',
                     icon: 'format_list_bulleted',
                   },
                   {
                     label: 'Security Detection',
                     sublabel: 'Extend the Sumo APIs',
-                    to: 'docs/get-started',
+                    to: 'docs/get-started/get-started',
                     icon: 'grid_4x4',
                   },
                 ],
@@ -262,13 +286,13 @@ module.exports = {
                   {
                     label: 'Incidents',
                     sublabel: 'Investigate issues',
-                    to: 'docs/get-started',
+                    to: 'docs/get-started/get-started',
                     icon: 'model_training',
                   },
                   {
                     label: 'Entities',
                     sublabel: 'SOAR Entities',
-                    to: 'docs/get-started',
+                    to: 'docs/get-started/get-started',
                     icon: 'question_answer',
                   },
                 ],
@@ -279,6 +303,11 @@ module.exports = {
             label: 'Doc Contributions',
             to: '/docs/contribution',
             position: 'left',
+          },
+          {
+            // i18n
+            type: 'localeDropdown',
+            position: 'right',
           },
         ],
       },

@@ -1,0 +1,30 @@
+{
+  "version.label": {
+    "message": "Next",
+    "description": "The label for version current"
+  },
+  "sidebar.docs.category.Get Started": {
+    "message": "Get Started",
+    "description": "The label for category Get Started in sidebar docs"
+  },
+  "sidebar.docs.category.Quickstarts and Tutorials": {
+    "message": "Quickstarts and Tutorials",
+    "description": "The label for category Quickstarts and Tutorials in sidebar docs"
+  },
+  "sidebar.docs.category.Apps and Integrations": {
+    "message": "Apps and Integrations",
+    "description": "The label for category Apps and Integrations in sidebar docs"
+  },
+  "sidebar.docs.category.PCI Compliance": {
+    "message": "PCI Compliance",
+    "description": "The label for category PCI Compliance in sidebar docs"
+  },
+  "sidebar.contribution.category.Contribution Guide": {
+    "message": "Contribution Guide",
+    "description": "The label for category Contribution Guide in sidebar contribution"
+  },
+  "sidebar.contribution.category.Advanced": {
+    "message": "Advanced",
+    "description": "The label for category Advanced in sidebar contribution"
+  }
+}

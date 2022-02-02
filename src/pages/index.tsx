@@ -1,70 +1,94 @@
 import React from 'react';
 import clsx from 'clsx';
 import Layout from '@theme/Layout';
-import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import styles from './index.module.css';
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import Translate, {translate} from '@docusaurus/Translate';
 
 const features = [
   {
-    title: 'Get Started with Sumo',
+    title: translate({
+      id: 'landing.feature.get-started.title',
+      message: 'Get Started with Sumo',
+      description: 'Title for get started',
+    }),
     imageUrl: 'img/icons/send-data.png',
-    description: (
-      <>
-        Get and configure a Sumo Logic account, learn the basics, and start collecting data.
-      </>
-    ),
-    link: 'docs/get-started',
-  },
-  {
-    title: 'Dashboards',
-    imageUrl: 'img/icons/dashboards.png',
-    description: (
-      <>
+    description: (<Translate
+      id="landing.feature.get-started.desc"
+      description="Get started description">
         Create visualizations, notifications, and alerts for your applications.
-      </>
-    ),
+      </Translate>),
     link: 'docs/get-started',
   },
   {
-    title: 'Searches & Logs',
+    title: translate({
+      id: 'landing.feature.dashboards.title',
+      message: 'Dashboards',
+      description: 'Title for dashboards',
+    }),
+    imageUrl: 'img/icons/dashboards.png',
+    description: (<Translate
+        id="landing.feature.dashboards.desc"
+        description="Dashboards description">
+          Create visualizations, notifications, and alerts for your applications.
+        </Translate>),
+    link: 'docs/get-started',
+  },
+  {
+    title: translate({
+      id: 'landing.feature.searches-logs.title',
+      message: 'Searches & Logs',
+      description: 'Title for searches & logs',
+    }),
     imageUrl: 'img/icons/logs.png',
-    description: (
-      <>
-        Query and analyze log data sent to Sumo Logic, Search Language, LogReduce, LogExplain, and more. 
-      </>
-    ),
+    description: (<Translate
+      id="landing.feature.searches-logs.desc"
+      description="Searches and logs description">
+        Query and analyze log data sent to Sumo Logic, Search Language, LogReduce, LogExplain, and more.
+      </Translate>),
     link: 'docs/get-started',
   },
   {
-    title: 'Metrics',
+    title: translate({
+      id: 'landing.feature.metrics.title',
+      message: 'Metrics',
+      description: 'Title for metrics',
+    }),
     imageUrl: 'img/icons/metrics.png',
-    description: (
-      <>
+    description: (<Translate
+      id="landing.feature.metrics.desc"
+      description="Metrics description">
         Review numeric performance and activity data collected to monitor, troubleshoot, and identify root causes.
-      </>
-    ),
+      </Translate>),
     link: 'docs/get-started',
   },
   {
-    title: 'Application Performance Monitoring',
+    title: translate({
+      id: 'landing.feature.apm.title',
+      message: 'Application Performance Monitoring',
+      description: 'Title for APM',
+    }),
     imageUrl: 'img/icons/traces.png',
-    description: (
-      <>
+    description: (<Translate
+      id="landing.feature.apm.desc"
+      description="APM description">
         Monitor user activity, traces data, and service maps to investigate usage and issues.
-      </>
-    ),
+      </Translate>),
     link: 'docs/get-started',
   },
   {
-    title: 'Observability',
+    title: translate({
+      id: 'landing.feature.observability.title',
+      message: 'Observability',
+      description: 'Title for Observability',
+    }),
     imageUrl: 'img/icons/observe.png',
-    description: (
-      <>
+    description: (<Translate
+      id="landing.feature.obserbility.desc"
+      description="Observability description">
         Deploy and configure solutions to monitor applications and analyze root causes.
-      </>
-    ),
+      </Translate>),
     link: 'docs/get-started',
   },
 ];
@@ -100,7 +124,7 @@ function HomepageHeader() {
   );
 }
 
-export default function Home() {
+export default function Home(): JSX.Element {
   const {siteConfig} = useDocusaurusContext();
   return (
     <Layout
