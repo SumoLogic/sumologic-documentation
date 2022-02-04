@@ -23,13 +23,8 @@ module.exports = {
     defaultLocale: 'en',
     locales: ['en', 'ja'],
     localeConfigs: {
-      en: {
-        htmlLang: 'en-US',
-      },
-      // You can omit a locale (e.g. fr) if you don't need to override the defaults
-      ja: {
-        direction: 'rtl',
-      },
+      en: { label: 'English' },
+      ja: { label: '日本語' },
     },
   },
   presets: [
