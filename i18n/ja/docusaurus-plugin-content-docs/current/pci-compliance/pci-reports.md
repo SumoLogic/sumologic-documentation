@@ -2,35 +2,43 @@
 id: pci-reports
 ---
 
-# PCI Reports
+# PCI レポート
 
-Unlike Dashboards and scheduled searches, reports can be modified, allowing flexibility, including:
+ダッシュボードや Scheduled Search
+とは異なり、レポートは変更できるため、次のことを柔軟に行うことができます。
 
-* **Identify long term trends.** Change the time range of a report to get additional information that extends beyond the reach of Dashboards.
-* **Modify to get a closer look.** Need additional insight into events on a singe host? Or perhaps trying to find more details of a user's activity? Reports can return very granular information by making just a few edits to the query. You can choose to save an edited report as a saved search on its own.
-* **Concentrate efforts.** If one area of your deployment is trickier to keep in compliance, run a report more target report at a more frequent interval.
+-   **長期的な傾向を確認する。**レポートの時間範囲を変更して、ダッシュボードの表示範囲を超える追加の情報を取得できます。
+-   **変更してより詳細な情報を取得する。**単一ホスト上のイベントに関する追加の情報が必要な場合や、ユーザ
+    アクティビティの詳細を確認しようとする場合、クエリを少しだけ編集すれば、レポートで非常にきめ細かな情報を得ることができます。編集したレポートは、そのまま保存済み検索として保存することを選択できます。
+-   **作業の集中。**デプロイ内のあるエリアのコンプライアンスを維持することが難しい場合は、的を絞ったレポートをより高い頻度で実行します。
 
-## Why aren't Reports included in Dashboards?
+## レポートがダッシュボードに含まれない理由
 
-Reports are designed to deliver very specific, granular information, which is not always aggregated, so that individual log messages may be returned in search results.
+レポートは、非常に特定的できめ細かな情報を提供するように設計されています。また、検索結果に個々のログ
+メッセージを返すため、これらの情報は必ずしも集計されているとは限りません。
 
-Think of Reports as a tool to augment discoveries uncovered by the constant search results delivered by Dashboards.
+レポートは、ダッシュボードでの一定の検索結果で明らかになった情報を強化するツールと考えてください。
 
-## Included PCI Reports
+## 含まれている PCI レポート
 
-The following reports are included with the Sumo Logic Application for PCI Compliance:
+PCI コンプライアンス用 Sumo Logic
+アプリケーションには、次のレポートが含まれています。
 
-* Account Access Activity.
-* Account Management Activity.
-* Actions by Privileged Accounts.
-* Audit Log Cleared.
-* AV Failed Updates.
-* AV Malware Activity.
-* Network Device Configuration Changes.P
-* Network Incident Report.
-* Potential Credit Card Data Found.
-* Prohibited Service Activity.
-* Software Updates.
-* System Time Change.
+-   Account Access Activity (アカウント アクセス アクティビティ)。
+-   Account Management Activity (アカウント管理アクティビティ)。
+-   Actions by Privileged Accounts (特権アカウント別のアクション)。
+-   Audit Log Cleared (クリアされた監査ログ)。
+-   AV Failed Updates (失敗したアンチウイルスの更新)。
+-   AV Malware Activity (アンチウイルス マルウェア アクティビティ)。
+-   Network Device Configuration Changes (ネットワーク
+    デバイスの設定変更)。
+-   Network Incident Report (ネットワーク インシデント レポート)。
+-   Potential Credit Card Data Found
+    (クレジットカードの可能性がある検出データ)。
+-   Prohibited Service Activity (禁止されているサービス
+    アクティビティ)。
+-   Software Updates (ソフトウェアの更新)。
+-   System Time Change (システム時間の変更)。
 
-All of these reports can be run ad-hoc, or can be saved as scheduled searches.
+これらのすべてのレポートは、アドホックで実行することも、Scheduled Search
+として保存することもできます。

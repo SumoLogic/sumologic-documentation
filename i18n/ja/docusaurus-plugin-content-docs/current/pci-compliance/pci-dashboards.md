@@ -2,112 +2,175 @@
 id: pci-dashboards
 ---
 
-# PCI Dashboards
+# PCI ダッシュボード
 
-This logical grouping of issues, events, or activities makes it easy for an organization to make sure they're continuing to comply with each requirement, and remediate any problems that could present a violation.
+問題やイベント、アクティビティを複数のダッシュボードで論理的にグループ化することにより、各要件への準拠の確認や、違反の原因となりうる問題の修正を簡単に行うことができます。
 
-Sumo Logic based the PCI app on PCI DSS Requirements and Security Assessment Procedures, Version 2.0. Requirements one through 11 have Dashboards custom-built to help you zero in on data relevant to each requirement. (Requirement 12, Maintain a policy that addresses information security for all personnel, can't be measured through log data, there is no Dashboard.)
+Sumo Logic が PCI アプリケーションの基礎としているのは、PCI DSS
+Requirements and Security Assessment Procedures のバージョン 2.0
+です。要件 1 ～ 11
+に対してカスタムビルドのダッシュボードがあるため、各要件に関連するデータに照準を合わせることができます。(要件
+12
+の「すべての人員の情報セキュリティに対処するポリシーを保有する」については、ログ
+データからの測定ができないため、ダッシュボードは用意されていません)。
 
-The requirements are as follows:
+各要件を次に示します。
 
-* [Requirement 1](#pci-requirement-1-dashboard): Install and maintain a firewall configuration to protect cardholder data.
-* [Requirement 2](#pci-requirement-2-dashboard): Do not use vendor-supplied defaults for system passwords and other security
-parameters.
-* [Requirement 3](#pci-requirement-3-dashboard): Protect stored cardholder data.
-* [Requirement 4](#pci-requirement-4-dashboard): Encrypt transmission of cardholder data across open, public networks.
-* [Requirement 5](#pci-requirement-5-dashboard): Protect all systems against malware and regularly update anti-virus software or
-programs.
-* [Requirement 6](#pci-requirement-6-dashboard): Develop and maintain secure systems and applications.
-* [Requirement 7](#pci-requirement-7-dashboard): Restrict access to cardholder data by business need-to-know.
-* [Requirement 8](#pci-requirement-8-dashboard): Identify and authenticate access to system components.
-* [Requirement 9](#pci-requirement-9-dashboard): Restrict physical access to cardholder data.
-* [Requirement 10](#pci-requirement-10-dashboard): Track and monitor all access to network resources and cardholder data.
-* [Requirement 11](#pci-requirement-11-dashboard): Regularly test security systems and processes.
+* **要件 1:**
+ ファイアウォール構成をインストールおよび保守して、カード所有者データを保護する。
 
-While some facets of these standards are based on policies set outside of your log data, Sumo Logic works to monitor data-driven aspects of the standards. For example, requirements that need audits of individual actions can be monitored through Sumo Logic's app.
+* **要件 2:** システム
+パスワードやその他のセキュリティ
+パラメータには、ベンダー提供のデフォルト値を使用しない。
 
-### PCI Posture Overview Dashboard
+* **要件 3:** 保存されているカード所有者データを保護する。
 
-Think of the Posture Overview Dashboard as a high-level look at the state of failures currently occurring, as well as a chart that displays the number of failures that occurred over the past seven days. These failures are clearly labeled with the PCI Requirement that could be violated by the failures.
+* **要件 4:** オープンなパブリック
+ネットワーク上で転送するカード所有者データを暗号化する。
+
+* **要件 5:** すべてのシステムをマルウェアから保護し、アンチウイルス
+ソフトウェアまたはプログラムを定期的に更新する。
+
+* **要件 6:** セキュアなシステムおよびアプリケーションを開発して保守する。
+
+* **要件 7:** ビジネス上の知る必要性を基準にして、カード所有者データへのアクセスを制限する。
+
+* **要件 8:** システム
+コンポーネントへのアクセスを識別して認証する。
+
+* **要件 9:** カード所有者データへの物理アクセスを制限する。
+
+* **要件 10:** ネットワーク
+リソースとカード所有者データへのすべてのアクセスをトラッキングおよびモニタリングする。
+
+* **要件 11:** セキュリティ
+システムおよびプロセスを定期的にテストする。
+
+
+これらの標準のいくつかの側面は、ログ
+データの外部で設定されたポリシーに基づきますが、Sumo Logic
+は、これらの標準をデータ駆動型でモニタリングします。たとえば、Sumo Logic
+のアプリケーションでは、個々のアクションの監査が必要な要件をモニタリングできます。
+
+### \[PCI Posture Overview (PCI の状態の概要)\] ダッシュボード
+
+\[Posture Overview (状態の概要)\]
+ダッシュボードは、現在発生している失敗の状態の概要や、過去 7
+日間に発生した失敗の数を示すグラフと考えてください。これらの失敗にはラベルが付いており、その失敗によって違反した可能性のある
+PCI 要件が明確に示されています。
 
 ![PCI_PostsureOverview.png](/img/pci-standards/PCI_PostsureOverview.png)
 
-**Current PCI State.** Displays a single, color-coded value associated with the number of failures that have occurred over the past day.
+**Current PCI State (現在の PCI の状態)。**過去 1
+日間に発生した失敗の数に関連付けられている 1
+つの色分けされた値が表示されます。
 
-**Failures by Requirements.** Shows the number of failures by PCI Requirement.
+**Failures by Requirements (要件別の失敗の数)。**失敗の数が PCI
+要件別に表示されます。
 
-**History of Failures.** Displays a chart of all failures that have occurred over the past week.
+**History of Failures (失敗の履歴)。**過去 1
+週間に発生したすべての失敗のグラフが表示されます。
 
-## PCI Requirement Compliance Status Dashboard
+## \[PCI Requirement Compliance Status (PCI 要件のコンプライアンス状態)\] ダッシュボード
 
-The PCI Requirement Compliance Status Dashboard provides a high-level view of the number of outstanding incidents for each PCI requirement.
+\[PCI Requirement Compliance Status (PCI 要件のコンプライアンス状態)\]
+ダッシュボードには、各 PCI
+要件の未解決のインシデント数が簡潔に表示されます。
 
 ![PCI_ComplianceRequirement_Dashboard.png](/img/pci-standards/PCI_ComplianceRequirement_Dashboard.png)
 
-## PCI Requirement 1 Dashboard
+## \[PCI Requirement 1 (PCI 要件 1)\] ダッシュボード
 
-PCI Requirement 1 Secure Network Monitoring Dashboard reports the state of your organization's compliance of having a firewall installed and configured to properly protect cardholder data.
+\[PCI Requirement 1 Secure Network Monitoring (PCI 要件 1 セキュア
+ネットワーク モニタリング)\]
+ダッシュボードでは、ファイアウォールをインストールおよび設定してカード所有者データを適切に保護するという要件に組織が従っているかが分かります。
 
-Information relating to this requirement can be found in network activity and events, such as inbound and outbound cardholder activity, as well as network configuration changes.
+この要件に関する情報は、カード所有者の送受信アクティビティなどのネットワーク
+アクティビティやイベントのほか、ネットワーク設定変更でも確認できます。
 
 ![PCI_Requirement1_Dashboard.png](/img/pci-standards/PCI_Requirement1_Dashboard.png)
 
-## PCI Requirement 2 Dashboard
+## \[PCI Requirement 2 (PCI 要件 1)\] ダッシュボード
 
-The PCI Requirement 2 Default Setting Monitoring Dashboard provides information any use of vendor-supplied or default system passwords and security parameters in your organization.
+\[PCI Requirement 2 Default Setting Monitoring (PCI 要件 2
+デフォルト設定のモニタリング)\]
+ダッシュボードには、ベンダー提供またはデフォルトのシステム
+パスワードやセキュリティ
+パラメータが組織で使用されているかどうかに関する情報が表示されます。
 
 ![PCI_Requirement2_Dashbaord.png](/img/pci-standards/PCI_Requirement2_Dashbaord.png)
 
-## PCI Requirement 3 Dashboard
+## \[PCI Requirement 3 (PCI 要件 1)\] ダッシュボード
 
-The PCI Requirement 31 Protect Stored Cardholder Data Dashboard details your compliance for protecting stored cardholder data.
+\[PCI Requirement 31 Protect Stored Cardholder Data (PCI 要件 31
+保存されているカード所有者データの保護)\]
+ダッシュボードには、保存されているカード所有者データの保護に関するコンプライアンスの詳細が表示されます。
 
 ![PCI_Requirement3_Dashboard.png](/img/pci-standards/PCI_Requirement3_Dashboard.png)
 
-## PCI Requirement 4 Dashboard
+## \[PCI Requirement 4 (PCI 要件 1)\] ダッシュボード
 
-PCI Requirement 4 Dashboard reports the state of your organization's encryption of cardholder data. Panels in this Dashboard look at incidents generated by firewalls, for example, or other hosts or ports that handle the flow of data that should be encrypted.
+\[PCI Requirement 4 (PCI 要件 4)\]
+ダッシュボードには、組織がカード所有者データを暗号化しているかどうかの状態が報告されます。このダッシュボードのパネルには、暗号化が必要なデータのフローを処理するファイアウォールやその他のホスト、ポートなどで生成されたインシデントの情報が表示されます。
 
 ![PCI_Requirement4_Dashboard.png](/img/pci-standards/PCI_Requirement4_Dashboard.png)
 
-## PCI Requirement 5 Dashboard
+## \[PCI Requirement 5 (PCI 要件 1)\] ダッシュボード
 
-PCI Requirement 5 Anti Virus Updates Dashboard makes sure that anti-virus software is regularly updated, and also looks at any anti-virus threats to servers, as well as failed anti-virus updates.
+\[PCI Requirement 5 Anti Virus Updates (PCI 要件 5
+アンチウイルスの更新)\] ダッシュボードでは、アンチウイルス
+ソフトウェアが定期的に更新されているかや、アンチウイルスがサーバに脅威を与えていないか、アンチウイルスの更新が失敗していないかを確認できます。
 
 ![PCI_Requirement5_Dashboard.png](/img/pci-standards/PCI_Requirement5_Dashboard.png)
 
-## PCI Requirement 6 Dashboard
+## \[PCI Requirement 6 (PCI 要件 1)\] ダッシュボード
 
-PCI Requirement 6 Application Updates Dashboard looks at the states of application upgrades that have occurred across your deployment. Critical vulnerabilities are also monitored.
+\[PCI Requirement 6 Application Updates (PCI 要件 6
+アプリケーションの更新)\]
+ダッシュボードには、デプロイで実行されたアプリケーションのアップグレードの状態が表示されます。重大な脆弱性もモニタリングされます。
 
 ![PCI_Requirement6_Dashboard.png](/img/pci-standards/PCI_Requirement6_Dashboard.png)
 
-## PCI Requirement 7 Dashboard
+## \[PCI Requirement 7 (PCI 要件 1)\] ダッシュボード
 
-PCI Requirement 7 Cardholder Data Access Monitoring Dashboard helps you verify that your organization is restricting access to cardholder data only to those with an explicit purpose. The Dashboard contains a number of Panels that watch for any attempts to access environments that store cardholder information, so you easily can see who is attempting to gain access to the data.
+\[PCI Requirement 7 Cardholder Data Access Monitoring (PCI 要件 7
+カード所有者データへのアクセスのモニタリング)\]
+ダッシュボードでは、組織がカード所有者データへのアクセスを制限し、明確な目的を持ったユーザにのみアクセスを許可しているかを確認できます。このダッシュボードには、カード所有者の情報が保存されている環境に対してアクセスの試みがないかを監視する多数のパネルが含まれています。このため、どのユーザがデータへのアクセスを試みているかを簡単に知ることができます。
 
 ![PCI_Requirement7_Dashboard.png](/img/pci-standards/PCI_Requirement7_Dashboard.png)
 
-## PCI Requirement 8 Dashboard
+## \[PCI Requirement 8 (PCI 要件 1)\] ダッシュボード
 
-The PCI Requirement 8 User Activity Dashboard helps you comply with each user having his or her own unique ID. Panels look at account creation/enablement, account deletion/disablement, and password changes. Additionally, you can view a chart that displays a summary of the overall number of user account creations/deletions over a week.
+\[PCI Requirement 8 User Activity (PCI 要件 8 ユーザ アクティビティ)\]
+ダッシュボードでは、一意の ID
+を持つ各ユーザに準拠できます。パネルには、アカウントの作成や有効化、アカウントの削除や無効化、およびパスワードの変更に関する情報が表示されます。また、1
+週間の間にユーザ
+アカウントが作成または削除された総数の概要を示すグラフも表示されます。
 
 ![PCI_Requirement8_Dashboard.png](/img/pci-standards/PCI_Requirement8_Dashboard.png)
 
-## PCI Requirement 9 Dashboard
+## \[PCI Requirement 9 (PCI 要件 1)\] ダッシュボード
 
-The PCI Requirement 9 Physical Access Dashboard contains Panels that check for any violations of physical access to machines that contain cardholder data. Each access request is logged and displayed by user name.
+\[PCI Requirement 9 Physical Access (PCI 要件 9 物理アクセス)\]
+ダッシュボード内のパネルでは、カード所有者データを含むマシンへの物理アクセスに違反がないかが検査されます。各アクセス
+リクエストは、ユーザ名ごとにログに記録され、表示されます。
 
 ![PCI_Requirement9_Dashboard.png](/img/pci-standards/PCI_Requirement9_Dashboard.png)
 
-## PCI Requirement 10 Dashboard
+## \[PCI Requirement 10 (PCI 要件 1)\] ダッシュボード
 
-The PCI Requirement 10 Data Access Dashboard contains Panels that track each time a network resource is accessed.
+\[PCI Requirement 10 Data Access (PCI 要件 10 データ アクセス)\]
+ダッシュボードには、ネットワーク
+リソースがアクセスされるたびにトラッキングを実行するパネルが含まれています。
 
 ![PCI_Requirement10_Dashboard.png](/img/pci-standards/PCI_Requirement10_Dashboard.png)
 
-## PCI Requirement 11 Dashboard
+## \[PCI Requirement 11 (PCI 要件 1)\] ダッシュボード
 
-The PCI Requirement 11 Vulnerability Scan Dashboard helps you comply with the requirement to regularly test security systems. This Dashboard gives you a look at the number of hosts scanned over the past day, along with any vulnerabilities that need to be addressed.
+\[PCI Requirement 11 Vulnerability Scan (PCI 要件 11 脆弱性スキャン)\]
+ダッシュボードでは、セキュリティ
+システムを定期的にテストするという要件に従うことができます。このダッシュボードでは、過去
+1
+日間にスキャンされたホストの数と、対応が必要な脆弱性を調べることができます。
 
 ![PCI_Requirement11_Dashboard.png](/img/pci-standards/PCI_Requirement11_Dashboard.png)

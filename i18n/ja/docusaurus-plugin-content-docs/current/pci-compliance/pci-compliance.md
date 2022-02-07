@@ -2,25 +2,48 @@
 id: pci-compliance
 ---
 
-# PCI Compliance
+# PCI コンプライアンス
 
-The PCI Compliance App is available for Sumo Logic Enterprise accounts only, and requires a Professional Services contract to install and configure. You may upgrade your account at any time. If you'd like more information on this App, please request it by clicking the **Request** button in the Apps section of the Library, or contact your Sumo Logic [sales](mailto:sales@sumologic.com) representative.
+PCI コンプライアンス アプリケーションは、Sumo Logic Enterprise
+のアカウントでのみ利用可能です。インストールや設定には、Professional
+サービス契約が必要です。アカウントは、いつでもアップグレードできます。このアプリケーションの詳細については、\[Library
+(ライブラリ)\] の \[Apps (アプリケーション)\] セクションで、**\[Request
+(リクエスト)\]**
+ボタンをクリックして情報を **リクエスト** するか、または
+Sumo Logic
+の[営業](mailto:sales@sumologic.com) 担当までお問い合わせください。
 
-As data security becomes increasingly paramount, enterprises may reference certifications and standards such as the  requirements of the Payment Card Industry Security Standard Council Data Security Standards (known as PCI DSS) as a means of assessing their policies and practices.  Even if you don’t handle payment card information, the requirements under PCI DSS may serve as proxies for controls and obligations that businesses have in place and seek to actively monitor. 
+データ セキュリティの重要性が増すにつれて、各企業は Payment Card
+Industry Security Standard Council Data Security Standards (PCI DSS)
+要件などの各種認定や標準を基準にして、自社のポリシーやプラクティスを評価するようになってきました。 
+実際の業務でクレジット カード情報を扱わないとしても、PCI DSS
+で定められている要件は、企業が実際に導入して積極的に監視する統制や義務にも適用できます。 
 
-Maintaining compliance with any regulation or law is something each entity must manage. Self-policing is always tricky, but when your organization is handling thousands upon thousands of log messages with potentially sensitive data, the task becomes monumental.
+あらゆる規制や法律へのコンプライアンスは、どの組織でも心掛けなければなりません。しかし、自力でポリシーに従うことは常に難しく、機密データを含む可能性のある、無数のログ
+メッセージを自社で処理しようとすると、タスクが膨大なものとなります。
 
-That's where the Sumo Logic PCI Application comes in. With ready-made Dashboards that monitor each aspect of PCI compliance, targeted searches that allow you to dive into specific areas, and carefully designed ad-hoc reports, your job becomes much easier. Instead of using manpower to look through millions of log lines, Sumo Logic watches over your deployment, making potential problems easy to spot.
+この部分こそ、Sumo Logic PCI
+アプリケーションが本領を発揮するところです。PCI
+コンプライアンスの各側面をモニタリングする既製のダッシュボード、特定のエリアを調べるターゲット検索、および慎重に設計されたアドホック
+レポートが利用できるため、ジョブがはるかに簡単になります。人手に頼って何百万行ものログを調べなくても、Sumo
+Logic がデプロイ全体を監視するため、潜在的な問題を簡単に発見できます。
 
-The Sumo Logic PCI Application provides sample dashboards and searches to help track your environment against 11 of the 12 PCI required control groups.  As with all of our apps, we recommend you customize these searches and dashboards to tailor them to your specific monitoring and troubleshooting needs so you get only get alerted on conditions important to you.
+Sumo Logic PCI アプリケーションは、PCI で定められている 12
+の必須管理グループのうち 11
+グループに準拠して環境を追跡するためのサンプル
+ダッシュボードやサンプル検索を提供しています。  Sumo Logic
+のすべてのアプリケーションと同じように、これらの検索やダッシュボードは、実際の重要な条件に対してのみアラートを受け取れるように、特定のモニタリングやトラブルシューティングのニーズに合わせてカスタマイズすることをお勧めします。
 
-## How the app works
+## アプリケーションの動作
 
-The Sumo Logic PCI Application takes log data uploaded to Sumo Logic, then indexes this data into a View. This indexing allows for quicker search results against your data. The View is used for PCI Requirement searches as well as PCI Dashboards.
+Sumo Logic PCI アプリケーションは、Sumo Logic にアップロードされたログ
+データを取得した後、そのデータをインデックス化して、ビューに送信します。このインデックス化により、データに対する検索結果がより素早く得られます。ビューは、PCI
+要件の検索や PCI ダッシュボードのために使用されます。
 
-One PCI-related data appears in a Dashboard, you can learn more about particular incidents. This type of forensic investigation is also expedited with the View indexing.
+ある PCI
+関連データがダッシュボードに表示されると、特定のインシデントに関する詳細な情報を確認できます。このタイプのフォレンジック調査も、ビューのインデックス化により、迅速に処理されます。
 
-## Learn more
+## もっと詳しく知る
 
 * [Set Up the Sumo Logic PCI App](setup-sumologic-pci-app.md)
 * [PCI Reports](pci-reports.md)
