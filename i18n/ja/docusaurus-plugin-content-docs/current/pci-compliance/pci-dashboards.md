@@ -1,0 +1,176 @@
+---
+id: pci-dashboards
+---
+
+# PCI ダッシュボード
+
+問題やイベント、アクティビティを複数のダッシュボードで論理的にグループ化することにより、各要件への準拠の確認や、違反の原因となりうる問題の修正を簡単に行うことができます。
+
+Sumo Logic が PCI アプリケーションの基礎としているのは、PCI DSS
+Requirements and Security Assessment Procedures のバージョン 2.0
+です。要件 1 ～ 11
+に対してカスタムビルドのダッシュボードがあるため、各要件に関連するデータに照準を合わせることができます。(要件
+12
+の「すべての人員の情報セキュリティに対処するポリシーを保有する」については、ログ
+データからの測定ができないため、ダッシュボードは用意されていません)。
+
+各要件を次に示します。
+
+* **要件 1:**
+ ファイアウォール構成をインストールおよび保守して、カード所有者データを保護する。
+
+* **要件 2:** システム
+パスワードやその他のセキュリティ
+パラメータには、ベンダー提供のデフォルト値を使用しない。
+
+* **要件 3:** 保存されているカード所有者データを保護する。
+
+* **要件 4:** オープンなパブリック
+ネットワーク上で転送するカード所有者データを暗号化する。
+
+* **要件 5:** すべてのシステムをマルウェアから保護し、アンチウイルス
+ソフトウェアまたはプログラムを定期的に更新する。
+
+* **要件 6:** セキュアなシステムおよびアプリケーションを開発して保守する。
+
+* **要件 7:** ビジネス上の知る必要性を基準にして、カード所有者データへのアクセスを制限する。
+
+* **要件 8:** システム
+コンポーネントへのアクセスを識別して認証する。
+
+* **要件 9:** カード所有者データへの物理アクセスを制限する。
+
+* **要件 10:** ネットワーク
+リソースとカード所有者データへのすべてのアクセスをトラッキングおよびモニタリングする。
+
+* **要件 11:** セキュリティ
+システムおよびプロセスを定期的にテストする。
+
+
+これらの標準のいくつかの側面は、ログ
+データの外部で設定されたポリシーに基づきますが、Sumo Logic
+は、これらの標準をデータ駆動型でモニタリングします。たとえば、Sumo Logic
+のアプリケーションでは、個々のアクションの監査が必要な要件をモニタリングできます。
+
+### \[PCI Posture Overview (PCI の状態の概要)\] ダッシュボード
+
+\[Posture Overview (状態の概要)\]
+ダッシュボードは、現在発生している失敗の状態の概要や、過去 7
+日間に発生した失敗の数を示すグラフと考えてください。これらの失敗にはラベルが付いており、その失敗によって違反した可能性のある
+PCI 要件が明確に示されています。
+
+![PCI_PostsureOverview.png](/img/pci-standards/PCI_PostsureOverview.png)
+
+**Current PCI State (現在の PCI の状態)。**過去 1
+日間に発生した失敗の数に関連付けられている 1
+つの色分けされた値が表示されます。
+
+**Failures by Requirements (要件別の失敗の数)。**失敗の数が PCI
+要件別に表示されます。
+
+**History of Failures (失敗の履歴)。**過去 1
+週間に発生したすべての失敗のグラフが表示されます。
+
+## \[PCI Requirement Compliance Status (PCI 要件のコンプライアンス状態)\] ダッシュボード
+
+\[PCI Requirement Compliance Status (PCI 要件のコンプライアンス状態)\]
+ダッシュボードには、各 PCI
+要件の未解決のインシデント数が簡潔に表示されます。
+
+![PCI_ComplianceRequirement_Dashboard.png](/img/pci-standards/PCI_ComplianceRequirement_Dashboard.png)
+
+## \[PCI Requirement 1 (PCI 要件 1)\] ダッシュボード
+
+\[PCI Requirement 1 Secure Network Monitoring (PCI 要件 1 セキュア
+ネットワーク モニタリング)\]
+ダッシュボードでは、ファイアウォールをインストールおよび設定してカード所有者データを適切に保護するという要件に組織が従っているかが分かります。
+
+この要件に関する情報は、カード所有者の送受信アクティビティなどのネットワーク
+アクティビティやイベントのほか、ネットワーク設定変更でも確認できます。
+
+![PCI_Requirement1_Dashboard.png](/img/pci-standards/PCI_Requirement1_Dashboard.png)
+
+## \[PCI Requirement 2 (PCI 要件 1)\] ダッシュボード
+
+\[PCI Requirement 2 Default Setting Monitoring (PCI 要件 2
+デフォルト設定のモニタリング)\]
+ダッシュボードには、ベンダー提供またはデフォルトのシステム
+パスワードやセキュリティ
+パラメータが組織で使用されているかどうかに関する情報が表示されます。
+
+![PCI_Requirement2_Dashbaord.png](/img/pci-standards/PCI_Requirement2_Dashbaord.png)
+
+## \[PCI Requirement 3 (PCI 要件 1)\] ダッシュボード
+
+\[PCI Requirement 31 Protect Stored Cardholder Data (PCI 要件 31
+保存されているカード所有者データの保護)\]
+ダッシュボードには、保存されているカード所有者データの保護に関するコンプライアンスの詳細が表示されます。
+
+![PCI_Requirement3_Dashboard.png](/img/pci-standards/PCI_Requirement3_Dashboard.png)
+
+## \[PCI Requirement 4 (PCI 要件 1)\] ダッシュボード
+
+\[PCI Requirement 4 (PCI 要件 4)\]
+ダッシュボードには、組織がカード所有者データを暗号化しているかどうかの状態が報告されます。このダッシュボードのパネルには、暗号化が必要なデータのフローを処理するファイアウォールやその他のホスト、ポートなどで生成されたインシデントの情報が表示されます。
+
+![PCI_Requirement4_Dashboard.png](/img/pci-standards/PCI_Requirement4_Dashboard.png)
+
+## \[PCI Requirement 5 (PCI 要件 1)\] ダッシュボード
+
+\[PCI Requirement 5 Anti Virus Updates (PCI 要件 5
+アンチウイルスの更新)\] ダッシュボードでは、アンチウイルス
+ソフトウェアが定期的に更新されているかや、アンチウイルスがサーバに脅威を与えていないか、アンチウイルスの更新が失敗していないかを確認できます。
+
+![PCI_Requirement5_Dashboard.png](/img/pci-standards/PCI_Requirement5_Dashboard.png)
+
+## \[PCI Requirement 6 (PCI 要件 1)\] ダッシュボード
+
+\[PCI Requirement 6 Application Updates (PCI 要件 6
+アプリケーションの更新)\]
+ダッシュボードには、デプロイで実行されたアプリケーションのアップグレードの状態が表示されます。重大な脆弱性もモニタリングされます。
+
+![PCI_Requirement6_Dashboard.png](/img/pci-standards/PCI_Requirement6_Dashboard.png)
+
+## \[PCI Requirement 7 (PCI 要件 1)\] ダッシュボード
+
+\[PCI Requirement 7 Cardholder Data Access Monitoring (PCI 要件 7
+カード所有者データへのアクセスのモニタリング)\]
+ダッシュボードでは、組織がカード所有者データへのアクセスを制限し、明確な目的を持ったユーザにのみアクセスを許可しているかを確認できます。このダッシュボードには、カード所有者の情報が保存されている環境に対してアクセスの試みがないかを監視する多数のパネルが含まれています。このため、どのユーザがデータへのアクセスを試みているかを簡単に知ることができます。
+
+![PCI_Requirement7_Dashboard.png](/img/pci-standards/PCI_Requirement7_Dashboard.png)
+
+## \[PCI Requirement 8 (PCI 要件 1)\] ダッシュボード
+
+\[PCI Requirement 8 User Activity (PCI 要件 8 ユーザ アクティビティ)\]
+ダッシュボードでは、一意の ID
+を持つ各ユーザに準拠できます。パネルには、アカウントの作成や有効化、アカウントの削除や無効化、およびパスワードの変更に関する情報が表示されます。また、1
+週間の間にユーザ
+アカウントが作成または削除された総数の概要を示すグラフも表示されます。
+
+![PCI_Requirement8_Dashboard.png](/img/pci-standards/PCI_Requirement8_Dashboard.png)
+
+## \[PCI Requirement 9 (PCI 要件 1)\] ダッシュボード
+
+\[PCI Requirement 9 Physical Access (PCI 要件 9 物理アクセス)\]
+ダッシュボード内のパネルでは、カード所有者データを含むマシンへの物理アクセスに違反がないかが検査されます。各アクセス
+リクエストは、ユーザ名ごとにログに記録され、表示されます。
+
+![PCI_Requirement9_Dashboard.png](/img/pci-standards/PCI_Requirement9_Dashboard.png)
+
+## \[PCI Requirement 10 (PCI 要件 1)\] ダッシュボード
+
+\[PCI Requirement 10 Data Access (PCI 要件 10 データ アクセス)\]
+ダッシュボードには、ネットワーク
+リソースがアクセスされるたびにトラッキングを実行するパネルが含まれています。
+
+![PCI_Requirement10_Dashboard.png](/img/pci-standards/PCI_Requirement10_Dashboard.png)
+
+## \[PCI Requirement 11 (PCI 要件 1)\] ダッシュボード
+
+\[PCI Requirement 11 Vulnerability Scan (PCI 要件 11 脆弱性スキャン)\]
+ダッシュボードでは、セキュリティ
+システムを定期的にテストするという要件に従うことができます。このダッシュボードでは、過去
+1
+日間にスキャンされたホストの数と、対応が必要な脆弱性を調べることができます。
+
+![PCI_Requirement11_Dashboard.png](/img/pci-standards/PCI_Requirement11_Dashboard.png)

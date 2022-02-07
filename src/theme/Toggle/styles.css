@@ -3,7 +3,6 @@
   color: var(--ifm-navbar-link-color);
   cursor: pointer;
   user-select: none;
-  margin: auto;
   width: 28px;
   height: 28px;
   border-radius: 50%;

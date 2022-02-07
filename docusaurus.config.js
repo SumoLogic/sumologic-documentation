@@ -4,7 +4,7 @@
 const lightCodeTheme = require('prism-react-renderer/themes/github');
 const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
-/** @type {import('@docusaurus/types').Config} */
+/** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
   title: 'Sumo Logic Docs',
   tagline: '',
@@ -18,14 +18,32 @@ module.exports = {
   stylesheets: [
     'https://fonts.googleapis.com/css?family=Material+Icons',
   ],
+  i18n: {
+    // https://docusaurus.io/docs/i18n/tutorial
+    defaultLocale: 'en',
+    locales: ['en', 'ja'],
+    localeConfigs: {
+      en: { label: 'English' },
+      ja: { label: '日本語' },
+    },
+  },
   presets: [
     [
       'classic',
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
-          sidebarPath: require.resolve('./sidebars.js'),
+          sidebarPath: require.resolve('./sidebars.ts'),
           editUrl: 'https://github.com/SumoLogic/sumologic-documentation/edit/main/',
+          //sidebarCollapsible: true,
+          //sidebarCollapsed: false,
+          remarkPlugins: [
+            //https://www.npmjs.com/package/remark-code-import
+            require('remark-code-import'),
+            //https://www.npmjs.com/package/remark-import-partial 
+            // snippet support {@import ./my-name.md} relative filepath to md file
+            require('remark-import-partial'),
+          ],
           showLastUpdateAuthor: true,
           showLastUpdateTime: true,
           admonitions: {
@@ -94,6 +112,7 @@ module.exports = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+    autoCollapseSidebarCategories: true,
     // SEO Global Metadata
     metadata: [{name: 'keywords', content: 'sumo logic, documentation, tutorials, quick starts'}],
     announcementBar: {
@@ -279,6 +298,11 @@ module.exports = {
             label: 'Doc Contributions',
             to: '/docs/contribution',
             position: 'left',
+          },
+          {
+            // i18n
+            type: 'localeDropdown',
+            position: 'right',
           },
         ],
       },
