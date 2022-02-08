@@ -194,6 +194,9 @@ function NavbarMobileSidebar({
         })}
       >
         <div className='navbar-sidebar__item menu'>
+        <div>
+         <a href="https://www.sumologic.com/sign-up/"><button className='navbar-trial-mobile' to='https://www.sumologic.com/sign-up/'>Start a Free Trial</button></a>
+         </div>
           <ul className='menu__list'>
             {items.map((item, i) => (
               <NavbarItem mobile {...item} onClick={toggleSidebar} key={i} />
@@ -264,6 +267,7 @@ function Navbar(): JSX.Element {
             <NavbarItem {...item} key={i} />
           ))}
           <div className='navbar__item navbar__item--dock'>
+          <a href="https://www.sumologic.com/sign-up/"><button className='navbar-trial' to='https://www.sumologic.com/sign-up/'>Start a Free Trial</button></a>
             {!colorModeToggle.disabled && (
               <Toggle
                 className={styles.toggle}
