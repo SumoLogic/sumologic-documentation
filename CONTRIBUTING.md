@@ -28,10 +28,9 @@ When you open a pull request, you will be asked to acknowledge our Contributor L
 
 We currently cut branches from **main branch** for accepting documentation. As our processes refine and work expands, we may use the [Gitflow Workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow) for development content.
 
-<!-- The following branches are strictly for the Unity doc team to test content:
+As Pull Requests (PR) are merged to the main branch by the Sumo Logic Doc team, the content builds and deploys to a staging site. This can be reviewed and tested thoroughly on a server, rather than a local.
 
-* The **staging branch** is used internally as a pre-release for production. When approved content is ready to merge, the team tests on this branch, approves, and merges that PR to master.
-* The **sandbox branch** is used for development site and content work previews. The team uses this branch strictly for testing new features. -->
+When all content is tested and ready for live, a Sumo Logic Doc team member can tag a release to build and deploy to Production. This site is live to the world to search, use, and read to learn Sumo Logic.
 
 ### Commit Message Guidelines
 
