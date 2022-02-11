@@ -75,6 +75,28 @@ module.exports = {
           },
         ]
       },],
+      [
+        '@docusaurus/plugin-content-blog',
+        {
+          /**
+           * Release Notes blog
+           */
+          id: 'release-notes',
+          /**
+           * URL route for the blog section of your site.
+           * *DO NOT* include a trailing slash.
+           */
+          routeBasePath: 'release-notes',
+          /**
+           * Path to data on filesystem relative to site dir.
+           */
+          path: './release-notes',
+          showReadingTime: false,
+          postsPerPage: 'ALL',
+          blogSidebarTitle: 'All Releases',
+          blogSidebarCount: 'ALL',
+        },
+      ],
     /* See this site to configure - live editor https://github.com/jlvandenhout/docusaurus-plugin-docs-editor
        Requires adding OAUTH app https://docs.github.com/en/developers/apps/building-oauth-apps/creating-an-oauth-app
     [
@@ -298,6 +320,11 @@ module.exports = {
             label: 'Doc Contributions',
             to: '/docs/contribution',
             position: 'left',
+          },
+          {
+            //Release Notes blog
+            label: 'Release Notes',
+            to: '/release-notes',
           },
           {
             // i18n
