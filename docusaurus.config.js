@@ -55,6 +55,19 @@ module.exports = {
             }
           },
         },
+        blog: {
+          blogTitle: 'Release Notes',
+          blogDescription: 'Sumo Logic Release Notes',
+          blogSidebarTitle: 'All Releases',
+          postsPerPage: 'ALL',
+          path: 'blog',
+          routeBasePath: 'release-notes',
+          showReadingTime: false,
+          feedOptions: {
+            type: 'all',
+            copyright: `Copyright © ${new Date().getFullYear()} Sumo Logic`,
+          },
+        },
         theme: {
           customCss: require.resolve('./src/css/sumo.scss'),
         },
@@ -75,6 +88,7 @@ module.exports = {
           },
         ]
       },],
+      
     /* See this site to configure - live editor https://github.com/jlvandenhout/docusaurus-plugin-docs-editor
        Requires adding OAUTH app https://docs.github.com/en/developers/apps/building-oauth-apps/creating-an-oauth-app
     [
@@ -298,6 +312,11 @@ module.exports = {
             label: 'Doc Contributions',
             to: '/docs/contribution',
             position: 'left',
+          },
+          {
+            //Release Notes blog
+            label: 'Release Notes',
+            to: '/release-notes',
           },
           {
             // i18n
