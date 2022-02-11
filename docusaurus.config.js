@@ -97,7 +97,7 @@ module.exports = {
           blogSidebarCount: 'ALL',
           feedOptions: {
             type: 'all',
-            copyright: `Copyright © ${new Date().getFullYear()} Facebook, Inc.`,
+            copyright: `Copyright © ${new Date().getFullYear()} Sumo Logic`,
           },
         },
       ],

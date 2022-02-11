@@ -18,7 +18,7 @@
  
    return (
      <div className={styles.sidebar}>
-       <h3 className={styles.sidebarItemTitle}>{sidebar.title}</h3>
+       <a href="/release-notes"><h3 className={styles.sidebarItemTitle}>{sidebar.title}</h3></a>
        <ul className={styles.sidebarItemList}>
          {sidebar.items.map(item => {
            const postYear = item.permalink.split('/')[2];
