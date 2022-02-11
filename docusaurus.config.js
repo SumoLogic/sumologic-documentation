@@ -95,6 +95,10 @@ module.exports = {
           postsPerPage: 'ALL',
           blogSidebarTitle: 'All Releases',
           blogSidebarCount: 'ALL',
+          feedOptions: {
+            type: 'all',
+            copyright: `Copyright © ${new Date().getFullYear()} Facebook, Inc.`,
+          },
         },
       ],
     /* See this site to configure - live editor https://github.com/jlvandenhout/docusaurus-plugin-docs-editor
