@@ -1,5 +1,5 @@
 ---
-title: Dashboard Refresh
+title: Dashboard  - Refresh Icon
 tags: [dashboard]
 hide_table_of_contents: true
 ---
