@@ -7,6 +7,11 @@ on:
         description: Host name of the deployed environment
         required: true
         type: string
+      base_url:
+        description: Base url for the deployed environment. Should start and end with a slash.
+        required: false
+        default: "/"
+        type: string
       environment:
         description: GHA environment name
         required: true
@@ -26,12 +31,13 @@ jobs:
     runs-on: ubuntu-20.04
     environment:
       name: ${{ inputs.environment }}
-      url: ${{ inputs.hostname }}
+      url: ${{ inputs.hostname }}${{ inputs.base_url }}
     env:
       CI: true
       NODE_ENV: production
       AWS_PAGER: ""
       HOSTNAME: ${{ inputs.hostname }}
+      BASE_URL: ${{ inputs.base_url }}
       AWS_DEFAULT_REGION: us-east-1
       AWS_EC2_METADATA_DISABLED: "true"
     steps:
@@ -56,11 +62,11 @@ jobs:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         run: |
-          aws s3 sync --delete build/ s3://${S3_BUCKET_NAME}/
+          aws s3 sync --delete build/ s3://${S3_BUCKET_NAME}${BASE_URL}
           export INVALIDATION_ID=$(
             aws cloudfront create-invalidation \
               --distribution-id $CLOUDFRONT_DISTRIBUTION_ID \
-              --paths "/*" \
+              --paths "${BASE_URL}*" \
             | jq -r .Invalidation.Id
           )
           aws cloudfront wait invalidation-completed \
