@@ -9,7 +9,7 @@ module.exports = {
   title: 'Sumo Logic Docs',
   tagline: '',
   url: process.env.HOSTNAME || "http://localhost:3000",
-  baseUrl: '/',
+  baseUrl: process.env.BASE_URL || "/",
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'https://www.sumologic.com/favicon.ico',
