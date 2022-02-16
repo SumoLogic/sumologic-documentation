@@ -10,22 +10,24 @@ Docusaurus supports **[Markdown](https://daringfireball.net/projects/markdown/sy
 
 Markdown documents have metadata at the top called [Front Matter](https://jekyllrb.com/docs/front-matter/). Every page should have an `id` used for sidebar navigation. The title of the page is the only H1 on the page. 
 
-```text title="my-doc.md"
-// highlight-start
+```markdown
 ---
-id: my-doc-id
-description: My document description
-slug: /my-custom-url
+id: page-id
+sidebar_title: Navigation title
+description: Learn more about... 
 ---
-// highlight-end
 
-# Title Markdown heading
-
-Markdown text with [links](./hello.md)
+# Title of the Page
 ```
 
-Additional options include the following:
+| Parameter | Description |
+| -- | -- |
+| `id:` | **Required.** Id for the page used in the sidebar and as the canonical link. Keep it short and only use dashes. |
+| `sidebar_title:` | Optional, use a different title for the side navigation. Keep this title short. It does not affect the canonical link or page title. |
+| `description:` | Optional, one sentence describing what the user will find in the page for searches. Otherwise the first couple sentences are used for searches. |
+| `# Title of the Page` | **Required.** Only use an H1 once for the title of the page. This title is used in navigation is a `sidebar_title` is not included.|
 
+For full options, see [Docusaurus Markdown front matter](https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-docs#markdown-front-matter).
 
 
 ## Links
@@ -44,9 +46,9 @@ Let's see how to [Create a document](./create-a-document.md).
 
 ## Images
 
-Regular Markdown images are supported.
+We recommend using .png for all images. Save these images in `/static/img`.
 
-Add an image at `static/img/sumo-square.png` and display it in Markdown:
+Add an image at `static/img/` and display it in Markdown with alt text, file path of `/img`, and image name:
 
 ```md
 ![Sumo Logic logo](/img/sumo-square.png)
@@ -122,6 +124,10 @@ function HelloDocusaurus() {
   return <h1>Hello, Docusaurus!</h1>;
 }
 ```
+
+To highlight lines in the code, use `{#}` in the title line with lines numbers.
+
+For a full list of options, see [Docusaurus Code Blocks](https://docusaurus.io/docs/markdown-features/code-blocks).
 
 ### Import GitHub Repo File
 
