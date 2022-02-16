@@ -74,7 +74,8 @@ module.exports = {
           collapsible: true,
           collapsed: false,
           items: [
-            'contribution/templates/partner-app'
+            'contribution/templates/partner-app',
+            'contribution/templates/template-doc'
           ]
         }
       ],
