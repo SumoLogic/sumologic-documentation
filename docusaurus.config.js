@@ -59,6 +59,7 @@ module.exports = {
           blogTitle: 'Release Notes',
           blogDescription: 'Sumo Logic Release Notes',
           blogSidebarTitle: 'All Releases',
+          blogSidebarCount: 'ALL',
           postsPerPage: 'ALL',
           path: 'blog',
           routeBasePath: 'release-notes',
