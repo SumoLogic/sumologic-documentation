@@ -22,8 +22,6 @@ This guide will use a helper script to automate much of the setup process. The f
 Arm architectures for either Linux or Mac are not yet supported.
 :::
 
-# Steps
-
 ## Step 1 - Create a trial account
 If you already have a Sumo Logic account, you can skip this step and go straight to [Step 2](#step-2---create-a-sumo-logic-access-key).
 
