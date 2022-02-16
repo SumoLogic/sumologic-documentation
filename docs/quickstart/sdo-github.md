@@ -29,9 +29,6 @@ The scripts and Terraform code provided in this guide will have the following ou
 - A single webhook will be added to your specified GitHub organization that will send events to Sumo Logic. You will provide a GitHub personal access token to be used to create the webhook.  The webhook can be removed at any time to stop sending data to Sumo Logic.
 - A specific version of Terraform for your OS and architecture will be downloaded and be installed in isolation to the local working directory. It **will not** affect any existing system installations of Terraform.
 
-
-# Steps
-
 ## Step 1 - Create a trial account
 If you already have a Sumo Logic account, you can skip this step and go straight to [Step 2](#step-2---create-a-sumo-logic-access-key).
 
