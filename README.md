@@ -14,10 +14,15 @@ We recommend forking the repo, creating all content changes in branches, and sub
 
 ## Building Locally
 
-The site includes translations into other languages.
+Docusaurus requires the following to build on locals:
+
+* [NodeJS](https://nodejs.org/en/download/) version >= 14
+* [Yarn](https://yarnpkg.com/en/) version >= 1.5, you can install with Brew: `brew install yarn`
+
+The site includes translations into other languages. To build on your local:
 
 1. Clone the repo using Git or tools like GitHub Desktop.
-2. Run the install command: `yarn install`
+2. In a terminal, change to the cloned repo folder. Run the install command: `yarn install` 
 3. To build locally and test links, use build: `yarn build`
 4. To serve and review, use one of the following:
 
