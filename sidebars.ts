@@ -38,6 +38,16 @@ module.exports = {
         'quickstart/quickstart-github',
       ],
     },
+    {
+      //Put in stuff to test, will be moved later!
+      type: 'category',
+      label: 'Converted Docs',
+      collapsible: true,
+      collapsed: false,
+      items: [
+        'Manage/Collection/Processing-Rules/create-a-processing-rule',
+      ],
+     },
   ],
   integrations: [
     'integrations/integrations',
