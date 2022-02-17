@@ -8,8 +8,15 @@ description: Processing rules can filter and forward data sent to Sumo Logic.
 There are two user interfaces (UI) to create a Processing Rule, classic and new. The new interface is only available on certain Sources and is being released incrementally.
 Each UI is documented in a separate tab below.
 
-<Tabs>
-  <TabItem value="new ui" label="New UI" default>
+<Tabs
+  className="unique-tabs"
+  defaultValue="new-ui"
+  values={[
+    {label: New UI, value: 'new-ui'},
+    {label: 'Classic UI', value: 'classic-ui'},
+  ]}>
+
+<TabItem value="new-ui">
   
 #### New interface for Hosted Collector Sources
 
