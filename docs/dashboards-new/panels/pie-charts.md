@@ -18,21 +18,23 @@ which would produce results such as:
 
 ![AggResult.png](/img/dashboards-new/panels/pie-charts/AggResult.png)
 
-### Create a pie chart
+## Create a pie chart
 
-1.  Create or open a Dashboard (New) and click on **Add Panel \>
-    Categorical**.  
+1. Create or open a Dashboard (New) and click on **Add Panel \> Categorical**.
+
     ![categorical.png](/img/dashboards-new/panels/pie-charts/categorical.png)
-2.  Provide a Log or Metric query and press **Enter** for it to run.
+
+1. Provide a Log or Metric query and press **Enter** for it to run.
    \<div class="mt-contentreuse-widget"
     page="Beta/Dashboard_(New)/02Create_a_Dashboard_(New)"
     section="Step 3. Adding queries" show="false\>
 
    \</di\>
-3.  Once the query runs you will need to flip the chart type to **Pie**.  
-    ![new pie
-    chart.png](/img/dashboards-new/panels/pie-charts/new-pie-chart.png)
-4.  [Modify the chart](modify-chart.md) as desired.
-5.  Click the **Add to Dashboard** button on the top right of the window
-    to add the panel to your dashboard.  
+1. Once the query runs you will need to flip the chart type to **Pie**.
+
+    ![new pie chart.png](/img/dashboards-new/panels/pie-charts/new-pie-chart.png)
+
+1. [Modify the chart](modify-chart.md) as desired.
+1. Click the **Add to Dashboard** button on the top right of the window to add the panel to your dashboard.  
+
     ![Add to Dashboard button.png](/img/dashboards-new/create-dashboard-new/Add-to-Dashboard-button.png)

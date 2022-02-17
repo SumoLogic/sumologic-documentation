@@ -9,7 +9,10 @@ Combo charts have a secondary vertical axis allowing you to view two aggregates 
 For example, say we're running a query like:
 
 ```sql
-_sourceCategory=*apache* | parse "HTTP/1.1\" * * * " as status_code, size, referrer | timeslice 5m | avg(size), count by _timeslice
+_sourceCategory=*apache* 
+| parse "HTTP/1.1\" * * * " as status_code, size, referrer 
+| timeslice 5m 
+| avg(size), count by _timeslice
 ```
 
 Generally, this query would produce a bar or column chart that looks a bit like this:

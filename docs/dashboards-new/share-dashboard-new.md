@@ -4,7 +4,7 @@ id: share-a-dashboard-new
 
 # Share a Dashboard (New)
 
-After you've created a custom Dashboard (New) you may also want to share
+After you have created a custom Dashboard (New) you may also want to share
 it with coworkers within your organization. This page walks you through
 these tasks.
 

@@ -23,38 +23,29 @@ To edit a panel, do the following:
 1.  On the chart panel, click the **Details** icon. 
 2.  Select **Edit** from the drop-down list.
 
-![edit new
-panel.png](/img/dashboards-new/panels/modify-chart/edit-new-panel.png)
+![edit new panel.png](/img/dashboards-new/panels/modify-chart/edit-new-panel.png)
 
-The **Chart** page appears with the chart settings menu bar on the far
-right. The **Display** options are shown by default.
+The **Chart** page appears with the chart settings menu bar on the far right. The **Display** options are shown by default.
 
-![edit panel
-options.png](/img/dashboards-new/panels/modify-chart/edit-panel-options.png)
+![edit panel options.png](/img/dashboards-new/panels/modify-chart/edit-panel-options.png)
 
 ## Modify general settings
 
 To modify general settings click the **General** icon in the menu bar.
 
-![mar 21 general
-settings.png](/img/dashboards-new/panels/modify-chart/mar-21-general-settings.png)
+![mar 21 general settings.png](/img/dashboards-new/panels/modify-chart/mar-21-general-settings.png)
 
-* To change the name of the chart, click in the **Chart Title** field
-    and enter a new name.
-* To change the font size click the **Title Font Size** arrows up or
-    down. 
-* To add a helpful description, click in the **Description** field and
-    enter a brief explanation of the chart's purpose.
+* To change the name of the chart, click in the **Chart Title** field and enter a new name.
+* To change the font size click the **Title Font Size** arrows up or down. 
+* To add a helpful description, click in the **Description** field and enter a brief explanation of the chart's purpose.
 
-To save your settings and return to the dashboard, click **Update
-Dashboard** in the upper right corner of the window. 
+To save your settings and return to the dashboard, click **Update Dashboard** in the upper right corner of the window. 
 
 ![MC_Update_Dashboard.png](/img/dashboards-new/panels/modify-chart/MC_Update_Dashboard.png)
 
 ### Logs Settings
 
-You have the option to use the [receipt time](../../../05Search/Get-Started-with-Search/How-to-Build-a-Search/Use-Receipt-Time.md "Use Receipt Time") or
-the default message time.
+You have the option to use the [receipt time](../../../05Search/Get-Started-with-Search/How-to-Build-a-Search/Use-Receipt-Time.md "Use Receipt Time") or the default message time.
 
 ![dashboard new time settings.png](/img/dashboards-new/panels/modify-chart/dashboard-new-time-settings.png)
 
@@ -64,7 +55,7 @@ You can toggle [Auto Parse Mode](../../../05Search/Get-Started-with-Search/How-
 
 ### Link dashboards
 
-You can configure links to other dashboards on a panel. When you [select a data point on the panel](../Drill_down_to_discover_root_causes.md "Drill down to discover root causes") you will have an option to click on linked dashboards. This allows you to quickly reference other related dashboards to investigate. 
+You can configure links to other dashboards on a panel. When you [select a data point on the panel](../drill_down_to_discover_root_causes.md) you will have an option to click on linked dashboards. This allows you to quickly reference other related dashboards to investigate. 
 
 1. Click the **Add Dashboard Link** from the bottom of the general settings menu.
 
@@ -109,25 +100,15 @@ To customize the visual display of a chart, do the following:
 
 ### Group by setting
 
-Honeycomb charts and categorical column and bar charts from metrics
-queries have a Group By setting. Use the **Group By** setting to group
-the data shown in your chart by a dimension already displayed in the
-output data.
+Honeycomb charts and categorical column and bar charts from metrics queries have a Group By setting. Use the **Group By** setting to group the data shown in your chart by a dimension already displayed in the output data.
 
 ![group by setting.png](/img/dashboards-new/panels/modify-chart/group-by-setting.png)
 
 ## Override dashboard displays
 
-The ability to override dashboard displays allows you to create panel
-visualizations that make charts easier to assess and form conclusions.
-You can override selected dashboard displays to create a visual story
-that highlights what is most important to monitor.
+The ability to override dashboard displays allows you to create panel visualizations that make charts easier to assess and form conclusions. You can override selected dashboard displays to create a visual story that highlights what is most important to monitor.
 
-For example, you may want to set a specific time-series to red to
-signify that it represents errors, or overlay two different metrics with
-different axis ranges so it is easy to correlate across them. You may
-also want to rename the legend and tooltip values of a chart for
-readability and ease of use.
+For example, you may want to set a specific time-series to red to signify that it represents errors, or overlay two different metrics with different axis ranges so it is easy to correlate across them. You may also want to rename the legend and tooltip values of a chart for readability and ease of use.
 
 To override select dashboard displays, do the following:
 
@@ -135,22 +116,16 @@ To override select dashboard displays, do the following:
 
     ![MC_Display_Overrides_icon.png](/img/dashboards-new/panels/modify-chart/MC_Display_Overrides_icon.png)
 
-1. Enter a **Query or series name** you want to override. This is the
-    letter of the row the query is assigned to, for
-    example **#A** and **#B**.  
+1. Enter a **Query or series name** you want to override. This is the letter of the row the query is assigned to, for example **#A** and **#B**.  
       
-    The following image shows a metrics and logs query charted together.
-    In the **Display Overrides** menu the Logs query is referenced
-    as **#B** to assign an alias and red color.   
-    ![Logs and
-    Metrics.png](/img/dashboards-new/panels/modify-chart/Logs-and-Metrics.png)
-1. Enter an **Alias**, as necessary. **Metrics** monitors allow you to
-    specify output metadata as a variable wrapped in double curly
-    brackets, `{{ }}`. For example, if my output metrics
-    has `environment`, I can specify it in my alias
-    as `{{ metric }} on {{ deployment }}`.  
-    ![Monitor with metrics using metadata in
-    alias.png](/img/dashboards-new/panels/modify-chart/Monitor-with-metrics-using-metadata-in-alias.png)
+    The following image shows a metrics and logs query charted together. In the **Display Overrides** menu the Logs query is referenced as **#B** to assign an alias and red color.   
+    
+    ![Logs and Metrics.png](/img/dashboards-new/panels/modify-chart/Logs-and-Metrics.png)
+
+1. Enter an **Alias**, as necessary. **Metrics** monitors allow you to specify output metadata as a variable wrapped in double curly brackets, `{{ }}`. For example, if my output metrics has `environment`, I can specify it in my alias as `{{ metric }} on {{ deployment }}`.  
+    
+    ![Monitor with metrics using metadata in alias.png](/img/dashboards-new/panels/modify-chart/Monitor-with-metrics-using-metadata-in-alias.png)
+
 1. Select a **Property** from the drop-down list. You can add as many properties and needed.
 1. Optionally, add another override by selecting **Add New Override** and completing steps 2 - 4.
 1. To save your customized settings and return to the dashboard, click **Update Dashboard** in the upper right corner of the window. 
@@ -187,7 +162,7 @@ To change chart axes displays, do the following:
    * **Decimals**. Sets the precision of units displayed. Select the
        number of decimals to show with a unit, up to 9.
 
-    The **Right Y-Axis** has the same options as the **Left Y-Axis**. If you have created a [Display Override](./modify-chart.md) and set the **YAxisType** property to **Right Y-Axis** for a query you will have the option to modify the **Right Y-Axis** here.
+    The **Right Y-Axis** has the same options as the **Left Y-Axis**. If you have created a [Display Override](#override-dashboard-displays) and set the **YAxisType** property to **Right Y-Axis** for a query you will have the option to modify the **Right Y-Axis** here.
 
     ![display override right y-axis.png](/img/dashboards-new/panels/modify-chart/display-override-right-y-axis.png)
 
@@ -203,15 +178,13 @@ To change chart axes displays, do the following:
     * **Label Font Size**. Size of the label font
     * **Unit Font Size**. Size of the unit font
 
-1. To save your customized settings and return to the dashboard, click
-    **Update Dashboard** in the upper right corner of the window. 
+1. To save your customized settings and return to the dashboard, click **Update Dashboard** in the upper right corner of the window. 
 
     ![MC_Update_Dashboard.png](/img/dashboards-new/panels/modify-chart/MC_Update_Dashboard.png)
 
 ## Modify chart legend
 
-You can toggle the chart Legend display on and off, where it appears, as
-well as modifying the legend display properties.
+You can toggle the chart Legend display on and off, where it appears, as well as modifying the legend display properties.
 
 **To modify the chart legend, do the following:**
 
@@ -219,11 +192,8 @@ well as modifying the legend display properties.
 
 ![MC_Legend_icon.png](/img/dashboards-new/panels/modify-chart/MC_Legend_icon.png)
 
-1. To turn **OFF** the legend display, toggle **Show Legend** to the
-    **Left**. To turn the legend display back **ON**, toggle **Show
-    Legend** to the **Right**.
-1. Specify the **Position** of the Legend by clicking **Right** or
-    **Bottom**.
+1. To turn **OFF** the legend display, toggle **Show Legend** to the **Left**. To turn the legend display back **ON**, toggle **Show Legend** to the **Right**.
+1. Specify the **Position** of the Legend by clicking **Right** or **Bottom**.
 1. Modify the following **Display Properties**, as needed:
 
     * **Font Size**. Size of the legend font
@@ -233,8 +203,7 @@ well as modifying the legend display properties.
 
     ![MC_Legend_DisplayProperties.png](/img/dashboards-new/panels/modify-chart/MC_Legend_DisplayProperties.png)
 
-1. To save your customized settings and return to the dashboard, click
-    **Update Dashboard** in the upper right corner of the window. 
+1. To save your customized settings and return to the dashboard, click **Update Dashboard** in the upper right corner of the window. 
 
     ![MC_Update_Dashboard.png](/img/dashboards-new/panels/modify-chart/MC_Update_Dashboard.png)
 

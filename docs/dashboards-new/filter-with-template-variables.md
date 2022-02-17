@@ -13,9 +13,9 @@ variables from drop-down lists without having to manually edit queries.
 This feature requires two parts to work:
 
 1.  You [created a template
-    variable](./Filter_with_template_variables.md "Filter with template variables").
+    variable](./filter_with_template_variables.md).
 2.  You [added the template variable to your
-    query](./Filter_with_template_variables.md "Filter with template variables").
+    query](./filter_with_template_variables.md).
 
 ### Limitations
 
@@ -44,13 +44,13 @@ There are three types of template variables you can use as a
 dashboard filter:
 
 -   [Custom
-    List](./Filter_with_template_variables.md "Filter with template variables") -
+    List](./filter_with_template_variables.md) -
     a custom set of options
 -   [Metrics Metadata
-    Search](./Filter_with_template_variables.md "Filter with template variables") -
+    Search](./filter_with_template_variables.md) -
     metrics metadata based options 
 -   [Log
-    Search](./Filter_with_template_variables.md "Filter with template variables") -
+    Search](./filter_with_template_variables.md) -
     logs query based options
 
 #### Add a Custom List variable
@@ -214,7 +214,7 @@ Dashboard (New).
 
 Logs and metrics variables allow you to interject metadata into your
 queries. This section shows you how to use a [variable you
-created](./Filter_with_template_variables.md "Filter with template variables")
+created](./filter_with_template_variables.md)
 in a query.
 
 The variable must already exist on the dashboard to add a query with a

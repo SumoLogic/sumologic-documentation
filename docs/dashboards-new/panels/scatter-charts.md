@@ -4,28 +4,25 @@ id: scatter-charts
 
 # Scatter Charts
 
-Scatter charts are available in the [Dashboard
-(New)](../About_Dashboard_(New).md "About Dashboard (New)") platform.
+Scatter charts are available in the [Dashboard (New)](../about-dashboard-new.md) platform.
 
-Scatter charts display two independent numeric fields allowing you to
-see any correlation between them. You can visually determine how your
-fields relate to and affect one another.
+Scatter charts display two independent numeric fields allowing you to see any correlation between them. You can visually determine how your fields relate to and affect one another.
 
-The aggregate field is displayed as a collection of points. Each point
-requires two numerical fields for the X and Y axes.
+The aggregate field is displayed as a collection of points. Each point requires two numerical fields for the X and Y axes.
 
--   The **X dimension** must be numeric and is displayed against the X
-    axis of the scatter chart.
--   The **Y dimension** must be numeric and is displayed against the Y
-    axis of the scatter chart.
+* The **X dimension** must be numeric and is displayed against the X axis of the scatter chart.
+* The **Y dimension** must be numeric and is displayed against the Y axis of the scatter chart.
 
 You can modify the fields used for each axis as needed.
 
-For example, in the following query `logins` is the aggregate field and
-will be displayed as data points. The
-fields `latitude` and `longitude` can be used as dimensions.
+For example, in the following query `logins` is the aggregate field and will be displayed as data points. The fields `latitude` and `longitude` can be used as dimensions.
 
-`_sourceCategory=service "message=User logged in" remote_ip | parse "[remote_ip=*]" as remote_ip | lookup latitude, longitude from geo://location on ip = remote_ip | count as logins by latitude, longitude`
+```sql
+_sourceCategory=service "message=User logged in" remote_ip
+| parse "[remote_ip=*]" as remote_ip 
+| lookup latitude, longitude from geo://location on ip = remote_ip 
+| count as logins by latitude, longitude
+```
 
 ### Create a scatter chart
 

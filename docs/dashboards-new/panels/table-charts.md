@@ -14,11 +14,11 @@ which would produce results such as:
 
 ![AggResult.png](/img/dashboards-new/panels/table-charts/AggResult.png)
 
-### Create a table chart 
+## Create a table chart 
 
-**To add a panel with a table** chart:**
+To add a panel with a table chart:
 
-1.  Create or open a Dashboard (New) and click on **Add Panel \> Time     Series** or **Add Panel \> Categorical**.   
+1.  Create or open a Dashboard (New) and click on **Add Panel \> Time Series** or **Add Panel \> Categorical**.   
 
     ![time series or categorical.png](/img/dashboards-new/panels/table-charts/time-series-or-categorical.png)
 
@@ -26,13 +26,13 @@ which would produce results such as:
 
     You can create Log and Metric queries on the same panel.
 
-    #### Log query
+    **Log query:**
 
     Enter your aggregate [search query](../../../05Search/Search-Query-Language.md "Search Query Language") in the input field and press enter. Only search results that have been aggregated using a group or aggregate operator can be charted. See [Group or Aggregate Operators ](../../../05Search/Search-Query-Language/aaGroup.md "https://help.sumologic.com/Search/Search_Query_Language/aaGroup")for a list.
 
     ![Add log query.png](/img/dashboards-new/create-dashboard-new/Add-log-query.png)
 
-    #### Metrics query
+    **Metrics query:**
 
     Click the left-most dropdown option and select **Metrics**. You should be familiar with the basics of creating [metrics queries and alerts](../../../Metrics/Metric-Queries-and-Alerts.md "Metric Queries and Alerts") to ensure successful results. By default, the query builder is set
     to **Logs**.
@@ -57,8 +57,11 @@ If your query looks for URLs, when you create a table chart panel, the URLs disp
 
 For example, if you used this query to search for hits to the Sumo Logic Help system:
 
-```
-_sourceCategory=aws/cloudtrail  | keyvalue "LoginTo"  | count loginto | sort - _count
+```sql
+_sourceCategory=aws/cloudtrail  
+| keyvalue "LoginTo"  
+| count loginto 
+| sort - _count
 ```
 
 You would see results such as the following in the **Aggregates** tab.

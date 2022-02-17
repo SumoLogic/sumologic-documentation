@@ -14,13 +14,20 @@ To map your data you can: 
 For example, you could use the geoip operator to create a map chart:
 
 ```sql
-| parse "remote_ip=*]" as client_ip | geoip client_ip | count by latitude, longitude | sort _count
+| parse "remote_ip=*]" as client_ip 
+| geoip client_ip 
+| count by latitude, longitude 
+| sort _count
 ```
 
 Or, you could use the geo lookup operator to create a map chart:
 
 ```sql
-_sourceCategory=Error | parse regex "(\<client_i\>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})" | lookup latitude, longitude, country_code, country_name, region, city, postal_code from geo://location on ip = client_ip | count by latitude, longitude, country_code, country_name, region, city, postal_code | sort _count
+_sourceCategory=Error 
+| parse regex "(\<client_i\>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})" 
+| lookup latitude, longitude, country_code, country_name, region, city, postal_code from geo://location on ip = client_ip 
+| count by latitude, longitude, country_code, country_name, region, city, postal_code 
+| sort _count
 ```
 
 which would produce results such as:
