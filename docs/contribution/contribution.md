@@ -24,6 +24,10 @@ Another option is to clone the GitHub repository and edit locally. This is commo
 
 ### Fork and clone
 
+:::sumo Working with Github during ALPHA
+Fork will be for the future and Third Parties. For now, clone and branch to work.
+:::
+
 1. [Fork](https://help.github.com/articles/fork-a-repo/) the [sumologic-documentation](https://github.com/SumoLogic/sumologic-documentation) repository. Remember to [sync your fork](https://help.github.com/articles/syncing-a-fork/) and update branches as needed.
 1. Review documentation guidelines.
 

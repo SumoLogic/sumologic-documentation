@@ -132,7 +132,7 @@ module.exports = {
     metadata: [{name: 'keywords', content: 'sumo logic, documentation, tutorials, quick starts'}],
     announcementBar: {
       id: 'announcementBar',
-      content: `⭐️ This is an example theme, layout, content for a new Sumo Logic Documentation site. ⭐️`,
+      content: `⭐️ Welcome to the Alpha Version of the new Sumo Logic Doc Site! ⭐️`,
     },
     //Algolia Search -- FAKE FOR NOW! Replace.
     algolia: {

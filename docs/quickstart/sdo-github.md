@@ -76,7 +76,7 @@ Enter your GitHub and Sumo Logic information at the prompts:
 
 1. Enter the Sumo Logic Personal Access Token you created in [Step 2](#step-2---create-a-sumo-logic-access-key).
 
-1. Enter the region you created your Sumo Logic account in. [Use this guide to determine which region code to provide](https://help.sumologic.com/APIs/General-API-Information/Sumo-Logic-Endpoints-and-Firewall-Security#how-can-i-determine-which-endpoint-i-should-use)
+1. Enter the region you created your Sumo Logic account in. [Use this guide to determine which region code to provide](https://help.sumologic.com/APIs/General-API-Information/Sumo-Logic-Endpoints-and-Firewall-Security#how-can-i-determine-which-endpoint-i-should-use).
 
     ![Access Token](/img/get-started/github/sumo-logic-access-token.png)
 

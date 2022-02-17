@@ -33,8 +33,7 @@ You have a couple options to create and activate an account:
 
 ## Free Trial Accounts
 
-Sumo Logic Free Trial Accounts offer 30 days of Enterprise account access to review and use features. After
-30 days, if you do not choose to purchase, you will continue with a Sumo Logic Free Account.
+Sumo Logic Free Trial Accounts offer 30 days of Enterprise account access to review and use features. After 30 days, if you do not choose to purchase, you will continue with a Sumo Logic Free Account.
 
 Sign up and activate within minutes:
 
@@ -42,18 +41,16 @@ Sign up and activate within minutes:
 1.  **Activate** your account through an email.
 1.  **Collect, See, and Act** to monitor, troubleshoot, and secure your app.
 
-### Sign up for a Sumo Logic Trial account
+## Create a trial account
+If you already have a Sumo Logic account, you can skip this step and go straight to [Step 2](#step-2---create-a-sumo-logic-access-key).
 
-To sign up a new trial:
+:::note
+Remember your deployment region selection. You may need it when integrating apps and features.
+:::
 
-1.  Visit https://www.sumologic.com/sign-up/.
-1.  Enter a business email address.
-1.  Select your deployment based on region.  
-1.  Review and accept the [Service License Agreement](https://www.sumologic.com/service-agreement/) to proceed.
-1.  Optionally, select the opt-in to receive Sumo Logic communications.
-1.  Click **Sign Up**.
+1. Visit [sumologic.com](https://sumologic.com) and create a trial account by clicking **Start free trial**.
 
-![Sign Up](/img/get-started/trial-signup.png)
+1. Once your account is activated, click the ![close](/img/get-started/github/close-icon.png) at the top right of the *Welcome to Sumo Logic* web page. You will not need to follow the in-application guide.
 
 Sumo Logic sends you an email to activate your account, and the Sumo Logic Setup Wizard is displayed.
 

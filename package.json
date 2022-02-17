@@ -28,6 +28,7 @@
     "clsx": "^1.1.1",
     "docusaurus-plugin-sass": "^0.2.1",
     "file-loader": "^6.2.0",
+    "follow-redirects": "^1.14.8",
     "glob-parent": "^5.1.2",
     "mdx-mermaid": "^1.1.1",
     "mermaid": "^8.13.8",
