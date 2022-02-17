@@ -27,7 +27,7 @@ You can add a processing rule to an existing Source or create a processing rule 
     *   A filter is either an allowlist or denylist rule.
     *   An action is either a hash or mask rule.
     
-    ![processing rules2022.png](/img/processing-rules/create-a-processing-rule/processing_rules2022.png)
+    ![processing rules2022.png](/img/processing-rules/create-a-processing-rule/processing-rules2022.png)
 2.  Once clicked, the configuration options are displayed.
     
     ![generic processing rules UI with added options.png](/img/processing-rules/create-a-processing-rule/generic_processing_rules_UI_with_added_options.png)
