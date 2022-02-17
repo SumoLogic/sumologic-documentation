@@ -78,7 +78,7 @@ You can add a processing rule to an existing Source or create a processing rule 
 *   [Mask messages that match](/Manage/Collection/Processing-Rules/Mask-Rules "Mask Rules")****.**** Replace an expression with a mask string that you can customize—another option to protect data, such as passwords, that you wouldn't normally track.
 *   Forward messages that match. Send data from an Installed Collector Source to a selected non-Sumo location. This option is only available if you have configured a data forwarding destination. For more information, see [Forward Data from an Installed Collector](/Manage/Data-Forwarding/Configure-Data-Forwarding-for-Installed-Collectors "Manage/Data-Forwarding/Configure-Data-Forwarding-for-Installed-Collectors").
 
-1.  Click ****Apply**** to add the rule. Continue to add rules as needed.
+1.  Click **Apply** to add the rule. Continue to add rules as needed.
 
 1.  When you're finished adding all the rules you need, click **Submit**.  
     ![rule-action.png](/img/processing-rules/create-a-processing-rule/save-rule.png)
