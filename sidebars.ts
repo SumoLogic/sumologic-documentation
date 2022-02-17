@@ -36,6 +36,7 @@ module.exports = {
       link: {type: 'doc', id: 'quickstart/quickstart'},
       items: [
         'quickstart/quickstart-github',
+        'quickstart/quickstart-k8s',
       ],
     },
     {
