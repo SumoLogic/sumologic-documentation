@@ -70,7 +70,7 @@ You can add a processing rule to an existing Source or create a processing rule 
     Your regex must be [RE2 compliant.](https://github.com/google/re2/wiki/Syntax "https://github.com/google/re2/wiki/Syntax")
     :::
 
-5.  Choose the ****Type**** of processing rule you'd like to create:
+5.  Choose the **Type** of processing rule you'd like to create:
 
 *   [Exclude messages that match](/Manage/Collection/Processing-Rules/Include-and-Exclude-Rules "Include and Exclude Rules"). Remove messages that you don't want to send to Sumo Logic at all, think of it as a "denylist" filter. These messages are skipped after reaching the Source and are not uploaded to Sumo Logic.
 *   [Include messages that match](/Manage/Collection/Processing-Rules/Include-and-Exclude-Rules "Send_Data/Manage_Collectors_and_Sources/Processing_Rules/Include_and_Exclude_Rules"). Send only the data you'd like in your Sumo Logic account, think of it as an "allowlist" filter. This type of filter can be very useful when the list of log data you want to send to Sumo Logic is easier to filter than setting up exclude filters for all of the types of messages you'd like to exclude, for example, if you only want to include only messages coming from a firewall.
