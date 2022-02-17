@@ -64,7 +64,7 @@ You can add a processing rule to an existing Source or create a processing rule 
      
 3.  Give a meaningful **Name** to your rule. Names can be up to 32 characters long.
 4.  For ****Filter****, type a regular expression that defines the messages you want to filter. The rule must match the whole message.
-    *   For multi-line log messages, to get the lines before and after the line containing your text, wrap the segment with ****(?s).\***** such as: ****(?s).\*matching text(?s).\*****
+    *   For multi-line log messages, to get the lines before and after the line containing your text, wrap the segment with `(?s).` such as:`(?s).*matching text(?s).`
         
     :::note
     Your regex must be [RE2 compliant.](https://github.com/google/re2/wiki/Syntax "https://github.com/google/re2/wiki/Syntax")
