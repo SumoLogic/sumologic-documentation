@@ -12,7 +12,7 @@ Each UI is documented in a separate tab below.
   className="unique-tabs"
   defaultValue="new-ui"
   values={[
-    {label: 'New UI', value: 'new-ui'},
+    {label: New UI, value: 'new-ui'},
     {label: 'Classic UI', value: 'classic-ui'},
   ]}>
 
