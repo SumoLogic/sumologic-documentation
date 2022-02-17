@@ -50,7 +50,7 @@ You can add a processing rule to an existing Source or create a processing rule 
 7.  When you're finished adding all the rules you need, click **Submit**.
 
 </TabItem>
-  <TabItem value="classic ui" label="Classic UI">
+ <TabItem value="classic-ui">
 
 #### Original interface
 
