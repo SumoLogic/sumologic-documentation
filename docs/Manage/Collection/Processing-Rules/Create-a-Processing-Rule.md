@@ -18,7 +18,7 @@ Each UI is documented in a separate tab below.
 
 <TabItem value="new-ui">
   
-#### New interface for Hosted Collector Sources
+## New interface for Hosted Collector Sources
 
 You can add a processing rule to an existing Source or create a processing rule when you configure a new Source.
 
