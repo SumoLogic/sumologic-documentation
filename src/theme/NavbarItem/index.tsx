@@ -46,7 +46,7 @@ const NavbarItemComponents: Record<
   search: () => SearchNavbarItem,
   dropdown: () => DropdownNavbarItem,
   megaDropdown: () => MegaDropdownNavbarItem,
-  // Need to lazy load these items as we don't know for sure the docs plugin is loaded
+  // Need to lazy load these items as we do not know for sure the docs plugin is loaded
   // See https://github.com/facebook/docusaurus/issues/3360
   /* eslint-disable @typescript-eslint/no-var-requires, global-require */
   docsVersion: () => require('@theme/NavbarItem/DocsVersionNavbarItem').default,

@@ -27,7 +27,7 @@ Visual displays of up-to-date data allow you to monitor the health and
 fitness of your application and network, providing insights
 for troubleshooting and timely resolutions.
 
-On  your Sumo journey, you'll learn how to:
+On  your Sumo journey, you will learn how to:
 
 1. [Get your data into Sumo]
 1. [Search and analyze your data]
@@ -94,7 +94,7 @@ Just click **Learn** on the Home page to access:
 
 ## Become a Sumo Logic Certified User
 
-Don't just learn it, master it! Get recognized as a Sumo Logic expert by completing the courses in the Sumo Logic  Certification Program. We’re happy to help you get certified right from the product.
+Do not just learn it, master it! Get recognized as a Sumo Logic expert by completing the courses in the Sumo Logic  Certification Program. We’re happy to help you get certified right from the product.
 
 **Fundamentals** — Learn the basics of searching, parsing and analyzing logs and metrics. You will run searches and perform simple parsing and basic analytics on your data. Then, you will convert queries to charts and add them to Dashboards so you can visualize trends and identify anomalies. Lastly, you create and modify Alerts to stay on top of critical events.
 

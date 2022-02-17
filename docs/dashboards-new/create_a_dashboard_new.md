@@ -1,0 +1,164 @@
+---
+id: create-a-dashboard-new
+---
+
+# Create a Dashboard (New)
+
+This page demonstrates how to create a Dashboard (New), add a query, and
+then add the chart to the dashboard. You create your Dashboard (New) by
+selecting template options from menus and drop-downs.
+
+Dashboard (New) allows you to view logs and metrics data on the same
+dashboard in an integrated and seamless view. This gives you the same
+control over how your metrics and log data are visualized. Dashboard
+(New) template capabilities provide for easier data scoping and
+intuitive chart creation.
+
+Rather watch a short micro lesson video?
+
+### Dashboard Auto-Save
+
+When you rename or add a panel to a dashboard it is automatically saved
+in your Sumo Logic Personal folder. Likewise, ongoing changes and
+additions to the dashboard are saved. This ensures the integrity of your
+work and prevents any loss due to unforeseen interruptions or outages.
+
+### Create a Dashboard (New)
+
+In this step, you create a Dashboard (New), to which you will add panels
+and customize charts in later steps. You can use the **+ New** button
+or create a Dashboard (New) directly from the [Log
+Search](./Create_a_Dashboard_(New).md "Create a Dashboard (New)") and
+[Metrics
+pages](./Create_a_Dashboard_(New).md "Create a Dashboard (New)").
+
+To create a Dashboard (New) with the **+ New** button, do the following:
+
+1.  On the Home page, click **+ New**.  
+    ![DataDojo_New_Dashboard.png](/img/dashboards-new/create-dashboard-new/DataDojo_New_Dashboard.png)
+2.  Select **Dashboard (New)** from the drop-down list.  
+    ![new dashboard from new
+    button.png](/img/dashboards-new/create-dashboard-new/new-dashboard-from-new-button.png)
+3.  Select the Dashboard text field at the top of the window and enter a
+    unique name for your new dashboard.  
+    ![Dashboard
+    name.png](/img/dashboards-new/create-dashboard-new/Dashboard-name.png)
+
+### Adding a panel  
+
+Now that you've created a new Dashboard (New), you can populate it with
+panels that visually display your data. This task shows you how to add a
+panel to your new dashboard and customize the display.
+
+**To add a panel to a new Dashboard (New), do the following:**
+
+1.  Select a panel type by clicking the icon. See [choosing a panel
+    type](Panels.md "Choose a Panel Type") for details.
+
+![panel
+types.png](/img/dashboards-new/create-dashboard-new/panel-types.png)
+
+2.  You are prompted to provide a query.
+
+### Adding queries
+
+You can create Log and Metric queries on the same panel.
+
+#### Log query
+
+Enter your aggregate [search
+query](../../05Search/Search-Query-Language.md "Search Query Language")
+in the input field and press enter. A few important things to note are:
+
+-   Only search results that have been aggregated using a group or
+    aggregate operator can be charted. See [Group or Aggregate
+    Operators ](../../05Search/Search-Query-Language/aaGroup.md "https://help.sumologic.com/Search/Search_Query_Language/aaGroup")for
+    a list. 
+-   By default, the query builder is set to **Logs**. 
+-   Joining log queries in a separate query is not supported.
+
+![Add log
+query.png](/img/dashboards-new/create-dashboard-new/Add-log-query.png)
+
+#### Metrics query
+
+Click the left-most dropdown option and select **Metrics**. You should
+be familiar with the basics of creating [metrics queries and
+alerts](../../Metrics/Metric-Queries-and-Alerts.md "Metric Queries and Alerts") to
+ensure successful results. By default, the query builder is set to
+**Logs**.
+
+![Metrics selection for query
+builder.png](/img/dashboards-new/create-dashboard-new/Metrics-selection-for-query-builder.png)
+
+To create a metrics query utilize the [Metrics
+Explorer](../../Metrics/Metric-Queries-and-Alerts/00Metrics_Explorer.md "Metric Query Builder").
+
+#### Multiple queries
+
+To add another query to a panel click the plus **+** icon on the last
+query row. Each query is assigned a letter for reference.
+
+![add query.png](/img/dashboards-new/create-dashboard-new/add-query.png)
+
+### Modify Chart
+
+You can customize a chart on a dashboard panel in a variety of ways. To
+include changing the chart type to analyze the data in another format.
+See [Modify a Chart](Panels/modify-chart.md) for
+details on all the available options.
+
+### Add to Dashboard
+
+Click the **Add to Dashboard** button on the top right of the window
+to add the panel to your dashboard.  
+
+![Add to Dashboard button.png](/img/dashboards-new/create-dashboard-new/Add-to-Dashboard-button.png)
+
+That's it, start using your Dashboard (New).  
+  
+ 
+
+### Log Search page
+
+To create a Dashboard (New) from the [Log Search
+page](../../05Search/Get-Started-with-Search/How-to-Use-the-Search-Page.md "How to Use the Search Page"):
+
+1.  From the Log Search page click the **Add to Dashboard** button on
+    the Aggregates tab after running your aggregate query you want to
+    add to a Dashboard (New) panel.  
+    ![Add to dashboard new
+    logs.png](/img/dashboards-new/create-dashboard-new/Add-to-dashboard-new-logs.png)
+2.  In the **Add Panel to Dashboard** window provide a **Panel
+    Title** and a name for the **Dashboard**. Once the name is entered
+    you will have an option to select **Create New Dashboard** with your
+    name. Select that option.  
+    ![Enter dashboard new name
+    logs.png](/img/dashboards-new/create-dashboard-new/Enter-dashboard-new-name-logs.png)
+3.  In the updated window toggle the **Create as Dashboard
+    (New)** option.  
+    ![Create new dashboard new from search
+    page.png](/img/dashboards-new/create-dashboard-new/Create-new-dashboard-new-from-search-page.png)
+4.  Click **Add** and your new Dashboard (New) is created.
+
+### Metrics page
+
+To create a Dashboard (New) from the [Metrics
+page](../../Metrics/Metric-Queries-and-Alerts/11Metrics-Queries.md "https://help.sumologic.com/Metrics/Metric-Queries-and-Alerts/01Metrics-Queries"):
+
+1.  From the Metrics page click the **Add to Dashboard** button on the
+    [Metrics
+    Explorer](../../Metrics/Metric-Queries-and-Alerts/00Metrics_Explorer.md "Metric Query Builder").  
+    ![metrics explorer add to
+    dashboard.png](/img/dashboards-new/create-dashboard-new/metrics-explorer-add-to-dashboard.png)
+2.  In the **Add Panel to Dashboard** window provide a **Panel
+    Title** and a name for the **Dashboard**. Once the name is entered
+    you will have an option to select **Create New Dashboard** with your
+    name. Select that option.  
+    ![Enter dashboard new name
+    logs.png](/img/dashboards-new/create-dashboard-new/Enter-dashboard-new-name-logs.png)
+3.  In the updated window toggle the **Create as Dashboard
+    (New)** option.  
+    ![Create new dashboard new from search
+    page.png](/img/dashboards-new/create-dashboard-new/Create-new-dashboard-new-from-search-page.png)
+4.  Click **Add** and your new Dashboard (New) is created.

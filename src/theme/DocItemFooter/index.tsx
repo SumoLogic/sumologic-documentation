@@ -45,7 +45,7 @@ function EditMetaRow({
   const mdPath = editUrl.substring(57, );
   return (
     <div className={clsx(ThemeClassNames.docs.docFooterEditMetaRow, 'row')}>
-      <div className="col">{editUrl && <EditThisPage editUrl={editUrl} />} | {mdPath && <a href={'https://github.com/SumoLogic/sumologic-documentation/issues/new?template=feedback.md&labels=type:feedback&title=Feedback%20for%20' + mdPath }  target="_blank">
+      <div className="col">{editUrl && <EditThisPage editUrl={editUrl} />} | {mdPath && <a href={'https://github.com/SumoLogic/sumologic-documentation/issues/new?template=feedback.md&labels=type:feedback&title=Feedback-for-' + mdPath }  target="_blank">
         <IconBug />
         Submit an issue</a>}</div>
 
