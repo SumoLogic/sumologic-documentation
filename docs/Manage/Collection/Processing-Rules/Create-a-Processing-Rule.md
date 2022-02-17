@@ -39,7 +39,7 @@ You can add a processing rule to an existing Source or create a processing rule 
         Your regex must be [RE2 compliant.](https://github.com/google/re2/wiki/Syntax "https://github.com/google/re2/wiki/Syntax")
         
 6.  To remove a filter or action click the trash can icon.  
-    ![processing rule trach can icon.png](/img/processing-rules/create-a-processing-rule/processing_rule_trach_can_icon.png)
+    ![processing rule trach can icon.png](/img/processing-rules/create-a-processing-rule/trashcan-icon.png)
 7.  When you're finished adding all the rules you need, click **Submit**.
 
 </TabItem>
