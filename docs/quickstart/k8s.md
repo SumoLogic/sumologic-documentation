@@ -75,12 +75,6 @@ kubectl apply -f sumologic.yaml
 
 </TabItem>
 
-<TabItem value="openshift">
-
-TODO
-
-</TabItem>
-
 </Tabs>
 
 # Additional Reading
