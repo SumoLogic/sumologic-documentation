@@ -4,7 +4,7 @@ id: pci-compliance
 
 # PCI Compliance
 
-The PCI Compliance App is available for Sumo Logic Enterprise accounts only, and requires a Professional Services contract to install and configure. You may upgrade your account at any time. If you'd like more information on this App, please request it by clicking the **Request** button in the Apps section of the Library, or contact your Sumo Logic [sales](mailto:sales@sumologic.com) representative.
+The PCI Compliance App is available for Sumo Logic Enterprise accounts only, and requires a Professional Services contract to install and configure. You may upgrade your account at any time. If you would like more information on this App, please request it by clicking the **Request** button in the Apps section of the Library, or contact your Sumo Logic [sales](mailto:sales@sumologic.com) representative.
 
 As data security becomes increasingly paramount, enterprises may reference certifications and standards such as the  requirements of the Payment Card Industry Security Standard Council Data Security Standards (known as PCI DSS) as a means of assessing their policies and practices.  Even if you don’t handle payment card information, the requirements under PCI DSS may serve as proxies for controls and obligations that businesses have in place and seek to actively monitor. 
 

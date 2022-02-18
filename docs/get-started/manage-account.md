@@ -40,7 +40,7 @@ To change your password:
 
 ## Account Management in Preferences
 
-The **Preferences** page contains settings that apply just to your account. Options on this page don't affect any other users in your organization. Find this page in the menu under your account name in the left nav of the Sumo Logic Web Application.
+The **Preferences** page contains settings that apply just to your account. Options on this page do not affect any other users in your organization. Find this page in the menu under your account name in the left nav of the Sumo Logic Web Application.
 
 ### My Profile
 
@@ -92,9 +92,9 @@ Preference settings are only changed for your personal account; they do not affe
   Keyboard shortcuts are disabled when typing in the [search text box]. 
   :::
 
-- **Automatically run the search after selecting it from a list of saved searches.** Keep this option selected if you'd like to run a saved search as soon as you select it. Deselect the option if you would like to start the search manually.
+- **Automatically run the search after selecting it from a list of saved searches.** Keep this option selected if you would like to run a saved search as soon as you select it. Deselect the option if you would like to start the search manually.
 - **Show confirmation dialog when closing a search tab.** On the Search page, if you want to be prompted with a confirmation dialog before you can close a search tab, select this check box.
-- **Automatically open the search autocomplete dialog when editing. Use `<Esc>` or `<Alt>` `<Space>` to open it manually).** Keep this option selected if you'd like to open the [search autocomplete] dialog when you are editing a query. Deselect the option to disable the search autocomplete dialog. 
+- **Automatically open the search autocomplete dialog when editing. Use `<Esc>` or `<Alt>` `<Space>` to open it manually).** Keep this option selected if you would like to open the [search autocomplete] dialog when you are editing a query. Deselect the option to disable the search autocomplete dialog. 
 - **On login, reopen the tabs from your previous session**. If you want to reopen the tabs from your previous session when you login to a new session, select this checkbox.
 - **Log Search Query editing.** Select one of the following options:
 
