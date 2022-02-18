@@ -1,5 +1,5 @@
 ---
-id: link-a-dashboard-to-explore
+id: link-dashboard-to-explore
 ---
 
 # Link a dashboard to Explore

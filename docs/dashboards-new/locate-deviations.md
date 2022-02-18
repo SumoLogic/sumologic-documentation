@@ -1,5 +1,5 @@
 ---
-id: locate-deviations-in-a-time-series
+id: locate-deviations-time-series
 ---
 
 # Locate deviations in a time series

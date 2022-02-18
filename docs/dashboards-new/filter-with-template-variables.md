@@ -1,5 +1,5 @@
 ---
-id: filter-with-template-variables
+id: filter-template-variables
 ---
 
 # Filter with template variables
