@@ -10,6 +10,11 @@ It builds your site as simple **static HTML, JavaScript and CSS files**.
 
 ## Install requirements
 
+Docusaurus requires the following to build on locals:
+
+* [NodeJS](https://nodejs.org/en/download/) version >= 14
+* [Yarn](https://yarnpkg.com/en/) version >= 1.5, you can install with Brew: `brew install yarn`
+
 As we maintain the site, the package.json file tracks all packages, plugins, and more required for the site. To install on your local:
 
 1. Pull the latest code and make your changes in a branch. 

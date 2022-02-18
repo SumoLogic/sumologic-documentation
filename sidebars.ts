@@ -36,8 +36,19 @@ module.exports = {
       link: {type: 'doc', id: 'quickstart/quickstart'},
       items: [
         'quickstart/quickstart-github',
+        'quickstart/quickstart-k8s',
       ],
     },
+    {
+      //Put in stuff to test, will be moved later!
+      type: 'category',
+      label: 'Converted Docs',
+      collapsible: true,
+      collapsed: false,
+      items: [
+        'Manage/Collection/Processing-Rules/create-a-processing-rule',
+      ],
+     },
     {
       //Add a category and docs per quickstart guide
       type: 'category',
