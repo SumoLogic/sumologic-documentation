@@ -10,11 +10,11 @@ A Box Plot Chart graphically depicts groups of data using quartiles, which are t
 
 To create Box Plot Chart panels, your query must include:
 
-* **Smallest value** (sample minimum) using the [min](../../../05Search/Search-Query-Language/aaGroup/min-and-max.md "min and max") or _min field name.
+* **Smallest value** (sample minimum) using the [min] (../../../05Search/Search-Query-Language/aaGroup/min-and-max.md "min and max") or _min field name.
 * **Lowest quartile** (25%) using the _pct_25 field name. You can use both **lower** or **ends** with in this part of the query.
 * **Median quartile** (50%) using the _pct_50 field name. You can use both **lower** or **ends** with in this part of the query.
 * **Upper quartile** (75%) using the _pct_75 field name.
-* **Largest value** (sample maximum) using the [max](../../../05Search/Search-Query-Language/aaGroup/min-and-max.md "min and max") or _max field name.
+* **Largest value** (sample maximum) using the [max] (../../../05Search/Search-Query-Language/aaGroup/min-and-max.md "min and max") or _max field name.
 
 For example, this query can be rendered as a Box Plot Chart:
 
@@ -37,12 +37,14 @@ If you query contains more than one of a min, lower quartile, median quartile, u
 error | 5 as a | 6 as b | 7 as c | 8 as d | 9 as e | min(a), min (b), pct(b,25), pct(c,50), pct(d,75), max(e)
 ```
 
-The [Sumo Logic App for Amazon VPC Flow
-Logs](../../../07Sumo-Logic-Apps/01Amazon_and_AWS/Amazon_VPC_Flow_Logs.md "Amazon VPC Flow Logs App")
-uses a query that creates a Box Plot Chart. It is:
+The [Sumo Logic App for Amazon VPC Flow Logs] (../../../07Sumo-Logic-Apps/01Amazon_and_AWS/Amazon_VPC_Flow_Logs.md "Amazon VPC Flow Logs App") uses a query that creates a Box Plot Chart. It is:
 
 ```sql
-_sourceCategory=vpc   | json "message","logStream","logGroup" | parse field=message "* * * * * * * * * * * * * *" as version,accountID,interfaceID,src_ip,dest_ip,src_port,dest_port,Protocol,Packets,bytes,StartSample,EndSample,Action,status | timeslice 1m | min(Packets), pct(Packets,25), pct(Packets,50), pct(Packets,75), max(Packets) by _timeslice
+_sourceCategory=vpc   
+| json "message","logStream","logGroup" 
+| parse field=message "* * * * * * * * * * * * * *" as version,accountID,interfaceID,src_ip,dest_ip,src_port,dest_port,Protocol,Packets,bytes,StartSample,EndSample,Action,status 
+| timeslice 1m 
+| min(Packets), pct(Packets,25), pct(Packets,50), pct(Packets,75), max(Packets) by _timeslice
 ```
 
 To create a Box Plot chart

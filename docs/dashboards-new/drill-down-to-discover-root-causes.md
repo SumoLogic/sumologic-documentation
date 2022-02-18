@@ -32,23 +32,33 @@ To discover and view related content, do the following:
 
 The Summary tab provides details and helpful links based on the selected data point.
 
+<Tabs
+  className="unique-tabs"
+  defaultValue="logs"
+  values={[
+    {label: 'Logs', value: 'logs'},
+    {label: 'Metrics', value: 'metrics'},
+  ]}>
 
-
-#### Logs
+<TabItem value="logs">
 
 The Summary tab for log data provides links to other associated logs based on metadata and any [Linked Dashboards](panels/modify-chart.md).
 
 ![logs detail pane.png](/img/dashboards-new/drill-root-causes/logs-detail-pane.png)
 
-#### Metrics
+</TabItem>
+<TabItem value="metrics">
 
 A metrics data Summary tab includes links to any [Linked Dashboards](panels/modify-chart.md).
 
 ![metrics summary tab.png](/img/dashboards-new/drill-root-causes/metrics-summary-tab.png)
 
-#### Entities tab
+</TabItem>
+</Tabs>
 
-The **Entities** tab provides troubleshooting links for related Entities and Environments, as well as any [Monitors](../Alerts/Monitors.md "Monitors") with a Critical, Warning, or Missing Data status that are tracking logs or metrics on the Entity.
+### Entities tab
+
+The **Entities** tab provides troubleshooting links for related Entities and Environments, as well as any [Monitors] (../Alerts/Monitors.md "Monitors") with a Critical, Warning, or Missing Data status that are tracking logs or metrics on the Entity.
 
 Only entity types from a curated list are identified. The AWS, Kubernetes, Traces, and Host domains are supported.
 
@@ -56,13 +66,23 @@ The **Infrastructure** tab was renamed to **Entities**.
 
 ![entities tab.png](/img/dashboards-new/drill-root-causes/entities-tab.png)
 
-##### Troubleshoot links
+<Tabs
+  className="unique-tabs"
+  defaultValue="troubleshoot"
+  values={[
+    {label: 'Troubleshoot links', value: 'troubleshoot'},
+    {label: 'Time selector', value: 'time'},
+    {label: 'Triggered monitors', value: 'triggered'},
+  ]}>
+
+<TabItem value="troubleshoot">
 
 To investigate, click the **Open In** button and select an icon to launch another feature against the entity or environment. An icon is not available if it is not a valid launch.
 
 ![infrastructure tab with RCE link.png](/img/dashboards-new/drill-root-causes/infrastructure-tab-with-RCE-link.png)
 
-##### Time selector
+</TabItem>
+<TabItem value="time">
 
 Use the time selector to set if data is related to the "now" moment of time or the moment of time around the data point you clicked on.
 
@@ -72,9 +92,10 @@ If the **Datapoint** is the same as **Now** the selector will not allow you
 
 ![time selector options.png](/img/dashboards-new/drill-root-causes/time-selector-options.png)
 
-##### Triggered monitors
+</TabItem>
+<TabItem value="triggered">
 
-[Monitors](../Alerts/Monitors.md "Monitors") track your Metrics or Logs data in real time and send notifications when noteworthy changes happen in your production applications. The **Entities** tab shows any Monitors with a Critical, Warning, or Missing Data status that are tracking logs or metrics on the Entity.
+[Monitors] (../Alerts/Monitors.md "Monitors") track your Metrics or Logs data in real time and send notifications when noteworthy changes happen in your production applications. The **Entities** tab shows any Monitors with a Critical, Warning, or Missing Data status that are tracking logs or metrics on the Entity.
 
 Alerts are only visible when the [Time Selector](drill-down-to-discover-root-causes.md#time-selector)
 is set to **Now.**
@@ -83,6 +104,12 @@ Next to the Entity, you will see any of the following icons indicating the type 
 
 ![monitor types.png](/img/dashboards-new/drill-root-causes/monitor-types.png)
 
-Click the **Triggered monitors** row to view the related Monitors. You can click on them to view the Monitor on the [Monitors](../Alerts/Monitors.md "Monitors") page.
+Click the **Triggered monitors** row to view the related Monitors. You can click on them to view the Monitor on the [Monitors] (../Alerts/Monitors.md "Monitors") page.
 
 ![triggered monitors.png](/img/dashboards-new/drill-root-causes/triggered-monitors.png)
+
+</TabItem>
+</Tabs>
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';

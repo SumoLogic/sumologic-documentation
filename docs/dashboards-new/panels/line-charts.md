@@ -6,7 +6,7 @@ id: line-charts
 
 Line charts are useful for displaying how data changes over time, where the Y axis of a line chart displays the count of an item, and the X axis is a timeline.
 
-To create a line chart, you need to use a query that provides more than one data point in the **Aggregates** tab, see [aggregate operators](../../../05Search/Search-Query-Language/aaGroup.md "Group or Aggregate Operators") for details. Then the line is drawn between the data points to show the
+To create a line chart, you need to use a query that provides more than one data point in the **Aggregates** tab, see [aggregate operators] (../../../05Search/Search-Query-Language/aaGroup.md "Group or Aggregate Operators") for details. Then the line is drawn between the data points to show the
 change.
 
 For example, you could use the following query to create a Line chart:
@@ -28,11 +28,7 @@ which would produce results such as:
     ![time series icon.png](/img/dashboards-new/panels/line-charts/time-series-icon.png)
 
 1. Provide a Metric or Log query and press **Enter** for it to run.
-   \<div class="mt-contentreuse-widget"
-    page="Beta/Dashboard_(New)/02Create_a_Dashboard_(New)"
-    section="Step 3. Adding queries" show="false\>
 
-   \</di\>
 1. Once the query runs, ensure the chart type is set to **Line**.  
 
     ![New line chart setting.png](/img/dashboards-new/panels/line-charts/New-line-chart-setting.png)

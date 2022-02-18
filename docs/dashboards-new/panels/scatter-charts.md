@@ -24,36 +24,29 @@ _sourceCategory=service "message=User logged in" remote_ip
 | count as logins by latitude, longitude
 ```
 
-### Create a scatter chart
+## Create a scatter chart
 
-**To add a panel with a scatter chart:**
+To add a panel with a scatter chart:
 
-1.  Create or open a Dashboard (New) and click on **Add Panel \>
+1. Create or open a Dashboard (New) and click on **Add Panel \>
     Categorical**.  
+
     ![categorical.png](/img/dashboards-new/panels/scatter-charts/categorical.png)
 
-2.  Provide a Log query and press **Enter** for it to run.
+1. Provide a Log query and press **Enter** for it to run.
 
-    #### Log query
-
-    Enter your aggregate [search
-    query](../../../05Search/Search-Query-Language.md "Search Query Language") in
-    the input field and press enter. Only search results that have been
-    aggregated using a group or aggregate operator can be charted.
-    See [Group or Aggregate
-    Operators ](../../../05Search/Search-Query-Language/aaGroup.md "https://help.sumologic.com/Search/Search_Query_Language/aaGroup")for
-    a list.
+    Enter your aggregate [search query] (../../../05Search/Search-Query-Language.md "Search Query Language") in the input field and press enter. Only search results that have been aggregated using a group or aggregate operator can be charted. See [Group or Aggregate
+    Operators ](../../../05Search/Search-Query-Language/aaGroup.md "https://help.sumologic.com/Search/Search_Query_Language/aaGroup") for a list.
 
     ![Add log query.png](/img/dashboards-new/create-dashboard-new/Add-log-query.png)
 
-3.  Once the query runs you will need to flip the chart type to
-    **Scatter** and set your **X** and **Y Axis Dimensions**.  
-    ![scatter
-    chart.png](/img/dashboards-new/panels/scatter-charts/scatter-chart.png)
+1. Once the query runs you will need to flip the chart type to **Scatter** and set your **X** and **Y Axis Dimensions**.  
 
-4.  [Modify the chart](modify-chart.md) as desired.
+    ![scatter chart.png](/img/dashboards-new/panels/scatter-charts/scatter-chart.png)
 
-5.  Click the **Add to Dashboard** button on the top right of the window
-    to add the panel to your dashboard.  
+1. [Modify the chart](modify-chart.md) as desired.
+
+1. Click the **Add to Dashboard** button on the top right of the window to add the panel to your dashboard.  
+
     ![Add to Dashboard button.png](/img/dashboards-new/create-dashboard-new/Add-to-Dashboard-button.png)
  

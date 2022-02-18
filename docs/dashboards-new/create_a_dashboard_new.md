@@ -127,7 +127,7 @@ You can delete a panel that you no longer need.
 
 ## Log Search page
 
-To create a Dashboard (New) from the [Log Search page](../../05Search/Get-Started-with-Search/How-to-Use-the-Search-Page.md "How to Use the Search Page"):
+To create a Dashboard (New) from the [Log Search page] (../../05Search/Get-Started-with-Search/How-to-Use-the-Search-Page.md "How to Use the Search Page"):
 
 1. From the Log Search page click the **Add to Dashboard** button on the Aggregates tab after running your aggregate query you want to add to a Dashboard (New) panel.  
 
@@ -145,9 +145,9 @@ To create a Dashboard (New) from the [Log Search page](../../05Search/Get-Starte
 
 ## Metrics page
 
-To create a Dashboard (New) from the [Metrics page](../../Metrics/Metric-Queries-and-Alerts/11Metrics-Queries.md "https://help.sumologic.com/Metrics/Metric-Queries-and-Alerts/01Metrics-Queries"):
+To create a Dashboard (New) from the [Metrics page] (../../Metrics/Metric-Queries-and-Alerts/11Metrics-Queries.md "https://help.sumologic.com/Metrics/Metric-Queries-and-Alerts/01Metrics-Queries"):
 
-1. From the Metrics page click the **Add to Dashboard** button on the [Metrics Explorer](../../Metrics/Metric-Queries-and-Alerts/00Metrics_Explorer.md "Metric Query Builder").  
+1. From the Metrics page click the **Add to Dashboard** button on the [Metrics Explorer] (../../Metrics/Metric-Queries-and-Alerts/00Metrics_Explorer.md "Metric Query Builder").  
     
     ![metrics explorer add to dashboard.png](/img/dashboards-new/create-dashboard-new/metrics-explorer-add-to-dashboard.png)
 

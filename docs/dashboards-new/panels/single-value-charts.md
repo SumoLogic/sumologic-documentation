@@ -4,7 +4,7 @@ id: single-value-charts
 
 # Single Value Charts
 
-You can use single value charts to display results for a search or metric query as a single value, for at-a-glance analysis. This page shows you how to create and tailor single value charts for searches. For information on single value charts for metrics, see [Create and Tailor Single Value Metrics Charts](../../../Metrics/03-Metric-Charts/05-Create_and_Tailor_Single_Value_Metric_Charts.md "Create and Tailor Single Value Metric Charts").
+You can use single value charts to display results for a search or metric query as a single value, for at-a-glance analysis. This page shows you how to create and tailor single value charts for searches. For information on single value charts for metrics, see [Create and Tailor Single Value Metrics Charts] (../../../Metrics/03-Metric-Charts/05-Create_and_Tailor_Single_Value_Metric_Charts.md "Create and Tailor Single Value Metric Charts").
 
 A single value chart displays a single record from a search, in order to make that value stand out at a glance. If the query returns more than one value in the **Aggregates** tab, only the first value is displayed in the single value chart.
 
@@ -22,18 +22,18 @@ To add a panel with a single value chart:
 
     **Log query:**
 
-    Enter your aggregate [search query](../../../05Search/Search-Query-Language.md "Search Query Language") in the input field and press enter. Only search results that have been aggregated using a group or aggregate operator can be charted. See [Group or Aggregate Operators ](../../../05Search/Search-Query-Language/aaGroup.md "https://help.sumologic.com/Search/Search_Query_Language/aaGroup") for a list. By default, the query builder is set to **Logs**.
+    Enter your aggregate [search query] (../../../05Search/Search-Query-Language.md "Search Query Language") in the input field and press enter. Only search results that have been aggregated using a group or aggregate operator can be charted. See [Group or Aggregate Operators ] (../../../05Search/Search-Query-Language/aaGroup.md "https://help.sumologic.com/Search/Search_Query_Language/aaGroup") for a list. By default, the query builder is set to **Logs**.
 
     ![Add log query.png](/img/dashboards-new/create-dashboard-new/Add-log-query.png)
 
     **Metrics query:**
 
-    Click the left-most dropdown option and select **Metrics**. You should be familiar with the basics of creating [metrics queries and alerts](../../../Metrics/Metric-Queries-and-Alerts.md "Metric Queries and Alerts") to ensure successful results. By default, the query builder is set
+    Click the left-most dropdown option and select **Metrics**. You should be familiar with the basics of creating [metrics queries and alerts] (../../../Metrics/Metric-Queries-and-Alerts.md "Metric Queries and Alerts") to ensure successful results. By default, the query builder is set
     to **Logs**.
 
     ![Metrics selection for query builder.png](/img/dashboards-new/create-dashboard-new/Add-log-query.png)
 
-    To create a metrics query utilize the [Metrics Query Builder](../../../Metrics/Metric-Queries-and-Alerts/00Metrics_Explorer.md "Metric Query Builder").   
+    To create a metrics query utilize the [Metrics Query Builder] (../../../Metrics/Metric-Queries-and-Alerts/00Metrics_Explorer.md "Metric Query Builder").   
       
     ![new single value chart metrics.png](/img/dashboards-new/panels/single-value-charts/new-single-value-chart-metrics.png)
 
@@ -58,4 +58,4 @@ The boolean single value chart would look like the following.
 
 ## Sparkline
 
-The **Sparkline** option is available for metrics and logs queries. A log query requires your query to have a [timeslice](../../../05Search/Search-Query-Language/Search-Operators/timeslice.md "timeslice") operation and you will need to [sort](../../../05Search/Search-Query-Language/Search-Operators/sort.md "sort") the timeslice as part of the query for the sparkling to render correctly.
+The **Sparkline** option is available for metrics and logs queries. A log query requires your query to have a [timeslice] (../../../05Search/Search-Query-Language/Search-Operators/timeslice.md "timeslice") operation and you will need to [sort] (../../../05Search/Search-Query-Language/Search-Operators/sort.md "sort") the timeslice as part of the query for the sparkling to render correctly.

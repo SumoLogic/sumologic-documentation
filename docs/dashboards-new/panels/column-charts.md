@@ -25,11 +25,7 @@ To add a panel with a column chart:
     ![time series or categorical.png](/img/dashboards-new/panels/column-charts/time-series-or-categorical.png)
 
 1. Provide a Metric or Log query and press **Enter** for it to run.
-   \<div class="mt-contentreuse-widget"
-    page="Beta/Dashboard_(New)/02Create_a_Dashboard_(New)"
-    section="Step 3. Adding queries" show="false\>
 
-   \</di\>
 1. Once the query runs you will need to flip the chart type to **Column**.  
 
     ![new column chart.png](/img/dashboards-new/panels/column-charts/new-column-chart.png)
@@ -44,7 +40,13 @@ To add a panel with a column chart:
 To create a stacked column chart, use a query that uses a multiple series that counts by at least two things, for example, this query from the Sumo Logic App for Apache creates a stacked column chart for visits by country over time:
 
 ```sql
-_sourceCategory=Apache/Access | parse regex "(\<client_i\>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})" | lookup latitude, longitude, country_code, country_name, region, city, postal_code from geo://location on ip = client_ip | where !isNull(country_name) AND country_name !="" | timeslice 5m | count by _timeslice, country_name | transpose row _timeslice column country_name as *
+_sourceCategory=Apache/Access 
+| parse regex "(\<client_i\>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})" 
+| lookup latitude, longitude, country_code, country_name, region, city, postal_code from geo://location on ip = client_ip 
+| where !isNull(country_name) AND country_name !="" 
+| timeslice 5m 
+| count by _timeslice, country_name 
+| transpose row _timeslice column country_name as *
 ```
 
 When your query is added to the panel builder press **Enter** to run it. In the Display options pane select a **Stacked** Display type.  

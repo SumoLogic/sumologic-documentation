@@ -45,11 +45,11 @@ To save your settings and return to the dashboard, click **Update Dashboard** in
 
 ### Logs Settings
 
-You have the option to use the [receipt time](../../../05Search/Get-Started-with-Search/How-to-Build-a-Search/Use-Receipt-Time.md "Use Receipt Time") or the default message time.
+You have the option to use the [receipt time] (../../../05Search/Get-Started-with-Search/How-to-Build-a-Search/Use-Receipt-Time.md "Use Receipt Time") or the default message time.
 
 ![dashboard new time settings.png](/img/dashboards-new/panels/modify-chart/dashboard-new-time-settings.png)
 
-You can toggle [Auto Parse Mode](../../../05Search/Get-Started-with-Search/How-to-Build-a-Search/Dynamic_Parsing.md "Dynamic Parsing").
+You can toggle [Auto Parse Mode] (../../../05Search/Get-Started-with-Search/How-to-Build-a-Search/Dynamic_Parsing.md "Dynamic Parsing").
 
 ![dashboard new auto parse.png](/img/dashboards-new/panels/modify-chart/dashboard-new-auto-parse.png)
 

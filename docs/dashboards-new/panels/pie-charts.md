@@ -25,11 +25,7 @@ which would produce results such as:
     ![categorical.png](/img/dashboards-new/panels/pie-charts/categorical.png)
 
 1. Provide a Log or Metric query and press **Enter** for it to run.
-   \<div class="mt-contentreuse-widget"
-    page="Beta/Dashboard_(New)/02Create_a_Dashboard_(New)"
-    section="Step 3. Adding queries" show="false\>
 
-   \</di\>
 1. Once the query runs you will need to flip the chart type to **Pie**.
 
     ![new pie chart.png](/img/dashboards-new/panels/pie-charts/new-pie-chart.png)

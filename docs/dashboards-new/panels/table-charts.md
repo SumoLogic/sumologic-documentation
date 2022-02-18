@@ -28,18 +28,18 @@ To add a panel with a table chart:
 
     **Log query:**
 
-    Enter your aggregate [search query](../../../05Search/Search-Query-Language.md "Search Query Language") in the input field and press enter. Only search results that have been aggregated using a group or aggregate operator can be charted. See [Group or Aggregate Operators ](../../../05Search/Search-Query-Language/aaGroup.md "https://help.sumologic.com/Search/Search_Query_Language/aaGroup")for a list.
+    Enter your aggregate [search query] (../../../05Search/Search-Query-Language.md "Search Query Language") in the input field and press enter. Only search results that have been aggregated using a group or aggregate operator can be charted. See [Group or Aggregate Operators ] (../../../05Search/Search-Query-Language/aaGroup.md "https://help.sumologic.com/Search/Search_Query_Language/aaGroup")for a list.
 
     ![Add log query.png](/img/dashboards-new/create-dashboard-new/Add-log-query.png)
 
     **Metrics query:**
 
-    Click the left-most dropdown option and select **Metrics**. You should be familiar with the basics of creating [metrics queries and alerts](../../../Metrics/Metric-Queries-and-Alerts.md "Metric Queries and Alerts") to ensure successful results. By default, the query builder is set
+    Click the left-most dropdown option and select **Metrics**. You should be familiar with the basics of creating [metrics queries and alerts] (../../../Metrics/Metric-Queries-and-Alerts.md "Metric Queries and Alerts") to ensure successful results. By default, the query builder is set
     to **Logs**.
 
     ![Metrics selection for query builder.png](/img/dashboards-new/create-dashboard-new/Add-log-query.png)
 
-    To create a metrics query utilize the [Metrics Query Builder](../../../Metrics/Metric-Queries-and-Alerts/00Metrics_Explorer.md "Metric Query Builder").
+    To create a metrics query utilize the [Metrics Query Builder] (../../../Metrics/Metric-Queries-and-Alerts/00Metrics_Explorer.md "Metric Query Builder").
 
 3.  Once the query runs you will need to flip the chart type to **Table**.
 

@@ -4,101 +4,60 @@ id: share-a-dashboard-new
 
 # Share a Dashboard (New)
 
-After you have created a custom Dashboard (New) you may also want to share
-it with coworkers within your organization. This page walks you through
-these tasks.
+After you have created a custom Dashboard (New) you may also want to share it with coworkers within your organization. This page walks you through these tasks.
 
-Currently, you can only share a Dashboard (New) within your
-organization.
+Currently, you can only share a Dashboard (New) within your organization.
 
-### Sharing a dashboard within your organization
+## Sharing a dashboard within your organization
 
-Sharing dashboards allow you to extend the insights you gain from Sumo
-Logic with others within your organization. You can specify specific
-permissions for the user with whom you share the dashboard, as well as
-controlling the data that appears in the dashboard. 
+Sharing dashboards allow you to extend the insights you gain from Sumo Logic with others within your organization. You can specify specific permissions for the user with whom you share the dashboard, as well as controlling the data that appears in the dashboard. 
 
-When you share a dashboard, you specify the dashboard access rights for
-the users—View, Edit, or Manage. Dashboard access rights are described
-in the [Available Permission
-Levels](../../Manage/Content_Sharing/Share-Content.md "Share Content") section
-of the [Share
-Content](../../Manage/Content_Sharing/Share-Content.md "Share Content") page.
+When you share a dashboard, you specify the dashboard access rights for the users—View, Edit, or Manage. Dashboard access rights are described in the [Available Permission Levels] (../../Manage/Content_Sharing/Share-Content.md "Share Content") section of the [Share Content] (../../Manage/Content_Sharing/Share-Content.md "Share Content") page.
 
-You can grant the same access right to everyone with whom you share the
-dashboard. Or, you can give some users View access, other users Edit
-access, and other users Manage access. If you are going to grant
-different access rights to different users, be prepared with lists of
-users and the access level you want to grant to each.
+You can grant the same access right to everyone with whom you share the dashboard. Or, you can give some users View access, other users Edit access, and other users Manage access. If you are going to grant different access rights to different users, be prepared with lists of users and the access level you want to grant to each.
 
-#### Dashboard sharing options
+## Dashboard sharing options
 
-The following example shows the Share Dashboard dialog options you will
-use to specify with whom to share the dashboard and their access
+The following example shows the Share Dashboard dialog options you will use to specify with whom to share the dashboard and their access
 permissions:
 
--   **Share with specific users and roles**. This is where you select
-    the users or roles with whom you wish to share the dashboard.
--   **See who has access**. Lists the users and roles with whom the
-    dashboard is already shared.
--   [**Shareable
-    URL**](./Share_a_Dashboard_(New).md "Share a Dashboard (New)"). Shows
-    the URL for the shared dashboard, with options for sharing the
-    dashboard with filters and time range and filter settings. 
+* **Share with specific users and roles**. This is where you select the users or roles with whom you wish to share the dashboard.
+* **See who has access**. Lists the users and roles with whom the dashboard is already shared.
+* **Shareable URL**. Shows the URL for the shared dashboard, with options for sharing the dashboard with filters and time range and filter settings. 
 
-![Share Dashboard
-New.png](/img/dashboards-new/share-dashboard-new/Share-Dashboard-New.png)
+![Share Dashboard New.png](/img/dashboards-new/share-dashboard-new/Share-Dashboard-New.png)
 
-#### How to share a dashboard
+## How to share a dashboard
 
-This section walks you through the process of sharing a dashboard with
-other people within your organization.
+This section walks you through the process of sharing a dashboard with other people within your organization.
 
-**To share a dashboard within your organization, do the following:**
+To share a dashboard within your organization, do the following:
 
-1.  Click the share icon on the dashboard or share it from the
-    [Library](../../01Start-Here/Library.md "Library").
+1. Click the share icon on the dashboard or share it from the [Library] (../../01Start-Here/Library.md "Library").
 
-![share icon.png](/img/dashboards-new/share-dashboard-new/share-icon.png)
+    ![share icon.png](/img/dashboards-new/share-dashboard-new/share-icon.png)
 
-2.  Click in the **Share with specific users and roles** field and
-    select with whom to share the dashboard from the drop-down list. 
+1. Click in the **Share with specific users and roles** field and select with whom to share the dashboard from the drop-down list. 
 
-If you choose **Your Entire Organization**, all users in your
-organization will be granted the access permissions you specify in the
-next step. 
+    If you choose **Your Entire Organization**, all users in your organization will be granted the access permissions you specify in the next step. 
 
-3.  In the **Access** area, select the user permissions you want to
-    grant from the drop-down list: **Edit**, **View**,
-    or **Manage.** 
-4.  Optionally, select **Advanced Access** option to allow users to
-    grant view access to others. For more information, see
-    the [Available Permission
-    Levels](../../Manage/Content_Sharing/Share-Content.md "Share Content") section
-    of the [Share
-    Content](../../Manage/Content_Sharing/Share-Content.md "Share Content") page.
+1. In the **Access** area, select the user permissions you want to grant from the drop-down list: **Edit**, **View**, or **Manage.** 
+1. Optionally, select **Advanced Access** option to allow users to grant view access to others. For more information, see the [Available Permission Levels] (../../Manage/Content_Sharing/Share-Content.md "Share Content") section of the [Share Content] (../../Manage/Content_Sharing/Share-Content.md "Share Content") page.
 
-![ShareDashboard_Advanced_Access.png](/img/dashboards-new/share-dashboard-new/ShareDashboard_Advanced_Access.png)
+    ![ShareDashboard_Advanced_Access.png](/img/dashboards-new/share-dashboard-new/ShareDashboard_Advanced_Access.png)
 
-5.  To share the dashboard with another set of users, but with
-    different access permissions, click **Add users with another
-    access level** and repeat steps 2 and 3. 
+1. To share the dashboard with another set of users, but with different access permissions, click **Add users with another access level** and repeat steps 2 and 3. 
 
-![ShareDashboard_User_Roles.png](/img/dashboards-new/share-dashboard-new/ShareDashboard_User_Roles.png)
+    ![ShareDashboard_User_Roles.png](/img/dashboards-new/share-dashboard-new/ShareDashboard_User_Roles.png)
 
-6.  To send an email to the recipients of the shared dashboard, toggle
-    **Notify recipients by email** to ON, and enter a note in the text
-    field.
+1. To send an email to the recipients of the shared dashboard, toggle **Notify recipients by email** to ON, and enter a note in the text field.
 
-![ShareDashboard_Email_notification.png](/img/dashboards-new/share-dashboard-new/ShareDashboard_Email_notification.png)
+    ![ShareDashboard_Email_notification.png](/img/dashboards-new/share-dashboard-new/ShareDashboard_Email_notification.png)
 
-7.  Click **Share**.
+1. Click **Share**.
 
-#### Shareable URL
+## Shareable URL
 
-A URL to your Dashboard is available from the **Shareable**
-**URL** section. You have the option to include the current time range
-or variable values in the URL.
+A URL to your Dashboard is available from the **Shareable URL** section. You have the option to include the current time range or variable values in the URL.
 
-![dashboard new shareable
-url.png](/img/dashboards-new/share-dashboard-new/dashboard-new-shareable-url.png)
+![dashboard new shareable url.png](/img/dashboards-new/share-dashboard-new/dashboard-new-shareable-url.png)

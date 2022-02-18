@@ -22,11 +22,11 @@ which would produce results such as:
 
 To add a panel with an area chart:
 
-1. Create or open a Dashboard (New) and click on **Add Panel \> Time Series** or **Add Panel \> Categorical**. See [Panel Types](Area_Charts/...md "Panel Types") for details on what to choose.   ![time series or categorical.png](/img/dashboards-new/panels/Area_Charts/time-series-or-categorical.png)
-1. Provide a Metric or Log query and press **Enter** for it to run.
-   \<div class="mt-contentreuse-widget" page="Beta/Dashboard_(New)/02Create_a_Dashboard_(New)" section="Step 3. Adding queries" show="false\>
+1. Create or open a Dashboard (New) and click on **Add Panel \> Time Series** or **Add Panel \> Categorical**. See [Panel Types] (Area_Charts/...md "Panel Types") for details on what to choose.   
+    
+    ![time series or categorical.png](/img/dashboards-new/panels/Area_Charts/time-series-or-categorical.png)
 
-   \</di\>
+1. Provide a Metric or Log query and press **Enter** for it to run.
 1. Once the query runs you will need to flip the chart type to **Area**.
 
     ![Dashboard New Area Chart.png](/img/dashboards-new/panels/Area_Charts/Dashboard-New-Area-Chart.png)

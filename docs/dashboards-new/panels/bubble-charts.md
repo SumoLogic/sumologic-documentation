@@ -25,7 +25,7 @@ _sourceCategory=service "message=User logged in" remote_ip
 
 ## Create a bubble chart
 
-**To add a panel with a bubble chart:**
+To add a panel with a bubble chart:
 
 1. Create or open a Dashboard (New) and click on **Add Panel \> Categorical**.  
 
@@ -33,13 +33,12 @@ _sourceCategory=service "message=User logged in" remote_ip
 
 1. Provide a Log query and press **Enter** for it to run.
 
-    **Log query:**
-
-    Enter your aggregate [search query](../../../05Search/Search-Query-Language.md "Search Query Language") in the input field and press enter. Only search results that have been aggregated using a group or aggregate operator can be charted. See [Group or Aggregate Operators ](../../../05Search/Search-Query-Language/aaGroup.md "https://help.sumologic.com/Search/Search_Query_Language/aaGroup") for a list.
+    Enter your aggregate [search query] (../../../05Search/Search-Query-Language.md "Search Query Language") in the input field and press enter. Only search results that have been aggregated using a group or aggregate operator can be charted. See [Group or Aggregate Operators ] (../../../05Search/Search-Query-Language/aaGroup.md "https://help.sumologic.com/Search/Search_Query_Language/aaGroup") for a list.
 
     ![Add log query.png](/img/dashboards-new/create-dashboard-new/Add-log-query.png)
 
 1. Once the query runs you will need to flip the chart type to **Bubble** and set your **Dimensions**. A bubble chart requires three dimensions, including the aggregate.  
+
     ![bubble chart.png](/img/dashboards-new/panels/bubble-charts/bubble-chart.png)
 
 1. [Modify the chart](modify-chart.md) as desired.
