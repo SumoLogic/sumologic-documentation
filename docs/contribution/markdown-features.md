@@ -14,7 +14,8 @@ Markdown documents have metadata at the top called [Front Matter](https://jekyll
 ---
 id: page-id
 sidebar_title: Navigation title
-description: Learn more about... 
+description: One sentence about the page... 
+keywords: [important, words]
 ---
 
 # Title of the Page
@@ -25,40 +26,18 @@ description: Learn more about...
 | `id:` | **Required.** Id for the page used in the sidebar and as the canonical link. Keep it short and only use dashes. |
 | `sidebar_title:` | Optional, use a different title for the side navigation. Keep this title short. It does not affect the canonical link or page title. |
 | `description:` | Optional, one sentence describing what the user will find in the page for searches. Otherwise the first couple sentences are used for searches. |
-| `# Title of the Page` | **Required.** Only use an H1 once for the title of the page. This title is used in navigation is a `sidebar_title` is not included.|
+| `keywords` | Optional, array of metadata keywords to boost search results. Do not use the company name or some brands or words already heavily used in the page. That can reduce search strength. |
+| `# Title of the Page` | **Required.** Only use one H1 for the title of the page. This title is used in navigation is a `sidebar_title` is not included.|
 
 For full options, see [Docusaurus Markdown front matter](https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-docs#markdown-front-matter).
 
+## Headings
 
-## Links
+Use hashtags `#` to indicate the heading level. You should not use H1 down in the page, this is automatically used for the page title when building the site. Link anchors automatically also generate.
 
-Regular Markdown links are supported, using url paths or relative file paths.
-
-```md
-Let's see how to [Create a document](/create-a-document).
-```
-
-```md
-Let's see how to [Create a document](./create-a-document.md).
-```
-
-**Result:** Let's see how to [Create a document](./create-a-document.md).
-
-## Images
-
-We recommend using .png for all images. Save these images in `/static/img`.
-
-Add an image at `static/img/` and display it in Markdown with alt text, file path of `/img`, and image name:
-
-```md
-![Sumo Logic logo](/img/sumo-square.png)
-```
-
-![Sumo Logic logo](/img/sumo-square.png)
-
-## Headers
-
-Use hashtags `#` to indicate the heading level. You should not use H1, this is automatically used for the page title when building the site. Link anchors automatically also generate.
+:::important
+Use these heading in correct order. Right after the H1 title you would next have an H2, not jumping to H3 or H5. This affects search and SEO structures to search crawlers like Google. Malformed structures can reduce search and SEO for the page. Docusaurus carefully formats generated pages to ensure strong SEO.
+:::
 
 ## H2 - Create the best documentation
 
@@ -70,11 +49,86 @@ Use hashtags `#` to indicate the heading level. You should not use H1, this is a
 
 ###### H6 - Create the best documentation
 
+## Links
+
+Regular Markdown links are supported, using url paths or relative file paths.
+
+```md Links to files in the same folder
+Learn about [release notes](release-notes.md).
+
+How about [translations](./translate-documentation.md).
+```
+
+Learn about [release notes](release-notes.md).
+
+How about [translations](./translate-documentation.md).
+
+
+```md Links to files in other drives - relative path
+Learn how to [sign up with Sumo](../get-started/sign-up.md).
+```
+
+Learn how to [sign up with Sumo](../get-started/sign-up.md).
+
+## Asset Files
+
+You can save images and downloadable files all to the `/static` folder. Using the files should not include `/static` in the link as Docusaurus builds and saves these static assets will be served from the `baseUrl` (or domain).
+
+### Images
+
+We recommend using .png for all images. Save these images in `/static/img`. 
+
+Add an image at `/static/img/` and display it in Markdown with alt text, file path of `/img`, and image name:
+
+```md
+![Sumo Logic logo](/img/sumo-square.png)
+```
+
+![Sumo Logic logo](/img/sumo-square.png)
+
+### Downloadable Files
+
+If you have static files for users to download, save them to the `/static/files` folder. These may include .json, .js, .doc, and so on. You link to the file using the file path of `/files` and file name:
+
+```md
+![Download this Terraform](/files/terraform/script.tf)
+```
+
+If a file is available from another public Sumo Logic repo, please link to that file instead as a URL link.
+
+## Tables
+
+Tables use plain markdown with one header, default left aligned columns, and multi-colored rows. You can use Markdown for links and images. To break up content, you can use `<br/>` for line breaks, HTML for 
+
+```markdown
+| Column Name | Example Value | Description |
+| -- | -- | -- |
+| Trace ID | ffaf2f69ee8ad0c1 | The unique identifier of the trace. |
+| Root Service | api | The service that started the trace. |
+| Started At | 07/27/2020 09:01:04.533 | When the trace started. |
+| Duration | 12.582 ms | The amount of time the trace spans.  |
+| Number of spans | 35 | A trace consists of spans. This number tells you how many spans are in the trace. |
+| Duration Breakdown | ![breakdown](/img/apm/traces/breakdown.png) | Each color indicates a service. The colors assigned to services are always the same on your account. You can change the color in the span summary tab after clicking on the individual span in trace view.<br/>Hover over to view a percentage breakdown of how long each span covers in the trace.<br/>![span hover](/img/apm/traces/span-hover-view.png) |
+| Number of errors | 0 | The number of errors in the trace. |
+| Status | 200 | The HTTP status code of the trace. |
+```
+
+| Column Name | Example Value | Description |
+| -- | :--: | -- |
+| Trace ID | ffaf2f69ee8ad0c1 | The unique identifier of the trace. |
+| Root Service | api | The service that started the trace. |
+| Started At | 07/27/2020 09:01:04.533 | When the trace started. |
+| Duration | 12.582 ms | The amount of time the trace spans.  |
+| Number of spans | 35 | A trace consists of spans. This number tells you how many spans are in the trace. |
+| Duration Breakdown | ![breakdown](/img/apm/traces/breakdown.png) | Each color indicates a service. The colors assigned to services are always the same on your account. You can change the color in the span summary tab after clicking on the individual span in trace view.<br/>Hover over to view a percentage breakdown of how long each span covers in the trace.<br/>![span hover](/img/apm/traces/span-hover-view.png) |
+| Number of errors | 0 | The number of errors in the trace. |
+| Status | 200 | The HTTP status code of the trace. |
+
 ## Emphasis
 
 Emphasis, aka italics, with *asterisks* or _underscores_.
 
-Strong emphasis, aka bold, with **asterisks** or __underscores__.
+Strong emphasis, aka bold, with 2 **asterisks** or __underscores__.
 
 Combined emphasis with **asterisks and _underscores_**.
 
@@ -219,44 +273,85 @@ Info for the second tab would go here! Content can include markdown, code blocks
   </TabItem>
 </Tabs>
 
+## Expander
+
+An expander 
+
+```html
+<details>
+
+<summary>Title for the expander</summary>
+
+Place long lists or lots of content in this section. The reader can expand/collapse as needed.
+
+</details>
+```
+
+
+<details>
+
+<summary>Title for the expander</summary>
+
+Place long lists or lots of content in this section. The reader can expand/collapse as needed.
+
+</details>
+
 ## Admonitions
 
-Docusaurus has a special syntax to create admonitions and callouts, including note, tip, important, caution, warning, and sumo.
+Docusaurus has a special syntax to create admonitions and callouts, including note, tip, important, caution, warning, and sumo. You can use markdown content in the admonitions, code blocks, links, bullets, images, videos, and much more.
 
     :::sumo Custom Title
-
-    content
-
+    content.
     :::
 
     :::tip My tip
-
-    Use this awesome feature option
-
+    Use this awesome feature option.
     :::
 
     :::danger Take care
-
-    This action is dangerous
-
+    This action is dangerous.
     :::
 
 :::sumo Sumo Best Pratice
-
 Highlight specific info, best practices, links, and other information from Sumo specialists! You can change the title based on the content.
-
 :::
 
 :::tip My tip
+Use this awesome feature option. Here's an example of a code block in a tip.
 
-Use this awesome feature option
+```json
+"overrides": [
+    {
+    "series": [],
+    "queries": [
+        "A"
+        ],
+    "userProvidedChartType": false,
+    "properties": {
+        "type": "column"
+        },
+    "unsafeCanvasJSProperties": {
+        "bevelEnabled": true,
+        "indexLabelPlacement": "inside",
+        "indexLabel": "{y}",
+        "indexLabelOrientation": "vertical"
+        }
+    }
+]
+```
 
 :::
 
+:::important 
+Use important for vital information.
+:::
+
+:::caution
+This could note important and problematic information.
+:::
+
 :::danger Take care
-
-This action is dangerous
-
+This action is dangerous.
 :::
 
 ## Embed Videos

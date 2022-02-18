@@ -17,7 +17,7 @@ We recommend forking the repo, creating all content changes in branches, and sub
 Docusaurus requires the following to build on locals:
 
 * [NodeJS](https://nodejs.org/en/download/) version >= 14
-* [Yarn](https://yarnpkg.com/en/) version >= 1.5, you can install with Brew: `brew install yarn`
+* [Yarn](https://yarnpkg.com/en/) version >= 1.5, you can install with Brew if you have that installed: `brew install yarn`
 
 The site includes translations into other languages. To build on your local:
 
@@ -28,13 +28,15 @@ The site includes translations into other languages. To build on your local:
 
     * Use start, hot reloads as you make changes: `yarn start`
 
-        Any issues with broken links and images are listed according to file. Locate and update those issues, then run again to verify.
+        Any issues with broken links and images are listed according to file. Locate and update those issues, then run build and start again to verify.
 
     * Use npm serve to test and review multi-languages: `npm run serve`
 
         This build does not hot reload and requires a rebuild to test and review.
 
-The site was created using [Docusaurus 2](https://docusaurus.io/) and supporting React, Rehype, and Remark plugins.
+The static files are generated in the `build` folder and run on your local machine at: `http://localhost:3000/`.
+
+The site was created using [Docusaurus 2](https://docusaurus.io/) with React, Rehype, and Remark plugin support.
 
 ## Publishing Content
 

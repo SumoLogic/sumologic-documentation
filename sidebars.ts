@@ -19,7 +19,7 @@ module.exports = {
       type: 'category',
       label: 'Get Started',
       collapsible: true,
-      collapsed: false,
+      collapsed: true,
       link: {type: 'doc', id: 'get-started/get-started'},
       items: [
         'get-started/sign-up',
@@ -32,7 +32,7 @@ module.exports = {
       type: 'category',
       label: 'Quickstarts and Tutorials',
       collapsible: true,
-      collapsed: false,
+      collapsed: true,
       link: {type: 'doc', id: 'quickstart/quickstart'},
       items: [
         'quickstart/quickstart-github',
@@ -44,7 +44,7 @@ module.exports = {
       type: 'category',
       label: 'Converted Docs',
       collapsible: true,
-      collapsed: false,
+      collapsed: true,
       items: [
         'Manage/Collection/Processing-Rules/create-a-processing-rule',
       ],
@@ -54,7 +54,7 @@ module.exports = {
       type: 'category',
       label: 'Dashboards (New)',
       collapsible: true,
-      collapsed: false,
+      collapsed: true,
       link: {type: 'doc', id: 'dashboards-new/about-dashboard-new'},
       items: [
         'dashboards-new/create-a-dashboard-new',
@@ -70,7 +70,7 @@ module.exports = {
           type: 'category',
           label: 'Panels',
           collapsible: true,
-          collapsed: false,
+          collapsed: true,
           link: {type: 'doc', id: 'dashboards-new/panels'},
           items: [
             'dashboards-new/panels/modify-chart',

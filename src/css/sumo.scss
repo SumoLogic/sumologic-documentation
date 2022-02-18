@@ -43,12 +43,6 @@
   src: url("fonts/lab-grotesque/LabGrotesque-Bold.otf") format("opentype"); }
 
 @font-face {
-  font-family: 'Lab Grotesque';
-  font-style: italic;
-  font-weight: bold;
-  src: url("fonts/lab-grotesque/LabGrotesque-Bold.otf") format("opentype"); }
-
-@font-face {
   font-family: 'Lab Grotesque Light';
   font-weight: normal;
   src: url("fonts/lab-grotesque/LabGrotesque-Light.otf") format("opentype"); }
@@ -81,8 +75,8 @@
   --ifm-footer-link-hover-color: #06bcee;
   //--ifm-menu-link-sublist-icon: url('folder.png');
   //--ifm-menu-link-sublist-icon-open: url('folder-open.png');
-  --ifm-font-size-base: .9rem;
-  --doc-sidebar-width: 225px !important;
+  --ifm-font-size-base: 1.1rem;
+  --doc-sidebar-width: 275px !important;
   --ifm-h1-font-size: 2rem;
   --ifm-h2-font-size: 1.5rem;
   --ifm-h3-font-size: 1.25rem;
@@ -93,12 +87,22 @@
   --ifm-code-font-size: .85rem;
   --ifm-font-family-base: "Lab Grotesque",sans-serif;
   --ifm-font-family-headings: "Lab Grotesque", "Segoe UI";
+  
+}
+
+.navbar__item {
+  font-size: .85rem;
 }
 
 @media (min-width: 1440px) {
   .container {
-      max-width: 95%;
+      max-width: 97%;
   }
+}
+
+.table-of-contents .table-of-contents__link {
+  font-size: .75rem !important;
+  display: block;
 }
 
 html[data-theme='dark'] {
@@ -109,6 +113,9 @@ html[data-theme='dark'] {
   --ifm-code-background: #172b42;
   --ifm-dropdown-background-color: #1A253B;
   --ifm-footer-background-color: #1a273f;
+  --ifm-table-stripe-background: rgba(29, 43, 69, .50);
+  --ifm-table-head-background: rgba(0, 164, 219, 0.35);
+  --ifm-table-border-color: rgba(59, 91, 110, 0.35);
   .button--secondary {
     --ifm-color-emphasis-200: rgba(53, 120, 229, .25); 
   }
@@ -130,6 +137,9 @@ html[data-theme='light'] {
   --ifm-font-color-base: #2e2e2e;
   --ifm-footer-background-color: #1a273f;
   --ifm-menu-color: var(--ifm-font-color-base);
+  --ifm-table-stripe-background: rgb(241, 244, 247);
+  --ifm-table-head-background: rgba(0, 151, 252, 0.384);
+  --ifm-table-border-color: rgba(25, 43, 54, 0.35);
   .button--secondary {
     --ifm-button-border-color: rgba(53, 120, 229, .25);
   }
@@ -169,14 +179,23 @@ html[data-theme='light'] {
   text-transform: uppercase;
 }
 .menu__link {
-  font-size: .85rem;
+  font-size: .8rem;
   //justify-content: normal !important;
-  //padding: var(--ifm-menu-link-padding-vertical) 1.5rem;
+  padding: var(--ifm-menu-link-padding-vertical) .3rem;
+  line-height: normal;
+  .menu__caret {
+    padding: 0 !important;
+  }
 }
 
 .menu__link--active {
   color: var(--ifm-menu-color-active);
   //border-left: 4px solid;
+}
+
+.menu__caret {
+  /* margin-left: 0.1rem; */
+  padding: 0;
 }
 
 .menu__caret:before {
@@ -188,6 +207,10 @@ html[data-theme='light'] {
 180deg);
     width: 1.25rem;
     transition: transform var(--ifm-transition-fast) linear;
+}
+
+.menu__link--sublist:after {
+  height:auto;
 }
 
 // code highlights
@@ -245,7 +268,7 @@ html[data-theme='light'] .table-of-contents__left-border {
 
   .table-of-contents__link--active {
     font-weight: 500;
-    margin-left: -16px;
+    margin-left: -18px;
     padding-left: 12px;
     //color: var(--ifm-font-color-primary);
     border-left: 4px solid;
@@ -345,8 +368,12 @@ html[data-theme='dark'] .navbar-item-github:before {
   .navbar-grid-link:after {
     background-image: none;
   }
-
 }
+
+
+.docItemCol_node_modules-\@docusaurus-theme-classic-lib-next-theme-DocItem-styles-module {
+    max-width: 100% !important;
+  }
 
 //NAV BAR
 
@@ -922,4 +949,45 @@ html[data-theme='dark'] .featureImage {
 .sidebarItemTitle {
   margin-bottom: 0.5rem;
   color: var(--subtle);
+}
+
+
+//search
+.DocSearch .DocSearch-Hit[aria-selected='true'] a {
+  background-color: var(--ifm-hover-overlay);
+}
+
+.DocSearch-Button-Keys,
+.DocSearch-Button-Placeholder {
+  display: none !important;
+}
+
+.DocSearch.DocSearch-Button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 0;
+  padding-right: 0;
+  width: 28px;
+  height: 28px;
+}
+
+.DocSearch .DocSearch-Form {
+  border-radius: 0;
+  border-bottom: 1px solid var(--docsearch-muted-color);
+}
+
+.DocSearch .DocSearch-Footer {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-top: 1px solid var(--docsearch-muted-color);
+}
+
+.DocSearch .DocSearch-Search-Icon {
+  color: var(--ifm-color-emphasis-600);
+}
+
+.DocSearch .DocSearch-Hit[aria-selected='true'] mark {
+  color: var(--docsearch-highlight-color) !important;
+  text-decoration: none;
 }

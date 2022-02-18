@@ -170,7 +170,7 @@ The [Service Map] (../../Traces/Service_Map_and_Dashboards.md "Service Map and D
 
 The panel gives you a fully functioning map to zoom in and out and move through services. The size and color of application entities shows status and activity. Click on a service to open the Entity Inspector to drill down to traces, metrics, and the service dashboard.
 
-You can filter the map according to application and service. See the [Dashboard (New)]-dashboard-new.md) guide for additional information and options to create panels, configure filters, create and filter with template variables from dashboard headers, and more.
+You can filter the map according to application and service. See the [Dashboard (New)](about-dashboard-new.md) guide for additional information and options to create panels, configure filters, create and filter with template variables from dashboard headers, and more.
 
 ![panel-service.png](/img/dashboards-new/panels/panel-service.png)
 

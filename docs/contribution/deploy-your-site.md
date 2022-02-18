@@ -10,18 +10,26 @@ It builds your site as simple **static HTML, JavaScript and CSS files**.
 
 ## Install requirements
 
-As we maintain the site, the package.json file tracks all packages, plugins, and more required for the site. To install on your local:
+You need the following at a minimum installed on your machine to run builds:
 
-1. Pull the latest code and make your changes in a branch. 
-1. Open a terminal on your local machine.
-1. Change directory to your GitHub repo.
-1. Enter: `yarn install`
+* [NodeJS](https://nodejs.org/en/download/) version >= 14
+* [Yarn](https://yarnpkg.com/en/) version >= 1.5, you can install with Brew if you have that installed: `brew install yarn`
 
 ## Build your site
 
-Build and deploy your site **for production** on your local. 
+The site includes translations into other languages. To build on your local:
 
-1. In the terminal application and in the GitHub repo, enter: `yarn build`
-1. When the build completes, enter: `yarn start`
+1. Clone the repo using Git or tools like GitHub Desktop.
+2. In a terminal, change to the cloned repo folder. Run the install command: `yarn install` 
+3. To build locally and test links, use build: `yarn build`
+4. To serve and review, use one of the following:
+
+    * Use start, hot reloads as you make changes: `yarn start`
+
+        Any issues with broken links and images are listed according to file. Locate and update those issues, then run build and start again to verify.
+
+    * Use npm serve to test and review multi-languages: `npm run serve`
+
+        This build does not hot reload and requires a rebuild to test and review.
 
 The static files are generated in the `build` folder and run on your local machine at: `http://localhost:3000/`.
