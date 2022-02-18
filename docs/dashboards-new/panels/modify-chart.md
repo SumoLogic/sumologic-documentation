@@ -1,5 +1,5 @@
 ---
-id: modify-a-chart
+id: modify-chart
 ---
 
 # Modify a Chart
@@ -55,7 +55,7 @@ You can toggle [Auto Parse Mode] (../../../05Search/Get-Started-with-Search/How
 
 ### Link dashboards
 
-You can configure links to other dashboards on a panel. When you [select a data point on the panel](../drill_down_to_discover_root_causes.md) you will have an option to click on linked dashboards. This allows you to quickly reference other related dashboards to investigate. 
+You can configure links to other dashboards on a panel. When you [select a data point on the panel](../drill-down-to-discover-root-causes.md) you will have an option to click on linked dashboards. This allows you to quickly reference other related dashboards to investigate. 
 
 1. Click the **Add Dashboard Link** from the bottom of the general settings menu.
 
@@ -224,7 +224,7 @@ To modify the JSON of a chart, do the following:
 1. Modify the JSON as necessary.
 1. Click **Update Preview** or **Copy To Clipboard**.  
 
-    ![DB_CustomChart_JSON-option.png](/img/dashboards-new/panels/modify-chart/../../Create_a_Dashboard_(New)/DB_CustomChart_JSON-option.png)
+    ![DB_CustomChart_JSON-option.png](/img/dashboards-new/create-dashboard-new/DB_CustomChart_JSON-option.png)
 
 1. To save your customized settings and return to the dashboard, click **Update Dashboard** in the upper right corner of the window.
 

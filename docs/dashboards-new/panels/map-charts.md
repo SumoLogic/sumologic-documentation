@@ -64,7 +64,7 @@ To add a panel with a map chart:
 
     ![new heat map.png](/img/dashboards-new/panels/map-charts/new-heat-map.png)
 
-1. [Modify the chart](modify-chart.md) as desired.
+1. [Modify the chart](./modify-chart.md) as desired.
 
 1. Click the **Add to Dashboard** button on the top right of the window to add the panel to your dashboard.  
 

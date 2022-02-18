@@ -41,7 +41,7 @@ To add a panel with a bubble chart:
 
     ![bubble chart.png](/img/dashboards-new/panels/bubble-charts/bubble-chart.png)
 
-1. [Modify the chart](modify-chart.md) as desired.
+1. [Modify the chart](./modify-chart.md) as desired.
 
 1. Click the **Add to Dashboard** button on the top right of the window to add the panel to your dashboard.  
 

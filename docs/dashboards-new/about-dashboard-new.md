@@ -14,7 +14,7 @@ Dashboards are a critical tool for monitoring and troubleshooting modern applic
 
 Dashboard (New) provides the unique ability to display metrics metadata and logs data on the same dashboard in an integrated seamless view. This gives you control over the visual display of metric data as well as log data. Dashboard (New) streamlines dashboard configuration and on-the-fly analytic visualizations with its new templating features. 
 
-[Template variables](filter_with_template_variables.md) allow you to filter dashboard data dynamically to generate new visualizations for intuitive chart creation and data scoping.
+[Template variables](filter-with-template-variables.md) allow you to filter dashboard data dynamically to generate new visualizations for intuitive chart creation and data scoping.
 
 ## Key Differences
 
@@ -130,6 +130,6 @@ Dashboards and Dashboard (New).
 | Dark Theme | Supported | Supported |
 | Configured Dashboard Linking | Supported | Supported |
 | Recommended Dashboards & Logs Drilldowns | Not supported | Supported by clicking on data points or slices/sections of pie charts, bar charts, column charts, area charts, and line charts. |
-| Combined Metrics & Logs Panel | Not supported | Supported. See how to [overlay logs and metrics in a panel](dashboard-new-faqs.md#how-do-i-overlay-logs-and-metrics-on-one-panel). |
+| Combined Metrics & Logs Panel | Not supported | Supported. See how to [overlay logs and metrics in a panel](./dashboard-new-faqs.md#how-do-i-overlay-logs-and-metrics-on-one-panel). |
 | Styling Queries and Series | 	Ability to style through settings on the search page.<br/>Can not set color per time series or query.<br/>Restricted ability to override displays. | Ability to style through display overrides inside the panel settings.<br/>Ability to set the color per query/series.<br/>Multiple layers of expressiveness for display overrides.<br/>For details, see how to modify a chart. |
 | Colors by Value Range | Supported | Not supported |

@@ -95,6 +95,12 @@
   --ifm-font-family-headings: "Lab Grotesque", "Segoe UI";
 }
 
+@media (min-width: 1440px) {
+  .container {
+      max-width: 95%;
+  }
+}
+
 html[data-theme='dark'] {
   --ifm-background-color: #101827;
   --ifm-navbar-background-color: #101827;

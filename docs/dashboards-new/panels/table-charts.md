@@ -45,7 +45,7 @@ To add a panel with a table chart:
 
     ![new table chart.png](/img/dashboards-new/panels/table-charts/new-table-chart.png)
 
-4.  [Modify the chart](modify-chart.md) as desired.
+4.  [Modify the chart](./modify-chart.md) as desired.
 
 5.  Click the **Add to Dashboard** button on the top right of the window to add the panel to your dashboard.
 

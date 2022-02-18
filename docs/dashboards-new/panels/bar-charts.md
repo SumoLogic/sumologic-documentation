@@ -30,7 +30,7 @@ To add a panel with a bar chart:
 
     ![Dashboard New Bar Chart.png](/img/dashboards-new/panels/bar-charts/Dashboard-New-Bar-Chart.png)
 
-1. [Modify the chart](modify-chart.md) as desired.
+1. [Modify the chart](./modify-chart.md) as desired.
 1. Click the **Add to Dashboard** button on the top right of the window to add the panel to your dashboard.
     
     ![Add to Dashboard button.png](/img/dashboards-new/create-dashboard-new/Add-to-Dashboard-button.png)

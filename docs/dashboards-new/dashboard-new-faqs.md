@@ -14,7 +14,7 @@ In the new dashboard framework, we’ve created a variables feature that follo
 
 The new dashboard variables will function much like a [parameterized search] (../../05Search/Get-Started-with-Search/How-to-Build-a-Search/Search-Templates.md "Search Templates") that allows you to define where you want to put your variables and flexibly reuse them throughout the queries.
 
-See details on [how to filter with template variables](filter_with_template_variables.md).
+See details on [how to filter with template variables](filter-with-template-variables.md).
 
 The biggest differences between variables and filters are:
 

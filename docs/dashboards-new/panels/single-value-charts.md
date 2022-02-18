@@ -37,7 +37,7 @@ To add a panel with a single value chart:
       
     ![new single value chart metrics.png](/img/dashboards-new/panels/single-value-charts/new-single-value-chart-metrics.png)
 
-3.  [Modify the chart](modify-chart.md) as desired.
+3.  [Modify the chart](./modify-chart.md) as desired.
 
 4.  Click the **Add to Dashboard** button on the top right of the window to add the panel to your dashboard. 
 

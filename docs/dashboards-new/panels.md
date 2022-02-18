@@ -65,7 +65,7 @@ These are best used to understand the distribution of data by categories. For e
 
 Available chart types:
 
-* [Area](panels/Area_Charts.md)
+* [Area](panels/area-charts.md)
 * [Bar](panels/bar-charts.md)
 * [Bubble](panels/bubble-charts.md)
 * [Column](panels/column-charts.md)
@@ -170,7 +170,7 @@ The [Service Map] (../../Traces/Service_Map_and_Dashboards.md "Service Map and D
 
 The panel gives you a fully functioning map to zoom in and out and move through services. The size and color of application entities shows status and activity. Click on a service to open the Entity Inspector to drill down to traces, metrics, and the service dashboard.
 
-You can filter the map according to application and service. See the [Dashboard (New)](about-dashboard-new.md) guide for additional information and options to create panels, configure filters, create and filter with template variables from dashboard headers, and more.
+You can filter the map according to application and service. See the [Dashboard (New)]-dashboard-new.md) guide for additional information and options to create panels, configure filters, create and filter with template variables from dashboard headers, and more.
 
 ![panel-service.png](/img/dashboards-new/panels/panel-service.png)
 
@@ -206,7 +206,7 @@ To add a Service Map panel:
 
 Transaction tracing captures and tracks distributed business workflows, by enriching and analyzing traces, logs, and metrics in real-time with automated generated application topology. Each trace provides details on root service, when it occurred and how long, the number of [spans] (../../Traces/Spans.md "Spans"), and a breakdown of services. The panel panel displays the [Traces page] (../../Traces/View_and_investigate_traces.md "View and investigate traces") table to give at-a-glance tracking for traces through your Dashboard. To view transaction and service details, click a trace from the panel to open the [Trace View] (../../Traces/View_and_investigate_traces.md "View and investigate traces"). 
 
-See the [Dashboard (New)](about-dashboard-new.md) guide for additional information and options to create panels, configure filters, create and filter with template variables from dashboard headers and more.
+See the [Dashboard (New)](./about-dashboard-new.md) guide for additional information and options to create panels, configure filters, create and filter with template variables from dashboard headers and more.
 
 :::note
 You are limited to 3 Trace List panels in a dashboard.

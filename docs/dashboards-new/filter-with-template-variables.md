@@ -30,9 +30,9 @@ In the Dashboard (New) top menu bar, click the filter icon to show the variables
 
 There are three types of template variables you can use as a dashboard filter:
 
-* [Custom List](./filter_with_template_variables.md) - a custom set of options
-* [Metrics Metadata Search](./filter_with_template_variables.md) - metrics metadata based options 
-* [Log Search](./filter_with_template_variables.md) - logs query based options
+* Custom List - a custom set of options
+* Metrics Metadata Search - metrics metadata based options 
+* Log Search - logs query based options
 
 ### Add a Custom List variable
 
@@ -72,8 +72,7 @@ To add a Metrics Metadata Search variable to a dashboard, do the following:
 
 1. In the Dashboard (New) top menu bar, click the **plus (+) icon**. The **Create Template Variable** panel appears.  
 
-    ![create dashboard
-    filter.png](/img/dashboards-new/filter-template-variables/create-dashboard-filter.png)
+    ![create dashboard filter.png](/img/dashboards-new/filter-template-variables/create-dashboard-filter.png)
 
 1. In the **Create Template Variable** panel, enter a unique **Variable Name**. Spaces and special characters, with the exception of an underscore (\_), are not allowed in value names.
 
@@ -108,7 +107,7 @@ To add a Logs Search variable to a dashboard, do the following:
 1. Select **Logs Search** as the **Variable Type**.
 1. Click in the **Query** field and begin typing your query. Select valid options from the pop-up list as they appear until your query is complete.
 1. The **Key** is the metadata field you want to use as the filter. Once a Key is selected the Preview table will show example values based on the query running for the last 15 minutes.
-1. Optional: Toggle ON **Include the option to select all values (\*)** to include a wildcard asterisk (\*) in the available options.
+1. Optional: Toggle ON **Include the option to select all values** to include a wildcard asterisk (\*) in the available options.
 1. Optional: Enter a **Default Value** for the variable.
 1. Click **Create Template Variable** to apply the variable to the dashboard.
 
@@ -148,7 +147,7 @@ To delete a template variable, do the following:
 
 ## Use variables in queries
 
-Logs and metrics variables allow you to interject metadata into your queries. This section shows you how to use a [variable you created](./filter_with_template_variables.md) in a query.
+Logs and metrics variables allow you to interject metadata into your queries. This section shows you how to use a variable you created in a query.
 
 The variable must already exist on the dashboard to add a query with a variable.
 

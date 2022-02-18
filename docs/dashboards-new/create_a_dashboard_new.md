@@ -28,7 +28,7 @@ When you rename or add a panel to a dashboard it is automatically saved in your
 
 ## Create a Dashboard (New)
 
-In this step, you create a Dashboard (New), to which you will add panels and customize charts in later steps. You can use the **+ New** button or create a Dashboard (New) directly from the [Log Search](./Create_a_Dashboard_(New).md "Create a Dashboard (New)") and [Metrics pages](./Create_a_Dashboard_(New).md "Create a Dashboard (New)").
+In this step, you create a Dashboard (New), to which you will add panels and customize charts in later steps. You can use the **+ New** button or create a Dashboard (New) directly from the Log Search and Metrics pages.
 
 To create a Dashboard (New) with the **+ New** button, do the following:
 
@@ -50,7 +50,7 @@ Now that you have created a new Dashboard (New), you can populate it with pane
 
 To add a panel to a new Dashboard (New), do the following:
 
-1. Select a panel type by clicking the icon. See [choosing a panel type](Panels.md "Choose a Panel Type") for details.
+1. Select a panel type by clicking the icon. See [choosing a panel type](./panels.md) for details.
 
     ![panel types.png](/img/dashboards-new/create-dashboard-new/panel-types.png)
 
@@ -71,10 +71,10 @@ You can create Log and Metric queries on the same panel.
 
 <TabItem value="log">
 
-Enter your aggregate [search query](../../05Search/Search-Query-Language.md "Search Query Language")
+Enter your aggregate [search query] (../../05Search/Search-Query-Language.md "Search Query Language")
 in the input field and press enter. A few important things to note are:
 
-* Only search results that have been aggregated using a group or aggregate operator can be charted. See [Group or Aggregate Operators ](../../05Search/Search-Query-Language/aaGroup.md "https://help.sumologic.com/Search/Search_Query_Language/aaGroup")for a list. 
+* Only search results that have been aggregated using a group or aggregate operator can be charted. See [Group or Aggregate Operators ] (../../05Search/Search-Query-Language/aaGroup.md "https://help.sumologic.com/Search/Search_Query_Language/aaGroup")for a list. 
 * By default, the query builder is set to **Logs**. 
 * Joining log queries in a separate query is not supported.
 
@@ -83,11 +83,11 @@ in the input field and press enter. A few important things to note are:
 </TabItem>
 <TabItem value="metrics">
 
-Click the left-most dropdown option and select **Metrics**. You should be familiar with the basics of creating [metrics queries and alerts](../../Metrics/Metric-Queries-and-Alerts.md "Metric Queries and Alerts") to ensure successful results. By default, the query builder is set to **Logs**.
+Click the left-most dropdown option and select **Metrics**. You should be familiar with the basics of creating [metrics queries and alerts] (../../Metrics/Metric-Queries-and-Alerts.md "Metric Queries and Alerts") to ensure successful results. By default, the query builder is set to **Logs**.
 
 ![Metrics selection for query builder.png](/img/dashboards-new/create-dashboard-new/Metrics-selection-for-query-builder.png)
 
-To create a metrics query utilize the [Metrics Explorer](../../Metrics/Metric-Queries-and-Alerts/00Metrics_Explorer.md "Metric Query Builder").
+To create a metrics query utilize the [Metrics Explorer Metrics/Metric-Queries-and-Alerts/00Metrics_Explorer.md "Metric Query Builder").
 
 </TabItem>
 <TabItem value="multiple">
@@ -101,7 +101,7 @@ To add another query to a panel click the plus **+** icon on the last query row.
 
 ## Modify Chart
 
-You can customize a chart on a dashboard panel in a variety of ways. To include changing the chart type to analyze the data in another format. See [Modify a Chart](Panels/modify-chart.md) for
+You can customize a chart on a dashboard panel in a variety of ways. To include changing the chart type to analyze the data in another format. See [Modify a Chart](./panels/modify-chart.md) for
 details on all the available options.
 
 ## Add to Dashboard

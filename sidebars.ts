@@ -44,7 +44,7 @@ module.exports = {
       label: 'Dashboards (New)',
       collapsible: true,
       collapsed: false,
-      link: {type: 'doc', id: 'dashboards-new/about-dashboards-new'},
+      link: {type: 'doc', id: 'dashboards-new/about-dashboard-new'},
       items: [
         'dashboards-new/create-a-dashboard-new',
         'dashboards-new/dashboard-new-faqs',

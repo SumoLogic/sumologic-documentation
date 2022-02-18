@@ -11,9 +11,9 @@ When you see a spike of interest on a dashboard that requires further investiga
 * Only entity types from a curated list are identified. The AWS, Kubernetes, Traces, and Host domains are supported.
 * A few Panel types do not support the features documented on this page. You will not have the option to click on a data point to view the Summary and Entities tabs on the following Panel types:
 
-    * [Single Value Panel](panels.md#single-value-panel)
-    * [Map Panel](panels.md#map-panel)
-    * [Text Panel](panels.md#text-panel)
+    * [Single Value Panel](./panels.md#single-value-panel)
+    * [Map Panel](./panels.md#map-panel)
+    * [Text Panel](./panels.md#text-panel)
 
 ## Drilling into related content
 
@@ -42,14 +42,14 @@ The Summary tab provides details and helpful links based on the selected data p
 
 <TabItem value="logs">
 
-The Summary tab for log data provides links to other associated logs based on metadata and any [Linked Dashboards](panels/modify-chart.md).
+The Summary tab for log data provides links to other associated logs based on metadata and any [Linked Dashboards](./panels/modify-chart.md).
 
 ![logs detail pane.png](/img/dashboards-new/drill-root-causes/logs-detail-pane.png)
 
 </TabItem>
 <TabItem value="metrics">
 
-A metrics data Summary tab includes links to any [Linked Dashboards](panels/modify-chart.md).
+A metrics data Summary tab includes links to any [Linked Dashboards](./panels/modify-chart.md).
 
 ![metrics summary tab.png](/img/dashboards-new/drill-root-causes/metrics-summary-tab.png)
 
