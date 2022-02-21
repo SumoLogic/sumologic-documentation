@@ -32,5 +32,5 @@ The Global Confidence score is a valuable data point to consider when prioritizi
 
 An Insight’s Confidence score is shown for each Insight on the Insights list page. You can sort the Insight list by the Global Confidence score, as well as by Severity. 
 
-![confidence](/img/global-intel/confidence-screenshot.png)
+![confidence](/img/global-intel/confidence-screen.png)
  
