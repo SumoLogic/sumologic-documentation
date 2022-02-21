@@ -1,0 +1,252 @@
+---
+id: dynamic-parsing
+---
+
+# Dynamic Parsing
+
+Dynamic Parsing allows automatic field extraction from your JSON log
+messages when you run a search. This allows you to view fields from JSON
+logs without having to manually specify parsing logic.
+
+Dynamic Parsing extracts JSON fields when you run a query, at search
+time (run time). Dynamic Parsing for JSON can be thought of as a Run
+Time field extraction rule (FER). By default, your account is given one
+Run Time FER that encompasses all of your data.
+
+![Default Run Time
+FER.png](../../static/img/Get-Started-with-Search/How-to-Build-a-Search/Dynamic_Parsing/Default%20Run%20Time%20FER.png)
+
+With this FER defined, any search on JSON data will
+automatically parse out its JSON fields, which you can then use within
+your search query, exactly like any other field.
+
+You have an option on the Search Page that allows you to control Dynamic
+Parsing. Dynamic Parsing is activated when a search is run in **Auto
+Parse Mode**, more details about the modes can be found in [using
+Dynamic Parsing](./Dynamic_Parsing.md "Dynamic Parsing").
+
+![auto parse mode
+option.png](../../static/img/Get-Started-with-Search/How-to-Build-a-Search/Dynamic_Parsing/auto%20parse%20mode%20option.png)
+
+### Advantages of using Dynamic Parsing
+
+-   Unlike Ingest Time FERs, where fields are persistent even when the
+    FERs are edited or deleted, Run Time FERs and their corresponding
+    parsed fields can be updated or removed at any given time. 
+-   Dynamic Parsing is helpful when your log schema changes frequently,
+    like if fields are added or removed frequently, which is especially
+    true for custom application logs. Sumo automatically detects the
+    change in your schema and is able to adjust the output accordingly.
+
+### Set up Dynamic Parsing
+
+By default, your account is configured with a Run Time FER that is
+applied to all of your data. The default Run Time FER named **JSON Auto
+Parsing - All Sources** cannot be edited or deleted. With this FER
+configured, you don't have to set up anything to use Dynamic Parsing.
+However, having one FER applied to all of your data may not be optimal
+for your needs as it would be applied for every search query (including
+ones that may not query any JSON logs). Further details can be found in
+[best practices for designing
+Rules](../../../Manage/Field-Extractions/Create-a-Field-Extraction-Rule.md "Create a Field Extraction Rule").
+
+To optimize search performance you can manually set up Dynamic
+Parsing by defining your own Run Time FERs.
+
+Run Time FERs have a scope, exactly like an Ingest Time FER, that
+defines which searches are applicable to Dynamic Parsing **Auto Parse
+Mode**. For Dynamic Parsing to work your query needs to have a scope
+that is defined in a Run Time FER, otherwise **Auto Parse Mode** will
+not be applicable.
+
+1.  Go to **Manage Data** \> **Logs** \> **Field Extraction Rules**.
+
+2.  Click the **+ Add** button on the top right of the table to create
+    an FER.
+
+3.  The following form appears:  
+    ![Create Field extraction rule with dynamic
+    parsing.png](../../static/img/Get-Started-with-Search/How-to-Build-a-Search/Dynamic_Parsing/Create%20Field%20extraction%20rule%20with%20dynamic%20parsing.png)
+
+4.  Enter the following options:
+
+    -   **Rule Name**. Type a name that makes it easy to identify the
+        rule.
+
+    -   ****Applied At****. Select ****Run Time****.
+
+    -   **Scope**. Select **Specific Data** and define the scope of your
+        JSON data. You can define your JSON data source as a
+        [Partition](../../../Manage/Partitions_and_Data_Tiers/01-About-Partitions.md "About Partitions")
+        Name(index), sourceCategory, Host Name, Collector Name, or any
+        other
+        [metadata](../Search-Basics/Built-in-Metadata.md "Search Metadata")
+        that describes your JSON data. Think of the Scope as the first
+        portion of an ad hoc search, before the first pipe ( \| ).
+        You'll use the Scope to run a search against the rule. You
+        cannot use keywords like “info” or “error” in your scope.
+
+        Always set up JSON auto extraction (Run Time field extraction)
+        on a specific Partition name (recommended) or a particular
+        Source. Failing to do so might cause the auto parsing logic to
+        run on data sources where it is not applicable and will add
+        additional overhead that might deteriorate the performance of
+        your queries.
+
+        **Best** **Practices for setting up Scope**  
+        Below are the recommended approaches to set up Dynamic Parsing
+        of JSON:
+
+        1.  If you are not using Partitions we
+            recommend using [metadata](../Search-Basics/Built-in-Metadata.md "Search Metadata")
+            fields like \_sourceCategory, \_sourceHost or \_collector to
+            define the scope.
+        2.  We recommend creating a separate Partition for your JSON
+            dataset and use that Partition as the scope for run time
+            field extraction. For example, let's say you have AWS
+            Cloudtrail logs, and they are stored in
+            `_index=cloudtrail` Partition in Sumo. You can create a Run
+            Time FER with the scope `_index=cloudtrail`. Creating a
+            separate Partition and using it as scope for a run time
+            field extraction ensures that auto parsing logic only
+            applies to necessary Partitions.
+
+5.  Review your form inputs and when satisfied click **Save**.
+
+Now that you have at least one Run Time FER created you can start
+querying your JSON data and the fields inside those JSON payloads will
+be automatically extracted.
+
+### Use Dynamic Parsing
+
+While the Run Time FERs are set to run automatically, you can
+selectively choose to apply these to your search queries on the log
+search query page. To use Dynamic Parsing click the gear icon to open
+the **Search Config** menu and toggle **Auto Parse Mode** on, outlined
+in red in the screenshot below.
+
+![auto parse mode
+option.png](../../static/img/Get-Started-with-Search/How-to-Build-a-Search/Dynamic_Parsing/auto%20parse%20mode%20option.png)
+
+The two modes available are:
+
+-   Auto Parse Mode
+    -   Will parse out all fields detected in your JSON data source,
+        irrespective of whether you are using them in your query or not.
+    -   Supported in classic dashboards and aggregate scheduled
+        searches.
+        This mode is only applicable when searching JSON data sources
+        that have been properly set up in a Run Time FER.
+-   Manual Mode (when Auto Parse Mode is disabled)
+    -   Fields won't be parsed out automatically unless defined in an
+        Ingest Time FER. Users have to manually specify further parsing
+        logic.
+    -   This mode is for advanced users who are interested in the best
+        performance and know how to parse out the fields they need.
+
+&nbsp;
+
+### Reference parsed JSON fields
+
+The [field
+browser](../How-to-Use-the-Search-Page/Field-Browser.md "Field Browser")
+and search results [messages
+table](../How-to-Use-the-Search-Page.md "How to Use the Search Page")
+have a few helpful features. 
+
+Field Browser:
+
+-   A search input field allows you to search for fields by name.  
+      
+        ![field browser search
+    field.png](../../static/img/Get-Started-with-Search/How-to-Build-a-Search/Dynamic_Parsing/field%20browser%20search%20field.png)
+-   JSON structures are nested with expand and collapse options.  
+      
+        ![Field browser expand collapse
+    JSON.png](../../static/img/Get-Started-with-Search/How-to-Build-a-Search/Dynamic_Parsing/Field%20browser%20expand%20collapse%20JSON.png)
+-   A copy button is available to the right of each field allowing you
+    to easily copy a field name.  
+      
+        ![field browser copy
+    field.png](../../static/img/Get-Started-with-Search/How-to-Build-a-Search/Dynamic_Parsing/field%20browser%20copy%20field.png)
+
+Search results table:
+
+-   You can copy field names from JSON structures. After selecting
+    (click and highlight) a JSON key in your results, right click and
+    select **Copy field name**. See [modifying a search from the
+    messages
+    tab](../How-to-Use-the-Search-Page/Modify-a-Search-from-the-Messages-tab.md "Modify a Search from the Messages tab") for
+    details on the other provided options.  
+      
+    ![JSON right click copy
+    options.png](../../static/img/Get-Started-with-Search/How-to-Build-a-Search/Dynamic_Parsing/JSON%20right%20click%20copy%20options.png)  
+      
+    Copying a field name using this option will automatically format
+    [field names that have special
+    characters](../Search-Basics/Reference_a_Field_with_Special_Characters.md "Reference a Field with Special Characters").
+    For example, the field name shown in the screenshot is **total
+    time-series**, it would be automatically formatted to **%"total
+    time-series"** to work properly in a search query.  
+     
+-   A copy button is available to the right of each column (field) name
+    allowing you to easily copy a field name.  
+      
+    ![copy button messages
+    table.png](../../static/img/Get-Started-with-Search/How-to-Build-a-Search/Dynamic_Parsing/copy%20button%20messages%20table.png)
+
+### Key Rules
+
+1.  Run Time FERs are only applied to logs that match the scope of the
+    query. When a search query is run, it is first determined if any of
+    the Run Time FERs match the scope of the query. Those Run Time FERs
+    with a matching scope are applied. Run Time FERs are applied per log
+    line only if the log contains a JSON element.  
+      
+    For example, a Run Time FER with the scope: `_sourcecategory = A`
+
+    -   The query `_sourcecategory = B` is not applied since the scope
+        does not overlap with the Run Time FER scope.
+    -   The query
+        `_sourcecategory = A or _sourcecategory = B` is applied, only
+        within the log lines that fall within `_sourcecategory = A`,
+        while the remaining log lines are not parsed by this Run Time
+        FER.
+
+2.  If a field does not exist in the schema of the log message, null
+    results are displayed for the field (instead of erroring out).
+
+3.  Ingest Time FERs take precedence for field assignments. A Run Time
+    FER will not override a field assignment from an Ingest Time FER.  
+      
+    Conflicts between Ingest and Run Time fields are evaluated by each
+    log line in the following ways:
+
+    -   If the Ingest Time field has a valid value or is empty, and a
+        Run Time field doesn't exist, the value from the Ingest Time
+        field is applied.
+
+    -   If the Ingest Time field doesn't exist or is empty and a Run
+        Time field has a valid value or is empty, the value from the Run
+        Time field is applied.
+
+    -   If both an Ingest and Run Time field have valid values,
+        the value from the Ingest Time field is applied.
+
+4.  Spaces in field names are automatically reformatted to underscores.
+
+### Limitations
+
+###### Limitations around the number of fields
+
+1.  Dynamic Parsing extracts up to 100 fields per message. This 100
+    field count includes all built-in and parsed fields.
+2.  Total fields shown in the field browser consist of all the fields
+    extracted across log lines.
+3.  The [Field
+    Browser](../How-to-Use-the-Search-Page/Field-Browser.md "Field Browser")
+    displays the count of the fields as well as the distribution of
+    values of each field. These calculations are done for the first 200
+    fields that are parsed by a run-time FER.
+4.  Non-aggregate queries in Scheduled Views and Scheduled Searches
+    cannot be created in auto parse mode (Dynamic Parsing).

@@ -94,6 +94,43 @@ module.exports = {
       ],
     },
   ],
+  metricslogs: [
+    {
+      type: 'category',
+      label: 'Searches and Logs',
+      collapsible: true,
+      collapsed: false,
+      link: {type: 'doc', id: 'search/index'},
+      items: [
+        'search/file',
+        {
+          type: 'category',
+          label: 'Get Started with Searches',
+          collapsible: true,
+          collapsed: false,
+          link: {
+            type: 'generated-index',
+            title: 'Get Started with Searches',
+            description:
+              "Learn how to build and run searches, review logs, and more.",
+            keywords: ['search', 'logs'],
+          },
+          items: [
+            {
+              type: 'category',
+              label: 'Build Searches',
+              collapsible: true,
+              collapsed: false,
+              items: [
+                'search/get-started-with-search/build-search/best-practices-search',
+                'search/get-started-with-search/build-search/dynamic-parsing',
+              ],
+            },
+          ],
+        },
+      ],
+    },
+  ],
   integrations: [
     'integrations/integrations',
     {

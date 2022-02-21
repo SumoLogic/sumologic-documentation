@@ -1,0 +1,49 @@
+---
+id: chart-search-results
+---
+
+# Chart Search Results
+
+In the **Aggregates** tab, in addition to the standard table view, you
+can view search results as a chart, such as a bar or column chart.
+
+Only search results that have been aggregated using a group or aggregate
+operator can be charted. See [Group or Aggregate
+Operators](../../Search-Query-Language/aaGroup.md "https://help.sumologic.com/Search/Search_Query_Language/aaGroup")
+for a list. 
+
+When charting aggregate results from a query, the grouping function
+defines the plotted values on the one axis, and the grouping operator
+determines the values on the other axis. For example, **group by
+\_sourceHost** produces a bar or point for each host. If you are using
+multiple group-by functions, a separate bar or point represents each set
+of grouped results.
+
+**To chart aggregate results:**
+
+1.  From a search, run an aggregate query.
+2.  From the **Aggregates** tab, click a graph button on
+    the **Aggregates** tab.
+
+![](../../static/img/Get-Started-with-Search/Search-Basics/Chart-Search-Results/Aggregates.png)
+
+For this example, you can see a bar chart, but you can pick from any of
+the available charting options, see [Chart Panel
+Types](../../../Visualizations-and-Alerts/Dashboards/Chart-Panel-Types.md "Chart Panel Types")
+for details.
+
+### Why are the chart options not available?
+
+Your data may be a string data type instead of a number. Most aggregate
+operators will cast your data to a number, operators
+like `first` and `last` do not. You can cast your data to a number if
+needed using the `num` operator.
+
+Example:
+
+`_sourceCategory=concierge completed execution | parse "Execution duration: * s" as duration | timeslice 5m | first(duration) as duration by _timeslice | num(duration) | sort by duration`
+
+For details on casting your data to a string or numeric data type
+see [Casting Data to a Number or
+String](../../Search-Query-Language/Search-Operators/Manually-Casting-String-Data-to-a-Number.md "https://help.sumologic.com/Search/Search-Query-Language/Search-Operators/Manually-Casting-String-Data-to-a-Number") for
+details.
