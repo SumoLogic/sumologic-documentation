@@ -1,10 +1,10 @@
 ---
 id: global-intel
-sidebar_title: Global Intelligence
+sidebar_label: Global Intelligence
 description: Crowd-sourced intelligence for Insights 
 ---
 
-# Crowd-sourced intelligence for Insight triage.
+# Crowd-sourced intelligence for Insight triage
 
 This page describes Global Intelligence for Security Insights, implemented in CSE as Global Confidence scores. This feature helps security analysts triage and prioritize Insights. 
 
