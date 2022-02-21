@@ -47,6 +47,7 @@ module.exports = {
       collapsed: false,
       items: [
         'Manage/Collection/Processing-Rules/create-a-processing-rule',
+        'CSE/global-intel'
       ],
      },
     {

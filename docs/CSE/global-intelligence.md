@@ -11,11 +11,16 @@ This page describes Global Intelligence for Security Insights, implemented in CS
 ## What is a Global Confidence score? 
 An Insight’s Global Confidence score represents a level of confidence, predicted by Sumo Logic’s Global Intelligence machine learning model, that the Insight is actionable. 
 
-![closeup](/img/closeup.png)
+![closeup](/img/global-intel/closeup.png)
 
-The score is generated based on the underlying pattern of Signals in an Insight. The model compares this pattern to previously observed patterns from Insights that were closed with either a False Positive or Resolved resolution. The model does such comparisons broadly—across the global installed base of Cloud SIEM Enterprise customers—so it can generate a Confidence score based on the patterns seen at one customer when they are encountered at another customer. In addition to leveraging the patterns discovered across the CSE installed base, the model customizes scores for Insights in your account based on your customized content, including tuned and custom rules.
+The score is generated based on the underlying pattern of Signals in an Insight. The model compares this pattern to previously observed patterns from Insights that were closed with either a **False Positive** or **Resolved** resolution. The model does such comparisons broadly—across the global installed base of Cloud SIEM Enterprise customers—so it can generate a Confidence score based on the patterns seen at one customer when they are encountered at another customer. In addition to leveraging the patterns discovered across the CSE installed base, the model customizes scores for Insights in your account based on your customized content, including tuned and custom rules.
 
-NoteAll information used by the model is anonymized and no customer-confidential information is processed or retained.
+:::tip Fear not
+
+All information used by the model is anonymized and no customer-confidential information is processed or retained.
+
+:::
+
 
 The score is on a scale of 0 to 100. A higher score indicates higher confidence that the Insight is actionable. If the model does not have enough information, it will not make a prediction and no score will be listed (you’ll see either “No prediction” or “N/A”). 
 
@@ -27,5 +32,5 @@ The Global Confidence score is a valuable data point to consider when prioritizi
 
 An Insight’s Confidence score is shown for each Insight on the Insights list page. You can sort the Insight list by the Global Confidence score, as well as by Severity. 
 
-![confidence](/img/confidence-screenshot.png)
+![confidence](/img/global-intel/confidence-screenshot.png)
  
