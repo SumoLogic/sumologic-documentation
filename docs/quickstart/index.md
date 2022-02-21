@@ -1,5 +1,5 @@
 ---
-id: quickstart
+slug: /quickstart
 ---
 
 # Quick Start your Sumo experience

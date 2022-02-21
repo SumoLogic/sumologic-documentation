@@ -1,5 +1,5 @@
 ---
-id: contribution
+slug: /contribution
 ---
 
 # Contributing to Sumo
@@ -33,9 +33,17 @@ Fork will be for the future and Third Parties. For now, clone and branch to work
 
 ### Create a branch
 
-1. Create a new branch from your fork using a name that best describes the work or references a GitHub issue number. For example: lk-tracing-update or lk-apps-gitlab
+1. Create a new branch from your cloned repo/fork using a name that best describes the work or references a GitHub issue number. For example: lk-tracing-update or lk-apps-gitlab
 1. Edit or create markdown (.md) files in your branch. See the 
-1. Push your branch to your fork.
+1. Push your branch to the repo/fork.
+
+### Create a pull request
+
+Doc team members will review and approve your contributions using GitHub.
+
+1. With your branch pushed to GitHub, create a new [pull request](https://github.com/SumoLogic/sumologic-documentation/compare).
+1. Select `main` for the base branch. Select your branch for the compare.
+1. 
 
 ## Recommended applications
 

@@ -126,35 +126,78 @@ Tables use plain markdown with one header, default left aligned columns, and mul
 
 ## Emphasis
 
+```markdown
 Emphasis, aka italics, with *asterisks* or _underscores_.
 
 Strong emphasis, aka bold, with 2 **asterisks** or __underscores__.
 
 Combined emphasis with **asterisks and _underscores_**.
 
-Strikethrough uses two tildes. ~~Scratch this.~~
+Strikethrough uses 2 tildes. ~~Scratch this.~~
+```
+
+Emphasis, aka italics, with *asterisks* or _underscores_.
+
+Strong emphasis, aka bold, with 2 **asterisks** or __underscores__.
+
+Combined emphasis with **asterisks and _underscores_**.
+
+Strikethrough uses 2 tildes. ~~Scratch this.~~
 
 ## Lists
 
-For numbered lists, always start with `1.`. The generator will automatically number the list correctly when building the site:
+You can mix ordered (or numbered) and unordered (or bulleted) lists together.  Use extra lines and tabs (or 2 spaces) to move content under these bullets, including other bullets, paragraphs, images, and more. Be careful of tabbing over too far. A third tab will automatically render as code.
+
+### Numbered Lists
+
+Always start with `1.` for numbered, ordered lists. The generator will automatically number the list correctly when building the site:
 
 ```markdown title="Markdown Ordered List"
-1. First ordered list item
-1. Another item
+1. First ordered list item.
+1. Another item.
    - Unordered sub-list.
-1. Actual numbers do not matter, just that it is a number
-   1. Ordered sub-list
+1. Actual numbers do not matter, just that it is a number.
+   1. Ordered sub-list.
 1. And another item.
+
+  More content for this entry. And a screenshot:
+
+  ![span hover](/img/apm/traces/span-hover-view.png)
+
 ```
 
-1. First ordered list item
-1. Another item
+1. First ordered list item.
+1. Another item.
    - Unordered sub-list.
-1. Actual numbers do not matter, just that it is a number
-   1. Ordered sub-list
+1. Actual numbers do not matter, just that it is a number.
+   1. Ordered sub-list.
 1. And another item.
 
-* Use asterisks `*` for unordered lists.
+  More content for this entry. And a screenshot:
+
+  ![span hover](/img/apm/traces/span-hover-view.png)
+
+### Bulleted Lists
+
+Use asterisks `*` for unordered, bulleted lists.
+
+```markdown title="Markdown Unordered List"
+* Unordered list line 1.
+* Line 2.
+
+  Content to show under 2.
+
+  * Another set of bullets.
+  * Here we go, another!
+```
+
+* Unordered list line 1.
+* Line 2.
+
+  Content to show under 2.
+
+  * Another set of bullets.
+  * Here we go, another!
 
 You can configure your editor to always use this format for lists. For Visual Studio Code, configure the following settings:
 
@@ -304,7 +347,7 @@ Docusaurus has a special syntax to create admonitions and callouts, including no
     content.
     :::
 
-    :::tip My tip
+    :::tip
     Use this awesome feature option.
     :::
 
@@ -316,8 +359,9 @@ Docusaurus has a special syntax to create admonitions and callouts, including no
 Highlight specific info, best practices, links, and other information from Sumo specialists! You can change the title based on the content.
 :::
 
-:::tip My tip
+:::tip
 Use this awesome feature option. Here's an example of a code block in a tip.
+:::
 
 ```json
 "overrides": [

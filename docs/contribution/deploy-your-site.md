@@ -13,7 +13,7 @@ It builds your site as simple **static HTML, JavaScript and CSS files**.
 You need the following at a minimum installed on your machine to run builds:
 
 * [NodeJS](https://nodejs.org/en/download/) version >= 14
-* [Yarn](https://yarnpkg.com/en/) version >= 1.5, you can install with Brew if you have that installed: `brew install yarn`
+* [Yarn](https://yarnpkg.com/en/) version >= 1.5, you can install with [Homebrew](https://brew.sh/) if you have that installed: `brew install yarn`
 
 ## Build your site
 
@@ -32,4 +32,6 @@ The site includes translations into other languages. To build on your local:
 
         This build does not hot reload and requires a rebuild to test and review.
 
-The static files are generated in the `build` folder and run on your local machine at: `http://localhost:3000/`.
+The static files are generated in the `build` folder and run on your local machine at: `http://localhost:3000/`. As you make changes, it will hot reload, or refresh, on the fly.
+
+To end builds and served sites, hit **Ctrl + C**. You can then enter commands again, like rebuilding and starting.

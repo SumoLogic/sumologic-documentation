@@ -1,5 +1,5 @@
 ---
-id: contribution
+slug: /contribution
 ---
 
 # Contributing to Sumo

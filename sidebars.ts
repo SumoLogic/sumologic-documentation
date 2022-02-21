@@ -33,7 +33,7 @@ module.exports = {
       label: 'Quickstarts and Tutorials',
       collapsible: true,
       collapsed: true,
-      link: {type: 'doc', id: 'quickstart/quickstart'},
+      link: {type: 'doc', id: 'quickstart/index'},
       items: [
         'quickstart/quickstart-github',
         'quickstart/quickstart-k8s',
@@ -116,7 +116,7 @@ module.exports = {
       label: 'Contribution Guide',
       collapsible: true,
       collapsed: false,
-      link: {type: 'doc', id: 'contribution/contribution'},
+      link: {type: 'doc', id: 'contribution/index'},
       items: [
         'contribution/create-document',
         'contribution/markdown-features',

@@ -15,7 +15,7 @@ Docusaurus requires the following to build on locals:
 * [NodeJS](https://nodejs.org/en/download/) version >= 14
 * [Yarn](https://yarnpkg.com/en/) version >= 1.5, you can install with Brew: `brew install yarn`
 
-As we maintain the site, the package.json file tracks all packages, plugins, and more required for the site. To install on your local:
+As we maintain the site, the `package.json` file tracks all packages, plugins, and more required for the site. To install on your local:
 
 1. Pull the latest code and make your changes in a branch. 
 1. Open a terminal on your local machine.
@@ -29,4 +29,6 @@ Build and deploy your site **for production** on your local.
 1. In the terminal application and in the GitHub repo, enter: `yarn build`
 1. When the build completes, enter: `yarn start`
 
-The static files are generated in the `build` folder and run on your local machine at: `http://localhost:3000/`.
+The static files are generated in the `build` folder and run on your local machine at: `http://localhost:3000/`. As you make changes, it will hot reload, or refresh, on the fly.
+
+To end builds and served sites, hit **Ctrl + C**. You can then enter commands again, like rebuilding and starting.

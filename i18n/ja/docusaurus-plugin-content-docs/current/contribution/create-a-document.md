@@ -33,7 +33,7 @@ All content uses GitHub Flavored Markdown with some options and additions. For a
 
 ## Add to Navigation
 
-The `sidebar.js` file (in repo root) controls the side navigation for the entire site. It includes multiple sidebars and sections based on the Guides top navigation, drilling down per guide.
+The `sidebar.ts` file (in repo root) controls the side navigation for the entire site. It includes multiple sidebars and sections based on the Guides top navigation, drilling down per guide.
 
 :::sumo Doc Team Support
 The Sumo Logic Doc Team will help to add your documentation to the sidebar and top navigation. If you have suggestions, please include those in the Pull Request description. If you add the documentation to the sidebar, the team will review the location and names for building and placement in navigation.
@@ -41,7 +41,7 @@ The Sumo Logic Doc Team will help to add your documentation to the sidebar and t
 
 When adding a new page, make note of the file path and id. For example, this document is located in the folder `contribution` with an id of `create-document`. When adding this file to the sidebar, it would be added to the  `contribution/create-document`.
 
-```js title="Add this page to sidebar.js" {10}
+```js title="Add this page to sidebar.ts" {10}
 //Contribution guide for documentation
   contribution: [
     {
