@@ -34,7 +34,7 @@ Fork will be for the future and Third Parties. For now, clone and branch to work
 ### Create and push a branch
 
 1. Create a new branch from your cloned repo/fork using a name that best describes the work or references a GitHub issue number. For example: lk-tracing-update or lk-apps-gitlab
-1. Edit or create markdown (.md) files in your branch. See Create a Document and Markdown Features for more info.
+1. Edit or create markdown (.md) files in your branch. See [Create a Document](create-a-document.md) and [Markdown Features](markdown-features.md) for more info.
 1. Commit your changes to the branch with a meaningful message.
 
   ![pull request](/img/contribution/commit.png)
@@ -50,9 +50,9 @@ Doc team members will review and approve your contributions using GitHub.
 1. Click **Create Pull Request**.
 1. Enter the following:
 
-  * Enter a title for the PR.
-  * Include an issue number from GitHub or Jira, etc.
-  * Describe what changed, new pages, updates.
+     * Enter a title for the PR.
+     * Include an issue number from GitHub or Jira, etc.
+     * Describe what changed, new pages, updates.
 
 1. Click Create Pull Request.
 
