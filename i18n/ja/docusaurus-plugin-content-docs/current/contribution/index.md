@@ -45,16 +45,23 @@ Fork will be for the future and Third Parties. For now, clone and branch to work
 
 Doc team members will review and approve your contributions using GitHub.
 
-1. With your branch pushed to GitHub, create a new [pull request](https://github.com/SumoLogic/sumologic-documentation/compare).
-1. Select `main` for the base branch. Select your branch for the compare.
-1. Click **Create Pull Request**.
-1. Enter the following:
+1. Visit [GitHub](https://github.com/SumoLogic/sumologic-documentation) after pushing your branch. You may see an option to **Compare & Pull Request** for your branch. 
 
+    ![compare](/img/contribution/compare-pr.png)
+
+    Otherwise, create a new [pull request](https://github.com/SumoLogic/sumologic-documentation/compare).
+
+      1. Select `main` for the base branch. Select your branch for the **compare**.
+      1. Click **Create Pull Request**.
+
+1. On the Pull Request page, enter the following:
+
+     * Make sure **base** branch is `main` and **compare** branch is the one you pushed. 
      * Enter a title for the PR.
      * Include an issue number from GitHub or Jira, etc.
      * Describe what changed, new pages, updates.
 
-1. Click Create Pull Request.
+1. Click **Create Pull Request**.
 
 ![pull request](/img/contribution/pull-request.png)
 
