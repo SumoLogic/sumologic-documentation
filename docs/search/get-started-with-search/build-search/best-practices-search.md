@@ -17,8 +17,7 @@ test your search against a shorter time range first, then extend the time range 
 
 ## Use fields extracted by FERs and avoid the where operator
 
-Whenever possible, use keyword searches and fields already extracted using [Field Extraction Rules](../../../Manage/Field-Extractions.md "Manage Field Extractions") (FERs) to filter data instead of using the [where](../../Search-Query-Language/Search-Operators/where.md "where")
-operator. If it is not possible to only use a keyword or pre-extracted field, use both a keyword search AND the where clause.
+Whenever possible, use keyword searches and fields already extracted using [Field Extraction Rules] (../../../Manage/Field-Extractions.md "Manage Field Extractions") (FERs) to filter data instead of using the [where] (../../Search-Query-Language/Search-Operators/where.md "where") operator. If it is not possible to only use a keyword or pre-extracted field, use both a keyword search AND the where clause.
 
 **Best approach:** Field Extraction Rule field AND keyword
 
@@ -42,7 +41,7 @@ _sourceCategory=foo | parse "somefield *" as somefield | where somefield="valuea
 
 ## Filter your data before aggregation
 
-When filtering data, make the result set you are working with as small as possible before conducting [aggregate](../../Search-Query-Language/aaGroup.md "Group") operations like sum, min, max, and average. As stated in [Rule 1](./Best-Practices%3A-Search-Rules-to-Live-By.md "Best Practices: 7 Search Rules to Live By"), keywords and metadata in your search scope are the priority. If you must use a `where` clause, refer to [Rule 3](./Best-Practices%3A-Search-Rules-to-Live-By.md "Best Practices: 7 Search Rules to Live By").
+When filtering data, make the result set you are working with as small as possible before conducting [aggregate] (../../Search-Query-Language/aaGroup.md "Group") operations like sum, min, max, and average. According to [Be specific with search scope](#be-specific-with-search-scope), keywords and metadata in your search scope are the priority. If you must use a `where` clause, refer to [Use fields extracted by FERs and avoid the where operator](#use-fields-extracted-by-fers-and-avoid-the-where-operator).
 
 **Best approach:**
 
@@ -50,7 +49,7 @@ When filtering data, make the result set you are working with as small as possib
 _sourceCategory=Prod/User/Eventlog user="john" | count by user
 ```
 
-This example assumes that you also leverage a Field Extraction Rule to eliminate any parsing. See [Rule 3](./Best-Practices%3A-Search-Rules-to-Live-By.md "Best Practices: 7 Search Rules to Live By"). 
+This example assumes that you also leverage a Field Extraction Rule to eliminate any parsing. 
 
 **Least preferred approach:**
 
