@@ -13,7 +13,7 @@ An Insight’s Global Confidence score represents a level of confidence, predict
 
 ![closeup](/img/global-intel/closeup.png)
 
-The score is generated based on the underlying pattern of Signals in an Insight. The model compares this pattern to previously observed patterns from Insights that were closed with either a **False Positive** or **Resolved** resolution. The model does such comparisons broadly—across the global installed base of Cloud SIEM Enterprise customers—so it can generate a Confidence score based on the patterns seen at one customer when they are encountered at another customer. In addition to leveraging the patterns discovered across the CSE installed base, the model customizes scores for Insights in your account based on your customized content, including tuned and custom rules.
+The score is generated based on the underlying pattern of Signals in an Insight. The model compares this pattern to previously observed patterns from Insights that were closed with either a **False Positive** or **Resolved** resolution. The model does such comparisons broadly—across the global installed base of Cloud SIEM Enterprise customers—so it can generate a Confidence score based on the patterns seen at one customer when encountered at another customer. In addition to leveraging the patterns discovered across the CSE installed base, the model customizes scores for Insights in your account based on your customized content, including tuned and custom rules.
 
 :::tip Fear not
 
