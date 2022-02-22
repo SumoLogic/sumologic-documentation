@@ -1,5 +1,6 @@
 ---
 id: panels
+Title: Dashboard Panels
 ---
 
 # Panels
