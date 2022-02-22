@@ -1,5 +1,6 @@
 ---
 id: create-a-processing-rule
+hide_table_of_contents: true
 description: Processing rules can filter and forward data sent to Sumo Logic.
 ---
 
@@ -24,15 +25,15 @@ Each UI is documented in a separate tab below.
 You can add a processing rule to an existing Source or create a processing rule when you configure a new Source.
 
 1.  To create a processing rule for an existing Source, go to **Manage Data > Collection > Collection** and click **Edit** next to a Source. When configuring your new or existing Source, click the **\+ Add Filter** or **\+ Add** **Action** text in the **Processing Rules** section. 
-    
+
     *   A filter is either an allowlist or denylist rule.
     *   An action is either a hash or mask rule.
-    
+
     ![processing rules2022.png](/img/processing-rules/create-a-processing-rule/processing-rules2022.png)
 2.  Once clicked, the configuration options are displayed.
-    
+
     ![generic processing rules UI with added options.png](/img/processing-rules/create-a-processing-rule/generic_processing_rules_UI_with_added_options.png)
-    
+
 3.  Give a meaningful **Name** to your rule. Names can be up to 32 characters long.
 4.  Choose the **Type** of processing rule you'd like to create:
     *   Filters have the option to:
@@ -43,9 +44,13 @@ You can add a processing rule to an existing Source or create a processing rule 
         *   [Mask messages that match] (/Manage/Collection/Processing-Rules/Mask-Rules). Replace an expression with a mask string that you can customize—another option to protect data, such as passwords, that you wouldn't normally track.
 5.  For **Filter**, type a regular expression that defines the messages you want to filter. The rule must match the whole message.
     *   For multi-line log messages, to get the lines before and after the line containing your text, wrap the segment with **(?s).\*** such as: **(?s).\*matching text(?s).\***
-        
-        Your regex must be [RE2 compliant.](https://github.com/google/re2/wiki/Syntax "https://github.com/google/re2/wiki/Syntax")
-        
+
+    :::note
+
+    Your regex must be [RE2 compliant.](https://github.com/google/re2/wiki/Syntax "https://github.com/google/re2/wiki/Syntax")
+
+    :::
+
 6.  To remove a filter or action click the trash can icon.  
     ![processing rule trach can icon.png](/img/processing-rules/create-a-processing-rule/trashcan-icon.png)
 7.  When you're finished adding all the rules you need, click **Submit**.
@@ -57,20 +62,22 @@ You can add a processing rule to an existing Source or create a processing rule 
 ## Original interface
 
 1.  To create a processing rule for an existing Source, go to **Manage Data \> Collection \> Collection** and click **Edit** next to a Source. When configuring your new or existing Source, expand the **Processing Rules for Logs**** section and then click **Add Rule**.  
-      
+
     ![Add processing rule](/img/processing-rules/create-a-processing-rule/no-rules.png)
-    
+
 2.  The **Processing Rule for Logs** dialog is displayed.   
-      
+
     ![Add Processing Rule](/img/processing-rules/create-a-processing-rule/redact-rules.png)  
      
 3.  Give a meaningful **Name** to your rule. Names can be up to 32 characters long.
 4.  For **Filter**, type a regular expression that defines the messages you want to filter. The rule must match the whole message.
 
     *   For multi-line log messages, to get the lines before and after the line containing your text, wrap the segment with `(?s).` such as:`(?s).*matching text(?s).`
-        
+
     :::note
+
     Your regex must be [RE2 compliant.](https://github.com/google/re2/wiki/Syntax)
+
     :::
 
 5.  Choose the **Type** of processing rule you'd like to create:
