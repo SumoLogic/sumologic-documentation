@@ -18,10 +18,10 @@ results](../../Get-Started-with-Search/Search-Basics/View-Search-Results-for-JSO
 Because JSON supports both nested keys and arrays that contain ordered
 sequences of values, the Sumo Logic JSON operator allows you to extract:
 
--   Single, top-level fields.
--   Multiple fields.
--   Nested keys.
--   Keys in arrays.
+* Single, top-level fields.
+* Multiple fields.
+* Nested keys.
+* Keys in arrays.
 
 Not familiar with JSONPath syntax? Try our [UI
 generator](./03-Parse-JSON-Formatted-Logs.md "Parse JSON Formatted Logs")
@@ -29,23 +29,23 @@ that can create the parse expression for a specific JSON key for you.
 
 ### Syntax
 
--   `| json \<name_or_ke\>"[, \<name_or_ke\>", ...] [as\<fiel\> ...]`
--   `| json \<name_or_ke\>"[, \<name_or_ke\>", ...] [as\<fiel\>] [nodrop]`
--   `| json [field\<field_nam\>] \<name_or_ke\>"[, \<name_or_ke\>", ...] [as\<fiel\> ...]`
--   `| json auto [field\<field_nam\>] [maxdepth\<\>]`
--   `| json auto [field\<field_nam\>] [extractarrays]`
--   `| json auto keys \<key\>"[, \<key\>", ...] [refonly] [as\<fiel\> ...]`
+* `| json \<name_or_ke\>"[, \<name_or_ke\>", ...] [as\<fiel\> ...]`
+* `| json \<name_or_ke\>"[, \<name_or_ke\>", ...] [as\<fiel\>] [nodrop]`
+* `| json [field\<field_nam\>] \<name_or_ke\>"[, \<name_or_ke\>", ...] [as\<fiel\> ...]`
+* `| json auto [field\<field_nam\>] [maxdepth\<\>]`
+* `| json auto [field\<field_nam\>] [extractarrays]`
+* `| json auto keys \<key\>"[, \<key\>", ...] [refonly] [as\<fiel\> ...]`
 
 ### Options
 
--   `nodrop` - allows messages containing invalid JSON values to be
+* `nodrop` - allows messages containing invalid JSON values to be
     displayed. For details, see [parse
     nodrop](Parse-nodrop-option.md "Parse nodrop option") and [using the
     nodrop option](./03-Parse-JSON-Formatted-Logs.md "Parse JSON Formatted Logs").
--   `field\<field_nam\>` - allows you to specify a field to parse other
+* `field\<field_nam\>` - allows you to specify a field to parse other
     than the default message. For details, see [parse
     field](Parse-field-option.md "Parse field").
--   `auto` - automatically detects JSON objects in logs and extracts the
+* `auto` - automatically detects JSON objects in logs and extracts the
     key/value pairs. See [JSON auto
     option](./03-Parse-JSON-Formatted-Logs.md "Parse JSON Formatted Logs")
     for details.
@@ -99,7 +99,7 @@ Another example, if your name is `fie@ld` you need to use `[‘fie@ld’]`.
 References to specific keys are case sensitive in a standard
 JSON operation. For example, if a key name is `sourceIpAddress`  and
 you run `| json "sourceipaddress"` the operation will not return results
-since it doesn't match the upper case letters. The correct way is to run
+since it does not match the upper case letters. The correct way is to run
 `| json "sourceIpAddress"`.
 
 When using the [auto
@@ -116,7 +116,7 @@ example, to extract `accountId`:
 produces results like:
 
 ![json single key displayed on results
-table.png](../../static/img/Search-Query-Language/01-Parse-Operators/03-Parse-JSON-Formatted-Logs/json%20single%20key.png)
+table.png](../../static/img/Search-Query-Language/01-Parse-Operators/03-Parse-JSON-Formatted-Logs/json-single-key.png)
 
 ### Extracting multiple fields
 
@@ -128,18 +128,18 @@ to extract `accountId` and `eventName`:
 produces these results:
 
 ![json multiple keys displayed in
-results.png](../../static/img/Search-Query-Language/01-Parse-Operators/03-Parse-JSON-Formatted-Logs/json%20multiple%20keys%20displayed%20in%20results.png)
+results.png](../../static/img/Search-Query-Language/01-Parse-Operators/03-Parse-JSON-Formatted-Logs/json-multiple-keys-displayed-in-results.png)
 
 In addition, you can assign names to fields that differ from their
 original key names. To use `aID` instead of `accountId` and
-`eName` instead of `eventName`, you'd use the `as` option like this:
+`eName` instead of `eventName`, you could use the `as` option like this:
 
 `_index=sumologic_audit_events | json "accountId", "eventName" as aID, eName | fields aID, eName`
 
 which gives you these results:
 
 ![json rename key
-names.png](../../static/img/Search-Query-Language/01-Parse-Operators/03-Parse-JSON-Formatted-Logs/json%20rename%20key%20names.png)
+names.png](../../static/img/Search-Query-Language/01-Parse-Operators/03-Parse-JSON-Formatted-Logs/json-rename-key-names.png)
 
 ### Extracting a nested key
 
@@ -184,7 +184,7 @@ The result of the query would look like this: 
 ### Using the nodrop option
 
 By default, the JSON operator optimizes results by dropping messages
-that don't use the specified key or keys, or messages that use invalid
+that do not use the specified key or keys, or messages that use invalid
 JSON keys. Use the nodrop option to prevent this optimization, and set
 the extracted field values to null (empty):
 
@@ -197,14 +197,14 @@ For example, you can access Actor Type from an O365 JSON message using
 wildcard.
 
 ![](/)![json wildcard
-example.png](../../static/img/Search-Query-Language/01-Parse-Operators/03-Parse-JSON-Formatted-Logs/json%20wildcard%20example.png)
+example.png](../../static/img/Search-Query-Language/01-Parse-Operators/03-Parse-JSON-Formatted-Logs/json-wildcard-example.png)
 
 `_sourceCategory=O365* | json "Actor[*].Type" as Actortype`
 
 The result of the query would look like this:
 
 ![wildcard example
-results.png](../../static/img/Search-Query-Language/01-Parse-Operators/03-Parse-JSON-Formatted-Logs/wildcard%20example%20results.png)
+results.png](../../static/img/Search-Query-Language/01-Parse-Operators/03-Parse-JSON-Formatted-Logs/wildcard-example-results.png)
 
 Next, if required, you can use the array elements to perform additional
 operations. For example, you can find the max of Type for a CreationTime
@@ -266,7 +266,7 @@ Example:
 `* | json auto keys \<key\>", \<key\>" as\<field\>,\<field\>`
 
 Use the **refonly** option to extract only the referenced keys. If you
-don't use this option, **json auto** will also extract all other JSON
+do not use this option, **json auto** will also extract all other JSON
 fields in the message.
 
 Example:
@@ -403,7 +403,7 @@ the **Messages** tab of your Search.
 1.  Right-click the key you want to parse and a menu will appear.
 2.  Click **Parse selected key  
     ![ui parse selected key
-    option.png](../../static/img/Search-Query-Language/01-Parse-Operators/03-Parse-JSON-Formatted-Logs/ui%20parse%20selected%20key%20option.png)**
+    option.png](../../static/img/Search-Query-Language/01-Parse-Operators/03-Parse-JSON-Formatted-Logs/ui-parse-selected-key-option.png)**
 3.  In the query text box, where ever your cursor was last placed, a new
     parse JSON operation is added that will parse the selected key. For
     example, `| json field=_raw "_BOOT_ID"`.
@@ -413,12 +413,12 @@ the **Messages** tab of your Search.
 #### Unable to parse input as json
 
 By default the JSON operator optimizes results by dropping messages that
-don't have the fields or keys specified in your query or if the JSON is
+do not have the fields or keys specified in your query or if the JSON is
 invalid. When a message is dropped the user interface provides a warning
 message: 
 
 ![unable to parse json warning
-message.png](../../static/img/Search-Query-Language/01-Parse-Operators/03-Parse-JSON-Formatted-Logs/unable%20to%20parse%20json%20warning%20message.png)
+message.png](../../static/img/Search-Query-Language/01-Parse-Operators/03-Parse-JSON-Formatted-Logs/unable-to-parse-json-warning-message.png)
 
 This is only a warning message to inform you that at least one log
 returned in the scope of the query did not have a specified key. 

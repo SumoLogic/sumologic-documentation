@@ -30,18 +30,18 @@ Queries using sessionize cannot be added to a Dashboard.
 
 ### Syntax
 
--   `sessionize (\<anchor pattern\>") as \<alias list\>), (\<anchor pattern\>") as \<alias list\>) `
+* `sessionize (\<anchor pattern\>") as \<alias list\>), (\<anchor pattern\>") as \<alias list\>) `
 
 Where *anchor pattern* is like a parse anchor expression, except that it
 can include variables from previous expressions (using `$variableName`).
 
 ### Rules
 
--   The sessionize operator is followed by more than
+* The sessionize operator is followed by more than
     one [anchor](../01-Parse-Operators/01-Parse-Predictable-Patterns-Using-an-Anchor.md "Parse Operator") expression.
--   Each anchor expression can be used to extract one or more variables
+* Each anchor expression can be used to extract one or more variables
     from a matching log.
--   You can use the extracted variable to join with a second log message
+* You can use the extracted variable to join with a second log message
     containing that variable using a $variableName notation.
 
 After using the [Trace](trace.md "trace") operator to find related
@@ -51,8 +51,8 @@ sessions, you can use the sessionize operator to refine the results.
 
 Let's say we have two events that interest us in our Windows events:
 
--   When users are logged off
--   When someone restarts a session
+* When users are logged off
+* When someone restarts a session
 
 These two events together for a system can reveal how problematic a
 particular Windows machine, domain, or logon ID can be.

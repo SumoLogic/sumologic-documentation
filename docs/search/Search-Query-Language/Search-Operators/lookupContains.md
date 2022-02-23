@@ -17,11 +17,11 @@ the operator within a `where` expression, or before it.
 This is the syntax for using `lookupContains` within a `where`
 expression:
 
-`... | where lookupContains (path://�\<path-to-tabl\>”,\<event-fiel\>\<lookup-fiel\>) | ...`
+`... | where lookupContains (path://�\<path-to-tabl\>”,\<event-fiel\>\<lookup-fiel\>) | ...`
 
 Where:
 
--   \<path-to-tabl\>` is the full path to the lookup table in the Sumo
+* \<path-to-tabl\>` is the full path to the lookup table in the Sumo
     Logic library, for example:  
       
     `/Library/Users/username@sumologic.com/lookup-table-name`  
@@ -30,8 +30,8 @@ Where:
     table in the Sumo Logic library, and select **Copy path **from the
     tree-dot more options menu for the table.   
      
--   `event-field` is a field in a log. 
--   `lookup-field` is a field in the lookup table.
+* `event-field` is a field in a log. 
+* `lookup-field` is a field in the lookup table.
 
 **Example 1: Using lookupContains within a where expression to compare a
 single field**
@@ -63,7 +63,7 @@ to use the alias in later clauses of the search query.
 
 Where:
 
--   \<path-to-tabl\>` is the full path to the lookup table in the Sumo
+* \<path-to-tabl\>` is the full path to the lookup table in the Sumo
     Logic library, for example:  
       
     `/Library/Users/username@sumologic.com/lookup-table-name`  
@@ -72,5 +72,5 @@ Where:
     table in the Sumo Logic library, and select **Copy path **from the
     tree-dot more options menu for the table.   
      
--   `event-field` is a field in a log. 
--   `field` is the name that you assign as the alias for the field. 
+* `event-field` is a field in a log. 
+* `field` is the name that you assign as the alias for the field. 

@@ -17,14 +17,14 @@ when you may expect the results to be the same. 
 
 ### Syntax
 
--   `| pct_sampling\<fiel\> [, percentile]) [as\<fiel\>] [by\<fiel\>]`
--   `| pct_sampling\<fiel\> [, percentile, percentile, percentile]) [as\<fiel\>] [by\<fiel\>]`
+* `| pct_sampling\<fiel\> [, percentile]) [as\<fiel\>] [by\<fiel\>]`
+* `| pct_sampling\<fiel\> [, percentile, percentile, percentile]) [as\<fiel\>] [by\<fiel\>]`
 
 ### Rules
 
--   Creates a field with the naming convention:
+* Creates a field with the naming convention:
     `\<fiel\>_pct\<percentil\>`.
--   Separate multiple percent arguments in one query with commas.
+* Separate multiple percent arguments in one query with commas.
 
 ### Examples
 

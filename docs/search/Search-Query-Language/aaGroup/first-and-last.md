@@ -14,9 +14,9 @@ start with the most recent.
 
 ![new_to_old_default_result_order.png](../../static/img/Search-Query-Language/aaGroup/first-and-last/new_to_old_default_result_order.png)
 
--   The **first** result is indicated with the **#** value of 1.
+* The **first** result is indicated with the **#** value of 1.
     This **first** result has the most recent **Time**.
--   The **last** result is indicated with the **#** value of 5.
+* The **last** result is indicated with the **#** value of 5.
     This **last** result has the oldest **Time**.
 
 Using the [sort](../Search-Operators/sort.md "sort") operator allows you
@@ -43,11 +43,11 @@ encountered without respect to date or list order.
 
 ### Syntax
 
--   `first\<fiel\>) [as\<fiel\>] [by\<fiel\>]`
+* `first\<fiel\>) [as\<fiel\>] [by\<fiel\>]`
 
 ### Rules
 
--   The default field created is named `_first`
+* The default field created is named `_first`
 
 ### Example
 
@@ -72,11 +72,11 @@ others based on your sort order.
 
 ### Syntax
 
--   `last\<fiel\>) [as\<fiel\>] [by\<fiel\>]`
+* `last\<fiel\>) [as\<fiel\>] [by\<fiel\>]`
 
 ### Rules
 
--   The default field created is named `_last`
+* The default field created is named `_last`
 
 ### Example
 

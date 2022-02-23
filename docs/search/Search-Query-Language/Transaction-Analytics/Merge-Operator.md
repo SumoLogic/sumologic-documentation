@@ -10,33 +10,33 @@ the
 [Transactionize](Transactionize-operator.md "Transactionize operator")
 operator. Each field can have a different merge strategy:
 
--   takeDistinct - summarize the field using only distinct values
--   takeFirst - summarize the field using the earliest value
--   takeLast - summarize the field using the latest value
--   join with *separator* - reduce the field by combining all values
+* takeDistinct - summarize the field using only distinct values
+* takeFirst - summarize the field using the earliest value
+* takeLast - summarize the field using the latest value
+* join with *separator* - reduce the field by combining all values
     into a single string with the specified separator between each
     value. If no separator is specified a new line is used.
 
 ### Syntax
 
--   `merge`  
+* `merge`  
     Merge
     [\_raw](../../Get-Started-with-Search/Search-Basics/Built-in-Metadata.md "Search Metadata")
     values and separate them with newlines. Adds a Time field containing
     the earliest timestamp.
--   `merge\<fiel\>`   
+* `merge\<fiel\>`   
     Merge values of the named field and separate them with newlines.
--   `merge\<fiel\> \<strateg\>] [as\<fiel\>]`  
+* `merge\<fiel\> \<strateg\>] [as\<fiel\>]`  
     Merge values of the named field using the specified strategy and
     specify a new name for the field.
--   `merge�\<fiel\> \<strateg\>] [as\<field\>] [\<fiel\> \<strateg\>] [as\<field\>] ]...`   
+* `merge�\<fiel\> \<strateg\>] [as\<field\>] [\<fiel\> \<strateg\>] [as\<field\>] ]...`   
     Merge a comma-delimited list of fields with separate merge
     strategies. When no strategy is specified, join with new lines is
     implied.
 
 ### Limitation
 
--   The
+* The
     [metadata](../../Get-Started-with-Search/Search-Basics/Built-in-Metadata.md "Search Metadata")
     field \_messageTime can only use strategies takeFirst and takeLast.
 

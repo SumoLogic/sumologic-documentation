@@ -21,11 +21,11 @@ The following table shows the fields that are returned in results.
 
 With the provided results you can:
 
--   Click the provided links to drill down and further explore
+* Click the provided links to drill down and further explore
     logs from each schema.
--   Compare results against a previous time range
+* Compare results against a previous time range
     with [LogCompare](../LogCompare.md "LogCompare").
--   Run subsequent searches.
+* Run subsequent searches.
 
 ### Syntax
 
@@ -41,16 +41,16 @@ search.
 
 There are two methods you have to use the details option:
 
--   Click on the **\_count** field value from the LogReduce Values
+* Click on the **\_count** field value from the LogReduce Values
     search results.  
     ![details option by
-    link.png](../static/img/Behavior_Insights/LogReduce_Values/details%20option%20by%20link.png)  
+    link.png](../static/img/Behavior_Insights/LogReduce_Values/details-option-by-link.png)  
       
     A new search is created with the necessary identifiers from your
     initial LogReduce Values search. The search contains all of the raw
     logs from the selected data cluster.  
      
--   Manually provide the necessary identifiers. You can provide
+* Manually provide the necessary identifiers. You can provide
     identifiers from previously run LogReduce Values searches. However,
     the only way to get the search identifier, given with
     the `shortcodeID` parameter, is to click the **\_count** link from
@@ -65,7 +65,7 @@ There are two methods you have to use the details option:
 
 ##### Details Syntax
 
-`| logreduce values details on %\<key\>"[, %\<key\>", ...]�\<shortcodeI\> \<cluster_id\>,\<cluster_id\>, ...]`
+`| logreduce values details on %\<key\>"[, %\<key\>", ...]�\<shortcodeI\> \<cluster_id\>,\<cluster_id\>, ...]`
 
 | Parameter   | Description                                                                           | Default |
 |-------------|---------------------------------------------------------------------------------------|---------|
@@ -74,37 +74,37 @@ There are two methods you have to use the details option:
 | shortcodeID | The unique hash value assigned to the initial LogReduce Values search.                | Null    |
 
 For example, to see details from a particular LogReduce Values search
-and data clusters, you'd use the following syntax: 
+and data clusters, you could use the following syntax: 
 
-`| logreduce values details on %\<key\>"[, %\<key\>", ...]�\<shortcodeI\> \<cluster_id\>,\<cluster_id\>, ...]`
+`| logreduce values details on %\<key\>"[, %\<key\>", ...]�\<shortcodeI\> \<cluster_id\>,\<cluster_id\>, ...]`
 
 To see all the logs by cluster identifiers for further processing,
-you'd use the following syntax:
+you could use the following syntax:
 
 `| logreduce values details on %\<key\>"[, %\<key\>", ...]\<shortcodeI\>`
 
 ### Limitations
 
--   Not supported with [Real Time
+* Not supported with [Real Time
     alerts](../../Visualizations-and-Alerts/Alerts/Scheduled-Searches/Create_a_Real_Time_Alert.md "Create a Real Time Alert").
--   [Time Compare](../Time-Compare.md "Time Compare") and the [compare
+* [Time Compare](../Time-Compare.md "Time Compare") and the [compare
     operator](../Search-Query-Language/Search-Operators/Compare.md "Compare")
     are not supported against LogReduce Values results.
--   If you reach the memory limit you can try to shorten the time range
+* If you reach the memory limit you can try to shorten the time range
     or the number of specified fields. When the memory limit is
     reached you will get partial results on a subset of your data.
--   Response fields `_cluster_id`, `_signature`, and `_count` are not
+* Response fields `_cluster_id`, `_signature`, and `_count` are not
     supported with [Dashboard
     filters](../../Visualizations-and-Alerts/Dashboards/Use-Time-Ranges-and-Filters/05Use-Filters-in-Dashboards.md "Use Filters in Dashboards").
 
 ##### \_count link 
 
--   Searches opened by clicking the link provided in
+* Searches opened by clicking the link provided in
     the `_count` response field:
-    -   are run against [message
+    * are run against [message
         time](../Get-Started-with-Search/Search-Basics/Built-in-Metadata.md "Built-in Metadata").
-    -   can return different results due to variations in your data.
--   When provided in a Scheduled Search alert, the link from the
+    * can return different results due to variations in your data.
+* When provided in a Scheduled Search alert, the link from the
     `_count` response field is invalid and will not work.
 
 ### Examples
@@ -141,7 +141,7 @@ can help plan remediation efforts.
 Results show each unique signature:
 
 ![CloudTrail example LogReduce
-Values.png](../static/img/Behavior_Insights/LogReduce_Values/CloudTrail%20example%20LogReduce%20Values.png)
+Values.png](../static/img/Behavior_Insights/LogReduce_Values/CloudTrail-example-LogReduce-Values.png)
 
 Next, use [LogExplain](LogExplain.md "LogExplain") to analyze which
 users, IP addresses, AWS regions, and S3 event names most explain the S3
@@ -164,14 +164,14 @@ processing, they can use the following query:
 
 **Parameters to the logreduce values-details operator: **
 
--   ‘shortcode_id”, required: this is used to link to the serialized
+* ‘shortcode_id”, required: this is used to link to the serialized
     histograms and fetches them. Once fetched, they are used to
     recluster the logs in the same query and match them to their
     respective clusters 
 
 &nbsp;
 
--   “cluster_label”, optional: The cluster label is passed as a query
+* “cluster_label”, optional: The cluster label is passed as a query
     parameter to the logreduce values-details operator which can take
     either a list of labels as a parameter where it only matches the
     logs against the histograms of those labels or no labels where we

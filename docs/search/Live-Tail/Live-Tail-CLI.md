@@ -10,9 +10,9 @@ line.
 
 The Live Tail CLI supports the following operating systems:
 
--   Mac OS 10.6, Snow Leopard or later, 64-bit
--   Windows XP or later, 64-bit
--   Linux, major distributions, 64-bit
+* Mac OS 10.6, Snow Leopard or later, 64-bit
+* Windows XP or later, 64-bit
+* Linux, major distributions, 64-bit
 
 ## Limitations
 
@@ -20,18 +20,18 @@ The limitations for the Live Tail CLI are the same as the [Live
 Tail](About-Live-Tail.md "About Live Tail") feature in the Sumo Logic
 Web Application, but for these exceptions:
 
--   You can tail logs ingested from Sources configured on Installed
+* You can tail logs ingested from Sources configured on Installed
     Collectors and from HTTP and Cloud Syslog Sources on Hosted
     Collectors.
 
-    Data ingested from Amazon S3 can’t be tailed because of restrictions
+    Data ingested from Amazon S3 cannot be tailed because of restrictions
     from Amazon
 
--   The Live Tail CLI session will expire after 30 minutes of
+* The Live Tail CLI session will expire after 30 minutes of
     inactivity. This is to provide the best performance possible. If a
     Live Tail session has expired, you can restart it at any time.
 
--   \_view and \_index are not supported in Live Tail queries.
+* \_view and \_index are not supported in Live Tail queries.
 
 For complete details, see [Live Tail](Live-Tail-CLI/...md "Live Tail").
 
@@ -39,10 +39,10 @@ For complete details, see [Live Tail](Live-Tail-CLI/...md "Live Tail").
 
 **To download the Live Tail CLI:**
 
-1.  First, go to�\<https://github.com/sumologic/livetail-cl\> to view the
+1.  First, go to�\<https://github.com/sumologic/livetail-cl\> to view the
     README file. 
 2.  Then download your platform-specific binaries
-    at�\<https://github.com/SumoLogic/livetail-cli/release\>. 
+    at�\<https://github.com/SumoLogic/livetail-cli/release\>. 
 
 When you run it the first time, the **livetail-cli** file creates
 a **config.json** file that stores the user’s deployment, access ID, and
@@ -53,7 +53,7 @@ the **-c** argument to clear them.
 
 **To install the Live Tail CLI:**
 
-1.  Go to�\<https://github.com/SumoLogic/livetail-cli/release\>.
+1.  Go to�\<https://github.com/SumoLogic/livetail-cli/release\>.
 2.  Download the **livetail-cli** file and save it to a location where
     you have read, write, and execute permissions.
 3.  To begin, in the command prompt, CD to the directory where the files
@@ -71,7 +71,7 @@ the **-c** argument to clear them.
 3.  To stop the Live Tail session, enter **Ctrl-C** or **Ctrl-D**.
 
 ![example live tail sessions
-start.png](../static/img/Live-Tail/Live-Tail-CLI/example%20live%20tail%20sessions%20start.png)
+start.png](../static/img/Live-Tail/Live-Tail-CLI/example-live-tail-sessions-start.png)
 
 ### Search
 
@@ -79,11 +79,11 @@ With the Live Tail CLI, just as with [Live
 Tail](Live-Tail-CLI/...md "Live Tail") in the Sumo Logic Web
 Application, you can search with the following metadata fields:
 
--   \_sourceCategory
--   \_sourceHost
--   \_sourceName
--   \_source
--   \_collector
+* \_sourceCategory
+* \_sourceHost
+* \_sourceName
+* \_source
+* \_collector
 
 You may search with keywords after providing at least one metadata
 field.
@@ -96,12 +96,12 @@ field.
 
 The Live Tail CLI supports the following optional arguments:
 
--   **-h** to view Help.
--   **-i** to enter your Access ID.
--   **-k** to enter your Access Key.
--   **-v** to display the Live Tail CLI version number and exit.
--   **-c** to clear your Access ID and Access Key.
--   **Ctrl-C** or **Ctrl-D** to stop your Live Tail session.
+* **-h** to view Help.
+* **-i** to enter your Access ID.
+* **-k** to enter your Access Key.
+* **-v** to display the Live Tail CLI version number and exit.
+* **-c** to clear your Access ID and Access Key.
+* **Ctrl-C** or **Ctrl-D** to stop your Live Tail session.
 
 ### Examples
 

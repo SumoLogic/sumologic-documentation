@@ -15,11 +15,11 @@ networks to specific subnets.
 
 ### Syntax
 
--   `ipv4ToNumber\<ip_add\>) [as\<fiel\>]`
+* `ipv4ToNumber\<ip_add\>) [as\<fiel\>]`
 
 ### Rules
 
--   The input to the function must be a valid IPv4 address string.
+* The input to the function must be a valid IPv4 address string.
 
 ### Examples
 

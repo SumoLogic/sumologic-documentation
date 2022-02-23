@@ -24,12 +24,12 @@ condition](./toLowerCase-and-toUpperCase.md "toLowerCase and toUpperCase").
 
 ### Syntax
 
--   `toLowerCase\<strin\>) [as\<fiel\>]`
--   `toUpperCase\<strin\>) [as\<fiel\>]`
+* `toLowerCase\<strin\>) [as\<fiel\>]`
+* `toUpperCase\<strin\>) [as\<fiel\>]`
 
 ### Rules
 
--   Non-string fields are not accepted.
+* Non-string fields are not accepted.
 
 ### Examples
 

@@ -8,9 +8,9 @@ Use the **where** operator to filter results based on a boolean
 expression. For example, using **where** with the boolean operator
 [isValidIP](isValidIP.md "isValidIP, isValidIPv4, isValidIPv6"):
 
--   Filters as true and returns results:
+* Filters as true and returns results:
     `| where isValidIP("192.168.0.10")`
--   Filters as false and won't return results:
+* Filters as false and will not return results:
     `| where !isValidIP("192.168.0.10")`
 
 The **where** operator must appear as a separate operator distinct from
@@ -28,31 +28,31 @@ preceding **parse** operator like this:
 
 ### Syntax
 
--   `... | where\<boolean expressio\> | ...`
+* `... | where\<boolean expressio\> | ...`
 
 ### Rules
 
--   The pipe delimiter is required to separate the **where** operator as
+* The pipe delimiter is required to separate the **where** operator as
     a distinct query operator.
--   The **where** operator *cannot* be used inline as a query clause,
+* The **where** operator *cannot* be used inline as a query clause,
     like ".`.. | extract a where b==something |...`"
--   Multiple **where** operators are processed in the order they are
+* Multiple **where** operators are processed in the order they are
     specified, with each subsequent **where **operator further filtering
     results.
--   [Keyword expressions](../../Get-Started-with-Search/How-to-Build-a-Search/Keyword-Search-Expressions.md "Keyword Search Expressions")
+* [Keyword expressions](../../Get-Started-with-Search/How-to-Build-a-Search/Keyword-Search-Expressions.md "Keyword Search Expressions")
     can be used in the boolean expression, such as OR and AND.
--   If defining a [built-in metadata
+* If defining a [built-in metadata
     field](../../Get-Started-with-Search/Search-Basics/Built-in-Metadata.md "Built-in Metadata")
-    value in the boolean expression you need to quote the value. If it's
+    value in the boolean expression you need to quote the value. If it is
     not wrapped in quotes the value is interpreted as a field name.
--   If you are using [**in**](in-operator.md "in operator") or **not
+* If you are using [**in**](in-operator.md "in operator") or **not
     in** to match integers, [cast "x" to a number
     first](Manually-Casting-String-Data-to-a-Number.md "Manually Casting String Data to a Number").
--   The [matches](matches.md "matches") operator can be used in the
+* The [matches](matches.md "matches") operator can be used in the
     boolean expression. You can use an [RE2
     compliant](https://github.com/google/re2/wiki/Syntax "https://github.com/google/re2/wiki/Syntax")
     regular expression or use asterisks `*` as wildcards.
--   Any operator that returns a boolean value can be used in the boolean
+* Any operator that returns a boolean value can be used in the boolean
     expression. Such as [compareCIDRPrefix](CIDR.md "CIDR"), 
     [contains](contains.md "contains"), [in](in-operator.md "in operator"), [isBlank](isNull,-isEmpty,-isBlank.md "isNull, isEmpty, isBlank"), [isEmpty](isNull,-isEmpty,-isBlank.md "isNull, isEmpty, isBlank"), [isNull](isNull,-isEmpty,-isBlank.md "isNull, isEmpty, isBlank"), [isNumeric](isNumeric.md "isNumeric"), [isPrivateIP](isPrivateIP.md "isPrivateIP"), [isPublicIP](isPublicIP.md "isPublicIP"), [isValidIP](isValidIP.md "isValidIP, isValidIPv4, isValidIPv6"),
     and [math expressions](../Math-Expressions.md "Math Expressions").
@@ -62,25 +62,25 @@ to produce boolean values.
 
 ### Examples
 
--   `... | where \<b `
--   `... | where a=x`
--   `... | where \>=x`
--   `... | where \<=x`
--   `... | where \<x`
--   `... | where \<10`
--   `... | where (x\>=10 and x\<=20)`
--   `... | where x="some string"`
--   `... | where _sourceCategory="xyz"`
--   `... | where error="fail*"`
--   `... | where use\\>"root"`
--   `... | where x matches "some string"`
--   `... | where x matches "fail*"`
--   `... | where x matches /regex/`
--   `... | where !(x matches /regex/)`
--   `... | num(x) | where x in (4, 3, 5) `
--   `... | where x in ("error", "fail")`
--   `... | where x not in ("error", "fail")`
--   `... | where x matches "Android" or x matches "iPhone" or x matches "iPad"`
+* `... | where \<b `
+* `... | where a=x`
+* `... | where \>=x`
+* `... | where \<=x`
+* `... | where \<x`
+* `... | where \<10`
+* `... | where (x\>=10 and x\<=20)`
+* `... | where x="some string"`
+* `... | where _sourceCategory="xyz"`
+* `... | where error="fail*"`
+* `... | where use\\>"root"`
+* `... | where x matches "some string"`
+* `... | where x matches "fail*"`
+* `... | where x matches /regex/`
+* `... | where !(x matches /regex/)`
+* `... | num(x) | where x in (4, 3, 5) `
+* `... | where x in ("error", "fail")`
+* `... | where x not in ("error", "fail")`
+* `... | where x matches "Android" or x matches "iPhone" or x matches "iPad"`
 
 ### Using the "not" option
 

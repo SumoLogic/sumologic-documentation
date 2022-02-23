@@ -16,16 +16,16 @@ they are with Search.
 You can tail logs ingested from Sources configured on Installed
 Collectors and from HTTP and Cloud Syslog Sources on Hosted Collectors.
 
-Data ingested from Amazon S3 can’t be tailed because of restrictions
+Data ingested from Amazon S3 cannot be tailed because of restrictions
 from Amazon.
 
 You can use the following metadata fields in a Live Tail session:
 
--   `_sourceHost`
--   `_sourceCategory`
--   `_sourceName`
--   `_source`
--   `_collector`
+* `_sourceHost`
+* `_sourceCategory`
+* `_sourceName`
+* `_source`
+* `_collector`
 
 Roles-Based Access Control permissions apply to all Live Tail queries.
 
@@ -50,43 +50,43 @@ the command line.
 
 ## Limitations
 
--   You can tail logs ingested from Sources configured on Installed
+* You can tail logs ingested from Sources configured on Installed
     Collectors and from HTTP and Cloud Syslog Sources on Hosted
     Collectors.
--   A Live Tail session expires after one hour of inactivity to give
+* A Live Tail session expires after one hour of inactivity to give
     your system the best performance possible. If your Live Tail session
     expires, you can restart it at any time.
--   If you navigate away from the Live Tail tab, your session will run
+* If you navigate away from the Live Tail tab, your session will run
     for five more minutes and then time out.
--   There is a message limit of about 1000 messages per second. Keyword
+* There is a message limit of about 1000 messages per second. Keyword
     filters do not affect the message rate.
--   There currently is a limit of 10 concurrent Live Tail sessions per
+* There currently is a limit of 10 concurrent Live Tail sessions per
     organization.
--   There is a limit of four Live Tail sessions per user.
--   There is a limit of two Live Tail "pop out" windows per user.
--   `_view` and `_index` are not supported in Live Tail queries.
--   Wildcards are supported in keywords and at the beginning/end
+* There is a limit of four Live Tail sessions per user.
+* There is a limit of two Live Tail "pop out" windows per user.
+* `_view` and `_index` are not supported in Live Tail queries.
+* Wildcards are supported in keywords and at the beginning/end
     of metadata fields. For example:
-    -   Allowed: `_sourceCategory=*/apache` or `_sourceCategory=prod/*`
-    -   Not allowed: `_sourceCategory=prod/*/apache/`
--   Search operators are not supported in filters.
--   If too much data is coming in, messages may be skipped or not
+    * Allowed: `_sourceCategory=*/apache` or `_sourceCategory=prod/*`
+    * Not allowed: `_sourceCategory=prod/*/apache/`
+* Search operators are not supported in filters.
+* If too much data is coming in, messages may be skipped or not
     displayed on the screen, or there may be a lag before messages are
     displayed.
--   If the query you are using produces too many log message results, we
+* If the query you are using produces too many log message results, we
     may end the session, and present an error that prompts you to make
     your query more specific. This is to provide the best performance
     possible. If a Live Tail session has ended, you can restart it at
     any time.
--   Metadata [fields](../../Manage/Fields.md "Fields") are not available
+* Metadata [fields](../../Manage/Fields.md "Fields") are not available
     in Live Tail.
--   Windows Event Source logs and Windows Performance Source logs may
+* Windows Event Source logs and Windows Performance Source logs may
     not handle filters properly. Applying a filter may cause no data to
     appear in a Live Tail.
--   If \_sourceCategory, \_sourceHost, or any of the built-in meta
+* If \_sourceCategory, \_sourceHost, or any of the built-in meta
     fields are changed in an FER, Live Tail will not support those
     changes. For example, if \_sourceCategory is *ABC* in the raw data
-    but is renamed to *XYZ* in an FER, Live Tail won't see it as *XYZ*.
+    but is renamed to *XYZ* in an FER, Live Tail will not see it as *XYZ*.
     It will only see the data as its raw form, *ABC*.
 
 ## Start a Live Tail session
@@ -97,7 +97,7 @@ You can start a Live Tail session in several ways.
 
 1.  Go to **+ New \> Live Tail**.  
     ![start live tail
-    page.png](../static/img/Live-Tail/About-Live-Tail/start%20live%20tail%20page.png)
+    page.png](../static/img/Live-Tail/About-Live-Tail/start-live-tail-page.png)
 2.  The **Live Tail** page opens, and the Live Tail session starts. At
     the prompt, enter the name of
     the **\_sourceCategory**, **\_sourceHost**, **\_sourceName**, **\_source**,
@@ -119,14 +119,14 @@ screen.
 2.  Click the three-dot icon and click ****Live Tail**** from the
     provided options.    
     ![live tail option aug 24
-    2021.png](../static/img/Live-Tail/About-Live-Tail/live%20tail%20option%20aug%2024%202021.png)
+    2021.png](../static/img/Live-Tail/About-Live-Tail/live-tail-option-aug-24-2021.png)
 3.  The **Live Tail** page opens, and the Live Tail session starts.
 
 #### On the Home page
 
 1.  Go to **Home \> Live Tail**.  
     ![Live tail on home
-    page.png](../static/img/Live-Tail/About-Live-Tail/Live%20tail%20on%20home%20page.png)
+    page.png](../static/img/Live-Tail/About-Live-Tail/Live-tail-on-home-page.png)
 2.  The **Live Tail** page opens, and the Live Tail session starts.
 
 #### Keyboard shortcut

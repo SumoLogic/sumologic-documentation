@@ -28,10 +28,10 @@ operator and .csv files that contain lookup data.
 
 #### lookup requirements 
 
--   The size limit for a lookup table is 100 MB.
--   The `lookup` operator matches event field names and values to lookup
+* The size limit for a lookup table is 100 MB.
+* The `lookup` operator matches event field names and values to lookup
     table field names and values in a case-insensitive manner. 
--   The columns you specify in the join condition for the lookup must be
+* The columns you specify in the join condition for the lookup must be
     of the same data type. For example, if the event field on the left
     side of the join is an integer, the lookup field on the right side
     must also be integer. You can cast data to a string or numeric
@@ -43,8 +43,8 @@ operator and .csv files that contain lookup data.
 These requirements apply to lookup tables that you upload in CSV format:
  
 
--   The CSV file must contain a header line.
--   The header line cannot use special characters. Any leading or
+* The CSV file must contain a header line.
+* The header line cannot use special characters. Any leading or
     trailing spaces in the header line will be trimmed.  
 
 For example:
@@ -58,16 +58,16 @@ some or all of the rows in the table will not be indexed and saved,
 depending on the error encountered. Here’s how Sumo handles different
 types or errors in lookup files:
 
--   Data type mismatches. Sumo won’t index and store a row if any of its
+* Data type mismatches. Sumo will not index and store a row if any of its
     columns contain data whose type varies from the type defined for
     that column in the table schema. For example, if a field whose type
     is numeric contains a non-numeric string (“foo”), or a field whose
     type is boolean contains a non-boolean string ("blah") instead of
     "true" or "false".
--   Schema mismatches. Sumo won’t index and file any row in a file, if
+* Schema mismatches. Sumo will not index and file any row in a file, if
     the schema of the .csv file does not match the schema of the lookup
     table. In this case, Sumo will reject the entire file.  
--   Overly large lookup file. Sumo won’t index and file any row in a
+* Overly large lookup file. Sumo will not index and file any row in a
     lookup file if the file is too large or has too many rows. In this
     case, Sumo will reject the entire file.  
 
@@ -83,7 +83,7 @@ points when the query is processed. Therefore, when you compare live
 mode results to interactive results you will likely see differences in
 your lookup results.
 
-For example, say you're plotting the average price of a stock over the
+For example, say you are plotting the average price of a stock over the
 last 30 days.
 
 In live mode, `lookup` returns the real-time price and retains the
@@ -104,10 +104,10 @@ ran.
 
 Where:
 
--   `outputColumn-x` is a list of field names in the header of the
+* `outputColumn-x` is a list of field names in the header of the
     lookup table.
 
--   `filePath` is the path to the lookup table in the Sumo Logic
+* `filePath` is the path to the lookup table in the Sumo Logic
     Library. If the lookup table is in a personal folder, the path looks
     like this:  
       
@@ -124,7 +124,7 @@ Where:
     clipboard** from the three-dot more options menu for the table.   
     ![more-options-lookup.png](../../static/img/Search-Query-Language/Search-Operators/lookup/more-options-lookup.png)
 
--   `joinColumn-x` is a list of pairs of field names that define the
+* `joinColumn-x` is a list of pairs of field names that define the
     relationship between values in the log data results with matching
     values in the lookup table, for example:  
       
@@ -195,9 +195,9 @@ For example:
 In this example, we match the value of two fields from a log message
 against two fields in a lookup table:
 
--   the `userEmail` field value from a log message with the `email`
+* the `userEmail` field value from a log message with the `email`
     field in the lookup table
--   the `userStatus` field value with the `status` field in the lookup
+* the `userStatus` field value with the `status` field in the lookup
     table
 
 and if a match is found, we return the value of two fields from the

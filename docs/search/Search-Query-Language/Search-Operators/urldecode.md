@@ -17,12 +17,12 @@ can be decoded to:
 
 ### Syntax
 
--   `urldecode\<url_fiel\>) [as\<fiel\>]`
--   `urldecode(\<url strin\>") as\<fiel\>`
+* `urldecode\<url_fiel\>) [as\<fiel\>]`
+* `urldecode(\<url strin\>") as\<fiel\>`
 
 ### Example
 
-Let's say you'd like to decode URLs connecting to your firewall. Running
+Let's say you could like to decode URLs connecting to your firewall. Running
 a query like:
 
 `http: | parse "Connecting to firewall at URL: *" as url | urldecode(url) as decoded`

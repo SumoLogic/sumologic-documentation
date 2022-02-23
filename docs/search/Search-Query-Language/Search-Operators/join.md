@@ -26,37 +26,37 @@ To operate on fields in each table after the ON clause, use this syntax:
 
 ### Rules
 
--   Two or more tables must be created for a query.
--   The join expression can not specify a [keyword search
+* Two or more tables must be created for a query.
+* The join expression can not specify a [keyword search
     expression](../../Get-Started-with-Search/How-to-Build-a-Search/Keyword-Search-Expressions.md "Keyword Search Expressions")
     (scope), if provided it is ignored.
--   Data must be present in the time range you choose for the query.
--   Join can be used in Dashboard Panels, but in the query they must be
+* Data must be present in the time range you choose for the query.
+* Join can be used in Dashboard Panels, but in the query they must be
     included after the first `group-by` phrase.
--   [Subqueries](../../Subqueries.md "Subqueries") are supported, and
+* [Subqueries](../../Subqueries.md "Subqueries") are supported, and
     can include aggregate operators.
 
 ### Limitations
 
--   There is a limit of 50,000 messages input in total, which is
+* There is a limit of 50,000 messages input in total, which is
     enforced as 25,000 per table for a join operation between
     two tables. If you go over this limit, you will receive an error
     message. 
--   There is a limit of 10 million messages output in total, as it is
+* There is a limit of 10 million messages output in total, as it is
     possible to have more output messages than input messages from the
     two tables you may be performing a *join* on. If you go over this
     limit, you will receive the following error
     message: `The number of output messages exceeds 10,000,000. Please refine your search or shorten the time range to reduce the number of output messages.`
--   Only conjunctive conditions (AND) are allowed. Using NOT or OR
+* Only conjunctive conditions (AND) are allowed. Using NOT or OR
     conditions is not supported.
--   [Real Time
+* [Real Time
     Alerts](../../../Visualizations-and-Alerts/Alerts/Scheduled-Searches/Create_a_Real_Time_Alert.md "Create a Real Time Alert")
     do not support the join operator.
--   The join operator uses sliding windows to store candidates for joins
+* The join operator uses sliding windows to store candidates for joins
     in order to prevent unbounded memory usage when joining between
     two large relations. Because of this, the result of the join could
     be incomplete and inconsistent from run-to-run.
--   The following conditions are not currently supported in the
+* The following conditions are not currently supported in the
     ON clause:  
     `t1.a = 3     t1.a != t2.c     NOT t1.a     t1.a = t2.c OR t1.b = t2.d`
 

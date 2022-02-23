@@ -18,31 +18,31 @@ The [compare](../Time-Compare.md "compare") and logcompare operators are
 very similar in syntax and functionality, but they handle different
 types of data:
 
--   **compare** is used for aggregated numeric data (e.g., for analyzing
+* **compare** is used for aggregated numeric data (e.g., for analyzing
     results from a [group
     by](../Search-Query-Language/aaGroup.md "Group") query or a query
     with aggregation operators such as count, sum, avg, etc. )
--   **logcompare** is used for log signature counts (used right after
+* **logcompare** is used for log signature counts (used right after
     the first pipe).
 
 &nbsp;
 
 ## LogCompare Syntax
 
--   `... | logcompare timeshift -24h`  
+* `... | logcompare timeshift -24h`  
     Compare the result of a query with the result of the same query for
     a time range shifted by 24 hours.  
      
--   `... | logcompare timeshift -1d`  
+* `... | logcompare timeshift -1d`  
     Compare the result of a query with the result of the same query for
     a time range shifted by 1 day. (Same as previous example.)  
      
--   `... | logcompare start_time 2016-01-06T12:00:00-08:00 end_time 2016-01-07T12:00:00-08:00`  
+* `... | logcompare start_time 2016-01-06T12:00:00-08:00 end_time 2016-01-07T12:00:00-08:00`  
     Compare the result of a query with the result of the same query for
     a time range specified by start_time and end_time.** **This must be
     a valid time range.   
      
--   `_sourceHost=cluster-1| logcompare timeshift -0s baseline(_sourceHost=cluster-2)`  
+* `_sourceHost=cluster-1| logcompare timeshift -0s baseline(_sourceHost=cluster-2)`  
     Compare logs on two different hosts (cluster-1 and cluster-2) for
     the same time period.
 

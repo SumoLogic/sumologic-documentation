@@ -39,20 +39,20 @@ Consider the following queries:
 | Query 4   | Partitions in place  |
 \</di\>
 
--   Query 1. there are no custom Partitions created and you only have
+* Query 1. there are no custom Partitions created and you only have
     the Default Index, 100% of your data is scanned in order to find all
     production log messages for the Snort security app.
--   Query 2. Partitions do exist, `_index=prod` limits the scope of the
+* Query 2. Partitions do exist, `_index=prod` limits the scope of the
     query and only about 40% of the data is scanned to get the same
-    results as Query 1. But it's redundant and
--   Query 3. You can take advantage of Partitions without having to
+    results as Query 1. But it is redundant and
+* Query 3. You can take advantage of Partitions without having to
     rewrite your existing queries. Sumo Logic's behind-the-scenes Query
     Rewriting, performed for queries run against data in the [Continuous
     Tier](../../Manage/Partitions_and_Data_Tiers/Data_Tiers.md "Analytics Tiers"), is
     smart enough to understand that the scope of what you are looking
     for is included within `_index=prod`; therefore at runtime, it will
     rewrite the query as Query 2.
--   In Query 4. We want to search for data that is in a custom
+* In Query 4. We want to search for data that is in a custom
     Partition, as well as data that exists in the Default Index.
     However, query rewriting does not have the ability to OR indexes
     together.  Instead, another behind-the-scenes feature, Inverse View

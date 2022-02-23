@@ -13,47 +13,47 @@ dashboards.
 
 ### Syntax
 
--   `tourl\<url_column_nam\>,\<url_short_name_colum\>) as\<fiel\>`
--   `tourl\<url_column_nam\>,\<url_short_name_colum\>,\<url_short_name_prefi\>,\<url_short_name_suffi\>) as\<fiel\>`
+* `tourl\<url_column_nam\>,\<url_short_name_colum\>) as\<fiel\>`
+* `tourl\<url_column_nam\>,\<url_short_name_colum\>,\<url_short_name_prefi\>,\<url_short_name_suffi\>) as\<fiel\>`
 
 Where:
 
--   `url_column_name` is the column having the URL to which you want to
+* `url_column_name` is the column having the URL to which you want to
     assign a short name. 
--   `url_short_name_``column` is the short name for the URL. It can be a
+* `url_short_name_``column` is the short name for the URL. It can be a
     static name that you specify, or it can be a variable that uses
     a value from a column. 
--   *`url_short_name_prefix`* (optional) is the prefix, if any, to the
+* *`url_short_name_prefix`* (optional) is the prefix, if any, to the
     short name.  Requires suffix.
--   *`url_short_name_suffix`* (optional) is the suffix, if any, to the
+* *`url_short_name_suffix`* (optional) is the suffix, if any, to the
     short name. Requires prefix.
 
 ### Rules
 
--   If you choose to specify one optional parameter, you must specify
+* If you choose to specify one optional parameter, you must specify
     both the optional parameters - prefix and suffix. You should provide
     an empty string ("") if you don’t have a value for one.
--   Only fully-formed URLs (for example,\<http://google.co\>) are
+* Only fully-formed URLs (for example,\<http://google.co\>) are
     supported as values for url_column_name.
--   For the link to be clickable your query needs to aggregate by the
+* For the link to be clickable your query needs to aggregate by the
     returned field.
 
 ### Tabs
 
 When your URL points to another Sumo Logic feature from your account,
-such as a Dashboard (New), Search, Traces, or Collection page, you'll
+such as a Dashboard (New), Search, Traces, or Collection page, you will
 have the option to open the link in another Sumo Logic tab or browser
 tab.
 
 Right-click the link to view the tab-options menu:
 
 ![tab
-menu.png](../../static/img/Search-Query-Language/Search-Operators/tourl/tab%20menu.png)
+menu.png](../../static/img/Search-Query-Language/Search-Operators/tourl/tab-menu.png)
 
-If you don't see the menu it's not a supported link.
+If you do not see the menu it is not a supported link.
 
--   The URL must be from the same host.
--   The menu isn't available in full-screen mode. 
+* The URL must be from the same host.
+* The menu isn't available in full-screen mode. 
 
 ### Examples
 

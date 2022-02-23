@@ -12,18 +12,18 @@ instead of their whole name.
 
 ### Syntax
 
--   `substring\<sourceStrin\>,\<startOffse\>,\<endOffse\>) as\<outputFiel\>`
--   `substring\<sourceStrin\>,\<startOffse\>) as\<outputFiel\>`
+* `substring\<sourceStrin\>,\<startOffse\>,\<endOffse\>) as\<outputFiel\>`
+* `substring\<sourceStrin\>,\<startOffse\>) as\<outputFiel\>`
 
 ### Rules
 
--   The `startOffset` must be a non-negative integer and less than the
+* The `startOffset` must be a non-negative integer and less than the
     length of the sourceString.
--   The `endOffset` must be a non-negative integer that is equal to or
+* The `endOffset` must be a non-negative integer that is equal to or
     greater than startOffset.
--   If the `endOffset` is not specified, the substring is taken from the
+* If the `endOffset` is not specified, the substring is taken from the
     startOffset until the very end of the sourceString.
--   The `endOffset` may be equal to or greater than the length of the
+* The `endOffset` may be equal to or greater than the length of the
     sourceString, but it would behave the same as if the user did not
     specify an endOffset.
 

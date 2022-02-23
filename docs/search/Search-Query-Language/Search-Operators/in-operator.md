@@ -9,7 +9,7 @@ is in the specified object, or false if it is not.
 
 ### Syntax
 
--   \<fiel\> in \<value_\>[,\<value_\>,\<value_\>, ...])`
+* \<fiel\> in \<value_\>[,\<value_\>,\<value_\>, ...])`
 
 In the syntax, we are checking the value of the field provided for the
 \<field\> argument.

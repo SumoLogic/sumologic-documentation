@@ -12,22 +12,22 @@ by modern applications and underlying cloud (AWS, GCP, Azure) and
 orchestrator logs. Behavior Insights helps answer the following
 questions for SecOps, DevOps, and business users:
 
--   What activity patterns are evident from structured logs? What
+* What activity patterns are evident from structured logs? What
     patterns are trending?
--   Which groups of users, apps, services, or resources are responsible
+* Which groups of users, apps, services, or resources are responsible
     for activity in logs?
--   Which groups of users, apps, services, or resources are responsible
+* Which groups of users, apps, services, or resources are responsible
     for unusual activity in logs?
 
 Modeled after our LogReduce log summarization feature, the two Behavior
 Insights operators below cluster logs based on their structure or
 pattern and activity content respectively.
 
--   [LogReduce
+* [LogReduce
     Keys](Behavior_Insights/LogReduce_Keys.md "LogReduce Keys") clusters
     JSON logs based on keys providing an at-a-glance summary of patterns
     in logs based on their schema while ignoring specific values.
--   [LogReduce Values](Behavior_Insights/LogReduce_Values.md "LogReduce Values") clusters
+* [LogReduce Values](Behavior_Insights/LogReduce_Values.md "LogReduce Values") clusters
     JSON logs using the values of keys.
 
 The third Behavior Insights

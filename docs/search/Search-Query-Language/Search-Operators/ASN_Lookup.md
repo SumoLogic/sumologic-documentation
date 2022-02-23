@@ -5,7 +5,7 @@ id: asn-lookup
 # ASN Lookup
 
 Sumo Logic can lookup an Autonomous System Number (ASN) and organization
-name by an IP address. Any IP addresses that don't have an ASN will
+name by an IP address. Any IP addresses that do not have an ASN will
 return null values.
 
 #### Syntax
@@ -14,7 +14,7 @@ The ASN Lookup operator uses [lookup](lookup-classic.md "lookup") with a
 specific path, `asn://default`, to provide the ASN and associated
 organization.
 
--   `lookup\<field\> from asn://default on ip\<ip_addres\>`
+* `lookup\<field\> from asn://default on ip\<ip_addres\>`
 
 |                    |                                                                    |
 |--------------------|--------------------------------------------------------------------|

@@ -8,8 +8,8 @@ Hyperbolic sine of argument in radians.
 
 ### Syntax
 
--   `sinh\<\>) as\<fiel\>`
+* `sinh\<\>) as\<fiel\>`
 
 ### Example
 
--   `sinh(1) as v // v = 1.17520`
+* `sinh(1) as v // v = 1.17520`

@@ -15,38 +15,38 @@ operator.
 
 ## Syntax
 
--   `| parse \<start_ancho\>\<stop_ancho\>" as\<fiel\>`
--   `| parse \<start_ancho\>\<stop_ancho\>" as\<fiel\> [nodrop]`
--   `| parse [field\<field_nam\>] \<start_ancho\>\<stop_ancho\>" as\<fiel\>`
+* `| parse \<start_ancho\>\<stop_ancho\>" as\<fiel\>`
+* `| parse \<start_ancho\>\<stop_ancho\>" as\<fiel\> [nodrop]`
+* `| parse [field\<field_nam\>] \<start_ancho\>\<stop_ancho\>" as\<fiel\>`
 
 ## Options
 
--   The `nodrop` option forces results to also include messages that do
+* The `nodrop` option forces results to also include messages that do
     not match any segment of the parse term. For details, see [Parse
     nodrop](Parse-nodrop-option.md "Parse nodrop"). 
--   The `field=fieldname` option allows you to specify a field to parse
+* The `field=fieldname` option allows you to specify a field to parse
     other than the default message. For details, see [Parse
     field](Parse-field-option.md "Parse field"). 
 
 ## Rules
 
--   User-created fields, such as extracted or parsed fields, can be
+* User-created fields, such as extracted or parsed fields, can be
     named using alphanumeric characters and underscores (`_`). Fields
     must start with an alphanumeric character. 
--   If no field is specified, the entire text of incoming messages is
+* If no field is specified, the entire text of incoming messages is
     used.
--   A wildcard is used as a placeholder for the extracted field.
+* A wildcard is used as a placeholder for the extracted field.
     Wildcards must be separated by a space or other character. `**` is
     not valid. Use a different parse operator, like [parse
     regex](02-Parse-Variable-Patterns-Using-Regex.md "Parse Variable Patterns Using Regex")
     instead.
--   The number of wildcards in the pattern string must match the number
+* The number of wildcards in the pattern string must match the number
     of variables.
--   Multiple extractions are allowed for a single parse operator.
--   Characters quoted with double quotes (not single quotes) are string
+* Multiple extractions are allowed for a single parse operator.
+* Characters quoted with double quotes (not single quotes) are string
     literals. Use a backslash to escape double quotes in the string. For
     example:
-    -   `| parse "\"tier\" : *," as tier`
+    * `| parse "\"tier\" : *," as tier`
 
 ## parse anchor UI tool
 
@@ -61,23 +61,23 @@ parse, identify parsing fields, and perform the parsing action.
 3.  Highlight the text, right-click, and select **Parse the selected
     text**.  
     ![parse selected text UI
-    option.png](../../static/img/Search-Query-Language/01-Parse-Operators/01-Parse-Predictable-Patterns-Using-an-Anchor/parse%20selected%20text%20UI%20option.png)  
+    option.png](../../static/img/Search-Query-Language/01-Parse-Operators/01-Parse-Predictable-Patterns-Using-an-Anchor/parse-selected-text-UI-option.png)  
       
     The **Parse Text** dialog box opens and displays the text you
     highlighted.  
     ![parse text
-    window.png](../../static/img/Search-Query-Language/01-Parse-Operators/01-Parse-Predictable-Patterns-Using-an-Anchor/parse%20text%20window.png)  
+    window.png](../../static/img/Search-Query-Language/01-Parse-Operators/01-Parse-Predictable-Patterns-Using-an-Anchor/parse-text-window.png)  
      
 4.  Select the text for the first parsing field, and click **Click to
     extract this value**.  
     The text you highlighted is replaced by an asterisk (\*).  
     ![hightlighted term in parse text
-    window.png](../../static/img/Search-Query-Language/01-Parse-Operators/01-Parse-Predictable-Patterns-Using-an-Anchor/hightlighted%20term%20in%20parse%20text%20window.png)  
+    window.png](../../static/img/Search-Query-Language/01-Parse-Operators/01-Parse-Predictable-Patterns-Using-an-Anchor/hightlighted-term-in-parse-text-window.png)  
      
 5.  Enter a name (no spaces) for the parsing field in the **Fields**
     area.  
     ![parsing
-    field.png](../../static/img/Search-Query-Language/01-Parse-Operators/01-Parse-Predictable-Patterns-Using-an-Anchor/parsing%20field.png)  
+    field.png](../../static/img/Search-Query-Language/01-Parse-Operators/01-Parse-Predictable-Patterns-Using-an-Anchor/parsing-field.png)  
      
 6.  If you want to parse additional fields, add a comma after the field
     name, and repeat the parsing action. The following screenshot shows
@@ -85,17 +85,17 @@ parse, identify parsing fields, and perform the parsing action.
     order). Notice that the three fields correspond to the three
     asterisks in the parse text.  
     ![three parsing
-    fields.png](../../static/img/Search-Query-Language/01-Parse-Operators/01-Parse-Predictable-Patterns-Using-an-Anchor/three%20parsing%20fields.png)  
+    fields.png](../../static/img/Search-Query-Language/01-Parse-Operators/01-Parse-Predictable-Patterns-Using-an-Anchor/three-parsing-fields.png)  
      
 7.  Click **Submit**.  
     The query is updated with the parse operation you constructed.  
     ![query from parse UI
-    tool.png](../../static/img/Search-Query-Language/01-Parse-Operators/01-Parse-Predictable-Patterns-Using-an-Anchor/query%20from%20parse%20UI%20tool.png)  
+    tool.png](../../static/img/Search-Query-Language/01-Parse-Operators/01-Parse-Predictable-Patterns-Using-an-Anchor/query-from-parse-UI-tool.png)  
      
 8.  Click **Start** to display the search results, which now show the
     parsed message.  
     ![parsed
-    results.png](../../static/img/Search-Query-Language/01-Parse-Operators/01-Parse-Predictable-Patterns-Using-an-Anchor/parsed%20results.png)
+    results.png](../../static/img/Search-Query-Language/01-Parse-Operators/01-Parse-Predictable-Patterns-Using-an-Anchor/parsed-results.png)
 
 ## Examples
 

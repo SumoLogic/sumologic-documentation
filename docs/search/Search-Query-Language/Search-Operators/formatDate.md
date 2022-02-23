@@ -10,7 +10,7 @@ formatting, timestamps, etc. 
 
 ### Syntax
 
--   `formatDate\<dat\> [,\<forma\> [,\<timeZon\>]]) as\<fiel\>`
+* `formatDate\<dat\> [,\<forma\> [,\<timeZon\>]]) as\<fiel\>`
 
 **Returns**
 
@@ -19,15 +19,15 @@ date is in the local timezone of the user if no timeZone is specified.
 
 **Parameters**
 
--   **date** - milliseconds (13 digits), as a Long. You can also
+* **date** - milliseconds (13 digits), as a Long. You can also
     use formatDate with the [Now](now.md "now") operator.
--   **format** - any valid date and time pattern String accepted by
+* **format** - any valid date and time pattern String accepted by
     Java’s
     [SimpleDateFormat](https://docs.oracle.com/javase/7/docs/api/java/text/SimpleDateFormat.html "https://docs.oracle.com/javase/7/docs/api/java/text/SimpleDateFormat.html"). For   
     more details about specifying the **format** see [Timestamps, Time
     Zones, Time Ranges, and Date
     Formats](../../../03Send-Data/Sources/04Reference-Information-for-Sources/Timestamps,-Time-Zones,-Time-Ranges,-and-Date-Formats.md "Timestamps, Time Zones, Time Ranges, and Date Formats").
--   **timeZone** - a String, such as "America/Los Angeles" or
+* **timeZone** - a String, such as "America/Los Angeles" or
     "Europe/London"
     Convert the date parameter to Long if necessary. Passing a String
     can produce the error: "Multiple definitions found for function
@@ -139,10 +139,10 @@ In the results, the **\_min** and **\_max** values are displayed as an
 epoch value. You can format these epoch values into a readable date
 with an experimental operator, **toLong**.
 
--   [toLong](Manually-Casting-String-Data-to-a-Number.md "Casting Data to a Number or String")
+* [toLong](Manually-Casting-String-Data-to-a-Number.md "Casting Data to a Number or String")
     casts the data into a Long data type as milliseconds.
 
-Normally, to convert the epoch time into a date formatted string you'd
+Normally, to convert the epoch time into a date formatted string you could
 do something like this:
 
 `* | formatDate(_messagetime, "``MM-dd-``yyyy`` HH:mm:ss") as myDate `

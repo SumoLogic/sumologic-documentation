@@ -22,15 +22,15 @@ section="Key facts about Lookup Tables" show="false\>
 
 This section has instructions for updating a lookup table. You can:
 
--   [Merge
+* [Merge
     data](./02_Manage_and_Update_Lookup_Tables.md "Manage and Update Lookup Tables")—Use
     this option to update existing rows with new values, or to add new
     rows to the lookup table. 
--   [Replace
+* [Replace
     data](./02_Manage_and_Update_Lookup_Tables.md "Manage and Update Lookup Tables")—Use
     this option to completely replace the data in the lookup table with
     the data in the .csv file. 
--   [Delete
+* [Delete
     data](./02_Manage_and_Update_Lookup_Tables.md "Manage and Update Lookup Tables")—Use
     this option to remove all the data in the lookup table. 
 
@@ -46,22 +46,22 @@ rows with new values, or to add new rows to a lookup table. 
 Before you start, create a .csv file that contains the data you want to
 merge. Note that:
 
--   The header of the .csv file must contain the primary key fields, or
+* The header of the .csv file must contain the primary key fields, or
     the merge operation will fail. 
--   If a primary key value in the .csv file matches an existing primary
+* If a primary key value in the .csv file matches an existing primary
     key value in the lookup table, the corresponding row in the table
     will be overwritten.
--   If a primary key value in the .csv file does not match a primary key
+* If a primary key value in the .csv file does not match a primary key
     value in any row in the table, a new row will be added to the table.
--   Any rows that exist in the lookup table, but not in the .csv file,
+* Any rows that exist in the lookup table, but not in the .csv file,
     will remain unchanged.
--   If the first row of the file does not match the fields defined in
+* If the first row of the file does not match the fields defined in
     the table schema, the updates in the file will be discarded, and the
     lookup table will not be updated.
--   If the .csv file contains additional columns (fields) that
+* If the .csv file contains additional columns (fields) that
     aren't defined in the table schema, the additional fields will be
     dropped during the merge operation. 
--    If the file doesn't contain one or more columns (fields) that are
+*  If the file does not contain one or more columns (fields) that are
     defined the table schema, the merge operation. will fail. The
     primary key(s) **must** be present in the file for the merge to
     succeed. 
@@ -189,7 +189,7 @@ Follow the steps below to completely delete a lookup table:
 
 ### View Lookup Table update status
 
-When you're viewing a Lookup Table in the Library, you can view
+When you are viewing a Lookup Table in the Library, you can view
 information about multi-row updates to the table that are queued up or
 have been recently completed.   
   
@@ -204,20 +204,20 @@ status.
 
 Types of updates include: 
 
--   **Full Replace**. The contents of the  Lookup Table were completely
+* **Full Replace**. The contents of the  Lookup Table were completely
     replaced. 
--   **Merge Data**. The contents of the Lookup Table were updated (if
+* **Merge Data**. The contents of the Lookup Table were updated (if
     they already existed), or additional rows were appended (if they
     didn't already exist). No data was deleted.
--   **Delete Data**. The contents of the current lookup were completely
+* **Delete Data**. The contents of the current lookup were completely
     deleted by the user.
 
 The status of an update can be one of the following:
 
--   **Queued**. The update operation has been queued but hasn't been
+* **Queued**. The update operation has been queued but hasn't been
     completed. 
--   **In Progress**. The update operation is in progress.  
--   **Completed**. The update operation was successfully completed.
--   **Completed with Warning**. The update operation was successful, but
+* **In Progress**. The update operation is in progress.  
+* **Completed**. The update operation was successfully completed.
+* **Completed with Warning**. The update operation was successful, but
     there were some warnings.  
--   **Error**. There was an issue in completing the update operation. 
+* **Error**. There was an issue in completing the update operation. 

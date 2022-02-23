@@ -25,26 +25,26 @@ The fields are named starting with the specified alias prefix, or
 "\_group" if no alias is specified. Transactionize adds the following
 fields:
 
--   **\_group.** An integral value unique to each group.
--   **\_group_duration**. The duration of the transaction in
+* **\_group.** An integral value unique to each group.
+* **\_group_duration**. The duration of the transaction in
     milliseconds.
--   **\_group_size.** The number of log messages in the transaction.
--   **\_group_orphaned.** You can set when a field is not a member of
+* **\_group_size.** The number of log messages in the transaction.
+* **\_group_orphaned.** You can set when a field is not a member of
     the transaction, but you want to keep it for comparison or analysis
     by setting the`keepOrphans`` `parameter (described below in
     [Parameters](./Transactionize-operator.md "Transactionize Operator") below)
     to true.
--   **\_group_signature.** DEPRECATED. Use the [merge
+* **\_group_signature.** DEPRECATED. Use the [merge
     operator](Merge-Operator.md "Merge operator") in the subquery
     instead.
 
 ### Syntax
 
--   `transactionize \<field\>], \<field\>], \<field\>] [as\<fiel\>]`
--   `transactionize \<field\>] [as\<fiel\>] [\<subquer\>)]`  
+* `transactionize \<field\>], \<field\>], \<field\>] [as\<fiel\>]`
+* `transactionize \<field\>] [as\<fiel\>] [\<subquer\>)]`  
     where `\<subquer\>]` is executed on the results of the query for
     each group, independently.
--   `transactionize \<field\>] [as\<fiel\>] \<parameter\>] [\<subquer\>)]`
+* `transactionize \<field\>] [as\<fiel\>] \<parameter\>] [\<subquer\>)]`
 
 #### Parameters
 
@@ -56,7 +56,7 @@ Syntax section. For example, 
 
 ### Limitations
 
--   Transactionize can analyze 50MB of raw logs at a time. When the
+* Transactionize can analyze 50MB of raw logs at a time. When the
     buffer exceeds this limit, older transactions leaving the buffer
     might not be grouped with recent transactions entering the buffer,
     yielding results that might not be grouped correctly. If this is the
@@ -65,21 +65,21 @@ Syntax section. For example, 
     `The transactionize operator has reached its memory limit; transactions could be emitted prematurely.`  
       
     To address this situation, try one or more of these options:
-    -   Reduce the [time
+    * Reduce the [time
         range](../../Get-Started-with-Search/How-to-Build-a-Search/Set-the-Time-Range.md "Set the Time Range") of
         your search to reduce the scope.
-    -   Reduce the scope of your search by using parameters (such as
+    * Reduce the scope of your search by using parameters (such as
         `maxlogs`, `maxspan`, or `endswith`) that are listed above in
         the
         [Parameters](./Transactionize-operator.md "Transactionize Operator")
         section.
-    -   Run a second transactionize operator immediately after your
+    * Run a second transactionize operator immediately after your
         first one. This will take the potentially ungrouped messages of
         your first transactionize search and group them correctly.  
          
--   Transactionize is not supported in [Dashboard Live
+* Transactionize is not supported in [Dashboard Live
     mode](../../../Visualizations-and-Alerts/Dashboards/Restricted_Operators_in_Dashboards.md "Restricted Operators in Dashboards").
--   Transactionize is not supported in [Real Time scheduled
+* Transactionize is not supported in [Real Time scheduled
     searches](../../../Visualizations-and-Alerts/Alerts/Scheduled-Searches/Create_a_Real_Time_Alert.md "Create a Real Time Alert").
 
 ### Example

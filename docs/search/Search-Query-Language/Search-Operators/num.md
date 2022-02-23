@@ -10,11 +10,11 @@ alphabetically, which is the default.
 
 ### Syntax
 
--   `num\<fiel\>) [as\<fiel\>]`
+* `num\<fiel\>) [as\<fiel\>]`
 
 ### Rules
 
--   The value of the field must be a negative/positive integer or a real
+* The value of the field must be a negative/positive integer or a real
     number. For example, 500, 123234820932, or 352.748.
 
 ### Example

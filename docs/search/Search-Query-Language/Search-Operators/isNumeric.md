@@ -12,14 +12,14 @@ qualifier, like `123L`.
 
 ### Syntax
 
--   `isNumeric(\<strin\>") as\<fiel\>`
--   `isNumeric\<string_fiel\>) [as\<fiel\>]`
+* `isNumeric(\<strin\>") as\<fiel\>`
+* `isNumeric\<string_fiel\>) [as\<fiel\>]`
 
 ### Rules
 
--   Returns `true` if the string is a valid Java number.
--   Null and empty/blank strings will return `false`.
--   Non-hexadecimal strings beginning with a leading zero are treated as
+* Returns `true` if the string is a valid Java number.
+* Null and empty/blank strings will return `false`.
+* Non-hexadecimal strings beginning with a leading zero are treated as
     octal values. Thus the string `09` will return false, since `9` is
     not a valid octal value. However, numbers beginning with `0` are
     treated as a decimal.

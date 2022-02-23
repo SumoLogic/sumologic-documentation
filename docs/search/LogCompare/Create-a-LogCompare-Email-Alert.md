@@ -22,12 +22,12 @@ should be **-4h30m**.
 
 When selecting the time range of your search, keep in mind:
 
--   With a smaller time range, more emails will be generated, unless you
+* With a smaller time range, more emails will be generated, unless you
     configure it so that an email is only sent when there are results.
--   When the time range is smaller, the LogReduce results are also less
+* When the time range is smaller, the LogReduce results are also less
     accurate. For example, if you were to use a 1s time range, any new
     signature information would likely be useless.
--   The larger the time range, the longer it takes for the email alert
+* The larger the time range, the longer it takes for the email alert
     to be generated.
 
 By default, LogCompare email notifications provide details on the
@@ -44,7 +44,7 @@ example. This is not configurable.
     ![NewSignatures.png](../static/img/LogCompare/Create-a-LogCompare-Email-Alert/NewSignatures.png)
 3.   In the **Save Search As** dialog, for **Search name**, enter a name
     for your Saved Search. This example uses **New Signatures**.
-4.  (Optional) If you'd like, type an optional description to help you
+4.  (Optional) If you could like, type an optional description to help you
     identify this search.
 5.  Choose a **Time Range** option that will be the default range when
     you run the saved search. (To prevent gaps in your LogCompare

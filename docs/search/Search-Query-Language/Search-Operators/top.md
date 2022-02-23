@@ -12,7 +12,7 @@ can take advantage of its additional functionality.
 
 ### Syntax
 
--   `top\<\>\<fiel\> [by\<group_by_operato\>]`
+* `top\<\>\<fiel\> [by\<group_by_operato\>]`
 
 ### Examples
 

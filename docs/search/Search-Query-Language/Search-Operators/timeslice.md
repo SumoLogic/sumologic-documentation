@@ -21,8 +21,8 @@ and view the data over a 24 hour period.
 
 ### Syntax 
 
--   `timeslice�\<#\<time_perio\> [as\<fiel\>] |\<aggregating_operato\> by\<fiel\> `
--   `timeslice\<\> buckets [as\<fiel\>] |\<aggregating_operato\> by\<fiel\>`
+* `timeslice�\<#\<time_perio\> [as\<fiel\>] |\<aggregating_operato\> by\<fiel\> `
+* `timeslice\<\> buckets [as\<fiel\>] |\<aggregating_operato\> by\<fiel\>`
 
 Supported \<time_perio\>` values are weeks ( `w` ), days ( `d` ), hours
 ( `h` ), minutes ( `m` ), and seconds ( `s` ).
@@ -34,23 +34,23 @@ To group data by (M) month you can use the formatDate operator to format
 
 ### Rules
 
--   An alias for the timeslice field is optional. If an alias is not
+* An alias for the timeslice field is optional. If an alias is not
     provided, a default `_timeslice` field is created that marks the
     start of the timeslice in milliseconds.
--   Creates a field named `__timeslice_end` that marks the end of the
+* Creates a field named `__timeslice_end` that marks the end of the
     timeslice in milliseconds.
--   The timeslice operator is commonly used in conjunction with the
+* The timeslice operator is commonly used in conjunction with the
     transpose operator. After you’ve timesliced the data into buckets,
     the transpose operator allows you to plot aggregated data in a time
     series.
--   The timeslice operator must be used with an aggregating operator
+* The timeslice operator must be used with an aggregating operator
     such as **count by** or **group by**.
--   The number of buckets in your query is a target or maximum, not
+* The number of buckets in your query is a target or maximum, not
     necessarily the exact number of buckets that will be returned. For
     example, if your query specifies 150 buckets, Sumo Logic will find a
     reasonable clock-aligned resolution to return approximately 150
     buckets in the query results.
--   If you use timeslice with the compare or outlier operators, **do
+* If you use timeslice with the compare or outlier operators, **do
     not** alias timeslice. They expect \_timeslice.
 
 ### Example

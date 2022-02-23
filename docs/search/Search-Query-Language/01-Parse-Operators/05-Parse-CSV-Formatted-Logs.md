@@ -22,25 +22,25 @@ the [Split](06-Parse-Delimited-Logs-Using-Split.md "split") operator.
 
 Extract fields using the index:
 
--   `csv` \<field\> extract 1 as \<A\>, 2 as \<B\>, 5 as \<E\>, 6 as \<F\>
+* `csv` \<field\> extract 1 as \<A\>, 2 as \<B\>, 5 as \<E\>, 6 as \<F\>
 
 Extract fields using position:
 
--   `csv` \<field\> extract \<A\>, \<B\>, \_, \_, \<E\>, \<F\> 
+* `csv` \<field\> extract \<A\>, \<B\>, \_, \_, \<E\>, \<F\> 
 
 Use an underscore `_` to skip the position.
 
 Specify an escape, and quote character:
 
--   `csv` \<field\> escape='\\', quote=''' extract \<A\>, \<B\>, \_, \_,
+* `csv` \<field\> escape='\\', quote=''' extract \<A\>, \<B\>, \_, \_,
     \<E\>, \<F\>
 
 ### Rules
 
--   By default, the CSV operator uses a comma (,) for a delimiter,
+* By default, the CSV operator uses a comma (,) for a delimiter,
     backlash (\\) for an escape character, and (“) quote for a quote
     character.
--   A field to extract from is always required. To extract from your
+* A field to extract from is always required. To extract from your
     original message use the `_raw`
     [metadata](../../Get-Started-with-Search/Search-Basics/Built-in-Metadata.md "Search Metadata")
     field.

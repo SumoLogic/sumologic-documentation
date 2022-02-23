@@ -50,8 +50,8 @@ transpose](../../static/img/Search-Query-Language/Search-Operators/transpose/Wit
 
 ### Syntax
 
--   `transpose row \<row field\>] column \<column field\>] as \<output field\>]`
--   `transpose row \<row field\>] column \<column field\>]`
+* `transpose row \<row field\>] column \<column field\>] as \<output field\>]`
+* `transpose row \<row field\>] column \<column field\>]`
 
 Results can be influenced in three ways:
 
@@ -73,10 +73,10 @@ is especially important to keep in mind when using a transpose operator.
 
 ### Rules
 
--   Transpose is not supported with the [Join](join.md "join") operator.
--   Transpose supports a maximum of 300 dynamic fields (columns to be
+* Transpose is not supported with the [Join](join.md "join") operator.
+* Transpose supports a maximum of 300 dynamic fields (columns to be
     created).
--   Fields are returned alphabetically.
+* Fields are returned alphabetically.
 
 ### Examples
 
@@ -128,7 +128,7 @@ Properties**, set the **Stacking** setting to **Normal** to create a
 stacked column chart.
 
 ![Status Codes Stacked
-Graph](../../static/img/Search-Query-Language/Search-Operators/transpose/Status%20Code%20stacked%20graph.png)
+Graph](../../static/img/Search-Query-Language/Search-Operators/transpose/Status-Code-stacked-graph.png)
 
 For information on handling null fields,
 see [isNull](isNull,-isEmpty,-isBlank.md "isNull, isEmpty, isBlank")

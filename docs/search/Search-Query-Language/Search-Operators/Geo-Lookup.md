@@ -12,7 +12,7 @@ location based on the latitude and longitude of where the addresses
 originated. The precision for latitude and longitude degrees is up to
 five decimal places. 
 
-Any IP addresses that don't have a location, such as internal addresses,
+Any IP addresses that do not have a location, such as internal addresses,
 will return null values.
 
 The Geo Lookup (Map) operator is the first step in creating [Map
@@ -20,24 +20,24 @@ Charts](../../../Visualizations-and-Alerts/Dashboards/Chart-Panel-Types/Map-Char
 
 Required fields:
 
--   latitude
--   longitude
--   \_count
+* latitude
+* longitude
+* \_count
 
 Optional fields, depending on how specific you’d like the output to
 be you can include all the optional fields or choose a subset:
 
--   continent
--   country_code
--   country_name
--   region
--   city
--   state
--   postal_code
--   connection_type
--   country_cf
--   state_cf
--   city_cf
+* continent
+* country_code
+* country_name
+* region
+* city
+* state
+* postal_code
+* connection_type
+* country_cf
+* state_cf
+* city_cf
 
 Details of these data fields can be found in [Neustar's
 documentation](https://ipintelligence.neustar.biz/portal/#documentation "https://ipintelligence.neustar.biz/portal/#documentation")
@@ -79,7 +79,7 @@ Using logs that match the example log format, running a query like this:
 would produce the following results:
 
 ![geo lookup world
-map.png](../../static/img/Search-Query-Language/Search-Operators/Geo-Lookup/geo%20lookup%20world%20map.png)
+map.png](../../static/img/Search-Query-Language/Search-Operators/Geo-Lookup/geo-lookup-world-map.png)
 
 #### View map of Geo Lookup results
 
@@ -89,24 +89,24 @@ the geolocation fields you’d like to use to chart each IP address.
 
 1.  By default, results display as a table:  
     ![geo lookup results
-    fields.png](../../static/img/Search-Query-Language/Search-Operators/Geo-Lookup/geo%20lookup%20results%20fields.png)
+    fields.png](../../static/img/Search-Query-Language/Search-Operators/Geo-Lookup/geo-lookup-results-fields.png)
 2.  Click the **Map** icon in the **Aggregates** tab. The map
     displays:  
     ![map icon
-    location.png](../../static/img/Search-Query-Language/Search-Operators/Geo-Lookup/map%20icon%20location.png)
+    location.png](../../static/img/Search-Query-Language/Search-Operators/Geo-Lookup/map-icon-location.png)
 3.  Do any of the following:
 
--   Use the zoom slider to zoom in or out on an area of the map.
+* Use the zoom slider to zoom in or out on an area of the map.
     Alternately, click and drag to zoom in or see different areas of a
     map.
--   Click any marker on the map to see more detail about where IPs
+* Click any marker on the map to see more detail about where IPs
     originate in a specific area:  
     ![click map marker with zoomed
-    results.png](../../static/img/Search-Query-Language/Search-Operators/Geo-Lookup/click%20map%20marker%20with%20zoomed%20results.png)
+    results.png](../../static/img/Search-Query-Language/Search-Operators/Geo-Lookup/click-map-marker-with-zoomed-results.png)
 
 1.  (Optional) Click **Add to Dashboard** to create a new Dashboard or
     add the map to an existing Dashboard. After adding a map to a
-    Dashboard you'll still be able to zoom in and drill down on the
+    Dashboard you will still be able to zoom in and drill down on the
     data.
 
 #### Handle null values

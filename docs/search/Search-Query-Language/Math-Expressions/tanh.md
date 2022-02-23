@@ -8,8 +8,8 @@ Hyperbolic tangent of argument in radians.
 
 ### Syntax
 
--   `tanh\<\>) as\<fiel\>`
+* `tanh\<\>) as\<fiel\>`
 
 ### Example
 
--   `tanh(1) as v // v = 0.76159`
+* `tanh(1) as v // v = 0.76159`

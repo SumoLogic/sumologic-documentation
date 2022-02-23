@@ -9,9 +9,9 @@ value.
 
 ## Syntax
 
--   `ceil\<\>) as\<fiel\>`
+* `ceil\<\>) as\<fiel\>`
 
 ### Examples
 
--   `ceil(1.5) as v // v = 2`
--   `ceil(-1.5) as v // v = -1`
+* `ceil(1.5) as v // v = 2`
+* `ceil(-1.5) as v // v = -1`

@@ -9,8 +9,8 @@ base64 string.
 
 ### Syntax
 
--   `base64Encode(\<strin\>") as\<fiel\>`
--   `base64Encode\<string_fiel\>) as\<fiel\>`
+* `base64Encode(\<strin\>") as\<fiel\>`
+* `base64Encode\<string_fiel\>) as\<fiel\>`
 
 ### Example
 

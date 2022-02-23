@@ -20,21 +20,21 @@ avg, count, pct, or sum. (For complete details, refer to
 
 You can use Time Compare to:
 
--   Evaluate the performance metrics of a website, such as the latency
+* Evaluate the performance metrics of a website, such as the latency
     or the number of exceptions, before and after a deployment.  
--   Track the root cause of a production issue quickly by tracking
+* Track the root cause of a production issue quickly by tracking
     specific keywords, such as memory exceptions, and comparing them
     with historic data to find any anomalous trends.
--   Compare the daily active or weekly active users on your website for
+* Compare the daily active or weekly active users on your website for
     strategic business insights.
--   Identify malicious activity or attacks by comparing failed login
+* Identify malicious activity or attacks by comparing failed login
     attempts against past averages.
 
 Use the compare operator in the following ways:
 
--   Compare with a single time period in the past.
--   Compare with multiple time periods in the past.
--   Compare with an aggregate over multiple time periods in the past.
+* Compare with a single time period in the past.
+* Compare with multiple time periods in the past.
+* Compare with an aggregate over multiple time periods in the past.
 
 By default, results are displayed in the **Aggregates** tab on the
 search page in a table. Each column of the output table contains results
@@ -60,12 +60,12 @@ comparison of 1 day. Or select another timeshift comparison from the
 menu.
 
 ![time compare UI option aug 24
-2021.png](./static/img/Time-Compare/time%20compare%20UI%20option%20aug%2024%202021.png)
+2021.png](./static/img/Time-Compare/time-compare-UI-option-aug-24-2021.png)
 
 The comparison results appear in a new column titled with the timeshift.
 
 ![timecompare results aug 24
-2021.png](./static/img/Time-Compare/timecompare%20results%20aug%2024%202021.png)
+2021.png](./static/img/Time-Compare/timecompare-results-aug-24-2021.png)
 
 ### Custom Time Compare
 
@@ -103,7 +103,7 @@ the **Custom Time Compare** dialog settings to:
 From the results in the **Aggregates** tab, you can select the line
 chart icon, and display your results as:
 
-![compare example.png](./static/img/Time-Compare/compare%20example.png)
+![compare example.png](./static/img/Time-Compare/compare-example.png)
 
 For more compare operator examples, see
 [Examples](./Time-Compare.md "Time Compare").
@@ -114,11 +114,11 @@ The compare and [logcompare](LogCompare.md "LogCompare") operators are
 very similar in syntax and functionality, but they handle different
 types of data:
 
--   **compare** is used for aggregated numeric data (e.g., for analyzing
+* **compare** is used for aggregated numeric data (e.g., for analyzing
     results from a [group by](Search-Query-Language/aaGroup.md "Group")
     query or a query with aggregation operators such as count, sum, avg,
     etc. )
--   **logcompare** is used for log signature counts (used right after
+* **logcompare** is used for log signature counts (used right after
     the first pipe).
 
 ## Compare Operator
@@ -140,7 +140,7 @@ Compare the present results with a single time period in the past. To
 make the comparison, specify the time interval you want to go back, in
 the form of number and time granularity:
 
--   `... | compare timeshift\<number\<time granularit\>`
+* `... | compare timeshift\<number\<time granularit\>`
 
 The following query returns data from the present, along with results
 from yesterday. Here the parameter `1d` specifies the time interval we
@@ -164,7 +164,7 @@ first parameter specifies the time interval between the present query
 and the most recent comparison point. The second parameter specifies how
 many comparison points to create.
 
--   `... | compare timeshift�\<number\<time granularit\>\<number of timeshift\>`
+* `... | compare timeshift�\<number\<time granularit\>\<number of timeshift\>`
 
 The following query returns results from the present, along with results
 from every day of the past week. The first parameter, 1d, specifies the
@@ -188,7 +188,7 @@ will show a result for today and the last three Mondays.
 Aggregate the results from multiple past time periods using an
 aggregation operator (avg, min, or max).
 
--   `... | compare timeshift�\<number\<time granularit\>\<number of shifts�\<avg/min/ma\>`
+* `... | compare timeshift�\<number\<time granularit\>\<number of shifts�\<avg/min/ma\>`
 
 The following query returns results from the present along with the
 average of the results from the last five days:
@@ -215,7 +215,7 @@ You can also do multiple different comparisons queries under the same
 compare operator by using multiple timeshift phrases separated by
 commas.
 
--   `... | compare\<comparison \>,\<comparison \>, ...`
+* `... | compare\<comparison \>,\<comparison \>, ...`
 
 For example:
 
@@ -224,7 +224,7 @@ For example:
 You can specify an alias, and the columns generated use the name you
 specify.
 
--   `... | compare\<compariso\> as\<alia\>`
+* `... | compare\<compariso\> as\<alia\>`
 
 For example:
 
@@ -232,13 +232,13 @@ For example:
 
 ### Rules
 
--   The compare operator must follow a group by aggregate operator, such
+* The compare operator must follow a group by aggregate operator, such
     as: count, min, max, or sum.
--   If you want to use timeslice with compare, do not alias timeslice.
+* If you want to use timeslice with compare, do not alias timeslice.
 
 ### Limitations
 
--   Compare cannot generate more than **seven** additional queries. An
+* Compare cannot generate more than **seven** additional queries. An
     additional query is generated whenever a comparison in time is
     initiated. Note that multiple comparisons and aggregate comparisons
     will generate multiple queries. For example, the following queries
@@ -254,17 +254,17 @@ generates 14 queries. 
 This query compares with the last five days, and the same day for the
 last four weeks. It is not allowed as it generates 9 queries. 
 
--   Duplicate aliases are not allowed. For example, the following query
+* Duplicate aliases are not allowed. For example, the following query
     is not allowed:
 
 `... | compare timeshift 1d 7 as last_week, timeshift 1d 7 avg as last_week`
 
--   Real time queries using time compare need to have at least three
+* Real time queries using time compare need to have at least three
     timeslices within its time range. For example, if the time range is
     10 minutes, your timeslices need to be no longer than 3 minutes so
     that there are at least three of them.
--   Compare is not supported in Scheduled Views.
--   Compare can only be used once in a search query.
+* Compare is not supported in Scheduled Views.
+* Compare can only be used once in a search query.
 
 ## Examples
 
@@ -347,7 +347,7 @@ You can then use this query to build the scheduled search email alert.
 3.  For **Run frequency**, select the time period at which you want to
     schedule this search. For this alert, we have selected **Every 2
     Hours**.  
-    ![Save Item.png](./static/img/Time-Compare/Save%20Item.png)
+    ![Save Item.png](./static/img/Time-Compare/Save-Item.png)
 4.  For **Send notification**, select **if the following condition is
     met**.
 5.  For **Alert condition**, select **Greater than \>,** and

@@ -25,16 +25,16 @@ more information.
 ## Will my LogReduce search results match my keyword search results?
 
 Generally speaking, no. LogReduce is intended to be a jumping-off point
-for your analysis. Unlike a keyword search, where you're looking for
+for your analysis. Unlike a keyword search, where you are looking for
 data related to, say, a specific source or an error message, LogReduce
 returns signatures that contain messages that *may* be of interest to
-you using fuzzy logic. If you're not happy with a signature, you
+you using fuzzy logic. If you are not happy with a signature, you
 can [teach](Influence-the-LogReduce-Outcome.md "Influencing the LogReduce Outcome") LogReduce
-how you'd like the results to be made more specific. Don't think of a
+how you could like the results to be made more specific. do not think of a
 signature as an example of what logs are grouped under it; instead think
-of a signature as a reflection of what LogReduce thinks you'll find
+of a signature as a reflection of what LogReduce thinks you will find
 interesting if that signature catches your eye. Once you begin digging
-in to LogReduce results, you'll then want to structure a keyword query
+in to LogReduce results, you will then want to structure a keyword query
 that delivers precise results.
 
 ## Running a LogReduce query
@@ -62,14 +62,14 @@ as "count by fieldname."
 2.  Click the **LogReduce** button. Results appear in the **Signatures**
     column when the search completes and you can do the following:
 
--   Click the **Messages** tab to see the individual messages for all
+* Click the **Messages** tab to see the individual messages for all
     signatures combined.
--   Rate the relevance of signatures by promoting or demoting them under
+* Rate the relevance of signatures by promoting or demoting them under
     the available **Actions**.
--   Change signatures by clicking the pencil icon.
--   Split signatures that should not be grouped by clicking on the split
+* Change signatures by clicking the pencil icon.
+* Split signatures that should not be grouped by clicking on the split
     arrows.
--   To export the results, click the **Export** icon. Then
+* To export the results, click the **Export** icon. Then
     click **Download** to save the file to your computer.
 
 ![LogreduceIcons.png](../static/img/LogReduce/Detect-Patterns-with-LogReduce/LogreduceIcons.png)

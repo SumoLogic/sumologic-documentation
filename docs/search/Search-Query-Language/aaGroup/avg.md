@@ -9,11 +9,11 @@ numerical field being evaluated within the time range analyzed.
 
 ### Syntax
 
--   `avg\<numerical_fiel\>) [as\<fiel\>] [by\<fiel\>]`
+* `avg\<numerical_fiel\>) [as\<fiel\>] [by\<fiel\>]`
 
 ### Rules
 
--   Creates field named **\_avg**
+* Creates field named **\_avg**
 
 ### Example
 

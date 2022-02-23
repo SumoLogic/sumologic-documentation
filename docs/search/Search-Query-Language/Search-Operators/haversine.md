@@ -11,7 +11,7 @@ instead of using the terms N/S, E/W.
 
 #### Syntax
 
--   `haversine\<latitude\>,\<longitude\>,\<latitude\>,\<longitude\>) as\<fiel\>`
+* `haversine\<latitude\>,\<longitude\>,\<latitude\>,\<longitude\>) as\<fiel\>`
 
 #### Example
 

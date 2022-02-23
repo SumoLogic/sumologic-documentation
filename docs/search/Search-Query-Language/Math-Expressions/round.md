@@ -8,9 +8,9 @@ The **round** function returns the closest integer to x.
 
 ### Syntax
 
--   `round\<\> [\<\>]) as\<fiel\> ` 
-    -   X is the value to round
-    -   Y is the number of decimal places to round to.
+* `round\<\> [\<\>]) as\<fiel\> ` 
+    * X is the value to round
+    * Y is the number of decimal places to round to.
 
 ### Examples
 

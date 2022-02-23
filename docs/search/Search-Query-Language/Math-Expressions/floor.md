@@ -9,9 +9,9 @@ Returns the largest integer not greater than x.
 
 ### Syntax
 
--   `floor\<\>) as\<fiel\>`
+* `floor\<\>) as\<fiel\>`
 
 ### Examples
 
--   `floor(1.5) as v // v = 1`
--   `floor(-1.5) as v // v = -2`
+* `floor(1.5) as v // v = 1`
+* `floor(-1.5) as v // v = -2`

@@ -1,0 +1,60 @@
+---
+slug: /field-browser
+---
+
+# Field Browser
+
+The Field Browser appears on the left side of the **Messages** tab of the Search page for both aggregate and non-aggregate queries. The Field Browser allows you to zero in on just the fields of interest in a search by displaying or hiding selected fields without having to parse them. You can focus on the fields you’re interested in, avoiding the “noise” of fields you don’t want to see.
+
+For non-aggregate queries, the Field Browser is useful for narrowing results on searches, or when you are not sure which fields are in a log type, in a Partition, or in a Scheduled View. You can run a search with a larger scope and then refine the list of displayed fields to find the data you are looking for.
+
+## How the Field Browser works
+
+The Field Browser displays the number of values for each field returned in a search. It works in real time, so you can fine tune the fields you want to view or hide. After setting the fields to display, save your preferences so that the correct fields are always displayed in your searches. The preferences are saved just for your user account and don’t change the way data is displayed in other user accounts.
+
+In addition to the fields found in your logs, the Field Browser shows **Time** (for message time), **Receipt Time** (for the receipt time), and **Message** (for raw log messages). No [drill-down searches](search-from-the-field-browser.md) can be run on these fields because they do not contain number or string data that can be searched on.
+
+![Field-Browser_Display-Fields](/img/search/get-started-search/how-to-use-search-page/field-browser-display-fields.png)
+
+1. Search for fields by entering text in this field.
+1. List of Fields shown in the Messages tab.
+1. Indicates a Timestamp field.
+1. List of Fields that are hidden from view.
+1. Indicates the field contains a text string.
+1. Indicates the field contains numerical data.
+1. Click to save the settings for this search.
+1. Displays the count of a field. Available for non-aggregate queries only.
+1. Tilde (\~) in front of a count value indicates that the value is approximate. If the number of parsed messages is less than or equal to 2500, an exact value is shown in the Field Browser. If the  number of parsed messages exceeds 2500, an approximation is shown.
+
+## Search for fields
+
+You can search for fields in the Field Browser, a feature that
+is especially useful when you have hundreds of fields parsed from
+messages. As you enter a text string in the Search field, results
+dynamically appear in the list below. The following guidelines apply:
+
+* Search is case sensitive
+* Search criteria is shown for Display Fields and Hidden Fields
+* Search results will highlight matching characters
+
+In our example, we entered **ka** in the Search field and instantly
+received the following results.
+
+![Field-Browser_Search](/img/search/get-started-search/how-to-use-search-page/field-browser-search.png)
+
+## Nested field groupings
+
+Nested fields, such as those seen in JSON and KV, are grouped together
+based on their innate structure that is easy to traverse. We have used a
+JSON nested structure in the following example.
+
+![Nested-JSON-objects](/img/search/get-started-search/how-to-use-search-page/nested-json-objects.png)
+
+## Limitations
+
+The Field Browser is limited for aggregate queries in the following
+ways:
+
+* [Drill-down searches](Field-Browser/Search-from-the-Field-Browser.md "Search from the Field Browser") are not available for aggregate queries.
+* Field counts (item G above) are not displayed for aggregate queries. 
+* Field counts—If messages returned are less than or equal to 2500 messages, then an exact calculation is shown. If more than 2500 messages are returned, an approximation is shown.

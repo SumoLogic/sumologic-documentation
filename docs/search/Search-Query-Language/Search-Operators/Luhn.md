@@ -12,8 +12,8 @@ number, returning true or false accordingly.
 
 ### Syntax
 
--   `luhn\<fiel\>) [as\<fiel\>]`
--   `luhn``(\<input strin\>") [as `\<fiel\>]`
+* `luhn\<fiel\>) [as\<fiel\>]`
+* `luhn``(\<input strin\>") [as `\<fiel\>]`
 
 ### Examples
 

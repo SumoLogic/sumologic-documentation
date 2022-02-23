@@ -17,7 +17,7 @@ of a saved search.
 
 The Sankey chart works with
 the [transaction](...md "Transaction Analytics") operator. When
-constructing your query, you'll define the edges of the chart's
+constructing your query, you will define the edges of the chart's
 lines; Sumo Logic sorts each transaction type into the correct flow line
 using the states defined in your query.
 

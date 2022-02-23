@@ -5,7 +5,7 @@ id: logexplain
 # LogExplain
 
 The **LogExplain** operator allows you to compare sets
-of structured logs based on events you're interested in. Structured logs
+of structured logs based on events you are interested in. Structured logs
 can be in JSON, CSV, key-value, or any structured format. Often logs
 relevant to troubleshooting and security insights are scattered among
 other logs that show the expected behavior and performance. These logs
@@ -14,7 +14,7 @@ values occur more often in events of interest versus normal operation
 logs. For example, events of interest often contain information relevant
 to persistent errors, excess load, and high latency.
 
-You'll need to specify an event of interest as a conditional statement,
+You will need to specify an event of interest as a conditional statement,
 this is called the Event Condition. You can specify a condition to
 compare against the event-of-interest condition, this is called the
 Against Condition. If no Against Condition is provided, LogExplain will
@@ -24,12 +24,12 @@ Condition.
 LogExplain will process your data against the specified conditions and
 create separate data sets to compare:
 
--   A control data set from normal operations data.
--   An event-of-interest data set.
+* A control data set from normal operations data.
+* An event-of-interest data set.
 
 LogExplain gathers frequent (at least 5%) joint-column entries, such as
 key-value pairs that occur more frequently compared to the control
-set. The results indicate what entities correlate with the event you're
+set. The results indicate what entities correlate with the event you are
 interested in.
 
 The following table shows the fields that are returned in results.
@@ -52,10 +52,10 @@ following conditions:
 
 With the provided results you can:
 
--   Click the provided links to drill down and further explore
+* Click the provided links to drill down and further explore
     logs from each explanation.
--   Run subsequent searches.
-    -   For example, if an IP address is an outlier you might search for
+* Run subsequent searches.
+    * For example, if an IP address is an outlier you might search for
         logs referencing that IP address for further investigation.
 
 ### Syntax
@@ -70,29 +70,29 @@ With the provided results you can:
 
 ### Limitations
 
--   Field values must be categorical.
--   [Built-in metadata
+* Field values must be categorical.
+* [Built-in metadata
     fields](../Get-Started-with-Search/Search-Basics/Built-in-Metadata.md "Built-in Metadata")
     are not supported.
--   Not supported with [Real Time
+* Not supported with [Real Time
     alerts](../../Visualizations-and-Alerts/Alerts/Scheduled-Searches/Create_a_Real_Time_Alert.md "Create a Real Time Alert").
--   [Time Compare](../Time-Compare.md "Time Compare") and the [compare
+* [Time Compare](../Time-Compare.md "Time Compare") and the [compare
     operator](../Search-Query-Language/Search-Operators/Compare.md "Compare")
     are not supported against LogExplain results.
--   Response fields `_explanation`, `_relevance`, `_test_coverage`,  and
+* Response fields `_explanation`, `_relevance`, `_test_coverage`,  and
     `_control_coverage` are not supported with [Dashboard
     filters](../../Visualizations-and-Alerts/Dashboards/Use-Time-Ranges-and-Filters/05Use-Filters-in-Dashboards.md "Use Filters in Dashboards").
--   If you reach the memory limit you can try to shorten the time range
+* If you reach the memory limit you can try to shorten the time range
     or the number of specified fields. When the memory limit is
     reached you will get partial results on a subset of your data.
 
 ##### Response links
 
--   Drill down searches opened by clicking the link provided from
+* Drill down searches opened by clicking the link provided from
     the `_test_coverage ` and `_control_coverage` fields are run against
     [message
     time](../Get-Started-with-Search/Search-Basics/Built-in-Metadata.md "Built-in Metadata").
--   When provided in a Scheduled Search alert, the links from
+* When provided in a Scheduled Search alert, the links from
     the `_test_coverage ` and `_control_coverage` fields are invalid and
     will not work.
 
@@ -141,7 +141,7 @@ versus logs that do not contain these errors.
 Results show the relevance of each explanation:
 
 ![CloudTrail example with
-LogExplain.png](../static/img/Behavior_Insights/LogExplain/CloudTrail%20example%20with%20LogExplain.png)
+LogExplain.png](../static/img/Behavior_Insights/LogExplain/CloudTrail-example-with-LogExplain.png)
 
 ##### Windows Credentials
 

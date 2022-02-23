@@ -11,7 +11,7 @@ or snapshot, for the keywords or time range provided. LogReduce data is
 based on the data available to the algorithm during the time range of
 your search.
 
-In some cases, this data sampling produces results that don't meet the
+In some cases, this data sampling produces results that do not meet the
 needs of your organization. You can see more granular results
 by [splitting a
 signature](./Influence-the-LogReduce-Outcome.md "Influence the LogReduce Outcome").
@@ -24,7 +24,7 @@ report:
 |                                                                                         |                                                                                         |
 |-----------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------|
 | **Icon**                                                                                | **Action**                                                                              |
-| ![Promote .png](../static/img/LogReduce/Influence-the-LogReduce-Outcome/Promote%20.png) | Promote a signature to the top position of the **Signatures** tab.                      |
+| ![Promote .png](../static/img/LogReduce/Influence-the-LogReduce-Outcome/Promote-.png) | Promote a signature to the top position of the **Signatures** tab.                      |
 | ![Demote.png](../static/img/LogReduce/Influence-the-LogReduce-Outcome/Demote.png)       | Demote a signature to move it to the bottom of the last page of the **Signatures** tab. |
 | ![Split.png](../static/img/LogReduce/Influence-the-LogReduce-Outcome/Split.png)         | Split a signature into multiple signature.                                              |
 | ![Edit.png](../static/img/LogReduce/Influence-the-LogReduce-Outcome/Edit.png)           | Edit the signature.                                                                     |
@@ -39,12 +39,12 @@ of your org can promote and demote signatures related to your Search. 
 To influence the relevance of signatures, select the **Signatures** tab
 and:
 
--   **Promote** a signature by clicking the Thumbs-Up icon for a
+* **Promote** a signature by clicking the Thumbs-Up icon for a
     signature to indicate to Sumo Logic that the data included in the
     signature is relevant to you. This feedback is taken into
     consideration when you run LogReduce the next time.   
     ![LogReducePromote.png](../static/img/LogReduce/Influence-the-LogReduce-Outcome/LogReducePromote.png)
--   **Demote** a signature by clicking the Thumbs-Down icon for a
+* **Demote** a signature by clicking the Thumbs-Down icon for a
     signature to indicate that this signature is not relevant to you.  
     ![LogReduceDemote.png](../static/img/LogReduce/Influence-the-LogReduce-Outcome/LogReduceDemote.png)
 
@@ -59,15 +59,15 @@ relevance score.
 
 ## Splitting a Signature
 
-If you'd like to see more granular results, you can **split** a
-signature. When you split a signature, you'll notice that fewer wildcard
+If you could like to see more granular results, you can **split** a
+signature. When you split a signature, you will notice that fewer wildcard
 asterisks will appear; instead specific values are included in the
 signatures. Even though the data is more specific, the results after
 splitting a signature will still be fuzzy because the LogReduce
 algorithm bases results only on the window of time you've run the search
 against.
 
-Click the **Split** icon next to the signature you'd like to split.
+Click the **Split** icon next to the signature you could like to split.
 
 It is important to note that when you split a signature, those changes
 are perpetuated organization-wide from now on. 
@@ -82,7 +82,7 @@ get more specific results.
 
 ![LogReduceSplit.png](../static/img/LogReduce/Influence-the-LogReduce-Outcome/LogReduceSplit.png)
 
-After splitting, you'll see that each signature has specific data:
+After splitting, you will see that each signature has specific data:
 
 ![SplitResult.png](../static/img/LogReduce/Influence-the-LogReduce-Outcome/SplitResult.png)
 

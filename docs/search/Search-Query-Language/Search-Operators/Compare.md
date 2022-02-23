@@ -13,21 +13,21 @@ Time Compare.
 
 You can use compare to:
 
--   Evaluate the performance metrics of a website, such as the latency
+* Evaluate the performance metrics of a website, such as the latency
     or the number of exceptions, before and after a deployment.  
--   Track the root cause of a production issue quickly by tracking
+* Track the root cause of a production issue quickly by tracking
     specific keywords, such as memory exceptions, and comparing them
     with historic data to find any anomalous trends.
--   Compare the daily active or weekly active users on your website for
+* Compare the daily active or weekly active users on your website for
     strategic business insights.
--   Identify malicious activity or attacks by comparing failed login
+* Identify malicious activity or attacks by comparing failed login
     attempts against past averages.
 
 Use the compare operator in the following ways:
 
--   Compare with a single time period in the past.
--   Compare with multiple time periods in the past.
--   Compare with an aggregate over multiple time periods in the past.
+* Compare with a single time period in the past.
+* Compare with multiple time periods in the past.
+* Compare with an aggregate over multiple time periods in the past.
 
 By default, results are displayed in the ****Aggregates**** tab on the
 search page in a table. Each column of the output table contains results

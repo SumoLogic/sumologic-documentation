@@ -11,11 +11,11 @@ argument of 50.
 
 ### Syntax
 
--   `pct\<fiel\> [, 50]) [as\<fiel\>] [by\<fiel\>]`
+* `pct\<fiel\> [, 50]) [as\<fiel\>] [by\<fiel\>]`
 
 ### Rules
 
--   Creates a field with the naming convention: `\<fiel\>_pct_50`.
+* Creates a field with the naming convention: `\<fiel\>_pct_50`.
 
 ### Examples
 

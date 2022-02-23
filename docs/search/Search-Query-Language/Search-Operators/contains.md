@@ -11,21 +11,21 @@ first.
 
 ### Syntax
 
--   `contains\<field\>,\<field\>) as\<fiel\>`
--   \<field\> contains\<field\> as\<fiel\>`
--   `| where\<field\> contains\<field\>`
--   `| where contains\<field\>,\<field\>)`
+* `contains\<field\>,\<field\>) as\<fiel\>`
+* \<field\> contains\<field\> as\<fiel\>`
+* `| where\<field\> contains\<field\>`
+* `| where contains\<field\>,\<field\>)`
 
 ### Rules
 
--   Requires field values to be strings. You may [cast
+* Requires field values to be strings. You may [cast
     values](Manually-Casting-String-Data-to-a-Number.md "Casting Data to a Number or String")
     if needed.
--   The full string of field2 must exist within field1.
--   Comparison is case sensitive.
--   Returns `true` when the value from field2 was found and `false` when
+* The full string of field2 must exist within field1.
+* Comparison is case sensitive.
+* Returns `true` when the value from field2 was found and `false` when
     the value was not found in field1.
--   Returns `true` if field1 and field2 are empty, and `false` when only
+* Returns `true` if field1 and field2 are empty, and `false` when only
     one is empty.
 
 ### Example

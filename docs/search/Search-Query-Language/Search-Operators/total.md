@@ -11,10 +11,10 @@ expressions that compare an individual value to the total.
 
 ### Syntax
 
--   `total\<fiel\>`  
+* `total\<fiel\>`  
     The above creates a new field (named \_total by default) containing
     the sum of the specified field.
--   `total\<fiel\> [as\<fiel\>] [by\<field\>,\<field\>, ...]`  
+* `total\<fiel\> [as\<fiel\>] [by\<field\>,\<field\>, ...]`  
     The above creates a new field containing the sum of the specified
     field for groups of the set of fields specified in the by clause. A
     given row's total is the sum of the specified field for all rows
@@ -22,11 +22,11 @@ expressions that compare an individual value to the total.
 
 ### Rules
 
--   An alias for total is optional. If no alias is given, **\_total** is
+* An alias for total is optional. If no alias is given, **\_total** is
     used by default.
--   Rows in which the specified field contains non-numeric values will
+* Rows in which the specified field contains non-numeric values will
     be skipped.
--   There is a limit of 100k messages that can be totaled. 
+* There is a limit of 100k messages that can be totaled. 
 
 ### Examples
 
@@ -65,7 +65,7 @@ group.
 
 #### Calculate the running total of requests
 
-Say you'd like to find the running total of requests from certain users.
+Say you could like to find the running total of requests from certain users.
 Running a query similar to:
 
 `_sourceCategory=IIS (Wyatt OR Luke) | parse "* * * * * * * * " as date, time, csmethod, cs_uri_stem, cs_uri_query, s_port, c_ip, cs_username | timeslice by 1m | count as requests by _timeslice,cs_username | sort by _timeslice asc, cs_username | total requests as running_total by cs_username`

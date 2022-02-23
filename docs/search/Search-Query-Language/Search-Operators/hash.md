@@ -19,7 +19,7 @@ As a [Search operator](hash/...md "Search Operators"), hash processes
 the provided field against the specified algorithm to change the current
 values into random unique values.
 
--   `hash\<fiel\>\<algorithm]) [as\<fiel\>]`
+* `hash\<fiel\>\<algorithm]) [as\<fiel\>]`
 
 | Parameter     | Description                                                                      | Default value |
 |---------------|----------------------------------------------------------------------------------|---------------|

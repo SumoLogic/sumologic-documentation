@@ -17,8 +17,8 @@ outlier.
 
 ### Syntax
 
--   `...     | timeslice\<time_perio\>      |\<aggregate operato\> as\<fiel\> by _timeslice     | outlier\<fiel\> [window\<\>, threshold\<\>, consecutive\<\>, direction\<+\>]`
--   `...     | timeslice\<time_perio\>      |\<aggregate operato\> by _timeslice,\<fiel\>      | outlier\<_aggregat\> by\<fiel\> [window\<\>, threshold\<\>, consecutive\<\>, direction\<+\>]`
+* `...     | timeslice\<time_perio\>      |\<aggregate operato\> as\<fiel\> by _timeslice     | outlier\<fiel\> [window\<\>, threshold\<\>, consecutive\<\>, direction\<+\>]`
+* `...     | timeslice\<time_perio\>      |\<aggregate operato\> by _timeslice,\<fiel\>      | outlier\<_aggregat\> by\<fiel\> [window\<\>, threshold\<\>, consecutive\<\>, direction\<+\>]`
 
  A `timeslice` is required.
 
@@ -45,25 +45,25 @@ For example, this query would set the following parameters:
 
 `... | outlier\<fiel\> window=5,threshold=3,consecutive=2,direction=+-`
 
--   **window=5** : Use the trailing 5 data points to calculate mean and
+* **window=5** : Use the trailing 5 data points to calculate mean and
     sigma.
--   **threshold=3** : Calculate violation based on +/- 3 standard
+* **threshold=3** : Calculate violation based on +/- 3 standard
     deviations.
--   **consecutive=2** : Trigger a violation by returning
+* **consecutive=2** : Trigger a violation by returning
     \<fiel\>_violation=1` in the search results only if 2 or more
     consecutive indicator data points occur.
--   **direction=+-** : Uses positive or negative deviations.
+* **direction=+-** : Uses positive or negative deviations.
 
 ### Rules
 
--   The outlier operator must appear after a group by aggregator, such
+* The outlier operator must appear after a group by aggregator, such
     as count, min, max, or sum.
--   The original target field must be numeric.
--   A [timeslice](timeslice.md "timeslice") is required.
+* The original target field must be numeric.
+* A [timeslice](timeslice.md "timeslice") is required.
 
 ### Limitations
 
--   Because the most recent time bucket in a query may have incomplete
+* Because the most recent time bucket in a query may have incomplete
     data, it is ignored by outlier. Consequently, if an alert is set to
     trigger on \<fiel\>_violation` changing to 1, this alert will
     trigger one timeslice later.
@@ -104,7 +104,7 @@ This way, you can run outlier analysis separately for each value
 of **\_sourceHost**, as shown.
 
 ![Group
-by](../../static/img/Search-Query-Language/Search-Operators/outlier/Group%20by.png)
+by](../../static/img/Search-Query-Language/Search-Operators/outlier/Group-by.png)
 
 This example will only produce an aggregation table, not a chart, but
 the indicator and violation fields will correctly reflect
@@ -140,11 +140,11 @@ failed logins for one specific user.
 
 Other examples include:
 
--   Detecting anomalies while tracking page faults, disk operation, or
+* Detecting anomalies while tracking page faults, disk operation, or
     CPU utilization for all the nodes in a cluster simultaneously.
--   Monitoring the performance of every workstation simultaneously,
+* Monitoring the performance of every workstation simultaneously,
     without the need to build an outlier report for each one.
--   Monitoring failed image uploads for every user of an application
+* Monitoring failed image uploads for every user of an application
     (not total failed uploads across all users).
 
 If you have used the outlier operator, it is easy to create a
@@ -170,7 +170,7 @@ an outlier.
 To create an alert based on the multi-series outlier table above,
 extract **\_count_violation**.
 
-This way, you won’t need to build an alert for each series of data (each
+This way, you will not need to build an alert for each series of data (each
 \_sourcehost in the previous example), and you can automatically monitor
 a dynamic series for deviating behavior.
 

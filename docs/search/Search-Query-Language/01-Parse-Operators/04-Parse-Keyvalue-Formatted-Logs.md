@@ -13,7 +13,7 @@ For example, a log could contain the following keys (highlighted):
 ![](../../static/img/Search-Query-Language/01-Parse-Operators/04-Parse-Keyvalue-Formatted-Logs/../../../../Assets/Media_Repository/Keyvalue_highlight.png)
 
 From that log message, you can use the **keyvalue** operator to get the
-values for one or more keys. For example, if you'd like to see
+values for one or more keys. For example, if you could like to see
 information just about the "remote_ip" value, running this query:
 
 `... | keyvalue "remote_ip" ...`
@@ -24,10 +24,10 @@ would produce these results:
 
 The keyvalue operator can also be used in two explicit modes:
 
--   **Default inference mode.** The keyvalue operator uses an internal
+* **Default inference mode.** The keyvalue operator uses an internal
     list of regular expressions to determine how to extract the value
     for a given key
--   **Regular Expression mode.** You explicitly match keys and values
+* **Regular Expression mode.** You explicitly match keys and values
     based on a regular expression
 
 Keys and values that contain spaces, tabs, or other white space, must be
@@ -80,7 +80,7 @@ match of the regular expression to the location in the message where the
 key was found.
 
 The number of fields specified with the "as" clause must match the
-number of key-value pairs specified. You can omit the clause if you'd
+number of key-value pairs specified. You can omit the clause if you could
 like the operator to automatically create the field names for the
 extracted values. To do this, **keyvalue** replaces every character
 (other than a..z, A..Z, 0..9, or \_) with an underscore (\_).
@@ -108,14 +108,14 @@ mode](./04-Parse-Keyvalue-Formatted-Logs.md "Parse Keyvalue Formatted Logs").
 
 `* | keyvalue auto `
 
--   Auto can extract up to 100 non-referenced fields, fields that are
+* Auto can extract up to 100 non-referenced fields, fields that are
     not explicitly included in the form **"keys foo,bar,..."**.
--   If the message includes more than 100 key value pairs, the operator
+* If the message includes more than 100 key value pairs, the operator
     extracts the first 100 key value pairs from left to right in the
     message. If there are duplicates, the last occurrence is extracted.
--   If you want to be able to use the keys later in the query, they must
+* If you want to be able to use the keys later in the query, they must
     be referred to specifically.
--   You can separate the key and value in a key-value pair using any of
+* You can separate the key and value in a key-value pair using any of
     these delimiters:
 
 `: = \>`
@@ -129,19 +129,19 @@ one delimiter to use when extracting.
 
 ### Additional options
 
--   **Aliases
+* **Aliases
     (renaming)** using [**as**](../Search-Operators/as-operator.md "as operator") are
     supported. For example:
 
 `* | keyvalue auto keys \<key\>", \<key\>" as\<field\>,\<field\>`
 
--   **refonly** extracts only referenced keys. If this option is not
+* **refonly** extracts only referenced keys. If this option is not
     used, **keyvalue auto** extracts all other fields it finds in the
     message.
 
 `* | kv auto keys \<key\>", \<key\>"  ``refonly`
 
--   **field**=field_name allows you to specify a field to parse other
+* **field**=field_name allows you to specify a field to parse other
     than the default message. For details, see [Parse
     field](Parse-field-option.md).
 
@@ -151,6 +151,6 @@ one delimiter to use when extracting.
 
 `* | keyvalue field\<fiel\> regex \<rege\>" [keys]`
 
--   **nodrop** forces results to also include messages that do not match
+* **nodrop** forces results to also include messages that do not match
     any segment of the parse term. For details, see [Parse
     nodrop](Parse-nodrop-option.md)

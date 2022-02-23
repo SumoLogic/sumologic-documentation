@@ -11,8 +11,8 @@ aren't completely relevant to your query.
 
 There are two fields operator modes:
 
--   Allowlist - only the fields included are kept in the search output.
--   Denylist - all the fields except those you specify to be excluded
+* Allowlist - only the fields included are kept in the search output.
+* Denylist - all the fields except those you specify to be excluded
     are in the search output.
 
 To specify the [order of returned fields](./fields_operator.md "fields")

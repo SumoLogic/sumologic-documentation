@@ -12,14 +12,14 @@ ID.
 
 Trace operators require the following:
 
--   [Regular
+* [Regular
     expression](../01-Parse-Operators/02-Parse-Variable-Patterns-Using-Regex.md "Parse Variable Patterns Using Regex")
     to find related messages.
--   Starting value (for example, an ID).
+* Starting value (for example, an ID).
 
 ### Syntax
 
--   `trace \<rege\>" \<starting_valu\>"`
+* `trace \<rege\>" \<starting_valu\>"`
 
 ### Tracing session IDs
 
@@ -29,7 +29,7 @@ series of four-digit hexadecimal IDs to process a customer order, as
 shown here:
 
 ![trace_graphic
-4.png](../../static/img/Search-Query-Language/Search-Operators/trace/trace_graphic%204.png)
+4.png](../../static/img/Search-Query-Language/Search-Operators/trace/trace_graphic-4.png)
 
 Imagine that an error happened at some point in the process, generating
 an error including "PROCESSING FAILED: webID=7F92. Starting from this

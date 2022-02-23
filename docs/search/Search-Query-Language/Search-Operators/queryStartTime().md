@@ -16,11 +16,11 @@ but the latter can be off from the real range by a few milliseconds.
 
 ### Syntax
 
--   `queryStartTime() as\<fiel\>`
+* `queryStartTime() as\<fiel\>`
 
 ### Rules
 
--   An alias is required.
+* An alias is required.
 
 ### Examples
 

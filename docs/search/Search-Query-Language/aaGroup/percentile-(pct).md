@@ -16,23 +16,23 @@ The operator works in two ways:
 
 The input to the operator is a percentile. For example:
 
--   **pct(x, 50)** gives the median (50th percentile and 0.5th
+* **pct(x, 50)** gives the median (50th percentile and 0.5th
     quantile).
--   **pct(x, 0.50)** gives the 0.5th percentile, or 0.005th quantile
+* **pct(x, 0.50)** gives the 0.5th percentile, or 0.005th quantile
     (i.e., not the median).
 
 ## Syntax
 
--   `...| pct\<fiel\> [, percentile]) [as\<fiel\>] [by\<fiel\>]`
--   `...| pct\<fiel\> [, percentile, percentile, percentile]) [by\<fiel\>]`
+* `...| pct\<fiel\> [, percentile]) [as\<fiel\>] [by\<fiel\>]`
+* `...| pct\<fiel\> [, percentile, percentile, percentile]) [by\<fiel\>]`
 
 ## Rules
 
--   Default alias field is named: `\<fieldnam\>_pct\<percentil\>`
--   Separate multiple percentile arguments in one query with commas.
--   Multiple pct functions can be included in the same group-by
+* Default alias field is named: `\<fieldnam\>_pct\<percentil\>`
+* Separate multiple percentile arguments in one query with commas.
+* Multiple pct functions can be included in the same group-by
     aggregation.
--   The pct operator supports decimal percentiles.
+* The pct operator supports decimal percentiles.
 
 ## Examples
 

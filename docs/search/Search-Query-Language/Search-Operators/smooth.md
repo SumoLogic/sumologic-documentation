@@ -8,7 +8,7 @@ The **smooth** operator calculates the rolling (or moving) average of a
 field, measuring the average of a value to "smooth" random variation.
 Smooth operator reveals trends in the data set you include in a query.
 
-Within a query that contains a smooth operator you'll choose a window
+Within a query that contains a smooth operator you will choose a window
 (described as window_length in the syntax below); the average of the
 values within the window creates a data point.
 
@@ -22,17 +22,17 @@ separately).
 
 ### Syntax
 
--   `smooth\<fiel\> [,\<window lengt\>] [as\<fiel\>]`
+* `smooth\<fiel\> [,\<window lengt\>] [as\<fiel\>]`
 
 ### Rules
 
--   An alias for smooth is optional. When an alias is not
+* An alias for smooth is optional. When an alias is not
     provided, **\_smooth** is the default alias.
--   The specified field must contain numeric values.
--   To add a query that includes a smooth operator to a Dashboard, you
+* The specified field must contain numeric values.
+* To add a query that includes a smooth operator to a Dashboard, you
     must add a group by function before the smooth operator.
--   The default window length is 10.
--   The maximum window length is 1000.
+* The default window length is 10.
+* The maximum window length is 1000.
 
 ### Examples
 
@@ -48,7 +48,7 @@ Running a query such as:
 produces results like:
 
 ![too
-smooth.png](../../static/img/Search-Query-Language/Search-Operators/smooth/too%20smooth.png)
+smooth.png](../../static/img/Search-Query-Language/Search-Operators/smooth/too-smooth.png)
 
 #### Smooth the difference of a quantity between time points
 

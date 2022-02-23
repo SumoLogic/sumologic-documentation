@@ -9,12 +9,12 @@ or fewer characters to a number.
 
 ### Syntax
 
--   `parseHex\<hexadecimal_fiel\>) as\<fiel\>`
--   `parseHex(\<hexadecimal_strin\>") as\<fiel\>`
+* `parseHex\<hexadecimal_fiel\>) as\<fiel\>`
+* `parseHex(\<hexadecimal_strin\>") as\<fiel\>`
 
 ### Rules
 
--   `parseHex("ABCD")` and `parseHex("0xABCD")` are both valid formats.
+* `parseHex("ABCD")` and `parseHex("0xABCD")` are both valid formats.
 
 ### Example
 

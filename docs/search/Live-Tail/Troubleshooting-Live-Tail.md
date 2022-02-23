@@ -4,7 +4,7 @@ id: troubleshooting-live-tail
 
 # Troubleshooting Live Tail
 
-Data ingested from Amazon S3 can’t be tailed.
+Data ingested from Amazon S3 cannot be tailed.
 
 ## No messages appear in a Live Tail session
 
@@ -30,7 +30,7 @@ Modify your query to add additional metadata fields, in order to focus
 your search into a smaller area, and produce fewer log messages. If not,
 your session may be ended.
 
-If you do make your filter more specific, and you still don't see many
+If you do make your filter more specific, and you still do not see many
 messages, this may be caused by the underlying metadata fields being too
 big.
 

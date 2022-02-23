@@ -11,26 +11,26 @@ other fields of interest.
 
 ### Syntax
 
--   `values\<fiel\>) [by\<group_by_field\>] [as\<field_nam\>]`
+* `values\<fiel\>) [by\<group_by_field\>] [as\<field_nam\>]`
 
 ##### Response Field
 
 The response field separates each value with a new line character and
 places them in lexicographical order as follows:
 
--   Numbers before letters
--   Numbers sorted in ascending based on the value of the first digit
--   Letters sorted in alphabetical order
--   Uppercase before lowercase letters
+* Numbers before letters
+* Numbers sorted in ascending based on the value of the first digit
+* Letters sorted in alphabetical order
+* Uppercase before lowercase letters
 
 This is an example of a response field with IP addresses:
 
 ![values operator response field
-example.png](../../static/img/Search-Query-Language/aaGroup/values/values%20operator%20response%20field%20example.png)
+example.png](../../static/img/Search-Query-Language/aaGroup/values/values-operator-response-field-example.png)
 
 ### Limitation
 
--   The first 100 distinct values are returned for a field.
+* The first 100 distinct values are returned for a field.
 
 ### Examples
 

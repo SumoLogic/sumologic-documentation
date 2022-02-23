@@ -11,8 +11,8 @@ Hexadecimal string is always returned in upper-case.
 
 ### Syntax
 
--   `decToHex\<long_fiel\>) as\<fiel\>`
--   `decToHex(\<long_strin\>") as\<fiel\>`
+* `decToHex\<long_fiel\>) as\<fiel\>`
+* `decToHex(\<long_strin\>") as\<fiel\>`
 
 ### Examples
 

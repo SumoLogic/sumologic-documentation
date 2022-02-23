@@ -113,7 +113,7 @@ Only [map charts](panels/map-charts.md) are supported.
 
 ![text panel.png](/img/dashboards-new/panels/text-panel.png)
 
-Text can clarify what you're showing on dashboards or act as a note to your viewer. Text  panels provide the flexibility to display descriptive text in or above other panels.
+Text can clarify what you are showing on dashboards or act as a note to your viewer. Text  panels provide the flexibility to display descriptive text in or above other panels.
 
 Titles are displayed in the same size and font. Text is styled using Markdown syntax, meaning that you can control the size and weight of the text. Not all Markdown syntax options are supported; see [Markdown Syntax](panels/markdown-syntax.md).
 
@@ -143,7 +143,7 @@ To add a Text Panel:
 
     ![Text Panel preview.png](/img/dashboards-new/panels/Text-Panel-preview.png)
 
-1. When you're done click **Add to Dashboard** at the top of the window.  
+1. When you are done click **Add to Dashboard** at the top of the window.  
 
     ![Add to Dashboard button.png](/img/dashboards-new/panels/Add-to-Dashboard-button.png)
 

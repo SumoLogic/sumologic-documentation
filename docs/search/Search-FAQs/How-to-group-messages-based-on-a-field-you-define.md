@@ -24,7 +24,7 @@ In this query, the sessionize operator uses three parse expressions:
     expression is written, it will match anything that has the same
     sessionId.
 3.  The last log entry in the session is matched. Once this match
-    occurs, the session is deemed to be complete and won't match any
+    occurs, the session is deemed to be complete and will not match any
     further logs.
 
 All the fields extracted are also available as additional fields in the

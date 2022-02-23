@@ -10,11 +10,11 @@ designated by the "group by" field.
 
 ### Syntax
 
--   `stddev\<numerical_fiel\>) [as\<fiel\>] [by\<fiel\>]`
+* `stddev\<numerical_fiel\>) [as\<fiel\>] [by\<fiel\>]`
 
 ### Rules
 
--   Creates field named `_stddev`
+* Creates field named `_stddev`
 
 ### Example
 

@@ -41,7 +41,7 @@ Extracts the network prefix from an IPv4 address. 
 
 **Syntax**
 
--   `getCIDRPrefix(\<ip_add\>", \<prefix_lengt\>") as\<fiel\>`
+* `getCIDRPrefix(\<ip_add\>", \<prefix_lengt\>") as\<fiel\>`
 
 `ip_addr` is a string representation (such as "10.10.1.35")
 
@@ -62,7 +62,7 @@ match.
 
 **Syntax**
 
--   `compareCIDRPrefix(\<ip_addr\>", \<ip_addr\>", \<prefix_lengt\>") as\<fiel\>`
+* `compareCIDRPrefix(\<ip_addr\>", \<ip_addr\>", \<prefix_lengt\>") as\<fiel\>`
 
 `ip_add1` and `ip_addr2` are string representations (such as
 "10.10.1.35")
@@ -71,7 +71,7 @@ match.
 
 **Boolean expression syntax**
 
--   `compareCIDRPrefix\<ip_addr\>,\<ip_addr\>, \<prefix_lengt\>")`
+* `compareCIDRPrefix\<ip_addr\>,\<ip_addr\>, \<prefix_lengt\>")`
 
 **Examples**
 
@@ -107,7 +107,7 @@ with IPv4 addresses.
 
 **Syntax**
 
--   `maskFromCIDR(\<prefix_lengt\>") as\<fiel\>`
+* `maskFromCIDR(\<prefix_lengt\>") as\<fiel\>`
 
 `prefix_length` is an integer value in string/text format (0-32)
 

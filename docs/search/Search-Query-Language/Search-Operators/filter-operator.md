@@ -15,12 +15,12 @@ results to the most relevant information.
 
 ### Caveats
 
--   Filter operator must follow an aggregate operator.
--   All the fields must be present in the output fields for the child
+* Filter operator must follow an aggregate operator.
+* All the fields must be present in the output fields for the child
     query.
--   The compare operator and filter operator are not supported in the
+* The compare operator and filter operator are not supported in the
     child query. 
--   The filter operator can be used instead of the `where` operator.
+* The filter operator can be used instead of the `where` operator.
 
 ### Limitations
 

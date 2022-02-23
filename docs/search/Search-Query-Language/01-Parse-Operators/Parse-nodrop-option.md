@@ -15,39 +15,39 @@ match any segment of the parse expression.
 When your query has multiple parse expressions, using nodrop acts as
 an **OR** condition. In this case, using nodrop will pass any
 non-matching logs to the next parse expression. If the following parse
-expression doesn't use nodrop, the results from the first parse
-expression using nodrop, even when they don't match the following parse
+expression does not use nodrop, the results from the first parse
+expression using nodrop, even when they do not match the following parse
 expression are still returned in your search results. See [how to use
 parse nodrop as an OR condition
 below](./Parse-nodrop-option.md "Parse nodrop option") for an example.
 
 ### Syntax
 
--   `| parse "a=*," as\<fiel\> nodrop`  
+* `| parse "a=*," as\<fiel\> nodrop`  
     In this case, messages that match **a** as well as all other
     messages are returned.  
      
--   `| parse "a=*," as\<field\> nodrop | parse "b=*," as\<field\>`  
+* `| parse "a=*," as\<field\> nodrop | parse "b=*," as\<field\>`  
     In this case, messages that match either **a** or **b** are
     output. Everything else is dropped.  
      
--   `| parse "a=*," as\<field\> | parse "b=*," as\<field\>`  
+* `| parse "a=*," as\<field\> | parse "b=*," as\<field\>`  
     In this case, both parse operators are implicitly dropping
     non-matching messages. This means only messages that match both
     **a** and **b** are output.  
      
--   `| parse "a=*," as\<field\> nodrop | parse "b=*," as\<field\> nodrop | parse "c=*," as\<field\> nodrop | parse "d=*," as\<``field4`  
+* `| parse "a=*," as\<field\> nodrop | parse "b=*," as\<field\> nodrop | parse "c=*," as\<field\> nodrop | parse "d=*," as\<``field4`  
     In this case, messages that match (**a** or **b** or **c** or **d**)
     are output. Everything else is dropped.
 
 ### Rules
 
--   Messages with zero matches are included in the output but do not
+* Messages with zero matches are included in the output but do not
     contain any alias fields or tags related to the parse expression.
--   Using the nodrop option, you can express advanced boolean logic in
+* Using the nodrop option, you can express advanced boolean logic in
     choosing your desired message output when you chain the Parse
     operators.
--   The `nodrop` option is not supported with the csv, split, parseDate,
+* The `nodrop` option is not supported with the csv, split, parseDate,
     or parseHex operators.
 
 ### Examples

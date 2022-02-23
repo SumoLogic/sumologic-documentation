@@ -19,28 +19,28 @@ Or try the regex tester at [regex101.com](https://regex101.com/).
 
 ### Syntax
 
--   `| parse regex \<start_expressio\>(\<field_name\<field_expressio\>\<stop_expressio\>"`
--   `| parse regex \<start_expressio\>(\<field_name\<field_expressio\>\<stop_expressio\>" [nodrop]`
--   `| parse regex [field\<field_nam\>] \<start_expressio\>(\<field_name\<field_expressio\>\<stop_expressio\>"`  
+* `| parse regex \<start_expressio\>(\<field_name\<field_expressio\>\<stop_expressio\>"`
+* `| parse regex \<start_expressio\>(\<field_name\<field_expressio\>\<stop_expressio\>" [nodrop]`
+* `| parse regex [field\<field_nam\>] \<start_expressio\>(\<field_name\<field_expressio\>\<stop_expressio\>"`  
      
--   You can use the alternate term "extract".   
+* You can use the alternate term "extract".   
     `| extract ``\<start_expressio\>(\<field_name\<field_expressio\>\<stop_expressio\>"`
 
 ### Options
 
--   `field\<field_nam\>` 
+* `field\<field_nam\>` 
 
     The `field=fieldname` option allows you to specify a field to parse
     other than the default message. For details, see [Parse
     field](Parse-field-option.md). 
 
--   `nodrop ` 
+* `nodrop ` 
 
     The `nodrop` option forces results to also include messages that do
     not match any segment of the parse term. For details, see [Parse
     nodrop](Parse-nodrop-option.md)
 
--   `multi` 
+* `multi` 
 
     The `multi` option allows you to parse multiple values *within* a
     single log message. See [Parse
@@ -48,29 +48,29 @@ Or try the regex tester at [regex101.com](https://regex101.com/).
 
 ### Rules
 
--   Regex must be a valid JAVA or RE2 regular expression enclosed within
+* Regex must be a valid JAVA or RE2 regular expression enclosed within
     quotes.
 
--   Matching is case sensitive. If any of the text segments cannot be
+* Matching is case sensitive. If any of the text segments cannot be
     matched, then none of the variables will be assigned.
 
--   If no **field** is specified, then the entire text of incoming
+* If no **field** is specified, then the entire text of incoming
     messages is used.
 
--   Multiple parse expressions are processed in the order they are
+* Multiple parse expressions are processed in the order they are
     specified. Each expression always starts matching from the beginning
     of the message string.
 
--   Multiple parse expressions can be written with shorthand using
+* Multiple parse expressions can be written with shorthand using
     comma-separated terms.
 
--   Can be used with the [parse
+* Can be used with the [parse
     anchor](01-Parse-Predictable-Patterns-Using-an-Anchor.md "Parse Predictable Patterns Using an Anchor")
     operator.
 
--   Nesting named capture groups is not supported.
+* Nesting named capture groups is not supported.
 
--   The parse regex operator only supports regular expressions that
+* The parse regex operator only supports regular expressions that
     contain at least one named capturing group. We don’t support regular
     expressions that either don’t have any capturing groups or contain
     unnamed/numbered capturing group. See [Named Capturing
@@ -97,7 +97,7 @@ Or try the regex tester at [regex101.com](https://regex101.com/).
         You can convert these easily by appending “`?:`” to the group
         right after the starting parenthesis.
 
-    This approach won’t work in cases where you only have non-capturing
+    This approach will not work in cases where you only have non-capturing
     groups in your regex. You need to have at least one capturing group
     in your regex.
 

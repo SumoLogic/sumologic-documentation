@@ -16,14 +16,14 @@ This detail can be important when you are building queries. There are at
 least two cases where you will need to manually cast string data to a
 number so that you get the results that you expect:
 
--   When using the **where** operator to match integers like this:
-    -   **where** value **in** (integer_value1, integer_value2,
+* When using the **where** operator to match integers like this:
+    * **where** value **in** (integer_value1, integer_value2,
         integer_value3)
-    -   **where** value **not in** (integer_value1, integer_value2,
+    * **where** value **not in** (integer_value1, integer_value2,
         integer_value3)
--   When you need to numerically sort a series of results from a query,
+* When you need to numerically sort a series of results from a query,
     like in this example:
-    -   `* | parse "took *ms" as duration | toLong(duration) | sort by duration`
+    * `* | parse "took *ms" as duration | toLong(duration) | sort by duration`
 
 In the first case, if your statement looks something like "where
 some_value in (1, 2, 4, 16)" and you need to match (or not match)
@@ -35,8 +35,8 @@ is cast to a number type, the sort order will produce expected results.
 
 Sumo Logic accepts these functions for casting string data to a number:
 
--   `num()` or `number()`
--   `toLong()`
+* `num()` or `number()`
+* `toLong()`
 
 You can use the function `toString()` to cast data to a string.
 

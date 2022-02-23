@@ -12,22 +12,22 @@ a valid IPv4 or IPv6 address respectively. 
 
 ###### isValidIP
 
--   `isValidIP(\<IP_strin\>") as\<fiel\>`
--   `isValidIP\<IP_string_fiel\>) [as\<fiel\>]`
+* `isValidIP(\<IP_strin\>") as\<fiel\>`
+* `isValidIP\<IP_string_fiel\>) [as\<fiel\>]`
 
 ###### isValidIPv4
 
--   `isValidIPv4(\<IP_strin\>") as\<fiel\>`
--   `isValidIPv4\<IP_string_fiel\>) [as\<fiel\>]`
+* `isValidIPv4(\<IP_strin\>") as\<fiel\>`
+* `isValidIPv4\<IP_string_fiel\>) [as\<fiel\>]`
 
 ###### isValidIPv6
 
--   `isValidIPv6(\<IP_strin\>") as\<fiel\>`
--   `isValidIPv6\<IP_string_fiel\>) [as\<fiel\>]`
+* `isValidIPv6(\<IP_strin\>") as\<fiel\>`
+* `isValidIPv6\<IP_string_fiel\>) [as\<fiel\>]`
 
 ### Rules
 
--   Returns `true` if the input is a valid IP address.
+* Returns `true` if the input is a valid IP address.
 
 ### Examples
 

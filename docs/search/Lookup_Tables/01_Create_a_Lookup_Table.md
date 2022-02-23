@@ -35,13 +35,13 @@ Before you create or update a Lookup table, note the following.
 
 #### Size limits
 
--   Lookup files can be up to 100 MB in size. Note that if the .csv file
+* Lookup files can be up to 100 MB in size. Note that if the .csv file
     contains duplicate rows (rows with the same primary key) the
     duplicate rows will be included in the file size calculation, and
     apply towards the 100 MB limit.
--   The maximum length for a primary key string field is 1024
+* The maximum length for a primary key string field is 1024
     characters.
--   The total size of any row cannot be larger than 200 KB.
+* The total size of any row cannot be larger than 200 KB.
 
 #### Lookup Table naming
 
@@ -52,7 +52,7 @@ in a folder with a forward slash in the name.
 
 When you create a Lookup Table schema, note the following requirements:
 
--   The following strings are reserved (case-insensitive) and should not
+* The following strings are reserved (case-insensitive) and should not
     be used as field names: "pkv", "tid-cid-s", "mt", "tid-sk-1",
     "tid-sk-2", "tid-sk-3", "tid-sk-4", "tid-sk-5", "tid-sk-6",
     "tid-sk-7", "tid-sk-8", "tid-sk-9", "tid-sk-10", "tid-sk-11",
@@ -61,8 +61,8 @@ When you create a Lookup Table schema, note the following requirements:
     "\_receipttime", "\_sourcecategory", "\_sourcehost", "\_sourcename",
     "\_source", "\_sourceid", "\_collector", "\_collectorid", "\_view",
     "\_index".
--   Field names cannot contain two tilde characters in a row (\~\~). 
--   Field names are not case-sensitive. For example, you can't have both
+* Field names cannot contain two tilde characters in a row (\~\~). 
+* Field names are not case-sensitive. For example, you can't have both
     "Name" and "name" fields.
 
 #### Lookup Tables and Search Templates
@@ -128,9 +128,9 @@ schema without populating the table.
 8.  **Size Limit Handling**. This option controls how on how additions
     to the Lookup table will be handled when it reaches its size limit
     (100 MB)
-    -   **Stop Incoming Data**. Once the Lookup Table size limit is
+    * **Stop Incoming Data**. Once the Lookup Table size limit is
         reached, no new data will be added to the table. 
-    -   **Delete Old Data**. The rows that have been modified or updated
+    * **Delete Old Data**. The rows that have been modified or updated
         least recently will be replaced by new rows.
 9.  **How do you want to create lookup?** Click **Create Schema only**.
 10. The page displays a **Schema** section.   
@@ -144,7 +144,7 @@ schema without populating the table.
         double, or string (default).
     3.  **Primary Key**. Click the **Yes** checkbox if the field is part
         of the primary key for the table. If your table's primary key is
-        a composite key, you'll check this checkbox for each field that
+        a composite key, you will check this checkbox for each field that
         is part of the key.
         You must define a primary key for your Lookup Table.
 12. To add another column to the table, click the plus sign to the right
@@ -231,12 +231,12 @@ When you run search operators that work with Lookup Tables (described in
 the following section), you need to know the path to the Lookup Table in
 the Sumo Logic Library. The path can be determined in several ways:
 
--   From the **Actions** menu on the Lookup Table
+* From the **Actions** menu on the Lookup Table
     page. ![copy-path-actions-menu.png](../static/img/Lookup_Tables/01_Create_a_Lookup_Table/copy-path-actions-menu.png)
--   From the three-dot more options menu for a Lookup Table in the Sumo
+* From the three-dot more options menu for a Lookup Table in the Sumo
     Logic Library.  
     ![copy-path-lib.png](../static/img/Lookup_Tables/01_Create_a_Lookup_Table/copy-path-lib.png)
--   From the left-hand navigation menu  
+* From the left-hand navigation menu  
     ![copy-path-left-nav.png](../static/img/Lookup_Tables/01_Create_a_Lookup_Table/copy-path-left-nav.png)
 
 ### Operators you use with Lookup Tables
@@ -244,16 +244,16 @@ the Sumo Logic Library. The path can be determined in several ways:
 You can use the following operators with Lookup Tables in Sumo Logic log
 searches and in Cloud SIEM rules:
 
--   `cat`—You can view the contents of a Lookup Table using the `cat`
+* `cat`—You can view the contents of a Lookup Table using the `cat`
     operator in a Sumo Logic log search tab. For more information, see
     [cat](../Search-Query-Language/Search-Operators/cat.md "cat Operator").
--   `lookup`—You can use the `lookup` operator to return one or more
+* `lookup`—You can use the `lookup` operator to return one or more
     fields from a Lookup Table. For more information, see
     [lookup](../Search-Query-Language/Search-Operators/lookup.md "lookup operator").
--   `lookupContains`—You can use the `lookupContains` operator to see
+* `lookupContains`—You can use the `lookupContains` operator to see
     whether a key exists in a Lookup Table. For more information, see
     [lookupContains](../Search-Query-Language/Search-Operators/lookupContains.md "lookupContains Operator").
--   `save`—You can use the `save` operator to save the results of a Sumo
+* `save`—You can use the `save` operator to save the results of a Sumo
     log query to a Lookup Table you created using the Lookup UI or API.
     For more information, see
     [save](../Search-Query-Language/Search-Operators/save.md "save operator").  

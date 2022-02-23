@@ -13,19 +13,19 @@ useful anytime you need to rename something.
 
 ### Syntax
 
--   `replace\<sourceStrin\>,\<searchStrin\>,\<replaceStrin\>) as\<fiel\>`
--   `replace\<sourceStrin\>, \<rege\>/,\<replaceStrin\>) as\<fiel\>`
+* `replace\<sourceStrin\>,\<searchStrin\>,\<replaceStrin\>) as\<fiel\>`
+* `replace\<sourceStrin\>, \<rege\>/,\<replaceStrin\>) as\<fiel\>`
 
 ### Rules
 
--   An alias is required.
--   If any of the inputs are null, the output is null.
--   If the searchString is not found or the regex does not match, the
+* An alias is required.
+* If any of the inputs are null, the output is null.
+* If the searchString is not found or the regex does not match, the
     sourceString is returned intact.
--   Regex must be [RE2
+* Regex must be [RE2
     compliant](https://github.com/google/re2/wiki/Syntax "https://github.com/google/re2/wiki/Syntax").
--   The string is case sensitive.
--   When using multiple replace operators on the same field you must use
+* The string is case sensitive.
+* When using multiple replace operators on the same field you must use
     the same alias, see an [example below](./replace.md "replace").
 
 ### Regex usage
@@ -56,15 +56,15 @@ If the \<replaceStrin\>` needs to include the dollar sign (`$`), it
 needs to be escaped as `\\$`. Similarly, backslash itself needs to be
 escaped as `\\\\`. Some other escapable characters include:
 
--   `\n` : replace with a new line character
--   `\t` : a tab character
+* `\n` : replace with a new line character
+* `\t` : a tab character
 
 ### Examples
 
 #### Replace unique IDs in URLs with a regex
 
 If you have a URL and would like to see the number of times it was
-visited, but don't want to aggregate with unique IDs, you can replace
+visited, but do not want to aggregate with unique IDs, you can replace
 the IDs with an empty string. Take the following URL, where in this
 example it belongs to a field named `url`:
 

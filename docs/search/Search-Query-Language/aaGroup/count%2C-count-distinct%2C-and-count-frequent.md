@@ -18,12 +18,12 @@ time range analyzed.
 
 ### Syntax
 
--   `count[\<fiel\>)] [as\<fiel\>] [by\<fiel\>, ...]`
+* `count[\<fiel\>)] [as\<fiel\>] [by\<fiel\>, ...]`
 
 ### Rules
 
--   Default alias field is named **\_count**
--   The entire
+* Default alias field is named **\_count**
+* The entire
     [\_raw](../../Get-Started-with-Search/Search-Basics/Built-in-Metadata.md "Search Metadata")
     message is counted when no field to count is provided.
 
@@ -31,22 +31,22 @@ time range analyzed.
 
 To count the number of logs:
 
--   `| count`
+* `| count`
 
 To count the number of logs from a specific field, in this example the
 field is `port`:
 
--   `| count(port)`
+* `| count(port)`
 
 To count the number of logs from a specific field based on grouping by
 other fields: 
 
--   `| count(port) by srcAddress, tgtAddress`
+* `| count(port) by srcAddress, tgtAddress`
 
 The same example above with an alias field name, `countOfPort`, and an
 additional aggregate operator, `avg`:
 
--   `| count(port) as countOfPort, avg(bytes) by srcAddress, tgtAddress`  
+* `| count(port) as countOfPort, avg(bytes) by srcAddress, tgtAddress`  
     `| sort by countOfPort `
 
 When you want to count more than one field, you must create an alias
@@ -62,16 +62,16 @@ An empty value still counts as a unique value and will be counted.
 
 ### Syntax
 
--   `count_distinct\<fiel\>) [as\<fiel\>] [by\<fiel\>, ...]`
+* `count_distinct\<fiel\>) [as\<fiel\>] [by\<fiel\>, ...]`
 
 ### Rules
 
--   Creates field named **\_count_distinct**
+* Creates field named **\_count_distinct**
 
 ### Examples
 
--   `| count_distinct(username) group by hostname`
--   `_sourceCategory=*apache*`  
+* `| count_distinct(username) group by hostname`
+* `_sourceCategory=*apache*`  
     `| parse "* -" as src_ip`  
     `| count_distinct(src_ip)`
 
@@ -89,9 +89,9 @@ displays a message that explains:
 The approximation algorithm uses a relative error parameter of 2%, for
 example:
 
--   65% of the time, results are within +/- 2%.
--   95% of the time, results are within +/- 4%.
--   99% of the time, results are within +/- 6%.
+* 65% of the time, results are within +/- 2%.
+* 95% of the time, results are within +/- 4%.
+* 99% of the time, results are within +/- 6%.
 
 So for example, if the true count of distinct items is 1,000, the result
 returned by the approximation algorithm is between 950 and 1050 about
@@ -127,16 +127,16 @@ the **Search** page, but only the top 100 are displayed in the Panel.
 
 ### Syntax
 
--   `count_frequent\<fiel\>[,\<field\>, field3, ...]`
+* `count_frequent\<fiel\>[,\<field\>, field3, ...]`
 
 ### Rules
 
--   Creates field named `_approxcount`
--   Cannot be used with other aggregating functions
+* Creates field named `_approxcount`
+* Cannot be used with other aggregating functions
     like **sum** or **avg**.
--   Sort is built into the query and defaults to a most-to-least order.
+* Sort is built into the query and defaults to a most-to-least order.
 
 ### Example
 
--   `* | parse "srcIP=*, url=*" as srcIP, url `  
+* `* | parse "srcIP=*, url=*" as srcIP, url `  
     `| count_frequent srcIP, url`

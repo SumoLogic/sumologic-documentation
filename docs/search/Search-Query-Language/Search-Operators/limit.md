@@ -21,11 +21,11 @@ system data in Dashboards for various uses.
 
 ### Syntax
 
--   `limit #`
+* `limit #`
 
 ### Rules
 
--   The limit operator supports requests for up to 10,000 results. You
+* The limit operator supports requests for up to 10,000 results. You
     cannot use "limit 10001" or more.
 
 ### Examples

@@ -12,19 +12,19 @@ unaltered. 
 
 ### Syntax
 
--   `base64Decode(\<strin\>"[, \<encodin\>"]) as\<fiel\>`
--   `base64Decode\<string_fiel\>[, \<encodin\>"]) as\<fiel\>`
+* `base64Decode(\<strin\>"[, \<encodin\>"]) as\<fiel\>`
+* `base64Decode\<string_fiel\>[, \<encodin\>"]) as\<fiel\>`
 
 ##### Supported encodings
 
--   US-ASCII
--   UTF-8 (default)
--   UTF-16
--   UTF-16BE
--   UTF-16LE
--   UTF-32
--   UTF-32BE
--   UTF-32LE
+* US-ASCII
+* UTF-8 (default)
+* UTF-16
+* UTF-16BE
+* UTF-16LE
+* UTF-32
+* UTF-32BE
+* UTF-32LE
 
 ### Examples
 

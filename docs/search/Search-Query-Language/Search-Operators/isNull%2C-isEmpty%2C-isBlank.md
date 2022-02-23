@@ -9,25 +9,25 @@ true if the string is null, or false if the string is not null.
 
 In addition to isNull:
 
--   The **isEmpty** operator checks if a string
-    -   contains no characters
-    -   is only whitespace
--   The **isBlank** operator checks if a string
-    -   contains no characters
-    -   is only whitespace
-    -   is null
+* The **isEmpty** operator checks if a string
+    * contains no characters
+    * is only whitespace
+* The **isBlank** operator checks if a string
+    * contains no characters
+    * is only whitespace
+    * is null
 
 ### When is a field null?
 
 Fields can hold a null value for the following reasons:
 
--   A [parsing operation](../01-Parse-Operators.md "Parse Operators")
+* A [parsing operation](../01-Parse-Operators.md "Parse Operators")
     failed to parse a value.
--   There is a mismatch from a [lookup](lookup-classic.md "lookup")
+* There is a mismatch from a [lookup](lookup-classic.md "lookup")
     operator query.
--   There is a missing field from a [geo
+* There is a missing field from a [geo
     lookup](Geo-Lookup.md "Geo Lookup") operator query.
--   There is a missing field from
+* There is a missing field from
     a [transpose](transpose.md "transpose") operator query.
 
 ### When to use isNull, isEmpty, isBlank

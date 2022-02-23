@@ -9,8 +9,8 @@ string.
 
 ### Syntax
 
--   `hexToAscii\<hexadecimal_fiel\>) as\<fiel\>`
--   `hexToAscii(\<hexadecimal strin\>") as\<fiel\>`
+* `hexToAscii\<hexadecimal_fiel\>) as\<fiel\>`
+* `hexToAscii(\<hexadecimal strin\>") as\<fiel\>`
 
 ### Example
 

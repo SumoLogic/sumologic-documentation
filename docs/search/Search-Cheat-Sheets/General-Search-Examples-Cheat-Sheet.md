@@ -6,7 +6,7 @@ id: general-search-examples-cheat-sheet
 
 For a collection of customer created search queries and their use cases,
 see the [Sumo Logic Community Query
-Library](https://community.sumologic.com/s/topic/0TOE0000000g86fOAA/Query%20Library "https://community.sumologic.com/s/topic/0TOE0000000g86fOAA/Query%20Library"). 
+Library](https://community.sumologic.com/s/topic/0TOE0000000g86fOAA/Query-Library "https://community.sumologic.com/s/topic/0TOE0000000g86fOAA/Query-Library"). 
 
 For a step-by-step video and tutorial about creating Sumo Logic queries,
 see the [Quick Start

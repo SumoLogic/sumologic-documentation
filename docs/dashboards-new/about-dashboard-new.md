@@ -22,7 +22,7 @@ Dashboard (New) differs from classic Dashboards in the following ways:  
 
 * Dashboard (New) template variables differ slightly from the filters in classic Dashboards. Filters were auto injected at runtime by Sumo Logic, allowing you little control over how they were used or what they represented. In addition, filters only worked on log panels. Dashboard (New) template variables provide full replacement control over what is inserted, and the variables work across both log and metric panels.
 * Dashboard (New) provides a dashboard-first view to build, maintain, and interact with dashboards. With Dashboard (New) you can build panels inside the dashboard rather than adding panels from the Search or Metrics pages.
-* Dashboard (New) utilizes the [metrics query builder] with an improved full text auto-complete capabilities, so you can quickly find the metrics you're looking for.
+* Dashboard (New) utilizes the [metrics query builder] with an improved full text auto-complete capabilities, so you can quickly find the metrics you are looking for.
 
 See the [feature differences table](#feature-differences-between-classic-and-dashboard-new) for a
 complete comparison.

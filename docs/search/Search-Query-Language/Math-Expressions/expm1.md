@@ -9,8 +9,8 @@ the roundoff in exp(x).
 
 ### Syntax
 
--   `expm1\<\>) as\<fiel\>`
+* `expm1\<\>) as\<fiel\>`
 
 ### Example
 
--   `expm1(0.1) as v // v = 0.10517091807564763`
+* `expm1(0.1) as v // v = 0.10517091807564763`

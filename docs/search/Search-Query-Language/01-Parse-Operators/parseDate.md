@@ -10,26 +10,26 @@ human-readable format, use the `formatDate` operator.
 
 ### Syntax
 
--   `parseDate\<strDat\>,\<dateForma\>)`
--   `parseDate\<strDat\>,\<dateForma\>,\<timeZon\>)`
+* `parseDate\<strDat\>,\<dateForma\>)`
+* `parseDate\<strDat\>,\<dateForma\>,\<timeZon\>)`
 
 ### Rules
 
--   `strDate` must start with the characters to match with the
+* `strDate` must start with the characters to match with the
     `dateFormat` pattern. For example, "3/4/2005 other" but not "other
     3/4/2005".
--   `dateFormat` is a pattern string, such as "MM/dd/yyyy HH:mm:ss a". A
+* `dateFormat` is a pattern string, such as "MM/dd/yyyy HH:mm:ss a". A
     full list of the supported patterns can be found on [Java's
     simpledateformat](https://docs.oracle.com/javase/7/docs/api/java/text/SimpleDateFormat.html "https://docs.oracle.com/javase/7/docs/api/java/text/SimpleDateFormat.html") documentation.
--   If you do not supply `timeZone,` the operator defaults to the time
+* If you do not supply `timeZone,` the operator defaults to the time
     zone set in your
     [preferences](../../../01Start-Here/05Customize-Your-Sumo-Logic-Experience/Preferences-Page.md "Preferences Page"). For
     a list of `timeZone` codes,
-    see�\<https://en.wikipedia.org/wiki/List_of_tz_database_time_zone\>.
+    see�\<https://en.wikipedia.org/wiki/List_of_tz_database_time_zone\>.
 
 ### Examples
 
-1.  Given the date `2019-11-18T19:00:00.000-08:00` you'd specify
+1.  Given the date `2019-11-18T19:00:00.000-08:00` you could specify
     the `dateFormat` as `yyyy-MM-dd'T'HH:mm:ss.SSSXXX`. For example,  
       
     `| parseDate(date, "yyyy-MM-dd'T'HH:mm:ss.SSSXXX") as milliseconds`  

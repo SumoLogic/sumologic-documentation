@@ -16,7 +16,7 @@ simpler use cases.
 
 ### Syntax
 
--   `format\<formatSpecifie\>,\<field\>[,\<field\>,\<``field\>, ...]``) as\<fiel\>`
+* `format\<formatSpecifie\>,\<field\>[,\<field\>,\<``field\>, ...]``) as\<fiel\>`
 
 The Sumo Logic Format operator supports all Java String.format syntax,
 as defined
@@ -24,16 +24,16 @@ in [docs.oracle.com/javase/7/docs/api/java/util/Formatter.html#syntax](https://
 
 ### Rules
 
--   The first argument to the Format operator must be a format
+* The first argument to the Format operator must be a format
     specifier, which is a string.
--   You must define a name for the new field to use Format. There is no
+* You must define a name for the new field to use Format. There is no
     default alias.
--   The operator allows up to 16 input fields to format. To use more
+* The operator allows up to 16 input fields to format. To use more
     than 16 inputs, you can combine operators.
--   AND and OR are not supported
--   If a field is null or incompatible, an error will be thrown.
--   Use the Format operator after the aggregate.
--   You must convert your data type to numeric before converting to
+* AND and OR are not supported
+* If a field is null or incompatible, an error will be thrown.
+* Use the Format operator after the aggregate.
+* You must convert your data type to numeric before converting to
     hexadecimal, or your data will be dropped.
 
 ### Examples

@@ -15,12 +15,12 @@ quickly using **length() \> 10000** in a query.
 
 ### Syntax
 
--   `length\<fiel\>) [as\<fiel\>]`
+* `length\<fiel\>) [as\<fiel\>]`
 
 ### Rules
 
--   If the string is null, it returns 0.
--   The length operator only works on string fields.
+* If the string is null, it returns 0.
+* The length operator only works on string fields.
 
 ### Examples
 

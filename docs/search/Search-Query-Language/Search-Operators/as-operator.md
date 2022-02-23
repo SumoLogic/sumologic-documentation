@@ -10,8 +10,8 @@ fields.
 
 ## Syntax
 
--   \<ExistingFieldNam\> as\<fiel\>`
--   \<litera\> as\<fiel\>`
+* \<ExistingFieldNam\> as\<fiel\>`
+* \<litera\> as\<fiel\>`
 
 Fields with characters not in the `a-zA-Z0-9_` character set or that
 begin with a number need to be escaped, see [reference a field with

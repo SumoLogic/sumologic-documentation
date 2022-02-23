@@ -15,7 +15,7 @@ version](https://drive.google.com/file/d/1UAMMawIW1st1LTDw9UjdEtivRKvgk-j7/view?
 
 For a collection of customer-created search queries and their use cases,
 see the [Sumo Logic Community Query
-Library](https://community.sumologic.com/s/topic/0TOE0000000g86fOAA/Query%20Library "https://community.sumologic.com/s/topic/0TOE0000000g86fOAA/Query%20Library").
+Library](https://community.sumologic.com/s/topic/0TOE0000000g86fOAA/Query-Library "https://community.sumologic.com/s/topic/0TOE0000000g86fOAA/Query-Library").
 
 The following tables provide a list of available Sumo Logic parsers,
 aggregators, search operators, and mathematical expressions.  

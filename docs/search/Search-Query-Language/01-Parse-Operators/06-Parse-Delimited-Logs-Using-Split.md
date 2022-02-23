@@ -15,31 +15,31 @@ operator](05-Parse-CSV-Formatted-Logs.md "Parse CSV Formatted Logs").
 
 Extract fields using the index:
 
--   `split\<fiel\> extract 1 as\<\>, 2 as\<\>, 5 as\<\>, 6 as\<\>`
+* `split\<fiel\> extract 1 as\<\>, 2 as\<\>, 5 as\<\>, 6 as\<\>`
 
 Extract fields using position:
 
--   `split\<fiel\> extract\<\>,\<\>, _, _,\<\>,\<\>`
+* `split\<fiel\> extract\<\>,\<\>, _, _,\<\>,\<\>`
 
 Use an underscore `_` to skip the position.
 
 Mix positional and index-based:
 
--   `split\<fiel\> extract\<\>,\<\>, 5 as\<\>,\<\>`
+* `split\<fiel\> extract\<\>,\<\>, 5 as\<\>,\<\>`
 
 Specify a delimiter, escape, and quote character:
 
--   `split\<fiel\> escape='\', delim=':', quote=''' extract\<\>,\<\>, _, _,\<\>,\<\>`
+* `split\<fiel\> escape='\', delim=':', quote=''' extract\<\>,\<\>, _, _,\<\>,\<\>`
 
 ### Rules
 
--   By default, the Split operator uses a comma (`,`) for a delimiter,
+* By default, the Split operator uses a comma (`,`) for a delimiter,
     backlash (`\`) for an escape character, and (`"`) quote for a quote
     character, though you can define your own if you like.
--   If you define your own escape, delimiter, or quote characters, they
+* If you define your own escape, delimiter, or quote characters, they
     must all be different and be a single character matching the Java
     regular expression `[\s\S]`.
--   A field to extract from is always required. To extract from your
+* A field to extract from is always required. To extract from your
     original message use
     the `_raw` [metadata](../../Get-Started-with-Search/Search-Basics/Built-in-Metadata.md "Search Metadata") field.
 

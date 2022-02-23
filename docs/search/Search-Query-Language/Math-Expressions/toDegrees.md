@@ -8,8 +8,8 @@ Converts angles from radians to degrees.
 
 ### Syntax
 
--   `toDegrees\<\>) as\<fiel\>`
+* `toDegrees\<\>) as\<fiel\>`
 
 ### Example
 
--   `toDegrees(asin(1)) as v // v = 90`
+* `toDegrees(asin(1)) as v // v = 90`

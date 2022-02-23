@@ -19,11 +19,11 @@ by `"=", ":", "\>", "\>"`. The keys are automatically parsed for you. 
 
 With the provided results you can:
 
--   Explore logs from each schema by clicking the links provided in the
+* Explore logs from each schema by clicking the links provided in the
     `_count` response field.
--   Compare results against a previous time range with
+* Compare results against a previous time range with
     [LogCompare](../LogCompare.md "LogCompare").
--   Run subsequent searches.
+* Run subsequent searches.
 
 ### Syntax
 
@@ -38,38 +38,38 @@ With the provided results you can:
 
 Results can be returned in two ways:
 
--   If the operator is last in the query (no operations follow it) it
+* If the operator is last in the query (no operations follow it) it
     provides aggregate results by performing a [count
     by](../Search-Query-Language/aaGroup/count,-count-distinct,-and-count-frequent.md "count, count_distinct, and count_frequent")
     operation.
--   If you want to use operators after LogReduce you need to specify
+* If you want to use operators after LogReduce you need to specify
     the `noaggregate` option so your results are
     returned non-aggregated.
 
 ### Limitations
 
--   When not specifying a field with the `field=` option do not parse
+* When not specifying a field with the `field=` option do not parse
     any fields. If you parse any fields they are excluded from the
     schema in your results. 
--   A maximum of 100 keys are automatically parsed.
--   Keys in arrays are not supported.
--   The [Time Compare](../Time-Compare.md "Time Compare") button will
+* A maximum of 100 keys are automatically parsed.
+* Keys in arrays are not supported.
+* The [Time Compare](../Time-Compare.md "Time Compare") button will
     not work on LogReduce Keys results, you need to manually input the
     [compare
     operator](../Search-Query-Language/Search-Operators/Compare.md "Compare")
     instead.
--   Response fields `_signature_id`, `_schema`, and `_count` are not
+* Response fields `_signature_id`, `_schema`, and `_count` are not
     supported with [Dashboard
     filters](../../Visualizations-and-Alerts/Dashboards/Use-Time-Ranges-and-Filters/05Use-Filters-in-Dashboards.md "Use Filters in Dashboards").
 
 ##### \_count link
 
--   Searches opened by clicking the link provided in
+* Searches opened by clicking the link provided in
     the `_count` response field:
-    -   are run against [message
+    * are run against [message
         time](../Get-Started-with-Search/Search-Basics/Built-in-Metadata.md "Built-in Metadata").
-    -   can return different results due to variations in your data.
--   When provided in a Scheduled Search alert, the link from the
+    * can return different results due to variations in your data.
+* When provided in a Scheduled Search alert, the link from the
     `_count` response field is invalid and will not work.
 
 ### Examples
@@ -102,7 +102,7 @@ alphabetical ordering of keys to allow easy identification of changes in
 patterns.
 
 ![CloudTrail example LogReduce
-Keys.png](../static/img/Behavior_Insights/LogReduce_Keys/CloudTrail%20example%20LogReduce%20Keys.png)
+Keys.png](../static/img/Behavior_Insights/LogReduce_Keys/CloudTrail-example-LogReduce-Keys.png)
 
 Next, use [LogReduce Values](LogReduce_Values.md "LogReduce Values") to
 explore the schema based on specific keys.

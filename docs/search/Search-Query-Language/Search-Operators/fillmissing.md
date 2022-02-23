@@ -11,12 +11,12 @@ are returned.
 
 This can be a problem because:
 
--   The lack of data is sometimes also an interesting event, but there
+* The lack of data is sometimes also an interesting event, but there
     is no easy way to capture this information. For example, the
     [outlier](outlier.md "outlier") operator cannot catch anomalies
     arising from missing data because it can only mark an existing
     timeslice as anomalous.
--   Missing data can lead to misleading visualizations. For example, if
+* Missing data can lead to misleading visualizations. For example, if
     you plot a line chart across timeslices with missing data, the chart
     will interpolate across the missing timeslices and represent them
     deceptively as nonempty.
@@ -64,11 +64,11 @@ fields and some constant default value for the non-key fields.
 
 The `fillmissing` operator supports the following types of generators:
 
--   **Timeslice**. Enumerates all the timeslices with a given
+* **Timeslice**. Enumerates all the timeslices with a given
     granularity in a query time range. For example, `timeslice(15m)`
     enumerates all the 15-minute timeslices in the query time range.
     Buckets need to be based on a time period.
--   **Values**. Enumerates the fixed set of values given in arguments.
+* **Values**. Enumerates the fixed set of values given in arguments.
     For example, `values("a", "b", "c")` enumerates the values "a", "b",
     and "c". Currently, only string literals are supported for the
     arguments.
@@ -78,7 +78,7 @@ The `fillmissing` operator supports the following types of generators:
 When `fillmissing` appends a record to the output, the key fields of the
 record contain the missing values, while the remaining fields contain
 some constant value. You can configure the constant value for those
-fields. If you don't, a default value is assigned that depends on the
+fields. If you do not, a default value is assigned that depends on the
 type of the field:
 
 | **Field Type**    | **Default Value** |
@@ -97,9 +97,9 @@ operator will issue a warning when this happens.
 
 This section describes the syntax for the `fillmissing` operator.
 
-`fillmissing\<keyFieldGenerato\> [,�\<keyFieldGenerato\> ]  [ with\<nonKeyFieldSpec\> ] [ takeLast ]`
+`fillmissing\<keyFieldGenerato\> [,�\<keyFieldGenerato\> ]  [ with\<nonKeyFieldSpec\> ] [ takeLast ]`
 
--   The `keyFieldGenerator` generates key fields that the operator then
+* The `keyFieldGenerator` generates key fields that the operator then
     references to ensure all specified combinations of values are
     present. Any missing values are filled based on the
     specified `nonKeyFieldSpecs`, one for each key field. Two generators
@@ -107,7 +107,7 @@ This section describes the syntax for the `fillmissing` operator.
 
 [TABLE]
 
--   The `nonKeyFieldSpecs` are optional. They allow you to configure the
+* The `nonKeyFieldSpecs` are optional. They allow you to configure the
     default constant values for one or more non-key fields. The syntax
     for each specification looks like:
 
@@ -116,15 +116,15 @@ This section describes the syntax for the `fillmissing` operator.
 | Constant value  \<constantValu\>` | \<doubl\> |\<in\> |\<stringLitera\> | null` |
 | Constant non key                  | \<constantValu\> for\<fiel\>`               |
 
--   Use the `takeLast` option to fill in values for non-key fields by
+* Use the `takeLast` option to fill in values for non-key fields by
     taking the value from the previous timeslice. This requires the
     `timeslice` generator be defined.
 
 #### Rules
 
--   In Live Dashboards, you must use the `fillmissing` operator after an
+* In Live Dashboards, you must use the `fillmissing` operator after an
     aggregate operator.
--   Buckets from the timeslice generator need to be based on a time
+* Buckets from the timeslice generator need to be based on a time
     period. Supported \<time_perio\>` values are weeks `(w)`,
     days `(d)`, hours `(h)`, minutes `(m)`, and seconds `(s)`.
 
@@ -168,7 +168,7 @@ manually.
 This query provides the following results:
 
 ![all option with
-transpose.png](../../static/img/Search-Query-Language/Search-Operators/fillmissing/all%20option%20with%20transpose.png)
+transpose.png](../../static/img/Search-Query-Language/Search-Operators/fillmissing/all-option-with-transpose.png)
 
 #### Multiple generators and transpose
 
@@ -197,6 +197,6 @@ null value.
 This query provides the following results:
 
 ![takeLast with
-transpose.png](../../static/img/Search-Query-Language/Search-Operators/fillmissing/takeLast%20with%20transpose.png)
+transpose.png](../../static/img/Search-Query-Language/Search-Operators/fillmissing/takeLast-with-transpose.png)
 
  

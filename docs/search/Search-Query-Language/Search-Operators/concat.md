@@ -25,18 +25,18 @@ concatenate operator would also allow you to do this.
 
 ### Syntax
 
--   `concat\<field\>,\<field\>[,\<field\>, ...]) as\<fiel\>`
+* `concat\<field\>,\<field\>[,\<field\>, ...]) as\<fiel\>`
 
 ### Rules
 
--   You must define a name for the new field to concatenate the named
+* You must define a name for the new field to concatenate the named
     fields. There is no default.
--   You can use punctuation and spaces in quotes to concatenate strings
+* You can use punctuation and spaces in quotes to concatenate strings
     in a readable way.
--   A null field is treated as an empty string.
--   The operator allows 2 to 16 input fields. To use more than 16
+* A null field is treated as an empty string.
+* The operator allows 2 to 16 input fields. To use more than 16
     inputs, you can combine operators. See example.
--   AND and OR are not supported.
+* AND and OR are not supported.
 
 ### Examples
 
@@ -81,8 +81,8 @@ You can use the Concat operator to format dates, as shown:
 To use more than 16 inputs with the concat operator, you can combine
 operators, using one of the following formats:
 
--   `... | concat(field1, field2, ...) as b | concat(b, field17, field18,...) as c | …`
--   `... | concat(concat(field1, field2, ...), field17, field18,...) as concatenated_fields`
+* `... | concat(field1, field2, ...) as b | concat(b, field17, field18,...) as c | …`
+* `... | concat(concat(field1, field2, ...), field17, field18,...) as concatenated_fields`
 
 ### See Also
 

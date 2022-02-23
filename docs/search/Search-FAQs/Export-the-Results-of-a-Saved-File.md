@@ -49,7 +49,7 @@ The query with the lookup operator needs to create at least the same
 number of keys as the results in your saved file, so that the keys match
 all. Since each result is assigned a key, you just need to make sure
 enough results are returned. If you have more keys from your lookup
-query, it is not a problem, because we don't match on them anyway. This
+query, it is not a problem, because we do not match on them anyway. This
 will return all of your saved file's results, ready for export.
 
 3.  If you are appending to your saved file, you can get the file's last

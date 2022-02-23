@@ -20,7 +20,7 @@ a smaller data set.
 Sumo Logic supports index-based and field-based methods for search
 optimization.
 
-Even with these methods, you need to ensure you're following our [best
+Even with these methods, you need to ensure you are following our [best
 practices for
 queries](Get-Started-with-Search/How-to-Build-a-Search/Best-Practices:-Search-Rules-to-Live-By.md "Best Practices: Search Rules to Live By").
 
@@ -52,12 +52,12 @@ following order:
 1.  Metadata is applied to your data as
     [Fields](../Manage/Fields.md "Fields"). The order of precedence for
     field assignment from highest to lowest is. 
-    -   Field Extraction Rule (FER)
-    -   Amazon EC2 resource tags
-    -   Amazon EC2 instance information
-    -   HTTP Header
-    -   Source
-    -   Collector
+    * Field Extraction Rule (FER)
+    * Amazon EC2 resource tags
+    * Amazon EC2 instance information
+    * HTTP Header
+    * Source
+    * Collector
 2.  Partitions and Scheduled Views are applied. If both Partitions and
     Scheduled Views are defined, the Partitions are applied first.
 3.  The data is indexed.

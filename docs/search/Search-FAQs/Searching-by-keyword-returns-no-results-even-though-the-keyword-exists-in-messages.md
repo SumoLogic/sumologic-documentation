@@ -7,7 +7,7 @@ id: searching-by-keyword-returns-no-results-even-though-the-keyword-exists-in-me
 \<div class="article-body markdown\>
 
 Sometimes a keyword search returns no results, even though the keyword
-used exists in messages. To understand why this happens, it's helpful to
+used exists in messages. To understand why this happens, it is helpful to
 understand how Sumo Logic indexes the contents of uploaded log messages.
 
 When a log message is received by Sumo Logic, the service indexes the
@@ -25,24 +25,24 @@ So given this sample message:
 
 Sumo Logic indexes the following keyword values:
 
--   2013 
--   08 
--   13 
--   21 
--   25 
--   15 
--   456
--   98765432
--   com 
--   test
--   services 
--   test
--   TESTClientImpl
--   TEST
--   Request 
--   id 
--   1234567
--   TEST1234567
+* 2013 
+* 08 
+* 13 
+* 21 
+* 25 
+* 15 
+* 456
+* 98765432
+* com 
+* test
+* services 
+* test
+* TESTClientImpl
+* TEST
+* Request 
+* id 
+* 1234567
+* TEST1234567
 
 We have removed the special characters from the above list for
 simplification, but those would also be indexed as separate keywords.
@@ -57,11 +57,11 @@ or more characters, or a question mark (?) for a single character.
 
 **Examples: **
 
--   **`TEST*` -** finds the terms "test", "TESTClientImpl", "TEST" and
+* **`TEST*` -** finds the terms "test", "TESTClientImpl", "TEST" and
     "TEST1234567"
--   **`test` -** finds the terms "test" and "TEST" 
--   **`456` -** finds the term "456" 
--   **`*456*` -** finds the terms "456", "1234567" and "TEST1234567"  
+* **`test` -** finds the terms "test" and "TEST" 
+* **`456` -** finds the term "456" 
+* **`*456*` -** finds the terms "456", "1234567" and "TEST1234567"  
      
 
 If you enter a phrase, or series of keywords, such as an email or IP

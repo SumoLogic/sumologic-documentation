@@ -14,11 +14,11 @@ the time range.
 
 ### Syntax
 
--   `max\<numerical_fiel\>) [as\<fiel\>] [by\<fiel\>]`
+* `max\<numerical_fiel\>) [as\<fiel\>] [by\<fiel\>]`
 
 ### Rules
 
--   Creates field named `_max`
+* Creates field named `_max`
 
 ### Example
 
@@ -40,11 +40,11 @@ the time range.
 
 ### Syntax
 
--   `min(numerical_field) [as\<fiel\>] [by\<fiel\>]`
+* `min(numerical_field) [as\<fiel\>] [by\<fiel\>]`
 
 ### Rules
 
--   Creates field named `_min`
+* Creates field named `_min`
 
 ### Example
 

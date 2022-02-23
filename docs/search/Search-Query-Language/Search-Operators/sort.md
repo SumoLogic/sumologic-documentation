@@ -15,28 +15,28 @@ your queries.
 
 ### Syntax
 
--   `sort by\<fiel\> (displays results as descending, by default)`
--   `sort by \<fiel\> (displays results as ascending)`
--   `sort by\<fiel\> asc (displays results as ascending)`
--   `sort by\<field\>,\<field\>`
--   `top\<\>\<fiel\>​​​​​​​ by\<group_by_operato\>`
+* `sort by\<fiel\> (displays results as descending, by default)`
+* `sort by \<fiel\> (displays results as ascending)`
+* `sort by\<fiel\> asc (displays results as ascending)`
+* `sort by\<field\>,\<field\>`
+* `top\<\>\<fiel\>​​​​​​​ by\<group_by_operato\>`
 
 ### Rules
 
--   Default sort order is descending.
--   Sorting is case sensitive with lower-case followed by upper-case.
--   To reverse the sort order to ascending, type a plus sign (+) before
+* Default sort order is descending.
+* Sorting is case sensitive with lower-case followed by upper-case.
+* To reverse the sort order to ascending, type a plus sign (+) before
     the field name you are sorting by. Alternatively, you can
     type **asc** after the field name.
--   To numerically sort, first [cast the field to a
+* To numerically sort, first [cast the field to a
     number](Manually-Casting-String-Data-to-a-Number.md "Manually Casting String Data to a Number").
     (Otherwise, the sort will be ordered as a text field.)
 
 ### Examples
 
--   `status AND down | extract "user=(\<use\>.*?):" | count (*) group by user | sort by _count`
--   `... | count user | top 2 user by _count`
--   `... | count user | sort by _count asc`
+* `status AND down | extract "user=(\<use\>.*?):" | count (*) group by user | sort by _count`
+* `... | count user | top 2 user by _count`
+* `... | count user | sort by _count asc`
 
 #### Top 10 pages by page hits
 

@@ -9,11 +9,11 @@ time range analyzed.
 
 ### Syntax
 
--   `sum\<numerical_fiel\>) [as\<fiel\>] [by\<fiel\>]`
+* `sum\<numerical_fiel\>) [as\<fiel\>] [by\<fiel\>]`
 
 ### Rules
 
--   Creates field named**` `**`_sum`
+* Creates field named**` `**`_sum`
 
 ### Example
 

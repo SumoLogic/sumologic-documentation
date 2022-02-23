@@ -20,17 +20,17 @@ group-by functions is:
 
 Aggregating (group-by) functions include:
 
--   [avg](aaGroup/avg.md "https://help.sumologic.com/Search/Search-Query-Language/aaGroup/avg")
--   [count, count_distinct, and
+* [avg](aaGroup/avg.md "https://help.sumologic.com/Search/Search-Query-Language/aaGroup/avg")
+* [count, count_distinct, and
     count_frequent](aaGroup/count,-count-distinct,-and-count-frequent.md "count, count_distinct, and count_frequent")
--   [first and last](aaGroup/first-and-last.md "first and last")
--   [min and max](aaGroup/min-and-max.md "min and max")
--   [most_recent and
+* [first and last](aaGroup/first-and-last.md "first and last")
+* [min and max](aaGroup/min-and-max.md "min and max")
+* [most_recent and
     least_recent](aaGroup/most-recent-and-least-recent.md "most_recent and least_recent")
--   [pct](aaGroup/percentile-(pct).md "percentile (pct)")
--   [stddev](aaGroup/standard-deviation.md "stddev")
--   [sum](aaGroup/sum.md "sum")
--   [values](aaGroup/values.md "values")
+* [pct](aaGroup/percentile-(pct).md "percentile (pct)")
+* [stddev](aaGroup/standard-deviation.md "stddev")
+* [sum](aaGroup/sum.md "sum")
+* [values](aaGroup/values.md "values")
 
 The ****withtime****, ****most_recent****,
 and ****least_recent**** operators are not considered standalone
@@ -46,22 +46,22 @@ use the [**sort**](Search-Operators/sort.md "sort") operator.
 
 ### Syntax
 
--   `... | group_by_function\<field_to_operate_o\> group by\<field_to_group_b\>[,\<field\>, ...]`
+* `... | group_by_function\<field_to_operate_o\> group by\<field_to_group_b\>[,\<field\>, ...]`
 
 You can use **by** instead of **group by** so `count group by user` is
 equivalent to `count by user`.
 
 ### Rules
 
--   Can not be used with
+* Can not be used with
     the** **[LogReduce](../LogReduce/01-LogReduce-Operator.md "LogReduce Operator") operator.
--   When [parsing and naming (aliasing)
+* When [parsing and naming (aliasing)
     fields](01-Parse-Operators/Parse-field-option.md "Parse field"),
     avoid using the names of grouping functions or other operators as
     field names.
--   When using **count**, or any grouping function, remember to include
+* When using **count**, or any grouping function, remember to include
     the underscore before the field name (sort by **\_count**).
--   Multiple **aggregation** functions can be on the same line but
+* Multiple **aggregation** functions can be on the same line but
     you can't include another function, such as a math function, on the
     same line of a query.
 

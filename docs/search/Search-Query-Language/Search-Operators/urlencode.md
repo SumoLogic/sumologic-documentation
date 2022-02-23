@@ -17,8 +17,8 @@ It will be encoded to:
 
 ## Syntax
 
--   `urlencode\<url_fiel\>) [as\<fiel\>]`
--   `urlencode(\<url strin\>") as\<fiel\>`
+* `urlencode\<url_fiel\>) [as\<fiel\>]`
+* `urlencode(\<url strin\>") as\<fiel\>`
 
 ## Example
 

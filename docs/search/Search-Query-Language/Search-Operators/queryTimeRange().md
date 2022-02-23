@@ -13,11 +13,11 @@ operators in these cases.
 
 ### Syntax
 
--   `queryTimeRange() as\<fiel\>`
+* `queryTimeRange() as\<fiel\>`
 
 ### Rules
 
--   An alias is required.
+* An alias is required.
 
 ### Examples
 

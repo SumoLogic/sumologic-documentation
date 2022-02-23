@@ -10,15 +10,15 @@ find a total running count across all intervals.
 
 ### Syntax
 
--   `accum\<fiel\> [as\<fiel\>] [by\<field\>,\<field\>, ...]`
+* `accum\<fiel\> [as\<fiel\>] [by\<field\>,\<field\>, ...]`
 
 ### Rules
 
--   An alias for accum is optional. When an alias is not
+* An alias for accum is optional. When an alias is not
     provided, \_accum is the default alias.
--   Specified fields must contain numeric values.
--   If a row contains non-numeric values, that row will be skipped.
--   To add a query that includes an accum operator to a Dashboard, you
+* Specified fields must contain numeric values.
+* If a row contains non-numeric values, that row will be skipped.
+* To add a query that includes an accum operator to a Dashboard, you
     must add a group by function before the accum operator.
 
 ### Examples

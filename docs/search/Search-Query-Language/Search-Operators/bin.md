@@ -11,26 +11,26 @@ effective way to visualize the distribution of data.
 
 #### Syntax
 
--   `bin\<numeric fiel\> width\<\>[, min\<\>][, max\<\>]`
+* `bin\<numeric fiel\> width\<\>[, min\<\>][, max\<\>]`
 
 where:
 
--   \<numeric fiel\>` is the field you want to assign to bins. The data
+* \<numeric fiel\>` is the field you want to assign to bins. The data
     type needs to be numerical. **Required**.
--   \<widt\>` is the bin width as a floating point number. **Required**.
--   \<mi\>` is the lower boundary of the results as a floating point
+* \<widt\>` is the bin width as a floating point number. **Required**.
+* \<mi\>` is the lower boundary of the results as a floating point
     number. All data points with values less than the **min** are
     assigned to the first bin. **Optional**.
--   \<ma\>` is the upper boundary of the results as a floating point
+* \<ma\>` is the upper boundary of the results as a floating point
     number. All data points with values more than the **max** are
     assigned to the last bin. **Optional**.
 
 ##### Output Fields
 
--   `_bin_label` is the default alias field, which has a standard
+* `_bin_label` is the default alias field, which has a standard
     interval representation.
--   `_bin_lower` is the lower boundary of the bin interval.
--   `_bin_upper` is the upper boundary of the bin interval.
+* `_bin_lower` is the lower boundary of the bin interval.
+* `_bin_upper` is the upper boundary of the bin interval.
 
 You can sort by the lower or upper boundary of the bin interval.
 
@@ -44,7 +44,7 @@ distribution of error counts based on bins with a width of 100:
 `_sourceCategory=stream error | timeslice 1m | count by _timeslice | bin _count width=100.0 | count by _bin_label, _bin_lower | sort by _bin_lower`
 
 ![bin operator
-charted.png](../../static/img/Search-Query-Language/Search-Operators/bin/bin%20operator%20charted.png)
+charted.png](../../static/img/Search-Query-Language/Search-Operators/bin/bin-operator-charted.png)
 
 ###### Latency distribution
 
@@ -58,4 +58,4 @@ You can aggregate bins further:
 `_sourceCategory=analytics | parse "ms: *" as time | bin time width=10, min = 0, max = 500 | count by _bin_label, _bin_upper | sort by _bin_upper`
 
 ![example
-bin.png](../../static/img/Search-Query-Language/Search-Operators/bin/example%20bin.png)
+bin.png](../../static/img/Search-Query-Language/Search-Operators/bin/example-bin.png)

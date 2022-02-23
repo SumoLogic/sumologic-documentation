@@ -127,7 +127,7 @@ You can delete a panel that you no longer need.
 
 ## Log Search page
 
-To create a Dashboard (New) from the [Log Search page] (../../05Search/Get-Started-with-Search/How-to-Use-the-Search-Page.md "How to Use the Search Page"):
+To create a Dashboard (New) from the [Log Search page] (../../05Search/Get-Started-with-Search/how-to-use-search-page.md "How to Use the Search Page"):
 
 1. From the Log Search page click the **Add to Dashboard** button on the Aggregates tab after running your aggregate query you want to add to a Dashboard (New) panel.  
 

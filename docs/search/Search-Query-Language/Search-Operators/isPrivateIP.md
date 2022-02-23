@@ -9,19 +9,19 @@ returns a boolean.
 
 ### Syntax
 
--   `isPrivateIP(\<IPv4_strin\>") as\<fiel\>`
--   `isPrivateIP\<IPv4_string_fiel\>) [as\<fiel\>]`
+* `isPrivateIP(\<IPv4_strin\>") as\<fiel\>`
+* `isPrivateIP\<IPv4_string_fiel\>) [as\<fiel\>]`
 
 ### Rules
 
--   Returns `true` if the input is a valid private IPv4 address.
--   Invalid IPv4 addresses are dropped from the results.
+* Returns `true` if the input is a valid private IPv4 address.
+* Invalid IPv4 addresses are dropped from the results.
 
 The following warning is shown when results are dropped or an IPv6
 address is detected:  
     
 ![isprivateip operator warning for dropped invalid ip
-addresses.png](../../static/img/Search-Query-Language/Search-Operators/isPrivateIP/isprivateip%20dropped%20warning.png)
+addresses.png](../../static/img/Search-Query-Language/Search-Operators/isPrivateIP/isprivateip-dropped-warning.png)
 
 ### Examples
 

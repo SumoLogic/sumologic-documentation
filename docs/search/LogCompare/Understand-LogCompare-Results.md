@@ -29,13 +29,13 @@ You will also see the percentage of changes in your log messages.
 
 These changes are defined as:
 
--   **Delta Percentage.** The delta percentage is the straight
+* **Delta Percentage.** The delta percentage is the straight
     percentage change in the number of messages divided by the
     historical count percentage, which is the historical count change
     over time since the initial count results for this cluster.
--   **New.** When the word "new" appears, the cluster did not exist in
+* **New.** When the word "new" appears, the cluster did not exist in
     the original baseline.
--   **Gone.** When the word "gone" appears, a previous cluster did not
+* **Gone.** When the word "gone" appears, a previous cluster did not
     return in the target query.
 
 The following table illustrates the way the LogCompare results work. For

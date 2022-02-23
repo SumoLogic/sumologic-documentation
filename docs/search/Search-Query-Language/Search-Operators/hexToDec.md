@@ -10,8 +10,8 @@ values.
 
 ### Syntax
 
--   `hexToDec(\<hexadecimal strin\>") as\<fiel\>`
--   `hexToDec\<hexadecimal_fiel\>) as\<fiel\>`
+* `hexToDec(\<hexadecimal strin\>") as\<fiel\>`
+* `hexToDec\<hexadecimal_fiel\>) as\<fiel\>`
 
 ### Examples
 

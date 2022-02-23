@@ -41,7 +41,7 @@ exponent. Here are some examples of simple numeric literals:
     | 3.14e+4 as bigpi
     | -42.300 as b
 
-It's worth noting that a leading "-" is a unary negation and is treated
+It is worth noting that a leading "-" is a unary negation and is treated
 formally like a "+" or "/" operator.
 
 Numeric literals may optionally end with a suffix. There are two

@@ -24,17 +24,17 @@ available.
 
 ### Syntax
 
--   `rollingstd\<fiel\> [, window_length] [as\<fiel\>]`
+* `rollingstd\<fiel\> [, window_length] [as\<fiel\>]`
 
 ### Rules
 
--   An alias for rollingstd is optional. When an alias is not
+* An alias for rollingstd is optional. When an alias is not
     provided, **\_rollingstd** is the default alias.
--   Specified fields must contain numeric values.
--   To add a query that includes a rollingstd operator to a Dashboard,
+* Specified fields must contain numeric values.
+* To add a query that includes a rollingstd operator to a Dashboard,
     you must add a group by function **before** the rollingstd operator.
--   The default window length is 10.
--   The maximum window length is 1000.
+* The default window length is 10.
+* The maximum window length is 1000.
 
 ### Examples
 

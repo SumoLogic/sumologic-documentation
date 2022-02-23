@@ -17,8 +17,8 @@ Regex](02-Parse-Variable-Patterns-Using-Regex.md) operations.
 
 ## Syntax
 
--   `parse field\<fiel\> \<start_ancho\>\<stop_ancho\>" as\<fiel\>`
--   `parse regex field\<fiel\> \<start expressio\>(\<fieldname\<field expressio\>\<stop expressio\>"`
+* `parse field\<fiel\> \<start_ancho\>\<stop_ancho\>" as\<fiel\>`
+* `parse regex field\<fiel\> \<start expressio\>(\<fieldname\<field expressio\>\<stop expressio\>"`
 
 Characters quoted with double quotes (not single quotes) are string
 literals. Use a backslash to escape double quotes in the string. For

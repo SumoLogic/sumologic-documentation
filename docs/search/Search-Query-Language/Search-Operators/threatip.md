@@ -24,14 +24,14 @@ supported is IP address.
 
 ### Syntax
 
--   threatip \<ip_address_field\>
+* threatip \<ip_address_field\>
 
 ##### Response Fields
 
--   actor
--   malicious_confidence
--   raw_threat
--   type
+* actor
+* malicious_confidence
+* raw_threat
+* type
 
 ### Example
 

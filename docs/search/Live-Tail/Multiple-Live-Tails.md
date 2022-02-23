@@ -13,11 +13,11 @@ Tail page, or from the Search page.
 1.  From the **Live Tail** page, click the menu button consisting of
     three vertical dots and select **Split Screen**.   
     ![three-dots
-    icon.png](../static/img/Live-Tail/Multiple-Live-Tails/three-dots%20icon.png)
+    icon.png](../static/img/Live-Tail/Multiple-Live-Tails/three-dots-icon.png)
 2.  A second pane opens on the **Live Tail** page.
 3.  Enter a query and click **Run**. You can compare the two Live Tails
     side-by-side.  
-    ![](../static/img/Live-Tail/Multiple-Live-Tails/Screen%20Shot%202017-07-10%20at%201.47.24%20PM.png)
+    ![](../static/img/Live-Tail/Multiple-Live-Tails/Screen-Shot-2017-07-10-at-1.47.24-PM.png)
 
 ## Start up to four Live Tail sessions
 

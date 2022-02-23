@@ -16,17 +16,17 @@ conjunction with other operators to build robust queries.
 
 The string expression is case-sensitive and can be provided as a field.
 
--   \<string expressio\> matches\<patter\> as\<fiel\>`
--   `if\<string expressio\> matches\<patter\>,\<value_if_tru\>,\<value_if_fals\>) as\<fiel\>`
--   `if\<string expressio\> matches \<rege\>/,\<value_if_tru\>,\<value_if_fals\>) as\<fiel\>`
--   `where\<string expressio\> matches\<patter\>`
--   `where\<string expressio\> matches \<rege\>/ `
--   `where !\<string expressio\> matches\<patter\>)`
+* \<string expressio\> matches\<patter\> as\<fiel\>`
+* `if\<string expressio\> matches\<patter\>,\<value_if_tru\>,\<value_if_fals\>) as\<fiel\>`
+* `if\<string expressio\> matches \<rege\>/,\<value_if_tru\>,\<value_if_fals\>) as\<fiel\>`
+* `where\<string expressio\> matches\<patter\>`
+* `where\<string expressio\> matches \<rege\>/ `
+* `where !\<string expressio\> matches\<patter\>)`
 
 ### Rules
 
--   Patterns use asterisks `*` as wildcards.
--   Regex must be [RE2
+* Patterns use asterisks `*` as wildcards.
+* Regex must be [RE2
     compliant](https://github.com/google/re2/wiki/Syntax "https://github.com/google/re2/wiki/Syntax").
 
 ### Examples

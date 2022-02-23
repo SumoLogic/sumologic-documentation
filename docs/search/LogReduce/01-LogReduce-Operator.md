@@ -24,10 +24,10 @@ Outcome](Influence-the-LogReduce-Outcome.md "Influencing the LogReduce Outcome")
 
 There are two ways to use the operator.
 
--   Use
+* Use
     the **LogReduce** [button](./01-LogReduce-Operator.md "LogReduce Operator")
     displayed on the results table after running a search.
--   Manually add the operator to your query following its
+* Manually add the operator to your query following its
     [syntax](./01-LogReduce-Operator.md "LogReduce Operator").
 
 ### LogReduce button
@@ -46,13 +46,13 @@ automatically apply the LogReduce operator to the current results.
 
 ### Rules
 
--   The logreduce operator cannot be used with [group-by
+* The logreduce operator cannot be used with [group-by
     operators](../Search-Query-Language/aaGroup.md "Group or Aggregate Operators")
     such as "count by field".
 
 ### Syntax
 
--   `... | logreduce [field\<fiel\>] [by\<byFiel\>] [limit\<limi\>] [, criteria\<criteri\>]`
+* `... | logreduce [field\<fiel\>] [by\<byFiel\>] [limit\<limi\>] [, criteria\<criteri\>]`
 
 [TABLE]
 
@@ -61,20 +61,20 @@ automatically apply the LogReduce operator to the current results.
 Using the **details** option launches a new query adding a unique
 signature ID that allows you to view the logs grouped under that
 signature. The signature ID is not available to run this manually,
-you'll need to use the web interface.
+you will need to use the web interface.
 
 After running a LogReduce operation, from the **Signatures** tab, you
 can view logs grouped together in a signature. To see the raw log data
 from signatures the operator provides the **details** option. You can
 view details in two ways:
 
--   Click the number in the **Count** column for a signature.
--   Check the checkboxes in the **Select** column for any number of
+* Click the number in the **Count** column for a signature.
+* Check the checkboxes in the **Select** column for any number of
     signatures and click the **View Details** button on the top right of
     the table.
 
 ![logreduce details
-option.png](../static/img/LogReduce/01-LogReduce-Operator/logreduce%20details%20option.png)
+option.png](../static/img/LogReduce/01-LogReduce-Operator/logreduce-details-option.png)
 
 Details option syntax:
 
@@ -109,9 +109,9 @@ Optimize option syntax:
 
 For example,
 
--   `_sourceCategory=cloudtrail`  
+* `_sourceCategory=cloudtrail`  
     `| logreduce optimize`
--   `_sourceCategory=kubernetes-audit`  
+* `_sourceCategory=kubernetes-audit`  
     `| json auto`  
     `| logreduce field=object optimize`
 

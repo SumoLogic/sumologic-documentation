@@ -9,7 +9,7 @@ consecutive rows. To produce results, diff requires that a specified
 field contain numeric data; any non-numerical values are removed from
 the search results.
 
-Diff doesn't sort data but instead operates on rows in the order that
+Diff does not sort data but instead operates on rows in the order that
 they appear in the input stream, subtracting the number in a field from
 the number in the same field in the previous line.
 
@@ -17,24 +17,24 @@ The first line of results will never display diff results.
 
 Adding a group by function to a diff operator query calculates the
 difference between consecutive values in each group. (Data from each
-group are calculated separately.) Grouping doesn't affect the order in
+group are calculated separately.) Grouping does not affect the order in
 which rows appear in the output stream.
 
 ### Syntax
 
--   `diff\<fiel\> [as\<fiel\>] [by\<field\>,\<field\>, ...]`
+* `diff\<fiel\> [as\<fiel\>] [by\<field\>,\<field\>, ...]`
 
 ### Rules
 
--   An alias for diff is optional. When an alias is not provided, \_diff
+* An alias for diff is optional. When an alias is not provided, \_diff
     is the default alias.
--   Specified fields must contain numeric values.
--   If a row contains non-numeric values, that row will be
+* Specified fields must contain numeric values.
+* If a row contains non-numeric values, that row will be
     skipped; diff uses the row before that (until it finds an acceptable
     row with a numeric value).
--   The diff corresponding to the first row in any results is null
+* The diff corresponding to the first row in any results is null
     (empty).
--   To add a query that includes a diff operator to a Dashboard, you
+* To add a query that includes a diff operator to a Dashboard, you
     must add a group by function before the diff operator.
 
 ### Examples

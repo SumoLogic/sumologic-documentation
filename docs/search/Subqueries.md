@@ -21,10 +21,10 @@ In a subquery, the parent query contains the main body of the query
 while the child query contains the results necessary for filtering the
 parent query.
 
--   **Child query.** Handles the filtering. Runs first and provides
+* **Child query.** Handles the filtering. Runs first and provides
     intermediate input for the parent query. You can specify a different
     time range than the parent query.
--   **Parent query.** Depends on the input from a child query or queries
+* **Parent query.** Depends on the input from a child query or queries
     to finish its execution.
 
 Subqueries are a really powerful way to filter for specific criteria,
@@ -62,7 +62,7 @@ syntax, like `| where !\<subquer\>]` .
 
 **If operator syntax:**
 
-`Parent query | if ( [subquery [from=\<fromTim\>)] [to=\<toTim\>)] :\<child quer\> | compose\<field\>[,\<field\>, ...] [maxresults\<in\>] ] ,�\<value_if_tru\>,\<value_if_fals\> ) as\<fiel\> Rest of parent query`
+`Parent query | if ( [subquery [from=\<fromTim\>)] [to=\<toTim\>)] :\<child quer\> | compose\<field\>[,\<field\>, ...] [maxresults\<in\>] ] ,�\<value_if_tru\>,\<value_if_fals\> ) as\<fiel\> Rest of parent query`
 
 You can use the not `!` option using the [if
 operator](Search-Query-Language/Search-Operators/if-operator-and.md "if operator and ?")
@@ -79,9 +79,9 @@ parent query:
 compose is not considered a standalone operator. It is designed to only
 work with a subquery.
 
--   ** Fields from the child query that are returned to the parent
+* ** Fields from the child query that are returned to the parent
     query.** You can return more than one field to the parent query.
--    **Format in which the values are returned.** Results of the given
+*  **Format in which the values are returned.** Results of the given
     field are converted from tabular results into standard disjunctive
     normal form format.
 
@@ -96,8 +96,8 @@ This would be converted to a single output as follows:
 
 `(( _sourcehost="prod-search-1" AND _sourcecatagory=”stream” AND clientip=”1.1.1.1”) OR (_sourcehost=”prod-remix-1” AND _sourcecatagory=”remix” AND clientip=”10.10.10.10”))`
 
--   Results have `AND` between columns and `OR` between rows.
--   Each row is wrapped in parenthesis `( )` and all results are
+* Results have `AND` between columns and `OR` between rows.
+* Each row is wrapped in parenthesis `( )` and all results are
     wrapped inside another parenthesis `( )`.
 
 #### Optional arguments
@@ -144,24 +144,24 @@ parent query.
 
 ### Limitations
 
--   You have a maximum of 10,000 unique results (rows) from the child
+* You have a maximum of 10,000 unique results (rows) from the child
     query and you are limited to 100MB of memory to return those
     results. If you see the error message:  
     `    Subquery reached the maximum memory limit. Some records will be truncated.`   
     you've reached your maximum results or memory limit for your child
     query.
--   The Log Search view does not present a histogram for child queries.
+* The Log Search view does not present a histogram for child queries.
     The histogram that appears represents only the parent query.
--   Everything returned from the API will be from the final output.
+* Everything returned from the API will be from the final output.
     Child data is not returned.
--   [Receipt
+* [Receipt
     Time](Get-Started-with-Search/How-to-Build-a-Search/Use-Receipt-Time.md "Use Receipt Time")
     is not supported.
--   Subquery is not supported in the following cases:
-    -   In Scheduled Views
-    -   Inside FERs
-    -   Live Dashboards
-    -   Real Time Scheduled Searches
+* Subquery is not supported in the following cases:
+    * In Scheduled Views
+    * Inside FERs
+    * Live Dashboards
+    * Real Time Scheduled Searches
 
 ### Example subquery 
 
@@ -209,16 +209,16 @@ Combine the two queries into a subquery to allow the parent query to
 harness the child query results. There are a few approaches to the
 subquery:
 
--   Include `keywords` so the IP address from the child query is used as
+* Include `keywords` so the IP address from the child query is used as
     a keyword in the search expression (before the first pipe, \|).
--   Exclude the `keywords` argument so results are returned as a table,
+* Exclude the `keywords` argument so results are returned as a table,
     in key-value pairs, note that any fields (keys) returned must exist
     in the parent query results.
--   Use a subquery with a `where` or `if` operator.
-    -   If you filter the IP address in a `where` clause then you can
+* Use a subquery with a `where` or `if` operator.
+    * If you filter the IP address in a `where` clause then you can
         substitute it with a subquery that dynamically generates the
         filter expression.
-    -   If you use the IP address as an `if` condition you can assign
+    * If you use the IP address as an `if` condition you can assign
         values to a new field based on if the condition is returned as
         true or false.
 
@@ -316,11 +316,11 @@ the following section for an example.
 
 **Relative **
 
--   s - seconds
--   m - minute
--   h - hour
--   d - day
--   w - week
+* s - seconds
+* m - minute
+* h - hour
+* d - day
+* w - week
 
 **Epoch**
 
@@ -330,22 +330,22 @@ Timestamp in millis since 01/01/1970 00:00:00.000 UTC
 
 We support the ISO 8601 format. 
 
--   yyyy-MM-dd HH:mm:ss.SSS
--   yyyy-MM-dd HH:mm:ss
--   yyyy-MM-dd HH:mm
--   yyyy-MM-dd
--   MM-dd HH:mm:ss.SSS
--   MM-dd HH:mm:ss
--   MM-dd HH:mm
--   MM-dd
--   yyyy/MM/dd HH:mm:ss.SSS
--   yyyy/MM/dd HH:mm:ss
--   yyyy/MM/dd HH:mm
--   yyyy/MM/dd
--   MM/dd HH:mm:ss.SSS
--   MM/dd HH:mm:ss
--   MM/dd HH:mm
--   MM/dd
+* yyyy-MM-dd HH:mm:ss.SSS
+* yyyy-MM-dd HH:mm:ss
+* yyyy-MM-dd HH:mm
+* yyyy-MM-dd
+* MM-dd HH:mm:ss.SSS
+* MM-dd HH:mm:ss
+* MM-dd HH:mm
+* MM-dd
+* yyyy/MM/dd HH:mm:ss.SSS
+* yyyy/MM/dd HH:mm:ss
+* yyyy/MM/dd HH:mm
+* yyyy/MM/dd
+* MM/dd HH:mm:ss.SSS
+* MM/dd HH:mm:ss
+* MM/dd HH:mm
+* MM/dd
 
 ### Examples
 
@@ -409,7 +409,7 @@ These concepts are covered in [How to Build a
 Search](Get-Started-with-Search/How-to-Build-a-Search.md "How to Build a Search")
 documents.
 
--   Your queries will perform better if you have the child query in the
+* Your queries will perform better if you have the child query in the
     search expression (before the first pipe, \|), rather than having it
     in the filter clause. The below examples highlight this point. In
     the first, we use subquery before the first pipe and it executes in
@@ -418,7 +418,7 @@ documents.
     compare that to where subquery is used in the where clause and you
     can see it takes 29 seconds to execute:  
     ![29Seconds.png](./static/img/Subqueries/29Seconds.png)
--   If the child query is used to build the filter clause, try having
+* If the child query is used to build the filter clause, try having
     the filter clause close to the search expression ( rather than
     having it further down in the query to improve performance. Your
     query should be more like the one on the right.
@@ -427,7 +427,7 @@ documents.
 [TABLE]
 \</di\>
 
--   Run the child query in a separate tab first. Append the compose
+* Run the child query in a separate tab first. Append the compose
     operator at the end of that query to check the results that are
     returned. When you are happy with the query, copy it into your main
     subquery. This pre-testing reduces the chances of creating queries
@@ -436,9 +436,9 @@ documents.
 
 ![GuardDuty.png](./static/img/Subqueries/GuardDuty.png)
 
--   If the subquery is generating too many records, try reducing the
+* If the subquery is generating too many records, try reducing the
     time range of the query.
--   If the subquery returns more than 10000 results or exceeds the 100MB
+* If the subquery returns more than 10000 results or exceeds the 100MB
     memory limit, you will receive the following error message:  
     `Subquery reached the maximum memory limit. Some records will be truncated.`  
     If this happens, narrow the scope of your child query or reduce the

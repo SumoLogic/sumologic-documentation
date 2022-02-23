@@ -9,8 +9,8 @@ string field.
 
 #### Syntax
 
--   `trim\<fiel\>) as\<fiel\>`
--   `trim("\<string expressio\> ") as\<fiel\>`
+* `trim\<fiel\>) as\<fiel\>`
+* `trim("\<string expressio\> ") as\<fiel\>`
 
 #### Example
 

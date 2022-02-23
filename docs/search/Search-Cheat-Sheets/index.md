@@ -5,7 +5,7 @@ id: search-cheat-sheets
 # Search Cheat Sheets
 
 Cheat sheets provide examples of useful search queries for different use
-cases. You'll also find a list of all Sumo Logic operators, along with a
+cases. You will also find a list of all Sumo Logic operators, along with a
 quick description.
 
 For a collection of customer created search queries and their use cases,

@@ -26,12 +26,12 @@ continuous query where first and last are not supported.
 The field `status` is used in the following syntax expressions to
 represent any field.
 
--   `| parse ... as status | ``withtime status | most_recent(status_withtime) [as\<fiel\>] by _sourcehost`
--   `| parse ... as status | ``withtime status | least_recent(status_withtime) [as\<fiel\>] by _sourcehost`
+* `| parse ... as status | ``withtime status | most_recent(status_withtime) [as\<fiel\>] by _sourcehost`
+* `| parse ... as status | ``withtime status | least_recent(status_withtime) [as\<fiel\>] by _sourcehost`
 
 ### Rules
 
--   Default alias field is
+* Default alias field is
     named ****\_mostrecent**** or **\_leastrecent**
 
 ### Examples
