@@ -2,6 +2,7 @@
 id: set-custom-time-ranges
 ---
 
+
 # Set customized time ranges
 
 A new dashboard has a preset default time range for its panels and the dashboard as a whole. You can choose to customize the time range for individual panels, as well as setting a new time range for the
