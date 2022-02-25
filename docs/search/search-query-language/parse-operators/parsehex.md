@@ -25,4 +25,4 @@ The following query will convert a hexadecimal string to a decimal number.
 
 It provides the following results:
 
-![parse hex](/img/snippet/query/parsehex_operator.png)
+![parse hex](/img/snippet/query-search/parsehex_operator.png)

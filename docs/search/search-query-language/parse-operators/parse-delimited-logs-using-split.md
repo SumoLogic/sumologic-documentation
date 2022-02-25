@@ -55,7 +55,7 @@ _sourceCategory=colon
 
 which produces results such as:
 
-![split example colon](/img/snippet/query/split_example_colon.png)
+![split example colon](/img/snippet/query-search/split_example_colon.png)
 
 In another example, you could use the following query:
 
@@ -66,7 +66,7 @@ _sourceCategory=colon
 
 which provides results like:
 
-![split example](/img/snippet/query/split_example1.png)
+![split example](/img/snippet/query-search/split_example1.png)
 
 ### Parsing a CSV file
 
@@ -79,7 +79,7 @@ _sourceCategory=csv
 
 which produces results such as:
 
-![splt example](/img/snippet/query/split_example3.png)
+![splt example](/img/snippet/query-search/split_example3.png)
 
 ### Parsing a tab delimited file
 

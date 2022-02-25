@@ -109,7 +109,7 @@ The following query returns data from the present, along with results from yeste
 
 This comparison can be displayed visually as:
 
-![compare single diagram](/img/snippet/query/compare_single_diagram.png)
+![compare single diagram](/img/snippet/query-search/compare_single_diagram.png)
 
 In another example, this query returns data from the present along with results from last week.
 
@@ -131,7 +131,7 @@ The following query returns results from the present, along with results from ev
 
 Which can be displayed visually as:
 
-![compare multiple diagram](/img/snippet/query//compare_multiple_diagram.png)
+![compare multiple diagram](/img/snippet/query-search//compare_multiple_diagram.png)
 
 The following query returns result from the present with results from the same day in the last 3 weeks. So if today is Monday, then this query will show a result for today and the last three Mondays.
 

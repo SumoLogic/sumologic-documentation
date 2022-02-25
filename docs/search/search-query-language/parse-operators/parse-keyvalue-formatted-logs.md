@@ -8,7 +8,7 @@ Typically, log files contain information that follow a key-value pair structure.
 
 For example, a log could contain the following keys (highlighted):
 
-![key value](/img/snippet/query/Keyvalue_highlight.png)
+![key value](/img/snippet/query-search/Keyvalue_highlight.png)
 
 From that log message, you can use the **keyvalue** operator to get the values for one or more keys. For example, if you could like to see information just about the "remote_ip" value, running this query:
 
@@ -16,7 +16,7 @@ From that log message, you can use the **keyvalue** operator to get the values
 
 would produce these results:
 
-![results](/img/snippet/query/Keyvalue_results.png)
+![results](/img/snippet/query-search/Keyvalue_results.png)
 
 The keyvalue operator can also be used in two explicit modes:
 
@@ -27,7 +27,7 @@ The keyvalue operator can also be used in two explicit modes:
 Keys and values that contain spaces, tabs, or other white space, must be quoted. For example, `keyvalue Node ID` must be written `keyvalue "Node ID"`.
 :::
 
-### Inference mode syntax
+## Inference mode syntax
 
 When used in the default **inference mode**, the **keyvalue** operator uses an internal list of regular expressions to determine how to extract the value for a given key. This greatly simplifies the syntax.
 
@@ -37,9 +37,9 @@ For example, you could extract the keys "module" and "thread" and their values f
 
 to produce these results:
 
-![](/img/snippet/query/keyvalue_infer_example_results.png)
+![](/img/snippet/query-search/keyvalue_infer_example_results.png)
 
-### Regular Expression mode syntax
+## Regular Expression mode syntax
 
 In **Regular Expression** mode, you must explicitly match keys and values based on a regular expression. The regular expression needs a capture group for the key and a capture group for the value. This allows for greater flexibility than inference mode.
 
@@ -65,7 +65,7 @@ In the above case, for each key specified, the operator first finds the key itse
 
 The number of fields specified with the "as" clause must match the number of key-value pairs specified. You can omit the clause if you could like the operator to automatically create the field names for the extracted values. To do this, **keyvalue** replaces every character (other than a..z, A..Z, 0..9, or \_) with an underscore (\_).
 
-### Abbreviated syntax
+## Abbreviated syntax
 
 The **keyvalue** operator can be abbreviated in either mode (Inference or Regular Expression). For example, running this query:
 
@@ -85,7 +85,7 @@ Also, **keyvalue** can be abbreviated to "kv". For example:
 * | kv "<a>", "<b>"
 ```
 
-### Auto extracting key-value pairs
+## Auto extracting key-value pairs
 
 The **keyvalue** operator supports an optional auto mode when using the default Inference mode.
 
@@ -102,7 +102,7 @@ The **keyvalue** operator supports an optional auto mode when using the defaul
     : = ->
     ```
 
-###### Multiple delimiters
+### Multiple delimiters
 
 If your log messages contain more than one delimiter you must specify
 one delimiter to use when extracting.
@@ -111,27 +111,21 @@ one delimiter to use when extracting.
 * | keyvalue auto delim ":"
 ```
 
-### Additional options
+## Additional options
 
-* **Aliases
-    (renaming)** using [**as**](../Search-Operators/as-operator.md "as operator") are
-    supported. For example:
+* **Aliases (renaming)** using [**as**](../Search-Operators/as-operator.md "as operator") are supported. For example:
 
     ```sql
     * | keyvalue auto keys "<key1>", "<key2>" as <field1>, <field2>
     ```
 
-* **refonly** extracts only referenced keys. If this option is not
-    used, **keyvalue auto** extracts all other fields it finds in the
-    message.
+* **refonly** extracts only referenced keys. If this option is not used, **keyvalue auto** extracts all other fields it finds in the message.
 
     ```sql
     * | kv auto keys "<key1>", "<key2>"  refonly
     ```
 
-* **field**=field_name allows you to specify a field to parse other
-    than the default message. For details, see [Parse
-    field](Parse-field-option.md).
+* **field**=field_name allows you to specify a field to parse other than the default message. For details, see [Parse field](parse-field-option.md).
 
     ```sql
     * | keyvalue field=<field> [infer keys]

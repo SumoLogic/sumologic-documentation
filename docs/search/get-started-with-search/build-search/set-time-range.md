@@ -6,7 +6,7 @@ id: set-time-range
 
 To set the time range for searches or metrics visualizations, click the time area.
 
-![time range cropped](/img/snippet/query/time-range-cropped.png)
+![time range cropped](/img/snippet/query-search/time-range-cropped.png)
 
 The current time range is displayed, along with the following options to set the time:
 
@@ -16,7 +16,7 @@ The current time range is displayed, along with the following options to set the
 
 * **Custom**. Click a date to select it as the start date, then move your cursor to the desired end date and click to select it. The date settings shown below the calendar are updated. You can scroll to navigate between months or click to go to a specific month. To specify the time, highlight the portion of the time value you want to change, and modify the entry.  
 
-    ![time range custom.png](/img/snippet/query/time-range-custom.png)
+    ![time range custom.png](/img/snippet/query-search/time-range-custom.png)
 
 * **Recent**. If you have specified any relative or custom time ranges during your current login session, they are available for selection under **Recent**.
 

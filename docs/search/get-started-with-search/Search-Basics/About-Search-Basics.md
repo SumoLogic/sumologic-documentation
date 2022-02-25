@@ -32,7 +32,7 @@ Here's an example:
 
 This query means:
 
-![query syntax](/img/snippet/query/query-syntax-new.png)
+![query syntax](/img/snippet/query-search/query-syntax-new.png)
 
 As queries get longer and more complex, it is a best practice to format your queries by using a soft return before the pipes, such as:
 

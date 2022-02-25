@@ -47,7 +47,7 @@ _sourceCategory=csv
 
 which provides results like:
 
-![csv example](/img/snippet/query/csv_example1.png)
+![csv example](/img/snippet/query-search/csv_example1.png)
 
 ### Parse a stream query and extract search terms
 
@@ -59,6 +59,6 @@ which provides results like:
 
 This produces results like:
 
-![csv operator](/img/snippet/query/csv_operator_example_695x65.png)
+![csv operator](/img/snippet/query-search/csv_operator_example_695x65.png)
 
 For more information on parsing CSV files, see [Lookup](../Search-Operators/lookup-classic.md) operator and [Save](../Search-Operators/save-lookups-classic.md) operator.

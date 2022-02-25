@@ -32,7 +32,7 @@ Where:
 
 * If you choose to specify one optional parameter, you must specify
     both the optional parameters - prefix and suffix. You should provide
-    an empty string ("") if you don’t have a value for one.
+    an empty string ("") if you do not have a value for one.
 * Only fully-formed URLs (for example,\<http://google.co\>) are
     supported as values for url_column_name.
 * For the link to be clickable your query needs to aggregate by the

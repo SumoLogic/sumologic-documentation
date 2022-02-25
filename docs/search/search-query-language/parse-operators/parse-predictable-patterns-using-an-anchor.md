@@ -17,27 +17,20 @@ This topic describes how to use the parse anchor UI tool to add parsing to a que
 ## Options
 
 * The `nodrop` option forces results to also include messages that do not match any segment of the parse term. For details, see [Parse nodrop](parse-nodrop-option.md ). 
-* The `field=fieldname` option allows you to specify a field to parse
-    other than the default message. For details, see [Parse
-    field](Parse-field-option.md "Parse field"). 
+* The `field=fieldname` option allows you to specify a field to parse other than the default message. For details, see [Parse field](parse-field-option.md). 
 
 ## Rules
 
 * User-created fields, such as extracted or parsed fields, can be named using alphanumeric characters and underscores (`_`). Fields must start with an alphanumeric character. 
 * If no field is specified, the entire text of incoming messages is used.
-* A wildcard is used as a placeholder for the extracted field. Wildcards must be separated by a space or other character. `**` is not valid. Use a different parse operator, like [parse regex](02-Parse-Variable-Patterns-Using-Regex.md) instead.
-* The number of wildcards in the pattern string must match the number
-    of variables.
+* A wildcard is used as a placeholder for the extracted field. Wildcards must be separated by a space or other character. `**` is not valid. Use a different parse operator, like [parse regex](parse-variable-patterns-using-regex.md) instead.
+* The number of wildcards in the pattern string must match the number of variables.
 * Multiple extractions are allowed for a single parse operator.
-* Characters quoted with double quotes (not single quotes) are string
-    literals. Use a backslash to escape double quotes in the string. For
-    example:
-    * `| parse "\"tier\" : *," as tier`
+* Characters quoted with double quotes (not single quotes) are string literals. Use a backslash to escape double quotes in the string. For example: `| parse "\"tier\" : *," as tier`
 
 ## parse anchor UI tool
 
-You can use the parse anchor UI tool to highlight the message text to
-parse, identify parsing fields, and perform the parsing action.
+You can use the parse anchor UI tool to highlight the message text to parse, identify parsing fields, and perform the parsing action.
 
 **To parse using the parse anchor tool:**
 
@@ -47,16 +40,13 @@ parse, identify parsing fields, and perform the parsing action.
 
     ![parse selected text UI option.png](/img/search/search-query-language/parse-operators/anchor/parse-selected-text-UI-option.png)  
       
-    The **Parse Text** dialog box opens and displays the text you
-    highlighted.  
+    The **Parse Text** dialog box opens and displays the text you highlighted.  
 
     ![parse text window.png](/img/search/search-query-language/parse-operators/anchor/parse-text-window.png)  
      
-4.  Select the text for the first parsing field, and click **Click to
-    extract this value**.  
-    The text you highlighted is replaced by an asterisk (\*).  
-    ![hightlighted term in parse text
-    window.png](/img/search/search-query-language/parse-operators/anchor/hightlighted-term-in-parse-text-window.png)  
+4.  Select the text for the first parsing field, and click **Click to extract this value**.   The text you highlighted is replaced by an asterisk (\*).  
+
+    ![hightlighted term in parse text window.png](/img/search/search-query-language/parse-operators/anchor/hightlighted-term-in-parse-text-window.png)  
      
 5.  Enter a name (no spaces) for the parsing field in the **Fields** area.  
 
@@ -84,11 +74,15 @@ Aug 2 04:06:08: host=10.1.1.124: local/ssl2 notice mcpd[3772]: User=jsmith@demo.
 
 In the following examples, the start_anchor is **"user="** and the stop_anchor is **":"**, which ends the email address. The asterisk (**\***) is the glob representing the parsed term. The examples create a new field for each message named **"user"** and that field will contain the value of the email address, in this case **jsmith@demo.com**.
 
-`... | parse "user=*:" as user `
+```sql
+... | parse "user=*:" as user 
+```
 
 The parse operator also allows you to extract multiple fields in one command:
 
-`... | parse "user=*: severity=*:" as user, severity | ... `
+```sql
+... | parse "user=*: severity=*:" as user, severity | ... 
+```
 
 This example creates two fields from the sample log message: `user=jsmith@demo.com` and `severity``=warning`.
 
@@ -96,11 +90,15 @@ This example creates two fields from the sample log message: `user=jsmith@demo.
 
 You can create field names that contain special characters, for example, spaces, dashes, and backslashes or forward slashes, using the following syntax:
 
-`... | parse \<strin\>" as %\<field name with special character\>"`
+```sql
+... | parse \<strin\>" as %\<field name with special character\>"
+```
 
 For example, this query will allow you to parse the phrase "Class ID", including the space:
 
-`... | parse "[Classification:*]" as %"Class ID"`
+```sql
+... | parse "[Classification:*]" as %"Class ID"
+```
 
 Special characters in field names are not permitted with Regex parsing. You must rename the field after parsing.
 
@@ -108,9 +106,7 @@ Example: `extract "\[Classification:(\<class_i\>.*)\]" | class_id as %"Class ID
 
 ### Use Line Breaks as an Anchor
 
-If your logs are delivered in a multi-line format, you may want to parse
-up until a line break in the message. In order to do so, use the
-following regular expressions as a stop anchor on the line break: 
+If your logs are delivered in a multi-line format, you may want to parse up until a line break in the message. In order to do so, use the following regular expressions as a stop anchor on the line break: 
 
   Linux logs:    `\n `  
   Windows logs:    `\r`
@@ -131,4 +127,4 @@ or
 
 `... | parse "To: *\r" as toAddress`
 
- which returns example@sumologic.com* *in the `toAddress` column.
+which returns example@sumologic.com in the `toAddress` column.
