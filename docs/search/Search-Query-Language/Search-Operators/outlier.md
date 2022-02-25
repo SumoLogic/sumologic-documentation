@@ -94,21 +94,21 @@ last 3 hours.
 The outlier values are represented by the pink triangles in the
 resulting chart.
 
-#### Use an additional “group by” clause to find outliers for multiple values of \_sourceHost.
+#### Use an additional “group by” clause to find outliers for multiple values of `_sourceHost`.
 
 You can also run a query like this:
 
 `_sourceCategory=Apache/Access | timeslice 1m | count by _timeslice, _sourceHost | outlier _count by _sourceHost`
 
 This way, you can run outlier analysis separately for each value
-of **\_sourceHost**, as shown.
+of **`_sourceHost`**, as shown.
 
 ![Group
 by](../../static/img/Search-Query-Language/Search-Operators/outlier/Group-by.png)
 
 This example will only produce an aggregation table, not a chart, but
 the indicator and violation fields will correctly reflect
-each **\_sourceHost** processing.
+each **`_sourceHost`** processing.
 
 #### Alert on an outlier
 
@@ -131,7 +131,7 @@ single “entity”, rather than some aggregation across all entities.
   
 For example, you could detect failed logins by user. To do so, you would
 want to understand whether any user account, individually, has
-experienced a strange amount of failed logins, not whether we’ve seen
+experienced a strange amount of failed logins, not whether we have seen
 some spike in the average or total amount of failed logins across all
 users. The latter may be useful, but with hundreds or thousands of users
 (entities), a spike in failed logins may get lost in the noise of a
@@ -152,7 +152,7 @@ multidimensional outlier operation. Just add **by \<dimension\>** to the
 end of the query.
 
 For example, the following example query will determine many time
-series, one per each \_sourceHost:
+series, one per each `_sourceHost`:
 
 `_sourceCategory=Apache/Access | timeslice 1m | count by _timeslice,_sourceHost | outlier _count by _sourceHost`
 
@@ -171,7 +171,7 @@ To create an alert based on the multi-series outlier table above,
 extract **\_count_violation**.
 
 This way, you will not need to build an alert for each series of data (each
-\_sourcehost in the previous example), and you can automatically monitor
+`_sourceHost` in the previous example), and you can automatically monitor
 a dynamic series for deviating behavior.
 
 The following example query allows you to monitor when application users

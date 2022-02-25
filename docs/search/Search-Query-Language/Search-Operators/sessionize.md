@@ -62,7 +62,7 @@ In this example:
 `_sourceCategory=OS/Windows   | sessionize "ComputerName = \"*\";\n\tEventCode = 4778;*Account Name:\t\t*\r*Account Domain:\t\t*\r*Logon ID:\t\t*\r" as (computerName,_11,userName,_u1,domain,_d1,logonID),  "ComputerName = \"$computerName\";\n\tEventCode = 4779;*Account Name:\t\t$userName\r*Account Domain:\t\t$domain\r*Logon ID:\t\t*\r" as (_event2,_u2,_d2,_21)`
 
 1.  Specify the search conditions that correlate the logs. In this
-    example a simple \_sourceCategory of all my Windows logs.
+    example a simple `_sourceCategory` of all my Windows logs.
 2.  Extract the information relevant to the sessions you want to
     compare. In this case, we want to compare Windows disconnect
     events,  code 4779 to reconnections, 4778 to see if someone

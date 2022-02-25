@@ -104,13 +104,13 @@ columns **\_count** and **\_timeslice** with the timeslices spaced in 5
 minute intervals.
 
 `* | timeslice 5m as my_field_name_alias | count by _sourceCategory, my_field_name_alias `  
-This outputs three columns: **\_count**, **\_sourceCategory**,
+This outputs three columns: **\_count**, **`_sourceCategory`**,
 and **my_field_name_alias**.
 
 `* | timeslice 10 buckets | count by _sourceCategory, _timeslice `  
 This outputs a table in the Aggregates tab with
-columns **\_count**, **\_sourceCategory**, and **\_timeslice** with 10
-rows for each **\_sourceCategory** in that table if you have messages
+columns **\_count**, **`_sourceCategory`**, and **\_timeslice** with 10
+rows for each **`_sourceCategory`** in that table if you have messages
 covering the entire search period.
 
 ### Additional Examples

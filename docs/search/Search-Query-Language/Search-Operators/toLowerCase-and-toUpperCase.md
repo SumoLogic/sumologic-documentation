@@ -35,7 +35,7 @@ condition](./toLowerCase-and-toUpperCase.md "toLowerCase and toUpperCase").
 
 #### Using toUpperCase with a conditional operator
 
-Use the following query to return all the \_sourceHost matches in upper
+Use the following query to return all the `_sourceHost` matches in upper
 case letters.
 
 `_sourceCategory=service OR _sourceCategory=search  | toUpperCase(_sourceHost) as _sourceHost  | where _sourceHost matches "NITE*"`
@@ -56,7 +56,7 @@ performing the lookup. 
 
 #### Using toUpperCase with the count operator
 
-This query also returns all matching \_sourceHost values in upper case
+This query also returns all matching `_sourceHost` values in upper case
 letters, using the count operator.
 
 `_sourceCategory=service OR _sourceCategory=search  | toUpperCase(_sourceHost) as _sourceHost  | count by _sourceHost`

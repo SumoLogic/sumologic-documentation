@@ -1,5 +1,5 @@
 ---
-id: "-parse-predictable-patterns-using-an-anchor"
+id: parse-predictable-patterns-using-an-anchor
 ---
 
 # Parse Predictable Patterns Using an Anchor

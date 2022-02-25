@@ -23,7 +23,7 @@ show="false\>
 If you see the error, **"Your query is producing too many results.
 Please add additional metadata fields to your query to make it more
 specific"**, that means that the metadata field you are searching on
-(\_sourceCategory, \_sourceHost, etc.) is too big for Live Tail to
+(`_sourceCategory`, `_sourceHost`, etc.) is too big for Live Tail to
 handle while providing good performance.
 
 Modify your query to add additional metadata fields, in order to focus

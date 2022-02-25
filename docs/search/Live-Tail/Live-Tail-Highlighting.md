@@ -4,26 +4,16 @@ id: live-tail-highlighting
 
 # Live Tail Highlighting
 
-## Highlighting Keywords in Live Tail
-
-Your searches may lead you to focus on particular keywords in your log,
-and you can highlight these words in a running Live Tail session to make
-them more visible.
+Your searches may lead you to focus on particular keywords in your log, and you can highlight these words in a running Live Tail session to make them more visible.
 
 To highlight keywords in Live Tail:
 
 1.  Click the **A** button.
-2.  In the dialog that displays, enter a term to highlight. You can use
-    single keywords or multi-term keywords separated by spaces.
+2.  In the dialog that displays, enter a term to highlight. You can use single keywords or multi-term keywords separated by spaces.
 
-![Live Tail
-Highlighting](../static/img/Live-Tail/Live-Tail-Highlighting/LiveTailHighlightingOpen.png)
+![Live Tail Highlighting](/img/search/live-tail/livetail-highlighting-open.png)
 
-The different keywords are then highlighted using different colors so
-that they are easy to find on the screen. You can highlight up to eight
-keywords.
+The different keywords are then highlighted using different colors so that they are easy to find on the screen. You can highlight up to eight keywords.
 
-![Final Live Tail
-Highlighting](../static/img/Live-Tail/Live-Tail-Highlighting/LiveTailHighlighting3.png)
+![Live Tail Highlighting](/img/search/live-tail/livetail-highlighting.png)
 
- 

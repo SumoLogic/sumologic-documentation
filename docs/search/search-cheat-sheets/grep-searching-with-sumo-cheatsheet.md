@@ -1,0 +1,31 @@
+---
+id: grep-searching-with-sumo-cheatsheet
+---
+
+# grep to Searching with Sumo Cheat Sheet
+
+Searching across multiple servers and aggregating the results is where the power of Sumo really lies. This cheat sheet can make it easier for you to move from greping logs to more in-depth querying with Sumo Logic. 
+
+:::note
+Remember that Sumo Logic queries are time-constrained.
+:::
+
+We recommend that search your data using the `_sourceCategory` metadata tag, but you’ll see that the examples below use the `_sourceName`
+metadata tag because `_sourceName` should reflect the full canonical path of the file, which is typically what you use when greping files. You should still follow the [seven search rules to live by](../get-started-with-search/build-search/best-practices-search.md).
+
+| grep Command Line | Sumo Equivalent | Description |
+| -- | -- | -- |
+| `cat ./log_file` | `_sourceName=*/log_file` | Returns the contents of a file named log_file for a specific timeframe. In Sumo, you must paginate through the results, but you can also search for ALL log files across your stack which share the same name. |
+| `grep -i "string" ./log_file` | `_sourceName=*/log_file AND "string"` | Returns all log lines containing the term "string" (case insensitive) in a file named log_file. |
+| `grep -i "string" ./log_*` | `_sourceName=*/log_* AND "string"` | Returns all log lines containing the word "string" (case insensitive)  in a file that starts with "log\_" in its name. |
+| `grep "literal_string" ./log_file`  | `_sourceName=*/log_file AND "literal_string" |  parse regex "(\<sampl\>literal_string)"             | fields - sample` | Returns all log lines containing the term "literal_string" (case sensitive) in a file named log_file. |
+| `grep "start.*end" ./log_file` | `_sourceName=*/log_file |  parse regex "(\<sampl\>start.*end)" | fields - sample` | Using regex, returns all events where a particular pattern is present on the log line. |
+| `grep -iw "string" ./log_file` | `_sourceName=*/log_file AND " string "` | Finds all words which match the term "string" in a file named "log_file". Notice the spaces around string. |
+| `grep -A 3 -i "example" ./log_file` | No equivalent operation. | Returns the log events 3 lines after the line which included the term "example".  While there is no query language equivalent operation, you can [search surrounding messages.](../Get-Started-with-Search/Search-Basics/Search-Surrounding-Messages.md "Search Surrounding Messages") |
+| `grep -B 3 -i "example" ./log_file` | No equivalent operation. | Returns the log events 3 lines before the line which included the term "example".  While there is no query language equivalent operation, you can [search surrounding messages.](../Get-Started-with-Search/Search-Basics/Search-Surrounding-Messages.md "Search Surrounding Messages") |
+| `grep -C 3 -i "example" ./log_file` | No equivalent operation. | Returns the log events 3 lines before and after the line which included the term "example". While there is no query language equivalent operation, you can [search surrounding messages.](../Get-Started-with-Search/Search-Basics/Search-Surrounding-Messages.md "Search Surrounding Messages") |
+| `grep -r "string" ./*` | `_sourceHost=server_name AND _sourceName=* AND "string" | fields _sourceName, _raw` | Returns all files and events  within a specific server which include the term “string”. Notice the `_sourceHost` metadata tag is used to hone in on a single server. |
+| `grep -c "string" ./log_file` | `_sourceName=*/log_file AND "string" | count` | Count the number of lines which match the term "string". |
+| `grep -v "string" ./log_file` | `_sourceName=*/log_file AND !"string"` | Returns only the log events where the term "string" was not found. |
+| `grep -l "string" ./log_*` | `_sourceName=*/log_* AND "string" | count by _sourceName | fields _sourceName` | Returns only the file names where the term "string" was found. |
+| `grep -o "start.*end" ./log_file` | `_sourceName=*/log_file |  parse regex "(\<matc\>start.*end)" | fields match` | Returns only the part of the log event which matches my search term. |

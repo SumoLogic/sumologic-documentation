@@ -57,7 +57,7 @@ For our forward and backward trace operations, we're going to assume
 that a specific Windows computer has been compromised.
 
 We want to build a chain of events from the compromised host to try to
-determine the identity of the hacker. To do this, we'll need to:
+determine the identity of the hacker. To do this, we will need to:
 
 1.  Identify the relevant login messages.
 2.  Give the compromised host as the first value to match.

@@ -43,7 +43,7 @@ range you have queried.
 
 **Count Top 5 errors for a source.**
 
-In this query, you can search for errors, count by the \_sourceCategory,
+In this query, you can search for errors, count by the `_sourceCategory`,
 sort by the count, and limit the results to the top 5 errors.
 
 `error * | count by _sourceCategory | sort by _count | limit 5`

@@ -173,7 +173,7 @@ There are some best practices for working with data types.
 
 * If you have a parameter in the search expression, then you should choose Keywords because it makes the queries run faster.
 * If you want to parameterize arguments to an operator then you should use the data types Any or Number, depending on what arguments the user needs to supply in the search.
-* If you want to parameterize numeric arguments to an operator such as timeslice then you should always use the Number data type because there is a check to validate the right data type is being used. The **Any** data type doesn’t support any validation so people can use it in unsupported values.
+* If you want to parameterize numeric arguments to an operator such as timeslice then you should always use the Number data type because there is a check to validate the right data type is being used. The **Any** data type does not support any validation so people can use it in unsupported values.
 * If you want to parameterize a part of a path, for example, `/mysearch/{{parameter}}/k8s/api`, you must use the **Any** Input type.
 
 ## Create Dashboards from Search Templates

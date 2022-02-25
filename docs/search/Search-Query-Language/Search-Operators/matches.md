@@ -58,7 +58,7 @@ example the new field will be named `ip_group` and will have a value of
 
 Running a query containing a matches operator on Apache Access logs can
 show you the breakdown of the devices and browsers that are accessing
-your site. You can then create a Dashboard with this query. We've used a
+your site. You can then create a Dashboard with this query. We have used a
 transpose operator in this query to allow us to name the axis of our
 column chart.
 
@@ -74,7 +74,7 @@ chart](../../../Visualizations-and-Alerts/Dashboards/Chart-Panel-Types/Column-Ch
 
 ###### **Viewing errors and warnings over time**
 
-In this example, we'll run a query against Windows logs to see the
+In this example, we will run a query against Windows logs to see the
 distribution of errors and warnings over the previous hours. Using a
 timeslice operator in the query breaks the results into one-hour
 buckets.
