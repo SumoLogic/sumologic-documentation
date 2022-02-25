@@ -175,7 +175,7 @@ _sourceCategory=reinvent/travel/checkout 243.63.233.30
 
 With a subquery, we can pass the IP address that is highlighted from a child query to this parent query as a keyword in its search expression.
 
-![clipboard_e5a557c6cd8e8097e79c1598416032d8a.png](./static/img/Subqueries/clipboard_e5a557c6cd8e8097e79c1598416032d8a.png)
+![clipboard_e5a557c6cd8e8097e79c1598416032d8a.png](/img/search/subqueries/step1.png)
 
 ### Step 2: Create a child query
 
@@ -189,7 +189,7 @@ _sourceCategory=reinvent/travel/nginx
 
 The result of this query has the IP address (243.63.233.30) we want to pass to the parent query.
 
-![clipboard_ef2185c81c2d257a45fd46a6f5b9c178c.png](./static/img/Subqueries/clipboard_ef2185c81c2d257a45fd46a6f5b9c178c.png)
+![clipboard_ef2185c81c2d257a45fd46a6f5b9c178c.png](/img/search/subqueries/step2.png)
 
 ### Step 3: Create a subquery
 
@@ -222,7 +222,7 @@ _sourceCategory=reinvent/travel/checkout
 
 Since we only want to pass the IP address back as a keyword we specified the `src_ip` field and the `keywords` argument with `compose`.
 
-![clipboard_e7da7cf36d758ecbd8383b8f6ff641261.png](./static/img/Subqueries/clipboard_e7da7cf36d758ecbd8383b8f6ff641261.png)
+![clipboard_e7da7cf36d758ecbd8383b8f6ff641261.png](/img/search/subqueries/keywords.png)
 
 #### Without keywords
 
@@ -263,7 +263,7 @@ _sourceCategory=reinvent/travel/checkout
 | count by funcname
 ```
 
-![clipboard_e80b31772b236645f5e6ae1417b9c7653.png](./static/img/Subqueries/clipboard_e80b31772b236645f5e6ae1417b9c7653.png)
+![clipboard_e80b31772b236645f5e6ae1417b9c7653.png](/img/search/subqueries/where.png)
 
 #### If
 
@@ -438,12 +438,12 @@ These concepts are covered in [How to Build a Search](/docs/search/get-started-w
 
 * Your queries will perform better if you have the child query in the search expression (before the first pipe, \|), rather than having it in the filter clause. The below examples highlight this point. In the first, we use subquery before the first pipe and it executes in 17 seconds:  
 
-    ![17seconds.png](./static/img/Subqueries/17seconds.png)  
+    ![17seconds.png](/img/search/subqueries/17seconds.png)  
 
     compare that to where subquery is used in the where clause and you
     can see it takes 29 seconds to execute:  
 
-    ![29Seconds.png](./static/img/Subqueries/29Seconds.png)
+    ![29Seconds.png](/img/search/subqueries/29Seconds.png)
 
 * If the child query is used to build the filter clause, try having the filter clause close to the search expression ( rather than having it further down in the query to improve performance. Your query should be more like the one on the right.
 
@@ -468,7 +468,7 @@ These concepts are covered in [How to Build a Search](/docs/search/get-started-w
 
 * Run the child query in a separate tab first. Append the compose operator at the end of that query to check the results that are returned. When you are happy with the query, copy it into your main subquery. This pre-testing reduces the chances of creating queries that generate incorrect results. The screenshot shows how you can build your child query in a separate tab using compose operator.
 
-    ![GuardDuty.png](./static/img/Subqueries/GuardDuty.png)
+    ![GuardDuty.png](/img/search/subqueries/GuardDuty.png)
 
 * If the subquery is generating too many records, try reducing the time range of the query.
 * If the subquery returns more than 10000 results or exceeds the 100MB memory limit, you will receive the following error message:  

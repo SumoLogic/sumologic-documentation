@@ -1,5 +1,5 @@
 ---
-id: "-parse-json-formatted-logs"
+id: parse-json-formatted-logs
 ---
 
 # Parse JSON Formatted Logs

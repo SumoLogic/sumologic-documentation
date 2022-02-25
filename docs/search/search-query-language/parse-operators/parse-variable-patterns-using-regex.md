@@ -1,21 +1,14 @@
 ---
-id: "-parse-variable-patterns-using-regex"
+id: parse-variable-patterns-using-regex
 ---
 
 # Parse Variable Patterns Using Regex
 
-The Parse Regex operator (also called the extract operator) enables
-users comfortable with regular expression syntax to extract more complex
-data from log lines. Parse regex can be used, for example, to extract
-nested fields.
+The Parse Regex operator (also called the extract operator) enables users comfortable with regular expression syntax to extract more complex data from log lines. Parse regex can be used, for example, to extract nested fields.
 
-User added fields, such as extracted or parsed fields, can be named
-using alphanumeric characters as well as underscores ("\_"). They must
-start and end with an alphanumeric character.
+User added fields, such as extracted or parsed fields, can be named using alphanumeric characters as well as underscores ("\_"). They must start and end with an alphanumeric character.
 
-For more information on Regular Expressions, see the [Perl
-documentation](http://perldoc.perl.org/perlre.html#Regular-Expressions "Wikipedia Regular Expressions").
-Or try the regex tester at [regex101.com](https://regex101.com/).
+For more information on Regular Expressions, see the [Perl documentation](http://perldoc.perl.org/perlre.html#Regular-Expressions). Or try the regex tester at [regex101.com](https://regex101.com/).
 
 ### Syntax
 
@@ -30,59 +23,37 @@ Or try the regex tester at [regex101.com](https://regex101.com/).
 
 * `field\<field_nam\>` 
 
-    The `field=fieldname` option allows you to specify a field to parse
-    other than the default message. For details, see [Parse
-    field](Parse-field-option.md). 
+    The `field=fieldname` option allows you to specify a field to parse other than the default message. For details, see [Parse field](parse-field-option.md). 
 
 * `nodrop ` 
 
-    The `nodrop` option forces results to also include messages that do
-    not match any segment of the parse term. For details, see [Parse
-    nodrop](Parse-nodrop-option.md)
+    The `nodrop` option forces results to also include messages that do not match any segment of the parse term. For details, see [Parse nodrop](parse-nodrop-option.md)
 
 * `multi` 
 
-    The `multi` option allows you to parse multiple values *within* a
-    single log message. See [Parse
-    multi](./02-Parse-Variable-Patterns-Using-Regex.md).
+    The `multi` option allows you to parse multiple values *within* a single log message. 
 
 ### Rules
 
-* Regex must be a valid JAVA or RE2 regular expression enclosed within
-    quotes.
+* Regex must be a valid JAVA or RE2 regular expression enclosed within quotes.
 
-* Matching is case sensitive. If any of the text segments cannot be
-    matched, then none of the variables will be assigned.
+* Matching is case sensitive. If any of the text segments cannot be matched, then none of the variables will be assigned.
 
-* If no **field** is specified, then the entire text of incoming
-    messages is used.
+* If no **field** is specified, then the entire text of incoming messages is used.
 
-* Multiple parse expressions are processed in the order they are
-    specified. Each expression always starts matching from the beginning
-    of the message string.
+* Multiple parse expressions are processed in the order they are specified. Each expression always starts matching from the beginning of the message string.
 
-* Multiple parse expressions can be written with shorthand using
-    comma-separated terms.
+* Multiple parse expressions can be written with shorthand using comma-separated terms.
 
-* Can be used with the [parse
-    anchor](01-Parse-Predictable-Patterns-Using-an-Anchor.md "Parse Predictable Patterns Using an Anchor")
-    operator.
+* Can be used with the [parse anchor](parse-predictable-patterns-using-an-anchor.md) operator.
 
 * Nesting named capture groups is not supported.
 
-* The parse regex operator only supports regular expressions that
-    contain at least one named capturing group. We don’t support regular
-    expressions that either don’t have any capturing groups or contain
-    unnamed/numbered capturing group. See [Named Capturing
-    Groups](https://www.regular-expressions.info/named.html "https://www.regular-expressions.info/named.html")
-    for further details.
+* The parse regex operator only supports regular expressions that contain at least one named capturing group. We don’t support regular expressions that either don’t have any capturing groups or contain unnamed/numbered capturing group. See [Named Capturing Groups](https://www.regular-expressions.info/named.html) for further details.
 
-    You can convert your normal regular expressions into named capturing
-    groups with the following steps:  
+    You can convert your normal regular expressions into named capturing groups with the following steps:  
       
-    Wrap everything in parenthesis, and append “`?`” followed by a
-    capturing group name enclosed within “\\>`”. Let's see an example
-    below, the highlighted portions is what has been added.
+    Wrap everything in parenthesis, and append “`?`” followed by a capturing group name enclosed within “\\>`”. Let's see an example below, the highlighted portions is what has been added.
 
     |                  |                                      |
     |------------------|--------------------------------------|
