@@ -35,6 +35,7 @@ module.exports = {
       collapsed: true,
       link: {type: 'doc', id: 'quickstart/index'},
       items: [
+        'quickstart/quickstart-aws',
         'quickstart/quickstart-github',
         'quickstart/quickstart-k8s',
       ],
