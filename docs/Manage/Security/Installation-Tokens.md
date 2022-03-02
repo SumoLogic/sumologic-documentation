@@ -250,3 +250,6 @@ An example event log is:
 
 
 ```
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
