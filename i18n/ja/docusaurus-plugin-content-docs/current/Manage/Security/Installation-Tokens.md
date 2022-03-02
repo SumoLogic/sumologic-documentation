@@ -97,7 +97,7 @@ For example:
 sudo ./SumoCollector.sh -q -Vsumo.token_and_url\<installationToken\>
 ```
 
-Where \<installationToke\>` is the **Token String** you want to use to register the Collector.
+Where `<installationToken>` is the **Token String** you want to use to register the Collector.
 
 </TabItem>
 <TabItem value="wizard">
