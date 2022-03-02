@@ -48,6 +48,7 @@ module.exports = {
       collapsed: true,
       items: [
         'Manage/Collection/Processing-Rules/create-a-processing-rule',
+        'Manage/Security/installation-tokens',
         'CSE/global-intel'
       ],
      },
