@@ -59,7 +59,7 @@ Successful logins per hour.
 
 `     _sourceCategory=exampleApplication*     | parse "login_status=*" as login_status     | where login_status="success"     | timeslice 1h     | count by _timeslice`
 
-![Aggregates.png](../../static/img/Search-Query-Language/Search-Operators/timeslice/Aggregates.png)
+![Aggregates.png](../../static/img/search-query-language/search-operators/timeslice/Aggregates.png)
 
 ### Known Issue
 
@@ -100,16 +100,16 @@ to **my_time_bucket_field_name**.
 
 `* | timeslice 5m | count by _timeslice `  
 This outputs a table in the Aggregates tab with
-columns **\_count** and **\_timeslice** with the timeslices spaced in 5
+columns `_count` and `_timeslice` with the timeslices spaced in 5
 minute intervals.
 
 `* | timeslice 5m as my_field_name_alias | count by _sourceCategory, my_field_name_alias `  
-This outputs three columns: **\_count**, **`_sourceCategory`**,
+This outputs three columns: `_count`, **`_sourceCategory`**,
 and **my_field_name_alias**.
 
 `* | timeslice 10 buckets | count by _sourceCategory, _timeslice `  
 This outputs a table in the Aggregates tab with
-columns **\_count**, **`_sourceCategory`**, and **\_timeslice** with 10
+columns `_count`, **`_sourceCategory`**, and `_timeslice` with 10
 rows for each **`_sourceCategory`** in that table if you have messages
 covering the entire search period.
 
@@ -123,7 +123,7 @@ the load balancer is working properly.
 This query produces these results in the Aggregates tab, which you can
 display as a column chart.
 
-![Timeslice](../../static/img/Search-Query-Language/Search-Operators/timeslice/timeslice_ex1.png)
+![Timeslice](../../static/img/search-query-language/search-operators/timeslice/timeslice_ex1.png)
 
 **Example 2:** All computer access to Sumo Logic over time.
 
@@ -133,7 +133,7 @@ This query produces these results in the Aggregates tab, which you can
 display as a stacked column chart:
 
 ![Timeslice
-Example](../../static/img/Search-Query-Language/Search-Operators/timeslice/TimeSliceEx2.png)
+Example](../../static/img/search-query-language/search-operators/timeslice/TimeSliceEx2.png)
 
 **Example 3:** Monitoring non-normal status codes (400s and 500s) on
 Apache servers.
@@ -144,4 +144,4 @@ This query produces these results in the Aggregates tab, which you can
 display as an area chart:
 
 ![Timeslice
-example](../../static/img/Search-Query-Language/Search-Operators/timeslice/Timeslice-Ex3.png)
+example](../../static/img/search-query-language/search-operators/timeslice/Timeslice-Ex3.png)

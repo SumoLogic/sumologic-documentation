@@ -12,7 +12,7 @@ In addition to having more data to reference in query operations, this allows yo
  
 **Metric metadata**
 
-Sumo Logic provides a number of features you can use to enrich the metrics you collect with metadata. Metric metadata provides considerable benefits when you query your metrics: you can scope your metric queries to return only the metrics of interest. Metric metadata can also give you insight that can't be gleaned from unadorned metrics, especially in highly containerized and orchestrated environments. 
+Sumo Logic provides a number of features you can use to enrich the metrics you collect with metadata. Metric metadata provides considerable benefits when you query your metrics: you can scope your metric queries to return only the metrics of interest. Metric metadata can also give you insight that cannot be gleaned from unadorned metrics, especially in highly containerized and orchestrated environments. 
 
 * Metric metadata is referenced in Sumo with [selectors] (/Metrics/Introduction-to-Metrics/01Overview-of-Metrics-in-Sumo#Selectors) consisting of key-value pairs that are tagged to metrics during collection.
 * You can use the [metric rules editor] (/Metrics/Metric_Rules_Editor) to tag metrics with data derived from the metric identifier, and then use those tags in metric queries.

@@ -53,9 +53,9 @@ syntax:\<https://USERNAME:PASSWORD@company.com/userTable.cs\>
     then the field in your external lookup table must also be integer
     data. You can cast data to a string or numeric value, see [Casting
     Data to a Number or
-    String](Manually-Casting-String-Data-to-a-Number.md "https://help.sumologic.com/Search/Search-Query-Language/Search-Operators/Manually-Casting-String-Data-to-a-Number").
+    String](Manually-Casting-String-Data-to-a-Number.md "https://help.sumologic.com/Search/search-query-language/search-operators/Manually-Casting-String-Data-to-a-Number").
 * If looking up a
-    [metadata](../../Get-Started-with-Search/Search-Basics/Built-in-Metadata.md "Search Metadata")
+    [metadata](../../Get-Started-with-Search/search-basics/built-in-metadata.md "Search Metadata")
     field you need to either [rename the
     field](as-operator.md "as operator") using the `as` option in the
     lookup operation or [filter null
@@ -215,4 +215,4 @@ For example, if you are searching your Apache Access logs from 34.87.4.6
 and you are looking for an internal server errors by a specific keyid,
 lookup provides the last result that matches your criteria:
 
-![lookup-duplicate.png](../../static/img/Search-Query-Language/Search-Operators/lookup-classic/lookup-duplicate.png)
+![lookup-duplicate.png](../../static/img/search-query-language/search-operators/lookup-classic/lookup-duplicate.png)

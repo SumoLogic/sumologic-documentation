@@ -50,6 +50,6 @@ Get the source IP addresses by user hashes.
 
 Create a unique identifier for each log message by concatenating the
 [built-in metadata
-fields](../../Get-Started-with-Search/Search-Basics/Built-in-Metadata.md "Built-in Metadata") `_messagetime` and `_messageid`.
+fields](../../Get-Started-with-Search/search-basics/built-in-metadata.md "Built-in Metadata") `_messagetime` and `_messageid`.
 
 `| hash(concat(_messagetime, _messageid), "sha1") as guid`

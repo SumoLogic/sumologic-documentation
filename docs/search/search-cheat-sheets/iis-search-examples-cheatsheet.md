@@ -48,7 +48,7 @@ If the "sc_substatus" field is missing do not exclude those messages (nodrop)…
 | Identify the top 100 client IP addresses by number of hits.| `| count by c_ip | top 100 c_ip by _count` |
 
 :::sumo More Info
-For more information, see [Parsing](../Search-Query-Language/01-Parse-Operators.md), [Count](../Search-Query-Language/aaGroup/count,-count-distinct,-and-count-frequent.md), and [Top](../Search-Query-Language/Search-Operators/top.md).
+For more information, see [Parsing](../search-query-language/parse-operators.md), [Count](../search-query-language/group-aggregate-operators/count,-count-distinct,-and-count-frequent.md), and [Top](../search-query-language/search-operators/top.md).
 :::
 
 ## Timeslice and Transpose
@@ -59,7 +59,7 @@ For more information, see [Parsing](../Search-Query-Language/01-Parse-Operators
 | Pivot the results so that time is on the X axis and sc_status is on the Y axis (values can be displayed in legend) | `| transpose row _timeslice column sc_status` |
 
 :::sumo More Info
-For more information, see [Timeslice](../Search-Query-Language/Search-Operators/timeslice.md) and [Transpose](../Search-Query-Language/Search-Operators/transpose.md).
+For more information, see [Timeslice](../search-query-language/search-operators/timeslice.md) and [Transpose](../search-query-language/search-operators/transpose.md).
 :::
 
 ## Conditional Operators
@@ -73,8 +73,8 @@ For more information, see [Timeslice](../Search-Query-Language/Search-Operators
 | Find version numbers that match numeric values 2, 3 or 6. Use the num operator to change the string into a number. | `* | parse "Version=*." as number  | num(number) | where number in (2,3,6)` |
 
 :::sumo More Info
-For more information, see [Where](../Search-Query-Language/Search-Operators/where.md) and [If](../Search-Query-Language/Search-Operators/if-operator-and.md). 
+For more information, see [Where](../search-query-language/search-operators/where.md) and [If](../search-query-language/search-operators/if-operator-and.md). 
 :::
 
 For any query, you can increase specificity by adding metadata fields to the keyword expression. Metadata fields include `_sourceCategory`,
-`_sourceHost `, and `_sourceName`. Edit Source metadata in the **Collection** tab. For details see [Search Metadata.](../Get-Started-with-Search/Search-Basics/Built-in-Metadata.md) 
+`_sourceHost `, and `_sourceName`. Edit Source metadata in the **Collection** tab. For details see [Search Metadata.](../Get-Started-with-Search/search-basics/built-in-metadata.md) 

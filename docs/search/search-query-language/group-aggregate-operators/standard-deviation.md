@@ -29,7 +29,7 @@ time and receipt time discrepancies.
 
 Note that when you calculate the standard deviation of more than one
 field, you must create an alias using the [as
-operator](../Search-Operators/as-operator.md) to rename the stddev
+operator](../search-operators/as-operator.md) to rename the stddev
 fields. See this example:
 
 `_sourceCategory="OS/Windows" | kv "HandleCount", "ThreadCount" | stddev(HandleCount) as stddevHandleCount, stddev(ThreadCount) as stddevThreadCount`

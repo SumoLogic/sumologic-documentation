@@ -23,7 +23,7 @@ The following warning is shown when results are dropped or an IPv6
 address is detected:  
     
 ![isprivateip operator warning for dropped invalid ip
-addresses.png](../../static/img/Search-Query-Language/Search-Operators/isReservedIP/../isPrivateIP/isprivateip-dropped-warning.png)
+addresses.png](../../static/img/search-query-language/search-operators/isReservedIP/../isPrivateIP/isprivateip-dropped-warning.png)
 
 ### Examples
 

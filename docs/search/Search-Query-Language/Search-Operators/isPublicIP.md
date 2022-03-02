@@ -21,7 +21,7 @@ The following warning is shown when results are dropped or an IPv6
 address is detected:  
     
 ![isprivateip operator warning for dropped invalid ip
-addresses.png](../../static/img/Search-Query-Language/Search-Operators/isPublicIP/../isPrivateIP/isprivateip-dropped-warning.png)
+addresses.png](../../static/img/search-query-language/search-operators/isPublicIP/../isPrivateIP/isprivateip-dropped-warning.png)
 
 ### Examples
 

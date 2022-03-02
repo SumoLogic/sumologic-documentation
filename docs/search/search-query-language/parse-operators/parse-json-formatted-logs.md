@@ -7,7 +7,7 @@ id: parse-json-formatted-logs
 The JSON operator allows you to extract values from JSON logs with most [JSONPath](http://goessner.net/articles/JsonPath/) expressions. See the [supported JSONPath syntax elements](#supported-jsonpath-syntax-elements) below.
 
 :::note
-If the messages in your search results can be formatted as JSON, the **Messages** tab presents the option to display each message in JSON or raw format. See [Format JSON messages in search results](../../get-started-with-search/Search-Basics/view-search-results-json-logs.md).
+If the messages in your search results can be formatted as JSON, the **Messages** tab presents the option to display each message in JSON or raw format. See [Format JSON messages in search results](../../get-started-with-search/search-basics/view-search-results-json-logs.md).
 :::
 
 Because JSON supports both nested keys and arrays that contain ordered sequences of values, the Sumo Logic JSON operator allows you to extract:

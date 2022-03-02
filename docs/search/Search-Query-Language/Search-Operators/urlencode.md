@@ -28,4 +28,4 @@ To encode a URL in your PagerDuty logs, you can run this query:
 
 The query returns the field `url` encoded:
 
-![urlencode.png](../../static/img/Search-Query-Language/Search-Operators/urlencode/urlencode.png)
+![urlencode.png](../../static/img/search-query-language/search-operators/urlencode/urlencode.png)

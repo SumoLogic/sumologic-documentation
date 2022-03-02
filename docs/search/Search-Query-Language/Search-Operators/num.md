@@ -27,4 +27,4 @@ conversion, the results would be sorted in alphabetical order.
 
 This query produces results like this:
 
-![numoperator.png](../../static/img/Search-Query-Language/Search-Operators/num/numoperator.png)
+![numoperator.png](../../static/img/search-query-language/search-operators/num/numoperator.png)

@@ -61,4 +61,4 @@ This produces results like:
 
 ![csv operator](/img/snippet/query-search/csv_operator_example_695x65.png)
 
-For more information on parsing CSV files, see [Lookup](../Search-Operators/lookup-classic.md) operator and [Save](../Search-Operators/save-lookups-classic.md) operator.
+For more information on parsing CSV files, see [Lookup](../search-operators/lookup-classic.md) operator and [Save](../search-operators/save-lookups-classic.md) operator.

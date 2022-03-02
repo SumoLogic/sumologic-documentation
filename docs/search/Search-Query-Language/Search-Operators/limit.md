@@ -50,7 +50,7 @@ sort by the count, and limit the results to the top 5 errors.
 
 which would provide results similar to:
 
-![](../../static/img/Search-Query-Language/Search-Operators/limit/../../../../Assets/Media_Repo_for_Search/limit_operator_example1.png)
+![](../../static/img/search-query-language/search-operators/limit/../../../../Assets/Media_Repo_for_Search/limit_operator_example1.png)
 
 **Top 10 Service Operations:**
 
@@ -61,6 +61,6 @@ have started and stopped over the last 10 hours.
 
 which can be displayed in a bar chart like this:
 
-![Limit](../../static/img/Search-Query-Language/Search-Operators/limit/Limit.png)
+![Limit](../../static/img/search-query-language/search-operators/limit/Limit.png)
 
 See [Sort](sort.md "sort") operator for more information.

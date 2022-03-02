@@ -39,7 +39,7 @@ time range. Running a query such as:
 
 produces results similar to:
 
-![Total.png](../../static/img/Search-Query-Language/Search-Operators/total/Total.png)
+![Total.png](../../static/img/search-query-language/search-operators/total/Total.png)
 
 Note that the t_data value of 16,761,621,241.25455 is the sum of the
 data field in all rows, many of which are not visible here.
@@ -49,7 +49,7 @@ simply the sum of ps:
 
 `* | parse "BytesTotalPersec = \"*\"" as ps  | where ps\> 3000  | total ps`
 
-#### ![](../../static/img/Search-Query-Language/Search-Operators/total/../../../../Assets/Media_Repo_for_Search/total_op.png)
+#### ![](../../static/img/search-query-language/search-operators/total/../../../../Assets/Media_Repo_for_Search/total_op.png)
 
 #### Calculate totals by message time
 
@@ -72,4 +72,4 @@ Running a query similar to:
 
 produces results similar to:
 
-![RunningTotal.png](../../static/img/Search-Query-Language/Search-Operators/total/RunningTotal.png)
+![RunningTotal.png](../../static/img/search-query-language/search-operators/total/RunningTotal.png)

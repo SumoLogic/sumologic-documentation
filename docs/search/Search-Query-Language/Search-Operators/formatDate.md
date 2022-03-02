@@ -47,7 +47,7 @@ date format **yyyy-MM-dd**.
 
 This creates the today column, and returns the following results.
 
-![FormatDate](../../static/img/Search-Query-Language/Search-Operators/formatDate/FormatDate.png)
+![FormatDate](../../static/img/search-query-language/search-operators/formatDate/FormatDate.png)
 
 ##### **European date format** **dd-MM-yyyy**
 
@@ -59,7 +59,7 @@ year, **dd-MM-yyyy**.
 
 This returns the following results:
 
-![EuropeanDateFormat](../../static/img/Search-Query-Language/Search-Operators/formatDate/EuropeanDateFormat.png)
+![EuropeanDateFormat](../../static/img/search-query-language/search-operators/formatDate/EuropeanDateFormat.png)
 
 ##### **US date format with a timestamp**
 
@@ -70,7 +70,7 @@ a timestamp, **MM-dd-yyyy HH:mm**.
 
 Which returns results like:
 
-![DateTimestamp](../../static/img/Search-Query-Language/Search-Operators/formatDate/DateTimestamp.png)
+![DateTimestamp](../../static/img/search-query-language/search-operators/formatDate/DateTimestamp.png)
 
 ##### **Find messages with incorrect timestamps**
 
@@ -81,7 +81,7 @@ This query allows you to find messages with incorrect timestamps.
 This query produces results like this:
 
 ![Incorrect
-Timestamp](../../static/img/Search-Query-Language/Search-Operators/formatDate/IncorrectTimestamp.png)
+Timestamp](../../static/img/search-query-language/search-operators/formatDate/IncorrectTimestamp.png)
 
 ##### **How old are your messages?**
 
@@ -92,7 +92,7 @@ This query lets you determine the age of your log messages.
 Which produces results like this:
 
 ![Message
-age](../../static/img/Search-Query-Language/Search-Operators/formatDate/MessageAge.png)
+age](../../static/img/search-query-language/search-operators/formatDate/MessageAge.png)
 
 ##### **Messages by Day of the Week**
 
@@ -130,7 +130,7 @@ You get the following results:
 
 |        |                  |             |             |             |
 |--------|------------------|-------------|-------------|-------------|
-| ** #** | **session**      | **\_count** | **\_min**   | **\_max**   |
+| ** #** | **session**      | `_count` | **\_min**   | **\_max**   |
 |  1     | 7oEmE+KLpk1nVYpF | 22          | 1.35844e+12 | 1.35844e+12 |
 |  2     | 6uklr9UDkTOg79je | 412         | 1.35844e+12 | 1.35844e+12 |
 |  3     | q0K6ztX9IvpZWh1p | 18          | 1.35844e+12 | 1.35844e+12 |

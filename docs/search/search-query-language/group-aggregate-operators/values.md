@@ -26,7 +26,7 @@ places them in lexicographical order as follows:
 This is an example of a response field with IP addresses:
 
 ![values operator response field
-example.png](../../static/img/Search-Query-Language/aaGroup/values/values-operator-response-field-example.png)
+example.png](../../static/img/search-query-language/group-aggregate-operators/values/values-operator-response-field-example.png)
 
 ### Limitation
 

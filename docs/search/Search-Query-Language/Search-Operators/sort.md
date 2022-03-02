@@ -47,7 +47,7 @@ and limits the results to the top 10.
 
 which provides results like:
 
-![](../../static/img/Search-Query-Language/Search-Operators/sort/../../../../Assets/Media_Repository/sort_operator_example.png)
+![](../../static/img/search-query-language/search-operators/sort/../../../../Assets/Media_Repository/sort_operator_example.png)
 
 For more information, see [Top](top.md "top")
 operator or [Limit](limit.md "limit") operator.

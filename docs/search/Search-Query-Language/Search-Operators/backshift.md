@@ -44,10 +44,10 @@ Running a query like this:
 
 produces results like:
 
-![backshift_new_table.png](../../static/img/Search-Query-Language/Search-Operators/backshift/backshift-table-1.png)
+![backshift_new_table.png](../../static/img/search-query-language/search-operators/backshift/backshift-table-1.png)
 
 Then you can visualize the results as an area chart.
 
-![backshift_new_graph.png](../../static/img/Search-Query-Language/Search-Operators/backshift/area-chart-backshift-1.png)
+![backshift_new_graph.png](../../static/img/search-query-language/search-operators/backshift/area-chart-backshift-1.png)
 
  

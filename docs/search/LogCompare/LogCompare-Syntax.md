@@ -13,7 +13,7 @@ The syntax of the LogCompare operator is described here. For examples of syntax,
 The [compare](../time-compare.md) and logcompare operators are very similar in syntax and functionality, but they handle different
 types of data:
 
-* **compare** is used for aggregated numeric data (for example, for analyzing results from a [group by](../Search-Query-Language/aaGroup.md "Group") query or a query with aggregation operators such as count, sum, avg, etc. )
+* **compare** is used for aggregated numeric data (for example, for analyzing results from a [group by](../search-query-language/group-aggregate-operators.md "Group") query or a query with aggregation operators such as count, sum, avg, etc. )
 * **logcompare** is used for log signature counts (used right after the first pipe).
 
 ## LogCompare Syntax

@@ -57,7 +57,7 @@ possible to work more quickly. A good way to do this is to remove
 unnecessary fields using
 the [Fields](fields_operator.md "fields") operator. This includes
 [built-in metadata
-fields](../../Get-Started-with-Search/Search-Basics/Built-in-Metadata.md "Built-in Metadata"),
+fields](../../Get-Started-with-Search/search-basics/built-in-metadata.md "Built-in Metadata"),
 like `_raw`.
 
 ### Saving files to a shared location

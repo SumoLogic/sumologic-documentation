@@ -5,7 +5,7 @@ id: geoip
 # geoip
 
 Sumo Logic can match a
-[parsed](../01-Parse-Operators.md "Parse Operators") IPv4 or IPv6
+[parsed](../parse-operators.md "Parse Operators") IPv4 or IPv6
 address to its geographical location on a [map
 chart](../../../Visualizations-and-Alerts/Dashboard_(New)/Panels/Map_Charts.md "Map Charts").
 To create the map the **geoip** operator matches parsed IP addresses to
@@ -79,7 +79,7 @@ Using logs that match the example log format, running a query like this:
 would produce the following results:
 
 ![geo lookup world
-map.png](../../static/img/Search-Query-Language/Search-Operators/geoip/../Geo-Lookup/geo-lookup-world-map.png)
+map.png](../../static/img/search-query-language/search-operators/geoip/../Geo-Lookup/geo-lookup-world-map.png)
 
 #### View map of geoip results
 
@@ -89,11 +89,11 @@ you’d like to use to chart each IP address.
 
 1.  By default, results display as a table:  
     ![geo lookup results
-    fields.png](../../static/img/Search-Query-Language/Search-Operators/geoip/../Geo-Lookup/geo-lookup-results-fields.png)
+    fields.png](../../static/img/search-query-language/search-operators/geoip/../Geo-Lookup/geo-lookup-results-fields.png)
 2.  Click the **Map** icon in the **Aggregates** tab. The map
     displays:  
     ![map icon
-    location.png](../../static/img/Search-Query-Language/Search-Operators/geoip/../Geo-Lookup/map-icon-location.png)
+    location.png](../../static/img/search-query-language/search-operators/geoip/../Geo-Lookup/map-icon-location.png)
 3.  Do any of the following:
 
 * Use the zoom slider to zoom in or out on an area of the map.
@@ -102,7 +102,7 @@ you’d like to use to chart each IP address.
 * Click any marker on the map to see more detail about where IPs
     originate in a specific area:  
     ![click map marker with zoomed
-    results.png](../../static/img/Search-Query-Language/Search-Operators/geoip/../Geo-Lookup/click-map-marker-with-zoomed-results.png)
+    results.png](../../static/img/search-query-language/search-operators/geoip/../Geo-Lookup/click-map-marker-with-zoomed-results.png)
 
 1.  (Optional) Click **Add to Dashboard** to create a new Dashboard or
     add the map to an existing Dashboard. After adding a map to a
@@ -128,4 +128,4 @@ For example, running a query like:
 
 returns results similar to:
 
-![isNull.png](../../static/img/Search-Query-Language/Search-Operators/geoip/../isNull,-isEmpty,-isBlank/isNull.png)
+![isNull.png](../../static/img/search-query-language/search-operators/geoip/../isNull,-isEmpty,-isBlank/isNull.png)

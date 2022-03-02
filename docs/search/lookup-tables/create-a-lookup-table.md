@@ -44,11 +44,11 @@ When you create a Lookup Table schema, note the following requirements:
 
     "pkv", "tid-cid-s", "mt", "tid-sk-1", "tid-sk-2", "tid-sk-3", "tid-sk-4", "tid-sk-5", "tid-sk-6", "tid-sk-7", "tid-sk-8", "tid-sk-9", "tid-sk-10", "tid-sk-11", "tid-sk-12", "tid-sk-13", "tid-sk-14", "tid-sk-15", "tid-sk-16", "tid-sk-17", "tid-sk-18", "tid-sk-19", "tid-sk-20", "`_messagetime`", "`_receipttime`", "`_sourceCategory`", "`_sourceHost`", "`_sourceName`", "`_source`", "`_sourceid`", "`_collector`", "`_collectorid`", "`_view`", "`_index`"
 * Field names cannot contain two tilde characters in a row (~~). 
-* Field names are not case-sensitive. For example, you can't have both "Name" and "name" fields.
+* Field names are not case-sensitive. For example, you cannot have both "Name" and "name" fields.
 
 ### Lookup Tables and Search Templates
 
-Currently, the ability to reference a field in a new style Lookup Table in a [Search Template](../get-started-with-search/build-search/search-templates.md) is not supported. However, you can refer to [classic Lookup Tables](../Search-Query-Language/Search-Operators/lookup-classic.md) in Search Templates.  
+Currently, the ability to reference a field in a new style Lookup Table in a [Search Template](../get-started-with-search/build-search/search-templates.md) is not supported. However, you can refer to [classic Lookup Tables](../search-query-language/search-operators/lookup-classic.md) in Search Templates.  
 
 ## How many Lookup Tables can you have?
 
@@ -204,8 +204,8 @@ When you run search operators that work with Lookup Tables (described in the fol
 
 You can use the following operators with Lookup Tables in Sumo Logic log searches and in Cloud SIEM rules:
 
-* `cat`—You can view the contents of a Lookup Table using the `cat` operator in a Sumo Logic log search tab. For more information, see [cat](../Search-Query-Language/Search-Operators/cat.md).
-* `lookup`—You can use the `lookup` operator to return one or more fields from a Lookup Table. For more information, see [lookup](../Search-Query-Language/Search-Operators/lookup.md).
-* `lookupContains`—You can use the `lookupContains` operator to see whether a key exists in a Lookup Table. For more information, see [lookupContains](../Search-Query-Language/Search-Operators/lookupContains.md).
-* `save`—You can use the `save` operator to save the results of a Sumo log query to a Lookup Table you created using the Lookup UI or API. For more information, see [save](../Search-Query-Language/Search-Operators/save.md).  
+* `cat`—You can view the contents of a Lookup Table using the `cat` operator in a Sumo Logic log search tab. For more information, see [cat](../search-query-language/search-operators/cat.md).
+* `lookup`—You can use the `lookup` operator to return one or more fields from a Lookup Table. For more information, see [lookup](../search-query-language/search-operators/lookup.md).
+* `lookupContains`—You can use the `lookupContains` operator to see whether a key exists in a Lookup Table. For more information, see [lookupContains](../search-query-language/search-operators/lookupContains.md).
+* `save`—You can use the `save` operator to save the results of a Sumo log query to a Lookup Table you created using the Lookup UI or API. For more information, see [save](../search-query-language/search-operators/save.md).  
      

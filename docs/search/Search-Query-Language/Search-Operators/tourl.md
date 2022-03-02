@@ -48,7 +48,7 @@ tab.
 Right-click the link to view the tab-options menu:
 
 ![tab
-menu.png](../../static/img/Search-Query-Language/Search-Operators/tourl/tab-menu.png)
+menu.png](../../static/img/search-query-language/search-operators/tourl/tab-menu.png)
 
 If you do not see the menu it is not a supported link.
 
@@ -69,7 +69,7 @@ You’ll run this query to generate the short name -
 When you add this to a dashboard, you’ll see the short name. When you
 click the link, it will open the Akamai denials by host search query.
 
-![AkamaiSearchQuery.png](../../static/img/Search-Query-Language/Search-Operators/tourl/AkamaiSearchQuery.png)
+![AkamaiSearchQuery.png](../../static/img/search-query-language/search-operators/tourl/AkamaiSearchQuery.png)
 
 #### Using a column for short name, and a prefix
 
@@ -88,9 +88,9 @@ the suffix parameter.
 
 The query result will be:
 
-![tourlResult.png](../../static/img/Search-Query-Language/Search-Operators/tourl/tourlResult.png)
+![tourlResult.png](../../static/img/search-query-language/search-operators/tourl/tourlResult.png)
 
 When you add the result to a dashboard, you’ll see the short name. When
 you click the link, it will take you to the scheduled search query.
 
-![toUrlDashboard.png](../../static/img/Search-Query-Language/Search-Operators/tourl/toUrlDashboard.png)
+![toUrlDashboard.png](../../static/img/search-query-language/search-operators/tourl/toUrlDashboard.png)

@@ -28,4 +28,4 @@ The following query:
 
 would return results similar to:
 
-![in](../../static/img/Search-Query-Language/Search-Operators/in-operator/in.png)
+![in](../../static/img/search-query-language/search-operators/in-operator/in.png)

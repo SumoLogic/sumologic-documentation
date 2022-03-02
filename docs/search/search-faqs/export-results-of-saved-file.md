@@ -6,18 +6,18 @@ id: export-results-of-saved-file
 
 This was an advanced task designed to fulfill a missing feature in Sumo.
 
-With the [catoperator](../Search-Query-Language/Search-Operators/cat.md) you can simply retrieve your results and use the [export](../get-started-with-search/search-basics/export-search-results.md) feature.
+With the [catoperator](../search-query-language/search-operators/cat.md) you can simply retrieve your results and use the [export](../get-started-with-search/search-basics/export-search-results.md) feature.
 
 ## Deprecated
 
-Sumo Logic provides the ability to save a file using the [save](../Search-Query-Language/Search-Operators/save-lookups-classic.md) operator, but it does not allow you to export the results of that saved file. To do so, you would have to re-run the original query and export the results.
+Sumo Logic provides the ability to save a file using the [save](../search-query-language/search-operators/save-lookups-classic.md) operator, but it does not allow you to export the results of that saved file. To do so, you would have to re-run the original query and export the results.
 
-But if you know you will need to export your saved files results routinely, you can create another column in the results that are saved to the file that acts as a primary key for each result. This key then allows you to conduct a [lookup](../Search-Query-Language/Search-Operators/lookup-classic.md)
+But if you know you will need to export your saved files results routinely, you can create another column in the results that are saved to the file that acts as a primary key for each result. This key then allows you to conduct a [lookup](../search-query-language/search-operators/lookup-classic.md)
 operation matching the key.
 
 To create keys in your saved file:
 
-1. In your query that is saving the file with the save operator, you need to add numbers to act as the primary key. You can start at 1 and increment by 1 for each result, as shown. Add a group by if needed (such as a [timeslice](../Search-Query-Language/Search-Operators/timeslice.md "timeslice")):
+1. In your query that is saving the file with the save operator, you need to add numbers to act as the primary key. You can start at 1 and increment by 1 for each result, as shown. Add a group by if needed (such as a [timeslice](../search-query-language/search-operators/timeslice.md "timeslice")):
 
     ```sql
     | 1 as number 

@@ -6,7 +6,7 @@ id: pci-dashboards
 
 This logical grouping of issues, events, or activities makes it easy for an organization to make sure they're continuing to comply with each requirement, and remediate any problems that could present a violation.
 
-Sumo Logic based the PCI app on PCI DSS Requirements and Security Assessment Procedures, Version 2.0. Requirements one through 11 have Dashboards custom-built to help you zero in on data relevant to each requirement. (Requirement 12, Maintain a policy that addresses information security for all personnel, can't be measured through log data, there is no Dashboard.)
+Sumo Logic based the PCI app on PCI DSS Requirements and Security Assessment Procedures, Version 2.0. Requirements one through 11 have Dashboards custom-built to help you zero in on data relevant to each requirement. (Requirement 12, Maintain a policy that addresses information security for all personnel, cannot be measured through log data, there is no Dashboard.)
 
 The requirements are as follows:
 

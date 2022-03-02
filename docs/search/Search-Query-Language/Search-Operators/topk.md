@@ -32,7 +32,7 @@ of topk.
 `| topk(5, _count)`
 
 ![basic error ranking
-results.png](../../static/img/Search-Query-Language/Search-Operators/topk/basic-error-ranking-results.png)
+results.png](../../static/img/search-query-language/search-operators/topk/basic-error-ranking-results.png)
 
 ###### Look at the top 2 results for a given category
 
@@ -48,7 +48,7 @@ the system that we want to look for the top “x” counts for each source
 Host.
 
 ![basic top 2
-rank.png](../../static/img/Search-Query-Language/Search-Operators/topk/basic-top-2-rank.png)
+rank.png](../../static/img/search-query-language/search-operators/topk/basic-top-2-rank.png)
 
 Find the top two source host, source category pairs.
 
@@ -59,7 +59,7 @@ we are looking for the top 2 results for each source host, source
 Category pairs.
 
 ![basic top with group
-by.png](../../static/img/Search-Query-Language/Search-Operators/topk/basic-top-with-group-by.png)  
+by.png](../../static/img/search-query-language/search-operators/topk/basic-top-with-group-by.png)  
   
   
   

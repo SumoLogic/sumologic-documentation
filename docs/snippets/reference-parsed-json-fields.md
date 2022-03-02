@@ -22,7 +22,7 @@ Search results table:
       
     ![JSON right click copy options.png](/img/get-started-search/build-search/dynamic-parsing/JSON-right-click-copy-options.png)  
       
-    Copying a field name using this option will automatically format [field names that have special characters](../Search-Basics/Reference_a_Field_with_Special_Characters.md). For example, the field name shown in the screenshot is **total time-series**, it would be automatically formatted to **%"total time-series"** to work properly in a search query.  
+    Copying a field name using this option will automatically format [field names that have special characters](../search-basics/Reference_a_Field_with_Special_Characters.md). For example, the field name shown in the screenshot is **total time-series**, it would be automatically formatted to **%"total time-series"** to work properly in a search query.  
      
 * A copy button is available to the right of each column (field) name allowing you to easily copy a field name.  
       

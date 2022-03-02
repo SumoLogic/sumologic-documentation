@@ -21,7 +21,7 @@ In addition to isNull:
 
 Fields can hold a null value for the following reasons:
 
-* A [parsing operation](../01-Parse-Operators.md "Parse Operators")
+* A [parsing operation](../parse-operators.md "Parse Operators")
     failed to parse a value.
 * There is a mismatch from a [lookup](lookup-classic.md "lookup")
     operator query.
@@ -98,7 +98,7 @@ uses the `isNull` operator to check the field value of
 `country_code` and if it returns `true` has the `if` operator replace
 the value with the string `unknown`:
 
-![isNull](../../static/img/Search-Query-Language/Search-Operators/isNull%2C-isEmpty%2C-isBlank/isNull.png)
+![isNull](../../static/img/search-query-language/search-operators/isNull%2C-isEmpty%2C-isBlank/isNull.png)
 
 **Use [where](where.md "where") to check for null values.**
 

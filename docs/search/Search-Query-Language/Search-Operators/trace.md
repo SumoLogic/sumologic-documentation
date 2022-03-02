@@ -13,7 +13,7 @@ ID.
 Trace operators require the following:
 
 * [Regular
-    expression](../01-Parse-Operators/02-Parse-Variable-Patterns-Using-Regex.md "Parse Variable Patterns Using Regex")
+    expression](../parse-operators/02-Parse-Variable-Patterns-Using-Regex.md "Parse Variable Patterns Using Regex")
     to find related messages.
 * Starting value (for example, an ID).
 
@@ -29,7 +29,7 @@ series of four-digit hexadecimal IDs to process a customer order, as
 shown here:
 
 ![trace_graphic
-4.png](../../static/img/Search-Query-Language/Search-Operators/trace/trace_graphic-4.png)
+4.png](../../static/img/search-query-language/search-operators/trace/trace_graphic-4.png)
 
 Imagine that an error happened at some point in the process, generating
 an error including "PROCESSING FAILED: webID=7F92. Starting from this
@@ -70,7 +70,7 @@ John's workstation (which may be compromised), to build a chain of
 events. We can use a trace operator query to produce the following
 results:
 
-![](../../static/img/Search-Query-Language/Search-Operators/trace/../../../../Assets/Media_Repository/trace_forward_example.png)
+![](../../static/img/search-query-language/search-operators/trace/../../../../Assets/Media_Repository/trace_forward_example.png)
 
 Trace tells us that from John's Workstation there was a login event to
 WIN1.example.com, from which there was a login to WIN2.example.com and
@@ -87,7 +87,7 @@ the hacker. We want to trace all Windows logins moving backward,
 starting from Win3.example.com to build a chain of events. We can use a
 trace operator query to produce the following results:
 
-![](../../static/img/Search-Query-Language/Search-Operators/trace/../../../../Assets/Media_Repository/trace_backwards_example.png)
+![](../../static/img/search-query-language/search-operators/trace/../../../../Assets/Media_Repository/trace_backwards_example.png)
 
 From these results, we can see that for WIN3.example.com there was a
 login event from WIN2.example.com from which there was another login

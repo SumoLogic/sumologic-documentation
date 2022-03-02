@@ -34,7 +34,7 @@ generated.
 
 Note that when you calculate the sum of more than one field, you must
 create an alias using the [as
-operator](../Search-Operators/as-operator.md) to rename the sum fields.
+operator](../search-operators/as-operator.md) to rename the sum fields.
 See this example:
 
 `_sourceCategory="OS/Windows" | kv "HandleCount", "ThreadCount" | sum(HandleCount) as sumHandleCount, sum(ThreadCount) as sumThreadCount`

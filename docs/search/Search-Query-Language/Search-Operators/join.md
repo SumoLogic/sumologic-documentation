@@ -149,7 +149,7 @@ In another example with diff, running a query such as:
 
 Produces results in the **Aggregate** tab like:
 
-![NewAggregation.png](../../static/img/Search-Query-Language/Search-Operators/join/NewAggregation.png)
+![NewAggregation.png](../../static/img/search-query-language/search-operators/join/NewAggregation.png)
 
 #### Operate on fields after the ON clause
 

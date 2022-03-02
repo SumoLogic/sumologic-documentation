@@ -48,7 +48,7 @@ In this query, we search for errors, then parse the field
 
 which results in:
 
-![Format](../../static/img/Search-Query-Language/Search-Operators/format/Format.png)
+![Format](../../static/img/search-query-language/search-operators/format/Format.png)
 
 ##### Format numbers
 

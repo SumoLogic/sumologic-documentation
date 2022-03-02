@@ -44,7 +44,7 @@ distribution of error counts based on bins with a width of 100:
 `_sourceCategory=stream error | timeslice 1m | count by _timeslice | bin _count width=100.0 | count by _bin_label, _bin_lower | sort by _bin_lower`
 
 ![bin operator
-charted.png](../../static/img/Search-Query-Language/Search-Operators/bin/bin-operator-charted.png)
+charted.png](../../static/img/search-query-language/search-operators/bin/bin-operator-charted.png)
 
 ###### Latency distribution
 
@@ -58,4 +58,4 @@ You can aggregate bins further:
 `_sourceCategory=analytics | parse "ms: *" as time | bin time width=10, min = 0, max = 500 | count by _bin_label, _bin_upper | sort by _bin_upper`
 
 ![example
-bin.png](../../static/img/Search-Query-Language/Search-Operators/bin/example-bin.png)
+bin.png](../../static/img/search-query-language/search-operators/bin/example-bin.png)

@@ -18,7 +18,7 @@ For example, let's say we have the value of a userRequestId, which
 entered a distributed system; the request goes through systems named
 Service, Stream, and Config:
 
-![](../../static/img/Search-Query-Language/Search-Operators/sessionize/../../../../Assets/Media_Repo_for_Search/Sessionize_layout_574x155.png)
+![](../../static/img/search-query-language/search-operators/sessionize/../../../../Assets/Media_Repo_for_Search/Sessionize_layout_574x155.png)
 
 Each system generated log messages, so we know that at some point a
 failure occurred. We know the userRequestID value from the log files
@@ -38,7 +38,7 @@ can include variables from previous expressions (using `$variableName`).
 ### Rules
 
 * The sessionize operator is followed by more than
-    one [anchor](../01-Parse-Operators/01-Parse-Predictable-Patterns-Using-an-Anchor.md "Parse Operator") expression.
+    one [anchor](../parse-operators/01-Parse-Predictable-Patterns-Using-an-Anchor.md "Parse Operator") expression.
 * Each anchor expression can be used to extract one or more variables
     from a matching log.
 * You can use the extracted variable to join with a second log message
@@ -70,7 +70,7 @@ In this example:
 
 Here's an example of the results from this query:
 
-![sessionize.png](../../static/img/Search-Query-Language/Search-Operators/sessionize/sessionize.png)
+![sessionize.png](../../static/img/search-query-language/search-operators/sessionize/sessionize.png)
 
  
 

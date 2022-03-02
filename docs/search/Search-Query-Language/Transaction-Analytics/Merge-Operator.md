@@ -21,7 +21,7 @@ operator. Each field can have a different merge strategy:
 
 * `merge`  
     Merge
-    [\_raw](../../Get-Started-with-Search/Search-Basics/Built-in-Metadata.md "Search Metadata")
+    [\_raw](../../Get-Started-with-Search/search-basics/built-in-metadata.md "Search Metadata")
     values and separate them with newlines. Adds a Time field containing
     the earliest timestamp.
 * `merge\<fiel\>`   
@@ -37,7 +37,7 @@ operator. Each field can have a different merge strategy:
 ### Limitation
 
 * The
-    [metadata](../../Get-Started-with-Search/Search-Basics/Built-in-Metadata.md "Search Metadata")
+    [metadata](../../Get-Started-with-Search/search-basics/built-in-metadata.md "Search Metadata")
     field \_messageTime can only use strategies takeFirst and takeLast.
 
 ### Examples
@@ -48,7 +48,7 @@ The following query:
 
 produces a result something like this:
 
-![](../../static/img/Search-Query-Language/Transaction-Analytics/Merge-Operator/../../../../Assets/Media_Repo_for_Search/merge_join_result.png)
+![](../../static/img/search-query-language/Transaction-Analytics/Merge-Operator/../../../../Assets/Media_Repo_for_Search/merge_join_result.png)
 
 A common case for using the merge operator with the
 [Transactionize](Transactionize-operator.md "Transactionize Operator")
@@ -62,6 +62,6 @@ example:
 Which provides results like the following. Notice that all the logs from
 the same IP are now grouped in one record.
 
-![](../../static/img/Search-Query-Language/Transaction-Analytics/Merge-Operator/../../../../Assets/Media_Repo_for_Search/merge_transactionize_example.png)
+![](../../static/img/search-query-language/Transaction-Analytics/Merge-Operator/../../../../Assets/Media_Repo_for_Search/merge_transactionize_example.png)
 
  

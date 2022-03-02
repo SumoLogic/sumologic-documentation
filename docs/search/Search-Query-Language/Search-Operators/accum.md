@@ -31,7 +31,7 @@ to:
 
 produces results of a running total of all requests, similar to:
 
-**![Accum](../../static/img/Search-Query-Language/Search-Operators/accum/Accum.png)**
+**![Accum](../../static/img/search-query-language/search-operators/accum/Accum.png)**
 
 **Running total by user name.** Another option is to find a running
 total for each user's requests. Running a query similar to:
@@ -42,4 +42,4 @@ produces results of a running total for each user's requests, similar
 to:
 
 ![Accum by
-user](../../static/img/Search-Query-Language/Search-Operators/accum/AccumByUser.png)
+user](../../static/img/search-query-language/search-operators/accum/AccumByUser.png)

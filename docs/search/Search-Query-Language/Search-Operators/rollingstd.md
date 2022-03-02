@@ -46,7 +46,7 @@ Running a query such as:
 
 produces results like:
 
-![](../../static/img/Search-Query-Language/Search-Operators/rollingstd/../../../../Assets/Media_Repo_for_Search/rollingstd_new.png)
+![](../../static/img/search-query-language/search-operators/rollingstd/../../../../Assets/Media_Repo_for_Search/rollingstd_new.png)
 
 #### Find the rolling standard deviation of a field between time points
 
@@ -56,11 +56,11 @@ Using rollingstd with timeslice, you can run a query similar to:
 
 that produces results like:
 
-![](../../static/img/Search-Query-Language/Search-Operators/rollingstd/../../../../Assets/Media_Repo_for_Search/rollingstd_example.png)
+![](../../static/img/search-query-language/search-operators/rollingstd/../../../../Assets/Media_Repo_for_Search/rollingstd_example.png)
 
 The aggregation table can be made into an area chart, like this:
 
-![](../../static/img/Search-Query-Language/Search-Operators/rollingstd/../../../../Assets/Media_Repo_for_Search/rollingstd_example2.png)
+![](../../static/img/search-query-language/search-operators/rollingstd/../../../../Assets/Media_Repo_for_Search/rollingstd_example2.png)
 
 #### Specify a window length of 5, but only 4 data points are available
 
@@ -71,7 +71,7 @@ of whatever is available. For example:
 
 which produces results like:
 
-![](../../static/img/Search-Query-Language/Search-Operators/rollingstd/../../../../Assets/Media_Repo_for_Search/rollingstd_new_data_points.png)
+![](../../static/img/search-query-language/search-operators/rollingstd/../../../../Assets/Media_Repo_for_Search/rollingstd_new_data_points.png)
 
 Rollingstd is also used with the [Backshift](backshift.md "backshift")
 operator.

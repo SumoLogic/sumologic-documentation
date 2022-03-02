@@ -42,7 +42,7 @@ preceding **parse** operator like this:
 * [Keyword expressions](../../Get-Started-with-Search/How-to-Build-a-Search/Keyword-Search-Expressions.md "Keyword Search Expressions")
     can be used in the boolean expression, such as OR and AND.
 * If defining a [built-in metadata
-    field](../../Get-Started-with-Search/Search-Basics/Built-in-Metadata.md "Built-in Metadata")
+    field](../../Get-Started-with-Search/search-basics/built-in-metadata.md "Built-in Metadata")
     value in the boolean expression you need to quote the value. If it is
     not wrapped in quotes the value is interpreted as a field name.
 * If you are using [**in**](in-operator.md "in operator") or **not

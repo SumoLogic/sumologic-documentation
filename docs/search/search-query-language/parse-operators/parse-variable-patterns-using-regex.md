@@ -145,7 +145,7 @@ _sourceCategory=aws/vpc
 
 The output looks like:
 
-![ParseRegexMulti.png](../../static/img/Search-Query-Language/01-Parse-Operators/02-Parse-Variable-Patterns-Using-Regex/ParseRegexMulti.png)
+![ParseRegexMulti.png](../../static/img/search-query-language/parse-operators/02-Parse-Variable-Patterns-Using-Regex/ParseRegexMulti.png)
 
 ### Case insensitive parse regex
 
@@ -167,5 +167,5 @@ Use the following parse regex expression to match the "error" in the logs. The *
 | Error         | Line2: The following exception was reported: Error in log |
 | error         | Line1: The following exception was reported: error in log |
 
-You can also use the [toLowerCase and toUpperCase](../Search-Operators/toLowerCase-and-toUpperCase.md)
+You can also use the [toLowerCase and toUpperCase](../search-operators/toLowerCase-and-toUpperCase.md)
 operators. 

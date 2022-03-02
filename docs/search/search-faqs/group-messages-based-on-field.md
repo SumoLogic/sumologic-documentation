@@ -5,7 +5,7 @@ sidebar_label: Group Messages Using a Defined Field
 
 # How to group messages based on a field you define?
 
-You can group messages together with a user-defined field using the [Sessionize](../Search-Query-Language/Search-Operators/sessionize.md) operator (similar to transaction in Splunk). By defining multiple parse expressions that match different kinds of log lines, you can weave together the extracted fields into one session.
+You can group messages together with a user-defined field using the [Sessionize](../search-query-language/search-operators/sessionize.md) operator (similar to transaction in Splunk). By defining multiple parse expressions that match different kinds of log lines, you can weave together the extracted fields into one session.
 
 Here's an example:
 

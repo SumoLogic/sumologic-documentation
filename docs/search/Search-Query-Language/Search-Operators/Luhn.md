@@ -26,7 +26,7 @@ and verify them using the Luhn operator:
 
 which provides results such as:
 
-![](../../static/img/Search-Query-Language/Search-Operators/Luhn/../../../../Assets/Media_Repo_for_Search/luhn_operator_example.png)
+![](../../static/img/search-query-language/search-operators/Luhn/../../../../Assets/Media_Repo_for_Search/luhn_operator_example.png)
 
 #### Search for and verify a specific credit card number
 
@@ -37,4 +37,4 @@ verify it using the Luhn operator:
 
 It would provide the following results:
 
-![](../../static/img/Search-Query-Language/Search-Operators/Luhn/../../../../Assets/Media_Repo_for_Search/lunh_operator_example1.png)
+![](../../static/img/search-query-language/search-operators/Luhn/../../../../Assets/Media_Repo_for_Search/lunh_operator_example1.png)

@@ -142,7 +142,7 @@ optional. (It defaults to `_timeslice.`)
 | **Without Fillmissing**                                                                                                                     | **With Fillmissing**                                                                                                                       |
 |---------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------|
 | `login             | timeslice 15m             | count by _timeslice             | sort by _timeslice`                                      | `login             | timeslice 15m             | count by _timeslice             | fillmissing timeslice             | sort by _timeslice` |
-| ![fillmissing-example-1-without.png](../../static/img/Search-Query-Language/Search-Operators/fillmissing/fillmissing-example-1-without.png) | ![fillmissing-example1-with.png](../../static/img/Search-Query-Language/Search-Operators/fillmissing/fillmissing-example1-with.png)        |
+| ![fillmissing-example-1-without.png](../../static/img/search-query-language/search-operators/fillmissing/fillmissing-example-1-without.png) | ![fillmissing-example1-with.png](../../static/img/search-query-language/search-operators/fillmissing/fillmissing-example1-with.png)        |
 
 #### Value generator
 
@@ -155,7 +155,7 @@ Notice also how we changed the default value of `_count` from 0 to -1.
 | **Without Fillmissing**                                                                                                                   | **With Fillmissing**                                                                                                                    |
 |-------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------|
 | `login             | count by type`                                                                                                       | `login             | count by type             | fillmissing values("web", "api", "internal") in type               with -1 for _count` |
-| ![fillmissing-example2-without.png](../../static/img/Search-Query-Language/Search-Operators/fillmissing/fillmissing-example2-without.png) | ![fillmissing-example2-with.png](../../static/img/Search-Query-Language/Search-Operators/fillmissing/fillmissing-example2-with.png)     |
+| ![fillmissing-example2-without.png](../../static/img/search-query-language/search-operators/fillmissing/fillmissing-example2-without.png) | ![fillmissing-example2-with.png](../../static/img/search-query-language/search-operators/fillmissing/fillmissing-example2-with.png)     |
 
 ##### All option
 
@@ -168,7 +168,7 @@ manually.
 This query provides the following results:
 
 ![all option with
-transpose.png](../../static/img/Search-Query-Language/Search-Operators/fillmissing/all-option-with-transpose.png)
+transpose.png](../../static/img/search-query-language/search-operators/fillmissing/all-option-with-transpose.png)
 
 #### Multiple generators and transpose
 
@@ -197,6 +197,6 @@ null value.
 This query provides the following results:
 
 ![takeLast with
-transpose.png](../../static/img/Search-Query-Language/Search-Operators/fillmissing/takeLast-with-transpose.png)
+transpose.png](../../static/img/search-query-language/search-operators/fillmissing/takeLast-with-transpose.png)
 
  

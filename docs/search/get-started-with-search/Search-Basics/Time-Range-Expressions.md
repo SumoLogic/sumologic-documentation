@@ -8,7 +8,7 @@ When you are building a search query, you have the option to add a time range e
 
 The last millisecond of the defined time range is not searched. For example, a time range of 6:15 to 6.30 pm will run as 6:15:00:000 to 6:29:59:999.
 
-### Preset time range expressions
+## Preset time range expressions
 
 Preset values are available to choose from, with **Last 15 Minutes** as the default start value and "now" being the implied end time. In cases where more control of the start and end time is required, you can type a time range expression directly into the time range field.
 
@@ -16,7 +16,7 @@ Search time ranges use either the default timezone set in your web browser, or t
 
 ![time-range-expressions.png](/img/search/get-started-search/search-basics/time-range-expressions.png)
 
-### Relative time range expressions
+## Relative time range expressions
 
 Either a single relative expression or two relative expressions can be
 specified.
@@ -45,7 +45,7 @@ The table below contains examples of relative time-range expressions. 
 | -12h -60m | From 12 hours ago to 60 minutes ago. |
 | -60m -600s | From 60 minutes ago to 600 seconds ago. |
 
-### Absolute time range expressions
+## Absolute time range expressions
 
 While relative expressions are useful, sometimes it is more important to express a specific point in time. If only one time expression is present, it is interpreted as the start time. If two expressions are present, the first one is interpreted as the start time, the second is interpreted as the end time. If only a date is entered, the time value is implied to be midnight. Again, the token "now" represents the  current time. If no year is present in an absolute time expression, the current year is assumed.
 

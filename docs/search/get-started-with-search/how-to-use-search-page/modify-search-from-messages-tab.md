@@ -29,7 +29,7 @@ press Enter/Return) to run the appended search.
 
 ### Parse a field from message text
 
-If you come across text that you could like to [parse as a field](../../Search-Query-Language/01-Parse-Operators/Parse-field-option.md "Parse field"), you can select that text and name the field from the **Messages** tab.
+If you come across text that you could like to [parse as a field](../../search-query-language/parse-operators/parse-field-option.md), you can select that text and name the field from the **Messages** tab.
 
 To parse a field from message text:
 
@@ -51,7 +51,7 @@ For another example of how this works, refer to the Quick Start Tutorial topic, 
 
 ## Aggregates tab
 
-After running an [aggregate](../../Search-Query-Language/aaGroup.md "Group or Aggregate Operators") search, you can copy values and select from several options to add more operations to your query based on the results in the **Aggregates **tab.
+After running an [aggregate](../../search-query-language/group-aggregate-operators.md "Group or Aggregate Operators") search, you can copy values and select from several options to add more operations to your query based on the results in the **Aggregates **tab.
 
 After you select text and right click, you will see a menu pop up with the following options:
 

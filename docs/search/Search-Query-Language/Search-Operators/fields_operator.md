@@ -31,7 +31,7 @@ method and status_code, your query would be:
 
 The search results would look like this:  
   
-![Fields](../../static/img/Search-Query-Language/Search-Operators/fields_operator/Fields.png)
+![Fields](../../static/img/search-query-language/search-operators/fields_operator/Fields.png)
 
 Allowlist queries allow all system internal fields (fields prefixed with
 an underscore "\_") to pass.
@@ -72,7 +72,7 @@ For example, for this non-aggregate query:
 
 The search results would look like this:
 
-![Fields_nonaggregate](../../static/img/Search-Query-Language/Search-Operators/fields_operator/Fields_nonaggr.png)
+![Fields_nonaggregate](../../static/img/search-query-language/search-operators/fields_operator/Fields_nonaggr.png)
 
 While the same query with an added *count by* statement to make it an
 aggregate query:
@@ -81,7 +81,7 @@ aggregate query:
 
 This would provide the following results:
 
-![](../../static/img/Search-Query-Language/Search-Operators/fields_operator/../../../../Assets/Media_Repo_for_Search/fields_operator_aggregate.png)
+![](../../static/img/search-query-language/search-operators/fields_operator/../../../../Assets/Media_Repo_for_Search/fields_operator_aggregate.png)
 
 #### Use a Field Name that Contains Spaces or Special Characters
 

@@ -156,7 +156,7 @@ _sourceCategory=apache 
 ```
 
 :::sumo More Info
-For more information, see [Parsing](../Search-Query-Language/01-Parse-Operators.md), [Count](../Search-Query-Language/aaGroup/count,-count-distinct,-and-count-frequent.md), and [Top](../Search-Query-Language/Search-Operators/top.md).
+For more information, see [Parsing](../search-query-language/parse-operators.md), [Count](../search-query-language/group-aggregate-operators/count,-count-distinct,-and-count-frequent.md), and [Top](../search-query-language/search-operators/top.md).
 :::
 
 ## Timeslice and Transpose
@@ -216,7 +216,7 @@ if(status_code matches "50*","500s","Other")))) as status_code_group
 ```
 
 :::sumo More Info
-For more information, see [Timeslice](../Search-Query-Language/Search-Operators/timeslice.md) and [Transpose](../Search-Query-Language/Search-Operators/transpose.md).
+For more information, see [Timeslice](../search-query-language/search-operators/timeslice.md) and [Transpose](../search-query-language/search-operators/transpose.md).
 :::
 
 ## Conditional Operators
@@ -263,7 +263,7 @@ Find version numbers that match numeric values 2, 3 or 6. Use the num operator t
 ```
 
 :::sumo More Info
-For more information, see [Where](../Search-Query-Language/Search-Operators/where.md) and [If](../Search-Query-Language/Search-Operators/if-operator-and.md).
+For more information, see [Where](../search-query-language/search-operators/where.md) and [If](../search-query-language/search-operators/if-operator-and.md).
 :::
 
 ## LogReduce Operator

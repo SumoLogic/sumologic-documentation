@@ -25,7 +25,7 @@ and get their count.
 
 which produces results like:
 
-![](../../static/img/Search-Query-Language/Search-Operators/top/../../../../Assets/Media_Repository/top_example1.png)
+![](../../static/img/search-query-language/search-operators/top/../../../../Assets/Media_Repository/top_example1.png)
 
 You can use the following query to get the same results, but make the
 count explicit:
@@ -41,4 +41,4 @@ an explicit count.
 
 which produces results like:
 
-![](../../static/img/Search-Query-Language/Search-Operators/top/../../../../Assets/Media_Repository/top_example3.png)
+![](../../static/img/search-query-language/search-operators/top/../../../../Assets/Media_Repository/top_example3.png)

@@ -77,7 +77,7 @@ Run the following query to find outlier values in IIS logs over the last
 
 `_sourceCategory=IIS/Access | parse regex "\d+-\d+-\d+ \d+:\d+:\d+ (\<server_i\>\S+) (\<metho\>\S+) (\<cs_uri_ste\>/\S+?) \S+ \d+ (\<use\>\S+) (\<client_i\>[\.\d]+) " | parse regex "\d+ \d+ \d+ (\<response_tim\>\d+)$" | timeslice 15m  | max(response_time) as response_time by _timeslice | outlier response_time window=5,threshold=3,consecutive=2,direction=+-`
 
-![IIS](../../static/img/Search-Query-Language/Search-Operators/outlier/IIS.png)
+![IIS](../../static/img/search-query-language/search-operators/outlier/IIS.png)
 
 The outlier values are represented by the pink triangles in the
 resulting chart.
@@ -89,7 +89,7 @@ last 3 hours.
 
 `_sourceCategory=Apache/Access | parse "HTTP/1.1\" * " as status_code | where status_code matches "5*" | timeslice 5m  | count(status_code) as status_code by _timeslice | outlier status_code window=5,threshold=3,consecutive=1,direction=+-`
 
-![Apache](../../static/img/Search-Query-Language/Search-Operators/outlier/Apache-Access.png)
+![Apache](../../static/img/search-query-language/search-operators/outlier/Apache-Access.png)
 
 The outlier values are represented by the pink triangles in the
 resulting chart.
@@ -104,7 +104,7 @@ This way, you can run outlier analysis separately for each value
 of **`_sourceHost`**, as shown.
 
 ![Group
-by](../../static/img/Search-Query-Language/Search-Operators/outlier/Group-by.png)
+by](../../static/img/search-query-language/search-operators/outlier/Group-by.png)
 
 This example will only produce an aggregation table, not a chart, but
 the indicator and violation fields will correctly reflect
@@ -163,7 +163,7 @@ In the following table chart, a value of 1 in the **\_count_violation**
 column indicates that the data point corresponding to that timeslice is
 an outlier.
 
-![Multidimension](../../static/img/Search-Query-Language/Search-Operators/outlier/Multidimension.png)
+![Multidimension](../../static/img/search-query-language/search-operators/outlier/Multidimension.png)
 
 ### Alerts Based on Multidimensional Outlier Results
 
@@ -194,7 +194,7 @@ chart](./outlier.md "Search/Search_Query_Language/Search_Operators/outlier"),
 then change the stacking property to normal to display alerts by unique
 **user_id** (the multidimensional aspect).
 
-![Alert](../../static/img/Search-Query-Language/Search-Operators/outlier/Alert.png)
+![Alert](../../static/img/search-query-language/search-operators/outlier/Alert.png)
 
 ### Chart Multidimensional Outlier Results
 
@@ -214,7 +214,7 @@ chart](../../../Visualizations-and-Alerts/Dashboards/Chart-Panel-Types/Line-Char
 this example will display something like the following:
 
 ![Outlier
-Distribution](../../static/img/Search-Query-Language/Search-Operators/outlier/OutlierDistri.png)
+Distribution](../../static/img/search-query-language/search-operators/outlier/OutlierDistri.png)
 
 #### Example 2: Outlier Ranking
 
@@ -233,7 +233,7 @@ chart](../../../Visualizations-and-Alerts/Dashboards/Chart-Panel-Types/Line-Char
 this example will display something like the following:
 
 ![Outlier
-Ranking](../../static/img/Search-Query-Language/Search-Operators/outlier/OutlierRanking.png)
+Ranking](../../static/img/search-query-language/search-operators/outlier/OutlierRanking.png)
 
 In the line chart, you can see which series is producing the most
 “deviating” outliers.

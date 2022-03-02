@@ -140,7 +140,7 @@ Follow the steps below to delete all of the contents of a lookup table:
 You can use the `save` operator to save the results of a Sumo log query
 to a lookup table you created using the Lookup UI or API. For more
 information, see [save
-Operator](../Search-Query-Language/Search-Operators/save.md "save operator").
+Operator](../search-query-language/search-operators/save.md "save operator").
 
 ### Export a lookup table schema
 

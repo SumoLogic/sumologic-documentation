@@ -8,7 +8,7 @@ On the **Search** page, as you begin typing to enter a query in the search tex
 
 RBAC limitations prevent you from seeing options that you are not permitted to see. 
 
-In the first part of a query, search autocomplete suggests common default queries, keywords, and [metadata](Built-in-Metadata.md "Search Metadata") terms. It also offers the names of Collectors, Sources, and Partitions, which are automatically configured in your system when you create them.
+In the first part of a query, search autocomplete suggests common default queries, keywords, and [metadata](built-in-metadata.md "Search Metadata") terms. It also offers the names of Collectors, Sources, and Partitions, which are automatically configured in your system when you create them.
 
 ![autocomplete search](/img/search/get-started-search/search-basics/autocomplete-search.png)
 
@@ -19,7 +19,7 @@ As you type, search autocomplete underlines possible typos in your query and sug
 ![autocomplete keyword](/img/search/get-started-search/search-basics/autocomplete-keyword.png)
 
 Search autocomplete does not suggest all available Sumo Logic keywords, metadata terms, and search operators. For full details on what is
-supported, see [Search Operators](../../Search-Query-Language/Search-Operators.md).
+supported, see [Search Operators](../../search-query-language/search-operators.md).
 
 More search autocomplete tips and limitations:
 

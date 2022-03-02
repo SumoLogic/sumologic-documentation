@@ -48,7 +48,7 @@ Running a query such as:
 produces results like:
 
 ![too
-smooth.png](../../static/img/Search-Query-Language/Search-Operators/smooth/too-smooth.png)
+smooth.png](../../static/img/search-query-language/search-operators/smooth/too-smooth.png)
 
 #### Smooth the difference of a quantity between time points
 
@@ -58,7 +58,7 @@ Using smooth with timeslice, you can run a query similar to:
 
 that produces results like:
 
-![smooth.png](../../static/img/Search-Query-Language/Search-Operators/smooth/smooth.png)
+![smooth.png](../../static/img/search-query-language/search-operators/smooth/smooth.png)
 
 #### Use backshift with smooth and rollingstd to view the averages of incoming bytes
 
@@ -68,7 +68,7 @@ Running a query like:
 
 produces results similar to:
 
-![OneMinuteRate.png](../../static/img/Search-Query-Language/Search-Operators/smooth/OneMinuteRate.png)
+![OneMinuteRate.png](../../static/img/search-query-language/search-operators/smooth/OneMinuteRate.png)
 
 #### Specify a window length of 5, but only 4 data points are available
 
@@ -79,4 +79,4 @@ whatever is available. For example:
 
 produces results like:
 
-![Coldsmooth.png](../../static/img/Search-Query-Language/Search-Operators/smooth/Coldsmooth.png)
+![Coldsmooth.png](../../static/img/search-query-language/search-operators/smooth/Coldsmooth.png)

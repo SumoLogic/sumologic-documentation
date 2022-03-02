@@ -114,7 +114,7 @@ required fields.)
 
 which provides results like:
 
-![](../../static/img/Search-Query-Language/Search-Operators/replace/../../../../Assets/Media_Repo_for_Search/replace_operator_example.png)
+![](../../static/img/search-query-language/search-operators/replace/../../../../Assets/Media_Repo_for_Search/replace_operator_example.png)
 
 #### Remove underscores from a field to make it human readable
 

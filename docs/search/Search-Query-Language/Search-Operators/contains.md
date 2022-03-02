@@ -5,7 +5,7 @@ id: contains
 # contains
 
 The contains operator compares string values of two
-[parsed](../01-Parse-Operators.md "Parse Operators") fields and returns
+[parsed](../parse-operators.md "Parse Operators") fields and returns
 a boolean result based on whether the second field's value exists in the
 first.
 

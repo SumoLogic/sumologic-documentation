@@ -15,9 +15,9 @@ organize the logs by slices. In your query, you need to specify the
 is performed.
 
 When you add the `timeslice` before the `join`, each of the tables
-created by the `join` will now include a **\_timeslice** field. 
+created by the `join` will now include a `_timeslice` field. 
 
-You can reference the table's **\_timeslice** field to use in your
+You can reference the table's `_timeslice` field to use in your
 `group by` operation. The name of the table is appended to the table's
 fields.
 

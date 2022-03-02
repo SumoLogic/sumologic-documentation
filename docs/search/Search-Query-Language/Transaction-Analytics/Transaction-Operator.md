@@ -28,12 +28,12 @@ The transaction operator requires:
     other unique IDs that are relevant to your query. You will define
     transaction IDs in a query. The transaction IDs are extracted using
     operators such
-    as [parse](../01-Parse-Operators/01-Parse-Predictable-Patterns-Using-an-Anchor.md "Parse Operator"), [parse
-    regex](../01-Parse-Operators/02-Parse-Variable-Patterns-Using-Regex.md "Parse Variable Patterns Using Regex"),
+    as [parse](../parse-operators/01-Parse-Predictable-Patterns-Using-an-Anchor.md "Parse Operator"), [parse
+    regex](../parse-operators/02-Parse-Variable-Patterns-Using-Regex.md "Parse Variable Patterns Using Regex"),
     etc.
 * **Mapping from a log message to a state.** Specify the mapping from
     a log message to a state through the syntax of
-    the [matches](../Search-Operators/matches.md "matches") operator, or
+    the [matches](../search-operators/matches.md "matches") operator, or
     through fields that are already parsed.
 
 Check out the following overview video. It reviews a search provided in
@@ -120,12 +120,12 @@ Diagram](Transaction-Operator/Flow_Diagrams.md "Flow Diagrams").
 ### Unordered
 
 ![unordered transaction
-table.png](../../static/img/Search-Query-Language/Transaction-Analytics/Transaction-Operator/../unordered-transaction-table.png)
+table.png](../../static/img/search-query-language/Transaction-Analytics/Transaction-Operator/../unordered-transaction-table.png)
 
 ### Ordered
 
 ![ordered flow
-diagram.png](../../static/img/Search-Query-Language/Transaction-Analytics/Transaction-Operator/../ordered-flow-diagram.png)
+diagram.png](../../static/img/search-query-language/Transaction-Analytics/Transaction-Operator/../ordered-flow-diagram.png)
 
 ##### Loop back
 
@@ -135,7 +135,7 @@ can hover over the loops to view the number of occurrences respective
 states had returned to a previous state.
 
 ![hover loop
-back.png](../../static/img/Search-Query-Language/Transaction-Analytics/Transaction-Operator/hover-loop-back.png)
+back.png](../../static/img/search-query-language/Transaction-Analytics/Transaction-Operator/hover-loop-back.png)
 
 ## Specifying a fringe cut-off
 
@@ -206,7 +206,7 @@ You reference the `_end_time` and `_start_time` fields to calculate the
 duration of the `sessionid`.
 
 ![fields created by
-transaction.png](../../static/img/Search-Query-Language/Transaction-Analytics/Transaction-Operator/fields-created-by-transaction.png)
+transaction.png](../../static/img/search-query-language/Transaction-Analytics/Transaction-Operator/fields-created-by-transaction.png)
 
 ### Detecting a potential e-commerce failure
 
@@ -223,7 +223,7 @@ states: cart, shipping, billing, billingVerification, confirmation, and
 order shipped.
 
 ![ecommerce
-flowchart.png](../../static/img/Search-Query-Language/Transaction-Analytics/Transaction-Operator/ecommerce-flowchart.png)
+flowchart.png](../../static/img/search-query-language/Transaction-Analytics/Transaction-Operator/ecommerce-flowchart.png)
 
 Now, if you ran this query and saw results as shown below, where there
 is a big drop-off at the verification state, you could determine that
@@ -231,6 +231,6 @@ there is likely a problem with the verification service and start an
 investigation.
 
 ![ecommerce flowchart missing
-states.png](../../static/img/Search-Query-Language/Transaction-Analytics/Transaction-Operator/ecommerce-flowchart-missing-states.png)
+states.png](../../static/img/search-query-language/Transaction-Analytics/Transaction-Operator/ecommerce-flowchart-missing-states.png)
 
  

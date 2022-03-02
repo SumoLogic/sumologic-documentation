@@ -74,7 +74,7 @@ You can create Log and Metric queries on the same panel.
 Enter your aggregate [search query] (../../05Search/Search-Query-Language.md "Search Query Language")
 in the input field and press enter. A few important things to note are:
 
-* Only search results that have been aggregated using a group or aggregate operator can be charted. See [Group or Aggregate Operators ] (../../05Search/Search-Query-Language/aaGroup.md "https://help.sumologic.com/Search/Search_Query_Language/aaGroup")for a list. 
+* Only search results that have been aggregated using a group or aggregate operator can be charted. See [Group or Aggregate Operators ] (../../search/search-query-language/group-aggregate-operators.md "https://help.sumologic.com/Search/Search_Query_Language/aaGroup")for a list. 
 * By default, the query builder is set to **Logs**. 
 * Joining log queries in a separate query is not supported.
 

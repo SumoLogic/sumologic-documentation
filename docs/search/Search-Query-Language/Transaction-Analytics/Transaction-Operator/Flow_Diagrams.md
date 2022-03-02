@@ -21,7 +21,7 @@ constructing your query, you will define the edges of the chart's
 lines; Sumo Logic sorts each transaction type into the correct flow line
 using the states defined in your query.
 
-![](../../../static/img/Search-Query-Language/Transaction-Analytics/Transaction-Operator/Flow_Diagrams/../../../../../Assets/Media_Repository/Flow_Diagram_example.png)
+![](../../../static/img/search-query-language/Transaction-Analytics/Transaction-Operator/Flow_Diagrams/../../../../../Assets/Media_Repository/Flow_Diagram_example.png)
 
 After creating a Flow Diagram, you can hover over any line in the
 diagram to see additional details between the two states, including
@@ -40,7 +40,7 @@ efficiency of a steam engine.
 2.  In the Aggregates tab of the **Search** page, click the **Flow
     Diagram** icon.  
       
-    ![FlowDiagram.png](../../../static/img/Search-Query-Language/Transaction-Analytics/Transaction-Operator/Flow_Diagrams/FlowDiagram.png)
+    ![FlowDiagram.png](../../../static/img/search-query-language/Transaction-Analytics/Transaction-Operator/Flow_Diagrams/FlowDiagram.png)
 3.  Save the search as a Flow Diagram to run again later.
 
 ### Drilling down into Flow Diagram lines
@@ -53,14 +53,14 @@ any line in the diagram.
 1.  After running a transaction operator query, hover over a line in the
     Flow Diagram.  
       
-    ![](../../../static/img/Search-Query-Language/Transaction-Analytics/Transaction-Operator/Flow_Diagrams/../../../../../Assets/Media_Repository/Flow_Diagram_drilldown.png)
+    ![](../../../static/img/search-query-language/Transaction-Analytics/Transaction-Operator/Flow_Diagrams/../../../../../Assets/Media_Repository/Flow_Diagram_drilldown.png)
 2.  Click the line.
 3.  A new search tab opens, and the query that represents the states of
     the flow runs.
 
 ### Loop back
 \<div class="mt-contentreuse-widget"
-page="05Search/Search-Query-Language/Transaction-Analytics/Transaction-Operator"
+page="05Search/search-query-language/Transaction-Analytics/Transaction-Operator"
 section="Loop back" show="false\>
 \</di\>
 

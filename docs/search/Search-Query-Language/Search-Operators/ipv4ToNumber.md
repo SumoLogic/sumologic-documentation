@@ -33,7 +33,7 @@ then uses the fields operator to remove all fields except "ip" and
 
 would produce results like:
 
-![](../../static/img/Search-Query-Language/Search-Operators/ipv4ToNumber/../../../../Assets/Media_Repo_for_Search/ipv4ToNumber.png)
+![](../../static/img/search-query-language/search-operators/ipv4ToNumber/../../../../Assets/Media_Repo_for_Search/ipv4ToNumber.png)
 
 ##### Detect the IP range for a single user
 
@@ -45,4 +45,4 @@ user account.
 
 would produce results like:
 
-![ipv4ToNumber](../../static/img/Search-Query-Language/Search-Operators/ipv4ToNumber/ipv4ToNumber.png)
+![ipv4ToNumber](../../static/img/search-query-language/search-operators/ipv4ToNumber/ipv4ToNumber.png)

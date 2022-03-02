@@ -15,7 +15,7 @@ table below:**
 `_sourceCategory=Labs/Apache/Access | timeslice 5m | count by _timeslice, status_code`
 
 ![Table without
-transpose](../../static/img/Search-Query-Language/Search-Operators/transpose/TableWithoutTranspose.png)
+transpose](../../static/img/search-query-language/search-operators/transpose/TableWithoutTranspose.png)
 
 **With transpose you can use your query to define your rows as the
 timeslice and the columns as the status code:**
@@ -23,7 +23,7 @@ timeslice and the columns as the status code:**
 `_sourceCategory=Labs/Apache/Access | timeslice 5m | count by _timeslice, status_code | transpose row _timeslice column status_code`
 
 ![Table with
-transpose](../../static/img/Search-Query-Language/Search-Operators/transpose/TableWithTranpose.png)
+transpose](../../static/img/search-query-language/search-operators/transpose/TableWithTranpose.png)
 
 To make this information present as a table, transpose dynamically
 creates columns for aggregate search results. This allows you
@@ -40,13 +40,13 @@ the transpose operator.
 not aggregated by status code:**
 
 ![Without
-transpose](../../static/img/Search-Query-Language/Search-Operators/transpose/WithoutTranspose.png)
+transpose](../../static/img/search-query-language/search-operators/transpose/WithoutTranspose.png)
 
 **With transpose the results display in an easy-to-read manner status
 codes by timeslice:**
 
 ![With
-transpose](../../static/img/Search-Query-Language/Search-Operators/transpose/WithTranpose.png)
+transpose](../../static/img/search-query-language/search-operators/transpose/WithTranpose.png)
 
 ### Syntax
 
@@ -90,12 +90,12 @@ each module's name. Running a query similar to:
 will produce results with each module represented with a distinct color,
 similar to:
 
-![Transpose_operator_errors_by_module_675x324.png](../../static/img/Search-Query-Language/Search-Operators/transpose/../../../../Assets/Media_Repo_for_Search/Transpose_operator_errors_by_module_675x324.png)
+![Transpose_operator_errors_by_module_675x324.png](../../static/img/search-query-language/search-operators/transpose/../../../../Assets/Media_Repo_for_Search/Transpose_operator_errors_by_module_675x324.png)
 
 Try changing the Stacking setting (under Change Properties)
 to **Normal** to see how graphs are affected by this option. For more
 information, see [Chart Search
-Results](../../Get-Started-with-Search/Search-Basics/Chart-Search-Results.md "Chart Search Results").
+Results](../../Get-Started-with-Search/search-basics/chart-search-results.md "Chart Search Results").
 
 #### View successful logins by user
 
@@ -108,7 +108,7 @@ organization. Running a query similar to:
 will produce a stacked graph similar to:
 
 ![Successful
-Logins](../../static/img/Search-Query-Language/Search-Operators/transpose/SuccessfulLogins.png)
+Logins](../../static/img/search-query-language/search-operators/transpose/SuccessfulLogins.png)
 
 #### View web server status codes
 
@@ -121,14 +121,14 @@ Results are initially returned in the **Aggregates** tab in the form
 that we want.
 
 ![Webserver Status
-Code](../../static/img/Search-Query-Language/Search-Operators/transpose/WebserverStatusCode.png)
+Code](../../static/img/search-query-language/search-operators/transpose/WebserverStatusCode.png)
 
 Then you can select the **Column** chart button, and under **Change
 Properties**, set the **Stacking** setting to **Normal** to create a
 stacked column chart.
 
 ![Status Codes Stacked
-Graph](../../static/img/Search-Query-Language/Search-Operators/transpose/Status-Code-stacked-graph.png)
+Graph](../../static/img/search-query-language/search-operators/transpose/Status-Code-stacked-graph.png)
 
 For information on handling null fields,
 see [isNull](isNull,-isEmpty,-isBlank.md "isNull, isEmpty, isBlank")

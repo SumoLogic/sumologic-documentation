@@ -16,7 +16,7 @@ fields.
 Fields with characters not in the `a-zA-Z0-9_` character set or that
 begin with a number need to be escaped, see [reference a field with
 special
-characters](../../Get-Started-with-Search/Search-Basics/Reference_a_Field_with_Special_Characters.md "Reference a Field with Special Characters") for
+characters](../../Get-Started-with-Search/search-basics/Reference_a_Field_with_Special_Characters.md "Reference a Field with Special Characters") for
 details.
 
 ## Examples
@@ -36,7 +36,7 @@ So, the following full query:
 
 Would provide results like:
 
-![](../../static/img/Search-Query-Language/Search-Operators/as-operator/../../../../Assets/Media_Repo_for_Search/as_rename.png)
+![](../../static/img/search-query-language/search-operators/as-operator/../../../../Assets/Media_Repo_for_Search/as_rename.png)
 
 ### Create a New Constant Field
 
@@ -48,7 +48,7 @@ constant (**127.10.10.1**):
 This statement “hardcodes" the value of **127.10.10.1** to the variable
 **src_ip**, for all the messages returned, as shown:
 
-![](../../static/img/Search-Query-Language/Search-Operators/as-operator/../../../../Assets/Media_Repo_for_Search/as_new_constant1.png)
+![](../../static/img/search-query-language/search-operators/as-operator/../../../../Assets/Media_Repo_for_Search/as_new_constant1.png)
 
 In this example, you will create a new field (**test_src_ip**) and seed
 it with a constant (**127.10.10.1**):
@@ -57,7 +57,7 @@ it with a constant (**127.10.10.1**):
 
 Which provides the following results:
 
-![](../../static/img/Search-Query-Language/Search-Operators/as-operator/../../../../Assets/Media_Repo_for_Search/as_new_constant2.png)
+![](../../static/img/search-query-language/search-operators/as-operator/../../../../Assets/Media_Repo_for_Search/as_new_constant2.png)
 
 ### Use As in Conjunction with Other Operators
 
@@ -69,14 +69,14 @@ following query:
 
 Which provides the following results:
 
-![](../../static/img/Search-Query-Language/Search-Operators/as-operator/../../../../Assets/Media_Repo_for_Search/as_conjunction.png)
+![](../../static/img/search-query-language/search-operators/as-operator/../../../../Assets/Media_Repo_for_Search/as_conjunction.png)
 
 In this next example, you will use **`as`** after a parse, to name the
 variable in the pattern **"\* - - "** as **src_ip**:
 
 `_sourceCategory=Apache/Access | parse "* - - " as src_ip`
 
-In this example, you will use **`as`** to rename the **\_count** field
+In this example, you will use **`as`** to rename the `_count` field
 to **errors**.  
 
 `_sourceCategory=Apache/Access status_code=404 | count(status_code) as errors`

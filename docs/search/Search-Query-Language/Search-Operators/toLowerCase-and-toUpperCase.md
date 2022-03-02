@@ -42,7 +42,7 @@ case letters.
 
 which provides results like:
 
-![](../../static/img/Search-Query-Language/Search-Operators/toLowerCase-and-toUpperCase/../../../../Assets/Media_Repository/toUpperCase.png)
+![](../../static/img/search-query-language/search-operators/toLowerCase-and-toUpperCase/../../../../Assets/Media_Repository/toUpperCase.png)
 
 #### Using toLowerCase or toUpperCase with an equating condition
 
@@ -63,7 +63,7 @@ letters, using the count operator.
 
 which produces results like:
 
-![](../../static/img/Search-Query-Language/Search-Operators/toLowerCase-and-toUpperCase/../../../../Assets/Media_Repository/toUpperCase_count.png)
+![](../../static/img/search-query-language/search-operators/toLowerCase-and-toUpperCase/../../../../Assets/Media_Repository/toUpperCase_count.png)
 
 #### Find a user name and convert it to lowercase
 

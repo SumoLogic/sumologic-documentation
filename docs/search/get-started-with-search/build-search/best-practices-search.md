@@ -6,7 +6,7 @@ id: best-practices-search
 
 ## Be specific with search scope
 
-At a minimum, all searches should use one or more [metadata](../Search-Basics/Built-in-Metadata.md "Search Metadata") tags in the scope, for example:  `_sourceCategory`, `_source`, `_sourceName`, `_sourceHost`, or `_collector`.
+At a minimum, all searches should use one or more [metadata](../search-basics/built-in-metadata.md "Search Metadata") tags in the scope, for example:  `_sourceCategory`, `_source`, `_sourceName`, `_sourceHost`, or `_collector`.
 
 If possible, also use one or more keywords to limit the scope.
 
@@ -17,7 +17,7 @@ test your search against a shorter time range first, then extend the time range 
 
 ## Use fields extracted by FERs and avoid the where operator
 
-Whenever possible, use keyword searches and fields already extracted using [Field Extraction Rules] (../../../Manage/Field-Extractions.md "Manage Field Extractions") (FERs) to filter data instead of using the [where] (../../Search-Query-Language/Search-Operators/where.md "where") operator. If it is not possible to only use a keyword or pre-extracted field, use both a keyword search AND the where clause.
+Whenever possible, use keyword searches and fields already extracted using [Field Extraction Rules] (../../../Manage/Field-Extractions.md "Manage Field Extractions") (FERs) to filter data instead of using the [where] (../../search-query-language/search-operators/where.md "where") operator. If it is not possible to only use a keyword or pre-extracted field, use both a keyword search AND the where clause.
 
 **Best approach:** Field Extraction Rule field AND keyword
 
@@ -41,7 +41,7 @@ _sourceCategory=foo | parse "somefield *" as somefield | where somefield="valuea
 
 ## Filter your data before aggregation
 
-When filtering data, make the result set you are working with as small as possible before conducting [aggregate] (../../Search-Query-Language/aaGroup.md "Group") operations like sum, min, max, and average. According to [Be specific with search scope](#be-specific-with-search-scope), keywords and metadata in your search scope are the priority. If you must use a `where` clause, refer to [Use fields extracted by FERs and avoid the where operator](#use-fields-extracted-by-fers-and-avoid-the-where-operator).
+When filtering data, make the result set you are working with as small as possible before conducting [aggregate] (../../search-query-language/group-aggregate-operators.md "Group") operations like sum, min, max, and average. According to [Be specific with search scope](#be-specific-with-search-scope), keywords and metadata in your search scope are the priority. If you must use a `where` clause, refer to [Use fields extracted by FERs and avoid the where operator](#use-fields-extracted-by-fers-and-avoid-the-where-operator).
 
 **Best approach:**
 
@@ -59,7 +59,7 @@ _sourceCategory=Prod/User/Eventlog | count by user | where user="john"
 
 ## Use parse anchor instead of parse regex for structured messages
 
-According to [Use fields extracts by FERs and avoid the where operator](#use-fields-extracted-by-fers-and-avoid-the-where-operator), it is best to use pre-extracted fields. If you need to parse a field that is not pre-extracted, use [parse anchor] (../../Search-Query-Language/01-Parse-Operators/01-Parse-Predictable-Patterns-Using-an-Anchor.md). If you are dealing with unstructured messages that are more complex, leverage [parse regex] (../../Search-Query-Language/01-Parse-Operators/02-Parse-Variable-Patterns-Using-Regex.md) and place it in a Field Extraction Rule.
+According to [Use fields extracts by FERs and avoid the where operator](#use-fields-extracted-by-fers-and-avoid-the-where-operator), it is best to use pre-extracted fields. If you need to parse a field that is not pre-extracted, use [parse anchor] (../../search-query-language/parse-operators/01-Parse-Predictable-Patterns-Using-an-Anchor.md). If you are dealing with unstructured messages that are more complex, leverage [parse regex] (../../search-query-language/parse-operators/02-Parse-Variable-Patterns-Using-Regex.md) and place it in a Field Extraction Rule.
 
 ## When using parse regex avoid expensive tokens
 
@@ -94,7 +94,7 @@ If your search contains filtering criteria that could change each time the sear
 
 ## Aggregate before a lookup
 
-Whenever possible, you should aggregate data prior to doing a [lookup] (../../Search-Query-Language/Search-Operators/lookup-classic.md). In some cases, this will significantly reduce the amount of data the lookup is referencing.
+Whenever possible, you should aggregate data prior to doing a [lookup] (../../search-query-language/search-operators/lookup-classic.md). In some cases, this will significantly reduce the amount of data the lookup is referencing.
 
 **Best approach:**
 

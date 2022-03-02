@@ -34,7 +34,7 @@ The string expression is case-sensitive and can be provided as a field.
 ###### Matching with regex to filter results
 
 See a [case insensitive parse regex
-example](../01-Parse-Operators/02-Parse-Variable-Patterns-Using-Regex.md "Parse Variable Patterns Using Regex").
+example](../parse-operators/02-Parse-Variable-Patterns-Using-Regex.md "Parse Variable Patterns Using Regex").
 
 This example is using a regex to match certain IPv4 addresses in a
 parsed field named `ip`. The regex we are using is:
@@ -70,7 +70,7 @@ Produces aggregate results similar to the following, when you configure
 it to create a [stacked column
 chart](../../../Visualizations-and-Alerts/Dashboards/Chart-Panel-Types/Column-Charts.md "Column Charts"):
 
-![Matches](../../static/img/Search-Query-Language/Search-Operators/matches/matches.png)
+![Matches](../../static/img/search-query-language/search-operators/matches/matches.png)
 
 ###### **Viewing errors and warnings over time**
 
@@ -88,7 +88,7 @@ visualized as a [line
 chart](../../../Visualizations-and-Alerts/Dashboards/Chart-Panel-Types/Line-Charts.md "Line Charts"):
 
 ![Matches
-Event](../../static/img/Search-Query-Language/Search-Operators/matches/Matches_Ex.png)
+Event](../../static/img/search-query-language/search-operators/matches/Matches_Ex.png)
 
 ###### **Matching against parsed field values**
 

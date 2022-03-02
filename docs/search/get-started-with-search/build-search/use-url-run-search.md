@@ -18,12 +18,12 @@ https:/\<endpoin\>/ui/#/search/create?query\<urlEncodedQuer\>&startTime\<star\>&
 
     * in milliseconds since epoch.
     * a [relative time range
-        expression](../Search-Basics/Time-Range-Expressions.md).
+        expression](../search-basics/time-range-expressions.md).
 
 * `<en\>` is the end of your log query time range, the value can be either:
     
     * in milliseconds since epoch.
-    * a [relative time range expression](../Search-Basics/Time-Range-Expressions.md).  You can omit the \<en\>` value and the current time (`now`) is assumed.
+    * a [relative time range expression](../search-basics/time-range-expressions.md).  You can omit the \<en\>` value and the current time (`now`) is assumed.
 
 ## Example
 

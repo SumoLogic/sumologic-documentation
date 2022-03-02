@@ -30,7 +30,7 @@ milliseconds.
 Which returns results similar to:
 
 ![Current
-date](../../static/img/Search-Query-Language/Search-Operators/now/CurrentDate.png)
+date](../../static/img/search-query-language/search-operators/now/CurrentDate.png)
 
 #### Return the current date using formatDate.
 
@@ -41,7 +41,7 @@ current date formatted as YYYY-MM-dd.
 
 This returns the following results.
 
-![Today](../../static/img/Search-Query-Language/Search-Operators/now/Today.png)
+![Today](../../static/img/search-query-language/search-operators/now/Today.png)
 
 For more examples, see [formatDate](formatDate.md "formatDate")
 operator.

@@ -6,7 +6,7 @@ id: logreduce-values
 
 The **LogReduce Values** operator allows you to quickly explore structured logs by known keys. Structured logs can be in JSON, CSV, key-value, or any structured format. Unlike the LogReduce Keys operator, you need to specify the keys you want to explore. The values of each specified key are parsed and aggregated for you to explore.
 
-This operator does not automatically [parse](../Search-Query-Language/01-Parse-Operators.md "Parse Operators") your logs. You need to parse the keys you want to explore prior to specifying them in the LogReduce Values operation. 
+This operator does not automatically [parse](../search-query-language/parse-operators.md "Parse Operators") your logs. You need to parse the keys you want to explore prior to specifying them in the LogReduce Values operation. 
 
 The following table shows the fields that are returned in results.
 
@@ -34,13 +34,13 @@ The details option allows you to investigate and manipulate logs from specific
 
 There are two methods you have to use the details option:
 
-* Click on the **\_count** field value from the LogReduce Values search results.  
+* Click on the `_count` field value from the LogReduce Values search results.  
 
     ![details option by link.png](/img/search/behavior-insights/details-option-by-link.png)  
       
     A new search is created with the necessary identifiers from your initial LogReduce Values search. The search contains all of the raw logs from the selected data cluster.  
      
-* Manually provide the necessary identifiers. You can provide identifiers from previously run LogReduce Values searches. However, the only way to get the search identifier, given with the `shortcodeID` parameter, is to click the **\_count** link from the interface. The query of the created search has the identifier that you can save for later use, up to 1,095 days. For example, the following query was created by clicking the **\_count** link:  
+* Manually provide the necessary identifiers. You can provide identifiers from previously run LogReduce Values searches. However, the only way to get the search identifier, given with the `shortcodeID` parameter, is to click the `_count` link from the interface. The query of the created search has the identifier that you can save for later use, up to 1,095 days. For example, the following query was created by clicking the `_count` link:  
       
     ```sql
     | logreduce values details on %"region", %"partition" pCV6qgaOvASgi1j9KhcGaE6mts6jfOEk "C049BE180425642A"
@@ -75,14 +75,14 @@ To see all the logs by cluster identifiers for further processing, you could�
 ## Limitations
 
 * Not supported with [Real Time alerts](../../Visualizations-and-Alerts/Alerts/Scheduled-Searches/Create_a_Real_Time_Alert.md "Create a Real Time Alert").
-* [Time Compare](../time-compare.md) and the [compare operator](../Search-Query-Language/Search-Operators/Compare.md "Compare") are not supported against LogReduce Values results.
+* [Time Compare](../time-compare.md) and the [compare operator](../search-query-language/search-operators/Compare.md "Compare") are not supported against LogReduce Values results.
 * If you reach the memory limit you can try to shorten the time range or the number of specified fields. When the memory limit is reached you will get partial results on a subset of your data.
 * Response fields `_cluster_id`, `_signature`, and `_count` are not supported with [Dashboard filters](../../Visualizations-and-Alerts/Dashboards/Use-Time-Ranges-and-Filters/05Use-Filters-in-Dashboards.md "Use Filters in Dashboards").
 
-### \_count link 
+### _count link 
 
 * Searches opened by clicking the link provided in the `_count` response field:
-    * are run against [message time](../Get-Started-with-Search/Search-Basics/Built-in-Metadata.md "Built-in Metadata").
+    * are run against [message time](../Get-Started-with-Search/search-basics/built-in-metadata.md "Built-in Metadata").
     * can return different results due to variations in your data.
 * When provided in a Scheduled Search alert, the link from the `_count` response field is invalid and will not work.
 

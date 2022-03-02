@@ -8,7 +8,7 @@ id: time-compare
 
 The **Time Compare** button becomes available in the **Aggregates** tab when you run an aggregate search, and allows you to run a compare operation automatically from your search results.
 
-The Time Compare button uses the [compare operator](#compare-operator) automatically in a query with a click. The compare operator allows you to compare current search results with data from a past time period for aggregate searches. Compare can only be used in aggregate searches that use operators like avg, count, pct, or sum. For complete details, see [Group](Search-Query-Language/aaGroup.md).
+The Time Compare button uses the [compare operator](#compare-operator) automatically in a query with a click. The compare operator allows you to compare current search results with data from a past time period for aggregate searches. Compare can only be used in aggregate searches that use operators like avg, count, pct, or sum. For complete details, see [Group](search-query-language/group-aggregate-operators.md).
 
 You can use Time Compare to:
 
@@ -86,12 +86,12 @@ For more compare operator examples, see [Examples](./time-compare.md).
 
 The compare and [logcompare](/docs/search/logcompare) operators are very similar in syntax and functionality, but they handle different types of data:
 
-* **compare** is used for aggregated numeric data (such as, for analyzing results from a [group by](Search-Query-Language/aaGroup.md) query or a query with aggregation operators such as count, sum, and avg).
+* **compare** is used for aggregated numeric data (such as, for analyzing results from a [group by](search-query-language/group-aggregate-operators.md) query or a query with aggregation operators such as count, sum, and avg).
 * **logcompare** is used for log signature counts (used right after the first pipe).
 
 ## Compare Operator
 
-The compare operator allows you to compare current search results with data from a past time period for aggregate searches. Compare can only be used in aggregate searches that use operators like avg, count, pct, or sum. For complete details, refer to [Group](Search-Query-Language/aaGroup.md). It will also work with outlier, timeslice, and transpose. If you want to use compare with timeslice, do not alias timeslice.
+The compare operator allows you to compare current search results with data from a past time period for aggregate searches. Compare can only be used in aggregate searches that use operators like avg, count, pct, or sum. For complete details, refer to [Group](search-query-language/group-aggregate-operators.md). It will also work with outlier, timeslice, and transpose. If you want to use compare with timeslice, do not alias timeslice.
 
 ### Syntax
 
