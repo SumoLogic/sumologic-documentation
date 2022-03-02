@@ -78,9 +78,9 @@ This section provides information on using Installation Tokens to register [Ins
   className="unique-tabs"
   defaultValue="command"
   values={[
-    {label: 'command', value: 'command'},
-    {label: 'wizard', value: 'wizard'},
-    {label: 'user', value: 'user'},
+    {label: 'Command line', value: 'command'},
+    {label: 'Setup Wizard', value: 'wizard'},
+    {label: 'user.properties', value: 'user'},
   ]}>
 
 <TabItem value="command">
@@ -120,12 +120,12 @@ To register an Installed Collector with [user.properties] (/03Send-Data/Installe
 <Tabs
   defaultValue="mac"
   values={[
-    {label: 'mac', value: 'mac'},
-    {label: 'windows', value: 'windows'},
+    {label: 'macOS/Linux', value: 'mac'},
+    {label: 'Windows', value: 'windows'},
   ]}>
   <TabItem value="mac">
 
-**Mac OSX/Linux**
+**macOS/Linux**
 
 ```
 echo\<TOKEN\> | base64 -d
@@ -250,3 +250,6 @@ An example event log is:
 
 
 ```
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
