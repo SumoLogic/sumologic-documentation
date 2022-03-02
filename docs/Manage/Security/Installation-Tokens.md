@@ -1,6 +1,7 @@
 ---
 id: installation-tokens
 sidebar_title: Installation Tokens
+hide_table_of_contents: true
 description: Use Installation Tokens to register Installed Collectors.
 ---
 
@@ -88,11 +89,13 @@ This section provides information on using Installation Tokens to register [Ins
 
 To register an Installed Collector with the [command line installer] (/03Send-Data/Installed-Collectors/05Reference-Information-for-Collector-Installation/06Parameters-for-the-Command-Line-Installer) you need to run the script with the following authentication parameter:
 
-```-Vsumo.token_and_url```
+`-Vsumo.token_and_url`
 
 For example:
 
-```sudo ./SumoCollector.sh -q -Vsumo.token_and_url\<installationToken\>```
+```
+sudo ./SumoCollector.sh -q -Vsumo.token_and_url\<installationToken\>
+```
 
 Where \<installationToke\>` is the **Token String** you want to use to register the Collector.
 
@@ -124,14 +127,18 @@ To register an Installed Collector with [user.properties] (/03Send-Data/Installe
 
 **Mac OSX/Linux**
 
-```echo\<TOKEN\> | base64 -d```
+```
+echo\<TOKEN\> | base64 -d
+```
 
 </TabItem>
 <TabItem value="windows">
 
 **Windows**
 
-```[Text.Encoding]::Utf8.GetString([Convert]::FromBase64String(\<TOKEN\>'))```
+```
+[Text.Encoding]::Utf8.GetString([Convert]::FromBase64String(\<TOKEN\>'))
+```
 
 Once decoded you'll have a string with a token and a URL.
 
@@ -141,7 +148,9 @@ For example, the following decoded **Token String**:
 
 would be used as:
 
-```url=https://collectors.sumologic.com token=SUMOXXXXXXXXXXXXXXXXXXXXXXXXXXXX```
+```
+url=https://collectors.sumologic.com token=SUMOXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+```
 
 </TabItem>
 </Tabs>
@@ -156,11 +165,13 @@ You can use the Audit Event Index to review the management of installation token
 
 When an installation token is created, deleted, or updated and event log is created. These include the before (from) and after (to) configurations as well as the ID and name of the token and who made the request. To search for management operations like, creating, deleting, and updating tokens use the following query:
 
-```_index=sumologic_audit_events _sourceCategory=tokens```
+```
+_index=sumologic_audit_events _sourceCategory=tokens
+```
 
 An example event log when a token is changed from inactive to active is:
 
-```
+```json {2,6,8,12,26,31,32}
 {
     "from": {
         "type": "CollectorRegistrationToken",
@@ -202,11 +213,13 @@ An example event log when a token is changed from inactive to active is:
 
 Collectors registered with installation tokens are recorded in the Audit Event Index with the ID and name of the token that registered the Collector. The following query returns Collector registrations done with installation tokens.
 
-```_index=sumologic_audit_events _sourceCategory=collection CollectorRegistrationTokenContext```
+```
+_index=sumologic_audit_events _sourceCategory=collection CollectorRegistrationTokenContext
+```
 
 An example event log is:
 
-```
+```json {3,4,23}
 {
     "operator": {
         "tokenId": "0000000000002D27",
