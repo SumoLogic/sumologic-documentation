@@ -137,7 +137,7 @@ echo\<TOKEN\> | base64 -d
 **Windows**
 
 ```
-[Text.Encoding]::Utf8.GetString([Convert]::FromBase64String(\<TOKEN\>'))
+[Text.Encoding]::Utf8.GetString([Convert]::FromBase64String('\<TOKEN\>'))
 ```
 
 Once decoded you'll have a string with a token and a URL.
