@@ -78,9 +78,9 @@ This section provides information on using Installation Tokens to register [Ins
   className="unique-tabs"
   defaultValue="command"
   values={[
-    {label: 'command', value: 'command'},
-    {label: 'wizard', value: 'wizard'},
-    {label: 'user', value: 'user'},
+    {label: 'Command line', value: 'command'},
+    {label: 'Setup Wizard', value: 'wizard'},
+    {label: 'user.properties', value: 'user'},
   ]}>
 
 <TabItem value="command">
@@ -94,7 +94,7 @@ To register an Installed Collector with the [command line installer] (/03Send-Da
 For example:
 
 ```
-sudo ./SumoCollector.sh -q -Vsumo.token_and_url\<installationToken\>
+sudo ./SumoCollector.sh -q -Vsumo.token_and_url=<installationToken>
 ```
 
 Where `<installationToken>` is the **Token String** you want to use to register the Collector.
@@ -120,15 +120,15 @@ To register an Installed Collector with [user.properties] (/03Send-Data/Installe
 <Tabs
   defaultValue="mac"
   values={[
-    {label: 'mac', value: 'mac'},
-    {label: 'windows', value: 'windows'},
+    {label: 'macOS/Linux', value: 'mac'},
+    {label: 'Windows', value: 'windows'},
   ]}>
   <TabItem value="mac">
 
-**Mac OSX/Linux**
+**macOS/Linux**
 
 ```
-echo\<TOKEN\> | base64 -d
+echo <TOKEN > | base64 -d
 ```
 
 </TabItem>
@@ -137,7 +137,7 @@ echo\<TOKEN\> | base64 -d
 **Windows**
 
 ```
-[Text.Encoding]::Utf8.GetString([Convert]::FromBase64String('\<TOKEN\>'))
+[Text.Encoding]::Utf8.GetString([Convert]::FromBase64String('<TOKEN>'))
 ```
 
 Once decoded you'll have a string with a token and a URL.
@@ -250,3 +250,6 @@ An example event log is:
 
 
 ```
+
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
