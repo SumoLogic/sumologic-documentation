@@ -66,7 +66,7 @@ count_distinct(<field>) [as <field>] [by <field>, ...]
 
 ### Rules
 
-* Creates field named `_count_distinct`
+* Creates field named **\_count_distinct**
 
 ### Examples
 

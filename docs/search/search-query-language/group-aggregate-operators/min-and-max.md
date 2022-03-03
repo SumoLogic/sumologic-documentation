@@ -18,7 +18,7 @@ max(<numerical_field>) [as <field>] [by <field>]
 
 ### Rules
 
-* Creates field named `_max`
+* Creates field named **\_max**
 
 ### Example
 

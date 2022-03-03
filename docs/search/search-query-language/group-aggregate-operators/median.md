@@ -17,7 +17,7 @@ pct(<field> [, 50]) [as <field>] [by <field>]
 
 ## Rules
 
-* Creates a field with the naming convention: `_<field>_pct_50`.
+* Creates a field with the naming convention: **\_<field>_pct_50**
 
 ## Examples
 

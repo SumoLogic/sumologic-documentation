@@ -35,7 +35,7 @@ first(<field>) [as <field>] [by <field>]
 
 ### Rules
 
-* The default field created is named `_first`
+* The default field created is named **\_first**
 
 ### Example
 
