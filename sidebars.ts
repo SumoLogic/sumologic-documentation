@@ -145,7 +145,7 @@ module.exports = {
                 'search/get-started-with-search/search-basics/view-traces-search-results',
               ],
             },
-            {
+            /*{
               type: 'category',
               label: 'How to Use the Search Page',
               collapsible: true,
@@ -210,7 +210,7 @@ module.exports = {
                 'search/get-started-with-search/how-to-use-search-page/suggested-searches/suggested-searches-microsoft-iis-parser',
                 'search/get-started-with-search/how-to-use-search-page/suggested-searches/suggested-searches-windows-events',
               ],
-            },
+            },*/
           ],
         },
         {
@@ -289,7 +289,6 @@ module.exports = {
         'search/optimize-search-performance',
         'search/optimizing-search-with-partitions',
         'search/subqueries',
-        'search/time-compare',
         {
           type: 'category',
           label: 'Search Cheat Sheets',
@@ -303,7 +302,7 @@ module.exports = {
             'search/search-cheat-sheets/log-operators-cheat-sheet',
           ],
         },
-        {
+        /*{
           type: 'category',
           label: 'Search Query Language',
           collapsible: true,
@@ -491,7 +490,7 @@ module.exports = {
               ],
             },
           ],
-        },
+        },*/
         {
           type: 'category',
           label: 'Search FAQs',

@@ -218,7 +218,7 @@ module.exports = {
                   {
                     label: 'Searches and Logs',
                     sublabel: 'Find log data with queries',
-                    to: 'docs/get-started',
+                    to: '/docs/search',
                     icon: 'view_day',
                   },
                   {
