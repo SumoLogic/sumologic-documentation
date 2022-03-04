@@ -23,7 +23,7 @@ To add an image, save the .png file with a simple name, no spaces in it, in `/st
 
 ### Instructions
 
-Always use `1.` to start your instructions. You do not need to actually number the list. It will automatically number for you on build.
+Always use `1.` to start your instructions. You don't need to actually number the list. It will automatically number for you on build.
 
 1. Click **Collections**, then **Sources** tab.
 1. Next step, just write it out.

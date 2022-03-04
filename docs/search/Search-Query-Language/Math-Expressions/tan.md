@@ -6,10 +6,14 @@ id: tan
 
 Tangent of argument in radians.
 
-### Syntax
+## Syntax
 
-* `tan\<\>) as\<fiel\>`
+```sql
+tan(<x>) as <field>
+```
 
-### Example
+## Example
 
-* `tan(1) as v // v = 1.5574077246549023`
+```sql
+tan(1) as v // v = 1.5574077246549023
+```

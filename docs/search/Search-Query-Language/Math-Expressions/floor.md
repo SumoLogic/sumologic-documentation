@@ -4,14 +4,20 @@ id: floor
 
 # floor
 
-The floor function rounds down to the largest previous integer value.
-Returns the largest integer not greater than x.
+The floor function rounds down to the largest previous integer value. Returns the largest integer not greater than x.
 
-### Syntax
+## Syntax
 
-* `floor\<\>) as\<fiel\>`
+```sql
+floor(<x>) as <field>
+```
 
-### Examples
+## Example
 
-* `floor(1.5) as v // v = 1`
-* `floor(-1.5) as v // v = -2`
+```sql
+floor(1.5) as v // v = 1
+```
+
+```sql
+floor(-1.5) as v // v = -2
+```

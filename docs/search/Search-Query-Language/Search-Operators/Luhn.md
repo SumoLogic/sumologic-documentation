@@ -4,37 +4,44 @@ id: luhn
 
 # Luhn
 
-The **Luhn** operator uses Luhn’s algorithm to check message logs for
-strings of numbers that may be credit card numbers and then validates
-them. It takes a string as an input, strips out all characters that are
-not numerals, and checks if the resulting string is a valid credit card
-number, returning true or false accordingly.
+The **Luhn** operator uses Luhn’s algorithm to check message logs for strings of numbers that may be credit card numbers and then validates them. It takes a string as an input, strips out all characters that are not numerals, and checks if the resulting string is a valid credit card number, returning true or false accordingly.
 
-### Syntax
+## Syntax
 
-* `luhn\<fiel\>) [as\<fiel\>]`
-* `luhn``(\<input strin\>") [as `\<fiel\>]`
+```sql
+luhn(<field>) [as <field>]
+```
 
-### Examples
+```sql
+luhn("<input string>") [as <field>]
+```
 
-#### Identify and verify credit card numbers in message logs
+## Examples
 
-Use the following query to identify credit card numbers in message logs,
-and verify them using the Luhn operator:
+### Identify and verify credit card numbers in message logs
 
-`| parse regex "(\<maybec\>\d{4}-\d{4}-\d{4}-\d{4})" nodrop | parse regex "(\<maybec\>\d{4}\s\d{4}\s\d{4}\s\d{4})" nodrop | parse regex "(\<maybec\>\d{16})" nodrop | if (luhn(maybecc), true, false) as valid`
+Use the following query to identify credit card numbers in message logs, and verify them using the Luhn operator:
+
+```sql
+| parse regex "(?<maybecc>\d{4}-\d{4}-\d{4}-\d{4})" nodrop
+| parse regex "(?<maybecc>\d{4}\s\d{4}\s\d{4}\s\d{4})" nodrop
+| parse regex "(?<maybecc>\d{16})" nodrop
+| if (luhn(maybecc), true, false) as valid
+```
 
 which provides results such as:
 
-![](../../static/img/search-query-language/search-operators/Luhn/../../../../Assets/Media_Repo_for_Search/luhn_operator_example.png)
+![operator example](/img/reuse/query-search/luhn_operator_example.png)
 
-#### Search for and verify a specific credit card number
+### Search for and verify a specific credit card number
 
-Use the following query to search for a specific credit card number and
-verify it using the Luhn operator:
+Use the following query to search for a specific credit card number and verify it using the Luhn operator:
 
-`*| "6666-7777-6666-8888" as b   | luhn(b) as d`
+```sql
+*| "6666-7777-6666-8888" as b 
+ | luhn(b) as d
+```
 
 It would provide the following results:
 
-![](../../static/img/search-query-language/search-operators/Luhn/../../../../Assets/Media_Repo_for_Search/lunh_operator_example1.png)
+![operator example](/img/reuse/query-search/lunh_operator_example1.png)

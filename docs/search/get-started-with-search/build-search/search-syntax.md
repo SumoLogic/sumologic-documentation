@@ -33,7 +33,7 @@ The pipe delimiter is used to separate the keyword expression and each subsequen
 
 **Example:**
 
-![query syntax](/img/snippet/query-search/query-syntax-new.png)
+![query syntax](/img/reuse/query-search/query-syntax-new.png)
 
 ## User-Parsed Fields
 

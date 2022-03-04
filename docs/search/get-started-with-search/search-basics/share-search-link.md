@@ -15,7 +15,7 @@ This link will be available for three years after it is created. 
 
 To share a link to a search:
 
-1.  Run a search you could like to share.
+1.  Run a search you'd like to share.
 2.  (Optional) After the search results are complete, in the **Aggregates** tab, select a chart type to display the data visually. 
 3.  Click the three-dot icon and click **Share** from the provided options.   
 

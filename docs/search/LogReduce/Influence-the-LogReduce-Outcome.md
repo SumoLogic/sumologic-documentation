@@ -6,7 +6,7 @@ id: influence-the-logreduce-outcome
 
 The algorithm used for the logreduce operator uses fuzzy logic and soft matching to group messages with similar structures and common repeated text strings into **Signatures**, providing a quick investigative view, or snapshot, for the keywords or time range provided. LogReduce data is based on the data available to the algorithm during the time range of your search.
 
-In some cases, this data sampling produces results that do not meet the needs of your organization. You can see more granular results by [splitting a signature](#splitting-a-signature). In addition, you can promote or demote a signature to help Sumo Logic understand what data is the most relevant to you.
+In some cases, this data sampling produces results that don't meet the needs of your organization. You can see more granular results by [splitting a signature](#splitting-a-signature). In addition, you can promote or demote a signature to help Sumo Logic understand what data is the most relevant to you.
 
 The following icons allow you to change the results of a LogReduce report:
 
@@ -37,9 +37,9 @@ If no one in your account has ever promoted or demoted a signature the default [
 
 ## Splitting a Signature
 
-If you could like to see more granular results, you can **split** a signature. When you split a signature, you will notice that fewer wildcard asterisks will appear; instead specific values are included in the signatures. Even though the data is more specific, the results after splitting a signature will still be fuzzy because the LogReduce algorithm bases results only on the window of time you've run the search against.
+If you'd like to see more granular results, you can **split** a signature. When you split a signature, you will notice that fewer wildcard asterisks will appear; instead specific values are included in the signatures. Even though the data is more specific, the results after splitting a signature will still be fuzzy because the LogReduce algorithm bases results only on the window of time you've run the search against.
 
-Click the **Split** icon next to the signature you could like to split.
+Click the **Split** icon next to the signature you'd like to split.
 
 :::important
 When you split a signature, those changes are perpetuated organization-wide from now on. 

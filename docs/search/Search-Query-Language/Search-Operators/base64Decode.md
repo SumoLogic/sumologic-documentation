@@ -4,16 +4,19 @@ id: basedecode
 
 # base64Decode
 
-The **base64Decode** operator takes a base64 string and converts it to
-an ASCII string.
+The **base64Decode** operator takes a base64 string and converts it to an ASCII string.
 
-Input must be a valid base64 string. Invalid input is returned
-unaltered. 
+Input must be a valid base64 string. Invalid input is returned unaltered. 
 
 ### Syntax
 
-* `base64Decode(\<strin\>"[, \<encodin\>"]) as\<fiel\>`
-* `base64Decode\<string_fiel\>[, \<encodin\>"]) as\<fiel\>`
+```sql
+base64Decode("<string>"[, "<encoding>"]) as <field>
+```
+
+```sql
+base64Decode(<string_field>[, "<encoding>"]) as <field>
+```
 
 ##### Supported encodings
 
@@ -28,12 +31,14 @@ unaltered. 
 
 ### Examples
 
-The following example returns `V` with a value of
-`http://codec.apache.org/commmons`:
+The following example returns `V` with a value of `http://codec.apache.org/commmons`:
 
-`| base64Decode("aHR0cDovL2NvZGVjLmFwYWNoZS5vcmcvY29tbW1vbnM=") as V`   
+```sql
+| base64Decode("aHR0cDovL2NvZGVjLmFwYWNoZS5vcmcvY29tbW1vbnM=") as V
+```   
 
-The following example returns `V` with a value of
-`This is a test string`:
+The following example returns `V` with a value of `This is a test string`:
 
-`| base64Decode("VABoAGkAcwAgAGkAcwAgAGEAIAB0AGUAcwB0ACAAcwB0AHIAaQBuAGcA", "UTF-16LE") as V`
+```sql
+| base64Decode("VABoAGkAcwAgAGkAcwAgAGEAIAB0AGUAcwB0ACAAcwB0AHIAaQBuAGcA", "UTF-16LE") as V
+```

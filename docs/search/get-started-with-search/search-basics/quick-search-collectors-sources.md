@@ -13,6 +13,6 @@ You can quickly start a search for a Collector, Source, or Source Category from 
 
 3.  Click the icon.
 
-    The Search page opens with the Collector, Source, or Source Category prefilled. The search starts running automatically. After the search  results are displayed, you can modify the search settings, if needed, as you would for any other search.
+    The Search page opens with the Collector, Source, or Source Category prefilled. The search starts running automatically. After the search  results are displayed, you can modify the search settings, if needed, as you'd for any other search.
 
     ![run search from Collection page.png](/img/search/get-started-search/search-basics/collector-source.png)

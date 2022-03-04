@@ -45,7 +45,7 @@ parse "User=*:" as user_email
 
 The result of the above query would be:
 
-![parse field](/img/snippet/query-search/parse_field_example.jpg)
+![parse field](/img/reuse/query-search/parse_field_example.jpg)
 
 The `field<field_name>` syntax is not just limited to fields that have been specifically parsed from the logs. This syntax can also be used to parse the predefined metadata fields such as `_collector`, `_source`, `_sourceName`, etc. For example, if we have a long list of Collectors all with the same naming format of HostName_10.10.10.1 we can parse this metadata field value to just get the IP address.
 

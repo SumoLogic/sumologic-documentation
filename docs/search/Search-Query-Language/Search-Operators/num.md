@@ -4,27 +4,28 @@ id: num
 
 # num
 
-The num operator converts a field to a floating point number. Using num
-in a query is useful for sorting results by number instead of
-alphabetically, which is the default.
+The num operator converts a field to a floating point number. Using num in a query is useful for sorting results by number instead of alphabetically, which is the default.
 
 ### Syntax
 
-* `num\<fiel\>) [as\<fiel\>]`
+```sql
+num(<field>) [as <field>]
+```
 
 ### Rules
 
-* The value of the field must be a negative/positive integer or a real
-    number. For example, 500, 123234820932, or 352.748.
+* The value of the field must be a negative/positive integer or a real number. For example, 500, 123234820932, or 352.748.
 
 ### Example
 
-Use this query to use num to search for Scheduled Searches, and sort
-them by the time it took each search to execute in seconds. Without the
-conversion, the results would be sorted in alphabetical order.
+Use this query to use num to search for Scheduled Searches, and sort them by the time it took each search to execute in seconds. Without the conversion, the results would be sorted in alphabetical order.
 
-`_sourceCategory=concierge completed execution | parse "Execution duration: * s" as duration | num(duration) | sort by duration`
+```sql
+_sourceCategory=concierge completed execution
+| parse "Execution duration: * s" as duration
+| num(duration) | sort by duration
+```
 
 This query produces results like this:
 
-![numoperator.png](../../static/img/search-query-language/search-operators/num/numoperator.png)
+![numoperator.png](/img/search/search-query-language/search-operators/numoperator.png)

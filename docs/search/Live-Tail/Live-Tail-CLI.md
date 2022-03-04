@@ -19,7 +19,7 @@ The limitations for the Live Tail CLI are the same as the [Live Tail](about-liv
 * You can tail logs ingested from Sources configured on Installed Collectors and from HTTP and Cloud Syslog Sources on Hosted Collectors. 
 
     :::note
-    Data ingested from Amazon S3 cannot be tailed because of restrictions from Amazon.
+    Data ingested from Amazon S3 can't be tailed because of restrictions from Amazon.
     :::
 
 * The Live Tail CLI session will expire after 30 minutes of inactivity. This is to provide the best performance possible. If a Live Tail session has expired, you can restart it at any time.
@@ -121,6 +121,6 @@ You must download the latest version before you can start a new Live Tail CLI se
 
 If a minor version update exists, you will see the error:
 
-> A newer version of Live Tail CLI is available, but your current version will still function. If you would like to download the latest version, go to \<link\>
+> A newer version of Live Tail CLI is available, but your current version will still function. If you'd like to download the latest version, go to \<link\>
 
-You are not required to download the latest version to start a new Live Tail, but if you’d like to take advantage of the latest bug fixes and features, you could.
+You are not required to download the latest version to start a new Live Tail, but if you’d like to take advantage of the latest bug fixes and features, you'd.

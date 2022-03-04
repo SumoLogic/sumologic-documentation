@@ -22,7 +22,7 @@ For example, this query can be rendered as a Box Plot Chart:
 error | 5 as a | 6 as b | 7 as c | 8 as d | 9 as e | min(a), pct(b,25), pct(c,50), pct(d,75), max(e)
 ```
 
-Because this query does not meet all the requirements, it cannot be
+Because this query does not meet all the requirements, it can't be
 rendered as a Box Plot Chart:
 
 ```sql
@@ -54,4 +54,4 @@ To create a Box Plot chart
 
     ![Charts - box plot](/img/dashboards-new/panels/box-plot-charts/charts_box_plot.png)    
 
-1. (Optional) Click **Add to Dashboard** if you would like to save the chart as a panel. 
+1. (Optional) Click **Add to Dashboard** if you'd like to save the chart as a panel. 

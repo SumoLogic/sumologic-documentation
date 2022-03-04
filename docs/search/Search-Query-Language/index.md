@@ -12,7 +12,7 @@ For a collection of customer-created search queries and their use cases, see the
 
 The syntax of the search query language is written in the following styles.
 
-{@import ../../snippet/help-documentation-styles.md}
+{@import ../../reuse/help-documentation-styles.md}
 
 01Start-Here/03About-Sumo-Logic/Help_Documentation_Styles
 

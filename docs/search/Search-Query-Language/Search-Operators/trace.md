@@ -4,60 +4,39 @@ id: trace
 
 # trace
 
-A trace operator acts as a highly sophisticated filter to connect the
-dots across different log messages. You can use any identifying value
-with a trace operator (such as a user ID, IP address, session ID, etc.)
-to retrieve a comprehensive set of activity associated to that original
-ID.
+A trace operator acts as a highly sophisticated filter to connect the dots across different log messages. You can use any identifying value with a trace operator (such as a user ID, IP address, session ID, etc.) to retrieve a comprehensive set of activity associated to that original ID.
 
 Trace operators require the following:
 
-* [Regular
-    expression](../parse-operators/02-Parse-Variable-Patterns-Using-Regex.md "Parse Variable Patterns Using Regex")
-    to find related messages.
+* [Regular expression](../parse-operators/parse-variable-patterns-using-regex.md) to find related messages.
 * Starting value (for example, an ID).
 
 ### Syntax
 
-* `trace \<rege\>" \<starting_valu\>"`
+```sql
+trace "<regex>" "<starting_value>"
+```
 
 ### Tracing session IDs
 
-Let's say that your product uses a variety of session IDs to track
-requests as they flow through your system. Different components use a
-series of four-digit hexadecimal IDs to process a customer order, as
-shown here:
+Let's say that your product uses a variety of session IDs to track requests as they flow through your system. Different components use a series of four-digit hexadecimal IDs to process a customer order, as shown here:
 
-![trace_graphic
-4.png](../../static/img/search-query-language/search-operators/trace/trace_graphic-4.png)
+![trace_graphic 4.png](/img/search/search-query-language/search-operators/trace_graphic.png)
 
-Imagine that an error happened at some point in the process, generating
-an error including "PROCESSING FAILED: webID=7F92. Starting from this
-information, we can use a trace operator in our query to following the
-chain of activity:
+Imagine that an error happened at some point in the process, generating an error including "PROCESSING FAILED: webID=7F92. Starting from this information, we can use a trace operator in our query to following the chain of activity:
 
-`* | trace "ID=([0-9a-fA-F]{4})" "7F92" | where _raw matches "*ERROR*"`
+```sql
+* | trace "ID=([0-9a-fA-F]{4})" "7F92" | where _raw matches "*ERROR*"
+```
 
-This query tells trace how to identify the individual pieces of the
-chain, using the four-digit hexadecimal string following "ID=". Trace
-then scans incoming logs to connect the dots, building a chain based on
-IDs occurring together in the same log, starting from the value we
-supplied (7F92 in our example). So if trace observes a long, "Initiating
-requestID=082A for webID=7F92" it identifies the relationship between
-the webID we supplied with the requestID. Trace will continue to scan
-logs, building the chain of events. Log messages unrelated to these
-values are disregarded.
+This query tells trace how to identify the individual pieces of the chain, using the four-digit hexadecimal string following "ID=". Trace then scans incoming logs to connect the dots, building a chain based on IDs occurring together in the same log, starting from the value we supplied (7F92 in our example). So if trace observes a long, "Initiating requestID=082A for webID=7F92" it identifies the relationship between the webID we supplied with the requestID. Trace will continue to scan
+logs, building the chain of events. Log messages unrelated to these values are disregarded.
 
 ### Tracing forward and backward in time
 
-You can use a trace operator to trace events in the past or to track
-future events. In either case, a chain is built, finding links between
-log messages to determine activity based on whatever values you query.
-For our forward and backward trace operations, we're going to assume
-that a specific Windows computer has been compromised.
+You can use a trace operator to trace events in the past or to track future events. In either case, a chain is built, finding links between log messages to determine activity based on whatever values you query. For our forward and backward trace operations, we're going to assume that a specific Windows computer has been compromised.
 
-We want to build a chain of events from the compromised host to try to
-determine the identity of the hacker. To do this, we will need to:
+We want to build a chain of events from the compromised host to try to determine the identity of the hacker. To do this, we will need to:
 
 1.  Identify the relevant login messages.
 2.  Give the compromised host as the first value to match.
@@ -65,31 +44,16 @@ determine the identity of the hacker. To do this, we will need to:
 
 ### Tracing forward
 
-We want to trace all Windows logins moving forward (+), starting from
-John's workstation (which may be compromised), to build a chain of
-events. We can use a trace operator query to produce the following
-results:
+We want to trace all Windows logins moving forward (+), starting from John's workstation (which may be compromised), to build a chain of events. We can use a trace operator query to produce the following results:
 
-![](../../static/img/search-query-language/search-operators/trace/../../../../Assets/Media_Repository/trace_forward_example.png)
+![](/img/reuse/query-search/trace_forward_example.png)
 
-Trace tells us that from John's Workstation there was a login event to
-WIN1.example.com, from which there was a login to WIN2.example.com and
-then to WIN3.example.com within the same time frame. While we may not
-know if these login events were from the same person, it helps to
-determine potentially affected hosts (especially since generic usernames
-were used as well as an Administrator).
+Trace tells us that from John's Workstation there was a login event to WIN1.example.com, from which there was a login to WIN2.example.com and then to WIN3.example.com within the same time frame. While we may not know if these login events were from the same person, it helps to determine potentially affected hosts (especially since generic usernames were used as well as an Administrator).
 
 ### Tracing backward
 
-We want to build a chain of events going backwards in time (-) from a
-compromised host, Win3.example.com, to try to determine the identity of
-the hacker. We want to trace all Windows logins moving backward,
-starting from Win3.example.com to build a chain of events. We can use a
-trace operator query to produce the following results:
+We want to build a chain of events going backwards in time (-) from a compromised host, Win3.example.com, to try to determine the identity of the hacker. We want to trace all Windows logins moving backward, starting from Win3.example.com to build a chain of events. We can use a trace operator query to produce the following results:
 
-![](../../static/img/search-query-language/search-operators/trace/../../../../Assets/Media_Repository/trace_backwards_example.png)
+![](/img/reuse/query-search/trace_backwards_example.png)
 
-From these results, we can see that for WIN3.example.com there was a
-login event from WIN2.example.com from which there was another login
-event from WIN1.example.com. WIN1.example.com was logged into by John
-from his workstation, allowing us to identify the attacker.
+From these results, we can see that for WIN3.example.com there was a login event from WIN2.example.com from which there was another login event from WIN1.example.com. WIN1.example.com was logged into by John from his workstation, allowing us to identify the attacker.

@@ -6,10 +6,14 @@ id: sin
 
 Sine of argument in radians.
 
-### Syntax
+## Syntax
 
-* `sin\<\>) as\<fiel\>`
+```sql
+sin(<x>) as <field>
+```
 
-### Example
+## Example
 
-* `sin(1) as v // v = 0.8414709848078965`
+```sql
+sin(1) as v // v = 0.8414709848078965
+```

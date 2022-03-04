@@ -21,9 +21,9 @@ You can create a field with the `as` operator.
 
 ## Limitations
 
-You do not need to escape field names that:
+You don't need to escape field names that:
 
 * have characters matching `a-zA-Z0-9_`
-* do not begin with a number
+* don't begin with a number
 
 Escaping field names with the syntax `%\<field_nam\>"` is a safe practice when using special characters. You will need to escape any quote characters `"` with a backslash `\` to use them in the field name when referencing a field with special characters.

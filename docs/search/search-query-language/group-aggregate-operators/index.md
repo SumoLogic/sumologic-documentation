@@ -43,9 +43,9 @@ You can use **by** instead of **group by** so `count group by user` is equ
 * Can not be used with the [LogReduce](/docs/search/logreduce) operator.
 * When [parsing and naming (aliasing) fields](parse-operators/parse-field-option.md), avoid using the names of grouping functions or other operators as field names.
 * When using **count**, or any grouping function, remember to include the underscore before the field name (sort by `_count`).
-* Multiple **aggregation** functions can be on the same line but you cannot include another function, such as a math function, on the same line of a query.
+* Multiple **aggregation** functions can be on the same line but you can't include another function, such as a math function, on the same line of a query.
 
-For example, you cannot use:
+For example, you can't use:
 
 ```sql
 ... | avg(x + y) as average, sum(x+y) as total 
@@ -57,13 +57,13 @@ You would need to do that in two separate steps, such as:
 ... | x + y as z | avg(z) as average, sum(z) as total
 ```
 
-In another example, you cannot use:
+In another example, you can't use:
 
 ```sql
 avg(abs_latency)/1000/60 as avg_latency_min
 ```
 
-Instead, you would need to use two separate lines:
+Instead, you'd need to use two separate lines:
 
 ```sql
 avg(abs_latency_ms) as avg_latency_ms 

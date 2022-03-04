@@ -232,7 +232,7 @@ To modify the JSON of a chart, do the following:
 
 ### Values in chart
 
-To view values inside the chart so you do not have to hover on the chart:
+To view values inside the chart so you don't have to hover on the chart:
 
 ![data in chart.png](/img/dashboards-new/panels/modify-chart/data-in-chart.png)
 
@@ -292,7 +292,7 @@ use the following JSON:
 
 ### Outside values
 
-To place values outside the chart so you do not have to hover on the chart:
+To place values outside the chart so you don't have to hover on the chart:
 
 ![outside chart values.png](/img/dashboards-new/panels/modify-chart/outside-chart-values.png)
 

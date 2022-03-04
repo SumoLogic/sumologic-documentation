@@ -27,11 +27,11 @@ To set Messages tab preferences, do the following:
          
     * **Show URI-decoded format.** By default, UTF characters in JSON are automatically decoded. Toggle this off if you want to intentionally include these when viewing JSON log messages in the UI.
     * **Dictionary Term Highlighting.** When selected, the terms "error" and "exception" are displayed in red text.
-    * **Recent Messages First / Oldest Messages First.** By default, **Recent Messages First** is selected, but if you could prefer to view oldest log messages at the top of the Messages pane, select **Oldest Messages First**.
+    * **Recent Messages First / Oldest Messages First.** By default, **Recent Messages First** is selected, but if you'd prefer to view oldest log messages at the top of the Messages pane, select **Oldest Messages First**.
     * **View 25 messages per page.** The default is to show 25 log messages per **Page** in the **Messages** tab. You can set this at 15 to 500.  
          
 4.  Click **Save** to save your changes.
-5.  If you could like the changes you've made to apply to all new log search tabs, click the Settings gear icon in the upper right corner of the Messages tab, and then select **Save as Default View**.
+5.  If you'd like the changes you've made to apply to all new log search tabs, click the Settings gear icon in the upper right corner of the Messages tab, and then select **Save as Default View**.
 
 ## Export message fields
 

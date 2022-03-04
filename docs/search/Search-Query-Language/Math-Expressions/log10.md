@@ -1,15 +1,19 @@
 ---
-id: log
+id: log10
 ---
 
 # log10
 
 The log10 function returns the base 10 logarithm of x.
 
-### Syntax
+## Syntax
 
-* `log10\<\>) as\<fiel\>`
+```sql
+log10(<x>) as <field>
+```
 
-### Example
+## Example
 
-* `log10(2) as v // v = 0.3010299956639812`
+```sql
+log10(2) as v // v = 0.3010299956639812
+```

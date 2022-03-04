@@ -4,27 +4,19 @@ id: diff
 
 # diff
 
-The **diff** operator calculates the rate of change in a field between
-consecutive rows. To produce results, diff requires that a specified
-field contain numeric data; any non-numerical values are removed from
-the search results.
+The **diff** operator calculates the rate of change in a field between consecutive rows. To produce results, diff requires that a specified field contain numeric data; any non-numerical values are removed from the search results.
 
-Diff does not sort data but instead operates on rows in the order that
-they appear in the input stream, subtracting the number in a field from
-the number in the same field in the previous line.
+Diff does not sort data but instead operates on rows in the order that they appear in the input stream, subtracting the number in a field from the number in the same field in the previous line.
 
 The first line of results will never display diff results.
 
-Adding a group by function to a diff operator query calculates the
-difference between consecutive values in each group. (Data from each
-group are calculated separately.) Grouping does not affect the order in
-which rows appear in the output stream.
+Adding a group by function to a diff operator query calculates the difference between consecutive values in each group. (Data from each group are calculated separately.) Grouping does not affect the order in which rows appear in the output stream.
 
-### Syntax
+## Syntax
 
 * `diff\<fiel\> [as\<fiel\>] [by\<field\>,\<field\>, ...]`
 
-### Rules
+## Rules
 
 * An alias for diff is optional. When an alias is not provided, \_diff
     is the default alias.
@@ -37,7 +29,7 @@ which rows appear in the output stream.
 * To add a query that includes a diff operator to a Dashboard, you
     must add a group by function before the diff operator.
 
-### Examples
+## Examples
 
 **Using diff to calculate the difference of a quantity between time
 points.** 
@@ -48,7 +40,7 @@ Using diff with timeslice, you can run a query similar to:
 
 to produce results similar to:
 
-![diffoperator.png](../../static/img/search-query-language/search-operators/diff/diffoperator.png)
+![diffoperator.png](/img/search/search-query-language/search-operators/diffoperator.png)
 
 Note that there is no value for diff_bytes in line 1, as expected.
 

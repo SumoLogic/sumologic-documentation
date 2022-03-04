@@ -34,7 +34,7 @@ You have a couple options to create and activate an account:
 ## Free Trial Accounts
 
 Sumo Logic Free Trial Accounts offer 30 days of Enterprise account access to review and use features. After
-30 days, if you do not choose to purchase, you will continue with a Sumo Logic Free Account.
+30 days, if you don't choose to purchase, you will continue with a Sumo Logic Free Account.
 
 Sign up and activate within minutes:
 
@@ -80,7 +80,7 @@ Next, use the [Setup Wizard] to send your logs to Sumo Logic.
 Signing up for a Sumo Logic account through the AWS Marketplace creates a new Sumo Logic organization and account. It allows you to pay your bill using your Amazon account. All you need to sign up is a company email address and your location: North America, Europe, or Australia.
 
 :::note Valid Emails
-Please do not use a Google or Yahoo email account to create your Sumo Logic account.
+Please don't use a Google or Yahoo email account to create your Sumo Logic account.
 :::
 
 Select the plan that fits your usage requirements. The first 30 days are free of charge. All Sumo Logic features are supported for your Account Type, based on your subscription plan.
@@ -164,7 +164,7 @@ Your subscription is cancelled immediately.
 
 If upgrades are allowed for your AWS account, you can upgrade your active account directly from Sumo Logic.
 
-- Payment is handled by Amazon. You do not need to provide any payment information.
+- Payment is handled by Amazon. You don't need to provide any payment information.
 - The account upgrade is independent from your AWS subscription. It increases your reserved Sumo Logic ingest volume, so you are less likely to be subject to overage charges.
 
 To upgrade:

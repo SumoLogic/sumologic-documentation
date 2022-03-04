@@ -6,10 +6,14 @@ id: hypot
 
 Returns the square root of the sum of an array of squares.
 
-### Syntax
+## Syntax
 
-* `hypot\<\>,\<\>) as\<fiel\>`
+```sql
+hypot(<a>, <b>) as <field>
+```
 
-### Example
+## Example
 
-* `hypot(3, 4) as c // c = 5`
+```sql
+hypot(3, 4) as c // c = 5
+```

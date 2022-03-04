@@ -60,13 +60,13 @@ There are two methods you have to use the details option:
 | cluster_id  | The signature identifier that was provided from your initial LogReduce Values search. | Null |
 | shortcodeID | The unique hash value assigned to the initial LogReduce Values search.  | Null |
 
-For example, to see details from a particular LogReduce Values search and data clusters, you could use the following syntax: 
+For example, to see details from a particular LogReduce Values search and data clusters, you'd use the following syntax: 
 
 ```sql
 | logreduce values details on %\<key\>"[, %\<key\>", ...]�\<shortcodeI\> \<cluster_id\>,\<cluster_id\>, ...]
 ```
 
-To see all the logs by cluster identifiers for further processing, you could use the following syntax:
+To see all the logs by cluster identifiers for further processing, you'd use the following syntax:
 
 ```sql
 | logreduce values details on %\<key\>"[, %\<key\>", ...]\<shortcodeI\>
@@ -139,7 +139,7 @@ Results show each unique signature:
 
 ![CloudTrail example LogReduce Values.png](../static/img/Behavior_Insights/LogReduce_Values/CloudTrail-example-LogReduce-Values.png)
 
-Next, use [LogExplain](logexplain.md) to analyze which users, IP addresses, AWS regions, and S3 event names most explain the S3 Access Denied error based on their prevalence in AWS CloudTrail logs that contain S3 Access Denied errors versus logs that do not contain these errors.
+Next, use [LogExplain](logexplain.md) to analyze which users, IP addresses, AWS regions, and S3 event names most explain the S3 Access Denied error based on their prevalence in AWS CloudTrail logs that contain S3 Access Denied errors versus logs that don't contain these errors.
 
 **Drill down**
 

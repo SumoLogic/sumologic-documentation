@@ -1,16 +1,19 @@
 ---
-id: expm
+id: expm1
 ---
 
 # expm1
 
-The **expm1** function returns value of x in exp(x)-1, compensating for
-the roundoff in exp(x).
+The **expm1** function returns value of x in exp(x)-1, compensating for the roundoff in exp(x).
 
-### Syntax
+## Syntax
 
-* `expm1\<\>) as\<fiel\>`
+```sql
+expm1(<x>) as <field>
+```
 
-### Example
+## Example
 
-* `expm1(0.1) as v // v = 0.10517091807564763`
+```sql
+expm1(0.1) as v // v = 0.10517091807564763
+```

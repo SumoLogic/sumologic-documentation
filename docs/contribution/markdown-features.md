@@ -36,7 +36,7 @@ For full options, see [Docusaurus Markdown front matter](https://docusaurus.io/d
 Use hashtags `#` to indicate the heading level. You should not use H1 down in the page, this is automatically used for the page title when building the site. Link anchors automatically also generate.
 
 :::important
-Use these heading in correct order. Right after the H1 title you would next have an H2, not jumping to H3 or H5. This affects search and SEO structures to search crawlers like Google. Malformed structures can reduce search and SEO for the page. Docusaurus carefully formats generated pages to ensure strong SEO.
+Use these heading in correct order. Right after the H1 title you'd next have an H2, not jumping to H3 or H5. This affects search and SEO structures to search crawlers like Google. Malformed structures can reduce search and SEO for the page. Docusaurus carefully formats generated pages to ensure strong SEO.
 :::
 
 ## H2 - Create the best documentation
@@ -156,7 +156,7 @@ Always start with `1.` for numbered, ordered lists. The generator will automatic
 1. First ordered list item.
 1. Another item.
    - Unordered sub-list.
-1. Actual numbers do not matter, just that it is a number.
+1. Actual numbers don't matter, just that it is a number.
    1. Ordered sub-list.
 1. And another item.
 
@@ -169,7 +169,7 @@ Always start with `1.` for numbered, ordered lists. The generator will automatic
 1. First ordered list item.
 1. Another item.
    - Unordered sub-list.
-1. Actual numbers do not matter, just that it is a number.
+1. Actual numbers don't matter, just that it is a number.
    1. Ordered sub-list.
 1. And another item.
 

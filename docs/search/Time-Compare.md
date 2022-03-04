@@ -44,7 +44,7 @@ The comparison results appear in a new column titled with the timeshift.
 
 To create a custom Time Compare, select Custom from the menu, then make your selections in the Custom Time Compare query builder dialog.
 
-You can retrieve time-shifted data up to the last 40 days. We do not support going back further in time.
+You can retrieve time-shifted data up to the last 40 days. We don't support going back further in time.
 
 ![CustomTimeCompare.png](/img/search/time-compare/CustomTimeCompare.png)
 
@@ -91,7 +91,7 @@ The compare and [logcompare](/docs/search/logcompare) operators are very simil
 
 ## Compare Operator
 
-The compare operator allows you to compare current search results with data from a past time period for aggregate searches. Compare can only be used in aggregate searches that use operators like avg, count, pct, or sum. For complete details, refer to [Group](search-query-language/group-aggregate-operators.md). It will also work with outlier, timeslice, and transpose. If you want to use compare with timeslice, do not alias timeslice.
+The compare operator allows you to compare current search results with data from a past time period for aggregate searches. Compare can only be used in aggregate searches that use operators like avg, count, pct, or sum. For complete details, refer to [Group](search-query-language/group-aggregate-operators.md). It will also work with outlier, timeslice, and transpose. If you want to use compare with timeslice, don't alias timeslice.
 
 ### Syntax
 
@@ -99,7 +99,9 @@ The compare operator allows you to compare current search results with data from
 
 Compare the present results with a single time period in the past. To make the comparison, specify the time interval you want to go back, in the form of number and time granularity:
 
-* `... | compare timeshift\<number\<time granularit\>`
+```sql
+... | compare timeshift <number><time granularity>
+```
 
 The following query returns data from the present, along with results from yesterday. Here the parameter `1d` specifies the time interval we want to go back to get the data for the comparison.
 
@@ -109,7 +111,7 @@ The following query returns data from the present, along with results from yeste
 
 This comparison can be displayed visually as:
 
-![compare single diagram](/img/snippet/query-search/compare_single_diagram.png)
+![compare single diagram](/img/reuse/query-search/compare_single_diagram.png)
 
 In another example, this query returns data from the present along with results from last week.
 
@@ -121,7 +123,9 @@ In another example, this query returns data from the present along with results
 
 Compare the present results with multiple time periods in the past. The first parameter specifies the time interval between the present query and the most recent comparison point. The second parameter specifies how many comparison points to create.
 
-* `... | compare timeshift�\<number\<time granularit\>\<number of timeshift\>`
+```sql
+... | compare timeshift <number><time granularity> <number of timeshifts>
+```
 
 The following query returns results from the present, along with results from every day of the past week. The first parameter, 1d, specifies the interval between the points of comparison, and the second parameter, 7, specifies the number of comparisons.
 
@@ -131,7 +135,7 @@ The following query returns results from the present, along with results from ev
 
 Which can be displayed visually as:
 
-![compare multiple diagram](/img/snippet/query-search//compare_multiple_diagram.png)
+![compare multiple diagram](/img/reuse/query-search/compare_multiple_diagram.png)
 
 The following query returns result from the present with results from the same day in the last 3 weeks. So if today is Monday, then this query will show a result for today and the last three Mondays.
 
@@ -143,7 +147,9 @@ The following query returns result from the present with results from the same 
 
 Aggregate the results from multiple past time periods using an aggregation operator (avg, min, or max).
 
-* `... | compare timeshift�\<number\<time granularit\>\<number of shifts�\<avg/min/ma\>`
+```sql
+... | compare timeshift <number><time granularity> <number of shifts <avg/min/max>
+```
 
 The following query returns results from the present along with the average of the results from the last five days:
 
@@ -153,7 +159,7 @@ The following query returns results from the present along with the average of t
 
 Which can be displayed visually as:
 
-![](/img/search/time-compare/../../Assets/Media_Repo_for_Search/compare_aggregate_diagram.png)
+![compare aggregate](/img/reuse/query-search/compare_aggregate_diagram.png)
 
 Other examples:
 
@@ -164,7 +170,9 @@ Other examples:
 
 You can also do multiple different comparisons queries under the same compare operator by using multiple timeshift phrases separated by commas.
 
-* `... | compare\<comparison \>,\<comparison \>, ...`
+```sql
+... | compare <comparison 1>, <comparison 2>, ...
+```
 
 For example:
 
@@ -174,7 +182,9 @@ For example:
 
 You can specify an alias, and the columns generated use the name you specify.
 
-* `... | compare\<compariso\> as\<alia\>`
+```sql
+... | compare <comparison> as <alias>
+```
 
 For example:
 
@@ -185,11 +195,11 @@ For example:
 ### Rules
 
 * The compare operator must follow a group by aggregate operator, such as: `count`, `min`, `max`, or `sum`.
-* If you want to use timeslice with compare, do not alias timeslice.
+* If you want to use timeslice with compare, don't alias timeslice.
 
 ### Limitations
 
-* Compare cannot generate more than **seven** additional queries. An additional query is generated whenever a comparison in time is initiated. Note that multiple comparisons and aggregate comparisons will generate multiple queries. For example, the following queries are not allowed:
+* Compare can't generate more than **seven** additional queries. An additional query is generated whenever a comparison in time is initiated. Note that multiple comparisons and aggregate comparisons will generate multiple queries. For example, the following queries are not allowed:
 
     ```sql
     ... | compare timeshift 1d 14 
@@ -306,7 +316,7 @@ _sourceCategory=analytics
 
 You can use the compare operator to create scheduled search email alerts.
 
-For example, if you want to be alerted if there is a 15% spike in login failures compared to the average of the last seven days, you could use the following query:
+For example, if you want to be alerted if there is a 15% spike in login failures compared to the average of the last seven days, you'd use the following query:
 
 ```sql
 _sourceCateogy=WebserverLogs "Bad username or password" 

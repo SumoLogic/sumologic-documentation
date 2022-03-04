@@ -12,7 +12,7 @@ dashboard. it is important that you review the time range override guidelines to
 The following guidelines apply to customized time ranges for panels and a Dashboard (New) as a whole:
 
 * **A customized time range for a panel** persists until you once again change the setting.
-* **A customized time range for a dashboard** is only applied to panels that do not have customized time ranges. Panels with customized time ranges will maintain their customized setting.
+* **A customized time range for a dashboard** is only applied to panels that don't have customized time ranges. Panels with customized time ranges will maintain their customized setting.
 
 ## Specify the time range for a panel
 
@@ -74,9 +74,9 @@ With the cursor still in the time range field, press **Delete** then press **Re
 
 ## Specify the time range for the dashboard
 
-You can specify a time interval for a dashboard as a whole, and the changes are applied to all the panels on the dashboard that do not have customized time range settings.
+You can specify a time interval for a dashboard as a whole, and the changes are applied to all the panels on the dashboard that don't have customized time range settings.
 
-Panels with customized time range settings cannot be overriden by a dashboard-level time range. Panels with customized time ranges maintain their customized setting .
+Panels with customized time range settings can't be overriden by a dashboard-level time range. Panels with customized time ranges maintain their customized setting .
 
 To specify a dashboard-level time range setting, do the following:
 
@@ -91,7 +91,7 @@ To specify a dashboard-level time range setting, do the following:
 
     ![TimeRange_Set_Dashboard_TimeRange.png](/img/dashboards-new/set-custom-time-ranges/TimeRange_Set_Dashboard_TimeRange.png)
 
-Dashboard panels that do not have customized time intervals update to
+Dashboard panels that don't have customized time intervals update to
 reflect the dashboard-level time range.
 
 ![TimRange_Override_Results_Dashboard.png](/img/dashboards-new/set-custom-time-ranges/TimRange_Override_Results_Dashboard.png)

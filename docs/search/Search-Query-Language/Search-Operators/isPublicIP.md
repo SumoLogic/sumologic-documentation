@@ -4,27 +4,34 @@ id: ispublicip
 
 # isPublicIP
 
-The **isPublicIP** operator checks if an IPv4 address is public and
-returns a boolean.
+The **isPublicIP** operator checks if an IPv4 address is public and returns a boolean.
 
-### Syntax
+## Syntax
 
-* `isPublicIP(\<IPv4_strin\>") as\<fiel\>`
-* `isPublicIP\<IPv4_string_fiel\>) [as\<fiel\>]`
+```sql
+isPublicIP("<IPv4_string>") as <field>
+```
 
-### Rules
+```sql
+isPublicIP(<IPv4_string_field>) [as <field>]
+```
+
+## Rules
 
 * Returns `true` if the input is a valid public IPv4 address.
 * Invalid IPv4 addresses are dropped from the results.
 
-The following warning is shown when results are dropped or an IPv6
-address is detected:  
+The following warning is shown when results are dropped or an IPv6 address is detected:  
     
-![isprivateip operator warning for dropped invalid ip
-addresses.png](../../static/img/search-query-language/search-operators/isPublicIP/../isPrivateIP/isprivateip-dropped-warning.png)
+![isprivateip operator](/img/search/search-query-language/search-operators/isprivateip-dropped-warning.png)
 
-### Examples
+## Examples
 
-`| isPublicIP(dest_host)`
+```sql
+| isPublicIP(dest_host)
+```
 
-`| isPublicIP("10.255.255.255") as isPublic`        Returns `false`
+The following returns `false`:
+```sql
+| isPublicIP("10.255.255.255") as isPublic
+```

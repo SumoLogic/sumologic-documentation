@@ -4,7 +4,7 @@ id: about-logcompare
 
 # About LogCompare
 
-LogCompare allows you to compare a section of your log messages from one point in time with the same section at another point in time, and display the changes in patterns. For example, you could use LogCompare to determine if your last software deployment has broken something. Or it could help you determine what was different in your log stream right before and during a failure compared to a normal period.  LogCompare could also be helpful in finding the cause of a security event.
+LogCompare allows you to compare a section of your log messages from one point in time with the same section at another point in time, and display the changes in patterns. For example, you'd use LogCompare to determine if your last software deployment has broken something. Or it could help you determine what was different in your log stream right before and during a failure compared to a normal period.  LogCompare could also be helpful in finding the cause of a security event.
 
 To use LogCompare, run a search query with non-aggregate results, then click the **LogCompare** button in the **Messages** tab. This automatically compares the current query result with the result of the same query 24 hours in the past to show what has changed.
 

@@ -4,15 +4,19 @@ id: isprivateip
 
 # isPrivateIP
 
-The **isPrivateIP** operator checks if an IPv4 address is private and
-returns a boolean.
+The **isPrivateIP** operator checks if an IPv4 address is private and returns a boolean.
 
-### Syntax
+## Syntax
 
-* `isPrivateIP(\<IPv4_strin\>") as\<fiel\>`
-* `isPrivateIP\<IPv4_string_fiel\>) [as\<fiel\>]`
+```sql
+isPrivateIP("<IPv4_string>") as <field>
+```
 
-### Rules
+```sql
+isPrivateIP(<IPv4_string_field>) [as <field>]
+```
+
+## Rules
 
 * Returns `true` if the input is a valid private IPv4 address.
 * Invalid IPv4 addresses are dropped from the results.
@@ -21,14 +25,26 @@ The following warning is shown when results are dropped or an IPv6
 address is detected:  
     
 ![isprivateip operator warning for dropped invalid ip
-addresses.png](../../static/img/search-query-language/search-operators/isPrivateIP/isprivateip-dropped-warning.png)
+addresses.png](/img/search/search-query-language/search-operators/isPrivateIP/isprivateip-dropped-warning.png)
 
-### Examples
+## Examples
 
 `| isPrivateIP(dest_host)`
 
-`| isPrivateIP("10.255.255.255") as isPrivate`        Returns `true`
+The following returns `true`:
 
-`| isPrivateIP("192.168.0.1") as isPrivate`        Returns `true`
+```sql
+| isPrivateIP("10.255.255.255") as isPrivate
+```
 
-`| isPrivateIP("127.0.0.1") as isPrivate`        Returns `false`
+The following returns `true`:
+
+```sql
+| isPrivateIP("192.168.0.1") as isPrivate
+```
+
+The following returns `false`:
+
+```sql
+| isPrivateIP("127.0.0.1") as isPrivate
+```

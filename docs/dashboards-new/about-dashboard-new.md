@@ -29,7 +29,7 @@ complete comparison.
 
 ## Restricted Operators in Dashboard (New)
 
-The following operators cannot be used with Dashboard (New):
+The following operators can't be used with Dashboard (New):
 
 * Details
 * LogReduce
@@ -38,7 +38,7 @@ The following operators cannot be used with Dashboard (New):
 * Save
 * Transaction
 
-Live mode restrictions do not apply to Dashboard (New). 
+Live mode restrictions don't apply to Dashboard (New). 
 
 ## Limitations
 
@@ -50,7 +50,7 @@ Live mode restrictions do not apply to Dashboard (New). 
 
 ## Rules
 
-* Auto Refresh applies to the whole dashboard, you cannot configure it by panel.
+* Auto Refresh applies to the whole dashboard, you can't configure it by panel.
 * If there are two or more queries in a panel, the refresh interval for the panel is set to the maximum supported interval.
 * If the requested refresh interval is not possible, you will get an error message indicating the actual refresh rate is slower than requested. Reasons why the refresh interval is not possible are the following: 
 
@@ -70,7 +70,7 @@ A list of the refresh interval rates is provided for you to select from.
 
 ### Rules
 
-* Auto Refresh applies to the whole dashboard, you cannot configure it by panel.
+* Auto Refresh applies to the whole dashboard, you can't configure it by panel.
 * If there are two or more queries in a panel, the refresh interval for the panel is set to the maximum supported interval.
 * Panels with an [absolute time range] (../../05Search/Get-Started-with-Search/search-basics/time-range-expressions.md "Time Range Expressions") are not supported.
 * If the requested refresh interval is not possible, you will get an error message indicating the actual refresh rate is slower than requested. The following are reasons why setting the refresh interval is not possible: 
@@ -97,7 +97,7 @@ The Sumo Logic classic Dashboards and Dashboard (New) dashboards each have str
 
 ### Monitoring with classic Dashboards
 
-If you want to monitor your environment and display dashboards on a monitor or television screen, use the classic Dashboards. Currently, we do not have monitor support for the Dashboard (New) framework. We hope to support monitoring across both dashboard frameworks in the near future.
+If you want to monitor your environment and display dashboards on a monitor or television screen, use the classic Dashboards. Currently, we don't have monitor support for the Dashboard (New) framework. We hope to support monitoring across both dashboard frameworks in the near future.
 
 #### Troubleshooting with Dashboard (New)
 

@@ -40,7 +40,7 @@ Select a format:
 
 1. Optional. Select the available values.
     1. For text entries, enter each value on a separate line. Do not use commas to separate values as they will be marked invalid. If the string needs a comma, use quotes in the text entry, such as “abc,xyz”.
-    1. For Label-Value pairs, copy paste the label-value pairs as comma-delimited lines. If you are using a Lookup make sure that you are using a valid [lookup (classic)](../../search-query-language/search-operators/lookup-classic.md "lookup (Classic)") file because the system will reject any lookup file path that it cannot validate.  
+    1. For Label-Value pairs, copy paste the label-value pairs as comma-delimited lines. If you are using a Lookup make sure that you are using a valid [lookup (classic)](../../search-query-language/search-operators/lookup-classic.md "lookup (Classic)") file because the system will reject any lookup file path that it can't validate.  
 
         ![label-value-pairs.png](/img/search/build-search/search-templates/label-value-pairs.png)
 
@@ -73,7 +73,7 @@ _sourceCategory=service "Successful login from UI"
 | count by latitude, longitude, user
 ```
 
-For example, your team could use this query to locate “time-travelers”, suspicious users who log in from two different geographical areas in an impossibly short amount of time, like New York and California within a timerange of the last 15 minutes. These users do not want to modify the query or look up user ids to user names. With parameters we can make a search template that will give your users the drop-downs they need quickly.
+For example, your team could use this query to locate “time-travelers”, suspicious users who log in from two different geographical areas in an impossibly short amount of time, like New York and California within a timerange of the last 15 minutes. These users don't want to modify the query or look up user ids to user names. With parameters we can make a search template that will give your users the drop-downs they need quickly.
 
 First create parameters for `user_name` and `state` to eliminate the manual entries joeX and CA:
 
@@ -118,7 +118,7 @@ _sourceCategory=apache_error
 | count by _timeslice 
 ```
 
-Make sure you specify the right data type for timeslice, Number. You do not want users to input a string.
+Make sure you specify the right data type for timeslice, Number. You don't want users to input a string.
 
 The parameter is now available for your users to modify as they want, with any input value for the timeslice. Given that our search is a 15 minute time range, values over 5 are probably not useful.
 

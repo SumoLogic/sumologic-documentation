@@ -9,7 +9,7 @@ Line charts are useful for displaying how data changes over time, where the Y a
 To create a line chart, you need to use a query that provides more than one data point in the **Aggregates** tab, see [aggregate operators] (../../../search/search-query-language/group-aggregate-operators.md "Group or Aggregate Operators") for details. Then the line is drawn between the data points to show the
 change.
 
-For example, you could use the following query to create a Line chart:
+For example, you'd use the following query to create a Line chart:
 
 ```sql
 error | timeslice 1m | count by _timeslice

@@ -200,5 +200,5 @@ The variable is inserted into the query and will convert the variable into the 
 
 To use a metrics variable in a query working in advanced query mode, do the following:
 
-1. Locate the name of the variable you would like to use in the drop-down list and copy it.
+1. Locate the name of the variable you'd like to use in the drop-down list and copy it.
 1. Go to your metrics query and insert *{{ var_name }}* in the query, substituting `var_name` with the actual name of the variable.

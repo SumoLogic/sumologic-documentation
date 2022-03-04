@@ -6,10 +6,14 @@ id: cbrt
 
 The cube root function returns the cube root value of x.
 
-### Syntax
+## Syntax
 
-* `cbrt\<\>) as\<fiel\>`
+```sql
+cbrt(<x>) as <field>
+```
 
-### Example
+## Example
 
-* `cbrt(8) as v // v = 2`
+```sql
+cbrt(8) as v // v = 2
+```

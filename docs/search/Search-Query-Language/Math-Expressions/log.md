@@ -6,10 +6,14 @@ id: log
 
 The logarithm function returns the natural logarithm of x.
 
-### Syntax
+## Syntax
 
-* `log\<\>) as\<fiel\>`
+```sql
+log(<x>) as <field>
+```
 
-### Example
+## Example
 
-* `log(2) as v // v = 0.6931471805599453`
+```sql
+log(2) as v // v = 0.6931471805599453
+```

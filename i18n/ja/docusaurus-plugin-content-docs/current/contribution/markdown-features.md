@@ -88,7 +88,7 @@ For numbered lists, always start with `1.`. The generator will automatically num
 1. First ordered list item
 1. Another item
    - Unordered sub-list.
-1. Actual numbers do not matter, just that it is a number
+1. Actual numbers don't matter, just that it is a number
    1. Ordered sub-list
 1. And another item.
 ```
@@ -96,7 +96,7 @@ For numbered lists, always start with `1.`. The generator will automatically num
 1. First ordered list item
 1. Another item
    - Unordered sub-list.
-1. Actual numbers do not matter, just that it is a number
+1. Actual numbers don't matter, just that it is a number
    1. Ordered sub-list
 1. And another item.
 

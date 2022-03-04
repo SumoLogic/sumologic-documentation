@@ -6,13 +6,13 @@ id: save-search
 
 Whether you are running ad hoc searches during a forensic investigation or running standard searches for health checks, you can save any search to run again later.
 
-When you create a search that you would like to reuse, you can save it to the [Library] (../../../01Start-Here/Library.md). From there you can run it again, share with others, edit the search, or create a [Scheduled Search] (../../../Visualizations-and-Alerts/Alerts/Scheduled-Searches/Schedule_a_Search.md) to run at a regularly scheduled time, and set up [alerts] (../../../Visualizations-and-Alerts/Alerts.md ). 
+When you create a search that you'd like to reuse, you can save it to the [Library] (../../../01Start-Here/Library.md). From there you can run it again, share with others, edit the search, or create a [Scheduled Search] (../../../Visualizations-and-Alerts/Alerts/Scheduled-Searches/Schedule_a_Search.md) to run at a regularly scheduled time, and set up [alerts] (../../../Visualizations-and-Alerts/Alerts.md ). 
 
 The saved search will also include any charts you have created in the **Aggregates** tab. 
 
 **To save a search:**
 
-1. Run a search you could like to save.
+1. Run a search you'd like to save.
 1. (Optional) After the search results are complete, in the **Aggregates** tab, select a chart type to display the data visually. 
 1. Click the three-dot icon and click **Save As** from the provided options.   
 

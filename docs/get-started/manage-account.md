@@ -40,7 +40,7 @@ To change your password:
 
 ## Account Management in Preferences
 
-The **Preferences** page contains settings that apply just to your account. Options on this page do not affect any other users in your organization. Find this page in the menu under your account name in the left nav of the Sumo Logic Web Application.
+The **Preferences** page contains settings that apply just to your account. Options on this page don't affect any other users in your organization. Find this page in the menu under your account name in the left nav of the Sumo Logic Web Application.
 
 ### My Profile
 
@@ -70,7 +70,7 @@ Users with a role that grants the **Create Access Keys** capability can create a
 
 ### My Preferences
 
-Preference settings are only changed for your personal account; they do not affect any other users in your organization. Any changes you make to your preferences take effect the next time you sign in, not during the current session.
+Preference settings are only changed for your personal account; they don't affect any other users in your organization. Any changes you make to your preferences take effect the next time you sign in, not during the current session.
 
 - **Default Timezone.** If you want the Sumo Logic user interface to use your local time zone, or a time zone different from the time zone used in the timestamp of your log messages, change the setting here. This is a personal setting, and does not change the time zone for anyone else in your organization. This option overrides the timezone set in your web browser, and affects all hours and minutes displayed in the user interface, including time ranges on the Search page, the Time column in the Messages pane, and in Dashboards. It does not affect the configurations of previously created Scheduled Searches or Real Time Alerts. For more information, see [Timestamps, Time Zones, Time Ranges, and Date Formats].
 - **Always show the timezone offset in displayed timestamps.** This setting is on by default. To not show the timezone offset in displayed timestamps, deactivate this check box. 
@@ -92,9 +92,9 @@ Preference settings are only changed for your personal account; they do not affe
   Keyboard shortcuts are disabled when typing in the [search text box]. 
   :::
 
-- **Automatically run the search after selecting it from a list of saved searches.** Keep this option selected if you would like to run a saved search as soon as you select it. Deselect the option if you would like to start the search manually.
+- **Automatically run the search after selecting it from a list of saved searches.** Keep this option selected if you'd like to run a saved search as soon as you select it. Deselect the option if you'd like to start the search manually.
 - **Show confirmation dialog when closing a search tab.** On the Search page, if you want to be prompted with a confirmation dialog before you can close a search tab, select this check box.
-- **Automatically open the search autocomplete dialog when editing. Use `<Esc>` or `<Alt>` `<Space>` to open it manually).** Keep this option selected if you would like to open the [search autocomplete] dialog when you are editing a query. Deselect the option to disable the search autocomplete dialog. 
+- **Automatically open the search autocomplete dialog when editing. Use `<Esc>` or `<Alt>` `<Space>` to open it manually).** Keep this option selected if you'd like to open the [search autocomplete] dialog when you are editing a query. Deselect the option to disable the search autocomplete dialog. 
 - **On login, reopen the tabs from your previous session**. If you want to reopen the tabs from your previous session when you login to a new session, select this checkbox.
 - **Log Search Query editing.** Select one of the following options:
 

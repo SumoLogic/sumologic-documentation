@@ -4,28 +4,30 @@ id: in-operator
 
 # in operator
 
-The In operator returns a Boolean value: true if the specified property
-is in the specified object, or false if it is not.
+The In operator returns a Boolean value: true if the specified property is in the specified object, or false if it is not.
 
-### Syntax
+## Syntax
 
-* \<fiel\> in \<value_\>[,\<value_\>,\<value_\>, ...])`
+```sql
+<field> in (<value_1>[, <value_2>, <value_3>, ...])
+```
 
-In the syntax, we are checking the value of the field provided for the
-\<field\> argument.
+In the syntax, we are checking the value of the field provided for the \<field\> argument.
 
-If the value of \<fiel\>` matches any of value arguments
-(\<value_\>,\<value_\>, ...`) the function will return true. Otherwise,
-it will return false.
+If the value of `<field>` matches any of value arguments (`<value_1>, <value_2>, ...`) the function will return true. Otherwise, it will return false.
 
-### Examples
+## Examples
 
-##### Find 5xx or 4xx errors, otherwise OK message
+### Find 5xx or 4xx errors, otherwise OK message
 
 The following query:
 
-`_sourceCategory=Apache/Access | parse "GET * HTTP/1.1\" * * \"*\"" as url, status_code, size, referrer | if (status_code in ("500", "501", "502", "503", "504", "505", "506", "401", "402", "403", "404"), "error", "OK message") as reason`
+```sql
+_sourceCategory=Apache/Access
+| parse "GET * HTTP/1.1\" * * \"*\"" as url, status_code, size, referrer
+| if (status_code in ("500", "501", "502", "503", "504", "505", "506", "401", "402", "403", "404"), "error", "OK message") as reason
+```
 
 would return results similar to:
 
-![in](../../static/img/search-query-language/search-operators/in-operator/in.png)
+![in](/img/search/search-query-language/search-operators/in.png)

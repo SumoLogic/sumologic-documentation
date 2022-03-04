@@ -34,7 +34,7 @@ You can run queries using any of the following built-in metadata fields:
 | `_size` | The size of the log message in bytes. |
 | `_source` | The name of the Source, determined by the name you entered when you [configured the Source](../../../03Send-Data/Sources.md "Sources"). |
 | `_sourceCategory` | The category of the Source that collected the log message. This can be a maximum of 1,024 characters. |
-| `_sourceHost` | The host name of the Source. For local Sources the name of the Source is set when you [configure the Source] (../../../03Send-Data/Sources.md). For remote Collectors, this field uses the remote host's name. The `_sourceHost` metadata field is populated using a reverse DNS lookup. If the name cannot be resolved, `_sourceHost` is displayed as `localhost`. This can be a maximum of 128 characters. |
+| `_sourceHost` | The host name of the Source. For local Sources the name of the Source is set when you [configure the Source] (../../../03Send-Data/Sources.md). For remote Collectors, this field uses the remote host's name. The `_sourceHost` metadata field is populated using a reverse DNS lookup. If the name can't be resolved, `_sourceHost` is displayed as `localhost`. This can be a maximum of 128 characters. |
 | `_sourceName` | The name of the log file, determined by the path you entered when you [configured the Source] (../../../03Send-Data/Sources.md). |
 | `_format` | The pattern used for parsing the timestamp. See [here] (../../../03Send-Data/Sources/04Reference-Information-for-Sources/Timestamps,-Time-Zones,-Time-Ranges,-and-Date-Formats.md) for more details. |
 
@@ -50,7 +50,7 @@ To run a search using metadata fields:
 
     * Add wildcards at the front and back of any partial term or string to capture the most results.
     * If your metadata value contains spaces wrap it in quotes.
-    * Quotes and wildcards cannot be used together.
+    * Quotes and wildcards can't be used together.
     * Metadata tags are case-insensitive when searching.
 
 This table shows some examples and a description of each metadata type.

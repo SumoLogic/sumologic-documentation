@@ -8,15 +8,15 @@ Typically, log files contain information that follow a key-value pair structure.
 
 For example, a log could contain the following keys (highlighted):
 
-![key value](/img/snippet/query-search/Keyvalue_highlight.png)
+![key value](/img/reuse/query-search/Keyvalue_highlight.png)
 
-From that log message, you can use the **keyvalue** operator to get the values for one or more keys. For example, if you could like to see information just about the "remote_ip" value, running this query:
+From that log message, you can use the **keyvalue** operator to get the values for one or more keys. For example, if you'd like to see information just about the "remote_ip" value, running this query:
 
 `... | keyvalue "remote_ip" ...`
 
 would produce these results:
 
-![results](/img/snippet/query-search/Keyvalue_results.png)
+![results](/img/reuse/query-search/Keyvalue_results.png)
 
 The keyvalue operator can also be used in two explicit modes:
 
@@ -31,13 +31,13 @@ Keys and values that contain spaces, tabs, or other white space, must be quoted.
 
 When used in the default **inference mode**, the **keyvalue** operator uses an internal list of regular expressions to determine how to extract the value for a given key. This greatly simplifies the syntax.
 
-For example, you could extract the keys "module" and "thread" and their values from a log message by running this query:
+For example, you'd extract the keys "module" and "thread" and their values from a log message by running this query:
 
 `* | keyvalue infer "module", "thread"`
 
 to produce these results:
 
-![](/img/snippet/query-search/keyvalue_infer_example_results.png)
+![](/img/reuse/query-search/keyvalue_infer_example_results.png)
 
 ## Regular Expression mode syntax
 
@@ -55,7 +55,7 @@ To extract the values for the keys "serviceinfo.IP" and "perf.request_start_time
 * | keyvalue regex "\s(.*?)=(.*?)," keys "serviceinfo.IP", "perf.request_start_timestamp_ms" as ip, start_ms
 ```
 
-The **keyvalue** operator also supports regular expressions that contain a **single capture group**. The capture group needs to match the value from your key value pair. You may notice an improvement in performance by running queries with a single match group. For example, for the same log you could run this query to get the same results as the previous query:
+The **keyvalue** operator also supports regular expressions that contain a **single capture group**. The capture group needs to match the value from your key value pair. You may notice an improvement in performance by running queries with a single match group. For example, for the same log you'd run this query to get the same results as the previous query:
 
 ```sql
 * | keyvalue regex "=(.*?)," "serviceinfo.IP", "perf.request_start_timestamp_ms"
@@ -63,7 +63,7 @@ The **keyvalue** operator also supports regular expressions that contain a **
 
 In the above case, for each key specified, the operator first finds the key itself in the message (first occurrence), and then finds the closest match of the regular expression to the location in the message where the key was found.
 
-The number of fields specified with the "as" clause must match the number of key-value pairs specified. You can omit the clause if you could like the operator to automatically create the field names for the extracted values. To do this, **keyvalue** replaces every character (other than a..z, A..Z, 0..9, or \_) with an underscore (\_).
+The number of fields specified with the "as" clause must match the number of key-value pairs specified. You can omit the clause if you'd like the operator to automatically create the field names for the extracted values. To do this, **keyvalue** replaces every character (other than a..z, A..Z, 0..9, or \_) with an underscore (\_).
 
 ## Abbreviated syntax
 
@@ -139,4 +139,4 @@ one delimiter to use when extracting.
     * | keyvalue field=<field> regex "<regex>" [keys]
     ```
 
-* **nodrop** forces results to also include messages that do not match any segment of the parse term. For details, see [Parse nodrop](parse-nodrop-option.md)
+* **nodrop** forces results to also include messages that don't match any segment of the parse term. For details, see [Parse nodrop](parse-nodrop-option.md)

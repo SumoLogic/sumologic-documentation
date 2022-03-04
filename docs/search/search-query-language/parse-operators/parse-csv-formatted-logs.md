@@ -6,7 +6,7 @@ id: parse-csv-formatted-logs
 
 The **CSV** operator allows you to parse CSV (Comma Separated Values) formatted log entries. It uses a comma as the default delimiter.
 
-For example, let’s say you have a .csv file that maps internal IP addresses to your data center locations and names. Once the .csv file is ingested into Sumo Logic, you can use the CSV operator to parse the fields of the file and populate a lookup table. Then you could use the Geo Lookup operator to map your data center IP addresses and display them on a map of the world.
+For example, let’s say you have a .csv file that maps internal IP addresses to your data center locations and names. Once the .csv file is ingested into Sumo Logic, you can use the CSV operator to parse the fields of the file and populate a lookup table. Then you'd use the Geo Lookup operator to map your data center IP addresses and display them on a map of the world.
 
 To parse delimited log entries other than CSV files, such as space delimited files, use the [Split](parse-delimited-logs-using-split.md) operator.
 
@@ -47,7 +47,7 @@ _sourceCategory=csv
 
 which provides results like:
 
-![csv example](/img/snippet/query-search/csv_example1.png)
+![csv example](/img/reuse/query-search/csv_example1.png)
 
 ### Parse a stream query and extract search terms
 
@@ -59,6 +59,6 @@ which provides results like:
 
 This produces results like:
 
-![csv operator](/img/snippet/query-search/csv_operator_example_695x65.png)
+![csv operator](/img/reuse/query-search/csv_operator_example_695x65.png)
 
 For more information on parsing CSV files, see [Lookup](../search-operators/lookup-classic.md) operator and [Save](../search-operators/save-lookups-classic.md) operator.

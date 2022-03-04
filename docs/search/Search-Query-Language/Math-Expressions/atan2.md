@@ -1,15 +1,19 @@
 ---
-id: atan
+id: atan2
 ---
 
 # atan2
 
 Returns the four-quadrant inverse tangent of the two arguments b and c.
 
-### Syntax
+## Syntax
 
-* `atan2\<\>,\<\>) as\<fiel\>`
+```sql
+atan2(<b>, <c>) as <field>
+```
 
-### Example
+## Example
 
-* `atan2(0, -1) as v // v = pi`
+```sql
+atan2(0, -1) as v // v = pi
+```

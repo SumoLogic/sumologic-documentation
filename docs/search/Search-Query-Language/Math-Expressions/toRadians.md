@@ -6,10 +6,14 @@ id: toradians
 
 Converts angles from degrees to radians.
 
-### Syntax
+## Syntax
 
-* `toRadians\<\>) as\<fiel\>`
+```sql
+toRadians(<x>) as <field>
+```
 
-### Example
+## Example
 
-* `toRadians(180) as v // v = pi`
+```sql
+toRadians(180) as v // v = pi
+```

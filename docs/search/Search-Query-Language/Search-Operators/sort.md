@@ -4,50 +4,68 @@ id: sort
 
 # sort
 
-The **sort** operator orders aggregated search results. The default sort
-order is descending.
+The **sort** operator orders aggregated search results. The default sort order is descending.
 
-Then you can use the **top** or **limit** operators to reduce the number
-of sorted results returned.
+Then you can use the **top** or **limit** operators to reduce the number of sorted results returned.
 
-Order is also synonymous with sort. You can use them interchangeably in
-your queries.
+Order is also synonymous with sort. You can use them interchangeably in your queries.
 
-### Syntax
+## Syntax
 
-* `sort by\<fiel\> (displays results as descending, by default)`
-* `sort by \<fiel\> (displays results as ascending)`
-* `sort by\<fiel\> asc (displays results as ascending)`
-* `sort by\<field\>,\<field\>`
-* `top\<\>\<fiel\>​​​​​​​ by\<group_by_operato\>`
+```sql
+sort by <field> (displays results as descending, by default)
+```
 
-### Rules
+```sql
+sort by +<field> (displays results as ascending)
+```
+
+```sql
+sort by <field> asc (displays results as ascending)
+```
+
+```sql
+sort by <fieldA>, <fieldB>
+```
+
+```sql
+top <#> <field>​​​​​​​ by <group_by_operator>
+```
+
+## Rules
 
 * Default sort order is descending.
 * Sorting is case sensitive with lower-case followed by upper-case.
-* To reverse the sort order to ascending, type a plus sign (+) before
-    the field name you are sorting by. Alternatively, you can
-    type **asc** after the field name.
-* To numerically sort, first [cast the field to a
-    number](Manually-Casting-String-Data-to-a-Number.md "Manually Casting String Data to a Number").
-    (Otherwise, the sort will be ordered as a text field.)
+* To reverse the sort order to ascending, type a plus sign (+) before the field name you are sorting by. Alternatively, you can type **asc** after the field name.
+* To numerically sort, first [cast the field to a number](Manually-Casting-String-Data-to-a-Number.md). Otherwise, the sort will be ordered as a text field.
 
-### Examples
+## Examples
 
-* `status AND down | extract "user=(\<use\>.*?):" | count (*) group by user | sort by _count`
-* `... | count user | top 2 user by _count`
-* `... | count user | sort by _count asc`
+```sql
+status AND down | extract "user=(?<user>.*?):" | count (*) group by user | sort by _count
+```
 
-#### Top 10 pages by page hits
+```sql
+... | count user | top 2 user by _count
+```
 
-This example counts page hits by sourceHost, sorts them by page hits,
-and limits the results to the top 10.
+```sql
+... | count user | sort by _count asc
+```
 
-`_sourceCategory=Labs/Apache/Access | count as page_hits by _sourceHost | sort by page_hits | limit 10`
+### Top 10 pages by page hits
+
+This example counts page hits by sourceHost, sorts them by page hits, and limits the results to the top 10.
+
+```sql
+_sourceCategory=Labs/Apache/Access
+| count as page_hits by _sourceHost
+| sort by page_hits
+| limit 10
+```
 
 which provides results like:
 
-![](../../static/img/search-query-language/search-operators/sort/../../../../Assets/Media_Repository/sort_operator_example.png)
+![sort](/img/reuse/query-search/sort_operator_example.png)
 
-For more information, see [Top](top.md "top")
-operator or [Limit](limit.md "limit") operator.
+For more information, see [Top](top.md) operator or [Limit](limit.md) operator.

@@ -6,7 +6,7 @@ id: search-surrounding-messages
 
 Surrounding messages allow you to investigate events surrounding a message from the context of the Host, file name, or category identified enabling you to view the activity for the defined time period. 
 
-As you browse results in the **Messages** list, you might come across a message where you would like to see more context. What other events occurred just before and after this event? What else was happening on this host at the same time? When you search surrounding messages, you capture the context of the current message to gain insight into surrounding activity.
+As you browse results in the **Messages** list, you might come across a message where you'd like to see more context. What other events occurred just before and after this event? What else was happening on this host at the same time? When you search surrounding messages, you capture the context of the current message to gain insight into surrounding activity.
 
 After you launch a search on surrounding messages, the target message (the message from where you originated the search on surrounding messages) is highlighted in blue to help you keep your place.
 

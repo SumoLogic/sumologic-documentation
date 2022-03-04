@@ -13,7 +13,7 @@ import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
 
 ## What Data Do I Have?
 
-It can be hard to create a search query if you do not know what data you
+It can be hard to create a search query if you don't know what data you
 have in your Sumo Logic environment. 
 
 You can use the following simple queries to identify possible values for

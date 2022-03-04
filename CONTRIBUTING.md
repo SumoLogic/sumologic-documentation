@@ -14,7 +14,7 @@ There are many ways in which you can contribute to content:
 * **Feature Requests**: You can request a new feature by [submitting a feature request](https://github.com/SumoLogic/sumologic-documentation/issues/new?assignees=&labels=type%3Afeature&template=feature_request.md&title=) to our GitHub Repository. 
 * **Edit Pages**: As you review content on the site, you can click *Edit this page* to commit changes through GitHub directly.
 
-If you would like to implement a new section or tutorial, then consider what kind of change it is:
+If you'd like to implement a new section or tutorial, then consider what kind of change it is:
 
 * **New content** of tutorials and sample code can be discussed with the documentation team in Discord and through submitted issues. We can work with you on the project.
 * **Updates** that you wish to contribute can be discussed with the documentation team in Slack, through submitted issues, and in pull requests. These include rewriting content, changing flow, adding a new topic or section, and deprecating content.

@@ -4,44 +4,41 @@ id: now
 
 # now
 
-The **now** operator returns the current epoch time in milliseconds. It
-can be used with the formatDate operator to get the formatted current
+The **now** operator returns the current epoch time in milliseconds. It can be used with the formatDate operator to get the formatted current
 time.
 
-It is important to note that the Now operator outputs the exact time
-(down to the millisecond) each and every time it is executed. This means
-that if you use now with every message in a search, it will return
-slightly different results in every message, as messages are not all
-processed by your search at once.
+It is important to note that the Now operator outputs the exact time (down to the millisecond) each and every time it is executed. This means that if you use now with every message in a search, it will return slightly different results in every message, as messages are not all processed by your search at once.
 
-### Syntax
+## Syntax
 
-* `now()`
+```sql
+now()
+```
 
-### Examples
+## Examples
 
-#### Return the current date
+### Return the current date
 
-This query returns a long version of the current date and time in
-milliseconds.
+This query returns a long version of the current date and time in milliseconds.
 
-`* | now() as current_date`
+```sql
+* | now() as current_date
+```
 
 Which returns results similar to:
 
-![Current
-date](../../static/img/search-query-language/search-operators/now/CurrentDate.png)
+![Current date](/img/search/search-query-language/search-operators/CurrentDate.png)
 
-#### Return the current date using formatDate.
+### Return the current date using formatDate.
 
-Use the following query with formatDate to return results for the
-current date formatted as YYYY-MM-dd.
+Use the following query with formatDate to return results for the current date formatted as YYYY-MM-dd.
 
-`* | formatDate(now(), "YYYY-MM-dd") as today`
+```sql
+* | formatDate(now(), "YYYY-MM-dd") as today
+```
 
 This returns the following results.
 
-![Today](../../static/img/search-query-language/search-operators/now/Today.png)
+![Today](/img/search/search-query-language/search-operators/Today.png)
 
-For more examples, see [formatDate](formatDate.md "formatDate")
-operator.
+For more examples, see [formatDate](formatDate.md) operator.

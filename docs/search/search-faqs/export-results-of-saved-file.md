@@ -10,14 +10,14 @@ With the [catoperator](../search-query-language/search-operators/cat.md) you can
 
 ## Deprecated
 
-Sumo Logic provides the ability to save a file using the [save](../search-query-language/search-operators/save-lookups-classic.md) operator, but it does not allow you to export the results of that saved file. To do so, you would have to re-run the original query and export the results.
+Sumo Logic provides the ability to save a file using the [save](../search-query-language/search-operators/save-lookups-classic.md) operator, but it does not allow you to export the results of that saved file. To do so, you'd have to re-run the original query and export the results.
 
 But if you know you will need to export your saved files results routinely, you can create another column in the results that are saved to the file that acts as a primary key for each result. This key then allows you to conduct a [lookup](../search-query-language/search-operators/lookup-classic.md)
 operation matching the key.
 
 To create keys in your saved file:
 
-1. In your query that is saving the file with the save operator, you need to add numbers to act as the primary key. You can start at 1 and increment by 1 for each result, as shown. Add a group by if needed (such as a [timeslice](../search-query-language/search-operators/timeslice.md "timeslice")):
+1. In your query that is saving the file with the save operator, you need to add numbers to act as the primary key. You can start at 1 and increment by 1 for each result, as shown. Add a group by if needed (such as a [timeslice](../search-query-language/search-operators/timeslice.md)):
 
     ```sql
     | 1 as number 
@@ -32,7 +32,7 @@ To create keys in your saved file:
     | lookup * from shared/file.csv on key=number
     ```
 
-    The query with the lookup operator needs to create at least the same number of keys as the results in your saved file, so that the keys match all. Since each result is assigned a key, you just need to make sure enough results are returned. If you have more keys from your lookup query, it is not a problem, because we do not match on them anyway. This will return all of your saved file's results, ready for export.
+    The query with the lookup operator needs to create at least the same number of keys as the results in your saved file, so that the keys match all. Since each result is assigned a key, you just need to make sure enough results are returned. If you have more keys from your lookup query, it is not a problem, because we don't match on them anyway. This will return all of your saved file's results, ready for export.
 
 1. If you are appending to your saved file, you can get the file's last key to define the starting key for the append query using the following query:
 
@@ -44,4 +44,4 @@ To create keys in your saved file:
     | _max + 1 as key
     ```
 
-    The `_accum` field is the same as the `number` field in the first example. But you cannot use this query with your save query that is appending because we use the max operator.
+    The `_accum` field is the same as the `number` field in the first example. But you can't use this query with your save query that is appending because we use the max operator.

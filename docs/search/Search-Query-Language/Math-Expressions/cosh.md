@@ -6,10 +6,14 @@ id: cosh
 
 Hyperbolic cosine of argument in radians.
 
-### Syntax
+## Syntax
 
-* `cosh\<\>) as\<fiel\>`
+```sql
+cosh(<x>) as <field>
+```
 
-### Example
+## Example
 
-* `cosh(1) as v` `// v = 1.54308`
+```sql
+cosh(1) as v // v = 1.54308
+```

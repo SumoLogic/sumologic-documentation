@@ -6,7 +6,7 @@ id: table-charts
 
 Table charts are the default chart type in the **Aggregates** tab. They are useful for listing the type and number of events that have occurred, such as the type of error that occurs the most in your system. To create a table chart, use a search query that provides at least a few data points in the **Aggregates** tab.
 
-For example, you could use the following query to create a simple table chart:
+For example, you'd use the following query to create a simple table chart:
 
 `(error OR fail*) AND exception | count by _sourceCategory | sort by _count`
 

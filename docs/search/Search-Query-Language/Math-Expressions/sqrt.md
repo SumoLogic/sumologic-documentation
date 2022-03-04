@@ -6,10 +6,14 @@ id: sqrt
 
 The square root function returns the square root value of x.
 
-### Syntax
+## Syntax
 
-* `sqrt\<\>) as\<fiel\>`
+```sql
+sqrt(<x>) as <field>
+```
 
-### Example
+## Example
 
-* `sqrt(4) as v // v = 2`
+```sql
+sqrt(4) as v // v = 2
+```

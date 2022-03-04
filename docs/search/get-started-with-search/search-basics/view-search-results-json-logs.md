@@ -25,7 +25,7 @@ Right-click an individual message to see the following option:
     in JSON format. This function is not available on Safari due to a
     browser limitation.
 
-{@import ../../../../snippets/reference-parsed-json-fields.md}
+{@import ../../../../reuse/reference-parsed-json-fields.md}
 
 ## Format JSON messages in search results 
 

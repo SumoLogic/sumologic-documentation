@@ -6,14 +6,18 @@ id: abs
 
 The absolute function calculates the absolute value of x.
 
-### Syntax
+## Syntax
 
-* `abs\<\>) as\<fiel\>`
+```sql
+abs(<x>) as <field>
+```
 
-### Rules
+## Rules
 
-* The function cannot be nested.
+* The function can't be nested.
 
-### Example
+## Example
 
-* `abs(-1.5) as v // v = 1.5`
+```sql
+abs(-1.5) as v // v = 1.5
+```

@@ -4,14 +4,20 @@ id: ceil
 
 # ceil
 
-The **ceil** operator rounds up a field value to the nearest integer
-value.
+The **ceil** operator rounds up a field value to the nearest integer value.
 
 ## Syntax
 
-* `ceil\<\>) as\<fiel\>`
+```sql
+ceil(<x>) as <field>
+```
 
-### Examples
+## Example
 
-* `ceil(1.5) as v // v = 2`
-* `ceil(-1.5) as v // v = -1`
+```sql
+ceil(1.5) as v // v = 2
+```
+
+```sql
+ceil(-1.5) as v // v = -1
+```

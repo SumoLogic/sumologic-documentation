@@ -4,7 +4,7 @@ id: subqueries
 
 # Subqueries
 
-Subqueries allow you to filter and evaluate conditions for a query when you may not be sure of the exact filter or condition criteria but you can write a short query to set them for you. Subqueries use one query to pass results back to another query to narrow down or evaluate the set of messages that are searched in that query. Sometimes this offers a faster approach than a join, where you would have to unite large sets of data and then search through the results to form a conclusion. If you can do some processing to narrow down the scope of data, you can form a subquery.
+Subqueries allow you to filter and evaluate conditions for a query when you may not be sure of the exact filter or condition criteria but you can write a short query to set them for you. Subqueries use one query to pass results back to another query to narrow down or evaluate the set of messages that are searched in that query. Sometimes this offers a faster approach than a join, where you'd have to unite large sets of data and then search through the results to form a conclusion. If you can do some processing to narrow down the scope of data, you can form a subquery.
 
 Subqueries are not supported in live dashboards, real-time Scheduled Searches, Field Extraction Rules, and Scheduled Views.
 
@@ -19,7 +19,7 @@ Subqueries are a really powerful way to filter for specific criteria, such as be
 
 ## Syntax
 
-You can use subqueries in the [search expression](get-started-with-search/build-search/keyword-search-expressions.md) of your query (before the first pipe, \|) and with [where](Search-Query-Language/search-operators/where.md) and [if](Search-Query-Language/search-operators/if-operator-and.md) operators.
+You can use subqueries in the [search expression](get-started-with-search/build-search/keyword-search-expressions.md) of your query (before the first pipe, \|) and with [where](search-query-language/search-operators/where.md) and [if](search-query-language/search-operators/if-operator-and.md) operators.
 
 :::important
 This syntax uses square brackets `[ ]` to wrap a subquery. Normally these indicate an [optional argument] (../01Start-Here/03About-Sumo-Logic/Help_Documentation_Styles.md), however these highlighted brackets are required for subqueries.
@@ -45,7 +45,7 @@ Parent query
 Rest of parent query
 ```
 
-You can use the not `!` option using the [where operator](Search-Query-Language/search-operators/where.md) syntax, like `| where !\<subquer\>]`.
+You can use the not `!` option using the [where operator](search-query-language/search-operators/where.md) syntax, like `| where !\<subquer\>]`.
 
 **If operator syntax:**
 
@@ -58,7 +58,7 @@ Parent query
 Rest of parent query
 ```
 
-You can use the not `!` option using the [if operator](Search-Query-Language/search-operators/if-operator-and.md) syntax, like `| if !(<subquery>],1,0) as <field>`.
+You can use the not `!` option using the [if operator](search-query-language/search-operators/if-operator-and.md) syntax, like `| if !(<subquery>],1,0) as <field>`.
 
 :::note
 The `parent query` can be any query that returns results. Always test it before you add the child query.
@@ -397,7 +397,7 @@ _sourceCategory=weblogs
 
 ### Reference data from child query using save and lookup
 
-When you want to correlate data from different sources or conduct further aggregation on data from a child query without passing it with compose, since it would act upon the scope of the query limiting results, you can use the [save](Search-Query-Language/search-operators/save-lookups-classic.md) and [lookup](Search-Query-Language/search-operators/lookup-classic.md) operators to get the data you need in the parent query.
+When you want to correlate data from different sources or conduct further aggregation on data from a child query without passing it with compose, since it would act upon the scope of the query limiting results, you can use the [save](search-query-language/search-operators/save-lookups-classic.md) and [lookup](search-query-language/search-operators/lookup-classic.md) operators to get the data you need in the parent query.
 
 This query identifies specific sessions and correlates them to status messages across services from different data sources:
 

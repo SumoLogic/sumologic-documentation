@@ -6,10 +6,14 @@ id: acos
 
 Returns the inverse cosine of the argument.
 
-### Syntax
+## Syntax
 
-* `acos\<\>) as\<fiel\>`
+```sql
+acos(<x>) as <field>
+```
 
-### Example
+## Example
 
-* `acos(1) as v // v = 0`
+```sql
+acos(1) as v // v = 0
+```

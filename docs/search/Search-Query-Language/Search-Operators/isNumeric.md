@@ -6,28 +6,33 @@ id: isnumeric
 
 The isNumeric operator checks whether a string is a valid Java number. 
 
-Valid numbers include hexadecimals marked with the 0x or 0X qualifier,
-octal numbers, scientific notation and numbers marked with a type
-qualifier, like `123L`.
+Valid numbers include hexadecimals marked with the 0x or 0X qualifier, octal numbers, scientific notation and numbers marked with a type qualifier, like `123L`.
 
-### Syntax
+## Syntax
 
 * `isNumeric(\<strin\>") as\<fiel\>`
 * `isNumeric\<string_fiel\>) [as\<fiel\>]`
 
-### Rules
+## Rules
 
 * Returns `true` if the string is a valid Java number.
 * Null and empty/blank strings will return `false`.
-* Non-hexadecimal strings beginning with a leading zero are treated as
-    octal values. Thus the string `09` will return false, since `9` is
-    not a valid octal value. However, numbers beginning with `0` are
-    treated as a decimal.
+* Non-hexadecimal strings beginning with a leading zero are treated as octal values. Thus the string `09` will return false, since `9` is not a valid octal value. However, numbers beginning with `0` are treated as a decimal.
 
-### Examples
+## Examples
 
-`| isNumeric(num)`
+```sql
+| isNumeric(num)
+```
 
-`| isNumeric("1.56") as isNum`        Returns `true`
+The following returns `true`:
 
-`| isNumeric("1e5") as isNum`        Returns `true`
+```sql
+| isNumeric("1.56") as isNum
+```
+
+The following returns `true`:
+
+```sql
+| isNumeric("1e5") as isNum
+```

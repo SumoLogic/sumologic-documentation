@@ -39,7 +39,7 @@ By default, LogCompare email notifications provide details on the **Score**, **C
     ![NewSignatures.png](/img/search/logcompare/newsignatures.png)
 
 1. In the **Save Search As** dialog, for **Search name**, enter a name for your Saved Search. This example uses **New Signatures**.
-1. (Optional) If you could like, type an optional description to help you identify this search.
+1. (Optional) If you'd like, type an optional description to help you identify this search.
 1. Choose a **Time Range** option that will be the default range when you run the saved search. 
 
     To prevent gaps in your LogCompare results, the time range should be a bit longer than the frequency at which your search is run.
@@ -48,7 +48,7 @@ By default, LogCompare email notifications provide details on the **Score**, **C
 
     ![SaveLogreduce.png](/img/search/logcompare/saveLogreduce.png)
 
-1. For **Run Frequency**, select the frequency you would like your search to run. The frequency should match the time range.
+1. For **Run Frequency**, select the frequency you'd like your search to run. The frequency should match the time range.
 1. For **Time range for scheduled search**, again, select a time range that matches the frequency.
 1. For **Alert condition** select **Send notification every time upon  search completion**.
 1. For **Alert Type**, select **Email**.

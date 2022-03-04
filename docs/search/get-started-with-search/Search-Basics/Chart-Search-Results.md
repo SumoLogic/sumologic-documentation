@@ -22,7 +22,7 @@ For this example, you can see a bar chart, but you can pick from any of the avai
 
 ### Why are the chart options not available?
 
-Your data may be a string data type instead of a number. Most aggregate operators will cast your data to a number, operators like `first` and `last` do not. You can cast your data to a number if needed using the `num` operator.
+Your data may be a string data type instead of a number. Most aggregate operators will cast your data to a number, operators like `first` and `last` don't. You can cast your data to a number if needed using the `num` operator.
 
 Example:
 

@@ -27,7 +27,7 @@ For more information on Regular Expressions, see the [Perl documentation](http:
 
 * `nodrop ` 
 
-    The `nodrop` option forces results to also include messages that do not match any segment of the parse term. For details, see [Parse nodrop](parse-nodrop-option.md)
+    The `nodrop` option forces results to also include messages that don't match any segment of the parse term. For details, see [Parse nodrop](parse-nodrop-option.md)
 
 * `multi` 
 
@@ -37,7 +37,7 @@ For more information on Regular Expressions, see the [Perl documentation](http:
 
 * Regex must be a valid JAVA or RE2 regular expression enclosed within quotes.
 
-* Matching is case sensitive. If any of the text segments cannot be matched, then none of the variables will be assigned.
+* Matching is case sensitive. If any of the text segments can't be matched, then none of the variables will be assigned.
 
 * If no **field** is specified, then the entire text of incoming messages is used.
 
@@ -49,7 +49,7 @@ For more information on Regular Expressions, see the [Perl documentation](http:
 
 * Nesting named capture groups is not supported.
 
-* The parse regex operator only supports regular expressions that contain at least one named capturing group. We do not support regular expressions that either do not have any capturing groups or contain unnamed/numbered capturing group. See [Named Capturing Groups](https://www.regular-expressions.info/named.html) for further details.
+* The parse regex operator only supports regular expressions that contain at least one named capturing group. We don't support regular expressions that either don't have any capturing groups or contain unnamed/numbered capturing group. See [Named Capturing Groups](https://www.regular-expressions.info/named.html) for further details.
 
 
 You can convert your normal regular expressions into named capturing groups with the following steps:  
@@ -118,13 +118,13 @@ you can write the following query to extract the "protocol":
 | parse regex "list 101 (accepted|denied) (\<protoco\>.*?) "
 ```
 
-So, you would actually write:
+So, you'd actually write:
 
 ```sql
 | parse regex "list 101 (?:accepted|denied) (\<protoco\>.*?) "
 ```
 
-But if you mean to also capture whether it is an "accepted" or a "denied" into an alias, then you would include:
+But if you mean to also capture whether it is an "accepted" or a "denied" into an alias, then you'd include:
 
 ```sql
 | parse regex "list 101 (\<statu\>accepted|denied) (\<protoco\>.*?) "

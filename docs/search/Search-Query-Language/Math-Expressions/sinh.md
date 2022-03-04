@@ -6,10 +6,14 @@ id: sinh
 
 Hyperbolic sine of argument in radians.
 
-### Syntax
+## Syntax
 
-* `sinh\<\>) as\<fiel\>`
+```sql
+sinh(<x>) as <field>
+```
 
-### Example
+## Example
 
-* `sinh(1) as v // v = 1.17520`
+```sql
+sinh(1) as v // v = 1.17520
+```

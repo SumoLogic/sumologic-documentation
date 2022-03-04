@@ -6,10 +6,14 @@ id: tanh
 
 Hyperbolic tangent of argument in radians.
 
-### Syntax
+## Syntax
 
-* `tanh\<\>) as\<fiel\>`
+```sql
+tanh(<x>) as <field>
+```
 
-### Example
+## Example
 
-* `tanh(1) as v // v = 0.76159`
+```sql
+tanh(1) as v // v = 0.76159
+```

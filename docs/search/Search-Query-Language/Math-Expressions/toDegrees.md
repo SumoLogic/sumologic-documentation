@@ -6,10 +6,14 @@ id: todegrees
 
 Converts angles from radians to degrees.
 
-### Syntax
+## Syntax
 
-* `toDegrees\<\>) as\<fiel\>`
+```sql
+toDegrees(<x>) as <field>
+```
 
-### Example
+## Example
 
-* `toDegrees(asin(1)) as v // v = 90`
+```sql
+toDegrees(asin(1)) as v // v = 90
+```

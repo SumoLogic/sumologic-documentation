@@ -21,13 +21,13 @@ Ingested XML files must be well-formed and valid in order to be parsed by the XM
 
 * `nodrop` 
 
-    The `nodrop` option forces results to also include messages that do not match any segment of the parse term. For details, see [Parse nodrop](parse-nodrop-option.md)
+    The `nodrop` option forces results to also include messages that don't match any segment of the parse term. For details, see [Parse nodrop](parse-nodrop-option.md)
 
 ## Rules
 
 * If no field is specified, then the entire text of incoming messages is used.
 * If the XPaths are not valid, an error is thrown.
-* If the number of field names do not match the specified XPaths, an error is thrown.
+* If the number of field names don't match the specified XPaths, an error is thrown.
 * If the field is not well-formed XML, null is returned, unless you have specified `nodrop`.
 * If the XPath does not match anything in the log, then null is returned, unless you have specified `nodrop`.
 * If the XPath matches an element, then its string representation is returned.
@@ -57,7 +57,7 @@ You must specify the full path to the elements you want to parse. This means tha
 
 **No expanded syntax axis specifiers**
 
-Expanded syntax is not supported. For example, the following expressions cannot be used:
+Expanded syntax is not supported. For example, the following expressions can't be used:
 
 `/child::af`
 
@@ -92,7 +92,7 @@ You can parse information using an XPath reference, such as the `first_name` el
 
 The `text()` function will pull the text value of the element. The results would return a field named `first_name` with the value of `Sally`.
 
-To parse the second `user` element in the array you could use the following:
+To parse the second `user` element in the array you'd use the following:
 
 ```sql
 * | parse xml "/users/user[2]/first_name/text()" as first_name
@@ -100,13 +100,13 @@ To parse the second `user` element in the array you could use the following:
 
 The results would return a field named `first_name` with a value of `Bob`.
 
-To parse the last element in an array you could use the following:
+To parse the last element in an array you'd use the following:
 
 ```sql
 * | parse xml "/users/user[last()]/first_name/text()" as first_name
 ```
 
-To parse an element based on an attribute, in this example where id="456", you could use the following:
+To parse an element based on an attribute, in this example where id="456", you'd use the following:
 
 ```sql
 * | parse xml "/users/user[@id=456]/first_name/text()" as first_name"
@@ -114,7 +114,7 @@ To parse an element based on an attribute, in this example where id="456", you
 
 ### Parse attribute values
 
-To parse the `id` attribute you could use the following:
+To parse the `id` attribute you'd use the following:
 
 ```sql
 * | parse xml "/users/user/@id" as id
@@ -122,13 +122,13 @@ To parse the `id` attribute you could use the following:
 
 The results would return a field named `id` with a value of `123`.
 
-To parse the `id` value from the second `user` element you could use the following:
+To parse the `id` value from the second `user` element you'd use the following:
 
 ```sql
 * | parse xml "/users/user[2]/@id" as id
 ```
 
-To parse the `id` value from the last user in the list you could use the following: 
+To parse the `id` value from the last user in the list you'd use the following: 
 
 ```sql
 * | parse xml "/users/user[last()]/@id" as id
@@ -136,7 +136,7 @@ To parse the `id` value from the last user in the list you could use the followi
 
 ### Parse multiple values
 
-To parse multiple element and attribute values from a single message into separate fields use a comma-separated list of Xpath expressions. For example, to parse the `first_name` element value and the `id` attribute from our example you could use the following: 
+To parse multiple element and attribute values from a single message into separate fields use a comma-separated list of Xpath expressions. For example, to parse the `first_name` element value and the `id` attribute from our example you'd use the following: 
 
 ```sql
 * | parse xml "/users/user/@id", "/users/user/first_name/text()" as id, first_name

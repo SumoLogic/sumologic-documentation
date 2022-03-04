@@ -4,15 +4,22 @@ id: hextoascii
 
 # hexToAscii
 
-The **hexToAscii** operator converts a hexadecimal string to an ASCII
-string.
+The **hexToAscii** operator converts a hexadecimal string to an ASCII string.
 
-### Syntax
+## Syntax
 
-* `hexToAscii\<hexadecimal_fiel\>) as\<fiel\>`
-* `hexToAscii(\<hexadecimal strin\>") as\<fiel\>`
+```sql
+hexToAscii(<hexadecimal_field>) as <field>
+```
 
-### Example
+```sql
+hexToAscii("<hexadecimal string>") as <field>
+```
 
-`| hexToAscii("68656c6c6f20776f726c640a") as V `   Returns `V` with a
-value of `hello world`.
+## Example
+
+The following returns `V` with a value of `hello world`:
+
+```sql
+| hexToAscii("68656c6c6f20776f726c640a") as V
+``` 

@@ -40,7 +40,7 @@ Results can be returned in two ways:
 
 ## Limitations
 
-* When not specifying a field with the `field=` option do not parse any fields. If you parse any fields they are excluded from the schema in your results. 
+* When not specifying a field with the `field=` option don't parse any fields. If you parse any fields they are excluded from the schema in your results. 
 * A maximum of 100 keys are automatically parsed.
 * Keys in arrays are not supported.
 * The [Time Compare](../time-compare.md) button will not work on LogReduce Keys results, you need to manually input the [compare operator] (../search-query-language/search-operators/Compare.md "Compare") instead.
@@ -78,7 +78,7 @@ Next, use [LogReduce Values to explore the schema based on specific keys](logr
 
 ### AWS CloudTrail
 
-To get a summary of patterns in AWS CloudTrail logs that reference AccessDenied errors for AWS you could use a query such as the following:
+To get a summary of patterns in AWS CloudTrail logs that reference AccessDenied errors for AWS you'd use a query such as the following:
 
 ```sql {13}
 _sourceCategory=*cloudtrail* *AccessDenied*  

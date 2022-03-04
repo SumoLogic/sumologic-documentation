@@ -4,15 +4,15 @@ slug: /field-browser
 
 # Field Browser
 
-The Field Browser appears on the left side of the **Messages** tab of the Search page for both aggregate and non-aggregate queries. The Field Browser allows you to zero in on just the fields of interest in a search by displaying or hiding selected fields without having to parse them. You can focus on the fields you’re interested in, avoiding the “noise” of fields you do not want to see.
+The Field Browser appears on the left side of the **Messages** tab of the Search page for both aggregate and non-aggregate queries. The Field Browser allows you to zero in on just the fields of interest in a search by displaying or hiding selected fields without having to parse them. You can focus on the fields you’re interested in, avoiding the “noise” of fields you don't want to see.
 
 For non-aggregate queries, the Field Browser is useful for narrowing results on searches, or when you are not sure which fields are in a log type, in a Partition, or in a Scheduled View. You can run a search with a larger scope and then refine the list of displayed fields to find the data you are looking for.
 
 ## How the Field Browser works
 
-The Field Browser displays the number of values for each field returned in a search. It works in real time, so you can fine tune the fields you want to view or hide. After setting the fields to display, save your preferences so that the correct fields are always displayed in your searches. The preferences are saved just for your user account and do not change the way data is displayed in other user accounts.
+The Field Browser displays the number of values for each field returned in a search. It works in real time, so you can fine tune the fields you want to view or hide. After setting the fields to display, save your preferences so that the correct fields are always displayed in your searches. The preferences are saved just for your user account and don't change the way data is displayed in other user accounts.
 
-In addition to the fields found in your logs, the Field Browser shows **Time** (for message time), **Receipt Time** (for the receipt time), and **Message** (for raw log messages). No [drill-down searches](search-from-the-field-browser.md) can be run on these fields because they do not contain number or string data that can be searched on.
+In addition to the fields found in your logs, the Field Browser shows **Time** (for message time), **Receipt Time** (for the receipt time), and **Message** (for raw log messages). No [drill-down searches](search-from-the-field-browser.md) can be run on these fields because they don't contain number or string data that can be searched on.
 
 ![Field-Browser_Display-Fields](/img/search/get-started-search/how-to-use-search-page/field-browser-display-fields.png)
 

@@ -39,7 +39,7 @@ The following examples assume you used the parsing from above:
 | -- | -- |
 | Calculate the total number of bytes transferred to each client IP address. | `| count, sum(sc_bytes) by c_ip` |
 Calculate the average size of successful HTTP responses.| `|avg(sc_bytes)` |
-If the "sc_substatus" field is missing do not exclude those messages (nodrop)…otherwise non-matches would be filtered out.| `| parse " 200 * " as sc_substatusnodrop` |
+If the "sc_substatus" field is missing don't exclude those messages (nodrop)…otherwise non-matches would be filtered out.| `| parse " 200 * " as sc_substatusnodrop` |
 | Calculate the number of times a page has been visited.| `| count by cs_uri_stem` |
 | Calculate the total number of pages by client IP addresses.| `| count by c_ip` |
 | Calculate the total number of pages by client IP address, sort them highest to lowest.| `| count by c_ip | sort by _countdesc` |
