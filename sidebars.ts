@@ -120,13 +120,13 @@ module.exports = {
               label: 'Search Basics',
               collapsible: true,
               collapsed: false,
-              link: {
+              /*link: {
                 type: 'generated-index',
                 title: 'Search Basics',
                 description:
                   "Sumo Logic search syntax uses logical and familiar operators allowing you to create ad hoc queries quickly and efficiently.",
                 keywords: ['search', 'logs'],
-              },
+              },*/
               items: [
                 'search/get-started-with-search/search-basics/about-search-basics',
                 'search/get-started-with-search/search-basics/built-in-metadata',
