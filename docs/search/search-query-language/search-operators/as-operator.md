@@ -42,7 +42,7 @@ _sourceCategory=Apache/Access
 
 Would provide results like:
 
-![rename](/img/reuse/query-search/as-rename.png)
+![rename](/img/reuse/query-search/as_rename.png)
 
 ### Create a New Constant Field
 

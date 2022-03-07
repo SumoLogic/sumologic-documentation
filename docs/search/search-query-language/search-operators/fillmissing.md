@@ -264,7 +264,7 @@ _sourceCategory="asthana_json_test" and _collector="Asthana-Test"
 
 This query provides the following results:
 
-![takeLast with transpose.png](/img/search/search-query-language/search-operators/fillmissing/takeLast-with-transpose.png)
+![takeLast with transpose.png](/img/search/search-query-language/search-operators/takeLast-with-transpose.png)
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';

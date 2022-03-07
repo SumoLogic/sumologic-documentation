@@ -123,4 +123,4 @@ For example, running a query like:
 
 returns results similar to:
 
-![isNull.png](/img/search/search-query-language/search-operators/geoip/isNull.png)
+![isNull.png](/img/search/search-query-language/search-operators/isNull.png)

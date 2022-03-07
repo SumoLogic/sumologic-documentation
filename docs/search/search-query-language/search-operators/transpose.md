@@ -111,8 +111,7 @@ _sourceCategory=Apache/Access
 
 Results are initially returned in the **Aggregates** tab in the form that we want.
 
-![Webserver Status
-Code](/img/search/search-query-language/search-operators/transpose/WebserverStatusCode.png)
+![Webserver StatusCode](/img/search/search-query-language/search-operators/transpose/WebserverStatusCode.png)
 
 Then you can select the **Column** chart button, and under **Change Properties**, set the **Stacking** setting to **Normal** to create a stacked column chart.
 

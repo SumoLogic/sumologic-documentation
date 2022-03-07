@@ -16,7 +16,7 @@ The saved search will also include any charts you have created in the **Aggrega
 1. (Optional) After the search results are complete, in the **Aggregates** tab, select a chart type to display the data visually. 
 1. Click the three-dot icon and click **Save As** from the provided options.   
 
-    ![save as button aug 24  2021.png](/img/search/get-started-search/search-basics/save-as-button-aug-24-2021.png)
+    ![save as button aug 24  2021.png](/img/search/get-started-search/search-basics/save-as-button.png)
 
 1. In the **Save Item** dialog appears.  
 

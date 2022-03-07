@@ -77,10 +77,9 @@ This query allows you to find messages with incorrect timestamps.
 
 This query produces results like this:
 
-![Incorrect
-Timestamp](/img/search/search-query-language/search-operators/IncorrectTimestamp.png)
+![Incorrect Timestamp](/img/search/search-query-language/search-operators/IncorrectTimestamp.png)
 
-### How old are your messages?
+### Determine age of log messages
 
 This query lets you determine the age of your log messages.
 

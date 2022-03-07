@@ -18,7 +18,7 @@ Expressions can be used to create fields that are Numeric, Boolean, or String va
 
 ## Numeric Expressions
 
-Numbers can be calculated using combinations of addition, subtraction, multiplication, division, modulo, and unary negation. Operators like "+" or "/" can be applied to numeric literals, numeric fields, operators that act as numeric functions (such as abs() or pow()), or nested numeric expressions. For more information about numeric functions, see [Math Expressions](math-expressions.md).
+Numbers can be calculated using combinations of addition, subtraction, multiplication, division, modulo, and unary negation. Operators like "+" or "/" can be applied to numeric literals, numeric fields, operators that act as numeric functions (such as abs() or pow()), or nested numeric expressions. For more information about numeric functions, see [Math Expressions](/docs/search/search-query-language/math-expressions).
 
 ### Numeric Literals
 

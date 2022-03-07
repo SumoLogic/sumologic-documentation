@@ -51,7 +51,7 @@ This query produces only three results, illustrating that \_total is simply the 
 | total ps
 ```
 
-![total op](/img/search/search-query-language/search-operators/total_op.png)
+![total op](/img/search/search-query-language/search-operators/total-op.png)
 
 ### Calculate totals by message time
 

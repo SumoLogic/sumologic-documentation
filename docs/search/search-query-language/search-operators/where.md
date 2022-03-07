@@ -42,14 +42,14 @@ Instead, separate the **where** operator from the preceding **parse** operat
 * The pipe delimiter is required to separate the **where** operator as a distinct query operator.
 * The **where** operator *can't* be used inline as a query clause, like ".`.. | extract a where b==something |...`"
 * Multiple **where** operators are processed in the order they are specified, with each subsequent **where **operator further filtering results.
-* [Keyword expressions](../../get-started-with-search/build-search/Keyword-Search-Expressions.md) can be used in the boolean expression, such as OR and AND.
+* [Keyword expressions](../../get-started-with-search/build-search/keyword-search-expressions.md) can be used in the boolean expression, such as OR and AND.
 * If defining a [built-in metadata field](../../get-started-with-search/search-basics/built-in-metadata.md) value in the boolean expression you need to quote the value. If it is not wrapped in quotes the value is interpreted as a field name.
 * If you are using [**in**](in-operator.md) or **not in** to match integers, [cast "x" to a number first](Manually-Casting-String-Data-to-a-Number.md).
 * The [matches](matches.md "matches") operator can be used in the boolean expression. You can use an [RE2 compliant](https://github.com/google/re2/wiki/Syntax) regular expression or use asterisks `*` as wildcards.
-* Any operator that returns a boolean value can be used in the boolean expression. Such as [compareCIDRPrefix](CIDR.md "CIDR"), [contains](contains.md), [in](in-operator.md), [isBlank, isEmpty, isNull](isNull.md "isNull, isEmpty, isBlank"),  [isNumeric](isNumeric.md), [isPrivateIP](isPrivateIP.md), [isPublicIP](isPublicIP.md), [isValidIP](isValidIP.md), and [math expressions](../Math-Expressions.md ).
+* Any operator that returns a boolean value can be used in the boolean expression. Such as [compareCIDRPrefix](CIDR.md "CIDR"), [contains](contains.md), [in](in-operator.md), [isBlank, isEmpty, isNull](isNull.md "isNull, isEmpty, isBlank"),  [isNumeric](isNumeric.md), [isPrivateIP](isPrivateIP.md), [isPublicIP](isPublicIP.md), [isValidIP](isValidIP.md), and [math expressions](/docs/search/search-query-language/math-expressions).
 
 :::note
-Use [comparison operators](../Field-Expressions.md) to produce boolean values.
+Use [comparison operators](../field-expressions.md) to produce boolean values.
 :::
 
 ## Examples

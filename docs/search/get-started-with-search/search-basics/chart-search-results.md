@@ -6,7 +6,7 @@ id: chart-search-results
 
 In the **Aggregates** tab, in addition to the standard table view, you can view search results as a chart, such as a bar or column chart.
 
-Only search results that have been aggregated using a group or aggregate operator can be charted. See [Group or Aggregate Operators](../../search-query-language/group-aggregate-operators.md "https://help.sumologic.com/Search/Search_Query_Language/aaGroup") for a list. 
+Only search results that have been aggregated using a group or aggregate operator can be charted. See [Group or Aggregate Operators](/docs/search/search-query-language/group-aggregate-operators.md) for a list. 
 
 When charting aggregate results from a query, the grouping function defines the plotted values on the one axis, and the grouping operator determines the values on the other axis. For example, **group by `_sourceHost`** produces a bar or point for each host. If you are using
 multiple group-by functions, a separate bar or point represents each set of grouped results.
