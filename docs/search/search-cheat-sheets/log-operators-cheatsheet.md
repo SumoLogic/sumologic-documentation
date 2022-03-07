@@ -12,12 +12,12 @@ The following tables provide a list of available Sumo Logic parsers, aggregator
 
 ## Parsing
 
-Sumo provides a number of ways to [parse] (../search-query-language/parse-operators.md) fields in your log messages.
+Sumo provides a number of ways to [parse](/docs/search-query-language/parse-operators) fields in your log messages.
 
 | Operator | Description | Example |
 | -- | -- | -- |
 | [parse (anchor)](../search-query-language/parse-operators/parse-predictable-patterns-using-an-anchor.md) | The parse operator, also called parse anchor, parses strings according to specified start and stop anchors, and then labels them as fields for use in subsequent aggregation functions in the query such as sorting, grouping, or other functions. | `| parse "User=*:" as user` |
-| [parse regex](../search-query-language/parse-operators/02-Parse-Variable-Patterns-Using-Regex.md) | The parse regex operator (also called the extract operator) enables users comfortable with regular expression syntax to extract more complex data from log lines. Parse regex can be used, for example, to extract nested fields. | `| parse regex field=url "[0-9A-Za-z-]+\.(?<domain>[A-Za-z-]+\.(?:co\.uk|com|com\.au))/.*"` |
+| [parse regex](../search-query-language/parse-operators/parse-variable-patterns-using-regex.md) | The parse regex operator (also called the extract operator) enables users comfortable with regular expression syntax to extract more complex data from log lines. Parse regex can be used, for example, to extract nested fields. | `| parse regex field=url "[0-9A-Za-z-]+\.(?<domain>[A-Za-z-]+\.(?:co\.uk|com|com\.au))/.*"` |
 | [keyvalue](../search-query-language/parse-operators/parse-keyvalue-formatted-logs.md) | Typically, log files contain information that follow a key-value pair structure. The keyvalue operator allows you to get values from a log message by specifying the key paired with each value. | `| keyvalue infer "module", "thread"` |
 | [csv](../search-query-language/parse-operators/parse-csv-formatted-logs.md) | The csv operator allows you to parse Comma Separated Values (CSV) formatted log entries. It uses a comma as the default delimiter.csv operator allows you to parse Comma Separated Values (CSV) formatted log entries. It uses a comma as the default delimiter. | `| csv_raw extract 1 as user, 2 as id, 3 as name` |
 | [JSON](../search-query-language/parse-operators/parse-json-formatted-logs.md) |The JSON operator is a search query language operator that allows you to extract values from JSON input. Because JSON supports both nested keys and arrays that contain ordered sequences of values, the Sumo Logic JSON operator allows you to extract single top-level fields, multiple fields, nested keys, and keys in arrays. | `| parse "explainJsonPlan] *" as jsonobject | json field=jsonobject "sessionId" | json auto` |

@@ -7,7 +7,7 @@ slug: /logcompare
 The LogCompare button appears on the **Messages** tab of the **Search** page. 
 
 :::important
-The [LogCompare](logcompare-syntax.md) operator is used to compare log signature counts, while the [compare](../time-compare.md) operator is used for aggregated numeric data. 
+The [LogCompare](LogCompare-Syntax.md) operator is used to compare log signature counts, while the [compare](../time-compare.md) operator is used for aggregated numeric data. 
 :::
 
 Watch our video on LogCompare:
