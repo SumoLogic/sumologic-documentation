@@ -1,5 +1,5 @@
 ---
-id: logreduce
+slug: /logreduce
 ---
 
 # LogReduce

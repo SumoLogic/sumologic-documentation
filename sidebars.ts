@@ -120,13 +120,13 @@ module.exports = {
               label: 'Search Basics',
               collapsible: true,
               collapsed: false,
-              /*link: {
+              link: {
                 type: 'generated-index',
                 title: 'Search Basics',
                 description:
                   "Sumo Logic search syntax uses logical and familiar operators allowing you to create ad hoc queries quickly and efficiently.",
                 keywords: ['search', 'logs'],
-              },*/
+              },
               items: [
                 'search/get-started-with-search/search-basics/about-search-basics',
                 'search/get-started-with-search/search-basics/built-in-metadata',
@@ -150,7 +150,7 @@ module.exports = {
               label: 'How to Use the Search Page',
               collapsible: true,
               collapsed: false,
-              link: {type: 'doc', id: 'search/get-started-with-search/how-to-use-search-page/index.md'},
+              link: {type: 'doc', id: 'search/get-started-with-search/how-to-use-search-page/index'},
               items: [
                 'search/get-started-with-search/how-to-use-search-page/add-saved-search-favorites',
                 'search/get-started-with-search/how-to-use-search-page/change-time-range-in-histogram',
@@ -159,7 +159,7 @@ module.exports = {
                   label: 'Field Browser',
                   collapsible: true,
                   collapsed: false,
-                  link: {type: 'doc', id: 'search/get-started-with-search/how-to-use-search-page/field-browser/index.md'},
+                  link: {type: 'doc', id: 'search/get-started-with-search/how-to-use-search-page/field-browser/index'},
                   items: [
                     'search/get-started-with-search/how-to-use-search-page/field-browser/search-from-the-field-browser',
                     'search/get-started-with-search/how-to-use-search-page/field-browser/show-hide-fields-in-field-browser',
@@ -179,7 +179,7 @@ module.exports = {
               label: 'Build Searches',
               collapsible: true,
               collapsed: false,
-              link: {type: 'doc', id: 'search/get-started-with-search/build-search/index.md'},
+              link: {type: 'doc', id: 'search/get-started-with-search/build-search/index'},
               items: [
                 'search/get-started-with-search/build-search/best-practices-search',
                 'search/get-started-with-search/build-search/dynamic-parsing',
@@ -218,7 +218,7 @@ module.exports = {
           label: 'Behavior Insights',
           collapsible: true,
           collapsed: false,
-          link: {type: 'doc', id: 'search/behavior-insights/index.md'},
+          link: {type: 'doc', id: 'search/behavior-insights/index'},
           items: [
             'search/behavior-insights/logexplain',
             'search/behavior-insights/logreduce-keys',
@@ -252,7 +252,7 @@ module.exports = {
           label: 'LogCompare',
           collapsible: true,
           collapsed: false,
-          link: {type: 'doc', id: 'search/logcompare/index.md'},
+          link: {type: 'doc', id: 'search/logcompare/index'},
           items: [
             'search/logcompare/about-logcompare',
             'search/logcompare/create-a-logcompare-email-alert',
@@ -266,12 +266,12 @@ module.exports = {
           label: 'LogReduce',
           collapsible: true,
           collapsed: false,
-          link: {type: 'doc', id: 'search/logreduce/index.md'},
+          link: {type: 'doc', id: 'search/logreduce/index'},
           items: [
             'search/logreduce/logreduce-operator',
             'search/logreduce/detect-patterns-with-logreduce',
             'search/logreduce/influence-the-logreduce-outcome',
-            'search/logreduce/understand-logcompare-results',
+            'search/logreduce/understand-the-logreduce-relevance-column',
           ],
         },
         'search/time-compare',
@@ -280,7 +280,7 @@ module.exports = {
           label: 'Lookup Tables',
           collapsible: true,
           collapsed: false,
-          link: {type: 'doc', id: 'search/lookup-tables/index.md'},
+          link: {type: 'doc', id: 'search/lookup-tables/index'},
           items: [
             'search/lookup-tables/create-a-lookup-table',
             'search/lookup-tables/manage-and-update-lookup-tables',
@@ -294,7 +294,7 @@ module.exports = {
           label: 'Search Cheat Sheets',
           collapsible: true,
           collapsed: false,
-          link: {type: 'doc', id: 'search/search-cheat-sheets/index.md'},
+          link: {type: 'doc', id: 'search/search-cheat-sheets/index'},
           items: [
             'search/search-cheat-sheets/general-search-examples-cheatsheet',
             'search/search-cheat-sheets/grep-searching-with-sumo-cheatsheet',
@@ -307,7 +307,7 @@ module.exports = {
           label: 'Search Query Language',
           collapsible: true,
           collapsed: false,
-          link: {type: 'doc', id: 'search/search-query-language/index.md'},
+          link: {type: 'doc', id: 'search/search-query-language/index'},
           items: [
             'search/search-query-language',
             {
@@ -315,7 +315,7 @@ module.exports = {
               label: 'Parse Operators',
               collapsible: true,
               collapsed: false,
-              link: {type: 'doc', id: 'search/search-query-language/parse-operators/index.md'},
+              link: {type: 'doc', id: 'search/search-query-language/parse-operators/index'},
               items: [
                 'search/search-query-language/parse-operators/parse-predictable-patterns-using-an-anchor',
                 'search/search-query-language/parse-operators/parse-variable-patterns-using-regex',
@@ -335,7 +335,7 @@ module.exports = {
               label: 'Group or Aggregate Operators',
               collapsible: true,
               collapsed: false,
-              link: {type: 'doc', id: 'search/search-query-language/group-aggregate-operators/index.md'},
+              link: {type: 'doc', id: 'search/search-query-language/group-aggregate-operators/index'},
               items: [
                 'search/search-query-language/group-aggregate-operators/avg',
                 'search/search-query-language/group-aggregate-operators/count-count-distinct-and-count-frequent',
@@ -356,7 +356,7 @@ module.exports = {
               label: 'Math Expressions',
               collapsible: true,
               collapsed: false,
-              link: {type: 'doc', id: 'search/search-query-language/math-expressions/index.md'},
+              link: {type: 'doc', id: 'search/search-query-language/math-expressions/index'},
               items: [
                 'search/search-query-language/math-expressions/abs',
                 'search/search-query-language/math-expressions/acos',
@@ -481,7 +481,7 @@ module.exports = {
               label: 'Transaction Analytics',
               collapsible: true,
               collapsed: false,
-              link: {type: 'doc', id: 'search/search-query-language/translation-analytics/index.md'},
+              link: {type: 'doc', id: 'search/search-query-language/translation-analytics/index'},
               items: [
                 'search/search-query-language/translation-analytics/merge-operator',
                 'search/search-query-language/translation-analytics/transaction-operator',

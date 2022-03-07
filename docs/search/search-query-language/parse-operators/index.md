@@ -1,5 +1,5 @@
 ---
-id: "-parse-operators"
+slug: /parse-operators
 ---
 
 # Parse Operators

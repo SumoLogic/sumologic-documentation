@@ -1,5 +1,5 @@
 ---
-id: behavior-insights
+slug: /behavior-insights
 ---
 
 # Behavior Insights

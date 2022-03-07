@@ -1,5 +1,5 @@
 ---
-id: search-cheat-sheets
+slug: /search-cheat-sheets
 ---
 
 # Search Cheat Sheets

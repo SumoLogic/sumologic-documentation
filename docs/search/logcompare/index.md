@@ -1,5 +1,5 @@
 ---
-id: logcompare
+slug: /logcompare
 ---
 
 # LogCompare

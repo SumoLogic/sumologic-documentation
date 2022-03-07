@@ -1,5 +1,5 @@
 ---
-id: math-expressions
+slug: /math-expressions
 ---
 
 # Math Expressions
