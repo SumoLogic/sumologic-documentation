@@ -17,7 +17,7 @@ grouping_function by <fieldname>
 Aggregating (group-by) functions include:
 
 * [avg](avg.md)
-* [count, count_distinct, and count_frequent](count,-count-distinct,-and-count-frequent.md)
+* [count, count_distinct, and count_frequent](count-count-distinct-and-count-frequent.md)
 * [first and last](first-and-last.md)
 * [min and max](min-and-max.md)
 * [most_recent and least_recent](most-recent-and-least-recent.md)

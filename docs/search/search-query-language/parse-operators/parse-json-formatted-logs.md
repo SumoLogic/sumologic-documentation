@@ -82,8 +82,7 @@ Another example, if your name is `fie@ld` you need to use `[‘fie@ld’]`.
 
 ## Case sensitivity
 
-References to specific keys are case sensitive in a standard JSON operation. For example, if a key name is `sourceIpAddress`  and
-you run `| json "sourceipaddress"` the operation will not return results since it does not match the upper case letters. The correct way is to run `| json "sourceIpAddress"`.
+References to specific keys are case sensitive in a standard JSON operation. For example, if a key name is `sourceIpAddress` and you run `| json "sourceipaddress"` the operation will not return results since it does not match the upper case letters. The correct way is to run `| json "sourceIpAddress"`.
 
 When using the [auto option](#json-auto-option) the keys are not case sensitive.
 

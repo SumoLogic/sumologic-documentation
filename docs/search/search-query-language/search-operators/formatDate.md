@@ -98,7 +98,7 @@ Which produces results like this:
 
 ### Messages by Day of the Week
 
-To get the day of the week from your logs, you can reference your log's timestamps, which are stored as the [metadata](/Search/Get_Started_with_Search/Search_Basics/Search_Metadat.md) field **\_messageTime**. You can also parse out any dates in your logs and use the [formatDate](formatDate.md) operator to get the day of the week.  
+To get the day of the week from your logs, you can reference your log's timestamps, which are stored as the [metadata](../../get-started-with-search/search-basics/built-in-metadata.md) field **\_messageTime**. You can also parse out any dates in your logs and use the [formatDate](formatDate.md) operator to get the day of the week.  
   
 Beginning with the **\_messageTime** field, you can determine the day of the week, and then remove the days you don't want using the formatDate operator. This example query provides results only for Mondays:
 

@@ -18,8 +18,7 @@ New Lookup Tables are available in all deployments except Sumo Logic's Montreal 
 
 ## Introduction to Lookup Tables
 
-A Lookup Table is a table of data hosted on Sumo Logic that you can use to enrich the log data received by Sumo Logic. For example, in a Sumo
-Logic log search, you'd refer to a Lookup Table of user account data to map the user ID in an incoming log to a row in the Lookup Table, and return other attributes of that user, for instance, email address or phone number. The fields you look up appear as part of your search results. 
+A Lookup Table is a table of data hosted on Sumo Logic that you can use to enrich the log data received by Sumo Logic. For example, in a Sumo Logic log search, you'd refer to a Lookup Table of user account data to map the user ID in an incoming log to a row in the Lookup Table, and return other attributes of that user, for instance, email address or phone number. The fields you look up appear as part of your search results. 
 
 ## Key facts about Lookup Tables
 
@@ -33,8 +32,7 @@ Before you create or update a Lookup table, note the following.
 
 ### Lookup Table naming
 
-A Lookup Table can't have a forward slash (/) in its name or be stored
-in a folder with a forward slash in the name.
+A Lookup Table can't have a forward slash (/) in its name or be stored in a folder with a forward slash in the name.
 
 ### Reserved keywords
 
@@ -43,6 +41,7 @@ When you create a Lookup Table schema, note the following requirements:
 * The following strings are reserved (case-insensitive) and should not be used as field names: 
 
     "pkv", "tid-cid-s", "mt", "tid-sk-1", "tid-sk-2", "tid-sk-3", "tid-sk-4", "tid-sk-5", "tid-sk-6", "tid-sk-7", "tid-sk-8", "tid-sk-9", "tid-sk-10", "tid-sk-11", "tid-sk-12", "tid-sk-13", "tid-sk-14", "tid-sk-15", "tid-sk-16", "tid-sk-17", "tid-sk-18", "tid-sk-19", "tid-sk-20", "`_messagetime`", "`_receipttime`", "`_sourceCategory`", "`_sourceHost`", "`_sourceName`", "`_source`", "`_sourceid`", "`_collector`", "`_collectorid`", "`_view`", "`_index`"
+
 * Field names can't contain two tilde characters in a row (~~). 
 * Field names are not case-sensitive. For example, you can't have both "Name" and "name" fields.
 
@@ -93,8 +92,8 @@ schema without populating the table.
    * **Description.** (Optional.)  Enter a description of the Lookup Table.
    * **Do you want a TTL for table entries?** A TTL specifies a time limit beyond which an unchanged row in the table will be unavailable for reads and will be deleted. For example, if you set a TTL of 5 minutes for a lookup table, when 5 minutes pass without a row being updated, that row will no longer be returned by lookups and will be deleted from the lookups table. A TTL is useful for managing the freshness of the data and the size of the table.
        
-       1.  Click **Yes** if you want to set a TTL.
-       2.  Enter an integer value in the **Duration** field, and select a unit of time from the pulldown:  **Seconds**, **Minutes** (default), **Hours**, or **Days**.
+       1. Click **Yes** if you want to set a TTL.
+       1. Enter an integer value in the **Duration** field, and select a unit of time from the pulldown:  **Seconds**, **Minutes** (default), **Hours**, or **Days**.
    
    * **Size Limit Handling**. This option controls how on how additions to the Lookup table will be handled when it reaches its size limit (100 MB)
        * **Stop Incoming Data**. Once the Lookup Table size limit is reached, no new data will be added to the table. 
@@ -107,7 +106,7 @@ schema without populating the table.
 
 1. **Schema**. For the first column in the table, enter:
 
-    * **Field**. Enter a name for the field. As you name your fields, note reserved keywords listed in [Reserved keywords](./01_Create_a_Lookup_Table.md "Create a Lookup Table").
+    * **Field**. Enter a name for the field. As you name your fields, note reserved keywords listed in [Reserved keywords](create-a-lookup-table.md).
     * **Value Type**. Choose the value type: boolean, int, long, double, or string (default).
     * **Primary Key**. Click the **Yes** checkbox if the field is part of the primary key for the table. If your table's primary key is a composite key, you will check this checkbox for each field that is part of the key. You must define a primary key for your Lookup Table.
 

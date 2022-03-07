@@ -8,14 +8,14 @@ The parseDate operator extracts a date or time from a string and provides a time
 
 ## Syntax
 
-* `parseDate\<strDat\>,\<dateForma\>)`
-* `parseDate\<strDat\>,\<dateForma\>,\<timeZon\>)`
+* `parseDate(<strDate>, <dateFormat>)`
+* `parseDate(<strDate>, <dateFormat>, <timeZone>)`
 
 ## Rules
 
 * `strDate` must start with the characters to match with the `dateFormat` pattern. For example, "3/4/2005 other" but not "other 3/4/2005".
 * `dateFormat` is a pattern string, such as "MM/dd/yyyy HH:mm:ss a". A full list of the supported patterns can be found on [Java's simpledateformat](https://docs.oracle.com/javase/7/docs/api/java/text/SimpleDateFormat.html) documentation.
-* If you don't supply `timeZone,` the operator defaults to the time zone set in your [preferences] (../../../01Start-Here/05Customize-Your-Sumo-Logic-Experience/Preferences-Page.md). For a list of `timeZone` codes, see <https://en.wikipedia.org/wiki/List_of_tz_database_time_zone\>.
+* If you don't supply `timeZone,` the operator defaults to the time zone set in your [preferences] (../../../01Start-Here/05Customize-Your-Sumo-Logic-Experience/Preferences-Page.md). For a list of `timeZone` codes, see [List of tz database time zones](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones).
 
 ## Examples
 

@@ -12,21 +12,21 @@ When your query has multiple parse expressions, using nodrop acts as an **OR**
 
 ## Syntax
 
-* `| parse "a=*," as\<fiel\> nodrop`  
+* `| parse "a=*," as <field> nodrop`  
 
     In this case, messages that match **a** as well as all other messages are returned.  
      
-* `| parse "a=*," as\<field\> nodrop | parse "b=*," as\<field\>`  
+* `| parse "a=*," as <field1> nodrop | parse "b=*," as <field2>`  
 
     In this case, messages that match either **a** or **b** are output. Everything else is dropped.  
      
-* `| parse "a=*," as\<field\> | parse "b=*," as\<field\>`  
+* `| parse "a=*," as <field1> | parse "b=*," as <field2>`  
 
     In this case, both parse operators are implicitly dropping
     non-matching messages. This means only messages that match both
     **a** and **b** are output.  
      
-* `| parse "a=*," as\<field\> nodrop | parse "b=*," as\<field\> nodrop | parse "c=*," as\<field\> nodrop | parse "d=*," as\<``field4`  
+* `| parse "a=*," as <field1> nodrop | parse "b=*," as <field2> nodrop | parse "c=*," as <field3> nodrop | parse "d=*," as <field4>`  
 
     In this case, messages that match (**a** or **b** or **c** or **d**) are output. Everything else is dropped.
 

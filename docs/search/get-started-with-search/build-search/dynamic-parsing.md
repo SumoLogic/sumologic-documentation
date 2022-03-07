@@ -9,11 +9,11 @@ Dynamic Parsing allows automatic field extraction from your JSON log messages wh
 Dynamic Parsing extracts JSON fields when you run a query, at search time (run time). Dynamic Parsing for JSON can be thought of as a Run
 Time field extraction rule (FER). By default, your account is given one Run Time FER that encompasses all of your data.
 
-![Default Run Time FER.png](/img/get-started-search/build-search/dynamic-parsing/default-runtime-FER.png)
+![Default Run Time FER.png](/img/search/get-started-search/build-search/dynamic-parsing/default-runtime-FER.png)
 
 With this FER defined, any search on JSON data will automatically parse out its JSON fields, which you can then use within your search query, exactly like any other field. You have an option on the Search Page that allows you to control Dynamic Parsing. Dynamic Parsing is activated when a search is run in **Auto Parse Mode**, more details about the modes can be found in [using Dynamic Parsing](./Dynamic_Parsing.md "Dynamic Parsing").
 
-![auto parse mode option.png](/img/get-started-search/build-search/dynamic-parsing/auto-parse-mode-option.png)
+![auto parse mode option.png](/img/search/get-started-search/build-search/dynamic-parsing/auto-parse-mode-option.png)
 
 ## Advantages of using Dynamic Parsing 
 
@@ -32,7 +32,7 @@ not be applicable.
 1. Go to **Manage Data** \> **Logs** \> **Field Extraction Rules**.
 1. Click **+ Add** at top right of the table to create an FER.  
 
-    ![Create Field extraction rule with dynamic parsing.png](/img/get-started-search/build-search/dynamic-parsing/create-FER-dynamic-parsing.png)
+    ![Create Field extraction rule with dynamic parsing.png](/img/search/get-started-search/build-search/dynamic-parsing/create-FER-dynamic-parsing.png)
 
 1. Enter the following options:
 
@@ -60,7 +60,7 @@ Now that you have at least one Run Time FER created you can start querying your 
 
 While the Run Time FERs are set to run automatically, you can selectively choose to apply these to your search queries on the log search query page. To use Dynamic Parsing, click the gear icon to open the **Search Config** menu and toggle **Auto Parse Mode** on.
 
-![auto parse mode option.png](/img/get-started-search/build-search/dynamic-parsing/auto-parse-mode-option.png)
+![auto parse mode option.png](/img/search/get-started-search/build-search/dynamic-parsing/auto-parse-mode-option.png)
 
 The two modes available are:
 
@@ -79,27 +79,27 @@ Field Browser:
 
 * A search input field allows you to search for fields by name.  
       
-    ![field browser search field](/img/get-started-search/build-search/dynamic-parsing/field-browser-search-field.png)
+    ![field browser search field](/img/search/get-started-search/build-search/dynamic-parsing/field-browser-search-field.png)
 
 * JSON structures are nested with expand and collapse options.  
       
-    ![Field browser expand collapse JSON](/img/get-started-search/build-search/dynamic-parsing/field-browser-expand-collapse-JSON.png)
+    ![Field browser expand collapse JSON](/img/search/get-started-search/build-search/dynamic-parsing/field-browser-expand-collapse-JSON.png)
 
 * A copy button is available to the right of each field allowing you to easily copy a field name.  
       
-    ![field browser copy field](/img/get-started-search/build-search/dynamic-parsing/field-browser-copy-field.png)
+    ![field browser copy field](/img/search/get-started-search/build-search/dynamic-parsing/field-browser-copy-field.png)
 
 Search results table:
 
 * You can copy field names from JSON structures. After selecting (click and highlight) a JSON key in your results, right click and select **Copy field name**. See [modifying a search from the messages tab](../how-to-use-search-page/Modify-a-Search-from-the-Messages-tab.md "Modify a Search from the Messages tab") for details on the other provided options.  
       
-    ![JSON right click copy options.png](/img/get-started-search/build-search/dynamic-parsing/JSON-right-click-copy-options.png)  
+    ![JSON right click copy options.png](/img/search/get-started-search/build-search/dynamic-parsing/JSON-right-click-copy-options.png)  
       
     Copying a field name using this option will automatically format [field names that have special characters](../search-basics/Reference_a_Field_with_Special_Characters.md). For example, the field name shown in the screenshot is **total time-series**, it would be automatically formatted to **%"total time-series"** to work properly in a search query.  
      
 * A copy button is available to the right of each column (field) name allowing you to easily copy a field name.  
       
-    ![copy button messages table](/img/get-started-search/build-search/dynamic-parsing/copy-button-messages-table.png)
+    ![copy button messages table](/img/search/get-started-search/build-search/dynamic-parsing/copy-button-messages-table.png)
 
 ## Key Rules
 

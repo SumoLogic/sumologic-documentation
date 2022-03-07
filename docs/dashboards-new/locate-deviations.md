@@ -12,7 +12,7 @@ Currently, the feature is only available for logs queries. For information on ou
 
 ## Graphing log queries to find outliers
 
-You can graph log queries to determine where there are deviations from normal behavior in a time series. Locating outliers can help you understand the behavior trends of a time series. For more  in-depth information, see the [outlier operator] (../../05Search/search-query-language/search-operators/outlier.md "outlier") page.
+You can graph log queries to determine where there are deviations from normal behavior in a time series. Locating outliers can help you understand the behavior trends of a time series. For more  in-depth information, see [outlier operator](../search/search-query-language/search-operators/outlier.md).
 
 To graph a log query and determine outliers, do the following:
 

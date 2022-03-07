@@ -10,14 +10,13 @@ Ingested XML files must be well-formed and valid in order to be parsed by the XM
 
 ## Syntax
 
-* `| parse XML [field\<field_nam\>] \<xpath_expressio\>"[, \<xpath_expressio\>"] [as\<field\>] [nodrop]`
+* `| parse XML [field=<field_name>] "<xpath_expression>"[, "<xpath_expression>"] [as <fields>] [nodrop]`
 
 ## Options
 
-* `field\<field_nam\>` 
+* `field=<field_name>` 
 
-    The `field=fieldname` option allows you to specify a field to parse other than the default message. For details, see [Parse
-    field](parse-field-option.md). 
+    The `field=fieldname` option allows you to specify a field to parse other than the default message. For details, see [Parse field](parse-field-option.md). 
 
 * `nodrop` 
 

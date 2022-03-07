@@ -12,16 +12,19 @@ For more information on Regular Expressions, see the [Perl documentation](http:
 
 ## Syntax
 
-* `| parse regex \<start_expressio\>(\<field_name\<field_expressio\>\<stop_expressio\>"`
-* `| parse regex \<start_expressio\>(\<field_name\<field_expressio\>\<stop_expressio\>" [nodrop]`
-* `| parse regex [field\<field_nam\>] \<start_expressio\>(\<field_name\<field_expressio\>\<stop_expressio\>"`  
+* `| parse regex "<start_expression>(?<field_name><field_expression>)<stop_expression>"`
+* `| parse regex "<start_expression>(?<field_name><field_expression>)<stop_expression>" [nodrop]`
+* `| parse regex [field=<field_name>] "<start_expression>(?<field_name><field_expression>)<stop_expression>" `
      
-* You can use the alternate term "extract".   
-    `| extract ``\<start_expressio\>(\<field_name\<field_expressio\>\<stop_expressio\>"`
+You can use the alternate term "extract":
+
+```sql
+| extract "<start_expression>(?<field_name><field_expression>)<stop_expression>"
+```
 
 ## Options
 
-* `field\<field_nam\>` 
+* `field=<field_name>` 
 
     The `field=fieldname` option allows you to specify a field to parse other than the default message. For details, see [Parse field](parse-field-option.md). 
 
@@ -152,12 +155,16 @@ The output looks like:
 You can tell the parser to use case insensitivity by supplying the regex parameter of **(?i)**. For example, let's say we have the following log messages:
 
 `Line1: The following exception was reported: error in log`
+
 `Line2: The following exception was reported: Error in log`
+
 `Line3: The following exception was reported: ERROR in log `
 
 Use the following parse regex expression to match the "error" in the logs. The **(?i)** tells the parser to ignore case for the trailing expression.
 
-`| parse regex "reported:\s(\<exceptio\>(?i)error)\s"`
+```sql
+| parse regex "reported:\s(?<exception>(?i)error)\s"
+```
 
  This would result in the following parsed fields
 
@@ -167,5 +174,4 @@ Use the following parse regex expression to match the "error" in the logs. The *
 | Error         | Line2: The following exception was reported: Error in log |
 | error         | Line1: The following exception was reported: error in log |
 
-You can also use the [toLowerCase and toUpperCase](../search-operators/toLowerCase-and-toUpperCase.md)
-operators. 
+You can also use the [toLowerCase and toUpperCase](../search-operators/toLowerCase-and-toUpperCase.md) operators. 

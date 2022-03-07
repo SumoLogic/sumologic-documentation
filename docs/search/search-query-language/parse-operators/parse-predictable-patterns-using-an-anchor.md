@@ -10,13 +10,13 @@ This topic describes how to use the parse anchor UI tool to add parsing to a que
 
 ## Syntax
 
-* `| parse \<start_ancho\>\<stop_ancho\>" as\<fiel\>`
-* `| parse \<start_ancho\>\<stop_ancho\>" as\<fiel\> [nodrop]`
-* `| parse [field\<field_nam\>] \<start_ancho\>\<stop_ancho\>" as\<fiel\>`
+* `| parse "<start_anchor>*<stop_anchor>" as <field>`
+* `| parse "<start_anchor>*<stop_anchor>" as <field> [nodrop]`
+* `| parse [field=<field_name>] "<start_anchor>*<stop_anchor>" as <field>`
 
 ## Options
 
-* The `nodrop` option forces results to also include messages that don't match any segment of the parse term. For details, see [Parse nodrop](parse-nodrop-option.md ). 
+* The `nodrop` option forces results to also include messages that don't match any segment of the parse term. For details, see [Parse nodrop](parse-nodrop-option.md). 
 * The `field=fieldname` option allows you to specify a field to parse other than the default message. For details, see [Parse field](parse-field-option.md). 
 
 ## Rules
@@ -34,9 +34,9 @@ You can use the parse anchor UI tool to highlight the message text to parse, id
 
 **To parse using the parse anchor tool:**
 
-1.  Run a search.
-2.  In the search results, find a message with the text you want to parse.
-3.  Highlight the text, right-click, and select **Parse the selected text**.  
+1. Run a search.
+1. In the search results, find a message with the text you want to parse.
+1. Highlight the text, right-click, and select **Parse the selected text**.  
 
     ![parse selected text UI option.png](/img/search/search-query-language/parse-operators/anchor/parse-selected-text-UI-option.png)  
       
@@ -44,23 +44,23 @@ You can use the parse anchor UI tool to highlight the message text to parse, id
 
     ![parse text window.png](/img/search/search-query-language/parse-operators/anchor/parse-text-window.png)  
      
-4.  Select the text for the first parsing field, and click **Click to extract this value**.   The text you highlighted is replaced by an asterisk (\*).  
+1. Select the text for the first parsing field, and click **Click to extract this value**.   The text you highlighted is replaced by an asterisk (\*).  
 
     ![hightlighted term in parse text window.png](/img/search/search-query-language/parse-operators/anchor/hightlighted-term-in-parse-text-window.png)  
      
-5.  Enter a name (no spaces) for the parsing field in the **Fields** area.  
+1. Enter a name (no spaces) for the parsing field in the **Fields** area.  
 
     ![parsing field.png](/img/search/search-query-language/parse-operators/anchor/parsing-field.png)  
      
-6.  If you want to parse additional fields, add a comma after the field name, and repeat the parsing action. The following screenshot shows three parsed fields: **method**, **ip**, and **port** (in that order). Notice that the three fields correspond to the three asterisks in the parse text.  
+1. If you want to parse additional fields, add a comma after the field name, and repeat the parsing action. The following screenshot shows three parsed fields: **method**, **ip**, and **port** (in that order). Notice that the three fields correspond to the three asterisks in the parse text.  
 
     ![three parsing fields.png](/img/search/search-query-language/parse-operators/anchor/three-parsing-fields.png)  
      
-7.  Click **Submit**. The query is updated with the parse operation you constructed.  
+1. Click **Submit**. The query is updated with the parse operation you constructed.  
 
     ![query from parse UI tool.png](/img/search/search-query-language/parse-operators/anchor/query-from-parse-UI-tool.png)  
      
-8.  Click **Start** to display the search results, which now show the parsed message.  
+1. Click **Start** to display the search results, which now show the parsed message.  
 
     ![parsed results.png](/img/search/search-query-language/parse-operators/anchor/parsed-results.png)
 

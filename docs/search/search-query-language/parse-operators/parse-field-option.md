@@ -11,8 +11,8 @@ as well as the [Parse Regex](parse-variable-patterns-using-regex.md) operation
 
 ## Syntax
 
-* `parse field\<fiel\> \<start_ancho\>\<stop_ancho\>" as\<fiel\>`
-* `parse regex field\<fiel\> \<start expressio\>(\<fieldname\<field expressio\>\<stop expressio\>"`
+* `parse field=<field> "<start_anchor>*<stop_anchor>" as <field>`
+* `parse regex field=<field> "<start expression>(?<fieldname><field expression>)<stop expression>"`
 
 :::note
 Characters quoted with double quotes (not single quotes) are string literals. Use a backslash to escape double quotes in the string. For example:  

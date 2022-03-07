@@ -24,7 +24,7 @@ These are best used for looking at statistics taken over time. Things like CPU,�
 Time series panels accept aggregate fields with epoch values (milliseconds since 1970).
 
 :::note
-Log queries can use the [timeslice operator] (../../05Search/search-query-language/search-operators/timeslice.md "timeslice") to provide a time series.
+Log queries can use the [timeslice operator](../search/search-query-language/search-operators/timeslice-joinresults.md) to provide a time series.
 :::
 
 Available chart types:
@@ -99,7 +99,7 @@ Honeycombs are great at helping you find areas of significant activity amongst a
 
 ![map panel.png](/img/dashboards-new/panels/map-panel.png)
 
-Maps identify where requests are coming from. These are ideal for [geolocation] (../../05Search/search-query-language/search-operators/Geo-Lookup.md "Geo Lookup (Map)") data.
+Maps identify where requests are coming from. These are ideal for [geolocation](../search/search-query-language/search-operators/Geo-Lookup.md) data.
 
 :::note
 You may not see map panels render if hardware acceleration is disabled on your browser.

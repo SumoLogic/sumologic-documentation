@@ -79,7 +79,7 @@ LogReduce Optimize is a scaled-out version of LogReduce that groups logs by exis
 Optimize option syntax:
 
 ```sql
-... | logreduce [field\<fiel\>] optimize
+... | logreduce [field<field>] optimize
 ```
 
 For example:

@@ -35,7 +35,7 @@ With the provided results you can:
 
 Results can be returned in two ways:
 
-* If the operator is last in the query (no operations follow it) it provides aggregate results by performing a [count by] (../search-query-language/group-aggregate-operators/count,-count-distinct,-and-count-frequent.md "count, count_distinct, and count_frequent") operation.
+* If the operator is last in the query (no operations follow it) it provides aggregate results by performing a [count by] (../search-query-language/group-aggregate-operators/count-count-distinct-and-count-frequent.md "count, count_distinct, and count_frequent") operation.
 * If you want to use operators after LogReduce you need to specify the `noaggregate` option so your results are returned non-aggregated.
 
 ## Limitations

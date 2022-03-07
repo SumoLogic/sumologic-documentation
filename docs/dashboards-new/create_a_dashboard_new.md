@@ -71,10 +71,10 @@ You can create Log and Metric queries on the same panel.
 
 <TabItem value="log">
 
-Enter your aggregate [search query] (../../05Search/Search-Query-Language.md "Search Query Language")
+Enter your aggregate [search query](/docs/search/search-operators)
 in the input field and press enter. A few important things to note are:
 
-* Only search results that have been aggregated using a group or aggregate operator can be charted. See [Group or Aggregate Operators ] (../../search/search-query-language/group-aggregate-operators.md "https://help.sumologic.com/Search/Search_Query_Language/aaGroup")for a list. 
+* Only search results that have been aggregated using a group or aggregate operator can be charted. See [Group or Aggregate Operators](/docs/search/search-query-language/group-aggregate-operators.md)for a list. 
 * By default, the query builder is set to **Logs**. 
 * Joining log queries in a separate query is not supported.
 
@@ -127,7 +127,7 @@ You can delete a panel that you no longer need.
 
 ## Log Search page
 
-To create a Dashboard (New) from the [Log Search page] (../../05Search/Get-Started-with-Search/how-to-use-search-page.md "How to Use the Search Page"):
+To create a Dashboard (New) from the [Log Search page](/docs/search/get-started-with-search/how-to-use-the-search-page):
 
 1. From the Log Search page click the **Add to Dashboard** button on the Aggregates tab after running your aggregate query you want to add to a Dashboard (New) panel.  
 
