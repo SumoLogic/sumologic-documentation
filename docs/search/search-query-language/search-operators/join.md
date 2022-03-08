@@ -45,7 +45,7 @@ on t1.a = t2.c
 ## Rules
 
 * Two or more tables must be created for a query.
-* The join expression can not specify a [keyword search expression](../../get-started-with-search/build-search/Keyword-Search-Expressions.md) (scope), if provided it is ignored.
+* The join expression can not specify a [keyword search expression](../../get-started-with-search/build-search/keyword-search-expressions.md) (scope), if provided it is ignored.
 * Data must be present in the time range you choose for the query.
 * Join can be used in Dashboard Panels, but in the query they must be included after the first `group-by` phrase.
 * [Subqueries](../../subqueries.md) are supported, and can include aggregate operators.

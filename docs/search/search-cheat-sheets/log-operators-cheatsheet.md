@@ -26,7 +26,7 @@ Sumo provides a number of ways to [parse](/docs/search-query-language/parse-ope
 
 ## Aggregating
 
-[Aggregating functions](../search-query-language/group-aggregate-operators.md) evaluate messages and place them into groups. The group operator is used in 
+[Aggregating functions](../search-query-language/group-aggregate-operators) evaluate messages and place them into groups. The group operator is used in 
 conjunction with group-by functions. When using any grouping function, the word by is sufficient for representing the group operator.
 
 :::note

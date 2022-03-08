@@ -9,7 +9,7 @@ Logic only returns non-empty groups in the results. For example, if your query i
 
 This can be a problem because:
 
-* The lack of data is sometimes also an interesting event, but there is no easy way to capture this information. For example, the [outlier](outlier.md "outlier") operator can't catch anomalies arising from missing data because it can only mark an existing timeslice as anomalous.
+* The lack of data is sometimes also an interesting event, but there is no easy way to capture this information. For example, the [outlier](outlier.md) operator can't catch anomalies arising from missing data because it can only mark an existing timeslice as anomalous.
 * Missing data can lead to misleading visualizations. For example, if you plot a line chart across timeslices with missing data, the chart will interpolate across the missing timeslices and represent them deceptively as nonempty.
 
 The `fillmissing` operator addresses this shortcoming by allowing you to specify groups that should be represented in the output, even if those groups have no data.
@@ -47,9 +47,9 @@ The `fillmissing` operator supports the following types of generators:
 
 * **Timeslice**. Enumerates all the timeslices with a given granularity in a query time range. For example, `timeslice(15m)` enumerates all the 15-minute timeslices in the query time range.
 
-    :::note
-    Buckets need to be based on a time period.
-    :::
+  :::note
+  Buckets need to be based on a time period.
+  :::
 
 * **Values**. Enumerates the fixed set of values given in arguments. For example, `values("a", "b", "c")` enumerates the values "a", "b", and "c". Currently, only string literals are supported for the arguments.
 
@@ -103,7 +103,7 @@ fillmissing <keyFieldGenerator> [, <keyFieldGenerator> ]  [ with <nonKeyFieldSpe
 
 This example query counts the number of login events in 15-minute timeslices. Notice that in the query with `fillmissing`, timeslices with a count of zero are shown in the output.
 
-Notice also that for the timeslice generator, the key field name is optional. (It defaults to `_timeslice.`)
+Notice also that for the timeslice generator, the key field name is optional. (It defaults to `_timeslice`.)
 
 <Tabs
   groupId="timeslice-generator"
@@ -150,13 +150,13 @@ Notice also how we changed the default value of `_count` from 0 to -1.
 <Tabs
   groupId="value-generator"
   className="unique-tabs"
-  defaultValue="tab1"
+  defaultValue="tab3"
   values={[
-    {label: 'Without Fillmissing', value: 'tab1'},
-    {label: 'With Fillmissing', value: 'tab2'},
+    {label: 'Without Fillmissing', value: 'tab3'},
+    {label: 'With Fillmissing', value: 'tab4'},
   ]}>
 
-<TabItem value="tab1">
+<TabItem value="tab3">
 
 ```sql
 login
@@ -166,7 +166,7 @@ login
 ![fillmissing-example-1-without.png](/img/search/search-query-language/search-operators/fillmissing-example2-without.png)
 
 </TabItem>
-<TabItem value="tab2">
+<TabItem value="tab4">
 
 ```sql
 	login

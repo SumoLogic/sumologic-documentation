@@ -13,17 +13,11 @@ import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
 
 ## What Data Do I Have?
 
-It can be hard to create a search query if you don't know what data you
-have in your Sumo Logic environment. 
+It can be hard to create a search query if you don't know what data you have in your Sumo Logic environment. 
 
-You can use the following simple queries to identify possible values for
-your existing Source Categories, Source Names, and Source Hosts. You can
-also approximate data volume for each of the possible values using these
-queries.
+You can use the following simple queries to identify possible values for your existing Source Categories, Source Names, and Source Hosts. You can also approximate data volume for each of the possible values using these queries.
 
-We discourage the use of `*`, as it does not provide much value, but in
-this exception, it is an easy way to identify all messages received in
-the last 5 minutes, and provide an approximate volume for each.
+We discourage the use of `*`, as it does not provide much value, but in this exception, it is an easy way to identify all messages received in the last 5 minutes, and provide an approximate volume for each.
 
 For Source Categories:
 

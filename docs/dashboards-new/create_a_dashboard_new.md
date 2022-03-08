@@ -74,7 +74,7 @@ You can create Log and Metric queries on the same panel.
 Enter your aggregate [search query](/docs/search/search-operators)
 in the input field and press enter. A few important things to note are:
 
-* Only search results that have been aggregated using a group or aggregate operator can be charted. See [Group or Aggregate Operators](/docs/search/search-query-language/group-aggregate-operators.md)for a list. 
+* Only search results that have been aggregated using a group or aggregate operator can be charted. See [Group or Aggregate Operators](/docs/search/search-query-language/group-aggregate-operators)for a list. 
 * By default, the query builder is set to **Logs**. 
 * Joining log queries in a separate query is not supported.
 

@@ -11,7 +11,7 @@ Time field extraction rule (FER). By default, your account is given one Run Time
 
 ![Default Run Time FER.png](/img/search/get-started-search/build-search/dynamic-parsing/default-runtime-FER.png)
 
-With this FER defined, any search on JSON data will automatically parse out its JSON fields, which you can then use within your search query, exactly like any other field. You have an option on the Search Page that allows you to control Dynamic Parsing. Dynamic Parsing is activated when a search is run in **Auto Parse Mode**, more details about the modes can be found in [using Dynamic Parsing](./Dynamic_Parsing.md "Dynamic Parsing").
+With this FER defined, any search on JSON data will automatically parse out its JSON fields, which you can then use within your search query, exactly like any other field. You have an option on the Search Page that allows you to control Dynamic Parsing. Dynamic Parsing is activated when a search is run in **Auto Parse Mode**, more details about the modes can be found in [using Dynamic Parsing](dynamic-parsing.md).
 
 ![auto parse mode option.png](/img/search/get-started-search/build-search/dynamic-parsing/auto-parse-mode-option.png)
 
@@ -40,7 +40,7 @@ not be applicable.
 
     * **Applied At**. Select **Run Time**.
 
-    * **Scope**. Select **Specific Data** and define the scope of your JSON data. You can define your JSON data source as a [Partition](../../../Manage/Partitions_and_Data_Tiers/01-About-Partitions.md "About Partitions") Name(index), sourceCategory, Host Name, Collector Name, or any other [metadata](../search-basics/built-in-metadata.md "Search Metadata") that describes your JSON data. Think of the Scope as the first portion of an ad hoc search, before the first pipe ( \| ). You will use the Scope to run a search against the rule. You can't use keywords like “info” or “error” in your scope.
+    * **Scope**. Select **Specific Data** and define the scope of your JSON data. You can define your JSON data source as a [Partition] (../../../Manage/Partitions_and_Data_Tiers/01-About-Partitions.md "About Partitions") Name(index), sourceCategory, Host Name, Collector Name, or any other [metadata](../search-basics/built-in-metadata.md) that describes your JSON data. Think of the Scope as the first portion of an ad hoc search, before the first pipe ( \| ). You will use the Scope to run a search against the rule. You can't use keywords like “info” or “error” in your scope.
 
         Always set up JSON auto extraction (Run Time field extraction) on a specific Partition name (recommended) or a particular Source. Failing to do so might cause the auto parsing logic to run on data sources where it is not applicable and will add additional overhead that might deteriorate the performance of your queries.
 
@@ -73,7 +73,7 @@ The two modes available are:
 
 ## Reference parsed JSON fields
 
-The [field browser](../how-to-use-search-page/Field-Browser.md "Field Browser") and search results [messages table](../how-to-use-search-page.md "How to Use the Search Page") have a few helpful features. 
+The [field browser](/docs/search/get-started-with-search/how-to-use-search-page/field-browser) and search results [messages table](/docs/search/get-started-with-search/how-to-use-search-page) have a few helpful features. 
 
 Field Browser:
 
@@ -91,11 +91,11 @@ Field Browser:
 
 Search results table:
 
-* You can copy field names from JSON structures. After selecting (click and highlight) a JSON key in your results, right click and select **Copy field name**. See [modifying a search from the messages tab](../how-to-use-search-page/Modify-a-Search-from-the-Messages-tab.md "Modify a Search from the Messages tab") for details on the other provided options.  
+* You can copy field names from JSON structures. After selecting (click and highlight) a JSON key in your results, right click and select **Copy field name**. See [modifying a search from the messages tab](../how-to-use-search-page/modify-search-from-messages-tab.md) for details on the other provided options.  
       
     ![JSON right click copy options.png](/img/search/get-started-search/build-search/dynamic-parsing/JSON-right-click-copy-options.png)  
       
-    Copying a field name using this option will automatically format [field names that have special characters](../search-basics/Reference_a_Field_with_Special_Characters.md). For example, the field name shown in the screenshot is **total time-series**, it would be automatically formatted to **%"total time-series"** to work properly in a search query.  
+    Copying a field name using this option will automatically format [field names that have special characters](../search-basics/reference-field-special-characters.md). For example, the field name shown in the screenshot is **total time-series**, it would be automatically formatted to **%"total time-series"** to work properly in a search query.  
      
 * A copy button is available to the right of each column (field) name allowing you to easily copy a field name.  
       
@@ -130,5 +130,5 @@ The following are limitations around the number of fields:
 
 * Dynamic Parsing extracts up to 100 fields per message. This 100 field count includes all built-in and parsed fields.
 * Total fields shown in the field browser consist of all the fields extracted across log lines.
-* The [Field Browser](../how-to-use-search-page/Field-Browser.md "Field Browser") displays the count of the fields as well as the distribution of values of each field. These calculations are done for the first 200 fields that are parsed by a run-time FER.
+* The [Field Browser](/docs/search/get-started-with-search/how-to-use-search-page/field-browser) displays the count of the fields as well as the distribution of values of each field. These calculations are done for the first 200 fields that are parsed by a run-time FER.
 * Non-aggregate queries in Scheduled Views and Scheduled Searches can't be created in auto parse mode (Dynamic Parsing).

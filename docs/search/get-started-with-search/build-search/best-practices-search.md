@@ -12,7 +12,7 @@ If possible, also use one or more keywords to limit the scope.
 
 ## Limit search time range
 
-Use the smallest [time range](Set-the-Time-Range.md) required for your use case. When reviewing data over long time ranges, build and
+Use the smallest [time range](set-time-range.md) required for your use case. When reviewing data over long time ranges, build and
 test your search against a shorter time range first, then extend the time range once the search is finalized.
 
 ## Use fields extracted by FERs and avoid the where operator
@@ -41,7 +41,7 @@ _sourceCategory=foo | parse "somefield *" as somefield | where somefield="valuea
 
 ## Filter your data before aggregation
 
-When filtering data, make the result set you are working with as small as possible before conducting [aggregate] (../../search-query-language/group-aggregate-operators.md "Group") operations like sum, min, max, and average. According to [Be specific with search scope](#be-specific-with-search-scope), keywords and metadata in your search scope are the priority. If you must use a `where` clause, refer to [Use fields extracted by FERs and avoid the where operator](#use-fields-extracted-by-fers-and-avoid-the-where-operator).
+When filtering data, make the result set you are working with as small as possible before conducting [aggregate] (../../search-query-language/group-aggregate-operators "Group") operations like sum, min, max, and average. According to [Be specific with search scope](#be-specific-with-search-scope), keywords and metadata in your search scope are the priority. If you must use a `where` clause, refer to [Use fields extracted by FERs and avoid the where operator](#use-fields-extracted-by-fers-and-avoid-the-where-operator).
 
 **Best approach:**
 

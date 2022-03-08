@@ -8,7 +8,7 @@ Search templates can help you simplify searches for your users by giving them a 
 
 Behind the scenes, selecting the parts of your query to use in the template is also pretty easy.  You can select which parts of your search should be available and click **Create Parameter**.
 
-Search templates work with [lookup (classic)](../../search-query-language/search-operators/lookup-classic.md "lookup (Classic)"). They are not supported with our newer [lookup tables](../../Lookup_Tables.md "Lookup Tables").
+Search templates work with [lookup (classic)](../../search-query-language/search-operators/lookup-classic.md). They are not supported with our newer [lookup tables](/docs/search/lookup-tables).
 
 ## Create a general Search Template
 

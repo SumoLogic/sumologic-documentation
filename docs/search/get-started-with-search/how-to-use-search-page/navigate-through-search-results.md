@@ -8,7 +8,7 @@ When you run a search your results are provided in a **Messages** tab. If the 
 
 ![Messages and Aggregates tab.png](/img/search/get-started-search/how-to-use-search-page/navigate-through-search-results/messages-aggregates-tab.png)
 
-The **Signatures** tab is shown when using [LogReduce](../../LogReduce.md "LogReduce").
+The **Signatures** tab is shown when using [LogReduce](/docs/search/logreduce).
 
 ![Signatures tab.png](/img/search/get-started-search/how-to-use-search-page/navigate-through-search-results/signatures-tab.png)
 

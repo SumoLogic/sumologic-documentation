@@ -8,7 +8,7 @@ You can pause or cancel a search when it is in progress. Most users want to canc
 
 Once you have started your log search the search page will change to provide the options to pause or cancel a search.
 
-![pause and cancel](/img/search/get-started-search/search-basics/pause-cancel-search.png)
+![pause and cancel](/img/search/get-started-search/build-search/pause-cancel-search.png)
 
 ## Pause a Search
 

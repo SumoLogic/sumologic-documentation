@@ -148,7 +148,7 @@ _sourceCategory=aws/vpc
 
 The output looks like:
 
-![ParseRegexMulti.png](/img/search-query-language/parse-operators/ParseRegexMulti.png)
+![ParseRegexMulti.png](/img/search/search-query-language/parse-operators/ParseRegexMulti.png)
 
 ### Case insensitive parse regex
 

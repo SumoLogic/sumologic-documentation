@@ -98,7 +98,7 @@ _index=audit_events
 
 produces results like:
 
-![json single key displayed on results table.png](/img/search/search-query-language/parse-json-formatted-logs/json-single-key.png)
+![json single key displayed on results table.png](/img/search/search-query-language/parse-operators/parse-json-formatted-logs/json-single-key.png)
 
 ## Extracting multiple fields
 
@@ -112,7 +112,7 @@ _index=audit_events
 
 produces these results:
 
-![json multiple keys displayed in results.png](/img/search/search-query-language/parse-json-formatted-logs/json-multiple-keys-displayed-in-results.png)
+![json multiple keys displayed in results.png](/img/search/search-query-language/parse-operators/parse-json-formatted-logs/json-multiple-keys-displayed-in-results.png)
 
 In addition, you can assign names to fields that differ from their original key names. To use `aID` instead of `accountId` and `eName` instead of `eventName`, you'd use the `as` option like this:
 

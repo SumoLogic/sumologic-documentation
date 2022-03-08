@@ -77,4 +77,4 @@ For more information, see [Where](../search-query-language/search-operators/wher
 :::
 
 For any query, you can increase specificity by adding metadata fields to the keyword expression. Metadata fields include `_sourceCategory`,
-`_sourceHost `, and `_sourceName`. Edit Source metadata in the **Collection** tab. For details see [Search Metadata.](../Get-Started-with-Search/search-basics/built-in-metadata.md) 
+`_sourceHost `, and `_sourceName`. Edit Source metadata in the **Collection** tab. For details see [Search Metadata.](../get-started-with-search/search-basics/built-in-metadata.md) 

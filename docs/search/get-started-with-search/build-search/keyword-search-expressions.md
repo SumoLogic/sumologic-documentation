@@ -53,8 +53,7 @@ Keyword search expressions are often referred to as the **scope** of a query.
 * `_sourceHost=Atlanta AND (_sourceCategory="win-app-logs" OR _sourceName="win-firewall-logs")`
 * `_sourceHost="10.1.12.22" AND_sourceCategory="my category" NOT _sourceCategory="some-other" AND _sourceName="/var/log/some.log"`
 
-It can be hard to create a search query if you don't know what data you have in your Sumo Logic environment. For simple example queries to
-discover existing Source Categories, Source Names, and Source Hosts, see [What Data Do I Have?](What-Data-Do-I-Have.md)
+It can be hard to create a search query if you don't know what data you have in your Sumo Logic environment. For simple example queries to discover existing Source Categories, Source Names, and Source Hosts, see [What Data Do I Have?](/docs/search/get-started-with-search/build-search)
 
 ## Phrases
 
@@ -97,7 +96,7 @@ To search for multiple keyword values in a message, the best practice is to brea
 
 By default, keyword expressions are case-insensitive. Technically there isn't a way to define case sensitivity in the keyword search  expression, you will have to define this with an operator. 
 
-After the keyword search expression, to search for case sensitive keywords, you can use the [parse regex operator](../../search-query-language/parse-operators/02-Parse-Variable-Patterns-Using-Regex.md). You should still specify the keyword in the scope of the query, before the first pipe "\|", to keep the search efficient. 
+After the keyword search expression, to search for case sensitive keywords, you can use the [parse regex operator] (../../search-query-language/parse-operators/02-Parse-Variable-Patterns-Using-Regex.md). You should still specify the keyword in the scope of the query, before the first pipe "\|", to keep the search efficient. 
 
 For example, if you want to search for the keyword "**info**" in lowercase, you'd use this query:
 

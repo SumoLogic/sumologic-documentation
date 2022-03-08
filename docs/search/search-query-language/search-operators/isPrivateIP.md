@@ -24,8 +24,7 @@ isPrivateIP(<IPv4_string_field>) [as <field>]
 The following warning is shown when results are dropped or an IPv6
 address is detected:  
     
-![isprivateip operator warning for dropped invalid ip
-addresses.png](/img/search/search-query-language/search-operators/isprivateip-dropped-warning.png)
+![isprivateip operator warning for dropped invalid ip addresses.png](/img/search/search-query-language/search-operators/isprivateip-dropped-warning.png)
 
 ## Examples
 

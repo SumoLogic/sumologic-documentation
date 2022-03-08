@@ -4,7 +4,7 @@ id: geo-lookup
 
 # Geo Lookup (Map)
 
-Sumo Logic can match a [parsed](../parse-operators.md "Parse Operators") IPv4 or IPv6 address to its geographical location on a map. To create the map the **lookup** operator matches parsed IP addresses to their physical location based on the latitude and longitude of where the addresses originated. The precision for latitude and longitude degrees is up to five decimal places. 
+Sumo Logic can match a [parsed](/docs/search/search-query-language/parse-operators) IPv4 or IPv6 address to its geographical location on a map. To create the map the **lookup** operator matches parsed IP addresses to their physical location based on the latitude and longitude of where the addresses originated. The precision for latitude and longitude degrees is up to five decimal places. 
 
 Any IP addresses that don't have a location, such as internal addresses, will return null values.
 

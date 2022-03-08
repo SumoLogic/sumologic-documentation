@@ -23,7 +23,7 @@ To set Messages tab preferences, do the following:
 
     * **Show Metadata Fields.** When selected, metadata field names are displayed below each log message.  
 
-        ![metadata fields in messages tab.png](/img/search/get-started-search/how-to-use-search-page/set-messages-tab-preferences/metadata-fields-in-messages-tab.png)  
+        ![metadata fields in messages tab.png](/img/search/get-started-search/how-to-use-search-page/set-messages-tab-preferences/metadata-fields-messages-tab.png)  
          
     * **Show URI-decoded format.** By default, UTF characters in JSON are automatically decoded. Toggle this off if you want to intentionally include these when viewing JSON log messages in the UI.
     * **Dictionary Term Highlighting.** When selected, the terms "error" and "exception" are displayed in red text.

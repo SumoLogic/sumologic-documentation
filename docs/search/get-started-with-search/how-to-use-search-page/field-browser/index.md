@@ -55,6 +55,6 @@ JSON nested structure in the following example.
 The Field Browser is limited for aggregate queries in the following
 ways:
 
-* [Drill-down searches](Field-Browser/Search-from-the-Field-Browser.md "Search from the Field Browser") are not available for aggregate queries.
+* [Drill-down searches](search-from-the-field-browser.md) are not available for aggregate queries.
 * Field counts (item G above) are not displayed for aggregate queries. 
 * Field counts—If messages returned are less than or equal to 2500 messages, then an exact calculation is shown. If more than 2500 messages are returned, an approximation is shown.

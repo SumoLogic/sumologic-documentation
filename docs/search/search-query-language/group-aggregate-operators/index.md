@@ -41,7 +41,7 @@ You can use **by** instead of **group by** so `count group by user` is equ
 ## Rules
 
 * Can not be used with the [LogReduce](/docs/search/logreduce) operator.
-* When [parsing and naming (aliasing) fields](parse-operators/parse-field-option.md), avoid using the names of grouping functions or other operators as field names.
+* When [parsing and naming (aliasing) fields](../parse-operators/parse-field-option.md), avoid using the names of grouping functions or other operators as field names.
 * When using **count**, or any grouping function, remember to include the underscore before the field name (sort by `_count`).
 * Multiple **aggregation** functions can be on the same line but you can't include another function, such as a math function, on the same line of a query.
 

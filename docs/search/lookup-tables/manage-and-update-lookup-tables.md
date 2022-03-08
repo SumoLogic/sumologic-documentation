@@ -146,7 +146,7 @@ When you are viewing a Lookup Table in the Library, you can view information abo
   
 You can toggle your view between **Lookup Actions Queue** and **Lookup Actions History** with the icons labeled **a** and **b** in the screenshot below, respectively.
 
-![lookup-actions-history.png](/img/lookup-tables/lookup-actions-history.png)
+![lookup-actions-history.png](/img/search/lookup-tables/lookup-actions-history.png)
 
 The notifications include what type of update was initiated and its status.
 
