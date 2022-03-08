@@ -40,19 +40,19 @@ Select a format:
 
 1. Optional. Select the available values.
     1. For text entries, enter each value on a separate line. Do not use commas to separate values as they will be marked invalid. If the string needs a comma, use quotes in the text entry, such as “abc,xyz”.
-    1. For Label-Value pairs, copy paste the label-value pairs as comma-delimited lines. If you are using a Lookup make sure that you are using a valid [lookup (classic)](../../search-query-language/search-operators/lookup-classic.md "lookup (Classic)") file because the system will reject any lookup file path that it can't validate.  
+    1. For Label-Value pairs, copy paste the label-value pairs as comma-delimited lines. If you are using a Lookup make sure that you are using a valid [lookup (classic)](../../search-query-language/search-operators/lookup-classic.md) file because the system will reject any lookup file path that it can't validate.  
 
-        ![label-value-pairs.png](/img/search/build-search/search-templates/label-value-pairs.png)
+        ![label-value-pairs.png](/img/search/get-started-search/build-search/search-templates/label-value-pairs.png)
 
         1. Select the appropriate values for the field, such as user ID. 
         1. Select values for the corresponding label, such as name. Both **Text** entries and **Label-value** pairs allow amaximum of 10,000 entries. A lookup file can have a maximum of 40,000 entries.
-    1. For a lookup file, you must enter a valid [lookup (classic)](../../search-query-language/search-operators/lookup-classic.md "lookup (Classic)") file that you have [saved](../../search-query-language/search-operators/save-lookups-classic.md "save (Lookups Classic)"). 
+    1. For a lookup file, you must enter a valid [lookup (classic)](../../search-query-language/search-operators/lookup-classic.md) file that you have [saved](../../search-query-language/search-operators/save-lookups-classic.md). 
         1. Under **Select a format**, select **Lookup**.
         1. Enter in a valid lookup file or select a shared lookup file
             from the dropdown. 
         1. Select values for the corresponding label, such as name.  
 
-            ![autocomplete-values.png](/img/search/build-search/search-templates/autocomplete-values.png)
+            ![autocomplete-values.png](/img/search/get-started-search/build-search/search-templates/autocomplete-values.png)
 
 1. Click **Save.**
 1. Share your search with any new users by clicking **Share** underneath your query window.
@@ -89,9 +89,9 @@ _sourceCategory=service "Successful login from UI"
 Next, specify the `user_name` parameter as a lookup that already has the association between our user names and our user IDs, in this case
 `/shared/angad/user_info_lookup`:
 
-1. Enter in a valid [lookup (classic)](../../search-query-language/search-operators/lookup-classic.md "lookup (Classic)") file that you have [saved](../../search-query-language/search-operators/save-lookups-classic.md "save (Lookups Classic)") with the save operator.  
+1. Enter in a valid [lookup (classic)](../../search-query-language/search-operators/lookup-classic.md) file that you have [saved](../../search-query-language/search-operators/save-lookups-classic.md) with the save operator.  
 
-    ![lookup.png](/img/search/build-search/search-templates/lookup.png)
+    ![lookup.png](/img/search/get-started-search/build-search/search-templates/lookup.png)
 
 1. Select the appropriate values for the field, such as user ID.
 1. Select values for the corresponding label, such as name.
@@ -130,7 +130,7 @@ _sourceCategory=apache_error
 | count by _timeslice
 ```
 
-![SearchTemplates.png](/img/search/build-search/search-templates/searchtemplates.png)
+![SearchTemplates.png](/img/search/get-started-search/build-search/search-templates/searchtemplates.png)
 
 **Save**. You now have a parameter for your search that allows users to
 just pick the timeslice from a list of values you feel is appropriate
@@ -193,8 +193,8 @@ To create a dashboard from a Search Template:
     You must choose a unique name for your search parameter for it to be a dashboard filter. If the parameter name conflicts with existing dashboard filter names, you will be prompted to rename your search parameter before adding it to a dashboard. If you ignore this warning and add the search to the dashboard then parameter’s autocomplete values will override any existing autocomplete values for the existing filter.
     :::
 
-    ![file-exists.png](/img/search/build-search/search-templates/file-exists.png)
+    ![file-exists.png](/img/search/get-started-search/build-search/search-templates/file-exists.png)
 
 1. The parameters will automatically become available as dashboard-wide filters.
 
-    ![dashboard-filter.png](/img/search/build-search/search-templates/dashboard-filter.png)
+    ![dashboard-filter.png](/img/search/get-started-search/build-search/search-templates/dashboard-filter.png)
