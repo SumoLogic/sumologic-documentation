@@ -395,7 +395,7 @@ By default the JSON operator optimizes results by dropping messages that don't h
 
 This is only a warning message to inform you that at least one log returned in the scope of the query did not have a specified key. 
 
-Use the [nodrop](Parse-nodrop-option.md "Parse nodrop option") option to prevent this optimization. For example, the following query is looking for the key `event` and it has specified not to drop messages that don't have this key:
+Use the [nodrop](parse-nodrop-option.md) option to prevent this optimization. For example, the following query is looking for the key `event` and it has specified not to drop messages that don't have this key:
 
 ```sql
 _sourceCategory="nginx" 

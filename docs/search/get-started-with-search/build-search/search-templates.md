@@ -15,15 +15,15 @@ Search templates work with [lookup (classic)](../../search-query-language/sea
 From any query you create, or an existing one you manage, you can create a search template and specify parameters.
 
 1. Open your query.
-1. Highlight the field, argument, or operator you want to replace and click ****Create a parameter**** or **alt+v** if you want to use the keyboard shortcut.  
+1. Highlight the field, argument, or operator you want to replace and click **Create a parameter** or **alt+v** if you want to use the keyboard shortcut.  
 
-    ![template variable selection](/img/search/build-search/search-templates/template-variable-selection.png)
+    ![template variable selection](/img/search/get-started-search/build-search/search-templates/template-variable-selection.png)
     
     :::note
     You can create a maximum of 10 parameters inside a search.
     :::
 
-1. From the **Manage Parameter Settings** dialog, provide the name, available values separated by commas, data type, and a brief     description.
+1. From the **Manage Parameter Settings** dialog, provide the name, available values separated by commas, data type, and a brief description.
 
 There are four data types to choose, based on how you want to define a valid parameter:
 

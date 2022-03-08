@@ -17,7 +17,7 @@ The **as** operator is usually used in conjunction with other operators, but it 
 ```
 
 :::note
-Fields with characters not in the `a-zA-Z0-9_` character set or that begin with a number need to be escaped, see [reference a field with special characters](../../get-started-with-search/Search-Basics/reference-field-special-characters.md) for details.
+Fields with characters not in the `a-zA-Z0-9_` character set or that begin with a number need to be escaped, see [reference a field with special characters](../../get-started-with-search/search-basics/reference-field-special-characters.md) for details.
 :::
 
 ## Examples

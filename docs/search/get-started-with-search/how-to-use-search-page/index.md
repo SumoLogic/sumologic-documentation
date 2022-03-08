@@ -5,7 +5,7 @@ slug: /how-to-use-the-search-page
 # How to Use the Search Page
 
 On the Search page you can enter [simple or complex queries](/search/get-started-with-search/how-to-use-search-page/search-basics) to search your entire Sumo
-Logic data repository. You can save and select searches from your [Library] (../../01Start-Here/Library.md "Library"). After running a search your results are displayed in either the **Messages** tab (for raw message data) or the **Aggregates** tab (for grouped results). See [how to navigate through search results](How-to-Use-the-Search-Page/Navigating-through-Messages-in-Search-Results.md "Navigate through Messages in Search Results").
+Logic data repository. You can save and select searches from your [Library] (../../01Start-Here/Library.md "Library"). After running a search your results are displayed in either the **Messages** tab (for raw message data) or the **Aggregates** tab (for grouped results). See [how to navigate through search results](navigate-through-search-results.md).
 
 You can [run a saved search](../search-basics/save-search.md), [pause, or stop searches](../search-basics/pause-cancel-search.md), or [schedule a search to run periodically] (../../Visualizations-and-Alerts/Alerts/Scheduled-Searches.md "Scheduled Searches") and notify you of the results.
 
