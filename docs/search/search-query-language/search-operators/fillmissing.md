@@ -85,10 +85,8 @@ fillmissing <keyFieldGenerator> [, <keyFieldGenerator> ]  [ with <nonKeyFieldSpe
 
 * The `nonKeyFieldSpecs` are optional. They allow you to configure the default constant values for one or more non-key fields. The syntax for each specification looks like:
 
-| Non key fields | Syntax |
-|--|--|
-| Constant value<br/>`<constantValue>` | `<double> | <int> | <stringLiteral> | null` |
-| Constant non key | `<constantValue> for <field>`|
+  * Constant Value (`<constantValue>`): `<double> | <int> | <stringLiteral> | null`
+  * Constant non key: `<constantValue> for <field>`
 
 * Use the `takeLast` option to fill in values for non-key fields by taking the value from the previous timeslice. This requires the `timeslice` generator be defined.
 

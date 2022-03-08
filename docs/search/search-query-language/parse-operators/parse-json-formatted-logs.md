@@ -120,7 +120,7 @@ In addition, you can assign names to fields that differ from their original key 
 
 which gives you these results:
 
-![json rename key names.png](/img/search/search-query-language/parse-json-formatted-logs/json-rename-key-names.png)
+![json rename key names.png](/img/search/search-query-language/parse-operators/parse-json-formatted-logs/json-rename-key-names.png)
 
 ## Extracting a nested key
 
@@ -163,7 +163,7 @@ _sourceCategory=O365* | json "Actor[0].Type" as Actortype0 | json "Actor[1].Type
 
 The result of the query would look like this: 
 
-![ArrayElements.png](/img/search/search-query-language/parse-json-formatted-logs/ArrayElements.png)
+![ArrayElements.png](/img/search/search-query-language/parse-operators/parse-json-formatted-logs/ArrayElements.png)
 
 ## Using the nodrop option
 
@@ -177,14 +177,14 @@ By default, the JSON operator optimizes results by dropping messages that don't 
 
 You can use wildcard (\*) to access the array elements in a JSON. For example, you can access Actor Type from an O365 JSON message using wildcard.
 
-![](/)![json wildcard example.png](/img/search/search-query-language/parse-json-formatted-logs/json-wildcard-example.png)
+![json wildcard example.png](/img/search/search-query-language/parse-operators/parse-json-formatted-logs/json-wildcard-example.png)
 
 `_sourceCategory=O365* 
 | json "Actor[*].Type" as Actortype`
 
 The result of the query would look like this:
 
-![wildcard example results.png](/img/search/search-query-language/parse-json-formatted-logs/wildcard-example-results.png)
+![wildcard example results.png](/img/search/search-query-language/parse-operators/parse-json-formatted-logs/wildcard-example-results.png)
 
 Next, if required, you can use the array elements to perform additional operations. For example, you can find the max of Type for a CreationTime and Id using this query:
 
@@ -198,7 +198,7 @@ _sourceCategory=O365*
 
 The result would look like this:
 
-![Output](/img/search/search-query-language/parse-json-formatted-logs/MaxOutput.png)
+![Output](/img/search/search-query-language/parse-operators/parse-json-formatted-logs/MaxOutput.png)
 
 ## JSON auto option
 
@@ -381,7 +381,7 @@ Sumo Logic can generate the parse expression for a specific JSON key for you. Th
 1. Right-click the key you want to parse and a menu will appear.
 1. Click **Parse selected key**.  
 
-    ![ui parse selected key option.png](/img/search/search-query-language/parse-json-formatted-logs/ui-parse-selected-key-option.png)
+    ![ui parse selected key option.png](/img/search/search-query-language/parse-operators/parse-json-formatted-logs/ui-parse-selected-key-option.png)
 
 1. In the query text box, where ever your cursor was last placed, a new  parse JSON operation is added that will parse the selected key. For example, `| json field=_raw "_BOOT_ID"`.
 
@@ -391,7 +391,7 @@ Sumo Logic can generate the parse expression for a specific JSON key for you. Th
 
 By default the JSON operator optimizes results by dropping messages that don't have the fields or keys specified in your query or if the JSON is invalid. When a message is dropped the user interface provides a warning message: 
 
-![unable to parse json warning message.png](/img/search/search-query-language/parse-json-formatted-logs/unable-to-parse-json-warning-message.png)
+![unable to parse json warning message.png](/img/search/search-query-language/parse-operators/parse-json-formatted-logs/unable-to-parse-json-warning-message.png)
 
 This is only a warning message to inform you that at least one log returned in the scope of the query did not have a specified key. 
 

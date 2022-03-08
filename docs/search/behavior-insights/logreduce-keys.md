@@ -57,7 +57,11 @@ Results can be returned in two ways:
 
 ## Examples
 
-`_sourcecategory = "Labs/AWS/GuardDuty_V8" | json keys "region", "partition", "resource" | logreduce keys field=resource`
+```sql
+_sourcecategory = "Labs/AWS/GuardDuty_V8" 
+| json keys "region", "partition", "resource" 
+| logreduce keys field=resource
+```
 
 ### Kubernetes
 
