@@ -10,7 +10,11 @@ This operator does not automatically [parse](/docs/search/search-query-language/
 
 The following table shows the fields that are returned in results.
 
-[TABLE]
+| `_cluster_id` | `_signature` | `_count` |
+| -- | -- | -- |
+| The unique hash value assigned to the signature. | The group of specified key-value pairs with their count and percentage of occurrence in relation to the group _count. | The number of logs that have the related signature. |
+
+The field is a clickable link that opens a new window with a query that drills down to the logs from the related schema.
 
 With the provided results you can:
 

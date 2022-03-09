@@ -4,7 +4,7 @@ id: contains
 
 # contains
 
-The contains operator compares string values of two [parsed](/docs/search/parse-operators) fields and returns
+The contains operator compares string values of two [parsed](/docs/search/search-query-language/parse-operators) fields and returns
 a boolean result based on whether the second field's value exists in the first.
 
 ## Syntax

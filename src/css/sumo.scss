@@ -128,6 +128,17 @@ html[data-theme='dark'] {
   .tabs__item--active {
     color: #fff;
   }
+  article .card {
+    background-color: rgb(53, 120, 229, .10);
+    border-color: rgba(187, 199, 218, 0.10);
+    border-radius: 0px;
+    h2 {
+      font-size: 1.1rem !important;
+    }
+  } 
+  article .card:hover {
+    border-color: var(--ifm-pagination-nav-color-hover);
+  }
 }
 
 html[data-theme='light'] {
@@ -154,6 +165,16 @@ html[data-theme='light'] {
   }
   .toggle {
     background-color: #c3e9ff;
+  }
+  article .card {
+    border-radius: 0px;
+    border-color: rgba(118, 156, 218, 0.2);
+    h2 {
+      font-size: 1.1rem !important;
+    }
+  }
+  article .card:hover {
+      border-color: var(--ifm-pagination-nav-color-hover);
   }
 }
 
@@ -670,13 +691,12 @@ html[data-theme='dark'] .node polygon {
     var(--ifm-navbar-padding-horizontal) !important;
 }
 
-.card {
-  min-width: 14rem;
-}
 
-article .card {
+
+/* article .card {
   max-width: 224px;
-}
+} */
+
 .card--pointer {
   cursor: pointer;
 }

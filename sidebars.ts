@@ -106,7 +106,7 @@ module.exports = {
           type: 'category',
           label: 'Get Started with Searches',
           collapsible: true,
-          collapsed: false,
+          collapsed: true,
           link: {
             type: 'generated-index',
             title: 'Get Started with Searches',
@@ -119,7 +119,7 @@ module.exports = {
               type: 'category',
               label: 'Search Basics',
               collapsible: true,
-              collapsed: false,
+              collapsed: true,
               link: {
                 type: 'generated-index',
                 title: 'Search Basics',
@@ -149,7 +149,7 @@ module.exports = {
               type: 'category',
               label: 'How to Use the Search Page',
               collapsible: true,
-              collapsed: false,
+              collapsed: true,
               link: {type: 'doc', id: 'search/get-started-with-search/how-to-use-search-page/index'},
               items: [
                 'search/get-started-with-search/how-to-use-search-page/add-saved-search-favorites',
@@ -158,7 +158,7 @@ module.exports = {
                   type: 'category',
                   label: 'Field Browser',
                   collapsible: true,
-                  collapsed: false,
+                  collapsed: true,
                   link: {type: 'doc', id: 'search/get-started-with-search/how-to-use-search-page/field-browser/index'},
                   items: [
                     'search/get-started-with-search/how-to-use-search-page/field-browser/search-from-the-field-browser',
@@ -178,7 +178,7 @@ module.exports = {
               type: 'category',
               label: 'Build Searches',
               collapsible: true,
-              collapsed: false,
+              collapsed: true,
               link: {type: 'doc', id: 'search/get-started-with-search/build-search/index'},
               items: [
                 'search/get-started-with-search/build-search/best-practices-search',
@@ -195,7 +195,7 @@ module.exports = {
               type: 'category',
               label: 'Suggested Searches',
               collapsible: true,
-              collapsed: false,
+              collapsed: true,
               link: {
                 type: 'generated-index',
                 title: 'Suggested Searches',
@@ -217,7 +217,7 @@ module.exports = {
           type: 'category',
           label: 'Behavior Insights',
           collapsible: true,
-          collapsed: false,
+          collapsed: true,
           link: {type: 'doc', id: 'search/behavior-insights/index'},
           items: [
             'search/behavior-insights/logexplain',
@@ -229,7 +229,7 @@ module.exports = {
           type: 'category',
           label: 'Live Tail',
           collapsible: true,
-          collapsed: false,
+          collapsed: true,
           link: {
             type: 'generated-index',
             title: 'Live Tail',
@@ -251,7 +251,7 @@ module.exports = {
           type: 'category',
           label: 'LogCompare',
           collapsible: true,
-          collapsed: false,
+          collapsed: true,
           link: {type: 'doc', id: 'search/logcompare/index'},
           items: [
             'search/logcompare/about-logcompare',
@@ -265,7 +265,7 @@ module.exports = {
           type: 'category',
           label: 'LogReduce',
           collapsible: true,
-          collapsed: false,
+          collapsed: true,
           link: {type: 'doc', id: 'search/logreduce/index'},
           items: [
             'search/logreduce/logreduce-operator',
@@ -279,7 +279,7 @@ module.exports = {
           type: 'category',
           label: 'Lookup Tables',
           collapsible: true,
-          collapsed: false,
+          collapsed: true,
           link: {type: 'doc', id: 'search/lookup-tables/index'},
           items: [
             'search/lookup-tables/create-a-lookup-table',
@@ -293,7 +293,7 @@ module.exports = {
           type: 'category',
           label: 'Search Cheat Sheets',
           collapsible: true,
-          collapsed: false,
+          collapsed: true,
           link: {type: 'doc', id: 'search/search-cheat-sheets/index'},
           items: [
             'search/search-cheat-sheets/general-search-examples-cheatsheet',
@@ -306,14 +306,14 @@ module.exports = {
           type: 'category',
           label: 'Search Query Language',
           collapsible: true,
-          collapsed: false,
+          collapsed: true,
           link: {type: 'doc', id: 'search/search-query-language/index'},
           items: [
             {
               type: 'category',
               label: 'Parse Operators',
               collapsible: true,
-              collapsed: false,
+              collapsed: true,
               link: {type: 'doc', id: 'search/search-query-language/parse-operators/index'},
               items: [
                 'search/search-query-language/parse-operators/parse-predictable-patterns-using-an-anchor',
@@ -333,7 +333,7 @@ module.exports = {
               type: 'category',
               label: 'Group or Aggregate Operators',
               collapsible: true,
-              collapsed: false,
+              collapsed: true,
               link: {type: 'doc', id: 'search/search-query-language/group-aggregate-operators/index'},
               items: [
                 'search/search-query-language/group-aggregate-operators/avg',
@@ -354,7 +354,7 @@ module.exports = {
               type: 'category',
               label: 'Math Expressions',
               collapsible: true,
-              collapsed: false,
+              collapsed: true,
               link: {type: 'doc', id: 'search/search-query-language/math-expressions/index'},
               items: [
                 'search/search-query-language/math-expressions/abs',
@@ -388,7 +388,7 @@ module.exports = {
               type: 'category',
               label: 'Search Operators',
               collapsible: true,
-              collapsed: false,
+              collapsed: true,
               link: {
                 type: 'generated-index',
                 title: 'Search Operators',
@@ -475,7 +475,7 @@ module.exports = {
               type: 'category',
               label: 'Transaction Analytics',
               collapsible: true,
-              collapsed: false,
+              collapsed: true,
               link: {
                 type: 'doc', 
                 id: 'search/search-query-language/transaction-analytics/index',
@@ -493,7 +493,7 @@ module.exports = {
           type: 'category',
           label: 'Search FAQs',
           collapsible: true,
-          collapsed: false,
+          collapsed: true,
           link: {
             type: 'generated-index',
             title: 'Search FAQs',
