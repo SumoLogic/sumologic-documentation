@@ -1,5 +1,6 @@
 ---
 id: panels
+Title: Dashboard Panels
 ---
 
 # Panels
@@ -10,6 +11,21 @@ Related topics:
 
 * [Modify a Chart](panels/modify-chart.md)
 * [Markdown Syntax](panels/markdown-syntax.md)
+
+<Tabs
+  className="unique-tabs"
+  defaultValue="tab1"
+  values={[
+    {label: 'Time Series Panel', value: 'tab1'},
+    {label: 'Categorical Panel', value: 'tab2'},
+    {label: 'Single Value Panel', value: 'tab3'},
+    {label: 'Map Panel', value: 'tab4'},
+    {label: 'Text Panel', value: 'tab5'},
+    {label: 'Service Map Panel', value: 'tab6'},
+    {label: 'Trace List Panel', value: 'tab7'},
+  ]}>
+
+<TabItem value="tab1">
 
 ## Time Series Panel 
 
@@ -55,6 +71,10 @@ The types of charts you’ll find in the time series panel include:
 * Line
 * Table
 
+
+</TabItem>
+<TabItem value="tab2">
+
 ## Categorical Panel
 
 ![categorical icon.png](/img/dashboards-new/panels/categorical-icon.png)
@@ -76,6 +96,8 @@ Available chart types:
 The following image shows an example of Scatter and Bubble charts.  
 
 ![scatter and bubble charts.png](/img/dashboards-new/panels/scatter-and-bubble-charts.png)
+</TabItem>
+<TabItem value="tab3">
 
 ## Single Value Panel
 
@@ -86,14 +108,8 @@ Single Value Panels are great at providing high level overviews. They look great
 Only [single value charts](panels/single-value-charts.md) are supported.
 
 ![single value charts.png](/img/dashboards-new/panels/single-value-charts.png)
-
-## Honeycomb Panel
-
-![honeycomb panel.png](/img/dashboards-new/panels/honeycomb-panel.png)
-
-Honeycombs are great at helping you find areas of significant activity amongst a set of entities, like hotspots in a cluster. These are ideal if you want to find the instance running high CPU usage amongst all the instances in your cluster.
-
-![honeycomb charts.png](/img/dashboards-new/panels/honeycomb-charts.png)
+</TabItem>
+<TabItem value="tab4">
 
 ## Map Panel
 
@@ -108,6 +124,8 @@ You may not see map panels render if hardware acceleration is disabled on your b
 Only [map charts](panels/map-charts.md) are supported.
 
 ![new map charts.png](/img/dashboards-new/panels/new-map-charts.png)
+</TabItem>
+<TabItem value="tab5">
 
 ## Text Panel
 
@@ -161,6 +179,8 @@ Link] (../Dashboards/Get-Started-with-Dashboards-and-Panels/Add-a-Dashboard-Link
 ![link syntax example Jan 2021.png](/img/dashboards-new/panels/link-syntax-example-Jan-2021.png)
 
 In the panel, the link is displayed. 
+</TabItem>
+<TabItem value="tab6">
 
 ## Service Map Panel
 
@@ -198,7 +218,10 @@ To add a Service Map panel:
 
     ![tracelist-details.png](/img/apm/traces/tracelist-details.png)
 
-1. Click **Add to Dashboard**. 
+1. Click **Add to Dashboard**.
+
+</TabItem>
+<TabItem value="tab7">
 
 ## Trace List Panel
 
@@ -254,6 +277,10 @@ To add a Trace List panel:
 
 1. Click **Add to Dashboard**. 
 
+</TabItem>
+</Tabs>
+
+
 ## Delete a Panel
 
 You can delete a panel that you no longer need.
@@ -267,3 +294,5 @@ You can delete a panel that you no longer need.
       
     ![delete a panel.png](/img/dashboards-new/panels/delete-panel/delete-a-panel.png)
  
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
