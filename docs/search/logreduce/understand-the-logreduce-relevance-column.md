@@ -14,7 +14,7 @@ user. The Relevance value is computed using your history of [feedback](../logre
 
 LogReduce uses the similarity of signature content (the words in a signature) to predict relevance for signatures, even if a signature hasn’t yet been promoted or demoted a specific signature. For example, if a user has promoted a number of signatures that contain the word “database” then new signatures containing “database” will be scored higher.
 
-![Relevance.png](/img/search/logreduce/Relevance.png)
+![Relevance.png](/img/search/logreduce/relevance.png)
 
 ## What do the Relevance values mean?
 

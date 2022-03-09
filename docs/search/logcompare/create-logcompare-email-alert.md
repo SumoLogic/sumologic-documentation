@@ -46,7 +46,7 @@ By default, LogCompare email notifications provide details on the **Score**, **C
 
 1. Click **Schedule this search**. The **Schedule this search** dialog opens.  
 
-    ![SaveLogreduce.png](/img/search/logcompare/saveLogreduce.png)
+    ![SaveLogreduce.png](/img/search/logcompare/savelogreduce.png)
 
 1. For **Run Frequency**, select the frequency you'd like your search to run. The frequency should match the time range.
 1. For **Time range for scheduled search**, again, select a time range that matches the frequency.
