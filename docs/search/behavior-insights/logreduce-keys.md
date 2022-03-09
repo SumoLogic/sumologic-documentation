@@ -17,7 +17,7 @@ The following table shows the fields that are returned in results.
 With the provided results you can:
 
 * Explore logs from each schema by clicking the links provided in the `_count` response field.
-* Compare results against a previous time range with [LogCompare](/search/logcompare).
+* Compare results against a previous time range with [LogCompare](/docs/search/logcompare).
 * Run subsequent searches.
 
 ## Syntax

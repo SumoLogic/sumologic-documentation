@@ -12,7 +12,7 @@ The following tables provide a list of available Sumo Logic parsers, aggregator
 
 ## Parsing
 
-Sumo provides a number of ways to [parse](/docs/search-query-language/parse-operators) fields in your log messages.
+Sumo provides a number of ways to [parse](/docs/search/search-query-language/parse-operators) fields in your log messages.
 
 | Operator | Description | Example |
 | -- | -- | -- |
@@ -51,7 +51,7 @@ Instead use separate steps:
 | [first and last](../search-query-language/group-aggregate-operators/first-and-last.md) | First finds the earliest occurrence in search results, and last finds the result that follows all others, based on the sort order for the query. | `_first`<br/>`_last` | Not supported in Live Dashboards or any continuous query. | `| sort by _timeslice | first(error_message) by hostname` |
 | [min and max](../search-query-language/group-aggregate-operators/min-and-max.md) | Use the min and max functions to find the smallest or largest value in a set of values. | `_min`<br/>`_max` |  | `| max(request_received) by hour` |
 | [most_recent and least_recent](../search-query-language/group-aggregate-operators/most-recent-and-least-recent.md) | The most_recent and least_recent operators, used with the withtime operator, allow you to order data from newest to oldest. | `_most_recent`<br/>`_least_recent` |  | `*ip* OR *address* | parse regex "(?<IP>\b\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})" | lookup latitude, longitude, country_code from geo://location on ip=IP | where !isNull(country_code) | withtime IP | most_recent(ip_withtime) by country_code ` |
-| [pct](../search-query-language/group-aggregate-operators/percentile-(pct).md) | The percentile function (pct) finds the percentile of a given field. Multiple pct functions can be included in one query. | `_<fieldname>_pct_<percentile> `|  | `| parse "value=*" as value | pct(value, 95) as value_95pct` |
+| [pct](../search-query-language/group-aggregate-operators/percentile-pct.md) | The percentile function (pct) finds the percentile of a given field. Multiple pct functions can be included in one query. | `_<fieldname>_pct_<percentile> `|  | `| parse "value=*" as value | pct(value, 95) as value_95pct` |
 | [stddev](../search-query-language/group-aggregate-operators/standard-deviation.md) | The standard deviation function (stddev) finds the standard deviation value for a distribution of numerical values within the time range analyzed and associated with a group designated by the "group by" field. | `_stddev` | | `... | stddev(request_received) group by hour | sort by _stddev` |
 | [sum](../search-query-language/group-aggregate-operators/sum.md) | Sum adds the values of the numerical field being evaluated within the time range analyzed. | `_sum` |  | `... | sum(bytes_received) group by hostname` |
 | [values](../search-query-language/group-aggregate-operators/values.md) | The values operator provides all the distinct values of a field. | The first 100 distinct values are returned for a field. | `| values(ip_address) by region` |

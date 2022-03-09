@@ -1,5 +1,5 @@
 ---
-slug: /math-expressions
+slug: /search/search-query-language/math-expressions
 ---
 
 # Math Expressions

@@ -1,5 +1,5 @@
 ---
-slug: /behavior-insights
+slug: /search/behavior-insights
 ---
 
 # Behavior Insights
@@ -17,9 +17,9 @@ Modeled after our LogReduce log summarization feature, the two Behavior Insights
 
 The third Behavior Insights operator, [LogExplain](logexplain.md), finds the root cause of outliers in logs based on conditions you specify.
 
-```mdx-code-block
 import DocCardList from '@theme/DocCardList';
 import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
 
+In this section, we will introduce the following concepts:
+
 <DocCardList items={useCurrentSidebarCategory().items}/>
-```

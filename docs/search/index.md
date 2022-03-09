@@ -1,6 +1,8 @@
 ---
-slug: /search-and-logs
+slug: /search
 ---
+
+# Search and Logs
 
 Search allows you to query and analyze log data sent to Sumo Logic. There are many features to help you use our robust Search Query Language, such as LogCompare, LogReduce, LogExplain, Lookup Tables, Subqueries, and Time Compare. See [Get Started with Search] to begin exploring your data in Sumo Logic.
 
@@ -31,3 +33,10 @@ Traces are collected with SumoLogic Kubernetes Collection or a standalone OpenTe
 :::note
 To interact with other Sumo Logic users, post feedback, or ask a question, visit the Sumo Logic Community Search & Query Forum. 
 :::
+
+import DocCardList from '@theme/DocCardList';
+import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
+
+In this section, we will introduce the following concepts:
+
+<DocCardList items={useCurrentSidebarCategory().items}/>

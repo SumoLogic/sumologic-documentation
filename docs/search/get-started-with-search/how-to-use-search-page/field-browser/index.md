@@ -1,5 +1,5 @@
 ---
-slug: /field-browser
+slug: /search/get-started-with-search/how-to-use-search-page/field-browser
 ---
 
 # Field Browser

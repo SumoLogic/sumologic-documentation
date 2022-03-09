@@ -1,5 +1,5 @@
 ---
-slug: /parse-operators
+slug: /search/search-query-language/parse-operators
 ---
 
 # Parse Operators
@@ -10,9 +10,9 @@ For best practices use Parse operators to build [Field Extraction Rules] (../..
 
 Before reading about our parse operators review our [documentation styles] (../../01Start-Here/03About-Sumo-Logic/Help_Documentation_Styles.md).
 
-```mdx-code-block
 import DocCardList from '@theme/DocCardList';
 import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
 
+In this section, we will introduce the following concepts:
+
 <DocCardList items={useCurrentSidebarCategory().items}/>
-```

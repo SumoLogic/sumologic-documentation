@@ -156,7 +156,7 @@ _sourceCategory=apache 
 ```
 
 :::sumo More Info
-For more information, see [Parsing](/docs/search-query-language/parse-operators), [Count](../search-query-language/group-aggregate-operators/count-count-distinct-and-count-frequent.md), and [Top](../search-query-language/search-operators/top.md).
+For more information, see [Parsing](/docs/search/search-query-language/parse-operators), [Count](../search-query-language/group-aggregate-operators/count-count-distinct-and-count-frequent.md), and [Top](../search-query-language/search-operators/top.md).
 :::
 
 ## Timeslice and Transpose

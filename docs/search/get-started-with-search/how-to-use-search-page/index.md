@@ -1,5 +1,5 @@
 ---
-slug: /how-to-use-the-search-page
+slug: /search/get-started-with-search/how-to-use-search-page
 ---
 
 # How to Use the Search Page
@@ -44,9 +44,9 @@ In your search query, you will see that we have separated out important terms in
 
 ## Learn More
 
-```mdx-code-block
 import DocCardList from '@theme/DocCardList';
 import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
 
+In this section, we will introduce the following concepts:
+
 <DocCardList items={useCurrentSidebarCategory().items}/>
-```

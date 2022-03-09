@@ -48,7 +48,7 @@ If the "sc_substatus" field is missing don't exclude those messages (nodrop)…o
 | Identify the top 100 client IP addresses by number of hits.| `| count by c_ip | top 100 c_ip by _count` |
 
 :::sumo More Info
-For more information, see [Parsing](/docs/search-query-language/parse-operators), [Count](../search-query-language/group-aggregate-operators/count-count-distinct-and-count-frequent.md), and [Top](../search-query-language/search-operators/top.md).
+For more information, see [Parsing](/docs/search/search-query-language/parse-operators), [Count](../search-query-language/group-aggregate-operators/count-count-distinct-and-count-frequent.md), and [Top](../search-query-language/search-operators/top.md).
 :::
 
 ## Timeslice and Transpose

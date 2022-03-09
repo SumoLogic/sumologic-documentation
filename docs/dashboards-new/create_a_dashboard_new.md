@@ -71,8 +71,7 @@ You can create Log and Metric queries on the same panel.
 
 <TabItem value="log">
 
-Enter your aggregate [search query](/docs/search/search-operators)
-in the input field and press enter. A few important things to note are:
+Enter your aggregate [search query](/docs/category/search-operators) in the input field and press enter. A few important things to note are:
 
 * Only search results that have been aggregated using a group or aggregate operator can be charted. See [Group or Aggregate Operators](/docs/search/search-query-language/group-aggregate-operators)for a list. 
 * By default, the query builder is set to **Logs**. 
@@ -127,7 +126,7 @@ You can delete a panel that you no longer need.
 
 ## Log Search page
 
-To create a Dashboard (New) from the [Log Search page](/docs/search/get-started-with-search/how-to-use-the-search-page):
+To create a Dashboard (New) from the [Log Search page](/docs/search):
 
 1. From the Log Search page click the **Add to Dashboard** button on the Aggregates tab after running your aggregate query you want to add to a Dashboard (New) panel.  
 

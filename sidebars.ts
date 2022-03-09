@@ -145,7 +145,7 @@ module.exports = {
                 'search/get-started-with-search/search-basics/view-traces-search-results',
               ],
             },
-            /*{
+            {
               type: 'category',
               label: 'How to Use the Search Page',
               collapsible: true,
@@ -204,13 +204,13 @@ module.exports = {
                 keywords: ['search', 'apache', 'cisco', 'parser', 'windows'],
               },
               items: [
-                'search/get-started-with-search/how-to-use-search-page/suggested-searches/suggested-searches-apache-access-parser',
-                'search/get-started-with-search/how-to-use-search-page/suggested-searches/suggested-searches-apache-errors-parser',
-                'search/get-started-with-search/how-to-use-search-page/suggested-searches/suggested-searches-cisco-asa-parser',
-                'search/get-started-with-search/how-to-use-search-page/suggested-searches/suggested-searches-microsoft-iis-parser',
-                'search/get-started-with-search/how-to-use-search-page/suggested-searches/suggested-searches-windows-events',
+                'search/get-started-with-search/suggested-searches/suggested-searches-apache-access-parser',
+                'search/get-started-with-search/suggested-searches/suggested-searches-apache-errors-parser',
+                'search/get-started-with-search/suggested-searches/suggested-searches-cisco-asa-parser',
+                'search/get-started-with-search/suggested-searches/suggested-searches-microsoft-iis-parser',
+                'search/get-started-with-search/suggested-searches/suggested-searches-windows-events',
               ],
-            },*/
+            },
           ],
         },
         {
@@ -302,14 +302,13 @@ module.exports = {
             'search/search-cheat-sheets/log-operators-cheat-sheet',
           ],
         },
-        /*{
+        {
           type: 'category',
           label: 'Search Query Language',
           collapsible: true,
           collapsed: false,
           link: {type: 'doc', id: 'search/search-query-language/index'},
           items: [
-            'search/search-query-language',
             {
               type: 'category',
               label: 'Parse Operators',
@@ -381,13 +380,13 @@ module.exports = {
                 'search/search-query-language/math-expressions/sqrt',
                 'search/search-query-language/math-expressions/tan',
                 'search/search-query-language/math-expressions/tanh',
-                'search/search-query-language/math-expressions/toDegrees',
-                'search/search-query-language/math-expressions/toRadians',
+                'search/search-query-language/math-expressions/todegrees',
+                'search/search-query-language/math-expressions/toradians',
               ],
             },
             {
               type: 'category',
-              label: 'Math Expressions',
+              label: 'Search Operators',
               collapsible: true,
               collapsed: false,
               link: {
@@ -470,10 +469,6 @@ module.exports = {
                 'search/search-query-language/search-operators/trim',
                 'search/search-query-language/search-operators/urldecode',
                 'search/search-query-language/search-operators/urlencode',
-                'search/search-query-language/search-operators/',
-                'search/search-query-language/search-operators/',
-                'search/search-query-language/search-operators/',
-                'search/search-query-language/search-operators/',
               ],
             },
             {
@@ -481,16 +476,19 @@ module.exports = {
               label: 'Transaction Analytics',
               collapsible: true,
               collapsed: false,
-              link: {type: 'doc', id: 'search/search-query-language/translation-analytics/index'},
+              link: {
+                type: 'doc', 
+                id: 'search/search-query-language/transaction-analytics/index',
+              },
               items: [
-                'search/search-query-language/translation-analytics/merge-operator',
-                'search/search-query-language/translation-analytics/transaction-operator',
-                'search/search-query-language/translation-analytics/flow-diagrams',
-                'search/search-query-language/translation-analytics/transactionize-operator',
-              ],
+                'search/search-query-language/transaction-analytics/merge-operator',
+                'search/search-query-language/transaction-analytics/transaction-operator',
+                'search/search-query-language/transaction-analytics/flow-diagrams',
+                'search/search-query-language/transaction-analytics/transactionize-operator',
+                ],
             },
           ],
-        },*/
+        },
         {
           type: 'category',
           label: 'Search FAQs',

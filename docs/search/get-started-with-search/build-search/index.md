@@ -1,15 +1,15 @@
 ---
-slug: /build-search
+slug: /search/get-started-with-search/build-search
 ---
 
 This guide provides information on building searches.
 
-```mdx-code-block
 import DocCardList from '@theme/DocCardList';
 import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
 
+In this section, we will introduce the following concepts:
+
 <DocCardList items={useCurrentSidebarCategory().items}/>
-```
 
 ## What Data Do I Have?
 

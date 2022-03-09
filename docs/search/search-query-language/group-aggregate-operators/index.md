@@ -1,5 +1,5 @@
 ---
-slug: /group-aggregate-operators
+slug: /search/search-query-language/group-aggregate-operators
 ---
 
 # Group or Aggregate Operators
@@ -21,7 +21,7 @@ Aggregating (group-by) functions include:
 * [first and last](first-and-last.md)
 * [min and max](min-and-max.md)
 * [most_recent and least_recent](most-recent-and-least-recent.md)
-* [pct](percentile-(pct).md)
+* [pct](percentile-pct.md)
 * [stddev](standard-deviation.md)
 * [sum](sum.md)
 * [values](values.md)

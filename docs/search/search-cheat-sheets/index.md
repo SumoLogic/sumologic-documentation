@@ -1,5 +1,5 @@
 ---
-slug: /search-cheat-sheets
+slug: /search/search-cheat-sheets
 ---
 
 # Search Cheat Sheets
@@ -10,9 +10,9 @@ For a collection of customer created search queries and their use cases, see the
 
 For a step-by-step video and tutorial about creating Sumo Logic queries, see the [Quick Start Tutorials] (../01Start-Here/Quick-Start-Tutorials.md "Quick Start Tutorials").  
 
-```mdx-code-block
 import DocCardList from '@theme/DocCardList';
 import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
 
+In this section, we will introduce the following concepts:
+
 <DocCardList items={useCurrentSidebarCategory().items}/>
-```

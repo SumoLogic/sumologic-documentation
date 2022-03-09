@@ -1,5 +1,5 @@
 ---
-slug: /logreduce
+slug: /search/logreduce
 ---
 
 # LogReduce
@@ -26,9 +26,9 @@ Watch our video on LogReduce. 
 
 import Iframe from 'react-iframe';
 
-```mdx-code-block
 import DocCardList from '@theme/DocCardList';
 import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
 
+In this section, we will introduce the following concepts:
+
 <DocCardList items={useCurrentSidebarCategory().items}/>
-```

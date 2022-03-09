@@ -1,5 +1,5 @@
 ---
-slug: /search-query-language
+slug: /search/search-query-language
 ---
 
 # Search Query Language
@@ -17,9 +17,9 @@ The syntax of the search query language is written in the following styles.
 01Start-Here/03About-Sumo-Logic/Help_Documentation_Styles
 
 
-```mdx-code-block
 import DocCardList from '@theme/DocCardList';
 import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
 
+In this section, we will introduce the following concepts:
+
 <DocCardList items={useCurrentSidebarCategory().items}/>
-```
