@@ -166,7 +166,7 @@ To use a variable in a logs query, do the following:
 
 Wrap string literal variables in quotes `"{\<variable_nam\>}}"`. If your values are text you need to wrap the variable in quotes.
 
-When including** **the option to select all values (\*), use the [matches] (../../05Search/Search-Query-Language/Search-Operators/matches.md "matches") operator. Otherwise `*` will not do an "all" filter, it will filter against the literal asterisk "\*" string.
+When including** **the option to select all values (\*), use the [matches](../search/search-query-language/search-operators/matches.md) operator. Otherwise `*` will not do an "all" filter, it will filter against the literal asterisk "\*" string.
 
 For example,
 
@@ -200,5 +200,5 @@ The variable is inserted into the query and will convert the variable into the 
 
 To use a metrics variable in a query working in advanced query mode, do the following:
 
-1. Locate the name of the variable you would like to use in the drop-down list and copy it.
+1. Locate the name of the variable you'd like to use in the drop-down list and copy it.
 1. Go to your metrics query and insert *{{ var_name }}* in the query, substituting `var_name` with the actual name of the variable.

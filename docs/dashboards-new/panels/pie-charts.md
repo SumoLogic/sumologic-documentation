@@ -8,7 +8,7 @@ Pie charts are useful for visually comparing the percentage of events that have 
 
 To create a pie chart, use an aggregate query that provides at least a few results in the **Aggregates** tab.
 
-For example, you could use the following simple query to get results from your logs:
+For example, you'd use the following simple query to get results from your logs:
 
 ```sql
 (error OR fail*) AND exception | count by _sourceCategory | sort by _count

@@ -5,7 +5,7 @@ id: quickstart-github
 
 This guide will walk you through creating a Sumo Logic account as well as getting GitHub data visualized in Sumo Logic. At the end, you will have:
 
-* A Sumo Logic trial account if you do not already have an existing account
+* A Sumo Logic trial account if you don't already have an existing account
 * GitHub dashboards and data collection configured in your Sumo Logic account
 * A GitHub webhook configured that will send data to your Sumo Logic account
 
@@ -70,7 +70,7 @@ sh -c "$(curl -sSL https://raw.githubusercontent.com/ccaum/sumologic-solution-te
 Enter your GitHub and Sumo Logic information at the prompts:
 
 1. Enter the GitHub personal access token you created in [Step 3](#step-3---create-a-github-personal-access-token).
-1. Enter the name of the GitHub organization you would like to collect GitHub data on.
+1. Enter the name of the GitHub organization you'd like to collect GitHub data on.
 
     ![Access Token](/img/get-started/github/github-access-token.png)
 

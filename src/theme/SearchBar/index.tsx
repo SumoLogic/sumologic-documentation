@@ -153,7 +153,7 @@ function DocSearch({
 
   const navigator = useRef({
     navigate({ itemUrl }: { itemUrl?: string }) {
-      // Algolia results could contain URL's from other domains which cannot
+      // Algolia results could contain URL's from other domains which can't
       // be served through history and should navigate with window.location
       if (isRegexpStringMatch(externalUrlRegex, itemUrl)) {
         window.location.href = itemUrl;

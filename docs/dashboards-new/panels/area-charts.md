@@ -8,7 +8,7 @@ An area chart is used to visually represent quantity over a period of time. The 
 
 To create an area chart, you must use a query that provides more than one data point in the **Aggregates** tab. Then the line is drawn between the data points to show the change.
 
-For example, you could use the following query to create an area chart:
+For example, you'd use the following query to create an area chart:
 
 ```sql
 error | timeslice 1m | count by _timeslice

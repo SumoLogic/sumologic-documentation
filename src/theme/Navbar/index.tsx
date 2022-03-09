@@ -107,7 +107,7 @@ function useSecondaryMenu({
   const [shown, setShown] = useState<boolean>(
     () =>
       // /!\ content is set with useEffect,
-      // so it's not available on mount anyway
+      // so it is not available on mount anyway
       // 'return !!content' => always returns false
       false,
   );

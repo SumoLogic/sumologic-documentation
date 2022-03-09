@@ -39,8 +39,8 @@ You can add a processing rule to an existing Source or create a processing rule 
         *   [Exclude messages that match] (/Manage/Collection/Processing-Rules/Include-and-Exclude-Rules). Remove messages that you don't want to send to Sumo Logic at all, think of it as a "denylist" filter. These messages are skipped after reaching the Source and are not uploaded to Sumo Logic.
         *   [Include messages that match] (/Manage/Collection/Processing-Rules/Include-and-Exclude-Rules). Send only the data you'd like in your Sumo Logic account, think of it as an "allowlist" filter). This type of filter can be very useful when the list of log data you want to send to Sumo Logic is easier to filter than setting up exclude filters for all of the types of messages you'd like to exclude, for example, if you only want to include only messages coming from a firewall.
     *   Actions have the option to:
-        *   [Hash messages that match] (/Manage/Collection/Processing-Rules/Hash-Rules). Replace a message with a unique, randomly-generated code to protect sensitive or proprietary information. You may want to hash unique identifiers, such as credit card numbers or user names. By hashing this type of data, you can still track it, even though it's fully hidden.
-        *   [Mask messages that match] (/Manage/Collection/Processing-Rules/Mask-Rules). Replace an expression with a mask string that you can customize—another option to protect data, such as passwords, that you wouldn't normally track.
+        *   [Hash messages that match] (/Manage/Collection/Processing-Rules/Hash-Rules). Replace a message with a unique, randomly-generated code to protect sensitive or proprietary information. You may want to hash unique identifiers, such as credit card numbers or user names. By hashing this type of data, you can still track it, even though it is fully hidden.
+        *   [Mask messages that match] (/Manage/Collection/Processing-Rules/Mask-Rules). Replace an expression with a mask string that you can customize—another option to protect data, such as passwords, that you'dn't normally track.
 5.  For **Filter**, type a regular expression that defines the messages you want to filter. The rule must match the whole message.
     *   For multi-line log messages, to get the lines before and after the line containing your text, wrap the segment with **(?s).\*** such as: **(?s).\*matching text(?s).\***
         
@@ -48,7 +48,7 @@ You can add a processing rule to an existing Source or create a processing rule 
         
 6.  To remove a filter or action click the trash can icon.  
     ![processing rule trach can icon.png](/img/processing-rules/create-a-processing-rule/trashcan-icon.png)
-7.  When you're finished adding all the rules you need, click **Submit**.
+7.  When you are finished adding all the rules you need, click **Submit**.
 
 </TabItem>
 <TabItem value="classic-ui">
@@ -77,13 +77,13 @@ You can add a processing rule to an existing Source or create a processing rule 
 
     *   [Exclude messages that match] (/Manage/Collection/Processing-Rules/Include-and-Exclude-Rules). Remove messages that you don't want to send to Sumo Logic at all, think of it as a "denylist" filter. These messages are skipped after reaching the Source and are not uploaded to Sumo Logic.
     *   [Include messages that match] (/Manage/Collection/Processing-Rules/Include-and-Exclude-Rules). Send only the data you'd like in your Sumo Logic account, think of it as an "allowlist" filter. This type of filter can be very useful when the list of log data you want to send to Sumo Logic is easier to filter than setting up exclude filters for all of the types of messages you'd like to exclude, for example, if you only want to include only messages coming from a firewall.
-    *   [Hash messages that match] (/Manage/Collection/Processing-Rules/Hash-Rules). Replace a message with a unique, randomly-generated code to protect sensitive or proprietary information. You may want to hash unique identifiers, such as credit card numbers or user names. By hashing this type of data, you can still track it, even though it's fully hidden.
-    *   [Mask messages that match] (/Manage/Collection/Processing-Rules/Mask-Rules). Replace an expression with a mask string that you can customize—another option to protect data, such as passwords, that you wouldn't normally track.
+    *   [Hash messages that match] (/Manage/Collection/Processing-Rules/Hash-Rules). Replace a message with a unique, randomly-generated code to protect sensitive or proprietary information. You may want to hash unique identifiers, such as credit card numbers or user names. By hashing this type of data, you can still track it, even though it is fully hidden.
+    *   [Mask messages that match] (/Manage/Collection/Processing-Rules/Mask-Rules). Replace an expression with a mask string that you can customize—another option to protect data, such as passwords, that you'dn't normally track.
     *   Forward messages that match. Send data from an Installed Collector Source to a selected non-Sumo location. This option is only available if you have configured a data forwarding destination. For more information, see [Forward Data from an Installed Collector] (/Manage/Data-Forwarding/Configure-Data-Forwarding-for-Installed-Collectors).
 
 1.  Click **Apply** to add the rule. Continue to add rules as needed.
 
-1.  When you're finished adding all the rules you need, click **Submit**.  
+1.  When you are finished adding all the rules you need, click **Submit**.  
 
     ![rule-action.png](/img/processing-rules/create-a-processing-rule/save-rule.png)
 

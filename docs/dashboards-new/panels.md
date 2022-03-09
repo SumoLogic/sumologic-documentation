@@ -40,7 +40,7 @@ These are best used for looking at statistics taken over time. Things like CPU,�
 Time series panels accept aggregate fields with epoch values (milliseconds since 1970).
 
 :::note
-Log queries can use the [timeslice operator] (../../05Search/Search-Query-Language/Search-Operators/timeslice.md "timeslice") to provide a time series.
+Log queries can use the [timeslice operator](../search/search-query-language/search-operators/timeslice-joinresults.md) to provide a time series.
 :::
 
 Available chart types:
@@ -115,7 +115,7 @@ Only [single value charts](panels/single-value-charts.md) are supported.
 
 ![map panel.png](/img/dashboards-new/panels/map-panel.png)
 
-Maps identify where requests are coming from. These are ideal for [geolocation] (../../05Search/Search-Query-Language/Search-Operators/Geo-Lookup.md "Geo Lookup (Map)") data.
+Maps identify where requests are coming from. These are ideal for [geolocation](../search/search-query-language/search-operators/Geo-Lookup.md) data.
 
 :::note
 You may not see map panels render if hardware acceleration is disabled on your browser.
@@ -131,11 +131,11 @@ Only [map charts](panels/map-charts.md) are supported.
 
 ![text panel.png](/img/dashboards-new/panels/text-panel.png)
 
-Text can clarify what you're showing on dashboards or act as a note to your viewer. Text  panels provide the flexibility to display descriptive text in or above other panels.
+Text can clarify what you are showing on dashboards or act as a note to your viewer. Text  panels provide the flexibility to display descriptive text in or above other panels.
 
 Titles are displayed in the same size and font. Text is styled using Markdown syntax, meaning that you can control the size and weight of the text. Not all Markdown syntax options are supported; see [Markdown Syntax](panels/markdown-syntax.md).
 
-There's no limit to the number of Text Panels you can add to Dashboards. These types of Panels do not count against the quota in Sumo Logic Free accounts.
+There is no limit to the number of Text Panels you can add to Dashboards. These types of Panels don't count against the quota in Sumo Logic Free accounts.
 
 To add a Text Panel:
 
@@ -161,7 +161,7 @@ To add a Text Panel:
 
     ![Text Panel preview.png](/img/dashboards-new/panels/Text-Panel-preview.png)
 
-1. When you're done click **Add to Dashboard** at the top of the window.  
+1. When you are done click **Add to Dashboard** at the top of the window.  
 
     ![Add to Dashboard button.png](/img/dashboards-new/panels/Add-to-Dashboard-button.png)
 
