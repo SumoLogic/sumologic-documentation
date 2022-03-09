@@ -34,4 +34,4 @@ To calculate the median value of a field called "Len:\*" as seconds, and then ta
 
 Which would return results similar to:
 
-![Median.png](/img/search/search-query-language/group-aggregate-operators/median.png)
+![Median.png](/img/search/searchquerylanguage/group-aggregate-operators/median.png)

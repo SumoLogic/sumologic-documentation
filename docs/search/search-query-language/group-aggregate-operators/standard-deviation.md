@@ -29,7 +29,7 @@ _source=CollectD
 | min(delt), max(delt), avg(delt), stddev(delt), count(*) by _collector, _sourcename
 ```
 
-![avg results](/img/search/search-query-language/group-aggregate-operators/stddev.png)
+![avg results](/img/search/searchquerylanguage/group-aggregate-operators/stddev.png)
 
 When you calculate the standard deviation of more than one field, you must create an alias using the [as operator](../search-operators/as-operator.md) to rename the stddev fields. See this example:
 

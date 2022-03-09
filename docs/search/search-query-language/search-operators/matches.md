@@ -89,7 +89,7 @@ _sourceCategory=Apache/Access
 
 Produces aggregate results similar to the following, when you configure it to create a [stacked column chart] (../../../Visualizations-and-Alerts/Dashboards/Chart-Panel-Types/Column-Charts.md):
 
-![Matches](/img/search/search-query-language/search-operators/matches.png)
+![Matches](/img/search/searchquerylanguage/search-operators/matches.png)
 
 ### Viewing errors and warnings over time
 
@@ -111,7 +111,7 @@ _sourceCategory=OS/Windows (error or warning)
 
 Produces results similar to the following, when you configure it to be visualized as a [linechart] (../../../Visualizations-and-Alerts/Dashboards/Chart-Panel-Types/Line-Charts.md):
 
-![Matches Event](/img/search/search-query-language/search-operators/Matches_Ex.png)
+![Matches Event](/img/search/searchquerylanguage/search-operators/Matches_Ex.png)
 
 ### Matching against parsed field values
 

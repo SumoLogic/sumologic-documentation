@@ -81,7 +81,7 @@ Where:
       
     To determine the path to a lookup table, highlight the row for the table in the Sumo Logic Library, and select **Copy path to clipboard** from the three-dot more options menu for the table.   
 
-    ![more-options-lookup.png](/img/search/search-query-language/search-operators/more-options-lookup.png)
+    ![more-options-lookup.png](/img/search/searchquerylanguage/search-operators/more-options-lookup.png)
 
 * `joinColumn-x` is a list of pairs of field names that define the relationship between values in the log data results with matching values in the lookup table, for example:  
       

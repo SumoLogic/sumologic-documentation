@@ -21,7 +21,7 @@ trace "<regex>" "<starting_value>"
 
 Let's say that your product uses a variety of session IDs to track requests as they flow through your system. Different components use a series of four-digit hexadecimal IDs to process a customer order, as shown here:
 
-![trace_graphic 4.png](/img/search/search-query-language/search-operators/trace_graphic.png)
+![trace_graphic 4.png](/img/search/searchquerylanguage/search-operators/trace_graphic.png)
 
 Imagine that an error happened at some point in the process, generating an error including "PROCESSING FAILED: webID=7F92. Starting from this information, we can use a trace operator in our query to following the chain of activity:
 

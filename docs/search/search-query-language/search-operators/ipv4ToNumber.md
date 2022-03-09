@@ -54,4 +54,4 @@ _sourceCategory=service remote_ip
 
 would produce results like:
 
-![ipv4ToNumber](/img/search/search-query-language/search-operators/ipv4ToNumber.png)
+![ipv4ToNumber](/img/search/searchquerylanguage/search-operators/ipv4ToNumber.png)

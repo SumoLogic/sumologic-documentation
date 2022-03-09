@@ -86,7 +86,7 @@ _sourceCategory=IIS/Access
 | outlier response_time window=5,threshold=3,consecutive=2,direction=+-
 ```
 
-![IIS](/img/search/search-query-language/search-operators/IIS.png)
+![IIS](/img/search/searchquerylanguage/search-operators/IIS.png)
 
 The outlier values are represented by the pink triangles in the resulting chart.
 
@@ -104,7 +104,7 @@ _sourceCategory=Apache/Access
 | outlier status_code window=5,threshold=3,consecutive=1,direction=+-
 ```
 
-![Apache](/img/search/search-query-language/search-operators/Apache-Access.png)
+![Apache](/img/search/searchquerylanguage/search-operators/Apache-Access.png)
 
 The outlier values are represented by the pink triangles in the
 resulting chart.
@@ -122,7 +122,7 @@ _sourceCategory=Apache/Access
 
 This way, you can run outlier analysis separately for each value of `_sourceHost`, as shown.
 
-![Group by](/img/search/search-query-language/search-operators/Group-by.png)
+![Group by](/img/search/searchquerylanguage/search-operators/Group-by.png)
 
 This example will only produce an aggregation table, not a chart, but the indicator and violation fields will correctly reflect each `_sourceHost` processing.
 
@@ -168,7 +168,7 @@ You can display the raw results of a multidimensional time series in a table cha
 In the following table chart, a value of 1 in the **\_count_violation** column indicates that the data point corresponding to that timeslice is
 an outlier.
 
-![Multidimension](/img/search/search-query-language/search-operators/Multidimension.png)
+![Multidimension](/img/search/searchquerylanguage/search-operators/Multidimension.png)
 
 ### Alerts Based on Multidimensional Outlier Results
 
@@ -194,7 +194,7 @@ Once you have run the query, you can click **Save As** to create a [Scheduled Se
 
 To visualize your results, on the Search page, you can create a column chart, then change the stacking property to normal to display alerts by unique **user_id** (the multidimensional aspect).
 
-![Alert](/img/search/search-query-language/search-operators/Outlier-Alert.png)
+![Alert](/img/search/searchquerylanguage/search-operators/Outlier-Alert.png)
 
 ### Chart Multidimensional Outlier Results
 
@@ -215,7 +215,7 @@ error (_sourceCategory=Apache* or _sourceCategory=IIS*)
 
 When you select a [line chart] (../../../Visualizations-and-Alerts/Dashboards/Chart-Panel-Types/Line-Charts.md), this example will display something like the following:
 
-![Outlier Distribution](/img/search/search-query-language/search-operators/OutlierDistri.png)
+![Outlier Distribution](/img/search/searchquerylanguage/search-operators/OutlierDistri.png)
 
 #### Example 2: Outlier Ranking
 
@@ -237,7 +237,7 @@ _sourceCategory=Apache*
 When you select a [line chart] (../../../Visualizations-and-Alerts/Dashboards/Chart-Panel-Types/Line-Charts.md),
 this example will display something like the following:
 
-![Outlier Ranking](/img/search/search-query-language/search-operators/OutlierRanking.png)
+![Outlier Ranking](/img/search/searchquerylanguage/search-operators/OutlierRanking.png)
 
 In the line chart, you can see which series is producing the most “deviating” outliers.
 

@@ -30,4 +30,4 @@ _sourceCategory=Apache/Access
 
 would return results similar to:
 
-![in](/img/search/search-query-language/search-operators/in.png)
+![in](/img/search/searchquerylanguage/search-operators/in.png)

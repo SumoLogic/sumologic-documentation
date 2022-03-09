@@ -121,7 +121,7 @@ login
 | sort by _timeslice
 ```
 
-![fillmissing-example-1-without.png](/img/search/search-query-language/search-operators/fillmissing-example-1-without.png)
+![fillmissing-example-1-without.png](/img/search/searchquerylanguage/search-operators/fillmissing-example-1-without.png)
 
 </TabItem>
 <TabItem value="tab2">
@@ -134,7 +134,7 @@ login
 | sort by _timeslice
 ```
 
-![fillmissing-example1-with.png](/img/search/search-query-language/search-operators/fillmissing-example1-with.png)
+![fillmissing-example1-with.png](/img/search/searchquerylanguage/search-operators/fillmissing-example1-with.png)
 
 </TabItem>
 </Tabs>
@@ -161,7 +161,7 @@ login
 | count by type
 ```
 
-![fillmissing-example-1-without.png](/img/search/search-query-language/search-operators/fillmissing-example2-without.png)
+![fillmissing-example-1-without.png](/img/search/searchquerylanguage/search-operators/fillmissing-example2-without.png)
 
 </TabItem>
 <TabItem value="tab4">
@@ -173,7 +173,7 @@ login
   with -1 for _count
 ```
 
-![fillmissing-example1-with.png](/img/search/search-query-language/search-operators/fillmissing-example2-with.png)
+![fillmissing-example1-with.png](/img/search/searchquerylanguage/search-operators/fillmissing-example2-with.png)
 
 </TabItem>
 </Tabs>
@@ -192,7 +192,7 @@ _sourceCategory="asthana_json_test" and _collector="Asthana-Test"
 
 This query provides the following results:
 
-![all option with transpose.png](/img/search/search-query-language/search-operators/all-option-with-transpose.png)
+![all option with transpose.png](/img/search/searchquerylanguage/search-operators/all-option-with-transpose.png)
 
 ### Multiple generators and transpose
 
@@ -217,7 +217,7 @@ login
 | transpose row _timeslice column type
 ```
 
-![fillmissing-example-1-without.png](/img/search/search-query-language/search-operators/fillmissing-example3-none.png)
+![fillmissing-example-1-without.png](/img/search/searchquerylanguage/search-operators/fillmissing-example3-none.png)
 
 </TabItem>
 <TabItem value="tab2">
@@ -232,7 +232,7 @@ login
 | transpose row _timeslice column type
 ```
 
-![fillmissing-example1-with.png](/img/search/search-query-language/search-operators/fillmissing-example3-before.png)
+![fillmissing-example1-with.png](/img/search/searchquerylanguage/search-operators/fillmissing-example3-before.png)
 
 </TabItem>
 </Tabs>
@@ -262,7 +262,7 @@ _sourceCategory="asthana_json_test" and _collector="Asthana-Test"
 
 This query provides the following results:
 
-![takeLast with transpose.png](/img/search/search-query-language/search-operators/takeLast-with-transpose.png)
+![takeLast with transpose.png](/img/search/searchquerylanguage/search-operators/takeLast-with-transpose.png)
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';

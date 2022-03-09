@@ -34,11 +34,11 @@ You can also customize the prefix for a query by specifying an alias. See the [A
 Click the **Time Compare** button to run the default timeshift comparison of 1 day. Or select another timeshift comparison from the 
 menu.
 
-![time compare UI option aug 24 2021.png](/img/search/time-compare/time-compare-UI-option-aug-24-2021.png)
+![time compare UI option aug 24 2021.png](/img/search/timecompare/time-compare-UI-option-aug-24-2021.png)
 
 The comparison results appear in a new column titled with the timeshift.
 
-![timecompare results aug 24 2021.png](/img/search/time-compare/timecompare-results-aug-24-2021.png)
+![timecompare results aug 24 2021.png](/img/search/timecompare/timecompare-results-aug-24-2021.png)
 
 ### Custom Time Compare
 
@@ -46,7 +46,7 @@ To create a custom Time Compare, select Custom from the menu, then make your s
 
 You can retrieve time-shifted data up to the last 40 days. We don't support going back further in time.
 
-![CustomTimeCompare.png](/img/search/time-compare/CustomTimeCompare.png)
+![CustomTimeCompare.png](/img/search/timecompare/CustomTimeCompare.png)
 
 1.  Compare this query to a **\[number\] \[hour, day, week\]** historical timeshift.
 2.  With **\[number\]** time period(s). If the number is bigger than 0.
@@ -74,11 +74,11 @@ Do not alias timeslice as we will use the compare operator.
 
 Then, from the **Time Compare** button, select **Custom**, and set the **Custom Time Compare** dialog settings to:
 
-![7TimePeriod.png](/img/search/time-compare/7TimePeriod.png)
+![7TimePeriod.png](/img/search/timecompare/7TimePeriod.png)
 
 From the results in the **Aggregates** tab, you can select the line chart icon, and display your results as:
 
-![compare example.png](/img/search/time-compare/compare-example.png)
+![compare example.png](/img/search/timecompare/compare-example.png)
 
 For more compare operator examples, see [Examples](./time-compare.md).
 
@@ -240,11 +240,11 @@ error
 
 The query returns results from both today and two days ago, with each day in its separate column. Today's results are represented by `_count`.
 
-![Count-2d.png](/img/search/time-compare/Count-2d.png)
+![Count-2d.png](/img/search/timecompare/Count-2d.png)
 
 Create a line chart to visualize the results.
 
-![count-2dLineChart.png](/img/search/time-compare/count-2dLineChart.png)
+![count-2dLineChart.png](/img/search/timecompare/count-2dLineChart.png)
 
 Using the multiple comparison feature, you can compare the number of
 logs against every ten minutes of the past hour:
@@ -258,11 +258,11 @@ _sourceHost = prod
 
 Each ten-minute period produces its own column in the output table:
 
-![tenminute.png](/img/search/time-compare/tenminute.png)
+![tenminute.png](/img/search/timecompare/tenminute.png)
 
 Create a line chart to visualize the results.  
 
-![TenMinuteLIneChart.png](/img/search/time-compare/TenMinuteLIneChart.png)
+![TenMinuteLIneChart.png](/img/search/timecompare/TenMinuteLIneChart.png)
 
 Alternatively, you can compare against the average of all the ten minute
 periods:
@@ -274,11 +274,11 @@ _sourceHost = prod
 | compare timeshift 10m 5 avg
 ```
 
-![TenMinAvg.png](/img/search/time-compare/TenMinAvg.png)
+![TenMinAvg.png](/img/search/timecompare/TenMinAvg.png)
 
 Create a line chart to visualize the results.  
   
-![TenMinAvgLineChart.png](/img/search/time-compare/TenMinAvgLineChart.png)
+![TenMinAvgLineChart.png](/img/search/timecompare/TenMinAvgLineChart.png)
 
 ### Compare categorical data parsed from logs
 
@@ -294,11 +294,11 @@ using parsed data from logs.
 
 This example computes the average delay per `_sourceHost`, and compares with results from 30 minutes ago.
 
-![DelayAvg.png](/img/search/time-compare/DelayAvg.png)
+![DelayAvg.png](/img/search/timecompare/DelayAvg.png)
 
 These results would create a line chart such as the following.
 
-![DelayLineChart.png](/img/search/time-compare/DelayLineChart.png)
+![DelayLineChart.png](/img/search/timecompare/DelayLineChart.png)
 
 ### Compare after a Transpose operation
 
@@ -333,7 +333,7 @@ You can then use this query to build the scheduled search email alert.
 2.  Click **Schedule this search**.
 3.  For **Run frequency**, select the time period at which you want to schedule this search. For this alert, we have selected **Every 2 Hours**.  
 
-    ![Save Item.png](/img/search/time-compare/Save-Item.png)
+    ![Save Item.png](/img/search/timecompare/Save-Item.png)
  
 4.  For **Send notification**, select **if the following condition is met**.
 5.  For **Alert condition**, select **Greater than \>,** and for **Number of results **enter **5**.

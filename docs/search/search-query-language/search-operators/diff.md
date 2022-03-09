@@ -40,7 +40,7 @@ Using diff with timeslice, you can run a query similar to:
 
 to produce results similar to:
 
-![diffoperator.png](/img/search/search-query-language/search-operators/diffoperator.png)
+![diffoperator.png](/img/search/searchquerylanguage/search-operators/diffoperator.png)
 
 Note that there is no value for diff_bytes in line 1, as expected.
 

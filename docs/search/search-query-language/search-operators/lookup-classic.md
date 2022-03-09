@@ -166,4 +166,4 @@ You only get the last associated value as a result. 
 
 For example, if you are searching your Apache Access logs from 34.87.4.6 and you are looking for an internal server errors by a specific keyid, lookup provides the last result that matches your criteria:
 
-![lookup-duplicate.png](/img/search/search-query-language/search-operators/lookup-duplicate.png)
+![lookup-duplicate.png](/img/search/searchquerylanguage/search-operators/lookup-duplicate.png)

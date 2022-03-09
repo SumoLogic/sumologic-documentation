@@ -80,7 +80,7 @@ Running a query like:
 
 uses the `isNull` operator to check the field value of `country_code` and if it returns `true` has the `if` operator replace the value with the string `unknown`:
 
-![isNull](/img/search/search-query-language/search-operators/isNull.png)
+![isNull](/img/search/searchquerylanguage/search-operators/isNull.png)
 
 **Use [where](where.md) to check for null values.**
 

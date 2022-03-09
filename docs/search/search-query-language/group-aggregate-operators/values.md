@@ -23,7 +23,7 @@ The response field separates each value with a new line character and places
 
 This is an example of a response field with IP addresses:
 
-![values operator response field example.png](/img/search/search-query-language/group-aggregate-operators/values-operator-response-field-example.png)
+![values operator response field example.png](/img/search/searchquerylanguage/group-aggregate-operators/values-operator-response-field-example.png)
 
 ## Limitation
 

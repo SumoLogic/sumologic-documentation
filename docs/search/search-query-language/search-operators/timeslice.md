@@ -56,7 +56,7 @@ Successful logins per hour.
 | count by _timeslice
 ```
 
-![Aggregates.png](/img/search/search-query-language/search-operators/Timeslice-Aggregates.png)
+![Aggregates.png](/img/search/searchquerylanguage/search-operators/Timeslice-Aggregates.png)
 
 ## Known Issue
 
@@ -121,7 +121,7 @@ _sourceCategory=Apache/Access
 This query produces these results in the Aggregates tab, which you can
 display as a column chart.
 
-![Timeslice](/img/search/search-query-language/search-operators/timeslice_ex1.png)
+![Timeslice](/img/search/searchquerylanguage/search-operators/timeslice_ex1.png)
 
 **Example 2:** All computer access to Sumo Logic over time.
 
@@ -135,7 +135,7 @@ _sourceCategory=*IIS*
 
 This query produces these results in the Aggregates tab, which you can display as a stacked column chart:
 
-![Timeslice Example](/img/search/search-query-language/search-operators/TimeSliceEx2.png)
+![Timeslice Example](/img/search/searchquerylanguage/search-operators/TimeSliceEx2.png)
 
 **Example 3:** Monitoring non-normal status codes (400s and 500s) on Apache servers.
 
@@ -150,4 +150,4 @@ _sourceCategory=Apache/Access
 
 This query produces these results in the Aggregates tab, which you can display as an area chart:
 
-![Timeslice example](/img/search/search-query-language/search-operators/Timeslice-Ex3.png)
+![Timeslice example](/img/search/searchquerylanguage/search-operators/Timeslice-Ex3.png)

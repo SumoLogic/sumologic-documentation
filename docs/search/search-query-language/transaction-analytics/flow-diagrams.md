@@ -44,4 +44,4 @@ To drill down in a Flow Diagram:
 
 **Loop backs** in the flow (order) of states are tracked and displayed as red lines looping over the respective states in the flow diagram. You can hover over the loops to view the number of occurrences respective states had returned to a previous state.
 
-![hover loop back.png](/img/search/search-query-language/transaction-analytics/hover-loop-back.png)
+![hover loop back.png](/img/search/searchquerylanguage/transaction-analytics/hover-loop-back.png)

@@ -35,7 +35,7 @@ error
 | topk(5, _count)
 ```
 
-![basic error ranking results.png](/img/search/search-query-language/search-operators/topk/basic-error-ranking-results.png)
+![basic error ranking results.png](/img/search/searchquerylanguage/search-operators/topk/basic-error-ranking-results.png)
 
 ### Top 2 results
 
@@ -50,7 +50,7 @@ error
 
 Let's figure out what is the maximum error count for each sourceHost for the given time range slightly changing our query. We’ll add a by clause to the given operator and provide sourceHost as an argument. This tells the system that we want to look for the top “x” counts for each source Host.
 
-![basic top 2 rank.png](/img/search/search-query-language/search-operators/topk/basic-top-2-rank.png)
+![basic top 2 rank.png](/img/search/searchquerylanguage/search-operators/topk/basic-top-2-rank.png)
 
 Find the top two source host, source category pairs.
 
@@ -63,7 +63,7 @@ error
 
 We can specify more than one argument to group by. In the query above, we are looking for the top 2 results for each source host, source Category pairs.
 
-![basic top with group by.png](/img/search/search-query-language/search-operators/topk/basic-top-with-group-by.png)  
+![basic top with group by.png](/img/search/searchquerylanguage/search-operators/topk/basic-top-with-group-by.png)  
   
   
   

@@ -44,7 +44,7 @@ _sourcecategory=katta
 
 produces results like:
 
-![too smooth.png](/img/search/search-query-language/search-operators/too-smooth.png)
+![too smooth.png](/img/search/searchquerylanguage/search-operators/too-smooth.png)
 
 ### Smooth the difference of a quantity between time points
 
@@ -60,7 +60,7 @@ Using smooth with timeslice, you can run a query similar to:
 
 that produces results like:
 
-![smooth.png](/img/search/search-query-language/search-operators/smooth.png)
+![smooth.png](/img/search/searchquerylanguage/search-operators/smooth.png)
 
 ### Use backshift with smooth and rollingstd to view the averages of incoming bytes
 
@@ -80,7 +80,7 @@ Running a query like:
 
 produces results similar to:
 
-![OneMinuteRate.png](/img/search/search-query-language/search-operators/OneMinuteRate.png)
+![OneMinuteRate.png](/img/search/searchquerylanguage/search-operators/OneMinuteRate.png)
 
 ### Specify a window length of 5, but only 4 data points are available
 
@@ -97,4 +97,4 @@ _sourcecategory=katta
 
 produces results like:
 
-![Coldsmooth.png](/img/search/search-query-language/search-operators/Coldsmooth.png)
+![Coldsmooth.png](/img/search/searchquerylanguage/search-operators/Coldsmooth.png)

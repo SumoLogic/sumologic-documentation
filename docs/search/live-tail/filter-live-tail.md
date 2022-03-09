@@ -35,7 +35,7 @@ In this example, we have started a Live Tail on the Source Host nite-index-1.
 _sourceHost=nite-index-1
 ```
 
-![source hose nite-index-1](/img/search/live-tail/filter-live-tail/livetail-start-nite-index-1.png)
+![source hose nite-index-1](/img/search/livetail/filter-live-tail/livetail-start-nite-index-1.png)
 
 Next, we added a Source Category filter to the query. Here we're looking for the Source Category called "search".
 
@@ -43,7 +43,7 @@ Next, we added a Source Category filter to the query. Here we're looking for th
 _sourceHost=nite-index-1 _sourceCategory=search
 ```
 
-![add source category](/img/search/live-tail/filter-live-tail/add-source-category.png)
+![add source category](/img/search/livetail/filter-live-tail/add-source-category.png)
 
 In this example, we will add some more keywords to the query, and a wildcard to a keyword.
 
@@ -51,7 +51,7 @@ In this example, we will add some more keywords to the query, and a wildcard to 
 _sourceHost=nite-index-1 (error or fail* or exception)
 ```
 
-![add keywords](/img/search/live-tail/filter-live-tail/add-keywords.png)
+![add keywords](/img/search/livetail/filter-live-tail/add-keywords.png)
 
 In a different example, we're looking for a different Source Host, Source Category, and filtered for log messages that don't include the keyword "info". This way, we know we're getting all of our warnings and errors.
 
@@ -59,4 +59,4 @@ In a different example, we're looking for a different Source Host, Source Catego
 _sourceHost=nite-cqsplitter-1 _sourceCategory=cqsplitter !info
 ```
 
-![check warnings](/img/search/live-tail/filter-live-tail/check-warnings.png)
+![check warnings](/img/search/livetail/filter-live-tail/check-warnings.png)

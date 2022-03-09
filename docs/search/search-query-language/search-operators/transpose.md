@@ -14,7 +14,7 @@ _sourceCategory=Labs/Apache/Access
 | count by _timeslice, status_code
 ```
 
-![Table without transpose](/img/search/search-query-language/search-operators/transpose/TableWithoutTranspose.png)
+![Table without transpose](/img/search/searchquerylanguage/search-operators/transpose/TableWithoutTranspose.png)
 
 **With transpose, you can use your query to define your rows as the timeslice and the columns as the status code:**
 
@@ -25,7 +25,7 @@ _sourceCategory=Labs/Apache/Access
 | transpose row _timeslice column status_code
 ```
 
-![Table with transpose](/img/search/search-query-language/search-operators/transpose/TableWithTranpose.png)
+![Table with transpose](/img/search/searchquerylanguage/search-operators/transpose/TableWithTranpose.png)
 
 To make this information present as a table, transpose dynamically creates columns for aggregate search results. This allows you to change the output of a query by turning search results into fields, so you can design queries without first knowing the output schema. In this way, transpose formats the data correctly for charts in Dashboard Panels. 
 
@@ -33,11 +33,11 @@ For example, the screenshots below represent the same data from the same time ra
 
 **Without transpose, the data is represented according to timeslice, but not aggregated by status code:**
 
-![Without transpose](/img/search/search-query-language/search-operators/transpose/WithoutTranspose.png)
+![Without transpose](/img/search/searchquerylanguage/search-operators/transpose/WithoutTranspose.png)
 
 **With transpose, the results display in an easy-to-read manner status codes by timeslice:**
 
-![With transpose](/img/search/search-query-language/search-operators/transpose/WithTranpose.png)
+![With transpose](/img/search/searchquerylanguage/search-operators/transpose/WithTranpose.png)
 
 ## Syntax
 
@@ -96,7 +96,7 @@ _sourceCategory=service
 
 will produce a stacked graph similar to:
 
-![Successful Logins](/img/search/search-query-language/search-operators/transpose/SuccessfulLogins.png)
+![Successful Logins](/img/search/searchquerylanguage/search-operators/transpose/SuccessfulLogins.png)
 
 ### View web server status codes
 
@@ -111,11 +111,11 @@ _sourceCategory=Apache/Access
 
 Results are initially returned in the **Aggregates** tab in the form that we want.
 
-![Webserver StatusCode](/img/search/search-query-language/search-operators/transpose/WebserverStatusCode.png)
+![Webserver StatusCode](/img/search/searchquerylanguage/search-operators/transpose/WebserverStatusCode.png)
 
 Then you can select the **Column** chart button, and under **Change Properties**, set the **Stacking** setting to **Normal** to create a stacked column chart.
 
-![Status Codes Stacked Graph](/img/search/search-query-language/search-operators/transpose/Status-Code-stacked-graph.png)
+![Status Codes Stacked Graph](/img/search/searchquerylanguage/search-operators/transpose/Status-Code-stacked-graph.png)
 
 For information on handling null fields, see [isNull](isNull.md) operator.
 

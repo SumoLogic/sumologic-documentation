@@ -107,11 +107,11 @@ _sourceCategory=Labs/Apache/Access status_code=404 | timeslice 1m | count(status
 
 The query returns an aggregation table with columns for `error_count`, `error_count_predicted`, and `error_count_error`.
 
-![agg-table-predict-linear.png](/img/search/search-query-language/search-operators/agg-table-predict-linear.png)
+![agg-table-predict-linear.png](/img/search/searchquerylanguage/search-operators/agg-table-predict-linear.png)
 
 From here, you can select the **Line Chart** icon, and automatically create a Combo Chart that represents the `error_count_error` as a column chart, and the `error_count` and `error_count_predicted` mapped on top of that with separate lines. Note that the `(absolute value)_count_error` series is toggled off by default. Click it in the legend to display the column chart.
 
-![combo-chart-predict-linear.png](/img/search/search-query-language/search-operators/combo-chart-predict-linear.png)
+![combo-chart-predict-linear.png](/img/search/searchquerylanguage/search-operators/combo-chart-predict-linear.png)
 
 ### predict using auto-regressive model
 
@@ -123,12 +123,12 @@ _sourceCategory=Labs/Apache/Access status_code=404 | timeslice 1m | count(status
 
 The query returns an aggregation table with columns for `error_count`, `error_count_predicted`, `error_count_linear`, and `_error_count_error`.
 
-![agg-table-predict-ar.png](/img/search/search-query-language/search-operators/agg-table-predict-ar.png)
+![agg-table-predict-ar.png](/img/search/searchquerylanguage/search-operators/agg-table-predict-ar.png)
 
 From here, you can select the **Line Chart** icon, and automatically create a Combo Chart that represents the `error_count_error` as a column chart, and the `error_count` and `error_count_predicted` mapped on top of that with separate lines. Note that the `(absolute value)_count_error` series is toggled off by default. Click it in the legend to display the column chart.
 
-![combo-chart-predict-ar.png](/img/search/search-query-language/search-operators/combo-chart-predict-ar.png)
+![combo-chart-predict-ar.png](/img/search/searchquerylanguage/search-operators/combo-chart-predict-ar.png)
 
 Note that, if desired, you can display the `_count_linear` series, to see the value predicted by the simple linear regression model by clicking it in the legend.
 
-![combo-chart-predict-ar-with-linear.png](/img/search/search-query-language/search-operators/combo-chart-predict-ar-with-linear.png)
+![combo-chart-predict-ar-with-linear.png](/img/search/searchquerylanguage/search-operators/combo-chart-predict-ar-with-linear.png)

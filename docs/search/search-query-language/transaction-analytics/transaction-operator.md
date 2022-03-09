@@ -132,7 +132,7 @@ _sourceCategory=oursite
 | transaction on ip with states aboutus, company, blog, shopping, api in urlprefix
 ```
 
-![unordered transactiontable.png](/img/search/search-query-language/transaction-analytics/unordered-transaction-table.png)
+![unordered transactiontable.png](/img/search/searchquerylanguage/transaction-analytics/unordered-transaction-table.png)
 
 </TabItem>
 <TabItem value="tab2">
@@ -149,7 +149,7 @@ _sourceCategory=oursite
 | count, max(latency) by fromstate, tostate
 ```
 
-![ordered flow diagram.png](/img/search/search-query-language/transaction-analytics/ordered-flow-diagram.png)
+![ordered flow diagram.png](/img/search/searchquerylanguage/transaction-analytics/ordered-flow-diagram.png)
 
 </TabItem>
 </Tabs>
@@ -158,7 +158,7 @@ _sourceCategory=oursite
 
 **Loop backs** in the flow (order) of states are tracked and displayed as red lines looping over the respective states in the flow diagram. You can hover over the loops to view the number of occurrences respective states had returned to a previous state.
 
-![hover loop back.png](/img/search/search-query-language/transaction-analytics/hover-loop-back.png)
+![hover loop back.png](/img/search/searchquerylanguage/transaction-analytics/hover-loop-back.png)
 
 ## Specifying a fringe cut-off
 
@@ -230,7 +230,7 @@ _source=Syslog (New session) OR (Session deleted)
 You reference the `_end_time` and `_start_time` fields to calculate the
 duration of the `sessionid`.
 
-![fields created by transaction.png](/img/search/search-query-language/transaction-analytics/fields-created-by-transaction.png)
+![fields created by transaction.png](/img/search/searchquerylanguage/transaction-analytics/fields-created-by-transaction.png)
 
 ### Detecting a potential e-commerce failure
 
@@ -254,10 +254,10 @@ results by flow
 
 could produce a Flow Diagram with normal drop-off rates at the different states: cart, shipping, billing, billingVerification, confirmation, and order shipped.
 
-![ecommerce flowchart.png](/img/search/search-query-language/transaction-analytics/ecommerce-flowchart.png)
+![ecommerce flowchart.png](/img/search/searchquerylanguage/transaction-analytics/ecommerce-flowchart.png)
 
 Now, if you ran this query and saw results as shown below, where there is a big drop-off at the verification state, you'd determine that there is likely a problem with the verification service and start an investigation.
 
-![ecommerce flowchart missing states.png](/img/search/search-query-language/transaction-analytics/ecommerce-flowchart-missing-states.png)
+![ecommerce flowchart missing states.png](/img/search/searchquerylanguage/transaction-analytics/ecommerce-flowchart-missing-states.png)
 
  

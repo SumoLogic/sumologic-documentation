@@ -35,7 +35,7 @@ When your URL points to another Sumo Logic feature from your account, such as a 
 
 Right-click the link to view the tab-options menu:
 
-![tab menu.png](/img/search/search-query-language/search-operators/tourl-tab-menu.png)
+![tab menu.png](/img/search/searchquerylanguage/search-operators/tourl-tab-menu.png)
 
 If you don't see the menu it is not a supported link.
 
@@ -55,7 +55,7 @@ If you’re sharing the Akamai Denials by Host search query in a dashboard with 
 
 When you add this to a dashboard, you’ll see the short name. When you click the link, it will open the Akamai denials by host search query.
 
-![AkamaiSearchQuery.png](/img/search/search-query-language/search-operators/tourl-AkamaiSearchQuery.png)
+![AkamaiSearchQuery.png](/img/search/searchquerylanguage/search-operators/tourl-AkamaiSearchQuery.png)
 
 ### Using a column for short name, and a prefix
 
@@ -75,8 +75,8 @@ Notice the query uses the value `"Scheduled search failed at: "` as the value fo
 
 The query result will be:
 
-![tourlResult.png](/img/search/search-query-language/search-operators/tourlResult.png)
+![tourlResult.png](/img/search/searchquerylanguage/search-operators/tourlResult.png)
 
 When you add the result to a dashboard, you’ll see the short name. When you click the link, it will take you to the scheduled search query.
 
-![toUrlDashboard.png](/img/search/search-query-language/search-operators/toUrlDashboard.png)
+![toUrlDashboard.png](/img/search/searchquerylanguage/search-operators/toUrlDashboard.png)

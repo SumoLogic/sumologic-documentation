@@ -56,4 +56,4 @@ _sourceCategory=OS/Windows
 
 Here's an example of the results from this query:
 
-![sessionize.png](/img/search/search-query-language/search-operators/sessionize.png)
+![sessionize.png](/img/search/searchquerylanguage/search-operators/sessionize.png)

@@ -18,7 +18,7 @@ The **isReservedIP** operator checks if an IPv4 address is reserved as defined b
 
 The following warning is shown when results are dropped or an IPv6 address is detected:  
     
-![isprivateip operator warning for dropped invalid ip addresses.png](/img/search/search-query-language/search-operators/isprivateip-dropped-warning.png)
+![isprivateip operator warning for dropped invalid ip addresses.png](/img/search/searchquerylanguage/search-operators/isprivateip-dropped-warning.png)
 
 ## Examples
 

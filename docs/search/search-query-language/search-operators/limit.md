@@ -65,6 +65,6 @@ _sourceCategory=OS/Windows Service Control Manager
 
 which can be displayed in a bar chart like this:
 
-![Limit](/img/search/search-query-language/search-operators/Limit.png)
+![Limit](/img/search/searchquerylanguage/search-operators/Limit.png)
 
 See [Sort](sort.md) operator for more information.

@@ -30,7 +30,7 @@ _sourceCategory=Apache/Access
 
 The search results would look like this:  
   
-![Fields](/img/search/search-query-language/search-operators/Fields.png)
+![Fields](/img/search/searchquerylanguage/search-operators/Fields.png)
 
 Allowlist queries allow all system internal fields (fields prefixed with an underscore "\_") to pass.
 
@@ -72,7 +72,7 @@ _sourceCategory=Apache/Access
 
 The search results would look like this:
 
-![Fields_nonaggregate](/img/search/search-query-language/search-operators/Fields_nonaggr.png)
+![Fields_nonaggregate](/img/search/searchquerylanguage/search-operators/Fields_nonaggr.png)
 
 While the same query with an added *count by* statement to make it an aggregate query:
 

@@ -27,7 +27,7 @@ This query returns a long version of the current date and time in milliseconds.
 
 Which returns results similar to:
 
-![Current date](/img/search/search-query-language/search-operators/CurrentDate.png)
+![Current date](/img/search/searchquerylanguage/search-operators/CurrentDate.png)
 
 ### Return the current date using formatDate.
 
@@ -39,6 +39,6 @@ Use the following query with formatDate to return results for the current date f
 
 This returns the following results.
 
-![Today](/img/search/search-query-language/search-operators/Today.png)
+![Today](/img/search/searchquerylanguage/search-operators/Today.png)
 
 For more examples, see [formatDate](formatDate.md) operator.

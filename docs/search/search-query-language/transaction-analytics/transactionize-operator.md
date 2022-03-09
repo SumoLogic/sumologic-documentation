@@ -92,7 +92,7 @@ logs with a query similar to:
 
 For example:
 
-![transactionalize.png](/img/search/search-query-language/transaction-analytics/transactionalize.png)
+![transactionalize.png](/img/search/searchquerylanguage/transaction-analytics/transactionalize.png)
 
 :::note
 To see an example of using the transactionize operator with merge, see [Merge Operator](merge-operator.md). 

@@ -168,11 +168,11 @@ error
 
 The query returns results from both today and two days ago, with each day in its separate column. Today's results are represented by `_count`.
 
-![Count-2d.png](/img/search/time-compare/Count-2d.png)
+![Count-2d.png](/img/search/timecompare/Count-2d.png)
 
 Create a line chart to visualize the results.
 
-![count-2dLineChart.png](/img/search/time-compare/count-2dLineChart.png)
+![count-2dLineChart.png](/img/search/timecompare/count-2dLineChart.png)
 
 Using the multiple comparison feature, you can compare the number of
 logs against every ten minutes of the past hour:
@@ -186,11 +186,11 @@ _sourceHost = prod
 
 Each ten-minute period produces its own column in the output table:
 
-![tenminute.png](/img/search/time-compare/tenminute.png)
+![tenminute.png](/img/search/timecompare/tenminute.png)
 
 Create a line chart to visualize the results.  
 
-![TenMinuteLIneChart.png](/img/search/time-compare/TenMinuteLIneChart.png)
+![TenMinuteLIneChart.png](/img/search/timecompare/TenMinuteLIneChart.png)
 
 Alternatively, you can compare against the average of all the ten minute
 periods:
@@ -202,11 +202,11 @@ _sourceHost = prod
 | compare timeshift 10m 5 avg
 ```
 
-![TenMinAvg.png](/img/search/time-compare/TenMinAvg.png)
+![TenMinAvg.png](/img/search/timecompare/TenMinAvg.png)
 
 Create a line chart to visualize the results.  
   
-![TenMinAvgLineChart.png](/img/search/time-compare/TenMinAvgLineChart.png)
+![TenMinAvgLineChart.png](/img/search/timecompare/TenMinAvgLineChart.png)
 
 ### Compare categorical data parsed from logs
 
@@ -222,11 +222,11 @@ using parsed data from logs.
 
 This example computes the average delay per `_sourceHost`, and compares with results from 30 minutes ago.
 
-![DelayAvg.png](/img/search/time-compare/DelayAvg.png)
+![DelayAvg.png](/img/search/timecompare/DelayAvg.png)
 
 These results would create a line chart such as the following.
 
-![DelayLineChart.png](/img/search/time-compare/DelayLineChart.png)
+![DelayLineChart.png](/img/search/timecompare/DelayLineChart.png)
 
 ### Compare after a Transpose operation
 

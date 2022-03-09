@@ -77,7 +77,7 @@ Using logs that match the example log format, running a query like this:
 
 would produce the following results:
 
-![geo lookup world map.png](/img/search/search-query-language/search-operators/geo-lookup-world-map.png)
+![geo lookup world map.png](/img/search/searchquerylanguage/search-operators/geo-lookup-world-map.png)
 
 ### View map of Geo Lookup results
 
@@ -85,18 +85,18 @@ Enter a query that parses the IP field from your logs, a **lookup** operator t
 
 1. By default, results display as a table:  
 
-    ![geo lookup results fields.png](/img/search/search-query-language/search-operators/geo-lookup-results-fields.png)
+    ![geo lookup results fields.png](/img/search/searchquerylanguage/search-operators/geo-lookup-results-fields.png)
 
 1. Click the **Map** icon in the **Aggregates** tab. The map displays:  
 
-    ![map icon location.png](/img/search/search-query-language/search-operators/map-icon-location.png)
+    ![map icon location.png](/img/search/searchquerylanguage/search-operators/map-icon-location.png)
 
 1. Do any of the following:
 
     * Use the zoom slider to zoom in or out on an area of the map. Alternately, click and drag to zoom in or see different areas of a map.
     * Click any marker on the map to see more detail about where IPs originate in a specific area:  
 
-        ![click map marker with zoomed results.png](/img/search/search-query-language/search-operators/click-map-marker-with-zoomed-results.png)
+        ![click map marker with zoomed results.png](/img/search/searchquerylanguage/search-operators/click-map-marker-with-zoomed-results.png)
 
 1. (Optional) Click **Add to Dashboard** to create a new Dashboard or add the map to an existing Dashboard. After adding a map to a Dashboard you will still be able to zoom in and drill down on the data.
 
@@ -114,4 +114,4 @@ For example, running a query like:
 
 returns results similar to:
 
-![isNull.png](/img/search/search-query-language/search-operators/isNull.png)
+![isNull.png](/img/search/searchquerylanguage/search-operators/isNull.png)

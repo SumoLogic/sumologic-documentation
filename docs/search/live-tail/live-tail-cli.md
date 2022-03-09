@@ -40,7 +40,7 @@ The metadata field and filter must be enclosed in quotes.
 1. Enter `./livetail -h`
 1. When you run livetail the first time you need to provide the [deployment] (/APIs/Troubleshooting-APIs/Deployments-and-Sumo-Logic-Endpoints) of the account and [access ID/key] (/Manage/Security/Access-Keys) to authenticate.
 
-    ![session start](/img/search/live-tail/cli-live-tail-sessions-start.png)
+    ![session start](/img/search/livetail/cli-live-tail-sessions-start.png)
 
     A **config.json** file is created in the same directory as the livetail binary that stores this authentication information so you only need to enter your deployment, access ID, and access key once. But if you prefer to clear your access ID and access key and log in again each time, you can use the `-c` argument to clear them.
 

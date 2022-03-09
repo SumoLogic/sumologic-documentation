@@ -66,7 +66,7 @@ The following examples use this sample data.
 
 Returns the most recent record for each country:
 
-![deup by country](/img/search/search-query-language/search-operators/dedup-by-country.png)
+![deup by country](/img/search/searchquerylanguage/search-operators/dedup-by-country.png)
 
 ### Keep the first 3 duplicate results 
 
@@ -78,7 +78,7 @@ For search results that have the same country value, keep the first three that o
 
 Returns the following results:
 
-![deup by 3](/img/search/search-query-language/search-operators/dedup-last-3.png)
+![deup by 3](/img/search/searchquerylanguage/search-operators/dedup-last-3.png)
 
 ### Keep results with same combination of values in multiple fields 
 
@@ -90,7 +90,7 @@ For search results that have the same country AND continent values, keep the fir
 
 Returns the following results:
 
-![deup by 3](/img/search/search-query-language/search-operators/dedup-by-two-fields.png)
+![deup by 3](/img/search/searchquerylanguage/search-operators/dedup-by-two-fields.png)
 
 ### Remove only consecutive duplicate events 
 
@@ -102,4 +102,4 @@ Remove only consecutive duplicate events. Keep non-consecutive duplicate events.
 
 Returns the following results:
 
-![deup by 3](/img/search/search-query-language/search-operators/dedup-consecutively-two-fields.png)
+![deup by 3](/img/search/searchquerylanguage/search-operators/dedup-consecutively-two-fields.png)

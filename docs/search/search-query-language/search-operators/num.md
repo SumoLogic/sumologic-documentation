@@ -28,4 +28,4 @@ _sourceCategory=concierge completed execution
 
 This query produces results like this:
 
-![numoperator.png](/img/search/search-query-language/search-operators/numoperator.png)
+![numoperator.png](/img/search/searchquerylanguage/search-operators/numoperator.png)

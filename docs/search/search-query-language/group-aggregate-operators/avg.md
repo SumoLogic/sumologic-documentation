@@ -32,7 +32,7 @@ An example snippet from a log would like this:  `time taken: 21 ms,` where the v
 
 The average operator would calculate against all parsed values and return the average, which would be returned in the **Aggregates** tab as a number, such as 50.
 
-![avg results](/img/search/search-query-language/group-aggregate-operators/avg-results.png)
+![avg results](/img/search/searchquerylanguage/group-aggregate-operators/avg-results.png)
 
 ### Use Aggregate in Query
 

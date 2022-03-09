@@ -44,4 +44,4 @@ Say we would like to keep an eye on visitors that hit our site from different co
 
 produces results like:
 
-![Mostrecent.png](/img/search/search-query-language/group-aggregate-operators/mostrecent.png)
+![Mostrecent.png](/img/search/searchquerylanguage/group-aggregate-operators/mostrecent.png)

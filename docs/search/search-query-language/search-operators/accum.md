@@ -35,7 +35,7 @@ _sourceCategory=IIS/Access (Wyatt OR Luke)
 
 produces results of a running total of all requests, similar to:
 
-![Accum](/img/search/search-query-language/search-operators/Accum.png)
+![Accum](/img/search/searchquerylanguage/search-operators/Accum.png)
 
 **Running total by user name.** Another option is to find a running
 total for each user's requests. Running a query similar to:
@@ -51,4 +51,4 @@ _sourceCategory=IIS/Access (Wyatt OR Luke)
 
 produces results of a running total for each user's requests, similar to:
 
-![Accum by user](/img/search/search-query-language/search-operators/AccumByUser.png)
+![Accum by user](/img/search/searchquerylanguage/search-operators/AccumByUser.png)

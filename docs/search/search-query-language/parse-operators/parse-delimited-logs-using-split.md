@@ -94,7 +94,7 @@ _sourceCategory=sumo/zscaler
 
 which produces this result:
 
-![SplitTab.jpg](/img/search/search-query-language/parse-operators/SplitTab.jpg)
+![SplitTab.jpg](/img/search/searchquerylanguage/parse-operators/SplitTab.jpg)
 
 Alternatively, you can use the parse operator to extract fields from a tab delimited log file. The following query produces the same result as the previous query.
 

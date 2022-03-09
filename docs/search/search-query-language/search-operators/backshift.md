@@ -40,10 +40,10 @@ _sourcecategory=Labs/Apache/Access
 
 produces results like:
 
-![backshift_new_table.png](/img/search/search-query-language/search-operators/backshift-table-1.png)
+![backshift_new_table.png](/img/search/searchquerylanguage/search-operators/backshift-table-1.png)
 
 Then you can visualize the results as an area chart.
 
-![backshift_new_graph.png](/img/search/search-query-language/search-operators/area-chart-backshift-1.png)
+![backshift_new_graph.png](/img/search/searchquerylanguage/search-operators/area-chart-backshift-1.png)
 
  

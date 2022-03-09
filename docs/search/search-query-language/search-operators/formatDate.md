@@ -38,7 +38,7 @@ Use the following query to return results for the current date using the date fo
 
 This creates the today column, and returns the following results.
 
-![FormatDate](/img/search/search-query-language/search-operators/FormatDate.png)
+![FormatDate](/img/search/searchquerylanguage/search-operators/FormatDate.png)
 
 ### European date format** **dd-MM-yyyy
 
@@ -50,7 +50,7 @@ Use the following query to create a **today** column, and return the results u
 
 This returns the following results:
 
-![EuropeanDateFormat](/img/search/search-query-language/search-operators/EuropeanDateFormat.png)
+![EuropeanDateFormat](/img/search/searchquerylanguage/search-operators/EuropeanDateFormat.png)
 
 ### US date format with a timestamp
 
@@ -62,7 +62,7 @@ This example creates a **today** column and uses the US date format with a tim
 
 Which returns results like:
 
-![DateTimestamp](/img/search/search-query-language/search-operators/DateTimestamp.png)
+![DateTimestamp](/img/search/searchquerylanguage/search-operators/DateTimestamp.png)
 
 ### Find messages with incorrect timestamps
 
@@ -77,7 +77,7 @@ This query allows you to find messages with incorrect timestamps.
 
 This query produces results like this:
 
-![Incorrect Timestamp](/img/search/search-query-language/search-operators/IncorrectTimestamp.png)
+![Incorrect Timestamp](/img/search/searchquerylanguage/search-operators/IncorrectTimestamp.png)
 
 ### Determine age of log messages
 
@@ -93,7 +93,7 @@ This query lets you determine the age of your log messages.
 
 Which produces results like this:
 
-![Message age](/img/search/search-query-language/search-operators/MessageAge.png)
+![Message age](/img/search/searchquerylanguage/search-operators/MessageAge.png)
 
 ### Messages by Day of the Week
 

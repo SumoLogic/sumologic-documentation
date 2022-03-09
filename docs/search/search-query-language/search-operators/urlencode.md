@@ -40,4 +40,4 @@ _sourceCategory=pagerduty
 
 The query returns the field `url` encoded:
 
-![urlencode.png](/img/search/search-query-language/search-operators/urlencode.png)
+![urlencode.png](/img/search/searchquerylanguage/search-operators/urlencode.png)

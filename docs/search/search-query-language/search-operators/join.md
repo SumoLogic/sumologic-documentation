@@ -184,7 +184,7 @@ on t1.taskId = t2.taskId
 
 Produces results in the **Aggregate** tab like:
 
-![NewAggregation.png](/img/search/search-query-language/search-operators/NewAggregation.png)
+![NewAggregation.png](/img/search/searchquerylanguage/search-operators/NewAggregation.png)
 
 ### Operate on fields after the ON clause
 

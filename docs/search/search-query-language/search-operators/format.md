@@ -40,7 +40,7 @@ error
 
 which results in:
 
-![Format](/img/search/search-query-language/search-operators/Format.png)
+![Format](/img/search/searchquerylanguage/search-operators/Format.png)
 
 ### Format numbers
 

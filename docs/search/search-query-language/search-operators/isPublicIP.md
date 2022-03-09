@@ -23,7 +23,7 @@ isPublicIP(<IPv4_string_field>) [as <field>]
 
 The following warning is shown when results are dropped or an IPv6 address is detected:  
     
-![isprivateip operator](/img/search/search-query-language/search-operators/isprivateip-dropped-warning.png)
+![isprivateip operator](/img/search/searchquerylanguage/search-operators/isprivateip-dropped-warning.png)
 
 ## Examples
 

@@ -39,7 +39,7 @@ In this example, you can find the total data (bytes) transmitted for a time rang
 
 produces results similar to:
 
-![Total.png](/img/search/search-query-language/search-operators/Total.png)
+![Total.png](/img/search/searchquerylanguage/search-operators/Total.png)
 
 Note that the t_data value of 16,761,621,241.25455 is the sum of the data field in all rows, many of which are not visible  here.
 
@@ -51,7 +51,7 @@ This query produces only three results, illustrating that \_total is simply the 
 | total ps
 ```
 
-![total op](/img/search/search-query-language/search-operators/total-op.png)
+![total op](/img/search/searchquerylanguage/search-operators/total-op.png)
 
 ### Calculate totals by message time
 
@@ -80,4 +80,4 @@ _sourceCategory=IIS (Wyatt OR Luke)
 
 produces results similar to:
 
-![RunningTotal.png](/img/search/search-query-language/search-operators/RunningTotal.png)
+![RunningTotal.png](/img/search/searchquerylanguage/search-operators/RunningTotal.png)

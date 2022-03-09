@@ -45,7 +45,7 @@ _sourceCategory=stream error
 | sort by _bin_lower
 ```
 
-![bin operator charted.png](/img/search/search-query-language/search-operators/bin-operator-charted.png)
+![bin operator charted.png](/img/search/searchquerylanguage/search-operators/bin-operator-charted.png)
 
 ### Latency distribution
 
@@ -68,4 +68,4 @@ _sourceCategory=analytics
 | sort by _bin_upper
 ```
 
-![example bin.png](/img/search/search-query-language/search-operators/example-bin.png)
+![example bin.png](/img/search/searchquerylanguage/search-operators/example-bin.png)
