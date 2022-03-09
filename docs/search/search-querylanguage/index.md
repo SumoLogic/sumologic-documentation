@@ -14,9 +14,6 @@ The syntax of the search query language is written in the following styles.
 
 {@import ../../reuse/help-documentation-styles.md}
 
-01Start-Here/03About-Sumo-Logic/Help_Documentation_Styles
-
-
 import DocCardList from '@theme/DocCardList';
 import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
 
