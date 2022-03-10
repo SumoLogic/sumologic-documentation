@@ -97,7 +97,8 @@ module.exports = {
       ],
     },
   ],
-  metricslogs: [
+  searchlogs: [
+    //Navigation for Search, Logs
     {
       type: 'category',
       label: 'Searches and Logs',

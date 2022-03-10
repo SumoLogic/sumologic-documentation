@@ -139,6 +139,23 @@ html[data-theme='dark'] {
   article .card:hover {
     border-color: var(--ifm-pagination-nav-color-hover);
   }
+  .docusaurus-highlight-code-line {
+    background-color: rgb(46, 149, 255,.2);
+  }
+  pre {
+    background-color: rgba(18, 48, 78, 0.4) !important;
+    
+  }
+  .markdown::after {
+      display: none !important;
+  }
+  .codeBlockTitle_node_modules-\@docusaurus-theme-classic-lib-next-theme-CodeBlock-styles-module {
+    background-color: rgba(18, 48, 78, 0.4) !important;
+  }
+  .breadcrumbsItemLink_node_modules-\@docusaurus-theme-classic-lib-next-theme-DocBreadcrumbs-styles-module {
+    background-color: rgb(53, 120, 229, .00) !important;
+    border-radius: 0px !important;
+  }
 }
 
 html[data-theme='light'] {
@@ -149,7 +166,7 @@ html[data-theme='light'] {
   --ifm-footer-background-color: #1a273f;
   --ifm-menu-color: var(--ifm-font-color-base);
   --ifm-table-stripe-background: rgb(241, 244, 247);
-  --ifm-table-head-background: rgba(0, 139, 178, 0.25);
+  --ifm-table-head-background: rgba(0, 139, 178, 0.397);
   --ifm-table-border-color: rgba(25, 43, 54, 0.35);
   .button--secondary {
     --ifm-button-border-color: rgba(53, 120, 229, .25);
@@ -176,6 +193,23 @@ html[data-theme='light'] {
   article .card:hover {
       border-color: var(--ifm-pagination-nav-color-hover);
   }
+  .docusaurus-highlight-code-line {
+    background-color: rgb(0, 139, 178,.1);
+  }
+  pre {
+    background-color: rgba(127, 151, 158, 0.1) !important;
+    
+  }
+  .codeBlockTitle_node_modules-\@docusaurus-theme-classic-lib-next-theme-CodeBlock-styles-module {
+    background-color: rgba(127, 151, 158, 0.1) !important;
+  }
+  .markdown::after {
+      display: none !important;
+  }
+  .breadcrumbsItemLink_node_modules-\@docusaurus-theme-classic-lib-next-theme-DocBreadcrumbs-styles-module {
+    background-color: transparent !important;
+    border-radius: 0px !important;
+  }
 }
 
 .medium-zoom-overlay {
@@ -197,7 +231,7 @@ html[data-theme='light'] {
 // SIDEBAR Links
 .menu__list-item-collapsible {
   font-weight: bold;
-  text-transform: uppercase;
+  text-transform: none;
 }
 .menu__link {
   font-size: .8rem;

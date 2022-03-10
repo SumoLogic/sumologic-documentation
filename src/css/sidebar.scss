@@ -62,6 +62,8 @@
       transition: none;
     }
   }
+
+  
   
   .menu__list-item-collapsible--active {
     background: var(--ifm-menu-link-sublist-icon-open) center / contain no-repeat;
@@ -84,6 +86,6 @@
     background: none;
   }
   
-  html[data-theme='dark'] .menu__list-item-collapsible--active {
-          background: none;
-        }
+html[data-theme='dark'] .menu__list-item-collapsible--active {
+  background: none;
+}

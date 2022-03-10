@@ -1,8 +1,9 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
+// Full configuration options detailed here: https://docusaurus.io/docs/api/docusaurus-config
 
-const lightCodeTheme = require('prism-react-renderer/themes/github');
-const darkCodeTheme = require('prism-react-renderer/themes/dracula');
+const lightCodeTheme = require('prism-react-renderer/themes/vsLight');
+const darkCodeTheme = require('prism-react-renderer/themes/vsDark');
 
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
@@ -84,6 +85,7 @@ module.exports = {
       {
         redirects: [
           {
+            //test for CID process
             to: '/docs/contribution/markdown-features',
             from: '/cid=1234',
           },
@@ -146,6 +148,14 @@ module.exports = {
       // Optional: Algolia search parameters
       searchParameters: {},
       //... other Algolia params
+    },
+    imageZoom: {
+      selector: '.markdown :not(a) > img',
+      // Optional medium-zoom options
+      // see: https://www.npmjs.com/package/medium-zoom#options
+      options: {
+        background: 'rgba(0, 0, 0, 0.6)',
+      },
     },
       hideableSidebar: true,
       navbar: {
@@ -416,22 +426,6 @@ module.exports = {
       },
       colorMode: {
         defaultMode: 'dark',
-        // Dark/light switch icon options
-        switchConfig: {
-          // Icon for the switch while in dark mode
-          darkIcon: 'light_mode',
-  
-          // CSS to apply to dark icon
-          darkIconStyle: {
-            fontFamily: 'Material Icons',
-          },
-  
-          lightIcon: 'dark_mode',
-  
-          lightIconStyle: {
-            fontFamily: 'Material Icons',
-          },
-        },
       },
       prism: {
         theme: lightCodeTheme,
