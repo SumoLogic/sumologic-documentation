@@ -197,11 +197,11 @@ html[data-theme='light'] {
     background-color: rgb(0, 139, 178,.1);
   }
   pre {
-    background-color: rgba(127, 151, 158, 0.1) !important;
+    background-color: rgba(242 244 245) !important;
     
   }
   .codeBlockTitle_node_modules-\@docusaurus-theme-classic-lib-next-theme-CodeBlock-styles-module {
-    background-color: rgba(127, 151, 158, 0.1) !important;
+    background-color: rgba(242 244 245) !important;
   }
   .markdown::after {
       display: none !important;
@@ -518,6 +518,11 @@ html[data-theme='dark'] .alert--secondary {
   .admonition-icon {
     --ifm-alert-foreground-color: #20c997 !important;
   } 
+  a {
+    font-weight: bold;
+    color: rgb(58, 204, 180);
+    text-decoration: none;
+  }
 }
 
 html[data-theme='light'] .alert--secondary {
@@ -530,11 +535,16 @@ html[data-theme='light'] .alert--secondary {
   .admonition-icon {
     --ifm-alert-foreground-color: #137c5d !important;
   } 
+  a {
+    font-weight: bold;
+    color: rgb(58, 204, 180);
+    text-decoration: none;
+  }
 }
 
 // SUMO
 html[data-theme='dark'] .admonition-sumo {
-  background-color: rgba(0, 0, 153, 0.05);
+  background-color: rgba(0, 0, 153, 0.1);
   --ifm-alert-border-color: #000099;
   border-left: 6px solid #000099;
   --ifm-alert-color: #ffffff;
@@ -543,21 +553,31 @@ html[data-theme='dark'] .admonition-sumo {
     padding: 5px 5px 0px 5px;
   } 
   padding: var(--ifm-alert-padding-vertical) var(--ifm-alert-padding-horizontal);
+  a {
+    font-weight: bold;
+    color: #2f5fff;
+    text-decoration: none;
+  } 
 }
 
 html[data-theme='light'] .admonition-sumo {
   background-color: rgba(0, 0, 153, 0.05);
-  color: #000075;
+  color: #000046;
   --ifm-alert-color: #000099;
   --ifm-alert-border-color: #000099;
   border-left: 6px solid #000099;
   --ifm-alert-color: var(--ifm-font-color-base);
   --ifm-alert-foreground-color: #000099;
   .admonition-icon {
-    background-color: #000099;
+    background-color: #001799;
     padding: 5px 5px 0px 5px;
   } 
   padding: var(--ifm-alert-padding-vertical) var(--ifm-alert-padding-horizontal);
+  a {
+    font-weight: bold;
+    color: #2f5fff;
+    text-decoration: none;
+  }
 }
 
 // IMPORTANT
@@ -569,6 +589,11 @@ html[data-theme='light'] .alert--info {
   .admonition-icon {
     --ra-admonition-icon-color: #008bb2 !important;
   } 
+  a {
+    font-weight: bold;
+    color: #008bb2;
+    text-decoration: none;
+  }  
 }
 
 html[data-theme='dark'] .alert--info {
@@ -579,6 +604,11 @@ html[data-theme='dark'] .alert--info {
   .admonition-icon {
     --ifm-alert-foreground-color: #008bb2 !important;
   } 
+  a {
+    font-weight: bold;
+    color: #008bb2;
+    text-decoration: none;
+  }  
 }
 
 
@@ -591,7 +621,12 @@ html[data-theme='light'] .alert--success {
   --ifm-alert-color: var(--ifm-font-color-base);
   .admonition-icon {
     --ifm-alert-foreground-color: #3f923f !important;
-  }   
+  }
+  a {
+    font-weight: bold;
+    color: #2abb2a;
+    text-decoration: none;
+  }  
 }
 
 html[data-theme='dark'] .alert--success {
@@ -601,6 +636,11 @@ html[data-theme='dark'] .alert--success {
   --ifm-alert-color: #ffffff; 
   .admonition-icon {
     --ifm-alert-foreground-color: #3f923f !important;
+  } 
+  a {
+    font-weight: bold;
+    color: #2abb2a;
+    text-decoration: none;
   } 
 }
 
@@ -614,6 +654,11 @@ html[data-theme='light'] .alert--warning {
   .admonition-icon {
     --ra-admonition-icon-color: #ff8d03 !important;
   }
+  a {
+    font-weight: bold;
+    color: #ff8d03;
+    text-decoration: none;
+  }  
 }
 
 html[data-theme='dark'] .alert--warning {
@@ -625,6 +670,11 @@ html[data-theme='dark'] .alert--warning {
   .admonition-icon {
     --ifm-alert-foreground-color: #ff8d03 !important;
   }
+  a {
+    font-weight: bold;
+    color: #ff8d03;
+    text-decoration: none;
+  }  
 }
 
 // WARNING
@@ -636,6 +686,11 @@ html[data-theme='light'] .alert--danger {
   .admonition-icon {
     --ra-admonition-icon-color: #df4b30 !important;
   } 
+  a {
+    font-weight: bold;
+    color: #df4b30;
+    text-decoration: none;
+  }  
 }
 
 html[data-theme='dark'] .alert--danger {
@@ -645,7 +700,12 @@ html[data-theme='dark'] .alert--danger {
   --ifm-alert-color: #ffffff;
   .admonition-icon {
     --ifm-alert-foreground-color: #df4b30 !important;
-  } 
+  }
+  a {
+    font-weight: bold;
+    color: #df4b30;
+    text-decoration: none;
+  }   
 }
 
 // Mermaid Styles 
