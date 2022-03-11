@@ -6,7 +6,7 @@ id: about-dashboard-new
 
 Dashboard (New) allows you to analyze metric and log data on the same dashboard, in a streamlined user experience. This is exactly what you need to effectively monitor and manage a Kubernetes environment.
 
-Sumo Logic classic [Dashboards] (../Dashboards.md "Dashboards") are still available. Now, you have two dashboard options. This page outlines the key differences between the classic Dashboard platform and Dashboard (New), and outlines recommended [best practices](#best-practices) for when to use each. 
+Sumo Logic classic [Dashboards] (../Dashboards.md) are still available. Now, you have two dashboard options. This page outlines the key differences between the classic Dashboard platform and Dashboard (New), and outlines recommended [best practices](#best-practices) for when to use each. 
 
 Dashboards are a critical tool for monitoring and troubleshooting modern applications, allowing you to quickly navigate through your data without having to learn a query language. Graphs and data mappings provide visual representations of data that enable you to quickly identify and resolve key issues.
 
@@ -74,7 +74,7 @@ A list of the refresh interval rates is provided for you to select from.
 
 * Auto Refresh applies to the whole dashboard, individual panels cannot be configured.
 * If there are two or more queries in a panel, the refresh interval for the panel is set to the maximum supported interval.
-* Panels with an [absolute time range] (../../05Search/Get-Started-with-Search/Search-Basics/Time-Range-Expressions.md "Time Range Expressions")are not supported.
+* Panels with an [absolute time range](../search/get-started-with-search/search-basics/time-range-expressions.md) are not supported.
 * If the requested refresh interval is not possible, you will get an error message indicating the actual refresh rate is slower than requested. The following are reasons why setting the refresh interval is not possible: 
 
   * The time range is too long to refresh at this rate. Reduce the time range to allow a faster refresh interval. 
