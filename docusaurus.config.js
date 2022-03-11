@@ -80,7 +80,8 @@ module.exports = {
       {
         specs: [{
             id: 'sumoapi',
-            specUrl: 'https://api.sumologic.com/docs/sumologic-api.yaml',
+            //specUrl: 'https://api.sumologic.com/docs/sumologic-api.yaml',
+            spec: 'sumologic-api.yaml',
             routePath: '/sumoapi/',
           },],
       },
