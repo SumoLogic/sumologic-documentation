@@ -1,8 +1,9 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
+// Full configuration options detailed here: https://docusaurus.io/docs/api/docusaurus-config
 
-const lightCodeTheme = require('prism-react-renderer/themes/github');
-const darkCodeTheme = require('prism-react-renderer/themes/dracula');
+const lightCodeTheme = require('prism-react-renderer/themes/vsLight');
+const darkCodeTheme = require('prism-react-renderer/themes/vsDark');
 
 /** @type {import('@docusaurus/types').DocusaurusConfig} */
 module.exports = {
@@ -84,6 +85,7 @@ module.exports = {
       {
         redirects: [
           {
+            //test for CID process
             to: '/docs/contribution/markdown-features',
             from: '/cid=1234',
           },
@@ -147,6 +149,14 @@ module.exports = {
       searchParameters: {},
       //... other Algolia params
     },
+    imageZoom: {
+      selector: '.markdown :not(a) > img',
+      // Optional medium-zoom options
+      // see: https://www.npmjs.com/package/medium-zoom#options
+      options: {
+        background: 'rgba(0, 0, 0, 0.6)',
+      },
+    },
       hideableSidebar: true,
       navbar: {
         //title: 'My Site',
@@ -175,7 +185,7 @@ module.exports = {
                 items: [
                   {
                     label: 'Sumo Accounts',
-                    sublabel: 'Get and configure an account',
+                    sublabel: 'Set up an account',
                     to: 'docs/get-started',
                     icon: 'fact_check',
                   },
@@ -187,19 +197,19 @@ module.exports = {
                   },
                   {
                     label: 'Quick Start Guides',
-                    sublabel: 'Quickly get started with Sumo',
+                    sublabel: 'Fast track on Sumo',
                     to: 'docs/get-started',
                     icon: 'start',
                   },
                   {
                     label: 'Apps & Integrations',
-                    sublabel: 'Gain insights from data sources',
+                    sublabel: 'Insights from data sources',
                     to: 'docs/integrations',
                     icon: 'apps',
                   },
                   {
                     label: 'Send Data',
-                    sublabel: 'Collectors, Sources, and more',
+                    sublabel: 'Collectors, sources, & more',
                     to: 'docs/get-started',
                     icon: 'open_in_new',
                   },
@@ -211,19 +221,19 @@ module.exports = {
                 items: [
                   {
                     label: 'Dashboards',
-                    sublabel: 'Create and configure visuals and alerts',
+                    sublabel: 'Configure visuals & alerts',
                     to: 'docs/get-started',
                     icon: 'dashboard',
                   },
                   {
                     label: 'Searches and Logs',
-                    sublabel: 'Find log data with queries',
+                    sublabel: 'Find data with queries',
                     to: '/docs/search',
                     icon: 'view_day',
                   },
                   {
                     label: 'Metrics and Logs',
-                    sublabel: 'Find metrics data with queries',
+                    sublabel: 'Find data with queries',
                     to: 'docs/get-started',
                     icon: 'timeline',
                   },
@@ -235,13 +245,13 @@ module.exports = {
                 items: [
                   {
                     label: 'Traces',
-                    sublabel: 'Create and configure visuals and alerts',
+                    sublabel: 'Review traces & spans',
                     to: 'docs/get-started',
                     icon: 'view_timeline',
                   },
                   {
                     label: 'Real User Monitoring',
-                    sublabel: 'Create and configure visuals and alerts',
+                    sublabel: 'Monitor users',
                     to: 'docs/get-started',
                     icon: 'contacts',
                   },
@@ -253,19 +263,19 @@ module.exports = {
                 items: [
                   {
                     label: 'About Observability',
-                    sublabel: 'Learn about Observability features',
+                    sublabel: 'Learn about Observability',
                     to: 'docs/get-started',
                     icon: 'data_exploration',
                   },
                   {
                     label: 'Kubernetes',
-                    sublabel: 'Deploy and collect app data',
+                    sublabel: 'Deploy & collect app data',
                     to: 'docs/get-started',
                     icon: 'settings_suggest',
                   },
                   {
                     label: 'AWS Observability',
-                    sublabel: 'Deploy and collect AWS data',
+                    sublabel: 'Deploy & collect AWS data',
                     to: 'docs/get-started',
                     icon: 'polyline',
                   },
@@ -283,13 +293,13 @@ module.exports = {
                 items: [
                   {
                     label: 'Security Events',
-                    sublabel: 'New features, bug fixes, and more',
+                    sublabel: 'Review security issues',
                     to: 'docs/get-started',
                     icon: 'format_list_bulleted',
                   },
                   {
                     label: 'Security Detection',
-                    sublabel: 'Extend the Sumo APIs',
+                    sublabel: 'Monitor security',
                     to: 'docs/get-started',
                     icon: 'grid_4x4',
                   },
@@ -416,22 +426,6 @@ module.exports = {
       },
       colorMode: {
         defaultMode: 'dark',
-        // Dark/light switch icon options
-        switchConfig: {
-          // Icon for the switch while in dark mode
-          darkIcon: 'light_mode',
-  
-          // CSS to apply to dark icon
-          darkIconStyle: {
-            fontFamily: 'Material Icons',
-          },
-  
-          lightIcon: 'dark_mode',
-  
-          lightIconStyle: {
-            fontFamily: 'Material Icons',
-          },
-        },
       },
       prism: {
         theme: lightCodeTheme,
