@@ -6,10 +6,10 @@ id: line-charts
 
 Line charts are useful for displaying how data changes over time, where the Y axis of a line chart displays the count of an item, and the X axis is a timeline.
 
-To create a line chart, you need to use a query that provides more than one data point in the **Aggregates** tab, see [aggregate operators] (../../../05Search/Search-Query-Language/aaGroup.md "Group or Aggregate Operators") for details. Then the line is drawn between the data points to show the
+To create a line chart, you need to use a query that provides more than one data point in the **Aggregates** tab, see [aggregate operators](/docs/search/search-query-language/group-aggregate-operators) for details. Then the line is drawn between the data points to show the
 change.
 
-For example, you could use the following query to create a Line chart:
+For example, you'd use the following query to create a Line chart:
 
 ```sql
 error | timeslice 1m | count by _timeslice

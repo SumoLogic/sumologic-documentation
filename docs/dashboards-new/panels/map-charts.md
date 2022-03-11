@@ -8,10 +8,10 @@ Map charts show the location and number of hits from data on a map.
 
 To map your data you can: 
 
-* Use the [geoip] (../../../05Search/Search-Query-Language/Search-Operators/geoip.md "geoip") or [Geo Lookup] (../../../05Search/Search-Query-Language/Search-Operators/Geo-Lookup.md "Geo Lookup (Map)") operators to provide these values from extracted IPv4 and IPv6 addresses.
+* Use the [geoip](../../search/search-query-language/search-operators/geoip.md) or [Geo Lookup](../../search/search-query-language/search-operators/Geo-Lookup.md) operators to provide these values from extracted IPv4 and IPv6 addresses.
 * Manually provide valid aggregated **latitude** and **longitude** values. Ensure the field names are 'latitude' and 'longitude' so that map chart can recognize them. Format the values with positive or negative values based on being north/south or east/west, instead of using the terms N/S, E/W, such as, `30.42` and `-87.21`.
 
-For example, you could use the geoip operator to create a map chart:
+For example, you'd use the geoip operator to create a map chart:
 
 ```sql
 | parse "remote_ip=*]" as client_ip 
@@ -20,7 +20,7 @@ For example, you could use the geoip operator to create a map chart:
 | sort _count
 ```
 
-Or, you could use the geo lookup operator to create a map chart:
+Or, you'd use the geo lookup operator to create a map chart:
 
 ```sql
 _sourceCategory=Error 
@@ -39,12 +39,12 @@ which would produce results such as:
 * Latitude and longitude values need to be provided with the fields 'latitude' and 'longitude' respectively.
 * Latitude and longitude values need to be positive or negative based on being north/south or east/west, instead of using the terms N/S, E/W, such as, `30.42` and `-87.21`.
 * A `_count` aggregator is required. 
-* Other aggregators like `sum` or `avg` do not provide accurate results. 
+* Other aggregators like `sum` or `avg` don't provide accurate results. 
 
 ## Limitations
 
 * Map charts have a display limit of 10,000 results.
-* Colors of map markers cannot be changed.
+* Colors of map markers can't be changed.
 
 ## Create a map chart
 
@@ -54,7 +54,7 @@ To add a panel with a map chart:
 
     ![map panel option.png](/img/dashboards-new/panels/map-charts/map-panel-option.png)
 
-1. Provide a [Geo Lookup] (../../../05Search/Search-Query-Language/Search-Operators/Geo-Lookup.md "Geo Lookup") query and press **Enter** for it to run.
+1. Provide a [Geo Lookup](../../search/search-query-language/search-operators/Geo-Lookup.md) query and press **Enter** for it to run.
 
     ![Add log query.png](/img/dashboards-new/create-dashboard-new/Add-log-query.png)
 

@@ -10,11 +10,11 @@ A Box Plot Chart graphically depicts groups of data using quartiles, which are t
 
 To create Box Plot Chart panels, your query must include:
 
-* **Smallest value** (sample minimum) using the [min] (../../../05Search/Search-Query-Language/aaGroup/min-and-max.md "min and max") or _min field name.
+* **Smallest value** (sample minimum) using the [min] (../../../search/search-query-language/group-aggregate-operators/min-and-max.md "min and max") or _min field name.
 * **Lowest quartile** (25%) using the _pct_25 field name. You can use both **lower** or **ends** with in this part of the query.
 * **Median quartile** (50%) using the _pct_50 field name. You can use both **lower** or **ends** with in this part of the query.
 * **Upper quartile** (75%) using the _pct_75 field name.
-* **Largest value** (sample maximum) using the [max] (../../../05Search/Search-Query-Language/aaGroup/min-and-max.md "min and max") or _max field name.
+* **Largest value** (sample maximum) using the [max] (../../../search/search-query-language/group-aggregate-operators/min-and-max.md "min and max") or _max field name.
 
 For example, this query can be rendered as a Box Plot Chart:
 
@@ -22,7 +22,7 @@ For example, this query can be rendered as a Box Plot Chart:
 error | 5 as a | 6 as b | 7 as c | 8 as d | 9 as e | min(a), pct(b,25), pct(c,50), pct(d,75), max(e)
 ```
 
-Because this query doesn't meet all the requirements, it cannot be
+Because this query does not meet all the requirements, it can't be
 rendered as a Box Plot Chart:
 
 ```sql
@@ -54,4 +54,4 @@ To create a Box Plot chart
 
     ![Charts - box plot](/img/dashboards-new/panels/box-plot-charts/charts_box_plot.png)    
 
-1. (Optional) Click **Add to Dashboard** if you would like to save the chart as a panel. 
+1. (Optional) Click **Add to Dashboard** if you'd like to save the chart as a panel. 

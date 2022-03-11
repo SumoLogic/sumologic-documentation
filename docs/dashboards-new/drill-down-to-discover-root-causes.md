@@ -9,7 +9,7 @@ When you see a spike of interest on a dashboard that requires further investiga
 ## Limitations
 
 * Only entity types from a curated list are identified. The AWS, Kubernetes, Traces, and Host domains are supported.
-* A few Panel types do not support the features documented on this page. You will not have the option to click on a data point to view the Summary and Entities tabs on the following Panel types:
+* A few Panel types don't support the features documented on this page. You will not have the option to click on a data point to view the Summary and Entities tabs on the following Panel types:
 
     * [Single Value Panel](./panels.md#single-value-panel)
     * [Map Panel](./panels.md#map-panel)

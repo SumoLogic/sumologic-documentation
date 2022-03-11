@@ -108,7 +108,7 @@ function Footer(): JSX.Element | null {
                       item.html ? (
                         <li
                           key={key}
-                          className='footer__item' // Developer provided the HTML, so assume it's safe.
+                          className='footer__item' // Developer provided the HTML, so assume it is safe.
                           // eslint-disable-next-line react/no-danger
                           dangerouslySetInnerHTML={{
                             __html: item.html,
@@ -133,7 +133,7 @@ function Footer(): JSX.Element | null {
             
             {copyright ? (
               <div
-                className='footer__copyright' // Developer provided the HTML, so assume it's safe.
+                className='footer__copyright' // Developer provided the HTML, so assume it is safe.
                 // eslint-disable-next-line react/no-danger
                 dangerouslySetInnerHTML={{
                   __html: copyright,

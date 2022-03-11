@@ -10,7 +10,7 @@ Images in Text Panels are not supported.
 
 ## Basic text
 
-You do not need to apply any syntax to display basic text. Just type the phrase in the Text box.
+You don't need to apply any syntax to display basic text. Just type the phrase in the Text box.
 
 ## Bold/italic text
 
@@ -18,7 +18,7 @@ To make text italic, surround the phrase in `* *`. For example, `*This text will
 
 To make text bold, surround the phrase in `** **`. For example, `**This text will be bold**`.
 
-You can combine bold and italic syntax if you would like.
+You can combine bold and italic syntax if you'd like.
 
 ## Code formatting/block
 
@@ -63,7 +63,7 @@ period. Indent by adding a space. 
 
 This will be displayed in the Text Panel as:
 
-![Ordered list](/img/snippet/monitor-alert/markdown_ordered_list.png)
+![Ordered list](/img/reuse/monitor-alert/markdown_ordered_list.png)
 
 ### Unordered Lists
 
@@ -80,7 +80,7 @@ will produce a bullet. Indent by adding a space.
 
  This will be displayed in the Text Panel as:
 
-![Markdown unordered list](/img/snippet/monitor-alert/markdown_unordered_list.png)
+![Markdown unordered list](/img/reuse/monitor-alert/markdown_unordered_list.png)
 
 ## Combined Lists
 
@@ -98,4 +98,4 @@ To created a combined, nested list of numbered and bulleted items, just precede 
 
 This will be displayed in the Text Panel as:
 
-![Combined list](/img/snippet/monitor-alert/markdown_combined_list.png)
+![Combined list](/img/reuse/monitor-alert/markdown_combined_list.png)

@@ -4,7 +4,7 @@ id: quickstart-k8s
 
 # Kubernetes Quickstart
 
-This guide will walk you through setting up [Sumo Logic's Kubernetes solution](https://www.sumologic.com/solutions/kubernetes/).  If you do not have a Sumo Logic account, [sign up for a free trial](../get-started/sign-up.md#create-a-trial-account).
+This guide will walk you through setting up [Sumo Logic's Kubernetes solution](https://www.sumologic.com/solutions/kubernetes/).  If you don't have a Sumo Logic account, [sign up for a free trial](../get-started/sign-up.md#create-a-trial-account).
 
 ## Installation
 
@@ -33,7 +33,7 @@ values={[
       --set sumologic.accessKey="<SUMO_ACCESS_KEY>" 
   ```
 
-1. Once you have completed installation, you can install the [Kubernetes App and view the dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/10Containers_and_Orchestration/Kubernetes/Install_the_Kubernetes_App_and_view_the_Dashboards) and [open a new Explore tab](https://help.sumologic.com/Observability_Solution/Kubernetes_Solution/Navigate_your_Kubernetes_environment) in Sumo Logic. If you do not see data in Sumo Logic, you can review our [troubleshooting guide](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/deploy/docs/Troubleshoot_Collection.md).
+1. Once you have completed installation, you can install the [Kubernetes App and view the dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/10Containers_and_Orchestration/Kubernetes/Install_the_Kubernetes_App_and_view_the_Dashboards) and [open a new Explore tab](https://help.sumologic.com/Observability_Solution/Kubernetes_Solution/Navigate_your_Kubernetes_environment) in Sumo Logic. If you don't see data in Sumo Logic, you can review our [troubleshooting guide](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/deploy/docs/Troubleshoot_Collection.md).
 
 :::tip Helm Values File
 
@@ -72,7 +72,7 @@ As a best practice, we recommend using [helm values files](https://helm.sh/docs/
   kubectl apply -f sumologic.yaml
   ```
 
-1. Once you have completed installation, you can install the [Kubernetes App and view the dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/10Containers_and_Orchestration/Kubernetes/Install_the_Kubernetes_App_and_view_the_Dashboards) and [open a new Explore tab](https://help.sumologic.com/Observability_Solution/Kubernetes_Solution/Navigate_your_Kubernetes_environment) in Sumo Logic. If you do not see data in Sumo Logic, you can review our [troubleshooting guide](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/deploy/docs/Troubleshoot_Collection.md).
+1. Once you have completed installation, you can install the [Kubernetes App and view the dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/10Containers_and_Orchestration/Kubernetes/Install_the_Kubernetes_App_and_view_the_Dashboards) and [open a new Explore tab](https://help.sumologic.com/Observability_Solution/Kubernetes_Solution/Navigate_your_Kubernetes_environment) in Sumo Logic. If you don't see data in Sumo Logic, you can review our [troubleshooting guide](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/deploy/docs/Troubleshoot_Collection.md).
 
 </TabItem>
 

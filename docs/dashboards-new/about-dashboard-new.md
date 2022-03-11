@@ -22,7 +22,7 @@ Dashboard (New) differs from classic Dashboards in the following ways:  
 
 * Dashboard (New) template variables differ slightly from the filters in classic Dashboards. Filters were auto injected at runtime by Sumo Logic, allowing you little control over how they were used or what they represented. In addition, filters only worked on log panels. Dashboard (New) template variables provide full replacement control over what is inserted, and the variables work across both log and metric panels.
 * Dashboard (New) provides a dashboard-first view to build, maintain, and interact with dashboards. With Dashboard (New) you can build panels inside the dashboard rather than adding panels from the Search or Metrics pages.
-* Dashboard (New) utilizes the [metrics query builder] with an improved full text auto-complete capabilities, so you can quickly find the metrics you're looking for.
+* Dashboard (New) utilizes the [metrics query builder] with an improved full text auto-complete capabilities, so you can quickly find the metrics you are looking for.
 
 See the [feature differences table](#feature-differences-between-classic-and-dashboard-new) for a
 complete comparison.
@@ -38,7 +38,9 @@ The following operators can't be used with Dashboard (New):
 * Save
 * Transaction
 
-**Note**: Live mode restrictions do not apply to Dashboard (New). 
+:::note
+Live mode restrictions do not apply to Dashboard (New). 
+:::
 
 ## Limitations
 
@@ -50,7 +52,7 @@ The following operators can't be used with Dashboard (New):
 
 ## Rules
 
-* Auto Refresh applies to the whole dashboard, you cannot configure it by panel.
+* Auto Refresh applies to the whole dashboard, you can't configure it by panel.
 * If there are two or more queries in a panel, the refresh interval for the panel is set to the maximum supported interval.
 * If the requested refresh interval is not possible, you will get an error message indicating the actual refresh rate is slower than requested. Reasons why the refresh interval is not possible are the following: 
 
@@ -97,7 +99,7 @@ The Sumo Logic classic Dashboards and Dashboard (New) dashboards each have str
 
 ### Monitoring with classic Dashboards
 
-If you want to monitor your environment and display dashboards on a monitor or television screen, use the classic Dashboards. Currently, we do not have monitor support for the Dashboard (New) framework. We hope to support monitoring across both dashboard frameworks in the near future.
+If you want to monitor your environment and display dashboards on a monitor or television screen, use the classic Dashboards. Currently, we don't have monitor support for the Dashboard (New) framework. We hope to support monitoring across both dashboard frameworks in the near future.
 
 #### Troubleshooting with Dashboard (New)
 

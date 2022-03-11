@@ -13,7 +13,7 @@ Markdown documents have metadata at the top called [Front Matter](https://jekyll
 ```markdown
 ---
 id: page-id
-sidebar_title: Navigation title
+sidebar_label: Navigation title
 description: One sentence about the page... 
 keywords: [important, words]
 ---
@@ -24,10 +24,10 @@ keywords: [important, words]
 | Parameter | Description |
 | -- | -- |
 | `id:` | **Required.** Id for the page used in the sidebar and as the canonical link. Keep it short and only use dashes. |
-| `sidebar_title:` | Optional, use a different title for the side navigation. Keep this title short. It does not affect the canonical link or page title. |
+| `sidebar_label:` | Optional, use a different title for the side navigation. Keep this title short. It does not affect the canonical link or page title. |
 | `description:` | Optional, one sentence describing what the user will find in the page for searches. Otherwise the first couple sentences are used for searches. |
 | `keywords` | Optional, array of metadata keywords to boost search results. Do not use the company name or some brands or words already heavily used in the page. That can reduce search strength. |
-| `# Title of the Page` | **Required.** Only use one H1 for the title of the page. This title is used in navigation is a `sidebar_title` is not included.|
+| `# Title of the Page` | **Required.** Only use one H1 for the title of the page. This title is used in navigation is a `sidebar_label` is not included.|
 
 For full options, see [Docusaurus Markdown front matter](https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-docs#markdown-front-matter).
 
@@ -36,7 +36,7 @@ For full options, see [Docusaurus Markdown front matter](https://docusaurus.io/d
 Use hashtags `#` to indicate the heading level. You should not use H1 down in the page, this is automatically used for the page title when building the site. Link anchors automatically also generate.
 
 :::important
-Use these heading in correct order. Right after the H1 title you would next have an H2, not jumping to H3 or H5. This affects search and SEO structures to search crawlers like Google. Malformed structures can reduce search and SEO for the page. Docusaurus carefully formats generated pages to ensure strong SEO.
+Use these heading in correct order. Right after the H1 title you'd next have an H2, not jumping to H3 or H5. This affects search and SEO structures to search crawlers like Google. Malformed structures can reduce search and SEO for the page. Docusaurus carefully formats generated pages to ensure strong SEO.
 :::
 
 ## H2 - Create the best documentation
@@ -156,7 +156,7 @@ Always start with `1.` for numbered, ordered lists. The generator will automatic
 1. First ordered list item.
 1. Another item.
    - Unordered sub-list.
-1. Actual numbers do not matter, just that it is a number.
+1. Actual numbers don't matter, just that it is a number.
    1. Ordered sub-list.
 1. And another item.
 
@@ -169,7 +169,7 @@ Always start with `1.` for numbered, ordered lists. The generator will automatic
 1. First ordered list item.
 1. Another item.
    - Unordered sub-list.
-1. Actual numbers do not matter, just that it is a number.
+1. Actual numbers don't matter, just that it is a number.
    1. Ordered sub-list.
 1. And another item.
 
@@ -222,7 +222,20 @@ function HelloDocusaurus() {
 }
 ```
 
-To highlight lines in the code, use `{#}` in the title line with lines numbers.
+To highlight lines in the code, use `{#}` in the title line with lines numbers. This example highlights lines 2 through 6.
+
+```sql {2-6}
+_sourceCategory=reinvent/travel/checkout
+[subquery:_sourceCategory=reinvent/travel/nginx
+     | count by src_ip
+     | topk(1,_count)
+     | compose src_ip keywords
+]
+| json field=_raw "funcName"
+| where funcname in ("process_cart","charge")
+| if (funcname = "process_cart" , "Checkout", "Purchased") as funcname
+| count by funcname
+```
 
 For a full list of options, see [Docusaurus Code Blocks](https://docusaurus.io/docs/markdown-features/code-blocks).
 
@@ -244,14 +257,14 @@ Use the following code to create tabbed content. You can use Markdown in these t
 
 At the bottom of the Markdown file, add the following code:
 
-```markdown
+```markdown title="Copy and paste once into markdown file"
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 ```
 
 For each set of tabs, use the following code:
 
-```markdown
+```markdown title="Copy and paste into markdown for each tab set"
 <Tabs
   className="unique-tabs"
   defaultValue="tab1"
@@ -318,14 +331,18 @@ Info for the second tab would go here! Content can include markdown, code blocks
 
 ## Expander
 
-An expander 
+Use an expander to collapse long content that can be searched but not displayed when loading a page. We recommend only using expanders for additional content and long code samples. Content required for instructions and steps should not be placed in an expander.
 
-```html
+You can include markdown content in expanders including code samples, embedded videos, bulleted lists, and more.
+
+```html title="Copy and fill out for expanders"
 <details>
 
 <summary>Title for the expander</summary>
 
-Place long lists or lots of content in this section. The reader can expand/collapse as needed.
+Place long lists or lots of content in this section. The reader can expand/collapse as needed. 
+
+Add all content after Summary and before the closing details tags.
 
 </details>
 ```
@@ -333,9 +350,30 @@ Place long lists or lots of content in this section. The reader can expand/colla
 
 <details>
 
-<summary>Title for the expander</summary>
+<summary>Example expander</summary>
 
 Place long lists or lots of content in this section. The reader can expand/collapse as needed.
+
+```json title="Code in a tip with line highlight" {11-16}
+"overrides": [
+    {
+    "series": [],
+    "queries": [
+        "A"
+        ],
+    "userProvidedChartType": false,
+    "properties": {
+        "type": "column"
+        },
+    "unsafeCanvasJSProperties": {
+        "bevelEnabled": true,
+        "indexLabelPlacement": "inside",
+        "indexLabel": "{y}",
+        "indexLabelOrientation": "vertical"
+        }
+    }
+]
+```
 
 </details>
 
@@ -355,15 +393,18 @@ Docusaurus has a special syntax to create admonitions and callouts, including no
     This action is dangerous.
     :::
 
+:::note
+This is a note. Need to get started? Try the [templates](templates/template-doc.md).
+:::
+
 :::sumo Sumo Best Pratice
-Highlight specific info, best practices, links, and other information from Sumo specialists! You can change the title based on the content.
+Highlight specific info, best practices, links, [training links](https://www.sumologic.com/learn/training/), and other information from Sumo specialists! You can change the title based on the content. 
 :::
 
 :::tip
-Use this awesome feature option. Here's an example of a code block in a tip.
-:::
+Use this awesome feature option. Here's an example of a [code block](#code-blocks) in a tip.
 
-```json
+```json title="Code in a tip with line highlight" {11-16}
 "overrides": [
     {
     "series": [],
@@ -387,15 +428,15 @@ Use this awesome feature option. Here's an example of a code block in a tip.
 :::
 
 :::important 
-Use important for vital information.
+Use important for vital information. Try to always use a language in a [code block](#code-blocks), for example sql for queries.
 :::
 
 :::caution
-This could note important and problematic information.
+This could note important and problematic information. [Admonitions](#admonitions) can help highlight!
 :::
 
-:::danger Take care
-This action is dangerous.
+:::danger Be advised
+This action is dangerous. Definitely recommend a custom title for danger [admonitions](#admonitions).
 :::
 
 ## Embed Videos

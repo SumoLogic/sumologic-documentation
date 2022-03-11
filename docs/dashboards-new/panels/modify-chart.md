@@ -45,11 +45,11 @@ To save your settings and return to the dashboard, click **Update Dashboard** in
 
 ### Logs Settings
 
-You have the option to use the [receipt time] (../../../05Search/Get-Started-with-Search/How-to-Build-a-Search/Use-Receipt-Time.md "Use Receipt Time") or the default message time.
+You have the option to use the [receipt time](../../search/get-started-with-search/build-search/use-receipt-time.md)or the default message time.
 
 ![dashboard new time settings.png](/img/dashboards-new/panels/modify-chart/dashboard-new-time-settings.png)
 
-You can toggle [Auto Parse Mode] (../../../05Search/Get-Started-with-Search/How-to-Build-a-Search/Dynamic_Parsing.md "Dynamic Parsing").
+You can toggle [Auto Parse Mode](../../search/get-started-with-search/build-search/dynamic-parsing.md).
 
 ![dashboard new auto parse.png](/img/dashboards-new/panels/modify-chart/dashboard-new-auto-parse.png)
 
@@ -232,7 +232,7 @@ To modify the JSON of a chart, do the following:
 
 ### Values in chart
 
-To view values inside the chart so you do not have to hover on the chart:
+To view values inside the chart so you don't have to hover on the chart:
 
 ![data in chart.png](/img/dashboards-new/panels/modify-chart/data-in-chart.png)
 
@@ -292,7 +292,7 @@ use the following JSON:
 
 ### Outside values
 
-To place values outside the chart so you do not have to hover on the chart:
+To place values outside the chart so you don't have to hover on the chart:
 
 ![outside chart values.png](/img/dashboards-new/panels/modify-chart/outside-chart-values.png)
 

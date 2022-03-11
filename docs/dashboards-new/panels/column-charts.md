@@ -6,7 +6,7 @@ id: column-charts
 
 Column charts are useful for visually comparing the number of events that have occurred, such as the type of error that occurs the most in your system. To create a Column chart, use a search query that provides at least a few data points in the **Aggregates** tab.
 
-For example, you could use the following query to create a simple column chart:
+For example, you'd use the following query to create a simple column chart:
 
 ```sql
 (error OR fail*) AND exception | count by _sourceCategory | sort by _count

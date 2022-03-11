@@ -6,7 +6,7 @@ id: table-charts
 
 Table charts are the default chart type in the **Aggregates** tab. They are useful for listing the type and number of events that have occurred, such as the type of error that occurs the most in your system. To create a table chart, use a search query that provides at least a few data points in the **Aggregates** tab.
 
-For example, you could use the following query to create a simple table chart:
+For example, you'd use the following query to create a simple table chart:
 
 `(error OR fail*) AND exception | count by _sourceCategory | sort by _count`
 
@@ -28,7 +28,7 @@ To add a panel with a table chart:
 
     **Log query:**
 
-    Enter your aggregate [search query] (../../../05Search/Search-Query-Language.md "Search Query Language") in the input field and press enter. Only search results that have been aggregated using a group or aggregate operator can be charted. See [Group or Aggregate Operators ] (../../../05Search/Search-Query-Language/aaGroup.md "https://help.sumologic.com/Search/Search_Query_Language/aaGroup")for a list.
+    Enter your aggregate [search query](/docs/category/search-operators) in the input field and press enter. Only search results that have been aggregated using a group or aggregate operator can be charted. See [Group or Aggregate Operators](/docs/search/search-query-language/group-aggregate-operators) for a list.
 
     ![Add log query.png](/img/dashboards-new/create-dashboard-new/Add-log-query.png)
 
