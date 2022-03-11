@@ -75,6 +75,16 @@ module.exports = {
         },
       }),
     ],
+    [
+      'redocusaurus',
+      {
+        specs: [{
+            id: 'sumoapi',
+            specUrl: 'https://api.sumologic.com/docs/sumologic-api.yaml',
+            routePath: '/sumoapi/',
+          },],
+      },
+    ],
   ],
   plugins: [
     'docusaurus-plugin-sass',
@@ -326,6 +336,11 @@ module.exports = {
             ],
           },
           {
+            label: 'API',
+            to: '/sumoapi',
+            position: 'left',
+          },
+          {
             label: 'Doc Contributions',
             to: '/docs/contribution',
             position: 'left',
@@ -430,7 +445,7 @@ module.exports = {
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
-        additionalLanguages: ['csharp', 'powershell', 'java', 'markdown'],
+        additionalLanguages: ['csharp', 'powershell', 'java', 'markdown', 'scala'],
       },
     }),
 };
