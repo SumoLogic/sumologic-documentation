@@ -29,7 +29,7 @@ You can run a LogCompare operation using a timeshift that is preconfigured, or c
     ```sql
     _sourceCategory=stream
     ```
-         
+
 1. Select a time range. For this example, we have used **Last Minute**.
 1. When the **Messages** tab displays with the initial results, click the arrow next to the **LogCompare** button, and from the menu select **Custom**.  
 
@@ -41,6 +41,7 @@ You can run a LogCompare operation using a timeshift that is preconfigured, or c
     * **Time Shift.** This is the Time Shift of the Baseline Query, and it controls when the Baseline Query runs. If the Time Shift is -2d, that means that it will run for the exact Time Range duration (1 minute, in this query), but two days in the past. The Time Shift can take a single value, such as -2d, or it can take a range. It must be a valid range, with a start date older or smaller than the end date.
     * **Target Query.** Originally, the Target Query is the same as the Baseline Query. But you can edit it to compare against a new target. Here we have added `_sourceCategory=analysis` to compare it to`_sourceCategory=stream`.
     * **Time Range.** The Time Range pertains to both the Target Query and the Baseline Query. You can enter a preconfigured, relative, or absolute time range, similar to the time range on the Search page. The Time Range can be specified by timeshift (start_time = now - timeshift) or (start_time + end_time).
+
         * For the target, if the end_time is not specified, it is implicitly set to now if not specified.
         * For the baseline, if the end_time is not specified, it is implicitly set as: (end_time = start_time + range_length). The (range_length = end_time - start_time) using the target times.
 

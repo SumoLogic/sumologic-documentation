@@ -1,0 +1,38 @@
+.dropdown--show .link__label {
+  color: var(--ifm-navbar-link-hover-color);
+}
+
+.link {
+  display: inline-flex;
+  align-items: center;
+}
+
+.link__icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 1rem;
+  background-color: var(--ifm-color-emphasis-200);
+  color: var(--ifm-dropdown-link-color);
+  border-radius: var(--ifm-global-radius);
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+.link__sublabel {
+  color: var(--ifm-menu-color);
+  font-size: 0.8rem;
+}
+
+.link__icon {
+  font-family: 'Material Icons' !important;
+  font-size: 1.5rem;
+}
+
+[data-theme='dark'] .link__icon {
+  color: #fff;
+}
+
+[data-theme='light'] .link__icon {
+  color: #35599d;
+}
