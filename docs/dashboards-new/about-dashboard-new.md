@@ -6,7 +6,7 @@ id: about-dashboard-new
 
 Dashboard (New) allows you to analyze metric and log data on the same dashboard, in a streamlined user experience. This is exactly what you need to effectively monitor and manage a Kubernetes environment.
 
-Sumo Logic classic [Dashboards] (../Dashboards.md "Dashboards") are still available. Now, you have two dashboard options. This page outlines the key differences between the classic Dashboard platform and Dashboard (New), and outlines recommended [best practices](#best-practices) for when to use each. 
+Sumo Logic classic [Dashboards] (../Dashboards.md) are still available. Now, you have two dashboard options. This page outlines the key differences between the classic Dashboard platform and Dashboard (New), and outlines recommended [best practices](#best-practices) for when to use each. 
 
 Dashboards are a critical tool for monitoring and troubleshooting modern applications, allowing you to quickly navigate through your data without having to learn a query language. Graphs and data mappings provide visual representations of data that enable you to quickly identify and resolve key issues.
 
@@ -20,7 +20,7 @@ Dashboard (New) provides the unique ability to display metrics metadata and lo
 
 Dashboard (New) differs from classic Dashboards in the following ways:  
 
-* Dashboard (New) template variables differ slightly from the filters in classic Dashboards. Filters were auto injected at runtime by Sumo Logic, allowing you little control over how they were used or what they represented. In addition, filters only worked on log panels. Dashboard (New) template variables provide full replacement control over what is inserted, and the variables work across both log and metric panels.
+* Dashboard (New) template variables differ slightly from the filters in classic Dashboards. Filters were auto injected at runtime by Sumo Logic, allowing you little control over how they were used or what they represented. In addition, filters only worked on log panels. Dashboard (New) template variables provide full replacement control over what is inserted, and the variables work across both log and metric panels.
 * Dashboard (New) provides a dashboard-first view to build, maintain, and interact with dashboards. With Dashboard (New) you can build panels inside the dashboard rather than adding panels from the Search or Metrics pages.
 * Dashboard (New) utilizes the [metrics query builder] with an improved full text auto-complete capabilities, so you can quickly find the metrics you are looking for.
 
@@ -72,14 +72,14 @@ A list of the refresh interval rates is provided for you to select from.
 
 ### Rules
 
-* Auto Refresh applies to the whole dashboard, you can't configure it by panel.
-* If there are two or more queries in a panel, the refresh interval for the panel is set to the maximum supported interval.
-* Panels with an [absolute time range](../search/get-started-with-search/search-basics/time-range-expressions.md) are not supported.
-* If the requested refresh interval is not possible, you will get an error message indicating the actual refresh rate is slower than requested. The following are reasons why setting the refresh interval is not possible: 
+* Auto Refresh applies to the whole dashboard, individual panels cannot be configured.
+* If there are two or more queries in a panel, the refresh interval for the panel is set to the maximum supported interval.
+* Panels with an [absolute time range](../search/get-started-with-search/search-basics/time-range-expressions.md) are not supported.
+* If the requested refresh interval is not possible, you will get an error message indicating the actual refresh rate is slower than requested. The following are reasons why setting the refresh interval is not possible: 
 
   * The time range is too long to refresh at this rate. Reduce the time range to allow a faster refresh interval. 
   * An operator is not supported at this refresh interval. 
-  * The number of grouped elements is too large for the requested interval.
+  * The number of grouped elements is too large for the requested interval.
 
 ## Dark Theme
 
