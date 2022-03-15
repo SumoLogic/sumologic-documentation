@@ -271,9 +271,7 @@ The following table explains the icons in the **Actions** column.
 |---|---|
 | ![promote](/img/search/logcompare/promote.png) | Promote a signature if the data included in the signature is relevant. Once promoted the thumbs-up icon turns blue. |
 | ![demote](/img/search/logcompare/demote.png) | Demote a signature if it's not relevant. Once demoted the thumbs-down icon turns blue. |
-| ![split](/img/search/logcompare/split.png) | Split a signature into multiple signatures to see more granular results. You'll notice that fewer wildcard asterisks will appear. Instead, specific values are included in the signatures.  
-
-After splitting, the newly split signatures are highlighted. |
+| ![split](/img/search/logcompare/split.png) | Split a signature into multiple signatures to see more granular results. You'll notice that fewer wildcard asterisks will appear. Instead, specific values are included in the signatures. After splitting, the newly split signatures are highlighted. |
 | ![edit](/img/search/logcompare/edit.png) | Edit the signature. After editing, the signature is highlighted. |
 
 </TabItem>
@@ -307,7 +305,7 @@ With LogCompare, you can create a [Scheduled Search] (/Visualizations-and-Alerts
 To do this, use a search query such as:
 
 ```
-error | ``logcompare` `timeshift -24h | where (_isNew)
+error | logcompare timeshift -24h | where (_isNew)
 ```
 
 Then to create the alert, save and schedule your search query.
