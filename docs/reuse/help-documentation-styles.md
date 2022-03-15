@@ -1,5 +1,5 @@
 ### Code Font
-Search syntax, queries, parameters, and filenames are displayed in Regular Code Font. 
+Search syntax, queries, parameters, and filenames are displayed in `Regular Code Font`. 
 
 **Required and optional arguments:**
 

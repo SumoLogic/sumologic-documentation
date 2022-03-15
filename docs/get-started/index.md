@@ -1,5 +1,5 @@
 ---
-id: get-started
+slug: /get-started
 ---
 
 # Get Started
@@ -20,12 +20,7 @@ Contact us at the [Sumo Dojo Slack](https://sumodojo.slack.com/) or enter a [sup
 
 ## Your Sumo Logic Journey
 
-Sumo Logic puts the power of data analytics at the fingertips of
-everyone on your team. Sumo's pre-configured searches and at-a-glance
-visual dashboards make it easy to search, filter, and analyze your data.
-Visual displays of up-to-date data allow you to monitor the health and
-fitness of your application and network, providing insights
-for troubleshooting and timely resolutions.
+Sumo Logic puts the power of data analytics at the fingertips of everyone on your team. Sumo's pre-configured searches and at-a-glance visual dashboards make it easy to search, filter, and analyze your data. Visual displays of up-to-date data allow you to monitor the health and fitness of your application and network, providing insights for troubleshooting and timely resolutions.
 
 On  your Sumo journey, you will learn how to:
 
@@ -38,10 +33,7 @@ Let's get started!
 
 ## Step 1: Get your data into Sumo
 
-The journey of 10,000 logs begins with a single collector. You start
-your data analytics journey by sending your data to Sumo. You do this by
-setting up a local [Installed] [Collector] or web-[Hosted Collector] collector, then
-choosing the data [sources] that will provide the most value for you. 
+The journey of 10,000 logs begins with a single collector. You start your data analytics journey by sending your data to Sumo. You do this by setting up a local [Installed] [Collector] or web-[Hosted Collector] collector, then choosing the data [sources] that will provide the most value for you. 
 
 - **You can set up a collector** by choosing **Manage Data > Collection** on the Sumo Home page, then selecting **Add Collector** in the **Collection** window. For more information, see the [Install a Collector] tutorial.
 - **You can set up a source** when your installed collector appears in the table on the Collection page, by navigating to the collector and selecting **Add > Add Source**. For more information, see the [Add a Source] tutorial.
@@ -80,9 +72,7 @@ You have the ability to share with individual users and groups with specific rol
 
 ## Adventures in learning
 
-Knowledge is power, and Sumo Logic provides tools for you to empower
-yourself. Within Sumo Logic, you have easy access to training, help, and
-a community of other Sumo Logic users.
+Knowledge is power, and Sumo Logic provides tools for you to empower yourself. Within Sumo Logic, you have easy access to training, help, and a community of other Sumo Logic users.
 
 Just click **Learn** on the Home page to access:
 

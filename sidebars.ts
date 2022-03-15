@@ -20,11 +20,16 @@ module.exports = {
       label: 'Get Started',
       collapsible: true,
       collapsed: true,
-      link: {type: 'doc', id: 'get-started/get-started'},
+      link: {type: 'doc', id: 'get-started/index'},
       items: [
         'get-started/sign-up',
         'get-started/manage-account',
-        'get-started/checklist'
+        'get-started/checklist',
+        'get-started/help-page',
+        'get-started/keyboard-shortcuts',
+        'get-started/',
+        'get-started/',
+        'get-started/',
       ],
     },
     {
@@ -65,7 +70,7 @@ module.exports = {
         'dashboards-new/drill-down-to-discover-root-causes',
         'dashboards-new/export-dashboard-new',
         'dashboards-new/filter-template-variables',
-        'dashboards-new/link-dashboard-to-explore',
+        'dashboards-new/link-dashboard-to-explore', 
         'dashboards-new/link-dashboard-new',
         'dashboards-new/locate-deviations-time-series',
         {

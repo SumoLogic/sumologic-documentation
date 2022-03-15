@@ -57,12 +57,14 @@ You can enable 2-Step Verification and view backup codes here.
 
 To set up 2-Step Verification you will need to install a Time-based One-Time Password (TOTP) application which will automatically generate an authentication code that changes after a certain period of time.
 
-1.  Download one of the following apps:
+1. Download one of the following apps:
+
     - For Android, iOS and Blackberry: [Google Authenticator](https://support.google.com/accounts/answer/1066447?hl=en)
     - For Android and iOS: [Duo Mobile](https://duo.com/product/trusted-users/two-factor-authentication/duo-mobile)
     - For Windows Phone: [Authenticator](https://www.microsoft.com/en-us/store/p/authenticator/9wzdncrfj3rj)
-1.  Scan the QR code displayed on your screen with your TOTP App.
-1.  After the TOTP App is configured, enter two consecutive authentication codes.
+
+1. Scan the QR code displayed on your screen with your TOTP App.
+1. After the TOTP App is configured, enter two consecutive authentication codes.
 
 ### My Access Keys
 
