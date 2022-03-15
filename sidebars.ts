@@ -256,20 +256,7 @@ module.exports = {
             'search/live-tail/multiple-live-tails',
           ],
         },
-        {
-          type: 'category',
-          label: 'LogCompare',
-          collapsible: true,
-          collapsed: true,
-          link: {type: 'doc', id: 'search/logcompare/index'},
-          items: [
-            'search/logcompare/about-logcompare',
-            'search/logcompare/create-a-logcompare-email-alert',
-            'search/logcompare/logcompare-syntax',
-            'search/logcompare/run-logcompare',
-            'search/logcompare/understand-logcompare-results',
-          ],
-        },
+        'search/logcompare',
         {
           type: 'category',
           label: 'LogReduce',
