@@ -34,7 +34,7 @@ You can also search and view other feature requests, comment, and even vote on i
 
 Want to collaborate with other Sumo Logic users for tips and tricks and help with issues? Go to **Help \> Community** and visit the Sumo Dojo, the online community for users of Sumo Logic and aficionados of analytics. 
 
-Or go to�\<https://community.sumologic.com\> directly. 
+Or go to \<https://community.sumologic.com\> directly. 
 
 ![Help - Community2.png](/img/get-started/Help-Community.png)
 
@@ -52,7 +52,11 @@ The Sumo Logic Web Application includes many keyboard shortcuts to your favor
 
 For details, see [Keyboard Shortcuts](keyboard-shortcuts.md).
 
-## Service Status
+## Sumo Logic Status and Scheduled Maintenance
+
+To view the status of the Sumo Logic service, find information on any outages, and see Scheduled Maintenance for your deployment, go to **Help** > **Service Status**.
+
+You can also go to http://status.sumologic.com/.
 
 If there has been an outage on your [deployment] (../../APIs/General-API-Information/Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security.md) (or pod), the Service Status Indicator displays:
 

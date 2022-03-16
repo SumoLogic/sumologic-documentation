@@ -23,13 +23,13 @@ module.exports = {
       link: {type: 'doc', id: 'get-started/index'},
       items: [
         'get-started/sign-up',
+        'get-started/system-requirements',
         'get-started/manage-account',
         'get-started/checklist',
         'get-started/help-page',
         'get-started/keyboard-shortcuts',
-        'get-started/',
-        'get-started/',
-        'get-started/',
+        'get-started/sumo-faqs',
+        'get-started/sumo-logic-components',
       ],
     },
     {
