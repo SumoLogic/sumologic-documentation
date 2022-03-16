@@ -94,7 +94,7 @@ The Time Shift can take a single value, such as -2d, or it can take a range. It 
     *   For the baseline, if the end_time is not specified, it is implicitly set as: (end_time = start_time + range_length.) The (range_length = end_time - start_time) using the target times.
 
 :::note
-See the [Time Shift versus Time Range example](#time-shift-versus-time-range-example) for a table showing how these settings affect the Target and Baseline queries.
+See the [Time Shift versus Time Range example](#time-shift-versus-time-range-example) below for a table showing how these settings affect the Target and Baseline queries.
 :::
 
 Click **Run** to add the logcompare operator, timeshift, and baseline to your query, for example:
@@ -129,7 +129,7 @@ A few examples:
     Compare the result of a query with the result of the same query for a time range shifted by 1 day. (Same as previous example.)  
 
 *   `... | logcompare start_time 2021-01-06T12:00:00-08:00 end_time 2021-01-07T12:00:00-08:00`  
-    Compare the result of a query with the result of the same query for a time range specified by start_time and end_time. This must be a valid time range.
+    Compare the result of a query with the result of the same query for a time range specified by start_time and end_time.This must be a valid time range.
 
 *   `_sourceHost=cluster-1| logcompare timeshift -0s baseline(_sourceHost=cluster-2)`  
     Compare logs on two different hosts (cluster-1 and cluster-2) for the same time period.
@@ -155,12 +155,14 @@ The following are examples that use fields generated from LogCompare.
 
 **Show only signatures that are missing in the baseline query:**
 
-Use the where operator against the **_isNew** field to return only new clusters:
+For example, you can run the query:
 
 ```
 error | logcompare timeshift -1d   
 | where (_isNew)
 ```
+
+The query results are constrained to new clusters only using the **_isNew field**.
 
 **Show only signatures that are missing in the target query:**
 
@@ -298,7 +300,7 @@ The following table shows how the Time Range and Time Shift affect the Target a
 
 ## LogCompare alerts
 
-With LogCompare, you can create a [Monitor] (/Visualizations-and-Alerts/Alerts/Monitors) or [Scheduled Search] (/Visualizations-and-Alerts/Alerts/Scheduled-Searches) to send notifications when certain conditions are met. For example, you can be alerted when new signatures are found.
+With LogCompare, you can create a [Scheduled Search] (/Visualizations-and-Alerts/Alerts/Scheduled-Searches) that will send an email alert when certain conditions are met. For example, you can be alerted when new signatures are found.
 
 To do this, use a search query such as:
 
