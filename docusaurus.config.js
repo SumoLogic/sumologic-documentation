@@ -15,7 +15,7 @@ module.exports = {
   onBrokenMarkdownLinks: 'warn',
   favicon: 'https://www.sumologic.com/favicon.ico',
   organizationName: 'sumologic', // Usually your GitHub org/user name.
-  projectName: 'sumodocs', // Usually your repo name.
+  projectName: 'sumologic-documentation', // Usually your repo name.
   stylesheets: [
     'https://fonts.googleapis.com/css?family=Material+Icons',
   ],
