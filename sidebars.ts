@@ -26,7 +26,7 @@ module.exports = {
         'get-started/system-requirements',
         'get-started/manage-account',
         'get-started/checklist',
-        'get-started/help-page',
+        'get-started/get-help',
         'get-started/keyboard-shortcuts',
         'get-started/sumo-faqs',
         'get-started/sumo-logic-components',

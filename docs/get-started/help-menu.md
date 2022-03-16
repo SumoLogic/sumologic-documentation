@@ -1,8 +1,8 @@
 ---
-id: help-menu
+id: get-help
 ---
 
-# Help Menu and Contacts
+# Getting Help and Contacts
 
 The **Help** menu provides links to quickly access Sumo Logic Support, feature requests, website, and more. Select **Help** in the left nav. 
  
@@ -34,7 +34,7 @@ You can also search and view other feature requests, comment, and even vote on i
 
 Want to collaborate with other Sumo Logic users for tips and tricks and help with issues? Go to **Help \> Community** and visit the Sumo Dojo, the online community for users of Sumo Logic and aficionados of analytics. 
 
-Or go to \<https://community.sumologic.com\> directly. 
+See the [Sumo Logic Community](https://community.sumologic.com) for more information.
 
 ![Help - Community2.png](/img/get-started/Help-Community.png)
 
