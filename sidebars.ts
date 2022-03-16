@@ -25,11 +25,41 @@ module.exports = {
         'get-started/sign-up',
         'get-started/system-requirements',
         'get-started/manage-account',
-        'get-started/checklist',
+        {
+          type: 'category',
+          label: 'Checklists',
+          collapsible: true,
+          collapsed: true,
+          items: [
+            'get-started/checklist',
+            'get-started/checklist-analyst',
+            'get-started/checklist-admins',
+          ]
+        },
         'get-started/get-help',
         'get-started/keyboard-shortcuts',
-        'get-started/sumo-faqs',
+        {
+          type: 'category',
+          label: 'FAQs',
+          collapsible: true,
+          collapsed: true,
+          items: [
+            'get-started/sumo-faqs',
+            'get-started/certification-faqs',
+          ]
+        },
         'get-started/sumo-logic-components',
+        'get-started/sumo-logic-ui',
+        {
+          type: 'category',
+          label: 'Sumo Logic Interface',
+          collapsible: true,
+          collapsed: true,
+          link: {type: 'doc', id: 'get-started/library/index'},
+          items: [
+            'get-started/',
+          ]
+        },
       ],
     },
     {
