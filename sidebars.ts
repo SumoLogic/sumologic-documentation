@@ -95,8 +95,8 @@ module.exports = {
       collapsible: true,
       collapsed: true,
       items: [
-        'Manage/Collection/Processing-Rules/create-a-processing-rule',
-        'Manage/Security/installation-tokens',
+        'manage/collection/Processing-Rules/create-a-processing-rule',
+        'manage/security/installation-tokens',
         'CSE/global-intel'
       ],
      },
@@ -144,6 +144,38 @@ module.exports = {
         'dashboards-new/share-a-dashboard-new',
       ],
     },
+  ],
+  manage: [
+    {
+      type: 'category',
+      label: 'Manage Sumo Logic',
+      collapsible: true,
+      collapsed: true,
+      //link: {type: 'doc', id: 'get-started/index'},
+      items: [
+        {
+          type: 'category',
+          label: 'Collection',
+          collapsible: true,
+          collapsed: true,
+          link: {type: 'doc', id: 'manage/collection/index'},
+          items: [
+            'manage/collection/Processing-Rules/create-a-processing-rule',
+            {
+              type: 'category',
+              label: 'Processing Rules',
+              collapsible: true,
+              collapsed: true,
+              link: {type: 'doc', id: 'manage/collection/processing-rules/index'},
+              items: [
+                'manage/collection/processing-rules/create-a-processing-rule',
+              ]
+            },
+          ]
+        },
+        'get-started/get-help',
+      ]
+    }
   ],
   searchlogs: [
     //Navigation for Search, Logs

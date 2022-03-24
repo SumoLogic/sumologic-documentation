@@ -130,7 +130,7 @@ Click your name in the left nav and select **Preferences** to [manage preferenc
 
 The **Manage Data** on the left nav provides access to all the familiar management functions.
 
-**Collection.** [Manage collectors and sources] (../Manage/Collection.md)
+**Collection.** [Manage collectors and sources] (../manage/collection.md)
 
 **Logs**. Manage [Field extraction rules] (../Manage/Field-Extractions.md),
 [partitions] (../Manage/Partitions_and_Data_Tiers.md), [scheduled views] (../Manage/Scheduled-Views.md), metrics rules, and [data forwarding] (../Manage/Data-Forwarding.md).
@@ -151,6 +151,6 @@ index,] (../Manage/Ingestion-and-Volume/Data_Volume_Index.md) manage billing.
 
 **Users and Roles**. [Manage users and roles] (../Manage/Users-and-Roles.md).
 
-**Security.** [Set password policy for your org] (../Manage/Security/Set-the-Password-Policy.md), [set up security whitelist] (../Manage/Security/Create-an-Allowlist-for-IP-or-CIDR-Addresses.md), [manage access keys] (../Manage/Security/Access-Keys.md), manage security polices ([audit index] (../Manage/Security/Audit-Index.md), [support account access,] (../Manage/Security/Enable-a-Support-Account.md) and [dashboard sharing] (../Visualizations-and-Alerts/Dashboards/Share_Dashboards/Share_a_Dashboard_Inside_Your_Org.md)), and [set up SAML authentication] (../Manage/Security/SAML.md).
+**Security.** [Set password policy for your org] (../manage/security/Set-the-Password-Policy.md), [set up security whitelist] (../manage/security/Create-an-Allowlist-for-IP-or-CIDR-Addresses.md), [manage access keys] (../manage/security/Access-Keys.md), manage security polices ([audit index] (../manage/security/Audit-Index.md), [support account access,] (../manage/security/Enable-a-Support-Account.md) and [dashboard sharing] (../Visualizations-and-Alerts/Dashboards/Share_Dashboards/Share_a_Dashboard_Inside_Your_Org.md)), and [set up SAML authentication] (../manage/security/SAML.md).
 
 ![acct](/img/get-started/ui/Account.png)
