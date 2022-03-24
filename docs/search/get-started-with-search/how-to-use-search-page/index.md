@@ -42,7 +42,7 @@ In your search query, you will see that we have separated out important terms in
 | Purple | Sumo first operators (parse, nodrop, etc.) and secondary operators (row, column) |
 | Green | Specific numeric values |
 
-## Learn More
+## Guide contents
 
 import DocCardList from '@theme/DocCardList';
 import {useCurrentSidebarCategory} from '@docusaurus/theme-common';

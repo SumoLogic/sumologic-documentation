@@ -37,6 +37,8 @@ To interact with other Sumo Logic users, post feedback, or ask a question, visit
 import DocCardList from '@theme/DocCardList';
 import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
 
+## Guide contents
+
 In this section, we will introduce the following concepts:
 
 <DocCardList items={useCurrentSidebarCategory().items}/>

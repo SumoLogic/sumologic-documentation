@@ -20,11 +20,59 @@ module.exports = {
       label: 'Get Started',
       collapsible: true,
       collapsed: true,
-      link: {type: 'doc', id: 'get-started/get-started'},
+      link: {type: 'doc', id: 'get-started/index'},
       items: [
         'get-started/sign-up',
+        'get-started/system-requirements',
         'get-started/manage-account',
-        'get-started/checklist'
+        {
+          type: 'category',
+          label: 'Checklists',
+          collapsible: true,
+          collapsed: true,
+          items: [
+            'get-started/checklist',
+            'get-started/checklist-analyst',
+            'get-started/checklist-admins',
+          ]
+        },
+        'get-started/get-help',
+        'get-started/keyboard-shortcuts',
+        {
+          type: 'category',
+          label: 'FAQs',
+          collapsible: true,
+          collapsed: true,
+          items: [
+            'get-started/sumo-faqs',
+            'get-started/certification-faqs',
+          ]
+        },
+        'get-started/sumo-logic-components',
+        'get-started/sumo-logic-ui',
+        {
+          type: 'category',
+          label: 'Library',
+          collapsible: true,
+          collapsed: true,
+          link: {type: 'doc', id: 'get-started/library/index'},
+          items: [
+            'get-started/library/manage-library',
+            'get-started/library/search-the-library',
+          ]
+        },
+        {
+          type: 'category',
+          label: 'Sumo Logic Apps',
+          collapsible: true,
+          collapsed: true,
+          link: {type: 'doc', id: 'get-started/library/sumo-logic-apps'},
+          items: [
+            'get-started/library/install-apps',
+            'get-started/library/run-searches-from-apps',
+            'get-started/library/log-analysis-quickstart-app'
+          ]
+        },
       ],
     },
     {
@@ -65,7 +113,7 @@ module.exports = {
         'dashboards-new/drill-down-to-discover-root-causes',
         'dashboards-new/export-dashboard-new',
         'dashboards-new/filter-template-variables',
-        'dashboards-new/link-dashboard-to-explore',
+        'dashboards-new/link-dashboard-to-explore', 
         'dashboards-new/link-dashboard-new',
         'dashboards-new/locate-deviations-time-series',
         {

@@ -18,9 +18,9 @@ The limitations for the Live Tail CLI are the same as the [Live Tail](about-liv
 
 * You can tail logs ingested from Sources configured on Installed Collectors and from HTTP and Cloud Syslog Sources on Hosted Collectors. 
 
-    :::note
-    Data ingested from Amazon S3 can't be tailed because of restrictions from Amazon.
-    :::
+  :::note
+  Data ingested from Amazon S3 can't be tailed because of restrictions from Amazon.
+  :::
 
 * The Live Tail CLI session will expire after 30 minutes of inactivity. This is to provide the best performance possible. If a Live Tail session has expired, you can restart it at any time.
 

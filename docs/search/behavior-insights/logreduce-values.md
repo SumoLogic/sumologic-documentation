@@ -55,7 +55,7 @@ There are two methods you have to use the details option:
 ### Details Syntax
 
 ```sql
-| logreduce values details on %\<key\>"[, %\<key\>", ...]�\<shortcodeI\> \<cluster_id\>,\<cluster_id\>, ...]
+| logreduce values details on %\<key\>"[, %\<key\>", ...] \<shortcodeI\> \<cluster_id\>,\<cluster_id\>, ...]
 ```
 
 | Parameter   | Description | Default |
@@ -67,7 +67,7 @@ There are two methods you have to use the details option:
 For example, to see details from a particular LogReduce Values search and data clusters, you'd use the following syntax: 
 
 ```sql
-| logreduce values details on %\<key\>"[, %\<key\>", ...]�\<shortcodeI\> \<cluster_id\>,\<cluster_id\>, ...]
+| logreduce values details on %\<key\>"[, %\<key\>", ...] \<shortcodeI\> \<cluster_id\>,\<cluster_id\>, ...]
 ```
 
 To see all the logs by cluster identifiers for further processing, you'd use the following syntax:
