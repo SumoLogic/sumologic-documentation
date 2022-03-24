@@ -2,8 +2,6 @@
 id: manage-library
 ---
 
-LORI: move images and rename images, check links
-
 # Manage the Library
 
 ## Manage Folders to the Library
@@ -27,13 +25,15 @@ In the **Library**, your **Personal** folder is the root folder for all your s
 
 To add a folder to the Library:
 
-1. Click the **Library** icon ![library icon.png](../static/img/Library/Add-Folders-to-the-Library/../../../Assets/Media_Repo_for_Start_Here/library%20icon.png) at the top of the UI.
+1. Click the **Library** icon ![library icon.png](/img/reuse/library-icon.png) at the top of the UI.
 1. Click **New Folder**.
 
-    ![](../static/img/Library/Add-Folders-to-the-Library/AddFolder2.png)
+    ![folder](/img/get-started/library/AddFolder2.png)
+
 1. In the **Add Folder** dialog, enter a name for the new folder, and click **Add**. 
 
-    ![](../static/img/Library/Add-Folders-to-the-Library/AddFolder.png)
+    ![folder](/img/get-started/library/AddFolder.png)
+
 1. The new folder is added to the folder list in alphabetical order.
 
 </TabItem>
@@ -46,7 +46,7 @@ To move content:
 1.  Select the item you want to move, click the details icon to the right of the name, and from the menu, select **Move**.
 2.  In the **Move Item** dialog, select the location you want to move the content to, and click **Move**.
 
-    ![moveDashboard.gif](../static/img/Library/Move-Content-Personal-Folder/moveDashboard.gif)
+    ![moveDashboard.gif](/img/get-started/library/moveDashboard.gif)
 
 The item(s) will be moved and appear in the new location.
 
@@ -57,11 +57,9 @@ When your content is moved, you’ll need to click the folder where it is now lo
 
 1. Create a subfolder by clicking **New Folder** in your Personal folder.
 
-    ![](../static/img/Library/Create-Subfolders-to-Organize-and-Share-Content/AddNewFolder.png)
+    ![sub folder](/img/get-started/library/AddNewSubFolder.png)
 
-1. In the **Add Folder** dialog, enter **My Apps**, and click **Add**. 
-
-    ![](../static/img/Library/Create-Subfolders-to-Organize-and-Share-Content/AddFolder.png)   The new subfolder is added to the folder list.
+1. In the **Add Folder** dialog, enter **My Apps**, and click **Add**. The new subfolder is added to the folder list.
 
 </TabItem>
 <TabItem value="movesubfolders">
@@ -71,7 +69,7 @@ Now you can organize your saved content in the new subfolders.
 1. From your Personal folder, select the item you want to move. Click the details icon and select **Move**.
 1. In the **Move Item** dialog, select your desired folder and click **Move**.
 
-    ![](../static/img/Library/Create-Subfolders-to-Organize-and-Share-Content/MoveFile.png)
+    ![move](/img/get-started/library/MoveFile.png)
 
 1. Do the same for any other Apps you have installed. They will be moved and then appear under the **My Apps** folder.
 1. Now move any searches or Dashboards that deal with errors into the new **Errors** subfolder. You can tell what the list items are from their icons: a search uses a magnifying glass icon, a Dashboard uses a picture icon, and an App uses a folder icon.    
@@ -95,72 +93,40 @@ In the future, any Apps that you install in this published folder will be automa
 </TabItem>
 </Tabs>
 
+## Favorites
 
-## Share a Saved Search from the Library
+Keep track of content you use regularly with Favorites, or content that you want to keep handy. Just click the star icon for your saved search, dashboard, installed app, or folder, and it will be saved to the **Favorites** tab in the left nav for easy access.
 
-Once you’ve saved content, you can choose to share it, which makes it available to other users. Your shared content is automatically added to the Library in the **Org \> \[Your Name\] **folder.
+You can also [favorite saved searches](../../search/get-started-with-search/how-to-use-search-page/add-saved-search-favorites.md) from the **Search** page, and favorite Dashboards from the **Dashboards** page.
 
-To share a search and its results, see [Share a Link to a Search](../../05Search/Get-Started-with-Search/Search-Basics/Share-a-Link-to-a-Search.md "Share a Link to a Search"). 
+There is a limit of 20 favorite items per user.
 
-Once shared, other users in your organization can:
+### Mark content as favorite in the Library
 
-* Search for and find your shared search.
-* Click your search to run it in the Search page.
-* Copy your search to save and edit it. 
-* Export the text of your search. 
+1. Go to the **Library.**
+1. Click the star icon to the left of your search, Dashboard, app, or folder.
 
-Searches and Dashboards can be shared and unshared at any time. Additionally, other users can copy what you've shared and make further customizations.
+    ![StarredFolders.png](/img/get-started/library/StarredFolders.png)
 
-<Tabs
-  className="unique-tabs"
-  defaultValue="share"
-  values={[
-    {label: 'Share', value: 'share'},
-    {label: 'Unshare', value: 'unshare'},
-  ]}>
+1. The star darkens, and the item now appears on the **Favorites (star)** tab. 
 
-<TabItem value="share">
+    ![favoritestab.png](../static/img/Library/Favorites/favoritestab.png)
 
-1. In your **Personal** folder, highlight a search and click the share icon.
+## Perform actions on favorites
 
-    ![Share .png](../static/img/Library/Share-a-Saved-Search-from-the-Library/share-icon.png)
+If you own the content  you can perform the following actions on folders in your favorites:  
 
-1. On the sharing popup, click in the **Share this content...** field.
+![OwnerOptions.png](/img/get-started/library/OwnerOptions.png)
 
-    ![share-with-users-roles.png](../static/img/Library/Share-a-Saved-Search-from-the-Library/share-with-users-roles.png)
+If the content was created by another user and published, you can perform the following actions:  
 
-1. You can share the search with **Your Entire Organization**, or any combination of roles and users
+![NonOwneroptions.png](/img/get-started/library/NonOwneroptions.png)
 
-    ![roles-users-list.png](../static/img/Library/Share-a-Saved-Search-from-the-Library/roles-users-list.png)
+## Unfavorite content
 
-1. The default permission level is **Edit**. Use the **Access** pull-down to select a different permission level. For information about permission levels and advanced options, see [Available Permission Levels](../../Manage/Content_Sharing/Share-Content.md "Share Content") on the Share Content page.
-
-    ![permission-levels.png](../static/img/Library/Share-a-Saved-Search-from-the-Library/permission-levels.png)
-
-1. You can share the search with a different set of users and roles, and different permission level. To do so, click **Add users with another access level**, and repeat steps 3 and 4.
-1. Click **Share**. 
-
-</TabItem>
-<TabItem value="unshare">
-
-1. In the Library, highlight a search and click the share icon.
-
-    ![Unshare.png](../static/img/Library/Share-a-Saved-Search-from-the-Library/share-icon.png)
-
-1. Click **See who has access**.
-
-    ![Only Me.png](../static/img/Library/Share-a-Saved-Search-from-the-Library/who-has-access.png)
-
-1. Click the trash can icon to unshare the search with a user or role.
-
-    ![unshare.png](../static/img/Library/Share-a-Saved-Search-from-the-Library/unshare.png)
-
-1. Click **Save**.
-
-</TabItem>
-</Tabs>
-
-
+1. Go to **Library \> Favorites**.
+1. De-select the star icon to the left of your search, dashboard, app, or folder.
+1. A dialog displays showing that you unfavorited the item, and the item is removed from the **Favorites** folder.
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';

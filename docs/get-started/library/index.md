@@ -108,6 +108,8 @@ Do any of the following from the Information panel in the Library:
 import DocCardList from '@theme/DocCardList';
 import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
 
+## Guide contents
+
 In this section, we will introduce the following concepts:
 
 <DocCardList items={useCurrentSidebarCategory().items}/>

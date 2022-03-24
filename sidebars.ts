@@ -52,12 +52,25 @@ module.exports = {
         'get-started/sumo-logic-ui',
         {
           type: 'category',
-          label: 'Sumo Logic Interface',
+          label: 'Library',
           collapsible: true,
           collapsed: true,
           link: {type: 'doc', id: 'get-started/library/index'},
           items: [
-            'get-started/',
+            'get-started/library/manage-library',
+            'get-started/library/search-the-library',
+          ]
+        },
+        {
+          type: 'category',
+          label: 'Sumo Logic Apps',
+          collapsible: true,
+          collapsed: true,
+          link: {type: 'doc', id: 'get-started/library/sumo-logic-apps'},
+          items: [
+            'get-started/library/install-apps',
+            'get-started/library/run-searches-from-apps',
+            'get-started/library/log-analysis-quickstart-app'
           ]
         },
       ],

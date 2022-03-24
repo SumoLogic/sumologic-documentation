@@ -68,13 +68,13 @@ It's easy to start working with logs or metrics. If you click the **+New** icon 
 
 * [Log Search](/docs/search). Open the Search page to search logs.
 * Metrics. Open the Metrics page to create a metrics visualization.
-* [Live Tail](../05Search/Live-Tail.md "https://help.sumologic.com/Search/Live_Tail"). View a real-time live feed of log events associated with a Source or Collector, which you can use as a tool for development and troubleshooting.
+* [Live Tail](../search/live-tail/about-live-tail.md). View a real-time live feed of log events associated with a Source or Collector, which you can use as a tool for development and troubleshooting.
 
 ## Show recently opened dashboards and searches
 
 The **Home** icon at the top of the UI opens the Home page, where you'll see a list of recently opened dashboards, recently run searches, recommended dashboards, and pinned searches.
 
-![](/img/get-started/ui/Home.png)
+![home](/img/get-started/ui/Home.png)
 
 ## Access the learn page
 
@@ -108,7 +108,7 @@ Click the **Recent** icon in the left nav.
 
 ## Include favorites in your list of saved searches and dashboards
 
-Click the **Favorites** icon in the left nav to show your list of favorites.
+Click the **F hy7nu      avorites** icon in the left nav to show your list of favorites.
 
 ![left nav favicon.png](/img/get-started/ui/icon-left-nav-favorites.png)
 
