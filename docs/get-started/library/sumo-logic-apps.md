@@ -5,7 +5,7 @@ slug: "/sumo-logic-apps"
 # Sumo Logic Apps
 With apps we give you pre-configured searches and dashboards customized with your source configurations and populated in a folder selected by you.
 
-![app catalog](/img/get-started/librar/AppCatalog.png)
+![app catalog](/img/get-started/library/AppCatalog.png)
 
 Sumo Logic Apps address these common use cases:
 

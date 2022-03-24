@@ -28,7 +28,7 @@ Collectors and Sources.
 * [Hosted Collectors ] (../../../03Send-Data/Hosted-Collectors.md) Hosted Collectors don't require installation or activation, nor do Hosted Collectors have physical requirements, since they're hosted in AWS or HTTP.
 * [Sources] (../../../03Send-Data/Sources.md):  Sources are the environments that Sumo Logic Collectors connect to collect data from a customer's site. 
 * [Sources for Installed Collectors] (../../../03Send-Data/Sources/01Sources-for-Installed-Collectors.md):  Sources for Installed Collectors include Local and Remote File Sources, Local and Remote Windows Event Sources, Local and Remote Windows Performance Sources, Script Sources, Syslog Sources, and Script Actions. 
-* [Sources for Hosted Collectors ] (../../../03Send-Data/Sources/02Sources-for-Hosted-Collectors.md): Sources for Hosted Collectors include HTTP Sources and AWS Source Types such as AWS CloudTrail, AWS Config, AWS ELB, Amazon CloudFront, Amazon S3 Audit, and Amazon S3.
+* [Sources for Hosted Collectors] (../../../03Send-Data/Sources/02Sources-for-Hosted-Collectors.md): Sources for Hosted Collectors include HTTP Sources and AWS Source Types such as AWS CloudTrail, AWS Config, AWS ELB, Amazon CloudFront, Amazon S3 Audit, and Amazon S3.
 * [Timestamps, Time Zones, Time Ranges, and Date Formats] (../../../03Send-Data/Sources/04Reference-Information-for-Sources/Timestamps,-Time-Zones,-Time-Ranges,-and-Date-Formats.md):  Sumo Logic supports several options for timestamps, time zones, time ranges, and dates.
 * [Using JSON to Configure Sources] (../../../03Send-Data/Sources/03Use-JSON-to-Configure-Sources.md):  If you’d like to configure your Sources using JSON files, you can do that too.
 
@@ -37,7 +37,7 @@ Collectors and Sources.
 Sumo provides a tool for tracking and managing collection and data
 volume.
 
-* [Log Ingest Data Volume Index] (../../../Manage/Ingestion-and-Volume/Data_Volume_Index/Log_and_Tracing_Data_Volume_Index.md): Sumo writes messages to the index about how much log data your account is ingesting. You can query the index, and if desired, install the [Sumo Logic Data Volume app](../../../07Sumo-Logic-Apps/26Apps_for_Sumo/Data_Volume_App_-_Legacy.md), which provides pre-configured searches and dashboards for analyzing log ingestion. 
+* [Log Ingest Data Volume Index] (../../../Manage/Ingestion-and-Volume/Data_Volume_Index/Log_and_Tracing_Data_Volume_Index.md): Sumo writes messages to the index about how much log data your account is ingesting. You can query the index, and if desired, install the [Sumo Logic Data Volume app] (../../../07Sumo-Logic-Apps/26Apps_for_Sumo/Data_Volume_App_-_Legacy.md), which provides pre-configured searches and dashboards for analyzing log ingestion. 
 * [Metric Ingest Data Volume Index] (../../../Manage/Ingestion-and-Volume/Data_Volume_Index/Metrics_Data_Volume_Index.md): The Metrics Data Volume Index is populated with a set of index messages every five minutes. The messages contain information on how much metrics (by data points) your account is ingesting. 
 
 ## Searching
@@ -57,10 +57,10 @@ Search optimization tools speed the search process, delivering query results in 
 
 * [Optimize Search Performance](../search/optimize-search-performance.md): Describes index-based and field-based methods for search optimization, the search optimization process, and how to choose the right tool for the job.
 * [Partitions] (../../../Manage/Partitions_and_Data_Tiers.md): Partitions speed the search process by allowing you to filter a subset of the log messages in an index.
-* [Scheduled Views](../../../Manage/Scheduled-Views.md): Scheduled Views speed the search process for small and historical subsets of your data by functioning as a pre-aggregated index.
-* [Field Extraction](../../../Manage/Field-Extractions.md): Field Extraction speeds the search process by parsing fields as log messages are ingested. The parsing is done automatically, so you don’t need to run a query to parse the fields.
+* [Scheduled Views] (../../../Manage/Scheduled-Views.md): Scheduled Views speed the search process for small and historical subsets of your data by functioning as a pre-aggregated index.
+* [Field Extraction] (../../../Manage/Field-Extractions.md): Field Extraction speeds the search process by parsing fields as log messages are ingested. The parsing is done automatically, so you don’t need to run a query to parse the fields.
 * [Field Browser](/docs/search/get-started-with-search/how-to-use-search-page/field-browser): The Field Browser allows you to zero in on just the fields of interest in a search by displaying or hiding selected fields without having to parse them. You can focus on the fields you’re interested in, avoiding the “noise” of fields you don’t want to see.
-* [Search Templates](../search/get-started-with-search/build-search/search-templates.md):  You can set up search templates to simplify searches for your users. Search templates shield users from search syntax and allow them to select search parameter values from a selector list.  
+* [Search Templates](../search/get-started-with-search/build-search/search-templates.md): You can set up search templates to simplify searches for your users. Search templates shield users from search syntax and allow them to select search parameter values from a selector list.  
 
 ## Users, roles and security
 

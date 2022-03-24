@@ -188,7 +188,7 @@ Searches and Dashboards can be shared and unshared at any time. Additionally, o
 
 1. Click **See who has access**.
 
-    ![Only Me.png](/img/get-started/librar/who-has-access.png)
+    ![Only Me.png](/img/get-started/library/who-has-access.png)
 
 1. Click the trash can icon to unshare the search with a user or role.
 

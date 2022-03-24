@@ -110,7 +110,7 @@ There is a limit of 20 favorite items per user.
 
 1. The star darkens, and the item now appears on the **Favorites (star)** tab. 
 
-    ![favoritestab.png](../static/img/Library/Favorites/favoritestab.png)
+    ![favoritestab.png](/img/get-started/library/favoritestab.png)
 
 ## Perform actions on favorites
 

@@ -24,21 +24,21 @@ To install an application:
 1. From the left nav, select **App Catalog**.
 1. Click the name of the app you'd like to install.
 
-    ![App_Catalog.png](../../static/img/Library/Apps-in-Sumo-Logic/Install-Apps-from-the-Library/App_Catalog.png)
+    ![App_Catalog.png](/img/get-started/library/App_Catalog.png)
 
 1. Select the version of the service you're using and click **Add to Library.**  Version selection is applicable only to a few apps currently.
 
-    ![Install_App_Version.png](../../static/img/Library/Apps-in-Sumo-Logic/Install-Apps-from-the-Library/Install_App_Version.png)
+    ![Install_App_Version.png](/img/get-started/library/Install_App_Version.png)
 
 1. In the the **Add to Library** popup:
 
-    ![App_Add-to-Library_Dialog.png](../../static/img/Library/Apps-in-Sumo-Logic/Install-Apps-from-the-Library/App_Add-to-Library_Dialog.png) 
+    ![App_Add-to-Library_Dialog.png](/img/get-started/library/App_Add-to-Library_Dialog.png) 
     
     * **App Name.** You can retain the existing name, or enter a name of your choice for the app.
     * **Log Source.** Select either of these options for the data source. 
     
       * Choose **Source Category**, and select a source category from the list. 
-      * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (\_sourceCategory=MyCategory). For more information see [Custom Data Filters](Custom-Data-Filters.md). 
+      * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (\_sourceCategory=MyCategory). For more information see [Custom Data Filters](run-searches-apps.md#custom-data-filters). 
     * **Advanced**. (Optional) Select the **Location in Library**, the default is the Personal folder in the library. 
 
 1. Click **Add to Library**.
