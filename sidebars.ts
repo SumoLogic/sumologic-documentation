@@ -160,7 +160,16 @@ module.exports = {
           collapsed: true,
           link: {type: 'doc', id: 'manage/collection/index'},
           items: [
-            'manage/collection/Processing-Rules/create-a-processing-rule',
+            'manage/collection/processing-rules/search-for-a-collector-or-source',
+            'manage/collection/processing-rules/start-stop-collector-using-scripts',
+            'manage/collection/processing-rules/edit-collector',
+            'manage/collection/processing-rules/edit-source',
+            'manage/collection/processing-rules/delete-collector-or-source',
+            'manage/collection/processing-rules/set-collector-cpu-usage-target',
+            'manage/collection/processing-rules/upgrade-collectors',
+            'manage/collection/processing-rules/',
+            'manage/collection/processing-rules/',
+            'manage/collection/processing-rules/',
             {
               type: 'category',
               label: 'Processing Rules',
@@ -169,6 +178,10 @@ module.exports = {
               link: {type: 'doc', id: 'manage/collection/processing-rules/index'},
               items: [
                 'manage/collection/processing-rules/create-a-processing-rule',
+                'manage/collection/processing-rules/data-forwarding-rule',
+                'manage/collection/processing-rules/hash-rules',
+                'manage/collection/processing-rules/include-and-exclude-rules',
+                'manage/collection/processing-rules/metrics-include-and-exclude-rules',
               ]
             },
           ]
