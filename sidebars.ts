@@ -95,8 +95,7 @@ module.exports = {
       collapsible: true,
       collapsed: true,
       items: [
-        'Manage/Collection/Processing-Rules/create-a-processing-rule',
-        'Manage/Security/installation-tokens',
+        'manage/security/installation-tokens',
         'CSE/global-intel'
       ],
      },
@@ -144,6 +143,51 @@ module.exports = {
         'dashboards-new/share-a-dashboard-new',
       ],
     },
+  ],
+  manage: [
+    {
+      type: 'category',
+      label: 'Manage Sumo Logic',
+      collapsible: true,
+      collapsed: true,
+      //link: {type: 'doc', id: 'get-started/index'},
+      items: [
+        {
+          type: 'category',
+          label: 'Collection',
+          collapsible: true,
+          collapsed: true,
+          link: {type: 'doc', id: 'manage/collection/index'},
+          items: [
+            'manage/collection/search-for-a-collector-or-source',
+            'manage/collection/start-stop-collector-using-scripts',
+            'manage/collection/edit-collector',
+            'manage/collection/restart-collectors',
+            'manage/collection/edit-source',
+            'manage/collection/pause-and-resume-source',
+            'manage/collection/delete-collector-or-source',
+            'manage/collection/set-collector-cpu-usage-target',
+            'manage/collection/upgrade-collectors',
+            'manage/collection/collector-logs',
+            {
+              type: 'category',
+              label: 'Processing Rules',
+              collapsible: true,
+              collapsed: true,
+              link: {type: 'doc', id: 'manage/collection/processing-rules/index'},
+              items: [
+                'manage/collection/processing-rules/create-a-processing-rule',
+                'manage/collection/processing-rules/data-forwarding-rules',
+                'manage/collection/processing-rules/hash-rules',
+                'manage/collection/processing-rules/include-and-exclude-rules',
+                'manage/collection/processing-rules/metrics-include-and-exclude-rules',
+              ]
+            },
+          ]
+        },
+        'get-started/get-help',
+      ]
+    }
   ],
   searchlogs: [
     //Navigation for Search, Logs

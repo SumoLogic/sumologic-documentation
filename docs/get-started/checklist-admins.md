@@ -67,12 +67,12 @@ Search optimization tools speed the search process, delivering query results in 
 Sumo provides a number of tools for managing users' access to Sumo and
 configuring security policies. You can:
 
-* [Set password policies] (../../../Manage/Security/Set-the-Password-Policy.md): Set rules for password expiration, reuse, and lock out.
-* [Create an Allowlist for IP or CIDR addresses] (../../../Manage/Security/Create-an-Allowlist-for-IP-or-CIDR-Addresses.md): Service Allowlist Settings allow you to explicitly grant access to specific IP addresses and/or CIDR notations for logins, APIs, and dashboard access.
-* [Manage access keys] (../../../Manage/Security/Access-Keys.md): Access keys are used in sumo to securely register new collectors and for accessing Sumo APIs.
-* [Sumo audit index ] (../../../Manage/Security/Audit-Index.md): If you enable the audit index, Sumo captures information on the internal events that occur in your account associated with account management, user activity, scheduled searches, and more.
-* [Support account access] (../../../Manage/Security/Enable-a-Support-Account.md): You can enable a Sumo Logic support account, which grants very select Sumo Logic support agents access to your organization's account, better helping those agents to resolve issues that arise. Admins can choose to keep the support account enabled full-time, or the account can be disabled when no issues are being investigated.
-* [Set Up SAML for Single Sign-On] (../../../Manage/Security/SAML.md): Enterprise accounts can provision Security Assertion Markup Language (SAML) 2.0 to enable Single Sign-On (SSO) for user access to Sumo Logic. In addition to basic SAML functionality, you can choose optional on-demand user creation (using SAML 2.0 assertions), and designate custom login and/or logout portals.
+* [Set password policies] (../../../manage/security/Set-the-Password-Policy.md): Set rules for password expiration, reuse, and lock out.
+* [Create an Allowlist for IP or CIDR addresses] (../../../manage/security/Create-an-Allowlist-for-IP-or-CIDR-Addresses.md): Service Allowlist Settings allow you to explicitly grant access to specific IP addresses and/or CIDR notations for logins, APIs, and dashboard access.
+* [Manage access keys] (../../../manage/security/Access-Keys.md): Access keys are used in sumo to securely register new collectors and for accessing Sumo APIs.
+* [Sumo audit index ] (../../../manage/security/Audit-Index.md): If you enable the audit index, Sumo captures information on the internal events that occur in your account associated with account management, user activity, scheduled searches, and more.
+* [Support account access] (../../../manage/security/Enable-a-Support-Account.md): You can enable a Sumo Logic support account, which grants very select Sumo Logic support agents access to your organization's account, better helping those agents to resolve issues that arise. Admins can choose to keep the support account enabled full-time, or the account can be disabled when no issues are being investigated.
+* [Set Up SAML for Single Sign-On] (../../../manage/security/SAML.md): Enterprise accounts can provision Security Assertion Markup Language (SAML) 2.0 to enable Single Sign-On (SSO) for user access to Sumo Logic. In addition to basic SAML functionality, you can choose optional on-demand user creation (using SAML 2.0 assertions), and designate custom login and/or logout portals.
 * [Role-based access control (RBAC)] (../../../Manage/Users-and-Roles.md): Sumo Logic supports RBAC. Users are not assigned permissions directly, but inherit permissions through roles (or even through a single role). Role assignments grant users specific capabilities, and govern what data users can view.   
 
 ## Metrics

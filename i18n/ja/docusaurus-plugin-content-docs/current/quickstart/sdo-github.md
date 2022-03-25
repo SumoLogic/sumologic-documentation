@@ -55,7 +55,7 @@ If you already have a Sumo Logic account, you can skip this step and go straight
 Congratulations! You now have a trial account.
 
 ## Step 2 - Create a Sumo Logic access key
-Create an access key to programatically manage your Sumo Logic account following these instructions: [Manage all users’ access keys on Access Keys page](https://help.sumologic.com/Manage/Security/Access-Keys#manage-all-users%E2%80%99-access-keys-on-access-keys-page).
+Create an access key to programatically manage your Sumo Logic account following these instructions: [Manage all users’ access keys on Access Keys page](https://help.sumologic.com/manage/security/Access-Keys#manage-all-users%E2%80%99-access-keys-on-access-keys-page).
 
 ![Access Key](/img/get-started/github/create-access-key.gif)
 

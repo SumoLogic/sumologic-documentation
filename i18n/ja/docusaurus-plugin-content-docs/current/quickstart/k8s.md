@@ -25,7 +25,7 @@ values={[
   helm repo update
   ```
 
-1. Get your [Sumo Logic Access ID and Access Key](https://help.sumologic.com/Manage/Security/Access-Keys) and run the following command:
+1. Get your [Sumo Logic Access ID and Access Key](https://help.sumologic.com/manage/security/Access-Keys) and run the following command:
 
   ```shell
   helm upgrade --install <HELM_RELEASE_NAME> sumologic/sumologic \
@@ -44,7 +44,7 @@ As a best practice, we recommend using [helm values files](https://helm.sh/docs/
 
 <TabItem value="yaml">
 
-1. Get your [Sumo Logic Access ID and Access Key](https://help.sumologic.com/Manage/Security/Access-Keys) and run the following command to generate the YAML:
+1. Get your [Sumo Logic Access ID and Access Key](https://help.sumologic.com/manage/security/Access-Keys) and run the following command to generate the YAML:
 
   ```shell
   kubectl run tools \
