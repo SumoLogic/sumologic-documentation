@@ -7,7 +7,7 @@ id: upgrade-collectors
 ## Upgrade Collectors using the Web Application
 
 Deploying an upgrade to one or more collectors can be done through the Sumo Logic Web Application. When you initiate a collector upgrade, the installed collector downloads the upgrade package directly from the Sumo
-Logic service. We recommend you follow our [best practices](Collector-Upgrade-Best-Practices.md "Collector Upgrade Best Practices") when you upgrade your Collectors.
+Logic service. We recommend you follow our [best practices](#collector-upgrade-best-practices) when you upgrade your Collectors.
 
 You can also downgrade a collector to a previous version, as described in this topic.
 
@@ -101,7 +101,7 @@ See the following table for commands:
 | Operating System | Command |
 | -- | -- |
 | Linux | When upgrading on Ubuntu 16 and above using a shell executable file (.sh), Debian, or the Web UI you will need to manually restart the collector service after upgrading using the following command. See
-[Start or Stop a Collector](02Start-or-Stop-a-Collector-using-Scripts.md "Start or Stop a Collector using Scripts") for details.<br/><br/>Command: `sudo ./collector start` |
+[Start or Stop a Collector] (02Start-or-Stop-a-Collector-using-Scripts.md) for details.<br/><br/>Command: `sudo ./collector start` |
 | Linux RPM | Upgrade command: `sudo rpm -U\<pathToCollectorRPMFil\>`<br/><br/>Downgrade command: `sudo rpm -U --oldpackage\<pathToCollectorRPMFil\>`<br/><br/>There may be a warning message regarding the deletion of safeRestart.cmd file, this is safe to ignore. |
 | Linux Debian | Upgrade or downgrade command: `sudo dpkg -i\<pathToCollectorDebianFil\>` |
 | Linux 32 or 64 | Upgrade or downgrade command:  `sudo\<pathToCollectorShFil\> -q` |
