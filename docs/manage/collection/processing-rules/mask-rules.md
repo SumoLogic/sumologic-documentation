@@ -42,8 +42,6 @@ With a mask string of `AAA` would provide the following result:
     "auth":"Basic ksoe9wudkej2lfj*jshd6sl.cmei=", 
     "cookie":"$Version=0; JSESSIONID=6C1BR5DAB897346B70FD2CA7SD4639.localhost_bc; $Path=/" 
     }}
-
-
     ```
 
     You would use the following as a mask expression to mask the auth parameter's token:
@@ -68,7 +66,7 @@ With a mask string of `AAA` would provide the following result:
 
 * Each capture group matches and masks all occurrences that exist in each log.
 
-* If you'd like to use a different mask for each value, you'll need to create a separate mask rule for each value. For example, if you'd like to mask IP addresses with a string that's different from the user email string, you'd create another filter with the expression` (\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}\)]` and you could use USER_ADDRESS as the mask string.
+* If you'd like to use a different mask for each value, you'll need to create a separate mask rule for each value. For example, if you'd like to mask IP addresses with a string that's different from the user email string, you'd create another filter with the expression` (\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}\)]` and you could use `USER_ADDRESS` as the mask string.
 
 * Make sure you don't specify a regular expression that has a capturing group that matches a full log line. Doing so will result in the entire log line being masked.
 
@@ -85,27 +83,20 @@ With a mask string of `AAA` would provide the following result:
 ## Examples
 
 :::important
-Any masking expression should be tested and verified with a sample
-source file before applying it to your production logs.
+Any masking expression should be tested and verified with a sample source file before applying it to your production logs.
 :::
 
 ### Mask credit card numbers
 
-You can mask credit card numbers from log messages using a regular
-expression within a mask rule. Once masked with a known string, you can
-then perform a search for that string within your logs to detect if
-credit card numbers may be leaking into your log files.
+You can mask credit card numbers from log messages using a regular expression within a mask rule. Once masked with a known string, you can then perform a search for that string within your logs to detect if credit card numbers may be leaking into your log files.
 
-The following regular expression can be used within a masking filter to
-mask American Express, Visa (16 digit only),  Master Card, and Discover
-credit card numbers:
+The following regular expression can be used within a masking filter to mask American Express, Visa (16 digit only), Master Card, and Discover credit card numbers:
 
 ```
 ((?:(?:4\d{3})|(?:5[1-5]\d{2})|6(?:011|5[0-9]{2}))(?:-?|\040?)(?:\d{4}(?:-?|\040?)){3}|(?:3[4,7]\d{2})(?:-?|\040?)\d{6}(?:-?|\040?)\d{5})
 ```
 
-This regular expression covers instances where the number includes
-dashes, spaces, or is a solid string of numbers**.**
+This regular expression covers instances where the number includes dashes, spaces, or is a solid string of numbers.
 
 Samples include:
 

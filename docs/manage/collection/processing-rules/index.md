@@ -6,7 +6,7 @@ slug: /processing-rules
 
 Processing rules filter and can forward data sent to Sumo Logic from a Source. The rules affect only the data sent to Sumo Logic; logs and metrics on your end remain intact and unchanged. Data filtered by a Collector using Processing Rules does not count towards your daily data volume quota.
 
-Using [processing rules](/Manage/Collection/Processing-Rule.md "Follow link") on a [Hosted Collector](/03Send-Data/Hosted-Collector.md "Follow link") to filter out 50% or more of your data on a single Source may be subject to temporary [throttling](/Manage/Ingestion-and-Volume/01Manage-Ingestion#throttlin.md "Follow link"). Excessive filtration can lead to temporary increases in ingest latency. Throttling reduces the effect excessive filtration has on ingestion latency. We encourage you to limit the proportion of data you are filtering out. This policy is subject to change.
+Using [processing rules] (/Manage/Collection/Processing-Rule.md) on a [Hosted Collector] (/03Send-Data/Hosted-Collector.md) to filter out 50% or more of your data on a single Source may be subject to temporary [throttling] (/Manage/Ingestion-and-Volume/01Manage-Ingestion#throttlin.md). Excessive filtration can lead to temporary increases in ingest latency. Throttling reduces the effect excessive filtration has on ingestion latency. We encourage you to limit the proportion of data you are filtering out. This policy is subject to change.
 
 Filtered data is fed to the Collector, but does not upload to the Sumo Logic cloud.
 

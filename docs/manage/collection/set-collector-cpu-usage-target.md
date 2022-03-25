@@ -17,7 +17,7 @@ To set a CPU target:
 3.  Click **Advanced**.
 4.  Choose an option from the **CPU Target** menu, then click **Save**.
 
-![](./static/img/06Set-the-Collector-CPU-Usage-Target/cpu-target-options.png)
+![cpu target option](/img/collector/cpu-target-options.png)
 
 ## When should I choose a lower target?
 
@@ -45,8 +45,8 @@ The collector will always perform some level of work, whether it is scanning the
 The CPU Target value can be set in three ways:
 
 1.  Update the **CPU Target** value by editing the collector under **Manage Data \> Collection \> Collection**.
-2.  Update the collector configuration via the [Collector Management API](../../APIs/Collector-Management-API/Collector-API-Methods-and-Examples.md "About the Collector Management API").  
-3.  Either supply the **targetCPU** parameter to the [user.properties](../../03Send-Data/Installed-Collectors/05Reference-Information-for-Collector-Installation/06user.properties.md "user.properties") file or **-VtargetCPU** [command line argument](../../03Send-Data/Installed-Collectors/05Reference-Information-for-Collector-Installation/06Parameters-for-the-Command-Line-Installer.md "Parameters for the Command Line Installer") during the initial installation and registration of the collector.
+2.  Update the collector configuration via the [Collector Management API] (../../APIs/Collector-Management-API/Collector-API-Methods-and-Examples.md).  
+3.  Either supply the **targetCPU** parameter to the [user.properties] (../../03Send-Data/Installed-Collectors/05Reference-Information-for-Collector-Installation/06user.properties.md) file or **-VtargetCPU** [command line argument] (../../03Send-Data/Installed-Collectors/05Reference-Information-for-Collector-Installation/06Parameters-for-the-Command-Line-Installer.md) during the initial installation and registration of the collector.
 
 ## How do you know targeting is applied?
 
@@ -66,4 +66,4 @@ If you have a CPU target set but you continue to see the CPU usage at a higher l
 * Check for any unnecessary denylists within the source configurations and remove them.
 * Review any include/exclude/hash/mask rules on the sources and make sure they are required and optimized for that source.
 * Remove unnecessary sources.
-* Increase the [Collector’s max heap size](../../03Send-Data/Collector-FAQs/Increase-memory-in-a-Collector.md "Increase memory in a Collector").
+* Increase the [Collector’s max heap size] (../../03Send-Data/Collector-FAQs/Increase-memory-in-a-Collector.md).

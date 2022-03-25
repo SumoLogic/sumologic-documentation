@@ -19,10 +19,10 @@ An upgrade requested through the web application uses HTTPS (port 443) to upgra
 
 When one or more collectors in your Sumo Logic account are eligible for an upgrade, you'll be notified through the collectors page of the Sumo Logic web application:
 
-![Upgrade collectors](./static/img/07Upgrade-Collectors-using-the-Web-Application/upgrade-collectors-icon.png)
+![Upgrade collectors](/img/collector/upgrade-collectors-icon.png)
 
 :::important
-The user interface will show up to 50 Collectors at a time. After upgrading one or more Collectors you can close and reopen the 'Upgrade Collectors' window to display other upgradable Collectors. You may consider conducting upgrades with the [Collector Management API](../../APIs/Collector-Management-API/Upgrade-or-Downgrade-Collectors-Using-the-API.md).
+The user interface will show up to 50 Collectors at a time. After upgrading one or more Collectors you can close and reopen the 'Upgrade Collectors' window to display other upgradable Collectors. You may consider conducting upgrades with the [Collector Management API] (../../APIs/Collector-Management-API/Upgrade-or-Downgrade-Collectors-Using-the-API.md).
 :::
 
 ### Upgrade collectors to the latest build
@@ -46,7 +46,7 @@ To install an upgrade on one or more collectors:
     We strongly advise you to validate collector upgrades on non-production hosts before upgrading production collectors.
     ::: 
 
-    ![Upgrade collectors](./static/img/07Upgrade-Collectors-using-the-Web-Application/../../../Assets/Media_Repo_for_Manage/upgrade%20collectors%201.png)
+    ![Upgrade collectors](/img/collector/upgrade-collectors-1.png)
 
 The upgrade process begins immediately after you click **Update** or **Update All**; the file is automatically downloaded and installed. You'll be notified when the upgrade has completed successfully.
 
@@ -65,7 +65,7 @@ To downgrade one or more collectors to an earlier build:
 
 The upgrade/downgrade process begins immediately after you click a build.
 
-![Downgrade collector](./static/img/07Upgrade-Collectors-using-the-Web-Application/change-version.png)
+![Downgrade collector](/img/collector/change-version.png)
 
 ### Troubleshooting upgrade failures
 
@@ -73,7 +73,7 @@ If collector upgrade fails, the existing version will continue running on that
 
 Click **Retry** to start the process over.
 
-![Retry collector upgrade](./static/img/07Upgrade-Collectors-using-the-Web-Application/../../../Assets/Media_Repo_for_Manage/upgrade%20collectors%203.png)
+![Retry collector upgrade](/img/collector/upgrade-collectors-troubleshoot.png)
 
 Failure can occur for any of the following reasons:
 
@@ -86,15 +86,15 @@ If an upgrade repeatedly fails, contact [Sumo Logic Customer Support](https://s
 
 ## Upgrade Collectors using the Command Line
 
-Before upgrading an Installed Collector review [Collector Upgrade Best Practices](Collector-Upgrade-Best-Practices.md).
+Before upgrading an Installed Collector review [Collector Upgrade Best Practices](#collector-upgrade-best-practices).
 
-The steps to upgrade an Installed Collector using the command line are similar to the steps used for installing the Collector with the command line. See [Installed Collectors](../../03Send-Data/Installed-Collectors.md "Installed Collectors") for details.
+The steps to upgrade an Installed Collector using the command line are similar to the steps used for installing the Collector with the command line. See [Installed Collectors] (../../03Send-Data/Installed-Collectors.md) for details.
 
 
 Download the collector in either of the following ways:
 
-* In Sumo Logic select **Manage Data \> Collection�\> Collection**. Click **Add Collector**, click **Installed Collector,** and then click the link for the collector to begin the download.
-* Open a browser and enter the static URL for your Sumo deployment. See [how to determine which endpoint to use](../../APIs/General-API-Information/Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security.md) if you are unsure. The download begins immediately. See [Download a Collector from a Static URL](../../03Send-Data/Installed-Collectors/05Reference-Information-for-Collector-Installation/02Download-a-Collector-from-a-Static-URL.md) for a list of the URLs for your Linux version and deployment pod.
+* In Sumo Logic select **Manage Data \> Collection \> Collection**. Click **Add Collector**, click **Installed Collector,** and then click the link for the collector to begin the download.
+* Open a browser and enter the static URL for your Sumo deployment. See [how to determine which endpoint to use] (../../APIs/General-API-Information/Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security.md) if you are unsure. The download begins immediately. See [Download a Collector from a Static URL] (../../03Send-Data/Installed-Collectors/05Reference-Information-for-Collector-Installation/02Download-a-Collector-from-a-Static-URL.md) for a list of the URLs for your Linux version and deployment pod.
 
 See the following table for commands:
 
@@ -106,25 +106,29 @@ See the following table for commands:
 | Linux Debian | Upgrade or downgrade command: `sudo dpkg -i\<pathToCollectorDebianFil\>` |
 | Linux 32 or 64 | Upgrade or downgrade command:  `sudo\<pathToCollectorShFil\> -q` |
 | Windows | Upgrade or downgrade command: `SumoCollector.exe -console -q` |
-| MacOS | Use the same steps to [Install a Collector on MacOS](../../03Send-Data/Installed-Collectors/02Install-a-Collector-on-MacOS.md) without the authentication credentials. |
+| MacOS | Use the same steps to [Install a Collector on MacOS] (../../03Send-Data/Installed-Collectors/02Install-a-Collector-on-MacOS.md) without the authentication credentials. |
 
 ## Collector Upgrade Best Practices
 
 We recommend you follow these best practices when upgrading Installed Collectors.
 
-There is a community supported script available on GitHub that uses the Collector API to conduct bulk actions to Collectors, see [Collector Management Script](https://github.com/SumoLogic/collector-management-../../../../relative/Cloud_SIEM_Enterprise/Administration/Create_a_Custom_Tag_Schema/page.html).
+:::sumo Community Script
+There is a community supported script available on GitHub that uses the Collector API to conduct bulk actions to Collectors, see [Collector Management Script](https://github.com/SumoLogic/collector-management-client).
+:::
 
 ### Stay Current
 
-While we make every effort to keep backwards compatibility for collectors, many new collector versions contain important bug fixes along with new functionality, so we recommend keeping up-to-date with collector versions you’re using in your production environments.  You can read the [Release Notes](../../Release-Notes/Collector-Release-Notes.md) for each Collector version here, so you know exactly what changes are made.
+While we make every effort to keep backwards compatibility for collectors, many new collector versions contain important bug fixes along with new functionality, so we recommend keeping up-to-date with collector versions you’re using in your production environments.  You can read the [Release Notes] (../../Release-Notes/Collector-Release-Notes.md) for each Collector version here, so you know exactly what changes are made.
 
 ### Use the Sumo Logic User Interface to Upgrade
 
-When one or more of your Collectors are eligible for an upgrade, you'll be notified through the collectors page in our UI. Follow the [instructions]07Upgrade-Collectors-using-the-Web-Application.md) to upgrade (or downgrade) as needed.
+When one or more of your Collectors are eligible for an upgrade, you'll be notified through the collectors page in our UI. Follow the [instructions](upgrade-collectors.md) to upgrade (or downgrade) as needed.
 
-![Upgrade collectors with search](./static/img/Collector-Upgrade-Best-Practices/upgrade-collectors-icon.png)
+![Upgrade collectors with search](/img/collector/upgrade-collectors-icon.png)
 
-If you are performing a manual upgrade, make sure that you backup your` \<sumo_hom\>/config` directory before you upgrade because it stores the current source information. If any issues occur during upgrade that leave the Collector unable to connect to the service, or result in missing sources, you can restore this directory and restart the Collector to address the problem.
+:::note
+If you are performing a manual upgrade, make sure that you backup your `\<sumo_hom\>/config` directory before you upgrade because it stores the current source information. If any issues occur during upgrade that leave the Collector unable to connect to the service, or result in missing sources, you can restore this directory and restart the Collector to address the problem.
+:::
 
 ### Test Your New Collector in a Staging Environment
 
@@ -146,14 +150,15 @@ Follow this checklist whenever you make any changes to the collector:
 
 * Have a baseline prior to any changes or updates.
 * Perform any changes within a development or staging environment prior to production. Do this when: 
-  * Upgrading to a new Collector version. * Adding new Sources to a Collector.
+  * Upgrading to a new Collector version. 
+  * Adding new Sources to a Collector.
   * Modifying existing Collector or Source configurations, such as memory, CPU throttling, etc. 
   * Upgrading or patching the host environment.
 * Monitor the staging environment for any significant changes to the following: 
   * Collector service CPU usage patterns
   * Collector service Memory usage patterns
   * Disk I/O and space utilization
-* [Validate Collector service operation](../Ingestion-and-Volume/Monitor_Ingestion_and_Receive_Alerts.md):
+* [Validate Collector service operation] (../Ingestion-and-Volume/Monitor_Ingestion_and_Receive_Alerts.md):
   * Upgrade was successful and the Collector is online with the new version.
   * The Collector continues to run over a period of time without errors or failures.
   * Existing Sources continue to read and send data.
