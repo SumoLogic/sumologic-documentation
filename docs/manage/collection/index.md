@@ -60,3 +60,12 @@ Use the **Collection** page to manage all of your Collectors and Sources. To ac
 * **Sources**. Displays the number of Sources configured under a Collector.
 * **Last Hour**. Displays a graph of the total number of log messages ingested per minute over the past hour.
 * **Messages**. Displays the total number of log messages ingested over the past hour.
+
+import DocCardList from '@theme/DocCardList';
+import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
+
+## Guide contents
+
+In this section, we will introduce the following concepts:
+
+<DocCardList items={useCurrentSidebarCategory().items}/>
