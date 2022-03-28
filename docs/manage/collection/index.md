@@ -23,6 +23,24 @@ Use the **Collection** page to manage all of your Collectors and Sources. To ac
 * Use the **Expand** options to show or hide information about the Sources
 * Use the paging controls to navigate the list of Collectors
 
+## Collector Actions
+
+* [Add a Source] (../03Send-Data/Sources.md)
+* [Edit a Collector](edit-collector.md)
+* [Delete a Collector](./05Delete-a-Collector-from-the-Web-Application.md "https://help.sumologic.com/Manage/Collectors_and_Sources/02Delete_a_Collector_from_the_Web_Application")
+* [Download a JSON configuration file] (../03Send-Data/Sources/03Use-JSON-to-Configure-Sources/Local-Configuration-File-Management/View-or-Download-Source-JSON-Configuration.md)
+    for scripting or backup
+* [Restart a Collector](restart-collectors.md) 
+
+## Source Actions
+
+* [Edit the Source](edit-source.md)
+* [Delete a Source](delete-collector-source.md) 
+* [Download a JSON configuration file] (../03Send-Data/Sources/03Use-JSON-to-Configure-Sources/Local-Configuration-File-Management/View-or-Download-Source-JSON-Configuration.md) for scripting or backup
+* [Pause or resume a Source](pause-resume-source.md) (cloud polling Sources only)
+* [Show or regenerate a Source URL] (../03Send-Data/Sources/02Sources-for-Hosted-Collectors/HTTP-Source/zGenerate-a-new-URL-for-an-HTTP-Source.md) (HTTP Sources only)
+* [Show or regenerate a Source token] (../03Send-Data/Sources/02Sources-for-Hosted-Collectors/Cloud-Syslog-Source.md) (cloud syslog Source only)
+
 ## Available Information about Collectors and Sources
 
 * **Name**. Displays the name of the Collector, and any Sources that are configured under it. It also displays the type of Source (HTTP, Local File, Local Windows Event Log, etc.) 
@@ -42,19 +60,3 @@ Use the **Collection** page to manage all of your Collectors and Sources. To ac
 * **Sources**. Displays the number of Sources configured under a Collector.
 * **Last Hour**. Displays a graph of the total number of log messages ingested per minute over the past hour.
 * **Messages**. Displays the total number of log messages ingested over the past hour.
-
-## Collector Actions
-
-* [Add a Source] (../03Send-Data/Sources.md "https://help.sumologic.com/Send_Data/Sources")
-* [Edit a Collector](edit-collector.md)
-* [Delete a Collector](delete-collector-source.md)
-* [Download a JSON configuration file] (../03Send-Data/Sources/03Use-JSON-to-Configure-Sources/Local-Configuration-File-Management/View-or-Download-Source-JSON-Configuration.md) for scripting or backup
-
-## Source Actions
-
-* [Edit the Source](edit-source.md)
-* [Delete a Source](delete-collector-source.md)
-* [Download a JSON configuration file] (../03Send-Data/Sources/03Use-JSON-to-Configure-Sources/Local-Configuration-File-Management/View-or-Download-Source-JSON-Configuration.md) for scripting or backup
-* [Pause or resume a Source](pause-resume-source.md) (cloud polling Sources only)
-* [Show or regenerate a Source URL] (../03Send-Data/Sources/02Sources-for-Hosted-Collectors/HTTP-Source/zGenerate-a-new-URL-for-an-HTTP-Source.md) (HTTP Sources only)
-* [Show or regenerate a Source token] (../03Send-Data/Sources/02Sources-for-Hosted-Collectors/Cloud-Syslog-Source.md ) (cloud syslog Source only)
