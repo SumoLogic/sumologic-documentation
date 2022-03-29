@@ -1,7 +1,8 @@
 /**
  Sumo Architecture List
- Add content to the following sections in this sodebar Navigation file:
+ Add content to the following sections in this sidebar Navigation file:
 
+  Manage: Admin level options, collection, connections, etc
   Alerts: Alerts, Monitors, SLOs, Health Events, Connections 
   Dashboards: Create Dash, Library of Dashboards
   Logs: Log Search, All Log Searches, Livetail, Lookup, Log Config
