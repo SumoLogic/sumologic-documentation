@@ -196,9 +196,9 @@ module.exports = {
                     icon: 'backup_table',
                   },
                   {
-                    label: 'Quick Start Guides',
+                    label: 'Manage Sumo',
                     sublabel: 'Fast track on Sumo',
-                    to: 'docs/get-started',
+                    to: 'docs/manage/collection',
                     icon: 'start',
                   },
                   {
