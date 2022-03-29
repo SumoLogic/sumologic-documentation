@@ -1,5 +1,5 @@
 ---
-id: about-dashboard-new
+slug: /dashboards-new
 ---
 
 # About Dashboard (New)
@@ -135,3 +135,12 @@ Dashboards and Dashboard (New).
 | Combined Metrics & Logs Panel | Not supported | Supported. See how to [overlay logs and metrics in a panel](./dashboard-new-faqs.md#how-do-i-overlay-logs-and-metrics-on-one-panel). |
 | Styling Queries and Series | 	Ability to style through settings on the search page.<br/>Can not set color per time series or query.<br/>Restricted ability to override displays. | Ability to style through display overrides inside the panel settings.<br/>Ability to set the color per query/series.<br/>Multiple layers of expressiveness for display overrides.<br/>For details, see how to modify a chart. |
 | Colors by Value Range | Supported | Not supported |
+
+import DocCardList from '@theme/DocCardList';
+import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
+
+## Guide contents
+
+In this section, we will introduce the following concepts:
+
+<DocCardList items={useCurrentSidebarCategory().items}/>

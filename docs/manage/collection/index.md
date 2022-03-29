@@ -23,6 +23,24 @@ Use the **Collection** page to manage all of your Collectors and Sources. To ac
 * Use the **Expand** options to show or hide information about the Sources
 * Use the paging controls to navigate the list of Collectors
 
+## Collector Actions
+
+* [Add a Source] (../03Send-Data/Sources.md)
+* [Edit a Collector](edit-collector.md)
+* [Delete a Collector] (./05Delete-a-Collector-from-the-Web-Application.md)
+* [Download a JSON configuration file] (../03Send-Data/Sources/03Use-JSON-to-Configure-Sources/Local-Configuration-File-Management/View-or-Download-Source-JSON-Configuration.md)
+    for scripting or backup
+* [Restart a Collector](restart-collectors.md) 
+
+## Source Actions
+
+* [Edit the Source](edit-source.md)
+* [Delete a Source](delete-collector-source.md) 
+* [Download a JSON configuration file] (../03Send-Data/Sources/03Use-JSON-to-Configure-Sources/Local-Configuration-File-Management/View-or-Download-Source-JSON-Configuration.md) for scripting or backup
+* [Pause or resume a Source](pause-resume-source.md) (cloud polling Sources only)
+* [Show or regenerate a Source URL] (../03Send-Data/Sources/02Sources-for-Hosted-Collectors/HTTP-Source/zGenerate-a-new-URL-for-an-HTTP-Source.md) (HTTP Sources only)
+* [Show or regenerate a Source token] (../03Send-Data/Sources/02Sources-for-Hosted-Collectors/Cloud-Syslog-Source.md) (cloud syslog Source only)
+
 ## Available Information about Collectors and Sources
 
 * **Name**. Displays the name of the Collector, and any Sources that are configured under it. It also displays the type of Source (HTTP, Local File, Local Windows Event Log, etc.) 
@@ -43,18 +61,11 @@ Use the **Collection** page to manage all of your Collectors and Sources. To ac
 * **Last Hour**. Displays a graph of the total number of log messages ingested per minute over the past hour.
 * **Messages**. Displays the total number of log messages ingested over the past hour.
 
-## Collector Actions
+import DocCardList from '@theme/DocCardList';
+import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
 
-* [Add a Source] (../03Send-Data/Sources.md "https://help.sumologic.com/Send_Data/Sources")
-* [Edit a Collector](edit-collector.md)
-* [Delete a Collector](delete-collector-source.md)
-* [Download a JSON configuration file] (../03Send-Data/Sources/03Use-JSON-to-Configure-Sources/Local-Configuration-File-Management/View-or-Download-Source-JSON-Configuration.md) for scripting or backup
+## Guide contents
 
-## Source Actions
+In this section, we will introduce the following concepts:
 
-* [Edit the Source](edit-source.md)
-* [Delete a Source](delete-collector-source.md)
-* [Download a JSON configuration file] (../03Send-Data/Sources/03Use-JSON-to-Configure-Sources/Local-Configuration-File-Management/View-or-Download-Source-JSON-Configuration.md) for scripting or backup
-* [Pause or resume a Source](pause-resume-source.md) (cloud polling Sources only)
-* [Show or regenerate a Source URL] (../03Send-Data/Sources/02Sources-for-Hosted-Collectors/HTTP-Source/zGenerate-a-new-URL-for-an-HTTP-Source.md) (HTTP Sources only)
-* [Show or regenerate a Source token] (../03Send-Data/Sources/02Sources-for-Hosted-Collectors/Cloud-Syslog-Source.md ) (cloud syslog Source only)
+<DocCardList items={useCurrentSidebarCategory().items}/>

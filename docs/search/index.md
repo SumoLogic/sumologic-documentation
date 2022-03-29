@@ -1,5 +1,6 @@
 ---
 slug: /search
+id: index
 ---
 
 # Search and Logs
@@ -33,12 +34,3 @@ Traces are collected with SumoLogic Kubernetes Collection or a standalone OpenTe
 :::note
 To interact with other Sumo Logic users, post feedback, or ask a question, visit the Sumo Logic Community Search & Query Forum. 
 :::
-
-import DocCardList from '@theme/DocCardList';
-import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
-
-## Guide contents
-
-In this section, we will introduce the following concepts:
-
-<DocCardList items={useCurrentSidebarCategory().items}/>
