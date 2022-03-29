@@ -27,7 +27,7 @@ Use the **Collection** page to manage all of your Collectors and Sources. To ac
 
 * [Add a Source] (../03Send-Data/Sources.md)
 * [Edit a Collector](edit-collector.md)
-* [Delete a Collector](./05Delete-a-Collector-from-the-Web-Application.md "https://help.sumologic.com/Manage/Collectors_and_Sources/02Delete_a_Collector_from_the_Web_Application")
+* [Delete a Collector] (./05Delete-a-Collector-from-the-Web-Application.md)
 * [Download a JSON configuration file] (../03Send-Data/Sources/03Use-JSON-to-Configure-Sources/Local-Configuration-File-Management/View-or-Download-Source-JSON-Configuration.md)
     for scripting or backup
 * [Restart a Collector](restart-collectors.md) 
