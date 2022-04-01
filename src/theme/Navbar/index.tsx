@@ -192,10 +192,11 @@ function NavbarMobileSidebar({
         className={clsx('navbar-sidebar__items', {
           'navbar-sidebar__items--show-secondary': secondaryMenu.shown,
         })}>
+          
+        <div className="navbar-sidebar__item menu">
           <div>
          <a href="https://www.sumologic.com/sign-up/"><button className='navbar-trial-mobile' to='https://www.sumologic.com/sign-up/'>Start a Free Trial</button></a>
          </div>
-        <div className="navbar-sidebar__item menu">
           <ul className="menu__list">
             {items.map((item, i) => (
               <NavbarItem mobile {...item} onClick={toggleSidebar} key={i} />
@@ -274,7 +275,7 @@ export default function Navbar(): JSX.Element {
             <NavbarItem {...item} key={i} />
           ))}
           <div>
-         <a href="https://www.sumologic.com/sign-up/"><button className='navbar-trial-mobile' to='https://www.sumologic.com/sign-up/'>Start a Free Trial</button></a>
+         <a href="https://www.sumologic.com/sign-up/"><button className='navbar-trial' to='https://www.sumologic.com/sign-up/'>Start a Free Trial</button></a>
          </div>
           {!colorModeToggle.disabled && (
             <ColorModeToggle

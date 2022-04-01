@@ -458,6 +458,7 @@ html[data-theme='dark'] .navbar-item-github:before {
   margin-right: 10px;
   border: 1px solid #3578e5;
   cursor: pointer;
+  margin-right: 10px;
 }
 
 .navbar-trial:hover {
@@ -472,11 +473,12 @@ html[data-theme='dark'] .navbar-item-github:before {
   text-decoration: none;
   border: 1px solid #3578e5;
   cursor: pointer;
+  margin-right: 10px;
 }
 
-@media screen and (max-width: 480px) {
-  .navbar-trial-mobile {
-    //display: none;
+@media screen and (max-width: 996px) {
+  .navbar-trial {
+    margin-right: 50px;
   }
 }
 
