@@ -234,6 +234,7 @@ module.exports = {
                     sublabel: 'Find data with queries',
                     to: '/docs/search',
                     icon: 'view_day',
+                    activeBaseRegex: '^/(search)/.*',
                   },
                   {
                     label: 'Metrics and Logs',

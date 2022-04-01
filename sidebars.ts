@@ -1,7 +1,8 @@
 /**
  Sumo Architecture List
- Add content to the following sections in this sodebar Navigation file:
+ Add content to the following sections in this sidebar Navigation file:
 
+  Manage: Admin level options, collection, connections, etc
   Alerts: Alerts, Monitors, SLOs, Health Events, Connections 
   Dashboards: Create Dash, Library of Dashboards
   Logs: Log Search, All Log Searches, Livetail, Lookup, Log Config
@@ -103,46 +104,96 @@ module.exports = {
   manage: [
     {
       type: 'category',
-      label: 'Manage Sumo Logic',
+      label: 'Collection',
       collapsible: true,
       collapsed: true,
-      //link: {type: 'doc', id: 'get-started/index'},
+      link: {type: 'doc', id: 'manage/collection/index'},
       items: [
+        'manage/collection/search-for-a-collector-or-source',
+        'manage/collection/start-stop-collector-using-scripts',
+        'manage/collection/edit-collector',
+        'manage/collection/restart-collectors',
+        'manage/collection/edit-source',
+        'manage/collection/pause-and-resume-source',
+        'manage/collection/delete-collector-or-source',
+        'manage/collection/set-collector-cpu-usage-target',
+        'manage/collection/upgrade-collectors',
+        'manage/collection/collector-logs',
         {
           type: 'category',
-          label: 'Collection',
+          label: 'Processing Rules',
           collapsible: true,
           collapsed: true,
-          link: {type: 'doc', id: 'manage/collection/index'},
+          link: {type: 'doc', id: 'manage/collection/processing-rules/index'},
           items: [
-            'manage/collection/search-for-a-collector-or-source',
-            'manage/collection/start-stop-collector-using-scripts',
-            'manage/collection/edit-collector',
-            'manage/collection/restart-collectors',
-            'manage/collection/edit-source',
-            'manage/collection/pause-and-resume-source',
-            'manage/collection/delete-collector-or-source',
-            'manage/collection/set-collector-cpu-usage-target',
-            'manage/collection/upgrade-collectors',
-            'manage/collection/collector-logs',
-            {
-              type: 'category',
-              label: 'Processing Rules',
-              collapsible: true,
-              collapsed: true,
-              link: {type: 'doc', id: 'manage/collection/processing-rules/index'},
-              items: [
-                'manage/collection/processing-rules/create-a-processing-rule',
-                'manage/collection/processing-rules/data-forwarding-rules',
-                'manage/collection/processing-rules/hash-rules',
-                'manage/collection/processing-rules/include-and-exclude-rules',
-                'manage/collection/processing-rules/metrics-include-and-exclude-rules',
-              ]
-            },
+            'manage/collection/processing-rules/create-a-processing-rule',
+            'manage/collection/processing-rules/data-forwarding-rules',
+            'manage/collection/processing-rules/hash-rules',
+            'manage/collection/processing-rules/include-and-exclude-rules',
+            'manage/collection/processing-rules/metrics-include-and-exclude-rules',
           ]
         },
       ]
-    }
+    },
+    {
+      type: 'category',
+      label: 'Connections and Integrations',
+      collapsible: true,
+      collapsed: true,
+      link: {type: 'doc', id: 'manage/connections-and-integrations/index'},
+      items: [
+        {
+          type: 'category',
+          label: 'Webhook Connections',
+          collapsible: true,
+          collapsed: true,
+          link: {type: 'doc', id: 'manage/connections-and-integrations/webhook-connections/index'},
+          items: [
+            'manage/connections-and-integrations/webhook-connections/schedule-searches-for-webhook-connections',
+            'manage/connections-and-integrations/webhook-connections/set-up-webhook-connections',
+            'manage/connections-and-integrations/webhook-connections/use-the-audit-index-with-webhook-connections',
+            'manage/connections-and-integrations/webhook-connections/aws-lambda',
+            'manage/connections-and-integrations/webhook-connections/cloud-soar',
+            'manage/connections-and-integrations/webhook-connections/datadog',
+            'manage/connections-and-integrations/webhook-connections/hipchat',
+            'manage/connections-and-integrations/webhook-connections/microsoft-azure-functions',
+            'manage/connections-and-integrations/webhook-connections/microsoft-teams',
+            'manage/connections-and-integrations/webhook-connections/new-relic',
+            'manage/connections-and-integrations/webhook-connections/opsgenie-legacy',
+            'manage/connections-and-integrations/webhook-connections/opsgenie',
+            'manage/connections-and-integrations/webhook-connections/pagerduty',
+            'manage/connections-and-integrations/webhook-connections/slack',
+            {
+              type: 'category',
+              label: 'Jira',
+              collapsible: true,
+              collapsed: true,
+              link: {type: 'doc', id: 'manage/connections-and-integrations/webhook-connections/jira/index'},
+              items: [
+                'manage/connections-and-integrations/webhook-connections/jira/jira-cloud',
+                'manage/connections-and-integrations/webhook-connections/jira/jira-server',
+                'manage/connections-and-integrations/webhook-connections/jira/jira-service-desk',
+              ],
+            },
+          ],
+        },
+        {
+          type: 'category',
+          label: 'ServiceNow',
+          collapsible: true,
+          collapsed: true,
+          link: {type: 'doc', id: 'manage/connections-and-integrations/servicenow/index'},
+          items: [
+            'manage/connections-and-integrations/servicenow/launch-investigations',
+            'manage/connections-and-integrations/servicenow/set-up-searches-for-servicenow-integration',
+            'manage/connections-and-integrations/servicenow/set-up-servicenow-connections',
+            'manage/connections-and-integrations/servicenow/set-up-a-servicenow-incident-webhook-connection',
+          ],
+        },
+        'manage/connections-and-integrations/sumo-logic-add-on-for-heroku',
+        'manage/connections-and-integrations/jfrog-artifactory-sumo-logic-integration',
+      ],
+    },
   ],
   dashboards: [
     {
@@ -187,6 +238,22 @@ module.exports = {
         },
         'dashboards-new/set-custom-time-ranges',
         'dashboards-new/share-a-dashboard-new',
+      ],
+    },
+    {
+      //Add a category and docs per quickstart guide
+      type: 'category',
+      label: 'Monitors',
+      collapsible: true,
+      collapsed: true,
+      link: {type: 'doc', id: 'monitors/index'},
+      items: [
+        'monitors/monitor-faq',
+        'monitors/terminology',
+        'monitors/alert-response',
+        'monitors/alert-response-faq',
+        'monitors/difference-from-scheduled-searches',
+        'monitors/template-variables',
       ],
     },
   ],
