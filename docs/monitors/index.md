@@ -140,7 +140,7 @@ Under the **More Actions** menu you can:
 * **Copy Path**. Copy the path of the Monitor to your computer clipboard.
 * **Duplicate**. Make another Monitor based on the same settings.
 * **Move**. Move the Monitor to a different path.
-* **Export**. Provides JSON of the Monitor, allowing you to transfer content within Sumo Logic by copying this JSON, then pasting it into the import dialog in the [Library](/docs/library) location you choose. This JSON format may change without notice. 
+* **Export**. Provides JSON of the Monitor, allowing you to transfer content within Sumo Logic by copying this JSON, then pasting it into the import dialog in the [Library](/docs/get-started/library/sumo-logic-library) location you choose. This JSON format may change without notice. 
 * **Delete**.
 
 ![monitor more actions](/img/monitors/monitor-actions.png)
@@ -157,7 +157,7 @@ You can configure Sumo Logic Monitors using [Terraform modules](https://github.c
 
 1. Select a **Detection Method**, either Static or Outlier.
 
-    ![outlier detection method.png](/img/monitors/outlier%20detection%20method.png)
+    ![outlier detection method.png](/img/monitors/outlier-detection-method.png)
 
     * **Static** allows you to set specific threshold conditions. Use this detection method when you are alerting on KPIs that have well defined and constant thresholds for what's good and bad. For example, infrastructure metrics like CPU utilization, and memory.  
     * An **outlier** is an unusual change or a spike in a time series of a key indicator. Use this detection method when you are alerting on KPIs that don't have well-defined constant thresholds for what's good and bad. You want the Monitor to automatically detect and alert on unusual changes or spikes on the alerting query. For example, application KPIs like page request, throughput, and latency.  
@@ -366,13 +366,13 @@ The recovery condition will always be the opposite of the alerting condition. Fo
 
 6. (Optional) **Additional Settings** has an **Evaluation Delay** setting. Collection delays may occur due to your environment and it takes a couple of minutes for data to be processed into Sumo Logic. Since Monitors run on data from the most current time period, it's possible for Monitors to evaluate against incomplete data. As a result, Monitors can generate false positives or negatives that can cause confusion. Set an evaluation delay in seconds to delay the evaluation of a Monitor, so it doesn't look at the most current time (where data can be incomplete) and instead looks at an older period of time, where you have more complete data.
 
-    ![additional settings evaluation delay.png](/img/monitors/additional%20settings%20evaluation%20delay.png)
+    ![additional settings evaluation delay.png](/img/monitors/additional-settings-evaluation-delay.png)
     
     If your data is coming from the [Amazon CloudWatch Source for Metrics] (../../03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/Amazon-CloudWatch-Source-for-Metrics.md) we recommend a setting of 900 seconds.
 
 1. (Optional) Set **Notifications**, when a trigger condition is met you can send notifications to other people and services. To add notifications click on the **Add Notification** button. You can add more than one notification channel for a Monitor.
 
-    ![monitor notifications input.png](/img/monitors/monitor%20notifications%20input.png)
+    ![monitor notifications input.png](/img/monitors/monitor-notifications-input.png)
 
     Metric Monitors have an option to send notifications either as a group or separately. **Group Notifications** define whether you want single notifications per time series that match the Monitor query or you want group notifications where you receive a single notification for the entire Monitor. Log Monitors always group notifications.
 

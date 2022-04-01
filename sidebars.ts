@@ -240,6 +240,22 @@ module.exports = {
         'dashboards-new/share-a-dashboard-new',
       ],
     },
+    {
+      //Add a category and docs per quickstart guide
+      type: 'category',
+      label: 'Monitors',
+      collapsible: true,
+      collapsed: true,
+      link: {type: 'doc', id: 'monitors/index'},
+      items: [
+        'monitors/monitor-faq',
+        'monitors/terminology',
+        'monitors/alert-response',
+        'monitors/alert-response-faq',
+        'monitors/difference-from-scheduled-searches',
+        'monitors/template-variables',
+      ],
+    },
   ],
   searchlogs: [
     //Navigation for Search, Logs
