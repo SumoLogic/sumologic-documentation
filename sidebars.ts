@@ -265,26 +265,14 @@ module.exports = {
       label: 'Get Started with Searches',
       collapsible: true,
       collapsed: true,
-      link: {
-        type: 'generated-index',
-        title: 'Get Started with Searches',
-        description:
-          "Learn how to build and run searches, review logs, and more.",
-        keywords: ['search', 'logs'],
-      },
+      link: {type: 'doc', id: 'search/get-started-with-search/index'},
       items: [
         {
           type: 'category',
           label: 'Search Basics',
           collapsible: true,
           collapsed: true,
-          link: {
-            type: 'generated-index',
-            title: 'Search Basics',
-            description:
-              "Sumo Logic search syntax uses logical and familiar operators allowing you to create ad hoc queries quickly and efficiently.",
-            keywords: ['search', 'logs'],
-          },
+          link: {type: 'doc', id: 'search/get-started-with-search/search-basics/index'},
           items: [
             'search/get-started-with-search/search-basics/about-search-basics',
             'search/get-started-with-search/search-basics/built-in-metadata',
@@ -308,28 +296,28 @@ module.exports = {
           label: 'How to Use the Search Page',
           collapsible: true,
           collapsed: true,
-          link: {type: 'doc', id: 'search/get-started-with-search/how-to-use-search-page/index'},
+          link: {type: 'doc', id: 'search/get-started-with-search/search-page/index'},
           items: [
-            'search/get-started-with-search/how-to-use-search-page/add-saved-search-favorites',
-            'search/get-started-with-search/how-to-use-search-page/change-time-range-in-histogram',
+            'search/get-started-with-search/search-page/add-saved-search-favorites',
+            'search/get-started-with-search/search-page/change-time-range-in-histogram',
             {
               type: 'category',
               label: 'Field Browser',
               collapsible: true,
               collapsed: true,
-              link: {type: 'doc', id: 'search/get-started-with-search/how-to-use-search-page/field-browser/index'},
+              link: {type: 'doc', id: 'search/get-started-with-search/search-page/field-browser/index'},
               items: [
-                'search/get-started-with-search/how-to-use-search-page/field-browser/search-from-the-field-browser',
-                'search/get-started-with-search/how-to-use-search-page/field-browser/show-hide-fields-in-field-browser',
+                'search/get-started-with-search/search-page/field-browser/search-from-field-browser',
+                'search/get-started-with-search/search-page/field-browser/show-hide-fields-in-field-browser',
               ],
             },
-            'search/get-started-with-search/how-to-use-search-page/modify-search-from-messages-tab',
-            'search/get-started-with-search/how-to-use-search-page/navigate-through-search-results',
-            'search/get-started-with-search/how-to-use-search-page/search-highlighting',
-            'search/get-started-with-search/how-to-use-search-page/search-load-indicator',
-            'search/get-started-with-search/how-to-use-search-page/search-modes',
-            'search/get-started-with-search/how-to-use-search-page/set-messages-tab-preferences',
-            'search/get-started-with-search/how-to-use-search-page/wildcards-in-full-text-searches',
+            'search/get-started-with-search/search-page/modify-search-from-messages-tab',
+            'search/get-started-with-search/search-page/navigate-through-search-results',
+            'search/get-started-with-search/search-page/search-highlighting',
+            'search/get-started-with-search/search-page/search-load-indicator',
+            'search/get-started-with-search/search-page/search-modes',
+            'search/get-started-with-search/search-page/set-messages-tab-preferences',
+            'search/get-started-with-search/search-page/wildcards-in-full-text-searches',
           ],
         },
         {
@@ -354,13 +342,7 @@ module.exports = {
           label: 'Suggested Searches',
           collapsible: true,
           collapsed: true,
-          link: {
-            type: 'generated-index',
-            title: 'Suggested Searches',
-            description:
-              "​Sumo Logic queries can help track and diagnose common IT issues. Take a look at these Sumo Logic suggested searches.",
-            keywords: ['search', 'apache', 'cisco', 'parser', 'windows'],
-          },
+          link: {type: 'doc', id: 'search/get-started-with-search/suggested-searches/index'},
           items: [
             'search/get-started-with-search/suggested-searches/suggested-searches-apache-access-parser',
             'search/get-started-with-search/suggested-searches/suggested-searches-apache-errors-parser',
@@ -388,13 +370,7 @@ module.exports = {
       label: 'Live Tail',
       collapsible: true,
       collapsed: true,
-      link: {
-        type: 'generated-index',
-        title: 'Live Tail',
-        description:
-          "Sumo Logic Live Tail allows you to see a real-time live feed of log messages associated with a Source or Collector, which you can use as a tool for development and troubleshooting.",
-        keywords: ['live tail'],
-      },
+      link: {type: 'doc', id: 'search/live-tail/index'},
       items: [
         'search/live-tail/about-live-tail',
         'search/live-tail/filter-live-tail',
@@ -534,13 +510,7 @@ module.exports = {
           label: 'Search Operators',
           collapsible: true,
           collapsed: true,
-          link: {
-            type: 'generated-index',
-            title: 'Search Operators',
-            description:
-              "Process data in meaningful ways and provide logic to queries with search operators. This page lists the available search operators in Sumo's search query language.",
-            keywords: ['operators'],
-          },
+          link: {type: 'doc', id: 'search/search-query-language/search-operators/index'},
           items: [
             'search/search-query-language/search-operators/accum',
             'search/search-query-language/search-operators/as-operator',
@@ -639,13 +609,6 @@ module.exports = {
       label: 'Search FAQs',
       collapsible: true,
       collapsed: true,
-      link: {
-        type: 'generated-index',
-        title: 'Search FAQs',
-        description:
-          "This guide provides frequently answered questions about search and logs.",
-        keywords: ['faq'],
-      },
       items: [
         'search/search-faqs/export-results-of-saved-file',
         'search/search-faqs/group-messages-based-on-field',
