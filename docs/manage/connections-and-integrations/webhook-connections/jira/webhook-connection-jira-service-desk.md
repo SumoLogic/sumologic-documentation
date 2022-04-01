@@ -91,10 +91,6 @@ create webhook connections.
 
 ## Create a Scheduled Search
 
-Scheduled searches are saved searches that run automatically at
-specified intervals. When a scheduled search is configured to send an
-alert, it can be sent to another tool using a webhook connection.
+Scheduled searches are saved searches that run automatically at specified intervals. When a scheduled search is configured to send an alert, it can be sent to another tool using a webhook connection.
 
-To set up a scheduled search for a webhook connection follow the steps
-in the [Schedule Searches for Webhook
-Connections](../Schedule-Searches-for-Webhook-Connections.md "Schedule Searches for Webhook Connections") document.
+To set up a scheduled search for a webhook connection follow the steps in the [Schedule Searches for Webhook Connections](../schedule-searches-webhook-connections.md) document.

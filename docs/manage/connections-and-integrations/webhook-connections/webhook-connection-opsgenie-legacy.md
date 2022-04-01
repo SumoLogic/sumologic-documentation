@@ -4,7 +4,7 @@ id: opsgenie-legacy
 
 # Webhook Connection for Opsgenie (Legacy)
 
-[Webhook connections](Set_Up_Webhook_Connections.md "Set Up Webhook Connections") rely on HTTP endpoints that tell Sumo Logic where to send data. You can set up any number of connections. 
+[Webhook connections](set-up-webhook-connections.md) rely on HTTP endpoints that tell Sumo Logic where to send data. You can set up any number of connections. 
 
 ## Sumo Logic to Opsgenie Integration
 
@@ -27,7 +27,7 @@ To add a Sumo Logic integration in Opsgenie, do the following:
 
 Your Final Configurations at Opsgenie should look like this:
 
-![Webhook_Intergration_Example2.png]( /img/connection-and-integration/opsgenie-legacy.png)
+![Webhook_Intergration_Example2.png](/img/connection-and-integration/opsgenie-legacy.png)
 
 ## Configuration on Sumo Logic
 
@@ -39,7 +39,7 @@ In Sumo Logic, scheduled searches send alerts to other tools via webhook connect
 ### Create a webhook
 
 :::note
-You need the **Manage connections** [role capability](../../Users-and-Roles/Manage-Roles/05-Role-Capabilities.md "Role Capabilities") to create webhook connections.
+You need the **Manage connections** [role capability] (../../Users-and-Roles/Manage-Roles/05-Role-Capabilities.md "Role Capabilities") to create webhook connections.
 :::
 
 This section demonstrates how to create a webhook connection from Sumo Logic to Opsgenie.

@@ -7,7 +7,7 @@ id: datadog
 Once you set up a webhook connection you can send a Sumo Logic alert to your Datadog account. For information on how to build your webhook
 payload refer to Datadog webhooks in their [API Help](http://docs.datadoghq.com/integrations/webhooks/).
 
-[Webhook connections](Set_Up_Webhook_Connections.md "Set Up Webhook Connections") rely on HTTP endpoints that tell Sumo Logic where to send data. You can set up any number of connections.
+[Webhook connections](set-up-webhook-connections.md) rely on HTTP endpoints that tell Sumo Logic where to send data. You can set up any number of connections.
 
 Once you set up the webhook connection you'll have the option to use it in a [Scheduled Search](schedule-searches-webhook-connections.md) or [Monitor] (../../../Visualizations-and-Alerts/Alerts/Monitors.md "Monitors").
 

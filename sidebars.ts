@@ -165,10 +165,10 @@ module.exports = {
             'manage/connections-and-integrations/webhook-connections/slack',
             {
               type: 'category',
-              label: 'Webhook Connections',
+              label: 'Jira',
               collapsible: true,
               collapsed: true,
-              link: {type: 'doc', id: 'manage/connections-and-integrations/webhook-connections/index'},
+              link: {type: 'doc', id: 'manage/connections-and-integrations/webhook-connections/jira/index'},
               items: [
                 'manage/connections-and-integrations/webhook-connections/jira/jira-cloud',
                 'manage/connections-and-integrations/webhook-connections/jira/jira-server',

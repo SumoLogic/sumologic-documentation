@@ -5,7 +5,7 @@ id: opsgenie
 # Webhook Connection for Opsgenie
 
 [Webhook
-connections](Set_Up_Webhook_Connections.md "Set Up Webhook Connections") rely on HTTP endpoints that tell Sumo Logic where to send data. You can set up any number of connections. 
+connections](set-up-webhook-connections.md) rely on HTTP endpoints that tell Sumo Logic where to send data. You can set up any number of connections. 
 
 ## Sumo Logic to Opsgenie Integration
 
@@ -28,7 +28,7 @@ To add a Sumo Logic integration in Opsgenie, do the following:
 
 Your configuration in Opsgenie should look something like the following:
 
-![Webhook_Intergration_Example2.png]( /img/connection-and-integration/opsgenie.png)
+![Webhook_Intergration_Example2.png](/img/connection-and-integration/opsgenie.png)
 
 ## Configuration in Sumo Logic
 
@@ -48,7 +48,7 @@ This section demonstrates how to create a webhook connection from Sumo Logic to 
 1. In Sumo Logic, go to **Manage Data \> Monitoring \> Connections**.
 1. Click **+ Add** and choose **Opsgenie** as the connection type
 
-    ![Opsgenie webhook button.png]( /img/connection-and-integration/opsgenie-webhook-button.png)
+    ![Opsgenie webhook button.png](/img/connection-and-integration/opsgenie-webhook-button.png)
 
 1. Enter a **Name** and give an optional **Description** to the connection.
 1. Paste the **Integration Url** from Opsgenie into the **URL** field.

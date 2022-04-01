@@ -7,7 +7,7 @@ id: pagerduty
 PagerDuty webhook connections allow you to send alert results as a PagerDuty notification. You can learn more about PagerDuty webhooks in
 their [API Help](https://v2.developer.pagerduty.com/docs/webhooks-v2-overview).
 
-[Webhook connections](Set_Up_Webhook_Connections.md "Set Up Webhook Connections") rely on HTTP endpoints that tell Sumo Logic where to send data. You can set up any number of connections. Once you set up the webhook connection you'll have the option to use it in a [Scheduled Search](schedule-searches-webhook-connections.md) or [Monitor] (../../../Visualizations-and-Alerts/Alerts/Monitors.md "Monitors").
+[Webhook connections](set-up-webhook-connections.md) rely on HTTP endpoints that tell Sumo Logic where to send data. You can set up any number of connections. Once you set up the webhook connection you'll have the option to use it in a [Scheduled Search](schedule-searches-webhook-connections.md) or [Monitor] (../../../Visualizations-and-Alerts/Alerts/Monitors.md "Monitors").
 
 PagerDuty has a [Sumo Logic Integration Guide](https://www.pagerduty.com/docs/guides/sumo-logic-integration-guide/) with these same steps.
 
@@ -85,7 +85,7 @@ The URL and supported payload are different based on the version of the PagerDut
 1. In the **Payload** for the `description`, specify the description you want sent to PagerDuty.
 1. For details on other variables that can be used as parameters within your JSON object, see [Webhook Payload Variables](set-up-webhook-connections.md).
 
-     ![PagerDuty default payload.png]( /img/connection-and-integration/PagerDuty-default-payload.png)
+     ![PagerDuty default payload.png](/img/connection-and-integration/PagerDuty-default-payload.png)
 
 1. Click **Save**.
 

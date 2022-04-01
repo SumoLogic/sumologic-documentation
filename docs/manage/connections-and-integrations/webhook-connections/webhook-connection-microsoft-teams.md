@@ -8,11 +8,7 @@ id: microsoft-teams
 
 ## Prerequisite
 
-See how to [create an incoming
-webhook](https://docs.microsoft.com/en-us/microsoftteams/platform/webhooks-and-connectors/how-to/add-incoming-webhook "https://docs.microsoft.com/en-us/microsoftteams/platform/webhooks-and-connectors/how-to/add-incoming-webhook") in
-Microsoft's documentation. Make sure that you ****copy and save the
-URL**** from Microsoft, you'll need to provide it to Sumo Logic in
-the **URL** input field when you create the Microsoft Teams Connection.
+See how to [create an incoming webhook](https://docs.microsoft.com/en-us/microsoftteams/platform/webhooks-and-connectors/how-to/add-incoming-webhook) in Microsoft's documentation. Make sure that you **copy and save the URL** from Microsoft, you'll need to provide it to Sumo Logic in the **URL** input field when you create the Microsoft Teams Connection.
 
 ## Configuration in Sumo Logic
 
@@ -24,7 +20,7 @@ In Sumo Logic, Scheduled Searches and Monitors send alerts to other tools via we
 ## Create a Microsoft Teams Connection
 
 :::note
-You need the **Manage connections** [role capability](../../Users-and-Roles/Manage-Roles/05-Role-Capabilities.md "Role Capabilities") to create webhook connections.
+You need the **Manage connections** [role capability] (../../Users-and-Roles/Manage-Roles/05-Role-Capabilities.md "Role Capabilities") to create webhook connections.
 :::
 
 This section demonstrates how to create a webhook connection from Sumo Logic to Microsoft Teams.
@@ -32,7 +28,7 @@ This section demonstrates how to create a webhook connection from Sumo Logic to 
 1. In Sumo Logic, go to **Manage Data \> Monitoring \> Connections**.
 1. Click **+ Add** and choose **Microsoft Teams** as the connection type.
 
-    ![Microsoft Teams webhook connection tile.png]( /img/connection-and-integration/ms-teams-webhook-connection-tile)
+    ![Microsoft Teams webhook connection tile.png](/img/connection-and-integration/ms-teams-webhook-connection-tile.png)
 
 1. Enter a **Name** and give an optional **Description** to the connection.
 1. Paste the **URL** from Microsoft Teams into the **URL** field.

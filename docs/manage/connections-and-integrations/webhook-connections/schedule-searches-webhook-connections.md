@@ -17,11 +17,11 @@ To set up a scheduled search for a Webhook Connection:
 1. [Save a search](../../../search/get-started-with-search/search-basics/save-search.md). 
 1. On the **Save Item** page, click **Schedule this search**.
 
-   ![schedule frequency.png]( /img/connection-and-integration/schedule-frequency.png)
+   ![schedule frequency.png](/img/connection-and-integration/schedule-frequency.png)
 
 1. Change **Run Frequency** from "Never" to the desired frequency.
 
-   ![itemized alert.png]( /img/connection-and-integration/itemized-alert.png)
+   ![itemized alert.png](/img/connection-and-integration/itemized-alert.png)
 
 1. For all configuration options, see [Schedule a Search] (../../../Visualizations-and-Alerts/Alerts/Scheduled-Searches/Schedule_a_Search.md). 
 1. **Alert Type**. Select **Webhook**.

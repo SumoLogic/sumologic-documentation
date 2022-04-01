@@ -6,7 +6,7 @@ id: jira-cloud
 
 You can send JSON payloads from Sumo Logic alerts as an HTTP POST request to create Jira issues in Jira Cloud. Learn more about the Jira REST API in their [Jira Cloud platform Developer Reference](https://developer.atlassian.com/cloud/jira/platform/rest/v2/).
 
-[Webhook connections](../Set_Up_Webhook_Connections.md "Set Up Webhook Connections") rely on HTTP endpoints that tell Sumo Logic where to send data. You can set up any number of connections.
+[Webhook connections](../set-up-webhook-connections.md) rely on HTTP endpoints that tell Sumo Logic where to send data. You can set up any number of connections.
 
 ## Prerequisite
 
@@ -21,7 +21,7 @@ To send webhook alerts to Jira Cloud you need to include a Basic Authentication 
 
 1. Your response should look like the following image. You'll need the **Authorization** value when configuring the connection in Sumo Logic.
 
-   ![Atlassian Basic Authentication.png](/img/connector-integration/Atlassian-Basic-Authentication.png)
+   ![Atlassian Basic Authentication.png](/img/connection-and-integration/Atlassian-Basic-Authentication.png)
 
 ## Configuration in Sumo Logic
 
