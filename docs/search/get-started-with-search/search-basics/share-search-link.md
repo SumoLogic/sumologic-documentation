@@ -15,13 +15,17 @@ This link will be available for three years after it is created. 
 
 To share a link to a search:
 
-1.  Run a search you'd like to share.
-2.  (Optional) After the search results are complete, in the **Aggregates** tab, select a chart type to display the data visually. 
-3.  Click the three-dot icon and click **Share** from the provided options.   
+1. Run a search you'd like to share.
+1. (Optional) After the search results are complete, in the **Aggregates** tab, select a chart type to display the data visually. 
+1. Click the share icon on the top right of the search page,
 
-    ![select share](/img/search/get-started-search/search-basics/share-search-link/select-share.png)
+    ![select share](/img/search/get-started-search/search-basics/share-search-link/share-search-icon.png)
 
-4.  Do one of the following:
+    or click the three-dot icon and click **Share**.   
+
+    ![select share](/img/search/get-started-search/search-basics/share-search-link/share-from-menu.png)
+
+1. Do one of the following:
 
     **If the search is not saved:** The Share Search dialog appears with options to share with users and roles of an org in the following
     ways:
@@ -42,4 +46,4 @@ To share a link to a search:
 
     ![share saved search.png](/img/search/get-started-search/search-basics/share-search-link/share-saved-search.png)
     
-    * For information on publishing a search, see [Publishing a Search from the Library] (../../../01Start-Here/Library/Share-a-Saved-Search-from-the-Library.md).
+    * For information on publishing a search, see [Publishing a Search from the Library](../../../get-started/library/search-the-library.md).

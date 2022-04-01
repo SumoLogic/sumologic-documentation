@@ -18,7 +18,7 @@ Look for the load indicator in the bar below the bar chart in the search result
 * Medium (orange, two dots)
 * High (red, three dots)
 
-![search load](/img/search/search-page/search-load.png)
+![search load](/img/search/get-started-search/search-page/search-load.png)
 
 Click the dotted icon to get more information:
 

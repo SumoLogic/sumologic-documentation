@@ -21,6 +21,6 @@ Mark a saved search as a favorite:
 
 1. Click the three-dot icon and click **Favorite** from the provided options.   
 
-    ![favorite saved ](/img/search/search-page/favorite-saved.png)  
+    ![favorite saved ](/img/search/get-started-search/search-page/favorite-saved.png)  
       
     The saved search will now appear in the **Library** on the **Favorites** tab.

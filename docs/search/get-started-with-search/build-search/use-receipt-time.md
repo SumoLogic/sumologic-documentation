@@ -14,7 +14,7 @@ To run a search by Receipt Time:
 2.  Choose the Time Range for the query.
 3.  Click the gear icon to open the **Search Config** menu and toggle **Use Receipt Time** on.
 
-    ![receipt time option August 2021.png](/img/search/get-started-search/build-search/receipt-time-option.png)  
+    ![receipt time option.png](/img/search/get-started-search/build-search/receipt-time-option.png)  
      
 4.  Review the search results for wide discrepancies between message timestamp and receipt time to pinpoint Sources with incorrect timestamps:  
 

@@ -46,7 +46,7 @@ After configuring Sources to collect the logs you need, you can begin using sear
 
 * [General Search Examples Cheat Sheet](/docs/search/search-cheat-sheets): The search cheat sheet provides examples of useful search queries for different use cases.
 * [Search Basics] FIX (/docs/category/search-basics): This topic describes keyword searches and the basics of Sumo Logic’s search syntax.
-* [Modify a Search from the Messages tab](../search/get-started-with-search/how-to-use-search-page/modify-search-from-messages-tab.md): After running a search, you can modify subsequent searches by selecting text displayed in the Messages tab. After selecting text, you can choose how to modify the search using the options from a pop-up menu.
+* [Modify a Search from the Messages tab](../search/get-started-with-search/search-page/modify-search-from-messages-tab.md): After running a search, you can modify subsequent searches by selecting text displayed in the Messages tab. After selecting text, you can choose how to modify the search using the options from a pop-up menu.
 * [Parsing](/docs/search/search-query-language/parse-operators): Sumo Logic provides a number of ways to parse fields in your log messages.
 * [Aggregating](/docs/search/search-query-language/group-aggregate-operators): Aggregating functions evaluate messages and place them into groups, which allows you to count and order your results. Once you have aggregate results, you can visualize your data using charts.
 * [Search Operators] fix (/docs/category/search-operators): This section provides detailed syntax, rules, and examples for Sumo Logic Operators, Expressions, and Search Language.
@@ -59,7 +59,7 @@ Search optimization tools speed the search process, delivering query results in 
 * [Partitions] (../../../Manage/Partitions_and_Data_Tiers.md): Partitions speed the search process by allowing you to filter a subset of the log messages in an index.
 * [Scheduled Views] (../../../Manage/Scheduled-Views.md): Scheduled Views speed the search process for small and historical subsets of your data by functioning as a pre-aggregated index.
 * [Field Extraction] (../../../Manage/Field-Extractions.md): Field Extraction speeds the search process by parsing fields as log messages are ingested. The parsing is done automatically, so you don’t need to run a query to parse the fields.
-* [Field Browser](/docs/search/get-started-with-search/how-to-use-search-page/field-browser): The Field Browser allows you to zero in on just the fields of interest in a search by displaying or hiding selected fields without having to parse them. You can focus on the fields you’re interested in, avoiding the “noise” of fields you don’t want to see.
+* [Field Browser](/docs/search/get-started-with-search/search-page/field-browser): The Field Browser allows you to zero in on just the fields of interest in a search by displaying or hiding selected fields without having to parse them. You can focus on the fields you’re interested in, avoiding the “noise” of fields you don’t want to see.
 * [Search Templates](../search/get-started-with-search/build-search/search-templates.md): You can set up search templates to simplify searches for your users. Search templates shield users from search syntax and allow them to select search parameter values from a selector list.  
 
 ## Users, roles and security

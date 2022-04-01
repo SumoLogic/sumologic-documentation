@@ -14,7 +14,7 @@ For example, using this query:
 
 returns the following results in the **Messages** tab:
 
-![search highlighting feb 2022.png](/img/search/search-page/search-highlighting.png)
+![search highlighting feb 2022.png](/img/search/get-started-search/search-page/search-highlighting.png)
 
 Note that the search terms **Error** and **Exception** are highlighted in yellow.
 

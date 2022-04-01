@@ -20,7 +20,7 @@ After configuring Sources to collect the logs you need, you can begin using sear
 
 * [General Search Examples Cheat Sheet](/docs/search/search-cheat-sheets): The search cheat sheet provides examples of useful search queries for different use cases.
 * [Search Basics] FIX (/docs/category/search-basics): This topic describes keyword searches and the basics of Sumo Logic’s search syntax.
-* [Modify a Search from the Messages tab](../search/get-started-with-search/how-to-use-search-page/modify-search-from-messages-tab.md): After running a search, you can modify subsequent searches by selecting text displayed in the Messages tab. After selecting text, you can choose how to modify the search using the options from a pop-up menu.
+* [Modify a Search from the Messages tab](../search/get-started-with-search/search-page/modify-search-from-messages-tab.md): After running a search, you can modify subsequent searches by selecting text displayed in the Messages tab. After selecting text, you can choose how to modify the search using the options from a pop-up menu.
 * [Parsing](/docs/search/search-query-language/parse-operators) Sumo Logic provides a number of ways to parse fields in your log messages.
 * [Aggregating](/docs/search/search-query-language/group-aggregate-operators): Aggregating functions evaluate messages and place them into groups, which allows you to count and order your results. Once you have aggregate results, you can visualize your data using charts.
 * [Search Operators] fix (/docs/category/search-operators): This section provides detailed syntax, rules, and examples for Sumo Logic Operators, Expressions, and Search Language.

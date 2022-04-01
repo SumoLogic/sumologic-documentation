@@ -16,6 +16,6 @@ Click a bar in the histogram and use your cursor to select a contiguous set of b
 * Press **Shift Click** in the selected area (pink highlighted area) to open a new search tab for the selected time range.
 * Your selection is maintained if you go to another tab, but not if you close or save the search.
 
-    ![histogram drilldown](/img/search/search-page/histogram-drilldown.png)
+    ![histogram drilldown](/img/search/get-started-search/search-page/histogram-drilldown.png)
 
 If you prefer not to display the histogram, click the **Hide** link in the lower right of the histogram.

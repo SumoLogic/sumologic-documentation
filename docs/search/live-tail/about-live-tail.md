@@ -72,7 +72,7 @@ The **Run** button changes to **Running**, and log messages fill the screen.
 1. On the **Search** page, in the search box, enter a valid query for a Source Category, Source Host, Source Name, Source, or Collector with filters, if desired. (Live Tail will take everything before the first pipe, but search operators are not supported.)
 1. Click the three-dot icon and click **Live Tail** from the provided options.    
 
-    ![live tail option aug 24 2021.png](/img/search/livetail/About-Live-Tail/live-tail-option.png)
+    ![live tail option png](/img/search/livetail/About-Live-Tail/live-tail-option.png)
 
 1. The **Live Tail** page opens, and the Live Tail session starts.
 

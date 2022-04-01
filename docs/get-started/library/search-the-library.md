@@ -77,7 +77,7 @@ There is a known issue that may cause Pinned Searches to be lost when Sumo Logic
 1. Enter a query in the search box and click **Start**.
 1. Click the three-dot icon and click **Pin** from the provided options.  
 
-    ![pin search aug 24 2021.png](/img/get-started/library/pin-search-option.png)
+    ![pin search .png](/img/get-started/library/pin-search-option.png)
 
     A message displays that tells you where you can find it later in the Library.  
     
@@ -89,14 +89,14 @@ There is a known issue that may cause Pinned Searches to be lost when Sumo Logic
 1. To preserve the pinned search, follow the steps in Save a pinned search.
 1. To unpin the search, click **Unpin** in the menu bar.
 
-![unpin search aug 24 2021.png](/img/get-started/library/unpin-search-option.png)
+    ![unpin search .png](/img/get-started/library/unpin-search-option.png)
 
 ### Save a pinned search
 
 When you save a pinned search, it appears in your personal folder in the left navigation bar.
 
 1. Click the name of the search to open it in the **Search** tab.
-1. In the **Search** tab, click the three-vertical dot icon and click ****Save As**** from the provided options. The Save Item dialog appears.
+1. In the **Search** tab, click the three-vertical dot icon and click **Save As** from the provided options. The Save Item dialog appears.
 1. Enter a unique **Name** in the text field. In our example below, we entered Invoke Frequency.
 1. Optionally, enter a **Description**.
 1. Click **Save**.

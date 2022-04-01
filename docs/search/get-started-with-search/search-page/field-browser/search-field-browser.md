@@ -17,13 +17,13 @@ The histogram shows the top ten values (by percentage) of a field. If there are 
 
 When you click a numerical field the average, minimum, maximum, and standard deviation values are displayed in addition to the top ten values by percentage. Click one of the **DRILLDOWN** search options at the bottom of the pane to start a new search.
 
-![field browser number.png](/img/search/search-page/field-browser-number.png)
+![field browser number.png](/img/search/get-started-search/search-page/field-browser-number.png)
 
 ### Searches for fields containing strings
 
 The histogram shows the top ten values by percentage. Click one of the **DRILLDOWN** search options at the bottom of the pane to start a new search.
 
-![String values in Field Browser.png](/img/search/search-page/String-values-in-Field-Browser.png)
+![String values in Field Browser.png](/img/search/get-started-search/search-page/String-values-in-Field-Browser.png)
 
 ### Launching a search from the Field Browser
 

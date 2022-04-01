@@ -17,11 +17,11 @@ When you open a Log Search you'll have the option to switch between Basic and Ad
 
 1. Open a Log Search by clicking **+ New** then **Log Search**.
 
-    ![new log search.png](/img/search/search-page/new-log-search.png)
+    ![new log search.png](/img/search/get-started-search/search-page/new-log-search.png)
 
 1. Click the three-dot icon on the right of the Search page and select ****Basic Mode**** or **Advanced Mode** from the menu options.
 
-    ![search menu options.png](/img/search/search-page/search-menu-options.png)
+    ![search menu options.png](/img/search/get-started-search/search-page/search-menu-options.png)
 
 ## Basic Mode
 
@@ -31,38 +31,38 @@ Search offers an easy-to-use, structured query builder to help you write and com
 
 This section elaborates on the input options.
 
-![Basic mode query editor.png](/img/search/search-page/basic-mode-query-editor.png)
+![Basic mode query editor.png](/img/search/get-started-search/search-page/basic-mode-query-editor.png)
 
 * **Data Tier**
 
     Select from the drop down which Data Tier the query should run against, either Continuous, Frequent, or Infrequent. See [searching Data Tiers] (../../../Manage/Partitions_and_Data_Tiers/Searching_Data_Tiers.md "Searching Data Tiers") for further details.
     
-    ![Data Tier options.png](/img/search/search-page/Data-Tier-options.png) 
+    ![Data Tier options.png](/img/search/get-started-search/search-page/Data-Tier-options.png) 
 
 * **Index**
 
     Type in any [Partitions] (../../../Manage/Partitions_and_Data_Tiers/01-About-Partitions.md "About Partitions") you want to run the query against. When you click in the text area a list of available options is provided. Click an option to automatically fill in the value in the text area. You can continue to add additional Partitions if desired.
     
-    ![Basic mode Index options.png](/img/search/search-page/Basic-mode-Index-options.png)    
+    ![Basic mode Index options.png](/img/search/get-started-search/search-page/Basic-mode-Index-options.png)    
 
 * **Filters**
 
     Type in any [fields] (../../../Manage/Fields.md "Fields") you want to run the query against. Once you select a field you need to select a value for it. When you click in the text area and begin typing an autocomplete list begins to offer suggestions. Click a suggestion to automatically fill in the value in the text area. You can continue to add additional fields if desired.
 
-    ![basic mode filters option.png](/img/search/search-page/basic-mode-filters-option.png)
+    ![basic mode filters option.png](/img/search/get-started-search/search-page/basic-mode-filters-option.png)
 
     * **Not option**: Once you have entered a filter you'll see a gray **no symbol** or **prohibition sign** to the left of the filter.
 
-        ![prohibition sign.png](/img/search/search-page/prohibition-sign.png)
+        ![prohibition sign.png](/img/search/get-started-search/search-page/prohibition-sign.png)
 
         Click it to enable the filter as a NOT boolean, where the filter acts as an exclusion instead of inclusion. When enabled, the filter gets a border, and the no symbol changes to the color coral.
 
-        ![not option enabled.png](/img/search/search-page/not-option-enabled.png)
+        ![not option enabled.png](/img/search/get-started-search/search-page/not-option-enabled.png)
 
 * **Keywords**
 
     Type a [keyword search expression](../build-search/keyword-search-expressions.md) in the text area.
 
-    ![basic mode keywords input.png](/img/search/search-page/basic-mode-keywords-input.png)
+    ![basic mode keywords input.png](/img/search/get-started-search/search-page/basic-mode-keywords-input.png)
 
 For details on all the other Log Search page features, see [how to use the search page](/docs/search/get-started-with-search/how-to-use-search-page).
