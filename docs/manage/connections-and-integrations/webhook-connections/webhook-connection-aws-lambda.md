@@ -1,5 +1,5 @@
 ---
-id: webhook-connection-for-aws-lambda
+id: aws-lambda
 ---
 
 # Webhook Connection for AWS Lambda

@@ -1,79 +1,80 @@
 ---
-id: webhook-connection-for-opsgenie-legacy
+id: opsgenie-legacy
 ---
 
 # Webhook Connection for Opsgenie (Legacy)
 
-[Webhook
-connections](Set_Up_Webhook_Connections.md "Set Up Webhook Connections") rely
-on HTTP endpoints that tell Sumo Logic where to send data. You can set
-up any number of connections. 
+[Webhook connections](Set_Up_Webhook_Connections.md "Set Up Webhook Connections") rely on HTTP endpoints that tell Sumo Logic where to send data. You can set up any number of connections. 
 
-### Sumo Logic to Opsgenie Integration
+## Sumo Logic to Opsgenie Integration
 
-You can monitor your infrastructure using Sumo Logic’s schedule search
-and send Webhook alerts to Opsgenie which manages these alerts and
-determines the right on-call person to notify.
+You can monitor your infrastructure using Sumo Logic’s schedule search and send Webhook alerts to Opsgenie which manages these alerts and determines the right on-call person to notify.
 
-**To add a Sumo Logic integration in Opsgenie, do the following:**
+To add a Sumo Logic integration in Opsgenie, do the following:
 
-1.  Go to [Opsgenie Integration Page](https://app.opsgenie.com/integration#/add/SumoLogic).
-2.  Specify the following parameters:
+1. Go to [Opsgenie Integration Page](https://app.opsgenie.com/integration#/add/SumoLogic).
+1. Specify the following parameters:
 
-* Provide the Name.
-* Add the team who will be notified of Sumo Logic Alerts.
-* Copy the Integration URL, to be used in Sumo Logic while setting up the Webhook Connection.
+   * Provide the Name.
+   * Add the team who will be notified of Sumo Logic Alerts.
+   * Copy the Integration URL, to be used in Sumo Logic while setting up the Webhook Connection.
 
-For **Free** and **Essentials** plans, you can only add the
-integration from the Team Dashboard, use the alternative instructions:
-To add an integration directly to a team, navigate to the Team Dashboard
-and open the Integrations tab. Click **Add Integration** and search for
-Sumo Logic and click **add**.
+   :::note
+   For **Free** and **Essentials** plans, you can only add the integration from the Team Dashboard. Use the alternative instructions. To add an integration directly to a team, navigate to the Team Dashboard and open the Integrations tab. Click **Add Integration** and search for Sumo Logic and click **add**.
+   :::
 
-3.  Click **Save Integration**.
+1. Click **Save Integration**.
 
 Your Final Configurations at Opsgenie should look like this:
 
-![Webhook_Intergration_Example2.png](../../static/img/Connections-and-Integrations/Webhook-Connections/Webhook_Connection_for_Opsgenie_Legacy/Webhook_Intergration_Example2.png)
+![Webhook_Intergration_Example2.png]( /img/connection-and-integration/opsgenie-legacy.png)
 
-### Configuration on Sumo Logic
+## Configuration on Sumo Logic
 
-In Sumo Logic, scheduled searches send alerts to other tools via webhook
-connections. To send alerts from Sumo Logic to Opsgenie :
+In Sumo Logic, scheduled searches send alerts to other tools via webhook connections. To send alerts from Sumo Logic to Opsgenie :
 
-1.  [Create a Webhook](./Webhook_Connection_for_Opsgenie_Legacy.md "Webhook for Opsgenie").
-2.  [Use the Webhook in a Sumo scheduled search configuration](./Webhook_Connection_for_Opsgenie_Legacy.md "Webhook for Opsgenie").
+1. [Create a Webhook](#create-a-webhook).
+1. [Use the Webhook in a Sumo scheduled search configuration](#configure-a-scheduled-search).
 
-#### Create a webhook
+### Create a webhook
 
-You need the ********Manage connections******** [role
-capability](../../Users-and-Roles/Manage-Roles/05-Role-Capabilities.md "Role Capabilities") to
-create webhook connections.
+:::note
+You need the **Manage connections** [role capability](../../Users-and-Roles/Manage-Roles/05-Role-Capabilities.md "Role Capabilities") to create webhook connections.
+:::
 
-This section demonstrates how to create a webhook connection from Sumo
-Logic to Opsgenie.
+This section demonstrates how to create a webhook connection from Sumo Logic to Opsgenie.
 
-###### To create a webhook:
+To create a webhook:
 
-1.  In Sumo Logic, go to **Manage Data \> Alerts \> Connections**.
-2.  Click **+ Add** and choose **Webhook** as connection type.
-3.  For the name, enter **Sumo Logic Opsgenie** and give an optional description to the connection.
-4.  Paste the URL (used in [step 2](./Webhook_Connection_for_Opsgenie_Legacy.md "Webhook for Opsgenie")) into the **URL** field.
-5.  Enter the following content in the **Payload** field:
+1. In Sumo Logic, go to **Manage Data \> Alerts \> Connections**.
+1. Click **+ Add** and choose **Webhook** as connection type.
+1. For the name, enter **Sumo Logic Opsgenie** and give an optional description to the connection.
+1. Paste the URL (used in [step 2](#configure-a-scheduled-search)) into the **URL** field.
+1. Enter the following content in the **Payload** field:
 
-Opsgenie uses the priority value in the Payload field to define the
-priority of alerts. For this reason, you should change the priority to
-match your needs.
- {  "searchName": "{{SearchName}}",  "searchDescription": "{{SearchDescription}}",  "searchQuery": "{{SearchQuery}}",  "searchQueryUrl": "{{SearchQueryUrl}}",  "timeRange": "{{TimeRange}}",  "fireTime": "{{FireTime}}",  "rawResultsJson": "{{RawResultsJson}}",  "numRawResults": "{{NumRawResults}}",  "priority" : "P3",  "aggregateResultsJson" : "{{AggregateResultsJson}}" }
+    :::note
+    Opsgenie uses the priority value in the Payload field to define the priority of alerts. For this reason, you should change the priority to match your needs.
+    :::
 
-6.  Click **Save**.
+    ```json
+    {
+        "searchName": "{{SearchName}}",
+        "searchDescription": "{{SearchDescription}}",
+        "searchQuery": "{{SearchQuery}}",
+        "searchQueryUrl": "{{SearchQueryUrl}}",
+        "timeRange": "{{TimeRange}}",
+        "fireTime": "{{FireTime}}",
+        "rawResultsJson": "{{RawResultsJson}}",
+        "numRawResults": "{{NumRawResults}}",
+        "priority" : "P3",
+        "aggregateResultsJson" : "{{AggregateResultsJson}}"
+    }
+    ```
 
-#### Configure a Scheduled Search
+1. Click **Save**.
 
-Scheduled searches are saved searches that run automatically at
-specified intervals. When a scheduled search is configured to send an
-alert, it can be sent to another tool using a webhook connection.
+### Configure a Scheduled Search
 
-To set up a scheduled search for a webhook connection follow the steps
-in the [Schedule Searches for Webhook
-Connections](Schedule-Searches-for-Webhook-Connections.md "Schedule Searches for Webhook Connections") document.
+Scheduled searches are saved searches that run automatically at specified intervals. When a scheduled search is configured to send an alert, it can be sent to another tool using a webhook connection.
+
+To set up a scheduled search for a webhook connection follow the steps in the [Schedule Searches for Webhook Connections](schedule-searches-webhook-connections.md) document.

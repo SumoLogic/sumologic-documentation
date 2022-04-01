@@ -1,5 +1,5 @@
 ---
-id: servicenow
+slug: /servicenow
 ---
 
 # ServiceNow
@@ -15,8 +15,6 @@ Data is uploaded to ServiceNow via the use of scheduled searches. After saving 
 
 import DocCardList from '@theme/DocCardList';
 import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
-
-## Guide contents
 
 In this section, we will introduce the following concepts:
 
