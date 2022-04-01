@@ -94,7 +94,7 @@ At the top of the page, you can:
 
 * Click **Add** to:   
 
-![Add monitors page.png](/img/monitors/Add%20monitors%20page.png)
+![Add monitors page.png](/img/monitors/Add-monitors-page.png)
 
   * create folders for organizing your Monitors.
   * create a [new Monitor](#add-a-monitor).
