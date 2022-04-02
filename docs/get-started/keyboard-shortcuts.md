@@ -13,7 +13,7 @@ To disable keyboard shortcuts, for example, if they conflict with an internation
 ## Limitations
 
 - Keyboard shortcuts are not available when the Setup Wizard is open.
-- Keyboard shortcuts are disabled when typing in the [search text box](/docs/search/get-started-with-search/how-to-use-search-page). 
+- Keyboard shortcuts are disabled when typing in the [search text box]). 
 
 ## Keyboard Shortcuts on macOS
 

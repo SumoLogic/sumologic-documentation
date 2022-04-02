@@ -1,5 +1,5 @@
 ---
-slug: /webhook-connections
+slug: /manage/connections-and-integrations/webhook-connections
 ---
 
 # Webhook Connections

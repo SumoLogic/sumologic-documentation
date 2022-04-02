@@ -1,5 +1,5 @@
 ---
-slug: /servicenow
+slug: /manage/connections-and-integrations/servicenow
 ---
 
 # ServiceNow
