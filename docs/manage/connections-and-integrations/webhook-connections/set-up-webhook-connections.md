@@ -17,7 +17,7 @@ Along with a fully customizable webhook connection, you can quickly create webho
 * [Azure Functions](webhook-connection-microsoft-azure-functions.md)
 * [Datadog](webhook-connection-datadog.md)
 * [HipChat](webhook-connection-hipchat.md)
-* [Jira](/docs/webhook-jira)
+* [Jira](/docs/manage/connections-and-integrations/webhook-connections/webhook-jira)
 * [Microsoft Teams](webhook-connection-microsoft-teams.md)
 * [New Relic](webhook-connection-new-relic.md)
 * [Opsgenie](webhook-connection-opsgenie.md)

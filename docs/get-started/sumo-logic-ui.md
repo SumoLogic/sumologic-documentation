@@ -4,7 +4,7 @@ id: sumo-logic-ui
 
 # Tour the Sumo Logic UI
 
-[Welcome to Sumo Logic](01-Welcome_to_Sumo_Logic.md "Welcome to Sumo Logic!") introduced you to the process of getting data into Sumo Logic, searching and analyzing your data, then sharing your findings with your colleagues. This page familiarizes you with the Sumo Logic user interface (UI) by showing you how to:
+Welcome to Sumo Logic introduced you to the process of getting data into Sumo Logic, searching and analyzing your data, then sharing your findings with your colleagues. This page familiarizes you with the Sumo Logic user interface (UI) by showing you how to:
 
 * [Use the Left Navigation Bar](#using-the-left-navigation-bar)
 * [Work with tabs](#working-with-tabs)

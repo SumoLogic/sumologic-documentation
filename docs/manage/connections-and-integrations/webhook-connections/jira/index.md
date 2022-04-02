@@ -1,5 +1,5 @@
 ---
-slug: /webhook-jira
+slug: /manage/connections-and-integrations/webhook-connections/webhook-jira
 ---
 
 # Webhook Connections for Jira

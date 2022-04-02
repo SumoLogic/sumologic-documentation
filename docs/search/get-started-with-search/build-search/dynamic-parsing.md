@@ -73,7 +73,7 @@ The two modes available are:
 
 ## Reference parsed JSON fields
 
-The [field browser](/docs/search/get-started-with-search/search-page/field-browser) and search results [messages table](/docs/search/get-started-with-search/how-to-use-search-page) have a few helpful features. 
+The [field browser]/field-browser) and search results [messages table]) have a few helpful features. 
 
 Field Browser:
 
@@ -130,5 +130,5 @@ The following are limitations around the number of fields:
 
 * Dynamic Parsing extracts up to 100 fields per message. This 100 field count includes all built-in and parsed fields.
 * Total fields shown in the field browser consist of all the fields extracted across log lines.
-* The [Field Browser](/docs/search/get-started-with-search/search-page/field-browser) displays the count of the fields as well as the distribution of values of each field. These calculations are done for the first 200 fields that are parsed by a run-time FER.
+* The [Field Browser]/field-browser) displays the count of the fields as well as the distribution of values of each field. These calculations are done for the first 200 fields that are parsed by a run-time FER.
 * Non-aggregate queries in Scheduled Views and Scheduled Searches can't be created in auto parse mode (Dynamic Parsing).

@@ -19,7 +19,7 @@ As you type, search autocomplete underlines possible typos in your query and sug
 ![autocomplete keyword](/img/search/get-started-search/search-basics/autocomplete-keyword.png)
 
 Search autocomplete does not suggest all available Sumo Logic keywords, metadata terms, and search operators. For full details on what is
-supported, see [Search Operators] fix (/docs/category/search-operators).
+supported, see [Search Operators](/docs/search/search-query-language/group-aggregate-operators).
 
 More search autocomplete tips and limitations:
 

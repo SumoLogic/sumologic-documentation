@@ -1,5 +1,5 @@
 ---
-slug: /search-basics
+slug: /search/get-started-with-search/search-basics
 ---
 
 Sumo Logic search syntax uses logical and familiar operators allowing you to create ad hoc queries quickly and efficiently.

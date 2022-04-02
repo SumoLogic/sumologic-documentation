@@ -1,13 +1,13 @@
 ---
-slug: /connections-and-integrations
+slug: /manage/connections-and-integrations
 ---
 
 # Connections and Integrations
 
 On the **Manage Data \> Monitoring \> Connections** page, you can configure:
 
-* [Webhook Connections] (/docs/manage/connections-and-integrations/webhook-connections)
-* [ServiceNow Connections] (/docs/manage/connections-and-integrations/servicenow)
+* [Webhook Connections](/docs/manage/connections-and-integrations/webhook-connections)
+* [ServiceNow Connections](/docs/manage/connections-and-integrations/servicenow)
 
 You can also:
 

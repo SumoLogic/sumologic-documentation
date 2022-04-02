@@ -1,5 +1,5 @@
 ---
-slug: /how-to-use-the-search-page
+slug: /search/get-started-with-search/search-page
 ---
 
 # How to Use the Search Page

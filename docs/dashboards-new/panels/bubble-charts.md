@@ -33,7 +33,7 @@ To add a panel with a bubble chart:
 
 1. Provide a Log query and press **Enter** for it to run.
 
-    Enter your aggregate [search query] fix (/docs/category/search-operators) in the input field and press enter. Only search results that have been aggregated using a group or aggregate operator can be charted. See [Group or Aggregate Operators ](/docs/search/search-query-language/group-aggregate-operators) for a list.
+    Enter your aggregate [search query](/docs/search/search-query-language/group-aggregate-operators) in the input field and press enter. Only search results that have been aggregated using a group or aggregate operator can be charted. See [Group or Aggregate Operators ](/docs/search/search-query-language/group-aggregate-operators) for a list.
 
     ![Add log query.png](/img/dashboards-new/create-dashboard-new/Add-log-query.png)
 

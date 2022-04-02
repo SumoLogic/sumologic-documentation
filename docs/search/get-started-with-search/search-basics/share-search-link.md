@@ -19,11 +19,11 @@ To share a link to a search:
 1. (Optional) After the search results are complete, in the **Aggregates** tab, select a chart type to display the data visually. 
 1. Click the share icon on the top right of the search page,
 
-    ![select share](/img/search/get-started-search/search-basics/share-search-link/share-search-icon.png)
+    ![select share](/img/search/get-started-search/search-basics/share-search-icon.png)
 
     or click the three-dot icon and click **Share**.   
 
-    ![select share](/img/search/get-started-search/search-basics/share-search-link/share-from-menu.png)
+    ![select share](/img/search/get-started-search/search-basics/share-from-menu.png)
 
 1. Do one of the following:
 
@@ -34,16 +34,16 @@ To share a link to a search:
     * **Shareable Search URL**. **Copy the top link to share your search as a URL. Another user with access to your account can paste the link into a browser to run your search. If the user is not currently logged into Sumo Logic, he or she will be prompted to log in.
     * **Paste code in the search query box**. If you know that the recipient is logged into Sumo Logic, copy and provide them the bottom code. This code can be pasted into the Search query box of a new Search tab. When you update your chart, a new code is generated.  
   
-        ![share unsaved search popup.png](/img/search/get-started-search/search-basics/share-search-link/share-unsaved-search-popup.png)
+        ![share unsaved search popup.png](/img/search/get-started-search/search-basics/share-unsaved-search-popup.png)
 
     **If the search is saved:** the Share Search dialog provides options to share the link and code in the following way:  
     
     * Click inside the User and Roles field and make selections from the drop-down list.
 
-        ![Users and Roles options when sharing savedsearch.png](/img/search/get-started-search/search-basics/share-search-link/user-role-options.png)
+        ![Users and Roles options when sharing savedsearch.png](/img/search/get-started-search/search-basics/user-role-options.png)
 
     * You can choose to notify users by email and enter a note in the text field. You can also choose to copy and paste the shareable search URL into another form of electronic communication. Or if you know that the recipient is logged into Sumo Logic, the Search Query Box code can be pasted into the Search query box of a new Search.
 
-    ![share saved search.png](/img/search/get-started-search/search-basics/share-search-link/share-saved-search.png)
+    ![share saved search.png](/img/search/get-started-search/search-basics/share-saved-search.png)
     
     * For information on publishing a search, see [Publishing a Search from the Library](../../../get-started/library/search-the-library.md).

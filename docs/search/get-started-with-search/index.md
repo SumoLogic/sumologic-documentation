@@ -1,5 +1,5 @@
 ---
-slug: /get-started-with-search
+slug: /search/get-started-with-search
 ---
 
 Learn how to build and run searches, review logs, and more.

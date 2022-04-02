@@ -56,7 +56,7 @@ To set up a ServiceNow Webhook connection:
 1. **Authentication** can be done with a **Username and Password** or an **Authorization Header**.
 
    * Use the **Username** and **Password** used to log in to **ServiceNow**. 
-   * See how to set an [Authorization Heade*r*](../webhook-connections/set-up-webhook-connections.md).
+   * See how to set an [Authorization Header](../webhook-connections/set-up-webhook-connections.md).
 
 1. Set the **Type** to **Events** or **Incidents** based on what you want to create. This needs to align with the **URL** you provided.
 1. (Optional) **Custom Headers**, enter up to five comma separated key-value pairs.
