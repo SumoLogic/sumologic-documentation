@@ -30,7 +30,7 @@ To create a Field Extraction Rule:
 1. Click the **+ Add** button on the top right of the table.
 1. The following form appears:
 
-    ![Create Field extraction rule with dynamic parsing.png](/img/field-extractions/rules/create-fer.png)
+    ![Create Field extraction rule with dynamic parsing.png](/img/field-extraction-rules/create-fer.png)
 
 1. Enter the following options: 
 
