@@ -43,7 +43,7 @@ To create a Field Extraction Rule:
       * Run Time
         * Parsing support - JSON, automatically
         * Rule limit - none
-        * Time - During a search when using **Auto Parse Mode** from [Dynamic Parsing](../../05Search/Get-Started-with-Search/How-to-Build-a-Search/Dynamic_Parsing.md "Dynamic Parsing").
+        * Time - During a search when using **Auto Parse Mode** from [Dynamic Parsing](../../search/get-started-with-search/build-search/dynamic-parsing.md).
    * **Scope**. Select either **All Data** or **Specific Data**. When specifying data the options for the scope differ depending on when the rule is applied.
      * For an **Ingest Time** rule, type a [keyword search expression](../../search/get-started-with-search/build-search/keyword-search-expressions.md) that points to the subset of logs you'd like to parse. Think of the Scope as the first portion of an ad hoc search, before the first pipe (`|`). You'll use the Scope to run a search against the rule. Custom metadata fields are not supported here, they have not been indexed to your data yet at this point in collection.
      * For a **Run Time** rule, define the scope of your JSON data. You can define your JSON data source as a [Partition] (../Partitions_and_Data_Tiers/01-About-Partitions.md "About Partitions") Name(index), sourceCategory, Host Name, Collector Name, or any other [metadata](../../search/get-started-with-search/search-basics/built-in-metadata.md) that describes your JSON data. Think of the Scope as the first portion of an ad hoc search, before the first pipe (`|`). You'll use the Scope to run a search against the rule. You cannot use keywords like “info” or “error” in your scope.
