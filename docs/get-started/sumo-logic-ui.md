@@ -284,7 +284,7 @@ To manage data in Sumo Logic, do the following:
 
 1. Choose from the following, as needed:
 
-    * **Collection.** [Manage collectors and sources](/docs/collection).
+    * **Collection.** [Manage collectors and sources](/docs/manage/collection).
     * **Logs.** Manage [fields] (../Manage/Fields.md "Fields"), [field extraction rules] (../Manage/Field-Extractions.md "https://help.sumologic.com/Manage/Search_Optimization_Tools/Manage_Field_Extractions"), [partitions] (../Manage/Partitions_and_Data_Tiers.md "https://help.sumologic.com/Manage/Search_Optimization_Tools/Manage_Partitions"), [scheduled views] (../Manage/Scheduled-Views.md "Manage Scheduled Views"), [connections](/docs/manage/connections-and-integrations), and [data forwarding] (../Manage/Data-Forwarding.md "Data Forwarding").
     * **Metrics.** Manage metrics rules, [logs-to-metrics] (../Metrics/Logs-to-Metrics.md "Logs-to-Metrics"), and [metrics transformation rules] (../Metrics/Metrics_Transformation_Rules.md "Metrics Transformation Rules").
     * **Alerts.** [Monitors](/docs/monitors), [connections](/docs/manage/connections-and-integrations), and [health events] (../Manage/Health_Events.md "Health Events").

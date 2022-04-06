@@ -200,7 +200,7 @@ module.exports = {
                   {
                     label: 'Manage Sumo',
                     sublabel: 'Manage settings as admin',
-                    to: '/docs/collection',
+                    to: '/docs/manage/collection',
                     icon: 'start',
                     activeBaseRegex: '^/(collection)/.*',
                   },
