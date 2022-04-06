@@ -220,6 +220,43 @@ module.exports = {
         'manage/data-forwarding/manage-data-forwarding',
       ]
     },
+    {
+      type: 'category',
+      label: 'Field Extractions',
+      collapsible: true,
+      collapsed: true,
+      link: {type: 'doc', id: 'manage/field-extractions/index'},
+      items: [
+        'manage/field-extractions/field-naming-convention',
+        'manage/field-extractions/create-a-field-extraction-rule',
+        'manage/field-extractions/edit-field-extraction-rules',
+        'manage/field-extractions/example-template',
+        {
+          type: 'category',
+          label: 'Field Extractions',
+          collapsible: true,
+          collapsed: true,
+          link: {type: 'doc', id: 'manage/field-extractions/fer-templates/index'},
+          items: [
+            'manage/field-extractions/fer-templates/akamai-cloud-monitor',
+            'manage/field-extractions/fer-templates/apache-access-logs',
+            'manage/field-extractions/fer-templates/apache-tomcat-access-logs',
+            'manage/field-extractions/fer-templates/aws-cloudtrail-logs',
+            'manage/field-extractions/fer-templates/aws-elastic-load-balancing-logs',
+            'manage/field-extractions/fer-templates/aws-s3-usage-logs',
+            'manage/field-extractions/fer-templates/cisco-app',
+            'manage/field-extractions/fer-templates/microsoft-iis-logs',
+            'manage/field-extractions/fer-templates/nginx-logs',
+            'manage/field-extractions/fer-templates/palo-alto-networks',
+            'manage/field-extractions/fer-templates/varnish-logs',
+          ]
+        },
+        'manage/field-extractions/parse-elb-logs',
+        'manage/field-extractions/apache-tomcat-access-log-fer',
+        'manage/field-extractions/cisco-fwsm-fer',
+        'manage/field-extractions/safend-field-extraction',
+      ]
+    },
   ],
   dashboards: [
     {
