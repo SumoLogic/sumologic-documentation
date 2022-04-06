@@ -5,7 +5,7 @@ id: edit-field-extraction-rules
 # Edit Field Extraction Rules
 
 :::important
-You need the **Manage field extraction rules** [role capability](../Users-and-Roles/Manage-Roles/05-Role-Capabilities.md "Role Capabilities") to edit a field extraction rule. 
+You need the **Manage field extraction rules** [role capability] (../Users-and-Roles/Manage-Roles/05-Role-Capabilities.md "Role Capabilities") to edit a field extraction rule. 
 :::
 
 Changes to Field Extraction Rules are implemented immediately. Additionally, you can save a copy of a rule and make edits to the new version of the rule without making any changes to the original rule.

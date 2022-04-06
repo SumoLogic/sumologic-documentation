@@ -26,7 +26,7 @@ parse "user=\"*\" action=\"*\" sessionId=\"*\"" as user, action, sessionid
 
 | Field Name | Description | Example |
 |--|--|--|
-| user | User Email Address | [test@email.com](Example-Template/mailto:test@email.co.md "mailto:test@email.com") |
+| user | User Email Address | `test@email.com` |
 | action | Action performed by the user | Delete |
 | sessionId | Session ID for user action | 145623 |
 

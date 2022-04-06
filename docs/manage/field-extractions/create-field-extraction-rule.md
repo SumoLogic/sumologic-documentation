@@ -4,23 +4,23 @@ id: create-a-field-extraction-rule
 
 # Create a Field Extraction Rule
 
-You can [create a field extraction](./Create-a-Field-Extraction-Rule.md "https://help.sumologic.com/Manage/Search-Optimization-Tools/Manage-Field-Extractions/Create-a-Field-Extraction-Rule#Creating_a_new_Field_Extraction_Rule") rule of your own from scratch, or depending on your data source, you can use one of our templates that we provide in the drop-down menu.
+You can create a field extraction rule of your own from scratch, or depending on your data source, you can use one of our templates that we provide in the drop-down menu.
 
-You need the **Manage field extraction rules** [role capability](../Users-and-Roles/Manage-Roles/05-Role-Capabilities.md "Role Capabilities") to create a field extraction rule.
+You need the **Manage field extraction rules** [role capability] (../Users-and-Roles/Manage-Roles/05-Role-Capabilities.md "Role Capabilities") to create a field extraction rule.
 
 :::note
-Fields specified in field extraction rules are automatically added and enabled in your [Fields](../Fields.md "Fields") table schema.
+Fields specified in field extraction rules are automatically added and enabled in your [Fields] (../Fields.md "Fields") table schema.
 :::
 
 ## Limitations
 
 Ingest Time FERs have the following limitations.
 
-* There is a limit of 50 Ingest Time rules and 200 fields. [Fields](../Fields.md "Fields") created as log metadata and from Ingest Time rules share the same quota of 200 fields. You can manage your fields on the [Fields](../Fields.md "Fields") page.
+* There is a limit of 50 Ingest Time rules and 200 fields. [Fields] (../Fields.md "Fields") created as log metadata and from Ingest Time rules share the same quota of 200 fields. You can manage your fields on the [Fields] (../Fields.md "Fields") page.
 * Ingest Time rule expressions are limited to a maximum of 16k (16,384) characters.
 * Ingest Time rules can extract up to a maximum of 16k (16,384) characters for each field.
 * The cumulative size of all fields extracted by a rule for a message/event is limited to 64kb.
-* Ingest Time rules **only apply to data moving forward**. If you want to parse data ingested before the creation of your Ingest Time FER, you can either [parse](../../05Search/Search-Query-Language/01-Parse-Operators.md "/Search/Search_Query_Language/01_Parse_Operators") your data in your query, or create [Scheduled Views](../Scheduled-Views.md "/Manage/Search_Optimization_Tools/Manage_Scheduled_Views") to extract fields for your historical data.  
+* Ingest Time rules **only apply to data moving forward**. If you want to parse data ingested before the creation of your Ingest Time FER, you can either [parse](/docs/search/search-query-language/parse-operators) your data in your query, or create [Scheduled Views] (../Scheduled-Views.md "/Manage/Search_Optimization_Tools/Manage_Scheduled_Views") to extract fields for your historical data.  
 
 ## Creating a new Field Extraction Rule
 
@@ -43,17 +43,17 @@ To create a Field Extraction Rule:
       * Run Time
         * Parsing support - JSON, automatically
         * Rule limit - none
-        * Time - During a search when [using **Auto Parse Mode**](../../05Search/Get-Started-with-Search/How-to-Build-a-Search/Dynamic_Parsing.md "Dynamic Parsing") from [Dynamic Parsing](../../05Search/Get-Started-with-Search/How-to-Build-a-Search/Dynamic_Parsing.md "Dynamic Parsing").
+        * Time - During a search when using **Auto Parse Mode** from [Dynamic Parsing](../../05Search/Get-Started-with-Search/How-to-Build-a-Search/Dynamic_Parsing.md "Dynamic Parsing").
    * **Scope**. Select either **All Data** or **Specific Data**. When specifying data the options for the scope differ depending on when the rule is applied.
-     * For an **Ingest Time** rule, type a [keyword search expression](../../05Search/Get-Started-with-Search/How-to-Build-a-Search/Keyword-Search-Expressions.md "Keyword Search Expressions") that         points to the subset of logs you'd like to parse. Think of         the Scope as the first portion of an ad hoc search, before         the first pipe ( \| ). You'll use the Scope to run a search         against the rule. Custom metadata fields are not supported         here, they have not been indexed to your data yet at this         point in collection.
-     * For a **Run Time** rule, define the scope of your JSON data.         You can define your JSON data source as         a [Partition](../Partitions_and_Data_Tiers/01-About-Partitions.md "About Partitions") Name(index),         sourceCategory, Host Name, Collector Name, or any         other [metadata](../../05Search/Get-Started-with-Search/Search-Basics/Built-in-Metadata.md "Search Metadata") that         describes your JSON data. Think of the Scope as the first         portion of an ad hoc search, before the first pipe ( \| ).         You'll use the Scope to run a search against the rule. You         cannot use keywords like “info” or “error” in your scope.
+     * For an **Ingest Time** rule, type a [keyword search expression](../../search/get-started-with-search/build-search/keyword-search-expressions.md) that points to the subset of logs you'd like to parse. Think of the Scope as the first portion of an ad hoc search, before the first pipe (`|`). You'll use the Scope to run a search against the rule. Custom metadata fields are not supported here, they have not been indexed to your data yet at this point in collection.
+     * For a **Run Time** rule, define the scope of your JSON data. You can define your JSON data source as a [Partition] (../Partitions_and_Data_Tiers/01-About-Partitions.md "About Partitions") Name(index), sourceCategory, Host Name, Collector Name, or any other [metadata](../../search/get-started-with-search/search-basics/built-in-metadata.md) that describes your JSON data. Think of the Scope as the first portion of an ad hoc search, before the first pipe (`|`). You'll use the Scope to run a search against the rule. You cannot use keywords like “info” or “error” in your scope.
 
     :::note
     Always set up JSON auto extraction (Run Time field extraction) on a specific Partition name (recommended) or a particular Source. Failing to do so might cause the auto parsing logic to run on data sources where it is not applicable and will add additional overhead that might deteriorate the performance of your queries.
     :::
 
     :::sumo Best Practices
-    If you are not using Partitions we recommend using [metadata](../../05Search/Get-Started-with-Search/Search-Basics/Built-in-Metadata.md "Search Metadata") fields like \_sourceCategory, \_sourceHost or \_collector to define the scope.
+    If you are not using Partitions we recommend using [metadata](../../search/get-started-with-search/search-basics/built-in-metadata.md) fields like `_sourceCategory`, `_sourceHost` or `_collector` to define the scope.
     
     We recommend creating a separate Partition for your JSON dataset and use that Partition as the scope for run time field extraction. For example, let's say you have AWS Cloudtrail logs, and they are stored in `_view=cloudtrail` Partition in Sumo. You can create a Run Time FER with the scope `_view=cloudtrail`. Creating a separate Partition and using it as scope for a run time field extraction ensures that auto parsing logic only applies to necessary Partitions.
     :::
@@ -62,9 +62,9 @@ To create a Field Extraction Rule:
      * Click the drop down under **Parsed template** to see the available templates.
      * Choose a template and click **Use Template**. The template is applied to the Parse Expression.
    * **Parse Expression**. (Applicable to Ingest Time rules)
-     * Type a valid parse expression with [supported parse and search operators](./Create-a-Field-Extraction-Rule.md "Create a Field Extraction Rule"). Because fields are associated with the Rule Name, you can parse one particular field into as many rules as you'd like. For example, to parse a single field, you could use         a definition similar to this: `parse "message count = *," as msg_count ` To parse multiple fields, you could use a definition similar to this: `parse "[hostId=*] [module=*] [localUserName=*] [logger=*] [thread=*]" as hostId, module, localUserName, logger, thread`
+     * Type a valid parse expression with supported parse and search operators. Because fields are associated with the Rule Name, you can parse one particular field into as many rules as you'd like. For example, to parse a single field, you could use a definition similar to this: `parse "message count = *," as msg_count ` To parse multiple fields, you could use a definition similar to this: `parse "[hostId=*] [module=*] [localUserName=*] [logger=*] [thread=*]" as hostId, module, localUserName, logger, thread`
 
-1. **Extracted Fields** (applicable to Ingest Time rules) shows the field names the rule will parse. Any fields that do not exist in the Field table schema are shown with the text **New** highlighted in green. New fields are automatically created in the table schema when you save the rule. You can view and manage the field table schema on the [Fields](../Fields.md "Fields") page.
+1. **Extracted Fields** (applicable to Ingest Time rules) shows the field names the rule will parse. Any fields that do not exist in the Field table schema are shown with the text **New** highlighted in green. New fields are automatically created in the table schema when you save the rule. You can view and manage the field table schema on the [Fields] (../Fields.md "Fields") page.
 1. Click **Save** to create the rule.
 
 ## Best practices for designing Rules
