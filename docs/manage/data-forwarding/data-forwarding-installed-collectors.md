@@ -17,12 +17,12 @@ Follow the steps below to set up a Collector to forward raw log data to an exter
 You can set up Installed Collector data forwarding when you first configure Sources or at a later time. If you apply rules at a later time, keep in mind that they are not applied retroactively.
 
 :::note
-Data forwarding processing rules are processed after all other [processing rules](../Collection/Processing-Rules.md "Processing Rules").
+Data forwarding processing rules are processed after all other [processing rules](/docs/manage/collection/processing-rules).
 :::
 
 ## Configure data forwarding destination
 
-You need the [Manage Collectors role capability](../Users-and-Roles/Manage-Roles/05-Role-Capabilities.md "Role Capabilities") to create a data forwarding destination.
+You need the [Manage Collectors role capability] (../Users-and-Roles/Manage-Roles/05-Role-Capabilities.md "Role Capabilities") to create a data forwarding destination.
 
 To set up a data forwarding destination:
 

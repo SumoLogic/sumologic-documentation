@@ -214,10 +214,10 @@ module.exports = {
       collapsed: true,
       link: {type: 'doc', id: 'manage/data-forwarding/index'},
       items: [
-        'manage/data-forwarding/admin-mode',
-        'manage/data-forwarding/changing-alerts',
-        'manage/data-forwarding/content-sharing-faq',
-        'manage/data-forwarding/share-content',
+        'manage/data-forwarding/data-forwarding-installed-collectors',
+        'manage/data-forwarding/data-forwarding-to-s3',
+        'manage/data-forwarding/data-forwarding-amazon-s3-bucket',
+        'manage/data-forwarding/manage-data-forwarding',
       ]
     },
   ],

@@ -32,7 +32,7 @@ To edit an alert:
 
 1. Click **Edit this search's schedule**.
     
-    ![edit-search-schedule](/img/content-sharing/edit-search-schedule)
+    ![edit-search-schedule](/img/content-sharing/edit-search-schedule.png)
 
 1. Modify the frequency, time range, and alert type as needed.
 
@@ -48,7 +48,7 @@ If you have Edit permissions on the shared search, you can stop recipients from 
 1. Select the edit icon in the library for the scheduled search.
     
     ![EditAlert.png](/img/content-sharing/EditAlert.png)
-    
+
 1. In the **Edit Search** dialog, click **Edit this search's schedule**.
 1. From the **Run Frequency** menu, choose **Never** to cancel the scheduled search.
 1. Click **Update** to save your changes.
