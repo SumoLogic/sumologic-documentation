@@ -1,5 +1,5 @@
 ---
-slug: /collection
+slug: /manage/collection
 ---
 
 # Collection

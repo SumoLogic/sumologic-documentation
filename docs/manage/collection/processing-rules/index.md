@@ -1,5 +1,5 @@
 ---
-slug: /processing-rules
+slug: /manage/collection/processing-rules
 ---
 
 # Processing Rules

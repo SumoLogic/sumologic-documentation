@@ -194,6 +194,32 @@ module.exports = {
         'manage/connections-and-integrations/jfrog-artifactory-sumo-logic-integration',
       ],
     },
+    {
+      type: 'category',
+      label: 'Content Sharing',
+      collapsible: true,
+      collapsed: true,
+      link: {type: 'doc', id: 'manage/content-sharing/index'},
+      items: [
+        'manage/content-sharing/admin-mode',
+        'manage/content-sharing/changing-alerts',
+        'manage/content-sharing/content-sharing-faq',
+        'manage/content-sharing/share-content',
+      ]
+    },
+    {
+      type: 'category',
+      label: 'Data Forwarding',
+      collapsible: true,
+      collapsed: true,
+      link: {type: 'doc', id: 'manage/data-forwarding/index'},
+      items: [
+        'manage/data-forwarding/admin-mode',
+        'manage/data-forwarding/changing-alerts',
+        'manage/data-forwarding/content-sharing-faq',
+        'manage/data-forwarding/share-content',
+      ]
+    },
   ],
   dashboards: [
     {
