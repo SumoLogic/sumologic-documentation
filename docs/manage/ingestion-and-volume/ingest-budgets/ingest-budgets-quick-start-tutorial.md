@@ -48,11 +48,11 @@ These parameters are from the Ingest Budget's API documentation, linked in the
 | Parameter | Description | Data Type |
 |--|--|--|
 | name (required) | Display name of the ingest budget. | string `[ 1 .. 128 ] characters` |
-| fieldValue (required) | Custom field value that is used to assign Collectors to the ingest budget. | string   `[ 1 .. 1024 ] characters` |
-| capacityBytes (required) | Capacity of the ingest budget, in bytes.<br/>It takes a few minutes for Collectors to stop collecting when capacity is reached. We recommend setting a soft limit that is lower than your needed hard limit. | integer <int64>   `>= 0` |
+| fieldValue (required) | Custom field value that is used to assign Collectors to the ingest budget. | string `[ 1 .. 1024 ] characters` |
+| capacityBytes (required) | Capacity of the ingest budget, in bytes.<br/>It takes a few minutes for Collectors to stop collecting when capacity is reached. We recommend setting a soft limit that is lower than your needed hard limit. | integer `<int64> >= 0` |
 | timezone (required) | Time zone of the reset time for the ingest budget. Follow the format in the [IANA Time Zone Database.](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List) | string |
-| resetTime (required) | Reset time of the ingest budget in HH:MM format. | string   `5 characters` |
-| description | Description of the ingest budget. | string   `[ 0 .. 1024 ] characters` |
+| resetTime (required) | Reset time of the ingest budget in HH:MM format. | string `5 characters` |
+| description | Description of the ingest budget. | string `[ 0 .. 1024 ] characters` |
 | action (required) | Action to take when ingest budget's capacity is reached. All actions are audited. Supported values are:<ul><li>stopCollecting</li><li>keepCollecting</li></ul> | string |
 
 ### Example POST request cURL command

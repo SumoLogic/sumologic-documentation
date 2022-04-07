@@ -291,6 +291,26 @@ module.exports = {
         'manage/ingestion-and-volume/monitor-ingestion-receive-alerts',
       ]
     },
+    {
+      type: 'category',
+      label: 'Partitions and Data Tiers',
+      collapsible: true,
+      collapsed: true,
+      link: {type: 'doc', id: 'manage/partitions-and-data-tiers/index'},
+      items: [
+        'manage/partitions-and-data-tiers/about-partitions',
+        'manage/partitions-and-data-tiers/add-partition',
+        'manage/partitions-and-data-tiers/edit-partition',
+        'manage/partitions-and-data-tiers/run-search-against-partition',
+        'manage/partitions-and-data-tiers/view-partition-details',
+        'manage/partitions-and-data-tiers/edit-data-forwarding-destinations-partition',
+        'manage/partitions-and-data-tiers/manage-indexes-variable-retention',
+        'manage/partitions-and-data-tiers/decommission-partition',
+        'manage/partitions-and-data-tiers/data-tiers',
+        'manage/partitions-and-data-tiers/data-tiers-faqs',
+        'manage/partitions-and-data-tiers/searching-data-tiers',
+      ]
+    },
   ],
   dashboards: [
     {

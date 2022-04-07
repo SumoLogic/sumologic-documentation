@@ -48,7 +48,7 @@ There are two versions of ingest budgets:
 
 * V1 ingest budgets are older and have a **Field Value** for Collector assignment. They are shown with a **V1** in the **Name** cell
 
-    ![v1 budget tag.png](/img/ingestion-and-volume/Ingest_Budgets/v1-budget-tag.png)
+    ![v1 budget tag.png](/img/ingestion-and-volume/v1-budget-tag.png)
 
 * V2 ingest budgets provide you the ability to assign budgets to your log data by either [Fields] (../Fields.md) or the following [built in metadata](../../../search/get-started-with-search/search-basics/built-in-metadata.md) fields, `_collector`, `_source`, `_sourceCategory`, `_sourceHost`, and `_sourceName`.
 

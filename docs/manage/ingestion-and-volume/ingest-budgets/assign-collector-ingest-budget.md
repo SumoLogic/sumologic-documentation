@@ -11,7 +11,7 @@ id: assign-collector-ingest-budget
 | CloudFlex | Enterprise |
 | Credits | Trial, Enterprise Operations, Enterprise Security, Enterprise Suite |
 
-Once you have [created an ingest budget](Assign_Collector_to_Ingest_Budget/...md "Ingest Budgets") you can assign a Collector to it. You can assign a Collector to an ingest budget by:
+Once you have created an ingest budget you can assign a Collector to it. You can assign a Collector to an ingest budget by:
 
 * Using the [Collection](#assign-collector-to-ingest-budget) page.
 * Using the `fields` parameter at any time with the [Collector Management API](#collector-management-api) or when first registering a Collector with Sumo with the [command line installer](#command-line-installation) or [user.properties](#userproperties) file.
@@ -22,7 +22,7 @@ The UI installer for Installed Collectors does not support assigning ingest budg
 
 On the **Manage Data** \> **Collection** \> **[Collection page](/docs/manage/collection)** when editing an existing Collector or creating a new Hosted Collector there is an option, **Assign to a Budget**, that allows you to assign an ingest budget to a Collector.
 
-![assign to a budget dropdown option.png](/img/ingestion-and-volume/assign-to-a-budget-dropdown-option.png)
+![assign to a budget dropdown option.png](/img/ingestion-and-volume/assign-budget-dropdown-option.png)
 
 The drop-down displays your ingest budgets in the following format:
 
