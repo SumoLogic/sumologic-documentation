@@ -1,5 +1,5 @@
 ---
-id: "-edit-a-partition"
+id: edit-partition
 ---
 
 # Edit a Partition

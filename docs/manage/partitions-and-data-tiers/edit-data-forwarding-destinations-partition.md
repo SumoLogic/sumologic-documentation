@@ -1,5 +1,5 @@
 ---
-id: "-edit-data-forwarding-destinations-partition"
+id: edit-data-forwarding-destinations-partition
 ---
 
 # Edit Data Forwarding Destinations for a Partition

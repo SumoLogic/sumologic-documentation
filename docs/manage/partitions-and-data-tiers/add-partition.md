@@ -1,5 +1,5 @@
 ---
-id: add-a-partition
+id: add-partition
 ---
 
 # Add a Partition
