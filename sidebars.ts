@@ -257,6 +257,40 @@ module.exports = {
         'manage/field-extractions/safend-field-extraction',
       ]
     },
+    {
+      type: 'category',
+      label: 'Ingestion and Volume',
+      collapsible: true,
+      collapsed: true,
+      link: {type: 'doc', id: 'manage/ingestion-and-volume/index'},
+      items: [
+        'manage/ingestion-and-volume/log-ingestion',
+        'manage/ingestion-and-volume/collection-status-page',
+        {
+          type: 'category',
+          label: 'Data Volume Index',
+          collapsible: true,
+          collapsed: true,
+          link: {type: 'doc', id: 'manage/ingestion-and-volume/data-volume-index/index'},
+          items: [
+            'manage/ingestion-and-volume/data-volume-index/log-tracing-data-volume-index',
+            'manage/ingestion-and-volume/data-volume-index/metrics-data-volume-index',
+          ]
+        },
+        {
+          type: 'category',
+          label: 'Ingest Budgets',
+          collapsible: true,
+          collapsed: true,
+          link: {type: 'doc', id: 'manage/ingestion-and-volume/ingest-budgets/index'},
+          items: [
+            'manage/ingestion-and-volume/ingest-budgets/assign-collector-ingest-budget',
+            'manage/ingestion-and-volume/ingest-budgets/ingest-budgets-quick-start-tutorial',
+          ]
+        },
+        'manage/ingestion-and-volume/monitor-ingestion-receive-alerts',
+      ]
+    },
   ],
   dashboards: [
     {
