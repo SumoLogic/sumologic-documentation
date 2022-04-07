@@ -36,3 +36,12 @@ You can create one or more processing rules for a Source, combining the differen
 When a Source has multiple rules they are processed in the following order: includes, excludes, masks, then forwarders.   
   
 Exclude rules take priority over include rules. Include rules are processed first, however, if an exclude rule matches data that matched the include rule filter, the data is excluded.
+
+import DocCardList from '@theme/DocCardList';
+import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
+
+## Guide contents
+
+In this section, we will introduce the following concepts:
+
+<DocCardList items={useCurrentSidebarCategory().items}/>
