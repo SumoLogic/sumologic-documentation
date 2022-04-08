@@ -96,7 +96,6 @@ module.exports = {
       collapsible: true,
       collapsed: true,
       items: [
-        'manage/security/installation-tokens',
         'CSE/global-intel'
       ],
      },
@@ -344,6 +343,49 @@ module.exports = {
         'manage/scheduled-views/scheduled-view-lag-time',
         'manage/scheduled-views/scheduled-views-best-practices',
         'manage/scheduled-views/view-list-scheduled-views',
+      ]
+    },
+    {
+      type: 'category',
+      label: 'Security',
+      collapsible: true,
+      collapsed: true,
+      link: {type: 'doc', id: 'manage/security/index'},
+      items: [
+        'manage/security/about-2-step-verification',
+        'manage/security/two-step-for-admins',
+        'manage/security/two-step-for-users',
+        'manage/security/access-keys',
+        'manage/security/audit-index',
+        'manage/security/audit-event-index',
+        'manage/security/create-allowlist-ip-cidr-addresses',
+        'manage/security/data-access-level-shared-dashboards',
+        'manage/security/enable-support-account',
+        'manage/security/installation-tokens',
+        {
+          type: 'category',
+          label: 'SAML',
+          collapsible: true,
+          collapsed: true,
+          link: {type: 'doc', id: 'manage/security/saml/index'},
+          items: [
+            'manage/security/saml/set-up-saml',
+            'manage/security/saml/integrate-with-bitium',
+            'manage/security/saml/integrate-google-iam-service',
+            'manage/security/saml/integrate-with-okta',
+            'manage/security/saml/integrate-onelogin',
+            'manage/security/saml/integrate-aws-sso',
+            'manage/security/saml/integrate-azure-ad',
+            'manage/security/saml/manage-permissions-with-adfs',
+            'manage/security/saml/set-up-adfs-authenticate-users',
+            'manage/security/saml/view-saml-debug-information',
+          ]
+        },
+        'manage/security/search-audit-index',
+        'manage/security/log-search-audit-index',
+        'manage/security/set-password-policy',
+        'manage/security/set-limit-user-concurrent-sessions',
+        'manage/security/set-max-web-session-timeout',
       ]
     },
   ],

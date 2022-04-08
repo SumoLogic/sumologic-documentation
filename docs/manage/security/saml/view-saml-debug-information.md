@@ -4,13 +4,11 @@ id: view-saml-debug-information
 
 # View SAML Debug Information
 
-When you select the Debug Mode option for SAML  (**Administration�\>
-Security \> SAML**), whenever an error occurs a debug page displays.
+When you select the Debug Mode option for SAML  (**Administration \> Security \> SAML**), whenever an error occurs a debug page displays.
 
-![](/img/security/saml-config-debug.png)  
+![img](/img/security/saml-config-debug.png)  
   
-The debug page is displayed in a new browser window (not in the Sumo Web
-application). A new page is generated for each error.
+The debug page is displayed in a new browser window (not in the Sumo Web application). A new page is generated for each error.
 
 ![Debug](/img/security/SAML_debug_page.png)
 

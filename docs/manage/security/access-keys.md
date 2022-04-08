@@ -7,7 +7,7 @@ id: access-keys
 In Sumo Logic, you must use an access key to:
 
 * **Register new Collectors.** When you install a Collector, in addition to having a role that grants you the **Manage Collectors** capability, you must supply an access key. You can use a different access key for each Collector, or use the same access key for multiple Collectors. The only time a Collector uses the access key is at installation, so if a key is deleted after a Collector has been set up, the Collector isn't affected.
-* **Use Sumo Logic APIs.** You must supply an access key to use the Sumo Logic APIs. See [API Authentication](../../APIs/General-API-Information/API-Authentication.md "API Authentication") for details.
+* **Use Sumo Logic APIs.** You must supply an access key to use the Sumo Logic APIs. See [API Authentication] (../../APIs/General-API-Information/API-Authentication.md "API Authentication") for details.
 
 You can create and manage your own access keys on the **Preferences** page in the Sumo web app. If your role grants you the **Manage Access Keys** capability, you can manage access keys created by other Sumo users on the **Administration** \> **Security** \> **Access Keys** page.
 
@@ -94,7 +94,7 @@ If you have the **Manage Access Keys** capability you can use the **Access Keys*
     ![access-key-security-page.png](/img/security/access-key-security-page.png)
      
 1. At the top right of the table, click **+ Add Access Key**.
-1. Follow the steps in [Manage your own access keys on Preferences page](./Access-Keys.md "Access Keys") above, starting with step 3.
+1. Follow the steps in [Manage your own access keys on Preferences page](#manage-your-access-keys-on-preferences-page) above, starting with step 3.
 
 ### Edit, deactivate, or delete access keys
 

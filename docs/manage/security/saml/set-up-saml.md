@@ -21,12 +21,12 @@ The provisioning process works as follows:
 
 1. Identify the service provider you will use for SSO. For example: 
 
-    * [AWS Single Sign-On](Integrate_Sumo_with_AWS_Single_Sign-On.md "Integrate Sumo with AWS Single Sign-On")
-    * [Azure Active Directory (AD)](Integrate_Sumo_with_Azure_AD.md "Integrate Sumo with Azure AD") 
-    * [Google IAM](Integrate-Sumo-Logic-with-Google-Apps-(G-Suite)-IAM-Service.md "Integrate Sumo Logic with Google Apps (G Suite) IAM Service") 
-    * [Microsoft Active Directory Federation Services (ADFS)](Set-Up-ADFS-to-Authenticate-Sumo-Logic-Users.md "Set Up ADFS to Authenticate Sumo Logic Users") 
-    * [Okta](Integrate-Sumo-Logic-with-Okta.md "Integrate Sumo Logic with Okta") 
-    * [OneLogin](Integrate_Sumo_Logic_with_OneLogin.md "Integrate Sumo Logic with OneLogin")
+    * [AWS Single Sign-On](integrate-aws-sso.md)
+    * [Azure Active Directory (AD)]((integrate-sumo-with-azure-ad.md) 
+    * [Google IAM](integrate-google-iam-service.md)
+    * [Microsoft Active Directory Federation Services (ADFS)](set-up-adfs-authenticate-users.md)
+    * [Okta](integrate-sumo-logic-with-okta.md)
+    * [OneLogin](integrate-onelogin.md)
 
 1. Configure SAML parameters in Sumo Logic.
 1. Configure service provider settings for Sumo Logic in the SSO system, and verify that any additional Role-Based Access Control (RBAC) roles and groups are set up.
@@ -42,7 +42,7 @@ This means that if a user has been turned off on the SSO side, their access keys
 
 ## SAML does not provide a deprovisioning mechanism 
 
-This means that if a user is deleted or disabled in the SSO database, it will not be reflected in Sumo Logic. However, these users would no longer be able to login to Sumo Logic via SSO. Administrators can delete these users from the **Administration \> Users and Roles \> Users** page in Sumo Logic. For information about what happens when a user is deleted, and transferring a deleted user's content to another user, see [Delete a User](../../Users-and-Roles/Manage-Users/11-Delete-a-User.md "Delete a User").
+This means that if a user is deleted or disabled in the SSO database, it will not be reflected in Sumo Logic. However, these users would no longer be able to login to Sumo Logic via SSO. Administrators can delete these users from the **Administration \> Users and Roles \> Users** page in Sumo Logic. For information about what happens when a user is deleted, and transferring a deleted user's content to another user, see [Delete a User] (../../Users-and-Roles/Manage-Users/11-Delete-a-User.md "Delete a User").
 
 ## Only one certificate for each SAML configuration is currently supported
 
@@ -58,7 +58,7 @@ Before provisioning SAML, make sure you have the following:
 
 ## Configure basic SAML in Sumo
 
-Follow these steps to configure IdP-initiated login. After this procedure, you can enable optional SAML functionality, including SP-initiated login and on-demand provisioning, as described in [Optional Configurations](./01-Set-Up-SAML-for-Single-Sign-On.md "Set Up SAML for Single Sign-On").
+Follow these steps to configure IdP-initiated login. After this procedure, you can enable optional SAML functionality, including SP-initiated login and on-demand provisioning, as described in [Optional Configurations](set-up-saml.md).
 
 1. Go to **Administration** \> **Security** \> **SAML**.
 1. Select an existing configuration, or click the plus (**+**) icon to create a new configuration.
@@ -67,7 +67,7 @@ Follow these steps to configure IdP-initiated login. After this procedure, you c
 
 1. The **Add Configuration** page appears.
 1. **Configuration Name**: Enter a name to identify the SSO policy (or another name used internally to describe the policy).
-1. **Debug Mode**: Select this option if you'd like to view additional details if an error occurs when a user attempts to authenticate. For more information, see [View SAML Debug Information](View-SAML-Debug-Information.md "View SAML Debug Information").
+1. **Debug Mode**: Select this option if you'd like to view additional details if an error occurs when a user attempts to authenticate. For more information, see [View SAML Debug Information](view-saml-debug-information.md).
 1. **Issuer**: Enter the unique URL assigned to your organization by the SAML IdP.  
 
     ADFS example: `http://adfs.myserver.tld/adfs/services/trust`
@@ -78,7 +78,7 @@ Follow these steps to configure IdP-initiated login. After this procedure, you c
    * **Use SAML subject** 
    * **Use SAML attribute** and type the email attribute name in the text box.
 
-1. If you are done configuring SAML, click **Add** to save your changes, and proceed to [Review SAML configuration](./01-Set-Up-SAML-for-Single-Sign-On.md "Set Up SAML for Single Sign-On"). To configure optional SAML features, see the following section. 
+1. If you are done configuring SAML, click **Add** to save your changes, and proceed to [Review SAML configuration](set-up-saml.md). To configure optional SAML features, see the following section. 
 
 ## Review SAML configuration
 
@@ -95,7 +95,7 @@ This section has instructions for configuring several optional SAML features.
 ### Configure SP initiated Login 
 
 :::tip
-SP initiated login requires a custom Sumo Logic subdomain. If a custom subdomain has not yet been configured for your org, following the instructions in the [Change account subdomain](../../01Manage_Subscription/12Manage_Organizational_Settings.md "Manage Organization") section of the *Manage Organization* topic.
+SP initiated login requires a custom Sumo Logic subdomain. If a custom subdomain has not yet been configured for your org, following the instructions in the [Change account subdomain](../../manage-subscription/manage-org-settings.md) section of the *Manage Organization* topic.
 :::
 
 This section has instructions for setting up SP initiated login. When SP initiated login has been enabled, your SAML configuration will appear as an additional authentication option within your subdomain-enabled account login page.
@@ -112,7 +112,7 @@ In the steps below, you provide the information necessary for Sumo to issue a SP
 
 1. (Optional) **Sign Authn Request**. If you select this option, Sumo will send signed Authn requests to your IdP. When you click this option, a Sumo-provided X-509 certificate is displayed. You can configure your IDP with this certificate, to use to verify the signature of the Authn requests sent by Sumo. 
 
-1. If you are done configuring optional SAML features, click **Add** to save your changes, and proceed to [Review SAML configuration](./01-Set-Up-SAML-for-Single-Sign-On.md "Set Up SAML for Single Sign-On"). To configure optional SAML features, see the following section. 
+1. If you are done configuring optional SAML features, click **Add** to save your changes, and proceed to [Review SAML configuration](set-up-saml.md). To configure optional SAML features, see the following section. 
 
 ### Configure on-demand roles provisioning 
 
@@ -132,7 +132,7 @@ If you enable the **Roles Attribute** option, Sumo Logic assigns roles to a user
     There are two parts to configuring on-demand roles provisioning:  you configure the **Roles Attribute** on the Sumo side, and you configure that same value using a option when configuring the IdP to integrate with Sumo. The option or parameter you set depends on the IdP.
     :::
 
-1. If you are done configuring optional SAML features, click **Add** to save your changes, and proceed to [Review SAML configuration](./01-Set-Up-SAML-for-Single-Sign-On.md "Set Up SAML for Single Sign-On"). To configure optional SAML features, see the following section. 
+1. If you are done configuring optional SAML features, click **Add** to save your changes, and proceed to [Review SAML configuration](set-up-saml.md). To configure optional SAML features, see the following section. 
 
 ### Configure on-demand user account provisioning
 
@@ -150,7 +150,7 @@ When the account is created, Sumo Logic credentials are emailed to the user. Use
     `http://schemas.microsoft.com/ws/2008/06/identity/claims/surname`    
 
 1. **On Demand Provisioning Roles**. Specify the Sumo RBAC roles you want to assign when user accounts are provisioned. (The roles must already exist.)
-1. If you are done configuring optional SAML features, click **Add** to save your changes, and proceed to [Review SAML configuration](./01-Set-Up-SAML-for-Single-Sign-On.md "Set Up SAML for Single Sign-On").  
+1. If you are done configuring optional SAML features, click **Add** to save your changes, and proceed to [Review SAML configuration](set-up-saml.md).  
 
 ### Configure logout page
 
@@ -158,7 +158,7 @@ Configure a logout page if you would like to point Sumo users to a particular UR
 
 1.  Click the **Logout Page** checkbox.
 2.  Enter the URL of the page to which you want to direct users after logging of Sumo.
-3.  Click **Add** to save your configuration, and proceed to [Review SAML configuration](./01-Set-Up-SAML-for-Single-Sign-On.md "Set Up SAML for Single Sign-On").  
+3.  Click **Add** to save your configuration, and proceed to [Review SAML configuration](set-up-saml.md).  
 
 ## Create multiple SAML configurations
 

@@ -14,20 +14,13 @@ Remember to capture any content created by the Sumo Logic support account and as
 
 ## Who can access my support account? 
 
-When a support agent requests access, he or she is asked for the
-explicit reason why access is required. Additionally, you can control
-the amount of time the agent can access the support account to ensure it
-is limited to the shortest amount of time necessary to complete the
-investigation.
+When a support agent requests access, he or she is asked for the explicit reason why access is required. Additionally, you can control
+the amount of time the agent can access the support account to ensure it is limited to the shortest amount of time necessary to complete the investigation.
 
 ## Do I need to create a special user account? 
 
-No, the Sumo Logic support user account is automatically added to your
-organization's account. If you accidentally delete the user, you can
-just disable, then re-enable the support account and the Sumo Logic
-support user will be recreated. However, any content created or shared
-from the previous iteration of the Sumo Logic support user will be
-deleted.
+No, the Sumo Logic support user account is automatically added to your organization's account. If you accidentally delete the user, you can
+just disable, then re-enable the support account and the Sumo Logic support user will be recreated. However, any content created or shared from the previous iteration of the Sumo Logic support user will be deleted.
 
 ## Enable the support account for your organization
 

@@ -1,5 +1,5 @@
 ---
-id: "-step-verification-for-users"
+id: two-step-for-users
 ---
 
 # 2-Step Verification for Users
@@ -10,7 +10,7 @@ These sections describe how to set up and use 2-Step Verification for your Sumo 
 
 If your organization requires 2-Step Verification, you will be guided through the required configuration at the time of your first login. If 2-Step Verification is optional, you can choose to perform the tasks in this section for additional security. You must be able to generate a 2-Step Verification token, which you can do with an app installed on a mobile device.
 
-1. Download and install a Time-based One-Time Password (TOTP) app for your mobile device. The following apps have been tested to work with 2-Step Verification (any [RFC 6238](https://tools.ietf.org/html/rfc6238 "https://tools.ietf.org/html/rfc6238") compatible app should work): 
+1. Download and install a Time-based One-Time Password (TOTP) app for your mobile device. The following apps have been tested to work with 2-Step Verification (any [RFC 6238](https://tools.ietf.org/html/rfc6238) compatible app should work): 
 
     * For Android, IOS and Blackberry: [Google Authenticator](https://support.google.com/accounts/answer/1066447?hl=en)
     * For Android and IOS: [Duo Mobile](https://duo.com/product/trusted-users/two-factor-authentication/duo-mobile)
@@ -69,10 +69,7 @@ You can find your codes in one of two ways:
 
 ## Change your device
 
-You can change the device used for 2-Step Verification from within your
-account. If you do not have access to your account or your backup codes,
-contact your Sumo Logic Administrator to help you reset 2-Step
-Verification on your account. 
+You can change the device used for 2-Step Verification from within your account. If you do not have access to your account or your backup codes, contact your Sumo Logic Administrator to help you reset 2-Step Verification on your account. 
 
 To change your device for 2-Step Verification:
 

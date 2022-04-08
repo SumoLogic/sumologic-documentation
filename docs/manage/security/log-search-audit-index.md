@@ -13,7 +13,7 @@ The Search Audit Index is populated with log messages and the message contains s
 1. Click **Start** to run the search. Results return in the **Messages** tab.
 
 :::note
-Querying the index returns results only if the index is enabled. See [Enabling the Index for details.](Log_Search_Audit_Index/...md "https://help.sumologic.com/Beta/Enterprise_Search_Audit_App/Search_Audit_Index")
+Querying the index returns results only if the index is enabled. 
 :::
 
 ## Log Search Audit Index Message Fields
@@ -23,11 +23,11 @@ The following table provides details on the fields returned by the index:
 | Field  | Description |
 |--|--|
 | `time` | The time when the audit log was generated. |
-| `analytics_tier` | The data tier associated with the audit message. Learn more about tiers *[here](../../Partitions_and_Data_Tiers/Data_Tiers.md).* |
+| `analytics_tier` | The data tier associated with the audit message. Learn more about [Data Tiers](../partitions-and-data-tiers/data-tiers.md).* |
 | `data_retreived_bytes` | Amount of data retrieved by the search query. This represents the approximate size of messages that match the source expression of the query and are retrieved from scanning. |
 | `data_scanned_bytes` | Amount of data scanned by the search query. This is an approximation as scanned message bytes are captured at intermittent time intervals and averaged over a query time range. *(May be less than retrieved bytes in some cases due to this approximation)* |
 | `execution_duration_ms` | Time taken to complete the search. |
-| `is_aggregate` | The boolean variable that indicates if the corresponding search query was an aggregate query. The aggregate operator’s list can be found [*here*](../../../05Search/Search-Query-Language/aaGroup.md). |
+| `is_aggregate` | The boolean variable that indicates if the corresponding search query was an aggregate query. The aggregate operator’s list can be found [*here*](/docs/search/search-query-language/group-aggregate-operators). |
 | `query` | The query text string run by the user. |
 | `query_end_time` | The end time in the time range specified as part of the query time parameter. (in ms epoch) |
 | `query_start_time` | The start time in the time range specified as part of the query time parameter. (in ms epoch) |
@@ -55,8 +55,8 @@ The table below shows the possible values for the field, query_type.
 | Live Dashboard | Search queries used to power live dashboard panels. |
 | Compare | Search queries that are run as part of the logreduce operator or compare timeshift operators in the search query. The corresponding parent search query can be identified by the same session_id. |
 | Subquery | Subqueries are run as a separate search and corresponding attributes are captured in the Search Audit Index. The corresponding parent search query can be identified by the same session_id.      |
-| Monitor | Queries associated with [monitors](../../../Visualizations-and-Alerts/Alerts/Monitors.md "Monitors"). |
+| Monitor | Queries associated with [monitors](/docs/monitors). |
 
 ## Index retention period
 
-By default, the retention period of the Log Search Audit index is the same as the retention period of your Default Continuous Partition. You can change the retention period by editing the partition that contains the index, `sumologic_search_usage_per_query`. For more information, see [Edit a Partition](../../Partitions_and_Data_Tiers/04_Edit_a_Partition.md "Edit a Partition").
+By default, the retention period of the Log Search Audit index is the same as the retention period of your Default Continuous Partition. You can change the retention period by editing the partition that contains the index, `sumologic_search_usage_per_query`. For more information, see [Edit a Partition](../partitions-and-data-tiers/edit-partition.md).

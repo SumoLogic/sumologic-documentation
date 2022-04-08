@@ -15,7 +15,7 @@ This page has instructions for integrating OneLogin and Sumo Logic to allow Sumo
 
 ## Before you start
 
-Read the "Limitations section" on [Set Up SAML for Single Sign-On](01-Set-Up-SAML-for-Single-Sign-On.md "Set Up SAML for Single Sign-On").
+Read the "Limitations section" on [Set Up SAML for Single Sign-On](set-up-saml.md).
 
 ## Configure a SAML app in OneLogin
 
@@ -52,7 +52,7 @@ Read the "Limitations section" on [Set Up SAML for Single Sign-On](01-Set-Up-SA
           
 1. On the **SSO** tab:
 
-    * Copy the **Issuer URL** and the **SAML 2.0 Endpoint** to supply when you configure Sumo Logic in [Step 2](./Integrate_Sumo_Logic_with_OneLogin.md "Integrate Sumo Logic with OneLogin") below.  
+    * Copy the **Issuer URL** and the **SAML 2.0 Endpoint** to supply when you configure Sumo Logic in Step 2 below.  
     * Right-Click **View Details** for the X.509 Certificate and open in a new tab.            
 
         ![sso.png](/img/security/sso.png)
@@ -81,14 +81,14 @@ This section has instructions for configuring SAML in Sumo Logic.
     ![add-config-onelogin](/img/security/add-config-onelogin.png)
 
 1. **Configuration Name**. Enter a name to identify the SSO policy (or another name used internally to describe the policy).
-1. **Debug Mode**. Select this option if you'd like to view additional details if an error occurs when a user attempts to authenticate. For more information, see [View SAML Debug Information](View-SAML-Debug-Information.md "View SAML Debug Information").
-1. **Issuer**. Paste in the **Issuer URL** you copied from the OneLogin **SSO** page, as described [above](./Integrate_Sumo_Logic_with_OneLogin.md "Integrate Sumo Logic with OneLogin").
-1. **X.509 Certificate**. Paste in the certificate you downloaded from the OneLogin **SSO** page, as described [above](./Integrate_Sumo_Logic_with_OneLogin.md "Integrate Sumo Logic with OneLogin"). 
+1. **Debug Mode**. Select this option if you'd like to view additional details if an error occurs when a user attempts to authenticate. For more information, see [View SAML Debug Information](view-saml-debug-information.md).
+1. **Issuer**. Paste in the **Issuer URL** you copied from the OneLogin **SSO** page, as described above.
+1. **X.509 Certificate**. Paste in the certificate you downloaded from the OneLogin **SSO** page, as described above. 
 1. **Attribute mapping**. Select "Use SAML subject".
-1. **SP-initiated Login**. (Optional) This configuration enables a Sumo user to initiate login from the Sumo Logic web app. To configure this option, see [Configure SP-initiated login](./Integrate_Sumo_Logic_with_OneLogin.md "Integrate Sumo Logic with OneLogin").
-1. **Roles Attribute**. (Optional). To configure this option, see [Configure on-demand role provisioning](./Integrate_Sumo_Logic_with_OneLogin.md "Integrate Sumo Logic with OneLogin").
-1. **On Demand Provisioning**. (Optional). See [Configure on demand provisioning](./Integrate_Sumo_Logic_with_OneLogin.md "Integrate Sumo Logic with OneLogin") below.
-v**Logout Page**. When a Sumo user logs out of Sumo Logic or if the user’s session times out, they will be redirected to the page you specify. If you want users to be redirected to your OneLogin portal page, enter   `https``://your-domain.onelogin.com/portal/` where `your-domain` is your company's OneLogin domain.
+1. **SP-initiated Login**. (Optional) This configuration enables a Sumo user to initiate login from the Sumo Logic web app. To configure this option, see [Configure SP-initiated login](#configure-sp-initiated-login).
+1. **Roles Attribute**. (Optional). To configure this option, see [Configure on-demand role provisioning](#configure-on-demand-role-provisioning).
+1. **On Demand Provisioning**. (Optional). See [Configure on demand provisioning](#configure-on-demand-account-provisioning) below.
+v**Logout Page**. When a Sumo user logs out of Sumo Logic or if the user’s session times out, they will be redirected to the page you specify. If you want users to be redirected to your OneLogin portal page, enter `https``://your-domain.onelogin.com/portal/` where `your-domain` is your company's OneLogin domain.
 1. Click **Add**. 
 1. To view the details of your configuration, select it the **Configuration List**.
 1. Copy the **Assertion Consumer** and **Entity ID** from the details pane**.** You'll paste these into the OneLogin **Configuration** page, as described in the following section.   
@@ -113,12 +113,12 @@ features.
 ### Configure SP-initiated login
 
 :::tip
-SP initiated login requires a custom Sumo Logic subdomain. If a custom subdomain has not yet been configured for your org, following the instructions in the [Change account subdomain](../../01Manage_Subscription/12Manage_Organizational_Settings.md "Manage Organization") section of the *Manage Organization* topic.
+SP initiated login requires a custom Sumo Logic subdomain. If a custom subdomain has not yet been configured for your org, following the instructions in the [Change account subdomain](../../manage-subscription/manage-org-settings.md) section of the *Manage Organization* topic.
 :::
 
 This configuration enables a Sumo user to initiate login from the Sumo Logic web app. Sumo redirects the user to OneLogin with a SAML AuthnRequest with the  information that OneLogin needs to authenticate the user. OneLogin replies to Sumo with a SAML Assertion (SAMLResponse). 
 
-1. **Authn Request URL**. Enter the **SAML 2.0 Endpoint URL** that you copied from the OneLogin **SSO** page, as described [above](./Integrate_Sumo_Logic_with_OneLogin.md "Integrate Sumo Logic with OneLogin"). 
+1. **Authn Request URL**. Enter the **SAML 2.0 Endpoint URL** that you copied from the OneLogin **SSO** page, as described above. 
 1. **Disable Requested Authentication Context**. (Optional). Leave unchecked.
 1. **Sign Authn Request**. (Optional). Leave unchecked.
 

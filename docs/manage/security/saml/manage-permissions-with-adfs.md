@@ -28,7 +28,7 @@ For more information on “The Role of Claims”, see this Microsoft TechNet art
 
 To create a new Claim Rule:
 
-1. Complete the provisioning steps in [Set Up SAML for Single Sign-On](01-Set-Up-SAML-for-Single-Sign-On.md "Set Up SAML for Single Sign-On").
+1. Complete the provisioning steps in [Set Up SAML for Single Sign-On](set-up-saml.md).
 1. Open the ADFS Management application.
 1. Click **Edit Claims**.
 1. Select the template **Send Claims Using a Custom Rule**.

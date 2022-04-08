@@ -50,7 +50,7 @@ This section has instructions for configuring basic SAML in Sumo Logic.
     ![saml-configuration-page.png](/img/security/saml-configuration-page.png)
     
 1. **Configuration Name**. Enter a name for the configuration, for example “AWS Single Sign-On”.
-1. **Debug Mode**. Select this option if you'd like to view additional details if an error occurs when a user attempts to authenticate. For more information, see [View SAML Debug Information](View-SAML-Debug-Information.md "View SAML Debug Information").
+1. **Debug Mode**. Select this option if you'd like to view additional details if an error occurs when a user attempts to authenticate. For more information, see [View SAML Debug Information](view-saml-debug-information.md).
 1. **Issuer**. Paste in the **AWS SSO Issuer URL** from the **AWS SSO Metadata** section of your AWS SSO configuration. 
 1. **X.509 Certificate**. Open the certificate file you downloaded from AWS in a text editor. Copy all text from the file and paste it in here.  
 1. **Attribute mapping**. Select **Use SAML Subject**.

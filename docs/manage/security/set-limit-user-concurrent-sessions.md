@@ -8,7 +8,7 @@ User Concurrent sessions refer to the number of interactive, UI based, sessions 
 
 To enhance the security of an account an Administrator can apply a limit to the number of concurrent sessions a user may have open to between 1 and 100. When a user attempts to authenticate to Sumo Logic and open a new session beyond the defined limit, the user will be automatically signed out of their oldest inactive session. 
 
-To configure this option, you must be a Sumo Logic Administrator or have the "Manage organization settings" [role capability](../Users-and-Roles.md "Users and Roles").
+To configure this option, you must be a Sumo Logic Administrator or have the "Manage organization settings" [role capability] (../Users-and-Roles.md "Users and Roles").
 
 To configure a concurrent sessions limit:
 

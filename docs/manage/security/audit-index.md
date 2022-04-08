@@ -13,7 +13,7 @@ id: audit-index
 
 The **Audit Index** provides event logs in plain text on the internal events that occur in your account associated with account management, throttling, scheduled searches, and more. Events report audit messages, and these event messages are collected to give you better visibility into your account usage.
 
-This index is different from the [Audit Event Index](Audit_Event_Index.md "Audit Event Index"), and there is some
+This index is different from the [Audit Event Index](audit-event-index.md), and there is some
 overlap of audited events. The Audit Event Index provides event logs in JSON on activities from your account.
 
 Before you can use the audit index, an administrator must enable it. When the audit index is enabled, Sumo logs messages to it once every five minutes. Note that data does not backfill.
@@ -28,7 +28,7 @@ All users can access the data contained within the audit index, but only adminis
 2.  Next to **Sumo Logic Auditing**, select the **Enable** check box.
 
 :::important
-Auditing typically adds a nominal amount of data to your overall volume (approximately one to two percent) when pre-aggregated. Depending on your Sumo Logic account type and subscription, this data will count against your data volume quota. For more information, see [Manage Ingestion](../Ingestion-and-Volume/01Log_Ingestion.md "Manage Ingestion").
+Auditing typically adds a nominal amount of data to your overall volume (approximately one to two percent) when pre-aggregated. Depending on your Sumo Logic account type and subscription, this data will count against your data volume quota. For more information, see [Manage Ingestion](../ingestion-and-volume/log-ingestion.md).
 :::
 
 ## Query the audit index
@@ -39,7 +39,7 @@ You can query the audit index in a log search tab. To search for all types of au
 _index=sumologic_audit
 ```
 
-You can run more targeted search by including other metadata, message fields, or keywords in your query. The source categories for event types are listed in [Audit index source categories](./Audit-Index.md "Enable and Manage Auditing") below. The fields associated with event messages are listed in [Audit event message fields](./Audit-Index.md "Enable and Manage Auditing"). 
+You can run more targeted search by including other metadata, message fields, or keywords in your query. The source categories for event types are listed in [Audit index source categories](#audit-index-source-categories) below. The fields associated with event messages are listed in [Audit event message fields](#audit-event-message-fields). 
 
 Results are returned in the **Messages** tab.
 
@@ -68,11 +68,11 @@ The table below lists defines the fields returned for an audit event. Note that 
 |--|--|
 | Time (\_messagetime) | The time that the event occurred |
 | Message (\_raw) | The raw log message written to the audit index.  |
-| Action | The action that was performed. Actions vary by event type. For more information, see [Audit event classes and actions](./Audit-Index.md "Enable and Manage Auditing").    |
-| Class | The object affected by the event. Classes vary by event type. For more information, see [Audit event classes and actions](./Audit-Index.md "Enable and Manage Auditing"). |
+| Action | The action that was performed. Actions vary by event type. For more information, see [Audit event classes and actions](#audit-event-classes-and-actions).    |
+| Class | The object affected by the event. Classes vary by event type. For more information, see [Audit event classes and actions](#audit-event-classes-and-actions). |
 | Collector | Values include "InternalCollector".  |
 | Interface | Indicates how the event was initiated from the Sumo UI or using an API. Values include: "UI", "API", and "INTERNAL". |
-| \_sourceCategory | The source category associated with the event type. For more information, see [Audit index source](./Audit-Index.md "Enable and Manage Auditing") categories below.       |
+| \_sourceCategory | The source category associated with the event type. For more information, see [Audit index source](#audit-index) categories below.       |
 | \_sourcehost | IP address of the source's host, or "no_sourcehost". |
 | sourceSession | The session ID associated with the event, or "no_session". |
 | sourceUser | The Sumo username associated with the event.  |
@@ -137,7 +137,7 @@ The events have these formats:
 Status is provided to the audit index (`_index=sumologic_audit`) in the account management source category
 (`_sourceCategory=account_management`) and volume quota source (`_sourceName=VOLUME_QUOTA`). The status includes the type of resource that experienced throttling in the last 15 minutes.
 
-A scheduled search can be set up to send an alert when throttling occurs. See [Schedule a search](../../Visualizations-and-Alerts/Alerts/Scheduled-Searches/Schedule_a_Search.md "Schedule a Search"). 
+A scheduled search can be set up to send an alert when throttling occurs. See [Schedule a search] (../../Visualizations-and-Alerts/Alerts/Scheduled-Searches/Schedule_a_Search.md "Schedule a Search"). 
 
 Throttling events reported include:
 
@@ -164,7 +164,7 @@ yields the following throttling notification.
 
 AWS automatically throttles CloudWatch data if the limits that Amazon sets for the associated APIs are exceeded.  If you have a high volume of metrics data points in your account, it is likely that Amazon will throttle your CloudWatch data.
 
-If no adjustments are made on the Sumo Logic side, throttling on the Amazon side can cause metrics data to be dropped. To prevent this from occurring, Sumo Logic automatically doubles the CloudWatch scan interval if more than one throttling message is received in a single interval. However, the change in scan interval isn't reflected in the Sumo Logic UI. The original configured interval is still shown. See [Amazon CloudWatch Source for Metrics](../../03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/Amazon-CloudWatch-Source-for-Metrics.md "Amazon CloudWatch Source for Metrics") for instructions on setting the CloudWatch scan interval. 
+If no adjustments are made on the Sumo Logic side, throttling on the Amazon side can cause metrics data to be dropped. To prevent this from occurring, Sumo Logic automatically doubles the CloudWatch scan interval if more than one throttling message is received in a single interval. However, the change in scan interval isn't reflected in the Sumo Logic UI. The original configured interval is still shown. See [Amazon CloudWatch Source for Metrics] (../../03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/Amazon-CloudWatch-Source-for-Metrics.md "Amazon CloudWatch Source for Metrics") for instructions on setting the CloudWatch scan interval. 
 
 When the scan interval is increased, a message is added to the audit log. No action is required by the Sumo Logic user. 
 
@@ -253,7 +253,7 @@ _sourceCategory=support_account_activity
 The table below shows the value of the class and action fields for support account events.
 
 :::note
-Support account events are logged only if you have [enabled a support account](Enable-a-Support-Account.md "Support Accounts").
+Support account events are logged only if you have [enabled a support account] (Enable-a-Support-Account.md "Support Accounts").
 :::
 
 | Class | Actions | 
@@ -293,8 +293,8 @@ The table below shows the value of the `class` and `action` fields for metric 
 | Class | Actions | Description |
 |--|--|--|
 | INGEST | TRUNCATE |  |
-| METRIC_EXTRACTION | SKIP | A logs-to-metrics rule extracted one or more dimensions that are longer than 250 character. For more information, see [Logs-to-Metrics](../../Metrics/Logs-to-Metrics.md "Logs-to-Metrics"). |
+| METRIC_EXTRACTION | SKIP | A logs-to-metrics rule extracted one or more dimensions that are longer than 250 character. For more information, see [Logs-to-Metrics] (../../Metrics/Logs-to-Metrics.md "Logs-to-Metrics"). |
 
 ### Index retention period
 
-By default, the retention period of the Audit Index is the same as the retention period of your Default Continuous Partition. You can change the retention period by editing the partition that contains the index, `sumologic_audit`. For more information, see [Edit a Partition](../Partitions_and_Data_Tiers/04_Edit_a_Partition.md "Edit a Partition").
+By default, the retention period of the Audit Index is the same as the retention period of your Default Continuous Partition. You can change the retention period by editing the partition that contains the index, `sumologic_audit`. For more information, see [Edit a Partition](../partitions-and-data-tiers/edit-partition.md).

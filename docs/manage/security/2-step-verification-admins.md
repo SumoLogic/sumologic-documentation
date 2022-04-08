@@ -1,5 +1,5 @@
 ---
-id: "-step-verification-for-administrators"
+id: two-step-for-admins
 ---
 
 # 2-Step Verification for Administrators
@@ -8,7 +8,7 @@ These sections describe how to administer 2-Step Verification across your organi
 
 ## Configure the global 2-Step Verification policy
 
-Configuring 2-Step Verification policy requires the role capability to [set up a password policy](../Set-the-Password-Policy.md "Set the Password Policy").  See [About 2-Step Verification](2-Step_Verification_for_Administrators/...md "About 2-Step Verification") for an explanation of the **Required** and **Optional** options.
+Configuring 2-Step Verification policy requires the role capability to [set up a password policy](set-password-policy.md).  See [About 2-Step Verification](about-2-step-verification.md) for an explanation of the **Required** and **Optional** options.
 
 To configure the 2-Step Verification policy for your organization:
 
@@ -21,7 +21,7 @@ To configure the 2-Step Verification policy for your organization:
 
 ## Manage 2-Step Verification for your organization
 
-An administrator with the [role capability](../../Users-and-Roles/Manage-Roles/05-Role-Capabilities.md "Role Capabilities") to manage users and roles can perform the following 2-Step Verification management functions for an organization.
+An administrator with the [role capability] (../../Users-and-Roles/Manage-Roles/05-Role-Capabilities.md "Role Capabilities") to manage users and roles can perform the following 2-Step Verification management functions for an organization.
 
 **View 2-Step Verification status**. The **2SV** column on the **Administration** \> **Users and Roles** \> **Users** page shows a green check mark if 2-Step Verification is enabled for a user.
 

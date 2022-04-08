@@ -13,7 +13,7 @@ id: integrate-with-bitium
 
 Bitium is a cloud-based identity management provider that can be integrated with Sumo Logic’s SAML 2.0 API to allow users to log in to Sumo Logic using their Single Sign-On (SSO) credentials.SAML 2.0 API to allow users to log in to Sumo Logic using their Single Sign-On (SSO) credentials.
 
-You can sign up for a free Bitium Trial account on the [Bitum site](https://www.bitium.com "https://www.bitium.com"). 
+You can sign up for a free Bitium Trial account on the [Bitum site](https://www.bitium.com). 
 
 ## Create a Bitium SSO app to connect to Sumo Logic
 
@@ -43,7 +43,13 @@ You can sign up for a free Bitium Trial account on the [Bitum site](https://www.
 
     ![SAML Authentication](/img/security/bitium_provider.png)
 
-1. The SAML configuration details for the App are displayed. For the Sumo Logic configuration, use the following parameters from this page: * EntityID * Login URL * LogOut URL * X.509 Certificate 
+1. The SAML configuration details for the App are displayed. For the Sumo Logic configuration, use the following parameters from this page: 
+
+   * EntityID 
+   * Login URL 
+   * LogOut URL 
+   * X.509 Certificate 
+
 1. Keep this page open to use these parameters in the next step, Configure SAML in Sumo Logic.
 
 ## Configure SAML in Sumo Logic
@@ -63,21 +69,21 @@ You can sign up for a free Bitium Trial account on the [Bitum site](https://www.
 1. **SP Initiated Login Configuration.** (Optional) This section has instructions for setting up SP-initiated login. When SP initiated login has been enabled, your SAML configuration will appear as an additional authentication option within your subdomain-enabled account login page. 
 
     :::note
-    SP initiated login requires a custom Sumo Logic subdomain. If a custom subdomain has not yet been configured for your org, following the instructions in the [Change account subdomain](../../01Manage_Subscription/12Manage_Organizational_Settings.md "Manage Organization") section of the *Manage Organization* topic.
+    SP initiated login requires a custom Sumo Logic subdomain. If a custom subdomain has not yet been configured for your org, following the instructions in the [Change account subdomain](../../manage-subscription/manage-org-settings.md) section of the *Manage Organization* topic.
     :::
 
     * **Authn Request URL.** Enter the URL that the IdP has assigned for Sumo Logic to submit SAML authentication requests to the IdP.  This field is required if you checked the **SP Initiated Login Configuration** checkbox.
     * **Disable Requested Authn Context**. (Optional.) If you check this option, Sumo will not include the RequestedAuthnContext element of the SAML AuthnRequests it sends to your Idp. This option is useful if your IdP does not support the RequestedAuthnContext element. 
     * **Sign Authn Request**. (Optional.) If you select this option, Sumo will send signed Authn requests to your IdP. When you click this option, a Sumo-provided X-509 certificate is displayed. You can configure your IDP with this certificate, to use to verify the signature of the Authn requests sent by Sumo. 
 
-1. **Roles Attribute:** When you click this option, **Roles** Attribute field appears. Enter the SAML Attribute Name that is sent by the IdP as part of the assertion. For details, see [Set SAML for Single Sign-On](01-Set-Up-SAML-for-Single-Sign-On.md "Set Up SAML for Single Sign-On").
-1. **On Demand Provisioning.** Select this option to have Sumo Logic automatically create accounts when a user first logs on. For more information, see [Set Up SAML for Single Sign-on.](01-Set-Up-SAML-for-Single-Sign-On.md "Manage/Security/SAML/01-Set-Up-SAML-for-Single-Sign-On") 
+1. **Roles Attribute:** When you click this option, **Roles** Attribute field appears. Enter the SAML Attribute Name that is sent by the IdP as part of the assertion. For details, see [Set SAML for Single Sign-On](set-up-saml.md).
+1. **On Demand Provisioning.** Select this option to have Sumo Logic automatically create accounts when a user first logs on. For more information, see [Set Up SAML for Single Sign-on.](set-up-saml.md). 
 
    * **First Name** 
    * **Last Name** 
    * **On Demand Provisioning Roles.** Add a role for all Bitium users, such as Administrator.
 
-1. **Logout Page**: Select this option and enter a URL if you'd like to point all users to the URL after logging out of Sumo Logic. For more information, see [Set Up SAML for Single Sign-On](01-Set-Up-SAML-for-Single-Sign-On.md "Manage/Security/SAML/01-Set-Up-SAML-for-Single-Sign-On").
+1. **Logout Page**: Select this option and enter a URL if you'd like to point all users to the URL after logging out of Sumo Logic. For more information, see [Set Up SAML for Single Sign-On](set-up-saml.md).
 
     ![saml-configuration-page.png](/img/security/saml-configuration-page.png)
 1. Click **Add**.

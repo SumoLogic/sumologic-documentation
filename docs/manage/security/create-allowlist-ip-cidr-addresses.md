@@ -18,7 +18,7 @@ The IP is generally your host IP address. But if your request is coming through 
 
 ## Enable allowlist for login and APIs
 
-1. Go to **Administration�\> Security**.
+1. Go to **Administration \> Security**.
 1. Select the **Service Allowlist Settings** tab.
 1. Under** Service Allowlist Settings**, select the **Enable Login / API Allowlist** check box.
 

@@ -13,7 +13,7 @@ This feature is available in the following account plans.
 | Cloud Flex | Trial, Enterprise |
 | Cloud Flex Credits | Trial, Enterprise Operations, Enterprise Security, Enterprise Suite |
 
-The Search Audit Index provides event logs on search usage and activities for your account. The index allows you to monitor and audit the search queries being run within your account, the types of queries, the users running them, and more. The [Enterprise Search Audit App](../../07Sumo-Logic-Apps/26Apps_for_Sumo/Enterprise_Search_Audit_App.md "https://help.sumologic.com/Beta/Search_Audit_App") provides pre-built dashboards and reports of the data from the Search Audit Index to help you analyze your current search use and identify areas for improvement. 
+The Search Audit Index provides event logs on search usage and activities for your account. The index allows you to monitor and audit the search queries being run within your account, the types of queries, the users running them, and more. The [Enterprise Search Audit App] (../../07Sumo-Logic-Apps/26Apps_for_Sumo/Enterprise_Search_Audit_App.md) provides pre-built dashboards and reports of the data from the Search Audit Index to help you analyze your current search use and identify areas for improvement. 
 
 ## Enable the Search Audit Index
 
@@ -40,4 +40,4 @@ To enable the Search Audit Index:
 
 ## Index retention period
 
-By default, the retention period of the Search Audit index is the same as the retention period of your Default Continuous partition. You can change the retention period by editing the partition that contains the index, `sumologic_search_usage_per_query`. For more information, see [Edit a Partition](../Partitions_and_Data_Tiers/04_Edit_a_Partition.md "Edit a Partition").
+By default, the retention period of the Search Audit index is the same as the retention period of your Default Continuous partition. You can change the retention period by editing the partition that contains the index, `sumologic_search_usage_per_query`. For more information, see [Edit a Partition](../partitions-and-data-tiers/edit-partition.md).
