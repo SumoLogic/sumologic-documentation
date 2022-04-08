@@ -17,7 +17,7 @@ To change the password policy:
 1.  Go to **Administration** \> **Security** \> **Password Policy**.
 2.  Change any of the following:
 
-    ![Set_Passwod_Policy.png](../static/img/Security/Set-the-Password-Policy/Set_Passwod_Policy.png) 
+    ![Set_Passwod_Policy.png](/img/security/Set_Passwod_Policy.png) 
     
     * **Passwords expire in.** This setting allows an admin to set the number of days after a user’s password was last changed to when the user is forced to change their password. The minimum is **30 days**. 
     * **Password reuse after.** This setting is the number of times a password must be changed before a previously used password can be reused. From the menu, select the number of changes. For example, if you choose **5 Changes**, a password can be reused after five new passwords have been used in a user's account.

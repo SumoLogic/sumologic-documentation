@@ -1,5 +1,5 @@
 ---
-id: c
+id: installation-tokens
 sidebar_title: Installation Tokens
 hide_table_of_contents: true
 description: Use Installation Tokens to register Installed Collectors.

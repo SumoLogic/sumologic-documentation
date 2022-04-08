@@ -1,12 +1,12 @@
 ---
-id: saml
+slug: /manage/security/saml
 ---
 
 # SAML
 
 ## Availability
 
-| Account Type | Account Level                                                                   |
+| Account Type | Account Level |
 |--------------|---------------------------------------------------------------------------------|
 | Cloud Flex   | Trial, Enterprise                                                               |
 | Credits      | Trial, Essentials, Enterprise Operations, Enterprise Security, Enterprise Suite |

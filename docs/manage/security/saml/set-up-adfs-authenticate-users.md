@@ -37,7 +37,7 @@ The relying party trust configuration is required for the connection between Sum
     ![Enable support](/img/security/adfs06.png)
 1. In the **Configure Identifiers** window, enter a relying party trust identifier, including the subdomain that identifies the Sumo service endpoint you use. For example: * service.us2.sumologic.com * service.eu.sumologic.com    
 
-    ![Trust identifier](/img/security/secu_trust_config_identifiers_vault.jpg)
+    ![Trust identifier](/img/security/secu_trust_config_identifiers_vault.jpeg)
 1. (Optional) If you want to configure multi-factor authentication, refer to ADFS documentation for instructions. If not, keep the default selection **I do not want to configure**. Click **Next**.
 
     ![Confirm](/img/security/adfs08.png)

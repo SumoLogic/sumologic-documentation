@@ -1,5 +1,5 @@
 ---
-id: about-2-step-verification
+id: about-two-step-verification
 ---
 
 # About 2-Step Verification

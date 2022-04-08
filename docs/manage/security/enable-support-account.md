@@ -24,7 +24,7 @@ just disable, then re-enable the support account and the Sumo Logic support user
 
 ## Enable the support account for your organization
 
-![image1.png](../static/img/Security/Enable-a-Support-Account/enable-support1.png)
+![image1.png](/img/security/enable-support1.png)
 
 To enable a support account:
 

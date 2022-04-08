@@ -43,7 +43,7 @@ This section has instructions for configuring basic SAML in Sumo Logic.
 1. Go to **Administration** \> **Security** \> **SAML**.
 1. Click **Add Configuration**.   
 
-    ![sumo-saml-config-list.png](/img/security/../Integrate-Sumo-Logic-with-Okta/sumo-saml-config-list.png) 
+    ![sumo-saml-config-list.png](/img/security/sumo-saml-config-list.png) 
        
 1. The **Add Configuration** page appears.
 
@@ -58,7 +58,7 @@ This section has instructions for configuring basic SAML in Sumo Logic.
 
     * Click the **On Demand Provisioning** checkbox.           
 
-        ![on-demand-provisioning.png](/img/security/../Integrate-Sumo-Logic-with-Okta/on-demand-provisioning.png)       
+        ![on-demand-provisioning.png](/img/security/on-demand-provisioning.png)       
     
     * **First Name**. Enter: `FirstName `
     * **Last Name**. Enter: `LastName `

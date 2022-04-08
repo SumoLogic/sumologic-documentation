@@ -82,7 +82,7 @@ For key information about SAML in Sumo, see the [Limitations](set-up-saml.md) 
 
 1. Go back to the **Google Auth Configuration – /img/security Provider Details** dialog, and enter the following information:
 
-    ![img](/img/security_provider.png) 
+    ![img](/img/security/ga_saml_service_provider.png) 
     
     * **ACS URL.** This is the **Assertion Consumer** from Sumo Logic
     * **Entity ID.** Enter the following URL, substituting your actual Sumo Logic [deployment] (../../../APIs/General-API-Information/Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security.md "Sumo Logic Endpoints and Firewall Security"), for example us1, us2, eu, and so on, for \<*deployment*\\>: `https:///img/security\<deploymen\>.sumologic.com` 

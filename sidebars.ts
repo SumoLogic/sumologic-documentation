@@ -352,7 +352,7 @@ module.exports = {
       collapsed: true,
       link: {type: 'doc', id: 'manage/security/index'},
       items: [
-        'manage/security/about-2-step-verification',
+        'manage/security/about-two-step-verification',
         'manage/security/two-step-for-admins',
         'manage/security/two-step-for-users',
         'manage/security/access-keys',

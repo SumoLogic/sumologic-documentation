@@ -76,7 +76,7 @@ Do **not** close the **Setup Single Sign-On with SAML** window, you will return 
 
     ![add-configuration-filled.png](/img/security/add-configuration-filled.png)    
 1. **Configuration Name.** Enter a name to identify the SSO policy (or another name used internally to describe the policy).
-1. **Debug Mode.** Select this option if you'd like to view additional details if an error occurs when a user attempts to authenticate. For more information, see [View SAML Debug Information](View-SAML-Debug-Information.md "View SAML Debug Information").
+1. **Debug Mode.** Select this option if you'd like to view additional details if an error occurs when a user attempts to authenticate. For more information, see [View SAML Debug Information](view-saml-debug-information.md).
 1. **Issuer**. Enter the **Azure AD Identifier** that you noted in the substep 13 of [Configure Sumo as an Enterprise App in Azure AD](#configure-sumo-as-an-enterprise-app-in-azure-ad). 
 1. **X.509 Certificate**. Use a text editor to open the certificate file you downloaded in substep 12 of [Configure Sumo as an Enterprise App in Azure AD](#configure-sumo-as-an-enterprise-app-in-azure-ad). Copy and paste the contents of the file into the field. 
 1. **Attribute Mapping.** Select **Use SAML subject.**

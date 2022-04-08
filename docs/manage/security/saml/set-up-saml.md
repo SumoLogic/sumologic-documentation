@@ -22,7 +22,7 @@ The provisioning process works as follows:
 1. Identify the service provider you will use for SSO. For example: 
 
     * [AWS Single Sign-On](integrate-aws-sso.md)
-    * [Azure Active Directory (AD)]((integrate-sumo-with-azure-ad.md) 
+    * [Azure Active Directory (AD)](integrate-sumo-with-azure-ad.md) 
     * [Google IAM](integrate-google-iam-service.md)
     * [Microsoft Active Directory Federation Services (ADFS)](set-up-adfs-authenticate-users.md)
     * [Okta](integrate-sumo-logic-with-okta.md)
