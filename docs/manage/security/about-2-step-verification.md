@@ -27,12 +27,3 @@ The following Time-based One-Time Password (TOTP) apps have been tested to work
 * For Android, IOS and Blackberry: [Google Authenticator](https://support.google.com/accounts/answer/1066447?hl=en)
 * For Android and IOS: [Duo Mobile](https://duo.com/product/trusted-users/two-factor-authentication/duo-mobile)
 * For Windows Phone: [Authenticator](https://www.microsoft.com/en-us/store/p/authenticator/9wzdncrfj3rj)
-
-import DocCardList from '@theme/DocCardList';
-import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
-
-## Guide Contents
-
-In this section, we will introduce the following concepts:
-
-<DocCardList items={useCurrentSidebarCategory().items}/>
