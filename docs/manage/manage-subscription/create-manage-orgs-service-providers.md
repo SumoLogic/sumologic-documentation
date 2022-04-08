@@ -18,16 +18,16 @@ This topic has information about Sumo Logic’s Organizations (“Sumo Orgs”) 
 
 As a Service Provider, you can create two types of child orgs:
 
-* You can create POV (Proof of Value) Trial orgs for your prospects to access in order to evaluate Sumo Logic. For more information, see [About POV Trial orgs](./10Create_and_Manage_Orgs_(Service_Providers).md "Create and Manage Orgs (Service Providers)").
+* You can create POV (Proof of Value) Trial orgs for your prospects to access in order to evaluate Sumo Logic. For more information, see [About POV Trial orgs](create-manage-orgs-service-providers.md).
 * You can create child orgs, either for use within your own company or for customers who are not going to trial Sumo Logic before subscribing.
 
 In either case, the child orgs you create will be the same plan type as the parent org. For example, if you have an Enterprise Suite plan, the child orgs you create will also be Enterprise Suite accounts. 
 
 When you create a child org, you provision it with credits, based on the ingest volume you estimate for the org. We refer to the different flavors of ingest—Continuous Log Ingest, Frequent Log Ingest, and so on—as *product variables*. When you provision a child org you use a Credits Calculator to estimate and allocate required credits for each product variable.
 
-We refer to your estimates of ingest capacity required for each product variable as *baselines*. Sumo Logic’s throttling multipliers for logs and metrics are based on these estimates. (For example, if you estimate 1GB usage for logs and specify that as the "baseline" when you create the org, Sumo Logic will start [throttling](../Ingestion-and-Volume/01Log_Ingestion.md "Log Ingestion") when ingestion to the org reaches 4 to 10 times the baseline. The multiplier depends on your account size.)
+We refer to your estimates of ingest capacity required for each product variable as *baselines*. Sumo Logic’s throttling multipliers for logs and metrics are based on these estimates. (For example, if you estimate 1GB usage for logs and specify that as the "baseline" when you create the org, Sumo Logic will start [throttling](../ingestion-and-volume/log-ingestion.md).md "Log Ingestion") when ingestion to the org reaches 4 to 10 times the baseline. The multiplier depends on your account size.)
 
-Users that have the required role capabilities can create child orgs under a parent org, and manage and monitor the allocation and consumption of Sumo Logic credits across orgs, and for each child org. This functionality is available in the Sumo Logic UI at **Administration \> Organizations** and also in the [Organizations Management API](https://organizations.sumologic.com/docs/ "https://organizations.sumologic.com/docs/").
+Users that have the required role capabilities can create child orgs under a parent org, and manage and monitor the allocation and consumption of Sumo Logic credits across orgs, and for each child org. This functionality is available in the Sumo Logic UI at **Administration \> Organizations** and also in the [Organizations Management API](https://organizations.sumologic.com/docs/).
 
 ## Requirements for creating and managing orgs
 
@@ -56,8 +56,7 @@ The credits associated with the trial org allocations don’t impact the parent 
 
 You can upgrade a trial org by editing the org and changing the Plan Type. When you upgrade a POV Trial org, if the org is in a different Sumo Logic deployment from the parent org, the Credits çalculator may add a deployment factor, which is a percentage upcharge that varies by deployment.
 
-For more information, see [Upgrade a POV Trial org](./10Create_and_Manage_Orgs_(Service_Providers).md "Create and Manage Orgs (Service Providers)"),
-below.
+For more information, see [Upgrade a POV Trial org](#upgrade-a-pov-trial-org) below.
 
 ## Create a POV Trial org
 
@@ -71,9 +70,11 @@ After you create a child org, you can’t delete it.
 1. Click **+ Add Organization**.
 
     ![orgs-page.png](/img/subscriptions/orgs-page.png)
+
 1. The **Create New Organization** pane appears.
 
     ![create-new-org-sp.png](/img/subscriptions/sp-create-new-org.png)
+    
 1. **Organization Name**. Enter a unique name for the org.
 1. **Account Owner Email**. Enter the name of the account owner.
 1. **Account Owner First Name**. Enter the account owner’s first name.
@@ -84,6 +85,7 @@ After you create a child org, you can’t delete it.
 1. The **Baselines** popup appears, and displays the ingest limits for a POV Trial org. You cannot change the limits.
 
     ![baselines.png](/img/subscriptions/baselines.png)
+
 1. Click **Done**.
 1. Click **Save** to save the new org.
 
@@ -93,19 +95,24 @@ After you create a child org, you can’t delete it.
 1. Click the row for the trial org you want to upgrade.
 
     ![org-to-update.png](/img/subscriptions/org-to-update.png)
+
 1. The right pane appears with information about the org. Click **Edit**.
 
     ![edit-option.png](/img/subscriptions/edit-option.png)
+
 1. In the edit pane, click **Plan Type**, and choose the Enterprise plan that appears as an option.
 
     ![upgrade-plan.png](/img/subscriptions/upgrade-plan.png)
+
 1. A warning message is shown that says you won’t be able to downgrade the org once you upgrade it.
 
     ![plan-selected.png](/img/subscriptions/plan-selected.png)
+
 1. Click **Allocate Credits**.
 1. The Credits Calculator appears.
 
     ![credits-calculator.png](/img/subscriptions/credits-calculator.png)
+
 1. **Continuous Log Ingest**. Enter estimated daily ingestion to the Continuous tier.
 1. **Frequent Log Ingest**. Enter estimated daily ingestion to the Frequent tier.
 1. **Infrequent Log Ingest**. Enter estimated daily ingestion to the Infrequent tier.
@@ -113,6 +120,7 @@ After you create a child org, you can’t delete it.
 1. As you enter the ingestion estimates, the number of credits required for the ingestion levels is incremented.  
 
     ![calculator.png](/img/subscriptions/calculator.png)
+
 1. Click **Use This Allocation**.
 
 ## Update an org's credits allocation
@@ -125,9 +133,11 @@ You can update an Enterprise org’s credits allocation, but not a Trial POV org
 1. Click **Edit** in the right hand pane.
 
     ![edit-org-3.png](/img/subscriptions/edit-org-3.png)
+
 1. Click **Modify Allocation**.
 
     ![modify-allocation-button.png](/img/subscriptions/modify-allocation-button.png)
+
 1. The Credits Calculator appears.
 1. Follow steps in [Upgrade a POV Trial org](#upgrade-a-pov-trial-org) to finish.
 
@@ -147,7 +157,7 @@ This section has information about how you can monitor credit allocations and co
 
 ### View cross-org credits allocation and consumption
 
-You can see what portion of your subscription credits have been allocated and consumed on the **Administration \> Organizations** page.
+You can see what portion of your subscription credits have been allocated and consumed on the **Administration** \> **Organizations** page.
 
 * The **Usage %** column indicates what percentage of overall subscription credits that was allocated to a child org has been consumed.
 * The **Credits Capacity** line at the bottom of the page shows the count and percentage of  credits, out of your total subscription credits, that have been allocated to child orgs, and the number of allocated credits that have been consumed. 
@@ -161,6 +171,7 @@ You can see what portion of your subscription credits have been allocated and co
 1. A pane with details about the org appears on the right side of the page.
 
     ![credits-usage.png](/img/subscriptions/credits-usage.png)
+
 1. The **Credits Usage section** of the pane shows the number and percentage of the credits allocated to the org that have been consumed, along with the total credits that are allocated.
 1. Click **View Details** for more information.
 1. The **\<org-name\> Credits Usage Details** popup displays the following information.
@@ -178,7 +189,7 @@ You can see what portion of your subscription credits have been allocated and co
 
 ## Access a child org
 
-If a [custom subdomain](12Manage_Organizational_Settings.md "Manage Organization") has been configured for a child org, and you have an account in the org, you can access it from the Organizations UI.
+If a [custom subdomain](create-manage-orgs.md) has been configured for a child org, and you have an account in the org, you can access it from the Organizations UI.
 
 1. Go to **Administration** \> **Organizations**.
 1. Click the row for the org you want to access.

@@ -68,7 +68,7 @@ If you have multiple Sumo Logic accounts, you may find it useful to configure a 
 
 Custom subdomains can help ensure that requests are authenticated to the right account when links are received. Once configured by your account owner, your custom subdomain will be used in the links Sumo generates when you share queries or dashboards, or the links in alerts and other emails you may receive from your account. These subdomain-enabled links will direct the user to the specified account for authentication.
 
-When you use custom subdomains in combination with SAML integrations [configured with SP initiated login](../Security/SAML/01-Set-Up-SAML-for-Single-Sign-On.md "Set Up SAML for Single Sign-On"), your SAML authentication options will be provided within your subdomain-enabled Sumo Logic login page.
+When you use custom subdomains in combination with SAML integrations [configured with SP initiated login] (../Security/SAML/01-Set-Up-SAML-for-Single-Sign-On.md "Set Up SAML for Single Sign-On"), your SAML authentication options will be provided within your subdomain-enabled Sumo Logic login page.
 
 ### Key considerations
 
@@ -93,5 +93,6 @@ You must be the account owner of the Sumo Logic account to change the account su
 1. Enter a new subdomain name. The name must be between 4 and 63 characters in length at least four characters in length, and can contain lower case letters, numbers, and dashes only.
 
     ![change-subdomain-name.png](/img/subscriptions/change-subdomain-name.png)
+    
 1. Click **Change Subdomain** Name to update the name.
 1. You will be automatically logged out and redirected to the new subdomain login page. 

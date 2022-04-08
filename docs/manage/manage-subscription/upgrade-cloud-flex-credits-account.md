@@ -6,10 +6,10 @@ id: upgrade-cloud-flex-credits-account
 
 This page has instructions for upgrading a Sumo Logic Free or Trial account to a monthly or annual Essentials account, and for requesting updates to an existing Essentials account.
 
-For information about Essentials accounts, see [Cloud Flex Credits - Account Types](00Cloud_Flex_Credits_Accounts.md "Cloud Flex Credits Accounts"). 
+For information about Essentials accounts, see [Cloud Flex Credits - Account Types](cloud-flex-credits-accounts.md). 
 
 :::note
-For information about cancelling a Sumo Logic subscription, see [Close or Cancel a Sumo Logic Account](18Close_or_cancel_a_Sumo_Logic_account.md "Close or Cancel a Sumo Logic Account").
+For information about cancelling a Sumo Logic subscription, see [Close or Cancel a Sumo Logic Account](close-cancel-sumo-account.md).
 :::
 
 ## Update a Free or Trial Credits account to Essentials
@@ -28,8 +28,8 @@ You must be an admin to upgrade your CloudFlex Credits free or trial account.
 
    * **Continuous Log Ingest**. Select an estimate of your daily ingestion to the Continuous tier, in GB. 
    * **Continuous Log Storage**. Select the number of days you want to retain the data ingested to the Continuous tier. 
-   * **Metrics**. Enter an estimate of the [metrics](../../Metrics.md "Metrics") to be ingested daily, in data points per minute (DPM.) 
-   * **Tracing Ingest**. Enter an estimate of your daily ingestion of [transaction traces](../../Traces.md "Traces"), in GB. 
+   * **Metrics**. Enter an estimate of the [metrics] (../../Metrics.md "Metrics") to be ingested daily, in data points per minute (DPM.) 
+   * **Tracing Ingest**. Enter an estimate of your daily ingestion of [transaction traces] (../../Traces.md "Traces"), in GB. 
 
 1. After making your selection for each product variable, click **Upgrade to Essentials**.
 1. The page refreshes to display the **Payment Method** step.
@@ -62,8 +62,8 @@ If you want to change the levels for any of the product variables in your Essent
     * **Email**. Enter your email address.
     * **Continuous Log Ingest**. Select an estimate of your daily ingestion to the Continuous tier, in GB. 
     * **Continuous Log Storage**. Select the number of days you want to retain the data ingested to the Continuous tier. 
-    * **Metrics**. Enter an estimate of the [metrics](../../Metrics.md "Metrics") to be ingested daily, in data points per minute (DPM.)
-    * **Tracing Ingest**. Enter an estimate of your daily ingestion of [transaction traces](../../Traces.md "Traces"), in GB. 
+    * **Metrics**. Enter an estimate of the [metrics] (../../Metrics.md "Metrics") to be ingested daily, in data points per minute (DPM.)
+    * **Tracing Ingest**. Enter an estimate of your daily ingestion of [transaction traces] (../../Traces.md "Traces"), in GB. 
     * **Other Details**. (Optional)
 
 1. Click **Submit Request**.    
