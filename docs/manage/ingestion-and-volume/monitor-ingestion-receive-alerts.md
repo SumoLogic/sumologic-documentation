@@ -282,7 +282,7 @@ After completing the setup steps, schedule the search to run.  
 This alert is automatically generated when your account has entered a throttled state (induced by metrics or logs) in the last 15 minutes. The alert runs every 15 minutes and covers a 15 minute period.
 
 :::note
-All accounts are subject to throttling, regardless of plan type (Cloud Flex or Cloud Flex Credits) or [Data Tier] (../Partitions_and_Data_Tiers/Data_Tiers.md "Data Tiers").
+All accounts are subject to throttling, regardless of plan type (Cloud Flex or Cloud Flex Credits) or [Data Tier](../partitions-and-data-tiers/data-tiers.md).
 :::
 
 **Setup:**

@@ -34,7 +34,7 @@ Compressed files are decompressed before they are ingested, so they are ingested
 Part of managing spikes in activity is properly slowing the rate of ingestion while the demand is at its peak, known as throttling. This section pertains to logs, for metrics see [Metrics Throttling] (../../Metrics/Understand_and_Manage_Metric_Volume/Metric_Throttling.md "Metric Throttling").
 
 :::note
-All accounts are subject to throttling, regardless of plan type (Cloud Flex or Cloud Flex Credits) or [Data Tier] (../Partitions_and_Data_Tiers/Data_Tiers.md "Data Tiers").
+All accounts are subject to throttling, regardless of plan type (Cloud Flex or Cloud Flex Credits) or [Data Tier](/docs/manage/partitions-and-data-tiers).
 :::
 
 Throttling is enabled across all Collectors in an account. Sumo Logic measures the amount of data already committed to uploading against the number of previous requests and available resources (quota) in an account. In other words, Sumo Logic compares the current ingestion with the rate of ingest using a per minute rate that can be derived from the contracted Daily GB/day rate.

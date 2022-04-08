@@ -28,7 +28,7 @@ You can select from Free, Trial, Essentials, Enterprise Operations, Enterprise S
 * **Enterprise** **Suite** accounts are optimized to address the most advanced data insight challenges. Enterprise Suite accounts include all of Sumo Logic’s industry leading capabilities including Sumo Logic’s Tiered Analytics.
 
 :::important
-[Ingest Budgets](../Ingestion-and-Volume/Ingest_Budgets.md) are only available for Enterprise Operations, Enterprise Security, and Enterprise Suite accounts. Ingest budgets control the capacity of daily log ingestion volume sent to Sumo Logic from collectors.
+[Ingest Budgets]v are only available for Enterprise Operations, Enterprise Security, and Enterprise Suite accounts. Ingest budgets control the capacity of daily log ingestion volume sent to Sumo Logic from collectors.
 
 It's important to keep track of your daily data usage. For tips on how to monitor and limit the data you're sending to Sumo Logic, see the [Manage Ingestion](../ingestion-and-volume/log-ingestion.md) help page.
 :::

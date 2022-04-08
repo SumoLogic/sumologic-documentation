@@ -331,6 +331,21 @@ module.exports = {
         'manage/partitions-and-data-tiers/searching-data-tiers',
       ]
     },
+    {
+      type: 'category',
+      label: 'Scheduled Views',
+      collapsible: true,
+      collapsed: true,
+      link: {type: 'doc', id: 'manage/scheduled-views/index'},
+      items: [
+        'manage/scheduled-views/add-scheduled-view',
+        'manage/scheduled-views/pause-disable-scheduled-views',
+        'manage/scheduled-views/run-search-against-scheduled-view',
+        'manage/scheduled-views/scheduled-view-lag-time',
+        'manage/scheduled-views/scheduled-views-best-practices',
+        'manage/scheduled-views/view-list-scheduled-views',
+      ]
+    },
   ],
   dashboards: [
     {

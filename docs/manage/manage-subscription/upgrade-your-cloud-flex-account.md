@@ -29,7 +29,7 @@ It depends on your current account type:
 1. Go to **Administration** \> **Account** \> **Manage Plan**.
 
     ![manage-plan-cloudflex.png](/img/subscriptions/manage-plan-cloudflex.png)
-    
+
 1. The left side of the page displays your current account type.
 1. **Choose a New Plan**. Click the radio button next to **Professional** or **Enterprise**.  If you just want to increase product variable levels for your current account type, don't select a new plan type.
 1. **Select New Log and Metric Data Volume**. As you change the values, the upgrade cost shown to the right will adjust. 
@@ -52,7 +52,7 @@ It depends on your current account type:
 1. Click **Confirm** to complete the upgrade. After you click **Confirm**, the credit card you provided to Sumo Logic is charged.
 1. The upgrade is processed, then a **Congratulations** screen appears. Click **Finish**.
 
-If you have any issues, or if you don't see a charge on your credit card within 48 hours, please contact [support@sumologic.com](mailto:support@sumologic.co.md).
+If you have any issues, or if you don't see a charge on your credit card within 48 hours, please contact [support@sumologic.com](mailto:support@sumologic.com).
 
 :::note
 The price shown in the screenshots above may not reflect the actual current price.
