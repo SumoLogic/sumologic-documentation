@@ -23,36 +23,32 @@ Installation Tokens in your account are manageable at **Administration \> Secu
 
 Managing Installation Tokens requires the **Manage Tokens** role capability.
 
-![Installation Tokens UI table.png](/img/installation-tokens/installation-tokens-table.png)
+![Installation Tokens UI table.png](/img/security/installation-tokens/installation-tokens-table.png)
 
 The **Administration \> Security \> Installation Tokens** page displays the following information: 
 
-* **Status** shows a green checkmark ![green checkmark.png](/img/installation-tokens/green-checkmark.png) to indicate if the Installation Token is active and available for use or an exclamation mark in a red circle ![red circle white exclamation.png](/img/installation-tokens/red-circle-white-exclamation.png) to indicate if the Installation Token is deactivated and not available for use.
+* **Status** shows a green checkmark ![green checkmark.png](/img/security/installation-tokens/green-checkmark.png) to indicate if the Installation Token is active and available for use or an exclamation mark in a red circle ![red circle white exclamation.png](/img/security/installation-tokens/red-circle-white-exclamation.png) to indicate if the Installation Token is deactivated and not available for use.
 * **Token Name** is the name of the Installation Token, these must be unique.
 * **Description** shows the optional description of the Installation Token.
 
-On the **Administration \> Security \> Installation Tokens** page
-you can:
+On the **Administration \> Security \> Installation Tokens** page you can:
 
--   Click **+ Add Token** to add Installation Tokens.
--   Search Installation Tokens
--   Edit Installation Tokens
--   Deactivate Installation Tokens
--   Delete Installation Tokens 
+* Click **+ Add Token** to add Installation Tokens.
+* Search Installation Tokens
+* Edit Installation Tokens
+* Deactivate Installation Tokens
+* Delete Installation Tokens 
 
 For the Installation Tokens listed, select a row to view its details. A details pane appears to the right of the table where you can edit, deactivate, and delete the token.
 
-![token details pane.png](/img/installation-tokens/token-details-pane.png)
+![token details pane.png](/img/security/installation-tokens/token-details-pane.png)
 
 ### Add Token
 
-1.  Click the **+ Add Token** button on the
-    top right of the table. A panel named **Create Installation 
-    Token** appears to the right of the table.
-1.  Input a unique name and optionally provide a description then
-    click **Save**.
+1. Click the **+ Add Token** button on the top right of the table. A panel named **Create Installation Token** appears to the right of the table.
+1. Input a unique name and optionally provide a description thenclick **Save**.
 
-![create token.png](/img/installation-tokens/create-token.png)
+![create token.png](/img/security/installation-tokens/create-token.png)
 
 ### Deactivate Token
 
@@ -60,7 +56,7 @@ Deactivated tokens cannot be used to register Collectors. You can deactivate a
 
 Select **Deactivate** from the menu on the right of the row on the table or in the details pane of the token under the **More Actions** dropdown.
 
-![deactivate token.png](/img/installation-tokens/deactivate-token.png)
+![deactivate token.png](/img/security/installation-tokens/deactivate-token.png)
 
 ### Delete Token
 
@@ -68,7 +64,7 @@ Deleted tokens are removed from your account and cannot be used anymore. Since t
 
 Select **Delete Token** from the menu on the right of the row on the table or in the details pane of the token under the **More Actions** dropdown.
 
-![delete token.png](/img/installation-tokens/delete-token.png)
+![delete token.png](/img/security/installation-tokens/delete-token.png)
 
 ## Using Installation Tokens
 
@@ -106,7 +102,7 @@ Where `<installationToken>` is the **Token String** you want to use to register
 
 To register an Installed Collector with the Setup Wizard select the **Setup Wizard Token** authentication option. The Setup Wizard does not provide an option for Installation Tokens.
 
-![wizard authentication step.png](/img/installation-tokens/wizard-authentication.png)
+![wizard authentication step.png](/img/security/installation-tokens/wizard-authentication.png)
 
 Click next and enter the **Token String** you want to use to register the Collector in the input box for a one-time token. Continue with the installation steps.
 
