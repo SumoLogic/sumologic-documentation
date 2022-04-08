@@ -293,6 +293,26 @@ module.exports = {
     },
     {
       type: 'category',
+      label: 'Manage Subscription',
+      collapsible: true,
+      collapsed: true,
+      link: {type: 'doc', id: 'manage/manage-subscription/index'},
+      items: [
+        'manage/manage-subscription/cloud-flex-credits-accounts',
+        'manage/manage-subscription/cloud-flex-accounts',
+        'manage/manage-subscription/upgrade-cloud-flex-credits-account',
+        'manage/manage-subscription/upgrade-your-cloud-flex-account',
+        'manage/manage-subscription/manage-billing-information',
+        'manage/manage-subscription/create-manage-orgs',
+        'manage/manage-subscription/create-manage-orgs-service-providers',
+        'manage/manage-subscription/manage-org-settings',
+        'manage/manage-subscription/account-locked',
+        'manage/manage-subscription/beta-opt-in',
+        'manage/manage-subscription/close-cancel-sumo-account',
+      ]
+    },
+    {
+      type: 'category',
       label: 'Partitions and Data Tiers',
       collapsible: true,
       collapsed: true,
