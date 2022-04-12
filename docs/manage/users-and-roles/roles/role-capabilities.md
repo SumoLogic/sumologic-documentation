@@ -4,8 +4,7 @@ id: role-capabilities
 
 # Role Capabilities
 
-You can assign any of the following capabilities when you [create
-roles](03-Create-and-Manage-Roles.md "Create a New Role").
+You can assign any of the following capabilities when you [create roles](create-manage-roles.md).
 
 ## Data Management
 
@@ -14,7 +13,7 @@ roles](03-Create-and-Manage-Roles.md "Create a New Role").
 | Manage connections | Manage the [connections](/docs/manage/connections-and-integrations) that allow you to send alerts to other tools. |
 | Manage Collectors | Install and manage [installed] (/03Send-Data/Installed-Collectors) and [hosted] (/03Send-Data/Hosted-Collectors) Collectors and [Sources] (/03Send-Data/Sources). Manage permission automatically includes view permission. |
 | Manage Ingest Budgets | Manage [ingest budgets](/docs/manage/ingestion-and-volume/ingest-budgets). Enabling this will automatically enable the Manage Collectors capability. The Manage Collectors capability on its own permits the re-assignment of budgets to different Collectors, but not creating or deleting them. |
-| Manage data volume feed | [Enable and manage the data volume index](/Manage/Ingestion-and-Volume/Data_Volume_Index) for your account to avoid using [On-Demand Capacity](/Manage/Account/01-Account-Types#Account_Capacity_Limitations), and to determine when you need to upgrade your account. |
+| Manage data volume feed | [Enable and manage the data volume index](/docs/manage/ingestion-and-volume/data-volume-index/) for your account to avoid using On-Demand Capacity, and to determine when you need to upgrade your account. |
 | View Collectors | View and Collectors and Sources that have already been installed or added. |
 | View fields | View [fields](/docs/manage/fields), which are custom metadata fields you can assign to logs. |
 | Manage fields | Manage [fields](/docs/manage/fields), which are custom metadata fields you can assign to logs. Note that if you grant a role the Manage Fields capability, users with that role will also have the View Fields and View field extraction rules capabilities. |
@@ -24,7 +23,7 @@ roles](03-Create-and-Manage-Roles.md "Create a New Role").
 | Manage Partitions | View, create, edit, and delete [Partitions](/docs/manage/partitions-and-data-tiers). Note that if you grant a role the Manage Partitions capability, users with that role will also have View Partitions and Manage S3 data forwarding capabilities. |
 | View Scheduled Views | View [Scheduled Views](/docs/manage/scheduled-views). |
 | Manage Scheduled Views  | View, create, edit, and delete [Scheduled Views](/docs/manage/scheduled-views). Note that if you grant a role the Manage Schedule View capability, users with that role will also have View Scheduled View capabilities. |
-| Manage S3 data forwarding | [Manage S3 data forwarding](/Manage/Data-Forwarding/Configure-Data-Forwarding-from-Sumo-Logic-to-S3) from Sumo Logic to an S3 bucket. |
+| Manage S3 data forwarding | [Manage S3 data forwarding](../../data-forwarding/data-forwarding-to-s3.md) from Sumo Logic to an S3 bucket. |
 | Manage Content | Manage the content for your organization. This provides access to [Admin Mode](../../content-sharing/admin-mode.md) in the Library. |
 | Manage Tokens | Manage [Installation Tokens](../../security/installation-tokens.md). |
 | View Account Overview | View the Account Overview page. |

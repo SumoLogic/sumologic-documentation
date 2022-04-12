@@ -207,7 +207,7 @@ Fields cannot be used with [Live Tail](/docs/search/live-tail).
 Fields in your account are manageable at **Manage Data** \> **Logs** \> **Fields**.
 
 :::important
-You need the **Manage Fields** [role capability](Users-and-Roles/Manage-Roles/05-Role-Capabilities.md "Role Capabilities") to manage fields. 
+You need the **Manage Fields** [role capability](users-and-roles/roles/role-capabilities.md) to manage fields. 
 :::
 
 ![manage fields page.png](/img/fields/manage-fields-page.png)
@@ -229,7 +229,7 @@ On the **Manage Data \> Logs \> Fields** page you can:
 * Click **+ Add** to add fields.
 * Search fields * The dropdown next to the add button lets you toggle between the following: 
 
-  * **Existing -** **Built-in Fields**. These are [metadata fields created by Sumo Logic](../05Search/Get-Started-with-Search/Search-Basics/Built-in-Metadata.md "Built-in Metadata") and cannot be modified. 
+  * **Existing -** **Built-in Fields**. These are [metadata fields created by Sumo Logic](../search/get-started-with-search/search-basics/built-in-metadata.md) and cannot be modified. 
   * **Existing - Custom Fields**. These fields were either created by FERs or users. 
   * **Dropped Fields**. These fields are being dropped due to not existing in the fields table.
 

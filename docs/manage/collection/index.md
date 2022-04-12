@@ -5,7 +5,7 @@ slug: /manage/collection
 # Collection
 
 :::sumo Required Capabilities
-You need the Manage or View Collectors [role capability] (Users-and-Roles/Manage-Roles/05-Role-Capabilities.md "Role Capabilities") to manage or view Collection.
+You need the Manage or View Collectors [role capability] (users-and-roles/roles/role-capabilities.md) to manage or view Collection.
 :::
 
 Use the **Collection** page to manage all of your Collectors and Sources. To access the Collection page, go to **Manage Data \> Collection \> Collection**.

@@ -82,7 +82,7 @@ To edit a role:
 1. Click the row for the role you want to edit.
 1. The current configuration of the role appears in a pane on the right side of the page.
 1. Click **Edit** at the top of the right side of the page.
-1. Make your edits. For information about edit options, see [Create a role](./03-Create-and-Manage-Roles.md "Create a New Role") above.
+1. Make your edits. For information about edit options, see [Create a role](create-manage-roles.md) above.
 1. After editing the role, click **Save**.
 
 ## Delete a role
