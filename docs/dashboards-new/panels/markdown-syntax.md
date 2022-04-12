@@ -54,11 +54,11 @@ period. Indent by adding a space. 
 ```markdown
 1. Item One
 
-2. Item Two
+1. Item Two
 
     1. Indented Item One
 
-    2. Indented Item Two
+    1. Indented Item Two
 ```
 
 This will be displayed in the Text Panel as:
@@ -91,7 +91,7 @@ To created a combined, nested list of numbered and bulleted items, just precede 
 
     * Bullet Indent One
 
-2. Item Two
+1. Item Two
 
     * Bullet Indent Two
 ```

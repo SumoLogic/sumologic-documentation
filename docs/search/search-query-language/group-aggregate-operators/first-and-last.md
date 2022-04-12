@@ -11,7 +11,7 @@ For example, the following image shows a few results in the default sort order. 
 ![new_to_old_default_result_order.png](/img/search/searchquerylanguage/group-aggregate-operators/new_to_old_default_result_order.png)
 
 * The **first** result is indicated with the **#** value of 1. This **first** result has the most recent **Time**.
-* The **last** result is indicated with the **#** value of 5. This **last** result has the oldest **Time**.
+* The **last** result is indicated with the **#** value of 1. This **last** result has the oldest **Time**.
 
 :::tip
 Using the [sort](../search-operators/sort.md) operator allows you to change the default sort order.

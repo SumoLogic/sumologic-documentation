@@ -31,6 +31,6 @@ The drill down searches can be launched with just a click, opening a new search 
 
 **To launch a drill down search from the Field Browser:**
 
-1.  Run a search.
-2.  In the Field Browser column, click a field.
-3.  Click one of the **DRILLDOWN** search options at the bottom of the pane. A new search is created.
+1. Run a search.
+1. In the Field Browser column, click a field.
+1. Click one of the **DRILLDOWN** search options at the bottom of the pane. A new search is created.

@@ -12,5 +12,5 @@ Just clicking the checkbox changes the status of a field.
 
 **To show or hide a field:**
 
-1.  In the **Field Browser**, hover over the name of a field.
-2.  Click the checkbox to hide a displayed field, or to display a hidden field.
+1. In the **Field Browser**, hover over the name of a field.
+1. Click the checkbox to hide a displayed field, or to display a hidden field.

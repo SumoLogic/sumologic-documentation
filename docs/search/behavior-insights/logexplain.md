@@ -28,9 +28,9 @@ When test and control coverage are both 100%, the relevance is evaluated as 0.
 
 Explanations are displayed in descending order according to their relevancy. In order for an explanation to be shown, it must satisfy the following conditions:
 
-1.  The test coverage must be greater than 5%.
-2.  The relevance must be greater than 0.6. Joint key-value pairs with relevancy below 0.6 are not significant explanations.
-3.  Less relevant explanations will only be shown if they contain at least one key-value pair that is not already included in a more relevant explanation.
+1. The test coverage must be greater than 5%.
+1. The relevance must be greater than 0.1. Joint key-value pairs with relevancy below 0.6 are not significant explanations.
+1. Less relevant explanations will only be shown if they contain at least one key-value pair that is not already included in a more relevant explanation.
 
 With the provided results you can:
 

@@ -180,7 +180,7 @@ Log messages can match against multiple budgets if two or more budgets have ove
     * Action = "stop collecting"  
     * Capacity= 2 GB
 
-In this case, all log messages ingested with `_sourceCategory=/service/payment/component/oracle` will match against both budget #1 and budget #2. This will consume capacity from both budgets. As expected, if either budget reaches its capacity, data will stop being collected since both budgets are set to stop collecting data.
+In this case, all log messages ingested with `_sourceCategory=/service/payment/component/oracle` will match against both budget #1 and budget #1. This will consume capacity from both budgets. As expected, if either budget reaches its capacity, data will stop being collected since both budgets are set to stop collecting data.
 
 This concept can be used to manage your ingestion with sub-budgets. Let’s understand this better with an example,
 
@@ -215,8 +215,8 @@ To ensure the combined daily ingestion for the infrastructure components ALB, Ka
 
 The [Audit Index] (../Security/Audit-Index.md "Enable and Manage Auditing") logs events when an ingest budget has reached its configured Audit Threshold percent. There are two different log formats. 
 
-1.  Approaching or exceeding capacity
-2.  Resets
+1. Approaching or exceeding capacity
+1. Resets
 
 **Approaching or exceeding capacity example**, where:
 

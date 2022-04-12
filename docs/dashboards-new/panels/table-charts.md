@@ -18,11 +18,11 @@ which would produce results such as:
 
 To add a panel with a table chart:
 
-1.  Create or open a Dashboard (New) and click on **Add Panel \> Time Series** or **Add Panel \> Categorical**.   
+1. Create or open a Dashboard (New) and click on **Add Panel \> Time Series** or **Add Panel \> Categorical**.   
 
     ![time series or categorical.png](/img/dashboards-new/panels/table-charts/time-series-or-categorical.png)
 
-2.  Provide a Metric or Log query and press **Enter** for it to run.
+1. Provide a Metric or Log query and press **Enter** for it to run.
 
     You can create Log and Metric queries on the same panel.
 
@@ -41,13 +41,13 @@ To add a panel with a table chart:
 
     To create a metrics query utilize the [Metrics Query Builder] (../../../Metrics/Metric-Queries-and-Alerts/00Metrics_Explorer.md "Metric Query Builder").
 
-3.  Once the query runs you will need to flip the chart type to **Table**.
+1. Once the query runs you will need to flip the chart type to **Table**.
 
     ![new table chart.png](/img/dashboards-new/panels/table-charts/new-table-chart.png)
 
-4.  [Modify the chart](./modify-chart.md) as desired.
+1. [Modify the chart](./modify-chart.md) as desired.
 
-5.  Click the **Add to Dashboard** button on the top right of the window to add the panel to your dashboard.
+1. Click the **Add to Dashboard** button on the top right of the window to add the panel to your dashboard.
 
     ![Add to Dashboard button.png](/img/dashboards-new/create-dashboard-new/Add-to-Dashboard-button.png)
 

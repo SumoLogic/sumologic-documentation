@@ -21,8 +21,8 @@ The Search Audit Index must be enabled by an administrator.
 
 To enable the Search Audit Index:
 
-1.  Go to the **Administration** \> **Security** \> **Policies** page.
-2.  Under **Sumo Logic Auditing**, select the second **Enable** option.
+1. Go to the **Administration** \> **Security** \> **Policies** page.
+1. Under **Sumo Logic Auditing**, select the second **Enable** option.
 
     ![Search_Audit_Index_Enabled.png](/img/security/Search_Audit_Index_Enabled.png)
 
@@ -34,9 +34,9 @@ To enable the Search Audit Index:
 
 ## Query the Search Audit Index
 
-1.  In the Search page, enter the query `_index=sumologic_search_usage_per_query`.
-2.  Choose the time range for the audit events you’d like to review.
-3.  Click **Start** to run the search. Results return in the **Messages** tab.
+1. In the Search page, enter the query `_index=sumologic_search_usage_per_query`.
+1. Choose the time range for the audit events you’d like to review.
+1. Click **Start** to run the search. Results return in the **Messages** tab.
 
 ## Index retention period
 

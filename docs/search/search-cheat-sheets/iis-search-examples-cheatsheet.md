@@ -70,7 +70,7 @@ For more information, see [Timeslice](../search-query-language/search-operators
 | For the source "IIS/Access", count hits by browser | `source=IIS/Access  | parse “* * * * * * * * “ as date, time, csmethod, cs_uri_stem, cs_uri_query, s_port, c_ip, cs_UserAgent  | if (cs_UserAgent matches "*MSIE*",1,0) as ie  | if (cs_UserAgent matches "*Firefox*",1,0) as firefox  | if (cs_UserAgent matches "*Safari*",1,0) as safari | if (cs_UserAgent matches "*Chrome*",1,0) as chrome  | sum(ie) as ie, sum(firefox) as firefox, sum(safari) as safari, sum(chrome) as chrome` |
 | Use the where operator to match only weekend days. | `* | parse "day=*:" as day_of_week  | where day_of_week in ("Saturday","Sunday")` |
 | Identify all URLs that contain the subdirectory "Courses" in the path. | `* | parse "GET * " as cs_uri_stem  | where cs_uri_stem matches "*Courses*"` |
-| Find version numbers that match numeric values 2, 3 or 6. Use the num operator to change the string into a number. | `* | parse "Version=*." as number  | num(number) | where number in (2,3,6)` |
+| Find version numbers that match numeric values 2, 3 or 1. Use the num operator to change the string into a number. | `* | parse "Version=*." as number  | num(number) | where number in (2,3,6)` |
 
 :::sumo More Info
 For more information, see [Where](../search-query-language/search-operators/where.md) and [If](../search-query-language/search-operators/if-operator-and.md). 

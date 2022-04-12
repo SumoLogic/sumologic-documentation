@@ -22,8 +22,8 @@ Wildcards are supported in keywords and at the beginning and end of metadata fi
 
 ## Filter Live Tail
 
-1.  After your Source Category, Source Host, Source Name, Source, or Collector, enter the keyword you’d like to filter for. For example, enter "OS Process Data".  Use quotes to find a specific phrase, otherwise the AND operator is implicit.
-2.  Click **Run** or press **Enter**.
+1. After your Source Category, Source Host, Source Name, Source, or Collector, enter the keyword you’d like to filter for. For example, enter "OS Process Data".  Use quotes to find a specific phrase, otherwise the AND operator is implicit.
+1. Click **Run** or press **Enter**.
 
 The **Run** button changes to **Running**, the new query runs, and the screen automatically scrolls with the results.
 

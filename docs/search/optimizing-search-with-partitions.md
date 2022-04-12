@@ -72,7 +72,7 @@ Here are simple steps to create the Dev Partition:
 
 ## How can my team use Partitions?
 
-Once created, Partitions can be used by anyone in your account, helping you reduce the scope of your searches and improve the performance for all users. Query 2 above takes advantage of our newly created Partition to scan only 40% of the data. As noted above, Query 3 is also a good option, because Query Rewriting will produce the same results as Query 2. This might eliminate the need to edit all your queries once your Partitions are in place.
+Once created, Partitions can be used by anyone in your account, helping you reduce the scope of your searches and improve the performance for all users. Query 2 above takes advantage of our newly created Partition to scan only 40% of the data. As noted above, Query 3 is also a good option, because Query Rewriting will produce the same results as Query 1. This might eliminate the need to edit all your queries once your Partitions are in place.
 
 ![reduce scope](/img/search/optimize/reduce-scope.png)
 

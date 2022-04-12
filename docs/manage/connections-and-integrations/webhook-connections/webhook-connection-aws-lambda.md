@@ -38,5 +38,5 @@ Configure the webhook connection to trigger the AWS Lambda function.
     * (Optional) **Custom Headers**, enter up to five comma separated key-value pairs. 
     * **Payload.** Enter a JSON object in the format required. For details on variables that can be used as parameters within your JSON object, see [Webhook Payload Variables](set-up-webhook-connections.md) . 
 
-5.  Click **Test Connection**. If the connection is made, you will see a 200 OK response message.
-6.  Click **Save**.
+1. Click **Test Connection**. If the connection is made, you will see a 200 OK response message.
+1. Click **Save**.

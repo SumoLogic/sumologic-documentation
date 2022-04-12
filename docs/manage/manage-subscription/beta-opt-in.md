@@ -16,10 +16,10 @@ To opt-in to Sumo Logic beta terms and conditions:
 
 These instructions assume that you are the Account Owner of your company’s Sumo Logic account.
 
-1.  Go to **Administration** \> **Account** in the Sumo Logic UI.
-2.  Select the **Beta Participation** tab.
-3.  Under **Beta Features** click **Opt-in**.
-4.  Please read the entire agreement. 
+1. Go to **Administration** \> **Account** in the Sumo Logic UI.
+1. Select the **Beta Participation** tab.
+1. Under **Beta Features** click **Opt-in**.
+1. Please read the entire agreement. 
 
     * If you do not agree with any portion of the terms or have any questions, click **Cancel** and contact your Sumo Logic account representative.
     * If you agree to the terms, click the checkbox next to **I accept the terms of this agreement** and then click **Submit**.

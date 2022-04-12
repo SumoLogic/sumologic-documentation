@@ -157,9 +157,9 @@ Let’s say that our company has a shopping website, and we want to track
 purchases made by our most active user. We can use `subquery` in this
 case to get the desired results using the following steps:
 
-1.  Create a query that gives us items checked out and items purchased by a specific user (parent query).
-2.  Create a query that tracks the most active user on the website (child query).
-3.  Using subquery, pass the user_id or user_ip from the child query to the parent query, so that the complete workflow happens within a single query.
+1. Create a query that gives us items checked out and items purchased by a specific user (parent query).
+1. Create a query that tracks the most active user on the website (child query).
+1. Using subquery, pass the user_id or user_ip from the child query to the parent query, so that the complete workflow happens within a single query.
 
 ### Step 1: Create a parent query
 

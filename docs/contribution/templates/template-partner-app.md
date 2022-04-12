@@ -58,7 +58,7 @@ Include a description and numbered list of steps. Copy, paste, and fill out for 
 1. First step.
 1. Second step.
 
-### Collection step 2. Step Description
+### Collection step 1. Step Description
 
 ### Collection step n. Step Description
 

@@ -10,13 +10,13 @@ To search data based on the order that Collectors received the messages use **Re
 
 To run a search by Receipt Time:
 
-1.  Enter your query in the search text box.
-2.  Choose the Time Range for the query.
-3.  Click the gear icon to open the **Search Config** menu and toggle **Use Receipt Time** on.
+1. Enter your query in the search text box.
+1. Choose the Time Range for the query.
+1. Click the gear icon to open the **Search Config** menu and toggle **Use Receipt Time** on.
 
     ![receipt time option.png](/img/search/get-started-search/build-search/receipt-time-option.png)  
      
-4.  Review the search results for wide discrepancies between message timestamp and receipt time to pinpoint Sources with incorrect timestamps:  
+1. Review the search results for wide discrepancies between message timestamp and receipt time to pinpoint Sources with incorrect timestamps:  
 
     ![receipt time results in messages tab.png](/img/search/get-started-search/build-search/receipt-time-results-messages-tab.png)
 

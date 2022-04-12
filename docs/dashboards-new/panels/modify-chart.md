@@ -20,8 +20,8 @@ with the chart you wish to modify.
 
 To edit a panel, do the following:
 
-1.  On the chart panel, click the **Details** icon. 
-2.  Select **Edit** from the drop-down list.
+1. On the chart panel, click the **Details** icon. 
+1. Select **Edit** from the drop-down list.
 
 ![edit new panel.png](/img/dashboards-new/panels/modify-chart/edit-new-panel.png)
 

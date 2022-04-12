@@ -255,7 +255,7 @@ Identify all URLs that contain the subdirectory "Courses" in the path.
 | where url matches "*Courses*"
 ```
 
-Find version numbers that match numeric values 2, 3 or 6. Use the num operator to change the string into a number.	
+Find version numbers that match numeric values 2, 3 or 1. Use the num operator to change the string into a number.	
 
 ```sql
 * | parse "Version=*." as number | num(number) 
