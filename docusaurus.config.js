@@ -200,7 +200,7 @@ module.exports = {
                   {
                     label: 'Manage Sumo',
                     sublabel: 'Manage settings as admin',
-                    to: '/docs/manage/collection',
+                    to: '/docs/manage',
                     icon: 'start',
                     activeBaseRegex: '^/(collection)/.*',
                   },
@@ -224,7 +224,7 @@ module.exports = {
                 label: 'Metrics and Logs',
                 items: [
                   {
-                    label: 'Dashboards',
+                    label: 'Dashboards & Visuals',
                     sublabel: 'Configure visuals & alerts',
                     to: '/docs/dashboards-new',
                     icon: 'dashboard',

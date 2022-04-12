@@ -101,6 +101,7 @@ module.exports = {
      },
   ],
   manage: [
+    'manage/manage',
     {
       type: 'category',
       label: 'Collection',
@@ -388,6 +389,50 @@ module.exports = {
         'manage/security/set-max-web-session-timeout',
       ]
     },
+    {
+      type: 'category',
+      label: 'Users and Roles',
+      collapsible: true,
+      collapsed: true,
+      link: {type: 'doc', id: 'manage/users-and-roles/index'},
+      items: [
+        {
+          type: 'category',
+          label: 'Manage Roles',
+          collapsible: true,
+          collapsed: true,
+          link: {type: 'doc', id: 'manage/users-and-roles/roles/index'},
+          items: [
+            'manage/users-and-roles/roles/role-based-access-control',
+            'manage/users-and-roles/roles/create-manage-roles',
+            'manage/users-and-roles/roles/role-capabilities',
+            'manage/users-and-roles/roles/construct-search-filter-for-role',
+            'manage/users-and-roles/roles/add-remove-users-role',
+          ]
+        },
+        {
+          type: 'category',
+          label: 'Scheduled Views',
+          collapsible: true,
+          collapsed: true,
+          link: {type: 'doc', id: 'manage/users-and-roles/users/index'},
+          items: [
+            'manage/users-and-roles/users/create-edit-users',
+            'manage/users-and-roles/users/change-users-email-address',
+            'manage/users-and-roles/users/reset-user-password',
+            'manage/users-and-roles/users/unlock-user-account',
+            'manage/users-and-roles/users/deactivate-activate-user',
+            'manage/users-and-roles/users/delete-user',
+            'manage/users-and-roles/users/offboard-user',
+            'manage/users-and-roles/users/multi-account-access',
+            'manage/users-and-roles/users/secure-third-party-service-access',
+          ]
+        },
+        
+      ]
+    },
+    'manage/health-events',
+    'manage/fields',
   ],
   dashboards: [
     {
