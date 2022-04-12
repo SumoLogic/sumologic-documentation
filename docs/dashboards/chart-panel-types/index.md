@@ -1,5 +1,5 @@
 ---
-slug: /chart-panel-types
+slug: /dashboards/chart-panel-types
 ---
 
 # Chart Panel Types

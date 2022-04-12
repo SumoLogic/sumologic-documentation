@@ -71,7 +71,7 @@ If you’d like to edit the query itself, you can do that on the **Search** pa
 
 On the **Dashboards** page, in the Panel, click the **Show in Search** icon. The Search query opens in a new tab loading the query.
 
-![ShowinSearch.png](/img/dashboards/ShowinSearch.png)
+![show-search-icon.png](/img/dashboards/show-search-icon.png)
 
 ### Edit the Query of a Data Panel
 
@@ -169,7 +169,7 @@ To change a Data Panel from the Dashboard:
 * On the **Dashboards** page, hover over a data panel.
 * Click on the Show In Search icon.   
 
-    ![ShowInSearch.png](/img/dashboards/ShowInSearch.png)
+    ![show-search-icon.png](/img/dashboards/show-search-icon.png)
 
 * Edit the query to your specifications.
 * Click **Update Dashboard** to save your changes and update the dashboard with your changes.  
