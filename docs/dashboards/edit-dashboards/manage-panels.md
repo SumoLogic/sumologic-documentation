@@ -55,6 +55,7 @@ To be able to edit the dashboard, you can either:
 
 * Make a copy of of the dashboard.
 * Change the data access level. You can either set the data access level to your own data access level, or to the viewer's.
+
     * If you set the data access level to your own, users with whom the dashboard is shared will see the same data that you can in the dashboard.
     * If you set the data access level to the viewer's, users with whom the dashboard is shared will only see data to which their role filter allows access.  
 
@@ -68,7 +69,9 @@ The query and its time range of a Data Panel is displayed in the **Settings**�
 
 If you’d like to edit the query itself, you can do that on the **Search** page. See [Manage Charts](manage-charts.md).
 
-On the **Dashboards** page, in the Panel, click the **Show in Search** icon ![ShowinSearch.png](/img/dashboards/ShowinSearch.png). The Search query opens in a new tab loading the query.
+On the **Dashboards** page, in the Panel, click the **Show in Search** icon. The Search query opens in a new tab loading the query.
+
+![ShowinSearch.png](/img/dashboards/ShowinSearch.png)
 
 ### Edit the Query of a Data Panel
 
