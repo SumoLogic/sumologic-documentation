@@ -1,5 +1,5 @@
 ---
-id: move-panel-in-dashboard
+id: move-panel-dashboard
 ---
 
 # Move a Panel in a Dashboard
