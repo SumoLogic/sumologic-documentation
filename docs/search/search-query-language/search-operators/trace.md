@@ -38,9 +38,9 @@ You can use a trace operator to trace events in the past or to track future even
 
 We want to build a chain of events from the compromised host to try to determine the identity of the hacker. To do this, we will need to:
 
-1.  Identify the relevant login messages.
-2.  Give the compromised host as the first value to match.
-3.  Extract other relevant values (src_host, dest_host, login_user).
+1. Identify the relevant login messages.
+1. Give the compromised host as the first value to match.
+1. Extract other relevant values (src_host, dest_host, login_user).
 
 ### Tracing forward
 

@@ -66,10 +66,10 @@ There are two sides to the configuration. You'll configure a **Group Attribute 
 1. **Name Format**. Leave unspecified.
 1. **Filter**. In the left-side field, choose one of the options from the pulldown, to select the type of match expression you are going to enter: 
 
-    1.  **Starts with**. Useful if all the names of the Okta groups with Sumo users all begin with the same string. 
-    1.  **Equals**. Useful if there is a single Okta group for Sumo users. 
-    1.  **Contains**. Useful if all the names of the Okta groups with Sumo users all contain the same string.
-    1.  **Matches regex.** Use this option if you can’t specify your groups using any of the other filter types.  For example regex `Foo|A.*` will match the Okta group “Foo” and groups whose names begin with the letter “A”. If you are entering a regular expression, you must enter the case correctly. Regular expressions are case-sensitive.
+    1. **Starts with**. Useful if all the names of the Okta groups with Sumo users all begin with the same string. 
+    1. **Equals**. Useful if there is a single Okta group for Sumo users. 
+    1. **Contains**. Useful if all the names of the Okta groups with Sumo users all contain the same string.
+    1. **Matches regex.** Use this option if you can’t specify your groups using any of the other filter types.  For example regex `Foo|A.*` will match the Okta group “Foo” and groups whose names begin with the letter “A”. If you are entering a regular expression, you must enter the case correctly. Regular expressions are case-sensitive.
 1. Click **Save **at the bottom of the **Create SAML Integration** page.
 1. Go to **Administration \> Security \> SAML** in Sumo Logic.
 1. Click your Okta configuration in the **Configuration List** and then click the edit icon (![pencil](/img/security/pencil.png)) in the details pane.

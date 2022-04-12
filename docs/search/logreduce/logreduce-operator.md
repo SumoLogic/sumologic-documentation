@@ -22,12 +22,12 @@ There are two ways to use the operator.
 
 When you've already run a search query with non-aggregate results, you can use the **LogReduce** button in the **Messages** tab to automatically apply the LogReduce operator to the current results.
 
-1.  Run a search query with non-aggregate results.
-2.  In the **Messages** tab, the **LogReduce** button displays. Click it to automatically apply the LogReduce operator to your results.  
+1. Run a search query with non-aggregate results.
+1. In the **Messages** tab, the **LogReduce** button displays. Click it to automatically apply the LogReduce operator to your results.  
       
     ![button](/img/search/logreduce/logreduce-button.png)
      
-3.  The **Signatures** tab is displayed with your results. 
+1. The **Signatures** tab is displayed with your results. 
 
 ### Rules
 

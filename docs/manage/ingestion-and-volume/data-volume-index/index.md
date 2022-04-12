@@ -29,8 +29,8 @@ The Data Volume Index must be enabled by an administrator.
 
 To enable the Data Volume Index:
 
-1.  Go to the **Administration** \> **Account** \> **Data Management** page.
-2.  Under **Data Volume**, select **Enable**.
+1. Go to the **Administration** \> **Account** \> **Data Management** page.
+1. Under **Data Volume**, select **Enable**.
 
 ![data_volume_check_box.png](/img/ingestion-and-volume/data_volume_check_box.png)
 

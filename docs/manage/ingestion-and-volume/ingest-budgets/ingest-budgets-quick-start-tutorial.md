@@ -142,7 +142,7 @@ which returns
 }
 ```
 
-## Step 3. Assign a Collector to the Budget
+## Step 1. Assign a Collector to the Budget
 
 The following steps can be referenced in [Assign Collector to Ingest Budget](assign-collector-ingest-budget.md). You can use the Collection page in the Sumo web interface or the Collector API to assign the Collector.
 
@@ -247,7 +247,7 @@ Our updated file's content is:
 }
 ```
 
-## Step 4. Obtain the ETag value to identify Collector
+## Step 1. Obtain the ETag value to identify Collector
 
 To assign a Collector to a budget you'll need to make a PUT request with the [Collector Management API] (../../../APIs/Collector-Management-API.md "Collector Management API"). This request requires an "ETag" header value for verification. To get this value use a GET request for the Collector you want to assign and the response will have the value, like `< ETag: "a2c82c407ea4ae70ac4f6425b50942a1"`. You did this in step 2.
 

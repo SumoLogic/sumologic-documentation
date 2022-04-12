@@ -482,6 +482,78 @@ module.exports = {
     {
       //Add a category and docs per quickstart guide
       type: 'category',
+      label: 'Dashboards',
+      collapsible: true,
+      collapsed: true,
+      //link: {type: 'doc', id: 'dashboards/index'},
+      items: [
+        {
+          //Add a category and docs per quickstart guide
+          type: 'category',
+          label: 'Get Started',
+          collapsible: true,
+          collapsed: true,
+          link: {type: 'doc', id: 'dashboards/get-started/index'},
+          items: [
+            'dashboards/get-started/create-dashboard',
+            'dashboards/get-started/add-dashboard-link',
+            'dashboards/get-started/add-links-text-panels',
+            'dashboards/get-started/add-text-panel',
+            'dashboards/get-started/dashboard-optimization',
+            'dashboards/get-started/delete-dashboard',
+            'dashboards/get-started/launch-search-data-panel',
+            'dashboards/get-started/markdown-syntax',
+            'dashboards/get-started/move-panel-dashboard',
+            'dashboards/get-started/pause-panel',
+            'dashboards/get-started/resize-panel',
+            'dashboards/get-started/set-data-access-level-dashboard',
+            'dashboards/get-started/title-panels',
+            'dashboards/get-started/zoom-panel',
+          ],
+        },
+        {
+          //Add a category and docs per quickstart guide
+          type: 'category',
+          label: 'Chart Panels Types',
+          collapsible: true,
+          collapsed: true,
+          link: {type: 'doc', id: 'dashboards/chart-panel-types/index'},
+          items: [
+            'dashboards/chart-panel-types/area-charts',
+            'dashboards/chart-panel-types/bar-charts',
+            'dashboards/chart-panel-types/boolean-single-value-charts',
+            'dashboards/chart-panel-types/box-plot-charts',
+            'dashboards/chart-panel-types/column-charts',
+            'dashboards/chart-panel-types/combo-charts',
+            'dashboards/chart-panel-types/donut-pie-charts',
+            'dashboards/chart-panel-types/line-charts',
+            'dashboards/chart-panel-types/map-charts',
+            'dashboards/chart-panel-types/numerical-single-value-charts',
+            'dashboards/chart-panel-types/string-single-value-charts',
+            'dashboards/chart-panel-types/table-charts',
+          ],
+        },
+        {
+          //Add a category and docs per quickstart guide
+          type: 'category',
+          label: 'Edit Dashboards and Panels',
+          collapsible: true,
+          collapsed: true,
+          link: {type: 'doc', id: 'dashboards/edit-dashboards/index'},
+          items: [
+            'dashboards/edit-dashboards/manage-dashboards',
+            'dashboards/edit-dashboards/manage-charts',
+            'dashboards/edit-dashboards/manage-panels',
+            'dashboards/edit-dashboards/manage-axis',
+          ],
+        },
+        'dashboards/share-dashboard-inside-org',
+        'dashboards/share-dashboard-outside-org',
+      ],
+    },
+    {
+      //Add a category and docs per quickstart guide
+      type: 'category',
       label: 'Monitors',
       collapsible: true,
       collapsed: true,

@@ -132,6 +132,6 @@ See [Webhook payload variables](../webhook-connections/set-up-webhook-connection
 
 With domain separation in ServiceNow, you can separate data, processes, and administrative tasks into logically defined domains. To send security incidents to the right domain, as part of the Webhook payload, send “company” as part of the payload and set it to your customer’s company sysid (32-bit GUID) to ensure the incident is inserted in the proper ServiceNow domain. You will also need to ensure the following:
 
-1.  Business rules are running for your import set as documented [here](https://docs.servicenow.com/bundle/newyork-platform-administration/page/script/server-scripting/task/t_CreateATransformMap.html). 
+1. Business rules are running for your import set as documented [here](https://docs.servicenow.com/bundle/newyork-platform-administration/page/script/server-scripting/task/t_CreateATransformMap.html). 
 
-2.  The company field in the import map is set to reject if the company name doesn’t exist as documented [here](https://docs.servicenow.com/bundle/newyork-platform-administration/page/integrate/ldap/task/t_SetChoiceAction.html). 
+1. The company field in the import map is set to reject if the company name doesn’t exist as documented [here](https://docs.servicenow.com/bundle/newyork-platform-administration/page/integrate/ldap/task/t_SetChoiceAction.html). 

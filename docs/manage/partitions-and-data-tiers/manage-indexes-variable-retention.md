@@ -43,11 +43,11 @@ You may edit the retention period of Partitions and Scheduled Views. The minimum
 1. Click the three-dot icon on the right of the desired row, and from the menu select **Edit Retention Period**. (You may also edit the retention period from the expanded information dialog. Next to **Retention Period**, click **Edit**.)
 1. In the **Edit Retention Period** dialog, enter the new retention period in days. Alternatively, click the **Apply the retention period of the General Index** check box. 
 
-   1.  If the new retention period is longer than the previous period, click **Save**.    
+   1. If the new retention period is longer than the previous period, click **Save**.    
 
     ![edit retention](/img/partitions-and-data-tiers/edit_retention_period_save.png)
     
-    2. If the new retention period is shorter than the previous period, a portion of your data will be deleted in 7 days or right away. Click **Save** and choose either: 
+    1. If the new retention period is shorter than the previous period, a portion of your data will be deleted in 7 days or right away. Click **Save** and choose either: 
    
        * Simulate this data deletion for a few days and then reduce it permanently by selecting **Reduce retention period after 7 days.** You will be billed for this data until the deletion is permanent, but it gives you a sense of how the deletion will impact you before it is final.
        

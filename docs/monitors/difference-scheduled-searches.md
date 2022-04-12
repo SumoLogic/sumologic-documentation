@@ -8,8 +8,8 @@ In order to understand the difference between the two we first need to know the 
 
 Scheduled searches solve two main use cases:
 
-1.  **Alerting you about specific issues** happening in your application. For example, you can create scheduled searches to get notified about a spike in the error rate for a service or a stopped process. 
-2.  **Reporting on specific insights** from searches on a periodic schedule. For example, you can create a schedule to run daily to notify you about the Daily Active users on your platform.
+1. **Alerting you about specific issues** happening in your application. For example, you can create scheduled searches to get notified about a spike in the error rate for a service or a stopped process. 
+1. **Reporting on specific insights** from searches on a periodic schedule. For example, you can create a schedule to run daily to notify you about the Daily Active users on your platform.
 
 The new Monitors are designed to solve the ****first use case, alerting****. It provides additional capabilities, like Auto-resolution, support for multiple notification channels, and more. Any scheduled searches that were created to solve the alerting use case can be moved to new Monitors, this includes Real Time Scheduled Searches. 
 
