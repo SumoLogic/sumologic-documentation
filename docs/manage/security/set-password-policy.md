@@ -14,8 +14,8 @@ Admins with Manage Password Policy capability can make changes at any time for u
 
 To change the password policy:
 
-1.  Go to **Administration** \> **Security** \> **Password Policy**.
-2.  Change any of the following:
+1. Go to **Administration** \> **Security** \> **Password Policy**.
+1. Change any of the following:
 
     ![Set_Passwod_Policy.png](/img/security/Set_Passwod_Policy.png) 
     
@@ -30,4 +30,4 @@ To change the password policy:
 
     For example, we choose **4 Failed Attempts** from the first menu, **Within 5 Minutes** from the second menu, and **For 60 Minutes** from the third menu. This means that if a user enters four incorrect passwords in the space of five minutes, that user will be unable to log back into his or her account for 60 minutes. 
 
-3.  Click **Save**.
+1. Click **Save**.

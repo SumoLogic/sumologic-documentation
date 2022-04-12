@@ -43,8 +43,8 @@ In your Personal Folder, you can move your saved content, for example, to organi
 
 To move content:
 
-1.  Select the item you want to move, click the details icon to the right of the name, and from the menu, select **Move**.
-2.  In the **Move Item** dialog, select the location you want to move the content to, and click **Move**.
+1. Select the item you want to move, click the details icon to the right of the name, and from the menu, select **Move**.
+1. In the **Move Item** dialog, select the location you want to move the content to, and click **Move**.
 
     ![moveDashboard.gif](/img/get-started/library/moveDashboard.gif)
 

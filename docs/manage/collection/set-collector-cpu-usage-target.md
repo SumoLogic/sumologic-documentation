@@ -12,10 +12,10 @@ It’s important to note that a CPU target is not a hard limit. Even with a targ
 
 To set a CPU target:
 
-1.  Select **Manage Data \> Collection \> Collection**.
-2.  Click the collector name, or click the **Edit** link to the right of the collector name.
-3.  Click **Advanced**.
-4.  Choose an option from the **CPU Target** menu, then click **Save**.
+1. Select **Manage Data \> Collection \> Collection**.
+1. Click the collector name, or click the **Edit** link to the right of the collector name.
+1. Click **Advanced**.
+1. Choose an option from the **CPU Target** menu, then click **Save**.
 
 ![cpu target option](/img/collector/cpu-target-options.png)
 
@@ -35,8 +35,8 @@ The CPU Target only applies to collectors running local and remote file sources.
 
 Resource throttling occurs in two ways:
 
-1.  By reducing the number of threads used by each source to read local or remote files from the host. By default, a collector has up to eight threads per source. When CPU targeting kicks in, the collector incrementally reduces this thread count by one, and will continue to do so until it is left with only one thread in use, or the CPU has fallen below the set target. The collector will never reduce the thread count to 0 threads. Sumo Logic will always continue to read from the source files.
-2.  By increasing the scanning interval of the path expressions incrementally until the scan interval reaches a set maximum. By default, a local file source scans the defined path every two seconds. A remote file source scans the path every 30 seconds. Throttling increases either of these intervals up to 10x. This means the maximum scan interval for a local file source is 20 seconds, and the maximum scan interval for a remote file source is three minutes.
+1. By reducing the number of threads used by each source to read local or remote files from the host. By default, a collector has up to eight threads per source. When CPU targeting kicks in, the collector incrementally reduces this thread count by one, and will continue to do so until it is left with only one thread in use, or the CPU has fallen below the set target. The collector will never reduce the thread count to 0 threads. Sumo Logic will always continue to read from the source files.
+1. By increasing the scanning interval of the path expressions incrementally until the scan interval reaches a set maximum. By default, a local file source scans the defined path every two seconds. A remote file source scans the path every 30 seconds. Throttling increases either of these intervals up to 10x. This means the maximum scan interval for a local file source is 20 seconds, and the maximum scan interval for a remote file source is three minutes.
 
 The collector will always perform some level of work, whether it is scanning the path expressions looking for new files, or reading the files it has already found with the previous scan. So, depending on the CPU available on the host, the throttled-back collection could still require more CPU than what is defined within the CPU target parameter. In this case, you may not see the CPU ever go below the target you set for that collector.
 
@@ -44,9 +44,9 @@ The collector will always perform some level of work, whether it is scanning the
 
 The CPU Target value can be set in three ways:
 
-1.  Update the **CPU Target** value by editing the collector under **Manage Data \> Collection \> Collection**.
-2.  Update the collector configuration via the [Collector Management API] (../../APIs/Collector-Management-API/Collector-API-Methods-and-Examples.md).  
-3.  Either supply the **targetCPU** parameter to the [user.properties] (../../03Send-Data/Installed-Collectors/05Reference-Information-for-Collector-Installation/06user.properties.md) file or **-VtargetCPU** [command line argument] (../../03Send-Data/Installed-Collectors/05Reference-Information-for-Collector-Installation/06Parameters-for-the-Command-Line-Installer.md) during the initial installation and registration of the collector.
+1. Update the **CPU Target** value by editing the collector under **Manage Data \> Collection \> Collection**.
+1. Update the collector configuration via the [Collector Management API] (../../APIs/Collector-Management-API/Collector-API-Methods-and-Examples.md).  
+1. Either supply the **targetCPU** parameter to the [user.properties] (../../03Send-Data/Installed-Collectors/05Reference-Information-for-Collector-Installation/06user.properties.md) file or **-VtargetCPU** [command line argument] (../../03Send-Data/Installed-Collectors/05Reference-Information-for-Collector-Installation/06Parameters-for-the-Command-Line-Installer.md) during the initial installation and registration of the collector.
 
 ## How do you know targeting is applied?
 

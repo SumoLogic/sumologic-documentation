@@ -35,9 +35,9 @@ The upgrade may automatically be done in increments. In this case, you may exper
 
 To install an upgrade on one or more collectors:
 
-1.  In the Sumo Logic Web Application select **Manage Data \> Collection \> Collection**.
-2.  Click the **Upgrade Collectors** link.
-3.  Determine if you'd like to install the upgrade on individual collectors or on all collectors simultaneously. Then, choose one of the following: 
+1. In the Sumo Logic Web Application select **Manage Data \> Collection \> Collection**.
+1. Click the **Upgrade Collectors** link.
+1. Determine if you'd like to install the upgrade on individual collectors or on all collectors simultaneously. Then, choose one of the following: 
 
     * Click **Update** next to the name of a collector to install the upgrade just on that specific collector. This option can be used if a policy prevents you from upgrading every collector at the same time of day, or if you can't deploy the upgrade all at once. Any collectors you choose not to upgrade will remain available in the upgrade dialog box so you can install the upgrade at a later time.
     * If you can safely upgrade all collectors, click **Update All.**
@@ -58,10 +58,10 @@ You can choose to downgrade a Collector or Collectors to an earlier version for 
 
 To downgrade one or more collectors to an earlier build:
 
-1.  In the Sumo Logic Web Application select **Manage Data \> Collection \> Collection**.
-2.  Click the **Edit** link on the right of an installed collector.
-3.  Click the **Change Version** beside the current version.
-4.  Select the version to install. 
+1. In the Sumo Logic Web Application select **Manage Data \> Collection \> Collection**.
+1. Click the **Edit** link on the right of an installed collector.
+1. Click the **Change Version** beside the current version.
+1. Select the version to install. 
 
 The upgrade/downgrade process begins immediately after you click a build.
 

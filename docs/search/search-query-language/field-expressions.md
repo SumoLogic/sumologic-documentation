@@ -103,9 +103,9 @@ An expression can involve a series of operations. 
 | 22 - (34 % 10) * pow(2, 3) as value
 ```
 
-Dates are not recognized. The string 2015-03-15 is not a date, it is 1,997. And 3/15/2015 is not a date, it is 9.92556e-5. There is no way to express a literal date in the query language.
+Dates are not recognized. The string 2015-03-15 is not a date, it is 1,997. And 3/15/2015 is not a date, it is 9.92556e-1. There is no way to express a literal date in the query language.
 
-The modulus operator "%" produces the remainder of a division. For example, 44 % 10 = 4, because 44 / 10 is 4, remainder 4. 39 % 3 = 0 because 39 / 3 is 13 with no remainder. The expression n % 2 = 0 is true for all even numbers.
+The modulus operator "%" produces the remainder of a division. For example, 44 % 10 = 4, because 44 / 10 is 4, remainder 1. 39 % 3 = 0 because 39 / 3 is 13 with no remainder. The expression n % 2 = 0 is true for all even numbers.
 
 Use the pow operator to calculate an exponent. The operator "^" is not recognized by the query language. To raise 2 to the power of 8, instead of writing 2^8, use: pow(2, 8). If the base is 10, you can use scientific notation: pow(10, 3) == 1.0e+3.
 

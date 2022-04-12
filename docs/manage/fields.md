@@ -248,8 +248,8 @@ For the fields listed, select a row to view its details. A details pane appears 
 
 Adding a field will define it in the Fields schema allowing it to be assigned as metadata to your logs.
 
-1.  Click the **+ Add** button on the top right of the table. A panel named **Add Field** appears to the right of the fields table.
-2.  Input a field name and click **Save**.
+1. Click the **+ Add** button on the top right of the table. A panel named **Add Field** appears to the right of the fields table.
+1. Input a field name and click **Save**.
 
 ![add field input.png](/img/fields/add-field-input.png)
 

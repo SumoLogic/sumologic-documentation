@@ -41,9 +41,9 @@ Sumo Logic Free Trial Accounts offer 30 days of Enterprise account access to rev
 
 Sign up and activate within minutes:
 
-1.  **Sign up** to register and create your free Sumo Logic instance with a business address.
-1.  **Activate** your account through an email.
-1.  **Collect, See, and Act** to monitor, troubleshoot, and secure your app.
+1. **Sign up** to register and create your free Sumo Logic instance with a business address.
+1. **Activate** your account through an email.
+1. **Collect, See, and Act** to monitor, troubleshoot, and secure your app.
 
 ## Create a trial account
 If you already have a Sumo Logic account, you can skip this step and go straight to [Step 2](#step-2---create-a-sumo-logic-access-key).
@@ -68,9 +68,9 @@ You have three days to activate or it will be removed. You can sign up again if 
 
 To activate your Sumo Logic Free Trial account:
 
-1.  Locate and review the activation Sumo Logic email, then click **Activate Now**.
-1.  Fill out the **Activate Your Account** form. 
-1.  Click **Activate**.
+1. Locate and review the activation Sumo Logic email, then click **Activate Now**.
+1. Fill out the **Activate Your Account** form. 
+1. Click **Activate**.
 
     In a few minutes, your account is activated and the Sumo Logic Setup Wizard displays in a new browser tab.
 
@@ -109,26 +109,26 @@ These accounts have the following limitations:
 
 ## Sign up through AWS Marketplace
 
-1.  Sign in to the [AWS Marketplace](https://aws.amazon.com/marketplace) and search for Sumo Logic.
-1.  Select **Sumo Logic** and click **Continue**.  
+1. Sign in to the [AWS Marketplace](https://aws.amazon.com/marketplace) and search for Sumo Logic.
+1. Select **Sumo Logic** and click **Continue**.  
 
     ![AWS Marketplace](/img/get-started/aws_marketplace.png)
 
-1.  Click **Subscribe**.  
+1. Click **Subscribe**.  
 
     ![AWS Subscribe](/img/get-started/aws_marketplace_subscribe.png)
 
-1.  Click **Set Up Your Account**.  
+1. Click **Set Up Your Account**.  
 
     ![AWS Setup](/img/get-started/aws_marketplace_setup.png)
 
-1.  You are redirected to Sumo Logic to complete your account creation:
+1. You are redirected to Sumo Logic to complete your account creation:
 
     - **Email** - Enter an email for your account. If you have an existing Sumo Logic account, use a different email address. Signing up through AWS Marketplace will create a new Sumo Logic organization.
     - **Plan** - Select the plan that is right for your requirements.
     - **Region** - Select your region: North America, Europe, or Australia.
     - Review and accept the [Service License Agreement](https://www.sumologic.com/service-agreement/) to proceed.
-1.  Click **Sign Up**.
+1. Click **Sign Up**.
 
 Sumo Logic sends you an email to activate your account, and the Sumo Logic Setup Wizard is displayed.
 
@@ -142,9 +142,9 @@ You have three days to activate or it will be removed. You can sign up again if 
 
 To activate your Sumo Logic Free Trial account:
 
-1.  Locate and review the activation Sumo Logic email, then click **Activate Now**.
-1.  Fill out the **Activate Your Account** form. 
-1.  Click **Activate**.
+1. Locate and review the activation Sumo Logic email, then click **Activate Now**.
+1. Fill out the **Activate Your Account** form. 
+1. Click **Activate**.
 
     In a few minutes, your account is activated and the Sumo Logic Setup Wizard displays in a new browser tab.
 
@@ -152,12 +152,12 @@ Next, use the [Setup Wizard] to send your logs to Sumo Logic.
 
 ### Cancel your Account through AWS Marketplace
 
-1.  Sign in to the [AWS Marketplace](https://aws.amazon.com/marketplace) and access your account.
-1.  Go to **Manage your software subscriptions** and select **Sumo Logic**.
+1. Sign in to the [AWS Marketplace](https://aws.amazon.com/marketplace) and access your account.
+1. Go to **Manage your software subscriptions** and select **Sumo Logic**.
 
     ![AWS Cancel](/img/get-started/aws_marketplace_cancel.png)
 
-1.  Click **Cancel subscription**.
+1. Click **Cancel subscription**.
 
 Your subscription is cancelled immediately.
 
@@ -170,6 +170,6 @@ If upgrades are allowed for your AWS account, you can upgrade your active accoun
 
 To upgrade:
 
-1.  Click **Upgrade** on the left navigation pane in the Sumo Logic web app.
-2.  The **Upgrade** button is visible if you have an active AWS account for which upgrades are permitted.
-3.  On the Upgrade request form, enter Log Ingest level you want to upgrade to. Within 24 to 48 hours, your account will be updated to reflect the change. Once the account is upgraded, the AWS Marketplace will be notified of the change.  
+1. Click **Upgrade** on the left navigation pane in the Sumo Logic web app.
+1. The **Upgrade** button is visible if you have an active AWS account for which upgrades are permitted.
+1. On the Upgrade request form, enter Log Ingest level you want to upgrade to. Within 24 to 48 hours, your account will be updated to reflect the change. Once the account is upgraded, the AWS Marketplace will be notified of the change.  

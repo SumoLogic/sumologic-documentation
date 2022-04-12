@@ -156,9 +156,9 @@ When the account is created, Sumo Logic credentials are emailed to the user. Use
 
 Configure a logout page if you would like to point Sumo users to a particular URL after logging out of Sumo Logic or after their session has timed out. You could choose your company's intranet, for example, or any other site that you'd prefer users in your organization access.
 
-1.  Click the **Logout Page** checkbox.
-2.  Enter the URL of the page to which you want to direct users after logging of Sumo.
-3.  Click **Add** to save your configuration, and proceed to [Review SAML configuration](set-up-saml.md).  
+1. Click the **Logout Page** checkbox.
+1. Enter the URL of the page to which you want to direct users after logging of Sumo.
+1. Click **Add** to save your configuration, and proceed to [Review SAML configuration](set-up-saml.md).  
 
 ## Create multiple SAML configurations
 

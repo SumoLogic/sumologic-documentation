@@ -36,9 +36,9 @@ the following prefixes:
 
 ## Search content in the Library
 
-1.  In Sumo Logic, go to the **Library**.
-2.  Select the **Personal** or **Org** tab.
-3.  In the search field at the top of the right-hand panel, enter your text. You can use any of the following: 
+1. In Sumo Logic, go to the **Library**.
+1. Select the **Personal** or **Org** tab.
+1. In the search field at the top of the right-hand panel, enter your text. You can use any of the following: 
 
     * Keyword 
     * Wildcard (\*)

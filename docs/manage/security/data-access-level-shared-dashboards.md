@@ -17,7 +17,7 @@ policy.
 
 To enable that **Data Access Level for Shared Dashboards security policy:
 
-1.  Go to **Administration \> **Security** \> **Policies**.
-2.  Click the checkbox in the **Data Access Level for Shared Dashboards** section.
+1. Go to **Administration \> **Security** \> **Policies**.
+1. Click the checkbox in the **Data Access Level for Shared Dashboards** section.
 
  

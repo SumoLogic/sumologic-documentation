@@ -10,6 +10,6 @@ You can recreate Collectors and Sources with the same names so searches include 
 
 To delete a Collector or Source from the web application:
 
-1.  In the Web Application, go to **Manage Data** \> **Collection** \> **Collection**.
-2.  Find the Collector or Source you want to remove, and click **Delete**.
-3.  Click **OK** to confirm.
+1. In the Web Application, go to **Manage Data** \> **Collection** \> **Collection**.
+1. Find the Collector or Source you want to remove, and click **Delete**.
+1. Click **OK** to confirm.

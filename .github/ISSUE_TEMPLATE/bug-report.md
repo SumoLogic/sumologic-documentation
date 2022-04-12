@@ -12,9 +12,9 @@ Give a clear and concise description of the issue. Include any errors you receiv
 
 **Steps to reproduce the behavior:**
 1. Go to '...'
-2. Click on '...'
-3. Scroll down to '...'
-4. See error
+1. Click on '...'
+1. Scroll down to '...'
+1. See error
 
 **Expected behavior:**
 Describe what you expected to happen.

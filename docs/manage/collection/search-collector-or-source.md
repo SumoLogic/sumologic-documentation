@@ -22,7 +22,7 @@ In addition to the search field, you have a couple of drop-down selections to fu
 
 To search for a collector or source:
 
-1.  Go to **Manage Data \> Collection \> Collection**.
-2.  Enter a complete keyword (or keyword and wildcard) in the search field, and click **Search** or press Enter.
+1. Go to **Manage Data \> Collection \> Collection**.
+1. Enter a complete keyword (or keyword and wildcard) in the search field, and click **Search** or press Enter.
 
 Search results are displayed.

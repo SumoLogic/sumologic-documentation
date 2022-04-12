@@ -61,16 +61,16 @@ import Iframe from 'react-iframe';
 
 Changes to Field Extraction Rules are implemented immediately.
 
-1.  In Sumo Logic, go to **Manage Data** \> **Logs** \> **Field Extraction Rules.**
-2.  Find the rule in the table and click it. A window appears on the right of the table, click the **Edit** button.
-3.  Make changes as needed and click **Save** when done.
+1. In Sumo Logic, go to **Manage Data** \> **Logs** \> **Field Extraction Rules.**
+1. Find the rule in the table and click it. A window appears on the right of the table, click the **Edit** button.
+1. Make changes as needed and click **Save** when done.
 
 ## Delete a Field Extraction Rule
 
 Deleting a Field Extraction Rule doesn't delete the fields it was parsing. You can delete any unwanted fields on the [Fields] (Fields.md "Fields") page.
 
-1.  In Sumo Logic, go to **Manage Data** \> **Logs** \> **Field Extraction Rules.**
-2.  Find the rule to delete in the table and click it. A window appears on the right of the table, click the **More Actions** button, and select **Delete**.
+1. In Sumo Logic, go to **Manage Data** \> **Logs** \> **Field Extraction Rules.**
+1. Find the rule to delete in the table and click it. A window appears on the right of the table, click the **More Actions** button, and select **Delete**.
 
 import DocCardList from '@theme/DocCardList';
 import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
