@@ -6,7 +6,7 @@ id: box-plot-charts
 
 A Box Plot Chart graphically depicts groups of data using quartiles, which are the values that divide a list of numbers into quarters. In Box Plot charts, the bottom and top of the box represent the first and third quartiles; the band inside the box represents the median.
 
-![Box plot](/img/dashboardsBox-plot.png)
+![Box plot](/img/dashboards/Box-plot.png)
 
 To create Box Plot Chart panels, your query must include:
 
@@ -68,6 +68,6 @@ To create a Box Plot chart:
 1.  Type a supported query in the Search box, including all of the required field names.
 2.  Once the search results appear, click the **Box Plot Chart** icon.
 
-    ![Charts - box plot](/img/dashboardscharts_box_plot.png)    
+    ![Charts - box plot](/img/dashboards/charts_box_plot.png)    
 
 3.  (Optional) Click **Add to Dashboard** if you'd like to save the chart as a panel. 

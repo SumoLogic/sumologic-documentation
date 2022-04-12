@@ -482,6 +482,52 @@ module.exports = {
     {
       //Add a category and docs per quickstart guide
       type: 'category',
+      label: 'Dashboards',
+      collapsible: true,
+      collapsed: true,
+      //link: {type: 'doc', id: 'dashboards/index'},
+      items: [
+        {
+          //Add a category and docs per quickstart guide
+          type: 'category',
+          label: 'Chart Panels Types',
+          collapsible: true,
+          collapsed: true,
+          link: {type: 'doc', id: 'dashboards/chart-panel-types/index'},
+          items: [
+            'dashboards/chart-panel-types/area-charts',
+            'dashboards/chart-panel-types/bar-charts',
+            'dashboards/chart-panel-types/boolean-single-value-charts',
+            'dashboards/chart-panel-types/box-plot-charts',
+            'dashboards/chart-panel-types/column-charts',
+            'dashboards/chart-panel-types/combo-charts',
+            'dashboards/chart-panel-types/donut-pie-charts',
+            'dashboards/chart-panel-types/line-charts',
+            'dashboards/chart-panel-types/map-charts',
+            'dashboards/chart-panel-types/numerical-single-value-charts',
+            'dashboards/chart-panel-types/string-single-value-charts',
+            'dashboards/chart-panel-types/table-charts',
+          ],
+        },
+        {
+          //Add a category and docs per quickstart guide
+          type: 'category',
+          label: 'Edit Dashboards and Panels',
+          collapsible: true,
+          collapsed: true,
+          link: {type: 'doc', id: 'dashboards/edit-dashboards/index'},
+          items: [
+            'dashboards/edit-dashboards/manage-dashboards',
+            'dashboards/edit-dashboards/manage-charts',
+            'dashboards/edit-dashboards/manage-panels',
+            'dashboards/edit-dashboards/manage-axis',
+          ],
+        },
+      ],
+    },
+    {
+      //Add a category and docs per quickstart guide
+      type: 'category',
       label: 'Monitors',
       collapsible: true,
       collapsed: true,

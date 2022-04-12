@@ -1,5 +1,5 @@
 ---
-id: manage-dashboard
+id: manage-dashboards
 ---
 
 # Manage Dashboards
