@@ -101,6 +101,7 @@ module.exports = {
      },
   ],
   manage: [
+    'manage/manage',
     {
       type: 'category',
       label: 'Collection',
@@ -427,10 +428,11 @@ module.exports = {
             'manage/users-and-roles/users/secure-third-party-service-access',
           ]
         },
-        'manage/health-events',
-        'manage/fields',
+        
       ]
     },
+    'manage/health-events',
+    'manage/fields',
   ],
   dashboards: [
     {
