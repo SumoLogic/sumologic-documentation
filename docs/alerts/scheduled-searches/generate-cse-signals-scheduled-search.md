@@ -100,7 +100,7 @@ To view Signals that were created from a scheduled search, run a keyword search 
 Below is a screenshot of a Signal that was created from a scheduled search. Note that:
 
 * The **Mapping** section at the bottom of the page shows that the Signal was the result of a scheduled search.
-* If the Signal is not part of an Insight, there’s a **Create Insight** link you can use to create an Insight for the Signal. For more information, see [Create an Insight from Signal](./Generate_CSE_Signals_With_a_Scheduled_Search.md "Generate CSE Signals With a Scheduled Search").
+* If the Signal is not part of an Insight, there’s a **Create Insight** link you can use to create an Insight for the Signal. For more information, see [Create an Insight from Signal](generate-cse-signals-scheduled-search.md).
 * You can click the **Full Details** link for more information about the Signal. See [View Signal details](#view-signal-details) below for a screenshot.
 
 ![ss-signal.png](/img/alerts/ss-signal.png)

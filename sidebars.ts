@@ -562,7 +562,7 @@ module.exports = {
       collapsed: true,
       link: {type: 'doc', id: 'alerts/index'},
       items: [
-        'alerts/alerts-variables',
+        'alerts/alert-variables',
         {
           type: 'category',
           label: 'Monitors',
@@ -572,10 +572,10 @@ module.exports = {
           items: [
             'alerts/monitors/monitor-faq',
             'alerts/monitors/terminology',
-            'vmonitors/alert-response',
+            'alerts/monitors/alert-response',
             'alerts/monitors/alert-response-faq',
-            'vmonitors/difference-from-scheduled-searches',
-            'vmonitors/template-variables',
+            'alerts/monitors/difference-from-scheduled-searches',
+            'alerts/monitors/template-variables',
           ],
         },
         {
@@ -593,7 +593,7 @@ module.exports = {
             'alerts/scheduled-searches/run-search-from-alert-email',
             'alerts/scheduled-searches/save-to-index',
             'alerts/scheduled-searches/save-to-lookup',
-            'alerts/scheduled-searches/schedule-searches',
+            'alerts/scheduled-searches/schedule-search',
             {
               type: 'category',
               label: 'FAQs',
