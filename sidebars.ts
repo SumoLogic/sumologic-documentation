@@ -487,6 +487,7 @@ module.exports = {
       collapsed: true,
       //link: {type: 'doc', id: 'dashboards/index'},
       items: [
+        'dashboards/about-dashboards',
         {
           //Add a category and docs per quickstart guide
           type: 'category',
@@ -545,10 +546,13 @@ module.exports = {
             'dashboards/edit-dashboards/manage-charts',
             'dashboards/edit-dashboards/manage-panels',
             'dashboards/edit-dashboards/manage-axis',
+            'dashboards/edit-dashboards/set-time-range-dashboards',
+            'dashboards/edit-dashboards/use-filters-dashboards',
           ],
         },
         'dashboards/share-dashboard-inside-org',
         'dashboards/share-dashboard-outside-org',
+        'dashboards/restricted-operators-dashboards',
       ],
     },
     {
