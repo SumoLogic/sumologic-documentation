@@ -63,6 +63,6 @@ The following operators can be used in Dashboard Panels, but in the search they 
 
 ### Notes
 
-You can use the [count_frequent](../../05Search/Search-Query-Language/aaGroup/count,-count-distinct,-and-count-frequent.md "count, count_distinct, and count_frequent") operator in dashboard queries, but the number of results returned is limited to the top 100 most frequent results. All results are available when the search is run on the **Search** page, but only the top 100 are displayed in the Panel.
+You can use the [count_frequent](../search/search-query-language/group-aggregate-operators/count-count-distinct-and-count-frequent.md) operator in dashboard queries, but the number of results returned is limited to the top 100 most frequent results. All results are available when the search is run on the **Search** page, but only the top 100 are displayed in the Panel.
 
 Sumo Logic provides support for optimization to improve the efficiency of searches in Interactive dashboards. See [Optimize Panels in Interactive Dashboards](get-started/dashboard-optimization.md).
