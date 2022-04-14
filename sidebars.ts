@@ -436,7 +436,6 @@ module.exports = {
   ],
   dashboards: [
     {
-      //Add a category and docs per quickstart guide
       type: 'category',
       label: 'Dashboards (New)',
       collapsible: true,
@@ -452,7 +451,6 @@ module.exports = {
         'dashboards-new/link-dashboard-new',
         'dashboards-new/locate-deviations-time-series',
         {
-          //Add a category and docs per quickstart guide
           type: 'category',
           label: 'Panels',
           collapsible: true,
@@ -480,16 +478,14 @@ module.exports = {
       ],
     },
     {
-      //Add a category and docs per quickstart guide
       type: 'category',
       label: 'Dashboards',
       collapsible: true,
       collapsed: true,
-      //link: {type: 'doc', id: 'dashboards/index'},
+      link: {type: 'doc', id: 'dashboards/index'},
       items: [
         'dashboards/about-dashboards',
         {
-          //Add a category and docs per quickstart guide
           type: 'category',
           label: 'Get Started',
           collapsible: true,
@@ -513,7 +509,6 @@ module.exports = {
           ],
         },
         {
-          //Add a category and docs per quickstart guide
           type: 'category',
           label: 'Chart Panels Types',
           collapsible: true,
@@ -535,7 +530,6 @@ module.exports = {
           ],
         },
         {
-          //Add a category and docs per quickstart guide
           type: 'category',
           label: 'Edit Dashboards and Panels',
           collapsible: true,
