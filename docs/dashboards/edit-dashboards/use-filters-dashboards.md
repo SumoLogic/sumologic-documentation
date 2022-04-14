@@ -24,7 +24,7 @@ If you add a filter to a specific panel by clicking the **Filter** icon for the 
 
 To see which panels are linked to a filter, hover over the blue filter icon in the filter box. In the following example, you can see that the **country_name** filter applies to the **Geolocation of Admin Activities** panel, but not the **User Operation...** or **Role Operation...** Panel, because when hovering over the icon for the logger filter, the **Geolocation of Admin Activities** panel shows a light blue border but the **User Operation...** Panel does not.
 
-![Filters3.2.png](/img/dashboards/Filters3.2.png)
+![Filters3.2.png](/img/dashboards/filter-acct-mgmt.png)
 
 :::note
 [Autocomplete](#autocomplete-for-filters) is available for these filters when you create them. Suggested values come from the most recent run of the search.
