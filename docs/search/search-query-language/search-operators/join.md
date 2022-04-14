@@ -197,7 +197,7 @@ Assume you have a Join query, such as:
 on t1.a = t2.c
 ```
 
-After the Join statement, to use the T1.a and the T2.b fields in subsequent clauses, you'd instead refer to them as T1_a and T1_b. For example, to use the [fields operator](fields_operator.md) to single out the T1.a and T2.b values, use the following query:
+After the Join statement, to use the T1.a and the T2.b fields in subsequent clauses, you'd instead refer to them as T1_a and T1_b. For example, to use the [fields operator](fields-operator.md) to single out the T1.a and T2.b values, use the following query:
 
 ```sql
 * | join

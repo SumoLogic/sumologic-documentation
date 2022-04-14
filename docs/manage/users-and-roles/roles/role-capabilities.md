@@ -70,8 +70,8 @@ You can assign any of the following capabilities when you [create roles](creat
 
 | Capability | Description |
 |--|--|
-| View Monitors | View [Monitors](/docs/monitors). |
-| Manage Monitors  | Create, edit, share, and delete [Monitors](/docs/monitors). |
+| View Monitors | View [Monitors](/docs/alerts/monitors). |
+| Manage Monitors  | Create, edit, share, and delete [Monitors](/docs/alerts/monitors). |
 | View Alerts | View [Alerts] (../../../Visualizations-and-Alerts/Alerts/Monitors/Alert_Response.md "Alert Response").  |
 
 ## Organizations
