@@ -86,7 +86,7 @@ The regex has two capture groups and in the `<replaceString>` we have specified 
 
 ### Replace periods in a field with different punctuation
 
-To replace periods in a field with different punctuation, you'd use the following query. This query also uses the [Fields](fields_operator.md) operator to display only the required fields.
+To replace periods in a field with different punctuation, you'd use the following query. This query also uses the [Fields](fields-operator.md) operator to display only the required fields.
 
 ```sql
 error

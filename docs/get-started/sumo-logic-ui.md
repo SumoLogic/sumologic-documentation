@@ -148,9 +148,9 @@ To launch a search, metrics visualization, or live tail session, do the followin
    * Click **+New** in the Tabs menu and choose an option from the drop-down menu. 
    * Click one of the following Home page icons:
 
-     * [Log Search]  (../05Search/Get-Started-with-Search/Search-Basics.md "Search Basics"). Open the Search page to search logs.
+     * [Log Search](/docs/search/get-started-with-search/search-basics). Open the Search page to search logs.
      * [Metrics] (../Metrics.md "Metrics"). Open the Metrics page to create a metrics visualization.
-     * [Live Tail] (../05Search/Live-Tail.md "Live Tail"). View a real-time live feed of log events associated with a Source or Collector.
+     * [Live Tail](/docs/search/live-tail). View a real-time live feed of log events associated with a Source or Collector.
 
     ![WTS_UI_Search-Metrics-LiveTail.png](/img/get-started/ui/WTS_UI_Search-Metrics-LiveTail.png)
 
@@ -287,7 +287,7 @@ To manage data in Sumo Logic, do the following:
     * **Collection.** [Manage collectors and sources](/docs/manage/collection).
     * **Logs.** Manage [fields] (../Manage/Fields.md "Fields"), [field extraction rules] (../Manage/Field-Extractions.md "https://help.sumologic.com/Manage/Search_Optimization_Tools/Manage_Field_Extractions"), [partitions] (../Manage/Partitions_and_Data_Tiers.md "https://help.sumologic.com/Manage/Search_Optimization_Tools/Manage_Partitions"), [scheduled views] (../Manage/Scheduled-Views.md "Manage Scheduled Views"), [connections](/docs/manage/connections-and-integrations), and [data forwarding] (../Manage/Data-Forwarding.md "Data Forwarding").
     * **Metrics.** Manage metrics rules, [logs-to-metrics] (../Metrics/Logs-to-Metrics.md "Logs-to-Metrics"), and [metrics transformation rules] (../Metrics/Metrics_Transformation_Rules.md "Metrics Transformation Rules").
-    * **Alerts.** [Monitors](/docs/monitors), [connections](/docs/manage/connections-and-integrations), and [health events] (../Manage/Health_Events.md "Health Events").
+    * **Alerts.** [Monitors](/docs/alerts/monitors), [connections](/docs/manage/connections-and-integrations), and [health events] (../Manage/Health_Events.md "Health Events").
 
 ### Admin: Manage accounts, users, and security
 

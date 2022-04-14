@@ -35,7 +35,7 @@ Before you begin, perform the steps in [Offboard a User.](offboard-user.md) The
 * For dashboards, scheduled searches, scheduled views, and monitors for which the deleted user was the run-as user, the new owner becomes the run-as user. So, the transferred dashboards, scheduled searches, scheduled views, and monitors will run with the same data access level as the new owner. This might affect the data seen in the dashboards, scheduled searches, scheduled views, and monitors if the data access level of the owner is different from that of the deleted user. The new owner must have the **Manage Scheduled View** [role capability](../roles/role-capabilities.md) for scheduled views to be successfully transferred.
 * Data continues to be indexed into partitions that the deleted user set up. 
 * If a new owner is not selected, all scheduled views created by the user being deleted will stop and no new data will be indexed into the scheduled view. (The data itself is not deleted and the name of the scheduled view will still exist).  
-* If you transfer content to a new owner, [Monitors](/docs/monitors) created by the deleted user will run in the context of the new owner.
+* If you transfer content to a new owner, [Monitors](/docs/alerts/monitors) created by the deleted user will run in the context of the new owner.
 
 ## Delete a user and transfer content
 

@@ -55,7 +55,7 @@ The table below shows the possible values for the field, query_type.
 | Live Dashboard | Search queries used to power live dashboard panels. |
 | Compare | Search queries that are run as part of the logreduce operator or compare timeshift operators in the search query. The corresponding parent search query can be identified by the same session_id. |
 | Subquery | Subqueries are run as a separate search and corresponding attributes are captured in the Search Audit Index. The corresponding parent search query can be identified by the same session_id.      |
-| Monitor | Queries associated with [monitors](/docs/monitors). |
+| Monitor | Queries associated with [monitors](/docs/alerts/monitors). |
 
 ## Index retention period
 

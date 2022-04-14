@@ -111,7 +111,7 @@ Replace sample image with panel from your App Dashboard, using red box callout:
 
 
 
-Use the instruction from this doc (https://help.sumologic.com/05Search/Library/Apps-in-Sumo-Logic/Install-Apps-from-the-Library) to install the "Partner" App.
+Use the instructions from [Install Sumo Logic Apps](../../get-started/library/install-apps.md) to install the "Partner" App.
 
 ## Dashboard name
 Copy, paste, and fill in this dashboard section for each dashboard. Enter a dashboard description from above.
