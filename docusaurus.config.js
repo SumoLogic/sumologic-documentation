@@ -177,6 +177,9 @@ module.exports = {
               '0 2 3 5',
               '0 2 3 5',
               '0 2 3 5',
+              '0 2 6 5',
+              '0 2 6 5',
+              '0 2 6 5',
             ],
             items_: [ // Use name codes for icons from the Material Site https://fonts.google.com/icons?query=material
               {
@@ -289,6 +292,24 @@ module.exports = {
                     sublabel: 'Learn what caused issues',
                     to: '/docs/get-started',
                     icon: 'widgets',
+                  },
+                ],
+              },
+              {
+                // 6
+                label: 'Other Solutions',
+                items: [
+                  {
+                    label: 'Global Intelligence',
+                    sublabel: 'Review security issues',
+                    to: '/docs/get-started',
+                    icon: 'format_list_bulleted',
+                  },
+                  {
+                    label: 'SDO Solution',
+                    sublabel: 'Software Development Optimization',
+                    to: '/docs/get-started',
+                    icon: 'code',
                   },
                 ],
               },

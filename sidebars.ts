@@ -983,6 +983,50 @@ module.exports = {
       ],
     },
   ],
+  other: [
+    {
+      type: 'category',
+      label: 'Global Intelligence',
+      collapsible: true,
+      collapsed: false,
+      link: {type: 'doc', id: 'global-intelligence/index'},
+      items: [
+        {
+          type: 'category',
+          label: 'Apache',
+          collapsible: true,
+          collapsed: false,
+          link: {type: 'doc', id: 'global-intelligence/apache/index'},
+          items: [
+            'global-intelligence/apache/install-for-apache-view-dashboards',
+            'global-intelligence/apache/collect-logs-apache',
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Apache Tomcat',
+          collapsible: true,
+          collapsed: false,
+          link: {type: 'doc', id: 'global-intelligence/apache/index'},
+          items: [
+            'global-intelligence/apache/install-for-apache-tomcat-view-dashboards',
+            'global-intelligence/apache/collect-logs-tomcat-app',
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Nginx',
+          collapsible: true,
+          collapsed: false,
+          link: {type: 'doc', id: 'global-intelligence/nginx/index'},
+          items: [
+            'global-intelligence/apache/install-for-nginx-view-dashboards',
+            'global-intelligence/apache/collect-logs-nginx',
+          ],
+        },
+      ],
+    },
+  ],
   //Contribution guide for documentation
   contribution: [
     {
