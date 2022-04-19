@@ -170,16 +170,16 @@ module.exports = {
             label: 'Guides',
             to: '#',
             layout: [
-              '0 1 3 4',
-              '0 1 3 4',
-              '0 1 3 4',
               '0 1 3 5',
-              '0 2 3 5',
-              '0 2 3 5',
-              '0 2 3 5',
-              '0 2 6 5',
-              '0 2 6 5',
-              '0 2 6 5',
+              '0 1 3 5',
+              '0 1 3 5',
+              '0 1 3 6',
+              '0 2 3 6',
+              '0 2 4 6',
+              '0 2 4 6',
+              '0 2 4 6',
+              '0 2 4 6',
+              '0 2 4 6',
             ],
             items_: [ // Use name codes for icons from the Material Site https://fonts.google.com/icons?query=material
               {
@@ -302,7 +302,7 @@ module.exports = {
                   {
                     label: 'Global Intelligence',
                     sublabel: 'Review security issues',
-                    to: '/docs/get-started',
+                    to: '/docs/global-intelligence',
                     icon: 'format_list_bulleted',
                   },
                   {

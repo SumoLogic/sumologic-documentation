@@ -14,7 +14,7 @@ This page has instructions for installing the Sumo Logic App for Global Intellig
 You can use filters to drill down and examine the data on a granular level.  One server must be selected for benchmark comparisons to be meaningful.
 :::
 
-![](/img/global-intelligence/nginx-filter)
+![](/img/global-intelligence/nginx-filter.png)
 
 ## GI Nginx - 01 Golden Signals
 

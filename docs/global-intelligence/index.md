@@ -6,7 +6,6 @@ slug: /global-intelligence
 
 This category is about Global Inteligence for Sumo Logic apps.
 
- 
 import DocCardList from '@theme/DocCardList';
 import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
 
