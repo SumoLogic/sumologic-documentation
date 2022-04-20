@@ -1026,6 +1026,33 @@ module.exports = {
         },
       ],
     },
+    {
+      type: 'category',
+      label: 'SDO',
+      collapsible: true,
+      collapsed: false,
+      link: {type: 'doc', id: 'sdo/index'},
+      items: [
+        'sdo/about-sdo',
+        'sdo/supported-tools-schema',
+        {
+          type: 'category',
+          label: 'Set Up SDO Solution',
+          collapsible: true,
+          collapsed: false,
+          link: {type: 'doc', id: 'sdo/set-up-sdo/index'},
+          items: [
+            'sdo/set-up-sdo/sdo-manual-configuration',
+            'sdo/set-up-sdo/sdo-setup-from-atlassian-marketplace',
+            'sdo/set-up-sdo/sdo-setup-with-terraform-script',
+          ],
+        },
+        `sdo/install-sdo-app-view-dashboards`,
+        'sdo/view-sdo-dashboards',
+        'sdo/integrate-tools-with-sdo',
+        'sdo/jenkins-plugin-build-deploy-events',
+      ],
+    },
   ],
   //Contribution guide for documentation
   contribution: [

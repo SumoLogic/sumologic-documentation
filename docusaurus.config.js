@@ -308,7 +308,7 @@ module.exports = {
                   {
                     label: 'SDO Solution',
                     sublabel: 'Software Development Optimization',
-                    to: '/docs/get-started',
+                    to: '/docs/sdo',
                     icon: 'code',
                   },
                 ],
