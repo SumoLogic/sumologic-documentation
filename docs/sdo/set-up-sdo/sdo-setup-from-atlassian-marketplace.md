@@ -117,7 +117,7 @@ To configure using the wizard:
     ![sdo-jira-cloud.png](/img/sdo/sdo-jira-cloud.png)
 
 1. Continue with the following configurations: [Version Control](#version-control), [Continuous Integration](#continuous-integration), [Deployment](#deployment), [Incident Management](#incident-management).
-1. 1. Click **Save** to complete the setup wizard. A completion message will appear after saving.
+1. Click **Save** to complete the setup wizard. A completion message will appear after saving.
 
   ![sdo-wizard-save.png](/img/sdo/sdo-jenkins-apply.png)
 
