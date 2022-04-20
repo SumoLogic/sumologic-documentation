@@ -116,10 +116,16 @@ To configure using the wizard:
 
     ![sdo-jira-cloud.png](/img/sdo/sdo-jira-cloud.png)
 
-1. For Version Control, select one of the following applications. Configure settings and click **Apply**.
+1. Continue with the following configurations: [Version Control](#version-control), [Continuous Integration](#continuous-integration), [Deployment](#deployment), [Incident Management](#incident-management).
+1. 1. Click **Save** to complete the setup wizard. A completion message will appear after saving.
+
+  ![sdo-wizard-save.png](/img/sdo/sdo-jenkins-apply.png)
+
+### Version Control
+
+For Version Control, select one of the following applications. Configure settings and click **Apply**.
 
 <Tabs
-  className="unique-tabs"
   defaultValue="tab1"
   values={[
     {label: 'GitHub', value: 'tab1'},
@@ -171,10 +177,10 @@ Do the following:
 </TabItem>
 </Tabs>
 
-1. For CI (Continuous Integration), select one of the applications. Configure settings and click **Apply**.
+### Continuous Integration
+For CI (Continuous Integration), select one of the applications. Configure settings and click **Apply**.
 
 <Tabs
-  className="unique-tabs"
   defaultValue="tab4"
   values={[
     {label: 'BitBucket', value: 'tab4'},
@@ -201,10 +207,10 @@ Click **Apply**. You will configure Jenkins as part of [post-set-up configuratio
 </TabItem>
 </Tabs>
 
-1. For Deployment, select one of the applications. Configure settings and click **Apply**.
+### Deployment
+For Deployment, select one of the applications. Configure settings and click **Apply**.
 
 <Tabs
-  className="unique-tabs"
   defaultValue="tab6"
   values={[
     {label: 'Bitbucket', value: 'tab6'},
@@ -231,14 +237,14 @@ Click **Apply**. You will configure Jenkins as part of [post-set-up configuratio
 </TabItem>
 </Tabs>
 
-1. For Incident Management, select one of the following applications, configure settings, and click **Apply**:
+### Incident Management
+For Incident Management, select one of the following applications, configure settings, and click **Apply**:
 
 <Tabs
-  className="unique-tabs"
   defaultValue="tab8"
   values={[
     {label: 'OpsGenie', value: 'tab8'},
-    {label: 'Tab 2', value: 'tab9'},
+    {label: 'PagerDuty', value: 'tab9'},
   ]}>
 
 <TabItem value="tab8">
@@ -262,10 +268,6 @@ Do the following:
 
 </TabItem>
 </Tabs>
-
-1. Click **Save** to complete the setup wizard. A completion message will appear after saving.
-
-![sdo-wizard-save.png](/img/sdo/sdo-jenkins-apply.png)
 
 ## Complete Post-Setup Configurations
 
