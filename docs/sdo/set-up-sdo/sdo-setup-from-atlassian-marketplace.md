@@ -126,14 +126,15 @@ To configure using the wizard:
 For Version Control, select one of the following applications. Configure settings and click **Apply**.
 
 <Tabs
-  defaultValue="tab1"
+  groupId="version"
+  defaultValue="github"
   values={[
-    {label: 'GitHub', value: 'tab1'},
-    {label: 'GitLab', value: 'tab2'},
-    {label: 'Bitbucket', value: 'tab3'},
+    {label: 'GitHub', value: 'github'},
+    {label: 'GitLab', value: 'gitlab'},
+    {label: 'Bitbucket', value: 'bitbucket'},
   ]}>
 
-<TabItem value="tab1">
+<TabItem value="github">
 
 Fields include:
 
@@ -148,7 +149,7 @@ Fields include:
 ![screen](/img/sdo/sdo-github-settings.png)
 
 </TabItem>
-<TabItem value="tab2">
+<TabItem value="gitlab">
 
 Do the following:
 
@@ -161,7 +162,7 @@ Do the following:
 ![screen](/img/sdo/gitlab-webhook.png)
 
 </TabItem>
-<TabItem value="tab3">
+<TabItem value="bitbucket">
 
 Do the following:
 
@@ -181,13 +182,14 @@ Do the following:
 For CI (Continuous Integration), select one of the applications. Configure settings and click **Apply**.
 
 <Tabs
-  defaultValue="tab4"
+  groupId="ci"
+  defaultValue="bitbucket"
   values={[
-    {label: 'BitBucket', value: 'tab4'},
-    {label: 'Jenkins', value: 'tab5'},
+    {label: 'BitBucket', value: 'bitbucket'},
+    {label: 'Jenkins', value: 'jenkins'},
   ]}>
 
-<TabItem value="tab4">
+<TabItem value="bitbucket">
 
 Do the following:
 
@@ -198,7 +200,7 @@ Do the following:
 ![screen](/img/sdo/sdo-bitbucket-apply.png)
 
 </TabItem>
-<TabItem value="tab5">
+<TabItem value="jenkins">
 
 Click **Apply**. You will configure Jenkins as part of [post-set-up configuration](#complete-post-setup-configurations).
 
@@ -211,13 +213,14 @@ Click **Apply**. You will configure Jenkins as part of [post-set-up configuratio
 For Deployment, select one of the applications. Configure settings and click **Apply**.
 
 <Tabs
-  defaultValue="tab6"
+  groupId="deploy"
+  defaultValue="bitbucket"
   values={[
-    {label: 'Bitbucket', value: 'tab6'},
-    {label: 'Jenkins', value: 'tab7'},
+    {label: 'Bitbucket', value: 'bitbucket'},
+    {label: 'Jenkins', value: 'jenkins'},
   ]}>
 
-<TabItem value="tab6>
+<TabItem value="bitbucket>
 
 Do the following:
 
@@ -228,7 +231,7 @@ Do the following:
 ![screen](/img/sdo/sdo-bitbucket-apply.png)
 
 </TabItem>
-<TabItem value="tab7">
+<TabItem value="jenkins">
 
 Click **Apply**. You will configure Jenkins as part of [post-set-up configuration](#complete-post-setup-configurations).
 
@@ -241,13 +244,14 @@ Click **Apply**. You will configure Jenkins as part of [post-set-up configuratio
 For Incident Management, select one of the following applications, configure settings, and click **Apply**:
 
 <Tabs
-  defaultValue="tab8"
+  groupId="incident"
+  defaultValue="opsgenie"
   values={[
-    {label: 'OpsGenie', value: 'tab8'},
-    {label: 'PagerDuty', value: 'tab9'},
+    {label: 'OpsGenie', value: 'opsgenie'},
+    {label: 'PagerDuty', value: 'pagerduty'},
   ]}>
 
-<TabItem value="tab8">
+<TabItem value="opsgenie">
 
 Do the following:
 
@@ -257,7 +261,7 @@ Do the following:
 ![screen](/img/sdo/sdo-opsgenie-settings.png)
 
 </TabItem>
-<TabItem value="tab9">
+<TabItem value="pagerduty">
 
 Do the following:
 
