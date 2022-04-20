@@ -4,7 +4,7 @@ id: install-sdo-app-view-dashboards
 
 # Install the Software Development Optimization App and view the Dashboards
 
-If you have set up the Software Development Optimization (SDO) solution as defined [here](../03_Set_up_the_Software_Development_Optimization_Solution.md) using Terraform, you can skip the manual installation of SDO App.
+If you have set up the Software Development Optimization (SDO) solution as defined [here](/docs/sdo/set-up-sdo) using Terraform, you can skip the manual installation of SDO App.
 
 ## Install the App
 

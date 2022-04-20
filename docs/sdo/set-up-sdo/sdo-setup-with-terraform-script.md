@@ -273,7 +273,7 @@ lifecycle. Complete the configuration for the build and deploy tool you use.
 
 ### Jenkins for build and deploy
 
-1. Install the latest Jenkins Plugin as described [here](../../../07Sumo-Logic-Apps/08App_Development/Jenkins/Collect_Logs_and_Metrics_for_Jenkins.md)
+1. Install the latest Jenkins Plugin as described [here] (../../../07Sumo-Logic-Apps/08App_Development/Jenkins/Collect_Logs_and_Metrics_for_Jenkins.md)
 
 1. Access the Sumo Logic Platform and navigate to **Manage Data** \> **Collection** page.
 

@@ -139,7 +139,7 @@ Fields include:
 * Create webhooks at repo level? - Select the checkbox if you want to create webhooks at repository level.
 * List of repository names - Specify a list of repository names to create webhooks for.
 
-![screen](/imjg/sdo/sdo-github-settings.png)
+![screen](/img/sdo/sdo-github-settings.png)
 
 </TabItem>
 <TabItem value="tab2">
