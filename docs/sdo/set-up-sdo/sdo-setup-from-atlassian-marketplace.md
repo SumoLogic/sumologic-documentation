@@ -36,8 +36,8 @@ You have two options to install the Jira app:
 
 To install the SDO app in Jira from the Atlassian Marketplace:
 
-1.  In the Atlassian console, click **Find new apps** and search for Software Development Optimization.
-2.  Select the Sumo Logic Software Development Optimization tile and install the app.
+1. In the Atlassian console, click **Find new apps** and search for Software Development Optimization.
+1. Select the Sumo Logic Software Development Optimization tile and install the app.
 
 ![sdo-jira-app1.png](/img/sdo/sdo-jira-app1.png)
 
@@ -49,20 +49,19 @@ The following option is for Beta Customers.
 
 To upload the app and install manually:
 
-1.  Select the **Manage apps** tab.
+1. Select the **Manage apps** tab.
 
-![sdo-atlassian-manageapps.png](/img/sdo/sdo-atlassian-manageapps.png)
+  ![sdo-atlassian-manageapps.png](/img/sdo/sdo-atlassian-manageapps.png)
 
-2.  If you do not have an upload option, click **Settings** and make sure you have **Enable development mode** checked. With this enabled, you will see **Upload app** link.
+1. If you do not have an upload option, click **Settings** and make sure you have **Enable development mode** checked. With this enabled, you will see **Upload app** link.
 
-![sdo-upload-settings.png](/img/sdo/sdo-upload-settings.png)
+  ![sdo-upload-settings.png](/img/sdo/sdo-upload-settings.png)
 
-3.  Click **Upload app**.  Enter [https://atlassian-sdo.integration.sumologic.com/atlassian-connect.json](https://atlassian-sdo.integration.sumologic.com/atlassian-connect.json) in app descriptor URL, and click **Upload**.
+1. Click **Upload app**.  Enter [https://atlassian-sdo.integration.sumologic.com/atlassian-connect.json](https://atlassian-sdo.integration.sumologic.com/atlassian-connect.json) in app descriptor URL, and click **Upload**.
 
-![sdo-upload.png](/img/sdo/sdo-upload.png)
+  ![sdo-upload.png](/img/sdo/sdo-upload.png)
 
-You should see the **Sumo Logic Jira** app installed as show in below
-screenshot.
+You should see the **Sumo Logic Jira** app installed as show in below screenshot.
 
 ![sdo-installed-apps.png](/img/sdo/sdo-installed-apps.png)
 
@@ -220,7 +219,7 @@ For Deployment, select one of the applications. Configure settings and click *
     {label: 'Jenkins', value: 'jenkins'},
   ]}>
 
-<TabItem value="bitbucket>
+<TabItem value="bitbucket">
 
 Do the following:
 
@@ -255,7 +254,7 @@ For Incident Management, select one of the following applications, configure s
 
 Do the following:
 
-1. Opsgenie API URL - Enter the api url. Default is https://api.opsgenie.com. If using the EU instance of Opsgenie, the URL needs to be https://api.eu.opsgenie.com for requests to be executed. Refer to the api overview doc. Do not add the trailing "/".
+1. Opsgenie API URL - Enter the api url. Default is https://api.opsgenie.com. If using the EU instance of Opsgenie, the URL needs to be https://api.eu.opsgenie.com for requests to be executed. Refer to the api overview doc. Do not add the trailing `/`.
 1. Opsgenie API Key - Enter the api key.To generate the key refer to the doc.
 
 ![screen](/img/sdo/sdo-opsgenie-settings.png)
