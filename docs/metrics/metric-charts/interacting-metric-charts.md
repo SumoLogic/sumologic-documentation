@@ -61,7 +61,7 @@ When you select a target quantization, Sumo sets the actual quantization interva
 
 ### Set outlier options
 
-The metrics outlier feature allows you to identify metrics data points that are outside the range of expected values. You can use outliers to pinpoint unusual behavior in your metrics visualizations and track the behavior over time. You can use the outlier control (labeled 5 in the screenshot in [Interacting with the chart area](interacting-metric-charts.mdabove.) For instructions in setting outlier options, see [Metrics Outliers](metrics-outliers.md). 
+The metrics outlier feature allows you to identify metrics data points that are outside the range of expected values. You can use outliers to pinpoint unusual behavior in your metrics visualizations and track the behavior over time. You can use the outlier control (labeled 5 in the screenshot in [Interacting with the chart area](#interacting-with-the-chart-area) For instructions in setting outlier options, see [Metrics Outliers](metrics-outliers.md). 
 
 ### Share a metric chart
 
