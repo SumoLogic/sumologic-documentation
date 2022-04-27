@@ -54,7 +54,7 @@ A metric rule is made up of two parts: a *metric match expression* that defines 
 
 You use the metric rules editor to build a metric rule. On the **Metric Rules** page (**Manage Data \> Metrics�\> Metric Rules),** metric rules are listed like this:
 
-![named-rule.png](../static/img/Metric_Rules_Editor/About_Metric_Rules/named-rule.png)
+![named-rule.png](/img/metrics/named-rule.png)
 
 The subsections that follow describe the information shown in the columns on the **Metric Rules** page.
 

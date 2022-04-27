@@ -86,7 +86,7 @@ Click the left-most dropdown option and select **Metrics**. You should be famil
 
 ![Metrics selection for query builder.png](/img/dashboards-new/create-dashboard-new/Metrics-selection-for-query-builder.png)
 
-To create a metrics query utilize the [Metrics Explorer Metrics/Metric-Queries-and-Alerts/00Metrics_Explorer.md "Metric Query Builder").
+To create a metrics query utilize the [Metrics Explorer](../metrics/metric-queries-alerts/metrics-explorer.md).
 
 </TabItem>
 <TabItem value="multiple">
@@ -144,9 +144,9 @@ To create a Dashboard (New) from the [Log Search page](/docs/search):
 
 ## Metrics page
 
-To create a Dashboard (New) from the [Metrics page] (../../Metrics/Metric-Queries-and-Alerts/11Metrics-Queries.md "https://help.sumologic.com/Metrics/Metric-Queries-and-Alerts/01Metrics-Queries"):
+To create a Dashboard (New) from the [Metrics page](/docs/metrics/metric-queries-alerts):
 
-1. From the Metrics page click the **Add to Dashboard** button on the [Metrics Explorer] (../../Metrics/Metric-Queries-and-Alerts/00Metrics_Explorer.md "Metric Query Builder").  
+1. From the Metrics page click the **Add to Dashboard** button on the [Metrics Explorer](../metrics/metric-queries-alerts/metrics-explorer.md).  
     
     ![metrics explorer add to dashboard.png](/img/dashboards-new/create-dashboard-new/metrics-explorer-add-to-dashboard.png)
 

@@ -17,7 +17,7 @@ To [create a metrics visualization](../metric-charts/create-metrics-visualizati
 * Each metrics query must include one or more selectors (filters), which can be either of the following:
     * Sequence of space-separated `tag=value` pairs: `cluster=search node=search-1`
     * Unqualified strings (value with no key):  `statistic`
-* Each query can optionally include one or more [operators](/docs/metrics/metrics-queries-alerts/metrics-operators) (avg, count, min, max, sum, and so on): `dep=prod metric=cpu_system | avg`
+* Each query can optionally include one or more [operators](/docs/metrics/metric-queries-alerts/metrics-operators) (avg, count, min, max, sum, and so on): `dep=prod metric=cpu_system | avg`
 * Grouping of results by operator is supported, as in this example, which groups average results by node: `dep=prod metric=cpu_system | avg by node`
 * Logical operators are supported, as in this example which uses NOT, OR, and AND: `not node=forge-12 and cluster=forge and (CPU_Idle or Idle_CPU) | avg`
 
@@ -70,7 +70,7 @@ Follow these guidelines to complete your queries:
 
 * Specify multiple pairs within a query for an AND, OR, or NOT/! match. If you enter multiple pairs manually, make sure to include a space between the `tag=value` pairs. For example, this query  matches `HostMetrics` AND the instance identifier `i-e0b45532`: `_contentType=HostMetrics InstanceId=i-e0b455532`
 
-* Create up to six queries using multiple query text boxes. Each query is presented with its own graph or graphs in the chart area. See [Interacting with Metric Charts](../03-Metric-Charts/06-Interacting_with_Metric_Charts.md "Interacting with Metric Charts") for information on viewing and managing the display of multiple queries.  
+* Create up to six queries using multiple query text boxes. Each query is presented with its own graph or graphs in the chart area. See [Interacting with Metric Charts](../metric-charts/interacting-metric-charts.md) for information on viewing and managing the display of multiple queries.  
       
     When you add a query, an additional query text box is added (up to six total). To delete any of the query text boxes, hover over the text box and click the **Delete** icon on the right.
 
