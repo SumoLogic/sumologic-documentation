@@ -45,7 +45,7 @@ Live mode restrictions do not apply to Dashboard (New). 
 ## Limitations
 
 * A panel can have up to 6 logs and 6 metrics queries.
-* Joining log queries in a separate query is not supported. See how to [join metric queries] (../../Metrics/Metric-Queries-and-Alerts/00Metrics_Explorer.md "Metrics Explorer") for details on how this works.
+* Joining log queries in a separate query is not supported. See how to [join metric queries](../metrics/metric-queries-alerts/metrics-explorer.md) for details on how this works.
 * A Dashboard (New) can have up to 100 queries.
 * Dashboard (New) chart properties are not retained when viewed from the Search page.
 * Chart properties are not retained when a chart is added to a Dashboard (New) from the Search page.

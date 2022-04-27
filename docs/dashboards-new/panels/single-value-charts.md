@@ -28,12 +28,12 @@ To add a panel with a single value chart:
 
     **Metrics query:**
 
-    Click the left-most dropdown option and select **Metrics**. You should be familiar with the basics of creating [metrics queries and alerts] (../../../Metrics/Metric-Queries-and-Alerts.md "Metric Queries and Alerts") to ensure successful results. By default, the query builder is set
+    Click the left-most dropdown option and select **Metrics**. You should be familiar with the basics of creating [metrics queries and alerts](/docs/metrics/metric-queries-alerts) to ensure successful results. By default, the query builder is set
     to **Logs**.
 
     ![Metrics selection for query builder.png](/img/dashboards-new/create-dashboard-new/Add-log-query.png)
 
-    To create a metrics query utilize the [Metrics Query Builder] (../../../Metrics/Metric-Queries-and-Alerts/00Metrics_Explorer.md "Metric Query Builder").   
+    To create a metrics query utilize the [Metrics Query Builder](../../metrics/metric-queries-alerts/metrics-explorer.md).   
       
     ![new single value chart metrics.png](/img/dashboards-new/panels/single-value-charts/new-single-value-chart-metrics.png)
 

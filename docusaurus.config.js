@@ -170,13 +170,16 @@ module.exports = {
             label: 'Guides',
             to: '#',
             layout: [
-              '0 1 3 4',
-              '0 1 3 4',
-              '0 1 3 4',
               '0 1 3 5',
-              '0 2 3 5',
-              '0 2 3 5',
-              '0 2 3 5',
+              '0 1 3 5',
+              '0 1 3 5',
+              '0 1 3 6',
+              '0 2 3 6',
+              '0 2 4 6',
+              '0 2 4 6',
+              '0 2 4 6',
+              '0 2 4 6',
+              '0 2 4 6',
             ],
             items_: [ // Use name codes for icons from the Material Site https://fonts.google.com/icons?query=material
               {
@@ -239,7 +242,7 @@ module.exports = {
                   {
                     label: 'Metrics and Logs',
                     sublabel: 'Find data with queries',
-                    to: '/docs/get-started',
+                    to: '/docs/metrics',
                     icon: 'timeline',
                   },
                 ],
@@ -289,6 +292,24 @@ module.exports = {
                     sublabel: 'Learn what caused issues',
                     to: '/docs/get-started',
                     icon: 'widgets',
+                  },
+                ],
+              },
+              {
+                // 6
+                label: 'Other Solutions',
+                items: [
+                  {
+                    label: 'Global Intelligence',
+                    sublabel: 'Review security issues',
+                    to: '/docs/global-intelligence',
+                    icon: 'format_list_bulleted',
+                  },
+                  {
+                    label: 'SDO Solution',
+                    sublabel: 'Software Development Optimization',
+                    to: '/docs/sdo',
+                    icon: 'code',
                   },
                 ],
               },

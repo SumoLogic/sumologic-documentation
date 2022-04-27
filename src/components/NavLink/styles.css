@@ -11,12 +11,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-right: 1rem;
+  margin-right: .5rem;
   background-color: var(--ifm-color-emphasis-200);
   color: var(--ifm-dropdown-link-color);
   border-radius: var(--ifm-global-radius);
-  width: 2.5rem;
-  height: 2.5rem;
+  width: 1.75rem;
+  height: 1.75rem;
 }
 
 .link__sublabel {
@@ -26,7 +26,7 @@
 
 .link__icon {
   font-family: 'Material Icons' !important;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
 }
 
 [data-theme='dark'] .link__icon {
