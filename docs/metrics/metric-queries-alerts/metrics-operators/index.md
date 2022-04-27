@@ -1,5 +1,5 @@
 ---
-id: /metrics/metric-queries-alerts/metrics-operators
+slug: /metrics/metric-queries-alerts/metrics-operators
 ---
 
 # Metrics Operators

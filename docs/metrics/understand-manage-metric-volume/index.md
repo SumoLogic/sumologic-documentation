@@ -1,5 +1,5 @@
 ---
-id: understand-manage-metric-volume
+slug: understand-manage-metric-volume
 ---
 
 # Understand and Manage Metric Volume
