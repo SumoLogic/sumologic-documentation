@@ -152,7 +152,7 @@ html[data-theme='dark'] {
   .markdown::after {
       display: none !important;
   }
-  .codeBlockTitle_node_modules-\@docusaurus-theme-classic-lib-next-theme-CodeBlock-styles-module {
+  .codeBlockTitle {
     background-color: rgba(41, 98, 155, 0.4) !important;
     border-bottom: 1px solid #2b5893;
   }
@@ -207,7 +207,7 @@ html[data-theme='light'] {
     background-color: rgba(242 244 245) !important;
     
   }
-  .codeBlockTitle_node_modules-\@docusaurus-theme-classic-lib-next-theme-CodeBlock-styles-module {
+  .codeBlockTitle {
     background-color: rgba(0, 139, 178, 0.4) !important;
     border-bottom: 1px solid #0095bd;
   }
@@ -463,6 +463,7 @@ html[data-theme='dark'] .navbar-item-github:before {
 
 .navbar-trial:hover {
   border: 1px solid #fff;
+  color: white;
 }
 
 .navbar-trial-mobile {

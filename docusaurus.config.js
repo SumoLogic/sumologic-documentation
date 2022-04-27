@@ -362,6 +362,13 @@ module.exports = {
             to: '/release-notes',
           },
           {
+            //Trial button
+            label: 'Start a Free Trial',
+            href: 'https://www.sumologic.com/sign-up/',
+            position: 'right',
+            className: 'navbar-trial',
+          },
+          {
             // i18n
             type: 'localeDropdown',
             position: 'right',
