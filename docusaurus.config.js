@@ -242,7 +242,7 @@ module.exports = {
                   {
                     label: 'Metrics and Logs',
                     sublabel: 'Find data with queries',
-                    to: '/docs/get-started',
+                    to: '/docs/metrics',
                     icon: 'timeline',
                   },
                 ],
