@@ -4,7 +4,7 @@ id: cse-rules-syntax
 
 # CSE Rules Syntax
 
-This topic describes commonly used CSE rules language functions. Rules language functions are used in CSE rule expressions. For information about rules and rule expressions, see [About CSE Rules](01_About_CSE_Rules.md "About CSE Rules").
+This topic describes commonly used CSE rules language functions. Rules language functions are used in CSE rule expressions. For information about rules and rule expressions, see [About CSE Rules](about-cse-rules.md).
 
 ## &&
 
@@ -257,7 +257,7 @@ Returns the four-quadrant inverse tangent of the two arguments supplied.
 
 Returns “true” if a specified array contains a particular value. 
 
-The `array_contains` function is used in CSE rules to check for the existence of a specific value in a Record’s listMatches field in a Match List. For more information, see [Match Lists](01_About_CSE_Rules.md "About CSE Rules") in the *About CSE Rules* topic.
+The `array_contains` function is used in CSE rules to check for the existence of a specific value in a Record’s listMatches field in a Match List. For more information, see [Match Lists](about-cse-rules.md) in the *About CSE Rules* topic.
 
 **Syntax**
 

@@ -50,7 +50,7 @@ It’s also possible to configure individual sources to forward to CSE, as descr
 
 ## Step 2: Configure CSE Ingest Mapping
 
-In this step, you configure a Sumo Logic Ingest Mapping in CSE for the source category assigned to your source or collector you configured in [Step 1](./Microsoft_Windows.md "Microsoft Windows"). The mapping tells CSE the information it needs to select the right mapper to process messages that have been tagged with that source category. 
+In this step, you configure a Sumo Logic Ingest Mapping in CSE for the source category assigned to your source or collector you configured in [Step 1](#step-1-configure-collection). The mapping tells CSE the information it needs to select the right mapper to process messages that have been tagged with that source category. 
 
 1. Click the gear icon, and select **Sumo Logic** under **Integrations**.  
     ![integrations-sumologic.png](/img/cloud-siem-enterprise/integrations-sumologic.png)

@@ -12,7 +12,7 @@ In this step, you configure a Syslog Source to collect Nginx Access Log messages
 
 The Sumo Logic parser for Nginx Access Log messages supports the default “combined” format defined in `/etc/nginx/nginx.conf` and will allow additional information to be appended to that format without causing parsing to fail. Note that appended fields in a custom format will not be parsed without local configurations being applied. Other than appended fields that have local configurations applied, changes you make to the default format itself are not supported by the Sumo Logic parser.
 
-If you’re going to use an existing collector, jump to [Configure a Syslog Source](./Nginx_Access_Logs.md "Nginx Access Logs") below. Otherwise, create a new collector as described in [Configure an Installed Collector](./Nginx_Access_Logs.md "Nginx Access Logs") below, and then create the Syslog Source on the collector.
+If you’re going to use an existing collector, jump to [Configure a Syslog Source](#configure-a-syslog-source) below. Otherwise, create a new collector as described in [Configure an Installed Collector](#configure-an-installed-collector) below, and then create the Syslog Source on the collector.
 
 ### Configure an Installed Collector
 

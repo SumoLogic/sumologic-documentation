@@ -10,8 +10,8 @@ Sumo Logic CSE supports ZPA logs sent as JSON.
 
 ## Step 1: Configure CIP collection
 
-In this step, you configure an HTTP Source to collect Zscaler Private Access log messages. You can configure the source on an existing Hosted Collector or create a new collector. If you’re going to use an existing collector, jump to [Configure an HTTP Source](./Zscaler_Private_Access.md "Zscaler Private Access") below.
-Otherwise, create a new collector as described in [Configure a Hosted Collector](./Zscaler_Private_Access.md "Zscaler Private Access") below, and then create the HTTP Source on the collector.
+In this step, you configure an HTTP Source to collect Zscaler Private Access log messages. You can configure the source on an existing Hosted Collector or create a new collector. If you’re going to use an existing collector, jump to [Configure an HTTP Source](#configure-an-http-source) below.
+Otherwise, create a new collector as described in [Configure a Hosted Collector](#configure-a-hosted-collector) below, and then create the HTTP Source on the collector.
 
 ### Configure a Hosted Collector
 

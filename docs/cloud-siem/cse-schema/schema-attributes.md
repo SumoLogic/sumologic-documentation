@@ -8,8 +8,8 @@ This topic defines the attributes in CSE Schema v3. 
 
 ## accountId
 
-|                           |                                                                                                                                                                                                         |
-|---------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| | |
+|--|--|
 | **Description**           | A unique identifier tied to an organizational account, such as a tenant. Common with cloud services where sub-accounts or multiple tenants can be present. Not to be used as a user account identifier. |
 | **Type**                  | string |
 | **Can be set by mapping** | True |
@@ -35,8 +35,8 @@ This topic defines the attributes in CSE Schema v3. 
 
 ## authProvider
 
-|                           |                                                                                                                                                                           |
-|---------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| | |
+|--|--|
 | **Description**           | The SSO provider for an authentication attempt. Often found in cloud authentication events and is expected to be NULL if SSO was not used for the authentication attempt. |
 | **Type**                  | string |
 | **Can be set by mapping** | True |
@@ -89,8 +89,8 @@ This topic defines the attributes in CSE Schema v3. 
 
 ## changeType
 
-|                           |                                                                                                                                                         |
-|---------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------|
+| | |
+|--|--|
 | **Description**           | The nature of the modification (modify, delete, create) and often the category of the object to be acted upon (user, group, policy, or other resource). |
 | **Type**                  | string                                                                                                                                                  |
 | **Can be set by mapping** | True                                                                                                                                                    |
@@ -98,8 +98,8 @@ This topic defines the attributes in CSE Schema v3. 
 
 ## commandLine
 
-|                           |                                                                                                                                                                         |
-|---------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| | |
+|--|--|
 | **Description**           | The instruction or set of instructions inputted into a text interface such as the command prompt (cmd.exe) or PowerShell in Windows, or terminal on Unix based systems. |
 | **Type**                  | string                                                                                                                                                                  |
 | **Can be set by mapping** | True                                                                                                                                                                    |
@@ -125,8 +125,8 @@ This topic defines the attributes in CSE Schema v3. 
 
 ## description
 
-|                           |                                                                                                                                                                                                                                                                          |
-|---------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| | |
+|--|--|
 | **Description**           | The summary conveying the high level meaning of a log message in a human readable form. In some circumstances no summary is provided in the log, this field is often manually defined in the mapping as a constant or as a lookup based on event IDs in the log message. |
 | **Type**                  | string                                                                                                                                                                                                                                                                   |
 | **Can be set by mapping** | True                                                                                                                                                                                                                                                                     |
@@ -134,12 +134,12 @@ This topic defines the attributes in CSE Schema v3. 
 
 ## device_hostname
 
-|                           |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
-|---------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| | |
+|--|--|
 | **Description**           | The computer name that generated the log message. Common examples include, but are not limited to, the endpoint reporting an infection or the network appliance reporting allowed or blocked network traffic. In cases where the log data has a source or destination context, there are situations where identical data is populated in one of those fields and this field. An example would be authentication logs from a firewall. The device_hostname would be the same as the dstDevice_hostname because the firewall is reporting a network authentication log about itself. |
-| **Type**                  | string                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
-| **Can be set by mapping** | True                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
-| **Enrichment field**      | False                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+| **Type**                  | string |
+| **Can be set by mapping** | True |
+| **Enrichment field**      | False |
 
 ## device_hostname_raw
 
@@ -152,12 +152,12 @@ This topic defines the attributes in CSE Schema v3. 
 
 ## device_ip
 
-|                           |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
-|---------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| | |
+|---|--|
 | **Description**           | The internet protocol (IP) address of a computer that generated the log message. Common examples include, but are not limited to, the endpoint reporting an infection or the network appliance reporting allowed or blocked network traffic. In cases where the log data has a source or destination context, there are situations where identical data is populated in one of those fields and this field. An example would be authentication logs from a firewall. The device_ip would be the same as the dstDevice_ip because the firewall is reporting a network authentication log about itself. |
-| **Type**                  | string                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
-| **Can be set by mapping** | True                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
-| **Enrichment field**      | False                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| **Type**                  | string |
+| **Can be set by mapping** | True |
+| **Enrichment field**      | False |
 
 ## device_ip_asnNumber
 
@@ -278,30 +278,30 @@ This topic defines the attributes in CSE Schema v3. 
 
 ## device_mac
 
-|                           |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
-|---------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| | |
+|--|--|
 | **Description**           | The media access control (MAC) ID of the device that generated the log message. Common examples include, but are not limited to, the endpoint reporting an infection or the network appliance reporting allowed or blocked network traffic. In cases where the log data has a source or destination context, there are situations where identical data is populated in one of those fields and this field. An example would be authentication logs from a firewall. The device_mac would be the same as the dstDevice_mac because the firewall is reporting a network authentication log about itself. |
-| **Type**                  | string                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
-| **Can be set by mapping** | True                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
-| **Enrichment field**      | False                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| **Type**                  | string |
+| **Can be set by mapping** | True |
+| **Enrichment field**      | False |
 
 ## device_natIp
 
-|                           |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
-|---------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| | |
+|--|--|
 | **Description**           | The external network address translated (NAT) IP address of the device that generated the log message. Common examples include, but are not limited to, the endpoint reporting an infection or the network appliance reporting allowed or blocked network traffic. In cases where the log data has a source or destination context, there are situations where identical data is populated in one of those fields and this field. An example would be authentication logs from a firewall. The device_natIp would be the same as the dstDevice_natIp because the firewall is reporting a network authentication log about itself. |
-| **Type**                  | string                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
-| **Can be set by mapping** | True                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
-| **Enrichment field**      | False                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+| **Type** | string |
+| **Can be set by mapping** | True |
+| **Enrichment field**      | False |
 
 ## device_natIp_asnNumber
 
-|                           |                                                                                                                                                   |
-|---------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Description**           | The autonomous system number for the NAT device IP address based on the MaxMind GeoIP database, typically assigned to internet service providers. |
-| **Type**                  | int                                                                                                                                               |
-| **Can be set by mapping** | False                                                                                                                                             |
-| **Enrichment field**      | True                                                                                                                                              |
+| | |
+|--|--|
+| **Description** | The autonomous system number for the NAT device IP address based on the MaxMind GeoIP database, typically assigned to internet service providers. |
+| **Type** | int |
+| **Can be set by mapping** | False |
+| **Enrichment field**      | True |
 
 ## device_natIp_asnOrg
 
@@ -413,21 +413,21 @@ This topic defines the attributes in CSE Schema v3. 
 
 ## device_osName
 
-|                           |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
-|---------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| | |
+|--|--|
 | **Description**           | The operating system name present on the computer that generated the log message. Common examples include, but are not limited to, the endpoint reporting an infection or the network appliance reporting allowed or blocked network traffic. In cases where the log data has a source or destination context, there are situations where identical data is populated in one of those fields and this field. An example would be authentication logs from a firewall. The device_osName would be the same as the dstDevice_osName because the firewall is reporting a network authentication log about itself. |
-| **Type**                  | string                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
-| **Can be set by mapping** | True                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
-| **Enrichment field**      | False                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| **Type**                  | string |
+| **Can be set by mapping** | True |
+| **Enrichment field**      | False |
 
 ## device_uniqueId
 
-|                           |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
-|---------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| | |
+|--|--|
 | **Description**           | The vendor or product specific identifier for a computer that generated the log message. Common examples include, but are not limited to, the endpoint reporting an infection or the network appliance reporting allowed or blocked network traffic. This field is also frequently used by cloud providers to identify instances. In cases where the log data has a source or destination context, there are situations where identical data is populated in one of those fields and this field. An example would be authentication logs from a firewall. The device_mac would be the same as the dstDevice_mac because the firewall is reporting a network authentication log about itself. |
-| **Type**                  | string                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
-| **Can be set by mapping** | True                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
-| **Enrichment field**      | False                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| **Type**                  | string |
+| **Can be set by mapping** | True |
+| **Enrichment field**      | False |
 
 ## dns_query
 
@@ -1763,12 +1763,12 @@ This topic defines the attributes in CSE Schema v3. 
 
 ## metadata_sensorZone
 
-|                           |                                                                                                                                                                                                         |
-|---------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| | |
+|--|--|
 | **Description**           | A name propagated from the sensors. In the case where sensors are installed in environments with overlapping IP address spaces, this is used to distinguish two identical IP addresses from each other. |
-| **Type**                  | string                                                                                                                                                                                                  |
-| **Can be set by mapping** | False                                                                                                                                                                                                   |
-| **Enrichment field**      | False                                                                                                                                                                                                   |
+| **Type**                  | string |
+| **Can be set by mapping** | False |
+| **Enrichment field**      | False |
 
 ## metadata_sourceCategory
 
@@ -1826,12 +1826,12 @@ This topic defines the attributes in CSE Schema v3. 
 
 ## normalizedAction
 
-|                           |                                                                                                                                                                                                                                                                                                                                                                                                                                  |
-|---------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| | |
+|--|--|
 | **Description**           | Complementary to the Action field, this field describes the initiation of an activity in a common way across records. normalizedAction is meant to describe the attempt of an action, using the success boolean as a modifier indicating whether or not the action was successful. Further, normalizedAction should be paired with normalizedResource to indicate where or upon what the initiated action was attempted against. |
-| **Type**                  | string                                                                                                                                                                                                                                                                                                                                                                                                                           |
-| **Can be set by mapping** | True                                                                                                                                                                                                                                                                                                                                                                                                                             |
-| **Enrichment field**      | False                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| **Type**                  | string |
+| **Can be set by mapping** | True |
+| **Enrichment field**      | False |
 
 ## normalizedCause
 
@@ -1844,21 +1844,21 @@ This topic defines the attributes in CSE Schema v3. 
 
 ## normalizedResource
 
-|                           |                                                                                                                                                                                                                                                                            |
-|---------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| | |
+|--|--|
 | **Description**           | Complementary to Resource, this field describes the resource being acted upon or otherwise referenced within a record in a common way across records. Intended to be used to provide further normalized context to a record, particularly in tandem with normalizedAction. |
-| **Type**                  | string                                                                                                                                                                                                                                                                     |
-| **Can be set by mapping** | True                                                                                                                                                                                                                                                                       |
-| **Enrichment field**      | False                                                                                                                                                                                                                                                                      |
+| **Type**                  | string |
+| **Can be set by mapping** | True |
+| **Enrichment field**      | False |
 
 ## normalizedSeverity
 
-|                           |                                                                                                                                                                                                                                                                                                                                                                                                                                        |
-|---------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| | |
+|--|--|
 | **Description**           | Severity score on a scale of 0 to 10 with 0 being informational and 10 being critical. This is defined either explicitly per mapping or by a lookup to normalize a vendor specific severity level. Certain normalized threat rules will use normalizedSeverity to pass a dynamic severity into the signal. normalizedSeverity is an enforced output value field, this means that the output value must be an integer between 0 and 1. |
-| **Type**                  | int                                                                                                                                                                                                                                                                                                                                                                                                                                    |
-| **Can be set by mapping** | True                                                                                                                                                                                                                                                                                                                                                                                                                                   |
-| **Enrichment field**      | False                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| **Type**                  | int |
+| **Can be set by mapping** | True |
+| **Enrichment field**      | False |
 
 ## normalizedSeverity_description
 
@@ -1871,12 +1871,12 @@ This topic defines the attributes in CSE Schema v3. 
 
 ## objectType
 
-|                           |                                                                                                                                                        |
-|---------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Description**           | The name of the top level schema object type. (e.g. Authentication, Audit, Endpoint, Network, Notification, etc.). Displayed as Record Type in the UI. |
-| **Type**                  | string                                                                                                                                                 |
-| **Can be set by mapping** | False                                                                                                                                                  |
-| **Enrichment field**      | False                                                                                                                                                  |
+|                           | |
+|--|--|
+| **Description** | The name of the top level schema object type. (e.g. Authentication, Audit, Endpoint, Network, Notification, etc.). Displayed as Record Type in the UI. |
+| **Type**                  | string |
+| **Can be set by mapping** | False |
+| **Enrichment field**      | False |
 
 ## packetsIn
 
@@ -1943,12 +1943,12 @@ This topic defines the attributes in CSE Schema v3. 
 
 ## resource
 
-|                           |                                                                                                                                                                                                                                                      |
-|---------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| | |
+|--|--|
 | **Description**           | Generalized field to capture an object referenced within a log that does not have a more specific field currently specified in the mapping schema. (e.g. a file is a resource, however file_basename and file_path both exist to capture this value) |
-| **Type**                  | string                                                                                                                                                                                                                                               |
-| **Can be set by mapping** | True                                                                                                                                                                                                                                                 |
-| **Enrichment field**      | False                                                                                                                                                                                                                                                |
+| **Type**                  | string |
+| **Can be set by mapping** | True |
+| **Enrichment field**      | False |
 
 ## severity
 
@@ -1961,12 +1961,12 @@ This topic defines the attributes in CSE Schema v3. 
 
 ## sourceUid
 
-|                           |                                                                                                                                                                                |
-|---------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| | |
+|--|--|
 | **Description**           | A UID that is defined by the record itself. Each record is assigned a UID during mapping, but this is the unique identifier field that may exist within an originating record. |
-| **Type**                  | string                                                                                                                                                                         |
-| **Can be set by mapping** | True                                                                                                                                                                           |
-| **Enrichment field**      | False                                                                                                                                                                          |
+| **Type**                  | string |
+| **Can be set by mapping** | True |
+| **Enrichment field**      | False |
 
 ## srcDevice_hostname
 
@@ -2285,30 +2285,30 @@ This topic defines the attributes in CSE Schema v3. 
 
 ## targetUser_authDomain
 
-|                           |                                                                                                                                                                                                                 |
-|---------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| | |
+|--|--|
 | **Description**           | The authentication domain of a user which is subject to or is otherwise impacted by activity undertaken by another user. Such as the Active Directory domain to which a new user account being created belongs. |
-| **Type**                  | string                                                                                                                                                                                                          |
-| **Can be set by mapping** | True                                                                                                                                                                                                            |
-| **Enrichment field**      | False                                                                                                                                                                                                           |
+| **Type**                  | string |
+| **Can be set by mapping** | True |
+| **Enrichment field**      | False |
 
 ## targetUser_email
 
-|                           |                                                                                                                                                                         |
-|---------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| | |
+|--|--|
 | **Description**           | E-Mail address associated with the user which is subject to activity undertaken by another account. Such as an E-Mail address which was created for a new user account. |
-| **Type**                  | string                                                                                                                                                                  |
-| **Can be set by mapping** | True                                                                                                                                                                    |
-| **Enrichment field**      | False                                                                                                                                                                   |
+| **Type**                  | string |
+| **Can be set by mapping** | True |
+| **Enrichment field**      | False |
 
 ## targetUser_role
 
-|                           |                                                                                                                                                                                                                                           |
-|---------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| | |
+|--|--|
 | **Description**           | A privileged persona assumed by a user which is subject to activity undertaken by another user. Such as in CloudTrail logs as well as similar cases where a user is recorded taking on a different role for specific privileged activity. |
-| **Type**                  | string                                                                                                                                                                                                                                    |
-| **Can be set by mapping** | True                                                                                                                                                                                                                                      |
-| **Enrichment field**      | False                                                                                                                                                                                                                                     |
+| **Type**                  | string |
+| **Can be set by mapping** | True |
+| **Enrichment field**      | False |
 
 ## targetUser_userId
 
@@ -2393,39 +2393,39 @@ This topic defines the attributes in CSE Schema v3. 
 
 ## threat_ruleType
 
-|                           |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
-|---------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| | |
+|--|--|
 | **Description**           | This field should be used with logs that indicate detection of a security event has already occurred. These logs are produced by a security product's own detection capabilities like signatures or rule sets. As an example, if a log has a severity, risk, or impact in the message, it should have threat_ruleType included and populated in its mapper. The logs using this field will all be a form of pass through content. Messages that do not include security event detection must leave this field out of the mapper or leave it blank. |
-| **Type**                  | string                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
-| **Can be set by mapping** | True                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
-| **Enrichment field**      | False                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+| **Type**                  | string |
+| **Can be set by mapping** | True |
+| **Enrichment field**      | False |
 
 ## threat_signalName
 
-|                           |                                                                                                                                                                                                                                                                                                                                                             |
-|---------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| | |
+|--|--|
 | **Description**           | This field is used in conjunction with normalized rules designed to directly pass through security alerts from other security products, appliances, and services. Those rules will use the text populated in this field as an element of the signal name, allowing different signal names for different products while retaining the normalized rule logic. |
-| **Type**                  | string                                                                                                                                                                                                                                                                                                                                                      |
-| **Can be set by mapping** | True                                                                                                                                                                                                                                                                                                                                                        |
-| **Enrichment field**      | False                                                                                                                                                                                                                                                                                                                                                       |
+| **Type**                  | string |
+| **Can be set by mapping** | True |
+| **Enrichment field**      | False |
 
 ## threat_signalSummary
 
-|                           |                                                                                                                                                                                                                                                           |
-|---------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| | |
+|--|--|
 | **Description**           | This field is used in conjunction with normalized rules. Those rules will use the text populated in this field as an element of the signal summary, allowing different signal summaries for different products while retaining the normalized rule logic. |
-| **Type**                  | string                                                                                                                                                                                                                                                    |
-| **Can be set by mapping** | True                                                                                                                                                                                                                                                      |
-| **Enrichment field**      | False                                                                                                                                                                                                                                                     |
+| **Type**                  | string |
+| **Can be set by mapping** | True |
+| **Enrichment field**      | False |
 
 ## timestamp
 
-|                           |                                                                                                                                                                                                                                                                                |
-|---------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| | |
+|--|--|
 | **Description**           | The timestamp of the event stored as milliseconds since epoch. Time can be directly mapped if the log contains epoch time, however other time formats can be mapped if the format is provided. If no timestamp is defined in the mapping, ingest time will be used by default. |
-| **Type**                  | long                                                                                                                                                                                                                                                                           |
-| **Can be set by mapping** | True                                                                                                                                                                                                                                                                           |
-| **Enrichment field**      | False                                                                                                                                                                                                                                                                          |
+| **Type**                  | long |
+| **Can be set by mapping** | True |
+| **Enrichment field**      | False |
 
 ## uid
 
@@ -2456,12 +2456,12 @@ This topic defines the attributes in CSE Schema v3. 
 
 ## user_role
 
-|                           |                                                                                                                                                                                                    |
-|---------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| | |
+|---|--|
 | **Description**           | A privileged persona which is assumed by an acting user. Such as in CloudTrail logs as well as similar cases where a user is recorded taking on a different role for specific privileged activity. |
-| **Type**                  | string                                                                                                                                                                                             |
-| **Can be set by mapping** | True                                                                                                                                                                                               |
-| **Enrichment field**      | False                                                                                                                                                                                              |
+| **Type**                  | string |
+| **Can be set by mapping** | True |
+| **Enrichment field**      | False |
 
 ## user_userId
 
@@ -2501,12 +2501,12 @@ This topic defines the attributes in CSE Schema v3. 
 
 ## vuln_bugtraq
 
-|                           |                                                                                                                                                                                      |
-|---------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| | |
+|--|--|
 | **Description**           | Bugtraq identifier assigned by SecurityFocus. BugTraq is a full disclosure moderated mailing list for the detailed discussion and announcement of computer security vulnerabilities. |
-| **Type**                  | string                                                                                                                                                                               |
-| **Can be set by mapping** | True                                                                                                                                                                                 |
-| **Enrichment field**      | False                                                                                                                                                                                |
+| **Type**                  | string |
+| **Can be set by mapping** | True |
+| **Enrichment field**      | False |
 
 ## vuln_cert
 

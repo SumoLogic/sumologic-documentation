@@ -18,7 +18,7 @@ in AWS Help.
 
 ## Step 2: Configure collection
 
-In this step, you configure an HTTP Source to collect AWS CloudTrail log messages. You can configure the source on an existing Hosted Collector or create a new collector. If you’re going to use an existing collector, jump to [Configure an CloudTrail Source](./AWS_CloudTrail.md "AWS CloudTrail") below. Otherwise, create a new collector as described in [Configure a hosted collector](./AWS_CloudTrail.md "AWS CloudTrail") below, and then create the HTTP Source on the collector.
+In this step, you configure an HTTP Source to collect AWS CloudTrail log messages. You can configure the source on an existing Hosted Collector or create a new collector. If you’re going to use an existing collector, jump to [Configure an CloudTrail Source](#configure-an-aws-cloudtrail-source) below. Otherwise, create a new collector as described in [Configure a hosted collector](#configure-a-hosted-collector) below, and then create the HTTP Source on the collector.
 
 ### Configure a Hosted Collector
 

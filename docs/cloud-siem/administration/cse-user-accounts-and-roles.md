@@ -9,13 +9,13 @@ This topic has information about creating and managing user accounts and roles 
 The process and UI for setting users and roles depends on your CSE environment. 
 
 * If your CSE URL ends in `sumologic.com`, you’ll set up users and roles in the Sumo Logic platform UI. For instructions, see the following help topics:
-    * [Create and Manage Roles](https://help.sumologic.com/Manage/Users-and-Roles/Manage-Roles/03-Create-and-Manage-Roles) The Sumo Logic platform allows you to assign multiple roles to a user. So, you might consider creating CSE-specific roles for different CSE user types, separate from roles you may define for Sumo Logic platform functionality. The CSE-related capabilities you can assign to roles are listed in the Cloud SIEM Enterprise section of the *Role Capabilities* page. 
+    * [Create and Manage Roles](../../manage/users-and-roles/roles/create-manage-roles.md)  The Sumo Logic platform allows you to assign multiple roles to a user. So, you might consider creating CSE-specific roles for different CSE user types, separate from roles you may define for Sumo Logic platform functionality. The CSE-related capabilities you can assign to roles are listed in the Cloud SIEM Enterprise section of the *Role Capabilities* page. 
         
         :::note
-        When you create roles in the Sumo Logic platform, you have the option to set up a role search filter that specifies what log data users with the role may access. If you take advantage of that feature, be sure not to restrict CSE users’ access to [indexes that contain CSE Records](../Records,_Signals,_Entities,_and_Insights/15Searching_for_CSE_Records_in_Sumo_Logic.md "Searching for CSE Records in Sumo Logic").
+        When you create roles in the Sumo Logic platform, you have the option to set up a role search filter that specifies what log data users with the role may access. If you take advantage of that feature, be sure not to restrict CSE users’ access to [indexes that contain CSE Records](../records-signals-entities-insights/search-cse-records-in-sumo.md).
         :::
 
-    * [Create and Edit Users](/Manage/Users-and-Roles/Manage-Users/01-Create-and-Edit-Users)
+    * [Create and Edit Users](../../manage/users-and-roles/users/create-edit-users.md) 
 * If your CSE URL ends in `jask.ai`, you’ll set up user accounts and roles in the CSE UI. Follow the instructions below.
 
 ## Invite a user
@@ -55,7 +55,7 @@ To create a role:
     ![create-role-popup.png](/img/cloud-siem-enterprise/create-role-popup.png)  
      
 1. **Name**. Enter a name for the role.
-1. **Permissions**. Checkmark each permission you want to assign to the role. For a description of each permission, see [Role Permissions](./CSE_User_Accounts_and_Roles.md "User Accounts and Roles"), below.
+1. **Permissions**. Checkmark each permission you want to assign to the role. For a description of each permission, see [Role Permissions](#role-permissions), below.
 1. Click **Create**.
 
 ## Role Permissions
@@ -74,12 +74,12 @@ To create a role:
 
 | Permission | Description |
 |--|--|
-| Create Rules | Create [Rules](../CSE_Rules.md "CSE Rules"). |
-| Delete Rules | Delete [Rules](../CSE_Rules.md "CSE Rules"). |
-| Edit Rules | Edit [Rules](../CSE_Rules.md "CSE Rules"). |
+| Create Rules | Create [Rules](/docs/cloud-siem-enterprise/cse-rules/index.md). |
+| Delete Rules | Delete [Rules](/docs/cloud-siem-enterprise/cse-rules/index.md). |
+| Edit Rules | Edit [Rules](/docs/cloud-siem-enterprise/cse-rules/index.md). |
 | Manage Threat Intelligence | Create, edit, and delete threat intelligence sources. |
-| Manage Match Lists | Create, edit, and delete [Match Lists](../Match_Lists_and_Suppressed_Lists/Create_a_Match_List.md "Create a Match List"). |
-| Manage File Analysis | Create, edit, and delete [YARA rules](../CSE_Rules/Import_YARA_Rules.md "Import YARA Rules"). |
+| Manage Match Lists | Create, edit, and delete [Match Lists](../match-lists-suppressed-lists/create-match-list.md). |
+| Manage File Analysis | Create, edit, and delete [YARA rules](../cse-rules/import-yara-rules.md). |
 | Manage Custom Insights | Create, edit, and delete custom Insights. |
 | Manage Network Blocks | Create, edit, and delete network blocks. |
 | Manage Suppressed Entities | Suppress and unsuppress Entities. |
@@ -104,22 +104,22 @@ To create a role:
 
 | Permission | Description |
 |--|--|
-| Manage Domain Normalization | Update the configurations on CSE’s [Domain Normalization](../CSE_Schema/Username_and_Hostname_Normalization.md "Username and Hostname Normalization") page. |
-| Manage Entity Criticality   | Create, edit, and delete [Entity Criticalities](../Records,_Signals,_Entities,_and_Insights/07Entity_Criticality.md "Entity Criticality").                  |
+| Manage Domain Normalization | Update the configurations on CSE’s [Domain Normalization](../cse-schema/username-and-hostname-normalization.md) page. |
+| Manage Entity Criticality   | Create, edit, and delete [Entity Criticalities](../records-signals-entities-insights/entity-criticality.md).                  |
 
 ### Configuration \> Users
 
 | Permission | Description |
 |--|--|
-| Manage Accounts/Invitations/Teams | Add new [CSE users](./CSE_User_Accounts_and_Roles.md "User Accounts and Roles"), edit and remove existing CSE users. |
-| Manage Roles/Permissions | Create, edit, and manage CSE user [roles](./CSE_User_Accounts_and_Roles.md "User Accounts and Roles"). |
+| Manage Accounts/Invitations/Teams | Add new [CSE users](cse-user-accounts-and-roles.md), edit and remove existing CSE users. |
+| Manage Roles/Permissions | Create, edit, and manage CSE user [roles](cse-user-accounts-and-roles.md). |
 | Manage Workflow | Create, edit, and delete Workflow statuses. |
 
 ### Configuration \> Integrations
 
 | Permission | Description |
 |--|--|
-| Manage Sumo Logic Integrations | Create, edit, and delete Sumo Logic [ingest mappings](../CSE_Ingestion/ztConfigure_a_Sumo_Logic_Ingest_Mapping.md "Send Data from Sumo Logic to CSE"). |
+| Manage Sumo Logic Integrations | Create, edit, and delete Sumo Logic [ingest mappings](../cse-ingestion/sumo-logic-ingest-mapping.md). |
 | Manage Context Actions | Create, edit, and delete Context Actions. |
 | Manage Actions | Create, edit, and delete the Actions. Actions are CSE notifications you can set up to occur automatically when certain state changes occur to Insights, sensors, or rules. Actions can also be invoked on-demand from an Insight in the CSE UI. |
 | Manage Enrichments | Upload Insight, Signal, and Entity enrichments using the CSE API. |

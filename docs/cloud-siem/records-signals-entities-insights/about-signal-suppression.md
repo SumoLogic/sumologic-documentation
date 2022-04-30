@@ -4,8 +4,8 @@ id: about-signal-suppression
 
 # About Signal Suppression
 
-In CSE, a *suppressed Signal* is a Signal that CSE’s Insight algorithm will exclude from the Insight generation process. In other words, a suppressed Signal does not contribute to or become a part of an Insight. Some suppression of Signals is automatic, as described below in [Automatic suppression of redundant Signals](./About_Signal_Suppression.md "About Signal Suppression"). CSE also has features that allow you to suppress Signals for a specific
-[Entity](03View_and_Manage_Entities.md "View and Manage Entities"), indicator, or [Network Block](../Administration/Create_and_Use_Network_Blocks.md "Create and Use Network Blocks").
+In CSE, a *suppressed Signal* is a Signal that CSE’s Insight algorithm will exclude from the Insight generation process. In other words, a suppressed Signal does not contribute to or become a part of an Insight. Some suppression of Signals is automatic. CSE also has features that allow you to suppress Signals for a specific
+[Entity](view-manage-entities.md), indicator, or [Network Block](../administration/create-use-network-blocks.md).
 
 This topic describes the various ways that Signals can get suppressed.
 
@@ -19,7 +19,7 @@ You can suppress multiple Entities at once on the **Entities** page in the CSE U
 
 ![entity-page.png](/img/cloud-siem-enterprise/entity-page.png)
 
-When you checkmark one or more Entities, the **Update Suppression** button appears. When you click it you’re prompted to set the suppression state for the select Entities. You can also create a .csv file with your suppression changes, and use the **Import Metadata** button to upload it to CSE. For details, see the [View and Manage Entities](03View_and_Manage_Entities.md "View and Manage Entities") topic. You can see what Entities are currently suppressed on the **Suppressed Entities** page, available from the content menu. 
+When you checkmark one or more Entities, the **Update Suppression** button appears. When you click it you’re prompted to set the suppression state for the select Entities. You can also create a .csv file with your suppression changes, and use the **Import Metadata** button to upload it to CSE. For details, see the [View and Manage Entities](view-manage-entities.md) topic. You can see what Entities are currently suppressed on the **Suppressed Entities** page, available from the content menu. 
 
 ![suppressed-entities-page.png](/img/cloud-siem-enterprise/suppressed-entities-page.png)
 
@@ -35,9 +35,9 @@ You can suppress Signals on all of the IP addresses in a Network Block. You can 
 
 ![network-block-page.png](/img/cloud-siem-enterprise/network-block-page.png)
 
-For more information see [Create and Use Network Blocks](../Administration/Create_and_Use_Network_Blocks.md "Create and Use Network Blocks").
+For more information see [Create and Use Network Blocks](../administration/create-use-network-blocks.md).
 
 ## Automatic suppression of redundant Signals
 
-CSE suppresses redundant Signals to prevent the generation of multiple, virtually identical Insights. For information about how this works, see [Redundant Signal suppression](00Insight_Generation_Process.md "Insight Generation Process") in the *Insight Generation Process* topic.  
+CSE suppresses redundant Signals to prevent the generation of multiple, virtually identical Insights. For information about how this works, see [Redundant Signal suppression](insight-generation-process.md) in the *Insight Generation Process* topic.  
  

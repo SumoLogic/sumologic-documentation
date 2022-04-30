@@ -41,7 +41,7 @@ When a username is normalized, the original, un-normalized name is placed in a `
 
 It’s important to note, that if no name normalization configuration exists, the name attribute will consist of the original (non-normalized) form and the system will continue to operate as it does today, with the exception that that `_raw` attribute will also be populated. 
 
-If a name normalization configuration exists, the name attribute will be populated with the form `<username>:<friendly_domain>` where the `<friendly domain name>` portion is not populated for the normalized default domain.  When name normalization is enabled all name fields (not-raw) will be lowercase. For more information see [Example - single Domain](./Username_and_Hostname_Normalization.md "CSE Username and Hostname Normalization") and [Example - multiple domains](./Username_and_Hostname_Normalization.md "CSE Username and Hostname Normalization"), below.
+If a name normalization configuration exists, the name attribute will be populated with the form `<username>:<friendly_domain>` where the `<friendly domain name>` portion is not populated for the normalized default domain.  When name normalization is enabled all name fields (not-raw) will be lowercase. For more information see [Example - single Domain](#example---single-domain) and [Example - multiple domains](#example---multiple-domains), below.
 
 ## Configuration
 
@@ -130,7 +130,7 @@ would have a normalized name 
 
 `device_hostname = desktop1`
 
-This would also hold true for the username [bob@sumologic.com](Username_and_Hostname_Normalization/mailto:bob@sumologic.co.md "mailto:bob@sumologic.com") and the hostname [desktop1@sumologic.com](Username_and_Hostname_Normalization/mailto:desktop1@sumologic.co.md "mailto:desktop1@sumologic.com").   In all of these cases, the usernames or hostnames would normalize to the same name respectively.
+This would also hold true for the username `bob@sumologic.com` and the hostname `desktop1@sumologic.com`.   In all of these cases, the usernames or hostnames would normalize to the same name respectively.
 
 For any name not matching a configured domain name, the normalized name would just be set to the username, so in this example:
 

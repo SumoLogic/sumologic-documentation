@@ -20,7 +20,7 @@ By default, ALB logging is not enabled in your organization's AWS account. You c
 
 ## Step 2: Configure Collection
 
-In this step, you configure an HTTP Source to collect AWS ALB log messages. You can configure the source on an existing Hosted Collector or create a new collector. If you’re going to use an existing collector, jump to [Configure an AWS S3 Source](./AWS_Application_Load_Balancer.md) below. Otherwise, create a new collector as described in [Configure a hosted collector](./AWS_Application_Load_Balancer.md) below, and then create the HTTP Source on the collector.
+In this step, you configure an HTTP Source to collect AWS ALB log messages. You can configure the source on an existing Hosted Collector or create a new collector. If you’re going to use an existing collector, jump to [Configure an AWS S3 Source](#configure-an-aws-s3-source) below. Otherwise, create a new collector as described in [Configure a hosted collector](#configure-a-hosted-collector) below, and then create the HTTP Source on the collector.
 
 ### Configure a hosted collector
 

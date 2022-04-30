@@ -6,7 +6,7 @@ id: kemp-loadmaster
 
 This page has instructions for collecting Kemp LoadMaster messages and sending them to Sumo Logic to be ingested by CSE.
 
-The Sumo Logic parser for Kemp LoadMaster logs primarily supports wafd (Web Application Firewall daemon) logging and various l4d (Layer 4 Load Balancing daemon) log messages. Other messages will parse, but a parser [local configuration](../CSE_Schema/Parser_Editor.md "Parser Editor") might be required to actually extract all fields.  
+The Sumo Logic parser for Kemp LoadMaster logs primarily supports wafd (Web Application Firewall daemon) logging and various l4d (Layer 4 Load Balancing daemon) log messages. Other messages will parse, but a parser [local configuration](../cse-schema/parser-editor.md) might be required to actually extract all fields.  
 
 ## Step 1: Configure collection
 

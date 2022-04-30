@@ -13,20 +13,19 @@ Match Lists are lists of important indicators and identifiers configured by a CS
 Here’s a use case for using a Match List to define an allow list:  Vulnerability scanners often set off false alarms in security data, as they intentionally mimic the behavior of an attacker. Given that this behavior is safe and expected, you don’t want scanner activities to fire a rule. That’s what a match list is for. You can create a Match List called “vuln_scanners” that contains the IP addresses of your scanners.
 
 :::tip
-There’s no reason you can’t use a Match List to define “deny lists” of items. However, CSE’s Threat Intel feature is designed for exactly that purpose. Most of the time, but not always, you should use Threat Intel lists for negative indicators. For more information, see [Match Lists or Threat Intel: which to use?](./Create_a_Match_List.md "Create a Match List")
-:::
+There’s no reason you can’t use a Match List to define “deny lists” of items. However, CSE’s Threat Intel feature is designed for exactly that purpose. Most of the time, but not always, you should use Threat Intel lists for negative indicators. For more information, see [Match Lists or Threat Intel: which to use?](#match-list-or-threat-intel-which-to-use).
 
 Here’s an example of a Match List in the CSE UI, at **Content \> Match Lists**. It is a list of trusted domains.  
   
 ![example-match-list.png](/img/cloud-siem-enterprise/example-match-list.png)
 
-Note that the Match List has a **Target Column**, which you define when you create the list. The Target Column indicates what type of Record fields should be compared to the Match List, for example hostnames, URLs, domains, IP addresses, usernames, and so on. For more information, see [How are Match Lists Used?](./Create_a_Match_List.md "Create a Match List").
+Note that the Match List has a **Target Column**, which you define when you create the list. The Target Column indicates what type of Record fields should be compared to the Match List, for example hostnames, URLs, domains, IP addresses, usernames, and so on. For more information, see [How are Match Lists Used?](#how-are-match-lists-used).
 
 ## Built-in rules refer to standard Match List names
 
 Many of CSE’s built-in rules assume the existence of one or more standard Match Lists. A standard Match List is a list that you need to create and populate so that CSE can leverage it. CSE rules take advantage of about 20 standard Match Lists. One example of a standard Match list is the “vuln_scanners” list mentioned in the previous section. There are analogous Match Lists for other entity types, such as “business_ips”, “verified_domains”, and so on.
 
-When you create the standard Match Lists, it’s important to create them correctly: you need to use the exact name CSE has defined for the list, and you must specify the correct Target Column.  You can find that information in the [Standard Match Lists](Standard_Match_Lists.md "Standard Match Lists") topic, which also lists the built-in rules that refer to Match List data.
+When you create the standard Match Lists, it’s important to create them correctly: you need to use the exact name CSE has defined for the list, and you must specify the correct Target Column.  You can find that information in the [Standard Match Lists](standard-match-lists.md) topic, which also lists the built-in rules that refer to Match List data.
 
 If you don’t define one or more standard Match Lists, the rules that refer to the match list data will still function, but you’ll miss out on the benefit that Match Lists provide—a rule will have no way of knowing that a particular IP address, domain, or other entity in a message should not cause it to fire.
 
@@ -50,7 +49,7 @@ In a rule, you look for matches by extending  a rule expression with an `array_
  
 If any of the IP addresses within the Record match one of the “vuln_scanner” IPs, the `listMatches` field will have a value of `['vuln_scanners']`. Thus, the check above will effectively prevent Signals from firing for those rules on the scanner IP addresses.
 
-For more information about referring to Match List data in rules, see [Match Lists](../CSE_Rules/01_About_CSE_Rules.md "About CSE Rules") in the *About CSE Rules* topic.
+For more information about referring to Match List data in rules, see [Match Lists](../cse-rules/about-cse-rules.md) in the *About CSE Rules* topic.
 
 ## Match List or Threat Intel: which to use?
 
@@ -69,7 +68,7 @@ A Match List can contain up to 100,000 items.
 Perform the steps below to create a Match List in CSE.
 
 :::tip
-You can also create and manage Match Lists with CSE's REST [API](../Administration/CSE_APIs.md "CSE APIs").
+You can also create and manage Match Lists with CSE's REST [API](../administration/cse-apis.md).
 :::
 
 1. Go to **Content \> Match List** and click **Create**.
@@ -77,10 +76,10 @@ You can also create and manage Match Lists with CSE's REST [API](../Administrati
     ![match-list-create-icon.png](/img/cloud-siem-enterprise/match-list-create-icon.png)
 1. On the **New Match List** popup, enter the following: 
 
-    * **Name**. Name of the Match list. If you are creating a standard Match List, make sure the name matches the standard Match List name. For more information, see [Standard Match Lists](Standard_Match_Lists.md "Standard Match Lists").   We recommend no embedded spaces in list names. For example, instead of *my list*, use *my_list*. 
-    * **Description**. Enter a description for the list. Descriptions for standard Match Lists can be found in [Standard Match Lists](Standard_Match_Lists.md "Standard Match Lists"). 
+    * **Name**. Name of the Match list. If you are creating a standard Match List, make sure the name matches the standard Match List name. For more information, see [Standard Match Lists](standard-match-lists.md).   We recommend no embedded spaces in list names. For example, instead of *my list*, use *my_list*. 
+    * **Description**. Enter a description for the list. Descriptions for standard Match Lists can be found in [Standard Match Lists](standard-match-lists.md). 
     * **Time to Live (hours)**. (Optional) Enter the number of hours after which the entries on the list should expire. 
-    * **Target Column**. The type of message field to which items on the list should be compared. The **Target Column** for standard Match Lists can be found in [Standard Match Lists](Standard_Match_Lists.md "Standard Match Lists").
+    * **Target Column**. The type of message field to which items on the list should be compared. The **Target Column** for standard Match Lists can be found in [Standard Match Lists](standard-match-lists.md).
     * Click **Create**.    
 
     ![new-match-list.png](/img/cloud-siem-enterprise/new-match-list.png)

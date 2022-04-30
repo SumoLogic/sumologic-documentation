@@ -8,7 +8,7 @@ This topic has information about the Entities page in CSE UI, which lists all of
 
 The **Entities** page is useful for monitoring Entities that are close to having an Insight created. On the **Entities \> Details** page, you can view Signals and Insights for an Entity, and, as desired, manually create an Insight from Signals associated with the Entity.
 
-You can also update the [tags](13Using_Tags_with_Insights,_Signals,_Entities,_and_Rules.md "Using Tags with Insights, Signals, Entities, and Rules"), [suppression](About_Signal_Suppression.md "About Signal Suppression") state, and [Criticality](07Entity_Criticality.md "Entity Criticality") assigned to Entities, as described below in the [Update Multiple Entities](./03View_and_Manage_Entities.md "View Entities and Activity Scores") section below. 
+You can also update the [tags](tags-insights-signals-entities-rules.md), [suppression](about-signal-suppression.md) state, and [Criticality](entity-criticality.md) assigned to Entities, as described below in the [Update Multiple Entities](view-manage-entities.md) section below. 
 
 ## About the Entities list page
 
@@ -23,11 +23,11 @@ Here’s a screenshot of the Entities page.
 1. This area shows the total number of unique Entities in CSE.
 1. In the **Filters** area, you can filter the list of Entities by Activity Score, Hostname, IP Address, Username, Tags, Type, and Suppressed.
 1. In this area you can sort Entities by Activity Score, Name, or Type. 
-1. The Import Metadata option allows you to upload a .csv file of updates to Entity tags, suppression state, and Criticality, as described in [Update Multiple Entities](./03View_and_Manage_Entities.md "View Entities and Activity Scores").
+1. The Import Metadata option allows you to upload a .csv file of updates to Entity tags, suppression state, and Criticality, as described in [Update Multiple Entities](#update-multiple-entities).
 1. Shows the Entity Type and its value. 
-1. The **Criticality** column shows whether a [Criticality](07Entity_Criticality.md "Entity Criticality") has been assigned to the Entity. A Criticality adjusts the severity of Signals for specific Entities based on some risk factor or other consideration. If a Criticality hasn't been assigned to an Entity, the column contains "default".
+1. The **Criticality** column shows whether a [Criticality](entity-criticality.md) has been assigned to the Entity. A Criticality adjusts the severity of Signals for specific Entities based on some risk factor or other consideration. If a Criticality hasn't been assigned to an Entity, the column contains "default".
 1. The current Activity Score for the Entity, which by default is the sum of the severities of the Signals that have fired on the Entity over the previous two weeks. For more information, see [Understanding Entity Activity Scores](00Insight_Generation_Process.md "Insight Generation Process"), in the *Insight Generation Process* topic.
-1. If you see a link below the Entity value, it’s a [tag](13Using_Tags_with_Insights,_Signals,_Entities,_and_Rules.md "Using Tags with Insights, Signals, Entities, and Rules"). You can click it to filter Entities by that tag.
+1. If you see a link below the Entity value, it’s a [tag](tags-insights-signals-entities-rules.md). You can click it to filter Entities by that tag.
 1. If an Entity has the **Suppressed** indicator, that means that Signals will not be fired on the Entity.  
 
 ## About the Entities Details page
@@ -38,17 +38,17 @@ the Entity appears.
 ![entity-details-page.png](/img/cloud-siem-enterprise/entity-details-page.png)
 
 1. Suppression slider. Shows whether or not the Entity is currently suppressed. You can use the slider to suppress the Entity so that it is excluded from the Insight generation process. 
-1. **Tags**. Lists any [tags](13Using_Tags_with_Insights,_Signals,_Entities,_and_Rules.md "Using Tags with Insights, Signals, Entities, and Rules") assigned to the Entity. You can add a new tag, select a tag to assign, or remove a tag from the Entity.
-1. **Criticality**. An Entity’s [Criticality](07Entity_Criticality.md "Entity Criticality") is a setting that adjusts the severity of Signals that fire on the Entity, based on a risk factor or other consideration. You can reset the Criticality here.
+1. **Tags**. Lists any [tags](tags-insights-signals-entities-rules.md) assigned to the Entity. You can add a new tag, select a tag to assign, or remove a tag from the Entity.
+1. **Criticality**. An Entity’s [Criticality](entity-criticality.md) is a setting that adjusts the severity of Signals that fire on the Entity, based on a risk factor or other consideration. You can reset the Criticality here.
 1. **Inventory**. If the selected Entity is standard Entity type—an IP address, hostname, or username—this area provides selected information about the Inventory object associated with the Entity. (Inventory information is not provided for custom entity types.) Inventory data is customer or 3rd-party provided information that describes devices and users along with contact information and job descriptions. CSE joins inventory data  on demand with data from Entities in Insights data to provide context to Signals.
 1. **IP Metadata**. (Displayed only for IP address Entities.) This section lists the contents of enrichment fields  that were added during Record processing. 
-1. **Matching Network Blocks**. (Displayed only for IP address Entities.) If the IP Address is within any [Network Blocks](./03View_and_Manage_Entities.md "View Entities and Activity Scores"), they're listed here.
+1. **Matching Network Blocks**. (Displayed only for IP address Entities.) If the IP Address is within any Network Blocks, they're listed here.
 1. **Related Entities**. If related entities exist, they are listed here. A related entity is a hostname or MAC address from which we have observed a Record in the log stream for which an IP and hostname or MAC appears in the same device within the Record.
 1. **Audit Log**. This area will list any audit events that have been logged for the Entity. An audit log is generated each time an Entity is suppressed or unsuppressed. 
 1. **Activity tab**. This tab displays a visualization of Signals on the Entity over time.The x-axis is time, the y-axis is severity. The icons represent Signals.
 1. **Related Entities** tab. If related entities exist, this tab allows you to filter them by time. A related entity is a hostname or MAC address from which we have observed a Record in the log stream for which an IP and hostname or MAC appears in the same device within the Record.
-1. **Create Insight**. You can use this option to create an Insight on the Entity, as described below in [Create an Insight](./03View_and_Manage_Entities.md "View Entities and Activity Scores"), below.
-12. The **Current State** section lists Signals that were generated for the Entity during the current [Detection Window](05Set_Insight_Generation_Window_and_Threshold.md "Set Insight Generation Window and Threshold") that are not already part of an Insight. (The Detection Window is the period over which CSE evaluates Signals, which is 14 days, by default. The Detection Window is configured on the Content \> Custom Insights page in the CSE UI.)
+1. **Create Insight**. You can use this option to create an Insight on the Entity, as described below in [Create an Insight](#create-an-insight), below.
+12. The **Current State** section lists Signals that were generated for the Entity during the current [Detection Window](set-insight-generation-window-threshold.md) that are not already part of an Insight. (The Detection Window is the period over which CSE evaluates Signals, which is 14 days, by default. The Detection Window is configured on the Content \> Custom Insights page in the CSE UI.)
 13. The **Prior Activity** section lists Signals that were generated for the Entity prior to the current Detection window, and all Insights for the Entity. 
 
 ## Create an Insight

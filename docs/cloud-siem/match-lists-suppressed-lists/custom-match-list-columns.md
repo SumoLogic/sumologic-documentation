@@ -8,9 +8,9 @@ This page has information about custom Match List columns 
 
 ## About Match Lists and Target Columns
 
-Match Lists are lists of important indicators and identifiers that a CSE analyst creates. Match Lists are typically used to define “allow lists” of items, like IP addresses, URLs, or hostnames that you want to exempt from ordinary rule processing. Many of CSE’s built-in rules reference [standard Match Lists](Standard_Match_Lists.md "Standard Match Lists"). Examples of standard Match Lists include a list of trusted domains, and a list of IP addresses that shouldn’t trigger SSL detection rules.  
+Match Lists are lists of important indicators and identifiers that a CSE analyst creates. Match Lists are typically used to define “allow lists” of items, like IP addresses, URLs, or hostnames that you want to exempt from ordinary rule processing. Many of CSE’s built-in rules reference [standard Match Lists](standard-match-lists.md). Examples of standard Match Lists include a list of trusted domains, and a list of IP addresses that shouldn’t trigger SSL detection rules.  
 
-You can define your own custom Match Lists, and reference them in rules that you write yourself. When you create a Match List, whether it’s a standard or a custom list, you select a Target Column, which indicates the Record attribute or attributes that should be compared to the Match List. The options that appear in the **Target Column** selector list include “Hostname”, “Domain”, “Username”, and so on. Note that these options usually map to multiple Record attributes. For example, if you select “Username” as a list’s Target Column, any occurrences of  username, `fromUser_username`, or `user_username` in incoming Records will be compared to the Match List. For information about how **Target Column** options in the UI map to CSE schema attributes, see [Match Fields Reference](Match_Fields_Reference.md "Match Fields Reference").
+You can define your own custom Match Lists, and reference them in rules that you write yourself. When you create a Match List, whether it’s a standard or a custom list, you select a Target Column, which indicates the Record attribute or attributes that should be compared to the Match List. The options that appear in the **Target Column** selector list include “Hostname”, “Domain”, “Username”, and so on. Note that these options usually map to multiple Record attributes. For example, if you select “Username” as a list’s Target Column, any occurrences of  username, `fromUser_username`, or `user_username` in incoming Records will be compared to the Match List. For information about how **Target Column** options in the UI map to CSE schema attributes, see [Match Fields Reference](match-fields-reference.md).
 
 If you create a Match List for which none of the existing Target Column options is appropriate, you can create a custom column. 
 
@@ -51,6 +51,6 @@ To see the custom columns that have been defined in your environment:
 
 ## Create a Match List with a custom column
 
-Follow the instructions in the [Create a Match List](Create_a_Match_List.md "Create a Match List"), and select the desired column in the **Custom** section of the **Target Column** selector list.
+Follow the instructions in the [Create a Match List](create-match-list.md), and select the desired column in the **Custom** section of the **Target Column** selector list.
 
 ![target-column-selector.png](/img/cloud-siem-enterprise/target-column-selector.png)

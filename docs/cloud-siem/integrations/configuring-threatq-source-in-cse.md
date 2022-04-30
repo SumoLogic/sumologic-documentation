@@ -62,5 +62,5 @@ where 
 If the name of the list you are referencing with `array_contains` contains any spaces, replace the spaces with underscores. For example, if the list name is *my list*, refer to it as *my_list*.
 :::
 
-For more information, see the [Rules and other content](../CSE_Rules/01_About_CSE_Rules.md "About CSE Rules") in the *About CSE Rules* topic.  
+For more information, see the [Rules and other content](../cse-rules/about-cse-rules.md) in the *About CSE Rules* topic.  
  

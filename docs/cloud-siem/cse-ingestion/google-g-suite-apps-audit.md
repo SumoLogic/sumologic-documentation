@@ -6,7 +6,7 @@ id: google-g-suite-apps-audit
 
 ## Step 1: Configure collection
 
-In this step, you configure an G Suite Apps Audit Source to collect G Suite log messages. You can configure the source on an existing Hosted Collector or create a new collector. If you’re going to use an existing collector, jump to [Configure G Suite Apps Audit Source](./Google_G_Suite_Apps_Audit.md "Google G Suite Apps Audit") below. Otherwise, create a new collector as described in [Configure a hosted collector](./Google_G_Suite_Apps_Audit.md "Google G Suite Apps Audit") below, and then create the G Suite Apps Audit Source on the collector.
+In this step, you configure an G Suite Apps Audit Source to collect G Suite log messages. You can configure the source on an existing Hosted Collector or create a new collector. If you’re going to use an existing collector, jump to [Configure G Suite Apps Audit Source](#configure-g-suite-apps-audit-source) below. Otherwise, create a new collector as described in [Configure a hosted collector](#configure-a-hosted-collector) below, and then create the G Suite Apps Audit Source on the collector.
 
 ### Configure a Hosted Collector
 

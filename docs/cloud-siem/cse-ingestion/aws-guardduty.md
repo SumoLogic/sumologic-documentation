@@ -8,7 +8,7 @@ This page has instructions for collecting AWS GuardDuty log messages and sending
 
 ## Step 1: Configure collection
 
-In this step, you configure an HTTP Source to collect AWS GuardDuty log messages. You can configure the source on an existing Hosted Collector or create a new collector. If you’re going to use an existing collector, jump to [Configure an HTTP Source](./AWS_GuardDuty.md "AWS GuardDuty") below. Otherwise, create a new collector as described in [Configure a Hosted Collector](./AWS_GuardDuty.md "AWS GuardDuty") below, and then create the HTTP Source on the collector.
+In this step, you configure an HTTP Source to collect AWS GuardDuty log messages. You can configure the source on an existing Hosted Collector or create a new collector. If you’re going to use an existing collector, jump to [Configure an HTTP Source](#configure-an-http-source) below. Otherwise, create a new collector as described in [Configure a Hosted Collector](#configure-a-hosted-collector) below, and then create the HTTP Source on the collector.
 
 ### Configure a Hosted Collector
 

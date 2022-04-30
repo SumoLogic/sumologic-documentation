@@ -4,7 +4,7 @@ id: configure-custom-insight
 
 # Configure a Custom Insight
 
-As described in the [Insight Generation Process](00Insight_Generation_Process.md "Insight Generation Process") topic, CSE automatically generates an Insight based on an Entity’s Activity Score, which is the cumulative severity of the unique Signals that have fired on an Entity during a period of time. In some cases, you may want CSE to generate an Insight on some basis other than Entity Activity Scores. For example, you might want an Insight generated
+As described in the [Insight Generation Process](insight-generation-process.md) topic, CSE automatically generates an Insight based on an Entity’s Activity Score, which is the cumulative severity of the unique Signals that have fired on an Entity during a period of time. In some cases, you may want CSE to generate an Insight on some basis other than Entity Activity Scores. For example, you might want an Insight generated
 whenever a particular set of Signals are fired in a particular order. 
 
 This topic has instructions for defining a Custom Insight, which is a configuration you set up that causes CSE to generate Insights based purely on one or more Signals being fired. There are two ways you can define a Custom Insight. You can specify that the Insight should be generated each time:
@@ -12,10 +12,10 @@ This topic has instructions for defining a Custom Insight, which is a configura
 * One or more selected rules fire a Signal.
 * Signals whose name matches a specified wildcard expression are fired. 
 
-Which method should you use? The difference is whether you’re going to create an Insight based on the name of the rule that fired the Signal, or based on the name of the Signal that was fired. Typically, Signals that a rule generates have the same name as the Signal. That is not the case with CSE’s normalized rules. That’s because normalized rules, for example [Normalized Threat rules](../CSE_Rules/Normalized_Threat_Rules.md "Normalized Threat Rules"), are written to work with multiple data sources. The names of the Signals that a normalized rule fires vary by data source. So, if you want your
+Which method should you use? The difference is whether you’re going to create an Insight based on the name of the rule that fired the Signal, or based on the name of the Signal that was fired. Typically, Signals that a rule generates have the same name as the Signal. That is not the case with CSE’s normalized rules. That’s because normalized rules, for example [Normalized Threat rules](../cse-rules/normalized-threat-rules.md), are written to work with multiple data sources. The names of the Signals that a normalized rule fires vary by data source. So, if you want your
 Custom Insight configuration to generate Insights for Signals fired by normalized rules, you should base it on Signal names, rather than rule names.
 
-When the conditions of a Custom Insight configuration are met during the currently configured [detection window](05Set_Insight_Generation_Window_and_Threshold.md "Set Insight Generation Window and Threshold"), an Insight will be generated for each Entity involved. In other words, if each of the Signals in a Custom Insight configuration fired on a different Entity, an Insight will be created on each of those Entities.
+When the conditions of a Custom Insight configuration are met during the currently configured [detection window](set-insight-generation-window-threshold.md), an Insight will be generated for each Entity involved. In other words, if each of the Signals in a Custom Insight configuration fired on a different Entity, an Insight will be created on each of those Entities.
 
 This example Custom Insight configuration will generate an Insight as a result of the **McAfee ePO - Virus Outbreak** rule firing a Signal. 
 
@@ -49,7 +49,7 @@ To create a Custom Insight:
 
 1. In the **Then Create an Insight** section on the right side of the popup, enter a name for the Insight.
 1. Enter a description of the Insight, as desired.
-1. For severity, you can choose between a constant severity, or a dynamic severity that is based on the severity of the Signals that trigger the Insight. If you want to configure dynamic severity, skip to the next [step](./Configure_a_Custom_Insight.md "Configure a Custom Insight"). To configure constant severity, select one of: Low, Medium, High, or Critical. 
+1. For severity, you can choose between a constant severity, or a dynamic severity that is based on the severity of the Signals that trigger the Insight. If you want to configure dynamic severity, skip to the next step. To configure constant severity, select one of: Low, Medium, High, or Critical. 
 1. To configure dynamic severity: 
 
    1. Choose **dynamic** severity.    
@@ -66,5 +66,5 @@ To create a Custom Insight:
 
     ![example-dynamic.png](/img/cloud-siem-enterprise/example-dynamic.png)
 
-1. If desired, select [Tags](13Using_Tags_with_Insights,_Signals,_Entities,_and_Rules.md "Using Tags with Insights, Signals, Entities, and Rules") that you want assigned to the Custom Insight. 
+1. If desired, select [Tags](tags-insights-signals-entities-rules.md) that you want assigned to the Custom Insight. 
 1. Click **Submit** to save your Custom Insight configuration.

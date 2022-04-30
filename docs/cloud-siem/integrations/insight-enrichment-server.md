@@ -39,7 +39,7 @@ To set up the integration, you’ll download a binary and supply required inform
 
 The CSE Insight Enrichment Server can be installed on any Windows system with a Vista+ or Server 2008 or newer operating system. It does not have significant RAM or CPU requirements so it should be fine running on almost any hardware.   
 
-You must have local administrative privileges to install the Insight Enrichment Server. By default, the server runs under the LocalService account on the machine. If the Insight Enrichment Server needs privileges to perform actions as a different user, see [Run the server under a service account](./Insight_Enrichment_Server.md "Insight Enrichment Server"), below.
+You must have local administrative privileges to install the Insight Enrichment Server. By default, the server runs under the LocalService account on the machine. If the Insight Enrichment Server needs privileges to perform actions as a different user, see [Run the server under a service account](insight-enrichment-server.md#run-the-server-under-a-service-account), below.
 
 The installation process requires a valid configuration file before the installation is started. 
 
@@ -48,8 +48,8 @@ The installation process requires a valid configuration file before the installa
 The Insight Enrichment Server is packaged with an interactive installer. You’ll be prompted to supply the following configuration options when you run the installer.
 
 * Installation Directory. By default, the Insight Enrichment Server will be installed in `C:\Windows\SumoLogic\EnrichmentServer`. Sumo Logic recommends that you accept this default.     
-* Enrichment Service Credentials. If you need to run the server under a user with different privileges than the LocalService, provide them when prompted. See [Run the server under a service account](./Insight_Enrichment_Server.md "Insight Enrichment Server") below for account requirements.    
-* Configuration File. The installer prompts you to provide the location of a configuration file with an .ini extension. The file must be a valid configuration file with required configuration options. For an example, see [Example configuration file](./Insight_Enrichment_Server.md "Insight Enrichment Server"). The file will be copied to `C:\Windows\SumoLogic\EnrichmentServer` on your local machine.
+* Enrichment Service Credentials. If you need to run the server under a user with different privileges than the LocalService, provide them when prompted. See [Run the server under a service account](insight-enrichment-server.md#run-the-server-under-a-service-account) below for account requirements.    
+* Configuration File. The installer prompts you to provide the location of a configuration file with an .ini extension. The file must be a valid configuration file with required configuration options. For an example, see [Example configuration file](insight-enrichment-server.md#example-configuration-file). The file will be copied to `C:\Windows\SumoLogic\EnrichmentServer` on your local machine.
 
 ### Run the server under a service account
 
@@ -83,7 +83,7 @@ Each enrichment should be given its own section in the configuration file. The 
 | Setting | Required? | Description |
 |--|--|--|
 | `enrichment_type` | yes | Specifies the type of the enrichment. Currently, the only supported value is: command |
-| `entity_type` | yes | The type of entity to enrich. The Insight Enrichment server supports built-in entity types: IP, mac, username, and hostname. It also supports [custom entity types](/Cloud_SIEM_Enterprise/Records%2C_Signals%2C_Entities%2C_and_Insights/11Create_a_Custom_Entity_Type).  For custom entity types, the `entity_type` should match the unique Identifier assigned to the custom entity type.  |
+| `entity_type` | yes | The type of entity to enrich. The Insight Enrichment server supports built-in entity types: IP, mac, username, and hostname. It also supports [custom entity types](../records-signals-entities-insights/create-custom-entity-type.md).  For custom entity types, the `entity_type` should match the unique Identifier assigned to the custom entity type.  |
 | `cache_time` | no | The length of time that the results of a specific enrichment for a specific entity will be cached and returned for other enrichment requests for that enrichment and entity.  This setting can be used to prevent an enrichment from running multiple times for the same entity. You can specify `cache_time` in hours (h), minutes (m), or seconds (s). If you specify a value without a unit, the value is treated as nanoseconds. Default: none |
 | `ip_range` | no | When `entity_type` is IP, you can specify a range of IP addresses that the enrichment will be limited to. Specify IP address ranges as a comma-separated list. For example: 192.168.1.1-192.168.1.255, 192.168.5.1-192.168.8.120 |
 | `command_exe` | yes | The executable to run when enriching the entity. |

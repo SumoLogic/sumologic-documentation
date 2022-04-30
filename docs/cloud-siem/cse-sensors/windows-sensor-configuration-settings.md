@@ -51,31 +51,31 @@ If it is set, it is transmitted as a tag with each event log to identify the ten
 
 **Default**: none
 
-**Description**: This setting relates to the [Active Directory Monitor](/Cloud_SIEM_Enterprise/CSE_Sensors/03_Windows_Sensor_Overview#Active_Directory_Monitor). A list of the LDAP Names of Active Directory attributes to report, in addition to the default list.
+**Description**: This setting relates to the [Active Directory Monitor](windows-sensor-overview.md#active-directory-monitor). A list of the LDAP Names of Active Directory attributes to report, in addition to the default list.
 
 ## DirectoryEnabled
 
 **Default**: true
 
-**Description**: This setting relates to the [Active Directory Monitor](/Cloud_SIEM_Enterprise/CSE_Sensors/03_Windows_Sensor_Overview#Active_Directory_Monitor). You can use this property to disable the Active Directory Monitor. Note Active Directory monitoring is automatically disabled if the Windows service that runs the sensor detects that the machine is not part of a domain.
+**Description**: This setting relates to the [Active Directory Monitor](windows-sensor-overview.md#active-directory-monitor). You can use this property to disable the Active Directory Monitor. Note Active Directory monitoring is automatically disabled if the Windows service that runs the sensor detects that the machine is not part of a domain.
 
 ## DirectoryEnableSerializeContacts
 
 **Default**: false
 
-**Description**: This setting relates to the [Active Directory Monitor](/Cloud_SIEM_Enterprise/CSE_Sensors/03_Windows_Sensor_Overview#Active_Directory_Monitor). Set to true to configure the Active Directory Monitor to report on Active Directory contacts.
+**Description**: This setting relates to the [Active Directory Monitor](windows-sensor-overview.md#active-directory-monitor). Set to true to configure the Active Directory Monitor to report on Active Directory contacts.
 
 ## DirectoryExcludedAttributes
 
 **Default**: none
 
-**Description**: This setting relates to the [Active Directory Monitor](/Cloud_SIEM_Enterprise/CSE_Sensors/03_Windows_Sensor_Overview#Active_Directory_Monitor). A comma-separated list of the LDAP Names of Active Directory attributes to exclude from the report that the sensor sends to the Sumo Logic platform (or the legacy CSE server).
+**Description**: This setting relates to the [Active Directory Monitor](windows-sensor-overview.md#active-directory-monitor). A comma-separated list of the LDAP Names of Active Directory attributes to exclude from the report that the sensor sends to the Sumo Logic platform (or the legacy CSE server).
 
 ## DirectoryExcludeDistinguishedNameSuffixes
 
 **Default**: none
 
-**Description**: This setting relates to the Active Directory Monitor. If set, the Windows Sensor won't report any records that contain the Distinguished Name suffixes specified. Example usage:
+**Description**: This setting relates to the [Active Directory Monitor](windows-sensor-overview.md#active-directory-monitor). If set, the Windows Sensor won't report any records that contain the Distinguished Name suffixes specified. Example usage:
 
 ```
 "DirectoryExcludeDistinguishedNameSuffixes": ["CN=Users,DC=ignoreme,DC=local", "CN=Users,DC=andmetoo,DC=local"]
@@ -85,32 +85,32 @@ If it is set, it is transmitted as a tag with each event log to identify the ten
 
 **Default**: 86400
 
-**Description**: This setting relates to the Active Directory Monitor. How long to wait before attempting to export Active Directory again, in seconds. This specifies the span of time between consecutive Active Directory dumps. It measures the time *between* the dumps, not the time between *starting* dumps. 
+**Description**: This setting relates to the [Active Directory Monitor](windows-sensor-overview.md#active-directory-monitor). How long to wait before attempting to export Active Directory again, in seconds. This specifies the span of time between consecutive Active Directory dumps. It measures the time *between* the dumps, not the time between *starting* dumps. 
 
 ## DirectoryFilter
 
 **Default**: none
 
-**Description**: This setting relates to the Active Directory Monitor. Specifies a filter to use when searching for Domain Objects in Active Directory. For more information on creating an LDAP filter, see:
+**Description**: This setting relates to the [Active Directory Monitor](windows-sensor-overview.md#active-directory-monitor). Specifies a filter to use when searching for Domain Objects in Active Directory. For more information on creating an LDAP filter, see:
 https://social.technet.microsoft.com/wiki/contents/articles/5392.active-directory-ldap-syntax-filters.aspx#Filter_on_objectCategory_and_objectClass
 
 ## DirectoryMaxAppends
 
 **Default**: 1000
 
-**Description**: This setting relates to the Active Directory Monitor. Specifies how many records to append to the Active Directory dump file before stopping to send the file. This value works with the [DirectoryQueueMaxFileOpenTime](/Cloud_SIEM_Enterprise/CSE_Sensors/06_Windows_Sensor_Configuration_Settings#DirectoryQueueMaxFileOpenTime) setting to control how long the Windows Sensor waits before sending a file to which it is still appending.
+**Description**: This setting relates to the [Active Directory Monitor](windows-sensor-overview.md#active-directory-monitor). Specifies how many records to append to the Active Directory dump file before stopping to send the file. This value works with the [DirectoryQueueMaxFileOpenTime](/Cloud_SIEM_Enterprise/CSE_Sensors/06_Windows_Sensor_Configuration_Settings#DirectoryQueueMaxFileOpenTime) setting to control how long the Windows Sensor waits before sending a file to which it is still appending.
 
 ## DirectoryMaxBytes
 
 **Default**: 20000000 (20 MB)
 
-**Description**: This setting relates to the Active Directory Monitor. Specifies the maximum file size (in bytes) for an Active Directory snapshot file (used to queue Active Directory records for upload).
+**Description**: This setting relates to the [Active Directory Monitor](windows-sensor-overview.md#active-directory-monitor). Specifies the maximum file size (in bytes) for an Active Directory snapshot file (used to queue Active Directory records for upload).
 
 ## DirectoryMaxParallelUploads
 
 **Default**: 4
 
-**Description**: This setting relates to the Active Directory Monitor. Specifies how many Active Directory files that the sensor will attempt to upload at the same time, in parallel. This value can be adjusted based on the host machines computing resources.
+**Description**: This setting relates to the [Active Directory Monitor](windows-sensor-overview.md#active-directory-monitor). Specifies how many Active Directory files that the sensor will attempt to upload at the same time, in parallel. This value can be adjusted based on the host machines computing resources.
 
 ## DirectoryQueueBacklogWarningThresholdMaxFileAgeHours 
 
@@ -128,13 +128,13 @@ https://social.technet.microsoft.com/wiki/contents/articles/5392.active-director
 
 **Default**: 300
 
-**Description**: This setting relates to the [Active Directory Monitor](/Cloud_SIEM_Enterprise/CSE_Sensors/03_Windows_Sensor_Overview#Active_Directory_Monitor). The amount of time the Active Directory snapshot file can remain open, in seconds The Active Directory dump can take a long time. As it runs, the Windows Sensor can upload what data it has already collected instead of waiting for the entire dump to complete. This field specifies how long the file will remain open during long-running dumps.
+**Description**: This setting relates to the [Active Directory Monitor](windows-sensor-overview.md#active-directory-monitor). The amount of time the Active Directory snapshot file can remain open, in seconds The Active Directory dump can take a long time. As it runs, the Windows Sensor can upload what data it has already collected instead of waiting for the entire dump to complete. This field specifies how long the file will remain open during long-running dumps.
 
 ## DirectoryUploadBatchSizeTarget
 
 **Default**: 1 MB
 
-**Description**: This setting relates to the [Active Directory Monitor](/Cloud_SIEM_Enterprise/CSE_Sensors/03_Windows_Sensor_Overview#Active_Directory_Monitor). This setting applies only to uploads to Sumo Logic platform, not to the legacy CSE server. The Windows Sensor uploads Active Directory records to the Sumo Logic platform in batches. This setting specifies the target size of the batch that is uploaded. There is rarely a reason to change the value of this setting.
+**Description**: This setting relates to the [Active Directory Monitor](windows-sensor-overview.md#active-directory-monitor). This setting applies only to uploads to Sumo Logic platform, not to the legacy CSE server. The Windows Sensor uploads Active Directory records to the Sumo Logic platform in batches. This setting specifies the target size of the batch that is uploaded. There is rarely a reason to change the value of this setting.
 
 ## DirectoryUploadCategory
 
@@ -145,31 +145,31 @@ https://social.technet.microsoft.com/wiki/contents/articles/5392.active-director
 ## DirectoryUploaderRestDuration
 
 **Default**: 100ms
-**Description**: This setting relates to the [Active Directory Monitor](/Cloud_SIEM_Enterprise/CSE_Sensors/03_Windows_Sensor_Overview#Active_Directory_Monitor). Specifies how long the thread should pause between uploading files, in milliseconds. This specifies low long the thread will rest before checking for another file to send. This is here to avoid pegging out the CPU.
+**Description**: This setting relates to the [Active Directory Monitor](windows-sensor-overview.md#active-directory-monitor). Specifies how long the thread should pause between uploading files, in milliseconds. This specifies low long the thread will rest before checking for another file to send. This is here to avoid pegging out the CPU.
 
 ## DirectoryUploadPause
 
 **Default**: false
 
-**Description**: This setting relates to the [Active Directory Monitor](/Cloud_SIEM_Enterprise/CSE_Sensors/03_Windows_Sensor_Overview#Active_Directory_Monitor). Useful for technical support. When this is enabled, the sensor will create dumps, but will not attempt to upload them.
+**Description**: This setting relates to the [Active Directory Monitor](windows-sensor-overview.md#active-directory-monitor). Useful for technical support. When this is enabled, the sensor will create dumps, but will not attempt to upload them.
 
 ## DirectoryUploadSiemForwarding
 
 **Default**: true
 
-**Description**: This setting relates to the [Active Directory Monitor](/Cloud_SIEM_Enterprise/CSE_Sensors/03_Windows_Sensor_Overview#Active_Directory_Monitor). This setting  applies to configurations in which the sensor uploads to the Sumo Logic platform (as opposed to the legacy CSE server). For Active Directory uploads, the sensor will use this setting to populate the value in the `_siemForwarding` header.
+**Description**: This setting relates to the [Active Directory Monitor](windows-sensor-overview.md#active-directory-monitor). This setting  applies to configurations in which the sensor uploads to the Sumo Logic platform (as opposed to the legacy CSE server). For Active Directory uploads, the sensor will use this setting to populate the value in the `_siemForwarding` header.
 
 ## DirectoryUploadUrlPath
 
 **Default**: “/inventory”
 
-**Description**: This setting relates to the [Active Directory Monitor](/Cloud_SIEM_Enterprise/CSE_Sensors/03_Windows_Sensor_Overview#Active_Directory_Monitor). The path to the API endpoint where directories are uploaded.
+**Description**: This setting relates to the [Active Directory Monitor](windows-sensor-overview.md#active-directory-monitor). The path to the API endpoint where directories are uploaded.
 
 ## DirectoryVerboseTrace
 
 **Default**: “/inventory”
 
-**Description**: This setting relates to the [Active Directory Monitor](/Cloud_SIEM_Enterprise/CSE_Sensors/03_Windows_Sensor_Overview#Active_Directory_Monitor). If set to true, low-level information about the process of retrieving Active Directory objects and dumping them to snapshot files will be logged as Trace messages.
+**Description**: This setting relates to the [Active Directory Monitor](windows-sensor-overview.md#active-directory-monitor). If set to true, low-level information about the process of retrieving Active Directory objects and dumping them to snapshot files will be logged as Trace messages.
 
 :::note
 The minimum log level must also be set to “Trace” in the `Nlog.config` file located in `C:\Program Files\Sumo Logic\CSE Windows Sensor`
@@ -189,7 +189,7 @@ The minimum log level must also be set to “Trace” in the `Nlog.config` file 
 
 **Default**: 4 hours
 
-**Description**: This setting relates to the [Domain Controller Monitor](/Cloud_SIEM_Enterprise/CSE_Sensors/03_Windows_Sensor_Overview#Domain_Controller_Monitor). Specifies how long to wait until we attempt to detect Domain Controllers again. Domain Controllers are always detected at least once at startup, regardless of this setting.
+**Description**: This setting relates to the [Domain Controller Monitor](windows-sensor-overview.md#domain-controller-monitor). Specifies how long to wait until we attempt to detect Domain Controllers again. Domain Controllers are always detected at least once at startup, regardless of this setting.
 
 ## Environment
 
@@ -207,13 +207,13 @@ The minimum log level must also be set to “Trace” in the `Nlog.config` file 
 
 **Default**: 10
 
-**Description**: Specifies how many errors the sensor will upload in a single burst. Works in conjunction with [ErrorUploadInterval](./06_Windows_Sensor_Configuration_Settings.md "Windows Sensor Configuration Settings") to determine the pace of error uploads.
+**Description**: Specifies how many errors the sensor will upload in a single burst. Works in conjunction with [ErrorUploadInterval](#erroruploadinterval) to determine the pace of error uploads.
 
 ## ErrorUploadInterval
 
 **Default**: 100
 
-**Description**: Specifies how long (in milliseconds) the sensor will rest before uploading another burst of errors. Works in conjunction with [ErrorUploadBurstRate](./06_Windows_Sensor_Configuration_Settings.md "Windows Sensor Configuration Settings") to determine the pace of error uploads.
+**Description**: Specifies how long (in milliseconds) the sensor will rest before uploading another burst of errors. Works in conjunction with [ErrorUploadBurstRate](#erroruploadburstrate) to determine the pace of error uploads.
 
 ## EventIdAllowList
 
@@ -236,7 +236,7 @@ You cannot change what events are collected by default. You can use `EventIdAllo
 
 If you are collecting events from WEC rather than monitoring Domain Controllers (that is, `EventLogForwarderEnable` is set to true), `EventIDAllowListEnable` will default to false, resulting in collection of all WEC events.
 
-If desired, you can configure the sensor to send only selected WEC events by specifying those events using  `EventIdAllowList` and setting [EventLogForwarderAllowListEnable](/Cloud_SIEM_Enterprise/CSE_Sensors/06_Windows_Sensor_Configuration_Settings#EventLogForwarderAllowListEnable) to true. 
+If desired, you can configure the sensor to send only selected WEC events by specifying those events using  `EventIdAllowList` and setting [EventLogForwarderAllowListEnable](#eventlogforwarderallowlistenable) to true. 
 
 For more information about security-related events, see [Events to Monitor](https://docs.microsoft.com/en-us/windows-server/identity/ad-ds/plan/appendix-l--events-to-monitor) in Microsoft help.
 
@@ -262,25 +262,25 @@ For more information about security-related events, see [Events to Monitor](http
 
 **Default**: false 
 
-**Description**: Enables the [Localhost Monitor](03_Windows_Sensor_Overview.md "Windows Sensor Overview") to monitor local events on the machine that is running the sensor.
+**Description**: Enables the [Localhost Monitor](windows-sensor-overview.md#localhost-monitor) to monitor local events on the machine that is running the sensor.
 
 ## EventLogEnablePeriodicReAttach
 
 **Default**:  false
 
-**Description**: If set to true, the sensor will periodically disconnect the event log monitors and reconnect. Works in conjunction with the [EventLogEnablePeriodicReAttachInterval](./06_Windows_Sensor_Configuration_Settings.md "Windows Sensor Configuration Settings") setting.
+**Description**: If set to true, the sensor will periodically disconnect the event log monitors and reconnect. Works in conjunction with the [EventLogEnablePeriodicReAttachInterval](#eventlogenableperiodicreattach) setting.
 
 ## EventLogEnablePeriodicReAttachInterval
 
 **Default**: 60
 
-**Description**: Specifies the interval, in seconds, between attempts to reattach the event log monitors to their targets.  Valid only if [EventLogEnablePeriodicReAttach](./06_Windows_Sensor_Configuration_Settings.md "Windows Sensor Configuration Settings") is set to true.
+**Description**: Specifies the interval, in seconds, between attempts to reattach the event log monitors to their targets.  Valid only if [EventLogEnablePeriodicReAttach](#eventlogenableperiodicreattach) is set to true.
 
 ## EventLogFormatIncludeMessageDescriptionFirstLineOnly
 
 **Default**: false
 
-**Description**: If set to true, the service will include only the first line of the event record’s Message.  If set to false, the entire Message will be included. Valid only valid if [EventLogFormatIncludeMessageDescription](/Cloud_SIEM_Enterprise/CSE_Sensors/06_Windows_Sensor_Configuration_Settings#EventLogFormatIncludeMessageDescription) is set to true. This setting is available in sensor versions 1.9 and higher.
+**Description**: If set to true, the service will include only the first line of the event record’s Message.  If set to false, the entire Message will be included. Valid only valid if [EventLogFormatIncludeMessageDescription](#eventlogformatincludemessagedescription) is set to true. This setting is available in sensor versions 1.9 and higher.
 
 ## EventLogFormatIncludeMessageDescription
 
@@ -299,9 +299,9 @@ This setting is available in sensor versions 1.9 and higher.
 
 **Default**: false
 
-**Description**: Specifies whether or not the sensor should filter monitored WEC events.  If set to false, the sensor will monitor for all events. If set to true, the sensor will monitor only the event IDs specified in the [EventIdAllowList](/Cloud_SIEM_Enterprise/CSE_Sensors/06_Windows_Sensor_Configuration_Settings#EventIdWhitelist) setting to filter incoming events.
+**Description**: Specifies whether or not the sensor should filter monitored WEC events.  If set to false, the sensor will monitor for all events. If set to true, the sensor will monitor only the event IDs specified in the [EventIdAllowList](#eventidallowlist) setting to filter incoming events.
 
-Valid only if [EventLogForwarderEnable](/Cloud_SIEM_Enterprise/CSE_Sensors/06_Windows_Sensor_Configuration_Settings#EventLogFowarderEnable) is set to true.
+Valid only if [EventLogForwarderEnable](#eventlogforwarderenable) is set to true.
 
 This setting is available in sensor versions 1.9 and higher. It replaces the EventLogForwarderWhiteListEnable setting available in previous releases.
 
@@ -309,21 +309,21 @@ This setting is available in sensor versions 1.9 and higher. It replaces the Eve
 
 **Default**: false
 
-**Description**: Specifies whether or not the sensor should filter monitored WEC events. If set to true, the sensor will filter incoming events by excluding the event IDs specified in the [EventIdDemuList](/Cloud_SIEM_Enterprise/CSE_Sensors/06_Windows_Sensor_Configuration_Settings#EventIdBlacklist).
+**Description**: Specifies whether or not the sensor should filter monitored WEC events. If set to true, the sensor will filter incoming events by excluding the event IDs specified in the [EventIdDenyList](#eventiddenylist).
 
-Valid only if [EventLogForwarderEnable](/Cloud_SIEM_Enterprise/CSE_Sensors/06_Windows_Sensor_Configuration_Settings#EventLogFowarderEnable) is set to true.
+Valid only if [EventLogForwarderEnable](#eventlogforwarderenable) is set to true.
 
-For best performance, do not combine with [EventLogForwarderAllowListEnable](/Cloud_SIEM_Enterprise/CSE_Sensors/06_Windows_Sensor_Configuration_Settings#EventLogForwarderAllowListEnable) set to true.
+For best performance, do not combine with [EventLogForwarderAllowListEnable](#eventlogforwarderallowlistenable) set to true.
 
 This setting is available in sensor versions 1.9 and higher. It replaces the EventLogForwarderBlackListEnable setting available in previous releases.
 
 ## EventLogForwarderEnable
 
-This option is not in `settings.conf` by default. Add this option to enable the [Windows Event Collector (WEC) Monitor](03_Windows_Sensor_Overview.md "Windows Sensor Overview"). 
+This option is not in `settings.conf` by default. Add this option to enable the [Windows Event Collector (WEC) Monitor](windows-sensor-overview.md). 
 
 **Default**: false
 
-**Description**: Enables Windows Event Collector (WEC) support.  If set to true, [EventLogForwarderHostName](./06_Windows_Sensor_Configuration_Settings.md "Windows Sensor Configuration Settings") must also be specified. |
+**Description**: Enables Windows Event Collector (WEC) support.  If set to true, [EventLogForwarderHostName](#eventlogforwarderhostname) must also be specified. |
 
 ## EventLogForwarderHostName
 
@@ -335,7 +335,7 @@ This option is not in `settings.conf` by default. Add this option to enable the 
 
 **Default**: ForwardedEvents
 
-**Description**: Specifies the log name to monitor for Forwarded Events. [EventLogForwarderEnable](/Cloud_SIEM_Enterprise/CSE_Sensors/06_Windows_Sensor_Configuration_Settings#EventLogFowarderEnable) is set to true. Deprecated after sensor version 1.8.
+**Description**: Specifies the log name to monitor for Forwarded Events. [EventLogForwarderEnable](#eventlogforwarderenable) is set to true. Deprecated after sensor version 1.8.
 
 ## EventLogForwarderLogNames
 
@@ -343,7 +343,7 @@ This option is not in `settings.conf` by default. Add this option to enable the 
 
 **Description**: Specifies the log names to monitor for Forwarded Events, when using the WEC monitor. Valid only if [EventLogForwarderEnable](/Cloud_SIEM_Enterprise/CSE_Sensors/06_Windows_Sensor_Configuration_Settings#EventLogFowarderEnable) is set to true. Other valid Microsoft Event Logs names include "Security" and "Application". You can also specify your own custom log channels. Setting available in sensor versions 1.9 and higher.
 
-For backwards-compatibility, the service will combine the legacy setting [EventLogForwarderLogName](/Cloud_SIEM_Enterprise/CSE_Sensors/06_Windows_Sensor_Configuration_Settings#EventLogForwarderLogName) (if specified) with the list of [EventLogForwarderLogNames](/Cloud_SIEM_Enterprise/CSE_Sensors/06_Windows_Sensor_Configuration_Settings#EventLogForwarderLogNames) (if specified).  If neither setting is specified in the configuration file, it will default to monitor only the “ForwardedEvents” log.
+For backwards-compatibility, the service will combine the legacy setting [EventLogForwarderLogName](#eventlogforwarderlogname) (if specified) with the list of [EventLogForwarderLogNames](#eventlogforwarderlognames) (if specified).  If neither setting is specified in the configuration file, it will default to monitor only the “ForwardedEvents” log.
 
 ## EventLogHosts
 
@@ -356,7 +356,7 @@ For backwards-compatibility, the service will combine the legacy setting [EventL
 
 **Default**: 10000
 
-**Description**: Specifies how many records to append to an event log file before stopping to send the file. This value works with the [EventLogQueueMaxFileOpenTime](./06_Windows_Sensor_Configuration_Settings.md "Windows Sensor Configuration Settings") to control how long the Windows Sensor waits before sending a file to which it is still appending.
+**Description**: Specifies how many records to append to an event log file before stopping to send the file. This value works with the [EventLogQueueMaxFileOpenTime](#eventlogqueuemaxfileopentime) to control how long the Windows Sensor waits before sending a file to which it is still appending.
 
 ## EventLogMaxBytes
 
@@ -387,7 +387,6 @@ When the Sensor detects a file in the Event Log Queue folder with a timestamp mo
 When the Sensor detects that the number of files in the Event Log Queue folder is more than `EventLogQueueBacklogWarningThresholdMaxFilesPerActiveMonitor` multiplied by the number of active event log monitors, a Health Status Warning message will be sent to CIP.
 
 ## EventLogQueueMaxFileOpenTime
-
 
 **Default**: 20 seconds
 
@@ -453,7 +452,7 @@ Minimum log level must also be set to “Trace” in the `Nlog.config` file loca
 
 **Default**: 10000
 
-**Description**: This setting is deprecated. It is replaced by [EventLogMaxAppends](/Cloud_SIEM_Enterprise/CSE_Sensors/06_Windows_Sensor_Configuration_Settings#EventLogMaxAppends) and [DirectoryMaxAppends](/Cloud_SIEM_Enterprise/CSE_Sensors/06_Windows_Sensor_Configuration_Settings#DirectoryMaxAppends).
+**Description**: This setting is deprecated. It is replaced by [EventLogMaxAppends](#eventlogmaxappends) and [DirectoryMaxAppends](#directorymaxappends).
 
 ## MaxDirectoryQueueFolderDirectorySize
 
@@ -463,13 +462,13 @@ Minimum log level must also be set to “Trace” in the `Nlog.config` file loca
 
 ## MaxDomainControllerConnections
 
-**Default**: 25|
+**Default**: 25
 
 **Description**: The maximum number of domain controllers that the sensor will connect to.
 
 ## MaxEventLogQueueFolderDirectorySize
 
-**Default**: 2048                                                                                                                             |
+**Default**: 2048
 
 **Description**: Specifies the upper limit (in MB) for the EventLogQueue directory, `C:\ProgramData\Sumo Logic\CSE Windows Sensor\EventLogQueue`. 
 
@@ -477,7 +476,7 @@ Minimum log level must also be set to “Trace” in the `Nlog.config` file loca
 
 **Default**: 4096
 
-**Description**: DEPRECATED - This field has been broken out into [MaxEventLogQueueFolderDirectorySize](./06_Windows_Sensor_Configuration_Settings.md "Windows Sensor Configuration Settings") and [MaxDirectoryQueueFolderDirectorySize](./06_Windows_Sensor_Configuration_Settings.md "Windows Sensor Configuration Settings").
+**Description**: DEPRECATED - This field has been broken out into [MaxEventLogQueueFolderDirectorySize](#maxeventlogqueuefolderdirectorysize) and [MaxDirectoryQueueFolderDirectorySize](#maxdirectoryqueuefolderdirectorysize).
 
 ## MinPercentDiskSpaceLeft
 
@@ -497,7 +496,7 @@ This option does not appear in `settings.conf` by default. Add this option if th
 
 **Default**: none
 
-**Description**: The password for the proxy account. Used in conjunction with [ProxyUrl](./06_Windows_Sensor_Configuration_Settings.md "Windows Sensor Configuration Settings") and [ProxyUsername](./06_Windows_Sensor_Configuration_Settings.md "Windows Sensor Configuration Settings").
+**Description**: The password for the proxy account. Used in conjunction with [ProxyUrl](#proxyurl) and [ProxyUsername](#proxyusername).
 
 ## ProxyUrl
 
@@ -505,7 +504,7 @@ This option does not appear in `settings.conf` by default. Add this option if th
 
 **Default**: none
 
-**Description**: The URL for the proxy account. Used in conjunction with [ProxyPassword](./06_Windows_Sensor_Configuration_Settings.md "Windows Sensor Configuration Settings") and [ProxyUsername](./06_Windows_Sensor_Configuration_Settings.md "Windows Sensor Configuration Settings").
+**Description**: The URL for the proxy account. Used in conjunction with [ProxyPassword](#proxypassword) and [ProxyUsername](#proxyusername).
 
 ## ProxyUsername
 
@@ -513,7 +512,7 @@ This option does not appear in `settings.conf` by default. Add this option if th
 
 **Default**: none
 
-**Description**: The username for the proxy account. Used in conjunction with [ProxyPassword](./06_Windows_Sensor_Configuration_Settings.md "Windows Sensor Configuration Settings") and [ProxyUrl](./06_Windows_Sensor_Configuration_Settings.md "Windows Sensor Configuration Settings").
+**Description**: The username for the proxy account. Used in conjunction with [ProxyPassword](#proxypassword) and [ProxyUrl](#proxyurl).
 
 ## SensorApiKey
 

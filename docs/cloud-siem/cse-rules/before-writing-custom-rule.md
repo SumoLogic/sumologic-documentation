@@ -7,18 +7,17 @@ id: before-writing-custom-rule
 This topic has information about writing custom CSE rules.
 
 :::tip
-Before you create a custom rule, check to see if there is a [built-in rule](CSE_Built-In_Rules.md "CSE Built-In Rules") that meets or comes close to meeting  your need. You can easily tailor built-in rules using
-[rule tuning expressions](Rule_Tuning_Expressions.md "Rule Tuning Expressions"). By tuning and using a built-in rule, you avoid the effort of writing a rule, and get the benefit of on-going improvements when we update core rule logic. Added bonus: Signals and Insights from built-in rules leverage crowd-sourced machine learning that custom rules can't.
+Before you create a custom rule, check to see if there is a [built-in rule](cse-built-in-rules.md) that meets or comes close to meeting  your need. You can easily tailor built-in rules using [rule tuning expressions](rule-tuning-expressions.md). By tuning and using a built-in rule, you avoid the effort of writing a rule, and get the benefit of on-going improvements when we update core rule logic. Added bonus: Signals and Insights from built-in rules leverage crowd-sourced machine learning that custom rules can't.
 :::
 
 ## Related topics
 
 The following topics provide information that’s relevant to the process of writing a custom rule:
 
-* [Record Processing Pipeline](../CSE_Schema/00_Record_Processing_Pipeline.md "Record Processing Pipeline")—This topic describes how CSE creates Records for incoming messages. It provides facts about how message fields are mapped to CSE schema attributes; about the attributes CSE adds to Records to enrich and provide context about IP address, URLs, and domains; “list” features, like Match Lists and Suppress Lists that allow you to include or exclude Records based on indentiers found in Records; how to leverage threat intel data and more.
-* [Schema Attributes](../CSE_Schema/01_Schema_Attributes.md "Schema Attributes")—This topic defines the Record attributes you can reference in rules.
-* [CSE Rules Syntax](11_CSE_Rules_Syntax.md "CSE Rules Syntax")—This topic describes rules language functions and syntax, which you’ll use in writing rule expressions.
-* [Searching for CSE Records in Sumo Logic](../Records,_Signals,_Entities,_and_Insights/15Searching_for_CSE_Records_in_Sumo_Logic.md "Searching for CSE Records in CIP")—This topic explains how to search CSE Records in the Sumo Logic platform. Typically, you’ll build and refine your rule expressions in Sumo Logic. Once you’re happy with the results, you’ll copy the query into the rule expression field in the Rules Editor.
+* [Record Processing Pipeline](../cse-schema/record-processing-pipeline.md) — This topic describes how CSE creates Records for incoming messages. It provides facts about how message fields are mapped to CSE schema attributes; about the attributes CSE adds to Records to enrich and provide context about IP address, URLs, and domains; “list” features, like Match Lists and Suppress Lists that allow you to include or exclude Records based on indentiers found in Records; how to leverage threat intel data and more.
+* [Schema Attributes](../cse-schema/schema-attributes.md) — This topic defines the Record attributes you can reference in rules.
+* [CSE Rules Syntax](cse-rules-syntax.md) — This topic describes rules language functions and syntax, which you’ll use in writing rule expressions.
+* [Searching for CSE Records in Sumo Logic](../records-signals-entities-insights/search-cse-records-in-sumo.md) — This topic explains how to search CSE Records in the Sumo Logic platform. Typically, you’ll build and refine your rule expressions in Sumo Logic. Once you’re happy with the results, you’ll copy the query into the rule expression field in the Rules Editor.
 
 ### Use case analysis and rule type selection
 
@@ -46,13 +45,13 @@ To find and review a log mapping:
 
     Two mappings match. For each mapping, you can see how many times it’s been used in the last 24 hrs and also over the last 7 days. We’ll select the one that has been in use, rather than the one that hasn’t.
 
-    [matching-mappings.png](/img/cloud-siem-enterprise/matching-mappings.png)
+    ![matching-mappings.png](/img/cloud-siem-enterprise/matching-mappings.png)
 1. Once you’ve opened the mapping, you’ll see the top of the page shows the Vendor, Product, and Event ID that is written to the Records produced by the mapping.  
 
-    [selected-mapping-top.png](/img/cloud-siem-enterprise/selected-mapping-top.png)
+    ![selected-mapping-top.png](/img/cloud-siem-enterprise/selected-mapping-top.png)
 1. The **Fields** section of the page shows how raw message fields are mapped to CSE schema attributes. In this mapping, `EventData.LogonProcessName` is mapped to `application`, `EventData.WorkstationName` is mapped to `device_hostname`, and so on. 
 
-    [selected-mapping-bottom.png](/img/cloud-siem-enterprise/selected-mapping-bottom.png)
+    ![selected-mapping-bottom.png](/img/cloud-siem-enterprise/selected-mapping-bottom.png)
 
 Now that we understand the mapping in CSE, we can see we will want to be looking for logs where the `metadata_vendor` is “Microsoft”, `metadata_product` is “Windows”, and `metadata_deviceEventId` is “Security-4624”, and we will also want to use the `user_username` field to find users that don’t match our naming convention.
 

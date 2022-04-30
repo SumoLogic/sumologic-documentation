@@ -8,7 +8,7 @@ This topic describes the CSE parsing language, which you can use to write custom
 
 ## What is parsing?
 
-Parsing is the first step in the Cloud SIEM Enterprise (CSE) [Record processing pipeline](00_Record_Processing_Pipeline.md "Record Processing Pipeline")—it is the process of creating a set of key-value pairs that reflect all of the information in an incoming raw message. We refer to the result of the parsing process as a *field dictionary*. The raw message is retained. 
+Parsing is the first step in the Cloud SIEM Enterprise (CSE) [Record processing pipeline](record-processing-pipeline.md) — it is the process of creating a set of key-value pairs that reflect all of the information in an incoming raw message. We refer to the result of the parsing process as a *field dictionary*. The raw message is retained. 
 
 Parsers are written in a specialized Sumo Parsing Language. The parser code resides in one parser configuration obects. At runtime, parser code is executed by the Sumo Logic parsing engine.
 
@@ -29,19 +29,16 @@ execution time.
 For historic reasons, the named groups in the regex of many parsers still uses Python-style notation, for instance `(?P<syslog_timestamp>[^ ]+ +[^ ]+ [^ ]+)`. When you write new regular expressions, you can omit P.
 :::
 
-The parser engine also supports Grok, a system that introduces symbolic names for patterns to regular expressions (see also [Patterns](./07Parsing_Language_Reference_Guide.md "Parsing Language Reference Guide") section). You reference Grok symbolic names using this pattern:
+The parser engine also supports Grok, a system that introduces symbolic names for patterns to regular expressions (see also [Patterns](#patterns) section). You reference Grok symbolic names using this pattern:
 
 `%{<pattern_name>:<optional_group_name>}`
 
-The pattern name is replaced with the regular expression associated with
-that name and the entire result is wrapped with a named group capture.
+The pattern name is replaced with the regular expression associated with that name and the entire result is wrapped with a named group capture.
 
-Grok patterns are used to make the use of complex regular expressions
-that match particular values, such as IP addresses, clearer and easier
+Grok patterns are used to make the use of complex regular expressions that match particular values, such as IP addresses, clearer and easier
 to read.
 
-The list of patterns supported can be found in the local and default
-config files, and `patterns.conf`.
+The list of patterns supported can be found in the local and default config files, and `patterns.conf`.
 
 For example, given a string:
 
@@ -82,15 +79,13 @@ named capture group like this:
 
 We use the Mustache template system to define string templates. String templates are used to format one or more values into a single new field value.
 
-For more information on Mustache, see 
-
-[*https://en.wikipedia.org/wiki/Mustache\_(template_system)*](https://en.wikipedia.org/wiki/Mustache_(template_system)).
+For more information on Mustache, see [https://en.wikipedia.org/wiki/Mustache\_(template_system)](https://en.wikipedia.org/wiki/Mustache_(template_system)).
 
 ### Whitespace removal
 
 By default, whitespace at the beginning and end of a message is removed before parsing.
 
-Whitespace at the beginning and end of a parsed value is also removed. Use the [STRIP_WHITESPACE](./07Parsing_Language_Reference_Guide.md "Parsing Language Reference Guide") attribute to enable or disable whitespace removal.
+Whitespace at the beginning and end of a parsed value is also removed. Use the [STRIP_WHITESPACE](#strip_whitespace) attribute to enable or disable whitespace removal.
 
 ### Implicit anchoring
 
@@ -106,11 +101,11 @@ Each stanza can define a FORMAT attribute for the message or string it is parsin
 
 ### REGEX parsing
 
-This is the default value of the [FORMAT](./07Parsing_Language_Reference_Guide.md "Parsing Language Reference Guide") attribute. With this setting, the message is parsed using the regex defined by the [REGEX](./07Parsing_Language_Reference_Guide.md "Parsing Language Reference Guide") attribute.
+This is the default value of the [FORMAT](#format) attribute. With this setting, the message is parsed using the regex defined by the [REGEX](#regex) attribute.
 
 A stanza that contains FORMAT = REGEX, must also contain a REGEX attribute, otherwise, it will perform no parsing. 
 
-Capture groups names in the regex you define with the [REGEX](./07Parsing_Language_Reference_Guide.md "Parsing Language Reference Guide") attribute can contain any character except close brackets. This includes spaces, however the use of spaces in capture group names are not recommended unless there is a very good reason for using them. For example:
+Capture groups names in the regex you define with the [REGEX](#regex) attribute can contain any character except close brackets. This includes spaces, however the use of spaces in capture group names are not recommended unless there is a very good reason for using them. For example:
 
 `REGEX = (?P<This is a valid capture group name>.*)`
 
@@ -128,8 +123,7 @@ JSON is parsed and flattened. Fields of sub-objects are prepended with the conta
 |-----------------------------------------------|---------------------------------------------------------------|
 | `{“foo”: {“bar”: 2, “barrier”: 3}, “baz”: 4}` | `foo.bar = 2             foo.barrier = 3             baz = 4` |
 
-List items have a one-based index number inserted between the containing
-field name and the sub-object field names. For example,
+List items have a one-based index number inserted between the containing field name and the sub-object field names. For example,
 
 | This JSON                                              | Results in                                                                                    |
 |--------------------------------------------------------|-----------------------------------------------------------------------------------------------|
@@ -151,7 +145,7 @@ When JSON_FLATTEN_SINGLE_LISTS is true:
 
 ### CSV parsing
 
-Parses delimiter separated values, commas by default. You can set another delimiter character, using the [FIELD_DELIMS](./07Parsing_Language_Reference_Guide.md "Parsing Language Reference Guide") attribute.
+Parses delimiter separated values, commas by default. You can set another delimiter character, using the [FIELD_DELIMS](#field_delims) attribute.
 
 ### XML parsing
 
@@ -173,7 +167,7 @@ Parses Windows XML messages from CSE Windows Sensor. 
 
 After parsing, the next step in the CSE Record processing pipeline is log mapping, which is the process of mapping fields that were parsed out of messages to CSE schema attributes. 
 
-Every parser must provide *mapping hints* that provide information CSE can use to select the correct log mapper for parsed messages. You do this with the MAPPER attribute. For more information, see [MAPPER](./07Parsing_Language_Reference_Guide.md "Parsing Language Reference Guide").
+Every parser must provide *mapping hints* that provide information CSE can use to select the correct log mapper for parsed messages. You do this with the MAPPER attribute. For more information, see [MAPPER](#mapper).
 
 ### Internal temporary variables supported in parsers
 
@@ -206,14 +200,14 @@ The key principal: When selecting a name for the field, stay as close to the nam
 
 ### Timestamps and time handling
 
-The `_starttime` and `_endtime` fields are normally assigned values using [START_TIME_FIELD](./07Parsing_Language_Reference_Guide.md "Parsing Language Reference Guide") and [END_TIME_FIELD](./07Parsing_Language_Reference_Guide.md "Parsing Language Reference Guide").  Note that if none of
-[DEFAULT_START_TIME](./07Parsing_Language_Reference_Guide.md "Parsing Language Reference Guide"),  [DEFAULT_END_TIME](./07Parsing_Language_Reference_Guide.md "Parsing Language Reference Guide"), START_TIME_FIELD or END_TIME_FIELD are defined `_starttime` and `_endtime` will not be included in the field dictionary.
+The `_starttime` and `_endtime` fields are normally assigned values using [START_TIME_FIELD](#start_time_field) and [END_TIME_FIELD](#end_time_field).  Note that if none of
+[DEFAULT_START_TIME](#default_start_time),  [DEFAULT_END_TIME](#default_end_time), START_TIME_FIELD or END_TIME_FIELD are defined `_starttime` and `_endtime` will not be included in the field dictionary.
 
 If `_starttime` is defined (at minimum, `START_TIME_FIELD` has been specified in the parser), it will be used as the Record timestamp. If `_starttime` is not defined, the timestamp should be set by the CSE log mapper that processes the Record, typically by mapping a parsed field to the `timestamp` schema attribute.
 
 ### Representation of “no value”
 
-The representation of no value or a field that doesn’t exist is ‘None’ for evaluating variable transforms; JSON uses “null” if [JSON_DROP_NULLS](./07Parsing_Language_Reference_Guide.md "Parsing Language Reference Guide") is set to false or not present, and drops them if so.
+The representation of no value or a field that doesn’t exist is ‘None’ for evaluating variable transforms; JSON uses “null” if [JSON_DROP_NULLS](#json_drop_nulls) is set to false or not present, and drops them if so.
 
 ## Stanzas
 
@@ -227,7 +221,7 @@ There are three types of stanzas:
 
 * **transform**—A transform stanza is analogous to a function in most scripting languages. Transforms can be invoked on a log message as a whole with all currently parsed fields accessible within the new transform, or on strings that have been parsed from a message without the currently parsed fields.      You can use transforms to extract information of interest using regex patterns, assign values to variables, drop fields, rename fields, populate time fields, create mapping hints, and more.  One transform can even call another. You can use transforms to perform a wide variety of parse actions; the most common use is extracting a value from log message. The syntax for declaring a transform stanza is:      `[transform:<transform name>]`
 
-* **dependencies**—You can use a dependencies stanza to include resources from another parser, using the [INCLUDE](./07Parsing_Language_Reference_Guide.md "Parsing Language Reference Guide") attribute. The syntax for declaring a dependencies stanza is:      `[dependencies]`
+* **dependencies**—You can use a dependencies stanza to include resources from another parser, using the [INCLUDE](#include) attribute. The syntax for declaring a dependencies stanza is:      `[dependencies]`
 
     Stanza types must be lower case. It is recommended but not required that transform names be lower case.  For example,
 
@@ -249,7 +243,7 @@ Attributes with the same key override each other. For example, given:
 
 `TRANSFORM = Cylance_Parse TRANSFORM = Cylance_Factor`
 
-We apply only the second [TRANSFORM](./07Parsing_Language_Reference_Guide.md "Parsing Language Reference Guide") attribute.
+We apply only the second [TRANSFORM](#transform) attribute.
 
 You can add labels to duplicate transforms to avoid overriding. A label is text appended to the attribute, separated by a dash. A label can be any string that doesn’t contain an equals sign. For example,
 
@@ -323,7 +317,7 @@ None
 
 ### CASE
 
-If `<read_field>` from the [CASE_SWITCH](./07Parsing_Language_Reference_Guide.md "Parsing Language Reference Guide") attribute equals `matched_value`, sets field to `set_value`. 
+If `<read_field>` from the [CASE_SWITCH](#case_switch) attribute equals `matched_value`, sets field to `set_value`. 
 
 **Syntax**
 
@@ -369,8 +363,7 @@ none
 
 ### DEFAULT_END_TIME
 
-Value is used in various ways depending on the [END_TIME_HANDLING](./07Parsing_Language_Reference_Guide.md "Parsing Language Reference Guide")
-attribute.
+Value is used in various ways depending on the [END_TIME_HANDLING](#end_time_handling) attribute.
 
 **Syntax**
 
@@ -382,8 +375,7 @@ none
 
 ### DEFAULT_START_TIME
 
-This value is used in various ways, depending on the value of the [START_TIME_HANDLING](./07Parsing_Language_Reference_Guide.md "Parsing Language  eference Guide")
-attribute.
+This value is used in various ways, depending on the value of the [START_TIME_HANDLING](#start_time_handling) attribute.
 
 **Syntax**
 
@@ -447,7 +439,7 @@ To allow for messages that don’t contain the specified field, set the value of
 
 ### END_TIME_HANDLING
 
-Specifies how to treat the value of  `_endtime`, which can be set using either [END_TIME_FIELD](./07Parsing_Language_Reference_Guide.md "Parsing Language Reference Guide") or [DEFAULT_END_TIME](./07Parsing_Language_Reference_Guide.md "Parsing Language Reference Guide").
+Specifies how to treat the value of  `_endtime`, which can be set using either [END_TIME_FIELD](#end_time_field) or [DEFAULT_END_TIME](#default_end_time).
 
 **Syntax**
 
@@ -459,7 +451,7 @@ GIVEN
 
 **Notes**
 
-* If GIVEN, ignore [DEFAULT_END_TIME](./07Parsing_Language_Reference_Guide.md "Parsing Language Reference Guide"), end time defaults to start time.
+* If GIVEN, ignore [DEFAULT_END_TIME](#default_end_time), end time defaults to start time.
 * If ROUND, round start down and end up using DEFAULT_END_TIME as the rounding increment in milliseconds, end time defaults to start time.
 * If DURATION, treat DEFAULT_END_TIME as a time increment in milliseconds, add to start time to get the default end time; if missing, end time defaults to start time.
 * If CONSTANT, treat DEFAULT_END_TIME as a POSIX timestamp, add to start time to get the default end time; if missing, end default to start.
@@ -530,13 +522,13 @@ Specifies the format of the messages being parsed.
 
 Where `<format_type>` is one of: 
 
-[REGEX](./07Parsing_Language_Reference_Guide.md "Parsing Language Reference Guide"),
-[CSV](./07Parsing_Language_Reference_Guide.md "Parsing Language Reference Guide"),
-[JSON](./07Parsing_Language_Reference_Guide.md "Parsing Language Reference Guide"),
-[XML](./07Parsing_Language_Reference_Guide.md "Parsing Language Reference Guide"),
-[WINDOWS_XML](./07Parsing_Language_Reference_Guide.md "Parsing Language Reference Guide"),
-[CEF](./07Parsing_Language_Reference_Guide.md "Parsing Language Reference Guide"),
-[LEEF](./07Parsing_Language_Reference_Guide.md "Parsing Language Reference Guide")
+* [REGEX](#regex-parsing)
+* [CSV](#csv-parsing)
+* [JSON](#json-parsing)
+* [XML](#xml-parsing)
+* [WINDOWS_XML](#windows_xml-parsing)
+* [CEF](#cef-parsing)
+* [LEEF](#leef-parsing)
 
 **Default**
 
@@ -544,7 +536,7 @@ REGEX
 
 ### ITER_PREFIX
 
-Equivalent to [FIELD_PREFIX](./07Parsing_Language_Reference_Guide.md "Parsing Language Reference Guide"), but  ITER_PREFIX will only prefix fields added by a [REPEAT_MATCH](./07Parsing_Language_Reference_Guide.md "Parsing Language Reference Guide") subtransform but specifically applied for REPEAT_MATCH regex transforms. `_$match_count` is set to the current iteration in this case.
+Equivalent to [FIELD_PREFIX](#field_prefix), but  ITER_PREFIX will only prefix fields added by a [REPEAT_MATCH](#repeat_match) subtransform but specifically applied for REPEAT_MATCH regex transforms. `_$match_count` is set to the current iteration in this case.
 
 :::tip
 A subtransform performs the process of modifying fields within a transform stanza. An example of this is using ITER_PREFIX and/or ITER_SUFFIX within a regex transform and `REPEAT_MATCH=true`, to include, for example, `_$match_count` in field names output.
@@ -560,7 +552,7 @@ none
 
 ### ITER_SUFFIX 
 
-Same as FIELD_SUFFIX, but specifically applied for [REPEAT_MATCH](./07Parsing_Language_Reference_Guide.md "Parsing Language Reference Guide") regex transforms. `_$match_count` is set to the current iteration in this case.
+Same as FIELD_SUFFIX, but specifically applied for [REPEAT_MATCH](#repeat_match) regex transforms. `_$match_count` is set to the current iteration in this case.
 
 **Syntax**
 
@@ -572,7 +564,7 @@ none
 
 ### JOIN_LIST
 
-Joins a list created by [ADD_VALUES](./07Parsing_Language_Reference_Guide.md "Parsing Language Reference Guide") with the separator mentioned. If the field doesn’t exist, the event is treated as unparsed. Parsing will fail will fail and the parser will deal with that appropriately. If this occurs in a top level stanza, the parser returns a failure. If it occurs in a cascade of transforms, we proceed to the next stanza.
+Joins a list created by [ADD_VALUES](#add_values) with the separator mentioned. If the field doesn’t exist, the event is treated as unparsed. Parsing will fail will fail and the parser will deal with that appropriately. If this occurs in a top level stanza, the parser returns a failure. If it occurs in a cascade of transforms, we proceed to the next stanza.
 
 **Syntax**
 
@@ -586,7 +578,7 @@ Joins a list created by [ADD_VALUES](./07Parsing_Language_Reference_Guide.md "Pa
 
 **Example**
 
-* When the values in a list created by [ADD_VALUES](./07Parsing_Language_Reference_Guide.md "Parsing Language Reference Guide") for `fielda` are “monkey” and “business”, this attribute statement would set the value of `fielda` to “monkey.business”:
+* When the values in a list created by [ADD_VALUES](#add_values) for `fielda` are “monkey” and “business”, this attribute statement would set the value of `fielda` to “monkey.business”:
     `JOIN_LIST:fielda = .`
 
 ### MAPPER
@@ -597,7 +589,7 @@ Provides information that tells CSE which log mapper should process the parsed m
 * Specify the `product`, `vendor`, and `event_id `for the message. If you identify the mapper using , all three are required: you’ll define three MAPPER attributes. Templating is allowed for each value. However, the most common and best practice is to define vendor and product using static strings. `event_id` often varies based on the log type so it's more common to use templating when defining that. 
 
 :::note
-Looking up a mapper using `product`, `vendor`, and `event_id` will return all [structured mappings](Create_a_Structured_Log_Mapping.md "Create a Structured Log Mapping") that are configured with the same attribute values, and could result in more than one Record being created. 
+Looking up a mapper using `product`, `vendor`, and `event_id` will return all [structured mappings](create-structured-log-mapping.md) that are configured with the same attribute values, and could result in more than one Record being created. 
 :::
 
 **Syntax**
@@ -623,7 +615,7 @@ MAPPER:event_id = {{eventType}}-{{eventName}}
 
 ### PARSE
 
-Applies the parser specified to the field specified, similar to [TRANSFORM](./07Parsing_Language_Reference_Guide.md "Parsing Language Reference Guide").
+Applies the parser specified to the field specified, similar to [TRANSFORM](#transform).
 
 **Syntax**
 
@@ -631,7 +623,7 @@ Applies the parser specified to the field specified, similar to [TRANSFORM](./07
 
 ### PARSE_CASCADE
 
-Behaves like [TRANSFORM_CASCADE](./07Parsing_Language_Reference_Guide.md "Parsing Language Reference Guide"), but with parsers instead of transforms. 
+Behaves like [TRANSFORM_CASCADE](#transform_cascade), but with parsers instead of transforms. 
 
 Each parser is invoked in the order listed until one succeeds. Each parser is passed the current state of the field dictionary. Only a successful parse will change the field dictionary.
 
@@ -687,7 +679,7 @@ Sets the `<field_name>` field if it is a list to the `<index>` element in that l
 
 ### REVERSE_LIST
 
-Reverse a list created by [ADD_VALUES](./07Parsing_Language_Reference_Guide.md "Parsing Language Reference Guide") in the `<field_name>` field. The `<anything>` field is currently ignored. If the field doesn’t exist, the event is treated as unparsed.
+Reverse a list created by [ADD_VALUES](#add_values) in the `<field_name>` field. The `<anything>` field is currently ignored. If the field doesn’t exist, the event is treated as unparsed.
 
 **Syntax**
 
@@ -727,11 +719,11 @@ If the field is not a list and the index is not 0, or the index is beyond the le
 
 **Example**
 
-* When the values in a list created by [ADD_VALUES](./07Parsing_Language_Reference_Guide.md "Parsing Language Reference Guide") for `fielda` are  “monkey”, “business”, “cat”, and “nap”, this attribute statement would set the value of `fielda` to “monkey business” and set the value of `fielda_2` to “catnap”.      `SPLIT_LIST_AT_ELEMENT:fielda = 2`
+* When the values in a list created by [ADD_VALUES](#add_values) for `fielda` are  “monkey”, “business”, “cat”, and “nap”, this attribute statement would set the value of `fielda` to “monkey business” and set the value of `fielda_2` to “catnap”.      `SPLIT_LIST_AT_ELEMENT:fielda = 2`
 
 ### START_TIME_FIELD
 
-The name of the field that contains the start time for the event. For more information, see [Timestamps and time handling](./07Parsing_Language_Reference_Guide.md "Parsing Language Reference Guide").
+The name of the field that contains the start time for the event. For more information, see [Timestamps and time handling](#timestamps-and-time-handling).
 
 **Syntax**
 
@@ -747,7 +739,7 @@ If the field does not exist in a message, time is not set for the message.
 
 ### START_TIME_HANDLING 
 
-Specifies how to treat the value of `_starttime`, which can be set using either [START_TIME_FIELD](./07Parsing_Language_Reference_Guide.md "Parsing Language Reference Guide") or  [DEFAULT_START_TIME](./07Parsing_Language_Reference_Guide.md "Parsing Language Reference Guide").
+Specifies how to treat the value of `_starttime`, which can be set using either [START_TIME_FIELD](#start_time_field) or  [DEFAULT_START_TIME](#default_start_time).
 
 **Syntax**
 
@@ -791,7 +783,7 @@ true
 
 ### TIME_PARSER 
 
-Supplies time formats to be used in parsing the fields specified by [START_TIME_FIELD](./07Parsing_Language_Reference_Guide.md "Parsing Language Reference Guide") and [END_TIME_FIELD](./07Parsing_Language_Reference_Guide.md "Parsing Language Reference Guide"). 
+Supplies time formats to be used in parsing the fields specified by [START_TIME_FIELD](#start_time_field) and [END_TIME_FIELD](#end_time_field). 
 
 The values parsed are assigned to `_starttime` and `_endtime`.
 
@@ -805,7 +797,7 @@ None
 
 **Notes**
 
-The time formats are specified as in [*Java DateTimeFormatter*](https://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html). If a format contains a comma, enclose it in double quotes. There are some special additional cases:
+The time formats are specified as in [Java DateTimeFormatter](https://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html). If a format contains a comma, enclose it in double quotes. There are some special additional cases:
 
 * X1 treats the time as if it’s in epoch seconds.
 * X1000 treats the time as if it’s in epoch milliseconds.
@@ -833,7 +825,7 @@ UTC
 Time zones are described either using the IANA time zone database names, using ISO-8601 style, as in ‘+07:00’, or one of the following = ‘local’,
 ‘utc’, ‘UTC’.
 
-For IANA time zone database names, see [*https://en.wikipedia.org/wiki/Tz_database*](https://en.wikipedia.org/wiki/Tz_database). The basic format is area/location. 
+For IANA time zone database names, see [https://en.wikipedia.org/wiki/Tz_database](https://en.wikipedia.org/wiki/Tz_database). The basic format is area/location. 
 
 * Area is a continent, an ocean, or “Etc”. For example, Africa, America, Antarctica, Arctic, Asia, Atlantic, Australia, Europe, Indian, Pacific.
 
@@ -913,7 +905,7 @@ If the default field is used, the colon delimiter is not necessary. The syntax i
 
 ### TRANSFORM_FIELD_IF_PRESENT
 
-If the specified field exists (has been created with [SET](./07Parsing_Language_Reference_Guide.md "Parsing Language Reference Guide"), or parsed from message), call the `transform_stanza_name`, using `<field_name>` as input.
+If the specified field exists (has been created with [SET](#set), or parsed from message), call the `transform_stanza_name`, using `<field_name>` as input.
 
 **Syntax**
 
@@ -921,7 +913,7 @@ If the specified field exists (has been created with [SET](./07Parsing_Language_
 
 ### TRANSFORM_IF
 
-Compares a field value that has already been parsed or created by a [SET](./07Parsing_Language_Reference_Guide.md "Parsing Language Reference Guide"), or the current log entry if no field is specified, to a regex and if the value matches, runs the specified transform on the field specified by `<field_name>` or the log entry with the field dictionary passed through.  
+Compares a field value that has already been parsed or created by a [SET](#set), or the current log entry if no field is specified, to a regex and if the value matches, runs the specified transform on the field specified by `<field_name>` or the log entry with the field dictionary passed through.  
 
 **Syntax**
 
@@ -953,7 +945,7 @@ If the specified field is not part of the field dictionary, run `transform_stanz
 
 ### TRANSFORM_IF_PRESENT
 
-If the specified field exists (has been created with [SET](./07Parsing_Language_Reference_Guide.md "Parsing Language Reference Guide"), or parsed from message) run `transform_stanza_name` with the log entry as input and the field dictionary passed through. 
+If the specified field exists (has been created with [SET](#set), or parsed from message) run `transform_stanza_name` with the log entry as input and the field dictionary passed through. 
 
 **Syntax**
 
@@ -969,7 +961,7 @@ Trims any characters specified in `<characters to trim>` from either end of the 
 
 ### TRIM_RIGHT
 
-Like [TRIM](./07Parsing_Language_Reference_Guide.md "Parsing Language Reference Guide"), but only trims characters at the end of the string.
+Like [TRIM](#trim), but only trims characters at the end of the string.
 
 **Syntax**
 
@@ -977,7 +969,7 @@ Like [TRIM](./07Parsing_Language_Reference_Guide.md "Parsing Language Reference 
 
 ### TRIM_LEFT
 
-Like [TRIM](./07Parsing_Language_Reference_Guide.md "Parsing Language Reference Guide"), but only trims characters at the beginning of the string.
+Like [TRIM](#trim), but only trims characters at the beginning of the string.
 
 **Syntax**
 
@@ -985,7 +977,7 @@ Like [TRIM](./07Parsing_Language_Reference_Guide.md "Parsing Language Reference 
 
 ### VARIABLE_PARSE
 
-Behaves like [VARIABLE_TRANSFORM](./07Parsing_Language_Reference_Guide.md "Parsing Language Reference Guide"), but with parsers instead of transforms.
+Behaves like [VARIABLE_TRANSFORM](#variable_transform), but with parsers instead of transforms.
 
 **Syntax**
 
@@ -993,7 +985,7 @@ Behaves like [VARIABLE_TRANSFORM](./07Parsing_Language_Reference_Guide.md "Parsi
 
 ### VARIABLE_PARSE_INDEX
 
-Behaves like [VARIABLE_TRANSFORM_INDEX](./07Parsing_Language_Reference_Guide.md "Parsing Language Reference Guide"), but with parsers instead of transforms.
+Behaves like [VARIABLE_TRANSFORM_INDEX](#variable_transform_index-syntax-1), but with parsers instead of transforms.
 
 **Syntax**
 
@@ -1005,14 +997,13 @@ Where:
 
 ### VARIABLE_TRANSFORM
 
-Defines one of the transforms to select from in a variable transform group. This clause always follows a [VARIABLE_TRANSFORM_INDEX](./07Parsing_Language_Reference_Guide.md "Parsing Language Reference Guide") clause or another VARIABLE_TRANSFORM. 
+Defines one of the transforms to select from in a variable transform group. This clause always follows a [VARIABLE_TRANSFORM_INDEX](#variable_transform_index-syntax-1) clause or another VARIABLE_TRANSFORM. 
 
 **Syntax**
 
 `VARIABLE_TRANSFORM:<type value> = <transform name>`
 
-If a VARIABLE_TRANSFORM is selected (see [VARIABLE_TRANSFORM_INDEX](./07Parsing_Language_Reference_Guide.md "Parsing Language Reference Guide") 
-for details), it is applied to the passed value. 
+If a VARIABLE_TRANSFORM is selected (see [VARIABLE_TRANSFORM_INDEX](#variable_transform_index-syntax-1)  for details), it is applied to the passed value. 
 
 `<type value>` is a string with two special values: "default" and "none".
 
@@ -1072,7 +1063,7 @@ Selects which transform from a variable transform group to apply based on the va
 
 ### WRAPPER
 
-Always applied first, before the [FORMAT](./07Parsing_Language_Reference_Guide.md "Parsing Language Reference Guide") is applied. Applies the transform to the current log entry, then replaces the current log entry with a `_$log_entry` field created by the transform.
+Always applied first, before the [FORMAT](#format) is applied. Applies the transform to the current log entry, then replaces the current log entry with a `_$log_entry` field created by the transform.
 
 **Syntax**
 
@@ -1128,7 +1119,7 @@ You can mix and match these formats. That is advisable because the non-regex for
 
 ### ZIP_NO_DROP
 
-Behaves exactly like [ZIP](./07Parsing_Language_Reference_Guide.md "Parsing Language Reference Guide"), but doesn’t drop the fields afterwards.
+Behaves exactly like [ZIP](#zip), but doesn’t drop the fields afterwards.
 
 **Syntax**
 
@@ -1213,7 +1204,7 @@ Use `\` to escape double quote characters.
 
 ### FIELD_HEADER_DELIMS
 
-Delimiter to split the fields in [FIELDS](./07Parsing_Language_Reference_Guide.md "Parsing Language Reference Guide").
+Delimiter to split the fields in [FIELDS](#fields).
 
 **Syntax**
 
@@ -1225,7 +1216,7 @@ Delimiter to split the fields in [FIELDS](./07Parsing_Language_Reference_Guide.m
 
 ### FIELD_HEADER_QUOTE
 
-Specifies the quote characters to use when parsing field names in CSV header line. Data contained between a pair of [FIELD_HEADER_QUOTE](./07Parsing_Language_Reference_Guide.md "Parsing Language Reference Guide") is taken verbatim.
+Specifies the quote characters to use when parsing field names in CSV header line. Data contained between a pair of [FIELD_HEADER_QUOTE](#field_header_quote) is taken verbatim.
 
 **Syntax**
 
@@ -1233,7 +1224,7 @@ Specifies the quote characters to use when parsing field names in CSV header lin
 
 **Default**
 
-Value of [FIELD_QUOTE](./07Parsing_Language_Reference_Guide.md "Parsing Language Reference Guide")
+Value of [FIELD_QUOTE](#field_quote)
 
 ### FIELD_QUOTE
 

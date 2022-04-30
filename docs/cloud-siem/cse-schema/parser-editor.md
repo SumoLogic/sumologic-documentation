@@ -7,7 +7,7 @@ id: parser-editor
 This topic has instructions for using the Sumo Logic parser editor. You can use the editor to customize system parsers, and to create your own
 custom parsers. 
 
-For information about the Sumo Logic CSE parsing language, see [Parsing Language Reference Guide](07Parsing_Language_Reference_Guide.md "Parsing Language Reference Guide").
+For information about the Sumo Logic CSE parsing language, see [Parsing Language Reference Guide](parsing-language-reference-guide.md).
 
 :::note
 The instructions that follow assume that you have already written your parser code.
@@ -38,11 +38,14 @@ Make sure your parser code includes `MAPPER` statements that specify the vendor,
 1. **Parser Configuration**. Paste your parser code in this area.
 1. **Import Messages from**. In this step, you enter or fetch messages that you’ll use to test whether the parser parses the messages correctly. There are three options: 
 
-   * **Sumo Log Search**. You can enter a log search query to obtain a selected number of log messages. Follow the instructions in [Using Sumo log search](./Parser_Editor.md "Parser Editor") below. 
-   * **Saved Logs**. You can select a set of messages that you saved when previously using the **Paste Logs** option. Follow the instructions in [Using saved logs](./Parser_Editor.md "Parser Editor") below. 
-   * **Paste Logs**. You can paste logs directly into the **Log Messages** area. Follow the instructions in [Using paste logs](./Parser_Editor.md "Parser Editor") below. 
+   * **Sumo Log Search**. You can enter a log search query to obtain a selected number of log messages. Follow the instructions in [Using Sumo log search](#using-sumo-log-search) below. 
+   * **Saved Logs**. You can select a set of messages that you saved when previously using the **Paste Logs** option. Follow the instructions in [Using saved logs](#using-saved-logs) below. 
+   * **Paste Logs**. You can paste logs directly into the **Log Messages** area. Follow the instructions in [Using paste logs](#using-paste-logs) below. 
+
+### Parse Logs
+
 1. After you’ve obtained sample messages using one of the methods above, click **Parse Logs**.
-1. If all of the sample messages are parsed successfully, you’ll see results like those shown below in the **Parsed Messages** section of the editor. The **Event Details** section shows the key-value pairs that were parsed from the raw message. If your results indicate that there were warnings, unparsed, or dropped messages, see [Understanding parsing failures and warnings](./Parser_Editor.md "Parser Editor").
+1. If all of the sample messages are parsed successfully, you’ll see results like those shown below in the **Parsed Messages** section of the editor. The **Event Details** section shows the key-value pairs that were parsed from the raw message. If your results indicate that there were warnings, unparsed, or dropped messages, see [Understanding parsing failures and warnings](#understanding-parsing-failures-and-warnings).
 
     ![successsful-blurred.png](/img/cloud-siem-enterprise/successsful-blurred.png) 
     
@@ -50,7 +53,7 @@ Make sure your parser code includes `MAPPER` statements that specify the vendor,
     One of the two messages that was parsed was cut out of the screenshot to make the image shorter. 
     :::
 
-1. Once your new parser is working, and you want to start using it, follow the instructions in [Configuring a source to use a parser](./Parser_Editor.md "Parser Editor").
+1. Once your new parser is working, and you want to start using it, follow the instructions in [Configuring a source to use a parser](#configure-and-test-a-custom-parser).
 
 ## Get sample messages
 
@@ -69,7 +72,7 @@ To import messages by running a Sumo Logic search:
     ![messages-returned.png](/img/cloud-siem-enterprise/messages-returned.png)
 1. Click **OK** to close the popup.
 1. The **Sample logs** portion of the parser editor now contains the sample messages. 
-1. Proceed to [Parse logs](./Parser_Editor.md "Parser Editor").
+1. Proceed to [Parse logs](#parse-logs).
 
 ### Using paste logs
 
@@ -79,7 +82,12 @@ To import messages by pasting them in the editor:
 
     ![paste-in-sample-logs.png](/img/cloud-siem-enterprise/paste-in-sample-logs.png)
 1. **Raw Logs**. Paste your log messages into this area.
-1. **Breaker**. Use this option to tell the parser editor how to split the text you entered into messages. The options are: * **Line \\n**. Choose this option to break the text at line     breaks. * **JSON**. Choose this option for JSON messages. * **Custom Regex**. Choose this if you want to use a regex to     define the split. The popup will refresh and prompt you for the     regex.
+1. **Breaker**. Use this option to tell the parser editor how to split the text you entered into messages. The options are: 
+
+   * **Line \\n**. Choose this option to break the text at line breaks. 
+   * **JSON**. Choose this option for JSON messages. 
+   * **Custom Regex**. Choose this if you want to use a regex to define the split. The popup will refresh and prompt you for the regex.
+
 1. Click **Break Messages**.
 1. The popup refreshes and shows how the pasted text was broken into individual messages. Review the messages to verify they were split correctly.
 
@@ -89,7 +97,7 @@ To import messages by pasting them in the editor:
     ![save-messages-link.png](/img/cloud-siem-enterprise/save-messages-link.png)
 1. To save the message, click the **Save Messages As** option.
 1. On the **Save Messages** popup, enter a name for the saved messages, and click **Save.**
-1. Proceed to [Parse logs](./Parser_Editor.md "Parser Editor").
+1. Proceed to [Parse logs](#parse-logs).
 
 ### Using saved logs
 
@@ -104,7 +112,7 @@ To import previously saved messages:
 1. The popup closes and the logs that you retrieved now appear in the **Sample Logs** section of the editor.
 
     ![messages-from-saved-file.png](/img/cloud-siem-enterprise/messages-from-saved-file.png)
-1. Proceed to [Parse logs](./Parser_Editor.md "Parser Editor").
+1. Proceed to [Parse logs](#parse-logs).
 
 ## Understanding parsing failures and warnings
 
@@ -112,20 +120,20 @@ When you test your parser, the editor presents a count of how many
 messages were successfully parsed, and the counts of messages in the
 following categories:
 
-* Parsed messages with warnings—A warning or error occurred but the message was was partially parsed, depending on where the warning or error occurred. The most common cause of a warning is applying a [RENAME_FIELD](07Parsing_Language_Reference_Guide.md "Parsing Language Reference Guide") statement to a field that isn't present in the message.
+* Parsed messages with warnings—A warning or error occurred but the message was was partially parsed, depending on where the warning or error occurred. The most common cause of a warning is applying a [RENAME_FIELD](parsing-language-reference-guide.md) statement to a field that isn't present in the message.
 * Unparsed messages—An error occurred that caused parsing to fail. Potential causes of parsing failures include: 
 
   * An unmatched regex.
   * Invalid XML, when using XML parsing. 
   * Invalid JSON parsing, when using JSON parsing. 
   * Fewer CSV fields in the message than expected. 
-  * Attempting a transform on a field that doesn't exist unless you use [TRANSFORM_FIELD_IF_PRESENT](07Parsing_Language_Reference_Guide.md "Parsing Language Reference Guide").
+  * Attempting a transform on a field that doesn't exist unless you use [TRANSFORM_FIELD_IF_PRESENT](parsing-language-reference-guide.md.
 
-* Dropped messages—The message was dropped due to a [DROP](07Parsing_Language_Reference_Guide.md "Parsing Language Reference Guide") statement in the parser. 
+* Dropped messages—The message was dropped due to a [DROP](parsing-language-reference-guide.md statement in the parser. 
 
 ## Create a local configuration for a system parser
 
-You can customize any of the system parsers that are built into CSE. When you open an system parser for editing, you'll see its code in the **System Configuration** section. For a system parser, the UI also provides an area for entering your customizations—that's the part of the page labeled **Local Configuration**. The [parsing language statements](07Parsing_Language_Reference_Guide.md "Parsing Language Reference Guide") you enter there will be executed in addition to the those in the system configuration. If a statement you add to the system configuration already exists in the system configuration, the local statement will override the system statement. For example, if the system configuration has:
+You can customize any of the system parsers that are built into CSE. When you open an system parser for editing, you'll see its code in the **System Configuration** section. For a system parser, the UI also provides an area for entering your customizations—that's the part of the page labeled **Local Configuration**. The [parsing language statements](parsing-language-reference-guide.md you enter there will be executed in addition to the those in the system configuration. If a statement you add to the system configuration already exists in the system configuration, the local statement will override the system statement. For example, if the system configuration has:
 
 `START_TIME_FIELD = eventTime`
 
@@ -145,7 +153,7 @@ The system configuration and local configuration are separate, so your customiza
 
 You can use a local configuration to override any statement in a system parser, and add additional logic to the parser using any of the statements supported by the parsing language.
 
-One use case for a local configuration to override one or more of a parser’s time handling statements. For example, if the logs to be parsed don’t have a timestamp, you could set [START_TIME_FIELD](07Parsing_Language_Reference_Guide.md "Parsing Language Reference Guide") = `_messagetime`. This causes the CIP message time to be used as the `_starttime` in the field dictionary your parser creates from a message. Or, if the time formats in the logs to be parsed don't exactly match the format that a system parser assumes, you use a local configuration to specify a different [TIME_PARSER](07Parsing_Language_Reference_Guide.md "Parsing Language Reference Guide") setting.
+One use case for a local configuration to override one or more of a parser’s time handling statements. For example, if the logs to be parsed don’t have a timestamp, you could set [START_TIME_FIELD](parsing-language-reference-guide.md = `_messagetime`. This causes the CIP message time to be used as the `_starttime` in the field dictionary your parser creates from a message. Or, if the time formats in the logs to be parsed don't exactly match the format that a system parser assumes, you use a local configuration to specify a different [TIME_PARSER](parsing-language-reference-guide.md setting.
 
 Another common reason to set up a local configuration is to pre-parse the content of a JSON object. If your parser is going to process an encapsulated JSON object, you can use a local configuration to pre-parse the original log message from the object.
 
@@ -186,11 +194,11 @@ org.
 
 In this step you configure one or more Log Mappings. If all of the messages your parser will process contain the same fields, and you want to create Records of the same type, a single Log Mapping will suffice. For some data sources, you will likely need to create more than one Log Mapping. For example:
 
-With some CloudTrail logs messages, you might want to create a different [Record type](05CSE_Record_Types.md "CSE Record Types"), depending on the event ID in a message. In some cases, an Authorization Record is appropriate, while in others, an Audit or Audit Change Record would be a better fit. 
+With some CloudTrail logs messages, you might want to create a different [Record type](cse-record-types.md), depending on the event ID in a message. In some cases, an Authorization Record is appropriate, while in others, an Audit or Audit Change Record would be a better fit. 
 
 In some CloudTrail messages, the field mapping (the mapping between a key in the field dictionary and a CSE Record) will vary, depending on the Event ID in the message. For example, you may want to map data into the CSE schema field action, but the data you want to map is located in different keys of the original CloudTrail JSON messages depending on the CloudTrail event type.
 
-To create your mapping, see [Creating a Structured Log Mapping](Create_a_Structured_Log_Mapping.md "Create a Structured Log Mapping"). After setting up the mapping or mappings, complete the steps in [Configuring a source to use a parser](./Parser_Editor.md "Parser Editor"), below.
+To create your mapping, see [Creating a Structured Log Mapping](create-structured-log-mapping.md). After setting up the mapping or mappings, complete the steps in [Configuring a source to use a parser](#configuring-a-source-to-use-a-parser), below.
 
 ## Configuring a source to use a parser
 

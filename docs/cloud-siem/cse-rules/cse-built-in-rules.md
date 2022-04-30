@@ -3079,7 +3079,7 @@ Successful SQL Injection attack detected
 Requests to web applications containing SQL statement keywords may
 indicate attempts to compromise the web application or access data in a
 backend database engine in an unauthorized manner. This technique is
-described at https://attack.mitre.org/techniques/T1190 .
+described at https://attack.mitre.org/techniques/T1190.
 
 ## SSH Authentication Failures
 
@@ -3951,7 +3951,7 @@ This signal inciates that an indicator in the windows registry was found
 that indicates the Windows Credential Editor (WCE) tool may be in use.
 This tool use is highly suspicious and can indicate lateral movement
 attempts (pass-the-hash etc.) REF:
-[https://www.ampliasecurity.com/resea...ntials-editor/](https://www.ampliasecurity.com/research/windows-credentials-editor/ "https://www.ampliasecurity.com/research/windows-credentials-editor/")
+[https://www.ampliasecurity.com/resea...ntials-editor/](https://www.ampliasecurity.com/research/windows-credentials-editor/)
 
 ## Windows Credential Editor (WCE) in use
 

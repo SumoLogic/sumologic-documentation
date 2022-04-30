@@ -6,8 +6,8 @@ id: cse-apis
 
 This page has information about accessing the CSE APIs and API documentation. The process depends on your CSE environment. 
 
-* If your CSE URL ends in `sumologic.com`, follow the instructions in [Access APIs from Sumo Logic Platform](./CSE_APIs.md "CSE APIs").
-* If your CSE URL ends in `jask.ai`, follow the instructions in [Access APIs from CSE](./CSE_APIs.md "CSE APIs").
+* If your CSE URL ends in `sumologic.com`, follow the instructions in [Access APIs from Sumo Logic Platform](#access-apis-from-sumo-logic-platform).
+* If your CSE URL ends in `jask.ai`, follow the instructions in [Access APIs from CSE](#cse-apis).
 
 ## Access APIs from Sumo Logic Platform
 
@@ -43,21 +43,17 @@ Where `<my-cse-url>` is the URL you use to access the CSE UI.
 
 ### Authentication
 
-The APIs require authentication using an API key specified in the
-`X-API-Key`. You can find your API key by clicking the profile icon in
-the upper right corner of the CSE UI.
+The APIs require authentication using an API key specified in the `X-API-Key`. You can find your API key by clicking the profile icon in the upper right corner of the CSE UI.
 
 ![profile-icon.png](/img/cloud-siem-enterprise/profile-icon.png)
 
-In your profile, click the copy icon for the API key to copy your API
-key.
+In your profile, click the copy icon for the API key to copy your API key.
 
 ![copy-cse-api-key.png](/img/cloud-siem-enterprise/copy-cse-api-key.png)
 
 ### Rate Limiting
 
-The Sumo Logic CSE API is rate limited. The rate limit is 1,000 requests
-per minute. That limit is subject to change without notice. 
+The Sumo Logic CSE API is rate limited. The rate limit is 1,000 requests per minute. That limit is subject to change without notice. 
 
 Each API response contains the following headers:
 
@@ -68,7 +64,4 @@ Each API response contains the following headers:
 * `X-RateLimit-Reset`—Contains a timestamp (UTC seconds since epoch)
     for when the current time period ends and the limit will be reset.
 
-If you exceed the rate limit, you’ll receive an
-`HTTP 429 Too Many Requests` error in response. This response will also
-contain a `Retry-After` header, which contains the number of seconds
-until the current period ends and the rate limit is reset.
+If you exceed the rate limit, you’ll receive an `HTTP 429 Too Many Requests` error in response. This response will also contain a `Retry-After` header, which contains the number of seconds until the current period ends and the rate limit is reset.

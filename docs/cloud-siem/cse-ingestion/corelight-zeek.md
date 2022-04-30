@@ -14,7 +14,7 @@ The [CSE Network Sensor](../CSE_Sensors/11_Network_Sensor_Deployment_Guide.md "N
 
 ## Step 1: Configure collection
 
-In this step, you configure a Syslog Source to collect Corelight Zeek log messages. You can configure the source on an existing Installed Collector or create a new collector. If you’re going to use an existing collector, jump to [Configure a Syslog Source](./Corelight_Zeek.md "Corelight Zeek") below. Otherwise, create a new collector as described in [Configure an Installed Collector](./Corelight_Zeek.md "Corelight Zeek") below, and then create the Syslog Source on the collector.
+In this step, you configure a Syslog Source to collect Corelight Zeek log messages. You can configure the source on an existing Installed Collector or create a new collector. If you’re going to use an existing collector, jump to [Configure a Syslog Source](#configure-a-syslog-source) below. Otherwise, create a new collector as described in [Configure an Installed Collector](#configure-an-installed-collector) below, and then create the Syslog Source on the collector.
 
 ### Configure an Installed Collector
 

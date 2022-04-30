@@ -16,7 +16,7 @@ CSE supports collection either from a file or over syslog. Instructions for sys
 
 ## Step 1: Configure collection
 
-In this step, you configure a Syslog Source to collect ProxySG log messages. You can configure the source on an existing Installed Collector or create a new collector. If you’re going to use an existing collector, jump to [Configure a Syslog Source](./Symantec_Proxy_Secure_Gateway_(Blue_Coat_Proxy).md "Symantec Proxy Secure Gateway (Blue Coat Proxy)") below. Otherwise, create a new collector as described in [Configure an Installed Collector](./Symantec_Proxy_Secure_Gateway_(Blue_Coat_Proxy).md "Symantec Proxy Secure Gateway (Blue Coat Proxy)") below, and then create the Syslog Source on the collector.
+In this step, you configure a Syslog Source to collect ProxySG log messages. You can configure the source on an existing Installed Collector or create a new collector. If you’re going to use an existing collector, jump to [Configure a Syslog Source](#configure-a-syslog-source) below. Otherwise, create a new collector as described in [Configure an Installed Collector](#configure-an-installed-collector) below, and then create the Syslog Source on the collector.
 
 ### Configure an Installed Collector
 

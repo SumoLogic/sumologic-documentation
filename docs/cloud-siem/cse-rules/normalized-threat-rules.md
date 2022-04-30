@@ -25,7 +25,7 @@ For example, a normalized threat rule that looks for intrusions would work with 
 * IPS/IDS Appliances
 * Microsoft Graph Security API
 
-Ordinarily, rules define the log messages they’ll be applied to by specifying `metadata_vendor` and `metadata_product `in the rule expression. A normalized rule doesn’t specify these attributes. Instead, it looks at another attribute that is set during the log mapping process: `threat_ruleType`. In the log mapping process for a message type, the value of `threat_ruleType` is set  to a value that corresponds to a threat type, for example “intrusion”. Then, normalized threat rules can look for messages whose `threat_ruleType` field is “intrusion”, regardless of vendor or product. For information about mapping requirements for messages that describe security events, see [Field Mapping for Security Event Sources](../CSE_Schema/Field_Mapping_for_Security_Event_Sources.md "Field Mapping for Security Event Sources").
+Ordinarily, rules define the log messages they’ll be applied to by specifying `metadata_vendor` and `metadata_product `in the rule expression. A normalized rule doesn’t specify these attributes. Instead, it looks at another attribute that is set during the log mapping process: `threat_ruleType`. In the log mapping process for a message type, the value of `threat_ruleType` is set  to a value that corresponds to a threat type, for example “intrusion”. Then, normalized threat rules can look for messages whose `threat_ruleType` field is “intrusion”, regardless of vendor or product. For information about mapping requirements for messages that describe security events, see [Field Mapping for Security Event Sources](../cse-schema/field-mapping-security-event-sources.md).
 
 <!--
 threat_rules.csv comes from https://github.com/jasklabs/content-catalog/blob/master/rules/threat_rules.csv
@@ -51,16 +51,16 @@ Log sources that issue intrusion-related messages include:
 CSE provides the following normalized intrusion rules:
 
 * Intrusion Scan - Targeted - This rule looks for an intrusion product detecting an internal IP sending different exploits to another external IP in a short timeframe.
-* Intrusion Sweep - This rule looks for an intrusion product detecting an internal IP sending the same exploit to multiple internal IPs in a short     timeframe.
-* High Severity Intrusion Signature - This rule looks for an intrusion product detecting a High severity intrusion signature sourcing from an internal IP See [Requirements for Intrusion Signature rules](./Normalized_Threat_Rules.md "Normalized Threat Rules"), below.
-* Critical Severity Intrusion Signature - This rule looks for an intrusion product detecting a critical severity intrusion signature sourcing from an internal IP.  See [Requirements for Intrusion Signature rules](./Normalized_Threat_Rules.md "Normalized Threat Rules"), below.
-* Informational Severity Intrusion Signature - This rule looks for an intrusion product detecting an informational severity intrusion signature sourcing from an internal IP. See [Requirements for Intrusion Signature rules](./Normalized_Threat_Rules.md "Normalized Threat Rules"), below.
-* Low Severity Intrusion Signature - This rule looks for an intrusion product detecting a low severity intrusion signature sourcing from an internal     IP. See [Requirements for Intrusion Signature rules](./Normalized_Threat_Rules.md "Normalized Threat Rules"), below.
-* Medium Severity Intrusion Signature - This rule looks for an intrusion product detecting a medium severity intrusion signature sourcing from an internal IP. See [Requirements for Intrusion Signature rules](./Normalized_Threat_Rules.md "Normalized Threat Rules"), below.
+* Intrusion Sweep - This rule looks for an intrusion product detecting an internal IP sending the same exploit to multiple internal IPs in a short timeframe.
+* High Severity Intrusion Signature - This rule looks for an intrusion product detecting a High severity intrusion signature sourcing from an internal IP.
+* Critical Severity Intrusion Signature - This rule looks for an intrusion product detecting a critical severity intrusion signature sourcing from an internal IP.
+* Informational Severity Intrusion Signature - This rule looks for an intrusion product detecting an informational severity intrusion signature sourcing from an internal IP.
+* Low Severity Intrusion Signature - This rule looks for an intrusion product detecting a low severity intrusion signature sourcing from an internal IP. 
+* Medium Severity Intrusion Signature - This rule looks for an intrusion product detecting a medium severity intrusion signature sourcing from an internal IP.
 
 **Requirements for Intrusion Signature rules:**
 
-The rules that detect intrusion signatures from internal IP addresses rely upon the [normalizedSeverity](../CSE_Schema/01_Schema_Attributes.md "Schema Attributes") attribute in Records being mapped as follows:
+The rules that detect intrusion signatures from internal IP addresses rely upon the [normalizedSeverity](../cse-schema/schema-attributes.md) attribute in Records being mapped as follows:
 
 * critical = 10
 * high = 9

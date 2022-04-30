@@ -5,8 +5,7 @@ id: forward-cse-data-to-sumo
 # Forward CSE Data to Sumo Logic Platform
 
 :::note
-The information in this topic applies to CSE users whose portal URL ends in `jask.ai`. If your portal URL ends in `sumologic.com`, see [Forward
-CSE Signals to Sumo Logic](Forward_CSE_Signals_to_Sumo_Logic.md "Forward CSE Signals to Sumo Logic").
+The information in this topic applies to CSE users whose portal URL ends in `jask.ai`. If your portal URL ends in `sumologic.com`, see [Forward CSE Signals to Sumo Logic](forward-cse-signals-to-sumo.md).
 :::
 
 This topic has instructions for how to send Records and Signals to the Sumo Logic platform. Once you perform the configuration described below, CSE will start sending data on a continuous basis. 
@@ -58,5 +57,5 @@ Perform these steps for each CSE data set you want to send to Sumo Logic,
    * **Signals**. CSE will send Signals to the Sumo Logic platform.
 
 1. **Index URL**. Enter the URL for the HTTP Source you created above.
-1. **Filter Expression**. (Optional) If you enter a filter expression, only data that matches the expression will be sent to the specified HTTP Source. Filtering is most useful when you're forwarding Records (as opposed to raw messages or Signals. To filter Records, you can use any of the functions supported in rule expressions. For more information, see [CSE Rules Syntax](../CSE_Rules/11_CSE_Rules_Syntax.md "CSE Rules Syntax").
+1. **Filter Expression**. (Optional) If you enter a filter expression, only data that matches the expression will be sent to the specified HTTP Source. Filtering is most useful when you're forwarding Records (as opposed to raw messages or Signals. To filter Records, you can use any of the functions supported in rule expressions. For more information, see [CSE Rules Syntax](../cse-rules/cse-rules-syntax.md).
 1. Click **Create**.

@@ -19,7 +19,7 @@ In this step, you configure AWS VPC Flow logging in AWS as described in [AWS Hel
 
 ## Step 2: Configure Collection
 
-In this step, you configure an HTTP Source to collect AWS VPC Flow log messages. You can configure the source on an existing Hosted Collector or create a new collector. If you’re going to use an existing collector, jump to [Configure an AWS S3 Source](./AWS_VPC_Flow.md "AWS VPC Flow via S3") below. Otherwise, create a new collector as described in [Configure a hosted collector](./AWS_VPC_Flow.md "AWS VPC Flow via S3") below, and then create the HTTP Source on the collector.
+In this step, you configure an HTTP Source to collect AWS VPC Flow log messages. You can configure the source on an existing Hosted Collector or create a new collector. If you’re going to use an existing collector, jump to [Configure an AWS S3 Source](#configure-an-aws-s3-source) below. Otherwise, create a new collector as described in [Configure a hosted collector](#configure-a-hosted-collector) below, and then create the HTTP Source on the collector.
 
 ### Configure a hosted collector
 

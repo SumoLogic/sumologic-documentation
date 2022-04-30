@@ -4,30 +4,30 @@ id: create-structured-log-mapping
 
 # Create a Structured Log Mapping
 
-This topic has instructions for creating a log mapping for structured messages using the CSE UI. Log mapping is the process of telling CSE how to build a Record from the key-value pairs extracted from messages. For more information about log mapping, and how it fits into the Record creation process, see the [Record Processing Pipeline](00_Record_Processing_Pipeline.md "Record Processing Pipeline") topic.
+This topic has instructions for creating a log mapping for structured messages using the CSE UI. Log mapping is the process of telling CSE how to build a Record from the key-value pairs extracted from messages. For more information about log mapping, and how it fits into the Record creation process, see the [Record Processing Pipeline](record-processing-pipeline.md) topic.
 
 ## About the log mapping process
 
 When you set up a log mapping, you supply the following information:  
 
 * **What messages will the mapper process?** To identify which incoming messages the mapper should process, you supply a vendor name, product name, message format, and an event ID expression. 
-* **What Record type should be created for the messages the mapper processes?** CSE has multiple predefined [Record types](05CSE_Record_Types.md "CSE Record Types"), each of which corresponds to a particular sort of event a log message might describe. When you configure a log mapping, you select the Record type that corresponds best to the log messages the mapper will process. For example, you would select “Authentication” as the Record type to create from messages that report successful or unsuccessful authentication events.
-* **What normalized classification should be added for the messages the mapper processes?** Records can be classified at two levels of granularity. First, at a high level with [Record Types](05CSE_Record_Types.md "CSE Record Types") which all mapped Records have, and more specifically using Normalized Classification Fields alongside the mapped attributes within a Record. For more information, see the [CSE Normalized Classification.](CSE_Normalized_Classification.md "CSE Normalized Classification")
+* **What Record type should be created for the messages the mapper processes?** CSE has multiple predefined [Record types](cse-record-types.md), each of which corresponds to a particular sort of event a log message might describe. When you configure a log mapping, you select the Record type that corresponds best to the log messages the mapper will process. For example, you would select “Authentication” as the Record type to create from messages that report successful or unsuccessful authentication events.
+* **What normalized classification should be added for the messages the mapper processes?** Records can be classified at two levels of granularity. First, at a high level with [Record Types](cse-record-types.md) which all mapped Records have, and more specifically using Normalized Classification Fields alongside the mapped attributes within a Record. For more information, see the [CSE Normalized Classification.](cse-normalized-classification.md)
 
 ## Step 1: Choose mapping type and name the mapping
 
 1. Click the gear icon and select **Log Mappings**.
 
-    [config-gear-mappings.png](/img/cloud-siem-enterprise/config-gear-mappings.png)
+    ![config-gear-mappings.png](/img/cloud-siem-enterprise/config-gear-mappings.png)
 1. Click **Create** in the upper right side of the **Log Mappings** page.
 
-    [log-mappings.png](/img/cloud-siem-enterprise/log-mappings.png)
+    ![log-mappings.png](/img/cloud-siem-enterprise/log-mappings.png)
 1. Click the **Structured Mapping** tile on the **Create a Mapping** page. 
 
-    [select-mapping-type.png](/img/cloud-siem-enterprise/select-mapping-type.png)
+    ![select-mapping-type.png](/img/cloud-siem-enterprise/select-mapping-type.png)
 1. On the **New Mapping** page, enter a name for the mapping.
 
-    [new-mapping-page.png](/img/cloud-siem-enterprise/new-mapping-page.png)
+    ![new-mapping-page.png](/img/cloud-siem-enterprise/new-mapping-page.png)
 
 ## Step 2: Enter “If Input Matches” values
 
@@ -44,7 +44,7 @@ The values you supply should correspond to the values that were supplied for ven
 
 ## Step 3: Enter “Then Create Record” values
 
-1. **Record**. Select the [Record type](05CSE_Record_Types.md "CSE Record Types") that specifies the attributes that the Records created by the mapper should contain.
+1. **Record**. Select the [Record type](cse-record-types.md) that specifies the attributes that the Records created by the mapper should contain.
 1. **Vendor**. The vendor name that the mapper should write to Records. You can select a vendor from the pull-down, or select **Matching input vendor** if you want to use the value you supplied for **Vendor** in the **If Input Matches** area. In the Records the mapper creates, this value will be written to the `device_vendor` field.
 1. **Product**. The product name that the mapper should write to Records. If you selected a vendor from the **Vendor** pull-down, the **Product** pull-down will list products from that vendor - you can either select a specific product from the pull-down, or select **Matching input product**. In the Records the mapper creates, this value will be written to the `device_product` field.
 
@@ -64,7 +64,7 @@ The sections that follow have instructions for setting up each type of mapping:
 * [standard mapping](#standard-mapping)
 * [time mapping](#time-mapping)
 
-If you are creating a mapping for a source whose messages you want to be processed by CSE's [normalized threat rules](../CSE_Rules/Normalized_Threat_Rules.md "Normalized Threat Rules"), see [Field Mapping for Security Event Sources](Field_Mapping_for_Security_Event_Sources.md "Field mapping for security event sources").
+If you are creating a mapping for a source whose messages you want to be processed by CSE's [normalized threat rules](../cse-rules/normalized-threat-rules.md), see [Field Mapping for Security Event Sources](field-mapping-security-event-sources.md).
 
 ### constant mapping
 

@@ -14,7 +14,7 @@ The Network Sensor monitors live network traffic, and produces [log files](https
 
 The Network Sensor has a file extraction policy, enabled by default, that saves files observed on the network (unencrypted transfers, e.g. over protocols including SMB and HTTP). Configuration of this policy includes mime-types (exe, zip, pdf, and so on) and maximum extracted file size.
 
-The sensor uses [PF_RING](https://www.ntop.org/products/packet-capture/pf_ring/ "https://www.ntop.org/products/packet-capture/pf_ring/") for flow-based load balancing across a number of processes that are monitoring/sniffing the same interface.
+The sensor uses [PF_RING](https://www.ntop.org/products/packet-capture/pf_ring/) for flow-based load balancing across a number of processes that are monitoring/sniffing the same interface.
 
 ## Deployment process overview
 
@@ -83,7 +83,7 @@ This section describes resource requirements and prerequisites for Network Senso
 
 We recommend installing the network sensor on a host with at least two interfaces - one for traffic monitoring and one for management. That way, the sensor doesn't process and upload traffic associated with sensor management for analysis.
 
-The system upon which you install the Network Sensor must have the following resources, at a minimum. Depending on expected throughput, additional core, memory, and storage resources may be required, as shown in [Throughput-dependent resource requirements](./11_Network_Sensor_Deployment_Guide.md "Network Sensor Deployment Guide")
+The system upon which you install the Network Sensor must have the following resources, at a minimum. Depending on expected throughput, additional core, memory, and storage resources may be required, as shown in [Throughput-dependent resource requirements](#throughput-dependent-resource-requirements)
 below. 
 
 | Operating System                   | Cores (CPU) | Memory (RAM) | Storage (Disk) |
@@ -146,7 +146,7 @@ ethtool -i eno1
 ethtool -k eno1
 ```
 
-A number of NIC offload features should be disabled on capture devices (interfaces that monitor traffic, but not the management interface). An example of interface configuration that disables such features is provided below in [Recommended interface configuration](./11_Network_Sensor_Deployment_Guide.md "Network Sensor Deployment Guide").
+A number of NIC offload features should be disabled on capture devices (interfaces that monitor traffic, but not the management interface). An example of interface configuration that disables such features is provided below in [Recommended interface configuration](#recommended-interface-configuration).
 
 #### NIC Hardware Buffer Queue Length
 
@@ -176,13 +176,7 @@ An example interface configuration which increases the RX ring buffer size is pr
 
 #### Recommended interface configuration
 
-The following stanza can be set as an *interface (5)* configuration
-in Debian or Ubuntu Linux sensors. Most often the file path is
-`/etc/network/interfaces` (some installations may use a file in
-`/etc/network/interfaces.d/`). These settings configure the network
-interface for optimized traffic capture as described above. Similar
-concepts apply to Red Hat-based distributions using interface setup
-configurations provided by the distribution.
+The following stanza can be set as an *interface (5)* configuration in Debian or Ubuntu Linux sensors. Most often the file path is `/etc/network/interfaces` (some installations may use a file in `/etc/network/interfaces.d/`). These settings configure the network interface for optimized traffic capture as described above. Similar concepts apply to Red Hat-based distributions using interface setup configurations provided by the distribution.
 
 **/etc/network/interfaces (Debian/Ubuntu)**  
 
@@ -234,28 +228,27 @@ Link settings
 
 If the URL you use to access CSE ends in `jask.ai`, follow the instructions in this section to download the Network Sensor installer from the CSE UI.
 
-If the URL you use to access CSE ends in `sumologic.com`, download the installer using the download link for your deployment shown on [Sensor Download
-Locations](01_Sensor_Download_Locations.md "Sensor Download Locations"). Start the installer using the command provided on that page, and then respond to the prompts as described [below](./11_Network_Sensor_Deployment_Guide.md "Network Sensor Deployment Guide").
+If the URL you use to access CSE ends in `sumologic.com`, download the installer using the download link for your deployment shown on [Sensor Download Locations](sensor-download-locations.md). Start the installer using the command provided on that page, and then respond to the prompts as described below.
 
 :::note
-If you are installing the Network Sensor on CentOS 8, see [Prerequisites for CentOS 8](./11_Network_Sensor_Deployment_Guide.md "Network Sensor Deployment Guide").
+If you are installing the Network Sensor on CentOS 8, see [Prerequisites for CentOS 8](#prerequisites-for-centos-8).
 :::
 
 The sensor software is installed in the `/opt` directory.
 
 1. In the CSE web UI, click the gear menu and select **Sensors** under **Incoming Data**.   \[gear-menu.png\]
 
-    [gear-menu.png](/img/cloud-siem-enterprise/gear-menu.png)
+    ![gear-menu.png](/img/cloud-siem-enterprise/gear-menu.png)
 1. On the **Sensors** page, click **Add**.
 1. The **Add Sensor** popup appears.
 
-    [network-sensor.png](/img/cloud-siem-enterprise/network-sensor.png)
+    ![network-sensor.png](/img/cloud-siem-enterprise/network-sensor.png)
 1. Copy the installation command from the page, and run it in a terminal window.
 1. The installer prompts you to enter the URL for the HTTP Source on Sumo Logic to which the sensor will send data. If you do not enter a value, this tells the installer that you want to send the data collected by the sensor to the legacy CSE server.  
 1. The installer prompts you to enter the capture interface to monitor, for example eth0, eth2, and so on. 
 
     :::note
-    If you want to monitor more than one capture interface, you must manually update the cluster configuration file, `node.cfg`. See [Sample node.cfg file (cluster configuration file)](./11_Network_Sensor_Deployment_Guide.md "Network Sensor Deployment Guide").The installer prompts you to enter the number of workers to use. 
+    If you want to monitor more than one capture interface, you must manually update the cluster configuration file, `node.cfg`. See [Sample node.cfg file (cluster configuration file)](#sample-nodecfg-file-cluster-configuration-file).The installer prompts you to enter the number of workers to use. 
     :::
 
 1. The installer asks if the sensor requires a proxy to reach the internet. If you respond "no", the installation completes. If you respond "yes", the installer prompts you to enter: 

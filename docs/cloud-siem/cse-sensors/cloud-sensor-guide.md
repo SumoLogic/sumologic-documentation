@@ -19,7 +19,7 @@ The CSE Cloud Sensor is a sensor that is hosted by CSE. There are two types of i
 
 * **Cloud-based storage integrations**. These integrations allow you to collect log data from AWS S3, AWS SQS, or Microsoft EventHub. This is useful if you forward log data from applications to one of these storage services. 
 
-You configure Cloud Sensor integrations on the edit page for your Cloud Sensor. When you add an integration, you are prompted to supply a number of configuration parameters. For example, when you add integrations for AWS services, you are prompted to supply your AWS access key, secret key, and data that identifies the resources you want to monitor. For an example configuration procedure, see *[Configure an API integration](./15_Cloud_Sensor_Guide.md "Cloud Sensor Guide"),* below.
+You configure Cloud Sensor integrations on the edit page for your Cloud Sensor. When you add an integration, you are prompted to supply a number of configuration parameters. For example, when you add integrations for AWS services, you are prompted to supply your AWS access key, secret key, and data that identifies the resources you want to monitor. For an example configuration procedure, see [Configure an API integration](cloud-sensor-guide.md), below.
 
 ## Supported App integrations
 

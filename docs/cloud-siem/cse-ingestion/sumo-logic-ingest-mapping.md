@@ -7,7 +7,7 @@ id: sumo-logic-ingest-mapping
 This topic has instructions for creating a CSE ingest mapping for a data source. An ingest mapping gives CSE the information it needs in order to map message fields to Record attributes. These are referred to as mapping hints, and include: Format, Vendor, Product, and Event ID Pattern.
 
 :::note
-The use of ingest mappings is recommended only if there is no Sumo Logic parser or Cloud-to-Cloud connector for the target data source. For more information, see [CSE Ingestion Best Practices](00CSE_Ingestion_Best_Practices.md).
+The use of ingest mappings is recommended only if there is no Sumo Logic parser or Cloud-to-Cloud connector for the target data source. For more information, see [CSE Ingestion Best Practices](cse-ingestion-best-practices.md).
 :::
 
 ## Before you start
@@ -75,14 +75,14 @@ Event ID pattern required? | How CSE picks a mapper |
 
 ## Configure Sumo Logic Ingest Mapping in CSE
 
-In this step, you configure a Sumo Logic Ingest Mapping in CSE for the source category assigned to your source or collector you configured in [Step 2](./ztConfigure_a_Sumo_Logic_Ingest_Mapping.md "Send Data from Sumo Logic to CSE"). The mapping tells CSE the information it needs to select the right mapper to process messages that have been tagged with that source category. 
+In this step, you configure a Sumo Logic Ingest Mapping in CSE for the source category assigned to your source or collector you configured. The mapping tells CSE the information it needs to select the right mapper to process messages that have been tagged with that source category. 
 
 1. Click the gear icon, and select **Sumo Logic** under **Integrations**.  
     ![integrations-sumologic.png](/img/cloud-siem-enterprise/integrations-sumologic.png)
 1. On the **Sumo Logic Ingest Mappings** page, click **Create**.  
     ![ingest-mappings.png](/img/cloud-siem-enterprise/ingest-mappings.png)
 1. On the **Create Sumo Logic Mapping** popup:
-    1. **Source Category**. Enter the category you assigned to the HTTP Source or Hosted Collector in [Step 2](./ztConfigure_a_Sumo_Logic_Ingest_Mapping.md "Send Data from Sumo Logic to CSE"). 
+    1. **Source Category**. Enter the category you assigned to the HTTP Source or Hosted Collector. 
     1. **Format**. Follow the instructions for the type of messages your source collects:
         * [Unstructured messages with a syslog header](#unstructured-messages-with-a-syslog-header)
         * [Unstructured messages without a syslog header](#unstructured-messages-without-a-syslog-header)
@@ -118,7 +118,7 @@ If your messages are JSON format without a syslog header, there are required and
 #### Required settings: Format, Vendor, Product, and Event ID
 
 1. For **Format**, select “JSON”. 
-1. You must specify values for **Vendor**, **Product**, and **Event ID**, which CSE will use to determine what mapper to use for your messages. If you don’t know these values, see [Determining Product, Vendor, and Event ID pattern](./ztConfigure_a_Sumo_Logic_Ingest_Mapping.md "Send Data from Sumo Logic to CSE"), above.  
+1. You must specify values for **Vendor**, **Product**, and **Event ID**, which CSE will use to determine what mapper to use for your messages. If you don’t know these values, see [Determining Product, Vendor, and Event ID pattern](#determining-product-vendor-and-event-id-pattern), above.  
 
     ![create-mapping-2.png](/img/cloud-siem-enterprise/create-mapping-2.png)
 

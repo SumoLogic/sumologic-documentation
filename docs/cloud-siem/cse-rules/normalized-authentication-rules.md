@@ -22,7 +22,7 @@ The mapping requirements are:
 | Output field | Mapping requirement |
 |--|--|
 | `objectType` | This field is populated as a result of the value selected for the Record Type in the log mapping. It must be set to *Authentication*. |
-| `normalizedAction` | Set to *logon* or *domainLogon* depending on the nature of the authentication attempt, as described in [Normalized Authentication Rules](./Normalized_Authentication_Rules.md "Normalized Authentication Rules"), below. |
+| `normalizedAction` | Set to *logon* or *domainLogon* depending on the nature of the authentication attempt, as described in [Normalized Authentication Rules](normalized-authentication-rules.md), below. |
 | `success` | Set to *true* if the logon was successful, or *false* if it was not.  |
 | `mfa` | If the log message contains a field that indicates multi-factor authentication usage, set `mfa` to *true* if MFA is used or *false* if not. |
 | `user_username ` | `user_username` must be mapped to the input field that contains the user identity. If an alternative input field also contains the user identity, that field should be mapped as an alternate input field. |
@@ -43,7 +43,7 @@ This log mapping for the AWS CloudTrail ConsoleSignIn event meets the requiremen
 * Domain Password Attack - Detects multiple failed login attempts from a single source with unique usernames over a 1 hour timeframe. This is designed to catch attacks leveraging domain resources to attempt credential validation. The threshold and time frame can be adjusted based on your environment. This rule only monitors events with a `normalizedAction` of *domainLogon*.
 * Successful Brute Force - Detects a series of failed logins followed by a successful login. This could indicate that an attacker was successful in guessing a user's password and has compromised the user’s account. This rule only monitors events with a `normalizedAction` of *logon*. There is no “Domain” version of this rule–that means Windows workstation logging is required to achieve full visibility for Windows environments.
 * Impossible Travel - Successful - Detects two successful logins from the same user with different country codes, indicating possible credential theft. We recommend you add filtering criteria to the rule expression to reduce false positives, for example, known VPN addresses.
-* Impossible Travel - Unsuccessful - Detects two failed logins from the same user with different country codes, indicating a possible credential theft attempt. We recommend you use a [Rule Tuning Expression](Rule_Tuning_Expressions.md "Rule Tuning Expressions") to add filtering criteria to the rule to reduce false positives, for example, known VPN addresses.
+* Impossible Travel - Unsuccessful - Detects two failed logins from the same user with different country codes, indicating a possible credential theft attempt. We recommend you use a [Rule Tuning Expression](rule-tuning-expressions.md) to add filtering criteria to the rule to reduce false positives, for example, known VPN addresses.
 
 ## About logon and domainLogon
 

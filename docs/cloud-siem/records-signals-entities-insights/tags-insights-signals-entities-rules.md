@@ -12,7 +12,7 @@ There are two types of tags: 
 
 * **Schema keys**. These are predefined key-value pairs, which are useful for ensuring that users use  consistent values when assigning tags to items. There are two built-in schema tags: **Tactic** and **Technique**, which relate to the Mitre ATT&CK framework. 
 
-    You can create your own schema tags as well, as described in [Create a Custom Tag Schema](../Administration/Create_a_Custom_Tag_Schema.md "Create a Custom Tag Schema"). You can optionally configure a URL for each value in a custom tag schema. If you do, a user will be able to open that URL from the tag’s Action menu when it’s presented in the CSE UI. See [Tag Actions](./13Using_Tags_with_Insights%2C_Signals%2C_Entities%2C_and_Rules.md "Using Tags with Insights, Signals, Entities, and Rules") below for an example.
+    You can create your own schema tags as well, as described in [Create a Custom Tag Schema](../administration/create-a-custom-tag-schema.md). You can optionally configure a URL for each value in a custom tag schema. If you do, a user will be able to open that URL from the tag’s Action menu when it’s presented in the CSE UI. See [Tag Actions](tags-insights-signals-entities-rules.md) below for an example.
     
     You can assign schema key tags to custom Rules you’ve developed.  For  built-in rules, you can assign or delete new  schema tags, but you can’t change or remove the tags that come with the rule. You can also assign schema key tags to Insights, both CSE-generated and custom.    
 * **Keyword tags**. These are arbitrary labels that you define yourself. You can assign keyword tags to custom Rules, Entities, and Insights, both CSE-generated and custom. You can’t remove or change the tags that come with built-in rules. 
@@ -53,7 +53,7 @@ The actions menu for a tag allows you to:
 * Open an URL, if the tag is a schema tag, and an URL is configured for the selected tag value.
 * Copy the raw tag to your clipboard.
 
-    [tag-action-menu.png](/img/cloud-siem-enterprise/tag-action-menu.png)
+    ![tag-action-menu.png](/img/cloud-siem-enterprise/tag-action-menu.png)
 
 ## Find the tagging UI
 

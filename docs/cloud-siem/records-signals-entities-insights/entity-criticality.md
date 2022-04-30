@@ -23,7 +23,7 @@ The maximum severity that can be assigned to a CSE rule is 10, so normally, Sign
 As described in the [Insight Generation](00Insight_Generation_Process.md "Insight Generation Process") topic, an Insight is generated on an Entity based on the cumulative severity of the unique Signals that have fired on it over the previous two weeks, unless a different period is configured. The cumulative
 severity is referred to as the Entity’s Activity Score. Keep in mind that higher Signal severities will increase an Entity’s Active Score and result in Insight’s being generated sooner. 
 
-You can configure both the detection window and the threshold Activity Score for Insight generation, as described in the [Set Insight Generation Window and Threshold](05Set_Insight_Generation_Window_and_Threshold.md "Set Insight Generation Window and Threshold") topic.
+You can configure both the detection window and the threshold Activity Score for Insight generation, as described in the [Set Insight Generation Window and Threshold](set-insight-generation-window-threshold.md) topic.
 
 ## Define a Criticality
 

@@ -4,7 +4,9 @@ id: windows-sensor-troubleshooting
 
 # Windows Sensor Troubleshooting
 
+:::note
 The CSE Windows Sensor has reached end of life and is no longer supported. Please migrate to a Sumo Logic  Installed Collector. For more information see the [end of life notice](https://app.getbeamer.com/cloudsiementerprise/en/end-of-life-notice-_-cloud-siem-enterprise-sensors). 
+:::
 
 This topic describes basic steps for troubleshooting problems with the Windows Sensor.
 
@@ -14,22 +16,22 @@ This topic describes basic steps for troubleshooting problems with the Windows S
 1. Select **Sumo Logic CSE Windows Service** from the list of services. Right-click and choose **Properties**. 
 1. Choose the **Log On** tab. Verify that: * **This account** is selected. * **This account** has the correct username.    
 
-    [image7.png](/img/cloud-siem-enterprise/verify-windows-service.png)
+    ![image7.png](/img/cloud-siem-enterprise/verify-windows-service.png)
 1. Still on the **Log On** tab, re-enter the current password for the account in both password fields, and click **OK**. This will result in the account being granted the “Logon as a service” permission, if it does not already have it.
 1. Open the **Recovery** tab. Verify that each failure mode is set to **Restart the Service**, as shown below.
 
-    [image5.png](/img/cloud-siem-enterprise/restart-service.png)
+    ![image5.png](/img/cloud-siem-enterprise/restart-service.png)
 
 ## Verify that the service account has the necessary permissions
 
 1. Choose the **Log On** tab. 
 1. Make sure that the account is a dedicated account that runs only the Windows Sensor. 
-1. Verify that the account has “Logon as a service” permission. If the account doesn't have the permission, follow the instructions in [Give service account “Log on as a Service” permission](./09_Windows_Sensor_Troubleshooting.md "Windows Sensor Troubleshooting").
+1. Verify that the account has “Logon as a service” permission. If the account doesn't have the permission, follow the instructions in [Give service account “Log on as a Service” permission](windows-sensor-troubleshooting.md).
 1. Verify that the service account a member of the server’s local Performance Monitor Users group. Alternatively, you can grant the service account local administrator rights, in which case, it does not have to be a member of the Performance Monitor Users group.
-1. If the Windows Sensor’s [Domain Controller Monitor](03_Windows_Sensor_Overview.md "Windows Sensor Overview") is being used, as is the default, verify that the service account a member of the Domain Event Log Readers group.
-1. If the Windows Sensor [Active Directory Monitor](03_Windows_Sensor_Overview.md "Windows Sensor Overview") is being used, as is the default, verify that the service account a member of the Domain Users group.
-1. If the Windows Sensor’s [Localhost Monitor](03_Windows_Sensor_Overview.md "Windows Sensor Overview") is enabled verify that the service account is a member of the local machine’s Event Log Readers group.
-1. If the Windows Sensor’s [Windows Event Collector (WEC) Monitor](03_Windows_Sensor_Overview.md "Windows Sensor Overview") is enabled, verify that the service account is a member of the appropriate group to be granted access to the Forwarded Events log on the WEC Server. (This is usually the Event Log Readers group).
+1. If the Windows Sensor’s [Domain Controller Monitor](windows-sensor-overview.md#domain-controller-monitor) is being used, as is the default, verify that the service account a member of the Domain Event Log Readers group.
+1. If the Windows Sensor [Active Directory Monitor](windows-sensor-overview.md#active-directory-monitor) is being used, as is the default, verify that the service account a member of the Domain Users group.
+1. If the Windows Sensor’s [Localhost Monitor](windows-sensor-overview.md#localhost-monitor) is enabled verify that the service account is a member of the local machine’s Event Log Readers group.
+1. If the Windows Sensor’s [Windows Event Collector (WEC) Monitor](windows-sensor-overview.md#windows-event-collector-wec-monitor) is enabled, verify that the service account is a member of the appropriate group to be granted access to the Forwarded Events log on the WEC Server. (This is usually the Event Log Readers group).
 
 ### Give service account “Log on as a Service” permission
 
@@ -51,10 +53,10 @@ Perform this step if the Windows Sensor is running in its default mode, which is
 
 1. Log in to Sumo Logic.
 1. In the Sumo Logic UI, go to **Manage Data \> Collection**. 
-1. In the list of Collectors and their Sources, locate the Sumo Logic HTTP Source running on Hosted Collector—this is the Source that was set up when the Windows Sensor was installed. (The procedure is described in [Set up Sumo Logic Collector and Source](05_Windows_Sensor_Installation.md "Windows Sensor Installation") section of the Windows Sensor Installation topic.)
+1. In the list of Collectors and their Sources, locate the Sumo Logic HTTP Source running on Hosted Collector—this is the Source that was set up when the Windows Sensor was installed. (The procedure is described in [Set up Sumo Logic Collector and Source](windows-sensor-installation.md) section of the Windows Sensor Installation topic.)
 1. Mouse over the name of the HTTP Source and click on the left blue icon to “Open in Log Search.” This will open a search in another tab and display data recently received from the Windows Sensor. 
 
-    [image3.png](/img/cloud-siem-enterprise/windows-sensor.png)
+    ![image3.png](/img/cloud-siem-enterprise/windows-sensor.png)
 
 If the sensor is properly configured, you should see messages in the search results.  
 
@@ -75,15 +77,15 @@ In some instances, the sensor may be configured to send data to the legacy CSE s
 1. Navigate to the Windows Sensor in the CSE UI. Click on the gear in the upper right corner, and choose **Sensors** from the configuration menu.
 1. Look for the sensor in the list that matches the name of the computer where the sensor service is installed. When the sensor service is working properly and sending records, the **Records Per Second (RPS)** value should be greater than zero. Slide the mouse pointer along the RPS graph to see values at a given time.
 
-    [sensor-rps.png](/img/cloud-siem-enterprise/sensor-rps.png)
+    ![sensor-rps.png](/img/cloud-siem-enterprise/sensor-rps.png)
 
 1. To search for individual Records that have been ingested, click the information icon next to the sensor name.
 1. On the popup that appears, click the icon next to the Sensor ID to copy the Sensor ID to your clipboard. Then, close the popup.     
 
-    [sensor-info-popup.png](/img/cloud-siem-enterprise/sensor-info-popup.png) 
+    ![sensor-info-popup.png](/img/cloud-siem-enterprise/sensor-info-popup.png) 
 1. Click the **Records** tab at the top of the page.     
 
-    [tabs.png](/img/cloud-siem-enterprise/tabs.png) 
+    ![tabs.png](/img/cloud-siem-enterprise/tabs.png) 
 
 1. In the **Filters** area, filter by **Metadata Sensor ID** and supply the Sensor ID you copied above. You can enter the following, or select the field and “is” when those options are suggested. Paste in the sensor ID from your clipboard. `Metadata Sensor ID is\<sensor I\>` 
 1. A list of Records appears.
@@ -95,13 +97,13 @@ In some instances, the sensor may be configured to send data to the legacy CSE s
 
    * The computer name in a Record matches the computer name where the associated event occurred. 
    * The Records have recent timestamps. Be sure to take time zone settings into account. 
-   * Compare the Records to source event logs, using the Windows Event Viewer. Keep in mind that the sensor configuration determines which categories of events are sent to the portal. For more information, see [EventIdAllowList](06_Windows_Sensor_Configuration_Settings.md "Windows Sensor Configuration Settings") and [EventIdDenyList](06_Windows_Sensor_Configuration_Settings.md "Windows Sensor Configuration Settings").                   
+   * Compare the Records to source event logs, using the Windows Event Viewer. Keep in mind that the sensor configuration determines which categories of events are sent to the portal. For more information, see [EventIdAllowList](windows-sensor-configuration-settings.md#eventidallowlist) and [EventIdDenyList](windows-sensor-configuration-settings.md#eventiddenylist).                   
 
-    [record-details.png](/img/cloud-siem-enterprise/record-details.png)
+    ![record-details.png](/img/cloud-siem-enterprise/record-details.png)
 
 ### Check that Records appear in CSE UI
 
-If you didn’t see Records in the step above, check the values of the [SensorAPIKey](06_Windows_Sensor_Configuration_Settings.md "Windows Sensor nfiguration Settings") and [SensorID](06_Windows_Sensor_Configuration_Settings.md "Windows Sensor Configuration Settings") options in `C:\ProgramData\Sumo Logic\CSE Windows Sensor\settings.conf`. They should match the values shown on the sensor details popup that appears when you click the info icon for a sensor on the **Sensors** page.  
+If you didn’t see Records in the step above, check the values of the [SensorAPIKey](windows-sensor-configuration-settings.md#sensorapikey) and [SensorID](windows-sensor-configuration-settings.md#sensorid) options in `C:\ProgramData\Sumo Logic\CSE Windows Sensor\settings.conf`. They should match the values shown on the sensor details popup that appears when you click the info icon for a sensor on the **Sensors** page.  
   
 ![sensor-id-and-key.png](/img/cloud-siem-enterprise/sensor-id-and-key.png)
 
@@ -123,7 +125,7 @@ When you use [BareTail](https://baremetalsoft.com/baretail/), the view auto-upda
 
 By default, the Windows Sensor logs messages at an Informational level and above. This includes Informational, Warning, and Error levels. For more advanced troubleshooting, you can configure the sensor to log lower-level Debug or Trace messages as well. There are two approaches to changing the logging levels.
 
-Using the command prompt, as described in [Option 1](./09_Windows_Sensor_Troubleshooting.md "Windows Sensor Troubleshooting"), is the simplest approach to quickly enable and disable additional logging. However, if the problem you are troubleshooting involves the service not starting properly, or if you want the logging changes to persist across service restarts, you will need to edit the configuration files, as described in [Option 2](./09_Windows_Sensor_Troubleshooting.md "Windows Sensor Troubleshooting").
+Using the command prompt, as described in [Option 1](windows-sensor-troubleshooting.md#option-1-turn-on-additional-logging-from-the-command-prompt), is the simplest approach to quickly enable and disable additional logging. However, if the problem you are troubleshooting involves the service not starting properly, or if you want the logging changes to persist across service restarts, you will need to edit the configuration files, as described in [Option 2](windows-sensor-troubleshooting.md#option-2-turn-on-additional-logging-by-editing-the-logging-configuration-file).
 
 #### Option 1:  Turn on additional logging from the command prompt
 
@@ -202,7 +204,7 @@ Setting `EventLogVerboseTrace` to “true” results in very detailed logging ab
 
 *Both of these settings rely on the sensor logging level being set to Trace as described above*. 
 
-For more information about setting Sensor configuration options, see [Windows Sensor Configuration Settings](06_Windows_Sensor_Configuration_Settings.md "Windows Sensor Configuration Settings").
+For more information about setting Sensor configuration options, see [Windows Sensor Configuration Settings](windows-sensor-configuration-settings.md).
 
 ### Interpreting the Log Files
 
@@ -220,41 +222,41 @@ Some example messages that could indicate problems:
 
 Possible causes:
 
-* The settings file doesn’t exist or is not accessible by the sensor service. The settings file is usually created during the installation process, and should be located at `C:\ProgramData\Sumo Logic\CSE Windows Sensor\settings.conf`. For more information, see [Check folder permissions](./09_Windows_Sensor_Troubleshooting.md "Windows Sensor Troubleshooting").
-* The Sensor couldn’t deserialize (parse) the JSON in the settings file. Check for syntax errors like missing commas, or opening brackets without closing brackets, and so on. For more information, see [Windows Sensor Configuration Settings](06_Windows_Sensor_Configuration_Settings.md "Windows Sensor Configuration Settings").
+* The settings file doesn’t exist or is not accessible by the sensor service. The settings file is usually created during the installation process, and should be located at `C:\ProgramData\Sumo Logic\CSE Windows Sensor\settings.conf`. For more information, see [Check folder permissions](windows-sensor-troubleshooting.md).
+* The Sensor couldn’t deserialize (parse) the JSON in the settings file. Check for syntax errors like missing commas, or opening brackets without closing brackets, and so on. For more information, see [Windows Sensor Configuration Settings](windows-sensor-configuration-settings.md).
 
 `ERROR | Username: [user] is not in Event Log Reader Group OR Performance Monitor Users Group`
 
 Possible causes:
 
 * The service is not running under the correct user name.
-* The username is not an Administrator and does not have the required permissions. For more information, see [Verify that the service account has the necessary permissions](./09_Windows_Sensor_Troubleshooting.md "Windows Sensor Troubleshooting").
+* The username is not an Administrator and does not have the required permissions. For more information, see [Verify that the service account has the necessary permissions](windows-sensor-troubleshooting.md).
 
 `ERROR | A queue path could not be found or created.  Please check permissions.`
 
 Possible cause:
 
-* The user that the service is running under does not have permissions to write to the `C:\ProgramData` directory. For more information, see [Check folder permissions](./09_Windows_Sensor_Troubleshooting.md "Windows Sensor Troubleshooting").
+* The user that the service is running under does not have permissions to write to the `C:\ProgramData` directory. For more information, see [Check folder permissions](windows-sensor-troubleshooting.md).
 
 `ERROR | There have been many recent errors.  Enable trace-logging to view them.`
 
 Possible cause:
 
-* The sensor service has detected a large number of errors that may not have been logged due to the configured logging level. The errors are related to analyzing and storing Event Log records. Use one of the options in [Turn on additional logging](./09_Windows_Sensor_Troubleshooting.md "Windows Sensor Troubleshooting") above to turn on Trace logging for more information about the root cause.
+* The sensor service has detected a large number of errors that may not have been logged due to the configured logging level. The errors are related to analyzing and storing Event Log records. Use one of the options in [Turn on additional logging](windows-sensor-troubleshooting.md) above to turn on Trace logging for more information about the root cause.
 
 `WARN | Could not post to DirectoryUploadUrl [directory URL] OR EventUploadUrl [event URL]`
 
 Possible causes:
 
 * The URL was not entered properly during installation. Check the `Address` entry in `settings.conf`.
-* A firewall may be blocking outbound communication to Sumo Logic. For more information, see [Outbound internet communications requirements](05_Windows_Sensor_Installation.md "Windows Sensor Installation") in the *Windows Sensor Installation* topic.
-* The computer that the sensor service is installed on may be behind an HTTP Proxy. For more information, see the [sample configuration settings for Proxy configuration](06_Windows_Sensor_Configuration_Settings.md "Windows Sensor Configuration Settings") in the *Windows Sensor Configuration Settings* topic.
+* A firewall may be blocking outbound communication to Sumo Logic. For more information, see [Outbound internet communications requirements](windows-sensor-installation.md) in the *Windows Sensor Installation* topic.
+* The computer that the sensor service is installed on may be behind an HTTP Proxy. For more information, see the [sample configuration settings for Proxy configuration](windows-sensor-configuration-settings.md) in the *Windows Sensor Configuration Settings* topic.
 
 ### How to send Sensor troubleshooting data to Sumo Logic 
 
 If your troubleshooting efforts are not successful, you can send CSE log and configuration files to CSE support. 
 
-1. Before you send the data to CSE support, we recommend you configure the sensor for trace-level logging using one of the options in [Turn on additional logging](./09_Windows_Sensor_Troubleshooting.md "Windows Sensor Troubleshooting") above.
+1. Before you send the data to CSE support, we recommend you configure the sensor for trace-level logging using one of the options in [Turn on additional logging](windows-sensor-troubleshooting.md) above.
 1. After one hour, **turn off trace-level logging**. Continued trace-level logging will cause your log files to grow enormously and consume large amounts of disk space.
 1. Zip up the contents of `C:\ProgramData\Sumo Logic\CSE Windows Sensor\` and contact your Technical Account Manager for the best way to send the data to support.
 
@@ -292,11 +294,11 @@ The sensor uses three metrics to determine if disk space is too low. 
 * Available Hard Drive Space must be more than 5% of disk capacity.
 * Size of Event Log Queue folder (`C:\ProgramData\Sumo Logic\CSE Windows Sensor\EventLogQueue`) must be less than 2048 MB.
 * Size of Directory Queue folder (`C:\ProgramData\Sumo Logic\CSE Windows Sensor\DirectoryQueue`) must be less than 2048 MB.
-* These limits are configurable. See [MinPercentDiskSpaceLeft](06_Windows_Sensor_Configuration_Settings.md "Windows Sensor Configuration Settings"), [MaxEventLogQueueFolderDirectorySize](06_Windows_Sensor_Configuration_Settings.md "Windows Sensor Configuration Settings"), and [MaxDirectoryQueueFolderDirectorySize](06_Windows_Sensor_Configuration_Settings.md "Windows Sensor Configuration Settings") in the *Windows Sensor Configuration Settings* topic.
+* These limits are configurable. See [MinPercentDiskSpaceLeft](windows-sensor-configuration-settings.md#minpercentdiskspaceleft), [MaxEventLogQueueFolderDirectorySize](windows-sensor-configuration-settings.md#maxeventlogqueuefolderdirectorysize), and [MaxDirectoryQueueFolderDirectorySize](windows-sensor-configuration-settings.md#maxdirectoryqueuefolderdirectorysize) in the *Windows Sensor Configuration Settings* topic.
 
-To determine if the sensor is not reporting event logs or directory entries due to low disk space, you need to turn on additional logging. First, configure the sensor for trace-level logging, as described in [Turn on additional logging](./09_Windows_Sensor_Troubleshooting.md "Windows Sensor Troubleshooting") above.
+To determine if the sensor is not reporting event logs or directory entries due to low disk space, you need to turn on additional logging. First, configure the sensor for trace-level logging, as described in [Turn on additional logging](windows-sensor-troubleshooting.md#turn-on-additional-logging) above.
  
-Once the logging and configuration settings have been changed, and the sensor service has been restarted, check the log file. Search the log file for the words “dropping message.” If these appear in the file with a recent timestamp, it indicates that the sensor is no longer logging, either due to low disk space on the machine or the folder size limits being hit. To resolve the first issue, clear up disk space on the local hard drive by deleting unnecessary files. If enough disk space is available, see [Check if the EventLogQueue or DirectoryQueue has a backlog](./09_Windows_Sensor_Troubleshooting.md "Windows Sensor Troubleshooting"), below.
+Once the logging and configuration settings have been changed, and the sensor service has been restarted, check the log file. Search the log file for the words “dropping message.” If these appear in the file with a recent timestamp, it indicates that the sensor is no longer logging, either due to low disk space on the machine or the folder size limits being hit. To resolve the first issue, clear up disk space on the local hard drive by deleting unnecessary files. If enough disk space is available, see [Check if the EventLogQueue or DirectoryQueue has a backlog](windows-sensor-troubleshooting.md#check-if-the-eventlogqueue-or-directoryqueue-has-a-backlog), below.
 
 Once the issue has been resolved, be sure to **reset the logging levels**, so as not to exacerbate any low disk space conditions that may exist.
 
@@ -330,7 +332,7 @@ To check the version of .NET using regedit:
 1. In the Registry Editor, open the following subkey: `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Full`. 
 1. Find the `Release` key, and verify that the value is 528040 or higher.  
 
-    [image2.png](/img/cloud-siem-enterprise/image2.png)
+    ![image2.png](/img/cloud-siem-enterprise/image2.png)
 
 ## Verify connectivity to the Event Log Service
 

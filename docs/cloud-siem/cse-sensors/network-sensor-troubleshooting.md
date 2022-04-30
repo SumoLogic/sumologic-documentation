@@ -54,7 +54,7 @@ $(ldd /opt/trident/sensor/bro/bin/zeek | awk '{print $3}' | grep libpcap) >/dev/
 
 ### Network Sensor stops capturing traffic
 
-Zeek can get into a state where it runs out of memory and stops processing traffic but does not crash. This has been observed on RHEL 7.9. To automatically restart the sensor when consecutive status reports with low Records per second is observed use [no_data_restart_threshold](11_Network_Sensor_Deployment_Guide.md "Network Sensor Deployment Guide") (recommended value 3), and [no_data_cutoff](11_Network_Sensor_Deployment_Guide.md "Network Sensor Deployment Guide") to tune the record threshold if needed.
+Zeek can get into a state where it runs out of memory and stops processing traffic but does not crash. This has been observed on RHEL 7.9. To automatically restart the sensor when consecutive status reports with low Records per second is observed use [no_data_restart_threshold](network-sensor-deployment-guide.md#nodatarestartthreshold) (recommended value 3), and [no_data_cutoff](network-sensor-deployment-guide.md#nodatacutoff) to tune the record threshold if needed.
 
 ## Monitoring Capture Performance
 
@@ -113,8 +113,7 @@ Capstats is a utility that can be used to monitor in real-time the capture stati
 
 ### Bro/Zeek
 
-A number of diagnostic commands are implemented in [ZeekControl (zeekctl)](https://github.com/zeek/zeekctl "https://github.com/zeek/zeekctl"),
-a utility to control Zeek cluster installations.
+A number of diagnostic commands are implemented in [ZeekControl (zeekctl)](https://github.com/zeek/zeekctl), a utility to control Zeek cluster installations.
 
 **Snaplen**
 

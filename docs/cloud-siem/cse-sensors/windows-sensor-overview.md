@@ -12,7 +12,7 @@ The CSE Windows Sensor collects information from key elements of your Windows en
 
 CSE leverages the event logs and Active Directory state information that Windows Sensor collects to detect security issues, monitor compliance with standards such as HIPAA and SOX, and support threat hunting efforts. 
 
-The CSE Windows Sensor is designed to work in a variety of topologies, from single-country to multinational. Under the hood, the sensor is made up of multiple  monitors. You can enable and disable monitor types, based on your requirements. You can deploy multiple sensors strategically around your organization to meet the needs and characteristics of your infrastructure. You configure sensor behaviors in the sensor’s [settings.conf](06_Windows_Sensor_Configuration_Settings.md "Windows Sensor Configuration Settings") file. 
+The CSE Windows Sensor is designed to work in a variety of topologies, from single-country to multinational. Under the hood, the sensor is made up of multiple  monitors. You can enable and disable monitor types, based on your requirements. You can deploy multiple sensors strategically around your organization to meet the needs and characteristics of your infrastructure. You configure sensor behaviors in the sensor’s [settings.conf](windows-sensor-configuration-settings.md#example-settingsconf-files) file. 
 
 ## Event Log Monitoring
 

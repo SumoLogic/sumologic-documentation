@@ -26,8 +26,7 @@ Rule authors can also write rules that look for threat intel information
 in Records. To leverage the information in a rule, you can extend your
 custom rule expression, or add a Rule Turning Expression to a built-in
 rule. For a more detailed explanation of how to use threat intel
-information in rules, see [Threat
-Intel](../CSE_Rules/01_About_CSE_Rules.md "About CSE Rules") in the
+information in rules, see [Threat Intel](../cse-rules/about-cse-rules.md) in the
 *About CSE Rules* topic.
 
 ### Create a threat intel source from CSE UI
@@ -102,5 +101,5 @@ below. 
 
 You can use CSE threat intel APIs to create and manage indicators and
 custom threat sources. For information about CSE APIs and how to access
-the API documentation, see [CSE APIs](CSE_APIs.md "CSE APIs").  
+the API documentation, see [CSE APIs](cse-apis.md).  
  

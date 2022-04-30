@@ -9,7 +9,7 @@ This topic has information about how to search the Sumo Logic platform for Recor
 
 ## Sumo Logic partitions that contain CSE Records
 
-In CSE, normalized Records are categorized by [Record type](../CSE_Schema/05CSE_Record_Types.md "CSE Record Types"), for example Audit, Authentication, Network, NetworkDHCP, and so on.
+In CSE, normalized Records are categorized by [Record type](../cse-schema/cse-record-types.md), for example Audit, Authentication, Network, NetworkDHCP, and so on.
 
 In Sumo Logic, Records are stored in partitions, which are indexes that enable better search performance. The table below shows which partition each Record type is stored in. Note that some partitions contain multiple Record types.
 
@@ -43,7 +43,7 @@ There is a separate partition for forwarded raw messages for which Records were 
 
 ## About the Security Record Details view
 
-When you query CSE Records in a Sumo Logic log search tab, the contents of each Record are presented in a field named **Security Record Details**. The **Security Record Details** is somewhat unique in that it can't be referenced in a query itself. It is a read-only field. Note however, that you can add subfields of the **Security Record Details** field as separate columns in the field browser. You can see an example of doing that in [Save a query with predefined display fields](./15Searching_for_CSE_Records_in_Sumo_Logic.md "Searching for CSE Records in Sumo Logic") below. And like any other field, you can hide the **Security Record Details** field, if desired.
+When you query CSE Records in a Sumo Logic log search tab, the contents of each Record are presented in a field named **Security Record Details**. The **Security Record Details** is somewhat unique in that it can't be referenced in a query itself. It is a read-only field. Note however, that you can add subfields of the **Security Record Details** field as separate columns in the field browser. You can see an example of doing that in [Save a query with predefined display fields](#save-a-query-with-predefined-display-fields) below. And like any other field, you can hide the **Security Record Details** field, if desired.
 
 ![security-record-details.png](/img/cloud-siem-enterprise/security-record-details.png)
 
@@ -56,7 +56,7 @@ If you have the **View Partitions** role capability, you can search CSE partitio
 
     ![security-partitions.png](/img/cloud-siem-enterprise/security-partitions.png)
 1. To search for all Records in the partition, click the icon that appears next to a Partition name when you hover over a row.  
-1. A log search tab opens with a query, like `_index=PartitionName`, that returns all of the Records created within the currently selected time range, 15 minutes by default. For a description of the results, see [Search all Records in a partition](./15Searching_for_CSE_Records_in_Sumo_Logic.md "Searching for CSE Records in Sumo Logic"), below.
+1. A log search tab opens with a query, like `_index=PartitionName`, that returns all of the Records created within the currently selected time range, 15 minutes by default. For a description of the results, see [Search all Records in a partition](#search-all-record-partitions), below.
 
 ## Search CSE Records in a log search tab
 
@@ -147,8 +147,7 @@ You can search CSE fields by keyword, for example:
 
 ### Referencing nested JSON fields
 
-The **Security Record Details** field contains a JSON object with all of the fields from the underlying Record. Some of the data is nested in the `fields` sub-object, shown expanded in the screenshot below–it has the content from the [fields](../CSE_Schema/01_Schema_Attributes.md "Schema Attributes")
-field in the underlying Record, which is all of the unnormalized data from the original log message before it was normalized to the CSE schema.
+The **Security Record Details** field contains a JSON object with all of the fields from the underlying Record. Some of the data is nested in the `fields` sub-object, shown expanded in the screenshot below–it has the content from the [fields](../cse-schema/schema-attributes.md) field in the underlying Record, which is all of the unnormalized data from the original log message before it was normalized to the CSE schema.
 
 ![nested-fields.png](/img/cloud-siem-enterprise/nested-fields.png)
 

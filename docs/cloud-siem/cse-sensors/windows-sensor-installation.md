@@ -10,7 +10,7 @@ The CSE Windows Sensor has reached end of life and is no longer supported. Pleas
 
 This topic has instructions for installing the Windows Sensor to send data to Sumo Logic CIP.
 
-For information about Windows Sensor functionality, see [Windows Sensor Overview](03_Windows_Sensor_Overview.md "Windows Sensor Overview").
+For information about Windows Sensor functionality, see [Windows Sensor Overview](windows-sensor-overview.md).
 
 ## Requirements
 
@@ -21,7 +21,7 @@ In order to successfully install and operate the CSE Windows Sensor, the followi
 * Cores (CPU) * 2
 * Memory (RAM) * 4GB
 * Storage (Disk) * 50GB
-* Operating System and Packages * Windows 2012 or later (with all patches installed) or Windows 10     or later (with all patches installed) * .NET, v4.8 or later
+* Operating System and Packages * Windows 2012 or later (with all patches installed) or Windows 10 or later (with all patches installed) * .NET, v4.8 or later
 
 ### Security requirements
 
@@ -55,7 +55,7 @@ By default, the CSE Windows Service will monitor the event logs on every domain 
 
 ### Download the Windows Sensor installer
 
-If you are a Phase 2 customer, download the CSE Windows Sensor installer using the download link for your deployment shown on [Sensor Download Locations](01_Sensor_Download_Locations.md "Sensor Download Locations").
+If you are a Phase 2 customer, download the CSE Windows Sensor installer using the download link for your deployment shown on [Sensor Download Locations](sensor-download-locations.md).
 
 ### Set up Sumo Logic Collector and Source 
 
@@ -93,8 +93,8 @@ In this step you configure a Sumo Logic Source on Sumo Logic CIP to receive the 
 1. Click **Next**.
 1. The installer prompts you to specify credentials for the Windows service account that will be used to run the sensor service. You have two options: 
 
-   * **Specify a Service Account.** When the computer where the sensor runs is a member of a domain and/or will be monitoring a remote machine, using a service account is considered best practice for security reasons. If you choose this option, go to [step 8](./05_Windows_Sensor_Installation.md "Windows Sensor Installation") after clicking **Next**. 
-   * **Use Built-In Local System Account.** Using the built-in account is a more streamlined process, and may be appropriate when monitoring event logs on the local machine. If you choose this option, go to [step 11](./05_Windows_Sensor_Installation.md "Windows Sensor Installation") after clicking **Next**.
+   * **Specify a Service Account.** When the computer where the sensor runs is a member of a domain and/or will be monitoring a remote machine, using a service account is considered best practice for security reasons. If you choose this option, go to step 8 after clicking **Next**. 
+   * **Use Built-In Local System Account.** Using the built-in account is a more streamlined process, and may be appropriate when monitoring event logs on the local machine. If you choose this option, go to step 11 after clicking **Next**.
 1. In this step, you enter credentials for the service account: 
 
    1. **Domain**. Enter the name of the Windows domain associated with the service account. This should be the NETBIOS name of the domain, such as MYDOMAIN, rather than the FQDN (mydomain.com). To use a local Windows account rather than a domain account, specify the local machine name here. 

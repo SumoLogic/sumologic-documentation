@@ -14,7 +14,7 @@ Tags are metadata you can attach to Insights, Signals, Entities, and Rules. Tags
 
 Schema tags can enforce specific tag values and prevent confusion from variations in tag values. For example, you might want to ensure the use of standard server identifiers, such as “FinanceServer”, rather than “Server-Finance” or “Finance_Server”. 
 
-For more information about tags in CSE, see [Using Tags with Insights, Signals, Entities, and Rules](../records-signals-entities-insights/tags-insights-signals-entitiesc-rules.md).
+For more information about tags in CSE, see [Using Tags with Insights, Signals, Entities, and Rules](../records-signals-entities-insights/tags-insights-signals-entities-rules.md).
 
 ## Define a custom tag schema
 

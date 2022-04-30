@@ -10,7 +10,7 @@ The concept of an *entity* is central to the process CSE uses to correlate Signa
 
 ## Entities in messages are mapped to entity-type schema attributes
 
-During the next step of the [Record processing flow](../CSE_Schema/00_Record_Processing_Pipeline.md "Record Processing Pipeline")—log mapping—message fields are mapped to CSE schema attributes. During this process, each entity field from a message is mapped to one of the following CSE schema entity attributes:
+During the next step of the [Record processing flow](../cse-schema/record-processing-pipeline.md)—log mapping—message fields are mapped to CSE schema attributes. During this process, each entity field from a message is mapped to one of the following CSE schema entity attributes:
 
 * `device_hostname`
 * `device_hostname_raw`
@@ -33,7 +33,7 @@ During the next step of the [Record processing flow](../CSE_Schema/00_Record_Pro
 * `user_username`
 * `user_username_raw`
 
-Which particular attribute an entity gets mapped to depends on the [field mappings](../CSE_Schema/Create_a_Structured_Log_Mapping.md "Create a Structured Log Mapping") in the log mapper for the message source. Given the example message above, “thedude” might be mapped to `user_username` and "185.35.135.245"
+Which particular attribute an entity gets mapped to depends on the [field mappings](../cse-schema/create-structured-log-mapping.md) in the log mapper for the message source. Given the example message above, “thedude” might be mapped to `user_username` and "185.35.135.245"
 to `srcDevice_ip`. 
 
 ## Rules have one or more On Entity attributes
@@ -60,7 +60,7 @@ Note that the screenshot above shows an *Activity Score* for each entity. The fo
 
 ## Understanding Entity Activity Scores
 
-An entity’s Activity Score is the sum of the severities of the unique Signals associated with that entity during the previous two weeks, unless a [different detection period is configured](05Set_Insight_Generation_Window_and_Threshold.md "Set Insight Generation Window and Threshold"). What makes a Signal unique? A Signal takes its name from the rule that fired it, so unless a rule's name has a unique templated value in it, the Signals that the rule generates are not unique. 
+An entity’s Activity Score is the sum of the severities of the unique Signals associated with that entity during the previous two weeks, unless a [different detection period is configured](set-insight-generation-window-threshold.md). What makes a Signal unique? A Signal takes its name from the rule that fired it, so unless a rule's name has a unique templated value in it, the Signals that the rule generates are not unique. 
 
 Here are a couple practical examples:
 
@@ -73,9 +73,9 @@ Here are a couple practical examples:
 
 The severities of the `RDP Brute Force Attempt bad` and the `RDP Brute Force Attempt worse` Signals would be included in the entity’s Activity Score.
 
-By default, when an entity’s Activity Score exceeds the threshold of 12, CSE generates an Insight on the entity. Like the detection period, you can [configure a different Activity Score threshold value](05Set_Insight_Generation_Window_and_Threshold.md "Set Insight Generation Window and Threshold") for Insight generation. When CSE creates an Insight on an Entity, it resets the Entity’s Activity Score to 0. 
+By default, when an entity’s Activity Score exceeds the threshold of 12, CSE generates an Insight on the entity. Like the detection period, you can [configure a different Activity Score threshold value](set-insight-generation-window-threshold.md) for Insight generation. When CSE creates an Insight on an Entity, it resets the Entity’s Activity Score to 0. 
 
-After CSE fires a particular Signal on a particular Entity, it suppresses Signals for that Signal-Entity combination for 12 to 24 hours. For more information, see [Redundant Signal suppression](./00Insight_Generation_Process.md "Insight Generation Process"), below. 
+After CSE fires a particular Signal on a particular Entity, it suppresses Signals for that Signal-Entity combination for 12 to 24 hours. For more information, see [Redundant Signal suppression](set-insight-generation-window-threshold.md), below. 
 
 ### Example of an Entity that has reached Activity Score threshold
 
@@ -109,8 +109,8 @@ Prototype Signals, which are are not included in Insights, are not suppressed.
 
 The severity of an Insight is indicated as Low, Medium, High, or Critical. Note that there are only two situations in which an Insight can have the Critical severity level:
 
-* You can assign a severity of Critical to a [Custom Insight](Configure_a_Custom_Insight.md "Configure a Custom Insight") configuration.
-* You can change the severity of an Insight from the severity it was assigned by CSE at generation time. In the [Insight details](About_the_CSE_Insight_UI.md "About the CSE Insight UI") pane, click the icon that appears next to **Severity** to display the severity levels, and select a new level. 
+* You can assign a severity of Critical to a [Custom Insight](configure-custom-insight.md) configuration.
+* You can change the severity of an Insight from the severity it was assigned by CSE at generation time. In the [Insight details](about-cse-insight-ui.md) pane, click the icon that appears next to **Severity** to display the severity levels, and select a new level. 
 
 Insights that are generated by the CSE Insight generation algorithm will only have severity levels of Low, Medium, or High. Severity is a function of the Entity Activity Score of the Insight’s Entity.
 

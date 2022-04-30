@@ -7,29 +7,18 @@ id: write-aggregation-rule
 This topic has information about CSE Aggregation rules and how to write them.
 
 :::tip
-If you are new to writing your own CSE rules, see [Before You Write a Custom Rule](02_Before_You_Write_a_Custom_Rule.md "Before You Write a Custom Rule") for tips and techniques that are useful for getting started.
+If you are new to writing your own CSE rules, see [Before You Write a Custom Rule](before-writing-custom-rule.md) for tips and techniques that are useful for getting started.
 :::
 
 ## About Aggregation rules
 
-This section describes the purpose of Aggregation rules, and gives an
-example of how you would use one. If you’re ready to jump in and
-configure a rule, see [Create an Aggregation
-rule](./09_Write_an_Aggregation_Rule.md "Write an Aggregation Rule")
-below.
+This section describes the purpose of Aggregation rules, and gives an example of how you would use one. If you’re ready to jump in and configure a rule, see [Create an Aggregation rule](write-aggregation-rule.md) below.
 
-An Aggregation rule is useful when you want to fire a Signal based
-multiple conditions—up to six—being met over a period of time. 
+An Aggregation rule is useful when you want to fire a Signal based multiple conditions—up to six—being met over a period of time. 
 
-As an example, suppose you want to  fire a Signal when the ratio of
-failed to successful HTTP requests is too high—75% or more. You can use
-an Aggregation rule to calculate the percentage of failed requests, and
-configure the rule to fire a signal when the request failure rate is 75%
-or higher.
+As an example, suppose you want to  fire a Signal when the ratio of failed to successful HTTP requests is too high—75% or more. You can use an Aggregation rule to calculate the percentage of failed requests, and configure the rule to fire a signal when the request failure rate is 75% or higher.
 
-The table below summarizes the rule configuration. Each row corresponds
-to an element of the sentence-style configuration UI for the **If
-Triggered** settings for an Aggregation rule.
+The table below summarizes the rule configuration. Each row corresponds to an element of the sentence-style configuration UI for the **If Triggered** settings for an Aggregation rule.
 
 | Configuration setting | What it does |
 |--|--|
@@ -49,7 +38,7 @@ The screenshot below shows the **If Triggered** configuration for the example ru
 1. Select **Rules** from the Content menu.
 1. On the **Create a Rule** page, click **Create** in the **Aggregation** card.
 
-    [select-rule-type.png](/img/cloud-siem-enterprise/select-rule-type.png)
+    ![select-rule-type.png](/img/cloud-siem-enterprise/select-rule-type.png)
 1. In the rules editor: 
 
    1. **Name**. At the top of the Rules Editor, enter a name for the rule. Signals fired by the rule will have the same name as the rule.
@@ -68,7 +57,7 @@ On the left side of the Rules Editor, in the **If Triggered** section, you confi
 
    1. **Name**. Give the aggregation a brief, meaningful name. You’ll reference the aggregation by its name in the trigger condition for the rule. 
    1. **Function**. Select an aggregation function: `avg`, `count`, `count_distinct`, `first`, `last`, `max`, `min`, or `sum`.
-   1. **Expression**. Enter an expression to filter the Records to be aggregated. For example, the following expression results in the aggregation being applied to Record whose     `http_response_statusCode` field is greater than 201. `http_response_statusCode\> 201` 
+   1. **Expression**. Enter an expression to filter the Records to be aggregated. For example, the following expression results in the aggregation being applied to Record whose `http_response_statusCode` field is greater than 201. `http_response_statusCode\> 201` 
 
         :::note
         The expression you enter should make sense with the aggregation function you chose. Specifically, if your aggregation function is `count` or `count_distinct`, your expression should return countable results, like the example above. However, if you use another aggregation function—`avg`, `first`, `last`, `max`, `min`, or `sum`--your expression should be a field name, for example: `bytes` or `if(!isEmpty(bytes), bytes, bits)`, and the function will be applied to the value of that field.
@@ -84,7 +73,7 @@ After creating a rule expression, you can test it against existing Records in CS
 1. If no matches were returned, try changing the time range. 
 
 :::note
-If you use the Test Rule feature on a rule that has one or more [Rule Tuning Expressions](/Cloud_SIEM_Enterprise/CSE_Rules/Rule_Tuning_Expressions), you can test it without the tuning expressions, or with selected tuning expressions.
+If you use the Test Rule feature on a rule that has one or more [Rule Tuning Expressions](rule-tuning-expressions.md), you can test it without the tuning expressions, or with selected tuning expressions.
 :::
 
 ### Configure “Then Create a Signal” settings
@@ -99,7 +88,7 @@ On the right side of the Rules Editor, in the **Then Create a Signal** section, 
 1. **with a severity of**. Severity is an estimate of the criticality of the detected activity, from 1 (lowest) to 10 (highest). There are two ways to specify Severity.
    * **with a constant severity**. Choose constant, and select a severity level.
    * **with a dynamic severity**. Use dynamic if you want to base the severity level on a value of a field in the Record. Select a field from the list. 
-1. **with tags**. If desired, you can add metadata tags to your rule. Tags are useful for adding context to items like Rules, Insights, Signals, Entities. You can also search for and filter items by tag. For more information, see [Using Tags with Insights, Signals, Entities, and Rules](../Records,_Signals,_Entities,_and_Insights/13Using_Tags_with_Insights,_Signals,_Entities,_and_Rules.md "Using Tags with Insights, Signals, Entities, and Rules").
+1. **with tags**. If desired, you can add metadata tags to your rule. Tags are useful for adding context to items like Rules, Insights, Signals, Entities. You can also search for and filter items by tag. For more information, see [Using Tags with Insights, Signals, Entities, and Rules](../records-signals-entities-insights/tags-insights-signals-entities-rules.md).
 
 ### Save as prototype 
 If you are not sure that your rule is ready for prime time, you can save it as a prototype. A prototype rule generates Signals, but those Signals won't contribute to Insights. (Signals generated by a prototype rule do not increment the rule's **On Entity** entity's Activity Score.) Running the rule as a prototype for a while allows you to determine whether the rule is too noisy and fires too many Signals.

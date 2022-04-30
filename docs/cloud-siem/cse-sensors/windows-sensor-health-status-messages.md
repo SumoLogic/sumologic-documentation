@@ -24,7 +24,7 @@ Health status messages are grouped into general categories, called Tracker IDs. 
 
 **Clears when**: This error clears when the configuration issue has been resolved by editing and saving the `settings.conf` file, and the sensor has been restarted. Allow several minutes after successful sensor boot to complete.
 
-**Troubleshooting**: Fix the error described in the health status event Description. Review the sensor log files for additional details. For information about sensor configuration options, see [Windows Sensor Configuration Options Configuration Settings](06_Windows_Sensor_Configuration_Settings.md "Windows Sensor Configuration Settings").
+**Troubleshooting**: Fix the error described in the health status event Description. Review the sensor log files for additional details. For information about sensor configuration options, see [Windows Sensor Configuration Options Configuration Settings](windows-sensor-configuration-settings.md).
 
 ### Runtime Error
 
@@ -64,7 +64,7 @@ Health status messages are grouped into general categories, called Tracker IDs. 
 
 **Clears when**: This error clears when the number of active Domain Controllers falls within the expected range.
 
-**Troubleshooting**: Check the health status event Description and sensor log files for more information. The sensor configuration may need to be adjusted based on the number of Domain Controllers on the domain. You can increase the [MaxDomainControllerConnection](06_Windows_Sensor_Configuration_Settings.md "Windows Sensor Configuration Settings")s setting if sensor performance is considered to be an issue. Otherwise, the sensor may need to be reconfigured to either monitor a subset of the Domain Controllers on the network or to use [WEC mode](03_Windows_Sensor_Overview.md "Windows Sensor Overview"). 
+**Troubleshooting**: Check the health status event Description and sensor log files for more information. The sensor configuration may need to be adjusted based on the number of Domain Controllers on the domain. You can increase the [MaxDomainControllerConnection](windows-sensor-configuration-settings.md#maxdomaincontrollerconnections)s setting if sensor performance is considered to be an issue. Otherwise, the sensor may need to be reconfigured to either monitor a subset of the Domain Controllers on the network or to use [WEC mode](windows-sensor-overview.md#windows-event-collector-wec-monitor). 
 
 ## CSE Windows Access Error
 
@@ -122,28 +122,23 @@ clear.
 
 *Source: General, Event Log Queue or Directory Queue *
 
-**Cause**: The sensor has detected that it is close to hitting configured limits for available hard disk space or queue folder size. This warning is generated when conditions are within 10% (default, configurable as [DiskSpaceWarningThresholdPercentOfLimit](06_Windows_Sensor_Configuration_Settings.md "Windows Sensor Configuration Settings")) of the configured space limit. For more information about storage limits, see [MaxDirectoryQueueFolderDirectorySize](06_Windows_Sensor_Configuration_Settings.md "Windows Sensor Configuration Settings"),
-[MaxEventLogQueueFolderDirectorySize](06_Windows_Sensor_Configuration_Settings.md "Windows Sensor Configuration Settings"),
-and 
-[MinPercentDiskSpaceLeft](06_Windows_Sensor_Configuration_Settings.md "Windows Sensor Configuration Settings") in *Windows Sensor Configuration Settings.*  
+**Cause**: The sensor has detected that it is close to hitting configured limits for available hard disk space or queue folder size. This warning is generated when conditions are within 10% (default, configurable as [DiskSpaceWarningThresholdPercentOfLimit](windows-sensor-configuration-settings.md#diskspacewarningthresholdpercentoflimit)) of the configured space limit. For more information about storage limits, see [MaxDirectoryQueueFolderDirectorySize](windows-sensor-configuration-settings.md#maxdirectoryqueuefolderdirectorysize), [MaxEventLogQueueFolderDirectorySize](windows-sensor-configuration-settings.md#maxeventlogqueuefolderdirectorysize),
+and [MinPercentDiskSpaceLeft](windows-sensor-configuration-settings.md#minpercentdiskspaceleft) in *Windows Sensor Configuration Settings.*  
    
 **Clears when**: This error clears when storage conditions have improved so that they are no longer within 10% of the space limit, or have escalated to “Storage Limit Exceeded” error. Allow several minutes after the disk space issue has been resolved for the warning status to clear.
 
-**Troubleshooting**: Check the health status event Description and Source fields for more information. Look for details about storage limits and current storage status in the health status event fields. General disk space issues may be caused by low hard drive space conditions unrelated to the sensor service, and should be resolved by clearing space on the hard drive. When queue folder sizes are approaching limits, it is likely caused by an upload backlog. (See [CSE Windows Excessive Backlog](./07_Windows_Sensor_Health_Status_Messages.md "Windows Sensor Health Status Messages") error, below.)
+**Troubleshooting**: Check the health status event Description and Source fields for more information. Look for details about storage limits and current storage status in the health status event fields. General disk space issues may be caused by low hard drive space conditions unrelated to the sensor service, and should be resolved by clearing space on the hard drive. When queue folder sizes are approaching limits, it is likely caused by an upload backlog. (See [CSE Windows Excessive Backlog](windows-sensor-health-status-messages.md) error, below.)
 
 ### Storage Limit Exceeded
 
 *Source: General, Event Log Queue or Directory Queue *
 
 Cause: The sensor has detected that it has exceeded configured limits for available hard disk space or queue folder size, or that exceeding the limit is imminent. This error is generated when the sensor begins dropping queued messages to free up space. For more information about storage limits, see
-[MaxDirectoryQueueFolderDirectorySize](06_Windows_Sensor_Configuration_Settings.md "Windows Sensor Configuration Settings"),
-[MaxEventLogQueueFolderDirectorySize](06_Windows_Sensor_Configuration_Settings.md "Windows Sensor Configuration Settings"),
-and 
-[MinPercentDiskSpaceLeft](06_Windows_Sensor_Configuration_Settings.md "Windows Sensor Configuration Settings") in *Windows Sensor Configuration Settings.*  
+[MaxDirectoryQueueFolderDirectorySize](windows-sensor-configuration-settings.md#maxdirectoryqueuefolderdirectorysize), [MaxEventLogQueueFolderDirectorySize](windows-sensor-configuration-settings.md#maxeventlogqueuefolderdirectorysize), and [MinPercentDiskSpaceLeft](windows-sensor-configuration-settings.md#minpercentdiskspaceleft) in *Windows Sensor Configuration Settings.*  
    
 **Clears when**: This error clears when storage conditions have improved so that the sensor is no longer dropping messages. Allow several minutes after the disk space issue has been resolved for the error status to clear.
 
-**Troubleshooting**: Check the health status event Description and Source fields for more information. Look for details about storage limits and current storage status in the health status event fields. General disk space issues may be caused by low hard drive space conditions unrelated to the sensor service, and should be resolved by clearing space on the hard drive. When queue folder sizes are approaching limits, it is likely caused by an upload backlog. (See [Windows Excessive Backlog](./07_Windows_Sensor_Health_Status_Messages.md "Windows Sensor Health Status Messages"), below.)
+**Troubleshooting**: Check the health status event Description and Source fields for more information. Look for details about storage limits and current storage status in the health status event fields. General disk space issues may be caused by low hard drive space conditions unrelated to the sensor service, and should be resolved by clearing space on the hard drive. When queue folder sizes are approaching limits, it is likely caused by an upload backlog. (See [Windows Excessive Backlog](windows-sensor-health-status-messages.md), below.)
 
 ### Errors Appending To Queue Files
 
@@ -153,7 +148,7 @@ and 
    
 **Clears when**: For Directory records, the warning is cleared whenever less than 5% of the Active Directory record appends resulted in errors. For Event Log records, the warning is cleared when fewer than 20 event log record appends have resulted in errors in the past hour.
 
-**Troubleshooting**: Check the health status event Description, Source, and Last Error fields for more information. Sensor log files may provide additional detail, especially with [TRACE logging enabled](09_Windows_Sensor_Troubleshooting.md "Windows Sensor Troubleshooting"). Make sure that the computer running the sensor service has sufficient resources, check hard drive health and disk space, and confirm that the service account running the sensor still has the appropriate permissions on the queue folder(s).
+**Troubleshooting**: Check the health status event Description, Source, and Last Error fields for more information. Sensor log files may provide additional detail, especially with [TRACE logging enabled](windows-sensor-troubleshooting.md). Make sure that the computer running the sensor service has sufficient resources, check hard drive health and disk space, and confirm that the service account running the sensor still has the appropriate permissions on the queue folder(s).
 
 ## CSE Windows Parsing Error
 
@@ -186,8 +181,8 @@ When the sensor service is not able to send records to the CIP or CSE servers fa
 **Cause**: The sensor has detected that a larger than expected number of
 files are queued, awaiting upload. 
 
-* For Directory records, the threshold for number of files is based on the [DirectoryQueueBacklogWarningThresholdMaxFiles](06_Windows_Sensor_Configuration_Settings.md "Windows Sensor Configuration Settings") configuration setting, which defaults to 5 files. 
-* For Event Logs, the threshold number of files is based on the number of active Event Log monitors, and can be adjusted using the [EventLogQueueBacklogWarningThresholdMaxFilesPerActiveMonitor](06_Windows_Sensor_Configuration_Settings.md "Windows Sensor Configuration Settings") configuration setting, which defaults to 5 files per active Event Log monitor. 
+* For Directory records, the threshold for number of files is based on the [DirectoryQueueBacklogWarningThresholdMaxFiles](windows-sensor-configuration-settings.md#directoryqueuebacklogwarningthresholdmaxfiles) configuration setting, which defaults to 5 files. 
+* For Event Logs, the threshold number of files is based on the number of active Event Log monitors, and can be adjusted using the [EventLogQueueBacklogWarningThresholdMaxFilesPerActiveMonitor](windows-sensor-configuration-settings.md#eventlogqueuebacklogwarningthresholdmaxfilesperactivemonitor) configuration setting, which defaults to 5 files per active Event Log monitor. 
 
 **Clears when**: This error clears when the number of files in the queue directory drops below the threshold. Allow several minutes after the backlog has cleared for the warning status to clear.
 
@@ -197,7 +192,7 @@ If the warning status persists over several hours or more, check the CIP UI to d
 
 On the computer running the sensor service, use Windows File Explorer to view the contents of the Event Log queue folder or the Directory Queue folder, as appropriate. Additionally, the sensor logs should be examined for errors relating to queue file upload.
 
-If a backlog is confirmed, a more thorough analysis needs to be done to determine a solution. A minor backlog may be mitigated by adjusting sensor settings like [DirectoryMaxParallelUploads](06_Windows_Sensor_Configuration_Settings.md "Windows Sensor Configuration Settings"), [EventLogMaxParallelUploads](06_Windows_Sensor_Configuration_Settings.md "Windows Sensor Configuration Settings"), and the thresholds mentioned above. For more severe, recurring backlogs, some factors to consider are the resources of the computer running the sensor, including processing power and network bandwidth, the rate of incoming records, the number of Domain Controllers being monitored per sensor, and so on.
+If a backlog is confirmed, a more thorough analysis needs to be done to determine a solution. A minor backlog may be mitigated by adjusting sensor settings like [DirectoryMaxParallelUploads](windows-sensor-configuration-settings.md#directorymaxparalleluploads), [EventLogMaxParallelUploads](windows-sensor-configuration-settings.md#eventlogmaxparalleluploads), and the thresholds mentioned above. For more severe, recurring backlogs, some factors to consider are the resources of the computer running the sensor, including processing power and network bandwidth, the rate of incoming records, the number of Domain Controllers being monitored per sensor, and so on.
 
 ### Oldest Record Timestamp In Queue Exceeds Threshold
 
@@ -205,8 +200,8 @@ If a backlog is confirmed, a more thorough analysis needs to be done to determin
 
 Cause: The sensor has detected at least one file in a queue folder with a timestamp older than the specified threshold. 
 
-* For Directory records, the threshold for maximum age of a queue file is based on the config setting [DirectoryQueueBacklogWarningThresholdMaxFileAgeHours](06_Windows_Sensor_Configuration_Settings.md "Windows Sensor Configuration Settings"), which defaults to 1 hour. 
-* For Event Logs, the threshold for maximum age of a queue file is based on the config setting [EventLogQueueBacklogWarningThresholdMaxFileAgeHours](06_Windows_Sensor_Configuration_Settings.md "Windows Sensor Configuration Settings"), which defaults to 1 hour.
+* For Directory records, the threshold for maximum age of a queue file is based on the config setting [DirectoryQueueBacklogWarningThresholdMaxFileAgeHours](windows-sensor-configuration-settings.md#directoryqueuebacklogwarningthresholdmaxfileagehours), which defaults to 1 hour. 
+* For Event Logs, the threshold for maximum age of a queue file is based on the config setting [EventLogQueueBacklogWarningThresholdMaxFileAgeHours](windows-sensor-configuration-settings.md#eventlogqueuebacklogwarningthresholdmaxfileagehours), which defaults to 1 hour.
 
 **Clears when**: This error clears when the sensor detects no files in a queue directory that are older than the specified threshold. Allow several minutes after the backlog has cleared for the error status to clear.
 
@@ -216,8 +211,7 @@ If the warning status persists over several hours or more, use the CIP UI to det
 
 On the computer running the sensor service, use Windows File Explorer on the computer running the sensor service to view the contents of the Event Log queue folder or the Directory Queue folder, as appropriate.
 
-If a backlog is confirmed, you’ll need to perform a more thorough analysis to determine a solution. A minor backlog may be mitigated by adjusting sensor settings like [DirectoryMaxParallelUploads](06_Windows_Sensor_Configuration_Settings.md "Windows Sensor Configuration Settings"),
-[EventLogMaxParallelUploads](06_Windows_Sensor_Configuration_Settings.md "Windows Sensor Configuration Settings"), and the thresholds mentioned above. For more severe, recurring backlogs, some factors to consider are the resources of the computer running the sensor, including processing power and network bandwidth, the rate of incoming records, the number of Domain Controllers being monitored per sensor, and so on.
+If a backlog is confirmed, you’ll need to perform a more thorough analysis to determine a solution. A minor backlog may be mitigated by adjusting sensor settings like [DirectoryMaxParallelUploads](windows-sensor-configuration-settings.md#directorymaxparalleluploads), [EventLogMaxParallelUploads](windows-sensor-configuration-settings.md#eventlogmaxparalleluploads), and the thresholds mentioned above. For more severe, recurring backlogs, some factors to consider are the resources of the computer running the sensor, including processing power and network bandwidth, the rate of incoming records, the number of Domain Controllers being monitored per sensor, and so on.
 
 :::note
 Occasionally, this warning can be triggered by “orphaned” queue files. If the Oldest Timestamp field is more than several hours old, but there is no unusual delta between event time and event receipt time, a single orphaned queue file may be the culprit rather than an upload backlog. You can resolve orphaned queue files by restarting the sensor service, which will force upload of the orphaned file, or by manually deleting the old file from the queue folder.

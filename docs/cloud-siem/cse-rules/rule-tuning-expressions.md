@@ -25,7 +25,7 @@ The tuning expression is AND’d with the rule expression—the rule will only g
 Rule tuning expressions allow you to tailor the logic of a built-in rule without replicating and modifying the rule. The benefit of using a tuning expression, over the copy and edit method, is that when CSE updates built-in rules, your tuning expressions are preserved. This division of logic means that you don’t need to create as many custom rules. If you use tuning expressions in combination with multi-entity rules you’ll further reduce the need for custom rules.   
 
 :::tip
-There is another benefit of using tuning built-in rules instead of writing custom rules: you get the benefit of CSE's [Global Confidence](../Records,_Signals,_Entities,_and_Insights/09Global_Intelligence_for_Security_Insights.md "Global Intelligence for Security Insights") model. This feature leverages crowd-sourced learning to help security analysts triage and prioritize Insights. 
+There is another benefit of using tuning built-in rules instead of writing custom rules: you get the benefit of CSE's [Global Confidence](../records-signals-entities-insights/global-intelligence-security-insights.md) model. This feature leverages crowd-sourced learning to help security analysts triage and prioritize Insights. 
 :::
 
 You can apply multiple tuning expressions to a rule. You can assign a tuning expression to selected rules, or to all of your rules. You can also create a tuning expression without immediately assigning it to any rules.
@@ -49,7 +49,7 @@ Here’s what the example tuning expression looks like in the CSE UI.
     ![annotated-expression.png](/img/cloud-siem-enterprise/annotated-expression.png)
 1. **Name**. Enter a name for the tuning expression. 
 1. **Tune \[selected\|all\] Rules**. Choose whether you want to apply the tuning expression to all of your rules, or only selected rules. 
-1. If you chose  “selected” in the previous step, follow the instructions in [Apply tuning expression to selected rules](./Rule_Tuning_Expressions.md "Rule Tuning Expressions"). If you chose “all”, follow the instructions in [Apply tuning expression to all rules](./Rule_Tuning_Expressions.md "Rule Tuning Expressions").
+1. If you chose  “selected” in the previous step, follow the instructions in [Apply tuning expression to selected rules](#apply-tuning-expression-to-selected-rules). If you chose “all”, follow the instructions in [Apply tuning expression to all rules](#apply-tuning-expression-to-all-rules).
 
 ### Apply tuning expression to selected rules
 
@@ -57,18 +57,18 @@ Here’s what the example tuning expression looks like in the CSE UI.
 1. In the **To only match Records...** area, enter a tuning expression. 
 1. Click **Submit**.
 
-    [selected-rules.png](/img/cloud-siem-enterprise/selected-rules.png)
+    ![selected-rules.png](/img/cloud-siem-enterprise/selected-rules.png)
 
 ### Apply tuning expression to all rules
 
 1. In the **To only match Records...** area, enter a tuning expression. 
 1. Click **Submit**.
 
-    [all-option.png](/img/cloud-siem-enterprise/all-option.png)
+    ![all-option.png](/img/cloud-siem-enterprise/all-option.png)
 
 ### Create tuning expression without applying it to rules
 
-If you want to create a tuning expression and not apply it to any rules immediately, follow the instructions in [Apply tuning expression to selected rules](./Rule_Tuning_Expressions.md "Rule Tuning Expressions"), but do not enter anything in the **Type to add a rule** area.
+If you want to create a tuning expression and not apply it to any rules immediately, follow the instructions in [Apply tuning expression to selected rules](#apply-tuning-expression-to-selected-rules), but do not enter anything in the **Type to add a rule** area.
 
 ## Create and manage tuning expressions on rule page
 
@@ -90,7 +90,7 @@ You can also toggle the enablement state on the details page for a tuning expres
 
 ## Testing tuning expressions
 
-When you test a [rule expression](01_About_CSE_Rules.md "About CSE Rules") by clicking **Test Rule** in the rules editor, any tuning expressions assigned to the rule will be included in the test. If you don't want to test the tuning expressions, you can deselect one or more of the tuning expressions before clicking **Test Rule.**
+When you test a [rule expression](about-cse-rules.md) by clicking **Test Rule** in the rules editor, any tuning expressions assigned to the rule will be included in the test. If you don't want to test the tuning expressions, you can deselect one or more of the tuning expressions before clicking **Test Rule.**
 
 ![tuning-checkbox.png](/img/cloud-siem-enterprise/tuning-checkbox.png)
 

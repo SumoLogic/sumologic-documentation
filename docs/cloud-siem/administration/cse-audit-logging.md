@@ -53,36 +53,36 @@ The table below shows the `_sourceCategory` that is assigned to event logs by CS
 
 | Product Feature | _sourceCategory Value |
 | -- | -- |
-| [Action](/Cloud_SIEM_Enterprise/Administration/Create_CSE_Actions) | `cseAction` |
-| [Aggregation Rule](/Cloud_SIEM_Enterprise/CSE_Rules/09_Write_an_Aggregation_Rule) | `cseRule` |
+| [Action](create-cse-actions.md) | `cseAction` |
+| [Aggregation Rule](../cse-rules/write-aggregation-rule.md) | `cseRule` |
 | Configure Assigned Insight Emails<br/>(Relates to the option, on the Actions page, that causes a user to receive an email whenever another user assigns an Insight to them. | `cseConfiguration` |
-| [Chain Rule](/Cloud_SIEM_Enterprise/CSE_Rules/07_Write_a_Chain_Rule) | `cseRule` |
+| [Chain Rule](../cse-rules/write-chain-rule.md) | `cseRule` |
 | Cloud SOAR Incident | `cseCloudSoar` |
-| [Context Action](/Cloud_SIEM_Enterprise/Administration/Create_CSE_Context_Actions)  | `cseContextAction` |
-| [Custom Entity Type](/Cloud_SIEM_Enterprise/Records%2C_Signals%2C_Entities%2C_and_Insights/11Create_a_Custom_Entity_Type) | `cseCustomEntityType` |
-| [Custom Insight](/Cloud_SIEM_Enterprise/Administration/CSE_Audit_Logging) | `cseCustomInsight` |
-| [Custom Match List Column](/Cloud_SIEM_Enterprise/Match_Lists_and_Suppressed_Lists/Custom_Match_List_Columns) | `cseCustomMatchListColumn` |
+| [Context Action](create-cse-context-actions.md)  | `cseContextAction` |
+| [Custom Entity Type](../records-signals-entities-insights/create-custom-entity-type.md) | `cseCustomEntityType` |
+| [Custom Insight](cse-audit-logging.md) | `cseCustomInsight` |
+| [Custom Match List Column](../match-lists-suppressed-lists/custom-match-list-columns.md) | `cseCustomMatchListColumn` |
 | [Custom Tag Schema](/Cloud_SIEM_Enterprise/Administration/Create_a_Custom_Tag_Schema) | `cseCustomTagSchema` |
 | Customer Sourced Entity Lookup Table | `cseCustomerSourcedEntityLookupTable` |
-| [Entity](/Cloud_SIEM_Enterprise/Records%2C_Signals%2C_Entities%2C_and_Insights/03View_and_Manage_Entities) | `cseEntity` |
-| [Entity Criticality Config](/Cloud_SIEM_Enterprise/Records%2C_Signals%2C_Entities%2C_and_Insights/07Entity_Criticality) | `cseEntityCriticalityConfig` |
-| [Entity Domain Configuration](/Cloud_SIEM_Enterprise/CSE_Schema/Username_and_Hostname_Normalization) | `cseEntityNormalization` |
+| [Entity](../records-signals-entities-insights/view-manage-entities.md)  | `cseEntity` |
+| [Entity Criticality Config](../records-signals-entities-insights/entity-criticality.md) | `cseEntityCriticalityConfig` |
+| [Entity Domain Configuration](../cse-schema/username-and-hostname-normalization.md)  | `cseEntityNormalization` |
 | Favorite Field | `cseFavoriteField` |
-| [Insight](/Cloud_SIEM_Enterprise/Records%2C_Signals%2C_Entities%2C_and_Insights/About_the_CSE_Insight_UI) | `cseInsight` |
+| [Insight](../records-signals-entities-insights/about-cse-insight-ui.md) | `cseInsight` |
 | Inventory Entity Lookup Table | `cseInventoryEntityLookupTable` |
-| [Log Mapping](/Cloud_SIEM_Enterprise/CSE_Schema/Create_a_Structured_Log_Mapping) | `cseLogMapping` |
-| [Match List](/Cloud_SIEM_Enterprise/Match_Lists_and_Suppressed_Lists/Create_a_Match_List) | `cseMatchList` |
-| [Match Rule](/Cloud_SIEM_Enterprise/CSE_Rules/03_Write_a_Match_Rule) | `cseRule` |
-| [Network Block](/Cloud_SIEM_Enterprise/Administration/Create_and_Use_Network_Blocks) | `cseNetworkBlock` |
-| [Streaming Export Configuration](/Cloud_SIEM_Enterprise/CSE_Ingestion/ztConfigure_a_Sumo_Logic_Ingest_Mapping#Step_2:_Configure_Sumo_Logic_collector_or_source_to_send_logs_to_CSE) | `cseStreamingExportConfiguration` |
-| [Sumo Mapping](/Cloud_SIEM_Enterprise/CSE_Ingestion/ztConfigure_a_Sumo_Logic_Ingest_Mapping#Step_3:_Configure_Sumo_Logic_Ingest_Mapping_in_CSE) | `cseSumoMapping` |
-| [Suppressed List](/Cloud_SIEM_Enterprise/Match_Lists_and_Suppressed_Lists/Suppressed_Lists) | `cseSuppressList` |
+| [Log Mapping](../cse-schema/create-structured-log-mapping.md)  | `cseLogMapping` |
+| [Match List](../match-lists-suppressed-lists/create-match-list.md) | `cseMatchList` |
+| [Match Rule](../cse-rules/write-match-rule.md) | `cseRule` |
+| [Network Block](create-use-network-blocks.md) | `cseNetworkBlock` |
+| [Streaming Export Configuration](../cse-ingestion/sumo-logic-ingest-mapping.md)  | `cseStreamingExportConfiguration` |
+| [Sumo Mapping](../cse-ingestion/sumo-logic-ingest-mapping.md)  | `cseSumoMapping` |
+| [Suppressed List](/docs/cloud-siem-enterprise/match-lists-suppressed-lists/index.md)  | `cseSuppressList` |
 | Templated Match Rule  | `cseRule` |
 | Threat Intel Sources<br/>(Applies to all source types on the **Threat Intel** page.) | `cseThreatIntelSource` |
-| [Threshold Rule](/Cloud_SIEM_Enterprise/CSE_Rules/05_Write_a_Threshold_Rule) | `cseRule` |
+| [Threshold Rule](../cse-rules/write-threshold-rule.md) | `cseRule` |
 | Virus Total Configuration | `cseConfiguration` |
-| [Yara Rule](/Cloud_SIEM_Enterprise/CSE_Rules/Import_YARA_Rules) | `cseYara` |
-| [Yara Source](/Cloud_SIEM_Enterprise/CSE_Rules/Import_YARA_Rules) | `cseYara` |
+| [Yara Rule](../cse-rules/import-yara-rules.md) | `cseYara` |
+| [Yara Source](../cse-rules/import-yara-rules.md) | `cseYara` |
 
 ## \_sourceName and \_sourceHost assignment
 

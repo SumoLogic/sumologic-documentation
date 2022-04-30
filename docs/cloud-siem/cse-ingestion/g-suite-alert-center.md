@@ -6,7 +6,7 @@ id: g-suite-alert-center
 
 ## Step 1: Configure collection
 
-In this step, you configure an HTTP Source to collect G Suite Alert Center log messages. You can configure the source on an existing Hosted Collector or create a new collector. If you’re going to use an existing collector, jump to [Configure an HTTP Source below.](./G_Suite_Alert_Center.md "G Suite Alert Center") Otherwise, create a new collector as described in [Configure a hosted collector](./G_Suite_Alert_Center.md "G Suite Alert Center") below, and then create the HTTP Source on the collector.
+In this step, you configure an HTTP Source to collect G Suite Alert Center log messages. You can configure the source on an existing Hosted Collector or create a new collector. If you’re going to use an existing collector, jump to [Configure an HTTP Source below.](#configure-an-http-source) Otherwise, create a new collector as described in [Configure a hosted collector](#configure-a-hosted-collector) below, and then create the HTTP Source on the collector.
 
 ### Configure a Hosted Collector
 

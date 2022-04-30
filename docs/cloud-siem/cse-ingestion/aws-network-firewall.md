@@ -13,7 +13,7 @@ This page has instructions for collecting AWS Network Firewall log messages from
 
 ## Step 2: Configure collection
 
-In this step, you configure an HTTP Source to collect AWS Network Firewall messages. You can configure the source on an existing Hosted Collector or create a new collector. If you’re going to use an existing collector, jump to [Configure an AWS S3 Source](./AWS_Network_Firewall.md "AWS Network Firewall from an S3 Source") below. Otherwise, create a new collector as described in [Configure a hosted collector](./AWS_Network_Firewall.md "AWS Network Firewall from an S3 Source") below, and then create the HTTP Source on the collector.
+In this step, you configure an HTTP Source to collect AWS Network Firewall messages. You can configure the source on an existing Hosted Collector or create a new collector. If you’re going to use an existing collector, jump to [Configure an AWS S3 Source](#configure-an-aws-s3-source) below. Otherwise, create a new collector as described in [Configure a hosted collector](#configure-a-hosted-collector) below, and then create the HTTP Source on the collector.
 
 ### Configure a Hosted Collector
 

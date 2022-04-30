@@ -15,7 +15,7 @@ The process consists of configuring a source or collector to forward messages to
 The diagram below is a high level illustration of several alternative processing flows from a data source to a Sumo Logic collector or source, and on to CSE. 
 
 :::note
-You can only send log data that resides in the [Continuous data tier](/Partitions_and_Data_Tiers/Data_Tiers) to CSE.
+You can only send log data that resides in the [Continuous data tier](../../manage/partitions-and-data-tiers/data-tiers.md) to CSE.
 :::
 
 ![cip-to-cse.png](/img/cloud-siem-enterprise/cip-to-cse.png)
@@ -24,7 +24,7 @@ You can only send log data that resides in the [Continuous data tier](/Partition
 
 We recommend the following ingestion processes, starting with the most preferred:
 
-1. **Follow an ingestion guide**. The [Ingestion Guides](00CSE_Ingestion_Best_Practices/...md "Ingestion Guides") section of this help site provides specific collection and ingestion recommendations for many common products and services. An ingestion guide describes the easiest way to get data from a particular product into CSE. When you’re ready to start using CSE to monitor a new product, if there’s a CSE ingestion guide for it, we recommend using it.   
+1. **Follow an ingestion guide**. The [Ingestion Guides](/docs/cloud-siem-enterprise/cse-ingestion) section of this help site provides specific collection and ingestion recommendations for many common products and services. An ingestion guide describes the easiest way to get data from a particular product into CSE. When you’re ready to start using CSE to monitor a new product, if there’s a CSE ingestion guide for it, we recommend using it.   
      
 1. **Use a Cloud-to-Cloud (C2C) connector**. If you don’t see an Ingestion Guide for your data source, check to see if there is a C2C connector. It’s an easy method, because if you configure your C2C source to send logs to CSE, it automatically tags messages it sends to CSE with fields that contain the mapping hints that CSE requires.   
       
@@ -34,7 +34,7 @@ We recommend the following ingestion processes, starting with the most preferred
      
 1. **Use a Sumo Logic Source and parser**. If there isn’t a C2C connector for your data source, your next best option is to use a Sumo Logic Source (running on an Installed Collector or a Hosted Collector, depending on the data source)—and a Sumo Logic parser, if we have one for the data source.   
       
-    To check if there’s a parser for your data source, go to the **Manage Data \> Logs \> Parsers** page in the Sumo Logic UI. If there is a parser for your data source, but you find it doesn’t completely need your needs–for instance if the parser doesn’t support the particular log format you use–consider customizing the parser with a [local configuration](../CSE_Schema/Parser_Editor.md "Parser Editor"). If
+    To check if there’s a parser for your data source, go to the **Manage Data \> Logs \> Parsers** page in the Sumo Logic UI. If there is a parser for your data source, but you find it doesn’t completely need your needs–for instance if the parser doesn’t support the particular log format you use–consider customizing the parser with a [local configuration](../cse-schema/parser-editor.md). If
     that’s not practical, you can submit a request for a new parser by filing a ticket at at https://support.sumologic.com.  
       
     When you forward logs to CSE for parser processing, there are two bits of important configuration:  
@@ -56,4 +56,4 @@ We recommend the following ingestion processes, starting with the most preferred
         You can get the path to a parser on the **Manage Data \> Logs \> Parsers** page in Sumo Logic. Click the three-dot more options menu in the row for a parser, and select **Copy Path**.
         :::
 
-1. **Use a Sumo Logic Source and CSE Ingest mapping**. This is the least recommended method, as you have to manually configure the mapping hints in an ingestion mapping. For more information, see [Configure a Sumo Logic Ingest Mapping](Configure_a_Sumo_Logic_Ingest_Mapping.md).
+1. **Use a Sumo Logic Source and CSE Ingest mapping**. This is the least recommended method, as you have to manually configure the mapping hints in an ingestion mapping. For more information, see [Configure a Sumo Logic Ingest Mapping](sumo-logic-ingest-mapping.md).

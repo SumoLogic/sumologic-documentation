@@ -10,7 +10,7 @@ This topic describes the CSE UI for working with Insights. 
 
 To open the **Insights** page, click the icon to the right of the search bar at the top of the CSE UI.
 
-By default, the **Insights** page presents all Insights whose **Status** is not “Closed”, in descending order by Event Time in a list view. If you’d like to see Insights organized by their status, click the **Show Board** icon near the top right corner of the page. For information about the Board view, see [Board view](./About_the_CSE_Insight_UI.md "About the CSE Insight UI").
+By default, the **Insights** page presents all Insights whose **Status** is not “Closed”, in descending order by Event Time in a list view. If you’d like to see Insights organized by their status, click the **Show Board** icon near the top right corner of the page. For information about the Board view, see [Board view](#board-view).
 
 :::note
 CSE displays Insights and the Signals attached to them in the CSE UI through the end of the data retention period defined in your account agreement. 
@@ -31,9 +31,9 @@ Here’s one row from the List view. The numbered definitions below correspond t
 1. **Age**. The elapsed time since the Insight was created in minutes, hours, and so on.
 1. **Insight name**. The Insight name, made up of the Insight ID, and the MITRE stage or stages associated with the Signals in the Insight. 
 1. **MITRE stage**. 
-1. **Global Confidence**. If sufficient data is available, a [Global Confidence score](09Global_Intelligence_for_Security_Insights.md "Global Intelligence for Security Insights") for the Insight is shown. 
+1. **Global Confidence**. If sufficient data is available, a [Global Confidence score](global-intelligence-security-insights.md) for the Insight is shown. 
 1. **Assignee**. The analyst assigned to the Incident.
-1. **Severity**. The severity of the Insight. The value is a function of the configured Entity Activity Score threshold for Insight generation. For more information, see [Insight Severity](00Insight_Generation_Process.md "Insight Generation Process").
+1. **Severity**. The severity of the Insight. The value is a function of the configured Entity Activity Score threshold for Insight generation. For more information, see [Insight Severity](insight-generation-process.md).
 1. **Entity**. The Entity associated with the Insight.
 1. **Signal data**. This area has three bits of information: 
 
@@ -43,7 +43,7 @@ Here’s one row from the List view. The numbered definitions below correspond t
 
 ### Board view
 
-This screenshot shows the Insights page with the Signals organized as a Board. Each of the columns corresponds to an Insight Status value. (One of the Status values shown is a [custom Insight Status](../Administration/Manage_Custom_Insight_Statuses.md "Manage Custom Insight Statuses")).
+This screenshot shows the Insights page with the Signals organized as a Board. Each of the columns corresponds to an Insight Status value. (One of the Status values shown is a [custom Insight Status](../administration/manage-custom-insight-statuses.md)).
 
 The information displayed in the Board view is similar to the information in the [List view](#list-view). 
 
@@ -62,7 +62,7 @@ You can use the **Filters** area near the top of the page to narrow down the Ins
 * Event Time
 * Severity
 * Resolution
-* [Custom Resolution](../Administration/Manage_Custom_Insight_Resolutions.md "Manage Custom Insight Resolutions")
+* [Custom Resolution](../administration/manage-custom-insight-resolutions.md)
 * Name
 * Tags
 * Rule ID
@@ -101,7 +101,7 @@ At the top of the **Insight \> Details** page, you’ll see a Signal timeline th
 ![top-bit.png](/img/cloud-siem-enterprise/top-bit.png)
 
 1. **Signals**.The Signals link allows you to switch back to the Signals view from the Enrichments view, described below. 
-1. **Enrichments**. Click this list to view the output of any [Insight Enrichment Server](../Integrations/Insight_Enrichment_Server.md "Insight Enrichment Server") scripts that have enriched the Insight.
+1. **Enrichments**. Click this list to view the output of any [Insight Enrichment Server](../integrations/insight-enrichment-server.md) scripts that have enriched the Insight.
 1. **Signal timeline**. The timeline shows how spread apart each Signal in the Insight is. You can use the timeline to visualize how long these events are spread over and how frequently the Signals fire. 
 1. **Timeline controls**. The arrows on the far left and right sides allow you to toggle between each Signal to show the details on each. You can also click a specific Signal on the timeline to jump to those details. 
 1. **Legend**. Key to the symbols used to represent the Signals:
@@ -109,7 +109,7 @@ At the top of the **Insight \> Details** page, you’ll see a Signal timeline th
    * Rules—Signals that were triggered by Match or Chain rules. 
    * Anomalies—Signals that were triggered by Threshold or Aggregation rules.
    * Threat intelligence—Signals that were fired by Threat Intel rules. (These are Match rules that leverage threat intel matches.) 
-   * File Analysis—Signals that were triggered by [Yara file analysis rules](../CSE_Rules/Import_YARA_Rules.md "Import YARA Rules").
+   * File Analysis—Signals that were triggered by [Yara file analysis rules](../cse-rules/import-yara-rules.md).
 1. **Show Related Signals**. Click this link to show Related Signals in addition to Attached Signals. 
 1. **Sort options**. You can sort the Signals list by Content Type, Event Time, Created Time, Name, or Severity. Note that you can further sort by ascending or descending value.
 1. **Add Signals**. Click this option if you want to add a Signal to the Insight. You’ll be prompted with a list of Signals that have the same Entity as the current Insight (if there are any), and are not already attached to another Insight. A Signal that you add to an Insight manually is considered an Attached Signal.

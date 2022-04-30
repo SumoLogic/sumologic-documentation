@@ -8,7 +8,7 @@ This page has instructions for collecting Cisco ASA log messages and sending th
 
 ## Step 1: Configure collection
 
-In this step, you configure a Syslog Source to collect Cisco ASA log messages. You can configure the source on an existing Installed Collector or create a new collector. If you’re going to use an existing collector, jump to [Configure a Syslog Source](Linux_OS_Syslog.md "Linux OS Syslog") below. Otherwise, create a new collector as described in [Configure an Installed Collector](Linux_OS_Syslog.md "Linux OS Syslog") below, and then create the Syslog Source on the collector.
+In this step, you configure a Syslog Source to collect Cisco ASA log messages. You can configure the source on an existing Installed Collector or create a new collector. If you’re going to use an existing collector, jump to [Configure a Syslog Source](#configure-a-syslog-source) below. Otherwise, create a new collector as described in [Configure an Installed Collector](#configure-an-installed-collector) below, and then create the Syslog Source on the collector.
 
 ### Configure an Installed Collector
 

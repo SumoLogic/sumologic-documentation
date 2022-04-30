@@ -31,7 +31,7 @@ Your CSE role must allow you to use API keys and to retrieve and modify Insights
 
 ## Step 1: Copy your API credentials
 
-In this step, you make a copy of your API credentials, which you'll need to supply when you install the SIR-CSE integration in [Step 5](./Security_Incident_Response_(SIR)_Integration.md "Security Incident Response (SIR) Integration") below. How you do that depends on your environment:
+In this step, you make a copy of your API credentials, which you'll need to supply when you install the SIR-CSE integration in [Step 5](#step-5-install-the-sir-cse-integration) below. How you do that depends on your environment:
 
 * If your CSE URL ends in `sumologic.com`, you’ll need to supply a Sumo Logic Access ID and Access Key. If necessary, you can create those on your **Preferences** page in the Sumo Logic UI. For more information, see Create an access key on Preferences page.
 * If your CSE URL ends in `jask.ai`, you’ll need to instead supply your API token from CSE.
@@ -61,7 +61,7 @@ Plugin installation can fail if another installation is running in the backgroun
 
 ## Step 3: Configure MITRE ATT&CK threat feed data
 
-This step is required only if you don’t already have MITRE ATT&CK threat feed data. To see if you do, Navigate to **Threat Intelligence \> MITRE ATT&CK Repository \> Techniques,** in ServiceNow. If you have MITRE data, the that page will contain data that looks like the table shown in [substep 6](./Security_Incident_Response_(SIR)_Integration.md "Security Incident Response (SIR) Integration") below, and you can proceed to [Step 4: Configure CI Lookup Rules](./Security_Incident_Response_(SIR)_Integration.md "Security Incident Response (SIR) Integration"). If the table is empty perform the steps in this section.
+This step is required only if you don’t already have MITRE ATT&CK threat feed data. To see if you do, Navigate to **Threat Intelligence \> MITRE ATT&CK Repository \> Techniques,** in ServiceNow. If you have MITRE data, the that page will contain data that looks like the table shown in substep 6 below, and you can proceed to [Step 4: Configure CI Lookup Rules](#step-4-configure-ci-lookup-rules). If the table is empty perform the steps in this section.
 
 1. Navigate to **Threat Intelligence** in the navigation bar. 
 1. Under **Threat Sources**, select **Sources**. 

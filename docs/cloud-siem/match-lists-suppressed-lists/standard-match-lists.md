@@ -4,7 +4,7 @@ id: standard-match-lists
 
 # Standard Match Lists
 
-This topic describes the standard Match Lists that CSE's built-in rules rely upon. For information about Match Lists, what they are for, how they are used, and how to create them, see [Create a Match List](Create_a_Match_List.md "https://help.sumologic.com/Cloud SIEM Enterprise/Match Lists/Create a Match List").
+This topic describes the standard Match Lists that CSE's built-in rules rely upon. For information about Match Lists, what they are for, how they are used, and how to create them, see [Create a Match List](create-match-list.md).
 
 ## admin_ips
 
@@ -45,7 +45,7 @@ none
 
 **Target column:** Destination IP Address
 
-**Description:** Copy of the [auth_servers](./Standard_Match_Lists.md "Standard Match Lists") Match List for directional matches.
+**Description:** Copy of the [auth_servers](#auth_servers) Match List for directional matches.
 
 The following CSE rules refer to this Match List:
 
@@ -55,7 +55,7 @@ none
 
 **Target column:** Source IP Address
 
-**Description:** Copy of the [auth_servers](./Standard_Match_Lists.md "Standard Match Lists") Match List for directional matches.
+**Description:** Copy of the [auth_servers](#auth_servers) Match List for directional matches.
 
 The following CSE rules refer to this Match List:
 
@@ -218,7 +218,7 @@ The following CSE rules refer to this Match List:
 
 **Target column:** Destination IP Address
 
-**Description:** Copy of the [dns_servers](./Standard_Match_Lists.md "Standard Match Lists") Match List for directional matches.
+**Description:** Copy of the [dns_servers](#dns_servers) Match List for directional matches.
 
 The following CSE rules refer to this Match List:
 
@@ -228,7 +228,7 @@ none
 
 **Target column:** Source IP Address
 
-**Description:** Copy of the [dns_servers](./Standard_Match_Lists.md "Standard Match Lists") Match List for directional matches.
+**Description:** Copy of the [dns_servers](#dns_servers) Match List for directional matches.
 
 The following CSE rules refer to this Match List:
 
@@ -372,7 +372,7 @@ The following CSE rules refer to this Match List:
 
 **Target column:** IP Address
 
-**Description:** Source NAT addresses. Can be used as an exception Match List to block content relying on the evaluation of data per-host from applying to hosts that are translated or aggregations of other hosts. Note that this can also be applied using [proxy_servers](./Standard_Match_Lists.md "Standard Match Lists") as an example of a specific case.
+**Description:** Source NAT addresses. Can be used as an exception Match List to block content relying on the evaluation of data per-host from applying to hosts that are translated or aggregations of other hosts. Note that this can also be applied using [proxy_servers](#proxy_servers) as an example of a specific case.
 
 The following CSE rules refer to this Match List:
 
@@ -428,7 +428,7 @@ The following CSE rules refer to this Match List:
 
 **Target column:** Destination IP Address
 
-**Description:** Copy of the [proxy_servers](./Standard_Match_Lists.md "Standard Match Lists") Match List for directional matches.
+**Description:** Copy of the [proxy_servers](#proxy_servers) Match List for directional matches.
 
 The following CSE rules refer to this Match List:
 
@@ -438,7 +438,7 @@ The following CSE rules refer to this Match List:
 
 **Target column:** Source IP Address
 
-**Description:** Copy of the [proxy_server](./Standard_Match_Lists.md "Standard Match Lists") Match List for directional matches.
+**Description:** Copy of the [proxy_server](#proxy_servers) Match List for directional matches.
 
 The following CSE rules refer to this Match List:
 

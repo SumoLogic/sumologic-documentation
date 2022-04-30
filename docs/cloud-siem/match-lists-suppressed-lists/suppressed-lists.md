@@ -8,7 +8,7 @@ This topic has information about Suppressed Lists and how to create them.
 
 ## About Suppressed Lists
 
-CSE supports several types of [Signal suppression](../Records,_Signals,_Entities,_and_Insights/About_Signal_Suppression.md "About Signal Suppression"): suppression of redundant Signals, suppression of Signals on particular Entities, suppression of Signals on blocks of IP addresses, and finally the Suppressed Lists feature, which enables you to suppress Signals that contain a particular indicator value in any of the Signals’ Records.  
+CSE supports several types of [Signal suppression](../records-signals-entities-insights/about-signal-suppression.md): suppression of redundant Signals, suppression of Signals on particular Entities, suppression of Signals on blocks of IP addresses, and finally the Suppressed Lists feature, which enables you to suppress Signals that contain a particular indicator value in any of the Signals’ Records.  
 
 You can create Suppressed Lists from the CSE UI or using the CSE API. A Suppressed List can contain a set of indicators—IPs, hostnames, or any other type that you can use in a Match List—and then any Signal that has a Record containing a listed indicator will be suppressed. 
 
@@ -16,7 +16,7 @@ Here is an example of a Suppressed List.
 
 ![suppressed-list.png](/img/cloud-siem-enterprise/suppressed-list.png)
 
-Note that the list has a Target Column, which you define when you create the list. The Target Column indicates what type of Record fields should be compared to the Suppressed List, for example hostnames, URLs, domains, IP addresses, usernames, and so on. For more information, see [How are Suppressed Lists used](./Suppressed_Lists.md "Suppressed Lists")?
+Note that the list has a Target Column, which you define when you create the list. The Target Column indicates what type of Record fields should be compared to the Suppressed List, for example hostnames, URLs, domains, IP addresses, usernames, and so on. For more information, see [How are Suppressed Lists used](#how-are-suppressed-lists-used)?
 
 When you create a Suppressed List, you can choose one of the following as its Target Column.
 
@@ -40,7 +40,7 @@ When you create a Suppressed List, you can choose one of the following as its Ta
 
 ## How are Suppressed Lists used? 
 
-CSE uses Suppressed Lists the same way it uses [Match Lists](Suppressed_Lists/...md "Match Lists"). When CSE processes an incoming Record, it compares the entries in each Suppressed List to Record fields of the same type as the Target Column of the Suppressed List. For example, given a Suppressed List whose Target Column is **Domain**, CSE will compare items on that list only to Record fields that contain domains.
+CSE uses Suppressed Lists the same way it uses [Match Lists](#suppressed-list-or-match-list). When CSE processes an incoming Record, it compares the entries in each Suppressed List to Record fields of the same type as the Target Column of the Suppressed List. For example, given a Suppressed List whose Target Column is **Domain**, CSE will compare items on that list only to Record fields that contain domains.
 
 When a Record contains a value that matches one or more Suppressed Lists, two fields in the Record get populated:
 
@@ -86,7 +86,7 @@ Perform the steps below to create a Suppressed List and add an indicator to it u
    1. **Target Column**. The type of Record field to which items on the list should be compared.
 
     :::note
-    If you want to create a custom Target Column, click **Manage Custom Columns**. For more information see [Custom Match List Columns](Custom_Match_List_Columns.md "Custom Match List Columns").
+    If you want to create a custom Target Column, click **Manage Custom Columns**. For more information see [Custom Match List Columns](custom-match-list-columns.md).
     :::
 
    1. Click **Create**.
@@ -151,7 +151,7 @@ specified:
 
 ## Manage Suppressed Lists with the CSE API
 
-You can use CSE APIs to create and manage Suppressed Lists. For information about CSE APIs and how to access the API documentation, see [CSE APIs](../Administration/CSE_APIs.md "CSE APIs").
+You can use CSE APIs to create and manage Suppressed Lists. For information about CSE APIs and how to access the API documentation, see [CSE APIs](../administration/cse-apis.md).
 
 ## Best Practices for using Suppressed Lists
 

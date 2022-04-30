@@ -6,7 +6,7 @@ id: auth
 
 ## Step 1: Configure collection
 
-In this step, you configure an HTTP Source to collect Auth0 log messages. You can configure the source on an existing Hosted Collector or create a new collector. If you’re going to use an existing collector, jump to [Configure an HTTP Source](./Auth0.md "Auth0") below. Otherwise, create a new collector as described in [Configure a Hosted Collector](./Auth0.md "Auth0") below, and then create the HTTP Source on the collector.
+In this step, you configure an HTTP Source to collect Auth0 log messages. You can configure the source on an existing Hosted Collector or create a new collector. If you’re going to use an existing collector, jump to [Configure an HTTP Source](#configure-an-http-source) below. Otherwise, create a new collector as described in [Configure a Hosted Collector](#configure-a-hosted-collector) below, and then create the HTTP Source on the collector.
 
 ### Configure a Hosted Collector
 

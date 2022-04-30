@@ -7,7 +7,7 @@ id: write-match-rule
 This topic has information about the Match rules and how to create them in the CSE UI.
 
 :::tip
-If you are new to writing rules, see [About CSE Rules](01_About_CSE_Rules.md "About CSE Rules") for information about rule expressions and other rule options.
+If you are new to writing rules, see [About CSE Rules](about-cse-rules.md for information about rule expressions and other rule options.
 :::
 
 ## About Match rules
@@ -29,12 +29,12 @@ This rule fires a Signal each time a UserPoolClient, which has permission to cal
 1. Choose **Rules** from the Content menu.
 1. On the **Create a Rule** page, click **Create** in the **Match** card. 
 
-    [select-rule-type.png](/img/cloud-siem-enterprise/select-rule-type.png)
+    ![select-rule-type.png](/img/cloud-siem-enterprise/select-rule-type.png)
 1. In the rules editor: 
    1. **Name**. Enter a name for the rule.
    1. **Enabled**. By default the rule will be enabled. It's good practice to use the slider to disable the rule so that it won’t be applied to incoming Records until you’ve tested it.              
 
-    [match.png](/img/cloud-siem-enterprise/match.png)
+    ![match.png](/img/cloud-siem-enterprise/match.png)
 
 ## Configure "Then Create a Signal" settings
 
@@ -75,7 +75,7 @@ After creating a rule expression, you can test it against existing Records in CS
 1. If no matches were returned, try changing the time range. 
 
 :::note
-If you use the Test Rule feature on a rule that has one or more [Rule Tuning Expressions](/Cloud_SIEM_Enterprise/CSE_Rules/Rule_Tuning_Expressions), you can test it without the tuning expressions, or with selected tuning expressions.
+If you use the Test Rule feature on a rule that has one or more [Rule Tuning Expressions](rule-tuning-expressions.md), you can test it without the tuning expressions, or with selected tuning expressions.
 :::
 
 ## Configure “Then Create a Signal” settings

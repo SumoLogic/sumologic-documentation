@@ -4,7 +4,7 @@ id: cse-record-types
 
 # CSE Record Types
 
-This topic defines the Record Types that CSE supports. For related information, see [Attributes You Can Map to Records](03Attributes_You_Can_Map_to_Records.md "Attributes You Can Map to Records"). 
+This topic defines the Record Types that CSE supports. For related information, see [Attributes You Can Map to Records](attributes-map-to-records.md). 
 
 Each message that CSE maps must be assigned one, and only one, Record Type.
 

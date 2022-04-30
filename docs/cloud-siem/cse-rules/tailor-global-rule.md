@@ -12,7 +12,7 @@ You can override selected rule fields in all CSE rule types: Match, Threshold, C
 You cannot override fields in legacy rules—rules whose ID looks like LEGACY-*xxxxxxx*.
 :::
 
-If you want to tailor a rule expression—the expression to which incoming Records are compared—see [Rule Tuning Expressions](Rule_Tuning_Expressions.md "Rule Tuning Expressions").
+If you want to tailor a rule expression—the expression to which incoming Records are compared—see [Rule Tuning Expressions](rule-tuning-expressions.md).
 
 ## Signal generation fields you can override
 
@@ -31,8 +31,7 @@ You can override any of the settings in the **Then Create a Signal** section on 
 
 ## “If triggered” fields you can override
 
-You can override some of the fields in the **If Triggered** section on the left side of the Rules editor. What you can edit depends on the rule type. The table below lists the rule settings that you can override for each rule type. See [Screenshots](./Tailor_a_Global_Rule.md "Tailor a Global Rule") below
-for a visual overview.
+You can override some of the fields in the **If Triggered** section on the left side of the Rules editor. What you can edit depends on the rule type. The table below lists the rule settings that you can override for each rule type. See [Screenshots](tailor-global-rule.md) below for a visual overview.
 
 | Rule type | What you can override |
 |--|--|

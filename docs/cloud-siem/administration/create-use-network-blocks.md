@@ -7,7 +7,7 @@ id: create-use-network-blocks
 This topic describes *Network Blocks* and their purpose, and provides instructions for setting them up and using them.
 
 :::note
-If all you need to know is what enrichment fields CSE adds to Records that contain IP addresses in Network Blocks, you can jump to [Network Blocks and enrichment fields](./Create_and_Use_Network_Blocks.md "Create and Use Network Blocks") below.
+If all you need to know is what enrichment fields CSE adds to Records that contain IP addresses in Network Blocks, you can jump to [Network Blocks and enrichment fields](create-use-network-blocks.md) below.
 :::
 
 In CSE, a Network Block is a CIDR block of IP addresses from your infrastructure that you label to provide context that can be leveraged in rules and is helpful in investigating Insights. For example, you could label one Network Block “Server Network” and another one “Workstations”.
@@ -73,7 +73,7 @@ Blocks](./Create_and_Use_Network_Blocks.md "Create and Use Network Blocks Title"
 1. On the **Create Network Block** popup:
     1. **Address Block**. Enter a CIDR block that identifies a contiguous range of IP addresses.
     1. **Label**. Enter a meaningful name for the Network Block.
-    1. **Internal**. Leave the toggle switched to the right (green) if you want to mark IP addresses that match the network block as Internal. This allows you to filter on the IP addresses in rule expressions, as described below in [Using enrichment fields](./Create_and_Use_Network_Blocks.md "Create and Use Network Blocks"), below.
+    1. **Internal**. Leave the toggle switched to the right (green) if you want to mark IP addresses that match the network block as Internal. This allows you to filter on the IP addresses in rule expressions, as described below in [Using enrichment fields](create-use-network-blocks.md), below.
     1. **Suppress Signals**. Leave the toggle switched to the left (red) if you don't want to suppress Signals on IP addresses in the Network Block. Otherwise, switch the toggle to the right (green).
     1. Click **Create**.  
         ![create-network-block.png](/img/cloud-siem-enterprise/create-network-block.png)
