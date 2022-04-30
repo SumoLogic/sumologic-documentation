@@ -47,13 +47,13 @@ Before you configure a Lookup Table in CSE, you must create the Lookup Table in 
 
 You can create Lookup Tables from information about hosts and users–known as inventory data–in your environment. Inventory data is collected by CIP inventory sources, typically by an Active Directory source running on a Sumo Logic Installed Collector, and also by sources that leverage the Sumo Logic Cloud-to-Cloud Integration Framework.
 
-This method–the typical way to populate a Lookup Table for the purpose of Entity normalization–involves running a log search against data collected by a CSE Inventory source, and then saving and scheduling the search. This process is described in the [Save Inventory Data to a Lookup Table](Save_Inventory_Data_to_a_Lookup_Table.md "Save Inventory Data to a Lookup Table") topic. After creating the table, perform the steps in [Configure the Lookup Table in CSE](./Configure_an_Entity_Lookup_Table.md "Configure an Entity Lookup Table"), below.
+This method–the typical way to populate a Lookup Table for the purpose of Entity normalization–involves running a log search against data collected by a CSE Inventory source, and then saving and scheduling the search. This process is described in the [Save Inventory Data to a Lookup Table](save-inventory-data-lookup-table.md)  topic. After creating the table, perform the steps in [Configure the Lookup Table in CSE](#configure-an-entity-lookup-table), below.
 
 ### Existing lookups
 
 If you already have a Lookup Table that contains normalization data, you can configure it in CSE. Or, if you have existing normalization data that is not currently in a Lookup Table you can create a Lookup Table with that data. Note that your Lookup Table must contain a field that contains a lookup value and one that contains a substitution value. There is no requirement for particular column names.
 
-For instructions, see the Create a Lookup Table topic. After creating the table, perform the steps in [Configure the Lookup Table in CSE](./Configure_an_Entity_Lookup_Table.md "Configure an Entity Lookup Table"), below.
+For instructions, see the Create a Lookup Table topic. After creating the table, perform the steps in [Configure the Lookup Table in CSE](#configure-an-entity-lookup-table), below.
 
 ### Configure the Lookup Table in CSE
 

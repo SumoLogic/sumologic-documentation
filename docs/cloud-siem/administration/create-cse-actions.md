@@ -21,7 +21,7 @@ You can use CSE Actions to issue a notification to another service when certain 
 * Slack
 * Slack Webhook
 
-An Action can be configured for Insight-related activity as described below in [Insight Actions](./Create_CSE_Actions.md "Create CSE Actions"). You can also configure an Action to be run when a rule is automatically disabled, as described below in [Rule Actions](./Create_CSE_Actions.md "Create CSE Actions").
+An Action can be configured for Insight-related activity as described below in [Insight Actions](create-cse-actions.md#insight-actions). You can also configure an Action to be run when a rule is automatically disabled, as described below in [Rule Actions](create-cse-actions.md#rule-actions).
 
 ## Insight Actions
 
@@ -30,7 +30,7 @@ You can configure an Action to send information about an Insight to another syst
 What gets sent to the target system depends on the Action type. For some types—Slack, HipChat, Microsoft Teams, and PagerDuty—the notification contains a summary of the Insight with the following information:
 
 * The Entity the Insight fired on.
-* The [MITRE tactic](https://attack.mitre.org/ "https://attack.mitre.org/") or tactics that form a portion of the Insight ID, which indicates which stage of the MITRE framework the Insight relates to. In the example below, the “Initial Access” tactic is shown.
+* The [MITRE tactic](https://attack.mitre.org/) or tactics that form a portion of the Insight ID, which indicates which stage of the MITRE framework the Insight relates to. In the example below, the “Initial Access” tactic is shown.
 * A link to the Insight in CSE.  
     
     ![received-email.png](/img/cloud-siem-enterprise/received-email.png)
@@ -61,16 +61,16 @@ The notification sent by a Rule Action contains the name of the rule and the re
     * **Rule**. Click **When Automatically Disabled** to generate a notification when CSE disables a rule.
 1. **Active**. Move the slider to the right if you’d like the Action to be enabled upon creation.
 1. **Type**. Choose one of the following options, and follow the instructions for that Action type to complete creating your Action.
-    * [AWS Simple Notification Service](./Create_CSE_Actions.md "Create CSE Actions")
-    * [Demisto](./Create_CSE_Actions.md "Create CSE Actions")
-    * [Email](./Create_CSE_Actions.md "Create CSE Actions")
-    * [HTTP POST v2](./Create_CSE_Actions.md "Create CSE Actions")
-    * [HipChat](./Create_CSE_Actions.md "Create CSE Actions")
-    * [Microsoft Teams](./Create_CSE_Actions.md "Create CSE Actions")
-    * [PagerDuty](./Create_CSE_Actions.md "Create CSE Actions")
-    * [Recorded Future](./Create_CSE_Actions.md "Create CSE Actions")
-    * [Slack](./Create_CSE_Actions.md "Create CSE Actions")
-    * [Slack Webhook](./Create_CSE_Actions.md "Create CSE Actions")
+    * [AWS Simple Notification Service](#aws-simple-notification-service-sns)
+    * [Demisto](#demisto-corex-xsoar)
+    * [Email](#email)
+    * [HTTP POST v2](#http-post-v2)
+    * [HipChat](#hipchat)
+    * [Microsoft Teams](#microsoft-teams)
+    * [PagerDuty](#pagerduty)
+    * [Recorded Future](#recorded-future)
+    * [Slack](#slack)
+    * [Slack Webhook](#slack-webhook)
 
 ### AWS Simple Notification Service (SNS)
 
@@ -110,14 +110,14 @@ This Action type sends an email notification.
 When this Action runs on an Insight, the email notification contains:
 
 * The Entity the Insight fired on.
-* The [MITRE tactic](https://attack.mitre.org/ "https://attack.mitre.org/") or tactics that form a portion of the Insight ID, which indicates which stage of the MITRE framework the Insight relates to.
+* The [MITRE tactic](https://attack.mitre.org/) or tactics that form a portion of the Insight ID, which indicates which stage of the MITRE framework the Insight relates to.
 * A link to the Insight in CSE.
 
 ### HTTP POST v2
 
 This Action type sends a HTTP POST notification. For an Insight Action, the notification contains the full Insight in JSON format. You can optionally configure the Action to send the Signals and Records associated with the Insight as well.
 
-The output of the HTTP POST notification is the same as the JSON output from the  `/insight/:id` API endpoint. For information about accessing API documentation, see [CSE APIs](CSE_APIs.md "CSE APIs").
+The output of the HTTP POST notification is the same as the JSON output from the  `/insight/:id` API endpoint. For information about accessing API documentation, see [CSE APIs](cse-apis.md).
 
 Once you select HTTP POST v2  in the Type field a new **Notification** option—**When Closed**—appears, as highlighted in the screenshot below. Choose this if you want to send a notification when an Insight is closed
 in CSE.
@@ -145,10 +145,7 @@ This Action type sends a message to a HipChat room.
 When this Action type is run on an Insight, the message contains:
 
 * The Entity the Insight fired on.
-* The [MITRE
-    tactic](https://attack.mitre.org/ "https://attack.mitre.org/") or
-    tactics that form a portion of the Insight ID, which indicates which
-    stage of the MITRE framework the Insight relates to. 
+* The [MITRE tactic](https://attack.mitre.org/) or tactics that form a portion of the Insight ID, which indicates which stage of the MITRE framework the Insight relates to. 
 * A link to the Insight in CSE.
 
 ### Microsoft Teams
@@ -157,10 +154,7 @@ This Action type sends a Webhook notification to Microsoft Teams.
 
 #### Configure Webhook connection in Microsoft Teams
 
-Create a Webhook connection for the Microsoft Teams channel to which
-emails should be sent. Follow the instructions in [Create Incoming
-Webhook](https://docs.microsoft.com/en-us/microsoftteams/platform/webhooks-and-connectors/how-to/add-incoming-webhook "https://docs.microsoft.com/en-us/microsoftteams/platform/webhooks-and-connectors/how-to/add-incoming-webhook")
-in Microsoft help.
+Create a Webhook connection for the Microsoft Teams channel to which emails should be sent. Follow the instructions in [Create Incoming Webhook](https://docs.microsoft.com/en-us/microsoftteams/platform/webhooks-and-connectors/how-to/add-incoming-webhook) in Microsoft help.
 
 #### Configure Action in CSE
 
@@ -181,10 +175,7 @@ This Action types sends a notification to PagerDuty.
 The notification contains:
 
 * The Entity the Insight fired on.
-* The [MITRE
-    tactic](https://attack.mitre.org/ "https://attack.mitre.org/") or
-    tactics that form a portion of the Insight ID, which indicates which
-    stage of the MITRE framework the Insight relates to. 
+* The [MITRE tactic](https://attack.mitre.org/) or tactics that form a portion of the Insight ID, which indicates which stage of the MITRE framework the Insight relates to. 
 * A link to the Insight in CSE.
 
 ### Recorded Future

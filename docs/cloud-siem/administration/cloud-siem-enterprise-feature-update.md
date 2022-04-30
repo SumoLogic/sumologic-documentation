@@ -10,16 +10,16 @@ This topic describes what customers can expect from the February 2022 Cloud SIEM
 
 Several new CSE enhancements are included in this feature update. They include:
 
-* **Audit Logging for CSE**—CSE now writes data to customers’ Sumo Logic Audit Event Index whenever there are system or user actions, such as an Insight changing state. This data can be used for a number of use cases in addition to auditing, such as dashboards, notifications, and other actions. For more information, see Audit Event Index.
-* **Terraform Provider for CSE**—Users can now utilize the open-source Hashicorp Terraform tool to load content such as Rules, Custom Entity Types, Entity Criticality, Log Mappings, Network Blocks and more into Cloud SIEM Enterprise. For more information, see [Sumo Logic Provider](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs "https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs").
-* **Entity Normalization Lookup Tables—** Lookup tables can now be used to normalize user names and hostnames in cases where different logs use different names/IDs to refer to the same entity. For more information, see [Configure an Entity Lookup Table](../Records,_Signals,_Entities,_and_Insights/Configure_an_Entity_Lookup_Table.md "Configure an Entity Lookup Table").
-* **Child Organization Provisioning and Consolidated Insights**—Customers who have child organizations, such as service providers with their own clients, can provision those children without requiring Sumo Logic intervention. In addition, Insights from child organizations can be viewed in a single consolidated list in the CSE UI. These features require setup by Sumo Logic.
+* **Audit Logging for CSE** - CSE now writes data to customers’ Sumo Logic Audit Event Index whenever there are system or user actions, such as an Insight changing state. This data can be used for a number of use cases in addition to auditing, such as dashboards, notifications, and other actions. For more information, see Audit Event Index.
+* **Terraform Provider for CSE** — Users can now utilize the open-source Hashicorp Terraform tool to load content such as Rules, Custom Entity Types, Entity Criticality, Log Mappings, Network Blocks and more into Cloud SIEM Enterprise. For more information, see [Sumo Logic Provider](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs).
+* **Entity Normalization Lookup Tables** - Lookup tables can now be used to normalize user names and hostnames in cases where different logs use different names/IDs to refer to the same entity. For more information, see [Configure an Entity Lookup Table](../records-signals-entities-insights/configure-entity-lookup-table.md) .
+* **Child Organization Provisioning and Consolidated Insights** — Customers who have child organizations, such as service providers with their own clients, can provision those children without requiring Sumo Logic intervention. In addition, Insights from child organizations can be viewed in a single consolidated list in the CSE UI. These features require setup by Sumo Logic.
 
 ## User interface URLs
 
 The root URL for CSE will now be on the same sumologic.com domain as your existing Sumo Login platform URL, such as `https://customername.region.sumologic.com/sec/` (depending on the region and whether a custom subdomain has been defined). URLs will no longer contain `portal.jask.ai`. Users will all log in via the consolidated Sumo Logic login page using the same authentication method as previously served from `portal.jask.ai`.
 
-This change will also impact the CSE APIs; see [API URLs and Authentication](./Cloud_SIEM_Enterprise_Feature_Update_(2022).md "Cloud SIEM Enterprise Platform Update (2022)") below.
+This change will also impact the CSE APIs; see [API URLs and Authentication](#api-urls-and-authentication) below.
 
 ## User management
 
@@ -39,11 +39,11 @@ Customers that are using CSE APIs prior to the update should be ready for this c
 
 ## Insight Enrichment Server configuration
 
-If you use the [Insight Enrichment Server](../Integrations/Insight_Enrichment_Server.md "Insight Enrichment Server"), be sure to update the server’s configuration settings  with the correct URL for connecting to the CSE APIs, and your access ID and key. For information about Insight Enrichment Server configuration settings,see [General settings](../Integrations/Insight_Enrichment_Server.md "Insight Enrichment Server") in the *Insight Enrichment Server* topic. 
+If you use the [Insight Enrichment Server](../integrations/insight-enrichment-server.md), be sure to update the server’s configuration settings  with the correct URL for connecting to the CSE APIs, and your access ID and key. For information about Insight Enrichment Server configuration settings,see [General settings](../integrations/insight-enrichment-server.md) in the *Insight Enrichment Server* topic. 
 
 ## Deprecated CSE pages
 
 The following CSE UI pages will be removed by this update:
 
 * The **Accounts**, **Invitations**, **Roles,** and **Teams** pages; these are now managed centrally in the Sumo Logic platform UI. For more information, see Users and Roles.
-* The **Sensors** page; sensors are now managed by the platform UI. For current download links, see [Sensor Download Locations](../CSE_Sensors/01_Sensor_Download_Locations.md "Sensor Download Locations").
+* The **Sensors** page; sensors are now managed by the platform UI. For current download links, see [Sensor Download Locations](../cse-sensors/sensor-download-locations.md).
