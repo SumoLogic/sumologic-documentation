@@ -4,8 +4,7 @@ slug: /cloud-siem-enterprise
 
 # Cloud SIEM Enterprise
 
-Cloud SIEM Enterprise (CSE) is a cloud-based SIEM that provides the
-following functionality: 
+Cloud SIEM Enterprise (CSE) is a cloud-based SIEM that provides the following functionality: 
 
 * Collection of log and event data from your infrastructure and
     applications, on-premise and in-cloud.
