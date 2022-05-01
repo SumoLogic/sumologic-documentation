@@ -74,9 +74,9 @@ To create a role:
 
 | Permission | Description |
 |--|--|
-| Create Rules | Create [Rules](/docs/cloud-siem-enterprise/cse-rules/index.md). |
-| Delete Rules | Delete [Rules](/docs/cloud-siem-enterprise/cse-rules/index.md). |
-| Edit Rules | Edit [Rules](/docs/cloud-siem-enterprise/cse-rules/index.md). |
+| Create Rules | Create [Rules](/docs/cloud-siem-enterprise/cse-rules). |
+| Delete Rules | Delete [Rules](/docs/cloud-siem-enterprise/cse-rules). |
+| Edit Rules | Edit [Rules](/docs/cloud-siem-enterprise/cse-rules). |
 | Manage Threat Intelligence | Create, edit, and delete threat intelligence sources. |
 | Manage Match Lists | Create, edit, and delete [Match Lists](../match-lists-suppressed-lists/create-match-list.md). |
 | Manage File Analysis | Create, edit, and delete [YARA rules](../cse-rules/import-yara-rules.md). |

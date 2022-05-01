@@ -14,8 +14,7 @@ file. Depending on the sensor version, the path is:
 * v1.8 and later: `C:\ProgramData\Sumo Logic\CSE Windows Sensor\settings.conf`
 * Prior to v1.8: `C:\ProgramData\JASK\Windows Sensor\settings.conf`
 
-For an example configuration files, see [Example settings.conf](./06_Windows_Sensor_Configuration_Settings.md "Windows Sensor Configuration Settings")
-files.
+For an example configuration files, see [Example settings.conf](#example-settingsconf-files) files.
 
 :::note
 * Required options must have values for the Windows Sensor to run.
@@ -329,7 +328,7 @@ This option is not in `settings.conf` by default. Add this option to enable the 
 
 **Default**:  
 
-**Description**: Specifies the machine for the sensor to monitor for forwarded events.  Valid only if [EventLogForwarderEnable](./06_Windows_Sensor_Configuration_Settings.md "Windows Sensor Configuration Settings") is set to true. |
+**Description**: Specifies the machine for the sensor to monitor for forwarded events.  Valid only if [EventLogForwarderEnable](#eventlogforwarderenable) is set to true. |
 
 ## EventLogForwarderLogName
 
@@ -341,7 +340,7 @@ This option is not in `settings.conf` by default. Add this option to enable the 
 
 **Default**: ForwardedEvents
 
-**Description**: Specifies the log names to monitor for Forwarded Events, when using the WEC monitor. Valid only if [EventLogForwarderEnable](/Cloud_SIEM_Enterprise/CSE_Sensors/06_Windows_Sensor_Configuration_Settings#EventLogFowarderEnable) is set to true. Other valid Microsoft Event Logs names include "Security" and "Application". You can also specify your own custom log channels. Setting available in sensor versions 1.9 and higher.
+**Description**: Specifies the log names to monitor for Forwarded Events, when using the WEC monitor. Valid only if [EventLogForwarderEnable](#eventlogforwarderenable) is set to true. Other valid Microsoft Event Logs names include "Security" and "Application". You can also specify your own custom log channels. Setting available in sensor versions 1.9 and higher.
 
 For backwards-compatibility, the service will combine the legacy setting [EventLogForwarderLogName](#eventlogforwarderlogname) (if specified) with the list of [EventLogForwarderLogNames](#eventlogforwarderlognames) (if specified).  If neither setting is specified in the configuration file, it will default to monitor only the “ForwardedEvents” log.
 

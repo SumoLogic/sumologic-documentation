@@ -46,7 +46,7 @@ In this step, you configure a Syslog Source to collect Cisco ASA log messages. Y
 1. **Description**. (Optional) 
 1. **Protocol**. Select the protocol that your syslog-enabled devices are currently using to send syslog data, UDP or TCP. For more information, see Choosing TCP or UDP on the *Syslog Source* page.
 1. **Port**. Enter the port number for the Source to listen to. If the collector runs as root (default), use 514. Otherwise, consider 1514 or 5140. Make sure the devices are sending to the same port.
-1. **Source Category**. Enter a string to tag the output collected from the source. The string that you supply will be saved in a metadata field called `_sourceCategory`. Make a note of the source category. You’ll supply it in [Step 2](Linux_OS_Syslog.md "Linux OS Syslog") below.
+1. **Source Category**. Enter a string to tag the output collected from the source. The string that you supply will be saved in a metadata field called `_sourceCategory`. Make a note of the source category. You’ll supply it in [Step 2](#step-2-configure-cisco-asa) below.
 1. **Fields**. 
     * If you *have not* configured the Installed Collector to forward all sources in the collector to CSE, click the **+Add Field** link, and add a field whose name is `_siemForward` and value is *true*.
     * If you *have not* configured the Installed Collector to parse all sources in the collector with the same parser, click the **+Add Field** link, and add a field whose name is `_parser` with the value */Parsers/System/Cisco/Cisco ASA*. 
@@ -63,6 +63,6 @@ In this step, you verify that your logs are successfully making it into CSE. 
 1. Click the gear icon at the top of the CSE UI, and select **Log Mappings** under **Incoming Data**.  
     ![log-mappings-link.png](/img/cloud-siem-enterprise/log-mappings-link.png)
 1. On the **Log Mappings** page search for "Cisco ASA" and check under **Record Volume.** A list of mappers for Cisco ASA Syslog will appear and you can see if logs are coming in.   
-    ![cisco-asa-record-volume.png](../static/img/CSE_Ingestion/Cisco_ASA/cisco-asa-record-volume.png)
+    ![cisco-asa-record-volume.png](/img/cloud-siem-enterprise/cisco-asa-record-volume.png)
 1. For a more granular look at the incoming Records, you can also use search the Sumo Logic platform for Cisco ASA security records.  
-    ![cisco-asa-search.png](../static/img/CSE_Ingestion/Cisco_ASA/cisco-asa-search.png)
+    ![cisco-asa-search.png](/img/cloud-siem-enterprise/cisco-asa-search.png)

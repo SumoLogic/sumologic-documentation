@@ -57,7 +57,7 @@ If the name of the list you are referencing with `array_contains` contains any
 
 If any of the IP addresses within the Record match one of the “vuln_scanner” IPs, the `listMatches` field will have a value of \['vuln_scanners'\]. Thus, the check above will effectively prevent Signals from firing for those rules on the scanner IP addresses.
 
-For more information about referring to Suppressed List data in rules, see [Match Lists](../CSE_Rules/01_About_CSE_Rules.md "About CSE Rules") in the *About CSE Rules* topic.
+For more information about referring to Suppressed List data in rules, see [Match Lists](../cse-rules/about-cse-rules.md) in the *About CSE Rules* topic.
 
 ## Suppressed List or Match List?
 

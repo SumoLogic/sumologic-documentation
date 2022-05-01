@@ -63,10 +63,7 @@ will return the more-specific block, "bar".
 
 ## Create a Network Block manually
 
-Follow these instructions to create a Network Block using the CSI UI.
-For information about creating multiple Network Blocks by file upload,
-see [Upload a CSV file of Network
-Blocks](./Create_and_Use_Network_Blocks.md "Create and Use Network Blocks Title").
+Follow these instructions to create a Network Block using the CSI UI. For information about creating multiple Network Blocks by file upload, see [Upload a CSV file of Network Blocks](create-use-network-blocks.md).
 
 1. Choose **Network Blocks** from the Content menu.  
     ![content-network-blocks.png](/img/cloud-siem-enterprise/content-network-blocks.png)

@@ -26,7 +26,7 @@ Here’s a screenshot of the Entities page.
 1. The Import Metadata option allows you to upload a .csv file of updates to Entity tags, suppression state, and Criticality, as described in [Update Multiple Entities](#update-multiple-entities).
 1. Shows the Entity Type and its value. 
 1. The **Criticality** column shows whether a [Criticality](entity-criticality.md) has been assigned to the Entity. A Criticality adjusts the severity of Signals for specific Entities based on some risk factor or other consideration. If a Criticality hasn't been assigned to an Entity, the column contains "default".
-1. The current Activity Score for the Entity, which by default is the sum of the severities of the Signals that have fired on the Entity over the previous two weeks. For more information, see [Understanding Entity Activity Scores](00Insight_Generation_Process.md "Insight Generation Process"), in the *Insight Generation Process* topic.
+1. The current Activity Score for the Entity, which by default is the sum of the severities of the Signals that have fired on the Entity over the previous two weeks. For more information, see [Understanding Entity Activity Scores](insight-generation-process.md), in the *Insight Generation Process* topic.
 1. If you see a link below the Entity value, it’s a [tag](tags-insights-signals-entities-rules.md). You can click it to filter Entities by that tag.
 1. If an Entity has the **Suppressed** indicator, that means that Signals will not be fired on the Entity.  
 

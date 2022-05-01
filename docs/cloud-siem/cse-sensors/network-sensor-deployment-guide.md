@@ -401,7 +401,7 @@ Configured by wizard? No
 
 ### no_data_cutoff
 
-**Description.** Threshold used to determine when data is being captured by the Network Sensor (value is in Records per second). When Records per second is below this threshold for a status report interval (default is 5 minutes) the report will be counted towards [no_data_restart_threshold](./11_Network_Sensor_Deployment_Guide.md "Network Sensor Deployment Guide"). Use this parameter to tune automatic restarts of the Network Sensor when no data is being captured/reported (requires `no_data_restart_threshold` to be set, the recommended value for this parameter is 3, as described below ).
+**Description.** Threshold used to determine when data is being captured by the Network Sensor (value is in Records per second). When Records per second is below this threshold for a status report interval (default is 5 minutes) the report will be counted towards [no_data_restart_threshold](#no_data_restart_threshold). Use this parameter to tune automatic restarts of the Network Sensor when no data is being captured/reported (requires `no_data_restart_threshold` to be set, the recommended value for this parameter is 3, as described below ).
 
 **Default value.** 3
 

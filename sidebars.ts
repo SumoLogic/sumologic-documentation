@@ -3,10 +3,9 @@
  Add content to the following sections in this sidebar Navigation file:
 
   Manage: Admin level options, collection, connections, etc
-  Alerts: Alerts, Monitors, SLOs, Health Events, Connections 
-  Dashboards: Create Dash, Library of Dashboards
-  Logs: Log Search, All Log Searches, Livetail, Lookup, Log Config
-  Metrics: Metrics Search, All Metrics Searches, Config
+  Dashboards & Visuals: New and Classic Dashboards, Library of Dashboards, Alerts, Monitors, Alerts, Monitors, SLOs, Health Events, Connections 
+  Searches & Logs: Log Search, All Log Searches, Livetail, Lookup, Log Config
+  Metrics & Logs: Metrics Search, All Metrics Searches, Config
   Infrastructure Monitoring: Kubernetes, AWS Observability, Root Cause Explorer,
   APM: Application Monitoring (Applications, Services, Service Map, Transaction traces, Span analytics, Root Cause Explorer), RUM
   Incidents Management: Incidents, Triage, Entities, Playbooks
@@ -77,7 +76,7 @@ module.exports = {
       ],
     },
     {
-      //Add a category and docs per quickstart guide
+// *** QUICKSTARTS & TUTORIALS 
       type: 'category',
       label: 'Quickstarts and Tutorials',
       collapsible: true,
@@ -100,6 +99,7 @@ module.exports = {
       ],
      },
   ],
+// ***   MANAGE CONTENT: Admin level options, collection, connections, etc
   manage: [
     'manage/manage',
     {
@@ -434,6 +434,7 @@ module.exports = {
     'manage/health-events',
     'manage/fields',
   ],
+// *** DASHBOARDS and VISUALS: 
   dashboards: [
     {
       type: 'category',
@@ -609,8 +610,8 @@ module.exports = {
       ],
     },
   ],
+// *** SEARCHES & LOGS: all search functionality
   searchlogs: [
-    //Navigation for Search, Logs
     'search/index',
     {
       type: 'category',
@@ -968,6 +969,7 @@ module.exports = {
       ],
     },
   ],
+// *** METRICS & LOGS: all metrics content
   metricslogs: [
     'metrics/metrics',
     {
@@ -1071,6 +1073,7 @@ module.exports = {
     'metrics/kubernetes-metrics',
     'metrics/logs-to-metrics',
   ],
+// *** INTEGRATIONS: Sumo Logic Apps, no longer called APPS
   integrations: [
     'integrations/integrations',
     {
@@ -1086,12 +1089,13 @@ module.exports = {
       ],
     },
   ],
+// OTHER FEATURES: Global Intelligence, SDO, CSE
   other: [
     {
       type: 'category',
       label: 'Global Intelligence',
       collapsible: true,
-      collapsed: false,
+      collapsed: true,
       link: {type: 'doc', id: 'global-intelligence/index'},
       items: [
         {
@@ -1133,7 +1137,7 @@ module.exports = {
       type: 'category',
       label: 'SDO',
       collapsible: true,
-      collapsed: false,
+      collapsed: true,
       link: {type: 'doc', id: 'sdo/index'},
       items: [
         'sdo/about-sdo',
@@ -1142,7 +1146,7 @@ module.exports = {
           type: 'category',
           label: 'Set Up SDO Solution',
           collapsible: true,
-          collapsed: false,
+          collapsed: true,
           link: {type: 'doc', id: 'sdo/set-up-sdo/index'},
           items: [
             'sdo/set-up-sdo/sdo-manual-configuration',
@@ -1154,6 +1158,25 @@ module.exports = {
         'sdo/view-sdo-dashboards',
         'sdo/integrate-tools-with-sdo',
         'sdo/jenkins-plugin-build-deploy-events',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Cloud SIEM Enterprise',
+      collapsible: true,
+      collapsed: false,
+      link: {type: 'doc', id: 'cloud-siem/index.md'},
+      items: [
+        {
+          type: 'category',
+          label: 'Administration',
+          collapsible: true,
+          collapsed: false,
+          link: {type: 'doc', id: 'cloud-siem/administration/index.md'},
+          items: [
+            'cloud-siem/administration',
+          ],
+        },
       ],
     },
   ],

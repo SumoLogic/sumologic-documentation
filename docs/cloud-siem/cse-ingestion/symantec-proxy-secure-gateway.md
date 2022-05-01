@@ -66,7 +66,7 @@ In this step, you configure a Syslog Source to collect ProxySG log messages. Yo
 
 ## Step 2: Configure Symantec Proxy Secure Gateway
 
-Instructions for [Sending Access Logs to a Syslog server](./Symantec_Proxy_Secure_Gateway.md "Symantec Proxy Secure Gateway") are available on the Broadcom knowledge site.
+Instructions for [Sending Access Logs to a Syslog server](symantec-proxy-secure-gateway.md) are available on the Broadcom knowledge site.
 
 ## Step 3: Verify Ingestion
 

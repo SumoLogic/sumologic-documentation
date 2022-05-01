@@ -76,7 +76,7 @@ The table below shows the `_sourceCategory` that is assigned to event logs by CS
 | [Network Block](create-use-network-blocks.md) | `cseNetworkBlock` |
 | [Streaming Export Configuration](../cse-ingestion/sumo-logic-ingest-mapping.md)  | `cseStreamingExportConfiguration` |
 | [Sumo Mapping](../cse-ingestion/sumo-logic-ingest-mapping.md)  | `cseSumoMapping` |
-| [Suppressed List](/docs/cloud-siem-enterprise/match-lists-suppressed-lists/index.md)  | `cseSuppressList` |
+| [Suppressed List](/docs/cloud-siem-enterprise/match-lists-suppressed-lists)  | `cseSuppressList` |
 | Templated Match Rule  | `cseRule` |
 | Threat Intel Sources<br/>(Applies to all source types on the **Threat Intel** page.) | `cseThreatIntelSource` |
 | [Threshold Rule](../cse-rules/write-threshold-rule.md) | `cseRule` |

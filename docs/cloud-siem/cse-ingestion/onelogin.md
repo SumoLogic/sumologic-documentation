@@ -44,7 +44,7 @@ It’s also possible to configure individual sources to forward to CSE, as descr
 1. **Fields.** If you are not parsing all sources in the hosted collector with the same parser, click the **+Add Field** link, and add a field whose name is `_parser` with value */Parsers/System/OneLogin/OneLogin SSO JSON*.
 1. **Advanced Options for Logs**. For information about the optional advance options you can configure, see HTTP Logs and Metrics Source.
 1. Click **Save**.
-1. Make a note of the **HTTP Source URL** that is displayed. You’ll supply it in [Step 2](./OneLogin.md "OneLogin") below.
+1. Make a note of the **HTTP Source URL** that is displayed. You’ll supply it in [Step 2](#step-2-configure-onelogin) below.
 
 ## Step 2: Configure OneLogin
 

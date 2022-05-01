@@ -11,7 +11,7 @@ This page has information about accessing the CSE APIs and API documentation. Th
 
 ## Access APIs from Sumo Logic Platform
 
-If your CSE URL ends in `sumologic.com`, follow the instructions in this section. If your CSE URL ends in `jask.ui`, follow the instructions in [Access APIs from CSE](./CSE_APIs.md "CSE APIs").
+If your CSE URL ends in `sumologic.com`, follow the instructions in this section. If your CSE URL ends in `jask.ui`, follow the instructions in [Access APIs from CSE](cse-apis.md).
 
 Your API endpoint depends on your Sumo Logic deployment. For a list of Sumo Logic API endpoints by deployment, see Sumo Logic Endpoints and Firewall Security. Your endpoint will look something like this:
 

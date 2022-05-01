@@ -20,7 +20,7 @@ In this step, you configure an Microsoft 365 Audit Source to collect Microsoft 3
 1. Click **Add Collector**.
 1. Click **Hosted Collector.**
 1. The **Add Hosted Collector** popup appears.  
-    ![add-hosted-collector.png](/img/cloud-siem-enterprise/../AWS_VPC_Flow/add-hosted-collector.png)
+    ![add-hosted-collector.png](/img/cloud-siem-enterprise/add-hosted-collector.png)
 1. **Name**. Provide a Name for the Collector.
 1. **Description**. (Optional)
 1. **Category**. Enter a string to tag the output collected from the source. The string that you supply will be saved in a metadata field called `_sourceCategory`. 

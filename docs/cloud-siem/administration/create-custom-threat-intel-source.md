@@ -33,12 +33,12 @@ information in rules, see [Threat Intel](../cse-rules/about-cse-rules.md) in the
 
 1. Click the Content menu and select **Threat Intelligence**.
 1. Click **Add Source** on the **Threat Intelligence** page.  
-    ![threat-intel-page2.png](../static/img/Administration/Create_a_Custom_Threat_Intel_Source/threat-intel-page2.png)
+    ![threat-intel-page2.png](/img/cloud-siem-enterprise/threat-intel-page2.png)
 1. Click **Custom** on the **Add Source** popup.  
-    ![custom-button.png](../static/img/Administration/Create_a_Custom_Threat_Intel_Source/custom-button.png)
+    ![custom-button.png](/img/cloud-siem-enterprise/custom-button.png)
 1. On the **Add New Source** popup, enter a name, and if desired, a
     description for the source.  
-    ![add-custom-source.png](../static/img/Administration/Create_a_Custom_Threat_Intel_Source/add-custom-source.png)
+    ![add-custom-source.png](/img/cloud-siem-enterprise/add-custom-source.png)
 1. Click **Add Custom Source**.
 
 Your new source should now appear on the **Threat Intelligence** page.
@@ -47,10 +47,10 @@ Your new source should now appear on the **Threat Intelligence** page.
 
 1. On the **Threat Intelligence** page, click the name of the source
     you want to update.  
-    ![click-name.png](../static/img/Administration/Create_a_Custom_Threat_Intel_Source/click-name.png)
+    ![click-name.png](/img/cloud-siem-enterprise/click-name.png)
 1. The **Details** page lists any indicators that have previously been
     added and have not expired. Click **Add Indicator**.  
-    ![threat-details.png](../static/img/Administration/Create_a_Custom_Threat_Intel_Source/threat-details.png)
+    ![threat-details.png](/img/cloud-siem-enterprise/threat-details.png)
 1. On the **New Threat Intelligence Indicator** popup.
     1. **Value**. Enter an IP address, hostname, URL, or file hash.
         Your entry must be one of:
@@ -65,7 +65,7 @@ Your new source should now appear on the **Threat Intelligence** page.
         click in the field, you’ll be prompted to select a date and
         time.
     1. Click **Add**.  
-        ![import-indicators.png](../static/img/Administration/Create_a_Custom_Threat_Intel_Source/import-indicators.png)
+        ![import-indicators.png](/img/cloud-siem-enterprise/import-indicators.png)
 
 ### Upload a file of indicators 
 

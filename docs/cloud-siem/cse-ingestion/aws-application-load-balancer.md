@@ -57,7 +57,7 @@ It’s also possible to configure individual sources to forward to CSE, as descr
 1. **Fields**.
     1. If you are not forwarding all sources in the hosted collector to CSE, click the **+Add Field** link, and add a field whose name is `_siemForward` and value is *true*. This will ensure all logs for this source are forwarded to CSE.
     1. Add another field named `_parser` with value */Parsers/System/AWS/AWS ALB*.
-1. **AWS Access**. For AWS Access you have two Access Method options. Select **Role-based access** or **Key access** based on the AWS authentication you are providing. Role-based access is preferred. Note that Sumo Logic access to AWS (instructions are provided above in [Step 1](./AWS_Application_Load_Balancer.md "AWS Application Load Balancer from an S3 Source"))  is a prerequisite for role-based access
+1. **AWS Access**. For AWS Access you have two Access Method options. Select **Role-based access** or **Key access** based on the AWS authentication you are providing. Role-based access is preferred. Note that Sumo Logic access to AWS (instructions are provided above in [Step 1](#step-1-enable-aws-application-load-balancer-logs))  is a prerequisite for role-based access
     * **Role-based access**. Enter the Role ARN that was provided by AWS after creating the role.   
         ![role-arn.png](/img/cloud-siem-enterprise/role-arn.png)
     * **Key access**. Enter the Access Key ID and Secret Access Key. See [AWS Access Key ID](http://docs.aws.amazon.com/STS/latest/UsingSTS/UsingTokens.html#RequestWithSTS) and [AWS Secret Access Key](https://aws.amazon.com/iam/) for details.

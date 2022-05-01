@@ -9,7 +9,7 @@ This page has instructions for collecting Corelight Zeek log messages and sendin
 These instructions are for Corelight Zeek logs sent as JSON over syslog.
 
 :::note
-The [CSE Network Sensor](../CSE_Sensors/11_Network_Sensor_Deployment_Guide.md "Network Sensor Deployment Guide") also utilizes Zeek, so if you are using the sensor, using Corelight Zeek would be redundant.
+The [CSE Network Sensor](../cse-sensors/cloud-sensor-guide.md) also utilizes Zeek, so if you are using the sensor, using Corelight Zeek would be redundant.
 ::: 
 
 ## Step 1: Configure collection
@@ -60,14 +60,14 @@ In this step you configure Zeek to send log messages to the Sumo Logic platform.
 In this step, you configure a Sumo Logic Ingest Mapping in CSE for the source category assigned to your source or collector you configured in [Step 1](#step-1-configure-collection). The mapping tells CSE the information it needs to select the right mapper to process messages that have been tagged with that source category. 
 
 1. Click the gear icon at the top of the CSE UI, and select **Sumo Logic** under **Integrations**.  
-    ![integrations-sumologic.png](/img/cloud-siem-enterpriseintegrations-sumologic.png)
+    ![integrations-sumologic.png](/img/cloud-siem-enterprise/integrations-sumologic.png)
 1. On the **Sumo Logic Ingest Mappings** page, click **Create**.  
-    ![ingest-mappipngs.png](/img/cloud-siem-enterpriseingest-mappipngs.png)
+    ![ingest-mappipngs.png](/img/cloud-siem-enterprise/ingest-mappipngs.png)
 1. On the **Create Sumo Logic Mapping** popup:
     1. **Source Category**. Enter the category you assigned to the HTTP Source or Hosted Collector in [Step 1](#step-1-configure-collection). 
     1. **Format**. Enter *Bro/Zeek JSON.*  
     1. **Event ID**. *{\_path}.*  
-        ![corelight-edit-mapping.png](/img/cloud-siem-enterprisecorelight-edit-mapping.png)
+        ![corelight-edit-mapping.png](/img/cloud-siem-enterprise/corelight-edit-mapping.png)
 1. Click **Create** to save the mapping.
 
 ## Step 4: Verify Ingestion
@@ -77,6 +77,6 @@ In this step, you verify that your logs are successfully making it into CSE. 
 1. Click the gear icon at the top of the CSE UI, and select **Log Mappings** under **Incoming Data**.  
     ![log-mappings-link.png](/img/cloud-siem-enterprise/log-mappings-link.png)
 1. On the **Log Mappings** page search for "Zeek" and check under **Record Volume.**   
-    ![corelight-record-volume.png](/img/cloud-siem-enterprisecorelight-record-volume.png)
+    ![corelight-record-volume.png](/img/cloud-siem-enterprise/corelight-record-volume.png)
 1. For a more granular look at the incoming Records, you can also search the Sumo Logic platform for Corelight Zeek security records.  
-    ![corelight-search.png](/img/cloud-siem-enterprisecorelight-search.png)
+    ![corelight-search.png](/img/cloud-siem-enterprise/corelight-search.png)

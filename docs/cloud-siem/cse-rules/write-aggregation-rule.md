@@ -51,7 +51,7 @@ On the left side of the Rules Editor, in the **If Triggered** section, you confi
 ![agg-rule-if-triggered.png](/img/cloud-siem-enterprise/agg-rule-if-triggered.png)
 
 1. **When Records matching the expression**. Enter one or more boolean expressions to filter the Records you want to apply the rule to. For example: `!isNull(http_response_statusCode)`
-1. **grouped by**. Specify the Record field or fields by which aggregation results will be grouped. Note that when you define the **On Entity** field for the rule (in [Configure “Then Create a Signal” settings](./09_Write_an_Aggregation_Rule.md "Write an Aggregation Rule") below), the field you choose will automatically appear here. If you want to aggregate on other fields, you can select them from the selector list.
+1. **grouped by**. Specify the Record field or fields by which aggregation results will be grouped. Note that when you define the **On Entity** field for the rule (in [Configure “Then Create a Signal” settings](#write-an-aggregation-rule) below), the field you choose will automatically appear here. If you want to aggregate on other fields, you can select them from the selector list.
 1. **Within**. Select the length of time across which the rule is applied. The options range from 5 minutes to 5 days.
 1. **have aggregations**. To define an aggregation: 
 
