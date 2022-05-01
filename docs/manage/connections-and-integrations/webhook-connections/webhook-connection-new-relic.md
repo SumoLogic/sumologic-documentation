@@ -8,12 +8,11 @@ New Relic webhook connections allow you to send alert results to New Relic as
 
 [Webhook connections](set-up-webhook-connections.md) rely on HTTP endpoints that tell Sumo Logic where to send data. You can set up any number of connections.
 
-Once you set up the webhook connection you'll have the option to use it in a [Scheduled Search](schedule-searches-webhook-connections.md) or [Monitor] (../../../Visualizations-and-Alerts/Alerts/Monitors.md "Monitors").
+Once you set up the webhook connection you'll have the option to use it in a [Scheduled Search](schedule-searches-webhook-connections.md) or [Monitor](/docs/alerts/monitors).
 
 ## Set up a webhook connection for New Relic
 
-You need the **Manage connections** [role capability] (../../Users-and-Roles/Manage-Roles/05-Role-Capabilities.md "Role Capabilities") to
-create webhook connections.
+You need the **Manage connections** [role capability](../../users-and-roles/roles/role-capabilities.md) tocreate webhook connections.
 
 1. Go to **Manage Data \> Monitoring \> Connections**.
 1. On the Connections page click **Add**.
@@ -42,7 +41,7 @@ For the **Endpoint** and **Insert Key **fields of the webhook, you need to ge
 
 ## Send Events to New Relic Insights using a Webhook
 
-Select the webhook connection in a [Scheduled Search](schedule-searches-webhook-connections.md) or [Monitor] (../../../Visualizations-and-Alerts/Alerts/Monitors.md "Monitors") to send events to New Relic Insights and use the following payload.
+Select the webhook connection in a [Scheduled Search](schedule-searches-webhook-connections.md) or [Monitor](/docs/alerts/monitors) to send events to New Relic Insights and use the following payload.
 
 ```json
 {

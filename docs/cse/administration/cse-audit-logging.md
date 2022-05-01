@@ -62,7 +62,7 @@ The table below shows the `_sourceCategory` that is assigned to event logs by CS
 | [Custom Entity Type](../records-signals-entities-insights/create-custom-entity-type.md) | `cseCustomEntityType` |
 | [Custom Insight](cse-audit-logging.md) | `cseCustomInsight` |
 | [Custom Match List Column](../match-lists-suppressed-lists/custom-match-list-columns.md) | `cseCustomMatchListColumn` |
-| [Custom Tag Schema](/Cloud_SIEM_Enterprise/Administration/Create_a_Custom_Tag_Schema) | `cseCustomTagSchema` |
+| [Custom Tag Schema](create-a-custom-tag-schema.md) | `cseCustomTagSchema` |
 | Customer Sourced Entity Lookup Table | `cseCustomerSourcedEntityLookupTable` |
 | [Entity](../records-signals-entities-insights/view-manage-entities.md)  | `cseEntity` |
 | [Entity Criticality Config](../records-signals-entities-insights/entity-criticality.md) | `cseEntityCriticalityConfig` |

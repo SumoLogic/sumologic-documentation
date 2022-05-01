@@ -6,7 +6,7 @@ id: optimizing-search-with-partitions
 
 ## What are Partitions?
 
-A partition stores your data in an index separate from the rest of your account's data so you can optimize searches, [manage variable retention] (../../Manage/Partitions_and_Data_Tiers/11_Manage_Indexes_with_Variable_Retention.md), and specify certain [data to forward to S3] (../../Manage/Data-Forwarding/Configure-Data-Forwarding-from-Sumo-Logic-to-S3.md ).
+A partition stores your data in an index separate from the rest of your account's data so you can optimize searches, [manage variable retention](../manage/partitions-and-data-tiers/manage-indexes-variable-retention.md), and specify certain [data to forward to S3](../manage/data-forwarding/data-forwarding-to-s3.md).
 
 Partitions route your data to an index becoming a separate subset of data in your account. Creating smaller and separate subsets of data is central to search optimization. When you run a search against an index, results are returned more quickly and efficiently because the search runs against a smaller data set.
 
@@ -25,7 +25,7 @@ Consider the following queries:
 
 * **Query 1**: There are no custom Partitions created and you only have the Default Index, 100% of your data is scanned in order to find all production log messages for the Snort security app.
 * **Query 2**: Partitions do exist, `_index=prod` limits the scope of the query and only about 40% of the data is scanned to get the same results as Query 1. But it is redundant.
-* **Query 3**: You can take advantage of Partitions without having to rewrite your existing queries. Sumo Logic's behind-the-scenes Query Rewriting, performed for queries run against data in the [Continuous Tier] (../../Manage/Partitions_and_Data_Tiers/Data_Tiers.md), is smart enough to understand that the scope of what you are looking for is included within `_index=prod`; therefore at runtime, it will rewrite the query as Query 2.
+* **Query 3**: You can take advantage of Partitions without having to rewrite your existing queries. Sumo Logic's behind-the-scenes Query Rewriting, performed for queries run against data in the [Continuous Tier](../manage/partitions-and-data-tiers/data-tiers.md), is smart enough to understand that the scope of what you are looking for is included within `_index=prod`; therefore at runtime, it will rewrite the query as Query 2.
 * **Query 4**: We want to search for data that is in a custom Partition, as well as data that exists in the Default Index. However, query rewriting does not have the ability to OR indexes together. Instead, another behind-the-scenes feature, Inverse View Rewriting kicks in, we know that the data is NOT contained in the DEV and QA index, so those will be skipped.  This query will only scan the Prod index and the Default Index.
 
 ## What is Query Rewriting?
@@ -56,7 +56,7 @@ This is possible because:
 
 Therefore, defining a broad scope for your Partitions (for example, `_sourceCategory=prod/*`), and searching with `_sourceCategory` allows you to take advantage of query rewriting, and it allows you to potentially not have to manually rewrite your existing queries.
 
-Query rewriting does not affect the volume of data scanned when you run a query in the Infrequent Data Tier, so it has no impact on the [cost of Infrequent queries] (../../Manage/Partitions_and_Data_Tiers/Data_Tiers_FAQs.md).  
+Query rewriting does not affect the volume of data scanned when you run a query in the Infrequent Data Tier, so it has no impact on the [cost of Infrequent queries](../manage/partitions-and-data-tiers/data-tiers-faqs.md).  
 
 ## Create a Partition
 
@@ -116,4 +116,4 @@ In the example above, we used prod/QA/Dev environment, as you will most often be
 
 ### Partitions are great, where can I find more information?
 
-See [Manage Partitions] (../../Manage/Partitions_and_Data_Tiers.md).
+See [Manage Partitions](/docs/manage/partitions-and-data-tiers).

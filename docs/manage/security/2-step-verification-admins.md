@@ -21,7 +21,7 @@ To configure the 2-Step Verification policy for your organization:
 
 ## Manage 2-Step Verification for your organization
 
-An administrator with the [role capability] (../../Users-and-Roles/Manage-Roles/05-Role-Capabilities.md "Role Capabilities") to manage users and roles can perform the following 2-Step Verification management functions for an organization.
+An administrator with the [role capability](../users-and-roles/roles/role-capabilities.md) to manage users and roles can perform the following 2-Step Verification management functions for an organization.
 
 **View 2-Step Verification status**. The **2SV** column on the **Administration** \> **Users and Roles** \> **Users** page shows a green check mark if 2-Step Verification is enabled for a user.
 

@@ -12,7 +12,7 @@ Currently, you can only share a Dashboard (New) within your organization.
 
 Sharing dashboards allow you to extend the insights you gain from Sumo Logic with others within your organization. You can specify specific permissions for the user with whom you share the dashboard, as well as controlling the data that appears in the dashboard. 
 
-When you share a dashboard, you specify the dashboard access rights for the users—View, Edit, or Manage. Dashboard access rights are described in the [Available Permission Levels] (../../Manage/Content_Sharing/Share-Content.md "Share Content") section of the [Share Content] (../../Manage/Content_Sharing/Share-Content.md "Share Content") page.
+When you share a dashboard, you specify the dashboard access rights for the users—View, Edit, or Manage. Dashboard access rights are described in the [Available Permission Levels](../manage/content-sharing/share-content.md#available-permission-levels) section of the [Share Content](../manage/content-sharing/share-content.md) page.
 
 You can grant the same access right to everyone with whom you share the dashboard. Or, you can give some users View access, other users Edit access, and other users Manage access. If you are going to grant different access rights to different users, be prepared with lists of users and the access level you want to grant to each.
 
@@ -42,7 +42,7 @@ To share a dashboard within your organization, do the following:
     If you choose **Your Entire Organization**, all users in your organization will be granted the access permissions you specify in the next step. 
 
 1. In the **Access** area, select the user permissions you want to grant from the drop-down list: **Edit**, **View**, or **Manage.** 
-1. Optionally, select **Advanced Access** option to allow users to grant view access to others. For more information, see the [Available Permission Levels] (../../Manage/Content_Sharing/Share-Content.md "Share Content") section of the [Share Content] (../../Manage/Content_Sharing/Share-Content.md "Share Content") page.
+1. Optionally, select **Advanced Access** option to allow users to grant view access to others. For more information, see the [Available Permission Levels](../manage/content-sharing/share-content.md#available-permission-levels) section of the [Share Content](../manage/content-sharing/share-content.md) page.
 
     ![ShareDashboard_Advanced_Access.png](/img/dashboards-new/share-dashboard-new/ShareDashboard_Advanced_Access.png)
 

@@ -28,12 +28,11 @@ To send webhook alerts to Jira Server you need to include a Basic Authentication
 In Sumo Logic, Scheduled Searches and Monitors send alerts to other tools via webhook connections. To send alerts from Sumo Logic to Jira Server:
 
 1. [Create a Webhook Connection](#create-a-webhook-connection).
-1. Use the Webhook Connection as the Alert Type in a [Scheduled Search](../schedule-searches-webhook-connections.md) or the Connection Type in a [Monitor] (../../../../Visualizations-and-Alerts/Alerts/Monitors.md "Monitors").
+1. Use the Webhook Connection as the Alert Type in a [Scheduled Search](../schedule-searches-webhook-connections.md) or the Connection Type in a [Monitor](/docs/alerts/monitors).
 
 ## Create a Webhook Connection
 
-You need the **Manage connections** [role capability] (../../../Users-and-Roles/Manage-Roles/05-Role-Capabilities.md "Role Capabilities") to
-create webhook connections.
+You need the **Manage connections** [role capability](../../../users-and-roles/roles/role-capabilities.md) to create webhook connections.
 
 1. Go to **Manage Data \> Monitoring \> Connections**.
 1. On the **Connections** page click the **+** icon at the top-right of the table.

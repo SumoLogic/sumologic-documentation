@@ -7,7 +7,7 @@ id: edit-partition
 This page has instructions for editing a partition.  
 
 :::important
-To edit a partition you must be an admin or have the Manage Partitions [role capability] (../Users-and-Roles/Manage-Roles/05-Role-Capabilities.md "Role Capabilities"). Partitions apply to data from the date they are created (going forward only), and do not include data before the date of their creation.
+To edit a partition you must be an admin or have the Manage Partitions [role capability](../users-and-roles/roles/role-capabilities.md). Partitions apply to data from the date they are created (going forward only), and do not include data before the date of their creation.
 :::
 
 When you create a partition, you specify the Data Tier where the partition will reside, a routing expression that determines what data is stored in the partition, and a retention period. Optionally, you can enable data forwarding of the partition’s data to an S3 bucket.  
@@ -42,7 +42,7 @@ Before changing the routing expression for a partition, consider the impact of t
 
     ![edit-partition-pane.png](/img/partitions-and-data-tiers/edit-partition-pane.png)
 
-1. **Routing Expression**.  Enter a [keyword search expression](../../search/get-started-with-search/build-search/keyword-search-expressions.md) that matches the data you want to have in the partition, using [built-in metadata](../../search/get-started-with-search/search-basics/built-in-metadata.md) or [custom metadata fields] (../Fields.md "Fields").
+1. **Routing Expression**.  Enter a [keyword search expression](../../search/get-started-with-search/build-search/keyword-search-expressions.md) that matches the data you want to have in the partition, using [built-in metadata](../../search/get-started-with-search/search-basics/built-in-metadata.md) or [custom metadata fields](../fields.md).
 1. **Retention Period.** Enter the number of days you wish to retain the data in the partition, or click **Apply the retention period of the Default Continuous Index**.
 1. **Data Forwarding**. You can configure Data Forwarding, or if Data Forwarding is already configured, modify the configuration. For more information, see [Data Forwarding](/docs/manage/data-forwarding).
 

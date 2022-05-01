@@ -16,7 +16,7 @@ You can also:
 * **Delete** Connections. 
 * View the **Details** of Connections. 
 
-To be able to create a connection, the Manage Connection [role capability] (Users-and-Roles/Manage-Roles/05-Role-Capabilities.md) must be set. Contact your administrator for assistance.
+To be able to create a connection, the Manage Connection [role capability](../users-and-roles/roles/role-capabilities.md) must be set. Contact your administrator for assistance.
 
 Sumo Logic also provides integrations for:
 

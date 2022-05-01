@@ -27,7 +27,7 @@ You can assign any of the following capabilities when you [create roles](creat
 | Manage Content | Manage the content for your organization. This provides access to [Admin Mode](../../content-sharing/admin-mode.md) in the Library. |
 | Manage Tokens | Manage [Installation Tokens](../../security/installation-tokens.md). |
 | View Account Overview | View the Account Overview page. |
-| View Parsers | View [Parsers] (/Cloud_SIEM_Enterprise/CSE_Schema/Parser_Editor). |
+| View Parsers | View [Parsers](../../../cse/cse-schema/parser-editor.md). |
 
 
 ## Metrics

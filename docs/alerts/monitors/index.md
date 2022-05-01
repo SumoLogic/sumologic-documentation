@@ -14,9 +14,9 @@ See details on how [Scheduled Searches are different](difference-scheduled-searc
 
 ## Rules
 
-* You need the **Manage** or **View Monitors** [role capability] (../../Manage/Users-and-Roles/Manage-Roles/05-Role-Capabilities.md "Role Capabilities") to manage or view Monitors respectively.
+* You need the **Manage** or **View Monitors** [role capability](../../manage/users-and-roles/roles/role-capabilities.md)) to manage or view Monitors respectively.
 * The frequency a Monitor executes depends upon a variety of factors such as the underlying query, the operators used, and the detection window. It can vary from a couple of seconds to a few minutes. If for example, the detection window of your alert is one day it will be evaluated every couple of minutes, whereas if the detection window of the monitor is 15 minutes then it will be evaluated every couple of seconds.
-* Log Monitors use the [role search filter] (../../Manage/Users-and-Roles/Manage-Roles/07-Construct-a-Search-Filter-for-a-Role.md "Construct a Search Filter for a Role") of their creator.
+* Log Monitors use the [role search filter](../../manage/users-and-roles/roles/construct-search-filter-for-role.md) of their creator.
 * Log Monitors delay execution by two minutes. This means it won't evaluate data from the current time, but evaluate data from two minutes ago.  This ensures that any delays in ingestion are factored in and won't generate false positive or false negative alerts.
 * Metric Monitors delay execution by one minute.
 * Depending on your account type, you can have up to a certain number of Log and Metric Monitors. 
@@ -30,7 +30,7 @@ See details on how [Scheduled Searches are different](difference-scheduled-searc
 * [Receipt Time](../../search/get-started-with-search/build-search/use-receipt-time.md) is not supported.
 * Monitors only support the [Continuous data tier](../../manage/partitions-and-data-tiers/data-tiers.md).
 * An aggregate Metric Monitor can evaluate up to 15,000 time series. A non-aggregate Metric Monitor can evaluate up to 3,000 time series.
-* [Save to Index] (Scheduled-Searches/Save_to_Index.md "Save to Index") and [Save to Lookup] (Scheduled-Searches/Save_to_Lookup.md "Save to Lookup") are not supported.
+* [Save to Index](../scheduled-searches/save-to-index.md) and [Save to Lookup](../scheduled-searches/save-to-lookup.md) are not supported.
 * [Search templates](../../search/get-started-with-search/build-search/search-templates.md) are not supported.
 * A Log Monitor can have one query up to 4,000 characters long. Metric Monitors can specify up to six queries.
 * Email notifications can have up to 100 recipients.

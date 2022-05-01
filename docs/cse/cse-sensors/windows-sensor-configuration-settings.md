@@ -97,7 +97,7 @@ https://social.technet.microsoft.com/wiki/contents/articles/5392.active-director
 
 **Default**: 1000
 
-**Description**: This setting relates to the [Active Directory Monitor](windows-sensor-overview.md#active-directory-monitor). Specifies how many records to append to the Active Directory dump file before stopping to send the file. This value works with the [DirectoryQueueMaxFileOpenTime](/Cloud_SIEM_Enterprise/CSE_Sensors/06_Windows_Sensor_Configuration_Settings#DirectoryQueueMaxFileOpenTime) setting to control how long the Windows Sensor waits before sending a file to which it is still appending.
+**Description**: This setting relates to the [Active Directory Monitor](windows-sensor-overview.md#active-directory-monitor). Specifies how many records to append to the Active Directory dump file before stopping to send the file. This value works with the [DirectoryQueueMaxFileOpenTime](#directoryqueuemaxfileopentime) setting to control how long the Windows Sensor waits before sending a file to which it is still appending.
 
 ## DirectoryMaxBytes
 

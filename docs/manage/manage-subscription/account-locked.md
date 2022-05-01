@@ -10,7 +10,7 @@ If you see the following message when you try to log into Sumo Logic, your acco
 
 If you try to log into your account several times and fail, you will be locked out of your account for security reasons. The default configured lockout period is 30 minutes, which occurs after six failed login attempts within a 10 minute period, though your account lockout settings may be configured differently. 
 
-Administrators can [unlock a user's account] (../Users-and-Roles/Manage-Users/07-Unlock-a-User's-Account.md), though they are not required to do so. Your account will be unlocked once the lockout period has passed.
+Administrators can [unlock a user's account](../users-and-roles/roles/role-capabilities.md), though they are not required to do so. Your account will be unlocked once the lockout period has passed.
 
 You can always contact your administrator to determine the lockout period configured for your account if it has been customized. Lockout settings are configured by your Sumo Logic administrator via the **Administration \> Security** \> **Password Policy**. 
 
