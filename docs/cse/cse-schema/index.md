@@ -1,5 +1,5 @@
 ---
-id: cse-schema
+slug: /cse/cse-schema
 ---
 
 # CSE Schema

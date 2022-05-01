@@ -1,5 +1,5 @@
 ---
-id: cse-rules
+slug: /cse/cse-rules
 ---
 
 # CSE Rules
