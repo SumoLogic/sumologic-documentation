@@ -165,7 +165,7 @@ To create a local configuration:
     ![three-dot.png](/img/cse/three-dot.png)
 1. The parser editor opens. The parser code is shown in the **System Configuration** area.
 
-    ![system-parser-edit- button.png](/img/cse/system-parser-edit-%20button.png)
+    ![system-parser-edit- button.png](/img/cse/system-parser-edit-button.png)
 1. Paste your custom parser code in the **Local Configuration** area.
 1. Use one of the methods in **Get test messages** above, and then click **Parse Logs**.
 
