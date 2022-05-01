@@ -296,24 +296,6 @@ module.exports = {
                 ],
               },
               {
-                // 6
-                label: 'Other Solutions',
-                items: [
-                  {
-                    label: 'Global Intelligence',
-                    sublabel: 'Review security issues',
-                    to: '/docs/global-intelligence',
-                    icon: 'format_list_bulleted',
-                  },
-                  {
-                    label: 'SDO Solution',
-                    sublabel: 'Software Development Optimization',
-                    to: '/docs/sdo',
-                    icon: 'code',
-                  },
-                ],
-              },
-              {
                 // 4
                 label: 'Security',
                 items: [
@@ -349,6 +331,31 @@ module.exports = {
                   },
                 ],
               },
+              {
+                // 6
+                label: 'Other Solutions',
+                items: [
+                  {
+                    label: 'Global Intelligence',
+                    sublabel: 'Review security issues',
+                    to: '/docs/global-intelligence',
+                    icon: 'format_list_bulleted',
+                  },
+                  {
+                    label: 'SDO Solution',
+                    sublabel: 'Software Development Optimization',
+                    to: '/docs/sdo',
+                    icon: 'code',
+                  },
+                  {
+                    label: 'CSE',
+                    sublabel: 'Cloud SIEM Enterprise',
+                    to: '/docs/cse',
+                    icon: 'security',
+                  },
+                ],
+              },
+              
             ],
           },
           {
