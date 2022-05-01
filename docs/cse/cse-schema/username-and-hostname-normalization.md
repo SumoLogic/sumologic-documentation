@@ -157,10 +157,10 @@ Name forms matching the default domain would look like:
 
 | Username String (raw) | Normalized Value      |
 |-----------------------|-----------------------|
-| bob                   | bob                   |
-| SUMO\\bob             | bob                   |
-| bob@sumologic.com     | bob                   |
-| fred@jask.com         | fred:jask             |
-| JASK\\fred            | fred:jask             |
-| bob@someothername.com | bob@someothername.com |
-| OTHERDOMAIN\\suzy     | otherdomain\\suzy     |
+| `bob`                   | `bob`                   |
+| `SUMO\bob`              | `bob`                   |
+| `bob@sumologic.com`     | `bob`                   |
+| `fred@jask.com`         | `fred:jask`            |
+| `JASK\fred`             | `fred:jask`             |
+| `bob@someothername.com` | `bob@someothername.com` |
+| `OTHERDOMAIN\suzy`      | `otherdomain\suzy`     |

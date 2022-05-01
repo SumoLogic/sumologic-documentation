@@ -153,7 +153,7 @@ The system configuration and local configuration are separate, so your customiza
 
 You can use a local configuration to override any statement in a system parser, and add additional logic to the parser using any of the statements supported by the parsing language.
 
-One use case for a local configuration to override one or more of a parser’s time handling statements. For example, if the logs to be parsed don’t have a timestamp, you could set [START_TIME_FIELD](parsing-language-reference-guide.md = `_messagetime`. This causes the CIP message time to be used as the `_starttime` in the field dictionary your parser creates from a message. Or, if the time formats in the logs to be parsed don't exactly match the format that a system parser assumes, you use a local configuration to specify a different [TIME_PARSER](parsing-language-reference-guide.md setting.
+One use case for a local configuration to override one or more of a parser’s time handling statements. For example, if the logs to be parsed don’t have a timestamp, you could set [START_TIME_FIELD](parsing-language-reference-guide.md = `_messagetime`. This causes the CIP message time to be used as the `_starttime` in the field dictionary your parser creates from a message. Or, if the time formats in the logs to be parsed don't exactly match the format that a system parser assumes, you use a local configuration to specify a different [TIME_PARSER](parsing-language-reference-guide.md) setting.
 
 Another common reason to set up a local configuration is to pre-parse the content of a JSON object. If your parser is going to process an encapsulated JSON object, you can use a local configuration to pre-parse the original log message from the object.
 

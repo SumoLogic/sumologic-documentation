@@ -1181,7 +1181,7 @@ module.exports = {
           type: 'category',
           label: 'CSE Ingestion',
           collapsible: true,
-          collapsed: false,
+          collapsed: true,
           link: {type: 'doc', id: 'cse/cse-ingestion/index'},
           items: [
             'cse/cse-ingestion/cse-ingestion-best-practices',
@@ -1223,7 +1223,7 @@ module.exports = {
           type: 'category',
           label: 'CSE Rules',
           collapsible: true,
-          collapsed: false,
+          collapsed: true,
           link: {type: 'doc', id: 'cse/cse-rules/index'},
           items: [
             'cse/cse-rules/about-cse-rules',
@@ -1244,7 +1244,7 @@ module.exports = {
           type: 'category',
           label: 'CSE Schema',
           collapsible: true,
-          collapsed: false,
+          collapsed: true,
           link: {type: 'doc', id: 'cse/cse-schema/index'},
           items: [
             'cse/cse-schema/record-processing-pipeline',
@@ -1263,7 +1263,7 @@ module.exports = {
           type: 'category',
           label: 'CSE Sensors',
           collapsible: true,
-          collapsed: false,
+          collapsed: true,
           link: {type: 'doc', id: 'cse/cse-sensors/index'},
           items: [
             'cse/cse-sensors/sensor-download-locations',
@@ -1283,7 +1283,7 @@ module.exports = {
           type: 'category',
           label: 'Integrations',
           collapsible: true,
-          collapsed: false,
+          collapsed: true,
           link: {type: 'doc', id: 'cse/integrations/index'},
           items: [
             'cse/integrations/configuring-threatq-source-in-cse',
@@ -1298,7 +1298,7 @@ module.exports = {
           type: 'category',
           label: 'Match Lists and Suppressed Lists',
           collapsible: true,
-          collapsed: false,
+          collapsed: true,
           link: {type: 'doc', id: 'cse/match-lists-suppressed-lists/index'},
           items: [
             'cse/match-lists-suppressed-lists/create-match-list',
@@ -1312,7 +1312,7 @@ module.exports = {
           type: 'category',
           label: 'Records, Signals, Entities, and Insights',
           collapsible: true,
-          collapsed: false,
+          collapsed: true,
           link: {type: 'doc', id: 'cse/records-signals-entities-insights/index'},
           items: [
             'cse/records-signals-entities-insights/insight-generation-process',

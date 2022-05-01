@@ -14,6 +14,7 @@ Here’s a use case for using a Match List to define an allow list:  Vulnerabil
 
 :::tip
 There’s no reason you can’t use a Match List to define “deny lists” of items. However, CSE’s Threat Intel feature is designed for exactly that purpose. Most of the time, but not always, you should use Threat Intel lists for negative indicators. For more information, see [Match Lists or Threat Intel: which to use?](#match-list-or-threat-intel-which-to-use).
+:::
 
 Here’s an example of a Match List in the CSE UI, at **Content \> Match Lists**. It is a list of trusted domains.  
   
