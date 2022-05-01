@@ -6,7 +6,7 @@ slug: /dashboards-new
 
 Dashboard (New) allows you to analyze metric and log data on the same dashboard, in a streamlined user experience. This is exactly what you need to effectively monitor and manage a Kubernetes environment.
 
-Sumo Logic classic [Dashboards] (../Dashboards.md) are still available. Now, you have two dashboard options. This page outlines the key differences between the classic Dashboard platform and Dashboard (New), and outlines recommended [best practices](#best-practices) for when to use each. 
+Sumo Logic classic [Dashboards](/docs/dashboards) are still available. Now, you have two dashboard options. This page outlines the key differences between the classic Dashboard platform and Dashboard (New), and outlines recommended [best practices](#best-practices) for when to use each. 
 
 Dashboards are a critical tool for monitoring and troubleshooting modern applications, allowing you to quickly navigate through your data without having to learn a query language. Graphs and data mappings provide visual representations of data that enable you to quickly identify and resolve key issues.
 
@@ -24,8 +24,7 @@ Dashboard (New) differs from classic Dashboards in the following ways:  
 * Dashboard (New) provides a dashboard-first view to build, maintain, and interact with dashboards. With Dashboard (New) you can build panels inside the dashboard rather than adding panels from the Search or Metrics pages.
 * Dashboard (New) utilizes the [metrics query builder] with an improved full text auto-complete capabilities, so you can quickly find the metrics you are looking for.
 
-See the [feature differences table](#feature-differences-between-classic-and-dashboard-new) for a
-complete comparison.
+See the [feature differences table](#feature-differences-between-classic-and-dashboard-new) for a complete comparison.
 
 ## Restricted Operators in Dashboard (New)
 
