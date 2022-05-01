@@ -113,7 +113,7 @@ In this step you configure a Sumo Logic Source on Sumo Logic CIP to receive the 
 
     ![CSEWindowsSensorInstall_03c.jpg](/img/cse/CSEWindowsSensorInstall_03c.jpg)
 1. The installer confirms that the account validation succeeded. Click **OK** to proceed.
-    ![CSEWindowsSensorInstall_03e.jpg](/img/cse/CSEWindowsSensorInstall_03e.jpg)
+    ![CSEWindowsSensorInstall_03e.jpg](/img/cse/CSEWindowsSensorInstall_03e.jpeg)
 1. The installer prompts you to enter a Sensor address which is the URL to which the sensor will send the data it collects. Enter the Sumo Logic HTTP Source URL that you copied and saved when you created the HTTP source. An HTTP Source URL starts like this: `https://collectors.sumologic.com/receiver/v1/http/…`
 1. The installer reports that the installation is completing. Click **Finish**.
 1. Follow the instructions in [Verify the service is running](#verify-the-service-is-running) below.
