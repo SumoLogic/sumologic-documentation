@@ -1165,16 +1165,16 @@ module.exports = {
       label: 'Cloud SIEM Enterprise',
       collapsible: true,
       collapsed: false,
-      link: {type: 'doc', id: 'cloud-siem/index.md'},
+      link: {type: 'doc', id: 'cse/index.md'},
       items: [
         {
           type: 'category',
           label: 'Administration',
           collapsible: true,
           collapsed: false,
-          link: {type: 'doc', id: 'cloud-siem/administration/index.md'},
+          link: {type: 'doc', id: 'cse/administration/index.md'},
           items: [
-            'cloud-siem/administration',
+            'cse/administration',
           ],
         },
       ],
