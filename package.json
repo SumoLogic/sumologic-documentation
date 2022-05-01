@@ -15,10 +15,10 @@
   },
   "dependencies": {
     "@braintree/sanitize-url": "^6.0.0",
-    "@docusaurus/core": "2.0.0-beta.17",
-    "@docusaurus/plugin-client-redirects": "2.0.0-beta.17",
-    "@docusaurus/preset-classic": "2.0.0-beta.17",
-    "@docusaurus/theme-search-algolia": "2.0.0-beta.17",
+    "@docusaurus/core": "2.0.0-beta.18",
+    "@docusaurus/plugin-client-redirects": "2.0.0-beta.18",
+    "@docusaurus/preset-classic": "2.0.0-beta.18",
+    "@docusaurus/theme-search-algolia": "2.0.0-beta.18",
     "@fortawesome/fontawesome-svg-core": "^1.2.36",
     "@fortawesome/free-brands-svg-icons": "^5.15.4",
     "@fortawesome/free-solid-svg-icons": "^5.15.4",
@@ -66,7 +66,7 @@
     ]
   },
   "devDependencies": {
-    "@docusaurus/module-type-aliases": "2.0.0-beta.17",
+    "@docusaurus/module-type-aliases": "2.0.0-beta.18",
     "@tsconfig/docusaurus": "^1.0.4",
     "@types/react": "^17.0.0",
     "@types/webpack-env": "^1.16.3",

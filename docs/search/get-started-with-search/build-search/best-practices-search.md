@@ -17,7 +17,7 @@ test your search against a shorter time range first, then extend the time range 
 
 ## Use fields extracted by FERs and avoid the where operator
 
-Whenever possible, use keyword searches and fields already extracted using [Field Extraction Rules] (../../../Manage/Field-Extractions.md "Manage Field Extractions") (FERs) to filter data instead of using the [where] (../../search-query-language/search-operators/where.md "where") operator. If it is not possible to only use a keyword or pre-extracted field, use both a keyword search AND the where clause.
+Whenever possible, use keyword searches and fields already extracted using [Field Extraction Rules](/docs/manage/field-extractions) (FERs) to filter data instead of using the [where](../../search-query-language/search-operators/where.md) operator. If it is not possible to only use a keyword or pre-extracted field, use both a keyword search AND the where clause.
 
 **Best approach:** Field Extraction Rule field AND keyword
 
@@ -41,7 +41,7 @@ _sourceCategory=foo | parse "somefield *" as somefield | where somefield="valuea
 
 ## Filter your data before aggregation
 
-When filtering data, make the result set you are working with as small as possible before conducting [aggregate] (../../search-query-language/group-aggregate-operators "Group") operations like sum, min, max, and average. According to [Be specific with search scope](#be-specific-with-search-scope), keywords and metadata in your search scope are the priority. If you must use a `where` clause, refer to [Use fields extracted by FERs and avoid the where operator](#use-fields-extracted-by-fers-and-avoid-the-where-operator).
+When filtering data, make the result set you are working with as small as possible before conducting [aggregate](/docs/search/search-query-language/group-aggregate-operators) operations like sum, min, max, and average. According to [Be specific with search scope](#be-specific-with-search-scope), keywords and metadata in your search scope are the priority. If you must use a `where` clause, refer to [Use fields extracted by FERs and avoid the where operator](#use-fields-extracted-by-fers-and-avoid-the-where-operator).
 
 **Best approach:**
 
@@ -59,7 +59,7 @@ _sourceCategory=Prod/User/Eventlog | count by user | where user="john"
 
 ## Use parse anchor instead of parse regex for structured messages
 
-According to [Use fields extracts by FERs and avoid the where operator](#use-fields-extracted-by-fers-and-avoid-the-where-operator), it is best to use pre-extracted fields. If you need to parse a field that is not pre-extracted, use [parse anchor] (../../search-query-language/parse-operators/01-Parse-Predictable-Patterns-Using-an-Anchor.md). If you are dealing with unstructured messages that are more complex, leverage [parse regex] (../../search-query-language/parse-operators/02-Parse-Variable-Patterns-Using-Regex.md) and place it in a Field Extraction Rule.
+According to [Use fields extracts by FERs and avoid the where operator](#use-fields-extracted-by-fers-and-avoid-the-where-operator), it is best to use pre-extracted fields. If you need to parse a field that is not pre-extracted, use [parse anchor](../../search-query-language/parse-operators/parse-predictable-patterns-using-an-anchor.md). If you are dealing with unstructured messages that are more complex, leverage [parse regex](../../search-query-language/parse-operators/parse-variable-patterns-using-regex.md) and place it in a Field Extraction Rule.
 
 ## When using parse regex avoid expensive tokens
 
@@ -94,7 +94,7 @@ If your search contains filtering criteria that could change each time the sear
 
 ## Aggregate before a lookup
 
-Whenever possible, you should aggregate data prior to doing a [lookup] (../../search-query-language/search-operators/lookup-classic.md). In some cases, this will significantly reduce the amount of data the lookup is referencing.
+Whenever possible, you should aggregate data prior to doing a [lookup](../../search-query-language/search-operators/lookup-classic.md). In some cases, this will significantly reduce the amount of data the lookup is referencing.
 
 **Best approach:**
 
@@ -128,4 +128,4 @@ _sourceCategory=Apache/Access and GET | parse "\"GET * HTTP/1.1\"\" * * \"\"*\"\
 ## Pin searches with long time ranges
 
 A query with a longer time range can run past the default time window for Sumo Logic. To protect against an interruption in a query with a
-significant time range, [pin it] (../../../01Start-Here/Library/Pinned-Searches.md). A pinned search can run in the background for up to 24 hours.
+significant time range, [pin it](../../../get-started/library/search-the-library.md#pinned-searches). A pinned search can run in the background for up to 24 hours.

@@ -20,7 +20,7 @@ You define the data that will reside in a partition by defining a routing expres
 
 ## Limitations 
 
-* To create and manage partitions, you must be an Admin or you must have the Manage Partitions [role capability] (../Users-and-Roles/Manage-Roles/05-Role-Capabilities.md "Role Capabilities"). 
+* To create and manage partitions, you must be an Admin or you must have the Manage Partitions [role capability](../users-and-roles/roles/role-capabilities.md). 
 * There is a limit of 50 partitions per account.
 * You can make the following edits to an existing partition:
 

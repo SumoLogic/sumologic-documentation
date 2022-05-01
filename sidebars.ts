@@ -3,10 +3,9 @@
  Add content to the following sections in this sidebar Navigation file:
 
   Manage: Admin level options, collection, connections, etc
-  Alerts: Alerts, Monitors, SLOs, Health Events, Connections 
-  Dashboards: Create Dash, Library of Dashboards
-  Logs: Log Search, All Log Searches, Livetail, Lookup, Log Config
-  Metrics: Metrics Search, All Metrics Searches, Config
+  Dashboards & Visuals: New and Classic Dashboards, Library of Dashboards, Alerts, Monitors, Alerts, Monitors, SLOs, Health Events, Connections 
+  Searches & Logs: Log Search, All Log Searches, Livetail, Lookup, Log Config
+  Metrics & Logs: Metrics Search, All Metrics Searches, Config
   Infrastructure Monitoring: Kubernetes, AWS Observability, Root Cause Explorer,
   APM: Application Monitoring (Applications, Services, Service Map, Transaction traces, Span analytics, Root Cause Explorer), RUM
   Incidents Management: Incidents, Triage, Entities, Playbooks
@@ -77,7 +76,7 @@ module.exports = {
       ],
     },
     {
-      //Add a category and docs per quickstart guide
+// *** QUICKSTARTS & TUTORIALS 
       type: 'category',
       label: 'Quickstarts and Tutorials',
       collapsible: true,
@@ -89,17 +88,8 @@ module.exports = {
         'quickstart/quickstart-k8s',
       ],
     },
-    {
-      //Put in stuff to test, will be moved later!
-      type: 'category',
-      label: 'Converted Docs',
-      collapsible: true,
-      collapsed: true,
-      items: [
-        'CSE/global-intel'
-      ],
-     },
   ],
+// ***   MANAGE CONTENT: Admin level options, collection, connections, etc
   manage: [
     'manage/manage',
     {
@@ -434,6 +424,7 @@ module.exports = {
     'manage/health-events',
     'manage/fields',
   ],
+// *** DASHBOARDS and VISUALS: 
   dashboards: [
     {
       type: 'category',
@@ -609,8 +600,8 @@ module.exports = {
       ],
     },
   ],
+// *** SEARCHES & LOGS: all search functionality
   searchlogs: [
-    //Navigation for Search, Logs
     'search/index',
     {
       type: 'category',
@@ -968,6 +959,7 @@ module.exports = {
       ],
     },
   ],
+// *** METRICS & LOGS: all metrics content
   metricslogs: [
     'metrics/metrics',
     {
@@ -1071,6 +1063,7 @@ module.exports = {
     'metrics/kubernetes-metrics',
     'metrics/logs-to-metrics',
   ],
+// *** INTEGRATIONS: Sumo Logic Apps, no longer called APPS
   integrations: [
     'integrations/integrations',
     {
@@ -1086,12 +1079,13 @@ module.exports = {
       ],
     },
   ],
+// OTHER FEATURES: Global Intelligence, SDO, CSE
   other: [
     {
       type: 'category',
       label: 'Global Intelligence',
       collapsible: true,
-      collapsed: false,
+      collapsed: true,
       link: {type: 'doc', id: 'global-intelligence/index'},
       items: [
         {
@@ -1133,7 +1127,7 @@ module.exports = {
       type: 'category',
       label: 'SDO',
       collapsible: true,
-      collapsed: false,
+      collapsed: true,
       link: {type: 'doc', id: 'sdo/index'},
       items: [
         'sdo/about-sdo',
@@ -1142,7 +1136,7 @@ module.exports = {
           type: 'category',
           label: 'Set Up SDO Solution',
           collapsible: true,
-          collapsed: false,
+          collapsed: true,
           link: {type: 'doc', id: 'sdo/set-up-sdo/index'},
           items: [
             'sdo/set-up-sdo/sdo-manual-configuration',
@@ -1154,6 +1148,190 @@ module.exports = {
         'sdo/view-sdo-dashboards',
         'sdo/integrate-tools-with-sdo',
         'sdo/jenkins-plugin-build-deploy-events',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Cloud SIEM Enterprise',
+      collapsible: true,
+      collapsed: true,
+      link: {type: 'doc', id: 'cse/index'},
+      items: [
+        {
+          type: 'category',
+          label: 'Administration',
+          collapsible: true,
+          collapsed: true,
+          link: {type: 'doc', id: 'cse/administration/index'},
+          items: [
+            'cse/administration/cloud-siem-enterprise-feature-update',
+            'cse/administration/create-use-network-blocks',
+            'cse/administration/create-a-custom-tag-schema',
+            'cse/administration/create-custom-threat-intel-source',
+            'cse/administration/create-cse-actions',
+            'cse/administration/create-cse-context-actions',
+            'cse/administration/cse-apis',
+            'cse/administration/cse-audit-logging',
+            'cse/administration/cse-user-accounts-and-roles',
+            'cse/administration/manage-custom-insight-resolutions',
+            'cse/administration/manage-custom-insight-statuses',
+          ],
+        },
+        {
+          type: 'category',
+          label: 'CSE Ingestion',
+          collapsible: true,
+          collapsed: false,
+          link: {type: 'doc', id: 'cse/cse-ingestion/index'},
+          items: [
+            'cse/cse-ingestion/cse-ingestion-best-practices',
+            'cse/cse-ingestion/products-with-log-mappings',
+            'cse/cse-ingestion/view-mappers-for-product',
+            'cse/cse-ingestion/auth',
+            'cse/cse-ingestion/aws-application-load-balancer',
+            'cse/cse-ingestion/aws-cloudtrail',
+            'cse/cse-ingestion/aws-guardduty',
+            'cse/cse-ingestion/aws-network-firewall',
+            'cse/cse-ingestion/aws-vpc-flow',
+            'cse/cse-ingestion/check-point-firewall',
+            'cse/cse-ingestion/cisco-asa',
+            'cse/cse-ingestion/cisco-meraki',
+            'cse/cse-ingestion/corelight-zeek',
+            'cse/cse-ingestion/fortigate-firewall',
+            'cse/cse-ingestion/google-g-suite-apps-audit',
+            'cse/cse-ingestion/g-suite-alert-center',
+            'cse/cse-ingestion/kemp-loadmaster',
+            'cse/cse-ingestion/linux-os-syslog',
+            'cse/cse-ingestion/microsoft-audit-office',
+            'cse/cse-ingestion/microsoft-azure-activity-log',
+            'cse/cse-ingestion/microsoft-windows',
+            'cse/cse-ingestion/nginx-access-logs',
+            'cse/cse-ingestion/okta',
+            'cse/cse-ingestion/onelogin',
+            'cse/cse-ingestion/osquery',
+            'cse/cse-ingestion/palo-alto-firewall',
+            'cse/cse-ingestion/sentinelone',
+            'cse/cse-ingestion/signal-sciences-waf',
+            'cse/cse-ingestion/symantec-proxy-secure-gateway',
+            'cse/cse-ingestion/symantec-proxy-secure-gateway-blue-coat-proxy',
+            'cse/cse-ingestion/zscaler-nss',
+            'cse/cse-ingestion/zscaler-private-access',
+            'cse/cse-ingestion/sumo-logic-ingest-mapping',
+          ],
+        },
+        {
+          type: 'category',
+          label: 'CSE Rules',
+          collapsible: true,
+          collapsed: false,
+          link: {type: 'doc', id: 'cse/cse-rules/index'},
+          items: [
+            'cse/cse-rules/about-cse-rules',
+            'cse/cse-rules/before-writing-custom-rule',
+            'cse/cse-rules/write-match-rule',
+            'cse/cse-rules/write-chain-rule',
+            'cse/cse-rules/write-aggregation-rule',
+            'cse/cse-rules/cse-rules-syntax',
+            'cse/cse-rules/cse-built-in-rules',
+            'cse/cse-rules/import-yara-rules',
+            'cse/cse-rules/normalized-authentication-rules',
+            'cse/cse-rules/normalized-threat-rules',
+            'cse/cse-rules/rule-tuning-expressions',
+            'cse/cse-rules/tailor-global-rule',
+          ],
+        },
+        {
+          type: 'category',
+          label: 'CSE Schema',
+          collapsible: true,
+          collapsed: false,
+          link: {type: 'doc', id: 'cse/cse-schema/index'},
+          items: [
+            'cse/cse-schema/record-processing-pipeline',
+            'cse/cse-schema/schema-attributes',
+            'cse/cse-schema/attributes-map-to-records',
+            'cse/cse-schema/cse-record-types',
+            'cse/cse-schema/parsing-language-reference-guide',
+            'cse/cse-schema/create-structured-log-mapping',
+            'cse/cse-schema/cse-normalized-classification',
+            'cse/cse-schema/field-mapping-security-event-sources',
+            'cse/cse-schema/parser-editor',
+            'cse/cse-schema/username-and-hostname-normalization',
+          ],
+        },
+        {
+          type: 'category',
+          label: 'CSE Sensors',
+          collapsible: true,
+          collapsed: false,
+          link: {type: 'doc', id: 'cse/cse-sensors/index'},
+          items: [
+            'cse/cse-sensors/sensor-download-locations',
+            'cse/cse-sensors/windows-sensor-overview',
+            'cse/cse-sensors/windows-sensor-installation',
+            'cse/cse-sensors/windows-sensor-configuration-settings',
+            'cse/cse-sensors/windows-sensor-health-status-messages',
+            'cse/cse-sensors/windows-sensor-troubleshooting',
+            'cse/cse-sensors/network-sensor-deployment-guide',
+            'cse/cse-sensors/network-sensor-troubleshooting',
+            'cse/cse-sensors/cloud-sensor-guide',
+            'cse/cse-sensors/log-sensor-troubleshooting',
+            'cse/cse-sensors/ingest-zeek-logs',
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Integrations',
+          collapsible: true,
+          collapsed: false,
+          link: {type: 'doc', id: 'cse/integrations/index'},
+          items: [
+            'cse/integrations/configuring-threatq-source-in-cse',
+            'cse/integrations/forward-cse-data-to-sumo',
+            'cse/integrations/forward-cse-signals-to-sumo',
+            'cse/integrations/insight-enrichment-server',
+            'cse/integrations/integrate-cse-with-taxii-feed',
+            'cse/integrations/security-incident-response-integration',
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Match Lists and Suppressed Lists',
+          collapsible: true,
+          collapsed: false,
+          link: {type: 'doc', id: 'cse/match-lists-suppressed-lists/index'},
+          items: [
+            'cse/match-lists-suppressed-lists/create-match-list',
+            'cse/match-lists-suppressed-lists/custom-match-list-columns',
+            'cse/match-lists-suppressed-lists/match-fields-reference',
+            'cse/match-lists-suppressed-lists/standard-match-lists',
+            'cse/match-lists-suppressed-lists/suppressed-lists',
+          ],
+        },
+        {
+          type: 'category',
+          label: 'Records, Signals, Entities, and Insights',
+          collapsible: true,
+          collapsed: false,
+          link: {type: 'doc', id: 'cse/records-signals-entities-insights/index'},
+          items: [
+            'cse/records-signals-entities-insights/insight-generation-process',
+            'cse/records-signals-entities-insights/view-manage-entities',
+            'cse/records-signals-entities-insights/set-insight-generation-window-threshold',
+            'cse/records-signals-entities-insights/entity-criticality',
+            'cse/records-signals-entities-insights/global-intelligence-security-insights',
+            'cse/records-signals-entities-insights/create-custom-entity-type',
+            'cse/records-signals-entities-insights/tags-insights-signals-entitiesc-rules',
+            'cse/records-signals-entities-insights/search-cse-records-in-sumo',
+            'cse/records-signals-entities-insights/view-records-signal',
+            'cse/records-signals-entities-insights/about-signal-suppression',
+            'cse/records-signals-entities-insights/about-cse-insight-ui',
+            'cse/records-signals-entities-insights/configure-entity-lookup-table',
+            'cse/records-signals-entities-insights/configure-custom-insight',
+            'cse/records-signals-entities-insights/cse-heads-up-display',
+            'cse/records-signals-entities-insights/save-inventory-data-lookup-table',
+          ],
+        },
       ],
     },
   ],

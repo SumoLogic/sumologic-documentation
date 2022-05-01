@@ -15,12 +15,12 @@ See how to [create an incoming webhook](https://docs.microsoft.com/en-us/microso
 In Sumo Logic, Scheduled Searches and Monitors send alerts to other tools via webhook connections. To send alerts from Sumo Logic to Microsoft Teams:
 
 1. [Create a Microsoft Teams Connection](#create-a-microsoft-teams-connection).
-1. Use the Webhook Connection as the Alert Type in a [Scheduled Search](schedule-searches-webhook-connections.md) or the Connection Type in a [Monitor] (../../../Visualizations-and-Alerts/Alerts/Monitors.md "Monitors").
+1. Use the Webhook Connection as the Alert Type in a [Scheduled Search](schedule-searches-webhook-connections.md) or the Connection Type in a [Monitor](/docs/alerts/monitors).
 
 ## Create a Microsoft Teams Connection
 
 :::note
-You need the **Manage connections** [role capability] (../../Users-and-Roles/Manage-Roles/05-Role-Capabilities.md "Role Capabilities") to create webhook connections.
+You need the **Manage connections** [role capability](../../users-and-roles/roles/role-capabilities.md) to create webhook connections.
 :::
 
 This section demonstrates how to create a webhook connection from Sumo Logic to Microsoft Teams.
@@ -32,7 +32,7 @@ This section demonstrates how to create a webhook connection from Sumo Logic to 
 
 1. Enter a **Name** and give an optional **Description** to the connection.
 1. Paste the **URL** from Microsoft Teams into the **URL** field.
-1. (Optional) ********Custom Headers********, enter up to five comma separated key-value pairs.
+1. (Optional) **Custom Headers**, enter up to five comma separated key-value pairs.
 1. Customize the **Activity Title** if desired, the default is `Monitor Alert: {{TriggerType}} on {{Name}}`.
 1. (Optional) Customize the **Activity Subtitle** if desired, the default is `Created On Date: {{TriggerTime}}`.
 1. (Optional) Customize the **Card Text** if desired, the default is `{{Description}}`. 

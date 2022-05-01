@@ -55,7 +55,7 @@ You can easily hide the **Left Nav Bar** to enlarge the working area. Then, ju
 
 ### Access Apps, Admin features, and Help
 
-In the lower section of the Left Nav Bar, you can access the [App Catalog](library/sumo-logic-apps.md), [Manage Data and Administration] (../Manage.md "Manage") features, and [get help](#get-help-docs-community-and-more). 
+In the lower section of the Left Nav Bar, you can access the [App Catalog](library/sumo-logic-apps.md), [Manage Data and Administration](/docs/manage) features, and [get help](#get-help-docs-community-and-more). 
 
 ![TUI_App-Admin-Help.png](/img/get-started/ui/TUI_App-Admin-Help.png)
 
@@ -200,7 +200,7 @@ You can share dashboards, searches, and folders with users and roles. You can e
 * **Left Nav Bar.** Recommended when you are familiar with the content and need to quickly share with another user.
 * **Library.** Recommended when you need a detailed view of the content, who created it, and when it was last modified.
 
-For walkthrough instructions, go to the [Share Content] (../Manage/Content_Sharing/Share-Content.md "Share Content") page. 
+For walkthrough instructions, go to the [Share Content](../manage/content-sharing/share-content.md) page. 
 
 ### View content that is shared with you
 
@@ -285,9 +285,9 @@ To manage data in Sumo Logic, do the following:
 1. Choose from the following, as needed:
 
     * **Collection.** [Manage collectors and sources](/docs/manage/collection).
-    * **Logs.** Manage [fields] (../Manage/Fields.md "Fields"), [field extraction rules] (../Manage/Field-Extractions.md "https://help.sumologic.com/Manage/Search_Optimization_Tools/Manage_Field_Extractions"), [partitions] (../Manage/Partitions_and_Data_Tiers.md "https://help.sumologic.com/Manage/Search_Optimization_Tools/Manage_Partitions"), [scheduled views] (../Manage/Scheduled-Views.md "Manage Scheduled Views"), [connections](/docs/manage/connections-and-integrations), and [data forwarding] (../Manage/Data-Forwarding.md "Data Forwarding").
-    * **Metrics.** Manage metrics rules, [logs-to-metrics] (../Metrics/Logs-to-Metrics.md "Logs-to-Metrics"), and [metrics transformation rules] (../Metrics/Metrics_Transformation_Rules.md "Metrics Transformation Rules").
-    * **Alerts.** [Monitors](/docs/alerts/monitors), [connections](/docs/manage/connections-and-integrations), and [health events] (../Manage/Health_Events.md "Health Events").
+    * **Logs.** Manage [fields](../manage/fields.md), [field extraction rules](/docs/manage/field-extractions), [partitions](/docs/manage/partitions-and-data-tiers), [scheduled views](/docs/manage/scheduled-views), [connections](/docs/manage/connections-and-integrations), and [data forwarding](/docs/manage/data-forwarding).
+    * **Metrics.** Manage metrics rules, [logs-to-metrics](../metrics/logs-to-metrics.md), and [metrics transformation rules](../metrics/metrics-transformation-rules.md).
+    * **Alerts.** [Monitors](/docs/alerts/monitors), [connections](/docs/manage/connections-and-integrations), and [health events](../manage/health-events.md).
 
 ### Admin: Manage accounts, users, and security
 
@@ -301,9 +301,9 @@ To administer Sumo Logic accounts, users, and security, do the following:
 
 1. Choose from the following, as needed:
 
-    * **Account.** [View information about your organization's Sumo Logic subscription] (../Manage/01Manage_Subscription.md "https://help.sumologic.com/Manage/01Account_Usage"), [enable and manage the data volume index,] (../Manage/Ingestion-and-Volume/Data_Volume_Index.md "https://help.sumologic.com/Manage/Ingestion_and_Volume/Enable_and_Manage_the_Data_Volume_Index") [manage billing] (../Manage/01Manage_Subscription.md "https://help.sumologic.com/Manage/01Account_Usage").
-    * **Users and Roles**. [Manage users and roles] (../Manage/Users-and-Roles.md "https://help.sumologic.com/Manage/Users_and_Roles").
-    * **Security.** [Set password policy for your org] (../Manage/Security/Set-the-Password-Policy.md "Set the Password Policy"), [set up security whitelist] (../Manage/Security/Create-an-Allowlist-for-IP-or-CIDR-Addresses.md "Create a Whitelist for IP or CIDR Addresses"), [manage access keys] (../Manage/Security/Access-Keys.md "https://help.sumologic.com/Manage/Security/Access_Keys"), manage security polices ([audit index] (../Manage/Security/Audit-Index.md "https://help.sumologic.com/Manage/Security/Enable_and_Manage_the_Audit_Index"), [support account access,] (../Manage/Security/Enable-a-Support-Account.md "Enable a Support Account") and [dashboard sharing](../dashboards-new/share-dashboard-new.md), and [set up SAML authentication] (../Manage/Security/SAML.md "https://help.sumologic.com/Manage/Security/SAML").
+    * **Account.** [View information about your organization's Sumo Logic subscription](/docs/manage/manage-subscription), [enable and manage the data volume index,](/docs/manage/ingestion-and-volume/data-volume-index) [manage billing](/docs/manage/manage-subscription).
+    * **Users and Roles**. [Manage users and roles](/docs/manage/users-and-roles).
+    * **Security.** [Set password policy for your org](../manage/security/set-password-policy.md), [set up security whitelist](../manage/security/create-allowlist-ip-cidr-addresses.md), [manage access keys](../manage/security/access-keys.md), manage security polices ([audit index](../manage/security/audit-index.md), [support account access,](../manage/security/enable-support-account.md) and [dashboard sharing](../dashboards-new/share-dashboard-new.md), and [set up SAML authentication](/docs/manage/security/saml).
 
 ## Become a Sumo Pro user
 

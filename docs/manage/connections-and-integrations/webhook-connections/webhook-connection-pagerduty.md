@@ -7,7 +7,7 @@ id: pagerduty
 PagerDuty webhook connections allow you to send alert results as a PagerDuty notification. You can learn more about PagerDuty webhooks in
 their [API Help](https://v2.developer.pagerduty.com/docs/webhooks-v2-overview).
 
-[Webhook connections](set-up-webhook-connections.md) rely on HTTP endpoints that tell Sumo Logic where to send data. You can set up any number of connections. Once you set up the webhook connection you'll have the option to use it in a [Scheduled Search](schedule-searches-webhook-connections.md) or [Monitor] (../../../Visualizations-and-Alerts/Alerts/Monitors.md "Monitors").
+[Webhook connections](set-up-webhook-connections.md) rely on HTTP endpoints that tell Sumo Logic where to send data. You can set up any number of connections. Once you set up the webhook connection you'll have the option to use it in a [Scheduled Search](schedule-searches-webhook-connections.md) or [Monitor](/docs/alerts/monitors).
 
 PagerDuty has a [Sumo Logic Integration Guide](https://www.pagerduty.com/docs/guides/sumo-logic-integration-guide/) with these same steps.
 
@@ -17,7 +17,7 @@ PagerDuty has a [Sumo Logic Integration Guide](https://www.pagerduty.com/docs/g
 1. On the **Service Directory** page: 
 
     * If you are creating a new service for your integration, click **Add New Service**.
-    * If you are adding your integration to an existing service, click the name of the service you want to add the integration to. Then     click the **Integrations** tab and click the **New Integration** button.
+    * If you are adding your integration to an existing service, click the name of the service you want to add the integration to. Then click the **Integrations** tab and click the **New Integration** button.
 
 1. In the **Integration Type** menu, select from the following based on your preference: 
 
@@ -31,8 +31,7 @@ PagerDuty has a [Sumo Logic Integration Guide](https://www.pagerduty.com/docs/g
 ## Set up a webhook connection for PagerDuty
 
 :::note
-You need the **Manage connections** [role capability] (../../Users-and-Roles/Manage-Roles/05-Role-Capabilities.md "Role Capabilities") to
-create webhook connections.
+You need the **Manage connections** [role capability](../../users-and-roles/roles/role-capabilities.md) to create webhook connections.
 :::
 
 The URL and supported payload are different based on the version of the PagerDuty Events API you are using. Follow the steps for the relevant API version below.

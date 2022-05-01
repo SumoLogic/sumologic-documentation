@@ -21,7 +21,7 @@ An incident is an unplanned interruption that has occurred in your business and 
 
 Before setting up ServiceNow integration, contact your ServiceNow account manager to make sure that your organization has a subscription for Event Management.
 
-To configure a Webhook connection, you must have a [Sumo Logic role] (../../Users-and-Roles/Manage-Roles.md "Manage Roles") that grants you the Manage connections capability.
+To configure a Webhook connection, you must have a [Sumo Logic role](../../users-and-roles/roles/create-manage-roles.md) that grants you the Manage connections capability.
 
 ## Set up a ServiceNow connection
 

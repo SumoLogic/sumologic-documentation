@@ -5,7 +5,7 @@ id: add-scheduled-view
 # Add a Scheduled View
 
 :::important
-To create a Scheduled View you must be an admin or have the Manage Scheduled Views [role capability] (../Users-and-Roles/Manage-Roles/05-Role-Capabilities.md "Role Capabilities").
+To create a Scheduled View you must be an admin or have the Manage Scheduled Views [role capability](../users-and-roles/users/multi-account-access.md).
 :::
 
 For Scheduled View query requirements, see [Scheduled Views Best Practices and Examples](scheduled-views-best-practices.md). 
