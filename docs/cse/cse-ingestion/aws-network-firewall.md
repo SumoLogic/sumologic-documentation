@@ -21,7 +21,7 @@ In this step, you configure an HTTP Source to collect AWS Network Firewall messa
 1. Click **Add Collector**.
 1. Click **Hosted Collector.**
 1. The **Add Hosted Collector** popup appears.  
-    ![add-hosted-collector.png](/img/cloud-siem-enterprise/add-hosted-collector.png)
+    ![add-hosted-collector.png](/img/cse/add-hosted-collector.png)
 1. **Name**. Provide a Name for the Collector.
 1. **Description**. (Optional)
 1. **Category**. Enter a string to tag the output collected from the source. The string that you supply will be saved in a metadata field called `_sourceCategory`. 
@@ -40,7 +40,7 @@ It’s also possible to configure individual sources to forward to CSE, as descr
 1. On the **Collectors** page, click **Add Source** next to a Hosted Collector.
 1. Select Amazon S3. 
 1. The page refreshes.  
-    ![s3-source.png](/img/cloud-siem-enterprise/s3-source.png)
+    ![s3-source.png](/img/cse/s3-source.png)
 1. **Name**. Enter a name for the source. 
 1. **Description**. (Optional) 
 1. **S3 Region**. Choose the AWS Region the S3 bucket resides in.
@@ -52,7 +52,7 @@ It’s also possible to configure individual sources to forward to CSE, as descr
     1. If you are not parsing all sources in the hosted collector with the same parser, add an additional field named `_parser` with value */Parsers/System/AWS/AWS Network Firewall*.
 1. **AWS Access**. For AWS Access you have two Access Method options. Select **Role-based access** or **Key access** based on the AWS authentication you are providing. Role-based access is preferred. Sumo Logic access to AWS (instructions are provided above in [Step 1](#step-1-enable-aws-network-firewall-logs)) is a prerequisite for role-based access.
     -   **Role-based access**. Enter the Role ARN that was provided by AWS after creating the role.   
-        ![role-arn.png](/img/cloud-siem-enterprise/role-arn.png)
+        ![role-arn.png](/img/cse/role-arn.png)
     -   **Key access**. Enter the Access Key ID and Secret Access Key. See [AWS Access Key ID](http://docs.aws.amazon.com/STS/latest/UsingSTS/UsingTokens.html#RequestWithSTS) and [AWS Secret Access Key](https://aws.amazon.com/iam/) for details.
 14. In the **Advanced Options for Logs** section, uncheck the **Detect messages spanning multiple lines** option.
 15. Click **Save**.
@@ -62,11 +62,11 @@ It’s also possible to configure individual sources to forward to CSE, as descr
 In this step, you verify that your logs are successfully making it into CSE. 
 
 1. Click the gear icon, and select **Log Mappings** under **Incoming Data**.  
-    ![log-mappings-link.png](/img/cloud-siem-enterprise/log-mappings-link.png)
+    ![log-mappings-link.png](/img/cse/log-mappings-link.png)
 1. On the **Log Mappings** page search for "AWS Network Firewall " and check under **Record Volume**.   
-    ![AWS-network-firewall-record-volume.png](/img/cloud-siem-enterprise/AWS-network-firewall-record-volume.png)
+    ![AWS-network-firewall-record-volume.png](/img/cse/AWS-network-firewall-record-volume.png)
 1. For a more granular look at the incoming records, you can also search the Sumo Logic platform for AWS Network Firewall security records.  
-    ![AWS-network-firewall-search.png](/img/cloud-siem-enterprise/AWS-network-firewall-search.png)
+    ![AWS-network-firewall-search.png](/img/cse/AWS-network-firewall-search.png)
 
   
  

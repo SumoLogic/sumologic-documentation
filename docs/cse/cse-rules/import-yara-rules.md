@@ -14,10 +14,10 @@ To import YARA rules:
 1. Click **Add Source**.
 1. On the **Add New Source** popup, click **Create** in the GitHub tile.
 
-    [add-source-1.png](/img/cloud-siem-enterprise/add-source-1.png)
+    [add-source-1.png](/img/cse/add-source-1.png)
 1. The **Add New Source** popup updates.
 
-    [add-source-2.png](/img/cloud-siem-enterprise/add-source-2.png)
+    [add-source-2.png](/img/cse/add-source-2.png)
 1. **Name**. Enter a display name for the rule set to be imported.
 1. **Description**. Describe the rule set.
 1. Enabled. If you want CSE to apply to rules upon import, leave the toggle set to Enabled. Otherwise, change it to Disabled.

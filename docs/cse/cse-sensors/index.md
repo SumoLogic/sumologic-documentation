@@ -1,5 +1,5 @@
 ---
-slug: /cloud-siem-enterprise/cse-sensors
+slug: /cse/cse-sensors
 ---
 
 # CSE Sensors

@@ -42,18 +42,18 @@ When you fill out the **Sumo Logic Ingest Mapping** page, for most of the suppor
 For these formats, CSE uses the values you configure for **Product**, **Vendor**, and **Event ID** (in addition to **Format**) to select the appropriate CSE mapper to process the messages. To verify the correct values, you can go to the **Log Mapping Details** page for the mapper in the CSE UI. To do so:
 
 1. In the CSE UI, click the gear icon, then the **Log Mappings** link.   
-    ![log-mappings-link.png](/img/cloud-siem-enterprise/log-mappings-link.png)
+    ![log-mappings-link.png](/img/cse/log-mappings-link.png)
 1. The **Log Mappings** page displays a list of mappers.  
-    ![log-mappings-page.png](/img/cloud-siem-enterprise/log-mappings-page.png)
+    ![log-mappings-page.png](/img/cse/log-mappings-page.png)
 1. In the **Filters** area, you can filter the list of log mappings by
     typing in a keyword, or by selecting a field to filter by.  
-    ![log-mapping-filters.png](/img/cloud-siem-enterprise/log-mapping-filters.png)
+    ![log-mapping-filters.png](/img/cse/log-mapping-filters.png)
 1. When you find the mapper you’re looking for, you can find the **Product**, **Vendor**, and **Event ID pattern** for a mapper on the **If Input Matches** side of the **Input/Output** side of the page.
     * **Format**. This is the value labeled **c** in the screenshot below.
     * **Product**. This is the value labeled **b** in the screenshot below.
     * **Vendor**. This is the value labeled **a** in the screenshot below.
     * **Event ID pattern**. This is the value labeled **d** in the screenshot below.  
-        ![log-mapping-details.png](/img/cloud-siem-enterprise/mapping.png)
+        ![log-mapping-details.png](/img/cse/mapping.png)
 
 ### Quick reference to configuring ingest mappings
 
@@ -78,9 +78,9 @@ Event ID pattern required? | How CSE picks a mapper |
 In this step, you configure a Sumo Logic Ingest Mapping in CSE for the source category assigned to your source or collector you configured. The mapping tells CSE the information it needs to select the right mapper to process messages that have been tagged with that source category. 
 
 1. Click the gear icon, and select **Sumo Logic** under **Integrations**.  
-    ![integrations-sumologic.png](/img/cloud-siem-enterprise/integrations-sumologic.png)
+    ![integrations-sumologic.png](/img/cse/integrations-sumologic.png)
 1. On the **Sumo Logic Ingest Mappings** page, click **Create**.  
-    ![ingest-mappings.png](/img/cloud-siem-enterprise/ingest-mappings.png)
+    ![ingest-mappings.png](/img/cse/ingest-mappings.png)
 1. On the **Create Sumo Logic Mapping** popup:
     1. **Source Category**. Enter the category you assigned to the HTTP Source or Hosted Collector. 
     1. **Format**. Follow the instructions for the type of messages your source collects:
@@ -101,7 +101,7 @@ If your messages are unstructured with a syslog header, all you need to do is se
 
 CSE applies GROK patterns to unstructured messages to determine which mapper to use, so you don’t need to supply any other configuration options.
 
-![create-mapping-1.png](/img/cloud-siem-enterprise/create-mapping-1.png)
+![create-mapping-1.png](/img/cse/create-mapping-1.png)
 
 ### Unstructured messages without a syslog header
 
@@ -109,7 +109,7 @@ If your messages are unstructured without a syslog header, all you need to do is
 
 CSE applies GROK patterns to unstructured messages to determine which mapper to use, so you don’t need to supply any other configuration options.
 
-![create-mapping-3.png](/img/cloud-siem-enterprise/create-mapping-3.png)
+![create-mapping-3.png](/img/cse/create-mapping-3.png)
 
 ### JSON messages without a syslog header
 
@@ -120,13 +120,13 @@ If your messages are JSON format without a syslog header, there are required and
 1. For **Format**, select “JSON”. 
 1. You must specify values for **Vendor**, **Product**, and **Event ID**, which CSE will use to determine what mapper to use for your messages. If you don’t know these values, see [Determining Product, Vendor, and Event ID pattern](#determining-product-vendor-and-event-id-pattern), above.  
 
-    ![create-mapping-2.png](/img/cloud-siem-enterprise/create-mapping-2.png)
+    ![create-mapping-2.png](/img/cse/create-mapping-2.png)
 
 #### Optional settings: Advanced JSON Parsing
 
 If you would like to manipulate the JSON data before it’s flattened and parsed, expand the **Advanced JSON Parsing** section of the popup.
 
-![advanced-json-parsing.png](/img/cloud-siem-enterprise/advanced-json-parsing.png)
+![advanced-json-parsing.png](/img/cse/advanced-json-parsing.png)
 
 1. **JSON Explode**. This option takes a JSON array value (flattened value) and creates multiple copies of the log line, one for each value of the array. You can only apply JSON Explode to one attribute within the JSON. For example, given the following example JSON log:  
       
@@ -162,7 +162,7 @@ If your messages are JSON format with a syslog header:
 1. **Syslog Format**. Choose “JSON”.
 1. You must specify values for **Vendor**, **Product,** and **Event ID**, which CSE will use to determine what mapper to use for your messages. If you don’t know these values, see [Determining Product, Vendor, and Event ID pattern](#determining-product-vendor-and-event-id-pattern).  
       
-    ![create-mapping-4.png](/img/cloud-siem-enterprise/create-mapping-4.png)
+    ![create-mapping-4.png](/img/cse/create-mapping-4.png)
 
 ### CEF or LEEF messages with a syslog header
 
@@ -172,7 +172,7 @@ Don’t specify **Syslog Format**. 
 
 Don’t specify **Vendor**, **Product,** or **Event ID**. CSE can determine those values from the CEF or LEEF message itself.
 
-![create-mapping-1.png](/img/cloud-siem-enterprise/create-mapping-1.png)
+![create-mapping-1.png](/img/cse/create-mapping-1.png)
 
 ### CEF or LEEF messages without a syslog header
 
@@ -182,7 +182,7 @@ Don’t specify **Syslog Format**. 
 
 Don’t specify **Vendor**, **Product**, or **Event ID**. CSE can determine those values from the CEF or LEEF message itself.
 
-![create-mapping-3.png](/img/cloud-siem-enterprise/create-mapping-3.png)
+![create-mapping-3.png](/img/cse/create-mapping-3.png)
 
 ### Structured syslog data (key-value pairs) with a syslog header
 
@@ -195,7 +195,7 @@ If your messages are structured syslog data (key-value pairs) with a syslog head
 1. **Syslog kv Delimiter**. This is the delimiter between a key and a value.
 1. You must specify values for **Vendor**, **Product**, and **Event ID**, which CSE will use to determine what mapper to use for your messages. If you don’t know these values, see [Determining Product, Vendor, and Event ID pattern](#determining-product-vendor-and-event-id-pattern).  
       
-    ![syslog-delimiters.png](/img/cloud-siem-enterprise/syslog-delimiters.png)
+    ![syslog-delimiters.png](/img/cse/syslog-delimiters.png)
 
 ### Microsoft Windows event logs in XML format
 
@@ -208,7 +208,7 @@ CSE will determine the appropriate mapper to use from individual events. It will
 * **Product** is “Windows”.
 * **Event ID** is the value of `{channel}-{eventid}`, for example, “Security-1234”.
 
-![windows.png](/img/cloud-siem-enterprise/windows.png)
+![windows.png](/img/cse/windows.png)
 
 ### Winlogbeats
 
@@ -221,7 +221,7 @@ CSE will determine the appropriate mapper to use from individual events. It will
 * **Product** is “Windows”.
 * **Event ID** is the value of `{channel}-{eventid}`, for example, “Security-1234”.
 
-![winlogbeats.png](/img/cloud-siem-enterprise/winlogbeats.png)
+![winlogbeats.png](/img/cse/winlogbeats.png)
 
 ### Fields extracted from Sumo Logic-ingested messages
 
@@ -230,7 +230,7 @@ If the messages with the source category you’ve specified in the mapping have
 1. **Format**. Select “Extracted Fields JSON”
 1. You must specify values for **Vendor**, **Product**, and **Event ID**, which CSE will use to determine what mapper to use for your messages. If you don’t know these values, see [Determining Product, Vendor, and Event ID pattern](#determining-product-vendor-and-event-id-pattern).  
       
-    ![extracted-fields-json.png](/img/cloud-siem-enterprise/extracted-fields-json.png)
+    ![extracted-fields-json.png](/img/cse/extracted-fields-json.png)
 
 ## Enable mapping
 

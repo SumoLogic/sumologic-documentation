@@ -19,17 +19,17 @@ When the conditions of a Custom Insight configuration are met during the current
 
 This example Custom Insight configuration will generate an Insight as a result of the **McAfee ePO - Virus Outbreak** rule firing a Signal. 
 
-![custom-insight-example.png](/img/cloud-siem-enterprise/custom-insight-example.png)  
+![custom-insight-example.png](/img/cse/custom-insight-example.png)  
  
 To create a Custom Insight:
 
 1. Choose **Custom Insights** on the **Content** menu.
 1. Click **Create** on the **Custom Insights** page.
 
-    ![custom-insights-page.png](/img/cloud-siem-enterprise/custom-insights-page.png)
+    ![custom-insights-page.png](/img/cse/custom-insights-page.png)
 1. The **Configure the Custom Insight** popup appears.
 
-    ![custom-insight.png](/img/cloud-siem-enterprise/custom-insight.png)
+    ![custom-insight.png](/img/cse/custom-insight.png)
 1. In the **Name** field, enter a name for the Custom Insight.
 1. If you want the Custom Insight to be generated based on one or more rules firing Signals, jump to step 6, below. Otherwise:  
 
@@ -54,7 +54,7 @@ To create a Custom Insight:
 
    1. Choose **dynamic** severity.    
 
-    ![dynamic-severity.png](/img/cloud-siem-enterprise/dynamic-severity.png) 
+    ![dynamic-severity.png](/img/cse/dynamic-severity.png) 
     
    1. Select a default severity, one of Low, Medium, High, or Critical. 
    1. **Minimum Signal Severity** and **Insight Severity**. Enter a minimum Signal severity and associated Insight severity value. For example, if you enter 8 and select high, if any Signal in the Insight has a severity of 8 or higher, the custom Insight will have High severity. 
@@ -64,7 +64,7 @@ To create a Custom Insight:
       * If the highest Signal severity was at least 5, severity is Medium.  
       * If the highest signal severity was at least 3, severity is Low.        
 
-    ![example-dynamic.png](/img/cloud-siem-enterprise/example-dynamic.png)
+    ![example-dynamic.png](/img/cse/example-dynamic.png)
 
 1. If desired, select [Tags](tags-insights-signals-entities-rules.md) that you want assigned to the Custom Insight. 
 1. Click **Submit** to save your Custom Insight configuration.

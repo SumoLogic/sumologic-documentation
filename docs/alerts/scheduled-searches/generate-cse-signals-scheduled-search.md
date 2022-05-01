@@ -4,7 +4,7 @@ id: generate-cse-signals-scheduled-search
 
 # Generate CSE Signals With a Scheduled Search
 
-This page has information about creating a scheduled search that will trigger a Cloud SIEM Enterprise (CSE) Signal. Before you start using scheduled searches to create CSE Signals, it is helpful to understand what Signals are, and how they relate to the generation of CSE Insights. For information about how it all works see [Insight Generation Process](../../cloud-siem/records-signals-entities-insights/insight-generation-process.md). 
+This page has information about creating a scheduled search that will trigger a Cloud SIEM Enterprise (CSE) Signal. Before you start using scheduled searches to create CSE Signals, it is helpful to understand what Signals are, and how they relate to the generation of CSE Insights. For information about how it all works see [Insight Generation Process](../../cse/records-signals-entities-insights/insight-generation-process.md). 
 
 :::note
 For a more detailed description of the options you can configure for a scheduled search, see [Schedule a Search](schedule-search.md).
@@ -60,8 +60,8 @@ enable Signal generation:
 
 ### Renaming message fields
 
-When you configure a Scheduled Search to create CSE Signals, you are prompted to select a [CSE Record type](../../cloud-siem/cse-schema/cse-record-types.md). The fields returned by your search must match an attribute in the Record
-type you select. A field whose name does not match a CSE attribute will not be populated in the Record created from the Schedule Search results. For more about CSE attribute names, see [Attributes You Can Map to Records](../../cloud-siem/cse-schema/attributes-map-to-records.md).
+When you configure a Scheduled Search to create CSE Signals, you are prompted to select a [CSE Record type](../../cse/cse-schema/cse-record-types.md). The fields returned by your search must match an attribute in the Record
+type you select. A field whose name does not match a CSE attribute will not be populated in the Record created from the Schedule Search results. For more about CSE attribute names, see [Attributes You Can Map to Records](../../cse/cse-schema/attributes-map-to-records.md).
 
 ## Scheduling the search
 
@@ -90,7 +90,7 @@ type you select. A field whose name does not match a CSE attribute will not be p
 
     ![alert-type-selected.png](/img/alerts/alert-type-selected.png)
 
-1. **Record Type**. Select a [Record Type](../../cloud-siem/cse-schema/cse-record-types.md).
+1. **Record Type**. Select a [Record Type](../../cse/cse-schema/cse-record-types.md).
 1. Click **Save**.
 
 ## View Signals in CSE

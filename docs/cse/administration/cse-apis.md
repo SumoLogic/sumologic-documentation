@@ -33,7 +33,7 @@ API requests must be authenticated. For authentication options and information a
 
 If your CSE URL ends in `jask.ai`, you can access the API docs by clicking the question mark (?) icon in the upper right corner of the CSE UI, and selecting **API Documentation**. 
 
-![cse-api-docs-link.png](/img/cloud-siem-enterprise/cse-api-docs-link.png)
+![cse-api-docs-link.png](/img/cse/cse-api-docs-link.png)
 
 You can also access the API docs by pointing your browser directly to:
 
@@ -45,11 +45,11 @@ Where `<my-cse-url>` is the URL you use to access the CSE UI.
 
 The APIs require authentication using an API key specified in the `X-API-Key`. You can find your API key by clicking the profile icon in the upper right corner of the CSE UI.
 
-![profile-icon.png](/img/cloud-siem-enterprise/profile-icon.png)
+![profile-icon.png](/img/cse/profile-icon.png)
 
 In your profile, click the copy icon for the API key to copy your API key.
 
-![copy-cse-api-key.png](/img/cloud-siem-enterprise/copy-cse-api-key.png)
+![copy-cse-api-key.png](/img/cse/copy-cse-api-key.png)
 
 ### Rate Limiting
 

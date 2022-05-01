@@ -31,14 +31,14 @@ The table below summarizes the rule configuration. Each row corresponds to an el
 
 The screenshot below shows the **If Triggered** configuration for the example rule in the Rules Editor. 
 
-![agg-rule.png](/img/cloud-siem-enterprise/agg-rule.png)
+![agg-rule.png](/img/cse/agg-rule.png)
 
 ## Create an Aggregation rule
 
 1. Select **Rules** from the Content menu.
 1. On the **Create a Rule** page, click **Create** in the **Aggregation** card.
 
-    ![select-rule-type.png](/img/cloud-siem-enterprise/select-rule-type.png)
+    ![select-rule-type.png](/img/cse/select-rule-type.png)
 1. In the rules editor: 
 
    1. **Name**. At the top of the Rules Editor, enter a name for the rule. Signals fired by the rule will have the same name as the rule.
@@ -48,7 +48,7 @@ The screenshot below shows the **If Triggered** configuration for the example ru
 
 On the left side of the Rules Editor, in the **If Triggered** section, you configure a filter that determines the Records to which the rule will be applied, and the conditions under which you want the rule to fire a Signal. Here’s the UI before any entries have been made:
 
-![agg-rule-if-triggered.png](/img/cloud-siem-enterprise/agg-rule-if-triggered.png)
+![agg-rule-if-triggered.png](/img/cse/agg-rule-if-triggered.png)
 
 1. **When Records matching the expression**. Enter one or more boolean expressions to filter the Records you want to apply the rule to. For example: `!isNull(http_response_statusCode)`
 1. **grouped by**. Specify the Record field or fields by which aggregation results will be grouped. Note that when you define the **On Entity** field for the rule (in [Configure “Then Create a Signal” settings](#write-an-aggregation-rule) below), the field you choose will automatically appear here. If you want to aggregate on other fields, you can select them from the selector list.
@@ -80,7 +80,7 @@ If you use the Test Rule feature on a rule that has one or more [Rule Tuning Exp
 
 On the right side of the Rules Editor, in the **Then Create a Signal** section, you configure details of the Signals that your rule will fire. Here’s the UI before any entries have been made:
 
-![then-create-a-signal.png](/img/cloud-siem-enterprise/then-create-a-signal.png)
+![then-create-a-signal.png](/img/cse/then-create-a-signal.png)
 
 1. **On Entity**. Use the pull-down list to select one or more Entity fields. (Entity fields are fields that contain an IP address, hostname, or username. When the rule is triggered it will fire a Signal on each of the entity fields you select.  
 1. **with the summary**. 

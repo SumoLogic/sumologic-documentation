@@ -33,7 +33,7 @@ An Entity Lookup Table defines two sets of values: a lookup value to look for in
 
 Entity Lookup Tables are based on Sumo Logic’s Lookup Tables feature. Here is an example of a **Host ID to Normalized Hostname** Lookup Table in the Sumo Logic Library:
 
-![example-table.png](/img/cloud-siem-enterprise/example-table.png)
+![example-table.png](/img/cse/example-table.png)
 
 ## Limitations
 
@@ -64,7 +64,7 @@ After you’ve created your Entity Lookup Table in the Sumo Logic Library, you c
 1. Click **Create** on the **Lookup Tables** tab.
 1. The **Existing Lookup Table** popup appears.
 
-    ![existing-lookup-table.png](/img/cloud-siem-enterprise/existing-lookup-table.png) 
+    ![existing-lookup-table.png](/img/cse/existing-lookup-table.png) 
 
 1. **Type**. Choose the type of normalization you want to set up. 
 
@@ -77,5 +77,5 @@ After you’ve created your Entity Lookup Table in the Sumo Logic Library, you c
 1. **Source Category**. (Optional) If you enter a source category, the lookup substitution will only be applied to Records that are tagged with that source category.
 1. **Table Path**. Enter the path to the existing Lookup Table in the Sumo Logic Library. For example: `/Library/Admin Recommended/NormalizedHostNames` You can copy the path to the Lookup Table in the Sumo Logic Library. Hover over the row for the table in the Library, and select **Copy path to clipboard** from the three-dot more options menu.
 
-    ![tree-dot.png](/img/cloud-siem-enterprise/tree-dot.png)
+    ![tree-dot.png](/img/cse/tree-dot.png)
 1. Click **Create**.     

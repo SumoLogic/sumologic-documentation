@@ -10,8 +10,8 @@ CSE may have more than one log mapping for a particular product. For example, t
 
 1. In the CSE UI, click the gear icon and select **Log Mappings**.  
 
-    ![config-gear-mappings.png](/img/cloud-siem-enterprise/config-gear-mappings.png)
+    ![config-gear-mappings.png](/img/cse/config-gear-mappings.png)
 
 1. In the **Filters** area, filter by **Output Vendor**, **Output Product**, or both. In the following screenshot, the list of mappings is filtered to display mappings for *Output Vendor is Proofpoint*. The list contains six mappings for two Proofpoint products: five for Targeted Attack Protection, and one for Proofpoint On Demand.   
 
-    ![proofpoint-log-mappers.png](/img/cloud-siem-enterprise/proofpoint-log-mappers.png)
+    ![proofpoint-log-mappers.png](/img/cse/proofpoint-log-mappers.png)

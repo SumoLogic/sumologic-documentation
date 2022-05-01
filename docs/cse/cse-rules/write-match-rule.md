@@ -29,12 +29,12 @@ This rule fires a Signal each time a UserPoolClient, which has permission to cal
 1. Choose **Rules** from the Content menu.
 1. On the **Create a Rule** page, click **Create** in the **Match** card. 
 
-    ![select-rule-type.png](/img/cloud-siem-enterprise/select-rule-type.png)
+    ![select-rule-type.png](/img/cse/select-rule-type.png)
 1. In the rules editor: 
    1. **Name**. Enter a name for the rule.
    1. **Enabled**. By default the rule will be enabled. It's good practice to use the slider to disable the rule so that it won’t be applied to incoming Records until you’ve tested it.              
 
-    ![match.png](/img/cloud-siem-enterprise/match.png)
+    ![match.png](/img/cse/match.png)
 
 ## Configure "Then Create a Signal" settings
 
@@ -51,11 +51,11 @@ This rule fires a Signal each time a UserPoolClient, which has permission to cal
 
    * **Constant**. If you want every Signal that the rule fires to have the same severity, choose Constant, and select a severity level.  
 
-    ![constant-severity.png](/img/cloud-siem-enterprise/constant-severity.png) 
+    ![constant-severity.png](/img/cse/constant-severity.png) 
     
    * **Dynamic**. Choose Dynamic if you want to base the severity level on a value of a field in the Record. Use the down arrows to display a list of fields, and select one. If you want the severity to be exactly the value of the field, you’re done. If you want to assign a different severity value based on the value of the Record field you selected, click Configure Mappings and see the instructions below.  
 
-    ![dynamic-severity.png](/img/cloud-siem-enterprise/dynamic-severity.png)
+    ![dynamic-severity.png](/img/cse/dynamic-severity.png)
     
    * **Dynamic with mappings**. On the popup that appears:  
 
@@ -64,7 +64,7 @@ This rule fires a Signal each time a UserPoolClient, which has permission to cal
      * **Signal Severity**. Enter a value, from 0 to 10, inclusive.
      * The **Record Value** and **Signal Severity** fields refresh. Continue adding field and severity values until you’re done.      
 
-    ![dynamic-rule-mappings.png](/img/cloud-siem-enterprise/dynamic-rule-mappings.png)
+    ![dynamic-rule-mappings.png](/img/cse/dynamic-rule-mappings.png)
 1. **with tags**. If desired, you can add metadata tags to your rule. Tags are useful for adding context to items like Rules, Insights, Signals, Entities. You can also search for and filter items by tag. 
 
 ## Test your rule expression

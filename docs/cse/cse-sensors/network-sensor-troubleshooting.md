@@ -103,7 +103,7 @@ An important metric Zeek log that is collected from the CSE network sensor is th
 
 `_sourcecategory = "cse/network/notice" | where note = "CaptureLoss::Too_Much_Loss"`
 
-![captureloss-query.png](/img/cloud-siem-enterprise/captureloss-query.png)
+![captureloss-query.png](/img/cse/captureloss-query.png)
 
 ### Capstats
 

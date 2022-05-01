@@ -30,10 +30,10 @@ You can configure both the detection window and the threshold Activity Score for
 1. Click the gear icon, and select **Criticalities** under **Entities**.
 1. On the **Criticalities** page, click **Create**. 
 
-    ![Criticalities.png](/img/cloud-siem-enterprise/Criticalities.png)
+    ![Criticalities.png](/img/cse/Criticalities.png)
 1. The **Create Entity Criticality** popup appears.
 
-    ![criticality-popup.png](/img/cloud-siem-enterprise/criticality-popup.png)
+    ![criticality-popup.png](/img/cse/criticality-popup.png)
 1. **Name**. Enter a name. 
 1. **Severity Expression**. Enter a formula for adjusting a severity value. You can use a plus sign (+), minus sign (-), an asterisk (\*), or a forward slash (/). Enter the formula in this format:   `severity+2 `
 1. Click **Create** to save the Criticality.
@@ -44,9 +44,9 @@ You can associate a Criticality with one or more Entities. 
 
 1. Click **Entities** at the top of the CSE UI.
 
-    ![entities-icon.png](/img/cloud-siem-enterprise/entities-icon.png)
+    ![entities-icon.png](/img/cse/entities-icon.png)
 1. Navigate to the Entity you want to assign a Criticality and click on it to display the **Entity Details** page. 
 1. On the **Entity Details** page, click the **Criticality** field to display a list of Criticalities.
 
-    ![entity-details-criticality.png](/img/cloud-siem-enterprise/entity-details-criticality.png)
+    ![entity-details-criticality.png](/img/cse/entity-details-criticality.png)
 1. Click a Criticality to apply it to the Entity.

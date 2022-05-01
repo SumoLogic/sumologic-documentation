@@ -18,13 +18,13 @@ The diagram below is a high level illustration of several alternative processing
 You can only send log data that resides in the [Continuous data tier](../../manage/partitions-and-data-tiers/data-tiers.md) to CSE.
 :::
 
-![cip-to-cse.png](/img/cloud-siem-enterprise/cip-to-cse.png)
+![cip-to-cse.png](/img/cse/cip-to-cse.png)
 
 ### CSE ingestion best practices
 
 We recommend the following ingestion processes, starting with the most preferred:
 
-1. **Follow an ingestion guide**. The [Ingestion Guides](/docs/cloud-siem-enterprise/cse-ingestion) section of this help site provides specific collection and ingestion recommendations for many common products and services. An ingestion guide describes the easiest way to get data from a particular product into CSE. When you’re ready to start using CSE to monitor a new product, if there’s a CSE ingestion guide for it, we recommend using it.   
+1. **Follow an ingestion guide**. The [Ingestion Guides](/docs/cse/cse-ingestion) section of this help site provides specific collection and ingestion recommendations for many common products and services. An ingestion guide describes the easiest way to get data from a particular product into CSE. When you’re ready to start using CSE to monitor a new product, if there’s a CSE ingestion guide for it, we recommend using it.   
      
 1. **Use a Cloud-to-Cloud (C2C) connector**. If you don’t see an Ingestion Guide for your data source, check to see if there is a C2C connector. It’s an easy method, because if you configure your C2C source to send logs to CSE, it automatically tags messages it sends to CSE with fields that contain the mapping hints that CSE requires.   
       

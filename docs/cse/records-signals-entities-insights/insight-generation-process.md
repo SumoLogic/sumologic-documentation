@@ -40,7 +40,7 @@ to `srcDevice_ip`. 
 
 When you write a rule, you select one or more *On Entity* attributes in the **Then Create a Signal** area of the **Rules Editor**. Here is an example of an existing rule that has two On Entity attributes: `srcDevice_ip` and `dstDevice_ip`.
 
-![on-entity-example.png](/img/cloud-siem-enterprise/on-entity-example.png)
+![on-entity-example.png](/img/cse/on-entity-example.png)
 
 ## Entities are created when rules fire
 
@@ -48,13 +48,13 @@ CSE creates an Entity when a Rule generates a Signal, unless the Entity already 
 
 The **Signals** page shows the Entity associated with each Signal.
 
-![signal-llist.png](/img/cloud-siem-enterprise/signal-llist.png)
+![signal-llist.png](/img/cse/signal-llist.png)
 
 ## Viewing entities in CSE UI
 
 You can view the entities that have been extracted from messages on the **Entities** page in the CSE UI.
 
-![entities-page.png](/img/cloud-siem-enterprise/entity-list-page.png)
+![entities-page.png](/img/cse/entity-list-page.png)
 
 Note that the screenshot above shows an *Activity Score* for each entity. The following section explains what an Activity Score is and how it relates to the Insight creation process.
 
@@ -83,7 +83,7 @@ In the screenshot below, the **Details** pane on the left shows that the Insight
 
 The severity of each Signal is also shown. CSE generated an Insight for entity “192.168.1.1” because the cumulative severity of Signals fired for that entity within a two week period exceeds the threshold Activity Score.
 
-![insight.png](/img/cloud-siem-enterprise/insight.png)
+![insight.png](/img/cse/insight.png)
 
 ### Redundant Signal suppression
 

@@ -61,19 +61,19 @@ This section lists the CSE’s cloud storage integrations.
 
 1. In the CSE web UI, click the gear icon, then click **Sensors**.   
 
-    ![Sensor_UI.png](/img/cloud-siem-enterprise/Sensor_UI.png)
+    ![Sensor_UI.png](/img/cse/Sensor_UI.png)
 1. Click Cloud Sensor's **Edit** icon.   
 
-    ![Cloud_Sensor_Edit.png](/img/cloud-siem-enterprise/Cloud_Sensor_Edit.png)
+    ![Cloud_Sensor_Edit.png](/img/cse/Cloud_Sensor_Edit.png)
 1. Click **ADD** under the **INTEGRATIONS** section.   
 
-    ![Integration_ADD.png](/img/cloud-siem-enterprise/Integration_ADD.png)
+    ![Integration_ADD.png](/img/cse/Integration_ADD.png)
 1. Select the **Type** of integration you would like to configure, fill in the required fields, and click **ADD.   
 
-    ![Integration_Type.png](/img/cloud-siem-enterprise/Integration_Type.png)**
+    ![Integration_Type.png](/img/cse/Integration_Type.png)**
 1. The new integration is listed under the Cloud Sensor's INTEGRATIONS section labeled by the **Name** you provided for that Integration. (Not the **Type** of Integration)
 1. The Cloud Sensor will begin to automatically collect data from your new integration. To confirm, click on the Info icon next to "Cloud Sensor" to view the integration's configuration and Records Seen Since Start.   
 
-    ![info.png](/img/cloud-siem-enterprise/info.png)   
+    ![info.png](/img/cse/info.png)   
 
-    ![Records_Seen_Since_Start.png](/img/cloud-siem-enterprise/Records_Seen_Since_Start.png)
+    ![Records_Seen_Since_Start.png](/img/cse/Records_Seen_Since_Start.png)

@@ -39,7 +39,7 @@ Forward proxies, such as HTTP web proxies, broker client connections to the inte
 
 The following diagram Illustrates optimal sensor positioning prior to a web proxy.
 
-![Network Sensor Deployment Guide_SS_1.png](/img/cloud-siem-enterprise/Network_Sensor_Deployment_Guide_SS_1.png)
+![Network Sensor Deployment Guide_SS_1.png](/img/cse/Network_Sensor_Deployment_Guide_SS_1.png)
 
 Sumo Logic advises positioning network sensors for visibility at a monitoring point immediately in front of the proxy server(s). This allows the sensor to record client source addresses and to see all web requests prior to content filtering. This is an important factor for a number of CSE’s rules and analytics, which rely on knowing the “true” source of requests. Because a number of threats beacon to remote internet servers, seeing even those requests that are filtered by a proxy server is important for monitoring and response.
 
@@ -238,11 +238,11 @@ The sensor software is installed in the `/opt` directory.
 
 1. In the CSE web UI, click the gear menu and select **Sensors** under **Incoming Data**.   \[gear-menu.png\]
 
-    ![gear-menu.png](/img/cloud-siem-enterprise/gear-menu.png)
+    ![gear-menu.png](/img/cse/gear-menu.png)
 1. On the **Sensors** page, click **Add**.
 1. The **Add Sensor** popup appears.
 
-    ![network-sensor.png](/img/cloud-siem-enterprise/network-sensor.png)
+    ![network-sensor.png](/img/cse/network-sensor.png)
 1. Copy the installation command from the page, and run it in a terminal window.
 1. The installer prompts you to enter the URL for the HTTP Source on Sumo Logic to which the sensor will send data. If you do not enter a value, this tells the installer that you want to send the data collected by the sensor to the legacy CSE server.  
 1. The installer prompts you to enter the capture interface to monitor, for example eth0, eth2, and so on. 

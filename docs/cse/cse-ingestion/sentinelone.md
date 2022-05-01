@@ -16,7 +16,7 @@ In this step, you configure a Cloud Syslog Source to collect SentinelOne log mes
 1. Click **Add Collector**.
 1. Click **Hosted Collector.**
 1. The **Add Hosted Collector** popup appears.  
-    ![add-hosted-collector.png](/img/cloud-siem-enterprise/add-hosted-collector.png)
+    ![add-hosted-collector.png](/img/cse/add-hosted-collector.png)
 1. **Name**. Provide a Name for the Collector.
 1. **Description**. (Optional)
 1. **Category**. Enter a string to tag the output collected from the source. The string that you supply will be saved in a metadata field called `_sourceCategory`. 
@@ -34,7 +34,7 @@ In this step, you configure a Cloud Syslog Source to collect SentinelOne log mes
     Collector.
 1. Select **Cloud Syslog**. 
 1. The page refreshes.  
-    ![cloud-syslog-source.png](/img/cloud-siem-enterprise/cloud-syslog-source.png)
+    ![cloud-syslog-source.png](/img/cse/cloud-syslog-source.png)
 1. **Name**. Enter a name for the source. 
 1. **Description**. (Optional) 
 1. **Source Host**. (Optional) Enter a string to tag the messages collected from the source. The string that you supply will be saved in a metadata field called `_sourceHost`.
@@ -56,9 +56,9 @@ In this step you configure SentinelOne to send log messages to the Sumo Logic pl
 In this step, you verify that your logs are successfully making it into CSE. 
 
 1. Click the gear icon, and select **Log Mappings** under **Incoming Data**.  
-    ![log-mappings-link.png](/img/cloud-siem-enterprise/log-mappings-link.png)
+    ![log-mappings-link.png](/img/cse/log-mappings-link.png)
 1. On the **Log Mappings** page search for "SentinelOne" and check under **Record Volume**.   
-    ![sentinelone-record-volume.png](/img/cloud-siem-enterprise/sentinelone-record-volume.png)
+    ![sentinelone-record-volume.png](/img/cse/sentinelone-record-volume.png)
 1. For a more granular look at the incoming records, you can also use the Sumo Logic platform to search for SentinelOne security records.  
-    ![sentinelone-search.png](/img/cloud-siem-enterprise/sentinelone-search.png)  
+    ![sentinelone-search.png](/img/cse/sentinelone-search.png)  
      

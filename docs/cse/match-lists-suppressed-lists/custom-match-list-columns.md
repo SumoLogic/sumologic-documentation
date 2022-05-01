@@ -20,20 +20,20 @@ To see the custom columns that have been defined in your environment:
 
 1. Select **Match Lists** from the **Content** menu.
 
-    ![select-match-lists-page.png](/img/cloud-siem-enterprise/select-match-lists-page.png)
+    ![select-match-lists-page.png](/img/cse/select-match-lists-page.png)
 1. On the **Match Lists** page, click **Custom Columns**.
 
-    ![match-lists.png](/img/cloud-siem-enterprise/match-lists.png)
+    ![match-lists.png](/img/cse/match-lists.png)
 1. The **Custom Columns** page lists the custom columns that have been defined in your environment.
 
-    ![custom-columns.png](/img/cloud-siem-enterprise/custom-columns.png)
+    ![custom-columns.png](/img/cse/custom-columns.png)
 
 ## Create a Custom Column
 
 1. On the **Custom Columns** page, click **Create**.
 1. The **Create Match List Column** popup appears.
 
-    ![create-column.png](/img/cloud-siem-enterprise/create-column.png)
+    ![create-column.png](/img/cse/create-column.png)
 1. **Name**. Enter a name for the custom column.
 1. **Fields**. Click the chevron icon to display a selector list of CSE attributes. You can select multiple attributes. Click the icon next to Show field guide to view more information, such as data type, about attributes. 
 1. Click **Create** to add the new column.
@@ -53,4 +53,4 @@ To see the custom columns that have been defined in your environment:
 
 Follow the instructions in the [Create a Match List](create-match-list.md), and select the desired column in the **Custom** section of the **Target Column** selector list.
 
-![target-column-selector.png](/img/cloud-siem-enterprise/target-column-selector.png)
+![target-column-selector.png](/img/cse/target-column-selector.png)

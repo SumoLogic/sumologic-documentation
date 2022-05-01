@@ -38,10 +38,10 @@ In this step, you make a copy of your API credentials, which you'll need to supp
 
 1. In the CSE UI, click the icon in the upper right of the page to display your account profile.
 
-    ![profile-icon.png](/img/cloud-siem-enterprise/profile-icon.png)
+    ![profile-icon.png](/img/cse/profile-icon.png)
 1. Click the copy icon next to **Enabled** to copy your API key. 
 
-    ![copy-icon.png](/img/cloud-siem-enterprise/copy-icon.png)
+    ![copy-icon.png](/img/cse/copy-icon.png)
 1. Save the key.
 
 ## Step 2: Install ServiceNow plugins
@@ -54,10 +54,10 @@ Plugin installation can fail if another installation is running in the backgroun
 
 1. Install the Security Incident Response plugin from the ServiceNow store. 
 
-    ![sir-plugin.png](/img/cloud-siem-enterprise/sir-plugin.png)
+    ![sir-plugin.png](/img/cse/sir-plugin.png)
 1. Install the Threat Intelligence add-on from the ServiceNow store. 
 
-    ![threat-plugin.png](/img/cloud-siem-enterprise/threat-plugin.png)
+    ![threat-plugin.png](/img/cse/threat-plugin.png)
 
 ## Step 3: Configure MITRE ATT&CK threat feed data
 
@@ -69,10 +69,10 @@ This step is required only if you don’t already have MITRE ATT&CK threat feed 
 1. Click **Execute Now** to populate your MITRE framework data. 
 1. To verify the population succeeded,  in the navigation bar search for "MITRE ATT&CK Repository" and click **Techniques**.
 
-    ![techniques-option.png](/img/cloud-siem-enterprise/techniques-option.png)
+    ![techniques-option.png](/img/cse/techniques-option.png)
 1. You should see several pages of data similar to the screenshot below.
 
-    ![techniques-table.png](/img/cloud-siem-enterprise/techniques-table.png)
+    ![techniques-table.png](/img/cse/techniques-table.png)
 1. If the table is still empty, contact your ServiceNow administrator and review the integration runs logs to determine how the error occurred. Otherwise proceed to the next step.
 
 ## Step 4: Configure CI Lookup Rules
@@ -82,17 +82,17 @@ CI Lookup Rules are required to enable discovery of configuration items and avoi
 1. Navigate to **CI Lookup Rules** under **Security Operations** in the navigation bar. 
 1. Select **New** and create three rules shown in the screenshot below. For instructions, see [Create a CI Lookup Rule](https://docs.servicenow.com/bundle/orlando-security-management/page/product/security-operations-common/task/create-ci-identifier-rules.html) in ServiceNow help.
 
-    ![rules.png](/img/cloud-siem-enterprise/rules.png)
+    ![rules.png](/img/cse/rules.png)
 
 ## Step 5: Install the SIR-CSE integration
 
 1. Search for **Integration Configurations** under **Security Operations** in the navigation bar. 
 1. Locate **Sumo Logic SIR** and click **Configure**.
 
-    ![config-button.png](/img/cloud-siem-enterprise/config-button.png)
+    ![config-button.png](/img/cse/config-button.png)
 1. The **Sumo Logic SIR Configuration** popup appears.  
 
-    ![config-page.png](/img/cloud-siem-enterprise/api-credentials.png)
+    ![config-page.png](/img/cse/api-credentials.png)
 1. **Host**. What you enter here depends on your CSE URL:
 
    * If your CSE URL ends in `jask.ai`, enter your complete CSE URL. 
@@ -120,7 +120,7 @@ If desired, you can change the mapping between the fields in CSE Insights and th
 
 1. Navigate to the **Table Transform Maps** page in ServiceNow.
 
-    ![table-transform-maps.png](/img/cloud-siem-enterprise/table-transform-maps.png)
+    ![table-transform-maps.png](/img/cse/table-transform-maps.png)
 1. Open the “Sumo Insight Mapper” for editing.
 1. Make your edits and save your changes. 
 
@@ -142,19 +142,19 @@ Double-click a property to edit it.
 
 The URL to the ServiceNow Incident generated for an Insight is shown on the details page for the Insight.
 
-![incident-created-popup.png](/img/cloud-siem-enterprise/incident-created-popup.png)
+![incident-created-popup.png](/img/cse/incident-created-popup.png)
 
 ## Example Incident created by integration
 
 The screenshot below shows a ServiceNow Incident that was created for a CSE Insight.
 
-![incident-draft-tab.png](/img/cloud-siem-enterprise/incident-draft-tab.png)
+![incident-draft-tab.png](/img/cse/incident-draft-tab.png)
 
 ## See closed Insight in CSE
 
 After an Incident created by the integration is closed in ServiceNow, the Insight from which it was generated will be closed in CSE as well.
 
-![insight-actions-icon.png](/img/cloud-siem-enterprise/insight-actions-icon.png)
+![insight-actions-icon.png](/img/cse/insight-actions-icon.png)
 
 ## View integration log messages
 
@@ -163,5 +163,5 @@ To view log messages written by the integration:
 1. Choose **System Log \> All** in the ServiceNow left-nav pane.
 1. Search the messages for “Sumo CSE”.
 
-![messages-sumo-cse.png](/img/cloud-siem-enterprise/messages-sumo-cse.png)
+![messages-sumo-cse.png](/img/cse/messages-sumo-cse.png)
 

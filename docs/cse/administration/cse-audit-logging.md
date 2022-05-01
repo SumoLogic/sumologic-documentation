@@ -76,7 +76,7 @@ The table below shows the `_sourceCategory` that is assigned to event logs by CS
 | [Network Block](create-use-network-blocks.md) | `cseNetworkBlock` |
 | [Streaming Export Configuration](../cse-ingestion/sumo-logic-ingest-mapping.md)  | `cseStreamingExportConfiguration` |
 | [Sumo Mapping](../cse-ingestion/sumo-logic-ingest-mapping.md)  | `cseSumoMapping` |
-| [Suppressed List](/docs/cloud-siem-enterprise/match-lists-suppressed-lists)  | `cseSuppressList` |
+| [Suppressed List](/docs/cse/match-lists-suppressed-lists)  | `cseSuppressList` |
 | Templated Match Rule  | `cseRule` |
 | Threat Intel Sources<br/>(Applies to all source types on the **Threat Intel** page.) | `cseThreatIntelSource` |
 | [Threshold Rule](../cse-rules/write-threshold-rule.md) | `cseRule` |
@@ -115,7 +115,7 @@ To search the Audit Event Index for logs that describe CSE events:
 
 1. Open a search tab in the Sumo Logic UI by clicking **+ New** and choosing **Log Search**.  
 
-    ![new-log-search.png](/img/cloud-siem-enterprise/new-log-search.png)
+    ![new-log-search.png](/img/cse/new-log-search.png)
 
 1. In the search tab, enter a search using `_index` to specify the partition you want to search, other metadata or fields to further scope you search. For example:  
 
@@ -132,7 +132,7 @@ To search the Audit Event Index for logs that describe CSE events:
 
 Here is an example `InsightCreated` event log.
 
-![example-event.png](/img/cloud-siem-enterprise/example-event.png)
+![example-event.png](/img/cse/example-event.png)
 
 ## Index retention period 
 

@@ -1,5 +1,5 @@
 ---
-slug: /cloud-siem-enterprise/cse-ingestion
+slug: /cse/cse-ingestion
 ---
 
 # CSE Ingestion

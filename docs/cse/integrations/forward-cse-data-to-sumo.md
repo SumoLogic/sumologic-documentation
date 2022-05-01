@@ -27,13 +27,13 @@ To configure an HTTP Source:
 1. On the **Select Source…** page, click **HTTP Logs & Metrics**. 
 1. The source configuration page appears.
 
-    ![source-for-cse.png](/img/cloud-siem-enterprise/source-for-cse.png)
+    ![source-for-cse.png](/img/cse/source-for-cse.png)
 1. **Name**. Enter a name for the source.  
 1. **Description**. (Optional) Enter a description of the source.
 1. Click **Save**.
 1. The **HTTP Source Address** popup appears. Copy the URL. You'll need to supply in the following step.
 
-    ![http-source-address.png](/img/cloud-siem-enterprise/http-source-address.png)
+    ![http-source-address.png](/img/cse/http-source-address.png)
 
 ## Configure CSE to forward data to Sumo Logic platform
 
@@ -43,13 +43,13 @@ Perform these steps for each CSE data set you want to send to Sumo Logic,
 
 1. In the CSE UI, click the gear icon, and then click Sumo Logic.
 
-    [integrations-sumo.png](/img/cloud-siem-enterprise/integrations-sumo.png)
+    [integrations-sumo.png](/img/cse/integrations-sumo.png)
 1. On the **Integrations** page, click **Index**, and then **Create**.
 
-    [index-icon.png](/img/cloud-siem-enterprise/index-icon.png)
+    [index-icon.png](/img/cse/index-icon.png)
 1. The **Create Index Configuration** page appears.
 
-    [create-index-configuration.png](/img/cloud-siem-enterprise/create-index-configuration.png)
+    [create-index-configuration.png](/img/cse/create-index-configuration.png)
 1. **Name**. This will be used in the `_sourceCategory` metadata field that Sumo Logic will apply to the data you send from CSE to Sumo Logic.
 1. **Data Stream**. Select one of the following options: 
 

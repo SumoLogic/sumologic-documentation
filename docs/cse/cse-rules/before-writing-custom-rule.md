@@ -45,13 +45,13 @@ To find and review a log mapping:
 
     Two mappings match. For each mapping, you can see how many times it’s been used in the last 24 hrs and also over the last 7 days. We’ll select the one that has been in use, rather than the one that hasn’t.
 
-    ![matching-mappings.png](/img/cloud-siem-enterprise/matching-mappings.png)
+    ![matching-mappings.png](/img/cse/matching-mappings.png)
 1. Once you’ve opened the mapping, you’ll see the top of the page shows the Vendor, Product, and Event ID that is written to the Records produced by the mapping.  
 
-    ![selected-mapping-top.png](/img/cloud-siem-enterprise/selected-mapping-top.png)
+    ![selected-mapping-top.png](/img/cse/selected-mapping-top.png)
 1. The **Fields** section of the page shows how raw message fields are mapped to CSE schema attributes. In this mapping, `EventData.LogonProcessName` is mapped to `application`, `EventData.WorkstationName` is mapped to `device_hostname`, and so on. 
 
-    ![selected-mapping-bottom.png](/img/cloud-siem-enterprise/selected-mapping-bottom.png)
+    ![selected-mapping-bottom.png](/img/cse/selected-mapping-bottom.png)
 
 Now that we understand the mapping in CSE, we can see we will want to be looking for logs where the `metadata_vendor` is “Microsoft”, `metadata_product` is “Windows”, and `metadata_deviceEventId` is “Security-4624”, and we will also want to use the `user_username` field to find users that don’t match our naming convention.
 
@@ -67,7 +67,7 @@ _index=sec_record_*
 | count by user_username
 ```
 
-![count-by-user.png](/img/cloud-siem-enterprise/count-by-user.png)  
+![count-by-user.png](/img/cse/count-by-user.png)  
 
 The results show two of our standard username patterns: 
 
@@ -82,7 +82,7 @@ _index=sec_record_*
 | count by user_username
 ```
 
-![non-matching-patterns.png](/img/cloud-siem-enterprise/non-matching-patterns.png)
+![non-matching-patterns.png](/img/cse/non-matching-patterns.png)
 
 Usernames returned include “anonymous logon”. A little [research](https://social.technet.microsoft.com/Forums/ie/en-US/dbcbb9f1-c6a7-43ea-94b8-ba72a89e2221/nt-authorityanonymous-logon?forum=winservergen) indicates that this is typically no cause for alarm, so we’ll refine our search again to exclude “anonymous logon”.
 
@@ -95,7 +95,7 @@ Now that we’ve sorted out the usernames formats and values we want to exclude,
 
 Let’s say there is a field of interest in our raw messages—`EventData.ProcessName`—that isn’t mapped to a CSE schema attribute. We want to parse that field out of the message so we can use it in our logic as well. We only want our rule to fire if a user with an anomalous logon ran an .exe process after successfully logging in. You can see all of the fields in the raw message in the **Messages** tab of your search results.
 
-![messages-tab.png](/img/cloud-siem-enterprise/messages-tab.png)
+![messages-tab.png](/img/cse/messages-tab.png)
 
 We update the query to parse out `EventData.ProcessName`, naming it `process_name`, and filtering to only fire on `.exe` files. 
 
@@ -111,6 +111,6 @@ Now we have a query we can use as the rule expression for our rule. Note that
   
 You can use an expression like this example in any rule type. Here is an example Match rule with the expression, shown in the Rules Editor.
 
-![example-in-editor.png](/img/cloud-siem-enterprise/example-in-editor.png)
+![example-in-editor.png](/img/cse/example-in-editor.png)
 
  

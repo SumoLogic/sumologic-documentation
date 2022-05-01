@@ -1,5 +1,5 @@
 ---
-slug: /cloud-siem-enterprise/records-signals-entities-insights
+slug: /cse/records-signals-entities-insights
 ---
 
 # Records, Signals, Entities, and Insights

@@ -28,11 +28,11 @@ Make sure your parser code includes `MAPPER` statements that specify the vendor,
 
 1. Go to **Manage Data \> Logs \> Parsers**.
 
-    ![add-button.png](/img/cloud-siem-enterprise/add-button.png)
+    ![add-button.png](/img/cse/add-button.png)
 1. Navigate to the folder where you’d like to create the parser. If you want to create a new folder, click **Add** and select **New Folder**.  You don’t have to organize your parsers in folders, but it's easier to manage them if you do.
 1. Click **Add** and select **New Parser** to display the **Create Parser** page.
 
-    ![create-parser-annotated.png](/img/cloud-siem-enterprise/create-parser-annotated.png)
+    ![create-parser-annotated.png](/img/cse/create-parser-annotated.png)
 1. **Name**. Enter a distinctive name for the parser. Typically the parser name indicates the product or service whose messages it will parse.
 1. **Description**. (Optional) Describe the parser.
 1. **Parser Configuration**. Paste your parser code in this area.
@@ -47,7 +47,7 @@ Make sure your parser code includes `MAPPER` statements that specify the vendor,
 1. After you’ve obtained sample messages using one of the methods above, click **Parse Logs**.
 1. If all of the sample messages are parsed successfully, you’ll see results like those shown below in the **Parsed Messages** section of the editor. The **Event Details** section shows the key-value pairs that were parsed from the raw message. If your results indicate that there were warnings, unparsed, or dropped messages, see [Understanding parsing failures and warnings](#understanding-parsing-failures-and-warnings).
 
-    ![successsful-blurred.png](/img/cloud-siem-enterprise/successsful-blurred.png) 
+    ![successsful-blurred.png](/img/cse/successsful-blurred.png) 
     
     :::note
     One of the two messages that was parsed was cut out of the screenshot to make the image shorter. 
@@ -65,11 +65,11 @@ To import messages by running a Sumo Logic search:
 
 1. Choose the **Sumo Log Search** option to display this popup.
 
-    ![search-for-sample-logs.png](/img/cloud-siem-enterprise/search-for-sample-logs.png)
+    ![search-for-sample-logs.png](/img/cse/search-for-sample-logs.png)
 1. Enter a log query, time range, the number of messages you want returned, and click **OK**.
 1. The popup now displays the results of your search.
 
-    ![messages-returned.png](/img/cloud-siem-enterprise/messages-returned.png)
+    ![messages-returned.png](/img/cse/messages-returned.png)
 1. Click **OK** to close the popup.
 1. The **Sample logs** portion of the parser editor now contains the sample messages. 
 1. Proceed to [Parse logs](#parse-logs).
@@ -80,7 +80,7 @@ To import messages by pasting them in the editor:
 
 1. Choose the **Paste Logs** option to display this popup.
 
-    ![paste-in-sample-logs.png](/img/cloud-siem-enterprise/paste-in-sample-logs.png)
+    ![paste-in-sample-logs.png](/img/cse/paste-in-sample-logs.png)
 1. **Raw Logs**. Paste your log messages into this area.
 1. **Breaker**. Use this option to tell the parser editor how to split the text you entered into messages. The options are: 
 
@@ -91,10 +91,10 @@ To import messages by pasting them in the editor:
 1. Click **Break Messages**.
 1. The popup refreshes and shows how the pasted text was broken into individual messages. Review the messages to verify they were split correctly.
 
-    ![after-split.png](/img/cloud-siem-enterprise/after-split.png)
+    ![after-split.png](/img/cse/after-split.png)
 1. Click **OK** to close the popup. The **Sample logs** portion of the parser editor now contains the sample messages. Note the **Save Messages As** option. You can save the messages you just broke up for use in any additional testing of the parser that you may need to do.
 
-    ![save-messages-link.png](/img/cloud-siem-enterprise/save-messages-link.png)
+    ![save-messages-link.png](/img/cse/save-messages-link.png)
 1. To save the message, click the **Save Messages As** option.
 1. On the **Save Messages** popup, enter a name for the saved messages, and click **Save.**
 1. Proceed to [Parse logs](#parse-logs).
@@ -105,13 +105,13 @@ To import previously saved messages:
 
 1. Click **Saved Logs** in the **Sample Logs** section of the editor. This popup appears:
 
-    ![get-saved-messages.png](/img/cloud-siem-enterprise/get-saved-messages.png)
+    ![get-saved-messages.png](/img/cse/get-saved-messages.png)
 1. Select a saved file of sample messages from the list in the **File Name** section of the popup.
 1. The messages from the selected file appear in the **Preview Logs** section of the page.
 1. Click **Get Logs**.
 1. The popup closes and the logs that you retrieved now appear in the **Sample Logs** section of the editor.
 
-    ![messages-from-saved-file.png](/img/cloud-siem-enterprise/messages-from-saved-file.png)
+    ![messages-from-saved-file.png](/img/cse/messages-from-saved-file.png)
 1. Proceed to [Parse logs](#parse-logs).
 
 ## Understanding parsing failures and warnings
@@ -145,7 +145,7 @@ the local statement overrides the system statement.
 
 Here is an example of a local configuration that overrides the `START_TIME_FIELD` and `TIME_PARSE `statements.
 
-![local-config.png](/img/cloud-siem-enterprise/local-config.png)
+![local-config.png](/img/cse/local-config.png)
 
 The system configuration and local configuration are separate, so your customizations are preserved when Sumo Logic updates the parser.
 
@@ -162,10 +162,10 @@ To create a local configuration:
 1. Go to **Manage Data \> Logs \> Parsers**.
 1. In the System folder, navigate to the parser you want to modify and choose **Edit** from the three-dot more options menu.
 
-    ![three-dot.png](/img/cloud-siem-enterprise/three-dot.png)
+    ![three-dot.png](/img/cse/three-dot.png)
 1. The parser editor opens. The parser code is shown in the **System Configuration** area.
 
-    ![system-parser-edit- button.png](/img/cloud-siem-enterprise/system-parser-edit-%20button.png)
+    ![system-parser-edit- button.png](/img/cse/system-parser-edit-%20button.png)
 1. Paste your custom parser code in the **Local Configuration** area.
 1. Use one of the methods in **Get test messages** above, and then click **Parse Logs**.
 
@@ -181,14 +181,14 @@ org.
 1. Navigate to the parser you want to export and choose **Export** from the three-dot more options menu.
 1. On the **Export** popup, click **Copy to Clipboard **and then click **Done**.
 
-    ![export.png](/img/cloud-siem-enterprise/export.png)
+    ![export.png](/img/cse/export.png)
 1. Access the Sumo Logic org where you want to import the parser.
 1. Go to **Manage Data \> Logs \> Parsers**.
 1. Navigate to the folder where you want to store the parser.
 1. Choose **Import** from the three-dot more options menu.
 1. Enter a name for the parser, paste the code you exported into the popup, and click **Import**.
 
-    ![import.png](/img/cloud-siem-enterprise/import.png)
+    ![import.png](/img/cse/import.png)
 
 ## Setting CSE log mapping information
 
@@ -207,13 +207,13 @@ This section explains how to configure a Sumo Logic CIP source to send the messa
 1. Navigate to your custom parser in the editor.
 1. Hover over the row that contains the parser.
 
-    ![more-options-for-parser.png](/img/cloud-siem-enterprise/more-options-for-parser.png)
+    ![more-options-for-parser.png](/img/cse/more-options-for-parser.png)
 1. Click the three-dot more options icon, and select **Copy Path** and save the path.
 1. In Sumo Logic CIP,  go to **Manage Data \> Collection \> Collection**.
 1. Navigate to the source that produces the messages your custom parser will process.
 
-    ![cloudtrail-source.png](/img/cloud-siem-enterprise/cloudtrail-source.png)
+    ![cloudtrail-source.png](/img/cse/cloudtrail-source.png)
 1. Click **+Add Field**. 
 1. Two blank fields appear, below any Fields that have already been defined for the source. Enter `_parser` as the field name and the path to your parser as the value. 
 
-    ![new-field.png](/img/cloud-siem-enterprise/new-field.png) An orange icon indicates that the `_parser` field has not been created in your CIP org yet.
+    ![new-field.png](/img/cse/new-field.png) An orange icon indicates that the `_parser` field has not been created in your CIP org yet.

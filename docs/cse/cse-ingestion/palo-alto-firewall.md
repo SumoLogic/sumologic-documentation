@@ -22,7 +22,7 @@ In this step, you configure a Syslog Source to collect Palo Alto Firewall log me
 1. Install the collector. Instructions for your preferred operating system and method of installation are available on the Installed Collectors page.
 1. Once the collector is installed, confirm it is available on the **Collection** page and select **Edit**.
 1. The **Edit Collector popup** appears.  
-    ![edit-collector.png](/img/cloud-siem-enterprise/edit-collector.png)
+    ![edit-collector.png](/img/cse/edit-collector.png)
 1. **Name**. Provide a Name for the Collector.
 1. **Description**. (Optional)
 1. **Category**. Enter a string to tag the output collected from the source. The string that you supply will be saved in a metadata field called `_sourceCategory`. 
@@ -38,7 +38,7 @@ In this step, you configure a Syslog Source to collect Palo Alto Firewall log me
 1. On the **Collectors** page, click **Add Source** next to an Installed Collector.
 1. Select **Syslog**. 
 1. The page refreshes.  
-    ![syslog-source.png](/img/cloud-siem-enterprise/syslog-source.png)
+    ![syslog-source.png](/img/cse/syslog-source.png)
 1. **Name**. Enter a name for the source. 
 1. **Description**. (Optional) 
 1. **Protocol**. Select the protocol that your syslog-enabled devices are currently using to send syslog data, UDP or TCP. For more information, see Choosing TCP or UDP on the *Syslog Source* page.
@@ -58,8 +58,8 @@ In this step you configure Palo Alto Firewall to send log messages to the Sumo L
 In this step, you verify that your logs are successfully making it into CSE. 
 
 1. Click the gear icon, and select **Log Mappings** under **Incoming Data**.  
-    ![log-mappings-link.png](/img/cloud-siem-enterprise/log-mappings-link.png)
+    ![log-mappings-link.png](/img/cse/log-mappings-link.png)
 1. On the **Log Mappings** page search for "Palo Alto" and check under **Record Volume**.   
-    ![palo-alto-firewall-record-volume.png](/img/cloud-siem-enterprise/palo-alto-firewall-record-volume.png)
+    ![palo-alto-firewall-record-volume.png](/img/cse/palo-alto-firewall-record-volume.png)
 1. For a more granular look at the incoming records, you can also search the Sumo Logic platform for Palo Alto Firewall security records.  
-    ![palo-alto-firewall-search.png](/img/cloud-siem-enterprise/palo-alto-firewall-search.png)
+    ![palo-alto-firewall-search.png](/img/cse/palo-alto-firewall-search.png)

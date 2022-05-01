@@ -47,7 +47,7 @@ If a name normalization configuration exists, the name attribute will be populat
 
 The name normalization feature can be enabled in the **Incoming Data** section under the **Entities** tab of the CSE configuration.  
 
-![Configuration.png](/img/cloud-siem-enterprise/Configuration.png)
+![Configuration.png](/img/cse/Configuration.png)
 
 You can configure just username normalization, just hostname normalization, or both. We recommend you enable both. 
 
@@ -89,7 +89,7 @@ If no name normalization is configured, the system will continue to operate as i
 
 An example UI is provided for a case where the customer has a domain name `test.com` and an active directory domain named `test`. 
 
-![Example_UI.png](/img/cloud-siem-enterprise/Example_UI.png)
+![Example_UI.png](/img/cse/Example_UI.png)
 
 ### Example - single domain
 

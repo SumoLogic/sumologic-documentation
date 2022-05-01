@@ -1,5 +1,5 @@
 ---
-slug: /cloud-siem-enterprise
+slug: /cse
 ---
 
 # Cloud SIEM Enterprise

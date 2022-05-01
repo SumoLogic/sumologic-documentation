@@ -17,7 +17,7 @@ There’s no reason you can’t use a Match List to define “deny lists” of i
 
 Here’s an example of a Match List in the CSE UI, at **Content \> Match Lists**. It is a list of trusted domains.  
   
-![example-match-list.png](/img/cloud-siem-enterprise/example-match-list.png)
+![example-match-list.png](/img/cse/example-match-list.png)
 
 Note that the Match List has a **Target Column**, which you define when you create the list. The Target Column indicates what type of Record fields should be compared to the Match List, for example hostnames, URLs, domains, IP addresses, usernames, and so on. For more information, see [How are Match Lists Used?](#how-are-match-lists-used).
 
@@ -73,7 +73,7 @@ You can also create and manage Match Lists with CSE's REST [API](../administrati
 
 1. Go to **Content \> Match List** and click **Create**.
 
-    ![match-list-create-icon.png](/img/cloud-siem-enterprise/match-list-create-icon.png)
+    ![match-list-create-icon.png](/img/cse/match-list-create-icon.png)
 1. On the **New Match List** popup, enter the following: 
 
     * **Name**. Name of the Match list. If you are creating a standard Match List, make sure the name matches the standard Match List name. For more information, see [Standard Match Lists](standard-match-lists.md).   We recommend no embedded spaces in list names. For example, instead of *my list*, use *my_list*. 
@@ -82,14 +82,14 @@ You can also create and manage Match Lists with CSE's REST [API](../administrati
     * **Target Column**. The type of message field to which items on the list should be compared. The **Target Column** for standard Match Lists can be found in [Standard Match Lists](standard-match-lists.md).
     * Click **Create**.    
 
-    ![new-match-list.png](/img/cloud-siem-enterprise/new-match-list.png)
+    ![new-match-list.png](/img/cse/new-match-list.png)
 1. The Match List now appears on the **Match Lists** page. 
 
-    ![match-list-added.png](/img/cloud-siem-enterprise/match-list-added.png)
+    ![match-list-added.png](/img/cse/match-list-added.png)
 1. Click the name of the Match List to open it.
 1. On the **Match List \> Details** page, click **ADD LIST ITEM**.
 
-    ![match-list-add-item-icon.png](/img/cloud-siem-enterprise/match-list-add-item-icon.png)
+    ![match-list-add-item-icon.png](/img/cse/match-list-add-item-icon.png)
 1. On the **New Match List Item** popup, enter: 
 
    * **Value**. The value of the entity. Make sure the value you enter is of the same type as the type you selected as the Target Column for the list. For example, if the Target Column is `Domain`, enter a domain. 
@@ -97,10 +97,10 @@ You can also create and manage Match Lists with CSE's REST [API](../administrati
    * **Expiration**. (Optional) The date and time at which the list item should be removed from the list. 
    * Click **Add** to add the item to the list.    
 
-    ![new-match-list-item.png](/img/cloud-siem-enterprise/new-match-list-item.png)
+    ![new-match-list-item.png](/img/cse/new-match-list-item.png)
 1. The item now appears in the Match List.
 
-    ![item-added.png](/img/cloud-siem-enterprise/item-added.png)
+    ![item-added.png](/img/cse/item-added.png)
 1. Repeat steps 3 and 4 to add additional items to the list.
 
 ## Import a Match List

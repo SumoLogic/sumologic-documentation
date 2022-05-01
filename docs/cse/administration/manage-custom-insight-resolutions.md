@@ -21,25 +21,25 @@ You can define custom *sub-resolutions* for any of the built-in resolutions. Thi
 
 1. Click the gear icon at the top of the CSE UI and choose **Resolutions** under **Insights**.
 1. On the **Insight Resolutions** page, click **Create**.  
-    ![resolutions-link.png](/img/cloud-siem-enterprise/resolutions-link.png)
+    ![resolutions-link.png](/img/cse/resolutions-link.png)
 1. The **Create Insight Resolution** page appears.
     1. **Name**. Enter a meaningful name for the new resolution.
     1. **Parent Resolution**. Display the dropdown list and select a built-in resolution.
     1. **Description**. (Optional) Enter a description that will help other users understand when to use the new resolution.
     1. Click **Create**.  
-        ![create-insight-resolution.png](/img/cloud-siem-enterprise/create-insight-resolution.png)
+        ![create-insight-resolution.png](/img/cse/create-insight-resolution.png)
     1. The new resolution appears on the **Insight Resolutions** page, indented below the parent resolution.
-        ![resolutions-list-with-new.png](/img/cloud-siem-enterprise/resolutions-list-with-new.png)
+        ![resolutions-list-with-new.png](/img/cse/resolutions-list-with-new.png)
 
 ## Close an Insight using a custom resolution
 
 1. After navigating to an Insight, you can close it by either clicking the **Close Insight** button or by selecting **Closed** from the **Status** pulldown.  
-    ![close-options.png](/img/cloud-siem-enterprise/close-options.png)
+    ![close-options.png](/img/cse/close-options.png)
 1. The **Close Insight** popup presents a list of resolutions, including any custom sub-resolutions that have been defined. Note that a custom resolution is indented below its parent built-in resolution.  
-    ![resolution-options-2.png](/img/cloud-siem-enterprise/resolution-options-2.png)
+    ![resolution-options-2.png](/img/cse/resolution-options-2.png)
 1. Click the appropriate resolution for the Insight.
 1. A popup appears where you can add a comment if desired. Click **Close Insight** to apply the selected resolution and close the Insight.  
-    ![confirm-close.png](/img/cloud-siem-enterprise/confirm-close.png)
+    ![confirm-close.png](/img/cse/confirm-close.png)
 
 ## Filter Insights by custom resolution
 
@@ -47,10 +47,10 @@ You can filter Insights by custom resolution.
 
 1. On the **Insights** page, check the **Filters** area and make sure that the **Status** filter is not set to “is not closed”.  
 1. Click in the **Filters** area and select **Custom Resolution**.   
-    ![filter-option.png](/img/cloud-siem-enterprise/filter-option.png)
+    ![filter-option.png](/img/cse/filter-option.png)
 1. You’re prompted to select an operator: **is** or **is not**.  
-    ![operators.png](/img/cloud-siem-enterprise/operators.png)
+    ![operators.png](/img/cse/operators.png)
 1. After you choose an operator, you're prompted to select a custom resolution.  
-    ![custom-resolution-options.png](/img/cloud-siem-enterprise/custom-resolution-options.png)
+    ![custom-resolution-options.png](/img/cse/custom-resolution-options.png)
 1. Select a resolution to view Insights that have that resolution.  
-    ![search-results.png](/img/cloud-siem-enterprise/search-results.png)
+    ![search-results.png](/img/cse/search-results.png)

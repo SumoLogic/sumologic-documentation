@@ -16,11 +16,11 @@ This topic describes basic steps for troubleshooting problems with the Windows S
 1. Select **Sumo Logic CSE Windows Service** from the list of services. Right-click and choose **Properties**. 
 1. Choose the **Log On** tab. Verify that: * **This account** is selected. * **This account** has the correct username.    
 
-    ![image7.png](/img/cloud-siem-enterprise/verify-windows-service.png)
+    ![image7.png](/img/cse/verify-windows-service.png)
 1. Still on the **Log On** tab, re-enter the current password for the account in both password fields, and click **OK**. This will result in the account being granted the “Logon as a service” permission, if it does not already have it.
 1. Open the **Recovery** tab. Verify that each failure mode is set to **Restart the Service**, as shown below.
 
-    ![image5.png](/img/cloud-siem-enterprise/restart-service.png)
+    ![image5.png](/img/cse/restart-service.png)
 
 ## Verify that the service account has the necessary permissions
 
@@ -56,7 +56,7 @@ Perform this step if the Windows Sensor is running in its default mode, which is
 1. In the list of Collectors and their Sources, locate the Sumo Logic HTTP Source running on Hosted Collector—this is the Source that was set up when the Windows Sensor was installed. (The procedure is described in [Set up Sumo Logic Collector and Source](windows-sensor-installation.md) section of the Windows Sensor Installation topic.)
 1. Mouse over the name of the HTTP Source and click on the left blue icon to “Open in Log Search.” This will open a search in another tab and display data recently received from the Windows Sensor. 
 
-    ![image3.png](/img/cloud-siem-enterprise/windows-sensor.png)
+    ![image3.png](/img/cse/windows-sensor.png)
 
 If the sensor is properly configured, you should see messages in the search results.  
 
@@ -77,20 +77,20 @@ In some instances, the sensor may be configured to send data to the legacy CSE s
 1. Navigate to the Windows Sensor in the CSE UI. Click on the gear in the upper right corner, and choose **Sensors** from the configuration menu.
 1. Look for the sensor in the list that matches the name of the computer where the sensor service is installed. When the sensor service is working properly and sending records, the **Records Per Second (RPS)** value should be greater than zero. Slide the mouse pointer along the RPS graph to see values at a given time.
 
-    ![sensor-rps.png](/img/cloud-siem-enterprise/sensor-rps.png)
+    ![sensor-rps.png](/img/cse/sensor-rps.png)
 
 1. To search for individual Records that have been ingested, click the information icon next to the sensor name.
 1. On the popup that appears, click the icon next to the Sensor ID to copy the Sensor ID to your clipboard. Then, close the popup.     
 
-    ![sensor-info-popup.png](/img/cloud-siem-enterprise/sensor-info-popup.png) 
+    ![sensor-info-popup.png](/img/cse/sensor-info-popup.png) 
 1. Click the **Records** tab at the top of the page.     
 
-    ![tabs.png](/img/cloud-siem-enterprise/tabs.png) 
+    ![tabs.png](/img/cse/tabs.png) 
 
 1. In the **Filters** area, filter by **Metadata Sensor ID** and supply the Sensor ID you copied above. You can enter the following, or select the field and “is” when those options are suggested. Paste in the sensor ID from your clipboard. `Metadata Sensor ID is\<sensor I\>` 
 1. A list of Records appears.
 
-    ![record-search-by-sensor.png](/img/cloud-siem-enterprise/record-search-by-sensor.png) 
+    ![record-search-by-sensor.png](/img/cse/record-search-by-sensor.png) 
 
 1. To view Record details click the plus sign at the left end of the row for a Record. 
 1. Examine the Records, checking that:     
@@ -99,13 +99,13 @@ In some instances, the sensor may be configured to send data to the legacy CSE s
    * The Records have recent timestamps. Be sure to take time zone settings into account. 
    * Compare the Records to source event logs, using the Windows Event Viewer. Keep in mind that the sensor configuration determines which categories of events are sent to the portal. For more information, see [EventIdAllowList](windows-sensor-configuration-settings.md#eventidallowlist) and [EventIdDenyList](windows-sensor-configuration-settings.md#eventiddenylist).                   
 
-    ![record-details.png](/img/cloud-siem-enterprise/record-details.png)
+    ![record-details.png](/img/cse/record-details.png)
 
 ### Check that Records appear in CSE UI
 
 If you didn’t see Records in the step above, check the values of the [SensorAPIKey](windows-sensor-configuration-settings.md#sensorapikey) and [SensorID](windows-sensor-configuration-settings.md#sensorid) options in `C:\ProgramData\Sumo Logic\CSE Windows Sensor\settings.conf`. They should match the values shown on the sensor details popup that appears when you click the info icon for a sensor on the **Sensors** page.  
   
-![sensor-id-and-key.png](/img/cloud-siem-enterprise/sensor-id-and-key.png)
+![sensor-id-and-key.png](/img/cse/sensor-id-and-key.png)
 
 ## Check the sensor log file
 
@@ -152,7 +152,7 @@ For example, if you are troubleshooting a problem with the Event Log, run:
 
 to turn on verbose logging for Event Logs. The command will output some information about the state of the sensor service, which you can ignore. Check the sensor log file, `C:\ProgramData\Sumo Logic\CSE Windows Sensor\logs\SumoLogic.CSEWindowsSensor.log`,  to see that your changes have taken effect.
 
-![image4.png](/img/cloud-siem-enterprise/verbose-logging.png)
+![image4.png](/img/cse/verbose-logging.png)
 
 :::important Reset Logging Levels
 It is **very** **important** to reset logging levels after you’re done troubleshooting. Continued trace-level logging will cause your log files to grow enormously and consume large amounts of disk space.
@@ -332,7 +332,7 @@ To check the version of .NET using regedit:
 1. In the Registry Editor, open the following subkey: `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Full`. 
 1. Find the `Release` key, and verify that the value is 528040 or higher.  
 
-    ![image2.png](/img/cloud-siem-enterprise/image2.png)
+    ![image2.png](/img/cse/image2.png)
 
 ## Verify connectivity to the Event Log Service
 

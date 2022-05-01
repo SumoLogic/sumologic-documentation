@@ -20,11 +20,11 @@ CSE displays Insights and the Signals attached to them in the CSE UI through the
 
 This screenshot shows the **Insights** page in List view. 
 
-![insights-page.png](/img/cloud-siem-enterprise/insights-page.png)
+![insights-page.png](/img/cse/insights-page.png)
 
 Here’s one row from the List view. The numbered definitions below correspond to the labels in the screenshot.
 
-![insight-summary.png](/img/cloud-siem-enterprise/insight-summary.png)
+![insight-summary.png](/img/cse/insight-summary.png)
 
 1. **Creation date and time**. When the Insight was created.
 1. **Dwell time**. The period of time between when the first and last Records in the Insight were observed.  
@@ -49,7 +49,7 @@ The information displayed in the Board view is similar to the information in the
 
 You can switch back the List view by clicking the Show List icon, near the top right corner of the CSE UI.
 
-![board.png](/img/cloud-siem-enterprise/board.png)
+![board.png](/img/cse/board.png)
 
 ### Filtering Insights 
 
@@ -76,7 +76,7 @@ This section describes the **Insight \> Details** page.
 
 The left pane of the **Insight \> Details** page displays detailed information about the selected Insight. Some of the information that appears is the same as what’s in the row for an Insight on the **Insights** page, and is described in [List view,](#list-view) above. The additional information that appears in the **Details** pane is defined below.
 
-![insight](/img/cloud-siem-enterprise/insight-details.png)
+![insight](/img/cse/insight-details.png)
 
 1. **Actions.** The dropdown lists Insight Actions defined in your environment.
 1. **Close Insight.** Use this option to close an Insight. When you click this option, you’re prompted to select an Insight resolution. 
@@ -98,7 +98,7 @@ The left pane of the **Insight \> Details** page displays detailed information a
 
 At the top of the **Insight \> Details** page, you’ll see a Signal timeline that visualizes the Insight’s attached Signals, which are the Signals that caused the Insight to be created, and any Signals that have been manually added to the Insight.
 
-![top-bit.png](/img/cloud-siem-enterprise/top-bit.png)
+![top-bit.png](/img/cse/top-bit.png)
 
 1. **Signals**.The Signals link allows you to switch back to the Signals view from the Enrichments view, described below. 
 1. **Enrichments**. Click this list to view the output of any [Insight Enrichment Server](../integrations/insight-enrichment-server.md) scripts that have enriched the Insight.
@@ -118,7 +118,7 @@ At the top of the **Insight \> Details** page, you’ll see a Signal timeline th
 
 Below the Signal timeline, you’ll see a list of Signals. By default, only attached Signals are displayed.  
 
-![signal-list-area.png](/img/cloud-siem-enterprise/signal-list-area.png)
+![signal-list-area.png](/img/cse/signal-list-area.png)
 
 If you click the **Show Related** checkbox, the page updates and also displays any Related Signals or Related Insights
 
@@ -127,5 +127,5 @@ If you click the **Show Related** checkbox, the page updates and also displays a
 
 Here is an example of what a Related Signal and Related Insight look like in the Signal list. Note that, to distinguish between Signals that are attached as opposed to related, an Attached Signal has a blue vertical “ornament” on the left side of the row. A Related Signal does not.
 
-![related-signal.png](/img/cloud-siem-enterprise/related-signal.png)  
+![related-signal.png](/img/cse/related-signal.png)  
  

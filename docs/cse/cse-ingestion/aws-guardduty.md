@@ -16,7 +16,7 @@ In this step, you configure an HTTP Source to collect AWS GuardDuty log messages
 1. Click **Add Collector**.
 1. Click **Hosted Collector.**
 1. The **Add Hosted Collector** popup appears.  
-    ![add-hosted-collector.png](/img/cloud-siem-enterprise/add-hosted-collector.png)
+    ![add-hosted-collector.png](/img/cse/add-hosted-collector.png)
 1. **Name**. Provide a Name for the collector.
 1. **Description**. (Optional)
 1. **Category**. Enter a string to tag the output collected from the source. The string that you supply will be saved in a metadata field called `_sourceCategory`. 
@@ -36,7 +36,7 @@ It’s also possible to configure individual sources to forward to CSE, as descr
 1. On the **Collectors** page, click **Add Source** next to a Hosted Collector.
 1. Select **HTTP Logs & Metrics**. 
 1. The page refreshes.  
-    ![http-source.png](/img/cloud-siem-enterprise/http-source.png)
+    ![http-source.png](/img/cse/http-source.png)
 1. **Name**. Enter a name for the source. 
 1. **Description**. (Optional) 
 1. **Source Host.** (Optional) Enter a string to tag the messages collected from the source. The string that you supply will be saved in a metadata field called `_sourceHost.`
@@ -46,7 +46,7 @@ It’s also possible to configure individual sources to forward to CSE, as descr
 12. **Advanced Options for Logs**.
     1. Specify **Format** as *yyyy-MM-dd'T'HH:mm:ss.SSS'Z'*
     1. Specify **Timestamp locator** as *.\*"updatedAt":"(.\*)".\**  
-        ![timestamp-format.png](/img/cloud-siem-enterprise/timestamp-format.png)
+        ![timestamp-format.png](/img/cse/timestamp-format.png)
 13. Click **Save**.
 14. Make a note of the **HTTP Source URL** that is displayed. You’ll supply it in [Step 2](#step-2-deploy-sumo-logic-guardduty-events-processor) below.
 
@@ -56,11 +56,11 @@ In this step, you deploy the events processor. This will create the AWS resource
 
 1. Go to https://serverlessrepo.aws.amazon.com/application.
 1. Search for “sumologic-guardduty-events-processor”.   
-    ![aws-repo.png](/img/cloud-siem-enterprise/aws-repo.png)
+    ![aws-repo.png](/img/cse/aws-repo.png)
 1. When the page for the Sumo app appears, click **Deploy**.  
-    ![aws-deploy.png](/img/cloud-siem-enterprise/aws-deploy.png)
+    ![aws-deploy.png](/img/cse/aws-deploy.png)
 1. In  the **Configure application parameters** popup, paste the URL for the HTTP source you created above.  
-    ![config-app-params.png](/img/cloud-siem-enterprise/config-app-params.png)
+    ![config-app-params.png](/img/cse/config-app-params.png)
 1. Click **Deploy**.
 
 ## Step 3: Configure optional environment variables
@@ -69,7 +69,7 @@ In this step, you deploy the events processor. This will create the AWS resource
 1. Search for the "aws-serverless-repository-CloudWatchEventFunction-\<suffix\>" function and click it.
 1. Scroll down to the **Environment variables** section.
 
-    ![env-vars.png](/img/cloud-siem-enterprise/env-vars.png)  
+    ![env-vars.png](/img/cse/env-vars.png)  
 
     You can set any of the following optional variables:
 
@@ -83,8 +83,8 @@ In this step, you deploy the events processor. This will create the AWS resource
 In this step, you verify that your logs are successfully making it into CSE. 
 
 1. Click the gear icon at the top of the CSE UI, and select **Log Mappings** under **Incoming Data**.  
-    ![log-mappings-link.png](/img/cloud-siem-enterprise/log-mappings-link.png)
+    ![log-mappings-link.png](/img/cse/log-mappings-link.png)
 1. On the **Log Mappings** page search for "GuardDuty" and check under **Record Volume**.  
-    ![guardduty-record-volume.png](/img/cloud-siem-enterprise/guardduty-record-volume.png)
+    ![guardduty-record-volume.png](/img/cse/guardduty-record-volume.png)
 1. For a more granular look at the incoming records, you can also search the Sumo Logic platform for GuardDuty security records.  
-    ![guardduty-search.png](/img/cloud-siem-enterprise/guardduty-search.png)
+    ![guardduty-search.png](/img/cse/guardduty-search.png)

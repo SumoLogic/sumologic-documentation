@@ -34,19 +34,19 @@ You can apply multiple tuning expressions to a rule. You can assign a tuning exp
 
 Here’s what the example tuning expression looks like in the CSE UI.
 
-![example-expression.png](/img/cloud-siem-enterprise/example-expression.png)
+![example-expression.png](/img/cse/example-expression.png)
 
 ## Create a tuning expression
 
 1. Select **Rule Tuning** from the **Content** menu.
 
-    [rule-tuning-option.png](/img/cloud-siem-enterprise/rule-tuning-option.png)
+    [rule-tuning-option.png](/img/cse/rule-tuning-option.png)
 1. On the **Rule Tuning** page, click **Create**.
 
-    ![rule-tuning-page.png](/img/cloud-siem-enterprise/rule-tuning-page.png)
+    ![rule-tuning-page.png](/img/cse/rule-tuning-page.png)
 1. The **New Rule Tuning Expression** page appears.
 
-    ![annotated-expression.png](/img/cloud-siem-enterprise/annotated-expression.png)
+    ![annotated-expression.png](/img/cse/annotated-expression.png)
 1. **Name**. Enter a name for the tuning expression. 
 1. **Tune \[selected\|all\] Rules**. Choose whether you want to apply the tuning expression to all of your rules, or only selected rules. 
 1. If you chose  “selected” in the previous step, follow the instructions in [Apply tuning expression to selected rules](#apply-tuning-expression-to-selected-rules). If you chose “all”, follow the instructions in [Apply tuning expression to all rules](#apply-tuning-expression-to-all-rules).
@@ -57,14 +57,14 @@ Here’s what the example tuning expression looks like in the CSE UI.
 1. In the **To only match Records...** area, enter a tuning expression. 
 1. Click **Submit**.
 
-    ![selected-rules.png](/img/cloud-siem-enterprise/selected-rules.png)
+    ![selected-rules.png](/img/cse/selected-rules.png)
 
 ### Apply tuning expression to all rules
 
 1. In the **To only match Records...** area, enter a tuning expression. 
 1. Click **Submit**.
 
-    ![all-option.png](/img/cloud-siem-enterprise/all-option.png)
+    ![all-option.png](/img/cse/all-option.png)
 
 ### Create tuning expression without applying it to rules
 
@@ -74,7 +74,7 @@ If you want to create a tuning expression and not apply it to any rules immediat
 
 You can also create new tuning expression and apply existing tuning expressions to a rule using the **Rules Editor** UI.
 
-![tuning.png](/img/cloud-siem-enterprise/tuning.png)
+![tuning.png](/img/cse/tuning.png)
 
 ## Enabling and disabling a tuning expression
 
@@ -82,16 +82,16 @@ When you create a tuning expression it is enabled by default. If you disable a t
 
 You can toggle the enablement state of a tuning expression on the **Rule Tuning** page using the control to the left of the delete icon.
 
-![enable-on-list.png](/img/cloud-siem-enterprise/enable-on-list.png)
+![enable-on-list.png](/img/cse/enable-on-list.png)
 
 You can also toggle the enablement state on the details page for a tuning expression.
 
-![enable-on-details.png](/img/cloud-siem-enterprise/enable-on-details.png)
+![enable-on-details.png](/img/cse/enable-on-details.png)
 
 ## Testing tuning expressions
 
 When you test a [rule expression](about-cse-rules.md) by clicking **Test Rule** in the rules editor, any tuning expressions assigned to the rule will be included in the test. If you don't want to test the tuning expressions, you can deselect one or more of the tuning expressions before clicking **Test Rule.**
 
-![tuning-checkbox.png](/img/cloud-siem-enterprise/tuning-checkbox.png)
+![tuning-checkbox.png](/img/cse/tuning-checkbox.png)
 
  

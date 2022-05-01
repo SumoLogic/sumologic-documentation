@@ -48,7 +48,7 @@ In CSE, the term *Entity* refers to an IP address, hostname, username, or MAC ad
 
 The screenshot below shows a rule whose "On Entity" attributes are `srcDevice_ip` and `dstDevice_ip`.
 
-![on-entity.png](/img/cloud-siem-enterprise/on-entity.png)
+![on-entity.png](/img/cse/on-entity.png)
 
 When an incoming Record meets a rule's conditions, a Signal is generated for each of the rule's On Entity attributes found in the Record. When the example rule above fires, it generates two Signals: one on the IP address one held in the `srcDevice_ip` attribute, and  another on the IP address held in the `dstDevice_ip` attribute.
 
@@ -87,13 +87,13 @@ The subsections below explain how Match Lists work, and how to leverage them in 
 
 #### Match Lists are used to enrich Record data
 
-This section describes what [Match Lists](/docs/cloud-siem-enterprise/match-lists-suppressed-lists) are, and how CSE uses them to enrich Record data. The short story is that when a Record is ingested, CSE uses Match Lists to add information to the Record. So, your rule doesn’t directly refer to a Match List, it checks the Record for data that CSE may have added to the Record at the time of ingestion. 
+This section describes what [Match Lists](/docs/cse/match-lists-suppressed-lists) are, and how CSE uses them to enrich Record data. The short story is that when a Record is ingested, CSE uses Match Lists to add information to the Record. So, your rule doesn’t directly refer to a Match List, it checks the Record for data that CSE may have added to the Record at the time of ingestion. 
 
 Match Lists are lists of important indicators and identifiers, typically configured by a CSE analyst. Match Lists are often used to define allowlists of entities, like IP addresses, URLs, and hostnames, and so on, that you want to exempt from ordinary rule processing. For example, you might want to prevent a rule from firing for Records that contain one of a certain set of IP addresses. 
 
 Here’s an example of a Match List in the CSE UI, at **Content \> Match Lists**. 
 
-![example-match-list.png](/img/cloud-siem-enterprise/example-match-list.png)
+![example-match-list.png](/img/cse/example-match-list.png)
 
 You can take advantage of Match Lists in rules, but Match Lists actually come into play when Records are ingested. Here’s how it works:  When a Record is ingested, CSE compares the entries in all Match Lists to fields in the Record. Of course, CSE doesn’t compare the entries in a given Match List to all fields in a Record; it wouldn’t make sense to compare a domain name to an IP address. You could say that CSE understands the difference between apples and oranges: CSE distinguishes which Record fields contain IP addresses, which contain domain name and so on. So, CSE compares a Match List of IP addresses to Record fields that contain IP addresses. Similarly, CSEs compares a Match List of usernames to Record fields that contain usernames. For more information about how that works, see [Match Fields Reference](../match-lists-suppressed-lists/match-fields-reference.md). 
 
@@ -142,7 +142,7 @@ CSE’s Threat Intel lists are very similar to Match Lists, and you leverage the
 
 Here’s an example of a Threat Intel list in the CSE UI, at **Content \> Threat Intel**. 
 
-![example-threat-intl.png](/img/cloud-siem-enterprise/example-threat-intl.png)
+![example-threat-intl.png](/img/cse/example-threat-intl.png)
 
 Like Match Lists, Threat Intel lists are used at the time of Record ingestion. When a Record is ingested, CSE determines whether any of the fields in the Record exist in any of your configured Threat Intel lists.
 

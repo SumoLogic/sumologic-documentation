@@ -18,16 +18,16 @@ When you set up a log mapping, you supply the following information:  
 
 1. Click the gear icon and select **Log Mappings**.
 
-    ![config-gear-mappings.png](/img/cloud-siem-enterprise/config-gear-mappings.png)
+    ![config-gear-mappings.png](/img/cse/config-gear-mappings.png)
 1. Click **Create** in the upper right side of the **Log Mappings** page.
 
-    ![log-mappings.png](/img/cloud-siem-enterprise/log-mappings.png)
+    ![log-mappings.png](/img/cse/log-mappings.png)
 1. Click the **Structured Mapping** tile on the **Create a Mapping** page. 
 
-    ![select-mapping-type.png](/img/cloud-siem-enterprise/select-mapping-type.png)
+    ![select-mapping-type.png](/img/cse/select-mapping-type.png)
 1. On the **New Mapping** page, enter a name for the mapping.
 
-    ![new-mapping-page.png](/img/cloud-siem-enterprise/new-mapping-page.png)
+    ![new-mapping-page.png](/img/cse/new-mapping-page.png)
 
 ## Step 2: Enter “If Input Matches” values
 
@@ -74,7 +74,7 @@ You can use a constant mapping to map a constant encountered in a message to a C
 
 Given the example constant mapping below, if the key value “true” is encountered in an incoming message, that value is mapped to the success schema attribute.
 
-![constant.png](/img/cloud-siem-enterprise/constant.png)
+![constant.png](/img/cse/constant.png)
 
 To configure a constant mapping:
 
@@ -91,7 +91,7 @@ You can use an extracted mapping to map a field that was extracted from a log me
 
 Given the following example mapping, if the extracted field `serial` is encountered in a message, its value is mapped to the `resource` schema attribute.
 
-![extracted-mapping-example.png](/img/cloud-siem-enterprise/extracted-mapping-example.png)
+![extracted-mapping-example.png](/img/cse/extracted-mapping-example.png)
 
 To configure a extracted mapping:
 
@@ -112,7 +112,7 @@ The example mapping below creates a string by combining the values of the `first
 
 the mapping combines the values of the ` firstName` and the `lastName` message fields, separated by a space. The resulting value, "John Doe", is mapped to the `user_username` attribute.  
    
-![format-mapping-example.png](/img/cloud-siem-enterprise/format-mapping-example.png)
+![format-mapping-example.png](/img/cse/format-mapping-example.png)
 
 To define a format mapping:
 
@@ -132,7 +132,7 @@ In the screenshot below, we’ve defined a set of lookup key-value pairs that sp
 
 The configuration shown below defines what value to write to the logonType attribute of a Record when the EventData.LogonType message field value is “1”, “2”, “3”, or “4”, which will be “Interactive”, “”Network”, “Batch”, and “Service”, respectively.
 
-![lookup-mapping-filled-out.png](/img/cloud-siem-enterprise/lookup-mapping-filled-out.png)
+![lookup-mapping-filled-out.png](/img/cse/lookup-mapping-filled-out.png)
 
 **To define a lookup mapping**
 
@@ -154,7 +154,7 @@ You can use a split mapping to split the character-delimited value of an input f
 
 In the screenshot below, we’re configuring a mapping that splits the value of the actor.email field when an ampersand (@) is encountered, and maps the first segment to the user_username attribute. For example, if the value of actor.email is “ddonovan@acme.com”, this mapping would result in “ddonavan” being written to the `user_username` attribute.
 
-![split-mapping-filled-out.png](/img/cloud-siem-enterprise/split-mapping-filled-out.png)
+![split-mapping-filled-out.png](/img/cse/split-mapping-filled-out.png)
 
 To define a split mapping:
 
@@ -177,7 +177,7 @@ An alternate input field won’t be mapped to the selected attribute if the spec
 
 In the screenshot below, we’re configuring a mapping that maps the value of the `EventData.LogonProcessName` message field to the `application` attribute. We defined one alternate input field, `AppId`, which will be mapped to the `application` attribute if the `EventData.LogonProcessName` field is not found in the message, or exists and is null. 
 
-![standard-mapping-single-input.png](/img/cloud-siem-enterprise/standard-mapping-single-input.png)
+![standard-mapping-single-input.png](/img/cse/standard-mapping-single-input.png)
 
 To map a single input field:
 
@@ -198,7 +198,7 @@ We defined two alternative fields, `fieldc` and `fieldd`. If `fielda`and `fieldb
 
 We also defined a default value: if `fieldc` and `fieldd` are not found in a message or are null, the default value “john.doe” is mapped to the `user_username` attribute.
 
-![standard-mapping-multiple-fields.png](/img/cloud-siem-enterprise/standard-mapping-multiple-fields.png)
+![standard-mapping-multiple-fields.png](/img/cse/standard-mapping-multiple-fields.png)
 
 To map multiple input fields:
 
@@ -220,7 +220,7 @@ You can use a time mapping to map a formatted time value to the timestamp schema
 
 This example mapping maps the TimeCreated.SystemTime input field to the timestamp attribute.
 
-![time-mapping-filled-out.png](/img/cloud-siem-enterprise/time-mapping-filled-out.png)
+![time-mapping-filled-out.png](/img/cse/time-mapping-filled-out.png)
 
 To create a time mapping:
 

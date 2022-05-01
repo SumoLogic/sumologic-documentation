@@ -26,16 +26,16 @@ CSE supports TAXII v1.1 and v1.2. 
 
 1. Click the content menu, and select **Threat Intelligence**.
 
-    ![gear-threat-intel.png](/img/cloud-siem-enterprise/gear-threat-intel.png)
+    ![gear-threat-intel.png](/img/cse/gear-threat-intel.png)
 1. On the **Threat Intelligence** page, click **Add Source**.
 
-    ![threat-intel-page.png](/img/cloud-siem-enterprise/threat-intel-page.png)
+    ![threat-intel-page.png](/img/cse/threat-intel-page.png)
 1. On the **Add New Source** popup, click **TAXII Feed**.
 
-    ![taxii-feed-option.png](/img/cloud-siem-enterprise/taxii-feed-option.png)
+    ![taxii-feed-option.png](/img/cse/taxii-feed-option.png)
 1. The **Add Source** page appears.
 
-    ![add-new-source.png](/img/cloud-siem-enterprise/add-new-source.png)
+    ![add-new-source.png](/img/cse/add-new-source.png)
 1. **Name**. Enter a name for the feed.
 1. **Description**. Enter a description of the feed.
 1. **URL**. Enter the URL for the feed provider’s TAXII discovery service endpoint.

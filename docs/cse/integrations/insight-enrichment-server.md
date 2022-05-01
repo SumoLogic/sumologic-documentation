@@ -20,7 +20,7 @@ The Insight Enrichment Server periodically polls CSE for new Insights. If an Ins
 
 The enrichment shown below returned the IP address associated with the hostname that is the entity for the Insight.
 
-![enrichment-1a.png](/img/cloud-siem-enterprise/enrichment-1a.png)
+![enrichment-1a.png](/img/cse/enrichment-1a.png)
 
 ## Download the installer
 
@@ -28,10 +28,10 @@ To set up the integration, you’ll download a binary and supply required inform
 
 1. In the CSE web UI, click the gear icon, then click **Enrichment**.
 
-    ![ThreatIntel.png](/img/cloud-siem-enterprise/ThreatIntel.png)
+    ![ThreatIntel.png](/img/cse/ThreatIntel.png)
 1. On the **Enrichment** page, click the download link for the Insight Enrichment Server.
 
-    ![enrichment-download.png](/img/cloud-siem-enterprise/enrichment-download.png)
+    ![enrichment-download.png](/img/cse/enrichment-download.png)
 
 ## Install the Insight Enrichment Server
 
@@ -191,7 +191,7 @@ command_args = -file c:\scripts\cb.ps1 ${IP}
 
 **Enrichment in the UI**
 
-![carbon-black.png](/img/cloud-siem-enterprise/carbon-black.png)
+![carbon-black.png](/img/cse/carbon-black.png)
 
 ### CrowdStrike enrichment
 
@@ -228,7 +228,7 @@ ip_range = 192.168.38.104-192.168.38.105
 
 **Enrichment in the UI**
 
-![crowdstrike.png](/img/cloud-siem-enterprise/crowdstrike.png)
+![crowdstrike.png](/img/cse/crowdstrike.png)
 
 ### GreyNoise enrichment
 
@@ -312,4 +312,4 @@ Invoke-RestMethod -Uri $uri -Method Get -Headers $headers | ConvertTo-Json
 
 **Sample enrichment**
 
-![sentinel-enrichment.png](/img/cloud-siem-enterprise/sentinel-enrichment.png)
+![sentinel-enrichment.png](/img/cse/sentinel-enrichment.png)

@@ -20,13 +20,13 @@ To create a custom Entity type:
 
 1. Click the gear menu and choose **Custom Types** from the **Entities** column.
 
-    ![custom-types-option.png](/img/cloud-siem-enterprise/custom-types-option.png)
+    ![custom-types-option.png](/img/cse/custom-types-option.png)
 1. Click **Create** on the **Custom Entity Types** page. 
 
-    ![custom-types-page.png](/img/cloud-siem-enterprise/custom-types-page.png)
+    ![custom-types-page.png](/img/cse/custom-types-page.png)
 1. The **Create Custom Entity Type** popup appears.
 
-    ![create-custom-entity-type.png](/img/cloud-siem-enterprise/create-custom-entity-type.png)
+    ![create-custom-entity-type.png](/img/cse/create-custom-entity-type.png)
 1. **Name**. Enter a meaningful name for the custom Entity type. The name can include alphanumeric characters and spaces. The name you enter will appear as the **Name** of the custom Entity type on the **Custom Entity Type** page. 
 1. **Identifier**. Enter a unique identifier for the custom Entity type. The Identifier can include lowercase alphanumeric characters. The Identifier of the Entity type doesn’t appear in the CSE UI, but is used by the CSE backend.
 

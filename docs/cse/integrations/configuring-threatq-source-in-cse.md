@@ -16,16 +16,16 @@ To do so, you simply configure a ThreatQ source in CSE. You supply the informati
 
 1. In the CSE UI, select **Threat Intelligence** from the **Content** menu.
 
-    ![threat-intel-icon.png](/img/cloud-siem-enterprise/threat-intel-icon.png)
+    ![threat-intel-icon.png](/img/cse/threat-intel-icon.png)
 1. On the **Threat Intelligence** page, click **Add Source**.
 
-    ![threatq-add-source-icon.png](/img/cloud-siem-enterprise/threatq-add-source-icon.png)
+    ![threatq-add-source-icon.png](/img/cse/threatq-add-source-icon.png)
 1. On the **Add New Source** page, click **Create** in the ThreatQ tile.
 
-    ![threatq-create-icon.png](/img/cloud-siem-enterprise/threatq-create-icon.png)
+    ![threatq-create-icon.png](/img/cse/threatq-create-icon.png)
 1. The **Add New Source** page updates.
 
-    ![threatq-add-source.png](/img/cloud-siem-enterprise/threatq-add-source.png)
+    ![threatq-add-source.png](/img/cse/threatq-add-source.png)
 1. **Name**. Enter a name for the source.
 1. **Description**. (Optional) Enter a description of the source.
 1. **Enabled**. By default, the new source will be enabled. Use the slider if you want to disable it.

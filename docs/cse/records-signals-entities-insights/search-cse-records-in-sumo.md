@@ -45,7 +45,7 @@ There is a separate partition for forwarded raw messages for which Records were 
 
 When you query CSE Records in a Sumo Logic log search tab, the contents of each Record are presented in a field named **Security Record Details**. The **Security Record Details** is somewhat unique in that it can't be referenced in a query itself. It is a read-only field. Note however, that you can add subfields of the **Security Record Details** field as separate columns in the field browser. You can see an example of doing that in [Save a query with predefined display fields](#save-a-query-with-predefined-display-fields) below. And like any other field, you can hide the **Security Record Details** field, if desired.
 
-![security-record-details.png](/img/cloud-siem-enterprise/security-record-details.png)
+![security-record-details.png](/img/cse/security-record-details.png)
 
 ## Search CSE Records from the Partitions page
 
@@ -54,7 +54,7 @@ If you have the **View Partitions** role capability, you can search CSE partitio
 1. Go to **Manage Data \> Logs \> Partitions**.
 1. The partitions that contain CSE Records begin with the string "sec_record".
 
-    ![security-partitions.png](/img/cloud-siem-enterprise/security-partitions.png)
+    ![security-partitions.png](/img/cse/security-partitions.png)
 1. To search for all Records in the partition, click the icon that appears next to a Partition name when you hover over a row.  
 1. A log search tab opens with a query, like `_index=PartitionName`, that returns all of the Records created within the currently selected time range, 15 minutes by default. For a description of the results, see [Search all Records in a partition](#search-all-record-partitions), below.
 
@@ -66,7 +66,7 @@ To  search a Sumo Logic partition, you specify the name of the partition using
 
 To open a log search tab in Sumo Logic, click **+ New** and select **Log Search**.
 
-![0.png](/img/cloud-siem-enterprise/open-log-search.png)
+![0.png](/img/cse/open-log-search.png)
 
 ## Search all Records in a partition 
 
@@ -74,7 +74,7 @@ To return all the Records in a partition, all you need to include in your query 
 
 `_index=sec_record_network`
 
-![record-search-results.png](/img/cloud-siem-enterprise/record-search-results.png)
+![record-search-results.png](/img/cse/record-search-results.png)
 
 Note that:
 
@@ -94,16 +94,16 @@ _index = sec_record_audit
 | fields objectType, user_username
 ```
 
-![fields-added.png](/img/cloud-siem-enterprise/fields-added.png)
+![fields-added.png](/img/cse/fields-added.png)
 
 To save a search:
 
 1. To save the query for future use, choose **Save As** from the three-dot more options menu in the search bar.
 
-    ![save-as.png](/img/cloud-siem-enterprise/save-as.png)
+    ![save-as.png](/img/cse/save-as.png)
 1. On the **Save Item** popup, name the query, choose a folder location, and then click **Save**.
 
-    ![save.png](/img/cloud-siem-enterprise/save.png)
+    ![save.png](/img/cse/save.png)
 
 ## Search multiple partitions
 
@@ -149,7 +149,7 @@ You can search CSE fields by keyword, for example:
 
 The **Security Record Details** field contains a JSON object with all of the fields from the underlying Record. Some of the data is nested in the `fields` sub-object, shown expanded in the screenshot below–it has the content from the [fields](../cse-schema/schema-attributes.md) field in the underlying Record, which is all of the unnormalized data from the original log message before it was normalized to the CSE schema.
 
-![nested-fields.png](/img/cloud-siem-enterprise/nested-fields.png)
+![nested-fields.png](/img/cse/nested-fields.png)
 
 You can access the contents of the fields field using a where clause in your query, like this:  
   
@@ -158,7 +158,7 @@ _index=sec_record_authentication
 | where %"fields.application" = "test_app"
 ```
 
-![extracted-field.png](/img/cloud-siem-enterprise/extracted-field.png)
+![extracted-field.png](/img/cse/extracted-field.png)
 
 ## Limitations
 

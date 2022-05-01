@@ -23,11 +23,11 @@ The process and UI for setting users and roles depends on your CSE environment.�
 These instructions apply if your CSE URL ends in `jask.ai`.
 
 1. Click the gear icon, and choose **Accounts** under **Users**.   
-    ![accounts-link.png](/img/cloud-siem-enterprise/accounts-link.png)
+    ![accounts-link.png](/img/cse/accounts-link.png)
 1. On the **Accounts** page, click **Invite**.  
-    ![invite-link.png](/img/cloud-siem-enterprise/invite-link.png)
+    ![invite-link.png](/img/cse/invite-link.png)
 1. The **Invite Users** popup appears.  
-    ![invite-users.png](/img/cloud-siem-enterprise/invite-users.png)
+    ![invite-users.png](/img/cse/invite-users.png)
 1. **Emails**. Enter one or more email addresses. If you enter more than one address, separate them by commas.  
 1. **Role**. Use the down-arrow to view a list of roles, and choose one. You can view the permissions associated with available roles on the  **Roles** page. (Click the gear icon, and choose **Roles** under **Users**.) 
 1. Click **Invite**. 
@@ -35,7 +35,7 @@ These instructions apply if your CSE URL ends in `jask.ai`.
 The individuals you invite will be sent an email with a link to the CSE
 UI, like the one shown below.
 
-![invitation.png](/img/cloud-siem-enterprise/invitation.png)
+![invitation.png](/img/cse/invitation.png)
 
 When the invitee accesses the CSE UI, they’ll be prompted to select a CSE username and password.  
 
@@ -46,13 +46,13 @@ A CSE role has a set of permissions associated with it. Users with that role hav
 To create a role:
 
 1. Click the gear icon, and choose **Roles** under **Users**.   
-    ![roles-link.png](/img/cloud-siem-enterprise/roles-link.png)
+    ![roles-link.png](/img/cse/roles-link.png)
 1. The **Roles** page appears, and lists the roles that are already  defined. There are two built-in roles that cannot be deleted or edited: Administrator and Analyst. The avatar for each user that has the role is shown―hover over it to see the user's name and username.   
-    ![roles-page.png](/img/cloud-siem-enterprise/roles-page.png)
+    ![roles-page.png](/img/cse/roles-page.png)
 1. Click **Create**.
 1. The **Create Role** popup appears.
     
-    ![create-role-popup.png](/img/cloud-siem-enterprise/create-role-popup.png)  
+    ![create-role-popup.png](/img/cse/create-role-popup.png)  
      
 1. **Name**. Enter a name for the role.
 1. **Permissions**. Checkmark each permission you want to assign to the role. For a description of each permission, see [Role Permissions](#role-permissions), below.
@@ -74,9 +74,9 @@ To create a role:
 
 | Permission | Description |
 |--|--|
-| Create Rules | Create [Rules](/docs/cloud-siem-enterprise/cse-rules). |
-| Delete Rules | Delete [Rules](/docs/cloud-siem-enterprise/cse-rules). |
-| Edit Rules | Edit [Rules](/docs/cloud-siem-enterprise/cse-rules). |
+| Create Rules | Create [Rules](/docs/cse/cse-rules). |
+| Delete Rules | Delete [Rules](/docs/cse/cse-rules). |
+| Edit Rules | Edit [Rules](/docs/cse/cse-rules). |
 | Manage Threat Intelligence | Create, edit, and delete threat intelligence sources. |
 | Manage Match Lists | Create, edit, and delete [Match Lists](../match-lists-suppressed-lists/create-match-list.md). |
 | Manage File Analysis | Create, edit, and delete [YARA rules](../cse-rules/import-yara-rules.md). |

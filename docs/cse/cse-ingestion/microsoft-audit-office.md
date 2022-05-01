@@ -20,7 +20,7 @@ In this step, you configure an Microsoft 365 Audit Source to collect Microsoft 3
 1. Click **Add Collector**.
 1. Click **Hosted Collector.**
 1. The **Add Hosted Collector** popup appears.  
-    ![add-hosted-collector.png](/img/cloud-siem-enterprise/add-hosted-collector.png)
+    ![add-hosted-collector.png](/img/cse/add-hosted-collector.png)
 1. **Name**. Provide a Name for the Collector.
 1. **Description**. (Optional)
 1. **Category**. Enter a string to tag the output collected from the source. The string that you supply will be saved in a metadata field called `_sourceCategory`. 
@@ -41,7 +41,7 @@ Each Microsoft 365 Content Type must have its own source. Follow these steps for
 1. Click **Add Source** next to  the Hosted Collector.
 1. Select **Office 365 Audit.** 
 1. The page refreshes.  
-    ![office-365-audit-source.png](/img/cloud-siem-enterprise/office-365-audit-source.png)
+    ![office-365-audit-source.png](/img/cse/office-365-audit-source.png)
 1. **Name**. Enter a name for the source. 
 1. **Description.** (Optional) 
 1. **O365 Region**. Region corresponding with your Microsoft 365 subscription.
@@ -58,8 +58,8 @@ Each Microsoft 365 Content Type must have its own source. Follow these steps for
 In this step, you verify that your logs are successfully making it into CSE. 
 
 1. Click the gear icon, and select **Log Mappings** under **Incoming Data**.  
-    ![log-mappings-link.png](/img/cloud-siem-enterprise/log-mappings-link.png)
+    ![log-mappings-link.png](/img/cse/log-mappings-link.png)
 1. On the **Log Mappings** page search for Office 365 and check under **Record Volume**.  
-    ![office-365-audit-record-volume.png](/img/cloud-siem-enterprise/office-365-audit-record-volume.png)
+    ![office-365-audit-record-volume.png](/img/cse/office-365-audit-record-volume.png)
 1. For a more granular look at the incoming records, you can also search the Sumo Logic platform for Office 365 security records.  
-    ![office-365-audit-search.png](/img/cloud-siem-enterprise/office-365-audit-search.png)
+    ![office-365-audit-search.png](/img/cse/office-365-audit-search.png)

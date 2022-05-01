@@ -14,7 +14,7 @@ You can create Suppressed Lists from the CSE UI or using the CSE API. A Suppress
 
 Here is an example of a Suppressed List.
 
-![suppressed-list.png](/img/cloud-siem-enterprise/suppressed-list.png)
+![suppressed-list.png](/img/cse/suppressed-list.png)
 
 Note that the list has a Target Column, which you define when you create the list. The Target Column indicates what type of Record fields should be compared to the Suppressed List, for example hostnames, URLs, domains, IP addresses, usernames, and so on. For more information, see [How are Suppressed Lists used](#how-are-suppressed-lists-used)?
 
@@ -77,7 +77,7 @@ Perform the steps below to create a Suppressed List and add an indicator to it u
 
 1. Choose **Suppressed Lists** from the Content menu and click **Create**.
 
-    ![suppressed-lists.png](/img/cloud-siem-enterprise/suppressed-lists.png)
+    ![suppressed-lists.png](/img/cse/suppressed-lists.png)
 1. On the **New Suppressed List** popup, enter the following: 
 
    1. **Name**. Name of the Suppressed List. 
@@ -93,12 +93,12 @@ Perform the steps below to create a Suppressed List and add an indicator to it u
 
 1. The Suppressed List now appears on the **Suppressed Lists** page. 
 
-    ![suppressed-list-page-2.png](/img/cloud-siem-enterprise/suppressed-list-page-2.png)
+    ![suppressed-list-page-2.png](/img/cse/suppressed-list-page-2.png)
 
 1. Click the name of the Suppressed List to open it.
 1. On the **Suppressed List \> Details** page, click **ADD LIST ITEM**.
 
-    ![add-list-item.png](/img/cloud-siem-enterprise/add-list-item.png)
+    ![add-list-item.png](/img/cse/add-list-item.png)
 
 1. On the **New Suppressed List Item** popup, enter: 
 
@@ -107,7 +107,7 @@ Perform the steps below to create a Suppressed List and add an indicator to it u
    1. **Expiration**. (Optional) The date and time at which the list item should be removed from the list. 
    1. Click **Add** to add the item to the list.    
 
-    ![new-item.png](/img/cloud-siem-enterprise/new-item.png)
+    ![new-item.png](/img/cse/new-item.png)
 
 1. The item now appears on the list.
 

@@ -10,7 +10,7 @@ This topic has instructions for creating a custom tag schema in CSE. 
 
 Tags are metadata you can attach to Insights, Signals, Entities, and Rules. Tags are useful for adding context to these CSE items. You can also search for and filter items by tag. There are two types of tags: *keyword tags*, which are arbitrary, freeform strings; and *schema keys*, which are predefined key-value pairs. CSE provides two built-in schemas keys: **Technique** and **Tactic**. You can’t edit the built-in schemas, although they appear in the list of tag schemas in the CSE UI, with a Sumo label, as shown below.
 
-![built-in-tags.png](/img/cloud-siem-enterprise/built-in-tags.png)
+![built-in-tags.png](/img/cse/built-in-tags.png)
 
 Schema tags can enforce specific tag values and prevent confusion from variations in tag values. For example, you might want to ensure the use of standard server identifiers, such as “FinanceServer”, rather than “Server-Finance” or “Finance_Server”. 
 
@@ -20,15 +20,15 @@ For more information about tags in CSE, see [Using Tags with Insights, Signals, 
 
 1. Click the gear icon at the top of the CSE UI and select **Tag Schemas** under **Workflow**.  
 
-    ![gear-tag-schema.png](/img/cloud-siem-enterprise/gear-tag-schema.png)
+    ![gear-tag-schema.png](/img/cse/gear-tag-schema.png)
 
 1. On the **Tag Schemas** page, click **Create**.  
 
-    ![tag-schemas-page.png](/img/cloud-siem-enterprise/tag-schemas-page.png)
+    ![tag-schemas-page.png](/img/cse/tag-schemas-page.png)
 
 1. The **Tag Schema** popup appears. The screenshot below shows a previously configured tag schema.  
 
-    ![tag-schema-filled-in.png](/img/cloud-siem-enterprise/tag-schema-filled-in.png)
+    ![tag-schema-filled-in.png](/img/cse/tag-schema-filled-in.png)
 
     1. **Key**. Enter an identifier for the tag you’re defining. It won’t appear in the UI for assigning tags to a content item, unless you leave the **Label** field blank.
     1. **Label**. Enter a label for the tag. If you supply a label, that’s what will appear in the UI for assigning tags to a content item.
@@ -43,4 +43,4 @@ For more information about tags in CSE, see [Using Tags with Insights, Signals, 
         * **Label**. Enter a label for the value.
         * **Link**. If desired, enter a URL. If you supply a URL, that link will appear in the Actions menu of the tag in any content items to which it’s been applied.  CSE’s built-in schema tags Technique and Tactic are examples of schema tags that include a link. The screenshot below shows a link from the **Tactic:TA0002** to associated information on the MITRE site.
 
-            ![mitre-link.png](/img/cloud-siem-enterprise/mitre-link.png)
+            ![mitre-link.png](/img/cse/mitre-link.png)

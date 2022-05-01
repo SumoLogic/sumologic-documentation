@@ -64,7 +64,7 @@ In this step you configure a Sumo Logic Source on Sumo Logic CIP to receive the 
 1. Set up a Sumo Logic Hosted Collector. For instructions, see Create a Hosted Collector.
 1. Set up a Sumo Logic HTTP Source on the Hosted Collector you configured in the previous step. For instructions, see HTTP Logs and Metrics Source. When you complete the source configuration, you are presented with the URL for the source:
 
-    ![http-source-address.png](/img/cloud-siem-enterprise/http-source-address.png)
+    ![http-source-address.png](/img/cse/http-source-address.png)
 1. Copy and save the HTTP Source Address shown. When you install the Windows Sensor, you’ll be prompted to enter the URL.
 
 ## Install the Windows Sensor
@@ -73,23 +73,23 @@ In this step you configure a Sumo Logic Source on Sumo Logic CIP to receive the 
 1. Start the installer.
 1. Windows prompts you to confirm that you want the installer to make changes to your system. Click **Yes** to continue.
 
-    ![CSEWindowsSensorInstall_01.png](/img/cloud-siem-enterprise/CSEWindowsSensorInstall_01.png)
+    ![CSEWindowsSensorInstall_01.png](/img/cse/CSEWindowsSensorInstall_01.png)
 1. The installer asks if you want to start the installation. Click **Next** to proceed.
 
-    ![CSEWindowsSensorInstall_02.jpg](/img/cloud-siem-enterprise/CSEWindowsSensorInstall_02.jpg)
+    ![CSEWindowsSensorInstall_02.jpg](/img/cse/CSEWindowsSensorInstall_02.jpg)
 1. The installer prompts for information about what types of records the sensor will be monitoring. You can select one of the following: 
 
    * **Domain Controllers**. Select this option to monitor security event logs from all Domain Controllers (up to 25) on the domain of the computer on which the sensor is installed. If you want the sensor to periodically poll for Active Directory entities, leave the **Monitor Active Directory Inventory** checkbox checked. (Active Directory monitoring requires that the computer where the sensor runs is a member of the domain to be     monitored.)    
 
-    ![CSEWindowsSensorInstall_03a.png](/img/cloud-siem-enterprise/CSEWindowsSensorInstall_03a.png) 
+    ![CSEWindowsSensorInstall_03a.png](/img/cse/CSEWindowsSensorInstall_03a.png) 
 
    * **Windows Event Collector**. The sensor will monitor forwarded event logs from the computer you specify in the **Hostname**. To monitor events on the local computer where the sensor is installed, set **Hostname** to "localhost". If you want the sensor to periodically poll for Active Directory     entities, leave the **Monitor Active Directory Inventory** checkbox checked. (Active Directory monitoring requires that the computer where the sensor runs is a member of the domain to be monitored.)    
 
-    ![CSEWindowsSensorInstall_03b.png](/img/cloud-siem-enterprise/CSEWindowsSensorInstall_03b.png) 
+    ![CSEWindowsSensorInstall_03b.png](/img/cse/CSEWindowsSensorInstall_03b.png) 
 
    * **Local**. Select this option to monitor Security event logs from the local computer that the sensor is installed on. By default, the **Monitor Active Directory Inventory** checkbox is not checked. If you want the sensor to  checked to periodically poll for Active Directory entities, click the checkbox. (Active Directory monitoring requires that the computer where the sensor runs is a member of the domain to be monitored.)    
 
-    ![CSEWindowsSensorInstall_03c.png](/img/cloud-siem-enterprise/CSEWindowsSensorInstall_03c.png)
+    ![CSEWindowsSensorInstall_03c.png](/img/cse/CSEWindowsSensorInstall_03c.png)
 1. Click **Next**.
 1. The installer prompts you to specify credentials for the Windows service account that will be used to run the sensor service. You have two options: 
 
@@ -108,12 +108,12 @@ In this step you configure a Sumo Logic Source on Sumo Logic CIP to receive the 
 
    1. Click **Next** to proceed.    
 
-    ![CSEWindowsSensorInstall_04a-new.png](/img/cloud-siem-enterprise/CSEWindowsSensorInstall_04a-new.png)
+    ![CSEWindowsSensorInstall_04a-new.png](/img/cse/CSEWindowsSensorInstall_04a-new.png)
 1. The installer starts to validate the account credentials you provided. Click **OK** to proceed.
 
-    ![CSEWindowsSensorInstall_03c.jpg](/img/cloud-siem-enterprise/CSEWindowsSensorInstall_03c.jpg)
+    ![CSEWindowsSensorInstall_03c.jpg](/img/cse/CSEWindowsSensorInstall_03c.jpg)
 1. The installer confirms that the account validation succeeded. Click **OK** to proceed.
-    ![CSEWindowsSensorInstall_03e.jpg](/img/cloud-siem-enterprise/CSEWindowsSensorInstall_03e.jpg)
+    ![CSEWindowsSensorInstall_03e.jpg](/img/cse/CSEWindowsSensorInstall_03e.jpg)
 1. The installer prompts you to enter a Sensor address which is the URL to which the sensor will send the data it collects. Enter the Sumo Logic HTTP Source URL that you copied and saved when you created the HTTP source. An HTTP Source URL starts like this: `https://collectors.sumologic.com/receiver/v1/http/…`
 1. The installer reports that the installation is completing. Click **Finish**.
 1. Follow the instructions in [Verify the service is running](#verify-the-service-is-running) below.

@@ -13,11 +13,11 @@ To change the Insight Generation settings:
 1. In the CSE UI, select **Custom Insights** from the **Content** menu.
 1. The **Custom Insights** page appears.
 
-    ![custom-insights.png](/img/cloud-siem-enterprise/custom-insights.png)
+    ![custom-insights.png](/img/cse/custom-insights.png)
 1. Click **Insight Generation Customized.**
 1. On the **Edit Insight Generation Configuration** popup, set the desired **Detection Window** and **Threshold**. 
 
-    ![insight-generation-config.png](/img/cloud-siem-enterprise/insight-generation-config.png)
+    ![insight-generation-config.png](/img/cse/insight-generation-config.png)
 1. Click **Update** to save your changes.
 
  

@@ -19,13 +19,13 @@ A Chain rule is similar to a Threshold rule. A Threshold rule fires when one rul
 1. Choose **Rules** from the Content menu.
 1. On the **Create a Rule** page, click **Create** in the Chain card. 
 
-    ![select-rule-type.png](/img/cloud-siem-enterprise/select-rule-type.png)
+    ![select-rule-type.png](/img/cse/select-rule-type.png)
 1. In the rules editor: 
 
    1. **Name.** Enter a name for the rule. Signals fired by the rule will have this name.
    1. **Enabled**. By default the rule will be enabled. It's good practice to use the slider to disable the rule so that it won’t be applied to incoming Records until you’ve tested it.       
 
-    ![chain.png](/img/cloud-siem-enterprise/chain.png)
+    ![chain.png](/img/cse/chain.png)
 
 ## Configure “If Triggered” settings
 

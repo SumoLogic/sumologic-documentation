@@ -32,7 +32,7 @@ The key-value pairs are input to the next step of the process: mapping.
 
 The mapping process creates a Record from the key-value pairs that were extracted from a message, and maps a subset of the keys to CSE schema attributes. 
 
-Mapping solves a particular problem: messages from different products use different names to identify users, applications, devices and so on. For example, some messages may refer to a source IP address as `sourceIP`, while others use `sourceIpAddress`. We need a standard set of names for the data that most messages are likely to contain. The [CSE schema](/docs/cloud-siem-enterprise/cse-schema) defines that standard set of names. 
+Mapping solves a particular problem: messages from different products use different names to identify users, applications, devices and so on. For example, some messages may refer to a source IP address as `sourceIP`, while others use `sourceIpAddress`. We need a standard set of names for the data that most messages are likely to contain. The [CSE schema](/docs/cse/cse-schema) defines that standard set of names. 
 
 What’s the benefit of mapping? It results in Records that use a common (standard) name for fields that hold the same sort of data, regardless of the source of the incoming message. The result: the same CSE rule can be applied to all Records, regardless of the message source.
 

@@ -32,7 +32,7 @@ The mapping requirements are:
   
 This log mapping for the AWS CloudTrail ConsoleSignIn event meets the requirements described above. (Note that `srcDevice_hostname` is not mapped because the AWS log message for that event doesn’t contain a hostname.)
 
-![auth-rule-mapping-1.png](/img/cloud-siem-enterprise/auth-rule-mapping-1.png)
+![auth-rule-mapping-1.png](/img/cse/auth-rule-mapping-1.png)
 
 ## Normalized Authentication Rules
 

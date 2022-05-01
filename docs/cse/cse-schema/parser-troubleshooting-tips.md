@@ -8,7 +8,7 @@ Sumo Logic parsers are a powerful tool for extracting log data to support securi
 
 For general information on the parsing engine and syntax, see the [Parser Editor](parser-editor.md) and [Parsing Language Reference Guide](parsing-language-reference-guide.md topics.
 
-1. Our [Ingestion Guides](/docs/cloud-siem-enterprise/cse-ingestion/) provide instructions for how to ingest data from a variety of data sources. Check to see if there is a guide for the data source you’re working with. The ingest guides generally describe the most straightforward, least error-prone method. Make sure that you’ve followed the instructions exactly and that the data to be ingested is supported.      
+1. Our [Ingestion Guides](/docs/cse/cse-ingestion/) provide instructions for how to ingest data from a variety of data sources. Check to see if there is a guide for the data source you’re working with. The ingest guides generally describe the most straightforward, least error-prone method. Make sure that you’ve followed the instructions exactly and that the data to be ingested is supported.      
 
     These guides explain how to configure Collectors and Sources to use a specific parser, what messages are supported out-of-the-box, and have links to vendor documentation where appropriate.
     

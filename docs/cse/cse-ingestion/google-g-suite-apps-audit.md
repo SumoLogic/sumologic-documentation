@@ -14,7 +14,7 @@ In this step, you configure an G Suite Apps Audit Source to collect G Suite log 
 1. Click **Add Collector**.
 1. Click **Hosted Collector.**
 1. The **Add Hosted Collector** popup appears.  
-    ![add-hosted-collector.png](/img/cloud-siem-enterprise/add-hosted-collector.png)
+    ![add-hosted-collector.png](/img/cse/add-hosted-collector.png)
 1. **Name**. Provide a Name for the Collector.
 1. **Description**. (Optional)
 1. **Category**. Enter a string to tag the output collected from the source. The string that you supply will be saved in a metadata field called `_sourceCategory`. 
@@ -35,7 +35,7 @@ Each G Suite App must have its own source. Follow these steps for each G Suite A
 1. On the **Collectors** page, click **Add Source** next to the Hosted Collector.
 1. Select **G Suite Apps Audit.** 
 1. The page refreshes.  
-    ![gsuite-apps-audit-source.png](/img/cloud-siem-enterprise/gsuite-apps-audit-source.png)
+    ![gsuite-apps-audit-source.png](/img/cse/gsuite-apps-audit-source.png)
 1. **Name**. Enter a name for the source. 
 1. **Description**. (Optional) 
 1. **Application**. Select the G Suite app you wish to collect using this source. Steps may be repeated for each G Suite app you want to collect from.
@@ -51,8 +51,8 @@ Each G Suite App must have its own source. Follow these steps for each G Suite A
 In this step, you verify that your logs are successfully making it into CSE. 
 
 1. Click the gear icon, and select **Log Mappings** under **Incoming Data**.  
-    ![log-mappings-link.png](/img/cloud-siem-enterprise/log-mappings-link.png)
+    ![log-mappings-link.png](/img/cse/log-mappings-link.png)
 1. On the **Log Mappings** page search for "G Suite" and check under **Record Volume**.  
-    ![gsuite-record-volume.png](/img/cloud-siem-enterprise/gsuite-record-volume.png)
+    ![gsuite-record-volume.png](/img/cse/gsuite-record-volume.png)
 1. For a more granular look at the incoming records, you can also search the Sumo Logic platform for G Suite security records.  
-    ![gsuite-search.png](/img/cloud-siem-enterprise/gsuite-search.png)
+    ![gsuite-search.png](/img/cse/gsuite-search.png)

@@ -16,7 +16,7 @@ In this step, you configure an HTTP Source to collect Signal Sciences WAF log me
 1. Click **Add Collector**.
 1. Click **Hosted Collector.**
 1. The **Add Hosted Collector** popup appears.  
-    ![add-hosted-collector.png](/img/cloud-siem-enterprise/add-hosted-collector.png)
+    ![add-hosted-collector.png](/img/cse/add-hosted-collector.png)
 1. **Name**. Provide a Name for the Collector.
 1. **Description**. (Optional)
 1. **Category**. Enter a string to tag the output collected from the source. The string that you supply will be saved in a metadata field  called `_sourceCategory`.
@@ -33,7 +33,7 @@ It’s also possible to configure individual sources to forward to CSE, as descr
 1. On the **Collectors** page, click **Add Source** next to a Hosted Collector.
 1. Select **HTTP Logs & Metrics**. 
 1. The page refreshes.  
-    ![http-source.png](/img/cloud-siem-enterprise/http-source.png)
+    ![http-source.png](/img/cse/http-source.png)
 1. **Name**. Enter a name for the source. 
 1. **Description**. (Optional) 
 1. **Source Host.** (Optional) Enter a string to tag the messages collected from the source. The string that you supply will be saved in a metadata field called `_sourceHost.`
@@ -58,7 +58,7 @@ For more information on Generic Webhooks refer to the [Generic Webhooks](https:/
 In this step, you configure a Sumo Logic Ingest Mapping in CSE for the source category assigned to your source or collector you configured in [Step 1](#step-1-configure-collection). The mapping tells CSE the information it needs to select the right mapper to process messages that have been tagged with that source category. 
 
 1. Click the gear icon, and select **Sumo Logic** under **Integrations**.  
-    ![gear-sumo-link.png](/img/cloud-siem-enterprise/gear-sumo-link.png)
+    ![gear-sumo-link.png](/img/cse/gear-sumo-link.png)
 1. On the **Sumo Logic Ingest Mappings** page, click **Create**.
 1. On the **Create Sumo Logic Mapping** popup:
     * **Source Category**. Enter the category you assigned to the HTTP Source or Hosted Collector in [Step 1](#step-1-configure-collection). 
@@ -73,8 +73,8 @@ In this step, you configure a Sumo Logic Ingest Mapping in CSE for the source ca
 In this step, you verify that your logs are successfully making it into CSE. 
 
 1. Click the gear icon at the top of the CSE UI, and select **Log Mappings** under **Incoming Data**.  
-    ![log-mappings-link.png](/img/cloud-siem-enterprise/log-mappings-link.png)
+    ![log-mappings-link.png](/img/cse/log-mappings-link.png)
 1. On the **Log Mappings** page search for "Signal Sciences" and check under **Record Volume**.  
-    ![signal-sciences-record-volume.png](/img/cloud-siem-enterprise/signal-sciences-record-volume.png)
+    ![signal-sciences-record-volume.png](/img/cse/signal-sciences-record-volume.png)
 1. For a more granular look at the incoming records, you can also search the Sumo Logic platform for Signal Sciences WAF security records.  
      

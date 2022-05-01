@@ -39,10 +39,10 @@ To create the Lookup Table schema:
 1. Navigate to the folder where you want to create the Lookup Table.
 1. Click **Add New** and then select **New Lookup**.
 
-    ![new-lookup.png](/img/cloud-siem-enterprise/new-lookup.png)
+    ![new-lookup.png](/img/cse/new-lookup.png)
 1. The **Create Lookup Table** page appears.
 
-    ![create-in-cip.png](/img/cloud-siem-enterprise/create-in-cip.png)
+    ![create-in-cip.png](/img/cse/create-in-cip.png)
 1. **Name**. Enter a name for the Lookup Table.
 1. **Description**. (Optional)
 1. **Do you want a TTL for table entries**? Click **No**.
@@ -50,7 +50,7 @@ To create the Lookup Table schema:
 1. **How do you want to create lookup?** Click **Create Schema only**.
 1. The page displays a **Schema** section. (The screenshot below shows the schema settings for our example filled in.)
 
-    ![schema.png](/img/cloud-siem-enterprise/schema.png)
+    ![schema.png](/img/cse/schema.png)
 1. For the first column, enter: 
 
    * **Field**. Enter *mail*.
@@ -83,7 +83,7 @@ Where:
 * `_collector` identifies the collector where the Active Directory source runs. 
 * `PATH` is the path of the lookup table, in this format:   `path://"/Library/Admin Recommended/userIdToUsername"` You can copy the path to the Lookup Table in the Sumo Logic Library. Hover over the row for the table in the Library, and select **Copy path to clipboard** from the three-dot more options menu.
 
-    ![tree-dot.png](/img/cloud-siem-enterprise/tree-dot.png)
+    ![tree-dot.png](/img/cse/tree-dot.png)
 
 ### Step 3: Save and schedule the search
 
@@ -95,7 +95,7 @@ To save and schedule the search:
 
 1. In the log search tab where you’ve run your query, choose **Save as** from the three-dot menu in the query area.
 
-    ![save-as.png](/img/cloud-siem-enterprise/save-as.png)
+    ![save-as.png](/img/cse/save-as.png)
 1. On the **Save Item** popup: 
 
    * **Name**. Enter a name for the query. 
@@ -104,7 +104,7 @@ To save and schedule the search:
    * **Location to save to**. Choose a folder location. 
    * Click **Schedule this search**.    
 
-    ![save-item.png](/img/cloud-siem-enterprise/save-item.png)
+    ![save-item.png](/img/cse/save-item.png)
 1. On the **Save Item** popup: 
 
    * **Run frequency**. Select *Daily*, unless you have another preference. 
@@ -115,7 +115,7 @@ To save and schedule the search:
    * **Recipients.** Enter the email addresses of one or more users to receive email alerts. 
    * **Include in email**. Select *Search Query* and *Histogram*, unless you have another preference.    
 
-    ![save-item-2.png](/img/cloud-siem-enterprise/save-item-2.png)
+    ![save-item-2.png](/img/cse/save-item-2.png)
 1. Click **Save.**
 
 ## Step 4: Configure the Lookup Table in CSE

@@ -1,5 +1,5 @@
 ---
-slug: /cloud-siem-enterprise/administration
+slug: /cse/administration
 ---
 
 # Administration

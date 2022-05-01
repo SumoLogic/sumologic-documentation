@@ -81,10 +81,10 @@ After installing the `json-streaming-logs` package, follow these instructions to
 
 1. In CSE, click the gear icon and select **Sumo Logic** under **Integrations**.
 
-    ![gear-integrations-sumo.png](/img/cloud-siem-enterprise/gear-integrations-sumo.png)
+    ![gear-integrations-sumo.png](/img/cse/gear-integrations-sumo.png)
 1. On the **Sumo Logic Ingest Mappings** page, click **Create**.
 
-    ![ingest-mappings.png](/img/cloud-siem-enterprise/ingest-mappings.png)
+    ![ingest-mappings.png](/img/cse/ingest-mappings.png)
 1. On the **Create Sumo Logic Mapping** page: 
 
    1. **Source Category**. Enter the Source Category value you assigned to the Source you configured above in [Configure a Sumo Logic Source](#configure-a-sumo-logic-source). 
@@ -93,7 +93,7 @@ After installing the `json-streaming-logs` package, follow these instructions to
    1. **Enabled**. Use the slider to enable the mapping if you’re ready to receive Zeek logs. 
    1. Click **Create**.    
 
-    ![create-mapping.png](/img/cloud-siem-enterprise/create-mapping.png)
+    ![create-mapping.png](/img/cse/create-mapping.png)
 
 ### Use FERs
 
@@ -132,5 +132,5 @@ Perform these steps for each of the FERs.
 
 1. Click **Save**.     
 
-    ![example-fer.png](/img/cloud-siem-enterprise/example-fer.png)
+    ![example-fer.png](/img/cse/example-fer.png)
 

@@ -14,11 +14,11 @@ You can also update the [tags](tags-insights-signals-entities-rules.md), [suppre
 
 To view the **Entities** page, click **Entities** at the top of the CSE UI.
 
-![entities-icon.png](/img/cloud-siem-enterprise/entities-icon.png)
+![entities-icon.png](/img/cse/entities-icon.png)
 
 Here’s a screenshot of the Entities page.
 
-![entities-page-2.png](/img/cloud-siem-enterprise/entities-page-2.png)
+![entities-page-2.png](/img/cse/entities-page-2.png)
 
 1. This area shows the total number of unique Entities in CSE.
 1. In the **Filters** area, you can filter the list of Entities by Activity Score, Hostname, IP Address, Username, Tags, Type, and Suppressed.
@@ -35,7 +35,7 @@ Here’s a screenshot of the Entities page.
 When you click an Entity on the **Entities** page, a details page for
 the Entity appears.
 
-![entity-details-page.png](/img/cloud-siem-enterprise/entity-details-page.png)
+![entity-details-page.png](/img/cse/entity-details-page.png)
 
 1. Suppression slider. Shows whether or not the Entity is currently suppressed. You can use the slider to suppress the Entity so that it is excluded from the Insight generation process. 
 1. **Tags**. Lists any [tags](tags-insights-signals-entities-rules.md) assigned to the Entity. You can add a new tag, select a tag to assign, or remove a tag from the Entity.
@@ -55,11 +55,11 @@ the Entity appears.
 
 You can create an Insight for an Entity based on one or more Signals on the Entity. To do so, checkmark each Signal you want to include in the Insight, and click **Create Insight**.
 
-![create-insight.png](/img/cloud-siem-enterprise/create-insight.png)
+![create-insight.png](/img/cse/create-insight.png)
 
 The page refreshes and shows the selected Signals grouped in a new Insight.
 
-![insight-created.png](/img/cloud-siem-enterprise/insight-created.png)
+![insight-created.png](/img/cse/insight-created.png)
 
 ## Update multiple Entities
 
@@ -71,10 +71,10 @@ or Criticality for one or more Entities.
 1. Click **Entities** at the top of the CSE UI.
 1. Note that there is a checkbox at the left end of each Entity row, and one above the Entities list. 
 
-    [entities-page.png](/img/cloud-siem-enterprise/entities-page.png)
+    [entities-page.png](/img/cse/entities-page.png)
 1. Click the top checkbox to select all of the Entities on the page, or click the checkbox next to each Entity you want to update.
 
-    [update-options.png](/img/cloud-siem-enterprise/update-options.png)
+    [update-options.png](/img/cse/update-options.png)
 1. Note that once you select an Entity, three options appear at the top of the Entities list. See the instructions for each option below: 
 
    * [Update Tags](#update-tags)
@@ -86,7 +86,7 @@ or Criticality for one or more Entities.
 1. After selecting the Entities you want to update, click **Update Tags**. 
 1. Click the down arrow to display the options:
 
-    ![tag-options.png](/img/cloud-siem-enterprise/tag-options.png) 
+    ![tag-options.png](/img/cse/tag-options.png) 
 
    * **Add.** Select this option to add one or more tags to the Entity, without affecting any tags already assigned to the Entity. You’re prompted to select a tag. If you select a schema tag, you’re prompted to select a tag value. You can select  multiple tags to add 
    * **Remove**. Select his option to remove one or more tags from the Entity. You’re prompted to select a tag. If you select a schema tag, you’re prompted to select a tag value.You can select multiple tags to remove. If a selected Entity doesn't have the specified tags, no change will be made to the Entity. 
@@ -98,7 +98,7 @@ or Criticality for one or more Entities.
 
 1. As you select tags, they’ll appear in the update popup.
 
-    ![tags-to-add.png](/img/cloud-siem-enterprise/tags-to-add.png)
+    ![tags-to-add.png](/img/cse/tags-to-add.png)
 1. When you are done selecting tags, click **Update Entity Tags**.
 
 #### Update suppression
@@ -106,7 +106,7 @@ or Criticality for one or more Entities.
 1. After selecting the Entities you want to update, click **Update Suppression**. 
 1. The **Update Suppression** popup appears, with the suppression toggle set to **Not Suppressed**.
 
-    ![before-suppression.png](/img/cloud-siem-enterprise/before-suppression.png)
+    ![before-suppression.png](/img/cse/before-suppression.png)
 1. If you want to unsuppress the selected Entities, click **Update Entity Suppression**. Otherwise, if you want to suppress the Entity, toggle the slider to **Suppressed**, supply a comment if desired, and then click **Update Entity Suppression**. 
 
 #### Update Criticalities
@@ -114,7 +114,7 @@ or Criticality for one or more Entities.
 1. After selecting the Entities you want to update, click **Update Criticalities**. 
 1. The **Update Criticalities** popup appears.
 
-    ![update-criticalities.png](/img/cloud-siem-enterprise/update-criticalities.png)
+    ![update-criticalities.png](/img/cse/update-criticalities.png)
 1. If you want to assign default Criticality to the selected Entities, click **Update Entity Criticalities**. Otherwise, use the down arrow to view defined Criticalities, select one, and then click **Update Entity Criticalities**.
 
 ### Import Entity updates from a CSV file

@@ -1,5 +1,5 @@
 ---
-slug: /cloud-siem-enterprise/match-lists-suppressed-lists
+slug: /cse/match-lists-suppressed-lists
 ---
 
 # Match Lists and Suppressed Lists

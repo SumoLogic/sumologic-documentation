@@ -14,7 +14,7 @@ In this step, you configure an HTTP Source to collect G Suite Alert Center log m
 1. Click **Add Collector**.
 1. Click **Hosted Collector.**
 1. The **Add Hosted Collector** popup appears.  
-    ![add-hosted-collector.png](/img/cloud-siem-enterprise/add-hosted-collector.png)
+    ![add-hosted-collector.png](/img/cse/add-hosted-collector.png)
 1. **Name**. Provide a Name for the Collector.
 1. **Description**. (Optional)
 1. **Category**. Enter a string to tag the output collected from the source. The string that you supply will be saved in a metadata field called `_sourceCategory`. 
@@ -33,7 +33,7 @@ It’s also possible to configure individual sources to forward to CSE, as descr
 1. On the **Collectors** page, click **Add Source** next to a Hosted Collector.
 1. Select **HTTP Logs & Metrics**. 
 1. The page refreshes.  
-    ![http-source.png](/img/cloud-siem-enterprise/http-source.png)
+    ![http-source.png](/img/cse/http-source.png)
 1. **Name**. Enter a name for the source. 
 1. **Description**. (Optional) 
 1. **Source Host.** (Optional) Enter a string to tag the messages collected from the source. The string that you supply will be saved in a metadata field called `_sourceHost.`
@@ -57,8 +57,8 @@ In this step you configure G Suite Alert Center to send logs to Sumo Logic. You 
 
 1. In this step, you verify that your logs are successfully making it into CSE. 
 1. Click the gear icon, and select **Log Mappings** under **Incoming Data**.  
-    ![log-mappings-link.png](/img/cloud-siem-enterprise/log-mappings-link.png)
+    ![log-mappings-link.png](/img/cse/log-mappings-link.png)
 1. On the Log Mappings page search for "G Suite Alert Center" and check under **Record Volume**.  
-    ![gsuite-record-volume.png](/img/cloud-siem-enterprise/gsuite-record-volume.png)
+    ![gsuite-record-volume.png](/img/cse/gsuite-record-volume.png)
 1. For a more granular look at the incoming records, you can also search the Sumo Logic platform for G Suite Alert Center security records.  
-    ![gsuite-search.png](/img/cloud-siem-enterprise/gsuite-search.png)
+    ![gsuite-search.png](/img/cse/gsuite-search.png)

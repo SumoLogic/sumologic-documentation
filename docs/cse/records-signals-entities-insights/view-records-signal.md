@@ -12,7 +12,7 @@ When you view the details page for a Signal that was triggered by a threshold, a
 
 Click the plus sign (+) for Record to view its details.
 
-![attached-records.png](/img/cloud-siem-enterprise/attached-records.png)
+![attached-records.png](/img/cse/attached-records.png)
 
 If other Records matched the rule conditions during the time window of the Signal, you can search for them from the Signal details page, as described in the following section.
 
@@ -20,11 +20,11 @@ If other Records matched the rule conditions during the time window of the Signa
 
 To view additional Records that matched the rule conditions during the time window of the Signal, click **Queried Records** near the upper right corner of the Signal details page.
 
-![queried-records-link.png](/img/cloud-siem-enterprise/queried-records-link.png)
+![queried-records-link.png](/img/cse/queried-records-link.png)
 
 The Records are retrieved in real time. The query is limited to the time window of the Signal. So, the list of Records may change over time; if you run the query occurs during the Signal’s time window, new Records could still be occurring, and if the query occurs after the retention period for records (by default, 90 days), it’s possible that no additional Records could be returned. 
 
-![queried-records-results.png](/img/cloud-siem-enterprise/queried-records-results.png)
+![queried-records-results.png](/img/cse/queried-records-results.png)
 
  
 

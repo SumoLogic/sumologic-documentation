@@ -34,7 +34,7 @@ A user runs a Context Action by clicking the Context Action icon next to an Enti
 
 In the screenshot below, Context Actions are listed below the built-in **Add to Match List** and **Add to Suppressed List** options.
 
-![action-icon-entity.png](/img/cloud-siem-enterprise/action-icon-entity.png)
+![action-icon-entity.png](/img/cse/action-icon-entity.png)
 
 If an action name is shown in red font, that indicates that the action depends on a Record field that doesn’t exist.
 
@@ -44,7 +44,7 @@ If an action name is shown in red font, that indicates that the action depends 
 1. On the **Context Actions** page click **Create**.
 1. This annotated screenshot shows a previously configured Context Action in edit mode.  
 
-    ![configured-action.png](/img/cloud-siem-enterprise/configured-action.png)
+    ![configured-action.png](/img/cse/configured-action.png)
 
     1. Name. Enter a name for the Context Action. 
     1. Choose whether you want to open a URL to an external service or

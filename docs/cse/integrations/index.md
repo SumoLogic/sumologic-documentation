@@ -1,5 +1,5 @@
 ---
-slug: /cloud-siem-enterprise/integrations
+slug: /cse/integrations
 ---
 
 # Integrations

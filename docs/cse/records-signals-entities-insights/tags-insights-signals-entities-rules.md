@@ -40,11 +40,11 @@ You can view tags on the pages that provide summary views of Insights, Signals, 
 
 This is an overview of an Insight from the Insights page. Multiple schema key tags are attached to the Insight.
 
-![insight-list-tags.png](/img/cloud-siem-enterprise/insight-list-tags.png)
+![insight-list-tags.png](/img/cse/insight-list-tags.png)
 
 The screenshot below shows an Entity to which a schema tag is attached.
 
-![entity-list-tags.png](/img/cloud-siem-enterprise/entity-list-tags.png)
+![entity-list-tags.png](/img/cse/entity-list-tags.png)
 
 ## Tag actions
 
@@ -53,7 +53,7 @@ The actions menu for a tag allows you to:
 * Open an URL, if the tag is a schema tag, and an URL is configured for the selected tag value.
 * Copy the raw tag to your clipboard.
 
-    ![tag-action-menu.png](/img/cloud-siem-enterprise/tag-action-menu.png)
+    ![tag-action-menu.png](/img/cse/tag-action-menu.png)
 
 ## Find the tagging UI
 
@@ -67,7 +67,7 @@ difference is where you do the tagging. 
 1. The UI for tagging is at the bottom of the **Then Create a Signal** area of the **Rule Editor**.
 1. To add a tag, follow the instructions in [Add a schema key tag](#apply-a-schema-key-tag) or [Add a keyword tag](#apply-a-keyword-tag).
 
-![tag-a-rule.png](/img/cloud-siem-enterprise/tag-a-rule.png)
+![tag-a-rule.png](/img/cse/tag-a-rule.png)
 
 ### UI for tagging an Entity
 
@@ -76,7 +76,7 @@ difference is where you do the tagging. 
 1. The UI for tagging is at the bottom of the **Details** pane.
 1. To add a tag, follow the instructions in [Add a keyword tag](#apply-a-keyword-tag).
 
-![tag-an-entity.png](/img/cloud-siem-enterprise/tag-an-entity.png)
+![tag-an-entity.png](/img/cse/tag-an-entity.png)
 
 ### UI for tagging an CSE-generated Insight
 
@@ -87,7 +87,7 @@ Note that in addition to tags that you manually assign to an Insight, an Insight
 1. The UI for tagging is at the bottom of the **Details** pane.
 1. To add a tag, follow the instructions in [Add a schema key tag](#apply-a-schema-key-tag) or [Add a keyword tag](#apply-a-keyword-tag).
 
-![tag-an-insight.png](/img/cloud-siem-enterprise/tag-an-insight.png)
+![tag-an-insight.png](/img/cse/tag-an-insight.png)
 
 ### UI for tagging a custom Insight
 
@@ -96,20 +96,20 @@ Note that in addition to tags that you manually assign to an Insight, an Insight
 1. The UI for tagging is at the bottom of the **Then Create a Signal** area of the Insight Editor.
 1. To add a tag, follow the instructions in [Add a schema key tag](#apply-a-schema-key-tag) or [Add a keyword tag](#apply-a-keyword-tag).
 
-![custom-insight.png](/img/cloud-siem-enterprise/custom-insight.png)
+![custom-insight.png](/img/cse/custom-insight.png)
 
 ## Apply a schema key tag
 
 1. Navigate to the item to which you want to add a tag, as described in the previous section. 
 1. In the tagging section, click the chevron icon.
 
-    ![chevron-icon.png](/img/cloud-siem-enterprise/chevron-icon.png)
+    ![chevron-icon.png](/img/cse/chevron-icon.png)
 1. Click a tag under **Schema Keys.**
 
-    ![tag-list-1.png](/img/cloud-siem-enterprise/tag-list-1.png)
+    ![tag-list-1.png](/img/cse/tag-list-1.png)
 1. A list of values appears. 
 
-    [values.png](/img/cloud-siem-enterprise/values.png)
+    [values.png](/img/cse/values.png)
 1. Select a tag value, and press Return to add it to the item. 
 
 ### Apply a keyword tag
@@ -117,16 +117,16 @@ Note that in addition to tags that you manually assign to an Insight, an Insight
 1. Navigate to the Rule, Entity, or Insight to which you want to add a tag, as described in [Find the tagging UI](#find-the-tagging-ui).
 1. In the tagging section, click the chevron icon.
 
-    ![chevron-icon.png](/img/cloud-siem-enterprise/chevron-icon.png)
+    ![chevron-icon.png](/img/cse/chevron-icon.png)
 1. A list of keyword tags that have already been assigned to items of the current type (Rule, Entity, or Insight) appears. You can select an existing tag, or add a new one. Enter text in the field to see a list of matching values.
 
-    ![freeform-tag-list.png](/img/cloud-siem-enterprise/freeform-tag-list.png)
+    ![freeform-tag-list.png](/img/cse/freeform-tag-list.png)
 1. To add a new tag, enter it and press Return. 
 
-    ![add-freeform-tag.png](/img/cloud-siem-enterprise/add-freeform-tag.png)
+    ![add-freeform-tag.png](/img/cse/add-freeform-tag.png)
 1. The tag is added to the item.
 
-    ![freeform-added.png](/img/cloud-siem-enterprise/freeform-added.png)
+    ![freeform-added.png](/img/cse/freeform-added.png)
 
 ## Search by tag
 
@@ -134,16 +134,16 @@ Note that in addition to tags that you manually assign to an Insight, an Insight
 
 1. Click in the search area and then click the funnel icon.
 
-    ![funnel-icon.png](/img/cloud-siem-enterprise/funnel-icon.png)
+    ![funnel-icon.png](/img/cse/funnel-icon.png)
 1. Select **Insights**, **Signals**, or **Entities** from the **Sources** list.
 
-    ![sources.png](/img/cloud-siem-enterprise/sources.png)
+    ![sources.png](/img/cse/sources.png)
 1. Select **Tags** from the **Fields** list.
 
-    ![tags-field.png](/img/cloud-siem-enterprise/tags-field.png)
+    ![tags-field.png](/img/cse/tags-field.png)
 1. Choose **contain** or **do not contain** from the **Operators** list.
 
-    ![operators.png](/img/cloud-siem-enterprise/operators.png)
+    ![operators.png](/img/cse/operators.png)
 1. Select a tag from either the **Schema Keys** or **Keyword Tags** list. If you select a tag from the **Schema Keys** list, you are prompted to select a value, and items that match are listed. If you select a tag from the **Keywords list**, items that match are listed.
 
 ### Search Rules by tag
@@ -151,21 +151,21 @@ Note that in addition to tags that you manually assign to an Insight, an Insight
 1. Select **Rules** from the **Content** menu.
 1. Click in the **Filters** area and select **Tags** from the **Fields** list.
 
-    ![search-rules-by-tag.png](/img/cloud-siem-enterprise/search-rules-by-tag.png)
+    ![search-rules-by-tag.png](/img/cse/search-rules-by-tag.png)
 1. Choose **contain** or **do not contain** from the **Operators** list.
 
-    ![operators.png](/img/cloud-siem-enterprise/operators.png)
+    ![operators.png](/img/cse/operators.png)
 1. Select a tag from either the **Schema Keys** or **Keyword Tags** list. If you select a tag from the **Schema Keys** list, you are prompted to select a value, and items that match are listed. If you select a tag from the **Keywords Tags** list, items that match are listed. Note that if an item has a Mitre-related tag, an icon appears next to it. Click the icon to view a Mitre page on the Tactic or Technique.
 
-    ![search-results.png](/img/cloud-siem-enterprise/search-results.png)
+    ![search-results.png](/img/cse/search-results.png)
 
 ### Filter a list view by clicking a tag
 
 On the Insights, Signals, Rules, or Entities page, you can click a tag to filter the list. For example, if you click the **Tactic:TA0005 - Defense Evasion** tag on an Insight, like this:
 
-![filter-list-by-tag.png](/img/cloud-siem-enterprise/filter-list-by-tag.png)
+![filter-list-by-tag.png](/img/cse/filter-list-by-tag.png)
 
 the page will be filtered to show only Insights that have that tag:
 
-![filtered-list.png](/img/cloud-siem-enterprise/filtered-list.png)  
+![filtered-list.png](/img/cse/filtered-list.png)  
  

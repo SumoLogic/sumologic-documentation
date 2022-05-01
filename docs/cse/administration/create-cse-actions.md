@@ -33,7 +33,7 @@ What gets sent to the target system depends on the Action type. For some types�
 * The [MITRE tactic](https://attack.mitre.org/) or tactics that form a portion of the Insight ID, which indicates which stage of the MITRE framework the Insight relates to. In the example below, the “Initial Access” tactic is shown.
 * A link to the Insight in CSE.  
     
-    ![received-email.png](/img/cloud-siem-enterprise/received-email.png)
+    ![received-email.png](/img/cse/received-email.png)
 
 For the other Action types—AWS Simple Notification Service (SNS), Demisto (Corex XSOAR), HTTP POST v2, and Slack Webhook—the notification includes the Insight itself in JSON format, and in some cases Signals or Records, depending on how you configure the Action.
 
@@ -50,11 +50,11 @@ The notification sent by a Rule Action contains the name of the rule and the re
 ## Create an Action
 
 1. Click the gear icon near the top of the CSE UI and select **Actions** under **Integrations**.  
-    ![gear-menu-actions.png](/img/cloud-siem-enterprise/gear-menu-actions.png)
+    ![gear-menu-actions.png](/img/cse/gear-menu-actions.png)
 1. On the **Actions** page, click **Create**.  
-    ![actions-page.png](/img/cloud-siem-enterprise/actions-page.png)
+    ![actions-page.png](/img/cse/actions-page.png)
 1. The **Create Action** popup appears.  
-    ![create-action-empty.png](/img/cloud-siem-enterprise/create-action-empty.png)
+    ![create-action-empty.png](/img/cse/create-action-empty.png)
 1. **Name**. Enter a name that communicates what the Action does.
 1. **Notifications**. 
     * **Insight**. Click **When Created** to automatically generate a notification when any Insight is created, **On Demand** to add the Action as an option in the **Actions** menu on the Insight details page, or select both. 
@@ -82,7 +82,7 @@ When you run this Action type for an Insight, CSE sends the full Insight in JSON
 1. **Region**. Enter the AWS region for the SNS topic. 
 1. Click **Create**.  
 
-    ![sns.png](/img/cloud-siem-enterprise/sns.png)
+    ![sns.png](/img/cse/sns.png)
 
 ### Demisto (Corex XSOAR)
 
@@ -96,7 +96,7 @@ When you run this Action type for an Insight, CSE sends the full Insight in JSON
 1. **Exclude Records**. Move the slider to the right if you don’t want to include Records in the notification.
 1. Click **Create**.  
 
-    ![demisto-action.png](/img/cloud-siem-enterprise/demisto-action.png)
+    ![demisto-action.png](/img/cse/demisto-action.png)
 
 ### Email
 
@@ -105,7 +105,7 @@ This Action type sends an email notification.
 1. **Recipients**. Enter a comma-separated list of the email addresses to send the notification to.
 1. Click **Create**.  
 
-    ![email-action.png](/img/cloud-siem-enterprise/email-action.png)
+    ![email-action.png](/img/cse/email-action.png)
 
 When this Action runs on an Insight, the email notification contains:
 
@@ -131,7 +131,7 @@ in CSE.
 1. **Record Fields to Include**. If desired, provide a comma-delimited list of selected Record fields to include (instead of all Record fields).
 1. Click **Create**.  
 
-    ![http-post-v2.png](/img/cloud-siem-enterprise/http-post-v2.png)
+    ![http-post-v2.png](/img/cse/http-post-v2.png)
 
 ### HipChat
 
@@ -140,7 +140,7 @@ This Action type sends a message to a HipChat room.
 1. **API Key**. Enter your HipChat API key.
 1. **Room**. Enter the HipChat room to send the notification to. 
 1. Click **Create**.  
-    ![hipchat.png](/img/cloud-siem-enterprise/hipchat.png)
+    ![hipchat.png](/img/cse/hipchat.png)
 
 When this Action type is run on an Insight, the message contains:
 
@@ -161,7 +161,7 @@ Create a Webhook connection for the Microsoft Teams channel to which emails shou
 1. **URL**. Enter the URL for the Webhook connection you created
     above. 
 1. Click **Create**.  
-    ![microsoft-teams.png](/img/cloud-siem-enterprise/microsoft-teams.png)
+    ![microsoft-teams.png](/img/cse/microsoft-teams.png)
 
 ### PagerDuty
 
@@ -170,7 +170,7 @@ This Action types sends a notification to PagerDuty.
 1. **Service Key**. Enter your PagerDuty service key.
 1. **Subdomain**. Enter your PagerDuty account subdomain.
 1. Click **Create**.  
-    ![pagerduty.png](/img/cloud-siem-enterprise/pagerduty.png)
+    ![pagerduty.png](/img/cse/pagerduty.png)
 
 The notification contains:
 
@@ -194,7 +194,7 @@ Lookups will consume RF API credits.
     1. **Integration**. Select “Sumologic” from the list of integrations.
 1. Click **Generate**.  
 
-    ![rf-api-token.png](/img/cloud-siem-enterprise/rf-api-token.png)
+    ![rf-api-token.png](/img/cse/rf-api-token.png)
 
 1. Copy and save the token.
 
@@ -205,13 +205,13 @@ Lookups will consume RF API credits.
 1. **Enrich Signals of Insights**. Move the slider to the right to enrich Signals.
 1. Click **Create**.  
 
-    ![recorded-future.png](/img/cloud-siem-enterprise/recorded-future.png)
+    ![recorded-future.png](/img/cse/recorded-future.png)
 
 ####  View Recorded Future Enrichments
 
 To view an Enrichment that’s been added to an Insight or Signal, navigate to the item and select the **Enrichments** tab.
 
-![rf-enrichments.png](/img/cloud-siem-enterprise/rf-enrichments.png)
+![rf-enrichments.png](/img/cse/rf-enrichments.png)
 
 ### Slack
 
@@ -221,7 +221,7 @@ This Action type sends a message to a Slack channel.
 1. **Channel**. Enter the Slack Channel that messages should go to.
 1. Click **Create**.  
 
-    ![slack.png](/img/cloud-siem-enterprise/slack.png)
+    ![slack.png](/img/cse/slack.png)
 
 If the Action was run on an Insight, the message contains:
 
@@ -242,4 +242,4 @@ Create a Webhook connection for the Slack channel to which Insights should be se
 1. **Webhook URL**. Enter the URL of the Webhook you created above.
 1. Click **Create**.  
 
-    ![slack-webhook.png](/img/cloud-siem-enterprise/slack-webhook.png)
+    ![slack-webhook.png](/img/cse/slack-webhook.png)
