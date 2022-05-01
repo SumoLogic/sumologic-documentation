@@ -33,7 +33,7 @@ An ingest budget's capacity usage is logged in the Audit Index when the audit th
 
 The **scope** supports the option to assign ingest budgets to your log data by either:
 
-* A Field that is enabled in the [Fields table](../fields.md). Fields are created in many ways, see [Fields](../fields.md) for details.
+* A Field that is enabled in the [Fields table](../../fields.md). Fields are created in many ways, see [Fields](../../fields.md) for details.
 * One of the following built-in metadata fields: \_collector, \_source, \_sourceCategory, \_sourceHost, or \_sourceName.
 
 The value supports a single wildcard, such as **\_sourceCategory=prod\*payment**.
@@ -50,7 +50,7 @@ There are two versions of ingest budgets:
 
     ![v1 budget tag.png](/img/ingestion-and-volume/v1-budget-tag.png)
 
-* V2 ingest budgets provide you the ability to assign budgets to your log data by either [Fields] (../Fields.md) or the following [built in metadata](../../../search/get-started-with-search/search-basics/built-in-metadata.md) fields, `_collector`, `_source`, `_sourceCategory`, `_sourceHost`, and `_sourceName`.
+* V2 ingest budgets provide you the ability to assign budgets to your log data by either [Fields](../../fields.md) or the following [built in metadata](../../../search/get-started-with-search/search-basics/built-in-metadata.md) fields, `_collector`, `_source`, `_sourceCategory`, `_sourceHost`, and `_sourceName`.
 
 :::important
 You can edit an existing **V1** budget by providing a **scope** to change it to a **V2** budget that is metadata based. V2 budgets are manageable with the Ingest Budget Management API **V2**.
