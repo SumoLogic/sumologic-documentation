@@ -6,13 +6,13 @@ id: host-metrics-source
 
 An installed Sumo Logic Collector can collect host metrics pertaining to the local host. The metrics are ingested and become available for metrics visualization. The host metrics are gathered by the open-source [SIGAR library](https://github.com/hyperic/sigar). 
 
-This topic describes how to set up a host metrics Source, and lists the metrics that are collected, and the relevant time intervals. See [JSON Parameters for Installed Sources](../03Use-JSON-to-Configure-Sources/JSON-Parameters-for-Installed-Sources.md "JSON Parameters for Installed Sources") for a list of JSON parameters for this Source.
+This topic describes how to set up a host metrics Source, and lists the metrics that are collected, and the relevant time intervals. See [JSON Parameters for Installed Sources](../use-json-configure-sources/json-parameters-installed-sources.md) for a list of JSON parameters for this Source.
 
 :::note
 Host Metrics are available on Collector versions 19.155 and later.
 :::
 
-You'll need an installed Collector to set up a host metrics Source. See [Installed Collectors](../../Installed-Collectors.md "Installed Collectors") for instructions on installing Collectors. After your Collector and Sources are installed, you can install the Host Metrics App with preconfigured searches and Dashboards, to analyze your metrics data.
+You'll need an installed Collector to set up a host metrics Source. See [Installed Collectors](/docs/send-data/sources/installed-collectors) for instructions on installing Collectors. After your Collector and Sources are installed, you can install the Host Metrics App with preconfigured searches and Dashboards, to analyze your metrics data.
 
 ## Permission Requirements
 
@@ -45,7 +45,7 @@ A host metric source running on an Installed Collector on an AWS EC2 instances w
 
    * **Name**. Enter the name you'd like to display for the new Source. Description is optional. Source name metadata is stored in a searchable field called **\_sourceName**.
    * **Source Host**. Enter the host name of the machine from which the metrics will be collected.
-   * **Source Category**. Enter any string to tag the output collected from this Source with searchable metadata. For example, enter **firewall** to tag all entries from this Source in a field called **\_sourceCategory**. Type **\_sourceCategory=firewall** in the Search field to return results from this Source. For more information, see [Metadata Naming Conventions](../04Reference-Information-for-Sources/Metadata-Naming-Conventions.md "Metadata Naming Conventions").
+   * **Source Category**. Enter any string to tag the output collected from this Source with searchable metadata. For example, enter **firewall** to tag all entries from this Source in a field called **\_sourceCategory**. Type **\_sourceCategory=firewall** in the Search field to return results from this Source. For more information, see [Metadata Naming Conventions](../reference-information-sources/metadata-naming-conventions.md).
    * **Fields**. Click the **+Add Field** link to add custom metric metadata. Define the fields you want to associate, providing a name (key) and value for each.
    * **Scan Interval**. Select the frequency for the Source to scan for host metrics data. Selecting a short interval will increase the message volume and could cause your deployment to incur additional charges. The default is 1 minute.
    * **Metrics**. Select check boxes for the metrics to collect. By default, all CPU and memory metrics are collected.
@@ -168,6 +168,6 @@ The JSON parameter is in milliseconds. We recommend 60 seconds (60000 ms) or lon
 
 ### AWS Metadata
 
-Collectors running on AWS EC2 instances can optionally collect AWS Metadata such as EC2 tags to make it easier to search for Host Metrics.  For more information, see [AWS Metadata Source for Metrics](../02Sources-for-Hosted-Collectors/Amazon-Web-Services/AWS-Metadata-(Tag)-Source.md "AWS Metadata Source for Metrics").
+Collectors running on AWS EC2 instances can optionally collect AWS Metadata such as EC2 tags to make it easier to search for Host Metrics.  For more information, see [AWS Metadata Source for Metrics](../sources-hosted-collectors/amazon-web-services/aws-metadata-tag-source.md).
 
 Only one AWS Metadata Source for Metrics is required to collect EC2 tags from multiple hosts.

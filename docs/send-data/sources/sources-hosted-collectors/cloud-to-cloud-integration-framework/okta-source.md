@@ -15,7 +15,7 @@ During a polling interval, an Okta Source will make a request for every 1,000 
 
 ## States
 
-An Okta Source tracks errors, reports its health, and start-up progress. You’re informed, in real-time, if the Source is having trouble connecting, if there's an error requiring user action, or if it is healthy and collecting by utilizing [Health Events](/docs/manage/health-events).
+An Okta Source tracks errors, reports its health, and start-up progress. You’re informed, in real-time, if the Source is having trouble connecting, if there's an error requiring user action, or if it is healthy and collecting by utilizing [Health Events](../../../../manage/health-events.md).
 
 An Okta Source goes through the following states when created:
 
@@ -64,7 +64,7 @@ To configure an Okta Source:
    * `_siemVendor`: Okta
    * `_siemProduct`: SSO
    * `_siemFormat`: JSON
-   * `_siemEventID`: `<eventType>` Where <eventType> is the value of the field from the JSON event, such as user.session.start. See the list of possible event types.
+   * `_siemEventID`: `<eventType>` Where `<eventType>` is the value of the field from the JSON event, such as user.session.start. See the list of possible event types.
    * `_dataType`: Inventory (only for user inventory data)
 
 1. (Optional) **Fields.** Click the **+Add Field** link to define the fields you want to associate, each field needs a name (key) and value.
@@ -98,7 +98,7 @@ When Sumo Logic detects an issue it is tracked by Health Events. The following t
 
 ### JSON configuration
 
-Sources can be configured using UTF-8 encoded JSON files with the Collector Management API. See [how to use JSON to configure Sources](../../03Use-JSON-to-Configure-Sources.md "Use JSON to Configure Sources") for details. 
+Sources can be configured using UTF-8 encoded JSON files with the Collector Management API. See [how to use JSON to configure Sources](/docs/send-data/sources/use-json-configure-sources) for details. 
 
 | Parameter | Type | Required | Description | Access |
 |--|--|--|--|--|
@@ -112,7 +112,7 @@ The following table shows the **config** parameters for an Okta Source.
 |--|--|--|--|--|--|
 | `name` | String | Yes |  | Type a desired name of the Source. The name must be unique per Collector. This value is assigned to the metadata field `_source`. | modifiable | 
 | `description` | String | No | null | Type a description of the Source. | modifiable | 
-| `category` | String | No | null | Type a category of the source. This value is assigned to the [metadata](/05Search/Get-Started-with-Search/Search-Basics/Built-in-Metadata) field `_sourceCategory`. See [best practices](../../../design-deployment/best-practices-source-categories.md) for details. | modifiable | 
+| `category` | String | No | null | Type a category of the source. This value is assigned to the [metadata](../../../../search/get-started-with-search/search-basics/built-in-metadata.md) field `_sourceCategory`. See [best practices](../../../design-deployment/best-practices-source-categories.md) for details. | modifiable | 
 | `fields` | JSON Object | No |  | JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field _siemForward to enable forwarding to SIEM. | modifiable | 
 | `apiKey` | String | Yes |  | The Okta API key you want to use to authenticate collection requests.| modifiable
 | `domain` | String | Yes |  | Provide your specific Okta domain, such as mydomain.okta.com.	| modifiable| 

@@ -70,7 +70,7 @@ The following steps show you how to create a service application:
 
 1. Request the appropriate [permissions for the application](https://docs.microsoft.com/en-us/azure/active-directory/develop/quickstart-configure-app-access-web-apis#application-permission-to-microsoft-graph). Click on **API Permissions**, then **Add a permission** and select **Microsoft Graph**.
 
-    You need to find and select the **SecurityEvents.Read.All** permission. See [this list](https://docs.microsoft.com/en-us/graph/permissions-reference#security-permissions "https://docs.microsoft.com/en-us/graph/permissions-reference#security-permissions") of all the available security permissions.
+    You need to find and select the **SecurityEvents.Read.All** permission. See [this list](https://docs.microsoft.com/en-us/graph/permissions-reference#security-permissions) of all the available security permissions.
 
     :::note
     An Administrator must approve (grant) these permissions before the Source will function.
@@ -103,7 +103,7 @@ To configure a Microsoft Graph Security API Source:
    * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema. 
    * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema it is ignored, known as dropped.
 
-1. Enter the **Directory (tenant) ID**, **Application (client) ID**, and **Application Client Secret Value** you got from the Application you created in the [prerequisite](./Microsoft_Graph_Security_API_Source.md "Microsoft Graph Security API Source") step.
+1. Enter the **Directory (tenant) ID**, **Application (client) ID**, and **Application Client Secret Value** you got from the Application you created in the [prerequisite](#prerequisite) step.
 
 1. **Set SIEM metadata fields**. Check the checkbox to set metadata fields for Cloud SIEM Enterprise. This is beneficial when Microsoft providers are consumed through the Security Graph API. Conversely, when third-party data is consumed, it may be beneficial to not set these fields and instead create a Sumo Logic Ingest Map within CSE to properly set the metadata needed to parse and map your data. When checked, the following metadata fields are set:
 
@@ -128,11 +128,11 @@ When Sumo Logic detects an issue it is tracked by Health Events. The following 
 
 ### JSON configuration
 
-Sources can be configured using UTF-8 encoded JSON files with the Collector Management API. See [how to use JSON to configure Sources](../../03Use-JSON-to-Configure-Sources.md "Use JSON to Configure Sources") for details. 
+Sources can be configured using UTF-8 encoded JSON files with the Collector Management API. See [how to use JSON to configure Sources](/docs/send-data/sources/use-json-configure-sources) for details. 
 
 | Parameter | Type | Required | Description | Access |
 |--|--|--|--|--|
-| config | JSON Object | Yes | Contains the [configuration parameters](./Microsoft_Graph_Security_API_Source.md "Microsoft Graph Security API Source") for the Source. |                                        |
+| config | JSON Object | Yes | Contains the configuration parameters for the Source. |                                        |
 | schemaRef | JSON Object | Yes | Use `{"type":"Microsoft Graph Security API"}` for a Microsoft Graph Security API Source. | not modifiable |
 | sourceType | String | Yes | Use `Universal` for a Microsoft Graph Security API Source. | not modifiable |
 
@@ -142,7 +142,7 @@ The following table shows the **config** parameters for a Microsoft Graph Se
 |--|--|--|--|--|--|
 | `name` | String | Yes |  | Type a desired name of the Source. The name must be unique per Collector. This value is assigned to the metadata field `_source`. | modifiable | 
 | `description` | String | No | null | Type a description of the Source. | modifiable | 
-| `category` | String | No | null | Type a category of the source. This value is assigned to the [metadata](/05Search/Get-Started-with-Search/Search-Basics/Built-in-Metadata) field `_sourceCategory`. See [best practices](../../../design-deployment/best-practices-source-categories.md) for details. | modifiable | 
+| `category` | String | No | null | Type a category of the source. This value is assigned to the [metadata](../../../../search/get-started-with-search/search-basics/built-in-metadata.md) field `_sourceCategory`. See [best practices](../../../design-deployment/best-practices-source-categories.md) for details. | modifiable | 
 | `fields` | JSON Object | No |  | JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field `_siemForward` to enable forwarding to SIEM. | modifiable | 
 | `set_metadata_fields` | Boolean | No | false | Set to true to assign metadata fields for Cloud SIEM Enterprise. | modifiable | 
 | `tenant_id` | String | Yes |  | The Directory (tenant) ID of the Azure AD application. | modifiable | 

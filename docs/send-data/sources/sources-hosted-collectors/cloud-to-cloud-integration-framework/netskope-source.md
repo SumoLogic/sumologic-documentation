@@ -31,14 +31,11 @@ A Netskope Source goes through the following states when created:
 1. **Authenticated**: The Source successfully authenticated with Netskope.
 1. **Collecting**: The Source is actively collecting data from Netskope.
 
-If the Source has any issues during any one of these states it is placed
-in an **Error** state.
+If the Source has any issues during any one of these states it is placed in an **Error** state.
 
-When you delete the Source it is placed in a **Stopping** state, when it
-has successfully stopped it is deleted from your Hosted Collector.
+When you delete the Source it is placed in a **Stopping** state, when it has successfully stopped it is deleted from your Hosted Collector.
 
-On the Collection page, the Health and Status for Sources is displayed.
-Use Health Events to investigate issues with collection.
+On the Collection page, the Health and Status for Sources is displayed. Use [Health Events](../../../../manage/health-events.md) to investigate issues with collection.
 
 ![netscope error.png](/img/send-data/netscope-error.png)
 
@@ -105,13 +102,13 @@ event log in the Health Event Index.
 
 | Type | Reason | Retries | Retry Behavior | Health Event Name |
 |--|--|--|--|--|
-| ThirdPartyConfig  | Normally due to an invalid configuration. You'll need to review your Source configuration and make an update. | No retries are attempted until the Source is updated. | Not applicable                                                    | ThirdPartyConfigError  |
-| ThirdPartyGeneric | Normally due to an error communicating with the third party service APIs.                                     | Yes                                                   | The Source will retry for up to 90 minutes, after which it quits. | ThirdPartyGenericError |
-| FirstPartyGeneric | Normally due to an error communicating with the internal Sumo Logic APIs.                                     | Yes                                                   | The Source will retry for up to 90 minutes, after which it quits. | FirstPartyGenericError |
+| ThirdPartyConfig  | Normally due to an invalid configuration. You'll need to review your Source configuration and make an update. | No retries are attempted until the Source is updated. | Not applicable | ThirdPartyConfigError  |
+| ThirdPartyGeneric | Normally due to an error communicating with the third party service APIs. | Yes | The Source will retry for up to 90 minutes, after which it quits. | ThirdPartyGenericError |
+| FirstPartyGeneric | Normally due to an error communicating with the internal Sumo Logic APIs. | Yes | The Source will retry for up to 90 minutes, after which it quits. | FirstPartyGenericError |
 
 #### JSON configuration 
 
-Sources can be configured using UTF-8 encoded JSON files with the Collector Management API. See [how to use JSON to configure Sources](../../03Use-JSON-to-Configure-Sources.md "Use JSON to Configure Sources") for details. 
+Sources can be configured using UTF-8 encoded JSON files with the Collector Management API. See [how to use JSON to configure Sources](/docs/send-data/sources/use-json-configure-sources) for details. 
 
 | Parameter | Type | Required | Description | Access |
 |--|--|--|--|--|
@@ -125,7 +122,7 @@ The following table shows the **config** parameters for a Netskope Source.
 |--|--|--|--|--|--|
 | `name` | String | Yes |  | Type a desired name of the Source. The name must be unique per Collector. This value is assigned to the metadata field `_source`. | modifiable | 
 | `description` | String | No | null | Type a description of the Source. | modifiable | 
-| `category` | String | No | null | Type a category of the source. This value is assigned to the [metadata](/05Search/Get-Started-with-Search/Search-Basics/Built-in-Metadata) field `_sourceCategory`. See [best practices](../../../design-deployment/best-practices-source-categories.md) for details. | modifiable | 
+| `category` | String | No | null | Type a category of the source. This value is assigned to the [metadata](../../../../search/get-started-with-search/search-basics/built-in-metadata.md) field `_sourceCategory`. See [best practices](../../../design-deployment/best-practices-source-categories.md) for details. | modifiable | 
 | `fields` | JSON Object | No |  | JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field _siemForward to enable forwarding to SIEM. | modifiable | 
 | `tenantID` | String | Yes |  | Netskope customer specific Tenant ID. Do not provide the entire URL, just the Tenant ID. | modifiable | 
 | `apiToken` | String | Yes |  | The Netskope API Token you want to use to authenticate requests. | modifiable | 

@@ -64,9 +64,9 @@ To configure an Akamai SIEM API Source:
     * `_siemFormat`:JSON
     * `_siemEventID`: `<type>` This is the value from the `type` field of the event. This is typically `akamai_siem`.
 
-1. **Client Token**, **Client Secret**, **Access Token**, and **Akamai API Host**. Provide the Akamai SIEM API authentication credentials you want to use to [authenticate](./Akamai_SIEM_API_Source.md "Akamai SIEM API Source") collection requests. The **Akamai API Host** is the custom hostname applied to your credentials, it looks something like this: `akzz-XXXXXXXXXXXXXXXX-XXXXXXXXXXXXXXXX.luna.akamaiapis.net`.
+1. **Client Token**, **Client Secret**, **Access Token**, and **Akamai API Host**. Provide the Akamai SIEM API authentication credentials you want to use to [authenticate](#prerequisite-and-authentication)) collection requests. The **Akamai API Host** is the custom hostname applied to your credentials, it looks something like this: `akzz-XXXXXXXXXXXXXXXX-XXXXXXXXXXXXXXXX.luna.akamaiapis.net`.
 
-1. **Config IDs**. Provide at least one Security Configuration ID you got when you turned on the SIEM integration in Akamai. This was done in the [prerequisite and authentication](./Akamai_SIEM_API_Source.md "Akamai SIEM API Source") section.
+1. **Config IDs**. Provide at least one Security Configuration ID you got when you turned on the SIEM integration in Akamai. This was done in the [prerequisite and authentication](#prerequisite-and-authentication) section.
 
 1. **Parsing Options**. Select if you want to **Enable post processing** or **Disable all parsing**. The post processing options are **Decode httpMessage fields** and **Duplicate Events once for each rule associated with the event**. We recommend both parsing options when **Forward to SIEM** is enabled.
  * **Decode httpMessage fields** will decode the following fields from the `httpMessage` field of the [event](https://developer.akamai.com/api/cloud_security/siem/v1.html#event):
@@ -303,11 +303,11 @@ When Sumo Logic detects an issue it is tracked by Health Events. The following t
 
 ## JSON configuration
 
-Sources can be configured using UTF-8 encoded JSON files with the Collector Management API. See [how to use JSON to configure Sources](../../03Use-JSON-to-Configure-Sources.md "Use JSON to Configure Sources") for details. 
+Sources can be configured using UTF-8 encoded JSON files with the Collector Management API. See [how to use JSON to configure Sources](/docs/send-data/sources/use-json-configure-sources) for details. 
 
 | Parameter | Type | Required? | Description | Access|
 |-------------------|--------------|-------------------|-----------|----------------|
-| config | JSON Object  | Yes | Contains the [configuration parameters](Okta_Source.md "Okta Source") for the Source. |   |
+| config | JSON Object  | Yes | Contains the [configuration parameters](okta-source.md) for the Source. |   |
 | schemaRef | JSON Object  | Yes | Use `{"type":"Akamai SIEM API"}` for a Akamai SIEM API Source. | not modifiable |
 | sourceType | String | Yes | Use `Universal` for a Akamai SIEM API Source. | not modifiable |
 
@@ -317,7 +317,7 @@ The following table shows the **config** parameters for a Akamai SIEM API Sour
 |-------------------|----------|----|------|-----------|----------------|
 | `name` | String | Yes |  | Type a desired name of the Source. The name must be unique per Collector. This value is assigned to the [metadata](/05Search/Get-Started-with-Search/Search-Basics/Built-in-Metadata) field `_source`. | modifiable |
 | `description` | String | No | null | Type a description of the Source. | modifiable |
-| `category` | String | No | null | Type a category of the source. This value is assigned to the [metadata](/05Search/Get-Started-with-Search/Search-Basics/Built-in-Metadata) field `_sourceCategory`. See [best practices](../../../design-deployment/best-practices-source-categories.md) for details. | modifiable |
+| `category` | String | No | null | Type a category of the source. This value is assigned to the [metadata](../../../../search/get-started-with-search/search-basics/built-in-metadata.md) field `_sourceCategory`. See [best practices](../../../design-deployment/best-practices-source-categories.md) for details. | modifiable |
 | `fields` | JSON Object | No |  | JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field `_siemForward` to enable forwarding to SIEM. | modifiable |
 | `clientSecret` | String | No |  | The Client Secret you want to use to authenticate collection requests. | modifiable |
 | `clientToken` | String | Yes |  | The Client Token for the Client Secret that you want to use to authenticate collection requests. | modifiable |

@@ -84,7 +84,7 @@ To configure a Google Workspace Source:
 
 1. Provide the same **Scope** you defined for your service account during the [setup section](#set-up-service-account-credentials) above.
 
-1. The **Query Parameter for Collecting User Data** section provides two options, **Customer** or **Domain Parameter**. See the [Directory API documentation](https://developers.google.com/admin-sdk/directory/reference/rest/v1/users/list#query-parameters "https://developers.google.com/admin-sdk/directory/reference/rest/v1/users/list#query-parameters") from Google for details.
+1. The **Query Parameter for Collecting User Data** section provides two options, **Customer** or **Domain Parameter**. See the [Directory API documentation](https://developers.google.com/admin-sdk/directory/reference/rest/v1/users/list#query-parameters) from Google for details.
   * **Customer ID**:** The unique ID for the customer's Google Workspace account. In the case of a multi-domain account, to fetch all groups for a customer, fill this field instead of domain. You can also use the `my_customer` alias to represent your account's `customerId`. The `customerId` is also returned as part of the [Users resource](https://developers.google.com/admin-sdk/directory/v1/reference/users).
   * **Domain**: The domain name. Use this field to get fields from only one domain. To return all domains for a customer account, use the `customer` query parameter instead.
 
@@ -102,7 +102,7 @@ When Sumo Logic detects an issue it is tracked by Health Events. The following t
 
 ### JSON configuration
 
-Sources can be configured using UTF-8 encoded JSON files with the Collector Management API. See [how to use JSON to configure Sources](../../03Use-JSON-to-Configure-Sources.md "Use JSON to Configure Sources") for details. 
+Sources can be configured using UTF-8 encoded JSON files with the Collector Management API. See [how to use JSON to configure Sources](/docs/send-data/sources/use-json-configure-sources) for details. 
 
 | Parameter | Type | Required | Description | Access |
 |--|--|--|--|--|
@@ -116,7 +116,7 @@ The following table shows the **config** parameters for a Google Workspace Sou
 |--|--|--|--|--|--|
 | `name` | String | Yes |  | Type a desired name of the Source. The name must be unique per Collector. This value is assigned to the metadata field `_source`. | modifiable | 
 | `description` | String | No | null | Type a description of the Source. | modifiable | 
-| `category` | String | No | null | Type a category of the source. This value is assigned to the [metadata](/05Search/Get-Started-with-Search/Search-Basics/Built-in-Metadata) field `_sourceCategory`. See [best practices](../../../design-deployment/best-practices-source-categories.md) for details. | modifiable | 
+| `category` | String | No | null | Type a category of the source. This value is assigned to the [metadata](../../../../search/get-started-with-search/search-basics/built-in-metadata.md) field `_sourceCategory`. See [best practices](../../../design-deployment/best-practices-source-categories.md) for details. | modifiable | 
 | `fields` | JSON Object | No |  | JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field _siemForward to enable forwarding to SIEM. | modifiable | 
 | `clientEmail` | String | Yes |  | Provide the Client Email you got in the JSON file after you created service account credentials | modifiable | 
 | `delegatedUserEmail` | String | Yes |  | Provide the super-administrator email address for the domain that granted access to the service account you created. | modifiable | 

@@ -48,7 +48,7 @@ For common deployment errors refer to the following [doc](https://docs.microsoft
 
 ## Verify configurations
 
-Make sure that the resources you created in the [Collect Logs from Azure Blob Storage](Collect_Logs_from_Azure_Blob_Storage.md) procedure were successfully created.
+Make sure that the resources you created in the [Collect Logs from Azure Blob Storage](collect-logs-azure-blob-storage.md) procedure were successfully created.
 
 1. Go to Resource groups, and select the resource group you created or selected in [Step 3. Configure Azure resources using ARM Template](collect-logs-azure-blob-storage.md of the "Collect Logs from Azure Blob Storage" page. You should see resources you created:
 

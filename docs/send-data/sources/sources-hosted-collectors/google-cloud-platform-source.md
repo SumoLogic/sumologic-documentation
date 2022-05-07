@@ -34,7 +34,7 @@ This Source will be a Google Pub/Sub-only Source, which means that it will only 
 
 1. **Source Host** (Optional). The Source Host value is tagged to each log and stored in a searchable metadata field called \_sourceHost. Avoid using spaces so you do not have to quote them in keyword search expressions. This can be a maximum of 128 characters.
 
-1. **Source Category** (Optional). The Source Category value is tagged to each log and stored in a searchable metadata field called \_sourceCategory. See our [Best Practices: Good Source Category, Bad Source Category](../../design-deployment/best-practices-source-categories.md). Avoid using spaces so you do not have to quote them in keyword search expressions. This can be a maximum of 1,024 characters.
+1. **Source Category** (Optional). The Source Category value is tagged to each log and stored in a searchable metadata field called \_sourceCategory. See our [Best Practices: Good and Bad Source Categories](../../design-deployment/best-practices-source-categories.md). Avoid using spaces so you do not have to quote them in keyword search expressions. This can be a maximum of 1,024 characters.
 
 1. **Fields.** Click the **+Add Field** link to define the fields you want to associate, each field needs a name (key) and value.
 

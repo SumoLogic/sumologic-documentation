@@ -17,7 +17,7 @@ launched.
 Download the appropriate collector from the Sumo Logic **Manage Data \>
 Collection \> Collection** page, or from the list below.
 
-1. Download your collector. Choose from the 32-bit or 64-bit static URLs for latest Linux collector builds, and make sure to choose your correct Sumo Logic pod. Find the list of URLs in [Download a Collector from a static URL](02Download-a-Collector-from-a-Static-URL.md "Download a Collector from a Static URL") in Help.
+1. Download your collector. Choose from the 32-bit or 64-bit static URLs for latest Linux collector builds, and make sure to choose your correct Sumo Logic pod. Find the list of URLs in [Download a Collector from a static URL](download-collector-from-static-url.md) in Help.
 
 1. Change the permissions to allow the file to be executed.
 
@@ -27,7 +27,7 @@ Collection \> Collection** page, or from the list below.
 
 1. To configure custom sources, create a source JSON file that lists all the sources you want the collector to scan and submit to the Sumo Logic service. These source configurations are only applied during the initial registration of the collector, any updates to the sources.json file will *not* be applied during a simple restart of the collector.
 
-    The following sample JSON file includes local file source and syslog source configuration samples. For a full list of available source types and parameters, which can be used within the sources.json file, please review the [JSON help documentation](../../Sources/03Use-JSON-to-Configure-Sources.md "Use JSON to Configure Sources").
+    The following sample JSON file includes local file source and syslog source configuration samples. For a full list of available source types and parameters, which can be used within the sources.json file, please review the [JSON help documentation](/docs/send-data/sources/use-json-configure-sources).
 
     :::important
     JSON files need to be UTF-8 encoded.
@@ -78,7 +78,7 @@ Collection \> Collection** page, or from the list below.
 
    * `-``q` starts the installer in quiet mode (no UI)  
    * `-VskipRegistration=true` to skip collector registration during installation  
-   * `-Vephemeral=true` to [set the Collector as ephemeral](11Set-a-Collector-as-Ephemeral.md "Set a Collector as Ephemeral") (will be removed after 12 hours offline)  
+   * `-Vephemeral=true` to [set the Collector as ephemeral](set-collector-as-ephemeral.md) (will be removed after 12 hours offline)  
    * `-Vsumo.accessid\<access_i\>` to specify access id generated above  
    * `-Vsumo.accesskey\<access_ke\>` to specify access key generated above  
    * `-Vsources\<filepat\>` to specify the path to your source JSON file created above  

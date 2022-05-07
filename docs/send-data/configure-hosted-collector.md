@@ -15,7 +15,7 @@ Steps to configure a Hosted Collector:
 1. Click **Hosted **Collector.
 1. Provide a **Name** for the Collector.
 1. A **description** is optional.
-1. **Category**. Enter any string to tag the logs collected from this Collector. This Source Category value is stored in a searchable metadata field called `_sourceCategory`. See our [Best Practices: Good Source Category, Bad Source Category](design-deployment/best-practices-source-categories.md).
+1. **Category**. Enter any string to tag the logs collected from this Collector. This Source Category value is stored in a searchable metadata field called `_sourceCategory`. See our [Best Practices: Good and Bad Source Categories](design-deployment/best-practices-source-categories.md).
 1. Click the **+Add Field** link in the **Fields** section. Define the fields you want to associate, each field needs a name (key) and value.
 
     * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema. 

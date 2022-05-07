@@ -52,7 +52,7 @@ This allows you to do searches such as:
  * **\_sourceCategory=\*Audit**
  * **\_sourceCategory=\*Application\***
 
-For more information, see [Best Practices: Good and Bad Source Category](../../design-deployment/best-practices-source-categories.md). 
+For more information, see [Best Practices: Good and Bad Source Categories](../../design-deployment/best-practices-source-categories.md). 
 
 ## Source Host
 

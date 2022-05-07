@@ -4,10 +4,10 @@ id: binary-package-install-a-collector
 
 # Use the binary package to install a Collector on Windows or MacOS
 
-Use the binary package to install a Collector on MacOS or Windows only if you need to use a particular version of JRE. See [Install a Collector on Linux](../04Install-a-Collector-on-Linux.md "Install a Collector on Linux") for instructions on using the binary package to install a Collector on Linux.
+Use the binary package to install a Collector on MacOS or Windows only if you need to use a particular version of JRE. See [Install a Collector on Linux](../install-collector-linux.md).
 
 :::note
-This procedure is for Collector version 19.137 and later. If you have Collectors from earlier versions, you can update them using this procedure or one of the other installation options. See [Installed Collectors](...md "Installed Collectors").
+This procedure is for Collector version 19.137 and later. If you have Collectors from earlier versions, you can update them using this procedure or one of the other installation options. See [Installed Collectors](/docs/send-data/installed-collectors).
 :::
 
 Before you begin:
@@ -41,7 +41,7 @@ Before you begin:
 
 ## (Optional) Configure sources
 
-The Collector Management API allows you to pass all Source settings in a JSON file, including Source name, metadata tags, and pointer to the files you want to collect. For instructions, see [Using JSON to configure Sources](../../Sources/03Use-JSON-to-Configure-Sources.md "https://sumologic-prod.mindtouch.us/Send_Data/Sources/Use_JSON_to_configure_Sources").
+The Collector Management API allows you to pass all Source settings in a JSON file, including Source name, metadata tags, and pointer to the files you want to collect. For instructions, see [Using JSON to configure Sources](/docs/send-data/sources/use-json-configure-sources).
 
 Optionally, you can configure Source using the Sumo Logic Web Application after the Collector has been installed.
 
@@ -70,7 +70,7 @@ accesskey = <accessKey>
 wrapper.java.command = java
 ```
 
-See [user.properties](06user.properties.md "user.properties") for a full list of all the parameters that you can add to the file.
+See [user.properties](user-properties.md) for a full list of all the parameters that you can add to the file.
 
 ## Start the Collector
 

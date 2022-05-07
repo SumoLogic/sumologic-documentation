@@ -4,8 +4,7 @@ id: define-boundary-regex-multiline-messages
 
 # Define Boundary Regex for Multiline Messages
 
-For details on how the Collector processes multiline logs see [Collecting Multiline
-Logs](../../04Reference-Information-for-Sources/Collecting-Multiline-Logs.md "Collecting Multiline Logs").
+For details on how the Collector processes multiline logs see [Collecting MultilineLogs](../reference-information-sources/collect-multiline-logs.md)
 
 By default, Sumo Logic Sources have multiline processing enabled, which is useful when logs contain messages that span multiple lines separated by line breaks, such as a stack trace. This way, the Source can detect when a log message spans multiple lines and then indexes this message as a single message.
 

@@ -7,7 +7,7 @@ id: workday-source
 When you create a Workday Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](../../../configure-hosted-collector.md).
 
 :::note
-The steps below assume that you have already configured in [Step 1 of this page](/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/Workday/Collect_Logs_for_the_Workday_App#step-1-configure-the-workday-portal). You will copy and paste configurations from those steps in this source.
+The steps below assume that you have already configured in [Step 1 of this page] (/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/Workday/Collect_Logs_for_the_Workday_App#step-1-configure-the-workday-portal). You will copy and paste configurations from those steps in this source.
 :::
 
 To configure a Workday Source:
@@ -103,13 +103,11 @@ When Sumo Logic detects an issue it is tracked by Health Events. The following t
 
 ### JSON configuration
 
-Sources can be configured using UTF-8 encoded JSON files with the
-Collector Management API. See [how to use JSON to configure
-Sources](../../03Use-JSON-to-Configure-Sources.md) for details. 
+Sources can be configured using UTF-8 encoded JSON files with the Collector Management API. See [how to use JSON to configure Sources](/docs/send-data/sources/use-json-configure-sources) for details. 
 
 | Parameter | Type | Required | Description | Access |
 |--|--|--|--|--|
-| config        | JSON Object | Yes          | Contains the [configuration parameters](./Workday_Source.md "Workday Source") for the Source. |                |
+| config        | JSON Object | Yes          | Contains the configuration parameters for the Source. |                |
 | schemaRef     | JSON Object | Yes          | Use {"type":"Salesforce"} for Workday Source.                                                 | not modifiable |
 | sourceType    | String      | Yes          | Use Universal for Workday Source. | not modifiable |
 
@@ -119,7 +117,7 @@ The following table shows the **config** parameters for Workday Source.
 |--|--|--|--|--|--|
 | `name` | String | Yes |  | Type a desired name of the Source. The name must be unique per Collector. This value is assigned to the metadata field `_source`. | modifiable | 
 | `description` | String | No | null | Type a description of the Source. | modifiable | 
-| `category` | String | No | null | Type a category of the source. This value is assigned to the [metadata](/05Search/Get-Started-with-Search/Search-Basics/Built-in-Metadata) field `_sourceCategory`. See [best practices](../../../design-deployment/best-practices-source-categories.md) for details. | modifiable | 
+| `category` | String | No | null | Type a category of the source. This value is assigned to the [metadata](../../../../search/get-started-with-search/search-basics/built-in-metadata.md) field `_sourceCategory`. See [best practices](../../../design-deployment/best-practices-source-categories.md) for details. | modifiable | 
 | `fields` | JSON Object | No |  | JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field _siemForward to enable forwarding to SIEM. | modifiable | 
 | `isu_password` | String | Yes |  | Type the workday ISU account password for the username  | modifiable  | 
 | `isu_username` | String | Yes | Type integration system user account  name  | modifiable | 

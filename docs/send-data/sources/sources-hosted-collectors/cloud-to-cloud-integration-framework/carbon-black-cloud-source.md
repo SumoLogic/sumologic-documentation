@@ -7,7 +7,7 @@ id: carbon-black-cloud-source
 The Carbon Black Cloud Source provides a secure endpoint to receive data from the Carbon Black Cloud, Enriched Event Search, and Alerts APIs. It securely stores the required authentication, scheduling, and state tracking information.
 
 :::tip
-The Event Forwarder is recommended by VMWare Carbon Black over APIs for obtaining large amounts of data from Carbon Black Cloud in real time. Sumo Logic recommends using the Event Forwarder in combination with a Sumo Logic AWS S3 Source instead of a Carbon Black Cloud Source. See how to [collect logs for Carbon Black](/22Security_and_Threat_Detection/VMware_Carbon_Black/Collect_logs_for_VMware_Carbon_Black) for details.
+The Event Forwarder is recommended by VMWare Carbon Black over APIs for obtaining large amounts of data from Carbon Black Cloud in real time. Sumo Logic recommends using the Event Forwarder in combination with a Sumo Logic AWS S3 Source instead of a Carbon Black Cloud Source. 
 :::
 
 ## Authentication
@@ -100,11 +100,11 @@ When Sumo Logic detects an issue it is tracked by Health Events. The following 
 
 #### JSON configuration
 
-Sources can be configured using UTF-8 encoded JSON files with the Collector Management API. See [how to use JSON to configure Sources](../../03Use-JSON-to-Configure-Sources.md "Use JSON to Configure Sources") for details. 
+Sources can be configured using UTF-8 encoded JSON files with the Collector Management API. See [how to use JSON to configure Sources](/docs/send-data/sources/use-json-configure-sources) for details. 
 
 | Parameter | Type | Required? | Description | Access |
 |--|--|--|--|--|
-| config | JSON Object  | Yes | Contains the [configuration parameters](./Carbon_Black_Cloud_Source.md "Carbon Black Defense Source") for the Source. |   |
+| config | JSON Object  | Yes | Contains the configuration parameters for the Source. |   |
 | schemaRef | JSON Object  | Yes | Use `{"type":"Carbon Black Cloud"}` for a Carbon Black Cloud Source. | not modifiable |
 | sourceType | String | Yes | Use `Universal` for a Carbon Black Cloud Source. | not modifiable |
 
@@ -113,12 +113,12 @@ Cloud Source.
 
 | Parameter | Type | Required |  Description | Access |
 |--|--|--|--|--|
-| `name` | String | Yes	 | Type a desired name of the Source. The name must be unique per Collector. This value is assigned to the [metadata](/05Search/Get-Started-with-Search/Search-Basics/Built-in-Metadata) field `_source`. | modifiable |
+| `name` | String | Yes	 | Type a desired name of the Source. The name must be unique per Collector. This value is assigned to the [metadata](../../../../search/get-started-with-search/search-basics/built-in-metadata.md) field `_source`. | modifiable |
 | `description` | String | No |  Type a description of the Source. | modifiable |
-| `category` | String | No |  Type a category of the source. This value is assigned to the [metadata](/05Search/Get-Started-with-Search/Search-Basics/Built-in-Metadata) field `_sourceCategory`. See [best practices](../../../design-deployment/best-practices-source-categories.md) for details. | modifiable |
+| `category` | String | No |  Type a category of the source. This value is assigned to the metadata field `_sourceCategory`. See [best practices](../../../design-deployment/best-practices-source-categories.md) for details. | modifiable |
 | `fields` | JSON Object | No |  JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field `_siemForward` to enable forwarding to SIEM. | modifiable |
 | `domain` | String | Yes | Enter your Carbon Black Cloud domain, such as, `dev-prod05.conferdeploy.net`. See this [knowledge base article](https://community.carbonblack.com/t5/Knowledge-Base/Carbon-Black-Cloud-What-URLs-are-used-to-access-the-APIs/ta-p/67346) to determine which domain to use. | modifiable |
-| `api_key` | String | Yes | The Carbon Black Cloud API Key you want to use to authenticate requests. Ensure the key is granted the required permissions for all the APIs listed in the above [Authentication section](/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Cloud-to-Cloud_Integration_Framework/Carbon_Black_Cloud_Source#Authentication). | modifiable |
+| `api_key` | String | Yes | The Carbon Black Cloud API Key you want to use to authenticate requests. Ensure the key is granted the required permissions for all the APIs listed in the above [Authentication section](#authentication). | modifiable |
 | `api_id` | String | Yes | The Carbon Black Cloud API ID correlated to your API key. | modifiable |
 | `org_key` | String | Yes | Your Carbon Black Cloud Org key, found in your Carbon Black product console under Settings > API Access > API Keys. | modifiable |
 | `pollingInterval` | Integer | No | This sets how many seconds the Source checks for new data. The default is 60 seconds. | modifiable |

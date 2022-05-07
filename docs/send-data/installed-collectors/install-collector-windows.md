@@ -33,11 +33,11 @@ Install the Collector using either of the following methods: 
 * UI installer - This method does not support all advanced settings.
 * Command line installer
 
-You can build a Collector into a [Windows machine image](05Reference-Information-for-Collector-Installation/04Add_a_Collector_to_a_Windows_Machine_Image.md "Add a Collector to a Windows Machine Image") such as an Amazon AMI or VMware image.
+You can build a Collector into a [Windows machine image](collector-installation-reference/add-collector-windows-machine-image.md) such as an Amazon AMI or VMware image.
 
-After installing Collectors, you can configure Sources by using the Web Application or by providing the [Source settings in a JSON file](../Sources/03Use-JSON-to-Configure-Sources.md "Use JSON to Configure Sources"). If you are using a UTF-8 encoded JSON file, you must provide the file before starting the Collector. The JSON file needs to be UTF-8 encoded.
+After installing Collectors, you can configure Sources by using the Web Application or by providing the [Source settings in a JSON file](/docs/send-data/sources/use-json-configure-sources). If you are using a UTF-8 encoded JSON file, you must provide the file before starting the Collector. The JSON file needs to be UTF-8 encoded.
 
-If necessary, you can use the binary package to install a Collector on MacOS. See this [Collector FAQ](05Reference-Information-for-Collector-Installation/How_do_I_use_the_binary_package_to_install_a_Collector_on_Windows_or_MacOS%3F.md "How do I use the binary package to install a Collector on Windows or MacOS?") topic for details.
+If necessary, you can use the binary package to install a Collector on MacOS. See this [Collector FAQ](/docs/send-data/collector-faqs) topic for details.
 
 ### Install using the UI installer
 
@@ -48,18 +48,18 @@ Run the installer on your server with root or Administrator privileges. If you a
 1. Open the wizard to show the Welcome page. Click **Next**.
 1. Accept the license agreement and click **Next**.
 1. Browse to select a location for the Collector or accept the default and click **Next** to install the Collector files on your machine.
-1. The Installer displays the summary of the default settings. If you want to change any of these, click [Advanced UI Installer Settings](05Reference-Information-for-Collector-Installation/Advanced-UI-Installer-Settings.md "Advanced UI Installer Settings") and follow the instructions. Click **Next**.
+1. The Installer displays the summary of the default settings. If you want to change any of these, click [Advanced UI Installer Settings](collector-installation-reference/advanced-ui-installer-settings.md) and follow the instructions. Click **Next**.
 1. Choose an authentication method.
 
    * Access Key: If you have a Sumo Logic access ID and key, click **Next** enter the access ID and key, and click **Next**.
    * Installation Token: The Setup Wizard has not yet been updated to provide an option for Installation Tokens. You can provide the Installation Token using the Setup Wizard Token option. Enter the **Token String** you want to use to register the Collector in the input box for a Setup Wizard one-time token.
 
 1. Click **Finish** to complete the setup.
-1. In Sumo Logic select **Manage Data \> Collection \> Collection** and verify that you can see the Collector. Look for the name that is listed as Collector Name in the confirmation step of this procedure (the name can be customized under **Advanced Settings**). If a Collector with that name already exists, a suffix is appended to uniquely identify it. If you don’t see the Collector, check the [Error Codes](05Reference-Information-for-Collector-Installation/07Collector-Installation-Error-Messages.md "Collector Installation Error  Messages") list to help troubleshoot.
+1. In Sumo Logic select **Manage Data \> Collection \> Collection** and verify that you can see the Collector. Look for the name that is listed as Collector Name in the confirmation step of this procedure (the name can be customized under **Advanced Settings**). If a Collector with that name already exists, a suffix is appended to uniquely identify it. If you don’t see the Collector, check the [Error Codes](collector-installation-reference/collector-installation-error-messages.md) list to help troubleshoot.
 
 ### Install using the command line installer
 
-1. From the command prompt, run the downloaded EXE file with with the parameters that you want to configure. See [Parameters for the Command Line Installer](05Reference-Information-for-Collector-Installation/06Parameters-for-the-Command-Line-Installer.md "Parameters for the Command Line Installer") for a description of the parameters.
+1. From the command prompt, run the downloaded EXE file with with the parameters that you want to configure. See [Parameters for the Command Line Installer](collector-installation-reference/parameters-command-line-installer.md) for a description of the parameters.
 1. When you see the `Finishing installation...` message you can close the command prompt window. The installation is complete.
 
 The `-console` parameter is required to display output messages from the installation.
@@ -75,13 +75,13 @@ SumoCollector.exe -console -q "-Vsumo.accessid=<accessId>" "-Vsumo.accesskey=<ac
 
 **Examples**
 
-Using an [Installation Token](/Manage/Security/Installation_Tokens):
+Using an [Installation Token](../../manage/security/installation-tokens.md):
 
 ```bash
 SumoCollector.exe -console -q "-Vsumo.token_and_url=<installationToken>" "-Vsources=<filepath>"
 ```
 
-Using [access ID and access key](/Manage/Security/Access-Keys):
+Using [access ID and access key](../../manage/security/access-keys.md):
 
 ```bash
 SumoCollector.exe -console -q "-Vsumo.accessid=<accessId>" "-Vsumo.accesskey=<accessKey>" "-Vsources=<filepath>"
@@ -101,10 +101,10 @@ Uninstalling a Sumo Logic installed Collector requires the following steps:
 
 1. Uninstall the Collector from the host machine using either of these methods.
 
-* [Uninstall using the installer](./03Install-a-Collector-on-Windows.md "Install a Collector on Windows")
-* [Uninstall from the command line](./03Install-a-Collector-on-Windows.md "Install a Collector on Windows")
+* [Uninstall using the installer](#uninstall-using-the-installer)
+* [Uninstall from the command line](#uninstall-from-the-command-line)
 
-1. [Remove the Collector from the Sumo Logic Web Application](./03Install-a-Collector-on-Windows.md "Install a Collector on Windows")
+1. [Remove the Collector from the Sumo Logic Web Application](#remove-the-collector-from-the-web-application)
 
 ### Uninstall using the installer
 

@@ -58,7 +58,7 @@ To configure a Cisco AMP Source:
     * `_siemVendor`: Cisco
     * `_siemProduct`: AMP
     * `_siemFormat`: JSON
-    * `_siemEventID`: `<eventType>` Where <eventType> is the value of the field from the JSON event, such as Threat Detected. A list of possible event types can be found [here](https://api-docs.amp.cisco.com/api_actions/details?api_action=GET+%2Fv1%2Fevent_types&api_host=api.amp.cisco.com&api_resource=Event+Type&api_version=v1).
+    * `_siemEventID`: `<eventType>` Where `<eventType>` is the value of the field from the JSON event, such as Threat Detected. A list of possible event types can be found [here](https://api-docs.amp.cisco.com/api_actions/details?api_action=GET+%2Fv1%2Fevent_types&api_host=api.amp.cisco.com&api_resource=Event+Type&api_version=v1).
 
 1. (Optional) **Fields.** Click the **+Add Field** link to define the fields you want to associate, each field needs a name (key) and value.
 
@@ -83,7 +83,7 @@ When Sumo Logic detects an issue it is tracked by Health Events. The following t
 
 ## JSON configuration
 
-Sources can be configured using UTF-8 encoded JSON files with the Collector Management API. See [how to use JSON to configure Sources](../../03Use-JSON-to-Configure-Sources.md "Use JSON to Configure Sources") for details. 
+Sources can be configured using UTF-8 encoded JSON files with the Collector Management API. See [how to use JSON to configure Sources](/docs/send-data/sources/use-json-configure-sources) for details. 
 
 | Parameter | Type | Required? | Description | Access |
 |--|--|--|--|--|
@@ -98,7 +98,7 @@ AMP Source.
 |--|--|--|--|--|--|
 | `name` | String | Yes |  | Type a desired name of the Source. The name must be unique per Collector. This value is assigned to the metadata field `_source`. | modifiable | 
 | `description` | String | No | null | Type a description of the Source. | modifiable | 
-| `category` | String | No | null | Type a category of the source. This value is assigned to the [metadata](/05Search/Get-Started-with-Search/Search-Basics/Built-in-Metadata) field `_sourceCategory`. See [best practices](../../../design-deployment/best-practices-source-categories.md) for details. | modifiable | 
+| `category` | String | No | null | Type a category of the source. This value is assigned to the [metadata](../../../../search/get-started-with-search/search-basics/built-in-metadata.md) field `_sourceCategory`. See [best practices](../../../design-deployment/best-practices-source-categories.md) for details. | modifiable | 
 | `fields` | JSON Object | No |  | JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field _siemForward to enable forwarding to SIEM. | modifiable | 
 | `clientId` | String | Yes |  | Provide the Client ID you want to use to authenticate collection requests. | modifiable | 
 | `apiRegion` | String | No | api.amp.cisco.com	Select the appropriate region of your API Key. | modifiable | 

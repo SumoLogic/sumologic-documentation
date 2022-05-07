@@ -40,7 +40,7 @@ Third party apps or services can be configured to send event data to Event Hubs 
     
     In this example Event Hub Instance is set to **my-hub**.
 
-1. Create a [Shared Access Policy](https://docs.microsoft.com/en-us/azure/governance/policy/overview "https://docs.microsoft.com/en-us/azure/governance/policy/overview") with the ********Listen******** claim to the newly created Event Hub Instance:
+1. Create a [Shared Access Policy](https://docs.microsoft.com/en-us/azure/governance/policy/overview) with the **Listen** claim to the newly created Event Hub Instance:
 
     ![AzureEventHubstep6.png](/img/send-data/AzureEventHubstep6.png)
 
@@ -56,7 +56,7 @@ Third party apps or services can be configured to send event data to Event Hubs 
     
     Copy the Primary/Secondary key associated with this policy.
 
-1. When [configuring the Azure Event Hubs Source](./Azure_Event_Hubs_Source.md "Azure Event Hubs Source") in Sumo Logic our input fields would be:
+1. When [configuring the Azure Event Hubs Source](azure-event-hubs-source.md) in Sumo Logic our input fields would be:
 
 | Field | Value  | 
 |----------------------------|----------------------| 
@@ -138,7 +138,7 @@ Logs that do not contain a category field are assigned category UNKNOWN.
 
    * **Timestamp Parsing**. This option is selected by default. If it's deselected, no timestamp information is parsed at all.
    * **Time Zone**. There are two options for Time Zone. You can use the time zone present in your log files, and then choose an option in case time zone information is missing from a log message. Or, you can have Sumo Logic completely disregard any time zone information present in logs by forcing a time zone. It's very important to have the proper time zone set, no matter which option you choose. If the time zone of logs can't be determined, Sumo Logic assigns logs UTC; if the rest of your logs are from another time zone your search results will be affected. 
-   * **Timestamp Format**. By default, Sumo Logic will automatically detect the timestamp format of your logs. However, you can manually specify a timestamp format for a Source. See [Timestamps, Time Zones, Time Ranges, and Date Formats](../../04Reference-Information-for-Sources/Timestamps,-Time-Zones,-Time-Ranges,-and-Date-Formats.md "Timestamps, Time Zones, Time Ranges, and Date Formats") for more information.        
+   * **Timestamp Format**. By default, Sumo Logic will automatically detect the timestamp format of your logs. However, you can manually specify a timestamp format for a Source. See [Timestamps, Time Zones, Time Ranges, and Date Formats](../../reference-information-sources/time-reference.md) for more information.        
 
 1. When you are finished configuring the Source click **Submit**.
 
@@ -153,11 +153,11 @@ When Sumo Logic detects an issue it is tracked by Health Events. The following t
 
 ## JSON configuration
 
-Sources can be configured using UTF-8 encoded JSON files with the Collector Management API. See [how to use JSON to configure Sources](../../03Use-JSON-to-Configure-Sources.md "Use JSON to Configure Sources") for details. 
+Sources can be configured using UTF-8 encoded JSON files with the Collector Management API. See [how to use JSON to configure Sources](/docs/send-data/sources/use-json-configure-sources) for details. 
 
 | Parameter | Type | Required | Description | Access |
 |--|--|--|--|--|
-| config | JSON Object | Yes | Contains the [configuration parameters](./Azure_Event_Hubs_Source.md "Azure Event Hubs Source") for the Source. |   |
+| config | JSON Object | Yes | Contains the [configuration parameters](azure-event-hubs-source.md) for the Source. |   |
 | schemaRef | JSON Object | Yes | Use `{"type":"Azure Event Hubs"}` for an Azure Event Hubs Source. | not modifiable |
 | sourceType | String | Yes | Use `Universal` for an Azure Event Hubs Source. | not modifiable |
 
@@ -165,9 +165,9 @@ The following table shows the **config** parameters for an Azure Event Hubs S
 
 | Parameter | Type | Required | Default | Description | Access |
 |--|--|--|--|--|--|
-| `name` | String | Yes	 |  | Type a desired name of the Source. The name must be unique per Collector. This value is assigned to the [metadata](/05Search/Get-Started-with-Search/Search-Basics/Built-in-Metadata) field `_source`. | modifiable |
+| `name` | String | Yes	 |  | Type a desired name of the Source. The name must be unique per Collector. This value is assigned to the [metadata](../../../../search/get-started-with-search/search-basics/built-in-metadata.md) field `_source`. | modifiable |
 | `description` | String | No | null | Type a description of the Source. | modifiable |
-| `category` | String | No | null | Type a category of the source. This value is assigned to the [metadata](/05Search/Get-Started-with-Search/Search-Basics/Built-in-Metadata) field `_sourceCategory`. See [best practices](../../../design-deployment/best-practices-source-categories.md) for details. | modifiable |
+| `category` | String | No | null | Type a category of the source. This value is assigned to the [metadata](../../../../search/get-started-with-search/search-basics/built-in-metadata.md) field `_sourceCategory`. See [best practices](../../../design-deployment/best-practices-source-categories.md) for details. | modifiable |
 | `fields` | JSON Object | No |  | JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field `_siemForward` to enable forwarding to SIEM. | modifiable |
 | `namespace` | String | Yes |  | Your Azure Event Hubs Namespace name. | modifiable |
 | `hub_name` | String | Yes	 |  | The Azure Event Hubs Instance Name | modifiable |
@@ -176,11 +176,11 @@ The following table shows the **config** parameters for an Azure Event Hubs S
 | `consumer_group` | String | Yes | $Default | If needed, specify a custom consumer group name. When using a custom Consumer Group make sure that it exists for the Event Hub instance. | modifiable |
 | `receive_with_latest_offset` | Boolean | Yes | True | Receive data with the latest offset or from the timestamp. | modifiable |
 | `receive_from_timestamp` | Boolean | No  |  | Set to true when receive_with_latest_offset is false. | modifiable |
-| `timeZone` | String | No | null | Type the time zone you'd like the source to use in TZ database format. Example: `"America/Los_Angeles"`. See [time zone format](/03Send-Data/Sources/03Use-JSON-to-Configure-Sources#Time_zone_format) for details. | modifiable |
+| `timeZone` | String | No | null | Type the time zone you'd like the source to use in TZ database format. Example: `"America/Los_Angeles"`. See [time zone format](/docs/send-data/sources/use-json-configure-sources) for details. | modifiable |
 | `forceTimeZone` | Boolean | No | false | Type `true` to force the Source to use a specific time zone, otherwise type `false` to use the time zone found in the logs. The default setting is false. | modifiable |
 | `automaticDateParsing` | Boolean | No | true | Determines if timestamp information is parsed or not. Type `true` to enable automatic parsing of dates (the default setting); type `false` to disable. If disabled, no timestamp information is parsed at all. | modifiable |
 | `autoParseTimeFormat` | Boolean | No | true | Sets if the timestamp format is automatically detected by Sumo Logic. If `autoParseTimeFormat` is set to false, then `defaultDateFormats` must be specified. | modifiable |
-| `defaultDateFormats` | Object | array | No | null | Define formats for the dates present in your log messages. You can specify a locator regex to identify where timestamps appear in log lines.<br/>The `defaultDateFormats` object has two elements:<br/>`format` (required)—Specify the date format.<br/>`locator` (optional)—A regular expression that specifies the location of the timestamp in your log lines. For example, `INFO(.*)`<br/>For an example, see [Timestamp example](/03Send-Data/Sources/03Use-JSON-to-Configure-Sources#Timestamp-example), below.<br/>For more information about timestamp options, see [Timestamps, Time Zones, Time Ranges, and Date Formats](/Sources/04Reference-Information-for-Sources/Timestamps%2C-Time-Zones%2C-Time-Ranges%2C-and-Date-Formats). | modifiable |
+| `defaultDateFormats` | Object | array | No | null | Define formats for the dates present in your log messages. You can specify a locator regex to identify where timestamps appear in log lines.<br/>The `defaultDateFormats` object has two elements:<br/>`format` (required)—Specify the date format.<br/>`locator` (optional)—A regular expression that specifies the location of the timestamp in your log lines. For example, `INFO(.*)`<br/>For an example, see [Timestamp example](/docs/send-data/sources/use-json-configure-sources), below.<br/>For more information about timestamp options, see [Timestamps, Time Zones, Time Ranges, and Date Formats](../../reference-information-sources/time-reference.md). | modifiable |
 
 Azure Event Hubs Source JSON example:
 

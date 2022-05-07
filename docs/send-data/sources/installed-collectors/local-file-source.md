@@ -51,7 +51,7 @@ When the Sumo collector accesses a log file to read its content, the collector o
 
    * **Name**. Type the name you'd like to display for the new Source. Description is optional.
 
-   * **File Path**. List the full path to the file you want to collect. For files on Windows systems (not including [Windows Events](Local-Windows-Event-Log-Source.md "https://sumologic-prod.mindtouch.us/Send_Data/Sources/Sources_for_Installed_Collectors/Configure_a_Local_Windows_Event_Log_Source")), enter the absolute path including the drive letter. Escape special characters with a backslash (\\). If you are collecting from Windows using CIFS/SMB, see [Prerequisites for Remote Windows Event Log Collection](Remote-File-Source/Prerequisites-for-Windows-Remote-File-Collection.md "https://sumologic-prod.mindtouch.us/Send_Data/Sources/Sources_for_Installed_Collectors/Configure_a_Remote_Windows_Event_Log_Source/Prerequisites_for_Remote_Windows_Event_Log_Collection"). Use a single asterisk wildcard \[\*\] for file or folder names \[var/foo/\*.log\]. Use two asterisks \[\*\*\] to recurse within directories and subdirectories \[var/\*\*/\*.log\]. 
+   * **File Path**. List the full path to the file you want to collect. For files on Windows systems (not including [Windows Events](local-windows-event-log-source.md)), enter the absolute path including the drive letter. Escape special characters with a backslash (\\). If you are collecting from Windows using CIFS/SMB, see [Prerequisites for Remote Windows Event Log Collection](remote-file-source/prerequisites-windows-remote-file-collection.md). Use a single asterisk wildcard \[\*\] for file or folder names \[var/foo/\*.log\]. Use two asterisks \[\*\*\] to recurse within directories and subdirectories \[var/\*\*/\*.log\]. 
    
     :::note
     You can have up to 32 nested symbolic links within a path expression.
@@ -63,7 +63,7 @@ When the Sumo collector accesses a log file to read its content, the collector o
      Processing rules could be used to filter logs as needed. This is done in step 6 of this document.
      :::
    
-    Review [timestamp considerations](../04Reference-Information-for-Sources/Timestamps,-Time-Zones,-Time-Ranges,-and-Date-Formats.md "Timestamps, Time Zones, Time Ranges, and Date Formats") to understand how Sumo interprets and processes timestamps. 
+    Review [timestamp considerations](../reference-information-sources/time-reference.md) to understand how Sumo interprets and processes timestamps. 
    
     You can either: 
     
@@ -72,11 +72,11 @@ When the Sumo collector accesses a log file to read its content, the collector o
 
    * **Source Host.** The hostname assigned by the operating system is used by default. The Source Host value is tagged to each log and stored in a searchable metadata field called \_sourceHost. Avoid using spaces so you do not have to quote them in keyword search expressions. This can be a maximum of 128 characters.
     
-    You can define a Source Host value using system environment variables, see [Configuring sourceCategory and sourceHost using variables](./Local-File-Source.md "Local File Source") below for details.
+    You can define a Source Host value using system environment variables, see [Configuring sourceCategory and sourceHost using variables](#configuring-sourcecategory-and-sourcehost-using-variables) below for details.
 
-   * **Source Category.** The Source Category value is tagged to each log and stored in a searchable metadata field called \_sourceCategory. See our [Best Practices: Good Source Category, Bad Source Category](../../01-Design-Your-Deployment/Best-Practices:-Good-Source-Category,-Bad-Source-Category.md "Best Practices: Good Source Category, Bad Source Category"). Avoid using spaces so you do not have to quote them in keyword search expressions. This can be a maximum of 1,024 characters.
+   * **Source Category.** The Source Category value is tagged to each log and stored in a searchable metadata field called \_sourceCategory. See our [Best Practices: Good and Bad Source Categories](../../design-deployment/best-practices-source-categories.md). Avoid using spaces so you do not have to quote them in keyword search expressions. This can be a maximum of 1,024 characters.
     
-    You can define a Source Category value using system environment variables, see [Configuring sourceCategory and sourceHost using variables](./Local-File-Source.md "Local File Source") below for details.
+    You can define a Source Category value using system environment variables, see [Configuring sourceCategory and sourceHost using variables](#configuring-sourcecategory-and-sourcehost-using-variables) below for details.
 
    * **Fields.** Click the **+Add Field** link to define the fields you want to associate, each field needs a name (key) and value.
 

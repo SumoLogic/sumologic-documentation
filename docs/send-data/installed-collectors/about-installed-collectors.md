@@ -6,7 +6,7 @@ id: about-installed-collectors
 
 An Installed Collector is a Java agent that receives logs and metrics from its Sources and then encrypts, compresses, and sends the data to the Sumo service. As its name implies, an Installed Collector is installed in your environment, as opposed to a Hosted Collector, which resides on the Sumo service. After installing a Collector, you add Sources, to which the Collector connects to obtain data to send to the Sumo service. 
 
-A Sumo Source is an object configured for a specific Collector that sends data to Sumo Logic. There are a number of Source types that work with Installed Collectors. For a list of all Sources supported by Installed Collectors, see [Sources for Installed Collectors](../Sources/01Sources-for-Installed-Collectors.md "Sources for Installed Collectors").
+A Sumo Source is an object configured for a specific Collector that sends data to Sumo Logic. There are a number of Source types that work with Installed Collectors. For a list of all Sources supported by Installed Collectors, see [Sources for Installed Collectors](/docs/send-data/sources/installed-collectors).
 
 For details on supported operating systems and hardware restrictions see Installed Collector requirements.
 
@@ -31,13 +31,13 @@ import Iframe from 'react-iframe';
 
 ## CPU usage guidelines
 
-An Installed Collector will use all CPU processing resources available on a machine to collect your data. We have benchmarked CPU performance based on the number of [Local File Sources](../Sources/01Sources-for-Installed-Collectors/Local-File-Source.md "Local File Source") running on an Installed Collector and the size of log messages ingested. The default allocated memory of 128 MB of Java heap space was used.
+An Installed Collector will use all CPU processing resources available on a machine to collect your data. We have benchmarked CPU performance based on the number of [Local File Sources](../sources/installed-collectors/local-file-source.md) running on an Installed Collector and the size of log messages ingested. The default allocated memory of 128 MB of Java heap space was used.
 
 :::tip
 The Collector can try to keep CPU usage at a targeted percentage when using Local and Remote File Sources.
 :::
 
-Use the following observations to guide you when designing your deployment. The following data was generated from a Collector on an Amazon EC2 m4.large [instance type](https://aws.amazon.com/ec2/instance-types/ "https://aws.amazon.com/ec2/instance-types/") with 2 virtual CPUs and 8 GiB of memory.
+Use the following observations to guide you when designing your deployment. The following data was generated from a Collector on an Amazon EC2 m4.large [instance type](https://aws.amazon.com/ec2/instance-types/) with 2 virtual CPUs and 8 GiB of memory.
 
 ### Size of messages
 
@@ -100,22 +100,15 @@ installing and configuring Collectors and Sources.
 
 Sumo provides multiple methods for installing a Collector:
 
-* UI installers. You provide configuration settings during the
-    installation dialog. The installer writes these settings to
-    `user.properties` in the collector’s `/config` directory. 
-* Command-line installer. You supply configuration settings on the
-    command line, or using a varfile. the installer writes these
-    settings to `user.properties` in the collector’s
-    `/config` directory.   
-* RPM, for Linux. You supply configuration settings in a
-    `user.properties` file that you create.
-* Binary package, for Linux. The binary package can also be used on
-    MacOS.
+* UI installers. You provide configuration settings during the installation dialog. The installer writes these settings to `user.properties` in the collector’s `/config` directory. 
+* Command-line installer. You supply configuration settings on the command line, or using a varfile. the installer writes these settings to `user.properties` in the collector’s  `/config` directory.   
+* RPM, for Linux. You supply configuration settings in a `user.properties` file that you create.
+* Binary package, for Linux. The binary package can also be used on MacOS.
 
-For details on Collector installation, see [Install a Collector on Linux](04Install-a-Collector-on-Linux.md "Install a Collector on Linux"), [Install a Collector on MacOS](02Install-a-Collector-on-MacOS.md "Install a Collector on  acOS"), and [Install a Collector on Windows](03Install-a-Collector-on-Windows.md "Install a Collector on Windows").
+For details on Collector installation, see [Install a Collector on Linux](install-collector-linux.md), [Install a Collector on MacOS](install-collector-macos.md), and [Install a Collector on Windows](install-collector-windows.md).
  
 
-After a Collector is up and running, you can change some Installed Collector configuration settings by editing `user.properties` and restarting the collector. For more information, see [user.properties parameters](05Reference-Information-for-Collector-Installation/06user.properties.md "Send-Data/Installed-Collectors/05Reference-Information-for-Collector-Installation/06user.properties#user.properties_parameters").
+After a Collector is up and running, you can change some Installed Collector configuration settings by editing `user.properties` and restarting the collector. For more information, see [user.properties parameters](collector-installation-reference/user-properties.md).
 
 A few Installed Collector behaviors, such as caching, are configured in the `collector.properties` file in the Collector’s `config` directory.  
 
@@ -125,14 +118,14 @@ You can update the configuration of an Installed Collector using the Collector M
 
 You can set up as many as 1,000 Sources on a given Collector. A Source should be configured to collect similar data types. For example, you might set up three Local File Sources to collect router activity logs from three locations, and another Local File Source to collect logs from a web application.
 
-Each Source is tagged with its own metadata, as described in [Metadata Naming Conventions](../Sources/04Reference-Information-for-Sources/Metadata-Naming-Conventions.md "Metadata Naming Conventions"). The more Sources you set up, the easier it is to isolate one of the Sources in a search since each Source can be identified by its metadata.
+Each Source is tagged with its own metadata, as described in [Metadata Naming Conventions](../sources/reference-information-sources/metadata-naming-conventions.md). The more Sources you set up, the easier it is to isolate one of the Sources in a search since each Source can be identified by its metadata.
 
 When you configure Sources that read from log files, you specify a path expression that defines what files to scan. You can optionally configure a denylist of files to exclude from collection.  
 
-You can create Sources using the Sumo web app at any time after Collector installation. For source-specific instructions, see the topics below [Sources for Installed Collectors](../Sources/01Sources-for-Installed-Collectors.md "Sources for Installed Collectors").
+You can create Sources using the Sumo web app at any time after Collector installation. For source-specific instructions, see the topics below [Sources for Installed Collectors](/docs/send-data/sources/installed-collectors).
 
 Alternatively, you can define Sources for an Installed Collector in a UTF-8 encoded JSON file, in which case you must provide the file when starting the Collector for the first time. For more information, see [Use JSON to Configure
-Sources](../Sources/03Use-JSON-to-Configure-Sources.md "Use JSON to Configure Sources"). Note that if you provide the Sources configuration in a JSON file, you can no longer manage the Sources through the Sumo web app or the Collector Management API.
+Sources](/docs/send-data/sources/use-json-configure-sources). Note that if you provide the Sources configuration in a JSON file, you can no longer manage the Sources through the Sumo web app or the Collector Management API.
 
 ## Installed Collectors and Sources in action
 
@@ -142,7 +135,7 @@ This section is an overview of how Installed Collectors and their Sources operat
 
 When you start up an Installed Collector for the first time it registers with Sumo and creates any Sources that you have defined in a UTF-8 encoded JSON source configuration file.
 
-When the collector tries to register with Sumo it first sends the request to the US1 deployment. If your organization is in another deployment Sumo will redirect the Collector to your deployment URL based on the authentication credential's deployment. You can define the deployment URL in the Collector's [user.properties](05Reference-Information-for-Collector-Installation/06user.properties.md "user.properties") file with the `url` parameter.
+When the collector tries to register with Sumo it first sends the request to the US1 deployment. If your organization is in another deployment Sumo will redirect the Collector to your deployment URL based on the authentication credential's deployment. You can define the deployment URL in the Collector's [user.properties](collector-installation-reference/user-properties.md) file with the `url` parameter.
 
 ### Sources scan source data
 
@@ -191,17 +184,17 @@ Up to 4GB total disk space, including:
 * Up to 3GB for log data
 * Up to 1GB for metric data
 
-You can raise or lower the disk limits for Collector caching. For more information, see [Configure Limits for Collector Caching](../Collector-FAQs/Configure_Limits_for_Collector_Caching.md "Configure Limits for Collector Caching").
+You can raise or lower the disk limits for Collector caching. For more information, see [Configure Limits for Collector Caching](../collector-faqs/configure-limits-collector-caching.md).
 
 #### Flushing mode
 
 Unlike the fixed size cache, which evicts old data to make room for new data, flushing mode stops collection of new data and focuses only on sending existing data (flushing the cache).
 
-A Collector enters flushing mode when less than 10% of free disk space remains on the disk where the Collector is installed. For more information, see [Flushing Mode](../Collector-FAQs/Configure_Limits_for_Collector_Caching.md "Send-Data/Installed-Collectors/05Reference-Information-for-Collector-Installation/09Configure-Limits-for-Collector-Caching#Flushing_Mode").
+A Collector enters flushing mode when less than 10% of free disk space remains on the disk where the Collector is installed. For more information, see [Flushing Mode](../collector-faqs/configure-limits-collector-caching.md#flushing-mode).
 
 ## Collector monitoring and logging
 
-An Installed Collector sends a heartbeat to the Sumo service every 15 seconds. If the Sumo service does not receive a heartbeat for 30 minutes, it considers the Collector to be offline, and shows its health status as red in the **Collection** page of the Sumo web app. The heartbeat is linked to the [`alive` parameter](../Sources/03Use-JSON-to-Configure-Sources.md "Use JSON to Configure Sources") in the JSON object. If an Installed Collector
-appears offline try restarting the service and [testing connectivity](05Reference-Information-for-Collector-Installation/01Test-Connectivity-for-Sumo-Logic-Collectors.md "Test Connectivity for Sumo Logic Collectors").
+An Installed Collector sends a heartbeat to the Sumo service every 15 seconds. If the Sumo service does not receive a heartbeat for 30 minutes, it considers the Collector to be offline, and shows its health status as red in the **Collection** page of the Sumo web app. The heartbeat is linked to the [`alive` parameter](/docs/send-data/sources/use-json-configure-sources)in the JSON object. If an Installed Collector
+appears offline try restarting the service and [testing connectivity](collector-installation-reference/test-connectivity-sumo-collectors.md).
 
 The Collector uses the log4j2 framework. You can tailor log rotation behavior for `collector.log` by editing the `log4j2.xml` file in the collector’s `/config` directory. For more information, see Log Rotation Settings.

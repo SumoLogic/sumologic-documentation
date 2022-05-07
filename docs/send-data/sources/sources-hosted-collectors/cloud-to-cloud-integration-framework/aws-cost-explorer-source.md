@@ -79,7 +79,7 @@ Hover your mouse over the status icon to view a tooltip with details on the dete
 
 When you delete the source it is placed in a **Stopping** state, when it has successfully stopped it is deleted from your Hosted Collector.
 
-On the Collection page, the [Health](/Manage/Health_Events#Collection_page) and Status for Sources is displayed. Use [Health Events](/Manage/Health_Events) to investigate issues with collection.
+On the Collection page, the [Health](../../../../manage/health-events.md) and Status for Sources is displayed. Use [Health Events](../../../../manage/health-events.md) to investigate issues with collection.
 
 ## Error types
 
@@ -93,7 +93,7 @@ When Sumo Logic detects an issue it is tracked by Health Events. The following t
 
 ## JSON Configuration
 
-Sources can be configured using UTF-8 encoded JSON files with the Collector Management API. See [how to use JSON to configure Sources](../../03Use-JSON-to-Configure-Sources.md) for details.
+Sources can be configured using UTF-8 encoded JSON files with the Collector Management API. See [how to use JSON to configure Sources](/docs/send-data/sources/use-json-configure-sources) for details.
 
 | Parameter  | Type | Required | Description | Access |
 |--|--|--|--|--|
@@ -108,7 +108,7 @@ Explorer Source.
 |-------------------|----------|----|------|-----------|----------------|
 | `name` | String | Yes |  | Type a desired name of the Source. The name must be unique per Collector. This value is assigned to the [metadata](/05Search/Get-Started-with-Search/Search-Basics/Built-in-Metadata) field `_source`. | modifiable |
 | `description` | String | No | null | Type a description of the Source. | modifiable |
-| `category` | String | No | null | Type a category of the source. This value is assigned to the [metadata](/05Search/Get-Started-with-Search/Search-Basics/Built-in-Metadata) field `_sourceCategory`. See [best practices](../../../design-deployment/best-practices-source-categories.md) for details. | modifiable |
+| `category` | String | No | null | Type a category of the source. This value is assigned to the [metadata](../../../../search/get-started-with-search/search-basics/built-in-metadata.md) field `_sourceCategory`. See [best practices](../../../design-deployment/best-practices-source-categories.md) for details. | modifiable |
 | `fields` | JSON Object | No |  | JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the field `account` to tag logs with a friendly AWS account name. | modifiable |
 | accessID | String | Yes |  | Provide the AWS IAM User access key ID you want to use to authenticate collection requests. | modifiable | 
 | accessKey | String | Yes |  | Provide the AWS Secret Key you want to use to authenticate collection requests. | modifiable |

@@ -86,7 +86,7 @@ To configure a Duo Source:
    * `_siemVendor`: Events, Users	SailPoint 
    * `_siemProduct`: Events, Users	SailPoint 
    * `_siemFormat`: Events	JSON 
-   * `_siemEventID`: Events	`<technicalName>` Where <technicalName> is the value from the technicalName field of the event.
+   * `_siemEventID`: Events	`<technicalName>` Where `<technicalName>` is the value from the technicalName field of the event.
    * `_siemDataType`: Users	Inventory
 
 1. (Optional) **Fields.** Click the **+Add Field** link to define the fields you want to associate, each field needs a name (key) and value.
@@ -116,13 +116,13 @@ When Sumo Logic detects an issue it is tracked by Health Events. The following t
 
 ### JSON configuration
 
-Sources can be configured using UTF-8 encoded JSON files with the Collector Management API. See [how to use JSON to configure Sources](../../03Use-JSON-to-Configure-Sources.md "Use JSON to Configure Sources") for details. 
+Sources can be configured using UTF-8 encoded JSON files with the Collector Management API. See [how to use JSON to configure Sources](/docs/send-data/sources/use-json-configure-sources) for details. 
 
 | Parameter | Type | Required | Description | Access |
 |--|--|--|--|--|
 | config            | JSON Object  | Yes               | Contains the configuration parameters for the Source. |                |
-| schemaRef         | JSON Object  | Yes               | Use `{"type":"SailPoint"}` for a SailPoint Source.                                  | not modifiable |
-| sourceType        | String       | Yes               | Use `Universal` for a SailPoint Source.                                             | not modifiable |
+| schemaRef         | JSON Object  | Yes               | Use `{"type":"SailPoint"}` for a SailPoint Source. | not modifiable |
+| sourceType        | String       | Yes               | Use `Universal` for a SailPoint Source. | not modifiable |
 
 The following table shows the **config** parameters for a
 SailPoint Source.
@@ -131,14 +131,14 @@ SailPoint Source.
 |--|--|--|--|--|--|
 | `name` | String | Yes |  | Type a desired name of the Source. The name must be unique per Collector. This value is assigned to the metadata field `_source`. | modifiable | 
 | `description` | String | No | null | Type a description of the Source. | modifiable | 
-| `category` | String | No | null | Type a category of the source. This value is assigned to the [metadata](/05Search/Get-Started-with-Search/Search-Basics/Built-in-Metadata) field `_sourceCategory`. See [best practices](../../../design-deployment/best-practices-source-categories.md) for details. | modifiable | 
+| `category` | String | No | null | Type a category of the source. This value is assigned to the [metadata](../../../../search/get-started-with-search/search-basics/built-in-metadata.md) field `_sourceCategory`. See [best practices](../../../design-deployment/best-practices-source-categories.md) for details. | modifiable | 
 | `fields` | JSON Object | No |  | JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field _siemForward to enable forwarding to SIEM. | modifiable | 
 | `org_name` | String | Yes |  | Provide your SailPoint customer-specific organization name, such as, {organization}.identitynow.com.	modifiable | 
 | `client_id` | String | Yes |  | Provide the SailPoint client ID you want to use to authenticate collection requests.	modifiable | 
 | `client_secret` | String | Yes |  | Provide the SailPoint secret you want to use to authenticate collection requests.	modifiable | 
 | `supported_apis` | Array of strings | Yes |  | Define one or more of the available APIs to collect: Events, and Users.<br/>For example, for both you'd use: `["Events","Users"]` | modifiable | 
 
-See how to [create processing rules using JSON](../../03Use-JSON-to-Configure-Sources.md "Use JSON to Configure Sources").
+See how to [create processing rules using JSON](/docs/send-data/sources/use-json-configure-sources).
 
 SailPoint Source JSON example:
 

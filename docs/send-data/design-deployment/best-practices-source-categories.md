@@ -2,7 +2,7 @@
 id: best-practices-source-categories
 ---
 
-# Best Practices: Good and Bad Source Category
+# Best Practices: Good and Bad Source Categories
 
 Setting Source Category values (\_sourceCategory), especially for a small set of Sources, may seem trivial at first. However, using the [proper naming convention](../Sources/04Reference-Information-for-Sources/Metadata-Naming-Conventions.md "Metadata Naming Conventions") to create good Source Category values is important for the correct scale and performance of your Sumo Logic deployment in the long term. This topic discusses some best practices around creating good Source Category values.
 

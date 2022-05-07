@@ -21,8 +21,7 @@ The Collector executes the script as the user running the Collector process.
 
 ## Step 1. Enable Script Actions on the Collector
 
-Collectors using version 19.245-4 and later do not allow Script Actions to run by default. To allow Script Actions you need to set the Collector parameter `enableActionSource` in [user.properties](../../Installed-Collectors/05Reference-Information-for-Collector-Installation/06user.properties.md "user.properties") to true and restart the
-Collector.
+Collectors using version 19.245-4 and later do not allow Script Actions to run by default. To allow Script Actions you need to set the Collector parameter `enableActionSource` in [user.properties](../../installed-collectors/collector-installation-reference/user-properties.md) to true and restart the Collector.
 
 ## Step 2. Create script
 
@@ -30,11 +29,9 @@ Create the script and save it to a folder on the host with the Installed Collect
 
 `chmod +x\<nameOfFil\>.sh`
 
-See the [example](./Script-Action.md "Script Action") below.
-
 ## Step 3. Set up Script Action
 
-You can set up a Script Action using the Sumo web app, described in [Option A](./Script-Action.md "Script Action") below, or by specifying it in a JSON file, described in [Option B](./Script-Action.md "Script Action").
+You can set up a Script Action using the Sumo web app, described in [Option A](#option-a-set-up-script-action-using-ui) below, or by specifying it in a JSON file, described in [Option B](#option-b-set-up-script-action-in-json-file).
 
 ### Option A. Set up Script Action using UI
 
@@ -79,7 +76,7 @@ Example JSON:
 }}
 ```
 
-For more information about configuring Sources in JSON files, see [Use JSON to Configure Sources](../03Use-JSON-to-Configure-Sources.md "Use JSON to Configure Sources").
+For more information about configuring Sources in JSON files, see [Use JSON to Configure Sources](/docs/send-data/sources/use-json-configure-sources).
 
 ## Step 4. Set up a Scheduled Search
 
