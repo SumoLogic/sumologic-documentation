@@ -184,7 +184,7 @@ In the CloudFormation template, define the number of messages in the Dead Letter
     :::
     
     * **NumOfWorkers.** (Optional) Increase this value to speed up dead letter queue (DLQ) processing.
-    * **SumoEndPointURL** (Required). Enter the HTTP Source Address URL from [Add a Hosted Collector and HTTP     Source](#add-a-hosted-collector-and-http-source).
+    * **SumoEndPointURL** (Required). Enter the HTTP Source Address URL from [Add a Hosted Collector and HTTP Source](#add-a-hosted-collector-and-http-source).
 
     ![Specify_Stack_Details.png](/img/send-data/Specify_Stack_Details.png)
 
@@ -194,7 +194,7 @@ In the CloudFormation template, define the number of messages in the Dead Letter
 After few minutes you will see CREATE_COMPLETE in the Status column.
 
 :::important
-If you are using an existing log group or if you don’t want to send logs to the default group **SumoCWLogGroup** then you must do one of the following:  [Manually subscribe the **SumoCWLogsLambda** to an existing CloudWatch Log Group](./Amazon-CloudWatch-Logs.md), create a [subscription filter](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Subscriptions.html) manually, or [Auto-Subscribe AWS Log Groups to a Lambda Function](Auto-Subscribe_AWS_Log_Groups_to_a_Lambda_Function.md).
+If you are using an existing log group or if you don’t want to send logs to the default group **SumoCWLogGroup** then you must do one of the following:  [Manually subscribe the **SumoCWLogsLambda** to an existing CloudWatch Log Group](/docs/send-data/collect-from-other-data-sources/amazon-cloudwatch-logs), create a [subscription filter](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Subscriptions.html) manually, or [Auto-Subscribe AWS Log Groups to a Lambda Function](Auto-Subscribe_AWS_Log_Groups_to_a_Lambda_Function.md).
 :::
 
 ## Validate email address for alarms

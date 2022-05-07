@@ -120,4 +120,4 @@ To start Telegraf and query new metrics, do the following:
 
 ![AmazonMSK_Metric_Query.png](/img/send-data/AmazonMSK_Metric_Query.png)
 
-For more information on using Telegraf to get data into Sumo Logic, see this page on [collecting metrics with Telegraf](Collect_Metrics_Using_Telegraf.md "Collect Metrics Using Telegraf"). 
+For more information on using Telegraf to get data into Sumo Logic, see this page on [collecting metrics with Telegraf](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf). 

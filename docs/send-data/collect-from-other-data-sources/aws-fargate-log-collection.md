@@ -4,7 +4,7 @@ id: aws-fargate-log-collection
 
 # Collect AWS ECS Fargate Container Logs
 
-This page describes how to collect application container logs from AWS ECS clusters launched with AWS Fargate using AWS FireLens. This method also works with ECS clusters with EC2 containers. However, the recommended method for collecting EC2 logs is to utilize the [Docker logging driver](Docker_Collection_Methods.md "https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Docker_Collection_Methods").
+This page describes how to collect application container logs from AWS ECS clusters launched with AWS Fargate using AWS FireLens. This method also works with ECS clusters with EC2 containers. However, the recommended method for collecting EC2 logs is to utilize the [Docker logging driver](docker-collection-methods.md).
  
 
 * [Collect Fargate container logs](#collect-fargate-container-logs)
@@ -179,13 +179,13 @@ _sourceCategory=ECS/Fargate
 
 ## Collect EC2 container logs
 
-This method also works with ECS clusters with EC2 containers however, the recommended method for collecting EC2 logs is to utilize the [Docker logging driver](/03Send-Data/Collect-from-Other-Data-Sources/Docker_Collection_Method.md "https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Docker_Collection_Methods").
+This method also works with ECS clusters with EC2 containers however, the recommended method for collecting EC2 logs is to utilize the [Docker logging driver](docker-collection-methods.md).
 
 Follow the steps in this procedure to configure EC2 container log collection using the sample EC2 task definition [file](https://script-collection.s3.amazonaws.com/fargate/httpd_ec2_sumologic.json).
 
 ### Step 1: Add a hosted collector and HTTP source
 
-A  hosted collector allows you to upload data stored in the cloud to Sumo Logic, and an HTTP Source is an endpoint for receiving logs and metrics uploaded via a URL.
+A hosted collector allows you to upload data stored in the cloud to Sumo Logic, and an HTTP Source is an endpoint for receiving logs and metrics uploaded via a URL.
 
 :::note
 When you configure the HTTP Source, make sure to save the HTTP Source Address URL. You will need this URL to configure the task definition.

@@ -8,7 +8,7 @@ You can use an [Amazon CloudWatch Log Group subscription](https://docs.aws.am
 
 Sumo Logic’s LogGroup Lambda Connector is a Lambda function that automates the process of subscribing to Amazon CloudWatch Log Group subscriptions. You can use the connector in conjunction with an Amazon Kinesis Firehose data delivery stream, Sumo Logic [Lambda function](https://github.com/SumoLogic/sumologic-aws-lambda) that sends Amazon CloudWatch logs to Sumo Logic, or with another Lambda functions of your choice.
 
-This page provides instructions for both deployment methods, and covers how to [troubleshoot the connector](./Auto-Subscribe_AWS_Log_Groups_to_a_Lambda_Function.md).
+This page provides instructions for both deployment methods, and covers how to [troubleshoot the connector](#troubleshooting-the-connector).
 
 :::important
 These instructions assume that your Amazon CloudWatch log groups and this Lambda function are in the same AWS region. 

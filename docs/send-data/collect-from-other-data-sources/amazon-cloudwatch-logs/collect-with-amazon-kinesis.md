@@ -33,9 +33,7 @@ Download the template from: https://raw.githubusercontent.com/duchatran/sumologi
 
 ## Create a Stack
 
-Using AWS CloudFormation, create a Stack with this template. For
-instructions,
-see [http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/GettingStarted.Walkthrough.html](http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/GettingStarted.Walkthrough.html).
+Using AWS CloudFormation, create a Stack with this template. For instructions, see http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/GettingStarted.Walkthrough.html.
 
 As part of the setup, you must provide:
 

@@ -5,14 +5,12 @@ id: collect-with-cloudformation-template
 # Collect CloudWatch Logs using a CloudFormation Template with secured Sumo Endpoint
 
 :::note
-The below steps assumes you have configured a Hosted collector and an HTTP Source as specified in this
-[section](/docs/send-data/collect-from-other-data-sources/amazon-cloudwatch-logs).
+The below steps assumes you have configured a Hosted collector and an HTTP Source as specified in this [section](/docs/send-data/collect-from-other-data-sources/amazon-cloudwatch-logs).
 :::
 
 ## Download the CloudFormation template
 
-Sumo Logic provides a CloudFormation template to make setup easier. If you want to make any of the optional modifications described in this [section](/docs/send-data/collect-from-other-data-sources/amazon-cloudwatch-logs),
-download the `DLQLambdaCloudFormationWithSecuredEndpoint.json` CloudFormation template from https://s3.amazonaws.com/appdev-cloudformation-templates/DLQLambdaCloudFormationWithSecuredEndpoint.json and make modifications. Otherwise, proceed to Create a SecureString Parameter console.
+Sumo Logic provides a CloudFormation template to make setup easier. If you want to make any of the optional modifications described in this [section](/docs/send-data/collect-from-other-data-sources/amazon-cloudwatch-logs), download the `DLQLambdaCloudFormationWithSecuredEndpoint.json` CloudFormation template from https://s3.amazonaws.com/appdev-cloudformation-templates/DLQLambdaCloudFormationWithSecuredEndpoint.json and make modifications. Otherwise, proceed to Create a SecureString Parameter console.
 
 ## Create a SecureString Parameter
 
@@ -52,8 +50,7 @@ You can verify whether the parameter is created successfully by going to https:/
 
 #### Get the KMS Key ID
 
-Follow the steps in this [document](https://docs.aws.amazon.com/kms/latest/developerguide/find-cmk-id-arn.html) to
-get the Key ID used to encrypt/decrypt the parameter created earlier. If you are using default AWS Managed Key the Key ID should be corresponding to the alias value [aws/ssm](https://console.aws.amazon.com/kms/home?region=us-east-1#/kms/defaultKeys/629673c1-9f21-4c2d-bf75-19617579c558/). 
+Follow the steps in this [document](https://docs.aws.amazon.com/kms/latest/developerguide/find-cmk-id-arn.html) to get the Key ID used to encrypt/decrypt the parameter created earlier. If you are using default AWS Managed Key the Key ID should be corresponding to the alias value [aws/ssm](https://console.aws.amazon.com/kms/home?region=us-east-1#/kms/defaultKeys/629673c1-9f21-4c2d-bf75-19617579c558/). 
 
 ### Create a stack on the AWS CloudFormation console
 
@@ -96,7 +93,7 @@ get the Key ID used to encrypt/decrypt the parameter created earlier. If you are
 After a few minutes, you will see CREATE_COMPLETE in the Status column.
 
 :::important
-If you are using an existing log group or if you don’t want to send logs to the default group **SumoCWLogGroup** then you must do one of the following:  [Manually subscribe the **SumoCWLogsLambda** to an existing CloudWatch Log Group](/docs/send-data/collect-from-other-data-sources/amazon-cloudwatch-logs), create a [subscription filter](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Subscriptions.html) manually, or [Auto-Subscribe AWS Log Groups to a Lambda Function](../Auto-Subscribe_AWS_Log_Groups_to_a_Lambda_Function.md).
+If you are using an existing log group or if you don’t want to send logs to the default group **SumoCWLogGroup** then you must do one of the following:  [Manually subscribe the **SumoCWLogsLambda** to an existing CloudWatch Log Group](/docs/send-data/collect-from-other-data-sources/amazon-cloudwatch-logs), create a [subscription filter](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Subscriptions.html) manually, or [Auto-Subscribe AWS Log Groups to a Lambda Function](../autosubscribe-arn-destination.md).
 :::
 
 Now go back to the [section](/docs/send-data/collect-from-other-data-sources/amazon-cloudwatch-logs) and follow the instructions for remaining steps.

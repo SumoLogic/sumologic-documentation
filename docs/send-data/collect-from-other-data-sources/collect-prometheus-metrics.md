@@ -167,7 +167,7 @@ Use the Prometheus Input Plugin to read data into Telegraf, then use the [Sumo L
 
 Install and configure Telegraf to read your data for sending through the Sumo Logic output plugin.
 
-1. [Install Telegraf](Collect_Metrics_Using_Telegraf/03_Install_Telegraf.md).
+1. [Install Telegraf](collect-metrics-telegraf/install-telegraf.md).
 
 1. [Configure Telegraf Inputs](collect-metrics-telegraf/configure-telegraf-input-plugins.md) to receive data from the [Prometheus Input Plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/prometheus). 
 
@@ -189,9 +189,9 @@ When unset, Telegraf will use the influx serializer by default which is current
 
 | Data Format | Content-Type Header |
 |--|--|
-| [Graphite](http://graphite.readthedocs.io/en/latest/feeding-carbon.html#the-plaintext-protocol) | application/vnd.sumologic.graphite |
-| [Carbon2](http://metrics20.org/implementations/) | application/vnd.sumologic.carbon2<br/>This is the default setting. |
-| [Prometheus](https://github.com/prometheus/docs/blob/master/content/docs/instrumenting/exposition_formats.md) | application/vnd.sumologic.prometheus<br/>Sumo won't ingest Prometheus comments or malformed Prometheus metrics. For more information, see [Prometheus metrics not accepted by Sumo](../sources/sources-hosted-collectors/http-logs-metrics-source/prometheus-metrics-not-accepted-by-sumo.md). | 
+| [Graphite](http://graphite.readthedocs.io/en/latest/feeding-carbon.html#the-plaintext-protocol) | `application/vnd.sumologic.graphite` |
+| [Carbon2](http://metrics20.org/implementations/) | `application/vnd.sumologic.carbon2`<br/>This is the default setting. |
+| [Prometheus](https://github.com/prometheus/docs/blob/master/content/docs/instrumenting/exposition_formats.md) | `application/vnd.sumologic.prometheus`<br/>Sumo won't ingest Prometheus comments or malformed Prometheus metrics. For more information, see [Prometheus metrics not accepted by Sumo](../sources/sources-hosted-collectors/http-logs-metrics-source/prometheus-metrics-not-accepted-by-sumo.md). | 
 
 **Timeout.** Set a timeout for the HTTP request.
 

@@ -198,7 +198,7 @@ In the CloudFormation template, define the number of messages in the Dead Letter
     :::
     
     * **NumOfWorkers.** (Optional) Increase this value to speed up dead letter queue (DLQ) processing.
-    * **SumoEndPointURL** (Required). Enter the HTTP Source Address URL from [Add a Hosted Collector and HTTP     Source](#add-a-hosted-collector-and-http-source).
+    * **SumoEndPointURL** (Required). Enter the HTTP Source Address URL from [Add a Hosted Collector and HTTP Source](#add-a-hosted-collector-and-http-source).
 
     ![Specify_Stack_Details.png](/img/send-data/Specify_Stack_Details.png)
 
@@ -208,7 +208,7 @@ In the CloudFormation template, define the number of messages in the Dead Letter
 After few minutes you will see CREATE_COMPLETE in the Status column.
 
 :::important
-If you are using an existing log group or if you don’t want to send logs to the default group **SumoCWLogGroup** then you must do one of the following:  [Manually subscribe the **SumoCWLogsLambda** to an existing CloudWatch Log Group](./Amazon-CloudWatch-Logs.md), create a [subscription filter](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Subscriptions.html) manually, or [Auto-Subscribe AWS Log Groups to a Lambda Function](autosubscribe-arn-destination.md).
+If you are using an existing log group or if you don’t want to send logs to the default group **SumoCWLogGroup** then you must do one of the following:  [Manually subscribe the **SumoCWLogsLambda** to an existing CloudWatch Log Group](/docs/send-data/collect-from-other-data-sources/amazon-cloudwatch-logs), create a [subscription filter](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Subscriptions.html) manually, or [Auto-Subscribe AWS Log Groups to a Lambda Function](autosubscribe-arn-destination.md).
 :::
 
 ## Validate email address for alarms
@@ -260,5 +260,5 @@ If you can't use AWS Lambda or CloudFormation to collect logs from CloudWatch, c
     The Lambda function is not as comprehensive or robust as the CloudFormation template, because it does not include the alarm resources.
     :::
 
-* **Amazon Kinesis.** If AWS Lambda is not available to you, or you need increased delivery reliability, review how to add Amazon Kinesis to the integration as described in [AWS Kinesis Firehose for Logs Source](collect-with-amazon-kinesis.md).
+* **Amazon Kinesis.** If AWS Lambda is not available to you, or you need increased delivery reliability, review how to add Amazon Kinesis to the integration as described in [AWS Kinesis Firehose for Logs Source](amazon-cloudwatch-logs/collect-with-amazon-kinesis.md).
 * **The Sumo Logic Collector and a Script. ** If you have a relatively small amount of CloudWatch logs to collect, and you do not want to set up any additional AWS infrastructure, you can install the Sumo Logic Collector agent locally, and run a script that we have developed for CloudWatch logs, with a special focus on Amazon VPC Flow Logs.  See the instructions for [collecting CloudWatch logs using a collector script](amazon-cloudwatch-logs/collect-with-collector-script.md).

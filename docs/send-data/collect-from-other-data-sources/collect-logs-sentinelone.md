@@ -20,7 +20,7 @@ To get a token and certificate from Sumo Logic, do the following:
 
 1. Log in to the [Sumo Logic web site](https://www.sumologic.com/).
 
-1. Configure a Cloud Syslog [Hosted Collector](../Collector-FAQs/Configure_Limits_for_Collector_Caching.md) and [Cloud Syslog Source](/docs/send-data/sources/sources-hosted-collectors/cloud-syslog-source), and generate a Cloud Syslog source token. 
+1. Configure a Cloud Syslog [Hosted Collector](../collector-faqs/configure-limits-collector-caching.md) and [Cloud Syslog Source](/docs/send-data/sources/sources-hosted-collectors/cloud-syslog-source), and generate a Cloud Syslog source token. 
 
 1. Download the crt server certificate file from [here](https://www.digicert.com/CACerts/DigiCertHighAssuranceEVRootCA.crt).
 
@@ -62,7 +62,7 @@ To configure syslog messages, do the following:
 
 1. In the Sumo Logic Web Application, verify that the logs are being ingested by running a search against the Cloud Syslog source you configured in [Step 1](#step-1-get-a-token-and-certificate-from-sumo-logic). If you don't see any data coming in after 2-3 minutes, check the following:
 
-   * that the Sumo Logic Collector has read access to the logs, and
+   * that the Sumo Logic Collector has read access to the logs
    * that your time zone is configured correctly.
 
  

@@ -47,7 +47,7 @@ To add an Amazon Lambda function:
     
     * **Log Group**. Select the log group that serves as the event source. Events sent to the log source will trigger your Lambda function. 
     * **Filter Name**. Enter a filter name.
-    * **Filter Pattern**. May be left blank. For information about AWS filter patterns, see [Filter and Pattern     Syntax](http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/FilterAndPatternSyntax.html) in AWS help.
+    * **Filter Pattern**. May be left blank. For information about AWS filter patterns, see [Filter and Pattern Syntax](http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/FilterAndPatternSyntax.html) in AWS help.
     * **Enable trigger**—Check the box to enable the trigger immediately. 
 1. On the **Environment Variables** page, create a environment variable named SUMO_ENDPOINT. Set the value of the variable to the URL of the HTTP source to which your logs will be sent. In addition, you can set any of the following optional variables:
 

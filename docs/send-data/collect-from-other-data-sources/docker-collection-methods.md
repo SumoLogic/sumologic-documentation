@@ -92,6 +92,6 @@ The Docker Logging Driver is supported with Docker Version 18.03.0-ce or higher 
 
 Sumo provides the following apps for Docker:  
 
-* [Docker EE](https://help.sumologic.com/07Sumo-Logic-Apps/10Containers_and_Orchestration/Docker_Apps/Docker_EE): Supports FluentD plugin to collect Docker platform logs andworks in conjunction with Docker ULM.
-* [Docker](https://help.sumologic.com/07Sumo-Logic-Apps/10Containers_and_Orchestration/Docker_Apps/Docker): Supports either the [Installed Collector on Docker Host](#installed-collector-on-docker-host) or [Collector as a Container](#collector-as-a-container) collection strategy.
-* [Docker ULM](https://help.sumologic.com/07Sumo-Logic-Apps/10Containers_and_Orchestration/Docker_Apps/Docker_ULM): Supports the [Installed Collector on Docker Host](#installed-collector-on-docker-host) collection strategy.
+* [Docker EE] (/07Sumo-Logic-Apps/10Containers_and_Orchestration/Docker_Apps/Docker_EE): Supports FluentD plugin to collect Docker platform logs andworks in conjunction with Docker ULM.
+* [Docker] (/07Sumo-Logic-Apps/10Containers_and_Orchestration/Docker_Apps/Docker): Supports either the [Installed Collector on Docker Host](#installed-collector-on-docker-host) or [Collector as a Container](#collector-as-a-container) collection strategy.
+* [Docker ULM] (/07Sumo-Logic-Apps/10Containers_and_Orchestration/Docker_Apps/Docker_ULM): Supports the [Installed Collector on Docker Host](#installed-collector-on-docker-host) collection strategy.
