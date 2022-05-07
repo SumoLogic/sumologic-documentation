@@ -2,6 +2,8 @@
 // Note: type annotations allow type checking and IDEs autocompletion
 // Full configuration options detailed here: https://docusaurus.io/docs/api/docusaurus-config
 
+// Documentation page id for open source: sumo-logic-open-source-projects
+
 const lightCodeTheme = require('prism-react-renderer/themes/vsLight');
 const darkCodeTheme = require('prism-react-renderer/themes/vsDark');
 
@@ -136,19 +138,6 @@ module.exports = {
       id: 'announcementBar',
       content: `⭐️ Welcome to the Alpha Version of the new Sumo Logic Doc Site! ⭐️`,
     },
-    //Algolia Search -- FAKE FOR NOW! Replace.
-    algolia: {
-      appId: 'R2IYF7ETH7',
-      apiKey: '599cec31baffa4868cae4e79f180729b',
-      indexName: 'docsearch',
-      // Optional: see doc section below
-      contextualSearch: false,
-      // Optional: see doc section below
-      //appId: 'YOUR_APP_ID',
-      // Optional: Algolia search parameters
-      searchParameters: {},
-      //... other Algolia params
-    },
     imageZoom: {
       selector: '.markdown :not(a) > img',
       // Optional medium-zoom options
@@ -159,7 +148,6 @@ module.exports = {
     },
       hideableSidebar: true,
       navbar: {
-        //title: 'My Site',
         logo: {
           alt: 'My Site Logo',
           srcDark: 'img/sumo-logo.svg',
