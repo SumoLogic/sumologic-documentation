@@ -9,12 +9,12 @@ Log files collected using a Remote File Source must be encoded in UTF-8 or ASCI
 Sumo Logic scans remote directories every 30 seconds.
 
 :::note
-To collect remote Windows logs using CIFS/SMB, see CIFS/SMB, see [Prerequisites for Remote Windows Event Log Collection](Remote-File-Source/Prerequisites-for-Windows-Remote-File-Collection.md ). To collect Windows Events, see [Configuring a Local Windows Event Log Source](Local-Windows-Event-Log-Source.md "Configure a Local Windows Event Log Source").
+To collect remote Windows logs using CIFS/SMB, see CIFS/SMB, see [Prerequisites for Remote Windows Event Log Collection](prerequisites-windows-remote-file-collection.md). To collect Windows Events, see [Configuring a Local Windows Event Log Source](../local-windows-event-log-source.md) (Local-Windows-Event-Log-Source.md "Configure a Local Windows Event Log Source").
 :::
 
 To configure a Remote File Source:
 
-1. First see [Prerequisites for Windows Remote File Collection](Remote-File-Source/Prerequisites-for-Windows-Remote-File-Collection.md "Prerequisites for Windows Remote File Collection").
+1. First see [Prerequisites for Windows Remote File Collection](prerequisites-windows-remote-file-collection.md).
 1. In Sumo Logic select **Manage Data \> Collection \> Collection**.
 1. Find the name of the installed Collector here you'd like to add a Source. Click **Add** and then choose** Add **Source from the pop-up menu.
 1. Select **Remote File** for the Source type.   
@@ -24,9 +24,9 @@ To configure a Remote File Source:
 1. Set the following: 
 
    * **Name.** Type the name you'd like to display for the new Source. **Description** is optional. Source name metadata is stored in a searchable field called **\_sourceName**.
-   * **Host.** Enter the hostname or the IP address of the remote machine (the hostname entered must be the system hostname or IP address and cannot be changed). The hostname is stored in a searchable field called **\_sourceHost**. The hostname can be a maximum of 128 characters. You can define a Source Host value using system environment variables, see [Configuring sourceCategory and sourceHost using variables](./Remote-File-Source.md "Remote File Source") below. 
+   * **Host.** Enter the hostname or the IP address of the remote machine (the hostname entered must be the system hostname or IP address and cannot be changed). The hostname is stored in a searchable field called **\_sourceHost**. The hostname can be a maximum of 128 characters. You can define a Source Host value using system environment variables, see [Configuring sourceCategory and sourceHost using variables](#configuring-sourcecategory-and-sourcehost-using-variables) below. 
    * **Port.** If your SSH server is listening on a nonstandard port, type the port number. 
-   * **Path Expression.** Enter the absolute path expression to the file the Source should tail. Remote File Sources support wildcards in file paths. If the timestamp formats for the files are not identical, set up a separate Remote File Source for each file. [For Windows collections using Open SSH and Cygwin](Remote-File-Source/Prerequisites-for-Windows-Remote-File-Collection.md), specify the File path starting with **/cygdrive**. For example, if the path is "**C:\\mandy test\\6.log**" enter "**/cygdrive/c/mandy\\ test/6.log**" in the File field. Use "\\" to escape any spaces if they are present in the file path. 
+   * **Path Expression.** Enter the absolute path expression to the file the Source should tail. Remote File Sources support wildcards in file paths. If the timestamp formats for the files are not identical, set up a separate Remote File Source for each file. [For Windows collections using Open SSH and Cygwin](prerequisites-windows-remote-file-collection.md), specify the File path starting with **/cygdrive**. For example, if the path is "**C:\\mandy test\\6.log**" enter "**/cygdrive/c/mandy\\ test/6.log**" in the File field. Use "\\" to escape any spaces if they are present in the file path. 
    * **Collection should begin.** Choose or enter how far back you'd like to begin collecting historical logs. You can either: 
 
      * Choose a predefined value from dropdown list, ranging from “Now” to “24 hours ago” to “All Time”.
@@ -53,9 +53,9 @@ To configure a Remote File Source:
     * **Denylist.** Optional. Add any files to be excluded by including one or more path expressions separated by commas. Note that this field takes a maximum of 10240 characters. 
     * **Enable Timestamp Parsing.** This option is selected by default. If it's deselected, no timestamp information is parsed at all. 
       * **Time Zone.** There are two options for Time Zone. You can use the time zone present in your log files, and then choose an option in case time zone information is missing from a log message. Or, you can have Sumo Logic completely disregard any time zone information present in logs by forcing a time zone. It's very important to have the proper time zone set, no matter which option you choose. If the time zone of logs can't be determined, Sumo Logic assigns logs UTC; if the rest of your logs are from another time zone your search results will be affected.
-      * **Timestamp Format.** By default, Sumo Logic will automatically detect the timestamp format of your logs. However, you can manually specify a timestamp format for a Source. See [Timestamps, Time Zones, Time Ranges, and Date Formats](../04Reference-Information-for-Sources/Timestamps,-Time-Zones,-Time-Ranges,-and-Date-Formats.md "Timestamps, Time Zones, Time Ranges, and Date Formats") for more information. 
+      * **Timestamp Format.** By default, Sumo Logic will automatically detect the timestamp format of your logs. However, you can manually specify a timestamp format for a Source. See [Timestamps, Time Zones, Time Ranges, and Date Formats](../../reference-information-sources/time-reference.md for more information. 
 
-   * **Enable Multiline Processing.** See [Collecting Multiline Logs](../04Reference-Information-for-Sources/Collecting-Multiline-Logs.md "Collecting Multiline Logs") for details on multiline processing and its options. This is enabled by default. Use this option if you're working with multiline messages (for example, log4J or exception stack traces). Deselect this option if you want to avoid unnecessary processing when collecting single-message-per-line files (for example, Linux system.log). Choose one of the following: 
+   * **Enable Multiline Processing.** See [Collecting Multiline Logs](../../reference-information-sources/collect-multiline-logs.md) for details on multiline processing and its options. This is enabled by default. Use this option if you're working with multiline messages (for example, log4J or exception stack traces). Deselect this option if you want to avoid unnecessary processing when collecting single-message-per-line files (for example, Linux system.log). Choose one of the following: 
    
      * **Infer Boundaries.** Enable when you want Sumo Logic to automatically attempt to determine which lines belong to the same message. If you deselect the **Infer Boundaries** option, you will need to enter a regular expression in the **Boundary Regex** field to use for detecting the entire first line of multiline messages.
      * **Boundary Regex.** You can specify the boundary between messages using a regular expression. Enter a regular expression that matches the entire first line of every multiline message in your log files.

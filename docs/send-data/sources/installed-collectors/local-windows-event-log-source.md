@@ -31,12 +31,12 @@ To configure a Local Windows Event Log Source:
 1. Set the following: 
 
     :::note
-    Hostname values are parsed and applied to your event logs as \_sourceHost [metadata](Remote-Windows-Event-Log-Source.md "Remote Windows Event Log Source") automatically. The value is parsed from the field `Computer` in your event logs. 
+    Hostname values are parsed and applied to your event logs as \_sourceHost [metadata](remote-windows-event-log-source.md) automatically. The value is parsed from the field `Computer` in your event logs. 
     :::
 
    * **Name.** Type the name you'd like to display for the new Source. 
    * **Description** is optional.
-   * **Source Category.** Enter a string used to tag the output collected from this Source with searchable metadata. For example, typing **web_apps** tags all the logs from this Source in the sourceCategory field, so running a search on **\_sourceCategory=web_apps** would return logs from this Source. For more information, see [Metadata Naming Conventions](../04Reference-Information-for-Sources/Metadata-Naming-Conventions.md "Metadata Naming Conventions") and our [Best Practices: Good and Bad Source Categories](../../design-deployment/best-practices-source-categories.md). You can define a Source Category value using system environment     variables, see [Configuring sourceCategory using variables](#configuring-sourcecategory-using-variables) below.
+   * **Source Category.** Enter a string used to tag the output collected from this Source with searchable metadata. For example, typing **web_apps** tags all the logs from this Source in the sourceCategory field, so running a search on **\_sourceCategory=web_apps** would return logs from this Source. For more information, see [Metadata Naming Conventions](../sources/reference-information-sources/metadata-naming-conventions.md) and our [Best Practices: Good and Bad Source Categories](../../design-deployment/best-practices-source-categories.md). You can define a Source Category value using system environment     variables, see [Configuring sourceCategory using variables](#configuring-sourcecategory-using-variables) below.
    * **Fields.** Click the **+Add Field** link to define the fields you want to associate, each field needs a name (key) and value.
 
       * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema. 
@@ -55,8 +55,8 @@ To configure a Local Windows Event Log Source:
         ![windows events types 2021 June.png](/img/send-data/windows-events-types.png)
 
      * **Standard Event Channels**. Select the main check box for all types, or individual check boxes for specific types (Security, Application, and/or System). 
-     * **Forwarded Events**. See how to [Collect Forwarded Events from a Windows Event Collector.](Collect_Forwarded_Events_from_a_Windows_Event_Collector.md "Collect Forwarded Events from a Windows Event Collector")
-     * **Custom Event Channels** to specify, in a comma-separated list, the channels you'd like to collect from. If you need help finding channels on the machine where the Source is installed, see [Windows Event Source Custom Channels](Local-Windows-Event-Log-Source/Local-Windows-Event-Source-Custom-Channels.md "Windows Event Source Custom Channels").  To collect from custom event channels in a Local Event Source, the Collector must have version 19.118 or later installed.
+     * **Forwarded Events**. See how to [Collect Forwarded Events from a Windows Event Collector.]((collect-forwarded-events-windows-event-collector.md) 
+     * **Custom Event Channels** to specify, in a comma-separated list, the channels you'd like to collect from. If you need help finding channels on the machine where the Source is installed, see [Windows Event Source Custom Channels](local-windows-event-log-source.md).  To collect from custom event channels in a Local Event Source, the Collector must have version 19.118 or later installed.
 
    * Depending on the **Event Format** selected, you'll have different options. 
      * **Event Collection Level**. When JSON format is selected you have the option to select:

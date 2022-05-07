@@ -7,7 +7,7 @@ id: collector-properties
 For Collector versions 19.182-25 and later the `collector.properties` file can be modified on existing Collectors allowing you to configure its internal processes for specific uses. This file is generated automatically when installing a Collector.
 
 :::note
-Starting with collector 19.170+, the installation directory is secured to users belonging to the sumologic_collector group. Modifying `collector.properties` may require sudo privileges. For more information, see [Enhanced File System Security for Installed Collectors](08Enhanced-File-System-Security-for-Installed-Collectors.md "https://help.sumologic.com/Send_Data/Installed_Collectors/04Step_4._Install_the_Collector/Enhanced_File_System_Security_for_Installed_Collectors").
+Starting with collector 19.170+, the installation directory is secured to users belonging to the sumologic_collector group. Modifying `collector.properties` may require sudo privileges. For more information, see [Enhanced File System Security for Installed Collectors](enhanced-file-system-security-installed-collectors.md).
 :::
 
 ## Configure collector.properties
@@ -17,7 +17,7 @@ Starting with collector 19.170+, the installation directory is secured to users 
     * On Windows: `net stop sumo-collector`      
     * On Linux: `sudo ./collector stop`    
 1. Navigate to the installation directory of an existing Installed Collector and open the `collector.properties` file in the **config** directory with a text editor. An example path is: `/<sumo_home>/config/collector.properties`
-1. Add the parameters you need, see all of the available parameters in the [collector.properties parameters](./collector.properties.md "collector.properties") table below. 
+1. Add the parameters you need, see all of the available parameters in the [collector.properties parameters](#collectorproperties) table below. 
 
     :::important
     Keep all of the existing parameters already in the file. If you remove any, the Collector will not be able to restore them and could result in collection issues.
@@ -44,9 +44,9 @@ Windows:
 
 ### collector.properties example
 
-The example below has parameters that were automatically added by the Collector based on the configuration of the [user.properties](06user.properties.md "user.properties") file, such as `cpuTarget`. The collector.properties file is different, only modify parameters found in the [parameters table](./collector.properties.md "collector.properties") below. If you see another parameter you want to adjust, check user.properties to see if it's an available configuration parameter.
+The example below has parameters that were automatically added by the Collector based on the configuration of the [user.properties](user-properties.md) file, such as `cpuTarget`. The collector.properties file is different, only modify parameters found in the [parameters table](#collectorproperties) below. If you see another parameter you want to adjust, check user.properties to see if it's an available configuration parameter.
 
-The collector.properties parameter `collector.localfile.inputType` has been added and set to `nonblocking` to tell the Collector to use the [Windows Rollable path for UNC file paths](../../Collector-FAQs/File_Locking_problems_when_using_Windows_UNC_with_Local_File_Sources.md "File Locking problems when using Windows UNC with Local File Sources"). That is the only collector.properties parameter in this example.
+The collector.properties parameter `collector.localfile.inputType` has been added and set to `nonblocking` to tell the Collector to use the [Windows Rollable path for UNC file paths](../../collector-faqs/file-locking-problems.md). That is the only collector.properties parameter in this example.
 
 ```
 receiver.url = https://collectors.sumologic.com
@@ -126,8 +126,8 @@ Collector versions 19.253-26+ support **wrapper** configuration parameters.
 | LogSender.pause.override | boolean  | Pause sending HTTP data from the log sender to Sumo Logic. | false |
 | metadata.cache.expiration.sec | integer  | Duration in seconds to expire and retry fetching local metadata cached by the Collector. | 600 |
 | MetricsSender.pause.override | boolean  | Pause sending HTTP data from the metric sender to Sumo Logic. | false |
-| multiline.maxCharLength | integer  | Sets the size in KB the Collector reads up to for detecting multiline messages. See [Collecting Multiline Logs](../../Sources/04Reference-Information-for-Sources/Collecting-Multiline-Logs.md "Collecting Multiline Logs") for details. | 524288                                                           |
-| multiline.maxLines | integer  | Sets the number of lines the Collector reads up to for detecting multiline messages. See [Collecting Multiline Logs](../../Sources/04Reference-Information-for-Sources/Collecting-Multiline-Logs.md "Collecting Multiline Logs") for details. | 2000 |
+| multiline.maxCharLength | integer  | Sets the size in KB the Collector reads up to for detecting multiline messages. See [Collecting Multiline Logs](../../sources/reference-information-sources/collect-multiline-logs.md for details. | 524288                                                           |
+| multiline.maxLines | integer  | Sets the number of lines the Collector reads up to for detecting multiline messages. See [Collecting Multiline Logs](../../sources/reference-information-sources/collect-multiline-logs.md) for details. | 2000 |
 | offline.numRetries | integer  | Number of retry attempts before entering offline collection mode on connection failure. | 3 |
 | paging.lowerbound.mb | integer  | Size in megabytes of free storage space available after which the Collector exits flushing mode. | 32 |
 | paging.upperbound.mb | integer  | Size in megabytes of free storage space available after which the collector enters flushing mode. | 2048 |

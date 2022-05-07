@@ -8,7 +8,7 @@ An HTTP Logs and Metrics Source is an endpoint for receiving log and metric dat
 
 With an HTTP Logs and Metrics Source you can upload logs and metrics from data sources where you cannot install a Collector. For example, you can export data from a platform as a service (PaaS) or an infrastructure as a service (IaaS) provider, allowing you to gain visibility, for instance, into your billing system service provider, leveraging the same Sumo tools your organization already uses. Check with your IaaS or PaaS providers for information about using their APIs to forward log or metric data to Sumo Logic's HTTP endpoint.
 
-When you set up an HTTP Logs and Metrics Source, a unique URL is assigned to that source. The generated URL is a long string of letters and numbers. You can generate a new URL at any time. For more information see [Generating a new URL](zGenerate-a-new-URL-for-an-HTTP-Source.md).
+When you set up an HTTP Logs and Metrics Source, a unique URL is assigned to that source. The generated URL is a long string of letters and numbers. You can generate a new URL at any time. For more information see [Generating a new URL](generate-new-url-http-source.md).
 
 ## Data payload considerations
 
@@ -38,10 +38,10 @@ To configure an HTTP Logs and Metrics Source:
     **Timestamp Parsing.** This option is selected by default. If it's deselected, no timestamp information is parsed at all.
 
       * **Time Zone.** There are two options for Time Zone. You can use the time zone present in your log files, and then choose an option in case time zone information is missing from a log message. Or, you can have Sumo Logic completely disregard any time zone information present in logs by forcing a time zone. It's very important to have the proper time zone set, no matter which option you choose. If the time zone of logs can't be determined, Sumo Logic assigns logs UTC; if the rest of your logs are from another time zone your search results will be affected.
-      * **Timestamp Format.** By default, Sumo Logic will automatically detect the timestamp format of your logs. However, you can manually specify a timestamp format for a Source. See [Timestamps, Time Zones, Time Ranges, and Date Formats](../04Reference-Information-for-Sources/Timestamps,-Time-Zones,-Time-Ranges,-and-Date-Formats.md "Timestamps, Time Zones, Time Ranges, and Date Formats") for more information.
+      * **Timestamp Format.** By default, Sumo Logic will automatically detect the timestamp format of your logs. However, you can manually specify a timestamp format for a Source. See [Timestamps, Time Zones, Time Ranges, and Date Formats](../../reference-information-sources/time-reference.md) for more information.
 
 
-    **Multiline Processing.** See [Collecting Multiline Logs](../04Reference-Information-for-Sources/Collecting-Multiline-Logs.md "Collecting Multiline Logs") for details on multiline processing and its options. Check this option if you're working with multiline messages (for example, log4J messages or exception stack traces). Deselect this option if you want to avoid unnecessary processing when collecting single-message-per-line files such as a Linux `system.log`.
+    **Multiline Processing.** See [Collecting Multiline Logs](../../reference-information-sources/collect-multiline-logs.md) for details on multiline processing and its options. Check this option if you're working with multiline messages (for example, log4J messages or exception stack traces). Deselect this option if you want to avoid unnecessary processing when collecting single-message-per-line files such as a Linux `system.log`.
 
       * **Infer Message Boundaries.**
 
@@ -60,8 +60,8 @@ To configure an HTTP Logs and Metrics Source:
 
 You can upload both logs and supported metric types to an HTTP Source. There are different requirements depending on whether you are uploading logs or metrics to the Source. 
 
- * [Upload Logs to an HTTP Source](Upload-Data-to-an-HTTP-Source.md)
- * [Upload Metrics to an HTTP Source](Upload-Metrics-to-an-HTTP-Source.md "Upload Metrics to an HTTP Source")
+ * [Upload Logs to an HTTP Source](upload-logs-http-source.md)
+ * [Upload Metrics to an HTTP Source](upload-metrics-to-http-source.md)
 
 ## HTTP Access Control (CORS)
 
@@ -104,4 +104,4 @@ Sumo expects that the entire content of an individual log message will be sent t
 
 For tools to help you batch messages, see https://github.com/SumoLogic/sumologic-net-appenders.
 
-For details on how the Collector processes multiline logs see [Collecting Multiline Logs](../04Reference-Information-for-Sources/Collecting-Multiline-Logs.md "Collecting Multiline Logs").
+For details on how the Collector processes multiline logs see [Collecting Multiline Logs](../../reference-information-sources/collect-multiline-logs.md).

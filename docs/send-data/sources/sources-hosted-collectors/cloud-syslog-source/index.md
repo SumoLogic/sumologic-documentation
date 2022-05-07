@@ -52,7 +52,7 @@ To configure a cloud syslog source, do the following:
 
    * **Enable Timestamp Parsing**. This option is selected by default. If it's deselected, no timestamp information is parsed.
    * **Time Zone**. There are two options for Time Zone. You can use the time zone present in your log files, and then choose an option in case time zone information is missing from a log message. Or, you can have Sumo Logic completely disregard any time zone information present in logs by forcing a time zone. It's important to have the proper time zone set, no matter which option you choose. If the time zone of logs can't be determined, Sumo Logic assigns the UTC time zone; if the rest of your logs are from another time zone your search results will be affected.
-   * **Timestamp Format**. By default, Sumo will automatically detect the timestamp format of your logs. However, you can manually specify a timestamp format for a source. See [Timestamps, Time Zones, and Time Ranges, and Date Formats](../04Reference-Information-for-Sources/Timestamps,-Time-Zones,-Time-Ranges,-and-Date-Formats.md "Timestamps, Time Zones, Time Ranges, and Date Formats").
+   * **Timestamp Format**. By default, Sumo will automatically detect the timestamp format of your logs. However, you can manually specify a timestamp format for a source. See [Timestamps, Time Zones, and Time Ranges, and Date Formats](../../reference-information-sources/time-reference.md).
 
 1. Create any Processing Rules you'd like for the new source.
 1. Click **Save**. The token information is displayed in a read-only dialog box, shown below. 
@@ -89,8 +89,8 @@ To configure a cloud syslog source, do the following:
 
 Follow the configuration instructions for your syslog client:
 
- * [syslog-ng](Cloud-Syslog-Source/syslog-ng.md "syslog-ng")
- * [rsyslog](Cloud-Syslog-Source/rsyslog.md "rsyslog")
+* [syslog-ng](syslog-ng.md)
+* [rsyslog](rsyslog.md)
 
 ### Message format
 

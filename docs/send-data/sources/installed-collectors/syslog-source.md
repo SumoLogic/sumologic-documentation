@@ -27,9 +27,9 @@ If you are editing a Source, metadata changes are reflected going forward. Metad
     ![syslog source.png](/img/send-data/syslog-source.png)
 
    * **Name.** Enter the name you'd like to display for the new Source. **Description** is optional. The Source's name is stored as the metadata field **\_sourceName**.
-   * **Protocol.** Select the protocol that your syslog-enabled devices are currently using to send syslog data, UDP or TCP. For more information, see [Choosing TCP or UDP](./Syslog-Source.md "Syslog Source").
+   * **Protocol.** Select the protocol that your syslog-enabled devices are currently using to send syslog data, UDP or TCP. For more information, see [Choosing TCP or UDP](syslog-source.md).
    * **Port.** Enter the port number for the Source to listen to. If the collector runs as root (default), use 51. Otherwise, consider 1514 or 5140. Make sure the devices are sending to the same port.
-   * **Source Category.** Enter a string to tag the collected messages with the searchable metadata field **\_sourceCategory**. For example, enter **firewall** to tag all collected messages in a field called **\_sourceCategory**. Type **\_sourceCategory=firewall** in the Search field to return results from this Source. For more information, see [Metadata Naming Conventions](../04Reference-Information-for-Sources/Metadata-Naming-Conventions.md "Metadata Naming Conventions") and our [Best Practices: Good and Bad Source Categories](../../01-Design-Your-Deployment/Best-Practices:-Good-Source-Category,-Bad-Source-Category.md "Best Practices: Good and Bad Source Categories").
+   * **Source Category.** Enter a string to tag the collected messages with the searchable metadata field **\_sourceCategory**. For example, enter **firewall** to tag all collected messages in a field called **\_sourceCategory**. Type **\_sourceCategory=firewall** in the Search field to return results from this Source. For more information, see [Metadata Naming Conventions](../reference-information-sources/metadata-naming-conventions.md) and our [Best Practices: Good and Bad Source Categories](../../design-deployment/best-practices-source-categories.md).
    * **Fields.** Click the **+Add Field** link to define the fields you want to associate, each field needs a name (key) and value.
 
      * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema. 
@@ -39,7 +39,7 @@ If you are editing a Source, metadata changes are reflected going forward. Metad
 
    * **Enable Timestamp Parsing.** This option is selected by default. If it's deselected, no timestamp information is parsed at all.
    * **Time Zone.** There are two options for Time Zone. You can use the time zone present in your log files, and then choose an option in case time zone information is missing from a log message. Or, you can have Sumo Logic completely disregard any time zone information present in logs by forcing a time zone. It's very important to have the proper time zone set, no matter which option you choose. If the time zone of logs can't be determined, Sumo assigns logs UTC; if the rest of your logs are from another time zone your search results will be affected.
-   * **Timestamp Format.** By default, Sumo will automatically detect the timestamp format of your logs. However, you can manually specify a timestamp format for a Source. See [Timestamps, Time Zones, Time Ranges, and Date Formats ](../04Reference-Information-for-Sources/Timestamps,-Time-Zones,-Time-Ranges,-and-Date-Formats.md "Timestamps, Time Zones, Time Ranges, and Date Formats")for more information.
+   * **Timestamp Format.** By default, Sumo will automatically detect the timestamp format of your logs. However, you can manually specify a timestamp format for a Source. See [Timestamps, Time Zones, Time Ranges, and Date Formats](../reference-information-sources/time-reference.md) for more information.
 
 1. Create any processing rules you'd like for the new Source.
 1. When you are finished configuring the Source click **Save**.
@@ -65,7 +65,7 @@ In the syslog configuration file, `facility.level` and `action` must be separat
 * `facility.level` is the selector.
 
   * `facility` is the syslog message facility, which identifies the type of software that generated the message. Default syslog message facilities are – `auth`, `authpriv`, `daemon`, `cron`, `ftp`, `lpr`, `kern`, `mail`, `news`, `syslog`, `user`, and `local0` – `local7`. 
-  * `level` indicates message severity:  `emerg`, `alert`,  `crit`,      `err`,  `warn`,  `notice`, `info`, or `debug`. The syslog agent will send messages with the specified severity level and higher. For example, if you specified `auth.crit`, you would get messages from the authorization system whose severity is `emerg`, `alert`, and `crit`. If you want to get messages of certain severity only, prefix the severity with an equals sign, for example `auth.=crit`
+  * `level` indicates message severity:  `emerg`, `alert`,  `crit`,  `err`,  `warn`,  `notice`, `info`, or `debug`. The syslog agent will send messages with the specified severity level and higher. For example, if you specified `auth.crit`, you would get messages from the authorization system whose severity is `emerg`, `alert`, and `crit`. If you want to get messages of certain severity only, prefix the severity with an equals sign, for example `auth.=crit`
 
 * `action` specifies what to do with the messages. There are a variety of types of actions you can specify. For the purpose of this procedure, you’ll use `action` to specify the address of the collector where you configured the Syslog Source. To send messages via UDP, use this format: `@IP_address`. To send messages via TCP, use this format: `@@IP_address`. If you have configured the Sumo Source to list on a port other than 514, specify the port as well, like this: `@IP_address:port`.
 
@@ -103,7 +103,7 @@ The collector supports single-line TCP messages up to 65,535 bytes.
 
 UDP is a streaming protocol that makes no guarantees of delivery, and as such, log messages may be dropped or arrive out of order. However, in return for this lack of guarantee, UDP does not create the same kind of network and CPU overhead that is created by the TCP protocol. In reality, in most networks, UDP is reliable enough for mission-critical use, however, there may be situations where network traffic storms might cause messages to be dropped or arrive out of order. If this is an unacceptable risk for you, then choose TCP.
 
-Per RFC 5426, the collector by default supports UDP messages up to 2048 bytes. To increase the UDP message length limit to the maximum datagram size (65k) you can modify the [collector.properties](../../Installed-Collectors/05Reference-Information-for-Collector-Installation/collector.properties.md "collector.properties") file.
+Per RFC 5426, the collector by default supports UDP messages up to 2048 bytes. To increase the UDP message length limit to the maximum datagram size (65k) you can modify the [collector.properties](../../installed-collectors/collector-installation-reference/collector-properties.md) file.
 
 First, stop the Collector service, then add the following configuration to `collector/config/collector.properties` and start the collector:
 

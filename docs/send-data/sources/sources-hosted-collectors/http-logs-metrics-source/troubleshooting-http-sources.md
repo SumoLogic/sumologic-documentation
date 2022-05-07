@@ -22,7 +22,7 @@ If you believe some data that was uploaded to a source was not ingested, check t
 You can use Live Tail to check whether a specific HTTP Source is receiving data. For instructions, see [Live Tail](/docs/search/live-tail). If a Source is not receiving data, the problem may be:
 
 * You are sending log data that is encoded in an unsupported format or has been compressed using an unsupported method. HTTP sources support UTF-8 data only. The supported compression methods are gzip and deflate.
-* Your HTTP request is malformed. For more information, see [Upload Data to an HTTP Source](Upload-Data-to-an-HTTP-Source.md "Upload Data to an HTTP Source").
+* Your HTTP request is malformed. For more information, see upload [logs](upload-logs-http-source.md) and [metrics](upload-metrics-to-http-source.md).
 
 ## Heroku output buffer overflow errors
 
@@ -59,7 +59,7 @@ When an Ingest Budget instructs a Hosted Collector to stop collecting data HTT
 
 ## Missing or unsupported Content-Type header
 
-When you send metrics to an HTTP source, if you don’t specify a Content-Type header or set it to an unsupported value, the data payload will be ingested as log data, rather than metrics. For more information, see [Upload Metrics to an HTTP Source](Upload-Metrics-to-an-HTTP-Source.md "Upload Metrics to an HTTP Source").
+When you send metrics to an HTTP source, if you don’t specify a Content-Type header or set it to an unsupported value, the data payload will be ingested as log data, rather than metrics. For more information, see [Upload Metrics to an HTTP Source](upload-metrics-to-http-source.md).
 
 ## Request timeouts
 
@@ -83,7 +83,7 @@ Data will be dropped during throttling. In that case, the sending HTTP client mu
 
 The following pages will help you troubleshoot a throttling incident:
 
-* [Manage Ingestion](/Manage/Ingestion-and-Volume/01Log_Ingestion), see this page for information about:
+* [Manage Ingestion](../../../../manage/ingestion-and-volume/log-ingestion.md) (/Manage/Ingestion-and-Volume/01Log_Ingestion), see this page for information about:
 
   * How your account ingestion rate is calculated and throttled.
   * How to figure out how which Collectors are contributing to excess ingestion.
@@ -97,4 +97,4 @@ If you have verified that the HTTP source is receiving data, but you cannot see 
 
 You can figure that out by searching for data from that source using the **Use Receipt Time** option. When you run a search with this option, the results include log data with any timestamp, in reverse order of receipt time, so you can view the difference in timestamp and receipt time to identify sources that may be generating incorrect timestamps. For more information, see Use Receipt Time.
 
-If you determine that the timestamps in your ingested data are not what you would expect, see [Timestamps, Time Zones, Time Ranges, and Date Formats](../../04Reference-Information-for-Sources/Timestamps,-Time-Zones,-Time-Ranges,-and-Date-Formats.md "Timestamps, Time Zones, Time Ranges, and Date Formats") to verify your timestamp format is one that Sumo can automatically parse. If your data has a timestamp format that Sumo doesn’t understand, you can specify a custom timestamp format for the source.
+If you determine that the timestamps in your ingested data are not what you would expect, see [Timestamps, Time Zones, Time Ranges, and Date Formats](../../reference-information-sources/time-reference.md) to verify your timestamp format is one that Sumo can automatically parse. If your data has a timestamp format that Sumo doesn’t understand, you can specify a custom timestamp format for the source.

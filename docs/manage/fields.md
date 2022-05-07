@@ -156,7 +156,7 @@ You can use both methods together. If there is a name collision between a given
 
 Any fields passed with your data need to exist in your Fields schema defined in Sumo. Any fields not defined in Sumo that are passed through a header are dropped. See how to define fields in the [manage fields](#manage-fields) section.
 
-See [how to upload logs to an HTTP Source] (../03Send-Data/Sources/02Sources-for-Hosted-Collectors/HTTP-Source/Upload-Data-to-an-HTTP-Source.md "Upload Logs to an HTTP Source").
+See [how to upload logs to an HTTP Source](/docs/send-data/sources/sources-hosted-collectors/http-logs-metrics-source).
 
 #### X-Sumo-Fields HTTP header
 

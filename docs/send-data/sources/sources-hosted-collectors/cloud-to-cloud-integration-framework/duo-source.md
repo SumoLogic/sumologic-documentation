@@ -41,10 +41,7 @@ the detected issue.
 
 #### Create a Duo Source
 
-When you create a Duo Source, you add it to a Hosted Collector. Before
-creating the Source, identify the Hosted Collector you want to use or
-create a new Hosted Collector. For instructions, see [Configure a Hosted
-Collector](../../../Hosted-Collectors/Configure-a-Hosted-Collector.md "Configure a Hosted Collector").
+When you create a Duo Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](../../../hosted-collectors.md).
 
 To configure a Duo Source:
 
@@ -102,7 +99,7 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 
 | Parameter | Type | Required | Description | Access |
 |--|--|--|--|--|
-| config | JSON Object  | Yes | Contains the [configuration parameters](./Duo_Source.md "Duo Source") for the Source. |   |
+| config | JSON Object  | Yes | Contains the configuration parameters for the Source. |   |
 | schemaRef | JSON Object  | Yes | Use `{"type":"Duo"}` for a Duo Source. | not modifiable |
 | sourceType | String | Yes | Use `Universal` for a Duo Source. | not modifiable |
 

@@ -15,7 +15,7 @@ acceptable, though XML is harder to read and parse than JSON. 
 Whatever you use follow these rules:
 
 * Use key-value pairs in a regular, defined format such as `key=value,` so they're easy to [parse](/docs/search/search-query-language/parse-operators).
-* Start logs with a regular, well-defined timestamp, ideally including a time zone. See [timestamp considerations and supported formats] (../../03Send-Data/Sources/04Reference-Information-for-Sources/Timestamps,-Time-Zones,-Time-Ranges,-and-Date-Formats.md) for details.
+* Start logs with a regular, well-defined timestamp, ideally including a time zone. See [timestamp considerations and supported formats](../send-data/sources/reference-information-sources/time-reference.md) for details.
 * Start logs with a regular format to make automatically detecting message boundaries easier. See [collecting multiline logs] (../../03Send-Data/Sources/04Reference-Information-for-Sources/Collecting-Multiline-Logs.md) for details.
 
 For example, from our own production logs, we use the following:

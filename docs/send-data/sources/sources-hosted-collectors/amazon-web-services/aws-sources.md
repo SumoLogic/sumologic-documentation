@@ -47,11 +47,11 @@ These configuration instructions apply to log collection from all AWS Source typ
 1. Select an **S3 region** or keep the default value of **Others**. The S3 region must match the appropriate S3 bucket created in your Amazon account. 
 
     :::note
-    Selecting an AWS GovCloud region means your data will be leaving a FedRAMP-high environment. Use responsibly to avoid information spillage. See [Collection from AWS GovCloud](Collection_from_AWS_GovCloud.md "Collection from AWS GovCloud") for details.
+    Selecting an AWS GovCloud region means your data will be leaving a FedRAMP-high environment. Use responsibly to avoid information spillage. See [Collection from AWS GovCloud](collection-aws-govcloud.md) for details.
     :::
 
 1. For **Bucket Name**, enter the exact name of your organization's S3 bucket. Be sure to double-check the name as it appears in AWS, for example:  
-1. For **Path Expression**, enter the wildcard pattern that matches the S3 objects you'd like to collect. You can use **one** wildcard (\*) in this string. Recursive path expressions use a single wildcard and do **NOT** use a leading forward slash. [See About Amazon Path Expressions](Amazon-Path-Expressions.md "Amazon Path Expressions") for details.
+1. For **Path Expression**, enter the wildcard pattern that matches the S3 objects you'd like to collect. You can use **one** wildcard (\*) in this string. Recursive path expressions use a single wildcard and do **NOT** use a leading forward slash. [See About Amazon Path Expressions](amazon-path-expressions.md) for details.
 1. **Collection should begin.** Choose or enter how far back you'd like to begin collecting historical logs. You can either: 
 
    * Choose a predefined value from dropdown list, ranging from "Now" to “72 hours ago” to “All Time”.
@@ -66,13 +66,13 @@ These configuration instructions apply to log collection from all AWS Source typ
 
    * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema. 
    * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema it is ignored, known as dropped.
-1. For **AWS** **Access** you have two **Access Method** options. Select **Role-based access** or **Key access** based on the AWS authentication you are providing. Role-based access is preferred, this was completed in the prerequisite step [Grant Sumo Logic access to an AWS Product](Grant-Access-to-an-AWS-Product.md "Grant Access to an AWS Product"). 
+1. For **AWS** **Access** you have two **Access Method** options. Select **Role-based access** or **Key access** based on the AWS authentication you are providing. Role-based access is preferred, this was completed in the prerequisite step [Grant Sumo Logic access to an AWS Product](grant-access-aws-product.md). 
 
    * For **Role-based access** enter** **the Role ARN that was provided by AWS after creating the role. 
 
         ![Role based access input roleARN.png](/img/send-data/Role-based-access-input-roleARN.png)
    
-   * For **Key access** enter the **Access Key ID** and **Secret Access Key.** See [AWS Access Key ID](http://docs.aws.amazon.com/STS/latest/UsingSTS/UsingTokens.html#RequestWithSTS) and [AWS Secret Access Key](https://aws.amazon.com/iam/ "https://aws.amazon.com/iam/") for details.
+   * For **Key access** enter the **Access Key ID** and **Secret Access Key.** See [AWS Access Key ID](http://docs.aws.amazon.com/STS/latest/UsingSTS/UsingTokens.html#RequestWithSTS) and [AWS Secret Access Key](https://aws.amazon.com/iam/) for details.
 
 1. **Log File Discovery.** You have the option to set up Amazon Simple Notification Service (SNS) to notify Sumo Logic of new items in your S3 bucket. A scan interval is required and automatically applied to detect log files. 
 
@@ -90,7 +90,7 @@ These configuration instructions apply to log collection from all AWS Source typ
 ### Set up SNS in AWS (Highly Recommended)
 
 :::note
-The following steps use the AWS SNS Console. You may instead use AWS CloudFormation. Follow the instructions to use [CloudFormation to set up an SNS Subscription Endpoint](Configuring-your-AWS-Source-with-CloudFormation.md "Configuring your AWS Source with CloudFormation").
+The following steps use the AWS SNS Console. You may instead use AWS CloudFormation. Follow the instructions to use [CloudFormation to set up an SNS Subscription Endpoint](configure-our-aws-source-cloudformation.md).
 :::
 
 1. Go to **Services \>** **Simple Notification Service** and click **Create Topic**. Enter a **Topic name** and click **Create topic**. Copy the provided **Topic ARN**, you’ll need this for the next step.
@@ -133,9 +133,9 @@ The following steps use the AWS SNS Console. You may instead use AWS CloudForma
    * **Enable Timestamp Parsing.** This option is selected by default. If it's deselected, no timestamp information is parsed at all. 
 
      * **Time Zone.** There are two options for Time Zone. You can use the time zone present in your log files, and then choose an option in case time zone information is missing from a log message. Or, you can have Sumo Logic completely disregard any time zone information present in logs by forcing a time zone. It's very important to have the proper time zone set, no matter which option you choose. If the time zone of logs can't be     determined, Sumo Logic assigns logs UTC; if the rest of your logs are from another time zone your search results will be affected.
-     * **Timestamp Format.** By default, Sumo Logic will automatically detect the timestamp format of your logs. However, you can manually specify a timestamp format for a Source. See [Timestamps, Time Zones, Time Ranges, and Date Formats](../../04Reference-Information-for-Sources/Timestamps,-Time-Zones,-Time-Ranges,-and-Date-Formats.md "Send_Data/Sources/Timestamps,_Time_Zones,_Time_Ranges,_and_Date_Formats") for more information.
+     * **Timestamp Format.** By default, Sumo Logic will automatically detect the timestamp format of your logs. However, you can manually specify a timestamp format for a Source. See [Timestamps, Time Zones, Time Ranges, and Date Formats](../../reference-information-sources/time-reference.md for more information.
 
-   * **Enable Multiline Processing.** See [Collecting Multiline Logs](../../04Reference-Information-for-Sources/Collecting-Multiline-Logs.md "Collecting Multiline Logs") for details on multiline processing and its options. This is enabled by default. Use this option if you're working with multiline messages (for example, log4J or exception stack traces). Deselect this option if you want to avoid unnecessary processing when collecting single-message-per-line files (for example, Linux system.log). Choose one of the following: 
+   * **Enable Multiline Processing.** See [Collecting Multiline Logs](../../reference-information-sources/collect-multiline-logs.md) for details on multiline processing and its options. This is enabled by default. Use this option if you're working with multiline messages (for example, log4J or exception stack traces). Deselect this option if you want to avoid unnecessary processing when collecting single-message-per-line files (for example, Linux system.log). Choose one of the following: 
 
      * **Infer Boundaries.** Enable when you want Sumo Logic to automatically attempt to determine which lines belong to the same message. If you deselect the Infer Boundaries option, you will need to enter a regular expression in the Boundary Regex field to use for detecting the entire first line of multiline messages. 
      * **Boundary Regex.** You can specify the boundary between messages using a regular expression. Enter a regular expression that matches the entire first line of every multiline message in your log files.
@@ -159,7 +159,7 @@ There is a [community supported script](https://github.com/SumoLogic/sumologic-
 
 1. In Sumo Logic select **Manage Data \> Collection \> Collection**.
 1. On the Collection page navigate to your Source and click **Edit**. Scroll down to **Log File Discovery** and note the Endpoint **URL** provided, you will use this in step 10.C when creating your subscription.
-1. Complete steps 10.B through 10.E for [configuring SNS Notifications](./AWS_Sources.md "AWS Sources").
+1. Complete steps 10.B through 10.E for [configuring SNS Notifications](#update-source-to-use-s3-event-notifications).
 
 ## Troubleshoot S3 Event Notifications
 

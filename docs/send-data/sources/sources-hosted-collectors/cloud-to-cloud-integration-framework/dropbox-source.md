@@ -108,7 +108,7 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 
 | Parameter | Type | Required | Description | Access |
 |--|--|--|--|--|
-| config | JSON Object  | Yes | Contains the [configuration parameters](Duo_Source.md "Duo Source") for the Source. |   |
+| config | JSON Object  | Yes | Contains the [configuration parameters](duo-source.md) for the Source. |   |
 | schemaRef | JSON Object  | Yes | Use `{"type":"Dropbox"}` for a Dropbox Source. | not modifiable |
 | sourceType | String | Yes | Use `Universal` for a Dropbox Source. | not modifiable |
 

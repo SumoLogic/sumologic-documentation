@@ -4,7 +4,7 @@ id: user-properties
 
 # user.properties
 
-For collector versions 19.137 and later, the `user.properties` file lets you pass configuration parameters during the installation of a new unregistered Collector. Once the collector is registered, to see if a parameter can be changed with a collector restart, check the "Can be changed after installation?**"** column of the table in [user.properties parameters](./06user.properties.md "user.properties") below. When using the shell script (command line) installer, you must pass configuration parameters via command-line arguments or a varfile, and the installer will create a `user.properties` file during installation (see [Parameters for the Command Line Installer](06Parameters-for-the-Command-Line-Installer.md "Parameters for the Command Line Installer") for more information).
+For collector versions 19.137 and later, the `user.properties` file lets you pass configuration parameters during the installation of a new unregistered Collector. Once the collector is registered, to see if a parameter can be changed with a collector restart, check the "Can be changed after installation?**"** column of the table in [user.properties parameters](#userproperties) below. When using the shell script (command line) installer, you must pass configuration parameters via command-line arguments or a varfile, and the installer will create a `user.properties` file during installation (see [Parameters for the Command Line Installer](06Parameters-for-the-Command-Line-Installer.md "Parameters for the Command Line Installer") for more information).
 
 :::note
 Starting with collector 19.170+, the installation directory is secured to users belonging to the sumologic_collector group. Modifying `user.properties` may require sudo privileges. For more information, see [Enhanced File System Security for Installed Collectors](08Enhanced-File-System-Security-for-Installed-Collectors.md "https://help.sumologic.com/Send_Data/Installed_Collectors/04Step_4._Install_the_Collector/Enhanced_File_System_Security_for_Installed_Collectors").
@@ -17,7 +17,7 @@ After downloading the collector binary package (e.g. tarball), create the `use
 To create `user.properties` manually:
 
 1. Use a text editor (or any similar program) to create a new file.
-1. Add required parameters and any desired optional parameters listed in [user.properties parameters](./06user.properties.md "user.properties") below. Parameters are case sensitive.
+1. Add required parameters and any desired optional parameters listed in [user.properties parameters](#userproperties) below. Parameters are case sensitive.
 1. Save the file to `CollectorInstallationDirectory/config/user.properties`.
 
 :::important

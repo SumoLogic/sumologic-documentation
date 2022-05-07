@@ -4,7 +4,7 @@ id: upload-metrics-to-http-source
 
 # Upload Metrics to an HTTP Source
 
-After you have added an [HTTP Logs and Metrics Source](Upload-Metrics-to-an-HTTP-Source/...md "HTTP Source") to a [Hosted Collector](../../../configure-hosted-collector.md) you can begin uploading data. You can upload both logs and metrics to the same HTTP source, however not in the same HTTP request. This document provides instructions on uploading metrics, if you are uploading logs see [Upload Logs to an HTTP Source](Upload-Data-to-an-HTTP-Source.md "Upload Logs to an HTTP Source").
+After you have added an [HTTP Logs and Metrics Source](/docs/send-data/sources/sources-hosted-collectors/http-logs-metrics-source) to a [Hosted Collector](../../../configure-hosted-collector.md) you can begin uploading data. You can upload both logs and metrics to the same HTTP source, however not in the same HTTP request. This document provides instructions on uploading metrics, if you are uploading logs see [Upload Logs to an HTTP Source](/docs/send-data/sources/sources-hosted-collectors/http-logs-metrics-source).
 
 :::note
 Sumo Logic enforces limits on the volume of metrics and associated metadata you ingest. For more information, see Data Limits for Metrics. 
@@ -38,7 +38,7 @@ Based on the Content-Type header specified, Sumo parses and interprets each line
 |--|--|
 | [Graphite](http://graphite.readthedocs.io/en/latest/feeding-carbon.html#the-plaintext-protocol) | `application/vnd.sumologic.graphite` |
 | [Carbon 2.0](http://metrics20.org/implementations/) | `application/vnd.sumologic.carbon2` |
-| [Prometheus](https://github.com/prometheus/docs/blob/master/content/docs/instrumenting/exposition_formats.md) | `application/vnd.sumologic.prometheus`<br/>Sumo won't ingest Prometheus comments or malformed Prometheus metrics. For more information, see [Prometheus metrics not accepted by Sumo](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/HTTP-Source/Upload-Metrics-to-an-HTTP-Source/Types_of_Prometheus_Metrics_not_Accepted_by_Sumo). |
+| [Prometheus](https://github.com/prometheus/docs/blob/master/content/docs/instrumenting/exposition_formats.md) | `application/vnd.sumologic.prometheus`<br/>Sumo won't ingest Prometheus comments or malformed Prometheus metrics. For more information, see [Prometheus metrics not accepted by Sumo](prometheus-metrics-not-accepted-by-sumo.md). |
 
 :::note
 For information about metric formats, see [Metric Formats](https://help.sumologic.com/Metrics/Introduction-to-Metrics/Metric-Formats).

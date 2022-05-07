@@ -37,9 +37,9 @@ Collector.
 
 ## user.properties parameters
 
-The command line installer can use all of the parameters available in the [user.properties](06user.properties.md "user.properties") file. To use parameters from user.properties just add a `-V` to the beginning of the parameter without a space character. For example, to use the `sources` parameter you would specify it as `-Vsources`.  
+The command line installer can use all of the parameters available in the [user.properties](user-properties.md) file. To use parameters from user.properties just add a `-V` to the beginning of the parameter without a space character. For example, to use the `sources` parameter you would specify it as `-Vsources`.  
   
-For reference, see the available [user.properties parameters](06user.properties.md "user.properties").
+For reference, see the available [user.properties parameters](user-properties.md).
 
 ### Parameters with a different format
 
@@ -58,9 +58,9 @@ formatting when used with the command line installer.
 
 ## collector.properties parameters
 
-The command line installer can use any of the parameters available in the [collector.properties](collector.properties.md "collector.properties") file. To use parameters from collector.properties just add a `-V` to the beginning of the parameter without a space character. For example, to use the `source.max.threads.num` parameter you would specify it as `-Vsource.max.threads.num`. 
+The command line installer can use any of the parameters available in the [collector.properties](collector-properties.md) file. To use parameters from collector.properties just add a `-V` to the beginning of the parameter without a space character. For example, to use the `source.max.threads.num` parameter you would specify it as `-Vsource.max.threads.num`. 
 
-For reference, see the available [collector.properties parameters](collector.properties.md "collector.properties").
+For reference, see the available [collector.properties parameters](collector-properties.md).
 
 <!-- Hidden table
 

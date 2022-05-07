@@ -97,7 +97,7 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Mana
 
 | Parameter  | Type | Required | Description | Access |
 |--|--|--|--|--|
-| config | JSON Object | Yes | Contains the [configuration parameters](Salesforce_Source.md) for the Source. |   |
+| config | JSON Object | Yes | Contains the configuration parameters for the Source. |   |
 | schemaRef  | JSON Object | Yes | Use `{"type":"AWS Cost Explorer"} ` for an AWS Cost Explorer Source. | Not modifiable |
 | sourceType | String | Yes | Use Universal for an AWS Cost Explorer  Source.   | Not modifiable |
 

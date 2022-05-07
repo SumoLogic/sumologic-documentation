@@ -46,7 +46,7 @@ _index=prod AND _sourceCategory=prod/security/snort
 
 This is possible because:
 
-1. The example environment is using a robust [`_sourceCategory` naming convention.] (../../03Send-Data/01-Design-Your-Deployment/Best-Practices:-Good-Source-Category,-Bad-Source-Category.md)
+1. The example environment is using a robust [`_sourceCategory` naming convention.](../send-data/design-deployment/best-practices-source-categories.md)
 
 1. The Partition was scoped using `_sourceCategory`
 

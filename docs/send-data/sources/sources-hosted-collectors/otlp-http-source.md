@@ -4,9 +4,7 @@ id: otlp-http-source
 
 # OTLP/HTTP Source
 
-An OTLP/HTTP Source is an endpoint for receiving OTLP formatted Logs,
-Metrics, and Traces. This is an alternative option to installing an
-OpenTelemetry Collector for sending OTLP data to Sumo Logic. 
+An OTLP/HTTP Source is an endpoint for receiving OTLP formatted Logs, Metrics, and Traces. This is an alternative option to installing an OpenTelemetry Collector for sending OTLP data to Sumo Logic. 
 
 ## Create an OTLP/HTTP Source
 
@@ -24,7 +22,7 @@ To configure an OTLP/HTTP Source:
 
     ![OTLP:HTTP basic configuration settings.png](/img/send-data/OTLP-HTTP-basic-configuration-settings.png)
 
-1. (Optional) For **Source Host** and **Source Category**, enter any string to tag the output collected from the source. These are [built-in metadata](https://help.sumologic.com/05Search/Get-Started-with-Search/Search-Basics/Built-in-Metadata) fields that allow you to organize your data.
+1. (Optional) For **Source Host** and **Source Category**, enter any string to tag the output collected from the source. These are [built-in metadata](../../../search/get-started-with-search/search-basics/built-in-metadata.md) fields that allow you to organize your data.
 
 1. **Fields.** Click the **+Add Field** link to define the fields you want to associate, each field needs a name (key) and value.
 
@@ -38,14 +36,14 @@ To configure an OTLP/HTTP Source:
    * **Timestamp Parsing.** This option is selected by default. If it's deselected, no timestamp information is parsed at all.
 
      * **Time Zone.** There are two options for Time Zone. You can use the time zone present in your log files, and then choose an option in case time zone information is missing from a log message. Or, you can have Sumo Logic completely disregard any time zone information present in logs by forcing a time zone. It's very important to have the proper time zone set, no matter which option you choose. If the time zone of logs can't be determined, Sumo Logic assigns logs UTC; if the rest of your logs are from another time zone your search results will be affected.
-     * **Timestamp Format.** By default, Sumo Logic will automatically detect the timestamp format of your logs. However, you can manually specify a timestamp format for a Source. See [Timestamps, Time Zones, Time Ranges, and Date Formats](../04Reference-Information-for-Sources/Timestamps,-Time-Zones,-Time-Ranges,-and-Date-Formats.md "Send_Data/Sources/Timestamps,_Time_Zones,_Time_Ranges,_and_Date_Formats") for more information.
+     * **Timestamp Format.** By default, Sumo Logic will automatically detect the timestamp format of your logs. However, you can manually specify a timestamp format for a Source. See [Timestamps, Time Zones, Time Ranges, and Date Formats](../reference-information-sources/time-reference.md for more information.
   
-   * **Message Processing.** See [Collecting Multiline Logs](../04Reference-Information-for-Sources/Collecting-Multiline-Logs.md "Collecting Multiline Logs") for details on multiline processing and its options. This is enabled by default. Use this option if you're working with multiline messages (for example, log4J or exception stack traces). Deselect this option if you want to avoid unnecessary processing when collecting single-message-per-line files (for example, Linux system.log). Choose one of the following:
+   * **Message Processing.** See [Collecting Multiline Logs](../reference-information-sources/collect-multiline-logs.md for details on multiline processing and its options. This is enabled by default. Use this option if you're working with multiline messages (for example, log4J or exception stack traces). Deselect this option if you want to avoid unnecessary processing when collecting single-message-per-line files (for example, Linux system.log). Choose one of the following:
 
      * **Detect Automatically.** Enable when you want Sumo Logic to automatically attempt to determine which lines belong to the same message. If you deselect the Infer Boundaries option, you will need to enter a regular expression in the Boundary Regex field to use for detecting the entire first line of multiline messages.
      * **Boundary Regex.** You can specify the boundary between messages using a regular expression. Enter a regular expression that matches the entire first line of every multiline message in your log files.
 
-1. [Create any Processing Rules](https://help.sumologic.com/Manage/Collection/Processing-Rules/Create-a-Processing-Rule) you'd like for the OTLP/HTTP Source.
+1. [Create any Processing Rules](../../../manage/collection/processing-rules/create-processing-rule.md you'd like for the OTLP/HTTP Source.
 
     ![OTLP processing rules.png](/img/send-data/OTLP-processing-rules.png)
 

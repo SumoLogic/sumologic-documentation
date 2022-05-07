@@ -20,7 +20,7 @@ See the following topics for additional information:
 ## Defining a Source JSON file
 
 When registering a Collector, you can define a source JSON file using the `sources` or `syncSources` parameter in your
-[user.properties](../Installed-Collectors/05Reference-Information-for-Collector-Installation/06user.properties.md "user.properties") or [sumo.conf](../Installed-Collectors/05Reference-Information-for-Collector-Installation/12sumo.conf-for-Legacy-Collectors.md "sumo.conf") configuration file. These parameters are used the first time a collector is set up.
+[user.properties](../../installed-collectors/collector-installation-reference/user-properties.md) or [sumo.conf](../../installed-collectors/collector-installation-reference/sumoconf-for-legacy-collectors.md) configuration file. These parameters are used the first time a collector is set up.
 
 | Parameter |  Type |  Description |
 |--|--|--|
@@ -119,11 +119,11 @@ The following parameters are used for log Sources except for Syslog. Syslog Sour
 | Parameter | Type | Required? | Default | Description | Access |
 |--|--|--|--|--|--|
 | `sourceType` | String | Yes |  | Type the correct type of Source. | not modifiable | 
-| `name` | String | Yes |  | Type a desired name of the Source. The name must be unique per Collector. This value is assigned to the [built-in metadata](/05Search/Get-Started-with-Search/Search-Basics/Built-in-Metadata) field `_source` and can be a maximum of 128 characters. | modifiable | 
+| `name` | String | Yes |  | Type a desired name of the Source. The name must be unique per Collector. This value is assigned to the [built-in metadata](../../../search/get-started-with-search/search-basics/built-in-metadata.md) field `_source` and can be a maximum of 128 characters. | modifiable | 
 | `description` | String | No | null | Type a description of the Source. | modifiable | 
 | `fields` | JSON Object | No | null | JSON map of key-value fields (metadata) to apply to the Collector or Source. | modifiable | 
-| `hostName` | String | No | null | Type a host name of the Source. This value is assigned to the [built-in metadata](/05Search/Get-Started-with-Search/Search-Basics/Built-in-Metadata) field `_sourceHost`. The hostname can be a maximum of 128 characters.<br/>Not supported with Windows Local Event Source and Windows Local Performance Source. | modifiable | 
-| `category` | String | No | null | Type a category of the source. This value is assigned to the [built-in metadata](/05Search/Get-Started-with-Search/Search-Basics/Built-in-Metadata) field `_sourceCategory`. See [best practices](../../design-deployment/best-practices-source-categories.md) for details. | modifiable | 
+| `hostName` | String | No | null | Type a host name of the Source. This value is assigned to the built-in metadata field `_sourceHost`. The hostname can be a maximum of 128 characters.<br/>Not supported with Windows Local Event Source and Windows Local Performance Source. | modifiable | 
+| `category` | String | No | null | Type a category of the source. This value is assigned to the built-in metadata field `_sourceCategory`. See [best practices](../../design-deployment/best-practices-source-categories.md) for details. | modifiable | 
 
 **Timestamp Processing**
 
@@ -147,7 +147,7 @@ The following parameters are used for log Sources except for Syslog. Syslog Sour
 
 | Parameter | Type | Required? | Default | Description | Access |
 |--|--|--|--|--|--|
-| `filters` | String | array | 	No | `[ ]` | If you'd like to add a filter to the Source, type the name of the filter (Exclude, Include, Mask, Hash, or Forward. Review the [Rules and Limitations](/Manage/Collection/Processing-Rules/Include-and-Exclude-Rules#Rules_and_Limitations) for filters and see [Creating processing rules using JSON](#creating-processing-rules-using-json). | modifiable | 
+| `filters` | String | array | 	No | `[ ]` | If you'd like to add a filter to the Source, type the name of the filter (Exclude, Include, Mask, Hash, or Forward. Review the [Rules and Limitations](../../../manage/collection/processing-rules/include-and-exclude-rules.md) for filters and see [Creating processing rules using JSON](#creating-processing-rules-using-json). | modifiable | 
 
 **When collection should begin**
 
@@ -198,8 +198,8 @@ The following is a Timestamp example in JSON with two default date formats, `yyy
 
 You can include processing (filtering) rules when using JSON to configure sources. A filter specifies rules about which messages are sent to Sumo Logic.
 
- * Exclude—Removes messages before ingestion to Sumo Logic. Think of Exclude as a "denylist" filter. For more information, see [Include and Exclude Rules](/Manage/Collection/Processing-Rules/Include-and-Exclude-Rules).
- * Include—Sends only the data you explicitly define to Sumo Logic. Think of Include as an "allowlist" filter. For more information, see [Include and Exclude Rules](/Manage/Collection/Processing-Rules/Include-and-Exclude-Rules).
+ * Exclude—Removes messages before ingestion to Sumo Logic. Think of Exclude as a "denylist" filter. For more information, see [Include and Exclude Rules](../../../manage/collection/processing-rules/include-and-exclude-rules.md).
+ * Include—Sends only the data you explicitly define to Sumo Logic. Think of Include as an "allowlist" filter. For more information, see [Include and Exclude Rules](../../../manage/collection/processing-rules/include-and-exclude-rules.md).
  * Hash—Replaces a message with a unique, randomly-generated code to protect sensitive or proprietary information, such as credit card numbers or user names. By hashing this type of data you can still track it, even though it's fully hidden. For more information, see [Hash Rules](https://help.sumologic.com/Manage/Collection/Processing-Rules/Hash-Rules).
  * Mask—Replaces an expression with a mask string that you can customize; especially useful for protecting passwords or other data you wouldn't normally track. For more information, see [Mask Rules].
  * Forward—Sends matching log messages to a data forwarding destination. For more information, see [Example: data forwarding rule](#example-data-forwarding-rule) below.

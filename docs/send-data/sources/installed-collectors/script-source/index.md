@@ -34,7 +34,7 @@ Data from `stdout` and `stderror` streams are collected.
 
 To configure a Script Source:
 
-1. Collectors using version 19.245-4 and later do not allow Script Sources to run by default. To allow Script Sources you need to set the Collector parameter `enableScriptSource=true` in [user.properties](../../Installed-Collectors/05Reference-Information-for-Collector-Installation/06user.properties.md "user.properties") and restart the Collector.
+1. Collectors using version 19.245-4 and later do not allow Script Sources to run by default. To allow Script Sources you need to set the Collector parameter `enableScriptSource=true` in [user.properties](../../../installed-collectors/collector-installation-reference/user-properties.md)  and restart the Collector.
 1. In Sumo select **Manage Data \> Collection \> Collection**.
 1. Find the name of the Installed Collector to which you'd like to add a Source. Click **Add...** then choose** Add Source** from the pop-up menu.
 1. Select **Script** for the source type.
@@ -48,11 +48,11 @@ To configure a Script Source:
 1. For **Frequency**, choose one of the following: 
 
    * An option to run the script at the selected frequency.
-   * **Other (CRON Expression)** if you'd like to set a customized frequency using a CRON Expression, then type     the [CRON Expression](Script-Source/Cron-Examples-and-Reference.md "Cron Examples and Reference") in the **Expression** text box. Using a CRON Expression allows you to specify an exact time for your script to run, like each day at 2:15 pm, or Monday through Friday at midnight.
+   * **Other (CRON Expression)** if you'd like to set a customized frequency using a CRON Expression, then type the [CRON Expression](cron-examples-reference.md) in the **Expression** text box. Using a CRON Expression allows you to specify an exact time for your script to run, like each day at 2:15 pm, or Monday through Friday at midnight.
 
-    See [details below](./Script-Source.md "Script Source") on the behavior of unfinished script executions related to its frequency.
+    See details below on the behavior of unfinished script executions related to its frequency.
 
-1. If you'd like to [set a timeout for your script](./Script-Source.md "Script Source"), select **Specify a timeout for your command**. If you don't need a timeout, or if you're running a script once daily, we recommend that you leave this option deselected. 
+1. If you'd like to [set a timeout for your script](#when-should-i-set-a-timeout-for-my-script), select **Specify a timeout for your command**. If you don't need a timeout, or if you're running a script once daily, we recommend that you leave this option deselected. 
 1. For **Command**, select or type a custom command you're going to use. 
 
    * To provide a custom command use the delete or backspace key to clear out the selection, then type your command. The command must be in the format: `/path/to/command;file extension` Provide a path and an extension separated by a semicolon (`;`). For example, a Python command:  `/bin/python;py` 

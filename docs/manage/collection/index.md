@@ -15,10 +15,10 @@ Use the **Collection** page to manage all of your Collectors and Sources. To ac
 ## Page Capabilities
 
 * [Search for a Collector or Source](search-collector-or-source.md)
-* View the [health of Collectors and Sources] (Health_Events.md)
-* [Upgrade Sources] (../03Send-Data/Sources/02Sources-for-Hosted-Collectors/Cloud-to-Cloud_Integration_Framework/Cloud-to-Cloud_Source_Versions.md) from the [Cloud-to-Cloud Integration Framework] (../03Send-Data/Sources/02Sources-for-Hosted-Collectors/Cloud-to-Cloud_Integration_Framework.md "Cloud-to-Cloud Integration Framework")
+* View the [health of Collectors and Sources](../health-events.md)
+* [Upgrade Sources](../../send-data/sources/sources-hosted-collectors/cloud-to-cloud-integration-framework/cloud-to-cloud-source-versions.md) from the [Cloud-to-Cloud Integration Framework](/docs/send-data/sources/sources-hosted-collectors/cloud-to-cloud-integration-framework))
 * [Upgrade Collectors](upgrade-collectors.md)
-* Add an [Installed Collector] (../03Send-Data/Installed-Colle ctors.md) or a [Hosted Collector] (../03Send-Data/Hosted-Collectors/Configure-a-Hosted-Collector.md)
+* Add an [Installed Collector](/docs/send-data/sources/installed-collectors) or a [Hosted Collector](../../send-data/hosted-collectors.md)
 * Use the **Show** options to filter the list
 * Use the **Expand** options to show or hide information about the Sources
 * Use the paging controls to navigate the list of Collectors
@@ -27,19 +27,18 @@ Use the **Collection** page to manage all of your Collectors and Sources. To ac
 
 * [Add a Source] (../03Send-Data/Sources.md)
 * [Edit a Collector](edit-collector.md)
-* [Delete a Collector] (./05Delete-a-Collector-from-the-Web-Application.md)
-* [Download a JSON configuration file] (../03Send-Data/Sources/03Use-JSON-to-Configure-Sources/Local-Configuration-File-Management/View-or-Download-Source-JSON-Configuration.md)
-    for scripting or backup
+* [Delete a Collector](delete-collector-source.md) 
+* [Download a JSON configuration file](../../send-data/sources/use-json-configure-sources/local-configuration-file-management/view-download-source-json-configuration.md) for scripting or backup
 * [Restart a Collector](restart-collectors.md) 
 
 ## Source Actions
 
 * [Edit the Source](edit-source.md)
 * [Delete a Source](delete-collector-source.md) 
-* [Download a JSON configuration file] (../03Send-Data/Sources/03Use-JSON-to-Configure-Sources/Local-Configuration-File-Management/View-or-Download-Source-JSON-Configuration.md) for scripting or backup
+* [Download a JSON configuration file](../../send-data/sources/use-json-configure-sources/local-configuration-file-management/view-download-source-json-configuration.md) for scripting or backup
 * [Pause or resume a Source](pause-resume-source.md) (cloud polling Sources only)
-* [Show or regenerate a Source URL] (../03Send-Data/Sources/02Sources-for-Hosted-Collectors/HTTP-Source/zGenerate-a-new-URL-for-an-HTTP-Source.md) (HTTP Sources only)
-* [Show or regenerate a Source token] (../03Send-Data/Sources/02Sources-for-Hosted-Collectors/Cloud-Syslog-Source.md) (cloud syslog Source only)
+* [Show or regenerate a Source URL](../../send-data/sources/sources-hosted-collectors/http-logs-metrics-source/generate-new-url-http-source.md) (HTTP Sources only)
+* [Show or regenerate a Source token](/docs/send-data/sources/sources-hosted-collectors/cloud-syslog-source) (cloud syslog Source only)
 
 ## Available Information about Collectors and Sources
 
@@ -53,7 +52,7 @@ Use the **Collection** page to manage all of your Collectors and Sources. To ac
 
 * **Health**. Shows color-coded healthy, error, and warning states for Collectors and Sources so you can quickly determine the [health of your Collectors and Sources] (Health_Events.md).
 
-  If an Installed Collector appears offline try [restarting the service](pause-resume-source.md) and [testing connectivity] (../03Send-Data/Installed-Collectors/05Reference-Information-for-Collector-Installation/01Test-Connectivity-for-Sumo-Logic-Collectors.md).
+  If an Installed Collector appears offline try [restarting the service](pause-resume-source.md) and [testing connectivity](../../send-data/installed-collectors/collector-installation-reference/test-connectivity-sumo-collectors.md).
 * **Type**. Displays whether the Collector is an Installed or Hosted Collector.
 * **Status**. Shows the status of Sources manually paused by users.
 * **Source Category**. Displays the name of the configured Source Category for this Collector or Source.
