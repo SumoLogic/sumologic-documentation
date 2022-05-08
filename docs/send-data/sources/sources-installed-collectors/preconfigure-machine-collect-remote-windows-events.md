@@ -4,7 +4,7 @@ id: preconfigure-machine-collect-remote-windows-events
 
 # Preconfigure a Machine to Collect Remote Windows Events
 
-Use the instructions in this topic to configure a system for remote access by a Remote Windows Event Log Source. For information on collecting local Windows Event Logs, see [Configure a Local Windows Event Log Source](../Local-Windows-Event-Log-Source.md "Configure a Local Windows Event Log Source").
+Use the instructions in this topic to configure a system for remote access by a Remote Windows Event Log Source. For information on collecting local Windows Event Logs, see [Configure a Local Windows Event Log Source](local-windows-event-log-source.md).
 
 :::important
 Windows events can only be collected, locally or remotely, from systems running Windows Server 2012 or later.

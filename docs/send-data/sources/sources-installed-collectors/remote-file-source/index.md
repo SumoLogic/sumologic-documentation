@@ -9,7 +9,7 @@ Log files collected using a Remote File Source must be encoded in UTF-8 or ASCI
 Sumo Logic scans remote directories every 30 seconds.
 
 :::note
-To collect remote Windows logs using CIFS/SMB, see CIFS/SMB, see [Prerequisites for Remote Windows Event Log Collection](prerequisites-windows-remote-file-collection.md). To collect Windows Events, see [Configuring a Local Windows Event Log Source](../local-windows-event-log-source.md) (Local-Windows-Event-Log-Source.md "Configure a Local Windows Event Log Source").
+To collect remote Windows logs using CIFS/SMB, see CIFS/SMB, see [Prerequisites for Remote Windows Event Log Collection](prerequisites-windows-remote-file-collection.md). To collect Windows Events, see [Configuring a Local Windows Event Log Source](../local-windows-event-log-source.md).
 :::
 
 To configure a Remote File Source:

@@ -97,8 +97,7 @@ Environment variables may not apply to all Fluentd sources. See the table follow
 | `FLUENTD_USER_CONFIG_DIR` | A directory of user-defined Fluentd configuration files, which must be in the `*.conf` directory in the container. |
 | `FLUSH_INTERVAL` | How frequently to push logs to Sumo. Default: `30s`  | 
 | `KUBERNETES_META` | Include or exclude Kubernetes metadata such as namespace and pod_name if using JSON log format. Default: `true` | 
-| `LOG_FORMAT` | Format in which to post logs to Sumo. Allowable values:<ul><li>text—Logs will appear in SumoLogic in text format.</li><li>json—Logs will appear in SumoLogic in json format.</li><li>
-json_merge—Same as json but if the container logs in json format to stdout it will merge in the container json log at the root level and remove the log field.</li></ul>Default: `json` | 
+| `LOG_FORMAT` | Format in which to post logs to Sumo. Allowable values:<ul><li>text—Logs will appear in SumoLogic in text format.</li><li>json—Logs will appear in SumoLogic in json format.</li><li>json_merge—Same as json but if the container logs in json format to stdout it will merge in the container json log at the root level and remove the log field.</li></ul>Default: `json` | 
 | `MULTILINE_START_REGEXP` | he regular expression for the concat plugin to use when merging multi-line messages. Defaults to Julian dates, for example, Jul 29, 2017. | 
 | `NUM_THREADS` | Set the number of HTTP threads to Sumo. It might be necessary to do so in heavy-logging clusters. Default: `1` | 
 | `READ_FROM_HEAD` | Start to read the logs from the head of file, not bottom. Only applies to containers log files. See in_tail doc for more information. Default: `true` | 

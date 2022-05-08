@@ -100,7 +100,7 @@ If the Source has any issues during any one of these states it is placed in an *
 
 Hover your mouse over the status icon to view a tooltip with details on the detected issue.
 
-![Error_Status.png](/img/send-data/Error_Status.png)
+![Error_Status.png](/img/send-data/salesforce-error-status.png)
 
 When you delete the source it is placed in a **Stopping** state, when it has successfully stopped it is deleted from your Hosted Collector.
 

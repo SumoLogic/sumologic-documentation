@@ -37,7 +37,7 @@ The topics below are the available integrations. In Sumo Logic these are called 
 
 ## Versions
 
-Sources in the Cloud-to-Cloud Integration Framework need updates over time to maintain data collection. Updates can vary in severity and may not require any input from you. See [Cloud-to-Cloud Source Versions](Cloud-to-Cloud_Integration_Framework/Cloud-to-Cloud_Source_Versions.md) for details on how to upgrade and how versions are structured.
+Sources in the Cloud-to-Cloud Integration Framework need updates over time to maintain data collection. Updates can vary in severity and may not require any input from you. See [Cloud-to-Cloud Source Versions](cloud-to-cloud-source-versions.md) for details on how to upgrade and how versions are structured.
 
 ## Guide contents
 

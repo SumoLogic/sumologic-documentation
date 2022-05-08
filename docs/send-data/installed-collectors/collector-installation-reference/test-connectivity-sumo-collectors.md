@@ -10,7 +10,7 @@ Choose one of these testing options:
 
 * **Browser-based test.** Open a browser and go to [https://collectors.sumologic.com](https://collectors.sumologic.com/). You should see the word "Tweep". 
 
-    ![image](/img/send-data/tweep)
+    ![image](/img/send-data/tweep.png)
 
 * **Telnet.** Telnet session to **collectors.sumologic.com 443** and you should see a result like this one:
 

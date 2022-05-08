@@ -196,7 +196,7 @@ If the error still persists in BlobTaskProducer function and failure rate \> 1% 
 
 1. Select the resource group in which you deployed the ARM template and select app service plan `(SUMOBRProducerPlan\<suffix\>)` in resource type
 
-    ![arm-template-suffix](/img/send-data/arm-template-suffix/png)
+    ![arm-template-suffix](/img/send-data/arm-template-suffix.png)
 
 1. Click on Manual scale and set min instance count to 2. You can also use auto scaling to save on costs.
 

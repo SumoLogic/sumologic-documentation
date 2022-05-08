@@ -66,7 +66,7 @@ To configure a Mimecast Source:
 
 1. Select **Mimecast**.
 
-   ![Mimecast ico.png](/img/send-data/Mimecast-ico.png)
+   ![Mimecast ico.png](/img/send-data/Mimecast-icon.png)
 
 1. Enter a **Name** for the Source. The description is optional.
 

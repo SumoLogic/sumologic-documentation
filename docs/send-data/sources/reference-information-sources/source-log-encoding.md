@@ -19,7 +19,7 @@ Local file sources support the following encoding:
  * UTF-32BE
  * UTF-32LE
 
-For more information, see [Local File Source](../installed-collectors/local-file-source.md).
+For more information, see [Local File Source](../sources-installed-collectors/local-file-source.md).
 
 ## Remote file sources
 

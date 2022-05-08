@@ -440,7 +440,7 @@ In addition to the [common parameters](/docs/send-data/sources/use-json-configur
 |--|--|--|--|--|--|
 | `sourceType` | String   | Yes |   | DockerLog |   |
 | `uri` | String   | Yes |   | URI of the Docker daemon. | modifiable |
-| `specifiedContainers` | List     | |   | Comma-separated list of Docker containers. Collection will be only from running containers.  If the list contains stopped containers, the source can start collecting from these containers if they are started later. For advanced container filtering options, see [More about defining container filters](../installed-collectors/docker-sources.md). | modifiable |
+| `specifiedContainers` | List     | |   | Comma-separated list of Docker containers. Collection will be only from running containers.  If the list contains stopped containers, the source can start collecting from these containers if they are started later. For advanced container filtering options, see [More about defining container filters](../sources-installed-collectors/docker-sources.md). | modifiable |
 | `allContainers` | Boolean  | Yes |   | Flag indicating whether the Source includes all running containers (`true`) or only the containers listed in `specifiedContainers` (`false`). | modifiable |
 | `certPath` | String   | `*` |   | Enter the path to the cert files on the local machine where the Collector is running. Required if the URI uses HTTPS. | modifiable |
 | `collectEvents` | Boolean  | Yes |   | Must be set to `true` to collect the Docker logs. |   |

@@ -14,8 +14,8 @@ Collecting AWS Metadata requires [Collector](/docs/send-data/sources/sources-in
 
 Tags are automatically applied to:
 
-* Metrics ingested by [host metric sources](../../installed-collectors/host-metrics-source.md) on Installed Collectors.
-* Graphite and Carbon 2.0 metrics ingested by [streaming metric sources](../../installed-collectors/streaming-metrics-source.md) on Installed Collectors.
+* Metrics ingested by [host metric sources](../../sources-installed-collectors/host-metrics-source.md) on Installed Collectors.
+* Graphite and Carbon 2.0 metrics ingested by [streaming metric sources](../../sources-installed-collectors/streaming-metrics-source.md) on Installed Collectors.
 
 You can also apply AWS tags to Graphite and Carbon 2.0 metrics ingested by an HTTP source. To enable tagging of metrics from an HTTP source, you must specify the `InstanceID` and `Region` tags in the header using `X-Sumo-Dimensions` or `X-Sumo-Metadata` as well as to the metric itself. For reference see [Supported HTTP Headers](../http-logs-metrics-source/upload-metrics-to-http-source.md).
 

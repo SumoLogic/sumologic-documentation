@@ -125,7 +125,7 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 
 | Parameter | Type | Required | Description | Access |
 |--|--|--|--|--|
-| config | JSON Object  | Yes | Contains the [configuration parameters](./Cybereason_Source.md "Cybereason Source") for the Source. |   |
+| config | JSON Object  | Yes | Contains the [configuration parameters](cybereason-source.md) for the Source. |   |
 | schemaRef | JSON Object  | Yes | Use `{"type":"Cybereason"}` for a Cybereason Source. | not modifiable |
 | sourceType | String | Yes | Use `Universal` for a Cybereason Source. | not modifiable |
 
