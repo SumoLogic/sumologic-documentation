@@ -19,7 +19,7 @@ A date String, in US-style date format if no format is specified. The date is in
 **Parameters:**
 
 * **date** - milliseconds (13 digits), as a Long. You can also use formatDate with the [Now](now.md) operator.
-* **format** - any valid date and time pattern String accepted by Java’s [SimpleDateFormat](https://docs.oracle.com/javase/7/docs/api/java/text/SimpleDateFormat.html). For more details about specifying the **format** see [Timestamps, Time  Zones, Time Ranges, and Date Formats] (../../../03Send-Data/Sources/04Reference-Information-for-Sources/Timestamps,-Time-Zones,-Time-Ranges,-and-Date-Formats.md).
+* **format** - any valid date and time pattern String accepted by Java’s [SimpleDateFormat](https://docs.oracle.com/javase/7/docs/api/java/text/SimpleDateFormat.html). For more details about specifying the **format** see [Timestamps, Time  Zones, Time Ranges, and Date Formats](../../../send-data/sources/reference-information-sources/time-reference.md).
 * **timeZone** - a String, such as "America/Los Angeles" or "Europe/London"
  
 :::important

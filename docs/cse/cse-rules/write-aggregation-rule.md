@@ -27,7 +27,7 @@ The table below summarizes the rule configuration. Each row corresponds to an el
 | **within** 5 minutes | Specifies the duration across which Records will be evaluated. |
 | Aggregation 1<br/>Name. `good`<br/>Function. `count`<br/>Expression. `http_response_statusCode <= 201` | Defines an aggregation named “good”, which counts the number of Records encountered during the within duration in which the `http_response_statusCode` value is less than or equal to 201, which indicates a request was successful. |
 | Aggregation 2<br/>Name. bad<br/> Function. count<br/>Expression. `http_response_statusCode` > 201 | Defines an aggregation named “bad”, which counts the number of Records encountered during the within duration in which the `http_response_statusCode` value is less greater than 201, which indicates a request failed. |
-| that match the following condition<BR/>`(bad/(good+bad))*100 > 75` | Specifies the condition for firing a Signal based on the results of the “good” and “bad” aggregation: more than 75% percent of requests failed during the within duration. |
+| that match the following condition<br/>`(bad/(good+bad))*100 > 75` | Specifies the condition for firing a Signal based on the results of the “good” and “bad” aggregation: more than 75% percent of requests failed during the within duration. |
 
 The screenshot below shows the **If Triggered** configuration for the example rule in the Rules Editor. 
 

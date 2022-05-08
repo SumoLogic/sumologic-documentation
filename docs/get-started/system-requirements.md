@@ -30,7 +30,7 @@ Sumo Logic tests the service on several browsers to ensure a consistent experie
 * Single core, 512MB RAM
 * 8GB disk space
 
-[Configure Limits for Collector Caching] (../../../03Send-Data/Collector-FAQs/Configure_Limits_for_Collector_Caching.md) to adjust the required disk space.
+[Configure Limits for Collector Caching](../send-data/collector-faqs/configure-limits-collector-caching.md) to adjust the required disk space.
 
 ### Memory guidelines
 
@@ -43,11 +43,11 @@ The total physical memory consumption of the Jave Virtual Machine (JVM) process�
 * Control structures for the Java heap 
 * Thread stacks
 
-The [memory settings] (../../../03Send-Data/Collector-FAQs/Increase-memory-in-a-Collector.md) for the Java virtual machine (Xms and Xmx) set the limits for the available heap for the user executable code within the JVM, and not necessarily for the overall memory footprint. The Xmx and Xms flags configure the class loader limits for the user's code. In this case, the Collector code that tails logs and other things is managed within the JVM.
+The [memory settings](../send-data/collector-faqs/increase-collector-memory.md) for the Java virtual machine (Xms and Xmx) set the limits for the available heap for the user executable code within the JVM, and not necessarily for the overall memory footprint. The Xmx and Xms flags configure the class loader limits for the user's code. In this case, the Collector code that tails logs and other things is managed within the JVM.
 
 Each Collector outputs logs in the `/InstallationDirectory/logs/` directory. The log file that provides the most information about memory issues is named `collector.log`. You can review the log for any memory errors.
 
-For information about increasing Collector memory and monitoring Collector logs, see [Increase Collector Memory] (../../../03Send-Data/Collector-FAQs/Increase-memory-in-a-Collector.md).
+For information about increasing Collector memory and monitoring Collector logs, see [Increase Collector Memory](../send-data/collector-faqs/increase-collector-memory.md).
 
 ### Network connection
 
@@ -55,7 +55,7 @@ Sumo Logic automatically redirects Installed Collectors to the correct collecti
 
 Sumo Logic has several deployments that are assigned depending on the geographic location and the date an account is created. See our table of [Sumo Logic Endpoints and Firewall Security] (../../../APIs/General-API-Information/Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security.md) for details.
 
-Also, see how to [Test Connectivity of Sumo Logic Collectors] (../../../03Send-Data/Installed-Collectors/05Reference-Information-for-Collector-Installation/01Test-Connectivity-for-Sumo-Logic-Collectors.md).
+Also, see how to [Test Connectivity of Sumo Logic Collectors](../send-data/installed-collectors/collector-installation-reference/test-connectivity-sumo-collectors.md).
 
 ### Virtual Memory
 

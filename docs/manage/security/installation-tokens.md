@@ -7,7 +7,7 @@ description: Use Installation Tokens to register Installed Collectors.
 
 # Installation Tokens
 
-Installation Tokens register [Installed Collectors] (/03Send-Data/Installed-Collectors/01About-Installed-Collectors) to your Sumo Logic account. They are assigned to your account, do not expire, and can only be used to register Installed Collectors. You can deactivate, reactivate, or delete tokens at any time.
+Installation Tokens register [Installed Collectors](/docs/send-data/installed-collectors) to your Sumo Logic account. They are assigned to your account, do not expire, and can only be used to register Installed Collectors. You can deactivate, reactivate, or delete tokens at any time.
 
 Opposed to [Access Keys](access-keys.md), you can embed your Installation Tokens in installation scripts confident they can't be used to make [API] (/APIs) requests if compromised. You can also freely deactivate or delete [users](/docs/manage/users-and-roles/users) without worrying about updating Access Keys in installation scripts since Installation Tokens are associated with your account instead of users.
 
@@ -68,7 +68,7 @@ Select **Delete Token** from the menu on the right of the row on the table or i
 
 ## Using Installation Tokens
 
-This section provides information on using Installation Tokens to register [Installed Collectors] (/03Send-Data/Installed-Collectors/01About-Installed-Collectors). For details on Collector installation, see [Install a Collector on Linux] (/03Send-Data/Installed-Collectors/04Install-a-Collector-on-Linux), [Install a Collector on MacOS] (/03Send-Data/Installed-Collectors/02Install-a-Collector-on-MacOS), and [Install a Collector on Windows] (/03Send-Data/Installed-Collectors/03Install-a-Collector-on-Windows).
+This section provides information on using Installation Tokens to register [Installed Collectors](../../send-data/installed-collectors/about-installed-collectors.md). For details on Collector installation, see [Install a Collector on Linux](../../send-data/installed-collectors/install-collector-linux.md), [Install a Collector on MacOS](../../send-data/installed-collectors/install-collector-macos.md), and [Install a Collector on Windows](../../send-data/installed-collectors/install-collector-windows.md).
 
 <Tabs
   className="unique-tabs"
@@ -83,7 +83,7 @@ This section provides information on using Installation Tokens to register [Ins
 
 ### Command line installer
 
-To register an Installed Collector with the [command line installer] (/03Send-Data/Installed-Collectors/05Reference-Information-for-Collector-Installation/06Parameters-for-the-Command-Line-Installer) you need to run the script with the following authentication parameter:
+To register an Installed Collector with the [command line installer](../../send-data/installed-collectors/collector-installation-reference/parameters-command-line-installer.md) you need to run the script with the following authentication parameter:
 
 `-Vsumo.token_and_url`
 
@@ -111,7 +111,7 @@ Click next and enter the **Token String** you want to use to register the Collec
 
 ### user.properties
 
-To register an Installed Collector with [user.properties] (/03Send-Data/Installed-Collectors/05Reference-Information-for-Collector-Installation/06user.properties) you need to use the authentication parameters `token` and `url`. To use these two parameters you'll need to manually base64 decode the **Token String**. For example, you can use the following Powershell commands to decode the base64 token:
+To register an Installed Collector with [user.properties](../../send-data/installed-collectors/collector-installation-reference/user-properties.md) you need to use the authentication parameters `token` and `url`. To use these two parameters you'll need to manually base64 decode the **Token String**. For example, you can use the following Powershell commands to decode the base64 token:
 
 <Tabs
   defaultValue="mac"

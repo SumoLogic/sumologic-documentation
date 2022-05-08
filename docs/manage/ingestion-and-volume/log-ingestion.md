@@ -60,7 +60,7 @@ To provide an example with a 10GB per day account, the average per minute rate
 
 In the case of Installed Collectors with a Local File Source and S3 Hosted Collectors, Sumo Logic instructs the Collector (Installed or Hosted) on the quota limit, and tells it to delay ingestion until the quota is available. As a result, users will be unable to search for current data when throttling is happening, since the rate of uploads may be slowed from local or S3 hosted collectors but there is no dropping of ingested data. Unfortunately, we do not have the same ability with the sending of data for HTTP sources and endpoints. Any HTTP sources will get a response to any post requests with a "429 - Too Many Requests" message. When this occurs, the sending client would then be responsible for retrying to send that data as quota becomes available.
 
-In the case of [Cloud Syslog Sources] (../../03Send-Data/Sources/02Sources-for-Hosted-Collectors/Cloud-Syslog-Source.md "Beta - Cloud Syslog Source"), similar to HTTP sources, incoming data will be dropped since the Cloud Syslog functions as a listener and cannot even return the 429 error.
+In the case of [Cloud Syslog Sources](/docs/send-data/sources/sources-hosted-collectors/cloud-syslog-source), similar to HTTP sources, incoming data will be dropped since the Cloud Syslog functions as a listener and cannot even return the 429 error.
 
 Throttling also prevents one Collector from uploading more data than others to the point where all data is being ingested from one Collector.
 

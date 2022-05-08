@@ -21,15 +21,15 @@ These topics provide basic information about your Sumo Logic account, and how to
 
 To send your data to Sumo Logic, you’ll need to learn how to configure Collectors and Sources.
 
-* [Metadata Naming Conventions] (../../../03Send-Data/Sources/04Reference-Information-for-Sources/Metadata-Naming-Conventions.md): Prior to configuring Collectors, it is a good idea to establish a naming convention for Sources, Collectors, and especially metadata tags.
-* [Compare Installed and Hosted Collectors] (../../../03Send-Data/01-Design-Your-Deployment/Compare-Installed-and-Hosted-Collectors.md):  Before you can send data to Sumo Logic, you'll need to decide what type of Collectors make sense for your use case: Installed Collectors or Hosted Collectors.
-* [Installed Collectors] (../../../03Send-Data/Installed-Collectors.md): Installed Collectors are deployed in your environment, either on a local machine, a machine in your organization, or even an Amazon Machine Image (AMI). Installed Collectors require a software download and installation. Upgrades to Collector software are released regularly by Sumo Logic.
-* [Hosted Collectors ] (../../../03Send-Data/Hosted-Collectors.md) Hosted Collectors don't require installation or activation, nor do Hosted Collectors have physical requirements, since they're hosted in AWS or HTTP.
-* [Sources] (../../../03Send-Data/Sources.md):  Sources are the environments that Sumo Logic Collectors connect to collect data from a customer's site. 
-* [Sources for Installed Collectors] (../../../03Send-Data/Sources/01Sources-for-Installed-Collectors.md):  Sources for Installed Collectors include Local and Remote File Sources, Local and Remote Windows Event Sources, Local and Remote Windows Performance Sources, Script Sources, Syslog Sources, and Script Actions. 
-* [Sources for Hosted Collectors] (../../../03Send-Data/Sources/02Sources-for-Hosted-Collectors.md): Sources for Hosted Collectors include HTTP Sources and AWS Source Types such as AWS CloudTrail, AWS Config, AWS ELB, Amazon CloudFront, Amazon S3 Audit, and Amazon S3.
-* [Timestamps, Time Zones, Time Ranges, and Date Formats] (../../../03Send-Data/Sources/04Reference-Information-for-Sources/Timestamps,-Time-Zones,-Time-Ranges,-and-Date-Formats.md):  Sumo Logic supports several options for timestamps, time zones, time ranges, and dates.
-* [Using JSON to Configure Sources] (../../../03Send-Data/Sources/03Use-JSON-to-Configure-Sources.md):  If you’d like to configure your Sources using JSON files, you can do that too.
+* [Metadata Naming Conventions](../send-data/sources/reference-information-sources/metadata-naming-conventions.md): Prior to configuring Collectors, it is a good idea to establish a naming convention for Sources, Collectors, and especially metadata tags.
+* [Compare Installed and Hosted Collectors](../send-data/design-deployment/compare-installed-and-hosted-collectors.md):  Before you can send data to Sumo Logic, you'll need to decide what type of Collectors make sense for your use case: Installed Collectors or Hosted Collectors.
+* [Installed Collectors](/docs/send-data/installed-collectors): Installed Collectors are deployed in your environment, either on a local machine, a machine in your organization, or even an Amazon Machine Image (AMI). Installed Collectors require a software download and installation. Upgrades to Collector software are released regularly by Sumo Logic.
+* [Hosted Collectors](../send-data/hosted-collectors.md) Hosted Collectors don't require installation or activation, nor do Hosted Collectors have physical requirements, since they're hosted in AWS or HTTP.
+* [Sources](/docs/send-data/sources):  Sources are the environments that Sumo Logic Collectors connect to collect data from a customer's site. 
+* [Sources for Installed Collectors](/docs/send-data/sources/sources-installed-collectors):  Sources for Installed Collectors include Local and Remote File Sources, Local and Remote Windows Event Sources, Local and Remote Windows Performance Sources, Script Sources, Syslog Sources, and Script Actions. 
+* [Sources for Hosted Collectors](/docs/send-data/sources/sources-hosted-collectors): Sources for Hosted Collectors include HTTP Sources and AWS Source Types such as AWS CloudTrail, AWS Config, AWS ELB, Amazon CloudFront, Amazon S3 Audit, and Amazon S3.
+* [Timestamps, Time Zones, Time Ranges, and Date Formats](../send-data/sources/reference-information-sources/time-reference.md):  Sumo Logic supports several options for timestamps, time zones, time ranges, and dates.
+* [Using JSON to Configure Sources](/docs/send-data/sources/use-json-configure-sources):  If you’d like to configure your Sources using JSON files, you can do that too.
 
 ## Managing collection and data volume
 

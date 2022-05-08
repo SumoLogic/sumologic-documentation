@@ -28,7 +28,7 @@ Changes to metadata are applied to messages going forward from this point in tim
         <budget name> (<field value>) (<allocated capacity>)
         ```
 
-1. Click **Advanced** to set a [CPU Usage Target] (06Set-the-Collector-CPU-Usage-Target.md), or to change the Collector management method you're using. You can switch to **Cloud Based Management** at any time by changing the setting here and saving, your JSON configuration will be ignored once changed to Cloud Based. To switch to **Local Configuration File** there are a few steps you'll need to do, see [Local Configuration File Management] (../../03Send-Data/Sources/03Use-JSON-to-Configure-Sources/Local-Configuration-File-Management.md) for details.   
+1. Click **Advanced** to set a [CPU Usage Target] (06Set-the-Collector-CPU-Usage-Target.md), or to change the Collector management method you're using. You can switch to **Cloud Based Management** at any time by changing the setting here and saving, your JSON configuration will be ignored once changed to Cloud Based. To switch to **Local Configuration File** there are a few steps you'll need to do, see [Local Configuration File Management](/docs/send-data/sources/use-json-configure-sources/local-configuration-file-management) for details.   
 
     ![Edit installed collector.png](/img/collector/edit-installed-collector.png)
 

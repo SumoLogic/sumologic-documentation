@@ -4,7 +4,7 @@ id: use-receipt-time
 
 # Use Receipt Time
 
-To search data based on the order that Collectors received the messages use **Receipt Time**. This option has the search reference the [metadata](../search-basics/built-in-metadata.md "Search Metadata") field `_receiptTime` instead of `_messageTime`, giving you the abilityto view the difference in the parsed[timestamp] (../../../03Send-Data/Sources/04Reference-Information-for-Sources/Timestamps,-Time-Zones,-Time-Ranges,-and-Date-Formats.md) (`_messageTime`) and receipt time (`_receiptTime`) to pinpoint Sources that may be parsing the message's timestamps incorrectly.
+To search data based on the order that Collectors received the messages use **Receipt Time**. This option has the search reference the [metadata](../search-basics/built-in-metadata.md "Search Metadata") field `_receiptTime` instead of `_messageTime`, giving you the abilityto view the difference in the parsed[timestamp](../../../send-data/sources/reference-information-sources/time-reference.md) (`_messageTime`) and receipt time (`_receiptTime`) to pinpoint Sources that may be parsing the message's timestamps incorrectly.
 
 ## Run a search by Receipt Time
 
@@ -23,8 +23,8 @@ To run a search by Receipt Time:
 ## Resolving timestamp/receipt time issues
 
 If you notice an issue between timestamps and receipt time values, you can double-check the Source’s settings. You can manually specify the
-parsing format for the Source, and test the format to make sure it is valid. See [troubleshooting large message time and receipt time discrepancies] (../../../03Send-Data/Collector-FAQs/Troubleshooting-time-discrepancies.md).
+parsing format for the Source, and test the format to make sure it is valid. See [troubleshooting large message time and receipt time discrepancies](../../../send-data/collector-faqs/troubleshooting-time-discrepancies.md).
 
-Alternately, if you’re noticing that timestamps are not parsing properly, check the timestamp conventions of your logs. Learn more in [Timestamps, Time Zones, Time Ranges, and Date Formats] (../../../03Send-Data/Sources/04Reference-Information-for-Sources/Timestamps,-Time-Zones,-Time-Ranges,-and-Date-Formats.md).
+Alternately, if you’re noticing that timestamps are not parsing properly, check the timestamp conventions of your logs. Learn more in [Timestamps, Time Zones, Time Ranges, and Date Formats](../../../send-data/sources/reference-information-sources/time-reference.md).
 
  

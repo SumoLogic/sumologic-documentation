@@ -142,7 +142,7 @@ Examples:
 Example: `_sourceCategory=hostmetrics _sourceHost=nxPTY | outlier`
 
 ## parse
-[parse] - Parses the given field to create new fields to use in the metrics query. If no field is specified while parsing [Graphite metrics] (/03Send-Data/Sources/01Sources-for-Installed-Collectors/Streaming-Metrics-Source), the metric name is used.
+[parse] - Parses the given field to create new fields to use in the metrics query. If no field is specified while parsing [Graphite metrics](../../../../static/img/send-data/streaming-metrics-source.png), the metric name is used.
 
 Each wildcard in the pattern corresponds to a specified field. The parse operator supports both lazy (shortest match) and greedy (longest match) wildcard matches. Use '*' for a lazy match, or '**' for a greedy match.
 

@@ -156,7 +156,7 @@ The response has the updated JSON and the Collector is now assigned to the inge
 
 ## user.properties
 
-When registering a new Collector you can specify the parameter `fields` in [user.properties] (../../../03Send-Data/Installed-Collectors/05Reference-Information-for-Collector-Installation/06user.properties.md "user.properties") to assign the Collector to an existing ingest budget.
+When registering a new Collector you can specify the parameter `fields` in [user.properties](../../../send-data/installed-collectors/collector-installation-reference/user-properties.md) to assign the Collector to an existing ingest budget.
 
 | Parameter | Description | Can be changed after installation? |
 |--|--|--|
@@ -164,8 +164,7 @@ When registering a new Collector you can specify the parameter `fields` in 
 
 ## Command line installation
 
-When using the [command line (shell script) installer] (../../../03Send-Data/Installed-Collectors/05Reference-Information-for-Collector-Installation/06Parameters-for-the-Command-Line-Installer.md "Parameters for the Command Line Installer") you can assign the Collector to an existing ingest budget with the `-Vfields` parameter. For details and example commands on Collector installation, see [Install a Collector on Linux] (../../../03Send-Data/Installed-Collectors/04Install-a-Collector-on-Linux.md "Install a Collector on Linux"), [Install
-a Collector on MacOS] (../../../03Send-Data/Installed-Collectors/02Install-a-Collector-on-MacOS.md "Install a Collector on MacOS"), and [Install a Collector on Windows] (../../../03Send-Data/Installed-Collectors/03Install-a-Collector-on-Windows.md "Install a Collector on Windows").
+When using the [command line (shell script) installer](../../../send-data/installed-collectors/collector-installation-reference/parameters-command-line-installer.md) you can assign the Collector to an existing ingest budget with the `-Vfields` parameter. For details and example commands on Collector installation, see [Install a Collector on Linux](../../../send-data/installed-collectors/install-collector-linux.md), [Install a Collector on MacOS](../../../send-data/installed-collectors/install-collector-macos.md), and [Install a Collector on Windows](../../../send-data/installed-collectors/install-collector-windows.md).
 
 | Parameter | Description |
 |--|--|
