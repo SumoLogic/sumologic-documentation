@@ -78,11 +78,11 @@ Collection \> Collection** page, or from the list below.
 
    * `-``q` starts the installer in quiet mode (no UI)  
    * `-VskipRegistration=true` to skip collector registration during installation  
-   * `-Vephemeral=true` to [set the Collector as ephemeral](set-collector-as-ephemeral.md) (will be removed after 12 hours offline)  
+   * `-Vephemeral=true` to set the Collector as ephemeral (will be removed after 12 hours offline)  
    * `-Vsumo.accessid\<access_i\>` to specify access id generated above  
    * `-Vsumo.accesskey\<access_ke\>` to specify access key generated above  
    * `-Vsources\<filepat\>` to specify the path to your source JSON file created above  
-   * (Optional) `-dir` to install into a non-standard installation directory. By default, Linux will install in     **/opt/SumoCollector**.
+   * (Optional) `-dir` to install into a non-standard installation directory. By default, Linux will install in **/opt/SumoCollector**.
 
     Example:
 
