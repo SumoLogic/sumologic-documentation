@@ -1,5 +1,5 @@
 ---
-slug: /docs/send-data/sources/sources-installed-collectors
+slug: /send-data/sources/sources-installed-collectors
 ---
 
 # Sources for Installed Collectors

@@ -53,7 +53,7 @@ You will also configure a Script Source later in this procedure.
 :::note
 If your VPC is large (several hundred nodes or more), we recommend using one of the following Hosted Collector options:
 
-1. [The Sumo Logic App for AWS Lambda.](/07Sumo-Logic-Apps/01Amazon_and_AWS/AWS_Lambda)
+1. [The Sumo Logic App for AWS Lambda.] (/07Sumo-Logic-Apps/01Amazon_and_AWS/AWS_Lambda)
 1. [The Sumo Logic App for Amazon VPC Flow Logs using Kinesis](collect-with-amazon-kinesis.md). 
 :::
 

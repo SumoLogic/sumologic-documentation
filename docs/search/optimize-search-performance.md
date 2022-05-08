@@ -31,7 +31,7 @@ With metadata tags assigned to your logs you can reference them in the [scope (k
 When data enters Sumo Logic, search optimization is done in the
 following order:
 
-1. Metadata is applied to your data as [Fields](../manage/fields.md). The order of precedence for field assignment from highest to lowest is. 
+1. Metadata is applied to your data as [Fields](/docs/manage/fields). The order of precedence for field assignment from highest to lowest is. 
 
     * Field Extraction Rule (FER)
     * Amazon EC2 resource tags

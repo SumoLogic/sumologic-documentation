@@ -1,10 +1,6 @@
 ## Reference parsed JSON fields
 
-The [field browser] 
-
-(/docs/search/get-started-with-search/search-page/field-browser) and search results [messages table] 
-
-(/docs/search/get-started-with-search/search-page) have a few helpful features. 
+The [field browser](/docs/search/get-started-with-search/search-page/field-browser) and search results [messages table](/docs/search/get-started-with-search/search-page) have a few helpful features. 
 
 Field Browser:
 

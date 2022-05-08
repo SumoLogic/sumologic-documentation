@@ -1,5 +1,5 @@
 ---
-id: collect-metrics-telegraf
+slug: /send-data/collect-from-other-data-sources/collect-metrics-telegraf
 ---
 
 # Collect Metrics Using Telegraf

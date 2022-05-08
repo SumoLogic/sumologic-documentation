@@ -121,7 +121,7 @@ To specify the network interface:
 1. Navigate to `collector/config/collector.properties`. Open the file in a text editor.
 1. Add `syslog.hostname=your_host_name` where `your_host_name` identifies the network interface you'd like to use.
 1. Save and close the file.
-1. [Restart](/Manage/Collection/02Start-or-Stop-a-Collector-using-Scripts) the Collector.
+1. [Restart](../../../manage/collection/start-stop-collector-using-scripts.md) the Collector.
 
 ## TLS Syslog Data
 

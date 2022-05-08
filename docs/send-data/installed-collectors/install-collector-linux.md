@@ -63,13 +63,13 @@ Run the installer on your server with root or Administrator privileges. If you a
 
 **Examples** 
 
-Using an [Installation Token](/Manage/Security/Installation_Tokens):
+Using an [Installation Token](../../manage/security/installation-tokens.md):
 
 ```bash
 sudo ./SumoCollector.sh -q -Vsumo.token_and_url=<installationToken> -Vsources=<absolute_filepath>
 ```
 
-Using [access ID and access key](/Manage/Security/Access-Keys):
+Using [access ID and access key](../../manage/security/access-keys.md):
 
 ```bash
 sudo ./SumoCollector.sh -q -Vsumo.accessid=<accessId> -Vsumo.accesskey=<accessKey> -Vsources=<absolute_filepath>

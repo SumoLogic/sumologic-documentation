@@ -90,7 +90,7 @@ net_conntrack_dialer_conn_failed_total{dialer_name="default",reason="unknown"} 3
 The table below lists parameter you can specify in HTTP headers when sending data to an HTTP Source. The settings will apply to all messages in the request. For Source Name, Host, and Category, the header value will override any default value already specified for the Source and/or Collector.
 
 :::note
-Overridden metadata field values are not returned with [Search Autocomplete](https://help.sumologic.com/05Search/Get-Started-with-Search/Search-Basics/Search-Autocomplete).
+Overridden metadata field values are not returned with [Search Autocomplete](../../../../search/get-started-with-search/search-basics/search-autocomplete.md).
 :::
 
 | Setting | Header Name | Header Value |

@@ -4,7 +4,7 @@ id: troubleshoot-script-source-issues
 
 # Troubleshoot Script Source Issues
 
-This document covers common issues with Script Sources not ingesting log data. If you're having an issue creating a Script Source see the [preparation and configuration steps](/docs/send-data/sources/script-source) for guidance.
+This document covers common issues with Script Sources not ingesting log data. If you're having an issue creating a Script Source see the [preparation and configuration steps](/docs/send-data/sources/sources-installed-collectors/script-source) for guidance.
 
 To check the status of a Script Source, you can look at the **Manage Data \> Collection** tab of Sumo Logic. If you need more information about the reason a Script Source isn't generating log data, you can look at the Collector's logs to help identify what needs to change.
 

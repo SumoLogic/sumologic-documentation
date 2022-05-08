@@ -76,7 +76,7 @@ The Audit Event Index provides event logs in JSON on activities from your accou
 
 ### Major version upgrade
 
-This query parses the versions from update events and only returns ones that changed. To check a specific Source, replace `<Name of Source>` with a Source name and remove the [comment syntax](/05Search/Get-Started-with-Search/Search-Basics/Comments-in-Search-Queries) `//` from the scope of the query.
+This query parses the versions from update events and only returns ones that changed. To check a specific Source, replace `<Name of Source>` with a Source name and remove the [comment syntax](../../../../search/get-started-with-search/search-basics/comments-search-queries.md) `//` from the scope of the query.
 
 ```sql
 _index=sumologic_audit_events _sourceCategory=collection _sourceName=SourceUpdated //"<Name of Source>"
@@ -166,7 +166,7 @@ Returns the following
 
 ### Minor version upgrade
 
-This query parses the versions and states from update events and only returns ones that have a value of `upgrading` as the `from state`. Minor upgrade events show a state change from `upgrading` to `pending`. The version changes are not tracked in one event log so the to and from versions will be the same. To check a specific Source, replace `<Name of Source>` with a Source name and remove the [comment syntax](/05Search/Get-Started-with-Search/Search-Basics/Comments-in-Search-Queries) `//` from the scope of the query.
+This query parses the versions and states from update events and only returns ones that have a value of `upgrading` as the `from state`. Minor upgrade events show a state change from `upgrading` to `pending`. The version changes are not tracked in one event log so the to and from versions will be the same. To check a specific Source, replace `<Name of Source>` with a Source name and remove the [comment syntax](../../../../search/get-started-with-search/search-basics/comments-search-queries.md) `//` from the scope of the query.
 
 ```sql
 _index=sumologic_audit_events _sourceName=SourceUpdated //"<Name of Source>"
