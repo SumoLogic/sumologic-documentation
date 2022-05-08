@@ -114,7 +114,7 @@ You can update the configuration of an Installed Collector using the Collector M
 
 You can set up as many as 1,000 Sources on a given Collector. A Source should be configured to collect similar data types. For example, you might set up three Local File Sources to collect router activity logs from three locations, and another Local File Source to collect logs from a web application.
 
-Each Source is tagged with its own metadata, as described in [Metadata Naming Conventions](../reference-information-sources/metadata-naming-conventions.md). The more Sources you set up, the easier it is to isolate one of the Sources in a search since each Source can be identified by its metadata.
+Each Source is tagged with its own metadata, as described in [Metadata Naming Conventions](../sources/reference-information-sources/metadata-naming-conventions.md). The more Sources you set up, the easier it is to isolate one of the Sources in a search since each Source can be identified by its metadata.
 
 When you configure Sources that read from log files, you specify a path expression that defines what files to scan. You can optionally configure a denylist of files to exclude from collection.  
 

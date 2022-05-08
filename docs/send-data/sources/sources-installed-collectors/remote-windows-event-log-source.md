@@ -15,7 +15,7 @@ The following about setting up a Remote Windows Event Log Source:
 
 To configure a remote Windows Event Log Source:
 
-1. Complete the [prerequisites](remote-windows-event-log-source.md) for collecting remote events.
+1. Complete the prerequisites for collecting remote events.
 1. In Sumo Logic select **Manage Data \> Collection \> Collection**.
 1. Find the name of the installed collector to which you'd like to add a source. Click **Add** and then choose** Add Source** from the pop-up menu.
 
@@ -35,7 +35,7 @@ To configure a remote Windows Event Log Source:
 
    * **Name.** Type the name you'd like to display for this source in the Sumo Logic Web Application. 
    * **Description.** Optional description.
-   * **Windows host(s).** Enter one or more hostnames for the Windows machines from which you want to collect Windows Events. If you'd like to collect from more than one remote host, separate the hostnames with a comma. (If you enter more than one hostname, each host must allow event log access from the same domain user. See the [prerequisites](preconfigure-machine-collect-remote-windows-events.md) for more information.) The hostname can be a maximum of 128 characters. The hostname values are parsed and applied to your event logs as \_sourceHost [metadata](remote-windows-event-log-source.md) automatically. The value is parsed from the field `Computer` in your event logs.
+   * **Windows host(s).** Enter one or more hostnames for the Windows machines from which you want to collect Windows Events. If you'd like to collect from more than one remote host, separate the hostnames with a comma. (If you enter more than one hostname, each host must allow event log access from the same domain user. See the [prerequisites](preconfigure-machine-collect-remote-windows-events.md) for more information.) The hostname can be a maximum of 128 characters. The hostname values are parsed and applied to your event logs as \_sourceHost metadata automatically. The value is parsed from the field `Computer` in your event logs.
    * **Source Category.** Enter a string to tag the logs collected from this Source with searchable metadata. For example, typing **web_apps** tags all the logs from this Source in the sourceCategory field. For more information, see [Metadata Naming Conventions](../reference-information-sources/metadata-naming-conventions.md) and our [Best Practices: Good and Bad Source Categories](../../design-deployment/best-practices-source-categories.md). You can define a Source Category value using system environment variables, see [Configuring sourceCategory using variables](#configuring-sourcecategory-using-variables) below.
    * **Fields.** Click the **+Add Field** link to define the fields you want to associate, each field needs a name (key) and value.
 
