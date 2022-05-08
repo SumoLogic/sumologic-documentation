@@ -12,7 +12,7 @@ This topic describes how to set up a host metrics Source, and lists the metrics 
 Host Metrics are available on Collector versions 19.155 and later.
 :::
 
-You'll need an installed Collector to set up a host metrics Source. See [Installed Collectors](/docs/send-data/sources/installed-collectors) for instructions on installing Collectors. After your Collector and Sources are installed, you can install the Host Metrics App with preconfigured searches and Dashboards, to analyze your metrics data.
+You'll need an installed Collector to set up a host metrics Source. See [Installed Collectors](/docs/send-data/sources/sources-installed-collectors) for instructions on installing Collectors. After your Collector and Sources are installed, you can install the Host Metrics App with preconfigured searches and Dashboards, to analyze your metrics data.
 
 ## Permission Requirements
 

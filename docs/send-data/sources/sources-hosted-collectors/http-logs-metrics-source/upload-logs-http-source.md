@@ -7,7 +7,7 @@ id: upload-logs-http-source
 After you have added an [HTTP Logs and Metrics Source](/docs/send-data/sources/sources-hosted-collectors/http-logs-metrics-source) to a [Hosted Collector](../../../configure-hosted-collector.md) you can begin uploading data. You can upload both logs and metrics to the same HTTP source, however not in the same HTTP request. This document provides instructions on uploading logs, if you are uploading metrics see [Upload Metrics to an HTTP Source](upload-metrics-to-http-source.md).
 
 :::tip
-To immediately validate the reception of log data use Live Tail. Data sent to an HTTP source may take some time to show up in Search due to indexing delay. If your source does not seem to be receiving data, see [Troubleshooting HTTP Sources](Troubleshooting-HTTP-Sources.md "Troubleshooting HTTP Sources").
+To immediately validate the reception of log data use Live Tail. Data sent to an HTTP source may take some time to show up in Search due to indexing delay. If your source does not seem to be receiving data, see [Troubleshooting HTTP Sources](troubleshooting-http-sources.md).
 :::
 
 ## Upload log data
@@ -21,7 +21,7 @@ Data needs to be in UTF-8 encoding.
 To upload log data with a POST request, include the complete data payload as the request body. Any query parameters will be ignored.
 
 :::important
-We recommend that the POST data payload have a size, before compression, of 100KB to 1MB. See [data payload considerations](Upload-Data-to-an-HTTP-Source/...md "HTTP Logs and Metrics Source") for details.
+We recommend that the POST data payload have a size, before compression, of 100KB to 1MB. See [data payload considerations](upload-logs-http-source.md)  for details.
 :::
 
 * Data payload: 
@@ -63,15 +63,15 @@ Overridden metadata field values are not returned with [Search Autocomplete](htt
 ## Command Line Examples
 
 :::note
-Data is ingested according to the configured [processing rules](/Manage/Collection/Processing-Rules). Messages blocked by filters will not be ingested.
+Data is ingested according to the configured [processing rules](/docs/manage/collection/processing-rules). Messages blocked by filters will not be ingested.
 :::
 
 ### cURL
 
 When using cURL to POST data from a file: 
 
- * Make sure to use the -T parameter to specify the file path, not -d.   The -d parameter causes new lines to be removed from the content, which will interfere with message boundary detection.
- * Make sure that each line in the file follows the format specified by the Content-Type header for the HTTP request.
+* Make sure to use the -T parameter to specify the file path, not -d.   The -d parameter causes new lines to be removed from the content, which will interfere with message boundary detection.
+* Make sure that each line in the file follows the format specified by the Content-Type header for the HTTP request.
 
 **POST upload**
 

@@ -12,7 +12,7 @@ Logs and metrics for most Azure services can be exported to Azure Storage Accoun
 This solution is not for existing blobs but newly created blobs only. 
 :::
 
-For step-by-step instructions for configuring the Azure-Sumo pipeline, see [Collect Logs from Azure Blob Storage](Azure_Blob_Storage/Collect_Logs_from_Azure_Blob_Storage.md "Collect Logs from Azure Blob Storage").
+For step-by-step instructions for configuring the Azure-Sumo pipeline, see [Collect Logs from Azure Blob Storage](collect-logs-azure-blob-storage.md).
 
 ## Azure information resources
 
@@ -78,4 +78,4 @@ It is assumed that:
   * If the file is .log, log lines are sent to Sumo as is.  
 :::
 
-For instructions, see [Collect Logs from Azure Blob Storage](Azure_Blob_Storage/Collect_Logs_from_Azure_Blob_Storage.md "Collect Logs from Azure Blob Storage").
+For instructions, see [Collect Logs from Azure Blob Storage](collect-logs-azure-blob-storage.md).

@@ -15,7 +15,7 @@ After data forwarding is configured, you should start to see file objects poste
 ## Prerequisites
 
 * An administrator role on the Partition where you want to set up forwarding.
-* Follow the instructions on [Grant Access to an AWS Product] (../../03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/Grant-Access-to-an-AWS-Product.md) to grant Sumo permission to send data to the destination S3 bucket.
+* Follow the instructions on [Grant Access to an AWS Product](../../send-data/sources/sources-hosted-collectors/amazon-web-services/grant-access-aws-product.md) to grant Sumo permission to send data to the destination S3 bucket.
 * A Partition or Scheduled View to push to AWS S3.
 
 ## Forwarding interval 
@@ -47,7 +47,7 @@ For information on the file format of the posted objects, see [File Format for 
     :::
 
    * **Description**. You can provide a meaningful description of the connection.
-   * **Access Method**. Select **Role-based access** or **Key access** based on the AWS authentication you are providing. Role-based access is preferred, this was completed in the prerequisite step [Grant Sumo Logic access to an AWS Product] (../../03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/Grant-Access-to-an-AWS-Product.md). 
+   * **Access Method**. Select **Role-based access** or **Key access** based on the AWS authentication you are providing. Role-based access is preferred, this was completed in the prerequisite step [Grant Sumo Logic access to an AWS Product](../../send-data/sources/sources-hosted-collectors/amazon-web-services/grant-access-aws-product.md). 
    
      * For **Role-based access** enter the Role ARN that was provided by AWS after creating the role.         
     

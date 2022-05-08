@@ -23,7 +23,7 @@ To configure a Local Windows Performance Monitor Log Source:
 
    * **Name.** Type the name to display for the new Source. **Description** is optional.
    * **Frequency.** Depending on your Windows system and its needs, select a frequency to run the selected queries. If your Windows system is relatively stable, a frequency of 15m should be appropriate. (Selecting a frequency of 1m could flood your system with logs and create an undesirable outcome.)
-   * **Source Category.** Enter a string used to tag the logs collected from this Source with searchable metadata. For example, typing **web_apps** tags all the logs from this Source in the sourceCategory field, so running a search on **\_sourceCategory=web_apps** would return logs from this Source. For more information, see [Metadata Naming Conventions](./Local-Windows-Performance-Monitor-Log-Source.md "Send_Data/Sources/Local_Windows_Performance_Monitor_Log_Source") and our [Best Practices: Good Source Category, Bad Source     Category](../../design-deployment/best-practices-source-categories.md). You can define a Source Category value using system environment variables, see [Configuring sourceCategory using variables](./Local-Windows-Performance-Monitor-Log-Source.md "Local Windows Performance Monitor Log Source") below. 
+   * **Source Category.** Enter a string used to tag the logs collected from this Source with searchable metadata. For example, typing **web_apps** tags all the logs from this Source in the sourceCategory field, so running a search on **\_sourceCategory=web_apps** would return logs from this Source. For more information, see [Metadata Naming Conventions](../reference-information-sources/metadata-naming-conventions.md) and our [Best Practices: Good Source Category, Bad Source     Category](../../design-deployment/best-practices-source-categories.md). You can define a Source Category value using system environment variables, see [Configuring sourceCategory using variables](local-windows-performance-monitor-log-source.md) below. 
    * **Fields.** Click the **+Add Field** link to define the fields you want to associate, each field needs a name (key) and value.
 
       * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema. 
@@ -34,7 +34,7 @@ To configure a Local Windows Performance Monitor Log Source:
     ![windows performance source.png](/img/send-data/windows-performance-source.png)
 
       * Click the query's check box to select it.
-      * To add a custom query, click **Add Query**, enter a name and the     query. Then click **Add**.
+      * To add a custom query, click **Add Query**, enter a name and the query. Then click **Add**.
 1. When you are finished configuring the Source, click **Save**.
 
 You can return to this dialog and edit the settings for the Source at

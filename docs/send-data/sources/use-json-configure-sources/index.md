@@ -200,7 +200,7 @@ You can include processing (filtering) rules when using JSON to configure source
 
  * Exclude—Removes messages before ingestion to Sumo Logic. Think of Exclude as a "denylist" filter. For more information, see [Include and Exclude Rules](../../../manage/collection/processing-rules/include-and-exclude-rules.md).
  * Include—Sends only the data you explicitly define to Sumo Logic. Think of Include as an "allowlist" filter. For more information, see [Include and Exclude Rules](../../../manage/collection/processing-rules/include-and-exclude-rules.md).
- * Hash—Replaces a message with a unique, randomly-generated code to protect sensitive or proprietary information, such as credit card numbers or user names. By hashing this type of data you can still track it, even though it's fully hidden. For more information, see [Hash Rules](https://help.sumologic.com/Manage/Collection/Processing-Rules/Hash-Rules).
+ * Hash—Replaces a message with a unique, randomly-generated code to protect sensitive or proprietary information, such as credit card numbers or user names. By hashing this type of data you can still track it, even though it's fully hidden. For more information, see [Hash Rules](../../../manage/collection/processing-rules/hash-rules.md).
  * Mask—Replaces an expression with a mask string that you can customize; especially useful for protecting passwords or other data you wouldn't normally track. For more information, see [Mask Rules].
  * Forward—Sends matching log messages to a data forwarding destination. For more information, see [Example: data forwarding rule](#example-data-forwarding-rule) below.
 
@@ -333,7 +333,7 @@ To determine the sinkId for a data forwarding destination, you use the Sumo web 
 
 These instruction assume you have already created a data forwarding destination.
 
-1. Follow the instructions in [Configure processing rules for data forwarding](https://help.sumologic.com/Manage/Data-Forwarding/Configure-Data-Forwarding-for-Installed-Collectors#Configure_processing_rules_for_data_forwarding) to add a data forwarding rule to a source on an installed collector. As part of this process, you will select the data forwarding destination to which you want to forward data.
+1. Follow the instructions in [Configure processing rules for data forwarding](../../../manage/data-forwarding/data-forwarding-installed-collectors.md#configure-processing-rules-for-data-forwarding) to add a data forwarding rule to a source on an installed collector. As part of this process, you will select the data forwarding destination to which you want to forward data.
 1. To view the JSON configuration for the source you updated in the previous step: 
 
    1. Select **Manage Data \> Collection \> Collection**. 

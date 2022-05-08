@@ -130,5 +130,5 @@ To deploy the scripts:
     :::
 
 1. Under **Advanced**, make sure the option **Extract timestamp information from log entries** is activated.
-1. Make any other configurations necessary, as detailed in [Configure a Script Source](/docs/send-data/sources/installed-collectors/script-source).
+1. Make any other configurations necessary, as detailed in [Configure a Script Source](/docs/send-data/sources/sources-installed-collectors/script-source).
 1. Click **Save**.

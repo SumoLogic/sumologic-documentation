@@ -18,7 +18,7 @@ Use the **Collection** page to manage all of your Collectors and Sources. To ac
 * View the [health of Collectors and Sources](../health-events.md)
 * [Upgrade Sources](../../send-data/sources/sources-hosted-collectors/cloud-to-cloud-integration-framework/cloud-to-cloud-source-versions.md) from the [Cloud-to-Cloud Integration Framework](/docs/send-data/sources/sources-hosted-collectors/cloud-to-cloud-integration-framework))
 * [Upgrade Collectors](upgrade-collectors.md)
-* Add an [Installed Collector](/docs/send-data/sources/installed-collectors) or a [Hosted Collector](../../send-data/hosted-collectors.md)
+* Add an [Installed Collector](/docs/send-data/sources/sources-installed-collectors) or a [Hosted Collector](../../send-data/hosted-collectors.md)
 * Use the **Show** options to filter the list
 * Use the **Expand** options to show or hide information about the Sources
 * Use the paging controls to navigate the list of Collectors

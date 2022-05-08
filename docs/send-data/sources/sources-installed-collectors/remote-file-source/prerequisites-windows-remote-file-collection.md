@@ -15,17 +15,15 @@ As an alternative to using SSH for remote Windows collections, Sumo Logic Collec
 
 Here is an overview of the required steps:
 
-* [Install a Collector on Windows](../../../Installed-Collectors/03Install-a-Collector-on-Windows.md "Install a Collector on Windows").
+* [Install a Collector on Windows](../../../installed-collectors/install-collector-windows.md).
 * On the machine where the files reside (the target or remote machine), use Windows Advanced Sharing options to create a UNC share for the log directory.
-* [Set up a Local File Source](../Local-File-Source.md "https://sumologic-prod.mindtouch.us/Send_Data/Sources/Sources_for_Installed_Collectors/Configure_a_Local_File_Source").
+* [Set up a Local File Source](../local-file-source.md).
 
 The Collector must reside within the same Active Directory domain as the target host, and the target host must allow access without requiring a password.
 
 ## Step 1. Install a Sumo Logic Collector.
 
-[Install a Collector on
-Windows](../../../Installed-Collectors/03Install-a-Collector-on-Windows.md "Install a Collector on Windows") on a
-machine within the same Active Directory domain as the target system
+[Install a Collector on Windows](../../../installed-collectors/install-collector-windows.md) on a machine within the same Active Directory domain as the target system
 where files reside.
 
 ## Step 2. Set UNC share permissions.
@@ -49,7 +47,7 @@ where files reside.
     ![img](/img/send-data/Win-UNC-path.png)
 
 1. Verify that you have set up the share correctly. Open Explorer on the machine where the Collector is installed. Type in the UNC share path. If you can see the log files listed, you can collect them. If Explorer asks you to enter a password, then you have not set up permissions correctly. Make sure that permissions for the folder are set to "Everyone" and "Read-Only."
-1. From the Sumo Logic Web Application, [create a new Local File Source](../Local-File-Source.md).
+1. From the Sumo Logic Web Application, [create a new Local File Source](../local-file-source.md).
 1. Enter the file path to the UNC share. For this example, the UNC path looks like this:  **\\\\WIN-QR0406514NE\\LogFiles**
 
     In general, a UNC path has this format: **\\\\server\\share\\file_path**.
@@ -75,7 +73,7 @@ To install OpenSSH and Cygwin:
     tail -f –n+1 /cygdrive/c/mandy\ test/6.log
     ```
 
-When you [configure the Remote File Source](Prerequisites-for-Windows-Remote-File-Collection/...md "https://sumologic-prod.mindtouch.us/Send_Data/Sources/Sources_for_Installed_Collectors/Configure_a_Remote_File_Source") to
+When you [configure the Remote File Source](prerequisites-windows-remote-file-collection.md) to
 collect from the Windows machine, make sure to:
 
 1. Specify the host as the Windows system.

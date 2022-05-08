@@ -7,7 +7,7 @@ id: amazon-cloudwatch-source-metrics
 A Sumo Logic CloudWatch Source allows you to gather metrics data from an Amazon resource. 
 
 :::tip
-Sumo Logic recommends you use the newer AWS Kinesis Firehose for Metrics Source to collect CloudWatch metrics. For more information, see [Which to use: Kinesis Firehose source or CloudWatch source?](AWS_Kinesis_Firehose_for_Metrics_Source.md "AWS Kinesis Firehose for Metrics Source")
+Sumo Logic recommends you use the newer AWS Kinesis Firehose for Metrics Source to collect CloudWatch metrics. For more information, see [Which to use: Kinesis Firehose source or CloudWatch source?](aws-kinesis-firehose-metrics-source.md).
 :::
 
 ## Supported AWS metrics
@@ -17,7 +17,7 @@ A Sumo CloudWatch Source only supports CloudWatch metrics that are emitted at a 
 Sumo does support S3 Request Metrics. Since S3 does not publish the request metrics by default, you must enable them if you want to collect them. For more information, see [Monitoring Metrics with Amazon CloudWatch](http://docs.aws.amazon.com/AmazonS3/latest/dev/cloudwatch-monitoring.html) in AWS help.
 
 :::tip
-EC2 metrics have high latency and can increase the costs of your AWS account. For EC2 metrics, consider [Installing a Collector with a Host Metrics Source](../../01Sources-for-Installed-Collectors/Host-Metrics-Source.md "Host Metrics Source"). The advantage is near zero latency and more information at a lower overall cost.
+EC2 metrics have high latency and can increase the costs of your AWS account. For EC2 metrics, consider [Installing a Collector with a Host Metrics Source](../../installed-collectors/host-metrics-source.md). The advantage is near zero latency and more information at a lower overall cost.
 :::
 
 ## About AWS tag filtering
@@ -89,7 +89,7 @@ AWS tag filtering is supported for the following AWS namespaces.
 
 ## Set up an Amazon CloudWatch source
 
-1. Before you begin, grant permission for Sumo Logic to list available metrics and get metric data points. See [Grant Access to an AWS Product](Grant-Access-to-an-AWS-Product.md "Grant Access to an AWS S3 Bucket") for details.
+1. Before you begin, grant permission for Sumo Logic to list available metrics and get metric data points. See [Grant Access to an AWS Product](grant-access-aws-product.md) for details.
 1. In Sumo Logic select **Manage Data \> Collection \> Collection**. 
 1. Click **Add Source** next to a Hosted Collector.
 1. Select **AWS CloudWatch Metrics**. 
@@ -105,7 +105,7 @@ AWS tag filtering is supported for the following AWS namespaces.
    If you change the namespace selection, there may be a delay of as much as 15 minutes before the change is reflected in the available options for metrics queries.
    :::
 
-1. **AWS Tag Filters**. This setting is visible only if you selected one or more of the namespaces listed in [About AWS tag filtering](./Amazon-CloudWatch-Source-for-Metrics.md "Amazon CloudWatch Source for Metrics").
+1. **AWS Tag Filters**. This setting is visible only if you selected one or more of the namespaces listed in [About AWS tag filtering](#about-aws-tag-filtering).
 
    ![aws-tag-filters.png](/img/send-data/aws-tag-filters.png)
    
@@ -121,12 +121,12 @@ AWS tag filtering is supported for the following AWS namespaces.
 
 1. **Custom Namespaces.** Enter a comma-separated list of any custom namespaces from which you want to collect custom metrics. For more information about custom metrics, see http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html.
 1. **Source Category.** Enter any string to tag the output collected from this Source. (Category metadata is stored in a searchable field called **\_sourceCategory**.)
-1. For **AWS** **Access** you have two **Access Method** options. Select **Role-based access** or **Key access** based on the AWS authentication you are providing. Role-based access is preferred, this was completed in step 1, [Grant Sumo Logic access to an AWS Product](Grant-Access-to-an-AWS-Product.md "Grant Access to an AWS Product").
+1. For **AWS** **Access** you have two **Access Method** options. Select **Role-based access** or **Key access** based on the AWS authentication you are providing. Role-based access is preferred, this was completed in step 1, [Grant Sumo Logic access to an AWS Product](grant-access-aws-product.md).
 
    * For **Role-based access** enterthe Role ARN that was provided by AWS after creating the role.
-   * For **Key access** enter the **Access Key ID** and **Secret Access Key.** See [AWS Access Key ID](http://docs.aws.amazon.com/STS/latest/UsingSTS/UsingTokens.html#RequestWithSTS) and [AWS Secret Access Key](https://aws.amazon.com/iam/ "https://aws.amazon.com/iam/") for details in AWS's documentation.
+   * For **Key access** enter the **Access Key ID** and **Secret Access Key.** See [AWS Access Key ID](http://docs.aws.amazon.com/STS/latest/UsingSTS/UsingTokens.html#RequestWithSTS) and [AWS Secret Access Key](https://aws.amazon.com/iam/) for details in AWS's documentation.
 
-1. **Scan Interval**. Use the default of 5 minutes, or change this value to indicate how frequently Sumo Logic should poll the CloudWatch API. To learn more about polling interval considerations, see [AWS CloudWatch Scan Interval](./Amazon-CloudWatch-Source-for-Metrics.md "Amazon CloudWatch Source for Metrics") below.
+1. **Scan Interval**. Use the default of 5 minutes, or change this value to indicate how frequently Sumo Logic should poll the CloudWatch API. To learn more about polling interval considerations, see [AWS CloudWatch Scan Interval](#aws-cloudwatch-scan-interval) below.
 1. **Total Metrics.** This field displays the total number of metrics (unique metric time series) that will be collected if the Source is created with the current configuration. If all of your CloudWatch metrics are published at a 1 minute interval, then "Total Metrics" will also be the total number of 'data points per minute' that are generated by this source. However, if your CloudWatch metrics are published every 5 minutes, then you would divide this number by 5 to get the number of 'data points per minute' that would be generated by this source. The field automatically refreshes the count when there are changes to the following fields: Regions, Namespaces, or AWS credentials.
 1. Click **Save**.
 

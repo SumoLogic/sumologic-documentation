@@ -4,7 +4,7 @@ id: install-collector-linux
 
 # Install a Collector on Linux
 
-Follow the steps in this topic to install or uninstall a collector on Linux. See [Installed Collectors](04Install-a-Collector-on-Linux/...md "Installed Collectors") for information on other OSs.
+Follow the steps in this topic to install or uninstall a collector on Linux. See [Installed Collectors](/docs/send-data/sources/sources-installed-collectors) for information on other OSs.
 
 ## System Requirements 
 
@@ -18,7 +18,7 @@ Follow the steps in this topic to install or uninstall a collector on Linux. S
 Download the collector in either of the following ways:
 
 * In Sumo Logic select **Manage Data \> Collection \> Collection**. Click **Add Collector**, click **Installed Collector,** and then click the link for the collector to begin the download.
-* Open a browser and enter the static URL for your pod. See [Download a Collector from a Static URL](05Reference-Information-for-Collector-Installation/02Download-a-Collector-from-a-Static-URL.md "Download a Collector from a Static URL") for a list of URLs for your deployment pod. The download begins immediately.
+* Open a browser and enter the static URL for your pod. See [Download a Collector from a Static URL](collector-installation-reference/download-collector-from-static-url.md) for a list of URLs for your deployment pod. The download begins immediately.
 
 ## Install a collector on Linux
 

@@ -4,12 +4,9 @@ id: collect-custom-jmx-metrics-jolokia
 
 # Collect Custom JMX Metrics with Jolokia
 
-This topic has information about collecting custom JMX metrics using the
-Jolokia agent and Telegraf.  
+This topic has information about collecting custom JMX metrics using the Jolokia agent and Telegraf.  
 
-For more information about Telegraf input plugins, see [Configure
-Telegraf Input
-Plugins](05_Configure_Telegraf_Input_Plugins.md "Configure Telegraf Input Plugins").
+For more information about Telegraf input plugins, see [Configure Telegraf Input Plugins](configure-telegraf-input-plugins.md).
 
 ## List mbeans
 

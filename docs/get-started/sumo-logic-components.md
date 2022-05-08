@@ -10,9 +10,9 @@ A Collector is a small application that gathers log data from your servers and s
 
 ## Sumo Logic Collectors and Sources
 
-Sumo Logic [Installed Collectors](/docs/send-data/sources/installed-collectors) receive data from one or more [Sources](/docs/send-data/sources).
+Sumo Logic [Installed Collectors](/docs/send-data/sources/sources-installed-collectors) receive data from one or more [Sources](/docs/send-data/sources).
 
-Collectors collect raw log data, compress it, encrypt it, and send it to the Sumo Cloud, in real time. A single Sumo Logic Collector can collect up to 15,000 events per second or more and has fault tolerance during network or service outages. If you'd like to collect non-traditional machine data, a [Script Source](/docs/send-data/sources/installed-collectors/script-source) or [Script Action](../send-data/sources/installed-collectors/script-action.md) provide a great deal of flexibility to collect files.
+Collectors collect raw log data, compress it, encrypt it, and send it to the Sumo Cloud, in real time. A single Sumo Logic Collector can collect up to 15,000 events per second or more and has fault tolerance during network or service outages. If you'd like to collect non-traditional machine data, a [Script Source](/docs/send-data/sources/sources-installed-collectors/script-source) or [Script Action](../send-data/sources/sources-installed-collectors/script-action.md) provide a great deal of flexibility to collect files.
 
 For system requirement details, see [Installed Collector Requirements](system-requirements.md).
 

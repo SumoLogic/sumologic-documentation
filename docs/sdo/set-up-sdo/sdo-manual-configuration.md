@@ -112,9 +112,9 @@ If you are using CircleCI for Build and Deploy, do the following:
 
 1. Access the Sumo Logic Platform and navigate to **Manage Data** \> **Collection** page.
 
-1. [Configure a hosted collector] (../../../03Send-Data/Hosted-Collectors.md "Hosted Collectors") to ingest CircleCI data into Sumo and call it ‘*Software Development Optimization*’.
+1. [Configure a hosted collector](../../send-data/hosted-collectors.md) to ingest CircleCI data into Sumo and call it ‘*Software Development Optimization*’.
 
-1. Under this collector, create the following two [http sources] (../../../03Send-Data/Sources/02Sources-for-Hosted-Collectors/HTTP-Source.md):
+1. Under this collector, create the following two [http sources](/docs/send-data/sources/sources-hosted-collectors/http-logs-metrics-source):
 
    * `_sourcecategory=circleci/job-collector`
    * `_sourcecategory="circleci/workflow-collector"`

@@ -10,7 +10,7 @@ From the **Manage Collection** page, you can edit some characteristics of a So
 Changes to metadata are applied to messages going forward from this point in time, and aren't applied retroactively.
 :::
 
-If [local file configuration management] (../../03Send-Data/Sources/03Use-JSON-to-Configure-Sources/Local-Configuration-File-Management.md) is enabled for the Collector, Source editing is disabled.
+If [local file configuration management](/docs/send-data/sources/use-json-configure-sources/local-configuration-file-management) is enabled for the Collector, Source editing is disabled.
 
 To edit a Source:
 

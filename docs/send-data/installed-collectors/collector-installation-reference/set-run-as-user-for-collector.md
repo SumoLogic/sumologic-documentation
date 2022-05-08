@@ -4,9 +4,9 @@ id: set-run-as-user-for-collector
 
 # Set the Run As User for a Collector
 
-By default, the Collector runs as the root user (Administrator on Windows). If you are using the command line installer to install a Collector, you can specify the`-VrunAs.username=[username] `and `-VwinRunAs.password=[password]` parameters to change the Run As user. See [Parameters for the Command Line Installer](06Parameters-for-the-Command-Line-Installer.md "Parameters for the Command Line Installer") for a full list of supported parameters.
+By default, the Collector runs as the root user (Administrator on Windows). If you are using the command line installer to install a Collector, you can specify the`-VrunAs.username=[username] `and `-VwinRunAs.password=[password]` parameters to change the Run As user. See [Parameters for the Command Line Installer](parameters-command-line-installer.md) for a full list of supported parameters.
 
-If you are using the [RPM/Debian or binary package to install the Collector](../04Install-a-Collector-on-Linux.md "Install a Collector on Linux"), or would like to change the Run As user after installation, follow this procedure to change the Run As user. 
+If you are using the [RPM/Debian or binary package to install the Collector](../install-collector-linux.md), or would like to change the Run As user after installation, follow this procedure to change the Run As user. 
 
 1. Change the Collector installation directory owner to the desired user name.
 

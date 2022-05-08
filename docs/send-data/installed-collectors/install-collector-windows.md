@@ -4,7 +4,7 @@ id: install-collector-windows
 
 # Install a Collector on Windows
 
-Follow the steps in this topic to install or uninstall a collector on Windows. See [Installed Collectors](03Install-a-Collector-on-Windows/...md "Installed Collectors") for information on other OSs.
+Follow the steps in this topic to install or uninstall a collector on Windows. See [Installed Collectors](/docs/send-data/sources/sources-installed-collectors) for information on other OSs.
 
 ## System Requirements
 
@@ -24,7 +24,7 @@ Follow the steps in this topic to install or uninstall a collector on Windows.�
 Download the Collector in either of the following ways:
 
 * In Sumo Logic select **Manage Data \> Collection \> Collection**. Click **Add Collector**, click **Installed Collector,** and then click the link for the Collector to begin the download.
-* Open a browser and enter the static URL for your Sumo deployment. See how to determine which endpoint to use if you are unsure. The download begins immediately. See [Download a Collector from a Static URL](05Reference-Information-for-Collector-Installation/02Download-a-Collector-from-a-Static-URL.md "Download a Collector from a Static URL") for a list of URLs for your deployment pod.
+* Open a browser and enter the static URL for your Sumo deployment. See how to determine which endpoint to use if you are unsure. The download begins immediately. See [Download a Collector from a Static URL](collector-installation-reference/download-collector-from-static-url.md) for a list of URLs for your deployment pod.
 
 ## Install a Collector on Windows
 

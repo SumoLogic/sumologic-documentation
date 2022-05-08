@@ -6,7 +6,7 @@ id: sumoconf-for-legacy-collectors
 
 For legacy Collectors (releases prior to 19.137), the `sumo.conf` file allows you to pass Collector configuration parameters to Sumo during installation.
 
-To authenticate Collectors, you must include an access ID and access key. See [Access Keys](/Manage/Security/Access-Keys) for information on generating and managing access keys.
+To authenticate Collectors, you must include an access ID and access key. See [Access Keys](../../../manage/security/access-keys.md for information on generating and managing access keys.
 
 ## Creating sumo.conf
 
@@ -35,12 +35,12 @@ You cannot have blank values, like `name=` .
 | Parameter | Description | Example | Required/Optional |
 |--|--|--|--|
 | `name` | Name used to register the Collector. If no name is specified, the hostname is used. The hostname can be a maximum of 128 characters. | `name=FirewallLogs` | Optional |
-| `accessid` | Access ID generated in the Security page. (See [Access Keys](/Manage/Security/Access-Keys).) | `accessid=MboxeezMzN8S` | Required |
-| `accesskey` | Access ID generated in the Security page. (See [Access Keys](/Manage/Security/Access-Keys).) | `accesskey=dBorwTn8TxF8ofounEXnsQ4hPpuqCzw` | Required |
-| `sources` | Path to JSON file that contains Source configuration. (See [JSON Source Configuration](/03Send-Data/Sources/03Use-JSON-to-Configure-Sources).)<br/>**Important:** On Windows the path value for "sources=" must be specified with double slashes, \\, as shown in the example. | `sources=c:\\sumo sources.json (Windows)` | Optional |
+| `accessid` | Access ID generated in the Security page. See [Access Keys](../../../manage/security/access-keys.md) | `accessid=MboxeezMzN8S` | Required |
+| `accesskey` | Access ID generated in the Security page. See [Access Keys](../../../manage/security/access-keys.md) | `accesskey=dBorwTn8TxF8ofounEXnsQ4hPpuqCzw` | Required |
+| `sources` | Path to JSON file that contains Source configuration. See [JSON Source Configuration](/docs/send-data/sources/use-json-configure-sources).<br/>**Important:** On Windows the path value for "sources=" must be specified with double slashes, \\, as shown in the example. | `sources=c:\\sumo sources.json (Windows)` | Optional |
 | override | Overrides a Collector's existing Sources to delete all Sources except for the one specified by the sources parameter (above).<br/>**Important:** Don't include this parameter in sumo.conf unless necessary. Override results in Source deletion and re-creation with collector restart, and causes significant re-ingestion of already ingested data.  | `override=true` | Optional |
-| `ephemeral` | When set to true, the Collector will be deleted after 12 hours of inactivity. See [Setting a Collector as Ephemeral](/03Send-Data/Installed-Collectors/05Reference-Information-for-Collector-Installation/11Set-a-Collector-as-Ephemeral) for more information. | `ephemeral=true` | Optional |
-| `clobber` | Sets the clobber flag; don't include unless you'd like to clobber the Collector.  See [Forcing a Collector's Name with Clobber](/03Send-Data/Installed-Collectors/05Reference-Information-for-Collector-Installation/10Force_a_Collector's_Name_with_Clobber) for more information. | `clobber=true` | Optional |
+| `ephemeral` | When set to true, the Collector will be deleted after 12 hours of inactivity. See [Setting a Collector as Ephemeral](set-collector-as-ephemeral.md) for more information. | `ephemeral=true` | Optional |
+| `clobber` | Sets the clobber flag; don't include unless you'd like to clobber the Collector.  See [Forcing a Collector's Name with Clobber](force-collectors-name-clobber.md) for more information. | `clobber=true` | Optional |
 | `proxyHost` | Sets the host the Collector uses to connect via a proxy. | `proxyHost=hostName` | Optional |
 | `proxyPort` | The port number a Collector uses to connect via a proxy.  | `proxyPort=portNumber` | Optional |
 | `proxyUser` | The user name a Collector uses to connect via a proxy.  | `proxyUser=userName` | Optional |

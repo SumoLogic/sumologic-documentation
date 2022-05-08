@@ -28,7 +28,7 @@ Remote file sources support the following encoding:
  * US-ASCII
  * UTF-8
 
-For more information, see [Remote File Source](/docs/send-data/sources/installed-collectors/remote-file-source).
+For more information, see [Remote File Source](/docs/send-data/sources/sources-installed-collectors/remote-file-source).
 
 ## HTTP sources
 

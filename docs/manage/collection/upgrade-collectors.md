@@ -88,13 +88,13 @@ If an upgrade repeatedly fails, contact [Sumo Logic Customer Support](https://s
 
 Before upgrading an Installed Collector review [Collector Upgrade Best Practices](#collector-upgrade-best-practices).
 
-The steps to upgrade an Installed Collector using the command line are similar to the steps used for installing the Collector with the command line. See [Installed Collectors] (../../03Send-Data/Installed-Collectors.md) for details.
+The steps to upgrade an Installed Collector using the command line are similar to the steps used for installing the Collector with the command line. See [Installed Collectors](/docs/send-data/installed-collectors) for details.
 
 
 Download the collector in either of the following ways:
 
 * In Sumo Logic select **Manage Data \> Collection \> Collection**. Click **Add Collector**, click **Installed Collector,** and then click the link for the collector to begin the download.
-* Open a browser and enter the static URL for your Sumo deployment. See [how to determine which endpoint to use] (../../APIs/General-API-Information/Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security.md) if you are unsure. The download begins immediately. See [Download a Collector from a Static URL] (../../03Send-Data/Installed-Collectors/05Reference-Information-for-Collector-Installation/02Download-a-Collector-from-a-Static-URL.md) for a list of the URLs for your Linux version and deployment pod.
+* Open a browser and enter the static URL for your Sumo deployment. See [how to determine which endpoint to use] (../../APIs/General-API-Information/Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security.md) if you are unsure. The download begins immediately. See [Download a Collector from a Static URL](../../send-data/installed-collectors/collector-installation-reference/download-collector-from-static-url.md) for a list of the URLs for your Linux version and deployment pod.
 
 See the following table for commands:
 
@@ -106,7 +106,7 @@ See the following table for commands:
 | Linux Debian | Upgrade or downgrade command: `sudo dpkg -i\<pathToCollectorDebianFil\>` |
 | Linux 32 or 64 | Upgrade or downgrade command:  `sudo\<pathToCollectorShFil\> -q` |
 | Windows | Upgrade or downgrade command: `SumoCollector.exe -console -q` |
-| MacOS | Use the same steps to [Install a Collector on MacOS] (../../03Send-Data/Installed-Collectors/02Install-a-Collector-on-MacOS.md) without the authentication credentials. |
+| MacOS | Use the same steps to [Install a Collector on MacOS](../../send-data/installed-collectors/install-collector-macos.md) without the authentication credentials. |
 
 ## Collector Upgrade Best Practices
 

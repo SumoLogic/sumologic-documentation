@@ -116,7 +116,7 @@ This example shows how to set up a script and configure a Script Action.
 
 1. Select **Manage Data \> Collection \> Collection**.
 1. Find the name of the Installed Collector to which you want to add the script action and select **Add \> Add Script Action**.  
-1. Configure the Script Action as described in [Step 3](./Script-Action.md "Script Action") above.
+1. Configure the Script Action as described in [Step 3](#step-3-set-up-script-action) above.
 1. Define a search and click **Save As**. 
 1. Click **Schedule this search**, and complete the search configuration. Select "Script Action" as the **Alert Type** and select the script that you created. Click **Save**.
 

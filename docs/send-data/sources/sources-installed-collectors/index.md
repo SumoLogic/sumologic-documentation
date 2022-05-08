@@ -1,10 +1,10 @@
 ---
-slug: /docs/send-data/sources/installed-collectors
+slug: /docs/send-data/sources/sources-installed-collectors
 ---
 
 # Sources for Installed Collectors
 
-You can configure a variety of Sources on [Installed Collectors](../Installed-Collectors/01About-Installed-Collectors.md "About Installed Collectors").
+You can configure a variety of Sources on [Installed Collectors](../../installed-collectors/about-installed-collectors.md).
 
 import DocCardList from '@theme/DocCardList';
 import {useCurrentSidebarCategory} from '@docusaurus/theme-common';

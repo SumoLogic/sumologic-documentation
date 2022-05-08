@@ -27,7 +27,7 @@ To send your data to Sumo Logic you have a few options. We have two types of ins
 
 The Sumo Logic Distro of [OpenTelemetry Collector](https://github.com/open-telemetry/opentelemetry-collector) is built with the [opentelemetry-collector-builder](https://github.com/open-telemetry/opentelemetry-collector-builder) and provides a single unified agent to send Logs, Metrics, Traces, and Metadata for Observability to Sumo Logic.
 
-See the [Deployment Guide](https://github.com/SumoLogic/sumologic-otel-collector#readme "https://github.com/SumoLogic/sumologic-otel-collector#readme") in our sumologic-otel-collector GitHub repository for detailed instructions on how to configure and migrate your existing collection.
+See the [Deployment Guide](https://github.com/SumoLogic/sumologic-otel-collector#readme) in our sumologic-otel-collector GitHub repository for detailed instructions on how to configure and migrate your existing collection.
 
 It's supported on *Linux*, *MacOS*, and *Kubernetes* environments and can use any of the following Sources:
 
@@ -42,11 +42,11 @@ For full details on limitations, what's supported, and what's different see our 
 
 ## Installed Collectors
 
-[Installed Collectors](Installed-Collectors/01About-Installed-Collectors.md "About Installed Collectors") are deployed in your environment, on a local machine, a machine in your organization, or even an Amazon Machine Image (AMI). Installed Collectors require a software download and installation. Upgrades to Collector software are released regularly by Sumo Logic.
+[Installed Collectors](../installed-collectors/about-installed-collectors.md) are deployed in your environment, on a local machine, a machine in your organization, or even an Amazon Machine Image (AMI). Installed Collectors require a software download and installation. Upgrades to Collector software are released regularly by Sumo Logic.
 
 Consider having an Installed Collector on a dedicated machine when:
 
-* You need to collect data with a [Source only available on Installed Collectors](Sources/01Sources-for-Installed-Collectors.md "Sources for Installed Collectors").
+* You need to collect data with a [Source only available on Installed Collectors](/docs/send-data/sources/sources-installed-collectors).
 * You are running a very high-bandwidth network with high logging levels.
 * You want a central collection point for many Sources.
 
@@ -60,17 +60,17 @@ Consider having more than one Installed Collector if:
 * You prefer to install many Collectors, for example, one per machine
     to collect local files.
 
-To help design your deployment see [how Installed Collectors work](Installed-Collectors/01About-Installed-Collectors.md "About Installed Collectors") and  [Best Practices: Local and Centralized Data Collection](01-Design-Your-Deployment/Best-Practices:-Local-and-Centralized-Data-Collection.md "Best Practices: Local and Centralized Data Collection").
+To help design your deployment see [how Installed Collectors work](../installed-collectors/about-installed-collectors.md) and  [Best Practices: Local and Centralized Data Collection](best-practices-local-centralized-data-collection.md).
 
 For details on system requirements, see Installed Collector requirements.
 
 ## Hosted Collectors
 
-Unlike Installed Collectors, [Hosted Collectors](Hosted-Collectors.md "Hosted Collectors") don't require installation or activation, nor do Hosted Collectors have physical requirements since they're hosted by Sumo Logic in AWS.
+Unlike Installed Collectors, [Hosted Collectors](../hosted-collectors.md) don't require installation or activation, nor do Hosted Collectors have physical requirements since they're hosted by Sumo Logic in AWS.
 
 Because there are no performance issues to consider, you can configure as many Sources as you'd like, up to 1,000, for a single Hosted Collector. Consider setting up more than one Hosted Collector if you'd like to tag different data types with different metadata.
 
-See how to [configure a Hosted Collector](Hosted-Collectors/Configure-a-Hosted-Collector.md "Configure a Hosted Collector") and all of the available [Sources supported on Hosted Collectors](Sources/02Sources-for-Hosted-Collectors.md "Sources for Hosted Collectors").
+See how to [configure a Hosted Collector](../configure-hosted-collector.md) and all of the available [Sources supported on Hosted Collectors](/docs/send-data/sources/sources-hosted-collectors).
 
 ### Logging levels
 

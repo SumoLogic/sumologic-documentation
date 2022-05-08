@@ -7,7 +7,7 @@ id: aws-metadata-tag-source
 A Sumo Logic AWS Metadata Source allows you to collect tags from EC2 instances running on AWS. Tags are returned in your search results and can be referenced in queries. For information about assigning tags to EC2 instances, see [Tagging Your Amazon EC2 Resources](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html) in AWS help. Only one AWS Metadata Source is required to collect tags from multiple hosts.
 
 :::note
-Collecting AWS Metadata requires [Collector](/docs/send-data/sources/installed-collectors) version 19.162+.
+Collecting AWS Metadata requires [Collector](/docs/send-data/sources/sources-installed-collectors) version 19.162+.
 :::
 
 ## Metrics
@@ -17,7 +17,7 @@ Tags are automatically applied to:
 * Metrics ingested by [host metric sources](../../installed-collectors/host-metrics-source.md) on Installed Collectors.
 * Graphite and Carbon 2.0 metrics ingested by [streaming metric sources](../../installed-collectors/streaming-metrics-source.md) on Installed Collectors.
 
-You can also apply AWS tags to Graphite and Carbon 2.0 metrics ingested by an HTTP source. To enable tagging of metrics from an HTTP source, you must specify the `InstanceID` and `Region` tags in the header using `X-Sumo-Dimensions` or `X-Sumo-Metadata` as well as to the metric itself. For reference see [Supported HTTP Headers](../HTTP-Source/Upload-Metrics-to-an-HTTP-Source.md "Upload Metrics to an HTTP Source").
+You can also apply AWS tags to Graphite and Carbon 2.0 metrics ingested by an HTTP source. To enable tagging of metrics from an HTTP source, you must specify the `InstanceID` and `Region` tags in the header using `X-Sumo-Dimensions` or `X-Sumo-Metadata` as well as to the metric itself. For reference see [Supported HTTP Headers](../http-logs-metrics-source/upload-metrics-to-http-source.md).
 
 ## Logs
 
@@ -30,7 +30,7 @@ Tags are returned in your search results and can be referenced in queries. For i
 
 ## Set up an AWS Metadata Source
 
-1. Grant permission for Sumo Logic to describe EC2 instances. See [Grant Access to an AWS Product](Grant-Access-to-an-AWS-Product.md "Grant Access to an AWS Product") for details.
+1. Grant permission for Sumo Logic to describe EC2 instances. See [Grant Access to an AWS Product](grant-access-aws-product.md) for details.
 1. In Sumo Logic select **Manage Data \> Collection \> Collection**. 
 1. Next to a Hosted Collector, click **Add Source**.
 1. Select **AWS Metadata**.
@@ -40,7 +40,7 @@ Tags are returned in your search results and can be referenced in queries. For i
    * **Description**. Optional description.
    * **Regions**. Select one or more Amazon regions.
    * **Tag Filters.** Leave this field blank to collect all tags configured for the EC2 instance. To collect a subset of tags, follow the instructions in [Define EC2 tag filters](#define-ec2-tag-filters). Review the above [Metrics](#metrics) and [Logs](#logs) sections for important information.
-   * **AWS Access.** Choose between two **Access Method** options. Select **Role-based access** or **Key access** based on the AWS authentication you are providing. Role-based access is preferred, this was completed in step 1, see [Grant Sumo Logic access to an AWS Product](Grant-Access-to-an-AWS-Product.md "Grant Access to an AWS Product"). 
+   * **AWS Access.** Choose between two **Access Method** options. Select **Role-based access** or **Key access** based on the AWS authentication you are providing. Role-based access is preferred, this was completed in step 1, see [Grant Sumo Logic access to an AWS Product](grant-access-aws-product.md). 
 
      * For **Role-based access** enter the Role ARN that was provided by AWS after creating the role.  
 

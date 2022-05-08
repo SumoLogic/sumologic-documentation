@@ -4,8 +4,7 @@ id: json-parameters-installed-sources
 
 # JSON Parameters for Installed Sources
 
-This topic describes JSON Source parameters for installed
-Collectors. See the following topics for additional information:
+This topic describes JSON Source parameters for installed Collectors. See the following topics for additional information:
 
  * [Use JSON to configure Sources](/docs/send-data/sources/use-json-configure-sources). The topic includes a list of [common parameters](/docs/send-data/sources/use-json-configure-sources) for all log Source types. For Sources, the common parameter `name` must be unique per Collector.
  * [JSON Source parameters for Hosted Collectors](json-parameters-hosted-sources.md).
@@ -91,9 +90,9 @@ In addition to the [common parameters](/docs/send-data/sources/use-json-configur
 | `remoteHosts` | List   | Yes |   | Host name of remote machine. Make sure to enclose IP addresses in brackets. Example: `["192.168.0.1","10.0.1.16", "192.168.1.234"]`. | modifiable     |
 | `remotePort` | Int | Yes |   | Port of remote machine (SSH) | modifiable     |
 | `remoteUser` | String | Yes |   | User account to connect to the remote machine. | modifiable     |
-| `remotePassword` | String | Yes |   | Password used to connect to remote machine. Required only when authMethod is set to `"password"`.                                                       | modifiable     |
-| `keyPath` | String | Yes |   | Path to SSH key used to connect to the remote machine. Required only when authMethod is set to `"key"`.                                                 | modifiable     |
-| `keyPassword` | String | No | Null    | Password to SSH key to connect to the remote machine, required only with authMethod is set to `"password"`.                                             | modifiable     |
+| `remotePassword` | String | Yes |   | Password used to connect to remote machine. Required only when authMethod is set to `"password"`. | modifiable     |
+| `keyPath` | String | Yes |   | Path to SSH key used to connect to the remote machine. Required only when authMethod is set to `"key"`. | modifiable     |
+| `keyPassword` | String | No | Null    | Password to SSH key to connect to the remote machine, required only with authMethod is set to `"password"`. | modifiable     |
 | `pathExpression` | String | Yes |   | Path expression of the files to collect. | modifiable     |
 | `authMethod` | String | Yes |   | Authentication method used to connect to the remote machine. Options are `"password"` to connect with a password or `"key"` to connect with an SSH key. | modifiable     |
 | `denylist` | List   | No | \[ \]   | List of valid path expression to skip. Default is `[ ]`. | modifiable |
@@ -136,7 +135,7 @@ In addition to the [common parameters](/docs/send-data/sources/use-json-configur
 |--|--|--|--|--|--|
 | `sourceType`     | String       | Yes |   | LocalWindowsEventLog | not modifiable |
 | `logNames`       | List         | Yes |   | List of Windows log types to collect. For example, `"Security"` or  `"Application"`.  To obtain the list of available logs on a given machine, use the PowerShell command `Get-WinEvent -ListLog *` or the legacy command `wevtutil el`. We do not support `"Analytic"` or `"Debug"` ETW logs. | modifiable |
-| `renderMessages` | Boolean      | No, only applicable to the legacy format. | true | When using legacy format, this indicates if full event messages are collected (`true`) or just core event [built-in metadata](/05Search/Get-Started-with-Search/Search-Basics/Built-in-Metadata) (`false`). | modifiable |
+| `renderMessages` | Boolean      | No, only applicable to the legacy format. | true | When using legacy format, this indicates if full event messages are collected (`true`) or just core event [built-in metadata](../../../search/get-started-with-search/search-basics/built-in-metadata.md) (`false`). | modifiable |
 | `eventFormat`    | Integer      | No | 0 | Sets how you want your event logs formatted.<br/>Use 0 for the legacy format. Where events retain their default XML format from Windows.<br/>Use 1 for JSON format. Where events are formatted into JSON that is designed to work with Sumo Logic features, making it easier for you to reference your data. | modifiable |
 | `eventMessage`   | Integer      | Yes if eventFormat is 0. |   | Use 0 for the complete message. It will ingest the entire event content along with metadata.<br/>Use 1 for the message title. It will ingest the first line of event messages along with all of the metadata.<br/>Use 2 for metadata only. It will ingest metadata fields from each event, including event ID and timestamp. | modifiable |
 | `allowlist`      | String array | No |   | Available in Collector version 19.351-4 and later. You can set allow and deny Windows Event ID filters to only collect important events. We recommend only using one at a time. Your list needs to be a comma-separated list of event IDs. | modifiable |
@@ -173,7 +172,7 @@ In addition to the [common parameters](/docs/send-data/sources/use-json-configur
 | `hosts` | List | Yes |  | List of hosts to collect from. | modifiable | 
 | `logNames` | List | Yes |  | List of Windows log types collected. | modifiable | 
 | `logNames` | List | Yes |   | List of Windows log types to collect. For example, `"Security"` or  `"Application"`.  To obtain the list of available logs on a given machine, use the PowerShell command `Get-WinEvent -ListLog *` or the legacy command `wevtutil el`. We do not support `"Analytic"` or `"Debug"` ETW logs. | modifiable |
-| `renderMessages` | Boolean | No, only applicable to the legacy format. | true | When using legacy format, this indicates if full event messages are collected (`true`) or just core event [built-in metadata](/05Search/Get-Started-with-Search/Search-Basics/Built-in-Metadata) (`false`). | modifiable |
+| `renderMessages` | Boolean | No, only applicable to the legacy format. | true | When using legacy format, this indicates if full event messages are collected (`true`) or just core event [built-in metadata](../../../search/get-started-with-search/search-basics/built-in-metadata.md) (`false`). | modifiable |
 | `eventFormat` | Integer | No | 0 | Sets how you want your event logs formatted.<br/>Use 0 for the legacy format. Where events retain their default XML format from Windows.<br/>Use 1 for JSON format. Where events are formatted into JSON that is designed to work with Sumo Logic features, making it easier for you to reference your data. | modifiable |
 | `eventMessage` | Integer | Yes if eventFormat is 0. |   | Use 0 for the complete message. It will ingest the entire event content along with metadata.<br/>Use 1 for the message title. It will ingest the first line of event messages along with all of the metadata.<br/>Use 2 for metadata only. It will ingest metadata fields from each event, including event ID and timestamp. | modifiable |
 | `allowlist` | String array | No |   | Available in Collector version 19.351-4 and later. You can set allow and deny Windows Event ID filters to only collect important events. We recommend only using one at a time. Your list needs to be a comma-separated list of event IDs. | modifiable |
@@ -435,15 +434,13 @@ Script Source JSON Example: 
 
 ### Docker log source
 
-In addition to the [common
-parameters](/docs/send-data/sources/use-json-configure-sources),
-the following parameters are for Docker log source.
+In addition to the [common parameters](/docs/send-data/sources/use-json-configure-sources), the following parameters are for Docker log source.
 
 | Parameter | Type | Required? | Default | Description | Access |
 |--|--|--|--|--|--|
 | `sourceType` | String   | Yes |   | DockerLog |   |
 | `uri` | String   | Yes |   | URI of the Docker daemon. | modifiable |
-| `specifiedContainers` | List     | |   | Comma-separated list of Docker containers. Collection will be only from running containers.  If the list contains stopped containers, the source can start collecting from these containers if they are started later. For advanced container filtering options, see [More about defining container filters](../01Sources-for-Installed-Collectors/Docker-Sources.md "Docker Sources"). | modifiable |
+| `specifiedContainers` | List     | |   | Comma-separated list of Docker containers. Collection will be only from running containers.  If the list contains stopped containers, the source can start collecting from these containers if they are started later. For advanced container filtering options, see [More about defining container filters](../installed-collectors/docker-sources.md). | modifiable |
 | `allContainers` | Boolean  | Yes |   | Flag indicating whether the Source includes all running containers (`true`) or only the containers listed in `specifiedContainers` (`false`). | modifiable |
 | `certPath` | String   | `*` |   | Enter the path to the cert files on the local machine where the Collector is running. Required if the URI uses HTTPS. | modifiable |
 | `collectEvents` | Boolean  | Yes |   | Must be set to `true` to collect the Docker logs. |   |
@@ -558,7 +555,7 @@ The following parameters are for a host metrics source. 
 
 | Parameter | Type | Required? | Default | Description | Access |
 |--|--|--|--|--|--|
-| `name` | String | Yes |  | Type a desired name of the Source. The name must be unique per Collector. This value is assigned to the [built-in metadata](/05Search/Get-Started-with-Search/Search-Basics/Built-in-Metadata) field _source. | modifiable | 
+| `name` | String | Yes |  | Type a desired name of the Source. The name must be unique per Collector. This value is assigned to the [built-in metadata](../../../search/get-started-with-search/search-basics/built-in-metadata.md) field _source. | modifiable | 
 | `description` | String | No | null | Type a description of the Source. | modifiable | 
 | `category` | String | No | null | Type a category of the source. This value is assigned to the metadata field `_sourceCategory`. See [best practices](../../design-deployment/best-practices-source-categories.md) for details. | modifiable | 
 | `sourceType` | String | Yes |  | SystemStats | not modifiable | 

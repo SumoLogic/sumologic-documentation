@@ -102,7 +102,7 @@ Sources can be configured using UTF-8 encoded JSON files with the Collector Ma
 
 | Parameter | Type | Required | Description | Access |
 |--|--|--|--|--|
-| config            | JSON Object  | Yes               | Contains the [configuration parameters](./Okta_Source.md "Okta Source") for the Source. |                |
+| config            | JSON Object  | Yes               | Contains the [configuration parameters](okta-source.md) for the Source. |                |
 | schemaRef         | JSON Object  | Yes               | Use `{"type":"Okta"}` for an Okta Source.                                               | not modifiable |
 | sourceType        | String       | Yes               | Use `Universal` for an Okta Source.                                                     | not modifiable |
 

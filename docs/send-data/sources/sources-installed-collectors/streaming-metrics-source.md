@@ -18,7 +18,7 @@ The procedure below assumes you will use an installed collector on each host fro
 
 Perform these steps on each host from which you want to collect metrics:
 
-1. Set up an [installed collector](../../Installed-Collectors.md "Installed Collectors"). (Skip this step if you have already set up the collector.) 
+1. Set up an [installed collector](/docs/send-data/installed-collectors). (Skip this step if you have already set up the collector.) 
 1. In Sumo select **Manage Data \> Collection \> Collection**.  
 1. Click **Add**, and then **Add Source**.
 1. On the **Select Source for Collector** page, select **Streaming Metrics**. 
@@ -136,7 +136,7 @@ The streaming metrics source can receive Prometheus data as long as that data is
 | `value` | Value of the metric. |
 | `timestamp` | The time the metric was collected, in int64 format.  |
 
-The Prometheus format does not support metadata in the format itself. You can attach metadata to Prometheus metrics by specifying it the HTTP header when you upload the metrics to Sumo. For more information, see [Upload Metrics to an HTTP Source](/03Send-Data/Sources/02Sources-for-Hosted-Collectors/HTTP-Source/Upload-Metrics-to-an-HTTP-Source).
+The Prometheus format does not support metadata in the format itself. You can attach metadata to Prometheus metrics by specifying it the HTTP header when you upload the metrics to Sumo. For more information, see [Upload Metrics to an HTTP Source](../sources-hosted-collectors/http-logs-metrics-source/upload-metrics-to-http-source.md) .
 
 :::important
 ImportantThe streaming metrics source can receive Prometheus data as long as that data is pushed to it. This source cannot scrape Prometheus exporters. For that, we suggesting using Telegraf.

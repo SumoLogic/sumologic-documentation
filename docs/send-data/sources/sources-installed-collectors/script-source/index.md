@@ -1,5 +1,5 @@
 ---
-slug: /send-data/sources/installed-collectors/script-source
+slug: /send-data/sources/sources-installed-collectors/script-source
 ---
 
 # Script Source

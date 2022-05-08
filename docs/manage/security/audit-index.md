@@ -72,7 +72,7 @@ The table below lists defines the fields returned for an audit event. Note that 
 | Class | The object affected by the event. Classes vary by event type. For more information, see [Audit event classes and actions](#audit-event-classes-and-actions). |
 | Collector | Values include "InternalCollector".  |
 | Interface | Indicates how the event was initiated from the Sumo UI or using an API. Values include: "UI", "API", and "INTERNAL". |
-| \_sourceCategory | The source category associated with the event type. For more information, see [Audit index source](#audit-index) categories below.       |
+| \_sourceCategory | The source category associated with the event type. For more information, see [Audit index source](#audit-index) categories below. |
 | \_sourcehost | IP address of the source's host, or "no_sourcehost". |
 | sourceSession | The session ID associated with the event, or "no_session". |
 | sourceUser | The Sumo username associated with the event.  |
@@ -137,7 +137,7 @@ The events have these formats:
 Status is provided to the audit index (`_index=sumologic_audit`) in the account management source category
 (`_sourceCategory=account_management`) and volume quota source (`_sourceName=VOLUME_QUOTA`). The status includes the type of resource that experienced throttling in the last 15 minutes.
 
-A scheduled search can be set up to send an alert when throttling occurs. See [Schedule a search] (../../Visualizations-and-Alerts/Alerts/Scheduled-Searches/Schedule_a_Search.md "Schedule a Search"). 
+A scheduled search can be set up to send an alert when throttling occurs. See [Schedule a search](/docs/alerts/scheduled-searches). 
 
 Throttling events reported include:
 
@@ -164,7 +164,7 @@ yields the following throttling notification.
 
 AWS automatically throttles CloudWatch data if the limits that Amazon sets for the associated APIs are exceeded.  If you have a high volume of metrics data points in your account, it is likely that Amazon will throttle your CloudWatch data.
 
-If no adjustments are made on the Sumo Logic side, throttling on the Amazon side can cause metrics data to be dropped. To prevent this from occurring, Sumo Logic automatically doubles the CloudWatch scan interval if more than one throttling message is received in a single interval. However, the change in scan interval isn't reflected in the Sumo Logic UI. The original configured interval is still shown. See [Amazon CloudWatch Source for Metrics] (../../03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/Amazon-CloudWatch-Source-for-Metrics.md "Amazon CloudWatch Source for Metrics") for instructions on setting the CloudWatch scan interval. 
+If no adjustments are made on the Sumo Logic side, throttling on the Amazon side can cause metrics data to be dropped. To prevent this from occurring, Sumo Logic automatically doubles the CloudWatch scan interval if more than one throttling message is received in a single interval. However, the change in scan interval isn't reflected in the Sumo Logic UI. The original configured interval is still shown. See [Amazon CloudWatch Source for Metrics](../../send-data/sources/sources-hosted-collectors/amazon-web-services/amazon-cloudwatch-source-metrics.md) for instructions on setting the CloudWatch scan interval. 
 
 When the scan interval is increased, a message is added to the audit log. No action is required by the Sumo Logic user. 
 

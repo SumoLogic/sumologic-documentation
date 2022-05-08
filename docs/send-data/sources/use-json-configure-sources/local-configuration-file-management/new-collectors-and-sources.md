@@ -23,7 +23,7 @@ There are two ways to implement local configuration file management:
 
 ## Step 3. Install Collector with syncSources parameter
 
-When installing the Collector, specify the `syncSources` parameter. See the topics in [Installed Collectors](/docs/send-data/sources/installed-collectors) for information on specifying parameters during installation.
+When installing the Collector, specify the `syncSources` parameter. See the topics in [Installed Collectors](/docs/send-data/sources/sources-installed-collectors) for information on specifying parameters during installation.
 
 | Parameter | Type | Description |
 |--|--|--||

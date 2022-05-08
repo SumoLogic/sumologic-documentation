@@ -8,7 +8,7 @@ AWS Elastic Load Balancing (ELB) distributes incoming application traffic across
 
 To configure an AWS ELB Source:
 
-1. [Grant Sumo Logic access](Grant-Access-to-an-AWS-Product.md "https://sumologic-prod.mindtouch.us/Send_Data/Sources/Sources_for_Hosted_Collectors/About_AWS_Sources/Grant_Access_to_an_AWS_S3_bucket") to an Amazon S3 bucket.
+1. [Grant Sumo Logic access](grant-access-aws-product.md) to an Amazon S3 bucket.
 1. Enable ELB logging in AWS as described in this topic.
 1. Confirm that logs are being delivered to the Amazon S3 bucket.
 1. Add the [AWS Source](aws-sources.md) for ELB.
