@@ -205,8 +205,9 @@ module.exports = {
                   {
                     label: 'Send Data',
                     sublabel: 'Collectors, sources, & more',
-                    to: '/docs/get-started',
+                    to: '/docs/send-data',
                     icon: 'open_in_new',
+                    activeBaseRegex: '^/docs/send-data/.*',
                   },
                 ],
               },

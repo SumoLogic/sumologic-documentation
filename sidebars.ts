@@ -1070,7 +1070,7 @@ module.exports = {
       type: 'category',
       label: 'Design Your Deployment',
       collapsible: true,
-      collapsed: false,
+      collapsed: true,
       link: {type: 'doc', id: 'send-data/design-deployment/index'},
       items: [
         'send-data/design-deployment/best-practices-source-categories',
@@ -1082,7 +1082,7 @@ module.exports = {
       type: 'category',
       label: 'Installed Collectors',
       collapsible: true,
-      collapsed: false,
+      collapsed: true,
       link: {type: 'doc', id: 'send-data/installed-collectors/index'},
       items: [
         'send-data/installed-collectors/about-installed-collectors',
@@ -1091,9 +1091,9 @@ module.exports = {
         'send-data/installed-collectors/install-collector-linux',
         {
           type: 'category',
-          label: 'Sources',
+          label: 'Collector Installation Reference',
           collapsible: true,
-          collapsed: false,
+          collapsed: true,
           link: {type: 'doc', id: 'send-data/installed-collectors/collector-installation-reference/index'},
           items: [
             'send-data/installed-collectors/collector-installation-reference/test-connectivity-sumo-collectors',
@@ -1123,14 +1123,14 @@ module.exports = {
       type: 'category',
       label: 'Sources',
       collapsible: true,
-      collapsed: false,
+      collapsed: true,
       link: {type: 'doc', id: 'send-data/sources/index'},
       items: [
         {
           type: 'category',
           label: 'Sources for Installed Collectors',
           collapsible: true,
-          collapsed: false,
+          collapsed: true,
           link: {type: 'doc', id: 'send-data/sources/sources-installed-collectors/index'},
           items: [
             'send-data/sources/sources-installed-collectors/collect-forwarded-events-windows-event-collector',
@@ -1142,9 +1142,9 @@ module.exports = {
             'send-data/sources/sources-installed-collectors/local-windows-performance-monitor-log-source',
             {
               type: 'category',
-              label: 'Sources',
+              label: 'Remote File Source',
               collapsible: true,
-              collapsed: false,
+              collapsed: true,
               link: {type: 'doc', id: 'send-data/sources/sources-installed-collectors/remote-file-source/index'},
               items: [
                 'send-data/sources/sources-installed-collectors/remote-file-source/enable-collector-remote-host-key-verification',
@@ -1156,9 +1156,9 @@ module.exports = {
             'send-data/sources/sources-installed-collectors/script-action',
             {
               type: 'category',
-              label: 'Sources',
+              label: 'Script Source',
               collapsible: true,
-              collapsed: false,
+              collapsed: true,
               link: {type: 'doc', id: 'send-data/sources/sources-installed-collectors/script-source/index'},
               items: [
                 'send-data/sources/sources-installed-collectors/script-source/use-cron-expression',
@@ -1175,14 +1175,14 @@ module.exports = {
           type: 'category',
           label: 'Sources for Hosted Collectors',
           collapsible: true,
-          collapsed: false,
+          collapsed: true,
           link: {type: 'doc', id: 'send-data/sources/sources-hosted-collectors/index'},
           items: [
             {
               type: 'category',
               label: 'Amazon Web Services',
               collapsible: true,
-              collapsed: false,
+              collapsed: true,
               link: {type: 'doc', id: 'send-data/sources/sources-hosted-collectors/amazon-web-services/index'},
               items: [
                 'send-data/sources/sources-hosted-collectors/amazon-web-services/amazon-cloudfront-source',
@@ -1206,7 +1206,7 @@ module.exports = {
               type: 'category',
               label: 'Cloud Syslog Source',
               collapsible: true,
-              collapsed: false,
+              collapsed: true,
               link: {type: 'doc', id: 'send-data/sources/sources-hosted-collectors/cloud-syslog-source/index'},
               items: [
                 'send-data/sources/sources-hosted-collectors/cloud-syslog-source/install-syslog-ng',
@@ -1218,7 +1218,7 @@ module.exports = {
               type: 'category',
               label: 'Cloud-to-Cloud Integration Framework',
               collapsible: true,
-              collapsed: false,
+              collapsed: true,
               link: {type: 'doc', id: 'send-data/sources/sources-hosted-collectors/cloud-to-cloud-integration-framework/index'},
               items: [
                 'send-data/sources/sources-hosted-collectors/cloud-to-cloud-integration-framework/akamai-siem-api-source',
@@ -1259,7 +1259,7 @@ module.exports = {
               type: 'category',
               label: 'HTTP Logs and Metrics Source',
               collapsible: true,
-              collapsed: false,
+              collapsed: true,
               link: {type: 'doc', id: 'send-data/sources/sources-hosted-collectors/http-logs-metrics-source/index'},
               items: [
                 'send-data/sources/sources-hosted-collectors/http-logs-metrics-source/troubleshooting-http-sources',
@@ -1278,7 +1278,7 @@ module.exports = {
           type: 'category',
           label: 'Use JSON to Configure Sources',
           collapsible: true,
-          collapsed: false,
+          collapsed: true,
           link: {type: 'doc', id: 'send-data/sources/use-json-configure-sources/index'},
           items: [
             'send-data/sources/use-json-configure-sources/building-source-json-configuration-file',
@@ -1288,7 +1288,7 @@ module.exports = {
               type: 'category',
               label: 'Local Configuration File Management',
               collapsible: true,
-              collapsed: false,
+              collapsed: true,
               link: {type: 'doc', id: 'send-data/sources/use-json-configure-sources/local-configuration-file-management/index'},
               items: [
                 'send-data/sources/use-json-configure-sources/local-configuration-file-management/new-collectors-and-sources',
@@ -1303,7 +1303,7 @@ module.exports = {
           type: 'category',
           label: 'Reference Information for Sources',
           collapsible: true,
-          collapsed: false,
+          collapsed: true,
           link: {type: 'doc', id: 'send-data/sources/reference-information-sources/index'},
           items: [
             'send-data/sources/reference-information-sources/collect-multiline-logs',
@@ -1319,14 +1319,14 @@ module.exports = {
       type: 'category',
       label: 'Collect From Other Data Sources',
       collapsible: true,
-      collapsed: false,
+      collapsed: true,
       link: {type: 'doc', id: 'send-data/collect-from-other-data-sources/index'},
       items: [
         {
           type: 'category',
           label: 'Amazon CloudWatch Logs',
           collapsible: true,
-          collapsed: false,
+          collapsed: true,
           link: {type: 'doc', id: 'send-data/collect-from-other-data-sources/amazon-cloudwatch-logs/index'},
           items: [
             'send-data/collect-from-other-data-sources/amazon-cloudwatch-logs/collect-with-collector-script',
@@ -1341,7 +1341,7 @@ module.exports = {
           type: 'category',
           label: 'Azure Blob Storage',
           collapsible: true,
-          collapsed: false,
+          collapsed: true,
           link: {type: 'doc', id: 'send-data/collect-from-other-data-sources/azure-blob-storage/index'},
           items: [
             'send-data/collect-from-other-data-sources/azure-blob-storage/collect-logs-azure-blob-storage',
@@ -1352,7 +1352,7 @@ module.exports = {
           type: 'category',
           label: 'Azure Monitoring',
           collapsible: true,
-          collapsed: false,
+          collapsed: true,
           link: {type: 'doc', id: 'send-data/collect-from-other-data-sources/azure-monitoring/index'},
           items: [
             'send-data/collect-from-other-data-sources/azure-monitoring/collect-logs-azure-monitor',
@@ -1367,7 +1367,7 @@ module.exports = {
           type: 'category',
           label: 'VMware vRealize',
           collapsible: true,
-          collapsed: false,
+          collapsed: true,
           link: {type: 'doc', id: 'send-data/collect-from-other-data-sources/collect-vmware-vrealize/index'},
           items: [
             'send-data/collect-from-other-data-sources/collect-vmware-vrealize/collect-metrics-vrealize-operations-manager',
@@ -1382,7 +1382,7 @@ module.exports = {
           type: 'category',
           label: 'Telegraf',
           collapsible: true,
-          collapsed: false,
+          collapsed: true,
           link: {type: 'doc', id: 'send-data/collect-from-other-data-sources/collect-metrics-telegraf/index'},
           items: [
             'send-data/collect-from-other-data-sources/collect-metrics-telegraf/telegraf-collection-architecture',
@@ -1408,7 +1408,7 @@ module.exports = {
       type: 'category',
       label: 'Collector FAQs',
       collapsible: true,
-      collapsed: false,
+      collapsed: true,
       link: {type: 'doc', id: 'send-data/collector-faqs/index'},
       items: [
         'send-data/collector-faqs/collector-fails-sumo-connection',
@@ -1434,7 +1434,7 @@ module.exports = {
       type: 'category',
       label: 'PCI Compliance',
       collapsible: true,
-      collapsed: false,
+      collapsed: true,
       link: {type: 'doc', id: 'integrations/pci-compliance/pci-compliance'},
       items: [
         'integrations/pci-compliance/setup-sumologic-pci-app',
