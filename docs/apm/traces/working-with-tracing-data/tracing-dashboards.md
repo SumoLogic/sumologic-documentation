@@ -8,7 +8,7 @@ id: tracing-dashboards
 
 Service and Application dashboards are available as two Explore hierarchies. You can access them in the **Explore By** drop down menu.
 
-The **Application Service View** groups services into higher-level applications based on the `application=[app-name]` custom tag that you may add to your tracing data if you want to leverage it fully. If not present, all services will belong to a "default" application. See [how to modify the attributes of your spans](../03Advanced_Configuration/Working_with_Span_attributes.md "Working with spans attributes"). The third level shows the top 50 most active operations executed on the service.
+The **Application Service View** groups services into higher-level applications based on the `application=[app-name]` custom tag that you may add to your tracing data if you want to leverage it fully. If not present, all services will belong to a "default" application. See [how to modify the attributes of your spans](../advanced-configuration/working-with-span-attributes.md). The third level shows the top 50 most active operations executed on the service.
 
 The **Service Application View** takes a contrary approach, displaying services by top level and breaking down their health by application. This view is especially useful for shared services that support more than one application. The third level shows the top 50 most active operations performed on the selected service and application.
 
@@ -102,7 +102,7 @@ To add a Service Map panel to your Dashboard:
 
 ### Trace List panel
 
-The Trace List panel displays the [Traces page](03View_and_investigate_traces.md "View and investigate traces") table to give at-a-glance tracking for traces. To view deeper details, click a trace from the panel to open the [Trace View](03View_and_investigate_traces.md "View and investigate traces"). 
+The Trace List panel displays the [Traces page](view-and-investigate-traces.md) table to give at-a-glance tracking for traces. To view deeper details, click a trace from the panel to open the [Trace View](view-and-investigate-traces.md). 
 
 :::note
 You are limited to 3 Trace List panels in a dashboard.

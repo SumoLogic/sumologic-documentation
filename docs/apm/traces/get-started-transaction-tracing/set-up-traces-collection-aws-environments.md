@@ -8,7 +8,7 @@ To collect traces in non-Kubernetes AWS environments like EC2 or ECS (including
 
 ## Prerequisites
 
-* An [endpoint URL](HTTP_Traces_Source.md) from an existing or new [HTTP Traces Source](HTTP_Traces_Source.md).
+* An [endpoint URL](http-traces-source.md) from an existing or new [HTTP Traces Source](http-traces-source.md).
 * An installed and configured [AWS Command Line Interface](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-welcome.html) tool.
 
 ## Telemetry data collection
@@ -50,7 +50,7 @@ AWS OpenTelemetry Collector in both scenarios is installed as a sidecar. The ins
    * `AWS_REGION` - your ECS Cluster deployment region.
    * `TEMPLATE_PATH` - path to the template file from the first step.
    * `CONFIG_FILE_PATH` - path to the config file from the second step.
-   * SUMO_HTTP_TRACES_URL - mandatory [Sumo HTTP Traces  URL](HTTP_Traces_Source.md "HTTP Traces Source") from prerequisites section.
+   * SUMO_HTTP_TRACES_URL - mandatory [Sumo HTTP Traces  URL](http-traces-source.md) from prerequisites section.
 
 1. It is necessary to provide the configuration to the AWS OpenTelemetry Collector. This can be done by creating the parameter in the [AWS Parameter Store](https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-parameter-store.html) by running the following command:  
       
@@ -96,7 +96,7 @@ AWS OpenTelemetry Collector in both scenarios is installed as a sidecar. The ins
    * `AWS_REGION` - your ECS Cluster deployment region
    * `TEMPLATE_PATH` - path to the template file from the first step
    * `CONFIG_FILE_PATH` - path to the config file from the second step
-   * `SUMO_HTTP_TRACES_URL` - mandatory [Sumo HTTP Traces URL](HTTP_Traces_Source.md "HTTP Traces Source")
+   * `SUMO_HTTP_TRACES_URL` - mandatory [Sumo HTTP Traces URL](http-traces-source.md)
    * `SECURITY_GROUPS` - it is mandatory for AWS Fargate deployment to provide a Security Group ID. They can be found in the [AWS Console](https://console.aws.amazon.com/ec2/v2/home#SecurityGroups:). Find the one configured for the cluster. In the case of multiple Security Groups use comma as separator, such as, `sg-xyz,sg-xyz`.  
       
         :::note
@@ -153,7 +153,7 @@ AWS OpenTelemetry Collector in both scenarios is installed as a sidecar. The ins
 
    * `AWS_REGION` - your ECS Cluster deployment region
    * `TEMPLATE_PATH` - path to the template file from the first step
-   * `SUMO_HTTP_TRACES_URL` - mandatory [Sumo Logic HTTP Traces URL](HTTP_Traces_Source.md "HTTP Traces Source")
+   * `SUMO_HTTP_TRACES_URL` - mandatory [Sumo Logic HTTP Traces URL](http-traces-source.md)
    * `SSH_KEY_NAME` - [Amazon EC2 key pair](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html) needed to ssh to the EC2 instance
    * `AMI_ID` - an Amazon image ID, depends on the region. To obtain it go to [EC2 Launch Instances](https://console.aws.amazon.com/ec2/v2/home#LaunchInstanceWizard:) and get AMI ID for **Amazon Linux 2 AMI** image, such as, `ami-0a6dc7529cd559185`. Note that the AMI ID depends on the region.
 
@@ -173,7 +173,7 @@ AWS OpenTelemetry Collector in both scenarios is installed as a sidecar. The ins
 
 ## AWS OpenTelemetry Collector installation on EKS
 
-In the case of the Amazon EKS service Sumo Logic highly recommends using our native [Sumo Logic Kubernetes Collection](Set_up_traces_collection_for_Kubernetes_environments.md "Set up traces collection for Kubernetes environments") solution, as it provides unique, comprehensive metadata tagging for all data streams. 
+In the case of the Amazon EKS service Sumo Logic highly recommends using our native [Sumo Logic Kubernetes Collection](set-up-traces-collection-for-kubernetes-environments.md) solution, as it provides unique, comprehensive metadata tagging for all data streams. 
 
 ## AWS OpenTelemetry Collector default configuration
 

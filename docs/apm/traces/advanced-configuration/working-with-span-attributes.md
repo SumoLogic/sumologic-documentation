@@ -8,8 +8,7 @@ You can add, delete, hash, or modify span attributes (metadata tags) on Collecto
 
 ## Attach logs to spans
 
-You can collect logs with traces attached to them by [inserting spanid/traceid from span context when writing to logs](/Traces/Getting_Started_with_Transaction_Tracing/Instrument_your_application_with_OpenTelemetry/Java_OpenTelemetry_auto-instrumentation/TraceId_and_SpanId_injection_into_logs_configuratio.md).
-If that's not possible, you can assign any of the following fields:
+You can collect logs with traces attached to them by [inserting spanid/traceid from span context when writing to logs](../get-started-transaction-tracing/instrument-application-opentelemetry/java-opentelemetry-auto-instrumentation/traceid-spanid-injection-into-logs-configuration.md). If that's not possible, you can assign any of the following fields:
 
  * error
  * error.kind
@@ -18,7 +17,7 @@ If that's not possible, you can assign any of the following fields:
  * message
  * stack
 
-and they are displayed in the **Span logs** tab in [Details Pane](../02Working_with_Tracing_data/03View_and_investigate_traces.md "View and investigate traces") after clicking on the span.
+and they are displayed in the **Span logs** tab in [Details Pane](../working-with-tracing-data/view-and-investigate-traces.md) after clicking on the span.
 
 ![span logs in details pane.png](/img/traces/span-logs-in-details-pane.png)
 
@@ -32,4 +31,4 @@ Refer to the [OpenTelemetry collector attributes processor documentation](https:
 
 You can insert dynamically-created custom tags in your code by calling the appropriate functions of OpenTelemetry auto-instrumentation.
 
-See how to pass [custom tags](../01Getting_Started_with_Transaction_Tracing/01Instrument_your_application_with_OpenTelemetry/Java_OpenTelemetry_auto-instrumentation/Custom_tags_configuration.md "Custom tags configuration") for Java auto-instrumentation.
+See how to pass [custom tags](../get-started-transaction-tracing/instrument-application-opentelemetry/java-opentelemetry-auto-instrumentation/custom-tags-configuration.md) for Java auto-instrumentation.

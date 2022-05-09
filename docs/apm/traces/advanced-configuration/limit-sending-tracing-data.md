@@ -20,9 +20,9 @@ For best results, we recommend to perform filtering on a central instance of Agg
 
 Already installed and running OpenTelemetry Collector version v0.38.1-sumo or higher, installed according to following articles:
 
-* [Tracing collection for Kubernetes environments](../01Getting_Started_with_Transaction_Tracing/Set_up_traces_collection_for_Kubernetes_environments.md "Set up traces collection for Kubernetes environments") (with
+* [Tracing collection for Kubernetes environments](../get-started-transaction-tracing/set-up-traces-collection-for-kubernetes-environments.md) (with
     sumologic-kubernetes-collection v2.2.1 or higher)
-* [Tracing collection for other environments](../01Getting_Started_with_Transaction_Tracing/Set_up_traces_collection_for_other_environments.md "Set up traces collection for other environments")
+* [Tracing collection for other environments](../get-started-transaction-tracing/set-up-traces-collection-for-other-environments.md)
 
 ## Configuring filters and traffic shaping rules
 

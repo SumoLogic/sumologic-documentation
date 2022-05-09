@@ -20,7 +20,7 @@ You can view traces in a **Table.**
 
 ## Table
 
-Click on any row to open the [Trace View](...md "Trace Analytics"). Traces are displayed in the following columns:
+Click on any row to open the [Trace View](#trace-view). Traces are displayed in the following columns:
 
 | Column name | Example value | Description |
 |--|--|--|
@@ -134,16 +134,18 @@ The color of the **Service** can be changed by clicking the colored box and sel
 
 #### Metadata
 
-Lists all of the related service entities involved in the span. When selecting a [Span Event](./03View_and_investigate_traces.md "View and investigate traces"), the Metadata includes a Span Event section.  
+Lists all of the related service entities involved in the span. When selecting a [Span Event](#span-events), the Metadata includes a Span Event section.  
   
-![trace-details-metadata.png](/img/traces/trace-details-metadata.png)![trace-details-metadata-event.png](/img/traces/trace-details-metadata-event.png)
+![trace-details-metadata.png](/img/traces/trace-details-metadata.png)
+
+![trace-details-metadata-event.png](/img/traces/trace-details-metadata-event.png)
 
 You can click on the clipboard icon to copy the value to your computer's clipboard.  
   
  ![clipboard option.png](/img/traces/clipboard-option.png)
 
 #### Entities
-The **Entities** tab provides troubleshooting links for related Entities and Environments, as well as any [Monitors] (../Alerts/Monitors.md "Monitors") with a Critical, Warning, or Missing Data status that are tracking logs or metrics on the Entity.
+The **Entities** tab provides troubleshooting links for related Entities and Environments, as well as any [Monitors](/docs/alerts/monitors) with a Critical, Warning, or Missing Data status that are tracking logs or metrics on the Entity.
 
 Only entity types from a curated list are identified. The AWS, Kubernetes, Traces, and Host domains are supported.
 
@@ -180,16 +182,15 @@ If the **Datapoint** is the same as **Now** the selector will not allow you
 </TabItem>
 <TabItem value="triggered">
 
-[Monitors] (../Alerts/Monitors.md "Monitors") track your Metrics or Logs data in real time and send notifications when noteworthy changes happen in your production applications. The **Entities** tab shows any Monitors with a Critical, Warning, or Missing Data status that are tracking logs or metrics on the Entity.
+[Monitors](/docs/alerts/monitors) track your Metrics or Logs data in real time and send notifications when noteworthy changes happen in your production applications. The **Entities** tab shows any Monitors with a Critical, Warning, or Missing Data status that are tracking logs or metrics on the Entity.
 
-Alerts are only visible when the [Time Selector](drill-down-to-discover-root-causes.md#time-selector)
-is set to **Now.**
+Alerts are only visible when the [Time Selector](drill-down-to-discover-root-causes.md#time-selector) is set to **Now.**
 
 Next to the Entity, you will see any of the following icons indicating the type of Monitor alert that has triggered.
 
 ![monitor types.png](/img/dashboards-new/drill-root-causes/monitor-types.png)
 
-Click the **Triggered monitors** row to view the related Monitors. You can click on them to view the Monitor on the [Monitors] (../Alerts/Monitors.md "Monitors") page.
+Click the **Triggered monitors** row to view the related Monitors. You can click on them to view the Monitor on the [Monitors](/docs/alerts/monitors) page.
 
 ![triggered monitors.png](/img/dashboards-new/drill-root-causes/triggered-monitors.png)
 
@@ -211,10 +212,7 @@ Each event tracks a marker in the span timeline showing the start, end, and amou
 
 ![span-event-markers.gif](/img/traces/span-event-markers.gif)
 
-Select a span event marker
-![span-event-marker.png](/img/traces/span-event-marker.png) in
-the timeline or a span with an event to see the **Span Events** section
-in the **Metadata** tab including:
+Select a span event marker ![span-event-marker.png](/img/traces/span-event-marker.png) in the timeline or a span with an event to see the **Span Events** section in the **Metadata** tab including:
 
 * Name for the event
 * Timestamp when it occurred
@@ -224,9 +222,7 @@ in the **Metadata** tab including:
 
 ![span-event-select.png](/img/traces/span-event-select.png)
 
-A **Details** link displays if additional information is available that
-may be too large for the tab view area, such as a metric attributes and
-error messages. Click to review this information.
+A **Details** link displays if additional information is available that may be too large for the tab view area, such as a metric attributes and error messages. Click to review this information. 
 
 ![span-event-more1.png](/img/traces/span-event-more1.png)
 

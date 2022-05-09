@@ -1,5 +1,6 @@
 ---
 slug: /apm/rum
+id: rum-index
 ---
 
 # Real User Monitoring
@@ -13,7 +14,7 @@ The [Sumo Logic OpenTelemetry auto-instrumentation for JavaScript](https://githu
 The full list of functionalities and configuration is available in the [Sumo Logic OpenTelemetry auto-instrumentation for JavaScript](https://github.com/SumoLogic/sumologic-opentelemetry-js) README file.
 
 :::tip
-For full end-to-end visibility, it is recommended to supplement RUM browser auto-instrumentation with appropriate [backend tracing instrumentation](01Getting_Started_with_Transaction_Tracing.md).
+For full end-to-end visibility, it is recommended to supplement RUM browser auto-instrumentation with appropriate [backend tracing instrumentation](/docs/apm/traces/get-started-transaction-tracing).
 :::
 
 :::note
@@ -35,7 +36,7 @@ import Iframe from 'react-iframe';
 
 ## Collect RUM data
 
-To collect [traces](Real_User_Monitoring/...md) from a browser you'll first need to create a RUM HTTP Traces Source. The Source will have an endpoint URL that you'll put in a script that sends trace data in [OTLP/JSON over HTTP](https://github.com/open-telemetry/opentelemetry-specification/blob/master/specification/protocol/otlp.md#otlphttp)
+To collect [traces](/docs/apm/traces) from a browser you'll first need to create a RUM HTTP Traces Source. The Source will have an endpoint URL that you'll put in a script that sends trace data in [OTLP/JSON over HTTP](https://github.com/open-telemetry/opentelemetry-specification/blob/master/specification/protocol/otlp.md#otlphttp)
 protocol.
 
 ## Create a RUM HTTP Traces Source
@@ -58,7 +59,7 @@ To configure a RUM HTTP Traces Source:
 
     ![RUM-HTTP-Traces-Source.png](/img/rum/RUM-HTTP-Traces-Source.png)
 
-1. Enter **Advanced options for Browser RUM**. A list of FAQs on the page provides help for these options. A table with all the available configuration parameters is available in the [Sumo Logic OpenTelemetry auto-instrumentation for JavaScript](https://github.com/SumoLogic/sumologic-opentelemetry-js "https://github.com/SumoLogic/sumologic-opentelemetry-js") README file.  
+1. Enter **Advanced options for Browser RUM**. A list of FAQs on the page provides help for these options. A table with all the available configuration parameters is available in the [Sumo Logic OpenTelemetry auto-instrumentation for JavaScript](https://github.com/SumoLogic/sumologic-opentelemetry-js) README file.  
 
     ![RUM-HTTP-Traces-Source-Advanced.png](/img/rum/RUM-HTTP-Traces-Source-Advanced.png)  
      
@@ -204,8 +205,7 @@ RUM script can be also wrapped in form of a browser extension/plugin for monitor
 
 ## Search traces from the browser
 
-Create a [trace query](02Working_with_Tracing_data/03View_and_investigate_traces.md "View and investigate traces")
-that specifies traces starting with the value you gave to `<name_of_your_web_service>` as a root service name. You can also include `documentLoad` as an operation name to find traces that correspond to page loads. Click on any of the load spans, such as `documentLoad`, `documentFetch` or `resourceFetch`, to open a right-side panel with detailed span metadata including timing events.
+Create a [trace query](../traces/working-with-tracing-data/view-and-investigate-traces.md) that specifies traces starting with the value you gave to `<name_of_your_web_service>` as a root service name. You can also include `documentLoad` as an operation name to find traces that correspond to page loads. Click on any of the load spans, such as `documentLoad`, `documentFetch` or `resourceFetch`, to open a right-side panel with detailed span metadata including timing events.
 
 ![RUM-trace-view with border.png](/img/rum/RUM-trace-view-with-border.png)
 
@@ -217,7 +217,7 @@ The metrics are collected for user actions representing document loads which me
 
 You can find these metrics in Metrics Explorer by querying for `_contenttype=rummetricfromtrace`
 
-The following table has details on the metrics collected from JavaScript. These are available in each trace in the `documentLoad` and `documentFetch` spans as span events in the details panel and also used in the [Real User Monitoring App](./Real_User_Monitoring.md "Real User Monitoring") to populate the Website Performance and UI Paint Timings panels.
+The following table has details on the metrics collected from JavaScript. These are available in each trace in the `documentLoad` and `documentFetch` spans as span events in the details panel and also used in the [Real User Monitoring App](#real-user-monitoring-app) to populate the Website Performance and UI Paint Timings panels.
 
 | Order | Name | Calculation |
 |--|--|--|
@@ -239,11 +239,11 @@ else connectionEnd - span start time (fetch start) |
 See W3C [navigation timing](https://www.w3.org/TR/navigation-timing/) for details on how an interface for web applications defines its access timing information concerning navigation and other elements.
 :::
 
-Metrics 1-6 and 8-9 are navigation timing metrics and are presented in the form of areas on the **Website Performance** chart on [RUM dashboards](./Real_User_Monitoring.md "Real User Monitoring"). They help you to understand the sequence of events from user clicks to a fully loaded document.
+Metrics 1-6 and 8-9 are navigation timing metrics and are presented in the form of areas on the **Website Performance** chart on [RUM dashboards](#dashboards). They help you to understand the sequence of events from user clicks to a fully loaded document.
 
 ![Navigation-metrics.png](/img/rum/Navigation-metrics.png)
 
-There are also three additional metrics (7.1, 7.2, and 7.3 from the table above) that explain rendering events inside the user's browser. These are **First Paint**, **First Contentful Paint,** and **Largest Contentful Paint**. They are only loosely related to navigation timings and in many cases, some of them may appear long after the page is fully loaded in the browser (which indicates rendering slow-downs). These metrics are displayed in the **UI Paint Timings** panel on [RUM dashboards](./Real_User_Monitoring.md "Real User Monitoring").
+There are also three additional metrics (7.1, 7.2, and 7.3 from the table above) that explain rendering events inside the user's browser. These are **First Paint**, **First Contentful Paint,** and **Largest Contentful Paint**. They are only loosely related to navigation timings and in many cases, some of them may appear long after the page is fully loaded in the browser (which indicates rendering slow-downs). These metrics are displayed in the **UI Paint Timings** panel on RUM dashboards.
 
 * [First Paint](https://developer.mozilla.org/en-US/docs/Glossary/First_paint): **measures the time from page fetch start (span start time) to the moment when the browser renders the first pixels to the screen, rendering anything that is visually different from what was on the screen prior to navigation. It answers the question "Is it happening?" 
 * [First Contentful Paint](https://web.dev/fcp/): measures the time from page fetch start (span start time) to the moment when any part of the page's content is rendered on the screen. For this metric, "content" refers to text, images (including background images), \<svg\> elements, or non-white \<canvas\> elements.
@@ -255,7 +255,7 @@ Timing metrics are not calculated if the visibility state of the document was "h
 
 ### Real User Monitoring Explore view
 
-Explore contains dashboards from the [RUM App](./Real_User_Monitoring.md "Real User Monitoring") to visualize Real User Monitoring metrics gathered from tracing instrumentation in the browser. This provides visibility into an actual end-user experience by geographical locations, browser, and operating system types. This also helps you to understand how your customers experience the performance of your web application.
+Explore contains dashboards from the [RUM App](#real-user-monitoring-app) to visualize Real User Monitoring metrics gathered from tracing instrumentation in the browser. This provides visibility into an actual end-user experience by geographical locations, browser, and operating system types. This also helps you to understand how your customers experience the performance of your web application.
 
 Explore organizes RUM data on three levels:
 

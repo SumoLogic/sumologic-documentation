@@ -21,7 +21,7 @@ It is very simple to instrument your AWS Python Lambda function using the Sumo L
 
 * Python 3.8 or Python 3.9
 * Lambda layers add permissions
-* HTTP Traces Source endpoint URL - To send spans from the instrumented Lambda function to Sumo Logic you'll need an [endpoint URL](../HTTP_Traces_Source.md) from an [HTTP Traces Source](../HTTP_Traces_Source.md).
+* HTTP Traces Source endpoint URL - To send spans from the instrumented Lambda function to Sumo Logic you'll need an endpoint URL from an [HTTP Traces Source](../http-traces-source.md).
 
 ## Deployment
 
@@ -53,11 +53,11 @@ It is very simple to instrument your AWS Python Lambda function using the Sumo L
               
         All of the attributes above are comma separated key/value pairs (this is also a way to add additional information to the spans, just after comma add additional key=value pair) such as, `OTEL_RESOURCE_ATTRIBUTES=application=YOUR_APPLICATION_NAME,cloud.account.id=123456789012`.
 
-     * `SUMOLOGIC_HTTP_TRACES_ENDPOINT_URL` has to be set to send all gathered telemetry data to Sumo Logic. The URL comes from an [HTTP Traces Endpoint URL](../HTTP_Traces_Source.md). You can use an existing Source or create a new one if needed.  
+     * `SUMOLOGIC_HTTP_TRACES_ENDPOINT_URL` has to be set to send all gathered telemetry data to Sumo Logic. The URL comes from an [HTTP Traces Endpoint URL](../http-traces-source.md). You can use an existing Source or create a new one if needed.  
           
     ![lambda-python.png](/img/traces/lambda-python3.png)
 
-1. Your function should be successfully instrumented. Invoke the function and find your traces in the [Sumo Logic Tracing screen](../../02Working_with_Tracing_data/03View_and_investigate_traces.md).
+1. Your function should be successfully instrumented. Invoke the function and find your traces in the [Sumo Logic Tracing screen](../../working-with-tracing-data/view-and-investigate-traces.md).
 
 ## amd64 architecture
 
@@ -115,7 +115,7 @@ Instrumentation of container based AWS Lambda function requires some changes in 
 
 * Docker
 * Python 3.8 or Python 3.9
-* HTTP Traces Source endpoint URL -  To send spans from the instrumented Lambda function to Sumo  Logic you'll need an [endpoint URL](../HTTP_Traces_Source.md) from an [HTTP Traces Source](../HTTP_Traces_Source.md).
+* HTTP Traces Source endpoint URL -  To send spans from the instrumented Lambda function to Sumo  Logic you'll need an endpoint URL from an [HTTP Traces Source](../http-traces-source.md).
 
 ### Lambda function image changes
 
@@ -160,11 +160,11 @@ Instrumentation of container based AWS Lambda function requires some changes in 
               
         All of the attributes above are comma separated key/value pairs (this is also a way to add additional information to the spans, just after comma add additional key=value pair) such as, `OTEL_RESOURCE_ATTRIBUTES=application=YOUR_APPLICATION_NAME,cloud.account.id=123456789012`.
 
-   * `SUMOLOGIC_HTTP_TRACES_ENDPOINT_URL` has to be set to send all gathered telemetry data to Sumo Logic. The URL comes from an [HTTP Traces Endpoint URL](../HTTP_Traces_Source.md). You can use an existing Source or create a new one if needed.  
+   * `SUMOLOGIC_HTTP_TRACES_ENDPOINT_URL` has to be set to send all gathered telemetry data to Sumo Logic. The URL comes from an [HTTP Traces Endpoint URL](../http-traces-source.md). You can use an existing Source or create a new one if needed.  
 
     ![lambda-python.png](/img/traces/lambda-python4.png)
 
-1. Your function should be successfully instrumented. Invoke the function and find your traces in the [Sumo Logic Tracing screen](../../02Working_with_Tracing_data/03View_and_investigate_traces.md).
+1. Your function should be successfully instrumented. Invoke the function and find your traces in the [Sumo Logic Tracing screen](../../working-with-tracing-data/view-and-investigate-traces.md).
 
 ### Context propagation
 

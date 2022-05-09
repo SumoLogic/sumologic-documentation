@@ -4,7 +4,7 @@ id: net-opentelemetry-auto-instrumentation
 
 # .NET OpenTelemetry auto-instrumentation
 
-Automatic instrumentation of the .NET applications is a very easy task. The simplest way to start capturing telemetry data is to implement the solution coming from OpenTelemetry-dotNet. All the libraries shipped with the [OpenTelemetry-dotNet](https://github.com/open-telemetry/opentelemetry-dotnet ) repository support all the officially supported versions of .NET Core (including deployments in the [Microsoft Azure Service Fabric Containers](https://docs.microsoft.com/en-us/azure/service-fabric/service-fabric-containers-overview)) and .NET framework with an except for .NET Framework 3.5 SP1. See this [list of the supported libraries](https://github.com/open-telemetry/opentelemetry-dotnet#getting-started).
+Automatic instrumentation of the .NET applications is a very easy task. The simplest way to start capturing telemetry data is to implement the solution coming from OpenTelemetry-dotNet. All the libraries shipped with the [OpenTelemetry-dotNet](https://github.com/open-telemetry/opentelemetry-dotnet) repository support all the officially supported versions of .NET Core (including deployments in the [Microsoft Azure Service Fabric Containers](https://docs.microsoft.com/en-us/azure/service-fabric/service-fabric-containers-overview)) and .NET framework with an except for .NET Framework 3.5 SP1. See this [list of the supported libraries](https://github.com/open-telemetry/opentelemetry-dotnet#getting-started).
 
 ## How to instrument your ASP.NET Core application?
 
@@ -43,12 +43,11 @@ services.AddOpenTelemetryTracing(builder => builder
 The final step is to configure the exporter endpoint, service and application name. In this example, the instrumentation will be configured by environment variables.
 
 * `OTEL_EXPORTER_OTLP_PROTOCOL=http/protobuf` - configures OTLP exporter to use OTLP HTTP protocol
-* `OTEL_EXPORTER_OTLP_ENDPOINT=http://collection-sumologic-otelcol.sumologic:55681` - environment variable configures the endpoint where telemetry data will be sent. The value of the variable points to the default Sumologic Kubernetes Collector. For Kubernetes environments see the [available endpoints](./.NET_OpenTelemetry_auto-instrumentation.md ".NET OpenTelemetry auto-instrumentation") for a direct connection. For other environments see [endpoints and protocols](../Set_up_traces_collection_for_other_environments.md "Set up traces collection for other environments").
-* `OTEL_SERVICE_NAME=SERVICE_NAME` - configure the service name. Ensure the string value represents its business logic, such as "FinanceServiceCall". This will appear as a tracing service name in
-    Sumo Logic.
+* `OTEL_EXPORTER_OTLP_ENDPOINT=http://collection-sumologic-otelcol.sumologic:55681` - environment variable configures the endpoint where telemetry data will be sent. The value of the variable points to the default Sumologic Kubernetes Collector.
+* `OTEL_SERVICE_NAME=SERVICE_NAME` - configure the service name. Ensure the string value represents its business logic, such as "FinanceServiceCall". This will appear as a tracing service name in Sumo Logic.
 * `OTEL_RESOURCE_ATTRIBUTES=application=APPLICATION_NAME` - configure the application name. This will appear as a tracing application name in Sumo Logic. Additional attributes can be added here as comma separated key=value pairs.
 
-### How to instrument your ASP.NET application?
+## How to instrument your ASP.NET application?
 
 Instrumentation of the .NET application requires a little more effort but is still simple.
 
@@ -93,7 +92,7 @@ In `<system.webServer>` section additional HTTP Module should be added:
 </system.webServer>
 ```
 
-##### 3. Instrumentation with OpenTelemetryProtocol exporter
+### Step 3. Instrumentation with OpenTelemetryProtocol exporter
 
 To enable [.NET instrumentation](https://github.com/open-telemetry/opentelemetry-dotnet/tree/1.0.0-rc7/src/OpenTelemetry.Instrumentation.AspNet#aspnet-instrumentation-for-opentelemetry) some additional code has to be introduced. The code needs to be added at the application startup phase usually located in the **Global.asax.cs** file. A few things in the code below were added.
 
@@ -132,7 +131,7 @@ public class MvcApplication : System.Web.HttpApplication
 The final step is to configure the exporter endpoint, service and application name. In this example, the instrumentation will be configured by environment variables.
 
 * `OTEL_EXPORTER_OTLP_PROTOCOL=http/protobuf` - configures OTLP exporter to use OTLP HTTP protocol
-* `OTEL_EXPORTER_OTLP_ENDPOINT=http://collection-sumologic-otelcol.sumologic:55681` - environment variable configures the endpoint where telemetry data will be sent. The value of the variable points to the default Sumologic Kubernetes Collector. For Kubernetes environments see the [available endpoints](./.NET_OpenTelemetry_auto-instrumentation.md ".NET OpenTelemetry auto-instrumentation") for a direct connection. For other environments see [endpoints and protocols](../Set_up_traces_collection_for_other_environments.md "Set up traces collection for other environments").
+* `OTEL_EXPORTER_OTLP_ENDPOINT=http://collection-sumologic-otelcol.sumologic:55681` - environment variable configures the endpoint where telemetry data will be sent. The value of the variable points to the default Sumologic Kubernetes Collector. 
 * `OTEL_SERVICE_NAME=SERVICE_NAME` - configure the service name. Ensure the string value represents its business logic, such as "FinanceServiceCall". This will appear as a tracing service name in Sumo Logic.
 * `OTEL_RESOURCE_ATTRIBUTES=application=APPLICATION_NAME` - configure the application name. This will appear as a tracing application name in Sumo Logic. Additional attributes can be added here as comma separated key=value pairs.
 
@@ -180,12 +179,20 @@ and a small code change, in addition to the HttpClient instrumentation
 
 * .NET Core code example  
       
-    `services.AddOpenTelemetryTracing((builder) \> builder            .AddAspNetCoreInstrumentation()            .AddHttpClientInstrumentation()`  
+    ```
+    services.AddOpenTelemetryTracing((builder) => builder
+       .AddAspNetCoreInstrumentation()
+       .AddHttpClientInstrumentation()
+    ```  
      
 
 * .NET code example  
       
-    `this.tracerProvider = Sdk.CreateTracerProviderBuilder()                .AddAspNetInstrumentation()                .AddHttpClientInstrumentation()`
+    ```
+    this.tracerProvider = Sdk.CreateTracerProviderBuilder()
+           .AddAspNetInstrumentation()
+           .AddHttpClientInstrumentation()
+    ```
 
 ### Redis instrumentation
 
@@ -227,11 +234,15 @@ and a small code change, in addition to the SqlClient instrumentation `.AddSqlCl
 * .NET Core code example  
       
    ```
-   services.AddOpenTelemetryTracing((builder) \> builder            .AddAspNetCoreInstrumentation()            .AddSqlClientInstrumentation()
+   services.AddOpenTelemetryTracing((builder) => builder
+       .AddAspNetCoreInstrumentation()
+       .AddSqlClientInstrumentation()
    ```
 
 * .NET code example  
       
    ```
-   this.tracerProvider = Sdk.CreateTracerProviderBuilder()                .AddAspNetInstrumentation()                .AddSqlClientInstrumentation()
+   this.tracerProvider = Sdk.CreateTracerProviderBuilder()
+           .AddAspNetInstrumentation()
+           .AddSqlClientInstrumentation()
    ```

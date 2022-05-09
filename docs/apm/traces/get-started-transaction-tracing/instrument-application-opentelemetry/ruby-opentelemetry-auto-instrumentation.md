@@ -86,7 +86,7 @@ The final step is to configure the exporter host and service name. This can be d
    OTEL_EXPORTER_OTLP_ENDPOINT=http://collection-sumologic-otelcol.sumologic:55681
    ```
           
-   In this example, the value of the variable points to the default Sumologic Kubernetes Collector. For Kubernetes environments see the [available endpoints for a direct connection](../Set_up_traces_collection_for_Kubernetes_environments.md). For other environments see [endpoints and protocols](../Set_up_traces_collection_for_other_environments.md).
+   In this example, the value of the variable points to the default Sumologic Kubernetes Collector. For Kubernetes environments see the [available endpoints for a direct connection](../set-up-traces-collection-for-kubernetes-environments.md). For other environments see [endpoints and protocols](../set-up-traces-collection-for-other-environments.md).
 
 * Configure the service name. Ensure the string value represents its business logic, such as `FinanceServiceCall`.  This will appear as a tracing service name in Sumo Logic.
   

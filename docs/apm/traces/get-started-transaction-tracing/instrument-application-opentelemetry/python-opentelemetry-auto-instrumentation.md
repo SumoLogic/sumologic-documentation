@@ -4,11 +4,11 @@ id: python-opentelemetry-auto-instrumentation
 
 # Python OpenTelemetry auto-instrumentation
 
-OpenTelemetry Python instrumentation gives the possibility to capture telemetry data from the python written code applications. The best way to start it is to incorporate [OpenTelemetry-Python](https://github.com/open-telemetry/opentelemetry-python). See a list of the [supported libraries](https://github.com/open-telemetry/opentelemetry-python-contrib/tree/main/instrumentation "https://github.com/open-telemetry/opentelemetry-python-contrib/tree/main/instrumentation") under OpenTelemetry Instrumentations.
+OpenTelemetry Python instrumentation gives the possibility to capture telemetry data from the python written code applications. The best way to start it is to incorporate [OpenTelemetry-Python](https://github.com/open-telemetry/opentelemetry-python). See a list of the [supported libraries](https://github.com/open-telemetry/opentelemetry-python-contrib/tree/main/instrumentation) under OpenTelemetry Instrumentations.
 
 ## How to instrument your app?
 
-The best way to instrument Python applications is to use OpenTelemetry-Python automatic instrumentation. This approach is simple, easy, and does not require many code changes. Only a few Python packages have to be installed to successfully instrument the code of the application. Instruction below applies to OpenTelemetry-Python instrumentation in version **1.9.1/0.28b1 **with [OpenTelemetry Protocol HTTP Exporter](https://github.com/open-telemetry/opentelemetry-python/tree/v1.9.1/exporter/opentelemetry-exporter-otlp-proto-http").
+The best way to instrument Python applications is to use OpenTelemetry-Python automatic instrumentation. This approach is simple, easy, and does not require many code changes. Only a few Python packages have to be installed to successfully instrument the code of the application. Instruction below applies to OpenTelemetry-Python instrumentation in version **1.9.1/0.28b1 with [OpenTelemetry Protocol HTTP Exporter](https://github.com/open-telemetry/opentelemetry-python/tree/v1.9.1/exporter/opentelemetry-exporter-otlp-proto-http").
 
 ## Mandatory packages installation
 
@@ -57,7 +57,7 @@ After successful installation of the packages it is important to properly config
    OTEL_EXPORTER_OTLP_TRACES_ENDPOINT=http://collection-sumologic-otelcol.sumologic:55681/v1/traces
    ```
 
-   The value of the variable points to the default Sumologic Kubernetes Collector. For Kubernetes environments see the [available endpoints for a direct connection](../Set_up_traces_collection_for_Kubernetes_environments.md). For other environments see [endpoints and protocols](../Set_up_traces_collection_for_other_environments.md).
+   The value of the variable points to the default Sumologic Kubernetes Collector. For Kubernetes environments see the [available endpoints for a direct connection](../set-up-traces-collection-for-kubernetes-environments.md). For other environments see [endpoints and protocols](../set-up-traces-collection-for-other-environments.md).
 
 * Configures the service name. Ensure the string value represents its business logic, such as "FinanceServiceCall". This will appear as a tracing service name in Sumo Logic.
 

@@ -1,5 +1,5 @@
 ---
-slug: /traces/get-started-transaction-tracing/java-opentelemetry-auto-instrumentation
+slug: /apm/traces/get-started-transaction-tracing/java-opentelemetry-auto-instrumentation
 ---
 
 # Java OpenTelemetry auto-instrumentation
@@ -25,10 +25,10 @@ The [agent](https://github.com/open-telemetry/opentelemetry-java-instrumentatio
 Either of the following options could be used as the template, with the following changes:
 
 * The path to the javaagent JAR file needs to replaced with the location of the file downloaded and distributed in step 1.
-* `COLLECTOR_HOSTNAME` must be provided with the location of the OpenTelemetry Collector/Agent (recommended for production) or [Sumo Logic HTTP Traces source](../HTTP_Traces_Source.md "HTTP Traces Source"). Refer to the following setup instructions if you don't have yet collector installed:
+* `COLLECTOR_HOSTNAME` must be provided with the location of the OpenTelemetry Collector/Agent (recommended for production) or [Sumo Logic HTTP Traces source](../../http-traces-source.md). Refer to the following setup instructions if you don't have yet collector installed:
 
-  * [Set up traces collection for Kubernetes environments](../Set_up_traces_collection_for_Kubernetes_environments.md "Set up traces collection for Kubernetes environments")
-  * [Set up traces collection for other environments](../Set_up_traces_collection_for_other_environments.md "Set up traces collection for other environments")
+  * [Set up traces collection for Kubernetes environments](../../set-up-traces-collection-for-kubernetes-environments.md)
+  * [Set up traces collection for other environments](../../set-up-traces-collection-for-other-environments.md)
 
 * `SERVICE_NAME` needs to be replaced with the name used for the identification of the service.
 * `APPLICATION_NAME` needs to be replaced with the name used for the identification of the application.

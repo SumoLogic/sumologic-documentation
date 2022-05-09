@@ -91,7 +91,7 @@ The final step is to configure the exporter host, service and application name.
 
 * `OTEL_EXPORTER_OTLP_ENDPOINT=http://collection-sumologic-otelcol.sumologic:55681` - environment variable configures the endpoint where telemetry data will be sent.  
           
- In this example, the value of the variable points to the default Sumologic Kubernetes Collector. For Kubernetes environments see the [available endpoints for a direct connection](../Set_up_traces_collection_for_Kubernetes_environments.md). For other environments see [endpoints and protocols](../Set_up_traces_collection_for_other_environments.md "https://help.sumologic.com/Traces/Getting_Started_with_Transaction_Tracing/Set_up_traces_collection_for_other_environments#step-4-connecting-clients-to-opentelemetry-collector").
+ In this example, the value of the variable points to the default Sumologic Kubernetes Collector. For Kubernetes environments see the [available endpoints for a direct connection](../set-up-traces-collection-for-kubernetes-environments.md). For other environments see [endpoints and protocols](../set-up-traces-collection-for-other-environments.md).
 
 * `OTEL_SERVICE_NAME=SERVICE_NAME` - configure the service name. Ensure the string value represents its business logic, such as "FinanceServiceCall". This will appear as a tracing service name in Sumo Logic.
 

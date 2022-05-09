@@ -4,7 +4,7 @@ id: search-query-language-support-for-traces
 
 # Search Query Language support for Traces
 
-You can use the Search Query Language in a log search to query raw spans from [tracing](...md "Traces") data for the same period as the default partition.
+You can use the Search Query Language in a log search to query raw spans from tracing data for the same period as the default partition.
 
 Tracing data retention in `_trace_spans` index is the same as default log index retention.
 
@@ -35,7 +35,7 @@ A Keyword Search Expression defines the scope of data for the query. You need to
 
 In scenarios where users are not familiar with the schema and would like to search across all the fields, `_any` modifier provides a means to search for a specified value from all of the Ingest Time Fields in your data. For example, to search for data with any field that has a value of success you would put `_any=success` in the scope of your query.
 
-Syntax: `_any\<valu\>`
+Syntax: `_any<value>`
 
 The `_any` option is not supported outside of the scope of a query. This is supported for the Security and Tracing tiers.
 

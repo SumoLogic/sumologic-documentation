@@ -1,5 +1,5 @@
 ---
-slug: /traces/get-started-transaction-tracing
+slug: /apm/traces/get-started-transaction-tracing
 ---
 
 # Getting Started with Transaction Tracing
@@ -17,3 +17,9 @@ Sumo Logic tracing supports the OpenTelemetry standard as well as other legacy o
 Once you have set up trace collection see how to [analyze your traces in Sumo Logic](02Working_with_Tracing_data/03View_and_investigate_traces.md "View and investigate traces").
 
 
+import DocCardList from '@theme/DocCardList';
+import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
+
+In this section, we will introduce the following concepts:
+
+<DocCardList items={useCurrentSidebarCategory().items}/>

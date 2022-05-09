@@ -1,5 +1,5 @@
 ---
-slug: /traces/get-started-transaction-tracing/go-opentelemetry-auto-instrumentation
+slug: /apm/traces/get-started-transaction-tracing/go-opentelemetry-auto-instrumentation
 ---
 
 # Go OpenTelemetry auto-instrumentation
@@ -111,7 +111,7 @@ The last step is to configure few other things like:
 
 * `SERVICE_NAME` - insert the application service name. Ensure the string value represents its business logic, such as "SumoWebCall". This will appear as a tracing service name in Sumo Logic.
 * `APPLICATION_NAME` - insert the application name. This will appear as a tracing application name in Sumo Logic. Additional attributes can be added here as comma separated key=value pairs.
-* `ENDPOINT_ADDRESS` - OTLP HTTP collector endpoint address (default Sumo Logic endpoint address for Kubernetes deployment: `"http://collection-sumologic-otelcol.sumologic:5568"`) recommended for production usage or [Sumo Logic HTTP Traces URL](../HTTP_Traces_Source.md "HTTP Traces Source").
+* `ENDPOINT_ADDRESS` - OTLP HTTP collector endpoint address (default Sumo Logic endpoint address for Kubernetes deployment: `"http://collection-sumologic-otelcol.sumologic:5568"`) recommended for production usage or [Sumo Logic HTTP Traces URL](../../http-traces-source.md).
 
 All of them can be configured by [environment variables](https://github.com/open-telemetry/opentelemetry-go/tree/v1.4.0/exporters/otlp/otlptrace#otlptracehttp) specific for the exporter. For OTLP HTTP Exporter these are:
 

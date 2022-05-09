@@ -49,7 +49,7 @@ The following information walks through [bunyan](https://www.npmjs.com/package/b
    npm install --save @opentelemetry/instrumentation-bunyan
    ```
 
-1. bunyan instrumentation registration should be added in the file where OpenTelemetry JS instrumentation is configured. See [Sumo Logic OpenTelemetry JS auto-instrumentation](JavaScript_TraceId_and_SpanId_injection_into_logs/...md) for details.
+1. bunyan instrumentation registration should be added in the file where OpenTelemetry JS instrumentation is configured. See [Sumo Logic OpenTelemetry JS auto-instrumentation](/docs/apm/traces/get-started-transaction-tracing/javascript-opentelemetry-auto-instrumentation) for details.
 
    * Import dependency  
 

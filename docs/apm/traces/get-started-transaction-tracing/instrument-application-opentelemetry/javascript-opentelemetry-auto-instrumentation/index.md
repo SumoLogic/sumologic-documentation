@@ -1,10 +1,10 @@
 ---
-slug: /traces/get-started-transaction-tracing/javascript-opentelemetry-auto-instrumentation
+slug: /apm/traces/get-started-transaction-tracing/javascript-opentelemetry-auto-instrumentation
 ---
 
 # JavaScript OpenTelemetry auto-instrumentation
 
-You can instrument your JavaScript/NodeJS services either using [Sumo Logic distribution for OpenTelemetry JS](./JavaScript_OpenTelemetry_auto-instrumentation.md "JavaScript OpenTelemetry auto-instrumentation") that is all-in-one, easy and quick to setup or a bit more demanding [official OpenTelemetry distribution](./JavaScript_OpenTelemetry_auto-instrumentation.md "JavaScript OpenTelemetry auto-instrumentation"). 
+You can instrument your JavaScript/NodeJS services either using [Sumo Logic distribution for OpenTelemetry JS](#auto-instrumentation-using-sumo-logic-opentelemetry-for-js-distro-easy-setup) that is all-in-one, easy and quick to setup or a bit more demanding [official OpenTelemetry distribution](#auto-instrumentation-using-official-opentelemetry-for-js). 
 
 ## Auto-instrumentation using Sumo Logic OpenTelemetry for JS distro (easy setup)
 

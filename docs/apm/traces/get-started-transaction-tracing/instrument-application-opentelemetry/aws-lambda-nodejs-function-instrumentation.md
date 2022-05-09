@@ -23,7 +23,7 @@ It is very simple to instrument your AWS NodeJS Lambda function using the Sumo L
 
 * NodeJS v12.x or newer
 * Lambda layers add permissions
-* HTTP Traces Source endpoint URL - To send spans from the instrumented Lambda function to Sumo Logic you need an [endpoint URL](../HTTP_Traces_Source.md) from an existing or new [HTTP Traces Source](../HTTP_Traces_Source.md).
+* HTTP Traces Source endpoint URL - To send spans from the instrumented Lambda function to Sumo Logic you need an endpoint URL from an existing or new [HTTP Traces Source](../http-traces-source.md).
 
 1. Navigate to [functions](https://console.aws.amazon.com/lambda/home#/functions) in the AWS Lambda Console and open the function you want to instrument.
 
@@ -168,11 +168,11 @@ changes in the Dockerfile and image rebuild. You'll need the following:
               
         All of the attributes above are comma separated key/value pairs (this is also a way to add additional information to the spans, just after comma add additional key=value pair) such as, `OTEL_RESOURCE_ATTRIBUTES=application=YOUR_APPLICATION_NAME,cloud.account.id=123456789012`.
 
-     * `SUMOLOGIC_HTTP_TRACES_ENDPOINT_URL` has to be set to send all gathered telemetry data to Sumo Logic. The URL comes from an [HTTP Traces Endpoint URL](../HTTP_Traces_Source.md). You can use an existing Source or create a new one if needed.
+     * `SUMOLOGIC_HTTP_TRACES_ENDPOINT_URL` has to be set to send all gathered telemetry data to Sumo Logic. The URL comes from an [HTTP Traces Endpoint URL](../http-traces-source.md). You can use an existing Source or create a new one if needed.
 
     ![lambda-nodejs4.png](/img/traces/lambda-nodejs4.png)
 
-1. Your function should be successfully instrumented. Invoke the function and find your traces in the [Sumo Logic Tracing screen](../../02Working_with_Tracing_data/03View_and_investigate_traces.md).
+1. Your function should be successfully instrumented. Invoke the function and find your traces in the [Sumo Logic Tracing screen](../../working-with-tracing-data/view-and-investigate-traces.md).
 
 ### Context propagation
 

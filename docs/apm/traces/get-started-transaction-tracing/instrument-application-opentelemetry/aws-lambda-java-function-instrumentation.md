@@ -8,13 +8,13 @@ This document covers how to install and configure OpenTelemetry distributed tra
 
 ## Requirements
 
-It is very simple to instrument your AWS Java Lambda function using the [Sumo Logic AWS distro Lambda layer](https://github.com/SumoLogic/opentelemetry-lambda/tree/main/java). By default calls to the Lambda function and AWS Services are instrumented, see the [Manual Instrumentation](./AWS_Lambda_-_Java_function_instrumentation_with_Sumo_Logic_tracing.md "AWS Lambda - Java function instrumentation with Sumo Logic tracing") section below if your function is performing some other calls like HTTP requests or database calls.
+It is very simple to instrument your AWS Java Lambda function using the [Sumo Logic AWS distro Lambda layer](https://github.com/SumoLogic/opentelemetry-lambda/tree/main/java). By default calls to the Lambda function and AWS Services are instrumented, see the [Manual Instrumentation](#optional-manual-instrumentation) section below if your function is performing some other calls like HTTP requests or database calls.
 
 You'll need the following:
 
 * Java8 (Corretto) or Java11 (Corretto)
 * Lambda layers add permissions
-* HTTP Traces Source endpoint URL - To send spans from the instrumented Lambda function to Sumo Logic you need an [endpoint URL](../HTTP_Traces_Source.md) from an existing or new [HTTP Traces Source](../HTTP_Traces_Source.md).
+* HTTP Traces Source endpoint URL - To send spans from the instrumented Lambda function to Sumo Logic you need an endpoint URL from an existing or new [HTTP Traces Source](../http-traces-source.md).
 
 Sumo Logic AWS Distro Lambda Layer supports:
 
@@ -52,11 +52,11 @@ Sumo Logic AWS Distro Lambda Layer supports:
               
         All of the attributes above are comma separated key/value pairs (this is also a way to add additional information to the spans, just after comma add additional key=value pair) such as, `OTEL_RESOURCE_ATTRIBUTES=application=YOUR_APPLICATION_NAME,cloud.account.id=123456789012`.
 
-     * `SUMOLOGIC_HTTP_TRACES_ENDPOINT_URL` has to be set to send all gathered telemetry data to Sumo Logic. The URL comes from an [HTTP Traces Endpoint URL](../HTTP_Traces_Source.md). You can use an existing Source or create a new one if needed.  
+     * `SUMOLOGIC_HTTP_TRACES_ENDPOINT_URL` has to be set to send all gathered telemetry data to Sumo Logic. The URL comes from an [HTTP Traces Endpoint URL](../http-traces-source.md). You can use an existing Source or create a new one if needed.  
     
     ![img](/img/traces/lambda-java3.png)
 
-1. Your function should be successfully instrumented. Invoke the function and find your traces in the [Sumo Logic Tracing screen](../../02Working_with_Tracing_data/03View_and_investigate_traces.md).
+1. Your function should be successfully instrumented. Invoke the function and find your traces in the [Sumo Logic Tracing screen](../../working-with-tracing-data/view-and-investigate-traces.md).
 
 ## Optional manual instrumentation
 

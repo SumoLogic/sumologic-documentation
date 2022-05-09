@@ -14,7 +14,7 @@ Sumo Logic Application Monitoring and Observability provides transactional int
 
 ## Spans page
 
-The Spans page allows you to filter and aggregate your trace data at the raw span level so you can understand the performance and behavior of your application services. You can filter and aggregate by any standard or custom span attribute (tag) and create charts to visualize results. If you find something interesting, you can quickly explore your raw span records in the **Messages** tab. You can also further enhance your query for more advanced use cases using the [Open in Search](#open-in-search) button. This opens a new Search of your spans based on your query where you can investigate further by utilizing the [Search Query Language](05Search_Query_Language_support_for_Traces.md "Search Query Language support for Traces").
+The Spans page allows you to filter and aggregate your trace data at the raw span level so you can understand the performance and behavior of your application services. You can filter and aggregate by any standard or custom span attribute (tag) and create charts to visualize results. If you find something interesting, you can quickly explore your raw span records in the **Messages** tab. You can also further enhance your query for more advanced use cases using the [Open in Search](#open-in-search) button. This opens a new Search of your spans based on your query where you can investigate further by utilizing the [Search Query Language](search-query-language-support-for-traces.md).
 
 :::note
 You need to have Tracing enabled in your account to use this functionality. Contact your account team if the only thing you see is an infographic.
@@ -96,7 +96,7 @@ You can pause or stop your search by clicking the appropriate icons below the se
 
 ### Messages
 
-The Messages table shows your raw span data. You can click on any row to open right-side Details pane showing details of the span (similar to the one in [Trace View](03View_and_investigate_traces.md "View and investigate traces")) and providing abilities to navigate to other parts of the system from there.
+The Messages table shows your raw span data. You can click on any row to open right-side Details pane showing details of the span (similar to the one in [Trace View](view-and-investigate-traces.md)) and providing abilities to navigate to other parts of the system from there.
 
 ![messages results.png](/img/traces/messages-results.png)
 
@@ -108,11 +108,11 @@ The table can be modified by the following:
    ![resize column.png](/img/traces/resize-column.png)
 
 * Double click the vertical line to the right of a column name to reset the width to the default.
-* **Facets** shows all of the metadata fields from your search results and allows you to show or hide fields from the results table. See [Facets](./04Spans.md "Spans") below for more details.
+* **Facets** shows all of the metadata fields from your search results and allows you to show or hide fields from the results table. See [Facets](#facets) below for more details.
 
 #### Facets
 
-This panel provides a list of all the metadata fields returned from your search. The content of the Facets panel is affected by your current active filters and time range, but shows any found metadata tag (span attribute) with its top 10 values, including any custom tags you may [add to your data](../01Getting_Started_with_Transaction_Tracing/01Instrument_your_application_with_OpenTelemetry/Java_OpenTelemetry_auto-instrumentation/Custom_tags_configuration.md "Custom tags configuration"). By default, the fields used in the query are shown in the Messages table.
+This panel provides a list of all the metadata fields returned from your search. The content of the Facets panel is affected by your current active filters and time range, but shows any found metadata tag (span attribute) with its top 10 values, including any custom tags you may [add to your data](../get-started-transaction-tracing/instrument-application-opentelemetry/java-opentelemetry-auto-instrumentation/custom-tags-configuration.md). By default, the fields used in the query are shown in the Messages table.
 
 ![Facets expanded.png](/img/traces/Facets-expanded.png)
 
@@ -147,7 +147,7 @@ To add your aggregated span data to a Dashboard:
 
 ## Open in Search
 
-To further enhance your query, you can use the [Search Query Language](05Search_Query_Language_support_for_Traces.md "Search Query Language support for Traces") for more advanced use cases by opening a Search of your spans. Click the
+To further enhance your query, you can use the [Search Query Language](search-query-language-support-for-traces.md) for more advanced use cases by opening a Search of your spans. Click the
 three vertical-dots icon on the top right of the Spans page and select **Open in Search**.  
   
 ![span-open-in-search.png](/img/traces/span-open-in-search.png)
@@ -172,7 +172,7 @@ It’s now easier than ever to drill down into the information you care about. N
 
 The number of cases you can realize with this is unlimited. In addition to the above examples, you can aggregate and visualize the content of custom metrics in your spans, and filter and break them down by any field, including custom tags. These can all be presented in any of the available chart visualizations.
 
-If any further query customization is required, you can click the [**Open in Search**](./04Spans.md "Spans") button to edit your query, making it a great place to start queries in a way that still allows further technical refinement. Especially if you try to solve a use case that requires more than the current functionality of the Spans page, such as the following:
+If any further query customization is required, you can click the [**Open in Search**](#open-in-search) button to edit your query, making it a great place to start queries in a way that still allows further technical refinement. Especially if you try to solve a use case that requires more than the current functionality of the Spans page, such as the following:
 
 1. A stacked time-series chart with more than two non-time dimensions. You can only set **Group By** to **Time** and a single dimension.
 1. Visualize multiple series with more than one count operation.
