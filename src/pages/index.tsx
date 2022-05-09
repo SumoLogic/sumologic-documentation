@@ -89,7 +89,7 @@ const features = [
       description="APM description">
         Monitor user activity, traces data, and service maps to investigate usage and issues.
       </Translate>),
-    link: 'docs/get-started',
+    link: 'docs/apm/traces',
   },
   {
     title: translate({

@@ -160,16 +160,16 @@ module.exports = {
             // Map of content into the Guides mega drop down Number associated to the doc links in this section
             // activeregex controls the top nav content, icon uses Google Material name code https://fonts.google.com/icons?query=material
             layout: [
-              '0 1 3 5',
-              '0 1 3 5',
-              '0 1 3 5',
-              '0 1 3 5',
+              '0 1 3 4',
+              '0 1 3 4',
+              '0 1 3 4',
+              '0 1 3 4',
               '0 2 3 5',
-              '0 2 4 5',
-              '0 2 4 5',
-              '0 2 4 5',
-              '0 2 4 5',
-              '0 2 4 5',
+              '0 2 3 5',
+              '0 2 3 5',
+              '0 2 3 5',
+              '0 2 3 5',
+              '0 2 3 5',
             ],
             items_: [ 
               {
@@ -294,26 +294,7 @@ module.exports = {
                   },
                 ],
               },
-              {
-                // 4
-                label: 'Other Solutions',
-                items: [
-                  {
-                    label: 'Global Intelligence',
-                    sublabel: 'Review security issues',
-                    to: '/docs/global-intelligence',
-                    icon: 'format_list_bulleted',
-                    activeBaseRegex: '^/docs/(global-intelligence)/.*',
-                  },
-                  {
-                    label: 'SDO Solution',
-                    sublabel: 'Software Development Optimization',
-                    to: '/docs/sdo',
-                    icon: 'code',
-                    activeBaseRegex: '^/docs/(sdo)/.*',
-                  },
-                ],
-              },
+              
               {
                 // 4 - What would this link to?
                 label: 'Security & Incidents',
@@ -343,13 +324,29 @@ module.exports = {
                   },
                 ],
               },
+              {
+                // 4
+                label: 'Other Solutions',
+                items: [
+                  {
+                    label: 'Global Intelligence',
+                    sublabel: 'Review security issues',
+                    to: '/docs/global-intelligence',
+                    icon: 'format_list_bulleted',
+                    activeBaseRegex: '^/docs/(global-intelligence)/.*',
+                  },
+                  {
+                    label: 'SDO Solution',
+                    sublabel: 'Software Dev Optimization',
+                    to: '/docs/sdo',
+                    icon: 'code',
+                    activeBaseRegex: '^/docs/(sdo)/.*',
+                  },
+                ],
+              },
             ],
           },
-          {
-            label: 'Doc Contributions',
-            to: '/docs/contribution',
-            position: 'left',
-          },
+          
           {
             //Release Notes blog
             label: 'Release Notes',
@@ -366,6 +363,22 @@ module.exports = {
             // i18n
             type: 'localeDropdown',
             position: 'right',
+          },
+          {
+            position: 'right',
+            className: 'header-github-link',
+            type: 'dropdown',
+            'aria-label': 'GitHub repository',
+            items:[
+              {
+                label: 'Contribution Guide',
+                to: '/docs/contribution',
+              },
+              {
+                label: 'Docs GitHub',
+                href: 'https://github.com/SumoLogic/sumologic-documentation',
+              },
+            ]
           },
         ],
       },
