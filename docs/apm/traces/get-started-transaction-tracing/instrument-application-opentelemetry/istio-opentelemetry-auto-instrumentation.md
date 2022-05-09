@@ -124,7 +124,7 @@ Every action requires restart of the pods involved in tracing.
     kubectl get namespace -L istio-injection
     ```
       
-    ![istio2.png](/img/istio2.png)  
+    ![istio2.png](/img/traces/istio2.png)  
 
 1. Make sure the `namespace` in which the application is running `istio-injection` label is set as `enabled`. If label value is disabled or not set then run:  
 

@@ -81,7 +81,7 @@ $ opentelemetry-instrument python3 SCRIPT_NAME.py
 
 ## Context propagation
 
-By default OpenTelemetry uses [W3C context propagation](./Python_OpenTelemetry_auto-instrumentation.md "Python OpenTelemetry auto-instrumentation") standard. If application instrumented by OpenTelemetry communicates with services where different context propagation is used then it is recommended to configure additional propagator to correlate events across services. This can be achieved by installation of propagators packages and `OTEL_PROPAGATORS` environment variable configuration.
+By default OpenTelemetry uses W3C context propagation standard. If application instrumented by OpenTelemetry communicates with services where different context propagation is used then it is recommended to configure additional propagator to correlate events across services. This can be achieved by installation of propagators packages and `OTEL_PROPAGATORS` environment variable configuration.
 
 * **B3 context propagation** - common for service meshes like Istio, Linkerd and Zipkin instrumented applications.  
 
