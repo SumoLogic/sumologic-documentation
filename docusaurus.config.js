@@ -157,19 +157,21 @@ module.exports = {
           {
             label: 'Guides',
             to: '#',
+            // Map of content into the Guides mega drop down Number associated to the doc links in this section
+            // activeregex controls the top nav content, icon uses Google Material name code https://fonts.google.com/icons?query=material
             layout: [
               '0 1 3 5',
               '0 1 3 5',
               '0 1 3 5',
-              '0 1 3 6',
-              '0 2 3 6',
-              '0 2 4 6',
-              '0 2 4 6',
-              '0 2 4 6',
-              '0 2 4 6',
-              '0 2 4 6',
+              '0 1 3 5',
+              '0 2 3 5',
+              '0 2 4 5',
+              '0 2 4 5',
+              '0 2 4 5',
+              '0 2 4 5',
+              '0 2 4 5',
             ],
-            items_: [ // Use name codes for icons from the Material Site https://fonts.google.com/icons?query=material
+            items_: [ 
               {
                 // 0
                 label: 'Getting Started',
@@ -265,28 +267,28 @@ module.exports = {
                   {
                     label: 'About Observability',
                     sublabel: 'Learn about Observability',
-                    to: '/docs/get-started',
+                    to: '/docs/get-started',//observability/get-started
                     icon: 'data_exploration',
                     activeBaseRegex: '^/docs/observability/.*',
                   },
                   {
                     label: 'Kubernetes',
                     sublabel: 'Deploy & collect app data',
-                    to: '/docs/get-started',
+                    to: '/docs/get-started',//observability/kubernetes
                     icon: 'settings_suggest',
                     activeBaseRegex: '^/docs/kubernetes/.*',
                   },
                   {
                     label: 'AWS Observability',
                     sublabel: 'Deploy & collect AWS data',
-                    to: '/docs/get-started',
+                    to: '/docs/get-started',//observability/aws
                     icon: 'polyline',
                     activeBaseRegex: '^/docs/aws-observability/.*',
                   },
                   {
                     label: 'Root Cause Explorer',
                     sublabel: 'Learn what caused issues',
-                    to: '/docs/get-started',
+                    to: '/docs/get-started',//observability/rce
                     icon: 'widgets',
                     activeBaseRegex: '^/docs/rce/.*',
                   },
@@ -294,46 +296,6 @@ module.exports = {
               },
               {
                 // 4
-                label: 'Security',
-                items: [
-                  {
-                    label: 'Security Events',
-                    sublabel: 'Review security issues',
-                    to: '/docs/get-started',
-                    icon: 'format_list_bulleted',
-                    activeBaseRegex: '^/docs/security-events/.*',
-                  },
-                  {
-                    label: 'Security Detection',
-                    sublabel: 'Monitor security',
-                    to: '/docs/get-started',
-                    icon: 'grid_4x4',
-                    activeBaseRegex: '^/docs/security/.*',
-                  },
-                ],
-              },
-              {
-                // 5
-                label: 'Incidents Management',
-                items: [
-                  {
-                    label: 'Incidents',
-                    sublabel: 'Investigate issues',
-                    to: '/docs/get-started',
-                    icon: 'model_training',
-                    activeBaseRegex: '^/docs/(incidents)/.*',
-                  },
-                  {
-                    label: 'Entities',
-                    sublabel: 'SOAR Entities',
-                    to: '/docs/get-started',
-                    icon: 'question_answer',
-                    activeBaseRegex: '^/docs/(entities)/.*',
-                  },
-                ],
-              },
-              {
-                // 6
                 label: 'Other Solutions',
                 items: [
                   {
@@ -350,16 +312,37 @@ module.exports = {
                     icon: 'code',
                     activeBaseRegex: '^/docs/(sdo)/.*',
                   },
+                ],
+              },
+              {
+                // 4 - What would this link to?
+                label: 'Security & Incidents',
+                items: [
                   {
                     label: 'CSE',
-                    sublabel: 'Cloud SIEM Enterprise',
+                    sublabel: 'Incident investigation',
                     to: '/docs/cse',
                     icon: 'security',
                     activeBaseRegex: '^/docs/(cse)/.*',
                   },
+                  // When SOAR is added, you can update to: to the docs
+                  {
+                    label: 'Sumo Logic SOAR',
+                    sublabel: 'Monitor security',
+                    to: 'https://www.sumologic.com/solutions/cloud-soar/',
+                    icon: 'grid_4x4',
+                    activeBaseRegex: '^/docs/security/.*',
+                  },
+                  // Links to Sensu docs currently
+                  {
+                    label: 'Sensu',
+                    sublabel: 'Investigate issues',
+                    to: 'https://docs.sensu.io/sensu-go/latest/',
+                    icon: 'model_training',
+                    activeBaseRegex: '^/docs/(incidents)/.*',
+                  },
                 ],
               },
-              
             ],
           },
           {
