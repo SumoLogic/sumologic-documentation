@@ -63,7 +63,7 @@ To configure a RUM HTTP Traces Source:
 
     ![RUM-HTTP-Traces-Source-Advanced.png](/img/rum/RUM-HTTP-Traces-Source-Advanced.png)  
      
-   * **Application Name.** (Recommended) Add an **Application Name **tag of a text string to show for the app name in spans, for example `bookings-app`. This groups services in the Application Service View. If left blank, services will belong to a "default" application. See [Application Service Dashboards](/Traces/02Working_with_Tracing_data/01Service_Map#Application_Service_Dashboards) for more information. This setting is saved in the script for  `name_of_your_web_application`.
+   * **Application Name.** (Recommended) Add an **Application Name **tag of a text string to show for the app name in spans, for example `bookings-app`. This groups services in the Application Service View. If left blank, services will belong to a "default" application. See [Application Service Dashboards](../traces/working-with-tracing-data/service-map.md) for more information. This setting is saved in the script for  `name_of_your_web_application`.
    * **Service Name.** (Mandatory) Add a **Service Name** of a text string to show for the service name in spans, for example `bookings-web-app`. This setting is saved in the script for `name_of_your_web_service`.
    * **Probabilistic sampling rate.** (Optional) Add a Proba**bilistic sampling rate** for heavy traffic sites in a decimal value based on percentage, for example, 10% would be entered as `0.1`.
    * **Ignore urls.** (Optional) For **Ignore urls**, add a list of URLs not to collect trace data from, supports regex, for example: `/^https://www.tracker.com/.*/, /^https://api.mydomain.com/log/.*/`
@@ -101,7 +101,7 @@ To configure a RUM HTTP Traces Source:
 
 The script includes a RUM HTTP Traces Source URL for **collectionSourceUrl** in the generated script. This is saved for the script as `sumo_logic_http_traces_source_url`. Your user's browser should be allowed to POST data to this URL.  
   
-This can be also replaced with an internal OpenTelemetry collector if you wish to redirect browser traffic over it. In this case, replace this URL with the OpenTelemetry collector OTLP/HTTP receiver endpoint as described in [Getting Started with Transaction Tracing](01Getting_Started_with_Transaction_Tracing.md "Getting Started with Transaction Tracing"). In this case, the OpenTelemetry collector exporter will send data to the RUM HTTP Traces Source URL.
+This can be also replaced with an internal OpenTelemetry collector if you wish to redirect browser traffic over it. In this case, replace this URL with the OpenTelemetry collector OTLP/HTTP receiver endpoint as described in [Getting Started with Transaction Tracing](/docs/apm/traces/get-started-transaction-tracing). In this case, the OpenTelemetry collector exporter will send data to the RUM HTTP Traces Source URL.
 
 ### Use the Script
 

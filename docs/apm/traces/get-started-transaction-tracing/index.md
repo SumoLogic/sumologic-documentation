@@ -14,7 +14,7 @@ Sumo Logic transaction tracing provides cloud-native transactional intelligence 
 
 Sumo Logic tracing supports the OpenTelemetry standard as well as other legacy open standards and libraries for tracing (such as OpenTracing, OpenCensus, Jaeger, Zipkin) and leverages open source componentry from the Cloud Native Computing Foundation (CNCF) to collect distributed tracing data.
 
-Once you have set up trace collection see how to [analyze your traces in Sumo Logic](02Working_with_Tracing_data/03View_and_investigate_traces.md "View and investigate traces").
+Once you have set up trace collection see how to [analyze your traces in Sumo Logic](../working-with-tracing-data/view-and-investigate-traces.md).
 
 
 import DocCardList from '@theme/DocCardList';

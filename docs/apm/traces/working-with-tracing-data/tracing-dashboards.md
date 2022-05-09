@@ -119,7 +119,7 @@ To add a Trace List panel to your Dashboard:
 
     ![create-tracelist.png](/img/traces/create-tracelist.png)
 
-1. Configure a [Trace query](03View_and_investigate_traces.md "View and investigate traces") to search for desired set of traces. 
+1. Configure a [Trace query](view-and-investigate-traces.md) to search for desired set of traces. 
 1. Select a time range or create a custom range for the panel. You can set this when creating or at any time when viewing the Dashboard panel.
 
     ![timerange.png](/img/traces/timerange.png)

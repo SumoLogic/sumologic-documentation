@@ -55,10 +55,8 @@ Please save the file as `config.yaml`. This file name will be used in next step
 
 ### Step 3 - Prepare the OpenTelemetry Collector binaries and run them
 
-As spans are sent over TCP or UDP connections, the OpenTelemetry
-Collector service needs to have relevant ports exposed. You will use the
-config file (`config.yaml`) you set up in [Step
-2](./Set_up_traces_collection_for_other_environments.md "Set up traces collection for other environments").
+As spans are sent over TCP or UDP connections, the OpenTelemetry Collector service needs to have relevant ports exposed. You will use the
+config file (`config.yaml`) you set up in [Step 2](#step-2---prepare-config-file).
 The templates provided above support the following protocols:
 
  * Zipkin/HTTP on port 9411

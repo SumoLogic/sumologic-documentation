@@ -66,7 +66,7 @@ AWS OpenTelemetry Collector in both scenarios is installed as a sidecar. The ins
 
 1. To check if everything was deployed go to the [CloudFormation Stacks console](https://console.aws.amazon.com/cloudformation/home#/stacks?filteringStatus=active&filteringText=&viewNested=true&hideStacks=false) and check if the **sumologic-aws-otel-col-ecs-ec2** stack status is **CREATE_COMPLETE**.  
 
-    ![stack status.png](/img/traces/stack-status.png)
+    ![stack status.png](/img/traces/stack_status.png)
 
 1. The next step is to check if your deployment is properly running. Go to the [ECS Console](https://console.aws.amazon.com/ecs/home), select the proper region, and select the cluster you used to deploy the AWS OpenTelemetry Collector. Navigate to the **Tasks** tab and check if the task is running.  
     

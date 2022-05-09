@@ -87,9 +87,9 @@ The following are Sumo Logic AWS Distro Lambda layers for AWS Region for amd64 (
 | Middle East (Bahrain) me-south-1        | arn:aws:lambda:me-south-1:663229565520:layer:sumologic-otel-python-x86_64-ver-1-10-0:1     |
 | South America (Sao Paulo) sa-east-1     | arn:aws:lambda:sa-east-1:663229565520:layer:sumologic-otel-python-x86_64-ver-1-10-0:1      |
 
-## amd64 architecture
+## arm64 architecture
 
-The following are Sumo Logic AWS Distro Lambda layers for AWS Region for amd64 (x86_64) architecture.
+The following are Sumo Logic AWS Distro Lambda layers for AWS Region for arm64 architecture.
 
 | AWS Region | ARN |
 |-----------------------------------------|-------------------------------------------------------------------------------------------|
@@ -119,7 +119,7 @@ Instrumentation of container based AWS Lambda function requires some changes in 
 
 ### Lambda function image changes
 
-1. Download and extract Sumo Logic AWS OTel Lambda archive with instrumentation packages specific for your architecture - [amd64 (x86_64)](https://github.com/SumoLogic/opentelemetry-lambda/releases/download/python-v1.10.0/opentelemetry-python-amd64.zip) or [arm64](./AWS_Lambda_-_Python_function_instrumentation_with_Sumo_Logic_tracing.md).
+1. Download and extract Sumo Logic AWS OTel Lambda archive with instrumentation packages specific for your architecture - [amd64 (x86_64)](https://github.com/SumoLogic/opentelemetry-lambda/releases/download/python-v1.10.0/opentelemetry-python-amd64.zip) or arm64.
 
 1. Extracted instrumentation libraries have to be added to the image in /opt directory. Please see Dockerfile example:
 

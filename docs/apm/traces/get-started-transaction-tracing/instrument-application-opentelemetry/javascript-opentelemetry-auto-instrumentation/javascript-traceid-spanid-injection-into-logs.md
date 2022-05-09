@@ -20,7 +20,7 @@ The following information walks through [winston](https://www.npmjs.com/package/
    npm install --save @opentelemetry/instrumentation-winston
    ```
 
-1. winston instrumentation registration should be added in the file where OpenTelemetry JS instrumentation is configured. See [Sumo Logic OpenTelemetry JS auto-instrumentation](JavaScript_TraceId_and_SpanId_injection_into_logs/...md) for details.
+1. winston instrumentation registration should be added in the file where OpenTelemetry JS instrumentation is configured. See [Sumo Logic OpenTelemetry JS auto-instrumentation](/docs/apm/traces/get-started-transaction-tracing/javascript-opentelemetry-auto-instrumentation) for details.
 
    * Import dependency:
 
@@ -78,7 +78,7 @@ The following information walks through [pino](https://www.npmjs.com/package/pin
    npm install --save @opentelemetry/instrumentation-pino
    ```
 
-1. pino instrumentation registration should be added in the file where OpenTelemetry JS instrumentation is configured. See [Sumo Logic OpenTelemetry JS auto-instrumentation](JavaScript_TraceId_and_SpanId_injection_into_logs/...md) for details.
+1. pino instrumentation registration should be added in the file where OpenTelemetry JS instrumentation is configured. See [Sumo Logic OpenTelemetry JS auto-instrumentation](/docs/apm/traces/get-started-transaction-tracing/javascript-opentelemetry-auto-instrumentation) for details.
 
    * Import dependency  
 

@@ -115,14 +115,14 @@ helm upgrade --install collection sumologic/sumologic \
 The collector supports receiving spans in Zipkin, OTLP, and Jaeger
 formats. The following are the endpoints for each of them:
 
- * Jaeger GRPC: <CHART_NAME>-sumologic-otelcol<NAMESPACE>:14250`
+ * Jaeger GRPC: `<CHART_NAME>-sumologic-otelcol<NAMESPACE>:14250`
  * Jaeger Thrift
-    HTTP: <CHART_NAME>-sumologic-otelcol<NAMESPACE>:14268`
+    HTTP: `<CHART_NAME>-sumologic-otelcol<NAMESPACE>:14268`
  * Jaeger Thrift Compact
-    (UDP): <CHART_NAME>-sumologic-otelcol<NAMESPACE>:6831`
- * Zipkin: <CHART_NAME>-sumologic-otelcol<NAMESPACE>:9411/api/v2/spans`
- * OTLP gRPC: <CHART_NAME>-sumologic-otelcol<NAMESPACE>:4317`
- * OTLP HTTP: <CHART_NAME>-sumologic-otelcol<NAMESPACE>:55681`
+    (UDP): `<CHART_NAME>-sumologic-otelcol<NAMESPACE>:6831`
+ * Zipkin: `<CHART_NAME>-sumologic-otelcol<NAMESPACE>:9411/api/v2/spans`
+ * OTLP gRPC: `<CHART_NAME>-sumologic-otelcol<NAMESPACE>:4317`
+ * OTLP HTTP: `<CHART_NAME>-sumologic-otelcol<NAMESPACE>:55681`
 
 For example, when the default chart name (`collection`) and namespace
 (`sumologic`) is used, the endpoints are following:
