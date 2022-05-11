@@ -47,9 +47,9 @@ Sumo Logic provides an AWS CloudFormation templates (CFN) and Terraform scriptsÂ
 
 * **Sumo Logic Root Cause Explorer** analyzes and correlates metrics from all supported AWS Observability services and EBS, Autoscaling, X-ray, SNS, and SQS.
 
-After you have [prepared](before-you-deploy.md) and [deployed](/docs/observability/aws-observability-solution/deploy-use-aws-observability/deploy-aws-observability) the solution, you can [add and configure additional AWS services](other-configurations-tools/add-new-aws-service.md) as your infrastructure grows.
+After you have [prepared](before-you-deploy.md) and [deployed](/docs/observability/aws-observability-solution/deploy-use-aws-observability) the solution, you can [add and configure additional AWS services](other-configurations-tools/add-new-aws-service.md) as your infrastructure grows.
 
-![AWS_Observ_architecture.jpg](/img/observability/AWS_Observ_architecture.jpeg)
+![AWS_Observ_architecture.jpg](/img/observability/AWS_Observability_architecture.png)
 
 ### Data Collection and Dashboards
 

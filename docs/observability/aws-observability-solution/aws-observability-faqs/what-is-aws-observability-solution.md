@@ -110,7 +110,7 @@ Root Cause Explorer is available for CloudFlex/Enterprise, Credits/Enterprise Op
 See the [Sumo Logic AWS Observability demo video](https://www.sumologic.com/video/aws-observability-demo/)
 for a demo of the solution.
 
-![aws-demo-video.jpg](/img/observability/aws-demo-video.jpg)
+![aws-demo-video.jpg](/img/observability/aws-demo-video.jpeg)
 
  
 

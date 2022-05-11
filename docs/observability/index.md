@@ -1,6 +1,5 @@
 ---
 slug: /observability
-id: observability-index
 ---
 
 # Observability Solution

@@ -62,7 +62,7 @@ If you are using an existing bucket to collect AWS ELB logs, the Amazon S3 bucke
 
 #### AWS CloudFormation
 
-The [AWS CloudFormation](/docs/observability/aws-observability-solution/deploy-use-aws-observability/deploy-aws-observability/deploy-with-aws-cloudformation) template execution creates the following resources in Sumo Logic.
+The [AWS CloudFormation](/docs/observability/aws-observability-solution/deploy-use-aws-observability/deploy-with-aws-cloudformation) template execution creates the following resources in Sumo Logic.
 
 | Resource                                           | Name                                                 |
 |----------------------------------------------------|------------------------------------------------------|

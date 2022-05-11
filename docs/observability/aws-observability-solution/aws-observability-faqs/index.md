@@ -1,5 +1,5 @@
 ---
-id: aws-observability-faqs
+slug: /observability/aws-observability-solution/aws-observability-faqs
 ---
 
 # AWS Observability FAQs

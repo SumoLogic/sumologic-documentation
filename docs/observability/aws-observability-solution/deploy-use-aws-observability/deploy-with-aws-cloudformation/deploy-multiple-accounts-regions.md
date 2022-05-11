@@ -56,11 +56,11 @@ In case you do not provide a CSV file or if we detect that it does not have the 
     ![ClodFormation_Stackset 1.png](/img/observability/ClodFormation_Stackset_1.png)
 1. Paste the URL - https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/aws-observability-versions/v2.4.0/sumologic_observability.master.template.yaml in the Amazon S3 URL option and click **Next**.
     
-    If you would like to download or inspect this or other versions of this template, please visit the [change log](../../aws-observability-change-log.md) page.
+    If you would like to download or inspect this or other versions of this template, please visit the [change log](../aws-observability-change-log.md) page.
 
     ![multi-create-stack.png](/img/observability/multi-create-stack.png)
 
-1. Provide a StackSet Name and supply the values for each of the prompts listed as per instructions in the [Deploy the AWS Observability Solution](/docs/observability/aws-observability-solution/deploy-use-aws-observability/deploy-aws-observability) section with the following exception:
+1. Provide a StackSet Name and supply the values for each of the prompts listed as per instructions in the [Deploy the AWS Observability Solution](/docs/observability/aws-observability-solution/deploy-use-aws-observability) section with the following exception:
     * Leave the field “Alias for AWS Account Identification” blank.  
         
         ![aws-field.png](/img/observability/aws-field.png)

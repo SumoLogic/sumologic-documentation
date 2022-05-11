@@ -92,24 +92,14 @@ _sourceCategory=Labs/AWS/Lambda
 
 # AWS Lambda Dashboards
 
-This page provides examples and descriptions for each of the
-AWS Observability Lambda pre-configured dashboards.
+This page provides examples and descriptions for each of the AWS Observability Lambda pre-configured dashboards.
 
-[AWS Lambda](https://aws.amazon.com/lambda/) allows you to run code
-without the burden of provisioning or managing servers. The AWS Lambda
-dashboards help in monitoring operation and performance trends in the
-Lambda function in your account.
+[AWS Lambda](https://aws.amazon.com/lambda/) allows you to run code without the burden of provisioning or managing servers. The AWS Lambda
+dashboards help in monitoring operation and performance trends in the Lambda function in your account.
 
-The Sumo Logic AWS Observability Lambda dashboards utilize AWS Lambda
-logs and metrics data from AWS CloudWatch and AWS CloudTrail.
-Preconfigured dashboards provide insights into executions, such as
-memory and duration usage by function versions or aliases, as well as
-performance metrics such as errors, throttles, invocations, and
-concurrent executions.
+The Sumo Logic AWS Observability Lambda dashboards utilize AWS Lambda logs and metrics data from AWS CloudWatch and AWS CloudTrail. Preconfigured dashboards provide insights into executions, such as memory and duration usage by function versions or aliases, as well as performance metrics such as errors, throttles, invocations, and concurrent executions.
 
-We highly recommend you view these dashboards in the [Explore
-View](../../01_Deploy_and_Use_AWS_Observability/09_View_AWS_Observability_Solution_Dashboards.md)
-of the AWS Observability solution.
+We highly recommend you view these dashboards in the [Explore View](../deploy-use-aws-observability/view-aws-observability-solution-dashboards.md) of the AWS Observability solution.
 
 ## About measurements
 

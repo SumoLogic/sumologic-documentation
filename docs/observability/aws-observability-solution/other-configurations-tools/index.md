@@ -1,5 +1,5 @@
 ---
-id: other-configurations-tools
+slug: /observability/aws-observability-solution/other-configurations-tools
 ---
 
 # Other Configurations and Tools

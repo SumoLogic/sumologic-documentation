@@ -1565,8 +1565,8 @@ module.exports = {
                   collapsed: true,
                   link: {type: 'doc', id: 'observability/aws-observability-solution/deploy-use-aws-observability/deploy-with-aws-cloudformation/index'},
                   items: [
-                    'observability/aws-observability-solution/deploy-use-aws-observability/deploy-multiple-accounts-regions',
-                    'observability/aws-observability-solution/deploy-use-aws-observability/centralized-aws-cloudtrail-log-collection',
+                    'observability/aws-observability-solution/deploy-use-aws-observability/deploy-with-aws-cloudformation/deploy-multiple-accounts-regions',
+                    'observability/aws-observability-solution/deploy-use-aws-observability/deploy-with-aws-cloudformation/centralized-aws-cloudtrail-log-collection',
                   ],
                 },
                 'observability/aws-observability-solution/deploy-use-aws-observability/deploy-with-terraform',
