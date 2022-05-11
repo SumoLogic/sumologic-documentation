@@ -725,7 +725,7 @@ Cloudwatch_metrics_source_details = {
 
 #### cloudwatch_metrics_source_url
 
-Use this parameter if you are already collecting CloudWatch Metrics and want to use an existing Sumo Logic Collector Source. You need to provide the URL of the existing Sumo Logic CloudWatch Metrics Source. If the URL is for a AWS CloudWatch Metrics source, the "account" and "accountid" metadata fields will be added to the Source. If the URL is for the Kinesis Firehose for Metrics source, the “account” field will be added to the Source. For information on how to determine the URL, see [View or Download Source JSON Configuration](../../../../send-data/sources/use-json-configure-sources/local-configuration-file-management/view-download-source-json-configuration.md).
+Use this parameter if you are already collecting CloudWatch Metrics and want to use an existing Sumo Logic Collector Source. You need to provide the URL of the existing Sumo Logic CloudWatch Metrics Source. If the URL is for a AWS CloudWatch Metrics source, the "account" and "accountid" metadata fields will be added to the Source. If the URL is for the Kinesis Firehose for Metrics source, the “account” field will be added to the Source. For information on how to determine the URL, see [View or Download Source JSON Configuration](../../../send-data/sources/use-json-configure-sources/local-configuration-file-management/view-download-source-json-configuration.md).
 
 **Default value:** 
 
@@ -979,7 +979,7 @@ auto_enable_classic_lb_access_logs = ”New”
 
 #### classic_lb_log_source_url
 
-Required if you are already collecting Classic LB logs. Provide the existing Sumo Logic Classic LB Source API URL. The account, accountid, region and namespace fields will be added to the Source. For information on how to determine the URL, see [View or Download Source JSON Configuration](../../../../send-data/sources/use-json-configure-sources/local-configuration-file-management/view-download-source-json-configuration.md).
+Required if you are already collecting Classic LB logs. Provide the existing Sumo Logic Classic LB Source API URL. The account, accountid, region and namespace fields will be added to the Source. For information on how to determine the URL, see [View or Download Source JSON Configuration](../../../send-data/sources/use-json-configure-sources/local-configuration-file-management/view-download-source-json-configuration.md).
 
 **Default value:**
 
@@ -1072,7 +1072,7 @@ cloudtrail_source_details = {
 
 #### cloudtrail_source_url
 
-Required if you are already collecting CloudTrail logs. Provide the existing Sumo Logic CloudTrail Source API URL. The account field will be added to the Source. For information on how to determine the URL, see [View or Download Source JSON Configuration](../../../../send-data/sources/use-json-configure-sources/local-configuration-file-management/view-download-source-json-configuration.md).
+Required if you are already collecting CloudTrail logs. Provide the existing Sumo Logic CloudTrail Source API URL. The account field will be added to the Source. For information on how to determine the URL, see [View or Download Source JSON Configuration](../../../send-data/sources/use-json-configure-sources/local-configuration-file-management/view-download-source-json-configuration.md).
 
 **Default value:**
 
@@ -1184,7 +1184,7 @@ cloudwatch_logs_source_details = {
 
 #### cloudwatch_logs_source_url
 
-Required if you are already collecting AWS Lambda CloudWatch logs. Provide the existing Sumo Logic AWS Lambda CloudWatch Source API URL. The account, accountid, region and namespace fields will be added to the Source. For information on how to determine the URL, see [View or Download Source JSON Configuration](../../../../send-data/sources/use-json-configure-sources/local-configuration-file-management/view-download-source-json-configuration.md).
+Required if you are already collecting AWS Lambda CloudWatch logs. Provide the existing Sumo Logic AWS Lambda CloudWatch Source API URL. The account, accountid, region and namespace fields will be added to the Source. For information on how to determine the URL, see [View or Download Source JSON Configuration](../../../send-data/sources/use-json-configure-sources/local-configuration-file-management/view-download-source-json-configuration.md).
 
 **Default value:**
 
@@ -1347,7 +1347,7 @@ xray_source_details = {
 
 ### sumologic_existing_collector_details
 
-Provide an existing Sumo Logic Collector ID. See [View or Download Source JSON Configuration](../../../../send-data/sources/use-json-configure-sources/local-configuration-file-management/view-download-source-json-configuration.md). 
+Provide an existing Sumo Logic Collector ID. See [View or Download Source JSON Configuration](../../../send-data/sources/use-json-configure-sources/local-configuration-file-management/view-download-source-json-configuration.md). 
 
 If provided, all the provided sources will be created within the collector. If kept empty, a new Collector will be created and all provided sources will be created within that collector.
 

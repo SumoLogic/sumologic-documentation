@@ -37,12 +37,12 @@ This page describes prerequisites and guidelines for deploying Sumo Logic’s AW
 
 You can deploy AWS Observability to a single AWS account and region, or to all of your accounts in all regions. We provide instructions for both alternatives. 
 
-Typically you would first deploy the solution to a single AWS account and region, kick the tires, and then expand the deployment. See [Deploy AWS Observability](/docs/observability/aws-observability-solution/deploy-use-aws-observability) for a limited deployment. [See Deploy to Multiple Accounts and Regions](deploy-use-aws-observability/deploy-with-aws-cloudformation/deploy-multiple-accounts-regions.md) for a broader deployment. 
+Typically you would first deploy the solution to a single AWS account and region, kick the tires, and then expand the deployment. See [Deploy AWS Observability](/docs/observability/aws-observability-solution/deploy-use-aws-observability) for a limited deployment. [See Deploy to Multiple Accounts and Regions](deploy-with-aws-cloudformation/deploy-multiple-accounts-regions.md) for a broader deployment. 
 
 You have two options for deploying:
 
 * Deploy using an [AWS CloudFormation template](/observability/aws-observability-solution/deploy-use-aws-observability/deploy-with-aws-cloudformation)
-* Deploy using a [Terraform Script](deploy-use-aws-observability/deploy-with-terraform.md)
+* Deploy using a [Terraform Script](deploy-with-terraform.md)
 
 ## Deployment Considerations  
 

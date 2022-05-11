@@ -62,7 +62,7 @@ Sumo Logic collects logs, metrics, and events including AWS EC2 Host Metrics, Cl
 
 This new metadata can also be used in ad-hoc logs and metrics searches.
 
-![AWS_Observability_Collection-v2.png](/img/observability/AWS_Observability_Collection-v2.png)
+![AWS_Observability_Collection.png](/img/observability/AWS_Observability_Collection.png)
 
 You can navigate from overview dashboards of the infrastructure and drill down into account, AWS Region, service, or entity views. The intuitive navigation enables you to quickly resolve issues, minimize downtime, and improve system availability. See [View AWS Observability Solution Dashboards](deploy-use-aws-observability/view-aws-observability-solution-dashboards.md) for details.
 
