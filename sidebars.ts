@@ -1542,7 +1542,6 @@ module.exports = {
         'observability/monitoring-observability-solution',
         'observability/diagnose-observability-solution',
         'observability/troubleshoot-observability-solution',
-        'observability/root-clause-explorer',
         {
           type: 'category',
           label: 'AWS Observability Solution',
@@ -1643,6 +1642,7 @@ module.exports = {
             'observability/kubernetes-solution/next-steps',
           ],
         },
+        'observability/root-cause-explorer',
       ],
     },
   ],

@@ -267,30 +267,30 @@ module.exports = {
                   {
                     label: 'About Observability',
                     sublabel: 'Learn about Observability',
-                    to: '/docs/get-started',//observability/get-started
+                    to: '/docs/observability',
                     icon: 'data_exploration',
                     activeBaseRegex: '^/docs/observability/.*',
                   },
                   {
                     label: 'Kubernetes',
-                    sublabel: 'Deploy & collect app data',
-                    to: '/docs/get-started',//observability/kubernetes
+                    sublabel: 'Deploy & collect Kubernetes',
+                    to: '/docs/observability/kubernetes',
                     icon: 'settings_suggest',
-                    activeBaseRegex: '^/docs/kubernetes/.*',
+                    activeBaseRegex: '^/docs/observability/kubernetes/.*',
                   },
                   {
                     label: 'AWS Observability',
                     sublabel: 'Deploy & collect AWS data',
-                    to: '/docs/get-started',//observability/aws
+                    to: '/docs/observability/aws-observability-solution',
                     icon: 'polyline',
-                    activeBaseRegex: '^/docs/aws-observability/.*',
+                    activeBaseRegex: '^/docs/observability/aws-observability-solution/.*',
                   },
                   {
                     label: 'Root Cause Explorer',
                     sublabel: 'Learn what caused issues',
-                    to: '/docs/get-started',//observability/rce
+                    to: '/docs/observability/root-cause-explorer',
                     icon: 'widgets',
-                    activeBaseRegex: '^/docs/rce/.*',
+                    activeBaseRegex: '^/docs/observability/root-cause-explorer/.*',
                   },
                 ],
               },
