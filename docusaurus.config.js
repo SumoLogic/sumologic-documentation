@@ -274,9 +274,9 @@ module.exports = {
                   {
                     label: 'Kubernetes',
                     sublabel: 'Deploy & collect Kubernetes',
-                    to: '/docs/observability/kubernetes',
+                    to: '/docs/observability/kubernetes-solution',
                     icon: 'settings_suggest',
-                    activeBaseRegex: '^/docs/observability/kubernetes/.*',
+                    activeBaseRegex: '^/docs/observability/kubernetes-solution/.*',
                   },
                   {
                     label: 'AWS Observability',
