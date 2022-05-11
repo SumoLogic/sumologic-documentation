@@ -41,7 +41,7 @@ Typically you would first deploy the solution to a single AWS account and region
 
 You have two options for deploying:
 
-* Deploy using an [AWS CloudFormation template](/observability/aws-observability-solution/deploy-use-aws-observability/deploy-with-aws-cloudformation)
+* Deploy using an [AWS CloudFormation template](/docs/observability/aws-observability-solution/deploy-use-aws-observability/deploy-with-aws-cloudformation)
 * Deploy using a [Terraform Script](deploy-with-terraform.md)
 
 ## Deployment Considerations  

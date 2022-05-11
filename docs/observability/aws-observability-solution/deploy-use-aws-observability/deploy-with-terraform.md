@@ -851,7 +851,7 @@ auto_enable_access_logs = ”New”
 
 #### elb_log_source_url
 
-Required if you are already collecting ALB logs. Provide the existing Sumo Logic ALB Source API URL. The account, accountid, region and namespace fields will be added to the Source. For information on how to determine the URL, see [View or Download Source JSON Configuration](view-download).
+Required if you are already collecting ALB logs. Provide the existing Sumo Logic ALB Source API URL. The account, accountid, region and namespace fields will be added to the Source. For information on how to determine the URL, see [View or Download Source JSON Configuration](../../../send-data/sources/use-json-configure-sources/local-configuration-file-management/view-download-source-json-configuration.md).
 
 **Default value:**
 
