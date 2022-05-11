@@ -47,7 +47,7 @@ If you are using an existing bucket to collect AWS ELB logs, the Amazon S3 bucke
 
 ### Terraform
 
-[Terraform](deploy-use-aws-observability/deploy-with-terraform.md) execution creates the following resources in Sumo Logic.
+[Terraform](deploy-with-terraform.md) execution creates the following resources in Sumo Logic.
 
 | Resource                                           | Name                                                 |
 |----------------------------------------------------|------------------------------------------------------|

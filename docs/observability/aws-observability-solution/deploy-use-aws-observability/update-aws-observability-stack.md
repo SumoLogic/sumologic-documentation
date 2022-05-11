@@ -18,7 +18,7 @@ To update the deployed solution:
     $ git pull 
     ```
 
-1. Review the Change Log and configure any new parameters as needed. See [Deploy with Terraform](deploy-use-aws-observability/deploy-with-terraform.md) on how to configure parameters and to override default values.
+1. Review the Change Log and configure any new parameters as needed. See [Deploy with Terraform](deploy-with-terraform.md) on how to configure parameters and to override default values.
 
 1. Run the Terraform commands to update the solution:
 
