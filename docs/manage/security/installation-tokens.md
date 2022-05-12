@@ -155,7 +155,7 @@ url=https://collectors.sumologic.com token=SUMOXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 
 ## Audit Tokens
 
-You can use the Audit Event Index to review the management of installation tokens and when they're used to register Collectors. For full details on the event log schema and common parameters see our [Audit Event Index](audit-event-index.md) documentation.
+You can use the Audit Event Index to review the management of installation tokens and when they're used to register Collectors. For full details on the event log schema and common parameters see Audit Event Index documentation. 
 
 ### Token management events
 
