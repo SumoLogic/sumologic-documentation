@@ -87,15 +87,15 @@ module.exports = {
       {
         redirects: [
           {
-            //test for CID process
+            //CID REDIRECTS: Enter a from: of the /cid=##### with the path to the file for to: for each CID!
             to: '/docs/contribution/markdown-features',
             from: '/cid=1234',
           },
         ]
       },],
       
-    /* See this site to configure - live editor https://github.com/jlvandenhout/docusaurus-plugin-docs-editor
-       Requires adding OAUTH app https://docs.github.com/en/developers/apps/building-oauth-apps/creating-an-oauth-app
+    /* // Optional: See this site to configure - live editor https://github.com/jlvandenhout/docusaurus-plugin-docs-editor
+       // Requires adding OAUTH app https://docs.github.com/en/developers/apps/building-oauth-apps/creating-an-oauth-app
     [
       '@jlvandenhout/docusaurus-plugin-docs-editor',
       {
@@ -157,7 +157,7 @@ module.exports = {
           {
             label: 'Guides',
             to: '#',
-            // Map of content into the Guides mega drop down Number associated to the doc links in this section
+            // Map of content into the Guides mega-drop-down, Number associated to the doc links in this section
             // activeregex controls the top nav content, icon uses Google Material name code https://fonts.google.com/icons?query=material
             layout: [
               '0 1 3 4',

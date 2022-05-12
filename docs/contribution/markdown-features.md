@@ -472,6 +472,10 @@ For example:
 
 import Iframe from 'react-iframe';
 
+## Resuable Content
+
+You can create sections of content as markdown files in `/docs/reuse`.
+
 ## MDX and React Components
 
 [MDX](https://mdxjs.com/) can make your documentation more **interactive** and allows using any **React components inside Markdown**:
