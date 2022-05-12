@@ -4,7 +4,7 @@ id: aws-lambda
 
 # Webhook Connection for AWS Lambda
 
-You can trigger an AWS Lambda function directly from a Scheduled Search or Monitor by configuring a webhook connection. You can use the Webhook Connection as the Alert Type in a [Scheduled Search](schedule-searches-webhook-connections.md) or the Connection Type in a [Monitor] (../../../Visualizations-and-Alerts/Alerts/Monitors.md "Monitors").
+You can trigger an AWS Lambda function directly from a Scheduled Search or Monitor by configuring a webhook connection. You can use the Webhook Connection as the Alert Type in a [Scheduled Search](schedule-searches-webhook-connections.md) or the Connection Type in a [Monitor](/docs/alerts/monitors).
 
 For example, you can create a Scheduled Search that triggers a Lambda function when too many requests are received from a suspicious IP address. The Lambda function can shut down additional requests from that IP address, while simultaneously sending a notification to the security team for review.
 

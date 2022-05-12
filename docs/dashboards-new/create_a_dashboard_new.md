@@ -82,7 +82,7 @@ Enter your aggregate [search query](/docs/search/search-query-language/group-agg
 </TabItem>
 <TabItem value="metrics">
 
-Click the left-most dropdown option and select **Metrics**. You should be familiar with the basics of creating [metrics queries and alerts] (../../Metrics/Metric-Queries-and-Alerts.md "Metric Queries and Alerts") to ensure successful results. By default, the query builder is set to **Logs**.
+Click the left-most dropdown option and select **Metrics**. You should be familiar with the basics of creating [metrics queries and alerts](/docs/metrics/metric-queries-alerts) to ensure successful results. By default, the query builder is set to **Logs**.
 
 ![Metrics selection for query builder.png](/img/dashboards-new/create-dashboard-new/Metrics-selection-for-query-builder.png)
 

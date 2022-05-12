@@ -170,7 +170,7 @@ To assign a Collector to an ingest budget you need to get and update the Collect
 First make a GET request to get the Collector's JSON configuration:
 
 :::note
-Customize `<accessid:accesskey>`, `<your deployment>`, and collector ID like `150905330`. Replace the value `150905330` with the `id` value of your Collector. You can use the Sumo [web interface] (../../../03Send-Data/Sources/03Use-JSON-to-Configure-Sources/Local-Configuration-File-Management/View-or-Download-Source-JSON-Configuration.md "View or Download Source JSON Configuration") to get an `id`.
+Customize `<accessid:accesskey>`, `<your deployment>`, and collector ID like `150905330`. Replace the value `150905330` with the `id` value of your Collector. You can use the Sumo [web interface](../../../send-data/sources/use-json-configure-sources/local-configuration-file-management/view-download-source-json-configuration.md) to get an `id`.
 :::
 
 ```bash
@@ -255,7 +255,7 @@ To assign a Collector to a budget you'll need to make a PUT request with the [
 Customize `<accessid:accesskey>`, `<your deployment>`, and collector ID like `150905330`.
 :::
 
-```bash
+```curl
 curl -v -u '<accessid:accesskey>' https://api.<your deployment>.sumologic.com/api/v1/collectors/150905330
 ```
 
@@ -267,7 +267,7 @@ Use a PUT request with the [Collector Management API] (../../../APIs/Collector-
 Customize `<accessid:accesskey>`, `a2c82c407ea4ae70ac4f6425b50942a1`, `updated_collector.json`, `<your deployment>`, and id like `150905330`.
 :::
 
-```bash
+```curl
 curl -u \<accessid:accesske\>'  -X PUT -H "Content-Type: application/json" -H "If-Match: \"a2c82c407ea4ae70ac4f6425b50942a1\"" -T updated_collector.json https://api\<your deploymen\>.sumologic.com/api/v1/collectors/150905330`
 ```
 

@@ -22,7 +22,7 @@ Subqueries are a really powerful way to filter for specific criteria, such as be
 You can use subqueries in the [search expression](get-started-with-search/build-search/keyword-search-expressions.md) of your query (before the first pipe, \|) and with [where](search-query-language/search-operators/where.md) and [if](search-query-language/search-operators/if-operator-and.md) operators.
 
 :::important
-This syntax uses square brackets `[ ]` to wrap a subquery. Normally these indicate an [optional argument] (../01Start-Here/03About-Sumo-Logic/Help_Documentation_Styles.md), however these highlighted brackets are required for subqueries.
+This syntax uses square brackets `[ ]` to wrap a subquery. Normally these indicate an optional argument, however these highlighted brackets are required for subqueries.
 :::
 
 **Search expression syntax:**

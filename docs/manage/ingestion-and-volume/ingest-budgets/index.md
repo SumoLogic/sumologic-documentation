@@ -22,7 +22,7 @@ An ingest budget's capacity usage is logged in the Audit Index when the audit th
 * There is a limit of 100 ingest budgets.
 * Bytes are calculated in base 2 (binary format, 1024 based).
 * Ingest Budgets do not affect [throttling](../log-ingestion.md). 
-* [Traces] (../../Traces.md "Traces") are not calculated and are not supported.
+* [Traces](/docs/apm/traces) are not calculated and are not supported.
 * Ingest budgets require the **Manage Ingest Budgets** [role capability](../../users-and-roles/roles/role-capabilities.md).
 * Fields assigned with Field Extraction Rules are not supported in the **scope** of an Ingest Budget.
 * **\_budget** is a reserved keyword used by legacy ingest budgets, do not use this reserved field when creating a new V2 ingest budget.
@@ -162,7 +162,7 @@ You can manually reset a budget at any time to set its capacity utilization tra
 
 #### Control ingest by team or service
 
-You can assign Collectors and Sources with [fields] (../Fields.md) based on teams and services. For example, a field could be `team=<name of the team>` or `service=<name of the service>`. With these fields assigned, you can create a budget with the scope `team=<name of the team>` to achieve team based budgets. You can leverage Source fields for finer control over the scope of the budget. You can map a model of your deployment or organization to metadata fields and then create ingest budgets with a scope referencing them.
+You can assign Collectors and Sources with [fields](../../fields.md based on teams and services. For example, a field could be `team=<name of the team>` or `service=<name of the service>`. With these fields assigned, you can create a budget with the scope `team=<name of the team>` to achieve team based budgets. You can leverage Source fields for finer control over the scope of the budget. You can map a model of your deployment or organization to metadata fields and then create ingest budgets with a scope referencing them.
 
 #### Match against multiple budgets
 
@@ -213,7 +213,7 @@ To ensure the combined daily ingestion for the infrastructure components ALB, Ka
 
 ### Audit ingest budgets
 
-The [Audit Index] (../Security/Audit-Index.md "Enable and Manage Auditing") logs events when an ingest budget has reached its configured Audit Threshold percent. There are two different log formats. 
+The [Audit Index](../../security/audit-index.md) logs events when an ingest budget has reached its configured Audit Threshold percent. There are two different log formats. 
 
 1. Approaching or exceeding capacity
 1. Resets
@@ -244,7 +244,7 @@ Next reset: 2020-09-19T00:00:00.000 -0700
 
 #### Audit Index queries
 
-You can schedule the following searches to get alerts when needed, see [scheduled searches] (../../Visualizations-and-Alerts/Alerts/Scheduled-Searches.md "Scheduled Searches") for details.
+You can schedule the following searches to get alerts when needed, see [scheduled searches](../../../alerts/scheduled-searches/schedule-search.md) for details.
 
 Search for when approaching usage capacity (≥ 85%):
 
@@ -272,7 +272,7 @@ _index=sumologic_audit _sourceName=VOLUME_QUOTA _sourceCategory=account_manageme
 
 ### Health events
 
-Health events allow you to keep track of the health of your Collectors, Sources, and Ingest Budgets. You can use them to find and investigate common errors and warnings that are known to cause collection issues. See [Health events] (../Health_Events.md) for details.
+Health events allow you to keep track of the health of your Collectors, Sources, and Ingest Budgets. You can use them to find and investigate common errors and warnings that are known to cause collection issues. See [Health events](../../health-events.md) for details.
 
 Ingest budgets that have exceeded their capacity are placed in an **Error** health state. The following are two common queries used to investigate the health of ingest budgets.
 

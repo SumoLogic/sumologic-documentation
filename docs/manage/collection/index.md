@@ -5,7 +5,7 @@ slug: /manage/collection
 # Collection
 
 :::sumo Required Capabilities
-You need the Manage or View Collectors [role capability] (users-and-roles/roles/role-capabilities.md) to manage or view Collection.
+You need the Manage or View Collectors [role capability](../users-and-roles/roles/role-capabilities.md) to manage or view Collection.
 :::
 
 Use the **Collection** page to manage all of your Collectors and Sources. To access the Collection page, go to **Manage Data \> Collection \> Collection**.
@@ -25,7 +25,7 @@ Use the **Collection** page to manage all of your Collectors and Sources. To ac
 
 ## Collector Actions
 
-* [Add a Source] (../03Send-Data/Sources.md)
+* [Add a Source](/docs/send-data/sources)
 * [Edit a Collector](edit-collector.md)
 * [Delete a Collector](delete-collector-source.md) 
 * [Download a JSON configuration file](../../send-data/sources/use-json-configure-sources/local-configuration-file-management/view-download-source-json-configuration.md) for scripting or backup
@@ -50,7 +50,7 @@ Use the **Collection** page to manage all of your Collectors and Sources. To ac
 
     ![Collector version in tooltip.png](/img/collector/collector-version-in-tooltip.png)
 
-* **Health**. Shows color-coded healthy, error, and warning states for Collectors and Sources so you can quickly determine the [health of your Collectors and Sources] (Health_Events.md).
+* **Health**. Shows color-coded healthy, error, and warning states for Collectors and Sources so you can quickly determine the [health of your Collectors and Sources](../health-events.md).
 
   If an Installed Collector appears offline try [restarting the service](pause-resume-source.md) and [testing connectivity](../../send-data/installed-collectors/collector-installation-reference/test-connectivity-sumo-collectors.md).
 * **Type**. Displays whether the Collector is an Installed or Hosted Collector.

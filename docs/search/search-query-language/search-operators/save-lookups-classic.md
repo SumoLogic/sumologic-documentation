@@ -21,7 +21,7 @@ You will need to remember the path where you point the save operator to put the 
 ## Rules
 
 * The file size limit for saved data is 500MB.
-* Queries that use the Save operator can't be [pinned] (../../../01Start-Here/Library/Pinned-Searches.md).
+* Queries that use the Save operator can't be [pinned](../../../get-started/library/search-the-library.md).
 
 ## Examples
 

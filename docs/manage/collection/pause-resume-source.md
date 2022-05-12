@@ -24,7 +24,7 @@ page.
 
 * When a Source is **paused**, Sumo Logic continues to ingest the files that were already discovered but doesn't scan for new ones.
 * If a Source is **paused** for more than 200 days, when resumed it will only collect the last 20 days worth of files.
-* When you **resume** a Source, Sumo Logic scans all of the files for the period of time that the Source was paused. [Throttling] (../Ingestion-and-Volume/01Log_Ingestion.md) occurs when a source is resumed if the Source was paused for a long time or too many files have accumulated. To minimize the risk of throttling, do the following **before resuming the Source**:
+* When you **resume** a Source, Sumo Logic scans all of the files for the period of time that the Source was paused. [Throttling](../ingestion-and-volume/log-ingestion.md) occurs when a source is resumed if the Source was paused for a long time or too many files have accumulated. To minimize the risk of throttling, do the following **before resuming the Source**:
 
   * Update the collection start time. For example, if you paused the Source five days ago and want to resume data collection beginning now, update the collection start time to the current time.
   * Clean up the S3 bucket to reduce the number of log files.

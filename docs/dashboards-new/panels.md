@@ -169,8 +169,7 @@ To add a Text Panel:
 
 Text panels can provide links to URLs or other Dashboards with markdown syntax. To create a link to a URL, surround your linked text with square brackets `[]`, then add your URL in parenthesis `()`, as shown.
 
-To add a link to a Panel in order to drill down to another Dashboard, see [Add Dashboard
-Link] (../Dashboards/Get-Started-with-Dashboards-and-Panels/Add-a-Dashboard-Link.md "Add Dashboard Link").
+To add a link to a Panel in order to drill down to another Dashboard, see [Add Dashboard Link](../dashboards/get-started/add-dashboard-link.md).
 
 ### Syntax
 
@@ -186,7 +185,7 @@ In the panel, the link is displayed. 
 
 ![icon-service-map.png](/img/dashboards-new/panels/icon-service-map.png)
 
-The [Service Map] (../../Traces/Service_Map_and_Dashboards.md "Service Map and Dashboards") is a high-level view of your application environment, giving you a greater view and understanding of your application architecture and dependencies between monitored microservices.
+The [Service Map](../apm/traces/working-with-tracing-data/service-map.md) is a high-level view of your application environment, giving you a greater view and understanding of your application architecture and dependencies between monitored microservices.
 
 The panel gives you a fully functioning map to zoom in and out and move through services. The size and color of application entities shows status and activity. Click on a service to open the Entity Inspector to drill down to traces, metrics, and the service dashboard.
 
@@ -227,7 +226,7 @@ To add a Service Map panel:
 
 ![icon-trace-list.png](/img/dashboards-new/panels/icon-trace-list.png)
 
-Transaction tracing captures and tracks distributed business workflows, by enriching and analyzing traces, logs, and metrics in real-time with automated generated application topology. Each trace provides details on root service, when it occurred and how long, the number of [spans] (../../Traces/Spans.md "Spans"), and a breakdown of services. The panel panel displays the [Traces page] (../../Traces/View_and_investigate_traces.md "View and investigate traces") table to give at-a-glance tracking for traces through your Dashboard. To view transaction and service details, click a trace from the panel to open the [Trace View] (../../Traces/View_and_investigate_traces.md "View and investigate traces"). 
+Transaction tracing captures and tracks distributed business workflows, by enriching and analyzing traces, logs, and metrics in real-time with automated generated application topology. Each trace provides details on root service, when it occurred and how long, the number of [spans](../apm/traces/working-with-tracing-data/spans.md), and a breakdown of services. The panel panel displays the [Traces page] table to give at-a-glance tracking for traces through your Dashboard. To view transaction and service details, click a trace from the panel to open the [Trace View](../apm/traces/working-with-tracing-data/view-and-investigate-traces.md). 
 
 See the [Dashboard (New)](./about-dashboard-new.md) guide for additional information and options to create panels, configure filters, create and filter with template variables from dashboard headers and more.
 
@@ -247,9 +246,9 @@ To add a Trace List panel:
     
     ![create-tracelist.png](/img/dashboards-new/panels/create-tracelist.png)
 
-1. Configure a [Trace query] (../../Traces/View_and_investigate_traces.md "View and investigate traces") to search for desired set of traces. 
+1. Configure a [Trace query](../apm/traces/working-with-tracing-data/view-and-investigate-traces.md) to search for desired set of traces. 
 
-1. Select a time range or [create a custom range] (Set_custom_time_ranges.md "Set customized time ranges") for the panel. You can set this when creating or at any time when viewing the Dashboard panel.  
+1. Select a time range or [create a custom range](set-custom-time-ranges.md) for the panel. You can set this when creating or at any time when viewing the Dashboard panel.  
 
     ![timerange.png](/img/dashboards-new/panels/timerange.png)
 

@@ -13,8 +13,8 @@ The operator is supported in the following features:
 
 * [Log Search](/docs/search)
 * [Dashboards (New)](../../../dashboards-new/about-dashboard-new.md)
-* [Dashboards] (), including live mode
-* [Scheduled Searches] ()
+* [Dashboards](/docs/dashboards), including live mode
+* [Scheduled Searches](../../../alerts/scheduled-searches/schedule-search.md)
 
 ## Syntax
 

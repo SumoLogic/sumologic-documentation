@@ -65,7 +65,7 @@ The URL and supported payload are different based on the version of the PagerDut
      }
      ```
 
-    * In the **Payload**, where it says `SERVICE KEY`, paste in the ****integration key**** you previously copied from PagerDuty.
+    * In the **Payload**, where it says `SERVICE KEY`, paste in the **integration key** you previously copied from PagerDuty.
     * In the **Payload** for the `description`, specify the description you want sent to PagerDuty. The above payload has specified to use the name of the alert.
 
 1. For details on other variables that can be used as parameters within your JSON object, see [Webhook Payload Variables](set-up-webhook-connections.md).
@@ -90,7 +90,7 @@ The URL and supported payload are different based on the version of the PagerDut
 
 ### Create a PagerDuty Incident Report via Webhook
 
-Select the webhook connection in a [Scheduled Search](schedule-searches-webhook-connections.md) or [Monitor] (../../../Visualizations-and-Alerts/Alerts/Monitors.md "Monitors") to create a PagerDuty incident and use the following payload.
+Select the webhook connection in a [Scheduled Search](schedule-searches-webhook-connections.md) or [Monitor](/docs/alerts/monitors) to create a PagerDuty incident and use the following payload.
 
 ```json
 {

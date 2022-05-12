@@ -46,7 +46,7 @@ The `_dataTier` search modifier is not supported in:
 * Logs-to-Metrics rules
 * In scheduled searches, setting `_dataTier` to All, Frequent, or Infrequent is not supported.
 
-In addition, because `_dataTier` is a reserved name in Sumo Logic, you can’t assign it to a [Field] (../Fields.md "Fields") or in a parse expression for a [Field Extraction Rule](/docs/manage/field-extractions).  
+In addition, because `_dataTier` is a reserved name in Sumo Logic, you can’t assign it to a [Field](../fields.md) or in a parse expression for a [Field Extraction Rule](/docs/manage/field-extractions).  
 
 ## Best practices
 

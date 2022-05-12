@@ -115,4 +115,4 @@ Here is an example JSON payload using Slack's **attachments** parameter:
 
 ## Create an alert
 
-Once you set up the webhook connection you'll have the option to use it in a [Scheduled Search](schedule-searches-webhook-connections.md) or [Monitor] (../../../Visualizations-and-Alerts/Alerts/Monitors.md "Monitors").
+Once you set up the webhook connection you'll have the option to use it in a [Scheduled Search](schedule-searches-webhook-connections.md) or [Monitor](/docs/alerts/monitors).

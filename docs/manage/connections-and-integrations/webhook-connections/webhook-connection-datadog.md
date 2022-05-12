@@ -9,7 +9,7 @@ payload refer to Datadog webhooks in their [API Help](http://docs.datadoghq.co
 
 [Webhook connections](set-up-webhook-connections.md) rely on HTTP endpoints that tell Sumo Logic where to send data. You can set up any number of connections.
 
-Once you set up the webhook connection you'll have the option to use it in a [Scheduled Search](schedule-searches-webhook-connections.md) or [Monitor] (../../../Visualizations-and-Alerts/Alerts/Monitors.md "Monitors").
+Once you set up the webhook connection you'll have the option to use it in a [Scheduled Search](schedule-searches-webhook-connections.md) or [Monitor](/docs/alerts/monitors).
 
 You need the **Manage connections** [role capability](../../users-and-roles/roles/role-capabilities.md) to create webhook connections.
 

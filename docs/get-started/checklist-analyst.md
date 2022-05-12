@@ -11,8 +11,7 @@ Click each link to go to each Help topic for all the details, then come back to 
 These topics provide basic information about your Sumo Logic account.
 
 * [Sumo Logic Account Types](/docs/manage/manage-subscription) The feature set of your Sumo Logic organization will depend on what type of Sumo Logic account you have. Review the list to make sure your account fits your use case. You can upgrade at any time.
-* [Preferences] (../../05Customize-Your-Sumo-Logic-Experience/Preferences-Page.md "Preferences Page") Set the Preferences on your personal Sumo Logic account for settings such as your password, web session timeout, default time zone, and more.
-* [Using Sumo Quick Start Tutorial] (../../Quick-Start-Tutorials/Using-Sumo-Logic-Tutorial.md) Here you can find a series of tutorials that will teach you the basics of using Sumo Logic. By reading through these tutorials new users can go from beginners to intermediate users of the product. 
+* [Preferences](manage-account.md#my-preferences) Set the Preferences on your personal Sumo Logic account for settings such as your password, web session timeout, default time zone, and more. 
 
 ## Searching log data
 
@@ -44,9 +43,9 @@ Sumo's search query language provides many search operators for advanced use cas
 
 Once you have created search queries, you can visualize your data using charts, which you can convert into Panels and put them in Dashboards that you can share with your organization in the Library.
 
-* [Chart Panel Types] (../../../Visualizations-and-Alerts/Dashboards/Chart-Panel-Types.md):  Any search query that produces results in the Aggregates tab can be represented graphically as different types of charts. Then these charts can be saved as Panels into Dashboards. Sumo Logic supports charts such as bar, column, line, area, pie, box plot, maps, single value, and combo charts.
+* [Chart Panel Types](/docs/dashboards/chart-panel-types):  Any search query that produces results in the Aggregates tab can be represented graphically as different types of charts. Then these charts can be saved as Panels into Dashboards. Sumo Logic supports charts such as bar, column, line, area, pie, box plot, maps, single value, and combo charts.
 * [Dashboards](/docs/dashboards-new): Dashboards contain a collection of Data Panels that provide a graphical representation in the form of a chart of your organization's data, along with Text and Title Panels that allow you to add context to the data in the Dashboard. The information you save in a Dashboard provides insight into the current state of the data you're uploading to Sumo Logic. Instead of having to run a number of queries, Sumo Logic runs these searches automatically, making sure that you're never looking at stale data.
-* [Using the Library] (../../Library.md): The Library provides a central location for shared and saved content in your Sumo Logic account, as well as content shared by others in your organization. All Sumo Logic Apps are available through the Library.
+* [Using the Library](/docs/get-started/library: The Library provides a central location for shared and saved content in your Sumo Logic account, as well as content shared by others in your organization. All Sumo Logic Apps are available through the Library.
 * [Share a Dashboard from the Library](../dashboards-new/share-dashboard-new.md): Publishing a Dashboard from the Library is a great way to keep everyone on top of data that is important to your organization.
 * [Share a Dashboard](../dashboards/share-dashboard-inside-org.md): When you share or publish a Dashboard, the default is that users will see exactly the same view as the person who created the Dashboard. If the user viewing the Dashboard has different RBAC permissions than the owner, the user will temporarily assume the RBAC permissions of the owner when they're viewing the Dashboard.
 
@@ -58,7 +57,7 @@ Once you have created search queries, you can visualize your data using charts, 
 
 ## Working with metrics
 
-Sumo supports several metric formats: Carbon 2.0, Prometheus, and Graphite. To learn about metrics in Sumo, see [Overview of Metrics in Sumo] (../../../Metrics/Introduction-to-Metrics/01Overview-of-Metrics-in-Sumo.md). Metrics-related features for analysts include:
+Sumo supports several metric formats: Carbon 2.0, Prometheus, and Graphite. To learn about metrics in Sumo, see [Overview of Metrics in Sumo](../metrics/introduction-metrics/overview-sumo-metrics.md). Metrics-related features for analysts include:
 
 * [Metric queries](/docs/metrics/metric-queries-alerts): You can query your metrics from a metric query tab. For information about the operators you can use in metric queries, see [Metric Operators](/docs/metrics/metric-queries-alerts/metrics-operators). 
 * [Metric charts](/docs/metrics/metric-charts): You can create line charts, area charts, and single value charts.

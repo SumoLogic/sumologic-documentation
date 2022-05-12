@@ -16,7 +16,7 @@ To edit a Source:
 
 1. In Sumo Logic, select **Manage Data \> Collection \> Collection**.
 1. Click the **Source** name, or click the **Edit** link to the right of the Source name.
-1. Change the name or change the metadata fields as needed. For details on configuration options, refer to your source type in [Sources] (../../03Send-Data/Sources.md).
+1. Change the name or change the metadata fields as needed. For details on configuration options, refer to your source type in [Sources](/docs/send-data/sources).
 1. Click **Save** to apply your changes.
 
     ![Edit local file source.png](/img/collector/edit-local-file-source.png)  

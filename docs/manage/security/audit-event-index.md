@@ -66,21 +66,21 @@ _index=sumologic_audit_``events _sourceCategory=accessKeys
 | [Content Sharing](/docs/manage/content-sharing) | `content` |
 | [Data Forwarding](/docs/manage/data-forwarding) | `dataForwarding` |
 | [Field Extractions](/docs/manage/field-extractions) | `fieldExtractionRules` |
-| [Fields] (/docs/manage/fields) | `fieldManagement` |
+| [Fields](../fields.md) | `fieldManagement` |
 | [Ingest Budgets](/docs/manage/ingestion-and-volume/ingest-budgets) | `ingestBudgets` |
 | [Installation Tokens](installation-tokens.md) | `token` |
-| [Logs-to-Metrics Rules] (../../Metrics/Logs-to-Metrics.md "Logs-to-Metrics") | `metricExtractionRule` |
-| [Monitors] (../../Visualizations-and-Alerts/Alerts/Monitors.md "Monitors") | `monitorLibrary` |
+| [Logs-to-Metrics Rules](../../metrics/logs-to-metrics.md) | `metricExtractionRule` |
+| [Monitors](/docs/alerts/monitors) | `monitorLibrary` |
 | [Password Policy](set-password-policy.md) | `passwordPolicy` |
 | [Roles](../users-and-roles/roles/create-manage-roles.md) | `roles` |
 | [SAML](/docs/manage/security/saml) | `saml` |
 | [Scheduled Views](/docs/manage/scheduled-views) | `scheduledView` |
-| Security Policies: [Share Dashboards Outside of the Organization] (../../Visualizations-and-Alerts/Dashboards/Share_Dashboards/Share_a_Dashboard_Outside_Your_Org.md "Share a Dashboard Outside Your Org"), [Data Access Level for Shared Dashboards] (Data_Access_Level_for_Shared_Dashboards.md "Data Access Level for Shared Dashboards"), [Per User Concurrent Sessions Limit](set-limit-user-concurrent-sessions.md), and [User Session Timeout](set-max-web-session-timeout.md) | `orgSettings` |
-| Security Policy: [Support Account Access] (Enable-a-Support-Account.md "Enable a Support Account") | `supportAccount` |
+| Security Policies: [Share Dashboards Outside of the Organization](../../dashboards/share-dashboard-outside-org.md), [Data Access Level for Shared Dashboards](data-access-level-shared-dashboards.md), [Per User Concurrent Sessions Limit](set-limit-user-concurrent-sessions.md), and [User Session Timeout](set-max-web-session-timeout.md) | `orgSettings` |
+| Security Policy: [Support Account Access](enable-support-account.md) | `supportAccount` |
 | [Service Allowlist](create-allowlist-ip-cidr-addresses.md) | `serviceAllowlist` |
-| [Support Account] (Enable-a-Support-Account.md "Enable a Support Account") | `supportAccount` |
-| [Transformation Rules] (../../Metrics/Metrics_Transformation_Rules.md "Metrics Transformation Rules") | `transformationRules` |
-| [Users] (../Users-and-Roles.md "Users and Roles") | `users` |
+| [Support Account](enable-support-account.md) | `supportAccount` |
+| [Transformation Rules](../../metrics/metrics-transformation-rules.md) | `transformationRules` |
+| [Users](/docs/manage/users-and-roles) | `users` |
 | User Sessions | `userSessions` |
 | [2-Step Verification](about-2-step-verification.md) | `multiFactorAuthentication` |
 

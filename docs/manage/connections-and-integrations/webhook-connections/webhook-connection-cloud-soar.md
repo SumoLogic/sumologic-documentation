@@ -4,7 +4,7 @@ id: cloud-soar
 
 # Webhook Connection for Cloud SOAR
 
-[Cloud SOAR](https://www.sumologic.com/solutions/cloud-soar/) can receive alerts from Sumo Logic Monitors and Scheduled Searches to create Incidents. First, you'll need to create a Cloud SOAR connection. Then you can use the connection as the Connection Type in a [Monitor] (../../../Visualizations-and-Alerts/Alerts/Monitors.md "Monitors") or the Alert Type in a [Scheduled Search](schedule-searches-webhook-connections.md).
+[Cloud SOAR](https://www.sumologic.com/solutions/cloud-soar/) can receive alerts from Sumo Logic Monitors and Scheduled Searches to create Incidents. First, you'll need to create a Cloud SOAR connection. Then you can use the connection as the Connection Type in a [Monitor](/docs/alerts/monitors) or the Alert Type in a [Scheduled Search](schedule-searches-webhook-connections.md).
 
 You need to have [Cloud SOAR](https://www.sumologic.com/solutions/cloud-soar/) enabled on your account for this connection to be available.
 

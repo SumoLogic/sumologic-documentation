@@ -106,7 +106,7 @@ Environment variables may not apply to all Fluentd sources. See the table follow
 | `SOURCE_CATEGORY_REPLACE_DASH` | Used to replace a dash (-) character with another character. Default: `/`<br/>For example, a Pod called `travel-nginx-3629474229-dirmo` within namespace app will appear in Sumo with `_sourceCategory=app/travel/nginx`. | 
 | `SOURCE_HOST` | Set the _sourceHost metadata field in Sumo. Default: `""` | 
 | `SOURCE_NAME` | Set the _sourceName metadata field in Sumo. Default: `"%{namespace}.%{pod}.%{container}"` | 
-| `AUDIT_LOG_PATH` | Define the path to the [Kubernetes Audit Log] (https://kubernetes.io/docs/tasks/debug-application-cluster/audit/). Default: `/mnt/log/kube-apiserver-audit.log` | 
+| `AUDIT_LOG_PATH` | Define the path to the [Kubernetes Audit Log](https://kubernetes.io/docs/tasks/debug-application-cluster/audit/). Default: `/mnt/log/kube-apiserver-audit.log` | 
 | `TIME_KEY` | The field name for json formatted sources that should be used as the time. See time_key. Default: `time` | 
 
 Example for EXCLUDE_PATH:

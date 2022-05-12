@@ -423,6 +423,7 @@ module.exports = {
     },
     'manage/health-events',
     'manage/fields',
+    'manage/archive',
   ],
 // *** DASHBOARDS and VISUALS: 
   dashboards: [
@@ -989,7 +990,7 @@ module.exports = {
           type: 'category',
           label: 'Metrics Operators',
           collapsible: true,
-          collapsed: false,
+          collapsed: true,
           link: {type: 'doc', id: 'metrics/metric-queries-alerts/metrics-operators/index'},
           items: [
             'metrics/metric-queries-alerts/metrics-operators/accum',

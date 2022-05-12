@@ -149,7 +149,7 @@ To launch a search, metrics visualization, or live tail session, do the followin
    * Click one of the following Home page icons:
 
      * [Log Search](/docs/search/get-started-with-search/search-basics). Open the Search page to search logs.
-     * [Metrics] (../Metrics.md "Metrics"). Open the Metrics page to create a metrics visualization.
+     * [Metrics](/docs/metrics). Open the Metrics page to create a metrics visualization.
      * [Live Tail](/docs/search/live-tail). View a real-time live feed of log events associated with a Source or Collector.
 
     ![WTS_UI_Search-Metrics-LiveTail.png](/img/get-started/ui/WTS_UI_Search-Metrics-LiveTail.png)

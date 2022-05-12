@@ -128,7 +128,7 @@ This example will only produce an aggregation table, not a chart, but the indica
 
 ### Alert on an outlier
 
-This query counts the number of errors over time and sends an alert when an outlier is detected. When an outlier is detected, the value of `<field_name>_violation` will be set to 1. In the example below, the `<field_name>` is `_count`. By creating a [Real Time Alert] (../../../Visualizations-and-Alerts/Alerts/Scheduled-Searches/Create_a_Real_Time_Alert.md) and sending a notification if greater than 0 results are found, you can alert on an outlier.
+This query counts the number of errors over time and sends an alert when an outlier is detected. When an outlier is detected, the value of `<field_name>_violation` will be set to 1. In the example below, the `<field_name>` is `_count`. By creating a [Real Time Alert](../../../alerts/scheduled-searches/create-real-time-alert.md) and sending a notification if greater than 0 results are found, you can alert on an outlier.
 
 ```sql
 "error"
@@ -190,7 +190,7 @@ _sourceCategory=O365*
 | transpose row _timeslice column user_id
 ```
 
-Once you have run the query, you can click **Save As** to create a [Scheduled Search] (../../../Visualizations-and-Alerts/Alerts/Scheduled-Searches/Schedule_a_Search.md) and configure it to send an [alert] (../../../Visualizations-and-Alerts/Alerts.md) when any user account experiences an unusual amount of failures, or other event you want to monitor each series of data for.
+Once you have run the query, you can click **Save As** to create a [Scheduled Search](../../../alerts/scheduled-searches/schedule-search.md) and configure it to send an [alert](/docs/alerts) when any user account experiences an unusual amount of failures, or other event you want to monitor each series of data for.
 
 To visualize your results, on the Search page, you can create a column chart, then change the stacking property to normal to display alerts by unique **user_id** (the multidimensional aspect).
 
@@ -213,7 +213,7 @@ error (_sourceCategory=Apache* or _sourceCategory=IIS*)
 | transpose row _timeslice column _sourceCategory
 ```
 
-When you select a [line chart] (../../../Visualizations-and-Alerts/Dashboards/Chart-Panel-Types/Line-Charts.md), this example will display something like the following:
+When you select a [line chart](../../../dashboards-new/panels/line-charts.md), this example will display something like the following:
 
 ![Outlier Distribution](/img/search/searchquerylanguage/search-operators/OutlierDistri.png)
 
@@ -234,8 +234,7 @@ _sourceCategory=Apache*
 | transpose row _timeslice column status_code
 ```
 
-When you select a [line chart] (../../../Visualizations-and-Alerts/Dashboards/Chart-Panel-Types/Line-Charts.md),
-this example will display something like the following:
+When you select a [line chart](../../../dashboards-new/panels/line-charts.md), this example will display something like the following:
 
 ![Outlier Ranking](/img/search/searchquerylanguage/search-operators/OutlierRanking.png)
 

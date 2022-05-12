@@ -298,7 +298,7 @@ The following table shows how the Time Range and Time Shift affect the Target a
 
 ## LogCompare alerts
 
-With LogCompare, you can create a [Monitor] (/Visualizations-and-Alerts/Alerts/Monitors) or [Scheduled Search] (/Visualizations-and-Alerts/Alerts/Scheduled-Searches) to send notifications when certain conditions are met. For example, you can be alerted when new signatures are found.
+With LogCompare, you can create a [Monitor](/docs/alerts/monitors) or [Scheduled Search](../alerts/scheduled-searches/schedule-search.md) to send notifications when certain conditions are met. For example, you can be alerted when new signatures are found.
 
 To do this, use a search query such as:
 

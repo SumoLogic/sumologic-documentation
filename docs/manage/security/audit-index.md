@@ -253,7 +253,7 @@ _sourceCategory=support_account_activity
 The table below shows the value of the class and action fields for support account events.
 
 :::note
-Support account events are logged only if you have [enabled a support account] (Enable-a-Support-Account.md "Support Accounts").
+Support account events are logged only if you have [enabled a support account](enable-support-account.md).
 :::
 
 | Class | Actions | 
@@ -275,9 +275,9 @@ The table below shows the value of the `class` and `action` fields for schedule
 | Finish | Scheduled search finished successfully. |
 | Delete | Scheduled search was deleted. |
 | Modify | The alert condition for the scheduled search was met and the alert action was fired. |
-| Timeout | Scheduled search did not complete within the timeout period, which is 20 minutes to an hour, depending on the time range set for the query.<br/>For more information, see [How to Prevent your Scheduled Search from Timing Out] (/Visualizations-and-Alerts/Alerts/Scheduled-Searches/Scheduled_Search_FAQs/How-to-Prevent-your-Scheduled-Search-from-Timing-Out). |
+| Timeout | Scheduled search did not complete within the timeout period, which is 20 minutes to an hour, depending on the time range set for the query.<br/>For more information, see [How to Prevent your Scheduled Search from Timing Out](../../alerts/scheduled-searches/faqs/prevent-scheduled-search-timing-out.md). |
 | Suspend | Indicates that Sumo has suspended the search because it has timed out repeatedly.<br/><br/>When a Scheduled Search query fails, Sumo Logic attempts to run the query again two more times, for a total of three tries. If all attempts fail, then an Alert Email is sent with a notification of the failure. The Scheduled Search is not run again until the next time it is scheduled to do so.<br/><br/>The next time the Scheduled Search runs, if it fails again after the three tries, then it is suspended. Another Alert Email is sent to notify you that the query has been suspended.<br/><br/>The Scheduled Search will remain suspended for four hours for non-daily searches (for example, searches recurring every 15 minutes, every 1 hour, etc.) and for up to an extra day for a daily search (two failed executions on two days and skips the third day). |
-| Skip | Scheduled search was skipped, because it was in a suspended state at a time when it was scheduled to run. For more information, see [What Happens When a Scheduled Search Is Suspended?] (/Visualizations-and-Alerts/Alerts/Scheduled-Searches/Scheduled_Search_FAQs/What-Happens-When-a-Scheduled-Search-Is-Suspended) |
+| Skip | Scheduled search was skipped, because it was in a suspended state at a time when it was scheduled to run. For more information, see [What Happens When a Scheduled Search Is Suspended?](../../alerts/scheduled-searches/faqs/suspended-scheduled-search.md) |
 | Unsuspend | Indicates that Sumo has unsuspended a suspended scheduled search. |
 
 Suspend events only occur if Sumo Logic has manually suspended a search for some reason. If you see a suspended search and feel that this is in error, contact Sumo Logic Support.
@@ -293,7 +293,7 @@ The table below shows the value of the `class` and `action` fields for metric 
 | Class | Actions | Description |
 |--|--|--|
 | INGEST | TRUNCATE |  |
-| METRIC_EXTRACTION | SKIP | A logs-to-metrics rule extracted one or more dimensions that are longer than 250 character. For more information, see [Logs-to-Metrics] (../../Metrics/Logs-to-Metrics.md "Logs-to-Metrics"). |
+| METRIC_EXTRACTION | SKIP | A logs-to-metrics rule extracted one or more dimensions that are longer than 250 character. For more information, see [Logs-to-Metrics](../../metrics/logs-to-metrics.md). |
 
 ### Index retention period
 

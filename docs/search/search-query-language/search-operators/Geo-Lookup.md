@@ -9,7 +9,7 @@ Sumo Logic can match a [parsed](/docs/search/search-query-language/parse-operat
 Any IP addresses that don't have a location, such as internal addresses, will return null values.
 
 :::note
-The Geo Lookup (Map) operator is the first step in creating [Map Charts] (../../../Visualizations-and-Alerts/Dashboards/Chart-Panel-Types/Map-Charts.md).
+The Geo Lookup (Map) operator is the first step in creating [Map Charts](../../../dashboards-new/panels/map-charts.md).
 :::
 
 Required fields:
@@ -39,7 +39,7 @@ Details of these data fields can be found in [Neustar's documentation](https://i
 
 The Geo Lookup operator uses [lookup](lookup-classic.md "lookup") with a specific path, `geo://location`, to produce a map. 
 
-To map the IP addresses properly you must [count] (../../../Metrics/Metric-Queries-and-Alerts/07Metrics_Operators/count.md "count") by the `latitude` and `longitude` fields. You must have the `_count` field in your results. If you want to use a different field's value [rename](as-operator.md "as operator") it to `_count` so the map uses the field.
+To map the IP addresses properly you must [count](../group-aggregate-operators/count-count-distinct-and-count-frequent.md) by the `latitude` and `longitude` fields. You must have the `_count` field in your results. If you want to use a different field's value [rename](as-operator.md "as operator") it to `_count` so the map uses the field.
 
 Your query should use the following syntax:
 

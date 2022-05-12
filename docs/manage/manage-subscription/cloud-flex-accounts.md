@@ -21,7 +21,7 @@ Sumo Logic provides flexible account types within its Cloud Flex packaging for 
     :::
 
 * **Professional** accounts scale to meet your growing needs for user licenses, data retention, and volume options based on subscription. You can [upgrade](upgrade-your-cloud-flex-account.md) from a Professional to an Enterprise account at any time.
-* **Enterprise** accounts, the premier Sumo Logic log management solution, are built to fit your organization's needs for data volume, data retention, and user management requirements. Enterprise accounts include [Ingest Budgets](/docs/manage/ingestion-and-volume/ingest-budgets) and [SAML-based SSO] (../Security/SAML/01-Set-Up-SAML-for-Single-Sign-On.md "Set Up SAML for Single Sign-On"). 
+* **Enterprise** accounts, the premier Sumo Logic log management solution, are built to fit your organization's needs for data volume, data retention, and user management requirements. Enterprise accounts include [Ingest Budgets](/docs/manage/ingestion-and-volume/ingest-budgets) and [SAML-based SSO](../security/saml/set-up-saml.md). 
 
     :::note
     [Ingest Budgets](/docs/manage/ingestion-and-volume/ingest-budgets/) are only available for Enterprise accounts. Ingest budgets control the capacity of daily log ingestion volume sent to Sumo Logic from Collectors.
@@ -84,7 +84,7 @@ For all Sumo Logic account types (except for Sumo Logic Free) there is an overal
 
 ### Data Limits for Metrics
 
-For billing and reporting purposes, data volume for metrics is measured in Data Points per Minute (DPM). When the DPM limit is exceeded, data is cached on the host and the Source is throttled. The calculation of DPM varies according to the type of metric Source. For details, see [Data Limits for Metrics] (../../Metrics/Understand_and_Manage_Metric_Volume/Data_Limits_for_Metrics.md "Data Limits for Metrics"). 
+For billing and reporting purposes, data volume for metrics is measured in Data Points per Minute (DPM). When the DPM limit is exceeded, data is cached on the host and the Source is throttled. The calculation of DPM varies according to the type of metric Source. For details, see [Data Limits for Metrics](../../metrics/understand-manage-metric-volume/data-limits-for-metrics.md). 
 
 ## Important notes on Sumo Logic Free accounts
 
@@ -94,8 +94,8 @@ Using a Free account is a great way to get to know Sumo Logic. While you're try
 * If you begin to reach the 500 MB daily limit, Sumo Logic sends an email to let you know. You can take action to [reduce the amount of data](../partitions-and-data-tiers/manage-indexes-variable-retention.md) you're uploading in order to stay below the limit.
 * If the 500 MB limit is surpassed, you'll receive an email letting you know that data in the Sumo Logic Cloud can no longer be searched (but additional data is still collected). However, if the data limit is fully exceeded, data collection stops (in addition to search being disabled). Disabled features will be available after your usage falls below 4 GB when averaged over seven days (this could take one day, or up to seven days, depending on the amount of data you've uploaded and where you've uploaded it).
 * In extreme situations, Free accounts may be disabled if the data volume continues to exceed the limits.
-* Free accounts are limited to 20 continuous queries, including [Dashboard Panels] (../../Visualizations-and-Alerts/Dashboards/01-About-Dashboards.md "About Dashboards").
-* Because Free accounts run on seven-day intervals, [Dashboard Panel] (../../Visualizations-and-Alerts/Dashboards/01-About-Dashboards.md "About Dashboards") queries may not use a time range longer than seven days.
+* Free accounts are limited to 20 continuous queries, including [Dashboard Panels](../../dashboards/about-dashboards.md).
+* Because Free accounts run on seven-day intervals, [Dashboard Panel](../../dashboards/about-dashboards.md) queries may not use a time range longer than seven days.
 * For Sumo Logic Apps, Free accounts are limited to install the [Log Analysis QuickStart app](../../get-started/library/log-analysis-quickstart-app.md).
 * The limitations of a Free account can't be changed, but you can upgrade to a Professional account at any time.
 * For information on throttling and account caps, see [Manage Ingestion](../ingestion-and-volume/log-ingestion.md).

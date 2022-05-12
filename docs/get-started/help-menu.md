@@ -62,7 +62,7 @@ If there has been an outage on your [deployment] (../../APIs/General-API-Informa
 
 1. At the top of the **Help** menu.
 1. Next to **Help \> Service Status**.
-1. Next to the title of a [Dashboard] (../../Visualizations-and-Alerts/Dashboards/01-About-Dashboards.md).
+1. Next to the title of a [Dashboard](../dashboards/about-dashboards.md).
 
 For more information, click **Help \> Service Status**. This will take you to a web page for your pod with details on any outages, incidents, or planned maintenance.
 

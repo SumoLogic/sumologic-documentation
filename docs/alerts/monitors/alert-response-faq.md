@@ -105,7 +105,7 @@ Anomaly cards only work if we are able to infer an entity from the alerting quer
 
 ## I don’t see Anomaly Card for metrics-based Alert?
 
-Alert Response anomaly detection only detects anomalies for metrics data coming from Kubernetes or specific sources within AWS ([Learn More] (../../../../Observability_Solution/Root_Cause_Explorer.md)). If you are setting up alerts on Metrics that don’t belong to either one of these categories, then anomalies will not be detected.
+Alert Response anomaly detection only detects anomalies for metrics data coming from Kubernetes or specific sources within AWS ([Learn More](../../observability/root-cause-explorer.md)). If you are setting up alerts on Metrics that don’t belong to either one of these categories, then anomalies will not be detected.
 
 Use the Sumo Logic Kubernetes collection or the Sumo Logic AWS observability collection for this to work properly. 
 

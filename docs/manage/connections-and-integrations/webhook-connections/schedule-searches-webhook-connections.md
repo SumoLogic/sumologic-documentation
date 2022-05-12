@@ -23,7 +23,7 @@ To set up a scheduled search for a Webhook Connection:
 
    ![itemized alert.png](/img/connection-and-integration/itemized-alert.png)
 
-1. For all configuration options, see [Schedule a Search] (../../../Visualizations-and-Alerts/Alerts/Scheduled-Searches/Schedule_a_Search.md). 
+1. For all configuration options, see [Schedule a Search](../../../alerts/scheduled-searches/schedule-search.md). 
 1. **Alert Type**. Select **Webhook**.
 1. Select a **Webhook** from the **Connection** list. 
 

@@ -4,7 +4,7 @@ id: set-up-searches-for-servicenow-integration
 
 # Set Up Searches for ServiceNow Integration
 
-[Scheduled searches] (../../../Visualizations-and-Alerts/Alerts/Scheduled-Searches.md "Scheduled Searches") are saved searches that run automatically at specified intervals. When a scheduled search is set to upload search results to ServiceNow, you can combine services for round-trip investigations.
+[Scheduled searches](/docs/alerts/scheduled-searches) are saved searches that run automatically at specified intervals. When a scheduled search is set to upload search results to ServiceNow, you can combine services for round-trip investigations.
 
 You can create a brand new search, or you can base a search on an existing saved or scheduled search. If you'd like to use an existing search, you'll need to save the query as a new search to not override the search's current schedule.
 
@@ -22,7 +22,7 @@ Before you can set up searches for ServiceNow, you'll need to configure a [Servi
 1. Choose an option from the **Run Frequency** menu: 
 
    * **Never.** Choose this option to temporarily **turn off a scheduled search**.
-   * **Real Time.** Enterprise and paid trial customers can use this option to set up [Real Time Alerts] (../../../Visualizations-and-Alerts/Alerts/Scheduled-Searches/Create_a_Real_Time_Alert.md "Create a Real Time Alert").
+   * **Real Time.** Enterprise and paid trial customers can use this option to set up [Real Time Alerts](../../../alerts/scheduled-searches/create-real-time-alert.md).
    * **Every 15 Minutes.** The search will run for the first time when you save the schedule, and then every 15 minutes after that.
    * **Hourly.** The search will run for the first time at the top of the next hour after you save the schedule, and then every hour after that. * **Every 2, 4, 6, 8, or 12 Hours.** The search will run for the first time at the top of the hour you choose.
    * **Daily.** Choose the time you'd like to run the search every day. A Daily search will cover exactly 24 hours of activity. You can change the schedule whenever you'd like.

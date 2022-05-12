@@ -31,7 +31,7 @@ Compressed files are decompressed before they are ingested, so they are ingested
 
 ## Log Throttling
 
-Part of managing spikes in activity is properly slowing the rate of ingestion while the demand is at its peak, known as throttling. This section pertains to logs, for metrics see [Metrics Throttling] (../../Metrics/Understand_and_Manage_Metric_Volume/Metric_Throttling.md "Metric Throttling").
+Part of managing spikes in activity is properly slowing the rate of ingestion while the demand is at its peak, known as throttling. This section pertains to logs, for metrics see [Metrics Throttling](../../metrics/understand-manage-metric-volume/metric-throttling.md).
 
 :::note
 All accounts are subject to throttling, regardless of plan type (Cloud Flex or Cloud Flex Credits) or [Data Tier](/docs/manage/partitions-and-data-tiers).
@@ -72,7 +72,7 @@ You can use the [Data Volume Index](/docs/manage/ingestion-and-volume/data-volu
 
 ## How can I be alerted when throttling takes place?
 
-If the audit index is enabled you can set up a scheduled search to send an alert when throttling occurs. For more information, see [Audit Index] (../Security/Audit-Index.md "Audit Index").  
+If the audit index is enabled you can set up a scheduled search to send an alert when throttling occurs. For more information, see [Audit Index](../security/audit-index.md).  
 
 ## Ingestion with file changes
 

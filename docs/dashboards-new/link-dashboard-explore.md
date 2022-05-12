@@ -4,7 +4,7 @@ id: link-dashboard-to-explore
 
 # Link a dashboard to Explore
 
-Stack linking connects Dashboard (New) to [Explore] (../Explore.md) so you can view dashboards when exploring infrastructure components.
+Stack linking connects Dashboard (New) to Explore so you can view dashboards when exploring infrastructure components.
 
 You link a Dashboard (New) to your stack in Explore by specifying metadata key-value pairs:
 

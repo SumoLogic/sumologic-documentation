@@ -13,7 +13,7 @@ This page has information about sharing dashboards with users who do not have a 
 Dashboards often contain sensitive information, so typically you share them only with people within your organization. But sometimes you may want to allow people outside your organization to view a dashboard without logging in, for example if your dashboard is displayed on a monitor in your operations center, or if you want to send an external person a link to a dashboard that reveals a critical problem.
 
 :::note
-Sharing outside an organization is always view-only and in live mode, and not all [operators are compatible with live mode] (../Restricted_Operators_in_Dashboards.md "Dashboards-and-Alerts/Dashboards/Restricted_Operators_in_Dashboards#Live_mode_restrictions"). Also, if this is the first time that live mode is being enabled, it may take some time to backfill the data depending on your queries and timeranges. See [About Dashboards] (../01-About-Dashboards.md "Dashboards-and-Alerts/Dashboards/01-About-Dashboards").
+Sharing outside an organization is always view-only and in live mode, and not all [operators are compatible with live mode](restricted-operators-dashboards.md). Also, if this is the first time that live mode is being enabled, it may take some time to backfill the data depending on your queries and timeranges. See [About Dashboards](about-dashboards.md).
 :::
 
 You can share a dashboard with all external users (“the world”), or with a selected set of external users that you specify in the service allowlist. 
@@ -82,10 +82,10 @@ If you would like to embed the shared dashboard in a web page, you can get an i
 
 ## Restrictions and limitations for external sharing 
 
-* Sharing outside an organization is always view-only and in live mode, and not all [operators are compatible with live mode] (../Restricted_Operators_in_Dashboards.md "Dashboards-and-Alerts/Dashboards/Restricted_Operators_in_Dashboards#Live_mode_restrictions"). It may take several minutes for panels to load data depending on your queries and time ranges.
-* Panels that are [incompatible with live mode] (../Restricted_Operators_in_Dashboards.md "Dashboards-and-Alerts/Dashboards/Restricted_Operators_in_Dashboards#Live_mode_restrictions")  show data only for viewers who have a login.
+* Sharing outside an organization is always view-only and in live mode, and not all [operators are compatible with live mode](restricted-operators-dashboards.md#live-mode-restrictions). It may take several minutes for panels to load data depending on your queries and time ranges.
+* Panels that are [incompatible with live mode](restricted-operators-dashboards.md#live-mode-restrictions) show data only for viewers who have a login.
 * Panels must use relative time ranges (such as Last 15 Minutes, Last 24 Hours). Absolute time ranges are not currently supported.
-* Viewers without a login will see a live version of the dashboard with any [default time ranges and filters] (../Use-Time-Ranges-and-Filters.md "Dashboards-and-Alerts/Dashboards/Use-Time-Ranges-and-Filters") applied. To specify a different set of filters for another viewer, create a copy of the dashboard, provide new filter values and share it with the new URL.
+* Viewers without a login will see a live version of the dashboard with any default time ranges and filters applied. To specify a different set of filters for another viewer, create a copy of the dashboard, provide new filter values and share it with the new URL.
 
 ## Logging for externally-shared dashboards
 
@@ -110,7 +110,7 @@ When someone views a dashboard without signing in, Sumo logs the following infor
 
 ## Alerts and reports for externally-shared dashboards
 
-You can use [Scheduled Searches] (../../Alerts/Scheduled-Searches/Schedule_a_Search.md "Dashboards-and-Alerts/Alerts/02-Schedule-a-Search") to create alerts and reports on sharing dashboards outside your organization.
+You can use [Scheduled Searches](/docs/alerts/scheduled-searches/index.md) to create alerts and reports on sharing dashboards outside your organization.
 
 **Real-time alert when a user shares a dashboard**
 

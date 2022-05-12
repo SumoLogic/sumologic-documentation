@@ -11,7 +11,7 @@ You can assign any of the following capabilities when you [create roles](creat
 | Capability | Description |
 |--|--|
 | Manage connections | Manage the [connections](/docs/manage/connections-and-integrations) that allow you to send alerts to other tools. |
-| Manage Collectors | Install and manage [installed](/docs/send-data/installed-collectors) and [hosted] (/03Send-Data/Hosted-Collectors) Collectors and [Sources] (/03Send-Data/Sources). Manage permission automatically includes view permission. |
+| Manage Collectors | Install and manage [installed](/docs/send-data/installed-collectors) and [hosted](../../../send-data/hosted-collectors.md) Collectors and [Sources](/docs/send-data/sources). Manage permission automatically includes view permission. |
 | Manage Ingest Budgets | Manage [ingest budgets](/docs/manage/ingestion-and-volume/ingest-budgets). Enabling this will automatically enable the Manage Collectors capability. The Manage Collectors capability on its own permits the re-assignment of budgets to different Collectors, but not creating or deleting them. |
 | Manage data volume feed | [Enable and manage the data volume index](/docs/manage/ingestion-and-volume/data-volume-index/) for your account to avoid using On-Demand Capacity, and to determine when you need to upgrade your account. |
 | View Collectors | View and Collectors and Sources that have already been installed or added. |
@@ -34,9 +34,9 @@ You can assign any of the following capabilities when you [create roles](creat
 
 | Capability | Description |
 |--|--|
-| Manage Logs-to-Metrics | Create, edit, or delete [Logs-to-Metrics] (../../../Metrics/Logs-to-Metrics.md "Logs-to-Metrics") rules.  |
-| Manage Metrics Transformation Rules | Create, edit, or delete [Metrics Transformation rules] (../../../Metrics/Metrics_Transformation_Rules.md "Metrics Transformation Rules").  |
-| Manage Metric Rules | Create, edit, or delete [Metric Rules] (../../../Metrics/Metric_Rules_Editor.md "Metric Rules Editor"). |
+| Manage Logs-to-Metrics | Create, edit, or delete [Logs-to-Metrics](../../../metrics/logs-to-metrics.md) rules.  |
+| Manage Metrics Transformation Rules | Create, edit, or delete [Metrics Transformation rules](../../../metrics/metrics-transformation-rules.md).  |
+| Manage Metric Rules | Create, edit, or delete [Metric Rules](/docs/metrics/metric-rules-editor). |
 
 ## Security
 
@@ -49,16 +49,16 @@ You can assign any of the following capabilities when you [create roles](creat
 | Manage support account access | Enable [management of the Sumo Logic support account](../../security/enable-support-account.md) for your organization. |
 | Manage audit data feed. | [Enable and manage the Audit Index](../../security/audit-index.md), which provides information on the internal events that occur in your account associated with account management, user activity, and scheduled searches.  |
 | Manage SAML | [Provision and manage SAML](../../security/saml/set-up-saml.md) for single sign-on to your Sumo Logic accounts. |
-| Manage Share dashboards outside of the organization | [Share a dashboard] (../../../Visualizations-and-Alerts/Dashboards/Share_Dashboards/Share_a_Dashboard_Inside_Your_Org.md "Share Dashboards") with users who don't have access to Sumo Logic. |
+| Manage Share dashboards outside of the organization | [Share a dashboard](../../../dashboards/share-dashboard-inside-org.md) with users who don't have access to Sumo Logic. |
 | Manage organization settings | Users with this capability can configure a [concurrent user sessions limit](../../security/set-limit-user-concurrent-sessions.md) and enable the [Data Access Level for Shared Dashboards](../../security/data-access-level-shared-dashboards.md) security policy. |
-| Change Data Access Level  | Users with this capability can change the [data access level] (../../../Visualizations-and-Alerts/Dashboards/Get-Started-with-Dashboards-and-Panels/Set_the_Data_Access_Level_for_a_Dashboard.md "Set the Data Access Level for a Dashboard") of dashboards or scheduled searches to which they have edit or manage permission. |
+| Change Data Access Level  | Users with this capability can change the [data access level](../../../dashboards/get-started/set-data-access-level-dashboard.md) of dashboards or scheduled searches to which they have edit or manage permission. |
 
 ## Dashboards
 
 | Capability | Description |
 |--|--|
-| Share dashboards with the allowlist | [Share dashboards] (../../../Visualizations-and-Alerts/Dashboards/Share_Dashboards/Share_a_Dashboard_Inside_Your_Org.md "Share Dashboards") in view-only mode with no login required. Viewers must be connecting from IP addresses specified in your [service allowlist] (../../../Visualizations-and-Alerts/Dashboards/Share_Dashboards/Share_a_Dashboard_Inside_Your_Org.md "Share Dashboards"). |
-| Share dashboards with the world | [Share dashboards] (../../../Visualizations-and-Alerts/Dashboards/Share_Dashboards/Share_a_Dashboard_Inside_Your_Org.md "Share Dashboards") in view-only mode with no login required. Anyone with the URL can view the dashboard without logging in. |
+| Share dashboards with the allowlist | [Share dashboards](../../../dashboards/share-dashboard-inside-org.md) in view-only mode with no login required. Viewers must be connecting from IP addresses specified in your [service allowlist](../../../dashboards/share-dashboard-inside-org.md). |
+| Share dashboards with the world | [Share dashboards](../../../dashboards/share-dashboard-inside-org.md) in view-only mode with no login required. Anyone with the URL can view the dashboard without logging in. |
 
 ## User Management
 
@@ -72,7 +72,7 @@ You can assign any of the following capabilities when you [create roles](creat
 |--|--|
 | View Monitors | View [Monitors](/docs/alerts/monitors). |
 | Manage Monitors  | Create, edit, share, and delete [Monitors](/docs/alerts/monitors). |
-| View Alerts | View [Alerts] (../../../Visualizations-and-Alerts/Alerts/Monitors/Alert_Response.md "Alert Response").  |
+| View Alerts | View [Alerts](../../../alerts/monitors/alert-response.md).  |
 
 ## Organizations
 

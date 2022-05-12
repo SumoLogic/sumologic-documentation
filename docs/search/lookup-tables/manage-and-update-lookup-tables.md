@@ -120,7 +120,7 @@ If you want to replicate a lookup table schema in a different folder in the Libr
 
 1. Click **Copy** to copy the JSON to the clipboard, or **Download** to download a JSON file.
 1. Click **Done**. 
-1. To create new lookup table with the JSON, follow the instructions in [Import Content in the Library] (../../01Start-Here/Library/Export-and-Import-Content-in-the-Library.md).
+1. To create new lookup table with the JSON, follow the instructions in [Import Content in the Library](../../get-started/library/manage-library.md).
 
 ## Share a lookup table
 

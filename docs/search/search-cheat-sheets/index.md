@@ -8,7 +8,7 @@ Cheat sheets provide examples of useful search queries for different use cases. 
 
 For a collection of customer created search queries and their use cases, see the [Sumo Logic Community Query Library](https://support.sumologic.com/hc/en-us/community/topics/200396738-Query-Library). 
 
-For a step-by-step video and tutorial about creating Sumo Logic queries, see the [Quick Start Tutorials] (../01Start-Here/Quick-Start-Tutorials.md "Quick Start Tutorials").  
+For a step-by-step video and tutorial about creating Sumo Logic queries, see the [Quick Start Tutorials](/docs/quickstart).  
 
 import DocCardList from '@theme/DocCardList';
 import {useCurrentSidebarCategory} from '@docusaurus/theme-common';

@@ -19,8 +19,7 @@ Other use cases require much less frequent data analysis. Here, we’re talking 
 Sumo Logic’s *Data Tiers* provide a comprehensive solution for all types of data that an organization has, low touch, high touch and everything in between, at an economical price. Data Tiers provide tier-based pricing based on your planned usage of the data you ingest. 
 
 :::note
-Data Tiers must be enabled on your [Cloud Flex] (../01Manage_Subscription/01Cloud_Flex_Accounts.md "Cloud Flex") or
-[Cloud Flex Credits] (../01Manage_Subscription/00Cloud_Flex_Credits_Accounts.md "Cloud Flex Credits") plan to be able to access this functionality. Infrequent Tier, described below, is only available on Cloud Flex Credits. For more information, contact your Sumo Logic Account Representative.
+Data Tiers must be enabled on your [Cloud Flex](../manage-subscription/cloud-flex-accounts.md) or [Cloud Flex Credits](../manage-subscription/cloud-flex-credits-accounts.md) plan to be able to access this functionality. Infrequent Tier, described below, is only available on Cloud Flex Credits. For more information, contact your Sumo Logic Account Representative.
 :::
 
 ## Types of Data Tiers 

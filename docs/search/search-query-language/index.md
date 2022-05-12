@@ -4,7 +4,7 @@ slug: /search/search-query-language
 
 # Search Query Language
 
-For a step-by-step video and tutorial about creating Sumo Logic queries, see the [Quick Start Tutorial] (../01Start-Here/Quick-Start-Tutorials.md).
+For a step-by-step video and tutorial about creating Sumo Logic queries, see the [Quick Start Tutorial](/docs/quickstart).
 
 For a collection of customer-created search queries and their use cases, see the [Community Query Library](https://support.sumologic.com/hc/en-us/community/topics/200396738-Query-Library).
 

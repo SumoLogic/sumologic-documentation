@@ -10,7 +10,7 @@ For a collection of customer created search queries and their use cases, see the
 :::
 
 :::note
-For a step-by-step video and tutorial about creating Sumo Logic queries, see the [Quick Start Tutorial] (../../01Start-Here/Quick-Start-Tutorials.md).  
+For a step-by-step video and tutorial about creating Sumo Logic queries, see the [Quick Start Tutorial](/docs/quickstart).  
 :::
 
 The examples use this sample Apache log message where applicable:

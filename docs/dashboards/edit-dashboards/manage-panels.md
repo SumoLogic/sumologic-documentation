@@ -43,7 +43,7 @@ Changes are reflected immediately.
 
 ## Editing Shared Dashboards
 
-In Sumo, a dashboard's *data access level* determines what data appears in the dashboard when users with whom the dashboard was shared view it. In effect, the data access level of a dashboard controls what search role filter is applied to the dashboard:  the viewer's filter, or the filter of the user that shared the dashboard. For more information about data access levels, see [Set the Data Access Level for a Dashboard] (../Get-Started-with-Dashboards-and-Panels/Set_the_Data_Access_Level_for_a_Dashboard.md "Set the Data Access Level for a Dashboard").
+In Sumo, a dashboard's *data access level* determines what data appears in the dashboard when users with whom the dashboard was shared view it. In effect, the data access level of a dashboard controls what search role filter is applied to the dashboard:  the viewer's filter, or the filter of the user that shared the dashboard. For more information about data access levels, see [Set the Data Access Level for a Dashboard](../get-started/set-data-access-level-dashboard.md).
 
 When you add or edit a panel in a shared dashboard, Sumo compares your role search filter to the search filter with which the dashboard was shared. If the search filters vary, Sumo displays a message like this:
 

@@ -7,7 +7,7 @@ id: locate-deviations-time-series
 An **outlier** is a data point that is outside the range of expected values. This page shows you how to locate deviations beyond thresholds in a time series. 
 
 :::note
-Currently, the feature is only available for logs queries. For information on outliers in metrics queries, see the [Metrics Outliers] (../../Metrics/03-Metric-Charts/09-Metrics-Outliers.md "Metrics Outliers") page.
+Currently, the feature is only available for logs queries. For information on outliers in metrics queries, see the [Metrics Outliers](../metrics/metric-charts/metrics-outliers.md) page.
 :::
 
 ## Graphing log queries to find outliers

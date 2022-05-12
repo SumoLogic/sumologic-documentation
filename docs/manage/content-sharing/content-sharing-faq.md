@@ -28,7 +28,7 @@ It is possible that you shared an item that is nested within a folder. The Libra
 ## Can shared dashboards always run with viewer's role search filter instead of the creator's role search filter?
 
 Yes, for an individual dashboard, when you share the dashboard you can choose to share it with the "Viewer’s data access level", so that
-viewers will see it with their own role search filter. For more information, see [Set the Data Access Level for a Dashboard] (../../Visualizations-and-Alerts/Dashboards/Get-Started-with-Dashboards-and-Panels/Set_the_Data_Access_Level_for_a_Dashboard.md "Set the Data Access Level for a Dashboard"). In addition, it is possible to set a security policy that ensures that all new dashboards will run with the viewer’s role search filter when shared. For more information, see [Data Access Level for Shared Dashboards] (../Security/Data_Access_Level_for_Shared_Dashboards.md "Data Access Level for Shared Dashboards"). 
+viewers will see it with their own role search filter. For more information, see [Set the Data Access Level for a Dashboard](../../dashboards/get-started/set-data-access-level-dashboard.md). In addition, it is possible to set a security policy that ensures that all new dashboards will run with the viewer’s role search filter when shared. For more information, see [Data Access Level for Shared Dashboards](../security/data-access-level-shared-dashboards.md). 
 
 ## Can I share a folder with someone?
 

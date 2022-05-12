@@ -96,7 +96,7 @@ To search for multiple keyword values in a message, the best practice is to brea
 
 By default, keyword expressions are case-insensitive. Technically there isn't a way to define case sensitivity in the keyword search  expression, you will have to define this with an operator. 
 
-After the keyword search expression, to search for case sensitive keywords, you can use the [parse regex operator] (../../search-query-language/parse-operators/02-Parse-Variable-Patterns-Using-Regex.md). You should still specify the keyword in the scope of the query, before the first pipe "\|", to keep the search efficient. 
+After the keyword search expression, to search for case sensitive keywords, you can use the [parse regex operator](../../search-query-language/parse-operators/parse-variable-patterns-using-regex.md). You should still specify the keyword in the scope of the query, before the first pipe "\|", to keep the search efficient. 
 
 For example, if you want to search for the keyword "**info**" in lowercase, you'd use this query:
 

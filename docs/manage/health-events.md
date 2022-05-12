@@ -46,7 +46,7 @@ Click on a row to view the details of a health event.
 
 ![health event detail.png](/img/health-events/health-event-detail.png)
 
-Click the **Create Scheduled Search** button on the details pane to get alerts for specific health events. The unique identifier of the resource, such as the Source or Collector, is used in the query. See [Schedule a Search] (../Visualizations-and-Alerts/Alerts/Scheduled-Searches/Schedule_a_Search.md "Schedule a Search") for details.
+Click the **Create Scheduled Search** button on the details pane to get alerts for specific health events. The unique identifier of the resource, such as the Source or Collector, is used in the query. See [Schedule a Search](../alerts/scheduled-searches/schedule-search.md) for details.
 
 Under the **More Actions** menu you can select:
 

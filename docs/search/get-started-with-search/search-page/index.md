@@ -6,7 +6,7 @@ slug: /search/get-started-with-search/search-page
 
 On the Search page you can enter [simple or complex queries] FIX (../search-basics/about-search-basics.md)to search your entire Sumo Logic data repository. You can save and select searches from your [Library](docs/get-started/library/sumo-logic-library). After running a search your results are displayed in either the **Messages** tab (for raw message data) or the **Aggregates** tab (for grouped results). See [how to navigate through search results](navigate-messages-in-search-results.md).
 
-You can [run a saved search](../search-basics/save-search.md), [pause, or stop searches](../search-basics/pause-cancel-search.md), or [schedule a search to run periodically] (../../Visualizations-and-Alerts/Alerts/Scheduled-Searches.md "Scheduled Searches") and notify you of the results.
+You can [run a saved search](../search-basics/save-search.md), [pause, or stop searches](../search-basics/pause-cancel-search.md), or [schedule a search to run periodically](../../../alerts/scheduled-searches/schedule-search.md) and notify you of the results.
 
 ![search page feb 2022.png](/img/search/get-started-search/search-page/search-page.png)
 

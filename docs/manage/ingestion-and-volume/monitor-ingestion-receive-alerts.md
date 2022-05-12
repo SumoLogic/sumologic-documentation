@@ -11,7 +11,7 @@ For metrics volume queries use the [Metrics Data Volume Index](data-volume-ind
 Some of the alerts are based on your billing period or ingest plan limit. You must make the appropriate changes for the alert to function and return valid results. The alerts approximate ingest rates and might not precisely match the actual ingest volume used for invoicing purposes.
 
 :::important
-The searches provided in this document are not compatible with [Cloud Flex Credits] (../01Manage_Subscription.md "Account Usage") accounts.
+The searches provided in this document are not compatible with [Cloud Flex Credits](/docs/manage/manage-subscription) accounts.
 :::
 
 ## Monthly plan limit alert
@@ -87,7 +87,7 @@ _index=sumologic_volume and sizeInBytes and _sourceCategory="sourcename_volume"
 
 After completing the setup, schedule the search to run: 
 
-1. Schedule Query you created in Setup. For details, see [Schedule a Search] (../../Visualizations-and-Alerts/Alerts/Scheduled-Searches/Schedule_a_Search.md "Schedule a Search").
+1. Schedule Query you created in Setup. For details, see [Schedule a Search](../../alerts/scheduled-searches/schedule-search.md).
 1. Set the frequency to **Daily**.
 1. Enter **-32d** for the time range.
 
@@ -136,7 +136,7 @@ _index=sumologic_volume sizeInBytes
 
 After completing the setup steps above, schedule the search to run, as follows.  
 
-1. Schedule the query you just created in Setup. For details, see [Schedule a Search] (../../Visualizations-and-Alerts/Alerts/Scheduled-Searches/Schedule_a_Search.md "Schedule a Search").
+1. Schedule the query you just created in Setup. For details, see [Schedule a Search](../../alerts/scheduled-searches/schedule-search.md).
 1. Set the run frequency to **Daily**.
 1. Set time range value to **Last 24 Hours**.
 
@@ -193,7 +193,7 @@ _index=sumologic_volume sizeInBytes _sourceCategory="sourcecategory_volume"
 
 After completing the setup steps above, schedule the search to run, as follows.  
 
-1. Schedule the query you just created in Setup. For details, see [Schedule a Search] (../../Visualizations-and-Alerts/Alerts/Scheduled-Searches/Schedule_a_Search.md "Schedule a Search").
+1. Schedule the query you just created in Setup. For details, see [Schedule a Search](../../alerts/scheduled-searches/schedule-search.md).
 1. Set the run frequency to **Hourly**.
 1. Enter **-65m -5m** for the time range.
 
@@ -251,7 +251,7 @@ If you don't want the results of the query across Sources or source categories t
 
 After completing the setup steps, schedule the search to run.  
 
-1. Schedule the query you just created in Setup. For details, see [Schedule a Search] (../../Visualizations-and-Alerts/Alerts/Scheduled-Searches/Schedule_a_Search.md "Schedule a Search").
+1. Schedule the query you just created in Setup. For details, see [Schedule a Search](../../alerts/scheduled-searches/schedule-search.md).
 
 1. Set the **Run frequency** to **Hourly**.
 
@@ -287,7 +287,7 @@ All accounts are subject to throttling, regardless of plan type (Cloud Flex or C
 
 **Setup:**
 
-Enable the Audit Volume Index. See [Enable and Manage the Audit Index] (../Security/Audit-Index.md "Enable and Manage the Audit Index") for instructions.
+Enable the Audit Volume Index. See [Enable and Manage the Audit Index](../security/audit-index.md) for instructions.
 
 **Query:**
 
@@ -297,7 +297,7 @@ Enable the Audit Volume Index. See [Enable and Manage the Audit Index] (../Sec
 
 After completing the setup steps above, schedule the search to run, as follows.  
 
-1. Schedule the query you just created in Setup. For details, see [Schedule a Search] (../../Visualizations-and-Alerts/Alerts/Scheduled-Searches/Schedule_a_Search.md "Schedule a Search").
+1. Schedule the query you just created in Setup. For details, see [Schedule a Search](../../alerts/scheduled-searches/schedule-search.md).
 1. Set the run frequency to **Every 15 Minutes.**
 1. Set the time range to the **Last 15 Minutes**.
 

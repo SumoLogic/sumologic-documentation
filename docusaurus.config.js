@@ -222,7 +222,7 @@ module.exports = {
                     sublabel: 'Configure visuals & alerts',
                     to: '/docs/dashboards-new',
                     icon: 'dashboard',
-                    activeBaseRegex: '^/docs/(dashboards|dashboards-new|alerts)/.*',
+                    activeBaseRegex: '^/docs/(dashboards|dashboards-new|alerts)',
                   },
                   {
                     label: 'Searches and Logs',
@@ -269,7 +269,7 @@ module.exports = {
                     sublabel: 'Learn about Observability',
                     to: '/docs/observability',
                     icon: 'data_exploration',
-                    activeBaseRegex: '^/docs/observability/.*',
+                    activeBaseRegex: '^/docs/observability/about-observability-solution',
                   },
                   {
                     label: 'Kubernetes',
@@ -290,7 +290,7 @@ module.exports = {
                     sublabel: 'Learn what caused issues',
                     to: '/docs/observability/root-cause-explorer',
                     icon: 'widgets',
-                    activeBaseRegex: '^/docs/observability/root-cause-explorer/.*',
+                    activeBaseRegex: '^/docs/observability/root-cause-explorer',
                   },
                 ],
               },

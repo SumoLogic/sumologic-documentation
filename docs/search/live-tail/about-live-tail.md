@@ -86,7 +86,7 @@ The **Run** button changes to **Running**, and log messages fill the screen.
 
 ### Keyboard shortcut
 
-1. The Live Tail [keyboard shortcut] (../../01Start-Here/Keyboard-Shortcuts.md) is **Alt + L**.
+1. The Live Tail [keyboard shortcut](../../get-started/keyboard-shortcuts.md) is **Alt + L**.
 1. The **Live Tail** page opens, and the Live Tail session starts.
 
 ## Pause and resume Live Tail

@@ -101,7 +101,7 @@ See the following table for commands:
 | Operating System | Command |
 | -- | -- |
 | Linux | When upgrading on Ubuntu 16 and above using a shell executable file (.sh), Debian, or the Web UI you will need to manually restart the collector service after upgrading using the following command. See
-[Start or Stop a Collector] (02Start-or-Stop-a-Collector-using-Scripts.md) for details.<br/><br/>Command: `sudo ./collector start` |
+[Start or Stop a Collector](start-stop-collector-using-scripts.md) for details.<br/><br/>Command: `sudo ./collector start` |
 | Linux RPM | Upgrade command: `sudo rpm -U\<pathToCollectorRPMFil\>`<br/><br/>Downgrade command: `sudo rpm -U --oldpackage\<pathToCollectorRPMFil\>`<br/><br/>There may be a warning message regarding the deletion of safeRestart.cmd file, this is safe to ignore. |
 | Linux Debian | Upgrade or downgrade command: `sudo dpkg -i\<pathToCollectorDebianFil\>` |
 | Linux 32 or 64 | Upgrade or downgrade command:  `sudo\<pathToCollectorShFil\> -q` |
@@ -158,7 +158,7 @@ Follow this checklist whenever you make any changes to the collector:
   * Collector service CPU usage patterns
   * Collector service Memory usage patterns
   * Disk I/O and space utilization
-* [Validate Collector service operation] (../Ingestion-and-Volume/Monitor_Ingestion_and_Receive_Alerts.md):
+* [Validate Collector service operation](../ingestion-and-volume/monitor-ingestion-receive-alerts.md):
   * Upgrade was successful and the Collector is online with the new version.
   * The Collector continues to run over a period of time without errors or failures.
   * Existing Sources continue to read and send data.

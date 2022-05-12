@@ -8,7 +8,7 @@ id: data-forwarding-to-s3
 Data forwarding is not supported for Infrequent Tier data. 
 :::
 
-You can forward log data from a [Partition](../partitions-and-data-tiers/about-partitions.md) or [Scheduled View] (../Scheduled-Views.md "Scheduled Views") to an S3 bucket. Only new data is forwarded from a Partition once it is set to forward data. 
+You can forward log data from a [Partition](../partitions-and-data-tiers/about-partitions.md) or [Scheduled View](/docs/manage/scheduled-views) to an S3 bucket. Only new data is forwarded from a Partition once it is set to forward data. 
 
 After data forwarding is configured, you should start to see file objects posted within your configured bucket. If your Scheduled View conducts aggregation, which is a best practice, your aggregate fields are automatically appended to the forwarded objects.
 
