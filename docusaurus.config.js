@@ -131,12 +131,17 @@ module.exports = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
-    autoCollapseSidebarCategories: true,
+      docs: {
+        sidebar: {
+          hideable: true,
+          autoCollapseCategories: true,
+        },
+      },
     // SEO Global Metadata
     metadata: [{name: 'keywords', content: 'sumo logic, documentation, tutorials, quick starts'}],
     announcementBar: {
       id: 'announcementBar',
-      content: `⭐️ Welcome to the Alpha Version of the new Sumo Logic Doc Site! ⭐️`,
+      content: `⭐️ Welcome to the new Sumo Logic Doc Site! ⭐️`,
     },
     imageZoom: {
       selector: '.markdown :not(a) > img',
@@ -146,7 +151,6 @@ module.exports = {
         background: 'rgba(0, 0, 0, 0.6)',
       },
     },
-      hideableSidebar: true,
       navbar: {
         logo: {
           alt: 'My Site Logo',

@@ -34,6 +34,16 @@ All content uses GitHub Flavored Markdown with some options and additions. All i
 
 For information, see [Markdown Features](markdown-features.md) and [Docusaurus Static Assets](https://docusaurus.io/docs/static-assets) for more information.
 
+## Reusing Content
+
+You can create a section of content for reuse by creating a markdown file and saving it in `/docs/reuse`. If the file includes headings, they do not add to the right side page nav. You may want reuse to be just a section of content without headings.
+
+To add the file to another document, use this code with the reuse file name:
+
+```
+{@import ../../reuse/filename.md}
+```
+
 ## Add to Navigation
 
 The `sidebar.ts` file (in repo root) controls the side navigation for the entire site. It includes multiple sidebars and sections based on the Guides top navigation, drilling down per guide. A list of sections and advice on content is at the top of the sidebars file, with comments throughout.

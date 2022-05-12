@@ -105,6 +105,20 @@ const features = [
       </Translate>),
     link: 'docs/get-started',
   },
+  {
+    title: translate({
+      id: 'landing.feature.integrations.title',
+      message: 'Integrations',
+      description: 'Title for Integrations',
+    }),
+    imageUrl: 'img/icons/integrations.png',
+    description: (<Translate
+      id="landing.feature.integrations.desc"
+      description="Integrations description">
+        Find, install, and configure integrations with third party applications and services.
+      </Translate>),
+    link: 'docs/integrations',
+  },
 ];
 
 function Feature({imageUrl, title, description, link}) {

@@ -39,7 +39,7 @@ On the **Manage Data** \> **Logs** \> **Field Extraction Rules** page you can:
 * **Delete** a Field Extraction Rule.
 
 ## Limitations
-FIX
+
 {@import ../../reuse/fer-limitations.md}
 
 ## Micro Lesson: Field Extraction Rules Basics
