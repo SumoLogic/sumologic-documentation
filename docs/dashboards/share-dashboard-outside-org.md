@@ -110,7 +110,7 @@ When someone views a dashboard without signing in, Sumo logs the following infor
 
 ## Alerts and reports for externally-shared dashboards
 
-You can use [Scheduled Searches](/docs/alerts/scheduled-searches/index.md) to create alerts and reports on sharing dashboards outside your organization.
+You can use [Scheduled Searches](/docs/alerts/scheduled-searches) to create alerts and reports on sharing dashboards outside your organization.
 
 **Real-time alert when a user shares a dashboard**
 
