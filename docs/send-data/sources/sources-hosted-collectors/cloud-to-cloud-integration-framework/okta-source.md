@@ -1,8 +1,11 @@
 ---
 id: okta-source
+title: Okta Source
+sidebar_label: Okta Source
+keywords:
+    - okta
+    - cloud-SIEM-enterprise
 ---
-
-# Okta Source
 
 The Okta Source provides a secure endpoint to receive event data from the Okta [System Log API](https://developer.okta.com/docs/reference/api/system-log/) and [Users API](https://developer.okta.com/docs/reference/api/users/).
 It securely stores the required authentication, scheduling, and state tracking information.
@@ -55,7 +58,7 @@ To configure an Okta Source:
    ![okta source icon.png](/img/send-data/okta-source-icon.png)
 
 1. Enter a **Name** to display for the Source in the Sumo web application. The description is optional.
-   
+
    ![Okta version .png](/img/send-data/Okta-version.png)
 
 1. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
@@ -65,11 +68,11 @@ To configure an Okta Source:
    * `_siemProduct`: SSO
    * `_siemFormat`: JSON
    * `_siemEventID`: `<eventType>` Where `<eventType>` is the value of the field from the JSON event, such as user.session.start. See the list of possible event types.
-   * `_dataType`: Inventory (only for user inventory data)
+   * `_siemDataType`: Inventory (only for user inventory data)
 
 1. (Optional) **Fields.** Click the **+Add Field** link to define the fields you want to associate, each field needs a name (key) and value.
 
-   * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema. 
+   * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
    * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema it is ignored, known as dropped.
 
 1. **Okta API** **Key**. Provide the Okta API key you want to use to authenticate collection requests.
@@ -110,16 +113,16 @@ The following table shows the **config** parameters for an Okta Source.
 
 | Parameter | Type | Required? | Default | Description | Access |
 |--|--|--|--|--|--|
-| `name` | String | Yes |  | Type a desired name of the Source. The name must be unique per Collector. This value is assigned to the metadata field `_source`. | modifiable | 
-| `description` | String | No | null | Type a description of the Source. | modifiable | 
-| `category` | String | No | null | Type a category of the source. This value is assigned to the [metadata](../../../../search/get-started-with-search/search-basics/built-in-metadata.md) field `_sourceCategory`. See [best practices](../../../design-deployment/best-practices-source-categories.md) for details. | modifiable | 
-| `fields` | JSON Object | No |  | JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field _siemForward to enable forwarding to SIEM. | modifiable | 
+| `name` | String | Yes |  | Type a desired name of the Source. The name must be unique per Collector. This value is assigned to the metadata field `_source`. | modifiable |
+| `description` | String | No | null | Type a description of the Source. | modifiable |
+| `category` | String | No | null | Type a category of the source. This value is assigned to the [metadata](../../../../search/get-started-with-search/search-basics/built-in-metadata.md) field `_sourceCategory`. See [best practices](../../../design-deployment/best-practices-source-categories.md) for details. | modifiable |
+| `fields` | JSON Object | No |  | JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field _siemForward to enable forwarding to SIEM. | modifiable |
 | `apiKey` | String | Yes |  | The Okta API key you want to use to authenticate collection requests.| modifiable
-| `domain` | String | Yes |  | Provide your specific Okta domain, such as mydomain.okta.com.	| modifiable| 
-| `users` | Boolean | No | False | Set to true to collect user inventory data once every 24 hours.| modifiable | 
-| `collectAll` | Boolean | No | True | By default, the Source will ingest all Okta events. If false, eventTypes is required. | modifiable| 
-eventTypes | String | No |  | Comma separated list of events to collect. Required if collectAll is false. | modifiable| 
-| `pollingInterval` | Integer | No | 300 | This sets how often the Source checks for new data. | modifiable| 
+| `domain` | String | Yes |  | Provide your specific Okta domain, such as mydomain.okta.com.	| modifiable|
+| `users` | Boolean | No | False | Set to true to collect user inventory data once every 24 hours.| modifiable |
+| `collectAll` | Boolean | No | True | By default, the Source will ingest all Okta events. If false, eventTypes is required. | modifiable|
+eventTypes | String | No |  | Comma separated list of events to collect. Required if collectAll is false. | modifiable|
+| `pollingInterval` | Integer | No | 300 | This sets how often the Source checks for new data. | modifiable|
 
 Okta Source JSON example:
 
