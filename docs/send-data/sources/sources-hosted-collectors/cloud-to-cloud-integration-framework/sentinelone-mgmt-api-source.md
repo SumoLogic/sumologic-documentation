@@ -1,8 +1,12 @@
 ---
 id: sentinelone-mgmt-api-source
+title: SentinelOne Mgmt API Source
+sidebar_label: SentinelOne Mgmt API Source
+keywords:
+    - sentinelone-mgmt-api
+    - cloud-SIEM-enterprise
 ---
 
-# SentinelOne Mgmt API Source
 
 The SentinelOne Mgmt API Source collects data from the SentinelOne Management Console. It securely stores the required authentication, scheduling, and state tracking information.
 
@@ -67,28 +71,28 @@ When you create a SentinelOne Mgmt API Source, you add it to a Hosted Collector
 **To configure a SentinelOne Mgmt API Source:**
 
 1. In the Sumo Logic web app, select **Manage Data \> Collection \> Collection**. 
- 
+
 1. On the Collectors page, click **Add Source** next to a Hosted Collector.
- 
+
 1. Select **SentinelOne Mgmt API**.
 
    ![sentinal one icon.png](/img/send-data/sentinal-one-icon.png)
- 
+
 1. Enter a **Name** to display for the Source in the Sumo web application. The description is optional.
 
    ![SentinalOne create pane.png](/img/send-data/SentinalOne-create-pane.png)
- 
+
 1. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
 1. **Forward to SIEM**. Check the checkbox to forward your data to Cloud SIEM Enterprise. When configured with the **Forward to SIEM** option the following metadata fields are set:
 
    * `_siemVendor`: SentinelOne
    * `_siemProduct`: MGMT API
    * `_siemFormat`: JSON
-   * `_siemEventID`: The type of data ingested. Possible options are `activities - {id}`, `threats - {id}`, or `agents`. Agents has a `_dataType` of `Inventory`. |
+   * `_siemEventID`: The type of data ingested. Possible options are `activities - {id}`, `threats - {id}`, or `agents`. Agents has a `_siemDataType` of `Inventory`. |
 
 1. (Optional) **Fields.** Click the **+Add Field** link to define the fields you want to associate, each field needs a name (key) and value.
 
-   * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema. 
+   * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
    * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema it is ignored, known as dropped. 
 
 1. **Base URL**. Provide your SentinalOne Management URL. It's in this format: `https:/\<your_management_ur\>`.
@@ -123,13 +127,13 @@ The following table shows the **config** parameters for a SentinelOne Mgmt API�
 
 | Parameter | Type | Required? | Default | Description | Access |
 |--|--|--|--|--|--|
-| `name` | String | Yes |  | Type a desired name of the Source. The name must be unique per Collector. This value is assigned to the metadata field `_source`. | modifiable | 
-| `description` | String | No | null | Type a description of the Source. | modifiable | 
-| `category` | String | No | null | Type a category of the source. This value is assigned to the [metadata](../../../../search/get-started-with-search/search-basics/built-in-metadata.md) field `_sourceCategory`. See [best practices](../../../design-deployment/best-practices-source-categories.md) for details. | modifiable | 
-| `fields` | JSON Object | No |  | JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field _siemForward to enable forwarding to SIEM. | modifiable | 
-| `base_url` | String | Yes |  | Provide your SentinalOne Management URL. It's in this format: `https://<your_management_url>`. | modifiable | 
-| `api_secret` | String | Yes |  | Provide your API Token from SentinalOne that you want to use to authenticate collection requests. | modifiable | 
-| `supported_apis` | Array of strings | Yes |  | Define one or more of the available APIs to collect: activities, agents, and threats.<br/>For example, for all three you'd use: `["activities","agents","threats"]` | modifiable | 
+| `name` | String | Yes |  | Type a desired name of the Source. The name must be unique per Collector. This value is assigned to the metadata field `_source`. | modifiable |
+| `description` | String | No | null | Type a description of the Source. | modifiable |
+| `category` | String | No | null | Type a category of the source. This value is assigned to the [metadata](../../../../search/get-started-with-search/search-basics/built-in-metadata.md) field `_sourceCategory`. See [best practices](../../../design-deployment/best-practices-source-categories.md) for details. | modifiable |
+| `fields` | JSON Object | No |  | JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field _siemForward to enable forwarding to SIEM. | modifiable |
+| `base_url` | String | Yes |  | Provide your SentinalOne Management URL. It's in this format: `https://<your_management_url>`. | modifiable |
+| `api_secret` | String | Yes |  | Provide your API Token from SentinalOne that you want to use to authenticate collection requests. | modifiable |
+| `supported_apis` | Array of strings | Yes |  | Define one or more of the available APIs to collect: activities, agents, and threats.<br/>For example, for all three you'd use: `["activities","agents","threats"]` | modifiable |
 
 SentinelOne Mgmt API Source JSON example:
 

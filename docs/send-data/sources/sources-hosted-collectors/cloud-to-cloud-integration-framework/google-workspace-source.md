@@ -1,8 +1,11 @@
 ---
 id: google-workspace-source
+title: Google Workspace Source
+sidebar_label: Google Workspace Source
+keywords:
+    - google-workspace
+    - cloud-SIEM-enterprise
 ---
-
-# Google Workspace Source
 
 The Google Workspace Source collects a list of users from the Google Workspace [Users API](https://developers.google.com/admin-sdk/directory/reference/rest/v1/users/list). It securely stores the required authentication, scheduling, and state tracking information.
 
@@ -63,19 +66,19 @@ To configure a Google Workspace Source:
   ![google workspace icon.png](/img/send-data/google-workspace-icon.png)
 
 1. Enter a **Name** to display for the Source in the Sumo web application. The description is optional.  
-  
+
   ![google workspace oct 28 2021.png](/img/send-data/google-workspace.png)
 
 1. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
-1. **Forward to SIEM**. Check the checkbox to forward your data to Cloud SIEM Enterprise and become part of User Inventory. When configured with the **Forward to SIEM** option the following metadata fields are set: 
+1. **Forward to SIEM**. Check the checkbox to forward your data to Cloud SIEM Enterprise and become part of User Inventory. When configured with the **Forward to SIEM** option the following metadata fields are set:
 
-  * `_siemVendor`: Google 
+  * `_siemVendor`: Google
   * `_siemProduct`: Workspace
-  * `_dataType`: Inventory 
+  * `_siemDataType`: Inventory
 
 1. (Optional) **Fields.** Click the **+Add Field** link to define the fields you want to associate, each field needs a name (key) and value.
 
-   * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema. 
+   * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
    * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema it is ignored, known as dropped. 
 
 1. The **Delegated User Email** is the email address of the super administrator for the domain that granted access to the service account you created.
@@ -114,18 +117,18 @@ The following table shows the **config** parameters for a Google Workspace Sou
 
 | Parameter | Type | Required? | Default | Description | Access |
 |--|--|--|--|--|--|
-| `name` | String | Yes |  | Type a desired name of the Source. The name must be unique per Collector. This value is assigned to the metadata field `_source`. | modifiable | 
-| `description` | String | No | null | Type a description of the Source. | modifiable | 
-| `category` | String | No | null | Type a category of the source. This value is assigned to the [metadata](../../../../search/get-started-with-search/search-basics/built-in-metadata.md) field `_sourceCategory`. See [best practices](../../../design-deployment/best-practices-source-categories.md) for details. | modifiable | 
-| `fields` | JSON Object | No |  | JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field _siemForward to enable forwarding to SIEM. | modifiable | 
-| `clientEmail` | String | Yes |  | Provide the Client Email you got in the JSON file after you created service account credentials | modifiable | 
-| `delegatedUserEmail` | String | Yes |  | Provide the super-administrator email address for the domain that granted access to the service account you created. | modifiable | 
-| `privateKey` | String | Yes |  | Provide the Private Key you got in the JSON file after you created service account credentials | modifiable | 
-| `tokenURL` | String | Yes |  | Provide the Token URL you got in the JSON file after you created service account credentials | modifiable | 
-| `scope` | String | Yes |  | Provide the same Scope you defined for your service account | modifiable | 
-| `queryParam` | Boolean | No | true | By default, the Customer parameter is selected with a `CustomerID` value of `my_customer.` To assign a different CustomerID provide the `customerID` parameter. Set to `false` to use the Domain parameter. You need to provide the domain parameter when `false`. | modifiable | 
+| `name` | String | Yes |  | Type a desired name of the Source. The name must be unique per Collector. This value is assigned to the metadata field `_source`. | modifiable |
+| `description` | String | No | null | Type a description of the Source. | modifiable |
+| `category` | String | No | null | Type a category of the source. This value is assigned to the [metadata](../../../../search/get-started-with-search/search-basics/built-in-metadata.md) field `_sourceCategory`. See [best practices](../../../design-deployment/best-practices-source-categories.md) for details. | modifiable |
+| `fields` | JSON Object | No |  | JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field _siemForward to enable forwarding to SIEM. | modifiable |
+| `clientEmail` | String | Yes |  | Provide the Client Email you got in the JSON file after you created service account credentials | modifiable |
+| `delegatedUserEmail` | String | Yes |  | Provide the super-administrator email address for the domain that granted access to the service account you created. | modifiable |
+| `privateKey` | String | Yes |  | Provide the Private Key you got in the JSON file after you created service account credentials | modifiable |
+| `tokenURL` | String | Yes |  | Provide the Token URL you got in the JSON file after you created service account credentials | modifiable |
+| `scope` | String | Yes |  | Provide the same Scope you defined for your service account | modifiable |
+| `queryParam` | Boolean | No | true | By default, the Customer parameter is selected with a `CustomerID` value of `my_customer.` To assign a different CustomerID provide the `customerID` parameter. Set to `false` to use the Domain parameter. You need to provide the domain parameter when `false`. | modifiable |
 customerID | String | No | my_customer | The unique ID for the customer's Google Workspace account.	modifiable
-| `domain` | String | No | (except when queryParam is set to false.) | The domain name. Use this field to get fields from only one domain.	modifiable | 
+| `domain` | String | No | (except when queryParam is set to false.) | The domain name. Use this field to get fields from only one domain.	modifiable |
 
 Google Workspace Source JSON example:
 
