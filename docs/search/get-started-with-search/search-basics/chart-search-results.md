@@ -13,12 +13,12 @@ multiple group-by functions, a separate bar or point represents each set of grou
 
 **To chart aggregate results:**
 
-1.  From a search, run an aggregate query.
-2.  From the **Aggregates** tab, click a graph button on the **Aggregates** tab.
+1. From a search, run an aggregate query.
+1. From the **Aggregates** tab, click a graph button on the **Aggregates** tab.
 
 ![aggregates](/img/search/get-started-search/search-basics/aggregates.png)
 
-For this example, you can see a bar chart, but you can pick from any of the available charting options, see [Chart Panel Types] (../../../Visualizations-and-Alerts/Dashboards/Chart-Panel-Types.md) for details.
+For this example, you can see a bar chart, but you can pick from any of the available charting options, see [Chart Panel Types](/docs/dashboards/chart-panel-types) for details.
 
 ### Why are the chart options not available?
 

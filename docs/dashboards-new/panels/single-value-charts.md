@@ -4,7 +4,7 @@ id: single-value-charts
 
 # Single Value Charts
 
-You can use single value charts to display results for a search or metric query as a single value, for at-a-glance analysis. This page shows you how to create and tailor single value charts for searches. For information on single value charts for metrics, see [Create and Tailor Single Value Metrics Charts] (../../../Metrics/03-Metric-Charts/05-Create_and_Tailor_Single_Value_Metric_Charts.md "Create and Tailor Single Value Metric Charts").
+You can use single value charts to display results for a search or metric query as a single value, for at-a-glance analysis. This page shows you how to create and tailor single value charts for searches. For information on single value charts for metrics, see [Create and Tailor Single Value Metrics Charts](/docs/metrics/metric-charts).
 
 A single value chart displays a single record from a search, in order to make that value stand out at a glance. If the query returns more than one value in the **Aggregates** tab, only the first value is displayed in the single value chart.
 
@@ -14,32 +14,32 @@ A single value chart is useful for summarizing a time series in a single value. 
 
 To add a panel with a single value chart:
 
-1.  Create or open a Dashboard (New) and click on **Add Panel \> Single Value**.  
+1. Create or open a Dashboard (New) and click on **Add Panel \> Single Value**.  
 
     ![single value pane.png](/img/dashboards-new/panels/single-value-charts/single-value-pane.png)
 
-2.  Provide a Metrics or Logs query and press **Enter** for it to run.
+1. Provide a Metrics or Logs query and press **Enter** for it to run.
 
     **Log query:**
 
-    Enter your aggregate [search query](/docs/category/search-operators) in the input field and press enter. Only search results that have been aggregated using a group or aggregate operator can be charted. See [Group or Aggregate Operators](/docs/search/search-query-language/group-aggregate-operators) for a list. By default, the query builder is set to **Logs**.
+    Enter your aggregate [search query](/docs/search/search-query-language/group-aggregate-operators) in the input field and press enter. Only search results that have been aggregated using a group or aggregate operator can be charted. See [Group or Aggregate Operators](/docs/search/search-query-language/group-aggregate-operators) for a list. By default, the query builder is set to **Logs**.
 
     ![Add log query.png](/img/dashboards-new/create-dashboard-new/Add-log-query.png)
 
     **Metrics query:**
 
-    Click the left-most dropdown option and select **Metrics**. You should be familiar with the basics of creating [metrics queries and alerts] (../../../Metrics/Metric-Queries-and-Alerts.md "Metric Queries and Alerts") to ensure successful results. By default, the query builder is set
+    Click the left-most dropdown option and select **Metrics**. You should be familiar with the basics of creating [metrics queries and alerts](/docs/metrics/metric-queries-alerts) to ensure successful results. By default, the query builder is set
     to **Logs**.
 
     ![Metrics selection for query builder.png](/img/dashboards-new/create-dashboard-new/Add-log-query.png)
 
-    To create a metrics query utilize the [Metrics Query Builder] (../../../Metrics/Metric-Queries-and-Alerts/00Metrics_Explorer.md "Metric Query Builder").   
+    To create a metrics query utilize the [Metrics Query Builder](../../metrics/metric-queries-alerts/metrics-explorer.md).   
       
     ![new single value chart metrics.png](/img/dashboards-new/panels/single-value-charts/new-single-value-chart-metrics.png)
 
-3.  [Modify the chart](./modify-chart.md) as desired.
+1. [Modify the chart](./modify-chart.md) as desired.
 
-4.  Click the **Add to Dashboard** button on the top right of the window to add the panel to your dashboard. 
+1. Click the **Add to Dashboard** button on the top right of the window to add the panel to your dashboard. 
 
     ![Add to Dashboard button.png](/img/dashboards-new/create-dashboard-new/Add-to-Dashboard-button.png)
 

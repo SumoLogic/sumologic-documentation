@@ -20,6 +20,8 @@ The third Behavior Insights operator, [LogExplain](logexplain.md), finds the ro
 import DocCardList from '@theme/DocCardList';
 import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
 
+## Guide contents
+
 In this section, we will introduce the following concepts:
 
 <DocCardList items={useCurrentSidebarCategory().items}/>

@@ -4,7 +4,7 @@ id: geoip
 
 # geoip
 
-Sumo Logic can match a [parsed](/docs/search/search-query-language/parse-operators) IPv4 or IPv6 address to its geographical location on a [map chart] (../../../Visualizations-and-Alerts/Dashboard_(New)/Panels/Map_Charts.md "Map Charts"). To create the map the **geoip** operator matches parsed IP addresses to their physical location based on the latitude and longitude of where the addresses originated. The precision for latitude and longitude degrees is up to five decimal places. 
+Sumo Logic can match a [parsed](/docs/search/search-query-language/parse-operators) IPv4 or IPv6 address to its geographical location on a [map chart](../../../dashboards-new/panels/map-charts.md). To create the map the **geoip** operator matches parsed IP addresses to their physical location based on the latitude and longitude of where the addresses originated. The precision for latitude and longitude degrees is up to five decimal places. 
 
 Any IP addresses that don't have a location, such as internal addresses, will return null values.
 
@@ -40,7 +40,7 @@ Details of these data fields can be found in [Neustar's documentation](https://i
 
 ## Syntax to Map
 
-To map the IP addresses properly you must [count] (../../../Metrics/Metric-Queries-and-Alerts/07Metrics_Operators/count.md "count") by the `latitude` and `longitude` fields. You must have the `_count` field in your results. If you want to use a different field's value [rename](as-operator.md) it to `_count` so the map uses the field.
+To map the IP addresses properly you must [count](../group-aggregate-operators/count-count-distinct-and-count-frequent.md) by the `latitude` and `longitude` fields. You must have the `_count` field in your results. If you want to use a different field's value [rename](as-operator.md) it to `_count` so the map uses the field.
 
 Your query should use the following syntax:
 

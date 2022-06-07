@@ -1,12 +1,12 @@
 ---
-id: about-dashboard-new
+slug: /dashboards-new
 ---
 
 # About Dashboard (New)
 
 Dashboard (New) allows you to analyze metric and log data on the same dashboard, in a streamlined user experience. This is exactly what you need to effectively monitor and manage a Kubernetes environment.
 
-Sumo Logic classic [Dashboards] (../Dashboards.md) are still available. Now, you have two dashboard options. This page outlines the key differences between the classic Dashboard platform and Dashboard (New), and outlines recommended [best practices](#best-practices) for when to use each. 
+Sumo Logic classic [Dashboards](/docs/dashboards) are still available. Now, you have two dashboard options. This page outlines the key differences between the classic Dashboard platform and Dashboard (New), and outlines recommended [best practices](#best-practices) for when to use each. 
 
 Dashboards are a critical tool for monitoring and troubleshooting modern applications, allowing you to quickly navigate through your data without having to learn a query language. Graphs and data mappings provide visual representations of data that enable you to quickly identify and resolve key issues.
 
@@ -24,8 +24,7 @@ Dashboard (New) differs from classic Dashboards in the following ways:  
 * Dashboard (New) provides a dashboard-first view to build, maintain, and interact with dashboards. With Dashboard (New) you can build panels inside the dashboard rather than adding panels from the Search or Metrics pages.
 * Dashboard (New) utilizes the [metrics query builder] with an improved full text auto-complete capabilities, so you can quickly find the metrics you are looking for.
 
-See the [feature differences table](#feature-differences-between-classic-and-dashboard-new) for a
-complete comparison.
+See the [feature differences table](#feature-differences-between-classic-and-dashboard-new) for a complete comparison.
 
 ## Restricted Operators in Dashboard (New)
 
@@ -45,7 +44,7 @@ Live mode restrictions do not apply to Dashboard (New). 
 ## Limitations
 
 * A panel can have up to 6 logs and 6 metrics queries.
-* Joining log queries in a separate query is not supported. See how to [join metric queries] (../../Metrics/Metric-Queries-and-Alerts/00Metrics_Explorer.md "Metrics Explorer") for details on how this works.
+* Joining log queries in a separate query is not supported. See how to [join metric queries](../metrics/metric-queries-alerts/metrics-explorer.md) for details on how this works.
 * A Dashboard (New) can have up to 100 queries.
 * Dashboard (New) chart properties are not retained when viewed from the Search page.
 * Chart properties are not retained when a chart is added to a Dashboard (New) from the Search page.
@@ -135,3 +134,12 @@ Dashboards and Dashboard (New).
 | Combined Metrics & Logs Panel | Not supported | Supported. See how to [overlay logs and metrics in a panel](./dashboard-new-faqs.md#how-do-i-overlay-logs-and-metrics-on-one-panel). |
 | Styling Queries and Series | 	Ability to style through settings on the search page.<br/>Can not set color per time series or query.<br/>Restricted ability to override displays. | Ability to style through display overrides inside the panel settings.<br/>Ability to set the color per query/series.<br/>Multiple layers of expressiveness for display overrides.<br/>For details, see how to modify a chart. |
 | Colors by Value Range | Supported | Not supported |
+
+import DocCardList from '@theme/DocCardList';
+import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
+
+## Guide contents
+
+In this section, we will introduce the following concepts:
+
+<DocCardList items={useCurrentSidebarCategory().items}/>

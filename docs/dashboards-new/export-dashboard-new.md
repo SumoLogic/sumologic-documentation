@@ -6,7 +6,7 @@ id: export-dashboard-new
 
 Dashboards provide insights for monitoring key performance indicators (KPIs) across your organization. There may be times when key stakeholders require access to a static snapshot of dashboard KPIs without having to log in to Sumo Logic. In these instances, you can export a snapshot of a dashboard to share. This capability allows you to extend monitoring analytics to a broader base both within and outside your organization.
 
-You can generate and download your Dashboard (New) dashboards in PDF, PNG, and [JSON] (../../01Start-Here/Library/Export-and-Import-Content-in-the-Library.md) format.
+You can generate and download your Dashboard (New) dashboards in PDF, PNG, and JSON format.
 
 To export a Dashboard (New) follow these steps:
 

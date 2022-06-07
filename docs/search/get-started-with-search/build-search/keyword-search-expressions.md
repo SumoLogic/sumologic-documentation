@@ -7,7 +7,7 @@ id: keyword-search-expressions
 A Keyword Search Expression defines the scope of data for the query.
 
 Boolean logic and wildcards enable you to search for multiple terms, express logic about term distribution within messages, and specify
-partial terms with wildcards. The keyword expression can include [built-in metadata fields](../search-basics/built-in-metadata.md "Search Metadata") such as `_collector`, `_sourceCategory`, `_sourceName`, and `_sourceHost` as well as custom log metadata fields.
+partial terms with wildcards. The keyword expression can include [built-in metadata fields](../search-basics/built-in-metadata.md) such as `_collector`, `_sourceCategory`, `_sourceName`, and `_sourceHost` as well as custom log metadata fields.
 
 Click any term from the messages listed in the **Message** tab to add it to the keyword search expression (**AND term**). Alt-click any term to remove the term from results (**NOT term** or **!term**). Run the query again to match the new keyword expression.
 
@@ -30,7 +30,7 @@ Keyword search expressions are often referred to as the **scope** of a query.
 * Supports boolean operators `NOT`, `AND`, `OR`. The precedence of boolean operators is `NOT`, `AND`, `OR`. Parentheses will override the precedence.
 * A wildcard `*` represents zero or more characters.
 * Supports built-in metadata fields created during configuration of Collectors and Sources, like `_sourceHost`, `_sourceCategory`, and `_sourceName`.
-* Supports custom [log metadata fields] (../../../Manage/Fields.md "Fields").
+* Supports custom [log metadata fields](../../../manage/fields.md).
 * Punctuation characters are allowed (`- _ : / . + @ # $ % ^`).
 * Expressions containing spaces or special characters must be enclosed in quotes (`" "`).
 * Keyword expressions are case-insensitive.
@@ -96,7 +96,7 @@ To search for multiple keyword values in a message, the best practice is to brea
 
 By default, keyword expressions are case-insensitive. Technically there isn't a way to define case sensitivity in the keyword search  expression, you will have to define this with an operator. 
 
-After the keyword search expression, to search for case sensitive keywords, you can use the [parse regex operator] (../../search-query-language/parse-operators/02-Parse-Variable-Patterns-Using-Regex.md). You should still specify the keyword in the scope of the query, before the first pipe "\|", to keep the search efficient. 
+After the keyword search expression, to search for case sensitive keywords, you can use the [parse regex operator](../../search-query-language/parse-operators/parse-variable-patterns-using-regex.md). You should still specify the keyword in the scope of the query, before the first pipe "\|", to keep the search efficient. 
 
 For example, if you want to search for the keyword "**info**" in lowercase, you'd use this query:
 

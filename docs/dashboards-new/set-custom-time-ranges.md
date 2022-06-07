@@ -21,12 +21,12 @@ You can set the time range for a panel by selecting a predefined interval fr
 
 To select a predefined time interval for a panel, do the following:
 
-1.  Navigate to the dashboard in Sumo Logic.
-2.  In the panel you want to customize, click the time display next to the clock icon in the upper right corner. 
+1. Navigate to the dashboard in Sumo Logic.
+1. In the panel you want to customize, click the time display next to the clock icon in the upper right corner. 
 
     ![TimeRange_Panel_TimeDisplay.png](/img/dashboards-new/set-custom-time-ranges/TimeRange_Panel_TimeDisplay.png)
 
-3.  Select the desired time interval from the drop-down list. In our example, we selected 24 hours as the new time range.
+1. Select the desired time interval from the drop-down list. In our example, we selected 24 hours as the new time range.
 
     ![time range dropdown.png](/img/dashboards-new/set-custom-time-ranges/time-range-dropdown.png)
 
@@ -36,12 +36,12 @@ To select a predefined time interval for a panel, do the following:
 
 To specify a custom time interval for a panel, do the following:
 
-1.  Navigate to the dashboard in Sumo Logic.
-2.  In the panel you want to customize, click the time display next to the clock icon in the upper right corner.  
+1. Navigate to the dashboard in Sumo Logic.
+1. In the panel you want to customize, click the time display next to the clock icon in the upper right corner.  
 
     ![TimeRange_Panel_TimeDisplay.png](/img/dashboards-new/set-custom-time-ranges/TimeRange_Panel_TimeDisplay.png)
 
-3.  Click the **Custom** tab in the dialog, select start and stop dates on the calendar, and then specify start and stop times.
+1. Click the **Custom** tab in the dialog, select start and stop dates on the calendar, and then specify start and stop times.
 
     ![TimeRange_Custom_MultipleDays.png](/img/dashboards-new/set-custom-time-ranges/TimeRange_Custom_MultipleDays.png)
 
@@ -49,7 +49,7 @@ To specify a custom time interval for a panel, do the following:
 
     ![TimeRange_Custom_Panel.png](/img/dashboards-new/set-custom-time-ranges/TimeRange_Custom_Panel.png)
 
-4.  Click **Apply**. 
+1. Click **Apply**. 
 
     The panel updates automatically to display the analytics for the newly specified time range.
 
@@ -81,11 +81,11 @@ Panels with customized time range settings can't be overriden by a dashboard-le
 
 To specify a dashboard-level time range setting, do the following:
 
-1.  In the upper right corner of your Sumo Logic dashboard, click the time display next to the clock icon.
+1. In the upper right corner of your Sumo Logic dashboard, click the time display next to the clock icon.
 
     ![TimeRange_2Panels_customized.png](/img/dashboards-new/set-custom-time-ranges/TimeRange_2Panels_customized.png)
 
-2.  Do one of the following:
+1. Do one of the following:
 
     * Select the desired time interval from the drop-down list. In our example, we selected 60 minutes as the new time range.
     * Click the Custom tab in the dialog, select start and stop dates on the calendar, then specify start and stop times and click **Apply**.

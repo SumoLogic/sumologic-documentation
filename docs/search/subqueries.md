@@ -22,7 +22,7 @@ Subqueries are a really powerful way to filter for specific criteria, such as be
 You can use subqueries in the [search expression](get-started-with-search/build-search/keyword-search-expressions.md) of your query (before the first pipe, \|) and with [where](search-query-language/search-operators/where.md) and [if](search-query-language/search-operators/if-operator-and.md) operators.
 
 :::important
-This syntax uses square brackets `[ ]` to wrap a subquery. Normally these indicate an [optional argument] (../01Start-Here/03About-Sumo-Logic/Help_Documentation_Styles.md), however these highlighted brackets are required for subqueries.
+This syntax uses square brackets `[ ]` to wrap a subquery. Normally these indicate an optional argument, however these highlighted brackets are required for subqueries.
 :::
 
 **Search expression syntax:**
@@ -157,9 +157,9 @@ Let’s say that our company has a shopping website, and we want to track
 purchases made by our most active user. We can use `subquery` in this
 case to get the desired results using the following steps:
 
-1.  Create a query that gives us items checked out and items purchased by a specific user (parent query).
-2.  Create a query that tracks the most active user on the website (child query).
-3.  Using subquery, pass the user_id or user_ip from the child query to the parent query, so that the complete workflow happens within a single query.
+1. Create a query that gives us items checked out and items purchased by a specific user (parent query).
+1. Create a query that tracks the most active user on the website (child query).
+1. Using subquery, pass the user_id or user_ip from the child query to the parent query, so that the complete workflow happens within a single query.
 
 ### Step 1: Create a parent query
 

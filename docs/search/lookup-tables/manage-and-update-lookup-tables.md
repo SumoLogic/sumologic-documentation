@@ -120,7 +120,7 @@ If you want to replicate a lookup table schema in a different folder in the Libr
 
 1. Click **Copy** to copy the JSON to the clipboard, or **Download** to download a JSON file.
 1. Click **Done**. 
-1. To create new lookup table with the JSON, follow the instructions in [Import Content in the Library] (../../01Start-Here/Library/Export-and-Import-Content-in-the-Library.md).
+1. To create new lookup table with the JSON, follow the instructions in [Import Content in the Library](../../get-started/library/manage-library.md).
 
 ## Share a lookup table
 
@@ -128,7 +128,7 @@ You can share a lookup table with other users, a role, or a combination
 of the two. 
 
 1. Go to the Sumo Logic Library.
-1. Mouse over the row for a lookup table you want to share, and click the sharing icon towards the right side of the row. You’ll be prompted to enter the user and roles with whom you want to share the table, the level of access you want to grant, and other sharing options. For information about sharing, see [Share Content] (../../Manage/Content_Sharing/Share-Content.md).
+1. Mouse over the row for a lookup table you want to share, and click the sharing icon towards the right side of the row. You’ll be prompted to enter the user and roles with whom you want to share the table, the level of access you want to grant, and other sharing options. For information about sharing, see [Share Content](../../manage/content-sharing/share-content.md).
 
 ## Delete a lookup table
 

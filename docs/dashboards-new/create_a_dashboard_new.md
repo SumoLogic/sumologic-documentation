@@ -71,7 +71,7 @@ You can create Log and Metric queries on the same panel.
 
 <TabItem value="log">
 
-Enter your aggregate [search query](/docs/category/search-operators) in the input field and press enter. A few important things to note are:
+Enter your aggregate [search query](/docs/search/search-query-language/group-aggregate-operators) in the input field and press enter. A few important things to note are:
 
 * Only search results that have been aggregated using a group or aggregate operator can be charted. See [Group or Aggregate Operators](/docs/search/search-query-language/group-aggregate-operators)for a list. 
 * By default, the query builder is set to **Logs**. 
@@ -82,11 +82,11 @@ Enter your aggregate [search query](/docs/category/search-operators) in the inpu
 </TabItem>
 <TabItem value="metrics">
 
-Click the left-most dropdown option and select **Metrics**. You should be familiar with the basics of creating [metrics queries and alerts] (../../Metrics/Metric-Queries-and-Alerts.md "Metric Queries and Alerts") to ensure successful results. By default, the query builder is set to **Logs**.
+Click the left-most dropdown option and select **Metrics**. You should be familiar with the basics of creating [metrics queries and alerts](/docs/metrics/metric-queries-alerts) to ensure successful results. By default, the query builder is set to **Logs**.
 
 ![Metrics selection for query builder.png](/img/dashboards-new/create-dashboard-new/Metrics-selection-for-query-builder.png)
 
-To create a metrics query utilize the [Metrics Explorer Metrics/Metric-Queries-and-Alerts/00Metrics_Explorer.md "Metric Query Builder").
+To create a metrics query utilize the [Metrics Explorer](../metrics/metric-queries-alerts/metrics-explorer.md).
 
 </TabItem>
 <TabItem value="multiple">
@@ -144,9 +144,9 @@ To create a Dashboard (New) from the [Log Search page](/docs/search):
 
 ## Metrics page
 
-To create a Dashboard (New) from the [Metrics page] (../../Metrics/Metric-Queries-and-Alerts/11Metrics-Queries.md "https://help.sumologic.com/Metrics/Metric-Queries-and-Alerts/01Metrics-Queries"):
+To create a Dashboard (New) from the [Metrics page](/docs/metrics/metric-queries-alerts):
 
-1. From the Metrics page click the **Add to Dashboard** button on the [Metrics Explorer] (../../Metrics/Metric-Queries-and-Alerts/00Metrics_Explorer.md "Metric Query Builder").  
+1. From the Metrics page click the **Add to Dashboard** button on the [Metrics Explorer](../metrics/metric-queries-alerts/metrics-explorer.md).  
     
     ![metrics explorer add to dashboard.png](/img/dashboards-new/create-dashboard-new/metrics-explorer-add-to-dashboard.png)
 

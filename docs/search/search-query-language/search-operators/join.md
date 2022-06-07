@@ -58,7 +58,7 @@ on t1.a = t2.c
     `The number of output messages exceeds 10,000,000. Please refine your search or shorten the time range to reduce the number of output messages.`
 
 * Only conjunctive conditions (AND) are allowed. Using NOT or OR conditions is not supported.
-* [Real Time Alerts] (../../../Visualizations-and-Alerts/Alerts/Scheduled-Searches/Create_a_Real_Time_Alert.md) don't support the join operator.
+* [Real Time Alerts](../../../alerts/scheduled-searches/create-real-time-alert.md) don't support the join operator.
 * The join operator uses sliding windows to store candidates for joins in order to prevent unbounded memory usage when joining between two large relations. Because of this, the result of the join could be incomplete and inconsistent from run-to-run.
 * The following conditions are not currently supported in the ON clause: 
 
@@ -197,7 +197,7 @@ Assume you have a Join query, such as:
 on t1.a = t2.c
 ```
 
-After the Join statement, to use the T1.a and the T2.b fields in subsequent clauses, you'd instead refer to them as T1_a and T1_b. For example, to use the [fields operator](fields_operator.md) to single out the T1.a and T2.b values, use the following query:
+After the Join statement, to use the T1.a and the T2.b fields in subsequent clauses, you'd instead refer to them as T1_a and T1_b. For example, to use the [fields operator](fields-operator.md) to single out the T1.a and T2.b values, use the following query:
 
 ```sql
 * | join

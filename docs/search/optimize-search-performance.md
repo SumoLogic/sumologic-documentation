@@ -16,9 +16,9 @@ Even with these methods, you need to ensure you are following our [best practice
 
 ## Index-based methods
 
-[**Partitions**] (../Manage/Partitions_and_Data_Tiers.md) route unstructured data into an index. See how to [Optimize Your Search with Partitions](optimizing-search-with-partitions.md).
+[**Partitions**](/docs/manage/partitions-and-data-tiers) route unstructured data into an index. See how to [Optimize Your Search with Partitions](optimizing-search-with-partitions.md).
 
-[**Scheduled Views**] (../Manage/Scheduled-Views.md) pre-aggregate data and then index it.
+[**Scheduled Views**](/docs/manage/scheduled-views) pre-aggregate data and then index it.
 
 ## Metadata methods
 
@@ -31,7 +31,7 @@ With metadata tags assigned to your logs you can reference them in the [scope (k
 When data enters Sumo Logic, search optimization is done in the
 following order:
 
-1. Metadata is applied to your data as [Fields] (../Manage/Fields.md "Fields"). The order of precedence for field assignment from highest to lowest is. 
+1. Metadata is applied to your data as [Fields](/docs/manage/fields). The order of precedence for field assignment from highest to lowest is. 
 
     * Field Extraction Rule (FER)
     * Amazon EC2 resource tags

@@ -33,8 +33,8 @@ The following is a multi-line comment.
 
 ## Pro Tip: Sumo Logic App Queries as Examples
 
-Sumo Logic Apps are a great resource of example search queries. You can review and even [run searches from Sumo Logic Apps] (../../../01Start-Here/Library/Apps-in-Sumo-Logic/02-Run-searches-from-Sumo-Logic-Apps.md) without installing them. To view available Sumo Logic Apps, click the **Library** icon.
+Sumo Logic Apps are a great resource of example search queries. You can review and even [run searches from Sumo Logic Apps](../../../get-started/library/run-searches-apps.md) without installing them. To view available Sumo Logic Apps, click the **Library** icon.
 
 ![library icon.png](/img/reuse/library-icon.png)
 
-at the top of the UI (**Library \> Apps** in the classic UI). You can also [copy content from the Library] (../../../01Start-Here/Library/Copy-Content-in-the-Library.md), and use it as a starting point to create your own queries. When you do that, you can comment out the aggregation lines of the query and replace them with your own. You can also delete them of course, but commenting them out instead would make them available for reference later.
+at the top of the UI (**Library \> Apps** in the classic UI). You can also [copy content from the Library](/docs/get-started/library/sumo-logic-library), and use it as a starting point to create your own queries. When you do that, you can comment out the aggregation lines of the query and replace them with your own. You can also delete them of course, but commenting them out instead would make them available for reference later.

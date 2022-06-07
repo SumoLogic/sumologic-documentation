@@ -8,8 +8,8 @@ The pct operator finds the specified percentiles of a given field. 
 
 The operator works in two ways:
 
-1.  The operator returns exact percentiles at under 1,000 data points.
-2.  At over 1,000 data points, the pct operator automatically switches to the t-digest algorithm for approximate results. This approximation is more accurate near the extremes (such as 99th and 1st percentiles) and less accurate closer to the median.
+1. The operator returns exact percentiles at under 1,000 data points.
+1. At over 1,000 data points, the pct operator automatically switches to the t-digest algorithm for approximate results. This approximation is more accurate near the extremes (such as 99th and 1st percentiles) and less accurate closer to the median.
 
 The input to the operator is a percentile. For example:
 

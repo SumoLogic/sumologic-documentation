@@ -55,7 +55,7 @@ There are two methods you have to use the details option:
 ### Details Syntax
 
 ```sql
-| logreduce values details on %\<key\>"[, %\<key\>", ...]�\<shortcodeI\> \<cluster_id\>,\<cluster_id\>, ...]
+| logreduce values details on %\<key\>"[, %\<key\>", ...] \<shortcodeI\> \<cluster_id\>,\<cluster_id\>, ...]
 ```
 
 | Parameter   | Description | Default |
@@ -67,7 +67,7 @@ There are two methods you have to use the details option:
 For example, to see details from a particular LogReduce Values search and data clusters, you'd use the following syntax: 
 
 ```sql
-| logreduce values details on %\<key\>"[, %\<key\>", ...]�\<shortcodeI\> \<cluster_id\>,\<cluster_id\>, ...]
+| logreduce values details on %\<key\>"[, %\<key\>", ...] \<shortcodeI\> \<cluster_id\>,\<cluster_id\>, ...]
 ```
 
 To see all the logs by cluster identifiers for further processing, you'd use the following syntax:
@@ -78,15 +78,15 @@ To see all the logs by cluster identifiers for further processing, you'd use
 
 ## Limitations
 
-* Not supported with [Real Time alerts] (../../Visualizations-and-Alerts/Alerts/Scheduled-Searches/Create_a_Real_Time_Alert.md "Create a Real Time Alert").
-* [Time Compare](../time-compare.md) and the [compare operator](../search-query-language/search-operators/Compare.md "Compare") are not supported against LogReduce Values results.
+* Not supported with [Real Time alerts](../../alerts/scheduled-searches/faqs/real-time-alert-with-greater-than-results.md).
+* [Time Compare](../time-compare.md) and the [compare operator](../search-query-language/search-operators/Compare.md) are not supported against LogReduce Values results.
 * If you reach the memory limit you can try to shorten the time range or the number of specified fields. When the memory limit is reached you will get partial results on a subset of your data.
-* Response fields `_cluster_id`, `_signature`, and `_count` are not supported with [Dashboard filters] (../../Visualizations-and-Alerts/Dashboards/Use-Time-Ranges-and-Filters/05Use-Filters-in-Dashboards.md).
+* Response fields `_cluster_id`, `_signature`, and `_count` are not supported with [Dashboard filters](../../dashboards/edit-dashboards/use-filters-dashboards.md).
 
 ### _count link 
 
 * Searches opened by clicking the link provided in the `_count` response field:
-    * are run against [message time](../get-started-with-search/search-basics/built-in-metadata.md "Built-in Metadata").
+    * are run against [message time](../get-started-with-search/search-basics/built-in-metadata.md).
     * can return different results due to variations in your data.
 * When provided in a Scheduled Search alert, the link from the `_count` response field is invalid and will not work.
 

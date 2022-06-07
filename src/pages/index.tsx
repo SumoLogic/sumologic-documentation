@@ -24,7 +24,7 @@ const features = [
   {
     title: translate({
       id: 'landing.feature.dashboards.title',
-      message: 'Dashboards',
+      message: 'Dashboards and Visuals',
       description: 'Title for dashboards',
     }),
     imageUrl: 'img/icons/dashboards.png',
@@ -37,11 +37,25 @@ const features = [
   },
   {
     title: translate({
+      id: 'landing.feature.manage.title',
+      message: 'Manage Sumo',
+      description: 'Title for manage',
+    }),
+    imageUrl: 'img/icons/manage.png',
+    description: (<Translate
+        id="landing.feature.manage.desc"
+        description="Manage description">
+          Manage advanced and admin features for Sumo Logic.
+        </Translate>),
+    link: 'docs/manage',
+  },
+  {
+    title: translate({
       id: 'landing.feature.searches-logs.title',
       message: 'Searches & Logs',
       description: 'Title for searches & logs',
     }),
-    imageUrl: 'img/icons/logs.png',
+    imageUrl: 'img/icons/search.png',
     description: (<Translate
       id="landing.feature.searches-logs.desc"
       description="Searches and logs description">
@@ -52,7 +66,7 @@ const features = [
   {
     title: translate({
       id: 'landing.feature.metrics.title',
-      message: 'Metrics',
+      message: 'Metrics and Logs',
       description: 'Title for metrics',
     }),
     imageUrl: 'img/icons/metrics.png',
@@ -75,7 +89,7 @@ const features = [
       description="APM description">
         Monitor user activity, traces data, and service maps to investigate usage and issues.
       </Translate>),
-    link: 'docs/get-started',
+    link: 'docs/apm/traces',
   },
   {
     title: translate({
@@ -90,6 +104,20 @@ const features = [
         Deploy and configure solutions to monitor applications and analyze root causes.
       </Translate>),
     link: 'docs/get-started',
+  },
+  {
+    title: translate({
+      id: 'landing.feature.integrations.title',
+      message: 'Integrations',
+      description: 'Title for Integrations',
+    }),
+    imageUrl: 'img/icons/integrations.png',
+    description: (<Translate
+      id="landing.feature.integrations.desc"
+      description="Integrations description">
+        Find, install, and configure integrations with third party applications and services.
+      </Translate>),
+    link: 'docs/integrations',
   },
 ];
 

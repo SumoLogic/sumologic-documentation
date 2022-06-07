@@ -10,7 +10,7 @@ For a collection of customer created search queries and their use cases, see the
 :::
 
 :::note
-For a step-by-step video and tutorial about creating Sumo Logic queries, see the [Quick Start Tutorial] (../../01Start-Here/Quick-Start-Tutorials.md).  
+For a step-by-step video and tutorial about creating Sumo Logic queries, see the [Quick Start Tutorial](/docs/quickstart).  
 :::
 
 The examples use this sample Apache log message where applicable:
@@ -255,7 +255,7 @@ Identify all URLs that contain the subdirectory "Courses" in the path.
 | where url matches "*Courses*"
 ```
 
-Find version numbers that match numeric values 2, 3 or 6. Use the num operator to change the string into a number.	
+Find version numbers that match numeric values 2, 3 or 1. Use the num operator to change the string into a number.	
 
 ```sql
 * | parse "Version=*." as number | num(number) 

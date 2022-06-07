@@ -18,36 +18,36 @@ which would produce results such as:
 
 To add a panel with a table chart:
 
-1.  Create or open a Dashboard (New) and click on **Add Panel \> Time Series** or **Add Panel \> Categorical**.   
+1. Create or open a Dashboard (New) and click on **Add Panel \> Time Series** or **Add Panel \> Categorical**.   
 
     ![time series or categorical.png](/img/dashboards-new/panels/table-charts/time-series-or-categorical.png)
 
-2.  Provide a Metric or Log query and press **Enter** for it to run.
+1. Provide a Metric or Log query and press **Enter** for it to run.
 
     You can create Log and Metric queries on the same panel.
 
     **Log query:**
 
-    Enter your aggregate [search query](/docs/category/search-operators) in the input field and press enter. Only search results that have been aggregated using a group or aggregate operator can be charted. See [Group or Aggregate Operators](/docs/search/search-query-language/group-aggregate-operators) for a list.
+    Enter your aggregate [search query](/docs/search/search-query-language/group-aggregate-operators) in the input field and press enter. Only search results that have been aggregated using a group or aggregate operator can be charted. See [Group or Aggregate Operators](/docs/search/search-query-language/group-aggregate-operators) for a list.
 
     ![Add log query.png](/img/dashboards-new/create-dashboard-new/Add-log-query.png)
 
     **Metrics query:**
 
-    Click the left-most dropdown option and select **Metrics**. You should be familiar with the basics of creating [metrics queries and alerts] (../../../Metrics/Metric-Queries-and-Alerts.md "Metric Queries and Alerts") to ensure successful results. By default, the query builder is set
+    Click the left-most dropdown option and select **Metrics**. You should be familiar with the basics of creating [metrics queries and alerts](/docs/metrics/metric-queries-alerts) to ensure successful results. By default, the query builder is set
     to **Logs**.
 
     ![Metrics selection for query builder.png](/img/dashboards-new/create-dashboard-new/Add-log-query.png)
 
-    To create a metrics query utilize the [Metrics Query Builder] (../../../Metrics/Metric-Queries-and-Alerts/00Metrics_Explorer.md "Metric Query Builder").
+    To create a metrics query utilize the [Metrics Query Builder](/docs/metrics/metric-queries-alerts).
 
-3.  Once the query runs you will need to flip the chart type to **Table**.
+1. Once the query runs you will need to flip the chart type to **Table**.
 
     ![new table chart.png](/img/dashboards-new/panels/table-charts/new-table-chart.png)
 
-4.  [Modify the chart](./modify-chart.md) as desired.
+1. [Modify the chart](./modify-chart.md) as desired.
 
-5.  Click the **Add to Dashboard** button on the top right of the window to add the panel to your dashboard.
+1. Click the **Add to Dashboard** button on the top right of the window to add the panel to your dashboard.
 
     ![Add to Dashboard button.png](/img/dashboards-new/create-dashboard-new/Add-to-Dashboard-button.png)
 

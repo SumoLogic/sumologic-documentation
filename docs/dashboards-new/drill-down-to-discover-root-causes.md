@@ -58,7 +58,7 @@ A metrics data Summary tab includes links to any [Linked Dashboards](./panels/
 
 ### Entities tab
 
-The **Entities** tab provides troubleshooting links for related Entities and Environments, as well as any [Monitors] (../Alerts/Monitors.md "Monitors") with a Critical, Warning, or Missing Data status that are tracking logs or metrics on the Entity.
+The **Entities** tab provides troubleshooting links for related Entities and Environments, as well as any [Monitors](/docs/alerts/monitors) with a Critical, Warning, or Missing Data status that are tracking logs or metrics on the Entity.
 
 Only entity types from a curated list are identified. The AWS, Kubernetes, Traces, and Host domains are supported.
 
@@ -95,7 +95,7 @@ If the **Datapoint** is the same as **Now** the selector will not allow you
 </TabItem>
 <TabItem value="triggered">
 
-[Monitors] (../Alerts/Monitors.md "Monitors") track your Metrics or Logs data in real time and send notifications when noteworthy changes happen in your production applications. The **Entities** tab shows any Monitors with a Critical, Warning, or Missing Data status that are tracking logs or metrics on the Entity.
+[Monitors](/docs/alerts/monitors) track your Metrics or Logs data in real time and send notifications when noteworthy changes happen in your production applications. The **Entities** tab shows any Monitors with a Critical, Warning, or Missing Data status that are tracking logs or metrics on the Entity.
 
 Alerts are only visible when the [Time Selector](drill-down-to-discover-root-causes.md#time-selector)
 is set to **Now.**
@@ -104,7 +104,7 @@ Next to the Entity, you will see any of the following icons indicating the type 
 
 ![monitor types.png](/img/dashboards-new/drill-root-causes/monitor-types.png)
 
-Click the **Triggered monitors** row to view the related Monitors. You can click on them to view the Monitor on the [Monitors] (../Alerts/Monitors.md "Monitors") page.
+Click the **Triggered monitors** row to view the related Monitors. You can click on them to view the Monitor on the [Monitors](/docs/alerts/monitors) page.
 
 ![triggered monitors.png](/img/dashboards-new/drill-root-causes/triggered-monitors.png)
 

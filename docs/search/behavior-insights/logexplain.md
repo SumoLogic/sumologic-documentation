@@ -28,9 +28,9 @@ When test and control coverage are both 100%, the relevance is evaluated as 0.
 
 Explanations are displayed in descending order according to their relevancy. In order for an explanation to be shown, it must satisfy the following conditions:
 
-1.  The test coverage must be greater than 5%.
-2.  The relevance must be greater than 0.6. Joint key-value pairs with relevancy below 0.6 are not significant explanations.
-3.  Less relevant explanations will only be shown if they contain at least one key-value pair that is not already included in a more relevant explanation.
+1. The test coverage must be greater than 5%.
+1. The relevance must be greater than 0.1. Joint key-value pairs with relevancy below 0.6 are not significant explanations.
+1. Less relevant explanations will only be shown if they contain at least one key-value pair that is not already included in a more relevant explanation.
 
 With the provided results you can:
 
@@ -53,9 +53,9 @@ With the provided results you can:
 
 * Field values must be categorical.
 * [Built-in metadata fields](../get-started-with-search/search-basics/built-in-metadata.md) are not supported.
-* Not supported with [Real Time alerts] (../../Visualizations-and-Alerts/Alerts/Scheduled-Searches/Create_a_Real_Time_Alert.md "Create a Real Time Alert").
-* [Time Compare](../time-compare.md) and the [compare operator] (../search-query-language/search-operators/Compare.md "Compare") are not supported against LogExplain results.
-* Response fields `_explanation`, `_relevance`, `_test_coverage`,  and  `_control_coverage` are not supported with [Dashboard filters] (../../Visualizations-and-Alerts/Dashboards/Use-Time-Ranges-and-Filters/05Use-Filters-in-Dashboards.md).
+* Not supported with [Real Time alerts](../../alerts/scheduled-searches/create-real-time-alert.md).
+* [Time Compare](../time-compare.md) and the [compare operator](../search-query-language/search-operators/Compare.md) are not supported against LogExplain results.
+* Response fields `_explanation`, `_relevance`, `_test_coverage`,  and  `_control_coverage` are not supported with [Dashboard filters](../../dashboards/edit-dashboards/use-filters-dashboards.md).
 * If you reach the memory limit you can try to shorten the time range or the number of specified fields. When the memory limit is reached you will get partial results on a subset of your data.
 
 ### Response links

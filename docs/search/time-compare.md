@@ -48,16 +48,16 @@ You can retrieve time-shifted data up to the last 40 days. We don't support goin
 
 ![CustomTimeCompare.png](/img/search/timecompare/CustomTimeCompare.png)
 
-1.  Compare this query to a **\[number\] \[hour, day, week\]** historical timeshift.
-2.  With **\[number\]** time period(s). If the number is bigger than 0.
-3.  Using **\[Individual, Average, Min, or Max\]** historical results.
+1. Compare this query to a **\[number\] \[hour, day, week\]** historical timeshift.
+1. With **\[number\]** time period(s). If the number is bigger than 0.
+1. Using **\[Individual, Average, Min, or Max\]** historical results.
 
     * Individual - displays each time comparison separately, for example, on a different line.
     * Average - takes the average of your historical comparisons.
     * Min - takes the minimum of your historical comparisons.
     * Max - takes the maximum of your historical comparisons.
 
-4.  Click **Run**.
+1. Click **Run**.
 
 For example, if you wanted to compare the behavior of backfill errors on
 continuous queries over the last seven days, use the following query:
@@ -329,17 +329,17 @@ _sourceCateogy=WebserverLogs "Bad username or password"
 
 You can then use this query to build the scheduled search email alert.
 
-1.  On the Search page, under the query box, click **Save As**.
-2.  Click **Schedule this search**.
-3.  For **Run frequency**, select the time period at which you want to schedule this search. For this alert, we have selected **Every 2 Hours**.  
+1. On the Search page, under the query box, click **Save As**.
+1. Click **Schedule this search**.
+1. For **Run frequency**, select the time period at which you want to schedule this search. For this alert, we have selected **Every 2 Hours**.  
 
     ![Save Item.png](/img/search/timecompare/Save-Item.png)
  
-4.  For **Send notification**, select **if the following condition is met**.
-5.  For **Alert condition**, select **Greater than \>,** and for **Number of results **enter **5**.
-6.  For **Alert Type**, select **Email**.
-7.  Enter the email address you want the alert email to go to.
-8.  Click **Save**.
+1. For **Send notification**, select **if the following condition is met**.
+1. For **Alert condition**, select **Greater than \>,** and for **Number of results **enter **5**.
+1. For **Alert Type**, select **Email**.
+1. Enter the email address you want the alert email to go to.
+1. Click **Save**.
 
 You will now be notified if there is a spike in login failure.  
 

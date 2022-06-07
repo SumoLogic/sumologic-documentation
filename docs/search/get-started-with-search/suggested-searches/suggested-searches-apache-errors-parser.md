@@ -6,7 +6,7 @@ id: suggested-searches-apache-errors-parser
 
 The following searches were built for use with the Apache Errors Parser. Copy and paste these searches into the search query field and save them for use later.
 
-You can also set up [threshold alerts] (../../../Visualizations-and-Alerts/Alerts/Scheduled-Searches/Receive_Email_Alerts_from_Scheduled_Searches.md) for the Critical Operations Errors to be notified in the event critical errors occur.
+You can also set up [threshold alerts](../../../alerts/scheduled-searches/receive-email-alerts-scheduled-searches.md) for the Critical Operations Errors to be notified in the event critical errors occur.
 
 To obtain the best results possible, be sure to make the following modifications to the example queries:
 

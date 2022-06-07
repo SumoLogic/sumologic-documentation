@@ -8,8 +8,8 @@ Your searches may lead you to focus on particular keywords in your log, and you 
 
 To highlight keywords in Live Tail:
 
-1.  Click the **A** button.
-2.  In the dialog that displays, enter a term to highlight. You can use single keywords or multi-term keywords separated by spaces.
+1. Click the **A** button.
+1. In the dialog that displays, enter a term to highlight. You can use single keywords or multi-term keywords separated by spaces.
 
 ![Live Tail Highlighting](/img/search/livetail/livetail-highlighting-open.png)
 

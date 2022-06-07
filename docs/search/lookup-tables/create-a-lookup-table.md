@@ -139,8 +139,8 @@ As you name your fields, note the information in [Reserved keywords](#reserved-k
    * **Description.** (Optional.)  Enter a description of the Lookup Table.
    * **Do you want a TTL for table entries?** A TTL specifies a time limit beyond which an unchanged row in the table will be unavailable for reads and will be deleted. For example, if you set a TTL of 5 minutes for a lookup table, when 5 minutes pass without a row being updated, that row will no longer be returned by lookups and will be deleted from the lookups table. A TTL is useful for managing the freshness of the data and the size of the table. 
     
-       1.  Click **Yes** if you want to set a TTL.
-       2.  Enter an integer value in the **Duration** field, and select a unit of time from the pulldown:  **Seconds**, **Minutes**
+       1. Click **Yes** if you want to set a TTL.
+       1. Enter an integer value in the **Duration** field, and select a unit of time from the pulldown:  **Seconds**, **Minutes**
            (default), **Hours**, or **Days**.
    * **How do you want to create lookup?** Click **Upload File**.
 
@@ -158,8 +158,8 @@ As you name your fields, note the information in [Reserved keywords](#reserved-k
 
 1. For each column in the table:
 
-    1.  **Value Type**. Choose the value type: boolean, int, long, double, or string (default).
-    2.  **Primary Key**. Click the **Yes** checkbox if the field is part of the primary key for the table. Defining a primary key for your Lookup Table is required.
+    1. **Value Type**. Choose the value type: boolean, int, long, double, or string (default).
+    1. **Primary Key**. Click the **Yes** checkbox if the field is part of the primary key for the table. Defining a primary key for your Lookup Table is required.
 
 1. Click **Create** in the upper right of the page.
 

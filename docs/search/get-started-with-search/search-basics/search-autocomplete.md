@@ -19,12 +19,12 @@ As you type, search autocomplete underlines possible typos in your query and sug
 ![autocomplete keyword](/img/search/get-started-search/search-basics/autocomplete-keyword.png)
 
 Search autocomplete does not suggest all available Sumo Logic keywords, metadata terms, and search operators. For full details on what is
-supported, see [Search Operators](/docs/category/search-operators).
+supported, see [Search Operators](/docs/search/search-query-language/group-aggregate-operators).
 
 More search autocomplete tips and limitations:
 
 * Press **Alt + space** or **Esc** to open and close search autocomplete.
 * Press **Shift + Enter** to add a new line to your query in the text box.
-* Press **Alt + Esc** to disable the search autocomplete dialog from opening while you type. You can also disable this option in the [Preferences Page] (../../../01Start-Here/05Customize-Your-Sumo-Logic-Experience/Preferences-Page.md) page.
+* Press **Alt + Esc** to disable the search autocomplete dialog from opening while you type. You can also disable this option in the [Preferences Page](../../../get-started/manage-account.md#my-preferences) page.
 * Search autocomplete is also supported on the **Manage \> Users** page in the **New Role** dialog in the **Query String** section.
 * Search autocomplete does not show Field Extraction Rules or values from HTTP headers. 

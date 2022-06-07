@@ -22,9 +22,9 @@ Docusaurus requires the following to build on locals:
 The site includes translations into other languages. To build on your local:
 
 1. Clone the repo using Git or tools like GitHub Desktop.
-2. In a terminal, change to the cloned repo folder. Run the install command: `yarn install` 
-3. To build locally and test links, use build: `yarn build`
-4. To serve and review, use one of the following:
+1. In a terminal, change to the cloned repo folder. Run the install command: `yarn install` 
+1. To build locally and test links, use build: `yarn build`
+1. To serve and review, use one of the following:
 
     * Use start, hot reloads as you make changes: `yarn start`
 

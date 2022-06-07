@@ -21,7 +21,7 @@ You will need to remember the path where you point the save operator to put the 
 ## Rules
 
 * The file size limit for saved data is 500MB.
-* Queries that use the Save operator can't be [pinned] (../../../01Start-Here/Library/Pinned-Searches.md).
+* Queries that use the Save operator can't be [pinned](../../../get-started/library/search-the-library.md).
 
 ## Examples
 
@@ -50,7 +50,7 @@ Aggregate results can also be saved with the save operator.
 
 ### Use the Fields operator to remove unnecessary fields
 
-When creating a save file, make sure that the file is as small as possible to work more quickly. A good way to do this is to remove unnecessary fields using the [Fields](fields_operator.md) operator. This includes [built-in metadata fields](../../get-started-with-search/search-basics/built-in-metadata.md), like `_raw`.
+When creating a save file, make sure that the file is as small as possible to work more quickly. A good way to do this is to remove unnecessary fields using the [Fields](fields-operator.md) operator. This includes [built-in metadata fields](../../get-started-with-search/search-basics/built-in-metadata.md), like `_raw`.
 
 ### Saving files to a shared location
 

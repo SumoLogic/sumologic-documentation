@@ -48,7 +48,7 @@ There is also a [Live Tail Command Line Interface](live-tail-cli.md) (CLI). Thi
 * Search operators are not supported in filters.
 * If too much data is coming in, messages may be skipped or not displayed on the screen, or there may be a lag before messages are displayed.
 * If the query you are using produces too many log message results, we may end the session, and present an error that prompts you to make your query more specific. This is to provide the best performance possible. If a Live Tail session has ended, you can restart it at any time.
-* Metadata [fields] (../../Manage/Fields.md) are not available in Live Tail.
+* Metadata [fields](../../manage/fields.md) are not available in Live Tail.
 * Windows Event Source logs and Windows Performance Source logs may not handle filters properly. Applying a filter may cause no data to appear in a Live Tail.
 * If `_sourceCategory`, `_sourceHost`, or any of the built-in meta fields are changed in an FER, Live Tail will not support those changes. For example, if `_sourceCategory` is *ABC* in the raw data but is renamed to *XYZ* in an FER, Live Tail will not see it as *XYZ*. It will only see the data as its raw form, *ABC*.
 
@@ -72,7 +72,7 @@ The **Run** button changes to **Running**, and log messages fill the screen.
 1. On the **Search** page, in the search box, enter a valid query for a Source Category, Source Host, Source Name, Source, or Collector with filters, if desired. (Live Tail will take everything before the first pipe, but search operators are not supported.)
 1. Click the three-dot icon and click **Live Tail** from the provided options.    
 
-    ![live tail option aug 24 2021.png](/img/search/livetail/About-Live-Tail/live-tail-option.png)
+    ![live tail option png](/img/search/livetail/About-Live-Tail/live-tail-option.png)
 
 1. The **Live Tail** page opens, and the Live Tail session starts.
 
@@ -86,7 +86,7 @@ The **Run** button changes to **Running**, and log messages fill the screen.
 
 ### Keyboard shortcut
 
-1. The Live Tail [keyboard shortcut] (../../01Start-Here/Keyboard-Shortcuts.md) is **Alt + L**.
+1. The Live Tail [keyboard shortcut](../../get-started/keyboard-shortcuts.md) is **Alt + L**.
 1. The **Live Tail** page opens, and the Live Tail session starts.
 
 ## Pause and resume Live Tail

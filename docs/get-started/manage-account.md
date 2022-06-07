@@ -11,32 +11,32 @@ You can review and update your account settings at any time through the **Prefer
 
 As a Sumo Logic user, you can change your own email address as necessary.
 
-1.  In Sumo Logic, click on your name and go to the **Preference** page.
+1. In Sumo Logic, click on your name and go to the **Preference** page.
 
     ![Change email](/img/get-started/change-email.png)
 
-1.  Under **My Profile**, next to your **Username**, click **Change Email Address**.
-1.  In the **Change Email Address** dialog, your current email address is
+1. Under **My Profile**, next to your **Username**, click **Change Email Address**.
+1. In the **Change Email Address** dialog, your current email address is
     displayed.
-1.  Enter your **New Email**.
-1.  Enter your **Current Password** for your Sumo Logic Account.
-1.  Click **Submit**.
-1.  The **Email Address Changed** dialog appears. An email with an activation link is sent to your new email address. Click the link in the email within seven days to complete your email address change, or this link will expire.
+1. Enter your **New Email**.
+1. Enter your **Current Password** for your Sumo Logic Account.
+1. Click **Submit**.
+1. The **Email Address Changed** dialog appears. An email with an activation link is sent to your new email address. Click the link in the email within seven days to complete your email address change, or this link will expire.
 
 ## Change Your Password
 
 To change your password:
 
-1.  Click your name in the Left Nav Bar and click **Preferences**.  
+1. Click your name in the Left Nav Bar and click **Preferences**.  
       
     ![Change Password](/img/get-started/change-password.png)
      
-1.  Click **Change Password**.
-1.  Enter your current password, and then enter the new password twice to verify it.  
+1. Click **Change Password**.
+1. Enter your current password, and then enter the new password twice to verify it.  
       
     ![Change Password](/img/get-started/change-password2.png)
 
-1.  Click **Submit** to finish resetting your password.
+1. Click **Submit** to finish resetting your password.
 
 ## Account Management in Preferences
 
@@ -57,12 +57,14 @@ You can enable 2-Step Verification and view backup codes here.
 
 To set up 2-Step Verification you will need to install a Time-based One-Time Password (TOTP) application which will automatically generate an authentication code that changes after a certain period of time.
 
-1.  Download one of the following apps:
+1. Download one of the following apps:
+
     - For Android, iOS and Blackberry: [Google Authenticator](https://support.google.com/accounts/answer/1066447?hl=en)
     - For Android and iOS: [Duo Mobile](https://duo.com/product/trusted-users/two-factor-authentication/duo-mobile)
     - For Windows Phone: [Authenticator](https://www.microsoft.com/en-us/store/p/authenticator/9wzdncrfj3rj)
-1.  Scan the QR code displayed on your screen with your TOTP App.
-1.  After the TOTP App is configured, enter two consecutive authentication codes.
+
+1. Scan the QR code displayed on your screen with your TOTP App.
+1. After the TOTP App is configured, enter two consecutive authentication codes.
 
 ### My Access Keys
 

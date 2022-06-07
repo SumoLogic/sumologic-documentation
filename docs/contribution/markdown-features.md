@@ -472,6 +472,29 @@ For example:
 
 import Iframe from 'react-iframe';
 
+## Resuable Content
+
+You can create sections of content as markdown files in `/docs/reuse`.
+
+## Generated Section Contents
+
+To add a generated list of contents in a section, add this code to the file:
+
+```markdown
+
+import DocCardList from '@theme/DocCardList';
+import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
+
+## Guide contents
+
+In this section, we will introduce the following concepts:
+
+<DocCardList items={useCurrentSidebarCategory().items}/>
+
+```
+
+This is best used in an index file, including a list of all files and folders in that folder to the file. See any category file for a section in the site for how this looks.
+
 ## MDX and React Components
 
 [MDX](https://mdxjs.com/) can make your documentation more **interactive** and allows using any **React components inside Markdown**:
