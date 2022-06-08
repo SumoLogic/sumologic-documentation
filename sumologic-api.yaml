@@ -128,23 +128,23 @@ info:
   x-logo:
     url: ./sumologic_logo.png
 servers:
-- url: https://api.au.sumologic.com/api/
+- url: https://api.au.sumologic.com/api
   description: AU deployment API server
-- url: https://api.ca.sumologic.com/api/
+- url: https://api.ca.sumologic.com/api
   description: CA deployment API server
-- url: https://api.de.sumologic.com/api/
+- url: https://api.de.sumologic.com/api
   description: DE deployment API server
-- url: https://api.eu.sumologic.com/api/
+- url: https://api.eu.sumologic.com/api
   description: EU deployment API server
-- url: https://api.fed.sumologic.com/api/
+- url: https://api.fed.sumologic.com/api
   description: FED deployment API server
-- url: https://api.jp.sumologic.com/api/
+- url: https://api.jp.sumologic.com/api
   description: JP deployment API server
-- url: https://api.in.sumologic.com/api/
+- url: https://api.in.sumologic.com/api
   description: IN deployment API server
-- url: https://api.sumologic.com/api/
+- url: https://api.sumologic.com/api
   description: US1 deployment API server
-- url: https://api.us2.sumologic.com/api/
+- url: https://api.us2.sumologic.com/api
   description: US2 deployment API server
 security:
 - basicAuth: []
