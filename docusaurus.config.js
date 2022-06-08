@@ -84,7 +84,7 @@ module.exports = {
             id: 'sumoapi',
             //specUrl: 'https://api.sumologic.com/docs/sumologic-api.yaml',
             spec: 'sumologic-api.yaml',
-            routePath: '/sumoapi/',
+            route: '/sumoapi/',
           },],
       },
     ],
