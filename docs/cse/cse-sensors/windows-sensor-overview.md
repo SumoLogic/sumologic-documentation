@@ -5,7 +5,7 @@ id: windows-sensor-overview
 # Windows Sensor Overview
 
 :::note
-The CSE Windows Sensor has reached end of life and is no longer supported. Please migrate to a Sumo Logic  Installed Collector. For more information see the [end of life notice](https://app.getbeamer.com/cloudsiementerprise/en/end-of-life-notice-_-cloud-siem-enterprise-sensors). 
+The CSE Windows Sensor has reached end of life and is no longer supported. Please migrate to a Sumo Logic  Installed Collector. For more information see the [end of life notice](https://app.getbeamer.com/cloudsiementerprise/en/end-of-life-notice-_-cloud-siem-enterprise-sensors).  
 :::
 
 The CSE Windows Sensor collects information from key elements of your Windows environments: the Microsoft Windows Event Log and Microsoft Active Directory. The sensor forwards the data it collects to either the Sumo Logic platform or to the legacy CSE server for ingestion, after which it becomes available for processing by CSE rules.  
@@ -28,7 +28,7 @@ This section describes what the monitor does and how it works.
 If you don’t already know: A domain controller (DC) is the main server in a Windows domain that manages all the computers within the domain. A domain controller has an Active Directory database from which user accounts can be created and deleted, and security and access granted or revoked.
 :::
 
-When the Windows Sensor starts up, it detects that it is part of a Windows Active Directory Inventory (AD), and detects the (potentially many) domain controllers on the AD network. Each domain controller contains an event log that includes a security log. The sensor’s Domain Controller Monitor connects to each domain controller’s security log, and begins monitoring events. 
+When the Windows Sensor starts up, it detects that it is part of a Windows Active Directory (AD), and detects the (potentially many) domain controllers on the AD network. Each domain controller contains an event log that includes a security log. The sensor’s Domain Controller Monitor connects to each domain controller’s security log, and begins monitoring events. 
 
 When the monitor begins, it obtains semi-real-time data from the domain controllers. Every time the monitor encounters one of the selected events, it adds it to a file. Then, it periodically uploads the contents of the file to the event log endpoint.
 

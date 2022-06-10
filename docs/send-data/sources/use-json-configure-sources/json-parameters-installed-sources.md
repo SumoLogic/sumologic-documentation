@@ -30,7 +30,7 @@ Each Source can have its own unique fields in addition to the generic fields lis
 | [Remote Windows Event Log Source](#remote-windows-event-log-source") | RemoteWindowsEventLog |
 | [Local Windows Performance Source](#local-windows-performance-source) | LocalWindowsPerfMon |
 | [Remote Windows Performance Source](#remote-windows-performance-source) | RemoteWindowsPerfMon  |
-| [Windows Active Directory Inventory Source](#windows-active-directory-source) | ActiveDirectory |
+| [Windows Active Directory Source](#windows-active-directory-source) | ActiveDirectory |
 | [Syslog Source](#syslog-source) | Syslog |
 | [Script Source](#script-source) | Script |
 | [Docker Log Source](#docker-log-source) | DockerLog |
@@ -52,10 +52,10 @@ the following parameters are for local file source. 
 
 | Parameter | Type | Required? | Default | Description |  Access |
 |--|--|--|--|--|--|
-| `sourceType` | String | Yes |  | LocalFile	not | modifiable |
-| `pathExpression` | String | Yes |  | A valid path expression (full path) of the file to collect. For files on Windows systems (not including Windows Events), enter the absolute path including the drive letter. Escape special characters and spaces with a backslash (\). If you are collecting from Windows using CIFS/SMB, see Prerequisites for Windows Log Collection. Use a single asterisk wildcard [*] for file or folder names. Example:[var/foo/*.log]. Use two asterisks [**]to recurse within directories and subdirectories. Example:  [var/**/*.log]. | modifiable |
-| `denylist` | String | Array | No | `[ ]` | Comma-separated list of valid path expressions from which logs will not be collected. <br/>Example: `"denylist":["/var/log/**/*.bak","/var/oldlog/*.log"]` | modifiable |
-| `encoding` | String | No | UTF-8 | Defines the encoding form. Default is "UTF-8"; options include "UTF-16"; "UTF-16BE"; "UTF-16LE". | modifiable |
+| `sourceType` | String | Yes |  | LocalFile	not | modifiable | 
+| `pathExpression` | String | Yes |  | A valid path expression (full path) of the file to collect. For files on Windows systems (not including Windows Events), enter the absolute path including the drive letter. Escape special characters and spaces with a backslash (\). If you are collecting from Windows using CIFS/SMB, see Prerequisites for Windows Log Collection. Use a single asterisk wildcard [*] for file or folder names. Example:[var/foo/*.log]. Use two asterisks [**]to recurse within directories and subdirectories. Example:  [var/**/*.log]. | modifiable | 
+| `denylist` | String | Array | No | `[ ]` | Comma-separated list of valid path expressions from which logs will not be collected. <br/>Example: `"denylist":["/var/log/**/*.bak","/var/oldlog/*.log"]` | modifiable | 
+| `encoding` | String | No | UTF-8 | Defines the encoding form. Default is "UTF-8"; options include "UTF-16"; "UTF-16BE"; "UTF-16LE". | modifiable | 
 
 Local File Source JSON example with `cutoffTimestamp`:
 
@@ -165,12 +165,12 @@ In addition to the [common parameters](/docs/send-data/sources/use-json-configur
 
 | Parameter | Type | Required? | Default | Description | Access |
 |--|--|--|--|--|--|
-| `sourceType` | String | Yes |  | RemoteWindowsEventLog | not modifiable |
-| `domain` | String | Yes |  | Windows domain from which logs will be created. | modifiable |
-| `username` | String | Yes |  | Username needed to connect to the remote machine. | modifiable |
-| `password` | String | Yes |  | Password needed to connect to the remote machine. | modifiable |
-| `hosts` | List | Yes |  | List of hosts to collect from. | modifiable |
-| `logNames` | List | Yes |  | List of Windows log types collected. | modifiable |
+| `sourceType` | String | Yes |  | RemoteWindowsEventLog | not modifiable | 
+| `domain` | String | Yes |  | Windows domain from which logs will be created. | modifiable | 
+| `username` | String | Yes |  | Username needed to connect to the remote machine. | modifiable | 
+| `password` | String | Yes |  | Password needed to connect to the remote machine. | modifiable | 
+| `hosts` | List | Yes |  | List of hosts to collect from. | modifiable | 
+| `logNames` | List | Yes |  | List of Windows log types collected. | modifiable | 
 | `logNames` | List | Yes |   | List of Windows log types to collect. For example, `"Security"` or  `"Application"`.  To obtain the list of available logs on a given machine, use the PowerShell command `Get-WinEvent -ListLog *` or the legacy command `wevtutil el`. We do not support `"Analytic"` or `"Debug"` ETW logs. | modifiable |
 | `renderMessages` | Boolean | No, only applicable to the legacy format. | true | When using legacy format, this indicates if full event messages are collected (`true`) or just core event [built-in metadata](../../../search/get-started-with-search/search-basics/built-in-metadata.md) (`false`). | modifiable |
 | `eventFormat` | Integer | No | 0 | Sets how you want your event logs formatted.<br/>Use 0 for the legacy format. Where events retain their default XML format from Windows.<br/>Use 1 for JSON format. Where events are formatted into JSON that is designed to work with Sumo Logic features, making it easier for you to reference your data. | modifiable |
@@ -327,7 +327,7 @@ This example shows how to use WMI queries to collect performance metrics from W
 
 ### Windows Active Directory Source 
 
-In addition to the [common parameters](/docs/send-data/sources/use-json-configure-sources), the following parameters are for a Windows Active Directory Inventory Source.
+In addition to the [common parameters](/docs/send-data/sources/use-json-configure-sources), the following parameters are for a Windows Active Directory Source.
 
 | Parameter | Type | Required? | Default | Description | Access |
 |--|--|--|--|--|--|
@@ -338,7 +338,7 @@ In addition to the [common parameters](/docs/send-data/sources/use-json-configur
 | `excludedAttr`   | String   | No | Semi-colon separated list of the LDAP Names of Active Directory attributes to be excluded from the report. | modifiable     |
 | `interval` | Integer  | No | Seconds to check for new data. By default, Active Directory is queried for data every 24 hours. You can select a more frequent interval down to every minute.   | modifiable     |
 
-Windows Active Directory Inventory Source JSON example:
+Windows Active Directory Source JSON example:
 
 ```json
 {
@@ -354,7 +354,7 @@ Windows Active Directory Inventory Source JSON example:
     "cutoffTimestamp":0,
     "encoding":"UTF-8",
     "fields":{
-
+      
     },
     "nameSuffixes":"CN=System",
     "filter":"(objectClass=user)",
@@ -493,14 +493,14 @@ In addition to the [common parameters](/docs/send-data/sources/use-json-configur
 
 | Parameter | Type | Required? | Default | Description | Access |
 |--|--|--|--|--|--|
-| `sourceType` | String | Yes |  | DockerStats | not modifiable |
-| `contentType` | String | No |  | If value is empty or does not exist, it’s a json-based source, if value is “DockerMetrics”, it’s a metrics source. | modifiable |
-| `metrics` | String | Array | No | All metrics	List of metrics to be collected. Each metric is an object with two fields, category and metric. For a full list of available metrics, see Docker metrics definitions. When omitted, all available host metrics will be collected. | modifiable |
-| `uri` | String | Yes |  | URI of the Docker daemon. | modifiable |
-| `specifiedContainers` | List |  |  | Comma-separated list of Docker containers. Collection will be only from running containers.  If the list contains stopped containers, the source can start collecting from these containers if they are started later. For advanced container filtering options, see More about defining container filters. | modifiable |
-| `allContainers` | Boolean | Yes |  | Flag indicating whether the Source includes all running containers (true) or only the containers listed in specifiedContainers (false). | modifiable |
-| `certPath` | String | * |  | Enter the path to the cert files on the local machine where the Collector is running. Required if the URI uses HTTPS. | modifiable |
-| `pollInterval` | Long | No | Continous (By default, polling occurs continuously, rather than on a periodic basis.) | The frequency, in milliseconds, at which stats are polled. The minimum acceptable polling frequency is 1 second. | modifiable |
+| `sourceType` | String | Yes |  | DockerStats | not modifiable | 
+| `contentType` | String | No |  | If value is empty or does not exist, it’s a json-based source, if value is “DockerMetrics”, it’s a metrics source. | modifiable | 
+| `metrics` | String | Array | No | All metrics	List of metrics to be collected. Each metric is an object with two fields, category and metric. For a full list of available metrics, see Docker metrics definitions. When omitted, all available host metrics will be collected. | modifiable | 
+| `uri` | String | Yes |  | URI of the Docker daemon. | modifiable | 
+| `specifiedContainers` | List |  |  | Comma-separated list of Docker containers. Collection will be only from running containers.  If the list contains stopped containers, the source can start collecting from these containers if they are started later. For advanced container filtering options, see More about defining container filters. | modifiable | 
+| `allContainers` | Boolean | Yes |  | Flag indicating whether the Source includes all running containers (true) or only the containers listed in specifiedContainers (false). | modifiable | 
+| `certPath` | String | * |  | Enter the path to the cert files on the local machine where the Collector is running. Required if the URI uses HTTPS. | modifiable | 
+| `pollInterval` | Long | No | Continous (By default, polling occurs continuously, rather than on a periodic basis.) | The frequency, in milliseconds, at which stats are polled. The minimum acceptable polling frequency is 1 second. | modifiable | 
 
 Example source JSON with all containers:
 
@@ -555,13 +555,13 @@ The following parameters are for a host metrics source. 
 
 | Parameter | Type | Required? | Default | Description | Access |
 |--|--|--|--|--|--|
-| `name` | String | Yes |  | Type a desired name of the Source. The name must be unique per Collector. This value is assigned to the [built-in metadata](../../../search/get-started-with-search/search-basics/built-in-metadata.md) field _source. | modifiable |
-| `description` | String | No | null | Type a description of the Source. | modifiable |
-| `category` | String | No | null | Type a category of the source. This value is assigned to the metadata field `_sourceCategory`. See [best practices](../../design-deployment/best-practices-source-categories.md) for details. | modifiable |
-| `sourceType` | String | Yes |  | SystemStats | not modifiable |
-| `metrics` | String Array | No | all metrics | Comma-separated list of metrics to collect. Example:  "metrics" : `["CPU_User", "CPU_Sys", "Mem_Used"]` For a full list of available metrics, see [Host Metrics Source for Installed Collectors](json-parameters-installed-sources.md). When omitted, all available host metrics will be collected. | modifiable |
-| `interval` (ms) | Integer | Yes |  | Time interval in milliseconds of the metrics collection. We recommend 60 second granularity (60000). The Sumo Logic UI offers some pre-defined values (10s, 15s, 30s, 1m, 5m). | modifiable |
-| `hostName` | String | No |  | Host from which the metrics are collected. | modifiable |
+| `name` | String | Yes |  | Type a desired name of the Source. The name must be unique per Collector. This value is assigned to the [built-in metadata](../../../search/get-started-with-search/search-basics/built-in-metadata.md) field _source. | modifiable | 
+| `description` | String | No | null | Type a description of the Source. | modifiable | 
+| `category` | String | No | null | Type a category of the source. This value is assigned to the metadata field `_sourceCategory`. See [best practices](../../design-deployment/best-practices-source-categories.md) for details. | modifiable | 
+| `sourceType` | String | Yes |  | SystemStats | not modifiable | 
+| `metrics` | String Array | No | all metrics | Comma-separated list of metrics to collect. Example:  "metrics" : `["CPU_User", "CPU_Sys", "Mem_Used"]` For a full list of available metrics, see [Host Metrics Source for Installed Collectors](json-parameters-installed-sources.md). When omitted, all available host metrics will be collected. | modifiable | 
+| `interval` (ms) | Integer | Yes |  | Time interval in milliseconds of the metrics collection. We recommend 60 second granularity (60000). The Sumo Logic UI offers some pre-defined values (10s, 15s, 30s, 1m, 5m). | modifiable | 
+| `hostName` | String | No |  | Host from which the metrics are collected. | modifiable | 
 
 Host metrics source JSON example: 
 

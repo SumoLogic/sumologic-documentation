@@ -16,7 +16,7 @@ Although the Scheduled Search feature does support an **Alert Type** of “Save 
 
 ## Prerequisites 
 
-In order to create an inventory Lookup Table you need to have one or more sources of inventory data. One of the most common sources of inventory data in Sumo Logic is the Windows Active Directory Inventory source running on an Installed Collector. We recommend you collect AD logs every 12 hours, and that you do not collect logs more frequently than every 8 hours.
+In order to create an inventory Lookup Table you need to have one or more sources of inventory data. One of the most common sources of inventory data in Sumo Logic is the Windows Active Directory source running on an Installed Collector. We recommend you collect AD logs every 12 hours, and that you do not collect logs more frequently than every 8 hours.
 
 Any inventory source–or any log source, for that matter–can be used to populate Lookup Tables. Sumo Logic also has a variety of inventory sources that run on Hosted Collectors, including the Okta and Carbon Black sources.
 
@@ -51,28 +51,28 @@ To create the Lookup Table schema:
 1. The page displays a **Schema** section. (The screenshot below shows the schema settings for our example filled in.)
 
     ![schema.png](/img/cse/schema.png)
-1. For the first column, enter:
+1. For the first column, enter: 
 
    * **Field**. Enter *mail*.
-   * **Value Type**. Leave the default, *string*, selected.
+   * **Value Type**. Leave the default, *string*, selected. 
    * **Primary Key.** Click the **Yes** checkbox.
 
-1. For the second column, enter:
+1. For the second column, enter: 
 
-   * **Field**. Enter *samaccountname*.
+   * **Field**. Enter *samaccountname*. 
    * **Value Type**. Leave the default, *string,* selected.
 
 1. Click **Create**. 
 
 ## Step 2: Create a search to populate the table
 
-In this step you create an aggregate search that returns the fields required for the table and writes the results to the Lookup Table you configured above. The search must be an aggregate–that’s easy to accomplish using a count by clause to uniquely identify entries. (The count value can be ignored as it’s not a column in the lookup table).   
+In this step you create an aggregate search that returns the fields required for the table and writes the results to the Lookup Table you configured above. The search must be an aggregate–that’s easy to accomplish using a count by clause to uniquely identify entries. (The count value can be ignored as it’s not a column in the lookup table).    
 
 For our use case, the query is:
 
 ```sql
-_sourceCategory="/windows/inventory" and _collector="ad-collector"
-| where !isBlank(mail) and !isBlank(samaccountname)
+_sourceCategory="/windows/inventory" and _collector="ad-collector" 
+| where !isBlank(mail) and !isBlank(samaccountname) 
 | count by mail, samaccountname
 | save <PATH>
 ```
@@ -96,23 +96,23 @@ To save and schedule the search:
 1. In the log search tab where you’ve run your query, choose **Save as** from the three-dot menu in the query area.
 
     ![save-as.png](/img/cse/save-as.png)
-1. On the **Save Item** popup:
+1. On the **Save Item** popup: 
 
-   * **Name**. Enter a name for the query.
-   * **Time range**. Select a time range for the query.
-   * **Search By**. Select *Receipt Time*.  
-   * **Location to save to**. Choose a folder location.
+   * **Name**. Enter a name for the query. 
+   * **Time range**. Select a time range for the query. 
+   * **Search By**. Select *Receipt Time*.   
+   * **Location to save to**. Choose a folder location. 
    * Click **Schedule this search**.    
 
     ![save-item.png](/img/cse/save-item.png)
-1. On the **Save Item** popup:
+1. On the **Save Item** popup: 
 
-   * **Run frequency**. Select *Daily*, unless you have another preference.
-   * **Send Notification**. Choose *If the following condition is met*.
-   * **Alert condition**. Select *Less than \<*.
-   * **Alert type**. Select *Email*.
-   * **Number of results**. Enter *5*, or another value if you prefer.
-   * **Recipients.** Enter the email addresses of one or more users to receive email alerts.
+   * **Run frequency**. Select *Daily*, unless you have another preference. 
+   * **Send Notification**. Choose *If the following condition is met*. 
+   * **Alert condition**. Select *Less than \<*. 
+   * **Alert type**. Select *Email*. 
+   * **Number of results**. Enter *5*, or another value if you prefer. 
+   * **Recipients.** Enter the email addresses of one or more users to receive email alerts. 
    * **Include in email**. Select *Search Query* and *Histogram*, unless you have another preference.    
 
     ![save-item-2.png](/img/cse/save-item-2.png)
