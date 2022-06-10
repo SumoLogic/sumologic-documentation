@@ -14,14 +14,14 @@ PagerDuty has a [Sumo Logic Integration Guide](https://www.pagerduty.com/docs/g
 ## Create a service key for the webhook
 
 1. In PagerDuty go to the **Services** menu and select **Service Directory**.
-1. On the **Service Directory** page: 
+1. On the **Service Directory** page:
 
     * If you are creating a new service for your integration, click **Add New Service**.
     * If you are adding your integration to an existing service, click the name of the service you want to add the integration to. Then click the **Integrations** tab and click the **New Integration** button.
 
-1. In the **Integration Type** menu, select from the following based on your preference: 
+1. In the **Integration Type** menu, select from the following based on your preference:
 
-    1. **Select Tool**: Search and select **Sumo Logic**. 
+    1. **Select Tool**: Search and select **Sumo Logic**.
     1. **Use our API directly**: You may also integrate by selecting ****Events API v2**** (recommended) or **Events API v1**.
 
 1. Enter an **Integration Name**. If you are creating a new service for your integration, in General Settings, enter a **Name** for your new service. Then, in Incident Settings, specify the **Escalation Policy**, **Notification Urgency**, and **Incident Behavior** for your new service.
@@ -67,6 +67,7 @@ The URL and supported payload are different based on the version of the PagerDut
 
     * In the **Payload**, where it says `SERVICE KEY`, paste in the **integration key** you previously copied from PagerDuty.
     * In the **Payload** for the `description`, specify the description you want sent to PagerDuty. The above payload has specified to use the name of the alert.
+    * In the **Payload** for `severity`, the allowed values (`critical`, `warning`, `error`, and `info`) are case sensitive; PagerDuty expects them to be lowercase. Do not use the `{{TriggerType}}` variable here because that will display values that are capitalized (i.e., `Critical`) and some of the `{{TriggerType}}` values are not allowed by PagerDuty (e.g., `MissingData`).
 
 1. For details on other variables that can be used as parameters within your JSON object, see [Webhook Payload Variables](set-up-webhook-connections.md).
 1. Click **Save**.
