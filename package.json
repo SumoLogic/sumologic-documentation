@@ -44,6 +44,7 @@
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-iframe": "^1.8.0",
+    "redocusaurus": "^1.1.2",
     "remark-code-import": "^0.3.0",
     "remark-import-partial": "^0.0.2",
     "sass": "^1.44.0",

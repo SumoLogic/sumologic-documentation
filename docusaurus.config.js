@@ -43,7 +43,7 @@ module.exports = {
           remarkPlugins: [
             //https://www.npmjs.com/package/remark-code-import
             require('remark-code-import'),
-            //https://www.npmjs.com/package/remark-import-partial 
+            //https://www.npmjs.com/package/remark-import-partial
             // snippet support {@import ./my-name.md} relative filepath to md file
             require('remark-import-partial'),
           ],
@@ -77,6 +77,17 @@ module.exports = {
         },
       }),
     ],
+    [
+      'redocusaurus',
+      {
+        specs: [{
+            id: 'sumoapi',
+            //specUrl: 'https://api.sumologic.com/docs/sumologic-api.yaml',
+            spec: 'sumologic-api.yaml',
+            route: '/sumoapi/',
+          },],
+      },
+    ],
   ],
   plugins: [
     'docusaurus-plugin-sass',
@@ -92,8 +103,10 @@ module.exports = {
             from: '/cid=1234',
           },
         ]
-      },],
-      
+      },
+    ],
+  ],
+
     /* // Optional: See this site to configure - live editor https://github.com/jlvandenhout/docusaurus-plugin-docs-editor
        // Requires adding OAUTH app https://docs.github.com/en/developers/apps/building-oauth-apps/creating-an-oauth-app
     [
@@ -126,7 +139,6 @@ module.exports = {
         },
       }
     ] */
-  ],
 
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
@@ -175,7 +187,7 @@ module.exports = {
               '0 2 3 5',
               '0 2 3 5',
             ],
-            items_: [ 
+            items_: [
               {
                 // 0
                 label: 'Getting Started',
@@ -298,7 +310,7 @@ module.exports = {
                   },
                 ],
               },
-              
+
               {
                 // 4 - What would this link to?
                 label: 'Security & Incidents',
@@ -350,7 +362,11 @@ module.exports = {
               },
             ],
           },
-          
+          {
+            label: 'API',
+            to: '/sumoapi',
+            position: 'left',
+          },
           {
             //Release Notes blog
             label: 'Release Notes',
@@ -474,7 +490,7 @@ module.exports = {
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
-        additionalLanguages: ['csharp', 'powershell', 'java', 'markdown'],
+        additionalLanguages: ['csharp', 'powershell', 'java', 'markdown', `scala`],
       },
     }),
 };
