@@ -81,7 +81,6 @@ module.exports = {
   plugins: [
     'docusaurus-plugin-sass',
     'plugin-image-zoom',
-    '@saucelabs/theme-github-codeblock',
     'react-iframe',
     ['@docusaurus/plugin-client-redirects',
       {
@@ -351,9 +350,9 @@ module.exports = {
             ],
           },
           {
-          label: 'Doc Contributions',
-          to: '/docs/contribution',
-          position: 'left',
+            label: 'Doc Contributions',
+            to: '/docs/contribution',
+            position: 'left',
           },
           {
             //Release Notes blog
