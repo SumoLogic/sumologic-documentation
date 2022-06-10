@@ -1,8 +1,11 @@
 ---
 id: microsoft-azure-ad-inventory-source
+title: Microsoft Azure AD Inventory Source
+sidebar_label: Microsoft Azure AD Inventory Source
+keywords:
+    - microsoft-azure-ad-inventory
+    - cloud-SIEM-enterprise
 ---
-
-# Microsoft Azure AD Inventory Source
 
 The Microsoft Azure AD Inventory Source collects user and device data from the [Microsoft Graph API](https://docs.microsoft.com/en-us/graph/overview) Security endpoint. It securely stores the required authentication, scheduling, and state tracking information.
 
@@ -80,13 +83,13 @@ Use the following steps to create a service application:
 
 1. Request the appropriate permissions for the application. Click on **API Permissions**, then **Add a permission** and select **Microsoft Graph**.
 
-From there select (or search for) the following permissions. An Administrator must approve (grant) these permissions before the integration will function. 
-    
+From there select (or search for) the following permissions. An Administrator must approve (grant) these permissions before the integration will function.
+
 | API | Account Type| Permissions |
-|---------|---------------------------------------------------|------------------------------------| 
-| User    | Application or Delegated (work or school account) | User.Read.All, Directory.ReadAll   | 
-| User    | Delegated (personal Microsoft account)            | Not supported.                     | 
-| Devices | Application or Delegated (work or school account) | Device.Read.All, Directory.ReadAll | 
+|---------|---------------------------------------------------|------------------------------------|
+| User    | Application or Delegated (work or school account) | User.Read.All, Directory.ReadAll   |
+| User    | Delegated (personal Microsoft account)            | Not supported.                     |
+| Devices | Application or Delegated (work or school account) | Device.Read.All, Directory.ReadAll |
 | Devices | Delegated (personal Microsoft account)            | Not supported.                     |
 
 ![azure ad step 8.png](/img/send-data/azure-ad-step-8.png)
@@ -112,13 +115,13 @@ To configure a Microsoft Azure AD Inventory Source:
 1. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
 1. **Forward to SIEM**. Check the checkbox to forward your data to Cloud SIEM Enterprise. When configured with the **Forward to SIEM** option the following metadata fields are set:
 
-* `_siemVendor`: Microsoft 
-* `_siemProduct`: Azure AD 
-* `_dataType`: Inventory 
+* `_siemVendor`: Microsoft
+* `_siemProduct`: Azure AD
+* `_siemDataType`: Inventory
 
 1. (Optional) **Fields.** Click the **+Add Field** link to define the fields you want to associate, each field needs a name (key) and value.
 
-   * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema. 
+   * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
    * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema it is ignored, known as dropped.
 
 1. Provide the **Directory (tenant) ID** and **Application (client) ID** you got after you registered (created) the Azure Application in step 5 of the setup section.
@@ -154,14 +157,14 @@ Azure AD Inventory Source.
 
 | Parameter | Type | Required? | Default | Description | Access |
 |--|--|--|--|--|--|
-| `name` | String | Yes |  | Type a desired name of the Source. The name must be unique per Collector. This value is assigned to the metadata field `_source`. | modifiable | 
-| `description` | String | No | null | Type a description of the Source. | modifiable | 
-| `category` | String | No | null | Type a category of the source. This value is assigned to the [metadata](../../../../search/get-started-with-search/search-basics/built-in-metadata.md) field `_sourceCategory`. See [best practices](../../../design-deployment/best-practices-source-categories.md) for details. | modifiable | 
-| `fields` | JSON Object | No |  | JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field _siemForward to enable forwarding to SIEM. | modifiable | 
-| `tenant_id` | String | Yes |  | Provide the Directory (tenant) ID you got after you registered (created) the Azure Application. | modifiable | 
+| `name` | String | Yes |  | Type a desired name of the Source. The name must be unique per Collector. This value is assigned to the metadata field `_source`. | modifiable |
+| `description` | String | No | null | Type a description of the Source. | modifiable |
+| `category` | String | No | null | Type a category of the source. This value is assigned to the [metadata](../../../../search/get-started-with-search/search-basics/built-in-metadata.md) field `_sourceCategory`. See [best practices](../../../design-deployment/best-practices-source-categories.md) for details. | modifiable |
+| `fields` | JSON Object | No |  | JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field _siemForward to enable forwarding to SIEM. | modifiable |
+| `tenant_id` | String | Yes |  | Provide the Directory (tenant) ID you got after you registered (created) the Azure Application. | modifiable |
 | `secret_key` | String | Yes |  | Provide the Application Client Secret Value you created in Azure. | modifiable
-| `application_id` | String | Yes |  | Provide the Application (client) ID you got after you registered (created) the Azure Application. | modifiable | 
-| `supported_apis` | Array of strings | Yes |  | Define one or more of the available APIs to collect: Devices, and Users. For example, for both you'd use: ["Devices","Users"] | modifiable | 
+| `application_id` | String | Yes |  | Provide the Application (client) ID you got after you registered (created) the Azure Application. | modifiable |
+| `supported_apis` | Array of strings | Yes |  | Define one or more of the available APIs to collect: Devices, and Users. For example, for both you'd use: ["Devices","Users"] | modifiable |
 
 Microsoft Azure AD Inventory Source JSON example:
 
