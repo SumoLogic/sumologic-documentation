@@ -43,7 +43,7 @@ module.exports = {
           remarkPlugins: [
             //https://www.npmjs.com/package/remark-code-import
             require('remark-code-import'),
-            //https://www.npmjs.com/package/remark-import-partial 
+            //https://www.npmjs.com/package/remark-import-partial
             // snippet support {@import ./my-name.md} relative filepath to md file
             require('remark-import-partial'),
           ],
@@ -93,7 +93,7 @@ module.exports = {
           },
         ]
       },],
-      
+
     /* // Optional: See this site to configure - live editor https://github.com/jlvandenhout/docusaurus-plugin-docs-editor
        // Requires adding OAUTH app https://docs.github.com/en/developers/apps/building-oauth-apps/creating-an-oauth-app
     [
@@ -175,7 +175,7 @@ module.exports = {
               '0 2 3 5',
               '0 2 3 5',
             ],
-            items_: [ 
+            items_: [
               {
                 // 0
                 label: 'Getting Started',
@@ -298,7 +298,7 @@ module.exports = {
                   },
                 ],
               },
-              
+
               {
                 // 4 - What would this link to?
                 label: 'Security & Incidents',
@@ -350,7 +350,11 @@ module.exports = {
               },
             ],
           },
-          
+          {
+          label: 'Doc Contributions',
+          to: '/docs/contribution',
+          position: 'left',
+          },
           {
             //Release Notes blog
             label: 'Release Notes',
