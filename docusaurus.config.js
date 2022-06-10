@@ -368,6 +368,11 @@ module.exports = {
             position: 'left',
           },
           {
+            label: 'Doc Contributions',
+            to: '/docs/contribution',
+            position: 'left',
+          },
+          {
             //Release Notes blog
             label: 'Release Notes',
             to: '/release-notes',
