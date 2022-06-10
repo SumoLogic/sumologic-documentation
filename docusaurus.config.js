@@ -92,7 +92,6 @@ module.exports = {
   plugins: [
     'docusaurus-plugin-sass',
     'plugin-image-zoom',
-    '@saucelabs/theme-github-codeblock',
     'react-iframe',
     ['@docusaurus/plugin-client-redirects',
       {

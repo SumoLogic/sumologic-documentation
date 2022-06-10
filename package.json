@@ -15,24 +15,23 @@
   },
   "dependencies": {
     "@braintree/sanitize-url": "^6.0.0",
-    "@docusaurus/core": "2.0.0-beta.20",
-    "@docusaurus/plugin-client-redirects": "2.0.0-beta.20",
-    "@docusaurus/preset-classic": "2.0.0-beta.20",
-    "@docusaurus/theme-search-algolia": "2.0.0-beta.20",
+    "@docusaurus/core": "^2.0.0-beta.21",
+    "@docusaurus/plugin-client-redirects": "^2.0.0-beta.21",
+    "@docusaurus/preset-classic": "2.0.0-beta.21",
+    "@docusaurus/theme-search-algolia": "2.0.0-beta.21",
     "@fortawesome/fontawesome-svg-core": "^1.2.36",
     "@fortawesome/free-brands-svg-icons": "^5.15.4",
     "@fortawesome/free-solid-svg-icons": "^5.15.4",
     "@fortawesome/react-fontawesome": "^0.1.16",
     "@jlvandenhout/docusaurus-plugin-docs-editor": "^0.7.0",
     "@mdx-js/react": "^1.6.21",
-    "@saucelabs/theme-github-codeblock": "^0.1.1",
     "clsx": "^1.1.1",
     "docusaurus-plugin-sass": "^0.2.1",
     "file-loader": "^6.2.0",
     "follow-redirects": "^1.14.8",
     "glob-parent": "^5.1.2",
-    "mdx-mermaid": "^1.1.1",
-    "mermaid": "^8.13.8",
+    "mdx-mermaid": "^1.2.3",
+    "mermaid": "^9.1.1",
     "minimist": "^1.2.6",
     "nanoid": "^3.1.31",
     "node-fetch": "^2.6.7",
@@ -52,7 +51,7 @@
     "shelljs": "^0.8.5",
     "trim": "^0.0.3",
     "url-loader": "^4.1.1",
-    "webpack": "^4.0.0"
+    "webpack": "^5.73.0"
   },
   "browserslist": {
     "production": [
@@ -67,7 +66,7 @@
     ]
   },
   "devDependencies": {
-    "@docusaurus/module-type-aliases": "2.0.0-beta.20",
+    "@docusaurus/module-type-aliases": "2.0.0-beta.21",
     "@tsconfig/docusaurus": "^1.0.4",
     "@types/react": "^17.0.0",
     "@types/webpack-env": "^1.16.3",
