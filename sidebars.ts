@@ -3,7 +3,7 @@
  Add content to the following sections in this sidebar Navigation file:
 
   Manage: Admin level options, collection, connections, etc
-  Dashboards & Visuals: New and Classic Dashboards, Library of Dashboards, Alerts, Monitors, Alerts, Monitors, SLOs, Health Events, Connections 
+  Dashboards & Visuals: New and Classic Dashboards, Library of Dashboards, Alerts, Monitors, Alerts, Monitors, SLOs, Health Events, Connections
   Searches & Logs: Log Search, All Log Searches, Livetail, Lookup, Log Config
   Metrics & Logs: Metrics Search, All Metrics Searches, Config
   Infrastructure Monitoring: Kubernetes, AWS Observability, Root Cause Explorer,
@@ -76,7 +76,7 @@ module.exports = {
       ],
     },
     {
-// *** QUICKSTARTS & TUTORIALS 
+// *** QUICKSTARTS & TUTORIALS
       type: 'category',
       label: 'Quickstarts and Tutorials',
       collapsible: true,
@@ -418,14 +418,14 @@ module.exports = {
             'manage/users-and-roles/users/secure-third-party-service-access',
           ]
         },
-        
+
       ]
     },
     'manage/health-events',
     'manage/fields',
     'manage/archive',
   ],
-// *** DASHBOARDS and VISUALS: 
+// *** DASHBOARDS and VISUALS:
   dashboards: [
     {
       type: 'category',
@@ -439,7 +439,7 @@ module.exports = {
         'dashboards-new/drill-down-to-discover-root-causes',
         'dashboards-new/export-dashboard-new',
         'dashboards-new/filter-template-variables',
-        'dashboards-new/link-dashboard-to-explore', 
+        'dashboards-new/link-dashboard-to-explore',
         'dashboards-new/link-dashboard-new',
         'dashboards-new/locate-deviations-time-series',
         {
@@ -936,7 +936,7 @@ module.exports = {
           collapsible: true,
           collapsed: true,
           link: {
-            type: 'doc', 
+            type: 'doc',
             id: 'search/search-query-language/transaction-analytics/index',
           },
           items: [
@@ -1169,7 +1169,7 @@ module.exports = {
             },
             'send-data/sources/sources-installed-collectors/streaming-metrics-source',
             'send-data/sources/sources-installed-collectors/syslog-source',
-            'send-data/sources/sources-installed-collectors/windows-active-directory-source',
+            'send-data/sources/sources-installed-collectors/windows-active-directory-inventory-source',
           ],
         },
         {
