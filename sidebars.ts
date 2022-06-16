@@ -1067,6 +1067,7 @@ module.exports = {
   // *** SEND DATA: collectors, sources
   data: [
     'send-data/index',
+    'send-data/test',
     {
       type: 'category',
       label: 'Design Your Deployment',

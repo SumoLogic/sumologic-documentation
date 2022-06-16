@@ -494,7 +494,7 @@ module.exports = {
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
-        additionalLanguages: ['csharp', 'powershell', 'java', 'markdown', `scala`],
+        additionalLanguages: ['csharp', 'powershell', 'java', 'markdown', `scala`, `sumo`, `julia`],
       },
     }),
 };
