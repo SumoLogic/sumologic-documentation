@@ -1,5 +1,9 @@
 name: PR checks
 
+# What it does / why we have it:
+# Adds Actions as checks
+
+
 on:
   pull_request:
     branches:
