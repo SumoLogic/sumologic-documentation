@@ -1,9 +1,5 @@
 name: delete-review
 
-# What it does / why we have it:
-#  -
-#  -
-
 on: delete
 
 jobs:
