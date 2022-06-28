@@ -57,9 +57,3 @@ jobs:
             aws cloudfront wait invalidation-completed \
               --id $INVALIDATION_ID \
               --distribution-id $CLOUDFRONT_DISTRIBUTION_ID
-
-
-    deploy-to-staging:
-      needs: build-and-deploy
-      runs-on: ubuntu-latest
-      if: ${{ github.ref == 'refs/heads/main' }}
