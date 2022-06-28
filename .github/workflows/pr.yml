@@ -1,7 +1,6 @@
 name: Pull Request checks
 
 on:
-<<<<<<< HEAD
     pull_request:
       branches:
         - main
@@ -10,16 +9,7 @@ on:
         - '.github/**'
         - 'README.md'
     workflow_dispatch:
-=======
-  pull_request:
-    branches:
-      - main
-  push:
-    paths-ignore:
-      - '.github/**'
-      - 'README.md'
-  workflow_dispatch:
->>>>>>> e06b8fc280f7059addf7b7e9fe2fa878a6b572c7
+
 
 jobs:
     build-and-deploy:
@@ -67,9 +57,3 @@ jobs:
             aws cloudfront wait invalidation-completed \
               --id $INVALIDATION_ID \
               --distribution-id $CLOUDFRONT_DISTRIBUTION_ID
-
-
-  deploy-to-staging:
-    needs: build-and-deploy
-    runs-on: ubuntu-20.04
-    if: ${{ github.ref == 'refs/heads/main' }}
