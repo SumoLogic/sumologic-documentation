@@ -1,9 +1,5 @@
 name: deploy-to-staging
 
-# What it does / why we have it:
-#  -
-#  -
-
 on:
   push:
     branches:

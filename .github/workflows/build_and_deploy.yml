@@ -1,11 +1,7 @@
 name: Build and Deploy
 
-# What it does / why we have it:
-#  -
-#  -
-
-
 on:
+  pull_request:
   workflow_call:
     inputs:
       hostname:

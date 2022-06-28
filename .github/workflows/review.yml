@@ -1,11 +1,8 @@
 name: deploy-to-review
 
-# What it does / why we have it:
-#  -
-#  -
-
-
-on: workflow_dispatch
+on:
+  workflow_dispatch
+  pull_request:
 
 jobs:
   deploy-to-review:
