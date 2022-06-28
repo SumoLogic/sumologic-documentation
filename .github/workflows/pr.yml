@@ -1,9 +1,15 @@
 name: Pull Request checks
 
 on:
-  pull_request:
-    branches:
+ pull_request:
+   branches:
       - main
+  push:
+    paths-ignore:
+      - '.github/**'
+      - 'README.md'
+  workflow_dispatch:
+
 
 jobs:
     build-and-deploy:
@@ -12,13 +18,13 @@ jobs:
         name: ${{ inputs.environment }}
         url: ${{ inputs.hostname }}${{ inputs.base_url }}
       env:
-        CI: true
-        NODE_ENV: production
-        AWS_PAGER: ""
-        HOSTNAME: ${{ inputs.hostname }}
-        BASE_URL: ${{ inputs.base_url }}
-        AWS_DEFAULT_REGION: us-east-1
-        AWS_EC2_METADATA_DISABLED: "true"
+          CI: true
+          NODE_ENV: production
+          AWS_PAGER: ""
+          HOSTNAME: ${{ inputs.hostname }}
+          BASE_URL: ${{ inputs.base_url }}
+          AWS_DEFAULT_REGION: us-east-1
+          AWS_EC2_METADATA_DISABLED: "true"
       steps:
         - uses: actions/checkout@v2.4.0
         - name: Set up Node.js
@@ -51,3 +57,9 @@ jobs:
             aws cloudfront wait invalidation-completed \
               --id $INVALIDATION_ID \
               --distribution-id $CLOUDFRONT_DISTRIBUTION_ID
+
+
+  deploy-to-staging:
+    needs: build-and-deploy
+    runs-on: ubuntu-20.04
+    if: ${{ github.ref == 'refs/heads/main' }}
