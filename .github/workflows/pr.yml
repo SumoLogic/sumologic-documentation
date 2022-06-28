@@ -57,8 +57,7 @@ jobs:
               --id $INVALIDATION_ID \
               --distribution-id $CLOUDFRONT_DISTRIBUTION_ID
 
-
-  deploy-to-staging:
-    needs: build-and-deploy
-    runs-on: ubuntu-20.04
-    if: ${{ github.ref == 'refs/heads/main' }}
+    deploy-to-staging:
+      needs: build-and-deploy
+      runs-on: ubuntu-20.04
+      if: ${{ github.ref == 'refs/heads/main' }}
