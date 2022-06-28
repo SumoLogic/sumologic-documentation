@@ -36,7 +36,6 @@ _sourceCategory=Labs/Apache/Access
 ```
 
 
-
 ```sumo
 _sourceCategory=Labs/Apache/Access (status_code=200 or status_code=404)
 | timeslice 1m
