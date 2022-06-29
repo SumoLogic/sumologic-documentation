@@ -1,14 +1,16 @@
 name: Pull Request checks
 
+
 on:
-  pull_request:
-    branches:
-      - main
-  push:
-    paths-ignore:
-      - '.github/**'
-      - 'README.md'
-  workflow_dispatch:
+    pull_request:
+      branches:
+        - main
+    push:
+      paths-ignore:
+        - '.github/**'
+        - 'README.md'
+    workflow_dispatch:
+
 
 jobs:
     build-and-deploy:
@@ -39,26 +41,3 @@ jobs:
           run: yarn install --frozen-lockfile
         - name: Build the Docusaurus site
           run: yarn build
-        - name: Deploy the Docusaurus site to staging
-          env:
-            S3_BUCKET_NAME: ${{ secrets.S3_BUCKET_NAME }}
-            CLOUDFRONT_DISTRIBUTION_ID: ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }}
-            AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-            AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          run: |
-            aws s3 sync --delete build/ s3://${S3_BUCKET_NAME}${BASE_URL}
-            export INVALIDATION_ID=$(
-              aws cloudfront create-invalidation \
-                --distribution-id $CLOUDFRONT_DISTRIBUTION_ID \
-                --paths "${BASE_URL}*" \
-              | jq -r .Invalidation.Id
-            )
-            aws cloudfront wait invalidation-completed \
-              --id $INVALIDATION_ID \
-              --distribution-id $CLOUDFRONT_DISTRIBUTION_ID
-
-
-  deploy-to-staging:
-    needs: build-and-deploy
-    runs-on: ubuntu-20.04
-    if: ${{ github.ref == 'refs/heads/main' }}
