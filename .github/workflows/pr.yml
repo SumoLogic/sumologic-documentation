@@ -37,5 +37,7 @@ jobs:
           uses: unfor19/install-aws-cli-action@v1
         - name: Install jq
           run: sudo apt-get install jq
+        - name: Install dependencies
+          run: yarn install
         - name: Build the Docusaurus site
           run: yarn build
