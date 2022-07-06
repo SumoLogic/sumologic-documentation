@@ -22,7 +22,7 @@ To add release notes without images:
     ```
 
     * `title`: Name of the release notes including Product or Feature
-    * `tags`: Add a comma-separated list of existing tags, including: 
+    * `tags`: Add a comma-separated list of existing tags, including:
     * `hide-table-of-contents`: Hide the TOC on the page, keeping the notes clean and wide on the page.
 
 1. Document the release notes. Add links, bullets, and images as needed.
@@ -43,15 +43,15 @@ To add release notes with images:
     ```
 
     * `title`: Name of the release notes including Product or Feature
-    * `tags`: Add a comma-separated list of existing tags, including: 
+    * `tags`: Add a comma-separated list of existing tags, including:
     * `hide-table-of-contents`: Hide the TOC on the page, keeping the notes clean and wide on the page.
 
 1. Save images to this folder and add them to the markdown file: `![alt text](image-name.png)`.
 
 ## Long Release Notes
 
-If you have a long set of release notes, we recommend introducing the notes and adding a truncate line, followed by the full set of release notes. 
+If you have a long set of release notes, we recommend introducing the notes and adding a truncate line, followed by the full set of release notes.
 
 The line of code is: `<!--truncate-->`
 
-See Apps release notes for [2022-01-18](/release-notes/2022/01/18/apps) for an example.
+See Apps release notes for [2022-01-18](/release-notes/2022/01/18/service/apps) for an example.
