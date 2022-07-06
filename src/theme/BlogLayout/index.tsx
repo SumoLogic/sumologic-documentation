@@ -33,7 +33,7 @@ function BlogLayout(props: Props): JSX.Element {
             })}
             itemScope
             itemType="http://schema.org/Blog">
-              <h1 className={styles.blogTitle}>Sumo Logic Release Notes</h1>
+              <h1 className={styles.blogTitle}>Sumo Logic Release Notes</h1><h4><a href="/release-notes/tags">Search by tag</a></h4><br/>
             {children}
           </main>
           {toc && <div className="col col--2">{toc}</div>}

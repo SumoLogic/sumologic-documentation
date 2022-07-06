@@ -1,6 +1,7 @@
 ---
 title: Traces - Span Events
 tags: [apm, traces]
+image: span-event-example.gif
 hide_table_of_contents: true
 ---
 
