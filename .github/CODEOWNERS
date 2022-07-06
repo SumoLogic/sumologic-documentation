@@ -1,0 +1,9 @@
+# This is a comment.
+# Each line is a file pattern followed by one or more owners.
+
+# These owners will be the default owners for everything in the repo.
+*        @kimsauce @nmohantyctr @stacykor @MariePMcGarry @swiatekm-sumo
+
+# These owners own any file in the `/docs` directory in the root of our
+# repository and any of its subdirectories.
+/docs/   @kimsauce @nmohantyctr @stacykor @MariePMcGarry
