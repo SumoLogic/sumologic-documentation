@@ -1,5 +1,9 @@
 {
-  "contributors": "kimsauce"
-  "message": "Many thanks for your contribution! As with many open source projects, we ask that you review and sign our contributor license agreement so your pull request can be safely merged."
-  "label": "cla-signed"
+  "contributors": [
+    "kimsauce",
+    "stacykor"
+  ],
+  "message": "We require contributors to sign our Contributor License Agreement and do not have yours on file. In order for us to review and merge your code, please sign our CLA <link to come> and add your name to our [contributors list](https://github.com/SumoLogic/sumologic-documentation/blob/main/.clabot).",
+  "label": "cla-signed",
+  "recheckComment": "The GitHub CLA Bot is rechecking to see that you have signed the CLA"
 }
