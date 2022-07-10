@@ -24,11 +24,11 @@ Click on any row to open the [Trace View](#trace-view). Traces are displayed in�
 
 | Column name | Example value | Description |
 |--|--|--|
-| Trace ID | ffaf2f69ee8ad0c1 | The unique identifier of the trace. | 
-| Root Service | api | The service that started the trace. | 
-| Started At | 07/27/2020 09:01:04.533 | When the trace started. | 
-| Duration | 12.582 ms | The amount of time the trace spans.  | 
-| Number of spans | 35 | A trace consists of spans. This number tells you how many spans are in the trace. | 
+| Trace ID | ffaf2f69ee8ad0c1 | The unique identifier of the trace. |
+| Root Service | api | The service that started the trace. |
+| Started At | 07/27/2020 09:01:04.533 | When the trace started. |
+| Duration | 12.582 ms | The amount of time the trace spans.  |
+| Number of spans | 35 | A trace consists of spans. This number tells you how many spans are in the trace. |
 | Duration Breakdown | ![breakdown](/img/traces/breakdown.png) | Each color indicates a service. The colors assigned to services are always the same on your account. You can change the color in the span summary tab after clicking on the individual span in trace view.<br/>Hover over to view a percentage breakdown of how long each span covers in the trace.<br/>![img](/img/traces/span-hover-view.png) |
 | Number of errors | 0 | The number of errors in the trace. |
 | Status | 200 | The HTTP status code of the trace. A menu is available in this column when hovering on a row. The menu has an option to **Show similar traces**.<br/>![img](/img/traces/similar-traces-menu.png) |
@@ -75,7 +75,7 @@ Use the eye icon to toggle the visibility of results from a query. When hidden, 
 
 ### Time range 
 
-Results are returned for the time window selected. The traces available (retention) in Trace query is 7 days. See Time Range Expressions for details on defining a time range.
+Results are returned for the time window selected. The traces available (retention) in Trace query is 15 days. See Time Range Expressions for details on defining a time range.
 
 ### Refresh
 
@@ -123,7 +123,7 @@ The details pane provides the following tabs:
 The details of the span are provided.
 
 To drill down further into your data, the **Logs** section has links to run searches against related log data. Top links for span/trace IDs work if you have span and trace IDs injected into logs. Lower section links are available and work automatically if [SumoLogic Kubernetes Collection](https://github.com/SumoLogic/sumologic-kubernetes-collection/tree/master/deploy) is installed.  
-  
+
 ![Logs links.png](/img/traces/Logs-links.png)
 
 #### Service Color
@@ -135,13 +135,13 @@ The color of the **Service** can be changed by clicking the colored box and sel
 #### Metadata
 
 Lists all of the related service entities involved in the span. When selecting a [Span Event](#span-events), the Metadata includes a Span Event section.  
-  
+
 ![trace-details-metadata.png](/img/traces/trace-details-metadata.png)
 
 ![trace-details-metadata-event.png](/img/traces/trace-details-metadata-event.png)
 
 You can click on the clipboard icon to copy the value to your computer's clipboard.  
-  
+
  ![clipboard option.png](/img/traces/clipboard-option.png)
 
 #### Entities
@@ -222,7 +222,7 @@ Select a span event marker ![span-event-marker.png](/img/traces/span-event-marke
 
 ![span-event-select.png](/img/traces/span-event-select.png)
 
-A **Details** link displays if additional information is available that may be too large for the tab view area, such as a metric attributes and error messages. Click to review this information. 
+A **Details** link displays if additional information is available that may be too large for the tab view area, such as a metric attributes and error messages. Click to review this information.
 
 ![span-event-more1.png](/img/traces/span-event-more1.png)
 
