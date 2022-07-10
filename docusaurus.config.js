@@ -75,20 +75,6 @@ module.exports = {
             }
           },
         },
-        blog: {
-          blogTitle: 'Release Notes',
-          blogDescription: 'Sumo Logic Release Notes',
-          blogSidebarTitle: 'All Releases',
-          blogSidebarCount: 'ALL',
-          postsPerPage: 'ALL',
-          path: 'blog',
-          routeBasePath: 'release-notes',
-          showReadingTime: false,
-          feedOptions: {
-            type: 'all',
-            copyright: `Copyright © ${new Date().getFullYear()} Sumo Logic`,
-          },
-        },
         theme: {
           customCss: require.resolve('./src/css/sumo.scss'),
         },
@@ -389,9 +375,12 @@ module.exports = {
             position: 'left',
           },
           {
-            //Release Notes blog
             label: 'Release Notes',
-            to: '/release-notes',
+            to: '/docs/releasenotes',
+          },
+          {
+            label: 'Release Notes (alt)',
+            to: '/docs/releasenotesalt',
           },
           {
             //Trial button
