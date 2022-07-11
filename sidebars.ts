@@ -83,9 +83,9 @@ module.exports = {
       collapsed: true,
       link: {type: 'doc', id: 'quickstart/index'},
       items: [
-        'quickstart/quickstart-aws',
+        'observability/aws-observability-solution/quickstart-aws',
         'quickstart/quickstart-github',
-        'quickstart/quickstart-k8s',
+        'observability/kubernetes-solution/quickstart-k8s'
       ],
     },
   ],
@@ -1551,6 +1551,7 @@ module.exports = {
           link: {type: 'doc', id: 'observability/aws-observability-solution/index'},
           items: [
             'observability/aws-observability-solution/about-aws-observability',
+            'observability/aws-observability-solution/quickstart-aws',
             {
               type: 'category',
               label: 'Deploy and Use AWS Observability',
@@ -1631,16 +1632,14 @@ module.exports = {
           link: {type: 'doc', id: 'observability/kubernetes-solution/index'},
           items: [
             'observability/kubernetes-solution/about-kubernetes-solution',
+            'observability/kubernetes-solution/quickstart-k8s',
             'observability/kubernetes-solution/set-up-collection-kubernetes',
+            'observability/kubernetes-solution/view-kubernetes-app-dashboards',
+            'observability/kubernetes-solution/navigate-kubernetes-environment',
             'observability/kubernetes-solution/monitor-kubernetes-effectively',
             'observability/kubernetes-solution/master-metadata-intuitive-searches',
-            'observability/kubernetes-solution/view-kubernetes-app-dashboards',
-            'observability/kubernetes-solution/explore-visual-kubernetes-hierarchy',
-            'observability/kubernetes-solution/troubleshoot-with-explore',
-            'observability/kubernetes-solution/global-intelligence-kubernetes',
             'observability/kubernetes-solution/kubernetes-alerts',
-            'observability/kubernetes-solution/navigate-kubernetes-environment',
-            'observability/kubernetes-solution/next-steps',
+            'observability/kubernetes-solution/troubleshoot-with-explore',
           ],
         },
         'observability/root-cause-explorer',

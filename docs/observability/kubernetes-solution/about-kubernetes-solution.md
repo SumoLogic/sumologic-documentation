@@ -1,8 +1,8 @@
 ---
 id: about-kubernetes-solution
+title: About the Sumo Logic Kubernetes Solution
+sidebar_label: Overview
 ---
-
-# About the Sumo Logic Kubernetes Solution
 
 The Sumo Logic Kubernetes Solution provides an end-to-end experience that takes you from configuring collection and installing apps, to monitoring, managing, and troubleshooting your Kubernetes environment.
 
