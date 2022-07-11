@@ -40,7 +40,7 @@ In this section, we will introduce the following concepts:
     </div>
     <div className="box box6 card">
       <div className="container">
-      <h3><a href="/docs/releasenotes/service">XYZ</a></h3>
+      <h3><a href="/docs/observability/kubernetes-solution/about-kubernetes-solution">XYZ</a></h3>
       <p>xyz  </p>
       </div>
     </div>
