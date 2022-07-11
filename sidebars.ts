@@ -1946,4 +1946,19 @@ module.exports = {
       ],
     },
   ],
+  releasenotes: [
+    {
+      type: 'category',
+      label: 'Release Notes',
+      collapsible: true,
+      collapsed: false,
+      link: {type: 'doc', id: 'releasenotes/index'},
+      items: [
+        'releasenotes/cloud-siem',
+        'releasenotes/collector',
+        'releasenotes/developer',
+        'releasenotes/service',
+      ],
+    },
+  ],
 }

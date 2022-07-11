@@ -261,7 +261,7 @@ For more information, see the [Preferences Page](manage-account.md).
 
 Whenever you have a question, there are a number of ways in which you can get the answers you need:
 
-* Check out the **[Release Notes](/release-notes)**
+* Check out the **[Release Notes](/docs/releasenotes)**
 * Search documentation
 * Visit the **Learn Page** in the Sumo Logic UI
 * Post a question on the [**Sumo Logic Community**](https://support.sumologic.com/hc/en-us/community/topics)
@@ -312,4 +312,3 @@ Now that you're familiar with the layout and features in the Sumo Logic user int
 You don't have to stop there either. You can take the next step and become Sumo Certified. For more information on the Sumo Logic Certification program courses, go to the **Home** page and click the **Certification** tab. See [Certification FAQs](certification-faqs.md) for more information.
 
 ![WTS_UI_Certification.png](/img/get-started/ui/WTS_UI_Certification.png)
-
