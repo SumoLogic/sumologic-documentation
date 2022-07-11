@@ -379,10 +379,6 @@ module.exports = {
             to: '/docs/releasenotes',
           },
           {
-            label: 'Release Notes (alt)',
-            to: '/docs/releasenotesalt',
-          },
-          {
             //Trial button
             label: 'Start a Free Trial',
             href: 'https://www.sumologic.com/sign-up/',

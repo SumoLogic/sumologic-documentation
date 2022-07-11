@@ -15,6 +15,9 @@ The built-in HipChat Action will be deprecated on August 25, 2022.
 #### Resolved Issues
 In some cases, changes to Rule Tuning Expressions were not being written to the Audit Logs properly.
 
+<small>tags: <a href="#application">application</a></small>
+
+
 ---
 ### Content Release 2022-07-07
 
