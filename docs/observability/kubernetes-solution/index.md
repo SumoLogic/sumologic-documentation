@@ -16,31 +16,31 @@ In this section, we will introduce the following concepts:
 </div>
 <div className="box box2 card">
   <div className="container">
-  <h3><a href="/docs/releasenotes/collector">Quickstart</a></h3>
+  <h3><a href="/docs/observability/kubernetes-solution/about-kubernetes-solution">Quickstart</a></h3>
   <p>You'll find a </p>
   </div>
 </div>
 <div className="box box3 card">
     <div className="container">
-      <h3><a href="/docs/releasenotes/developer">Collector</a></h3>
+      <h3><a href="/docs/observability/kubernetes-solution/about-kubernetes-solution">XYZ</a></h3>
       <p>This page provides an overview of Kubernetes collection process for Kubernetes environments, and then walks you through configuring log and metric collection.</p>
       </div>
     </div>
     <div className="box box4 card">
       <div className="container">
-      <h3><a href="/docs/releasenotes/service">Filters</a></h3>
+      <h3><a href="/docs/observability/kubernetes-solution/about-kubernetes-solution">XYZ</a></h3>
       <p>xyz  </p>
       </div>
     </div>
     <div className="box box5 card">
       <div className="container">
-      <h3><a href="/docs/releasenotes/service">Metrics</a></h3>
+      <h3><a href="/docs/observability/kubernetes-solution/about-kubernetes-solution">XYZ</a></h3>
       <p>xyz  </p>
       </div>
     </div>
     <div className="box box6 card">
       <div className="container">
-      <h3><a href="/docs/releasenotes/service">Metrics</a></h3>
+      <h3><a href="/docs/releasenotes/service">XYZ</a></h3>
       <p>xyz  </p>
       </div>
     </div>
