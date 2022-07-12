@@ -1,8 +1,8 @@
 ---
 id: jira-cloud
+title: Webhook Connection for Jira Cloud
+sidebar_label: Jira Cloud
 ---
-
-# Webhook Connection for Jira Cloud
 
 You can send JSON payloads from Sumo Logic alerts as an HTTP POST request to create Jira issues in Jira Cloud. Learn more about the Jira REST API in their [Jira Cloud platform Developer Reference](https://developer.atlassian.com/cloud/jira/platform/rest/v2/).
 
@@ -13,7 +13,7 @@ You can send JSON payloads from Sumo Logic alerts as an HTTP POST request to c
 To send webhook alerts to Jira Cloud you need to include a Basic Authentication Header with requests. This requires an API token, for reference on creating a token see [API tokens](https://confluence.atlassian.com/cloud/api-tokens-938839638.html) in Atlassian Cloud Support.
 
 1. Generate an API token using your [Atlassian Account](https://id.atlassian.com/manage/api-token).
-1. Using the email address of your Atlassian account and an API token you can generate the Basic Authentication Header. In the following cURL command replace `<me@example.com>` with your email address and `<my-api-token>` with your API token and run it: 
+1. Using the email address of your Atlassian account and an API token you can generate the Basic Authentication Header. In the following cURL command replace `<me@example.com>` with your email address and `<my-api-token>` with your API token and run it:
 
    ```bash
    curl -v https://mysite.atlassian.net --user <me@example.com>:<my-api-token>
@@ -44,28 +44,28 @@ You need the **Manage connections** [role capability](../../../users-and-roles
 
 1. Enter a **Name** for the Connection.
 1. (Optional) Enter a **Description** for the Connection.
-1. Enter a **URL** from the Jira REST API to create issues. For example, to create an issue: 
+1. Enter a **URL** from the Jira REST API to create issues. For example, to create an issue:
 
    ```
    https://<jira_cloud_instance>/rest/api/2/issue
-   ``` 
-      
-   :::note 
+   ```
+
+   :::note
    See the [Jira Cloud platform Developer Reference](https://developer.atlassian.com/cloud/jira/platform/rest/v2/#api-group-Issues) for details on acceptable request URLs.
    :::
-   
+
 1. Enter your **Authorization Header** from the prerequisite. It should be in the format: `Basic <random string>`
 1. (Optional) **Custom Headers**, enter up to five comma separated key-value pairs.
 1. The following input fields are automatically updated in the JSON **Payload** and vice versa. Update them to meet your requirements. At a minimum, you'll need to enter a valid Project Key.
-   
+
    * **Issue Type**
    * **Project Key**
    * **Issue Summary**
    * **Priority** (optional)
    * **Issue Description**
-   
+
 1. The following JSON is an example of the default **Payload**, you can customize it as needed. For details on the variables you can use as parameters within your JSON object, see [Webhook Payload Variables](../set-up-webhook-connections.md).
-   
+
    ```json
    {
    "fields": {

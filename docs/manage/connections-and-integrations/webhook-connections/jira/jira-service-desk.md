@@ -1,8 +1,8 @@
 ---
 id: jira-service-desk
+title: Webhook Connection for Jira Service Desk
+sidebar_label: Jira Service Desk
 ---
-
-# Webhook Connection for Jira Service Desk
 
 You can send JSON payloads from Sumo Logic alerts as an HTTP POST request to create Jira issues in Jira Service Desk. Learn more about the REST API in their [Jira Cloud platform Developer Reference](https://developer.atlassian.com/cloud/jira/platform/rest/v2/).
 
@@ -43,24 +43,24 @@ You need the **Manage connections** [role capability](../../../users-and-roles
    ![Jira webhook button.png](/img/connection-and-integration/Jira-webhook-button.png)
 
 1. Enter a **Name** for the Connection.  
-1. (Optional) Enter a **Description** for the Connection. 
-1. Enter a **URL** from the Jira REST API to create issues. For example, to create an issue: 
+1. (Optional) Enter a **Description** for the Connection.
+1. Enter a **URL** from the Jira REST API to create issues. For example, to create an issue:
 
    ```
    https://<jira_instance>/rest/api/2/issue
-   ``` 
-   
+   ```
+
    :::note
    See the [Jira Cloud platform Developer Reference](https://developer.atlassian.com/cloud/jira/platform/rest/v2/) for details on acceptable request URLs.
    :::
 
-1. Enter your **Authorization Header** from the prerequisite. It should be in the format: `Basic <random string>` 
+1. Enter your **Authorization Header** from the prerequisite. It should be in the format: `Basic <random string>`
 1. (Optional) **Custom Headers**, enter up to five comma separated key-value pairs.
-1. The following input fields are automatically updated in the JSON **Payload** and vice versa. Update them to meet your requirements. At a minimum, you'll need to enter a valid Project Key. 
+1. The following input fields are automatically updated in the JSON **Payload** and vice versa. Update them to meet your requirements. At a minimum, you'll need to enter a valid Project Key.
 
-   * **Issue Type** 
-   * **Project Key** 
-   * **Issue Summary** 
+   * **Issue Type**
+   * **Project Key**
+   * **Issue Summary**
    * **Priority** (optional)
    * **Issue Description**
 
@@ -83,7 +83,7 @@ You need the **Manage connections** [role capability](../../../users-and-roles
    }
    }
    ```
-   
+
    Details on how to format your payload are available in the [Jira Cloud platform Developer Reference](https://developer.atlassian.com/cloud/jira/platform/rest/v2/).
 
 1. Click **Save**.

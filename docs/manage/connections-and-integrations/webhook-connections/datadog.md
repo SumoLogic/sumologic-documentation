@@ -1,8 +1,8 @@
 ---
 id: datadog
+title: Webhook Connection for Datadog
+sidebar_label: Datadog
 ---
-
-# Webhook Connection for Datadog
 
 Once you set up a webhook connection you can send a Sumo Logic alert to your Datadog account. For information on how to build your webhook
 payload refer to Datadog webhooks in their [API Help](http://docs.datadoghq.com/integrations/webhooks/).

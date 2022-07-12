@@ -1,8 +1,8 @@
 ---
 id: jira-server
+title: Webhook Connection for Jira Server
+sidebar_label: Jira Server
 ---
-
-# Webhook Connection for Jira Server
 
 You can send JSON payloads from Sumo Logic alerts as an HTTP POST request to create Jira issues in Jira Server. Learn more about the Jira REST API in their [Jira Cloud platform Developer Reference](https://developer.atlassian.com/cloud/jira/platform/rest/v2/).
 
@@ -14,7 +14,7 @@ To send webhook alerts to Jira Server you need to include a Basic Authentication
 
 1. Get the username and password of a user that has permissions to create issues in your Jira Server.
 1. Using the username and password you can generate the Basic Authentication Header. In the following cURL command replace `<me@example.com>` with your username and `<password>` with your password and run it:
- 
+
     ```bash
     curl -v https://mysite.atlassian.net --user <me@example.com>:<password>
     ```
@@ -53,17 +53,17 @@ You need the **Manage connections** [role capability](../../../users-and-roles/
     ```
 
 1. Enter your **Authorization Header** from the prerequisite. It should be in the format: `Basic <random string>`
-1. (Optional) **Custom Headers**, enter up to five comma separated key-value pairs. 
+1. (Optional) **Custom Headers**, enter up to five comma separated key-value pairs.
 1. The following input fields are automatically updated in the JSON **Payload** and vice versa. Update them to meet your requirements. At a minimum, you'll need to enter a valid Project Key.
 
    * **Issue Type**
-   * **Project Key** 
-   * **Issue Summary** 
-   * **Priority** (optional) 
+   * **Project Key**
+   * **Issue Summary**
+   * **Priority** (optional)
    * **Issue Description**
 
 1. The following JSON is an example of the default **Payload**, you can customize it as needed. For details on the variables you can use as parameters within your JSON object, see [Webhook Payload Variables](../set-up-webhook-connections.md).
- 
+
     ```json
     {
     "fields": {
@@ -82,7 +82,7 @@ You need the **Manage connections** [role capability](../../../users-and-roles/
     }
     ```
 
-    Details on how to format your payload are available in the [Jira Cloud platform Developer Reference](https://developer.atlassian.com/cloud/jira/platform/rest/v2/#api-group-Issues). 
+    Details on how to format your payload are available in the [Jira Cloud platform Developer Reference](https://developer.atlassian.com/cloud/jira/platform/rest/v2/#api-group-Issues).
 
 1. Click **Save**.
 
