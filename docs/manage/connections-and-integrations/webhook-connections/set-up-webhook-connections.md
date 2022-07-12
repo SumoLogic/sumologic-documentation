@@ -13,17 +13,17 @@ can send from Sumo Logic, but your third party might impose restrictions. In add
 
 Along with a fully customizable webhook connection, you can quickly create webhooks for:
 
-* [AWS Lambda](webhook-connection-aws-lambda.md)
-* [Azure Functions](webhook-connection-microsoft-azure-functions.md)
-* [Datadog](webhook-connection-datadog.md)
-* [HipChat](webhook-connection-hipchat.md)
+* [AWS Lambda](aws-lambda.md)
+* [Azure Functions](microsoft-azure-functions.md)
+* [Datadog](datadog.md)
+* [HipChat](hipchat.md)
 * [Jira](/docs/manage/connections-and-integrations/webhook-connections/jira)
-* [Microsoft Teams](webhook-connection-microsoft-teams.md)
-* [New Relic](webhook-connection-new-relic.md)
-* [Opsgenie](webhook-connection-opsgenie.md)
-* [PagerDuty](webhook-connection-pagerduty.md)
+* [Microsoft Teams](microsoft-teams.md)
+* [New Relic](new-relic.md)
+* [Opsgenie](opsgenie.md)
+* [PagerDuty](pagerduty.md)
 * [Service Now](../servicenow/set-up-servicenow-connections.md)
-* [Slack](webhook-connection-slack.md)
+* [Slack](slack.md)
 
 Most services with a REST API should allow you to create a connection using the generic webhook.
 
