@@ -16,19 +16,19 @@ In this section, we will introduce the following concepts:
 </div>
 <div className="box box2 card">
   <div className="container">
-  <h3><a href="/docs/observability/kubernetes-solution/about-kubernetes-solution">Quickstart</a></h3>
-  <p>You'll find a </p>
+  <h3><a href="/docs/observability/kubernetes-solution/quickstart-k8s">Quickstart</a></h3>
+  <p>Get up and running with our Kubernetes solution in minutes.</p>
   </div>
 </div>
 <div className="box box3 card">
     <div className="container">
-      <h3><a href="/docs/observability/kubernetes-solution/about-kubernetes-solution">XYZ</a></h3>
-      <p>This page provides an overview of Kubernetes collection process for Kubernetes environments, and then walks you through configuring log and metric collection.</p>
+      <h3><a href="/docs/observability/kubernetes-solution/set-up-collection-kubernetes">XYZ</a></h3>
+      <p>Overview of Kubernetes collection process for Kubernetes environments, and configuring logs and metrics collection.</p>
       </div>
     </div>
     <div className="box box4 card">
       <div className="container">
-      <h3><a href="/docs/observability/kubernetes-solution/about-kubernetes-solution">XYZ</a></h3>
+      <h3><a href="/docs/observability/kubernetes-solution/view-kubernetes-app-dashboards">Learn about the Sumo Logic Kubernetes apps.</a></h3>
       <p>xyz  </p>
       </div>
     </div>
@@ -40,7 +40,7 @@ In this section, we will introduce the following concepts:
     </div>
     <div className="box box6 card">
       <div className="container">
-      <h3><a href="/docs/observability/kubernetes-solution/about-kubernetes-solution">XYZ</a></h3>
+      <h3><a href="/docs/observability/kubernetes-solution/monitor-kubernetes-effectively">This page provides insights for effectively monitoring your Kubernetes environment with Sumo Logic, and is organized according to the individual areas of the Kubernetes architecture.</a></h3>
       <p>xyz  </p>
       </div>
     </div>
