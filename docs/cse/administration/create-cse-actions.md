@@ -8,7 +8,7 @@ This topic has instructions for configuring CSE Actions
 
 ## About CSE Actions
 
-You can use CSE Actions to issue a notification to another service when certain events occur in CSE.  The supported Action types are:
+You can use CSE Actions to issue a notification to another service when certain events occur in CSE.   The supported Action types are:
 
 * AWS Simple Notification Service (SNS)
 * Demisto (Corex XSOAR)
