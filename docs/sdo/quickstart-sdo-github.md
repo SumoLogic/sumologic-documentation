@@ -1,7 +1,9 @@
 ---
-id: quickstart-github
+id: quickstart-sdo-github
+title: Visualize GitHub Data in Sumo Logic
+sidebar_label: GitHub Data Quickstart
 ---
-# Visualize GitHub Data in Sumo Logic
+
 
 This guide will walk you through creating a Sumo Logic account as well as getting GitHub data visualized in Sumo Logic. At the end, you will have:
 
@@ -11,7 +13,7 @@ This guide will walk you through creating a Sumo Logic account as well as gettin
 
 For trial accounts, all of the data collected as a result from this guide will be free of charge.
 
-**Prerequisites** 
+**Prerequisites**
 
 This guide will use a helper script to automate much of the setup process. The following operating systems and architectures are supported:
 

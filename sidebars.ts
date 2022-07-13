@@ -84,7 +84,7 @@ module.exports = {
       link: {type: 'doc', id: 'quickstart/index'},
       items: [
         'observability/aws-observability-solution/quickstart-aws',
-        'quickstart/quickstart-github',
+        'sdo/quickstart-sdo-github',
         'observability/kubernetes-solution/quickstart-k8s'
       ],
     },
@@ -1715,6 +1715,7 @@ module.exports = {
       items: [
         'sdo/about-sdo',
         'sdo/supported-tools-schema',
+        'sdo/quickstart-sdo-github',
         {
           type: 'category',
           label: 'Set Up SDO Solution',
