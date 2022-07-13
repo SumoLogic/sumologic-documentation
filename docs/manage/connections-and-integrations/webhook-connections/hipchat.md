@@ -1,8 +1,8 @@
 ---
 id: hipchat
+title: Webhook Connection for HipChat
+sidebar_label: HipChat
 ---
-
-# Webhook Connection for HipChat
 
 HipChat webhook connections allow you to send Sumo Logic alert results to HipChat rooms. For information on how to build your webhook payload refer to HipChat Webhooks in the [HipChat API documentation](https://developer.atlassian.com/server/hipchat/integrating-with-hipchat/).
 
@@ -26,7 +26,7 @@ To set up a webhook connection for HipChat:
     ```
     https://[username].hipchat.com/v2/room/[Room API ID]/notification?auth_token=[token]
     ```
-    
+
     For more information, see [HipChat API documentation](https://www.hipchat.com/docs/apiv2).
 
 1. (Optional) **Authorization Header**, not required for HipChat. 
