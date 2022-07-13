@@ -7,96 +7,39 @@ sidebar_label: Kubernetes Quickstart
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-This guide will walk you through setting up [Sumo Logic's Kubernetes solution](https://www.sumologic.com/solutions/kubernetes/). If you don't have a Sumo Logic account, [sign up for a free trial](/get-started/sign-up.md#create-a-trial-account).
+This guide will walk you through setting up [Sumo Logic's Kubernetes solution](https://www.sumologic.com/solutions/kubernetes/) in minutes. If you don't have a Sumo Logic account, [sign up for a free trial](/get-started/sign-up.md#create-a-trial-account).
+
+At a high level, the Sumo Logic Kubernetes Solution process is: set up data collection, install Sumo Logic Kubernetes app integration, and data enrichment (setting filters, metadata, and alerts for your clusters to produce more useful metrics and logs insights).
+
 
 ## Installation
 
-<Tabs
-className="unique-tabs"
-defaultValue="helm"
-values={[
-{label: 'Helm', value: 'helm'},
-{label: 'YAML', value: 'yaml'}
-]}>
+1. Log in to your Sumo Logic account.
 
-<TabItem value="helm">
+2. Go to **App Catalog**.
 
-1. If this is the first time installing our helm chart, add the [Sumo Logic Helm repo](https://sumologic.github.io/sumologic-kubernetes-collection/):
+3. Select the **Kubernetes** app.
 
-  ```shell
-  helm repo add sumologic https://sumologic.github.io/sumologic-kubernetes-collection
-  helm repo update
-  ```
+4. Click **Begin Integration**.
 
-1. Get your [Sumo Logic Access ID and Access Key](https://help.sumologic.com/manage/security/Access-Keys) and run the following command:
+5. On the next screen, click **Add Integration**.
 
-  ```shell
-  helm upgrade --install <HELM_RELEASE_NAME> sumologic/sumologic \
-      --set sumologic.accessId="<SUMO_ACCESS_ID>" \
-      --set sumologic.accessKey="<SUMO_ACCESS_KEY>"
-  ```
+6. In the setup wizard, choose either the **Helm** or **YAML** tab, then follow the required steps, which ask you to copy the code snippets, then paste and run them in your command-line interface.
 
-:::tip Helm Values File
+7. At the top of the setup wizard, click **Next**. You'll see a setup progress tracker showing that your data is being imported to your Sumo Logic dashboards.
 
-As a best practice, we recommend using [helm values files](https://helm.sh/docs/chart_template_guide/values_files/) when adding additional configuration.  The values file should only contain properties you want to change from the [default values.yaml](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/deploy/helm/sumologic/values.yaml) to ensure upgrades behave properly.
-:::
-
-</TabItem>
-
-<TabItem value="yaml">
-
-1. Get your [Sumo Logic Access ID and Access Key](https://help.sumologic.com/manage/security/Access-Keys) and run the following command to generate the YAML:
-
-  ```shell
-  kubectl run tools \
-    -i --quiet --rm \
-    --restart=Never \
-    --image sumologic/kubernetes-tools:2.9.0 -- \
-    template \
-    --name-template 'collection' \
-    --set sumologic.accessId='<SUMO_ACCESS_ID>' \
-    --set sumologic.accessKey='<SUMO_ACCESS_KEY>' \
-    | tee sumologic.yaml
-  ```
-
-1. Install the required CRDs and apply the generated YAML:
-
-  ```shell
-  kubectl apply -f https://raw.githubusercontent.com/prometheus-operator/prometheus-operator/v0.43.2/example/prometheus-operator-crd/monitoring.coreos.com_probes.yaml
-  kubectl apply -f https://raw.githubusercontent.com/prometheus-operator/prometheus-operator/v0.43.2/example/prometheus-operator-crd/monitoring.coreos.com_alertmanagers.yaml
-  kubectl apply -f https://raw.githubusercontent.com/prometheus-operator/prometheus-operator/v0.43.2/example/prometheus-operator-crd/monitoring.coreos.com_prometheuses.yaml
-  kubectl apply -f https://raw.githubusercontent.com/prometheus-operator/prometheus-operator/v0.43.2/example/prometheus-operator-crd/monitoring.coreos.com_prometheusrules.yaml
-  kubectl apply -f https://raw.githubusercontent.com/prometheus-operator/prometheus-operator/v0.43.2/example/prometheus-operator-crd/monitoring.coreos.com_servicemonitors.yaml
-  kubectl apply -f https://raw.githubusercontent.com/prometheus-operator/prometheus-operator/v0.43.2/example/prometheus-operator-crd/monitoring.coreos.com_podmonitors.yaml
-  kubectl apply -f https://raw.githubusercontent.com/prometheus-operator/prometheus-operator/v0.43.2/example/prometheus-operator-crd/monitoring.coreos.com_thanosrulers.yaml
-  kubectl apply -f https://raw.githubusercontent.com/prometheus-operator/prometheus-operator/v0.43.2/example/prometheus-operator-crd/monitoring.coreos.com_alertmanagerconfigs.yaml
-  kubectl apply -f sumologic.yaml
-  ```
-
-</TabItem>
-</Tabs>
-
-#### Additional Reading
-* [Full List of Configuration Options](https://github.com/SumoLogic/sumologic-kubernetes-collection/tree/main/deploy/helm/sumologic#configuration)
-* [Sumo Logic Helm Chart Troubleshooting Guide](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/deploy/docs/Troubleshoot_Collection.md)
+8. When the progress tracker finishes, click **Explore Dashboards**. This will open your **Explore** tab dashboards.
 
 
 ## Next Steps
 
+Learn more about exploring the dashboards, monitoring, and troubleshooting your applications in your Kubernetes environment. Here are a few options for you to explore.
+
 ### Add the Sumo Logic Kubernetes Integration
 
-Once you've completed installation, [install the Kubernetes app integration, browse alerts, view the Dashboards](/docs/integrations/containers-orchestration/kubernetes/install-apps-alerts-dashboards#install-the-app), and [open a new Explore tab](/docs/observability/kubernetes-solution/navigate-kubernetes-environment) in Sumo Logic.
+Once you've completed installation, check out how to [add alerts, view your dashboards](/docs/integrations/containers-orchestration/kubernetes/install-apps-alerts-dashboards#install-the-app), and [navigate the **Explore** tab](/docs/observability/kubernetes-solution/navigate-kubernetes-environment) in Sumo Logic.
 
 If you don't see data in Sumo Logic, you can review our [troubleshooting guide](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/deploy/docs/Troubleshoot_Collection.md).
-
-## More Information
-
-At a high level, the Sumo Logic Kubernetes Solution process is as follows:
-1. Set Up Data Collection.
-2. Install Sumo Logic Kubernetes app integration.
-3. Data Enrichment (setting filters, metadata, and alerts for your clusters to produce more useful metrics and logs insights).
-
-Learn more about exploring the dashboards, monitoring, and troubleshooting your applications in your Kubernetes environment. Here are a few options for you to explore.
 
 
 ### Kubernetes Partner Apps
@@ -126,3 +69,7 @@ The [Sumo Logic Dashboard (New)](/docs/dashboards-new) platform allows you to an
 The Sumo Kubernetes Analyst Certification is a hands-on class that shows you how to expand your knowledge of Kubernetes by solving common use cases.
 
 ![K8s_Kubernetes_Analyst_Cert.png](/img/kubernetes/K8s_Kubernetes_Analyst_Cert.png)
+
+## More Information
+* [Full List of Configuration Options](https://github.com/SumoLogic/sumologic-kubernetes-collection/tree/main/deploy/helm/sumologic#configuration)
+* [Sumo Logic Helm Chart Troubleshooting Guide](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/deploy/docs/Troubleshoot_Collection.md)

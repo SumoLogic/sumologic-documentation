@@ -40,7 +40,7 @@ The monitors are disabled by default. Once you have installed the alerts using t
 
 1. Generate a Sumo Logic access key and ID
 
-Generate an access key and access ID for a user that has the Manage Monitors role capability in Sumo Logic using [these](/Manage/Security/Access-Keys#manage-your-access-keys-on-preferences-page) instructions. Please identify which deployment your Sumo Logic account is in, using this /APIs/General-API-Information/Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security"> link.
+Generate an access key and access ID for a user that has the Manage Monitors role capability in Sumo Logic using [these instructions](/docs/manage/security/access-keys). Please identify which deployment your Sumo Logic account is in, using this /APIs/General-API-Information/Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security"> link.
 
 2. [Download and install Terraform 0.13](https://www.terraform.io/downloads.html) or later.
 
