@@ -1,8 +1,8 @@
 ---
 id: new-relic
+title: Webhook Connection for New Relic
+sidebar_label: New Relic
 ---
-
-# Webhook Connection for New Relic
 
 New Relic webhook connections allow you to send alert results to New Relic as a custom event (Insight). You can learn more about the New Relic Insights custom events in their [API Help](https://docs.newrelic.com/docs/insights/explore-data/custom-events/insert-custom-events-insights-api).
 
@@ -45,12 +45,12 @@ Select the webhook connection in a [Scheduled Search](schedule-searches-webho
 
 ```json
 {
-    "eventType": "{{Name}}", 
-    "description": "{{Description}}", 
-    "client": "Sumo Logic", 
-    "search_url": "{{QueryUrl}}", 
-    "num_records": "{{NumQueryResults}}", 
-    "search_results": "{{ResultsJson}}" 
+    "eventType": "{{Name}}",
+    "description": "{{Description}}",
+    "client": "Sumo Logic",
+    "search_url": "{{QueryUrl}}",
+    "num_records": "{{NumQueryResults}}",
+    "search_results": "{{ResultsJson}}"
 }
 ```
 
@@ -62,7 +62,7 @@ parameters.
 
 A maximum of 200 aggregate results or 10 raw messages for this field can be sent via webhook. For more information, see [About Webhook Connections](set-up-webhook-connections.md).
 
-By default, a "timestamp" field will be applied in New Relic Insights when the event is received. To override this, you must specify "timestamp" as a field in your Sumo Logic query (as an unformatted Unix timestamp, in seconds or milliseconds relative to the Unix epoch). For example, if you would like your timeslice to be represented in New Relic as the timestamp, you may add the following to your query: 
+By default, a "timestamp" field will be applied in New Relic Insights when the event is received. To override this, you must specify "timestamp" as a field in your Sumo Logic query (as an unformatted Unix timestamp, in seconds or milliseconds relative to the Unix epoch). For example, if you would like your timeslice to be represented in New Relic as the timestamp, you may add the following to your query:
 
 ```sql
 | timeslice 1m

@@ -1,12 +1,12 @@
 ---
 id: jira-server
+title: Webhook Connection for Jira Server
+sidebar_label: Jira Server
 ---
-
-# Webhook Connection for Jira Server
 
 You can send JSON payloads from Sumo Logic alerts as an HTTP POST request to create Jira issues in Jira Server. Learn more about the Jira REST API in their [Jira Cloud platform Developer Reference](https://developer.atlassian.com/cloud/jira/platform/rest/v2/).
 
-[Webhook connections](../set-up-webhook-connections.md) rely on HTTP endpoints that tell Sumo Logic where to send data. You can set up any number of connections.
+[Webhook connections](/docs/manage/connections-and-integrations/webhook-connections/set-up-webhook-connections) rely on HTTP endpoints that tell Sumo Logic where to send data. You can set up any number of connections.
 
 ## Prerequisite
 
@@ -14,7 +14,7 @@ To send webhook alerts to Jira Server you need to include a Basic Authentication
 
 1. Get the username and password of a user that has permissions to create issues in your Jira Server.
 1. Using the username and password you can generate the Basic Authentication Header. In the following cURL command replace `<me@example.com>` with your username and `<password>` with your password and run it:
- 
+
     ```bash
     curl -v https://mysite.atlassian.net --user <me@example.com>:<password>
     ```
@@ -28,11 +28,11 @@ To send webhook alerts to Jira Server you need to include a Basic Authentication
 In Sumo Logic, Scheduled Searches and Monitors send alerts to other tools via webhook connections. To send alerts from Sumo Logic to Jira Server:
 
 1. [Create a Webhook Connection](#create-a-webhook-connection).
-1. Use the Webhook Connection as the Alert Type in a [Scheduled Search](../schedule-searches-webhook-connections.md) or the Connection Type in a [Monitor](/docs/alerts/monitors).
+1. Use the Webhook Connection as the Alert Type in a [Scheduled Search](/docs/manage/connections-and-integrations/webhook-connections/schedule-searches-webhook-connections.md) or the Connection Type in a [Monitor](/docs/alerts/monitors).
 
 ## Create a Webhook Connection
 
-You need the **Manage connections** [role capability](../../../users-and-roles/roles/role-capabilities.md) to create webhook connections.
+You need the **Manage connections** [role capability](/docs/manage/users-and-roles/roles/role-capabilities.md) to create webhook connections.
 
 1. Go to **Manage Data \> Monitoring \> Connections**.
 1. On the **Connections** page click the **+** icon at the top-right of the table.
@@ -53,18 +53,18 @@ You need the **Manage connections** [role capability](../../../users-and-roles/
     ```
 
 1. Enter your **Authorization Header** from the prerequisite. It should be in the format: `Basic <random string>`
-1. (Optional) **Custom Headers**, enter up to five comma separated key-value pairs. 
+1. (Optional) **Custom Headers**, enter up to five comma separated key-value pairs.
 1. The following input fields are automatically updated in the JSON **Payload** and vice versa. Update them to meet your requirements. At a minimum, you'll need to enter a valid Project Key.
 
    * **Issue Type**
-   * **Project Key** 
-   * **Issue Summary** 
-   * **Priority** (optional) 
+   * **Project Key**
+   * **Issue Summary**
+   * **Priority** (optional)
    * **Issue Description**
 
-1. The following JSON is an example of the default **Payload**, you can customize it as needed. For details on the variables you can use as parameters within your JSON object, see [Webhook Payload Variables](../set-up-webhook-connections.md).
- 
-    ```json
+1. The following JSON is an example of the default **Payload**, you can customize it as needed. For details on the variables you can use as parameters within your JSON object, see [Webhook Payload Variables](docs/manage/connections-and-integrations/webhook-connections/set-up-webhook-connections).
+
+    ```
     {
     "fields": {
         "issuetype": {
@@ -82,7 +82,7 @@ You need the **Manage connections** [role capability](../../../users-and-roles/
     }
     ```
 
-    Details on how to format your payload are available in the [Jira Cloud platform Developer Reference](https://developer.atlassian.com/cloud/jira/platform/rest/v2/#api-group-Issues). 
+    Details on how to format your payload are available in the [Jira Cloud platform Developer Reference](https://developer.atlassian.com/cloud/jira/platform/rest/v2/#api-group-Issues).
 
 1. Click **Save**.
 
@@ -90,4 +90,4 @@ You need the **Manage connections** [role capability](../../../users-and-roles/
 
 Scheduled searches are saved searches that run automatically at specified intervals. When a scheduled search is configured to send an alert, it can be sent to another tool using a webhook connection.
 
-To set up a scheduled search for a webhook connection follow the steps in the [Schedule Searches for Webhook Connections](../schedule-searches-webhook-connections.md) document.
+To set up a scheduled search for a webhook connection follow the steps in the [Schedule Searches for Webhook Connections](/docs/manage/connections-and-integrations/webhook-connections/schedule-searches-webhook-connections.md) document.

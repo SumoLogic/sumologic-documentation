@@ -1,11 +1,10 @@
 ---
 id: opsgenie
+title: Webhook Connection for Opsgenie
+sidebar_label: Opsgenie
 ---
 
-# Webhook Connection for Opsgenie
-
-[Webhook
-connections](set-up-webhook-connections.md) rely on HTTP endpoints that tell Sumo Logic where to send data. You can set up any number of connections. 
+[Webhook connections](set-up-webhook-connections.md) rely on HTTP endpoints that tell Sumo Logic where to send data. You can set up any number of connections. 
 
 ## Sumo Logic to Opsgenie Integration
 
@@ -59,12 +58,12 @@ This section demonstrates how to create a webhook connection from Sumo Logic to 
 
     ```json
     {
-        "searchName": "{{Name}}", 
-        "searchDescription": "{{Description}}", 
-        "searchQuery": "{{Query}}", 
-        "searchQueryUrl": "{{QueryUrl}}", 
-        "timeRange": "{{TriggerTimeRange}}", 
-        "fireTime": "{{TriggerTime}}", 
+        "searchName": "{{Name}}",
+        "searchDescription": "{{Description}}",
+        "searchQuery": "{{Query}}",
+        "searchQueryUrl": "{{QueryUrl}}",
+        "timeRange": "{{TriggerTimeRange}}",
+        "fireTime": "{{TriggerTime}}",
         "ResultsJson": "{{ResultsJson}}",
         "priority": "P3"
     }
