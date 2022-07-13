@@ -10,7 +10,7 @@ In this section, we will introduce the following concepts:
 <div className="box-wrapper" markdown="1">
 <div className="box box1 card">
   <div className="container">
-  <h3><a href="/docs/observability/kubernetes-solution/about-kubernetes-solution">About the Sumo Logic Kubernetes Solution</a></h3>
+  <h3><a href="/docs/observability/kubernetes-solution/about-kubernetes-solution">Overview</a></h3>
   <p>Learn how Sumo Logic brings ease-of-use to Kubernetes, how to get the Kubernetes Solution, and the Sumo Logic apps that are available for Kubernetes platforms.</p>
   </div>
 </div>
@@ -22,26 +22,26 @@ In this section, we will introduce the following concepts:
 </div>
 <div className="box box3 card">
     <div className="container">
-      <h3><a href="/docs/observability/kubernetes-solution/set-up-collection-kubernetes">XYZ</a></h3>
+      <h3><a href="/docs/observability/kubernetes-solution/set-up-collection-kubernetes">Setting up Data Collection</a></h3>
       <p>Overview of Kubernetes collection process for Kubernetes environments, and configuring logs and metrics collection.</p>
       </div>
     </div>
     <div className="box box4 card">
       <div className="container">
       <h3><a href="/docs/observability/kubernetes-solution/view-kubernetes-app-dashboards">Learn about the Sumo Logic Kubernetes apps.</a></h3>
-      <p>xyz  </p>
+      <p>Sumo Logic combines metrics, logs, and events to a create real-time unified view of the performance, uptime, and security of your Kubernetes environment.</p>
       </div>
     </div>
     <div className="box box5 card">
       <div className="container">
-      <h3><a href="/docs/observability/kubernetes-solution/about-kubernetes-solution">XYZ</a></h3>
-      <p>xyz  </p>
+      <h3><a href="/docs/observability/kubernetes-solution/kubernetes-alerts">Setting Alerts</a></h3>
+      <p>To help determine if the Kubernetes cluster is available and performing well, the Sumo Logic monitors are provided with out-of-box alerts.</p>
       </div>
     </div>
     <div className="box box6 card">
       <div className="container">
-      <h3><a href="/docs/observability/kubernetes-solution/monitor-kubernetes-effectively">This page provides insights for effectively monitoring your Kubernetes environment with Sumo Logic, and is organized according to the individual areas of the Kubernetes architecture.</a></h3>
-      <p>xyz  </p>
+      <h3><a href="/docs/observability/kubernetes-solution/monitor-kubernetes-effectively">Monitor effectively</a></h3>
+      <p>Learn more about effectively monitoring your Kubernetes environment architecture with Sumo Logic.</p>
       </div>
     </div>
   </div>

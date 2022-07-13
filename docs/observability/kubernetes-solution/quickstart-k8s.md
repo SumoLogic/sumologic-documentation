@@ -85,7 +85,7 @@ As a best practice, we recommend using [helm values files](https://helm.sh/docs/
 
 ### Add the Sumo Logic Kubernetes Integration
 
-Once you've completed installation, [install the Kubernetes app integration, browse alerts, view the Dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/10Containers_and_Orchestration/Kubernetes/Install_the_Kubernetes_App%2C_Alerts%2C_and_view_the_Dashboards#Install_the_App), and [open a new Explore tab](https://help.sumologic.com/Observability_Solution/Kubernetes_Solution/Navigate_your_Kubernetes_environment) in Sumo Logic.
+Once you've completed installation, [install the Kubernetes app integration, browse alerts, view the Dashboards](/docs/integrations/containers-orchestration/kubernetes/install-apps-alerts-dashboards#install-the-app), and [open a new Explore tab](/docs/observability/kubernetes-solution/navigate-kubernetes-environment) in Sumo Logic.
 
 If you don't see data in Sumo Logic, you can review our [troubleshooting guide](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/deploy/docs/Troubleshoot_Collection.md).
 

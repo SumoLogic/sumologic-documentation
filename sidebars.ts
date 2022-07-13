@@ -1651,6 +1651,27 @@ module.exports = {
     'integrations/integrations',
     {
       type: 'category',
+      label: 'Containers and Orchestration',
+      collapsible: true,
+      collapsed: true,
+      link: {type: 'doc', id: 'integrations/containers-orchestration/index'},
+      items: [
+        'integrations/containers-orchestration/activemq',
+        {
+          type: 'category',
+          label: 'Kubernetes',
+          collapsible: true,
+          collapsed: true,
+          link: {type: 'doc', id: 'integrations/containers-orchestration/kubernetes/index'},
+          items: [
+              'integrations/containers-orchestration/kubernetes/collect-logs-metrics',
+              'integrations/containers-orchestration/kubernetes/install-apps-alerts-dashboards',
+            ],
+          },
+        ],
+      },
+      {
+      type: 'category',
       label: 'PCI Compliance',
       collapsible: true,
       collapsed: true,
