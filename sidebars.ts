@@ -1928,6 +1928,7 @@ module.exports = {
       collapsed: false,
       link: {type: 'doc', id: 'contribution/index'},
       items: [
+        'contribution/code-of-conduct',
         'contribution/create-document',
         'contribution/markdown-features',
         'contribution/release-notes',

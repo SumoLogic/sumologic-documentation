@@ -8,7 +8,7 @@ Documentation staff members review issues and pull requests on a regular basis. 
 
 ## Contributing Content
 
-For details on contributions, see [CONTRIBUTING](https://github.com/SumoLogic/sumologic-documentation/blob/main/CONTRIBUTING.md) and the [GitHub Wiki](https://github.com/SumoLogic/sumologic-documentation/wiki).
+For details on contributions, see [Contributor Guidelines](/docs/contribution) and the [GitHub Wiki](https://github.com/SumoLogic/sumologic-documentation/wiki).
 
 We recommend forking the repo, creating all content changes in branches, and submitting pull requests. We will work with you to get this content reviewed, tested, and merged for publishing.
 
@@ -22,7 +22,7 @@ Docusaurus requires the following to build on locals:
 The site includes translations into other languages. To build on your local:
 
 1. Clone the repo using Git or tools like GitHub Desktop.
-1. In a terminal, change to the cloned repo folder. Run the install command: `yarn install` 
+1. In a terminal, change to the cloned repo folder. Run the install command: `yarn install`
 1. To build locally and test links, use build: `yarn build`
 1. To serve and review, use one of the following:
 
