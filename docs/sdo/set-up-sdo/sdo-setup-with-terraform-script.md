@@ -342,9 +342,9 @@ Configure these parameters in **sumologic.auto.tfvars**.
 | install_circleci | Install Sumo Logic Application for CircleCI. Options: app, collection, all, and none. | all |
 | install_circleci_SDO_plugin | Install Sumo Logic Collection and FER for CircleCI SDO integration. | all |
 | install_sumo_to_opsgenie_webhook | Install[ Sumo Logic to Opsgenie WebHook](../../manage/connections-and-integrations/webhook-connections/opsgenie.md). install_opsgenie should be true for this option to be true. | true |
-| install_sumo_to_jiracloud_webhook | Install [Sumo Logic to Jira Cloud WebHook](../../manage/connections-and-integrations/webhook-connections/jira/jira-cloud.md). | true |
-| install_sumo_to_jiraserver_webhook | Install [Sumo Logic to Jira Server WebHook](../../manage/connections-and-integrations/webhook-connections/jira/jira-server.md). | true |
-| install_sumo_to_jiraservicedesk_webhook | Install [Sumo Logic to Jira Service Desk WebHook](../../manage/connections-and-integrations/webhook-connections/jira/jira-server.md) | true |
+| install_sumo_to_jiracloud_webhook | Install [Sumo Logic to Jira Cloud WebHook](../../manage/connections-and-integrations/webhook-connections/jira-cloud.md). | true |
+| install_sumo_to_jiraserver_webhook | Install [Sumo Logic to Jira Server WebHook](../../manage/connections-and-integrations/webhook-connections/jira-server.md). | true |
+| install_sumo_to_jiraservicedesk_webhook | Install [Sumo Logic to Jira Service Desk WebHook](../../manage/connections-and-integrations/webhook-connections/jira-server.md) | true |
 | install_sumo_to_pagerduty_webhook | Install [Sumo Logic to Pagerduty WebHook](../../manage/connections-and-integrations/webhook-connections/pagerduty.md) | true |
 | jira_cloud_sc | Source Category for [Jira Cloud] (/07Sumo-Logic-Apps/08App_Development/Jira_Cloud) | SDO/Jira/Cloud |
 | jira_server_sc | Source Category for [Jira Server] (/07Sumo-Logic-Apps/08App_Development/Jira) | SDO/Jira/Server/Events |
@@ -389,7 +389,7 @@ Configure these parameters in **webhooks.auto.tfvars**.
 
 | Parameter | Description |
 |--|--|
-| jira_cloud_auth | To generate Authorization Header follow this [doc](../../manage/connections-and-integrations/webhook-connections/jira/jira-cloud.md) |
+| jira_cloud_auth | To generate Authorization Header follow this [doc](../../manage/connections-and-integrations/webhook-connections/jira-cloud.md) |
 | jira_cloud_user | Jira Cloud Username |
 | jira_cloud_password | Jira Cloud Password or [API Key](https://confluence.atlassian.com/cloud/api-tokens-938839638.html) |
 | jira_cloud_jql | Jira Cloud [Query Language](https://support.atlassian.com/jira-software-cloud/docs/what-is-advanced-searching-in-jira-cloud/) Example: "project = Sumo" |
@@ -406,7 +406,7 @@ Configure these parameters in **webhooks.auto.tfvars**.
 | Parameter | Description |
 |--|--|
 | jira_servicedesk_url | Jira Service Desk URL, can be same as Jira Cloud URL |
-| jira_server_auth | [Basic Authorization Header](../../manage/connections-and-integrations/webhook-connections/jira/jira-server.md)) |
+| jira_server_auth | [Basic Authorization Header](../../manage/connections-and-integrations/webhook-connections/jira-server.md)) |
 | jira_server_projectkey | Jira Server [Project Key](https://confluence.atlassian.com/adminjiraserver/defining-a-project-938847066.html) |
 | jira_server_issuetype  | Jira Server [Issue Type](https://confluence.atlassian.com/adminjiraserver/defining-issue-type-field-values-938847087.html), for example 'Bug' |
 | jira_server_priority | Issue [Priority](https://confluence.atlassian.com/adminjiraserver/associating-priorities-with-projects-939514001.html). For Example, 3 |
@@ -438,7 +438,7 @@ Configure these parameters in **webhooks.auto.tfvars**.
 
 | Parameter | Description |
 |--|--|
-| jira_server_auth | [Basic Authorization Header](../../manage/connections-and-integrations/webhook-connections/jira/jira-server.md) |
+| jira_server_auth | [Basic Authorization Header](../../manage/connections-and-integrations/webhook-connections/jira-server.md) |
 | jira_server_projectkey | Jira Server [Project Key](https://confluence.atlassian.com/adminjiraserver/defining-a-project-938847066.html) |
 | jira_server_issuetype  | Jira Server [Issue Type](https://confluence.atlassian.com/adminjiraserver/defining-issue-type-field-values-938847087.html), for example 'Bug' |
 | jira_server_priority | Issue [Priority](https://confluence.atlassian.com/adminjiraserver/associating-priorities-with-projects-939514001.html), for example 3 |

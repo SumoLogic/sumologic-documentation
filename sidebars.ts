@@ -146,6 +146,9 @@ module.exports = {
             'manage/connections-and-integrations/webhook-connections/cloud-soar',
             'manage/connections-and-integrations/webhook-connections/datadog',
             'manage/connections-and-integrations/webhook-connections/hipchat',
+            'manage/connections-and-integrations/webhook-connections/jira-cloud',
+            'manage/connections-and-integrations/webhook-connections/jira-server',
+            'manage/connections-and-integrations/webhook-connections/jira-service-desk',
             'manage/connections-and-integrations/webhook-connections/microsoft-azure-functions',
             'manage/connections-and-integrations/webhook-connections/microsoft-teams',
             'manage/connections-and-integrations/webhook-connections/new-relic',
@@ -153,19 +156,7 @@ module.exports = {
             'manage/connections-and-integrations/webhook-connections/opsgenie',
             'manage/connections-and-integrations/webhook-connections/pagerduty',
             'manage/connections-and-integrations/webhook-connections/slack',
-            {
-              type: 'category',
-              label: 'Jira',
-              collapsible: true,
-              collapsed: true,
-              link: {type: 'doc', id: 'manage/connections-and-integrations/webhook-connections/jira/index'},
-              items: [
-                'manage/connections-and-integrations/webhook-connections/jira/jira-cloud',
-                'manage/connections-and-integrations/webhook-connections/jira/jira-server',
-                'manage/connections-and-integrations/webhook-connections/jira/jira-service-desk',
-              ],
-            },
-          ],
+          ]
         },
         {
           type: 'category',
