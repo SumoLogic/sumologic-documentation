@@ -1,8 +1,8 @@
 ---
 id: schedule-searches-for-webhook-connections
+title: Schedule Searches for Webhook Connections
+sidebar_label: Schedule Searches
 ---
-
-# Schedule Searches for Webhook Connections
 
 Scheduled searches are saved searches that run automatically at specified intervals. When a scheduled search is configured to send an alert, it can be sent to another tool using a Webhook Connection.
 
@@ -25,26 +25,26 @@ To set up a scheduled search for a Webhook Connection:
 
 1. For all configuration options, see [Schedule a Search](../../../alerts/scheduled-searches/schedule-search.md). 
 1. **Alert Type**. Select **Webhook**.
-1. Select a **Webhook** from the **Connection** list. 
+1. Select a **Webhook** from the **Connection** list.
 
-   * (Optional) Select the checkbox if you want a **separate alert sent for each search result**. You can set up to a maximum of 100 alerts. Any results that exceed the configured maximum do not generate an alert. For example, if your scheduled search is configured to send a maximum of 50 alerts and generates 60 results only the first 50 results will generate an alert, all subsequent results will not generate an alert. 
-   
+   * (Optional) Select the checkbox if you want a **separate alert sent for each search result**. You can set up to a maximum of 100 alerts. Any results that exceed the configured maximum do not generate an alert. For example, if your scheduled search is configured to send a maximum of 50 alerts and generates 60 results only the first 50 results will generate an alert, all subsequent results will not generate an alert.
+
     :::note
     This may generate duplicate alerts for non-real-time schedules. If your search time range is longer than the search frequency (like a window of 60 minutes, but the frequency of 15 minutes) duplicate alerts are sent since there is an overlap of 45 minutes between each search and all results are sent, not just the difference.
     :::
 
-   * [Webhook payload variables](set-up-webhook-connections.md) will have values generated for each result. For example, a payload defined as: 
-    
+   * [Webhook payload variables](set-up-webhook-connections.md) will have values generated for each result. For example, a payload defined as:
+
         ```
         {{Results.client_ip}} had {{Results.errors}} errors
         ```
-    
+
         would have a payload from three alerts as:
 
         * `70.69.152.165 had 391 errors`
         * `17.233.159.60 had 381 errors`
         * `169.107.162.237 had 319 ``errors`
-   
+
    * If you have selected this checkbox and are scheduling this search to send results to a [ServiceNow security or ITSM incident](../servicenow/set-up-servicenow-incident-webhook-connection.md), you will need to set a field called `correlation_id` to be unique across each search result. For example, if you wanted to create a separate alert for each IP address in your search results, you would create the field as follows: 
 
         ```
@@ -52,7 +52,7 @@ To set up a scheduled search for a Webhook Connection:
         ```
 
         and then add the following line in the JSON payload below:  
-    
+
         ```
         "correlation_id": "{{Results.correlation_id}}",
         ```
