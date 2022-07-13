@@ -1,8 +1,8 @@
 ---
 id: pagerduty
+title: Webhook Connection for PagerDuty
+sidebar_label: PagerDuty
 ---
-
-# Webhook Connection for PagerDuty
 
 PagerDuty webhook connections allow you to send alert results as a PagerDuty notification. You can learn more about PagerDuty webhooks in
 their [API Help](https://v2.developer.pagerduty.com/docs/webhooks-v2-overview).

@@ -1,8 +1,8 @@
 ---
 id: microsoft-teams
+title: Webhook Connection for Microsoft Teams
+sidebar_label: Microsoft Teams
 ---
-
-# Webhook Connection for Microsoft Teams
 
 [Webhook connections](set-up-webhook-connections.md) rely on HTTP endpoints that tell Sumo Logic where to send data. You can set up any number of connections. 
 
@@ -35,7 +35,7 @@ This section demonstrates how to create a webhook connection from Sumo Logic to 
 1. (Optional) **Custom Headers**, enter up to five comma separated key-value pairs.
 1. Customize the **Activity Title** if desired, the default is `Monitor Alert: {{TriggerType}} on {{Name}}`.
 1. (Optional) Customize the **Activity Subtitle** if desired, the default is `Created On Date: {{TriggerTime}}`.
-1. (Optional) Customize the **Card Text** if desired, the default is `{{Description}}`. 
+1. (Optional) Customize the **Card Text** if desired, the default is `{{Description}}`.
 
     :::note
     Edits to the **Activity Title**, **Activity Subtitle**, and **Card Text** values are automatically updated in the JSON payload and vice versa.

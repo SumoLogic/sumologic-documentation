@@ -1,11 +1,11 @@
 ---
 id: set-up-webhook-connections
+title: Set Up Webhook Connections
+sidebar_label: Setup
 ---
 
-# Set Up Webhook Connections
-
 A Webhook is an HTTP callback: an HTTP POST that occurs when something happens. Webhook connections allow you to send Sumo Logic alerts to
-third-party applications that accept incoming webhooks. 
+third-party applications that accept incoming webhooks.
 
 For example, once you set up a webhook connection in Sumo Logic and create a scheduled search, you can send an alert from that scheduled
 search as a post to a Slack channel, or integrate with third-party systems. In addition to an alert, you can include a link directly to a search and even a few search results (depending on the third party tool you're connecting to). There is no limit to the number of webhooks you
@@ -13,17 +13,17 @@ can send from Sumo Logic, but your third party might impose restrictions. In add
 
 Along with a fully customizable webhook connection, you can quickly create webhooks for:
 
-* [AWS Lambda](webhook-connection-aws-lambda.md)
-* [Azure Functions](webhook-connection-microsoft-azure-functions.md)
-* [Datadog](webhook-connection-datadog.md)
-* [HipChat](webhook-connection-hipchat.md)
-* [Jira](/docs/manage/connections-and-integrations/webhook-connections/webhook-jira)
-* [Microsoft Teams](webhook-connection-microsoft-teams.md)
-* [New Relic](webhook-connection-new-relic.md)
-* [Opsgenie](webhook-connection-opsgenie.md)
-* [PagerDuty](webhook-connection-pagerduty.md)
+* [AWS Lambda](aws-lambda.md)
+* [Azure Functions](microsoft-azure-functions.md)
+* [Datadog](datadog.md)
+* [HipChat](hipchat.md)
+* [Jira](jira-cloud.md) 
+* [Microsoft Teams](microsoft-teams.md)
+* [New Relic](new-relic.md)
+* [Opsgenie](opsgenie.md)
+* [PagerDuty](pagerduty.md)
 * [Service Now](../servicenow/set-up-servicenow-connections.md)
-* [Slack](webhook-connection-slack.md)
+* [Slack](slack.md)
 
 Most services with a REST API should allow you to create a connection using the generic webhook.
 
@@ -190,7 +190,7 @@ username and password are concatenated, base64-encoded, and passed in the `Auth
 * The authorization method and a space, such as "Basic " is then put before the encoded string.
 
 For example, if the user agent uses `Aladdin` as the username and `OpenSesame` as the password then the field could be formed with a
-simple bash command as follows: 
+simple bash command as follows:
 
 ```
 echo -n "Aladdin:OpenSesame" | base64
@@ -219,8 +219,8 @@ Basic QWxhZGRpbjpPcGVuU2VzYW1l
 This example payload is flat JSON. 
 
 ```json
-{ 
-    "text": "{{Name}} ran over {{TimeRange}} at {{FireTime}}", 
+{
+    "text": "{{Name}} ran over {{TimeRange}} at {{FireTime}}",
     "results": "{{ResultsJson}}",
      "num": "{{NumQueryResults}}"
 }
