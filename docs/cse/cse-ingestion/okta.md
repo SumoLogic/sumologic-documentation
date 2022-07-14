@@ -1,8 +1,9 @@
 ---
 id: okta
+title: Okta
+sidebar_label: Okta
+description: tk
 ---
-
-# Okta
 
 ## Step 1: Configure collection
 

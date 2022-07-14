@@ -1,8 +1,9 @@
 ---
 id: aws-network-load-balancer
+title: AWS Network Load Balancer
+sidebar_label: AWS Network Load Balancer
+description: tk
 ---
-
-# AWS Network Load Balancer
 
 The AWS Network Load Balancer service is distributed in OSI Layer 4 (i.e., network) traffic (e.g., TCP, UDP, TLS) and can handle over a million requests per second. 
 

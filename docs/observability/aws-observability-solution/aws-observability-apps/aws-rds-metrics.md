@@ -1,8 +1,9 @@
 ---
 id: aws-rds-metrics
+title: AWS RDS Metrics
+sidebar_label: AWS RDS Metrics
+description: tk
 ---
-
-# AWS RDS Metrics
 
 [Amazon Relational Database Service (Amazon RDS)](https://aws.amazon.com/rds/) is optimized to run in the cloud. The
 RDS Amazon Web Service (AWS) simplifies the setup, operation, and scaling of relational database instances for use in applications throughout your infrastructure. 
@@ -18,7 +19,7 @@ Amazon RDS sends metrics to CloudWatch for each active database instance every m
 **Average CPU Utilization by Database Instance**
 
 ```sql
-_sourceCategory=Labs/AWS/RDS/Metric Namespace=aws/rds metric=CPUUtilization statistic=average account=* 
+_sourceCategory=Labs/AWS/RDS/Metric Namespace=aws/rds metric=CPUUtilization statistic=average account=*
 region=* entity=* dbinstanceidentifier=* | avg by dbinstanceIdentifier, entity
 ```
 

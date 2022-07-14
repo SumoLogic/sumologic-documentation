@@ -1,8 +1,9 @@
 ---
 id: amazon-elasticache
+title: Amazon ElastiCache
+sidebar_label: Amazon ElastiCache 
+description: tk
 ---
-
-# Amazon ElastiCache
 
 Amazon ElastiCache allows you to set up, run, and scale popular open-source compatible in-memory data stores in the cloud.
 
@@ -37,7 +38,7 @@ Top 10 ReplicationGroupId's:
 ```sql
 account=dev region=us-east-1 namespace=aws/elasticache "\"eventSource\":\"elasticache.amazonaws.com\"" replicationGroupId
 | json "userIdentity", "eventSource", "eventName", "awsRegion", "sourceIPAddress", "userAgent", "eventType", "recipientAccountId", "requestParameters", "responseElements", "requestID", "errorCode", "errorMessage" as userIdentity, event_source, event_name, region, src_ip, user_agent, event_type, recipient_account_id, requestParameters, responseElements, request_id, error_code, error_message nodrop
-| where event_source = "elasticache.amazonaws.com" 
+| where event_source = "elasticache.amazonaws.com"
 | json field=userIdentity "type", "principalId", "arn", "userName", "accountId" nodrop
 | json field=userIdentity "sessionContext.attributes.mfaAuthenticated" as mfaAuthenticated nodrop
 | json field=requestParameters "replicationGroupId", "engine", "engineVersion" as req_replicationGroupId, req_engine, req_engineVersion nodrop

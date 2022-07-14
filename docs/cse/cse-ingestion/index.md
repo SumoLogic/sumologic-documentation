@@ -1,8 +1,9 @@
 ---
 slug: /cse/cse-ingestion
+title: CSE Ingestion
+sidebar_label: CSE Ingestion
+description: tk
 ---
-
-# CSE Ingestion
 
 The topics in this section provide data ingestion guides for supported
 products and services.

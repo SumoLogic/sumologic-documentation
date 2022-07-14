@@ -1,8 +1,9 @@
 ---
 id: cse-rules-syntax
+title: CSE Rules Syntax
+sidebar_label: CSE Rules Syntax 
+description: tk
 ---
-
-# CSE Rules Syntax
 
 This topic describes commonly used CSE rules language functions. Rules language functions are used in CSE rule expressions. For information about rules and rule expressions, see [About CSE Rules](about-cse-rules.md).
 
@@ -689,7 +690,7 @@ attribute.
 
 **Syntax notes**
 
-* In CIP, you can use the `json` operator without specifying a field to parse, in which case the operation is performed against the `_raw` field. 
+* In CIP, you can use the `json` operator without specifying a field to parse, in which case the operation is performed against the `_raw` field.
 
     :::note
     Currently, to use the `json` operator in CSE you must supply a field and an alias, as shown in the syntax above. Currently, the `json` operator is the only Sumo Logic search operator that you can use an alias with in CSE.
@@ -699,14 +700,14 @@ attribute.
 * The pipe character before the first `json` clause is optional.
 * You can use multiple `json` clauses in a query.
 * You can use only one `where` clause per query.
-* CSE doesn’t support all of the `json` operator syntax options that CIP does, but you can do things like: 
+* CSE doesn’t support all of the `json` operator syntax options that CIP does, but you can do things like:
 
-  * `| json field=fields "foo.bar['baz']" as nestedKey` 
-  * `| json field=fields "foo[0]" as indexKey` 
+  * `| json field=fields "foo.bar['baz']" as nestedKey`
+  * `| json field=fields "foo[0]" as indexKey`
   * `json field=fields "foo[*]" as asteriskKey`
-        
+
         Works for arrays, not maps.
-  
+
   * `| json field=fields "['foo.bar']" as topLevelKey`
 
         This is a top-level key named \`foo.bar\`.
@@ -718,7 +719,7 @@ attribute.
 | where toInt(alias) > 5
 ```
 
-  
+
 ```
 | json field=fields "packetsSent" as packets_sent
 | json field=fields "packetsReceived" as packets_received
@@ -761,7 +762,7 @@ null.
 `“foo” LIKE null   // false`
 
 `bro_rdp_cookie like '%admin%' // true if the value of bro_rdp_cookie matches %admin%`  
-  
+
 In the following example, the string` '%SystemDrive%\Users\John'` has to match the pattern `'\%SystemDrive\%\\Users%'` to return “true”.
 
 `'%SystemDrive%\Users\John' like '\%SystemDrive\%\\Users%'`  
@@ -775,7 +776,7 @@ where:
     * `_` represents a single character 
     * `%` Represents zero, one, or multiple characters    
 
-**Example log** 
+**Example log**
 
 Returns the natural logarithm of the argument.
 
@@ -1135,33 +1136,33 @@ Filters results based on the value of a boolean expression.  
 
 The following CIP literals are supported in CSE:
 
-* Time-based suffixed literals (millisecond-based. i.e., 1s == 1000) 
+* Time-based suffixed literals (millisecond-based. i.e., 1s == 1000)
 
-  * ns (nanosecond) 
+  * ns (nanosecond)
   * us (microsecond)
-  * ms (millisecond) 
-  * s (second) 
-  * m (minute) 
-  * h (hour) 
-  * d (day) 
+  * ms (millisecond)
+  * s (second)
+  * m (minute)
+  * h (hour)
+  * d (day)
   * w (week)
 
-* Base-1000 suffixed literals 
+* Base-1000 suffixed literals
 
-  * k or K (1,000) 
-  * M (1,000,000) 
-  * G or B (1,000,000,000) 
-  * T (1,000,000,000,000) 
+  * k or K (1,000)
+  * M (1,000,000)
+  * G or B (1,000,000,000)
+  * T (1,000,000,000,000)
   * P (1,000,000,000,000,000)
 
-* Base-1024 suffixed literals 
+* Base-1024 suffixed literals
 
-  * Ki (1,024) 
-  * Mi (1,048,576) 
-  * Gi (1,073,741,824) 
-  * Ti (1,099,511,627,776) 
+  * Ki (1,024)
+  * Mi (1,048,576)
+  * Gi (1,073,741,824)
+  * Ti (1,099,511,627,776)
   * Pi (1,125,899,906,842,624)
 
-* Escaped double quote are supported 
+* Escaped double quote are supported
 
   * For example, `"\"foo\""` is the literal `"foo"`

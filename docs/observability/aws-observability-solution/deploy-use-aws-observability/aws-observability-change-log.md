@@ -1,14 +1,15 @@
 ---
 id: aws-observability-change-log
+title: Change Log
+sidebar_label: Change Log
+description: tk
 ---
-
-# Change Log
 
 This section provides details on the available versions of the AWS Observability Terraform script and CloudFormation template. The details also include all the AWS and Sumo Logic resources that will be updated and resolved bugs when upgrading the existing version of the Terraform script or CloudFormation template to the latest version.
 
 To install or upgrade to the required version of the CloudFormation template, use the URL of the YAML file corresponding to the right version number as the Amazon S3 URL in the AWS CloudFormation section of the AWS Management Console. See [Selecting a stack template](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-using-console-create-stack-template.html) for more information.
 
-## v2.4.0, 30-March-2022	
+## v2.4.0, 30-March-2022
 AWS Observability Solution (S3 Link for cloudformation template):
 https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/aws-observability-versions/v2.4.0/sumologic_observability.master.template.yaml
 
@@ -33,7 +34,7 @@ Bug Fixes:
 
 ## v2.3.0, 24-Sept-2021
 
-CloudFormation YAML URL: https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/aws-observability-versions/v2.3.0/sumologic_observability.master.template.yaml 
+CloudFormation YAML URL: https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/aws-observability-versions/v2.3.0/sumologic_observability.master.template.yaml
 
 [Terraform folder](https://github.com/SumoLogic/sumologic-solution-templates/tree/master/aws-observability-terraform) in the [sumologic-solution-templates GitHub Repo](https://github.com/SumoLogic/sumologic-solution-templates)
 
@@ -41,16 +42,16 @@ Updates:
 
 * Provide Terraform Support for setting up the AWS Observability Solution
 * Allow for rapid on-boarding of multiple AWS accounts via CloudFormation templates and CSV files that map AWS account-ids to account aliases
-* Allow for collection of CloudWatch metrics data from all possible AWS namespaces 
+* Allow for collection of CloudWatch metrics data from all possible AWS namespaces
 * Updated ECS, Elasticache, EC2, RDS and Lambda dashboards with minor cosmetic changes
 
 Bug Fixes:
 
 * Changed the IAM Role to ensure that permissions are applied to S3 buckets used by AWS Observability only
-* Made the AWS Account ID available as the “accountId” field 
-* OOTB monitors: 
+* Made the AWS Account ID available as the “accountId” field
+* OOTB monitors:
   * Added a new monitor “AWS EC2 - High Total CPU Utilization”
-  * Renamed “AWS EC2 - High CPU Utilization” to “AWS EC2 - High System CPU Utilization” 
+  * Renamed “AWS EC2 - High CPU Utilization” to “AWS EC2 - High System CPU Utilization”
   * Fixed the underlying query for the “AWS EC2 - High Disk Utilization” monitor
 
 ## v2.2.0, 30-Apr-2021
@@ -78,7 +79,7 @@ CloudFormation YAML URL: https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/
 Updates:
 
 * Out-of-the-box Alerts
-* Support for AWS NLB, Amazon ECS and ElastiCache 
+* Support for AWS NLB, Amazon ECS and ElastiCache
 * CloudFormation template versioning
 * Support for AWS/SQS and AWS/SNS CloudWatch Metrics Namespaces
 * Automatic deletion of all resources created by the test CloudFormation template that checks permissions

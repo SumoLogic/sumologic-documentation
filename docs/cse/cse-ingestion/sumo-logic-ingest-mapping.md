@@ -1,8 +1,9 @@
 ---
 id: sumo-logic-ingest-mapping
+title: Configure a Sumo Logic Ingest Mapping
+sidebar_label: Configure a Sumo Logic Ingest Mapping
+description: tk
 ---
-
-# Configure a Sumo Logic Ingest Mapping
 
 This topic has instructions for creating a CSE ingest mapping for a data source. An ingest mapping gives CSE the information it needs in order to map message fields to Record attributes. These are referred to as mapping hints, and include: Format, Vendor, Product, and Event ID Pattern.
 
@@ -59,7 +60,7 @@ For these formats, CSE uses the values you configure for **Product**, **Vendor**
 
 This table in this section is a quick reference to supplying values for each supported message format on the **Create Sumo Logic Mapping** page in CSE. This reference summarizes the step-by-step instructions provided below. 
 
-| If your messages are... | Select this option for Format | Are Vendor, Product, and 
+| If your messages are... | Select this option for Format | Are Vendor, Product, and
 Event ID pattern required? | How CSE picks a mapper |
 |--|--|--|--|
 | Unstructured logs lines with a syslog header | Process Syslog with Valid Header | No | CSE will send the messages to the mapper whose name is the same as the name of the grok pattern the message matches.<br/>This option is NOT recommended because legacy parsers (groks) are being phased out and replaced by Sumo Logic system parsers. Check for a system parser on the **Manage Data > Logs > Parsers** page in Sumo Logic. |
@@ -129,25 +130,25 @@ If you would like to manipulate the JSON data before it’s flattened and parsed
 ![advanced-json-parsing.png](/img/cse/advanced-json-parsing.png)
 
 1. **JSON Explode**. This option takes a JSON array value (flattened value) and creates multiple copies of the log line, one for each value of the array. You can only apply JSON Explode to one attribute within the JSON. For example, given the following example JSON log:  
-      
+
     `{ “animals” : { “pets” : [“cat”, “dog”], “owned”: “true”}, “kids”: “none”}`  
-      
-      
+
+
     Setting the JSON Explode to `animals.pets` results in the creation of two separate raw log lines:  
-      
+
     `{ “animals” : { “pets” : “dog”, “owned”: “true”}, “kids”: “none”}{ “animals” : { “pets” : “cat”, “owned”: “true”}, “kids”: “none”}`  
-      
+
      
 1. **JSON Zip Operations**. Collapses JSON arrays in which key-value
     pairs are repeated with a common key identifier and value
     identifier. For example, given the following JSON array:  
-      
+
     `{ “pets” : [ {“name” : “fluffy”}, {“type”: “cat”}, {“name”: “fido”, “type” : “dog”}, {“name”: “sammy”, “type” : “snake}]}`  
-      
+
     The JSON Zip operation will turn the array into:   
-      
+
     `{ “pets” : { “fluffy” : “cat” , “fido” : “dog”, “sammy” : “snake”}}`  
-      
+
     The JSON Zip parameters are:
 
 * **Key Name**. The name of the attribute whose value is the array to zip.
@@ -161,7 +162,7 @@ If your messages are JSON format with a syslog header:
 1. **Format**. Select “Process Syslog with Valid Header”. 
 1. **Syslog Format**. Choose “JSON”.
 1. You must specify values for **Vendor**, **Product,** and **Event ID**, which CSE will use to determine what mapper to use for your messages. If you don’t know these values, see [Determining Product, Vendor, and Event ID pattern](#determining-product-vendor-and-event-id-pattern).  
-      
+
     ![create-mapping-4.png](/img/cse/create-mapping-4.png)
 
 ### CEF or LEEF messages with a syslog header
@@ -194,7 +195,7 @@ If your messages are structured syslog data (key-value pairs) with a syslog head
 1. **Syslog Delimiter**. This is the delimiter between the key-value pairs.
 1. **Syslog kv Delimiter**. This is the delimiter between a key and a value.
 1. You must specify values for **Vendor**, **Product**, and **Event ID**, which CSE will use to determine what mapper to use for your messages. If you don’t know these values, see [Determining Product, Vendor, and Event ID pattern](#determining-product-vendor-and-event-id-pattern).  
-      
+
     ![syslog-delimiters.png](/img/cse/syslog-delimiters.png)
 
 ### Microsoft Windows event logs in XML format
@@ -229,7 +230,7 @@ If the messages with the source category you’ve specified in the mapping have
 
 1. **Format**. Select “Extracted Fields JSON”
 1. You must specify values for **Vendor**, **Product**, and **Event ID**, which CSE will use to determine what mapper to use for your messages. If you don’t know these values, see [Determining Product, Vendor, and Event ID pattern](#determining-product-vendor-and-event-id-pattern).  
-      
+
     ![extracted-fields-json.png](/img/cse/extracted-fields-json.png)
 
 ## Enable mapping

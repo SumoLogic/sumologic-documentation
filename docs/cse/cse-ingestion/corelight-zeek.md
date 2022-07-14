@@ -1,8 +1,9 @@
 ---
 id: corelight-zeek
+title: Corelight Zeek
+sidebar_label: Corelight Zeek
+description: tk
 ---
-
-# Corelight Zeek
 
 This page has instructions for collecting Corelight Zeek log messages and sending them to Sumo Logic to be ingested by CSE.
 

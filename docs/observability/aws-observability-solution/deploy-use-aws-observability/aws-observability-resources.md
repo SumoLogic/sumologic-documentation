@@ -1,8 +1,10 @@
 ---
 id: aws-observability-resources
+title: AWS Observability Resources
+sidebar_label: AWS Observability Resources
+description: tk
 ---
 
-# AWS Observability Resources
 
 Deployment using Terraform and the CloudFormation template creates a number of resources in AWS and in Sumo Logic.
 

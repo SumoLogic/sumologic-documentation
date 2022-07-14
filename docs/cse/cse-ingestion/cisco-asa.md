@@ -1,8 +1,9 @@
 ---
 id: cisco-asa
+title: Cisco ASA
+sidebar_label: Cisco ASA
+description: tk
 ---
-
-# Cisco ASA
 
 This page has instructions for collecting Cisco ASA log messages and sending them to Sumo Logic to be ingested by CSE.
 

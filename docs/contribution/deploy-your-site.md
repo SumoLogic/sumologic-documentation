@@ -2,7 +2,7 @@
 id: build-deploy
 title: Build and Deploy on Local
 sidebar_label: Build and Deploy on Local
-description: Build and Deploy on Local
+description: tk
 ---
 
 Docusaurus is a **static-site-generator**. To preview your work, make sure to run the following commands to install and build. We use Yarn for all installs and builds. Never use NPM commands for installing or updating packages.

@@ -1,8 +1,9 @@
 ---
 id: products-with-log-mappings
+title: Products with Log Mappings
+sidebar_label: Products with Log Mappings
+description: tk
 ---
-
-# Products with Log Mappings
 
 This topic lists products and services, organized by vendor, for
 which CSE provides built-in log mapping and parsing support. 
