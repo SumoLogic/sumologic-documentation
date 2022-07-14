@@ -1,8 +1,9 @@
 ---
 id: run-search-from-alert-email
+title: Run a Search from an Alert Email
+sidebar_label: Run a Search from an Alert Email
+description: tk
 ---
-
-# Run a Search from an Alert Email
 
 When you receive an email created by an [Email Alert](create-email-alert.md)  in a Scheduled Search, only the first 25 results are displayed. (We don't want to flood your email with hundreds of thousands of search results.)
 

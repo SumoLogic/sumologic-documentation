@@ -1,8 +1,9 @@
 ---
 slug: /apm/traces
+title: Traces
+sidebar_label: Traces
+description: tk
 ---
-
-# Traces
 
 ##  Availability
 
@@ -23,7 +24,7 @@ The [Tracing micro lesson](https://www.youtube.com/watch?v=BTqufvTJ4vE&list=PLu
         className="video-container"
         display="initial"
         position="relative"
-        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
         />
 

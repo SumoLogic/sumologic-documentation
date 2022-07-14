@@ -1,8 +1,9 @@
 ---
 id: create-custom-threat-intel-source
+title: Create a Custom Threat Intel Source
+sidebar_label: Create a Custom Threat Intel Source
+description: tk
 ---
-
-# Create a Custom Threat Intel Source
 
 This topic has information about setting up a *custom threat intel
 source* in CSE, which is a threat intel list that you can populate

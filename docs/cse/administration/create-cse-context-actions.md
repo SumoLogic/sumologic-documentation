@@ -1,8 +1,9 @@
 ---
 id: create-cse-context-actions
+title: Create CSE Context Actions
+sidebar_label: Create CSE Context Actions
+description: Information about CSE Context Actions and how to create them.
 ---
-
-# Create CSE Context Actions
 
 This topic has information about CSE Context Actions and how to create them. 
 
@@ -13,7 +14,7 @@ A Context Action is an option that a CSE analyst can use to query an external sy
 An authorized user can configure Context Actions and assign them to particular Entity types, Record fields, or common IOC types.
 
 * **Context Actions on Entity types**. You can assign a Context Action to one or more Entity types, including custom Entity types. An action assigned to an Entity type will be available on any instance of that type in the **Entities** page, or in Insights or Signals that contain Entities of the selected type. For an example, see the screenshot in [How a user accesses Contact Actions](create-cse-context-actions.md).  
-      
+
     An action you assign to an Entity type will also be available for Record fields that contain the Entity type. For example, an action assigned to the Hostname Entity type will be available for the `srcDevice_hostname`, `dstDevice_hostname`, and `device_hostname` Record fields.  
      
 * **Context Actions on Record fields**. You can assign a Context Action to selected Record fields, or all Record fields. In the CSE UI, the action will be available on the Context Action menu for selected fields.  

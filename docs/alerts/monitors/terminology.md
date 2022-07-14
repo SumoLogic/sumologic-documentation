@@ -1,8 +1,9 @@
 ---
 id: terminology
+title: Terminology
+sidebar_label: Terminology
+description: This document provides definitions for technical terms used in Monitors.
 ---
-
-# Terminology
 
 This document provides definitions for technical terms used in Monitors.
 

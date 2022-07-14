@@ -1922,7 +1922,6 @@ module.exports = {
         'contribution/code-of-conduct',
         'contribution/create-document',
         'contribution/markdown-features',
-        'contribution/release-notes',
         'contribution/build-deploy',
         'contribution/translate',
         {

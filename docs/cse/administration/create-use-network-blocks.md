@@ -1,8 +1,9 @@
 ---
 id: create-use-network-blocks
+title: Create and Use Network Blocks
+sidebar_label: Create and Use Network Blocks
+description: tk
 ---
-
-# Create and Use Network Blocks
 
 This topic describes *Network Blocks* and their purpose, and provides instructions for setting them up and using them.
 
@@ -111,7 +112,7 @@ In the table below, the left column contains schema fields that contain IP addre
 | `dstDevice_natIp` | `dstDevice_natIp_location` | `dstDevice_natIp_isInternal` |
 | `srcDevice_ip `| `srcDevice_ip_location` | `srcDevice_ip_isInternal` |
 | `srcDevice_natIp`	 | `srcDevice_natIp_location` | `srcDevice_natIp_isInternal` |
-  
+
 The screenshot below shows a Record that contains several Network Block-related enrichment fields. Note that:
 
 * `dstDevice_ip_isInternal` and `srcDevice_ip_isInternal` indicate that the `dstDevice_ip` and `srcDevice_ip` are both in Network Blocks that are marked Internal.

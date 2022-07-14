@@ -1,8 +1,10 @@
 ---
 id: metrics-transformation-rules
+title: Metrics Transformation Rules
+sidebar_label: Metrics Transformation Rules
+description: tk
 ---
 
-# Metrics Transformation Rules
 
 Metrics transformation rules allow you control how long raw metrics are retained. You can also aggregate metrics at collection time and specify a separate retention period for the aggregated metrics.
 
@@ -56,15 +58,15 @@ Metrics transformation rules are useful when:
     * **Value**. Enter a new name for the dimension, or use a mustache template to form the new dimension name, for example:
 
         `{{metric}}_agg_by_service`
-        
-        If the metric dimension for an aggregated metric was: 
-        
-        `container_memory_usage_byte`  
-        
+
+        If the metric dimension for an aggregated metric was:
+
+        `container_memory_usage_byte` 
+
         the mustache template above would transform the metric dimension to:      
-        
+
         `container_memory_usage_byte_agg_by_svc`
-        
+
         :::note
         * If you use mustache templates to form the name of a dimension you are adding or replacing, you can use a maximum of 10 templates.
         * A metrics transform rule is limited to 10 transformations.
@@ -120,7 +122,7 @@ Here’s what the rule does:
 1. The matching metrics shown above will be retained for 15 days, then discarded.
 1. Matching metrics will be aggregating by the `metric` and `service` dimensions. The aggregated metrics are quantized to one minute and one hour resolutions for all rollup types: avg, min, max, sum, and count.
 1. The aggregated metrics shown above will be retained for 400 days, then discarded.
-    
+
     Only the dimensions upon which the raw metrics were aggregated are preserved in the aggregated metrics. The `container` and `pod` dimensions are not included in the aggregated metrics.
 
 1. The aggregated metrics will have the value of the metric dimension modified to have a suffix of “\_agg”, like this:  
@@ -128,4 +130,3 @@ Here’s what the rule does:
     ```
     metric=container_memory_usage_bytes_agg service=foo metric=container_fs_bytes_agg service=foo
     ```
-
