@@ -7,13 +7,15 @@
 import React, { useState, useRef, useEffect } from 'react';
 import clsx from 'clsx';
 import {
-  isSamePath,
   useCollapsible,
-  useHideableNavbar,
   useThemeConfig,
   Collapsible,
-  useLocalPathname,
 } from '@docusaurus/theme-common';
+import {
+  isSamePath,
+  useLocalPathname,
+  useHideableNavbar,
+} from '@docusaurus/theme-common/internal';
 import NavLink from '@site/src/components/NavLink';
 import NavbarItem from '@theme/NavbarItem';
 import type { Props as NavLinkProps } from '@theme/NavbarItem/DefaultNavbarItem';

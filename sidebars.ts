@@ -83,9 +83,9 @@ module.exports = {
       collapsed: true,
       link: {type: 'doc', id: 'quickstart/index'},
       items: [
-        'quickstart/quickstart-aws',
-        'quickstart/quickstart-github',
-        'quickstart/quickstart-k8s',
+        'observability/aws-observability-solution/quickstart-aws',
+        'sdo/quickstart-sdo-github',
+        'observability/kubernetes-solution/quickstart-k8s'
       ],
     },
   ],
@@ -146,6 +146,9 @@ module.exports = {
             'manage/connections-and-integrations/webhook-connections/cloud-soar',
             'manage/connections-and-integrations/webhook-connections/datadog',
             'manage/connections-and-integrations/webhook-connections/hipchat',
+            'manage/connections-and-integrations/webhook-connections/jira-cloud',
+            'manage/connections-and-integrations/webhook-connections/jira-server',
+            'manage/connections-and-integrations/webhook-connections/jira-service-desk',
             'manage/connections-and-integrations/webhook-connections/microsoft-azure-functions',
             'manage/connections-and-integrations/webhook-connections/microsoft-teams',
             'manage/connections-and-integrations/webhook-connections/new-relic',
@@ -153,19 +156,7 @@ module.exports = {
             'manage/connections-and-integrations/webhook-connections/opsgenie',
             'manage/connections-and-integrations/webhook-connections/pagerduty',
             'manage/connections-and-integrations/webhook-connections/slack',
-            {
-              type: 'category',
-              label: 'Jira',
-              collapsible: true,
-              collapsed: true,
-              link: {type: 'doc', id: 'manage/connections-and-integrations/webhook-connections/jira/index'},
-              items: [
-                'manage/connections-and-integrations/webhook-connections/jira/jira-cloud',
-                'manage/connections-and-integrations/webhook-connections/jira/jira-server',
-                'manage/connections-and-integrations/webhook-connections/jira/jira-service-desk',
-              ],
-            },
-          ],
+          ]
         },
         {
           type: 'category',
@@ -1551,6 +1542,7 @@ module.exports = {
           link: {type: 'doc', id: 'observability/aws-observability-solution/index'},
           items: [
             'observability/aws-observability-solution/about-aws-observability',
+            'observability/aws-observability-solution/quickstart-aws',
             {
               type: 'category',
               label: 'Deploy and Use AWS Observability',
@@ -1631,16 +1623,14 @@ module.exports = {
           link: {type: 'doc', id: 'observability/kubernetes-solution/index'},
           items: [
             'observability/kubernetes-solution/about-kubernetes-solution',
+            'observability/kubernetes-solution/quickstart-k8s',
             'observability/kubernetes-solution/set-up-collection-kubernetes',
+            'observability/kubernetes-solution/view-kubernetes-app-dashboards',
+            'observability/kubernetes-solution/navigate-kubernetes-environment',
             'observability/kubernetes-solution/monitor-kubernetes-effectively',
             'observability/kubernetes-solution/master-metadata-intuitive-searches',
-            'observability/kubernetes-solution/view-kubernetes-app-dashboards',
-            'observability/kubernetes-solution/explore-visual-kubernetes-hierarchy',
-            'observability/kubernetes-solution/troubleshoot-with-explore',
-            'observability/kubernetes-solution/global-intelligence-kubernetes',
             'observability/kubernetes-solution/kubernetes-alerts',
-            'observability/kubernetes-solution/navigate-kubernetes-environment',
-            'observability/kubernetes-solution/next-steps',
+            'observability/kubernetes-solution/troubleshoot-with-explore',
           ],
         },
         'observability/root-cause-explorer',
@@ -1651,6 +1641,27 @@ module.exports = {
   integrations: [
     'integrations/integrations',
     {
+      type: 'category',
+      label: 'Containers and Orchestration',
+      collapsible: true,
+      collapsed: true,
+      link: {type: 'doc', id: 'integrations/containers-orchestration/index'},
+      items: [
+        'integrations/containers-orchestration/activemq',
+        {
+          type: 'category',
+          label: 'Kubernetes',
+          collapsible: true,
+          collapsed: true,
+          link: {type: 'doc', id: 'integrations/containers-orchestration/kubernetes/index'},
+          items: [
+              'integrations/containers-orchestration/kubernetes/collect-logs-metrics',
+              'integrations/containers-orchestration/kubernetes/install-apps-alerts-dashboards',
+            ],
+          },
+        ],
+      },
+      {
       type: 'category',
       label: 'PCI Compliance',
       collapsible: true,
@@ -1716,6 +1727,7 @@ module.exports = {
       items: [
         'sdo/about-sdo',
         'sdo/supported-tools-schema',
+        'sdo/quickstart-sdo-github',
         {
           type: 'category',
           label: 'Set Up SDO Solution',
@@ -1928,6 +1940,7 @@ module.exports = {
       collapsed: false,
       link: {type: 'doc', id: 'contribution/index'},
       items: [
+        'contribution/code-of-conduct',
         'contribution/create-document',
         'contribution/markdown-features',
         'contribution/release-notes',
@@ -1943,6 +1956,21 @@ module.exports = {
             'contribution/templates/template-doc'
           ]
         }
+      ],
+    },
+  ],
+  releasenotes: [
+    {
+      type: 'category',
+      label: 'Release Notes',
+      collapsible: true,
+      collapsed: false,
+      link: {type: 'doc', id: 'releasenotes/index'},
+      items: [
+        'releasenotes/cloud-siem',
+        'releasenotes/collector',
+        'releasenotes/developer',
+        'releasenotes/service',
       ],
     },
   ],
