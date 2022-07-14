@@ -1,15 +1,16 @@
 ---
 id: kubernetes-alerts
+title: Kubernetes Alerts
+sidebar_label: Setting Alerts
+hide_table_of_contents: true
 ---
-
-# Kubernetes Alerts
 
 To help determine if the Kubernetes cluster is available and performing well, the Sumo Logic monitors are provided with out of box alerts.
 
-:::note
-The alerts are built based on metrics datasets and have preset thresholds.
+The alerts in the table below are built based on metrics datasets and have preset thresholds.
 
-To install the Kubernetes app and alerts, see Install the Kubernetes App, Alerts, and Dashboards. 
+:::info
+For information on creating customized alerts, see [Monitors](https://help.sumologic.com/Visualizations-and-Alerts/Alerts/Monitors).
 :::
 
 | Name | Description | Trigger Type (Critical / Warning / MissingData) | Alert Condition | Recovery Condition |

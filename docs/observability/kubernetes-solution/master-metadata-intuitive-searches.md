@@ -1,8 +1,8 @@
 ---
 id: master-metadata-intuitive-searches
+title: Master metadata for intuitive searches
+sidebar_label: Customizing Your Metadata
 ---
-
-# Master metadata for intuitive searches
 
 You can create fields with key-value pairs that label logs with custom metadata. Referencing log data with fields based on meaningful associations makes searches easier and more intuitive. Sumo Logic allows you to add custom fields to collectors that define key-value pairs at the source level. The custom fields in the metadata streams are then automatically extracted for searching, querying, and graphing. This allows you to view results for intuitively referenced subsets not traditionally tagged as source categories. 
 
@@ -50,7 +50,7 @@ To add a custom field to a collector, do the following:
 
 Now, any logs sent to this Collector will have these key-value pairs associated with it. With this association, you can search for `cluster=k8s.dev` or  `pod_test=k8s.test` to return your logs.
 
-### Leveraging metadata for quicker results
+## Leveraging metadata for quicker results
 
 In this section you learn how to use metadata to search by components of the Kubernetes environment, such as containers, pods, and namespaces, for localized investigation and analysis. You will also use metadata set with key-value pairs to effectively find the log data, and display Kubernetes labels and view the respective data in your query results.
 
