@@ -2,6 +2,7 @@
 id: kubernetes-alerts
 title: Kubernetes Alerts
 sidebar_label: Setting Alerts
+description: tk
 hide_table_of_contents: true
 ---
 
