@@ -1,8 +1,8 @@
 ---
 id: monitor-kubernetes-effectively
+title: Monitor Kubernetes Effectively
+sidebar_label: Monitoring Kubernetes Architecture
 ---
-
-# Monitor Kubernetes Effectively
 
 This page provides insights for effectively monitoring your Kubernetes environment with Sumo Logic, and is organized according to the individual areas of the Kubernetes architecture.
 
