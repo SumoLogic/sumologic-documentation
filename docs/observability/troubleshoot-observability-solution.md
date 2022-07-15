@@ -1,8 +1,9 @@
 ---
 id: troubleshoot-observability-solution
+title: Troubleshoot with the Observability Solution
+sidebar_label: Troubleshooting
+description: tk
 ---
-
-# Troubleshoot with the Observability Solution
 
 Now that you have identified the issue and isolated the cause to a specific service or area, the next step is to get to the root cause and fix it so that the system could be restored to a healthy state.
 
