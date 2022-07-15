@@ -1,12 +1,19 @@
 ---
-id: view-kubernetes-app-dashboards
-title: View Sumo Logic Kubernetes App Dashboards
-sidebar_label: Kubernetes App Dashboards
+id: apps
+title: Sumo Logic Apps for Kubernetes
+sidebar_label: Kubernetes Apps
+description: tk
 ---
 
-Sumo Logic combines metrics, logs, and events to a create real-time unified view of the performance, uptime, and security of your Kubernetes environment, The Sumo Logic Kubernetes Solution leverages the standards endorsed by the Cloud Native Computing Foundation (CNCF), and utilizes the extensive ecosystem of existing integrations for monitoring and troubleshooting Kubernetes platforms. 
+Sumo Logic provides Kubernetes apps across a variety of platforms, each
+with a set of predefined dashboards. 
 
-Sumo Logic utilizes consistent tagging across logs, metrics, events, and security data, resulting in the centralization of enrichment data throughout your Kubernetes environment. Consistent tagging enables administrators to correlate data for metrics, logs, and events for their applications. They can then view the results in Sumo Logic App pre-defined dashboards for analysis and troubleshooting.
+* **[Sumo Logic Kubernetes](/07Sumo-Logic-Apps/10Containers_and_Orchestration/Kubernetes)**: The Sumo Logic Kubernetes App provides visibility into the worker nodes that comprise a cluster, as well as application logs of the worker nodes. The App is a single-pane-of-glass for monitoring and troubleshooting container health, replication, load balancing, pod state and hardware resource allocation. This app works seamlessly with the [Sumo Logic Kubernetes - Control Plane] (/07Sumo-Logic-Apps/10Containers_and_Orchestration/Kubernetes_Control_Plane) app.
+* **[Sumo Logic Kubernetes - Control Plane](/07Sumo-Logic-Apps/10Containers_and_Orchestration/Kubernetes_Control_Plane)**: The Sumo Logic Kubernetes Control Plane App manages the master node control plane, including the API server, etcd, kube-system and worker nodes. The App utilizes [Falco](https://falco.org/docs/) Kubernetes Audit events to monitor and detect notable or suspicious activity such as creating pods that are privileged, mount sensitive host paths, use host networking, and the like. This app works seamlessly with the [Sumo Logic Kubernetes] (/07Sumo-Logic-Apps/10Containers_and_Orchestration/Kubernetes) app.
+* **[Amazon EKS](/07Sumo-Logic-Apps/01Amazon_and_AWS/Amazon_EKS_-_Control_Plane)** - Control Plane: The Sumo Logic App for Amazon EKS - Control Plane provides visibility into the EKS control plane with operational insights into the API server, scheduler, control manager, and worker nodes. The app’s preconfigured dashboards display resource-related metrics for Kubernetes deployments, clusters, namespaces, pods, containers, and daemonsets. This App works in conjunction with [Sumo Logic Kubernetes] (/07Sumo-Logic-Apps/10Containers_and_Orchestration/Kubernetes), that provides visibility into worker node metrics and application logs.
+* **[Azure Kubernetes Service (AKS)](/07Sumo-Logic-Apps/04Microsoft-and-Azure/Azure_Kubernetes_Service_(AKS)_-_Control_Plane)** - Control Plane: The Sumo Logic App for Azure Kubernetes Service (AKS) - Control Plane provides visibility into the AKS control plane with operational insights into the API server, scheduler, control manager, and worker nodes. The preconfigured app dashboards display resource-related metrics for Kubernetes deployments, clusters, namespaces, pods, containers, and daemonsets. This App works in conjunction with [Sumo Logic Kubernetes] (/07Sumo-Logic-Apps/10Containers_and_Orchestration/Kubernetes), that provides visibility into worker node metrics and application logs.
+* **[Google Kubernetes Engine (GKE)](/07Sumo-Logic-Apps/06Google/Google_Kubernetes_Engine_(GKE)_-_Control_Plane)** - Control Plane: The Sumo Logic App for Google Kubernetes Engine (GKE) - Control Plane allows you to monitor resource-related logs and metrics for Kubernetes deployments, clusters, namespaces, pods, containers, and daemonsets. The app provides visibility into the GKE control plane with operational insights into the API server, control manager, and worker nodes. This App works in conjunction with [Sumo Logic Kubernetes] (/07Sumo-Logic-Apps/10Containers_and_Orchestration/Kubernetes), that provides visibility into worker node metrics and application logs.
+
 
 ## Kubernetes features
 
@@ -244,3 +251,11 @@ Stack linking for the **Optimization 1- Summary for Kubernetes Deployment and Op
 ![img](/img/kubernetes/explore-integration.png)
 
  
+
+
+
+
+
+Sumo Logic combines metrics, logs, and events to a create real-time unified view of the performance, uptime, and security of your Kubernetes environment, The Sumo Logic Kubernetes Solution leverages the standards endorsed by the Cloud Native Computing Foundation (CNCF), and utilizes the extensive ecosystem of existing integrations for monitoring and troubleshooting Kubernetes platforms. 
+
+Sumo Logic utilizes consistent tagging across logs, metrics, events, and security data, resulting in the centralization of enrichment data throughout your Kubernetes environment. Consistent tagging enables administrators to correlate data for metrics, logs, and events for their applications. They can then view the results in Sumo Logic App pre-defined dashboards for analysis and troubleshooting.
