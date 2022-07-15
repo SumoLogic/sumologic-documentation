@@ -1,8 +1,9 @@
 ---
 id: aws-lambda
+title: AWS Lambda
+sidebar_label: AWS Lambda 
+description: tk
 ---
-
-# AWS Lambda
 
 [AWS Lambda](https://aws.amazon.com/lambda/) allows you to run code without the burden of provisioning or managing servers. The AWS Lambda ULM App is a unified logs and metrics (ULM) app for monitoring operation and performance trends in the Lambda functions in your account.
 
@@ -25,7 +26,7 @@ Amazon CloudWatch Log:
 
 ```
 {"id":"32563142671071560797760688825700039436306340248688066573","timestamp":1511808906799,"message":
-"REPORT RequestId: cf75cfa3-fe16-11e5-9b16-e3e4c70845f2    Duration: 50.23 ms    Billed Duration: 
+"REPORT RequestId: cf75cfa3-fe16-11e5-9b16-e3e4c70845f2    Duration: 50.23 ms    Billed Duration:
 100 ms     Memory Size: 128 MB    Max Memory Used: 24 MB ","requestID":null,"logStream"
 :"2017/11/27/[Prod]1108153ced144f8cbb161aef096218d1","logGroup":"/aws/lambda/AWSlambda1"}
 ```
@@ -83,7 +84,7 @@ _sourceCategory=Labs/AWS/Lambda
 | json "message"
 | json "logStream", "logGroup"
 // | _sourceName as logStream | _sourceHost as logGroup
-| parse regex field=message "REPORT\s+RequestId:\s+(\<RequestI\>[^\s]+)\s+Duration:\s+(\<Duratio\>[^\s]+)\s+ms\s+Billed Duration:\s+(\<BilledDuratio\>[^\s]+)\s+ms\s+Memory\s+Size:\s+(\<MemorySiz\>[^\s]+)\s+MB\s+Max\s+Memory\s+Used:\s+(\<MaxMemoryUse\>[^\s]+)\s+MB" 
+| parse regex field=message "REPORT\s+RequestId:\s+(\<RequestI\>[^\s]+)\s+Duration:\s+(\<Duratio\>[^\s]+)\s+ms\s+Billed Duration:\s+(\<BilledDuratio\>[^\s]+)\s+ms\s+Memory\s+Size:\s+(\<MemorySiz\>[^\s]+)\s+MB\s+Max\s+Memory\s+Used:\s+(\<MaxMemoryUse\>[^\s]+)\s+MB"
 | parse field=loggroup "/aws/lambda/*" as functionname
 | where account matches "*" and region matches "*" and namespace matches "aws/lambda" and functionname matches "*"
 | sum(Duration) as DurationSum, avg(Duration) as DurationAvg, count as frequency by functionname
@@ -216,4 +217,3 @@ Use this dashboard to:
 * Monitor the malicious confidence level for all incoming malicious IP addresses the threats.
 
 ![6. AWS Lambda - Threat Intel.png](/img/observability/lambda6.png)
-

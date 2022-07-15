@@ -1,8 +1,9 @@
 ---
 id: aws-application-load-balancer
+title: AWS Application Load Balancer
+sidebar_label: AWS Application Load Balancer 
+description: tk
 ---
-
-# AWS Application Load Balancer
 
 The [AWS Application Load Balancer](https://aws.amazon.com/elasticloadbalancing/) functions at the application layer receive requests, evaluates the listener rules in priority order to determine which rule to apply, and then selects a target from the target group. 
 
@@ -13,9 +14,9 @@ The Sumo Logic App for AWS Observability Application Load Balancer is a unified
 The AWS Application Load Balancer ULM App uses the following log and metric types:
 
 * Metrics included in the AWS/ApplicationELB namespace. For more details, see this [*AWS Services help*](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/aws-services-cloudwatch-metrics.html#load-balancer-metrics-alb) page. 
-* The [Application Load Balancer Access](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-access-logs.html#enable-access-logging) Log introduces two new fields in addition to the fields contained in Classic ELB Access log: 
+* The [Application Load Balancer Access](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-access-logs.html#enable-access-logging) Log introduces two new fields in addition to the fields contained in Classic ELB Access log:
 
-  * **Type.** This is the type of request or connection (HTTP, HTTPS, H2, ws, wss) 
+  * **Type.** This is the type of request or connection (HTTP, HTTPS, H2, ws, wss)
   * **Target_group_arn**. This is the Amazon Resource Name (ARN) of the target group
 
 The logs are stored in a .gzip format in the specified S3 bucket and contain these fields in this order:  
@@ -24,10 +25,10 @@ timestamp, elb, client:port, target:port, request_processing_time, target_proces
 ### Sample Log Message
 
 ```
-https 2017-11-20T22:05:36 long-bill-lb 77.222.19.149:41148 10.168.203.134:23662 0.000201 0.401924 
-0.772005 500 200 262 455 "GET https://elmagek.no-ip.org:443/json/v...=1405574870206 HTTP/1.1" 
-"Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.5; en-US; rv:1.9.0.4) Gecko/2008102920 Firefox/3.0.4" 
-DH-RSA-AES256-GCM-SHA384 TLSv1.2 arn:aws:elasticloadbalancing:us-west-2:104030218370:targetgroup/Prod-frontend/92e3199b1rc814fe9 
+https 2017-11-20T22:05:36 long-bill-lb 77.222.19.149:41148 10.168.203.134:23662 0.000201 0.401924
+0.772005 500 200 262 455 "GET https://elmagek.no-ip.org:443/json/v...=1405574870206 HTTP/1.1"
+"Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.5; en-US; rv:1.9.0.4) Gecko/2008102920 Firefox/3.0.4"
+DH-RSA-AES256-GCM-SHA384 TLSv1.2 arn:aws:elasticloadbalancing:us-west-2:104030218370:targetgroup/Prod-frontend/92e3199b1rc814fe9
 "Root=1-58337364-23a8c76965a2ef7629b185e134"
 ```
 
@@ -36,8 +37,8 @@ DH-RSA-AES256-GCM-SHA384 TLSv1.2 arn:aws:elasticloadbalancing:us-west-2:10403021
 The following query sample was taken from the **HTTP Target 5xx per Target Group** panel on the **AWS Application Load Balancer - HTTP Target Group Codes** dashboard.
 
 ```sql
-_sourceCategory=Labs/AWS/ALB/Metrics Namespace=aws/applicationelb metric=HTTPCode_Target_5XX_Count 
-Statistic=Sum _sourcehost=* _collector=* region=* targetgroup=* AvailabilityZone=* entity=* account=* 
+_sourceCategory=Labs/AWS/ALB/Metrics Namespace=aws/applicationelb metric=HTTPCode_Target_5XX_Count
+Statistic=Sum _sourcehost=* _collector=* region=* targetgroup=* AvailabilityZone=* entity=* account=*
 | parse field= TargetGroup */* as Unused, TargetGroup | sum by TargetGroup
 ```
 

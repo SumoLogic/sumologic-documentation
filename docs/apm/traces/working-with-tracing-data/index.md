@@ -1,8 +1,9 @@
 ---
 slug: /apm/traces/working-with-tracing-data
+title: Working with Tracing data
+sidebar_label: Working with Tracing data
+description: tk
 ---
-
-# Working with Tracing data
 
 This guide provides information to work with your tracing data including
 the following:

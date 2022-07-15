@@ -1,8 +1,9 @@
 ---
 id: import-yara-rules
+title: Import YARA Rules
+sidebar_label: Import YARA Rules 
+description: tk
 ---
-
-# Import YARA Rules
 
 This page has instructions for importing YARA rules from GitHub into CSE.
 

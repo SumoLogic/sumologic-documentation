@@ -1,8 +1,9 @@
 ---
 slug: /alerts/monitors
+title: Monitors
+sidebar_label: Monitors
+description: Sumo Logic Monitors allow you to set robust and configurable alerting policies that enable you to get notified about critical changes or issues affecting your production application.
 ---
-
-# Monitors
 
 Sumo Logic Monitors allow you to set robust and configurable alerting policies that enable you to get notified about critical changes or issues affecting your production application.
 
@@ -19,7 +20,7 @@ See details on how [Scheduled Searches are different](difference-scheduled-searc
 * Log Monitors use the [role search filter](../../manage/users-and-roles/roles/construct-search-filter-for-role.md) of their creator.
 * Log Monitors delay execution by two minutes. This means it won't evaluate data from the current time, but evaluate data from two minutes ago.  This ensures that any delays in ingestion are factored in and won't generate false positive or false negative alerts.
 * Metric Monitors delay execution by one minute.
-* Depending on your account type, you can have up to a certain number of Log and Metric Monitors. 
+* Depending on your account type, you can have up to a certain number of Log and Metric Monitors.
 
   * Enterprise and Trial can have up to 1,000 Log Monitors and 500 Metric Monitors.
   * Essentials and Professional can have up to 300 Log Monitors and 500 Metric Monitors.
@@ -47,7 +48,7 @@ Notifications are optional and available as an **alert** and **recovery** for ea
 
 * Monitors keep track of the notifications it sends and won't send additional notifications after sending the first one if the incident persists. It will only send additional notifications if there is a major change in the state of the monitor, such as new triggers from Warning to Critical or a different time series is detected.
 * When more than one trigger condition is met notifications are sent based on the trigger conditions:
-  * When both Critical & Warning conditions are met two separate notifications are generated, one for the Critical condition and one for the Warning condition. Auto resolution, if set up, will work according to the resolution condition for each case.  
+  * When both Critical & Warning conditions are met two separate notifications are generated, one for the Critical condition and one for the Warning condition. Auto resolution, if set up, will work according to the resolution condition for each case. 
   * When the Missing Data condition is met after initially firing a critical/warning incident the system will resolve the Critical or Warning incident that was created with the appropriate resolution reason. The system will also create a new Missing Data incident and notify you appropriately using your configured notification channel.
 * Metric Monitors have the option to group notifications. When configured, the Monitor will not trigger new notifications until the first one is resolved. The Monitor will only update if the notification type supports Auto Resolution. Grouped notifications will resolve when all the time series return to normal.
 * Log Monitors always group notifications.
@@ -55,8 +56,8 @@ Notifications are optional and available as an **alert** and **recovery** for ea
 ### Recovery
 
 * Recovery is based on the detection window, which is either the time range or the number of data points of the trigger condition. An alert is recovered (resolved) when the recovery condition is met for the entire duration of the detection window. For example, if an alert is triggered at 1 PM and the detection window is 15 minutes, the earliest the alert would recover is after 1:15 PM since the entire detection window must pass. This is to ensure there isn't an alert between the triggered and resolved state, especially for metrics that are volatile.
-* Auto Resolution is supported with Email, Lambda, Microsoft Teams, OpsGenie, PagerDuty, Slack, and generic webhook connections. Support for other connection types is coming soon. 
-  * For Lambda and generic webhooks, the same payload for both alerts and recovery is used. 
+* Auto Resolution is supported with Email, Lambda, Microsoft Teams, OpsGenie, PagerDuty, Slack, and generic webhook connections. Support for other connection types is coming soon.
+  * For Lambda and generic webhooks, the same payload for both alerts and recovery is used.
   * Email, Microsoft Teams, OpsGenie, PagerDuty, and Slack recovery notifications are hardcoded by Sumo Logic and cannot be edited. The recovery payload is not the same as the alert payload.
 * The recovery notification is sent to the same channel where the corresponding Alert notifications were sent. In other words, you cannot have different channels where you receive alert and recovery notifications for a given trigger condition.
 * After one day without new data to an incident, the system automatically expires it. The incident is marked as resolved with the resolution set to **Expired**.
@@ -98,7 +99,7 @@ At the top of the page, you can:
 
   * create folders for organizing your Monitors.
   * create a [new Monitor](#add-a-monitor).
-  * import Monitors from the exported JSON you copied from the **More Actions** menu in the [Details pane](#details-pane) of the original monitor. 
+  * import Monitors from the exported JSON you copied from the **More Actions** menu in the [Details pane](#details-pane) of the original monitor.
 
     :::important
     The Import function is provided for you to transfer data immediately. The Sumo Logic JSON format may change without notice. There is no guarantee that you will be able to import the JSON in the future.
@@ -167,8 +168,8 @@ You can configure Sumo Logic Monitors using [Terraform modules](https://github.c
 1. **Outlier** detection methods require you to select the **Direction** you want to track. If you chose **Static**, you won't see this option.
 
     ![outlier detection input on Monitor.png](/img/monitors/outlier-detection-input.png)
-    
-    * **Up.** Only get alerted if there is an abnormal *increase* in the tracked key indicator.  
+
+    * **Up.** Only get alerted if there is an abnormal *increase* in the tracked key indicator. 
     * **Down.** Only get alerted if there is an abnormal *decrease* in the tracked key indicator.
     * **Both.** Get alerted if there is *any* abnormality in the data whether an increase or a decrease.
 
@@ -211,7 +212,7 @@ You can set the trigger based on the following:
 <TabItem value="static">
 
 **Trigger Type: Critical and Warning**  
-  
+
 ![logs trigger type 2021.png](/img/monitors/logs-trigger-type.png)
 
 `Alert when returned row count is <threshold type> <threshold> within <time range>`
@@ -225,9 +226,9 @@ You can set the trigger based on the following:
 **Recover**
 
 Use the **Infer recovery settings** option to set the recovery to the opposite of the alert setting. The **Alert** must be checked for the option to be available.  
-  
+
 ![logs trigger recovery toggle.png](/img/monitors/logs-trigger-recovery-toggle.png)  
-  
+
 For example, when the alert is set to \> 10 `the recovery would be set to \<= 10` when inferred.
 
 Sumo Logic automatically resolves the incident when the resolution condition is satisfied.
@@ -345,7 +346,7 @@ The recovery condition will always be the opposite of the alerting condition. Fo
 </Tabs>
 
 **Trigger Type: Missing Data**  
-  
+
 ![missing.png](/img/monitors/missing.png)
 
 `Alert when missing data <occurrence type> for <time range>`
@@ -367,7 +368,7 @@ The recovery condition will always be the opposite of the alerting condition. Fo
 1. (Optional) **Additional Settings** has an **Evaluation Delay** setting. Collection delays may occur due to your environment and it takes a couple of minutes for data to be processed into Sumo Logic. Since Monitors run on data from the most current time period, it's possible for Monitors to evaluate against incomplete data. As a result, Monitors can generate false positives or negatives that can cause confusion. Set an evaluation delay in seconds to delay the evaluation of a Monitor, so it doesn't look at the most current time (where data can be incomplete) and instead looks at an older period of time, where you have more complete data.
 
     ![additional settings evaluation delay.png](/img/monitors/additional-settings-evaluation-delay.png)
-    
+
     If your data is coming from the [Amazon CloudWatch Source for Metrics](../../send-data/sources/sources-hosted-collectors/amazon-web-services/amazon-cloudwatch-source-metrics.md) we recommend a setting of 900 seconds.
 
 1. (Optional) Set **Notifications**, when a trigger condition is met you can send notifications to other people and services. To add notifications click on the **Add Notification** button. You can add more than one notification channel for a Monitor.
@@ -386,7 +387,7 @@ The recovery condition will always be the opposite of the alerting condition. Fo
         :::tip
         See the [Notifications section](#notifications) for details on alert and recovery notifications.
         :::
-        
+
         If your connection type is Lambda, Microsoft Teams, OpsGenie, PagerDuty, Slack, or a generic webhook the **Recovery** checkbox enables an automatic resolution process that updates the connection when an alert has recovered within Sumo Logic. Support for other connection types is coming soon.
 
    1. **Add Notifications** to add additional notification channels as needed. You can configure different notifications for each trigger type, critical, warning, and missing data.

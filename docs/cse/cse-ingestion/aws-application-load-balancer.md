@@ -1,8 +1,9 @@
 ---
 id: aws-application-load-balancer
+title: AWS Application Load Balancer
+sidebar_label: AWS Application Load Balancer
+description: tk
 ---
-
-# AWS Application Load Balancer
 
 This page has instructions for collecting AWS Application Load Balancer log messages via AWS S3 and sending them to Sumo Logic to be ingested by CSE.
 

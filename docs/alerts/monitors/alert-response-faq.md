@@ -1,8 +1,9 @@
 ---
 id: alert-response-faq
+title: Alert Response FAQ
+sidebar_label: Alert Response FAQ
+description: tk
 ---
-
-# Alert Response FAQ
 
 ## Is Alert Response available in all Sumo Logic packages? 
 
@@ -74,7 +75,7 @@ There could be two reasons for the card not loading:
         | json field=_raw "uuid=*" as uuid
         ```
 
-   * Uncategorized 
+   * Uncategorized
 
        ```
        106.212.160.* or 180.151.66.*

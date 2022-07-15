@@ -1,8 +1,9 @@
 ---
 slug: /alerts
+title: Alerts
+sidebar_label: Alerts
+description: tk
 ---
-
-# Alerts
 
 Sumo Logic offers several alerting features. See the topics below for details on how they work and your configuration options.
 

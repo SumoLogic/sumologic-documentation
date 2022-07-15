@@ -1,8 +1,9 @@
 ---
 id: g-suite-alert-center
+title: G Suite Alert Center
+sidebar_label: G Suite Alert Center
+description: tk
 ---
-
-# G Suite Alert Center
 
 ## Step 1: Configure collection
 

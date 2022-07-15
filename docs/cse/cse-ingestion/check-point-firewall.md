@@ -1,8 +1,9 @@
 ---
 id: check-point-firewall
+title: Check Point Firewall
+sidebar_label: Check Point Firewall
+description: tk
 ---
-
-# Check Point Firewall
 
 This page has instructions for collecting Check Point Firewall log messages and sending them to Sumo Logic to be ingested by CSE.
 

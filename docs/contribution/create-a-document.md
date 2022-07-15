@@ -1,8 +1,9 @@
 ---
 id: create-document
+title: Create a Document
+sidebar_label: Create a Document
+description: Learn how to write a doc in markdown.
 ---
-
-# Create a Document
 
 A document is a markdown file (.md) with content, bulleted instructions, images, tables, code samples, and more.
 
@@ -14,7 +15,7 @@ Create a markdown file with filename.md in a /docs folder that best matches the 
 ---
 id: page-id
 sidebar_label: Navigation title
-description: Learn more about... 
+description: Learn more about...
 ---
 
 # Title of the Page

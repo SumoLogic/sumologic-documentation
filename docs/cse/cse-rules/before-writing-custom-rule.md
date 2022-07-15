@@ -1,8 +1,10 @@
 ---
 id: before-writing-custom-rule
+title: Before You Write a Custom Rule
+sidebar_label: Before You Write a Custom Rule
+description: tk
 ---
 
-# Before You Write a Custom Rule
 
 This topic has information about writing custom CSE rules.
 
@@ -41,7 +43,7 @@ Let’s say you’re going to write a rule that fires every time a successful Wi
 To find and review a log mapping:
 
 1. Click the gear icon and select **Log Mappings**.
-1. You can use the filter area at the top of the **Log Mappings** page to search for a mapping by various options. The screenshot below shows the results we enter the filter **Name matches wildcard pattern \*46...** 
+1. You can use the filter area at the top of the **Log Mappings** page to search for a mapping by various options. The screenshot below shows the results we enter the filter **Name matches wildcard pattern \*46...**
 
     Two mappings match. For each mapping, you can see how many times it’s been used in the last 24 hrs and also over the last 7 days. We’ll select the one that has been in use, rather than the one that hasn’t.
 
@@ -62,7 +64,7 @@ In this step, we’ll create the query that will serve as the rule expression wh
 Using the attributes we discovered from looking at the log mapping, we’ll run the following query, which returns the usernames that have successfully logged on over the last week, counted by `user_username`.
 
 ```sql
-_index=sec_record_* 
+_index=sec_record_*
 | where metadata_vendor = "Microsoft" and metadata_product = "Windows" and metadata_deviceEventId = "Security-4624"
 | count by user_username
 ```
@@ -77,7 +79,7 @@ The results show two of our standard username patterns: 
 Now, we can refine our search to return usernames that do not comply with either of our standard patterns.
 
 ```sql
-_index=sec_record_* 
+_index=sec_record_*
 | where metadata_vendor = "Microsoft" and metadata_product = "Windows" and metadata_deviceEventId = "Security-4624" and !(user_username matches /^[a-zA-Z]*$/ or user_username matches "*-*$")
 | count by user_username
 ```
@@ -108,7 +110,7 @@ _index=sec_record_*
 Now we have a query we can use as the rule expression for our rule. Note that when you paste it into the Rules Editor you should remove the first portion of the query, which is only necessary when you are querying Records in Sumo Logic:
 
 `_index=sec_record_*`  
-  
+
 You can use an expression like this example in any rule type. Here is an example Match rule with the expression, shown in the Rules Editor.
 
 ![example-in-editor.png](/img/cse/example-in-editor.png)

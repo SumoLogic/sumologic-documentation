@@ -1,8 +1,9 @@
 ---
 id: manage-custom-insight-statuses
+title: Manage Custom Insight Statuses
+sidebar_label: Manage Custom Insight Statuses
+description: tk
 ---
-
-# Manage Custom Insight Statuses
 
 This page has information about creating and managing custom Insight statuses.
 

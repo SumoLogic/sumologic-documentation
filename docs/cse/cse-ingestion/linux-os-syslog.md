@@ -1,10 +1,11 @@
 ---
 id: linux-os-syslog
+title: Linux OS Syslog
+sidebar_label: Linux OS Syslog
+description: tk
 ---
 
-# Linux OS Syslog
-
-This page has instructions for collecting Linux OS Syslog log messages and sending them to Sumo Logic to be ingested by CSE. 
+This page has instructions for collecting Linux OS Syslog log messages and sending them to Sumo Logic to be ingested by CSE.
 
 Current distributions of Linux write logs using Rsyslog and Systemd-journal. CSE currently supports Rsyslog and Systemd-journal logging in Linux.
 

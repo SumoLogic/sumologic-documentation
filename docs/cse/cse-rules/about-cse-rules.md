@@ -1,8 +1,10 @@
 ---
 id: about-cse-rules
+title: About CSE Rules
+sidebar_label: About CSE Rules 
+description: tk
 ---
 
-# About CSE Rules
 
 A CSE rule is logic that fires based on information in incoming Records. When a rule fires, it creates a Signal.
 
@@ -116,7 +118,7 @@ array_contains(listMatches, "match-list-name")
 
 where 
 
-* `match-list-name` is the name of the match list. 
+* `match-list-name` is the name of the match list.
 
     :::note
     If the name of the list you are referencing with `array_contains` contains any spaces, replace the spaces with underscores. For example, if the list name is *my list*, refer to it as *my_list*.

@@ -1,8 +1,9 @@
 ---
 id: monitor-faq
+title: Monitor FAQ
+sidebar_label: Monitor FAQ
+description: tk
 ---
-
-# Monitor FAQ
 
 ## Can I convert my existing Scheduled Search to a Monitor?
 
@@ -17,7 +18,7 @@ For example, instead of creating one monitor to alert on CPU utilization, break 
 ## Why does my monitor get automatically disabled? 
 
 Sumo Logic will automatically disable a Monitor if it violates specific limitations. You can check the reason it was disabled with the [Audit Event Index](../../manage/security/audit-event-index.md). The following query will search the Audit Event Index for the reason:  
-  
+
 ```sql
 _index=sumologic_system_events MonitorSystemDisabled <monitorId>
 ```
