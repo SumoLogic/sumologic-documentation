@@ -1,8 +1,9 @@
 ---
 id: cse-user-accounts-and-roles
+title: CSE User Accounts and Roles
+sidebar_label: CSE User Accounts and Roles
+description: tk
 ---
-
-# CSE User Accounts and Roles
 
 This topic has information about creating and managing user accounts and roles for CSE. CSE uses role-based access control (RBAC). An administrator controls access to capabilities by assigning capabilities or permissions to roles, and then assigning users to roles.  
 
@@ -10,12 +11,12 @@ The process and UI for setting users and roles depends on your CSE environment.�
 
 * If your CSE URL ends in `sumologic.com`, you’ll set up users and roles in the Sumo Logic platform UI. For instructions, see the following help topics:
     * [Create and Manage Roles](../../manage/users-and-roles/roles/create-manage-roles.md)  The Sumo Logic platform allows you to assign multiple roles to a user. So, you might consider creating CSE-specific roles for different CSE user types, separate from roles you may define for Sumo Logic platform functionality. The CSE-related capabilities you can assign to roles are listed in the Cloud SIEM Enterprise section of the *Role Capabilities* page. 
-        
+
         :::note
         When you create roles in the Sumo Logic platform, you have the option to set up a role search filter that specifies what log data users with the role may access. If you take advantage of that feature, be sure not to restrict CSE users’ access to [indexes that contain CSE Records](../records-signals-entities-insights/search-cse-records-in-sumo.md).
         :::
 
-    * [Create and Edit Users](../../manage/users-and-roles/users/create-edit-users.md) 
+    * [Create and Edit Users](../../manage/users-and-roles/users/create-edit-users.md)
 * If your CSE URL ends in `jask.ai`, you’ll set up user accounts and roles in the CSE UI. Follow the instructions below.
 
 ## Invite a user
@@ -51,7 +52,7 @@ To create a role:
     ![roles-page.png](/img/cse/roles-page.png)
 1. Click **Create**.
 1. The **Create Role** popup appears.
-    
+
     ![create-role-popup.png](/img/cse/create-role-popup.png)  
      
 1. **Name**. Enter a name for the role.
@@ -124,8 +125,8 @@ To create a role:
 | Manage Actions | Create, edit, and delete the Actions. Actions are CSE notifications you can set up to occur automatically when certain state changes occur to Insights, sensors, or rules. Actions can also be invoked on-demand from an Insight in the CSE UI. |
 | Manage Enrichments | Upload Insight, Signal, and Entity enrichments using the CSE API. |
 
-  
-  
-  
-  
+
+
+
+
  

@@ -1,8 +1,9 @@
 ---
 id: aws-classic-load-balancer
+title: AWS Classic Load Balancer
+sidebar_label: AWS Classic Load Balancer 
+description: tk
 ---
-
-# AWS Classic Load Balancer
 
 The [AWS Classic Load Balancer](https://aws.amazon.com/elasticloadbalancing/classic-load-balancer/) (ELB) distributes incoming application traffic across multiple EC2 instances in multiple Availability Zones and operates at both the request level and connection level.
 
@@ -171,4 +172,3 @@ Use this dashboard to:
 * Monitor malicious confidence level  for all incoming malicious IP addresses posing the threats.
 
 ![AWS-Classic-Load-Balancer-Threat-Intel.png](/img/observability/AWS-Classic-Load-Balancer-Threat-Intel.png)
-

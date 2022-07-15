@@ -1,10 +1,11 @@
 ---
 id: create-cse-actions
+title: Create CSE Actions
+sidebar_label: Create CSE Actions
+description: Instructions for configuring CSE Actions.
 ---
 
-# Create CSE Actions
-
-This topic has instructions for configuring CSE Actions
+This topic has instructions for configuring CSE Actions.
 
 ## About CSE Actions
 
@@ -32,7 +33,7 @@ What gets sent to the target system depends on the Action type. For some types�
 * The Entity the Insight fired on.
 * The [MITRE tactic](https://attack.mitre.org/) or tactics that form a portion of the Insight ID, which indicates which stage of the MITRE framework the Insight relates to. In the example below, the “Initial Access” tactic is shown.
 * A link to the Insight in CSE.  
-    
+
     ![received-email.png](/img/cse/received-email.png)
 
 For the other Action types—AWS Simple Notification Service (SNS), Demisto (Corex XSOAR), HTTP POST v2, and Slack Webhook—the notification includes the Insight itself in JSON format, and in some cases Signals or Records, depending on how you configure the Action.

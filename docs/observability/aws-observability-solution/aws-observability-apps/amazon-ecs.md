@@ -1,8 +1,9 @@
 ---
 id: amazon-ecs
+title: Amazon ECS
+sidebar_label: Amazon ECS 
+description: tk
 ---
-
-# Amazon ECS
 
 Amazon Elastic Container Service is a scalable, container management service that is used to manage containers in a cluster. With dashboards for Amazon ECS, you can monitor capacity and resource utilization of ECS components as well as quickly identify changes made to your clusters to help with troubleshooting.
 
@@ -40,7 +41,7 @@ account=dev region=us-east-1 namespace=aws/ecs "\"eventSource\":\"ecs.amazonaws.
 Average CPU Utilization by ServiceName:
 
 ```sql
-account=dev region=us-east-1 namespace=aws/ecs metric=CPUUtilization statistic=Average ClusterName=* ServiceName=* | avg by ClusterName, ServiceName, account, region, namespace 
+account=dev region=us-east-1 namespace=aws/ecs metric=CPUUtilization statistic=Average ClusterName=* ServiceName=* | avg by ClusterName, ServiceName, account, region, namespace
 ```
  
 ## Amazon ECS Dashboards

@@ -1,8 +1,9 @@
 ---
 id: service-map
+title: Service Map
+sidebar_label: Service Map
+description: tk
 ---
-
-# Service Map
 
 The Service Map is a high-level view of your application environment, automatically built from tracing data in real time as it arrives in Sumo Logic. This gives you a greater understanding of your application architecture and dependencies between monitored microservices.
 
@@ -62,7 +63,7 @@ To add a Service Map panel to your Dashboard:
 1. Click **Add Panel** and select **Service Map**. Or select the **Service Map** option on a new Dashboard.  
 
    ![add-servicemap.png](/img/traces/add-servicemap.png)  
-   
+
    A panel configuration page opens.  
 
    ![create-servicemap.png](/img/traces/create-servicemap.png)
@@ -72,7 +73,7 @@ To add a Service Map panel to your Dashboard:
    ![filter-servicemap.png](/img/traces/filter-servicemap.png)
 
    * **Application** if your tracing data has the `application=[app-name]` tag
-   * **Service** 
+   * **Service**
    * To pass the variables from dashboard filters, set `application={{application}}` and/or `service={{service}}`
 
 1. Do not set the time. Service Map always shows last 72h of data.

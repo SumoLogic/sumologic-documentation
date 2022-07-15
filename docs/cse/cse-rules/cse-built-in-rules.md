@@ -1,8 +1,9 @@
 ---
 id: cse-built-in-rules
+title: CSE Built-In Rules
+sidebar_label: CSE Built-In Rules 
+description: tk
 ---
-
-# CSE Built-In Rules
 
 <!--
 Content of this page comes from https://github.com/jasklabs/content-catalog/blob/master/rules/html_rules.html
@@ -4074,7 +4075,7 @@ Observes for traffic detected and categorized as malicious by ZScaler
 
 An attack against CVE-2020-1472 may create thousands of
 NetrServerReqChallenge & NetrServerAuthenticate3 requests in a short
-amount of time. https://github.com/SecuraBV/CVE-2020-147 
+amount of time. https://github.com/SecuraBV/CVE-2020-147
 
 ## Zoom Child Process
 

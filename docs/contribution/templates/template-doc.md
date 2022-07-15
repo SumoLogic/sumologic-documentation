@@ -1,9 +1,9 @@
 ---
 id: template-doc
+title: Template for a Doc
+sidebar_label: Template for a Doc
 description: Example template for creating a document in the Sumo Logic guides.
 ---
-
-# Template for a Doc
 
 :::note
 Copy this markdown file and fill it out for documentation. See the markdown code to see how it all works. For full markdown code and options, see [Markdown Features](../markdown-features.md).
@@ -13,7 +13,7 @@ Replace the H1 title above with the title for your documentation page. You shoul
 
 ## Sample H2 section
 
-To add an image, save the .png file with a simple name, no spaces in it, in `/static/img`. For many images, consider guide or product feature folders. Include alt text and the file location `/img/folder-name/` and file name. 
+To add an image, save the .png file with a simple name, no spaces in it, in `/static/img`. For many images, consider guide or product feature folders. Include alt text and the file location `/img/folder-name/` and file name.
 
 ```md title="Example format for image code"
 ![Sumo Logic logo](/img/sumo-square.png)

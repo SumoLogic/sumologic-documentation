@@ -1,8 +1,9 @@
 ---
 id: aws-vpc-flow
+title: AWS VPC Flow
+sidebar_label: AWS VPC Flow
+description: tk
 ---
-
-# AWS VPC Flow
 
 This page has instructions for collecting AWS VPC Flow log messages from AWS S3 and sending them to Sumo Logic to be ingested by CSE.
 
@@ -75,5 +76,5 @@ In this step, you verify that your logs are successfully making it into CSE. 
 1. On the **Log Mappings** page search for "AWS VPC Flow" and check under **Record Volume**. 
 1. For a more granular look at the incoming records, you can also search the Sumo Logic platform for AWS VPC Flow security records.
 
-  
+
  

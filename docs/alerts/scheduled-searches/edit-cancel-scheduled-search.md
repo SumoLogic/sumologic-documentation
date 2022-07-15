@@ -1,8 +1,9 @@
 ---
 id: edit-cancel-scheduled-search
+title: Edit or Cancel the Schedule for a Search
+sidebar_label: Edit or Cancel the Schedule for a Search
+description: You can edit or cancel a scheduled search at any time.
 ---
-
-# Edit or Cancel the Schedule for a Search
 
 In the [**Library**](/docs/get-started/library/sumo-logic-library), you can edit or cancel a scheduled search at any time. If you cancel a scheduled search, the search reverts to a saved search.
 
@@ -44,9 +45,9 @@ When you try to edit a scheduled search query, add a schedule to a saved search,
 You have two options to resolve the issue:
 
 * You can duplicate the scheduled search and edit the copy.
-* If you have the **Change Data Access Level** role capability, you can change the data access level for the scheduled search. Note that, after the data access level for a scheduled search is changed, the search results will be different for users that run the search if their role search filter is more restrictive than the user who originally scheduled the search. 
+* If you have the **Change Data Access Level** role capability, you can change the data access level for the scheduled search. Note that, after the data access level for a scheduled search is changed, the search results will be different for users that run the search if their role search filter is more restrictive than the user who originally scheduled the search.
 
-:::note 
+:::note
 If you don’t have the **Change Data Access Level** capability, your Sumo Logic administrator will need to update your role to include it.
 :::
 

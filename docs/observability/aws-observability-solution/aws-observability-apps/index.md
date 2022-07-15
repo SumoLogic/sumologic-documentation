@@ -1,8 +1,7 @@
 ---
 slug: /observability/aws-observability-solution/aws-observability-apps
+title: AWS Observability Apps
 ---
-
-# AWS Observability Apps
 
 These topics have information about the AWS Observability Solution apps.
 

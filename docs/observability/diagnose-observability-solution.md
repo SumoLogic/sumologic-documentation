@@ -1,8 +1,9 @@
 ---
 id: diagnose-observability-solution
+title: Diagnose with the Observability Solution
+sidebar_label: Diagnose
+description: tk
 ---
-
-# Diagnose with the Observability Solution
 
 After you have identified an issue using the available monitoring tools, the next step is to diagnose the issue and narrow down your investigation to specific services. The Observability Solution offers the following features to diagnose application issues.
 
@@ -27,4 +28,3 @@ Easily find and visualize your metrics with the [Re-vamped Metrics Explorer](..
 ## Benchmark KPIs with Rest of world
 
 You can isolate or detect AWS errors using [Global Intelligence for AWS CloudTrail DevOps] (/07Sumo-Logic-Apps/01Amazon_and_AWS/Global_Intelligence_for_AWS_CloudTrail_DevOps). The service provides comparison benchmarks that on-call engineers can use to identify abnormal patterns and issues in your AWS service compared to the rest of the world, and then take action to remediate those issues.  
-

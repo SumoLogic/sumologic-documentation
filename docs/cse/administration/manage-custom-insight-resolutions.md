@@ -1,8 +1,9 @@
 ---
 id: manage-custom-insight-resolutions
+title: Manage Custom Insight Resolutions
+sidebar_label: Manage Custom Insight Resolutions
+description: tk
 ---
-
-# Manage Custom Insight Resolutions
 
 This topic has information about custom Insight resolutions and how to create and manage them.
 

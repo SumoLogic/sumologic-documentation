@@ -1,8 +1,9 @@
 ---
 id: alert-response
+title: Alert Response
+sidebar_label: Alert Response
+description: tk
 ---
-
-# Alert Response
 
 Alert Response provides contextual insights about triggered alerts to minimize the time needed to investigate and resolve application failures.
 
@@ -91,7 +92,7 @@ The top of the page provides several details and buttons.
 * **F** - opens the playbook associated with this Monitor. Playbooks allow admins to codify tribal knowledge for an on-call so they know what exactly to do when they receive an alert.
 
     ![playbook example.png](/img/monitors/playbook-example.png)
-    
+
     You have the option to provide a playbook when creating a Monitor, as shown in the below image. Markdown is supported.
 
     ![Montor playbook input.png](/img/monitors/monitor-playbook-input.png)
@@ -100,14 +101,14 @@ The top of the page provides several details and buttons.
 
 ![alert page sep 23.png](/img/monitors/alert-page.png)
 
-* **K** - a panel with Related Alerts and the Monitor History. The exclamation mark indicates the alert is still active and a white checkmark in the gray circle indicates it's resolved. 
+* **K** - a panel with Related Alerts and the Monitor History. The exclamation mark indicates the alert is still active and a white checkmark in the gray circle indicates it's resolved.
   * **Related Alerts** shows other alerts in the system that were triggered around the same time as this alert. This information is helpful to know what issues are happening in the system and whether the current problem is an isolated issue or a more systemic one. There are two types of relations that a related alert can have.
 
     ![related alerts.png](/img/monitors/related-alerts.png)
 
     * **Time**: Shows all the alerts that were triggered 30 minutes before or after the given alert that doesn't have another association.
     * **Entity**: Shows all the alerts that were triggered one hour before and after the given alert that happened on the same entity (node, pod, cluster, etc.). You can click the expand arrow ![expand arrow.png](/img/monitors/expand-arrow.png) to view the alert's trigger condition and the white arrow in the square ![open in new tab icon.png](/img/monitors/open-new-tab.png) to open the alert in its own Alert page.
-  
+
   * **Monitor History** shows the past 30 days of similar alerts that were triggered by the Monitor (that generated the current alert). Monitor History can be helpful to figure out the following:
 
      * How frequently the alert fired in the past and whether it's a flaky alert or not.

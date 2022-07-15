@@ -1,10 +1,11 @@
 ---
 slug: /apm/traces/get-started-transaction-tracing
+title: Getting Started with Transaction Tracing
+sidebar_label: Getting Started with Transaction Tracing
+description: tk
 ---
 
-# Getting Started with Transaction Tracing
-
-##  Availability
+## Availability
 
 | Account Type | Account Level |
 |--|--|
