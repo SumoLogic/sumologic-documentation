@@ -1,8 +1,9 @@
 ---
 id: receive-email-alerts-scheduled-searches
+title: Receive Email Alerts from Scheduled Searches
+sidebar_label: Receive Email Alerts from Scheduled Searches
+description: tk
 ---
-
-# Receive Email Alerts from Scheduled Searches
 
 :::note
 A maximum of 120 emails are sent per day per scheduled search.
@@ -10,7 +11,7 @@ A maximum of 120 emails are sent per day per scheduled search.
 
 There are three ways to receive the results of scheduled searches in email:
 
-* **Scheduled email.** Provides a summary of the search results every time a scheduled search is run. The subject of this email is **Search Results**. No matter what the results of the search, you'll receive an email. 
+* **Scheduled email.** Provides a summary of the search results every time a scheduled search is run. The subject of this email is **Search Results**. No matter what the results of the search, you'll receive an email.
 
     Email notifications are sent to the recipient email address(es) based on the notification parameters. For queries returning high numbers of messages or group results, the email notification contains a representative sample of the first 25 messages or groups. **Most Recent Results** also **displays** the number of remaining results available, which you can view in Sumo Logic with a click.
 

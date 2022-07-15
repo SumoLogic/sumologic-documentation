@@ -1,8 +1,9 @@
 ---
 id: aws-api-gateway
+title: AWS API Gateway
+sidebar_label: AWS API Gateway 
+description: tk
 ---
-
-# AWS API Gateway
 
 [Amazon API Gateway](https://aws.amazon.com/api-gateway/) service allows you to create RESTful APIs and WebSocket APIs for real-time two-way communication applications in containerized and serverless environments, as well as web applications.
 
@@ -35,7 +36,7 @@ The AWS API Gateway ULM app uses the following logs and metrics:
 Average Latency by API Name:
 
 ```sql
-_sourceCategory=Labs/AWS/APIGateway/Metric Namespace=aws/apigateway metric=Latency statistic=Average 
+_sourceCategory=Labs/AWS/APIGateway/Metric Namespace=aws/apigateway metric=Latency statistic=Average
 account=* region=* entity=* | avg by region, entity
 ```
 

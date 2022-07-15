@@ -1,8 +1,9 @@
 ---
 id: microsoft-windows
+title: Microsoft Windows
+sidebar_label: Microsoft Windows
+description: tk
 ---
-
-# Microsoft Windows
 
 ## Step 1: Configure collection
 

@@ -1,8 +1,9 @@
 ---
 id: centralized-aws-cloudtrail-log-collection
+title: Centralized AWS CloudTrail Log Collection
+sidebar_label: Centralized AWS CloudTrail Log Collection
+description: tk
 ---
-
-# Centralized AWS CloudTrail Log Collection
 
 If you are collecting AWS CloudTrail logs from multiple AWS accounts into a single S3 bucket, we need to make sure Sumo Logic has the ability to reliably extract the account alias that you created from the account-ids.
 

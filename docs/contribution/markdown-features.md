@@ -1,20 +1,21 @@
 ---
 id: markdown-features
+title: Markdown Features
+sidebar_label: Markdown Features
+description: Learn about the markdown features Docusaurus supports.
 ---
-
-# Markdown Features
 
 Docusaurus supports **[Markdown](https://daringfireball.net/projects/markdown/syntax)** and a few **additional features**.
 
 ## Front Matter
 
-Markdown documents have metadata at the top called [Front Matter](https://jekyllrb.com/docs/front-matter/). Every page should have an `id` used for sidebar navigation. The title of the page is the only H1 on the page. 
+Markdown documents have metadata at the top called [Front Matter](https://jekyllrb.com/docs/front-matter/). Every page should have an `id` used for sidebar navigation. The title of the page is the only H1 on the page.
 
 ```markdown
 ---
 id: page-id
 sidebar_label: Navigation title
-description: One sentence about the page... 
+description: One sentence about the page...
 keywords: [important, words]
 ---
 
@@ -76,7 +77,7 @@ You can save images and downloadable files all to the `/static` folder. Using th
 
 ### Images
 
-We recommend using .png for all images. Save these images in `/static/img`. 
+We recommend using .png for all images. Save these images in `/static/img`.
 
 Add an image at `/static/img/` and display it in Markdown with alt text, file path of `/img`, and image name:
 
@@ -98,7 +99,7 @@ If a file is available from another public Sumo Logic repo, please link to that 
 
 ## Tables
 
-Tables use plain markdown with one header, default left aligned columns, and multi-colored rows. You can use Markdown for links and images. To break up content, you can use `<br/>` for line breaks, HTML for 
+Tables use plain markdown with one header, default left aligned columns, and multi-colored rows. You can use Markdown for links and images. To break up content, you can use `<br/>` for line breaks, HTML for
 
 ```markdown
 | Column Name | Example Value | Description |
@@ -241,7 +242,7 @@ For a full list of options, see [Docusaurus Code Blocks](https://docusaurus.io/d
 
 ### Import GitHub Repo File
 
-To embed a code sample from a file in a GitHub repositiory, use `reference` in the code block with a link to the file. The code sample is embedded using the language with a link to the original file. 
+To embed a code sample from a file in a GitHub repositiory, use `reference` in the code block with a link to the file. The code sample is embedded using the language with a link to the original file.
 
 This code references a script file: ` ```bash reference`, for example:
 
@@ -305,7 +306,7 @@ Setup a Source in Sumo Logic:
 
 Navigate to Collection management (Manage Data > Collection)
 Use an existing Hosted Collector, or create a new one.
-Next to the collector, select “Add Source”. 
+Next to the collector, select “Add Source”.
 Select “AWS Kinesis Firehose for Logs”
 Enter a Name to identify the source.
 Enter a Source Category following the best practices found in “Good Source Category, Bad Source Category”
@@ -340,7 +341,7 @@ You can include markdown content in expanders including code samples, embedded v
 
 <summary>Title for the expander</summary>
 
-Place long lists or lots of content in this section. The reader can expand/collapse as needed. 
+Place long lists or lots of content in this section. The reader can expand/collapse as needed.
 
 Add all content after Summary and before the closing details tags.
 
@@ -398,7 +399,7 @@ This is a note. Need to get started? Try the [templates](templates/template-doc.
 :::
 
 :::sumo Sumo Best Pratice
-Highlight specific info, best practices, links, [training links](https://www.sumologic.com/learn/training/), and other information from Sumo specialists! You can change the title based on the content. 
+Highlight specific info, best practices, links, [training links](https://www.sumologic.com/learn/training/), and other information from Sumo specialists! You can change the title based on the content.
 :::
 
 :::tip
@@ -427,7 +428,7 @@ Use this awesome feature option. Here's an example of a [code block](#code-block
 
 :::
 
-:::important 
+:::important
 Use important for vital information. Try to always use a language in a [code block](#code-blocks), for example sql for queries.
 :::
 
@@ -451,7 +452,7 @@ You can add YouTube videos to any page with the following code. Just copy and pa
         className="video-container"
         display="initial"
         position="relative"
-        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
         />
 
@@ -466,7 +467,7 @@ For example:
         className="video-container"
         display="initial"
         position="relative"
-        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
         />
 

@@ -1,8 +1,9 @@
 ---
 id: create-real-time-alert
+title: Create a Real Time Alert
+sidebar_label: Create a Real-Time Alert
+description: Real Time Alerts are scheduled searches that run nearly continuously and inform you in real time when error conditions exist.
 ---
-
-# Create a Real Time Alert
 
 Real Time Alerts are scheduled searches that run nearly continuously. That means that you're informed in real time when error conditions exist.
 
@@ -34,7 +35,7 @@ If the time zone of messages is set incorrectly, those logs won't be picked up b
 
 The results from your search will vary based on the type of alert selected. The following table shows the differences, the above limitations still apply to this logic:
 
-| Alert Type | Results in Notification | 
+| Alert Type | Results in Notification |
 | -- | -- |
 | [Webhook](../../manage/connections-and-integrations/webhook-connections/schedule-searches-webhook-connections.md) | If the **Send a separate alert for each search result checkbox** is selected (in step 6) only new results from subsequent searches are sent in the alert payload. Otherwise, all results are sent. |
 | [Save to Index](save-to-index.md) | All results are saved from an **aggregate** query.<br/>Only new results from subsequent searches are saved from a **non-aggregate** query. |

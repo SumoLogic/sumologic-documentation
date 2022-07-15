@@ -1,8 +1,9 @@
 ---
 id: signal-sciences-waf
+title: Signal Sciences WAF
+sidebar_label: Signal Sciences WAF
+description: tk
 ---
-
-# Signal Sciences WAF
 
 This page has instructions for collecting Signal Sciences WAF log messages and sending them to Sumo Logic to be ingested by CSE.
 

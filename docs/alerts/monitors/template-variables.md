@@ -1,12 +1,13 @@
 ---
 id: template-variables
+title: Template Variables
+sidebar_label: Template Variables
+description: This document outlines the variables you can use as parameters in the JSON payload object of your notifications. 
 ---
-
-# Template Variables
 
 This document outlines the variables you can use as parameters in the JSON payload object of your notifications. Variables are replaced with values from the monitor and must be enclosed by double curly brackets. For example, in your JSON payload, if you specified `{{Name}}` it would be replaced with the actual name of the monitor in the delivered payload.
 
-Template variables allow you to customize your notification payload. We have built in template variables that allow you to reference specific configurations of your monitor. For example, Trigger Condition and Monitor Name, within your custom notification payload. 
+Template variables allow you to customize your notification payload. We have built in template variables that allow you to reference specific configurations of your monitor. For example, Trigger Condition and Monitor Name, within your custom notification payload.
 
 :::note
 Unresolved variables are given empty quotes `""` as a value.

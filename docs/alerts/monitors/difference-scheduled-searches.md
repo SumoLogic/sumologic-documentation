@@ -1,8 +1,9 @@
 ---
 id: difference-from-scheduled-searches
+title: Difference from Scheduled Searches
+sidebar_label: Difference from Scheduled Searches
+description: tk
 ---
-
-# Difference from Scheduled Searches
 
 In order to understand the difference between the two we first need to know the use-cases that each solves today. 
 

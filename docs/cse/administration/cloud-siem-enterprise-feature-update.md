@@ -1,8 +1,9 @@
 ---
 id: cloud-siem-enterprise-feature-update
+title: Cloud SIEM Enterprise Feature Update (2022)
+sidebar_label: CSE Feature Update
+description: This topic describes what customers can expect from the February 2022 Cloud SIEM Enterprise (CSE) feature update. 
 ---
-
-# Cloud SIEM Enterprise Feature Update (2022)
 
 This topic describes what customers can expect from the February 2022 Cloud SIEM Enterprise (CSE) feature update. 
 

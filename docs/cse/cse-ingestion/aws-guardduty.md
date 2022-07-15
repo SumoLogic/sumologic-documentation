@@ -1,8 +1,9 @@
 ---
 id: aws-guardduty
+title: AWS GuardDuty
+sidebar_label: AWS GuardDuty
+description: tk
 ---
-
-# AWS GuardDuty
 
 This page has instructions for collecting AWS GuardDuty log messages and sending them to Sumo Logic to be ingested by CSE.
 

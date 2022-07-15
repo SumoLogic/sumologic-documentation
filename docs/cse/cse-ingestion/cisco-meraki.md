@@ -1,8 +1,9 @@
 ---
 id: cisco-meraki
+title: Cisco Meraki
+sidebar_label: Cisco Meraki
+description: tk
 ---
-
-# Cisco Meraki
 
 This page has instructions for collecting Cisco Meraki log messages and sending them to Sumo Logic to be ingested by CSE.
 

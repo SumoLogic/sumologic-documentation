@@ -1,8 +1,8 @@
 ---
 id: release-notes
+title: Release Notes
 ---
 
-# Release Notes
 
 We keep release notes concise with links to documentation and images for features and updates affecting the user interface.
 

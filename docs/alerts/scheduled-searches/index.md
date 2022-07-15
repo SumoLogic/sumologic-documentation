@@ -1,8 +1,9 @@
 ---
 slug: /alerts/scheduled-searches
+title: Scheduled Searches
+sidebar_label: Scheduled Searches
+description: Scheduled searches are standard saved searches that are executed on a schedule you set.
 ---
-
-# Scheduled Searches
 
 Scheduled searches are standard saved searches that are executed on a schedule you set. Once configured, scheduled searches run continuously, making them a great tool for continuously monitoring your stack. For instructions, see [Schedule a Search](schedule-search.md).
 
