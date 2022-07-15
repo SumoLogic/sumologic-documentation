@@ -1,8 +1,9 @@
 ---
 id: root-cause-explorer
+title: Root Cause Explorer
+sidebar_label: Root Cause Explorer
+description: tk
 ---
-
-# Root Cause Explorer
 
 ## Availability
 
@@ -216,28 +217,28 @@ You can open the Root Cause Explorer by clicking **+ New** in the Sumo Logic UI,
 To open the Root Cause Explorer from the Explore UI:
 
 1. Click **+ New** and select **Explore**.   
-      
+
     ![new-explore.png](/img/rce/new-explore.png)  
      
 1. Explore appears. The left pane displays your collapsed AWS resource hierarchy showing the top level resources, AWS accounts. The right pane displays the **AWS Account Overview** dashboard for the AWS account that’s selected in the left pane.  
-      
+
     ![explorer-default.png](/img/rce/explorer-default.png)  
      
 1. Use the controls in the left pane to expand the resource hierarchy and select the desired resource.  
-      
+
     ![prod-hierarchy.png](/img/rce/prod-hierarchy.png)  
      
 1. Select the **\<resource-type\> Events of Interest** dashboard from
     the **Dashboards** pulldown.  
-      
+
     ![select-dashboard.png](/img/rce/select-dashboard.png)  
      
 1. Select **Open in Root Cause Explorer** from the three-dot menu in
     the visualization pane.  
-      
+
     ![open-in-rce.png](/img/rce/open-in-rce.png)
 1. Root Cause Explorer opens, displaying EOIs for the currently selected filters and time range.  If resources are connected based on the infrastructure topology or Service Map linkages, Root Cause Explorer may group multiple EOI into a single EOI on the scatter plot. For example, CPU spikes on 10 EC2 instances in the same autoscaling group would appear as a EOI in the scatter plot. In this case, the composite EOI is considered the parent EOI, and the 10 others, its children. Until you click on an EOI, the right pane will list the **Top Contributing Entities**—the entities that are likely to be related to the root cause based on timeline, duration and other factors.  
-      
+
     ![rce-top-entities.png](/img/rce/rce-top-entities.png)
 
 1. Click an EOI. Note that a popup, described below in [EOI stats](#eoi-stats), displays key information about the event. The right pane now contains a Summary tab and an E tab, described below in [Summary tab](#summary-tab) and [Entities tab](#entities-tab).  
@@ -393,19 +394,19 @@ The attributes in the view are defined in the table below.
 | `anomalyValues` | Statistics about the time series in the EOI window - min, max, avg.
 | `autoCorrelation` | A measure of the periodicity of the underlying time series.
 | `domain` | Identifies the source of the time series data:<ul><li>aws</li><li>k8s</li><li>app. Application services instrumented with Sumo Logic [Tracing](/docs/apm/traces).</li><li>host. A [Host Metrics source](../send-data/sources/sources-installed-collectors/host-metrics-source.md) on a Sumo Logic Installed Collector.</li></ul> |
-| `drift` | The percentage deviation of the time series from the expected value. | 
-| `endTime` | The end time of the EOI, in epoch milliseconds. | 
-| `eventType` | The golden signal class for the EOI: Latency, Load, Bottleneck, Error, Throughput, Success, or Availability. For more information about golden signals, see the [Google SRE handbook](https://landing.google.com/sre/sre-book/chapters/preface/). | 
-| `id` | The identifier of the EOI. Note that multiple EOIs might have the same id, but different updateTime fields. In this case, the EOI with the highest updateTime value should be chosen. | 
-| `impactPositive` | Whether the EOI represents a positive impact on the overall system. | 
-| `isCause` | Whether the EOI is causally related to another EOI. | 
-| `metric` | Time series name. | 
-| `parentId` | For grouped Events of Interest, this is the ID of the parent EOI. | 
-| `size` | The number of EOIs grouped with this Event of Interest. | 
-| `stability` | Stability of the underlying time series. | 
-| `startTime` | Start time of the EOI, in epoch milliseconds. | 
-| `tags` | All metadata and dimensions associated with the underlying time series. | 
-| `updateTime` | Timestamp at which the EOI was updated. | 
+| `drift` | The percentage deviation of the time series from the expected value. |
+| `endTime` | The end time of the EOI, in epoch milliseconds. |
+| `eventType` | The golden signal class for the EOI: Latency, Load, Bottleneck, Error, Throughput, Success, or Availability. For more information about golden signals, see the [Google SRE handbook](https://landing.google.com/sre/sre-book/chapters/preface/). |
+| `id` | The identifier of the EOI. Note that multiple EOIs might have the same id, but different updateTime fields. In this case, the EOI with the highest updateTime value should be chosen. |
+| `impactPositive` | Whether the EOI represents a positive impact on the overall system. |
+| `isCause` | Whether the EOI is causally related to another EOI. |
+| `metric` | Time series name. |
+| `parentId` | For grouped Events of Interest, this is the ID of the parent EOI. |
+| `size` | The number of EOIs grouped with this Event of Interest. |
+| `stability` | Stability of the underlying time series. |
+| `startTime` | Start time of the EOI, in epoch milliseconds. |
+| `tags` | All metadata and dimensions associated with the underlying time series. |
+| `updateTime` | Timestamp at which the EOI was updated. |
 
 ### Sample queries  
 
@@ -427,7 +428,7 @@ _view = sumologic_signals_anomalies
 This query extracts the Team field from the tags field of the log message, and uses the where operator to filter EOIs in which Team is “search-query”. This helps filter EOIs by facets of interest.
 
 ```sql
-_view = sumologic_signals_anomalies 
+_view = sumologic_signals_anomalies
 | json field=tags "Team"
 | where Team="search-query"
 | fields domain, metric, drift, tags

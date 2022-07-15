@@ -1,8 +1,9 @@
 ---
 id: monitoring-observability-solution
+title: Monitoring with the Observability Solution
+sidebar_label: Monitoring
+description: tk
 ---
-
-# Monitoring with the Observability Solution
 
 After you have set up [collection](set-up-collection-observability.md), you can start monitoring your application with the Observability Solution.
 
