@@ -1,5 +1,5 @@
 ---
-id: kubernetes-alerts
+id: alerts
 title: Kubernetes Alerts
 sidebar_label: Setting Alerts
 description: tk
