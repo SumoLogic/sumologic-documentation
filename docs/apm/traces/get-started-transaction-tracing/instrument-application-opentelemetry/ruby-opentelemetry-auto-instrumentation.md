@@ -1,8 +1,9 @@
 ---
 id: ruby-opentelemetry-auto-instrumentation
+title: Ruby OpenTelemetry auto-instrumentation
+sidebar_label: Ruby OpenTelemetry auto-instrumentation
+description: Learn how to collect telemetry data from applications written in Ruby.
 ---
-
-# Ruby OpenTelemetry auto-instrumentation
 
 Obtaining telemetry data from applications written in Ruby has never been easier. Thanks to [Opentelemetry-Ruby](https://github.com/open-telemetry/opentelemetry-ruby) the instrumentation process is very simple. Enabling auto-instrumentation requires you to perform three steps, explained in detail below. First, installation of the required gems, which hold the OpenTelemetry SDK and library-specific instrumentation. Second, code changes required for instrumentation enable and lastly, the exporter configuration.
 
@@ -11,7 +12,7 @@ Obtaining telemetry data from applications written in Ruby has never been eas
 There are a few simple steps to instrument the application and export the telemetry data by [OpenTelemetry Protocol exporter](https://github.com/open-telemetry/opentelemetry-ruby/tree/opentelemetry-exporter-otlp/v0.21.2/exporter/otlp) - **version sdk=1.0.2, exporter=0.21.2, instrumentation=0.23.0**.
 
 ## Step 1. Gems Installation  
-      
+
 Installation of the packages listed below is required to apply the instrumentation and export telemetry data. All listed gems are located on RubyGems.org and they can be installed in two different ways:
 
 * **gem** command
@@ -46,7 +47,7 @@ There are two solutions:
    ```
 
 ## Step 2. Required code changes  
-      
+
 To enable instrumentation in the application and export the telemetry data it is enough to add the code below to the project. Two examples below present a specific package and an “all in one” instrumentation. 
 
 * Specific package instrumentation - in this example only Sinatra and Net HTTP libraries will be instrumented.
@@ -71,7 +72,7 @@ To enable instrumentation in the application and export the telemetry data it is
    ```
 
 ## Step 3. Telemetry data exporter configuration  
-      
+
 The final step is to configure the exporter host and service name. This can be done [directly in the code](https://github.com/open-telemetry/opentelemetry-ruby/tree/opentelemetry-exporter-otlp/v0.21.2/exporter/otlp#how-do-i-get-started) or by environment variables. In this example, the exporter will be configured by environment variables.
 
 * Environment variable sets the exporter to OTLP:
@@ -85,11 +86,11 @@ The final step is to configure the exporter host and service name. This can be d
    ```
    OTEL_EXPORTER_OTLP_ENDPOINT=http://collection-sumologic-otelcol.sumologic:55681
    ```
-          
+
    In this example, the value of the variable points to the default Sumologic Kubernetes Collector. For Kubernetes environments see the [available endpoints for a direct connection](../set-up-traces-collection-for-kubernetes-environments.md). For other environments see [endpoints and protocols](../set-up-traces-collection-for-other-environments.md).
 
 * Configure the service name. Ensure the string value represents its business logic, such as `FinanceServiceCall`.  This will appear as a tracing service name in Sumo Logic.
-  
+
    ```
    OTEL_SERVICE_NAME=SERVICE_NAME
    ```
@@ -123,8 +124,7 @@ set :logger, logger
 ```
 
 Example output:
-  
+
 ```
 "2022-02-28 13:01:25 +0000, INFO: {:remote_ip\>\"127.0.0.6\", :request_path\>\"/get_beans\", :query_string\>\"\", :request_method\>\"POST\", :execution_time_sec\>0.00033453479409217834, :response_status_code\>200} - trace_id=cdd460d538917f82560cbb91373a05a6 - span_id=12a09921c89fd6e9 - operation=POST /get_beans
 ```
-

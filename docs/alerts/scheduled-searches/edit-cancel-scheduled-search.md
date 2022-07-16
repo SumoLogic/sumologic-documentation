@@ -2,7 +2,7 @@
 id: edit-cancel-scheduled-search
 title: Edit or Cancel the Schedule for a Search
 sidebar_label: Edit or Cancel the Schedule for a Search
-description: You can edit or cancel a scheduled search at any time.
+description: You can edit or cancel a Scheduled Search at any time.
 ---
 
 In the [**Library**](/docs/get-started/library/sumo-logic-library), you can edit or cancel a scheduled search at any time. If you cancel a scheduled search, the search reverts to a saved search.

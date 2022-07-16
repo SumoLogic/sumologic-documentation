@@ -1,8 +1,9 @@
 ---
 slug: /apm/traces/get-started-transaction-tracing/javascript-opentelemetry-auto-instrumentation
+title: JavaScript OpenTelemetry auto-instrumentation
+sidebar_label: JavaScript OpenTelemetry auto-instrumentation
+description: Learn how to instrument your JavaScript/NodeJS services using the Sumo Logic distribution for OpenTelemetry JS (recommended) or the official OpenTelemetry distribution.
 ---
-
-# JavaScript OpenTelemetry auto-instrumentation
 
 You can instrument your JavaScript/NodeJS services either using [Sumo Logic distribution for OpenTelemetry JS](#auto-instrumentation-using-sumo-logic-opentelemetry-for-js-distro-easy-setup) that is all-in-one, easy and quick to setup or a bit more demanding [official OpenTelemetry distribution](#auto-instrumentation-using-official-opentelemetry-for-js). 
 
@@ -91,7 +92,7 @@ The packages above are mandatory. The next step is to install OpenTelemetry plug
 [OpenTelemetry HTTP exporter](https://www.npmjs.com/package/@opentelemetry/exporter-trace-otlp-proto/v/0.27.0)
 
 Install OpenTelemetry HTTP exporter package:  
-  
+
 ```
 $ npm install --save @opentelemetry/exporter-trace-otlp-proto@0.27.0
 ```
@@ -119,15 +120,15 @@ module.exports = () => {
     'service.name': 'YOUR_SERVICE_NAME',
     'application': 'YOUR_APPLICATION_NAME',
     //'ANY_OTHER_ATTRIBUTE_KEY': 'ANY_OTHER_ATTRIBUTE_VALUE',
- }); 
+ });
 
  const provider = new NodeTracerProvider({ resource: resources });
- 
+
  const exporterOptions = {
   url: 'http://collection-sumologic-otelcol.sumologic:55681/v1/traces',
  }
 
- 
+
  const exporter = new OTLPTraceExporter(exporterOptions);
  provider.addSpanProcessor(new BatchSpanProcessor(exporter));
  provider.register();

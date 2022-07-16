@@ -2,7 +2,7 @@
 id: monitor-faq
 title: Monitor FAQ
 sidebar_label: Monitor FAQ
-description: tk
+description: We've listed the frequently asked questions and answers of Monitors.
 ---
 
 ## Can I convert my existing Scheduled Search to a Monitor?

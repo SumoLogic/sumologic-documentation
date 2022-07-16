@@ -2,7 +2,7 @@
 slug: /apm/traces/working-with-tracing-data
 title: Working with Tracing data
 sidebar_label: Working with Tracing data
-description: tk
+description: Learn how to work with your Tracing data including dashboards, Service Map, Spans, and queries.
 ---
 
 This guide provides information to work with your tracing data including

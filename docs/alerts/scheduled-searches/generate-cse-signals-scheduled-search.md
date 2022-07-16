@@ -2,7 +2,7 @@
 id: generate-cse-signals-scheduled-search
 title: Generate CSE Signals With a Scheduled Search
 sidebar_label: Generate CSE Signals With a Scheduled Search
-description: This page has information about creating a scheduled search that will trigger a Cloud SIEM Enterprise (CSE) Signal. 
+description: You can generate a CSE Signal with a scheduled search.
 ---
 
 This page has information about creating a scheduled search that will trigger a Cloud SIEM Enterprise (CSE) Signal. Before you start using scheduled searches to create CSE Signals, it is helpful to understand what Signals are, and how they relate to the generation of CSE Insights. For information about how it all works see [Insight Generation Process](../../cse/records-signals-entities-insights/insight-generation-process.md). 

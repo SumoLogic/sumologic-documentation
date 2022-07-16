@@ -1,8 +1,9 @@
 ---
 id: javascript-traceid-spanid-injection-into-logs
+title: JavaScript TraceId and SpanId injection into logs
+sidebar_label: JavaScript TraceId and SpanId injection into logs
+description: Configuring traceId, spanId, and trace flags data injection into user logs in JavaScript applications is simple.
 ---
-
-# JavaScript TraceId and SpanId injection into logs
 
 It is very simple to configure **traceId, spanId, and trace flags data** injection into user logs in JavaScript applications. Mostly it is enough to add instrumented versions of the logging packages into project dependencies and register them as new instrumentation.
 
@@ -72,7 +73,7 @@ The following information walks through [bunyan](https://www.npmjs.com/package/b
 
 The following information walks through [pino](https://www.npmjs.com/package/pino) logger [OpenTelemetry instrumentation](https://www.npmjs.com/package/@opentelemetry/instrumentation-pino):
 
-1. Package dependency installation : 
+1. Package dependency installation :
 
    ```
    npm install --save @opentelemetry/instrumentation-pino
@@ -134,7 +135,7 @@ In the case of custom loggers, the most important thing is to know how to obtain
    ```
    console.log(`Example log trace_id:”${trace_id}” span_id:”${span_id}” trace_flags:”${trace_flags}”`);
    ```  
-      
+
    Example output:  
 
    ```

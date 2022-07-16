@@ -2,7 +2,7 @@
 id: set-up-traces-collection-for-kubernetes-environments
 title: Set up traces collection for Kubernetes environments
 sidebar_label: Set up traces collection for Kubernetes environments
-description: tk
+description: After installing or upgrading your Kubernetes Sumo Collector, you will be able to send your traces directly to its endpoint using Jaeger, Zipkin, and OpenTelemetry formats. 
 ---
 
 After installing or upgrading your Kubernetes Sumo Collector, you will be able to send your traces directly to its endpoint using Jaeger, Zipkin, and OpenTelemetry formats.

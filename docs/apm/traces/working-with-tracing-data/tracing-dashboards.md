@@ -2,7 +2,7 @@
 id: tracing-dashboards
 title: Tracing Dashboards
 sidebar_label: Tracing Dashboards
-description: tk
+description: Create Tracing dashboards, install apps, and more.
 ---
 
 ## Application Service Dashboards

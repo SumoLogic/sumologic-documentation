@@ -1,8 +1,9 @@
 ---
 slug: /apm/traces/get-started-transaction-tracing/go-opentelemetry-auto-instrumentation
+title: Go OpenTelemetry auto-instrumentation
+sidebar_label: Go OpenTelemetry auto-instrumentation
+description: OpenTelemetry Golang instrumentation gives you the possibility to capture telemetry (metrics and traces) data from code written in Golang.
 ---
-
-# Go OpenTelemetry auto-instrumentation
 
 OpenTelemetry Golang instrumentation gives you the possibility to capture telemetry (metrics and traces) data from code written in Golang. The best way is to use https://github.com/open-telemetry/opentelemetry-go. See the list of [supported libraries](https://github.com/open-telemetry/opentelemetry-go-contrib/tree/v1.4.0/instrumentation#instrumentation-packages).
 
@@ -62,7 +63,7 @@ Tracing initialization requires a few steps to be ready. The first one is to con
 func initTracer() {
 
     ctx := context.Background()
-    
+
     client := otlptracehttp.NewClient()
 
     otlpTraceExporter, err := otlptrace.New(ctx, client)
@@ -76,7 +77,7 @@ func initTracer() {
         trace.WithSpanProcessor(batchSpanProcessor),
         //trace.WithSampler(sdktrace.AlwaysSample()), - please check TracerProvider.WithSampler() implementation for details.
     )
-    
+
     otel.SetTracerProvider(tracerProvider)
     otel.SetTextMapPropagator(propagation.NewCompositeTextMapPropagator(
         propagation.TraceContext{}, propagation.Baggage{}))

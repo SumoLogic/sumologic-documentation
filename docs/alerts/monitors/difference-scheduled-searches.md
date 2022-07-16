@@ -2,7 +2,7 @@
 id: difference-from-scheduled-searches
 title: Difference from Scheduled Searches
 sidebar_label: Difference from Scheduled Searches
-description: tk
+description: Learn why you should use Monitors instead of Scheduled Searches and Metric Monitors.
 ---
 
 In order to understand the difference between the two we first need to know the use-cases that each solves today. 

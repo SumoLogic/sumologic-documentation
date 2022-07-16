@@ -2,7 +2,7 @@
 id: service-map
 title: Service Map
 sidebar_label: Service Map
-description: tk
+description: View your application topology and investigate microservice interactions.
 ---
 
 The Service Map is a high-level view of your application environment, automatically built from tracing data in real time as it arrives in Sumo Logic. This gives you a greater understanding of your application architecture and dependencies between monitored microservices.
