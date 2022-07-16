@@ -2,7 +2,7 @@
 slug: /alerts/monitors
 title: Monitors
 sidebar_label: Monitors
-description: Sumo Logic Monitors allow you to set robust and configurable alerting policies that enable you to get notified about critical changes or issues affecting your production application.
+description: Monitors continuously query your logs or metrics and send notifications when specific events occur. You can send notifications to Connections for three thresholds, critical, warning, and missing data. Each threshold can have one or more notifications sent for an alert and recover condition.
 ---
 
 Sumo Logic Monitors allow you to set robust and configurable alerting policies that enable you to get notified about critical changes or issues affecting your production application.

@@ -2,7 +2,7 @@
 slug: /apm/traces
 title: Traces
 sidebar_label: Traces
-description: tk
+description: See how your application is behaving with trace analytics.
 ---
 
 ##  Availability

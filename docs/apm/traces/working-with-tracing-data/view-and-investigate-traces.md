@@ -2,7 +2,7 @@
 id: view-and-investigate-traces
 title: View and investigate Traces
 sidebar_label: View and investigate Traces
-description: Trace data is visualized through filtered trace lists and icicle charts allowing you to find and troubleshoot faulty transactions easily.
+description: Learn how to search and investigate your traces, trace views, and trace events.
 ---
 
 Trace data is visualized through filtered trace lists and icicle charts allowing you to find and troubleshoot faulty transactions easily.

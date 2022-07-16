@@ -2,7 +2,7 @@
 id: spans
 title: Analyze data on Span level
 sidebar_label: Analyze data on Span level
-description: tk
+description: Learn how to use the Spans page to explore your span data.
 ---
 
 ## Availability

@@ -1,8 +1,9 @@
 ---
 slug: /apm/traces/get-started-transaction-tracing/java-opentelemetry-auto-instrumentation
+title: Java OpenTelemetry auto-instrumentation
+sidebar_label: Java OpenTelemetry auto-instrumentation
+description: OpenTelemetry Instrumentation for Java automatically detects when one of the popular libraries is being used in the service and injects the instrumentation without writing any code.
 ---
-
-# Java OpenTelemetry auto-instrumentation
 
 Perhaps the most convenient way to start capturing telemetry from Java (or, generally speaking, JVM) is to incorporate [OpenTelemetry Instrumentation for Java](https://github.com/open-telemetry/opentelemetry-java-instrumentation). It automatically detects when one of the [popular libraries](https://github.com/open-telemetry/opentelemetry-java-instrumentation#supported-libraries-frameworks-and-application-servers) is being used in the service and injects the instrumentation without writing any code. It’s also possible to mix automatic instrumentation with manual instrumentation if needed. This method works for all Java 8+ JVMs.
 

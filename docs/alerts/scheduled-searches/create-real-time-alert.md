@@ -2,7 +2,7 @@
 id: create-real-time-alert
 title: Create a Real Time Alert
 sidebar_label: Create a Real-Time Alert
-description: Real Time Alerts are scheduled searches that run nearly continuously and inform you in real time when error conditions exist.
+description: Set up Real Time Alerts to learn of error conditions right when they occur.
 ---
 
 Real Time Alerts are scheduled searches that run nearly continuously. That means that you're informed in real time when error conditions exist.

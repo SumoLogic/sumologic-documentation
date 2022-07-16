@@ -1,8 +1,9 @@
 ---
 id: aws-lambda-python-function-instrumentation
+title: AWS Lambda - Python function instrumentation with Sumo Logic tracing
+sidebar_label: AWS Lambda - Python function instrumentation
+description: Learn how to install and configure OpenTelemetry distributed tracing for AWS Lambda functions written in Python and send data to Sumo Logic.
 ---
-
-# AWS Lambda - Python function instrumentation with Sumo Logic tracing
 
 This document covers how to install and configure OpenTelemetry distributed tracing for AWS Lambda functions written in Python and send data to Sumo Logic. To obtain telemetry data from AWS Lambda functions developed in Python language you can use the [Sumo Logic AWS OTel Python Lambda](https://github.com/SumoLogic/opentelemetry-lambda/tree/main/python).
 
@@ -10,7 +11,7 @@ Sumo Logic AWS OTel Lambda supports:
 
  * Python 3.8 and Python 3.9 runtimes
  * x86_64 and arm64 architectures
- 
+
 ## Sumo Logic AWS OTel Lambda layer
 
 Sumo Logic AWS OTel Lambda Layer provides packed [OpenTelemetry Python](https://github.com/open-telemetry/opentelemetry-python) libraries that automatically instrument Lambda functions. The biggest advantage of installing Sumo Logic OTel AWS as a layer is disabling/enabling instrumentation of the Lambda function without changing the code.
@@ -50,11 +51,11 @@ It is very simple to instrument your AWS Python Lambda function using the Sumo L
      * `application=YOUR_APPLICATION_NAME` - the string value, if the function is a part of complex system/application then set it for all other functions/applications.
 
      * `cloud.account.id=YOUR_CLOUD_ACCOUNT_ID` - set an additional tag that will contain your [AWS Lambda Account ID](https://docs.aws.amazon.com/general/latest/gr/acct-identifiers.html). This will help to provide more relevant data.   
-              
+
         All of the attributes above are comma separated key/value pairs (this is also a way to add additional information to the spans, just after comma add additional key=value pair) such as, `OTEL_RESOURCE_ATTRIBUTES=application=YOUR_APPLICATION_NAME,cloud.account.id=123456789012`.
 
      * `SUMOLOGIC_HTTP_TRACES_ENDPOINT_URL` has to be set to send all gathered telemetry data to Sumo Logic. The URL comes from an [HTTP Traces Endpoint URL](../http-traces-source.md). You can use an existing Source or create a new one if needed.  
-          
+
     ![lambda-python.png](/img/traces/lambda-python3.png)
 
 1. Your function should be successfully instrumented. Invoke the function and find your traces in the [Sumo Logic Tracing screen](../../working-with-tracing-data/view-and-investigate-traces.md).
@@ -157,7 +158,7 @@ Instrumentation of container based AWS Lambda function requires some changes in 
    * `application=YOUR_APPLICATION_NAME` - the string value, if the function is a part of complex system/application then set it for all other functions/applications.
 
      * `cloud.account.id=YOUR_CLOUD_ACCOUNT_ID` - set an additional tag that will contain your [AWS Lambda Account ID](https://docs.aws.amazon.com/general/latest/gr/acct-identifiers.html). This will help to provide more relevant data.   
-              
+
         All of the attributes above are comma separated key/value pairs (this is also a way to add additional information to the spans, just after comma add additional key=value pair) such as, `OTEL_RESOURCE_ATTRIBUTES=application=YOUR_APPLICATION_NAME,cloud.account.id=123456789012`.
 
    * `SUMOLOGIC_HTTP_TRACES_ENDPOINT_URL` has to be set to send all gathered telemetry data to Sumo Logic. The URL comes from an [HTTP Traces Endpoint URL](../http-traces-source.md). You can use an existing Source or create a new one if needed.  

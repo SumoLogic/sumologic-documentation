@@ -2,7 +2,7 @@
 id: alert-response-faq
 title: Alert Response FAQ
 sidebar_label: Alert Response FAQ
-description: tk
+description: Our commonly asked questions about Alert Response are documented for your reference.
 ---
 
 ## Is Alert Response available in all Sumo Logic packages? 

@@ -2,7 +2,7 @@
 id: save-to-lookup
 title: Save to Lookup
 sidebar_label: Save to Lookup
-description: When you create a Scheduled Search, you can choose Save to Lookup as the Alert type. This way, you can view the search results later in the Lookup Table.
+description: Learn how to save the results of a scheduled search to a Lookup Table.
 ---
 
 When you create a Scheduled Search, you can choose Save to Lookup as the Alert type. This way, you can view the search results later in the Lookup Table. You can use the lookup operator to enrich other log data with information from the Lookup Table.

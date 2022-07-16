@@ -2,7 +2,7 @@
 id: save-to-index
 title: Save to Index
 sidebar_label: Save to Index
-description: When you create a Scheduled Search, you can save the results to an Index.
+description: When you save the results of a scheduled search to an Index you can search your data using _index=index_name with increased search performance.
 ---
 
 When you create a Scheduled Search, you can save the results to an Index. This way, your data can be searched at a later time using `_index=index_name` with increased search performance.

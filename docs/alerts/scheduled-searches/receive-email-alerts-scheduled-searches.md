@@ -2,7 +2,7 @@
 id: receive-email-alerts-scheduled-searches
 title: Receive Email Alerts from Scheduled Searches
 sidebar_label: Receive Email Alerts from Scheduled Searches
-description: tk
+description: Learn about the three ways to receive the results of scheduled searches in email.
 ---
 
 :::note

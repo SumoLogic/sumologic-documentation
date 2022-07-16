@@ -1,8 +1,9 @@
 ---
 id: istio-opentelemetry-auto-instrumentation
+title: Istio OpenTelemetry auto-instrumentation
+sidebar_label: Istio OpenTelemetry auto-instrumentation
+description: Learn how to instrument OpenTelemetry Application code to collect Istio trace data generated from Envoy proxies.
 ---
-
-# Istio OpenTelemetry auto-instrumentation
 
 OpenTelemetry Collector gives you the possibility to collect Istio trace data and forward it to Sumo Logic.
 
@@ -20,7 +21,7 @@ Set`meshConfig.enableTracing=true` and `meshConfig.defaultConfig.tracing.openCen
 
     ```
     --set meshConfig.enableTracing=true
-    --set meshConfig.defaultConfig.tracing.openCensusAgent.address=RELEASE_NAME-CHART_NAME-otelcol.NAMESPACE:55678 
+    --set meshConfig.defaultConfig.tracing.openCensusAgent.address=RELEASE_NAME-CHART_NAME-otelcol.NAMESPACE:55678
     ```
 
 * For [standalone collectors](../set-up-traces-collection-for-other-environments.md):  
@@ -43,7 +44,7 @@ receiving collector:
 
     ```
     --set meshConfig.enableTracing=true
-    --set meshConfig.defaultConfig.tracing.zipkin.address=RELEASE_NAME-CHART_NAME-otelcol.NAMESPACE:9411 
+    --set meshConfig.defaultConfig.tracing.zipkin.address=RELEASE_NAME-CHART_NAME-otelcol.NAMESPACE:9411
     ```
 
 * For [*standalone collectors*](../set-up-traces-collection-for-other-environments.md):  
@@ -111,11 +112,11 @@ Every action requires restart of the pods involved in tracing.
     ```
     kubectl get configmap istio –namespace istio-system –output "jsonpath={.data['mesh']}"
     ```
-      
-    Example output: 
+
+    Example output:
 
     ![istio1.png](/img/traces/istio1.png)  
-    
+
     Check if correct values are set for `enableTracing` and `defaultConfig.tracing.EXPORTER_NAME.address`. If OpenCensus was configured, then Zipkin by default points to an Istio endpoint.
 
 1. Make sure the namespace is labeled. More details about sidecar injection can be found [here](https://istio.io/latest/docs/setup/additional-setup/sidecar-injection/). To check if namespace is labeled, execute:  
@@ -123,7 +124,7 @@ Every action requires restart of the pods involved in tracing.
     ```
     kubectl get namespace -L istio-injection
     ```
-      
+
     ![istio2.png](/img/traces/istio2.png)  
 
 1. Make sure the `namespace` in which the application is running `istio-injection` label is set as `enabled`. If label value is disabled or not set then run:  
@@ -137,7 +138,7 @@ Every action requires restart of the pods involved in tracing.
     ```
     kubectl logs -n NAMESPACE POD_NAME istio-proxy
     ```
-      
+
     Example output:  
 
     ![istio3.png](/img/traces/istio3.png)

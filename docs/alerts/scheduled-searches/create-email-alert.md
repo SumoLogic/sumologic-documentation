@@ -2,7 +2,7 @@
 id: create-email-alert
 title: Create an Email Alert
 sidebar_label: Create an Email Alert
-description: tk
+description: Create a Scheduled Search Email Alert.
 ---
 
 ## Create a scheduled search email alert

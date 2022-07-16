@@ -2,7 +2,7 @@
 id: alert-response
 title: Alert Response
 sidebar_label: Alert Response
-description: tk
+description: Quickly investigate and resolve issues you've been alerted about.
 ---
 
 Alert Response provides contextual insights about triggered alerts to minimize the time needed to investigate and resolve application failures.

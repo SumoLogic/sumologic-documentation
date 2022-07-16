@@ -2,7 +2,7 @@
 slug: /alerts
 title: Alerts
 sidebar_label: Alerts
-description: tk
+description: Create Monitors and Scheduled Searches to notify users of changing conditions.
 ---
 
 Sumo Logic offers several alerting features. See the topics below for details on how they work and your configuration options.
