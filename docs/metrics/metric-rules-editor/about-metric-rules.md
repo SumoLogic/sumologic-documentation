@@ -1,8 +1,9 @@
 ---
 id: about-metric-rules
+title: About Metric Rules
+sidebar_label: About Metric Rules
+description: Learn about metric rules and how they ease the process of querying metrics.
 ---
-
-# About Metric Rules
 
 ## Overview of metric rules
 

@@ -1,8 +1,9 @@
 ---
 id: get-started-metrics
+title: Get Started with Metrics
+sidebar_label: Getting Started
+description: Learn how to get started with metrics and create your first visualization.
 ---
-
-# Get Started with Metrics
 
 The easiest way get started with metrics is to add a Host Metrics Source, which allows you to collect data pertaining to the local Installed Collector host. Check out this webinar for an overview of what you can do with host metrics. For reference, the slides are available [here](http://www.slideshare.net/Sumo_Logic/sumo-logic-webinar-visibility-into-your-host-metrics).
 
@@ -13,7 +14,7 @@ The easiest way get started with metrics is to add a Host Metrics Source, which�
         className="video-container"
         display="initial"
         position="relative"
-        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
         />
 
@@ -24,7 +25,7 @@ Then follow these steps to get started.
 ## 1. Add a Source to collect your data
 
 The easiest way get started with metrics is to add a Host Metrics Source, which allows you to collect data pertaining to the local Installed Collector host.  
-  
+
 Watch these videos to see how to ingest Host Metrics from an Installed Collector, and see Collecting Host Metrics for Installed Collectors for full instructions. 
 
 **Ingest Host Metrics by Upgrading an Existing Collector**
@@ -38,7 +39,7 @@ If you already have an Installed Collector, upgrade the Collector to start inges
         className="video-container"
         display="initial"
         position="relative"
-        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
         />
 
@@ -53,7 +54,7 @@ If you don't have any installed metrics Sources, you can install one easily by u
         className="video-container"
         display="initial"
         position="relative"
-        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
         />
 
@@ -77,7 +78,7 @@ To get started quickly after installing your Collector and Sources, you can inst
         className="video-container"
         display="initial"
         position="relative"
-        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
         />
 
@@ -94,6 +95,6 @@ You can add a metrics visualization as a Panel in an existing Dashboard, or crea
         className="video-container"
         display="initial"
         position="relative"
-        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
         />

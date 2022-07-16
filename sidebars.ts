@@ -963,6 +963,7 @@ module.exports = {
       items: [
         'metrics/introduction-metrics/overview-sumo-metrics',
         'metrics/introduction-metrics/get-started-metrics',
+        'metrics/introduction-metrics/built-in-metadata',
         'metrics/introduction-metrics/metric-formats',
         'metrics/introduction-metrics/metric-quantization',
       ],

@@ -1,8 +1,9 @@
 ---
 id: avg
+title: avg
+sidebar_label: avg
+description: The avg operator calculates the average of all matching time series.
 ---
-
-# avg
 
 The `avg` operator calculates the average of all matching time series. If grouping is specified, it calculates the average for each group.
 
@@ -39,4 +40,3 @@ Returns the average value of the metric by two fields—`TargetGroup` and `_sour
 ```sql
 Namespace=AWS/ApplicationELB metric=RequestCount Statistic=Sum AvailabilityZone=* Region=* TargetGroup=* | avg by TargetGroup, _sourceName
 ```
-

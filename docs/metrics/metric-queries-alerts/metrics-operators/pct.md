@@ -1,8 +1,10 @@
 ---
 id: pct
+title: pct
+sidebar_label: pct
+description: The pct operator calculates, at each timestamp, the nth percentile of values of a metric time series for each time interval.
 ---
 
-# pct
 
 Calculates, at each timestamp, the nth percentile of values of the input series for each time interval. If grouping is specified, it calculates the specified percentile for each group.
 

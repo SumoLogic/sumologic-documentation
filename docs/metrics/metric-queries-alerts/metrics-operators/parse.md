@@ -1,8 +1,9 @@
 ---
 id: parse
+title: parse
+sidebar_label: parse
+description: Parses the specified field to create new fields to use in the metrics query.
 ---
-
-# parse
 
 Parses the specified field to create new fields to use in the metrics query.
 
