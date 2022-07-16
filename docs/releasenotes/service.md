@@ -7,6 +7,12 @@ sidebar_label: Service
 Service Release Notes for the current year are listed here. If you need to see previous Service Release Notes, check the [Archive](https://help.sumologic.com/Release_Archive/Service_Release_Notes_Archive).
 
 
+## 2022-07-08 (Observability)
+
+New - We’re pleased to announce our new in-product Kubernetes onboarding experience, which guides first-time users step by step through data collection setup (Orchestration, Infrastructure & App Data), the dashboard generation process, and alert monitors installation. To try it out, go to Sumo Logic > **App Catalog** > **Kubernetes** app > then follow the wizard steps. You can also refer to our [Kubernetes Quickstart](/docs/observability/kubernetes-solution/quickstart.md) doc, which mirrors the in-product onboarding workflow.
+
+---
+
 ## 2022-07-08 (Metrics)
 
 New - Care to comment? Now you can. In the Metrics Explorer, in Advanced Mode you can add comments to a metrics query and comment out portions of the query by using comment formatting. Comments are helpful for troubleshooting during query development, and also for other users who may use or edit your queries at a later date—comments you add will be visible in saved and shared queries. For more information, see Comments in Metric Queries.
