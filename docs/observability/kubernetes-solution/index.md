@@ -16,31 +16,32 @@ In this section, we will introduce the following concepts:
 </div>
 <div className="box box2 card">
   <div className="container">
-  <h3><a href="/docs/observability/kubernetes-solution/quickstart-k8s">Quickstart</a></h3>
+  <h3><a href="/docs/observability/kubernetes-solution/quickstart">Quickstart</a></h3>
   <p>Get up and running with our Kubernetes solution in minutes.</p>
   </div>
 </div>
 <div className="box box3 card">
     <div className="container">
-      <h3><a href="/docs/observability/kubernetes-solution/set-up-collection-kubernetes">Setting up Data Collection</a></h3>
+      <h3><a href="/docs/observability/kubernetes-solution/collection-setup">Setting up Data Collection</a></h3>
       <p>Overview of Kubernetes collection process for Kubernetes environments, and configuring logs and metrics collection.</p>
       </div>
     </div>
     <div className="box box4 card">
       <div className="container">
-      <h3><a href="/docs/observability/kubernetes-solution/view-kubernetes-app-dashboards">Learn about the Sumo Logic Kubernetes apps.</a></h3>
-      <p>Sumo Logic combines metrics, logs, and events to a create real-time unified view of the performance, uptime, and security of your Kubernetes environment.</p>
+      <h3><a href="/docs/observability/kubernetes-solution/apps">Apps</a></h3>
+      <p>Sumo Logic provides Kubernetes apps across a variety of platforms, each
+      with a set of predefined dashboards.</p>
       </div>
     </div>
     <div className="box box5 card">
       <div className="container">
-      <h3><a href="/docs/observability/kubernetes-solution/kubernetes-alerts">Setting Alerts</a></h3>
+      <h3><a href="/docs/observability/kubernetes-solution/alerts">Setting Alerts</a></h3>
       <p>To help determine if the Kubernetes cluster is available and performing well, the Sumo Logic monitors are provided with out-of-box alerts.</p>
       </div>
     </div>
     <div className="box box6 card">
       <div className="container">
-      <h3><a href="/docs/observability/kubernetes-solution/monitor-kubernetes-effectively">Monitor effectively</a></h3>
+      <h3><a href="/docs/observability/kubernetes-solution/monitoring">Monitor effectively</a></h3>
       <p>Learn more about effectively monitoring your Kubernetes environment architecture with Sumo Logic.</p>
       </div>
     </div>

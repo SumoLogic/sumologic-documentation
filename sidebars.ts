@@ -85,7 +85,7 @@ module.exports = {
       items: [
         'observability/aws-observability-solution/quickstart-aws',
         'sdo/quickstart-sdo-github',
-        'observability/kubernetes-solution/quickstart-k8s'
+        'observability/kubernetes-solution/quickstart'
       ],
     },
   ],
@@ -1623,14 +1623,12 @@ module.exports = {
           link: {type: 'doc', id: 'observability/kubernetes-solution/index'},
           items: [
             'observability/kubernetes-solution/about-kubernetes-solution',
-            'observability/kubernetes-solution/quickstart-k8s',
-            'observability/kubernetes-solution/set-up-collection-kubernetes',
-            'observability/kubernetes-solution/view-kubernetes-app-dashboards',
-            'observability/kubernetes-solution/navigate-kubernetes-environment',
-            'observability/kubernetes-solution/monitor-kubernetes-effectively',
-            'observability/kubernetes-solution/master-metadata-intuitive-searches',
-            'observability/kubernetes-solution/kubernetes-alerts',
+            'observability/kubernetes-solution/quickstart',
+            'observability/kubernetes-solution/monitoring',
             'observability/kubernetes-solution/troubleshoot-with-explore',
+            'observability/kubernetes-solution/collection-setup',
+            'observability/kubernetes-solution/apps',
+            'observability/kubernetes-solution/alerts',
           ],
         },
         'observability/root-cause-explorer',
