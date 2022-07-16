@@ -9,7 +9,7 @@ Service Release Notes for the current year are listed here. If you need to see p
 
 ## 2022-07-08 (Observability)
 
-New - We’re pleased to announce our new in-product Kubernetes onboarding experience, which guides first-time users step by step through data collection setup (Orchestration, Infrastructure & App Data), the dashboard generation process, and alert monitors installation. To try it out, go to Sumo Logic > **App Catalog** > **Kubernetes** app > then follow the wizard steps. You can also refer to our [Kubernetes Quickstart](/docs/observability/kubernetes-solution/quickstart-k8s.md) doc, which mirrors the in-product onboarding workflow.
+New - We’re pleased to announce our new in-product Kubernetes onboarding experience, which guides first-time users step by step through data collection setup (Orchestration, Infrastructure & App Data), the dashboard generation process, and alert monitors installation. To try it out, go to Sumo Logic > **App Catalog** > **Kubernetes** app > then follow the wizard steps. You can also refer to our [Kubernetes Quickstart](/docs/observability/kubernetes-solution/quickstart.md) doc, which mirrors the in-product onboarding workflow.
 
 ---
 
