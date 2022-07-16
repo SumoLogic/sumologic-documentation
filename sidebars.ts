@@ -1626,7 +1626,7 @@ module.exports = {
             'observability/kubernetes-solution/quickstart',
             'observability/kubernetes-solution/monitoring',
             'observability/kubernetes-solution/troubleshoot-with-explore',
-            'observability/kubernetes-solution/set-up-collection-kubernetes',
+            'observability/kubernetes-solution/collection-setup',
             'observability/kubernetes-solution/apps',
             'observability/kubernetes-solution/alerts',
           ],

@@ -1,5 +1,5 @@
 ---
-id: set-up-collection-kubernetes
+id: collection-setup
 title: Set up Collection for Kubernetes
 sidebar_label: Setting Up Data Collection
 hide_table_of_contents: true

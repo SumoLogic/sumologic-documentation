@@ -10,7 +10,7 @@ This page provides instructions for installing the Kubernetes App and Alerts, as
 
 Sumo Logic has provided out of the box alerts available through Sumo Logic monitors Visualizations-and-Alerts/Alerts/Monitors to help you quickly determine if the Kubernetes cluster is available and performing as expected. These alerts are built based on metrics datasets and have preset thresholds based on industry best practices and recommendations.
 
-For details on the individual alerts, see [Kubernetes Alerts](/docs/observability/kubernetes-solution/kubernetes-alerts).
+For details on the individual alerts, see [Kubernetes Alerts](/docs/observability/kubernetes-solution/alerts).
 
 ### Installing Alerts
 

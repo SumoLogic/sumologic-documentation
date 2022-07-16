@@ -34,7 +34,7 @@ In this section, we will introduce the following concepts:
     </div>
     <div className="box box5 card">
       <div className="container">
-      <h3><a href="/docs/observability/kubernetes-solution/kubernetes-alerts">Setting Alerts</a></h3>
+      <h3><a href="/docs/observability/kubernetes-solution/alerts">Setting Alerts</a></h3>
       <p>To help determine if the Kubernetes cluster is available and performing well, the Sumo Logic monitors are provided with out-of-box alerts.</p>
       </div>
     </div>
