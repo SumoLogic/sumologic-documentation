@@ -1,8 +1,8 @@
 ---
 id: integrate-control-tower-accounts
+title: Integrate Control Tower Accounts with AWS Observability
+description: Learn how to use the AWS Observability solution  with AWS Control Tower-managed accounts
 ---
-
-# Integrate Control Tower Accounts with AWS Observability
 
 ## What is AWS Control Tower?
 
@@ -40,7 +40,7 @@ Integrating with AWS Control Tower is a two-step process: 
 * [Step 1](#step-1-set-up-collection-from-aws-accounts-and-install-apps): Set up collection for non-CloudTrail logs and all metrics by creating a CloudFormation stack in individual AWS accounts managed by Control Tower. In this step, you also install the apps in the Sumo Logic Observability app. 
 * [Step 2](#step-2-collect-from-the-log-archive-account): Set up collection of AWS CloudTrail logs that are aggregated from all Control Tower-managed accounts in a centralized log archive account.
 * [Step 3](#step-3-create-field-extraction-rule): Create a Field Extraction Rule (FER) that will tag logs with the account aliases you set up for each child account in the previous step.    
-      
+
 ![Control Architecture.png](/img/observability/Control-Architecture.png)
 
 ## Step 1: Set up collection from AWS accounts and install apps 
@@ -84,7 +84,7 @@ In the instructions below, we assume the Log Archive AWS account is being used o
 1. In the **Sumo Logic AWS CloudTrail Source Details** section of the template:
 
     Case 1: Set up Sumo Logic CloudTrail Source to collect data in Sumo Logic.
-    
+
       1. Select **Yes** for **Create Sumo Logic CloudTrail Logs Source**.
       1. Enter the name of the CloudTrail Bucket in **Any Existing AWS S3 Bucket Name**.
       1. Provide apath expression for the Logs in “**Any Existing Bucket Path Expression for the CloudTrail logs**.  
@@ -92,7 +92,7 @@ In the instructions below, we assume the Log Archive AWS account is being used o
         ![integrate-tower6.png](/img/observability/integrate-tower6.png)
 
     Case 2 : Already collecting CloudTrail Data in Sumo Logic
-      
+
       1. Select **No** for **Create Sumo Logic CloudTrail Logs Source** and keep the default values for all the other options.
 
 1. In the **Sumo Logic AWS Lambda CloudWatch Logs Details** section of the template:
@@ -117,7 +117,7 @@ You must have a role that grants you the Manage Field Extractions capability to 
     * **Metadata**. \_sourceCategory 
     * **Value**.  aws/observability/cloudtrail/logs
     * **Parse Expression**. Enter  a parse expression to create an “account” field that maps to the alias you set for each child account in the previous step. For example, if you used the “dev” alias for an AWS account with ID  "528560886094" and the “prod” alias for an AWS account with ID "567680881046", your parse expression would look like:   
-          
+
         ```sql
         | json "recipientAccountId"
         // Manually map your aws account id with the AWS account alias you setup earlier for individual child account
@@ -126,7 +126,7 @@ You must have a role that grants you the Manage Field Extractions capability to 
         | if (recipientAccountId = "567680881046", "prod", account) as account
         | fields account
         ```
-          
+
     This screenshot shows what this would look in Sumo Logic:  
 
     ![Field Extraction rule.png](/img/observability/Field-Extraction-rule.png)

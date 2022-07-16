@@ -1,8 +1,8 @@
 ---
 slug: /observability/aws-observability-solution/aws-observability-faqs
+description: Frequently asked questions (FAQs) about the AWS Observability Solution to monitor and troubleshoot your AWS cloud infrastructure.
+title: AWS Observability FAQs
 ---
-
-# AWS Observability FAQs
 
 This section provides frequently asked questions and information about the AWS Observability Solution to monitor and troubleshoot your AWS cloud infrastructure.
 

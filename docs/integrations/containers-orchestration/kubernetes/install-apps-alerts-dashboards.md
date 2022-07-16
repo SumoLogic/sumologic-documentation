@@ -2,6 +2,7 @@
 id: install-apps-alerts-dashboards
 title: Install the Kubernetes App, Alerts, and view the Dashboards
 sidebar_label: Install the Kubernetes App, Alerts, and view the Dashboards
+description: This page provides instructions for installing the Kubernetes App and Alerts, as well as descriptions and examples for each of the dashboards.
 ---
 
 This page provides instructions for installing the Kubernetes App and Alerts, as well as descriptions and examples for each of the dashboards. These instructions assume you have already set up the collection as described in "Collect Logs and Metrics for the Kubernetes App".

@@ -2,7 +2,7 @@
 id: pci-compliance
 title: PCI Compliance
 sidebar_label: PCI Compliance
-description: tk
+description: Sumo apps for PCI Compliance.
 ---
 
 The PCI Compliance App is available for Sumo Logic Enterprise accounts only, and requires a Professional Services contract to install and configure. You may upgrade your account at any time. If you'd like more information on this App, please request it by clicking the **Request** button in the Apps section of the Library, or contact your Sumo Logic [sales](mailto:sales@sumologic.com) representative.

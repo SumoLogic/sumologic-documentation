@@ -1,8 +1,9 @@
 ---
 id: about-aws-observability
+title: About AWS Observability
+sidebar_label: About AWS Observability
+description: AWS Observability Solution is a framework to simplify the monitoring and troubleshooting of your AWS cloud infrastructure. You can use the Sumo Logic observability app dashboards to isolate and solve problems faster.
 ---
-
-# About AWS Observability
 
 AWS provides over 150 discrete services including compute, network, storage, database, tooling, management, security, developer tools, and analytics to name a few.
 
@@ -80,11 +81,11 @@ The AWS Observability Solution provides an intuitive dashboard framework that mi
 
 The following Sumo Logic [AWS Observability Solution apps](/docs/observability/aws-observability-solution/aws-observability-apps) provide the ability to quickly isolate and solve problems with their specialized pre-configured dashboards:
 
-* [AWS Observability API Gateway](aws-observability-apps/aws-api-gateway.md) - The [Amazon API Gateway](https://aws.amazon.com/api-gateway/) service allows you to create RESTful APIs and WebSocket APIs for real-time two-way communication applications in containerized and serverless environments, as well as web applications. 
+* [AWS Observability API Gateway](aws-observability-apps/aws-api-gateway.md) - The [Amazon API Gateway](https://aws.amazon.com/api-gateway/) service allows you to create RESTful APIs and WebSocket APIs for real-time two-way communication applications in containerized and serverless environments, as well as web applications.
 
     Sumo Logic's AWS Observability API Gateway dashboards provide insights into Amazon API Gateway tasks while accepting and processing concurrent API calls throughout your infrastructure, including traffic management, CORS support, authorization, and access control, throttling, monitoring, and API version management.
 
-* [AWS Observability Application Load Balancer](aws-observability-apps/aws-application-load-balancer.md) - The [AWS Application Load Balancer](https://aws.amazon.com/elasticloadbalancing/) service functions at the application layer, it receives requests, evaluates the listener rules in priority order to determine which rule to apply, and then selects a target from the target group. 
+* [AWS Observability Application Load Balancer](aws-observability-apps/aws-application-load-balancer.md) - The [AWS Application Load Balancer](https://aws.amazon.com/elasticloadbalancing/) service functions at the application layer, it receives requests, evaluates the listener rules in priority order to determine which rule to apply, and then selects a target from the target group.
 
     Sumo Logic's AWS Elastic Load Balancing ULM app is a unified logs and metrics App that gives you visibility into the health of your AWS Application Load Balancer and target groups. The app's preconfigured dashboards provide insights into latency, request and host status, threat intel, and HTTP backend codes by Availability Zone and target group.
 
@@ -93,22 +94,22 @@ The following Sumo Logic [AWS Observability Solution apps](/docs/observability/a
     Sumo Logic's AWS EC2 Metrics ULM app collects local host metrics and displays them using predefined search queries and dashboards. App dashboards provide a visual analysis of local host metrics for CPU, disk, memory, network, and TCP.
 
 * AWS Observability Lambda - The [AWS Lambda](https://aws.amazon.com/lambda/) service allows you to run code without the burden of provisioning or managing servers.  
-    
+
     Sumo Logic's AWS Observability Lambda is a unified log and metrics app for monitoring operation and performance trends in the AWS Lambda function in your account. The AWS app uses AWS Lambda Logs and Metrics from CloudWatch, as well as CloudTrail AWS Lambda Data Events. Preconfigured dashboards provide insights into executions,
     such as memory and duration usage by function versions or aliases, as well as performance metrics such as errors, throttles, invocations, and concurrent executions.
 
 * [AWS Observability DynamoDB](aws-observability-apps/aws-dynamodb.md) - The [Amazon DynamoDB](https://aws.amazon.com/dynamodb/) service is a fast and flexible NoSQL database service that provides consistent, single-digit millisecond latency at any scale.  
-    
+
     Sumo Logic's AWS Observability DynamoDB is a unified logs and metrics app that provides operational insights into your Amazon DynamoDB solution. The app provides preconfigured dashboards that allow you to monitor key metrics, and to view throttle events, errors, and latency, so you can plan the capacity of your Amazon DynamoDB.
 
 * [AWS Observability RDS Metrics](aws-observability-apps/aws-rds-metrics.md) - The [Amazon Relational Database Service (RDS)](https://aws.amazon.com/rds/) allows you to easily set up, operate, and scale a relational database in your cloud infrastructure.  
-    
+
     Sumo Logic's AWS Observability RDS Metrics provides visibility into your Amazon Relational Database Service (RDS) metrics collected from the CloudWatch metrics. Preconfigured dashboards allow you to monitor your Amazon RDS system's overview, CPU, memory, storage, network transmit and receive throughput, read and write operations, database connection count, disk queue depth, and more.
 
 * [Amazon ECS Dashboards](aws-observability-apps/amazon-ecs.md) - The [Amazon Elastic Container Service](https://aws.amazon.com/ecs/?whats-new-cards.sort-by=item.additionalFields.postDateTime&whats-new-cards.sort-order=desc&ecs-blogs.sort-by=item.additionalFields.createdDate&ecs-blogs.sort-order=desc) is a scalable, container management service that is used to manage containers in a cluster. With dashboards for Amazon ECS, you can monitor capacity and resource utilization of ECS components as well as quickly identify changes made to your clusters to help with troubleshooting. 
 
 * [Amazon Elasticache](aws-observability-apps/amazon-elasticache.md): The [Amazon ElastiCache](https://aws.amazon.com/elasticache/) allows you to set up, run, and scale popular open-source compatible in-memory data stores in the cloud.   
-    
+
     The Amazon ElastiCache dashboards provide visibility into key event and performance analytics that enable proactive diagnosis and response to system and environment issues. Use the preconfigured dashboards for at-a-glance analysis of event status trends, locations, successes and failures, as well as system health and performance metrics. The dashboards also have additional performance insights for Redis clusters.
 
 * [AWS Network Load Balancer](aws-observability-apps/aws-network-load-balancer.md) - The [AWS Network Load Balancer](https://aws.amazon.com/elasticloadbalancing/network-load-balancer/) service is distributed in OSI Layer 4 (i.e., network) traffic (e.g., TCP, UDP, TLS) and can handle over a million requests per second.    The AWS Network Load Balancer dashboards provide insights to ensure that your network load-balancers are operating as expected, backend hosts are healthy and to quickly identify errors.

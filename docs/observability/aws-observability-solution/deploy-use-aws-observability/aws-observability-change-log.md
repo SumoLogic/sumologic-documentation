@@ -2,7 +2,7 @@
 id: aws-observability-change-log
 title: Change Log
 sidebar_label: Change Log
-description: tk
+description: This section provides details on the available versions of the AWS Observability Cloud Formation template.
 ---
 
 This section provides details on the available versions of the AWS Observability Terraform script and CloudFormation template. The details also include all the AWS and Sumo Logic resources that will be updated and resolved bugs when upgrading the existing version of the Terraform script or CloudFormation template to the latest version.

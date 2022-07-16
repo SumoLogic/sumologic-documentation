@@ -2,7 +2,7 @@
 id: diagnose-observability-solution
 title: Diagnose with the Observability Solution
 sidebar_label: Diagnose
-description: tk
+description: Diagnose with the Observability Solution.
 ---
 
 After you have identified an issue using the available monitoring tools, the next step is to diagnose the issue and narrow down your investigation to specific services. The Observability Solution offers the following features to diagnose application issues.

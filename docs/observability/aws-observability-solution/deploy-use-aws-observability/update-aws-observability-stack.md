@@ -2,7 +2,7 @@
 id: update-aws-observability-stack
 title: Update the AWS Observability Stack
 sidebar_label: Update the AWS Observability Stack
-description: tk
+description: Learn how to update the AWS Observability stack.
 ---
 
 You can update an existing observability stack using Terraform or an AWS CloudFormation template.

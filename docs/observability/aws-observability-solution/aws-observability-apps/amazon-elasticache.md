@@ -1,8 +1,8 @@
 ---
 id: amazon-elasticache
 title: Amazon ElastiCache
-sidebar_label: Amazon ElastiCache 
-description: tk
+sidebar_label: Amazon ElastiCache
+description: Amazon ElastiCache allows you to set up, run, and scale popular open-source compatible in-memory data stores in the cloud.
 ---
 
 Amazon ElastiCache allows you to set up, run, and scale popular open-source compatible in-memory data stores in the cloud.

@@ -1,8 +1,7 @@
 ---
 id: pci-dashboards
+title: PCI Dashboards
 ---
-
-# PCI Dashboards
 
 This logical grouping of issues, events, or activities makes it easy for an organization to make sure they're continuing to comply with each requirement, and remediate any problems that could present a violation.
 

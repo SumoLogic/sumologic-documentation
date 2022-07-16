@@ -1,8 +1,9 @@
 ---
 id: pci-reports
+title: PCI Reports
+sidebar_label: PCI Reports
+description: tk
 ---
-
-# PCI Reports
 
 Unlike Dashboards and scheduled searches, reports can be modified, allowing flexibility, including:
 
