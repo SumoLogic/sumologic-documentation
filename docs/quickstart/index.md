@@ -16,7 +16,7 @@ These quick start guides help you connect, integrate, configure, and start using
 </div>
 <div className="box box2 card">
   <div className="container">
-  <h3><a href="/docs/observability/kubernetes-solution/quickstart-k8s">Kubernetes</a></h3>
+  <h3><a href="/docs/observability/kubernetes-solution/quickstart">Kubernetes</a></h3>
   <p>Get up and running with our Kubernetes solution in minutes.</p>
   </div>
 </div>

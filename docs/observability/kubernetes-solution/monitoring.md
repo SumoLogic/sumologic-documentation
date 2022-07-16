@@ -37,9 +37,9 @@ To open Explore, do the following:
     ![Explore_Collapsed_view.png](/img/kubernetes/Explore_Collapsed_view.png)
 
     * If this is your first time using Explore, the window at the right will be empty.
-    * If you have already installed a Sumo Logic App for Kubernetes, a dashboard displaying data for the selected deployment appears on the right. For instructions on installing the Sumo Logic Kubernetes App, see the [Kubernetes Solution help pages](set-up-collection-kubernetes.md). 
+    * If you have already installed a Sumo Logic App for Kubernetes, a dashboard displaying data for the selected deployment appears on the right. For instructions on installing the Sumo Logic Kubernetes App, see the [Kubernetes Solution help pages](collection-setup.md). 
 
-1. Now you can [navigate your Kubernetes environment and analyze the landscape](#navigate-and-analyze-the-kubernetes-landscape).
+1. Now you can navigate your Kubernetes environment and analyze the landscape.
 
 ### Analyzing the Kubernetes landscape 
 
@@ -121,7 +121,7 @@ Once you have created the stack linking, your custom dashboard should appear in 
 
 Health and performance data appears in the dashboard on the right for the view you are investigating: node, deployment, service, or namespace. The Sumo Logic Dashboard (New) framework is unique in its ability to show logs and metrics in a seamless integration with the same dashboard.
 
-In the following example, we chose the Kubernetes Node View and selected the k8s-freno-2 cluster. We then selected the Kubernetes - Cluster Overview dashboard, for a high-level view of the health and performance of the cluster. For more information, go to [Navigate your Kubernetes environment](navigate-kubernetes-environment.md).
+In the following example, we chose the Kubernetes Node View and selected the k8s-freno-2 cluster. We then selected the Kubernetes - Cluster Overview dashboard, for a high-level view of the health and performance of the cluster. 
 
 ![K8s_Dashboard_overview.png](/img/kubernetes/K8s_Dashboard_overview.png)
 
