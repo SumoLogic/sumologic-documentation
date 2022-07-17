@@ -10,8 +10,8 @@ Google App Engine is a platform to build web and mobile apps that scale automati
 ## Log Types
 
 The App uses:
-* Google Cloud Audit Logs — These logs track events on multiple GCP services, including Compute Engine, IAM and App Engine.
-* App Engine Request Logs — These logs provide information about each request in App Engine, including the external IP address making the request.
+* Google Cloud Audit Logs — These logs track events on multiple GCP services, including Compute Engine, IAM and App Engine
+* App Engine Request Logs — These logs provide information about each request in App Engine, including the external IP address making the request
 
 ## Collect Logs for the Google App Engine App
 
