@@ -1,8 +1,9 @@
 ---
 id: share-metric-query
+title: Share a Metric Query
+sidebar_label: Share a Metric Query
+description: Share a saved or unsaved metric query.
 ---
-
-# Share a Metric Query
 
 There are two ways you can share a metric query with other Sumo users:
 

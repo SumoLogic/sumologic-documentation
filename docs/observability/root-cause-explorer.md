@@ -2,7 +2,7 @@
 id: root-cause-explorer
 title: Root Cause Explorer
 sidebar_label: Root Cause Explorer
-description: tk
+description: Use Root Cause Explorer for AWS to troubleshoot incidents with apps and microservices running on AWS, public cloud hosts, and Kubernetes.
 ---
 
 ## Availability

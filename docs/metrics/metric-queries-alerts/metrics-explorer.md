@@ -1,8 +1,10 @@
 ---
 id: metrics-explorer
+title: Metrics Explorer
+sidebar_label: Metrics Explorer
+description: Learn how to use the Metrics Explorer to query your metrics.
 ---
 
-# Metrics Explorer
 
 This page describes the Metrics Explorer UI and how to use it.
 
@@ -93,12 +95,12 @@ The **Preview Table** contains a row for each time series returned by a query.
 
 * Row label. Indicates which query returned the time series, for example `#A` or `#B`.
 * Metric name. The name of the metric returned, for example `CPU_LoadAvg_15min`.
-* An array of metadata fields and metric dimensions associated with the time series, in key=value format. 
+* An array of metadata fields and metric dimensions associated with the time series, in key=value format.
 
   * The metadata fields that appear includes standard Sumo Logic metadata fields, such as `_sourceCategory`, `_collectorId`, `_sourceHost`, `_sourceName`, and so on.
-  * The dimensions that appear are whatever dimensions were attached to the incoming metrics, or added to the metrics in Sumo Logic using the [Metric Rules Editor](/docs/metrics/metric-rules-editor). The query in the screenshot above returns metrics that were collected by a host metric source running on an Installed Collector on an AWS EC2 instance. Such metrics are automatically tagged with the following EC2 tags: 
-  
-    * InstanceID 
+  * The dimensions that appear are whatever dimensions were attached to the incoming metrics, or added to the metrics in Sumo Logic using the [Metric Rules Editor](/docs/metrics/metric-rules-editor). The query in the screenshot above returns metrics that were collected by a host metric source running on an Installed Collector on an AWS EC2 instance. Such metrics are automatically tagged with the following EC2 tags:
+
+    * InstanceID
     * Instance type
     * Availability Zone
     * Region
@@ -169,11 +171,11 @@ To join the queries, add a third query row, and then switch to Advanced mode, by
 ![advanced.png](/img/metrics/advanced.png)
 
 In Advanced mode, enter:  
-  
+
 `#B-#A`
 
 It returns the difference between the incoming rate and the outgoing rate. In the visualization, display of the first two queries is toggled off, so only the join results are shown.  
-  
+
 ![joined-query.png](/img/metrics/joined-query.png)
 
 ## Hide a query

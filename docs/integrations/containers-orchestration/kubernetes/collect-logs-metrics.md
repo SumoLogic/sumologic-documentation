@@ -2,9 +2,10 @@
 id: collect-logs-metrics
 title: Collect Logs and Metrics for the Kubernetes App
 sidebar_label: Collect Logs and Metrics for the Kubernetes App
+description: This page has instructions for collecting logs for the Sumo App for Kubernetes.
 ---
 
-This page has instructions for collecting logs and metrics for the Sumo App for Kubernetes.  FluentBit and FluentD. Prometheus collects metrics data for Sumo Logic.
+This page has instructions for collecting logs and metrics for the Sumo App for Kubernetes. FluentBit and FluentD. Prometheus collects metrics data for Sumo Logic.
 
 ## What You'll Need  
 Set the following fields in the Sumo Logic UI prior to configuring collection. This ensures that your logs are tagged with relevant metadata, which is required by the app dashboards and Explore.

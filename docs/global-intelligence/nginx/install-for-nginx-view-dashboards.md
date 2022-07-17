@@ -1,8 +1,9 @@
 ---
 id: install-for-nginx-view-dashboards
+title: Install the Global Intelligence for Nginx App and View the Dashboards
+sidebar_label: Install the Global Intelligence for Nginx App and View the Dashboards
+description: Instructions for installing the Sumo Logic App for Global Intelligence for Nginx and descriptions of each of the app dashboards. 
 ---
-
-# Install the Global Intelligence for Nginx App and View the Dashboards
 
 This page has instructions for installing the Sumo Logic App for Global Intelligence for Nginx and descriptions of each of the app dashboards. 
 

@@ -2,7 +2,7 @@
 id: set-up-collection-observability
 title: Set up Collection for the Observability Solution
 sidebar_label: Set up Collection
-description: tk
+description: There are a variety of different collectors you can set up to ensure you’re sending all the critical signals to Sumo Logic.
 ---
 
 You can use the Observability Solution to monitor and troubleshoot different types of application stacks. Depending on the makeup of your application infrastructure, there are a variety of different collectors you can set up to ensure you’re sending all the critical signals to Sumo Logic.

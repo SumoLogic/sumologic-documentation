@@ -1,8 +1,9 @@
 ---
 id: quantization-interval-chart
+title: Choosing a Quantization Interval for a Chart
+sidebar_label: Choosing a Quantization Interval for a Chart
+description: Why you might want to change the quantization interval when running a metric query.
 ---
-
-# Choosing a Quantization Interval for a Chart
 
 :::note
 This topic has information about Sumo Logic's Classic metrics UI. For information about the Metric Explorer UI, which replaces the Classic metrics UI, see [Metrics Explorer](../metric-queries-alerts/metrics-explorer.md).
@@ -11,7 +12,7 @@ This topic has information about Sumo Logic's Classic metrics UI. For informat
 In metric visualizations, rather than charting individual data points, Sumo presents the aggregated value of the data points received during an interval. We call this process [*quantization*](../introduction-metrics/metric-quantization.md).
 
 Sumo automatically determines an optimal quantization interval, based on the age of the data you are querying and the number of data points. The quantization interval is shown at the top of the metric query tab. The quantization interval aligns your time series data to common intervals on the time axis (for example every one minute) to optimize the visualization and performance.  
-  
+
 Depending on the frequency at which you are reporting metrics to Sumo, you may want to adjust the quantization interval. For example, if your visualization is choppy, like the one below, increasing the quantization interval might make it easier to understand the visualization.
 
 Generally it’s best if your quantization interval is larger than your reporting interval. For example, assume a metric is coming every 15 seconds, with data points arriving at coming in at:

@@ -1,8 +1,8 @@
 ---
 id: add-fields-to-existing-host-metrics-sources
+title: Add Fields to Existing Host Metrics Sources
+description: Learn how to update the AWS Observability Explore hierarchy, updating existing host metric sources to work with AWS Observability, and how to use the solution with Control Tower accounts.
 ---
-
-# Add Fields to Existing Host Metrics Sources
 
 The AWS Observability Solution uses EC2 Host metrics collected using Sumo Logic Host Metrics Source which is a part of Sumo Logic installed collector.
 
@@ -51,17 +51,17 @@ This section provides a listing of configuration prompts for the CloudFormation 
 
 | Prompt | Guideline |
 |--|--|
-| Sumo Logic Deployment Name | Enter au, ca, de, eu, jp, us2, in, fed or us1. For more information on Sumo Logic deployments, see the [Sumo Logic Endpoints and Firewall Security] (/APIs/General-API-Information/Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security) topic. | 
-| Sumo Logic Access ID | Sumo Logic Access ID. For more information, see [Create an access key](../../../manage/security/access-keys.md) in the Access Keys topic. | 
-| Sumo Logic Access Key | Sumo Logic Access Key. This key is used for Sumo Logic API calls. | 
+| Sumo Logic Deployment Name | Enter au, ca, de, eu, jp, us2, in, fed or us1. For more information on Sumo Logic deployments, see the [Sumo Logic Endpoints and Firewall Security] (/APIs/General-API-Information/Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security) topic. |
+| Sumo Logic Access ID | Sumo Logic Access ID. For more information, see [Create an access key](../../../manage/security/access-keys.md) in the Access Keys topic. |
+| Sumo Logic Access Key | Sumo Logic Access Key. This key is used for Sumo Logic API calls. |
 | Delete Fields when stack is deleted | True. Deletes the Account and Namespace fields from the Host Metric Sources when the stack is deleted.<br/>False. Keeps the fields in Host Metric Sources when the stack is deleted. |
 
 ### AWS account alias (Required)
 
 | Prompt | Guideline |
 |--|--|
-| Alias for your AWS account | Enter a name for the AWS environment from which you are collecting data. This name will appear in the Sumo Logic Explorer View, metrics, and logs.<br/>Do not include special characters in the alias. | 
-| Force Update the Stack | Increment the value in case you want to force update the stack. | 
+| Alias for your AWS account | Enter a name for the AWS environment from which you are collecting data. This name will appear in the Sumo Logic Explorer View, metrics, and logs.<br/>Do not include special characters in the alias. |
+| Force Update the Stack | Increment the value in case you want to force update the stack. |
 
 ## Update the Stack
 
@@ -108,7 +108,7 @@ Below are the steps to use the CloudFormation template with Stack Sets :
     ![Step8.png](/img/observability/add-fields8.png)
 
 1. Paste the URL - https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/aws-observability-versions/v2.3.0/hostmetricsfields/host_metrics_add_fields.template.yaml in the Amazon S3 URL option and select **Next**.  
-1. 
+1.
     ![Step9.png](/img/observability/add-fields9.png)
 
 1. Provide a Stack Set Name, provide the parameters as explained in the section above, and click **Next**.

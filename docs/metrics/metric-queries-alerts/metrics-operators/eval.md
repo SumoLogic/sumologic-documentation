@@ -1,8 +1,9 @@
 ---
 id: eval
+title: eval
+sidebar_label: eval
+description: The eval operator evaluates a time series based on a user-specified math expression.
 ---
-
-# eval
 
 Evaluates a time series based on a user-specified math expression.
 
@@ -32,4 +33,3 @@ This query returns the value of the `cpu_idle` metric, multiplied by
 ```sql
 _sourceCategory=ApacheHttpServer metrics=cpu_idle | eval _value * 10
 ```  
-

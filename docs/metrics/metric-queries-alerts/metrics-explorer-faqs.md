@@ -1,8 +1,9 @@
 ---
 id: metrics-explorer-faqs
+title: Metrics Explorer FAQs
+sidebar_label: Metrics Explorer FAQs
+description: See FAQs about the Metrics Explorer.
 ---
-
-# Metrics Explorer FAQs
 
 ## What happens to the current metrics tab when the new Metrics Explorer comes out?
 

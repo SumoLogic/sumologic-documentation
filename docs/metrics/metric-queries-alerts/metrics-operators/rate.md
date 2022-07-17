@@ -1,8 +1,9 @@
 ---
 id: rate
+title: rate
+sidebar_label: rate
+description: The rate operator calculates the per-second rate of change between consecutive data points.
 ---
-
-# rate
 
 Calculates the per-second rate of change between consecutive data points. It divides the difference in values of consecutive data points by the difference in their timestamps (in milliseconds) and then multiplies the result by 1000 (to scale up the quantity from a per-millisecond rate to a per-second rate).
 

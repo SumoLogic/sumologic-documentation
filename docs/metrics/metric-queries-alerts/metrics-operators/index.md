@@ -1,10 +1,11 @@
 ---
 slug: /metrics/metric-queries-alerts/metrics-operators
+title: Metrics Operators
+sidebar_label: Metrics Operators
+description: Learn about how to use Sumo Logic metric query operators and run queries on a metric query tab.
 ---
 
-# Metrics Operators
-
-The following table lists the metrics supported operators and provides examples of queries containing each type of operator. 
+The following table lists the metrics supported operators and provides examples of queries containing each type of operator.
 
 ## accum
 
@@ -15,9 +16,9 @@ For example, if `RequestCount` is:`{ 2, 0, 4, 3, 0, 0 }`
 `RequestCount | accum` is:
 
  `{ 2, 2, 6, 9, 9, 9 }`
- 
-Available in basic and advanced query modes. 
- 
+
+Available in basic and advanced query modes.
+
 Example: `RequestCount | accum`
 
 ## avg
@@ -32,7 +33,7 @@ Examples:
 
 `dep=prod metric=cpu_system | avg`
 
-`cluster=search metric=cpu_idle | avg by node` 
+`cluster=search metric=cpu_idle | avg by node`
 
 ## along
 
@@ -40,7 +41,7 @@ Examples:
 
 `#A + #B along [FIELD (,FIELD, ...]]`
 
-Given joined metric queries like this: 
+Given joined metric queries like this:
 
 `metric=CPU_User _sourceHost=cqsplitter-*`
 
@@ -56,9 +57,9 @@ The along operator causes the summation to be performed for time series whose `_
 
 Supported aggregate functions: `min`, `max`, `avg`, `count`, `sum`, `pct(n)`, `latest`
 
-Available in advanced query mode. Only simple aggregators supported (excluding pct) and no multiple dimensions in basic mode. 
+Available in advanced query mode. Only simple aggregators supported (excluding pct) and no multiple dimensions in basic mode.
 
-Take the bottom 5 time series with the highest maximum value: `dep=prod metric=cpu_system | bottomk (5, max)` 
+Take the bottom 5 time series with the highest maximum value: `dep=prod metric=cpu_system | bottomk (5, max)`
 
 ## count
 [count](count.md) - Counts the total number of time series that match the query. If grouping is specified, it counts the total number for each group.
@@ -88,7 +89,7 @@ where math expression is a validmath expression with `_value` as the placeholder
 
 Supported Basic operations: `+`, `-`, `*`, `/`
 
-Supported Math functions: `sin`, `cos`, `abs`, `log`, `round`, `ceil`, `floor`, `tan`, `exp`, `sqrt`, `min`, `max` 
+Supported Math functions: `sin`, `cos`, `abs`, `log`, `round`, `ceil`, `floor`, `tan`, `exp`, `sqrt`, `min`, `max`
 
 Available in basic and advanced query modes. In advanced expression terms must be separated by whitespace.
 
@@ -231,4 +232,3 @@ Supported aggregate functions: `min`, `max`, `avg`, `count`, `sum`, `pct(n)`, `l
 Take the top 10 time series with the highest maximum value: `metric=cpu_system | topk (10, max)`
 
 Reduce each time series by calculating `(max / avg * 2)` for it. Sort by this reduced value and take the top 10 values: `metric=cpu_system |topk (10, max /avg * 2)`
- 

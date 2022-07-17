@@ -2,7 +2,7 @@
 id: aws-observability-resources
 title: AWS Observability Resources
 sidebar_label: AWS Observability Resources
-description: tk
+description: Learn more about AWS Observability resources created and modified at deployment using Terraform and CloudFormation.
 ---
 
 

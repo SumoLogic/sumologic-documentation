@@ -1,8 +1,9 @@
 ---
 id: histogram-quantile
+title: histogram quantile
+sidebar_label: histogram quantile
+description: The histogram_quantile operator calculates the φ-quantile (0 ≤ φ ≤ 1) from the buckets of a Prometheus histogram.
 ---
-
-# histogram quantile
 
 The `histogram_quantile` operator calculates the φ-quantile (0 ≤ φ ≤ 1) from the buckets of a histogram. This operator is specific to the [Prometheus Histogram data type](https://prometheus.io/docs/concepts/metric_types/#histogram) and does not work with non-Prometheus histograms. It is equivalent to the [PromQL histogram_quantile()](https://prometheus.io/docs/prometheus/latest/querying/functions/#histogram_quantile)
 operator.

@@ -2,7 +2,7 @@
 id: monitoring-observability-solution
 title: Monitoring with the Observability Solution
 sidebar_label: Monitoring
-description: tk
+description: Sumo Logic provides a suite of tools to make discovering issues faster.
 ---
 
 After you have set up [collection](set-up-collection-observability.md), you can start monitoring your application with the Observability Solution.

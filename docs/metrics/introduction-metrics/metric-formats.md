@@ -1,8 +1,9 @@
 ---
 id: metric-formats
+title: Metrics Formats
+sidebar_label: Metrics Formats
+description: Sumo Logic supports the Graphite, Carbon 2.0, and Prometheus metric formats.
 ---
-
-# Metric Formats
 
 Sumo supports the Graphite, Carbon 2.0, and Prometheus metric formats. 
 
@@ -52,7 +53,7 @@ There are two spaces between `intrinsic_tags` and `meta_tags`. If a tag is liste
 
 Where:
 
-* `intrinsic_tags` is one or more space-separated key-value pairs that uniquely identify what is being measured and are metric identifiers. Intrinsic tags are also referred to as dimensions. If you have two data points sent with same set of dimension values then they will be values in the same metric time series. 
+* `intrinsic_tags` is one or more space-separated key-value pairs that uniquely identify what is being measured and are metric identifiers. Intrinsic tags are also referred to as dimensions. If you have two data points sent with same set of dimension values then they will be values in the same metric time series.
 
     :::note
     `intrinsic_tags` must be followed by two spaces.
@@ -105,8 +106,8 @@ In the [Prometheus](https://prometheus.io/) format, a time series is uniquely i
 # TYPE metric_name metric_type
 metric_name labels value timestamp
 metric_name labels value timestamp
-``` 
-  
+```
+
 Here is an example of a Prometheus metric exposition for two time series. The process of making metrics available to Prometheus is called *exposition*.
 
 ```

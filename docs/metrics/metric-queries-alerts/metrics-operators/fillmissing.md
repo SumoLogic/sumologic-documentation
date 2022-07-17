@@ -1,8 +1,10 @@
 ---
 id: fillmissing
+title: fillmissing
+sidebar_label: fillmissing
+description: The fillmissing operator fills empty time slices in metric query results with a derived data point.
 ---
 
-# fillmissing
 
 If a metric query returns results with empty timeslices, the visualization contains a straight line between the data points on either side of the empty timeslice(s).
 

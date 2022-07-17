@@ -1,6 +1,6 @@
 ---
 slug: /quickstart
-title: Quick Start your Sumo experience
+title: Quickstart your Sumo experience
 ---
 
 Sumo Logic provides extensive features and options to gather, monitor, and analyze data, manage your infrastructure, integrate with third party applications, and so much more!

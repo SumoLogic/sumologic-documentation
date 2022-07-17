@@ -1,8 +1,9 @@
 ---
 id: metrics-outliers
+title: Metrics Outliers
+sidebar_label: Metrics Outliers
+description: The metrics outlier feature allows you to identify metrics data points that are outside the range of expected values.
 ---
-
-# Metrics Outliers
 
 :::note
 This topic has information about Sumo Logic's Classic metrics UI. For information about the Metric Explorer UI, which replaces the Classic metrics UI, see [Metrics Explorer](../metric-queries-alerts/metrics-explorer.md).
@@ -109,16 +110,15 @@ To view the outlier band for a chart:
     ![metrics band 01.png](/img/metrics/outliners-view-outliers-and-band.png)  
      
 1. Select a threshold to determine the sensitivity of the outlier band. The higher the threshold, the wider the range of values within the threshold.  
-    
+
     ![metrics band 04.png](/img/metrics/outliers-threshold.png)  
      
 1. Click a time series chart to select it and display the outlier band. This action changes the focus to the selected time series, hides the other time series in the visualization, and displays the outlier band.   
 
     ![metrics band 02.png](/img/metrics/outlier-ex9.png)  
-      
-    **Click away from the line anywhere in the chart to hide the band and redisplay all of the charts in the visualization.**  
-      
-    If you change the threshold, the band adjusts accordingly. For example, the previous figure is based on a threshold of 1 (standard deviation). The following figure shows the same data with a threshold of 3 (standard deviations). 
-    
-    ![metrics band 03.png](/img/metrics/outlier-ex10.png)
 
+    **Click away from the line anywhere in the chart to hide the band and redisplay all of the charts in the visualization.**  
+
+    If you change the threshold, the band adjusts accordingly. For example, the previous figure is based on a threshold of 1 (standard deviation). The following figure shows the same data with a threshold of 3 (standard deviations). 
+
+    ![metrics band 03.png](/img/metrics/outlier-ex10.png)
