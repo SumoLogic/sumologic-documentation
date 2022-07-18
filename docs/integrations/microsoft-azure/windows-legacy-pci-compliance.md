@@ -1,6 +1,6 @@
 ---
 id: windows-legacy-pci-compliance
-title: Windows Legacy PCI Compliance
-sidebar_label: Windows Legacy PCI Compliance
-description: Windows Legacy PCI Compliance
+title: windows-legacy-pci-compliance
+sidebar_label: windows-legacy-pci-compliance
+description: windows-legacy-pci-compliance
 ---

@@ -1,6 +1,6 @@
 ---
 id: windows-json
-title: Windows JSON
-sidebar_label: Windows JSON
-description: Windows JSON
+title: windows-json
+sidebar_label: windows-json
+description: windows-json
 ---

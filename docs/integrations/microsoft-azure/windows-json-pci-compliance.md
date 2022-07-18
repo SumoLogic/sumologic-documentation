@@ -1,6 +1,6 @@
 ---
 id: windows-json-pci-compliance
-title: Windows JSON PCI Compliance
-sidebar_label: Windows JSON PCI Compliance
-description: Windows JSON PCI Compliance
+title: windows-json-pci-compliance
+sidebar_label: windows-json-pci-compliance
+description: windows-json-pci-compliance
 ---

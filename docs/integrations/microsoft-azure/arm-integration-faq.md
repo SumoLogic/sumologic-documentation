@@ -1,6 +1,6 @@
 ---
 id: arm-integration-faq
-title: Azure Integration using ARM FAQs
-sidebar_label: Azure Integration using ARM FAQs
-description: Azure Integration using ARM FAQs
+title: arm-integration-faq
+sidebar_label: arm-integration-faq
+description: arm-integration-faq
 ---

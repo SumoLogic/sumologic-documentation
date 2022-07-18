@@ -1,6 +1,6 @@
 ---
 id: sql-server
-title: Microsoft SQL Server
-sidebar_label: Microsoft SQL Server
-description: Microsoft SQL Server
+title: sql-server
+sidebar_label: sql-server
+description: sql-server
 ---
