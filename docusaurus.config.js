@@ -21,11 +21,6 @@ module.exports = {
   stylesheets: [
     'https://fonts.googleapis.com/css?family=Material+Icons',
   ],
-  scripts: [
-   {
-     src: 'node --max-old-space-size=8192 server/docusaurus.config.js'
-   },
-  ],
   i18n: {
     // https://docusaurus.io/docs/i18n/tutorial
     defaultLocale: 'en',
