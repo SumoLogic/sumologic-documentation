@@ -1,16 +1,9 @@
 name: Pull Request checks
 
-
 on:
     pull_request:
       branches:
         - main
-    push:
-      paths-ignore:
-        - '.github/**'
-        - 'README.md'
-    workflow_dispatch:
-
 
 jobs:
     build-and-deploy:
