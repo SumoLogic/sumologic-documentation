@@ -1751,6 +1751,8 @@ module.exports = {
       link: {type: 'doc', id: 'integrations/containers-orchestration/index'},
       items: [
         'integrations/containers-orchestration/activemq',
+        'integrations/containers-orchestration/docker-apps',
+        'integrations/containers-orchestration/kafka',
         {
           type: 'category',
           label: 'Kubernetes',
@@ -1762,6 +1764,10 @@ module.exports = {
               'integrations/containers-orchestration/kubernetes/install-apps-alerts-dashboards',
             ],
           },
+        'integrations/containers-orchestration/kubernetes-control-plane',
+        'integrations/containers-orchestration/rabbitmq',
+        'integrations/containers-orchestration/vmware',
+        'integrations/containers-orchestration/vmware-legacy',
         ],
       },
       {
