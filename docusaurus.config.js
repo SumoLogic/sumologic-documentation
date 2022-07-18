@@ -23,10 +23,6 @@ module.exports = {
   ],
   scripts: [
    {
-     src: 'https://js.sitesearch360.com/plugin/bundle/3113.js',
-     async: true,
-   },
-   {
      server: 'node --max-old-space-size=8192 server/docusaurus.config.js'
    },
   ],
