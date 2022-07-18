@@ -1775,17 +1775,17 @@ module.exports = {
             'integrations/app-development/puppet',
            ],
          },
-      {
-      type: 'category',
-      label: 'Containers and Orchestration',
-      collapsible: true,
-      collapsed: true,
-      link: {type: 'doc', id: 'integrations/containers-orchestration/index'},
-      items: [
-        'integrations/containers-orchestration/activemq',
-        'integrations/containers-orchestration/docker-apps',
-        'integrations/containers-orchestration/kafka',
-        {
+       {
+        type: 'category',
+        label: 'Containers and Orchestration',
+        collapsible: true,
+        collapsed: true,
+        link: {type: 'doc', id: 'integrations/containers-orchestration/index'},
+        items: [
+          'integrations/containers-orchestration/activemq',
+          'integrations/containers-orchestration/docker-apps',
+          'integrations/containers-orchestration/kafka',
+          {
           type: 'category',
           label: 'Kubernetes',
           collapsible: true,
@@ -1800,6 +1800,137 @@ module.exports = {
         'integrations/containers-orchestration/rabbitmq',
         'integrations/containers-orchestration/vmware',
         'integrations/containers-orchestration/vmware-legacy',
+        ],
+      },
+      {
+      type: 'category',
+      label: 'Databases',
+      collapsible: true,
+      collapsed: true,
+      link: {type: 'doc', id: 'integrations/databases/index'},
+      items: [
+        'integrations/databases/index',
+        ],
+      },
+      {
+      type: 'category',
+      label: 'Hosts and Operating Systems',
+      collapsible: true,
+      collapsed: true,
+      link: {type: 'doc', id: 'integrations/hosts-operating-systems/index'},
+      items: [
+        'integrations/hosts-operating-systems/index',
+
+        ],
+      },
+      {
+      type: 'category',
+      label: 'SaaS and Cloud Apps',
+      collapsible: true,
+      collapsed: true,
+      link: {type: 'doc', id: 'integrations/saas-cloud-apps/index'},
+      items: [
+        'integrations/saas-cloud-apps/index',
+
+        ],
+      },
+      {
+      type: 'category',
+      label: '1Password',
+      collapsible: true,
+      collapsed: true,
+      link: {type: 'doc', id: 'integrations/1password/index'},
+      items: [
+        'integrations/1password/index',
+
+        ],
+      },
+      {
+      type: 'category',
+      label: 'SAML',
+      collapsible: true,
+      collapsed: true,
+      link: {type: 'doc', id: 'integrations/saml/index'},
+      items: [
+        'integrations/saml/index',
+
+        ],
+      },
+      {
+      type: 'category',
+      label: 'Security and Threat Detection',
+      collapsible: true,
+      collapsed: true,
+      link: {type: 'doc', id: 'integrations/security-threat-detection/index'},
+      items: [
+        'integrations/security-threat-detection/index',
+
+        ],
+      },
+      {
+      type: 'category',
+      label: 'Web Servers',
+      collapsible: true,
+      collapsed: true,
+      link: {type: 'doc', id: 'integrations/web-servers/index'},
+      items: [
+        'integrations/web-servers/index',
+
+        ],
+      },
+      {
+      type: 'category',
+      label: 'Apps for Sumo',
+      collapsible: true,
+      collapsed: true,
+      link: {type: 'doc', id: 'integrations/sumo-apps/index'},
+      items: [
+        'integrations/sumo-apps/index',
+
+        ],
+      },
+      {
+      type: 'category',
+      label: 'Apps and Sumo Account Plans',
+      collapsible: true,
+      collapsed: true,
+      link: {type: 'doc', id: 'integrations/sumo-apps-account-plans/index'},
+      items: [
+        'integrations/sumo-apps-account-plans/index',
+
+        ],
+      },
+      {
+      type: 'category',
+      label: 'Cloud Security Monitoring and Analytics',
+      collapsible: true,
+      collapsed: true,
+      link: {type: 'doc', id: 'integrations/cloud-security-monitoring-analytics/index'},
+      items: [
+        'integrations/cloud-security-monitoring-analytics/index',
+
+        ],
+      },
+      {
+      type: 'category',
+      label: 'Partner Ecosystem Apps',
+      collapsible: true,
+      collapsed: true,
+      link: {type: 'doc', id: 'integrations/partner-ecosystem-apps/index'},
+      items: [
+        'integrations/partner-ecosystem-apps/index',
+
+        ],
+      },
+      {
+      type: 'category',
+      label: 'Partner Integrations',
+      collapsible: true,
+      collapsed: true,
+      link: {type: 'doc', id: 'integrations/partner-integrations/index'},
+      items: [
+        'integrations/partner-integrations/index',
+
         ],
       },
       {

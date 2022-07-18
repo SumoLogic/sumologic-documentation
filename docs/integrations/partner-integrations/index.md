@@ -1,0 +1,3 @@
+---
+slug: integrations/parter-integrations
+---
