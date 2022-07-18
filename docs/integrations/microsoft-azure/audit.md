@@ -1,6 +1,6 @@
 ---
 id: audit
-title: audit
-sidebar_label: audit
-description: audit
+title: Azure Audit
+sidebar_label: Azure Audit
+description: Azure Audit
 ---

@@ -1,6 +1,6 @@
 ---
 id: network-watcher
-title: network-watcher
-sidebar_label: network-watcher
-description: network-watcher
+title: Azure network-watcher
+sidebar_label: Azure Network Watcher
+description: Azure Network Watcher
 ---

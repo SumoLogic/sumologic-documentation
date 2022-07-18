@@ -1,6 +1,6 @@
 ---
 id: iis-7
-title: iis-7
-sidebar_label: iis-7
-description: iis-7
+title: IIS 7
+sidebar_label: IIS 7
+description: IIS 7
 ---
