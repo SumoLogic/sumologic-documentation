@@ -1,6 +1,6 @@
 ---
 id: windows-legacy
-title: windows-legacy
-sidebar_label: windows-legacy
-description: windows-legacy
+title: Windows Legacy
+sidebar_label: Windows (Legacy)
+description: Windows Legacy
 ---

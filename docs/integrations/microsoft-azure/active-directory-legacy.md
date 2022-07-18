@@ -1,6 +1,6 @@
 ---
 id: active-directory-legacy
-title: active-directory-legacy
-sidebar_label: active-directory-legacy
-description: active-directory-legacy
+title: Active Directory Legacy
+sidebar_label: Active Directory (Legacy)
+description: active directory legacy
 ---
