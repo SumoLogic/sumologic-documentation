@@ -1810,7 +1810,6 @@ module.exports = {
       link: {type: 'doc', id: 'integrations/databases/index'},
       items: [
         'integrations/databases/index',
-
         ],
       },
       {
