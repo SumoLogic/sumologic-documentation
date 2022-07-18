@@ -1820,7 +1820,6 @@ module.exports = {
       link: {type: 'doc', id: 'integrations/hosts-operating-systems/index'},
       items: [
         'integrations/hosts-operating-systems/index',
-
         ],
       },
       {
