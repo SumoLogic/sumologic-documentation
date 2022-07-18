@@ -23,7 +23,7 @@ module.exports = {
   ],
   scripts: [
    {
-     server: 'node --max-old-space-size=8192 server/docusaurus.config.js'
+     src: 'node --max-old-space-size=8192 server/docusaurus.config.js'
    },
   ],
   i18n: {
