@@ -1,6 +1,6 @@
 ---
 id: dynamodb
-title: dynamodb
+title: DynamoDB
 sidebar_label: dynamodb
 description: dynamodb
 ---
