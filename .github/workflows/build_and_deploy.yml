@@ -40,6 +40,8 @@ jobs:
       BASE_URL: ${{ inputs.base_url }}
       AWS_DEFAULT_REGION: us-east-1
       AWS_EC2_METADATA_DISABLED: "true"
+      DOCUSAURUS_SSR_CONCURRENCY: "1"
+      NODE_OPTIONS: "--max-old-space-size=16384 --optimize-for-size --max-executable-size=16384 --max-new-space-size=16384"
     steps:
       - uses: actions/checkout@v2.4.0
       - name: Set up Node.js
