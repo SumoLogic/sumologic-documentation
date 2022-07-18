@@ -1,6 +1,6 @@
 ---
 id: iis-10-legacy
-title: iis-10-legacy
-sidebar_label: iis-10-legacy
-description: iis-10-legacy
+title: IIS 10 Legacy
+sidebar_label: IIS 10 Legacy
+description: IIS 10 Legacy
 ---
