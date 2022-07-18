@@ -2241,6 +2241,17 @@ module.exports = {
         'releasenotes/collector',
         'releasenotes/developer',
         'releasenotes/service',
+        {
+          type: 'category',
+          label: 'Archive',
+          collapsible: true,
+          collapsed: false,
+          link: {type: 'doc', id: 'releasenotes/archive/index'},
+          items: [
+            'releasenotes/archive/collector',
+            'releasenotes/archive/developer',
+          ]
+        }
       ],
     },
   ],
