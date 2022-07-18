@@ -1,6 +1,6 @@
 ---
 id: teams
-title: teams
-sidebar_label: teams
-description: teams
+title: Microsoft Teams
+sidebar_label: Microsoft Teams
+description: Microsoft Teams
 ---

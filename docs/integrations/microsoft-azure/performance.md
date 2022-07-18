@@ -1,6 +1,6 @@
 ---
 id: performance
-title: performance
-sidebar_label: performance
-description: performance
+title: Windows Performance
+sidebar_label: Windows Performance
+description: Windows Performance
 ---
