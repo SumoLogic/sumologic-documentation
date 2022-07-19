@@ -10,6 +10,9 @@ Amazon Web Services (AWS) Config provides a simple web services interface that c
 
 Log Types
 The Sumo Logic App for AWS Config leverages AWS Config’s Simple Notification Service (SNS) notifications.
+
 ## Collect Logs and Metrics
 
 ## Install the App
+
+## Dashboards

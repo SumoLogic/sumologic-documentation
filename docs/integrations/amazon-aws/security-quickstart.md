@@ -1,11 +1,13 @@
 ---
 id: security-quickstart
-title: security-quickstart
-sidebar_label: security-quickstart
-description: security-quickstart
+title: Amazon Security Quick Start
+sidebar_label: Amazon Security Quick Start
+description: Amazon Security Quick Start
 ---
 
+The Sumo Logic Amazon Security Quick Start solution helps you automate the collection of security events from AWS security services and the installation and configuration of Sumo Logic apps designed for AWS Security.
 
-## Collect Logs and Metrics
+## Sumo Logic Security Integrations for AWS Organizations
 
-## Install the App
+
+## Sumo Logic Security Integrations for Single AWS Account

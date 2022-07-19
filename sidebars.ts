@@ -1683,7 +1683,6 @@ module.exports = {
         'integrations/amazon-aws/elastic-load-balancing-classic',
         'integrations/amazon-aws/elastic-load-balancing-metrics',
         'integrations/amazon-aws/lambda',
-        'integrations/amazon-aws/lambda-ulm',
         'integrations/amazon-aws/network-firewall',
         'integrations/amazon-aws/security-hub',
         'integrations/amazon-aws/waf',

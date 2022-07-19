@@ -1,7 +1,7 @@
 ---
 id: global-intelligence-cloudtrail-secops
 title: Global Intelligence for AWS CloudTrail SecOps
-description: lobal Intelligence for AWS CloudTrail SecOps
+description: Global Intelligence for AWS CloudTrail SecOps
 ---
 
 This feature is available in the following account plans.

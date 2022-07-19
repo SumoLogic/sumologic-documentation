@@ -4,3 +4,5 @@ title: Microsoft and Azure
 sidebar_label: Microsoft and Azure
 description: Microsoft and Azure
 ---
+
+x
