@@ -4,15 +4,13 @@ title: Kafka
 sidebar_label: Kafka
 description: Kafka
 ---
-
-
 This guide provides an overview of Kafka related features and technologies. In addition, it contains recommendations on best practices, tutorials for getting started, and troubleshooting information for common situations.
 
 The Sumo Logic App for Kafka is a unified logs and metrics app. The app helps you to monitor the availability, performance, and resource utilization of Kafka messaging/streaming clusters. Pre-configured dashboards provide insights into the cluster status, throughput, broker operations, topics, replication, zookeepers, node resource utilization, and error logs.
 
 ## Collect Logs and Metrics for Kafka
 
-This page provides instructions for configuring log and metric collection for the Sumo Logic App for Kakfa.
+This section provides instructions for configuring log and metric collection for the Sumo Logic App for Kakfa.
 
 This App has been tested with following Kafka versions:
 * 2.6.0
