@@ -1,5 +1,111 @@
 ---
-id: install-apps-alerts-dashboards
+id: kubernetes
+title: Kubernetes
+sidebar_label: Kubernetes
+description: The Sumo Logic Kubernetes App provides visibility into the worker nodes that comprise a cluster, as well as application logs of the worker nodes.
+---
+
+The Sumo Logic Kubernetes App provides visibility into the worker nodes that comprise a cluster, as well as application logs of the worker nodes. The App is a single-pane-of-glass through which you can monitor and troubleshoot container health, replication, load balancing, pod state and hardware resource allocation. It utilizes [Falco](https://falco.org/docs/) events to monitor and detect anomalous container, application, host, and network activity.
+
+In conjunction with the Kubernetes App, the AKS Control Plane, GKE Control Plane, EKS Control Plane, or Kubernetes Control Plane Apps provide visibility into the control plane, including the APIserver, scheduler, and controller manager.
+
+[Kubernetes](https://kubernetes.io/) is a system that automates the deployment, management, scaling, networking, and availability of container-based applications. Kubernetes container-orchestration allows you to easily deploy and manage multi-container applications at scale.
+
+:::tip
+For an end-to-end solution for deploying, managing, monitoring, and administering your Kubernetes environment, see the Kubernetes Solution pages.
+:::
+
+## Supported versions
+
+The following are the minimum supported requirements for this application:
+
+<table>
+  <tr>
+   <td><strong>Name</strong>
+   </td>
+   <td><strong>Supported versions</strong>
+   </td>
+  </tr>
+  <tr>
+   <td>Kubernetes</td>
+   <td>1.10 and later</td>
+  </tr>
+  <tr>
+   <td>Kops</td>
+   <td><p>1.13.10-k8s</p>
+<p>1.13.10-kops</p>
+<p>1.12.8-k8s</p>
+<p>1.12.2-kops</p>
+<p>1.10.13-k8s</p>
+<p>1.10.0-kops</p>
+   </td>
+  </tr>
+</table>
+
+
+## Log and Metric Types
+
+The Sumo Logic App for Kubernetes uses logs and metrics.
+
+### Log source
+* Application Logs
+
+### Metrics sources
+
+* [Node-exporter Metrics](https://prometheus.io/docs/guides/node-exporter/) - System-level statistics about bare-metal nodes or virtual machine and generates metrics.
+* [Kube-state-metrics](https://github.com/kubernetes/kube-state-metrics) - Metrics about the state of Kubernetes logical objects, including node status, node capacity (CPU and memory), number of desired/available/unavailable/updated replicas per deployment, pod status (e.g., waiting, running, ready), and containers.
+
+
+For more information, see [this page](https://github.com/SumoLogic/sumologic-kubernetes-collection). Metrics are collected using [Prometheus with FluentD](https://github.com/SumoLogic/sumologic-kubernetes-collection/tree/master/deploy#step-1-create-sumo-collector-and-deploy-fluentd).
+
+
+## Collect Logs and Metrics for the Kubernetes App
+
+This page has instructions for collecting logs and metrics for the Sumo App for Kubernetes. FluentBit and FluentD. Prometheus collects metrics data for Sumo Logic.
+
+### What You'll Need  
+Set the following fields in the Sumo Logic UI prior to configuring collection. This ensures that your logs are tagged with relevant metadata, which is required by the app dashboards and Explore.
+
+* cluster
+* container
+* deployment
+* host
+* namespace
+* node
+* pod
+* service
+
+For information on setting up fields, see the [Fields](/docs/manage/fields) help page.
+
+### Collecting metrics and logs for Kubernetes
+Reference the [Deployment Guide](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/README.md#documentation) in our sumologic-kubernetes-collection GitHub repository for detailed instructions on how to collect Kubernetes logs, metrics, and events; enrich them with deployment, pod, and service level metadata; and send them to Sumo Logic.
+
+The Deployment Guide has information on advanced configurations, best practices, performance, troubleshooting, and upgrading for our latest and previous versions of supported software.
+
+### Sample log message
+
+Application Logs:
+
+```
+{"timestamp":1561534865020,"log":"E0626 07:41:05.020255       1
+manager.go:101] Error in scraping containers from kubelet:192.168.190.54:10255:
+failed to get all container stats from Kubelet URL \"http://192.168.190.54:10255/stats/container/\":
+Post http://192.168.190.54:10255/stats/container/: dial tcp 192.168.190.54:10255:
+getsockopt: connection refused"}
+```
+
+### Sample Query
+
+Message Breakdown by Container from the Dashboard Container Logs:
+
+```sql
+ cluster = * and namespace = * and pod = * and container = *
+| json field=_raw "log" as message
+| fields - message | count container | top 10 container by _count
+```
+
+## Install App
+
 title: Install the Kubernetes App, Alerts, and view the Dashboards
 sidebar_label: Install the Kubernetes App, Alerts, and view the Dashboards
 description: This page provides instructions for installing the Kubernetes App and Alerts, as well as descriptions and examples for each of the dashboards.
@@ -116,7 +222,7 @@ email_notifications_critiical = [
 There are limits to how many alerts can be enabled - please see the /Visualizations-and-Alerts/Alerts/Monitors/Monitor_FAQ">Alerts FAQ.
 :::
 
-## Install the App
+## Install the Kubernetes App
 
 Now that you have set up the collection for Kubernetes App, install the Sumo Logic App for Kubernetes to use the pre-configured Kubernetes dashboards that provide visibility into your Kubernetes environment.
 
@@ -124,7 +230,7 @@ To install the app, do the following:
 
 1. Locate and install the app from the App Catalog. If you want to see a preview of the dashboards included with the app before installing, click  Preview Dashboards .
 2. From the App Catalog, search for  Kubernetes  and select the app.
-3. Click  Add to Library.
+3. Click Add to Library.
 4. Complete the following fields:
    * App Name. You can retain the existing name, or enter a name of your choice for the app. 
    * Data Source. For each the sources listed, enter a Custom Data Filter or Source Category, as follows: For Falco Log Source, leave  Source Category  selected, and enter the following source category: *falco* or one that matches the source categories in your environment. For  Events Log Source, leave  Source Category  selected, and enter the following source category: *events* or one that matches the source categories in your environment.
@@ -132,7 +238,9 @@ To install the app, do the following:
 5. Click Add to Library.
 
 
-## Filter with template variables   
+## Dashboards
+
+### Filter with template variables   
 
 Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. For more information, see the /Visualizations-and-Alerts/Dashboard_(New)/Filter_with_template_variables" title="Filter with template variables">Filter with template variables help page.
 
@@ -206,7 +314,7 @@ Use this dashboard to:
 
 ### Kubernetes - Pod Dashboard
 
- The  Kubernetes - Pod  dashboard provides insights into the health of and resource utilization of a Kubernetes pod.
+The Kubernetes - Pod dashboard provides insights into the health of and resource utilization of a Kubernetes pod.
 
 Use this dashboard to:  
 * Monitor pod health.  
@@ -218,7 +326,7 @@ Use this dashboard to:
 
 ### Kubernetes - Container Dashboard
 
- The  Kubernetes - Container  dashboard provides insights into the health and resource utilization of a Kubernetes container.
+The  Kubernetes - Container  dashboard provides insights into the health and resource utilization of a Kubernetes container.
 
 Use this dashboard to:  
 * Monitor container health.  
@@ -253,7 +361,7 @@ Use this dashboard to:
 
 ### Kubernetes - Deployment Overview Dashboard
 
- The  Kubernetes - Deployment Overview  dashboard provides insights into the health and performance of your Kubernetes deployments.
+The Kubernetes - Deployment Overview  dashboard provides insights into the health and performance of your Kubernetes deployments.
 
 Use this dashboard to:  
 * Monitor the health of deployments in your Kubernetes environment.   
@@ -327,7 +435,6 @@ Use this dashboard to:
 * Identify components by Services.  
 * Determine any errors and warnings by Services.
 
-
 <img alt="K8s_Service_Overview.png" class="default" src="https://sumologic-app-data.s3.amazonaws.com/dashboards/Kubernetes_Core/K8s_Service.png" />
 
 ### Kubernetes - Hygiene Check Dashboard
@@ -337,7 +444,6 @@ The  Kubernetes - Hygiene Check  dashboard provides visibility into the configur
  Use this dashboard to:  
 * Assess bad configurations and determine the trouble areas for proactive adjustment.   
 * Monitor resource allocation across your cluster to maintain optimum performance.
-
 
 <img alt="K8s_Health_Check.png" class="default" src="https://sumologic-app-data.s3.amazonaws.com/dashboards/Kubernetes_Core/K8s_Hygiene_Check.png" />
 
