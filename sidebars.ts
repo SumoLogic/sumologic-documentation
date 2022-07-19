@@ -1642,7 +1642,7 @@ module.exports = {
     'integrations/partner-ecosystem-apps',
     'integrations/partner-integrations',
     'integrations/account-plans',
-    'integrations/1passw0rd',
+    'integrations/1password',
     {
       type: 'category',
       label: 'Amazon and AWS',
