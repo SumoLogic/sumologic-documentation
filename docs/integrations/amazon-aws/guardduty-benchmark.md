@@ -1,6 +1,11 @@
 ---
 id: guardduty-benchmark
-title: guardduty-benchmark
-sidebar_label: guardduty-benchmark
-description: guardduty-benchmark
+title: Amazon GuardDuty Benchmark
+sidebar_label: Amazon GuardDuty Benchmark
+description: Amazon GuardDuty Benchmark
 ---
+
+
+## Collect Logs and Metrics
+
+## Install the App

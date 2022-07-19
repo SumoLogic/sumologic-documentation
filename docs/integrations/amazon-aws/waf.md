@@ -4,3 +4,8 @@ title: waf
 sidebar_label: waf
 description: waf
 ---
+
+
+## Collect Logs and Metrics
+
+## Install the App
