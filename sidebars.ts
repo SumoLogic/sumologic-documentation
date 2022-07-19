@@ -1670,7 +1670,6 @@ module.exports = {
         'integrations/amazon-aws/security-quickstart',
         'integrations/amazon-aws/ses',
         'integrations/amazon-aws/sns',
-        'integrations/amazon-aws/sos',
         'integrations/amazon-aws/sqs',
         'integrations/amazon-aws/vpc-flow-logs',
         'integrations/amazon-aws/api-gateway',
