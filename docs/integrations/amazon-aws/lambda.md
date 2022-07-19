@@ -127,6 +127,6 @@ account={{account}} region={{region}} Namespace={{namespace}}
 namespace=aws/lambda metric=Errors statistic=Sum account=* region=* functionname=* Resource=* | su
 ```
 
-## Collect Logs 
+## Collect Logs
 
 ## Install the App

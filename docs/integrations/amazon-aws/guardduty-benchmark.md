@@ -14,7 +14,7 @@ Global Intelligence baselines are computed by aggregating data for a given custo
 The App includes pre-configured dashboards and searches with visual displays for global threat baselines and real-time threat detection across your AWS environment, including threat sources and targets by geographic locations.
 
 
-### Global Intelligence Service for Amazon GuardDuty 
+### Global Intelligence Service for Amazon GuardDuty
 
 This short video provides an overview of the application setup, along with an introduction to the app's preconfigured dashboards.
 
