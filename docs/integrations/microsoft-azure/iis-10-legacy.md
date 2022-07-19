@@ -31,7 +31,7 @@ This section covers the following default log formats for IIS 10 and IIS 8.5:
 
 Default log formats are used by IIS 10 (Legacy) App. IIS allows you to choose which fields to log in IIS access logs. To understand the various fields and their significance see this [link](https://docs.microsoft.com/en-us/windows/desktop/http/w3c-logging).
 
-IIS Log files are generated as local files. For a standard Windows Server, the default log location is as follows: **%SystemDrive%\inetpub\logs\LogFiles**
+IIS Log files are generated as local files. For a standard Windows Server, the default log location is as follows: `%SystemDrive%\inetpub\logs\LogFiles`
 
 For example:
 
@@ -513,7 +513,7 @@ http://www.bing.com/search?q=sumo%20applications&src=IE-SearchBox&FORM=IE11SR 20
 #### Sample IIS Performance Logs
 
 
-This section provides examples of IIS Performance Log formats produced by two different queries. For more information on other W3SVC WebServices Perfmon Counters refer to this documentation [link](https://docs.microsoft.com/en-us/previous-versions//aa394298(v=vs.85))<span style="text-decoration:underline;">.</span>
+This section provides examples of IIS Performance Log formats produced by two different queries. For more information on other W3SVC WebServices Perfmon Counters refer to this documentation [link](https://docs.microsoft.com/en-us/previous-versions//aa394298(v=vs.85))
 
 
 ###### A. This Perfmon query: **
