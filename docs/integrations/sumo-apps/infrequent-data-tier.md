@@ -1,0 +1,3 @@
+---
+id: infrequent-data-tier
+---

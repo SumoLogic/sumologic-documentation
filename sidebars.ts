@@ -1639,6 +1639,10 @@ module.exports = {
 // *** INTEGRATIONS: Sumo Logic Apps, no longer called APPS
   integrations: [
     'integrations/integrations',
+    'integrations/partner-ecosystem-apps',
+    'integrations/partner-integrations',
+    'integrations/account-plans',
+    'integrations/1passw0rd',
     {
       type: 'category',
       label: 'Amazon and AWS',
@@ -1861,17 +1865,6 @@ module.exports = {
       },
       {
       type: 'category',
-      label: '1Password',
-      collapsible: true,
-      collapsed: true,
-      link: {type: 'doc', id: 'integrations/1password/index'},
-      items: [
-        'integrations/1password/index',
-
-        ],
-      },
-      {
-      type: 'category',
       label: 'SAML',
       collapsible: true,
       collapsed: true,
@@ -1924,8 +1917,16 @@ module.exports = {
       collapsed: true,
       link: {type: 'doc', id: 'integrations/web-servers/index'},
       items: [
-        'integrations/web-servers/index',
-
+        'integrations/web-servers/apache',
+        'integrations/web-servers/apache-tomcat',
+        'integrations/web-servers/iis-10',
+        'integrations/web-servers/nginx',
+        'integrations/web-servers/nginx-ingress',
+        'integrations/web-servers/nginx-legacy',
+        'integrations/web-servers/nginx-plus',
+        'integrations/web-servers/nginx-plus-ingress',
+        'integrations/web-servers/squid-proxy',
+        'integrations/web-servers/varnish',
         ],
       },
       {
@@ -1935,18 +1936,15 @@ module.exports = {
       collapsed: true,
       link: {type: 'doc', id: 'integrations/sumo-apps/index'},
       items: [
-        'integrations/sumo-apps/index',
-
-        ],
-      },
-      {
-      type: 'category',
-      label: 'Apps and Sumo Account Plans',
-      collapsible: true,
-      collapsed: true,
-      link: {type: 'doc', id: 'integrations/sumo-apps-account-plans/index'},
-      items: [
-        'integrations/sumo-apps-account-plans/index',
+        'integrations/sumo-apps/audit',
+        'integrations/sumo-apps/data-volume',
+        'integrations/sumo-apps/data-volume-legacy',
+        'integrations/sumo-apps/enterprise-audit',
+        'integrations/sumo-apps/enterprise-search-audit',
+        'integrations/sumo-apps/infrequent-data-tier',
+        'integrations/sumo-apps/pci-compliance-professional-services',
+        'integrations/sumo-apps/enterprise-request',
+        'integrations/sumo-apps/security-analytics',
 
         ],
       },
@@ -1957,29 +1955,16 @@ module.exports = {
       collapsed: true,
       link: {type: 'doc', id: 'integrations/cloud-security-monitoring-analytics/index'},
       items: [
-        'integrations/cloud-security-monitoring-analytics/index',
-
-        ],
-      },
-      {
-      type: 'category',
-      label: 'Partner Ecosystem Apps',
-      collapsible: true,
-      collapsed: true,
-      link: {type: 'doc', id: 'integrations/partner-ecosystem-apps/index'},
-      items: [
-        'integrations/partner-ecosystem-apps/index',
-
-        ],
-      },
-      {
-      type: 'category',
-      label: 'Partner Integrations',
-      collapsible: true,
-      collapsed: true,
-      link: {type: 'doc', id: 'integrations/partner-integrations/index'},
-      items: [
-        'integrations/partner-integrations/index',
+        'integrations/cloud-security-monitoring-analytics/amazon-guardduty',
+        'integrations/cloud-security-monitoring-analytics/amazon-vpc-flow',
+        'integrations/cloud-security-monitoring-analytics/aws-cloudtrail',
+        'integrations/cloud-security-monitoring-analytics/aws-security-hub',
+        'integrations/cloud-security-monitoring-analytics/aws-waf',
+        'integrations/cloud-security-monitoring-analytics/linux',
+        'integrations/cloud-security-monitoring-analytics/palo-alto-firewall-9',
+        'integrations/cloud-security-monitoring-analytics/palo-alto-firewall-10',
+        'integrations/cloud-security-monitoring-analytics/ueba',
+        'integrations/cloud-security-monitoring-analytics/windows',
 
         ],
       },
