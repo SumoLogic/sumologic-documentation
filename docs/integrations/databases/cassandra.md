@@ -2,6 +2,7 @@
 id: cassandra
 title: Sumo Logic App for Cassandra
 sidebar_label: Cassandra
+description: Documentation for the Sumo Logic Cassandra app.
 ---
 
 If you're looking for an app for AWS, Microsoft, or Google, see [Amazon and AWS](https://help.sumologic.com/07Sumo-Logic-Apps/01Amazon_and_AWS), [Microsoft and Azure](https://help.sumologic.com/07Sumo-Logic-Apps/04Microsoft-and-Azure), or [Google](https://help.sumologic.com/07Sumo-Logic-Apps/06Google).

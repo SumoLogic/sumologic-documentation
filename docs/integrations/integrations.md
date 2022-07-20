@@ -10,3 +10,31 @@ This category has documentation for Sumo Logic apps and integrations. Several of
 Apps help you get started gaining insights from your data source by providing example searches and dashboards for common use cases. They are customized with your source configurations and populated in a folder selected by you. Feel free to edit them to get the results you want.
 
 Sumo Logic supports a wide variety of data sources. To interact with other Sumo Logic users, post feedback, or ask a question, visit the Sumo Logic Community Apps and Integrations Forum. ​
+
+
+<div className="box-wrapper" markdown="1">
+<div className="box box1 card">
+  <div className="container">
+  <h3><a href="/docs/integrations/amazon-aws/">Amazon and AWS</a></h3>
+  <p>Sumo Logic apps for Amazon and AWS</p>
+  </div>
+</div>
+<div className="box box2 card">
+  <div className="container">
+  <h3><a href="/docs/integrations/microsoft-azure/">Microsoft and Azure</a></h3>
+  <p>Sumo Logic apps for Microsoft and Azure</p>
+  </div>
+</div>
+    <div className="box box3 card">
+      <div className="container">
+      <h3><a href="/docs/integrations/google/">Google</a></h3>
+      <p>Sumo Logic apps for Google</p>
+      </div>
+    </div>
+    <div className="box box4 card">
+      <div className="container">
+      <h3><a href="/docs/integrations/databases">Database Servers</a></h3>
+      <p>Sumo Logic apps for database servers, such as Oracle.</p>
+      </div>
+    </div>
+  </div>
