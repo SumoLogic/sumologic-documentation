@@ -1833,7 +1833,7 @@ module.exports = {
         collapsed: true,
         link: {type: 'doc', id: 'integrations/databases/oracle/index'},
         items: [
-          'integrations/databases/oracle/logs-metrics',
+          'integrations/databases/oracle/collect-logs-metrics',
           'integrations/databases/oracle/performance-metrics',
           'integrations/databases/oracle/monitors-app-dashboards',
           'integrations/databases/oracle/alerts',

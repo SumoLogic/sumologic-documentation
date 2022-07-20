@@ -1,7 +1,8 @@
 ---
-id: logs-metrics
+id: collect-logs-metrics
 title: Collect Logs and Metrics for the Oracle App
-sidebar_label: Collect Logs and Metrics 
+sidebar_label: Collect Logs and Metrics
+description: Instructions for collecting logs for the Sumo Logic App for Oracle.
 ---
 
 This page provides instructions for configuring log and metric collection for the Sumo Logic App for Oracle.
