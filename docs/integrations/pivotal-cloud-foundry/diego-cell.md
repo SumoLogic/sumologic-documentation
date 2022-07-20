@@ -1,6 +1,6 @@
 ---
 id: diego-cell
-title: diego-cell
-sidebar_label: diego-cell
-description: diego-cell
+title: Sumo Logic App for Diego Cell
+sidebar_label: Diego Cell
+description: Diego Cell
 ---
