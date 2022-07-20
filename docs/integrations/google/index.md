@@ -1,6 +1,6 @@
 ---
 slug: integrations/google
-title: Google
+title: Sumo Logic Apps for Google
 sidebar_label: Google
 description: Docs for Sumo apps for Google.
 ---

@@ -1,6 +1,6 @@
 ---
 id: office-365
-title: Microsoft Office 365
+title: Sumo Logic App for Microsoft Office 365
 sidebar_label: Microsoft Office 365
 description: Microsoft Office 365
 ---
@@ -652,7 +652,7 @@ Shows details of visitors to the SharePoint by location and over time.
 **Visits by State Over Time**. Shows clients by state in a stacked column chart on a timeline for the last 24 hours.
 
 
-### Searches 
+### Searches
 44
 
 

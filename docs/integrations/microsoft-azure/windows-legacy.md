@@ -1,6 +1,6 @@
 ---
 id: windows-legacy
-title: Windows Legacy
+title: Sumo Logic App for Windows Legacy
 sidebar_label: Windows (Legacy)
 description: Windows Legacy
 ---

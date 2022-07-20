@@ -1,6 +1,6 @@
 ---
 id: performance
-title: Windows Performance
+title: Sumo Logic App for Windows Performance
 sidebar_label: Windows Performance
 description: Windows Performance
 ---
@@ -274,7 +274,7 @@ The Windows Performance App allows you to analyze Windows Performance logs and g
 **Top 10 Processes with Largest Resident Memory.** Displays the top 10 processes with the largest resident memory per host for the last 15 minutes as a stacked column chart for the last 15 minutes. The legend lists the processes.
 
 
-### Network Performance 
+### Network Performance
 
 **Average Bytes Received per Second by Host.** Displays the average number of bytes received per second for each host as an area chart on a timeline using timeslices of one minute for the last 15 minutes.
 

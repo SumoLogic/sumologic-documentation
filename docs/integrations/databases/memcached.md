@@ -1,8 +1,8 @@
 ---
 id: memcached
 title: Sumo Logic App for Memcached
+sidebar_label: Memcached
 ---
-
 
 The Memcached app is a unified logs and metrics app that helps you monitor the availability, performance, health, and resource utilization of your Memcached clusters. Preconfigured dashboards provide insight into uptime, operational metrics, cache performance, resource utilization, errors, warnings, and commands executed.
 

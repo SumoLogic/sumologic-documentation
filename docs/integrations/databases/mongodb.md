@@ -1,6 +1,7 @@
 ---
 id: mongodb
 title: Sumo Logic App for MongoDB
+sidebar_label: MongoDB
 ---
 
 MongoDB is a source-available cross-platform document-oriented database program.

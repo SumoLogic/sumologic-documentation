@@ -1,6 +1,6 @@
 ---
 id: teams
-title: Microsoft Teams
+title: Sumo Logic App for Microsoft Teams
 sidebar_label: Microsoft Teams
 description: Microsoft Teams
 ---

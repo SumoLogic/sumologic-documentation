@@ -1,6 +1,6 @@
 ---
 id: cloud-functions
-title: Google Cloud Functions
+title: Sumo Logic App for Google Cloud Functions
 sidebar_label: Cloud Functions
 description: tk
 ---

@@ -1,6 +1,6 @@
 ---
 id: bigquery
-title: Google BigQuery
+title: Sumo Logic App for Google BigQuery
 sidebar_label: BigQuery
 description: tk
 ---
