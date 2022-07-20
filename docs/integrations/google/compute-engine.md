@@ -1,6 +1,6 @@
 ---
 id: compute-engine
-title: Google Compute Engine
+title: Sumo Logic App for Google Compute Engine
 sidebar_label: Compute Engine
 description: tk
 ---

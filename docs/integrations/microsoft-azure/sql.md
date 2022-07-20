@@ -1,6 +1,6 @@
 ---
 id: sql
-title: Azure SQL
+title: Sumo Logic App for Azure SQL
 sidebar_label: Azure SQL
 description: Azure SQL
 ---

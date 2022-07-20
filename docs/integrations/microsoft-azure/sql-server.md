@@ -1,6 +1,6 @@
 ---
 id: sql-server
-title: Microsoft SQL Server
+title: Sumo Logic App for Microsoft SQL Server
 sidebar_label: Microsoft SQL Server
 description: Microsoft SQL Server
 ---

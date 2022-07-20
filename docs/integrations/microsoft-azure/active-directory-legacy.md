@@ -1,6 +1,6 @@
 ---
 id: active-directory-legacy
-title: Active Directory Legacy
+title: Sumo Logic App for Active Directory Legacy
 sidebar_label: Active Directory (Legacy)
 description: Allows you to analyze Windows Active Directory logs and gain insight into your deployment.
 ---

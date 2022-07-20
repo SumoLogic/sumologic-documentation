@@ -1,6 +1,6 @@
 ---
 id: audit
-title: Azure Audit
+title: Sumo Logic App for Azure Audit
 sidebar_label: Azure Audit
 description: Azure Audit
 ---
