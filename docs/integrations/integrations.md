@@ -9,7 +9,9 @@ This category has documentation for Sumo Logic apps and integrations. Several of
 
 Apps help you get started gaining insights from your data source by providing example searches and dashboards for common use cases. They are customized with your source configurations and populated in a folder selected by you. Feel free to edit them to get the results you want.
 
-Sumo Logic supports a wide variety of data sources. To interact with other Sumo Logic users, post feedback, or ask a question, visit the Sumo Logic Community Apps and Integrations Forum. ​
+To determine if an app is supported by your pricing plan, see [Apps and Sumo Logic Account Plans](/docs/integrations/account-plans).
+
+Sumo Logic supports a wide variety of data sources. To interact with other Sumo Logic users, post feedback, or ask a question, visit the [Sumo Logic Community Apps and Integrations Forum](https://support.sumologic.com/hc/en-us/community/topics/200263058-Applications-and-Integrations). ​
 
 
 <div className="box-wrapper" markdown="1">
