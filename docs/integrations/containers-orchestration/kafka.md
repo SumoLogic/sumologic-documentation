@@ -1023,5 +1023,6 @@ Sumo Logic provides out of the box alerts available via [Sumo Logic monitors](ht
 **INSERT TABLE**
 
 
-
 ## Kafka Metrics List
+
+**INSERT TABLE**
