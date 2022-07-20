@@ -1639,10 +1639,6 @@ module.exports = {
 // *** INTEGRATIONS: Sumo Logic Apps, no longer called APPS
   integrations: [
     'integrations/integrations',
-    'integrations/partner-ecosystem-apps',
-    'integrations/partner-integrations',
-    'integrations/account-plans',
-    'integrations/1password',
     {
       type: 'category',
       label: 'Amazon and AWS',
@@ -1820,7 +1816,19 @@ module.exports = {
         'integrations/databases/mongodb',
         'integrations/databases/mongodb-atlas',
         'integrations/databases/mysql',
-        'integrations/databases/oracle',
+        {
+        type: 'category',
+        label: 'Oracle',
+        collapsible: true,
+        collapsed: true,
+        link: {type: 'doc', id: 'integrations/databases/oracle/index'},
+        items: [
+          'integrations/databases/oracle/logs-metrics',
+          'integrations/databases/oracle/performance-metrics',
+          'integrations/databases/oracle/monitors-app-dashboards',
+          'integrations/databases/oracle/alerts',
+          ],
+        },
         'integrations/databases/postgresql',
         'integrations/databases/redis',
         ],
@@ -1964,7 +1972,6 @@ module.exports = {
         'integrations/cloud-security-monitoring-analytics/palo-alto-firewall-10',
         'integrations/cloud-security-monitoring-analytics/ueba',
         'integrations/cloud-security-monitoring-analytics/windows',
-
         ],
       },
       {
@@ -1979,6 +1986,10 @@ module.exports = {
         'integrations/pci-compliance/pci-dashboards',
       ],
     },
+    'integrations/1password',
+    'integrations/account-plans',
+    'integrations/partner-ecosystem-apps',
+    'integrations/partner-integrations',
   ],
 // OTHER FEATURES: Global Intelligence, SDO, CSE
   other: [

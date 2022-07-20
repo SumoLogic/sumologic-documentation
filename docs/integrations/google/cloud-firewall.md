@@ -1,6 +1,6 @@
 ---
 id: cloud-firewall
-title: cloud-firewall
-sidebar_label: cloud-firewall
+title: Google Cloud Firewall
+sidebar_label: Cloud Firewall
 description: tk
 ---

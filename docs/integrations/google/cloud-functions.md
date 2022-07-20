@@ -1,6 +1,6 @@
 ---
 id: cloud-functions
-title: cloud-functions
-sidebar_label: cloud-functions
+title: Google Cloud Functions
+sidebar_label: Cloud Functions
 description: tk
 ---
