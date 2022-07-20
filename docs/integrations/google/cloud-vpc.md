@@ -1,6 +1,6 @@
 ---
 id: cloud-vpc
-title: Google Cloud VPC
+title: Sumo Logic App for Google Cloud VPC
 sidebar_label: Cloud VPC
 description: tk
 ---

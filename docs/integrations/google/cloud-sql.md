@@ -1,6 +1,6 @@
 ---
 id: cloud-sql
-title: Google Cloud SQL
+title: Sumo Logic App for Google Cloud SQL
 sidebar_label: Cloud SQL
 description: tk
 ---

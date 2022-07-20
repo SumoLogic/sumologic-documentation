@@ -1,6 +1,6 @@
 ---
 id: kubernetes-engine
-title: Google Kubernetes Engine
+title: Sumo Logic App for Google Kubernetes Engine
 sidebar_label: Kubernetes Engine (GKE)
 description: tk
 ---

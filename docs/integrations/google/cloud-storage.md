@@ -1,6 +1,6 @@
 ---
 id: cloud-storage
-title: Google Cloud Storage
+title: Sumo Logic App for Google Cloud Storage
 sidebar_label: Cloud Storage
 description: tk
 ---

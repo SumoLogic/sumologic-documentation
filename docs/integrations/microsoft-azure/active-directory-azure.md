@@ -1,6 +1,6 @@
 ---
 id: active-directory-azure
-title: Azure Active Directory
+title: Sumo Logic App for Azure Active Directory
 sidebar_label: Azure Active Directory
 description: The Sumo Logic App for Azure Active Directory presents information about activity in Azure Active Directory, including role management, user management, group management, directory management, and application management.
 ---

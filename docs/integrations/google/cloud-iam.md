@@ -1,6 +1,6 @@
 ---
 id: cloud-iam
-title: Google Cloud IAM
+title: Sumo Logic App for Google Cloud IAM
 sidebar_label: Cloud IAM
 description: tk
 ---

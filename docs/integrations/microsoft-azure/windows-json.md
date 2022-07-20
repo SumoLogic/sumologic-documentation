@@ -1,6 +1,6 @@
 ---
 id: windows-json
-title: Windows JSON
+title: Sumo Logic App for Windows JSON
 sidebar_label: Windows JSON
 description: Windows JSON
 ---

@@ -1,6 +1,8 @@
 ---
 id: mariadb
 title: Sumo Logic App for MariaDB
+sidebar_label: MariaDB
+description: The Sumo Logic App for MariaDB is a unified logs and metrics app that helps you monitor the availability, performance and resource utilization of MariaDB database clusters.
 ---
 
 The MariaDB app is a unified logs and metrics app that helps you monitor MariaDB database cluster availability, performance, and resource utilization. Pre-configured dashboards and searches provide insight into the health of your database clusters, performance metrics, resource metrics, schema metrics, replication, error logs, slow queries, Innodb operations, failed logins, and error logs.

@@ -1,6 +1,6 @@
 ---
 id: network-watcher
-title: Azure network-watcher
+title: Sumo Logic App for Azure Network Watcher
 sidebar_label: Azure Network Watcher
 description: Azure Network Watcher
 ---

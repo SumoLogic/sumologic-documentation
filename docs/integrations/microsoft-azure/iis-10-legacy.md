@@ -1,8 +1,8 @@
 ---
 id: iis-10-legacy
-title: IIS 10 Legacy App
+title: Sumo Logic App for IIS 10 Legacy App
 sidebar_label: IIS 10 (Legacy)
-description: IIS 10 (Legacy) 
+description: IIS 10 (Legacy)
 ---
 
 The IIS 10 (Legacy) App monitors the performance and reliability of your Microsoft Internet Information Services (IIS) infrastructure, identifying customer-facing and internal operational issues. This app also provides the ability to monitor customer paths and interactions, so you can analyze how customers are using your product. The app provides predefined searches and Dashboards, that give visibility into your environment for real-time and historical analysis.
