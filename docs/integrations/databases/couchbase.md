@@ -1,6 +1,7 @@
 ---
 id: couchbase
 title: Sumo Logic App for Couchbase
+sidebar_label: Couchbase
 ---
 
 Couchbase is the modern database for enterprise applications.

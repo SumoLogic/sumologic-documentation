@@ -1,6 +1,6 @@
 ---
 id: kubernetes
-title: Azure Kubernetes Service Control Plane
+title: Sumo Logic App for Azure Kubernetes Service Control Plane
 sidebar_label: Azure Kubernetes Service Control Plane
 description: Azure Kubernetes Service (AKS) - Control Plane
 ---

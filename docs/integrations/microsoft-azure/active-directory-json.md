@@ -1,6 +1,6 @@
 ---
 id: active-directory-json
-title: Active Directory JSON
+title: Sumo Logic App for Active Directory JSON
 sidebar_label: Active Directory JSON
 description: Active Directory JSON
 ---

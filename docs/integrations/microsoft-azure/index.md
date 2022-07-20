@@ -1,6 +1,6 @@
 ---
 slug: integrations/microsoft-azure
-title: Microsoft and Azure
+title: Sumo Logic Apps for Microsoft and Azure
 sidebar_label: Microsoft and Azure
 description: Microsoft and Azure
 ---

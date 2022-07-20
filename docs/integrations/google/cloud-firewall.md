@@ -1,6 +1,6 @@
 ---
 id: cloud-firewall
-title: Google Cloud Firewall
+title: Sumo Logic App for Google Cloud Firewall
 sidebar_label: Cloud Firewall
 description: tk
 ---

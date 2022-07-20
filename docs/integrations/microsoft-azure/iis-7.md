@@ -1,6 +1,6 @@
 ---
 id: iis-7
-title: IIS 7
+title: Sumo Logic App for IIS 7
 sidebar_label: IIS 7
 description: IIS 7
 ---
@@ -321,6 +321,6 @@ The **IIS 7 - Traffic Insights - Apps and Requests Dashboard** provides informat
 The IIS 7 - Traffic Insights - Content and Client Platform Dashboard provides information on the number of media file types requested, the top 10 documents requested, the operating systems and web browsers used by visitors, and the operating system platforms used by visitors.
 
 
-## IIS 7 - Visitor Insights Dashboard 
+## IIS 7 - Visitor Insights Dashboard
 
 The **IIS 7 - Visitor Insights Dashboard** provides information on the geographic locations and number of users by client IP address, the number of visitors per country, locations and number of users by client IP address by US state, and the number of visitors per US state.

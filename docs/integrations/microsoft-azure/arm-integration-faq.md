@@ -1,6 +1,6 @@
 ---
 id: arm-integration-faq
-title: Azure Integration using ARM FAQs
+title: Sumo Logic App for Azure Integration using ARM FAQs
 sidebar_label: Azure Integration using ARM FAQs
 description: This guide provides answers to frequently asked questions (FAQs) about integrating Azure into an enterprise environment using ARM.
 ---

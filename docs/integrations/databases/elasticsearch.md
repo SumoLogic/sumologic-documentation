@@ -1,6 +1,7 @@
 ---
 id: elasticsearch
 title: Sumo Logic App for Elasticsearch
+sidebar_label: Elasticsearch
 ---
 
 
