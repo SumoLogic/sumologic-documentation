@@ -1,6 +1,6 @@
 ---
 id: workspace
-title: workspace
-sidebar_label: workspace
+title: Google Workspace
+sidebar_label: Workspace
 description: tk
 ---

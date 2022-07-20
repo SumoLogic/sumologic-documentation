@@ -1,6 +1,6 @@
 ---
 id: kubernetes-engine
-title: kubernetes-engine
-sidebar_label: kubernetes-engine
+title: Google Kubernetes Engine
+sidebar_label: Kubernetes Engine (GKE)
 description: tk
 ---

@@ -1,6 +1,6 @@
 ---
 id: compute-engine
-title: compute-engine
-sidebar_label: compute-engine
+title: Google Compute Engine
+sidebar_label: Compute Engine
 description: tk
 ---

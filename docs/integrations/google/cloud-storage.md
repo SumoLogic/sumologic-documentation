@@ -1,6 +1,6 @@
 ---
 id: cloud-storage
-title: cloud-storage
-sidebar_label: cloud-storage
+title: Google Cloud Storage
+sidebar_label: Cloud Storage
 description: tk
 ---

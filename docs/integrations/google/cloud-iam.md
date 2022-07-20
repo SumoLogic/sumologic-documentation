@@ -1,6 +1,6 @@
 ---
 id: cloud-iam
-title: cloud-iam
-sidebar_label: cloud-iam
+title: Google Cloud IAM
+sidebar_label: Cloud IAM
 description: tk
 ---

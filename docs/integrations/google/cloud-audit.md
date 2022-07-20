@@ -1,6 +1,6 @@
 ---
 id: cloud-audit
-title: cloud-audit
-sidebar_label: cloud-audit
+title: Google Cloud Audit
+sidebar_label: Cloud Audit
 description: tk
 ---

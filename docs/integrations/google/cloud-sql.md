@@ -1,6 +1,6 @@
 ---
 id: cloud-sql
-title: cloud-sql
-sidebar_label: cloud-sql
+title: Google Cloud SQL
+sidebar_label: Cloud SQL
 description: tk
 ---
