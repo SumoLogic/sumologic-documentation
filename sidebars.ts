@@ -1936,6 +1936,7 @@ module.exports = {
       items: [
         'integrations/web-servers/apache',
         'integrations/web-servers/apache-tomcat',
+        'integrations/web-servers/haproxy',
         'integrations/web-servers/iis-10',
         'integrations/web-servers/nginx',
         'integrations/web-servers/nginx-ingress',
