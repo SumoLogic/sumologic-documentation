@@ -1,6 +1,6 @@
 ---
 id: data-volume
-title: Data Volume App
+title: Sumo Logic Data Volume App
 ---
 
 The Data Volume App provides you with a summary and detailed views of your account's data usage volume by data type, tier, category, collector, source name, and hosts via predefined searches and dashboards.
@@ -20,7 +20,7 @@ The Data Volume Index gathers volume data as soon as it is enabled. It will not 
 4. Choose a location for Data Volume in your **Personal** folder.
 5. Click **Add to Library**. A dialog will confirm the app is installed successfully.
 
-## View Dashboards 
+## View Dashboards
 
 ### **Data Volume App Dashboards**
 

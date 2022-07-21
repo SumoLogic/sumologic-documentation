@@ -1,6 +1,6 @@
 ---
 id: infrequent-data-tier
-title: Infrequent Data Tier
+title: Sumo Logic Infrequent Data Tier App
 ---
 
 This feature is available in the following account plan.
