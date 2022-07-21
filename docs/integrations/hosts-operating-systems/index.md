@@ -3,3 +3,7 @@ id: index
 title: Host and Operating Systems
 sidebar_label: Host and Operating Systems
 ---
+
+This guide has documentation for Sumo apps for monitoring host metrics and the Linux operating system.  
+
+If you're looking for an app for Microsoft Windows, see Microsoft and Azure.
