@@ -54,7 +54,7 @@ For details on the format and definitions, refer to [Cylance](https://www.cylanc
 ### Step 1: Configure a Collector
 3
 
-To create a new Sumo Logic Hosted Collector, perform the steps in [Configure a Hosted Collector](https://help.sumologic.com/03Send-Data/Hosted-Collectors/Configure-a-Hosted-Collector)<span style="text-decoration:underline;">.</span>
+To create a new Sumo Logic Hosted Collector, perform the steps in [Configure a Hosted Collector](https://help.sumologic.com/03Send-Data/Hosted-Collectors/Configure-a-Hosted-Collector).
 
 
 ### Step 2: Configure a Source
