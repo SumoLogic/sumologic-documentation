@@ -1934,8 +1934,32 @@ module.exports = {
       collapsed: true,
       link: {type: 'doc', id: 'integrations/web-servers/index'},
       items: [
-        'integrations/web-servers/apache',
-        'integrations/web-servers/apache-tomcat',
+
+        {
+        type: 'category',
+        label: 'Apache',
+        collapsible: true,
+        collapsed: true,
+        link: {type: 'doc', id: 'integrations/web-servers/apache/index'},
+        items: [
+          'integrations/web-servers/apache/collect-logs-metrics',
+          'integrations/web-servers/apache/install-app-monitors-dashboards',
+          'integrations/web-servers/apache/metrics',
+          'integrations/web-servers/apache/alerts',
+          ],
+        },
+        {
+        type: 'category',
+        label: 'Apache Tomcat',
+        collapsible: true,
+        collapsed: true,
+        link: {type: 'doc', id: 'integrations/web-servers/apache-tomcat/index'},
+        items: [
+          'integrations/web-servers/apache-tomcat/collect-logs-metrics',
+          'integrations/web-servers/apache-tomcat/install-app-dashboards',
+          'integrations/web-servers/apache-tomcat/alerts',
+          ],
+        },
         'integrations/web-servers/haproxy',
         'integrations/web-servers/iis-10',
         'integrations/web-servers/nginx',
@@ -1963,7 +1987,6 @@ module.exports = {
         'integrations/sumo-apps/pci-compliance-professional-services',
         'integrations/sumo-apps/enterprise-request',
         'integrations/sumo-apps/security-analytics',
-
         ],
       },
       {
