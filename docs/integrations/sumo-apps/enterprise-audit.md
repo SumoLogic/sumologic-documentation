@@ -1,6 +1,6 @@
 ---
 id: enterprise-audit
-title: Enterprise Audit
+title: Sumo Logic Enterprise Audit App
 ---
 
 This feature is available in the following account plans.
@@ -20,7 +20,7 @@ This feature is available in the following account plans.
   </tr>
 </table>
 
-The Sumo Logic Enterprise Audit Apps are JSON based to provide for more meaningful audit messages. The Apps generate queries that are compatible with the new Sumo Logic Audit Event Index. The Enterprise Audit Apps do not support the previous version of the audit index.
+The Sumo Logic Enterprise Audit Apps are JSON-based to provide for more meaningful audit messages. The Apps generate queries that are compatible with the new Sumo Logic Audit Event Index. The Enterprise Audit Apps do not support the previous version of the audit index.
 
 The Audit Event Index is _only_ available for Trial and Enterprise accounts. For information on available datasets and related source categories, see the [Audit Event Index](https://help.sumologic.com/Manage/Security/Audit_Event_Index) page.
 

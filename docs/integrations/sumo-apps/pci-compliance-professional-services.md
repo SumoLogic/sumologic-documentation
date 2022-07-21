@@ -3,7 +3,6 @@ id: pci-compliance-professional-services
 title: PCI Compliance through Professional Services
 ---
 
-
 The PCI Compliance through Professional Services app is available for Sumo Logic has been deprecated. This document will be retired shortly. We recommend using the PCI Compliance App for your specific data source instead.
 
 As data security becomes increasingly paramount, enterprises may reference certifications and standards such as the requirements of the Payment Card Industry Security Standard Council Data Security Standards (known as PCI DSS) as a means of assessing their policies and practices.  Even if you don’t handle payment card information, the requirements under PCI DSS may serve as proxies for controls and obligations that businesses have in place and seek to actively monitor.
