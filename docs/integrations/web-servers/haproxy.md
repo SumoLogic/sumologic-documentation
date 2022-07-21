@@ -227,7 +227,7 @@ annotations:
 
 
 
-* **telegraf.influxdata.com/inputs.** This contains the required configuration for the Telegraf HAProxy Input plugin. See[ this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/redis)<span style="text-decoration:underline;"> </span>for more information on configuring the HAProxy input plugin for Telegraf.  As telegraf will be run as a sidecar, the host should always be localhost.
+* **telegraf.influxdata.com/inputs.** This contains the required configuration for the Telegraf HAProxy Input plugin. See[ this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/redis) for more information on configuring the HAProxy input plugin for Telegraf.  As telegraf will be run as a sidecar, the host should always be localhost.
     * In the input plugins section:
         * **servers.** The URL to the HAProxy server. This can be a comma-separated list to connect to multiple HAProxy servers. See [this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/haproxy) for more information on additional parameters for configuring the HAProxy input plugin for Telegraf.
     * In the tags section [inputs.haproxy.tags]
