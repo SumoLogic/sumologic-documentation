@@ -1771,11 +1771,11 @@ module.exports = {
           collapsed: true,
           link: {type: 'doc', id: 'integrations/app-development/index'},
           items: [
-            'integrations/app-development/artifactory',
             'integrations/app-development/bitbucket',
             'integrations/app-development/github',
             'integrations/app-development/gitlab',
             'integrations/app-development/jenkins',
+            'integrations/app-development/jfrog-artifactory',
             'integrations/app-development/jfrog-xray',
             'integrations/app-development/jira',
             'integrations/app-development/jira-cloud',
