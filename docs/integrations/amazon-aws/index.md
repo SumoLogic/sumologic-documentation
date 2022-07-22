@@ -6,3 +6,8 @@ description: Amazon and AWS
 ---
 
 This guide has documentation for all of the apps that Sumo provides for Amazon and AWS. Please also see the page for the AWS Observability Solution.
+
+import DocCardList from '@theme/DocCardList';
+import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
+
+<DocCardList items={useCurrentSidebarCategory().items}/>

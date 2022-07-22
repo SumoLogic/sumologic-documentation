@@ -14,7 +14,7 @@ The Sumo Logic App for PagerDuty V2 ingests PagerDuty incident Webhooks V2 messa
 For more information on the incident messages supported in Webhooks V2, see the PagerDuty documentation: [https://v2.developer.pagerduty.com/docs/webhooks-v2-overview](https://v2.developer.pagerduty.com/docs/webhooks-v2-overview)
 
 
-## Collect logs for PagerDuty V2
+## Collect Logs for PagerDuty V2
 
 This page provides instructions for configuring a Sumo Logic Hosted Collector and HTTP Source to create a PagerDuty Webhook V2, to collect PagerDuty events. Click a link to jump to a topic:
 

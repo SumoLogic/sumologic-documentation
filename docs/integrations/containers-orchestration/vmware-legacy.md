@@ -1,6 +1,6 @@
 ---
 id: vmware-legacy
-title: VMware Legacy
+title: Sumo Logic App for VMware Legacy
 sidebar_label: VMware (Legacy)
 description: VMware (Legacy)
 ---

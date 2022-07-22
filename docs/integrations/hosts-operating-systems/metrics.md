@@ -1,6 +1,7 @@
 ---
 id: metrics
 title: Host Metrics Sumo Logic App
+sidebar_label: Host Metrics
 ---
 
 The Host Metrics app allows you to monitor the performance and resource utilization of hosts and processes that your mission critical applications are dependent upon. Preconfigured dashboards provide insight into CPU, memory, network, file descriptors, page faults, and TCP connectors. This app uses the Sumo Logic installed collector for the collection of host metrics data.

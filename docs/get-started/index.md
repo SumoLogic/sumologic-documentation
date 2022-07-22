@@ -22,7 +22,7 @@ Contact us at the [Sumo Dojo Slack](https://sumodojo.slack.com/) or enter a [sup
 
 Sumo Logic puts the power of data analytics at the fingertips of everyone on your team. Sumo's pre-configured searches and at-a-glance visual dashboards make it easy to search, filter, and analyze your data. Visual displays of up-to-date data allow you to monitor the health and fitness of your application and network, providing insights for troubleshooting and timely resolutions.
 
-On  your Sumo journey, you will learn how to:
+On your Sumo journey, you will learn how to:
 
 1. [Get your data into Sumo]
 1. [Search and analyze your data]
@@ -33,7 +33,7 @@ Let's get started!
 
 ## Step 1: Get your data into Sumo
 
-The journey of 10,000 logs begins with a single collector. You start your data analytics journey by sending your data to Sumo. You do this by setting up a local [Installed] [Collector] or web-[Hosted Collector] collector, then choosing the data [sources] that will provide the most value for you. 
+The journey of 10,000 logs begins with a single collector. You start your data analytics journey by sending your data to Sumo. You do this by setting up a local [Installed] [Collector] or web-[Hosted Collector] collector, then choosing the data [sources] that will provide the most value for you.
 
 - **You can set up a collector** by choosing **Manage Data > Collection** on the Sumo Home page, then selecting **Add Collector** in the **Collection** window. For more information, see the [Install a Collector] tutorial.
 - **You can set up a source** when your installed collector appears in the table on the Collection page, by navigating to the collector and selecting **Add > Add Source**. For more information, see the [Add a Source] tutorial.
@@ -42,17 +42,17 @@ The journey of 10,000 logs begins with a single collector. You start your data a
 
 ## Step 2: Search and analyze your data
 
-Once your data is available in Sumo, you and your co-workers can search your logs and metrics to identify unusual conditions or errors that could indicate a problem. You do this by creating queries and parsing the resulting messages. 
+Once your data is available in Sumo, you and your co-workers can search your logs and metrics to identify unusual conditions or errors that could indicate a problem. You do this by creating queries and parsing the resulting messages.
 
 You can start a log search, metrics search, or live tail from the Sumo Home page by clicking the respective icon. For walkthrough instructions on how to create a query and parse the messages, see the [Search Log Data] tutorial.
 
 ![WTS Home Search Icons](/img/get-started/WTS_Home-Search-icons.png)
 
-The [Setup Wizard] is a quick way to get started loading data into Sumo Logic, then searching an analyzing the data with Sumo Logic's predefined searches and dashboards. 
+The [Setup Wizard] is a quick way to get started loading data into Sumo Logic, then searching an analyzing the data with Sumo Logic's predefined searches and dashboards.
 
 ## Step 3: Monitoring and troubleshooting your environment
 
-Not sure how to use your data to monitor and and troubleshoot your environment? Sumo Logic offers a variety of Apps with predefined queries and visualizations that help you get up and running quickly. 
+Not sure how to use your data to monitor and and troubleshoot your environment? Sumo Logic offers a variety of Apps with predefined queries and visualizations that help you get up and running quickly.
 
 - **You can peruse the library of available apps** by selecting **App Catalog** in the left navigation panel, then scrolling through the library or entering a name in the search field. For more information, see the [Install an App and View  Data] tutorial.
 

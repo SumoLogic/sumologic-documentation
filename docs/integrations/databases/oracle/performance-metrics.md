@@ -1,6 +1,6 @@
 ---
 id: performance-metrics
-title: Set Up Oracle Performance Metrics Script
+title: Performance Metrics Script Setup
 ---
 
 This page has instructions for setting up the performance metrics script on Linux and Windows for the Oracle app.

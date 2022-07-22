@@ -1,6 +1,7 @@
 ---
 id: enterprise-search-audit
 title: Sumo Logic Enterprise Search Audit App
+sidebar_label: Enterprise Search Audit
 ---
 
 The Enterprise Search Audit App provides immediate visibility into your account's search activity and helps you identify areas of improvement. It gives an overview of search usage within your org, with a breakdown by analytic tiers and other relevant search metrics such as data scanned bytes, etc. The pre-built dashboards also help you identify opportunities for improving search performance using the Search Audit Index.

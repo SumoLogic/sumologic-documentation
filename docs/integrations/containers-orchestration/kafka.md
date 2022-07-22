@@ -1,6 +1,6 @@
 ---
 id: kafka
-title: Kafka
+title: Sumo Logic App for Kafka
 sidebar_label: Kafka
 description: Kafka
 ---
