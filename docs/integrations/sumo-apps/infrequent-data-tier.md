@@ -4,8 +4,9 @@ title: Sumo Logic Infrequent Data Tier App
 sidebar_label: Infrequent Data Tier
 ---
 
-This feature is available in the following account plan.
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
+This feature is available in the following account plan.
 
 <table>
   <tr>
@@ -84,11 +85,9 @@ _index=sumologic_search_usage_per_query analytics_tier = "Infrequent" !(user_nam
 | fillmissing timeslice (1d)
 ```
 
-
 ## Install the App
 
 You must complete the prerequisite requirement before you begin installing the Infrequent Data Tier App.
-
 
 ### Prerequisite
 
@@ -102,14 +101,10 @@ Complete the following instructions to install the Sumo Logic Infrequent Data Ti
 **To install the app, do the following:**
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
-
 1. From the **App Catalog**, search for and select the app**.**
 2. Select the version of the service you're using and click **Add to Library**.
 
-
 Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](https://help.sumologic.com/01Start-Here/Library/Apps-in-Sumo-Logic/Install-Apps-from-the-Library)
-
-
 
 1. To install the app, complete the following fields.
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
@@ -133,6 +128,8 @@ You can use filters to drill down and examine the data on a granular level.
 
 **Each panel has a set of filters** that are applied to the results for that panel only, as shown in the following example. Click the funnel icon in the top panel menu bar to display a list of panel-specific filters.
 
+<img src={useBaseUrl('img/integrations/sumo-apps/IDT_Panel_Filter.png')} alt="test" />
+
 
 # Infrequent Data Tier - Data Scanned Overview
 
@@ -140,13 +137,11 @@ The **Infrequent Data Tier - Data Scanned Overview** dashboard provides visibili
 
 **Use this dashboard to:**
 
-
-
 * Monitor data scan information per day.
 * Analyze monthly comparisons of scanned data.
 * Understand data scanned by caller module, query type, and query status.
 
-
+<img src={useBaseUrl('img/integrations/sumo-apps/IDT_Data_Scanned_Overview.png')} alt="test" />
 
 # Infrequent Data Tier - Data Scanned by Users
 
@@ -158,6 +153,7 @@ The **Infrequent Data Tier - Data Scanned by Users** dashboard provides insights
 * To analyze trends in data scanned by users over a 30 day period.
 * Monitor the geographical locations for data scan information.
 
+<img src={useBaseUrl('img/integrations/sumo-apps/IDT_Data_Scanned_by_Users.png')} alt="test" />
 
 # Infrequent Data Tier - Query Analysis
 
@@ -165,22 +161,19 @@ The **Infrequent Data Tier - Query Analysis** dashboard provides visibility into
 
 **Use this dashboard to:**
 
-
 * Identify the most expensive queries on the Infrequent Tier.
 * Analyze queries executed against Infrequent Tier.
 
+<img src={useBaseUrl('img/integrations/sumo-apps/IDT_Query_Analysis.png')} alt="test" />
+
 
 # Infrequent Data Tier - Credits Consumed
-
-
 The **Infrequent Data Tier - Credits Consumed** dashboard provides visibility into the total amount of Cloud Flex Credits your organization has consumed with infrequent queries. This allows you to monitor and control on-demand search costs for the Infrequent Tier.
 
 **Use this dashboard to:**
-
-
-
 * Monitor credits consumed per day.
 * Monitor credits consumed per user.
 * Monitor the geographical locations of credit consumption.
 * Identify the most expensive queries on the Infrequent Tier.
-*
+
+<img src={useBaseUrl('img/integrations/sumo-apps/IDT_Credits_Consumed.png')} alt="test" />
