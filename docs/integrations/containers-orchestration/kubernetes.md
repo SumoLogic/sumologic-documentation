@@ -1,6 +1,6 @@
 ---
 id: kubernetes
-title: Kubernetes
+title: Sumo Logic App for Kubernetes
 sidebar_label: Kubernetes
 description: The Sumo Logic Kubernetes App provides visibility into the worker nodes that comprise a cluster, as well as application logs of the worker nodes.
 ---
@@ -104,26 +104,34 @@ Message Breakdown by Container from the Dashboard Container Logs:
 | fields - message | count container | top 10 container by _count
 ```
 
-## Install App
+## Install the Kubernetes App, Alerts, and view the Dashboards
 
-title: Install the Kubernetes App, Alerts, and view the Dashboards
-sidebar_label: Install the Kubernetes App, Alerts, and view the Dashboards
-description: This page provides instructions for installing the Kubernetes App and Alerts, as well as descriptions and examples for each of the dashboards.
----
+This section provides instructions for installing the Kubernetes App and Alerts, as well as descriptions and examples for each of the dashboards. These instructions assume you have already set up the collection as described in "Collect Logs and Metrics for the Kubernetes App".
 
-This page provides instructions for installing the Kubernetes App and Alerts, as well as descriptions and examples for each of the dashboards. These instructions assume you have already set up the collection as described in "Collect Logs and Metrics for the Kubernetes App".
 
-## Pre-Packaged Alerts
+### Installing the Kubernetes App
 
-Sumo Logic has provided out of the box alerts available through Sumo Logic monitors Visualizations-and-Alerts/Alerts/Monitors to help you quickly determine if the Kubernetes cluster is available and performing as expected. These alerts are built based on metrics datasets and have preset thresholds based on industry best practices and recommendations.
+Now that you have set up the collection for Kubernetes App, install the Sumo Logic App for Kubernetes to use the pre-configured Kubernetes dashboards that provide visibility into your Kubernetes environment.
 
-For details on the individual alerts, see [Kubernetes Alerts](/docs/observability/kubernetes-solution/alerts).
+To install the app, do the following:
+
+1. Locate and install the app from the App Catalog. If you want to see a preview of the dashboards included with the app before installing, click  Preview Dashboards .
+2. From the App Catalog, search for  Kubernetes  and select the app.
+3. Click Add to Library.
+4. Complete the following fields:
+   * App Name. You can retain the existing name, or enter a name of your choice for the app. 
+   * Data Source. For each the sources listed, enter a Custom Data Filter or Source Category, as follows: For Falco Log Source, leave  Source Category  selected, and enter the following source category: *falco* or one that matches the source categories in your environment. For  Events Log Source, leave  Source Category  selected, and enter the following source category: *events* or one that matches the source categories in your environment.
+   * Advanced . Select the location in the Library (the default is the Personal folder in the Library), or click New Folder to add a new folder.
+5. Click Add to Library.
 
 ### Installing Alerts
+
+Sumo Logic has provided out of the box alerts available through Sumo Logic monitors Visualizations-and-Alerts/Alerts/Monitors to help you quickly determine if the Kubernetes cluster is available and performing as expected. These alerts are built based on metrics datasets and have preset thresholds based on industry best practices and recommendations.
 
 * To install these alerts, you need to have the Manage Monitors role capability.
 * Alerts can be installed by either importing them a JSON or a Terraform script.
 
+For details on the individual alerts, see [Kubernetes Alerts](/docs/observability/kubernetes-solution/alerts).
 
 #### Method 1: Install the alerts by importing a JSON file:
 
@@ -222,23 +230,8 @@ email_notifications_critiical = [
 There are limits to how many alerts can be enabled - please see the /Visualizations-and-Alerts/Alerts/Monitors/Monitor_FAQ">Alerts FAQ.
 :::
 
-## Install the Kubernetes App
 
-Now that you have set up the collection for Kubernetes App, install the Sumo Logic App for Kubernetes to use the pre-configured Kubernetes dashboards that provide visibility into your Kubernetes environment.
-
-To install the app, do the following:
-
-1. Locate and install the app from the App Catalog. If you want to see a preview of the dashboards included with the app before installing, click  Preview Dashboards .
-2. From the App Catalog, search for  Kubernetes  and select the app.
-3. Click Add to Library.
-4. Complete the following fields:
-   * App Name. You can retain the existing name, or enter a name of your choice for the app. 
-   * Data Source. For each the sources listed, enter a Custom Data Filter or Source Category, as follows: For Falco Log Source, leave  Source Category  selected, and enter the following source category: *falco* or one that matches the source categories in your environment. For  Events Log Source, leave  Source Category  selected, and enter the following source category: *events* or one that matches the source categories in your environment.
-   * Advanced . Select the location in the Library (the default is the Personal folder in the Library), or click New Folder to add a new folder.
-5. Click Add to Library.
-
-
-## Dashboards
+### Dashboards
 
 ### Filter with template variables   
 

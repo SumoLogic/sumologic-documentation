@@ -1,6 +1,6 @@
 ---
 id: monitors-app-dashboards
-title: Install the Oracle Monitors, App, and view the Dashboards
+title: Install the Monitors, App, and view the Dashboards
 ---
 
 This page provides instructions for installing the Oracle Monitors, App, as well as examples of each of the App dashboards. These instructions assume you have already set up the collection as described in the Collect Logs and Metrics for the Oracle App page.

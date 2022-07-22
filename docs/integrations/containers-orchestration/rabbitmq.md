@@ -1,6 +1,6 @@
 ---
 id: rabbitmq
-title: RabbitMQ
+title: Sumo Logic App for RabbitMQ
 sidebar_label: RabbitMQ
 ---
 

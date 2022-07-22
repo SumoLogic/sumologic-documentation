@@ -1,6 +1,6 @@
 ---
 id: vmware
-title: VMware
+title: Sumo Logic App for VMware
 sidebar_label: VMware
 description: VMware
 ---

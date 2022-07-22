@@ -1,6 +1,7 @@
 ---
 id: enterprise-audit
 title: Sumo Logic Enterprise Audit App
+sidebar_label: Enterprise Audit
 ---
 
 This feature is available in the following account plans.
