@@ -4,6 +4,8 @@ title: Sumo Logic Security Analytics App
 sidebar_label: Security Analytics
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 This App is available for Sumo Logic Enterprise Security and Enterprise Suite accounts only. It requires a **paid** Professional Services contract to install and configure. You may upgrade your account at any time. If you'd like more information on this App, you can [request](https://help.sumologic.com/07Sumo-Logic-Apps/26Apps_for_Sumo/Request_Enterprise_Apps) it by clicking the **Request **button in the Apps section in the Library.  A Sumo Logic sales representative will contact you to discuss Professional Services pricing options.
 
 The Sumo Logic App for Security Analytics provides Dashboards that allow you to easily see and manage your system's status, including a security operations overview, network, system and change, user monitoring, and vulnerabilities on endpoints. This data is collected from your Collectors and Sources,.​
@@ -15,6 +17,8 @@ This data is collected from your Collectors and Sources for instant analysis of 
 
 
 ## Security Operations Overview
+
+<img src={useBaseUrl('img/integrations/sumo-apps/SecurityAnalytics_SecurityOperations_Dashboard.png')} alt="test" />
 
 **Network Incidents.** Displays the number of incidents detected over the last 24 hours in a single value chart. Click the chart to drill down to the **Network Overview Dashboard **for more information.
 
@@ -35,6 +39,8 @@ This data is collected from your Collectors and Sources for instant analysis of 
 
 ## Network Status
 
+<img src={useBaseUrl('img/integrations/sumo-apps/SecurityAnalytics_Network_Dashboard.png')} alt="test" />
+
 **Incident Count.** Counts the number of incidents detected over the last 24 hours and displays them in a single value chart.
 
 **Incidents for Review.** Displays important incidents from the last 24 hours in a table with columns that list the incident's time, message text, source host IP address, destination host IP address, application, and severity. Scroll to see the entire table contents.
@@ -51,6 +57,8 @@ This data is collected from your Collectors and Sources for instant analysis of 
 
 
 ## System and Change
+
+<img src={useBaseUrl('img/integrations/sumo-apps/SecurityAnalytics_System-and-Change_Dashboard.png')} alt="test" />
 
 **Incident Count.** Displays the number of incidents detected as a change in a single value chart for the last 24 hours.
 
@@ -69,6 +77,8 @@ This data is collected from your Collectors and Sources for instant analysis of 
 
 ## User Monitoring
 
+<img src={useBaseUrl('img/integrations/sumo-apps/SecurityAnalytics_UserMonitoring_Dashboard.png')} alt="test" />
+
 ### Using the Sumo Logic App for Security Analytics
 
 This App is available for Sumo Logic Enterprise accounts only, and requires a paid Professional Services contract to install and configure. You may upgrade your account at any time. If you'd like more information on this App, please request it by clicking the [Request](https://help.sumologic.com/07Sumo-Logic-Apps/26Apps_for_Sumo/Security_Analytics_App/Using-the-Sumo-Logic-App-for-Security-Analytics) button in the Apps section of the Library, or contact your Sumo Logic sales representative at sales@sumologic.com.
@@ -84,8 +94,6 @@ For complete details, see [Sumo Logic App for Security Analytics](https://help.s
 In the Security Analytics App, on the Network Status Dashboard, the Incident Count or Incidents for Review Panels provide information on all security incidents. You can also drill down from these Panels to the Search page and see more details on those incidents in the Messages tab.  
 
 **To see incident details in the Messages tab:**
-
-
 
 1. Click the **Incidents for Review Panel **to open the query in the Search page.
 2. Click the **Messages** tab.
@@ -109,7 +117,6 @@ This table maps incident messages to the preconfigured Security Analytics App se
 
 
 
-
 **User Activity.** Displays user activity in kbytes for the last 24 hours in a single value chart.
 
 **Incidents for Review.** Provides information on incidents that have occurred in the last three hours. in a table including time, user, message text and the severity.
@@ -126,6 +133,8 @@ This table maps incident messages to the preconfigured Security Analytics App se
 
 
 ## Vulnerabilities on Endpoints
+
+<img src={useBaseUrl('img/integrations/sumo-apps/SecurityAnalytics_Vulnerabilities-on-Endpoints_Dashboard.png')} alt="test" />
 
 **Incident Count by Vulnerabilities.** Displays the number of incidents reported as High or Critical for the past 24 hours in a single value chart.
 
@@ -149,6 +158,8 @@ This table maps incident messages to the preconfigured Security Analytics App se
 
 
 ## Anomaly Detection Summary
+
+<img src={useBaseUrl('img/integrations/sumo-apps/SecurityAnalytics_AnomalyDetection_Dashboard.png')} alt="test" />
 
 **Anomalous Events.** Counts the number of Anomaly events detected for the last three hours, and displays them in a single value chart.
 

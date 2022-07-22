@@ -241,9 +241,9 @@ Template variables provide dynamic dashboards that can rescope data on the fly. 
 You can use template variables to drill down and examine the data on a granular level.
 :::
 
-### Kubernetes - Cluster Explorer Dashboard
+### Cluster Explorer Dashboard
 
-The  Kubernetes - Cluster Explorer  dashboard provides a high-level view of the health of the cluster services, along with details on the utilized resources by service.
+The Kubernetes - Cluster Explorer dashboard provides a high-level view of the health of the cluster services, along with details on the utilized resources by service.
 
 Use this dashboard to:
 * Navigate the cluster topology
@@ -253,17 +253,16 @@ Use this dashboard to:
 
 ### Kubernetes – Cluster Dashboard  
 
- The  Kubernetes - Cluster  dashboard provides detailed status of the cluster health, along with details on all the components, resources and related entities.
+The  Kubernetes - Cluster  dashboard provides detailed status of the cluster health, along with details on all the components, resources and related entities.
 
 Use this dashboard to:  
 * Monitor overall cluster health.
 * Get insight into the state and resource usage of cluster components and use this information to fine-tune your Kubernetes cluster.  
 * Get quick insights into the state of the related entities.
 
-
 <img alt="" class="default" src="https://sumologic-app-data.s3.amazonaws.com/dashboards/Kubernetes_Core/K8s_Cluster.png" />
 
-### Kubernetes - Cluster Overview Dashboard
+### Cluster Overview Dashboard
 
 The  Kubernetes - Cluster Overview  dashboard provides a high-level view of the cluster health. Use this dashboard to:  
 * Get quick insights into the health of the cluster.
@@ -272,7 +271,7 @@ The  Kubernetes - Cluster Overview  dashboard provides a high-level view of the 
 
  <img alt="K8s_Cluster_Overview.png" class="default" src="https://sumologic-app-data.s3.amazonaws.com/dashboards/Kubernetes_Core/K8s_Cluster_Overview.png" />
 
-### Kubernetes - Node Dashboard
+### Node Dashboard
 
 The Kubernetes - Node  dashboard provides detailed information on the health and performance of nodes in a Kubernetes cluster.
 
@@ -283,7 +282,7 @@ Use this dashboard to:
 
 <img alt="K8s_Nodes.png" class="default" src="https://sumologic-app-data.s3.amazonaws.com/dashboards/Kubernetes_Core/K8s_Node.png" />
 
-### Kubernetes - Node Overview Dashboard  
+### Node Overview Dashboard  
 
 The Kubernetes - Node Overview  dashboard provides a high-level view of a node, along with details on all the related components and resources.
 
@@ -293,7 +292,7 @@ Use this dashboard to:
 
  <img alt="" class="default" src="https://sumologic-app-data.s3.amazonaws.com/dashboards/Kubernetes_Core/K8s_Node_Overview.png" />
 
-### Kubernetes - Namespace Dashboard
+### Namespace Dashboard
 
 The Kubernetes - Namespace  dashboard provides insights into the health and resource utilization of a namespace.
 
@@ -305,7 +304,7 @@ Use this dashboard to:
 
 <img alt="K8s_Namespace_Overview.png" class="default" src="https://sumologic-app-data.s3.amazonaws.com/dashboards/Kubernetes_Core/K8s_Namespace.png" />
 
-### Kubernetes - Pod Dashboard
+### Pod Dashboard
 
 The Kubernetes - Pod dashboard provides insights into the health of and resource utilization of a Kubernetes pod.
 
@@ -317,7 +316,7 @@ Use this dashboard to:
 
 <img alt="K8s_Pods.png" class="default" src="https://sumologic-app-data.s3.amazonaws.com/dashboards/Kubernetes_Core/K8s_Pod.png" />
 
-### Kubernetes - Container Dashboard
+### Container Dashboard
 
 The  Kubernetes - Container  dashboard provides insights into the health and resource utilization of a Kubernetes container.
 
@@ -329,7 +328,7 @@ Use this dashboard to:
 
 <img alt="K8s_Containers.png" class="default" src="https://sumologic-app-data.s3.amazonaws.com/dashboards/Kubernetes_Core/K8s_Container.png" />
 
-### Kubernetes - Daemonsets Overview Dashboard
+### Daemonsets Overview Dashboard
 
 The Kubernetes - Daemonsets Overview  dashboard provides insights into the health of and resource utilization of Kubernetes Daemonsets.
 
@@ -340,7 +339,7 @@ Use this dashboard to:
 
 <img alt="" class="default" src="https://sumologic-app-data.s3.amazonaws.com/dashboards/Kubernetes_Core/K8s_Daemonsets_Overview.png" />
 
-### Kubernetes - StatefulSets Overview Dashboard  
+### StatefulSets Overview Dashboard  
 
 The Kubernetes - StatefulSets Overview  dashboard provides insights into the health of and resource utilization of Kubernetes StatefulSets.
 
@@ -352,7 +351,7 @@ Use this dashboard to:
 
 <img alt="K8s_Daemonsets_StatefulSets.png" class="default" src="https://sumologic-app-data.s3.amazonaws.com/dashboards/Kubernetes_Core/K8s_StatefulSets_Overview.png" />
 
-### Kubernetes - Deployment Overview Dashboard
+### Deployment Overview Dashboard
 
 The Kubernetes - Deployment Overview  dashboard provides insights into the health and performance of your Kubernetes deployments.
 
@@ -377,7 +376,7 @@ Use this dashboard to:
 
 <img alt="clipboard_e3bfbf91847de6daa52b18fc73edc105e.png" class="internal mt-draft" src="/@api/deki/files/12050/clipboard_e3bfbf91847de6daa52b18fc73edc105e.png?draft=true" />
 
-### Kubernetes - Deployment Dashboard  
+### Deployment Dashboard  
 
 The  Kubernetes - Deployment  dashboard provides insights into the health and performance of your Kubernetes deployments.
 
@@ -387,13 +386,12 @@ Use this dashboard to:
 * Identify whether the required replica level has been achieved or not.  
 * View logs and errors and investigate potential issues.
 
-
 <img alt="" class="default" src="https://sumologic-app-data.s3.amazonaws.com/dashboards/Kubernetes_Core/K8s_Deployment.png" />
 
-### Kubernetes - Security Overview Dashboard
+### Security Overview Dashboard
 
 :::note
-This dashboard relies on Falco. If the Dashboard is not populated, enable Falco by setting the flag "falco:enabled" as "true" in values.yaml as described https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/master/deploy/docs/Installation_with_Helm.md">on this page.
+This dashboard relies on Falco. If the Dashboard is not populated, enable Falco by setting the flag `falco:enabled` as `"true"` in values.yaml as described [here](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/master/deploy/docs/Installation_with_Helm.md).
 :::
 
 This dashboard provides high level details around anomalous container, application, host, and network activity detected by Falco.
@@ -405,7 +403,7 @@ Use this dashboard to:
 
 
 
-### Kubernetes - Security Rules Triggered Dashboard
+### Security Rules Triggered Dashboard
 
 :::note This dashboard relies on Falco. If the Dashboard is not populated, enable Falco by setting the flag "falco:enabled" as "true" in values.yaml as described https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/master/deploy/docs/Installation_with_Helm.md">on this page.
 :::
@@ -419,7 +417,7 @@ Use this dashboard to:
 
 <img alt="K8s_Sec_Rules_Triggered.png" class="internal default mt-draft" height="687px" src="/@api/deki/files/7013/K8s_Sec_Rules_Triggered.png?draft=true" />
 
-### Kubernetes - Service  Dashboard
+### Service  Dashboard
 
  The  Kubernetes - Service  dashboard provides a high-level view of the health of the cluster services, along with details on utilized resources by service.
 
@@ -430,7 +428,7 @@ Use this dashboard to:
 
 <img alt="K8s_Service_Overview.png" class="default" src="https://sumologic-app-data.s3.amazonaws.com/dashboards/Kubernetes_Core/K8s_Service.png" />
 
-### Kubernetes - Hygiene Check Dashboard
+### Hygiene Check Dashboard
 
 The  Kubernetes - Hygiene Check  dashboard provides visibility into the configuration hygiene of your Kubernetes cluster. This dashboard displays color-coded performance checks for nodes, along with resource utilization, pod capacity, pod errors, and pod states.
 
@@ -440,7 +438,7 @@ The  Kubernetes - Hygiene Check  dashboard provides visibility into the configur
 
 <img alt="K8s_Health_Check.png" class="default" src="https://sumologic-app-data.s3.amazonaws.com/dashboards/Kubernetes_Core/K8s_Hygiene_Check.png" />
 
-### Kubernetes - CoreDNS
+### CoreDNS
 
 CoreDNS is a [DNS server](https://en.wikipedia.org/wiki/Domain_Name_System) and can be used as a replacement for kube-dns in a kubernetes cluster.
 
