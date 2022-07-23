@@ -104,7 +104,107 @@ In the Security Analytics App, on the Network Status Dashboard, the Incident Cou
 
 The following table provides a list of security use cases, incidents covered, and relevant devices and sources.
 
-**table**
+<table>
+  <tr>
+   <td><strong>Security Analytics Use Case</strong>
+   </td>
+   <td><strong>Security Incidents</strong>
+   </td>
+   <td><strong>Relevant Devices and Sources</strong>
+   </td>
+  </tr>
+  <tr>
+   <td>User Monitoring
+   </td>
+   <td>
+<ul>
+<li>Login Failures followed by success from the same username</li>
+<li>High amount of login failures for the same username
+</li>
+</ul>
+   </td>
+   <td>Windows 2008 servers, Active Directory, Linux, Google Apps, Novell Access Manager, RSA
+   </td>
+  </tr>
+  <tr>
+   <td>User Monitoring
+   </td>
+   <td>
+<ul>
+<li>Group Created</li>
+<li>Group Deleted</li>
+<li>Group Membership changed</li>
+</ul>
+   </td>
+   <td>Windows, Active Directory, Google Apps
+   </td>
+  </tr>
+  <tr>
+   <td>User Monitoring
+   </td>
+   <td>
+<ul>
+<li>User Created on Domain or Application</li>
+<li>User Created on Local Server</li>
+<li>User Deleted</li>
+<li>User Modified
+</li>
+</ul>
+   </td>
+   <td>Windows, Active Directory, Google Apps, Linux
+   </td>
+  </tr>
+  <tr>
+   <td>Systems and Changes
+   </td>
+   <td>
+<ul>
+<li>Configuration Changes</li>
+<li>OS Update</li>
+</ul>
+   </td>
+   <td>Windows, Active Directory, Linux</td>
+  </tr>
+  <tr>
+   <td>Network Overview
+   </td>
+   <td>
+<ul>
+<li>Excessive firewall denies/accepts</li>
+<li>Single local source scanning multiple destinations on well known database</li>
+<li>FTP ports</li>
+<li>Email ports</li>
+<li>SSH and Web Server ports</li>
+</ul>
+   </td>
+   <td>Checkpoint
+   </td>
+  </tr>
+  <tr>
+   <td>Vulnerabilities on Endpoints
+   </td>
+   <td>
+<ul>
+<li>Multiple vulnerabilities detected</li>
+<li>Same vulnerability detected on multiple hosts</li>
+<li>Vulnerability found</li>
+</ul>
+   </td>
+   <td>Qualys
+   </td>
+  </tr>
+  <tr>
+   <td>Vulnerabilities on Endpoints</td>
+   <td>
+<ul>
+<li>Same virus detected on multiple hosts</li>
+<li>Virus found</li>
+</ul>
+   </td>
+   <td> Forefront
+   </td>
+  </tr>
+</table>
 
 
 
@@ -112,10 +212,64 @@ The following table provides a list of security use cases, incidents covered, an
 
 This table maps incident messages to the preconfigured Security Analytics App searches that report on them.
 
-
-**table**
-
-
+<table>
+  <tr>
+   <td><strong>Incident Message Value</strong>
+   </td>
+   <td><strong>Incident Search</strong>
+   </td>
+  </tr>
+  <tr>
+   <td>Brute Force Login
+   </td>
+   <td>SA - Incident - Brute Force Login Attempt</td>
+  </tr>
+  <tr>
+   <td>Excessive firewall denies</td>
+   <td>SA - Incident - Excessive Firewall Denies</td>
+  </tr>
+  <tr>
+   <td>High number of malware IDS alerts
+   </td>
+   <td>SA - Incident - High Number of Malware IDS Alerts</td>
+  </tr>
+  <tr>
+   <td>Large number of denied connections
+   </td>
+   <td>SA - Incident - High Volume of Denied Connections
+   </td>
+  </tr>
+  <tr>
+   <td>Increased failed remote logins</td>
+   <td>SA - Incident - Increase in Failed Remote Login Attempts</td>
+  </tr>
+  <tr>
+   <td>Multiple failed logins</td>
+   <td>SA - Incident - Multiple Failed Logins by a User in Last 15mins</td>
+  </tr>
+  <tr>
+   <td>Potential DDos attacks</td>
+   <td>SA - Incident - Potential DDos Attack</td>
+  </tr>
+  <tr>
+   <td>Potential scan or attack through multiple attack vectors</td>
+   <td>SA - Incident - Potential Scan or Attack through Multiple Vectors</td>
+  </tr>
+  <tr>
+   <td>Potential web application scan or attack</td>
+   <td>SA - Incident - Potential Web Application Attack</td>
+  </tr>
+  <tr>
+   <td>Potential successful brute force login
+   </td>
+   <td>SA - Incident - Successful Login after Multiple Failed Logins
+   </td>
+  </tr>
+  <tr>
+   <td>Suspicious SSL Traffic Hike from ...</td>
+   <td>SA - Incident - Suspicious SSL Traffic</td>
+  </tr>
+</table>
 
 **User Activity.** Displays user activity in kbytes for the last 24 hours in a single value chart.
 

@@ -4,6 +4,8 @@ title: Install the Apache Tomcat Monitors, App, and view the Dashboards
 sidebar_label: Install the Monitors, App, and view the Dashboards
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 This page has instructions for installing Sumo Logic Monitors for Apache Tomcat, the app and descriptions of each of the app dashboards.
 
 
@@ -15,14 +17,10 @@ To install these monitors, you must have the **Manage Monitors** role capability
 
 You can install monitors by importing a JSON file or using a Terraform script.
 
-
-2.png "image_tooltip")
-There are limits to how many alerts can be enabled. For more information, see [Monitors](https://help.sumologic.com/Visualizations-and-Alerts/Alerts/Monitors#Rules) for details.
+Use this dashboard to:mits to how many alerts can be enabled. For more information, see [Monitors](https://help.sumologic.com/Visualizations-and-Alerts/Alerts/Monitors#Rules) for details.
 
 
 #### Method 1: Install Monitors by importing a JSON file
-3.gif "image_tooltip")
-
 
 1. Download the [JSON file](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/blob/main/monitor_packages/ApacheTomcat/ApacheTomcat.json) that describes the monitors.
 2. The [JSON](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/blob/main/monitor_packages/ApacheTomcat/ApacheTomcat.json) contains the alerts that are based on Sumo Logic searches that do not have any scope filters, and therefore will be applicable to all Apache Tomcat webserver farms, the data for which has been collected via the instructions in the previous sections.  
@@ -30,52 +28,39 @@ There are limits to how many alerts can be enabled. For more information, see [M
 However, if you would like to restrict these alerts to specific clusters or environments, update the JSON file by replacing the text `webserver_farm=` with `<Your Custom Filter>`.
 
 Custom filter examples:
-
 1. For alerts applicable only to a specific webserver farm, your custom filter would be: `webserver_farm=dev-tomcat-01`
 2. For alerts applicable to all webserver farms that start with tomcat-prod, your custom filter would be: `webserver_farm=tomcat-prod*`
 3. For alerts applicable to a specific webserver farm, within a production environment, your custom filter would be: `webserver_farm=dev-tomcat-01 AND environment=prod`. This assumes you have set the optional environment tag while configuring collection.
 
 1. Go to **Manage Data > Alerts > Monitors**.
 2. Click **Add**.
-3. Click **Import. \
-**
-4.png "image_tooltip")
-
-4. On the** Import Content popup**, enter **Apache Tomcat** in the Name field, paste in the JSON into the popup, and click **Import**. \
-
-5.png "image_tooltip")
-
+3. Click **Import**.
+4. On the** Import Content popup**, enter **Apache Tomcat** in the Name field, paste in the JSON into the popup, and click **Import**.
 5. The monitors are created in a "Apache Tomcat" folder. The monitors are disabled by default. See the [Monitors](https://help.sumologic.com/Visualizations-and-Alerts/Alerts/Monitors) topic for information about enabling monitors and configuring notifications or connections.
 
 
 ##### Method 2: Install Monitors using a Terraform script
-6.gif "image_tooltip")
-
 
 
 ###### Step 1: Generate a Sumo Logic access key and ID
-7.gif "image_tooltip")
 
 
 Generate an access key and access ID for a user that has the **Manage Monitors** role capability. For instructions see  [Access Keys](https://help.sumologic.com/Manage/Security/Access-Keys#Create_an_access_key_on_Preferences_page).
 
 
 ###### Step 2: Download and install Terraform
-8.gif "image_tooltip")
-
 
 Download [Terraform 0.13](https://www.terraform.io/downloads.html) or later, and install it.
 
 
 ###### Step 3: Download the Sumo Logic Terraform package for Apache Tomcat monitors
-9.gif "image_tooltip")
 
 
 The alerts package is available in the Sumo Logic github [repository](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/tree/main/monitor_packages/ApacheTomcat). You can either download it using the git clone command or as a zip file.
 
 
 ###### Step 4: Alert Configuration  
-10.gif "image_tooltip")
+10
 
 
 After extracting the package , navigate to the  terraform-sumologic-sumo-logic-monitor/monitor_packages/ApacheTomcat/ directory.
@@ -90,36 +75,35 @@ environment = "<SUMOLOGIC DEPLOYMENT>"
 
 The Terraform script installs the alerts without any scope filters, if you would like to restrict the alerts to specific clusters or environments, update the `apachetomcat_data_source` variable. For example:
 
-
 <table>
   <tr>
    <td>To configure alerts for:
    </td>
-   <td>Set apachetomcat_data_source to something like:
+   <td>Set <code>apachetomcat_data_source</code> to something like:
    </td>
   </tr>
   <tr>
    <td>A specific webserver farm
    </td>
-   <td>webserver_farm=tomcat.prod.01
+   <td><code>webserver_farm=tomcat.prod.01</code>
    </td>
   </tr>
   <tr>
    <td>All clusters in an environment
    </td>
-   <td>environment=prod
+   <td><code>environment=prod</code>
    </td>
   </tr>
   <tr>
    <td>Multiple webserver farms using a wildcard
    </td>
-   <td>webserver_farm=tomcat-prod*
+   <td><code>webserver_farm=tomcat-prod*</code>
    </td>
   </tr>
   <tr>
    <td>A specific webserver farms within a specific environment
    </td>
-   <td>webserver_farm=tomcat-1 and environment=prod
+   <td><code>webserver_farm=tomcat-1</code> and <code>environment=prod</code>
 <p>This assumes you have configured and applied Fields as described in Step 1: Configure Fields of the <em>Sumo Logic of the Collect Logs and Metrics for Apache Tomcat</em> topic.</p>
    </td>
   </tr>
@@ -133,25 +117,18 @@ By default, the monitors will be located in a "Apache Tomcat" folder on the **Mo
 If you want the alerts to send email or connection notifications, follow the instructions in the next section.
 
 
-###### Step 5: Email and Connection Notification Configuration Examples
-11.gif "image_tooltip")
-
+#### Step 5: Email and Connection Notification Configuration Examples
 
 Edit the ApacheTomcat_notifications.auto.tfvars file to populate the connection_notifications and email_notifications sections. Examples are provided below.
 
 
-###### **Pagerduty connection example **
-12.gif "image_tooltip")
-
+#### Pagerduty connection example
 
 In the variable definition below, replace `<CONNECTION_ID>` with the connection ID of the Webhook connection. You can obtain the Webhook connection ID by calling the [Monitors API](https://api.sumologic.com/docs/#operation/listConnections).
 
-
-13.png "image_tooltip")
 For information about overriding the payload for different connection types, see [Set Up Webhook Connections](https://help.sumologic.com/Manage/Connections-and-Integrations/Webhook-Connections/Set_Up_Webhook_Connections).
 
-
-```
+```bash
 connection_notifications = [
     {
       connection_type       = "PagerDuty",
@@ -169,15 +146,9 @@ connection_notifications = [
 ```
 
 
+###### Email notifications example
 
-
-
-###### **Email notifications example **
-14.gif "image_tooltip")
-
-
-
-```
+```bash
 email_notifications = [
     {
       connection_type       = "Email",
@@ -190,11 +161,7 @@ email_notifications = [
   ]
 ```
 
-
-
 ###### Step 6: Install Monitors
-15.gif "image_tooltip")
-
 
 1. Navigate to the terraform-sumologic-sumo-logic-monitor/monitor_packages/ApacheTomcat/ directory and run terraform init. This will initialize Terraform and download the required components.
 2. Run terraform plan to view the monitors that Terraform will create or modify.
@@ -203,33 +170,23 @@ email_notifications = [
 This section demonstrates how to install the Apache Tomcat App.
 
 
-##### To install the app:
-16.gif "image_tooltip")
-
+## Install the Apache Tomcat App
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
-
-
 
 1. From the **App Catalog**, search for and select the app**.**
 2. Select the version of the service you're using and click **Add to Library**.
 
-
-17.png "image_tooltip")
 Version selection is applicable only to a few apps currently. For more information, see the[ Install the Apps from the Library](https://help.sumologic.com/01Start-Here/Library/Apps-in-Sumo-Logic/Install-Apps-from-the-Library).
-
-
 
 1. To install the app, complete the following fields.
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
     2. **Data Source.**
         * Choose **Enter a Custom Data Filter**, and enter a custom filter for Apache Tomcat  webserver farm. Examples:
-            1. For all Apache Tomcat webserver farms \
-webserver_farm=*
-            2. For a specific webserver farms: \
-webserver_farm=tomcat.dev.01. 
-            3. Clusters within a specific environment: \
-webserver_farm=tomcat-1 and environment=prod \
+            1. For all Apache Tomcat webserver farms webserver_farm=*
+            2. For a specific webserver farms: webserver_farm=tomcat.dev.01. 
+            3. Clusters within a specific environment:
+webserver_farm=tomcat-1 and environment=prod
 (This assumes you have set the optional environment tag while configuring collection)
     3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
     4. Click **Add to Library**.
@@ -238,56 +195,40 @@ Once an app is installed, it will appear in your **Personal** folder, or other f
 
 Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
 
+## Dashboards
 
-#### Dashboard Filters with Template Variables
-18.gif "image_tooltip")
-
+### Dashboard Filters with Template Variables
 
 Template variables provide dynamic dashboards that rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you can view dynamic changes to the data for a fast resolution to the root cause. For more information, see the Filter with template variables help page.
 
 
-#### Apache Tomcat - Overview
-19.gif "image_tooltip")
-
+### Overview
 
 The **Apache Tomcat - Overview** Dashboard provides a high-level view of the activity and health of Tomcat servers on your network. Dashboard panels display visual graphs and detailed information on visitor geographic locations, traffic volume and distribution, responses over time, as well as time comparisons for visitor locations and  CPU, Memory.
 
-**Use this dashboard to**:
-
-
-
+Use this dashboard to:
 * Analyze CPU, Memory and disk utilization.
 * Analyze http request about status code
 * Gain insights into Network traffic for your Tomcat server.
 * Gain insights into originated traffic location by region. This can help you allocate computer resources to different regions according to their needs.
 * Gain insights into Client, Server Responses on Tomcat Server. This helps you identify errors in Tomcat Server.
 
-
-20.png "image_tooltip")
-
+<img src={useBaseUrl('img/integrations/web-servers/Apache-Tomcat-Overview.png')} alt="test" />
 
 
-#### Apache Tomcat - Visitor Locations
-21.gif "image_tooltip")
-
+#### Visitor Locations
 
 The **Apache Tomcat - Visitor Locations** Dashboard provides a high-level view of Tomcat visitor geographic locations both worldwide and in the United States. Dashboard panels also show graphic trends for visits by country over time and visits by  US region over time.
-
-
 
 * **Worldwide.** Uses a geo lookup operation to display worldwide visitor locations by IP address on a map of the world, which allows you to see a count of hits per location for the last 24 hours.
 * **Visits by Country Over Time.** Displays the number of visitors by country in a stacked column chart on a timeline for the last hour.
 * **United States.** Uses a geo lookup operation to display US visitor locations by IP address on a map of the world, which allows you to see a count of hits per location for the last 24 hours.
 * **Visits by US Sate Over Time.** Displays the number of US visitors by state in a stacked column chart on a timeline for the last hour.
 
-
-22.png "image_tooltip")
-
+<img src={useBaseUrl('img/integrations/web-servers/Apache-Tomcat-Visitor-Locations.png')} alt="test" />
 
 
-### Apache Tomcat - Visitor Traffic Insight
-23.gif "image_tooltip")
-
+### Visitor Traffic Insight
 
 The **Apache Tomcat - Visitor Traffic Insight** Dashboard provides detailed information on the top documents accessed, top referrers, top search terms from popular search engines, and the media types served.
 
@@ -303,14 +244,10 @@ The **Apache Tomcat - Visitor Traffic Insight** Dashboard provides detailed info
 
 **Top 10 Search Terms from Popular Search Engines.** Displays a list of the top 10 search terms and their count from search engines such as Google, Bing, and Yahoo in an aggregation table for the past hour.
 
-
-24.png "image_tooltip")
-
+<img src={useBaseUrl('img/integrations/web-servers/Apache-Tomcat-Visitor-Traffic-Insight.png')} alt="test" />
 
 
-### Apache Tomcat - Web Server Operations
-25.gif "image_tooltip")
-
+### Web Server Operations
 
 The **Apache Tomcat - Web Server Operations** Dashboard provides a high-level view combined with detailed information on the top ten bots, geographic locations and data for clients with high error rates, server errors over time, and non 200 response code status codes. Dashboard panels also show information on server error logs, error log levels, error responses by server, and the top URIs responsible for 404 responses.
 
@@ -326,50 +263,34 @@ The **Apache Tomcat - Web Server Operations** Dashboard provides a high-level vi
 
 **Top 5 URIs Causing 404 Responses.** Provides a list of the top 5 URIs with 404 response types in a pie chart for the past hour.
 
-
-26.png "image_tooltip")
-
+<img src={useBaseUrl('img/integrations/web-servers/Apache-Tomcat-Web-Server-Operations.png')} alt="test" />
 
 
-#### Apache Tomcat - Logs Timeline Analysis
-27.gif "image_tooltip")
-
+### Logs Timeline Analysis
 
 The **Apache Tomcat - Logs Timeline Analysis** dashboard provides a high-level view of the activity and health of Apache Tomcat servers on your network. Dashboard panels display visual graphs and detailed information on traffic volume and distribution, responses over time, as well as time comparisons for visitor locations and server hits.
 
-**Use this dashboard to:**
-
-
-
+Use this dashboard to:
 * To understand the traffic distribution across servers, provide insights for resource planning by analyzing data volume and bytes served.
 * Gain insights into originated traffic location by region. This can help you allocate compute resources to different regions according to their needs.
 
-
-28.png "image_tooltip")
-
+<img src={useBaseUrl('img/integrations/web-servers/Apache-Tomcat-Logs-Timeline-Analysis.png')} alt="test" />
 
 
-##### Apache Tomcat - Outlier Analysis
-29.gif "image_tooltip")
-
+### Outlier Analysis
 
 The **Apache Tomcat - Outlier Analysis** dashboard provides a high-level view of Apache Tomcat server outlier metrics for bytes served, number of visitors, and server errors. You can select the time interval over which outliers are aggregated, then hover the cursor over the graph to display detailed information for that point in time.
 
-**Use this dashboard to:**
-
-
+Use this dashboard to:
 
 * Detect outliers in your infrastructure with Sumo Logic’s machine learning algorithm.
 * To identify outliers in incoming traffic and the number of errors encountered by your servers.
 
-
-30.png "image_tooltip")
-
+<img src={useBaseUrl('img/integrations/web-servers/Apache-Tomcat-Outlier-Analysis.png')} alt="test" />
 
 
-### Apache Tomcat - Catalina Overview
-31.gif "image_tooltip")
 
+### Catalina Overview
 
 The **Apache Tomcat - Catalina** dashboard provides information about events such as the startup and shutdown of the Apache Tomcat application server, the deployment of new applications, or the failure of one or more subsystems.
 
@@ -389,14 +310,10 @@ The **Apache Tomcat - Catalina** dashboard provides information about events suc
 
 **Server State Events Over Time.** Shows server state events (shutdown or startup) in a stacked column chart on a timeline for the last seven days.
 
-
-32.png "image_tooltip")
-
+<img src={useBaseUrl('img/integrations/web-servers/Apache-Tomcat-Catalina-Overview.png')} alt="test" />
 
 
-### Apache Tomcat - Garbage Collection
-33.gif "image_tooltip")
-
+### Garbage Collection
 
 The **Apache Tomcat - Garbage Collector** dashboard provides information on the garbage collection of the Java Virtual Machine.
 
@@ -416,53 +333,41 @@ The **Apache Tomcat - Garbage Collector** dashboard provides information on the 
 
 **PS Perm Gen.** PS Perm Gen is also referred as “Permanent Space”. This panel shows Perm Gen memory utilization just before garbage collection was executed vs. Perm Gen memory utilization after garbage collection was executed.
 
-
-34.png "image_tooltip")
-
+<img src={useBaseUrl('img/integrations/web-servers/Apache-Tomcat-Garbage-Collection.png')} alt="test" />
 
 
-### Apache Tomcat - Threat intel
-35.gif "image_tooltip")
+### Threat intel
 
+The **Apache Tomcat  - Threat Intel** dashboard provides an at-a-glance view of threats to Apache Tomcat servers on your network. Dashboard panels display the threat count over a selected time period, geographic locations where threats occurred, source breakdown, actors responsible for threats, severity, and a correlation of IP addresses, method, and status code of threats.
 
-The **Apache Tomcat  - Threat Inte**l dashboard provides an at-a-glance view of threats to Apache Tomcat servers on your network. Dashboard panels display the threat count over a selected time period, geographic locations where threats occurred, source breakdown, actors responsible for threats, severity, and a correlation of IP addresses, method, and status code of threats.
+Use this dashboard to:
+* To gain insights and understand threats in incoming traffic and discover potential IOCs. Incoming traffic requests are analyzed using the [Sumo - Crowdstrikes](https://help.sumologic.com/07Sumo-Logic-Apps/22Security_and_Threat_Detection/Threat_Intel_Quick_Analysis/03_Threat-Intel-FAQ) threat feed.
 
-**Use this dashboard to:**To gain insights and understand threats in incoming traffic and discover potential IOCs. Incoming traffic requests are analyzed using the [Sumo - Crowdstrikes](https://help.sumologic.com/07Sumo-Logic-Apps/22Security_and_Threat_Detection/Threat_Intel_Quick_Analysis/03_Threat-Intel-FAQ) threat feed.
-
-
-36.png "image_tooltip")
+<img src={useBaseUrl('img/integrations/web-servers/Apache-Tomcat-Threat-Intel.png')} alt="test" />
 
 
 
-### Apache Tomcat - Connectors
-37.gif "image_tooltip")
-
+### Connectors
 
 **Apache Tomcat  - Connector** dashboard provides analyze receive requests, pass them to the correct web application, and send back the results through the Connector as dynamically generated content.
 
-
-38.png "image_tooltip")
-
+<img src={useBaseUrl('img/integrations/web-servers/Apache-Tomcat-Connectors.png')} alt="test" />
 
 
-### Apache Tomcat - Memory
-39.gif "image_tooltip")
-
+### Memory
 
 Apache Tomcat  - Memory dashboard provides a memory of your Apache Tomcat instance. Use this dashboard to understand detail  Memory of your Apache Tomcat (s) deployed in your farm.  This dashboard also provides login activities
 
-**Use this dashboard to**:
-
+Use this dashboard to:
 * Analyze Heap memory
 * Analyze percent memory used
 
-
-40.png "image_tooltip")
-
+<img src={useBaseUrl('img/integrations/web-servers/Apache-Tomcat-Memory.png')} alt="test" />
 
 
-### Apache Tomcat - MemoryPool
-41.gif "image_tooltip")
 
+### MemoryPool
 
 Apache Tomcat  - MemoryPool dashboard provides a memory of your JMX Apache Tomcat instance. Use this dashboard to understand detail  Heap Memory of your JMX Apache Tomcat (s) deployed in your farm.
+
+<img src={useBaseUrl('img/integrations/web-servers/Apache-Tomcat-Memory-Pool.png')} alt="test" />
