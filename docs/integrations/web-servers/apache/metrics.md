@@ -2,6 +2,7 @@
 id: metrics
 title: Apache Metrics
 sidebar_label: Metrics
+hide_table_of_contents: true
 ---
 
 Here are the metrics available for Apache.
@@ -12,131 +13,131 @@ Here are the metrics available for Apache.
    <td><strong>List of Apache Telegraf metrics</strong></td>
   </tr>
   <tr>
-   <td>apache_BusyWorkers
+   <td><code>apache_BusyWorkers</code>
    </td>
   </tr>
   <tr>
-   <td>apache_BytesPerReq
+   <td><code>apache_BytesPerReq</code>
    </td>
   </tr>
   <tr>
-   <td>apache_BytesPerSec
+   <td><code>apache_BytesPerSec</code>
    </td>
   </tr>
   <tr>
-   <td>apache_CPUChildrenSystem
+   <td><code>apache_CPUChildrenSystem</code>
    </td>
   </tr>
   <tr>
-   <td>apache_CPUChildrenUser
+   <td><code>apache_CPUChildrenUser</code>
    </td>
   </tr>
   <tr>
-   <td>apache_CPULoad
+   <td><code>apache_CPULoad</code>
    </td>
   </tr>
   <tr>
-   <td>apache_CPUSystem
+   <td><code>apache_CPUSystem</code>
    </td>
   </tr>
   <tr>
-   <td>apache_CPUUser
+   <td><code>apache_CPUUser</code>
    </td>
   </tr>
   <tr>
-   <td>apache_DurationPerReq
+   <td><code>apache_DurationPerReq</code>
    </td>
   </tr>
   <tr>
-   <td>apache_IdleWorkers
+   <td><code>apache_IdleWorkers</code>
    </td>
   </tr>
   <tr>
-   <td>apache_Load1
+   <td><code>apache_Load1</code>
    </td>
   </tr>
   <tr>
-   <td>apache_Load5
+   <td><code>apache_Load5</code>
    </td>
   </tr>
   <tr>
-   <td>apache_Load15
+   <td><code>apache_Load15</code>
    </td>
   </tr>
   <tr>
-   <td>apache_ParentServerConfigGeneration
+   <td><code>apache_ParentServerConfigGeneration</code>
    </td>
   </tr>
   <tr>
-   <td>apache_ParentServerMPMGeneration
+   <td><code>apache_ParentServerMPMGeneration</code>
    </td>
   </tr>
   <tr>
-   <td>apache_ReqPerSec
+   <td><code>apache_ReqPerSec</code>
    </td>
   </tr>
   <tr>
-   <td>apache_ServerUptimeSeconds
+   <td><code>apache_ServerUptimeSeconds</code>
    </td>
   </tr>
   <tr>
-   <td>apache_TotalAccesses
+   <td><code>apache_TotalAccesses</code>
    </td>
   </tr>
   <tr>
-   <td>apache_TotalDuration
+   <td><code>apache_TotalDuration</code>
    </td>
   </tr>
   <tr>
-   <td>apache_TotalkBytes
+   <td><code>apache_TotalkBytes</code>
    </td>
   </tr>
   <tr>
-   <td>apache_Uptime
+   <td><code>apache_Uptime</code>
    </td>
   </tr>
   <tr>
-   <td>apache_scboard_closing
+   <td><code>apache_scboard_closing</code>
    </td>
   </tr>
   <tr>
-   <td>apache_scboard_dnslookup
+   <td><code>apache_scboard_dnslookup</code>
    </td>
   </tr>
   <tr>
-   <td>apache_scboard_finishing
+   <td><code>apache_scboard_finishing</code>
    </td>
   </tr>
   <tr>
-   <td>apache_scboard_idle_cleanup
+   <td><code>apache_scboard_idle_cleanup</code>
    </td>
   </tr>
   <tr>
-   <td>apache_scboard_keepalive
+   <td><code>apache_scboard_keepalive</code>
    </td>
   </tr>
   <tr>
-   <td>apache_scboard_logging
+   <td><code>apache_scboard_logging</code>
    </td>
   </tr>
   <tr>
-   <td>apache_scboard_open
+   <td><code>apache_scboard_open</code>
    </td>
   </tr>
   <tr>
-   <td>apache_scboard_reading
+   <td><code>apache_scboard_reading</code>
    </td>
   </tr>
   <tr>
-   <td>apache_scboard_sending
+   <td><code>apache_scboard_sending</code>
    </td>
   </tr>
   <tr>
-   <td>apache_scboard_starting
+   <td><code>apache_scboard_starting</code>
    </td>
   </tr>
   <tr>
-   <td>apache_scboard_waiting
+   <td><code>apache_scboard_waiting</code>
    </td>
   </tr>
 </table>

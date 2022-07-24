@@ -5,7 +5,7 @@ sidebar_label: IIS 10
 description: The IIS 10 app is a unified logs and metrics app that helps you monitor your IIS web servers' availability, performance, health, and resource utilization.
 ---
 
-The IIS 10 app is a unified logs and metrics app that helps you monitor your IIS web servers' availability, performance, health, and resource utilization. Preconfigured dashboards and searches provide insight into application pools, ASP.NET applications, requests, latency, visitor locations, visitor access types, traffic patterns, errors, web server operations, and access from known malicious sources.
+The Internet Information Services (IIS) 10 app is a unified logs and metrics app that helps you monitor your IIS web servers' availability, performance, health, and resource utilization. Preconfigured dashboards and searches provide insight into application pools, ASP.NET applications, requests, latency, visitor locations, visitor access types, traffic patterns, errors, web server operations, and access from known malicious sources.
 
 This App is tested with the following IIS versions:
 
@@ -13,18 +13,12 @@ Internet Information Services (Version 10.0.17763.1)
 Internet Information Services (Version 8.5.9600.16384)
 NoteIIS App and integration are supported only on Windows.
 
-## Collect Logs and Metrics for the IIS App
+
+## Collecting Logs and Metrics for the IIS App
 
 This page provides instructions for configuring log and metric collection for the Sumo Logic App for IIS.
 
-
-#### Collection Process Overview
-1.gif "image_tooltip")
-
-
 Configuring log and metric collection for the IIS App includes the following tasks:
-
-
 
 * Configure Fields in Sumo Logic.
 * Configure Collection for IIS Server
@@ -32,12 +26,8 @@ Configuring log and metric collection for the IIS App includes the following tas
     * Configure Metrics Collection
 
 
-##### Configure Fields in Sumo Logic
-2.gif "image_tooltip")
-
-
+### Configure Fields in Sumo Logic
 Create the following Fields in Sumo Logic prior to configuring the collection. This ensures that your logs and metrics are tagged with relevant metadata, which is required by the app dashboards. For information on setting up fields, see the [Fields](https://help.sumologic.com/Manage/Fields) help page.
-
 * component
 * environment
 * webserver_system
@@ -45,66 +35,44 @@ Create the following Fields in Sumo Logic prior to configuring the collection. T
 * pod
 
 
-##### Configure Collection for IIS
-3.gif "image_tooltip")
-
-
+### Configure Collection for IIS
 Sumo Logic supports the collection of logs and metrics data from IIS server in standalone environments.
 
-
-
-* Configure Log Collection.
+1. Configure Log Collection.
     * Enable Logging on IIS Server Side
     * Set up Collector and Sources on Sumo Logic Side
         * Set up local file source for IIS Access Logs
         * Set up local file source for IIS Error Logs
         * Set up Source for IIS Performance (Perfmon) Logs
-* Configure Metrics Collection.
+2. Configure Metrics Collection.
     * Set up HTTP Metrics Source
     * Configure Telegraf (telegraf.conf), and start it.
 
 
-#### Collect Internet Information Services (IIS) Logs and Metrics for Standalone environments
-4.gif "image_tooltip")
-
-
+### Collect IIS Logs and Metrics for Standalone environments
 Sumo Logic uses the Telegraf operator for IIS metric collection and the [Installed Collector](https://help.sumologic.com/03Send-Data/Installed-Collectors/01About-Installed-Collectors) for collecting IIS logs. The diagram below illustrates the components of the IIS collection in a standalone environment. Telegraf uses the[ Windows Performance Counters Input Plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/sqlserver) to obtain IIS metrics and the Sumo Logic output plugin to send the metrics to Sumo Logic. Logs from IIS Server are collected by a [Local File Source](https://help.sumologic.com/03Send-Data/Sources/01Sources-for-Installed-Collectors/Local-File-Source).
-
-
-
-
-5.png "image_tooltip")
-
 
 The process to set up collection for IIS data is done through the following steps:
 
-
-
 1. Configure Logs Collection
-    1. Log Types
-    2. Make sure logging is turned on in IIS Server
-    3. Configure an Installed Collector
-    4. Configure Sources
+    * Log Types
+    * Make sure logging is turned on in IIS Server
+    * Configure an Installed Collector
+    * Configure Sources
 2. Configure Metrics Collection
-    5. Configure a Hosted Collector
-    6. Configure an HTTP Logs and Metrics Source
-    7. Install Telegraf
-    8. Configure and start Telegraf
+    * Configure a Hosted Collector
+    * Configure an HTTP Logs and Metrics Source
+    * Install Telegraf
+    * Configure and start Telegraf
 
 
-##### Configure Logs Collection
-6.gif "image_tooltip")
-
+#### Configure Logs Collection
 
 This section provides instructions for configuring log collection for IIS running on a standalone environment for the Sumo Logic App for IIS.
-
-
 
 1. **Log Types**
 
 This section covers the following default log formats for IIS 10 and IIS 8.5:
-
-
 
 * IIS Access Logs (W3C format)
 * HTTP Error Logs
@@ -115,16 +83,11 @@ Default log formats are used by IIS App. IIS allows you to choose which fields t
 IIS Log files are generated as local files. For a standard Windows Server, the default log location is as follows: **%SystemDrive%\inetpub\logs\LogFiles
 
 For example:
-
-
 ```
 c:\inetpub\logs\LogFiles\
 ```
 
-
 Within the folder, you will find subfolders for each site configured with IIS. The logs are stored in folders that follow a naming pattern like W3SVC1, W3SVC2, W3SVC3, etc. The number at the end of the folder name corresponds to your site ID. For example, W3SVC2 is for site ID 2.
-
-
 
 * **IIS Access Logs (W3C default format)** Sumo Logic expects logs in [W3C](https://docs.microsoft.com/en-us/windows/desktop/http/w3c-logging)format with following fields: \
 `#Fields: date time s-ip cs-method cs-uri-stem cs-uri-query s-port cs-username c-ip cs(User-Agent) cs(Referer) sc-status sc-substatus sc-win32-status time-taken \
@@ -141,10 +104,7 @@ For information on how to configure HTTP Error Logs, and for explanations on the
 2. Select the site or server in the **Connections **pane, and then double-click **Logging**.
 
 
-7.png "image_tooltip")
 Enhanced logging is only available for site-level logging. If you select the server in the Connections pane, then the Custom Fields section of the W3C Logging Fields dialog is disabled.
-
-
 
 1. In the Format field under Log File, select **W3C** and then click Select Fields. IIS App works on default fields selection.
 2. Select following fields, if not already selected. Sumo Logic expects these fields in IIS logs for the IIS App to work by default: \
@@ -160,7 +120,7 @@ Enhanced logging is only available for site-level logging. If you select the ser
 * **Enable HTTP Error Logs on your Windows Server \
 **Perform the following task to enable HTTP Error Logs on your Windows Server, that is hosting the IIS Server.
 
-    **To enable HTTP Error Logs on the Windows Server hosting IIS Server, do the following:**
+**To enable HTTP Error Logs on the Windows Server hosting IIS Server, do the following:**
 
 1. To configure HTTP Error Logging, refer to this document [link](https://docs.microsoft.com/en-us/windows/desktop/http/configuring-http-server-api-error-logging).
 2. To understand HTTP Error Log format, refer to this document [link](https://docs.microsoft.com/en-us/windows/desktop/http/format-of-the-http-server-api-error-logs). \
@@ -180,12 +140,9 @@ This section demonstrates how to configure sources for the following log types:
 
     This section demonstrates how to configure a Local File Source for IIS Access Logs, for use with an [Installed Collector](https://help.sumologic.com/07Sumo-Logic-Apps/04Microsoft-and-Azure/IIS_10_(Legacy)/Collect_Logs_for_the_IIS_10_(Legacy)_App#Configure_a_Collector). You may configure a [Remote File Source](https://help.sumologic.com/03Send-Data/Sources/01Sources-for-Installed-Collectors/Remote-File-Source), but the configuration is more complex.
 
-
-8.png "image_tooltip")
 Sumo Logic recommends using a Local File Source whenever possible.
 
-
-    **To configure a local file source for IIS Access Logs, do the following:**
+**To configure a local file source for IIS Access Logs, do the following:**
 
 1. Configure a [Local File Source](https://help.sumologic.com/03Send-Data/Sources/01Sources-for-Installed-Collectors/Local-File-Source).
 2. Specify Local File Source Fields as follows:
@@ -201,7 +158,7 @@ webserver_system = iis \
 webserver_farm = <Your_IISserver_farm_Name>`. Enter **Default** if you do not have one. \
 environment = <Your_Environment_Name> (for example, Dev, QA, or Prod) \
 
-9.png "image_tooltip")
+9
 
 3. Configure the Advanced section:
     8. Timestamp Parsing Settings: Make sure the setting matches the timezone on the log files.
@@ -233,7 +190,7 @@ webserver_system = iis \
 webserver_farm = <Your_IISserver_farm_Name>`. Enter **Default** if you do not have one. \
 `environment = <Your_Environment_Name>` (for example, Dev, QA, or Prod) \
 
-10.png "image_tooltip")
+10
 
 3. Configure the Advanced section:
     8. Timestamp Parsing Settings: Make sure the setting matches the timezone on the log files.
@@ -250,7 +207,7 @@ After a few minutes, your new Source should be propagated down to the Collector 
 
 
 
-11.png "image_tooltip")
+11
 Sumo Logic recommends using a Local Windows Performance source whenever possible.
 
 
@@ -275,7 +232,7 @@ webserver_system = iis \
 webserver_farm = <Your_IISserver_farm_Name>`. Enter **Default** if you do not have one. \
 `environment = <Your_Environment_Name>` (for example, Dev, QA, or Prod) \
 
-12.png "image_tooltip")
+12
 
 3. Under Perfmon Queries Click Add Query.
 4. Add the following two queries:
@@ -288,15 +245,9 @@ webserver_farm = <Your_IISserver_farm_Name>`. Enter **Default** if you do not ha
 5. Click Save.
 
 
-##### Configure Metrics Collection
-13.gif "image_tooltip")
+#### Configure Metrics Collection
 
-
-
-###### Setup a Sumo Logic HTTP Source
-14.gif "image_tooltip")
-
-
+##### Set up a Sumo Logic HTTP Source
 
 
 1. **Configure a Hosted Collector for Metrics. \
@@ -311,17 +262,12 @@ webserver_farm = <Your_IISserver_farm_Name>`. Enter **Default** if you do not ha
     4. Take note of the URL provided once you click **Save**. You can retrieve it again by selecting the **Show URL** next to the source on the Collection Management screen.
 
 
-###### Setup Telegraf
-15.gif "image_tooltip")
-
-
-
+###### Set up Telegraf
 
 1. **Install Telegraf if you haven’t already. **Use the[ following steps](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Collect_Metrics_Using_Telegraf/03_Install_Telegraf) to install Telegraf.
 2. **Configure and start Telegraf.** As part of collecting metrics data from Telegraf, we will use the[ Windows Performance Counters Input Plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/sqlserver) to get data from Telegraf and the[ Sumo Logic output plugin](https://github.com/SumoLogic/fluentd-output-sumologic) to send data to Sumo Logic.
 
-Create or modify `telegraf.conf` and copy and paste the text below:  
-
+<details><summary><strong>Click to expand.</strong><br/>Create or modify `telegraf.conf` and copy and paste the text below.</summary>
 
 ```
 [[inputs.win_perf_counters]]
@@ -495,12 +441,12 @@ Create or modify `telegraf.conf` and copy and paste the text below:
   data_format = "prometheus"
 ```
 
+</details>
+
 
 Enter values for fields annotated with `<VALUE_TO_BE_CHANGED>` to the appropriate values. Do not include the brackets (`< >`) in your final configuration
 
 If you haven’t defined a farm in IIS Server, then enter ‘**default**’ for `webserver_farm`.
-
-
 
 * Input plugins section, which is `[[inputs.win_perf_counters]]`:
 
@@ -515,12 +461,9 @@ If you haven’t defined a farm in IIS Server, then enter ‘**default**’ for 
     Here’s an explanation for additional values set by this Telegraf configuration.
 
 
-
-17.png "image_tooltip")
-
 If you haven’t defined a farm in IIS Server, then enter ‘**default**’ for `webserver_farm`.
 
-18.png "image_tooltip")
+
 There are additional values set by the Telegraf configuration.  We recommend not to modify these values as they might cause the Sumo Logic app to not function correctly.
 
 * **data_format**: “prometheus” - In the output `[[outputs.sumologic]]` plugins section. Metrics are sent in the Prometheus format to Sumo Logic.
@@ -530,7 +473,7 @@ There are additional values set by the Telegraf configuration.  We recommend not
 See[ this doc](https://github.com/influxdata/telegraf/blob/master/etc/telegraf.conf) for all other parameters that can be configured in the Telegraf agent globally.
 
 
-19.png "image_tooltip")
+19
 After you have finalized your `telegraf.conf` file, you can start or reload the telegraf service using instructions from this[ doc](https://docs.influxdata.com/telegraf/v1.17/introduction/getting-started/#start-telegraf-service).
 
 At this point, Telegraf should start collecting the IIS Server metrics and forward them to the Sumo Logic HTTP Source.
@@ -643,39 +586,15 @@ Sumo Logic has provided out-of-the-box alerts available through [Sumo Logic moni
 </table>
 
 
-<!-- Output copied to clipboard! -->
 
-<!-- You have some errors, warnings, or alerts. If you are using reckless mode, turn it off to see inline alerts.
-* ERRORs: 0
-* WARNINGs: 1
-* ALERTS: 47 -->
+## Installing Monitors
 
+To install these alerts, you need to have the Manage Monitors role capability. Alerts can be installed by either importing a JSON file or a Terraform script.
 
-## Install the IIS Monitors, App, and view the Dashboards
-
-This page provides instructions for installing the IIS App, as well as examples of each of the App dashboards. These instructions assume you have already set up the collection as described in the [Collect Logs and Metrics for the IIS](https://help.sumologic.com/07Sumo-Logic-Apps/04Microsoft-and-Azure/IIS_10_(Legacy)/Collect_Logs_for_the_IIS_10_(Legacy)_App#HTTP_Error_Logs) App page.
-
-
-### Pre-Packaged Alerts
-1.gif "image_tooltip")
-
-Sumo Logic has provided out-of-the-box alerts available through [Sumo Logic monitors](https://help.sumologic.com/Visualizations-and-Alerts/Alerts/Monitors) to help you monitor your IIS Server farms. These alerts are built based on metrics and logs datasets and include preset thresholds based on industry best practices and recommendations.
-
-For details on the individual alerts, see this [page](https://help.sumologic.com/07Sumo-Logic-Apps/24Web_Servers/IIS_10/IIS_Alerts).
-
-
-### Installing Monitors
-2.gif "image_tooltip")
-
-* To install these alerts, you need to have the Manage Monitors role capability.
-* Alerts can be installed by either importing a JSON file or a Terraform script.
-
-3.png "image_tooltip")
 There are limits to how many alerts can be enabled - see the [Alerts FAQ](https://help.sumologic.com/Visualizations-and-Alerts/Alerts/Monitors/Monitor_FAQ) for details.
 
 
-#### Install the monitors by importing a JSON file Method
-4.gif "image_tooltip")
+### Method 1: Importing a JSON file
 
 1. Download the [JSON file](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/blob/main/monitor_packages/IIS/IIS.json) that describes the monitors.
 2. The [JSON](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/blob/main/monitor_packages/IIS/IIS.json) contains the alerts that are based on Sumo Logic searches that do not have any scope filters and therefore will be applicable to all IIS Server farms, the data for which has been collected via the instructions in the previous sections.  However, if you would like to restrict these alerts to specific farms or environments, update the JSON file by replacing the text `webserver_system=iis` with `<Your Custom Filter>`.  
@@ -688,18 +607,14 @@ Custom filter examples:
 `webserver_farm=iis-1` AND `environment=standalone` (This assumes you have set the optional environment tag while configuring collection).
 4. Go to Manage Data > Alerts > Monitors.
 5. Click **Add.**
-5.png "image_tooltip")
+5
 
 6. Click Import and then copy-paste the above JSON to import monitors.
 
-
-6.png "image_tooltip")
 The monitors are disabled by default. Once you have installed the alerts using this method, navigate to the IIS folder under **Monitors** to configure them. See [this](https://help.sumologic.com/Visualizations-and-Alerts/Alerts/Monitors) document to enable monitors to send notifications to teams or connections. See the instructions detailed in Step 4 of this [document](https://help.sumologic.com/Visualizations-and-Alerts/Alerts/Monitors#Add_a_monitor).
 
 
-#### Install the alerts using a Terraform script Method
-7.gif "image_tooltip")
-
+### Method 2: Using a Terraform script
 
 1. **Generate a Sumo Logic access key and ID.** Generate an access key and access ID for a user that has the Manage Monitors role capability in Sumo Logic using these[ instructions](https://help.sumologic.com/Manage/Security/Access-Keys#manage-your-access-keys-on-preferences-page). Identify which deployment your Sumo Logic account is in, using this [link](https://help.sumologic.com/APIs/General-API-Information/Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security).
 2. **[Download and install Terraform 0.13](https://www.terraform.io/downloads.html) or later.**
@@ -739,8 +654,8 @@ The Terraform script installs the alerts without any scope filters, if you would
 1. **Email and Connection Notification Configuration Examples** Modify the file `IIS_notifications.auto.tfvars` and populate connection_notifications and email_notifications as per below examples.
 
 
-###### Pagerduty Connection Example
-8.gif "image_tooltip")
+#### Pagerduty Connection Example
+8
 
 
 ```
@@ -766,7 +681,7 @@ Replace `<CONNECTION_ID>` with the connection id of the webhook connection. The 
 For overriding payload for different connection types, refer to this [document](https://help.sumologic.com/Manage/Connections-and-Integrations/Webhook-Connections/Set_Up_Webhook_Connections).
 
 #### Email Notifications Example
-9.gif "image_tooltip")
+9
 
 ```
 email_notifications = [
@@ -790,14 +705,19 @@ email_notifications = [
 **If you haven’t enabled alerts and/or configured notifications through the Terraform procedure outlined above, we highly recommend enabling alerts of interest and configuring each enabled alert to send notifications to other users or services. This is detailed in Step 4 of [this document](https://help.sumologic.com/Visualizations-and-Alerts/Alerts/Monitors#Add_a_monitor).
 
 
-10.png "image_tooltip")
 There are limits to how many alerts can be enabled - see the [Alerts FAQ](https://help.sumologic.com/Visualizations-and-Alerts/Alerts/Monitors/Monitor_FAQ).
 
 
-#### Install the Sumo Logic App
-11.gif "image_tooltip")
+## Installing the Sumo Logic App
 
-This section demonstrates how to install the IIS App.
+This section demonstrates how to install the IIS App and assumes you have already set up the collection as described in [Collect Logs and Metrics for the IIS](#collecting-logs-and-metrics-for-the-iis-app).
+
+
+### Pre-Packaged Alerts
+
+Sumo Logic has provided out-of-the-box alerts available through [Sumo Logic monitors](https://help.sumologic.com/Visualizations-and-Alerts/Alerts/Monitors) to help you monitor your IIS Server farms. These alerts are built based on metrics and logs datasets and include preset thresholds based on industry best practices and recommendations.
+
+For details on the individual alerts, see this [page](https://help.sumologic.com/07Sumo-Logic-Apps/24Web_Servers/IIS_10/IIS_Alerts).
 
 **To install the app:**
 
@@ -807,7 +727,7 @@ Locate and install the app you need from the **App Catalog**. If you want to see
 2. Select the version of the service you're using and click **Add to Library**.
 
 
-12.png "image_tooltip")
+12
 Version selection is applicable only to a few apps currently. For more information, see the[ Install the Apps from the Library](https://help.sumologic.com/01Start-Here/Library/Apps-in-Sumo-Logic/Install-Apps-from-the-Library).
 
 1. To install the app, complete the following fields.
@@ -825,24 +745,15 @@ Once an app is installed, it will appear in your **Personal** folder, or another
 Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
 
 
-#### Dashboard Filter with Template Variables  
-13.gif "image_tooltip")
 
 
-Template variables provide dynamic dashboards that rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you can view dynamic changes to the data for a fast resolution to the root cause. For more information, see the[ Filter with template variables](https://help.sumologic.com/Visualizations-and-Alerts/Dashboard_(New)/Filter_with_template_variables) help page.
+## View the Dashboards
 
+:::tip Filter with template variables    
+Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards-new/filter-with-template-variables.md).
+:::
 
-14.png "image_tooltip")
-You can use template variables to drill down and examine the data on a granular level.
-
-
-#### Dashboards
-15.gif "image_tooltip")
-
-
-
-##### IIS - Overview
-16.gif "image_tooltip")
+### IIS - Overview
 
 The **IIS - Overview** dashboard provides a high-level view of the performance and integrity of your Microsoft Internet Information Services (IIS) infrastructure. Dashboard panels display visual graphs and detailed information on IIS versions, platforms, and log formats. Panels also show visitor geographic locations, top app requests. OS platforms, response status, response times, and client and server errors.
 
@@ -852,12 +763,12 @@ The **IIS - Overview** dashboard provides a high-level view of the performance a
 * Drill Down to specific use cases by clicking on specific panels of interest.
 
 
-17.png "image_tooltip")
+17
 
 
 
-##### IIS - HTTP Error
-18.gif "image_tooltip")
+### IIS - HTTP Error
+18
 
 
 The **IIS - HTTP Error** dashboard provides detailed information on IIS error logging in HTTP. Dashboard panels show details on error events, top client and server IP addresses, top protocol versions, and protocol status. Panels also show information on top reason phrases and verbs associated with HTTP errors, as well as top request details by reason.
@@ -869,12 +780,12 @@ The **IIS - HTTP Error** dashboard provides detailed information on IIS error lo
 * Correct the error identified to ensure a consistent and satisfactory user experience.
 
 
-19.png "image_tooltip")
+19
 
 
 
-##### IIS - Performance Snapshot
-20.gif "image_tooltip")
+### IIS - Performance Snapshot
+20
 
 
 The **IIS - Performance Snapshot **dashboard provides detailed information on your IIS infrastructure integrity and performance. Dashboard panels show details on Web Service uptime, active connections, requests, user activity, and total bytes transferred. Panels also provide HTTP Service Request Queues details, such as arrivals, queue size, cache hit rate, and rejection rate.
@@ -890,12 +801,12 @@ The **IIS - Performance Snapshot **dashboard provides detailed information on yo
 * Monitor Bytes/Files transferred, to check if there is a need to make page content more lightweight, or track the most typically transferred high data content. This can also be an indicator of a potential spike in traffic.
 
 
-21.png "image_tooltip")
+21
 
 
 
 ##### IIS - Performance Trends
-22.gif "image_tooltip")
+22
 
 
 The **IIS - Performance Trends** dashboard provides details on ISS infrastructure trends for requests, active connections, bytes received and sent, files received and sent, queue size, arrival rate, and cache hit rate.
@@ -908,136 +819,91 @@ The **IIS - Performance Trends** dashboard provides details on ISS infrastructur
 * Acquire current performance snapshots of IIS servers. You can drill down to the Performance Snapshot by clicking the Requests Per Sec (All methods) panel.
 
 
-23.png "image_tooltip")
+23
 
 
 
-##### IIS  - Threat Analysis
-24.gif "image_tooltip")
+### IIS  - Threat Analysis
+24
 
 
 The **IIS - Threat Analysis** dashboard provides high-level views of threats throughout your IIS network. Dashboard panels display visual graphs and detailed information on Threats by Client IP, Threats by Actors, and Threat by Malicious Confidence.
 
 **Use this dashboard to:**
-
-
-
 * Identify potential threats and indicators of compromise.
 * Monitor if your site is accessed.
 
 
-25.png "image_tooltip")
 
-
-
-##### IIS - Latency
-26.gif "image_tooltip")
-
+### IIS - Latency
 
 The **IIS - Latency** dashboard provides visual graphs and detailed information for the integrity of performance throughout your IIS infrastructure. Dashboard panels show response time averages, cumulative percentiles, histograms, and outliers. Panels also show details for traffic distribution, slowest pages, slowest GET and POST requests, and average redirection time.
 
 
-27.png "image_tooltip")
-
-
-
-##### IIS - Web Server Operations
-28.gif "image_tooltip")
+### IIS - Web Server Operations
+28
 
 
 The **IIS - Web Server Operations** dashboard provides visual graphs and detailed information on server operation errors in your IIS infrastructure. Dashboard panels show server errors by the server, server errors over time, server error outliers, and redirections by the server. Panels also show client errors by the server, client error outliers, top URLs with 404 errors, and response codes over time.
 
-
-29.png "image_tooltip")
-
-
-
-##### IIS - Requests Stats
-30.gif "image_tooltip")
+### IIS - Requests Stats
+30
 
 
 The **IIS - Requests Stats** dashboard provides visual graphs and statistics for requests made throughout your IIS infrastructure. Dashboard panels show the number of requests, request methods, request outliers, and requests by server. Panels also show details on GET, PUT, POST, and DELETE requests, as well as requests time compare and unique visitors outlier.
 
 **Use this dashboard to:**
 
-
-
 * Monitor the load on your site for all requests, based on specific type of HTTP request and by server. This information allows you to efficiently allocate resources.
 * Identify outliers in requests.
 * Analyze request volume trends are against last 7 days to understand business fluctuations.
 * Identify how you are acquiring unique users with unique client outliers, and compare with positive and negative outliers.
 
-
-31.png "image_tooltip")
-
-
-
-##### IIS - Visitor Access Types
-32.gif "image_tooltip")
-
+### IIS - Visitor Access Types
 
 The **IIS - Visitor Access Types** Dashboard provides insights into visitor platform types, browsers, and operating systems, as well as the most popular mobile devices, PC and Mac versions used.
 
 
-33.png "image_tooltip")
 
-
-
-##### IIS - Visitor Locations  
-34.gif "image_tooltip")
-
+### IIS - Visitor Locations  
 
 The **IIS - Visitor Locations** Dashboard provides a high-level view of Nginx visitor geographic locations both worldwide and in the United States. Dashboard panels also show graphic trends for visits by country over time and visits by US region over time.
 
 
-35.png "image_tooltip")
-
-
-
-##### IIS - Visitor Traffic Insights
-36.gif "image_tooltip")
-
+### IIS - Visitor Traffic Insights
 
 The **IIS - Visitor Traffic Insights** Dashboard provides detailed information on the top documents accessed, top referrers, top search terms from popular search engines, and the media types served.
 
 
-37.png "image_tooltip")
 
 
-
-##### IIS - Application Pool
-38.gif "image_tooltip")
+### IIS - Application Pool
+38
 
 
 The **IIS - Application Pool** dashboard provides a high-level view of Application Pool State, Information and Worker Process Metrics.
 
 
-39.png "image_tooltip")
+39
 
 
 
-##### IIS - ASP.NET
-40.gif "image_tooltip")
+### IIS - ASP.NET
+40
 
 
 The IIS - ASP.NET dashboard provides a high-level view of the ASP.NET global performance counters
 
 **Use this dashboard to:**
 
-
-
 * Analyze State Server Sessions
 * Monitor Applications Information
 * Understand Request execution and wait time
 
 
-41.png "image_tooltip")
 
 
-
-##### IIS - ASP.NET Applications
-42.gif "image_tooltip")
-
+### IIS - ASP.NET Applications
 
 The **IIS - ASP.NET Applications** dashboard provides a high-level view of the ASP.NET application performance counters
 
@@ -1054,19 +920,17 @@ The **IIS - ASP.NET Applications** dashboard provides a high-level view of the A
 * Output Cache
 
 
-43.png "image_tooltip")
+43
 
 
 
-##### IIS - Cache Performance
-44.gif "image_tooltip")
+### IIS - Cache Performance
+44
 
 
 The **IIS - Cache Performance** dashboard provides a high-level view of the the Web Service Cache Counters object includes cache counters specific to the World Wide Web Publishing Service.
 
 **Use this dashboard to monitor the following key metrics:**
-
-
 
 * Output Cache
 * Cache Memory
@@ -1074,12 +938,12 @@ The **IIS - Cache Performance** dashboard provides a high-level view of the the 
 * URI Cache
 
 
-45.png "image_tooltip")
+45
 
 
 
-##### IIS - Web Service
-46.gif "image_tooltip")
+### IIS - Web Service
+46
 
 
 The **IIS - Web Service** dashboard provides a high-level view of the Web Service object includes counters specific to the World Wide Web Publishing Service.
@@ -1095,4 +959,4 @@ The **IIS - Web Service** dashboard provides a high-level view of the Web Servic
 * Miscellaneous
 
 
-47.png "image_tooltip")
+47
