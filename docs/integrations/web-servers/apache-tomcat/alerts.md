@@ -2,6 +2,7 @@
 id: alerts
 title: Apache Tomcat Alerts
 sidebar_label: Alerts
+hide_table_of_contents: true
 ---
 
 To help determine if the Apache Tomcat server is available and performing well, the [Sumo Logic monitors](https://help.sumologic.com/Visualizations-and-Alerts/Alerts/Monitors) are provided with out-of-box alerts.
