@@ -465,7 +465,7 @@ After a few minutes, your new Source should be propagated down to the Collector 
 
 
 
-#### Setup a Sumo Logic HTTP Source
+#### Set up a Sumo Logic HTTP Source
 21
 
 

@@ -5,6 +5,8 @@ sidebar_label: Squid Proxy
 description: The Squid Proxy app is a unified logs and metrics app that helps you monitor activity in Squid Proxy.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 The Squid Proxy app is a unified logs and metrics app that helps you monitor activity in Squid Proxy. The preconfigured dashboards provide insight into served and denied requests; performance metrics; IP domain DNS statistics; traffic details; HTTP response codes; URLs experiencing redirects, client errors, and server errors; and quality of service data that helps you understand your users’ experience.
 
 This App is tested with the following Squid Proxy versions:
@@ -512,7 +514,7 @@ If you are using a service like Fluentd, or you would like to upload your logs m
 
 
 
-###### Setup a Sumo Logic HTTP Source
+###### Set up a Sumo Logic HTTP Source
 12.gif "image_tooltip")
 
 
