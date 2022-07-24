@@ -8,11 +8,12 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 This page provides instructions for configuring log and metrics collection for the Sumo Logic App for Apache.
 
-## Collection Process Overview
+* Step 1: [Configure Fields in Sumo Logic](#configure-fields-in-sumo-logic)
+* Step 2: [Configure Your Environment for Apache Logs and Metrics Collection](#configure-your-environment-for-apache)
+   * [For Non-Kubernetes environments](#collect-apache-logs-and-metrics-for-non-kubernetes-environments)
+   * [For Kubernetes environments](#collect-apache-logs-and-metrics-for-kubernetes-environments)
 
-Configuring logs and metrics collection for the Apache App includes the following tasks:
-
-### Step 1: Configure Fields in Sumo Logic
+## Configure Fields in Sumo Logic
 
 Create the following Fields in Sumo Logic prior to configuring collection. This ensures that your logs and metrics are tagged with relevant metadata, which is required by the app dashboards. For information on setting up fields, see the [Fields](https://help.sumologic.com/Manage/Fields) help page.
 
@@ -29,66 +30,15 @@ If you are using Apache in a Kubernetes environment, create the fields:
 * `pod_labels_webserver_farm`
 
 
-### Step 2: Configure Your Environment for Apache
+## Configure Your Environment for Apache
 Sumo Logic supports collection of logs and metrics data from Apache in both Kubernetes and non-Kubernetes environments.
 
 Please click on the appropriate links below based on the environment where your Apache farms are hosted.
-* [Collect Apache Logs and Metrics for Non-Kubernetes environments](https://help.sumologic.com/07Sumo-Logic-Apps/24Web_Servers/Apache/01-Collect-Logs-for-Apache/Collect_Apache_Logs_and_Metrics_for_Non-Kubernetes_environments).
-* [Collect Apache Logs and Metrics for Kubernetes environments](https://help.sumologic.com/07Sumo-Logic-Apps/24Web_Servers/Apache/01-Collect-Logs-for-Apache/Collect_Apache_Logs_and_Metrics_for_Kubernetes_environments).
+* [Collect Apache Logs and Metrics for Non-Kubernetes environments](https://help.sumologic.com/07Sumo-Logic-Apps/24Web_Servers/Apache/01-Collect-Logs-for-Apache/Collect_Apache_Logs_and_Metrics_for_Non-Kubernetes_environments)
+* [Collect Apache Logs and Metrics for Kubernetes environments](https://help.sumologic.com/07Sumo-Logic-Apps/24Web_Servers/Apache/01-Collect-Logs-for-Apache/Collect_Apache_Logs_and_Metrics_for_Kubernetes_environments)
 
 
-### Sample Log Messages
-
-#### For Kubernetes
-
-```bash title="Access Logs"
-{
-"timestamp":1620630466883,
-"log":"192.168.29.177 - - [10/May/2021:07:07:44 +0000] \"GET / HTTP/1.1\" 200 45",
-"stream":"stdout",
-"time":"2021-05-10T07:07:44.649858568Z"
-}
-```
-
-```bash title="Error Logs"
-{
-"timestamp":1620125665927,
-"log":"[Tue May 04 10:54:25.460469 2021] [ssl:error] [pid 53] [client 192.168.85.135:52327] AH02042: rejecting client initiated renegotiation",
-"stream":"stderr",
-"time":"2021-05-04T10:54:25.460664201Z"
-}
-```
-
-
-#### For Non-Kubernetes
-
-```bash title="Access Logs"
-192.168.29.177 - - [26/Apr/2021:12:18:32 +0530] "GET /server-status HTTP/1.1" 404 196
-```
-
-```bash title="Error Logs"
-[Mon Apr 26 09:52:58.188858 2021] [core:notice] [pid 530] AH00094: Command line: '/usr/sbin/httpd -D FOREGROUND'
-```
-
-
-### Query Sample
-
-This sample Query is from the **Top 5 Clients Causing 4xx Errors** panel of the **Apache - Webserver Operations** dashboard.
-
-```sql title="Query String"
-webserver_system=apache webserver_farm=* HTTP (40* OR 41* OR 42* OR 43* OR 44* or 45* or 49*)
-| json "log" nodrop | if (_raw matches "{*", log, _raw) as mesg
-| parse regex field=mesg "^(?<src_ip>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})" nodrop
-| parse regex field=mesg "(?<method>[A-Z]+)\s(?<url>\S+)\sHTTP\/[\d\.]+[\\n]*\"\s(?<status_code>\d+)\s(?<size>[\d-]+)" nodrop
-| parse regex field=mesg "(?<method>[A-Z]+)\s(?<url>\S+)\sHTTP\/[\d\.]+[\\n]*\"\s(?<status_code>\d+)\s(?<size>[\d-]+)\s\"(?<referrer>.*?)\"\s\"(?<user_agent>.+?)\".*" nodrop
-| where status_code matches "4*"
-| count as count by src_ip
-| sort count, src_ip asc
-| limit 5
-```
-
-
-## Collect Apache Logs and Metrics for Kubernetes environments
+### For Kubernetes environments
 
 In a Kubernetes environment, we use the Telegraf Operator, which is packaged with our Kubernetes collection. You can learn more about it[ here](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Collect_Metrics_Using_Telegraf/01_Telegraf_Collection_Architecture).The diagram below illustrates how data is collected from Apache in Kubernetes environments. In the architecture shown below, there are four services that make up the metric collection pipeline: Telegraf, Prometheus, Fluentd and FluentBit.
 
@@ -209,7 +159,7 @@ Make sure that the Apache pods are running and annotations are applied by using 
 kubectl describe pod <apache_pod_name>
 ```
 
-The Sumo Logic Kubernetes Collection process will automatically capture the logs from stdout / stderr and will send the logs to Sumo Logic. For more information on deploying the Sumo Logic -Kubernetes -Collection, please see [this page](https://help.sumologic.com/07Sumo-Logic-Apps/10Containers_and_Orchestration/Kubernetes/Collect_Logs_and_Metrics_for_the_Kubernetes_App).
+The Sumo Logic Kubernetes Collection process will automatically capture the logs from `stdout` / `stderr` and will send the logs to Sumo Logic. For more information on deploying the Sumo Logic-Kubernetes-Collection, please see [this page](https://help.sumologic.com/07Sumo-Logic-Apps/10Containers_and_Orchestration/Kubernetes/Collect_Logs_and_Metrics_for_the_Kubernetes_App).
 
 ##### Add an FER to normalize the fields in Kubernetes environments
 
@@ -240,16 +190,13 @@ Labels created in Kubernetes environments automatically are prefixed with pod_la
   ```
 
 
-
-## Collect Apache Logs and Metrics for Non-Kubernetes environments
+### For Non-Kubernetes environments
 
 We use the Telegraf Operator for Apache metrics collection and the Sumo Logic Installed Collector for collecting Apache logs. The diagram below illustrates the components of the Apache collection in a non-Kubernetes environment for each web server. Telegraf runs on the same host as Apache, and uses the [Apache input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/apache) to obtain Apache metrics, and the Sumo Logic output plugin to send the metrics to Sumo Logic. Apache logs are sent to a Sumo Logic Local File source of an installed collector.
 
-<img src={useBaseUrl('img/integrations/web-servers/apache-non-k8s.png')} alt="test" />
+<img src={useBaseUrl('img/integrations/web-servers/apache-non-k8s.png')} alt="apache-non-k8s" />
 
 This section provides instructions for configuring metrics collection for the Sumo Logic App for Apache. Follow the instructions to set up metrics collection for each server belonging to a Apache server farm:
-
-
 
 1. Configure Metrics Collection
     1. Configure Metrics in Apache
@@ -348,41 +295,28 @@ Here’s an explanation for additional values set by this Telegraf configuration
 * `component` = “webserver”: In the input plugins section i.e.: This value is used by Sumo Logic apps to identify application components.
 * `webserver_system` = “apache”: In the input plugins section i.e.:  This value identifies the webserver system.
 
-    For all other parameters please see [this doc](https://github.com/influxdata/telegraf/blob/master/docs/CONFIGURATION.md) for more properties that can be configured in the Telegraf agent globally.
+For all other parameters please see [this doc](https://github.com/influxdata/telegraf/blob/master/docs/CONFIGURATION.md) for more properties that can be configured in the Telegraf agent globally.
 
+Once you have finalized your telegraf.conf file, you can start or reload the telegraf service via the instructions described in their [documentation](https://docs.influxdata.com/telegraf/v1.17/introduction/getting-started/#start-telegraf-service).
 
-    Once you have finalized your telegraf.conf file, you can start or reload the telegraf service via the instructions described in their [documentation](https://docs.influxdata.com/telegraf/v1.17/introduction/getting-started/#start-telegraf-service).
-
-
-    At this point, Apache metrics should start flowing into Sumo Logic.
+At this point, Apache metrics should start flowing into Sumo Logic.
 
 
 
 #### Step 2 Configure Collection of Logs from a Apache server
-19
+This section provides instructions for configuring collection of logs from Apache running on a non-Kubernetes environment.
 
+Apache logs (access logs and error logs) are stored in log files.
 
+Sumo Logic supports collecting logs via a local log file. Local log files can be collected via [Sumo Logic Installed collectors,](https://help.sumologic.com/03Send-Data/Installed-Collectors) which requires you to allow outbound traffic to [Sumo Logic endpoints](https://help.sumologic.com/APIs/General-API-Information/Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security) for collection to work.
 
-    This section provides instructions for configuring collection of logs from Apache running on a non-Kubernetes environment.
-
-
-    Apache logs (access logs and error logs) are stored in log files.
-
-
-    Sumo Logic supports collecting logs via a local log file. Local log files can be collected via [Sumo Logic Installed collectors,](https://help.sumologic.com/03Send-Data/Installed-Collectors) which requires you to allow outbound traffic to [Sumo Logic endpoints](https://help.sumologic.com/APIs/General-API-Information/Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security) for collection to work.
-
-
-    Follow the instructions below to set up log collection:
-
+Follow the instructions below to set up log collection:
 
 
 1. Configure Apache to log to a local file(s)
 2. Configure an Installed Collector
 3. Configure a Local File source for apache access logs
 4. Configure a Local File source for apache error logs
-
-
-
 
 
 1. Configure Apache to log to a local file(s)
@@ -451,10 +385,6 @@ The values of `webserver_farm` and `environment` should be the same as they were
     * `webserver_farm = <your_apache_webserver_farmname>`
     * `environment = <Environment_Name>`, such as dev, qa or prod.
 
-
-22
-
-23
 The values of webserver_farm and environment should be the same as they were configured in the Configure and start telegraf section.
 
 * **Configure the Advanced Options for Logs section:**
@@ -470,3 +400,55 @@ The values of webserver_farm and environment should be the same as they were con
 1. Click **Save**.
 
 At this point, Apache Error logs should start flowing into Sumo Logic.
+
+
+
+## Sample Log Messages
+
+### For Kubernetes environments
+
+```bash title="Access Logs"
+{
+"timestamp":1620630466883,
+"log":"192.168.29.177 - - [10/May/2021:07:07:44 +0000] \"GET / HTTP/1.1\" 200 45",
+"stream":"stdout",
+"time":"2021-05-10T07:07:44.649858568Z"
+}
+```
+
+```bash title="Error Logs"
+{
+"timestamp":1620125665927,
+"log":"[Tue May 04 10:54:25.460469 2021] [ssl:error] [pid 53] [client 192.168.85.135:52327] AH02042: rejecting client initiated renegotiation",
+"stream":"stderr",
+"time":"2021-05-04T10:54:25.460664201Z"
+}
+```
+
+
+### For Non-Kubernetes environments
+
+```bash title="Access Logs"
+192.168.29.177 - - [26/Apr/2021:12:18:32 +0530] "GET /server-status HTTP/1.1" 404 196
+```
+
+```bash title="Error Logs"
+[Mon Apr 26 09:52:58.188858 2021] [core:notice] [pid 530] AH00094: Command line: '/usr/sbin/httpd -D FOREGROUND'
+```
+
+
+## Sample Query
+
+This sample Query is from the **Top 5 Clients Causing 4xx Errors** panel of the [Apache - Web server Operations](/docs/integrations/web-servers/apache/install-app-monitors-dashboards#web-server-operations) dashboard.
+
+```sql title="Query String"
+webserver_system=apache webserver_farm=* HTTP (40* OR 41* OR 42* OR 43* OR 44* or 45* or 49*)
+| json "log" nodrop | if (_raw matches "{*", log, _raw) as mesg
+| parse regex field=mesg "^(?<src_ip>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})" nodrop
+| parse regex field=mesg "(?<method>[A-Z]+)\s(?<url>\S+)\sHTTP\/[\d\.]+[\\n]*\"\s(?<status_code>\d+)\s(?<size>[\d-]+)" nodrop
+| parse regex field=mesg "(?<method>[A-Z]+)\s(?<url>\S+)\sHTTP\/[\d\.]+[\\n]*\"\s(?<status_code>\d+)\s(?<size>[\d-]+)\s\"(?<referrer>.*?)\"\s\"(?<user_agent>.+?)\".*" nodrop
+| where status_code matches "4*"
+| count as count by src_ip
+| sort count, src_ip asc
+| limit 5
+```

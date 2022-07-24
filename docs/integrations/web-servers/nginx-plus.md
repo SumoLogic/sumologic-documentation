@@ -420,7 +420,7 @@ Note: There are limits to how many alerts can be enabled - please see the Alerts
 
 ## Installing the Ngnix Plus App
 
-**To install the app:**
+This section has instructions for installing the Sumo App for Nginx Plus. The instructions assume you have already set up the collection as described above.
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 

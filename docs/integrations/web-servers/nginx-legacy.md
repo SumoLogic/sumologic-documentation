@@ -5,27 +5,25 @@ sidebar_label: Nginx (Legacy)
 description: Nginx is a web server that can be used as a reverse proxy, load balancer, mail proxy, and HTTP cache. The Sumo Logic App for Nginx (Legacy) helps you monitor webserver activity in Nginx.
 ---
 
-Nginx (Legacy) is a web server that can be used as a reverse proxy, load balancer, mail proxy, and HTTP cache.
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-1.png "image_tooltip")
+Nginx (Legacy) is a web server that can be used as a reverse proxy, load balancer, mail proxy, and HTTP cache.
 
 The Sumo Logic App for Nginx (Legacy) support logs for Open Source Nginx, Nginx Plus, as well as Metrics for Open Source Nginx.
 
 The Sumo Logic App for Nginx (Legacy) helps you monitor webserver activity in Nginx. The preconfigured dashboards provide information about site visitors, including the location of visitors, devices/operating systems, and browsers used; and information about server activity, including bots observed and error information.
 
-
 #### Log and Metrics Types
-2.gif "image_tooltip")
 
 The Sumo Logic App for Nginx assumes the NCSA extended/combined log file format for Access logs and the default Nginx error log file format for error logs.
 
 All Dashboards (except the Error logs Analysis dashboard) assume the Access log format. The Error logs Analysis Dashboard assumes both Access and Error log formats, so as to correlate information between the two.
 
-For more details on Nginx logs, [see](https://nginx.org/en/docs/http/ngx_http_log_module.html).
+For more details on Nginx logs, see https://nginx.org/en/docs/http/ngx_http_log_module.html.
 
 The Sumo Logic App for Nginx assumes Prometheus format Metrics for Requests and Connections. For Nginx Server metrics, Stub_Status Module from Nginx Configuration is used.
 
-For more details on Nginx Metrics, [see](https://nginx.org/libxslt/en/docs/http/ngx_http_stub_status_module.html).
+For more details on Nginx Metrics, see https://nginx.org/libxslt/en/docs/http/ngx_http_stub_status_module.html.
 
 
 ## Collect Logs and Metrics for Nginx (Legacy)
@@ -33,27 +31,19 @@ For more details on Nginx Metrics, [see](https://nginx.org/libxslt/en/docs/http/
 This page provides instructions for configuring log and metric collection for the Sumo Logic App for Nginx (Legacy).
 
 
-#### Collection Process Overview
-3.gif "image_tooltip")
+### Collection Process Overview
 
 Configuring log and metric collection for the Nginx (Legacy) App includes the following tasks:
-
 * Collect Logs for Nginx
-    * [Non-Kubernetes](https://help.sumologic.com/07Sumo-Logic-Apps/24Web_Servers/Nginx_(Legacy)/Collect_Logs_and_Metrics_for_Nginx_(Legacy)#Non-Kubernetes)
+    * Non-Kubernetes
 
 
 #### Collect Logs for Nginx
-4.gif "image_tooltip")
 
-
-
-5.png "image_tooltip")
 Nginx (Legacy) app supports the default access logs and error logs format.
 
 
-#### Non-Kubernetes
-6.gif "image_tooltip")
-
+##### Non-Kubernetes
 
 This section provides instructions for configuring log collection for the Sumo Logic App for Nginx. Follow the below instructions to set up the Log collection.
 
@@ -63,19 +53,13 @@ This section provides instructions for configuring log collection for the Sumo L
 
 
 #### 1. Configure logging in Nginx
-7.gif "image_tooltip")
-
 
 Before you can configure Sumo Logic to ingest logs, you must configure the logging of errors and processed requests in NGINX Open Source and NGINX Plus. For instructions, refer to the following documentation:
 
 [https://www.nginx.com/resources/admin-guide/logging-and-monitoring/](https://www.nginx.com/resources/admin-guide/logging-and-monitoring/)
 
 
-
-
-###### **2. Configure a Collector
-8.gif "image_tooltip")
-
+###### 2. Configure a Collector
 
 Use one of the following Sumo Logic Collector options:
 
@@ -83,8 +67,7 @@ Use one of the following Sumo Logic Collector options:
 2. If you are using a service like Fluentd, or you would like to upload your logs manually, [Create a Hosted Collector](https://help.sumologic.com/03Send-Data/Hosted-Collectors#Create_a_Hosted_Collector).
 
 
-###### **3. Configure a Source
-9.gif "image_tooltip")
+###### 3. Configure a Source
 
 **For an Installed Collector**
 
@@ -128,8 +111,7 @@ If you are using a service like Fluentd, or you would like to upload your logs m
 5. When the URL associated with the HTTP Source is displayed, copy the URL so you can add it to the service you are using, such as Fluentd.
 
 
-#### Sample Log Message
-10.gif "image_tooltip")
+#### Sample Log Messages
 
 **Access Log Example**
 
@@ -148,7 +130,6 @@ HTTP/1.1", host: "example.com", referrer: "https://abc.example.com/"
 ```
 
 #### Create Field Extraction Rules
-11.gif "image_tooltip")
 
 Field Extraction Rules (FERs) tell Sumo Logic which fields to parse out automatically. For instructions, see [Create a Field Extraction Rule](https://help.sumologic.com/Manage/Field-Extractions/Create-a-Field-Extraction-Rule).
 
@@ -173,7 +154,6 @@ Use the following Parse Expression:
 
 Use the following Parse Expression:
 
-
 ```
 | json field=_raw "log" as nginx_log_message nodrop
 | if (isEmpty(nginx_log_message), _raw, nginx_log_message) as nginx_log_message
@@ -182,11 +162,7 @@ Use the following Parse Expression:
 \"*\"" as Client_Ip, Server, Method, URL, Host nodrop
 ```
 
-
-
-#### Query Samples
-12.gif "image_tooltip")
-
+#### Sample Queries
 
 This sample Query is from the **Requests by Clients** panel of the **Nginx (Legacy) - Overview** dashboard.
 
@@ -203,21 +179,15 @@ _sourceCategory = Labs/Nginx/Logs
 ```
 
 
+## Installing the Nginx (Legacy) App
 
-## Install the Nginx (Legacy) App and View the Dashboards
-
-This page has instructions for installing the Sumo App for Nginx (Legacy), as well as descriptions and examples for each of the dashboards. These instructions assume you have already set up the collection as described in the [Collect Logs and Metrics for Nginx (Legacy)](https://help.sumologic.com/07Sumo-Logic-Apps/24Web_Servers/Nginx_(Legacy)/Collect_Logs_and_Metrics_for_Nginx_(Legacy)) page.
-
-
-### Install the App
-13.gif "image_tooltip")
+This section has instructions for installing the Sumo App for Nginx (Legacy). These instructions assume you have already set up the collection as described above.
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
 1. From the **App Catalog**, search for and select the app**.**
 2. Select the version of the service you're using and click **Add to Library**.
 
-14.png "image_tooltip")
 Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](https://help.sumologic.com/01Start-Here/Library/Apps-in-Sumo-Logic/Install-Apps-from-the-Library)
 
 1. To install the app, complete the following fields.
@@ -233,160 +203,108 @@ Once an app is installed, it will appear in your **Personal** folder, or other f
 Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
 
 
-#### Dashboard Filter with Template Variables
-15.gif "image_tooltip")
+## Viewing the Nginx (Legacy) Dashboards
 
+:::tip Filter with template variables    
+Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards-new/filter-with-template-variables.md).
+:::
 
-Template variables provide dynamic dashboards that rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you can view dynamic changes to the data for a fast resolution to the root cause. For more information, see the [Filter with template variables](https://help.sumologic.com/Visualizations-and-Alerts/Dashboard_(New)/Filter_with_template_variables) help page.
+### Overview
 
+The **Nginx (Legacy) - Overview** dashboard provides an at-a-glance view of the NGINX server access locations, error logs along with connection metrics.
 
-16.png "image_tooltip")
-You can use template variables to drill down and examine the data on a granular level.
-
-
-##### Nginx (Legacy) - Overview
-17.gif "image_tooltip")
-
-
-The **Nginx (Legacy)** - Overview** dashboard provides an at-a-glance view of the NGINX server access locations, error logs along with connection metrics.
-
-**Use this dashboard to:**
-
+Use this dashboard to:
 * Gain insights into originated traffic location by region. This can help you allocate computer resources to different regions according to their needs.
 * Gain insights into your Nginx health using Critical Errors and Status of Nginx Server.
 * Get insights into Active and dropped connections.
 
-18.png "image_tooltip")
+<img src={useBaseUrl('img/integrations/web-servers/NginxL-Overview.png')} alt="Nginx-Overview" />
 
-##### Nginx (Legacy) - Error Logs Analysis
-19.gif "image_tooltip")
+### Error Logs Analysis
 
-The **Nginx **(Legacy)** - Error Logs Analysis** dashboard provides a high-level view of log level breakdowns, comparisons, and trends. The panels also show the geographic locations of clients and clients with critical messages, new connections and outliers, client requests, request trends, and request outliers.
+The **Nginx (Legacy) - Error Logs Analysis** dashboard provides a high-level view of log level breakdowns, comparisons, and trends. The panels also show the geographic locations of clients and clients with critical messages, new connections and outliers, client requests, request trends, and request outliers.
 
-**Use this dashboard to:**
-
+Use this dashboard to:
 * Track requests from clients. A request is a message asking for a resource, such as a page or an image.
-* To track and view client geographic locations generating errors.
+* Track and view client geographic locations generating errors.
 * Track critical alerts and emergency error alerts.
 
+<img src={useBaseUrl('img/integrations/web-servers/NginxL-Error-Logs-Analysis.png')} alt="NginxL-Error-Logs-Analysis" />
 
-20.png "image_tooltip")
+### Logs Timeline Analysis
 
+The **Nginx (Legacy) - Logs Timeline Analysis** dashboard provides a high-level view of the activity and health of Nginx servers on your network. Dashboard panels display visual graphs and detailed information on traffic volume and distribution, responses over time, as well as time comparisons for visitor locations and server hits.
 
-
-##### Nginx (Legacy) - Logs Timeline Analysis
-21.gif "image_tooltip")
-
-
-The **Nginx **(Legacy)** - Logs Timeline Analysis** dashboard provides a high-level view of the activity and health of Nginx servers on your network. Dashboard panels display visual graphs and detailed information on traffic volume and distribution, responses over time, as well as time comparisons for visitor locations and server hits.
-
-**Use this dashboard to:**
-
+Use this dashboard to:
 * To understand the traffic distribution across servers, provide insights for resource planning by analyzing data volume and bytes served.
 * Gain insights into originated traffic location by region. This can help you allocate compute resources to different regions according to their needs.
 
-22.png "image_tooltip")
+<img src={useBaseUrl('img/integrations/web-servers/NginxL-Logs-Timeline-Analysis.png')} alt="Nginx Legacy" />
 
+### Outlier Analysis
 
+The **Nginx (Legacy) - Outlier Analysis** dashboard provides a high-level view of Nginx server outlier metrics for bytes served, number of visitors, and server errors. You can select the time interval over which outliers are aggregated, then hover the cursor over the graph to display detailed information for that point in time.
 
-##### Nginx (Legacy) - Outlier Analysis
-23.gif "image_tooltip")
-
-The **Nginx (Legacy)** -  Outlier Analysis** dashboard provides a high-level view of Nginx server outlier metrics for bytes served, number of visitors, and server errors. You can select the time interval over which outliers are aggregated, then hover the cursor over the graph to display detailed information for that point in time.
-
-**Use this dashboard to:**
-
+Use this dashboard to:
 * Detect outliers in your infrastructure with Sumo Logic’s machine learning algorithm.
 * To identify outliers in incoming traffic and the number of errors encountered by your servers.
 
-
-24.png "image_tooltip")
 You can use schedule searches to send alerts to yourself whenever there is an outlier detected by Sumo Logic.
 
+<img src={useBaseUrl('img/integrations/web-servers/NginxL-Outlier-Analysis.png')} alt="Nginx Legacy" />
 
-25.png "image_tooltip")
+### Threat Intel
 
+The **Nginx (Legacy) - Threat Intel** dashboard provides an at-a-glance view of threats to Nginx servers on your network. Dashboard panels display the threat count over a selected time period, geographic locations where threats occurred, source breakdown, actors responsible for threats, severity, and a correlation of IP addresses, method, and status code of threats.
 
-
-##### Nginx (Legacy) - Threat Intel
-26.gif "image_tooltip")
-
-
-The **Nginx **(Legacy)** - Threat Intel dashboard provides an at-a-glance view of threats to Nginx servers on your network. Dashboard panels display the threat count over a selected time period, geographic locations where threats occurred, source breakdown, actors responsible for threats, severity, and a correlation of IP addresses, method, and status code of threats.
-
-**Use this dashboard to:**
-
-
-
+Use this dashboard to:
 * To gain insights and understand threats in incoming traffic and discover potential IOCs. Incoming traffic requests are analyzed using the [Sumo - Crowdstrikes](https://help.sumologic.com/07Sumo-Logic-Apps/22Security_and_Threat_Detection/Threat_Intel_Quick_Analysis/03_Threat-Intel-FAQ) threat feed.
 
+<img src={useBaseUrl('img/integrations/web-servers/NginxL-Threat-Intel.png')} alt="Nginx Legacy" />
 
-27.png "image_tooltip")
+### Web Server Operations
 
+The **Nginx (Legacy) - Web Server Operations** dashboard provides a high-level view combined with detailed information on the top ten bots, geographic locations, and data for clients with high error rates, server errors over time, and non 200 response code status codes. Dashboard panels also show information on server error logs, error log levels, error responses by a server, and the top URIs responsible for 404 responses.
 
-
-##### Nginx (Legacy) - Web Server Operations
-28.gif "image_tooltip")
-
-
-The **Nginx **(Legacy)** - Web Server Operations** dashboard provides a high-level view combined with detailed information on the top ten bots, geographic locations, and data for clients with high error rates, server errors over time, and non 200 response code status codes. Dashboard panels also show information on server error logs, error log levels, error responses by a server, and the top URIs responsible for 404 responses.
-
-**Use this dashboard to:**
-
+Use this dashboard to:
 * Gain insights into Client, Server Responses on Nginx Server. This helps you identify errors in Nginx Server.
 * To identify geo locations of all Client errors. This helps you identify client location causing errors and helps you to block client IPs.
 
+<img src={useBaseUrl('img/integrations/web-servers/NginxL-Web-Server-Operations.png')} alt="Nginx Legacy" />
 
-29.png "image_tooltip")
+### Visitor Access Types
 
+The **Nginx (Legacy) - Visitor Access Types** dashboard provides insights into visitor platform types, browsers, and operating systems, as well as the most popular mobile devices, PC and Mac versions used.
 
-
-##### Nginx (Legacy) - Visitor Access Types
-30.gif "image_tooltip")
-
-
-The **Nginx (Legacy)** - Visitor Access Types** dashboard provides insights into visitor platform types, browsers, and operating systems, as well as the most popular mobile devices, PC and Mac versions used.
-
-**Use this dashboard to:**
-
+Use this dashboard to:
 * Understand which platform and browsers are used to gain access to your infrastructure.
-These insights can be useful for planning in which browsers, platforms, and operating systems (OS) should be supported by different software services.
+* These insights can be useful for planning in which browsers, platforms, and operating systems (OS) should be supported by different software services.
 
+<img src={useBaseUrl('img/integrations/web-servers/Nginx-Plus-Overview.png')} alt="Nginx Legacy" />
 
-31.png "image_tooltip")
+### Visitor Locations
 
+The **Nginx (Legacy)- Visitor Locations** dashboard provides a high-level view of Nginx visitor geographic locations both worldwide and in the United States. Dashboard panels also show graphic trends for visits by country over time and visits by US region over time.
 
-
-#### Nginx (Legacy) - Visitor Locations
-32.gif "image_tooltip")
-
-
-The **Nginx **(Legacy)** - Visitor Locations** dashboard provides a high-level view of Nginx visitor geographic locations both worldwide and in the United States. Dashboard panels also show graphic trends for visits by country over time and visits by US region over time.
-
-**Use this dashboard to:**
-
+Use this dashboard to:
 * Gain insights into geographic locations of your user base. This is useful for resource planning in different regions across the globe.
 
-33.png "image_tooltip")
+<img src={useBaseUrl('img/integrations/web-servers/NginxL-Visitor-Access-Types.png')} alt="Nginx Legacy" />
 
-#### Nginx (Legacy) - Visitor Traffic Insight
-34.gif "image_tooltip")
+### Visitor Traffic Insight
 
-The **Nginx **(Legacy)** - Visitor Traffic Insight** dashboard provides detailed information on the top documents accessed, top referrers, top search terms from popular search engines, and the media types served.
+The **Nginx (Legacy) - Visitor Traffic Insight** dashboard provides detailed information on the top documents accessed, top referrers, top search terms from popular search engines, and the media types served.
 
-**Use this dashboard to:**
+Use this dashboard to:
+* Understand the type of content that is frequently requested by users.
+* Help in allocating IT resources according to the content types.
 
-* To understand the type of content that is frequently requested by users.
-* It helps in allocating IT resources according to the content types.
-
-35.png "image_tooltip")
+<img src={useBaseUrl('img/integrations/web-servers/NginxL-Visitor-Traffic-Insight.png')} alt="Nginx Legacy" />
 
 
 ## Nginx (Legacy) Alerts
 
-Sumo Logic has provided out of the box alerts available through [Sumo Logic monitors](https://help.sumologic.com/Visualizations-and-Alerts/Alerts/Monitors) to help you quickly determine if the Nginx server is available and performing as expected. These alerts are built based on logs and metrics datasets and have preset thresholds based on industry best practices and recommendations.
-
-**Sumo Logic provides the following out-of-the-box alerts**:
+Sumo Logic has provided out of the box alerts available through [Sumo Logic monitors](https://help.sumologic.com/Visualizations-and-Alerts/Alerts/Monitors) to help you quickly determine if the Nginx server is available and performing as expected. These alerts are built based on logs and metrics datasets and have preset thresholds based on industry best practices and recommendations. They are as follows:
 
 <table>
   <tr>

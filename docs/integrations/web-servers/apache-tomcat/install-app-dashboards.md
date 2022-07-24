@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 This page has instructions for installing Sumo Logic Monitors for Apache Tomcat, the app and descriptions of each of the app dashboards.
 
 
-## Install Monitors
+## Installing Apache Tomcat Monitors
 
 Sumo Logic has provided pre-packaged alerts available through [Sumo Logic monitors](https://help.sumologic.com/Visualizations-and-Alerts/Alerts/Monitors) to help you proactively determine if an Apache Tomcat webserver farm is available and performing as expected. These monitors are based on metric and log data and include pre-set thresholds that reflect industry best practices and recommendations. For more information about individual alerts, see [Apache Tomcat Alerts](https://help.sumologic.com/07Sumo-Logic-Apps/24Web_Servers/Apache_Tomcat/Apache_Tomcat_Alerts).
 
@@ -20,7 +20,7 @@ You can install monitors by importing a JSON file or using a Terraform script.
 Use this dashboard to:mits to how many alerts can be enabled. For more information, see [Monitors](https://help.sumologic.com/Visualizations-and-Alerts/Alerts/Monitors#Rules) for details.
 
 
-#### Method 1: Install Monitors by importing a JSON file
+### Method 1: Importing a JSON file
 
 1. Download the [JSON file](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/blob/main/monitor_packages/ApacheTomcat/ApacheTomcat.json) that describes the monitors.
 2. The [JSON](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/blob/main/monitor_packages/ApacheTomcat/ApacheTomcat.json) contains the alerts that are based on Sumo Logic searches that do not have any scope filters, and therefore will be applicable to all Apache Tomcat webserver farms, the data for which has been collected via the instructions in the previous sections.  
@@ -39,29 +39,24 @@ Custom filter examples:
 5. The monitors are created in a "Apache Tomcat" folder. The monitors are disabled by default. See the [Monitors](https://help.sumologic.com/Visualizations-and-Alerts/Alerts/Monitors) topic for information about enabling monitors and configuring notifications or connections.
 
 
-##### Method 2: Install Monitors using a Terraform script
+### Method 2: Using a Terraform script
 
 
-###### Step 1: Generate a Sumo Logic access key and ID
-
+Step 1: Generate a Sumo Logic access key and ID
 
 Generate an access key and access ID for a user that has the **Manage Monitors** role capability. For instructions see  [Access Keys](https://help.sumologic.com/Manage/Security/Access-Keys#Create_an_access_key_on_Preferences_page).
 
 
-###### Step 2: Download and install Terraform
+Step 2: Download and install Terraform
 
 Download [Terraform 0.13](https://www.terraform.io/downloads.html) or later, and install it.
 
 
-###### Step 3: Download the Sumo Logic Terraform package for Apache Tomcat monitors
-
+Step 3: Download the Sumo Logic Terraform package for Apache Tomcat monitors
 
 The alerts package is available in the Sumo Logic github [repository](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/tree/main/monitor_packages/ApacheTomcat). You can either download it using the git clone command or as a zip file.
 
-
-###### Step 4: Alert Configuration  
-10
-
+Step 4: Alert Configuration  
 
 After extracting the package , navigate to the  terraform-sumologic-sumo-logic-monitor/monitor_packages/ApacheTomcat/ directory.
 
@@ -116,19 +111,15 @@ By default, the monitors will be located in a "Apache Tomcat" folder on the **Mo
 
 If you want the alerts to send email or connection notifications, follow the instructions in the next section.
 
-
-#### Step 5: Email and Connection Notification Configuration Examples
+Step 5: Email and Connection Notification Configuration Examples
 
 Edit the ApacheTomcat_notifications.auto.tfvars file to populate the connection_notifications and email_notifications sections. Examples are provided below.
-
-
-#### Pagerduty connection example
 
 In the variable definition below, replace `<CONNECTION_ID>` with the connection ID of the Webhook connection. You can obtain the Webhook connection ID by calling the [Monitors API](https://api.sumologic.com/docs/#operation/listConnections).
 
 For information about overriding the payload for different connection types, see [Set Up Webhook Connections](https://help.sumologic.com/Manage/Connections-and-Integrations/Webhook-Connections/Set_Up_Webhook_Connections).
 
-```bash
+```bash title="Pagerduty connection example"
 connection_notifications = [
     {
       connection_type       = "PagerDuty",
@@ -145,10 +136,7 @@ connection_notifications = [
   ]
 ```
 
-
-###### Email notifications example
-
-```bash
+```bash title="Email notifications example"
 email_notifications = [
     {
       connection_type       = "Email",
@@ -161,7 +149,7 @@ email_notifications = [
   ]
 ```
 
-###### Step 6: Install Monitors
+Step 6: Install Monitors
 
 1. Navigate to the terraform-sumologic-sumo-logic-monitor/monitor_packages/ApacheTomcat/ directory and run terraform init. This will initialize Terraform and download the required components.
 2. Run terraform plan to view the monitors that Terraform will create or modify.
@@ -170,7 +158,7 @@ email_notifications = [
 This section demonstrates how to install the Apache Tomcat App.
 
 
-## Install the Apache Tomcat App
+## Installing the Apache Tomcat App
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
@@ -180,27 +168,25 @@ Locate and install the app you need from the **App Catalog**. If you want to see
 Version selection is applicable only to a few apps currently. For more information, see the[ Install the Apps from the Library](https://help.sumologic.com/01Start-Here/Library/Apps-in-Sumo-Logic/Install-Apps-from-the-Library).
 
 1. To install the app, complete the following fields.
-    1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
-    2. **Data Source.**
-        * Choose **Enter a Custom Data Filter**, and enter a custom filter for Apache Tomcat  webserver farm. Examples:
-            1. For all Apache Tomcat webserver farms webserver_farm=*
-            2. For a specific webserver farms: webserver_farm=tomcat.dev.01. 
-            3. Clusters within a specific environment:
-webserver_farm=tomcat-1 and environment=prod
-(This assumes you have set the optional environment tag while configuring collection)
-    3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-    4. Click **Add to Library**.
+1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
+2. **Data Source.**
+* Choose **Enter a Custom Data Filter**, and enter a custom filter for Apache Tomcat  webserver farm. Examples:
+* For all Apache Tomcat webserver farms webserver_farm=*
+* For a specific webserver farms: webserver_farm=tomcat.dev.01. 
+* Clusters within a specific environment: `webserver_farm=tomcat-1 and environment=prod`
+(This assumes you have set the optional environment tag while configuring collection)  
+3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
+4. Click **Add to Library**.
 
 Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization.
 
 Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
 
-## Dashboards
+## Viewing Apache Tomcat Dashboards
 
-### Dashboard Filters with Template Variables
-
-Template variables provide dynamic dashboards that rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you can view dynamic changes to the data for a fast resolution to the root cause. For more information, see the Filter with template variables help page.
-
+:::tip Filter with template variables    
+Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards-new/filter-with-template-variables.md).
+:::
 
 ### Overview
 
