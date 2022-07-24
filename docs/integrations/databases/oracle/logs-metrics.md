@@ -472,7 +472,7 @@ Preview steps for Oracle log collection:
 
 
 
-#### Setup a Sumo Logic HTTP Source
+#### Set up a Sumo Logic HTTP Source
 17
 
 

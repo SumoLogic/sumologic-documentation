@@ -44,7 +44,9 @@ This section provides instructions for configuring logs and metrics collection f
 
 Configuring log and metric collection for the HAProxy App includes the following tasks:
 
-**Step 1: Configure Fields in Sumo Logic**. Create the following Fields in Sumo Logic prior to configuring collection. This ensures that your logs and metrics are tagged with relevant metadata, which is required by the app dashboards. For information on setting up fields, see the [Fields](https://help.sumologic.com/Manage/Fields) help page.
+### Step 1: Configure Fields in Sumo Logic
+
+Create the following Fields in Sumo Logic prior to configuring collection. This ensures that your logs and metrics are tagged with relevant metadata, which is required by the app dashboards. For information on setting up fields, see the [Fields](https://help.sumologic.com/Manage/Fields) help page.
 
 If you are using HAProxy in a non-Kubernetes environment, create the fields:
   * component
@@ -59,7 +61,9 @@ If you are using HAProxy in a Kubernetes environment, create the fields:
   * pod_labels_proxy_system
   * pod_labels_proxy_cluster
 
-**Step 2: Configure Collection for HAProxy**. Sumo Logic supports collection of logs and metrics data from HAProxy in both Kubernetes and non-Kubernetes environments.
+### Step 2: Configure Collection for HAProxy
+
+Sumo Logic supports collection of logs and metrics data from HAProxy in both Kubernetes and non-Kubernetes environments.
 
 Verify logs are flowing into Sumo Logic by running the following logs query:
 ```bash
@@ -79,7 +83,7 @@ This query example is from **Top 5 Clients causing Errors** panels from **HAProx
   ```
 
 
-### For Kubernetes environments
+#### For Kubernetes environments
 
 In a Kubernetes environment, we use the Telegraf Operator, which is packaged with our Kubernetes collection. You can learn more about it[ here](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Collect_Metrics_Using_Telegraf/01_Telegraf_Collection_Architecture). The diagram below illustrates how data is collected from HAProxy in Kubernetes environments. In the architecture shown below, there are four services that make up the metric collection pipeline: Telegraf, Prometheus, Fluentd and FluentBit.
 
@@ -100,7 +104,7 @@ Follow the below instructions to set up the metric collection:
 It’s assumed that you are using the latest helm chart version if not upgrade using the instructions [here](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/release-v2.0/deploy/docs/v2_migration_doc.md#how-to-upgrade).
 
 
-#### Configure Metrics Collection
+##### Configure Metrics Collection
 
 This section explains the steps to collect HAProxy metrics from a Kubernetes environment.
 
@@ -151,7 +155,7 @@ Enter in values for the following parameters (marked in bold above):
 2. Verify metrics in Sumo Logic.
 
 
-#### Configure Logs Collection
+##### Configure Logs Collection
 
 This section explains the steps to collect HAProxy logs from a Kubernetes environment.
 
@@ -240,7 +244,7 @@ pod_labels_environment=* pod_labels_component=proxy pod_labels_proxy_system=* po
 1. Click **Save** to create the rule.
 
 
-### For Non-Kubernetes Environments
+#### For Non-Kubernetes Environments
 
 We use the Telegraf operator for HAProxy metric collection and Sumo Logic Installed Collector for collecting HAProxy logs. The diagram below illustrates the components of the HAProxy collection in a non-Kubernetes environment. Telegraf runs on the same system as HAProxy, and uses the [HAProxy input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/haproxy) to obtain HAProxy metrics, and the Sumo Logic output plugin to send the metrics to Sumo Logic. Logs from HAProxy on the other hand are sent to either a Sumo Logic Local File source or Syslog source.
 
@@ -256,7 +260,7 @@ This section provides instructions for configuring metrics collection for the Su
     * Configure Sumo Logic Installed Collector
 
 
-#### Configure Metrics Collection
+##### Configure Metrics Collection
 
 1. Configure a Hosted Collector:
 To create a new Sumo Logic hosted collector, perform the steps in the[ Create a Hosted Collector](https://help.sumologic.com/03Send-Data/Hosted-Collectors/Configure-a-Hosted-Collector) section of the Sumo Logic documentation.
@@ -308,7 +312,7 @@ Please enter values for the following parameters (marked in **bold** above):
     At this point, HAProxy metrics should start flowing into Sumo Logic.
 
 
-#### Configure Logs Collection
+##### Configure Logs Collection
 
 This section provides instructions for configuring log collection for HAProxy running on a non-kubernetes environment for the Sumo Logic App for HAProxy.
 
@@ -632,7 +636,7 @@ Once an app is installed, it will appear in your **Personal** folder, or other f
 
 Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
 
-## View the Dashboards
+## Viewing HAProxy Dashboards
 
 ### Overview
 
@@ -650,7 +654,7 @@ The **HAProxy - Overview** dashboard provides an at-a-glance view of HAProxy Bac
 
 The **HAProxy - Backend** dashboard provides an at-a-glance view for the number of backend active servers, backend weight, respond code from backend and throughput http.
 
-<img src={useBaseUrl('img/integrations/web-servers/HAProxy-Backend.png')} alt="test" />
+<img src={useBaseUrl('img/integrations/web-servers/HAProxy-Backend.png')} alt="Backend dashboard" />
 
 
 ### Frontend
