@@ -5,6 +5,9 @@ sidebar_label: Cloud SQL
 description: tk
 ---
 
+
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 The Sumo Logic app for Google Cloud SQL helps you monitor your usage of Google Cloud SQL. The preconfigured dashboards provide insight into created and deleted resources, messages, authorization failures, user activities, and error logs.
 
 

@@ -9,14 +9,14 @@ description: tk
 This procedure explains how to collect logs from Google Workspace and ingest them into Sumo Logic.
 
 
-### Log Types
+## Log Types
 
 **Google Workspace Apps** each have a log that records actions in JSON format. The logs are all structurally similar—most have an ID, actor, and an IP Address. The differences are in the events section of the JSON where the actions are recorded.
 
 **Google Workspace Alert Center** alerts are in JSON format. Most of the alerts have a few common fields. The differences are in the data section of the JSON where the alert type specific details are recorded. For more information, see this Google Workspace[ Alert document](https://developers.google.com/admin-sdk/alertcenter/reference/alert-types).
 
 
-## Configure log collection
+## Configure Log Collection
 
 You can configure two types of log collection:
 
@@ -42,16 +42,10 @@ This section provides instructions for configuring log collection for Google Wor
 
 
 ### About Source Configuration  
-9
 
-
-
-10
 Currently, the source name for Google Workspace is still **G Suite Apps Audit Source**, which will be changed/updated shortly.
 
 Configure one [G Suite Apps Audit Source](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Google/G_Suite_Apps_Audit_Source) for each Google App from which you want to collect events:
-
-
 
 * Google Admin
 * Google Calendar
@@ -59,8 +53,6 @@ Configure one [G Suite Apps Audit Source](https://help.sumologic.com/03Send-Data
 * Google Login
 * Google Token
 
-
-11
 Google Workspace Drive Audit events are only logged for files owned by users with Google Workspace Business, Enterprise, or Drive Enterprise licenses.
 
 When you configure your Source Categories, you can configure and use them in two different ways.
@@ -68,9 +60,6 @@ When you configure your Source Categories, you can configure and use them in two
 **One Single Source Category for all Sources.** For users who are setting up the Google Workspace Apps Audit Source for the first time, we suggest that you use the same single Source Category for each Google Apps Audit Source. For example, **google_apps**.
 
 **Different Source Categories for each Source.** You may configure a different Source Category for each Source, but we recommend that you use a naming convention for the Source Categories that allows you to apply a wildcard. For example, naming your Source Categories as follows would allow you to refer to all of them with the query **google_app***.
-
-
-
 * google_app_admin
 * google_app_calendar
 * google_app_drive
@@ -78,9 +67,6 @@ When you configure your Source Categories, you can configure and use them in two
 * Google_app_token
 
 A Google Workspace Apps Audit Source uses the [Google Apps Reports API](https://developers.google.com/admin-sdk/reports/v1/get-start/getting-started) to ingest all audit logs via watchpoints. Activity from the following Google apps are supported in Sumo's Google Workspace App:
-
-
-
 * Admin
 * Calendar
 * Drive
@@ -91,21 +77,16 @@ Only one Source should be configured per app. In other words, you might set up o
 
 
 ### Google Authentication and Authorization  
-12
-
 
 This Source uses OAuth to integrate with the Google Apps Reports API. Therefore, your Google Apps credentials are never stored by Sumo Logic, and we have no visibility into the details of your Google Apps account.  Sumo Logic only stores OAuth tokens that are generated after authentication and authorization.
 
 When creating or modifying a Google Apps Audit Source, you will be required to authenticate with Google using the credentials of a user that has access rights to the account, and to the Reports API. See Google's [Reports API: Prerequisites](https://developers.google.com/admin-sdk/reports/v1/guides/prerequisites) documentation for more details. During Google's OAuth consent flow, you will also be asked to grant the Sumo Logic app permission to use the Reports API.
 
 
-13
 Authentication must be with a new Google Workspace Apps Audit Source, we do not support re-authenticating existing sources.
 
 
 ### Configure a Collector
-14
-
 
 Configure a [Hosted Collector](https://help.sumologic.com/03Send-Data/Hosted-Collectors/Configure-a-Hosted-Collector) for Google Apps Audit.
 
@@ -157,26 +138,21 @@ To provide feedback on these limitations and known issues, contact Google suppor
 
 
 ### Field Extraction Rules
-18
-
-
-
 
 * **Name**. A relevant name, such as "Google"
 * **Scope**. _sourceCategory=google*
 * **Parse Expression**.  
 
-`| json "id","actor","events"  \
+```
+| json "id","actor","events"  \
 | json field=actor "email", "profileId" \
-| json field=id "applicationName"`
+| json field=id "applicationName"
+```
 
 
 ### Sample Log Message  
-19
 
-
-
-```
+```json
 {
    "kind": "admin#reports#activity",
    "id": {
@@ -219,8 +195,7 @@ To provide feedback on these limitations and known issues, contact Google suppor
 
 
 
-#### Query Samples
-20
+### Query Samples
 
 
 **Top 10 Apps by Count**
@@ -240,7 +215,6 @@ _source=google_* token
 
 
 **Logins from Multiple IPs**
-
 
 ```
 _sourceCategory=google*
@@ -272,8 +246,6 @@ This section explains how to collect logs from Google Workspace Alert Center and
 
 
 ### Alert types
-21
-
 
 All the alerts are in JSON format. Most of the alerts have few common fields like alertId, customerId, createTime, source, type and data. The differences are in the data section of the JSON where the alert type specific details are recorded. For more information about different alert types refer this Google Workspace[ Alert document](https://developers.google.com/admin-sdk/alertcenter/reference/alert-types).
 
@@ -318,22 +290,16 @@ When you configure the HTTP Source, make sure to save the HTTP Source Address UR
 
 ```
 yyyy-MM-dd'T'HH:mm:ss.SSS'Z'
-
 ```
 
 
 
-* **Timestamp locator:**
+**Timestamp locator:**
 
 
 ```
 \"createTime\":(.*),
 ```
-
-
-
-27
-
 
 
 
@@ -343,8 +309,6 @@ yyyy-MM-dd'T'HH:mm:ss.SSS'Z'
 
 
 ### Configure collection for Google Workspace Alert Center  
-28
-
 
 In this section, we explore various mechanisms to collect findings from Google Workspace Alert Center and send them to Sumo Logic, where they are shown in dashboards as part of the Google Workspace App. You can configure a Google Workspace Alert Center collector in Google Cloud Platform (GCP), or via a script on a Linux machine. Choose the method that is best suited for you:
 
@@ -355,13 +319,11 @@ In this section, we explore various mechanisms to collect findings from Google W
 
 
 ### Sample Log Message
-29
-
 
 This section provides a sample Google Workspace Alert Center log message.
 
 
-```
+```json
 {
  "alertId": "2b49ec18-2f92-4d58-acca-45994b740848",
  "createTime": "TIMESTAMP",
@@ -445,12 +407,10 @@ https://raw.githubusercontent.com/SumoLogic/sumologic-gsuitealertcenter/master/s
 * **Sumo_endpoint:  **The Sumo Logic HTTP endpoint created in Step 1
 1. Run the following script:
 
-
 ```
 sh sumo_gsuite_alerts_collector_deploy.sh
 
 ```
-
 
 
 1.  In the command prompt, enter "**N**" for the following question "Allow unauthenticated invocations of new function"    as shown below.
@@ -773,8 +733,7 @@ While creating the key in the service account, make a note of the location of th
 57
 For python 3, use **pip3 install** in the following command.
 
-
-```
+```bash
 pip install sumologic-gsuitealertcenter
 
 ```
@@ -783,20 +742,16 @@ pip install sumologic-gsuitealertcenter
 
 1. Create a configuration file named **gsuitealertcenter.yaml** in home directory by copying the following snippet.
 
-
-```
+```yaml
 SumoLogic:
   SUMO_ENDPOINT: <SUMO LOGIC HTTP URL>
-
 
 GsuiteAlertCenter:
   DELEGATED_EMAIL: "<email address of your org's Google Workspace super admin>"
   CREDENTIALS_FILEPATH: "<path to json Service Account JSON file>"
 
-
 Collection:
   ENVIRONMENT: onprem
-
 ```
 
 
@@ -809,7 +764,7 @@ Collection:
 If you are using python3, for operating systems where the default python is not python3, use **/usr/bin/python3 -m sumogsuitealertscollector.main** in the following command.
 
 
-```
+```bash
 */5 * * * * /usr/bin/python -m sumogsuitealertscollector.main > /dev/null 2>&1
 ```
 
@@ -940,28 +895,22 @@ This section shows you how to run the function manually and then verify that log
 
 
 1. Enter  one of the following commands:
+  — For **python**, use this command:
 
-    — For **python**, use this command:
-
-
-
-```
+```bash
 python -m sumogsuitealertscollector.main
 ```
 
+  — For **python3**, use this command:
 
 
-    — For **python3**, use this command:
-
-
-```
+```bash
 python3 -m sumogsuitealertscollector.main
-
 ```
 
 
 
-1. The script generates logs in **/tmp/sumoapiclient.log **by default. Check these logs to verify whether it’s getting triggered or not.
+1. The script generates logs in **/tmp/sumoapiclient.log** by default. Check these logs to verify whether it’s getting triggered or not.
 2. If you installed the collector as `root` user and then run it as a normal user, you will see an error message similar to the following because the config is not present in the home directory of the user running the collector. Switch to `root` the user and run the script again.
 
 
@@ -980,16 +929,11 @@ Exception: Invalid config
 
 
 
-62
 You can also avoid this error by running the script with config file path as first argument.
 
 
 
 1. To verify if there are new messages generated by Alert Center, go to Google **Home > Security > Alert Center **and then do the following:
-
-
-63
-
 
 
 
