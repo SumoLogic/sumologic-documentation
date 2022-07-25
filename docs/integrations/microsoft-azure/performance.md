@@ -9,7 +9,7 @@ description: Windows Performance
 The Windows Performance App provides insight into your system's operation and events so that you can better manage and maintain your Windows systems. The App uses predefined Dashboards and searches that provide visibility into your environment for real-time analysis of system and network performance and overall usage.
 
 
-## Collect Logs
+## Collecting Logs
 
 This section provides instructions for configuring log collection for the Windows Performance App, as well as example log files and queries.
 
@@ -52,7 +52,7 @@ To complete the configuration, you'll need to edit each Windows Performance Sour
 6. Click **Save**.
 
 
-## Sample Log Messages
+### Sample Log Messages
 
 ```
 instance of Win32_PerfFormattedData_PerfProc_Process
@@ -163,7 +163,7 @@ _sourceCategory=OS/Windows "Win32_PerfFormattedData_PerfOS_Processor" "_Total"
 
 This page provides instructions for installing the Windows Performance App, along with examples of each of the App dashboards.
 
-## Install the Sumo Logic App
+## Installing the Windows Performance App
 
 Now that you have set up collection, install the Windows Performance App to use the preconfigured searches and [Dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/04Microsoft-and-Azure/Windows_Performance/Windows-Performance-App-Dashboards#Dashboards) that provide insight into your data.
 
@@ -191,18 +191,12 @@ Once an app is installed, it will appear in your **Personal** folder, or other f
 Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
 
 
-## Dashboards
+## Viewing Windows Performance Dashboards
 
 The Windows Performance App allows you to analyze Windows Performance logs and gain real time and historic insights of your environment, including CPU, disk, generic IO, memory, and network performance.
 
 
 ### Windows Performance Overview
-11
-
-
-
-12
-
 
 **Top 10 Processes by Average Processor Time (%) per Host.** Displays the top 10 processes per host by average processor time in a stacked column chart for the last 15 minutes. The legend lists the processes.
 
@@ -216,12 +210,6 @@ The Windows Performance App allows you to analyze Windows Performance logs and g
 
 
 ### CPU Performance
-13
-
-
-
-14
-
 
 **Average CPU Usage (%) by Host.** Displays the average CPU usage of the systems in your environment as a line graph on a timeline using timeslices of one minute for the last 15 minutes.
 
@@ -235,12 +223,6 @@ The Windows Performance App allows you to analyze Windows Performance logs and g
 
 
 ### Disk Performance
-15
-
-
-
-16
-
 
 **Average Disk Time Percentage by Host.** Displays the average disk time percentage for each host as a stacked column chart for the last 15 minutes. The legend lists the disk time status.
 
@@ -256,11 +238,6 @@ The Windows Performance App allows you to analyze Windows Performance logs and g
 
 
 ### Memory Performance
-17
-
-
-
-18
 
 
 **Available Memory (MB) by Host.** Displays the available memory in MBs for each host as a line chart on a timeline using timeslices for one minute for the last 15 minutes.

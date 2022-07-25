@@ -8,6 +8,10 @@ description: Windows JSON
 The Windows JSON App provides insight into your Windows system's operation and events so that you can better manage and maintain your environment. The Windows JSON App is based on the JSON Windows event log format and consists of predefined searches and dashboards that provide visibility into your environment for real-time analysis of overall usage of Security Status, System Activity, Updates, User Activity, and Applications.
 
 
+## Collect Logs for the Windows JSON App
+
+This page provides instructions on configuring log collection for the Windows JSON App so that logs are collected from the Microsoft Windows Event Log and ingested into Sumo Logic.
+
 ### Log Types
 
 The Windows JSON App assumes events are coming from Windows Event Log Sources in JSON format. It does not work with third party logs.
@@ -19,11 +23,6 @@ Standard Windows event channels include:
 * Application
 
 Custom event channels, such as PowerShell or Internet Explorer are also supported.
-
-
-## Collect Logs for the Windows JSON App
-
-This page provides instructions on configuring log collection for the Windows JSON App so that logs are collected from the Microsoft Windows Event Log and ingested into Sumo Logic.
 
 
 ### Configure a Collector and a Source
@@ -76,7 +75,7 @@ _sourceCategory=Labs/windows-jsonformat ( "Audit Policy Change" or "System audit
 
 
 
-## Install the Windows JSON App
+## Installing the Windows JSON App
 
 This section has instructions for installing the Sumo Logic JSON App for Windows and descriptions of each of the app dashboards.
 
@@ -109,13 +108,11 @@ Once an app is installed, it will appear in your **Personal** folder, or other f
 Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
 
 
-## Dashboard Filter with Template Variables  
+## Viewing the Windows JSON Dashboards
 
-Template variables provide dynamic dashboards that rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you can view dynamic changes to the data for a fast resolution to the root cause. For more information, see the [Filter with template variables](https://help.sumologic.com/Visualizations-and-Alerts/Dashboard_(New)/Filter_with_template_variables) help page.
-
-
-10
-You can use template variables to drill down and examine the data on a granular level.
+:::tip Filter with template variables    
+Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards-new/filter-with-template-variables.md).
+:::
 
 
 ### Windows - Overview
@@ -183,13 +180,10 @@ The **Windows - Login Status** dashboard provides information about successful a
 
 The **Windows - Event Errors** dashboards provide insights into error keyword trends and outliers.
 
-**Use this dashboard to:**
-
-
+**Use this dashboard to:
 
 * Monitor various errors in the systems.
 * Monitor error trends and outliers to ensure they are within acceptable limits to decide the next step.
-
 
 
 
@@ -198,8 +192,7 @@ The **Windows - Event Errors** dashboards provide insights into error keyword tr
 
 The **Windows - Application** dashboard provides detailed information about install, uninstall, and event trends.
 
-**Use this dashboard to:**
-
+**Use this dashboard to:
 
 
 * Monitor Install and uninstall of applications performed on the system.

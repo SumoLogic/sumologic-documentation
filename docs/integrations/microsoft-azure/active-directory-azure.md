@@ -13,7 +13,7 @@ Audit and Sign-in logs
 
 Only global administrators, security administrators, security readers, and report readers can view sign-ins and enable collection for Sign-in Events.
 
-## Collect Logs
+## Collecting Logs
 
 This section has instructions for setting up the ingestion pipeline from Azure Active Directory to Sumo Logic.
 
@@ -22,7 +22,6 @@ The sections below are either for FedRamp Sumo Logic deployments or if you have 
 
 
 ### Solution Overview
-
 
 * Azure Monitor collects logs for Azure Active Directory and streams the data to an Azure Event Hub.
 * Event Hub streams the logs collected by Azure Monitor to an Azure function.
@@ -88,12 +87,12 @@ _
 
 
 
-### Troubleshooting log collection
+### Troubleshooting the log collection
 
 If logs are not flowing into Sumo Logic, follow the steps in Troubleshooting log collection in the following [document](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Azure_Monitoring/Collect_Logs_from_Azure_Monitor#troubleshooting-log-collection).
 
 
-## Install the Azure Active Directory App
+## Installing the Azure Active Directory App
 
 Now that you have set up collection for the Azure Active Directory, install the Sumo Logic App to use the pre-configured searches and dashboards that provide visibility into your environment for real-time analysis of overall usage.
 
@@ -125,17 +124,11 @@ Once an app is installed, it will appear in your **Personal** folder, or other f
 Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
 
 
-## Dashboards
+## Viewing Azure Active Directory Dashboards
 
-### Azure Active Directory - Overview
-16
-
+### Overview
 
 See an overview of Azure Active Directory activity, including operation names, audit event categories, log levels, and result types.
-
-
-17
-
 
 **Operation Name. **Shows the name of operations, and a count of how many times they happened on a bar chart, for the last 24 hours.
 
@@ -154,8 +147,7 @@ See an overview of Azure Active Directory activity, including operation names, a
 **Category Breakdown. **Shows a breakdown of the categories on a pie chart for the last 24 hours.
 
 
-### Azure Active Directory - Role Management
-18
+### Role Management
 
 
 See information about role management in Azure Activity Directory, including role updates, successful events, and users added or removed from roles.
@@ -177,7 +169,7 @@ See information about role management in Azure Activity Directory, including rol
 **Added/Removed User from Role.** Shows an aggregation table of users added or removed from a role with columns for the operation names, result types, result description identity, user name, and target source name for the last 24 hours.
 
 
-### Azure Active Directory - User Management
+### User Management
 20
 
 
@@ -210,7 +202,7 @@ See information about user management in Azure Activity Directory, including ext
 **User Management Events - Outlier.** Shows outliers in user management events with count and thresholds on a line chart, for the last 24 hours.
 
 
-### Azure Active Directory - Application Management
+### Application Management
 22
 
 
@@ -243,7 +235,7 @@ See information about application management in Azure Activity Directory, includ
 **Applications Added or Updated.** Shows an aggregation table of applications added or updated with columns for the operation names, result types, result descriptions, identity, target source name, and count for the last 24 hours.
 
 
-### Azure Active Directory - Directory Management
+### Directory Management
 24
 
 
@@ -264,7 +256,7 @@ See information about directory management in Azure Activity Directory, includin
 **Disable Desktop SSO.** Shows an aggregation table of disabled desktop SSOs with columns for the operation names, result types, result descriptions, identity, target source name, and count for the last 24 hours.
 
 
-### Azure Active Directory - Group Management
+### Group Management
 26
 
 
@@ -291,7 +283,7 @@ See information about group management in Azure Activity Directory, including gr
 **Breakdown by Results.** Shows a breakdown of the types of results (success or failure) on a pie chart, for the last 24 hours.
 
 
-### Azure Active Directory - Authorization/Authentication/Other
+### Authorization/Authentication/Other
 28
 
 
@@ -314,7 +306,7 @@ See information about Authorization in Azure Active Directory including the name
 **Breakdown by Results.** Shows a breakdown of the types of results (success or failure) on a pie chart, for the last 24 hours.
 
 
-### Azure Active Directory - Successful Sign-In Events
+### Successful Sign-In Events
 30
 
 
@@ -345,7 +337,7 @@ See information about successful sign-in events in your Azure AD, including the 
 **Anomaly in Total Login Count. **Shows any Anomaly in the total successful login count over 7 days.
 
 
-### Azure Active Directory - Failure Sign-in Events
+### Failure Sign-in Events
 32
 
 

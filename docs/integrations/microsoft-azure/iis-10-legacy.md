@@ -10,32 +10,20 @@ The IIS 10 (Legacy) App monitors the performance and reliability of your Microso
 
 ### Log Types  
 
-IIS 10 (Legacy) App uses IIS version 10 logs. For information on the default log formats used for IIS 10 and IIS 8.5, see [Collect logs for the IIS 10 (Legacy) App](https://help.sumologic.com/07Sumo-Logic-Apps/04Microsoft-and-Azure/IIS_10_(Legacy)/Collect_Logs_for_the_IIS_10_(Legacy)_App).
+IIS 10 (Legacy) App uses IIS version 10 logs. This section demonstrates how to enable logging from Microsoft Internet Information Services (IIS) and HTTP Error Logs on your Windows server and ingest those logs into Sumo Logic.
 
 IIS 10 App is backward compatible with IIS 8.5. IIS 10 App uses default log formats.
 * IIS allows you to choose fields to log in IIS access logs. For explanations on the various fields and their significance see this [link](https://docs.microsoft.com/en-us/windows/desktop/http/w3c-logging).
 * For information on how to configure HTTP Error Logs, and for explanations on the various HTTP Error Log fields and their significance see this [link](https://support.microsoft.com/en-us/help/820729/error-logging-in-http-apis).
 
-This page demonstrates how to enable logging from Microsoft Internet Information Services (IIS) and HTTP Error Logs on your Windows server and ingest those logs into Sumo Logic.
-
-
-## Log Types
-
-IIS 10 App is backward compatible with IIS 8.5.
-
 This section covers the following default log formats for IIS 10 and IIS 8.5:
-
 * [IIS Access Logs (W3C format)](https://help.sumologic.com/07Sumo-Logic-Apps/04Microsoft-and-Azure/IIS_10_(Legacy)/Collect_Logs_for_the_IIS_10_(Legacy)_App#IIS_Access_Logs_(W3C_format))
 * [HTTP Error Logs](https://help.sumologic.com/07Sumo-Logic-Apps/04Microsoft-and-Azure/IIS_10_(Legacy)/Collect_Logs_for_the_IIS_10_(Legacy)_App#HTTP_Error_Logs)
 * [Performance Logs](https://help.sumologic.com/07Sumo-Logic-Apps/04Microsoft-and-Azure/IIS_10_(Legacy)/Collect_Logs_for_the_IIS_10_(Legacy)_App#Performance_Logs)
 
-Default log formats are used by IIS 10 (Legacy) App. IIS allows you to choose which fields to log in IIS access logs. To understand the various fields and their significance see this [link](https://docs.microsoft.com/en-us/windows/desktop/http/w3c-logging).
-
 IIS Log files are generated as local files. For a standard Windows Server, the default log location is as follows: `%SystemDrive%\inetpub\logs\LogFiles`
 
 For example:
-
-
 ```
 c:\inetpub\logs\LogFiles\
 ```
@@ -44,12 +32,9 @@ c:\inetpub\logs\LogFiles\
 Within the folder, you will find subfolders for each site configured with IIS. The logs are stored in folders that follow a naming pattern like W3SVC1, W3SVC2, W3SVC3, etc. The number at the end of the folder name corresponds to your site ID. For example, W3SVC2 is for site ID 2.
 
 
-##### IIS Access Logs (W3C default format)  
-5
-
+### IIS Access Logs (W3C default format)  
 
 Sumo Logic expects logs in [W3C](https://docs.microsoft.com/en-us/windows/desktop/http/w3c-logging) format with following fields for our Field Extraction Rules and IIS 10 Application:
-
 
 ```
 #Fields: date time s-ip cs-method cs-uri-stem cs-uri-query s-port cs-username c-ip
@@ -60,10 +45,7 @@ cs(User-Agent) cs(Referrer) sc-status sc-substatus sc-win32-status time-taken
 IIS allows you to choose fields to log in IIS access logs. For explanations on the various fields and their significance see this [link](https://docs.microsoft.com/en-us/windows/desktop/http/w3c-logging).
 
 
-##### HTTP Error Logs  
-6
-
-
+#### HTTP Error Logs  
 
 ```
 #Fields: date time c-ip c-port s-ip s-port protocol_version verb cookedurl_query
@@ -74,12 +56,9 @@ protocol_status siteId Reason_Phrase Queue_Name
 For information on how to configure HTTP Error Logs, and for explanations on the various HTTP Error Log fields and their significance see this [link](https://support.microsoft.com/en-us/help/820729/error-logging-in-http-apis).
 
 
-##### Performance Logs  
-7
-
+#### Performance Logs  
 
 Output of Perfmon queries to be configured at Installed Collector, "Windows Performance" Source.
-
 
 ```
 #Fields: date time s-ip cs-method cs-uri-stem cs-uri-query s-port cs-usern…" with
@@ -89,13 +68,9 @@ s-port cs-us…
 
 
 
-## Prerequisite tasks
-8
-
+### Prerequisite tasks
 
 The following tasks are required to prepare for logging IIS events:
-
-
 
 * [Enable logging on your IIS server, if not already enabled](https://help.sumologic.com/07Sumo-Logic-Apps/04Microsoft-and-Azure/IIS_10_(Legacy)/Collect_Logs_for_the_IIS_10_(Legacy)_App#Enable_logging_on_your_IIS_Server)
 * [Verify log files are being created](https://help.sumologic.com/07Sumo-Logic-Apps/04Microsoft-and-Azure/IIS_10_(Legacy)/Collect_Logs_for_the_IIS_10_(Legacy)_App#Verify_log_files_are_created)
@@ -103,28 +78,17 @@ The following tasks are required to prepare for logging IIS events:
 
 
 #### Enable logging on your IIS Server
-9
-
 
 Perform the following task, if logging on your IIS Server is not already enabled.
 
 
-###### To enable logging on your IIS Server, do the following:
-10
-
-
-
+To enable logging on your IIS Server, do the following:
 
 1. Open IIS Manager.
 2. Select the site or server in the **Connections** pane, and then double-click **Logging**.
 
 
-11
-
-
 Enhanced logging is only available for site-level logging. If you select the server in the Connections pane, then the Custom Fields section of the W3C Logging Fields dialog is disabled.
-
-
 
 1. In the Format field under Log File, select **W3C** and then click Select Fields. IIS 10 App works on default fields selection.
 2. Select following fields, if not already selected. Sumo Logic expects these fields in IIS logs for the IIS Application and Field Extraction Rule by default:
@@ -133,7 +97,6 @@ Enhanced logging is only available for site-level logging. If you select the ser
     date time s-ip cs-method cs-uri-stem cs-uri-query s-port
     cs-username c-ip cs(User-Agent) cs(Referer) sc-status
     sc-substatus sc-win32-status time-taken
-
     ```
 
 
@@ -141,60 +104,40 @@ For more information about IIS log format and log configuration refer [link](htt
 
 
 #### Verify that log files are created
-12
 
 
 Perform the following task to ensure that log files are being created.
 
 
-###### To confirm log files are being created, do the following: **
-13
-
-
-
+To confirm log files are being created, do the following:
 
 1. Open a command-line window and change directories to C:\inetpub\Logs\LogFiles. This is the same path you will enter when you configure the Source to collect these files.
 2. Under the \W3SVC1 directory, you should see one or more files with a .log extension. If the file is present, you can collect it.
 
 
 #### Enable HTTP Error Logs on your Windows Server
-14
-
 
 Perform the following task to enable HTTP Error Logs on your Windows Server, that is hosting the IIS Server.
 
 
-###### To enable HTTP Error Logs on the Windows Server hosting IIS Server, do the following: **
-15
-
-
-
+To enable HTTP Error Logs on the Windows Server hosting IIS Server, do the following:
 
 1. To configure HTTP Error Logging, refer to this document [link](https://docs.microsoft.com/en-us/windows/desktop/http/configuring-http-server-api-error-logging).
 2. To understand HTTP Error Log format, refer to this document [link](https://docs.microsoft.com/en-us/windows/desktop/http/format-of-the-http-server-api-error-logs).
 
 HTTP Error Log files are generated as local files. The default HTTP Error log file location is: `C:\Windows\System32\LogFiles\HTTPERR`
 
-Configure a Collector
+### Configure a Collector
 
-
-16
 Sumo Logic recommends that you install the collector on the same system that hosts the logs.
 
 To collect logs for the IIS 10 App, you will install a local Collector on the same server that hosts the logs.
-
-
-
 * Follow the instructions for an [Installed Collector (Windows)](https://help.sumologic.com/03Send-Data/Installed-Collectors/03Install-a-Collector-on-Windows).
 
 
-## Configure Sources
-17
-
+### Configure Sources
 
 This section demonstrates how to configure sources for the following log types:
-
-
 
 * [IIS Access Logs](https://help.sumologic.com/07Sumo-Logic-Apps/04Microsoft-and-Azure/IIS_10_(Legacy)/Collect_Logs_for_the_IIS_10_(Legacy)_App#Configure_Source_for_IIS_Access_Logs)
 * [HTTP Error Logs](https://help.sumologic.com/07Sumo-Logic-Apps/04Microsoft-and-Azure/IIS_10_(Legacy)/Collect_Logs_for_the_IIS_10_(Legacy)_App#Configure_Source_for_HTTP_Error_Logs)
@@ -202,21 +145,15 @@ This section demonstrates how to configure sources for the following log types:
 
 
 #### Configure Source for IIS Access Logs
-18
-
 
 This section demonstrates how to configure a Local File Source for IIS Access Logs, for use with an [Installed Collector](https://help.sumologic.com/07Sumo-Logic-Apps/04Microsoft-and-Azure/IIS_10_(Legacy)/Collect_Logs_for_the_IIS_10_(Legacy)_App#Configure_a_Collector). You may configure a [Remote File Source](https://help.sumologic.com/03Send-Data/Sources/01Sources-for-Installed-Collectors/Remote-File-Source), but the configuration is more complex.
 
 
-19
+
 Sumo Logic recommends using a Local File Source whenever possible.
 
 
-###### To configure a local file source for IIS Access Logs, do the following: **
-20
-
-
-
+To configure a local file source for IIS Access Logs, do the following:
 
 1. Configure a [Local File Source](https://help.sumologic.com/03Send-Data/Sources/01Sources-for-Installed-Collectors/Local-File-Source).
 2. Specify Local File Source Fields as follows:
@@ -245,14 +182,9 @@ After a few minutes, your new Source should be propagated down to the Collector 
 This section demonstrates how to configure a Local File Source for HTTP Error Logs, for use with an [Installed Collector](https://help.sumologic.com/07Sumo-Logic-Apps/04Microsoft-and-Azure/IIS_10_(Legacy)/Collect_Logs_for_the_IIS_10_(Legacy)_App#Configure_a_Collector). You may configure a [Remote File Source](https://help.sumologic.com/03Send-Data/Sources/01Sources-for-Installed-Collectors/Remote-File-Source), but the configuration is more complex.
 
 
-22
 Sumo Logic recommends using a Local File Source whenever possible.
 
-
-###### To configure a local file source for HTTP Error Logs, do the following: **
-23
-
-
+To configure a local file source for HTTP Error Logs, do the following:
 
 
 1. Configure a [Local File Source](https://help.sumologic.com/03Send-Data/Sources/01Sources-for-Installed-Collectors/Local-File-Source).
@@ -293,11 +225,7 @@ Use the appropriate source for your environment:
 * [Remote Windows Performance Monitor Log Source](https://help.sumologic.com/03Send-Data/Sources/01Sources-for-Installed-Collectors/Remote-Windows-Performance-Monitor-Log-Source)
 
 
-###### To configure a Source for IIS Performance Logs, do the following:  **
-26
-
-
-
+To configure a Source for IIS Performance Logs, do the following:  
 
 1. Configure a [Local Windows Performance Monitor Log Source](https://help.sumologic.com/03Send-Data/Sources/01Sources-for-Installed-Collectors/Local-Windows-Performance-Monitor-Log-Source).
 2. Configure the Local Windows Performance Source Fields as follows:
@@ -309,7 +237,7 @@ Use the appropriate source for your environment:
 2. Add the following two queries:
 * Query 1:
 1. For** Name**, enter **WebServices**
-2. For **Query**, enter **select TotalMethodRequestsPerSec, GetRequestsPerSec, PostRequestsPerSec, CurrentConnections, CurrentAnonymousUsers, CurrentNonAnonymousUsers, CGIRequestsPerSec, ISAPIExtensionRequestsPerSec, BytesReceivedPerSec, BytesSentPerSec, FilesReceivedPerSec, FilesSentPerSec, ServiceUptime, BytesTotalPerSec from Win32_PerfFormattedData_W3SVC_WebService**
+2. For **Query**, enter select TotalMethodRequestsPerSec, GetRequestsPerSec, PostRequestsPerSec, CurrentConnections, CurrentAnonymousUsers, CurrentNonAnonymousUsers, CGIRequestsPerSec, ISAPIExtensionRequestsPerSec, BytesReceivedPerSec, BytesSentPerSec, FilesReceivedPerSec, FilesSentPerSec, ServiceUptime, BytesTotalPerSec from Win32_PerfFormattedData_W3SVC_WebService
 * Query 2:
 1. For** Name**, enter **HTTPServiceRequestQueues**
 2. For **Query**, enter **Select ArrivalRate, CurrentQueueSize, CacheHitRate, RejectionRate, MaxQueueItemAge from Win32_PerfFormattedData_Counters_HTTPServiceRequestQueues**
@@ -317,12 +245,8 @@ Use the appropriate source for your environment:
 
 
 ### Field Extraction Rules
-27
-
 
 This section provides examples of the following field extraction rule types:
-
-
 
 * IIS Access Logs
 * HTTP ERROR Logs
@@ -330,10 +254,7 @@ This section provides examples of the following field extraction rule types:
 * Performance Logs (perfmon Query for Counters_HTTPServiceRequestQueues)
 
 
-#### IIS  Access Logs Field Extraction Rule
-28
-
-
+#### IIS Access Logs Field Extraction Rule
 
 ```
 _sourceCategory=Webserver/IIS/Access
@@ -361,8 +282,6 @@ _sourceCategory=Webserver/IIS/Error
 
 
 #### Performance Logs (perfmon Query for W3SVC_WebService) Field Extraction Rule
-30
-
 
 
 ```
@@ -516,7 +435,7 @@ http://www.bing.com/search?q=sumo%20applications&src=IE-SearchBox&FORM=IE11SR 20
 This section provides examples of IIS Performance Log formats produced by two different queries. For more information on other W3SVC WebServices Perfmon Counters refer to this documentation [link](https://docs.microsoft.com/en-us/previous-versions//aa394298(v=vs.85))
 
 
-###### A. This Perfmon query: **
+A. This Perfmon query:
 
 
 ```
@@ -581,7 +500,7 @@ RejectionRate = "0";
 
 
 
-## Query Samples  
+### Query Samples  
 38
 
 
@@ -664,29 +583,19 @@ Once an app is installed, it will appear in your **Personal** folder, or other f
 Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
 
 
-## Dashboards   
-42
+## Viewing IIS 10 Legacy Dashboards   
 
 
 **Each dashboard has a set of filters** that you can apply to the entire dashboard, as shown in the following example. Click the funnel icon in the top dashboard menu bar to display a scrollable list of filters that are applied across the entire dashboard.
 
-
-43
 You can use filters to drill down and examine the data on a granular level.
-
-
-44
 
 
 **Each panel has a set of filters** that are applied to the results for that panel only, as shown in the following example. Click the funnel icon in the top panel menu bar to display a list of panel-specific filters.
 
 
-45
 
-
-
-### IIS 10 - Overview Dashboard
-46
+### Overview Dashboard
 
 
 The **IIS 10 - Overview Dashboard** provides a high-level view of the performance and integrity of your Microsoft Internet Information Services (IIS) infrastructure. Dashboard panels display visual graphs and detailed information on IIS versions, platforms, and log formats. Panels also show visitor geographic locations, top app requests. OS platforms, response status, response times, and client and server errors.
@@ -703,7 +612,7 @@ The **IIS 10 - Overview Dashboard** provides a high-level view of the performanc
 
 
 
-### IIS 10 - HTTP Error Dashboard
+### HTTP Error Dashboard
 48
 
 
@@ -722,7 +631,7 @@ The **IIS 10 - HTTP Error Dashboard** provides detailed information on IIS error
 
 
 
-### IIS 10 - Performance Snapshot Dashboard
+### Performance Snapshot Dashboard
 50
 
 
@@ -743,7 +652,7 @@ The **IIS 10 - Performance Snapshot Dashboard** provides detailed information on
 
 
 
-### IIS 10 - Performance Trends Dashboard
+### Performance Trends Dashboard
 52
 
 
@@ -761,7 +670,7 @@ The **IIS 10 - Performance Trends Dashboard** provides details on ISS infrastruc
 
 
 
-### IIS 10 - Threat Analysis Dashboard
+### Threat Analysis Dashboard
 54
 
 
@@ -782,7 +691,7 @@ The **IIS 10 - Threat Analysis Dashboard** provides high-level views of threats 
 
 
 
-### IIS 10 - Server Operation - Errors Dashboard
+### Server Operation - Errors Dashboard
 56
 
 
@@ -800,7 +709,7 @@ The **IIS 10 - Server Operation - Errors Dashboard** provides visual graphs and 
 
 
 
-### IIS 10 - Server Operation - Requests and Response Time Dashboard
+### Server Operation - Requests and Response Time Dashboard
 58
 
 
@@ -818,7 +727,7 @@ The **IIS 10 - Server Operation - Requests and Response Time Dashboard** provide
 
 
 
-### IIS 10 - Server Operation - Requests Stats Dashboard
+### Server Operation - Requests Stats Dashboard
 60
 
 
@@ -838,7 +747,7 @@ The **IIS 10 - Server Operation - Requests Stats Dashboard** provides visual gra
 
 
 
-### IIS 10 - Traffic Insights - Apps and Requests Dashboard
+### Traffic Insights - Apps and Requests Dashboard
 62
 
 
@@ -858,7 +767,7 @@ The **IIS 10 - Traffic Insights - Apps and Requests Dashboard** provides high-le
 
 
 
-### IIS 10 - Traffic Insights - Content and Client Platform Dashboard
+### Traffic Insights - Content and Client Platform Dashboard
 64
 
 
@@ -875,7 +784,7 @@ The **IIS 10 - Traffic Insights - Content and Client Platform Dashboard** provid
 
 
 
-### IIS 10 - Visitor Insights Dashboard
+### Visitor Insights Dashboard
 
 
 The **IIS 10 - Visitors Insights Dashboard** provides at-a-glance details on visitors to your IIS network. Dashboard panels show the geographic distribution of worldwide visitors, United States visitors, visitor locations experiencing the highest number of errors, and the top visitors experiencing errors. Panels also show trends in visitors by country over time and trends in visitors by US region over time.

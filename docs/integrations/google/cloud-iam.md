@@ -7,15 +7,14 @@ description: tk
 
 Google Cloud Identity and Access Management (Cloud IAM) allows you to create and manage permissions for Google Cloud Platform resources. The Google Cloud IAM App gives you visibility into the activities in Cloud IAM. The preconfigured dashboards allow you to monitor the IAM project activities, operations, role activities, and policy changes.
 
+## Collect Logs for the Google Cloud IAM App
+
+This page describes the Sumo pipeline for ingesting logs from Google Cloud Platform (GCP) services, and provides instructions for configuring log collection for the Google Cloud IAM App.
+
 
 ### Log Types
 
 The Google Cloud IAM App uses [Google Cloud Audit Logs](https://cloud.google.com/logging/docs/audit/) which track events on multiple [GCP services](https://cloud.google.com/logging/docs/audit/#services), including Compute Engine, IAM, and App Engine.
-
-
-## Collect Logs for the Google Cloud IAM App
-
-This page describes the Sumo pipeline for ingesting logs from Google Cloud Platform (GCP) services, and provides instructions for configuring log collection for the Google Cloud IAM App.
 
 
 ### Collection process for GCP services
@@ -269,7 +268,7 @@ _collector="HTTP Source for GCP Pub/Sub" logName resource timestamp
 ```
 
 
-# Install the Google Cloud IAM App
+## Installing the Google Cloud IAM App
 
 This page provides instructions for installing the Google Cloud IAM App, and examples of each of the App dashboards.
 
@@ -303,15 +302,13 @@ Once an app is installed, it will appear in your **Personal** folder, or other f
 Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
 
 
-## Dashboards
+## Viewing Google Cloud IAM Dashboards
 
 
 You can use the pre-configured searches and [dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/06Google/Google_Cloud_IAM/Install-the-Google-Cloud-IAM-App-and-view-the-Dashboards#Dashboards) for visibility into your environment for real-time performance analytics and an analysis of overall usage.
 
 
-#### Google Cloud IAM Overview
-20
-
+### Overview
 
 See the overview of your Google Cloud IAM including the operations, project, IAM role, and service account activities.
 
@@ -330,7 +327,7 @@ See the overview of your Google Cloud IAM including the operations, project, IAM
 **Recent Service Account Activity**. See the details of recent service account activities in the last three hours including the timestamp, user, method, and service account, displayed in a table.
 
 
-#### Google Cloud IAM Role Activity
+### Role Activity
 22
 
 

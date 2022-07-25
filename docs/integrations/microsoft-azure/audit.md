@@ -16,19 +16,11 @@ This guide walks you through the tasks you'll perform to [collect Azure Audit lo
 5. Deploy the function.
 6. Then, [install the Sumo Logic App for Azure Audit](https://help.sumologic.com/07Sumo-Logic-Apps/04Microsoft-and-Azure/Azure_Audit/03_Azure-Audit-App-Dashboards#Install_the_Sumo_Logic_App).
 
-To install the Sumo Logic App for Azure Audit, you must sign up for a Sumo Logic Account, if you have not already done so. To sign up, go to [https://www.sumologic.com/pricing/](https://www.sumologic.com/pricing/) and select your account type or click **Free Trial** to sign up for a Sumo Logic Free account. **  **
+To install the Sumo Logic App for Azure Audit, you must sign up for a Sumo Logic Account, if you have not already done so. To sign up, go to [https://www.sumologic.com/pricing/](https://www.sumologic.com/pricing/) and select your account type or click **Free Trial** to sign up for a Sumo Logic Free account.
 
 
-### Log Types
 
-The Azure Audit App uses the following logs:
-
-* Local Windows Event Source Logs
-* [Azure Activity Log](https://azure.microsoft.com/en-us/updates/audit-logs-in-azure-preview-portal/)
-* (Optional) [Azure Active Directory Audit Reports](https://azure.microsoft.com/en-us/documentation/articles/active-directory-view-access-usage-reports/)
-
-
-## Collect Logs for the Azure Audit App from Event Hub
+## Collecting Logs for the Azure Audit App from Event Hub
 
 This page has instructions for configuring a pipeline for shipping Azure Audit logs from [Azure Monitor](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-get-started) to an Event Hub, on to an Azure Function, and finally to an HTTP source on a hosted collector in Sumo Logic.
 
@@ -40,6 +32,13 @@ Here’s how the solution fits together:
 * Azure Event Hubs is a data streaming platform and event ingestion service. In this pipeline, an Event Hub streams the logs collected by Azure Monitor to an Azure function.
 * The Azure function is a small piece of code that is triggered by Event Hub to send logs to the Sumo HTTP Source, function logs to one Storage Account, and failover data to another.
 
+### Log Types
+
+The Azure Audit App uses the following logs:
+
+* Local Windows Event Source Logs
+* [Azure Activity Log](https://azure.microsoft.com/en-us/updates/audit-logs-in-azure-preview-portal/)
+* (Optional) [Azure Active Directory Audit Reports](https://azure.microsoft.com/en-us/documentation/articles/active-directory-view-access-usage-reports/)
 
 ### Configure an HTTP source
 
@@ -94,7 +93,7 @@ _
 
 If logs are not flowing into Sumo Logic, see [Troubleshooting](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Azure_Monitoring/Collect_Logs_from_Azure_Monitor#Troubleshooting_log_collection).
 
-## Install the Sumo Logic App  
+## Installing the Azure Audit App
 
 Now that you have set up collection from the Azure Activity Log (previously known as Azure Audit logs), install the Azure Audit App to use the preconfigured searches and [Dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/04Microsoft-and-Azure/Azure_Audit/03_Azure-Audit-App-Dashboards#Dashboards) that provide insight into your data.
 
@@ -120,13 +119,12 @@ Once an app is installed, it will appear in your **Personal** folder, or other f
 Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
 
 
-## View the Dashboards
+## Viewing Azure Audit Dashboards
 
 The predefined Dashboards on Azure Audit allow you to instantly monitor the activities and events. All the dashboards in the App, except the Azure Audit - Active Directory dashboard, support logs from both Event Hub and Insight API.
 
 
-### Azure Audit - Overview
-
+### Overview
 
 Use this dashboard to get a high-level view of the Azure activity by location, and details of events.
 
@@ -144,7 +142,7 @@ Use this dashboard to get a high-level view of the Azure activity by location, a
 **Events by Category.** Shows details on events by category in a stacked column chart on a timeline for the last seven days.
 
 
-### Azure Audit - Resource Usage
+### Resource Usage
 
 Use this dashboard to see the details on resource group and resource provider.
 
@@ -164,7 +162,7 @@ Use this dashboard to see the details on resource group and resource provider.
 **Events by Resource Provider. **Displays details on events by Resource Provider across time in a stacked column chart on a timeline for the last seven days.
 
 
-### Azure Audit - Service Health
+### Service Health
 Use this dashboard to see the details on Azure service health such as the level, status, and events.
 
 
@@ -180,7 +178,7 @@ Use this dashboard to see the details on Azure service health such as the level,
 **Unresolved Events.** Provides information on unresolved service health events in a table chart, including details on correlation ID, level, event name, location, status, and time for the last 30 days.
 
 
-### Azure Audit - User Activity
+### User Activity
 Use this dashboard to see the details on events, resources, and users.
 
 
@@ -197,7 +195,3 @@ Use this dashboard to see the details on events, resources, and users.
 **Events by User. **Provides details on events per user in an area chart on a timeline for the last seven days.
 
 **Operations by User.** Displays operations by user in a stacked column chart by name and count for the last seven days.
-
-
-
-1.

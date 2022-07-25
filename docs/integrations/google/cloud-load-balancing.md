@@ -9,16 +9,15 @@ description: tk
 Google Cloud Load Balancing is Google’s load balancing service for Google Cloud Platform. The Sumo Logic App for Google Cloud Load Balancing helps you monitor load balancing activity.  The preconfigured dashboards provide insight into request locations and volume, response codes, and request and response data by load balancer.
 
 
+## Collect Logs for Google Cloud Load Balancing
+
+This page describes the Sumo pipeline for ingesting logs from Google Cloud Platform (GCP) services, and provides instructions for collecting logs from Google Cloud Load Balancing.
+
 ### Log Types
 
 The app uses the following log type:
 
 * [Cloud Load Balancing Request Logs](https://cloud.google.com/compute/docs/load-balancing/http/#logging)
-
-
-## Collect Logs for Google Cloud Load Balancing
-
-This page describes the Sumo pipeline for ingesting logs from Google Cloud Platform (GCP) services, and provides instructions for collecting logs from Google Cloud Load Balancing.
 
 
 ### Collection process for GCP services
@@ -210,30 +209,7 @@ _sourceCategory=*gcp* data logName resource "\"type\":\"http_load_balancer\""
 
 
 
-1.
-
-
-# Install the Google Cloud Load Balancing App and View the Dashboards
-
-
-
-1. **Last updated \
-**Apr 13, 2022, 11:18 PM by Nishant
-2. **Page restriction \
-**Public
-    * [ Page notifications Off](https://help.sumologic.com/07Sumo-Logic-Apps/06Google/Google_Cloud_Load_Balancing/Install_the_Google_Cloud_Load_Balancing_App_and_View_the_Dashboards#)
-    *  
-    * [Save as PDF](https://help.sumologic.com/@api/deki/pages/5815/pdf/Install%2bthe%2bGoogle%2bCloud%2bLoad%2bBalancing%2bApp%2band%2bView%2bthe%2bDashboards.pdf?stylesheet=default)
-    *  
-    * [ Share](https://help.sumologic.com/07Sumo-Logic-Apps/06Google/Google_Cloud_Load_Balancing/Install_the_Google_Cloud_Load_Balancing_App_and_View_the_Dashboards#)
-
-    Table of contents
-
-
-
-## Install the Sumo Logic App
-15
-
+## Install the Google Cloud Load Balancing App
 
 Now that you have set up collection for Google Cloud Load Balancing, install the Sumo Logic App to use the pre-configured searches and [dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/06Google/Google_Cloud_Storage/Install_the_Google_Cloud_Storage_App_and_view_the_Dashboards#Dashboards) that provide visibility into your environment for real-time analysis of overall usage.
 
@@ -241,13 +217,10 @@ Now that you have set up collection for Google Cloud Load Balancing, install the
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
-
-
 1. From the **App Catalog**, search for and select the app**.**
 2. Select the version of the service you're using and click **Add to Library**.
 
 
-16
 Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](https://help.sumologic.com/01Start-Here/Library/Apps-in-Sumo-Logic/Install-Apps-from-the-Library)
 
 
@@ -265,15 +238,12 @@ Once an app is installed, it will appear in your **Personal** folder, or other f
 Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
 
 
-### Dashboards
-17
-
+## Viewing Google Cloud Load Balancing Dashboards
 
 This section describes the dashboards in the Sumo Logic App for Google Cloud Load Balancing.
 
 
-#### Google Cloud Load Balancing - Overview
-18
+### Overview
 
 
 See an overview of Google Cloud Load Balancing activity, including request locations, browsers and operating systems used, error status codes, requests by load balancer, bytes sent and received, and message severity over time.
@@ -295,7 +265,7 @@ See an overview of Google Cloud Load Balancing activity, including request locat
 **Severity Over Time**. A line chart that shows the count of messages of each level (info, warning, error, critical, alert, and emergency) over the last 24 hours.
 
 
-#### Google Cloud Load Balancing - Request Analysis
+### Request Analysis
 20
 
 
@@ -318,7 +288,7 @@ See information about request activity in Google Cloud Load Balancing, including
 **Total Requests by Load Balancer. **A bar chart that shows the total count of requests by load balancer over the last 24 hours.
 
 
-#### Google Cloud Load Balancing - Status Analysis
+### Status Analysis
 22
 
 

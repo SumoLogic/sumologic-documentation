@@ -7,12 +7,6 @@ description: The Sumo Logic App for Google App Engine helps you monitor the acti
 
 Google App Engine is a platform to build web and mobile apps that scale automatically. The Sumo Logic App for Google App Engine helps you monitor the activities in your App Engine. The pre-configured dashboards provide insight into the requests, applications, HTTP status codes, latency, and response time in your App Engine.
 
-## Log Types
-
-The App uses:
-* Google Cloud Audit Logs — These logs track events on multiple GCP services, including Compute Engine, IAM and App Engine
-* App Engine Request Logs — These logs provide information about each request in App Engine, including the external IP address making the request
-
 ## Collect Logs for the Google App Engine App
 
 This section describes the Sumo pipeline for ingesting logs from Google Cloud Platform (GCP) services and provides instructions for configuring log collection for the Google App Engine App. A sample log message and query are also provided.
@@ -20,6 +14,12 @@ This section describes the Sumo pipeline for ingesting logs from Google Cloud Pl
 * content reuse link
 * content reuse link
 * content reuse link
+
+### Log Types
+
+The App uses:
+* Google Cloud Audit Logs — These logs track events on multiple GCP services, including Compute Engine, IAM and App Engine
+* App Engine Request Logs — These logs provide information about each request in App Engine, including the external IP address making the request
 
 ### Create export of App Engine logs from Stackdriver
 
@@ -47,7 +47,7 @@ clipboard_e2f20e4ab6db14f6dd473208f84400de0.png
 
 ### Sample Log Message
 
-```
+```json
 {
   "message": {
     "data": {
@@ -244,31 +244,25 @@ _collector="HTTP Source for GCP Pub/Sub" logName resource timestamp
 ```
 
 
-## Install the Google App Engine App and view the Dashboards
+## Installing the Google App Engine App
 
 This page provides instructions for installing the Google App Engine App, as well as an example of each of the App dashboards.
 
-### Install the Sumo Logic App
+
 Now that you have set up collection for Google App Engine, install the Sumo Logic App to use the pre-configured searches and dashboards that provide visibility into your environment for real-time analysis of overall usage.
 
 To install the app:
 
 * content reuse link
 
-<!-- Output copied to clipboard! -->
-
-<!-- You have some errors, warnings, or alerts. If you are using reckless mode, turn it off to see inline alerts.
-* ERRORs: 3
-* WARNINGs: 0
-* ALERTS: 3 -->
 
 
-### Dashboards
+### Viewing Google App Engine Dashboards
 
 The preconfigured dashboards provide insight into the requests, applications, HTTP status codes, latency, and response time in your App Engine.
 
 
-#### Google App Engine - Overview
+### Overview
 
 See the overview of your App Engine including the requests, applications, and status codes.
 
@@ -285,7 +279,7 @@ image GoogleAppEngineOverview.png
 **Status Codes**. See the count of 200, 300, 400, 500, and other status codes in the last 24 hours on a bar chart.
 
 
-#### Google App Engine - Activity
+### Activity
 
 See the details of App Engine activities including the projects, services, versions, and message severity.
 
@@ -304,7 +298,7 @@ image
 **Severe Messages**. See the count of messages by severity in the last hour on a line chart.
 
 
-#### Google App Engine - Request Activity
+### Request Activity
 
 See the details of App Engine requests including the location, request methods, response status codes, latency, and response time.
 

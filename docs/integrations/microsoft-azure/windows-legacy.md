@@ -7,12 +7,8 @@ description: Windows Legacy
 
 The Windows Legacy App provides insight into your Windows system's operation and events so that you can better manage and maintain your environment. The Windows Legacy App consists of predefined searches and dashboards that provide visibility into your environment for real-time analysis of overall usage of Security Status, System Activity, Updates, and User Activity.
 
-Log Types
-The Windows Legacy App assumes events are coming from Remote Windows Event Log Sources. It does not work with third party logs.
 
-
-
-## Collect Logs
+## Collecting Logs
 
 This page provides instructions on configuring log collection for the Windows Legacy App, so that logs are collected from the Microsoft Windows Event Log and ingested into Sumo Logic. A sample log message and example query are also provided.
 
@@ -21,10 +17,7 @@ This page provides instructions on configuring log collection for the Windows Le
 
 ### Log Types
 
-Standard Windows event channels include:
-
-
-
+The Windows Legacy App assumes events are coming from Remote Windows Event Log Sources. It does not work with third party logs. Standard Windows event channels include:
 * Security
 * Application
 * System
@@ -91,7 +84,7 @@ _sourceCategory=OS/Windows "Policy Change"
 
 
 
-## Install the Windows Legacy App
+## Installing the Windows Legacy App
 
 Now that you have configured Windows logs, install the Sumo Logic App for Windows Legacy to take advantage of the pre-configured searches and [dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/04Microsoft-and-Azure/Windows_Legacy/Windows-Legacy-App-Dashboards#Dashboards) to analyze your Windows data.
 
@@ -121,9 +114,9 @@ Once an app is installed, it will appear in your **Personal** folder, or other f
 Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
 
 
-## View the Dashboards
+## Viewing Windows Legacy Dashboards
 
-### Windows - Overview
+### Overview
 
 See information about Windows update errors, fatal or warning messages, policy changes, system restarts, and changes to administrative groups.
 
@@ -138,7 +131,7 @@ See information about Windows update errors, fatal or warning messages, policy c
 **Changes to Administrative Groups.** Shows the number of changes to administrative groups in a single value chart for the last 24 hours.
 
 
-### Windows - Default
+### Default
 13
 
 
@@ -157,7 +150,7 @@ See information about the start and stop operations for Windows services; Window
 **Errors and Warnings Over Time.** Shows the number of errors and warnings per hour in a timeline. To display details of the data in a pop-up menu, hover over a line in the chart. Hover over the text **Last 24 Hours** in the upper right corner to see details of the time frame for the displayed data.
 
 
-### Windows - Login Status
+### Login Status
 15
 
 
@@ -176,7 +169,7 @@ See information about successful and failed logins, and successful RDP reconnect
 **Successful RDP Logins.** Provides a table with a list of successful remote desktop logins including details on computer name, destination user, and number of attempts. Information is displayed for the last two hours.
 
 
-### Windows - Event Errors
+### Event Errors
 17
 
 

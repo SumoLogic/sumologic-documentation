@@ -8,22 +8,16 @@ description: tk
 The Sumo Logic app for Google Cloud SQL helps you monitor your usage of Google Cloud SQL. The preconfigured dashboards provide insight into created and deleted resources, messages, authorization failures, user activities, and error logs.
 
 
-### Log Types
-1
-
-
-The App uses:
-
-
-
-* [Google Cloud Audit Logs](https://cloud.google.com/logging/docs/audit/) - Logs events on multiple [GCP services](https://cloud.google.com/logging/docs/audit/#services), including Cloud SQL.
-* Google Cloud SQL Error Logs - Logs errors on databases.
-
-
-## Collect Logs for Google Cloud SQL
+## Collecting Logs for Google Cloud SQL
 
 This page describes the Sumo pipeline for ingesting logs from Google Cloud Platform (GCP) services, and provides instructions for collecting logs from Google Cloud SQL.
 
+
+### Log Types
+
+The App uses:
+* [Google Cloud Audit Logs](https://cloud.google.com/logging/docs/audit/) - Logs events on multiple [GCP services](https://cloud.google.com/logging/docs/audit/#services), including Cloud SQL.
+* Google Cloud SQL Error Logs - Logs errors on databases.
 
 ### Collection process for GCP services
 
@@ -200,8 +194,7 @@ _sourceCategory=*gcp* data "type":"cloudsql_database" methodName
 
 
 
-## Install the Google Cloud SQL App
-
+## Installing the Google Cloud SQL App
 
 Now that you have set up the collection for Google Cloud SQL, install the Sumo Logic App Google Cloud SQL to use the pre-configured searches and [dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/01Amazon_and_AWS/Amazon_CloudFront/Amazon-CloudFront-App-Dashboards#Dashboards) that provide visibility into your environment for real-time analysis of overall usage.
 
@@ -209,16 +202,11 @@ Now that you have set up the collection for Google Cloud SQL, install the Sumo L
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
-
-
 1. From the **App Catalog**, search for and select the app**.**
 2. Select the version of the service you're using and click **Add to Library**.
 
 
-17
 Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](https://help.sumologic.com/01Start-Here/Library/Apps-in-Sumo-Logic/Install-Apps-from-the-Library)
-
-
 
 1. To install the app, complete the following fields.
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
@@ -233,9 +221,9 @@ Once an app is installed, it will appear in your **Personal** folder, or other f
 Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
 
 
-## Dashboards
+## Viewing Google Cloud SQL Dashboards
 
-#### Google Cloud SQL - Overview
+### Overview
 19
 
 
@@ -262,7 +250,7 @@ See an overview of database activities—such as create, delete, update, and so 
 **Messages Over Time by Severity**. A line chart that shows the count of messages by message severity, per one hour timeslice over the last 24 hours.
 
 
-#### Google Cloud SQL - Activity
+### Activity
 21
 
 
@@ -285,7 +273,7 @@ See information about actions, messages,  operations, created, and deleted resou
 **Deleted Resources Over Time**. A column chart that shows the count of Cloud SQL resources created per one hour timeslice over the last 24 hours.
 
 
-#### Google Cloud SQL - Users
+### Users
 23
 
 
@@ -310,7 +298,7 @@ See information about your Google Cloud SQL users, including user locations; use
 **Recent User Activity**. A table that shows user activity over the last three hours, including severity, user, instance, method, and the number of operations performed.
 
 
-#### Google Cloud SQL - Failures
+### Failures
 25
 
 
