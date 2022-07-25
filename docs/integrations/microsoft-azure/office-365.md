@@ -7,17 +7,16 @@ description: Microsoft Office 365
 
 The Microsoft Office 365 App ingests Microsoft Office 365 Audit logs for Azure Active Directory, Exchange, and SharePoint. Preconfigured Dashboards allow you to monitor and analyze your complete Office 365 system for administrator and user activity.
 
-Log Types
 
-For information on Microsoft APIs and message types, see Microsoft Office 365 Audit Source.
-
-
-## Collect Logs for the Office 365 App
+## Collecting Logs for the Office 365 App
 
 This page provides instructions for configuring log collection for the Microsoft Office 365 App, as well as providing sample log messages and queries.
 
+### Log Types
 
-#### To collect logs for the Microsoft Office 365 App, do the following:
+For information on Microsoft APIs and message types, see Microsoft Office 365 Audit Source.
+
+To collect logs for the Microsoft Office 365 App, do the following:
 
 1. One [Hosted Collector](https://help.sumologic.com/03Send-Data/Hosted-Collectors/Configure-a-Hosted-Collector).
 2. One [Microsoft Office 365 Audit Source](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Microsoft-Office-365-Audit-Source) for each content type you want to collect logs for. For example:
@@ -38,7 +37,7 @@ We recommend the following Source Category naming convention:
 * **DLP**:  O365/DLP
 
 
-## Sample Log Messages
+### Sample Log Messages
 
 ```
 {  
@@ -98,7 +97,7 @@ We recommend the following Source Category naming convention:
 
 
 
-## Query Samples
+### Sample Queries
 
 **SharePoint Operations**
 
@@ -126,141 +125,19 @@ _sourceCategory=O365* Workload Operation "ResultStatus" fail*
 
 
 
-## Collect Logs for the Office 365 App
-
-This page provides instructions for configuring log collection for the Microsoft Office 365 App, as well as providing sample log messages and queries.
-
-
-###### To collect logs for the Microsoft Office 365 App, do the following:
-
-1. One [Hosted Collector](https://help.sumologic.com/03Send-Data/Hosted-Collectors/Configure-a-Hosted-Collector).
-2. One [Microsoft Office 365 Audit Source](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Microsoft-Office-365-Audit-Source) for each content type you want to collect logs for. For example:
-    * Office 365 Azure AD logs
-    * Office 365 Exchange logs
-    * Office 365 SharePoint logs
-    * Office 365 General logs
-    * Office 365 Data Loss Prevention (DLP) event logs
-
-For complete details, see [Microsoft Office 365 Audit Source](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Microsoft-Office-365-Audit-Source).
-
-We recommend the following Source Category naming convention.
-
-* **Azure AD:** O365/Azure
-* **Exchange: **O365/Exchange
-* **SharePoint: **O365/SharePoint
-* **General:** O365/SharePoint
-* **DLP**:  O365/DLP
-
-
-## Sample Log Messages
-
-```
-{  
-   "ClientIP":"62.68.137.155",
-   "CreationTime":"2017-09-25T22:42:35",
-   "Id":"9605876a-1c37-4337-ecbc-08d2409e6e9a",
-   "Operation":"FileCopied",
-   "OrganizationId":"fa0f55b5-3dac-425b-8e00-c58e5889499c",
-   "RecordType":6,
-   "UserKey":"i:0h.f|membership|10890000801fe866@live.com",
-   "UserType":4,
-   "Workload":"SharePoint",
-   "ObjectId":"partner.acme.com/shared documents/foo/PurchaseOrder.xls",
-   "UserId":"samir@acme.sharepoint.net",
-   "EventSource":"SharePoint",
-   "ItemType":"Folder",
-   "Site":"7520eb33-0a76-4dfc-a56e-a835bb541aa0",
-   "UserAgent":"Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.3; WOW64; Trident/7.0; .NET4.0E; .NET4.0C; InfoPath.3)",
-   "DestinationFileName":"PurchaseOrder.xls",
-   "DestinationRelativeUrl":"/my library/",
-   "SiteUrl":"partner.acme.com",
-   "SourceFileExtension":".xls",
-   "SourceFileName":"PurchaseOrder.xls",
-   "SourceRelativeUrl":"/shared documents/foo"
-}
-
-{  
-   "CreationTime":"2017-09-25T22:37:35",
-   "Id":"0df04c72-d3e1-4016-70ab-09f3333de0ca",
-   "Operation":"FolderBind",
-   "OrganizationId":"fa0f27b5-3dac-425b-8e00-c58e5889499c",
-   "RecordType":2,
-   "ResultStatus":"Succeeded",
-   "UserKey":"10037FFE8EDD1D69",
-   "UserType":2,
-   "Workload":"Exchange",
-   "UserId":"",
-   "ClientIPAddress":"146.139.54.184",
-   "ClientInfoString":"Client=WebServices;10.5.2.0ES10;",
-   "ExternalAccess":false,
-   "InternalLogonType":0,
-   "LogonType":1,
-   "LogonUserSid":"S-1-5-21-802669544-745651041-3938370137-2862061",
-   "MailboxGuid":"6f541602-34c4-4846-9d98-40ce28ff6dc2",
-   "MailboxOwnerSid":"S-1-5-21-802669544-745651041-3938370137-2707171",
-   "MailboxOwnerUPN":"john@acme.com",
-   "OrganizationName":"ACME.com",
-   "OriginatingServer":"BLUPR02MB327 (15.02.0396.020)\r\n",
-   "Item":{  
-      "Id":"LgCDEFCvDwkeofbHT4Xu0aodZZIMAQBaMVsTsKq8RIhghXhDomkECDEFAAEUBCEB",
-      "ParentFolder":{  
-         "Id":"LgCDEFCvDwkeofbHT4Xu0aodZZIMAQBaMVsTsKq8RIhghXhDomkECDEFAAEUBCEB",
-         "Path":"\\Recoverable Items\\Deletions"
-      }
-   }
-```
-
-
-
-## Query Samples
-3
-
-
-**SharePoint Operations**
-
-
-```
-_sourceCategory=O365* CreationTime Workload ("\"Workload\":\"SharePoint\"" or "\"Workload\":\"OneDrive\"")
-| json "Operation", "Workload"
-| where Workload in ("SharePoint", "OneDrive")
-| timeslice by 1h
-| count _timeslice, operation
-| transpose row _timeslice column operation
-```
-
-
-**Failed Activity by Workload**
-
-
-```
-_sourceCategory=O365* Workload Operation "ResultStatus" fail*
-| json "Workload", "ResultStatus", "Operation"
-| where resultstatus matches "*fail*" or resultstatus matches "*Fail*"
-| timeslice 1h
-| count _timeslice, workload
-| transpose row _timeslice column workload
-```
-
-
-
-## Install the Microsoft Office 365 App
+## Installing the Microsoft Office 365 App
 
 Now that you have configured Office 365, install the Sumo Logic App for Microsoft Office 365 to take advantage of the preconfigured searches and [dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/04Microsoft-and-Azure/Microsoft_Office_365/Microsoft-Office-365-App-Dashboards#Dashboards) to analyze your data.
 
 **To install the app:**
 
-Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
-
+Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**
 
 
 1. From the **App Catalog**, search for and select the app**.**
 2. Select the version of the service you're using and click **Add to Library**.
 
-
-5
 Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library](https://help.sumologic.com/01Start-Here/Library/Apps-in-Sumo-Logic/Install-Apps-from-the-Library).
-
-
 
 1. To install the app, complete the following fields.
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app.
@@ -274,32 +151,18 @@ Panels will start to fill automatically. It's important to note that each panel 
 
 To see your data in the panels of Office 365 - SharePoint - Shared Content Non-Domain Activities dashboard, open the queries of each panel.
 
-
-6
-
-
 Add your domain in all the queries in the highlighted section as shown below. Click **Update Dashboard** to save the queries. You will now see your data in the Panels.
 
 
-7
-
-
-
-## Dashboards
-8
-
+## Viewing Office 365 Dashboards
 
 The Sumo Logic App for Microsoft Office 365 provides insights for Azure Active Directory, Exchange, and SharePoint. The pre-configured dashboards allow you to monitor the failures, successes, and other operations in Office 365 system.
 
 
-### Office 365 - Overview
-9
-
+### Overview
 
 Shows details of Office 365 successful and failed activities, and SharePoint, Exchange, and Azure operations.
 
-
-10
 
 
 **Successful Activity by Workload. **Compare your overall Office 365 workload activity by service as an area chart on a timeline for the last 24 hours.
@@ -318,7 +181,7 @@ Shows details of Office 365 successful and failed activities, and SharePoint, Ex
 
 
 
-#### Office 365 - Usage by Location
+#### Usage by Location
 12
 
 
@@ -342,7 +205,7 @@ Shows Office 365, Azure Active Directory, Exchange, Share Point and One Drive tr
 
 
 
-#### Office 365 - Active Directory - Login Locations
+#### Active Directory - Login Locations
 15
 
 
@@ -361,7 +224,7 @@ Shows the failed and successful logins by location.
 **Successful Logins Outside the US.** See the world map having the successful logins in the last 24 hours.
 
 
-#### Office 365 - Active Directory - Login Monitoring
+#### Active Directory - Login Monitoring
 17
 
 
@@ -410,7 +273,7 @@ Successful Logins
 **Login Failure Outlier.** See a line chart with the login failure count for every hour over the last 7 days along with the threshold values.
 
 
-### Office 365 - Active Directory - User, Account Monitoring
+### Active Directory - User, Account Monitoring
 22
 
 
@@ -431,7 +294,7 @@ Shows details of Added and Deleted Users, Password Resets and Changes, and Added
 **Added or Removed Members from Group**. See a table with the details of member addition and removal from a group such as the time, object ID, user ID, group name, status, and event count, for the last 7 days.
 
 
-#### Office 365 - Active Directory Activity
+#### Active Directory Activity
 24
 
 
@@ -457,7 +320,7 @@ Shows details such as admin activity, transaction by client location, operations
 
 
 
-#### Office 365 - Exchange - Admin Audit
+#### Exchange - Admin Audit
 27
 
 
@@ -482,7 +345,7 @@ Shows details of operations, user types, and configuration changes in Exchange.
 **Configuration Changes (All)**. See the details on all configuration changes in a table chart, including information on user ID, object ID, originating server, operation, name, value, and frequency for the last 14 days.
 
 
-#### Office 365 - Exchange - Group Audit
+#### Exchange - Group Audit
 29
 
 
@@ -507,7 +370,7 @@ Shows the active users, operations, folders and recent activities.
 **Recent Activities (External Access)**. See a table of details of recent activities through external access such as time, user ID, client IP, originating server, operation, client process name, client version, and logon type.
 
 
-### Office 365 - Exchange - Mailbox Audit
+### Exchange - Mailbox Audit
 31
 
 
@@ -532,7 +395,7 @@ Shows the details of users, operations, IPs, client, logon types, and external a
 **External Access**. See a table with details on external access such as client IP address, originating server, Organization name, Mailbox owner UPN, logon type, user type, user ID, and operation.
 
 
-### Office 365 - Exchange - Mailbox Audit - Client Locations
+### Exchange - Mailbox Audit - Client Locations
 33
 
 
@@ -556,7 +419,7 @@ Shows the clients by locations and over time.
 
 
 
-#### Office 365 - SharePoint - Content Insight
+#### SharePoint - Content Insight
 36
 
 
@@ -581,7 +444,7 @@ Shows details of URLs accessed, downloaded, uploaded, viewed, checked in, and ch
 **Contents CheckedIn-CheckedOut Recently**. See the information on content that was checked in and checked out recently in a table chart, including details on source relative URL and source file name for the last 24 hours.
 
 
-#### Office 365 - SharePoint - Shared Content Non-Domains Activities
+#### SharePoint - Shared Content Non-Domains Activities
 38
 
 
@@ -610,7 +473,7 @@ To see your data in this dashboard, open the queries of each panel and add your 
 **Top 10 Contents Viewed by Non-Domain Users**. See the top 10 content items viewed by non-domain users in a table chart, including details on source relative URL, source file name, and frequency for the last seven days.
 
 
-#### Office 365 - SharePoint - User Activity
+#### SharePoint - User Activity
 40
 
 
@@ -633,7 +496,7 @@ Shows details of active users, active IPs, and count of user sharing content.
 **Top 10 Users Uploading Content**. See the details on the top 10 users who have uploaded content in a table chart including details on user ID and frequency for the last 24 hours.
 
 
-#### Office 365 - SharePoint - Visitor Locations
+#### SharePoint - Visitor Locations
 42
 
 

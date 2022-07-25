@@ -9,7 +9,12 @@ The Active Directory JSON App helps you monitor your Windows Active Directory de
 
 We recommend using the Active Directory JSON App in combination with the Windows JSON App.
 
-Log Types
+
+## Collecting Logs
+
+This page provides instructions on configuring log collection for the Active Directory JSON App so that logs are collected from the Microsoft Windows Event Log and ingested into Sumo Logic.
+
+### Log Types
 Standard Windows event channels include:
 * Security
 * System
@@ -17,25 +22,14 @@ Standard Windows event channels include:
 
 Custom event channels, such as PowerShell or Internet Explorer are also supported.
 
-
-
-## Collect Logs
-
-This page provides instructions on configuring log collection for the Active Directory JSON App so that logs are collected from the Microsoft Windows Event Log and ingested into Sumo Logic.
-
-
 ### Configure a Collector and a Source
 
-
-**To configure a collector and source, do the following:**
+To configure a collector and source, do the following:
 
 1. Configure an [Installed Windows collector](https://help.sumologic.com/03Send-Data/Installed-Collectors/03Install-a-Collector-on-Windows) through the user interface or from the command line.
 2. Configure either a local or remote Windows Event Log source. To configure a Windows Event Log source set the following:
-    * **Event Format.** Select **Collect using JSON format. \
- \
-**
-2
-** \
+    * **Event Format.** Select **Collect using JSON format.
+
 Collect using JSON format.** Events are formatted into JSON that is designed to work with Sumo Logic features, making it easier for you to reference your data.
     * **Event Collection Level.** When JSON format is selected you have to select Complete Message from the dropdown. \
 
@@ -77,7 +71,7 @@ _sourceCategory=Labs/windows-jsonformat
 
 
 
-## Install the Active Directory JSON App
+## Installing the Active Directory JSON App
 
 To install the app:
 
@@ -102,24 +96,17 @@ Once an app is installed, it will appear in your **Personal** folder, or other f
 Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
 
 
-## Dashboard Filter with Template Variables
+## Viewing Active Directory JSON Dashboards
 
-Template variables provide dynamic dashboards that rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you can view dynamic changes to the data for a fast resolution to the root cause. For more information, see the [Filter with template variables](https://help.sumologic.com/Visualizations-and-Alerts/Dashboard_(New)/Filter_with_template_variables) help page.
+:::tip Filter with template variables    
+Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards-new/filter-with-template-variables.md).
+:::
 
-
-8
-You can use template variables to drill down and examine the data on a granular level.
-
-
-#### Active Directory Service Activity
-9
-
+### Service Activity
 
 The **Active Directory Service Activity** dashboard provides insights into overall active directory services like messages overtime, logon/off activity, object creation, and deletion.
 
-**Use this dashboard to:**
-
-
+**Use this dashboard to:
 
 * Monitor object creation and deletion activities.
 * Monitor rights assigned to a user or rights removed from a user.
@@ -127,23 +114,13 @@ The **Active Directory Service Activity** dashboard provides insights into overa
 * Monitor top 10 activities with concise message.
 
 
-10
 
-
-
-### Active Directory Service Failures
-11
-
+### Service Failures
 
 The **Active Directory Service Failures** dashboard provides an at-a-glance view of success, failures, and audit failures overtime.
 
-**Use this dashboard to:**
-
-
+**Use this dashboard to:
 
 * Monitor success and failure trends to check for any deviation from normal.
 * Monitor all failed audit events along with administrative activities by event categories.
 * Track IP addresses associated with failed activities.
-
-
-12

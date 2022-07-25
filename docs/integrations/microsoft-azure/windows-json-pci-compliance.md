@@ -8,7 +8,7 @@ description: Windows JSON PCI Compliance
 This guide helps you set up Sumo Logic Collectors, and install the PCI Compliance for Windows JSON application, so you can begin monitoring your usage and determine if you are meeting Compliance benchmarks.
 
 
-## Collect Logs
+## Collecting Logs
 
 
 This page provides instructions for configuring log collection for the PCI Compliance for Windows JSON App.
@@ -47,7 +47,7 @@ Make sure to set the Source Category when configuring the Windows Event Log sour
 ### Sample Log Messages  
 
 
-```
+```json
 {"TimeCreated":"2020-10-12T07:31:14+000039800Z","EventID":"1102","Task":104,"Correlation":"","Keywords":"Audit
 Success","Channel":"Security","Opcode":"Info","Security":"","Provider":{"Guid":"{fc65ddd8-d6ef-4962-83d5-6e5cfe9ce148}",
 "Name":"Microsoft-Windows-Eventlog"},"EventRecordID":101802,"Execution":{"ThreadID":2896,"ProcessID":908},"Version":0,"Computer":
@@ -73,7 +73,7 @@ _sourceCategory=OS/Windows/Events ( "Audit Policy Change" or "System audit polic
 ```
 
 
-## Install the Sumo Logic App
+## Installing the PCI Compliance for Windows JSON App
 
 This section provides instructions for installing the PCI Compliance for Windows JSON App, along with examples of each of the App dashboards. The PCI Compliance for Windows JSON App offers pre-built dashboards and queries to help you track your Windows system, user accounts, login activity, and Windows updates.
 
@@ -103,21 +103,16 @@ Once an app is installed, it will appear in your **Personal** folder, or other f
 Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
 
 
-## Dashboard Filter with Template Variables  
+## Viewing PCI Compliance for Windows JSON Dashboards
 
-Template variables provide dynamic dashboards that rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you can view dynamic changes to the data for a fast resolution to the root cause. For more information, see the [Filter with template variables](https://help.sumologic.com/Visualizations-and-Alerts/Dashboard_(New)/Filter_with_template_variables) help page.
-
-
-9
-You can use template variables to drill down and examine the data on a granular level.
+:::tip Filter with template variables    
+Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards-new/filter-with-template-variables.md).
+:::
 
 
 ### Windows - PCI Req 02, 08, 10 - Account, User, System Monitoring
 
 Track your user accounts and recent system changes.
-
-
-
 
 * **User Account Created. **Aggregation table of the number of user accounts created in the last 24 hours.
 * **User Account Deleted.** Aggregation table of the number of user accounts deleted in the last 24 hours.
@@ -137,7 +132,6 @@ Track your user accounts and recent system changes.
 
 Track login successes and failures.
 
-
 * **Failed Logins.** Count of failed logins over the last 24 hours.
 * **Failed Logins.** Aggregation table of the date,
 * **Successful logins.** Total number of successful logins over the last 24 hours. Compare to Failed Logins to determine if the number of failed logins to successful logins is consistent with normal behavior or indicative of an attack.
@@ -150,8 +144,6 @@ Track login successes and failures.
 
 Track user activities such as password changes, password resets, excessive failed access attempts, unlocked accounts, and disabled accounts.
 
-
-
 * **User Account Password Changes. **Displays an aggregation table of the times passwords were changed, the destination host, destination user, source host, and source user, source domain, error message, error code, and the number of events that occurred.
 * **User Account Password Reset. **Displays an aggregation table of the times passwords were reset, the destination host, destination user, source host, and source user, source domain, error message, error code, and the number of events that occurred.
 * **Excessive Failed Access Attempts.** Displays an aggregation table of the excessive failed access attempts, the destination host, destination user, source host, and source user, source domain, error message, error code, and the number of events that occurred.
@@ -162,7 +154,6 @@ Track user activities such as password changes, password resets, excessive faile
 ### Windows - PCI Req 06 - Windows Updates Activity
 
 Track your Windows Update activities.
-
 
 * **All Windows Updates.** Aggregation table displaying all updated hosts in the past 24 hours, success/failure of that update, and any relevant error codes.
 * **Recent Windows Update Failures.** Aggregation table displaying all update failures in the last 7 days, update that failed, time of failure, and current status.

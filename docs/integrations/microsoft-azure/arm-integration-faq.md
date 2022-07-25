@@ -31,10 +31,6 @@ The Sumo Logic app has been tested on v0.10.40, the oldest supported version. Th
 
 
 #### What happens if the template is re-deployed? Are the resources recreated? Is there any data loss?
-3
-
-
-
 
 * If the resource already exists in the resource group and its settings are unchanged, the operation results in no change.
 * If you change the settings for a resource, the resource is provisioned with the new settings.
@@ -341,32 +337,18 @@ Another approach is to modify the function to send source category in headers. F
 
 
 #### How do I filter events by container name?
-36
 
-
-**To filter events by container name, do the following:**
-
-
+**To filter events by container name, do the following:
 
 1. Go to **Event subscription > Filters** tab.
 2. Enter the following in the Subject Begins With field, replacing **&lt;container_name>** with the name of the container from where you want to export logs.
-
-
 ```
 /blobServices/default/containers/<container_name>/
 ```
 
 
 
-37
-
-
-
-## How do I troubleshoot Blob Storage integration?
-38
-
-
-
+#### How do I troubleshoot Blob Storage integration?
 
 * Verify Block Blob Create Events are getting published - If events are not getting created, then either no new blobs are getting created or the event grid subscription subscriber settings is not configured right. For example, the regex for container does not match or the event grid service could be down.
 * Verify Event Hub is receiving log messages - If events are not getting into the Event Hub, then the event grid subscription publisher settings are not configured properly.
@@ -374,9 +356,7 @@ Another approach is to modify the function to send source category in headers. F
 * Verify with live tail - If you are getting logs into sumo and everything else checked out, then there might be an issue in SUMOBRTaskConsumer function. Check the function's invocation logs. For example, it may not be able to read the from Storage Account, the blob may have been deleted before it was read, or the log format may not be supported.
 
 
-#### Blob Reader error messages
-39
-
+## Blob Reader error messages
 
 
 ```Error: The request is being throttled. at client.pipeline.error (D:\home\site\wwwroot\BlobTaskConsumer\node_modules\azure-arm-storage\lib\operations\storageAccounts.js:1444:19) at retryCallback (D:\home\site\wwwroot\BlobTaskConsumer\node_modules\ms-rest\lib\filters\systemErrorRetryPolicyFilter.js:89:9) at retryCallback (D:\home\site\wwwroot\BlobTaskConsumer\node_modules\ms-rest\lib\filters\exponentialRetryPolicyFilter.js:140:9) at D:\home\site\wwwroot\BlobTaskConsumer\node_module...FunctionName: BlobTaskConsumer
@@ -418,7 +398,7 @@ To this:
 Error:  Azure fails to install dependencies on a node. System.AggregateException : One or more errors occurred. ---> Error: Cannot find module 'azure-storage' \
 ```
 
-Solution:  Run **<code>npm install</code></strong> from the console. \
+Solution:  Run `npm install` from the console.
 
 
 

@@ -12,19 +12,11 @@ For more information on Azure Web Apps, see [https://azure.microsoft.com/en-us/s
 To install the Sumo Logic App for Azure Web Apps, you must sign up for a Sumo Logic account, if you have not already done so. To sign up, go to [https://www.sumologic.com/pricing/](https://www.sumologic.com/pricing/) and select your account type or click Free Trial to sign up for a Sumo Logic Free account.**   **
 
 
-## Log Types
-
-The Azure Web Apps App supports:
-
-* **Web Server Logging. **Information about HTTP transactions using the [W3C extended log file format](http://msdn.microsoft.com/library/windows/desktop/aa814385.aspx). This is useful when determining overall site metrics such as the number of requests handled or how many requests are from a specific IP address.
-* **Application Diagnostics Logs.** Application diagnostics allows you to capture information produced by a web application. ASP.NET applications can use the [System.Diagnostics.Trace](http://msdn.microsoft.com/library/windows/desktop/aa814385.aspx) class to log information to the application diagnostics log.
-
 
 ## Collect Logs for Azure Web Apps
 
 
 This page has instructions for configuring a pipeline for shipping Azure Web Apps logs from [Azure Monitor](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-get-started) to an Event Hub, on to an Azure Function, and finally to an HTTP source on a hosted collector in Sumo Logic. Click a link to jump to a topic:
-
 
 * [Solution Overview](https://help.sumologic.com/07Sumo-Logic-Apps/04Microsoft-and-Azure/Azure_Web_Apps/01Collect-Logs-for-Azure-Web-Apps#Solution_Overview)
 * [Configure an HTTP source](https://help.sumologic.com/07Sumo-Logic-Apps/04Microsoft-and-Azure/Azure_Web_Apps/01Collect-Logs-for-Azure-Web-Apps#Step_1:_Configure_an_HTTP_source)
@@ -35,9 +27,14 @@ This page has instructions for configuring a pipeline for shipping Azure Web App
 * [Sample Log Message](https://help.sumologic.com/07Sumo-Logic-Apps/04Microsoft-and-Azure/Azure_Web_Apps/01Collect-Logs-for-Azure-Web-Apps#Sample_Log_Message)
 * [Query Sample](https://help.sumologic.com/07Sumo-Logic-Apps/04Microsoft-and-Azure/Azure_Web_Apps/01Collect-Logs-for-Azure-Web-Apps#Query_Sample)
 
+### Log Types
+
+The Azure Web Apps App supports:
+* **Web Server Logging. **Information about HTTP transactions using the [W3C extended log file format](http://msdn.microsoft.com/library/windows/desktop/aa814385.aspx). This is useful when determining overall site metrics such as the number of requests handled or how many requests are from a specific IP address.
+* **Application Diagnostics Logs.** Application diagnostics allows you to capture information produced by a web application. ASP.NET applications can use the [System.Diagnostics.Trace](http://msdn.microsoft.com/library/windows/desktop/aa814385.aspx) class to log information to the application diagnostics log.
+
 
 ### Solution Overview
-
 The following is how the solution fits together:
 
 * Azure Monitor collects logs for most Microsoft Azure services, including Azure Web Apps, and streams the data to an Azure Event Hub.
@@ -170,7 +167,7 @@ _sourceCategory=Azure/Web-app
 ```
 
 
-## Install the Sumo Logic App
+## Installing the Azure Web Apps App
 
 This page provides instructions on how to install the Azure Web Apps App, and shows examples of each of the preconfigured [dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/04Microsoft-and-Azure/Azure_Web_Apps/Azure-Web-Apps-Dashboards#Dashboards) you can use to analyze your data.
 
@@ -202,18 +199,11 @@ Once an app is installed, it will appear in your **Personal** folder, or other f
 Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
 
 
-## Dashboards
-21
+## Viewing Azure Web Apps Dashboards
 
 
 
-### Azure Web Apps - Overview
-22
-
-
-
-23
-
+### Overview
 
 **Visits by Country.** Performs a geo location operation to display the IP addresses of visitors on a map of the world for the last three hours.
 
@@ -232,13 +222,7 @@ Panels will start to fill automatically. It's important to note that each panel 
 **Errors by Country.** Displays the number of errors by country in a bar chart for the last three hours.
 
 
-### Azure Web Apps - Server Operation - Errors and Response Codes
-24
-
-
-
-25
-
+### Server Operation - Errors and Response Codes
 
 **Server Errors by Site.** Shows details on server errors by site in a column chart for the last three hours.
 
@@ -251,13 +235,7 @@ Panels will start to fill automatically. It's important to note that each panel 
 **Client Errors.** Displays details on client errors in a column chart for the last three hours.
 
 
-### Azure Web Apps - Server Operation - Requests and Response Time
-26
-
-
-
-27
-
+### Server Operation - Requests and Response Time
 
 **Requests by Hostname.** Displays the number of requests by hostname in a line chart on a timeline for the last three hours.
 
@@ -270,13 +248,7 @@ Panels will start to fill automatically. It's important to note that each panel 
 **Response Throughput.** Shows details on response throughput in a table chart including information on the URL and the average throughput in seconds for the last three hours.
 
 
-### Azure Web Apps - Traffic Insights - Apps and Requests
-28
-
-
-
-29
-
+### Traffic Insights - Apps and Requests
 
 **Visits by Country. **Performs a geo lookup operation and displays the IP addresses of worldwide visitors on a map of the world for the last three hours.
 
@@ -289,13 +261,7 @@ Panels will start to fill automatically. It's important to note that each panel 
 **Traffic Over Time (Outlier).** Shows the traffic and any outliers in an outlier chart on a timeline for the last 24 hours.
 
 
-### Azure Web Apps - Traffic Insights - Content and Client Platform
-30
-
-
-
-31
-
+### Traffic Insights - Content and Client Platform
 
 **Media Types Requested Over Time.** Displays media types requested over time by count in a line chart on a timeline in the last three hours.
 

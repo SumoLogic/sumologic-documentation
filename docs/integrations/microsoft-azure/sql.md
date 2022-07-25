@@ -8,6 +8,11 @@ description: Azure SQL
 
 Azure SQL Database is a managed relational cloud database service. The Sumo Logic app for Azure SQL helps you monitor activity in Azure SQL. The preconfigured dashboards provide insight into resource utilization, blocking queries, database wait events, errors, runtime execution stats, and other database analytics.
 
+
+## Collect Logs and Metrics
+
+This page has instructions for collecting logs and metrics for the Azure SQL App, as well as a sample log message and a query sample.
+
 ### Log types
 
 The Sumo Logic App for Azure SQL App uses the following log types:
@@ -21,13 +26,7 @@ The Sumo Logic App for Azure SQL App uses the following log types:
 * Insight
 * TimeoutEvent
 
-For details on Azure SQL logs and metrics see [Enable logging](https://docs.microsoft.com/en-us/azure/sql-database/sql-database-metrics-diag-logging#enable-logging) in Azure help.
-
-
-## Collect Logs and Metrics
-
-This page has instructions for collecting logs and metrics for the Azure SQL App, as well as a sample log message and a query sample.
-
+For details on Azure SQL logs and metrics, see [Enable logging](https://docs.microsoft.com/en-us/azure/sql-database/sql-database-metrics-diag-logging#enable-logging) in Azure help.
 
 ### Collect diagnostic logs from Azure Monitor by streaming to EventHub
 
@@ -71,8 +70,6 @@ In Step 1, you create an HTTP source. When you configure the, plan your source c
 
     6. The **Diagnostic Settings** page appears. \
 
-
-
         1. In the left pane
             * Enter a name for the diagnostic setting.
             * Click the  **Stream to an event hub **checkbox.
@@ -88,19 +85,17 @@ In Step 1, you create an HTTP source. When you configure the, plan your source c
 
 
 ### Sample log messages
-6
 
 
 **ErrorEvent**
 
 
-```
+```json
 {"LogicalServerName":"npande-test-db-server","SubscriptionId":"c088dc46-d123-12ad-a8b7-9a123d45ad6a","ResourceGroup":"npandeTestDBResGrp","time":"2018-07-09T05:08:32.679Z","resourceId":"/SUBSCRIPTIONS/c088dc46-d123-12ad-a8b7-9a123d45ad6a/RESOURCEGROUPS/NPANDETESTDBRESGRP/PROVIDERS/MICROSOFT.SQL/SERVERS/NPANDE-TEST-DB-SERVER/DATABASES/NPANDETESTDB2","category":"Errors","operationName":"ErrorEvent","properties":{"ElasticPoolName":"","DatabaseName":"npandeTestDB2","query_hash":"0","query_plan_hash":"0","message":"Invalid object name 'inventory123'.","error_number":208,"severity":16,"user_defined":false,"state":1}}
 ```
 
 
 **DatabaseWaitStatisticsEvent**
-
 
 ```
 {"LogicalServerName":"npande-test-db-server","SubscriptionId":"c088dc46-d123-12ad-a8b7-9a123d45ad6a"","ResourceGroup":"npandeTestDBResGrp","time":"2018-07-09T05:13:34.520Z","resourceId":"/SUBSCRIPTIONS/c088dc46-d123-12ad-a8b7-9a123d45ad6a"/RESOURCEGROUPS/NPANDETESTDBRESGRP/PROVIDERS/MICROSOFT.SQL/SERVERS/NPANDE-TEST-DB-SERVER/DATABASES/NPANDETESTDB","category":"DatabaseWaitStatistics","operationName":"DatabaseWaitStatistcsEvent","properties":{"ElasticPoolName":"","DatabaseName":"npandeTestDB","start_utc_date":"2018-07-09T05:13:34.520Z","end_utc_date":"2018-07-09T05:18:36.050Z","wait_type":"WRITELOG","delta_max_wait_time_ms":0,"delta_signal_wait_time_ms":0,"delta_wait_time_ms":12,"delta_waiting_tasks_count":2}}
@@ -108,14 +103,10 @@ In Step 1, you create an HTTP source. When you configure the, plan your source c
 
 
 
-### Query Sample
-7
+### Sample Query
 
 
-**Top 10 Errors**
-
-
-```
+```sql title="Top 10 Errors"
 _sourceCategory=Azure/DB/SQL/Logs ErrorEvent "\"operationName\":\"ErrorEvent\""
 | json "LogicalServerName", "SubscriptionId", "ResourceGroup", "resourceId", "category", "operationName", "properties" nodrop
 | json field=properties "severity", "error_number", "DatabaseName", "message", "user_defined", "state"
@@ -127,7 +118,7 @@ _sourceCategory=Azure/DB/SQL/Logs ErrorEvent "\"operationName\":\"ErrorEvent\""
 
 
 
-## Install the Azure SQL App
+## Installing the Azure SQL App
 
 Now that you have set up a collection of Azure SQL logs and metrics, install the Azure SQL App to use the pre-configured searches and dashboards.
 
@@ -135,12 +126,9 @@ Now that you have set up a collection of Azure SQL logs and metrics, install the
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
-
-
 1. From the **App Catalog**, search for and select the app.
-2. To install the app, click **Add to Library**. \
+2. To install the app, click **Add to Library**.
 
-9
 
 3. **App Name**. You can retain the existing name, or enter a name of your choice for the app. 
 4. **Azure SQL Metrics Source**. Select the source category that you configured for the .... source.
@@ -153,15 +141,12 @@ Once an app is installed, it will appear in your Personal folder, or other folde
 Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
 
 
-## Dashboards
-10
-
+## Viewing the Azure SQL Dashboards
 
 This section describes the dashboards in the Sumo Logic App for Azure SQL.
 
 
-### Azure SQL - Overview
-11
+### Overview
 
 
 See the count of logical servers, databases, errors; and the “top 10” active servers, resource groups, subscriptions, resources, databases, operations, and categories.
@@ -203,7 +188,7 @@ See the count of logical servers, databases, errors; and the “top 10” active
 **Operations Trend**. A stacked bar chart that shows the count of different operations over the last 24 hours.
 
 
-### Azure SQL - Blocking Stats
+### Blocking Stats
 13
 
 
@@ -238,7 +223,7 @@ Wait Events by Database. A donut chart that shows the count of wait events by lo
 **Detailed Stats.** A table that lists information about wait events in the last 24 hours.
 
 
-### Azure SQL - Errors
+### Errors
 15
 
 
@@ -267,7 +252,7 @@ See information about errors in Azure SQL, including total error count, top 10 e
 **Error Details**. A table that lists the details of errors that occurred during the previous 24 hours.
 
 
-### Azure SQL - Metrics
+### Metrics
 17
 
 
@@ -320,7 +305,7 @@ For information about the metrics presented in the Metrics dashboards, see [All 
 **Log Write Percent**. Displays average log I/O percentage over the last 24 hours.
 
 
-### Azure SQL - QueryStoreRuntime Stats
+### QueryStoreRuntime Stats
 19
 
 
@@ -367,7 +352,7 @@ For more information about the statistics presented on the QueryStoreRuntime Sta
 **Execution Type of Query**. A stacked column chart that shows the count of queries by execution type: Regular, Aborted, or Exception over the last 24 hours.
 
 
-### Azure SQL - QueryStoreWait Stats
+### QueryStoreWait Stats
 21
 
 
@@ -394,7 +379,7 @@ For more information about the statistics presented on the QueryStoreWaitStats d
 **Wait Details**. The table displays wait statistics as encountered by queries on a given database, residing on a given logical server in the last 24 hours.
 
 
-### Azure SQL - SQLInsights
+### SQLInsights
 23
 
 
@@ -417,7 +402,7 @@ For more information about the data presented on the SQLInsights dashboard, see 
 **Issue Details**. Displays information about the progress of issues throughout the resolution process.
 
 
-### Azure SQL - Timeouts
+### Timeouts
 
 See information about timeouts in Azure SQL.
 

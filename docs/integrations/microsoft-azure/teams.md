@@ -8,8 +8,6 @@ description: Microsoft Teams
 
 The Microsoft Teams app provides out-of-the-box dashboards to monitor users, teams, channels and permission changes.
 
-Log Types  
-The Teams app provides visibility into the logging that Microsoft exposes in the Office 365 Audit Logs for Microsoft Teams. Logged events are grouped into the following categories:
 
 User Sessions
 Teams
@@ -17,11 +15,16 @@ Channels
 Users and Roles
 For more information please see Microsoft’s list of Teams Activities.
 
-## Collect Logs
+## Collecting Logs
 
-This page has instructions for collecting logs for the Sumo App for Teams.
+This section has instructions for collecting logs for the Sumo App for Teams.
+
+Log Types  
+
+The Teams app provides visibility into the logging that Microsoft exposes in the Office 365 Audit Logs for Microsoft Teams. Logged events are grouped into the following categories:
 
 Collection process overview
+
 To collect logs for Microsoft Teams, please configure an Office 365 Audit Source. The Teams logs will be present in the “Office 365 General Logs” context. Note, that if you are already collecting logs for Office 365, you can simply make note of the source category configured for the aforementioned context.
 
 Sample Log Message
@@ -45,7 +48,7 @@ _sourceCategory="O365/General"
 | count by operation
 ```
 
-### Install the App   
+## Installing the Microsoft Teams App   
 
 This page has instructions for installing the Microsoft Teams app and descriptions of each of the app dashboards.
 
@@ -60,8 +63,6 @@ Locate and install the app you need from the **App Catalog**. If you want to see
 
 Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](https://help.sumologic.com/01Start-Here/Library/Apps-in-Sumo-Logic/Install-Apps-from-the-Library)
 
-
-
 1. To install the app, complete the following fields.
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
     2. **Data Source.** Select either of these options for the data source. 
@@ -75,15 +76,11 @@ Once an app is installed, it will appear in your **Personal** folder, or other f
 Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
 
 
-## Dashboards  
-image3.gif "image_tooltip")
-
+## Viewing Microsoft Teams Dashboards  
 
 The Teams - Overview dashboard provides an at-a-glance view of the state of your Teams environment in terms of user sessions, teams and channel activity, and user role changes
 
 Use this dashboard to:
-
-
 
 * Identify user sessions relative to their locations
 * Report the top users creating teams and channels
@@ -91,13 +88,7 @@ Use this dashboard to:
 * Report on the top users and objects relative to role changes
 
 
-image4
-
-
-
 ### Teams - User Sessions
-image5.gif "image_tooltip")
-
 
 The Teams - User Sessions dashboard provides an in depth view of the user logins and related statistics in your Teams environment
 
@@ -115,7 +106,7 @@ image6
 
 
 ### Teams - Team Statistics
-image7.gif "image_tooltip")
+image7
 
 
 The Teams - Team Statistics dashboard offers complete details on the Team activity occurring in your organization.

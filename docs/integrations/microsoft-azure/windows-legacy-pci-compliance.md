@@ -1,13 +1,13 @@
 ---
 id: windows-legacy-pci-compliance
 title: Sumo Logic App for Windows Legacy PCI Compliance
-sidebar_label: Windows Legacy PCI Compliance
+sidebar_label: Windows PCI Compliance (Legacy)
 description: Windows Legacy PCI Compliance
 ---
 
 This guide helps you set up Sumo Logic Collectors, and install the PCI Compliance for Windows Legacy application, so you can begin monitoring your usage and determine if you are meeting Compliance benchmarks.
 
-## Collect Logs
+## Collecting Logs
 
 This page provides instructions for configuring log collection for the PCI Compliance for Windows Legacy App.
 
@@ -86,7 +86,7 @@ This page provides instructions for configuring log collection for the PCI Compl
 
 
 
-## Install the PCI Compliance for Windows Legacy App
+## Installing the PCI Compliance for Windows Legacy App
 
 This page provides instructions for installing the PCI Compliance for Windows Legacy App, along with examples of each of the App dashboards. The PCI Compliance for Windows Legacy App offers pre-built dashboards and queries to help you track your Windows system, user accounts, login activity, and Windows updates.
 
@@ -118,7 +118,7 @@ Once an app is installed, it will appear in your **Personal** folder, or other f
 Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
 
 
-## Dashboards
+## Viewing the Windows Legacy PCI Compliance Dashboards
 
 ### Windows - PCI Req 02, 08, 10 - Account, User, System Monitoring
 
