@@ -5,6 +5,8 @@ sidebar_label: AWS Security Hub
 description: AWS Security Hub
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 AWS Security Hub is an AWS security service that provides a comprehensive view of your security state within AWS and your compliance with the security industry standards and best practices.
 
 The Sumo Logic App for AWS Security Hub leverages findings data from Security Hub and visually displays security state data in Dashboards. The dashboards provide a high-level view of findings, showing the type, when they occurred, the resources that were affected, their severity, and their distribution, showing the current security and compliance status of an AWS account from all sources.
@@ -34,3 +36,7 @@ This page shows you how to add a hosted collector and AWS S3 Source and deploy a
 
 ## Install the AWS Security Hub App and view the Dashboards
 This page shows you how to install the Sumo App for AWS, and provides descriptions of each of the app dashboards.
+
+## Viewing AWS Dashboards
+
+<img src={useBaseUrl('img/integrations/amazon-aws/Overview.png')} alt="AWS API Gateway" />

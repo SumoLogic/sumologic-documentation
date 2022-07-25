@@ -1,6 +1,6 @@
 ---
 id: account-plans
-title: Apps and Sumo Logic Account Plans
+title: Apps for Sumo Logic Account Plans
 description: Learn more about the availability of apps for various Sumo Logic account plans.
 hide_table_of_contents: true
 ---

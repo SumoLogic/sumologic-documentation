@@ -5,6 +5,8 @@ sidebar_label: Amazon SQS
 description: Amazon SQS
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 Amazon Simple Queue Service (Amazon SQS) is a fully managed message queuing service that makes it easy to decouple and scale microservices, distributed systems, and serverless applications. The Sumo Logic App for Amazon SQS is a unified logs and metrics (ULM) App that provides operational insights into your Amazon SQS utilization. The preconfigured dashboards help you monitor the key metrics, view the SQS events for queue activities, and help you plan the capacity of your SQS service utilization.
 
 Log and Metrics Types
@@ -18,4 +20,6 @@ SQS operations using AWS CloudTrail. For details, see here.
 
 ## Install the App
 
-## View the Dashboards
+## Viewing AWS Dashboards
+
+<img src={useBaseUrl('img/integrations/amazon-aws/Overview.png')} alt="AWS API Gateway" />

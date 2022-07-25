@@ -5,6 +5,7 @@ sidebar_label: Threat Intel for AWS
 description: Threat Intel for AWS
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Threat Intel for AWS App correlates CrowdStrike threat intelligence data with your AWS log data, allowing for real-time security analytics to help detect threats in your environment and protect against cyber-attacks. The Threat Intel for AWS App scans your AWS CloudTrail, AWS ELB and AWS VPC Flow logs for threats based on IP address.
 
@@ -16,5 +17,6 @@ The Sumo Logic Threat Intel lookup database is only available with Sumo Logic En
 
 ## Install the App
 
+## Viewing AWS Dashboards
 
-## View the Dashboards
+<img src={useBaseUrl('img/integrations/amazon-aws/Overview.png')} alt="AWS API Gateway" />

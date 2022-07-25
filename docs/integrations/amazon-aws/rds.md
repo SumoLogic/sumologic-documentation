@@ -5,6 +5,8 @@ sidebar_label: Amazon RDS
 description: Amazon RDS
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 [Amazon Relational Database Service (Amazon RDS)](https://aws.amazon.com/rds/) is optimized to run in the cloud. The RDS Amazon Web Service (AWS) simplifies the setup, operation, and scaling of relational database instances for use in applications throughout your infrastructure.
 
 The Sumo Logic Amazon RDS app dashboards provide visibility into the performance and operations of your Amazon Relational Database Service (RDS). Preconfigured dashboards allow you to monitor critical metrics of your RDS cluster including  CPU, memory, storage, network transmits and receive throughput, read and write operations, database connection count, disk queue depth, and more. Audit activity dashboards help you monitor activities performed on your RDS infrastructure.
@@ -83,3 +85,7 @@ Namespace=aws/rds metric=DatabaseConnections statistic=average account=* region=
 ## Collect Logs and Metrics
 
 ## Install the App
+
+## Viewing AWS Dashboards
+
+<img src={useBaseUrl('img/integrations/amazon-aws/Overview.png')} alt="AWS API Gateway" />

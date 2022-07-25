@@ -5,8 +5,9 @@ sidebar_label: Global Intelligence for Amazon GuardDuty
 description: Global Intelligence for Amazon GuardDuty
 ---
 
-This feature is available in the following account plans.
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
+This feature is available in the following account plans.
 
 <table>
   <tr>
@@ -54,3 +55,7 @@ The Sumo Logic App for GI GuardDuty requires the Amazon GuardDuty findings to be
 ## Collect Logs and Metrics
 
 ## Install the App
+
+## Viewing AWS Dashboards
+
+<img src={useBaseUrl('img/integrations/amazon-aws/Overview.png')} alt="AWS API Gateway" />

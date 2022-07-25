@@ -5,6 +5,8 @@ sidebar_label: Amazon SES
 description: Amazon SES
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 Amazon Simple Email Service (Amazon SES) is a cloud-based email sending and receiving service. The Sumo Logic App for Amazon SES helps you monitor the email platform activities. The app uses CloudTrail events and SES notifications, and provides pre-configured dashboards that provide insights on the status of the email delivery including bounced notifications, delivered notifications, and various SES CloudTrail events.
 
 ## Log Types
@@ -16,3 +18,7 @@ SES Notifications. For more details, see here. 
 ## Collect Logs and Metrics
 
 ## Install the App
+
+## Viewing AWS Dashboards
+
+<img src={useBaseUrl('img/integrations/amazon-aws/Overview.png')} alt="AWS API Gateway" />

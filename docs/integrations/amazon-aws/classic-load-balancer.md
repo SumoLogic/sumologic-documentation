@@ -5,6 +5,8 @@ sidebar_label: AWS Classic Load Balancer
 description: AWS Classic Load Balancer
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 AWS Elastic load balancer classic distributes the incoming application traffic across multiple EC2 instances in multiple Availability Zones.
 
 The Sumo Logic App for AWS Elastic Load Balancing Classic is a unified logs and metrics App that helps you monitor the classic load balancer. The preconfigured dashboards provide information on the latency, HTTP backend codes, requests, and host status, that help you investigate the issues in the load balancer.
@@ -77,3 +79,6 @@ account={{account}} region={{region}} Namespace={{namespace}} loadbalancername={
 ## Collect Logs and Metrics
 
 ## Install the App
+
+
+<img src={useBaseUrl('img/integrations/amazon-aws/Overview.png')} alt="Aurora MySQL ULM" />

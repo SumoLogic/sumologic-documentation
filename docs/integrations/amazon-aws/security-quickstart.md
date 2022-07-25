@@ -5,6 +5,8 @@ sidebar_label: Amazon Security Quick Start
 description: Amazon Security Quick Start
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 The Sumo Logic Amazon Security Quick Start solution helps you automate the collection of security events from AWS security services and the installation and configuration of Sumo Logic apps designed for AWS Security.
 
 ## Sumo Logic Security Integrations for AWS Organizations
