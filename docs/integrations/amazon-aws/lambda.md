@@ -12,6 +12,8 @@ AWS Lambda allows you to run code without the burden of provisioning or managing
 The Sumo Logic AWS Lambda App uses the Lambda logs via CloudWatch, CloudWatch Metrics and the CloudTrail Lambda Data Events to visualize the operational and performance trends in all the Lambda functions in your account. The preconfigured dashboards provide insights into executions, memory and duration (including cold start) usage by function versions or aliases, errors, billed duration, function callers, IAM users and threat details.
 
 
+## Collecting Logs and Metrics
+
 ### Log and metric types
 The AWS Lambda app uses the following logs and metrics:
 
@@ -35,7 +37,6 @@ This section provides sample Amazon CloudWatch Log and CloudTrail Lambda Data Ev
 
 
 **CloudTrail Lambda Data Events**
-
 
 ```
 {
@@ -85,7 +86,6 @@ This section provides sample Amazon CloudWatch Log and CloudTrail Lambda Data Ev
 
 **Requests by Function Versions (Based on CloudWatch logs)**
 
-
 ```
 account={{account}} region={{region}} Namespace={{namespace}}
 | json "message" nodrop | if (_raw matches "{*", message, _raw) as message
@@ -101,7 +101,6 @@ account={{account}} region={{region}} Namespace={{namespace}}
 
 
 **Top AWS Services Using Lambda Functions (Cloud Trail Logs Based)**
-
 
 ```
 "lambda.amazonaws.com" "\"eventName\":\"Invoke\"" "\"type\":\"AWSService\"" account={{account}} Namespace={{namespace}} region={{region}}
@@ -121,18 +120,136 @@ account={{account}} region={{region}} Namespace={{namespace}}
 | top 10 caller by Invocations
 ```
 
-
 **Error (Count)(Cloudwatch metric Based)**
-
 
 ```
 namespace=aws/lambda metric=Errors statistic=Sum account=* region=* functionname=* Resource=* | su
 ```
 
-## Collect Logs
 
-## Install the App
 
-## Viewing AWS Dashboards
 
-<img src={useBaseUrl('img/integrations/amazon-aws/Overview.png')} alt="AWS API Gateway" />
+## Installing the AWS Lambda App
+
+Now that you have set up collection for AWS Lambda, install the Sumo Logic App to use the pre-configured searches and [dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/01Amazon_and_AWS/AWS_Classic_Load_Balancer/Install-the-AWS-Classic-Load-Balancer-App-and-view-the-Dashboards#Dashboards) that provide visibility into your environment for real-time analysis of overall usage.
+
+**To install the app:**
+
+Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
+
+1. From the **App Catalog**, search for and select the app**.**
+2. To install the app, click **Add to Library** and complete the following fields.
+    * **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
+    * **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
+    * Click **Add to Library**.
+
+Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization.
+
+Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
+
+
+### About measurements
+
+This sections explains some of the measurements and calculations underlying the information presented in dashboard panels.
+
+* **Duration (ms). **This represents the function duration as the elapsed wall clock time, in milliseconds, from when a function starts executing as a result of an invocation to when it stops executing. Function duration is a measure of performance. **Billed Duration** for an invocation is the value of duration rounded up to the nearest 100 milliseconds.
+* **Memory Size**. The amount of memory allocated for a function.
+* **Max Memory (MB) Used.** The amount of memory used by a function, in MBs. This is a measure of performance.
+* **Compute Usage (GBs).** This is a product of Memory Size and Billed Duration (Memory Size * Billed Duration).
+* **Billed Compute. **memory configured on the function (in GB) x duration of the request (in seconds). In the actual query, Sumo Logic converts MB to GB and milliseconds to seconds to get the real billing numbers used. The actual cost varies by customer. This measurement is used to measure cost.
+* **Unused Memory.** This is Memory Size - Max Memory Used = Unused Memory. Because you are billed based on Memory Size (which you allocate), this is an indicator of not allocating appropriately.
+* **IteratorAge.** This AWS Lambda CloudWatch metric is emitted for stream-based invocations (functions triggered by an Amazon DynamoDB stream or Kinesis stream). Measures, in milliseconds, the age of the last record for each batch of records processed. Age is the difference between the time Lambda received the batch, and the time the last record in the batch was written to the stream.
+
+
+## Viewing the AWS Lambda Dashboards
+
+### AWS Lambda - Overview
+
+The** AWS Lambda - Overview **dashboard provides intuitive insights with CloudWatch Lambda metrics, CloudTrail audit logs for Lambda, as well as  Lambda logs to give you an at-a-glance view of actions, performance, and health of your AWS Lambda functions.
+
+Use this dashboard to:
+* Monitor how often your Lambda functions are being invoked across and ensure they are as per expectations.
+* Identify and resolve the top error messages across your Lambda functions.
+* Quickly identify top error messages, slow-performing Lambda functions, and functions using the most resources.
+* Monitor provisioned concurrency invocations, executions, and utilization.
+* Identify and validate the top IAM Users and AWS services invoke AWS Lambda functions.
+* Monitor cold start duration for lambda functions.
+
+<img src={useBaseUrl('img/integrations/amazon-aws/AWS-Lambda-Overview.png')} alt="AWS Lambda" />
+
+
+### AWS Lambda - Request Analysis
+
+**The AWS Lambda - Request Analysis** dashboard provides deeper insights into the invocations and performance of your AWS Lambda functions.
+
+Use this dashboard to:
+* Monitor the invocation of an AWS Lambda function against all other functions.
+* Identify and top callers, top caller types, and top source IPs.
+* Monitor failed and successful requests by function name to quickly identify when failed requests are occurring.
+* Troubleshoot and investigate individual function requests.
+* Monitor cold start duration for lambda functions.
+
+<img src={useBaseUrl('img/integrations/amazon-aws/AWS-Lambda-Request-Analysis.png')} alt="AWS Lambda" />
+
+
+### AWS Lambda - Usage Analysis
+
+**AWS Lambda - Usage Analysis** dashboard provides insights into function usage by AWS services, user agents, and IAM users.
+
+Use this dashboard to:
+* Audit, monitor, and compare the functions used in your serverless infrastructure.
+* Monitor which AWS services and IAM users are calling individual  AWS Lambda functions.
+* Monitor which user agents are being used in  Lambda function calls.
+* Compare data across time to identify any unusual trends.
+
+<img src={useBaseUrl('img/integrations/amazon-aws/AWS-Lambda-Usage-Analysis.png')} alt="AWS Lambda" />
+
+
+### AWS Lambda - Error Analysis
+
+The** AWS Lambda - Error Analysis** dashboard provides insights on errors and warnings in your AWS Lambda functions.
+
+Use this dashboard to:
+* Quickly identify the top errors and warnings across a Lambda function and its version.
+* Prioritize the resolution of errors and warnings across all Lambda functions.
+* Monitor the trend for the number of dead letter errors; when a Lambda is unable to write the failed event payload to your function's dead-letter queue.
+* Monitor the trend for the number of Lambda function throttling events; the number of Lambda function invocation attempts throttled due to invocation rates exceeding the configured concurrent limits.
+* Monitor the trend for Iterator Age applicable for your stream-based invocations only. This measures the age of the last record for each batch of records processed. Age is the difference between the time Lambda received the batch and the time the last record in the batch was written to the stream.
+
+<img src={useBaseUrl('img/integrations/amazon-aws/AWS-Lambda-Error-Analysis.png')} alt="AWS Lambda" />
+
+
+### AWS Lambda - Resource Usage
+
+**AWS Lambda - Resource Usage **dashboard provides insights on recent AWS Lambda request details, memory usage trends, function duration, and compute usage.
+
+Use this dashboard to:
+* Monitor the memory usage pattern of a Lambda function during its execution.
+* Monitor time taken by function for execution particularly to understand the unbilled duration.
+* Monitor the compute usage by function.
+
+<img src={useBaseUrl('img/integrations/amazon-aws/AWS-Lambda-Resource-Usage.png')} alt="AWS Lambda" />
+
+
+### AWS Lambda - Performance Trends
+
+**AWS Lambda - Performance Trends **dashboard displays log data analytics to provide insights on memory usage, function duration, recent request details, and compute usage.
+
+Use this dashboard to:
+* Monitor concurrent executions of an AWS Lambda function and understand trends over time.
+* Monitor average AWS Lambda execution durations against wasted billed durations.
+* Monitor memory used by AWS Lambda functions.
+* Monitor compute usage trends and predictions by AWS Lambda function in GB-Seconds.
+
+<img src={useBaseUrl('img/integrations/amazon-aws/AWS-Lambda-Performance-Trends.png')} alt="AWS Lambda" />
+
+
+### AWS Lambda - Threat Intel
+
+**AWS Lambda - Threat Intel** dashboard provides insights into incoming requests to your AWS Lambda functions from malicious sources determined via [Sumo Logic’s Threat Intel feature](https://help.sumologic.com/07Sumo-Logic-Apps/22Security_and_Threat_Detection/Threat_Intel_Quick_Analysis/03_Threat-Intel-FAQ). Panels show detailed information on malicious IPs and the malicious confidence of each threat.
+
+Use this dashboard to:
+* Identify known malicious IPs that are access your load-balancers and use firewall access control lists to prevent them from sending you traffic going forward
+* Monitor the malicious confidence level for all incoming malicious IP address threats.
+
+<img src={useBaseUrl('img/integrations/amazon-aws/AWS-Lambda-Threat-Intel.png')} alt="AWS Lambda" />

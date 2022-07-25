@@ -28,8 +28,7 @@ The Sumo Logic App for GuardDuty requires the Amazon GuardDuty findings to be se
 
 ## Configure Log Collection
 
+
+
+
 ## Install the Amazon GuardDuty Benchmark App
-
-## Viewing AWS Dashboards
-
-<img src={useBaseUrl('img/integrations/amazon-aws/Overview.png')} alt="AWS API Gateway" />
