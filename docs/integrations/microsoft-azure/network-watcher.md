@@ -5,6 +5,8 @@ sidebar_label: Azure Network Watcher
 description: Azure Network Watcher
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 
 The Sumo Logic App for Azure Network Watcher leverages Network Security Group (NSG) flow logs to provide real-time visibility and analysis of your Azure Network. This App provides preconfigured Dashboards that allow you to monitor inbound traffic, outliers in traffic flow, and denied traffic flows.
 
@@ -221,15 +223,14 @@ Panels will start to fill automatically. It's important to note that each panel 
 
 ## Viewing Azure Network Watcher Dashboards
 
-
 All Dashboards include filters that you can use in Interactive Mode for further analysis of your data.
 
 
 ### Network Watcher - Overview
 
-This Dashboard provides general information of the NSG flow logs, including Panels that drill-down into queries with NIC, tuple and traffic flow information. The Overview Dashboard gives a good starting point for detecting outlier in denied traffic and geographic hotspots for inbound traffic. In addition, this Dashboard allows users to filter data by rule name, source/destination IP and port, and other metadata fields**.**
+This Dashboard provides general information of the NSG flow logs, including Panels that drill-down into queries with NIC, tuple and traffic flow information. The Overview Dashboard gives a good starting point for detecting outlier in denied traffic and geographic hotspots for inbound traffic. In addition, this Dashboard allows users to filter data by rule name, source/destination IP and port, and other metadata fields.
 
-
+<img src={useBaseUrl('img/integrations/microsoft-azure/Overview.png')} alt="Network Watcher dashboards" />
 
 **Source Address Location of Inbound Traffic. **Displays geo-location of Inbound Traffic.
 
@@ -250,13 +251,9 @@ This Dashboard provides general information of the NSG flow logs, including Pane
 
 ### Network Watcher - Denied Traffic Flow
 
-
-
 This Dashboard drills down on denied traffic flow logs, shows geographic hotspots of denied traffic, top denied IPs and ports, and denied traffic trends by rule name.
 
-
-
-
+<img src={useBaseUrl('img/integrations/microsoft-azure/Overview.png')} alt="Network Watcher dashboards" />
 
 **Denied Traffic Flow by Source Location. **Shows geographic hotspots of denied traffic flow.
 

@@ -6,6 +6,8 @@ description: Azure SQL
 ---
 
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 Azure SQL Database is a managed relational cloud database service. The Sumo Logic app for Azure SQL helps you monitor activity in Azure SQL. The preconfigured dashboards provide insight into resource utilization, blocking queries, database wait events, errors, runtime execution stats, and other database analytics.
 
 
@@ -151,9 +153,7 @@ This section describes the dashboards in the Sumo Logic App for Azure SQL.
 
 See the count of logical servers, databases, errors; and the “top 10” active servers, resource groups, subscriptions, resources, databases, operations, and categories.
 
-
-12
-
+<img src={useBaseUrl('img/integrations/microsoft-azure/Overview.png')} alt="Azure SQL Database dashboards" />
 
 **Logical Servers**. The count of logical servers over the last 24 hours.
 

@@ -410,7 +410,7 @@ You can use template variables to drill down and examine the data on a granular 
 
 The **JMX - Overview** dashboard provides a quick summary of CPU and memory usage by different deployments. It also shows key statistics like JVM uptime, process versus system CPU load, committed versus used memory, objects collected by GC, and time taken by the last GC run server-wise.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -429,7 +429,7 @@ The **JMX - Overview** dashboard provides a quick summary of CPU and memory usag
 
 The **JMX - Memory** dashboard shows the percentage of the heap and non-heap memory used, physical and swap memory usage of your java virtual machine.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -446,7 +446,7 @@ The **JMX - Memory** dashboard shows the percentage of the heap and non-heap mem
 
 The **JMX - CPU** dashboard shows the process and system CPU usage. It also shows the operating system information of your java virtual machine.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -462,7 +462,7 @@ The **JMX - CPU** dashboard shows the process and system CPU usage. It also show
 
 The **JMX - Garbage Collector** dashboard shows key Garbage Collector statistics like the duration of the last GC run, objects collected, threads used, and memory cleared in the last GC run of your java virtual machine.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -478,7 +478,7 @@ The **JMX - Garbage Collector** dashboard shows key Garbage Collector statistics
 
 The **JMX - Thread** dashboard shows key information about the number and type of threads deadlocked, peak, and GC threads of your java virtual machine running on the deployment.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -494,7 +494,7 @@ The **JMX - Thread** dashboard shows key information about the number and type o
 
 The **JMX - Memory Pool **dashboard provides key information about the memory pool usage, peak usage, collection usage, garbage collection across various memory pools of your Java virtual machine.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -511,7 +511,7 @@ The **JMX - Memory Pool **dashboard provides key information about the memory po
 
 The **JMX - Class Loading and Compilation** dashboard shows key information about the rate of total loaded class, compilation time, unloaded classes of your java virtual machine.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 

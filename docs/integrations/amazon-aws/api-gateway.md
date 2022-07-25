@@ -95,7 +95,7 @@ To collect CacheHitCount and CacheMissCount metrics, the API cache should be ena
 * Select Specific **Stage** and go to the **Settings** tab.
 * The API should have the "**Enable API Cache**" checkbox enabled to enable API caching and to collect the CacheHitCount and CacheMissCount metrics.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 * Get a high-level overview of your API Gateway infrastructure.
 * Compare API requests made today, yesterday, and last week to identify any abnormal deviations in load
@@ -112,7 +112,7 @@ To collect CacheHitCount and CacheMissCount metrics, the API cache should be ena
 
 **AWS API Gateway - Audit Events** dashboard provides detailed audit insights into API Gateway events by various dimensions including event names, trends, regions, user agents, and recipient account IDs.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 * Monitor all API Gateway-related audit logs available via CloudTrail events
 * Monitor incoming user activity locations for both successful and failed events to ensure the activity matches with expectations
@@ -127,7 +127,7 @@ To collect CacheHitCount and CacheMissCount metrics, the API cache should be ena
 
 **AWS API Gateway - Latency, Cache **dashboard provides insights into API Gateway performance including API requests, latency, API cache hits, and back-end cache misses.
 
-**Use this dashboard to:**
+Use this dashboard to:
 * Monitor the overall responsiveness of API calls (latency), comparing times (in milliseconds) between receiving a request from and returning a response to a client.
 * Monitor the responsiveness of the backend (integration latency), comparing times (in milliseconds) between API Gateway relay requests to and receiving a response back from the backend.
 * Monitor API cache hits and misses to optimize cache capacities across your infrastructure and achieve desired performance.
@@ -140,7 +140,7 @@ To collect CacheHitCount and CacheMissCount metrics, the API cache should be ena
 
 **AWS API Gateway - 4xx and 5xx Errors **dashboard provides insights into API Gateway HTTP 4xx and 5xx code errors throughout your infrastructure, including API requests, client-side errors, and server-side errors.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 * Monitor the total number of client-side errors based on API name and region across your infrastructure.
 * Monitor the total number of server-side errors based on API name and region across your infrastructure.

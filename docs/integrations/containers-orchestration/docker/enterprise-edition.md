@@ -270,7 +270,7 @@ The **Docker EE - UCP Overview Dashboard** provides detailed information on the 
 
 Docker Universal Control Plane (UCP) is the cluster management solution for managing a Docker cluster and applications.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -288,7 +288,7 @@ Docker Universal Control Plane (UCP) is the cluster management solution for mana
 
 The **Docker EE - Dockerd Monitoring Dashboard** provides detailed information on the “dockerd” utility that manages containers, including log levels, hostname errors, recent errors, container activity, and UCP agent versions. The panels also provide visualizations to understand log level trends and errors by hostname trends, as well as tabular comparisons over time.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -306,7 +306,7 @@ The **Docker EE - Dockerd Monitoring Dashboard** provides detailed information o
 
 The **Docker EE - Containerd Monitoring Dashboard** provides detailed information on the `containerd` utility that allows you to run containers on Linux, Windows, Solaris, or other operating systems. This includes a log level breakdown, trends, and comparisons; hostname errors, trends, and comparisons, and detailed information on errors.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -324,7 +324,7 @@ The **Docker EE - Containerd Monitoring Dashboard** provides detailed informatio
 
 The **Docker EE - SWARM Network Errors and Events Dashboard** provides an at a glance view of cluster node outliers, network errors by port, and the top source and destination IPs. The panels also provide detailed information on recent Send and Receive errors. SWARM is a Docker-native clustering system.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -342,7 +342,7 @@ The **Docker EE - SWARM Network Errors and Events Dashboard** provides an at a g
 
 The **Docker EE - DTR Client Requests Dashboard** provides a high-level view of client geographic locations, the number of hits and bytes served, response trends, and the platforms used by visitors. The panels also provide detailed information on browsers and operating systems (OSs), top versions for Windows and Mac, top referrers, top URIs causing errors, and top clients causing errors.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -360,7 +360,7 @@ The **Docker EE - DTR Client Requests Dashboard** provides a high-level view of 
 
 The **Docker EE - DTR Registry Dashboard** provides a high-level and detailed views of images pushed and pulled by repository and their geographic locations. Docker Trusted Registry (DTR) is an image storage solution that is installed behind a firewall to securely store and manage the Docker images in applications.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -377,7 +377,7 @@ The **Docker EE - DTR Registry Dashboard** provides a high-level and detailed vi
 
 The **Docker EE - Host and Container Troubleshooting** **Dashboard** provides container analysis information that is helpful when troubleshooting a problem, including timestamp, source, message, hostname, and container ID.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 

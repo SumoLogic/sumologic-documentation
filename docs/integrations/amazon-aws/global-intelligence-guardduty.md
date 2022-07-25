@@ -74,7 +74,7 @@ The Sumo Logic App for GI GuardDuty requires the Amazon GuardDuty findings to be
 
 <img src={useBaseUrl('img/integrations/amazon-aws/GI_GuardDuty_Global_Baseline.png')} alt="GI GuardDuty" />
 
-**Use this dashboard to:
+Use this dashboard to:
 * Determine if you are being attacked by a particular region or actor around the globe.
 * Assess rare threats found by Amazon GuardDuty in your AWS environment.
 * Analyze threat shares targeted resources and severity.
@@ -86,7 +86,7 @@ The Sumo Logic App for GI GuardDuty requires the Amazon GuardDuty findings to be
 
 <img src={useBaseUrl('img/integrations/amazon-aws/GI_GuardDuty_Your_Company_v_Baseline.png')} alt="GI GuardDuty" />
 
-**Use this dashboard to:
+Use this dashboard to:
 * Understand top level threat score and trends.
 * How your company’s GuardDuty findings compare to Sumo Logic customers.
 * How your company’s findings severity compares to Sumo Logic customers.
@@ -100,7 +100,7 @@ The Sumo Logic App for GI GuardDuty requires the Amazon GuardDuty findings to be
 
 <img src={useBaseUrl('img/integrations/amazon-aws/GI_GuardDuty_Findings_Analysis.png')} alt="GI GuardDuty" />
 
-**Use this dashboard to:
+Use this dashboard to:
 * Understand the mix of threats in your environment.
 * Identify the source and target of threats in your environment.
 * Review your company's threats by severity and resource type.

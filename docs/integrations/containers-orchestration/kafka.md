@@ -733,7 +733,7 @@ Template variables provide dynamic dashboards that rescope data on the fly. As y
 
 The **Kafka - Cluster Overview** dashboard gives you an at-a-glance view of your Kafka deployment across brokers, controllers, topics, partitions and zookeepers.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -752,7 +752,7 @@ The **Kafka - Cluster Overview** dashboard gives you an at-a-glance view of your
 
 The **Kafka - Outlier Analysis** dashboard helps you identify outliers for key metrics across your Kafka clusters.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -769,7 +769,7 @@ The **Kafka - Outlier Analysis** dashboard helps you identify outliers for key m
 
 The Kafka - Replication dashboard helps you understand the state of replicas in your Kafka clusters.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 Monitor the following key metrics
 
@@ -794,7 +794,7 @@ Monitor the following key metrics
 
 The **Kafka -Zookeeper** dashboard provides an at-a-glance view of the state of your partitions, active controllers, leaders, throughput and network across Kafka brokers and clusters.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 Monitor key Zookeeper metrics such as:
 
@@ -818,7 +818,7 @@ Monitor key Zookeeper metrics such as:
 
 The Kafka - Broker dashboard provides an at-a-glance view of the state of your partitions, active controllers, leaders, throughput, and network across Kafka brokers and clusters.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -838,7 +838,7 @@ The Kafka - Broker dashboard provides an at-a-glance view of the state of your p
 
 The **Kafka - Failures and Delayed Operations **dashboard gives you insight into all failures and delayed operations associated with your Kafka clusters.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -862,7 +862,7 @@ The **Kafka - Failures and Delayed Operations **dashboard gives you insight into
 
 The **Kafka - Request-Response** **Times** dashboard helps you get insight into key request and response latencies of your Kafka cluster.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -878,7 +878,7 @@ The **Kafka - Request-Response** **Times** dashboard helps you get insight into 
 
 This dashboard helps you quickly analyze your Kafka error logs across all clusters.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -895,7 +895,7 @@ This dashboard helps you quickly analyze your Kafka error logs across all cluste
 
 The **Kafka Broker - Performance Overview** dashboards helps you Get an at-a-glance view of the performance and resource utilization of your Kafka brokers and their JVMs.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -909,7 +909,7 @@ The **Kafka Broker - Performance Overview** dashboards helps you Get an at-a-gla
 
 The **Kafka Broker - CPU** dashboard shows information about the CPU utilization of individual Broker machines.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -922,7 +922,7 @@ The **Kafka Broker - CPU** dashboard shows information about the CPU utilization
 
 The **Kafka Broker - Memory** dashboard shows the percentage of the heap and non-heap memory used, physical and swap memory usage of your Kafka broker’s JVM.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -936,7 +936,7 @@ The **Kafka Broker - Memory** dashboard shows the percentage of the heap and non
 
 The **Kafka Broker - Disk Usage** dashboard helps monitor disk usage across your Kafka Brokers.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -951,7 +951,7 @@ The **Kafka Broker - Disk Usage** dashboard helps monitor disk usage across your
 
 The **Kafka Broker - Garbage Collection** dashboard shows key Garbage Collector statistics like the duration of the last GC run, objects collected, threads used, and memory cleared in the last GC run of your java virtual machine.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -969,7 +969,7 @@ The **Kafka Broker - Garbage Collection** dashboard shows key Garbage Collector 
 
 The **Kafka Broker - Threads** dashboard shows the key insights into the usage and type of threads created in your Kafka broker JVM
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 * Understand the dynamic behavior of the system using peak, daemon, and current threads.
 * Gain insights into the memory and CPU time of the last executed thread.
@@ -979,7 +979,7 @@ The **Kafka Broker - Threads** dashboard shows the key insights into the usage a
 
 The **Kafka Broker - Class Loading and Compilation** dashboard helps you get insights into the behavior of class count trends.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 * Determine If the class count keeps increasing, this indicates that the same classes are loaded by multiple classloaders.
 * Get insights into time spent by Java Virtual machines during compilation.
@@ -990,7 +990,7 @@ The **Kafka Broker - Class Loading and Compilation** dashboard helps you get ins
 
 The Kafka - Topic Overview dashboard helps you quickly identify under-replicated partitions, and incoming bytes by Kafka topic, server and cluster.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 * Monitor under replicated partitions - The Under Replicated Partitions metric displays the number of partitions that do not have enough replicas to meet the desired replication factor. A partition will also be considered under-replicated if the correct number of replicas exist, but one or more of the replicas have fallen significantly behind the partition leader. The two most common causes of under-replicated partitions are that one or more brokers are unresponsive, or the cluster is experiencing performance issues and one or more brokers have fallen behind.
 
@@ -1004,7 +1004,7 @@ The Kafka - Topic Overview dashboard helps you quickly identify under-replicated
 
 The Kafka - Topic Details dashboard gives you insight into throughput, partition sizes and offsets  across Kafka brokers, topics and clusters.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 * Monitor metrics like Log partition size, log start offset, and log segment count metrics.

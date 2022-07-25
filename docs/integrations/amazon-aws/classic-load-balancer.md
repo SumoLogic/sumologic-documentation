@@ -144,7 +144,7 @@ Use this dashboard to:
 
 **The AWS Classic Load Balancer - Connection and Host Status** dashboard provides insights into active and rejected connections, backend connection errors, and healthy and unhealthy hosts.
 
-**Use this dashboard to:
+Use this dashboard to:
 * Monitor active connections, new connections, rejected connections, and connection errors for load balancers
 * Monitor healthy and unhealthy host counts by the load balancer and availability zone across your infrastructure
 

@@ -701,7 +701,7 @@ You can use filters to drill down and examine the data on a granular level.
 
 The **MongoDB Atlas - Overview** dashboard provides an at-a-glance overview of server availability, messages, and commands. Panels display information on messages by severity and component, trends in messages by component and severity, as well as trends for database (DB) commands and create, read, update, and delete (**CRUD**) function commands.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -726,7 +726,7 @@ The MongoDB Atlas Security dashboards aim to provide a comprehensive view of Atl
 
 The **MongoDB Atlas - Events** dashboard provides information on Atlas project and organization-level changes. Panels show information on the type, number, location and recent events.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -744,7 +744,7 @@ The **MongoDB Atlas - Events** dashboard provides information on Atlas project a
 
 The **MongoDB Atlas - Alerts** dashboard provides an at-a-glance view view of alerts triggered in your Atlas environment. Panels show information around the total number and number of  open alerts, recent alerts, alert types and status.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -762,7 +762,7 @@ The **MongoDB Atlas - Alerts** dashboard provides an at-a-glance view view of al
 
 The **MongoDB Atlas - Audit** dashboard provides information around security events in your Atlas environment such as failed authentication, authorization and audit events, audit event trends, and originating geographic locations. Panels also display details on audit events by action type and user, and recent audit events by created and deleted resources.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -789,7 +789,7 @@ Performance dashboards provide visual representations of key MongoDB Atlas metri
 
 The **MongoDB Atlas - Cluster Metrics** dashboard provides a high-level view of cluster performance, disk and cache usage. Panel graphs show details for read and write operations and their execution times, network traffic, connections, data sizes, and disk read and write IOPs.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -807,7 +807,7 @@ The **MongoDB Atlas - Cluster Metrics** dashboard provides a high-level view of 
 
 The **MongoDB Atlas - Metrics** dashboard provides an at-a-glance view of database performance with graphs showing memory availability, data size, cache in bytes, and returned document ratios.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -826,7 +826,7 @@ The **MongoDB Atlas - Metrics** dashboard provides an at-a-glance view of databa
 
 The **MongoDB Atlas - Slow Queries** dashboard provides details on the number of slow queries by type,trends, and slow server status.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -853,7 +853,7 @@ The Operations dashboards monitor database operations, such as indexing, shardin
 
 The **MongoDB Atlas - Errors and Warnings** dashboard provides information on errors, warnings by component, severity and type.. Panels also show information on daily error and warning summaries, socket exceptions, timeout events, and MongoDB exit events.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -871,7 +871,7 @@ The **MongoDB Atlas - Errors and Warnings** dashboard provides information on er
 
 The **MongoDB Atlas - Logins and Connections** dashboard provides a high-level view of the geographic locations of client connection requests, logins from malicious remote IPS, and geographic locations of failed logins. Panels also display information on overall failed login attempts, threat intel by remote IP, and failed logins by user.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -889,7 +889,7 @@ The **MongoDB Atlas - Logins and Connections** dashboard provides a high-level v
 
 The **MongoDB Atlas - Replication** dashboard provides information on changes in replication configurations. Panels display details on replication errors, warnings, events, as well as information around primary and secondary nodes.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -907,7 +907,7 @@ The **MongoDB Atlas - Replication** dashboard provides information on changes in
 
 The **MongoDB Atlas - Sharding** dashboard provides information on Atlas cluster sharding. Panels show details on warnings, errors, chunk split failures, balancer failures, chunks moving by collection, and chunks moving between shards.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 

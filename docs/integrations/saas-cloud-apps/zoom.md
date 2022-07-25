@@ -190,7 +190,7 @@ Panels will start to fill automatically. It's important to note that each panel 
 
 The Zoom - Overview dashboard provides an at-a-glance view of the state of your Zoom environment in terms of reliability, performance, user activity, and security by reporting on meetings, hosts, webinars, alerts and guest activity.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -207,7 +207,7 @@ The Zoom - Overview dashboard provides an at-a-glance view of the state of your 
 
 The **Zoom - Availability** dashboard provides insights into meeting, webinar, and Zoom room alerts in your environment. A meeting alert event is triggered when a service issue is encountered during a meeting and a Zoom Room alert event is triggered when there is an issue related to a Zoom Room.  
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -223,7 +223,7 @@ The **Zoom - Availability** dashboard provides insights into meeting, webinar, a
 
 The **Zoom - User Activity** dashboard provides visibility into Zoom user presence and their activities. Panels display user trends, setting preferences, recording and screen sharing comparisons, as well as chat message details.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -240,7 +240,7 @@ The **Zoom - User Activity** dashboard provides visibility into Zoom user presen
 
 The **Zoom - Guest Activity** dashboard provides visibility into the Zoom guest users, their activities, and trends. Panels also display detailed information on screen sharing with guest participants, meetings with regular guests, and those with the most guest participants.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -257,7 +257,7 @@ The **Zoom - Guest Activity** dashboard provides visibility into the Zoom guest 
 
 The **Zoom - Administrator Activity** dashboard provides insights into Administrative trends, user account activities, and user account trends.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -274,7 +274,7 @@ The **Zoom - Administrator Activity** dashboard provides insights into Administr
 
 The **Zoom - Meeting Usage** dashboard provides visibility into the number and types of Zoom meetings conducted, along with the hosts and participants of those meetings. Panels display meeting trends, as well as details on frequently used meeting numbers and hosts who have personal meeting rooms.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -290,7 +290,7 @@ The **Zoom - Meeting Usage** dashboard provides visibility into the number and t
 
 The Zoom - Authentication dashboard provides an insight into the number and type of logins, trends, and Zoom clients and devices used.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -306,7 +306,7 @@ The Zoom - Authentication dashboard provides an insight into the number and type
 
 The **Zoom - Meeting Security** dashboard provides visibility into meeting security as it relates to frequently used meeting-id’s and personal meeting rooms, as well as monitor when meetings are updated in a way that don’t conform to security best practices.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -322,7 +322,7 @@ The **Zoom - Meeting Security** dashboard provides visibility into meeting secur
 
 The **Zoom - Webinars** dashboard provides visibility into the number and types of webinars, the participants, and trends. Panels also provide details on webinar authentications and comparisons of registered participants and those who actually participate.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 

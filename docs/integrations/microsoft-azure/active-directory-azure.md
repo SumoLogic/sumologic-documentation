@@ -5,6 +5,8 @@ sidebar_label: Azure Active Directory
 description: The Sumo Logic App for Azure Active Directory presents information about activity in Azure Active Directory, including role management, user management, group management, directory management, and application management.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 Azure Active Directory is a cloud-based directory and identity management service that provides directory services, application access management, and identity protection. The Sumo Logic App for Azure helps you monitor activity in the Azure Active Directory. The dashboards provide insight into role management, user management, group management, successful and failed sign-in events, directory management, and application management data that helps you understand your users' experience.
 
 The app uses the following log types:
@@ -130,6 +132,8 @@ Panels will start to fill automatically. It's important to note that each panel 
 
 See an overview of Azure Active Directory activity, including operation names, audit event categories, log levels, and result types.
 
+<img src={useBaseUrl('img/integrations/microsoft-azure/Overview.png')} alt="Azure Active Directory dashboards" />
+
 **Operation Name. **Shows the name of operations, and a count of how many times they happened on a bar chart, for the last 24 hours.
 
 **Operation Name - One Day Time Comparison.** Shows an aggregation table with the names of operations that have happened in the last 24 hours along with a count, and compares it to the count of operations from one day before.
@@ -151,7 +155,9 @@ See an overview of Azure Active Directory activity, including operation names, a
 
 
 See information about role management in Azure Activity Directory, including role updates, successful events, and users added or removed from roles.
-19
+
+<img src={useBaseUrl('img/integrations/microsoft-azure/Overview.png')} alt="Azure Active Directory dashboards" />
+
 **Operation Name.** Shows the name of role management operations, and a count of how many times they happened on a bar chart, for the last 24 hours.
 
 **Operation Name - One Day Time Comparison.** Shows an aggregation table with the names of role management operations that have happened in the last 24 hours along with a count, and compares it to the count of operations from one day before.
@@ -170,14 +176,10 @@ See information about role management in Azure Activity Directory, including rol
 
 
 ### User Management
-20
-
 
 See information about user management in Azure Activity Directory, including external user invites, updated and deleted users, users added and outliers in user management events.
 
-
-21
-
+<img src={useBaseUrl('img/integrations/microsoft-azure/Overview.png')} alt="Azure Active Directory dashboards" />
 
 **Operation Name.** Shows the name of user management operations, and a count of how many times they happened on a bar chart, for the last 24 hours.
 
@@ -208,8 +210,7 @@ See information about user management in Azure Activity Directory, including ext
 
 See information about application management in Azure Activity Directory, including application consent, deleted applications, applications added or updated, and service principal updates.
 
-
-23
+<img src={useBaseUrl('img/integrations/microsoft-azure/Overview.png')} alt="Azure Active Directory dashboards" />
 
 
 **Operation Name.** Shows the name of application management operations, and a count of how many times they happened on a bar chart, for the last 24 hours.
@@ -240,7 +241,9 @@ See information about application management in Azure Activity Directory, includ
 
 
 See information about directory management in Azure Activity Directory, including failed events, successful events, and disables desktop SSOs.
-25
+
+<img src={useBaseUrl('img/integrations/microsoft-azure/Overview.png')} alt="Azure Active Directory dashboards" />
+
 **Operation Name.** Shows the name of directory management operations, and a count of how many times they happened on a bar chart, for the last 24 hours.
 
 **Operation Name - One Day Time Comparison.** Shows an aggregation table with the names of directory management operations that have happened in the last 24 hours along with a count, and compares it to the count of operations from one day before.
@@ -262,9 +265,7 @@ See information about directory management in Azure Activity Directory, includin
 
 See information about group management in Azure Activity Directory, including groups added, and a list of members added or removed from groups.
 
-
-27
-
+<img src={useBaseUrl('img/integrations/microsoft-azure/Overview.png')} alt="Azure Active Directory dashboards" />
 
 **Operation Name.** Shows the name of group management operations, and a count of how many times they happened on a bar chart, for the last 24 hours.
 
@@ -289,9 +290,7 @@ See information about group management in Azure Activity Directory, including gr
 
 See information about Authorization in Azure Active Directory including the name of authorization operations done, successful and failed authorization events, and breakdown of results.
 
-
-29
-
+<img src={useBaseUrl('img/integrations/microsoft-azure/Overview.png')} alt="Azure Active Directory dashboards" />
 
 **Operation Name.** Shows the name of authorizations or authentication, and a count of how many times they happened on a bar chart, for the last 24 hours.
 
@@ -307,14 +306,10 @@ See information about Authorization in Azure Active Directory including the name
 
 
 ### Successful Sign-In Events
-30
-
 
 See information about successful sign-in events in your Azure AD, including the geo-location of sign-in activity, risky sign-ins, breakdown by browser & application, and any anomalies in the login count.
 
-
-31
-
+<img src={useBaseUrl('img/integrations/microsoft-azure/Overview.png')} alt="Azure Active Directory dashboards" />
 
 **Geo Location of Sign-in. **Performs a geo lookup query and displays the location and number of successful sign-in events on a map of the world for the last 24 hours.
 
@@ -343,9 +338,7 @@ See information about successful sign-in events in your Azure AD, including the 
 
 See information about failure sign-in events in your Azure AD, including the geo-location of sign-in activity, risky sign-ins, breakdown by browser & application, and any anomalies in the login count.
 
-
-33
-
+<img src={useBaseUrl('img/integrations/microsoft-azure/Overview.png')} alt="Azure Active Directory dashboards" />
 
 **Geo Location of Sign-in. **Performs a geo lookup query and displays the location and number of failure sign-in events on a map of the world for the last 24 hours.
 

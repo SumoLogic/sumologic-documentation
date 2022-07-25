@@ -5,6 +5,8 @@ sidebar_label: Active Directory JSON
 description: Active Directory JSON
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 The Active Directory JSON App helps you monitor your Windows Active Directory deployment by analyzing Active Directory logs in the JSON based event log format. The app includes predefined searches and dashboards that provide user activity into your environment for real-time analysis of overall usage.
 
 We recommend using the Active Directory JSON App in combination with the Windows JSON App.
@@ -82,7 +84,6 @@ Locate and install the app you need from the **App Catalog**. If you want to see
 
 Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](https://help.sumologic.com/01Start-Here/Library/Apps-in-Sumo-Logic/Install-Apps-from-the-Library)
 
-
 1. To install the app, complete the following fields.
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
     2. **Data Source.** Select either of these options for the data source. 
@@ -106,21 +107,22 @@ Template variables provide dynamic dashboards that can rescope data on the fly. 
 
 The **Active Directory Service Activity** dashboard provides insights into overall active directory services like messages overtime, logon/off activity, object creation, and deletion.
 
-**Use this dashboard to:
-
+Use this dashboard to:
 * Monitor object creation and deletion activities.
 * Monitor rights assigned to a user or rights removed from a user.
 * Monitor logon/logoff activity by various logon types.
 * Monitor top 10 activities with concise message.
 
+<img src={useBaseUrl('img/integrations/microsoft-azure/Overview.png')} alt="Active Directory JSON dashboards" />
 
 
 ### Service Failures
 
 The **Active Directory Service Failures** dashboard provides an at-a-glance view of success, failures, and audit failures overtime.
 
-**Use this dashboard to:
-
+Use this dashboard to:
 * Monitor success and failure trends to check for any deviation from normal.
 * Monitor all failed audit events along with administrative activities by event categories.
 * Track IP addresses associated with failed activities.
+
+<img src={useBaseUrl('img/integrations/microsoft-azure/Overview.png')} alt="Active Directory JSON dashboards" />

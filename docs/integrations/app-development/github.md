@@ -230,7 +230,7 @@ Do the following to resolve:
 
 The **GitHub - Overview** dashboard provides an at-a-glance view of your GitHub issues, pull requests, and the commits over time.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -245,7 +245,7 @@ The **GitHub - Overview** dashboard provides an at-a-glance view of your GitHub 
 
 The **GitHub - Branch Overview **dashboard provides information about the commits, file operations like addition, deletion, and modifications per branch.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 * Review branch-specific details.
 * Identify the type of files being added, deleted, or modified.
@@ -260,7 +260,7 @@ The **GitHub - Branch Overview **dashboard provides information about the commit
 
 The **GitHub - Issue Overview** dashboard provides detailed information about the issues opened, closed, and unassigned issues.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 * Review issue status including unassigned, open, and closed issues.
 * Quickly review the issue details and take action accordingly.
@@ -274,7 +274,7 @@ The **GitHub - Issue Overview** dashboard provides detailed information about th
 
 The **GitHub - Pull Request Overview** dashboard gives the view of pull requests by the target branch. It also provides a detailed view of the pull requests in comparison to created, merged, and declined.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -291,7 +291,7 @@ The **GitHub - Pull Request Overview** dashboard gives the view of pull requests
 
 The **GitHub - Security **dashboard provides detailed information on the security events and repositories.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -308,7 +308,7 @@ The **GitHub - Security **dashboard provides detailed information on the securit
 
 The **GitHub - User Activity** dashboard provides detailed insight into all user activity and potential suspicious activities.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 

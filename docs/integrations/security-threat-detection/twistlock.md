@@ -193,7 +193,7 @@ You can use template variables to drill down and examine the data on a granular 
 
 The **Twistlock - Overview** dashboard provides an at-a-glance overview of the state of your Kubernetes and container environments, including the number of hosts, containers, audit events, rules triggered, and defender incidents. The panels also display information on a variety of critical vulnerabilities by type, severity, and affected containers.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -213,7 +213,7 @@ The **Twistlock - Overview** dashboard provides an at-a-glance overview of the s
 
 The **Twistlock - Scans** dashboard provides insights into scan events. Panels show scan summaries, vulnerability information and container compliance violations.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -231,7 +231,7 @@ The **Twistlock - Scans** dashboard provides insights into scan events. Panels s
 
 The **Twistlock - Detected Vulnerabilities** dashboard provides detailed information on detected vulnerabilities in the registry, image, and host.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -250,7 +250,7 @@ The **Twistlock - Detected Vulnerabilities** dashboard provides detailed informa
 
 The **Twistlock - CVE Status** dashboard combines high-level views of common vulnerabilities and exposures (CVE) along with detailed information. Panels display at-a-glance views for host, image, and registry scans, and available fixes.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -268,7 +268,7 @@ The **Twistlock - CVE Status** dashboard combines high-level views of common vul
 
 The **Twistlock - Compliance Violations** dashboard provides detailed information on system-wide compliance violations, organized according to the severity of violation, description of violation, and rules triggered by the violation.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -305,7 +305,7 @@ The **Twistlock - Defender** **Incidents** dashboard combines high-level and det
 
 The **Twistlock - Runtime** dashboard provides detailed information on system and runtime threats, alerts and management activity.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -373,7 +373,7 @@ You can use template variables to drill down and examine the data on a granular 
 
 The **Twistlock - Overview** dashboard provides an at-a-glance overview of the state of your Kubernetes and container environments, including the number of hosts, containers, audit events, rules triggered, and defender incidents. The panels also display information on a variety of critical vulnerabilities by type, severity, and affected containers.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -393,7 +393,7 @@ The **Twistlock - Overview** dashboard provides an at-a-glance overview of the s
 
 The **Twistlock - Scans** dashboard provides insights into scan events. Panels show scan summaries, vulnerability information and container compliance violations.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -411,7 +411,7 @@ The **Twistlock - Scans** dashboard provides insights into scan events. Panels s
 
 The **Twistlock - Detected Vulnerabilities** dashboard provides detailed information on detected vulnerabilities in the registry, image, and host.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -430,7 +430,7 @@ The **Twistlock - Detected Vulnerabilities** dashboard provides detailed informa
 
 The **Twistlock - CVE Status** dashboard combines high-level views of common vulnerabilities and exposures (CVE) along with detailed information. Panels display at-a-glance views for host, image, and registry scans, and available fixes.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -448,7 +448,7 @@ The **Twistlock - CVE Status** dashboard combines high-level views of common vul
 
 The **Twistlock - Compliance Violations** dashboard provides detailed information on system-wide compliance violations, organized according to the severity of violation, description of violation, and rules triggered by the violation.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -485,7 +485,7 @@ The **Twistlock - Defender** **Incidents** dashboard combines high-level and det
 
 The **Twistlock - Runtime** dashboard provides detailed information on system and runtime threats, alerts and management activity.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 

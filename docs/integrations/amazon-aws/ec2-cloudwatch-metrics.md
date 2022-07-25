@@ -99,7 +99,7 @@ Panels will start to fill automatically. It's important to note that each panel 
 
 The **AWS EC2 Overview (CloudWatch Metrics) **dashboard provides at-a-glance information about a EC2 CPU, instance disk store, network and EBS volume usage along with EC2 instance health status.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 * Monitor average CPU utilization and dedicated host CPU utilization, along with instances with High and Low CPU utilization
 * Monitor CPU credit Usage,Balance,Surplus Credit Charge,Surplus Credit balance
@@ -114,7 +114,7 @@ The **AWS EC2 Overview (CloudWatch Metrics) **dashboard provides at-a-glance inf
 
 The **AWS EC2 Summary (CloudWatch Metrics)** dashboard provides at-a-glance information about a EC2 CPU, instance disk store, network and EBS volume usage along with EC2 instance health status.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 * Monitor CPU utilization along with CPU credit details & status check counts for EC2
 * EBS related metrics for EC2 instance
@@ -128,7 +128,7 @@ The **AWS EC2 Summary (CloudWatch Metrics)** dashboard provides at-a-glance info
 
 The AWS EC2 - Events dashboard provides detailed insights into all cloudtrail audit events associated with EC2 instances and specifically helps identify changes, errors, and user activities.
 
-**Use this dashboard to:**
+Use this dashboard to:
 * Monitor the geo location for successful and failed events
 * Observed the event status and top error codes
 * Track distribution and top event types and trends
@@ -141,7 +141,7 @@ The AWS EC2 - Events dashboard provides detailed insights into all cloudtrail au
 
 The **AWS EC2 CPU (CloudWatch Metrics) **dashboard provides detailed information about EC2 CPU usage like CPU utilization and CPU credits for burstable performance instances.
 
-**Use this dashboard to:
+Use this dashboard to:
 * Monitor Average CPU utilization over time for EC2.
 * Observe CPU Credits metrics (Usage and balance) over time.
 * Identify CPU Surplus Credits (Charged and Balance) over time.
@@ -152,7 +152,7 @@ The **AWS EC2 CPU (CloudWatch Metrics) **dashboard provides detailed information
 
 The **AWS EC2 EBS (CloudWatch Metrics)** dashboard provides detailed information about EC2 EBS volumes for Nitro-based instances based on EBS volumes read and write bytes, operations, and information on the percentage of I/O and throughput credits remaining in the burst bucket.
 
-**Use this dashboard to:**
+Use this dashboard to:
 * Monitor EBS volumes read and write bytes over time
 * Monitor EBS read and write ops over time
 * EBS IO balance and Byte Balance % metric over time for Ec2 instances.
@@ -164,7 +164,7 @@ The **AWS EC2 EBS (CloudWatch Metrics)** dashboard provides detailed information
 
 The **AWS EC2 Disk (CloudWatch Metrics)** dashboard provides detailed information about a EC2 Instance Store Disk usage based on disk read and write bytes, operations.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 * Monitor instance store - Disk metrics like Disk read/write Bytes and Byte rate
 * Monitor instance store - Disk netrucs like Disk read/write Operations and Operation rate.
@@ -176,7 +176,7 @@ The **AWS EC2 Disk (CloudWatch Metrics)** dashboard provides detailed informatio
 
 The **AWS EC2 Network (CloudWatch Metrics)** dashboard provides detailed information about EC2 Network activities based on In and out packets, bytes.
 
-**Use this dashboard to:
+Use this dashboard to:
 
 * Monitor imported network metrics like - Byte rate for input and out put and Bytes going in and out of Ec2 instances
 * Observe network metrics for Ec2 for packet in/out and  rate of the packets.
@@ -187,7 +187,7 @@ The **AWS EC2 Network (CloudWatch Metrics)** dashboard provides detailed informa
 
 The **AWS EC2 Status Check (CloudWatch Metrics)** dashboard provides detailed information about an EC2 instance's health check status based on an instance, system, and overall health status.
 
-**Use this dashboard to:
+Use this dashboard to:
 * Monitor status check for instances
 * Monitor if the instance has passed the status check at last minute
 * Monitor if an instance has passed the system status check at last minute

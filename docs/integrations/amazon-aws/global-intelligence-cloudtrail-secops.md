@@ -147,7 +147,7 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/amazon-aws/GI-CloudTrail-03-Tactics.png')} alt="GI CloudTrail" />
 
-**Use this dashboard to:
+Use this dashboard to:
 * Understand tactics and techniques for my company versus peers.
 * Analyze results organized by the following AWS services:
     * Amazon EC2: count of compute instances, security groups, route tables and Amaon Machine Images
@@ -166,7 +166,7 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/amazon-aws/GI-CloudTrail-04-Action-Plan.png')} alt="GI CloudTrail" />
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 * Create an action plan from the findings of Global Intelligence for AWS CloudTrail.
 * Implement and then review the progress of the plan.

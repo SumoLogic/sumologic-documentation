@@ -761,7 +761,7 @@ If no events have occurred within the time range of the Panel, the Panel will be
 
 The **MongoDB - Overview** dashboard provides an at-a-glance view of MongoDB health, performance and problems causing errors.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -780,7 +780,7 @@ The **MongoDB - Overview** dashboard provides an at-a-glance view of MongoDB hea
 
 The **MongoDB - Resource** dashboard shows resource utilization by the MongoDB component.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -798,7 +798,7 @@ The **MongoDB - Resource** dashboard shows resource utilization by the MongoDB c
 
 The **MongoDB - Errors and Warnings** dashboard shows errors and warnings by the MongoDB component.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -815,7 +815,7 @@ The **MongoDB - Errors and Warnings** dashboard shows errors and warnings by the
 
 The **MongoDB - Logins and Connections** dashboard shows geo location of client connection requests, failed connection logins by geo location, and count of failed login attempts.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -854,7 +854,7 @@ From MongoDB - If keysExamined is much higher than nreturned, the database is sc
 
 The **MongoDB - Replication** dashboard shows replication events, errors, warnings, and nodes.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -876,7 +876,7 @@ This Dashboard will only show data if you have Replication setup for MongoDB.
 
 The MongoDB - Sharding dashboard dashboard shows sharding related errors, events, failures and number of chunks moving between shards.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 

@@ -135,7 +135,7 @@ You can use filters to drill down and examine the data on a granular level.
 
 The **Infrequent Data Tier - Data Scanned Overview** dashboard provides visibility into the total amount of data scanned by infrequent queries. This allows you to monitor and control on-demand search costs for the Infrequent Tier.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 * Monitor data scan information per day.
 * Analyze monthly comparisons of scanned data.
@@ -147,7 +147,7 @@ The **Infrequent Data Tier - Data Scanned Overview** dashboard provides visibili
 
 The **Infrequent Data Tier - Data Scanned by Users** dashboard provides insights into the amount of infrequent data scanned by specific users, user trends, and the geographic locations of users.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 * Monitor data scan information by user.
 * To analyze trends in data scanned by users over a 30 day period.
@@ -159,7 +159,7 @@ The **Infrequent Data Tier - Data Scanned by Users** dashboard provides insights
 
 The **Infrequent Data Tier - Query Analysis** dashboard provides visibility into the Infrequent Data Tier queries that are most expensive, as well as detailed information on the queries.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 * Identify the most expensive queries on the Infrequent Tier.
 * Analyze queries executed against Infrequent Tier.
@@ -170,7 +170,7 @@ The **Infrequent Data Tier - Query Analysis** dashboard provides visibility into
 # Infrequent Data Tier - Credits Consumed
 The **Infrequent Data Tier - Credits Consumed** dashboard provides visibility into the total amount of Cloud Flex Credits your organization has consumed with infrequent queries. This allows you to monitor and control on-demand search costs for the Infrequent Tier.
 
-**Use this dashboard to:**
+Use this dashboard to:
 * Monitor credits consumed per day.
 * Monitor credits consumed per user.
 * Monitor the geographical locations of credit consumption.

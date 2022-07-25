@@ -91,7 +91,7 @@ Use this dashboard to:
 
 This dashboard utilizes CloudWatch RDS Metrics for Aurora.
 
-**Use this dashboard to:**
+Use this dashboard to:
 * Monitor the number of connections.
 * Monitor CPU utilization.
 * Monitor Volume Read and Write IOPS to ensure the database is optimally interacting with disk.
@@ -105,7 +105,7 @@ This dashboard utilizes CloudWatch RDS Metrics for Aurora.
 
 This dashboard utilizes CloudWatch RDS Metrics for Aurora.
 
-**Use this dashboard to:**
+Use this dashboard to:
 * Monitor replica lags. Aurora supports read replicas with extremely low replica lags to support applications with heavy read activity loads.
 * Monitor network traffic load and usage. RDS supports monitoring network throughput.
 * Monitor cache hit ratio to identify free memory from query performance perspective.
@@ -119,7 +119,7 @@ This dashboard utilizes CloudWatch RDS Metrics for Aurora.
 
 This dashboard utilizes CloudWatch RDS Metrics for Aurora.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 * Monitor read, write latency and throughput.
 * Monitor Read and Write IOPS to ensure your database is interacting with disk optimally.
@@ -133,7 +133,7 @@ Aurora PostgreSQL ULM Metric - Resource Utilization Monitoring Dashboard allows 
 
 This dashboard utilizes CloudWatch RDS Metrics for Aurora.
 
-**Use this dashboard to:**
+Use this dashboard to:
 * Monitor disk usage for transaction logs and swap usage for a database instance.
 * Monitor Maximum transaction IDs used to avoid the database going into read-only mode to avoid transaction ID wraparound.
 * Monitor replica lag when replicating updates from the primary RDS PostgreSQL instance to other cluster nodes.

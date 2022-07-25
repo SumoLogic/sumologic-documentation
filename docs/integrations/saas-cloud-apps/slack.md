@@ -800,7 +800,7 @@ You can use filters to drill down and examine the data on a granular level.
 
 The **Slack - Overview** dashboard provides an at-a-glance view of the number of workspaces, members, bots, admins, public channels, and public messages. Panels also show geographic access locations, and key statistics around public messages  and files.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -817,7 +817,7 @@ The **Slack - Overview** dashboard provides an at-a-glance view of the number of
 
 The **Slack - Members** dashboard shows trends for total members, active members, and messages by workspace. Panels also show detailed member information, and breakdowns by workspace for roles, timezones, and two factor authentication (2FA).
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -834,7 +834,7 @@ The **Slack - Members** dashboard shows trends for total members, active members
 
 The **Slack - Bots** dashboard displays information on bots, which are software applications that run automated tasks over the Internet. Panels show trends by workspace for all bots, active bots, and messages, as well as detailed information on bots, and a detailed bot summary.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -849,7 +849,7 @@ The **Slack - Bots** dashboard displays information on bots, which are software 
 
 The **Slack - Public Channels** dashboard provides detailed information across all channels, as well as active channels. Panels also show information on the top ten channels by files and by attachments, and a summary of all channels.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -865,7 +865,7 @@ The **Slack - Public Channels** dashboard provides detailed information across a
 
 The **Slack - Public Messages** dashboard provides details around attachments, files shared and statistics around messages in Slack public channels.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -881,7 +881,7 @@ The **Slack - Public Messages** dashboard provides details around attachments, f
 
 The **Slack - Access** dashboard helps you monitor how users are accessing Slack and identifies access requests coming in from malicious domains.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -898,7 +898,7 @@ The **Slack - Access** dashboard helps you monitor how users are accessing Slack
 
 The **Slack - Audit Overview **dashboard provides details around  Slack audit actions, and trends.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -914,7 +914,7 @@ The **Slack - Audit Overview **dashboard provides details around  Slack audit ac
 
 The **Slack - User Audit** dashboard provides insight into  user and administrative audit actions and trends. Panels also display detailed information for members and guest members.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -931,7 +931,7 @@ The **Slack - User Audit** dashboard provides insight into  user and administrat
 
 The **Slack - Workspace Audit** dashboard provides information on top users, top audit actions and audit trends. Panels also detail workspace sign on, exports, data retention and billing, and other admin activities.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -949,7 +949,7 @@ The **Slack - Workspace Audit** dashboard provides information on top users, top
 
 The **Slack - Channel Audit** dashboard provides details on the top channel audit actions and trends. The panels also display information on top members and member activity, and top guest members and guest member activity.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -966,7 +966,7 @@ The **Slack - Channel Audit** dashboard provides details on the top channel audi
 
 The **Slack - File and App Audit** dashboard displays file audit and app audit information. The panels show audit actions, top actions and file types or scopes, top users, and member activity.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 

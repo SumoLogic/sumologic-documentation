@@ -37,7 +37,7 @@ For each Apache server, hourly signals for the past 7 days are used to construct
 
 The **GI Apache - 01. Load Signals and Contributing Factors** dashboard compares the golden signal of load (requests per second) for a company’s Apache servers to other servers. These signals are impacted by connections per second, requests per connection, the share of bot connections, and share of HTTP POST/DELETE requests. These causal signals are also compared to the population of Apache servers.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 * Analyze unusual load spikes and the reasons for them. Load on an Apache server is measured by Requests per Second. Apache [request rate](https://httpd.apache.org/docs/trunk/misc/perf-scaling.html) is affected by connection rate, requests per connection, data transferred (GB/request), BOT activity, and HTTP verb mix. In addition [configuration factors](https://www.liquidweb.com/kb/apache-optimization/) such as the use of HTTPs and CPU/Memory allocation also affect Apache request rate. Assess if your Apache request rates are significantly lower for a given server compared to other Apache servers. If so, consult these correlates to verify if any of these factors might be the cause. To do this, first consult the Distance measurement and then the difference between a given entity and the benchmark.
 

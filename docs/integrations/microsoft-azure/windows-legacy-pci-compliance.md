@@ -5,6 +5,8 @@ sidebar_label: Windows PCI Compliance (Legacy)
 description: Windows Legacy PCI Compliance
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 This guide helps you set up Sumo Logic Collectors, and install the PCI Compliance for Windows Legacy application, so you can begin monitoring your usage and determine if you are meeting Compliance benchmarks.
 
 ## Collecting Logs
@@ -125,6 +127,7 @@ Panels will start to fill automatically. It's important to note that each panel 
 
 Track your user accounts and recent system changes.
 
+<img src={useBaseUrl('img/integrations/microsoft-azure/Overview.png')} alt="Windows Legacy PCI Compliance dashboards" />
 
 * **User Account Created. **Aggregation table of the number of user accounts created in the last 24 hours.
 * **User Account Deleted.** Aggregation table of the number of user accounts deleted in the last 24 hours.
@@ -144,7 +147,7 @@ Track your user accounts and recent system changes.
 
 Track login successes and failures.
 
-
+<img src={useBaseUrl('img/integrations/microsoft-azure/Overview.png')} alt="Windows Legacy PCI Compliance dashboards" />
 
 
 * **Failed Logins.** Count of failed logins over the last 24 hours.
@@ -160,7 +163,7 @@ Track login successes and failures.
 
 Track user activities such as password changes, password resets, excessive failed access attempts, unlocked accounts, and disabled accounts.
 
-
+<img src={useBaseUrl('img/integrations/microsoft-azure/Overview.png')} alt="Windows Legacy PCI Compliance dashboards" />
 
 * **User Account Password Changes. **Displays an aggregation table of the times passwords were changed, the destination host, destination user, source host, and source user, source domain, error message, error code, and the number of events that occurred.
 * **User Account Password Reset. **Displays an aggregation table of the times passwords were reset, the destination host, destination user, source host, and source user, source domain, error message, error code, and the number of events that occurred.
@@ -173,10 +176,10 @@ Track user activities such as password changes, password resets, excessive faile
 
 Track your Windows Update activities.
 
+<img src={useBaseUrl('img/integrations/microsoft-azure/Overview.png')} alt="Windows Legacy PCI Compliance dashboards" />
 
 * **All Windows Updates.** Aggregation table displaying all updated hosts in the past 24 hours, success/failure of that update, and any relevant error codes.
 * **Recent Windows Update Failures.** Aggregation table displaying all update failures in the last 7 days, update that failed, time of failure, and current status.
 * **Windows Update Trend.** Bar chart that displays 7-day trend of updates success and failure time sliced by hour.
 * **Windows Update Summary by Host. **Aggregation table of the hosts and a count of that host’s update success or failure for the past 7 days.
 * **Windows Update Summary.** Aggregation table of the latest Windows updates for the last 7 days and a count of their successes and failures
-1.

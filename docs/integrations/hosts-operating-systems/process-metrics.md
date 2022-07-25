@@ -514,7 +514,7 @@ You can use template variables to drill down and examine the data on a granular 
 
 The **Host Metrics - Overview** dashboard gives you an at-a-glance view of the key metrics like CPU, memory, disk, network, and TCP connections of all your hosts. You can drill down from this dashboard to the Host Metrics - CPU/Disk/Memory/Network/TCP dashboard by using the honeycombs or line charts in all the panels.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -529,7 +529,7 @@ The **Host Metrics - Overview** dashboard gives you an at-a-glance view of the k
 
 The **Host Metrics - CPU** dashboard provides a detailed analysis based on CPU metrics. You can drill down from this dashboard to the **Process Metrics - Details** dashboard by using the honeycombs or line charts in all the panels.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -545,7 +545,7 @@ The **Host Metrics - CPU** dashboard provides a detailed analysis based on CPU m
 
 The **Host Metrics - Disk** dashboard provides detailed information about on disk utilization and disk IO operations.You can drill down from this dashboard to the **Process Metrics - Details** dashboard by using the honeycombs or line charts in all the panels.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -562,7 +562,7 @@ The **Host Metrics - Disk** dashboard provides detailed information about on dis
 
 The **Host Metrics - Memory** dashboard provides detailed information on host memory usage, memory distribution, and swap space utilization. You can drill down from this dashboard to the **Process Metrics - Details** dashboard by using the honeycombs or line charts in all the panels.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -579,7 +579,7 @@ The **Host Metrics - Memory** dashboard provides detailed information on host me
 
 The **Host Metrics - Network** dashboard provides detailed information on host network errors, throughput, and packets sent and received.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -596,7 +596,7 @@ The **Host Metrics - Network** dashboard provides detailed information on host n
 
 The **Host Metrics - TCP** dashboard provides detailed information around inbound, outbound, open, and established TCP connections.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -611,7 +611,7 @@ The **Host Metrics - TCP** dashboard provides detailed information around inboun
 
 The **Process Metrics - Overview** dashboard gives you an at-a-glance view of all the processes by open file descriptors,  CPU usage, memory usage, disk read/write operations and thread count.You can drill down from this dashboard to the **Process Metrics - Details** dashboard by using the honeycombs or line charts in all the panels.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -627,7 +627,7 @@ The **Process Metrics - Overview** dashboard gives you an at-a-glance view of al
 
 The **Process Metrics - Details** dashboard gives you a detailed view of key process related metrics such as CPU and memory utilization, disk read/write throughput, and major/minor page faults.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -644,7 +644,7 @@ The **Process Metrics - Details** dashboard gives you a detailed view of key pro
 
 The **Process Metrics - Trend** dashboard gives you insight into the state of your processes over time.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 

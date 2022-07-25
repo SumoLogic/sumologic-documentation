@@ -286,7 +286,7 @@ You can use template variables to drill down and examine the data on a granular 
 
 The **Bitbucket - Overview** dashboard provides an overview of issues by repository, pull requests, builds and deployment status. Panels identify key trends and summarize the status across each workflow.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 * Quickly get insight around how various Bitbucket components are being used.
@@ -300,7 +300,7 @@ The **Bitbucket - Overview** dashboard provides an overview of issues by reposit
 
 The **Bitbucket - Deployments** dashboard provides details around failed and successful deployments in production, staging, and test environments
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 * To confirm whether code was successfully deployed to production.
 * To understand and drill-down into commits that led to failed deployments.
@@ -314,7 +314,7 @@ The **Bitbucket - Deployments** dashboard provides details around failed and suc
 
 The **Bitbucket - Builds** dashboard provides a detailed view of the failed and successful builds overtime and by repository. It also lists the details of each build which includes the time when it was started and also identifies the changes made to the build.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 * Speed up the overall software delivery processes by identifying bottlenecks in build failures.
 * Monitor the success/failure rate of builds and identify relevant individuals, repos, and branches.
@@ -328,7 +328,7 @@ The **Bitbucket - Builds** dashboard provides a detailed view of the failed and 
 
 The **Bitbucket - Issues** dashboard provides a view of issues classified by type, priority, assignee, and project. This dashboard also provides details on issues escalated, issues summary, and issues over time.
 
-**Use this dashboard to:**\
+Use this dashboard to:\
 * Get insights into high-level statistics around software issues.
 * Improve overall software delivery processes by identifying issues by priority, projects, users, and type.
 * Get insights into identifying regressions and blockers.
@@ -340,7 +340,7 @@ The **Bitbucket - Issues** dashboard provides a view of issues classified by typ
 
 The **Bitbucket - Pull Request** dashboard gives a view of pull requests opened, merged, and declined as well as average time taken to close the pull request by repository and by reviewers.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 * Improve the overall software delivery processes by identifying bottlenecks in review processes.
 * Identify commits and code changes.

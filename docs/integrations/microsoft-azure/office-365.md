@@ -5,6 +5,8 @@ sidebar_label: Microsoft Office 365
 description: Microsoft Office 365
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 The Microsoft Office 365 App ingests Microsoft Office 365 Audit logs for Azure Active Directory, Exchange, and SharePoint. Preconfigured Dashboards allow you to monitor and analyze your complete Office 365 system for administrator and user activity.
 
 
@@ -163,7 +165,7 @@ The Sumo Logic App for Microsoft Office 365 provides insights for Azure Active D
 
 Shows details of Office 365 successful and failed activities, and SharePoint, Exchange, and Azure operations.
 
-
+<img src={useBaseUrl('img/integrations/microsoft-azure/Overview.png')} alt="Microsoft Office 365 dashboards" />
 
 **Successful Activity by Workload. **Compare your overall Office 365 workload activity by service as an area chart on a timeline for the last 24 hours.
 
@@ -255,8 +257,6 @@ Successful Logins
 
 
 #### Failed Logins
-21
-
 
 **Login Failures.** See the count of login failures in the last 24 hours.
 
@@ -371,13 +371,9 @@ Shows the active users, operations, folders and recent activities.
 
 
 ### Exchange - Mailbox Audit
-31
-
 
 Shows the details of users, operations, IPs, client, logon types, and external access.
 
-
-32
 
 
 **Top 10 Operations.** See the top 10 operations by operation name and frequency in a bar chart for the last 24 hours.
@@ -396,14 +392,8 @@ Shows the details of users, operations, IPs, client, logon types, and external a
 
 
 ### Exchange - Mailbox Audit - Client Locations
-33
-
 
 Shows the clients by locations and over time.
-
-
-34
-
 
 **Worldwide Clients**. Performs a geo lookup operation to display worldwide client IP address locations on a map of the world for the last 24 hours.
 
@@ -415,19 +405,11 @@ Shows the clients by locations and over time.
 
 
 ### SharePoint
-35
-
 
 
 #### SharePoint - Content Insight
-36
-
 
 Shows details of URLs accessed, downloaded, uploaded, viewed, checked in, and checked out content.
-
-
-37
-
 
 **Top 10 SiteUrl Accessed**. See the top 10 SiteUrls accessed in a table chart including details on siteurl and count for the last 24 hours.
 
@@ -445,15 +427,10 @@ Shows details of URLs accessed, downloaded, uploaded, viewed, checked in, and ch
 
 
 #### SharePoint - Shared Content Non-Domains Activities
-38
-
 
 Shows details of non-domain users' accesses, uploads, downloads, and views.
 
 To see your data in this dashboard, open the queries of each panel and add your domain in the queries as mentioned [here](https://help.sumologic.com/07Sumo-Logic-Apps/04Microsoft-and-Azure/Microsoft_Office_365/Microsoft-Office-365-App-Dashboards#Install_the_Sumo_Logic_App).
-
-
-39
 
 
 **Top 10 Users Sharing Outside Domain**. See the top 10 users sharing content outside the domain in a table chart including details on user ID and frequency for the last seven days.
@@ -474,13 +451,8 @@ To see your data in this dashboard, open the queries of each panel and add your 
 
 
 #### SharePoint - User Activity
-40
-
 
 Shows details of active users, active IPs, and count of user sharing content.
-
-
-41
 
 
 **Top 10 Active Users**. See the top 10 active users in a table chart including details on user ID and count for the last 24 hours.
@@ -497,14 +469,8 @@ Shows details of active users, active IPs, and count of user sharing content.
 
 
 #### SharePoint - Visitor Locations
-42
-
 
 Shows details of visitors to the SharePoint by location and over time.
-
-
-43
-
 
 **Worldwide Visitors**. Performs a geo lookup operation to display worldwide client IP address locations on a map of the world for the last 24 hours.
 
@@ -516,8 +482,6 @@ Shows details of visitors to the SharePoint by location and over time.
 
 
 ### Searches
-44
-
 
 To use the following searches, you will need to edit the search query to add the specific IP address or user email as needed.
 

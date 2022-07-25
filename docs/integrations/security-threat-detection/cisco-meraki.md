@@ -236,7 +236,7 @@ Each panel has a set of filters that are applied to the results for that panel o
 
 The **Cisco Meraki - Overview** dashboard provides a high-level view of high severity threats, port scan attacks, HTTP requests, and Air Marshall events in your environment. Panels also display overviews for message types and trends, as well as device names and trends.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -254,7 +254,7 @@ The **Cisco Meraki - Overview** dashboard provides a high-level view of high sev
 
 The **Cisco Meraki - Security Threats** dashboard provides a high-level view of events, event priority and type, security threat event trends, and hosts that have been impacted. The panels also show detailed information on IDS signatures that were matched, malicious files that were blocked, and files that were deemed malicious after further investigation.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -274,7 +274,7 @@ The **Cisco Meraki - Security Threats** dashboard provides a high-level view of 
 
 The **Cisco Meraki - URLs Overview** dashboard provides a high-level view of requests made, destination locations, and threats by URLs. The panels also display information on mac addresses, methods, OS platforms used, the top requested URLs and destination ports. Graphs for outlier trends and comparison graphs provide insights that enable proactive troubleshooting and root cause resolution.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -295,7 +295,7 @@ The **Cisco Meraki - URLs Overview** dashboard provides a high-level view of req
 
 The **Cisco Meraki - URLs Content and Client Platform** dashboard provides information on the top media types that are requested in your environment, trends on media types that are requested over time, and the top requested URLs. The panels also display information on the OS platforms used, the browsers used on the various operating systems, and the platform versions used.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -313,7 +313,7 @@ The **Cisco Meraki - URLs Content and Client Platform** dashboard provides infor
 
 The **Cisco Meraki - URLs Threat Intel** dashboard provides a high-level view of the number of threats, their geographic locations, threats by actor, the malicious confidence, and details on IP destinations. The panels also show the number of threats by URL, their geographic locations, threats by actor, the malicious confidence, and the details on the URL threats.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -349,7 +349,7 @@ The **Cisco Meraki - Flows Overview** dashboard provides a high-level view of tr
 
 The **Cisco Meraki - Flows Allowed and Rejected** dashboard provides a high-level view of the geographic locations and outlier graphs for allowed and denied traffic. Panels also show allowed and denied insecure traffic by protocol, allowed insecure traffic by application and host, allowed network activity on unencrypted ports, and a graph of flows by pattern.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -367,7 +367,7 @@ The **Cisco Meraki - Flows Allowed and Rejected** dashboard provides a high-leve
 
 The **Cisco Meraki - Events** dashboard provides a high-level view of events for MR access points, MX security appliances, and MS switches. Panels display information on the number of events, event types, Air Marshall events, connectivity, client DHCP events, and trend graphs of events over time.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 

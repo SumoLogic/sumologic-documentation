@@ -5,6 +5,8 @@ sidebar_label: Windows (Legacy)
 description: Windows Legacy
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 The Windows Legacy App provides insight into your Windows system's operation and events so that you can better manage and maintain your environment. The Windows Legacy App consists of predefined searches and dashboards that provide visibility into your environment for real-time analysis of overall usage of Security Status, System Activity, Updates, and User Activity.
 
 
@@ -120,6 +122,8 @@ Panels will start to fill automatically. It's important to note that each panel 
 
 See information about Windows update errors, fatal or warning messages, policy changes, system restarts, and changes to administrative groups.
 
+<img src={useBaseUrl('img/integrations/microsoft-azure/Overview.png')} alt="Windows Legacy dashboards" />
+
 **Top Windows Update Error Codes.** Displays the top 10 Windows update error codes in a pie chart for the last 24 hours.
 
 **All Fatal or Warning Messages by Source Host.** Provides details on the number of all fatal or warning messages by source host in an aggregation table for the last 24 hours.
@@ -137,9 +141,7 @@ See information about Windows update errors, fatal or warning messages, policy c
 
 See information about the start and stop operations for Windows services; Windows events; operations events; and errors and warnings.
 
-
-14
-
+<img src={useBaseUrl('img/integrations/microsoft-azure/Overview.png')} alt="Windows Legacy dashboards" />
 
 **Top 10 Service Operations.** Displays information on the top 10 services per host that have started and stopped over the last 10 hours in a bar chart. To display details of the data in a pop-up menu, hover over a section of the chart. Hover over the text **Last 10 Hours** in the upper right corner to see details of the time frame for the displayed data.
 
@@ -156,9 +158,7 @@ See information about the start and stop operations for Windows services; Window
 
 See information about successful and failed logins, and successful RDP reconnects.
 
-
-16
-
+<img src={useBaseUrl('img/integrations/microsoft-azure/Overview.png')} alt="Windows Legacy dashboards" />
 
 **Logins by Hour.** Counts the number of login successes and failures by one hour increments over the last two hours in a column chart. To display details of the data in a pop-up menu, hover over a section of the chart. Hover over the text in the upper right corner, **Last 2 Hours**, to see details of the time frame for the displayed data.
 
@@ -175,7 +175,7 @@ See information about successful and failed logins, and successful RDP reconnect
 
 See information about Window event messages that contain a keyword that indicates a problem. (If a Windows event contains  "error", "timeout", "exception", or "fail", Sumo tags the message with "error_keyword", "timeout_keyword", "exception_keyword", or "fail_keyword" respectively.)
 
-
+<img src={useBaseUrl('img/integrations/microsoft-azure/Overview.png')} alt="Windows Legacy dashboards" />
 
 **Breakdown by Keyword Tag**. A donut chart that shows the breakdown of problem keywords encountered in event messages over the last 24 hours.
 

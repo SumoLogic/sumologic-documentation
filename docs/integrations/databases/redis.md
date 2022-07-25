@@ -837,7 +837,7 @@ You can use template variables to drill down and examine the data on a granular 
 
 The** Redis - Overview** dashboard provides an at-a-glance view of the Redis server status, error logs along with database metrics.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -856,7 +856,7 @@ The** Redis - Overview** dashboard provides an at-a-glance view of the Redis ser
 
 The **Redis - Cluster Overview** dashboard provides a high-level view of cluster infrastructure, comparisons, and trends.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -875,7 +875,7 @@ The **Redis - Cluster Overview** dashboard provides a high-level view of cluster
 
 The** Redis - Cluster Operations** dashboard provides a high-level view of the activity and health of Master and Slaves on your network. Dashboard panels display visual graphs and detailed information on replication offsets, cache rate, and most importantly, resource usage.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -893,7 +893,7 @@ The** Redis - Cluster Operations** dashboard provides a high-level view of the a
 
 The **Redis - Logs** dashboard provides a detailed analysis based on logs. The panels provide details such as RDBMemory Usage, events, RDB, and AOF events.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -911,7 +911,7 @@ The **Redis - Logs** dashboard provides a detailed analysis based on logs. The p
 
 The **Redis - Command Stats Deltas **dashboard provides an at-a-glance view of commands running on your Redis server.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 

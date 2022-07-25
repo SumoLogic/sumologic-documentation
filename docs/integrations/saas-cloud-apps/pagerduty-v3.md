@@ -150,7 +150,7 @@ You can use template variables to drill down and examine the data on a granular 
 
 **PagerDuty V3 - Overview Dashboard **provides a high-level view of top alerts, triggered incidents summary, as well as a breakdown of per-user incident assignments and comparisons over a specified time interval.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 * Review the services, incidents and policies that are causing the most alerts.
 * Analyze detailed information on incidents using the Incident Summary panel.
@@ -165,7 +165,7 @@ You can use template variables to drill down and examine the data on a granular 
 
 **PagerDuty V3 - Incidents Overview Dashboard** provides an at-a-glance analysis of triggered, acknowledged, escalated, assigned, and resolved incidents. This dashboard also provides a high-level view of incident trends and comparisons over specified time intervals.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 * Review a high-level view of incident summaries.
 * Compare the state of incidents with that of a previous time
@@ -177,7 +177,7 @@ You can use template variables to drill down and examine the data on a granular 
 
 **PagerDuty V3 - Incidents by  Urgency and Escalation Policy Dashboard** provides an overview analysis of urgency events, from low to high, as well as a breakdown of the services impacted by high urgency events.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
