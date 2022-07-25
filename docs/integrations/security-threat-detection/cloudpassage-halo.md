@@ -5,6 +5,11 @@ sidebar_label: CloudPassage Halo
 description: The CloudPassage Halo App enables security operators and administrators to correlate security events across their Halo-managed infrastructure. You can leverage the security visibility provided by CloudPassage's Halo platform with Sumo Logic’s correlation and visualization capabilities to deliver a security reporting and analysis tool.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src={useBaseUrl('img/integrations/security-threat-detection/cloudpassage.png')} alt="thumbnail icon" width="75"/>
+
+
 The CloudPassage Halo App helps you detect security violations and look for threats across your complex infrastructure, through the analysis of massive volumes of Halo event data. CloudPassage’s Halo platform records over eighty different types of security events about your Halo-managed infrastructure, whether you deploy into public cloud environments or your private data center. These events deliver information about your infrastructure and include critical security alerts for firewall changes, access changes, configuration changes, and file integrity changes, and more.
 
 You can leverage the security visibility provided by CloudPassage's Halo platform with Sumo Logic’s correlation and visualization capabilities to deliver a security reporting and analysis tool. This App enables security operators and administrators to correlate security events across their Halo-managed infrastructure.

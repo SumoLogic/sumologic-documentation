@@ -4,14 +4,19 @@ title: Security and Threat Detection
 description: Learn about Sumo apps for Security and Threat Detection.
 ---
 
-Sumo provides a variety of apps for security products and platforms, from firewalls and endpoint protection to security automation and orchestration. This guide has documentation for those apps.  
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-:::note
-If you're looking for an app for AWS, Microsoft, or Google, see [Amazon and AWS](/docs/integrations/amazon-aws/index.md), [Microsoft and Azure](/docs/integrations/microsoft-azure/index.md), or [Google](/docs/integrations/google/index.md).
-:::
+<img src={useBaseUrl('img/integrations/security-threat-detection/security-threat-detection.png')} alt="thumbnail icon" width="75"/>
+
+Sumo provides a variety of apps for security products and platforms, from firewalls and endpoint protection to security automation and orchestration. This guide has documentation for those apps.  
 
 
 import DocCardList from '@theme/DocCardList';
 import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
 
 <DocCardList items={useCurrentSidebarCategory().items}/>
+
+
+:::note
+If you're looking for an app for AWS, Microsoft, or Google, see [Amazon and AWS](/docs/integrations/amazon-aws/index.md), [Microsoft and Azure](/docs/integrations/microsoft-azure/index.md), or [Google](/docs/integrations/google/index.md).
+:::

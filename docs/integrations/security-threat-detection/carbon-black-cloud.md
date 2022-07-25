@@ -5,6 +5,8 @@ sidebar_label: Carbon Black Cloud
 description: The Carbon Black Cloud App analyzes alert and event data from the Endpoint Standard and Enterprise EDR products. App dashboards provide visibility into threats, TTPs, devices, and more.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 The Carbon Black Cloud App analyzes alert and event data from Endpoint Standard and Enterprise EDR products and provides comprehensive visibility into the security posture of your endpoints, enabling you to determine the effects of breaches in your environment. The app provides visibility into key endpoint security data with preconfigured dashboards for alerts, threats intelligence, feeds, sensors, alerts, users, hosts, processes, IOCs, devices and network status.
 
 
@@ -185,7 +187,7 @@ Once the app is installed, it will appear in the folder that you specified. From
 Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
 
 
-### Dashboards 
+### Dashboards
 14
 
 

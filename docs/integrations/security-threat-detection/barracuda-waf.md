@@ -4,6 +4,11 @@ title: Sumo Logic App for Barracuda Web Application Firewall
 sidebar_label: Barracuda WAF
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src={useBaseUrl('img/integrations/security-threat-detection/barracuda.png')} alt="thumbnail icon" width="75"/>
+
+
 The Barracuda Web Application Firewall protects your web, mobile and API applications from being compromised, prevents data breaches, ensure protection from web attacks, provide control access and authentication.
 
 The Barracuda WAF App analyzes traffic flowing through the Barracuda WAF and provides pre-configured dashboards that allow you to monitor WAF traffic as well to analyze various types of attacks detected both by Barracuda and Sumo Logic’s own [Threat Intelligence database](https://help.sumologic.com/07Sumo-Logic-Apps/22Security_and_Threat_Detection/Threat_Intel_Quick_Analysis/03_Threat-Intel-FAQ#What_is_the_CrowdStrike_Integration_for_Sumo_Logic.3F).
