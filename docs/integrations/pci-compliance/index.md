@@ -5,6 +5,11 @@ sidebar_label: PCI Compliance
 description: Sumo apps for PCI Compliance.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src={useBaseUrl('img/integrations/pci-compliance/pci.png')} alt="DB icon" width="75"/>
+
+
 This guide has documentation for Sumo apps for PCI compliance.
 
 import DocCardList from '@theme/DocCardList';
