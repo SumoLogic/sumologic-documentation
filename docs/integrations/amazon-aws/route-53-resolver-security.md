@@ -7,6 +7,8 @@ description: Amazon Route53 Resolver Security
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
+<img src={useBaseUrl('img/integrations/amazon-aws/route53.png')} alt="DB icon" width="50"/>
+
 Amazon Route 53 Resolver is a highly available cloud-based DNS service from Amazon. The Sumo Logic Route 53 Resolver Security app enables you to monitor both Query Logs, and if in use, the DNS Firewall logs.
 
 Query logging enables visibility to inbound and outbound DNS queries to the Resolver endpoint. Integrating the logs with Sumo Logic provides insights such as queries by location or instance id.

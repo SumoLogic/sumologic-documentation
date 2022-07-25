@@ -5,6 +5,10 @@ sidebar_label: MySQL
 description: Provides insight into the health of your MySQL servers, replication status, and errors.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src={useBaseUrl('img/integrations/databases/mysql.png')} alt="DB icon" width="100" />
+
 The Sumo Logic App for MySQL is a unified logs and metrics app that helps you monitor the availability, performance and resource utilization of MySQL database clusters. Preconfigured dashboards and searches provide insight into the health of your MySQL clusters, replication status, error logs, query performance, slow queries, Innodb operations, failed logins and error logs.
 
 The MySQL App supports following versions:

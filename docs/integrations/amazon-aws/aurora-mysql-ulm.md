@@ -1,11 +1,13 @@
 ---
 id: aurora-mysql-ulm
-title: Aurora MySQL ULM
-sidebar_label: Aurora MySQL ULM
+title: Sumo Logic App for Amazon Aurora MySQL ULM
+sidebar_label: Amazon Aurora MySQL ULM
 description: Aurora MySQL ULM
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src={useBaseUrl('img/integrations/amazon-aws/aurora.png')} alt="DB icon" width="50"/>
 
 The Sumo Logic App for Aurora MySQL ULM is a unified logs and metrics (ULM) app for your Aurora MySQL database. The app allows you to monitor slow queries executing on the database, the number of connections made, identify users and client hosts, and client locations used to connect to database. The app also provides insights for queries executed per second, CPU utilization, free memory, network utilization, volume read and write IOPS, replica lags, latency, throughput, failed login and  connection attempts, and other health and performance related data.
 

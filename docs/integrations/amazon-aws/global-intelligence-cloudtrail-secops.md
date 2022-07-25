@@ -6,6 +6,8 @@ description: Global Intelligence for AWS CloudTrail SecOps
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
+<img src={useBaseUrl('img/integrations/amazon-aws/gi-secops.png')} alt="DB icon" width="50"/>
+
 This feature is available in the following account plans.
 
 <table>
