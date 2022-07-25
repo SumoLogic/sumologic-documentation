@@ -1,6 +1,6 @@
 ---
 id: guardduty-benchmark
-title: Amazon GuardDuty Benchmark
+title: Sumo Logic App for Amazon GuardDuty Benchmark
 sidebar_label: Amazon GuardDuty Benchmark
 description: Amazon GuardDuty Benchmark
 ---

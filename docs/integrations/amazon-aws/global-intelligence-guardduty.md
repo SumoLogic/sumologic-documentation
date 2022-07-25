@@ -47,14 +47,17 @@ This application name is abbreviated to **GI GuardDuty** in these documentation 
 The App includes pre-configured dashboards and searches with visual displays for global threat baselines and real-time threat detection across your AWS environment, including threat sources and targets by geographic locations.  
 
 
-## Log Types
+## Collect Logs and Metrics
+
+### Log Types
 
 The Sumo Logic App for GI GuardDuty requires the Amazon GuardDuty findings to be sent through the Amazon CloudWatch Events. For more details on [GuardDuty findings](https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings.html).
 
 
-## Collect Logs and Metrics
 
 ## Install the App
+
+
 
 ## Viewing AWS Dashboards
 

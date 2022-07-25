@@ -1,6 +1,6 @@
 ---
 id: elastic-load-balancing
-title: AWS Elastic Load Balancing
+title: Sumo Logic App for AWS Elastic Load Balancing
 sidebar_label: AWS Elastic Load Balancing
 description: AWS Elastic Load Balancing
 ---
@@ -11,14 +11,199 @@ Amazon Web Services' (AWS) Elastic Load Balancing distributes incoming applicati
 
 For information on unified logs and metrics for AWS Elastic Load Balancing App, see the AWS Elastic Load Balancing ULM Application.
 
+:::tip
 If you are just beginning with AWS ELB, for background see the Sumo Logic DevOps blog, AWS Elastic Load Balancing: Load Balancer Best Practices.
+:::
 
 
-## Collect Logs and Metrics
+## Collecting Logs for the AWS Elastic Load Balancing App
 
-## Install the App
+This procedure documents how to enable access to your Amazon Web Services (AWS) Elastic Load Balancing (ELB) logs and ingest them into Sumo Logic.
+
+Once you begin uploading data, your daily data usage will increase. It's a good idea to check the **Account** page in Sumo Logic to make sure that you have enough quota to accommodate additional data in your account. If you need additional quota you can [upgrade your account](https://help.sumologic.com/Manage/01Manage_Subscription/04Upgrade_Your_Account) at any time.
 
 
-## Viewing AWS Dashboards
+### Log Types
 
-<img src={useBaseUrl('img/integrations/amazon-aws/Overview.png')} alt="AWS API Gateway" />
+ELB logs are stored as .log files in the buckets you specify when you enable logging.
+
+The process to enable collection for these logs is described in [AWS ELB Enable Access Logs](http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-access-logs.html).
+
+The logs themselves contain these fields in this order:
+
+datetime, ELB_Server, clientIP, port, backend, backend_port, requestProc, ba_Response, cli_Response, ELB_StatusCode, be_StatusCode, rcvd, send, method, protocol, domain, server_port, path
+
+The log format is described in [AWS ELB Access Log Collection](http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/access-log-collection.html).
+
+For information on unified logs and metrics for AWS Elastic Load Balancing App, see the [AWS Elastic Load Balancing ULM Application](https://help.sumologic.com/07Sumo-Logic-Apps/01Amazon_and_AWS/AWS_Application_Load_Balancer).
+
+
+### Prerequisites
+
+* Enable Elastic Load Balancing logging in your AWS account, using these Sumo Logic [instructions](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/AWS-Elastic-Load-Balancing-Source). For more information, see [AWS ELB documentation](http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-access-logs.html). Logging is not enabled in AWS ELB by default.
+* Grant access to an IAM user by following these Sumo Logic [instructions](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/Grant-Access-to-an-AWS-Product).
+* Confirm that logs are being delivered to the Amazon S3 bucket.
+
+To enable logging in AWS
+1. In the **AWS Management Console**, choose **EC2 > Load Balancers**.
+2. Under **Access Logs**, click **Edit**.
+3. In the **Configure Access Logs** dialog box, click **Enable Access Logs**, then choose an Interval and S3 bucket. This is the S3 bucket that will upload logs to Sumo Logic.
+4. Click **Save**.
+
+
+If you have more than one environment that generates Elastic Load Balancing data (such as ops, dev, and so on) you’ll need to configure a separate S3 Source for each environment. This means that you’ll have the three App Dashboards for each environment. To avoid confusion, and in order to identify which environment is generating data, you should name each S3 Source with the environment's name. For example, you might name Sources as ELB-prod, ELB-dev, ELB-test, and so on.
+
+Finally, make copies of each Panel in the Elastic Load Balancing Dashboards, and modify the search logic in each Panel so that you select the appropriate source for each environment. For example, for a production environment, you will add the string: _source=ELB-production to the beginning of each search. If you have three environments then you will have three copies of the application for each of them (nine dashboards in total).
+
+
+### Configure a Collector
+
+Configure a [Hosted Collector](https://help.sumologic.com/03Send-Data/Hosted-Collectors/Configure-a-Hosted-Collector).
+
+
+### Configure a Source
+
+Configure an [AWS Elastic Load Balancing Source](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/AWS-Elastic-Load-Balancing-Source), which includes specifying the following:
+
+* Source fields:
+    * **Bucket Name**. (Required) ELB, for example.
+    * **Path Expression**. For example, `my-bucket/prefix/AWSLogs/123456789012/*.log`
+    * **Source Category**. (Required) ELB_Prod, for example. For details see [Best Practices](https://help.sumologic.com/03Send-Data/01-Design-Your-Deployment/Best-Practices%3A-Good-Source-Category%2C-Bad-Source-Category).
+* Advanced:
+    * **Enable Timestamp Parsing**. True
+    * **Time Zone**. Logs are in UTC by default
+    * **Timestamp Format**. Auto Detect
+
+
+### Field Extraction Rules
+
+For Field Extraction Rules, use the source category established earlier.
+
+**AWS Elastic Load Balancing Logs**
+
+
+```
+parse "* * *:* *:* * * * * * * * \"* *://*:*/* HTTP" as datetime, ELB_Server, clientIP, port, backend, backend_port, requestProc, ba_Response, cli_Response, ELB_StatusCode, be_StatusCode, rcvd, send, method, protocol, domain, server_port, path
+```
+
+
+
+### Sample Log Message
+
+
+```json
+2017-01-20T23:00:26.059475Z elb-shop-com 10.15.120.181:80 10.34.7.122:80 0.000026
+0.315185 0.000027 200 200 51 1230 "POST https://examplesite.com:443/Common/path HTTP/1.1"
+"Mozilla/5.0 (Safari; Touch) AppleWebKit/537.35+ (HTML, like Gecko) Version/10.3.2.2239
+Mobile Safari/517.35+"
+```
+
+
+
+### Sample Query
+
+```sql title="Name - Request by Geolocation"
+_sourceCategory=elb*
+| parse "* * *:* *:* * * * * * * * \"* *://*:*/* HTTP" as f1, elb_server, clientIP, port, backend, backend_port, requestProc, ba_Response, cli_Response, ELB_StatusCode, be_StatusCode, rcvd, send, method, protocol, domain, server_port, path nodrop
+| parse "* * *:* *:* * * * * * * * \"-" as f1,elb_server,clientIP,port,backend,backend_port,requestProc,ba_Response,cli_Response,ELB_StatusCode,be_StatusCode,rcvd,send
+| lookup latitude, longitude, country_code, country_name, region, city, postal_code, area_code, metro_code from geo://default on ip = clientIP
+| count by latitude, longitude, country_code, country_name, region, city, postal_code, area_code, metro_code
+| sort _count
+```
+
+
+
+## Installing the AWS ELB App
+
+Now that you have set up collection for AWS ELB, install the Sumo Logic App for AWS Elastic Load Balancing to use the preconfigured searches and [dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/01Amazon_and_AWS/AWS_Elastic_Load_Balancing/AWS-Elastic-Load-Balancing-App-Dashboards#Dashboards) to analyze your data.
+
+**To install the app:**
+
+Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
+
+1. From the **App Catalog**, search for and select the app**.**
+2. Select the version of the service you're using and click **Add to Library**.
+
+Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](https://help.sumologic.com/01Start-Here/Library/Apps-in-Sumo-Logic/Install-Apps-from-the-Library)
+
+1. To install the app, complete the following fields.
+    1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
+    2. **Data Source.** Select either of these options for the data source. 
+        * Choose **Source Category**, and select a source category from the list. 
+        * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (_sourceCategory=MyCategory). 
+    3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
+2. Click **Add to Library**.
+
+Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization.
+
+Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
+
+
+### What if data isn't displaying in all Panels?
+
+Amazon S3 buckets are scanned for new files according to the Scan Interval you set when configuring the S3 Source used for AWS Elastic Load Balancing logs. Even if you set a shorter Scan Interval, say five minutes, if no new files are found, the Scan Interval is automatically doubled, up to 24 hours (you can read more in [Set the S3 Source Scan Interval](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/AWS-S3-Scan-Interval-for-Sources)). If the Scan Interval increases, it means that a Panel set to a 60-minute time range may not find any data to display, because no files have uploaded to Sumo Logic. This isn't to say that no data is being collected from your S3 bucket; you can confirm that data is being collected on the Status page.
+
+Additionally, you can change the time range of a Panel. Even though these Panels have been preconfigured, they can be edited just like any other Panel. You'll find instructions in Changing the time range of a Panel.
+
+
+## Viewing the Dashboards
+
+The Sumo Logic App for AWS Elastic Load Balancing helps you monitor the overall health of your ELB deployment. Dashboards keep an eye on errors being generated by back-end applications as well as errors generated from ELB instances.
+
+
+### Overview
+
+<img src={useBaseUrl('img/integrations/amazon-aws/aws_elb_overview.png')} alt="AWS Elastic Load Balancing dashboard" />
+
+**Requests by Geolocation.** Uses a geolocation query to display a map of the IP addresses used by clients accessing your apps for the last three hours.
+
+**Requests and Data Volume.** Displays the data being sent and received by client IP in a pie chart for the last three hours.
+
+**Requests by Load Balancer.** Displays a bar chart of how many requests are hitting a load balancer for the last three hours.
+
+**4XX and 5XX Status Codes by Backend Instance and ELB.** Charts the number of 4XX and 5XX status codes for each backend instance and ELB in a bar chart over the last 24 hours.
+
+**Latency by Load Balancer.** Displays the latency of each load balancer in AWS in a stacked column chart for the last three hours.
+
+
+### Latency Analysis
+
+<img src={useBaseUrl('img/integrations/amazon-aws/aws_elb_latency_analysis.png')} alt="AWS Elastic Load Balancing dashboard" />
+
+**Latency by Top 20 Paths.** Displays the process time of the busiest 20 paths in your deployment.
+
+**Latency by Top 20 Clients.** Displays the process time of the top 20 IP addresses in your deployment.
+
+**Latency by Domain.** Displays the latency of each domain in your EC2 deployment.
+
+**Latency by Top 20 Backend Instances.** This Panel focuses solely on the back end of your AWS EC2 deployment, keeping watch over the processing time of the 20 busiest instances.
+
+
+### Requests Analysis
+
+<img src={useBaseUrl('img/integrations/amazon-aws/aws_elb_request.png')} alt="AWS Elastic Load Balancing dashboard" />
+
+**Requests by Geolocation.** Uses a geolocation query to display a map of the IP addresses used by clients accessing your apps for the last three hours.
+
+**Total Requests and Data Volume.** Displays the data being sent and received by client IP in a line chart on a timeline for the last three hours.
+
+**Total Requests by Load Balancer.** Show the requests per load balancer over time in a bar chart for the last three hours.
+
+**Requests by Load Balancer Over Time.** Displays a line chart of how many requests are hitting a load balancer on a timeline over the last 24 hours.
+
+
+### Status Codes Analysis
+
+<img src={useBaseUrl('img/integrations/amazon-aws/aws_elb_analysis.png')} alt="AWS Elastic Load Balancing dashboard" />
+
+**Backend Instance and Load Balancer 4XX Status Codes by Path.** Displays the time an error occurred, along with the associated path.
+
+**Backend Instance and Load Balancer 4XX Status Codes by Domain.** Displays the time of an error, along with the domain, the load balancer associated with the domain, and the error code.
+
+**Backend Instance and Load Balancer 4XX Status Codes by Client.** Shows the time an error occurred, the IP that generated the error, the load balancer associated with the UP, and the number of errors that have occurred.
+
+**Backend Instance and Load Balancer 5XX Status Codes by Path.** Shows the time error(s) occurred on a specific path, along with the load balancer and backed instance associated with the path.
+
+**Backend Instance and Load Balancer 5XX Status Codes by Domain.** Shows the time error(s) occurred in a domain, along with the load balancer and backed instance associated with domain.
+
+**Backend Instance and Load Balancer 5XX Status Codes by Client.** Shows the time error(s) occurred at an IP, along with the load balancer and backed instance associated with the client IP.

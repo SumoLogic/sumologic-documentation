@@ -1,6 +1,6 @@
 ---
 id: network-firewall
-title: AWS Network Firewall
+title: Sumo Logic App for AWS Network Firewall
 sidebar_label: AWS Network Firewall
 description: AWS Network Firewall
 ---
