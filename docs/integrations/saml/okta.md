@@ -5,10 +5,12 @@ sidebar_label: Okta
 description: The Sumo Logic App for Okta helps you monitor the admin actions, failed logins, successful logins, and user activities to your applications through Okta.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 Okta provides secure connections between people and your applications on any device through identity management service built for the cloud. The Sumo Logic App for Okta helps you monitor the admin actions, failed logins, successful logins, and user activities to your applications through Okta. The App consists of dashboards that give you visibility into the applications, accesses, user events, and Multi-Factor Authentication (MFA).
 
 
-#### Log Types and Versions
+## Log Types and Versions
 
 The Sumo Logic Collector uses Okta System Log API to get the logs of Okta System. The log types include authentication, events, and actions. For more information on the Okta log API, see [here](https://developer.okta.com/docs/api/resources/system_log.html).
 
@@ -16,52 +18,33 @@ The Sumo Logic Collector uses Okta System Log API to get the logs of Okta System
 ## Collect logs for Okta
 
 To collect logs from the Okta platform, choose your deployment method:
+* [Non-FedRamp Deployments](#Configuring_Collection_for_Non-FedRamp_Deployments)
+* [FedRamp Deployments](#Requirements_and_process_overview_(FedRamp_Only))
 
 
+### Configuring Collection for Non-FedRamp Deployments
 
-* [Non-FedRamp Deployments](https://help.sumologic.com/07Sumo-Logic-Apps/20SAML/Okta/Collect_logs_for_Okta#Configuring_Collection_for_Non-FedRamp_Deployments)
-* [FedRamp Deployments](https://help.sumologic.com/07Sumo-Logic-Apps/20SAML/Okta/Collect_logs_for_Okta#Requirements_and_process_overview_(FedRamp_Only))
+Use the [new Cloud to Cloud Integration for Okta](/docs/Send-Data/Sources/Sources-for-Hosted-Collectors/Cloud-to-Cloud_Integration_Framework/Okta_Source) to create the source and use the same source category while installing the app.
 
-
-#### Configuring Collection for Non-FedRamp Deployments
-2
-
-
-Use the [new Cloud to Cloud Integration for Okta](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Cloud-to-Cloud_Integration_Framework/Okta_Source) to create the source and use the same source category while installing the app.
-
-
-3
 The sections below are available for FedRamp Sumo Logic deployments to meet FedRamp's specific compliance requirements. If you are using the Sumo Logic FedRamp deployment, you must use the sections below to configure collection for this app.
 
 
-#### Requirements and process overview (FedRamp Only)
-4
-
+### Requirements and process overview (FedRamp Only)
 
 Before you begin setting up log collection, review the required prerequisites and process overview described in the following sections.
 
 
-##### Prerequisites
-5
-
-
-
+#### Prerequisites
 
 * The integration between Sumo and Okta relies upon SumoJanus, a proprietary library used for script-based collection from applications such as Okta, Box, and Salesforce.
 * The system where you deploy SumoJanus and configure your installed collector and script source must have Java.
 
-
-6
 To ensure that SumoJanus can find your Java installation, set your `JAVA_HOME` environment or absolute `PATH` variable.
 
 
 ##### Process Overview (FedRamp Only)
-7
-
 
 Setting up log collection from Okta for analysis in Sumo Logic includes the following tasks, which must be performed in the order in which they are presented.
-
-
 
 1. Generate an Authentication Token in Okta.
 2. Download the SumoJanus package necessary for authentication.
@@ -72,31 +55,22 @@ Setting up log collection from Okta for analysis in Sumo Logic includes the foll
 
 
 #### Configuring Okta log collection (FedRamp Only)
-8
-
-
 This section walks you through the process of setting up log collection from Okta for analysis in Sumo Logic. Click a link to jump to a topic.
 
+* [Step 1: Generate the Okta API token](#step-1-generate-the-okta-api-token-fedramp-only)
+* [Step 2: Download the SumoJanu packages](#step-2-download-the-sumojanus-package-fedramp-only)
+* [Step 3: Deploy the SumoJanus packages](#step-3-deploy-the-sumojanus-package-fedramp-only)
+* [Step 4: Edit the Properties file](#step-4-edit-the-properties-file-fedramp-only)
+* [Step 5: Configure a Collector](#step-5-configure-a-collector-fedramp-only)
+* [Step 6: Configure a Source](#step-6-configure-a-source-fedramp-only)
 
 
-* [Step 1: Generate the Okta API token](https://help.sumologic.com/07Sumo-Logic-Apps/20SAML/Okta/Collect_logs_for_Okta#Step_1:_Generate_the_Okta_API_token)
-* [Step 2: Download the SumoJanu packages](https://help.sumologic.com/07Sumo-Logic-Apps/20SAML/Okta/Collect_logs_for_Okta#Step_2:_Download_the_SumoJanus_packages)
-* [Step 3: Deploy the SumoJanus packages](https://help.sumologic.com/07Sumo-Logic-Apps/20SAML/Okta/Collect_logs_for_Okta#Step_3:_Deploy_the_SumoJanus_packages)
-* [Step 4: Edit the Properties file](https://help.sumologic.com/07Sumo-Logic-Apps/20SAML/Okta/Collect_logs_for_Okta#Step_4:_Edit_the_Properties_file)
-* [Step 5: Configure a Collector](https://help.sumologic.com/07Sumo-Logic-Apps/20SAML/Okta/Collect_logs_for_Okta#Step_5:_Configure_a_Collector)
-* [Step 6: Configure a Source](https://help.sumologic.com/07Sumo-Logic-Apps/20SAML/Okta/Collect_logs_for_Okta#Step_6:_Configure_a_Source)
-
-
-##### Step 1: Generate the Okta API token (FedRamp Only)
-9
-
+#### Step 1: Generate the Okta API token (FedRamp Only)
 
 Create an Okta API token, following instructions in [Okta help](https://support.okta.com/help/s/article/How-do-I-create-an-API-token). You will add the token to the SumoJanus properties file, later in this procedure.
 
 
-##### Step 2: Download the SumoJanus package (FedRamp Only)
-10
-
+#### Step 2: Download the SumoJanus package (FedRamp Only)
 
 The following SumoJanus file is required to collect logs from Okta. Download the appropriate file for your system.
 
@@ -116,61 +90,36 @@ The following SumoJanus file is required to collect logs from Okta. Download the
 </table>
 
 
-
-##### Step 3: Deploy the SumoJanus package (FedRamp Only)
-11
-
+#### Step 3: Deploy the SumoJanus package (FedRamp Only)
 
 If you have not previously set up SumoJanus, follow the steps in [New SumoJanus installation](https://help.sumologic.com/07Sumo-Logic-Apps/20SAML/Okta/Collect_logs_for_Okta#New_SumoJanus_installation). If you have previously set up SumoJanus, follow the instructions in [SumoJanus installation update](https://help.sumologic.com/07Sumo-Logic-Apps/20SAML/Okta/Collect_logs_for_Okta#SumoJanus_installation_update).
 
 
-###### New SumoJanus installation
-12
-
+**New SumoJanus installation**
 
 Copy the package file you downloaded in [Step 2](https://help.sumologic.com/07Sumo-Logic-Apps/20SAML/Okta/Collect_logs_for_Okta#Step_2:_Download_the_SumoJanus_package) to the appropriate sumojanus folder, then unzip them there.
 
-
-
 * On Linux, run the following command:
-
-
 ```
 tar xzvf sumojanus-okta-dist.1.0.2.tar.gz
-
 ```
 
-
-
-* On Windows,  you can use Windows Explorer to open the zip package and copy it to the appropriate target folder.
-
-
+* On Windows, you can use Windows Explorer to open the zip package and copy it to the appropriate target folder.
 ```
 sumojanus-okta-dist.1.0.2.zip
 ```
 
 
-
-###### Update your SumoJanus installation
-13
-
-
-
-
+**Update your SumoJanus installation**
 1. Backup conf/sumologic.properties and the data folder.
 2. Setup a [New SumoJanus installation](https://help.sumologic.com/07Sumo-Logic-Apps/20SAML/Okta/Collect_logs_for_Okta#New_SumoJanus_installation)
 3. Migrate the backed up conf/sumologic.properties and data folder to the new Janus folder
 4. Modify the paths in [Step 6](https://help.sumologic.com/07Sumo-Logic-Apps/20SAML/Okta/Collect_logs_for_Okta#Step_6:_Configure_a_Source) below to point to the new folder.
 
 
-##### Step 4: Edit the Properties file (FedRamp Only)
-14
+#### Step 4: Edit the Properties file (FedRamp Only)
 
-
-
-
-1. Open the file `<sumojanus_foldername>/conf/sumologic.properties` in a text editor and **add the following lines to the end of the file.** You will replace the `<variables>` with information (including the brackets) you enter in the following steps.
-
+1. Open the file `<sumojanus_foldername>/conf/sumologic.properties` in a text editor and add the following lines to the end of the file. You will replace the `<variables>` with information (including the brackets) you enter in the following steps.
 
 ```
 # provide the parameters for a bundle via a unique section after this
@@ -187,85 +136,60 @@ pagination_limit = 1000
 # start_time = 1435709058000
 # optional, end time window to query, in epoch milliseconds. Default is 1 minute ago
 # end_time = 1436377600000
-
 ```
-
-
 
 1. **api_token**. Enter the Okta API token that you created in the [Generate the Okta API token](https://help.sumologic.com/07Sumo-Logic-Apps/20SAML/Okta/Collect_logs_for_Okta#Step_1:_Generate_the_Okta_API_token) step.
 2. **okta_org_url**. Enter your Okta URL. Note that the URL starts with https, and not http.
 3. **stream_pos_path**. Replace the `${path}`variable with the actual path on the server where SumoJanus is installed. For example: "/home/sumojanus"
-4. **Save** your changes. Your `sumojanus/conf/sumologic.properties` file should look similar to this example: \
- \
-
-15
+4. **Save** your changes. Your `sumojanus/conf/sumologic.properties` file should look similar to this example:
 
 
-
-##### Step 5: Configure a Collector (FedRamp Only)
-16
-
-
-
-17
-
+#### Step 5: Configure a Collector (FedRamp Only)
 
 To avoid errors, use the latest bundled JRE version listed in the [Collector Release Notes](https://help.sumologic.com/Release-Notes/Collector-Release-Notes). Since the JRE folder **can change** with collector upgrades, we **strongly recommend** copying this JRE folder to a separate place and pointing the JAVAPATH to that folder. To check the current JRE folder the collector is using, go to the **collector** folder under `config/wrapper.conf`, and look for the variable `wrapper.java.command`.
 
 Configure an [Installed Collector](https://help.sumologic.com/03Send-Data/Installed-Collectors) on a Linux or Windows machine. By default the Collector will come with a Java Runtime Environment. To ensure that SumoJanus can locate Java, you may need to update the .bat or .bash file, as described below.
 
-**On Windows, update `SumoJanus_Okta.bat`
+* On Windows, update `SumoJanus_Okta.bat`
 
 Navigate to the folder where you installed SumoJanus, and open `SumoJanus_Okta.bat`  in a text editor. Line 3 of the script sets `JAVAPATH` to `C:\Program Files\Sumo Logic Collector\jre\bin` as shown below:
-
-
 ```
 set JAVAPATH="C:\Program Files\Sumo Logic Collector\jre\bin"
 ```
-
 
 If your collector JRE is in a different location, update Line 3 accordingly.  
 On Linux, update `SumoJanus_Okta.bash`
 
 Navigate to the folder where you installed SumoJanus, and open `SumoJanus_Okta.bash`  in a text editor. Update the script as follows:
 
+1. Add a line that sets `JAVA_HOME `to point to the location of your JRE, just before the last line of the script. For example, if your collector's JRE is in `/opt/SumoCollector/jre/bin`, insert this line:
+```
+JAVA_HOME=/opt/SumoCollector/jre/bin
+```
+
+2. The last line of the script is:
+```
+java -jar ${SUMOJANUS_JAR_FILE} ${runMode} OktaCollector-1.0.2.jar -e 1800
+```
+
+Prefix the line with `$JAVA_HOME/`, like this:
+```
+$JAVA_HOME/java -jar ${SUMOJANUS_JAR_FILE} ${runMode} OktaCollector-1.0.2.jar -e 1800
+```
 
 
-1. Add a line that sets `JAVA_HOME `to point to the location of your JRE,  just before the last line of the script. For example, if your collector's JRE is in `/opt/SumoCollector/jre/bin`, insert this line: \
- \
-`JAVA_HOME=/opt/SumoCollector/jre/bin`
-2. The last line of the script is: \
- \
-`java -jar ${SUMOJANUS_JAR_FILE} ${runMode} OktaCollector-1.0.2.jar -e 1800 \
- \
-`Prefix the line with `$JAVA_HOME/`, like this: \
- \
-`$JAVA_HOME/java -jar ${SUMOJANUS_JAR_FILE} ${runMode} OktaCollector-1.0.2.jar -e 1800`
-
-
-##### Step 6: Configure a Source (FedRamp Only)
-18
-
-
+#### Step 6: Configure a Source (FedRamp Only)
 For guidance creating your Source Category naming convention, see [Best Practices: Good Source Category, Bad Source Category](https://help.sumologic.com/03Send-Data/01-Design-Your-Deployment/Best-Practices%3A-Good-Source-Category%2C-Bad-Source-Category).
 
-###### **To configure a Script Source, do the following: **
-19
-
-
-
+**To configure a Script Source, do the following:**
 
 1. Configure a [Script Source](https://help.sumologic.com/03Send-Data/Sources/01Sources-for-Installed-Collectors/Script-Source). Collectors using version 19.245-4 and later do not allow Script Sources to run by default. \
 
-20
 To allow Script Sources you need to set the Collector parameter `enableScriptSource` in [user.properties](https://help.sumologic.com/03Send-Data/Installed-Collectors/05Reference-Information-for-Collector-Installation/06user.properties) to true and [restart](https://help.sumologic.com/Manage/Collection/02Start-or-Stop-a-Collector-using-Scripts) the Collector. \
-**Linux \
-**
-21
-** \
+Linux \
+
 Windows \
-**
-22
+
 
 2. Configure the Source fields:
     1. **Name**. OktaCollector.
@@ -280,11 +204,8 @@ Windows \
 
 
 ### Sample log message
-23
 
-
-
-```
+```json
 {
    "actor":{
       "id":"00u17b6c3rwVP7kqo1d8",
@@ -399,14 +320,9 @@ Windows \
 
 
 
-### Query samples
-24
+### Sample Queries
 
-
-**Details of Applications Deleted**
-
-
-```
+```sql title="Details of Applications Deleted"
 _sourceCategory = "okta" "application.lifecycle.delete"
 | json field=_raw "eventType" as event_type
 | where event_type = "application.lifecycle.delete"
@@ -428,10 +344,7 @@ _sourceCategory = "okta" "application.lifecycle.delete"
 ```
 
 
-**Details of MFA Deactivate Event**
-
-
-```
+```sql title="Details of MFA Deactivate Event"
 _sourceCategory = "okta" "user.mfa.factor.deactivate"
 | json field=_raw "eventType" as event_type
 | where event_type = "user.mfa.factor.deactivate"
@@ -455,7 +368,7 @@ _sourceCategory = "okta" "user.mfa.factor.deactivate"
 
 
 
-## Install the Sumo Logic App
+## Installing the Okta App
 
 Now that you have set up collection for Okta, install the Sumo Logic App for Okta to use the preconfigured searches and [Dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/20SAML/Okta/Okta-App-Dashboards#Dashboards) that provide insight into your data.
 
@@ -463,16 +376,10 @@ Now that you have set up collection for Okta, install the Sumo Logic App for Okt
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
-
-
 1. From the **App Catalog**, search for and select the app**.**
 2. Select the version of the service you're using and click **Add to Library**.
 
-
-26
 Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](https://help.sumologic.com/01Start-Here/Library/Apps-in-Sumo-Logic/Install-Apps-from-the-Library)
-
-
 
 1. To install the app, complete the following fields.
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
@@ -487,20 +394,12 @@ Once an app is installed, it will appear in your **Personal** folder, or other f
 Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
 
 
-## Dashboards
-27
+## Viewing Okta Dashboards
 
 
-
-#### Okta - Administrative Actions
-28
-
+### Administrative Actions
 
 Shows the details of administrative actions such as the geolocation of application events, severity of events over time, application events, deactivated applications, application creation and deletion, admin accesses, and AD agent connection to Okta.
-
-
-29
-
 
 **Geolocation of Application Events**. See the number of application events across the world on a map in the last 24 hours.
 
@@ -520,16 +419,12 @@ Shows the details of administrative actions such as the geolocation of applicati
 
 **Connect AD Agent to Okta. **See the details of connect AD agent to Okta such as the Okta user ID, outcome result, display message, and count, in the last 24 hours.
 
-
-#### Okta - Application Access
-30
+<img src={useBaseUrl('img/integrations/saml/Okta-AdministrativeActions.png')} alt="Okta-AdministrativeActions" />
 
 
+
+### Application Access
 Shows the details of accesses by different applications, the location of logins, top 10 active users, successful and failed accesses by applications.
-
-
-31
-
 
 **Breakdown By Application**. See the Okta access broken down by application in a pie chart for the last three days.
 
@@ -551,16 +446,11 @@ Shows the details of accesses by different applications, the location of logins,
 
 **Outlier in Failed Application Access by User**. See the outlier in the failed accesses in the last three days by user ID and count statistics displayed in a table.
 
+<img src={useBaseUrl('img/integrations/saml/Okta-ApplicationAccess.png')} alt="Okta-AdministrativeActions" />
 
-#### Okta - Failed Login Activity
-32
-
+### Failed Login Activity
 
 Shows the details of failed logins to Okta such as the geolocation, country, state, OS, browser, device, top 10 users, and application.
-
-
-33
-
 
 **Geolocation of Logins**. See the number of failed logins across the world on a map for the last three days.
 
@@ -578,16 +468,11 @@ Shows the details of failed logins to Okta such as the geolocation, country, sta
 
 **App Login**. See the breakdown of failed logins by applications for the last three days on a pie chart.
 
+<img src={useBaseUrl('img/integrations/saml/Okta-FailedLoginActivity.png')} alt="Okta-AdministrativeActions" />
 
-#### Okta - Successful Login Activity
-34
-
+### Successful Login Activity
 
 Shows the details of successful logins to Okta such as the device, browser, country, state, OS, geolocation, logins overtime, outlier, top 10 users, and application.
-
-
-35
-
 
 **Geolocation of Logins**. See the number of successful logins across the world on a map for the last three days.
 
@@ -605,16 +490,11 @@ Shows the details of successful logins to Okta such as the device, browser, coun
 
 **App Login**. See the breakdown of successful logins by applications for the last three days on a pie chart.
 
+<img src={useBaseUrl('img/integrations/saml/Okta-SuccessfulLoginActivity.png')} alt="Okta-AdministrativeActions" />
 
-#### Okta - User Activity  
-36
-
+### User Activity  
 
 Shows the details of user activity such as the geolocation, top 10 users, user events, events by users, events by severity, password resets, password updates, and user account locks.
-
-
-37
-
 
 **Geolocation of User Activity**. See the number of user activities across the world on a map for the last 24 hours.
 
@@ -634,16 +514,11 @@ Shows the details of user activity such as the geolocation, top 10 users, user e
 
 **User Account Lock**. See the details of locked user accounts in the last 24 hours such as the actor, actor ID, outcome result, displayed message, and count, shown in a table.
 
+<img src={useBaseUrl('img/integrations/saml/Okta-UserActivity.png')} alt="Okta-AdministrativeActions" />
 
-#### Okta - User Authentication and MFA
-38
-
+### User Authentication and MFA
 
 Shows the details of user authentication and Multi-Factor Authentication (MFA) activities such as the user authentication over time, MFA events, MFA deactivation, and user authentication using MFA.
-
-
-39
-
 
 **User Authentication**. See the count of user authentication in the last 24 hours on a column chart.
 
@@ -656,3 +531,5 @@ Shows the details of user authentication and Multi-Factor Authentication (MFA) a
 **MFA Deactivate Event**. See the details of MFA deactivate event in the last 24 hours such as the user ID, actor, outcome result, country, state, and count, shown in a table.
 
 **User MFA Activity.** See the details of user MFA activities such as the event type, result, reason, user ID, username, and count, in the last 24 hours, displayed in a table.
+
+<img src={useBaseUrl('img/integrations/saml/Okta-UserAuthenticationAndMFA.png')} alt="Okta-AdministrativeActions" />

@@ -5,6 +5,8 @@ sidebar_label: Amazon Network Load Balancer
 description: Amazon Network Load Balancer
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 AWS Network Load Balancer service is distributed in OSI Layer 4 (the network layer) traffic (TCP, UDP, TLS) and can handle over a million requests per second.
 
 The Sumo Logic App for AWS Network Load Balancer is using metrics to provide insights to ensure that your network load-balancers are operating as expected, backend hosts are healthy, and to quickly identify errors.
@@ -25,4 +27,6 @@ account=* region=* LoadBalancer=* Namespace=aws/NetworkELB metric=ActiveFlowCoun
 
 ## Install the App
 
-## View the Dashboards
+## Viewing AWS Dashboards
+
+<img src={useBaseUrl('img/integrations/amazon-aws/Overview.png')} alt="AWS API Gateway" />

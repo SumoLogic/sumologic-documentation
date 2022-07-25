@@ -4,8 +4,9 @@ title: Global Intelligence for AWS CloudTrail DevOps
 description: global-intelligence-cloudtrail-devops
 ---
 
-This feature is available in the following account plans.
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
+This feature is available in the following account plans.
 
 <table>
   <tr>
@@ -74,3 +75,7 @@ Global Intelligence for CloudTrail DevOps App uses AWS CloudTrail logs.
 ## Collect Logs and Metrics
 
 ## Install the App
+
+## Viewing AWS Dashboards
+
+<img src={useBaseUrl('img/integrations/amazon-aws/Overview.png')} alt="AWS API Gateway" />

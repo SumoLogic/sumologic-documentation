@@ -5,6 +5,8 @@ sidebar_label: AWS CloudTrail
 description: AWS CloudTrail
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 Amazon Web Services (AWS) CloudTrail records API calls made to AWS. The Sumo Logic App for CloudTrail ingests these logs, providing greater visibility into events that, in turn, allows for security and operations forensics. For example, you can use the Sumo Logic App for CloudTrail to analyze raw CloudTrail data to investigate user behavior patterns. Or, by correlating CloudTrail data with other data sets, you can get a broader understanding of events from operating systems, intrusion detection systems, or even application logs.
 
 ImportantOur new app install flow is now in Beta. It is only enabled for certain customers while we gather Beta customer feedback. If you can see the Add Integration button, follow the "Before you begin" section in the "Collect Logs" help page and then use the in-product instructions in Sumo Logic to set up the app.
@@ -19,3 +21,8 @@ If you have more than one environment that generates CloudTrail data (such as op
 ## Collect Logs and Metrics
 
 ## Install the App
+
+
+## Viewing Dashboards
+
+<img src={useBaseUrl('img/integrations/amazon-aws/Overview.png')} alt="Aurora MySQL ULM" />

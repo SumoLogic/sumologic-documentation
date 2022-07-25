@@ -5,6 +5,8 @@ sidebar_label: Amazon VPC Flow Logs
 description: Amazon VPC Flow Logs
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 Amazon Virtual Private Cloud (VPC) Flow Logs log the IP network traffic of your VPC, allowing you to troubleshoot traffic and security issues. The Amazon VPC Flow Logs App leverages this data to provide real-time visibility and analysis of your environment. It consists of predefined searches and Dashboards.
 
 For more information on Amazon VPC Flow Logs, see http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/flow-logs.html
@@ -277,3 +279,8 @@ You can also filter the Traffic dashboard by any combination of DestinationIP, S
 In the filters pane, you can can configure these parameters for the [outlier](https://help.sumologic.com/05Search/Search-Query-Language/Search-Operators/outlier) analysis performed by several panels:  Consecutive, Threshold, Window, and Timeslice.
 
 You can also filter the Security Groups dashboard by any combination of DestinationIP, SourceIP, action, dest_port, interfaceid, protocol, security_grp_id,  src_port, subnet_id, and vpc_id.
+
+
+## Viewing AWS Dashboards
+
+<img src={useBaseUrl('img/integrations/amazon-aws/Overview.png')} alt="AWS API Gateway" />

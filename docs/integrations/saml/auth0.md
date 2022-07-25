@@ -5,49 +5,17 @@ sidebar_label: Auth0
 description: The Sumo Logic App for Auth0 makes it easy to analyze and visualize your Auth0 event logs, and provides insight into security and operational issues.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 Auth0 is a cloud-based, extensible identity provider for applications. The Sumo Logic App for Auth0 makes it easy to analyze and visualize your Auth0 event logs, and provides insight into security and operational issues.
 
 For more information, see [https://auth0.com/docs/extensions/sumologic](https://auth0.com/docs/extensions/sumologic).
 
 
-#### Log Types
-1
-
-
-The Sumo Logic App for Auth0 collects the following log types:
-
-
-
-* Logins, both successes and failures
-* Token exchanges, both successes and failures
-* Warnings during logins
-* User deletion
-* Login failure reasons
-* Connection errors
-* User signup events
-* Verification email events
-* Password changes
-* Rate limiting events
-* Other operational events and errors
-
-More for information on the logs, see [https://auth0.com/docs/api/managemen.../Logs/get_logs](https://auth0.com/docs/api/management/v2#!/Logs/get_logs).
-
-
-## Collect Logs for Auth0
-
-
-
+## Collecting Logs for Auth0
 This procedure explains how to collect error logs from Auth0.
 
-
-### Log Types
-2
-
-
 Sumo Logic collects the following log types:
-
-
-
 * Logins, both successes and failures
 * Token exchanges, both successes and failures
 * Warnings during logins
@@ -64,60 +32,40 @@ For more information about Auth0 logs, see [https://auth0.com/docs/api/managemen
 
 
 ### Prerequisites
-3
 
-
-Use the Auth0 Management Portal to configure the extension.  For more information, see [https://auth0.com/docs/extensions/sumologic](https://auth0.com/docs/extensions/sumologic).
+Use the Auth0 Management Portal to configure the extension. For more information, see [https://auth0.com/docs/extensions/sumologic](https://auth0.com/docs/extensions/sumologic).
 
 
 ### Configure a Collector
-4
-
 
 Use the [Sumo Logic Setup Wizard](https://help.sumologic.com/03Send-Data/Setup-Wizard) to configure a **Custom App**.
 
 
 ### Configure a Source
-5
-
 
 Source type is [HTTP](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/HTTP-Source).
-
-
-### Source Configuration
-6
-
-
-
 
 * **Name**: Required
 * **Category**:
 * **Timestamp Parsing Settings**:
-    * **Enable Timestamp Parsin**g: True
-    * **Timezone**: Logs are sent in UTC by default and can be automatically detected
-    * **Timestamp Format**: Select **Specify a format** and use the following, \
-Format:  `yyyy-MM-dd'T'HH:mm:ss.SSS'Z' \
-`Timestamp locator:  `"date":"(.*?)\","`
+  * **Enable Timestamp Parsin**g: True
+  * **Timezone**: Logs are sent in UTC by default and can be automatically detected
+  * **Timestamp Format**: Select **Specify a format** and use the following, \
+Format: `yyyy-MM-dd'T'HH:mm:ss.SSS'Z' \
+`Timestamp locator: `"date":"(.*?)\","`
 * **Multi-line Parsing Settings**:
-    * **Detect Messages Spanning Multiple Lines**: True
-    * **Multi Line Boundary**: Infer Boundaries
+  * **Detect Messages Spanning Multiple Lines**: True
+  * **Multi Line Boundary**: Infer Boundaries
 
 
-### Field Extraction Rules
-7
-
+### Use Field Extraction Rules
 
 Parse Expression: `json "date", "type", "client_id", "client_name", "ip", "user_id"`
 
 
-### Sample Log Messages
-8
+## Sample Log Messages
 
-
-Example 1:
-
-
-```
+```json title="Example 1"
 {
    "date": "2016-02-23T19:57:29.532Z",
    "type": "sapi",
@@ -131,10 +79,7 @@ Example 1:
 ```
 
 
-Example 2:
-
-
-```
+```json title="Example 2"
 {
    "date": "2016-11-14T21:50:33.473Z",
    "type": "fp",
@@ -161,17 +106,9 @@ Example 2:
 
 
 
-### Query Samples
-9
+## Sample Queries
 
-
-
-###### Logins by Client per Day
-10
-
-
-
-```
+```sql title="Logins by Client per Day"
 _collector="productionappauth0Logs_Collector"
 | json "client_name"
 | where client_name != ""
@@ -180,14 +117,7 @@ _collector="productionappauth0Logs_Collector"
 | transpose row _timeslice column client_name
 ```
 
-
-
-###### Client Version Usage
-11
-
-
-
-```
+```sql title="Client Version Usage"
 _collector="productionappauth0Logs_Collector"
 | json "auth0_client.name", "auth0_client.version"
 | concat(%auth0_client.name, " ", %auth0_client.version) as auth0_client_version
@@ -196,26 +126,16 @@ _collector="productionappauth0Logs_Collector"
 | transpose row _timeslice column auth0_client_version
 ```
 
-
-
-###### Top 10 Recent Errors
-12
-
-
-
-```
+```sql title="Top 10 Recent Errors"
 _collector="productionappauth0Logs_Collector"
 | json "type", "connection", "description", "client_name"
 | where type != "slo"
 | count client_name, connection, description
 | top 10 client_name, connection, description by _count
-
 ```
 
 
-## Install the Sumo Logic App
-13
-
+## Installing the Auth0 App
 
 Now that you have set up collection for Auth0, install the Sumo Logic App for Auth0 to use the preconfigured searches and [Dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/20SAML/Auth0/Auth0-App-Dashboards#Dashboards) that provide insight into your data.
 
@@ -223,16 +143,10 @@ Now that you have set up collection for Auth0, install the Sumo Logic App for Au
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
-
-
 1. From the **App Catalog**, search for and select the app**.**
 2. Select the version of the service you're using and click **Add to Library**.
 
-
-14
 Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](https://help.sumologic.com/01Start-Here/Library/Apps-in-Sumo-Logic/Install-Apps-from-the-Library)
-
-
 
 1. To install the app, complete the following fields.
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
@@ -247,16 +161,9 @@ Once an app is installed, it will appear in your **Personal** folder, or other f
 Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
 
 
-## View the Dashboards
-15
+## Viewing Auth0 Dashboards
 
-
-
-#### Auth0 - Overview
-16
-
-
-
+### Overview
 
 **Login Event by Location.** Performs a geo lookup operation and displays user logins based on IP address on a map of the world for the last 24 hours.
 
@@ -274,14 +181,9 @@ Panels will start to fill automatically. It's important to note that each panel 
 
 **Guardian MFA Activity.** Displays a line chart on a timeline showing the number of each Guardian MFA event per hour for the last seven days.
 
+<img src={useBaseUrl('img/integrations/saml/auth0-app-overview-dashboard.png')} alt="Auth0 app overview dashboard" />
 
-#### Auth0 - Connections and Clients
-17
-
-
-
-18
-
+### Connections and Clients
 
 **Logins by Client and Country.** Displays a stacked bar chart showing the number of successful logins for the last 24 hours, grouped by both client and country name. This visualizes the relative popularity of each client overall, as well as in a given country.
 
@@ -294,3 +196,5 @@ Panels will start to fill automatically. It's important to note that each panel 
 **Top 10 Clients.** Shows a table chart that lists the ten most popular clients, including client name and count for the past 24 hours.
 
 **Top 10 Recent Errors. **Provides a table chart with a list of the ten most frequent errors, including details on client name, connection, description and count for the last 24 hours. This is useful for discovering and troubleshooting operational issues.
+
+<img src={useBaseUrl('img/integrations/saml/auth0-app-overview-dashboard-mapbox.png')} alt="Auth0 app-overview-dashboard-mapbox" />

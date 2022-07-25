@@ -5,6 +5,8 @@ sidebar_label: AWS EC2 CW Metrics
 description: AWS EC2 CW Metrics
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 Amazon Elastic Compute Cloud (Amazon EC2) provides scalable computing capacity in the Amazon Web Services (AWS) Cloud. You can use Amazon EC2 to launch as many or as few virtual servers as you need, configure security and networking, and manage storage.
 
 The Sumo Logic App for AWS EC2 (CloudWatch Metrics) allows you to collect your EC2 instance metrics and display them using predefined dashboards. The App provides dashboards to display analysis of EC2 instance metrics for CPU, disk, network, EBS, and Health Status Check. Also, it provides detailed insights into all cloudtrail audit events associated with EC2 instances and specifically helps identify changes, errors, and user activities.
@@ -24,7 +26,7 @@ For details on the metrics of AWS EC2, see [here](https://docs.aws.amazon.com/AW
 
 
 
-## Query sample 
+## Query sample
 
 **CPU utilization (Cloudwatch metric)**
 
@@ -66,3 +68,7 @@ account={{account}} region={{region}} namespace={{namespace}} eventname eventsou
 ## Collect Logs and Metrics
 
 ## Install the App
+
+## Viewing Dashboards
+
+<img src={useBaseUrl('img/integrations/amazon-aws/Overview.png')} alt="Aurora MySQL ULM" />

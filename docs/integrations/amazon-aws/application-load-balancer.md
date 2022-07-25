@@ -5,6 +5,8 @@ sidebar_label: AWS Application Load Balancer
 description: AWS Application Load Balancer
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 The AWS Application Load Balancer functions at the application layer, receives requests, evaluates the listener rules in priority order to determine which rule to apply, and then selects a target from the target group.
 
 The Sumo Logic App for AWS Application Load Balancing uses logs and metrics to give you visibility into the health of your Application Load Balancer and target groups. Use the pre-configured dashboards to understand the latency, request and host status, threat intel, and HTTP backend codes by availability zone and target group.
@@ -72,6 +74,11 @@ account={{account}} region={{region}} Namespace={{namespace}} loadbalancer={{loa
 * **[Topics](https://help.sumologic.com/07Sumo-Logic-Apps/01Amazon_and_AWS/AWS_Application_Load_Balancer#899aaf93-70eb-bd61-ecd5-9fd32096a85f)**
 
 
-## Collect Logs and Metrics
+## Collecting Logs and Metrics
 
-## Install the App
+
+## Installing the AWS Application Load Balancer App
+
+## Viewing AWS Application Load Balancer Dashboards
+
+<img src={useBaseUrl('img/integrations/amazon-aws/Overview.png')} alt="AWS Application Load Balancer" />

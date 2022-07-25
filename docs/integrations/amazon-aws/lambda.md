@@ -5,6 +5,8 @@ sidebar_label: AWS Lambda
 description: AWS Lambda
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 AWS Lambda allows you to run code without the burden of provisioning or managing servers. The AWS Lambda App is a unified logs and metrics app for monitoring operation and performance trends in the Lambda functions in your account.
 
 The Sumo Logic AWS Lambda App uses the Lambda logs via CloudWatch, CloudWatch Metrics and the CloudTrail Lambda Data Events to visualize the operational and performance trends in all the Lambda functions in your account. The preconfigured dashboards provide insights into executions, memory and duration (including cold start) usage by function versions or aliases, errors, billed duration, function callers, IAM users and threat details.
@@ -130,3 +132,7 @@ namespace=aws/lambda metric=Errors statistic=Sum account=* region=* functionname
 ## Collect Logs
 
 ## Install the App
+
+## Viewing AWS Dashboards
+
+<img src={useBaseUrl('img/integrations/amazon-aws/Overview.png')} alt="AWS API Gateway" />

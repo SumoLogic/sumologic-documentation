@@ -5,6 +5,8 @@ sidebar_label: Amazon Elasticache
 description: Amazon Elasticache
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 The Sumo Logic App for Amazon ElastiCache allows you to set up, run, and scale popular open-source compatible in-memory data stores in the cloud.
 
 The Amazon ElastiCache dashboards provide visibility into key event and performance analytics that enable proactive diagnosis and response to system and environment issues. Use the preconfigured dashboards for at-a-glance analysis of event status trends, locations, successes and failures, as well as system health and performance metrics. The dashboards also have additional performance insights for Redis clusters.
@@ -79,4 +81,9 @@ account={{account}} region={{region}} namespace={{namespace}} "\"eventSource\":\
 
 ## Collect Logs and Metrics
 
-## Install the App
+## Installing the App
+
+
+## Viewing AWS Dashboards
+
+<img src={useBaseUrl('img/integrations/amazon-aws/Overview.png')} alt="AWS API Gateway" />
