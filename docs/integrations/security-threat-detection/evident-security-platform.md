@@ -5,6 +5,11 @@ sidebar_label: Evident.io ESP
 description: The Evident.io ESP App provides pre-configured searches and Dashboards that allow you to investigate Evident-specific events and provide operational visibility to team members without logging into Evident.io. The Evident.io Evident Security Platform (ESP) streamlines and optimizes vulnerability and risk management.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src={useBaseUrl('img/integrations/security-threat-detection/evidentio.png')} alt="thumbnail icon" width="75"/>
+
+
 The Evident.io ESP App provides pre-configured searches and Dashboards that allow you to investigate Evident-specific events and provide operational visibility to team members without logging into Evident.io.
 
 The Evident.io Evident Security Platform (ESP) streamlines and optimizes vulnerability and risk management. It continuously monitors the AWS cloud, automatically identifies security misconfigurations, enables rapid mitigation of risk through guided remediation and provides visibility to their service through integrations with a central security analytics platform like Sumo Logic. By combining the vulnerability and identified security misconfigurations from Evident and other data sources, you can reduce your security risk and improve your overall security posture.

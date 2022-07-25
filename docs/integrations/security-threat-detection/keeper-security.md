@@ -5,6 +5,10 @@ sidebar_label: Keeper Security
 description: Keeper is the leading secure password manager and digital vault for businesses and individuals. The Keeper Security App for Sumo Logic helps you monitor admin actions, user activities and security risks.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src={useBaseUrl('img/integrations/security-threat-detection/keeper.png')} alt="thumbnail icon" width="75"/>
+
 This application has been developed and is supported by [Keeper Security](https://keepersecurity.com/). For more information about Keeper, visit [https://keepersecurity.com](https://keepersecurity.com/) or email **business.support@keepersecurity.com** for help.
 
 Keeper is the leading secure password manager and digital vault for businesses and individuals. The Keeper Security App for Sumo Logic helps you monitor admin actions, user activities and security risks. The App consists of dashboards and queries that allow you to monitor events logged by Keeper to Sumo Logic.

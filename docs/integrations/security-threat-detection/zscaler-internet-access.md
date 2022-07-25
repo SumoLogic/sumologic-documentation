@@ -5,11 +5,14 @@ sidebar_label: Zscaler Internet Access
 description: This page introduces the Sumo Logic App for Zscaler Internet Access (ZIA) App.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+
 The Sumo Logic App for Zscaler Internet Access (ZIA) collects logs via Cloud Nanolog Streaming Service (NSS) to populate pre-configured searches and Dashboards in order to visualize and provide insight into threats, DNS, web traffic behaviors, security, user browsing activities, and risk.
 
 
 #### Log Types
-1.gif "image_tooltip")
+1
 
 
 The Sumo Logic App for Zscaler uses NSS feed output logs (Web, Tunnel, DNS, Firewall), as documented [here](https://help.zscaler.com/zia/documentation-knowledgebase/analytics/nss/nss-feeds/formatting-nss-feeds).
@@ -30,7 +33,7 @@ To collect logs for Zscaler, perform these steps, detailed in the following sect
 
 
 #### Configure Sumo Logic Hosted Collector and an HTTP Source
-3.gif "image_tooltip")
+3
 
 
 To collect logs for Zscaler Web Security, do the following in Sumo Logic:
@@ -42,7 +45,7 @@ To collect logs for Zscaler Web Security, do the following in Sumo Logic:
 
 
 #### Configure Zscaler Cloud NSS
-4.gif "image_tooltip")
+4
 
 
 Zscaler uses Cloud Nanolog Streaming Service (NSS), which allows direct cloud-to-cloud log streaming for all types of ZIA logs into Sumo Logic.
@@ -104,7 +107,7 @@ Cloud NSS is not enabled by default in ZIA. If you do not see Cloud NSS Feeds op
 
 
 #### (Optional) Configure the Zscaler NSS Feeds
-9.gif "image_tooltip")
+9
 
 
 If you are not able to use Zscaler Cloud NSS, you can collect logs for the ZIA App using NSS Servers. For DNS, Firewall, and Tunnel logs you can select JSON as the output format for the feed in the Add NSS Feeds dialog. For Web logs you will need to configure the feed as follows:
@@ -143,7 +146,7 @@ If you are not able to use Zscaler Cloud NSS, you can collect logs for the ZIA A
 
 
 #### Sample Log Message
-11.gif "image_tooltip")
+11
 
 
 Web Log Sample:
@@ -202,7 +205,7 @@ Web Log Sample:
 
 
 #### Query Sample
-12.gif "image_tooltip")
+12
 
 
 **Top 10 Blocked Base URLs**
@@ -226,7 +229,7 @@ This page provides instructions on how to install the Zscaler Internet Access Ap
 
 
 ### Install the Sumo Logic App
-13.gif "image_tooltip")
+13
 
 
 **To install the app, do the following:**
@@ -258,12 +261,12 @@ Panels will start to fill automatically. It's important to note that each panel 
 
 
 ### Dashboards
-15.gif "image_tooltip")
+15
 
 
 
 #### Zscaler- Overview  
-16.gif "image_tooltip")
+16
 
 
 The **Zscaler - Overview** Dashboard provides general information of the Zscaler Web Gateway logs, including Panels that drill-down into the other Zscaler Dashboards. The Overview Dashboard gives a good starting point for detecting anomalies in blocked traffic and geographic hotspots for allowed and blocked traffic.
@@ -274,7 +277,7 @@ The **Zscaler - Overview** Dashboard provides general information of the Zscaler
 
 
 #### Zscaler- Behavior  
-18.gif "image_tooltip")
+18
 
 
 The **Zscaler - Behavior** Dashboard focuses on allowed traffic behaviors, showing trends and deviations by users, content types accessed, content categories, super categories, and bandwidth trends.
@@ -285,7 +288,7 @@ The **Zscaler - Behavior** Dashboard focuses on allowed traffic behaviors, showi
 
 
 #### Zscaler- Blocked Traffic  
-20.gif "image_tooltip")
+20
 
 
 The **Zscaler - Blocked** Traffic Dashboard illustrates outliers in both blocked traffic peaks and multi-dimensional outliers for blocked activity specific to user.
@@ -296,7 +299,7 @@ The **Zscaler - Blocked** Traffic Dashboard illustrates outliers in both blocked
 
 
 #### Zscaler- File Classification Activity
-22.gif "image_tooltip")
+22
 
 
 The **Zscaler - File Classification Activity** Dashboard focuses on file-based threats by users, threat name, file types, and subtypes for a overarching view of blocked files across the Zscaler environment.
@@ -307,7 +310,7 @@ The **Zscaler - File Classification Activity** Dashboard focuses on file-based t
 
 
 #### ZIA - DNS
-24.gif "image_tooltip")
+24
 
 
 The **ZIA - DNS** Dashboard focuses on DNS activity specifically around denied requests and responses, server locations across the Zscaler environment.
@@ -325,7 +328,7 @@ The **ZIA - DNS** Dashboard focuses on DNS activity specifically around denied r
 
 
 #### ZIA - Logs
-26.gif "image_tooltip")
+26
 
 
 The **ZIA - Logs** Dashboard gives insights into different logs being produced in the Zscaler environment.
@@ -343,7 +346,7 @@ The **ZIA - Logs** Dashboard gives insights into different logs being produced i
 
 
 #### ZIA - Threats
-28.gif "image_tooltip")
+28
 
 
 The **ZIA - Threats** Dashboard focuses on threats in your Zscaler environment.

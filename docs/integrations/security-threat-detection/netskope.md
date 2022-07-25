@@ -5,6 +5,10 @@ sidebar_label: Netskope
 description: The Netskope App created by Sumo Logic provides visibility into security posture for your applications, as well as allowing you to determine the overall usage of software and SaaS applications in your environment. Netskope is a Cloud Access Security Broker (CASB) hosted in the cloud, primarily used to enforce security policies for cloud-based resources.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src={useBaseUrl('img/integrations/security-threat-detection/netskope.png')} alt="thumbnail icon" width="75"/>
+
 The Netskope App provides visibility into the security posture of your applications and helps you determine the overall usage of software and SaaS applications.
 
 Netskope is a Cloud Access Security Broker (CASB) hosted in the cloud. The Netskope product is primarily used for enforcing security policies for cloud-based resources, such as Box and Microsoft Office 365. Customers purchase a CASB to address cloud service risks, enforce security policies, and comply with regulations, even when cloud services are beyond their perimeter and out of their direct control.

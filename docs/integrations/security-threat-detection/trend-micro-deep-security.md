@@ -5,6 +5,10 @@ sidebar_label: Trend Micro Deep Security
 description: The Trend Micro Deep Security App works with system and security events to monitor event history such as anti-malware, IPS, web reputation, firewall, integrity and log inspection events.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src={useBaseUrl('img/integrations/security-threat-detection/trend.png')} alt="thumbnail icon" width="75"/>
+
 The Trend Micro Deep Security App works with system and security events to monitor event history such as anti-malware, IPS, web reputation, firewall, integrity and log inspection events. The App analyzes security events from both on-premises and cloud-based Trend Micro Deep Security products.
 
 
