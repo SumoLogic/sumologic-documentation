@@ -211,8 +211,7 @@ Panels will start to fill automatically. It's important to note that each panel 
 See an overview of activity in Google Cloud Storage, including a breakdown of bucket and object operations, operations by project, and the top 10 locations, projects, buckets, and users by operation.
 
 
-20
-
+<img src={useBaseUrl('img/integrations/google/google-cloud-storage-overview.png')} alt="Google Cloud Storage dashboards" />
 
 **Request Location. **Shows the number of requests and their location in the last 24 hours on a world map.  
 
@@ -235,9 +234,7 @@ See an overview of activity in Google Cloud Storage, including a breakdown of bu
 
 See information about your Google Cloud Storage users, including user locations, user operations, creations and deletions by user, and errors.
 
-
-22
-
+<img src={useBaseUrl('img/integrations/google/google-cloud-storage-users.png')} alt="Google Cloud Storage dashboards" />
 
 **Location of Users. **Shows the number of users and their location in the last 24 hours on a world map.
 
@@ -265,6 +262,8 @@ See information about your Google Cloud Storage users, including user locations,
 
 See information about buckets in Google Cloud Storage, including operations by bucket, bucket statistics, and creations and deletions.
 
+
+<img src={useBaseUrl('img/integrations/google/google-cloud-storage-buckets.png')} alt="Google Cloud Storage dashboards" />
 
 **Request Location. **Shows the number of requests and their location in the last 24 hours on a world map.
 

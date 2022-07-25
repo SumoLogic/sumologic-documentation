@@ -313,12 +313,9 @@ Panels will start to fill automatically. It's important to note that each panel 
 
 ### Google Compute Engine Overview
 
-
 See the overview of your Google Compute Engine including the messages, instance activities, operations, and users.
 
-
-21
-
+<img src={useBaseUrl('img/integrations/google/google-compute-engine-overview.png')} alt="Google Compute Engine dashboards" />
 
 **Messages by Project**. See the count of messages by project in the last 24 hours on a line chart.
 
@@ -332,14 +329,10 @@ See the overview of your Google Compute Engine including the messages, instance 
 
 
 ### Google Compute Engine Activity
-22
-
 
 See the details of projects, zones, instances, and message severity in your Google Compute Engine.
 
-
-23
-
+<img src={useBaseUrl('img/integrations/google/google-compute-engine-activity.png')} alt="Google Compute Engine dashboards" />
 
 **Top 10 Projects by Messages**. See the count of top 10 projects by in the last hour on a bar chart.
 
@@ -355,8 +348,6 @@ See the details of projects, zones, instances, and message severity in your Goog
 
 
 ### Google Compute Engine Severity
-24
-
 
 See the details of message severities - emergency, alert, critical, error, and warning.
 
@@ -389,7 +380,7 @@ See the details of message severities - emergency, alert, critical, error, and w
 
 See the details of users by activity, and users by message severity.
 
-
+<img src={useBaseUrl('img/integrations/google/google-compute-engine-users.png')} alt="Google Compute Engine dashboards" />
 
 **Top 10 Users by Activity**. See the count of top 10 users by insert, delete, start, stop, and reset activities in the last hour, displayed in a table.
 
