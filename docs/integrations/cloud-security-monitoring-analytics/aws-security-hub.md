@@ -1,7 +1,10 @@
 ---
 id: aws-security-hub
-title: AWS Security Hub
+title: Sumo Logic App for AWS Security Hub Cloud Security Monitoring and Analytics
+sidebar_label: AWS Security Hub
 ---
+
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Sumo Logic AWS Security Hub app is designed to extract key findings from the AWS Security Hub, which is designed to centrally view and manage security alerts and automate security checks. The additional level of analysis within these dashboards surfaces the most relevant findings and takes a focused approach to improve overall security posture. Finding types and severity levels act as leading indicators for security engineers to go into security incidents with the most relevant technical details to address active threats.
 
@@ -41,16 +44,17 @@ Panels will start to fill automatically. It's important to note that each panel 
 **Each dashboard has a set of filters** that you can apply to the entire dashboard. Click the funnel icon in the top dashboard menu bar to display a scrollable list of filters that narrow search results across the entire dashboard.
 
 
-## Dashboards
+## Viewing the Dashboards
 
 
 ### AWS Security Hub - Security Monitoring - Overview
 
-
 See the overview of Security Hub findings broken down by severity. Filters are available to limit the dashboard panels to specific account IDs, finding IDs, finding types, normalized severity, and title.
 
+<img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/AWS-Security-Hub-Security-Monitoring-Overview.png')} alt="AWS Security Hub dashboards" />
 
-##### Findings Summary
+
+#### Findings Summary
 
 **All Security Findings**. See the count of total findings of the last 24 hours by default or the dashboard time window setting.
 
@@ -59,7 +63,7 @@ See the overview of Security Hub findings broken down by severity. Filters are a
 **Last 20 Findings**. Provides a table detailing the 20 most recent findings.
 
 
-###### Critical, High, Medium, Low Severity Findings
+#### Critical, High, Medium, Low Severity Findings
 
 All panels for Critical, High, Medium, and Low Severity findings are the same. The only difference is filtering based on the listed severity level.
 
@@ -70,14 +74,14 @@ All panels for Critical, High, Medium, and Low Severity findings are the same. T
 **Last 20 Severity Findings**. See the details of the last 20 findings at this severity level.
 
 
-#### AWS Security Hub - Security Analytics - Compliance
+### AWS Security Hub - Security Analytics - Compliance
 
 See the overview of Security Hub findings broken down by compliance status. Filters are available to limit the dashboard panels to specific account IDs, finding IDs, finding types, normalized severity, title, and compliance status.
 
+<img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/AWS-Security-Hub-Security-Analytics-Compliance.png')} alt="AWS Security Hub dashboards" />
 
 
-
-##### Findings Summary 
+#### Findings Summary
 
 **All Compliance Findings**. See the count of total findings of the last 24 hours by default or the dashboard time window setting.
 

@@ -1,7 +1,10 @@
 ---
 id: windows
-title: Windows
+title: Sumo Logic App for Windows Cloud Security Monitoring and Analytics
+sidebar_label: Windows
 ---
+
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Cloud Security Monitoring & Analytics for Windows App offers pre-built dashboards and queries to help you track your Windows system, user accounts, login activity, and Windows updates.
 
@@ -56,7 +59,7 @@ _sourceCategory=Labs/windows-jsonformat ( "Audit Policy Change" or "System audit
 | count by msg_summary | sort by _count, msg_summary asc
 ```
 
-## Install the Sumo Logic App 
+## Install the Sumo Logic App
 
 This page provides instructions for installing the Cloud Security Monitoring & Analytics for Windows App, along with examples of each of the App dashboards. The Cloud Security Monitoring & Analytics for Windows App offers pre-built dashboards and queries to help you track your Windows system, user accounts, login activity, and Windows updates.
 

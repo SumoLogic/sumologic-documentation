@@ -1,7 +1,10 @@
 ---
 id: palo-alto-firewall-10
-title: Palo Alto Firewall 10
+title: Sumo Logic App for Palo Alto Firewall 10 Cloud Security Monitoring and Analytics
+sidebar_label: Palo Alto Firewall 10
 ---
+
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Palo Alto Firewall app helps you analyze traffic and gain a better understanding of your Palo Alto Networks environments. You can dig deep into the data, broken down by threat detection indicators, malware type, and so on.
 
