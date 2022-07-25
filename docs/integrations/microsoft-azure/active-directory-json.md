@@ -113,7 +113,7 @@ Use this dashboard to:
 * Monitor logon/logoff activity by various logon types.
 * Monitor top 10 activities with concise message.
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/Overview.png')} alt="Active Directory JSON dashboards" />
+<img src={useBaseUrl('img/integrations/microsoft-azure/Active-Directory-Activity.png')} alt="Active Directory JSON dashboards" />
 
 
 ### Service Failures
@@ -125,4 +125,4 @@ Use this dashboard to:
 * Monitor all failed audit events along with administrative activities by event categories.
 * Track IP addresses associated with failed activities.
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/Overview.png')} alt="Active Directory JSON dashboards" />
+<img src={useBaseUrl('img/integrations/microsoft-azure/Active-Directory-Service-Failures.png')} alt="Active Directory JSON dashboards" />
