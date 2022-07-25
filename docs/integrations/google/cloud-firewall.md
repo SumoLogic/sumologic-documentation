@@ -251,15 +251,14 @@ Panels will start to fill automatically. It's important to note that each panel 
 
 ## Viewing Google Cloud Firewall Dashboards
 
-
 This section provides examples of the Google Cloud Firewall App accompanied with descriptions.
 
 
 ### Overview
 
-
 Presents an overview of request activity, including the geolocation of allowed and denied requests; percentage of requests denied; allowed and denied traffic over time; and the top remote request locations, requested networks, requested subnets, requested VMs, and rules used.
 
+<img src={useBaseUrl('img/integrations/google/google-cloud-firewall-overview.png')} alt="Google Cloud Firewall dashboards" />
 
 **Ingress Source Locations**. A geolocation map that shows the count of connection requests received by each location over the last 24 hours.
 
@@ -296,9 +295,7 @@ Presents an overview of request activity, including the geolocation of allowed a
 
 Presents information about ingress traffic; including allowed and denied traffic over time; allowed and denied traffic outliers; allowed and denied source locations; top networks, subnetworks, and VMs by ingress requests, and the top allowed and denied ingress rules.
 
-
-23
-
+<img src={useBaseUrl('img/integrations/google/google-cloud-firewall-ingress.png')} alt="Google Cloud Firewall dashboards" />
 
 **Allowed Ingress Traffic by Network Over Time**. A line chart that shows the count of allowed ingress requests per timeslice for each network over the last 24 hours.
 
@@ -333,9 +330,7 @@ Presents information about ingress traffic; including allowed and denied traffic
 
 Presents information about egress traffic; including allowed and denied traffic over time; allowed and denied traffic outliers; allowed and denied source locations; top networks, subnetworks, and VMs by egress requests, and the top allowed and denied egress rules.
 
-
-25
-
+<img src={useBaseUrl('img/integrations/google/google-cloud-firewall-egress.png')} alt="Google Cloud Firewall dashboards" />
 
 **Allowed Egress Traffic by Network Over Time**. A line chart that shows the count of allowed egress requests per timeslice for each network over the last 24 hours.
 

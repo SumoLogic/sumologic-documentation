@@ -268,14 +268,10 @@ The Google Cloud Audit App pre-configured searches and [dashboards](https://help
 
 
 ### Overview
-22
-
 
 See the overview of audit activities including resource creation and deletion, operations, users, and authorization failures.
 
-
-23
-
+<img src={useBaseUrl('img/integrations/google/GoogleCloudAuditOverview.png')} alt="Google Cloud Audit dashboards" />
 
 **Location of Audit Activity**. See the count and location of audit activities in the last 24 hours on a world map.
 
@@ -291,14 +287,10 @@ See the overview of audit activities including resource creation and deletion, o
 
 
 ### Network and Security
-24
-
 
 See the details of network and security operations including the authorization failures, and firewall changes.
 
-
-25
-
+<img src={useBaseUrl('img/integrations/google/GoogleCloudAuditNetworkAndSecurity.png')} alt="Google Cloud Audit dashboards" />
 
 **Location of Authorization Failures**. See the count and location of authorization failures in the last hour on a world map.
 
@@ -324,7 +316,7 @@ See the details of network and security operations including the authorization f
 See the details of operations including the actions, requested services, created, and deleted resources.
 
 
-27
+<img src={useBaseUrl('img/integrations/google/Google-Cloud-Audit-Operations.png')} alt="Google Cloud Audit dashboards" />
 
 
 **Actions**. See the count of all actions in the last hour on a pie chart.
@@ -346,9 +338,7 @@ See the details of operations including the actions, requested services, created
 
 See the details of user activities including the location, top users, creations and deletions.
 
-
-29
-
+<img src={useBaseUrl('img/integrations/google/Google-Cloud-Audit-Users.png')} alt="Google Cloud Audit dashboards" />
 
 **Location of Users**. See the count and location of users in the last 24 hours on a world map.
 
@@ -363,12 +353,9 @@ See the details of user activities including the location, top users, creations 
 **Recent User Activity**. See the details of user activities in the last three hours including the timestamp, user, project, method, severity, and operations.
 
 
-### Query Sample
-30
-
+## Query Sample
 
 **Recent firewall changes**
-
 
 ```
 _collector="HTTP Source for GCP Pub/Sub" logName methodName principalEmail request resource timestamp
@@ -387,5 +374,4 @@ _collector="HTTP Source for GCP Pub/Sub" logName methodName principalEmail reque
 | count as operations by timestamp, user, method, ranges, direction, action, protocol, ports
 | fields timestamp, user, method, ranges, direction, action, protocol, ports
 | sort by timestamp
-
 ```

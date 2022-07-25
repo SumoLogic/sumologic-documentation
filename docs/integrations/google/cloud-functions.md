@@ -231,13 +231,11 @@ You can use the pre-configured searches and [dashboards](https://help.sumologic.
 
 
 ### Overview
-18
 
 
 See an overview of Google Cloud Function processing; including daily executions; execution by status, execution outliers by function, and the top 10 functions by executions, average latency, and error status.
 
-
-19
+<img src={useBaseUrl('img/integrations/google/google-cloud-functions-overview.png')} alt="Google Cloud Functions dashboards" />
 
 
 **Daily Executions. **A line chart that shows the count of daily executions, per one hour timeslice over the last 24 hours.
@@ -265,9 +263,7 @@ See an overview of Google Cloud Function processing; including daily executions;
 
 See statistical summaries of function executions, latency, errors, and failures.
 
-
-21
-
+<img src={useBaseUrl('img/integrations/google/google-cloud-functions-statistics.png')} alt="Google Cloud Functions dashboards" />
 
 **Function Statistics by Project. **A table with function statistics by project in the last 24 hours.
 
@@ -298,9 +294,7 @@ See statistical summaries of function executions, latency, errors, and failures.
 
 See trends over time and outliers for executions per hour, average latency per hour, and error status per hour.
 
-
-23
-
+<img src={useBaseUrl('img/integrations/google/google-cloud-functions-advanced-metrics.png')} alt="Google Cloud Functions dashboards" />
 
 **Executions per Hour - Outlier. **A line chart that shows when the count of executions per hour varies by a statistically significant amount, three or more standard deviations, from the running average, over the last 24 hours.
 

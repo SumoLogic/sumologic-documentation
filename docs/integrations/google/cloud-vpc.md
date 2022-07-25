@@ -314,6 +314,7 @@ Panels will start to fill automatically. It's important to note that each panel 
 
 See an overview of the top 10 IPs, ports, and VMs; along with trends in traffic and VPC flows in your Google Cloud VPC.
 
+<img src={useBaseUrl('img/integrations/google/GoogleCloudVPCOverview.png')} alt="Google Cloud VPC dashboards" />
 
 **Inbound Source Address Locations**. Shows number of incoming source IP addresses in the last 24 hours and their location on a world map.
 
@@ -349,6 +350,8 @@ See an overview of the top 10 IPs, ports, and VMs; along with trends in traffic 
 See the details of your Google Cloud VPC activity including the trends of traffic, packets, and average latency; along with totals of VPC flows.
 
 
+<img src={useBaseUrl('img/integrations/google/cloud-vpc-activity.png')} alt="Google Cloud VPC dashboards" />
+
 **Traffic (MiB) by Subnetwork ID. **Shows trends in traffic by Subnetwork ID in the last hour on a line graph.
 
 **Traffic (MiB) by Source VM Over Time.** Shows trends in traffic by Source VM over time in the last hour on a column graph.
@@ -377,14 +380,10 @@ See the details of your Google Cloud VPC activity including the trends of traffi
 
 
 ### Advanced metrics
-24
-
 
 See the details of your Google Cloud VPC traffic including the trend and outlier in messages, total bytes, packets and latency.
 
-
-25
-
+<img src={useBaseUrl('img/integrations/google/cloud-vpc-Traffic.png')} alt="Google Cloud VPC dashboards" />
 
 **Messages per Minute - Outlier**. Shows outliers in messages per minute over the last hour on a line graph with threshold.
 

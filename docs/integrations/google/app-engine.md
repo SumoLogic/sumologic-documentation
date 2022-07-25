@@ -259,7 +259,7 @@ To install the app:
 
 
 
-### Viewing Google App Engine Dashboards
+## Viewing Google App Engine Dashboards
 
 The preconfigured dashboards provide insight into the requests, applications, HTTP status codes, latency, and response time in your App Engine.
 
@@ -268,7 +268,7 @@ The preconfigured dashboards provide insight into the requests, applications, HT
 
 See the overview of your App Engine including the requests, applications, and status codes.
 
-image GoogleAppEngineOverview.png
+<img src={useBaseUrl('img/integrations/google/GoogleAppEngineOverview.png')} alt="Google App Engine dashboards" />
 
 **Request Location**. See the location of requests in the last 24 hours on a world map.
 
@@ -285,7 +285,7 @@ image GoogleAppEngineOverview.png
 
 See the details of App Engine activities including the projects, services, versions, and message severity.
 
-image
+<img src={useBaseUrl('img/integrations/google/GoogleAppEngineActivity.png')} alt="Google App Engine dashboards" />
 
 **Top 10 Projects by Messages**. See the top 10 projects by message count in the last hour on a bar chart.
 
@@ -304,7 +304,7 @@ image
 
 See the details of App Engine requests including the location, request methods, response status codes, latency, and response time.
 
-image
+<img src={useBaseUrl('img/integrations/google/GoogleAppEngineRequestActivity.png')} alt="Google App Engine dashboards" />
 
 **Request Location**. See the location of requests in the last 24 hours on a world map.
 
