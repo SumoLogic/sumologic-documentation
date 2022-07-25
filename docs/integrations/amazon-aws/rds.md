@@ -1,6 +1,6 @@
 ---
 id: rds
-title: Amazon RDS
+title: Sumo Logic App for Amazon RDS
 sidebar_label: Amazon RDS
 description: Amazon RDS
 ---
@@ -22,7 +22,7 @@ The Amazon RDS app uses the following logs and metrics:
 
 ### Sample CloudTrail Log Message
 
-```
+```json
 {"eventVersion":"1.05","userIdentity":{"type":"IAMUser","principalId":"AIDABCDEFGH4QEWUABG5Q",
 "arn":"arn:aws:iam::951234567898:user/Nitin","accountId":"951234567898","accessKeyId":"ASIABCDEFGHFBOT4FDVK",
 "userName":"Nitin","sessionContext":{"attributes":{"mfaAuthenticated":"true","creationDate":
@@ -55,7 +55,7 @@ The Amazon RDS app uses the following logs and metrics:
 
 **Average Database Connections in Use**
 
-```
+```sql
 Namespace=aws/rds metric=DatabaseConnections statistic=average account=* region=* dbidentifier=* | avg by account, region, dbidentifier
 ```
 
@@ -66,7 +66,7 @@ Namespace=aws/rds metric=DatabaseConnections statistic=average account=* region=
 **Top 10 Error Codes**
 
 
-```
+```sql
 "\"eventsource\":\"rds.amazonaws.com\"" errorCode account=dev Namespace=aws/rds region=us-east-1
 | json "eventTime", "eventName", "eventSource", "awsRegion", "userAgent", "recipientAccountId", "userIdentity", "requestParameters", "responseElements", "errorCode", "errorMessage",  "requestID", "sourceIPAddress" as eventTime, event_name, event_source, Region, user_agent, accountId1, userIdentity, requestParameters, responseElements, error_code, error_message, requestID, src_ip nodrop
 | where event_source = "rds.amazonaws.com" and !isEmpty(error_code)
@@ -82,10 +82,138 @@ Namespace=aws/rds metric=DatabaseConnections statistic=average account=* region=
 | top 10 error_code by Frequency, error_code asc
 ```
 
-## Collect Logs and Metrics
+## Collecting Logs and Metrics
 
-## Install the App
 
-## Viewing AWS Dashboards
 
-<img src={useBaseUrl('img/integrations/amazon-aws/Overview.png')} alt="AWS API Gateway" />
+
+
+
+## Installing the RDS App  
+
+Now that you have set up a collection for **Amazon RDS**, install the Sumo Logic App to use the pre-configured [dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/01Amazon_and_AWS/Amazon_SQS/Install-the-Amazon-SQS-App-and-view-the-Dashboards#Dashboards) that provide visibility into your environment for real-time analysis of overall usage.
+
+**To install the app:**
+
+Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
+
+1. From the **App Catalog**, search for and select the app**.**
+2. To install the app, click **Add to Library** and complete the following fields.
+    1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
+    2. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
+    3. Click **Add to Library**.
+
+Once an app is installed, it will appear in your **Personal** folder, or another folder that you specified. From here, you can share it with your organization.
+
+Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
+
+
+## Viewing the RDS Dashboards  
+
+The Sumo Logic Amazon RDS app dashboards provide visibility into the performance and operations of your Amazon Relational Database Service (RDS). Preconfigured dashboards allow you to monitor critical metrics of your RDS cluster including  CPU, memory, storage, the network transmits and receive throughput, read and write operations, database connection count, disk queue depth, and more. Audit activity dashboards help you monitor activities performed on your RDS infrastructure.
+
+We highly recommend you view these dashboards in the [Explore View](https://help.sumologic.com/Observability_Solution/AWS_Observability_Solution/01_Deploy_and_Use_AWS_Observability/09_View_AWS_Observability_Solution_Dashboards) of the AWS Observability solution.
+
+
+### Overview
+
+The **Amazon RDS Overview** dashboard provides insights into RDS resource statistics and utilization throughout your infrastructure, including CPU, memory, latency, storage, and network throughput.
+
+Use this dashboard to:
+* Get a high-level overview of your Amazon RDS infrastructure
+* Quickly identify problems in resource utilization
+* Monitor databases performance insights such as relative CPU Load, non-CPU load, and overall database load
+
+<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-Overview.png')} alt="Amazon RDS dashboard" />
+
+
+### CloudTrail Audit Events
+
+The **Amazon RDS CloudTrail Audit Events** dashboard provides insights into audit events of your database clusters.
+
+Use this dashboard to:
+* Monitor Amazon RDS-related audit logs using CloudTrail Events.
+* Monitor locations of successful and failed Amazon RDS user activity events
+* Monitor most active users working on RDS infrastructure, database engines used in the infrastructure, and various events invoked on RDS clusters
+* Monitor requests from malicious IP addresses using Sumo Logic’s Threat Intel.
+
+<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-CloudTrail-Audit-Events.png')} alt="Amazon RDS dashboard" />
+
+
+### Non-Describe CloudTrail Audit Events
+
+**Amazon RDS Non-Describe CloudTrail Audit Events **dashboard provides statistical and detailed insights into Non-Describe DB Instance, SnapShot, Cluster, and Security group events.
+
+**Use this dashboard to:
+* Monitor Amazon RDS-related non-describe audit logs using CloudTrail Events.
+* Monitor and track create, delete, update, start, stop, and reboot types of events on RDS instances.
+* Monitor and track create, delete, modify, start, stop, and reboot types of events on RDS clusters.
+* Monitor and track snapshot-related events performed on RDS instances.
+* Monitor and track changes to security groups associated with your RDS infrastructure.
+
+<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-Non-Describe-CloudTrail-Audit-Events.png')} alt="Amazon RDS dashboard" />
+
+
+### Overview By Database Instance
+
+**Amazon RDS Overview By Database Instance** dashboard provides insights into resource statistics and utilization per database instance throughout your infrastructure. Panels display data for CPU, memory, latency, storage, and network throughput per database instance.
+
+**Use this dashboard to:
+* Quickly identify performance or resource utlization issues in your RDS clusters
+* Monitor resource utilization with trend panels for CPU usage, available memory, network receive and transmit throughput, read and write IOPS, available free storage and database connections across your Amazon RDS clusters and database instances.
+
+<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-Overview-By-Database-Instance.png')} alt="Amazon RDS dashboard" />
+
+
+### Performance Insights  
+
+The** Amazon RDS Performance Insights** dashboard provides intuitive performance data from throughout your RDS infrastructure across CPU load, non-CPU load, active sessions, and performance trends.
+
+**Use this dashboard to:
+* Monitor Amazon RDS DB instance loads to analyze and troubleshoot database performance
+* Identify when the CPU is overloaded, so you can throttle connections to the instance, tune SQL queries with a high CPU load, or consider a larger instance class to remedy the situation.
+* Identify high and consistent instances of any wait state (Non-CPU Load)  that indicate potential bottlenecks or resource contention issues that need to be resolved, which can be an issue even when the load doesn't exceed maximum CPU.
+
+<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-Performance-Insights.png.png')} alt="Amazon RDS dashboard" />
+
+### Aurora Generic
+
+The **Amazon RDS Aurora Generic **dashboard provides generic AWS Aurora performance statistics across your infrastructure for uptime, replica lag, latency, network throughput, volume, and storage.
+
+**Use this dashboard to:
+* Monitor common health and performance metrics of your RDS Amazon Aurora MySQL/PostgreSQL cluster.
+* Monitor the lag when replicating updates from a primary instance
+* Monitor the uptime of a database instance
+* Monitor the amount of storage used to ensure monitor costs
+* Monitor the percentage of requests that are served by the buffer cache to identify potential performance optimizations
+
+<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-Aurora-Generic.png')} alt="Amazon RDS dashboard" />
+
+
+### Aurora MySQL
+
+**Amazon RDS Aurora MySQL** dashboard provides intuitive Aurora MySQL performance data from across your infrastructure for latency, throughput, active and blocked transactions, queries, login failures, and replica lag.
+
+**Use this dashboard to:
+* Monitor the health and performance of your RDS Amazon Aurora MySQL instances and cluster.
+* Monitor the throughput and latency associated with various types of queries executed on an Aurora MySQL instance.
+* Monitor active transactions blocked transactions, and the rate of queries being executed.
+* Monitor replica lag between Aurora DB clusters that are replicating across different AWS Regions.
+* Monitor the number of login failures to the database, for security monitoring.
+
+<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-Aurora-MySQL.png')} alt="Amazon RDS dashboard" />
+
+
+### Aurora MySQL Global Database and BackTrack Activity
+
+**Amazon RDS Aurora MySQL Global Database and BackTrack Activity** dashboard provides insights into Aurora MySQL performance data from across your infrastructure for Global Database activity and Backtrack activity.
+
+**Use this dashboard to:
+
+* Monitor backtrack and Amazon Aurora Global database activity.
+* Monitor BackTrack change records and the backtrack window of your RDS Amazon Aurora MySQL cluster.
+* Monitor the amount of lag (in milliseconds) when replicating updates from the primary AWS Region for your Aurora Global database.
+* Monitor the amount of redo log data that is transferred from the master AWS region to secondary AWS regions.
+* Monitor the number of write I/O operations replicated from the primary AWS region to the cluster volume in a secondary AWS region in an Aurora Global Database. The billing calculations for the primary AWS region in a global database use AuroraGlobalDBReplicatedWriteIO to account for cross-region replication within the global database.
+
+<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-RDS-Aurora-MySQL-Global-Database-and-Backtrack-Activity.png')} alt="Amazon RDS dashboard" />

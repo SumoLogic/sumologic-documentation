@@ -23,7 +23,7 @@ The Amazon ElastiCache app uses the following logs and metrics:
 
 ### Sample CloudTrail Log Message
 
-```
+```json
 {"eventVersion":"1.05","userIdentity":{"type":"IAMUser","principalId":"A12345678904QEWUABG5Q","arn":
 "arn:aws:iam::123456789038:user/myuser","accountId":"123456789038","accessKeyId":"A1234567890FHCUQYQRM","userName":"myuser",
 "sessionContext":{"attributes":{"mfaAuthenticated":"true","creationDate":"2018-10-29T07:08:50Z"}},"invokedBy":
@@ -102,10 +102,10 @@ Once an app is installed, it will appear in your **Personal** folder, or other f
 Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
 
 
-### Viewing ElastiCache Dashboards  
+## Viewing Amazon ElastiCache Dashboards  
 
 
-### Amazon ElastiCache - Host Performance Overview
+### Host Performance Overview
 
 **The Amazon ElastiCache - Host Performance Overview** dashboard provides detailed insights into CPU, memory and network performance metrics of hosts running your ElastiCache clusters.  
 
@@ -116,7 +116,7 @@ Panels will start to fill automatically. It's important to note that each panel 
 
 <img src={useBaseUrl('img/integrations/amazon-aws/Amazon-ElastiCache-Host-Performance.png')} alt="Amazon ElastiCache" />
 
-### Amazon ElastiCache - Audit Event Overview
+### Audit Event Overview
 
 **The Amazon ElastiCache - Audit Event Overview** dashboard provides detailed insights into all events associated with ElastiCache clusters and specifically helps identify changes, errors, users and replication groups.
 
@@ -128,7 +128,7 @@ Panels will start to fill automatically. It's important to note that each panel 
 
 <img src={useBaseUrl('img/integrations/amazon-aws/Amazon-ElastiCache-AuditEvent.png')} alt="Amazon ElastiCache" />
 
-### Amazon ElastiCache - Redis Performance Overview
+### Redis Performance Overview
 
 **The Amazon ElastiCache - Redis Performance Overview** dashboard provides an overview into performance, evictions and authentication and authorization failures of ElastiCache Redis clusters.
 
@@ -137,7 +137,7 @@ Panels will start to fill automatically. It's important to note that each panel 
 
 <img src={useBaseUrl('img/integrations/amazon-aws/Amazon-ElastiCache-Redis-Performance.png')} alt="Amazon ElastiCache" />
 
-### Amazon ElastiCache - Audit Event Details
+### Audit Event Details
 
 **The Amazon ElastiCache - Audit Event Details** dashboard provides detailed insights into key operations made on your ElastiCache clusters.
 
@@ -147,7 +147,7 @@ Panels will start to fill automatically. It's important to note that each panel 
 
 <img src={useBaseUrl('img/integrations/amazon-aws/Amazon-ElastiCache-Audit-Event.png')} alt="Amazon ElastiCache" />
 
-### Amazon ElastiCache - Host Performance Details
+### Host Performance Details
 
 **The Amazon ElastiCache - Host Performance Details **dashboard shows an overview of the resource utilization for a given ElastiCache cluster across its nodes and also showcases trends around CPU, memory, swap usage and network traffic.  
 
@@ -157,7 +157,7 @@ Panels will start to fill automatically. It's important to note that each panel 
 
 <img src={useBaseUrl('img/integrations/amazon-aws/Amazon-ElastiCache-Host-Performance-details.png')} alt="Amazon ElastiCache" />
 
-### Amazon ElastiCache - Redis Performance Details
+### Redis Performance Details
 
 **The Amazon ElastiCache - Redis Performance Details **dashboard provides detailed insights into cache hits, keys, replication, connections and failures of Redis ElastiCache clusters.
 
@@ -168,7 +168,7 @@ Panels will start to fill automatically. It's important to note that each panel 
 
 <img src={useBaseUrl('img/integrations/amazon-aws/Amazon-ElastiCache-Redis-Performance-details.png')} alt="Amazon ElastiCache" />
 
-### Amazon ElastiCache - Redis Command Latency
+### Redis Command Latency
 
 **The Amazon ElastiCache - Redis Command Latency **dashboard provides detailed insights into latency of various Redis commands.
 
@@ -177,7 +177,7 @@ Panels will start to fill automatically. It's important to note that each panel 
 
 <img src={useBaseUrl('img/integrations/amazon-aws/Amazon-ElastiCache-Redis-Command.png')} alt="Amazon ElastiCache" />
 
-### Amazon ElastiCache - Redis Command Stats
+### Redis Command Stats
 
 **The Amazon ElastiCache - Redis Command Stats **dashboard provides detailed insights into the number of commands being performed.
 

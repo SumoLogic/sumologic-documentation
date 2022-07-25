@@ -1,6 +1,6 @@
 ---
 id: lambda
-title: AWS Lambda
+title: Sumo Logic App for AWS Lambda
 sidebar_label: AWS Lambda
 description: AWS Lambda
 ---
