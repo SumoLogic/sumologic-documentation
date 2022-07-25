@@ -4,6 +4,10 @@ title: Sumo Logic App for Acquia
 sidebar_label: Acquia
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src={useBaseUrl('img/integrations/saas-cloud-apps/acquia.png')} alt="DB icon" width="100"/>
+
 The Sumo Logic App for Acquia provides visibility into the key components of the Acquia platform with preconfigured dashboards for Apache, Varnish, PHP, FPM and Drupal.
 
 Sumo Logic provides instant visibility across the critical components of the Acquia Platform, helping organizations become more proactive in their site monitoring as well as reducing the mean time to identify and resolve issues.

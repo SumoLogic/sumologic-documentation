@@ -4,6 +4,10 @@ title: Sumo Logic App for JFrog Artifactory
 sidebar_label: JFrog Artifactory
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src={useBaseUrl('img/integrations/app-development/jfrog-Artifactory.png')} alt="DB icon" width="100"/>
+
 If you do not currently have a Sumo Logic account, the [JFrog Artifactory Sumo Logic integration](https://help.sumologic.com/Manage/Connections-and-Integrations/JFrog-Artifactory-Sumo-Logic-Integration) is the most convenient way to start using Sumo Logic directly from Artifactory. If you already have a Sumo Logic account, you can still use use the integration, but this will create a secondary Sumo Logic account. If you choose to use your current account, you can do so by installing the Sumo Logic App for Artifactory and access your Artifactory data from Sumo Logic, instead of from your Artifactory instance.  
 
 The Sumo Logic App for Artifactory provides insight into your JFrog Artifactory binary repository. The App provides preconfigured Dashboards that include an Overview of your system, Traffic, Requests and Access, Download Activity, Cache Deployment Activity, and Non-Cached Deployment Activity.

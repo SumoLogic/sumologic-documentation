@@ -4,6 +4,11 @@ title: Sumo Logic App for Jenkins
 sidebar_label: Jenkins
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src={useBaseUrl('img/integrations/app-development/jenkins.png')} alt="DB icon" width="50"/>
+
+
 [Jenkins](https://jenkins.io/) is an open source automation server that provides a simple way to set up a continuous integration or delivery environment for building and testing software. The Sumo Logic App for Jenkins helps you monitor your build processes and Jenkins master and server health via pre-configured dashboards.
 
 The Jenkins App allows you to monitor multiple Jenkins master nodes from a single-pane of glass. The app supports freestyle and pipeline jobs as well as pipeline, maven  and multi-branch pipeline projects.

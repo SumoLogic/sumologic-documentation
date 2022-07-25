@@ -4,6 +4,11 @@ title: Sumo Logic App for GitHub
 sidebar_label: GitHub
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src={useBaseUrl('img/integrations/app-development/GitHub.png')} alt="DB icon" width="100"/>
+
+
 The Sumo Logic App for GitHub connects to your GitHub repository at the Organization or Repository level, and ingests GitHub events via a webhook. These events populate the pre-configured Dashboards to give you a complete overview of your GitHub’s branch, issues, pull requests, user activity, and security events.
 
 1.png "image_tooltip")

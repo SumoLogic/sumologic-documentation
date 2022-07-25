@@ -5,6 +5,10 @@ sidebar_label: SAML
 description: Learn about Sumo apps for SAML.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src={useBaseUrl('img/integrations/saml/saml.png')} alt="DB icon" width="50"/>
+
 <div className="box-wrapper" markdown="1">
 <div className="box box1 card">
   <div className="container">

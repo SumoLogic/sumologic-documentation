@@ -4,6 +4,12 @@ title: Sumo Logic App for Puppet
 sidebar_label: Puppet
 ---
 
+
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src={useBaseUrl('img/integrations/app-development/puppet.png')} alt="DB icon" width="50"/>
+
+
 Puppet is a software configuration management tool. Puppet can provision infrastructure and enforce desired configurations across new and existing servers. The Sumo Logic App for Puppet helps you monitor Puppet metrics and events, which means that you can easily:
 
 * Determine when Puppet runs occurred.
