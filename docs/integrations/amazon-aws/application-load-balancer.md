@@ -72,7 +72,7 @@ account={{account}} region={{region}} Namespace={{namespace}} loadbalancer={{loa
 ```
 
 
-## Installing the AWS Application Load Balancer App and view the Dashboards
+## Installing the AWS Application Load Balancer App
 
 Now that you have set up collection for AWS Application Load Balancer, install the Sumo Logic App to use the pre-configured searches and [dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/01Amazon_and_AWS/AWS_Classic_Load_Balancer/Install-the-AWS-Classic-Load-Balancer-App-and-view-the-Dashboards#Dashboards) that provide visibility into your environment for real-time analysis of overall usage.
 
