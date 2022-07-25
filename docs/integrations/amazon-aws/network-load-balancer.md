@@ -1,6 +1,6 @@
 ---
 id: network-load-balancer
-title: Amazon Network Load Balancer
+title: Sumo Logic App for Amazon Network Load Balancer
 sidebar_label: Amazon Network Load Balancer
 description: Amazon Network Load Balancer
 ---

@@ -1,6 +1,6 @@
 ---
 id: waf
-title: AWS WAF
+title: Sumo Logic App for AWS WAF
 sidebar_label: AWS WAF
 description: AWS WAF
 ---

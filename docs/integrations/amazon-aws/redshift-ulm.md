@@ -1,6 +1,6 @@
 ---
 id: redshift-ulm
-title: Amazon Redshift ULM
+title: Sumo Logic App for Amazon Redshift ULM
 sidebar_label: Amazon Redshift ULM
 description: Amazon Redshift ULM
 ---

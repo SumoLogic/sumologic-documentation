@@ -1,6 +1,6 @@
 ---
 id: guardduty
-title: Amazon GuardDuty
+title: Sumo Logic App for Amazon GuardDuty
 sidebar_label: Amazon GuardDuty
 description: Amazon GuardDuty
 ---

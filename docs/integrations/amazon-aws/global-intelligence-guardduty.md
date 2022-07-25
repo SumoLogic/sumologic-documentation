@@ -47,15 +47,61 @@ This application name is abbreviated to **GI GuardDuty** in these documentation 
 The App includes pre-configured dashboards and searches with visual displays for global threat baselines and real-time threat detection across your AWS environment, including threat sources and targets by geographic locations.  
 
 
-## Log Types
+## Collecting GI GuardDuty Logs and Metrics
+
+### Log Types
 
 The Sumo Logic App for GI GuardDuty requires the Amazon GuardDuty findings to be sent through the Amazon CloudWatch Events. For more details on [GuardDuty findings](https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings.html).
 
 
-## Collect Logs and Metrics
 
-## Install the App
+## Installing the GI GuardDuty App
 
-## Viewing AWS Dashboards
 
-<img src={useBaseUrl('img/integrations/amazon-aws/Overview.png')} alt="AWS API Gateway" />
+
+
+
+## Viewing the GI GuardDuty App Dashboards
+
+**Each dashboard has a set of filters** that you can apply to the entire dashboard, as shown in the following example. Click the funnel icon in the top dashboard menu bar to display a scrollable list of filters that are applied across the entire dashboard.
+
+**Each panel has a set of filters** that are applied to the results for that panel only, as shown in the following example. Click the funnel icon in the top panel menu bar to display a list of panel-specific filters.
+
+
+### GI GuardDuty - 01. Global Baseline
+
+**GI GuardDuty - 01. Global Baseline** dashboard provides a high-level baseline of threats across Sumo Logic customers. Panels display graphs for threat and severity distribution, targeted resources, and relative rarity.
+
+<img src={useBaseUrl('img/integrations/amazon-aws/GI_GuardDuty_Global_Baseline.png')} alt="GI GuardDuty" />
+
+**Use this dashboard to:
+* Determine if you are being attacked by a particular region or actor around the globe.
+* Assess rare threats found by Amazon GuardDuty in your AWS environment.
+* Analyze threat shares targeted resources and severity.
+
+
+### GI GuardDuty - 02. Your Company v. Global Baseline
+
+**GI GuardDuty - 02. Your Company v. Global Baseline **dashboard compares your AWS environment against all Sumo Logic customers. The threat score (0=LOW RISK, 100=HIGH RISK) is a composite view of risk associated with GuardDuty findings and is impacted by severity, number of findings, deviation from global baseline and rarity of threats within Sumo Logic customers. In addition to the latest score, the trend line panel shows the 7 day trend of the threat score. My Prioritized Action Plan lists the change management actions in order of impact on GuardDuty security posture.
+
+<img src={useBaseUrl('img/integrations/amazon-aws/GI_GuardDuty_Your_Company_v_Baseline.png')} alt="GI GuardDuty" />
+
+**Use this dashboard to:
+* Understand top level threat score and trends.
+* How your company’s GuardDuty findings compare to Sumo Logic customers.
+* How your company’s findings severity compares to Sumo Logic customers.
+* Understand which threats to remediate prioritized based on the greatest impact to threat score.
+* Review a prioritized action plan for your company.
+
+
+### GI GuardDuty - 03. Findings Analysis
+
+**GI GuardDuty - 03. Findings Analysis** dashboard provides a high-level view of threats to your AWS environment. Panels display information on threats by threat purpose, geography, impacted resource type, account, severity and trends.
+
+<img src={useBaseUrl('img/integrations/amazon-aws/GI_GuardDuty_Findings_Analysis.png')} alt="GI GuardDuty" />
+
+**Use this dashboard to:
+* Understand the mix of threats in your environment.
+* Identify the source and target of threats in your environment.
+* Review your company's threats by severity and resource type.
+* Review your company's threats by account, security group, EC2 instances, and threat trends.
