@@ -5,6 +5,8 @@ sidebar_label: BigQuery
 description: tk
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 The Google BigQuery App helps you monitor data and activity in your BigQuery data warehouse. The preconfigured dashboards provide insight into the projects, operations, queries, user management operations, user activities, and billed GBs in BigQuery.
 
 ## Collect Logs for the Google BigQuery App

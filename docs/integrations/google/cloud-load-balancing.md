@@ -5,6 +5,7 @@ sidebar_label: Cloud Load Balancing
 description: tk
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Google Cloud Load Balancing is Google’s load balancing service for Google Cloud Platform. The Sumo Logic App for Google Cloud Load Balancing helps you monitor load balancing activity.  The preconfigured dashboards provide insight into request locations and volume, response codes, and request and response data by load balancer.
 

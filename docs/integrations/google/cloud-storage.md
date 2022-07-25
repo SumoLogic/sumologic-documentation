@@ -5,6 +5,8 @@ sidebar_label: Cloud Storage
 description: tk
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 The Sumo Logic app for Google Cloud Storage helps you monitor activity in Google Cloud Storage. The preconfigured dashboards provide insight into request locations, bucket and object operations, user activities, errors, and bucket statistics.
 
 ## Collecting Logs

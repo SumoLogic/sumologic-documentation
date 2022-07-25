@@ -5,6 +5,8 @@ sidebar_label: Cloud Functions
 description: tk
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 The Google Cloud Functions App enables you to monitor your usage of Google Cloud Functions. The App preconfigured dashboards provide insight into function executions, operations, latency, errors, and failures.
 
 

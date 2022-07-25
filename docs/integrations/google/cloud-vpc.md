@@ -5,6 +5,8 @@ sidebar_label: Cloud VPC
 description: tk
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 The Google Cloud Platform (GCP) [Virtual Private Cloud](https://cloud.google.com/vpc/docs/)(VPC) provides networking functionality to [Compute Engine](https://cloud.google.com/compute/docs/) virtual machine (VM) instances, [Kubernetes Engine](https://cloud.google.com/kubernetes-engine/docs/) containers and [App Engine Flex](https://cloud.google.com/appengine/docs/flexible/). The Sumo Logic App for Google Cloud VPC provides visibility into the activities, traffic, and VPC flow in your GCP. The preconfigured dashboards provide you details on the VPC flows, source and destination IP addresses, ports, protocols, and messages.
 
 

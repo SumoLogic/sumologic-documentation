@@ -5,6 +5,8 @@ sidebar_label: Compute Engine
 description: tk
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 Google Compute Engine is the Infrastructure as a Service component of Google Cloud Platform that delivers virtual machines running in Google's data centers and worldwide fiber network. The Sumo Logic App for Google Compute Engine helps you monitor your infrastructure by providing preconfigured dashboards that allow you to view the activities, users, and message severity of your Google Compute Engine infrastructure.
 
 

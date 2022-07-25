@@ -5,6 +5,7 @@ sidebar_label: Kubernetes Engine (GKE)
 description: tk
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 [Google Kubernetes Engine (GKE)](https://cloud.google.com/kubernetes-engine/) provides a managed environment where you can easily deploy, manage, and scale your container-based applications using the Google Cloud infrastructure.
 
