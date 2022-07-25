@@ -18,12 +18,115 @@ SQS CloudWatch Metrics. For details, see here.
 SQS operations using AWS CloudTrail. For details, see here.
 
 
-## Collect Logs and Metrics
+## Collect Logs and Metrics for the Amazon SQS App
 
 
+### Collect Metrics for the Amazon SQS App
+
+1. Configure a [Hosted Collector](https://help.sumologic.com/03Send-Data/Hosted-Collectors/Configure-a-Hosted-Collector).
+2. Configure an [Amazon CloudWatch Source for Metrics](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/Amazon-CloudWatch-Source-for-Metrics).
+    1. **Name**. Enter a name to display for the new Source.
+    2. **Description**. Enter an optional description.
+    3. **Regions**. Select your Amazon Regions for SQS.
+    4. **Namespaces**. Select AWS/SQS.
+    5. **Source Category**. Enter a source category. For example, AWS/Metric/SQS.
+    6. **Access Key ID and Secret Access Key**. Enter your Amazon [Access Key ID and Secret Access Key](http://docs.aws.amazon.com/general/latest/gr/managing-aws-access-keys.html).
+    7. **Scan Interva**l. Use the default of 5 minutes, or enter the frequency Sumo Logic will scan your CloudWatch Sources for new data.
+3. Click **Save**.
 
 
+### Collect Amazon SQS Events using CloudTrail
 
+
+1. To your Hosted Collector, add an [AWS CloudTrail Source](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/AWS-CloudTrail-Source).
+    1. **Name**. Enter a name to display for the new Source.
+    2. **Description**. Enter an optional description.
+    3. **S3 Region**. Select the Amazon Region for your SQS S3 bucket.
+    4. **Bucket Name**. Enter the exact name of your SQS S3 bucket.
+    5. **Path Expression**. Enter the string that matches the S3 objects you'd like to collect. You can use a wildcard (*) in this string. (DO NOT use a leading forward slash. See [Amazon Path Expressions](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/Amazon-Path-Expressions).)
+
+The S3 bucket name is not part of the path. Don’t include the bucket name when you are setting the Path Expression.
+    6. **Source Category**. Enter a source category. For example, SQS_event.
+    7. **Access Key ID and Secret Access Key**. Enter your Amazon [Access Key ID and Secret Access Key](http://docs.aws.amazon.com/general/latest/gr/managing-aws-access-keys.html).
+    8. **Scan Interval**. Use the default of 5 minutes. Alternately, enter the frequency Sumo Logic will scan your S3 bucket for new data.
+    9. **Enable Timestamp Parsing**. Select the check box.
+    10. **Time Zone**. Select Ignore time zone from log file and instead use, and select UTC.
+    11. **Timestamp Format**. Select Automatically detect the format.
+    12. **Enable Multiline Processing**. Select the check box, and select Infer Boundaries.
+2. Click **Save**.
+
+
+### Sample Log Message
+
+
+```json
+{
+   "eventVersion":"1.04",
+   "userIdentity":{
+      "type":"AssumedRole",
+      "principalId":"AROAINUY7K3KSGCABCDEF:bsmith",
+      "arn":"arn:aws:sts::12212341717:assumed-role/TechOps-SAML_Role/kdavis",
+      "accountId":"1221234221717",
+      "accessKeyId":"ASIAI12345GECTHNBTQ",
+      "sessionContext":{
+         "Attributes":{
+            "mfaAuthenticated":"false",
+            "creationDate":"2017-11-03T21:04:39Z"
+         },
+         "sessionIssuer":{
+            "type":"Role",
+            "principalId":"AROAINUY7K3KSGCABCDEF",
+            "arn":"arn:aws:iam::12212341717:role/TechOps-SAML_Role",
+            "accountId":"122123451717",
+            "userName":"TechOps-SAML_Role"
+         }
+      }
+   },
+   "eventTime":"2017-11-03T21:36:27Z",
+   "eventSource":"sqs.amazonaws.com",
+   "eventName":"CreateQueue",
+   "awsRegion":"us-west-2",
+   "sourceIPAddress":"19.174.45.8",
+   "userAgent":"aws-sdk-go/1.12.8 (go1.9; darwin; amd64) APN/1.0 HashiCorp/1.0 Terraform/0.10.0-dev",
+   "requestParameters":{
+      "queueName":"msg_process_businessrule",
+      "Attribute":{
+         "ReceiveMessageWaitTimeSeconds":"20",
+         "MessageRetentionPeriod":"345600",
+         "MaximumMessageSize":"262144",
+         "VisibilityTimeout":"3600"
+      }
+   },
+   "responseElements":{
+      "queueUrl":"https://sqs.us-west-2.amazonaws.com/12212341717/initial_msg_formatting"
+   },
+   "requestID":"3f9f0a8a-1234-5678-b16c-58fc1a1ee8fb",
+   "eventID":"66b74ca6-1234-5678-a61e-fba42272ba91",
+   "eventType":"AwsApiCall",
+   "recipientAccountId":"122123451717"
+}
+```
+
+
+### Query Sample
+
+
+**Top 10 users**
+
+
+```
+_sourceCategory=*cloudtrail* "\"eventsource\":\"sqs.amazonaws.com\""
+| json "eventSource" nodrop
+| json "userIdentity.type" as type nodrop
+| json "userIdentity.arn" as arn nodrop
+| json "userName" nodrop
+| json "eventName" nodrop
+| where eventSource="sqs.amazonaws.com"
+| parse field=arn ":assumed-role/*" as user
+| if (isEmpty(userName), user, userName) as user
+| count as eventCount by user
+| top 10 user by eventCount
+```
 
 
 ## Installing the Amazon SQS App
