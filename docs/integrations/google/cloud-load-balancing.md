@@ -249,9 +249,7 @@ This section describes the dashboards in the Sumo Logic App for Google Cloud Loa
 
 See an overview of Google Cloud Load Balancing activity, including request locations, browsers and operating systems used, error status codes, requests by load balancer, bytes sent and received, and message severity over time.
 
-
-19
-
+<img src={useBaseUrl('img/integrations/google/google-cloud-load-balancing-overview.png')} alt="Google Load Balancing dashboards" />
 
 **Request Location**. A world map showing the locations of requests over the last 24 hours.
 
@@ -273,7 +271,7 @@ See an overview of Google Cloud Load Balancing activity, including request locat
 See information about request activity in Google Cloud Load Balancing, including request locations, requests by type over time, requests by load balancer over time, KBs sent and received by number of requests, and total requests by load balancer.
 
 
-21
+<img src={useBaseUrl('img/integrations/google/google-cloud-load-balancing-request-analysis.png')} alt="Google Load Balancing dashboards" />
 
 
 **Request Location**. A world map showing the locations of requests over the last 24 hours.
@@ -295,9 +293,7 @@ See information about request activity in Google Cloud Load Balancing, including
 
 See information about the status of requests in Google Cloud Load Balancing, including status codes per project, over time, and by load balancer; location of 4xx and 5xx responses; and 4xx and 5xx responses by load balancer.
 
-
-23
-
+<img src={useBaseUrl('img/integrations/google/google-cloud-load-balancing-status-analysis.png')} alt="Google Load Balancing dashboards" />
 
 **Status Codes per Project**. A stacked column chart that shows a breakdown of the count of status codes by type ( 2xx, 3xx, 4xx, 5xx, others) for each project over the last 24 hours.
 

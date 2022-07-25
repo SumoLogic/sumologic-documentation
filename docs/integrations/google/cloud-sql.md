@@ -232,8 +232,7 @@ Panels will start to fill automatically. It's important to note that each panel 
 
 See an overview of database activities—such as create, delete, update, and so on—in Google Cloud SQL, including activity locations, created and deleted resources, operations by resources, authorization failures, and messages over time by severity.
 
-
-20
+<img src={useBaseUrl('img/integrations/google/google-cloud-sql-overview.png')} alt="Google Cloud SQL dashboards" />
 
 
 **Location of Activity**. A geolocation map that shows the locations from which database activities were initiated, and the activity count for each location over the last 24 hours.
@@ -254,14 +253,10 @@ See an overview of database activities—such as create, delete, update, and so 
 
 
 ### Activity
-21
-
 
 See information about actions, messages,  operations, created, and deleted resources in Google Cloud SQL.
 
-
-22
-
+<img src={useBaseUrl('img/integrations/google/google-cloud-sql-activity.png')} alt="Google Cloud SQL dashboards" />
 
 **Actions**. A donut chart that shows the breakdown, by count and percentage, of invocations by action type over the last 24 hours.
 
@@ -282,8 +277,7 @@ See information about actions, messages,  operations, created, and deleted resou
 
 See information about your Google Cloud SQL users, including user locations; user activities over time and user activity outliers; top 10 users by messages; and resource creations and deletions by user.
 
-
-24
+<img src={useBaseUrl('img/integrations/google/google-cloud-sql-users.png')} alt="Google Cloud SQL dashboards" />
 
 
 **Location of Users**. A geolocation map that shows the location and count of users over the last 24 hours.
@@ -307,8 +301,7 @@ See information about your Google Cloud SQL users, including user locations; use
 
 See information about failures in Google Cloud SQL, including authorization failures, by location and over time; problematic instances, and error logs.
 
-
-26
+<img src={useBaseUrl('img/integrations/google/google-cloud-sql-failures.png')} alt="Google Cloud SQL dashboards" />
 
 
 **Location of Authorization Failures**. A geolocation map that shows the locations and counts of authorization failures over the last 24 hours.
@@ -326,7 +319,3 @@ See information about failures in Google Cloud SQL, including authorization fail
 **Recent Error Logs**. A table of information about messages of severity Warning, Error, Critical, Alert, or Emergency that were logged over the last three hours.
 
 **Common Error Logs by Instance**. A bar chart that shows the results of a LogReduce analysis of messages of severity Warning, Error, Critical, Alert, or Emergency, by instance, that were logged over the last 24 hours.
-
-
-
-1.

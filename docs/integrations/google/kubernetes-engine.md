@@ -292,7 +292,6 @@ _sourceCategory = "GKE Cloud Logs" logName reason host "\"type\":\"gke_cluster\"
 
 This section provides instructions for installing the GKE - Control Plane App, as well as descriptions and examples for each of the dashboards.
 
-
 Now that you have set up collection for GKE, install the Sumo Logic App for GKE - Control Plane and access the pre-configured Kubernetes dashboards that provide visibility into your GKE environment.
 
 **To install the app, do the following:**
@@ -316,73 +315,50 @@ Template variables provide dynamic dashboards that can rescope data on the fly. 
 :::
 
 ### API Server Dashboard
-24
-
 
 The GKE - API Server dashboard displays information on the API server logs, which is the control plane component that exposes the Kubernetes API. Panels show details on the API server errors, warnings, and activities.
 
-**Use this dashboard to:**
-
-
-
+**Use this dashboard to:
 * Monitor the health and performance of the API server.
 * Review server request rates.
 * Review server success and failure request rates.
 * Review client activity.
 
-
-25
-
+<img src={useBaseUrl('img/integrations/google/GKE-API-Server.png')} alt="Google GKE dashboards" />
 
 
 ### Cluster Logs - Dashboards
-26
-
 
 The GKE - Cluster Logs - dashboards provide a high-level view of the overall health of the clusters, along with details on all the components and resources.
 
-**Use the dashboard to:**
-
-
-
+**Use the dashboard to:
 * Review Cluster Health.
 * Verify Error Messages and Events by Severity.
 * Get an overview of Scaling on the cluster.
 
-
-27
-
+<img src={useBaseUrl('img/integrations/google/GKE-Cluster-Logs.png')} alt="Google GKE dashboards" />
 
 
-### Node Logs - Dashboards
-28
-
+### Node Logs - Dashboard
 
 The GKE - Node Logs - dashboards display information on the overall health of the nodes, along with highlights on errors, warnings, and unusual conditions.
 
-**Use the dashboard to:**
-
-
-
+**Use the dashboard to:
 * Review Node Health.
 * Verify Error Messages and Events.
 * Resources created/killed on the nodes.
 * Review Scheduling details by nodes.
 
 
-29
+<img src={useBaseUrl('img/integrations/google/GKE-Node-Logs.png')} alt="Google GKE dashboards" />
 
 
 
 ### Pod Logs Dashboards
-30
-
 
 The GKE - Pod Logs dashboards display  information on the overall health of the pods, along with details on the resources being utilized, errors, warnings, and unusual conditions.
 
-**Use the dashboard to:**
-
-
+**Use the dashboard to:
 
 * Review Health of Pods.
 * Verify Error Messages and Events.
@@ -390,40 +366,28 @@ The GKE - Pod Logs dashboards display  information on the overall health of the 
 * Review Scheduling details by pods.
 * Understand Container Image Events.
 
-
-31
-
+<img src={useBaseUrl('img/integrations/google/GKE-Pod-Logs.png')} alt="Google GKE dashboards" />
 
 
 ### Controller Manager Dashboard
-32
-
 
 The GKE - Controller Manager Overview dashboard displays information on the  controller manager, providing visibility into the core control loops for Kubernetes.
 
-**Use this dashboard to:**
-
-
+**Use this dashboard to:
 
 * Review resource modifications for pods and jobs.
 * Review scaling operations and logs.
 * Assess severity trends and error messages.
 
-
-33
-
-
+<img src={useBaseUrl('img/integrations/google/GKE-Controller-Manager.png')} alt="Google GKE dashboards" />
 
 ### K8s Audit Logs Dashboard
-34
-
 
 The GKE - K8s Audit Logs dashboard provides security-relevant logs documenting the sequence of activities that have affected system by individual users, administrators or other components of the system.
 
-**Use this dashboard to:**
+<img src={useBaseUrl('img/integrations/google/GKE-K8s-Audit-Logs.png')} alt="Google GKE dashboards" />
 
-
-
+Use this dashboard to:
 * Identify what happened on the Kubernetes cluster, when it happened, and who initiated the action.
 * Analyze user activities on the cluster.
 * Verify component creations, updates and deletions.

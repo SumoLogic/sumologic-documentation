@@ -227,14 +227,10 @@ The Google BigQuery App comes with pre-configured searches and [dashboards](http
 
 
 ### Overview
-19
-
 
 See an overview of queries, projects, and operations in Google BigQuery.
 
-
-20
-
+<img src={useBaseUrl('img/integrations/google/Google-Bigquery-Overview.png')} alt="Google BigQuery dashboards" />
 
 **Query Request Locations. **Shows the number of query requests in the last 24 hours and their location on a map.
 
@@ -257,9 +253,7 @@ See an overview of queries, projects, and operations in Google BigQuery.
 
 See information about Google BigQuery operations, including an operations breakdown, dataset service and table service operations over time, operations and operations failures by project, location, and over time.
 
-
-22
-
+<img src={useBaseUrl('img/integrations/google/Google-Bigquery-mgmt.png')} alt="Google BigQuery dashboards" />
 
 **Operations. **Shows a count of all operations in the last 24 hours on a pie graph.
 
@@ -289,13 +283,11 @@ See information about Google BigQuery operations, including an operations breakd
 
 
 ### Queries
-23
-
 
 See information about queries in Google BigQuery, including billed GBs, latency, and errors.
 
 
-24
+<img src={useBaseUrl('img/integrations/google/Google-Bigquery-Queries.png')} alt="Google BigQuery dashboards" />
 
 
 **Location of Query Requests. **Shows the number of query requests in the last 24 hours and their location on a map.
@@ -328,7 +320,7 @@ See information about queries in Google BigQuery, including billed GBs, latency,
 See information about users  in Google BigQuery, including query operations, billed GBs, query latency, and query failures by user.
 
 
-26
+<img src={useBaseUrl('img/integrations/google/Google-Bigquery-Users.png')} alt="Google BigQuery dashboards" />
 
 
 **Location of Users Executing Queries. **Shows the number of users executing queries in the last 24 hours and their location on a map.

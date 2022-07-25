@@ -182,7 +182,7 @@ In this step you export logs to the Pub/Sub topic you created in the previous st
 
 
 
-```
+```json
 {
  "message":{
    "data":{
@@ -314,8 +314,7 @@ You can use the pre-configured searches and [dashboards](https://help.sumologic.
 
 See the overview of your Google Cloud IAM including the operations, project, IAM role, and service account activities.
 
-
-21
+<img src={useBaseUrl('img/integrations/google/Google-Cloud-AM-Overview.png')} alt="Google Cloud IAM dashboards" />
 
 
 **Messages by Project**. See the count and trend of messages by project in the last 24 hours on a line chart.
@@ -335,9 +334,7 @@ See the overview of your Google Cloud IAM including the operations, project, IAM
 
 See the details of IAM policy changes, user operations, role assignments, and role additions and removal.
 
-
-23
-
+<img src={useBaseUrl('img/integrations/google/Google-Cloud-IAM-Role-Activity.png')} alt="Google Cloud IAM dashboards" />
 
 **IAM Policy Changes by Project.** See the count of IAM policy changes by project in the last 24 hours on a line chart.
 
