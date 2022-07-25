@@ -5,6 +5,10 @@ sidebar_label: MongoDB
 description: The Sumo Logic App for MongoDB provides insight into your MongoDB environment, allowing you to track overall system health, queries, logins and connections, errors and warnings, replication, and sharding.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src={useBaseUrl('img/integrations/databases/mongodb.png')} alt="DB icon" width="100"/>
+
 MongoDB is a source-available cross-platform document-oriented database program.
 
 

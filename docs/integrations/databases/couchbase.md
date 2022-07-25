@@ -5,6 +5,10 @@ sidebar_label: Couchbase
 description: Couchbase is a distributed document database with a powerful search engine and in-built operational and analytical capabilities.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src={useBaseUrl('img/integrations/databases/databases-icon.png')} alt="DB icon" width="75"/>
+
 Couchbase, a modern database for enterprise applications, is a distributed document database with a powerful search engine and in-built operational and analytical capabilities. It brings the power of NoSQL to the edge and provides fast, efficient bidirectional synchronization of data between the edge and the cloud. The Sumo Logic app for Couchbase helps you monitor activity in Couchbase. The pre-configured dashboards provide insight into the Health of the Cluster, the Status of the Buckets, I/O of Reading/Writing, Errors, the Events of Couchbase Servers that help you understand your clusters.
 
 This App has been tested with the following Couchbase with Telegraf versions:

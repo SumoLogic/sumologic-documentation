@@ -7,6 +7,8 @@ description: Amazon CloudFront
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
+<img src={useBaseUrl('img/integrations/amazon-aws/cloudfront.png')} alt="DB icon" width="50"/>
+
 Amazon CloudFront is a content delivery network (CDN) that provides an easy way for companies to distribute content to end-users with low latency and high data transfer speeds. The Sumo Logic App for Amazon CloudFront provides analytics on visitor information, rates and statistics, content being served, and other metrics. The app uses predefined searches and Dashboards that provide visibility into your environment for real time analysis of overall usage.
 
 Our new app install flow is now in Beta. It is only enabled for certain customers while we gather Beta customer feedback. If you can see the Add Integration button, follow the "Before you begin" section in the "Collect Logs" help page and then use the in-product instructions in Sumo Logic to set up the app.

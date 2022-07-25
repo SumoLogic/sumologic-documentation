@@ -7,6 +7,8 @@ description: Amazon GuardDuty Benchmark
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
+<img src={useBaseUrl('img/integrations/amazon-aws/guardduty-benchmark.png')} alt="DB icon" width="50"/>
+
 [Amazon GuardDuty](https://aws.amazon.com/guardduty/) is an intelligence threat detection service that provides accurate, continuous monitoring to protect AWS accounts and workloads. This page explains the log collection process, and provides instructions for configuring log collection and installing the Amazon GuardDuty Benchmark App.
 
 The Sumo Logic **Amazon GuardDuty Benchmark App** integrates **Global Intelligence Service (GIS)** with Amazon GuardDuty for continuous machine learning and statistical baselines for KPIs (key performance indicators) and KRIs (key risk indicators). These baselines enable you to optimize security configuration and threat detection on all your AWS accounts.  

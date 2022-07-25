@@ -7,6 +7,9 @@ description: Amazon DynamoDB
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
+<img src={useBaseUrl('img/integrations/amazon-aws/dynamodb.png')} alt="DB icon" width="50"/>
+
+
 Amazon DynamoDB is a fast and flexible NoSQL database service that provides consistent, single-digit millisecond latency at any scale. For more details see here.
 
 The Sumo App for Amazon DynamoDB uses both logs and metrics to is a unified logs and metrics App that provides operational insights into your DynamoDB. The App includes Dashboards that allow you to monitor key metrics, view the throttle events, errors, and latency, and also help you plan the capacity of your DynamoDB instances.
