@@ -15,10 +15,114 @@ The Sumo Logic App for AWS WAF analyzes traffic flowing through AWS WAF and auto
 
 Our new app install flow is now in Beta. It is only enabled for certain customers while we gather Beta customer feedback. If you can see the Add Integration button, follow the "Before you begin" section in the "Collect Logs" help page and then use the in-product instructions in Sumo Logic to set up the app.
 
-## Collect Logs and Metrics
 
-## Install the App
+## Collecting Logs for the AWS WAF App
 
-## Viewing AWS Dashboards
+Our new app install flow is now in Beta. It is only enabled for certain customers while we gather Beta customer feedback. If you can see the Add Integration button, follow the "Before you begin" section in the "Collect Logs" help page and then use the in-product instructions in Sumo Logic to set up the app.
 
-<img src={useBaseUrl('img/integrations/amazon-aws/Overview.png')} alt="AWS API Gateway" />
+
+### Before you begin
+
+In this step you set up AWS WAF to send log data to an S3 bucket using an Kinesis Data Firehose. In the next step, you'll configure Sumo to collect logs from the bucket.
+
+1. Enable WAF logging to a Kinesis Stream, as described in AWS help.
+2. Configure an AWS S3 bucket as the destination of the Kinesis Stream, as described in [Amazon Kinesis Data Firehose Data Delivery](https://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html) in AWS help.
+3. Confirm that logs are being delivered to the S3 bucket.
+4. [Grant Sumo Logic Access to the AWS S3 Bucket](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/Grant-Access-to-an-AWS-Product).
+
+
+### Configure a Sumo collector and source to receive AWS WAF logs
+
+1. Configure a [Hosted Collector](https://help.sumologic.com/03Send-Data/Hosted-Collectors/Configure-a-Hosted-Collector).
+2. To your Hosted Collector, add an [AWS S3 Source](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/AWS-S3-Source).
+    1. **Name**. Enter a name to display for the new Source.
+    2. **Description**. Enter an optional description.
+    3. **S3 Region**. Select the Amazon Region for your S3 bucket.
+    4. **Bucket Name**. Enter the exact name of your S3 bucket.
+    5. **Path Expression**. Enter the string that matches the S3 objects you'd like to collect. You can use a wildcard (*) in this string. (DO NOT use a leading forward slash. See [Amazon Path Expressions](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/Amazon-Path-Expressions).) The S3 bucket name is not part of the path. Don’t include the bucket name when you are setting the Path Expression.
+    6. **Source Category**. Enter a source category. For example, AWS/WAF.
+    7. **Access Method**. Select the appropriate AWS access control mechanism.
+    8. **Scan Interval**. Use the default of Automatic, or select a scan interval from the pulldown.
+    9. **Enable Timestamp Parsing**. Select the checkbox.
+    10. **Time Zone**. Click **Ignore time zone** **from log file and instead use**, and select "UTC" from the list of time zones.
+    11. **Timestamp Format**. Click **Automatically detect the format**.
+    12. **Enable Multiline Processing**. Click the checkbox, and select **Infer Boundaries**.
+    13. Click **Save**.
+
+
+### Sample Log Message
+
+
+```json
+{"webaclId":"360cb717-5a9f-4f2f-ac64-09ab912af591","terminatingRuleId":"1809ecc9-81fd-4dff-99e7-a27421213155","terminatingRuleType":"REGULAR","action":"BLOCK","httpSourceName":"CF","httpSourceId":"i-123","ruleGroupList":[],"rateBasedRuleList":[],"matchingNonTerminatingRules":[],"httpRequest":{"clientIp":"125.5.11.56","country":"US","headers":[{"name":"Host","value":"127.0.0.1:1989"},{"name":"User-Agent","value":"curl/7.53.1"},{"name":"Accept","value":"*/*"}],"uri":"/Lists/b/ref=sva_videos_2?ie=UTF   ","args":"name=10; DROP TABLE members","httpVersion":"HTTP/1.1","httpMethod":"GET","requestId":"distribution_id"},"formatVersion":1,"timestamp":1535493873231}
+```
+
+
+
+### Query sample  
+
+
+#### Client IP Threat Info
+
+
+```
+_sourceCategory=AWS/WAF {{client_ip}}
+| parse "\"httpMethod\":\"*\"," as httpMethod,"\"httpVersion\":\"*\"," as httpVersion,"\"uri\":\"*\"," as uri, "{\"clientIp\":\"*\",\"country\":\"*\"" as clientIp,country, "\"action\":\"*\"" as action, "\"matchingNonTerminatingRules\":[*]" as matchingNonTerminatingRules, "\"rateBasedRuleList\":[*]" as rateBasedRuleList, "\"ruleGroupList\":[*]" as ruleGroupList, "\"httpSourceId\":\"*\"" as httpSourceId, "\"httpSourceName\":\"*\"" as httpSourceName, "\"terminatingRuleType\":\"*\"" as terminatingRuleType, "\"terminatingRuleId\":\"*\"" as terminatingRuleId, "\"webaclId\":\"*\"" as webaclId nodrop
+| lookup type, actor, raw, threatlevel as malicious_confidence from sumo://threat/cs on threat=clientip
+```
+
+
+
+## Installing the AWS WAF App
+
+Now that you have set up collection for AWS WAF, install the Sumo Logic App for AWS AWS to use the pre-configured searches and dashboards.
+
+**To install the app:**
+
+Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
+
+1. From the **App Catalog**, search for and select the app**.**
+2. Select the version of the service you're using and click **Add to Library**.
+
+Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](https://help.sumologic.com/01Start-Here/Library/Apps-in-Sumo-Logic/Install-Apps-from-the-Library)
+
+
+1. To install the app, complete the following fields.
+    1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
+    2. **Data Source.** Select either of these options for the data source. 
+        * Choose **Source Category**, and select a source category from the list. 
+        * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (_sourceCategory=MyCategory). 
+    3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
+2. Click **Add to Library**.
+
+Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization.
+
+Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
+
+
+## Viewing the AWS WAFDashboards
+
+### AWS WAF Overview
+
+See an overview of threats detected and traffic passing through AWS WAF.
+
+<img src={useBaseUrl('img/integrations/amazon-aws/aws-waf-overview.png')} alt="AWS WAF" />
+
+
+### AWS WAF Threat Intelligence
+12
+
+
+See details of threats allowed and blocked by AWS WAF.
+
+<img src={useBaseUrl('img/integrations/amazon-aws/aws-waf-threat-intelligence.png')} alt="AWS WAF" />
+
+
+
+### AWS WAF Traffic
+14
+
+
+See details of allowed and blocked AWS WAF traffic by location, rules and outliers.
+
+<img src={useBaseUrl('img/integrations/amazon-aws/aws-waf-traffic.png')} alt="AWS WAF" />

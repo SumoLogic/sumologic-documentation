@@ -4,10 +4,15 @@ title: Sumo Logic App for Bitbucket
 sidebar_label: Bitbucket
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src={useBaseUrl('img/integrations/app-development/bitbucket.png')} alt="DB icon" width="50"/>
+
+
 The Sumo Logic App for Bitbucket provides insights to development teams into how their software delivery pipeline components are performing. The pre-configured dashboards organize issues, builds, and deployments that require the most attention.
 
 
-1.png "image_tooltip")
+1
 
 The Bitbucket App supports only Bitbucket Cloud.
 
@@ -120,7 +125,7 @@ In this step, you create a Hosted Collector to receive Webhook Events from Bitbu
     * Click **Save** and make note of the HTTP address for the source. You will supply it when you configure a Jira Webhook in the next step.
 
 
-2.png "image_tooltip")
+2
 
 ##### Adding a Webhook in Bitbucket
 
@@ -130,7 +135,7 @@ In this step, you create a Hosted Collector to receive Webhook Events from Bitbu
 4. Click the **Add Webhook** button to create a Webhook for the repository. The **Add New Webhook** page appears.
 
 
-3.png "image_tooltip")
+3
 
 1. Enter a **Title** with a short description.
 2. Enter Sumo Logic Http source **URL**, you configured this in [Configure Hosted Collector to Receive Bitbucket events](https://help.sumologic.com/07Sumo-Logic-Apps/08App_Development/Bitbucket/Collect_Logs_for_Bitbucket_App#Configure_Hosted_Collector_to_Receive_Bitbucket_events).
@@ -153,7 +158,7 @@ after-script:
 
 
 
-4.png "image_tooltip")
+4
 If you want to deployment events to multiple Sumo Logic orgs, include a `-pipe` statement, as shown above, for each of the Sumo Logic endpoints.
 
 For reference - This is how [bitbucket-pipelines.yml](https://bitbucket.org/app-dev-sumo/backendservice/src/master/bitbucket-pipelines.yml) looks like after adding deploy pipe code to our sample Bitbucket CI/CD pipeline.
@@ -169,7 +174,7 @@ Sumo Logic needs to understand the event type for incoming events (for example, 
 2. Add Field ‎**X-Event-Key**‎
 
 
-5.png "image_tooltip")
+5
 
 
 
@@ -258,7 +263,7 @@ Locate and install the app you need from the **App Catalog**. If you want to see
 1. From the **App Catalog**, search for and select the app**.**
 2. Select the version of the service you're using and click **Add to Library**.
 
-6.png "image_tooltip")
+6
 
 Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](https://help.sumologic.com/01Start-Here/Library/Apps-in-Sumo-Logic/Install-Apps-from-the-Library)
 
@@ -292,7 +297,7 @@ Use this dashboard to:
 * Quickly get insight around how various Bitbucket components are being used.
 * Drill-down into the specifics of builds, deploy or commit events.
 
-7.png "image_tooltip")
+7
 
 
 
@@ -307,7 +312,7 @@ Use this dashboard to:
 * Identify and investigate deploys to various environments that led to bugs or degradation in performance.
 
 
-8.png "image_tooltip")
+8
 
 
 ### Bitbucket - Builds
@@ -320,7 +325,7 @@ Use this dashboard to:
 * Monitor the success/failure rate of builds and identify relevant individuals, repos, and branches.
 * Identify code commits that led to failed builds.
 
-9.png "image_tooltip")
+9
 
 
 
@@ -333,7 +338,7 @@ Use this dashboard to:\
 * Improve overall software delivery processes by identifying issues by priority, projects, users, and type.
 * Get insights into identifying regressions and blockers.
 
-10.png "image_tooltip")
+10
 
 
 ### Bitbucket - Pull Requests
@@ -346,4 +351,4 @@ Use this dashboard to:
 * Identify commits and code changes.
 * Identify the teams and repos that take the longest to close pull requests.
 
-11.png "image_tooltip")
+11

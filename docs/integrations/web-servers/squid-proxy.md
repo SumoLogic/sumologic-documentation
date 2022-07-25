@@ -7,6 +7,8 @@ description: The Squid Proxy app is a unified logs and metrics app that helps yo
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
+<img src={useBaseUrl('img/integrations/web-servers/squid-proxy.png')} alt="Web servers icon" width="75"/>
+
 The Squid Proxy app is a unified logs and metrics app that helps you monitor activity in Squid Proxy. The preconfigured dashboards provide insight into served and denied requests; performance metrics; IP domain DNS statistics; traffic details; HTTP response codes; URLs experiencing redirects, client errors, and server errors; and quality of service data that helps you understand your users’ experience.
 
 This App is tested with the following Squid Proxy versions:

@@ -7,6 +7,9 @@ description: Provides searches and Dashboards that monitor log events generated 
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
+<img src={useBaseUrl('img/integrations/web-servers/nginx.png')} alt="Web servers icon" width="75"/>
+
+
 Nginx is a web server used as a reverse proxy, load balancer, mail proxy, and HTTP cache. The Sumo Logic App for Nginx helps you monitor activity in Nginx. The preconfigured dashboards provide information about site visitors, including the location of visitors, devices/operating systems, and browsers used, and information about server activity, including bots, observed, and error information.
 
 This App is tested with the following Nginx versions:

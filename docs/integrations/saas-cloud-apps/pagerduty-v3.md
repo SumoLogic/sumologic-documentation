@@ -4,6 +4,11 @@ title: Sumo Logic App for PagerDuty V3
 sidebar_label: PagerDuty V3
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+
+<img src={useBaseUrl('img/integrations/saas-cloud-apps/pagerduty.png')} alt="DB icon" width="100"/>
+
 The Sumo Logic App for PagerDuty V3 collects incident messages from your PagerDuty account via a webhook, and displays incident data in pre-configured Dashboards that allow you to monitor and analyze the activity of your PagerDuty account and Services. The Sumo Logic App for PagerDuty V3 uses Webhooks V3, to provide enhanced context for alert object models.
 
 
