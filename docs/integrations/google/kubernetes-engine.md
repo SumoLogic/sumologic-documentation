@@ -26,7 +26,7 @@ By default, GKE clusters are natively integrated with Cloud Logging (and Monitor
 
 
 
-## Collect logs and metrics for the GKE - Control Plane App
+## Collecting logs and metrics for the GKE - Control Plane App
 
 This page has instructions for configuring log and metric collection for the Sumo App for GKE - Control Plane.
 
@@ -37,10 +37,7 @@ After you install the Sumo Logic Kubernetes App, you configure a hosted collecto
 
 For GCP integration, Google Logging collects logs from GCP services. Once you’ve configured the pipeline, the logs are published to a Google Pub/Sub topic. A Sumo Logic GCP source on a hosted collector subscribed to that topic ingests the logs into Sumo Logic.
 
-
 The configuration process includes the following tasks:
-
-
 
 1. Configure a GCP source on a hosted collector. You'll obtain the **HTTP URL for the source**, and then use Google Cloud Console to register the URL as a validated domain.  
 2. Create a topic in Google Pub/Sub and subscribe the GCP source URL to that topic.
@@ -48,8 +45,6 @@ The configuration process includes the following tasks:
 
 
 #### Set up and install the Kubernetes App
-5
-
 
 The Sumo Logic Kubernetes App provides the services for managing and monitoring Kubernetes worker nodes. You must set up collection and  install the Kubernetes App before configuring collection for the GKE App. You will configure log and metric collection during this process.
 
@@ -66,8 +61,6 @@ By default, GKE clusters are natively integrated with Cloud Logging (and Monitor
 
 
 #### Configure a Google Cloud Platform Source  
-8
-
 
 The GCP source receives log data from Google Pub/Sub. The GCP source will only be usable for log data formatted as data coming from Google Pub/Sub.
 
@@ -75,8 +68,6 @@ The GCP source receives log data from Google Pub/Sub. The GCP source will only b
 
 
 #### Configure a Pub/Sub topic for GCP
-9
-
 
 Once you configure the Pub/Sub, you can export data from Google to the Pub/Sub.
 
@@ -84,18 +75,13 @@ Once you configure the Pub/Sub, you can export data from Google to the Pub/Sub.
 
 
 #### Create an export of Google Kubernetes Engine logs from Logging
-10
-
 
 This section walks you through the task of creating an export of Google Kubernetes Engine logs from Logging.
 
-**To create an export of GKE logs, do the following:**
-
+**To create an export of GKE logs, do the following:*
 
 
 1. Go to **Logging** and click **Logs Router**.
-
-
 
 1. Click **Create Sink. **
 
@@ -125,16 +111,9 @@ logName="projects/<project_name></em>/logs/kube-node-installation")
 
 
 ### Sample log messages
-13
 
 
-
-##### Google Cloud Logging - Container StdErr
-14
-
-
-
-```
+```json title="Google Cloud Logging - Container StdErr"
 {
   "message":{
     "attributes":{
@@ -180,12 +159,7 @@ logName="projects/<project_name></em>/logs/kube-node-installation")
 
 
 
-##### Google Cloud Logging - Container StdOut
-15
-
-
-
-```
+```json title="Google Cloud Logging - Container StdOut"
 {
   "message":{
     "attributes":{
@@ -225,12 +199,7 @@ logName="projects/<project_name></em>/logs/kube-node-installation")
 
 
 
-##### Google Cloud Logging - Events
-16
-
-
-
-```
+```json title="Google Cloud Logging - Events"
 {
   "message":{
 "attributes":{
@@ -293,16 +262,8 @@ logName="projects/<project_name></em>/logs/kube-node-installation")
 
 
 ### Query Sample
-17
 
-
-
-#####  Error Stream - Google Cloud Logging
-18
-
-
-
-```
+```bash title="Error Stream - Google Cloud Logging"
 _source="GKE Cloud Logs" error
 | parse regex "\"logName\":\"(?<log_name>[^\"]+)\""
 | json field=_raw "message.data.jsonPayload.message" as message
@@ -312,14 +273,7 @@ _source="GKE Cloud Logs" error
 | count by timestamp, project, cluster,log_name, message
 ```
 
-
-
-##### Created Resources by Node Over Time - Google Cloud Logging
-19
-
-
-
-```
+```bash title="Created Resources by Node Over Time - Google Cloud Logging"
 _sourceCategory = "GKE Cloud Logs" logName reason host "\"type\":\"gke_cluster\"" "\"reason\":\"Created\""
 | parse regex "\"logName\":\"(?<log_name>[^\"]+)\""
 | where log_name matches "projects/*/logs/events"
@@ -333,7 +287,7 @@ _sourceCategory = "GKE Cloud Logs" logName reason host "\"type\":\"gke_cluster\"
 
 
 
-# Install the GKE - Control Plane App
+## Installing the GKE - Control Plane App
 
 This section provides instructions for installing the GKE - Control Plane App, as well as descriptions and examples for each of the dashboards.
 
@@ -351,22 +305,16 @@ Now that you have set up collection for GKE, install the Sumo Logic App for GKE 
 4. Click **Add to Library**.
 
 
-21
- All the dashboards are linked to the Explore tab so they can be easily accessed by clicking on Cluster from side navigation of Explore tab.
+All the dashboards are linked to the Explore tab so they can be easily accessed by clicking on Cluster from side navigation of Explore tab.
 
 
-### Filter with template variables    
-22
+## Viewing GKE Dashboards
 
+:::tip Filter with template variables    
+Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards-new/filter-with-template-variables.md).
+:::
 
-Template variables provide dynamic dashboards that rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you can view dynamic changes to the data for a fast resolution to the root cause. For more information, see the [Filter with template variables](https://help.sumologic.com/Visualizations-and-Alerts/Dashboard_(New)/Filter_with_template_variables) help page.
-
-
-23
-You can use template variables to drill down and examine the data on a granular level.
-
-
-### GKE - API Server Dashboard
+### API Server Dashboard
 24
 
 
@@ -386,7 +334,7 @@ The GKE - API Server dashboard displays information on the API server logs, whic
 
 
 
-### GKE - Cluster Logs - Dashboards
+### Cluster Logs - Dashboards
 26
 
 
@@ -405,7 +353,7 @@ The GKE - Cluster Logs - dashboards provide a high-level view of the overall hea
 
 
 
-### GKE - Node Logs - Dashboards
+### Node Logs - Dashboards
 28
 
 
@@ -425,7 +373,7 @@ The GKE - Node Logs - dashboards display information on the overall health of th
 
 
 
-### GKE - Pod Logs Dashboards
+### Pod Logs Dashboards
 30
 
 
@@ -446,7 +394,7 @@ The GKE - Pod Logs dashboards display  information on the overall health of the 
 
 
 
-### GKE - Controller Manager Dashboard
+### Controller Manager Dashboard
 32
 
 
@@ -465,7 +413,7 @@ The GKE - Controller Manager Overview dashboard displays information on the  con
 
 
 
-### GKE - K8s Audit Logs Dashboard
+### K8s Audit Logs Dashboard
 34
 
 

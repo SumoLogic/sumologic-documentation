@@ -8,16 +8,13 @@ description: tk
 Google Compute Engine is the Infrastructure as a Service component of Google Cloud Platform that delivers virtual machines running in Google's data centers and worldwide fiber network. The Sumo Logic App for Google Compute Engine helps you monitor your infrastructure by providing preconfigured dashboards that allow you to view the activities, users, and message severity of your Google Compute Engine infrastructure.
 
 
-### Log Types
-1
-
-* [Google Cloud Audit Logs](https://cloud.google.com/logging/docs/audit/) - These logs track events on multiple [GCP services](https://cloud.google.com/logging/docs/audit/#services), including Compute Engine, IAM, and App Engine.
-* [Compute Engine Activity Logs](https://cloud.google.com/compute/docs/activity-logs) - These logs provide information about Compute Engine API calls, operations, and system events.
-
-
-## Collect Logs for Google Compute Engine
+## Collecting Logs for Google Compute Engine
 
 This page describes the Sumo pipeline for ingesting logs from Google Cloud Platform (GCP) services, and provides instructions for collecting logs from Google Compute Engine.
+
+### Log Types
+* [Google Cloud Audit Logs](https://cloud.google.com/logging/docs/audit/) - These logs track events on multiple [GCP services](https://cloud.google.com/logging/docs/audit/#services), including Compute Engine, IAM, and App Engine.
+* [Compute Engine Activity Logs](https://cloud.google.com/compute/docs/activity-logs) - These logs provide information about Compute Engine API calls, operations, and system events.
 
 
 ### Collection process for GCP services
@@ -277,7 +274,7 @@ _collector="HTTP Source for GCP Pub/Sub" logName resource timestamp
 
 
 
-## Install the Google Compute Engine App
+## Installing the Google Compute Engine App
 
 Now that you have set up collection for Google Compute Engine, install the Sumo Logic App to use the pre-configured searches and [dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/06Google/Google_Compute_Engine/Install-the-Google-Compute-Engine-App-and-view-the-Dashboards#Dashboards) that provide visibility into your environment for real-time analysis of overall usage.
 
@@ -309,7 +306,7 @@ Once an app is installed, it will appear in your **Personal** folder, or other f
 Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
 
 
-## Dashboards
+## Viewing Google Compute Engine Dashboards
 
 
 ### Google Compute Engine Overview
@@ -387,13 +384,9 @@ See the details of message severities - emergency, alert, critical, error, and w
 
 
 ### Google Compute Engine Users
-25
-
 
 See the details of users by activity, and users by message severity.
 
-
-26
 
 
 **Top 10 Users by Activity**. See the count of top 10 users by insert, delete, start, stop, and reset activities in the last hour, displayed in a table.

@@ -8,20 +8,15 @@ description: tk
 The Google Cloud Platform (GCP) [Virtual Private Cloud](https://cloud.google.com/vpc/docs/)(VPC) provides networking functionality to [Compute Engine](https://cloud.google.com/compute/docs/) virtual machine (VM) instances, [Kubernetes Engine](https://cloud.google.com/kubernetes-engine/docs/) containers and [App Engine Flex](https://cloud.google.com/appengine/docs/flexible/). The Sumo Logic App for Google Cloud VPC provides visibility into the activities, traffic, and VPC flow in your GCP. The preconfigured dashboards provide you details on the VPC flows, source and destination IP addresses, ports, protocols, and messages.
 
 
-### Log Types
-1
+## Collecting Logs for Google Cloud VPC
 
+This page describes the Sumo pipeline for ingesting logs from Google Cloud Platform (GCP) services, and provides instructions for collecting logs from  Google Cloud VPC.
+
+### Log Types
 
 The App uses:
 
-
-
 * **Compute Engine VPC Flow Logs**. These logs provide information from Compute Engine ​VMs ​for ​network ​operations ​such ​as ​Network ​monitoring, ​forensics, ​real-time security ​analysis ​and ​expense ​optimization.
-
-
-## Collect Logs for Google Cloud VPC
-
-This page describes the Sumo pipeline for ingesting logs from Google Cloud Platform (GCP) services, and provides instructions for collecting logs from  Google Cloud VPC.
 
 
 ### Collection process for GCP services
@@ -251,7 +246,7 @@ Create a sink for each GCP service whose logs you want to send to Sumo. We recom
 
 
 
-### Example query
+### Sample query
 16
 
 
@@ -278,27 +273,7 @@ _collector="HTTP Source for GCP Pub/Sub" logName resource timestamp
 
 
 
-# Install the Google Cloud VPC App and view the Dashboards
-
-
-
-1. **Last updated \
-**Apr 13, 2022, 10:54 PM by Nishant
-2. **Page restriction \
-**Public
-    * [ Page notifications Off](https://help.sumologic.com/07Sumo-Logic-Apps/06Google/Google_Cloud_VPC/Install-the-Google-Cloud-VPC-App-and-view-the-Dashboards#)
-    *  
-    * [Save as PDF](https://help.sumologic.com/@api/deki/pages/5323/pdf/Install%2bthe%2bGoogle%2bCloud%2bVPC%2bApp%2band%2bview%2bthe%2bDashboards.pdf?stylesheet=default)
-    *  
-    * [ Share](https://help.sumologic.com/07Sumo-Logic-Apps/06Google/Google_Cloud_VPC/Install-the-Google-Cloud-VPC-App-and-view-the-Dashboards#)
-
-    Table of contents
-
-
-
-### Install the Sumo Logic App
-17
-
+## Installing the Google Cloud VPC App
 
 Now that you have set up collection for Google Cloud VPC, install the Sumo Logic App to use the pre-configured searches and [dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/06Google/Google_Cloud_VPC/Install-the-Google-Cloud-VPC-App-and-view-the-Dashboards#Dashboards) that provide visibility into your environment for real-time analysis of overall usage.
 
@@ -330,19 +305,12 @@ Once an app is installed, it will appear in your **Personal** folder, or other f
 Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
 
 
-### Dashboards
-19
+## Viewing Google Cloud VPC App Dashboards
 
 
-
-#### Google Cloud VPC - Overview
-20
-
+### Overview
 
 See an overview of the top 10 IPs, ports, and VMs; along with trends in traffic and VPC flows in your Google Cloud VPC.
-
-
-21
 
 
 **Inbound Source Address Locations**. Shows number of incoming source IP addresses in the last 24 hours and their location on a world map.
@@ -374,14 +342,9 @@ See an overview of the top 10 IPs, ports, and VMs; along with trends in traffic 
 **VPC Flows per Protocol by Hour**. See the VPC flows per protocol by hour in the last 24 hours on a column graph.
 
 
-#### Google Cloud VPC Activity
-22
-
+### VPC Activity
 
 See the details of your Google Cloud VPC activity including the trends of traffic, packets, and average latency; along with totals of VPC flows.
-
-
-23
 
 
 **Traffic (MiB) by Subnetwork ID. **Shows trends in traffic by Subnetwork ID in the last hour on a line graph.
@@ -411,7 +374,7 @@ See the details of your Google Cloud VPC activity including the trends of traffi
 **VPC Flows by Destination Port**. Shows the count of VPC flows by destination port in the last hour on a pie chart.
 
 
-#### Google Cloud VPC advanced metrics
+### Advanced metrics
 24
 
 

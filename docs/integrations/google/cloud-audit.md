@@ -9,18 +9,15 @@ description: tk
 The Google Cloud Audit App helps you with audit and compliance by enabling you to monitor activities and track the actions of administrators in your Google Cloud Platform projects. The preconfigured dashboards provide insight into the network, security, operations, and users of your Google Cloud Platform projects.
 
 
- Log Types
+## Collecting Logs for Google Cloud Audit
 
+This page describes the Sumo pipeline for ingesting logs from Google Cloud Platform (GCP) services, and provides instructions for collecting logs from Google Cloud Audit.
+
+### Log Types
 
 The Google Cloud Audit App uses the following logs:
 
 * [Google Cloud Audit Logs](https://cloud.google.com/logging/docs/audit/). These logs track events on multiple [GCP services](https://cloud.google.com/logging/docs/audit/#services), including Compute Engine, IAM and App Engine.
-
-
-## Collect Logs for Google Cloud Audit
-
-This page describes the Sumo pipeline for ingesting logs from Google Cloud Platform (GCP) services, and provides instructions for collecting logs from Google Cloud Audit.
-
 
 ### Collection process for GCP services
 
@@ -30,8 +27,6 @@ The GCP service generates logs which are exported and published to a Google Pub/
 
 
 Configuring collection for GCP uses the following process:
-
-
 
 1. Configure a GCP source on a hosted collector. You'll obtain the **HTTP URL for the source**, and then use Google Cloud Console to register the URL as a validated domain.  
 2. Create a topic in Google Pub/Sub and subscribe the GCP source URL to that topic.
@@ -185,11 +180,9 @@ In this step you export logs to the Pub/Sub topic you created in the previous st
 
 
 ### Sample Log Message
-18
 
 
-
-```
+```json
 {
   "message": {
     "data": {
@@ -239,7 +232,7 @@ In this step you export logs to the Pub/Sub topic you created in the previous st
 
 
 
-## Install the Google Cloud Audit App
+## Installing the Google Cloud Audit App
 
 This section provides instructions for installing the Google Cloud Audit App, as well as examples of each of the App dashboards.
 
@@ -249,16 +242,10 @@ Now that you have set up collection for Google Cloud Audit, install the Sumo Log
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
-
-
 1. From the **App Catalog**, search for and select the app**.**
 2. Select the version of the service you're using and click **Add to Library**.
 
-
-20
 Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](https://help.sumologic.com/01Start-Here/Library/Apps-in-Sumo-Logic/Install-Apps-from-the-Library)
-
-
 
 1. To install the app, complete the following fields.
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
@@ -273,13 +260,13 @@ Once an app is installed, it will appear in your **Personal** folder, or other f
 Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
 
 
-## Dashboards
+## Viewing Google Cloud Audit Dashboards
 
 
 The Google Cloud Audit App pre-configured searches and [dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/06Google/Google_Cloud_Audit/Install-the-Google-Cloud-Audit-App-and-view-the-Dashboards#Dashboards) provide visibility into your environment for real-time analysis of overall usage.
 
 
-#### Google Cloud Audit Overview
+### Overview
 22
 
 
@@ -302,7 +289,7 @@ See the overview of audit activities including resource creation and deletion, o
 **Top 10 Users**. See the top 10 users by messages in the last 24 hours on a column chart.
 
 
-#### Google Cloud Audit Network and Security
+### Network and Security
 24
 
 
@@ -329,7 +316,7 @@ See the details of network and security operations including the authorization f
 **Short Lived Network Resources**. See the details of short lived network resources in the last 24 hours including the creator, terminator, and resource name.
 
 
-#### Google Cloud Audit Operations
+### Operations
 26
 
 
@@ -352,7 +339,7 @@ See the details of operations including the actions, requested services, created
 **Deleted Resources Over Time**. See the count of deleted resources in the last 24 hours on a stacked column chart.
 
 
-#### Google Cloud Audit Users
+### Users
 28
 
 

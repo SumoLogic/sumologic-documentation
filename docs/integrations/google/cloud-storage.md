@@ -7,6 +7,7 @@ description: tk
 
 The Sumo Logic app for Google Cloud Storage helps you monitor activity in Google Cloud Storage. The preconfigured dashboards provide insight into request locations, bucket and object operations, user activities, errors, and bucket statistics.
 
+## Collecting Logs
 
 ### Log Types
 
@@ -26,16 +27,12 @@ The GCP service generates logs which are exported and published to a Google Pub/
 
 Configuring collection for GCP uses the following process:
 
-
-
 1. Configure a GCP source on a hosted collector. You'll obtain the **HTTP URL for the source**, and then use Google Cloud Console to register the URL as a validated domain.  
 2. Create a topic in Google Pub/Sub and subscribe the GCP source URL to that topic.
 3. Create an export of GCP logs from Google Stackdriver Logging. Exporting involves writing a filter that selects the log entries you want to export, and choosing a Pub/Sub as the destination. The filter and destination are held in an object called a sink.
 
 See the following sections for configuration instructions.
 
-
-3
 Logs from GCP services can be [exported](https://cloud.google.com/logging/docs/export/configure_export_v2) to any destination including Stackdriver. It is not required to push the GCP logs into Stackdriver for the Sumo Logic Apps to work. Any GCP logs can be [excluded](https://cloud.google.com/logging/docs/exclusions) from Stackdriver logging and still can be [exported](https://cloud.google.com/logging/docs/export/) to Sumo logic.
 
 
@@ -43,15 +40,11 @@ Logs from GCP services can be [exported](https://cloud.google.com/logging/docs/e
 
 The Google Cloud Platform (GCP) Source receives log data from Google Pub/Sub.
 
-
-4
 You can use the same GCP Source to receive log data from multiple GCP services. For example, you can send logs collected from Google Cloud Application Engine, Google Cloud IAM, and Google Cloud Audit.
 
 However, this is not recommended since you cannot define specific Source Category values to each GCP service. If you create a GCP Source for each service you can define a specific Source Category to each service.
 
 This Source will be a Google Pub/Sub-only Source, which means that it will only be usable for log data formatted as data coming from Google Pub/Sub.
-
-
 
 1. In Sumo Logic select** Manage Data > Collection > Collection**.
 2. Select an existing Hosted Collector upon which to add the Source. If you don't already have a Collector you'd like to use, create one, using the instructions on [Configure a Hosted Collector](https://help.sumologic.com/03Send-Data/Hosted-Collectors/Configure-a-Hosted-Collector).
@@ -140,48 +133,26 @@ We recommend the following:
 
 In this step you export logs to the Pub/Sub topic you created in the previous step.
 
-
-
 1. Go to **Logging** and click **Logs Router**.
 
-
-10
-
-
-
-
-
-1. Click **Create Sink.  \
- \
-**
-11
+1. Click *Create Sink.
 
 2. Click the arrow to **Filter by label or text** and select **Convert to advanced filter**.
 
 
-12
-
-
 1. For resource_type, replace `<resource_variable>` with `gcs_bucket`.
-
-
-13
-
 
 1. Select a GCP service to filter the logs. The recommended GCP service to create sinks for is "GCS Bucket", which sends the service’s logs to Sumo Logic. In the **Edit Export** window on the right:
     1. Set the **Sink Name**. For example, "gce-vm-instance".
     2. Select "Cloud Pub/Sub" as the **Sink Service**.
     3. Set **Sink Destination** to the Pub/Sub topic you created in the [Google Cloud Platform Source](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Google-Cloud-Platform-Source?mt-draft=true) procedure. For example, "pub-sub-logs".
     4. Click **Create Sink**. \
- \
 
-14
 
 2. By default, GCP logs are stored within Stackdriver, but you can configure Stackdriver to exclude them as detailed here without affecting the export to Sumo Logic as outlined above. To understand how to exclude Stackdriver logs, please follow the instructions in [this GCP document](https://cloud.google.com/logging/docs/exclusions#overview).
 
 
-# Query Sample
-15
+### Query Sample
 
 
 **Created Resources Over Time**
@@ -202,23 +173,18 @@ _sourceCategory=*gcp* data logName resource "\"type\":\"gcs_bucket\""
 
 
 
-## Install the Google Cloud Storage App
+## Installing the Google Cloud Storage App
 Now that you have set up collection for Google Cloud Storage, install the Sumo Logic App to use the pre-configured searches and [dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/06Google/Google_Cloud_Storage/Install_the_Google_Cloud_Storage_App_and_view_the_Dashboards#Dashboards) that provide visibility into your environment for real-time analysis of overall usage.
 
 **To install the app:**
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
-
-
 1. From the **App Catalog**, search for and select the app**.**
 2. Select the version of the service you're using and click **Add to Library**.
 
 
-17
 Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](https://help.sumologic.com/01Start-Here/Library/Apps-in-Sumo-Logic/Install-Apps-from-the-Library)
-
-
 
 1. To install the app, complete the following fields.
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
@@ -233,10 +199,10 @@ Once an app is installed, it will appear in your **Personal** folder, or other f
 Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
 
 
-## Dashboards
+## Viewing Google Cloud Storage Dashboards
 
 
-#### Google Cloud Storage - Overview
+### Overview
 19
 
 
@@ -261,7 +227,7 @@ See an overview of activity in Google Cloud Storage, including a breakdown of bu
 **Top 10 Users by Operations. **Shows a table with top 10 users based on operations in the last 24 hours.
 
 
-#### Google Cloud Storage - Users
+### Users
 21
 
 
@@ -292,7 +258,7 @@ See information about your Google Cloud Storage users, including user locations,
 **Location of Users with Errors. **Shows the number of users with errors and their location in the last 24 hours on a world map.
 
 
-#### Google Cloud Storage - Buckets
+### Buckets
 
 
 See information about buckets in Google Cloud Storage, including operations by bucket, bucket statistics, and creations and deletions.

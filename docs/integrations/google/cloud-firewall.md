@@ -10,18 +10,15 @@ The Google Cloud Firewall App enables you to monitor request activity and the ef
 The Google Cloud Firewall App preconfigured dashboards provide insight into ingress and egress request traffic, including the location of allowed and denied requests, allowed and denied requests over time, and the top networks, subnetworks, and VMs by allowed and denied ingress requests.
 
 
+## Collect Logs for the Google Cloud Firewall App
+
+This page describes the Sumo pipeline for ingesting logs from Google Cloud Platform (GCP) services, and provides instructions for configuring log collection for the Google Cloud Firewall App.
+
 ### Log types
 
 The Google Cloud Firewall App uses the following logs:
 
-
-
 * [Google Cloud Audit Logs](https://cloud.google.com/logging/docs/audit/) - Logs events on multiple [GCP services](https://cloud.google.com/logging/docs/audit/#services), including Google Cloud Firewall.
-
-
-## Collect Logs for the Google Cloud Firewall App
-
-This page describes the Sumo pipeline for ingesting logs from Google Cloud Platform (GCP) services, and provides instructions for configuring log collection for the Google Cloud Firewall App.
 
 
 ### Enable logging for firewall rules
@@ -50,13 +47,7 @@ The key components in the collection process for GCP services are Google Logs Ex
 
 The GCP service generates logs which are exported and published to a Google Pub/Sub topic through Stackdriver. You will then set up a Sumo Logic Google Cloud Platform source that subscribes to this topic and receives the exported log data.
 
-
-3
-
-
 Configuring collection for GCP uses the following process:
-
-
 
 1. Configure a GCP source on a hosted collector. You'll obtain the **HTTP URL for the source**, and then use Google Cloud Console to register the URL as a validated domain.  
 2. Create a topic in Google Pub/Sub and subscribe the GCP source URL to that topic.
@@ -228,7 +219,7 @@ _sourceCategory=*gcp* logName reference resource "\"type\":\"gce_subnetwork\"" "
 
 
 
-## Install the Google Cloud Firewall App
+## Installing the Google Cloud Firewall App
 
 The section provides instructions for installing the Google Cloud Firewall App, and examples for each of the App dashboards.
 
@@ -238,16 +229,10 @@ Now that you have set up log collection, you can install the Google Cloud Firewa
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
-
-
 1. From the **App Catalog**, search for and select the app**.**
 2. Select the version of the service you're using and click **Add to Library**.
 
-
-18
 Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](https://help.sumologic.com/01Start-Here/Library/Apps-in-Sumo-Logic/Install-Apps-from-the-Library)
-
-
 
 1. To install the app, complete the following fields.
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
@@ -262,20 +247,16 @@ Once an app is installed, it will appear in your **Personal** folder, or other f
 Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
 
 
-## Dashboards
+## Viewing Google Cloud Firewall Dashboards
 
 
 This section provides examples of the Google Cloud Firewall App accompanied with descriptions.
 
 
-#### Google Cloud Firewall - Overview
-20
+### Overview
 
 
 Presents an overview of request activity, including the geolocation of allowed and denied requests; percentage of requests denied; allowed and denied traffic over time; and the top remote request locations, requested networks, requested subnets, requested VMs, and rules used.
-
-
-21
 
 
 **Ingress Source Locations**. A geolocation map that shows the count of connection requests received by each location over the last 24 hours.
@@ -307,7 +288,7 @@ Presents an overview of request activity, including the geolocation of allowed a
 **Top Requested VMs**. A table that lists the VMs that have received the most requests over the last 24 hours.
 
 
-#### Google Cloud Firewall - Ingress
+### Ingress
 22
 
 
@@ -344,7 +325,7 @@ Presents information about ingress traffic; including allowed and denied traffic
 **Top Denied Source IPs**. A table that lists the IP addresses from which the most requests were denied access.
 
 
-#### Google Cloud Firewall - Egress
+### Egress
 24
 
 

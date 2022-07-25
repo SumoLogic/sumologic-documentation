@@ -7,22 +7,17 @@ description: tk
 
 The Google BigQuery App helps you monitor data and activity in your BigQuery data warehouse. The preconfigured dashboards provide insight into the projects, operations, queries, user management operations, user activities, and billed GBs in BigQuery.
 
-
-Log Types  
-
-
-The Google BigQuery App uses:
-
-* [Google Cloud Audit Logs](https://cloud.google.com/logging/docs/audit/) - Logs events on multiple [GCP services](https://cloud.google.com/logging/docs/audit/#services), including BigQuery.
-
-
 ## Collect Logs for the Google BigQuery App
 
 This page describes the Sumo pipeline for ingesting logs from Google Cloud Platform (GCP) services, and provides instructions for configuring log collection for the Google BigQuery App.
 
 
-### Collection process for GCP services
+### Log Types  
 
+The Google BigQuery App uses:
+* [Google Cloud Audit Logs](https://cloud.google.com/logging/docs/audit/) - Logs events on multiple [GCP services](https://cloud.google.com/logging/docs/audit/#services), including BigQuery.
+
+### Collection process for GCP services
 
 The key components in the collection process for GCP services are Google Logs Export, Google Cloud Pub/Sub, and Sumo’s Google Cloud Platform (GCP) source running on a hosted collector.
 
@@ -30,11 +25,7 @@ The key components in the collection process for GCP services are Google Logs Ex
 The GCP service generates logs which are exported and published to a Google Pub/Sub topic through Stackdriver. You will then set up a Sumo Logic Google Cloud Platform source that subscribes to this topic and receives the exported log data.
 
 
-
-
 ### Configuring collection for GCP uses the following process:
-
-
 
 1. Configure a GCP source on a hosted collector. You'll obtain the **HTTP URL for the source**, and then use Google Cloud Console to register the URL as a validated domain.  
 2. Create a topic in Google Pub/Sub and subscribe the GCP source URL to that topic.
@@ -42,13 +33,10 @@ The GCP service generates logs which are exported and published to a Google Pub/
 
 
 See the following sections for configuration instructions.
-
-
 Logs from GCP services can be [exported](https://cloud.google.com/logging/docs/export/configure_export_v2) to any destination including Stackdriver. It is not required to push the GCP logs into Stackdriver for the Sumo Logic Apps to work. Any GCP logs can be [excluded](https://cloud.google.com/logging/docs/exclusions) from Stackdriver logging and still can be [exported](https://cloud.google.com/logging/docs/export/) to Sumo logic.
 
 
 ### Configure a Google Cloud Platform Source
-
 
 The Google Cloud Platform (GCP) Source receives log data from Google Pub/Sub.
 
@@ -91,10 +79,7 @@ This Source will be a Google Pub/Sub-only Source, which means that it will only 
 
 ### Configure a Pub/Sub Topic for GCP
 
-
 You need to configure a Pub/Sub Topic in GCP and add a subscription to the Source URL that belongs to the Sumo Logic Google Cloud Platform Source you created. Once you configure the Pub/Sub, you can export data from Google Logging to the Pub/Sub. For example, you can export Google App Engine logs, as described on [Collect Logs for Google App Engine](https://help.sumologic.com/07Sumo-Logic-Apps/06Google/Google_App_Engine/01Collect-Logs-for-the-Google-App-Engine-App).
-
-
 
 1. Create a Pub/Sub Topic in GCP. See [Google Cloud documentation](https://cloud.google.com/pubsub/docs/admin#creating_a_topic) for the latest configuration steps.
 2. Create a Pub/Sub subscription to the Source URL that belongs to the Sumo Logic Google Cloud Platform Source you created. See [Google Cloud documentation](https://cloud.google.com/pubsub/docs/admin#creating_subscriptions) for the latest configuration steps.
@@ -203,17 +188,15 @@ For more information, see [Overview of Logs Export](https://cloud.google.com/log
 
 
 
-## Install the Google BigQuery App
+## Installing the Google BigQuery App
 
 This page contains instructions on how to install the Google BigQuery App, as well as descriptions for each of the App dashboards.
 
 Now that you have set up log collection, you can install the Google BigQuery App to use the pre-configured searches and [dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/06Google/Google_BigQuery/Install_the_Google_BigQuery_App_and_View_the_Dashboards#Dashboards) that provide visibility into your environment for real-time analysis of overall usage.
 
-**To install the app:**
+To install the app:
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
-
-
 
 1. From the **App Catalog**, search for and select the app**.**
 2. Select the version of the service you're using and click **Add to Library**.
@@ -235,14 +218,13 @@ Once an app is installed, it will appear in your **Personal** folder, or other f
 Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
 
 
-## Dashboards
-18
+## Viewing Google BigQuery Dashboards
 
 
 The Google BigQuery App comes with pre-configured searches and [dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/06Google/Google_BigQuery/Install_the_Google_BigQuery_App_and_View_the_Dashboards#Dashboards) that provide visibility into your environment for real-time analysis of overall usage.
 
 
-#### Google BigQuery - Overview
+### Overview
 19
 
 
@@ -267,7 +249,7 @@ See an overview of queries, projects, and operations in Google BigQuery.
 **Operations Breakdown. **Shows a count of all operations in the last 24 hours on a pie graph.
 
 
-#### Google BigQuery - Management
+### Management
 21
 
 
@@ -304,7 +286,7 @@ See information about Google BigQuery operations, including an operations breakd
 **Location of Authorization Failures. **Shows the location of failed operations in the last 24 hours on a world map.
 
 
-#### Google BigQuery - Queries
+### Queries
 23
 
 
@@ -337,7 +319,7 @@ See information about queries in Google BigQuery, including billed GBs, latency,
 **Location of Failed Executions. **Shows the number of failed executions in the last 24 hours and their location on a map.
 
 
-#### Google BigQuery - Users
+### Users
 25
 
 

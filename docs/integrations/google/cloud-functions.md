@@ -7,15 +7,13 @@ description: tk
 
 The Google Cloud Functions App enables you to monitor your usage of Google Cloud Functions. The App preconfigured dashboards provide insight into function executions, operations, latency, errors, and failures.
 
-The Google Cloud Functions App uses the following logs:
-
-* [Google Cloud Audit Logs](https://cloud.google.com/logging/docs/audit/) - Logs events on multiple [GCP services](https://cloud.google.com/logging/docs/audit/#services), including Cloud Functions.
-* Google Cloud Functions Logs - Debug information of function executions.
-
 
 ## Collect Logs for the Google Cloud Functions App
 
-This page describes the Sumo pipeline for ingesting logs from Google Cloud Platform (GCP) services and provides instructions for configuring log collection for the Google Cloud Functions App.
+This section describes the Sumo pipeline for ingesting logs from Google Cloud Platform (GCP) services and provides instructions for configuring log collection for the Google Cloud Functions App. This app uses the following logs:
+
+* [Google Cloud Audit Logs](https://cloud.google.com/logging/docs/audit/) - Logs events on multiple [GCP services](https://cloud.google.com/logging/docs/audit/#services), including Cloud Functions.
+* Google Cloud Functions Logs - Debug information of function executions.
 
 
 ### Collection process for GCP services
@@ -170,7 +168,7 @@ In this step you export logs to the Pub/Sub topic you created in the previous st
 By default, GCP logs are stored within Stackdriver, but you can configure Stackdriver to exclude them as detailed here without affecting the export to Sumo Logic as outlined above. To understand how to exclude Stackdriver logs, please follow the instructions in [this GCP document](https://cloud.google.com/logging/docs/exclusions#overview).
 
 
-# Query Sample  
+### Query Sample  
 14
 
 
@@ -190,7 +188,7 @@ _sourceCategory=*gcp* logName textPayload "\"type\":\"cloud_function\"" "\"textP
 
 
 
-## Install the Google Cloud Functions App
+## Installing the Google Cloud Functions App
 
 This section provides instructions for installing the Google Cloud Functions App, and examples of each of the App dashboards.
 
@@ -225,12 +223,12 @@ Once an app is installed, it will appear in your **Personal** folder, or other f
 Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
 
 
-## Dashboards
+## Viewing Google Cloud Functions Dashboards
 
 You can use the pre-configured searches and [dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/06Google/Google_Cloud_Storage/Install_the_Google_Cloud_Storage_App_and_view_the_Dashboards#Dashboards) for visibility into your environment with visual displays of real-time performance analytics and overall usage.
 
 
-#### Google Cloud Functions - Overview
+### Overview
 18
 
 
@@ -259,7 +257,7 @@ See an overview of Google Cloud Function processing; including daily executions;
 **Execution Status. **A bar chart with the count of execution statuses in the last 24 hours.
 
 
-#### Google Cloud Functions - Statistics
+### Statistics
 20
 
 
@@ -292,7 +290,7 @@ See statistical summaries of function executions, latency, errors, and failures.
 **Error Statuses. **A bar chart that shows the count of error statuses in the last 24 hours.
 
 
-#### Google Cloud Functions - Advanced Metrics
+### Advanced Metrics
 22
 
 
