@@ -85,7 +85,7 @@ You can use template variables to drill down and examine the data on a granular 
 
 The **EKS - API Server Audit** dashboard displays information on Kubernetes audit logs. Panels provide records of individual users, administrators, or system components affected by your cluster.
 
-**Use this dashboard to:
+Use this dashboard to:
 * Monitor the health and performance of the API server.
 * Review failure rates, reasons, and user failures.
 * Review status code trends and the top URLs with problem status codes.
@@ -100,7 +100,7 @@ The **EKS - API Server Audit** dashboard displays information on Kubernetes audi
 
 The **EKS - API Server** dashboard displays information on the API server logs, the control plane component that exposes the Kubernetes API. Panels show details on the API server errors, warnings, and activities.
 
-**Use this dashboard to:
+Use this dashboard to:
 * Monitor API server latency.
 * Monitor API server successful request rates.
 * Compare successful and failed API server request rates.
@@ -112,7 +112,7 @@ The **EKS - API Server** dashboard displays information on the API server logs, 
 
 The **EKS - Authenticator** dashboard displays information on the Authenticator logs which are unique to Amazon EKS. Panels display logs that represent the control plane component Amazon EKS uses for Kubernetes[ Role Based Access Control](https://kubernetes.io/docs/admin/authorization/rbac/) (RBAC) authentication using IAM credentials.
 
-**Use this dashboard to:
+Use this dashboard to:
 * Review authentication errors.
 * Monitor successful user authentication rates.
 
@@ -123,7 +123,7 @@ The **EKS - Authenticator** dashboard displays information on the Authenticator 
 
 The **EKS - Controller Manager** dashboard displays information on the  controller manager, providing visibility into the core control loops for Kubernetes.
 
-**Use this dashboard to:
+Use this dashboard to:
 * Review resource modifications for pods and jobs.
 * Review scaling operations and logs.
 * Assess severity trends and error messages.
@@ -135,7 +135,7 @@ The **EKS - Controller Manager** dashboard displays information on the  controll
 
 The **EKS - Scheduler** dashboard provides details of the scheduler health and latency details.
 
-**Use this dashboard to:
+Use this dashboard to:
 * Get an overview of scheduler health and status.
 * Review scheduler latency details.
 

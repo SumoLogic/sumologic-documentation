@@ -330,7 +330,7 @@ You can use template variables to drill down and examine the data on a granular 
 
 The **Jenkins - Overview** dashboard shows relationships between jobs and executors (worker nodes) on a Jenkins master. This dashboard provides insights into job run durations, status, physical memory, disk memory, and unused machines.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -355,7 +355,7 @@ System Monitoring Dashboards provide information on system activities related to
 
 The **Jenkins - Audit** dashboard provides insight into user events, including configuration changes, authentication events, and job activities.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -375,7 +375,7 @@ The **Jenkins - Master Health** dashboard provides insight into the health of Je
 
 Executors are similar to threads that run jobs, so they are indicators of the load placed on Jenkins. If the executors are full, it means there are a lot of jobs running on the system and more executors may be needed to balance the load.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -392,7 +392,7 @@ Executors are similar to threads that run jobs, so they are indicators of the lo
 
 The **Jenkins - Job Health** dashboard provides insight into the health of Jenkins jobs across various master nodes with information on job counts, job run duration, queue information, and garbage collection metrics.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -408,7 +408,7 @@ The **Jenkins - Job Health** dashboard provides insight into the health of Jenki
 
 The **Jenkins - Node Health** dashboard provides insights into the health of all Jenkins master and worker nodes, with information on node details, recent builds, resource consumption, and node events.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -430,7 +430,7 @@ Job Monitoring Dashboards provide information on job activities like job run dur
 
 The **Jenkins - Job Overview** dashboard provides a high-level view of the job and builds status, trends, comparisons, and results.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -450,7 +450,7 @@ The **Jenkins - Job Overview** dashboard provides a high-level view of the job a
 
 The **Jenkins - Job Information** dashboard provides detailed information about a specific job. Panels show information on job URLs, duration trends, execution results, test case trends, slowest stages for pipeline jobs, console logs, and common errors.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -469,7 +469,7 @@ The **Jenkins - Job Information** dashboard provides detailed information about 
 
 The **Jenkins - Build Information** dashboard provides detailed information about a specific build. Panels show information on build parameters, source control management, commit details, test cases, pipeline stages, console logs, and configuration changes prior to a build.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -487,7 +487,7 @@ Jenkins - Pipeline Stage Monitoring
 
 The **Jenkins - Pipeline Stage Monitoring** dashboard provides insights into pipeline performances.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 

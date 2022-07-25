@@ -5,6 +5,8 @@ sidebar_label: Azure Audit
 description: Azure Audit
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 The Azure Audit App allows you to collect data from the Azure Activity Log (formerly known as Azure Audit logs) and monitor the health of your Azure environment. The App provides preconfigured Dashboards that allow you to monitor Active Directory activity, resource usage, service health, and user activity.  Logs can be collected in two ways - from Event Hub, and from Azure Insight API using Sumo Powershell scripts.
 
 This guide walks you through the tasks you'll perform to [collect Azure Audit logs from Event Hub](https://help.sumologic.com/07Sumo-Logic-Apps/04Microsoft-and-Azure/Azure_Audit/02Collect-Logs-for-the-Azure-Audit-App-from-Event-Hub):
@@ -128,6 +130,7 @@ The predefined Dashboards on Azure Audit allow you to instantly monitor the acti
 
 Use this dashboard to get a high-level view of the Azure activity by location, and details of events.
 
+<img src={useBaseUrl('img/integrations/microsoft-azure/Overview.png')} alt="Azure Audit dashboards" />
 
 **Azure Activity by Source Location. **Performs a geo lookup operation to display the location of Azure activity by Source location on a map of the world for the last seven days.
 
@@ -146,6 +149,7 @@ Use this dashboard to get a high-level view of the Azure activity by location, a
 
 Use this dashboard to see the details on resource group and resource provider.
 
+<img src={useBaseUrl('img/integrations/microsoft-azure/Overview.png')} alt="Azure Audit dashboards" />
 
 **Events by Resource Group. **Displays details on events by Resource Group across time in a stacked column chart on a timeline for the last seven days.
 
@@ -165,6 +169,7 @@ Use this dashboard to see the details on resource group and resource provider.
 ### Service Health
 Use this dashboard to see the details on Azure service health such as the level, status, and events.
 
+<img src={useBaseUrl('img/integrations/microsoft-azure/Overview.png')} alt="Azure Audit dashboards" />
 
 
 **Level.** Displays information by level in a pie chart for the last seven days.
@@ -181,6 +186,7 @@ Use this dashboard to see the details on Azure service health such as the level,
 ### User Activity
 Use this dashboard to see the details on events, resources, and users.
 
+<img src={useBaseUrl('img/integrations/microsoft-azure/Overview.png')} alt="Azure Audit dashboards" />
 
 **Events by Location.** Performs a geo lookup operation to display user activity events by IP address location on a map of the world for the last seven days.
 

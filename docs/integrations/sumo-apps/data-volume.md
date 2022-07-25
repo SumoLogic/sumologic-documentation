@@ -36,7 +36,7 @@ For each panel in a dashboard, you can perform the following actions:
 
 The **Data Volume - Overview** dashboard helps you understand your ingest in terms of  Logs (by Tiers), Metrics, and Tracing capabilities.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 * Identify the top sources, collectors, or hosts  by ingesting data volume across logs, metrics, and traces
 
@@ -46,7 +46,7 @@ The **Data Volume - Overview** dashboard helps you understand your ingest in ter
 
 The largest data ingest typically comes from log volumes. The **Data Volume - Logs** dashboard allows you to view your log ingest volume by tier by ingesting spikes, outliers, and quota.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 * **Determine the log ingest volume and trends in GB across various tiers.**
 * Identify spikes where current hour ingestion is above 50% from the last hour. Identify outliers and forecast your data ingestion.
@@ -58,7 +58,7 @@ The largest data ingest typically comes from log volumes. The **Data Volume - Lo
 
 The **Data Volume - Logs** by Metadata Fields dashboard allows you to view log ingest volume by tier, source categories, collectors, and hosts.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 * Identify the top 5 sources categories, source hosts, and collectors by ingest volume
 * Examine ingestion trends over time
@@ -67,7 +67,7 @@ The **Data Volume - Logs** by Metadata Fields dashboard allows you to view log i
 
 The **Data Volume - Metrics** dashboard allows you to view your metrics ingested, identifies ingest outliers/spikes, and helps predict what ingestion is going to be.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 * Determine the ingested DPM by various dimensions their
 * Examine trends over time.
@@ -78,7 +78,7 @@ The **Data Volume - Metrics** dashboard allows you to view your metrics ingested
 
 The **Data Volume - Log Spikes**  Dashboard helps you quickly identify significant increases in data ingested. Review details of your data ingested for logs.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 *  Identify ingest outliers
 * Determine the spikes for top sources compared with the previous day
@@ -88,7 +88,7 @@ The **Data Volume - Log Spikes**  Dashboard helps you quickly identify significa
 
 The **Data Volume - Capacity Utilization **dashboard provides views of subscribed, actual, and percentage capacity utilization for logs and metrics.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 * Identify the log and metrics ingestion capacity of your subscription. You must configure the "Daily_Log_Ingest_Capacity" and “Metric_DPM_Ingest_Capacity” variables based on your plan with Sumo Logic. If you have a Credit-based plan, please check with your account executive to determine these values for your account. Otherwise, see **Administration > Account > Account Overview** to view the log ingest capacity value and metric DPM ingest capacity value.
 * Identify the average ingestion and subscribed ingestion capacity by percentage for logs and metrics.
@@ -97,7 +97,7 @@ The **Data Volume - Capacity Utilization **dashboard provides views of subscribe
 
 The **Data Volume - Tracing** dashboard provides views of your Tracing data ingest by billed bytes and span counts per minute.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 * Determine the ingested billedBytes/spansCount for tracing and examine trends over time.
 * Identify spikes in ingestion, where ingestion for the current hour is above by 50% from the last hour.
@@ -109,7 +109,7 @@ The **Data Volume - Tracing** dashboard provides views of your Tracing data inge
 
 The **Data Volume - Credits** Dashboard helps you understand how your credits are being used across Logs, Metrics, Traces, and data tiers.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 * Identify the number of credits consumed and trends across Logs (by different tiers), Metrics, Tracing.
 * Determine the top sources based on their credit usage for Logs (by different tiers), Metrics, and Tracing.

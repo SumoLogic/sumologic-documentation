@@ -540,7 +540,7 @@ Panels will start to fill automatically. It's important to note that each panel 
 
 The **VMware -** **vCenter Operations - Overview **dashboard provides an at-a-glance view of unique clusters, ESXi hosts, unique VMs, and VM failures by ESXi host, as well as vCenter task trends, vSphere errors across clusters, VM operations over time, ESXi per-host metrics for CPU usage and idle time, memory usage and capacity, disk usage and datastore read rate, network usage and system uptime. It also displays data for vCenter alarms, user activity, and VM operations by user.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -557,7 +557,7 @@ The **VMware -** **vCenter Operations - Overview **dashboard provides an at-a-gl
 
 The** VMware - vCenter Errors - Analysis** dashboard provides detailed information about the errors across cluster and hosts. You can easily review error trends, top error events, and most recent error events.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -576,7 +576,7 @@ The** VMware - vCenter Errors - Analysis** dashboard provides detailed informati
 
 The **VMware - Virtual Machine Errors - Analysis **dashboard provides an at-a-glance analysis of VM errors, including MAC address and UUID conflicts, upgrade and VM failures by host, fault tolerance errors, VM power failures, and general VM errors.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -597,7 +597,7 @@ The **VMware - Virtual Machine Errors - Analysis **dashboard provides an at-a-gl
 
 The **VMware - Datastore **dashboard** **provides performance metrics on datastore read rates per ESXi host and VM, and datastore write rates per ESXi host and VM. A datastore is a manageable storage entity, usually used as a repository for virtual machine files including log files, scripts, configuration files, virtual disks, and so on.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -615,7 +615,7 @@ The **VMware - Datastore **dashboard** **provides performance metrics on datasto
 
 The **VMware -** **Network **dashboard** **keeps track of the data in and data out of the ESXi hosts and virtual machines. This dashboard provides an at-a-glance analysis of network usage per ESXi host and VM, network InPacket rate per ESXi host and VM, network OutPacket rate per ESXi host and VM, and network 1 day comparison by host.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -634,7 +634,7 @@ The **VMware -** **Network **dashboard** **keeps track of the data in and data o
 
 The **VMware - Disk** dashboard keeps track of the disk usage, disk writes and reads by the ESXi hosts and virtual machines. You can easily review metrics for disk usage per ESXi host and VM, disk read rate per ESXi host and VM, disk write rate per ESXi host and VM, disk total read latency per host, and disk total write latency per host.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -652,7 +652,7 @@ The **VMware - Disk** dashboard keeps track of the disk usage, disk writes and r
 
 The **VMware - Memory** dashboard provides an at-a-glance analysis of memory usage by ESXi host and VM, memory granted by ESXi host and VM, and memory capacity by ESXi host.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -671,7 +671,7 @@ The **VMware - Memory** dashboard provides an at-a-glance analysis of memory usa
 
 The **VMware -** **CPU** dashboard tracks the CPU consumed by the virtual machines and ESXi hosts with at-a-glance analysis of CPU usage, idle time, and VM CPU wait time.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 * Monitor spikes in CPU activity. Frequent spikes in CPU activity for a VM without any load may signify issues with the VM configurations.

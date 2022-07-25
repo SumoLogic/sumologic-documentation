@@ -74,7 +74,7 @@ Panels will start to fill automatically. It's important to note that each panel 
 
 **The AWS Security Hub - Overview Dashboard** provides a high-level view of findings results. Panels display data aggregated by the number of providers, findings by provider, total findings, findings in AWS accounts by severity, top recent findings, findings by resource type and severity, most severe findings, and critical findings comparison. Each panel provides the ability to drill down for a more granular view of the data.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 * Track findings from different finding providers.
 * Get a high-level overview of actionable items from a security perspective.
@@ -86,7 +86,7 @@ Panels will start to fill automatically. It's important to note that each panel 
 
 **The AWS Security Hub - Types Dashboard** provides a visual analysis of findings by AWS accounts and types namespace for: category, classifier, timeline, severity distribution, and severity Box Plot. Each panel provides the ability to drill down for a more granular view of the data.
 
-**Use this dashboard to:
+Use this dashboard to:
 * Isolate important security findings based on finding types.
 * Analyze the findings distribution across AWS accounts and their severity.
 
@@ -97,7 +97,7 @@ Panels will start to fill automatically. It's important to note that each panel 
 
 **The AWS Security Hub - Compliance Dashboard** provides a high-level visual analysis of compliance status, resource failures, AWS account failures, failed events, status timelines, status and severity distribution and finding types. Each panel provides the ability to drill down for a more granular view of the data.
 
-**Use this dashboard to:**
+Use this dashboard to:
 * Monitor failing compliance checks.
 * Analyze the distribution of failed compliance checks across AWS accounts, their severity and finding types.
 
@@ -107,7 +107,7 @@ Panels will start to fill automatically. It's important to note that each panel 
 
 **The AWS Security Hub - Resources Affected Dashboard** provides a high-level visual analysis of findings by resource type by time interval, top critical resource IDs, AWS account, and the findings details. Each panel provides the ability to drill down for a more granular view of the data.
 
-**Use this dashboard to:
+Use this dashboard to:
 
 * Discover which critical resources are affected.
 * Analyze how they are distributed across AWS accounts.

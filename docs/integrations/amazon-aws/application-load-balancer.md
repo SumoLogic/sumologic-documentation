@@ -99,7 +99,7 @@ Panels will start to fill automatically. It's important to note that each panel 
 
 The** AWS Application Load Balancer - Overview** dashboard provides visibility into the health of your Application Load Balancer and target groups, with at-a-glance views of latency, request and host status, requests from malicious sources, and HTTP backend codes.
 
-**Use this dashboard to:**
+Use this dashboard to:
 * Monitor requests to each load balancer to ensure the load is being distributed as desired.
 * Quickly identify healthy and unhealthy hosts.
 * Monitor trends for load balancers errors, 4xx, and 5xx errors, as well as healthy and unhealthy hosts.
@@ -112,7 +112,7 @@ The** AWS Application Load Balancer - Overview** dashboard provides visibility i
 
 The **AWS Application Load Balancer - Response Analysis **dashboard provides insights into how your load balancers are responding to clients.
 
-**Use this dashboard to:**
+Use this dashboard to:
 * Monitor incoming client locations for all 5XX, 4XX and 3XX error responses.
 * Quickly correlate error responses using load balancer access logs and AWS CloudWatch metrics to determine the possible cause for failures and decide corrective actions.
 
@@ -123,7 +123,7 @@ The **AWS Application Load Balancer - Response Analysis **dashboard provides ins
 
 The **AWS Application Load Balancer - Target Group Response Analysis** dashboard provides insights into how various target groups are responding to client requests.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 * Monitor trends of all response codes for your target groups by LoadBalancer, Target Group, and availability zones.
 * Correlate response code trends across load balancer access logs and CloudWatch metrics to determine the root cause for failures.
@@ -135,7 +135,7 @@ The **AWS Application Load Balancer - Target Group Response Analysis** dashboard
 
 The** AWS Application Load Balancer - Latency Overview** dashboard provides insights into response times for load balancers, target groups, and availability zones, including backend log response times.
 
-**Use this dashboard to:**
+Use this dashboard to:
 * Monitor response times by load balancer, target group, and availability zone.
 * Monitor client latency and processing times for target groups.
 
@@ -156,7 +156,7 @@ Use this dashboard to:
 
 The** AWS Application Load Balancer - Connection and Host Status** dashboard provides insights into active and rejected connections, target connection errors, and healthy and unhealthy hosts.
 
-**Use this dashboard to:**
+Use this dashboard to:
 * Monitor active connections, new connections, rejected connections, and connection errors for the load balancer.
 * Monitor healthy and unhealthy host counts by the load balancer, target group, and availability zone across your infrastructure.
 
@@ -166,7 +166,7 @@ The** AWS Application Load Balancer - Connection and Host Status** dashboard pro
 
 The** AWS Application Load Balancer - Requests and Processed Bytes** dashboard provides insights into client requests, network traffic, and processed data.
 
-**Use this dashboard to:**
+Use this dashboard to:
 * Monitor client request load, network traffic, and processed bytes to determine how to best configure load balancers for optimal performance.
 * Determine how to best allocate backend resources and target groups based on load.
 
@@ -177,7 +177,7 @@ The** AWS Application Load Balancer - Requests and Processed Bytes** dashboard p
 
 The **AWS Application Load Balancer - Threat Intel** dashboard provides insights into incoming requests from malicious sources determined via [Sumo Logic’s Threat Intel feature](https://help.sumologic.com/07Sumo-Logic-Apps/22Security_and_Threat_Detection/Threat_Intel_Quick_Analysis/03_Threat-Intel-FAQ). Panels show detailed information on malicious IPs and the malicious confidence of each threat.
 
-**Use this dashboard to:**
+Use this dashboard to:
 * Identify known malicious IPs that are access your load-balancers and use firewall access control lists to prevent them from sending you traffic going forward
 * Monitor the malicious confidence level for all incoming malicious IP addresses the threats.
 

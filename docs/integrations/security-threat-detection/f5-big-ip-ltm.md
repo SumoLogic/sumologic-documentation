@@ -236,7 +236,7 @@ You can use template variables to drill down and examine the data on a granular 
 
 **F5 - BIG-IP LTM - Overview** dashboard provides details on the network traffic for applications, pools, and its status. It also provides information about violations triggered and their geo-location.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 * View geographic locations of incoming client requests.
 * Get a high-level view of top pools, pool status, and pool names by the application.
@@ -253,7 +253,7 @@ You can use template variables to drill down and examine the data on a granular 
 
 **F5 - BIG-IP LTM - Threat Analysis **dashboard provides an overview of the number of threats, their geographic location, and a breakdown by source using the Threat Intel App. This dashboard also provides details on the severity of threats, as well as the network, user name, and country of origin.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -272,7 +272,7 @@ You can use template variables to drill down and examine the data on a granular 
 
 **F5 - BIG-IP LTM - Metrics and Connections **dashboard provides an at-a-glance view of TCP connections, network traffic by host, and Traffic Manager resource usage.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -305,7 +305,7 @@ You can use template variables to drill down and examine the data on a granular 
 
 **F5 - BIG-IP LTM - User Session Events **dashboard provides an at-a-glance view of user activity and their geographic location. This dashboard also provides information on login trends, operating systems used, user session IDs, and users by their application profile.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 

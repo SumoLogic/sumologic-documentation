@@ -394,7 +394,7 @@ Panels will start to fill automatically. It's important to note that each panel 
 
 The **Acquia - Overview** dashboard provides a high-level view of the activity and health of the environment. Dashboard panels display visual graphs and detailed information on visitor geographic locations, traffic volume and distribution, responses over time, as well as time comparisons for visitor locations and server hits.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -413,7 +413,7 @@ The **Acquia - Overview** dashboard provides a high-level view of the activity a
 
 The **Acquia - Errors Overview** dashboard provides a high-level view of events by log level, time comparisons, and trends. The panels also show the geographic locations of clients and clients with critical messages, new connections and outliers, client requests, request trends, and request outliers.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -430,7 +430,7 @@ The **Acquia - Errors Overview** dashboard provides a high-level view of events 
 
 The **Acquia - FPM Overview** dashboard provides insights for analysis of the performance of FPM ([FastCGI Process Manager](https://php-fpm.org/)) in the Acqauia environment, including memory and CPU usage, status codes and response time outliers.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -447,7 +447,7 @@ The **Acquia - FPM Overview** dashboard provides insights for analysis of the pe
 
 The **Acquia - Drupal Requests Overview **dashboard provides insights for analysis of the performance of the Drupal platform. The panels show response time anomalies, response codes and breakdowns of slow urls and queries.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 

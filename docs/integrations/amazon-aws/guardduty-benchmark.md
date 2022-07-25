@@ -261,7 +261,7 @@ Amazon GuardDuty is an intelligence threat detection service that provides accur
 
 The **Amazon GuardDuty Global Baseline** dashboard displays a collection of stats averaged over Amazon GuardDuty findings for all Sumo Logic customers over the prior 7 days.
 
-**Use this dashboard to:
+Use this dashboard to:
 * Determine if you are being attacked from a particular region or actor around the globe.
 * Assess rare threats found by Amazon GuardDuty in your AWS environment.
 * Analyze threat shares targeted resource and severity.
@@ -273,7 +273,7 @@ The **Amazon GuardDuty Global Baseline** dashboard displays a collection of stat
 
 The **My Company's Amazon GuardDuty Threats** dashboard shows a company's stats for Amazon GuardDuty findings over the specified time interval. This provides detailed and summary for your company's threat mix, threat maps, threat shares, and threat resources.
 
-**Use this dashboard to:
+Use this dashboard to:
 * Determine the number of threats in your AWS account.
 * Determine the geographic origins of threats to your AWS account.
 * Analyze threats by resource type, severity, account ID, and AWS Security Group.
@@ -314,6 +314,6 @@ The **My Company's Threats: Timeline** dashboard provides a high-level view of t
 
 <img src={useBaseUrl('img/integrations/amazon-aws/GDB_My_Company_Threats_Timeline.png')} alt="Amazon GuardDuty Benchmark" />
 
-**Use this dashboard to:
+Use this dashboard to:
 * Review threat activity in your account over a specified time.  
 * Analyze threats to your account by region.  

@@ -807,7 +807,7 @@ Panels will start to fill automatically. It's important to note that each panel 
 
 The **Cassandra - Overview** dashboard provides an at-a-glance view of Cassandra backend and frontend HTTP error codes percentage, visitor location, URLs, and clients causing errors.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -827,7 +827,7 @@ The **Cassandra - Overview** dashboard provides an at-a-glance view of Cassandra
 
 The **Cassandra - Cache Stats** dashboard provides insight into the database cache status, schedule, and items.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -845,7 +845,7 @@ The **Cassandra - Cache Stats** dashboard provides insight into the database cac
 
 The **Cassandra - Errors and Warnings** dashboard provides details of the database errors and warnings.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -863,7 +863,7 @@ The **Cassandra - Errors and Warnings** dashboard provides details of the databa
 
 The **Cassandra - Gossip** dashboard provides details about communication between various cassandra nodes.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -881,7 +881,7 @@ The **Cassandra - Gossip** dashboard provides details about communication betwee
 
 The **Cassandra - Memtable** dashboard provides insights into memtable statistics.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -898,7 +898,7 @@ The **Cassandra - Memtable** dashboard provides insights into memtable statistic
 
 The **Cassandra - Resource Usage** dashboard provides details of resource utilization across Cassandra clusters.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -915,7 +915,7 @@ The **Cassandra - Resource Usage** dashboard provides details of resource utiliz
 
 The **Cassandra - Compactions** dashboard provides details of compactions.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -932,7 +932,7 @@ The **Cassandra - Compactions** dashboard provides details of compactions.
 
 The **Cassandra - Garbage Collection** dashboard shows key Garbage Collector statistics like the duration of the last GC run, objects collected, threads used, and memory cleared in the last GC run.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -950,7 +950,7 @@ The **Cassandra - Garbage Collection** dashboard shows key Garbage Collector sta
 
 The **Cassandra - Read Path** dashboard shows read operation statistics.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -968,7 +968,7 @@ The **Cassandra - Read Path** dashboard shows read operation statistics.
 
 The **Cassandra - Resource Usage Logs** dashboard provides details of resource utilization across Cassandra clusters.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -985,7 +985,7 @@ The **Cassandra - Resource Usage Logs** dashboard provides details of resource u
 
 The **Cassandra - Thread Pool** dashboard shows thread pool statistics.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -1002,7 +1002,7 @@ The **Cassandra - Thread Pool** dashboard shows thread pool statistics.
 
 The **Cassandra - Write Path** dashboard shows write operation statistics.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 

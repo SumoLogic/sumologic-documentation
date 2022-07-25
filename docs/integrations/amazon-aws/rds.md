@@ -144,7 +144,7 @@ Use this dashboard to:
 
 **Amazon RDS Non-Describe CloudTrail Audit Events **dashboard provides statistical and detailed insights into Non-Describe DB Instance, SnapShot, Cluster, and Security group events.
 
-**Use this dashboard to:
+Use this dashboard to:
 * Monitor Amazon RDS-related non-describe audit logs using CloudTrail Events.
 * Monitor and track create, delete, update, start, stop, and reboot types of events on RDS instances.
 * Monitor and track create, delete, modify, start, stop, and reboot types of events on RDS clusters.
@@ -158,7 +158,7 @@ Use this dashboard to:
 
 **Amazon RDS Overview By Database Instance** dashboard provides insights into resource statistics and utilization per database instance throughout your infrastructure. Panels display data for CPU, memory, latency, storage, and network throughput per database instance.
 
-**Use this dashboard to:
+Use this dashboard to:
 * Quickly identify performance or resource utlization issues in your RDS clusters
 * Monitor resource utilization with trend panels for CPU usage, available memory, network receive and transmit throughput, read and write IOPS, available free storage and database connections across your Amazon RDS clusters and database instances.
 
@@ -169,7 +169,7 @@ Use this dashboard to:
 
 The** Amazon RDS Performance Insights** dashboard provides intuitive performance data from throughout your RDS infrastructure across CPU load, non-CPU load, active sessions, and performance trends.
 
-**Use this dashboard to:
+Use this dashboard to:
 * Monitor Amazon RDS DB instance loads to analyze and troubleshoot database performance
 * Identify when the CPU is overloaded, so you can throttle connections to the instance, tune SQL queries with a high CPU load, or consider a larger instance class to remedy the situation.
 * Identify high and consistent instances of any wait state (Non-CPU Load)  that indicate potential bottlenecks or resource contention issues that need to be resolved, which can be an issue even when the load doesn't exceed maximum CPU.
@@ -180,7 +180,7 @@ The** Amazon RDS Performance Insights** dashboard provides intuitive performance
 
 The **Amazon RDS Aurora Generic **dashboard provides generic AWS Aurora performance statistics across your infrastructure for uptime, replica lag, latency, network throughput, volume, and storage.
 
-**Use this dashboard to:
+Use this dashboard to:
 * Monitor common health and performance metrics of your RDS Amazon Aurora MySQL/PostgreSQL cluster.
 * Monitor the lag when replicating updates from a primary instance
 * Monitor the uptime of a database instance
@@ -194,7 +194,7 @@ The **Amazon RDS Aurora Generic **dashboard provides generic AWS Aurora performa
 
 **Amazon RDS Aurora MySQL** dashboard provides intuitive Aurora MySQL performance data from across your infrastructure for latency, throughput, active and blocked transactions, queries, login failures, and replica lag.
 
-**Use this dashboard to:
+Use this dashboard to:
 * Monitor the health and performance of your RDS Amazon Aurora MySQL instances and cluster.
 * Monitor the throughput and latency associated with various types of queries executed on an Aurora MySQL instance.
 * Monitor active transactions blocked transactions, and the rate of queries being executed.
@@ -208,7 +208,7 @@ The **Amazon RDS Aurora Generic **dashboard provides generic AWS Aurora performa
 
 **Amazon RDS Aurora MySQL Global Database and BackTrack Activity** dashboard provides insights into Aurora MySQL performance data from across your infrastructure for Global Database activity and Backtrack activity.
 
-**Use this dashboard to:
+Use this dashboard to:
 
 * Monitor backtrack and Amazon Aurora Global database activity.
 * Monitor BackTrack change records and the backtrack window of your RDS Amazon Aurora MySQL cluster.

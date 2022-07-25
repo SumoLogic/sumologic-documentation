@@ -878,7 +878,7 @@ Template variables provide dynamic dashboards that can rescope data on the fly. 
 
 The **Squid Proxy - Overview** dashboard provides an at-a-glance view of the activity and health of the SquidProxy clusters and servers by monitoring uptime, number of current clients, latency, bandwidth, destination locations, error and denied requests, URLs accessed.
 
-**Use this dashboard to:**
+Use this dashboard to:
 * Gain insights into information about the destination location your intranet frequently visits by region.
 * Gain insights into your Squid Proxy health using Latency, HTTP Errors, Status codes of Squid Proxy Servers.
 * Get insights into information about  Uptime and bandwidth of Squid Proxy servers.
@@ -891,7 +891,7 @@ The **Squid Proxy - Overview** dashboard provides an at-a-glance view of the act
 
 The **Squid Proxy -  Protocol** dashboard provides an insight into the protocols of clusters: the number of HTTP requests, HTTP errors, total bytes transferred, the number of HTTP requests per second, the number of HTTP's bytes per second.
 
-**Use this dashboard to:**
+Use this dashboard to:
 * Get detailed information about the total number of requests from clients, the total number of HTTP errors sent to clients, the total number of bytes transferred on servers, total number of bytes sent to clients
 * Get insights into information about HTTP requests, HTTP errors, bandwidth transferred over time.
 
@@ -902,7 +902,7 @@ The **Squid Proxy -  Protocol** dashboard provides an insight into the protocols
 
 The **Squid Proxy -  Performance** dashboard provides an insight into the workload of clusters, the number of page faults IO,  percent of file descriptor used, number of memory used, the time for all HTTP requests, the number of objects in the cache, the CPU time.
 
-**Use this dashboard to:**
+Use this dashboard to:
 * Gain insights into the workload of squid proxy servers such as percent of file descriptors used, memory usage, CPU time consumed.
 * Gain insights into the read and write status of squid proxy servers such as Page Faults IO, HTTP I/O number of reading, the number of objects stored, the average of time response.
 
@@ -913,7 +913,7 @@ The **Squid Proxy -  Performance** dashboard provides an insight into the worklo
 
 The **Squid Proxy - IP Domain DNS Statistics** dashboard provides a high-level view of the number of IPs,  the number of FQDN, rate requests cache according to FQDN, rate requests cache according to IPs, the number of DNS queries, time for DNS query.
 
-**Use this dashboard to:**
+Use this dashboard to:
 * Gain insights into IPs accessed statistics: IP Cache Entries, Number and rate of IP Cache requests, Number and rate of IP Cache hits.
 * Gain insights into Domain Name (FQDN) statistics: FQDN Cache Entries, Number of FQDN Cache misses, Number and rate of FQDN Cache requests, Number of FQDN Cache Negative Hits.
 * Gain insights into DNS Lookup statistics: Number of External DNS Server Requests, Average Time For  DNS Service, Number of External DNS Server Replies.
@@ -924,7 +924,7 @@ The **Squid Proxy - IP Domain DNS Statistics** dashboard provides a high-level v
 
 The **Squid Proxy - Activity Trend** dashboard provides trends around denied request trend, action trend, time spent to serve, success and non-success response, remote hosts.
 
-**Use this dashboard to:**
+Use this dashboard to:
 * Gain insights into the average amount of time it takes to serve a request and the kind of method the request was.
 * Gain insights into  the average time spent to serve requests, the megabytes served, the  trends in requests by actions, the count of successful 2xx and non 2xx response actions.
 * Gain insights into  the trends in the number of denied requests, the remote hosts traffic by requests, the remote hosts traffic by data volume.
@@ -936,7 +936,7 @@ The **Squid Proxy - Activity Trend** dashboard provides trends around denied req
 
 The **Squid Proxy -  HTTP Response Analysis** dashboard provides insights into HTTP response, HTTP code, the number of client errors, server errors, redirections outlier, URLs experiencing server errors.
 
-**Use this dashboard to:**
+Use this dashboard to:
 * Gain insights into the count of HTTP responses, such as redirections, successes, client errors, or server errors, on an area chart.
 * Gain insights into client error URLs with information fields: URL, status code, and event count.
 * Get detailed information on any outliers in redirection, client error, server error  events on a line chart with thresholds
@@ -948,7 +948,7 @@ The **Squid Proxy -  HTTP Response Analysis** dashboard provides insights into H
 
 The **Squid Proxy - Quality of Service** dashboard provides insights into latency, the response time of requests according to HTTP action, and the response time according to location.
 
-**Use this dashboard to:**
+Use this dashboard to:
 * To identify locations with slow average request response times.
 * Gain insights into the response times according to HTTP actions
 

@@ -5,6 +5,8 @@ sidebar_label: Azure Integration using ARM FAQs
 description: This guide provides answers to frequently asked questions (FAQs) about integrating Azure into an enterprise environment using ARM.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 This guide provides answers to frequently asked questions (FAQs) about integrating Azure into an enterprise environment using ARM (Azure Resource Manager) architecture. Topics are grouped in the following categories:
 
 General

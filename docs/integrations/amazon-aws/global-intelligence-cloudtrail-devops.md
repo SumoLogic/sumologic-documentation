@@ -106,7 +106,7 @@ You can use filters to drill down and examine the data on a granular level.
 
 The **GI CloudTrail DevOps - 01. AWS Service Availability** dashboard tabulates the number of AWS incident-related errors for each minute and compares it to errors your company is facing. If your recent error rate is greater than the AWS baseline, it is a strong signal that an AWS outage or incident is impacting your apps. You can select the awsRegion and recipientAccountId to view results by region and an AWS account. Unlike the [AWS Service Health Dashboard](https://status.aws.amazon.com/), this dashboard computes availability by API for each of the nine AWS services.
 
-**Use this dashboard to:
+Use this dashboard to:
 * Monitor AWS-related incidents in your organization.
 * Compare AWS incident and outage rates by region and account to other customers.
 
@@ -138,7 +138,7 @@ On the other hand, Company B is experiencing fewer throttling errors than predic
 
 Consult the AWS documentation for the appropriate service to understand best practices to minimize throttling errors including batching requests and adding exponential backoff retries. See [https://docs.aws.amazon.com/AWSEC2/latest/APIReference/query-api-troubleshooting.html](https://docs.aws.amazon.com/AWSEC2/latest/APIReference/query-api-troubleshooting.html) for suggestions for EC2 throttling errors.
 
-**Use this dashboard to:
+Use this dashboard to:
 * Monitor throttling errors in your AWS environment.
 * Compare your throttling errors by AWS service, API name, region and account to other customers.
 * Troubleshoot application errors.
@@ -184,7 +184,7 @@ The **GI CloudTrail DevOps - 04. My Company’s Insufficient Capacity Errors** d
 * RDS
 * Redshift
 
-**Use this dashboard to:
+Use this dashboard to:
 * Monitor insufficient capacity errors in your AWS environment by AWS service, API name, AWS account, and region.
 * Compare errors by API name, region, and account to other customers.
 * Troubleshoot application errors arising from insufficient capacity errors.
@@ -328,7 +328,7 @@ The following numerical configurations are benchmarked:
 * **Number of Nodes.** The number of compute nodes in the cluster. This parameter is required when the ClusterType parameter is specified as multi-node.
 * **Target Number Of Nodes.** The number of nodes that the cluster will have after the resize operation is complete.
 
-**Use this dashboard to:
+Use this dashboard to:
 * Understand common configurations for AWS services by categorical, numerical, and boolean values.
 * ​​​​​​​Optimize your configuration based on settings common across customers.
 
@@ -341,5 +341,5 @@ The **GI CloudTrail DevOps - 06. Action Plan** dashboard identifies users and se
 
 <img src={useBaseUrl('img/integrations/amazon-aws/GI-CloudTrail-DevOps-Action-Plan.png')} alt="GI CloudTrail DevOps dashboard" />
 
-**Use this dashboard to:
+Use this dashboard to:
 * Identify and remediate users or services that are experiencing errors and potentially causing incidents for your applications.

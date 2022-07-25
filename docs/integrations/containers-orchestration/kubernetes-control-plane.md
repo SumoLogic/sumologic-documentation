@@ -264,7 +264,7 @@ You can use template variables to drill down and examine the data on a granular 
 
 The **Kubernetes - API Server** dashboard displays information on the API server logs, which is the control plane component that exposes the Kubernetes API. Panels show details on the API server errors, warnings, and activities.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -285,7 +285,7 @@ The **Kubernetes - API Server** dashboard displays information on the API server
 
 The **Kubernetes - Controller Manager **dashboard displays information on the controller manager, providing visibility into the core control loops for Kubernetes.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -305,7 +305,7 @@ The **Kubernetes - Controller Manager **dashboard displays information on the co
 
 The **Kubernetes - Kube System** dashboard provides insights into the health of the kube system, including details on resource utilization.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -320,7 +320,7 @@ The **Kubernetes - Kube System** dashboard provides insights into the health of 
 
 The **Kubernetes - Scheduler** dashboard provides insights into the health of the scheduler.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -334,7 +334,7 @@ This dashboard relies on Falco. If the Dashboard is not populated, enable Falco 
 
 The **Kubernetes - Security Audit** Events dashboard provides insights into Kubernetes audit events collected by Falco.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 * Monitor Kubernetes audit events.
 * Identify and investigate unexpected or anomalous activity.
@@ -343,7 +343,7 @@ The **Kubernetes - Security Audit** Events dashboard provides insights into Kube
 
 The Kubernetes - etcd3 dashboard provides information on the health of etcd, including resource usage, cache, proposals and leader changes.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 * Get a high-level view of the health and performance of the etcd backing store for the cluster.
 * Review performance data for cache insertions and deletions, to determine if there any potential problems and proactively troubleshoot root cause solutions.

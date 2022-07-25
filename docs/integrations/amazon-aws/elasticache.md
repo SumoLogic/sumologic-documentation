@@ -109,7 +109,7 @@ Panels will start to fill automatically. It's important to note that each panel 
 
 **The Amazon ElastiCache - Host Performance Overview** dashboard provides detailed insights into CPU, memory and network performance metrics of hosts running your ElastiCache clusters.  
 
-**Use this dashboard to:**
+Use this dashboard to:
 * Get an at-a-glance view  of CPU, memory and swap resource utilization of hosts running your ElastiCache clusters.
 * CPU, memory or swap space on host and swap usage.
 * Monitor network traffic utilization and compare today’s trends of incoming and outgoing bytes and packets vs. yesterday
@@ -120,7 +120,7 @@ Panels will start to fill automatically. It's important to note that each panel 
 
 **The Amazon ElastiCache - Audit Event Overview** dashboard provides detailed insights into all events associated with ElastiCache clusters and specifically helps identify changes, errors, users and replication groups.
 
-**Use this dashboard to:
+Use this dashboard to:
 * Monitor all changes being made to ElastiCache clusters
 * Monitor the location of incoming user activity, top users, and top replication groupsto ensure they match with expectations
 * Quickly identify top error codes to diagnose any outages
@@ -132,7 +132,7 @@ Panels will start to fill automatically. It's important to note that each panel 
 
 **The Amazon ElastiCache - Redis Performance Overview** dashboard provides an overview into performance, evictions and authentication and authorization failures of ElastiCache Redis clusters.
 
-**Use this dashboard to:
+Use this dashboard to:
 * Quickly determine if your Redis database is performing as expected
 
 <img src={useBaseUrl('img/integrations/amazon-aws/Amazon-ElastiCache-Redis-Performance.png')} alt="Amazon ElastiCache" />
@@ -141,7 +141,7 @@ Panels will start to fill automatically. It's important to note that each panel 
 
 **The Amazon ElastiCache - Audit Event Details** dashboard provides detailed insights into key operations made on your ElastiCache clusters.
 
-**Use this dashboard to:**
+Use this dashboard to:
 * Quickly determine changes made to your ElastiCache clusters while troubleshooting production outages
 * Determine if any nodes hosting your Elasticache clusters were rebooted
 
@@ -151,7 +151,7 @@ Panels will start to fill automatically. It's important to note that each panel 
 
 **The Amazon ElastiCache - Host Performance Details **dashboard shows an overview of the resource utilization for a given ElastiCache cluster across its nodes and also showcases trends around CPU, memory, swap usage and network traffic.  
 
-**Use this dashboard to:
+Use this dashboard to:
 * Get an at-a-glance view of the performance of all nodes within a given ElastiCache cluster
 * Determine if CPU, memory, swap memory or network resources need to be scaled up or down for a given cluster or service based on utilization trends
 
@@ -161,7 +161,7 @@ Panels will start to fill automatically. It's important to note that each panel 
 
 **The Amazon ElastiCache - Redis Performance Details **dashboard provides detailed insights into cache hits, keys, replication, connections and failures of Redis ElastiCache clusters.
 
-**Use this dashboard to:
+Use this dashboard to:
 * Monitor trends around cache hits and misses to determine if Redis clusters need to be tuned
 * Review trends around defragmentation, replication lag and bytes replicated to determine optimizations
 * Quickly determine any authentication and authorization failures and grant or revoke privileges accordingly
@@ -172,7 +172,7 @@ Panels will start to fill automatically. It's important to note that each panel 
 
 **The Amazon ElastiCache - Redis Command Latency **dashboard provides detailed insights into latency of various Redis commands.
 
-**Use this dashboard to:
+Use this dashboard to:
 * To optimize performance of your Redis clusters by monitoring latency observed across get/set operations. Latency can be high due to high CPU usage, swapping or removing cached items. Performance optimizations can therefore be made either via resource allocation or by optimizing on caching.
 
 <img src={useBaseUrl('img/integrations/amazon-aws/Amazon-ElastiCache-Redis-Command.png')} alt="Amazon ElastiCache" />
@@ -181,7 +181,7 @@ Panels will start to fill automatically. It's important to note that each panel 
 
 **The Amazon ElastiCache - Redis Command Stats **dashboard provides detailed insights into the number of commands being performed.
 
-**Use this dashboard to:
+Use this dashboard to:
 * Monitor various Get and Set commands received by your ElastiCache clusters and nodes
 * Correlate with the Redis Command Latency dashboard to identify most/least frequently used and least performant command types
 
