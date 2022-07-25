@@ -1,6 +1,6 @@
 ---
 id: inspector-classic
-title: Amazon Inspector App - Classic
+title: Sumo Logic App for Amazon Inspector - Classic
 sidebar_label: Amazon Inspector App - Classic
 description: Amazon Inspector App - Classic
 ---

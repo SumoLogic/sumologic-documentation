@@ -1,6 +1,6 @@
 ---
 id: inspector
-title: Amazon Inspector
+title: Sumo Logic App for Amazon Inspector
 sidebar_label: Amazon Inspector
 description: Amazon Inspector
 ---
