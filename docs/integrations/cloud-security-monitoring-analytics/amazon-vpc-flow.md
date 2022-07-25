@@ -1,7 +1,10 @@
 ---
 id: amazon-vpc-flow
-title: Amazon VPC Flow
+title: Sumo Logic App for Amazon VPC Flow Cloud Security Monitoring and Analytics
+sidebar_label: Amazon VPC Flow
 ---
+
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Amazon VPC (Virtual Private Cloud) Flow - Cloud Security Monitoring and Analytics app thoroughly assess Amazon VPC Flow logs to gain a better understanding of your environment and associated traffic patterns. Dig deep into the data, broken down by access levels, group creation, etc.
 
@@ -167,30 +170,35 @@ Once an app is installed, it will appear in your **Personal** folder, or other f
 Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
 
 
-### Dashboards
+## Viewing Dashboards
 
 Analytics and Monitoring dashboards to provide operational security for AWS VPC flow data sources.
 
 
-#### VPC Flow Logs - Security Monitoring - Overview
+### VPC Flow Logs - Security Monitoring - Overview
 
 **Description: **See the details of security group activities and all AWS activities divided by read only and non read only.
 
 **Use Case:** Provides analysis of group activity events including revoking and authorizing access, creating and deleting groups, and other events.
 
+<img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/Amazon-VPC-Flow-Security-Monitoring-Overview.png')} alt="Amazon VPC Flow Logs dashboards" />
 
-#### VPC Flow Logs - Security Analytics - Accepts & Rejects
+
+### VPC Flow Logs - Security Analytics - Accepts & Rejects
+
+**Description:** See the details of security group activities and all AWS activities divided by read only and non read only.
+
+**Use Case:** Provides analysis of group activity events including revoking and authorizing access, creating and deleting groups, and other events.
+
+<img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/Amazon-VPC-Flow-Security-Analytics-Accepts-Rejects.png')} alt="Amazon VPC Flow Logs dashboards" />
+
+
+### VPC Flow Logs - Security Analytics - Traffic Direction Monitoring
 
 **Description: **See the details of security group activities and all AWS activities divided by read only and non read only.
 
 **Use Case:** Provides analysis of group activity events including revoking and authorizing access, creating and deleting groups, and other events.
 
-
-
-#### VPC Flow Logs - Security Analytics - Traffic Direction Monitoring
-
-**Description: **See the details of security group activities and all AWS activities divided by read only and non read only.
-
 **Use Case:** Provides analysis of group activity events including revoking and authorizing access, creating and deleting groups, and other events.
 
-**Use Case:** Provides analysis of group activity events including revoking and authorizing access, creating and deleting groups, and other events.
+<img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/Amazon-VPC-Flow-Security-Analytics-Traffic-Direction-Monitoring.png')} alt="Amazon VPC Flow Logs dashboards" />

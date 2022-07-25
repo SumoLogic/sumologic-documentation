@@ -1,7 +1,10 @@
 ---
 id: palo-alto-firewall-9
-title: Palo Alto Firewall 9
+title: Palo Alto Firewall 9 Cloud Security Monitoring and Analytics
+sidebar_label: Palo Alto Firewall 9
 ---
+
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Palo Alto Firewall app helps you to analyze traffic and gain a better understanding of your Palo Alto Networks environments. Dig deep into the data, broken down by threat detection indicators, malware type, and so in order to break out data for higher granularity.
 
@@ -157,10 +160,10 @@ Once an app is installed, it will appear in your **Personal** folder, or other f
 Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
 
 
-### Dashboards
+## Dashboards
 
 
-#### **Palo Alto 9 - Security Analytics - Communication via Critical Ports**
+### Palo Alto 9 - Security Analytics - Communication via Critical Ports**
 
 **Dashboard description:** Provides analytics including trending for outbound communications via well known ports. Also provides additional analysis of application communications attempts across the firewall.
 
@@ -168,8 +171,10 @@ Panels will start to fill automatically. It's important to note that each panel 
 
 Additionally at the top of the dashboard are two table containing analytics on known and unknown applications connections using the ports listed above.
 
+<img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/Linux-Security-Analytics-User-Service-and-System-Monitoring.png')} alt="Linux Security dashboards" />
 
-#### **Palo Alto 9 - Security Analytics - Outbound Traffic and Potential Exfiltration Activity**
+
+### Palo Alto 9 - Security Analytics - Outbound Traffic and Potential Exfiltration Activity**
 
 **Dashboard description:** View outbound traffic analysis including DNS activity for potential indicators of exfiltration activity.
 
@@ -177,14 +182,14 @@ Additionally at the top of the dashboard are two table containing analytics on k
 
 
 
-#### **Palo Alto 9 - Security Analytics - Potentially Malicious Activity**
+### Palo Alto 9 - Security Analytics - Potentially Malicious Activity**
 
 **Dashboard description:** See information about traffic to and from IP addresses called out as potentially malicious by threat intelligence, countries that are on the OFAC (embargoed) list, and potential port scans.
 
 **Use case:** You can use this dashboard to analyze attempted and successful connections to IP addresses on threat intelligence lists both inboudn and outbound. Additionally you can view connections to geolocation IP addresses associated with countries on the OFAC list (USA embargo list). Finally the bottom panel provides analysis on vertical port scans (one target, scanned on multiple network ports) and horizontal port scans (same port scanned across multiple destinations.)
 
 
-#### **Palo Alto 9 - Security Monitoring - THREAT Log by Category**
+### Palo Alto 9 - Security Monitoring - THREAT Log by Category**
 
 **Dashboard description:** See analytics about the THREAT type logs provided by the firewall. These are the indications of security events detected by the firewall’s defensive measures such as anti-malware, network intrusion detection, and the like.   
 
@@ -192,14 +197,14 @@ Additionally at the top of the dashboard are two table containing analytics on k
 
 
 
-#### **Palo Alto 9 - Security Monitoring - THREAT Logs by Severity**
+### Palo Alto 9 - Security Monitoring - THREAT Logs by Severity**
 
 **Dashboard description:** See analytics about the THREAT type logs provided by the firewall. These are the indications of security events detected by the firewall’s defensive measures such as anti-malware, network intrusion detection, and the like.   
 
 **Use case:** You can use this dashboard to review THREAT events broken down by severity, allowing you to focus on the critical events first but also providing events of lesser severity for additional triage and investigation if necessary.
 
 
-#### **Palo Alto 9 - Security Monitoring - TRAFFIC Log Overview**
+### Palo Alto 9 - Security Monitoring - TRAFFIC Log Overview**
 
 **Dashboard description:** See monitoring of allowed and denied traffic over time by volume and host.
 
