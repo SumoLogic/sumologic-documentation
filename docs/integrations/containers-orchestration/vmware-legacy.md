@@ -11,8 +11,6 @@ A newer app, [VMware ULM](https://help.sumologic.com/07Sumo-Logic-Apps/10Contain
 
 The Sumo Logic App for VMware allows you to:
 
-
-
 * Collect and centralize logs from the entire VMware infrastructure, including ESX/ESXi, vCenter Server, and individual virtual machines as well as operating system and applications running ESXi, vCenter Server, and individual virtual machines as well as operating system and applications running within the virtual machine.
 * Troubleshoot VMware farms and find issues related to over-provisioning VMs, "noisy neighbors", changes to configuration, and VM movement.
 * Monitor the entire VMware infrastructure through real-time Dashboards that provide insight into key metrics such as VM CPU, memory and disk utilization. Determine capacity constrained and under-provisioned physical hosts and idle VMs to improve deployment strategy and optimize cost.

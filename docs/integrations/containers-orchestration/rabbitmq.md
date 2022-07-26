@@ -588,7 +588,7 @@ The RabbitMQ - Overview dashboard gives you an at-a-glance view of your RabbitMQ
 * Determine the number of nodes, connections, exchanges, consume, queues, unack messages, total messages, across each cluster and ensure they match with expectations
 * Analysis of near errors.
 
-<img src={useBaseUrl('img/integrations/containers-orchestration/Overview.png')} alt="RabbitMQ dashboards" />
+<img src={useBaseUrl('img/integrations/containers-orchestration/RabbitMQ-Overview.png')} alt="RabbitMQ dashboards" />
 
 
 ### Node
@@ -602,7 +602,7 @@ The RabbitMQ - Node dashboard helps you Get an at-a-glance view of the state of 
 * Determine the amount of  garbage collection per second.
 * Monitor current memory usage
 
-<img src={useBaseUrl('img/integrations/containers-orchestration/Overview.png')} alt="RabbitMQ dashboards" />
+<img src={useBaseUrl('img/integrations/containers-orchestration/RabbitMQ-Node.png')} alt="RabbitMQ dashboards" />
 
 
 ### Queue
@@ -617,7 +617,7 @@ The RabbitMQ - Queue dashboard provides an at-a-glance view of the state of your
 * Monitor memory usage of queues over time.
 * Determine the number of error messages on queues.
 
-<img src={useBaseUrl('img/integrations/containers-orchestration/Overview.png')} alt="RabbitMQ dashboards" />
+<img src={useBaseUrl('img/integrations/containers-orchestration/RabbitMQ-Queue.png')} alt="RabbitMQ dashboards" />
 
 
 ### Exchanges
@@ -630,7 +630,7 @@ The RabbitMQ - Exchanges dashboard provides an at-a-glance view of the state of 
 * Gain insights into message publish Rate in exchanges of your RabbitMQ cluster.
 * Gain insights into message publish Rate out exchanges of your RabbitMQ cluster.
 
-<img src={useBaseUrl('img/integrations/containers-orchestration/Overview.png')} alt="RabbitMQ dashboards" />
+<img src={useBaseUrl('img/integrations/containers-orchestration/RabbitMQ-Exchange.png')} alt="RabbitMQ dashboards" />
 
 
 
@@ -643,7 +643,7 @@ This dashboard helps you quickly analyze your RabbitMQ error logs across all clu
 * Monitor Broker added/started and shutdown events in your cluster.
 * Quickly determine patterns across all logs in a given RabbitMQ cluster.
 
-<img src={useBaseUrl('img/integrations/containers-orchestration/Overview.png')} alt="RabbitMQ dashboards" />
+<img src={useBaseUrl('img/integrations/containers-orchestration/RabbitMQ-Logs.png')} alt="RabbitMQ dashboards" />
 
 
 
