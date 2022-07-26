@@ -4,6 +4,11 @@ title: Sumo Logic App for Box
 sidebar_label: Box
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+
+<img src={useBaseUrl('img/integrations/saas-cloud-apps/box.png')} alt="DB icon" width="100"/>
+
 The Sumo Logic App for Box provides insight into user behavior patterns, monitors resources, and even tracks administrative activities. The app consists of three predefined Dashboards, providing visibility into your environment for real time analysis.
 
 Log Types
@@ -18,7 +23,7 @@ This page provides instructions for setting up event collection from Box for ana
 * [Requirements and process overview](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/Box/01-Collect-Events-for-the-Box-App#Requirements_and_process_overview)
 * [Configuring Box event collection](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/Box/01-Collect-Events-for-the-Box-App#Configuring_Box_event_collection)
 * [Sample log messages](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/Box/01-Collect-Events-for-the-Box-App#Sample_log_messages)
-* [Query sample](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/Box/01-Collect-Events-for-the-Box-App#Query_sample)
+* [Sample Query](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/Box/01-Collect-Events-for-the-Box-App#Query_sample)
 
 
 #### Log types
@@ -334,7 +339,7 @@ To enable Script Sources you must set the Collector parameter `enableScriptSourc
 
 
 
-### Query sample
+### Sample Query
 
 **Top 10 Failed Logins**
 

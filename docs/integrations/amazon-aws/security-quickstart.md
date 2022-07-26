@@ -7,6 +7,9 @@ description: Amazon Security Quick Start
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
+<img src={useBaseUrl('img/integrations/amazon-aws/security-qs.png')} alt="DB icon" width="50"/>
+
+
 The Sumo Logic Amazon Security Quick Start solution helps you automate the collection of security events from AWS security services and the installation and configuration of Sumo Logic apps designed for AWS Security.
 
 
@@ -32,7 +35,7 @@ This Quick Start was created in collaboration with Amazon Web Services (AWS). Qu
 [Sumo Logic Security Quick Start for AWS Organizations](https://aws.amazon.com/quickstart/architecture/sumo-logic-for-aws-organizations/)
 
 
-## Sumo Logic Security Integrations for Single AWS Account
+## Sumo Logic Security Integrations for a Single AWS Account
 
 The Sumo Logic AWS Security Quick Start solution helps you automate the collection of security events from AWS security services and the installation and configuration of 16 Sumo Logic apps designed for AWS Security including:
 

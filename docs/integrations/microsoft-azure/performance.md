@@ -6,6 +6,10 @@ description: Windows Performance
 ---
 
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src={useBaseUrl('img/integrations/microsoft-azure/windows.png')} alt="thumbnail icon" width="75"/>
+
 The Windows Performance App provides insight into your system's operation and events so that you can better manage and maintain your Windows systems. The App uses predefined Dashboards and searches that provide visibility into your environment for real-time analysis of system and network performance and overall usage.
 
 
@@ -198,6 +202,8 @@ The Windows Performance App allows you to analyze Windows Performance logs and g
 
 ### Windows Performance Overview
 
+<img src={useBaseUrl('img/integrations/microsoft-azure/Overview.png')} alt="Windows_Performance dashboards" />
+
 **Top 10 Processes by Average Processor Time (%) per Host.** Displays the top 10 processes per host by average processor time in a stacked column chart for the last 15 minutes. The legend lists the processes.
 
 **Average CPU Usage (%) by Host.** Shows the average CPU usage percentage by host in a line chart on a timeline for the last 15 minutes.
@@ -211,6 +217,8 @@ The Windows Performance App allows you to analyze Windows Performance logs and g
 
 ### CPU Performance
 
+<img src={useBaseUrl('img/integrations/microsoft-azure/Overview.png')} alt="Windows_Performance dashboards" />
+
 **Average CPU Usage (%) by Host.** Displays the average CPU usage of the systems in your environment as a line graph on a timeline using timeslices of one minute for the last 15 minutes.
 
 **Average Privileged and User CPU Time (%) per Host.** Shows the average privileged and user CPU time for each host as a stacked column chart for the last 15 minutes.
@@ -223,6 +231,8 @@ The Windows Performance App allows you to analyze Windows Performance logs and g
 
 
 ### Disk Performance
+
+<img src={useBaseUrl('img/integrations/microsoft-azure/Overview.png')} alt="Windows_Performance dashboards" />
 
 **Average Disk Time Percentage by Host.** Displays the average disk time percentage for each host as a stacked column chart for the last 15 minutes. The legend lists the disk time status.
 
@@ -239,6 +249,7 @@ The Windows Performance App allows you to analyze Windows Performance logs and g
 
 ### Memory Performance
 
+<img src={useBaseUrl('img/integrations/microsoft-azure/Overview.png')} alt="Windows_Performance dashboards" />
 
 **Available Memory (MB) by Host.** Displays the available memory in MBs for each host as a line chart on a timeline using timeslices for one minute for the last 15 minutes.
 
@@ -252,6 +263,8 @@ The Windows Performance App allows you to analyze Windows Performance logs and g
 
 
 ### Network Performance
+
+<img src={useBaseUrl('img/integrations/microsoft-azure/Overview.png')} alt="Windows_Performance dashboards" />
 
 **Average Bytes Received per Second by Host.** Displays the average number of bytes received per second for each host as an area chart on a timeline using timeslices of one minute for the last 15 minutes.
 

@@ -5,11 +5,15 @@ sidebar_label: Azure Web Apps
 description: Azure Web Apps
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src={useBaseUrl('img/integrations/microsoft-azure/webapps.png')} alt="thumbnail icon" width="50"/>
+
 The Azure Web Apps App allows you to collect Azure web server and application diagnostics logs and monitor the health of your Azure Web Apps environment. The App provides preconfigured Dashboards that allow you to monitor server operation and traffic requests and response times.
 
 For more information on Azure Web Apps, see [https://azure.microsoft.com/en-us/se...p-service/web/](https://azure.microsoft.com/en-us/services/app-service/web/).
 
-To install the Sumo Logic App for Azure Web Apps, you must sign up for a Sumo Logic account, if you have not already done so. To sign up, go to [https://www.sumologic.com/pricing/](https://www.sumologic.com/pricing/) and select your account type or click Free Trial to sign up for a Sumo Logic Free account.**   **
+To install the Sumo Logic App for Azure Web Apps, you must sign up for a Sumo Logic account, if you have not already done so. To sign up, go to [https://www.sumologic.com/pricing/](https://www.sumologic.com/pricing/) and select your account type or click Free Trial to sign up for a Sumo Logic Free account.
 
 
 
@@ -205,6 +209,8 @@ Panels will start to fill automatically. It's important to note that each panel 
 
 ### Overview
 
+<img src={useBaseUrl('img/integrations/microsoft-azure/Overview.png')} alt="Azure Web Apps dashboards" />
+
 **Visits by Country.** Performs a geo location operation to display the IP addresses of visitors on a map of the world for the last three hours.
 
 **Response Time and Data Volume. **Displays the average response time and data volume in a line chart on a timeline for the last three hours.
@@ -224,6 +230,8 @@ Panels will start to fill automatically. It's important to note that each panel 
 
 ### Server Operation - Errors and Response Codes
 
+<img src={useBaseUrl('img/integrations/microsoft-azure/Overview.png')} alt="Azure Web Apps dashboards" />
+
 **Server Errors by Site.** Shows details on server errors by site in a column chart for the last three hours.
 
 **Response Codes Over Time. **Displays the number of response codes over time in a line chart on a timeline for the last three hours.
@@ -236,6 +244,8 @@ Panels will start to fill automatically. It's important to note that each panel 
 
 
 ### Server Operation - Requests and Response Time
+
+<img src={useBaseUrl('img/integrations/microsoft-azure/Overview.png')} alt="Azure Web Apps dashboards" />
 
 **Requests by Hostname.** Displays the number of requests by hostname in a line chart on a timeline for the last three hours.
 
@@ -250,6 +260,8 @@ Panels will start to fill automatically. It's important to note that each panel 
 
 ### Traffic Insights - Apps and Requests
 
+<img src={useBaseUrl('img/integrations/microsoft-azure/Overview.png')} alt="Azure Web Apps dashboards" />
+
 **Visits by Country. **Performs a geo lookup operation and displays the IP addresses of worldwide visitors on a map of the world for the last three hours.
 
 **US Visits by State.** Performs a geo lookup operation and displays the IP addresses of US visitors on a map of the United States for the last three hours.
@@ -262,6 +274,8 @@ Panels will start to fill automatically. It's important to note that each panel 
 
 
 ### Traffic Insights - Content and Client Platform
+
+<img src={useBaseUrl('img/integrations/microsoft-azure/Overview.png')} alt="Azure Web Apps dashboards" />
 
 **Media Types Requested Over Time.** Displays media types requested over time by count in a line chart on a timeline in the last three hours.
 

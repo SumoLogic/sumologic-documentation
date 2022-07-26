@@ -5,6 +5,11 @@ sidebar_label: CrowdStrike Falcon Endpoint Protection
 description: The CrowdStrike Falcon Endpoint Protection App provides visibility into the security posture of your endpoints as analyzed by the CrowdStrike Falcon Endpoint Protection platform. The app allows you to analyze indicators of compromise (IOCs) by affected users, tactic, technique, and objective, and identify hosts on your network with the highest malware detections. The dashboards in this app help identify threats and incidents, from which you can drill down to investigate further.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src={useBaseUrl('img/integrations/security-threat-detection/crowdstrike.png')} alt="thumbnail icon" width="75"/>
+
+
 The CrowdStrike Falcon Endpoint Protection App provides visibility into the security posture of your endpoints as analyzed by the CrowdStrike Falcon Endpoint Protection platform. The app allows you to analyze indicators of compromise (IOCs) by affected users, tactic, technique, and objective, and identify hosts on your network with the highest malware detections. The dashboards in this app help identify threats and incidents, from which you can drill down to investigate further.
 
 The [CrowdStrike Falcon Endpoint Protection Platform](https://www.crowdstrike.com/endpoint-security-products/falcon-platform/) is a cloud-native framework that protects endpoints to stop breaches and improve performance with the robust power of the cloud combined with an intelligent, lightweight endpoint agent.
@@ -298,14 +303,14 @@ For more information on Events, please refer to[ Streaming API Event Dictionary]
 
 
 
-### Query examples
+### Sample Querys
 16
 
 This section provides query examples for each event type.
 
 #### Detection Event   
 
-```bash title="Query example"
+```bash title="Sample Query"
 _sourceCategory=*Crowdstrike*  DetectionSummaryEvent
 | json "metadata.eventType", "metadata.customerIDString", "metadata.eventCreationTime" as event_type, customer_id, event_time
 | formatDate(fromMillis(event_time), "MM/dd/yyyy HH:mm:ss:SSS") as event_time
@@ -320,7 +325,7 @@ _sourceCategory=*Crowdstrike*  DetectionSummaryEvent
 
 #### Authentication Event
 
-```bash title="Query example"
+```bash title="Sample Query"
 _sourceCategory=*Crowdstrike*  AuthActivityAuditEvent (userAuthenticate or twoFactorAuthenticate)
 | json "metadata.eventType", "metadata.customerIDString", "metadata.eventCreationTime" as event_type, customer_id, event_time
 | formatDate(fromMillis(event_time), "MM/dd/yyyy HH:mm:ss:SSS") as event_time
@@ -332,7 +337,7 @@ _sourceCategory=*Crowdstrike*  AuthActivityAuditEvent (userAuthenticate or twoFa
 
 #### Detection Status Update
 
-```bash title="Query example"
+```bash title="Sample Query"
 _sourceCategory=*Crowdstrike*  UserActivityAuditEvent
 | json "metadata.eventType", "metadata.customerIDString", "metadata.eventCreationTime" as event_type, customer_id, event_time
 | formatDate(fromMillis(event_time), "MM/dd/yyyy HH:mm:ss:SSS") as event_time
@@ -401,7 +406,7 @@ The app includes a "Parsers/FERs" folder that has pre-built searches to help in 
 
 The **CrowdStrike Falcon - Overview** dashboard provides high-level visibility into the state of endpoints that are managed by the CrowdStrike Falcon platform. Panels provide insights into events, detections, authentications, and detection status updates for overall security posture and analysis of user activities.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 * Understand the overall security posture of your environment as analyzed by CrowdStrike Falcon deployed in your network.
 * Analyze user activities within the Falcon Console.
@@ -418,7 +423,7 @@ The **CrowdStrike Falcon - Overview** dashboard provides high-level visibility i
 
 The **CrowdStrike Falcon - Authentication** dashboard provides visibility into authentication-related user activities and their geographic locations. Panels also display detailed information for authentication comparisons and trends, requested auth secrets, 2-factor authentication, API client events, and failed events.  
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -437,7 +442,7 @@ The **CrowdStrike Falcon - Authentication** dashboard provides visibility into a
 
 The **CrowdStrike Falcon - Detections** dashboard provides visibility into malicious behavior in your environment, where you can analyze group detections, discover blocked detections, and analyze detection trends by type. Panels also display a detailed analysis of detected malware and help quickly identify hosts with the most detected malware.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -459,7 +464,7 @@ The **CrowdStrike Falcon - Detections** dashboard provides visibility into malic
 
 The **CrowdStrike Falcon - Detection Status Update** dashboard provides high-level and detailed insights into the status of severity event detection in your CrowdStrike environment. Panels display event geographic locations, event classification by operation, details on quarantined files, and updates on policies and groups.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 * Find and analyze any updates to malware detections by CrowdStrike Falcon users.
 * Identify quarantined files.
@@ -474,7 +479,7 @@ The **CrowdStrike Falcon - Detection Status Update** dashboard provides high-lev
 
 The **CrowdStrike - Falcon - Incident Summary Events** dashboard provides visibility into Falcon incidents, event trends, and risk.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 * Get an overview of incidents created and their risk.
 * Identify unexpected events related to incidents by examining trends.

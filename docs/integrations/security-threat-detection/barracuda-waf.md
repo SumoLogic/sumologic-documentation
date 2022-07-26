@@ -4,6 +4,11 @@ title: Sumo Logic App for Barracuda Web Application Firewall
 sidebar_label: Barracuda WAF
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src={useBaseUrl('img/integrations/security-threat-detection/barracuda.png')} alt="thumbnail icon" width="75"/>
+
+
 The Barracuda Web Application Firewall protects your web, mobile and API applications from being compromised, prevents data breaches, ensure protection from web attacks, provide control access and authentication.
 
 The Barracuda WAF App analyzes traffic flowing through the Barracuda WAF and provides pre-configured dashboards that allow you to monitor WAF traffic as well to analyze various types of attacks detected both by Barracuda and Sumo Logic’s own [Threat Intelligence database](https://help.sumologic.com/07Sumo-Logic-Apps/22Security_and_Threat_Detection/Threat_Intel_Quick_Analysis/03_Threat-Intel-FAQ#What_is_the_CrowdStrike_Integration_for_Sumo_Logic.3F).
@@ -164,7 +169,7 @@ The following table shows sample log messages for the corresponding log types.
 
 **INSERT TABLE**
 
-#### Query sample
+#### Sample Query
 12
 
 
@@ -261,7 +266,7 @@ The Barracuda WAF App dashboards are organized according to the type of data the
 
 The **Barracuda WAF - Admin Activities Dashboard** provides insights into all administrative activities performed on the WAF.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -281,7 +286,7 @@ The **Barracuda WAF - Admin Activities Dashboard** provides insights into all ad
 
 The **Barracuda WAF - System Activities** **Dashboard** provides insights into the performance of WAF units, cluster activities and recent alerts.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -300,7 +305,7 @@ The **Barracuda WAF - System Activities** **Dashboard** provides insights into t
 
 The **Barracuda WAF - Network Activities Dashboard** provides insights into blocked/allowed network traffic, source and destination locations, network log level severity and ACL rules.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -319,7 +324,7 @@ The **Barracuda WAF - Network Activities Dashboard** provides insights into bloc
 
 The **Barracuda WAF - Security Overview** **Dashboard** provides an at-a-glance view of alerts, WAF rules triggered and attacks detected by both Sumo Logic Threat Intel and Barracuda WAF.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -337,7 +342,7 @@ The **Barracuda WAF - Security Overview** **Dashboard** provides an at-a-glance 
 
 The **Barracuda WAF - Threat Analysis Dashboard** provides detailed insights into attacks and rules triggered on the Barracuda WAF.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -356,7 +361,7 @@ The **Barracuda WAF - Threat Analysis Dashboard** provides detailed insights int
 
 The **Barracuda WAF - Traffic Overview Dashboard** provides an at-a-glance view of client geographic locations, performance, cache hit percentage, and unusual behaviors across the number of incoming requests and performance.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -377,7 +382,7 @@ The **Barracuda WAF - Traffic Overview Dashboard** provides an at-a-glance view 
 
 The **Barracuda WAF - Service Traffic** **Dashboard** provides provides detailed insight into cache hit performance, request traffic and bandwidth.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -396,7 +401,7 @@ The **Barracuda WAF - Service Traffic** **Dashboard** provides provides detailed
 
 The **Barracuda WAF - Server Traffic** **Dashboard** provides a detailed information on server traffic, such as client and server errors, and HTTP request and response information. The dashboard is divided into three parts so you can compare client errors, server errors, and HTTP protocol information.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -414,7 +419,7 @@ The **Barracuda WAF - Server Traffic** **Dashboard** provides a detailed informa
 
 The **Barracuda WAF - Client Traffic** **Dashboard** provides detailed information on clients, such as visits by country, user agent, platform, operating system (OS), devices, and top referrers.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 

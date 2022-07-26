@@ -7,6 +7,9 @@ description: Amazon VPC Flow Logs
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
+<img src={useBaseUrl('img/integrations/amazon-aws/vpcflowlogs.png')} alt="DB icon" width="50"/>
+
+
 Amazon Virtual Private Cloud (VPC) Flow Logs log the IP network traffic of your VPC, allowing you to troubleshoot traffic and security issues. The Amazon VPC Flow Logs App leverages this data to provide real-time visibility and analysis of your environment. It consists of predefined searches and Dashboards.
 
 For more information on Amazon VPC Flow Logs, see http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/flow-logs.html
@@ -20,9 +23,7 @@ Each method has advantages. Using an AWS S3 source is more reliable, while using
 
 ## Collecting Amazon VPC Flow Logs from CloudWatch using CloudFormation
 
-This section has instructions for collecting VPC Flow Logs using a CloudFormation template.  Alternatively, you can [Collect Amazon VPC Flow Logs using AWS S3 Source](https://help.sumologic.com/07Sumo-Logic-Apps/01Amazon_and_AWS/Amazon_VPC_Flow_Logs/02Collect_Amazon_VPC_Flow_Logs_using_AWS_S3_Source).
-
-### Collection process
+This section has instructions for collecting VPC Flow Logs using a CloudFormation template. Alternatively, you can [Collect Amazon VPC Flow Logs using AWS S3 Source](#collecting-amazon-vpc-flow-logs-using-an-aws-s3-source).
 
 The diagram below illustrates the collection process for Amazon VPC Flow Logs. VPC is enabled to send logs to Amazon CloudWatch. A Lambda function subscribes to a CloudWatch Log Group to obtain the flow logs, and then sends the data on to a Sumo Logic HTTP Source on a hosted collector. The AWS resources are created by a Sumo-provided CloudFormation template.
 
@@ -53,11 +54,9 @@ You can enable Amazon Virtual Private Cloud (VPC) Flow Logs from the Amazon Web 
 1. Configure a [Hosted Collector ](https://help.sumologic.com/03Send-Data/Hosted-Collectors/Configure-a-Hosted-Collector)in Sumo Logic.
 2. Configure an [HTTP Source](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/HTTP-Source) in Sumo Logic. When configuring the source:
 3. Under **Advanced Options for Logs**, for **Timestamp Format**, click **Specify a format**.
-4. **Format**. Enter:  \
-`epoch`
-5. **Timestamp locator**. Enter: \
-` \s(\d{10,13})\s\d{10,13}`  \
-
+4. **Format**. Enter: `epoch`
+5. **Timestamp locator**. Enter:
+` \s(\d{10,13})\s\d{10,13}`
 6. Click **Save**.
 
 
@@ -137,9 +136,9 @@ This is the Log Group created in the first part (VPCFlowLogs was used).
 
 
 
-## Collect Amazon VPC Flow Logs using an AWS S3 Source
+## Collecting Amazon VPC Flow Logs using an AWS S3 Source
 
-This section has instructions for collecting Amazon VPC Flow Logs using an AWS S3 source. If you prefer to collect VPC logs using a CloudFormation template, see [Collect Amazon VPC Flow Logs using a CloudFormation Template](https://help.sumologic.com/07Sumo-Logic-Apps/01Amazon_and_AWS/Amazon_VPC_Flow_Logs/01Collect-Amazon-VPC-Flow-Logs-from-CloudWatch-Using-CloudFormation).
+This section has instructions for collecting Amazon VPC Flow Logs using an AWS S3 source. If you prefer to collect VPC logs using a CloudFormation template, see [Collect Amazon VPC Flow Logs using a CloudFormation Template](#collecting-amazon-vpc-flow-logs-from-cloudwatch-using-cloudformation).
 
 
 ### Step 1: Enable Amazon VPC Flow Logs  
@@ -188,11 +187,12 @@ Once an app is installed, it will appear in your **Personal** folder, or other f
 Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
 
 
-## View the VPC Flow Logs Dashboards
+## Viewing Amazon VPC Flow Logs Dashboards
+
 
 ### Overview
 
-**Dashboard description**: See an overview of IP traffic going to and from network interfaces in your VPC, including the geolocation of source addresses, the top 10 sources and destinations by MB, rejections per minute, and a breakdown of accepted vs. rejected connections.
+The **Amazon VPC Flow Logs - Overview** dashboard provides an overview of IP traffic going to and from network interfaces in your VPC, including the geolocation of source addresses, the top 10 sources and destinations by MB, rejections per minute, and a breakdown of accepted vs. rejected connections.
 
 **Use case**: Use this dashboard for an overview of traffic flowing through your network. It gives a list of top source and destination addresses, protocols and network interfaces which can be helpful in narrowing the ranges to only those IP addresses or protocols required for the application.
 
@@ -205,7 +205,7 @@ You can filter the Overview dashboard by any combination of `DestinationIP`, `So
 
 ### Accepts
 
-**Dashboard description**: See information about accepted connections, including the geolocation of source addresses for accepted connections, the top 10 accepts by Interface ID and protocol, and the top 10 destination addresses.
+**Amazon VPC Flow Logs - Accepts** dashboard provides information about accepted connections, including the geolocation of source addresses for accepted connections, the top 10 accepts by Interface ID and protocol, and the top 10 destination addresses.
 
 **Use case:** Use this dashboard to track requests that are permitted by Security Groups and Network ACLs.One can compare bytes and packets received per minute with yesterday and last week. Similarly one can also track abnormal activity and volume spikes.
 
@@ -221,11 +221,12 @@ You can also filter Accepts dashboard by any combination of `DestinationIP`, `So
 
 ### Rejects
 
-**Dashboard description**: See information about rejected connections, including the geolocation of source addresses for rejected connections, the top 10 rejects by Interface ID and protocol, and the top 10 destination addresses.
+**Amazon VPC Flow Logs - Rejects** dashboard provides information about rejected connections, including the geolocation of source addresses for rejected connections, the top 10 rejects by Interface ID and protocol, and the top 10 destination addresses.
 
 **Use case**: Use this dashboard to track requests that are not permitted by Security Groups and Network ACLs.One can compare bytes and packets rejected per minute with yesterday and last week. One can monitor top source IP's and ports from where the requests are rejected.
 
 <img src={useBaseUrl('img/integrations/amazon-aws/amazon-vpc-flow-logs-rejects.png')} alt="amazon-vpc-flow-logs" />
+
 
 #### Filter the Rejects dashboard
 
@@ -237,7 +238,7 @@ You can also filter the Rejects dashboard by any combination of DestinationIP, S
 
 ### Traffic
 
-**Dashboard description:** See traffic details, including the counts of unique traffic sources and destinations, the total accepted and rejected traffic, the top 10 source and destination ports, and analyses of bytes and packets transmitted.
+**Amazon VPC Flow Logs - Traffic** dashboard provides traffic details, including the counts of unique traffic sources and destinations, the total accepted and rejected traffic, the top 10 source and destination ports, and analyses of bytes and packets transmitted.
 
 **Use case description**: Use this dashboard for comparing the permissive and non permissive traffic based on ports, protocols and network interfaces. Also one can monitor abnormal behavior, current and future trends based on total packets and bytes flowing across the network. One can filter by Action to filter out data for permissive and non permissive traffic. Similarly one can filter by interfaceid, src_ip, dest_ip, src_port, dest_port to further filter out the traffic for analysis.
 
@@ -245,17 +246,16 @@ You can also filter the Rejects dashboard by any combination of DestinationIP, S
 
 #### Filter the Traffic dashboard
 
-In the filters pane, you can can configure these parameters for the [outlier](https://help.sumologic.com/05Search/Search-Query-Language/Search-Operators/outlier) analysis performed by several panels:  Consecutive, Threshold, Window, and Timelice.
+In the filters pane, you can can configure these parameters for the [outlier](https://help.sumologic.com/05Search/Search-Query-Language/Search-Operators/outlier) analysis performed by several panels: Consecutive, Threshold, Window, and Timelice.
 
 You can also filter the Traffic dashboard by any combination of DestinationIP, SourceIP, action, dest_port, interfaceid, protocol, and src_port.
 
 
 ### Security Groups
 
-**Dashboard description:** See information about security groups, subnet and vpc along with flow direction inbound/outbound including the top vpc,subnet by bytes flow, top 5 security groups by packets, number of unique vpc,subnet and security group and destination port distribution by security group.
+**Amazon VPC Flow Logs - Security Groups** dashboard provides information about security groups, subnet and vpc along with flow direction inbound/outbound including the top vpc,subnet by bytes flow, top 5 security groups by packets, number of unique vpc,subnet and security group and destination port distribution by security group.
 
-**Key facts about this dashboard:**
-
+Key facts about this dashboard:
 * This dashboard is populated only if you chose VPC-JSON option for LogFormat when you deployed the CloudFormation template.
 * If your network interface has multiple IPv4 addresses and traffic is sent to a secondary private IPv4 address, the flow log displays the primary private IPv4 address in the destination IP address field.
 * The Direction field has three values:

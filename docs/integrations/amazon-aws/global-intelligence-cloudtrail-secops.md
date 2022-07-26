@@ -6,6 +6,8 @@ description: Global Intelligence for AWS CloudTrail SecOps
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
+<img src={useBaseUrl('img/integrations/amazon-aws/gi-secops.png')} alt="DB icon" width="50"/>
+
 This feature is available in the following account plans.
 
 <table>
@@ -29,7 +31,6 @@ This feature is available in the following account plans.
   </tr>
 </table>
 
-
 The Global Intelligence for AWS CloudTrail App enables you to detect potentially malicious configuration changes in your AWS account by comparing [AWS CloudTrail](https://aws.amazon.com/cloudtrail/) events in your account against a cohort of AWS customers. CloudTrail events are curated from AWS penetration tests and operational best practices.
 
 Our new app install flow is now in Beta. It is only enabled for certain customers while we gather Beta customer feedback. If you can see the Add Integration button, follow the "Before you begin" section in the "Collect Logs" help page and then use the in-product instructions in Sumo Logic to set up the app.
@@ -52,7 +53,12 @@ The current scope of this application includes the following AWS services and as
 7. **AWS CloudTrail**: counts of trail instances
 
 
-## Collecting Logs and Metrics
+## Collecting Logs for the GI for AWS CloudTrail SecOps App
+
+This section provides an overview of the log collection process and instructions for configuring log collection for the Sumo Logic App for Gl CloudTrail.
+
+If you have already AWS CloudTrail logs flowing into Sumo Logic, you can skip the steps on this page and install the App from the Sumo Logic App Catalog.
+
 
 ### Log Types  
 
@@ -62,11 +68,11 @@ Our new app install flow is now in Beta. It is only enabled for certain customer
 
 When this app is initially installed, the dashboards appear with empty panels until scheduled searches are run and the indices are populated.
 
-## Important Notes
 
-* This application relies on 45 Scheduled Searches that Save to 2 different Indexes and 1 Lookup Table. As a result, they will consume the related quotas for your account. The following is the list of Scheduled Searches:
+:::caution Important Notes
 
-Expand
+<details><summary><strong>Click to Expand</strong><br/>This application relies on 45 Scheduled Searches that Save to 2 different Indexes and 1 Lookup Table. As a result, they will consume the related quotas for your account. The following is the list of Scheduled Searches:</summary>
+
 * To reduce false positives, the benchmarks and application filter out AWS CloudTrail events from legitimate cloud services including AWS itself and CloudHealth by VMware.
 * Security posture requirements may vary between AWS accounts for a given customer. For example, development accounts might have less strict controls than production accounts. The app supports filtering findings by AWS account ID to facilitate AWS account level posture assessment.
 * The benchmarking models use cohorts calculated from similar AWS accounts.
@@ -84,6 +90,66 @@ Expand
 * Install the Sumo Logic [Audit](https://help.sumologic.com/07Sumo-Logic-Apps/26Apps_for_Sumo/Audit_App) App to monitor the health of scheduled searches. The following two dashboards of the Audit app will help look into details for scheduled searches
 * [User Activity - Scheduled Searches](https://help.sumologic.com/07Sumo-Logic-Apps/26Apps_for_Sumo/Audit_App/Install-the-Audit-App-and-View-the-Dashboards#user-activity-scheduled-search)
 * [Scheduled Searches - Triggered Summary](https://help.sumologic.com/07Sumo-Logic-Apps/26Apps_for_Sumo/Audit_App/Install-the-Audit-App-and-View-the-Dashboards#scheduled-search-triggered-summary)
+
+</details>
+
+:::
+
+### Collection process overview
+
+The following illustration is a graphical representation of the process for collecting logs from AWS CloudTrail and delivering them to Sumo Logic.
+
+
+### Configuring log collection
+
+
+To configure log collection for Global Intelligence for AWS CloudTrail, follow the steps described [here](https://help.sumologic.com/07Sumo-Logic-Apps/01Amazon_and_AWS/AWS_CloudTrail/01-Collect-logs-for-the-AWS-CloudTrail-App).
+
+
+### Sample log message
+
+```
+{"eventVersion":"1.05","userIdentity":{"type":"IAMUser","principalId":"AIDAJK3NPEULWEXAMPLE","arn":"arn:aws:iam::224064EXAMPLE:user/username","accountId":"2240example0808","userName":"Pamelia@example.com"},"eventTime":"2020-01-11 00:42:12+0000","eventSource":"signin.amazonaws.com","eventName":"ConsoleLogin","awsRegion":"us-example","sourceIPAddress":"10.10.10.10","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36","requestParameters":null,"responseElements":{"ConsoleLogin":"Success"},"additionalEventData":{"LoginTo":"https://us-example.console.aws.amazon...sauthcode=true","MobileVersion":"No","MFAUsed":"Yes"},"eventID":"8fd88195-8576-example-8330cb492604","eventType":"AwsConsoleSignIn","recipientAccountId":"22406424example0808"}
+```
+
+### Query example
+7
+
+
+The following sample query is from the **Unique AWS Resource Types** panel of **Dashboard 01: Attack Surface Benchmark**.
+
+
+    _sourceCategory=Labs/AWS/CloudTrail/Analytics
+
+
+    | json "eventSource", "errorCode" nodrop
+
+
+    | where isBlank(errorCode)
+
+
+    | count_distinct(eventSource) as count
+
+
+    | "ResourcesCount_Service" as benchmarkname
+
+
+    | fillmissing values("ResourcesCount_Service") in benchmarkname
+
+
+    | toInt(count) as count
+
+
+    | infer _category=cloudtrail _model=benchmark
+
+
+    | first(count) as MyCompany, first(lower_limit) as cohort_low, first(median) as cohort_median, first(upper_limit) as cohort_high by benchmarkname
+
+
+8
+In some cases, your query results may show "HIDDEN_DUE_TO_SECURITY_REASONS" as the value of the `userName` field. That's because AWS does not log the user name that was entered when a sign-in failure is caused by an incorrect user name.
+
+
 
 
 ## Installing the GI for AWS CloudTrail SecOps App
@@ -147,7 +213,7 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/amazon-aws/GI-CloudTrail-03-Tactics.png')} alt="GI CloudTrail" />
 
-**Use this dashboard to:
+Use this dashboard to:
 * Understand tactics and techniques for my company versus peers.
 * Analyze results organized by the following AWS services:
     * Amazon EC2: count of compute instances, security groups, route tables and Amaon Machine Images
@@ -166,7 +232,7 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/amazon-aws/GI-CloudTrail-04-Action-Plan.png')} alt="GI CloudTrail" />
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 * Create an action plan from the findings of Global Intelligence for AWS CloudTrail.
 * Implement and then review the progress of the plan.

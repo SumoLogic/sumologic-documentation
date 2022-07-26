@@ -1,8 +1,10 @@
 ---
 id: amazon-guardduty
-title: Amazon GuardDuty
+title: Sumo Logic App for Amazon GuardDuty Cloud Security Monitoring and Analytics
+sidebar_label: Amazon GuardDuty
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The focus of GuardDuty is on protecting AWS accounts, workloads, and data with intelligent threat detection. The corresponding Sumo Logic dashboards are designed to surface the most relevant security insights from that data to yield actionable processes to tackle specific security concerns within your AWS infrastructure. Utilizing this app allows you to stay ahead of changing attack surfaces in a repeatable way via cloud security monitoring and analytics dashboards that provide operational security awareness for AWS GuardDuty data sources.
 
@@ -43,17 +45,16 @@ Panels will start to fill automatically. It's important to note that each panel 
 **Each dashboard has a set of filters** that you can apply to the entire dashboard. Click the funnel icon in the top dashboard menu bar to display a scrollable list of filters that narrow search results across the entire dashboard.
 
 
-### Dashboards
+## Viewing the Amazon GuardDuty Dashboards
 
-#### Amazon GuardDuty Overview - Security Monitoring
+### Overview - Security Monitoring
 
 See the overview of GuardDuty threats broken down by severity. Filters are available to limit the dashboard panels to specific account IDs, regions, and resource types.
 
+<img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/Amazon-GuardDuty-Overview-Security-Monitoring.png')} alt="Amazon GuardDuty dashboards" />
 
 
-
-
-#### Findings Summary
+### Findings Summary
 
 **Total Findings**. See the count of total findings in the past hour with a sparkline showing the trending of the last 24 hours by default or the dashboard time window setting.                                                 
 
@@ -61,8 +62,10 @@ See the overview of GuardDuty threats broken down by severity. Filters are avail
 
 **Last 20 Findings**. Provides a table detailing the most recent findings.
 
+<img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/Amazon-GuardDuty-Analysis-Security-Analytics.png')} alt="Amazon GuardDuty dashboards" />
 
-#### **High, Medium, Low Severity Findings. **
+
+#### **High, Medium, Low Severity Findings
 
 Note all panels for High, Medium, and Low Severity findings are the same. The only difference is filtering based on the listed severity level.
 
@@ -73,10 +76,9 @@ Note all panels for High, Medium, and Low Severity findings are the same. The on
 **Last 20 Severity Findings**. See the details of the last 20 findings at this severity level.
 
 
-#### **Amazon GuardDuty Analysis - Security Analytics**
+#### Amazon GuardDuty Analysis - Security Analytics
 
 See the details and trending of GuardDuty findings including the severity, threat purpose, threat name , account id, region, resource type, and description. Additionally for more detailed analysis all dashboard panels can be filtered by threat purpose, threat name , severity, region, resource type, and account ID.
-
 
 **Details - Latest Findings. **Review a table of the most recent findings. Each column can be sorted and the pagination controls at the bottom can be used to review additional findings.
 

@@ -7,6 +7,8 @@ description: The Nginx Plus app is an unified logs and metrics app that helps yo
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
+<img src={useBaseUrl('img/integrations/web-servers/nginx-plus.png')} alt="Web servers icon" width="75"/>
+
 Nginx Plus is a web server that can be used as a reverse proxy, load balancer, mail proxy, and HTTP cache.
 
 The Sumo Logic App for Nginx Plus supports logs as well as Metrics for Nginx Plus.
@@ -520,7 +522,7 @@ Template variables provide dynamic dashboards that can rescope data on the fly. 
 
 The **Nginx Plus - Overview** dashboard provides an at-a-glance view of the Nginx Plus server access locations, error logs along with connection metrics.
 
-**Use this dashboard to:
+Use this dashboard to:
 
 * Gain insights into originated traffic location by region. This can help you allocate computer resources to different regions according to their needs.
 * Gain insights into your Nginx health using Critical Errors and Status of Nginx Server.
@@ -532,7 +534,7 @@ The **Nginx Plus - Overview** dashboard provides an at-a-glance view of the Ngin
 
 The **Nginx Plus - Error Logs Analysis** dashboard provides a high-level view of log level breakdowns, comparisons, and trends. The panels also show the geographic locations of clients and clients with critical messages, new connections and outliers, client requests, request trends, and request outliers.
 
-**Use this dashboard to:
+Use this dashboard to:
 * Track requests from clients. A request is a message asking for a resource, such as a page or an image.
 * Track and view client geographic locations generating errors.
 * Track critical alerts and emergency error alerts.
@@ -543,7 +545,7 @@ The **Nginx Plus - Error Logs Analysis** dashboard provides a high-level view of
 
 The **Nginx Plus - Logs Timeline Analysis** dashboard provides a high-level view of the activity and health of Nginx servers on your network. Dashboard panels display visual graphs and detailed information on traffic volume and distribution, responses over time, as well as time comparisons for visitor locations and server hits.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 * Understand the traffic distribution across servers, provide insights for resource planning by analyzing data volume and bytes served.
 * Gain insights into originated traffic location by region. This can help you allocate compute resources to different regions according to their needs.
@@ -555,7 +557,7 @@ The **Nginx Plus - Logs Timeline Analysis** dashboard provides a high-level view
 
 The **Nginx Plus -  Outlier Analysis** dashboard provides a high-level view of Nginx server outlier metrics for bytes served, number of visitors, and server errors. You can select the time interval over which outliers are aggregated, then hover the cursor over the graph to display detailed information for that point in time.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 * Detects outliers in your infrastructure with Sumo Logic’s machine learning algorithm.
 * To identify outliers in incoming traffic and the number of errors encountered by your servers.
@@ -569,7 +571,7 @@ You can use schedule searches to send alerts to yourself whenever there is an ou
 
 The **Nginx Plus - Threat Inte**l dashboard provides an at-a-glance view of threats to Nginx servers on your network. Dashboard panels display the threat count over a selected time period, geographic locations where threats occurred, source breakdown, actors responsible for threats, severity, and a correlation of IP addresses, method, and status code of threats.
 
-**Use this dashboard to:**
+Use this dashboard to:
 * To gain insights and understand threats in incoming traffic and discover potential IOCs. Incoming traffic requests are analyzed using the[ Sumo - Crowdstrikes](https://help.sumologic.com/07Sumo-Logic-Apps/22Security_and_Threat_Detection/Threat_Intel_Quick_Analysis/03_Threat-Intel-FAQ) threat feed.
 
 <img src={useBaseUrl('img/integrations/web-servers/Nginx-Plus-Threat-Intel.png')} alt="tk" />
@@ -579,7 +581,7 @@ The **Nginx Plus - Threat Inte**l dashboard provides an at-a-glance view of thre
 
 The **Nginx Plus - Web Server Operations** dashboard provides a high-level view combined with detailed information on the top ten bots, geographic locations, and data for clients with high error rates, server errors over time, and non 200 response code status codes. Dashboard panels also show information on server error logs, error log levels, error responses by a server, and the top URIs responsible for 404 responses.
 
-**Use this dashboard to:
+Use this dashboard to:
 * Gain insights into Client, Server Responses on Nginx Server. This helps you identify errors in Nginx Server.
 * To identify geo locations of all Client errors. This helps you identify client location causing errors and helps you to block client IPs.
 
@@ -590,7 +592,7 @@ The **Nginx Plus - Web Server Operations** dashboard provides a high-level view 
 
 The **Nginx Plus - Visitor Access Types** dashboard provides insights into visitor platform types, browsers, and operating systems, as well as the most popular mobile devices, PC and Mac versions used.
 
-**Use this dashboard to:**
+Use this dashboard to:
 * Understand which platform and browsers are used to gain access to your infrastructure. \
 These insights can be useful for planning in which browsers, platforms, and operating systems (OS) should be supported by different software services.
 
@@ -601,7 +603,7 @@ These insights can be useful for planning in which browsers, platforms, and oper
 
 The **Nginx Plus - Visitor Locations** dashboard provides a high-level view of Nginx visitor geographic locations both worldwide and in the United States. Dashboard panels also show graphic trends for visits by country over time and visits by  US region over time.
 
-**Use this dashboard to:**
+Use this dashboard to:
 * Gain insights into geographic locations of your user base.  This is useful for resource planning in different regions across the globe.
 
 <img src={useBaseUrl('img/integrations/web-servers/Nginx-Plus-Visitor-Locations.png')} alt="tk" />
@@ -611,7 +613,7 @@ The **Nginx Plus - Visitor Locations** dashboard provides a high-level view of N
 
 The **Nginx Plus - Visitor Traffic Insight** dashboard provides detailed information on the top documents accessed, top referrers, top search terms from popular search engines, and the media types served.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 * To understand the type of content that is frequently requested by users.
 * It helps in allocating IT resources according to the content types.
@@ -622,7 +624,7 @@ The **Nginx Plus - Visitor Traffic Insight** dashboard provides detailed informa
 
 The Nginx Plus - Caches metrics dashboard provides insight into cache states, cache hit rate and cache disk usage over time.
 
-**Use this dashboard to:
+Use this dashboard to:
 * Gain information about the number of caches used, how many of them are in active (hot) state and what is the hit rate of the cache.
 * Gain information about how much disk space is used for cache.
 
@@ -633,7 +635,7 @@ The Nginx Plus - Caches metrics dashboard provides insight into cache states, ca
 
 The Nginx Plus - HTTP Location Zones metrics dashboard provides detailed statistics on the frontend performance, showing traffic speed, responses/requests count and various error responses.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 * Gain information about Location http zones traffic: received and sent; speed, requires/responses amount, discarded traffic.
 * Gain information about Location http zones error responses: percentage of responses by server, percentage of each type of error responses.
@@ -645,7 +647,7 @@ The Nginx Plus - HTTP Location Zones metrics dashboard provides detailed statist
 
 The Nginx Plus - HTTP Server Zones metrics dashboard provides detailed statistics on the frontend performance, showing traffic speed, responses/requests count and various error responses.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 * Gain information about Server http zones traffic: received and sent; speed, requires/responses amount, discarded traffic.
 * Gain information about Server http zones error responses: percentage of responses by server, percentage of each type of error responses.
@@ -657,7 +659,7 @@ The Nginx Plus - HTTP Server Zones metrics dashboard provides detailed statistic
 
 The Nginx Plus - HTTP Upstreams metrics dashboard provides information about each upstream group for HTTP and HTTPS traffic, showing number of HTTP upstreams, servers, back-up servers, error responses and health monitoring.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 * Gain information about HTTP upstreams, servers and back-up servers.
 * Gain information about HTTP upstreams traffic: received and sent; speed, requires/responses amount, downtime and response time.
@@ -671,7 +673,7 @@ The Nginx Plus - HTTP Upstreams metrics dashboard provides information about eac
 
 The Nginx Plus - Resolvers metrics dashboard provides DNS server statistics of requests and responses per each DNS status zone.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 * Gain information about the total number of zones, responses and requests speed.
 * Gain information about error responses by each type of error.
@@ -682,7 +684,7 @@ The Nginx Plus - Resolvers metrics dashboard provides DNS server statistics of r
 
 The Nginx Plus - TCP/UDP Upstreams metrics dashboard provides information about each upstream group for TCP and UDP traffic, showing number of TCP and UDP upstreams, servers, back-up servers, error responses and health monitoring.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 * Gain information about TCP and UDP upstreams, servers and back-up servers.
 * Gain information about TCP and UDP upstreams traffic: received and sent; speed, requests/responses amount, downtime and response time.
@@ -696,7 +698,7 @@ The Nginx Plus - TCP/UDP Upstreams metrics dashboard provides information about 
 
 The Nginx Plus - TCP/UDP Zones metrics dashboard provides TCP and UDP status zones with charts for connection limiting.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 * Gain information about TCP and UDP traffic: received and sent; speed, requires/responses amount, discarded traffic.
 * Gain information about TCP and UDP error responses: percentage of responses by server, percentage of each type of error responses.

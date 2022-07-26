@@ -5,6 +5,11 @@ sidebar_label: Istio
 ---
 
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+
+<img src={useBaseUrl('img/integrations/saas-cloud-apps/istio.png')} alt="DB icon" width="100"/>
+
 [Istio](https://istio.io/) reduces the complexity of managing Kubernetes deployments by providing a uniform platform for securing, connecting, and monitoring microservices.
 
 The Sumo Logic App for Istio provides visibility into the health and performance of Istio and its control plane components, including Mixer, Galley, Citadel, Pilot and Envoy. App dashboards also allow you to monitor how services and applications are performing in Istio Mesh, providing insights into service latency, errors, network traffic, and request workloads.
@@ -371,7 +376,7 @@ You can use template variables to drill down and examine the data on a granular 
 
 The **Istio Overview** dashboard provides a high-level view of the number of applications in your environment, the average requests and responses, and the average duration of requests.
 
-**Use this dashboard to: **
+Use this dashboard to: **
 
 
 
@@ -386,7 +391,7 @@ The **Istio Overview** dashboard provides a high-level view of the number of app
 
 The **Istio Mesh** dashboard provides insights into the network of microservices in your environment, service success response rate, 4XX/5XX responses, latency, requests count, and request/response statistics.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -402,7 +407,7 @@ The **Istio Mesh** dashboard provides insights into the network of microservices
 
 The **Istio Workload** dashboard allows you to monitor the overall workloads in Istio and provides detailed breakdowns on inbound and outbound services.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -418,7 +423,7 @@ The **Istio Workload** dashboard allows you to monitor the overall workloads in 
 
 The **Istio - Galley** Dashboard allows you to monitor the Istio Galley.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -433,7 +438,7 @@ The **Istio - Galley** Dashboard allows you to monitor the Istio Galley.
 
 The **Istio - Resource Usage** dashboard allows you to monitor the overall performance of Istio from a single dashboard.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -449,7 +454,7 @@ The **Istio - Resource Usage** dashboard allows you to monitor the overall perfo
 
 The Istio - Pilot Traffic dashboard assists in monitoring the Istio Pilot component
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 

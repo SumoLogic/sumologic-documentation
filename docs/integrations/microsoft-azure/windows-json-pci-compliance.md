@@ -5,6 +5,10 @@ sidebar_label: Windows JSON PCI Compliance
 description: Windows JSON PCI Compliance
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src={useBaseUrl('img/integrations/amazon-aws/pci.png')} alt="DB icon" width="50"/>
+
 This guide helps you set up Sumo Logic Collectors, and install the PCI Compliance for Windows JSON application, so you can begin monitoring your usage and determine if you are meeting Compliance benchmarks.
 
 
@@ -114,6 +118,8 @@ Template variables provide dynamic dashboards that can rescope data on the fly. 
 
 Track your user accounts and recent system changes.
 
+<img src={useBaseUrl('img/integrations/microsoft-azure/Overview.png')} alt="Windows JSON PCI Compliance dashboards" />
+
 * **User Account Created. **Aggregation table of the number of user accounts created in the last 24 hours.
 * **User Account Deleted.** Aggregation table of the number of user accounts deleted in the last 24 hours.
 * **User Account Enabled.** Aggregation table of the number of user accounts enabled in the last 24 hours.
@@ -132,6 +138,8 @@ Track your user accounts and recent system changes.
 
 Track login successes and failures.
 
+<img src={useBaseUrl('img/integrations/microsoft-azure/Overview.png')} alt="Windows JSON PCI Compliance dashboards" />
+
 * **Failed Logins.** Count of failed logins over the last 24 hours.
 * **Failed Logins.** Aggregation table of the date,
 * **Successful logins.** Total number of successful logins over the last 24 hours. Compare to Failed Logins to determine if the number of failed logins to successful logins is consistent with normal behavior or indicative of an attack.
@@ -144,6 +152,8 @@ Track login successes and failures.
 
 Track user activities such as password changes, password resets, excessive failed access attempts, unlocked accounts, and disabled accounts.
 
+<img src={useBaseUrl('img/integrations/microsoft-azure/Overview.png')} alt="Windows JSON PCI Compliance dashboards" />
+
 * **User Account Password Changes. **Displays an aggregation table of the times passwords were changed, the destination host, destination user, source host, and source user, source domain, error message, error code, and the number of events that occurred.
 * **User Account Password Reset. **Displays an aggregation table of the times passwords were reset, the destination host, destination user, source host, and source user, source domain, error message, error code, and the number of events that occurred.
 * **Excessive Failed Access Attempts.** Displays an aggregation table of the excessive failed access attempts, the destination host, destination user, source host, and source user, source domain, error message, error code, and the number of events that occurred.
@@ -154,6 +164,8 @@ Track user activities such as password changes, password resets, excessive faile
 ### Windows - PCI Req 06 - Windows Updates Activity
 
 Track your Windows Update activities.
+
+<img src={useBaseUrl('img/integrations/microsoft-azure/Overview.png')} alt="Windows JSON PCI Compliance dashboards" />
 
 * **All Windows Updates.** Aggregation table displaying all updated hosts in the past 24 hours, success/failure of that update, and any relevant error codes.
 * **Recent Windows Update Failures.** Aggregation table displaying all update failures in the last 7 days, update that failed, time of failure, and current status.

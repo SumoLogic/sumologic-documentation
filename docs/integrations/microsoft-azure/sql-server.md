@@ -5,6 +5,10 @@ sidebar_label: Microsoft SQL Server
 description: Microsoft SQL Server
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src={useBaseUrl('img/integrations/microsoft-azure/sql.png')} alt="thumbnail icon" width="75"/>
+
 The Sumo Logic App for Microsoft SQL Server is an unified logs and metrics app that provides insight into your SQL server performance metrics and errors. The App consists of predefined Dashboards, providing visibility into your environment for real-time or historical analysis on backup, latency, performance counter, restore, mirroring, database monitoring, general health and operations of your system.
 
 This App has been tested with following SQL Server versions:
@@ -225,63 +229,35 @@ You can use template variables to drill down and examine the data on a granular 
 
 
 ### Dashboards
-15
-
-
 
 ### SQL Server - Overview
-16
-
-
 The **SQL Server - Overview** dashboard provides a snapshot overview of your SQL Server instance. Use this dashboard to understand CPU, Memory, and Disk utilization of your SQL Server (s) deployed in your cluster.  This dashboard also provides login activities and methods by users.
 
 **Use this dashboard to**:
-
-
-
 * Analyze CPU, Memory and disk utilization.
 * Examine Login activities, failures, and failure reasons.
 
-
-17
-
-
+<img src={useBaseUrl('img/integrations/microsoft-azure/Overview.png')} alt="Microsoft_SQL_Server dashboards" />
 
 ### SQL Server - General Health
-18
-
 
 The **SQL Server - General Health** dashboard gives you the overall health of SQL Server.  Use this dashboard to analyze server events including stopped/up servers, and corresponding down/uptime, monitor disk space percentage utilization, wait time trend, app-domain issues by SQL server.
 
-**Use this dashboard to:**
-
-
-
+Use this dashboard to:
 * Analyze server events including stopped/up servers, and corresponding down/uptime.
 * Monitor server events trends including SQL Server wait time.
 * Get insight into app-domain and percentage disk utilization issues by SQL Server.
 
-
-19
-
-
+<img src={useBaseUrl('img/integrations/microsoft-azure/Overview.png')} alt="Microsoft_SQL_Server dashboards" />
 
 ### SQL Server - I/O
-20
-
 
 The **SQL Server - I/O** dashboard provides read and write bytes throughput by SQL Server.
 
-**Use this dashboard to:**
-
-
-
+Use this dashboard to:
 * Analyze performance of SQL server by monitoring read and write bytes throughput of your SQL server instance.
 
-
-21
-
-
+<img src={useBaseUrl('img/integrations/microsoft-azure/Overview.png')} alt="Microsoft_SQL_Server dashboards" />
 
 ### SQL Server - Latency
 22
@@ -289,15 +265,10 @@ The **SQL Server - I/O** dashboard provides read and write bytes throughput by S
 
 The **SQL Server - Latency** dashboard provides read and write latency trend by SQL Server.
 
-**Use this dashboard to:**
-
-
-
+Use this dashboard to:
 * Analyze performance of SQL server by monitoring read and write latency of your SQL server instance.
 
-
-23
-
+<img src={useBaseUrl('img/integrations/microsoft-azure/Overview.png')} alt="Microsoft_SQL_Server dashboards" />
 
 
 ### SQL Server - Operations
@@ -306,16 +277,11 @@ The **SQL Server - Latency** dashboard provides read and write latency trend by 
 
 The **SQL Server - Operations** displays recent server configuration changes, number & type of configuration updates, error and warnings, high severity error, and warning trends.
 
-**Use this dashboard to:**
-
-
-
+Use this dashboard to:
 * Get insights into configuration changes and updates to SQL server instance.
 * Monitor any errors and warnings.
 
-
-25
-
+<img src={useBaseUrl('img/integrations/microsoft-azure/Overview.png')} alt="Microsoft_SQL_Server dashboards" />
 
 
 ### SQL Server - Performance Counters
@@ -324,43 +290,26 @@ The **SQL Server - Operations** displays recent server configuration changes, nu
 
 The **SQL Server - Performance Counters** dashboard shows performance counters related to database activities, SQL statistics, and buffer cache.
 
-**Use this dashboard to:**
-
-
-
+Use this dashboard to:
 * Get insights into database activities such as errors/sec, lock timeouts/sec, and wait/sec, deadlocks/sec, and write transactions/sec.
 * Monitor important SQL statistics such as login/sec, logout/sec, sql compilations/sec, processes blocked and batch requests/sec.
 
-
-27
-
-
+<img src={useBaseUrl('img/integrations/microsoft-azure/Overview.png')} alt="Microsoft_SQL_Server dashboards" />
 
 ### SQL Server - Replication
-28
-
 
 The **SQL Server - Replication** dashboard provides insights into SQL Server replication performance. Use this dashboard to monitor bytes sent and received from replica instance, transaction delays, and mirrored white transaction/sec.
 
-**Use this dashboard to:**
-
-
-
+Use this dashboard to:
 * Get insights into bytes sent to and received from replica instance.
 * Analyze transaction delays, and mirrored white transaction/sec.
 
-
-29
-
+<img src={useBaseUrl('img/integrations/microsoft-azure/Overview.png')} alt="Microsoft_SQL_Server dashboards" />
 
 
 ### SQL Server - Backup Restore Mirroring
-30
-
 
 The **SQL Server - Backup Restore Mirroring** provides information about :
-
-
 
 * Transaction log backup events
 * Database backup events
@@ -368,14 +317,7 @@ The **SQL Server - Backup Restore Mirroring** provides information about :
 * Backup failures and reasons
 * Mirroring errors
 
-
-31
-
-
-
-
-
-
+<img src={useBaseUrl('img/integrations/microsoft-azure/Overview.png')} alt="Microsoft_SQL_Server dashboards" />
 
 
 ## Microsoft SQL Server Alerts

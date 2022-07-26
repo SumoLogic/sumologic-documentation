@@ -4,6 +4,11 @@ title: Sumo Logic App for Jira Cloud
 sidebar_label: Jira Cloud
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src={useBaseUrl('img/integrations/app-development/jira.png')} alt="DB icon" width="50"/>
+
+
 The Sumo Logic App for Jira Cloud provides insights into how your Jira projects and issues are being managed so as to enable you to be more effective and manage work across multiple teams. This guide provides instructions for installing and configuring the Jira Cloud App, as well as offering examples and descriptions of the app pre-configured dashboards.
 
 
@@ -239,7 +244,7 @@ You can use template variables to drill down and examine the data on a granular 
 
 The **Jira Cloud - Issue Overview** dashboard provides users with a high-level view of activities such as issues created, closed, reopened, and in progress.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 * Understand how issues are being created, closed and reopened.
 * Quickly identify issue types, components, and projects that need the most attention.
@@ -254,7 +259,7 @@ The **Jira Cloud - Issue Overview** dashboard provides users with a high-level v
 
 The **Jira Cloud - Issue Details** dashboard provides a visual overview of issues in Jira. The analytics help you visually examine critical information related to issues created compared to issues closed. The panels also provide details on open and closed issues, issue assignments and escalations. a list of issues escalated, unassigned, or reopened, and the average time is taken to close issues.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 *  Identifying issues, components, teams, and initiatives that require the most attention.
 *  Get insight into the time taken to close Jira issues by projects, types, and users.
@@ -267,7 +272,7 @@ The **Jira Cloud - Issue Details** dashboard provides a visual overview of issue
 
 The **Jira Cloud - Recent Issues Changes** dashboard tracks the recent progress of Jira issues. The panels provide information about the type of issue, the timestamp when it was created, issue status, category, assignee, and issue summary.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 * Identify the recent progress of Issues. This dashboard gives the progress of your software delivery processes in chronological order. You can use filters to drill down to a more detailed view.
 
@@ -280,7 +285,7 @@ Following drill down, filters are available: Components, Project Name, Status, L
 
 The **Jira Cloud - Sprint Events** dashboard provides an at-a-glance view of sprint events. The panels also provide tabular representations of all sprint events spread over a week, sprints created, sprints started, and sprints closed.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 * Monitor the progress of sprints in your development cycle. You can track active sprints and their start and end dates.
 
@@ -293,7 +298,7 @@ The **Jira Cloud - Sprint Events** dashboard provides an at-a-glance view of spr
 
 The **Jira Cloud - User Events** dashboard provides an overview of user profiles. The analytics allow you to closely monitor the unusual activity related to users created, updated, and deleted.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 

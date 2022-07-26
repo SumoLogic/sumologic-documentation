@@ -5,6 +5,10 @@ sidebar_label: Windows JSON
 description: Windows JSON
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src={useBaseUrl('img/integrations/microsoft-azure/windows.png')} alt="thumbnail icon" width="75"/>
+
 The Windows JSON App provides insight into your Windows system's operation and events so that you can better manage and maintain your environment. The Windows JSON App is based on the JSON Windows event log format and consists of predefined searches and dashboards that provide visibility into your environment for real-time analysis of overall usage of Security Status, System Activity, Updates, User Activity, and Applications.
 
 
@@ -116,44 +120,28 @@ Template variables provide dynamic dashboards that can rescope data on the fly. 
 
 
 ### Windows - Overview
-11
-
 
 The **Windows - Overview** dashboard provides insights into fatal or warning messages, policy changes, system restarts, and changes to administrative groups.
 
-**Use this dashboard to:**
-
-
-
+Use this dashboard to:
 * Monitor systems experiencing fatal errors, warnings, and system restarts.
 * Monitor services installed on the systems.
 * Monitor policy changes performed on the system.
 * Monitor the number of changes performed on the Administrative groups.
 
-
-12
-
-
+<img src={useBaseUrl('img/integrations/microsoft-azure/Overview.png')} alt="Windows JSON dashboards" />
 
 ### Windows - Default
-13
-
 
 The **Windows - Default** dashboard provides information about the start and stop operations for Windows services, Windows events, operations events, and Errors and Warnings.
 
-**Use this dashboard to:**
-
-
-
+Use this dashboard to:
 * Monitor services being stopped, started on the system.
 * Monitor event types (channels) collected from the system.
 * Monitor Log Level (error, warning) trend on the systems.
 * Monitor operations performed on the system like restarts, user creation, group creation, and firewall changes.
 
-
-14
-
-
+<img src={useBaseUrl('img/integrations/microsoft-azure/Overview.png')} alt="Windows JSON dashboards" />
 
 ### Windows - Login Status
 15
@@ -161,40 +149,32 @@ The **Windows - Default** dashboard provides information about the start and sto
 
 The **Windows - Login Status** dashboard provides information about successful and failed logins, successful Remote Desktop Protocol (RDP) reconnects, and failed login outliers.
 
-**Use this dashboard to:**
-
-
-
+Use this dashboard to:
 * Monitor Successful and Failed logins by the user and track their locations with successful and failed login attempts.
 * Monitor RDP (Remote Desktop) reconnect events.
 * Track if there are failed login outliers to identify mischievous login activities.
 
-
-16
-
-
+<img src={useBaseUrl('img/integrations/microsoft-azure/Overview.png')} alt="Windows JSON dashboards" />
 
 ### Windows - Event Errors
-17
-
 
 The **Windows - Event Errors** dashboards provide insights into error keyword trends and outliers.
 
-**Use this dashboard to:
+Use this dashboard to:
 
 * Monitor various errors in the systems.
 * Monitor error trends and outliers to ensure they are within acceptable limits to decide the next step.
 
-
+<img src={useBaseUrl('img/integrations/microsoft-azure/Overview.png')} alt="Windows JSON dashboards" />
 
 
 ### Windows - Application
 
 The **Windows - Application** dashboard provides detailed information about install, uninstall, and event trends.
 
-**Use this dashboard to:
-
-
+Use this dashboard to:
 * Monitor Install and uninstall of applications performed on the system.
 * Monitor log levels (error, warning, information) through trends and quick snapshots.
 * Monitor various application-specific events happening through recent messages.
+
+<img src={useBaseUrl('img/integrations/microsoft-azure/Overview.png')} alt="Windows JSON dashboards" />

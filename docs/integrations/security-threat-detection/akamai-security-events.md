@@ -3,10 +3,11 @@ id: akamai-security-events
 title: Akamai Security Events
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src={useBaseUrl('img/integrations/security-threat-detection/akamai_logo.png')} alt="thumbnail icon" width="100"/>
 
 #### Log Types  
-1
-
 
 The Akamai Security Events App uses security events generated on the Akamai platform by leveraging the [V1 SIEM API](https://developer.akamai.com/api/cloud_security/siem/v1.html) and Sumo Logic’s [Akamai SIEM API Source](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Cloud-to-Cloud_Integration_Framework/Akamai_SIEM_API_Source).
 
@@ -66,7 +67,7 @@ The Akamai Security Events App uses security events generated on the Akamai plat
 
 
 
-#### Query sample  
+#### Sample Query  
 3
 
 

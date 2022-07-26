@@ -5,6 +5,10 @@ sidebar_label: IIS 7
 description: IIS 7
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src={useBaseUrl('img/integrations/microsoft-azure/microsoft_iis_10.jpg')} alt="thumbnail icon" width="150"/>
+
 The IIS 7 App monitors the performance and reliability of your Microsoft Internet Information Services (IIS) infrastructure, identifying customer-facing and internal operational issues. Additionally, you can monitor customer paths and interactions to learn how customers are using your product. The app consists of predefined searches and Dashboards, which provide visibility into your environment for real time or historical analysis.
 
 
@@ -248,10 +252,7 @@ You can use filters to drill down and examine the data on a granular level.
 ### Overview Dashboard
 
 The **IIS 7 - Overview Dashboard** provides a high-level view of user visits by country, the number of requests and the response time, top applications used to make requests, operating systems (OSes) used, and the number of server errors.
-
-
-17
-
+<img src={useBaseUrl('img/integrations/microsoft-azure/Overview.png')} alt="IIS 7 dashboards" />
 
 
 ### Server Operation - Errors
@@ -259,9 +260,7 @@ The **IIS 7 - Overview Dashboard** provides a high-level view of user visits by 
 
 
 The **IIS 7 - Server Operation - Errors Dashboard** provides information on server errors by IP address, response code trends, HTTP errors by server IP address, and client errors by IP address.
-
-
-19
+<img src={useBaseUrl('img/integrations/microsoft-azure/Overview.png')} alt="IIS 7 dashboards" />
 
 
 
@@ -271,19 +270,22 @@ The **IIS 7 - Server Operation - Errors Dashboard** provides information on serv
 
 The **IIS 7 - Server Operation - Requests and Response Time Dashboard** provides information on requests by server IP address, the top 10 slowest web pages, the number of requests and the response time per timeslice, top 10 server IP addresses response throughput time in bytes per second, and cumulative response times percentiles.
 
+<img src={useBaseUrl('img/integrations/microsoft-azure/Overview.png')} alt="IIS 7 dashboards" />
 
 ### Traffic Insights - Apps and Requests
 
 The **IIS 7 - Traffic Insights - Apps and Requests Dashboard** provides information on the requests made by each application, the top 10 applications and the number of requests received, the top 10 users making requests, cumulative user request percentiles, the top 10 clients by IP address and the number of requests made, and cumulative client request percentiles**.**
 
-
+<img src={useBaseUrl('img/integrations/microsoft-azure/Overview.png')} alt="IIS 7 dashboards" />
 
 
 ### Traffic Insights - Content and Client Platform
 
 The IIS 7 - Traffic Insights - Content and Client Platform Dashboard provides information on the number of media file types requested, the top 10 documents requested, the operating systems and web browsers used by visitors, and the operating system platforms used by visitors.
-
+<img src={useBaseUrl('img/integrations/microsoft-azure/Overview.png')} alt="IIS 7 dashboards" />
 
 #### Visitor Insights
 
 The **IIS 7 - Visitor Insights Dashboard** provides information on the geographic locations and number of users by client IP address, the number of visitors per country, locations and number of users by client IP address by US state, and the number of visitors per US state.
+
+<img src={useBaseUrl('img/integrations/microsoft-azure/Overview.png')} alt="IIS 7 dashboards" />

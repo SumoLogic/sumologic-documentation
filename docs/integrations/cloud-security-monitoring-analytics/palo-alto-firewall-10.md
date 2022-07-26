@@ -1,7 +1,10 @@
 ---
 id: palo-alto-firewall-10
-title: Palo Alto Firewall 10
+title: Sumo Logic App for Palo Alto Firewall 10 Cloud Security Monitoring and Analytics
+sidebar_label: Palo Alto Firewall 10
 ---
+
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Palo Alto Firewall app helps you analyze traffic and gain a better understanding of your Palo Alto Networks environments. You can dig deep into the data, broken down by threat detection indicators, malware type, and so on.
 
@@ -111,7 +114,7 @@ Oct 09 10:19:15 SumPunFw07.sumotest.com 1,2019/10/09 10:19:15,001234567890002,TR
  786 <10>1 2022-03-29T22:32:26+00:00 PA-VM.demo.bkacad.cf - - - - ,2022/03/29*22:32:26,164859314646745,THREAT,vulnerability,,2022/03/29*22:32:26,156.194.158.165,156.194.158.165,156.194.158.165,156.194.158.165,test-threat,,,unknown-udp,vsys1,Outside,Outside,ethernet1/1,ethernet1/1,Forward-Sumo,,8660,1,47495,9034,0,0,0x2000,udp,drop,,Realtek Jungle SDK Remote Code Execution Vulnerability(91535),any,critical,client-to-server,1648593146467628956,0x0,Korea Republic Of,156.194.158.165-156.194.158.165,,,0,,,0,,,,,,,,0,0,0,0,0,,PA-VM,,,,,N/A_id/0,/,0,,N/A,code-execution,AppThreat-8468-6979,,0,1648593146,,,141fd502-fc32-4867-b9a5-5c421583a44b,0,,,,,,,,,,,,,,, ,,,,,,,,,,,,,,0,2022-03-29T22:32:26.467+00:00,,,,unknown,unknown,unknown,1,,,no,no /
 ```
 
-## Query example
+## Sample Query
 
 This example query is from the **Top 20 Hosts with Outbound Traffic** panel of the **Outbound Traffic and Potential Exfiltration Activity** dashboard.
 
@@ -158,7 +161,7 @@ Once an app is installed, it will appear in your **Personal** folder, or other f
 Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
 
 
-### Dashboards
+## Dashboards
 
 #### Palo Alto 10 - Security Analytics - Communication via Critical Ports
 
@@ -168,6 +171,7 @@ Panels will start to fill automatically. It's important to note that each panel 
 
 Additionally at the top of the dashboard are two table containing analytics on known and unknown applications connections using the ports listed above.
 
+<img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/Palo-Alto-10-Security-Analytics-Communication-via-Critical-Ports.png')} alt="Palo Alto Firewall 10 Security Dashboards" />
 
 #### Palo Alto 10 - Security Analytics - Outbound Traffic and Potential Exfiltration Activity
 
@@ -175,7 +179,7 @@ Additionally at the top of the dashboard are two table containing analytics on k
 
 **Use case: **You can use this dashboard to review volumes of outbound traffic by host, by application, and timeframe comparisons with last week. Increased and unaccounted for increases in traffic may be the result of unauthorized exfiltration of information. Additional analysis is provided for DNS traffic alone as large amounts of DNS traffic are not part of normal operations.
 
-
+<img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/Palo-Alto-10-Security-Analytics-Outbound-Traffic-and-Potential-Exfiltration-Activity.png')} alt="Palo Alto Firewall 10 Security Dashboards" />
 
 
 #### Palo Alto 10 - Security Analytics - Potentially Malicious Activity
@@ -184,7 +188,7 @@ Additionally at the top of the dashboard are two table containing analytics on k
 
 **Use case:** You can use this dashboard to analyze attempted and successful connections to IP addresses on threat intelligence lists both inbound and outbound. Additionally you can view connections to geolocation IP addresses associated with countries on the OFAC list (USA embargo list). Finally the bottom panel provides analysis on vertical port scans (one target, scanned on multiple network ports) and horizontal port scans (same port scanned across multiple destinations.)
 
-
+<img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/Palo-Alto-10-Security-Analytics-Potentially-Malicious-Activity.png')} alt="Palo Alto Firewall 10 Security Dashboards" />
 
 
 #### Palo Alto 10 - Security Monitoring - THREAT Log by Category
@@ -193,20 +197,21 @@ Additionally at the top of the dashboard are two table containing analytics on k
 
 **Use case:** You can use this dashboard to review THREAT events in summary or broken down by category: Command-and-control, Phishing, Malware, Proxy Anonymizers, Newly Registered Domains, Cryptocurrency, Questionable,  and High-Risk.
 
+<img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/Palo-Alto-10-Security-Monitoring-THREAT-Log-by-Category.png')} alt="Palo Alto Firewall 10 Security Dashboards" />
 
 #### Palo Alto 10 - Security Monitoring - THREAT Logs by Severity
-
 
 **Dashboard description:** See analytics about the THREAT type logs provided by the firewall. These are the indications of security events detected by the firewall’s defensive measures such as anti-malware, network intrusion detection, and the like.   
 
 **Use case:** You can use this dashboard to review THREAT events broken down by severity, allowing you to focus on the critical events first but also providing events of lesser severity for additional triage and investigation if necessary.
 
-
+<img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/Palo-Alto-10-Security-Monitoring-THREAT-Log-by-Severity.png')} alt="Palo Alto Firewall 10 Security Dashboards" />
 
 
 #### Palo Alto 10 - Security Monitoring - TRAFFIC Log Overview
 
-
 **Dashboard description:** See monitoring of allowed and denied traffic over time by volume and host.
 
 **Use case:** You can use this dashboard to monitor allowed and denied traffic through the firewall. Analysis is provided over time and in lists of top 10 sources, destinations, and hosts.
+
+<img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/Palo-Alto-10-Security-Monitoring-TRAFFIC-Log-Overview.png')} alt="Palo Alto Firewall 10 Security Dashboards" />

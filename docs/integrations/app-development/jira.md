@@ -4,6 +4,11 @@ title: Sumo Logic App for Jira
 sidebar_label: Jira
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src={useBaseUrl('img/integrations/app-development/jira.png')} alt="DB icon" width="50"/>
+
+
 The Sumo Logic App for Jira provides insight into Jira usage, request activity, issues, security, sprint events, and user events.   
 
 1.png "image_tooltip")
@@ -181,7 +186,7 @@ You can use template variables to drill down and examine the data on a granular 
 
 The **Jira - Overview** dashboard provides a high-level view of Jira activities, including the location of event authentications, login comparisons, Jira requests, errors and error trends, and data usage.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -197,7 +202,7 @@ The **Jira - Overview** dashboard provides a high-level view of Jira activities,
 
 The **Jira - Access** dashboard provides information about Jira user access, including request trends, average response times, issues by project, response codes, and errors.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -231,7 +236,7 @@ The **Jira - Catalina** dashboard provides information on the Jira internal web 
 
 The **Jira - Issue Overview** dashboard provides a high-level view of Jira issue activities, so you can monitor work from creation to completion. The panels display analytics for issues that have been created, closed, reopened, and still in progress.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -248,7 +253,7 @@ The **Jira - Issue Overview** dashboard provides a high-level view of Jira issue
 
 The **Jira - Issues Details** dashboard provides insights into Jira issues, showing analytics on open, closed, and reopened issues. Panels also display details on issue assignments and escalations and the average time to close issues, allowing you to prioritize and strategize issue management.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -265,7 +270,7 @@ The **Jira - Issues Details** dashboard provides insights into Jira issues, show
 
 The **Jira - Recent Issue Changes** dashboard tracks recent progress of Jira issues. You can view detailed information on the type of issue, including when it was created, its status, assignee, and a summary of the issue.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -298,7 +303,7 @@ The **Jira - Security** dashboard provides information on security in Jira. The 
 
 The **Jira - Sprints Events** dashboard provides insights on sprint events in Jira, including the number of sprint events, event trends, and sprints closed and created.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 

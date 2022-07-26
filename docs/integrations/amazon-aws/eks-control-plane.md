@@ -7,6 +7,9 @@ description: Amazon EKS - Control Plane
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
+<img src={useBaseUrl('img/integrations/amazon-aws/eks.png')} alt="DB icon" width="50"/>
+
+
 The Sumo Logic App for Amazon EKS - Control Plane App provides visibility into the EKS control plane with operational insights into the api server, scheduler, control manager, and worker nodes. The app’s preconfigured dashboards display resource-related metrics for Kubernetes deployments, clusters, namespaces, pods, containers, and daemonsets.
 
 Amazon Elastic Kubernetes Service ([Amazon EKS](https://aws.amazon.com/eks/)) allows you to readily deploy, manage, and scale container-based applications with [Kubernetes](https://aws.amazon.com/kubernetes/) on AWS.
@@ -39,7 +42,11 @@ The following are the minimum supported requirements for this app:
 
 
 
-## Log Types   
+## Collect Logs and Metrics for the Amazon EKS - Control Plane App
+
+This page has instructions for collecting logs and metrics for the Sumo App for Amazon EKS - Control Plane.
+
+### Log Types   
 
 * **Kubernetes API server component logs (api)** – The cluster API server is the control plane component that exposes the Kubernetes API.
 * **Audit (audit)** – Kubernetes audit logs provide a record of the individual users, administrators, or system components that have affected your cluster.
@@ -49,11 +56,141 @@ The following are the minimum supported requirements for this app:
 
 For more details about EKS logging, refer the [Amazon documentation](https://docs.aws.amazon.com/eks/latest/userguide/control-plane-logs.html).
 
+### Collection process   
 
-## Collecting Logs and Metrics
+Configuring logs and metrics for the Amazon EKS - Control Plane App is a two step process:
+
+* Setting up collection and installing the Sumo Logic Kubernetes App.
+* Configuring CloudWatch log collection.
 
 
+The Sumo Logic[ Kubernetes App](https://help.sumologic.com/07Sumo-Logic-Apps/10Containers_and_Orchestration/Kubernetes) allows you to monitor worker node logs, as well as metrics for the EKS master and worker nodes.
 
+
+### Step 1. Set up and install the Kubernetes App  
+
+The Sumo Logic Kubernetes App provides the services for managing and monitoring Kubernetes worker nodes. You must set up collection and install the Kubernetes App before configuring collection for the EKS - Control Plane App. You will configure log and metric collection during this process.
+
+**To set up and install the Kubernetes app**, follow the instructions in [this document](https://help.sumologic.com/07Sumo-Logic-Apps/10Containers_and_Orchestration/Kubernetes).
+
+
+### Step 2. Configure CloudWatch log collection
+
+Amazon EKS utilizes the following log types:
+
+* Kubernetes API server component logs (api) – The cluster API server is the control plane component that exposes the Kubernetes API.
+* Audit (audit) – Kubernetes audit logs provide a record of the individual users, administrators, or system components that have affected your cluster.
+* Authenticator (authenticator) – Authenticator logs are unique to Amazon EKS. These logs represent the control plane component that Amazon EKS uses for Kubernetes [Role Based Access Control](https://kubernetes.io/docs/admin/authorization/rbac/) (RBAC) authentication using IAM credentials.
+* Controller manager (controllerManager) – The controller manager manages the core control loops that are shipped with Kubernetes.
+* Scheduler (scheduler) – The scheduler component manages when and where to run pods in your cluster.
+
+For more details about EKS logging, refer the [Amazon documentation](https://docs.aws.amazon.com/eks/latest/userguide/control-plane-logs.html).
+
+**To configure Amazon CloudWatch log collection, do the following:
+1. Follow the instructions for [Collecting Logs using a CloudFormation Template](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Amazon-CloudWatch-Logs).
+2. Refer [Amazon EKS Logs](https://docs.aws.amazon.com/eks/latest/userguide/control-plane-logs.html) for Amazon specific details.
+
+
+### Sample Log Messages  
+
+
+```json title="API Server Audit"
+{
+   "timestamp":1561532751495,
+   "message":{
+   "kind":"Event",
+   "apiVersion":"audit.k8s.io/v1beta1",
+   "metadata":{
+      "creationTimestamp":"2019-06-26T07:05:51Z"
+   },
+   "level":"Metadata",
+   "timestamp":"2019-06-26T07:05:51Z",
+   "auditID":"8c7f04e6-19ae-4b02-a3a1-c1e03bea7f98",
+   "stage":"ResponseComplete",
+   "requestURI":"/api/v1/namespaces/kube-system/secrets/kube-proxy-token-w7wkr",
+   "verb":"get",
+   "user":{
+      "username":"system:apiserver",
+      "uid":"bf2d8ee6-319d-4735-94a1-2903bcef27cf",
+      "groups":[
+         "system:masters"
+      ]
+   },
+   "sourceIPs":[
+      "127.0.0.1"
+   ],
+   "objectRef":{
+      "resource":"secrets",
+      "namespace":"kube-system",
+      "name":"kube-proxy-token-w7wkr",
+      "apiVersion":"v1"
+   },
+   "responseStatus":{
+      "metadata":{
+      },
+      "code":200
+   },
+   "requestReceivedTimestamp":"2019-06-26T07:05:51.447627Z",
+   "stageTimestamp":"2019-06-26T07:05:51.450399Z",
+   "annotations":{
+      "authorization.k8s.io/decision":"allow",
+      "authorization.k8s.io/reason":""
+   }
+   }
+}
+```
+
+```json title="Authenticator"
+{
+   "timestamp":1561533513014,
+   "message":"time=\"2019-06-26T07:18:27Z\" level=info msg=\"access granted\"
+   arn=\"arn:aws:iam::956882708938:role/arun-k8s-worker-nodes-NodeInstanceRole-1Q2W9LCWIMWT3\"
+   client=\"127.0.0.1:58464\" groups=\"[system:bootstrappers system:nodes]\" method=POST
+   path=/authenticate uid=\"heptio-authenticator-aws:956882708938:AROA55SVHNHFL55HJ3F5S\"
+   username=\"system:node:ip-192-168-222-214.ec2.internal\""
+}
+```
+
+
+```json title="API Server"
+{
+   "timestamp":1561543835000,
+   "message":"I0626 10:10:35.292107   1 get.go:245] Starting watch for /api/v1/persistentvolumes,
+   rv=4220807 labels= fields= timeout=5m2s"
+}
+```
+
+```json title="Controller Manager "
+{"timestamp":1561544407000,"message":"I0626 10:20:07.755497       1
+cronjob_controller.go:173] Unable to update status for default/sumologic-k8s-api (rv = 6489402):
+Operation cannot be fulfilled on cronjobs.batch \"sumologic-k8s-api\": the object has been modified;
+please apply your changes to the latest version and try again"}
+```
+
+```json title="Scheduler"
+{"timestamp":1561106587000,"message":"I0621 08:43:07.395400       1
+scheduler.go:197] Failed to schedule pod: hello-app/frontend-56f7975f44-8sgj7"}
+```
+
+
+### Sample Query
+
+The following query sample is taken from the **Top 10 URLs with Problem Status Codes** panel on the **EKS - API Server Audit Overview** dashboard.
+
+
+```sql
+_sourceCategory = "EKS_LOGS"
+and _sourceName = kube-apiserver-audit*
+| json field=_raw "message.responseStatus.code" as status_code
+| json field=_raw "message.verb" as method
+| json field=_raw "message.requestURI" as url
+| json field=_raw "message.objectRef.resource" as k8_resource
+| json field=_raw "message.sourceIPs" as ip
+| where !(status_code matches "2*")
+| count as urls_by_status by status_code, url
+| sort by urls_by_status
+| limit 10
+```
 
 
 ## Installing the Amazon EKS - Control Plane App
@@ -85,7 +222,7 @@ You can use template variables to drill down and examine the data on a granular 
 
 The **EKS - API Server Audit** dashboard displays information on Kubernetes audit logs. Panels provide records of individual users, administrators, or system components affected by your cluster.
 
-**Use this dashboard to:
+Use this dashboard to:
 * Monitor the health and performance of the API server.
 * Review failure rates, reasons, and user failures.
 * Review status code trends and the top URLs with problem status codes.
@@ -100,7 +237,7 @@ The **EKS - API Server Audit** dashboard displays information on Kubernetes audi
 
 The **EKS - API Server** dashboard displays information on the API server logs, the control plane component that exposes the Kubernetes API. Panels show details on the API server errors, warnings, and activities.
 
-**Use this dashboard to:
+Use this dashboard to:
 * Monitor API server latency.
 * Monitor API server successful request rates.
 * Compare successful and failed API server request rates.
@@ -112,7 +249,7 @@ The **EKS - API Server** dashboard displays information on the API server logs, 
 
 The **EKS - Authenticator** dashboard displays information on the Authenticator logs which are unique to Amazon EKS. Panels display logs that represent the control plane component Amazon EKS uses for Kubernetes[ Role Based Access Control](https://kubernetes.io/docs/admin/authorization/rbac/) (RBAC) authentication using IAM credentials.
 
-**Use this dashboard to:
+Use this dashboard to:
 * Review authentication errors.
 * Monitor successful user authentication rates.
 
@@ -123,7 +260,7 @@ The **EKS - Authenticator** dashboard displays information on the Authenticator 
 
 The **EKS - Controller Manager** dashboard displays information on the  controller manager, providing visibility into the core control loops for Kubernetes.
 
-**Use this dashboard to:
+Use this dashboard to:
 * Review resource modifications for pods and jobs.
 * Review scaling operations and logs.
 * Assess severity trends and error messages.
@@ -135,7 +272,7 @@ The **EKS - Controller Manager** dashboard displays information on the  controll
 
 The **EKS - Scheduler** dashboard provides details of the scheduler health and latency details.
 
-**Use this dashboard to:
+Use this dashboard to:
 * Get an overview of scheduler health and status.
 * Review scheduler latency details.
 

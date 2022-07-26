@@ -4,6 +4,11 @@ title: Sumo Logic App for Workday
 sidebar_label: Workday
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+
+<img src={useBaseUrl('img/integrations/saas-cloud-apps/workday.png')} alt="DB icon" width="100"/>
+
 Workday is a cloud-based ERP system that manages the business processes and allows organizations to use a system integrated application. Workday is a coherent cloud ERP system for financial analysis, analytical solutions, HCM suites, and better business processes.
 
 The Sumo Logic App for Workday provides insights into authentication activity, user activity, and administrator activity. The pre-configured dashboards help identify events that identify compliance and incident reporting, common security events, and real-time analysis of suspicious activities.
@@ -629,7 +634,7 @@ You can use template variables to drill down and examine the data on a granular 
 
 The **Workday - Overview **dashboard provides an at-a-glance view of the security posture of your Workday instance. Panel identify login activity, user activity, and activity from untrusted devices or users with failed logins. It also helps you in monitoring failed logins by devices and the recent activities from untrusted devices.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -646,7 +651,7 @@ The **Workday - Overview **dashboard provides an at-a-glance view of the securit
 
 The **Workday - Login Activity** dashboard provides detailed insights into login summary, trends, and malicious activities. Panel also displays recent login activity and details of devices and browsers used to login to the Workday portal.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -664,7 +669,7 @@ The **Workday - Login Activity** dashboard provides detailed insights into login
 
 The **Workday - User Activity** dashboard provides detailed insight into all user activity and potential suspicious activities in your Workday instance.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -680,7 +685,7 @@ The **Workday - User Activity** dashboard provides detailed insight into all use
 
 The **Workday - System User Activity** dashboard monitors the system user activities. Panels also identify all configuration changes related to domain security, business processes, security groups, and API client modules.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -708,7 +713,7 @@ Task contains api/ and System Account not equal to SumoLogic_ISU.
 48.png "image_tooltip")
 
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 

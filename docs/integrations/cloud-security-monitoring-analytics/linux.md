@@ -1,7 +1,10 @@
 ---
 id: linux
-title: Linux
+title: Sumo Logic App for Linux Cloud Security Monitoring and Analytics
+sidebar_label: Linux
 ---
+
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Cloud Security monitoring and Analytics app for Linux ingests any distribution of linux data to gain a better understanding of your production environments, and surface relevant insights by tuning out-of-the-box content to align with your security team’s focus. Consolidate analytics across various instances by wildcarding on data sources and gain full visibility into your Linux data for both monitoring and analytics use cases.
 
@@ -271,34 +274,40 @@ Once an app is installed, it will appear in your **Personal** folder, or other f
 Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
 
 
-### Dashboards
+## Viewing Dashboards
 
 
-#### **Linux - Security Monitoring - Overview**
+### **Linux - Security Monitoring - Overview
 
 **Dashboard description:** This dashboard provides an overview of security statistics relevant for Linux systems. It presents information about successful and failed logins, root login successes and failures, user accounts created and deleted, sudo attempts and total Services.
 
 **Use case:** Use this dashboard to monitor administrative actions (create, delete users) performed by end users, ensure proper services are running on all systems, detect attempts to change the system time, and verify that critical systems are up and running.You can also monitor excessive failed login attempts to detect attempts to break into the system.
 
+<img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/Linux-Security-Monitoring-Overview.png')} alt="Linux Security dashboards" />
 
-#### **Linux - Security Analytics - Login Activity**
+
+### **Linux - Security Analytics - Login Activity
 
 **Dashboard description: **This dashboard tracks login activity. It provides information about failed and successful user logins, and failed and successful root logins.
 
 **Use case:** Use this dashboard to monitor access to the linux computing environment. You can monitor failed and successful user logins.
 
+<img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/Linux-Security-Analytics-Login-Activity.png')} alt="Linux Security dashboards" />
 
 
-
-#### **Linux - Security Analytics - Privileged Activity**
+### Linux - Security Analytics - Privileged Activity**
 
 **Dashboard description: **This dashboard provides information about total sudo attempts, failed sudo attempts, the top 10 users and hosts that have issued sudo attempts, recent sudo attempts, and sudo attempts over time.
 
 **Use case:** Use this dashboard to monitor successful and failed access attempts to systems, especially with administrative privileges. It also helps monitor actions performed by users with administrative privileges.
 
+<img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/Linux-Security-Analytics-Privileged-Activity.png')} alt="Linux Security dashboards" />
 
-#### **Linux - Security Monitoring - User, Service, and System Monitoring**
+
+### **Linux - Security Monitoring - User, Service, and System Monitoring
 
 **Dashboard description: **This dashboard provides information about total sudo attempts, failed sudo attempts, the top 10 users and hosts that have issued sudo attempts, recent sudo attempts, and sudo attempts over time.
 
 **Use case:** Use this dashboard to monitor accounts created and deleted. It also helps monitor service usage and other system activity.
+
+<img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/Linux-Security-Analytics-User-Service-and-System-Monitoring.png')} alt="Linux Security dashboards" />

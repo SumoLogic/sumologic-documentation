@@ -5,6 +5,10 @@ sidebar_label: Couchbase
 description: Couchbase is a distributed document database with a powerful search engine and in-built operational and analytical capabilities.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src={useBaseUrl('img/integrations/databases/databases-icon.png')} alt="DB icon" width="75"/>
+
 Couchbase, a modern database for enterprise applications, is a distributed document database with a powerful search engine and in-built operational and analytical capabilities. It brings the power of NoSQL to the edge and provides fast, efficient bidirectional synchronization of data between the edge and the cloud. The Sumo Logic app for Couchbase helps you monitor activity in Couchbase. The pre-configured dashboards provide insight into the Health of the Cluster, the Status of the Buckets, I/O of Reading/Writing, Errors, the Events of Couchbase Servers that help you understand your clusters.
 
 This App has been tested with the following Couchbase with Telegraf versions:
@@ -764,7 +768,7 @@ You can use template variables to drill down and examine the data on a granular 
 
 The **Couchbase - Overview** dashboard provides an at-a-glance view of the health of the Couchbase clusters and servers, performance, and problems causing errors.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -776,7 +780,7 @@ The **Couchbase - Overview** dashboard provides an at-a-glance view of the healt
 
 The **Couchbase -  Bucket I/O** dashboard provides an insight into the operators of buckets in clusters: the number of getting operations, the number of set operations, the number of delete operations, the bytes read/write.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -794,7 +798,7 @@ The **Couchbase -  Bucket I/O** dashboard provides an insight into the operators
 
 The **Couchbase -  Cluster Resources** dashboard provides an insight into the resources of clusters: the memory resource usage, the CPU resource usage, the disk resource usage.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -813,7 +817,7 @@ The **Couchbase -  Cluster Resources** dashboard provides an insight into the re
 
 The **Couchbase -  DCP Queues** dashboard provides an insight into the DCP queues of buckets in couchbase clusters: the number of DCP connections, DCP senders, the number of items in DCP Queues.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -830,7 +834,7 @@ The **Couchbase -  DCP Queues** dashboard provides an insight into the DCP queue
 
 The **Couchbase - Disk Queues **dashboard provides an insight into the DCP queues of buckets in couchbase clusters: the number of active items waiting to be written to disk, the number of items being put to disk queue, the average age of items in queues.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -847,7 +851,7 @@ The **Couchbase - Disk Queues **dashboard provides an insight into the DCP queue
 
 The **Couchbase -  vBucket** dashboard provides insights into the state of vBucket of buckets in couchbase clusters: the number of vBucket of buckets, the number items in vBuckets, the state of vBuckets.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -864,7 +868,7 @@ The **Couchbase -  vBucket** dashboard provides insights into the state of vBuck
 
 The **Couchbase -  XDCR** dashboard provides insights into replicate operations of buckets cross-cluster: the number of XDCR connections, the number of XDCR items remaining, the number of read-set-delete operations for XDCR.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -881,7 +885,7 @@ The **Couchbase -  XDCR** dashboard provides insights into replicate operations 
 
 The **Couchbase -  Errors** dashboard provides insights into errors from error logs in couchbase servers and couchbase clusters: buckets not ready, nodes not responding, node down, error queries, last error logs.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -899,7 +903,7 @@ The **Couchbase -  Errors** dashboard provides insights into errors from error l
 
 The **Couchbase -  Events** dashboard provides insights into events from couchbase servers and couchbase clusters: the number of login failure, login success from clients, add/remove node events, add/remove bucket events, rebalance events.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -916,7 +920,7 @@ The **Couchbase -  Events** dashboard provides insights into events from couchba
 
 The **Couchbase -  HTTP Access** dashboard provides insights into HTTP Rest API requests from clients to couchbase servers and couchbase clusters: the latency, HTTP codes, client agents, IP clients, errors with 4XX 5XX response code.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 

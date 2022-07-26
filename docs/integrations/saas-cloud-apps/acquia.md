@@ -4,6 +4,10 @@ title: Sumo Logic App for Acquia
 sidebar_label: Acquia
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src={useBaseUrl('img/integrations/saas-cloud-apps/acquia.png')} alt="DB icon" width="100"/>
+
 The Sumo Logic App for Acquia provides visibility into the key components of the Acquia platform with preconfigured dashboards for Apache, Varnish, PHP, FPM and Drupal.
 
 Sumo Logic provides instant visibility across the critical components of the Acquia Platform, helping organizations become more proactive in their site monitoring as well as reducing the mean time to identify and resolve issues.
@@ -302,7 +306,7 @@ request_id="v-0000zzzz-d2b4-0000-b3a4-129zzzzd8266"
 
 
 
-#### Query example
+#### Sample Query
 
 This section provides examples for Drupal request, Apache access, and PHP error queries.
 
@@ -394,7 +398,7 @@ Panels will start to fill automatically. It's important to note that each panel 
 
 The **Acquia - Overview** dashboard provides a high-level view of the activity and health of the environment. Dashboard panels display visual graphs and detailed information on visitor geographic locations, traffic volume and distribution, responses over time, as well as time comparisons for visitor locations and server hits.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -413,7 +417,7 @@ The **Acquia - Overview** dashboard provides a high-level view of the activity a
 
 The **Acquia - Errors Overview** dashboard provides a high-level view of events by log level, time comparisons, and trends. The panels also show the geographic locations of clients and clients with critical messages, new connections and outliers, client requests, request trends, and request outliers.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -430,7 +434,7 @@ The **Acquia - Errors Overview** dashboard provides a high-level view of events 
 
 The **Acquia - FPM Overview** dashboard provides insights for analysis of the performance of FPM ([FastCGI Process Manager](https://php-fpm.org/)) in the Acqauia environment, including memory and CPU usage, status codes and response time outliers.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -447,7 +451,7 @@ The **Acquia - FPM Overview** dashboard provides insights for analysis of the pe
 
 The **Acquia - Drupal Requests Overview **dashboard provides insights for analysis of the performance of the Drupal platform. The panels show response time anomalies, response codes and breakdowns of slow urls and queries.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 

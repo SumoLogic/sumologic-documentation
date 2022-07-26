@@ -5,6 +5,10 @@ sidebar_label: Microsoft Teams
 description: Microsoft Teams
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+
+<img src={useBaseUrl('img/integrations/microsoft-azure/teams.svg')} alt="thumbnail icon" width="50" />
 
 The Microsoft Teams app provides out-of-the-box dashboards to monitor users, teams, channels and permission changes.
 
@@ -41,7 +45,7 @@ Sample Log Message
   "UserId":"email@domain.com",
   "TeamGuid":"19:caac0ef5091e431aa45a6b6ec4a6723a@thread.tacv2",
   "TeamName":"My Team"
-Query sample  
+Sample Query  
 _sourceCategory="O365/General"
 | json "Workload", "Operation" , "UserId" as workload, operation, email
 | where workload = "MicrosoftTeams"
@@ -81,77 +85,55 @@ Panels will start to fill automatically. It's important to note that each panel 
 The Teams - Overview dashboard provides an at-a-glance view of the state of your Teams environment in terms of user sessions, teams and channel activity, and user role changes
 
 Use this dashboard to:
-
 * Identify user sessions relative to their locations
 * Report the top users creating teams and channels
 * Identify the top team bots and channels connectors being used
 * Report on the top users and objects relative to role changes
 
+<img src={useBaseUrl('img/integrations/microsoft-azure/Overview.png')} alt="Microsoft Teams dashboards" />
 
 ### Teams - User Sessions
 
 The Teams - User Sessions dashboard provides an in depth view of the user logins and related statistics in your Teams environment
 
 Use this dashboard to:
-
-
-
 * Identify user sessions relative to their locations and compare login statistics over time
 * Understand the client platforms and versions that are being used
 * Report on login IP addresses correlated to potential threats via Crowdstrike
 
-
-image6
-
-
+<img src={useBaseUrl('img/integrations/microsoft-azure/Overview.png')} alt="Microsoft Teams dashboards" />
 
 ### Teams - Team Statistics
-image7
-
 
 The Teams - Team Statistics dashboard offers complete details on the Team activity occurring in your organization.
 
 Use this dashboard to:
-
-
-
 * Gain insight into teams being added and removed.
 * Understand the team setting changes.
 * Keep track of the team Bots being installed.
 
-
-image8
-
+<img src={useBaseUrl('img/integrations/microsoft-azure/Overview.png')} alt="Microsoft Teams dashboards" />
 
 
 ### Teams - Channel Statistics
-image9.gif image_tooltip
 
-
-The Teams - Channel  Statistics dashboard offers complete visibility into the Channel activity occurring in your Teams
+The Teams - Channel  Statistics dashboard offers complete visibility into the Channel activity occurring in your Teams.
 
 Use this dashboard to:
-
-
-
 * Gain insight into the channels being added and removed
 * Understand the channel settings being modified
 * Monitor channel tab activity
 * Monitor and report on channel connectors being added and removed
 
-
+<img src={useBaseUrl('img/integrations/microsoft-azure/Overview.png')} alt="Microsoft Teams dashboards" />
 
 
 ### Teams - User and Role Changes
-image1
 
-
-The Teams - User and Role Changes dashboard provides insight on the user and role changes being applied in your environment
+The Teams - User and Role Changes dashboard provides insight on the user and role changes being applied in your environment.
 
 Use this dashboard to:
-
-
-
 * Report on the users making role changes and the top object types being affected
 * Understand how members are being added, removed, and changed by object name
-*
+
+<img src={useBaseUrl('img/integrations/microsoft-azure/Overview.png')} alt="Microsoft Teams dashboards" />

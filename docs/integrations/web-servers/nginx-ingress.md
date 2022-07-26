@@ -7,6 +7,8 @@ description: The NGINX Ingress Controller for Kubernetes provides enterprise‑g
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
+<img src={useBaseUrl('img/integrations/web-servers/nginx-ingress.png')} alt="Web servers icon" width="75"/>
+
 The Nginx Ingress app is a unified logs and metrics app that helps you monitor the availability, performance, health, and resource utilization of your Nginx Ingress web servers. Preconfigured dashboards and searches provide insight into connections, requests, ingress controller metrics, visitor locations, visitor access types, traffic patterns, errors, web server operations, and access from known malicious sources.
 
 This App is tested with the following Nginx Ingress versions:
@@ -382,7 +384,7 @@ Use this dashboard to:
 
 The **Nginx Ingress - Visitor Locations** dashboard provides a high-level view of Nginx visitor geographic locations both worldwide and in the United States. Dashboard panels also show graphic trends for visits by country over time and visits by  US region over time.
 
-**Use this dashboard to:
+Use this dashboard to:
 * Gain insights into geographic locations of your user base.  This is useful for resource planning in different regions across the globe.
 
 <img src={useBaseUrl('img/integrations/web-servers/Nginx-Ingress-Visitor-Locations.png')} alt="Nginx-Ingress-Visitor-Locations" />

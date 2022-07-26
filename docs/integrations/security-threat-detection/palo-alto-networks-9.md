@@ -6,6 +6,10 @@ description: The Sumo Logic App for Palo Alto Networks 9 utilizes PANOS 9 new fe
 ---
 
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src={useBaseUrl('img/integrations/security-threat-detection/pan9.png')} alt="thumbnail icon" width="75"/>
+
 The Sumo Logic App for Palo Alto Networks 9 utilizes PANOS 9 new features in predefined dashboards to provide extensive security analytics throughout your Palo Alto Networks environment. New PANOS 9 features include:
 * GlobalProtect
 * Panorama
@@ -210,7 +214,7 @@ Oct 09 10:21:11 SumPunFw07.sumotest.com 1,2019/10/09
 10.255.255.255,0,,0,,,1,,,,,,,,0,0,0,0,0,,SumPunFw07,,,,,0,,0,,N/A,code-execution,AppThreat-8189-5641,0x4,0,4294967295,,,6bbbbec9-d123-4d51-1204-6aefd221079b,0
 ```
 
-### Query example
+### Sample Query
 15
 
 
@@ -442,7 +446,7 @@ The Palo Alto Networks 9 - HIPMatch Monitoring dashboard provides visibility int
 
 The [GlobalProtect Host Information Profile (HIP) matching](https://docs.paloaltonetworks.com/globalprotect/8-0/globalprotect-admin/host-information/configure-hip-based-policy-enforcement.html) collects information on the security status of the end devices accessing your network. A firewall can allow or deny access to a host based on HIP-based security rules. HIP Match logs display traffic flows that match a [HIP Object](https://docs.paloaltonetworks.com/globalprotect/8-0/globalprotect-admin/host-information/about-host-information/how-does-the-gateway-use-the-host-information-to-enforce-policy.html) or [HIP Profile](https://docs.paloaltonetworks.com/globalprotect/8-0/globalprotect-admin/host-information/about-host-information/how-does-the-gateway-use-the-host-information-to-enforce-policy.html) configured for rules.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -479,7 +483,7 @@ The Palo Alto Networks 9 - System Monitoring dashboard provides insights into ev
 
 The Palo Alto Networks 9 - USERID Monitoring dashboard provides insights into user activity on your network, with information on authentication factor, content type, and trends for content and new user activity. Panels also show details on the top firewall devices, source IPs, active users, and users who connected from multiple IPs.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 

@@ -318,7 +318,7 @@ Template variables provide dynamic dashboards that can rescope data on the fly. 
 
 The GKE - API Server dashboard displays information on the API server logs, which is the control plane component that exposes the Kubernetes API. Panels show details on the API server errors, warnings, and activities.
 
-**Use this dashboard to:
+Use this dashboard to:
 * Monitor the health and performance of the API server.
 * Review server request rates.
 * Review server success and failure request rates.
@@ -373,7 +373,9 @@ The GKE - Pod Logs dashboards display  information on the overall health of the 
 
 The GKE - Controller Manager Overview dashboard displays information on the  controller manager, providing visibility into the core control loops for Kubernetes.
 
-**Use this dashboard to:
+Use this dashboard to:
+
+
 
 * Review resource modifications for pods and jobs.
 * Review scaling operations and logs.
@@ -385,7 +387,9 @@ The GKE - Controller Manager Overview dashboard displays information on the  con
 
 The GKE - K8s Audit Logs dashboard provides security-relevant logs documenting the sequence of activities that have affected system by individual users, administrators or other components of the system.
 
-<img src={useBaseUrl('img/integrations/google/GKE-K8s-Audit-Logs.png')} alt="Google GKE dashboards" />
+Use this dashboard to:
+
+
 
 Use this dashboard to:
 * Identify what happened on the Kubernetes cluster, when it happened, and who initiated the action.

@@ -5,6 +5,10 @@ sidebar_label: PostgreSQL
 description: The Sumo Logic App for PostgreSQL is a unified logs and metrics app for monitoring your PostgreSQL database. The app consists of predefined dashboards that allow you to track performance, logins, connections, errors, and overall system health.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src={useBaseUrl('img/integrations/databases/postgresql.png')} alt="DB icon" width="75"/>
+
 The Sumo Logic App for PostgreSQL is a unified logs and metrics app for monitoring your PostgreSQL database. The app provides operational insights into the PostgreSQL database—installed on your local hardware—for real time analysis.
 
 The Sumo Logic App for PostgreSQL includes predefined searches and dashboards that allow you to monitor logs and metrics for the database. The logs enable you to monitor database activity, user activity, incoming connections, query execution time, and errors. The metrics allow you to monitor database resource utilization and throughput performance.
@@ -872,7 +876,7 @@ You can use template variables to drill down and examine the data on a granular 
 
 The **PostgreSQL - Overview** dashboard gives you an at-a-glance view of the state of your database clusters by monitoring errors, failed logins, slow queries and trends over time.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -892,7 +896,7 @@ The **PostgreSQL - Overview** dashboard gives you an at-a-glance view of the sta
 
 The** PostgreSQL Query Execution **dashboard gives you insights into the number and time taken to execute queries:
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -910,7 +914,7 @@ The** PostgreSQL Query Execution **dashboard gives you insights into the number 
 
 The** PostgreSQL - Database Metrics** dashboard allows you to monitor the database performance, which includes disk usage, deadlocks, buffer hits, server processes, commits, rollbacks, and scans.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -929,7 +933,7 @@ The** PostgreSQL - Database Metrics** dashboard allows you to monitor the databa
 
 The** PostgreSQL - Relation and Schema Metrics **dashboard allows you to view and analyze the metrics for monitoring the relations and schema in a cluster.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -956,7 +960,7 @@ If your database regularly performs more sequential scans over time, you can imp
 
 The** PostgreSQL - Security** dashboard provides insight into locations of incoming connections, failed authentications and top database errors and warnings.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -974,7 +978,7 @@ The** PostgreSQL - Security** dashboard provides insight into locations of incom
 
 The **PostgreSQL - Error Logs **dashboard** **provides insight into database error  logs by specifically monitoring errors, user activity, database activity and database shutdown/start events.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -993,7 +997,7 @@ The **PostgreSQL - Error Logs **dashboard** **provides insight into database err
 
 The** PostgreSQL - Slow Queries **dashboard** **provides insights into all slow queries executed on the database.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 

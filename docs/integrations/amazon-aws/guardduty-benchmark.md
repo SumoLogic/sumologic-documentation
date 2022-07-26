@@ -7,6 +7,8 @@ description: Amazon GuardDuty Benchmark
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
+<img src={useBaseUrl('img/integrations/amazon-aws/guardduty-benchmark.png')} alt="DB icon" width="50"/>
+
 [Amazon GuardDuty](https://aws.amazon.com/guardduty/) is an intelligence threat detection service that provides accurate, continuous monitoring to protect AWS accounts and workloads. This page explains the log collection process, and provides instructions for configuring log collection and installing the Amazon GuardDuty Benchmark App.
 
 The Sumo Logic **Amazon GuardDuty Benchmark App** integrates **Global Intelligence Service (GIS)** with Amazon GuardDuty for continuous machine learning and statistical baselines for KPIs (key performance indicators) and KRIs (key risk indicators). These baselines enable you to optimize security configuration and threat detection on all your AWS accounts.  
@@ -16,12 +18,7 @@ Global Intelligence baselines are computed by aggregating data for a given custo
 The App includes pre-configured dashboards and searches with visual displays for global threat baselines and real-time threat detection across your AWS environment, including threat sources and targets by geographic locations.
 
 
-## Video: Global Intelligence Service for Amazon GuardDuty
-
-This short video provides an overview of the app setup, along with an introduction to the app's preconfigured dashboards.
-
-
-## Configure Log Collection
+## Configuring Log Collection
 
 ### Log Types
 
@@ -30,7 +27,7 @@ The Sumo Logic App for GuardDuty requires the Amazon GuardDuty findings to be se
 If you have already Amazon GuardDuty data flowing into Sumo Logic, you can skip the steps in this section and install the Amazon GuardDuty Benchmark App from the Sumo Logic App Catalog.
 
 
-## Process overview
+### Process overview
 
 Sumo Logic provides a SAM application based on  [AWS Serverless Application Model (SAM) specification](https://docs.aws.amazon.com/lambda/latest/dg/serverless_app.html), and is published in the [AWS Serverless Application Repository](https://aws.amazon.com/serverless/serverlessrepo/). This SAM deployment:
 
@@ -225,7 +222,7 @@ To deploy the Sumo Logic GuardDuty Benchmark SAM App, do the following:
 
 
 
-#### Query sample
+#### Sample Query
 
 The following query is from the **Threats by Region** panel of the **Amazon GuardDuty - Threat Details** dashboard:
 
@@ -261,7 +258,7 @@ Amazon GuardDuty is an intelligence threat detection service that provides accur
 
 The **Amazon GuardDuty Global Baseline** dashboard displays a collection of stats averaged over Amazon GuardDuty findings for all Sumo Logic customers over the prior 7 days.
 
-**Use this dashboard to:
+Use this dashboard to:
 * Determine if you are being attacked from a particular region or actor around the globe.
 * Assess rare threats found by Amazon GuardDuty in your AWS environment.
 * Analyze threat shares targeted resource and severity.
@@ -273,7 +270,7 @@ The **Amazon GuardDuty Global Baseline** dashboard displays a collection of stat
 
 The **My Company's Amazon GuardDuty Threats** dashboard shows a company's stats for Amazon GuardDuty findings over the specified time interval. This provides detailed and summary for your company's threat mix, threat maps, threat shares, and threat resources.
 
-**Use this dashboard to:
+Use this dashboard to:
 * Determine the number of threats in your AWS account.
 * Determine the geographic origins of threats to your AWS account.
 * Analyze threats by resource type, severity, account ID, and AWS Security Group.
@@ -314,6 +311,6 @@ The **My Company's Threats: Timeline** dashboard provides a high-level view of t
 
 <img src={useBaseUrl('img/integrations/amazon-aws/GDB_My_Company_Threats_Timeline.png')} alt="Amazon GuardDuty Benchmark" />
 
-**Use this dashboard to:
+Use this dashboard to:
 * Review threat activity in your account over a specified time.  
 * Analyze threats to your account by region.  

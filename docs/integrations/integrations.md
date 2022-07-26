@@ -5,6 +5,10 @@ sidebar_label: Apps and Integrations
 description: Documentation for Sumo Logic apps and integrations.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src={useBaseUrl('img/integrations/integrations.png')} alt="Web servers icon" width="50"/>
+
 This category has documentation for Sumo Logic apps and integrations. Several of the guides below are partner-specific: Amazon and AWS, Microsoft and Azure, and Google. The rest of the app content is organized by functionality.
 
 Apps help you get started gaining insights from your data source by providing example searches and dashboards for common use cases. They are customized with your source configurations and populated in a folder selected by you. Feel free to edit them to get the results you want.

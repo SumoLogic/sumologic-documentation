@@ -5,6 +5,9 @@ sidebar_label: VMware
 description: VMware
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src={useBaseUrl('img/integrations/containers-orchestration/vmware.png')} alt="VMware dashboards" width="50" />
 
 The VMware App uses unified logs and metrics from the VMware cloud computing virtualization platform to enable monitoring of vCenter, ESXi hosts and individual virtual machines metrics with real-time date displayed in predefined dashboards.
 
@@ -16,7 +19,6 @@ See the [vSphere product page](https://www.vmware.com/products/vsphere.html) for
 ## Log and metric types  
 
 The Sumo Logic vCenter logs source and vCenter metrics source use the installed collector to gather the following data from VMWare:
-
 
 * VMWare Events using the Events API. See [Events API](https://code.vmware.com/apis/196/vsphere/doc/vim.event.EventManager.html) for more details.
 * VMWare Metrics using the Performance API. For more information, see [Performance API.](https://code.vmware.com/apis/196/vsphere/doc/vim.PerformanceManager.html)
@@ -98,9 +100,6 @@ This section explains how to set up a vCenter server, host, or VM to collect log
 An event is an action that triggers an event message on a vCenter Server. Event messages are not logged, but are instead stored in the vCenter Server database. The Sumo Logic Collector for VMware retrieves these messages using the vSphere python SDK.
 
 This procedure includes the following tasks:
-
-
-
 * [Configuring logs to be collected](https://help.sumologic.com/07Sumo-Logic-Apps/10Containers_and_Orchestration/VMware/01Collect_logs_and_metrics_for_the_VMware_ULM_App#To_configure_logs_to_be_collected.2C_do_the_following:)—Test running a python script from the directory containing the Sumo Logic scripts.
 * [Configuring a syslog or a file source](https://help.sumologic.com/07Sumo-Logic-Apps/10Containers_and_Orchestration/VMware/01Collect_logs_and_metrics_for_the_VMware_ULM_App#To_configure_a_syslog_source_for_the_Collector.2C_do_the_following:)—A Sumo Logic[ Syslog Source](https://help.sumologic.com/03Send-Data/Sources/01Sources-for-Installed-Collectors/Syslog-Source) operates like a Syslog server listening on the designated port to receive Syslog messages. The script supports syslog server, as well as generating a text file that can be ingested using [Local](https://help.sumologic.com/03Send-Data/Sources/01Sources-for-Installed-Collectors/Local-File-Source) or [Remote](https://help.sumologic.com/03Send-Data/Sources/01Sources-for-Installed-Collectors/Remote-File-Source) file source. A local file source is recommended as it has several benefits over Syslog, including no need to worry about connection retry, reading from the last pointer in a file, no data loss in the case of collector failure, and so on. Based on your preference, you can configure a syslog source, or a local or remote file source.
 
@@ -495,7 +494,7 @@ _sourceCategory = Labs/VMWare6.5 and ("error" or "fail" or "critical")
     * If following error is encountered: “pyVmomi.VmomiSupport.UnknownWsdlTypeError: 'ContentLibrary'”, remove TaskEvent and EventEx from the vmware_constants.py and try again.
 
 
-## Install the VMware App
+## Installing the VMware App
 
 This section provides instructions for installing the VMware App, as well as the descriptions of each of the app dashboards.
 
@@ -508,8 +507,6 @@ Locate and install the app you need from the **App Catalog**. If you want to see
 1. From the **App Catalog**, search for and select the app**.**
 2. Select the version of the service you're using and click **Add to Library**.
 
-
-28
 Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](https://help.sumologic.com/01Start-Here/Library/Apps-in-Sumo-Logic/Install-Apps-from-the-Library)
 
 1. To install the app, complete the following fields.
@@ -525,155 +522,107 @@ Once an app is installed, it will appear in your **Personal** folder, or other f
 Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
 
 
-## Dashboard Filters  
+## Viewing VMware Dashboards
 
 **Each dashboard has a set of filters** that you can apply to the entire dashboard, as shown in the following example. Click the funnel icon in the top dashboard menu bar to display a scrollable list of filters that narrow search results across the entire dashboard.
-
-
 
 **Each panel has a set of filters** that are applied to the results for that panel only, as shown in the following example. Click the funnel icon in the top panel menu bar to display a list of panel-specific filters.
 
 
-#### VMware - vCenter Operations - Overview
-32
-
+### VMware - vCenter Operations - Overview
 
 The **VMware -** **vCenter Operations - Overview **dashboard provides an at-a-glance view of unique clusters, ESXi hosts, unique VMs, and VM failures by ESXi host, as well as vCenter task trends, vSphere errors across clusters, VM operations over time, ESXi per-host metrics for CPU usage and idle time, memory usage and capacity, disk usage and datastore read rate, network usage and system uptime. It also displays data for vCenter alarms, user activity, and VM operations by user.
 
-**Use this dashboard to:**
-
-
-
+Use this dashboard to:
 * Get an at-a-glance overview of your entire VMware infrastructure.
 * Monitor VM failures, tasks, and errors.
 * Track user activity and operations.
 * Review summaries of the state of the components of the VMware infrastructure.
 * Assess infrastructure issues at a glance with the dashboard panels.
 
+<img src={useBaseUrl('img/integrations/containers-orchestration/VMware-Overview.png')} alt="VMware dashboards" />
 
-#### VMware - vCenter Errors - Analysis
-34
+
+### VMware - vCenter Errors - Analysis
 
 
 The** VMware - vCenter Errors - Analysis** dashboard provides detailed information about the errors across cluster and hosts. You can easily review error trends, top error events, and most recent error events.
 
-**Use this dashboard to:**
-
-
+Use this dashboard to:
 
 * Review 7 day error trends.
 * Quickly assess the most frequent and recurring error conditions.
 * Review error messages, host, cluster, and other details to help with debugging.
 
-
-35
-
+<img src={useBaseUrl('img/integrations/containers-orchestration/VMware-vCenter-Errors-Analysis.png')} alt="VMware dashboards" />
 
 
-#### VMware - Virtual Machine Errors - Analysis
-36
-
+### VMware - Virtual Machine Errors - Analysis
 
 The **VMware - Virtual Machine Errors - Analysis **dashboard provides an at-a-glance analysis of VM errors, including MAC address and UUID conflicts, upgrade and VM failures by host, fault tolerance errors, VM power failures, and general VM errors.
 
-**Use this dashboard to:**
-
-
-
+Use this dashboard to:
 * Monitor faulty VMs with performance or other issues.
 * Determine VMs with power on and off failures.
 * Assess VMs with fault tolerance issues.
 * Determine MAC address and  UUID conflicts, as well as primary VM failures.
 * Monitor overall VM health.
 
+<img src={useBaseUrl('img/integrations/containers-orchestration/VMware-Virtual-Machine-Errors-Analysis.png')} alt="VMware dashboards" />
 
-37
-
-
-
-#### VMware - Datastore
-38
-
+### VMware - Datastore
 
 The **VMware - Datastore **dashboard** **provides performance metrics on datastore read rates per ESXi host and VM, and datastore write rates per ESXi host and VM. A datastore is a manageable storage entity, usually used as a repository for virtual machine files including log files, scripts, configuration files, virtual disks, and so on.
 
-**Use this dashboard to:**
-
-
-
+Use this dashboard to:
 * Review of the datastore reads and writes by the virtual machines and ESXi hosts.
 * Identify excessive writes or reads by a VM or ESXi host.
 
-
-39
-
+<img src={useBaseUrl('img/integrations/containers-orchestration/VMware-Datastore.png')} alt="VMware dashboards" />
 
 
-#### VMware - Network
-40
-
+### VMware - Network
 
 The **VMware -** **Network **dashboard** **keeps track of the data in and data out of the ESXi hosts and virtual machines. This dashboard provides an at-a-glance analysis of network usage per ESXi host and VM, network InPacket rate per ESXi host and VM, network OutPacket rate per ESXi host and VM, and network 1 day comparison by host.
 
-**Use this dashboard to:**
-
-
-
+Use this dashboard to:
 * Identify excessing packet traffic in or out.
 * Identify network inactivity for a VM or host.
 * Track network usage.
 
+<img src={useBaseUrl('img/integrations/containers-orchestration/VMware-Network.png')} alt="VMware dashboards" />
 
-41
-
-
-
-#### VMware - Disk
-42
-
+### VMware - Disk
 
 The **VMware - Disk** dashboard keeps track of the disk usage, disk writes and reads by the ESXi hosts and virtual machines. You can easily review metrics for disk usage per ESXi host and VM, disk read rate per ESXi host and VM, disk write rate per ESXi host and VM, disk total read latency per host, and disk total write latency per host.
 
-**Use this dashboard to:**
-
-
+Use this dashboard to:
 
 * Identify excessive writes or reads by a VM or a ESXi host.
 * Track disk read and write latency.
 
-
-43
-
+<img src={useBaseUrl('img/integrations/containers-orchestration/VMware-Disk.png')} alt="VMware dashboards" />
 
 
-#### VMware - Memory
-44
-
+### VMware - Memory
 
 The **VMware - Memory** dashboard provides an at-a-glance analysis of memory usage by ESXi host and VM, memory granted by ESXi host and VM, and memory capacity by ESXi host.
 
-**Use this dashboard to:**
-
-
-
+Use this dashboard to:
 * Review of the memory usage per virtual machine and ESXi host.
 * Identify excessive memory usage by VM or ESXi host.
 * Track granted memory and memory capacity to determine memory needs and over provisioning.
 
-
-45
-
+<img src={useBaseUrl('img/integrations/containers-orchestration/VMware-Memory.png')} alt="VMware dashboards" />
 
 
-#### VMware - CPU
-46
-
+### VMware - CPU
 
 The **VMware -** **CPU** dashboard tracks the CPU consumed by the virtual machines and ESXi hosts with at-a-glance analysis of CPU usage, idle time, and VM CPU wait time.
 
-**Use this dashboard to:**
-
-
+Use this dashboard to:
 * Monitor spikes in CPU activity. Frequent spikes in CPU activity for a VM without any load may signify issues with the VM configurations.
 * Track CPU idle time.
 * Monitor VM wait time, the time a VM was ready to perform some action but wasn't able to because of CPU unavailability. This can help determine CPU needs of the infrastructure.
+
+<img src={useBaseUrl('img/integrations/containers-orchestration/VMware-CPU.png')} alt="VMware dashboards" />

@@ -7,14 +7,21 @@ description: PCI Compliance for Amazon VPC Flow Logs
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
+<img src={useBaseUrl('img/integrations/amazon-aws/pci.png')} alt="DB icon" width="50"/>
+
 The Sumo Logic App for Payment Card Industry (PCI) Compliance for Amazon VPC Flow Logs App offers dashboards to monitor systems, account and users activity to ensure that login activity and privileged users are within the expected ranges. The PCI Compliance for Amazon VPC Flow Logs App covers PCI requirements 01, 02, and 04.
 
 For more information on Amazon VPC Flow Logs, see http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/flow-logs.html
 
 
-## Collecting Logs and Metrics
+## Collect Logs for the PCI Compliance for Amazon VPC Flow Logs App
 
+VPC Flow Logs can be published to Amazon CloudWatch Logs and Amazon S3. Each method has advantages. Using an AWS S3 source is more reliable, while using a CloudFormation template allows you to customize your logs by adding more information and filtering unwanted data.
 
+You can use either of the following methods to collect Amazon VPC Flow Logs:
+
+* [Collect Amazon VPC Flow Logs using AWS S3 source](https://help.sumologic.com/07Sumo-Logic-Apps/01Amazon_and_AWS/Amazon_VPC_Flow_Logs/02Collect_Amazon_VPC_Flow_Logs_using_AWS_S3_Source)
+* [Collect Amazon VPC Flow Logs using a CloudFormation template](https://help.sumologic.com/07Sumo-Logic-Apps/01Amazon_and_AWS/Amazon_VPC_Flow_Logs/01Collect-Amazon-VPC-Flow-Logs-from-CloudWatch-Using-CloudFormation)
 
 
 ## Installing the PCI Compliance for Amazon VPC Flow Logs App
@@ -48,7 +55,7 @@ Panels will start to fill automatically. It's important to note that each panel 
 The Sumo Logic App for Payment Card Industry (PCI) Compliance for Amazon VPC Flow App offers dashboards to help you monitor that network traffic, network activities, and network security are within your expected ranges. The PCI Compliance for Amazon VPC Flow App covers PCI requirements 01, 02 and 04.
 
 
-### Amazon VPC Flow - PCI Req 01 - Accepted and Rejected Traffic
+### PCI Req 01 - Accepted and Rejected Traffic
 
 Monitor accepted and rejected traffic, drill down on accepted network traffic, or drill down on rejected network traffic.
 
@@ -66,7 +73,7 @@ Monitor accepted and rejected traffic, drill down on accepted network traffic, o
 * **Network Traffic Accepted (Failure) Top DestIP.** View a count of the top 10 destination IP addresses for rejected network traffic.
 
 
-### Amazon VPC Flow - PCI Req 01 - Traffic Direction Monitoring
+### PCI Req 01 - Traffic Direction Monitoring
 
 Monitor inbound and outbound traffic.
 
@@ -79,7 +86,7 @@ Monitor inbound and outbound traffic.
 * **Top 10 Host - Receiving Inbound Traffic.** View the top 10 hosts receiving inbound network traffic by destination host and megabytes received for the last 60 minutes.
 
 
-### Amazon VPC Flow - PCI Req 01, 02 - Data Access Monitoring
+### PCI Req 01, 02 - Data Access Monitoring
 
 Monitor data access.
 
@@ -91,7 +98,7 @@ Monitor data access.
 * **Top UDP Dest Ports.** View an aggregation table of the top UDP 10 destination ports and a count of how often they were accessed over the last 60 minutes.
 
 
-### Amazon VPC Flow - PCI Req 02, 04 - Insecure Data In Transit
+### PCI Req 02, 04 - Insecure Data In Transit
 
 Monitor cardholder data in transit.
 

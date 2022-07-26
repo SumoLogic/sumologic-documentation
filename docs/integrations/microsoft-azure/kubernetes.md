@@ -5,6 +5,10 @@ sidebar_label: Azure Kubernetes Service Control Plane
 description: Azure Kubernetes Service (AKS) - Control Plane
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src={useBaseUrl('img/integrations/containers-orchestration/k8s.png')} alt="k8s logo" width="50"/>
+
 The Sumo Logic App for Azure Kubernetes Service (AKS) - Control Plane provides visibility into the AKS control plane with operational insights into the API server, scheduler, control manager, and worker nodes. The app's preconfigured dashboards display resource-related metrics for Kubernetes deployments, clusters, namespaces, pods, containers, and daemonsets.
 
 [Azure Kubernetes Service (AKS)](https://docs.microsoft.com/en-us/azure/aks/) is a Kubernetes environment with clusters managed by Azure. AKS simplifies deploying and managing container-based applications, while automatically provisioning, upgrading, and scaling resources as needed.
@@ -220,24 +224,21 @@ All the dashboards are linked to the Explore tab so they can be easily accessed 
 
 ### Filter with template variables    
 
-
-
 Template variables provide dynamic dashboards that rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you can view dynamic changes to the data for a fast resolution to the root cause. For more information, see the [Filter with template variables](https://help.sumologic.com/Visualizations-and-Alerts/Dashboard_(New)/Filter_with_template_variables) page.
-
-
 
 You can use template variables to drill down and examine the data on a granular level.
 
 
 ### AKS Controller Manager Dashboard
 
-
 The **AKS Controller Manager** dashboard provides a high-level view of severity types and trends, along with details on scale operations, pod creation and deletion, and recent error messages.
 
-**Use this dashboard to:
+Use this dashboard to:
 
 * Find pod and scale operations performed by controller manager.
 * Find the severity of various controller manager events and analyze fatal and erroneous controller manager operation events.
+
+<img src={useBaseUrl('img/integrations/microsoft-azure/Overview.png')} alt="Azure Kubernetes Service AKS Control Plane dashboards" />
 
 
 
@@ -245,12 +246,14 @@ The **AKS Controller Manager** dashboard provides a high-level view of severity 
 
 The AKS API Server dashboard provides insights into API server severity events and trends, autoscaler and status code trends, top problem URLs, and a list of recent error messages.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 * Understand the status codes of requests made to Kube API Server.
 * Review the top 10 URLs with problem status codes.  
 * Review the severity of various Kube API Server events, and analyze any fatal or erroneous events of Kube API Server operations.
 * Find spikes or abnormal activity in the status codes of auto-scaler operations.
+
+<img src={useBaseUrl('img/integrations/microsoft-azure/Overview.png')} alt="Azure Kubernetes Service AKS Control Plane dashboards" />
 
 
 
@@ -260,7 +263,9 @@ The AKS API Server dashboard provides insights into API server severity events a
 
 The **AKS Scheduler** dashboard provides a high-level view of severity types and trends for the Kube scheduler, as well as a detailed list of error messages.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 * Find the severity of various Kube scheduler events.
 * Analyze fatal or erroneous events of Kube scheduler operations.
+
+<img src={useBaseUrl('img/integrations/microsoft-azure/Overview.png')} alt="Azure Kubernetes Service AKS Control Plane dashboards" />

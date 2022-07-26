@@ -7,10 +7,11 @@ description: AWS API Gateway
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Amazon API Gateway service allows you to create RESTful APIs and WebSocket APIs for real-time two-way communication applications in containerized and serverless environments, as well as web applications.
+AWS API Gateway service allows you to create RESTful APIs and WebSocket APIs for real-time two-way communication applications in containerized and serverless environments, as well as web applications.
 
 The Sumo Logic AWS API Gateway App provides insights into API Gateway tasks while accepting and processing concurrent API calls throughout your infrastructure, including traffic management, CORS support, authorization and access control, throttling, monitoring, and API version management.
 
+## Collecting Logs and Metrics for AWS API Gateway
 
 ### Log and Metric Types  
 
@@ -18,6 +19,91 @@ The AWS API Gateway app uses the following logs and metrics
 
 * [Amazon API Gateway metrics](https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-metrics-and-dimensions.html)
 * [CloudTrail API Gateway Data Event](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-data-events)
+
+
+### Collect Metrics for AWS API Gateway   
+
+* Sumo Logic supports collecting metrics using two source types
+    * Configure an [AWS Kinesis Firehose for Metrics Source](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/AWS_Kinesis_Firehose_for_Metrics_Source) (Recommended)
+        * Or
+    * Configure an [Amazon CloudWatch Source for Metrics](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/Amazon-CloudWatch-Source-for-Metrics)
+
+Namespace for **AWS API Gateway **Service is **AWS/ApiGateway**.
+
+* **Metadata**: Add an **account** field to the source and assign it a value that is a friendly name/alias to your AWS account from which you are collecting metrics. This name will appear in the Sumo Logic Explorer View. Metrics can be queried via the “account field”.
+
+
+### Collect AWS API Gateway CloudTrail Logs
+
+1. To your Hosted Collector, add an [AWS CloudTrail Source](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/AWS-CloudTrail-Source).
+    1. **Name**. Enter a name to display the new Source.
+    2. **Description**. Enter an optional description.
+    3. **S3 Region**. Select the Amazon Region for your** API Gateway** S3 bucket.
+    4. **Bucket Name**. Enter the exact name of your **API Gateway** S3 bucket.
+    5. **Path Expression**. Enter the string that matches the S3 objects you'd like to collect. You can use a wildcard (*) in this string. (DO NOT use a leading forward slash. See [Amazon Path Expressions](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/Amazon-Path-Expressions).)
+
+The S3 bucket name is not part of the path. Don’t include the bucket name when you are setting the Path Expression
+    6. **Source Category**. Enter aws/observability/cloud trail/logs
+    7. **Fields**. Add an **account** field and assign it a value that is a friendly name/alias to your AWS account from which you are collecting logs. This name will appear in the Sumo Logic Explorer View. Logs can be queried via the “account field”.
+
+    8. **Access Key ID and Secret Access Key**. Enter your Amazon [Access Key ID and Secret Access Key](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSGettingStartedGuide/AWSCredentials.html). Learn how to use Role-based access to AWS [here](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/AWS_Sources)
+    9. **Log File Discovery -> Scan Interval**. Use the default of 5 minutes. Alternately, enter the frequency. Sumo Logic will scan your S3 bucket for new data. Learn how to configure **Log File Discovery** [here](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/AWS_Sources).
+    10. **Enable Timestamp Parsing**. Select the check box.
+    11. **Time Zone**. Select Ignore time zone from the log file and instead use, and select UTC.
+    12. **Timestamp Format.** Select Automatically detect the format.
+    13. **Enable Multiline Processing**. Select the check box, and select Infer Boundaries.
+2. Click **Save**.
+
+
+### Field in Field Schema
+
+Login to Sumo Logic, go to Manage Data > Logs > Fields. Search for the “**apiname**” field. If not present, create it. Learn how to create and manage fields [here](https://help.sumologic.com/Manage/Fields#manage-fields).
+
+
+### Field Extraction Rule(s)
+
+Create Field Extraction Rule for CloudTrail Logs. Learn how to create Field Extraction Rule [here](https://help.sumologic.com/Manage/Field-Extractions/Create-a-Field-Extraction-Rule).
+
+
+```
+Rule Name: AwsObservabilityApiGatewayCloudTrailLogsFER
+Applied at: Ingest Time
+Scope (Specific Data):
+account=* eventname eventsource "apigateway.amazonaws.com"
+Parse Expression:
+| json "eventSource", "awsRegion", "responseElements", "recipientAccountId" as eventSource, region, responseElements, accountid nodrop
+| where eventSource = "apigateway.amazonaws.com"
+| "aws/apigateway" as namespace
+| json field=responseElements "name" as ApiName nodrop
+| tolowercase(ApiName) as apiname
+| fields region, namespace, apiname, accountid
+```
+
+
+
+### Centralized AWS CloudTrail Log Collection
+
+In case you have a centralized collection of cloudtrail logs and are ingesting them from all accounts into a single Sumo Logic cloudtrail log source, create following Field Extraction Rule to map proper AWS account(s) friendly name/alias. Create it if not already present / update it as required.
+```
+Rule Name: AWS Accounts
+Applied at: Ingest Time
+Scope (Specific Data):
+_sourceCategory=aws/observability/cloudtrail/logs
+```
+
+
+**Parse Expression**:
+
+Enter a parse expression to create an “account” field that maps to the alias you set for each sub account. For example, if you used the “dev” alias for an AWS account with ID "528560886094" and the “prod” alias for an AWS account with ID "567680881046", your parse expression would look like this:
+
+```sql
+| json "recipientAccountId"
+// Manually map your aws account id with the AWS account alias you setup earlier for individual child account
+| "" as account
+| if (recipientAccountId = "528560886094",  "dev", account) as account
+| if (recipientAccountId = "567680881046",  "prod", account) as account
+| fields account
+```
 
 
 ### Sample CloudTrail Log Message
@@ -35,16 +121,14 @@ The AWS API Gateway app uses the following logs and metrics
 "123408221234"}
 ```
 
-### Sample Query (Metric-based)
+### Sample Queries
 
-```sql title="Average Latency by API Name"
+```sql title="Average Latency by API Name (Metric-based)"
 Namespace=aws/apigateway metric=Latency statistic=Average account=* region=* apiname=* | avg by apiname, namespace, region, account
 ```
 
 
-### Sample Query (CloudTrail Log-based)
-
-```sql title="Top Error Codes"
+```sql title="Top Error Codes (CloudTrail Log-based)"
 "\"eventSource\":\"apigateway.amazonaws.com\"" errorCode account=dev Namespace=aws/apigateway region=us-east-1
 | json "eventName", "eventSource", "awsRegion", "userAgent", "recipientAccountId", "userIdentity", "requestParameters", "responseElements", "sourceIPAddress", "errorCode", "errorMessage", "requestID" as event_name, event_source, Region, user_agent, accountId1, userIdentity, requestParameters, responseElements, src_ip, errorCode, errorMessage, requestID nodrop
 | where event_source = "apigateway.amazonaws.com" and !isEmpty(errorCode)
@@ -57,11 +141,6 @@ Namespace=aws/apigateway metric=Latency statistic=Average account=* region=* api
 | count as eventCount by errorCode
 | top 10 errorCode by eventCount, errorCode asc
 ```
-
-
-## Collecting Logs and Metrics
-
-
 
 
 ## Installing the AWS API Gateway App
@@ -95,7 +174,7 @@ To collect CacheHitCount and CacheMissCount metrics, the API cache should be ena
 * Select Specific **Stage** and go to the **Settings** tab.
 * The API should have the "**Enable API Cache**" checkbox enabled to enable API caching and to collect the CacheHitCount and CacheMissCount metrics.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 * Get a high-level overview of your API Gateway infrastructure.
 * Compare API requests made today, yesterday, and last week to identify any abnormal deviations in load
@@ -112,7 +191,7 @@ To collect CacheHitCount and CacheMissCount metrics, the API cache should be ena
 
 **AWS API Gateway - Audit Events** dashboard provides detailed audit insights into API Gateway events by various dimensions including event names, trends, regions, user agents, and recipient account IDs.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 * Monitor all API Gateway-related audit logs available via CloudTrail events
 * Monitor incoming user activity locations for both successful and failed events to ensure the activity matches with expectations
@@ -127,7 +206,7 @@ To collect CacheHitCount and CacheMissCount metrics, the API cache should be ena
 
 **AWS API Gateway - Latency, Cache **dashboard provides insights into API Gateway performance including API requests, latency, API cache hits, and back-end cache misses.
 
-**Use this dashboard to:**
+Use this dashboard to:
 * Monitor the overall responsiveness of API calls (latency), comparing times (in milliseconds) between receiving a request from and returning a response to a client.
 * Monitor the responsiveness of the backend (integration latency), comparing times (in milliseconds) between API Gateway relay requests to and receiving a response back from the backend.
 * Monitor API cache hits and misses to optimize cache capacities across your infrastructure and achieve desired performance.
@@ -140,7 +219,7 @@ To collect CacheHitCount and CacheMissCount metrics, the API cache should be ena
 
 **AWS API Gateway - 4xx and 5xx Errors **dashboard provides insights into API Gateway HTTP 4xx and 5xx code errors throughout your infrastructure, including API requests, client-side errors, and server-side errors.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 * Monitor the total number of client-side errors based on API name and region across your infrastructure.
 * Monitor the total number of server-side errors based on API name and region across your infrastructure.

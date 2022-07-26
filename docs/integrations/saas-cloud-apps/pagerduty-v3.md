@@ -4,6 +4,11 @@ title: Sumo Logic App for PagerDuty V3
 sidebar_label: PagerDuty V3
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+
+<img src={useBaseUrl('img/integrations/saas-cloud-apps/pagerduty.png')} alt="DB icon" width="100"/>
+
 The Sumo Logic App for PagerDuty V3 collects incident messages from your PagerDuty account via a webhook, and displays incident data in pre-configured Dashboards that allow you to monitor and analyze the activity of your PagerDuty account and Services. The Sumo Logic App for PagerDuty V3 uses Webhooks V3, to provide enhanced context for alert object models.
 
 
@@ -20,7 +25,7 @@ This page provides instructions for configuring a Sumo Logic Hosted Collector an
 
 * [Event types](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/PagerDuty_v3/Collect_Logs_for_PagerDuty_V3#Event_Types)
 * [Log example](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/PagerDuty_v3/Collect_Logs_for_PagerDuty_V3#Log_Examples)
-* [Query example](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/PagerDuty_v3/Collect_Logs_for_PagerDuty_V3#Query_example)
+* [Sample Query](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/PagerDuty_v3/Collect_Logs_for_PagerDuty_V3#Query_example)
 * [Configure a Sumo Logic Collector and Source](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/PagerDuty_v3/Collect_Logs_for_PagerDuty_V3#Configure_a_Sumo_Logic_Collector_and_Source)
 * [Create a PagerDuty V3 Webhook](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/PagerDuty_v3/Collect_Logs_for_PagerDuty_V3#Create_a_PagerDuty_V3_Webhook)
 
@@ -42,7 +47,7 @@ For more information on the incident messages supported in Webhooks V3, see the 
 For examples of incident.triggered, incident.acknowledged and incident.resolved log messages, see the [PagerDuty Webhooks V3 Examples](https://developer.pagerduty.com/docs/ZG9jOjQ1MTg4ODQ0-overview#webhook-payload) page.
 
 
-#### Query example
+#### Sample Query
 
 The following Top Altering Services query is shown on the PagerDuty V3 - Overview dashboard.
 
@@ -150,7 +155,7 @@ You can use template variables to drill down and examine the data on a granular 
 
 **PagerDuty V3 - Overview Dashboard **provides a high-level view of top alerts, triggered incidents summary, as well as a breakdown of per-user incident assignments and comparisons over a specified time interval.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 * Review the services, incidents and policies that are causing the most alerts.
 * Analyze detailed information on incidents using the Incident Summary panel.
@@ -165,7 +170,7 @@ You can use template variables to drill down and examine the data on a granular 
 
 **PagerDuty V3 - Incidents Overview Dashboard** provides an at-a-glance analysis of triggered, acknowledged, escalated, assigned, and resolved incidents. This dashboard also provides a high-level view of incident trends and comparisons over specified time intervals.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 * Review a high-level view of incident summaries.
 * Compare the state of incidents with that of a previous time
@@ -177,7 +182,7 @@ You can use template variables to drill down and examine the data on a granular 
 
 **PagerDuty V3 - Incidents by  Urgency and Escalation Policy Dashboard** provides an overview analysis of urgency events, from low to high, as well as a breakdown of the services impacted by high urgency events.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 

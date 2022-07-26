@@ -7,6 +7,8 @@ description: AWS Application Load Balancer
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
+<img src={useBaseUrl('img/integrations/amazon-aws/alb.png')} alt="DB icon" width="50"/>
+
 The AWS Application Load Balancer functions at the application layer, receives requests, evaluates the listener rules in priority order to determine which rule to apply, and then selects a target from the target group.
 
 The Sumo Logic App for AWS Application Load Balancing uses logs and metrics to give you visibility into the health of your Application Load Balancer and target groups. Use the pre-configured dashboards to understand the latency, request and host status, threat intel, and HTTP backend codes by availability zone and target group.
@@ -40,15 +42,19 @@ For details on the metrics of AWS Application Load Balancing, see [here](https:/
 ### Sample Log Message
 
 
+```json
+https 2017-11-20T22:05:36 long-bill-lb 77.222.19.149:41148 10.168.203.134:23662 0.000201 0.401924 0.772005 500 200 262 455 \
+"GET https://elmagek.no-ip.org:443/json/v1/collector/histogram/100105037?startTimestamp=1405571270000&endTimestamp=1405574870000&bucketCount=60&_=1405574870206 HTTP/1.1" \
+"Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.5; en-US; rv:1.9.0.4) Gecko/2008102920 Firefox/3.0.4" \
+DH-RSA-AES256-GCM-SHA384 TLSv1.2 arn:aws:elasticloadbalancing:us-west-2:104030218370:targetgroup/Prod-frontend/92e3199b1rc814fe9 \
+"Root=1-58337364-23a8c76965a2ef7629b185e134"
 ```
-https 2017-11-20T22:05:36 long-bill-lb 77.222.19.149:41148 10.168.203.134:23662 0.000201 0.401924 0.772005 500 200 262 455 "GET https://elmagek.no-ip.org:443/json/v1/collector/histogram/100105037?startTimestamp=1405571270000&endTimestamp=1405574870000&bucketCount=60&_=1405574870206 HTTP/1.1" "Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.5; en-US; rv:1.9.0.4) Gecko/2008102920 Firefox/3.0.4" DH-RSA-AES256-GCM-SHA384 TLSv1.2 arn:aws:elasticloadbalancing:us-west-2:104030218370:targetgroup/Prod-frontend/92e3199b1rc814fe9 "Root=1-58337364-23a8c76965a2ef7629b185e134"
-```
 
 
 
-### Sample Query (Access Log Based)
+### Sample Queries
 
-```sql
+```sql title="Access Log Based"
 account={{account}} region={{region}} namespace={{namespace}}
 | parse "* * * * * * * * * * * * \"*\" \"*\" * * * \"*\"" as Type, DateTime, loadbalancer, Client, Target, RequestProcessingTime, TargetProcessingTime, ResponseProcessingTime, ElbStatusCode, TargetStatusCode, ReceivedBytes, SentBytes, Request, UserAgent, SslCipher, SslProtocol, TargetGroupArn, TraceId
 | where tolowercase(loadbalancer) matches tolowercase("{{loadbalancer}}")
@@ -64,11 +70,11 @@ account={{account}} region={{region}} namespace={{namespace}}
 ```
 
 
-
-### Query sample (Metric-based)  
-
-```bash
-account={{account}} region={{region}} Namespace={{namespace}} loadbalancer={{loadbalancer}} AvailabilityZone=* TargetGroup=* metric=HTTPCode_Target_5XX_Count Statistic=Sum | parse field= TargetGroup */* as Unused, TargetGroup | sum by account, region, namespace, loadbalancer, TargetGroup, AvailabilityZone
+```bash title="Metric-based"
+account={{account}} region={{region}} Namespace={{namespace}} \
+loadbalancer={{loadbalancer}} AvailabilityZone=* TargetGroup=* \
+metric=HTTPCode_Target_5XX_Count Statistic=Sum | parse field= TargetGroup */* \
+as Unused, TargetGroup | sum by account, region, namespace, loadbalancer, TargetGroup, AvailabilityZone
 ```
 
 
@@ -99,7 +105,7 @@ Panels will start to fill automatically. It's important to note that each panel 
 
 The** AWS Application Load Balancer - Overview** dashboard provides visibility into the health of your Application Load Balancer and target groups, with at-a-glance views of latency, request and host status, requests from malicious sources, and HTTP backend codes.
 
-**Use this dashboard to:**
+Use this dashboard to:
 * Monitor requests to each load balancer to ensure the load is being distributed as desired.
 * Quickly identify healthy and unhealthy hosts.
 * Monitor trends for load balancers errors, 4xx, and 5xx errors, as well as healthy and unhealthy hosts.
@@ -112,7 +118,7 @@ The** AWS Application Load Balancer - Overview** dashboard provides visibility i
 
 The **AWS Application Load Balancer - Response Analysis **dashboard provides insights into how your load balancers are responding to clients.
 
-**Use this dashboard to:**
+Use this dashboard to:
 * Monitor incoming client locations for all 5XX, 4XX and 3XX error responses.
 * Quickly correlate error responses using load balancer access logs and AWS CloudWatch metrics to determine the possible cause for failures and decide corrective actions.
 
@@ -123,7 +129,7 @@ The **AWS Application Load Balancer - Response Analysis **dashboard provides ins
 
 The **AWS Application Load Balancer - Target Group Response Analysis** dashboard provides insights into how various target groups are responding to client requests.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 * Monitor trends of all response codes for your target groups by LoadBalancer, Target Group, and availability zones.
 * Correlate response code trends across load balancer access logs and CloudWatch metrics to determine the root cause for failures.
@@ -135,7 +141,7 @@ The **AWS Application Load Balancer - Target Group Response Analysis** dashboard
 
 The** AWS Application Load Balancer - Latency Overview** dashboard provides insights into response times for load balancers, target groups, and availability zones, including backend log response times.
 
-**Use this dashboard to:**
+Use this dashboard to:
 * Monitor response times by load balancer, target group, and availability zone.
 * Monitor client latency and processing times for target groups.
 
@@ -156,7 +162,7 @@ Use this dashboard to:
 
 The** AWS Application Load Balancer - Connection and Host Status** dashboard provides insights into active and rejected connections, target connection errors, and healthy and unhealthy hosts.
 
-**Use this dashboard to:**
+Use this dashboard to:
 * Monitor active connections, new connections, rejected connections, and connection errors for the load balancer.
 * Monitor healthy and unhealthy host counts by the load balancer, target group, and availability zone across your infrastructure.
 
@@ -166,7 +172,7 @@ The** AWS Application Load Balancer - Connection and Host Status** dashboard pro
 
 The** AWS Application Load Balancer - Requests and Processed Bytes** dashboard provides insights into client requests, network traffic, and processed data.
 
-**Use this dashboard to:**
+Use this dashboard to:
 * Monitor client request load, network traffic, and processed bytes to determine how to best configure load balancers for optimal performance.
 * Determine how to best allocate backend resources and target groups based on load.
 
@@ -177,7 +183,7 @@ The** AWS Application Load Balancer - Requests and Processed Bytes** dashboard p
 
 The **AWS Application Load Balancer - Threat Intel** dashboard provides insights into incoming requests from malicious sources determined via [Sumo Logic’s Threat Intel feature](https://help.sumologic.com/07Sumo-Logic-Apps/22Security_and_Threat_Detection/Threat_Intel_Quick_Analysis/03_Threat-Intel-FAQ). Panels show detailed information on malicious IPs and the malicious confidence of each threat.
 
-**Use this dashboard to:**
+Use this dashboard to:
 * Identify known malicious IPs that are access your load-balancers and use firewall access control lists to prevent them from sending you traffic going forward
 * Monitor the malicious confidence level for all incoming malicious IP addresses the threats.
 

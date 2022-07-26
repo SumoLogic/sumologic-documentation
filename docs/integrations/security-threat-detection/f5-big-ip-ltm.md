@@ -5,6 +5,11 @@ sidebar_label: F5 - BIG-IP LTM
 description: The F5 - BIG-IP Local Traffic Manager (LTM) App helps you optimize and secure network traffic patterns coming into your data center using the F5 BIG-IP platform.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src={useBaseUrl('img/integrations/security-threat-detection/f5.png')} alt="thumbnail icon" width="75"/>
+
+
 The F5 - BIG-IP  Local Traffic Manager (LTM) App helps you optimize and secure network traffic patterns coming into your data center using the F5 BIG-IP platform.
 
 The Sumo Logic App for F5 - BIG-IP Local Traffic Manager (LTM) helps you optimize and secure network traffic patterns coming into your data center using the F5 BIG-IP platform. This App analyzes traffic flowing through the F5 Local Traffic Manager (LTM) and automatically detects threats using Sumo Logic Threat Intel. The Sumo Logic App for F5 - BIG-IP LTM provides pre-configured dashboards that allow you to monitor traffic details by application, facility, pool, active and non-responding hosts, connections, and logins. It also reports LTM CPU, disk usage, and outliers in LTM activities and traffic patterns.
@@ -160,7 +165,7 @@ curl -k --user admin:<BIGIP PWD> -H "Accept: application/json" -H "Content-Type:
 
 
 
-### Query sample
+### Sample Query
 17
 
 The following query sample is from the **F5 - BIG-IP LTM - Overview** Dashboard, **Pool Status** panel.
@@ -236,7 +241,7 @@ You can use template variables to drill down and examine the data on a granular 
 
 **F5 - BIG-IP LTM - Overview** dashboard provides details on the network traffic for applications, pools, and its status. It also provides information about violations triggered and their geo-location.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 * View geographic locations of incoming client requests.
 * Get a high-level view of top pools, pool status, and pool names by the application.
@@ -253,7 +258,7 @@ You can use template variables to drill down and examine the data on a granular 
 
 **F5 - BIG-IP LTM - Threat Analysis **dashboard provides an overview of the number of threats, their geographic location, and a breakdown by source using the Threat Intel App. This dashboard also provides details on the severity of threats, as well as the network, user name, and country of origin.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -272,7 +277,7 @@ You can use template variables to drill down and examine the data on a granular 
 
 **F5 - BIG-IP LTM - Metrics and Connections **dashboard provides an at-a-glance view of TCP connections, network traffic by host, and Traffic Manager resource usage.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -299,13 +304,13 @@ You can use template variables to drill down and examine the data on a granular 
 
 
 
-### User Session Events Dashboard 
+### User Session Events Dashboard
 29
 
 
 **F5 - BIG-IP LTM - User Session Events **dashboard provides an at-a-glance view of user activity and their geographic location. This dashboard also provides information on login trends, operating systems used, user session IDs, and users by their application profile.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 

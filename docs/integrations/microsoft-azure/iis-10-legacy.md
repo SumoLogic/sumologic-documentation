@@ -5,6 +5,10 @@ sidebar_label: IIS 10 (Legacy)
 description: IIS 10 (Legacy)
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src={useBaseUrl('img/integrations/microsoft-azure/microsoft_iis_10.jpg')} alt="thumbnail icon" width="150"/>
+
 The IIS 10 (Legacy) App monitors the performance and reliability of your Microsoft Internet Information Services (IIS) infrastructure, identifying customer-facing and internal operational issues. This app also provides the ability to monitor customer paths and interactions, so you can analyze how customers are using your product. The app provides predefined searches and Dashboards, that give visibility into your environment for real-time and historical analysis.
 
 
@@ -600,35 +604,23 @@ You can use filters to drill down and examine the data on a granular level.
 
 The **IIS 10 - Overview Dashboard** provides a high-level view of the performance and integrity of your Microsoft Internet Information Services (IIS) infrastructure. Dashboard panels display visual graphs and detailed information on IIS versions, platforms, and log formats. Panels also show visitor geographic locations, top app requests. OS platforms, response status, response times, and client and server errors.
 
-**Use this dashboard to:**
-
-
-
+Use this dashboard to:
 * Use this dashboard to get a high-level overview of sites, requests, client location, client platforms, error and threats identified.
 * Drill Down to specific use cases by clicking on specific panels of interest.
 
-
-47
-
+<img src={useBaseUrl('img/integrations/microsoft-azure/Overview.png')} alt="IIS 10 Legacy dashboards" />
 
 
 ### HTTP Error Dashboard
-48
-
 
 The **IIS 10 - HTTP Error Dashboard** provides detailed information on IIS error logging in HTTP. Dashboard panels show details on error events, top client and server IP addresses, top protocol versions and protocol status. Panels also show information on top reason phrases and verbs associated with HTTP errors, as well as top request details by reason.
 
-**Use this dashboard to:**
-
-
-
+Use this dashboard to:
 * Monitor errors logged by HTTP.SYS. The client request may be rejected by HTTP.SYS before it made it to an IIS worker process. In such cases the error is logged in the HTTPERR logs.
 * Identify the reason for failure. Check if the request violated the HTTP protocol, or if there was a WAS/the application pool failure.
 * Correct the error identified to ensure a consistent and satisfactory user experience.
 
-
-49
-
+<img src={useBaseUrl('img/integrations/microsoft-azure/Overview.png')} alt="IIS 10 Legacy dashboards" />
 
 
 ### Performance Snapshot Dashboard
@@ -637,7 +629,7 @@ The **IIS 10 - HTTP Error Dashboard** provides detailed information on IIS error
 
 The **IIS 10 - Performance Snapshot Dashboard** provides detailed information on your IIS infrastructure integrity and performance. Dashboard panels show details on Web Service uptime, active connections, requests, user activity, and total bytes transferred. Panels also provide HTTP Service Request Queues details, such as arrivals, queue size, cache hit rate, and rejection rate.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -647,9 +639,7 @@ The **IIS 10 - Performance Snapshot Dashboard** provides detailed information on
 * Monitor the load on your site by looking into the rate of all the requests and rates based on specific types of HTTP methods, to anticipate resource needs and allocate them accordingly.
 * Monitor Bytes/Files transferred, to check if there is a need to make page content more lightweight, or track the most typically transferred high data content. This can also be an indicator of a potential spike in traffic.
 
-
-51
-
+<img src={useBaseUrl('img/integrations/microsoft-azure/Overview.png')} alt="IIS 10 Legacy dashboards" />
 
 
 ### Performance Trends Dashboard
@@ -658,37 +648,26 @@ The **IIS 10 - Performance Snapshot Dashboard** provides detailed information on
 
 The **IIS 10 - Performance Trends Dashboard** provides details on ISS infrastructure trends for requests, active connections, bytes received and sent, files received and sent, queue size, arrival rate, and cache hit rate.
 
-**Use this dashboard to:**
-
-
-
+Use this dashboard to:
 * Monitor trends of various metrics to keep track of how requests are served over time and anticipate potential performance bottlenecks.
 * Acquire current performance snapshots of IIS servers. You can drill down to the Performance Snapshot by clicking the Requests Per Sec (All methods) panel.
 
-
-53
+<img src={useBaseUrl('img/integrations/microsoft-azure/Overview.png')} alt="IIS 10 Legacy dashboards" />
 
 
 
 ### Threat Analysis Dashboard
-54
-
 
 The **IIS 10 - Threat Analysis Dashboard** provides high-level views of threats throughout your IIS network. Dashboard panels display visual graphs and detailed information on Threats by Client IP, Threats by Referrer, and Threats by URL.
 
-**Use this dashboard to:**
-
-
-
+Use this dashboard to:
 * Identify potential threats and indicators of compromise.
 * Monitor if your site is access through:
     * bad Client IP
     * referred by bad referrer
     * your own webpage is page is tagged as malicious by CrowdStrike
 
-
-55
-
+<img src={useBaseUrl('img/integrations/microsoft-azure/Overview.png')} alt="IIS 10 Legacy dashboards" />
 
 
 ### Server Operation - Errors Dashboard
@@ -697,15 +676,14 @@ The **IIS 10 - Threat Analysis Dashboard** provides high-level views of threats 
 
 The **IIS 10 - Server Operation - Errors Dashboard** provides visual graphs and detailed information on server operation errors in your IIS infrastructure. Dashboard panels show server errors by server, server errors over time, server error outliers, and redirections by server. Panels also show client errors by server, client error outliers, top URLS with 404 errors, and response codes over time.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
 * Monitor server errors (5xx), client errors (4xx) and redirections (3xx). Client errors indicate missing/error pages, user made some mistakes and needs clear direction to fix it. Server errors indicate some issues on the server end.
 * Analyze redirection codes. Redirection indicates the document requested has moved and server is redirecting to new location. An SEO expert will be interested in 302 redirection code.
 
-
-57
+<img src={useBaseUrl('img/integrations/microsoft-azure/Overview.png')} alt="IIS 10 Legacy dashboards" />
 
 
 
@@ -715,15 +693,14 @@ The **IIS 10 - Server Operation - Errors Dashboard** provides visual graphs and 
 
 The **IIS 10 - Server Operation - Requests and Response Time Dashboard** provides visual graphs and detailed information for the integrity of performance throughout your IIS infrastructure. Dashboard panels show response time averages, cumulative percentiles, histograms, and outliers. Panels also show details for traffic distribution, slowest pages, slowest GET and POST requests, and average redirection time.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
 * Monitor response time details of each request. An increase in response time is a major cause for user dissatisfaction with any website.
 * Diagnose the reason(s) for the deterioration in performance, in conjunction with the Performance dashboards.
 
-
-59
+<img src={useBaseUrl('img/integrations/microsoft-azure/Overview.png')} alt="IIS 10 Legacy dashboards" />
 
 
 
@@ -733,7 +710,7 @@ The **IIS 10 - Server Operation - Requests and Response Time Dashboard** provide
 
 The **IIS 10 - Server Operation - Requests Stats Dashboard** provides visual graphs and statistics for requests made throughout your IIS infrastructure. Dashboard panels show the number of requests, request methods, request outliers, and requests by server. Panels also show details on GET, PUT, POST, and DELETE requests, as well as requests time compare and unique visitors outlier.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -742,8 +719,7 @@ The **IIS 10 - Server Operation - Requests Stats Dashboard** provides visual gra
 * Analyze request volume trends are against last 7 days to understand business fluctuations.
 * Identify how you are acquiring unique users with unique client outliers, and compare with positive and negative outliers.
 
-
-61
+<img src={useBaseUrl('img/integrations/microsoft-azure/Overview.png')} alt="IIS 10 Legacy dashboards" />
 
 
 
@@ -753,7 +729,7 @@ The **IIS 10 - Server Operation - Requests Stats Dashboard** provides visual gra
 
 The **IIS 10 - Traffic Insights - Apps and Requests Dashboard** provides high-level views and details on app requests throughout your IIS network. Dashboard panels show top app requests, app requests over time, top queries, and top referrers. Panels also show top user requests, user request percentiles, top clients, client request percentiles, and client IP stats.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -762,8 +738,7 @@ The **IIS 10 - Traffic Insights - Apps and Requests Dashboard** provides high-le
 * Monitor the most active clients with details on total requests, unique pages visited, and HTTP codes.
 * Understand client activities and behavior to determine frequency of visits and number of pages visited, to plan strategies.
 
-
-63
+<img src={useBaseUrl('img/integrations/microsoft-azure/Overview.png')} alt="IIS 10 Legacy dashboards" />
 
 
 
@@ -773,7 +748,7 @@ The **IIS 10 - Traffic Insights - Apps and Requests Dashboard** provides high-le
 
 The **IIS 10 - Traffic Insights - Content and Client Platform Dashboard** provides detailed information on the platforms available on your IIS network and its media traffic. Dashboard panels show details on operating systems, platform versions, as well as the browsers used on the various operating systems. Panels also show the top media types served, media types requested over time, and the top requested pages.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -781,16 +756,17 @@ The **IIS 10 - Traffic Insights - Content and Client Platform Dashboard** provid
 * Monitor operating systems (OS), browsers, and bots information available in user agents to analyze marketing campaigns and customer engagement. It also helps you to prioritize where engineering, support, and documentation teams should concentrate their efforts.
 * Find out which pages and file types are the most popular for your web site clients.
 
+<img src={useBaseUrl('img/integrations/microsoft-azure/Overview.png')} alt="IIS 10 Legacy dashboards" />
+
 
 
 
 ### Visitor Insights Dashboard
 
-
 The **IIS 10 - Visitors Insights Dashboard** provides at-a-glance details on visitors to your IIS network. Dashboard panels show the geographic distribution of worldwide visitors, United States visitors, visitor locations experiencing the highest number of errors, and the top visitors experiencing errors. Panels also show trends in visitors by country over time and trends in visitors by US region over time.
 
-**Use this dashboard to:**
-
-
+Use this dashboard to:*
 * Monitor the client location of visitors ti your site. This helps you to determine if you are getting hits from unexpected locations that should be tracked for security.
 * Monitor which clients are experiencing HTTP Client Errors (4XX). 4xx are user errors and should clearly state what the nature of the error and how it can be avoided in the future.
+
+<img src={useBaseUrl('img/integrations/microsoft-azure/Overview.png')} alt="IIS 10 Legacy dashboards" />

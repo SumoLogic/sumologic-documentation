@@ -4,9 +4,13 @@ title: Sumo Logic App for GitHub
 sidebar_label: GitHub
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src={useBaseUrl('img/integrations/app-development/GitHub.png')} alt="DB icon" width="100"/>
+
 The Sumo Logic App for GitHub connects to your GitHub repository at the Organization or Repository level, and ingests GitHub events via a webhook. These events populate the pre-configured Dashboards to give you a complete overview of your GitHub’s branch, issues, pull requests, user activity, and security events.
 
-1.png "image_tooltip")
+1
 
 The Sumo App for GitHub supports GitHub.com, not GitHub Enterprise.
 
@@ -35,7 +39,7 @@ For information on GitHub events, refer to [GitHub documentation](https://docs.g
 
 For troubleshooting, see the [GitHub Troubleshooting](https://help.sumologic.com/07Sumo-Logic-Apps/08App_Development/GitHub/GitHub-App-Dashboards#Troubleshooting) section.
 
-2.png "image_tooltip")
+2
 
 If you're just getting started with GitHub Events, see the Sumo Logic DevOps blog, "[A Beginner's Guide to GitHub Events](https://www.sumologic.com/blog/a-beginners-guide-to-github-events/)."
 
@@ -62,7 +66,7 @@ In this step, you create a Hosted Collector to receive Webhook Events from Githu
     * Click **Save** and make note of the HTTP address for the Source. You will supply it when you configure the GitHub Webhook in the next section.
 
 
-3.png "image_tooltip")
+3
 
 
 
@@ -95,7 +99,7 @@ Sumo Logic needs to understand the event type for incoming events. To enable thi
 2. Add Field ‎**x-github-event**‎.
 
 
-4.png "image_tooltip")
+4
 
 
 
@@ -185,7 +189,7 @@ Locate and install the app you need from the **App Catalog**. If you want to see
 2. Select the version of the service you're using and click **Add to Library**.
 
 
-5.png "image_tooltip")
+5
 Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](https://help.sumologic.com/01Start-Here/Library/Apps-in-Sumo-Logic/Install-Apps-from-the-Library)
 
 
@@ -219,7 +223,7 @@ Do the following to resolve:
 2. Add it again using the **Dropped Fields **option.
 
 
-6.png "image_tooltip")
+6
 
 
 
@@ -230,14 +234,14 @@ Do the following to resolve:
 
 The **GitHub - Overview** dashboard provides an at-a-glance view of your GitHub issues, pull requests, and the commits over time.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
 * Get an overview of Github commits, Pull Requests, and Issues.
 
 
-7.png "image_tooltip")
+7
 
 
 
@@ -245,14 +249,14 @@ The **GitHub - Overview** dashboard provides an at-a-glance view of your GitHub 
 
 The **GitHub - Branch Overview **dashboard provides information about the commits, file operations like addition, deletion, and modifications per branch.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 * Review branch-specific details.
 * Identify the type of files being added, deleted, or modified.
 * Review the commit details.
 
 
-8.png "image_tooltip")
+8
 
 
 
@@ -260,13 +264,13 @@ The **GitHub - Branch Overview **dashboard provides information about the commit
 
 The **GitHub - Issue Overview** dashboard provides detailed information about the issues opened, closed, and unassigned issues.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 * Review issue status including unassigned, open, and closed issues.
 * Quickly review the issue details and take action accordingly.
 
 
-9.png "image_tooltip")
+9
 
 
 
@@ -274,7 +278,7 @@ The **GitHub - Issue Overview** dashboard provides detailed information about th
 
 The **GitHub - Pull Request Overview** dashboard gives the view of pull requests by the target branch. It also provides a detailed view of the pull requests in comparison to created, merged, and declined.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -283,7 +287,7 @@ The **GitHub - Pull Request Overview** dashboard gives the view of pull requests
 * Identify open and not merged critical pull requests.
 
 
-10.png "image_tooltip")
+10
 
 
 
@@ -291,7 +295,7 @@ The **GitHub - Pull Request Overview** dashboard gives the view of pull requests
 
 The **GitHub - Security **dashboard provides detailed information on the security events and repositories.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -300,7 +304,7 @@ The **GitHub - Security **dashboard provides detailed information on the securit
 * View and manage teams.
 
 
-11.png "image_tooltip")
+11
 
 
 
@@ -308,7 +312,7 @@ The **GitHub - Security **dashboard provides detailed information on the securit
 
 The **GitHub - User Activity** dashboard provides detailed insight into all user activity and potential suspicious activities.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -317,4 +321,4 @@ The **GitHub - User Activity** dashboard provides detailed insight into all user
 * Identify any harmful file types added by users.
 
 
-12.png "image_tooltip")
+12

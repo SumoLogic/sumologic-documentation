@@ -5,6 +5,10 @@ sidebar_label: VMware Carbon Black
 description: The VMware Carbon Black App provides comprehensive visibility into the security posture of your endpoints, enabling you to determine the effects of a breach across your environment. The App provides visibility into key endpoint security data with preconfigured dashboards for alerts, threats intelligence, feeds, sensors, alerts, users, hosts, processes, IOCs, devices and network status.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src={useBaseUrl('img/integrations/security-threat-detection/vmcarecb.png')} alt="thumbnail icon" width="75"/>
+
 Sumo Logic provides a complete security analytics solution by allowing you to correlate, validate and investigate VMware Carbon Black endpoint alerts with alerts from other security vendors and security threat feeds to identify and remediate the root causes of new security threats.
 
 The Sumo Logic App for VMware Carbon Black provides visibility into key endpoint security data from VMware Carbon Black EDR and Endpoint Standard with pre-configured dashboards for alerts, threats intelligence, feeds, sensors, alerts, users, hosts, processes, IOCs, devices, and network status.
@@ -345,7 +349,7 @@ alliance_data_bit9endpointvisibility='74ccc9e8-ffc6-4e0b-ba88-0e947cf7b146' alli
 
 
 
-### Query example
+### Sample Query
 22
 
 
@@ -457,7 +461,7 @@ You can use filters to drill down and examine the data on a granular level.
 
 The **Carbon Black - EDR - Overview** dashboard provides a high-level view of the state of your network infrastructure and systems. The panels highlight detected threats, hosts, top feeds and IOC’s, top processes, top watchlists, and alert trends.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -477,7 +481,7 @@ The **Carbon Black - EDR - Overview** dashboard provides a high-level view of th
 
 The **Carbon Black - EDR - Alerts** dashboard provides detailed information on the alerts in your environment, including alerts by mode, OS, report, and groups. The panels also show alert trends, recent alerts, and top users.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -496,7 +500,7 @@ The **Carbon Black - EDR - Alerts** dashboard provides detailed information on t
 
 The** Carbon Black - EDR - Feeds** dashboard provides detailed information on total feeds, feed trends, top and recent feeds, feed comparisons, and processes related to feeds.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -515,7 +519,7 @@ The** Carbon Black - EDR - Feeds** dashboard provides detailed information on to
 
 The** Carbon Black - EDR - Indicators of Compromise** dashboard shows details on indicators of a compromised environment, as well as status for IOCs. The panels also provide an at-a-glance view of top malicious IPv4 addresses, top IOC DNSs, queries and query based feeds.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -534,7 +538,7 @@ The** Carbon Black - EDR - Indicators of Compromise** dashboard shows details on
 
 The** Carbon Black - EDR - Network **dashboard provides networking details for top protocols, local and remote ports, and unique IP addresses.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -553,7 +557,7 @@ The** Carbon Black - EDR - Network **dashboard provides networking details for t
 
 The** Carbon Black - EDR - Processes** dashboard provides details on the processes that generate events.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -571,7 +575,7 @@ The** Carbon Black - EDR - Processes** dashboard provides details on the process
 
 The** Carbon Black - EDR - Sensors** dashboard provides details of the sensors in your environment, such as sensor activity, trends and activity over time, and operating system.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -589,7 +593,7 @@ The** Carbon Black - EDR - Sensors** dashboard provides details of the sensors i
 
 The** Carbon Black - EDR - Threat Intelligence** dashboard allows you to monitor threats on your network, categorized by feed, score, and severity. You can view recent threats, trends over time,  and hosts affected by threats.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -608,7 +612,7 @@ The** Carbon Black - EDR - Threat Intelligence** dashboard allows you to monitor
 
 The** Carbon Black - EDR - User and Host Alerts** dashboard provides an at-a-glance view of user and host activity.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -628,7 +632,7 @@ The** Carbon Black - EDR - User and Host Alerts** dashboard provides an at-a-gla
 
 The** Carbon Black - EDR - Watchlists** dashboard provides details on watchlists, including the number of watchlists, top watchlists, trends, and comparisons over time.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -646,7 +650,7 @@ The** Carbon Black - EDR - Watchlists** dashboard provides details on watchlists
 
 The** Carbon Black - Endpoint Standard - Overview** dashboard provides a high-level view of the state of your network security, showing the number of detected threats, alerts, indicators of compromise, devices, users, and groups. The panels also highlight alert trends, top users, indicators, devices, applications, and reasons.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -665,7 +669,7 @@ The** Carbon Black - Endpoint Standard - Overview** dashboard provides a high-le
 
 The** Carbon Black - Endpoint Standard - Indicators of Compromise** dashboard provides an at-a-glance view of indicators of threats to a secure network by severity, application, and the number of unique instances. A breakdown of each known indicator is also shown.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -683,7 +687,7 @@ The** Carbon Black - Endpoint Standard - Indicators of Compromise** dashboard pr
 
 The **Carbon Black - Endpoint Standard - Threat Intelligence** dashboard provides details on the threats on your network, including the number of threats, their severity, and threat outliers. The panels also show details on the top devices affected by threats, recent threats, and a rating score of threats.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -701,7 +705,7 @@ The **Carbon Black - Endpoint Standard - Threat Intelligence** dashboard provide
 
 The** Carbon Black - Endpoint Standard - Alerts** dashboard provides detailed information on security-related alerts in your environment, including the number of alerts, severity, and trends over time. The panels also show information on alert policies, device operating systems (OS), and most recent alerts.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -720,7 +724,7 @@ The** Carbon Black - Endpoint Standard - Alerts** dashboard provides detailed in
 
 The** Carbon Black - Endpoint Standard - Device** dashboard provides a high-level view of the devices on your network, including the number of devices, geographic locations, and operating systems. The panels also show information on device groups, incidents, alert severity, and target priority.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 

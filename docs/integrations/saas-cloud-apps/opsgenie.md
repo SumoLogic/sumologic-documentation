@@ -4,6 +4,11 @@ title: Sumo Logic App for Opsgenie
 sidebar_label: Opsgenie
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+
+<img src={useBaseUrl('img/integrations/saas-cloud-apps/opsgenie.png')} alt="DB icon" width="100"/>
+
 
 The Opsgenie App provides at-a-glance views and detailed analytics for alerts on your DevOps environment, allowing you to effectively monitor and gain valuable insights into your incidents and incident handling operations.
 
@@ -182,7 +187,7 @@ You can use template variables to drill down and examine the data on a granular 
 
 The **Opsgenie - Overview Dashboard** provides a high level view of alert types, details, trends, and comparisons. The at-a-glance graphs are an easy to access visual reference for alert breakdowns by source, team, priority, recipient, and tags.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -199,7 +204,7 @@ The **Opsgenie - Overview Dashboard** provides a high level view of alert types,
 
 The **Opsgenie - Alert Details Dashboard** provides detailed graphs and analytics for alert outliers, escalated alerts, and alert summaries.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -216,7 +221,7 @@ The **Opsgenie - Alert Details Dashboard** provides detailed graphs and analytic
 
 The **Opsgenie - Alert Breakdown Dashboard** provides visual graphs and detailed tables with analytics on alerts by priority, source, team, users, tags, and recipient, over time and by comparison.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 

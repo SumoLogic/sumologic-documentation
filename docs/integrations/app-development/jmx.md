@@ -4,6 +4,11 @@ title: Sumo Logic App for Java Management Extensions (JMX)
 sidebar_label: JMX
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src={useBaseUrl('img/integrations/app-development/jmx.png')} alt="DB icon" width="50"/>
+
+
 Java Management Extensions (JMX) is a standard component of the Java Platform. JMX gives developers a standard and simple way to manage resources, including services, devices, and applications. JMX is dynamic, so you can manage and monitor resources as soon as they are created, implemented, or installed.
 
 The Sumo Logic App for** **JMX** ** allows you to analyze and gain insights about Java applications. The dashboards provide a quick glance at various deployment metrics like memory, CPU, GC performance, and thread behavior, so you can troubleshoot unexpected behavior in your Java environment and the applications running in it.
@@ -344,7 +349,7 @@ annotations:
 
 
 
-### Query sample
+### Sample Query
 
 This query sample is from the **CPU Load Vs Current Threads** panel of **JMX - Overview** dashboard.
 
@@ -410,7 +415,7 @@ You can use template variables to drill down and examine the data on a granular 
 
 The **JMX - Overview** dashboard provides a quick summary of CPU and memory usage by different deployments. It also shows key statistics like JVM uptime, process versus system CPU load, committed versus used memory, objects collected by GC, and time taken by the last GC run server-wise.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -429,7 +434,7 @@ The **JMX - Overview** dashboard provides a quick summary of CPU and memory usag
 
 The **JMX - Memory** dashboard shows the percentage of the heap and non-heap memory used, physical and swap memory usage of your java virtual machine.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -446,7 +451,7 @@ The **JMX - Memory** dashboard shows the percentage of the heap and non-heap mem
 
 The **JMX - CPU** dashboard shows the process and system CPU usage. It also shows the operating system information of your java virtual machine.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -462,7 +467,7 @@ The **JMX - CPU** dashboard shows the process and system CPU usage. It also show
 
 The **JMX - Garbage Collector** dashboard shows key Garbage Collector statistics like the duration of the last GC run, objects collected, threads used, and memory cleared in the last GC run of your java virtual machine.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -478,7 +483,7 @@ The **JMX - Garbage Collector** dashboard shows key Garbage Collector statistics
 
 The **JMX - Thread** dashboard shows key information about the number and type of threads deadlocked, peak, and GC threads of your java virtual machine running on the deployment.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -494,7 +499,7 @@ The **JMX - Thread** dashboard shows key information about the number and type o
 
 The **JMX - Memory Pool **dashboard provides key information about the memory pool usage, peak usage, collection usage, garbage collection across various memory pools of your Java virtual machine.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 
@@ -511,7 +516,7 @@ The **JMX - Memory Pool **dashboard provides key information about the memory po
 
 The **JMX - Class Loading and Compilation** dashboard shows key information about the rate of total loaded class, compilation time, unloaded classes of your java virtual machine.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 
 

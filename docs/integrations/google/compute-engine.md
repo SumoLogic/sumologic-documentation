@@ -311,7 +311,7 @@ Panels will start to fill automatically. It's important to note that each panel 
 ## Viewing Google Compute Engine Dashboards
 
 
-### Google Compute Engine Overview
+### Overview
 
 See the overview of your Google Compute Engine including the messages, instance activities, operations, and users.
 
@@ -328,7 +328,7 @@ See the overview of your Google Compute Engine including the messages, instance 
 **Top 10 Users.** See the top 10 users by requests in the last 24 hours on a column chart.
 
 
-### Google Compute Engine Activity
+### Activity
 
 See the details of projects, zones, instances, and message severity in your Google Compute Engine.
 
@@ -347,7 +347,7 @@ See the details of projects, zones, instances, and message severity in your Goog
 **Severe Messages**. See the count of the severe messages in the last hour on a line chart.
 
 
-### Google Compute Engine Severity
+### Severity
 
 See the details of message severities - emergency, alert, critical, error, and warning.
 
@@ -376,7 +376,7 @@ See the details of message severities - emergency, alert, critical, error, and w
 **Recent Warning Messages**. See the details of the messages with the severity of Warning in the last hour including the timestamp, user, method, instance, and message displayed in a table.
 
 
-### Google Compute Engine Users
+### Users
 
 See the details of users by activity, and users by message severity.
 
