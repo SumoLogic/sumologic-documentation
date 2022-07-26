@@ -161,7 +161,7 @@ Once an app is installed, it will appear in your **Personal** folder, or other f
 Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
 
 
-### Dashboards
+## Dashboards
 
 #### Palo Alto 10 - Security Analytics - Communication via Critical Ports
 
@@ -171,6 +171,7 @@ Panels will start to fill automatically. It's important to note that each panel 
 
 Additionally at the top of the dashboard are two table containing analytics on known and unknown applications connections using the ports listed above.
 
+<img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/Palo-Alto-10-Security-Analytics-Communication-via-Critical-Ports.png')} alt="Palo Alto Firewall 10 Security Dashboards" />
 
 #### Palo Alto 10 - Security Analytics - Outbound Traffic and Potential Exfiltration Activity
 
@@ -178,7 +179,7 @@ Additionally at the top of the dashboard are two table containing analytics on k
 
 **Use case: **You can use this dashboard to review volumes of outbound traffic by host, by application, and timeframe comparisons with last week. Increased and unaccounted for increases in traffic may be the result of unauthorized exfiltration of information. Additional analysis is provided for DNS traffic alone as large amounts of DNS traffic are not part of normal operations.
 
-
+<img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/Palo-Alto-10-Security-Analytics-Outbound-Traffic-and-Potential-Exfiltration-Activity.png')} alt="Palo Alto Firewall 10 Security Dashboards" />
 
 
 #### Palo Alto 10 - Security Analytics - Potentially Malicious Activity
@@ -187,7 +188,7 @@ Additionally at the top of the dashboard are two table containing analytics on k
 
 **Use case:** You can use this dashboard to analyze attempted and successful connections to IP addresses on threat intelligence lists both inbound and outbound. Additionally you can view connections to geolocation IP addresses associated with countries on the OFAC list (USA embargo list). Finally the bottom panel provides analysis on vertical port scans (one target, scanned on multiple network ports) and horizontal port scans (same port scanned across multiple destinations.)
 
-
+<img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/Palo-Alto-10-Security-Analytics-Potentially-Malicious-Activity.png')} alt="Palo Alto Firewall 10 Security Dashboards" />
 
 
 #### Palo Alto 10 - Security Monitoring - THREAT Log by Category
@@ -196,20 +197,21 @@ Additionally at the top of the dashboard are two table containing analytics on k
 
 **Use case:** You can use this dashboard to review THREAT events in summary or broken down by category: Command-and-control, Phishing, Malware, Proxy Anonymizers, Newly Registered Domains, Cryptocurrency, Questionable,  and High-Risk.
 
+<img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/Palo-Alto-10-Security-Monitoring-THREAT-Log-by-Category.png')} alt="Palo Alto Firewall 10 Security Dashboards" />
 
 #### Palo Alto 10 - Security Monitoring - THREAT Logs by Severity
-
 
 **Dashboard description:** See analytics about the THREAT type logs provided by the firewall. These are the indications of security events detected by the firewall’s defensive measures such as anti-malware, network intrusion detection, and the like.   
 
 **Use case:** You can use this dashboard to review THREAT events broken down by severity, allowing you to focus on the critical events first but also providing events of lesser severity for additional triage and investigation if necessary.
 
-
+<img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/Palo-Alto-10-Security-Monitoring-THREAT-Log-by-Severity.png')} alt="Palo Alto Firewall 10 Security Dashboards" />
 
 
 #### Palo Alto 10 - Security Monitoring - TRAFFIC Log Overview
 
-
 **Dashboard description:** See monitoring of allowed and denied traffic over time by volume and host.
 
 **Use case:** You can use this dashboard to monitor allowed and denied traffic through the firewall. Analysis is provided over time and in lists of top 10 sources, destinations, and hosts.
+
+<img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/Palo-Alto-10-Security-Monitoring-TRAFFIC-Log-Overview.png')} alt="Palo Alto Firewall 10 Security Dashboards" />
