@@ -135,7 +135,7 @@ Panels include:
 * Top 10 Blocked Domains
 
 
-### Security Detail Dashboard
+### Security Detail
 
 Security Detail Dashboard provides insights into DNS activities such as number of DNS requests and data throughput by VPC and instance ID. The Dashboard also provides a detailed drill down per request, displaying information such as the request, request type, ASN Number and ASN Org Name and DNS Resolver Firewall Actions.
 
@@ -169,7 +169,7 @@ Panels include:
 * Threat Outlier
 
 
-### Threat Intel Dashboard
+### Threat Intel
 
 The Threat Intel Dashboard provides details of AWS DNS Resolver Queries that matches the built-in CrowdStrike threat intelligence data with known malicious IP addresses and Domains, allowing for real-time security analytics to help detect threats in your environment and protect against cyber attacks.
 

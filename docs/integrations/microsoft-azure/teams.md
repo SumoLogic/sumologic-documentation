@@ -8,6 +8,8 @@ description: Microsoft Teams
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 
+<img src={useBaseUrl('img/integrations/microsoft-azure/teams.svg')} alt="thumbnail icon" width="50" />
+
 The Microsoft Teams app provides out-of-the-box dashboards to monitor users, teams, channels and permission changes.
 
 
@@ -43,7 +45,7 @@ Sample Log Message
   "UserId":"email@domain.com",
   "TeamGuid":"19:caac0ef5091e431aa45a6b6ec4a6723a@thread.tacv2",
   "TeamName":"My Team"
-Query sample  
+Sample Query  
 _sourceCategory="O365/General"
 | json "Workload", "Operation" , "UserId" as workload, operation, email
 | where workload = "MicrosoftTeams"

@@ -8,6 +8,8 @@ description: Azure Network Watcher
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 
+<img src={useBaseUrl('img/integrations/microsoft-azure/network-watcher.png')} alt="thumbnail icon" width="75"/>
+
 The Sumo Logic App for Azure Network Watcher leverages Network Security Group (NSG) flow logs to provide real-time visibility and analysis of your Azure Network. This App provides preconfigured Dashboards that allow you to monitor inbound traffic, outliers in traffic flow, and denied traffic flows.
 
 

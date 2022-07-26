@@ -119,7 +119,7 @@ compliance="0"
 
 
 
-### Query sample
+### Sample Query
 8
 
 

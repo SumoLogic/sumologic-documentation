@@ -265,7 +265,7 @@ The following table shows sample log messages for different log types.
 
 
 
-#### Query sample
+#### Sample Query
 
 This sample Query is from the **Jobs in Progress** panel of the **Jenkins - Job Overview** dashboard.
 

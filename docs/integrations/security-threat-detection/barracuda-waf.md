@@ -169,7 +169,7 @@ The following table shows sample log messages for the corresponding log types.
 
 **INSERT TABLE**
 
-#### Query sample
+#### Sample Query
 12
 
 

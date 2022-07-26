@@ -303,14 +303,14 @@ For more information on Events, please refer to[ Streaming API Event Dictionary]
 
 
 
-### Query examples
+### Sample Querys
 16
 
 This section provides query examples for each event type.
 
 #### Detection Event   
 
-```bash title="Query example"
+```bash title="Sample Query"
 _sourceCategory=*Crowdstrike*  DetectionSummaryEvent
 | json "metadata.eventType", "metadata.customerIDString", "metadata.eventCreationTime" as event_type, customer_id, event_time
 | formatDate(fromMillis(event_time), "MM/dd/yyyy HH:mm:ss:SSS") as event_time
@@ -325,7 +325,7 @@ _sourceCategory=*Crowdstrike*  DetectionSummaryEvent
 
 #### Authentication Event
 
-```bash title="Query example"
+```bash title="Sample Query"
 _sourceCategory=*Crowdstrike*  AuthActivityAuditEvent (userAuthenticate or twoFactorAuthenticate)
 | json "metadata.eventType", "metadata.customerIDString", "metadata.eventCreationTime" as event_type, customer_id, event_time
 | formatDate(fromMillis(event_time), "MM/dd/yyyy HH:mm:ss:SSS") as event_time
@@ -337,7 +337,7 @@ _sourceCategory=*Crowdstrike*  AuthActivityAuditEvent (userAuthenticate or twoFa
 
 #### Detection Status Update
 
-```bash title="Query example"
+```bash title="Sample Query"
 _sourceCategory=*Crowdstrike*  UserActivityAuditEvent
 | json "metadata.eventType", "metadata.customerIDString", "metadata.eventCreationTime" as event_type, customer_id, event_time
 | formatDate(fromMillis(event_time), "MM/dd/yyyy HH:mm:ss:SSS") as event_time

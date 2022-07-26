@@ -71,7 +71,7 @@ _index=sumologic_search_usage_per_query  analytics_tier="Infrequent"
 ```
 
 
-## Query sample
+## Sample Query
 
 
 The following query is from the **Data Scanned Over Time** panel of the **Infrequent Cost **dashboard.

@@ -59,7 +59,7 @@ In this step you set up AWS WAF to send log data to an S3 bucket using an Kinesi
 
 
 
-### Query sample  
+### Sample Query  
 
 
 #### Client IP Threat Info
@@ -100,7 +100,7 @@ Once an app is installed, it will appear in your **Personal** folder, or other f
 Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
 
 
-## Viewing the AWS WAFDashboards
+## Viewing AWS WAF Dashboards
 
 ### AWS WAF Overview
 
@@ -110,8 +110,6 @@ See an overview of threats detected and traffic passing through AWS WAF.
 
 
 ### AWS WAF Threat Intelligence
-12
-
 
 See details of threats allowed and blocked by AWS WAF.
 
@@ -120,8 +118,6 @@ See details of threats allowed and blocked by AWS WAF.
 
 
 ### AWS WAF Traffic
-14
-
 
 See details of allowed and blocked AWS WAF traffic by location, rules and outliers.
 

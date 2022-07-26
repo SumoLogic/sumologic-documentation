@@ -7,6 +7,8 @@ description: The Sumo Logic App for Azure Active Directory presents information 
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
+<img src={useBaseUrl('img/integrations/microsoft-azure/ad.png')} alt="thumbnail icon" width="75"/>
+
 Azure Active Directory is a cloud-based directory and identity management service that provides directory services, application access management, and identity protection. The Sumo Logic App for Azure helps you monitor activity in the Azure Active Directory. The dashboards provide insight into role management, user management, group management, successful and failed sign-in events, directory management, and application management data that helps you understand your users' experience.
 
 The app uses the following log types:

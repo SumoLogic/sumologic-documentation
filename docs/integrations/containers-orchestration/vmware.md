@@ -100,9 +100,6 @@ This section explains how to set up a vCenter server, host, or VM to collect log
 An event is an action that triggers an event message on a vCenter Server. Event messages are not logged, but are instead stored in the vCenter Server database. The Sumo Logic Collector for VMware retrieves these messages using the vSphere python SDK.
 
 This procedure includes the following tasks:
-
-
-
 * [Configuring logs to be collected](https://help.sumologic.com/07Sumo-Logic-Apps/10Containers_and_Orchestration/VMware/01Collect_logs_and_metrics_for_the_VMware_ULM_App#To_configure_logs_to_be_collected.2C_do_the_following:)—Test running a python script from the directory containing the Sumo Logic scripts.
 * [Configuring a syslog or a file source](https://help.sumologic.com/07Sumo-Logic-Apps/10Containers_and_Orchestration/VMware/01Collect_logs_and_metrics_for_the_VMware_ULM_App#To_configure_a_syslog_source_for_the_Collector.2C_do_the_following:)—A Sumo Logic[ Syslog Source](https://help.sumologic.com/03Send-Data/Sources/01Sources-for-Installed-Collectors/Syslog-Source) operates like a Syslog server listening on the designated port to receive Syslog messages. The script supports syslog server, as well as generating a text file that can be ingested using [Local](https://help.sumologic.com/03Send-Data/Sources/01Sources-for-Installed-Collectors/Local-File-Source) or [Remote](https://help.sumologic.com/03Send-Data/Sources/01Sources-for-Installed-Collectors/Remote-File-Source) file source. A local file source is recommended as it has several benefits over Syslog, including no need to worry about connection retry, reading from the last pointer in a file, no data loss in the case of collector failure, and so on. Based on your preference, you can configure a syslog source, or a local or remote file source.
 

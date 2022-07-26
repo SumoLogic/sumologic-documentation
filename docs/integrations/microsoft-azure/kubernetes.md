@@ -7,6 +7,8 @@ description: Azure Kubernetes Service (AKS) - Control Plane
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
+<img src={useBaseUrl('img/integrations/containers-orchestration/k8s.png')} alt="k8s logo" width="50"/>
+
 The Sumo Logic App for Azure Kubernetes Service (AKS) - Control Plane provides visibility into the AKS control plane with operational insights into the API server, scheduler, control manager, and worker nodes. The app's preconfigured dashboards display resource-related metrics for Kubernetes deployments, clusters, namespaces, pods, containers, and daemonsets.
 
 [Azure Kubernetes Service (AKS)](https://docs.microsoft.com/en-us/azure/aks/) is a Kubernetes environment with clusters managed by Azure. AKS simplifies deploying and managing container-based applications, while automatically provisioning, upgrading, and scaling resources as needed.

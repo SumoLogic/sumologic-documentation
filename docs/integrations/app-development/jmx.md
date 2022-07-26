@@ -349,7 +349,7 @@ annotations:
 
 
 
-### Query sample
+### Sample Query
 
 This query sample is from the **CPU Load Vs Current Threads** panel of **JMX - Overview** dashboard.
 

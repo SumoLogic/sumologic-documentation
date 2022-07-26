@@ -3,9 +3,9 @@ id: process-metrics
 title: Host and Process Metrics
 ---
 
-The Sumo Logic App for Host and Process Metrics allows you to monitor the performance and resource utilization of hosts and processes that your mission critical applications are dependent upon. Preconfigured dashboards provide insight into CPU, memory, network, file descriptors, page faults, and TCP connectors. This app uses Telegraf, an open-source, plugin-based collector for the collection of both host and process metrics data.
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-1.png "image_tooltip")
+The Sumo Logic App for Host and Process Metrics allows you to monitor the performance and resource utilization of hosts and processes that your mission critical applications are dependent upon. Preconfigured dashboards provide insight into CPU, memory, network, file descriptors, page faults, and TCP connectors. This app uses Telegraf, an open-source, plugin-based collector for the collection of both host and process metrics data.
 
 This app uses Telegraf and associated input plugins to collect both host and process metrics. To use the installed collector to collect and analyze host metrics, please see the [Host Metrics app](https://help.sumologic.com/07Sumo-Logic-Apps/14Hosts_and_Operating_Systems/Host_Metrics).
 
@@ -105,7 +105,7 @@ This section provides instructions for configuring metrics collection for the Su
 
 
 
-2.png "image_tooltip")
+2
 
 
 
@@ -154,7 +154,7 @@ This section provides instructions for configuring metrics collection for the Su
 
 
 
-3.png "image_tooltip")
+3
 Please see Telegraf’s [Metric filtering capabilities](https://github.com/influxdata/telegraf/blob/master/docs/CONFIGURATION.md#metric-filtering) to exclude metrics that you do not need from being sent to Sumo Logic.
 
 
@@ -328,7 +328,7 @@ For details on the individual alerts,  please see this [page](https://help.sumol
 * Alerts can be installed by either importing them a JSON or a Terraform script.
 
 
-4.png "image_tooltip")
+4
 There are limits to how many alerts can be enabled - please see the [Alerts FAQ](https://help.sumologic.com/Visualizations-and-Alerts/Alerts/Monitors/Monitor_FAQ) for details.
 
 
@@ -346,12 +346,12 @@ SourceCategory examples:
 2. Go to Manage Data > Alerts > Monitors.
 3. Click <strong>Add</strong>: \
 
-5.png "image_tooltip")
+5
 
 4. Click Import to import monitors from the JSON above.
 
 
-6.png "image_tooltip")
+6
 The monitors are disabled by default. Once you have installed the alerts using this method, navigate to the Host and Process Metrics folder under Monitors to configure them. See [this](https://help.sumologic.com/Visualizations-and-Alerts/Alerts/Monitors) document to enable monitors, to configure each monitor, to send notifications to teams or connections please see the instructions detailed in [Alert Configuration](https://help.sumologic.com/07Sumo-Logic-Apps/14Hosts_and_Operating_Systems/Host_and_Process_Metrics/Install_the_Host_and_Process_Metrics_app%2C_Alerts%2C_and_view_the_Dashboards#Alert_Configuration) of this [document](https://help.sumologic.com/Visualizations-and-Alerts/Alerts/Monitors#Add_a_monitor).
 
 
@@ -479,7 +479,7 @@ Locate and install the app you need from the **App Catalog**. If you want to see
 1. From the **App Catalog**, search for and select the app**.**
 2. Select the version of the service you're using and click **Add to Library**. \
 
-7.png "image_tooltip")
+7
 Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library](https://help.sumologic.com/01Start-Here/Library/Apps-in-Sumo-Logic/Install-Apps-from-the-Library).
 3. To install the app, complete the following fields.
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
@@ -493,160 +493,109 @@ Once an app is installed, it will appear in your **Personal** folder, or another
 
 Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
 
+## Viewing Dashboards
 
-#### Filters with template variables   
+### Filters with template variables   
 
 Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause.** **For more information, see the [Filter with template variables](https://help.sumologic.com/Visualizations-and-Alerts/Dashboard_(New)/Filter_with_template_variables) help page.
 
-
-8.png "image_tooltip")
 You can use template variables to drill down and examine the data on a granular level.
 
 
-#### Dashboards
-
-
-##### Host Metrics - Overview Dashboard
-
-
-9.png "image_tooltip")
-
+### Host Metrics - Overview Dashboard
 
 The **Host Metrics - Overview** dashboard gives you an at-a-glance view of the key metrics like CPU, memory, disk, network, and TCP connections of all your hosts. You can drill down from this dashboard to the Host Metrics - CPU/Disk/Memory/Network/TCP dashboard by using the honeycombs or line charts in all the panels.
 
 Use this dashboard to:
-
-
-
 * Identify hosts with high CPU, disk, memory utilization, and identify anomalies over time.
 
+<img src={useBaseUrl('img/integrations/hosts-operating-systems/Host-Metrics-Overview.png')} alt="Host Metrics dashboards" />
 
-##### Host Metrics - CPU
 
-
-10.png "image_tooltip")
-
+### Host Metrics - CPU
 
 The **Host Metrics - CPU** dashboard provides a detailed analysis based on CPU metrics. You can drill down from this dashboard to the **Process Metrics - Details** dashboard by using the honeycombs or line charts in all the panels.
 
 Use this dashboard to:
-
-
-
 * Identify hosts and processes with high CPU utilization.
 * Examine CPU usage by type and identify anomalies over time.
 
+<img src={useBaseUrl('img/integrations/hosts-operating-systems/Host-Metrics-CPU.png')} alt="Host Metrics dashboards" />
 
-##### Host Metrics - Disk
 
-
-11.png "image_tooltip")
-
+### Host Metrics - Disk
 
 The **Host Metrics - Disk** dashboard provides detailed information about on disk utilization and disk IO operations.You can drill down from this dashboard to the **Process Metrics - Details** dashboard by using the honeycombs or line charts in all the panels.
 
 Use this dashboard to:
-
-
-
 * Identify hosts with high disk utilization and disk IO operations.
 * Monitor abnormal spikes in read/write rates.
 * Compare disk throughput across storage devices of a host.
 
-
-##### Host Metrics - Memory
-
-
-12.png "image_tooltip")
+<img src={useBaseUrl('img/integrations/hosts-operating-systems/Host-Metrics-Disk.png')} alt="Host Metrics dashboards" />
 
 
+### Host Metrics - Memory
 The **Host Metrics - Memory** dashboard provides detailed information on host memory usage, memory distribution, and swap space utilization. You can drill down from this dashboard to the **Process Metrics - Details** dashboard by using the honeycombs or line charts in all the panels.
 
 Use this dashboard to:
-
-
-
 * Identify hosts with high memory utilization.
 * Examine memory distribution (free, buffered-cache, used, total) for a given host.
 * Monitor abnormal spikes in memory and swap utilization.
 
+<img src={useBaseUrl('img/integrations/hosts-operating-systems/Host-Metrics-Memory.png')} alt="Host Metrics dashboards" />
 
-##### Host Metrics - Network
 
-
-13.png "image_tooltip")
-
+### Host Metrics - Network
 
 The **Host Metrics - Network** dashboard provides detailed information on host network errors, throughput, and packets sent and received.
 
 Use this dashboard to:
-
-
-
 * Determine top hosts with network errors and dropped packets.
 * Monitor abnormal spikes in incoming/outgoing packets and bytes sent and received.
 * Use dashboard filters to compare throughput across the interface of a host.
 
-
-##### Host Metrics - TCP
-
-
-14.png "image_tooltip")
+<img src={useBaseUrl('img/integrations/hosts-operating-systems/Host-Metrics-Network.png')} alt="Host Metrics dashboards" />
 
 
+### Host Metrics - TCP
 The **Host Metrics - TCP** dashboard provides detailed information around inbound, outbound, open, and established TCP connections.
 
 Use this dashboard to:
-
-
-
 * Identify abnormal spikes in inbound, outbound, open, or established connections.
 
+<img src={useBaseUrl('img/integrations/hosts-operating-systems/Host-Metrics-TCP.png')} alt="Host Metrics dashboards" />
 
-##### Process Metrics - Overview Dashboard
 
-
-15.png "image_tooltip")
-
+### Process Metrics - Overview Dashboard
 
 The **Process Metrics - Overview** dashboard gives you an at-a-glance view of all the processes by open file descriptors,  CPU usage, memory usage, disk read/write operations and thread count.You can drill down from this dashboard to the **Process Metrics - Details** dashboard by using the honeycombs or line charts in all the panels.
 
 Use this dashboard to:
-
-
-
 * Identify top processes by CPU, memory usage, and open file descriptors.
 * Determine the longest running processes and users that have spawned the most number of processes.
 
+<img src={useBaseUrl('img/integrations/hosts-operating-systems/Process-Metrics-Overview.png')} alt="Host Metrics dashboards" />
 
-##### Process Metrics - Details Dashboard
 
-
-16.png "image_tooltip")
-
+### Process Metrics - Details Dashboard
 
 The **Process Metrics - Details** dashboard gives you a detailed view of key process related metrics such as CPU and memory utilization, disk read/write throughput, and major/minor page faults.
 
 Use this dashboard to:
-
-
-
 * Determine the number of open file descriptors in all hosts. If the number of open file descriptors reaches the maximum file descriptor limits,, it can cause IOException errors.
 * Identify anomalies in CPU usage, memory usage,  major/minor page faults and reads/writes over time.
 * Troubleshoot memory leaks using the resident set memory trend chart.
 
+<img src={useBaseUrl('img/integrations/hosts-operating-systems/Process-Metrics-Details.png')} alt="Host Metrics dashboards" />
+
 
 ##### Process Metrics - Trends Dashboard
-
-
-17.png "image_tooltip")
-
 
 The **Process Metrics - Trend** dashboard gives you insight into the state of your processes over time.
 
 Use this dashboard to:
-
-
-
 * Analyze the current state of all the processes (sleeping, dead, idle, stopped, total, paging)
 * Identify anomalies over time in the number of threads, zombie processes, and total processes
+
+<img src={useBaseUrl('img/integrations/hosts-operating-systems/Process-Metrics-Trends.png')} alt="Host Metrics dashboards" />
