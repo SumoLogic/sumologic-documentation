@@ -7,6 +7,8 @@ description: Microsoft Office 365
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
+<img src={useBaseUrl('img/integrations/microsoft-azure/365.png')} alt="thumbnail icon" width="75"/>
+
 The Microsoft Office 365 App ingests Microsoft Office 365 Audit logs for Azure Active Directory, Exchange, and SharePoint. Preconfigured Dashboards allow you to monitor and analyze your complete Office 365 system for administrator and user activity.
 
 

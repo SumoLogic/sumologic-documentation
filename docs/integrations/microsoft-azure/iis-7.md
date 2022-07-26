@@ -7,6 +7,8 @@ description: IIS 7
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
+<img src={useBaseUrl('img/integrations/microsoft-azure/microsoft_iis_10.jpg')} alt="thumbnail icon" width="150"/>
+
 The IIS 7 App monitors the performance and reliability of your Microsoft Internet Information Services (IIS) infrastructure, identifying customer-facing and internal operational issues. Additionally, you can monitor customer paths and interactions to learn how customers are using your product. The app consists of predefined searches and Dashboards, which provide visibility into your environment for real time or historical analysis.
 
 

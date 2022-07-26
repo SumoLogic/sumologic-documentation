@@ -8,6 +8,8 @@ description: Microsoft Teams
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 
+<img src={useBaseUrl('img/integrations/microsoft-azure/teams.svg')} alt="thumbnail icon" width="50" />
+
 The Microsoft Teams app provides out-of-the-box dashboards to monitor users, teams, channels and permission changes.
 
 
