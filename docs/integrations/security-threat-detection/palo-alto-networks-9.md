@@ -214,7 +214,7 @@ Oct 09 10:21:11 SumPunFw07.sumotest.com 1,2019/10/09
 10.255.255.255,0,,0,,,1,,,,,,,,0,0,0,0,0,,SumPunFw07,,,,,0,,0,,N/A,code-execution,AppThreat-8189-5641,0x4,0,4294967295,,,6bbbbec9-d123-4d51-1204-6aefd221079b,0
 ```
 
-### Query example
+### Sample Query
 15
 
 

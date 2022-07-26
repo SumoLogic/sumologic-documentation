@@ -45,7 +45,7 @@ Sample Log Message
   "UserId":"email@domain.com",
   "TeamGuid":"19:caac0ef5091e431aa45a6b6ec4a6723a@thread.tacv2",
   "TeamName":"My Team"
-Query sample  
+Sample Query  
 _sourceCategory="O365/General"
 | json "Workload", "Operation" , "UserId" as workload, operation, email
 | where workload = "MicrosoftTeams"

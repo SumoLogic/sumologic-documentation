@@ -11,8 +11,134 @@ Amazon Elastic Compute Cloud (Amazon EC2) provides scalable computing capacity i
 
 The Sumo Logic App for AWS EC2 (CloudWatch Metrics) allows you to collect your EC2 instance metrics and display them using predefined dashboards. The App provides dashboards to display analysis of EC2 instance metrics for CPU, disk, network, EBS, and Health Status Check. Also, it provides detailed insights into all cloudtrail audit events associated with EC2 instances and specifically helps identify changes, errors, and user activities.
 
+## Collect CloudWatch Metrics and CloudTrail logs for the AWS EC2
 
-### Metrics Type
+
+
+This page describes the AWS EC2 app's data sources and instructions for setting up a metric collection.
+
+
+#### AWS EC2 CloudWatch Metrics
+1
+
+
+AWS EC2 automatically monitors functions on your behalf, reporting [AWS EC2 metrics](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-cloudwatch.html) through Amazon CloudWatch. These metrics are collected by our Hosted Collector by configuring the Amazon CloudWatch source.
+
+The Sumo Logic App for AWS EC2 (CloudWatch Metrics) allows you to collect your EC2 instance metrics and display them using predefined dashboards. The App provides dashboards to analyze EC2 instance metrics for CPU, disk, network, EBS, and Health Status Check.
+
+
+#### CloudTrail EC2 Data Events
+2
+
+
+[CloudTrail EC2 Data Events](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-data-events) allow you to continuously monitor the execution activity of your EC2 instance and record details of all the related events.
+
+
+#### Collect Amazon CloudWatch Metrics
+3
+
+
+To collect Amazon CloudWatch Metrics, see [Amazon CloudWatch Source For Metrics.](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/Amazon-CloudWatch-Source-for-Metrics)
+
+AWS Namespace tag to filter in source for Lambda will be - **AWS/EC2**
+
+
+
+* **Metadata: **Add an **account** field to the source and assign it a value which is a friendly name / alias to your AWS account from which you are collecting metrics. This name will appear in the Sumo Logic Explorer View. Metrics can be queried via the “account field”.
+
+
+4
+
+
+
+#### Collect CloudTrail EC2 Data Events
+
+To configure a CloudTrail Source, perform these steps:
+
+
+1. [Grant Sumo Logic access](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/Grant-Access-to-an-AWS-Product) to an Amazon S3 bucket.
+2. [Configure DataEvents with CloudTrail](https://docs.aws.amazon.com/AWSEC2/latest/APIReference/using-cloudtrail.html) in your AWS account.
+3. Confirm that logs are being delivered to the Amazon S3 bucket.
+4. Add an [AWS CloudTrail Source](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/AWS-CloudTrail-Source) to Sumo Logic.
+5. While configuring the cloud trail log source, following Field can be added in the source:
+    1. Add an **account** field and assign it a value which is a friendly name / alias to your AWS account from which you are collecting logs. This name will appear in the Sumo Logic Explorer View. Logs can be queried via the “account field”.
+
+
+6
+
+
+
+### Field in Field Schema
+7
+
+
+Login to Sumo Logic,  go to Manage Data > Logs > Fields. Search for the “**instanceid**” field. If not present, create it. Learn how to create and manage fields [here](https://help.sumologic.com/Manage/Fields#manage-fields).
+
+
+### Cloud Trail FER
+
+
+```
+Rule Name: AwsObservabilityEC2CloudTrailLogsFER
+Applied at: Ingest Time
+Scope (Specific Data): account=* eventname eventsource "ec2.amazonaws.com"
+```
+
+
+**Parse Expression**:
+
+
+```sql
+| json "eventSource", "awsRegion", "requestParameters", "responseElements", "recipientAccountId" as eventSource, region, requestParameters, responseElements, accountid nodrop
+| where eventSource = "ec2.amazonaws.com"
+| "aws/ec2" as namespace
+| json field=requestParameters "instanceType", "instancesSet", "instanceId", "DescribeInstanceCreditSpecificationsRequest.InstanceId.content" as req_instancetype, req_instancesSet, req_instanceid_1, req_instanceid_2 nodrop
+| json field=req_instancesSet "item", "items" as req_instancesSet_item, req_instancesSet_items nodrop
+| parse regex field=req_instancesSet_item "\"instanceId\":\s*\"(?<req_instanceid_3>.*?)\"" nodrop
+| parse regex field=req_instancesSet_items "\"instanceId\":\s*\"(?<req_instanceid_4>.*?)\"" nodrop
+| json field=responseElements "instancesSet.items" as res_responseElements_items nodrop
+| parse regex field=res_responseElements_items "\"instanceType\":\s*\"(?<res_instanceType>.*?)\"" nodrop
+| parse regex field=res_responseElements_items "\"instanceId\":\s*\"(?<res_instanceid>.*?)\"" nodrop
+| if (!isBlank(req_instanceid_1), req_instanceid_1,  if (!isBlank(req_instanceid_2), req_instanceid_2, if (!isBlank(req_instanceid_3), req_instanceid_3, if (!isBlank(req_instanceid_4), req_instanceid_4, "")))) as req_instanceid
+| if (!isBlank(req_instanceid), req_instanceid, res_instanceid) as instanceid
+| if (!isBlank(req_instancetype), req_instancetype, res_instancetype) as instanceType
+| tolowercase(instanceid) as instanceid
+| fields region, namespace, accountid, instanceid
+```
+
+
+
+### Centralized AWS CloudTrail Log Collection
+9
+
+
+If you have a centralized collection of cloudtrail logs and are ingesting them from all accounts into a single Sumo Logic cloudtrail log source, create following Field Extraction Rule to map proper AWS account(s) friendly name / alias. Create it if not already present / update it as required.
+
+
+```
+Rule Name: AWS Accounts
+Applied at: Ingest Time
+Scope (Specific Data): _sourceCategory=<SourceCategory_of_CloudTrail_source_created_in_sumo>
+```
+
+
+**Parse Expression**:
+
+Enter a parse expression to create an “account” field that maps to the alias you set for each sub account. For example, if you used the “dev” alias for an AWS account with ID "528560886094" and the “prod” alias for an AWS account with ID "567680881046", your parse expression would look like:
+
+
+```sql
+| json "recipientAccountId"
+// Manually map your aws account id with the AWS account alias you setup earlier for individual child account
+| "" as account
+| if (recipientAccountId = "528560886094",  "dev", account) as account
+| if (recipientAccountId = "567680881046",  "prod", account) as account
+| fields account
+```
+
+
+
+### Metrics Types
 
 For details on the metrics of AWS EC2, see [here](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-cloudwatch.html).
 
@@ -20,26 +146,20 @@ For details on the metrics of AWS EC2, see [here](https://docs.aws.amazon.com/AW
 #### Sample Cloud Trail log for EC2
 
 
-```
+```json
 {"eventVersion":"1.08","userIdentity":{"type":"IAMUser","principalId":"AIDAJ7LGGLTBHHDFNMPSM","arn":"arn:aws:iam::9XXXX34567898:user/cloudhealthuser","accountId":"9XXXXXXX898","accessKeyId":"AKIAXXXXXX22BUTQ","userName":"cloudhealthuser"},"eventTime":"2022-06-30T08:05:38Z","eventSource":"ec2.amazonaws.com","eventName":"DescribeReservedInstancesListings","awsRegion":"us-east-1","sourceIPAddress":"177.20.215.222","userAgent":"aws-sdk-ruby2/2.11.447 jruby/2.5.7 java cloudhealth","errorCode":"Client.OptInRequired","errorMessage":"AccountId '9XXXXXX898', You are not authorized to use the requested product. Please complete the seller registration null.","requestParameters":{"reservedInstancesListingSet":{},"reservedInstancesSet":{},"filterSet":{}},"responseElements":null,"requestID":"fe609b44-dbc5-454b-8f72-9475d1639441","eventID":"6fc6df43-1ba1-4eb3-948a-0aebc569c024","readOnly":true,"eventType":"AwsApiCall","managementEvent":true,"recipientAccountId":"9XXXXX7898","eventCategory":"Management","tlsDetails":{"tlsVersion":"TLSv1.2","cipherSuite":"ECDHE-RSA-XXXXX-SHA","clientProvidedHostHeader":"ec2.us-west-1.amazonaws.com"}}
 ```
 
 
 
-## Query sample
+### Sample Queries
 
-**CPU utilization (Cloudwatch metric)**
-
-
-```
+```sql title="CPU utilization (Cloudwatch metric based)"
 account=* region=* namespace=aws/ec2 instanceid=* metric=CPUUtilization Statistic=average | avg
 ```
 
 
-**Top 10 Error Codes (Cloudtrail log-based)**
-
-
-```
+```sql title="Top 10 Error Codes (Cloudtrail log-based)"
 account={{account}} region={{region}} namespace={{namespace}} eventname eventsource "ec2.amazonaws.com" errorCode
 | json "eventSource", "awsRegion", "requestParameters", "responseElements", "recipientAccountId" as event_source, region, requestParameters, responseElements, accountid nodrop
 | json "userIdentity", "eventName", "sourceIPAddress", "userAgent", "eventType", "requestID", "errorCode", "errorMessage", "eventCategory", "managementEvent" as userIdentity, event_name, src_ip, user_agent, event_type, request_id, error_code, error_message, event_category, management_event nodrop
@@ -64,10 +184,6 @@ account={{account}} region={{region}} namespace={{namespace}} eventname eventsou
 | tolowercase(instanceid) as instanceid
 | count as count by error_code | sort by count, error_code asc | limit 10
 ```
-
-## Collecting Logs and Metrics
-
-
 
 
 
@@ -95,7 +211,7 @@ Panels will start to fill automatically. It's important to note that each panel 
 ## Viewing AWS EC2 Dashboards
 
 
-### AWS EC2 Overview (CloudWatch Metrics)
+### Overview (CloudWatch Metrics)
 
 The **AWS EC2 Overview (CloudWatch Metrics) **dashboard provides at-a-glance information about a EC2 CPU, instance disk store, network and EBS volume usage along with EC2 instance health status.
 
@@ -110,7 +226,7 @@ Use this dashboard to:
 <img src={useBaseUrl('img/integrations/amazon-aws/AWS-EC2-Summary-CloudWatch-Metrics.png')} alt="AWS EC2" />
 
 
-### AWS EC2 Summary (CloudWatch Metrics)
+### Summary (CloudWatch Metrics)
 
 The **AWS EC2 Summary (CloudWatch Metrics)** dashboard provides at-a-glance information about a EC2 CPU, instance disk store, network and EBS volume usage along with EC2 instance health status.
 
@@ -124,9 +240,9 @@ Use this dashboard to:
 <img src={useBaseUrl('img/integrations/amazon-aws/AWS-EC2-Events.png')} alt="AWS EC2" />
 
 
-### AWS EC2 - Events  
+### Events  
 
-The AWS EC2 - Events dashboard provides detailed insights into all cloudtrail audit events associated with EC2 instances and specifically helps identify changes, errors, and user activities.
+The **AWS EC2 - Events** dashboard provides detailed insights into all cloudtrail audit events associated with EC2 instances and specifically helps identify changes, errors, and user activities.
 
 Use this dashboard to:
 * Monitor the geo location for successful and failed events
@@ -137,7 +253,7 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/amazon-aws/Overview.png')} alt="AWS EC2" />
 
-### AWS EC2 CPU (CloudWatch Metrics)
+### CPU (CloudWatch Metrics)
 
 The **AWS EC2 CPU (CloudWatch Metrics) **dashboard provides detailed information about EC2 CPU usage like CPU utilization and CPU credits for burstable performance instances.
 
@@ -148,7 +264,7 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/amazon-aws/AWS-EC2-CPU-CloudWatch-Metrics.png')} alt="AWS EC2" />
 
-### AWS EC2 EBS (CloudWatch Metrics)
+### EBS (CloudWatch Metrics)
 
 The **AWS EC2 EBS (CloudWatch Metrics)** dashboard provides detailed information about EC2 EBS volumes for Nitro-based instances based on EBS volumes read and write bytes, operations, and information on the percentage of I/O and throughput credits remaining in the burst bucket.
 
@@ -160,7 +276,7 @@ Use this dashboard to:
 <img src={useBaseUrl('img/integrations/amazon-aws/AWS-EC2-EBS-CloudWatch-Metrics.png')} alt="AWS EC2" />
 
 
-### AWS EC2 Disk (CloudWatch Metrics)
+### Disk (CloudWatch Metrics)
 
 The **AWS EC2 Disk (CloudWatch Metrics)** dashboard provides detailed information about a EC2 Instance Store Disk usage based on disk read and write bytes, operations.
 
@@ -172,7 +288,7 @@ Use this dashboard to:
 <img src={useBaseUrl('img/integrations/amazon-aws/AWS-EC2-Disk-CloudWatch-Metric.png')} alt="AWS EC2" />
 
 
-### AWS EC2 Network (CloudWatch Metrics)
+### Network (CloudWatch Metrics)
 
 The **AWS EC2 Network (CloudWatch Metrics)** dashboard provides detailed information about EC2 Network activities based on In and out packets, bytes.
 
@@ -183,7 +299,7 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/amazon-aws/AWS-EC2-Network-CloudWatch-Metrics.png.png')} alt="AWS EC2" />
 
-### AWS EC2 Status Check (CloudWatch Metrics)
+### Status Check (CloudWatch Metrics)
 
 The **AWS EC2 Status Check (CloudWatch Metrics)** dashboard provides detailed information about an EC2 instance's health check status based on an instance, system, and overall health status.
 

@@ -17,16 +17,135 @@ The Sumo Logic App for Aurora PostgreSQL ULM includes predefined searches and da
 Amazon Aurora PostgreSQL is a relational database service built for the cloud. For more information, see the [Amazon Aurora PostgreSQL](https://aws.amazon.com/rds/aurora/details/postgresql-details/)
 
 
-## Collecting Logs and Metrics
+## Collecting Logs and Metrics for the App
 
-### Log Types  
+The **Aurora PostgreSQL ULM App** includes predefined searches and dashboards that allow you to monitor logs and metrics for your Aurora MySQL database. The logs enable you to monitor database activity, user activity, incoming connections, query execution time, and errors. The metrics allow you to monitor database resource utilization and throughput performance.
 
-The Sumo Logic App for Aurora PostgreSQL ULM uses the following log types:
+This guide provides an overview of the Aurora PostgreSQL ULM App pre-defined queries and dashboards, as well as instructions for collecting logs and metrics from Aurora PostreSQL, and installing the App.
+
+This page explains the logs and metrics collected from your Aurora PosgreSQL database, provides example queries and instructions for setting up log and metric collection.
+
+### Log and metric types
+The Sumo Logic App for Aurora PostgreSQL ULM uses the following logs and metrics:
+
 * [AWS Cloud Trail](https://aws.amazon.com/cloudtrail/features/)
 * [Aurora CloudWatch Metric](https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Monitoring.html)
 
+### Sample Log
 
-## Install the Aurora PostgreSQL ULM App
+The following is an example of an **AWS Cloud Trail** log.
+
+```json
+{"eventVersion":"1.05","userIdentity":{"type":"IAMUser","principalId":"AI1234567890QEWUABG5Q",
+"arn":"arn:aws:iam::951234567898:user/bwilliams","accountId":"951234567898","accessKeyId":
+"ABCDEFGHIHFBOT4FDVK","userName":"jjones","sessionContext":{"attributes":{"mfaAuthenticated":
+"true","creationDate":"2018-11-05T11:22:45Z"}},"invokedBy":"signin.amazonaws.com"},"eventTime":
+"2018-11-12T06:56:02Z","eventSource":"rds.amazonaws.com","eventName":"DeleteDBCluster","awsRegion"
+:"us-east-3","sourceIPAddress":"19.174.45.8","userAgent":"signin.amazonaws.com","requestParameters"
+:{"dBClusterIdentifier":"nitinpsql968cluster01","skipFinalSnapshot":false,"finalDBSnapshotIdentifier"
+:"psqldb968nitin02-final-snapshot"},"responseElements":{"allocatedStorage":1,"availabilityZones"
+:["us-east-1a","us-east-1b","us-east-1c"],"backupRetentionPeriod":2,"databaseName":"nitintestdpsql1",
+"dBClusterIdentifier":"nitinpsql968cluster01","dBClusterParameterGroup":"default.aurora-postgresql9.6",
+"dBSubnetGroup":"default-vpc-b81fc4d7","status":"available","earliestRestorableTime":"Nov 5, 2018 2:17:31 PM",
+"endpoint":"nitinpsql968cluster01.cluster-ci123456789d.us-east-3.rds.amazonaws.com","readerEndpoint"
+:"nitinpsql968cluster01.cluster-ro-ci123456789d.us-east-1.rds.amazonaws.com","multiAZ":false,"engine"
+:"aurora-postgresql","engineVersion":"9.6.8","latestRestorableTime":"Nov 5, 2018 3:36:06 PM","port"
+:5432,"masterUsername":"npandepsql","preferredBackupWindow":"08:59-09:29","preferredMaintenanceWindow"
+:"sun:08:09-sun:08:39","readReplicaIdentifiers":[],"dBClusterMembers":[{"dBInstanceIdentifier":"psqldb968nitin02"
+,"isClusterWriter":true,"dBClusterParameterGroupStatus":"in-sync","promotionTier":1}],"vpcSecurityGroups"
+:[{"vpcSecurityGroupId":"sg-0e81530fe36e37076","status":"active"}],"hostedZoneId":"Z2R2ITUGPM61AM",
+"storageEncrypted":true,"kmsKeyId":"arn:aws:kms:us-west-3:951234567898:key/9a3d8016-4cdb-478f-a3a4-9a310fc25307",
+"dbClusterResourceId":"cluster-LXLBREEIXOAMLSUUDXVKXFVIDA","dBClusterArn":"arn:aws:rds:us-west-2:951234567898:cluster:nitinpsql968cluster01",
+"associatedRoles":[],"iAMDatabaseAuthenticationEnabled":false,"clusterCreateTime":"Nov 5, 2018 2:16:12 PM","engineMode"
+:"provisioned","deletionProtection":false,"httpEndpointEnabled":false},"requestID":"0df6f69d-8040-45fa-9171-98043977a14c",
+"eventID":"ab48927c-7bd8-4c1d-9d86-0b2f6732949c","eventType":"AwsApiCall","recipientAccountId":"951234567898"}
+```
+
+
+### Sample Log Query
+
+The following log query is from the **Event Status Trend** panel of the **CloudTrail Event - Overview dashboard**.
+
+```sql
+(_sourceCategory=*cloudtrail* or _sourceCategory=*AWS_EAGLE*) "\"eventSource\":\"rds.amazonaws.com\"" ("\"engine\":\"aurora-postgresql\"")
+| json "userIdentity", "eventSource", "eventName", "awsRegion", "sourceIPAddress", "userAgent", "eventType", "recipientAccountId", "requestParameters", "responseElements", "requestID", "errorCode", "errorMessage" nodrop
+| json field=userIdentity "type", "principalId", "arn", "userName", "accountId" nodrop
+| json field=userIdentity "sessionContext.attributes.mfaAuthenticated" as mfaAuthenticated nodrop
+| json field=requestParameters "dBClusterIdentifier", "engine", "engineMode" as req_dBClusterIdentifier, req_engine, req_engineMode nodrop
+| json field=responseElements "dBClusterIdentifier", "engine", "engineMode" as res_dBClusterIdentifier, res_engine, res_engineMode nodrop
+| parse field=arn ":assumed-role/*" as user nodrop  
+| parse field=arn "arn:aws:iam::*:*" as accountId, user nodrop
+| if (isEmpty(errorCode), "Success", "Failure") as eventStatus
+| if (isEmpty(userName), user, userName) as user
+| if (isEmpty(req_dBClusterIdentifier), res_dBClusterIdentifier, req_dBClusterIdentifier) as dBClusterIdentifier
+| if (isEmpty(req_engine), res_engine, req_engine) as engine
+| if (isEmpty(req_engineMode), res_engineMode, req_engineMode) as engineMode
+| where eventSource = "rds.amazonaws.com" and (req_engine in ("aurora-postgresql") or res_engine in ("aurora-postgresql"))
+| timeslice 6h
+| count by _timeslice, eventStatus, eventName
+| transpose row _timeslice column eventStatus, eventName
+```
+
+
+### Sample Metrics Query
+
+The following metrics query is from the **Volume Write IOPS** panel of the **Metric - Overview dashboard.**
+
+```sql
+_sourceCategory=AWS/RDS/Metric Namespace=AWS/RDS  metric=VolumeWriteIOPs DBClusterIdentifier=* Statistic=Average | avg by DBClusterIdentifier
+```
+
+### Configure log and metric collection
+
+The Aurora PostgreSQL ULM App is used for monitoring CloudTrail event Logs and CloudWatch Metrics. Metrics allow you to monitor database resource utilization and throughput performance. CloudTrail events help you monitor use of Aurora services and operations by users.
+
+This section provides instruction for collecting logs and metrics for the Sumo Logic App for Aurora PostgreSQL ULM.
+* [Step 1: Collecting AWS CloudTrail  events using AWS CloudTrail Source](https://help.sumologic.com/07Sumo-Logic-Apps/01Amazon_and_AWS/Amazon_Aurora_PostgreSQL_ULM/Collect_logs_and_metrics_for_the_Amazon_Aurora_PostgreSQL_ULM_App#Step_1:_Collecting_AWS_CloudTrail_events_using_AWS_CloudTrail_Source)
+* [Step 2: Collecting Aurora CloudWatch metrics using AWS CloudWatch Metric Source](https://help.sumologic.com/07Sumo-Logic-Apps/01Amazon_and_AWS/Amazon_Aurora_PostgreSQL_ULM/Collect_logs_and_metrics_for_the_Amazon_Aurora_PostgreSQL_ULM_App#Step_2:_Collecting_Aurora_CloudWatch_metrics_using_AWS_CloudWatch_Metric_Source)
+
+
+#### Step 1: Collecting AWS CloudTrail events using AWS CloudTrail Source
+
+This section provides instructions for setting up AWS CloudTrail Source to collect events for ingest into Sumo Logic.
+
+To collect AWS CloudTrail events, do the following:
+
+1. Configure a [Hosted Collector.](https://help.sumologic.com/03Send-Data/Hosted-Collectors/Configure-a-Hosted-Collector)
+2. Add an [AWS CloudTrail Source](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/AWS-CloudTrail-Source) to the Hosted Collector, providing the following information:
+* **Name** - Enter a name to display for the new Source.
+* **Description** - Enter an optional description.
+* **S3 Region** - Select the Amazon Region for your CloudTrail Aurora S3 bucket.
+* **Bucket Name -** Enter the exact name of your CloudTrail Aurora S3 bucket.
+* **Path Expression** - Enter the string that matches the S3 objects you'd like to collect. You can use a wildcard (*) in this string. (DO NOT use a leading forward slash. See [Amazon Path Expressions](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/Amazon-Path-Expressions).)The S3 bucket name is not part of the path. Don’t include the bucket name when you are setting the Path Expression.
+* **Source Category** - Enter a source category, for example, AWS/Cloudtrail.
+* **Access Key ID and Secret Access Key** - Enter your Amazon [Access Key ID and Secret Access Key](http://docs.aws.amazon.com/general/latest/gr/managing-aws-access-keys.html).
+* **Scan Interval**. Use the default of 5 minutes, or enter a time interval frequency at which Sumo Logic will scan your S3 bucket for new data.
+* **Enable Timestamp Parsing** - Select the checkbox to enable.
+* **Time Zone** - Deselect Ignore time zone from log file and instead select UTC.
+* **Timestamp Format** - Select Automatically detect the format.
+* **Enable Multiline Processing** - Select the checkbox to enable, and select Infer Boundaries.
+1. Click **Save**.
+
+
+#### Step 2: Collecting Aurora CloudWatch metrics using AWS CloudWatch Metric Source
+
+This section provides instructions setting up the collection of Aurora CloudWatch metrics using AWS CloudWatch Metric Source for ingest into Sumo Logic.
+
+To collect Aurora CloudWatch metrics, do the following:
+
+1. Configure a [Hosted Collector.](https://help.sumologic.com/03Send-Data/Hosted-Collectors/Configure-a-Hosted-Collector)
+2. Configure an [Amazon CloudWatch Metrics Source](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/Amazon-CloudWatch-Source-for-Metrics), providing the following information:
+* **Name** - Enter a name to display for the new Source.
+* **Description** - Enter an optional description.
+* **Regions** - Select your Amazon Regions for Amazon RDS.
+* **Namespaces** - Select **AWS/RDS**.
+* **Source Category** - Enter a source category, for example, AWS/RDS/Metric.
+* **Access Key ID and Secret Access Key** - Enter your Amazon Access Key ID and Secret Access Key.
+* **Scan Interval** - Accept the default of 5 minutes, or enter a time interval at which Sumo Logic will scan CloudWatch Sources for new data.
+
+
+
+## Installing the Aurora PostgreSQL ULM App
 
 Now that you have set up log and metric collection for Amazon Aurora PostgreSQL, you can install the Sumo Logic App for Aurora PostgreSQL ULM, and use its pre-configured searches and [dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/01Amazon_and_AWS/Amazon_RDS/Amazon-RDS-Metrics-App-Dashboards#Dashboards).
 
@@ -61,8 +180,7 @@ Panels will start to fill automatically. It's important to note that each panel 
 **Each panel has a set of filters** that are applied to the results for that panel only, as shown in the following example. Click the funnel icon in the top panel menu bar to display a list of panel-specific filters.
 
 
-
-### CloudTrail Event - Overview Dashboard
+### CloudTrail Event - Overview
 
 **Aurora PostgreSQL ULM CloudTrail Event - Overview Dashboard** allows you to view details for event logs, including geographical locations, trends, successful and failed events, user activity, and error codes.
 
@@ -77,7 +195,7 @@ To drill down for details, click the Event Status panel. Details are shown for t
 <img src={useBaseUrl('img/integrations/amazon-aws/AuroraPostgreSQLULM_CloudTrailEvent_Overview.png')} alt="Aurora PostgreSQL ULM" />
 
 
-### CloudTrail Event - Details Dashboard
+### CloudTrail Event - Details
 
 **Aurora PostgreSQL ULM CloudTrail Event - Details Dashboard** allows you to view details for events, including creating, modifying, and deleting database clusters and database instances. Use this dashboard to:
 
@@ -88,7 +206,7 @@ Use this dashboard to:
 <img src={useBaseUrl('img/integrations/amazon-aws/AuroraPostgreSQLULM_CloudTrailEvent_Details.png')} alt="Aurora PostgreSQL ULM" />
 
 
-### Metric - Overview Dashboard
+### Metric - Overview
 
 **Aurora PostgreSQL ULM Metric - Overview Dashboard** allows you to view a high-level analysis of Aurora PostgreSQL database CPU utilization, connections, IOPS, replica lag, and memory usage.
 
@@ -102,7 +220,7 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/amazon-aws/AuroraPostgreSQLULM_Metric_Overview.png')} alt="Aurora PostgreSQL ULM" />
 
-### Metric - Generic Dashboard
+### Metric - Generic
 
 **Aurora PostgreSQL ULM Metric - Generic Dashboard** allows you to view analysis of replica lag, network throughput, buffer cache hit ratio, deadlocks, and free storage capacity.
 
@@ -116,7 +234,7 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/amazon-aws/AuroraPostgreSQLULM_Metric_Generic.png')} alt="Aurora PostgreSQL ULM" />
 
-### Metric - Latency, Throughput, and IOPS Monitoring Dashboard
+### Metric - Latency, Throughput, and IOPS Monitoring
 
 **Aurora PostgreSQL ULM Metric - Latency, Throughput, and IOPS Monitoring Dashboard** allows you to view granular details of database latency, throughput, IOPS and disk queue depth. It is important to monitor the performance of database queries. Latency and throughput are the key performance metrics.
 
@@ -130,7 +248,7 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/amazon-aws/AuroraPostgreSQLULM_Metric_LTIOPSMonitoring.png')} alt="Aurora PostgreSQL ULM" />
 
-### Metric - Resource Utilization Monitoring Dashboard
+### Metric - Resource Utilization Monitoring
 
 Aurora PostgreSQL ULM Metric - Resource Utilization Monitoring Dashboard allows you to view analysis of resource utilization, including volume usage, swap usage, transaction log disk usage, uptime, transaction IDs, and replica lag.
 

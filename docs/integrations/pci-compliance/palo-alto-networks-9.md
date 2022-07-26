@@ -117,7 +117,7 @@ Sep 05 12:45:15 SumoStg05 0,2018/09/05 12:45:15,012345678901,TRAFFIC,end,0,2018/
 
 
 
-#### Query sample  
+#### Sample Query  
 !7.gif "image_tooltip")
 
 

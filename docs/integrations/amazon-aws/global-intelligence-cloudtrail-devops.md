@@ -6,7 +6,7 @@ description: global-intelligence-cloudtrail-devops
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/amazon-aws/gi-devops.png')} alt="DB icon" width="50"/>
+<img src={useBaseUrl('img/integrations/amazon-aws/gi-devops.png')} alt="DB icon" width="75"/>
 
 This feature is available in the following account plans.
 
@@ -62,13 +62,106 @@ In addition, the app provides configuration guidance for key AWS services based 
 * An action plan helps users focus their attention on specific microservices in particular AWS accounts that might be experiencing errors.
 
 
-## Collecting Logs and Metrics
+## Collect Logs for the Global Intelligence for AWS CloudTrail DevOps App
 
 ### Log Types  
 
 Global Intelligence for CloudTrail DevOps App uses AWS CloudTrail logs.
 
+The Sumo Logic Global Intelligence for AWS CloudTrail DevOps app provides insight into your key CloudTrail events. You can review the log collection process and start collecting data.
 
+Our new app install flow is now in Beta. It is only enabled for certain customers while we gather Beta customer feedback. If you can see the Add Integration button, follow the "Before you begin" section in the "Collect Logs" help page and then use the in-product instructions in Sumo Logic to set up the app.
+
+If you have already AWS CloudTrail logs flowing into Sumo Logic, you can skip the steps on this page and install the App from the Sumo Logic App Catalog.
+
+
+### Collection Process Overview
+
+With this graphic, you can see how to collect logs from AWS CloudTrail DevOps and send them to Sumo Logic.
+
+
+### Before you begin
+
+Before you begin, you must configure AWS CloudTrail logging to an S3 bucket.
+1. [Configure CloudTrail](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/getting_started_top_level.html) in your AWS account.
+2. [Enable logging using the AWS Management Console](http://docs.aws.amazon.com/AmazonS3/latest/dev/enable-logging-console.html).
+3. Confirm that logs are being delivered to the S3 bucket.
+4. [Grant Access to an AWS S3 Bucket](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/Grant-Access-to-an-AWS-Product).
+
+
+### Configuring Log Collection for AWS Global Intelligence CloudTrail DevOps
+
+To configure log collection for Global Intelligence for AWS CloudTrail, follow the steps described [here](https://help.sumologic.com/07Sumo-Logic-Apps/01Amazon_and_AWS/AWS_CloudTrail/01-Collect-logs-for-the-AWS-CloudTrail-App).
+
+
+### Sample Log Message
+
+
+```json
+{"eventVersion":"1.05","userIdentity":{"type":"IAMUser","principalId":"AIDAJK3NPEULWYAYYL73U",
+"arn":"arn:aws:iam::224064240813:user/username","accountId":"224064240808","userName":"acme@acme.com"},"eventTime":"2020-01-11 00:42:12+0000",
+"eventSource":"signin.amazonaws.com","eventName":"ConsoleLogin","awsRegion":"us-west-2","sourceIPAddress":"115.13.72.133","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_1)
+ AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36","requestParameters":null,"responseElements":{"ConsoleLogin":"Success"},
+"additionalEventData":{"LoginTo":"https://us-west-2.console.aws.amazon.com/ecs/home?region=us-west-2&
+state=hashArgs%23%2Frepositories%2Ftravellogic%3Aproducts&isauthcode=true",
+"MobileVersion":"No","MFAUsed":"Yes"},"eventID":"8fd88195-8576-49ad-9e14-8330cb492604","eventType":"AwsConsoleSignIn","recipientAccountId":"224064240808"}
+```
+
+
+
+### Query Sample
+
+The following sample query is from the **Lambda Configuration: My Company v. Others (Categorical)** panel of **GI CloudTrail DevOps - 05. Configuration Benchmarks**.
+
+
+```
+// id=@config_lambda_categorical_values
+_sourceCategory=Labs/AWS/CloudTrailDevOps/Analytics
+(AwsApiCall lambda !errorCode)
+and (Runtime or Mode)
+| parse "\"awsRegion\":\"*\"" as awsRegion
+| parse "\"eventSource\":\"*\"" as eventSource
+| parse "\"eventName\":\"*\"" as eventName
+| parse "\"eventType\":\"*\"" as eventType
+| parse "\"recipientAccountId\":\"*\"" as recipientAccountId
+| parse field=eventSource "*.amazonaws.com" as resourceType
+| parse "\"functionName\":\"*\"" as functionName nodrop
+// Filter specific to this analysis
+| where eventType = "AwsApiCall" and resourceType = "lambda"
+// Categorical configuration - Lambda
+| parse "\"mode\":\"*\"" as mode nodrop
+| parse "\"runtime\":\"*\"" as runtime nodrop
+// Now we need to inverse transpose the rows into different rows
+| if(!isBlank(mode), mode, "Not-Available") as mode
+| if(!isBlank(runtime), runtime, "Not-Available") as runtime
+| count_distinct(functionName) by mode, runtime, awsRegion
+// Unpack the different configuration options into their own benchmarkname rows
+| concat("resourceType=lambda_tracingConfig=", mode, "_awsRegion=", awsRegion, ",", "resourceType=lambda_runtime=", runtime, "_awsRegion=", awsRegion) as benchmarkNames
+| parse regex field=benchmarkNames "(?<benchmarkname>[^,]+)" multi
+| where !(benchmarkname matches "*Not-Available*")
+| fields benchmarkname, _count_distinct
+| sum(_count_distinct) by benchmarkname // I'm not sure why we want to sum() here?
+| _sum as _count_distinct
+| parse field=benchmarkname "resourceType=lambda_*=*_awsRegion=*" as denomGroup, _, awsRegion
+| concat(denomGroup, "_", awsRegion) as denomGroup
+// Use join to do parallel calculations:
+// t1: per-event type (denomGroup) denominators
+// t2: per-event value (numerator) counts
+| join
+(sum(_count_distinct) as denom by denomGroup) as t1,
+(sum(_count_distinct) as val by denomGroup, benchmarkName) as t2
+on t1.denomGroup = t2.denomGroup
+// Unpack the results and compute the desired percentages
+| t2_val as val
+| t2_benchmarkname as benchmarkname
+| t1_denom as denom
+| concat(round(toDouble(val) / denom * 10000) / 100, "%") as my_company_percentage
+| infer _category=cloudtraildevops _model=benchmark benchmarktype=categorical
+| concat(round(percentage * 10000) / 100, "%") as benchmark_percentage
+| parse field=benchmarkname "resourceType=*_*=*_awsRegion=*" as _, configProperty, value, awsRegion
+| fields awsRegion, configProperty, value, my_company_percentage, benchmark_percentage
+| sort +awsRegion, +configProperty, +value
+```
 
 ## Installing the Global Intelligence for AWS CloudTrail DevOps App
 

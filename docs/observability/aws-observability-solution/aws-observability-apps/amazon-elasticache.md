@@ -23,7 +23,7 @@ The Amazon ElastiCache app uses the following logs and metrics:
 {"eventVersion":"1.05","userIdentity":{"type":"IAMUser","principalId":"AI1234567890QEWUABG5Q","arn":"arn:aws:iam::951234567898:user/Ankit Go","accountId":"951234567898","accessKeyId":"ABCDEFGHIHFBOT4FDVK","userName":"jschmo-sa","sessionContext":{"attributes":{"mfaAuthenticated":"true","creationDate":"2018-12-21T06:34:43Z"}},"invokedBy":"signin.amazonaws.com"},"eventTime":"2021-02-12 10:02:02.318+0000","eventSource":"elasticache.amazonaws.com","eventName":"ModifyReplicationGroupShardConfiguration","awsRegion":"us-east-1","sourceIPAddress":"72.242.40.178","userAgent":"signin.amazonaws.com","requestParameters":{"applyImmediately":true,"nodeGroupCount":3,"replicationGroupId":"nitin-redis-cluster1"},"responseElements":null,"requestID":"e7b3-0503-11e9-ac32-1b9dd4a2a030","eventID":"554d-7d55-46fe-a0fa-de886d19c846","eventType":"AwsApiCall","recipientAccountId":"951234567898"}
 ```
 
-### Query sample (Metric based)
+### Sample Query (Metric based)
 
 Cache Hit Rate:
 
@@ -31,7 +31,7 @@ Cache Hit Rate:
 account=dev region=us-east-1 namespace=aws/elasticache metric=CacheHitRate statistic=Average CacheClusterId=* CacheNodeId=* | avg by account, region, namespace, CacheClusterId, CacheNodeId
 ```
 
-### Query sample (CloudTrail Log based)  
+### Sample Query (CloudTrail Log based)  
 
 Top 10 ReplicationGroupId's:
 
