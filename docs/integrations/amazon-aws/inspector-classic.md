@@ -20,7 +20,7 @@ For more information on Amazon Inspector notifications, see:
 http://docs.aws.amazon.com/inspector/latest/userguide/inspector_assessments.html
 
 
-## Collect Data for the Amazon Inspector App - Classic
+## Collecting Data for the Amazon Inspector Classic App
 
 For information about our newer app for Amazon Inspector, which leverages findings from AWS Security Hub, see Amazon Inspector.
 
@@ -220,7 +220,7 @@ Amazon Inspector CreateResourceGroup action
 For information about our newer app for Amazon Inspector, which leverages findings from AWS Security Hub, see [Amazon Inspector](https://help.sumologic.com/07Sumo-Logic-Apps/01Amazon_and_AWS/Amazon_Inspector).
 
 
-### Installing the Amazon Inspector Classic App
+## Installing the Amazon Inspector Classic App
 
 Now that you have set up collection for Amazon Inspector, install the Sumo Logic App for Amazon Inspector to use the pre-configured Searches and [Dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/01Amazon_and_AWS/Amazon_Inspector_App_-_Classic/Amazon-Inspector-App-Dashboards#Dashboards) that provide visibility into your environment for real-time analysis of overall usage.
 
@@ -250,7 +250,7 @@ Once an app is installed, it will appear in your **Personal** folder, or other f
 Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
 
 
-## Dashboards
+## Viewing Dashboards
 
 ### Amazon Inspector - Overview
 
@@ -271,7 +271,7 @@ Panels will start to fill automatically. It's important to note that each panel 
 **Trend of Findings by Template. **Shows the trend of findings by template in a trend line chart on a timeline for the last seven days.
 
 
-#### Amazon Inspector - Findings
+### Amazon Inspector - Findings
 
 **Finding Severity Over Time. **Shows the finding severity over time in a stacked column chart on a timeline for the last seven days.
 
