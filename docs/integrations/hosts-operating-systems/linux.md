@@ -4,6 +4,10 @@ title: Sumo Logic App for Linux
 sidebar_label: Linux
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src={useBaseUrl('img/integrations/hosts-operating-systems/linux.png')} alt="Linux icon" width="50"/>
+
 The Sumo app for Linux allows you to view information about events, logins, and the security status of your Linux system. The app consists of predefined searches and three dashboards that provide visibility into your environment for real-time or historical analysis.
 
 
@@ -61,7 +65,7 @@ Dec 16 20:26:23 ubuntu sshd[15533]: pam_unix(sshd:auth): authentication failure;
 
 
 
-### Query samples
+### Sample Querys
 
 See [Suggested Searches for Linux OS](https://help.sumologic.com/07Sumo-Logic-Apps/14Hosts_and_Operating_Systems/Linux/Suggested_Searches_for_Linux_OS).
 
@@ -98,16 +102,14 @@ Once an app is installed, it will appear in your **Personal** folder, or other f
 Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
 
 
-### Dashboards
+## Viewing Dashboards
 
 
-#### Overview
+### Overview
 
 **Dashboard description:** See an overview of Linux activity, including the distribution of system events across hosts, group assignment changes, a breakdown of successful and failed logins, sudo attempts, and the count of reporting hosts.
 
-
-2.png "image_tooltip")
-
+<img src={useBaseUrl('img/integrations/hosts-operating-systems/linux.png')} alt="Linux dashboards" />
 
 
 ##### Filtering the Overview dashboard
@@ -391,5 +393,4 @@ Suggested time range: -1 day
 _sourceCategory=OS/Linux/System ("exiting" or "exited" or "terminating" or "terminated" or "shutting")
 | parse regex "\S*\s+\d+\s+\d+:\d+:\d+\s(?<dest_hostname>\S*)\s(?<process_name>\w*)(?:\[\d+\]|):\s+"
 | where process_name !=""
-
 ```

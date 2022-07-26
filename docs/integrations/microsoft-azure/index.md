@@ -7,7 +7,7 @@ description: Microsoft and Azure
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src='https://upload.wikimedia.org/wikipedia/commons/a/a8/Microsoft_Azure_Logo.svg' alt="DB icon" width="100"/>
+<img src='https://upload.wikimedia.org/wikipedia/commons/a/a8/Microsoft_Azure_Logo.svg' alt="thumbnail icon" width="100"/>
 
 This guide has documentation for all of the apps that Sumo provides for Microsoft and Microsoft Azure.  
 

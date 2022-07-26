@@ -72,7 +72,7 @@ If you are using MongoDB in a Kubernetes environment create the fields:
 
 
 
-### Query sample  
+### Sample Query  
 
 
 Dashboard: MongoDB - Errors and Warnings, Panel: Errors by Component

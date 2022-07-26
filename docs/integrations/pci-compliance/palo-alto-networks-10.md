@@ -139,7 +139,7 @@ Oct 09 10:19:15 SumPunFw07.sumotest.com 1,2019/10/09 10:19:15,001234567890002,TR
 
 
 
-### Query example
+### Sample Query
 9.gif "image_tooltip")
 
 

@@ -146,7 +146,7 @@ rjackson
 2. To verify that the data has uploaded, run the following search after about 10 minutes:**_sourceCategory=admin_users**
 3. If the search returns the correct result, run the following search to save the data to a shared location that can be referenced by the Panels in the CloudTrail app:
 
-```
+```sql
 _sourceCategory=admin_users
 | parse "*" as admin_user
 | count as count by admin_user

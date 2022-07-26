@@ -6,6 +6,8 @@ sidebar_label: Docker ULM
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
+<img src={useBaseUrl('img/integrations/containers-orchestration/docker.png')} alt="icon" width="175"/>
+
 The Sumo Logic App for Docker ULM is a unified logs and metrics app that allows you to monitor your Docker deployment. The preconfigured dashboards present information about container state and resource usage, including CPU, memory, block I/O, and network. This app has been tested with Docker v8.03.1-ce and Docker API v1.37.
 
 ## Log and Metric Types

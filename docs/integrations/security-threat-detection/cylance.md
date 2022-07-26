@@ -270,7 +270,7 @@ Policy Name: Allowed Anywhere Internally
 
 
 
-### Query sample
+### Sample Query
 18
 
 

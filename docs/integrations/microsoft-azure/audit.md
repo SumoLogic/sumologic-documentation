@@ -7,6 +7,8 @@ description: Azure Audit
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
+<img src={useBaseUrl('img/integrations/microsoft-azure/azure-audit.png')} alt="thumbnail icon" width="75"/>
+
 The Azure Audit App allows you to collect data from the Azure Activity Log (formerly known as Azure Audit logs) and monitor the health of your Azure environment. The App provides preconfigured Dashboards that allow you to monitor Active Directory activity, resource usage, service health, and user activity.  Logs can be collected in two ways - from Event Hub, and from Azure Insight API using Sumo Powershell scripts.
 
 This guide walks you through the tasks you'll perform to [collect Azure Audit logs from Event Hub](https://help.sumologic.com/07Sumo-Logic-Apps/04Microsoft-and-Azure/Azure_Audit/02Collect-Logs-for-the-Azure-Audit-App-from-Event-Hub):
