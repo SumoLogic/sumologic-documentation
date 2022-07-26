@@ -32,7 +32,7 @@ DH-RSA-AES256-GCM-SHA384 TLSv1.2 arn:aws:elasticloadbalancing:us-west-2:10403021
 "Root=1-58337364-23a8c76965a2ef7629b185e134"
 ```
 
-### Query sample 
+### Sample Query 
 
 The following query sample was taken from the **HTTP Target 5xx per Target Group** panel on the **AWS Application Load Balancer - HTTP Target Group Codes** dashboard.
 

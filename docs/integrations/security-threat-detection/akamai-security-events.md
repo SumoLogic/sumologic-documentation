@@ -67,7 +67,7 @@ The Akamai Security Events App uses security events generated on the Akamai plat
 
 
 
-#### Query sample  
+#### Sample Query  
 3
 
 

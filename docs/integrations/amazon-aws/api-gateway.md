@@ -7,10 +7,11 @@ description: AWS API Gateway
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Amazon API Gateway service allows you to create RESTful APIs and WebSocket APIs for real-time two-way communication applications in containerized and serverless environments, as well as web applications.
+AWS API Gateway service allows you to create RESTful APIs and WebSocket APIs for real-time two-way communication applications in containerized and serverless environments, as well as web applications.
 
 The Sumo Logic AWS API Gateway App provides insights into API Gateway tasks while accepting and processing concurrent API calls throughout your infrastructure, including traffic management, CORS support, authorization and access control, throttling, monitoring, and API version management.
 
+## Collecting Logs and Metrics for AWS API Gateway
 
 ### Log and Metric Types  
 
@@ -18,48 +19,6 @@ The AWS API Gateway app uses the following logs and metrics
 
 * [Amazon API Gateway metrics](https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-metrics-and-dimensions.html)
 * [CloudTrail API Gateway Data Event](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-data-events)
-
-
-### Sample CloudTrail Log Message
-
-```json
-{"eventVersion":"1.05","userIdentity":{"type":"IAMUser","principalId":"A12445W32RZN24HABCD12",
-"arn":"arn:aws:iam::123408221234:user/bob","accountId":"123408221234","accessKeyId":
-"ASIAZ123456Y3IMWK7X5","userName":"bob","sessionContext":{"sessionIssuer":{},"webIdFederationData":
-{},"attributes":{"mfaAuthenticated":"true","creationDate":"2020-02-17T08:08:01Z"}},"invokedBy":
-"signin.amazonaws.com"},"eventTime":"2020-02-17T08:08:01Z","eventSource":"apigateway.amazonaws.com",
-"eventName":"GetRestApi","awsRegion":"us-east-1","sourceIPAddress":"149.236.17.11","userAgent":
-"signin.amazonaws.com","requestParameters":{"restApiId":"w1234nsgjxf","template":false},
-"responseElements":null,"requestID":"1234169e-e70a-44a1-a691-3cd3f857092a","eventID":
-"051572b0-83ef-49a3-82f6-bbef1ac8c488","readOnly":true,"eventType":"AwsApiCall","recipientAccountId":
-"123408221234"}
-```
-
-### Sample Query (Metric-based)
-
-```sql title="Average Latency by API Name"
-Namespace=aws/apigateway metric=Latency statistic=Average account=* region=* apiname=* | avg by apiname, namespace, region, account
-```
-
-
-### Sample Query (CloudTrail Log-based)
-
-```sql title="Top Error Codes"
-"\"eventSource\":\"apigateway.amazonaws.com\"" errorCode account=dev Namespace=aws/apigateway region=us-east-1
-| json "eventName", "eventSource", "awsRegion", "userAgent", "recipientAccountId", "userIdentity", "requestParameters", "responseElements", "sourceIPAddress", "errorCode", "errorMessage", "requestID" as event_name, event_source, Region, user_agent, accountId1, userIdentity, requestParameters, responseElements, src_ip, errorCode, errorMessage, requestID nodrop
-| where event_source = "apigateway.amazonaws.com" and !isEmpty(errorCode)
-| json field=userIdentity "accountId", "arn", "userName", "type" as accountId2, arn, username, type nodrop | parse field=arn ":assumed-role/*" as user nodrop | parse field=arn "arn:aws:iam::*:*" as accountId, user nodrop
-| json field=requestParameters "basePath", "domainName" as basePath, domainName nodrop | json field=responseElements "name" as ApiName nodrop // CreateRestApi, CreateApiKey, CreateUsagePlan, CreateUsagePlanKey, CreateUsagePlanKey, ImportApi, ImportRestApi, UpdateRestApi, UpdateUsagePlan provides ApiName
-| where (tolowercase(ApiName) matches tolowercase("*")) or isBlank(apiname)
-| if (isEmpty(errorCode), "Success", "Failure") as eventStatus
-| if (!isEmpty(accountId1), accountId1, accountId2) as accountId
-| if (isEmpty(userName), user, userName) as user
-| count as eventCount by errorCode
-| top 10 errorCode by eventCount, errorCode asc
-```
-
-
-## Collecting Logs and Metrics
 
 
 ### Collect Metrics for AWS API Gateway   
@@ -96,12 +55,12 @@ The S3 bucket name is not part of the path. Don’t include the bucket name when
 2. Click **Save**.
 
 
-#### Field in Field Schema
+### Field in Field Schema
 
 Login to Sumo Logic, go to Manage Data > Logs > Fields. Search for the “**apiname**” field. If not present, create it. Learn how to create and manage fields [here](https://help.sumologic.com/Manage/Fields#manage-fields).
 
 
-#### Field Extraction Rule(s)
+### Field Extraction Rule(s)
 
 Create Field Extraction Rule for CloudTrail Logs. Learn how to create Field Extraction Rule [here](https://help.sumologic.com/Manage/Field-Extractions/Create-a-Field-Extraction-Rule).
 
@@ -122,7 +81,7 @@ Parse Expression:
 
 
 
-#### Centralized AWS CloudTrail Log Collection
+### Centralized AWS CloudTrail Log Collection
 
 In case you have a centralized collection of cloudtrail logs and are ingesting them from all accounts into a single Sumo Logic cloudtrail log source, create following Field Extraction Rule to map proper AWS account(s) friendly name/alias. Create it if not already present / update it as required.
 ```
@@ -145,6 +104,44 @@ Enter a parse expression to create an “account” field that maps to the alias
 | if (recipientAccountId = "567680881046",  "prod", account) as account
 | fields account
 ```
+
+
+### Sample CloudTrail Log Message
+
+```json
+{"eventVersion":"1.05","userIdentity":{"type":"IAMUser","principalId":"A12445W32RZN24HABCD12",
+"arn":"arn:aws:iam::123408221234:user/bob","accountId":"123408221234","accessKeyId":
+"ASIAZ123456Y3IMWK7X5","userName":"bob","sessionContext":{"sessionIssuer":{},"webIdFederationData":
+{},"attributes":{"mfaAuthenticated":"true","creationDate":"2020-02-17T08:08:01Z"}},"invokedBy":
+"signin.amazonaws.com"},"eventTime":"2020-02-17T08:08:01Z","eventSource":"apigateway.amazonaws.com",
+"eventName":"GetRestApi","awsRegion":"us-east-1","sourceIPAddress":"149.236.17.11","userAgent":
+"signin.amazonaws.com","requestParameters":{"restApiId":"w1234nsgjxf","template":false},
+"responseElements":null,"requestID":"1234169e-e70a-44a1-a691-3cd3f857092a","eventID":
+"051572b0-83ef-49a3-82f6-bbef1ac8c488","readOnly":true,"eventType":"AwsApiCall","recipientAccountId":
+"123408221234"}
+```
+
+### Sample Queries
+
+```sql title="Average Latency by API Name (Metric-based)"
+Namespace=aws/apigateway metric=Latency statistic=Average account=* region=* apiname=* | avg by apiname, namespace, region, account
+```
+
+
+```sql title="Top Error Codes (CloudTrail Log-based)"
+"\"eventSource\":\"apigateway.amazonaws.com\"" errorCode account=dev Namespace=aws/apigateway region=us-east-1
+| json "eventName", "eventSource", "awsRegion", "userAgent", "recipientAccountId", "userIdentity", "requestParameters", "responseElements", "sourceIPAddress", "errorCode", "errorMessage", "requestID" as event_name, event_source, Region, user_agent, accountId1, userIdentity, requestParameters, responseElements, src_ip, errorCode, errorMessage, requestID nodrop
+| where event_source = "apigateway.amazonaws.com" and !isEmpty(errorCode)
+| json field=userIdentity "accountId", "arn", "userName", "type" as accountId2, arn, username, type nodrop | parse field=arn ":assumed-role/*" as user nodrop | parse field=arn "arn:aws:iam::*:*" as accountId, user nodrop
+| json field=requestParameters "basePath", "domainName" as basePath, domainName nodrop | json field=responseElements "name" as ApiName nodrop // CreateRestApi, CreateApiKey, CreateUsagePlan, CreateUsagePlanKey, CreateUsagePlanKey, ImportApi, ImportRestApi, UpdateRestApi, UpdateUsagePlan provides ApiName
+| where (tolowercase(ApiName) matches tolowercase("*")) or isBlank(apiname)
+| if (isEmpty(errorCode), "Success", "Failure") as eventStatus
+| if (!isEmpty(accountId1), accountId1, accountId2) as accountId
+| if (isEmpty(userName), user, userName) as user
+| count as eventCount by errorCode
+| top 10 errorCode by eventCount, errorCode asc
+```
+
 
 ## Installing the AWS API Gateway App
 

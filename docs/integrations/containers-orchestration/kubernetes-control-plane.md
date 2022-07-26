@@ -132,7 +132,7 @@ connection refused"}
 
 
 
-### Query sample
+### Sample Query
 12
 
 

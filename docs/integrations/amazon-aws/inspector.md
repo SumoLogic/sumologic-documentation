@@ -81,7 +81,7 @@ The following is an example of an AWS Security Hub log.
 
 
 
-### Query example
+### Sample Query
 
 Findings by resource type and severity query:
 

@@ -271,7 +271,7 @@ Once an app is installed, it will appear in your **Personal** folder, or other f
 Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
 
 
-## Viewing the S3 Audit Dashboards
+## Viewing Amazon S3 Audit Dashboards
 
 ### Overview
 

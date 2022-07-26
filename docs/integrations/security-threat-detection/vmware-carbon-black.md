@@ -349,7 +349,7 @@ alliance_data_bit9endpointvisibility='74ccc9e8-ffc6-4e0b-ba88-0e947cf7b146' alli
 
 
 
-### Query example
+### Sample Query
 22
 
 

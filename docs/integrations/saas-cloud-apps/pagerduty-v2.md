@@ -43,7 +43,7 @@ For more information on the incident messages supported in Webhooks V2, see the 
 For examples of incident.trigger, incident.acknowledge, incident.resolve, and incident.assign log messages, see the [PagerDuty Webhooks V2 Examples](https://v2.developer.pagerduty.com/docs/webhooks-v2-overview#examples) page.
 
 
-#### Query example
+#### Sample Query
 
 The following Top Altering Services query is shown on the PagerDuty V2 - Overview dashboard.
 

@@ -147,7 +147,7 @@ The Docker EE App uses the following log types.
 
 
 
-### Query samples
+### Sample Querys
 10
 
 

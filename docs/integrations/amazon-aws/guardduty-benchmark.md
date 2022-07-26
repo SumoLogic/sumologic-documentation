@@ -222,7 +222,7 @@ To deploy the Sumo Logic GuardDuty Benchmark SAM App, do the following:
 
 
 
-#### Query sample
+#### Sample Query
 
 The following query is from the **Threats by Region** panel of the **Amazon GuardDuty - Threat Details** dashboard:
 
