@@ -5,12 +5,11 @@ sidebar_label: VMware (Legacy)
 description: VMware (Legacy)
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 A newer app, [VMware ULM](https://help.sumologic.com/07Sumo-Logic-Apps/10Containers_and_Orchestration/VMware), is available. The App on this page is based on the vMA technology running on legacy vSphere versions 6.0 and prior. The vMA technology is no longer supported by VMware.
 
 The Sumo Logic App for VMware allows you to:
-
-
 
 * Collect and centralize logs from the entire VMware infrastructure, including ESX/ESXi, vCenter Server, and individual virtual machines as well as operating system and applications running ESXi, vCenter Server, and individual virtual machines as well as operating system and applications running within the virtual machine.
 * Troubleshoot VMware farms and find issues related to over-provisioning VMs, "noisy neighbors", changes to configuration, and VM movement.
