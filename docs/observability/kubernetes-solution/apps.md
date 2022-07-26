@@ -93,7 +93,7 @@ This application helps infrastructure engineers and DevOps users benchmark the m
 
 Global Intelligence for Kubernetes DevOps App uses metrics data from Kubernetes clusters. 
 
-#### Query sample 
+#### Sample Query 
 
 The following sample query is from the **Deployment Count** panel of **GI Kubernetes DevOps - 01. Adoption Stats** dashboard.
 

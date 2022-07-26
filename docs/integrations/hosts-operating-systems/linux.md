@@ -65,7 +65,7 @@ Dec 16 20:26:23 ubuntu sshd[15533]: pam_unix(sshd:auth): authentication failure;
 
 
 
-### Query samples
+### Sample Querys
 
 See [Suggested Searches for Linux OS](https://help.sumologic.com/07Sumo-Logic-Apps/14Hosts_and_Operating_Systems/Linux/Suggested_Searches_for_Linux_OS).
 

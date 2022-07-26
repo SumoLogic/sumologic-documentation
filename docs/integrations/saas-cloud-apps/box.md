@@ -23,7 +23,7 @@ This page provides instructions for setting up event collection from Box for ana
 * [Requirements and process overview](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/Box/01-Collect-Events-for-the-Box-App#Requirements_and_process_overview)
 * [Configuring Box event collection](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/Box/01-Collect-Events-for-the-Box-App#Configuring_Box_event_collection)
 * [Sample log messages](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/Box/01-Collect-Events-for-the-Box-App#Sample_log_messages)
-* [Query sample](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/Box/01-Collect-Events-for-the-Box-App#Query_sample)
+* [Sample Query](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/Box/01-Collect-Events-for-the-Box-App#Query_sample)
 
 
 #### Log types
@@ -339,7 +339,7 @@ To enable Script Sources you must set the Collector parameter `enableScriptSourc
 
 
 
-### Query sample
+### Sample Query
 
 **Top 10 Failed Logins**
 

@@ -33,7 +33,7 @@ Enter a list of log types, usually hyperlinked to vendor docs
 
 Get a sample from app developer and replace this text with it.
 
-### Query sample
+### Sample Query
 
 Get a sample from the app developer and replace this text with it.
 

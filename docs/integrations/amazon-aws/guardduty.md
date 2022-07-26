@@ -40,7 +40,7 @@ This configuration is defined in a [AWS Serverless Application Model (SAM) speci
 When you configure the HTTP Source, make a note of the HTTP Source Address URL. You will need it in the next step.  
 
 
-### Step 2: Deploy Sumo GuardDuty events processor 
+### Step 2: Deploy Sumo GuardDuty events processor
 
 In this step, you deploy the events processor. This will create the AWS resources described in [Collection overview](https://help.sumologic.com/07Sumo-Logic-Apps/01Amazon_and_AWS/Amazon_GuardDuty/Collect-Logs-for-the-Amazon-GuardDuty-App#Collection_overview).
 
@@ -268,12 +268,14 @@ Panels will start to fill automatically. It's important to note that each panel 
 
 
 
-## Viewing Dashboards
+## Viewing Amazon GuardDuty Dashboards
 
 
-### Amazon GuardDuty - Overview
+### Overview
 
 See the overview of GuardDuty threats including the severity, threat purpose, resource type, threat name, account ID, and region.
+
+<img src={useBaseUrl('img/integrations/amazon-aws/AWS_GuardDuty-Overview2.png')} alt="Amazon GuardDuty dashboards" />
 
 
 **GuardDuty Threat Map**. See the count of threats on a world map in the last 24 hours.
@@ -293,11 +295,12 @@ See the overview of GuardDuty threats including the severity, threat purpose, re
 **Severity and ResourceType**. See the count of severity levels in the last 24 hours by resource type on a bar chart.
 
 
-### Amazon GuardDuty - CloudTrail Details
-18
+### CloudTrail Details
 
 
 See the details of GuardDuty CloudTrail threats including the count, title, the trend, and action type.
+
+<img src={useBaseUrl('img/integrations/amazon-aws/CloudTrailDetails.png')} alt="Amazon GuardDuty dashboards" />
 
 
 
@@ -312,12 +315,12 @@ See the details of GuardDuty CloudTrail threats including the count, title, the 
 **CloudTrail Threats by Title, ActionType**. See the details of CloudTrail threats in the last 24 hours including the account ID, region, title, accesskey ID, principal ID,  action type, severity, and count, displayed in a table.
 
 
-### Amazon GuardDuty - Details
+### Details
 
 
 See the GuardDuty threat details including the count, account-region trend, threat purpose, severity, resource type, and security group.
 
-
+<img src={useBaseUrl('img/integrations/amazon-aws/Amazon-GD-Details.png')} alt="Amazon GuardDuty dashboards" />
 
 **Outliers - All Threats**. See the outliers in all threats in the last 24 hours on a line chart.
 
@@ -334,15 +337,11 @@ See the GuardDuty threat details including the count, account-region trend, thre
 **Threats by SecurityGroup**. See the count and percentage of threats in the last 24 hours by security group on a pie chart.
 
 
-### Amazon GuardDuty - VPCs, Subnets, Security Group Details
-2
-
+### VPCs, Subnets, Security Group Details
 
 See the details of GuardDuty threats by VPC, security group, and subnet ID.
 
-
-3
-
+<img src={useBaseUrl('img/integrations/amazon-aws/VPCsSubnetsSecurityGroupDetails.png')} alt="Amazon GuardDuty dashboards" />
 
 **Threat Type by VPC**. See the count of threat type by VPC in the last 24 hours displayed on a bar chart.
 

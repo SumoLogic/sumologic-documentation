@@ -7,7 +7,7 @@ description: AWS Classic Load Balancer
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/amazon-aws/icon.png')} alt="DB icon" width="50"/>
+<img src={useBaseUrl('img/integrations/amazon-aws/clb.png')} alt="DB icon" width="50"/>
 
 AWS Elastic Load Balancer Classic distributes the incoming application traffic across multiple EC2 instances in multiple Availability Zones.
 
@@ -37,13 +37,16 @@ For details on the metrics of AWS Classic Load Balancer, see [here](https://docs
 ### Sample Access Log Message
 
 ```json
-2017-11-06T23:20:38 stag-www-lb 250.38.201.246:56658 10.168.203.134:23662 0.007731 0.214433 0.000261 404 200 3194 123279 "GET https://stag-www.sumologic.net:443/json/v2/searchquery/3E7959EC4BA8AAC5/messages/raw?offset=29&length=15&highlight=true&_=1405591692470 HTTP/1.1" "Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:23.0) Gecko/20131011 Firefox/23.0" ECDHE-RSA-CAMELLIA256-SHA384 TLSv1.2
+2017-11-06T23:20:38 stag-www-lb 250.38.201.246:56658 10.168.203.134:23662 0.007731 0.214433 0.000261 404 200 3194 123279 \
+"GET https://stag-www.sumologic.net:443/json/v2/searchquery/3E7959EC4BA8AAC5/messages/raw?offset=29&length=15&highlight=true&_=1405591692470 HTTP/1.1" \
+"Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:23.0) Gecko/20131011 Firefox/23.0" \
+ECDHE-RSA-CAMELLIA256-SHA384 TLSv1.2
 ```
 
 
-### Sample Query (Access Log Based)
+### Sample Queries
 
-```sql title="Response Codes Distribution by Domain and URI"
+```sql title="Response Codes Distribution by Domain and URI (Access Log Based)"
 account={{account}} region={{region}} namespace={{namespace}}
 | parse "* * * * * * * * * * * \"*\" \"*\" * *" as datetime, loadbalancername, client, backend, request_processing_time, backend_processing_time, response_processing_time, elb_status_code, backend_status_code, received_bytes, sent_bytes, request, user_agent, ssl_cipher, ssl_protocol
 | where tolowercase(loadbalancername) matches tolowercase("{{loadbalancername}}")
@@ -61,10 +64,10 @@ account={{account}} region={{region}} namespace={{namespace}}
 ```
 
 
-### Sample Query (Metric based)  
-
-```bash title="4XX by Load Balancer"
-account={{account}} region={{region}} Namespace={{namespace}} loadbalancername={{loadbalancername}} metric=HTTPCode_ELB_4XX Statistic=Sum | sum by account, region, namespace, loadbalancername
+```bash title="4XX by Load Balancer (Metrics-based)"
+account={{account}} region={{region}} Namespace={{namespace}} \
+loadbalancername={{loadbalancername}} metric=HTTPCode_ELB_4XX \
+Statistic=Sum | sum by account, region, namespace, loadbalancername
 ```
 
 

@@ -152,9 +152,9 @@ Once an app is installed, it will appear in your **Personal** folder, or other f
 Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
 
 
-## Viewing the Dashboards
+## Viewing Amazon SQS Dashboards
 
-### Amazon SQS - Overview
+### Overview
 
 See the details of SQS metrics including the age, delayed, visible, sent, deleted, messages, and size of the messages.
 
@@ -183,7 +183,7 @@ See the details of SQS metrics including the age, delayed, visible, sent, delete
 **Number Of Messages Sent and Deleted**. See the sum of the metric number of messages sent, and the sum of the metric number of messages deleted, in the last 24 hours by region on a line chart.
 
 
-### Amazon SQS CloudTrail Events
+### CloudTrail Events
 
 See the details of SQS from logs including the top users, events, and queues.
 
@@ -204,7 +204,7 @@ See the details of SQS from logs including the top users, events, and queues.
 **Events Details**. See the details of SQS events including the time, event name, queue name, queue URL, type, user, account ID, AWS region, source IP address, and event count, in the last 14 days, displayed in a table.
 
 
-### Amazon SQS by QueueName
+### By QueueName
 
 See the details of SQS including the delayed, invisible, deleted, lag, size, received and sent messages by queue name.
 
@@ -229,7 +229,7 @@ See the details of SQS including the delayed, invisible, deleted, lag, size, rec
 **Sent Message Size**. See the average, sum, and maximum of the metric sent message size in the last 24 hours by queue name on a line chart.
 
 
-### Amazon SQS by Region
+### By Region
 
 See the details of SQS including the delayed, invisible, deleted, lag, size, received and sent messages by region.
 

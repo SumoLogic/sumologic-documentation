@@ -25,7 +25,7 @@ This page provides instructions for configuring a Sumo Logic Hosted Collector an
 
 * [Event types](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/PagerDuty_v3/Collect_Logs_for_PagerDuty_V3#Event_Types)
 * [Log example](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/PagerDuty_v3/Collect_Logs_for_PagerDuty_V3#Log_Examples)
-* [Query example](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/PagerDuty_v3/Collect_Logs_for_PagerDuty_V3#Query_example)
+* [Sample Query](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/PagerDuty_v3/Collect_Logs_for_PagerDuty_V3#Query_example)
 * [Configure a Sumo Logic Collector and Source](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/PagerDuty_v3/Collect_Logs_for_PagerDuty_V3#Configure_a_Sumo_Logic_Collector_and_Source)
 * [Create a PagerDuty V3 Webhook](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/PagerDuty_v3/Collect_Logs_for_PagerDuty_V3#Create_a_PagerDuty_V3_Webhook)
 
@@ -47,7 +47,7 @@ For more information on the incident messages supported in Webhooks V3, see the 
 For examples of incident.triggered, incident.acknowledged and incident.resolved log messages, see the [PagerDuty Webhooks V3 Examples](https://developer.pagerduty.com/docs/ZG9jOjQ1MTg4ODQ0-overview#webhook-payload) page.
 
 
-#### Query example
+#### Sample Query
 
 The following Top Altering Services query is shown on the PagerDuty V3 - Overview dashboard.
 

@@ -155,7 +155,7 @@ into slot 1
 
 
 
-### Query sample  
+### Sample Query  
 10
 
 

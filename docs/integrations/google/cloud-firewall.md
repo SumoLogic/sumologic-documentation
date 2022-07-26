@@ -199,7 +199,7 @@ In this step you export logs to the Pub/Sub topic you created in the previous st
 2. By default, GCP logs are stored within Stackdriver, but you can configure Stackdriver to exclude them as detailed here without affecting the export to Sumo Logic as outlined above. To understand how to exclude Stackdriver logs, please follow the instructions in [this GCP document](https://cloud.google.com/logging/docs/exclusions#overview).
 
 
-### Query sample
+### Sample Query
 
 
 **Denied Ingress Traffic by Network Over Time**

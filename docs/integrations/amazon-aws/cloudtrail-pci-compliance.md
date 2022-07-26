@@ -11,7 +11,18 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Sumo Logic App for Payment Card Industry (PCI) Compliance for AWS CloudTrail App offers dashboards to monitor systems, account and users activity to ensure that login activity and privileged users are within the expected ranges. The PCI Compliance for AWS CloudTrail App covers PCI requirements 02, 07, 08 and 10.
 
-## Collecting Logs and Metrics
+
+
+## Collecting Logs for the PCI Compliance for AWS CloudTrail App
+
+This page provides instructions for collecting logs for the the PCI Compliance for AWS CloudTrail App.
+
+To configure an AWS CloudTrail Source, do the following:
+1. [Grant Sumo Logic access](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/Grant-Access-to-an-AWS-Product) to an Amazon S3 bucket.
+2. [Configure CloudTrail](http://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-create-and-update-a-trail.html) in your AWS account.
+3. Confirm that logs are being delivered to the Amazon S3 bucket.
+4. Add an [AWS CloudTrail Source](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/AWS-CloudTrail-Source) to Sumo Logic.
+5. Install the Sumo Logic App for  [PCI Compliance for AWS CloudTrail](https://help.sumologic.com/07Sumo-Logic-Apps/01Amazon_and_AWS/PCI_Compliance_for_AWS_CloudTrail_App/03Dashboards-for-PCI-Compliance-for-AWS-Cloud-Trail#Install_the_Sumo_Logic_App).
 
 
 
@@ -41,7 +52,7 @@ Panels will start to fill automatically. It's important to note that each panel 
 
 
 
-## Viewing the Dashboards
+## Viewing PCI Compliance for AWS CloudTrail Dashboards
 
 The Sumo Logic PCI Compliance for AWS CloudTrail App provides dashboards and sample queries that you can modify for your specific compliance needs.
 * Access Monitoring
@@ -50,7 +61,7 @@ The Sumo Logic PCI Compliance for AWS CloudTrail App provides dashboards and sam
 * Privileged Activity
 
 
-### PCI Compliance for AWS CloudTrail - PCI Req 01 - Access Monitoring
+### PCI Req 01 - Access Monitoring
 
 See the details of security group activities and all AWS activities in compliance with PCI Requirement 01.
 
@@ -63,7 +74,7 @@ See the details of security group activities and all AWS activities in complianc
 * (**All AWS Activities) Read Only Events.** Aggregation table of the user, event, and count of read only events.
 
 
-### PCI Compliance for AWS CloudTrail - PCI Req 10 - Login Activity
+### PCI Req 10 - Login Activity
 
 See the details of failed logins and successful logins in compliance with PCI Requirement 10.
 
@@ -82,7 +93,7 @@ See the details of failed logins and successful logins in compliance with PCI Re
 
 
 
-### PCI Compliance for AWS CloudTrail - PCI Req 08 - Account, System Monitoring
+### PCI Req 08 - Account, System Monitoring
 
 Search user account and IAM activity in compliance with PCI Requirement 08.
 
@@ -102,7 +113,7 @@ Search user account and IAM activity in compliance with PCI Requirement 08.
 * **IAM Events Over Time.** IAM events over the last 24 hours time sliced by every 30 minutes.
 
 
-### PCI Compliance for AWS CloudTrail - PCI Req 08, 10 - Privileged Activity
+### PCI Req 08, 10 - Privileged Activity
 
 See the successful and failed configuration changes, policy changes, and security group activity.
 

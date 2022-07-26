@@ -306,7 +306,7 @@ request_id="v-0000zzzz-d2b4-0000-b3a4-129zzzzd8266"
 
 
 
-#### Query example
+#### Sample Query
 
 This section provides examples for Drupal request, Apache access, and PHP error queries.
 

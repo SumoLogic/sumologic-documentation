@@ -224,7 +224,7 @@ clipboard_e2f20e4ab6db14f6dd473208f84400de0.png
 }
 ```
 
-### Query sample
+### Sample Query
 
 Status codes over time
 
