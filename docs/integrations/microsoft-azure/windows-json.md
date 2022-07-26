@@ -34,13 +34,10 @@ Custom event channels, such as PowerShell or Internet Explorer are also supporte
 
 1. Configure an [Installed Windows collector](https://help.sumologic.com/03Send-Data/Installed-Collectors/03Install-a-Collector-on-Windows) through the user interface or from the command line.
 2. Configure either a local or remote Windows Event Log source. To configure a Windows Event Log source set the following:
-    * **Event Format.** Select **Collect using JSON format. \
- \
-**
-3
-** \
+  * **Event Format.** Select **Collect using JSON format. \
+
 Collect using JSON format.** Events are formatted into JSON that is designed to work with Sumo Logic features, making it easier for you to reference your data.
-    * **Event Collection Level.** When JSON format is selected you have to select Complete Message from the dropdown. \
+  * **Event Collection Level.** When JSON format is selected you have to select Complete Message from the dropdown. \
 
 4
  \

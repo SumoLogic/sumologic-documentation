@@ -9,6 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The IIS 10 (Legacy) App monitors the performance and reliability of your Microsoft Internet Information Services (IIS) infrastructure, identifying customer-facing and internal operational issues. This app also provides the ability to monitor customer paths and interactions, so you can analyze how customers are using your product. The app provides predefined searches and Dashboards, that give visibility into your environment for real-time and historical analysis.
 
+## Collect Logs for the IIS 10 (Legacy) App
 
 ### Log Types  
 
@@ -149,7 +150,6 @@ This section demonstrates how to configure sources for the following log types:
 #### Configure Source for IIS Access Logs
 
 This section demonstrates how to configure a Local File Source for IIS Access Logs, for use with an [Installed Collector](https://help.sumologic.com/07Sumo-Logic-Apps/04Microsoft-and-Azure/IIS_10_(Legacy)/Collect_Logs_for_the_IIS_10_(Legacy)_App#Configure_a_Collector). You may configure a [Remote File Source](https://help.sumologic.com/03Send-Data/Sources/01Sources-for-Installed-Collectors/Remote-File-Source), but the configuration is more complex.
-
 
 
 Sumo Logic recommends using a Local File Source whenever possible.
@@ -389,7 +389,7 @@ _sourceCategory=Webserver/IIS/PerfCounter Win32_PerfFormattedData_W3SVC_WebServi
 
 
 
-## Sample Log Messages  
+### Sample Log Messages  
 
 This section provides samples of the following log message types:
 
@@ -398,10 +398,10 @@ This section provides samples of the following log message types:
 * IIS Performance Logs
 
 
-#### Sample IIS Access Log (WC3 default format)
+#### Sample Logs
 
 
-```
+```json titlee="IIS Access Log (WC3 default format)"
 2019-03-14 07:58:10 10.0.0.104 PUT /Internal/RemoteShare/ ReturnUrl=%2fConfigWeb%2fAudit.aspx
 443 - 160.44.59.168 Mozilla/5.0+(Windows+NT+6.1;+rv:50.0)+Gecko/20100101+Firefox/50.0
 http://www.greylock.com 304 8 12030 58
@@ -412,13 +412,7 @@ http://www.bing.com/search?q=sumo%20applications&src=IE-SearchBox&FORM=IE11SR 20
 ```
 
 
-
-#### Sample HTTP Error Log
-34
-
-
-
-```
+```json title="Sample HTTP Error Log"
 2019-03-14 20:10:10 10.20.190.10 45082 10.24.170.60 80 HTTP/1.1 GET
 /GlobalVilla/MySwimmingPool/images/favicons/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/etc/passwd
 403 - Forbidden -
@@ -430,28 +424,24 @@ http://www.bing.com/search?q=sumo%20applications&src=IE-SearchBox&FORM=IE11SR 20
 ```
 
 
-
 #### Sample IIS Performance Logs
 
-
-This section provides examples of IIS Performance Log formats produced by two different queries. For more information on other W3SVC WebServices Perfmon Counters refer to this documentation [link](https://docs.microsoft.com/en-us/previous-versions//aa394298(v=vs.85))
-
-
-A. This Perfmon query:
+Below are examples of IIS Performance Log formats produced by two different queries. For more information on other W3SVC WebServices Perfmon Counters refer to [this documentation](https://docs.microsoft.com/en-us/previous-versions//aa394298(v=vs.85)).
 
 
-```
+
+This Perfmon query:
+
+```sql title="Perfmon query A"
 select TotalMethodRequestsPerSec, GetRequestsPerSec, PostRequestsPerSec, CurrentConnections,
 CurrentAnonymousUsers, CurrentNonAnonymousUsers, CGIRequestsPerSec, ISAPIExtensionRequestsPerSec,
 BytesReceivedPerSec, BytesSentPerSec, FilesReceivedPerSec, FilesSentPerSec, ServiceUptime,
 BytesTotalPerSec from Win32_PerfFormattedData_W3SVC_WebService
 ```
 
+Produces the following log format:
 
-Produces the following  log format:
-
-
-```
+```bash title="Sample IIS Performance Log A"
 instance of Win32_PerfFormattedData_W3SVC_WebService
 {
 BytesReceivedPersec = "50";
@@ -474,12 +464,9 @@ TotalMethodRequestsPersec = 0;
 
 
 
-**B. This Perfmon query: **
-37
+This Perfmon query:
 
-
-
-```
+```sql title="Perfmon query B"
 Select ArrivalRate, CurrentQueueSize, CacheHitRate, RejectionRate, MaxQueueItemAge from
 Win32_PerfFormattedData_Counters_HTTPServiceRequestQueues
 ```
@@ -487,8 +474,7 @@ Win32_PerfFormattedData_Counters_HTTPServiceRequestQueues
 
 Produces the following log format:
 
-
-```
+```bash title="Sample IIS Performance Log A"
 instance of Win32_PerfFormattedData_Counters_HTTPServiceRequestQueues
 {
 ArrivalRate = "100";
@@ -502,14 +488,12 @@ RejectionRate = "0";
 
 
 
-### Query Samples  
-38
-
+### Sample Queries  
 
 The following query sample is taken from the **Top Server Errors by Server** panel on the **IIS 10 - Server Operations - Error dashboard**.
 
 
-```
+```sql
 _sourceCategory=Webserver/IIS/Access 5*
 | parse regex "(?<server_ip>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}) (?<method>\S+?)
 (?<cs_uri_stem>\S+?) (?<cs_uri_query>\S+?) (?<s_port>\S+?) (?<cs_username>\S+?)
@@ -523,7 +507,7 @@ _sourceCategory=Webserver/IIS/Access 5*
 The following query sample is taken from the **Top Reason Phrase** panel on the **IIS 10 - HTTP Error dashboard**.
 
 
-```
+```sql
 _sourceCategory=Webserver/IIS/Error
 | parse regex "(?<c_ip>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}) (?<c_port>\S+?)
 (?<server_ip>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}) (?<s_port>\S+?) (?<protocol_version>\S+?)
@@ -537,7 +521,7 @@ _sourceCategory=Webserver/IIS/Error
 The following query sample is taken from the **IIS Site Uptime** panel on the **IIS 10 (Legacy)** **- Overview dashboard**.
 
 
-```
+```sql
 _sourceCategory=Webserver/IIS/PerfCounter
 Win32_PerfFormattedData_W3SVC_WebService ServiceUptime
 | parse "Name = \"*\";" as Name
@@ -551,10 +535,9 @@ Win32_PerfFormattedData_W3SVC_WebService ServiceUptime
 
 
 
-# Install the IIS 10 (Legacy) App
+## Installing the IIS 10 (Legacy) App
 
-This page demonstrates how to install the IIS 10 (Legacy) App and provides examples and explanations for each of the app's predefined dashboards.
-
+This section demonstrates how to install the IIS 10 (Legacy) App and provides examples and explanations for each of the app's predefined dashboards.
 
 Now that you have set up collection for IIS 10, you are ready to install the Sumo Logic App for IIS 10 that provides preconfigured searches and [dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/04Microsoft-and-Azure/IIS/03IIS-App-Dashboards#Dashboards) that monitor events generated by IIS 10.
 
@@ -563,14 +546,10 @@ To install the app, do the following:
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
-
-
 1. From the **App Catalog**, search for and select the app**.**
 2. Select the version of the service you're using and click **Add to Library**.
 
 Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](https://help.sumologic.com/01Start-Here/Library/Apps-in-Sumo-Logic/Install-Apps-from-the-Library)
-
-
 
 1. To install the app, complete the following fields.
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
@@ -585,8 +564,7 @@ Once an app is installed, it will appear in your **Personal** folder, or other f
 Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
 
 
-## Viewing IIS 10 Legacy Dashboards   
-
+## Viewing IIS 10 (Legacy) Dashboards   
 
 **Each dashboard has a set of filters** that you can apply to the entire dashboard, as shown in the following example. Click the funnel icon in the top dashboard menu bar to display a scrollable list of filters that are applied across the entire dashboard.
 

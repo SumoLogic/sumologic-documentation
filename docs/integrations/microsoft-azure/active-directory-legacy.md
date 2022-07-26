@@ -11,7 +11,226 @@ The Active Directory Legacy App allows you to analyze Windows Active Directory l
 
 We recommend using the Active Directory App in combination with the Windows App.
 
-## Collecting Logs
+
+## Collecting Log Files for the Active Directory Legacy App
+
+
+Windows Active Directory (AD) is a directory service developed by Microsoft that stores information about various objects on a network.
+
+The Active Directory Legacy App analyzes, then graphically displays this information to users and network administrators, including information about domain controllers, forest, site, users, groups, computers and organizational units. Sumo Logic allows you to augment or couple regular Windows Events with this data to get more contextual insights from the logs. For example, by augmenting the events based on the domain name, you can build searches specific to a particular AD site or track activities to users under a specific Organizational Unit.
+
+
+### Log types
+
+
+Active Directory diagnostic log files are described in more detail in [Microsoft help](https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-2000-server/cc961809(v=technet.10)).
+
+
+### Prerequisites
+
+To begin collecting Active Directory logs, first:
+
+
+
+* A. Verify the Active Directory module
+* B. Download and deploy Sumo Logic scripts
+
+
+### A. Verify Active Directory module
+3
+
+
+Before proceeding, verify that the Active Directory module is available. The Active Directory module is supported on Windows 7 and Windows 2008 Server (R2 and later) if Remote Server Administration Tools (RSAT) are installed. You'll find more information at [Microsoft TechNet](https://technet.microsoft.com/en-us/library/dd378937(WS.10).aspx).
+
+**To verify that Active Directory Module is available**
+
+
+
+1. Choose **Start > Administrative Tools**.
+2. Look for **Active Directory Module for Windows PowerShell**.
+
+
+1. If the module isn't installed, install RSAT as described on [Microsoft TechNet](https://technet.microsoft.com/en-us/library/cc730825.aspx).
+
+
+### B. Download and deploy Sumo scripts
+5
+
+
+In order to collect files, download the following scripts:
+
+
+
+* [adQueryDS.ps1](https://help.sumologic.com/@api/deki/files/2512/adQueryDS.ps1?revision=1)  - Core functions that are leveraged by the other scripts
+* [adObjectCollector.ps1](https://help.sumologic.com/@api/deki/files/1979/adObjectCollector.ps1?revision=1)  - Active Directory object collector
+* [domainCollector.ps1](https://help.sumologic.com/@api/deki/files/1981/domainCollector.ps1?revision=1) - Active Directory domain collector
+
+These scripts should be deployed on a machine that is part of the domain where the log files exist. After deploying the scripts, you'll need to configure a script source on Sumo Logic for **domainCollector.ps1** and another script source for **adObjectCollector.ps1**.
+
+**To deploy the scripts, do the following:**
+
+
+
+1. Download the scripts to a folder, for example `C:\PSScripts`.
+2. Edit the scripts so that `SCRIPTPATH` matches the path to the folder.
+
+Testing the scripts is optional, but recommended.
+
+**To manually test the scripts, do the following**
+
+
+
+1. Open a command line interface.
+2. Run `domainCollector` and `adObjectCollector`, using the path where the scripts were installed.
+
+
+```sh
+powershell.exe -ExecutionPolicy Bypass -InputFormat None -File c:\PSScripts\domainCollector.ps1
+
+powershell.exe -ExecutionPolicy Bypass -InputFormat None -File c:\PSScripts\adObjectCollector.ps1
+```
+
+
+If the setup was successful, Active Directory domain and object information will be collected and the scripts will print results to the screen:
+
+
+6
+
+
+
+## Step 1: Configure a collector
+7
+
+
+Configure an [Installed Collector](https://help.sumologic.com/03Send-Data/Installed-Collectors).
+
+Make sure the collector is installed on a machine that belongs to the domain managed by Active Directory. You can install a single collector and use a remote source, but Sumo Logic recommends installing a collector on each of your domain controllers for performance.
+
+
+## Step 2: Configure event log sources
+8
+
+
+If you have installed collectors on each domain controller, as recommended, configure a [Local Windows Event Log Source](https://help.sumologic.com/03Send-Data/Sources/01Sources-for-Installed-Collectors/Local-Windows-Event-Log-Source) on each one. Otherwise, configure a [Remote Windows Event Log Source](https://help.sumologic.com/03Send-Data/Sources/01Sources-for-Installed-Collectors/Remote-Windows-Event-Log-Source) to collect events from each Active Directory server. For these Windows Event sources, set the source category to **OS/Windows **and **Event Format** as **Collect using legacy format**.
+
+
+9
+
+
+**Collect using legacy format.** Events retain their default text format from Windows.
+
+
+## Step 3: Configure Script Sources
+10
+
+
+Perform the configuration described below twice, to set up one script source for `adObjectCollector.ps1` and one for `domainCollector.ps1`.
+
+If your Domain Controllers are in the same domain, then you can just run the scripts on a select one or a few of the Domain Controller machines. Because each Domain Controller may have or allow different data, you will need to select the best ones. The adObjectCollector.ps1 script is the heaviest. There is no reason to pull your AD objects multiple times.
+
+**To configure a script source, do the following:**
+
+
+
+1. In Sumo Logic, select** Manage Data > Collection > Collection**.
+2. Find the name of the installed collector to which you'd like to add a Source. Click **Add...** then choose** Add Source **from the pop-up menu.
+3. Select **Script** for the Source type. Collectors using version 19.245-4 and later do not allow Script Sources to run by default. To allow Script Sources you need to set the Collector parameter `enableScriptSource` in [user.properties](https://help.sumologic.com/03Send-Data/Installed-Collectors/05Reference-Information-for-Collector-Installation/06user.properties) to true and [restart](https://help.sumologic.com/Manage/Collection/02Start-or-Stop-a-Collector-using-Scripts) the Collector. \
+
+11
+
+4. **Name**. Enter **DomainCollector** or **ADObjects**, depending on which script you are configuring. Description is optional.
+5. **Source Host** (optional). Enter the hostname or the IP address of the machine. The hostname is stored in a searchable field called **_sourceHost. **The hostname can be a maximum of 128 characters.
+6. **Source Category**. Enter a Source Category following the [Best Practices](https://help.sumologic.com/03Send-Data/01-Design-Your-Deployment/Best-Practices%3A-Good-Source-Category%2C-Bad-Source-Category) that allows you to include both the logs from these scripts and the logs from your Windows Event logs from the Domain Controller(s). For example, `DC/Windows/adObjects`, `DC/Windows/domainCollector`, and `DC/Windows/Event`. This will allow you to specify a query like `sourceCategory=DC/Windows/*` to bring in all AD-related logs.
+7. **Frequency.** Select a short time for testing (for example, every 5 minutes), then change it to a longer interval once you confirm it’s working.
+
+
+12
+The **Frequency** option should be set according to your environment. We use a short interval in our example and testing, but in your deployment, the proper **Frequency** value depends on how often your topology changes. It's important that the **Frequency** be set to a time longer than it takes for the script to run. For example, if a script takes two hours to finish, the **Frequency** should be set to **Every 3 Hours**. If the topology is relatively stable, the **Frequency** can be set to a longer value, such as **Every 12 hours** (it is recommended that each script run at least once every day).
+
+
+
+1. If you'd like to set a timeout for your script, select **Specify a timeout for your command**. If you don't need a timeout, or if you're running a script once daily, we recommend that you leave this option deselected.
+2. **Command**. Select **PowerShell Script.**
+3. **Script.** Do one of the following:
+    * If you have the script saved to a file location and you do not have restrictions on running scripts, choose **Type a path to the script to execute** and enter the path to the script. For example, `c:\PSScripts\adObjectCollector.ps1` or  `c:\PSScripts\domainCollector.ps1`. (The script path you enter will depend on which script source you are currently configuring.)
+    * If you have restrictions for running scripts, then select **Type the script the execute**. Enter the command executed during testing on your system. The command will be specific to the script you’re configuring: \
+ \
+`powershell.exe -ExecutionPolicy Bypass -InputFormat None -File c:\PSScripts\adObjectCollector.ps1 \
+ \
+powershell.exe -ExecutionPolicy Bypass -InputFormat None -File c:\PSScripts\domainCollector.ps1 \
+`
+4. **Working Directory**: Enter the path where your scripts are located.
+5. Click the icon next to **Processing Rules** to expand the dialog.
+6. Click **Add Rule**.
+7. **Name**. Enter a name for the processing rule (for example, domainCollector).
+8. **Filter**. Enter the following filters to exclude command outputs from being logged. \
+`.*domainCollector\.ps1.* \
+.*adObjectCollector\.ps1.* \
+.*adQueryDS\.ps1.*`
+9. **Type**: Select **Exclude messages that match**.
+10. Click **Save** to create the source.
+
+
+## Sample Log Messages
+
+
+```json title="Domain Controller"
+DomainController DName=="DC=local" DomainName=="local" Forest=="local" NetBIOSName=="LOCAL" ControllerHostName=="HOST1DC01.local" IP=="102.240.30.12" Site=="DC1"
+```
+
+
+
+
+```json title="AD Domain"
+UserMembership SearchBase=="DC=local" DistinguishedName=="NN=Service My-Service,OU=DC=local" Name=="My-Service" ObjectGUID=="c1234249-6401-40e7-18a8-289fbb2faf26" Parent=="DC=local"
+```
+
+
+```js title="Windows Event"
+instance of Win32_NTLogEvent
+{
+    Computer = "HOSTDC01";
+    EventCode = 4634;
+    EventIdentifier = 4634;
+    Logfile = "Security";
+    RecordNumber = 184879601;
+    SourceName = "Microsoft-Windows-Security-Auditing";
+    TimeGenerated = "20170213222816.000000-000";
+    TimeWritten = "20170213222816.000000-000";
+    Type = "Audit Success";
+    EventType = 4;
+    Category = 12545;
+    CategoryString = "Logoff";
+    Message = "An account was logged off.
+
+Subject:
+    Security ID:        HOST1DC01$ (S-1-5-21-3123024953-243645673-3382258605-1103)
+    Account Name:        HOST1DC01$
+    Account Domain:        Local
+    Logon ID:        0x6C367A5
+
+Logon Type:            3
+
+This event is generated when a logon session is destroyed. It may be positively correlated with a logon event using the Logon ID value. Logon IDs are only unique between reboots on the same computer.";
+    InsertionStrings = {"S-1-5-21-3123024953-2436456723-3382258605-1103", "HOST1DC01$", "HOSTING", "0x6c488a5", "3"};
+};
+```
+
+
+
+## Query Sample
+
+
+```sql title="Directory Service Object Changes (from Active Directory App)"
+_sourceCategory=delete_test _sourceName=Security "Directory Service Changes"
+| parse "EventCode = *;" as event_id nodrop | parse "Computer = \"*\";" as host nodrop | parse "ComputerName = \"*\";" as host nodrop | parse regex "Message = \"(?<msg_summary>[^\r]+?)\r" nodrop | parse "CategoryString = \"*\";" as CategoryString nodrop | parse regex "Subcategory:\s+(?<subcategory>[^\r]+?)\r" nodrop
+| parse regex "Logfile = \"Security\";[\s\S]+?Account Name:\s+(?<src_user>[^\r]+?)\r[\s\S]+?Account Domain:\s+(?<src_domain>[^\r]+?)\r" nodrop
+| parse regex "Logfile = \"Security\";[\s\S]+?Account Name:\s+(?<src_user>[^\r]+?)\r[\s\S]+?Account Domain:\s+(?<src_domain>[^\r]+?)\r[\s\S]+?Account Name:\s+(?<dest_user>[^\r]+?)\r[\s\S]+?Account Domain:\s+(?<dest_domain>[^\r]+?)(?:\r|\";)" nodrop
+| parse regex "Directory Service:[\s\S]+?Name:\s+(?<directory_ServiceName>[^\r]+?)\r" nodrop | parse regex "Directory Service:[\s\S]+?Type:\s+(?<directory_ServiceType>[^\r]+?)\r" nodrop | parse "Object:\r\n\tDN:\t*\r\n\tGUID" as dest_ou nodrop
+| fields msg_summary, categoryString, subcategory, event_id, src_user, src_domain, dest_user, dest_domain, host
+| where categoryString="Directory Service Changes" or subcategory="Directory Service Changes"
+```
+
 
 
 ## Installing the Sumo Logic App
@@ -57,12 +276,12 @@ By default the time range for these panels is two hours. If your source only pul
 
 **Computer OS per Domain.** Displays the computer operating systems used by visitors to your site per domain for the past two hours.
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/Overview.png')} alt="Active Directory Legacy dashboards" />
+<img src={useBaseUrl('img/integrations/microsoft-azure/ad_app_information_new.png')} alt="Active Directory Legacy dashboards" width="500"/>
 
 
 ### Service Activity
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/Overview.png')} alt="Active Directory Legacy dashboards" />
+<img src={useBaseUrl('img/integrations/microsoft-azure/ad_app_service_activity_new.png')} alt="Active Directory Legacy dashboards" width="500"/>
 
 **Top 10 Messages.** Displays the top 10 messages reported in your system with message text and count in a table for the past 24 hours.
 
@@ -79,7 +298,7 @@ By default the time range for these panels is two hours. If your source only pul
 
 ### Service Failures
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/Overview.png')} alt="Active Directory Legacy dashboards" />
+<img src={useBaseUrl('img/integrations/microsoft-azure/ad_app_service_failures.png')} alt="Active Directory Legacy dashboards" width="500" />
 
 **Successes vs Failures.** Displays the number of messages generated by your system for success vs failure in timeslices of one hour over the past 24 hours, in a stacked column chart.
 

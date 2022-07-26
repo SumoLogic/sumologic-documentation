@@ -69,13 +69,9 @@ instance of Win32_NTLogEvent
 
 
 ### Query Sample
-7
 
 
-Recent Policy Changes
-
-
-```
+```bash title="Recent Policy Changes" 
 _sourceCategory=OS/Windows/Events "Policy Change"
 | parse regex "CategoryString = \"(?<category>[^\"]+?)\";[\s\S]+?Logfile = \"Security\""
 | count by category
