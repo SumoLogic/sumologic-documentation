@@ -7,6 +7,8 @@ description: Azure Web Apps
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
+<img src={useBaseUrl('img/integrations/microsoft-azure/webapps.png')} alt="thumbnail icon" width="50"/>
+
 The Azure Web Apps App allows you to collect Azure web server and application diagnostics logs and monitor the health of your Azure Web Apps environment. The App provides preconfigured Dashboards that allow you to monitor server operation and traffic requests and response times.
 
 For more information on Azure Web Apps, see [https://azure.microsoft.com/en-us/se...p-service/web/](https://azure.microsoft.com/en-us/services/app-service/web/).
