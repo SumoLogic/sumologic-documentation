@@ -1,5 +1,6 @@
 ---
 id: bar-charts
+description: Bar charts are useful for visually comparing the number of events that have occurred.
 ---
 
 # Bar Charts
