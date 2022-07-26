@@ -1,5 +1,5 @@
 ---
-id: enterprise-edition
+id: docker-enterprise-edition
 title: Docker Enterprise Edition
 sidebar_label: Docker Enterprise Edition
 ---
@@ -9,7 +9,6 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 Docker Enterprise Edition (Docker EE) is an industry standard container platform, running modern container orchestration engines such as Kubernetes behind the scenes. Docker EE is designed for enterprise development and IT teams who build, ship, and run applications in production scale environments.
 
 The Docker EE App facilitates monitoring and troubleshooting distributed microservice based applications running in Docker containers. The app enables you to correlate events across the Docker platform and application containers and detects anomalous patterns for faster root cause analysis.
-
 
 The Docker EE App works in conjunction with the [Docker ULM App](https://help.sumologic.com/07Sumo-Logic-Apps/10Containers_and_Orchestration/Docker_Apps/Docker_ULM) that monitors application container workloads running on the Docker EE platform.
 
@@ -242,148 +241,95 @@ Panels will start to fill automatically. It's important to note that each panel 
 
 
 ## Dashboard filters   
-19
 
 
 **Each dashboard has a set of filters** that you can apply to the entire dashboard, as shown in the following example. Click the funnel icon in the top dashboard menu bar to display a scrollable list of filters that are applied across the entire dashboard.
 
-
-20
-
-
 You can use filters to drill down and examine the data on a granular level.
-
-
-21
 
 
 **Each panel has a set of filters** that are applied to the results for that panel only, as shown in the following example. Click the funnel icon in the top panel menu bar to display a list of panel-specific filters.
 
 
-22
-
-
-
 ### Docker EE - UCP Overview Dashboard
-23
 
+<img src={useBaseUrl('img/integrations/containers-orchestration/DockerEE_UCP_Overview.png')} alt="Docker EE dashboards" />
 
 The **Docker EE - UCP Overview Dashboard** provides detailed information on the Docker Universal Control Plane (UCP) components, including pods created, UCP controller errors, and trends for UCP controller errors.
 
 Docker Universal Control Plane (UCP) is the cluster management solution for managing a Docker cluster and applications.
 
 Use this dashboard to:
-
-
-
 * Find errors in the Docker Universal Control Plane.
 * Find recent pods created by UCP.
 
 
-24
-
-
-
 ### Docker EE - Dockerd Monitoring Dashboard
-25
+
+<img src={useBaseUrl('img/integrations/containers-orchestration/DockerEE_Dockerd_Monitoring.png')} alt="Docker EE dashboards" />
 
 
 The **Docker EE - Dockerd Monitoring Dashboard** provides detailed information on the “dockerd” utility that manages containers, including log levels, hostname errors, recent errors, container activity, and UCP agent versions. The panels also provide visualizations to understand log level trends and errors by hostname trends, as well as tabular comparisons over time.
 
 Use this dashboard to:
-
-
-
 * Troubleshoot “dockerd” by investigating docker daemon errors, exceptions and failures. You can identify unusual activity or spikes in the number of errors using the Time Comparison and Log Levels Over Time charts.
 * Analyze container activities by events.
 
 
-26
-
-
-
 ### Docker EE - Containerd Monitoring Dashboard
-27
+
+<img src={useBaseUrl('img/integrations/containers-orchestration/DockerEE_Containerd_Monitoring.png')} alt="Docker EE dashboards" />
 
 
 The **Docker EE - Containerd Monitoring Dashboard** provides detailed information on the `containerd` utility that allows you to run containers on Linux, Windows, Solaris, or other operating systems. This includes a log level breakdown, trends, and comparisons; hostname errors, trends, and comparisons, and detailed information on errors.
 
 Use this dashboard to:
-
-
-
 * Troubleshoot “containerd” by investigating errors, exceptions and failures.
 * Identify unusual activity or spikes in the number of errors logs using the Time Comparison and Log Levels Over Time charts.
 
 
-28
-
-
-
 ### Docker EE - SWARM Network Errors and Events Dashboard
-29
 
+<img src={useBaseUrl('img/integrations/containers-orchestration/docker_app_network_performance.png')} alt="Docker EE dashboards" />
 
 The **Docker EE - SWARM Network Errors and Events Dashboard** provides an at a glance view of cluster node outliers, network errors by port, and the top source and destination IPs. The panels also provide detailed information on recent Send and Receive errors. SWARM is a Docker-native clustering system.
 
 Use this dashboard to:
-
-
-
 * Monitor nodes joining or leaving the Gossip Cluster.
 * Analyze send errors, receive errors, and errors breakdown by destination/source IPs.
 
 
-30
-
-
-
 ### Docker EE - DTR Client Requests Dashboard
-31
+
+<img src={useBaseUrl('img/integrations/containers-orchestration/DockerEE_SWARM_Network_Errors_and_Events.png')} alt="Docker EE dashboards" />
 
 
 The **Docker EE - DTR Client Requests Dashboard** provides a high-level view of client geographic locations, the number of hits and bytes served, response trends, and the platforms used by visitors. The panels also provide detailed information on browsers and operating systems (OSs), top versions for Windows and Mac, top referrers, top URIs causing errors, and top clients causing errors.
 
 Use this dashboard to:
-
-
-
 * Monitor the incoming requests to Docker Trusted Registry (DTR).  
 * Analyze incoming client requests by different dimensions such as geographic location, bytes served, request referrers, and client IPs.
 
 
-32
-
-
-
 ### Docker EE - DTR Registry Dashboard
-33
 
+<img src={useBaseUrl('img/integrations/containers-orchestration/DockerEE_DTR_Client_Requests.png')} alt="Docker EE dashboards" />
 
 The **Docker EE - DTR Registry Dashboard** provides a high-level and detailed views of images pushed and pulled by repository and their geographic locations. Docker Trusted Registry (DTR) is an image storage solution that is installed behind a firewall to securely store and manage the Docker images in applications.
 
 Use this dashboard to:
-
-
-
 * Monitor Images pushed and pulledMonitor geographic locations of incoming push and pull requests
-
-
-34
 
 
 
 ### Docker EE - Host and Container Troubleshooting Dashboard
-35
 
+<img src={useBaseUrl('img/integrations/containers-orchestration/DockerEE_Host_and_Container_Troubleshooting.png')} alt="Docker EE dashboards" />
 
 The **Docker EE - Host and Container Troubleshooting** **Dashboard** provides container analysis information that is helpful when troubleshooting a problem, including timestamp, source, message, hostname, and container ID.
 
 Use this dashboard to:
 
-
-
 * Troubleshoot whether applications running within containers are associated with errors on the Docker EE Platform.
 * Analyze container activities and events across “dockerd” and “containerd” logs.
 * Use the in-built dashboards filter to enter in any container ID or hostname, and find all related logs for that particular container or host.
-*

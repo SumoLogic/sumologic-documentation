@@ -1,17 +1,14 @@
 ---
-id: ulm
+id: docker-ulm
 title: Docker ULM
 sidebar_label: Docker ULM
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-The Sumo Logic App for Docker ULM is a unified logs and metrics app that allows you to monitor your Docker deployment. The preconfigured dashboards present information about container state and resource usage, including CPU, memory, block I/O, and network.
+The Sumo Logic App for Docker ULM is a unified logs and metrics app that allows you to monitor your Docker deployment. The preconfigured dashboards present information about container state and resource usage, including CPU, memory, block I/O, and network. This app has been tested with Docker v8.03.1-ce and Docker API v1.37.
 
-
-This app has been tested with Docker v8.03.1-ce and Docker API v1.37.
-
-Log and metric types
+## Log and Metric Types
 
 Sumo’s Docker Logs source and Docker Stats source use the Docker Engine API to gather the following data from Docker:
 
@@ -25,7 +22,6 @@ By default, you can monitor up to 40 Docker containers on a Docker host. If you 
 ## Collect Logs and Metrics for Docker ULM
 
 Docker is a lightweight open platform that provides a way to package applications in containers for a software development environment.
-
 
 Windows operating systems are not supported.
 
@@ -828,9 +824,9 @@ This section describes the dashboards in the Sumo Logic App for Docker ULM.
 
 #### Docker - Overview
 
-
 See an overview of Docker activity, including the number of Docker hosts; the number of containers started, paused, stopped, and killed; event information; and the top containers by CPU usage, bytes sent, bytes received, and memory usage over the last 24 hours.
 
+<img src={useBaseUrl('img/integrations/containers-orchestration/docker-overview.png')} alt="Docker ULM dashboards" />
 
 **Number of Docker Hosts**. Number of Docker hosts monitored over the last 24 hours.
 
@@ -858,14 +854,10 @@ See an overview of Docker activity, including the number of Docker hosts; the nu
 
 
 #### Docker - Block IO
-17
-
 
 See the number of block I/O requests serviced by each container, and the number of bytes transferred to and from disk by each container over the last three hours.
 
-
-18
-
+<img src={useBaseUrl('img/integrations/containers-orchestration/docker-block-io.png')} alt="Docker ULM dashboards" />
 
 **Total Number of Block I/O Requests Serviced**. A line chart that shows the number of block I/O requests serviced by each container over the last three hours.
 
@@ -873,14 +865,10 @@ See the number of block I/O requests serviced by each container, and the number 
 
 
 #### Docker - CPU Usage
-19
-
 
 See information about CPU usage and container throttling over the last three hours.
 
-
-20
-
+<img src={useBaseUrl('img/integrations/containers-orchestration/docker-cpu-usage.png')} alt="Docker ULM dashboards" />
 
 **Total CPU Consumed by Container in Kernel Mode**. A line chart that shows the CPU consumed in kernel mode by each container over the last three hours.
 
@@ -896,14 +884,10 @@ See information about CPU usage and container throttling over the last three hou
 
 
 #### Docker - Memory Usage
-21
-
 
 See information about container memory limits, memory usage, and page faults over the last three hours.
 
-
-22
-
+<img src={useBaseUrl('img/integrations/containers-orchestration/docker-memory-usage.png')} alt="Docker ULM dashboards" />
 
 **Number of Times Container Hit Memory Limit**. A  line chart that shows the number of times that each container reached its memory limit over the last three hours.
 
@@ -921,14 +905,10 @@ See information about container memory limits, memory usage, and page faults ove
 
 
 #### Docker - Network Usage
-23
-
 
 See information about network usage over the last three hours.
 
-
-24
-
+<img src={useBaseUrl('img/integrations/containers-orchestration/docker-network-usage.png')} alt="Docker ULM dashboards" />
 
 **Average Rx Bytes by Container**. A line chart that shows the average number of bytes received per timeslice by each container over the last three hours.  
 

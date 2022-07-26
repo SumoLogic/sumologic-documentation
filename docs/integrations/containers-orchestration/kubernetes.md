@@ -7,6 +7,8 @@ description: The Sumo Logic Kubernetes App provides visibility into the worker n
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
+<img src={useBaseUrl('img/integrations/containers-orchestration/k8s.png')} alt="VMware dashboards" width="50"/>
+
 The Sumo Logic Kubernetes App provides visibility into the worker nodes that comprise a cluster, as well as application logs of the worker nodes. The App is a single-pane-of-glass through which you can monitor and troubleshoot container health, replication, load balancing, pod state and hardware resource allocation. It utilizes [Falco](https://falco.org/docs/) events to monitor and detect anomalous container, application, host, and network activity.
 
 In conjunction with the Kubernetes App, the AKS Control Plane, GKE Control Plane, EKS Control Plane, or Kubernetes Control Plane Apps provide visibility into the control plane, including the APIserver, scheduler, and controller manager.
