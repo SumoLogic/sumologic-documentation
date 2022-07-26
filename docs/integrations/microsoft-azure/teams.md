@@ -46,7 +46,7 @@ Sample Log Message
 ```
 
 Sample Query
-```sql 
+```sql
 _sourceCategory="O365/General"
 | json "Workload", "Operation" , "UserId" as workload, operation, email
 | where workload = "MicrosoftTeams"

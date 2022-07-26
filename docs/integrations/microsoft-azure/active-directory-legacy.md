@@ -7,6 +7,8 @@ description: Allows you to analyze Windows Active Directory logs and gain insigh
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
+<img src={useBaseUrl('img/integrations/microsoft-azure/Windows-Server-Active-Directory.jpg')} alt="thumbnail icon" width="150"/>
+
 The Active Directory Legacy App allows you to analyze Windows Active Directory logs and gain insight into your deployment. Using the app, you can identify user activity across your network and security administration systems. The app uses predefined searches and Dashboards that provide visibility into your environment for real-time analysis of overall usage.
 
 We recommend using the Active Directory App in combination with the Windows App.
