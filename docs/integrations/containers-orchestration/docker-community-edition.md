@@ -6,6 +6,8 @@ sidebar_label: Docker Community Edition
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
+<img src={useBaseUrl('img/integrations/containers-orchestration/docker.png')} alt="icon" width="175"/>
+
 The Sumo Logic App for Docker Community edition provides operational insight into your Docker containers. The App includes Dashboards that allow you to view your container performance statistics for CPU, memory, and the network. It also provides visibility into container events such as start, stop, and other important commands.
 
 :::info

@@ -464,10 +464,11 @@ Once an app is installed, it will appear in your **Personal** folder, or other f
 Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
 
 
-## Dashboards
+## Viewing VMware Dashboards
 
 ### vCenter Operations Overview
 
+<img src={useBaseUrl('img/integrations/containers-orchestration/vmware_app_vcenter_operations.png')} alt="VMware legacy dashboards" />
 
 **vCentervCenter Tasks.** Displays the number of administrative tasks performed as an area chart on a timeline with a legend that describes each task. Provides information for the last 24 hours.
 
@@ -483,12 +484,8 @@ Panels will start to fill automatically. It's important to note that each panel 
 
 
 ### System Wide ESXi Performance
-41
 
-
-
-42
-
+<img src={useBaseUrl('img/integrations/containers-orchestration/vmware_app_system.png')} alt="VMware legacy dashboards" />
 
 **Average CPU Utilization.** Displays the average CPU utilization by IP address in a line chart on a timeline for the last 24 hours.
 
