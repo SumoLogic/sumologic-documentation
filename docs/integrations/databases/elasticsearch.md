@@ -6,6 +6,10 @@ description: The Elasticsearch app helps you monitor the availability, performan
 ---
 
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src={useBaseUrl('img/integrations/databases/elasticsearch.png')} alt="DB icon" width="50"/>
+
 The Elasticsearch app is a unified logs and metrics app that helps you monitor the availability, performance, health, and resource utilization of your Elasticsearch clusters. Preconfigured dashboards provide insight into cluster health, resource utilization, sharding, garbage collection, and search, index, and cache performance.
 
 ### Sample Log Message

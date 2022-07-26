@@ -4,6 +4,10 @@ title: Sumo Logic App for Redis
 sidebar_label: Redis
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src={useBaseUrl('img/integrations/databases/redis.png')} alt="DB icon" width="50"/>
+
 Redis is an in-memory data structure implementing a distributed, in-memory key-value database with optional durability.
 
 The Sumo Logic App for Redis helps you monitor the state of the database cluster. The preconfigured dashboards provide information about cluster status, resource usage, commands running, and cache hit rate. You can easily determine the health of the cluster by just a glance at the dashboards.

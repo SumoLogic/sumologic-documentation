@@ -7,12 +7,21 @@ description: AWS Lambda
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
+<img src={useBaseUrl('img/integrations/amazon-aws/lambda.png')} alt="DB icon" width="50"/>
+
 AWS Lambda allows you to run code without the burden of provisioning or managing servers. The AWS Lambda App is a unified logs and metrics app for monitoring operation and performance trends in the Lambda functions in your account.
 
 The Sumo Logic AWS Lambda App uses the Lambda logs via CloudWatch, CloudWatch Metrics and the CloudTrail Lambda Data Events to visualize the operational and performance trends in all the Lambda functions in your account. The preconfigured dashboards provide insights into executions, memory and duration (including cold start) usage by function versions or aliases, errors, billed duration, function callers, IAM users and threat details.
 
 
-## Collecting Logs and Metrics
+## Collect Logs for the AWS Lambda App
+
+This page describes the data sources for the AWS Lambda app, and has instructions for setting up log and metric collection.
+
+
+### About collection for the AWS Lambda ULM App
+
+The AWS Lambda App uses AWS CloudWatch Logs, CloudTrail Lambda Data Events, and AWS Lambda CloudWatch Metrics. The sections below describe how these the app leverages these data sources to provide insight into AWS Lambda.
 
 ### Log and metric types
 The AWS Lambda app uses the following logs and metrics:
@@ -27,8 +36,7 @@ This section provides sample Amazon CloudWatch Log and CloudTrail Lambda Data Ev
 
 **Amazon CloudWatch Log**
 
-
-```
+```json
 {"id":"32563142671071560797760688825700039436306340248688066573","timestamp":1511808906799,"message":
 "REPORT RequestId: cf75cfa3-fe16-11e5-9b16-e3e4c70845f2    Duration: 50.23 ms    Billed Duration:
 100 ms     Memory Size: 128 MB    Max Memory Used: 24 MB ","requestID":null,"logStream"
@@ -38,7 +46,7 @@ This section provides sample Amazon CloudWatch Log and CloudTrail Lambda Data Ev
 
 **CloudTrail Lambda Data Events**
 
-```
+```json
 {
    "eventVersion":"1.06",
    "userIdentity":{
@@ -86,7 +94,7 @@ This section provides sample Amazon CloudWatch Log and CloudTrail Lambda Data Ev
 
 **Requests by Function Versions (Based on CloudWatch logs)**
 
-```
+```sql
 account={{account}} region={{region}} Namespace={{namespace}}
 | json "message" nodrop | if (_raw matches "{*", message, _raw) as message
 // | json "logStream", "logGroup" nodrop
@@ -122,10 +130,207 @@ account={{account}} region={{region}} Namespace={{namespace}}
 
 **Error (Count)(Cloudwatch metric Based)**
 
-```
+```sql
 namespace=aws/lambda metric=Errors statistic=Sum account=* region=* functionname=* Resource=* | su
 ```
 
+
+
+### AWS CloudWatch Logs
+
+AWS Lambda monitors Lambda functions, and reports metrics through Amazon CloudWatch. Lambda then logs all requests handled by your function and stores logs through [AWS CloudWatch Logs](https://docs.aws.amazon.com/lambda/latest/dg/monitoring-functions-logs.html).
+
+The Sumo Logic AWS Lambda App uses the Lambda logs via CloudWatch, CloudWatch Metrics and the CloudTrail Lambda Data Events to visualize the operational and performance trends in all the Lambda functions in your account. The preconfigured dashboards provide insights into executions, memory and duration (including cold start) usage by function versions or aliases, errors, billed duration, function callers, IAM users and threat details.
+
+
+#### CloudTrail Lambda Data Events
+
+
+[CloudTrail Lambda Data Events](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-data-events) allow you to continuously monitor the execution activity of your Lambda functions, and to record details on when and by whom an Invoke API call was made.
+
+The Sumo Logic App for AWS Lambda provide insights into the Lambda Functions invocation by Function name, version, AWS service, and threat details, by using the CloudTrail Lambda Data Events that capture and record the activities in your Lambda functions.
+
+
+
+#### AWS Lambda CloudWatch Metrics
+
+
+AWS Lambda automatically monitors functions on your behalf, reporting [AWS Lambda metrics](https://docs.aws.amazon.com/lambda/latest/dg/monitoring-functions-metrics.html) through Amazon CloudWatch. These metrics are collected by our Hosted Collector by configuring Amazon CloudWatch source.
+
+The Sumo Logic App for AWS Lambda provide insights into the Lambda Functions invocations, IteratorAge for stream-based invocations, Errors, Dead Letter Errors, Concurrent Executions, Unreserved Concurrent Executions, Duration, Throttles by Function and Time based Comparison.
+
+
+### Collect Logs for the AWS Lambda ULM App
+
+This section describes the log and metric data used by the AWS Lambda ULM app.
+
+
+#### Collect Amazon CloudWatch Logs
+
+Sumo supports several methods for collecting Lambda logs from Amazon CloudWatch.
+
+* You can configure collection of Amazon CloudWatch Logs using our AWS Lambda function using a Sumo-provided CloudFormation template, as described in [Amazon CloudWatch Logs](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Amazon-CloudWatch-Logs).
+* To configure collection without using CloudFormation, see [Collect Amazon CloudWatch Logs using a Lambda Function](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Amazon-CloudWatch-Logs/Collect_Amazon_CloudWatch_Logs_using_a_Lambda_Function).
+* While configuring the cloud Watch log source, following Field can be added in the source:
+    * Add an **account** field and assign it a value which is a friendly name / alias to your AWS account from which you are collecting logs. This name will appear in the Sumo Logic Explorer View. Logs can be queried via the “account field”.
+    * Add a **region** field and assign it the value of the respective AWS region where the Application Load Balancer exists.
+    * Add an **accountId **field and assign it the value of the respective AWS account id which is being used.
+
+
+
+#### Collect CloudTrail Lambda Data Events
+
+To configure a CloudTrail Source, perform these steps:
+
+1. [Grant Sumo Logic access](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/Grant-Access-to-an-AWS-Product) to an Amazon S3 bucket.
+2. [Configure DataEvents with CloudTrail](https://docs.aws.amazon.com/lambda/latest/dg/logging-using-cloudtrail.html) in your AWS account.
+3. Confirm that logs are being delivered to the Amazon S3 bucket.
+4. Add an [AWS CloudTrail Source](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/AWS-CloudTrail-Source) to Sumo Logic.
+5. While configuring the cloud trail log source, following Field can be added in the source:
+    1. Add an **account** field and assign it a value which is a friendly name / alias to your AWS account from which you are collecting logs. This name will appear in the Sumo Logic Explorer View. Logs can be queried via the “account field”.
+
+
+#### Collect Amazon CloudWatch Metrics
+
+To collect Amazon CloudWatch Metrics, see [Amazon CloudWatch Source For Metrics.](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/Amazon-CloudWatch-Source-for-Metrics)
+
+AWS Namespace tag to filter in source for Lambda will be - **AWS/Lambda**
+
+* **Metadata: **Add an **account** field to the source and assign it a value which is a friendly name / alias to your AWS account from which you are collecting metrics. This name will appear in the Sumo Logic Explorer View. Metrics can be queried via the “account field”.
+
+
+Continue with the process of [enabling Provisioned Concurrency configurations](https://help.sumologic.com/07Sumo-Logic-Apps/01Amazon_and_AWS/AWS_Lambda/01Collect-Logs-for-the-AWS-Lambda-App#Enable_Provisioned_Concurrency_configurations_for_Lambda_functions) for Lambda functions, as necessary.
+
+
+### Enable Provisioned Concurrency configurations for Lambda functions
+
+AWS Lambda provides Provisoned Concurrency for greater control over the start up time for Lambda functions. When enabled, Provisioned Concurrency keeps functions initialized and hyper-ready to respond in double-digit milliseconds. AWS Lambda provides additional metrics for provisioned concurrency with CloudWatch.
+
+**To collect these metrics in Sumo Logic, do the following:**
+
+1. Complete [Step](https://help.sumologic.com/07Sumo-Logic-Apps/01Amazon_and_AWS/AWS_Lambda/01Collect-Logs-for-the-AWS-Lambda-App#collect-amazon-cloudwatch-metrics).
+2. Configure Provisioned Concurrency while creating a Lambda function in the AWS Management console, as shown in the following example:
+
+
+Once Provisioned Concurrency is enabled and you start collecting CloudWatch metrics, the following new metrics will be available:
+
+
+<table>
+  <tr>
+   <td>Metric
+   </td>
+   <td>Description
+   </td>
+  </tr>
+  <tr>
+   <td><strong>ProvisionedConcurrentExecutions</strong>
+   </td>
+   <td>Concurrent Executions using Provisioned Concurrency
+   </td>
+  </tr>
+  <tr>
+   <td><strong>ProvisionedConcurrencyUtilization</strong>
+   </td>
+   <td>Fraction of Provisioned Concurrency in use
+   </td>
+  </tr>
+  <tr>
+   <td><strong>ProvisionedConcurrencyInvocations</strong>
+   </td>
+   <td>Number of Invocations using Provisioned Concurrency
+   </td>
+  </tr>
+  <tr>
+   <td><strong>ProvisionedConcurrencySpilloverInvocations</strong>
+   </td>
+   <td>Number of Invocations that are above Provisioned Concurrency
+   </td>
+  </tr>
+</table>
+
+
+These metrics can then be queried using Sumo Logic [Metrics queries](https://help.sumologic.com/Metrics/Metric-Queries-and-Alerts/11Metrics-Queries), as shown in the following example:
+
+
+
+
+### Field in Field Schema
+
+Login to Sumo Logic,  go to Manage Data > Logs > Fields. Search for the “**functionname**” field. If not present, create it. Learn how to create and manage fields [here](https://help.sumologic.com/Manage/Fields#manage-fields).
+
+
+### Field Extraction Rule(s)
+
+Create Field Extraction Rule for AWS Lambda. Learn how to create Field Extraction Rule [here](https://help.sumologic.com/Manage/Field-Extractions/Create-a-Field-Extraction-Rule).
+
+
+### Cloud Trail FER
+
+
+```
+Rule Name: AwsObservabilityFieldExtractionRule
+Applied at: Ingest Time
+Scope (Specific Data): account=* eventname eventsource "lambda.amazonaws.com"
+```
+
+
+**Parse Expression**:
+
+
+```
+| json "eventSource", "awsRegion", "requestParameters", "recipientAccountId" as eventSource, region, requestParameters, accountid nodrop
+| where eventSource = "lambda.amazonaws.com"
+| json field=requestParameters "functionName", "resource" as functionname, resource nodrop
+| parse regex field=functionname "\w+:\w+:\S+:[\w-]+:\S+:\S+:(?<functionname>[\S]+)$" nodrop
+| parse field=resource "arn:aws:lambda:*:function:*" as f1, functionname2 nodrop
+| if (isEmpty(functionname), functionname2, functionname) as functionname
+| "aws/lambda" as namespace
+| tolowercase(functionname) as functionname
+| fields region, namespace, functionname, accountid
+```
+
+
+
+### Centralized AWS CloudTrail Log Collection
+
+In case you have a centralized collection of cloudtrail logs and are ingesting them from all accounts into a single Sumo Logic cloudtrail log source, create following Field Extraction Rule to map proper AWS account(s) friendly name / alias. Create it if not already present / update it as required.
+
+
+```
+Rule Name: AWS Accounts
+Applied at: Ingest Time
+Scope (Specific Data): _sourceCategory=<SourceCategory_of_CloudTrail_source_created_in_sumo>
+```
+
+
+**Parse Expression**:
+
+Enter a parse expression to create an “account” field that maps to the alias you set for each sub account. For example, if you used the “dev” alias for an AWS account with ID "528560886094" and the “prod” alias for an AWS account with ID "567680881046", your parse expression would look like:
+
+
+```
+| json "recipientAccountId"
+// Manually map your aws account id with the AWS account alias you setup earlier for individual child account
+| "" as account
+| if (recipientAccountId = "528560886094",  "dev", account) as account
+| if (recipientAccountId = "567680881046",  "prod", account) as account
+| fields account
+```
+
+
+
+### Cloud Watch FER
+
+```
+Rule Name: AwsObservabilityLambdaCloudWatchLogsFER
+Applied at: Ingest Time
+Scope (Specific Data): _sourceHost=/aws/lambda/*
+Parse Expression:
+| parse field=_sourceHost "/aws/lambda/*" as functionname
+| tolowercase(functionname) as functionname
+| "aws/lambda" as namespace
+| fields functionname, namespace
+```
 
 
 

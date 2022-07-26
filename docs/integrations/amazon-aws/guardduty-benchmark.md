@@ -7,6 +7,8 @@ description: Amazon GuardDuty Benchmark
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
+<img src={useBaseUrl('img/integrations/amazon-aws/guardduty-benchmark.png')} alt="DB icon" width="50"/>
+
 [Amazon GuardDuty](https://aws.amazon.com/guardduty/) is an intelligence threat detection service that provides accurate, continuous monitoring to protect AWS accounts and workloads. This page explains the log collection process, and provides instructions for configuring log collection and installing the Amazon GuardDuty Benchmark App.
 
 The Sumo Logic **Amazon GuardDuty Benchmark App** integrates **Global Intelligence Service (GIS)** with Amazon GuardDuty for continuous machine learning and statistical baselines for KPIs (key performance indicators) and KRIs (key risk indicators). These baselines enable you to optimize security configuration and threat detection on all your AWS accounts.  
@@ -16,12 +18,7 @@ Global Intelligence baselines are computed by aggregating data for a given custo
 The App includes pre-configured dashboards and searches with visual displays for global threat baselines and real-time threat detection across your AWS environment, including threat sources and targets by geographic locations.
 
 
-## Video: Global Intelligence Service for Amazon GuardDuty
-
-This short video provides an overview of the app setup, along with an introduction to the app's preconfigured dashboards.
-
-
-## Configure Log Collection
+## Configuring Log Collection
 
 ### Log Types
 
@@ -30,7 +27,7 @@ The Sumo Logic App for GuardDuty requires the Amazon GuardDuty findings to be se
 If you have already Amazon GuardDuty data flowing into Sumo Logic, you can skip the steps in this section and install the Amazon GuardDuty Benchmark App from the Sumo Logic App Catalog.
 
 
-## Process overview
+### Process overview
 
 Sumo Logic provides a SAM application based on  [AWS Serverless Application Model (SAM) specification](https://docs.aws.amazon.com/lambda/latest/dg/serverless_app.html), and is published in the [AWS Serverless Application Repository](https://aws.amazon.com/serverless/serverlessrepo/). This SAM deployment:
 

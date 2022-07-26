@@ -1778,18 +1778,9 @@ module.exports = {
         link: {type: 'doc', id: 'integrations/containers-orchestration/index'},
         items: [
           'integrations/containers-orchestration/activemq',
-          {
-          type: 'category',
-          label: 'Docker',
-          collapsible: true,
-          collapsed: true,
-          link: {type: 'doc', id: 'integrations/containers-orchestration/docker/index'},
-          items: [
-              'integrations/containers-orchestration/docker/community-edition',
-              'integrations/containers-orchestration/docker/enterprise-edition',
-              'integrations/containers-orchestration/docker/ulm',
-            ],
-          },
+          'integrations/containers-orchestration/docker-community-edition',
+          'integrations/containers-orchestration/docker-enterprise-edition',
+          'integrations/containers-orchestration/docker-ulm',
           'integrations/containers-orchestration/kafka',
           'integrations/containers-orchestration/kubernetes',
           'integrations/containers-orchestration/kubernetes-control-plane',

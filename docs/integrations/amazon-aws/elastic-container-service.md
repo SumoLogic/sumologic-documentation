@@ -7,10 +7,15 @@ description: Amazon Elastic Container Service (ECS)
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
+<img src={useBaseUrl('img/integrations/amazon-aws/ecs.png')} alt="DB icon" width="50"/>
+
+
 Amazon Elastic Container Service (Amazon ECS) is a container management service that allows you to manage Docker containers on a cluster of Amazon EC2 instances. The Sumo Logic App for Amazon ECS provides preconfigured searches and Dashboards that allow you to monitor various metrics (CPU and Memory Utilization, CPU and Memory Reservation) across ECS clusters and services. The App also monitors API calls made by or on behalf of Amazon ECS in your AWS account.
 
 
-## Collecting Logs and Metrics
+## Collect Logs and Metrics for the Amazon ECS App
+
+This section has instructions for collecting logs and metrics for the Amazon ECS App.
 
 ### Log and Metrics Types
 The App collects ECS logs and metrics for:
@@ -18,8 +23,328 @@ The App collects ECS logs and metrics for:
 * ECS Events using AWS CloudTrail. For details, see http://docs.aws.amazon.com/AmazonECS...-in-cloudtrail
 * The actions recorded by CloudTrail for ECS are listed here: http://docs.aws.amazon.com/AmazonECS...perations.html
 
+### Collect Metrics for Amazon ECS
+
+In this step, you set up an [Amazon CloudWatch Source for Metrics](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/Amazon-CloudWatch-Source-for-Metrics).
+
+1. Grant permission for Sumo Logic to list available metrics and get metric data points. For instructions, see [Grant Access to an AWS Product](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/Grant-Access-to-an-AWS-Product).
+2. Configure a [Hosted Collector](https://help.sumologic.com/03Send-Data/Hosted-Collectors/Configure-a-Hosted-Collector).
+3. In the Sumo web app, select **Manage Data > Collection > Collection**.
+4. Navigate to the hosted collector you configured above and select **Add > Add Source**.
+5. Select Amazon CloudWatch Source for Metrics.
+6. **Name. **Enter a name to display for the new source.
+7. **Description.** Enter an optional description.
+8. **Regions.** Select your Amazon Regions for ECS.
+9. **Namespaces.** Select **AWS/ECS**.
+10. **Source Category.** Enter **ecs_metrics**.
+11. **AWS Access**. There are two options for AWS access:
+    * **Role-based access**. This is the preferred method. You can use this option if you granted access to Amazon ECS as described in [Grant Access to an AWS Product](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/Grant-Access-to-an-AWS-Product).  For role-based access enter the Role ARN that was provided by AWS after creating the role.  \
+
+    * **Key access**. Enter the Access Key ID and Secret Access Key. For more information, see [Managing Access Keys for IAM Users](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html) in AWS help.
+12. **Scan Interval.** Use the default of 5 minutes, or enter the frequency Sumo Logic will scan your CloudWatch Sources for new data.
+13. Click **Save**.
 
 
+### Collect ECS events using CloudTrail
+
+In this step, you set up an [AWS CloudTrail Source](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/AWS-CloudTrail-Source) to collect ECS events.
+
+1. [Configure CloudTrail](http://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-add-a-trail-using-the-console.html) in your AWS account. This will create an S3 bucket, if you so choose.
+2. Grant Sumo Logic access to the Amazon S3 bucket created or used above. For instructions, see [Grant Access to an AWS Product](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/Grant-Access-to-an-AWS-Product).
+3. Confirm that logs are being delivered to the Amazon S3 bucket.
+4. In the Sumo web app, select **Manage Data > Collection > Collection**.
+5. Navigate to the hosted collector you configured above and select **Add > Add Source**.
+6. Select AWS CloudTrail source.
+7. **Name.** Enter a name to display for the new Source.
+8. **Description.** Enter an optional description.
+9. **S3 Region.** Select the Amazon Region for your ECS S3 bucket.
+10. **Bucket Name.** Enter the exact name of your ECS S3 bucket.
+11. **Path Expression.** Enter the string that matches the S3 objects you'd like to collect. You can use a wildcard (*) in this string. (DO NOT use a leading forward slash. See [Amazon Path Expressions](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/Amazon-Path-Expressions).)
+1
+The S3 bucket name is not part of the path. Don’t include the bucket name when you are setting the Path Expression.
+    1. **Source Category.** Enter **ecs_event**.
+    2. **AWS Access**. There are two options for AWS access:
+        * Role-based access. This is the preferred method. You can use this option if you granted access to Amazon ECS as described in [Grant Access to an AWS Product](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/Grant-Access-to-an-AWS-Product).  For Role-based access enter the Role ARN that was provided by AWS after creating the role.  \
+
+        * For Key access enter the Access Key ID and Secret Access Key. For more information, see [Managing Access Keys for IAM Users](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html) in AWS help.
+    3. **Scan Interval.** Use the default of 5 minutes. Alternately, enter the frequency Sumo Logic will scan your S3 bucket for new data.
+    4. **Enable Timestamp Parsing.** Select the check box.
+    5. **Time Zone.** Select **Ignore time zone from log file and instead use**, and select **UTC**.
+    6. **Timestamp Format.** Select **Automatically detect the format**.
+    7. **Enable Multiline Processing.** Select the check box, and select** Infer Boundaries**.
+12. Click **Save**.
+
+
+### Sample Log Message
+
+<details><summary>Click to expand</summary>
+
+```json
+{
+   "eventVersion":"1.04",
+   "userIdentity":{
+      "type":"AssumedRole",
+      "principalId":"ADFDDDFF7FDF7GFFF2DF0:i-76vfa923",
+      "arn":"arn:aws:sts::435456556566:assumed-role/ecsInstanceRole/i-76vfa923",
+      "accountId":"435456556566",
+      "accessKeyId":"AOFGPJFIJFFOIJFIOJHF",
+      "sessionContext":{
+         "attributes":{
+            "mfaAuthenticated":"false",
+            "creationDate":"2017-10-02T20:08:54.107Z"
+         },
+         "sessionIssuer":{
+            "type":"Role",
+            "principalId":"ADFDDDFF7FDF7GFFF2DF0",
+            "arn":"arn:aws:iam::435456556566:role/ecsInstanceRole",
+            "accountId":"435456556566",
+            "userName":"kevin"
+         }
+      }
+   },
+   "eventTime":"2017-10-02T20:08:54.107Z",
+   "eventSource":"ecs.amazonaws.com",
+   "eventName":"RegisterTaskDefinition",
+   "awsRegion":"us-west-1",
+   "sourceIPAddress":"73.168.34.72",
+   "userAgent":"Amazon ECS Agent - v1.12.2 (ecda8a6) (+http://aws.amazon.com/ecs/)",
+   "requestParameters":{
+      "attributes":[
+         {
+            "name":"com.amazonaws.ecs.capability.privileged-container"
+         },
+         {
+            "name":"com.amazonaws.ecs.capability.docker-remote-api.1.17"
+         },
+         {
+            "name":"com.amazonaws.ecs.capability.docker-remote-api.1.18"
+         },
+         {
+            "name":"com.amazonaws.ecs.capability.docker-remote-api.1.19"
+         },
+         {
+            "name":"com.amazonaws.ecs.capability.docker-remote-api.1.20"
+         },
+         {
+            "name":"com.amazonaws.ecs.capability.docker-remote-api.1.21"
+         },
+         {
+            "name":"com.amazonaws.ecs.capability.docker-remote-api.1.22"
+         },
+         {
+            "name":"com.amazonaws.ecs.capability.logging-driver.json-file"
+         },
+         {
+            "name":"com.amazonaws.ecs.capability.logging-driver.syslog"
+         },
+         {
+            "name":"com.amazonaws.ecs.capability.logging-driver.awslogs"
+         },
+         {
+            "name":"com.amazonaws.ecs.capability.ecr-auth"
+         },
+         {
+            "name":"com.amazonaws.ecs.capability.task-iam-role"
+         },
+         {
+            "name":"com.amazonaws.ecs.capability.task-iam-role-network-host"
+         }
+      ],
+      "totalResources":[
+         {
+            "type":"INTEGER",
+            "doubleValue":0.0,
+            "integerValue":1024,
+            "longValue":0,
+            "name":"CPU"
+         },
+         {
+            "type":"INTEGER",
+            "doubleValue":0.0,
+            "integerValue":995,
+            "longValue":0,
+            "name":"MEMORY"
+         },
+         {
+            "type":"STRINGSET",
+            "stringSetValue":[
+               "22",
+               "2375",
+               "2376",
+               "51678",
+               "51679"
+            ],
+            "doubleValue":0.0,
+            "integerValue":0,
+            "longValue":0,
+            "name":"PORTS"
+         },
+         {
+            "type":"STRINGSET",
+            "stringSetValue":[ ],
+            "doubleValue":0.0,
+            "integerValue":0,
+            "longValue":0,
+            "name":"PORTS_UDP"
+         }
+      ],
+      "instanceIdentityDocumentSignature":"pqWe1trtreertermhC6vz\nZ0e/ZyOVVKXOb0fiiouyuyturtyreuFaoghqQ0wWurXzcHb6CrtreyteV6hPM=",
+      "cluster":"graphite",
+      "instanceIdentityDocument":"{\n  \"privateIp\" : \"10.0.1.83\",\n  \"devpayProductCodes\" : null,\n  \"availabilityZone\" : \"us-west-1c\",\n  \"accountId\" : \"435456556566\",\n  \"version\" : \"2010-08-31\",\n  \"instanceId\" : \"i-76vfa923\",\n  \"billingProducts\" : null,\n  \"instanceType\" : \"t2.micro\",\n  \"imageId\" : \"ami-444d0224\",\n  \"pendingTime\" : \"2016-11-15T21:07:08Z\",\n  \"architecture\" : \"x86_64\",\n  \"kernelId\" : null,\n  \"ramdiskId\" : null,\n  \"region\" : \"us-west-1\"\n}"
+   },
+   "responseElements":{
+      "containerInstance":{
+         "versionInfo":{ },
+         "runningTasksCount":0,
+         "ec2InstanceId":"i-13dcar4566",
+         "remainingResources":[
+            {
+               "type":"INTEGER",
+               "doubleValue":0.0,
+               "integerValue":1024,
+               "longValue":0,
+               "name":"CPU"
+            },
+            {
+               "type":"INTEGER",
+               "doubleValue":0.0,
+               "integerValue":995,
+               "longValue":0,
+               "name":"MEMORY"
+            },
+            {
+               "type":"STRINGSET",
+               "stringSetValue":[
+                  "22",
+                  "2376",
+                  "2375",
+                  "51678",
+                  "51679"
+               ],
+               "doubleValue":0.0,
+               "integerValue":0,
+               "longValue":0,
+               "name":"PORTS"
+            },
+            {
+               "type":"STRINGSET",
+               "stringSetValue":[ ],
+               "doubleValue":0.0,
+               "integerValue":0,
+               "longValue":0,
+               "name":"PORTS_UDP"
+            }
+         ],
+         "agentConnected":true,
+         "pendingTasksCount":0,
+         "registeredResources":[
+            {
+               "type":"INTEGER",
+               "doubleValue":0.0,
+               "integerValue":1024,
+               "longValue":0,
+               "name":"CPU"
+            },
+            {
+               "type":"INTEGER",
+               "doubleValue":0.0,
+               "integerValue":995,
+               "longValue":0,
+               "name":"MEMORY"
+            },
+            {
+               "type":"STRINGSET",
+               "stringSetValue":[
+                  "22",
+                  "2376",
+                  "2375",
+                  "51678",
+                  "51679"
+               ],
+               "doubleValue":0.0,
+               "integerValue":0,
+               "longValue":0,
+               "name":"PORTS"
+            },
+            {
+               "type":"STRINGSET",
+               "stringSetValue":[ ],
+               "doubleValue":0.0,
+               "integerValue":0,
+               "longValue":0,
+               "name":"PORTS_UDP"
+            }
+         ],
+         "containerInstanceArn":"arn:aws:ecs:us-west-1:435456556566:container-instance/3f28c319-u9n2-1476-3d2n-b7c254fv411",
+         "attributes":[
+            {
+               "name":"com.amazonaws.ecs.capability.privileged-container"
+            },
+            {
+               "name":"com.amazonaws.ecs.capability.docker-remote-api.1.17"
+            },
+            {
+               "name":"com.amazonaws.ecs.capability.docker-remote-api.1.18"
+            },
+            {
+               "name":"com.amazonaws.ecs.capability.docker-remote-api.1.19"
+            },
+            {
+               "name":"com.amazonaws.ecs.capability.docker-remote-api.1.20"
+            },
+            {
+               "name":"com.amazonaws.ecs.capability.docker-remote-api.1.21"
+            },
+            {
+               "name":"com.amazonaws.ecs.capability.docker-remote-api.1.22"
+            },
+            {
+               "name":"com.amazonaws.ecs.capability.logging-driver.json-file"
+            },
+            {
+               "name":"com.amazonaws.ecs.capability.logging-driver.syslog"
+            },
+            {
+               "name":"com.amazonaws.ecs.capability.logging-driver.awslogs"
+            },
+            {
+               "name":"com.amazonaws.ecs.capability.ecr-auth"
+            },
+            {
+               "name":"com.amazonaws.ecs.capability.task-iam-role"
+            },
+            {
+               "name":"com.amazonaws.ecs.capability.task-iam-role-network-host"
+            }
+         ],
+         "status":"ACTIVE",
+         "version":1
+      }
+   },
+   "requestID":"ae86b372-ab77-11e6-824c-c7c4220f0423",
+   "eventID":"ff9fc985-1fbe-4717-965b-607dda32f620",
+   "eventType":"AwsApiCall",
+   "recipientAccountId":"435456556566"
+}
+```
+
+</details>
+
+### Query Sample
+
+**Deleted Resources Over Time**
+
+```
+_sourceCategory=ecs* (DeleteCluster or DeleteService or DeregisterContainerInstance or DeregisterTaskDefinition or StopTask) and !(InternalFailure)
+| json "eventName" as event_name
+| parse "\"userName\":\"*\"" as user
+| parse "\"awsRegion\":\"*\"" as region
+| parse "\"cluster\":\"*\"" as cluster
+| timeslice 1h
+| parse regex field=event_name "^(?:Delete|Deregister|Stop)(?<resource_type>[A-Z][A-Za-z]+)"
+| count by resource_type, _timeslice
+| transpose row _timeslice column resource_type
+```
 
 
 ## Installing the Amazon ECS App

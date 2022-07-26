@@ -7,6 +7,8 @@ description: The Sumo Logic App for HAProxy is a unified logs and metrics app th
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
+<img src={useBaseUrl('img/integrations/web-servers/haproxy.png')} alt="Web servers icon" width="75"/>
+
 HAProxy is open source software that provides a high availability load balancer and proxy server for TCP and HTTP-based applications that spreads requests across multiple servers.
 
 The Sumo Logic App for HAProxy is a unified logs and metrics app that helps you monitor the availability, performance, and health of your HAProxy cluster. Preconfigured dashboards provide insights into active servers, visitor locations, sessions, errors, response time, and throughput.

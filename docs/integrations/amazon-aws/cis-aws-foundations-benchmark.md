@@ -7,6 +7,8 @@ description: CIS AWS Foundations Benchmark App
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
+<img src={useBaseUrl('img/integrations/amazon-aws/cisaws.png')} alt="DB icon" width="50"/>
+
 The Center for Internet Security (CIS) is a 501(c)(3) organization dedicated to enhancing the cyber-security readiness and response among public and private sector entities. Utilizing its strong industry and government partnerships, CIS combats evolving cyber-security challenges on a global scale and helps organizations adopt key best practices to achieve immediate and effective defenses against cyber attacks.  
 
 The CIS AWS Foundations Benchmark is a set of security configuration best practices for AWS. These industry-accepted best practices go beyond the high-level security guidance already available, providing AWS users with clear, step-by-step implementation and assessment procedures.

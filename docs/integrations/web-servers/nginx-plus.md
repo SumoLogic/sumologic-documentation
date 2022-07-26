@@ -7,6 +7,8 @@ description: The Nginx Plus app is an unified logs and metrics app that helps yo
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
+<img src={useBaseUrl('img/integrations/web-servers/nginx-plus.png')} alt="Web servers icon" width="75"/>
+
 Nginx Plus is a web server that can be used as a reverse proxy, load balancer, mail proxy, and HTTP cache.
 
 The Sumo Logic App for Nginx Plus supports logs as well as Metrics for Nginx Plus.

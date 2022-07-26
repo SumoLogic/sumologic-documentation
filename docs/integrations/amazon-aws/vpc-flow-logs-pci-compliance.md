@@ -7,14 +7,21 @@ description: PCI Compliance for Amazon VPC Flow Logs
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
+<img src={useBaseUrl('img/integrations/amazon-aws/pci.png')} alt="DB icon" width="50"/>
+
 The Sumo Logic App for Payment Card Industry (PCI) Compliance for Amazon VPC Flow Logs App offers dashboards to monitor systems, account and users activity to ensure that login activity and privileged users are within the expected ranges. The PCI Compliance for Amazon VPC Flow Logs App covers PCI requirements 01, 02, and 04.
 
 For more information on Amazon VPC Flow Logs, see http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/flow-logs.html
 
 
-## Collecting Logs and Metrics
+# Collect Logs for the PCI Compliance for Amazon VPC Flow Logs App
 
+VPC Flow Logs can be published to Amazon CloudWatch Logs and Amazon S3. Each method has advantages. Using an AWS S3 source is more reliable, while using a CloudFormation template allows you to customize your logs by adding more information and filtering unwanted data.
 
+You can use either of the following methods to collect Amazon VPC Flow Logs:
+
+* [Collect Amazon VPC Flow Logs using AWS S3 source](https://help.sumologic.com/07Sumo-Logic-Apps/01Amazon_and_AWS/Amazon_VPC_Flow_Logs/02Collect_Amazon_VPC_Flow_Logs_using_AWS_S3_Source)
+* [Collect Amazon VPC Flow Logs using a CloudFormation template](https://help.sumologic.com/07Sumo-Logic-Apps/01Amazon_and_AWS/Amazon_VPC_Flow_Logs/01Collect-Amazon-VPC-Flow-Logs-from-CloudWatch-Using-CloudFormation)
 
 
 ## Installing the PCI Compliance for Amazon VPC Flow Logs App

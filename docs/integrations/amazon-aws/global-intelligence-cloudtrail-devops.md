@@ -6,6 +6,8 @@ description: global-intelligence-cloudtrail-devops
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
+<img src={useBaseUrl('img/integrations/amazon-aws/gi-devops.png')} alt="DB icon" width="50"/>
+
 This feature is available in the following account plans.
 
 <table>

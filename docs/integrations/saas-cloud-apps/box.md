@@ -4,6 +4,11 @@ title: Sumo Logic App for Box
 sidebar_label: Box
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+
+<img src={useBaseUrl('img/integrations/saas-cloud-apps/box.png')} alt="DB icon" width="100"/>
+
 The Sumo Logic App for Box provides insight into user behavior patterns, monitors resources, and even tracks administrative activities. The app consists of three predefined Dashboards, providing visibility into your environment for real time analysis.
 
 Log Types

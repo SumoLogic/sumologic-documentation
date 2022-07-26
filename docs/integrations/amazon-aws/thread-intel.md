@@ -7,15 +7,34 @@ description: Threat Intel for AWS
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
+<img src={useBaseUrl('img/integrations/amazon-aws/threat-intel-aws.png')} alt="DB icon" width="50"/>
+
+
 The Threat Intel for AWS App correlates CrowdStrike threat intelligence data with your AWS log data, allowing for real-time security analytics to help detect threats in your environment and protect against cyber-attacks. The Threat Intel for AWS App scans your AWS CloudTrail, AWS ELB and AWS VPC Flow logs for threats based on IP address.
 
 The Sumo Logic Threat Intel lookup database is only available with Sumo Logic Enterprise and Professions accounts, or during a 30-day trial period. The Threat Intel lookup database is not available for Sumo Logic Free accounts.
 
-## Collect Logs
 
 
+## Collect Logs for the Threat Intel for AWS App
 
-## Install the Threat Intel for AWS App
+The Threat Intel for AWS App utilizes AWS logs and VPC Flow Logs.
+
+The Sumo Logic Threat Intel lookup database is only available with Sumo Logic Enterprise and Professional accounts, or during a 30-day trial period. The Threat Intel lookup database is not available for Sumo Logic Free accounts.
+
+
+### Configure Collectors and Sources
+
+If you are not already collecting your AWS logs, follow the instructions below to collect data from one or more of these data sources:
+* [Collect AWS CloudTrail Logs](https://help.sumologic.com/07Sumo-Logic-Apps/01Amazon_and_AWS/AWS_CloudTrail/01-Collect-logs-for-the-AWS-CloudTrail-App)
+* [Collect AWS ELB Logs](https://help.sumologic.com/07Sumo-Logic-Apps/01Amazon_and_AWS/AWS_Elastic_Load_Balancing_-_Classic/01-Collect-logs-for-the-AWS-Elastic-Load-Balancing-App)
+
+VPC Flow Logs can be published to Amazon CloudWatch Logs and Amazon S3. Each method has advantages. Using an AWS S3 source is more reliable, while using a CloudFormation template allows you to customize your logs by adding more information and filtering unwanted data. You can use either of the following methods to collect Amazon VPC Flow Logs:
+
+* [Collect Amazon VPC Flow Logs using AWS S3 source](https://help.sumologic.com/07Sumo-Logic-Apps/01Amazon_and_AWS/Amazon_VPC_Flow_Logs/02Collect_Amazon_VPC_Flow_Logs_using_AWS_S3_Source)
+* [Collect Amazon VPC Flow Logs using a CloudFormation template](https://help.sumologic.com/07Sumo-Logic-Apps/01Amazon_and_AWS/Amazon_VPC_Flow_Logs/01Collect-Amazon-VPC-Flow-Logs-from-CloudWatch-Using-CloudFormation)
+
+## Installing the Threat Intel for AWS App
 
 The Sumo Logic Threat Intel lookup database is only available with Sumo Logic Enterprise and Professions accounts, or during a 30-day trial period. The Threat Intel lookup database is not available for Sumo Logic Free accounts.
 

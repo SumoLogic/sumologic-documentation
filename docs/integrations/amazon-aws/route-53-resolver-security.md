@@ -7,6 +7,8 @@ description: Amazon Route53 Resolver Security
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
+<img src={useBaseUrl('img/integrations/amazon-aws/route53.png')} alt="DB icon" width="50"/>
+
 Amazon Route 53 Resolver is a highly available cloud-based DNS service from Amazon. The Sumo Logic Route 53 Resolver Security app enables you to monitor both Query Logs, and if in use, the DNS Firewall logs.
 
 Query logging enables visibility to inbound and outbound DNS queries to the Resolver endpoint. Integrating the logs with Sumo Logic provides insights such as queries by location or instance id.
@@ -133,7 +135,7 @@ Panels include:
 * Top 10 Blocked Domains
 
 
-### Security Detail Dashboard
+### Security Detail
 
 Security Detail Dashboard provides insights into DNS activities such as number of DNS requests and data throughput by VPC and instance ID. The Dashboard also provides a detailed drill down per request, displaying information such as the request, request type, ASN Number and ASN Org Name and DNS Resolver Firewall Actions.
 
@@ -167,7 +169,7 @@ Panels include:
 * Threat Outlier
 
 
-### Threat Intel Dashboard
+### Threat Intel
 
 The Threat Intel Dashboard provides details of AWS DNS Resolver Queries that matches the built-in CrowdStrike threat intelligence data with known malicious IP addresses and Domains, allowing for real-time security analytics to help detect threats in your environment and protect against cyber attacks.
 

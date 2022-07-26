@@ -5,6 +5,10 @@ sidebar_label: Apache
 description: Gives insight into website visitor behavior patterns, monitors server operations, and assists in troubleshooting issues that span entire web server farms.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src={useBaseUrl('img/integrations/web-servers/apache.png')} alt="Web servers icon" width="75"/>
+
 The Apache app is a unified logs and metrics app that helps you monitor the availability, performance, health and resource utilization of Apache web server farms. Preconfigured dashboards and searches provide insight into visitor locations, visitor access types, traffic patterns, errors, web server operations, resource utilization and access from known malicious sources.
 
 
@@ -35,7 +39,7 @@ The predefined searches in the Apache app are based on the Apache Access logs an
 * Apache - Traffic volume and bytes served per day
 
 
-### Search based on Apache Error logs 
+### Search based on Apache Error logs
 * Apache - Critical log messages
 * Apache - Log Level counts
 * Apache - Server start and stop events
@@ -43,3 +47,9 @@ The predefined searches in the Apache app are based on the Apache Access logs an
 * Apache - Top error reasons
 * Apache - Top files causing errors
 * Apache - Top Referrers causing errors
+
+
+import DocCardList from '@theme/DocCardList';
+import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
+
+<DocCardList items={useCurrentSidebarCategory().items}/>

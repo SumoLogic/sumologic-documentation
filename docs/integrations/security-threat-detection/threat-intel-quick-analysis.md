@@ -5,6 +5,10 @@ sidebar_label: Threat Intel Quick Analysis
 description: The Threat Intel Quick Analysis App correlates CrowdStrike's threat intelligence data with your own log data, providing security analytics that helps you to detect threats in your environment, while also protecting against sophisticated and persistent cyber-attacks. The Threat Intel Quick Analysis App scans selected logs for threats based on IP, URL, domain, Hash 256, and email.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src={useBaseUrl('img/integrations/security-threat-detection/threatintel.png')} alt="thumbnail icon" width="75"/>
+
 ### Threat Intel Quick Analysis App
 1
 

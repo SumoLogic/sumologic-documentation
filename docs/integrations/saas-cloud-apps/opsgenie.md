@@ -4,6 +4,11 @@ title: Sumo Logic App for Opsgenie
 sidebar_label: Opsgenie
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+
+<img src={useBaseUrl('img/integrations/saas-cloud-apps/opsgenie.png')} alt="DB icon" width="100"/>
+
 
 The Opsgenie App provides at-a-glance views and detailed analytics for alerts on your DevOps environment, allowing you to effectively monitor and gain valuable insights into your incidents and incident handling operations.
 
