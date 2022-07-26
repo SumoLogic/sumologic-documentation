@@ -5,6 +5,7 @@ sidebar_label: VMware
 description: VMware
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The VMware App uses unified logs and metrics from the VMware cloud computing virtualization platform to enable monitoring of vCenter, ESXi hosts and individual virtual machines metrics with real-time date displayed in predefined dashboards.
 
