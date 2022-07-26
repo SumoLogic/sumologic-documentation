@@ -4,6 +4,8 @@ title: Docker Community Edition
 sidebar_label: Docker Community Edition
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 The Sumo Logic App for Docker Community edition provides operational insight into your Docker containers. The App includes Dashboards that allow you to view your container performance statistics for CPU, memory, and the network. It also provides visibility into container events such as start, stop, and other important commands.
 
 This Docker App monitors Docker container logs and metrics (stats) in log format. If your system handles metrics, choose one of the following Sumo Logic apps: [Docker ULM](https://help.sumologic.com/07Sumo-Logic-Apps/10Containers_and_Orchestration/Docker_Apps/Docker_ULM) or [Docker EE](https://help.sumologic.com/07Sumo-Logic-Apps/10Containers_and_Orchestration/Docker_Apps/Docker_EE).

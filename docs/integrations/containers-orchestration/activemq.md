@@ -942,19 +942,14 @@ The ActiveMQ - Overview dashboard gives you an at-a-glance view of your ActiveMQ
 * Determine node uptime, the number of nodes, connections, producer, consumer, queues, topics unack messages, across each cluster and ensure they match with expectations.
 * Analysis of near errors.
 
-<img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/Windows-Security-Analytics-Default-Accounts-Usage.png')} alt="Windows cloud Security Analytics dashboards" />
+<img src={useBaseUrl('img/integrations/containers-orchestration/ActiveMQ-Overview.png')} alt="ActiveMQ dashboards" />
 
 
 ### Brokers
-20
-
 
 The ActiveMQ - Brokers dashboard provides an at-a-glance view of the state of your brokers in the ActiveMQ cluster.
 
 **Use this dashboard to**:
-
-
-
 * Monitor brokers uptime.
 * Analyze unacknowledged messages, serve connections for your ActiveMQ brokers..
 * Gain insights into the limit of resources for your ActiveMQ brokers.
@@ -962,24 +957,21 @@ The ActiveMQ - Brokers dashboard provides an at-a-glance view of the state of yo
 * Determine the amount of current connections, producers, and consumers for your ActiveMQ brokers.
 * find average message size.
 
-
+<img src={useBaseUrl('img/integrations/containers-orchestration/activemq-brokers.png')} alt="ActiveMQ dashboards" />
 
 
 ### Queues
 
-
 The ActiveMQ - Queues dashboard provides an at-a-glance view of the state of your queues in ActiveMQ clusters.
 
 **Use this dashboard to**:
-
-
-
 * Monitor en queue latency, the memory usage of queues.
 * Monitor queues, producers on queues, consumers on queues.
 * Gain insights into en queue rate, dequeue rate for your ActiveMQ queues.
 * Determine the number of current connections, producers, consumers, errors, and expired messages on queues.
 * Find average message size on queues.
 
+<img src={useBaseUrl('img/integrations/containers-orchestration/activemq-queues.png')} alt="ActiveMQ dashboards" />
 
 
 ### Topics
@@ -994,14 +986,10 @@ The ActiveMQ - Topics dashboard provides an at-a-glance view of the state of you
 * Analyze current connections, producers, consumers, errors, and expired messages on queues.
 * Find average message size on queues.
 
-
-25
-
+<img src={useBaseUrl('img/integrations/containers-orchestration/ActiveMQ-topics.png')} alt="ActiveMQ dashboards" />
 
 
 ### ActiveMQ - Resource Utilization
-26
-
 
 The ActiveMQ - Resource Utilization dashboard provides an at-a-glance view of the state of system loads in clusters: CPU usage, memory usage, Swap usage,  file descriptor usage, garbage collection rate, heap, and non-heap usage.
 
@@ -1010,16 +998,17 @@ The ActiveMQ - Resource Utilization dashboard provides an at-a-glance view of th
 * Gain insights into the garbage collection rate for your ActiveMQ nodes.
 * Gain insights into a heap, non-heap usage for your ActiveMQ nodes.
 
-
+<img src={useBaseUrl('img/integrations/containers-orchestration/activemq-resource.png')} alt="ActiveMQ dashboards" />
 
 
 ### ActiveMQ - Logs
 
 This dashboard helps you quickly analyze your ActiveMQ error logs across all clusters.
 
-**Use this dashboard to**:
-
+**Use this dashboard to:
 * Identify critical events in your ActiveMQ cluster.
 * Examine trends to detect spikes in Error or Fatal events
 * Monitor Broker added/started and shutdown events in your cluster.
 * Quickly determine patterns across all logs in a given ActiveMQ cluster.
+
+<img src={useBaseUrl('img/integrations/containers-orchestration/activemq-images.png')} alt="ActiveMQ dashboards" />

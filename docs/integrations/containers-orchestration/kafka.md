@@ -4,6 +4,9 @@ title: Sumo Logic App for Kafka
 sidebar_label: Kafka
 description: Kafka
 ---
+
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 This guide provides an overview of Kafka related features and technologies. In addition, it contains recommendations on best practices, tutorials for getting started, and troubleshooting information for common situations.
 
 The Sumo Logic App for Kafka is a unified logs and metrics app. The app helps you to monitor the availability, performance, and resource utilization of Kafka messaging/streaming clusters. Pre-configured dashboards provide insights into the cluster status, throughput, broker operations, topics, replication, zookeepers, node resource utilization, and error logs.
@@ -690,14 +693,17 @@ Use this dashboard to:
 * Analyze trends across Request Handler Idle percentage metrics. Kafka’s request handler threads are responsible for servicing client requests ( read/write disk). If the request handler threads get overloaded, the time taken for requests to complete will be longer. If the request handler idle percent is constantly below 0.2 (20%), it may indicate that your cluster is overloaded and requires more resources.
 * Determine the number of leaders, partitions and zookeepers across each cluster and ensure they match with expectations
 
+<img src={useBaseUrl('img/integrations/containers-orchestration/kafka-cluster-overview.png')} alt="Kafka dashboards" />
+
 
 #### Kafka - Outlier Analysis
 
 The **Kafka - Outlier Analysis** dashboard helps you identify outliers for key metrics across your Kafka clusters.
 
 Use this dashboard to:
-
 * To analyze trends, and quickly discover outliers across key metrics of your Kafka clusters
+
+<img src={useBaseUrl('img/integrations/containers-orchestration/Kafka-Outlier-Analysis.png')} alt="Kafka dashboards" />
 
 
 #### Kafka - Replication
@@ -713,18 +719,14 @@ Use this dashboard to monitor the following key metrics:
     * Under Min ISR Partitions Count -The Under Min ISR Partitions metric displays the number of partitions, where the number of In-Sync Replicas (ISR) is less than the minimum number of in-sync replicas specified. The two most common causes of under-min ISR partitions are that one or more brokers are unresponsive, or the cluster is experiencing performance issues and one or more brokers are falling behind.
 * The expected value for this rate is normally zero.
 
+<img src={useBaseUrl('img/integrations/containers-orchestration/Kafka-Replication.png')} alt="Kafka dashboards" />
 
 
-
-
-#### Kafka -Zookeeper
+#### Kafka - Zookeeper
 
 The **Kafka -Zookeeper** dashboard provides an at-a-glance view of the state of your partitions, active controllers, leaders, throughput and network across Kafka brokers and clusters.
 
-Use this dashboard to:
-
-Monitor key Zookeeper metrics such as:
-
+Use this dashboard to monitor key Zookeeper metrics such as:
 * **Zookeeper disconnect rate** - This metric indicates if a Zookeeper node has lostits connection to a Kafka broker.
 * **Authentication Failures** - This metric indicates a Kafka Broker is unable to connect to its Zookeeper node.
 * **Session Expiration **- When a Kafka broker - Zookeeper node session expires, leader changes can occur and the broker can be assigned a new controller. If this metric is increasing we recommend you:
@@ -732,6 +734,7 @@ Monitor key Zookeeper metrics such as:
     2. Check for garbage collection issues and tune your JVMs accordingly.
 * Connection Rate.
 
+<img src={useBaseUrl('img/integrations/containers-orchestration/Kafka-Zookeeper.png')} alt="Kafka dashboards" />
 
 #### Kafka - Broker
 
@@ -743,6 +746,7 @@ Use this dashboard to:
 * Monitor producer and fetch request rates.
 * Monitor Log flush rate to determine the rate at which log data is written to disk
 
+<img src={useBaseUrl('img/integrations/containers-orchestration/Kafka-Broker.png')} alt="Kafka dashboards" />
 
 
 #### Kafka - Failures and Delayed Operations
@@ -750,7 +754,6 @@ Use this dashboard to:
 The **Kafka - Failures and Delayed Operations **dashboard gives you insight into all failures and delayed operations associated with your Kafka clusters.
 
 Use this dashboard to:
-
 * Analyze failed produce requests -  A failed produce request occurs when a problem is encountered when processing a produce request. This could be for a variety of reasons, however some common reasons are:
     * The destination topic doesn’t exist (if auto-create is enabled then subsequent messages should be sent successfully).
     * The message is too large.
@@ -759,6 +762,8 @@ Use this dashboard to:
 * Monitor delayed Operations metrics -  This contains metrics regarding the number of requests that are delayed and waiting in purgatory. The purgatory size metric can be used to determine the root cause of latency. For example, increased consumer fetch times could be explained by an increased number of fetch requests waiting in purgatory. Available metrics are:
     * Fetch Purgatory Size - The Fetch Purgatory Size metric shows the number of fetch requests currently waiting in purgatory. Fetch requests are added to purgatory if there is not enough data to fulfil the request (determined by fetch.min.bytes in the consumer configuration) and the requests wait in purgatory until the time specified by fetch.wait.max.ms is reached, or enough data becomes available.
     * Produce Purgatory Size - The Produce Purgatory Size metric shows the number of produce requests currently waiting in purgatory. Produce requests are added to purgatory if request.required.acks is set to -1 or all, and the requests wait in purgatory until the partition leader receives an acknowledgement from all its followers. If the purgatory size metric keeps growing, some partition replicas may be overloaded. If this is the case, you can choose to increase the capacity of your cluster, or decrease the amount of produce requests being generated.
+
+<img src={useBaseUrl('img/integrations/containers-orchestration/Kafka-Failures-Delayed-Operations.png')} alt="Kafka dashboards" />
 
 
 #### Kafka - Request-Response Times
@@ -771,6 +776,7 @@ Use this dashboard to:
     2. **Fetch Follower Request Total Time** - The Fetch Follower Request Total Time metric displays the maximum and mean amount of time taken while processing, and the number of requests to get new data from Kafka brokers that are followers of a partition. Common causes of increased time taken are increased load on the node causing delays in processing requests, or that some partition replicas may be overloaded or temporarily unavailable.
     3. **Produce Request Total Time **- The Produce Request Total Time metric displays the maximum and mean amount of time taken for processing, and the number of requests from producers to send data. Some reasons for increased time taken could be: increased load on the node causing delays in processing the requests, or perhaps requests are being held in purgatory for a long time (if the `requests.required.acks` metrics is equal to '1' or all).
 
+<img src={useBaseUrl('img/integrations/containers-orchestration/Kafka-Request-Response-Times.png')} alt="Kafka dashboards" />
 
 #### Kafka - Logs
 
@@ -782,7 +788,7 @@ Use this dashboard to:
 * Monitor Broker added/started and shutdown events in your cluster.
 * Quickly determine patterns across all logs in a given Kafka cluster.
 
-
+<img src={useBaseUrl('img/integrations/containers-orchestration/Kafka-Logs.png')} alt="Kafka dashboards" />
 
 #### Kafka Broker - Performance Overview
 
@@ -794,6 +800,7 @@ Use this dashboard to:
 * Examine how threads are distributed
 * Understand the behavior of class count. If class count keeps on increasing, you may have a problem with the same classes loaded by multiple classloaders.
 
+<img src={useBaseUrl('img/integrations/containers-orchestration/Kafka-Broker-Performance-Overview.png')} alt="Kafka dashboards" />
 
 #### Kafka Broker - CPU
 
@@ -802,6 +809,7 @@ The **Kafka Broker - CPU** dashboard shows information about the CPU utilization
 Use this dashboard to:
 * Get insights into the process and user CPU load of Kafka brokers. High CPU utilization can make Kafka flaky and can cause read/write timeouts.
 
+<img src={useBaseUrl('img/integrations/containers-orchestration/Kafka-Broker-CPU.png')} alt="Kafka dashboards" />
 
 #### Kafka Broker - Memory
 
@@ -812,6 +820,7 @@ Use this dashboard to:
 * Examine physical and swap memory usage and make resource adjustments as needed.
 * Examine the pending object finalization count which when high can lead to excessive memory usage.
 
+<img src={useBaseUrl('img/integrations/containers-orchestration/Kafka-Broker-Memory.png')} alt="Kafka dashboards" />
 
 
 #### Kafka Broker - Disk Usage
@@ -825,6 +834,7 @@ Use this dashboard to:
 * Analyze trends in disk throughput and find any spikes. This is especially important as disk throughput can be a performance bottleneck.
 * Monitor iNodes bytes used, and disk read vs writes. These metrics are important to monitor as Kafka may not necessarily distribute data from a heavily occupied disk, which itself can bring the Kafka down.
 
+<img src={useBaseUrl('img/integrations/containers-orchestration/Kafka-Broker-Disk-Usage.png')} alt="Kafka dashboards" />
 
 #### Kafka Broker - Garbage Collection
 
@@ -834,7 +844,7 @@ Use this dashboard to:
 * Understand the amount of time spent in garbage collection. If this time keeps increasing, your Kakfa brokers may have more CPU usage .
 * Understand the amount of memory cleared by garbage collectors across memory pools and their impact on the Heap memory.
 
-
+<img src={useBaseUrl('img/integrations/containers-orchestration/Kafka-Broker-Garbage-Collection.png')} alt="Kafka dashboards" />
 
 
 #### Kafka Broker - Threads
@@ -845,6 +855,7 @@ Use this dashboard to:
 * Understand the dynamic behavior of the system using peak, daemon, and current threads.
 * Gain insights into the memory and CPU time of the last executed thread.
 
+<img src={useBaseUrl('img/integrations/containers-orchestration/Kafka-Broker-Threads.png')} alt="Kafka dashboards" />
 
 #### Kafka Broker - Class Loading and Compilation
 
@@ -855,6 +866,7 @@ Use this dashboard to:
 * Determine If the class count keeps increasing, this indicates that the same classes are loaded by multiple classloaders.
 * Get insights into time spent by Java Virtual machines during compilation.
 
+<img src={useBaseUrl('img/integrations/containers-orchestration/Kafka-Broker-Class-Loading-Compilation.png')} alt="Kafka dashboards" />
 
 
 #### Kafka - Topic Overview
@@ -870,6 +882,9 @@ Use this dashboard to:
 1. Green indicates there are no under Replicated Partitions.
 2. Red indicates a given partition is under replicated.
 
+<img src={useBaseUrl('img/integrations/containers-orchestration/Kafka-Topic-Overview.png')} alt="Kafka dashboards" />
+
+
 
 #### Kafka - Topic Details
 
@@ -880,6 +895,8 @@ Use this dashboard to:
 * Identify offline/under replicated partitions count. Partitions can be in this state on account of resource shortages or broker unavailability.
 * Monitor the In Sync replica (ISR) Shrink rate. ISR shrinks occur when an in-sync broker goes down, as it decreases the number of in-sync replicas available for each partition replica on that broker.
 * Monitor In Sync replica (ISR) Expand rate. ISR expansions occur when a broker comes online, such as when recovering from a failure or adding a new node. This increases the number of in-sync replicas available for each partition on that broker.
+
+<img src={useBaseUrl('img/integrations/containers-orchestration/Kafka-Topic-Details.png')} alt="Kafka dashboards" />
 
 
 ## Kafka Alerts

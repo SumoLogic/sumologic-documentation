@@ -4,6 +4,8 @@ title: Docker Enterprise Edition
 sidebar_label: Docker Enterprise Edition
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 Docker Enterprise Edition (Docker EE) is an industry standard container platform, running modern container orchestration engines such as Kubernetes behind the scenes. Docker EE is designed for enterprise development and IT teams who build, ship, and run applications in production scale environments.
 
 The Docker EE App facilitates monitoring and troubleshooting distributed microservice based applications running in Docker containers. The app enables you to correlate events across the Docker platform and application containers and detects anomalous patterns for faster root cause analysis.
