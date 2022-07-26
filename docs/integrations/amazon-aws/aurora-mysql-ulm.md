@@ -25,7 +25,7 @@ This page explains the logs and metrics collected from your Aurora MySQL databas
 
 * [Log and metric types](https://help.sumologic.com/07Sumo-Logic-Apps/01Amazon_and_AWS/Amazon_Aurora_MySQL_ULM/Collect_logs_and_metrics_for_the_Amazon_Aurora_MySQL_ULM_App#Log_and_metric_types)
 * [Log examples](https://help.sumologic.com/07Sumo-Logic-Apps/01Amazon_and_AWS/Amazon_Aurora_MySQL_ULM/Collect_logs_and_metrics_for_the_Amazon_Aurora_MySQL_ULM_App#Log_examples)
-* [Query examples](https://help.sumologic.com/07Sumo-Logic-Apps/01Amazon_and_AWS/Amazon_Aurora_MySQL_ULM/Collect_logs_and_metrics_for_the_Amazon_Aurora_MySQL_ULM_App#Query_examples)
+* [Sample Querys](https://help.sumologic.com/07Sumo-Logic-Apps/01Amazon_and_AWS/Amazon_Aurora_MySQL_ULM/Collect_logs_and_metrics_for_the_Amazon_Aurora_MySQL_ULM_App#Query_examples)
 * [Configure log and metric collection](https://help.sumologic.com/07Sumo-Logic-Apps/01Amazon_and_AWS/Amazon_Aurora_MySQL_ULM/Collect_logs_and_metrics_for_the_Amazon_Aurora_MySQL_ULM_App#Configure_log_and_metric_collection)
 
 Amazon Aurora is a MySQL is a relational database built for the cloud. For more information, see [Amazon Aurora MySQL features](https://aws.amazon.com/rds/aurora/details/mysql-details/).

@@ -329,7 +329,7 @@ The following table explains the configuration file parameters and their usage.
 ```
 
 
-### Query sample  
+### Sample Query  
 15
 
 The following query sample was is from the Total Sessions panel of the Application Overview Dashboard.

@@ -28,7 +28,7 @@ The Carbon Black Cloud App analyzes alert and event data from Endpoint Standard 
 For sample log messages, see [Data Samples](https://developer.carbonblack.com/reference/carbon-black-cloud/platform/latest/data-forwarder-data/#data-samples) section in VMware help.
 
 
-#### Query samples  
+#### Sample Querys  
 
 ##### Carbon Black Cloud - Endpoint Standard queries
 4

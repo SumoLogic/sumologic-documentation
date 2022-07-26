@@ -66,7 +66,7 @@ The AWS DynamoDB app uses the following logs and metrics:
 
 
 
-### Query samples
+### Sample Querys
 
 
 ```sql title="Successful Request latency by Table Name (Metric based)"
@@ -205,7 +205,7 @@ The Sumo Logic AWS Observability DynamoDB Dashboards for AWS DynamoDB provides o
 We highly recommend you view these dashboards in the [Explore View](https://help.sumologic.com/Observability_Solution/AWS_Observability_Solution/01_Deploy_and_Use_AWS_Observability/09_View_AWS_Observability_Solution_Dashboards) of the AWS Observability solution.
 
 
-### AWS DynamoDB - Overview
+### Overview
 
 The **AWS DynamoDB - Overview** dashboard provides insights across your infrastructure for DynamoDB events, errors, requests, latency, and trends.
 
@@ -217,7 +217,7 @@ Use this dashboard to:
 <img src={useBaseUrl('img/integrations/amazon-aws/AWS-DynamoDB-Overview.png')} alt="Amazon DynamoDB" />
 
 
-### AWS DynamoDB - Capacity Planning
+### Capacity Planning
 
 The **AWS DynamoDB - Capacity Planning** dashboard provides insights for DynamoDB read and writes capacity across account allotments, consumed percentages, throttle events, and requests.
 
@@ -228,7 +228,7 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/amazon-aws/AWS-DynamoDB-Capacity-Planning.png')} alt="Amazon DynamoDB" />
 
-### AWS DynamoDB - Latency and Errors
+### Latency and Errors
 
 **AWS DynamoDB - Latency and Errors **dashboard provides insights across your infrastructure for DynamoDB errors and latency including failed requests, and latency.
 
@@ -240,7 +240,7 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/amazon-aws/AWS-DynamoDB-Latency-and-Errors.png')} alt="Amazon DynamoDB" />
 
-### AWS DynamoDB - Events
+### Events
 
 The **AWS DynamoDB - Events **dashboard provides insights across your infrastructure for DynamoDB events including trends, users, errors, updates, creations and deletions to tables.
 
@@ -251,7 +251,7 @@ Use this dashboard to:
 * Quickly identify the top DynamoDB related errors
 <img src={useBaseUrl('img/integrations/amazon-aws/AWS-DynamoDB-Events.png')} alt="Amazon DynamoDB" />
 
-### AWS DynamoDB - Threat Intel
+### Threat Intel
 
 The **AWS DynamoDB - Threat Intel** dashboard provides insights across your infrastructure for malicious requests to DynamoDB tables.
 

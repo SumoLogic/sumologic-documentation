@@ -165,7 +165,7 @@ curl -k --user admin:<BIGIP PWD> -H "Accept: application/json" -H "Content-Type:
 
 
 
-### Query sample
+### Sample Query
 17
 
 The following query sample is from the **F5 - BIG-IP LTM - Overview** Dashboard, **Pool Status** panel.

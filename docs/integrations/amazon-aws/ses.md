@@ -251,12 +251,12 @@ Panels will start to fill automatically. It's important to note that each panel 
 
 
 
-## Viewing SES Dashboards
+## Viewing Amazon SES Dashboards
 
 This section provides examples of the Amazon SES App dashboards, along with descriptions of the features and functions.
 
 
-### Amazon SES - CloudTrail Events Overview
+### CloudTrail Events Overview
 
 See the overview of SES CloudTrail events including failed, and successful events, error codes, users, and event locations.
 
@@ -287,7 +287,7 @@ See the overview of SES CloudTrail events including failed, and successful event
 **Events Trend by Event Name**. See the trend in events by event name in the last 24 hours on a stacked column chart.
 
 
-### Amazon SES - CloudTrail Events by Event Name
+### CloudTrail Events by Event Name
 
 See the details of various SES CloudTrail events including the identity, get send, domain, receipt, and email address events.
 
@@ -314,7 +314,7 @@ See the details of various SES CloudTrail events including the identity, get sen
 **Email Address Event Details**. See the details of the email address event in the last seven days including the event time, event name, event type, type, user, AWS region, source IP address, event status, account ID, request ID, error code, error message, and event count, displayed in a table.
 
 
-#### Amazon SES - Notification Overview
+#### Notification Overview
 
 See the overview of SES notifications including the source IP locations, notification types, mail source, and notification type.
 
@@ -331,7 +331,7 @@ See the overview of SES notifications including the source IP locations, notific
 **Notification Type Trend**. See the trend in the notification types in the last 24 hours on a line chart.
 
 
-### Amazon SES - Delivered Notifications
+### Delivered Notifications
 
 See the details of delivered notifications including the email destinations, domains, reporting MTA, and delivery processing time.
 
@@ -350,7 +350,7 @@ See the details of delivered notifications including the email destinations, dom
 **Delivery Processing Time Outlier**. See the outlier in the delivery processing time in the last 24 hours on a line chart.
 
 
-### Amazon SES - Bounced Notifications
+### Bounced Notifications
 
 See the details of bounced notifications by email addresses, domains, bounce types, and bounce subtypes.
 
@@ -381,7 +381,7 @@ See the details of bounced notifications by email addresses, domains, bounce typ
 **Undetermined Bounce. **Sub Type Trend. See the trend in the undetermined bounce type by subtype on a stacked column chart in the last 24 hours.
 
 
-### Amazon SES - Complaint Notifications
+### Complaint Notifications
 
 See information about complaints (a complaint occurs when a recipient reports that they don't want to receive an email), including the top email addresses, email domains, and UserAgents associated with complaints; and the sending AccountId, AWS region, SourceIP, and Identity associated with complaints.
 

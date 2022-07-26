@@ -58,7 +58,7 @@ This page provides instructions for setting up event collection from Salesforce 
 * [Requirements and process overview](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/Salesforce/01Collect-Logs-for-Salesforce#Requirements_and_process_overview)
 * [Configure Collection for Salesforce](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/Salesforce/01Collect-Logs-for-Salesforce#configure-collection-for-salesforce)
 * [Sample log message](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/Salesforce/01Collect-Logs-for-Salesforce#Sample_log_message)
-* [Query sample](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/Salesforce/01Collect-Logs-for-Salesforce#Query_sample)
+* [Sample Query](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/Salesforce/01Collect-Logs-for-Salesforce#Query_sample)
 
 
 #### Requirements and process overview
@@ -457,7 +457,7 @@ Salesforce generates event logs during non-peak hours, every 24 hours. This mean
 
 
 
-#### Query sample
+#### Sample Query
 
 **Most Accessed Reports**
 

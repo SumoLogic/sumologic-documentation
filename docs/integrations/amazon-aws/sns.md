@@ -13,13 +13,83 @@ Amazon Simple Notification Service (SNS) is a pub/sub messaging and mobile notif
 
 The Sumo Logic App for Amazon SNS is a unified logs and metrics (ULM) App that provides insights into the operations and utilization of your SNS service. The preconfigured dashboards help you monitor the key metrics by application, platform, region, and topic name, view the SNS events for activities, and help you plan the capacity of your SNS service.
 
-Log and Metrics Types
+
+
+## Collecting Logs and Metrics for the Amazon SNS App
+
+### Log and Metrics Types
 The App uses SNS logs and metrics:
+* SNS CloudWatch Metrics. For details, see here. 
+* SNS operations using AWS CloudTrail. For details, see here. 
 
-SNS CloudWatch Metrics. For details, see here. 
-SNS operations using AWS CloudTrail. For details, see here. 
 
-## Collect Logs and Metrics
+### Collect Metrics for Amazon SNS  
+
+1. Configure a [Hosted Collector](https://help.sumologic.com/03Send-Data/Hosted-Collectors/Configure-a-Hosted-Collector).
+2. Configure an [Amazon CloudWatch Source for Metrics](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/Amazon-CloudWatch-Source-for-Metrics) or [AWS Kinesis Firehose for Metrics Source](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/AWS_Kinesis_Firehose_for_Metrics_Source) (Recommended).
+    1. **Metadata**: Add an **account** field to the source and assign it a value which is a friendly name / alias to your AWS account from which you are collecting metrics. This name will appear in the Sumo Logic Explorer View. Metrics can be queried via the “account field”.
+
+3. Click **Save**.
+
+
+### Collect Amazon SNS Events using CloudTrail
+
+
+1. To your Hosted Collector, add an [AWS CloudTrail Source](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/AWS-CloudTrail-Source).
+    1. **Name**. Enter a name to display for the new Source.
+    2. **Description**. Enter an optional description.
+    3. **S3 Region**. Select the Amazon Region for your SNS S3 bucket.
+    4. **Bucket Name**. Enter the exact name of your SNS S3 bucket.
+    5. **Path Expression**. Enter the string that matches the S3 objects you'd like to collect. You can use a wildcard (*) in this string. (DO NOT use a leading forward slash. See [Amazon Path Expressions](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/Amazon-Path-Expressions).)
+
+The S3 bucket name is not part of the path. Don’t include the bucket name when you are setting the Path Expression.
+    6. **Source Category**. Enter a source category. For example, SNS_event.
+    7. **Access Key ID and Secret Access Key**. Enter your Amazon [Access Key ID and Secret Access Key](http://docs.aws.amazon.com/general/latest/gr/managing-aws-access-keys.html).
+    8. **Scan Interval**. Use the default of 5 minutes. Alternately, enter the frequency Sumo Logic will scan your S3 bucket for new data.
+    9. **Enable Timestamp Parsing**. Select the check box.
+    10. **Time Zone**. Select Ignore time zone from log file and instead use, and select UTC.
+    11. **Timestamp Format**. Select Automatically detect the format.
+    12. **Enable Multiline Processing**. Select the check box, and select Infer Boundaries.
+2. Click **Save**.
+
+
+### Field in Field Schema
+
+Login to Sumo Logic,  goto Manage Data > Logs > Fields. Search for the “**topicname**” field. If not present, create it. Learn how to create and manage fields [here](https://help.sumologic.com/Manage/Fields#manage-fields).
+
+
+### Field Extraction Rule(s)
+
+Create Field Extraction Rule for CloudTrail Logs. Learn how to create Field Extraction Rule [here](https://help.sumologic.com/Manage/Field-Extractions/Create-a-Field-Extraction-Rule).
+
+
+```
+Rule Name: AwsObservabilitySNSCloudTrailLogsFER
+Applied at: Ingest Time
+Scope (Specific Data): account=* eventname eventsource \"sns.amazonaws.com\"
+```
+
+
+**Parse Expression**:
+
+
+```sql
+| json "userIdentity", "eventSource", "eventName", "awsRegion", "recipientAccountId", "requestParameters", "responseElements" as userIdentity, event_source, event_name, region, recipient_account_id, requestParameters, responseElements nodrop
+| where event_source = "sns.amazonaws.com"
+| json field=userIdentity "accountId", "type", "arn", "userName"  as accountid, type, arn, username nodrop
+| parse field=arn ":assumed-role/*" as user nodrop
+| parse field=arn "arn:aws:iam::*:*" as accountid, user nodrop
+| json field=requestParameters "topicArn", "name", "resourceArn", "subscriptionArn" as req_topic_arn, req_topic_name, resource_arn, subscription_arn  nodrop
+| json field=responseElements "topicArn" as res_topic_arn nodrop
+| if (isBlank(req_topic_arn), res_topic_arn, req_topic_arn) as topic_arn
+| if (isBlank(topic_arn), resource_arn, topic_arn) as topic_arn
+| parse field=topic_arn "arn:aws:sns:*:*:*" as region_temp, accountid_temp, topic_arn_name_temp nodrop
+| parse field=subscription_arn "arn:aws:sns:*:*:*:*" as region_temp, accountid_temp, topic_arn_name_temp, arn_value_temp nodrop
+| if (isBlank(req_topic_name), topic_arn_name_temp, req_topic_name) as topicname
+| if (isBlank(accountid), recipient_account_id, accountid) as accountid
+| "aws/sns" as namespace
+| fields region, namespace, topicname, accountid
+```
 
 
 ## Installing the Amazon SNS App
@@ -45,7 +115,7 @@ Once an app is installed, it will appear in your **Personal** folder, or other f
 Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
 
 
-## Viewing the SNS Dashboards
+## Viewing Amazon SNS Dashboards
 
 ### Overview
 

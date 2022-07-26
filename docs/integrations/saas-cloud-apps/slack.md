@@ -704,7 +704,7 @@ The following table provides sample log messages for the different log types.
 **INSERT TABLE**
 
 
-#### Query example
+#### Sample Query
 
 The sample query is from the **Channel Summary** panel of **Slack - Public Channels** dashboard.
 
