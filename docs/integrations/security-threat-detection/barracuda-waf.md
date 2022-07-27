@@ -2,6 +2,7 @@
 id: barracuda-waf
 title: Sumo Logic App for Barracuda Web Application Firewall
 sidebar_label: Barracuda WAF
+description: The Barracuda WAF App analyzes traffic flowing through the Barracuda WAF and provides pre-configured dashboards that allow you to monitor WAF traffic as well to analyze various types of attacks detected both by Barracuda and the Sumo Logic Threat Intelligence database.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

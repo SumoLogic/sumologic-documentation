@@ -2,7 +2,7 @@
 id: bigquery
 title: Sumo Logic App for Google BigQuery
 sidebar_label: BigQuery
-description: tk
+description: The Google BigQuery App helps you monitor data and activity in your BigQuery data warehouse. The preconfigured dashboards provide insight into the projects, operations, queries, user management operations, user activities, and billed GBs in BigQuery.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

@@ -2,6 +2,7 @@
 id: box
 title: Sumo Logic App for Box
 sidebar_label: Box
+description: Provides insight into user behavior patterns, monitors resources, and even tracks administrative activities.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

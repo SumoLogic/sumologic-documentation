@@ -2,7 +2,7 @@
 id: vmware-legacy
 title: Sumo Logic App for VMware Legacy
 sidebar_label: VMware (Legacy)
-description: VMware (Legacy)
+description: Allows you to collect and centralize logs, troubleshoot  farms, and monitor the entire VMware infrastructure.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

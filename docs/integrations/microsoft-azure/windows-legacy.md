@@ -2,7 +2,7 @@
 id: windows-legacy
 title: Sumo Logic App for Windows Legacy
 sidebar_label: Windows (Legacy)
-description: Windows Legacy
+description: The Sumo Logic App for Payment Card Industry (PCI) Compliance for Windows JSON offers dashboards to monitor system, account and user activity to ensure that login activity and privileged users are within the expected ranges. 
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

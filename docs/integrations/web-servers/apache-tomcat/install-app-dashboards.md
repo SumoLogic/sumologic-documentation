@@ -2,6 +2,7 @@
 id: install-app-dashboards
 title: Install the Apache Tomcat Monitors, App, and view the Dashboards
 sidebar_label: Install the Monitors, App, and view the Dashboards
+description: The Sumo Logic App for Apache Tomcat provides pre-configured Dashboards for Access, Catalina.out, and Garbage Collection logs.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

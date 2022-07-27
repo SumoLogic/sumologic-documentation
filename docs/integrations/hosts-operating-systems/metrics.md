@@ -2,6 +2,7 @@
 id: metrics
 title: Host Metrics Sumo Logic App
 sidebar_label: Host Metrics
+description: The Sumo Logic App for Host Metrics allows you to collect your local host metrics and display them using predefined search queries and Dashboards.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

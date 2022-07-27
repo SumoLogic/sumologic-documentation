@@ -2,6 +2,7 @@
 id: data-volume-legacy
 title: Sumo Logic Data Volume App (Legacy)
 sidebar_label: Data Volume (Legacy)
+description: Allows you to view at a glance your Sumo Logic account's data usage volume by category, Collector, Source name, and hosts.
 ---
 
 The Data Volume allows you to view at a glance your account's data usage volume by category, collector, source name, and hosts. The app uses predefined searches and a Dashboard that provide visibility into your environment for real-time analysis of overall usage.

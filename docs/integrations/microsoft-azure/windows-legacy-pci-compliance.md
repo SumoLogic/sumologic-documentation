@@ -2,7 +2,7 @@
 id: windows-legacy-pci-compliance
 title: Sumo Logic App for Windows Legacy PCI Compliance
 sidebar_label: Windows PCI Compliance (Legacy)
-description: Windows Legacy PCI Compliance
+description: The Sumo Logic App for Payment Card Industry (PCI) Compliance for Windows offers dashboards to monitor systems, account and users activity to ensure that login activity and privileged users are within the expected ranges. 
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -73,7 +73,7 @@ instance of Win32_NTLogEvent
 ### Query Sample
 
 
-```bash title="Recent Policy Changes" 
+```bash title="Recent Policy Changes"
 _sourceCategory=OS/Windows/Events "Policy Change"
 | parse regex "CategoryString = \"(?<category>[^\"]+?)\";[\s\S]+?Logfile = \"Security\""
 | count by category

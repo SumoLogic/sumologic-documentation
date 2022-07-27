@@ -2,7 +2,7 @@
 id: kafka
 title: Sumo Logic App for Kafka
 sidebar_label: Kafka
-description: Kafka
+description: This guide provides an overview of Kafka related features and technologies.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

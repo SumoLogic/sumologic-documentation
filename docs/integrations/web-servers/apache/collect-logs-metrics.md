@@ -2,6 +2,7 @@
 id: collect-logs-metrics
 title: Collect Logs and Metrics for Apache
 sidebar_label: Collect Logs and Metrics
+description: This page provides instructions for configuring log and metric collection for the Sumo Logic App for Apache.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
