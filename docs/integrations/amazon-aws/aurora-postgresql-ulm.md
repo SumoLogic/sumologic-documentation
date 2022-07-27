@@ -2,7 +2,7 @@
 id: aurora-postgresql-ulm
 title: Amazon Aurora PostgreSQL ULM
 sidebar_label: Amazon Aurora PostgreSQL ULM
-description: Amazon Aurora PostgreSQL ULM
+description: The Sumo Logic App for Aurora PostgreSQL uses unified logs and metrics (ULM) to monitor your Aurora PostgreSQL database. Logs allow you to monitor database and user activity, incoming connections, query execution time, and errors. The metrics allow you to monitor database resource utilization and throughput performance.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

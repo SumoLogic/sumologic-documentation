@@ -2,7 +2,7 @@
 id: ses
 title: Amazon SES
 sidebar_label: Amazon SES
-description: Amazon SES
+description: The Sumo App for Amazon SES provides operational insight into Amazon Simple Email Service. The app includes dashboards that allow you to  view information about bounced notifications, delivered notifications, and CloudTrail events.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

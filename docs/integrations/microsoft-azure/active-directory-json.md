@@ -2,7 +2,7 @@
 id: active-directory-json
 title: Sumo Logic App for Active Directory JSON
 sidebar_label: Active Directory JSON
-description: Active Directory JSON
+description: The Active Directory JSON App helps you monitor your Windows Active Directory deployment by analyzing Active Directory logs in the JSON based event log format.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

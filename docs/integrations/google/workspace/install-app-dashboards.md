@@ -2,7 +2,7 @@
 id: install-app-dashboards
 title: Google Workspace App and Dashboards
 sidebar_label: App Installation and Dashboards
-description: tk
+description: Instructions for installing the Google Workspace app and information about each of the dashboards.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

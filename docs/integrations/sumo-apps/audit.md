@@ -2,6 +2,7 @@
 id: audit
 title: Sumo Logic Audit App
 sidebar_label: Audit
+description: The Audit App uses Sumo audit index events to present information about account management activities, user activities, and management of Library content (searches, dashboards/reports, and folders) in your Sumo Logic account.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

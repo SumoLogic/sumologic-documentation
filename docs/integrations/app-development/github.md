@@ -2,6 +2,7 @@
 id: github
 title: Sumo Logic App for GitHub
 sidebar_label: GitHub
+description: Connects to your GitHub repository at the Organization or Repository level, and ingests GitHub events through a webhook.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

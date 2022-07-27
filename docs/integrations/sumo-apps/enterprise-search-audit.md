@@ -2,6 +2,7 @@
 id: enterprise-search-audit
 title: Sumo Logic Enterprise Search Audit App
 sidebar_label: Enterprise Search Audit
+description: The Enterprise Search Audit App provides immediate visibility into your account's search activity and helps you identify areas of improvement.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

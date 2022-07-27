@@ -1,6 +1,7 @@
 ---
 id: akamai-security-events
 title: Akamai Security Events
+description: The Sumo Logic app for Akamai Security Events allows you to visualize security events generated on the Akamai platform.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

@@ -2,6 +2,7 @@
 id: enterprise-audit
 title: Sumo Logic Enterprise Audit App
 sidebar_label: Enterprise Audit
+description: The Sumo Logic Enterprise Audit Apps present information on account management activities, user activities, and management of library content (searches, dashboards/reports, and folders) in your Sumo Logic account. 
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

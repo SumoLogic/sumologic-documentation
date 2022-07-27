@@ -2,7 +2,7 @@
 id: cloud-audit
 title: Sumo Logic App for Google Cloud Audit
 sidebar_label: Cloud Audit
-description: tk
+description: The Google Cloud Audit App helps you monitor the activities in your Google Cloud Platform projects. The preconfigured dashboards provide you insights into the network, security, operations, and users of your Google Cloud Platform projects.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

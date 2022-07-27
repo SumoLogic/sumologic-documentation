@@ -2,6 +2,7 @@
 id: 1password
 title: Sumo Logic App for 1Password
 sidebar_label: 1Password
+description: The Sumo Logic App for 1Password helps you monitor your 1Password account’s sign-in and item usage events. 
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

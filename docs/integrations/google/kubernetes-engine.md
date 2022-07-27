@@ -2,7 +2,7 @@
 id: kubernetes-engine
 title: Sumo Logic App for Google Kubernetes Engine
 sidebar_label: Kubernetes Engine (GKE)
-description: tk
+description: The Sumo Logic App for Google Kubernetes Engine (GKE) - Control Plane allows you to monitor resource-related logs and metrics for Kubernetes deployments, clusters, namespaces, pods, containers, and daemonsets. The app provides visibility into the GKE control plane with operat
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

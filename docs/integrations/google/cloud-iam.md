@@ -2,7 +2,7 @@
 id: cloud-iam
 title: Sumo Logic App for Google Cloud IAM
 sidebar_label: Cloud IAM
-description: tk
+description: The Google Cloud IAM App gives you visibility into the activities in Cloud IAM. The preconfigured dashboards allow you to monitor the IAM project activities, operations, role activities, and policy changes.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

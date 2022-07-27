@@ -2,7 +2,7 @@
 id: teams
 title: Sumo Logic App for Microsoft Teams
 sidebar_label: Microsoft Teams
-description: Microsoft Teams
+description: The Microsoft Teams app provides out-of-the-box dashboards to monitor users, teams, channels and permission changes.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

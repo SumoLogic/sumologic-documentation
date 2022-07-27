@@ -2,7 +2,7 @@
 id: elasticache
 title: Sumo Logic App for Amazon Elasticache
 sidebar_label: Amazon Elasticache
-description: Amazon Elasticache
+description: The Sumo Logic App for Amazon ElastiCache Redis ULM is a unified logs and metrics (ULM) App that provides visibility into key event and performance analytics to enable proactive diagnosis and response to system and environment issues. The app provides preconfigured dashboards for high-level analysis of event status and trends, locations, and system health and performance metrics.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -90,7 +90,7 @@ account={{account}} region={{region}} namespace={{namespace}} "\"eventSource\":\
     * **Metadata**: Add an **account** field to the source and assign it a value which is a friendly name / alias to your AWS account from which you are collecting metrics. This name will appear in the Sumo Logic Explorer View. Metrics can be queried via the “account field”.
 
 
-### Collect Amazon ElastiCache CloudTrail Logs 
+### Collect Amazon ElastiCache CloudTrail Logs
 
 1. To your Hosted Collector, add an [AWS CloudTrail Source](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/AWS-CloudTrail-Source).
     1. **Name**. Enter a name to display for the new Source.
