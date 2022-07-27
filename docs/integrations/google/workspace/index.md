@@ -5,6 +5,10 @@ sidebar_label: Workspace
 description: tk
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src={useBaseUrl('img/integrations/google/workspace.jpeg')} alt="thumbnail icon" width="150"/>
+
 The Google Workspace App allows you to monitor and analyze activities across all Google Workspace applications from a single location. Comprehensive dashboards display information on administrative and user activities, Google Drive usage, and logins.
 
 Dashboards also provide full visibility into alerts from Google Workspace Alert Center, allowing you to investigate and correlate alerts and monitor potential threats across all Google Workspace apps.
