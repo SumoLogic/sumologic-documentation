@@ -2,7 +2,7 @@
 id: cloud-functions
 title: Sumo Logic App for Google Cloud Functions
 sidebar_label: Cloud Functions
-description: tk
+description: The Google Cloud Functions App enables you monitor your usage of Google Cloud Functions. The App preconfigured dashboards provide insight into function executions, operations, latency, errors, and failures.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

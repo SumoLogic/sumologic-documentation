@@ -2,6 +2,7 @@
 id: aws-cloudtrail
 title: Sumo Logic App for PCI Compliance for AWS CloudTrail
 sidebar_label: AWS CloudTrail PCI Compliance
+description: Introduction to Amazon CloudTrail - Cloud Security Monitoring and Analytics.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

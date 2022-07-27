@@ -2,7 +2,7 @@
 id: cloud-load-balancing
 title: Sumo Logic App for Google Cloud Load Balancing
 sidebar_label: Cloud Load Balancing
-description: tk
+description: The Sumo Logic App for Google Cloud Load Balancing helps you monitor load balancing activity.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

@@ -2,7 +2,7 @@
 id: windows-json-pci-compliance
 title: Sumo Logic App for Windows JSON PCI Compliance
 sidebar_label: Windows JSON PCI Compliance
-description: Windows JSON PCI Compliance
+description: The Sumo Logic App for Payment Card Industry (PCI) Compliance for Windows JSON offers dashboards to monitor system, account and user activity to ensure that login activity and privileged users are within the expected ranges. 
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

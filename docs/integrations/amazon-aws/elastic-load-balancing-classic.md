@@ -2,7 +2,7 @@
 id: elastic-load-balancing-classic
 title: AWS Elastic Load Balancing - Classic
 sidebar_label: AWS Elastic Load Balancing - Classic
-description: AWS Elastic Load Balancing - Classic
+description: Distributes incoming application traffic across multiple Amazon EC2 instances in the AWS Cloud.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

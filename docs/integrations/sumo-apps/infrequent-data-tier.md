@@ -2,6 +2,7 @@
 id: infrequent-data-tier
 title: Sumo Logic Infrequent Data Tier App
 sidebar_label: Infrequent Data Tier
+description: The Infrequent Data Tier App provides visibility into the usage and costs associated with data stored in an Infrequent Data Tier with its intuitive pre-configured dashboards and searches.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

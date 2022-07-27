@@ -1,8 +1,8 @@
 ---
 id: global-intelligence-guardduty
 title: Global Intelligence for Amazon GuardDuty
-sidebar_label: Global Intelligence for Amazon GuardDuty
-description: Global Intelligence for Amazon GuardDuty
+sidebar_label: GI for Amazon GuardDuty
+description: The Sumo Logic Global Intelligence Amazon GuardDuty App integrates Global Intelligence Service (GIS) with Amazon GuardDuty for continuous machine learning and statistical baselines for KPIs (key performance indicators) and KRIs (key risk indicators). 
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

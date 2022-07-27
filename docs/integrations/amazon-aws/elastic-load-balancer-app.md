@@ -2,7 +2,7 @@
 id: elastic-load-balancer-app
 title: Sumo Logic App for AWS Elastic Load Balance
 sidebar_label: AWS Elastic Load Balancer
-description: AWS Elastic Load Balancer
+description: Use the Sumo Logic App to analyze raw Application Load Balancer data to investigate the availability of applications running behind Application Load Balancers.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

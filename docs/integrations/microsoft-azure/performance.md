@@ -2,7 +2,7 @@
 id: performance
 title: Sumo Logic App for Windows Performance
 sidebar_label: Windows Performance
-description: Windows Performance
+description: The Windows Performance App provides insight into your system's operation and events so that you can better manage and maintain your Windows systems. 
 ---
 
 

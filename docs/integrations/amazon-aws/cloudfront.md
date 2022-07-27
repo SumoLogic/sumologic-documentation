@@ -2,7 +2,7 @@
 id: cloudfront
 title: Sumo Logic App for Amazon CloudFront
 sidebar_label: Amazon CloudFront
-description: Amazon CloudFront
+description: The Sumo Logic App for Amazon CloudFront provides analytics on visitor information, rates and statistics, content being served, and other metrics.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

@@ -2,7 +2,7 @@
 id: compute-engine
 title: Sumo Logic App for Google Compute Engine
 sidebar_label: Compute Engine
-description: tk
+description: The Sumo Logic App for Google Compute Engine helps you monitor your infrastructure by providing preconfigured dashboards that allow you to view the activities, users, message severity of your Google Compute Engine infrastructure.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

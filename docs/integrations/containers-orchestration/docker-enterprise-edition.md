@@ -2,6 +2,7 @@
 id: docker-enterprise-edition
 title: Docker Enterprise Edition
 sidebar_label: Docker Enterprise Edition
+description: The Docker EE App monitors distributed microservice based applications running in Docker containers and works in conjunction with Docker ULM. Docker EE is available exclusively to Sumo Logic Enterprise accounts.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

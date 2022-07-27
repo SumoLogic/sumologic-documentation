@@ -2,7 +2,7 @@
 id: duo-security
 title: Sumo Logic App for Duo Security
 sidebar_label: Duo Security
-description: Duo Security
+description: The Sumo Logic App for Duo Security helps you monitor your Duo account’s authentication logs, administrator logs, and telephony logs.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

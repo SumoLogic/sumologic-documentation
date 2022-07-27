@@ -2,13 +2,14 @@
 id: linux
 title: PCI Compliance App for Linux
 sidebar_label: Linux
+dashboard: The Sumo Logic App for Payment Card Industry (PCI) Compliance for Linux offers dashboards to monitor systems, account and users activity to ensure that login activity and privileged users are within the expected ranges. 
 ---
 
 This guide helps you set up Sumo Logic Collectors, install the PCI Compliance for application, and create dashboards from samples so you can begin monitoring your usage and determine if you are meeting Compliance benchmarks.
 
 
 ### Collect Logs for PCI Compliance for Linux
-!1.gif "image_tooltip")
+!
 
 The PCI Compliance for Linux App works with your existing Linux logs to identify any compliance issues.
 

@@ -2,7 +2,7 @@
 id: elastic-container-service
 title: Amazon Elastic Container Service
 sidebar_label: Amazon Elastic Container Service (ECS)
-description: Amazon Elastic Container Service (ECS)
+description: Provides preconfigured searches and Dashboards that allow you to monitor various metrics.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

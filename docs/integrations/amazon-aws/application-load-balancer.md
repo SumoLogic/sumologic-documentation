@@ -2,7 +2,7 @@
 id: application-load-balancer
 title: AWS Application Load Balancer
 sidebar_label: AWS Application Load Balancer
-description: AWS Application Load Balancer
+description: The Sumo Logic App for AWS Elastic Load Balancing ULM - Application is a unified logs and metrics (ULM) App that gives you visibility into the health of your Application Load Balancer and target groups.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

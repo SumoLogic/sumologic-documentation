@@ -2,6 +2,7 @@
 id: akamai-cloud-monitor
 title: Sumo Logic App for Akamai Cloud Monitor
 sidebar_label: Akamai Cloud Monitor
+description: Allows you to analyze and correlate Akamai data with origin data.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

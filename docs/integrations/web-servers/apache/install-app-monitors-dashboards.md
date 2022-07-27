@@ -2,6 +2,7 @@
 id: install-app-monitors-dashboards
 title: Install the Apache App, Monitors, and View the Dashboards
 sidebar_label: Install the App, Monitors, and View the Dashboards
+description: The Sumo Logic Application for Apache consists of predefined searches and Dashboards, providing visibility into your environment for real-time or historical analysis.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

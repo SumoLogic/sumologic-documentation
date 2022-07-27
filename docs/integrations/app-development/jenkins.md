@@ -2,6 +2,7 @@
 id: jenkins
 title: Sumo Logic App for Jenkins
 sidebar_label: Jenkins
+description: The Sumo Logic App for Jenkins helps you monitor build successes, failures, and performance, ensuring that you know—before committing code to the repository—whether the code will work.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

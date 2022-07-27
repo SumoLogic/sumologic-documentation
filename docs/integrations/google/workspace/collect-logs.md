@@ -2,7 +2,7 @@
 id: collect-logs
 title: Collect Logs for Google Workspace
 sidebar_label: Collect Logs
-description: tk
+description: Instructions for configuring log collection from Google Workspace Apps and Alert Center, and how to ingest those logs into Sumo Logic.
 ---
 
 

@@ -2,7 +2,7 @@
 id: zscaler-private-access
 title: Zscaler Private Access
 sidebar_label: Zscaler Private Access
-description: Zscaler Private Access
+description: The Zscaler Private Access App collects logs from Zscaler using the Log Streaming Service (LSS) to populate pre-configured searches and Dashboards. 
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

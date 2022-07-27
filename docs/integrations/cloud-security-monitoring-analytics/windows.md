@@ -2,6 +2,7 @@
 id: windows
 title: Sumo Logic App for Windows Cloud Security Monitoring and Analytics
 sidebar_label: Windows
+description: A guide to the Sumo Logic app for Windows - Cloud Security Monitoring and Analytics.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

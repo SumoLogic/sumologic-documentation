@@ -2,7 +2,7 @@
 id: cloudtrail
 title: Sumo Logic App for AWS CloudTrail
 sidebar_label: AWS CloudTrail
-description: AWS CloudTrail
+description: Ingests logs of API calls made to AWS, providing greater visibility into events that allow for security and operations forensics.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
