@@ -2,6 +2,7 @@
 id: metrics
 title: Apache Metrics
 sidebar_label: Metrics
+description: This page lists the Apache Metrics.
 hide_table_of_contents: true
 ---
 

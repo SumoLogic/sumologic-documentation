@@ -2,7 +2,7 @@
 id: elastic-load-balancer-app
 title: Sumo Logic App for AWS Elastic Load Balance
 sidebar_label: AWS Elastic Load Balancer
-description: AWS Elastic Load Balancer
+description: Use the Sumo Logic App to analyze raw Application Load Balancer data to investigate the availability of applications running behind Application Load Balancers.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -229,7 +229,7 @@ Steps to troubleshoot:
 
 Now that you have set up collection for AWS ELB, install the Sumo Logic App for AWS Elastic Load Balancer to use the pre-configured searches and [dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/01Amazon_and_AWS/AWS_Elastic_Load_Balancer_-_Application/03-AWS-Elastic-Load-Balancing---Application-Dashboards#Dashboards) that provide visibility into your environment.
 
-**To install the app:**
+To install the app:
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
@@ -242,7 +242,7 @@ Version selection is applicable only to a few apps currently. For more informati
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
     2. **Data Source.** Select either of these options for the data source. 
         * Choose **Source Category**, and select a source category from the list. 
-        * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (_sourceCategory=MyCategory). 
+        * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). 
     3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
 2. Click **Add to Library**.
 

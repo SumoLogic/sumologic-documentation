@@ -2,7 +2,7 @@
 id: guardduty
 title: Sumo Logic App for Amazon GuardDuty
 sidebar_label: Amazon GuardDuty
-description: Amazon GuardDuty
+description: The Amazon GuardDuty Sumo Logic app provides insights into the activities in your AWS account based on the findings from Amazon GuardDuty. The App includes preconfigured dashboards that allow you to detect unexpected and potentially malicious activities in your AWS account by providing details on threats by severity, VPC, IP, account ID, region, and resource type.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -11,14 +11,13 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Amazon GuardDuty is a continuous security monitoring service that analyzes and processes VPC Flow Logs and AWS CloudTrail event logs. The Sumo Logic App for Amazon GuardDuty provides insights into the activities in your AWS account based on the findings from Amazon GuardDuty. The App includes preconfigured dashboards that allow you to detect unexpected and potentially malicious activities in your AWS account by providing details on threats by severity, VPC, IP, account ID, region, and resource type.
 
+## Log Types
+
+The Sumo Logic App for GuardDuty requires the Amazon GuardDuty findings to be sent through the Amazon CloudWatch Events. For more details on GuardDuty findings, see here.
 
 ## Collect Logs for the Amazon GuardDuty App
 
 This section has instructions for collecting logs for the Amazon GuardDuty App.
-
-### Log Types
-The Sumo Logic App for GuardDuty requires the Amazon GuardDuty findings to be sent through the Amazon CloudWatch Events. For more details on GuardDuty findings, see here.
-
 
 ### Collection overview
 
@@ -33,9 +32,8 @@ This configuration is defined in a [AWS Serverless Application Model (SAM) speci
 
 1. In Sumo Logic, configure a [Hosted Collector](https://help.sumologic.com/03Send-Data/Hosted-Collectors/Configure-a-Hosted-Collector).
 2. In Sumo Logic, configure an [HTTP Source](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/HTTP-Source).  When you configure the source, in the **Advanced Options for Logs** section of the page:
-    1. Specify **Format** as `yyyy-MM-dd'T'HH:mm:ss.SSS'Z'`
-    2. Specify **Timestamp locator** as `.*"updatedAt":"(.*)".* \
-`
+    * Specify **Format** as `yyyy-MM-dd'T'HH:mm:ss.SSS'Z'`
+    * Specify **Timestamp locator** as `.*"updatedAt":"(.*)".* \`
 
 When you configure the HTTP Source, make a note of the HTTP Source Address URL. You will need it in the next step.  
 
@@ -47,15 +45,13 @@ In this step, you deploy the events processor. This will create the AWS resource
 1. Go to [https://serverlessrepo.aws.amazon.com/applications](https://serverlessrepo.aws.amazon.com/applications).
 2. Search for “sumologic-guardduty-events-processor”.  \
 
-6
 
 3. When the page for the Sumo app appears, click **Deploy**. \
 
-7
 
 4. In **Configure application parameters** panel, paste the URL for the HTTP source you created above. \
 
-8
+
 
 5. Click **Deploy**.
 
@@ -74,9 +70,8 @@ You can set any of the following optional variables:
 
 
 #### Sample log message
-11
 
-
+<details><summary>Click to expand</summary>
 
 ```json
 {
@@ -207,16 +202,12 @@ You can set any of the following optional variables:
 }
 ```
 
+</details>
+
+#### Sample Query
 
 
-#### Query Sample
-12
-
-
-**Threat details**
-
-
-```
+```sql title="Threat details"
 _sourceCategory=aws/guardduty
 | json field=_raw "accountId", "region", "partition", "id", "arn", "type","service.serviceName","service.detectorId","service.action","severity","title","description" nodrop
 | json field=_raw "resource.resourceType" as resourceType nodrop
@@ -233,7 +224,6 @@ _sourceCategory=aws/guardduty
 | json field=%service.action "networkConnectionAction.remoteIpDetails.organization.isp" as isp nodrop
 | count as count by title, accountId, resourceType, organization, isp, ip, link
 | sort count
-
 ```
 
 
@@ -241,7 +231,7 @@ _sourceCategory=aws/guardduty
 
 Now that you have set up collection for Amazon GuardDuty, install the Sumo Logic App to use the pre-configured searches and [dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/01Amazon_and_AWS/Amazon_GuardDuty/Install-the-Amazon-GuardDuty-App-and-view-the-Dashboards#Dashboards) that provide visibility into your environment for real-time analysis of overall usage.
 
-**To install the app, do the following:**
+To install the app, do the following:
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
@@ -256,7 +246,7 @@ Version selection is applicable only to a few apps currently. For more informati
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
     2. **Data Source.** Select either of these options for the data source. 
         * Choose **Source Category**, and select a source category from the list. 
-        * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (_sourceCategory=MyCategory). 
+        * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). 
     3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
 2. Click **Add to Library**.
 

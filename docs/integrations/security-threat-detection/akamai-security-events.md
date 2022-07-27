@@ -1,6 +1,7 @@
 ---
 id: akamai-security-events
 title: Akamai Security Events
+description: The Sumo Logic app for Akamai Security Events allows you to visualize security events generated on the Akamai platform.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -126,7 +127,7 @@ Locate and install the app you need from the **App Catalog**. If you want to see
     1. **App Name**. You can retain the existing name, or enter a name of your choice for the app. 
     2. **Data Source**. Select either of these options for the data source. 
         * Choose **Source Category**, and select a source category from the list. 
-        * Choose **Enter a Custom Data Filte**r, and enter a custom source category beginning with an underscore. Example: (_sourceCategory=MyCategory). 
+        * Choose **Enter a Custom Data Filte**r, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). 
     3. **Advanced**. Select the Location in the Library (the default is the Personal folder in the library), or click New Folder to add a new folder.
 2. Click Add to Library.
 

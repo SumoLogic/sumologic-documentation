@@ -2,6 +2,7 @@
 id: alerts
 title: Apache Tomcat Alerts
 sidebar_label: Alerts
+description: This page explains the Apache Tomcat Alerts.
 hide_table_of_contents: true
 ---
 

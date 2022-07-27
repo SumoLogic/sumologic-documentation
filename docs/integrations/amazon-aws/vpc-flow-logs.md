@@ -2,7 +2,7 @@
 id: vpc-flow-logs
 title: Sumo Logic App for Amazon VPC Flow Logs
 sidebar_label: Amazon VPC Flow Logs
-description: Amazon VPC Flow Logs
+description: Logs the IP network traffic of your VPC, allowing you to troubleshoot traffic and security issues.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -39,7 +39,6 @@ You can enable Amazon Virtual Private Cloud (VPC) Flow Logs from the Amazon Web 
 3. Click **Actions** > **Create Flow Log**.
 4. On the **Create Flow Log** page, select a **Role** to use Flow logs.
     1. If you haven't set up IAM permissions, click **Set Up Permissions**. \
-
     2. From the new tab, **VPC Flow Logs is requesting permissions to use resources in your account**:
     3. From the IAM Role, select **Create a new IAM Role.**
     4. Add a Role Name that describes your logs, for example, VPC-Flow-Logs.
@@ -165,7 +164,7 @@ This section has instructions for collecting Amazon VPC Flow Logs using an AWS S
 
 Now that you have configured Amazon VPC Flow Logs, install the Sumo Logic App for Amazon VPC Flow Logs to take advantage of the preconfigured searches and [dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/01Amazon_and_AWS/Amazon_VPC_Flow_Logs/Amazon-VPC-Flow-Logs-App-Dashboards#Dashboards) to analyze your data.
 
-**To install the app:**
+To install the app:
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
@@ -178,7 +177,7 @@ Version selection is applicable only to a few apps currently. For more informati
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
     2. **Data Source.** Select either of these options for the data source. 
         * Choose **Source Category**, and select a source category from the list. 
-        * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (_sourceCategory=MyCategory). 
+        * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). 
     3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
 2. Click **Add to Library**.
 

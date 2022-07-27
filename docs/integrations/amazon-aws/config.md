@@ -2,7 +2,7 @@
 id: config
 title: Sumo Logic App for AWS Config
 sidebar_label: AWS Config
-description: AWS Config
+description: Provides a simple web services interface that can be used to track modifications made to the resources that belong to an AWS account.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -26,8 +26,6 @@ Amazon Web Services (AWS) Config provides a simple web services interface that c
 
 Before you can begin to use the AWS Config App, perform these steps.
 
-
-
 1. Enable SNS Notifications in AWS Config.
 2. Add a Sumo Logic Hosted Collector and HTTP Source.
 3. Subscribe to SNS Notifications in AWS Config.
@@ -35,17 +33,14 @@ Before you can begin to use the AWS Config App, perform these steps.
 
 
 #### Enable SNS Notification in AWS Config
-3
 
-
-**To enable AWS Config SNS Notifications
-
+To enable AWS Config SNS Notifications:
 1. Sign in to the AWS Management Console.
 2. Under **Management Tools**, click **Get Started**, then click **Config**.
 3. On the Set up AWS Config page, under **Amazon SNS Topic**, select **Enable Configuration changes and notifications to be streamed to an Amazon SNS topic**.  \
 
-4
-**Do not** **enable** **[Raw Message Delivery](https://docs.aws.amazon.com/sns/latest/dg/sns-large-payload-raw-message-delivery.html)**, under Enable SNS Notification in AWS Configuration.
+
+**Do not enable [Raw Message Delivery](https://docs.aws.amazon.com/sns/latest/dg/sns-large-payload-raw-message-delivery.html)**, under Enable SNS Notification in AWS Configuration.
 1. Select **Create new topic** and click **Continue**. \
 
 5
@@ -206,7 +201,7 @@ Version selection is applicable only to a few apps currently. For more informati
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
     2. **Data Source.** Select either of these options for the data source. 
         * Choose **Source Category**, and select a source category from the list. 
-        * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (_sourceCategory=MyCategory). 
+        * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). 
     3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
 2. Click **Add to Library**.
 

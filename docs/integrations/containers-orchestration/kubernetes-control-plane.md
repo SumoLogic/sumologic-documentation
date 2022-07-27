@@ -232,7 +232,7 @@ Source
 
 Now that you have set up collection for Kubernetes Control Plane, you can install the App and use the pre-configured searches and dashboards that provide insight into your data.
 
-**To install the App, do the following:**
+To install the app, do the following:
 
 
 

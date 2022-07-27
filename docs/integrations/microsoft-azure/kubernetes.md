@@ -2,12 +2,12 @@
 id: kubernetes
 title: Sumo Logic App for Azure Kubernetes Service Control Plane
 sidebar_label: Azure Kubernetes Service Control Plane
-description: Azure Kubernetes Service (AKS) - Control Plane
+description: The Sumo Logic App for Azure Kubernetes Service (AKS) - Control Plane provides visibility into the AKS control plane with operational insights into the API server, scheduler, control manager, and worker nodes.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/containers-orchestration/k8s.png')} alt="k8s logo" width="50"/>
+<img src={useBaseUrl('img/integrations/microsoft-azure/k8s.png')} alt="k8s logo" width="75"/>
 
 The Sumo Logic App for Azure Kubernetes Service (AKS) - Control Plane provides visibility into the AKS control plane with operational insights into the API server, scheduler, control manager, and worker nodes. The app's preconfigured dashboards display resource-related metrics for Kubernetes deployments, clusters, namespaces, pods, containers, and daemonsets.
 
@@ -207,7 +207,7 @@ Now that you have set up collection for AKS, you can install the Sumo Logic App 
 18
 All the dashboards are linked to the Explore tab so they can be easily accessed by clicking the Cluster in the navigation pane of the Explore tab.
 
-**To install the app, do the following:**
+To install the app, do the following:
 
 
 

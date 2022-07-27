@@ -2,7 +2,7 @@
 id: windows-json
 title: Sumo Logic App for Windows JSON
 sidebar_label: Windows JSON
-description: Windows JSON
+description: The Windows JSON App provides insight into your Windows system's operation and events so that you can better manage and maintain your environment.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -36,13 +36,10 @@ Custom event channels, such as PowerShell or Internet Explorer are also supporte
 
 1. Configure an [Installed Windows collector](https://help.sumologic.com/03Send-Data/Installed-Collectors/03Install-a-Collector-on-Windows) through the user interface or from the command line.
 2. Configure either a local or remote Windows Event Log source. To configure a Windows Event Log source set the following:
-    * **Event Format.** Select **Collect using JSON format. \
- \
-**
-3
-** \
+  * **Event Format.** Select **Collect using JSON format. \
+
 Collect using JSON format.** Events are formatted into JSON that is designed to work with Sumo Logic features, making it easier for you to reference your data.
-    * **Event Collection Level.** When JSON format is selected you have to select Complete Message from the dropdown. \
+  * **Event Collection Level.** When JSON format is selected you have to select Complete Message from the dropdown. \
 
 4
  \
@@ -103,7 +100,7 @@ Version selection is applicable only to a few apps currently. For more informati
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
     2. **Data Source.** Select either of these options for the data source. 
         * Choose **Source Category**, and select a source category from the list. 
-        * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (_sourceCategory=MyCategory). 
+        * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). 
     3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
 2. Click **Add to Library**.
 

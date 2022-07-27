@@ -2,7 +2,7 @@
 id: nginx-ingress
 title: Sumo Logic App for Nginx Ingress
 sidebar_label: Nginx Ingress
-description: The NGINX Ingress Controller for Kubernetes provides enterprise‑grade delivery services for Kubernetes applications, with benefits for users of both NGINX Open Source and NGINX Plus. The Sumo Logic App for Nginx Ingress helps you monitor webserver activity in Nginx Ingress Controller.
+description: The Sumo Logic App for Nginx Ingress helps you monitor webserver activity in Nginx Ingress Controller.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -263,7 +263,7 @@ email_notifications = [
 
 This section demonstrates how to install the Nginx Ingress App. These instructions assume you have already set up the collection as described above.
 
-**To install the app:**
+To install the app:
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 

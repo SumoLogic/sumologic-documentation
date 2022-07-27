@@ -2,6 +2,7 @@
 id: collect-logs-metrics
 title: Collect Logs and Metrics for Apache Tomcat
 sidebar_label: Collect Logs and Metrics
+description: Before installing the Sumo Logic app, Apache Tomcat must be set up and configured to log events.
 ---
 
 

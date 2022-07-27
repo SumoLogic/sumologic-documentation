@@ -2,7 +2,7 @@
 id: windows-legacy-pci-compliance
 title: Sumo Logic App for Windows Legacy PCI Compliance
 sidebar_label: Windows PCI Compliance (Legacy)
-description: Windows Legacy PCI Compliance
+description: The Sumo Logic App for Payment Card Industry (PCI) Compliance for Windows offers dashboards to monitor systems, account and users activity to ensure that login activity and privileged users are within the expected ranges. 
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -71,13 +71,9 @@ instance of Win32_NTLogEvent
 
 
 ### Query Sample
-7
 
 
-Recent Policy Changes
-
-
-```
+```bash title="Recent Policy Changes"
 _sourceCategory=OS/Windows/Events "Policy Change"
 | parse regex "CategoryString = \"(?<category>[^\"]+?)\";[\s\S]+?Logfile = \"Security\""
 | count by category
@@ -96,7 +92,7 @@ This page provides instructions for installing the PCI Compliance for Windows Le
 
 Now that you have set up collection, install the Sumo Logic App for PCI Compliance for Windows Legacy App to use the pre-configured searches and [Dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/04Microsoft-and-Azure/PCI_Compliance_for_Windows/PCI-Compliance-for-Windows-App-Dashboards#Dashboards) that provide insight into your data.
 
-**To install the app:**
+To install the app:
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
@@ -113,7 +109,7 @@ Version selection is applicable only to a few apps currently. For more informati
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
     2. **Data Source.** Select either of these options for the data source. 
         * Choose **Source Category**, and select a source category from the list. 
-        * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (_sourceCategory=MyCategory). 
+        * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). 
     3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
 2. Click **Add to Library**.
 

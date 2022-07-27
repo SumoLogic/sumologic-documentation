@@ -2,7 +2,7 @@
 id: dynamodb
 title: Amazon DynamoDB
 sidebar_label: Amazon DynamoDB
-description: Amazon DynamoDB
+description: The Sumo App for DynamoDB provides operational insight into your database environment. The app includes Dashboards that allow you to view the events, errors, latency, and capacity of your DynamoDB environment.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -66,7 +66,7 @@ The AWS DynamoDB app uses the following logs and metrics:
 
 
 
-### Sample Querys
+### Sample Queries
 
 
 ```sql title="Successful Request latency by Table Name (Metric based)"
@@ -87,10 +87,9 @@ account=dev namespace=aws/dynamodb region=us-east-1 "\"eventSource\":\"dynamodb.
 
 ### Collect Metrics for Amazon DynamoDB
 
-* Sumo Logic supports collecting metrics using two source types
-    * Configure an [AWS Kinesis Firehose for Metrics Source](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/AWS_Kinesis_Firehose_for_Metrics_Source) (Recommended)
-        * Or
-    * Configure an [Amazon CloudWatch Source for Metrics](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/Amazon-CloudWatch-Source-for-Metrics)
+Sumo Logic supports collecting metrics using two source types:
+* Configure an [AWS Kinesis Firehose for Metrics Source](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/AWS_Kinesis_Firehose_for_Metrics_Source) (Recommended); or
+* Configure an [Amazon CloudWatch Source for Metrics](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/Amazon-CloudWatch-Source-for-Metrics)
 
 Namespace for **Amazon DynamoDB** Service is **AWS/DynamoDB**.
 
@@ -101,36 +100,28 @@ Namespace for **Amazon DynamoDB** Service is **AWS/DynamoDB**.
 ### Collect Amazon DynamoDB CloudTrail Logs
 
 1. To your Hosted Collector, add an [AWS CloudTrail Source](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/AWS-CloudTrail-Source).
-    1. **Name**. Enter a name to display the new Source.
-    2. **Description**. Enter an optional description.
-    3. **S3 Region**. Select the Amazon Region for your **Amazon DynamoDB** S3 bucket.
-    4. **Bucket Name**. Enter the exact name of your **Amazon DynamoDB** S3 bucket.
-    5. **Path Expression**. Enter the string that matches the S3 objects you'd like to collect. You can use a wildcard (*) in this string. (DO NOT use a leading forward slash. See [Amazon Path Expressions](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/Amazon-Path-Expressions).)
-5
-The S3 bucket name is not part of the path. Don’t include the bucket name when you are setting the Path Expression
-    6. **Source Category**. Enter aws/observability/cloudtrail/logs
-    7. **Fields**. Add an **account** field and assign it a value that is a friendly name/alias to your AWS account from which you are collecting logs. This name will appear in the Sumo Logic Explorer View. Logs can be queried via the “account field”.
-6
-
-    8. **Access Key ID and Secret Access Key**. Enter your Amazon [Access Key ID and Secret Access Key](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSGettingStartedGuide/AWSCredentials.html). Learn how to use Role-based access to AWS [here](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/AWS_Sources)
-    9. **Log File Discovery -> Scan Interval**. Use the default of 5 minutes. Alternately, enter the frequency. Sumo Logic will scan your S3 bucket for new data. Learn how to configure **Log File Discovery** [here](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/AWS_Sources).
-    10. **Enable Timestamp Parsing**. Select the check box.
-    11. **Time Zone**. Select Ignore time zone from the log file and instead use, and select UTC.
-    12. **Timestamp Format.** Select Automatically detect the format.
-    13. **Enable Multiline Processing**. Select the check box, and select Infer Boundaries.
+    * **Name**. Enter a name to display the new Source.
+    * **Description**. Enter an optional description.
+    * **S3 Region**. Select the Amazon Region for your **Amazon DynamoDB** S3 bucket.
+    * **Bucket Name**. Enter the exact name of your **Amazon DynamoDB** S3 bucket.
+    * **Path Expression**. Enter the string that matches the S3 objects you'd like to collect. You can use a wildcard (*) in this string. (DO NOT use a leading forward slash. See [Amazon Path Expressions](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/Amazon-Path-Expressions).) The S3 bucket name is not part of the path. Don’t include the bucket name when you are setting the Path Expression
+    * **Source Category**. Enter aws/observability/cloudtrail/logs
+    * **Fields**. Add an **account** field and assign it a value that is a friendly name/alias to your AWS account from which you are collecting logs. This name will appear in the Sumo Logic Explorer View. Logs can be queried via the “account field”.
+    * **Access Key ID and Secret Access Key**. Enter your Amazon [Access Key ID and Secret Access Key](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSGettingStartedGuide/AWSCredentials.html). Learn how to use Role-based access to AWS [here](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/AWS_Sources)
+    * **Log File Discovery -> Scan Interval**. Use the default of 5 minutes. Alternately, enter the frequency. Sumo Logic will scan your S3 bucket for new data. Learn how to configure **Log File Discovery** [here](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/AWS_Sources).
+    * **Enable Timestamp Parsing**. Select the check box.
+    * **Time Zone**. Select Ignore time zone from the log file and instead use, and select UTC.
+    * **Timestamp Format.** Select Automatically detect the format.
+    * **Enable Multiline Processing**. Select the check box, and select Infer Boundaries.
 2. Click **Save**.
 
 
-#### Field in Field Schema
-7
-
+### Field in Field Schema
 
 Login to Sumo Logic, go to Manage Data > Logs > Fields. Search for the “**tablename**” field. If not present, create it. Learn how to create and manage fields [here](https://help.sumologic.com/Manage/Fields#manage-fields).
 
 
-#### Field Extraction Rule(s)
-8
-
+### Field Extraction Rule(s)
 
 Create Field Extraction Rule for CloudTrail Logs. Learn how to create Field Extraction Rule [here](https://help.sumologic.com/Manage/Field-Extractions/Create-a-Field-Extraction-Rule).
 
@@ -149,14 +140,9 @@ Parse Expression:
 ```
 
 
-
-#### Centralized AWS CloudTrail Log Collection
-9
-
+### Centralized AWS CloudTrail Log Collection
 
 In case you have a centralized collection of cloudtrail logs and are ingesting them from all accounts into a single Sumo Logic cloudtrail log source, create following Field Extraction Rule to map proper AWS account(s) friendly name/alias. Create it if not already present / update it as required.
-
-
 ```
 Rule Name: AWS Accounts
 Applied at: Ingest Time
@@ -165,11 +151,7 @@ _sourceCategory=aws/observability/cloudtrail/logs
 ```
 
 
-**Parse Expression**:
-
-Enter a parse expression to create an “account” field that maps to the alias you set for each sub-account. For example, if you used the “dev” alias for an AWS account with ID "528560886094" and the “prod” alias for an AWS account with ID "567680881046", your parse expression would look like this:
-
-
+**Parse Expression**: Enter a parse expression to create an “account” field that maps to the alias you set for each sub-account. For example, if you used the `“dev”` alias for an AWS account with ID `"528560886094"` and the `“prod”` alias for an AWS account with ID `"567680881046"`, your parse expression would look like this:
 ```sql
 | json "recipientAccountId"
 // Manually map your aws account id with the AWS account alias you setup earlier for individual child account
@@ -183,7 +165,7 @@ Enter a parse expression to create an “account” field that maps to the alias
 
 Now that you have set up a collection for **Amazon DynamoDB**, install the Sumo Logic App to use the pre-configured [dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/01Amazon_and_AWS/Amazon_SQS/Install-the-Amazon-SQS-App-and-view-the-Dashboards#Dashboards) that provide visibility into your environment for real-time analysis of overall usage.
 
-**To install the app:**
+To install the app:
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
@@ -210,7 +192,6 @@ We highly recommend you view these dashboards in the [Explore View](https://help
 The **AWS DynamoDB - Overview** dashboard provides insights across your infrastructure for DynamoDB events, errors, requests, latency, and trends.
 
 Use this dashboard to:
-
 * Monitor average read and write capacity percentages for DynamoDB instances
 * Quickly identify system errors, user errors, transaction conflicts, and conditional check fail requests for DynamoDB Monitor overall resource utilization of your DynamoDB instances
 
@@ -233,7 +214,6 @@ Use this dashboard to:
 **AWS DynamoDB - Latency and Errors **dashboard provides insights across your infrastructure for DynamoDB errors and latency including failed requests, and latency.
 
 Use this dashboard to:
-
 * Identify high get and put latencies for DynamoDB tables
 * Quickly identify the number of conditional checks that fail, and transaction conflicts for DynamoDB
 * Monitor resource utilization using trend panels for latencies and errors for DynamoDB

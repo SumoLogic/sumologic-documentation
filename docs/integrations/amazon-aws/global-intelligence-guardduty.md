@@ -11,27 +11,10 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 This feature is available in the following account plans.
 
-<table>
-  <tr>
-   <td>Account Type
-   </td>
-   <td>Account Level
-   </td>
-  </tr>
-  <tr>
-   <td>CloudFlex
-   </td>
-   <td>Trial, Enterprise
-   </td>
-  </tr>
-  <tr>
-   <td>Credits
-   </td>
-   <td>Trial, Enterprise Suite, Enterprise Security
-   </td>
-  </tr>
-</table>
-
+| Account Type | Account Level
+| :---- | :----
+|  Cloud Flex  |  Trial, Enterprise
+| Cloud Flex Credits | Trial, Enterprise Suite, Enterprise Security
 
 [Amazon GuardDuty](https://aws.amazon.com/guardduty/) is a threat detection service that continuously monitors for malicious activity and unauthorized behavior to protect your AWS accounts and workloads. The Sumo Logic App for Global Intelligence for Amazon GuardDuty analyzes GuardDuty threats from the Sumo Logic population to create baselines of threats. These baselines enable you to optimize security posture and remediation based on how unusual your GuardDuty findings are compared to Sumo Logic customers. The App includes pre-configured dashboards and searches with visual displays for global threat baselines and real-time threat detection across your AWS environment.
 
@@ -45,19 +28,15 @@ The App includes pre-configured dashboards and searches with visual displays for
 * The `infer` operator is not intended for use outside of Sumo Logic Global Intelligence apps.
 :::
 
+## Log Types
 
+The Sumo Logic App for GI GuardDuty requires the Amazon GuardDuty findings to be sent through the Amazon CloudWatch Events. For more details on [GuardDuty findings](https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings.html).
 
 ## Configure Log Collection and Deploy the GI GuardDuty App
 
 This section explains the log collection process and provides instructions for configuring log collection and installing the GI GuardDuty App.
 
 If you have already Amazon GuardDuty data flowing into Sumo Logic, you can skip these steps and install the App from the Sumo Logic App Catalog.
-
-
-### Log Types
-
-The Sumo Logic App for GI GuardDuty requires the Amazon GuardDuty findings to be sent through the Amazon CloudWatch Events. For more details on [GuardDuty findings](https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings.html).
-
 
 ### Process overview
 
@@ -102,40 +81,27 @@ To deploy the Sumo Logic GuardDuty Benchmark SAM App, do the following:
 2. Search for **sumologic-guardduty-benchmark** and click the app link when it appears.
 
 
-1. When the page for the Sumo app appears, click **Deploy**.
+3. When the page for the Sumo app appears, click **Deploy**.
 
 
 
+4. In **Configure application parameters** panel
+5. In **Configure application parameters** panel, enter the following parameters:
+    * Access ID(Required): Sumo Logic Access ID generated from Step 1.
+    * Access Key(Required): Sumo Logic Access Key generated from Step 1.
+    * Deployment Name(Required): Deployment name (environment name in lower case as per [docs](https://help.sumologic.com/APIs/General-API-Information/Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security)).
+    * Collector Name: Enter the name of the Hosted Collector which will be created in Sumo Logic.
+    * Source Name: Enter the name of the HTTP Source which will be created within the collector.
+    * Source Category Name: Enter the name of the Source Category which will be used for writing search queries.
 
 
-1. In **Configure application parameters** panel
-2. In **Configure application parameters** panel, enter the following parameters:
-    1. Access ID(Required): Sumo Logic Access ID generated from Step 1.
-    2. Access Key(Required): Sumo Logic Access Key generated from Step 1.
-    3. Deployment Name(Required): Deployment name (environment name in lower case as per [docs](https://help.sumologic.com/APIs/General-API-Information/Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security)).
-    4. Collector Name: Enter the name of the Hosted Collector which will be created in Sumo Logic.
-    5. Source Name: Enter the name of the HTTP Source which will be created within the collector.
-    6. Source Category Name: Enter the name of the Source Category which will be used for writing search queries.
-
-
-12
-
-
-
-
-1. Click **Deploy**.
-2. When the deployment is successful, click **View CloudFormation Stack**.
-
-
-13
+6. Click **Deploy**.
+7. When the deployment is successful, click **View CloudFormation Stack**.
 
 
 
+8. In the Outputs section, copy the app folder name to search your personal folder in the Sumo Logic console.
 
-1. In the Outputs section, copy the app folder name to search your personal folder in the Sumo Logic console.
-
-
-14
 
 
 
