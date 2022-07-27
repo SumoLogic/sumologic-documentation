@@ -2,6 +2,7 @@
 id: palo-alto-firewall-10
 title: Sumo Logic App for Palo Alto Firewall 10 Cloud Security Monitoring and Analytics
 sidebar_label: Palo Alto Firewall 10
+description: Introduction to Palo Alto Firewall - Cloud Security Monitoring and Analytics.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

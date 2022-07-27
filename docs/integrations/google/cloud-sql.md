@@ -2,7 +2,7 @@
 id: cloud-sql
 title: Sumo Logic App for Google Cloud SQL
 sidebar_label: Cloud SQL
-description: tk
+description: The Sumo Logic app for Google Cloud SQL helps you monitor your usage of Google Cloud SQL. The preconfigured dashboards provide insight into created and deleted resources, messages, authorization failures, user activities, and error logs.
 ---
 
 

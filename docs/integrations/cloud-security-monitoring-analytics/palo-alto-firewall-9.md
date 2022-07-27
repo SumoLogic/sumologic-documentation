@@ -2,6 +2,7 @@
 id: palo-alto-firewall-9
 title: Palo Alto Firewall 9 Cloud Security Monitoring and Analytics
 sidebar_label: Palo Alto Firewall 9
+description: Introduction to Palo Alto Firewall - Cloud Security Monitoring and Analytics.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

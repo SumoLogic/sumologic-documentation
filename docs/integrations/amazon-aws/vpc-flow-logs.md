@@ -2,7 +2,7 @@
 id: vpc-flow-logs
 title: Sumo Logic App for Amazon VPC Flow Logs
 sidebar_label: Amazon VPC Flow Logs
-description: Amazon VPC Flow Logs
+description: Logs the IP network traffic of your VPC, allowing you to troubleshoot traffic and security issues.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

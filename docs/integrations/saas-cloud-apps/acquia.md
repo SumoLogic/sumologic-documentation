@@ -2,6 +2,7 @@
 id: acquia
 title: Sumo Logic App for Acquia
 sidebar_label: Acquia
+description: The Sumo Logic App for Acquia provides visibility into the key components of the Acquia platform with preconfigured dashboards for Apache, Varnish, PHP, FPM and Drupal.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

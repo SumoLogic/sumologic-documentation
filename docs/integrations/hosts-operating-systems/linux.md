@@ -2,6 +2,7 @@
 id: linux
 title: Sumo Logic App for Linux
 sidebar_label: Linux
+description: Allows you to view the events, logins, and security status of your Linux system.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

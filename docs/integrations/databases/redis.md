@@ -2,6 +2,7 @@
 id: redis
 title: Sumo Logic App for Redis
 sidebar_label: Redis
+description: The Sumo Logic App for Redis helps you monitor the state of the database cluster.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

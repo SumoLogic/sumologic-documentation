@@ -2,7 +2,7 @@
 id: sql
 title: Sumo Logic App for Azure SQL
 sidebar_label: Azure SQL
-description: Azure SQL
+description: The Sumo Logic app for Azure SQL helps you monitor activity in Azure SQL.
 ---
 
 

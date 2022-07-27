@@ -2,7 +2,7 @@
 id: guardduty
 title: Sumo Logic App for Amazon GuardDuty
 sidebar_label: Amazon GuardDuty
-description: Amazon GuardDuty
+description: The Amazon GuardDuty Sumo Logic app provides insights into the activities in your AWS account based on the findings from Amazon GuardDuty. The App includes preconfigured dashboards that allow you to detect unexpected and potentially malicious activities in your AWS account by providing details on threats by severity, VPC, IP, account ID, region, and resource type.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

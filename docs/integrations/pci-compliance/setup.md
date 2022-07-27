@@ -2,7 +2,7 @@
 id: setup
 title: Set Up the Sumo Logic PCI App
 sidebar_label: Sumo Logic PCI App Setup
-description: tk
+description: Enterprises use the requirements of the Payment Card Industry Security Standard Council Data Security Standards (known as PCI DSS) to handle customer billing information, including credit cards, debit cards, ATM cards, and point of sale (POS) cards.
 ---
 
 :::sumo Enterprise customers only

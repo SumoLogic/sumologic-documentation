@@ -1,6 +1,7 @@
 ---
-slug: integrations/sumo-apps
+id: index
 title: Apps for Sumo Logic
+description: Docs for apps that help you monitor your Sumo Logic org.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

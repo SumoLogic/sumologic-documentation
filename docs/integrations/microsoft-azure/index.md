@@ -2,7 +2,7 @@
 id: index
 title: Sumo Logic Apps for Microsoft and Azure
 sidebar_label: Microsoft and Azure
-description: Microsoft and Azure
+description: Docs for Sumo apps for Microsoft and Microsoft Azure.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

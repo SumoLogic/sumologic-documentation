@@ -1,7 +1,8 @@
 ---
 id: global-intelligence-cloudtrail-devops
 title: Global Intelligence for AWS CloudTrail DevOps
-description: global-intelligence-cloudtrail-devops
+sidebar_label: GI for AWS CloudTrail DevOps
+description: Global Intelligence for AWS CloudTrail - DevOps provides insights for on-call engineers, SRE, and DevOps users to help minimize AWS errors and maximize app availability.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

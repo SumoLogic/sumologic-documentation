@@ -2,7 +2,7 @@
 id: vmware
 title: Sumo Logic App for VMware
 sidebar_label: VMware
-description: VMware
+description: The Sumo Logic App for VMware collects unified logs and metrics from the VMware cloud computing virtualization platform, including vCenter Server, vSphere, ESX/ESXi, and individual virtual machines, for real-time display in predefined dashboards. 
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

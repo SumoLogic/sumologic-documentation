@@ -2,6 +2,7 @@
 id: slack
 title: Sumo Logic App for Slack
 sidebar_label: Slack
+description: The Sumo Logic App for Slack provides monitoring and data analytics for slack users, channels, access logs for workspaces with free, standard, and plus plans.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

@@ -2,7 +2,7 @@
 id: index
 title: PCI Compliance
 sidebar_label: PCI Compliance
-description: Sumo apps for PCI Compliance.
+description: Docs for Sumo apps for PCI Compliance.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
