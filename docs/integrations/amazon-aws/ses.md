@@ -202,7 +202,7 @@ To install the app:
         * Choose **Source Category**, and select a source category from the list.
             * For SES CloudTrail Logs, provide sourceCategory as **AWS/Cloudtrail**
             * For SES Notification Logs, provide sourceCategory as **AWS/SES/Notifications**
-        * **Choose Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (_sourceCategory=MyCategory).
+        * **Choose Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`).
 3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folde**r to add a new folder.
 4. Click **Add to Library**.
 

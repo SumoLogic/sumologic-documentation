@@ -32,7 +32,6 @@ Global Intelligence for AWS CloudTrail - DevOps provides insights for on-call en
 The benchmarks are powered by more than 15 M data points per week from AWS CloudTrail logs for a few thousand Sumo Logic tenants across 27 AWS regions.
 
 A well-architected modern app running on AWS can experience four types of errors during mission-critical scale-out events leading to an outage or application incident. These include:
-
 * Service Availability errors, where a particular AWS service (For example, EC2) may be unavailable.
 * Throttling errors, where AWS rate-limits API traffic from the customer’s application for a given service and API. (For example, PutItem requests for AWS DynamoDB.)
 * Account Quota errors, where a customer may saturate account limits for a particular service and resource. (For example, exceeding the 100 buckets per account limit of AWS S3.)
@@ -117,12 +116,11 @@ state=hashArgs%23%2Frepositories%2Ftravellogic%3Aproducts&isauthcode=true",
 
 
 
-### Query Sample
+### Sample Query
 
-The following sample query is from the **Lambda Configuration: My Company v. Others (Categorical)** panel of **GI CloudTrail DevOps - 05. Configuration Benchmarks**.
+<details><summary>Click to expand.<br/>This sample query is from the <strong>Lambda Configuration: My Company v. Others (Categorical)</strong> panel of <strong>GI CloudTrail DevOps - 05. Configuration Benchmarks</strong>.</summary>
 
-
-```
+```sql
 // id=@config_lambda_categorical_values
 _sourceCategory=Labs/AWS/CloudTrailDevOps/Analytics
 (AwsApiCall lambda !errorCode)
@@ -148,7 +146,7 @@ and (Runtime or Mode)
 | parse regex field=benchmarkNames "(?<benchmarkname>[^,]+)" multi
 | where !(benchmarkname matches "*Not-Available*")
 | fields benchmarkname, _count_distinct
-| sum(_count_distinct) by benchmarkname // I'm not sure why we want to sum() here?
+| sum(_count_distinct) by benchmarkname
 | _sum as _count_distinct
 | parse field=benchmarkname "resourceType=lambda_*=*_awsRegion=*" as denomGroup, _, awsRegion
 | concat(denomGroup, "_", awsRegion) as denomGroup
@@ -171,6 +169,8 @@ on t1.denomGroup = t2.denomGroup
 | sort +awsRegion, +configProperty, +value
 ```
 
+</details>
+
 ## Installing the Global Intelligence for AWS CloudTrail DevOps App
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
@@ -184,7 +184,7 @@ Version selection is applicable only to a few apps currently. For more informati
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
     2. **Data Source.** Select either of these options for the data source. 
         * Choose **Source Category**, and select a source category from the list. 
-        * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (_sourceCategory=MyCategory). 
+        * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). 
     3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
 2. Click **Add to Library**.
 

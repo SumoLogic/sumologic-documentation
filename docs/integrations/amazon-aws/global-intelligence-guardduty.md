@@ -1,8 +1,8 @@
 ---
 id: global-intelligence-guardduty
 title: Global Intelligence for Amazon GuardDuty
-sidebar_label: GI for Amazon GuardDuty
-description: The Sumo Logic Global Intelligence Amazon GuardDuty App integrates Global Intelligence Service (GIS) with Amazon GuardDuty for continuous machine learning and statistical baselines for KPIs (key performance indicators) and KRIs (key risk indicators). 
+sidebar_label: Global Intelligence for Amazon GuardDuty
+description: Global Intelligence for Amazon GuardDuty
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -81,40 +81,27 @@ To deploy the Sumo Logic GuardDuty Benchmark SAM App, do the following:
 2. Search for **sumologic-guardduty-benchmark** and click the app link when it appears.
 
 
-1. When the page for the Sumo app appears, click **Deploy**.
+3. When the page for the Sumo app appears, click **Deploy**.
 
 
 
+4. In **Configure application parameters** panel
+5. In **Configure application parameters** panel, enter the following parameters:
+    * Access ID(Required): Sumo Logic Access ID generated from Step 1.
+    * Access Key(Required): Sumo Logic Access Key generated from Step 1.
+    * Deployment Name(Required): Deployment name (environment name in lower case as per [docs](https://help.sumologic.com/APIs/General-API-Information/Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security)).
+    * Collector Name: Enter the name of the Hosted Collector which will be created in Sumo Logic.
+    * Source Name: Enter the name of the HTTP Source which will be created within the collector.
+    * Source Category Name: Enter the name of the Source Category which will be used for writing search queries.
 
 
-1. In **Configure application parameters** panel
-2. In **Configure application parameters** panel, enter the following parameters:
-    1. Access ID(Required): Sumo Logic Access ID generated from Step 1.
-    2. Access Key(Required): Sumo Logic Access Key generated from Step 1.
-    3. Deployment Name(Required): Deployment name (environment name in lower case as per [docs](https://help.sumologic.com/APIs/General-API-Information/Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security)).
-    4. Collector Name: Enter the name of the Hosted Collector which will be created in Sumo Logic.
-    5. Source Name: Enter the name of the HTTP Source which will be created within the collector.
-    6. Source Category Name: Enter the name of the Source Category which will be used for writing search queries.
-
-
-12
-
-
-
-
-1. Click **Deploy**.
-2. When the deployment is successful, click **View CloudFormation Stack**.
-
-
-13
+6. Click **Deploy**.
+7. When the deployment is successful, click **View CloudFormation Stack**.
 
 
 
+8. In the Outputs section, copy the app folder name to search your personal folder in the Sumo Logic console.
 
-1. In the Outputs section, copy the app folder name to search your personal folder in the Sumo Logic console.
-
-
-14
 
 
 

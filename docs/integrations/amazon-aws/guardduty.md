@@ -32,9 +32,8 @@ This configuration is defined in a [AWS Serverless Application Model (SAM) speci
 
 1. In Sumo Logic, configure a [Hosted Collector](https://help.sumologic.com/03Send-Data/Hosted-Collectors/Configure-a-Hosted-Collector).
 2. In Sumo Logic, configure an [HTTP Source](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/HTTP-Source).  When you configure the source, in the **Advanced Options for Logs** section of the page:
-    1. Specify **Format** as `yyyy-MM-dd'T'HH:mm:ss.SSS'Z'`
-    2. Specify **Timestamp locator** as `.*"updatedAt":"(.*)".* \
-`
+    * Specify **Format** as `yyyy-MM-dd'T'HH:mm:ss.SSS'Z'`
+    * Specify **Timestamp locator** as `.*"updatedAt":"(.*)".* \`
 
 When you configure the HTTP Source, make a note of the HTTP Source Address URL. You will need it in the next step.  
 
@@ -46,15 +45,13 @@ In this step, you deploy the events processor. This will create the AWS resource
 1. Go to [https://serverlessrepo.aws.amazon.com/applications](https://serverlessrepo.aws.amazon.com/applications).
 2. Search for “sumologic-guardduty-events-processor”.  \
 
-6
 
 3. When the page for the Sumo app appears, click **Deploy**. \
 
-7
 
 4. In **Configure application parameters** panel, paste the URL for the HTTP source you created above. \
 
-8
+
 
 5. Click **Deploy**.
 
@@ -73,9 +70,8 @@ You can set any of the following optional variables:
 
 
 #### Sample log message
-11
 
-
+<details><summary>Click to expand</summary>
 
 ```json
 {
@@ -206,16 +202,12 @@ You can set any of the following optional variables:
 }
 ```
 
+</details>
+
+#### Sample Query
 
 
-#### Query Sample
-12
-
-
-**Threat details**
-
-
-```
+```sql title="Threat details"
 _sourceCategory=aws/guardduty
 | json field=_raw "accountId", "region", "partition", "id", "arn", "type","service.serviceName","service.detectorId","service.action","severity","title","description" nodrop
 | json field=_raw "resource.resourceType" as resourceType nodrop
@@ -232,7 +224,6 @@ _sourceCategory=aws/guardduty
 | json field=%service.action "networkConnectionAction.remoteIpDetails.organization.isp" as isp nodrop
 | count as count by title, accountId, resourceType, organization, isp, ip, link
 | sort count
-
 ```
 
 
@@ -255,7 +246,7 @@ Version selection is applicable only to a few apps currently. For more informati
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
     2. **Data Source.** Select either of these options for the data source. 
         * Choose **Source Category**, and select a source category from the list. 
-        * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (_sourceCategory=MyCategory). 
+        * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). 
     3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
 2. Click **Add to Library**.
 
