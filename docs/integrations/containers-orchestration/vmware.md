@@ -500,7 +500,7 @@ This section provides instructions for installing the VMware App, as well as the
 
 Now that you have set up collection for VMWare, you can install the VMWare App to use the preconfigured searches and Dashboards that provide insight into your data.
 
-**To install the App, do the following:**
+To install the app, do the following:
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 

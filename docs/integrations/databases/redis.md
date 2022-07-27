@@ -790,7 +790,7 @@ If you haven’t enabled alerts and/or configured notifications via the Terrafor
 This section demonstrates how to install the Redis ULM App.
 
 
-###### **To install the app:**
+###### To install the app:
 34
 
 

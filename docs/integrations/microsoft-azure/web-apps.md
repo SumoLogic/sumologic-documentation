@@ -175,7 +175,7 @@ _sourceCategory=Azure/Web-app
 
 This page provides instructions on how to install the Azure Web Apps App, and shows examples of each of the preconfigured [dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/04Microsoft-and-Azure/Azure_Web_Apps/Azure-Web-Apps-Dashboards#Dashboards) you can use to analyze your data.
 
-**To install the app:**
+To install the app:
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 

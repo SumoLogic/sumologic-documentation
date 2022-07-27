@@ -239,7 +239,7 @@ _sourceCategory=delete_test _sourceName=Security "Directory Service Changes"
 
 Now that you have set up collection for Active Directory, install the Sumo Logic App for Active Directory Legacy to use the pre-configured searches and [dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/04Microsoft-and-Azure/Active_Directory_Legacy/Active-Directory-Legacy-App-Dashboards#Dashboards) that provide visibility into your environment for real-time analysis of overall usage.
 
-**To install the app:**
+To install the app:
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 

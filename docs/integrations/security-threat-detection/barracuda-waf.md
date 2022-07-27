@@ -197,7 +197,7 @@ This section provides instructions for installing the Barracuda WAF App, as well
 
 Now that you have configured log collection for Barracuda WAF, install the Sumo Logic App for Barracuda WAF, and take advantage of predefined Searches and [Dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/01Amazon_and_AWS/Amazon_S3_Audit_App/Amazon-S3-Audit-App-Dashboards#Dashboards).
 
-**To install the app:**
+To install the app:
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 

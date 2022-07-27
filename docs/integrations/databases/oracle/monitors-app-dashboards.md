@@ -167,7 +167,7 @@ There are limits to how many alerts can be enabled - see the [Alerts FAQ](https:
 
 This section demonstrates how to install the Oracle App.
 
-**To install the app:**
+To install the app:
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 

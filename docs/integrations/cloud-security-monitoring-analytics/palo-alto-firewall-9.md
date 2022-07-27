@@ -133,7 +133,7 @@ Now that you have set up collection for the Palo Alto Networks Firewall 9 app, y
 
 This app supports PAN-OS v8 and v9.
 
-**To install the app:**
+To install the app:
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 

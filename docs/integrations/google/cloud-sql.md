@@ -203,7 +203,7 @@ _sourceCategory=*gcp* data "type":"cloudsql_database" methodName
 
 Now that you have set up the collection for Google Cloud SQL, install the Sumo Logic App Google Cloud SQL to use the pre-configured searches and [dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/01Amazon_and_AWS/Amazon_CloudFront/Amazon-CloudFront-App-Dashboards#Dashboards) that provide visibility into your environment for real-time analysis of overall usage.
 
-**To install the app:**
+To install the app:
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 

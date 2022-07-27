@@ -153,7 +153,7 @@ Now that you have set up collection for PCI for Palo Alto Networks install the S
 
 This app supports PAN-OS v8 and v9.
 
-**To install the app:**
+To install the app:
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 

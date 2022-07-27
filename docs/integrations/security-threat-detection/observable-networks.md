@@ -210,7 +210,7 @@ _sourceCategory=observable
 
 This page provides instructions for installing the Observable Networks App, as well as showing examples of each of the dashboards. The App preconfigured searches and [dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/22Security_and_Threat_Detection/Observable_Networks/Observable-Networks-App-Dashboard-and-Searches#Dashboards) allow you to visually analyze your Observable Networks data at a glance.
 
-**To install the app:**
+To install the app:
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 

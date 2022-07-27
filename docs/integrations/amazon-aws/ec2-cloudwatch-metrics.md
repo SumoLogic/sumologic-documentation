@@ -11,32 +11,68 @@ Amazon Elastic Compute Cloud (Amazon EC2) provides scalable computing capacity i
 
 The Sumo Logic App for AWS EC2 (CloudWatch Metrics) allows you to collect your EC2 instance metrics and display them using predefined dashboards. The App provides dashboards to display analysis of EC2 instance metrics for CPU, disk, network, EBS, and Health Status Check. Also, it provides detailed insights into all cloudtrail audit events associated with EC2 instances and specifically helps identify changes, errors, and user activities.
 
-## Collect CloudWatch Metrics and CloudTrail logs for the AWS EC2
+## Collecting CloudWatch Metrics and CloudTrail logs for AWS EC2
+
+This section describes the AWS EC2 app's data sources and instructions for setting up a metric collection.
 
 
+### Metrics Types
 
-This page describes the AWS EC2 app's data sources and instructions for setting up a metric collection.
+For details on the metrics of AWS EC2, see [here](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-cloudwatch.html).
 
 
-#### AWS EC2 CloudWatch Metrics
-1
+### Sample Log
 
+```json title="Sample CloudTrail Log"
+{"eventVersion":"1.08","userIdentity":{"type":"IAMUser","principalId":"AIDAJ7LGGLTBHHDFNMPSM","arn":"arn:aws:iam::9XXXX34567898:user/cloudhealthuser","accountId":"9XXXXXXX898","accessKeyId":"AKIAXXXXXX22BUTQ","userName":"cloudhealthuser"},"eventTime":"2022-06-30T08:05:38Z","eventSource":"ec2.amazonaws.com","eventName":"DescribeReservedInstancesListings","awsRegion":"us-east-1","sourceIPAddress":"177.20.215.222","userAgent":"aws-sdk-ruby2/2.11.447 jruby/2.5.7 java cloudhealth","errorCode":"Client.OptInRequired","errorMessage":"AccountId '9XXXXXX898', You are not authorized to use the requested product. Please complete the seller registration null.","requestParameters":{"reservedInstancesListingSet":{},"reservedInstancesSet":{},"filterSet":{}},"responseElements":null,"requestID":"fe609b44-dbc5-454b-8f72-9475d1639441","eventID":"6fc6df43-1ba1-4eb3-948a-0aebc569c024","readOnly":true,"eventType":"AwsApiCall","managementEvent":true,"recipientAccountId":"9XXXXX7898","eventCategory":"Management","tlsDetails":{"tlsVersion":"TLSv1.2","cipherSuite":"ECDHE-RSA-XXXXX-SHA","clientProvidedHostHeader":"ec2.us-west-1.amazonaws.com"}}
+```
+
+
+### Sample Queries
+
+```sql title="CPU utilization (Cloudwatch metric based)"
+account=* region=* namespace=aws/ec2 instanceid=* metric=CPUUtilization Statistic=average | avg
+```
+
+```sql title="Top 10 Error Codes (Cloudtrail log-based)"
+account={{account}} region={{region}} namespace={{namespace}} eventname eventsource "ec2.amazonaws.com" errorCode
+| json "eventSource", "awsRegion", "requestParameters", "responseElements", "recipientAccountId" as event_source, region, requestParameters, responseElements, accountid nodrop
+| json "userIdentity", "eventName", "sourceIPAddress", "userAgent", "eventType", "requestID", "errorCode", "errorMessage", "eventCategory", "managementEvent" as userIdentity, event_name, src_ip, user_agent, event_type, request_id, error_code, error_message, event_category, management_event nodrop
+| where event_source = "ec2.amazonaws.com"
+| "aws/ec2" as namespace
+| json field=userIdentity "type", "principalId", "arn", "userName", "accountId" nodrop
+| json field=userIdentity "sessionContext.attributes.mfaAuthenticated" as mfaAuthenticated nodrop
+| parse field=arn ":assumed-role/*" as user nodrop  
+| parse field=arn "arn:aws:iam::*:*" as accountId, user nodrop
+| json field=requestParameters "instanceType", "instancesSet", "instanceId", "DescribeInstanceCreditSpecificationsRequest.InstanceId.content" as req_instancetype, req_instancesSet, req_instanceid_1, req_instanceid_2 nodrop
+| json field=req_instancesSet "item", "items" as req_instancesSet_item, req_instancesSet_items nodrop
+| parse regex field=req_instancesSet_item "\"instanceId\":\s*\"(?<req_instanceid_3>.*?)\"" nodrop
+| parse regex field=req_instancesSet_items "\"instanceId\":\s*\"(?<req_instanceid_4>.*?)\"" nodrop
+| json field=responseElements "instancesSet.items" as res_responseElements_items nodrop
+| parse regex field=res_responseElements_items "\"instanceType\":\s*\"(?<res_instanceType>.*?)\"" nodrop
+| parse regex field=res_responseElements_items "\"instanceId\":\s*\"(?<res_instanceid>.*?)\"" nodrop
+| if (!isBlank(req_instanceid_1), req_instanceid_1,  if (!isBlank(req_instanceid_2), req_instanceid_2, if (!isBlank(req_instanceid_3), req_instanceid_3, if (!isBlank(req_instanceid_4), req_instanceid_4, "")))) as req_instanceid
+| if (!isBlank(req_instanceid), req_instanceid, res_instanceid) as instanceid
+| if (!isBlank(req_instancetype), req_instancetype, res_instancetype) as instanceType
+| if (isEmpty(error_code), "Success", "Failure") as event_status
+| if (isEmpty(userName), user, userName) as user
+| tolowercase(instanceid) as instanceid
+| count as count by error_code | sort by count, error_code asc | limit 10
+```
+
+### AWS EC2 CloudWatch Metrics
 
 AWS EC2 automatically monitors functions on your behalf, reporting [AWS EC2 metrics](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-cloudwatch.html) through Amazon CloudWatch. These metrics are collected by our Hosted Collector by configuring the Amazon CloudWatch source.
 
 The Sumo Logic App for AWS EC2 (CloudWatch Metrics) allows you to collect your EC2 instance metrics and display them using predefined dashboards. The App provides dashboards to analyze EC2 instance metrics for CPU, disk, network, EBS, and Health Status Check.
 
 
-#### CloudTrail EC2 Data Events
-2
-
+### CloudTrail EC2 Data Events
 
 [CloudTrail EC2 Data Events](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-data-events) allow you to continuously monitor the execution activity of your EC2 instance and record details of all the related events.
 
 
-#### Collect Amazon CloudWatch Metrics
-3
-
+### Collect Amazon CloudWatch Metrics
 
 To collect Amazon CloudWatch Metrics, see [Amazon CloudWatch Source For Metrics.](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/Amazon-CloudWatch-Source-for-Metrics)
 
@@ -47,14 +83,10 @@ AWS Namespace tag to filter in source for Lambda will be - **AWS/EC2**
 * **Metadata: **Add an **account** field to the source and assign it a value which is a friendly name / alias to your AWS account from which you are collecting metrics. This name will appear in the Sumo Logic Explorer View. Metrics can be queried via the “account field”.
 
 
-4
 
-
-
-#### Collect CloudTrail EC2 Data Events
+### Collect CloudTrail EC2 Data Events
 
 To configure a CloudTrail Source, perform these steps:
-
 
 1. [Grant Sumo Logic access](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/Grant-Access-to-an-AWS-Product) to an Amazon S3 bucket.
 2. [Configure DataEvents with CloudTrail](https://docs.aws.amazon.com/AWSEC2/latest/APIReference/using-cloudtrail.html) in your AWS account.
@@ -69,13 +101,11 @@ To configure a CloudTrail Source, perform these steps:
 
 
 ### Field in Field Schema
-7
-
 
 Login to Sumo Logic,  go to Manage Data > Logs > Fields. Search for the “**instanceid**” field. If not present, create it. Learn how to create and manage fields [here](https://help.sumologic.com/Manage/Fields#manage-fields).
 
 
-### Cloud Trail FER
+### CloudTrail FER
 
 
 ```
@@ -109,7 +139,6 @@ Scope (Specific Data): account=* eventname eventsource "ec2.amazonaws.com"
 
 
 ### Centralized AWS CloudTrail Log Collection
-9
 
 
 If you have a centralized collection of cloudtrail logs and are ingesting them from all accounts into a single Sumo Logic cloudtrail log source, create following Field Extraction Rule to map proper AWS account(s) friendly name / alias. Create it if not already present / update it as required.
@@ -134,55 +163,6 @@ Enter a parse expression to create an “account” field that maps to the alias
 | if (recipientAccountId = "528560886094",  "dev", account) as account
 | if (recipientAccountId = "567680881046",  "prod", account) as account
 | fields account
-```
-
-
-
-### Metrics Types
-
-For details on the metrics of AWS EC2, see [here](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-cloudwatch.html).
-
-
-#### Sample Cloud Trail log for EC2
-
-
-```json
-{"eventVersion":"1.08","userIdentity":{"type":"IAMUser","principalId":"AIDAJ7LGGLTBHHDFNMPSM","arn":"arn:aws:iam::9XXXX34567898:user/cloudhealthuser","accountId":"9XXXXXXX898","accessKeyId":"AKIAXXXXXX22BUTQ","userName":"cloudhealthuser"},"eventTime":"2022-06-30T08:05:38Z","eventSource":"ec2.amazonaws.com","eventName":"DescribeReservedInstancesListings","awsRegion":"us-east-1","sourceIPAddress":"177.20.215.222","userAgent":"aws-sdk-ruby2/2.11.447 jruby/2.5.7 java cloudhealth","errorCode":"Client.OptInRequired","errorMessage":"AccountId '9XXXXXX898', You are not authorized to use the requested product. Please complete the seller registration null.","requestParameters":{"reservedInstancesListingSet":{},"reservedInstancesSet":{},"filterSet":{}},"responseElements":null,"requestID":"fe609b44-dbc5-454b-8f72-9475d1639441","eventID":"6fc6df43-1ba1-4eb3-948a-0aebc569c024","readOnly":true,"eventType":"AwsApiCall","managementEvent":true,"recipientAccountId":"9XXXXX7898","eventCategory":"Management","tlsDetails":{"tlsVersion":"TLSv1.2","cipherSuite":"ECDHE-RSA-XXXXX-SHA","clientProvidedHostHeader":"ec2.us-west-1.amazonaws.com"}}
-```
-
-
-
-### Sample Queries
-
-```sql title="CPU utilization (Cloudwatch metric based)"
-account=* region=* namespace=aws/ec2 instanceid=* metric=CPUUtilization Statistic=average | avg
-```
-
-
-```sql title="Top 10 Error Codes (Cloudtrail log-based)"
-account={{account}} region={{region}} namespace={{namespace}} eventname eventsource "ec2.amazonaws.com" errorCode
-| json "eventSource", "awsRegion", "requestParameters", "responseElements", "recipientAccountId" as event_source, region, requestParameters, responseElements, accountid nodrop
-| json "userIdentity", "eventName", "sourceIPAddress", "userAgent", "eventType", "requestID", "errorCode", "errorMessage", "eventCategory", "managementEvent" as userIdentity, event_name, src_ip, user_agent, event_type, request_id, error_code, error_message, event_category, management_event nodrop
-| where event_source = "ec2.amazonaws.com"
-| "aws/ec2" as namespace
-| json field=userIdentity "type", "principalId", "arn", "userName", "accountId" nodrop
-| json field=userIdentity "sessionContext.attributes.mfaAuthenticated" as mfaAuthenticated nodrop
-| parse field=arn ":assumed-role/*" as user nodrop  
-| parse field=arn "arn:aws:iam::*:*" as accountId, user nodrop
-| json field=requestParameters "instanceType", "instancesSet", "instanceId", "DescribeInstanceCreditSpecificationsRequest.InstanceId.content" as req_instancetype, req_instancesSet, req_instanceid_1, req_instanceid_2 nodrop
-| json field=req_instancesSet "item", "items" as req_instancesSet_item, req_instancesSet_items nodrop
-| parse regex field=req_instancesSet_item "\"instanceId\":\s*\"(?<req_instanceid_3>.*?)\"" nodrop
-| parse regex field=req_instancesSet_items "\"instanceId\":\s*\"(?<req_instanceid_4>.*?)\"" nodrop
-| json field=responseElements "instancesSet.items" as res_responseElements_items nodrop
-| parse regex field=res_responseElements_items "\"instanceType\":\s*\"(?<res_instanceType>.*?)\"" nodrop
-| parse regex field=res_responseElements_items "\"instanceId\":\s*\"(?<res_instanceid>.*?)\"" nodrop
-| if (!isBlank(req_instanceid_1), req_instanceid_1,  if (!isBlank(req_instanceid_2), req_instanceid_2, if (!isBlank(req_instanceid_3), req_instanceid_3, if (!isBlank(req_instanceid_4), req_instanceid_4, "")))) as req_instanceid
-| if (!isBlank(req_instanceid), req_instanceid, res_instanceid) as instanceid
-| if (!isBlank(req_instancetype), req_instancetype, res_instancetype) as instanceType
-| if (isEmpty(error_code), "Success", "Failure") as event_status
-| if (isEmpty(userName), user, userName) as user
-| tolowercase(instanceid) as instanceid
-| count as count by error_code | sort by count, error_code asc | limit 10
 ```
 
 

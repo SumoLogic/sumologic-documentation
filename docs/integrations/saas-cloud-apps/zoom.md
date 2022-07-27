@@ -157,7 +157,7 @@ This page provides instructions for installing the Zoom App, as well as descript
 
 Now that you have set up collection for the Zoom events, install the Sumo Logic App for Zoom to use the pre-configured dashboards that provide visibility into your environment.
 
-**To install the app, do the following:**
+To install the app, do the following:
 
 
 

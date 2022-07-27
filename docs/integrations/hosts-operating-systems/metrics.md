@@ -513,7 +513,7 @@ Only one AWS Metadata Source for Metrics is required to collect EC2 tags from mu
 
 Now that you have configured Host Metrics, install the Sumo Logic App for Host Metrics to take advantage of the preconfigured searches and [dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/14Hosts_and_Operating_Systems/Host_Metrics/Host-Metrics-App-Dashboards#Dashboards) to analyze your Host Metrics data.
 
-**To install the app:**
+To install the app:
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 

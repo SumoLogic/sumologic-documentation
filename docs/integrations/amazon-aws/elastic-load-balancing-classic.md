@@ -17,7 +17,7 @@ For information on collecting unified logs and metrics for AWS Elastic Load Bala
 If you are just beginning with AWS ELB, for background see the Sumo Logic DevOps blog, "AWS Elastic Load Balancing: Load Balancer Best Practices."
 
 
-## Collect Logs for the AWS Elastic Load Balancing- Classic App
+## Collect Logs for the AWS Elastic Load Balancing - Classic App
 
 This procedure documents how to enable access to your Amazon Web Services (AWS) Elastic Load Balancing (ELB) logs and ingest them into Sumo Logic.
 
@@ -275,7 +275,7 @@ _sourceCategory=elb*
 
 Now that you have set up collection for AWS ELB, install the Sumo Logic App for AWS Elastic Load Balancer - Classic to use the preconfigured searches and [dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/01Amazon_and_AWS/AWS_Elastic_Load_Balancing_-_Classic/AWS-Elastic-Load-Balancer---Classic-App-Dashboards#Dashboards) to analyze your data.
 
-**To install the app:**
+To install the app:
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 

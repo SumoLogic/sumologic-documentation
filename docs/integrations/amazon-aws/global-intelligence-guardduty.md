@@ -11,27 +11,10 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 This feature is available in the following account plans.
 
-<table>
-  <tr>
-   <td>Account Type
-   </td>
-   <td>Account Level
-   </td>
-  </tr>
-  <tr>
-   <td>CloudFlex
-   </td>
-   <td>Trial, Enterprise
-   </td>
-  </tr>
-  <tr>
-   <td>Credits
-   </td>
-   <td>Trial, Enterprise Suite, Enterprise Security
-   </td>
-  </tr>
-</table>
-
+| Account Type | Account Level
+| :---- | :----
+|  Cloud Flex  |  Trial, Enterprise
+| Cloud Flex Credits | Trial, Enterprise Suite, Enterprise Security
 
 [Amazon GuardDuty](https://aws.amazon.com/guardduty/) is a threat detection service that continuously monitors for malicious activity and unauthorized behavior to protect your AWS accounts and workloads. The Sumo Logic App for Global Intelligence for Amazon GuardDuty analyzes GuardDuty threats from the Sumo Logic population to create baselines of threats. These baselines enable you to optimize security posture and remediation based on how unusual your GuardDuty findings are compared to Sumo Logic customers. The App includes pre-configured dashboards and searches with visual displays for global threat baselines and real-time threat detection across your AWS environment.
 
@@ -45,19 +28,15 @@ The App includes pre-configured dashboards and searches with visual displays for
 * The `infer` operator is not intended for use outside of Sumo Logic Global Intelligence apps.
 :::
 
+## Log Types
 
+The Sumo Logic App for GI GuardDuty requires the Amazon GuardDuty findings to be sent through the Amazon CloudWatch Events. For more details on [GuardDuty findings](https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings.html).
 
 ## Configure Log Collection and Deploy the GI GuardDuty App
 
 This section explains the log collection process and provides instructions for configuring log collection and installing the GI GuardDuty App.
 
 If you have already Amazon GuardDuty data flowing into Sumo Logic, you can skip these steps and install the App from the Sumo Logic App Catalog.
-
-
-### Log Types
-
-The Sumo Logic App for GI GuardDuty requires the Amazon GuardDuty findings to be sent through the Amazon CloudWatch Events. For more details on [GuardDuty findings](https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings.html).
-
 
 ### Process overview
 

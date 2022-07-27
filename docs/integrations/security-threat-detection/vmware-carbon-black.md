@@ -407,7 +407,7 @@ This page provides instructions for installing the VMware Carbon Black App and h
 
 This section demonstrates how to install the VMware Carbon Black EDR and Cloud Endpoint Standard App.
 
-**To install the app, do the following:**
+To install the app, do the following:
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 

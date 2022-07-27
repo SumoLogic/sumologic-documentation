@@ -207,7 +207,7 @@ Now that you have set up collection for AKS, you can install the Sumo Logic App 
 18
 All the dashboards are linked to the Explore tab so they can be easily accessed by clicking the Cluster in the navigation pane of the Explore tab.
 
-**To install the app, do the following:**
+To install the app, do the following:
 
 
 

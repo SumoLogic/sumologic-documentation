@@ -151,7 +151,6 @@ For more details about EKS logging, refer the [Amazon documentation](https://doc
 }
 ```
 
-
 ```json title="API Server"
 {
    "timestamp":1561543835000,
@@ -176,7 +175,6 @@ scheduler.go:197] Failed to schedule pod: hello-app/frontend-56f7975f44-8sgj7"}
 ### Sample Query
 
 The following query sample is taken from the **Top 10 URLs with Problem Status Codes** panel on the **EKS - API Server Audit Overview** dashboard.
-
 
 ```sql
 _sourceCategory = "EKS_LOGS"
@@ -218,7 +216,7 @@ Template variables provide dynamic dashboards that rescope data on the fly. As y
 You can use template variables to drill down and examine the data on a granular level.
 
 
-### EKS - API Server Audit Dashboard
+### API Server Audit Dashboard
 
 The **EKS - API Server Audit** dashboard displays information on Kubernetes audit logs. Panels provide records of individual users, administrators, or system components affected by your cluster.
 
@@ -233,7 +231,7 @@ Use this dashboard to:
 <img src={useBaseUrl('img/integrations/amazon-aws/EKS-API-Server-Audit-Overview.png')} alt="Amazon EKS" />
 
 
-### EKS - API Server Dashboard
+### API Server Dashboard
 
 The **EKS - API Server** dashboard displays information on the API server logs, the control plane component that exposes the Kubernetes API. Panels show details on the API server errors, warnings, and activities.
 
@@ -245,7 +243,7 @@ Use this dashboard to:
 <img src={useBaseUrl('img/integrations/amazon-aws/EKS-api-server.png')} alt="Amazon EKS" />
 
 
-### EKS - Authenticator Dashboard
+### Authenticator Dashboard
 
 The **EKS - Authenticator** dashboard displays information on the Authenticator logs which are unique to Amazon EKS. Panels display logs that represent the control plane component Amazon EKS uses for Kubernetes[ Role Based Access Control](https://kubernetes.io/docs/admin/authorization/rbac/) (RBAC) authentication using IAM credentials.
 
@@ -256,7 +254,7 @@ Use this dashboard to:
 <img src={useBaseUrl('img/integrations/amazon-aws/EKS-authenticator.png')} alt="Amazon EKS" />
 
 
-### EKS - Controller Manager Dashboard
+### Controller Manager Dashboard
 
 The **EKS - Controller Manager** dashboard displays information on the  controller manager, providing visibility into the core control loops for Kubernetes.
 

@@ -297,7 +297,7 @@ This page provides instructions for installing the Sumo Logic App for Jenkins, a
 
 Now that you have set up collection for Jenkins you can install the Sumo Logic App for Jenkins, and use its pre-configured searches and dashboards.
 
-**To install the app, do the following:**
+To install the app, do the following:
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 

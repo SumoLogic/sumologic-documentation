@@ -278,7 +278,7 @@ This page provides instructions for installing the Google Cloud IAM App, and exa
 
 Now that you have set up collection for Google Cloud IAM, you can install the Sumo Logic App for easy access to the pre-configured searches and [dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/06Google/Google_Cloud_IAM/Install-the-Google-Cloud-IAM-App-and-view-the-Dashboards#Dashboards).
 
-**To install the app:**
+To install the app:
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 

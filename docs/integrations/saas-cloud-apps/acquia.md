@@ -367,7 +367,7 @@ This page provides instructions on how to install the Acquia App, as well as exa
 
 This section shows you how to install the Sumo Logic App for Slack.
 
-**To install the app, do the following:**
+To install the app, do the following:
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 

@@ -252,7 +252,7 @@ A success message is displayed and the collector is removed from the list.
 
 Now that you have set up collection, install the Sumo Logic App for PCI Compliance for Linux to use the preconfigured searches and Dashboards that provide insight into your data.
 
-**To install the app:**
+To install the app:
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 

@@ -224,7 +224,7 @@ For information about our newer app for Amazon Inspector, which leverages findin
 
 Now that you have set up collection for Amazon Inspector, install the Sumo Logic App for Amazon Inspector to use the pre-configured Searches and [Dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/01Amazon_and_AWS/Amazon_Inspector_App_-_Classic/Amazon-Inspector-App-Dashboards#Dashboards) that provide visibility into your environment for real-time analysis of overall usage.
 
-**To install the app:**
+To install the app:
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 

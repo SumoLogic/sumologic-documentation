@@ -229,7 +229,7 @@ The section provides instructions for installing the Google Cloud Firewall App, 
 
 Now that you have set up log collection, you can install the Google Cloud Firewall App to access the pre-configured Searches and [Dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/01Amazon_and_AWS/Amazon_RDS/Amazon-RDS-Metrics-App-Dashboards#Dashboards) that provide visibility into your environment for real-time analysis of overall usage.
 
-**To install the app:**
+To install the app:
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 

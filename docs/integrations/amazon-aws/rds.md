@@ -205,7 +205,7 @@ Namespace=aws/rds metric=DatabaseConnections statistic=average account=* region=
 
 Now that you have set up a collection for **Amazon RDS**, install the Sumo Logic App to use the pre-configured [dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/01Amazon_and_AWS/Amazon_SQS/Install-the-Amazon-SQS-App-and-view-the-Dashboards#Dashboards) that provide visibility into your environment for real-time analysis of overall usage.
 
-**To install the app:**
+To install the app:
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 

@@ -153,7 +153,7 @@ This section provides instructions on how to install the Twistlock App, as well 
 
 This section shows you how to install the Twistlock App.
 
-**To install the app, do the following:**
+To install the app, do the following:
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
@@ -333,7 +333,7 @@ This section provides instructions on how to install the Twistlock Classic App, 
 
 This section shows you how to install the Twistlock Classic App.
 
-**To install the app, do the following:**
+To install the app, do the following:
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 

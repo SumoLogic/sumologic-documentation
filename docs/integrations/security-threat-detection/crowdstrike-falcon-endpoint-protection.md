@@ -358,7 +358,7 @@ This page provides instructions for installing the Sumo App for CrowdStrike Falc
 
 This section demonstrates how to install the CrowdStrike Falcon Endpoint Protection App.
 
-**To install the app, do the following:**
+To install the app, do the following:
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 

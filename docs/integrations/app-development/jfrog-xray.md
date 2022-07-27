@@ -412,7 +412,7 @@ _sourceCategory = Labs/jfrog/xray
 
 This section has instructions for installing the JFrog Xray app.
 
-**To install the app, do the following:**
+To install the app, do the following:
 
 
 

@@ -313,7 +313,7 @@ This page provides instructions for installing the Evident.io ESP App, as well a
 
 Now that you have configured Evident.io ESP, install the Sumo Logic App for Evident.io ESP to take advantage of the preconfigured searches and [dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/22Security_and_Threat_Detection/Evident.io_Evident_Security_Platform/Evident.io-ESP-App-Dashboards#Dashboards) to analyze your data.
 
-**To install the app:**
+To install the app:
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
