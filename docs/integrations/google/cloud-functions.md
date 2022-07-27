@@ -7,6 +7,8 @@ description: tk
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
+<img src={useBaseUrl('img/integrations/google/functions.png')} alt="thumbnail icon" width="50"/>
+
 The Google Cloud Functions App enables you to monitor your usage of Google Cloud Functions. The App preconfigured dashboards provide insight into function executions, operations, latency, errors, and failures.
 
 

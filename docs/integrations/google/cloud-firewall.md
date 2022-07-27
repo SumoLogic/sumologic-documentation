@@ -7,6 +7,8 @@ description: tk
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
+<img src={useBaseUrl('img/integrations/google/firewall.png')} alt="thumbnail icon" width="50"/>
+
 The Google Cloud Firewall App enables you to monitor request activity and the effect of your firewall rules. Google Cloud Platform (GCP) firewall rules can allow or deny traffic to and from VMs in a Google VPC network.
 
 The Google Cloud Firewall App preconfigured dashboards provide insight into ingress and egress request traffic, including the location of allowed and denied requests, allowed and denied requests over time, and the top networks, subnetworks, and VMs by allowed and denied ingress requests.

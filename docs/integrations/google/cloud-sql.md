@@ -8,6 +8,8 @@ description: tk
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
+<img src={useBaseUrl('img/integrations/google/sql.png')} alt="thumbnail icon" width="50"/>
+
 The Sumo Logic app for Google Cloud SQL helps you monitor your usage of Google Cloud SQL. The preconfigured dashboards provide insight into created and deleted resources, messages, authorization failures, user activities, and error logs.
 
 
