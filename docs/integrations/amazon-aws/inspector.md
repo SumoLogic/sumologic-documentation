@@ -2,7 +2,7 @@
 id: inspector
 title: Sumo Logic App for Amazon Inspector
 sidebar_label: Amazon Inspector
-description: The Sumo Logic Inspector App helps reveal trends and identify anomalies from these AWS Inspector findings. 
+description: The Sumo Logic Inspector App helps reveal trends and identify anomalies from these AWS Inspector findings.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -37,9 +37,9 @@ An AWS Source must be associated with a Sumo Logic Hosted Collector. Before crea
 1. [Grant Access to an AWS S3 Bucket.](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/Grant-Access-to-an-AWS-Product)
 2. To create a new Sumo Logic Hosted Collector, perform the steps in [Configure a Hosted Collector](https://help.sumologic.com/03Send-Data/Hosted-Collectors/Configure-a-Hosted-Collector)
 3. Add an [AWS Source](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/AWS-S3-Source#AWS_Sources) for the S3 Source to Sumo Logic, and in **Advanced Options for Logs**, under Timestamp Format, click **Specify a format** and enter the following:
-    1. Specify **Format** as `yyyy-MM-dd'T'HH:mm:ss.SSS'Z'`
-    2. Specify **Timestamp locator** as `.*"UpdatedAt":"(.*)".*`
-    3. Click **Add**. \
+    * Specify **Format** as `yyyy-MM-dd'T'HH:mm:ss.SSS'Z'`
+    * Specify **Timestamp locator** as `.*"UpdatedAt":"(.*)".*`
+    * Click **Add**. \
 
 
 ### Step 2: Deploy an AWS Security Hub App collector
@@ -110,10 +110,10 @@ To install the Sumo Logic App for Amazon Inspector:
 1. From the App Catalog, search for and select the app.
 2. You're prompt to select an application version. Select _Amazon Inspector,_ and click **Add to Library**.
 3. To install the app, complete the following fields.
-    1. **App Name**. You can retain the existing name, or enter a name of your choice for the app. 
+    * **App Name**. You can retain the existing name, or enter a name of your choice for the app. 
         * Choose **Source Category**, and select a source category from the list. 
         * Choose **Enter a Custom Data Filter**, and enter a [custom data filter](https://help.sumologic.com/01Start-Here/Library/Apps-in-Sumo-Logic/Custom-Data-Filters). 
-    2. **Advanced**. Select the Location in Library (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
+    * **Advanced**. Select the Location in Library (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
 4. Click **Add to Library**.
 
 Once an app is installed, it will appear in your Personal folder, or another folder that you specified. From here, you can share it with your organization.
@@ -134,7 +134,6 @@ The dashboard provides an overview of Security Hub findings broken down by sever
 ### Findings Summary
 
 The top panel of the dashboard presents:
-
 * All Findings. The count of total security findings during the last 24 hours by default, or during the currently selected time range.  
 * Findings by Severity. A stacked line chart showing the count of findings by severity, during the last 24 hours by default, or during the currently selected time range.
 * Last 20 Findings. A table detailing the 20 most recent findings.

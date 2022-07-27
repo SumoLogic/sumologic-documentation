@@ -27,7 +27,7 @@ Locate and install the app you need from the **App Catalog**. If you want to see
    * **App Name.** You can retain the existing name, or enter a name of your choice for the app.
    * **Data Source.** Select either of these options for the data source.
      * Choose **Source Category**, and select a source category from the list.
-     * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (_sourceCategory=MyCategory).
+     * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`).
 
    * **Advanced.** Select the **Location in Library** (the default is the Personal folder in the library), or click New Folder to add a new folder.
 
