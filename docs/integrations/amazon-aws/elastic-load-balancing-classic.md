@@ -17,7 +17,7 @@ For information on collecting unified logs and metrics for AWS Elastic Load Bala
 If you are just beginning with AWS ELB, for background see the Sumo Logic DevOps blog, "AWS Elastic Load Balancing: Load Balancer Best Practices."
 
 
-## Collect Logs for the AWS Elastic Load Balancing- Classic App
+## Collect Logs for the AWS Elastic Load Balancing - Classic App
 
 This procedure documents how to enable access to your Amazon Web Services (AWS) Elastic Load Balancing (ELB) logs and ingest them into Sumo Logic.
 

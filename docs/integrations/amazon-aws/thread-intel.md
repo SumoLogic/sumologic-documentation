@@ -26,19 +26,18 @@ The Sumo Logic Threat Intel lookup database is only available with Sumo Logic En
 ### Configure Collectors and Sources
 
 If you are not already collecting your AWS logs, follow the instructions below to collect data from one or more of these data sources:
-* [Collect AWS CloudTrail Logs](https://help.sumologic.com/07Sumo-Logic-Apps/01Amazon_and_AWS/AWS_CloudTrail/01-Collect-logs-for-the-AWS-CloudTrail-App)
-* [Collect AWS ELB Logs](https://help.sumologic.com/07Sumo-Logic-Apps/01Amazon_and_AWS/AWS_Elastic_Load_Balancing_-_Classic/01-Collect-logs-for-the-AWS-Elastic-Load-Balancing-App)
+* [Collect AWS CloudTrail Logs](/docs/integrations/amazon-aws/cloudtrail#collecting-logs-for-the-aws-cloudtrail-app)
+* [Collect AWS ELB Logs](/docs/integrations/amazon-aws/classic-load-balancer#collecting-logs-and-metrics)
 
 VPC Flow Logs can be published to Amazon CloudWatch Logs and Amazon S3. Each method has advantages. Using an AWS S3 source is more reliable, while using a CloudFormation template allows you to customize your logs by adding more information and filtering unwanted data. You can use either of the following methods to collect Amazon VPC Flow Logs:
-
-* [Collect Amazon VPC Flow Logs using AWS S3 source](https://help.sumologic.com/07Sumo-Logic-Apps/01Amazon_and_AWS/Amazon_VPC_Flow_Logs/02Collect_Amazon_VPC_Flow_Logs_using_AWS_S3_Source)
-* [Collect Amazon VPC Flow Logs using a CloudFormation template](https://help.sumologic.com/07Sumo-Logic-Apps/01Amazon_and_AWS/Amazon_VPC_Flow_Logs/01Collect-Amazon-VPC-Flow-Logs-from-CloudWatch-Using-CloudFormation)
+* [Using an AWS S3 source](/docs/integrations/amazon-aws/vpc-flow-logs#collecting-amazon-vpc-flow-logs-using-an-aws-s3-source)
+* [Using a CloudFormation template](/docs/integrations/amazon-aws/vpc-flow-logs#collecting-amazon-vpc-flow-logs-from-cloudwatch-using-cloudformation)
 
 ## Installing the Threat Intel for AWS App
 
 The Sumo Logic Threat Intel lookup database is only available with Sumo Logic Enterprise and Professions accounts, or during a 30-day trial period. The Threat Intel lookup database is not available for Sumo Logic Free accounts.
 
-Now that you have set up collection, install the Sumo Logic App for Threat Intel for AWS to use the preconfigured searches and [Dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/01Amazon_and_AWS/Threat_Intel_for_AWS/Threat-Intel-for-AWS-App-Dashboard#Dashboards) that provide insight into your data.
+Now that you have set up collection, install the Sumo Logic App for Threat Intel for AWS to use the preconfigured searches and [Dashboards](/docs/integrations/amazon-aws/threat-intel#viewing-threat-intel-dashboards) that provide insight into your data.
 
 **To install the app, do the following:**
 
@@ -62,12 +61,12 @@ Once an app is installed, it will appear in your **Personal** folder, or other f
 Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
 
 
-## Viewing Dashboards
+## Viewing Threat Intel Dashboards
 
 All Dashboards include filters that you can use in Interactive Mode for further analysis of your Threat Intel data.
 
 
-### Threat Intel - Overview
+### Overview
 
 High-level view of the threats identified by Threat Intel in your AWS CloudTrail, VPC Flow Logs, and ELB systems.
 
@@ -86,7 +85,7 @@ High-level view of the threats identified by Threat Intel in your AWS CloudTrail
 * **Threat Outlier - ELB - Classic.** See any time when the count of threats with a malicious confidence of High to ELB goes outside the set threshold.
 
 
-### Threat Intel - AWS CloudTrail
+### AWS CloudTrail
 
 Use this dashboard for details on potential threats and IOCs for AWS CloudTrail.
 
@@ -100,7 +99,7 @@ Use this dashboard for details on potential threats and IOCs for AWS CloudTrail.
 * **Threats by Events and Result. **Compare events identified as threats with a High malicious confidence and see the number of successful versus access denied results for the last 24 hours.
 
 
-### Threat Intel - Amazon VPC Flow Logs
+### Amazon VPC Flow Logs
 
 Use this dashboard for details on potential threats and IOCs for AWS VPC Flow Logs.
 
@@ -115,7 +114,7 @@ Use this dashboard for details on potential threats and IOCs for AWS VPC Flow Lo
 * **Threats Over Time by Action.** View a trend over the last 24 hours of accepted and rejected threats.
 
 
-### Threat Intel - AWS Elastic Load Balancing
+### AWS Elastic Load Balancing
 
 Use this dashboard for details on potential threats and IOCs for Elastic Load Balancing.
 

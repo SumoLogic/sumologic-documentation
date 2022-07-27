@@ -35,19 +35,19 @@ In this step you set up AWS WAF to send log data to an S3 bucket using an Kinesi
 
 1. Configure a [Hosted Collector](https://help.sumologic.com/03Send-Data/Hosted-Collectors/Configure-a-Hosted-Collector).
 2. To your Hosted Collector, add an [AWS S3 Source](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/AWS-S3-Source).
-    1. **Name**. Enter a name to display for the new Source.
-    2. **Description**. Enter an optional description.
-    3. **S3 Region**. Select the Amazon Region for your S3 bucket.
-    4. **Bucket Name**. Enter the exact name of your S3 bucket.
-    5. **Path Expression**. Enter the string that matches the S3 objects you'd like to collect. You can use a wildcard (*) in this string. (DO NOT use a leading forward slash. See [Amazon Path Expressions](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/Amazon-Path-Expressions).) The S3 bucket name is not part of the path. Don’t include the bucket name when you are setting the Path Expression.
-    6. **Source Category**. Enter a source category. For example, AWS/WAF.
-    7. **Access Method**. Select the appropriate AWS access control mechanism.
-    8. **Scan Interval**. Use the default of Automatic, or select a scan interval from the pulldown.
-    9. **Enable Timestamp Parsing**. Select the checkbox.
-    10. **Time Zone**. Click **Ignore time zone** **from log file and instead use**, and select "UTC" from the list of time zones.
-    11. **Timestamp Format**. Click **Automatically detect the format**.
-    12. **Enable Multiline Processing**. Click the checkbox, and select **Infer Boundaries**.
-    13. Click **Save**.
+    * **Name**. Enter a name to display for the new Source.
+    * **Description**. Enter an optional description.
+    * **S3 Region**. Select the Amazon Region for your S3 bucket.
+    * **Bucket Name**. Enter the exact name of your S3 bucket.
+    * **Path Expression**. Enter the string that matches the S3 objects you'd like to collect. You can use a wildcard (*) in this string. (DO NOT use a leading forward slash. See [Amazon Path Expressions](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/Amazon-Path-Expressions).) The S3 bucket name is not part of the path. Don’t include the bucket name when you are setting the Path Expression.
+    * **Source Category**. Enter a source category. For example, AWS/WAF.
+    * **Access Method**. Select the appropriate AWS access control mechanism.
+    * **Scan Interval**. Use the default of Automatic, or select a scan interval from the pulldown.
+    * **Enable Timestamp Parsing**. Select the checkbox.
+    * **Time Zone**. Click **Ignore time zone** **from log file and instead use**, and select "UTC" from the list of time zones.
+    * **Timestamp Format**. Click **Automatically detect the format**.
+    * **Enable Multiline Processing**. Click the checkbox, and select **Infer Boundaries**.
+    * Click **Save**.
 
 
 ### Sample Log Message
@@ -58,14 +58,9 @@ In this step you set up AWS WAF to send log data to an S3 bucket using an Kinesi
 ```
 
 
-
 ### Sample Query  
 
-
-#### Client IP Threat Info
-
-
-```
+```sql title="Client IP Threat Info"
 _sourceCategory=AWS/WAF {{client_ip}}
 | parse "\"httpMethod\":\"*\"," as httpMethod,"\"httpVersion\":\"*\"," as httpVersion,"\"uri\":\"*\"," as uri, "{\"clientIp\":\"*\",\"country\":\"*\"" as clientIp,country, "\"action\":\"*\"" as action, "\"matchingNonTerminatingRules\":[*]" as matchingNonTerminatingRules, "\"rateBasedRuleList\":[*]" as rateBasedRuleList, "\"ruleGroupList\":[*]" as ruleGroupList, "\"httpSourceId\":\"*\"" as httpSourceId, "\"httpSourceName\":\"*\"" as httpSourceName, "\"terminatingRuleType\":\"*\"" as terminatingRuleType, "\"terminatingRuleId\":\"*\"" as terminatingRuleId, "\"webaclId\":\"*\"" as webaclId nodrop
 | lookup type, actor, raw, threatlevel as malicious_confidence from sumo://threat/cs on threat=clientip
@@ -88,11 +83,11 @@ Version selection is applicable only to a few apps currently. For more informati
 
 
 1. To install the app, complete the following fields.
-    1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
-    2. **Data Source.** Select either of these options for the data source. 
+    * **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
+    * **Data Source.** Select either of these options for the data source. 
         * Choose **Source Category**, and select a source category from the list. 
         * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (_sourceCategory=MyCategory). 
-    3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
+    * **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
 2. Click **Add to Library**.
 
 Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization.
