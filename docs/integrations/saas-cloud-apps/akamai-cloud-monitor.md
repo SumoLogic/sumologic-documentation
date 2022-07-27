@@ -222,7 +222,7 @@ Field Extraction Rules (FERs) tell Sumo Logic which fields to parse out automati
 
 Now that you have configured Akamai logs, install the Sumo Logic App for Akamai Cloud Monitor to take advantage of the pre-configured searches and [Dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/Akamai_Cloud_Monitor/Akamai-Cloud-Monitor-App-Dashboards#Dashboards) to analyze your Akamai data.
 
-**To install the app:**
+To install the app:
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 

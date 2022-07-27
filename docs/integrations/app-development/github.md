@@ -181,7 +181,7 @@ GitHub sends all fields in the payload, documented according to [Event Type](htt
 
 Now that you have set up collector GitHub, install the Sumo Logic App for GitHub to use the preconfigured searches and [dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/08App_Development/GitHub/GitHub-App-Dashboards#Dashboards) to analyze your data.
 
-**To install the app:**
+To install the app:
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 

@@ -263,7 +263,7 @@ email_notifications = [
 
 This section demonstrates how to install the Nginx Ingress App. These instructions assume you have already set up the collection as described above.
 
-**To install the app:**
+To install the app:
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 

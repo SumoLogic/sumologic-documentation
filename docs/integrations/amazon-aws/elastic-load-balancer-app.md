@@ -229,7 +229,7 @@ Steps to troubleshoot:
 
 Now that you have set up collection for AWS ELB, install the Sumo Logic App for AWS Elastic Load Balancer to use the pre-configured searches and [dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/01Amazon_and_AWS/AWS_Elastic_Load_Balancer_-_Application/03-AWS-Elastic-Load-Balancing---Application-Dashboards#Dashboards) that provide visibility into your environment.
 
-**To install the app:**
+To install the app:
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 

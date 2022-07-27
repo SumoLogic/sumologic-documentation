@@ -59,7 +59,7 @@ This page has instructions for installing the Microsoft Teams app and descriptio
 
 This section shows you how to install the Sumo Logic App for Microsoft Teams.
 
-**To install the app, do the following:**
+To install the app, do the following:
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 

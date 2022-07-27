@@ -33,7 +33,7 @@ This app contains generic regex expressions and thus may not perform well at ver
 
 This section provides instructions on how to install the Threat Intel Quick Analysis App, and examples of each of dashboards. The preconfigured searches and [Dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/22Security_and_Threat_Detection/Threat_Intel_Quick_Analysis/01Threat-Intel-Quick-Analysis-App-Dashboard#Dashboards) provide easy-to-access visual insights into your data.
 
-**To install the app:**
+To install the app:
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 

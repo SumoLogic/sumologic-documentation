@@ -138,7 +138,7 @@ This page provides instructions for installing the Keeper Security App, as well 
 
 Now that you have set up collection for Keeper, install the app to use the pre-configured searches and [dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/06Google/Google_Cloud_Audit/Install-the-Google-Cloud-Audit-App-and-view-the-Dashboards#Dashboards) that provide visibility into your environment for real-time analysis.
 
-**To install the app:**
+To install the app:
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 

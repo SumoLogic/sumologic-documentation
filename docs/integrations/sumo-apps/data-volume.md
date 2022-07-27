@@ -12,7 +12,7 @@ The Data Volume Index gathers volume data as soon as it is enabled. It will not 
 
 ## Install the Data Volume App
 
-**To install the app:**
+To install the app:
 
 1. From **App Catalog**, search for the **Data Volume** app.
 2. Click **Data Volume**.

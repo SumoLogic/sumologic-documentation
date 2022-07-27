@@ -296,7 +296,7 @@ This section provides instructions for installing the GKE - Control Plane App, a
 
 Now that you have set up collection for GKE, install the Sumo Logic App for GKE - Control Plane and access the pre-configured Kubernetes dashboards that provide visibility into your GKE environment.
 
-**To install the app, do the following:**
+To install the app, do the following:
 
 1. Locate and install the app from the App Catalog. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 2. From the App Catalog, search for “GKE” and select the app.

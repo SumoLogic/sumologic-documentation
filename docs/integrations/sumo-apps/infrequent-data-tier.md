@@ -98,7 +98,7 @@ Before you install the Infrequent Data Tier App, the Search Audit Index must be 
 
 Complete the following instructions to install the Sumo Logic Infrequent Data Tier App.
 
-**To install the app, do the following:**
+To install the app, do the following:
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 1. From the **App Catalog**, search for and select the app**.**

@@ -101,7 +101,7 @@ If logs are not flowing into Sumo Logic, see [Troubleshooting](https://help.sumo
 
 Now that you have set up collection from the Azure Activity Log (previously known as Azure Audit logs), install the Azure Audit App to use the preconfigured searches and [Dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/04Microsoft-and-Azure/Azure_Audit/03_Azure-Audit-App-Dashboards#Dashboards) that provide insight into your data.
 
-**To install the app:**
+To install the app:
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 

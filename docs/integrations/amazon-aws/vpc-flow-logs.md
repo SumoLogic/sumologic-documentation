@@ -164,7 +164,7 @@ This section has instructions for collecting Amazon VPC Flow Logs using an AWS S
 
 Now that you have configured Amazon VPC Flow Logs, install the Sumo Logic App for Amazon VPC Flow Logs to take advantage of the preconfigured searches and [dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/01Amazon_and_AWS/Amazon_VPC_Flow_Logs/Amazon-VPC-Flow-Logs-App-Dashboards#Dashboards) to analyze your data.
 
-**To install the app:**
+To install the app:
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 

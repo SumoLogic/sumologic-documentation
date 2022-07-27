@@ -221,7 +221,7 @@ Send System Events to confirm communication with Sumo Logic. There may be a 5-10
 
 This page provides instructions on how to install the Trend Micro Deep Security App, and examples of each of the dashboards. The App reconfigured searches and [Dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/22Security_and_Threat_Detection/Trend_Micro_Deep_Security/Trend-Micro-Deep-Security-App-Dashboards#Dashboards) that provide easy-to-access visual insights into your data.
 
-**To install the app:**
+To install the app:
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 

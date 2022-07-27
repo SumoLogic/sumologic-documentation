@@ -76,7 +76,7 @@ See [Suggested Searches for Linux OS](https://help.sumologic.com/07Sumo-Logic-Ap
 
 Now that you have set up collection for Linux, install the Sumo Logic App for Linux to use the preconfigured searches and [dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/14Hosts_and_Operating_Systems/Linux/Linux-App-Dashboards#Dashboards) to analyze your data.
 
-**To install the app:**
+To install the app:
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 

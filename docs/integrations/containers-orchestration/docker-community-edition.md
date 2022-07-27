@@ -270,7 +270,7 @@ _sourceCategory=docker  ("\"status\":\"create\"" or "\"status\":\"start\"")  id 
 
 The Sumo App for Docker provides operational insight into your Docker containers. The app includes [Dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/10Containers_and_Orchestration/Docker_Apps/Docker/Docker-App-Dashboards#Dashboards) that allow you to view your container performance statistics for CPU, memory, and the network. It also provides visibility into container events such as start, stop, and other important commands.  
 
-**To install the app:**
+To install the app:
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 

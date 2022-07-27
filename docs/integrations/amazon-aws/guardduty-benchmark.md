@@ -17,15 +17,13 @@ Global Intelligence baselines are computed by aggregating data for a given custo
 
 The App includes pre-configured dashboards and searches with visual displays for global threat baselines and real-time threat detection across your AWS environment, including threat sources and targets by geographic locations.
 
-
-## Configuring Log Collection
-
-### Log Types
+## Log Types
 
 The Sumo Logic App for GuardDuty requires the Amazon GuardDuty findings to be sent through the Amazon CloudWatch Events. For more details on [GuardDuty findings](https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings.html).
 
 If you have already Amazon GuardDuty data flowing into Sumo Logic, you can skip the steps in this section and install the Amazon GuardDuty Benchmark App from the Sumo Logic App Catalog.
 
+## Configuring Log Collection
 
 ### Process overview
 

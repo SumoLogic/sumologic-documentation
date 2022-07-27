@@ -10,26 +10,11 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 This feature is available in the following account plans.
 
-<table>
-  <tr>
-   <td>Account Type
-   </td>
-   <td>Account Level
-   </td>
-  </tr>
-  <tr>
-   <td>Cloud Flex
-   </td>
-   <td>Trial, Enterprise
-   </td>
-  </tr>
-  <tr>
-   <td>Cloud Flex Credits
-   </td>
-   <td>Trial, Enterprise Suite, Enterprise Security
-   </td>
-  </tr>
-</table>
+| Account Type | Account level
+| :---- | :----
+|  Cloud Flex  |  Trial, Enterprise
+| Cloud Flex Credits | Trial, Enterprise Suite, Enterprise Security
+
 
 The Global Intelligence for AWS CloudTrail App enables you to detect potentially malicious configuration changes in your AWS account by comparing [AWS CloudTrail](https://aws.amazon.com/cloudtrail/) events in your account against a cohort of AWS customers. CloudTrail events are curated from AWS penetration tests and operational best practices.
 

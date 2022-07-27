@@ -171,7 +171,7 @@ This page provides instructions for installing the Windows Performance App, alon
 
 Now that you have set up collection, install the Windows Performance App to use the preconfigured searches and [Dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/04Microsoft-and-Azure/Windows_Performance/Windows-Performance-App-Dashboards#Dashboards) that provide insight into your data.
 
-**To install the app:**
+To install the app:
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 

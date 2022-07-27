@@ -434,7 +434,7 @@ _sourceCategory = Labs/artifactory/*
 
 Now that you have set up collection, install the Sumo Logic App for Artifactory to use the pre-configured searches and [Dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/08App_Development/Artifactory/Artifactory-App-Dashboards#Dashboard) that provide insight into your data.
 
-**To install the app:**
+To install the app:
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 

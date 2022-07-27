@@ -149,7 +149,7 @@ Scope (Specific Data): account=* eventname eventsource \"sns.amazonaws.com\"
 
 Now that you have set up collection for Amazon SNS, install the Sumo Logic App to use the pre-configured searches and [dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/01Amazon_and_AWS/Amazon_SNS/Install-the-Amazon-SNS-App-and-view-the-Dashboards#Dashboards) that provide visibility into your environment for real-time analysis of overall usage.
 
-**To install the app:**
+To install the app:
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 

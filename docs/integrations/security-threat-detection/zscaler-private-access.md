@@ -197,7 +197,7 @@ This page has instructions for installing the Sumo App for Zscaler Private Acces
 
 Now that you have set up collection for HAProxy, you can install the HAProxy App to use the pre-configured searches and dashboard that provide insight into your data.
 
-**To install the App, do the following:**
+To install the app, do the following:
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 

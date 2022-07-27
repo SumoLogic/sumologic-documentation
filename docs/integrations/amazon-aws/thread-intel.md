@@ -39,7 +39,7 @@ The Sumo Logic Threat Intel lookup database is only available with Sumo Logic En
 
 Now that you have set up collection, install the Sumo Logic App for Threat Intel for AWS to use the preconfigured searches and [Dashboards](/docs/integrations/amazon-aws/threat-intel#viewing-threat-intel-dashboards) that provide insight into your data.
 
-**To install the app, do the following:**
+To install the app, do the following:
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 

@@ -72,7 +72,7 @@ _sourceCategory=AWS/WAF {{client_ip}}
 
 Now that you have set up collection for AWS WAF, install the Sumo Logic App for AWS AWS to use the pre-configured searches and dashboards.
 
-**To install the app:**
+To install the app:
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 

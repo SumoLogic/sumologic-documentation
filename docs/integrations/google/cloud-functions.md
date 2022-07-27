@@ -199,7 +199,7 @@ This section provides instructions for installing the Google Cloud Functions App
 
 Now that you have set up collection for Google Cloud Functions, install the Sumo Logic App to access the pre-configured searches and [dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/06Google/Google_Cloud_Storage/Install_the_Google_Cloud_Storage_App_and_view_the_Dashboards#Dashboards).
 
-**To install the app:**
+To install the app:
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 

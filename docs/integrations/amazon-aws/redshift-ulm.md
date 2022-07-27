@@ -161,7 +161,7 @@ dir="ltr">_sourceCategory=*/AWS/Redshift/Audit LOG
 
 Now that you have configured log and metric collection, install the Sumo Logic App for Amazon Redshift to take advantage of the pre-configured searches and [Dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/Akamai_Cloud_Monitor/Akamai-Cloud-Monitor-App-Dashboards#Dashboards).
 
-**To install the app:**
+To install the app:
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 

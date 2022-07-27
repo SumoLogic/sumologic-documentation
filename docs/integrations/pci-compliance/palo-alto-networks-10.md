@@ -171,7 +171,7 @@ Now that you have set up collection for PCI for Palo Alto Networks 10 app, you c
 11.png "image_tooltip")
 This app supports PAN-OS v10.
 
-**To install the app:**
+To install the app:
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 

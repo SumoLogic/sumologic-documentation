@@ -10,26 +10,10 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 This feature is available in the following account plans.
 
-<table>
-  <tr>
-   <td>Account Type
-   </td>
-   <td>Account Level
-   </td>
-  </tr>
-  <tr>
-   <td>CloudFlex
-   </td>
-   <td>Trial, Enterprise
-   </td>
-  </tr>
-  <tr>
-   <td>Credits
-   </td>
-   <td>Trial, Enterprise Operations, Enterprise Security, Enterprise Suite
-   </td>
-  </tr>
-</table>
+| Account Type | Account Level
+| :---- | :----
+|  Cloud Flex  |  Trial, Enterprise
+| Cloud Flex Credits | Trial, Enterprise Operations, Enterprise Security, Enterprise Suite
 
 Our new app install flow is now in Beta. It is only enabled for certain customers while we gather Beta customer feedback. If you can see the Add Integration button, follow the "Before you begin" section in the "Collect Logs" help page and then use the in-product instructions in Sumo Logic to set up the app.
 
@@ -98,13 +82,36 @@ To configure log collection for Global Intelligence for AWS CloudTrail, follow t
 
 
 ```json
-{"eventVersion":"1.05","userIdentity":{"type":"IAMUser","principalId":"AIDAJK3NPEULWYAYYL73U",
-"arn":"arn:aws:iam::224064240813:user/username","accountId":"224064240808","userName":"acme@acme.com"},"eventTime":"2020-01-11 00:42:12+0000",
-"eventSource":"signin.amazonaws.com","eventName":"ConsoleLogin","awsRegion":"us-west-2","sourceIPAddress":"115.13.72.133","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_1)
- AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36","requestParameters":null,"responseElements":{"ConsoleLogin":"Success"},
-"additionalEventData":{"LoginTo":"https://us-west-2.console.aws.amazon.com/ecs/home?region=us-west-2&
+{
+	"eventVersion":"1.05",
+	"userIdentity":{
+		"type":"IAMUser",
+		"principalId":"AIDAJK3NPEULWYAYYL73U",
+		"arn":"arn:aws:iam::224064240813:user/username",
+		"accountId":"224064240808",
+		"userName":"acme@acme.com"
+	},
+	"eventTime":"2020-01-11 00:42:12+0000",
+	"eventSource":"signin.amazonaws.com",
+	"eventName":"ConsoleLogin",
+	"awsRegion":"us-west-2",
+	"sourceIPAddress":"115.13.72.133",
+	"userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_1)
+ AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36",
+	"requestParameters":null,
+	"responseElements":{
+		"ConsoleLogin":"Success"
+	},
+	"additionalEventData":{
+		"LoginTo":"https://us-west-2.console.aws.amazon.com/ecs/home?region=us-west-2&
 state=hashArgs%23%2Frepositories%2Ftravellogic%3Aproducts&isauthcode=true",
-"MobileVersion":"No","MFAUsed":"Yes"},"eventID":"8fd88195-8576-49ad-9e14-8330cb492604","eventType":"AwsConsoleSignIn","recipientAccountId":"224064240808"}
+		"MobileVersion":"No",
+		"MFAUsed":"Yes"
+	},
+	"eventID":"8fd88195-8576-49ad-9e14-8330cb492604",
+	"eventType":"AwsConsoleSignIn",
+	"recipientAccountId":"224064240808"
+}
 ```
 
 
