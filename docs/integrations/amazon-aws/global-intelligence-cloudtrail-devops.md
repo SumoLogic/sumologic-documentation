@@ -8,31 +8,6 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/amazon-aws/gi-devops.png')} alt="DB icon" width="75"/>
 
-This feature is available in the following account plans.
-
-<table>
-  <tr>
-   <td>Account Type
-   </td>
-   <td>Account Level
-   </td>
-  </tr>
-  <tr>
-   <td>CloudFlex
-   </td>
-   <td>Trial, Enterprise
-   </td>
-  </tr>
-  <tr>
-   <td>Credits
-   </td>
-   <td>Trial, Enterprise Operations, Enterprise Security, Enterprise Suite
-   </td>
-  </tr>
-</table>
-
-Our new app install flow is now in Beta. It is only enabled for certain customers while we gather Beta customer feedback. If you can see the Add Integration button, follow the "Before you begin" section in the "Collect Logs" help page and then use the in-product instructions in Sumo Logic to set up the app.
-
 Global Intelligence for AWS CloudTrail - DevOps provides insights for on-call engineers, infrastructure engineers, and DevOps users accelerate root cause analysis for incidents by providing error rate and configuration insights benchmarked from Sumo Logic’s AWS customers for nine AWS services:
 * Amazon EC2
 * Amazon S3
@@ -61,6 +36,19 @@ In addition, the app provides configuration guidance for key AWS services based 
 * For throttling-related root causes for some services like AWS Lambda and AWS DynamoDB, such guidance can help users right-size their apps based on common configuration settings.
 * An action plan helps users focus their attention on specific microservices in particular AWS accounts that might be experiencing errors.
 
+## What You'll Need
+
+<p><span className="globalIntelligence">Global Intelligence App</span></p>
+
+
+This feature is available in the following account plans.
+
+| Account Type | AccountLevel |  
+|:---------|:-------|
+| CloudFlex  | Trial, Enterprise  |   
+| Credits    | Trial, Enterprise Operations, Enterprise Security, Enterprise Suite |   
+
+Our new app install flow is now in Beta. It is only enabled for certain customers while we gather Beta customer feedback. If you can see the Add Integration button, follow the "Before you begin" section in the "Collect Logs" help page and then use the in-product instructions in Sumo Logic to set up the app.
 
 ## Collect Logs for the Global Intelligence for AWS CloudTrail DevOps App
 

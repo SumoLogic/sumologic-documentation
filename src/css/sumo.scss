@@ -1232,6 +1232,19 @@ html[data-theme='dark'] .featureImage {
 }
 
 
+// Sumo badges
+
+.globalIntelligence {
+  background: #940665;
+  color: var(--ds-gray-100);
+  font-weight: 750;
+  font-size: 14px;
+  padding: 0.2rem;
+  border-radius: 4px;
+}
+
+
+
 //search
 .DocSearch .DocSearch-Hit[aria-selected='true'] a {
   background-color: var(--ifm-hover-overlay);
