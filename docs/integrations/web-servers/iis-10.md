@@ -564,7 +564,7 @@ There are limits to how many alerts can be enabled - see the [Alerts FAQ](https:
 
 This section demonstrates how to install the IIS App and assumes you have already set up the collection as described in [Collect Logs and Metrics for the IIS](#collecting-logs-and-metrics-for-the-iis-app).
 
-**To install the app:**
+To install the app:
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 

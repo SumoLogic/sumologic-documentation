@@ -7,6 +7,8 @@ description: The Sumo Logic App for Google App Engine helps you monitor the acti
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
+<img src={useBaseUrl('img/integrations/google/appengine.png')} alt="thumbnail icon" width="50"/>
+
 Google App Engine is a platform to build web and mobile apps that scale automatically. The Sumo Logic App for Google App Engine helps you monitor the activities in your App Engine. The pre-configured dashboards provide insight into the requests, applications, HTTP status codes, latency, and response time in your App Engine.
 
 ## Collect Logs for the Google App Engine App

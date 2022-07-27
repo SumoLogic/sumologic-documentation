@@ -1,7 +1,8 @@
 ---
 id: global-intelligence-cloudtrail-secops
 title: Global Intelligence for AWS CloudTrail SecOps
-description: Global Intelligence for AWS CloudTrail SecOps
+sidebar_label: GI for AWS CloudTrail SecOps
+description: The Global Intelligence for AWS CloudTrail App enables you to detect potentially malicious configuration changes in your AWS account by comparing AWS CloudTrail events in your account against a cohort of AWS customers.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -10,26 +11,11 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 This feature is available in the following account plans.
 
-<table>
-  <tr>
-   <td>Account Type
-   </td>
-   <td>Account Level
-   </td>
-  </tr>
-  <tr>
-   <td>Cloud Flex
-   </td>
-   <td>Trial, Enterprise
-   </td>
-  </tr>
-  <tr>
-   <td>Cloud Flex Credits
-   </td>
-   <td>Trial, Enterprise Suite, Enterprise Security
-   </td>
-  </tr>
-</table>
+| Account Type | Account level
+| :---- | :----
+|  Cloud Flex  |  Trial, Enterprise
+| Cloud Flex Credits | Trial, Enterprise Suite, Enterprise Security
+
 
 The Global Intelligence for AWS CloudTrail App enables you to detect potentially malicious configuration changes in your AWS account by comparing [AWS CloudTrail](https://aws.amazon.com/cloudtrail/) events in your account against a cohort of AWS customers. CloudTrail events are curated from AWS penetration tests and operational best practices.
 
@@ -164,7 +150,7 @@ To install the app, do the following:
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
     2. **Data Source.** Select either of these options for the data source. 
         * Choose **Source Category**, and select a source category from the list. 
-        * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (_sourceCategory=MyCategory). 
+        * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). 
     3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
 3. Click **Add to Library**.
 

@@ -2,6 +2,7 @@
 id: docker-ulm
 title: Docker ULM
 sidebar_label: Docker ULM
+description: The Docker ULM App is a unified logs and metrics (ULM) app that utilizes data from Docker container logs, engine events, and container stats to monitor your Docker deployment.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

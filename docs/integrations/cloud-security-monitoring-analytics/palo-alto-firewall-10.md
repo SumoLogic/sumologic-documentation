@@ -2,6 +2,7 @@
 id: palo-alto-firewall-10
 title: Sumo Logic App for Palo Alto Firewall 10 Cloud Security Monitoring and Analytics
 sidebar_label: Palo Alto Firewall 10
+description: Introduction to Palo Alto Firewall - Cloud Security Monitoring and Analytics.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -152,7 +153,7 @@ Version selection is applicable only to a few apps currently. For more informati
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
     2. **Data Source.** Select either of these options for the data source. 
         * Choose **Source Category**, and select a source category from the list. 
-        * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (_sourceCategory=MyCategory). 
+        * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). 
     3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
 2. Click **Add to Library**.
 

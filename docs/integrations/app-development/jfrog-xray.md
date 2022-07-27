@@ -2,6 +2,7 @@
 id: jfrog-xray
 title: Sumo Logic App for JFrog Xray
 sidebar_label: JFrog Xray
+description: Page notifications Off Share The JFrog Xray app provides visibility into the state of artifacts and components in your JFrog Artifactory repository.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -411,7 +412,7 @@ _sourceCategory = Labs/jfrog/xray
 
 This section has instructions for installing the JFrog Xray app.
 
-**To install the app, do the following:**
+To install the app, do the following:
 
 
 

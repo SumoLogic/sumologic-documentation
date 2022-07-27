@@ -2,6 +2,7 @@
 id: zoom
 title: Sumo Logic App for Zoom
 sidebar_label: Zoom
+description: The Sumo Logic App for Zoom provides visibility into how Zoom is being used across your organization, displaying analytics on performance, availability, security, and user activity.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -156,7 +157,7 @@ This page provides instructions for installing the Zoom App, as well as descript
 
 Now that you have set up collection for the Zoom events, install the Sumo Logic App for Zoom to use the pre-configured dashboards that provide visibility into your environment.
 
-**To install the app, do the following:**
+To install the app, do the following:
 
 
 
@@ -166,7 +167,7 @@ Now that you have set up collection for the Zoom events, install the Sumo Logic 
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
     2. **Data Source.** Select either of these options for the data source. 
         * Choose **Source Category**, and select the source category associated with the Hosted Collector you configured earlier.
-        * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (_sourceCategory=MyCategory). 
+        * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). 
     3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
 4. Click **Add to Library**.
 

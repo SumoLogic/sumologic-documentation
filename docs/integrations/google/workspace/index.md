@@ -2,8 +2,12 @@
 slug: integrations/google/workspace
 title: Google Workspace
 sidebar_label: Workspace
-description: tk
+description: The Google Workspace App allows you to monitor and analyze activities across all Google Workspace applications from a single location.
 ---
+
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src={useBaseUrl('img/integrations/google/workspace.jpeg')} alt="thumbnail icon" width="150"/>
 
 The Google Workspace App allows you to monitor and analyze activities across all Google Workspace applications from a single location. Comprehensive dashboards display information on administrative and user activities, Google Drive usage, and logins.
 

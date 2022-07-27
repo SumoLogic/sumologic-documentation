@@ -2,7 +2,7 @@
 id: threat-intel-quick-analysis
 title: Threat Intel Quick Analysis
 sidebar_label: Threat Intel Quick Analysis
-description: The Threat Intel Quick Analysis App correlates CrowdStrike's threat intelligence data with your own log data, providing security analytics that helps you to detect threats in your environment, while also protecting against sophisticated and persistent cyber-attacks. The Threat Intel Quick Analysis App scans selected logs for threats based on IP, URL, domain, Hash 256, and email.
+description: The Threat Intel Quick Analysis App correlates CrowdStrike's threat intelligence data with your own log data, providing security analytics that helps you to detect threats in your environment, while also protecting against sophisticated and persistent cyber-attacks. 
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -33,7 +33,7 @@ This app contains generic regex expressions and thus may not perform well at ver
 
 This section provides instructions on how to install the Threat Intel Quick Analysis App, and examples of each of dashboards. The preconfigured searches and [Dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/22Security_and_Threat_Detection/Threat_Intel_Quick_Analysis/01Threat-Intel-Quick-Analysis-App-Dashboard#Dashboards) provide easy-to-access visual insights into your data.
 
-**To install the app:**
+To install the app:
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
@@ -51,7 +51,7 @@ Version selection is applicable only to a few apps currently. For more informati
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
     2. **Data Source.** Select either of these options for the data source. 
         * Choose **Source Category**, and select a source category from the list. 
-        * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (_sourceCategory=MyCategory). 
+        * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). 
     3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
 2. Click **Add to Library**.
 

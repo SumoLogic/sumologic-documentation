@@ -2,7 +2,7 @@
 id: sns
 title: Sumo Logic App for Amazon SNS
 sidebar_label: Amazon SNS
-description: Amazon SNS
+description: The Sumo Logic App for Amazon SNS is a unified logs and metrics (ULM) App that provides insights into the operations and utilization of your SNS service. The preconfigured dashboards help you monitor the key metrics by application, platform, region, and topic name, view the SNS events for activities, and help you plan the capacity of your SNS service.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -13,17 +13,71 @@ Amazon Simple Notification Service (SNS) is a pub/sub messaging and mobile notif
 
 The Sumo Logic App for Amazon SNS is a unified logs and metrics (ULM) App that provides insights into the operations and utilization of your SNS service. The preconfigured dashboards help you monitor the key metrics by application, platform, region, and topic name, view the SNS events for activities, and help you plan the capacity of your SNS service.
 
+## Log and Metrics Types
+The Sumo Logic App for Amazon SNS uses:
+* SNS CloudWatch Metrics. For details, see [here](http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/sns-metricscollected.html). 
+* SNS operations using AWS CloudTrail. For details, see [here](http://docs.aws.amazon.com/sns/latest/dg/logging-using-cloudtrail.html). 
+
+### Sample Log Message
+
+```
+{
+eventVersion:"1.08",
+userIdentity:
+{...},
+eventTime:"2022-07-14T23:06:43Z",
+eventSource:"sns.amazonaws.com",
+eventName:"ListTagsForResource",
+awsRegion:"us-east-1",
+sourceIPAddress:"config.amazonaws.com",
+userAgent:"config.amazonaws.com",
+requestParameters:
+{
+resourceArn:"arn:aws:sns:us-east-1:956882708938:testnull-SumoCWEmailSNSTopic-1NV3GQ8XZ4DFY"
+},
+responseElements:null,
+requestID:"d8eee5b8-a894-5db4-994c-bef20b57fc0b",
+eventID:"2156cf7f-f18d-47f4-b7ba-7b8a6907390a",
+readOnly:true,
+eventType:"AwsApiCall",
+managementEvent:true,
+recipientAccountId:"956882708938",
+eventCategory:"Management"
+}
+```
+
+### Sample Queries
+
+```sql title="Events By Status"
+account={{account}} region={{region}} namespace={{namespace}} "\"eventsource\":\"sns.amazonaws.com\""
+| json "userIdentity", "eventSource", "eventName", "awsRegion", "sourceIPAddress", "userAgent", "eventType", "recipientAccountId", "requestParameters", "responseElements", "requestID", "errorCode", "errorMessage" as userIdentity, event_source, event_name, region, src_ip, user_agent, event_type, recipient_account_id, requestParameters, responseElements, request_id, error_code, error_message nodrop
+| where event_source = "sns.amazonaws.com"
+| json field=userIdentity "accountId", "type", "arn", "userName"  as accountid, type, arn, username nodrop
+| parse field=arn ":assumed-role/*" as user nodrop
+| parse field=arn "arn:aws:iam::*:*" as accountid, user nodrop
+| json field=requestParameters "topicArn", "name", "resourceArn", "subscriptionArn" as req_topic_arn, req_topic_name, resource_arn, subscription_arn  nodrop | json field=responseElements "topicArn" as res_topic_arn nodrop
+| if (isBlank(req_topic_arn), res_topic_arn, req_topic_arn) as topic_arn
+| if (isBlank(topic_arn), resource_arn, topic_arn) as topic_arn
+| parse field=topic_arn "arn:aws:sns:*:*:*" as region_temp, accountid_temp, topic_arn_name_temp nodrop
+| parse field=subscription_arn "arn:aws:sns:*:*:*:*" as region_temp, accountid_temp, topic_arn_name_temp, arn_value_temp nodrop
+| if (isBlank(req_topic_name), topic_arn_name_temp, req_topic_name) as topicname
+| if (isBlank(accountid), recipient_account_id, accountid) as accountid
+| where (tolowercase(topicname) matches tolowercase("{{topicname}}")) or isBlank(topicname)
+| if (isEmpty(error_code), "Success", "Failure") as event_status
+| if (isEmpty(username), user, username) as user
+| count by event_status
+| sort by _count, event_status asc
+```
+
+```sql title="Messages Published (Metrics-based)"
+account={{account}} region={{region}} namespace={{namespace}} TopicName={{topicname}} metric=NumberOfMessagesPublished Statistic=Sum | sum
+```
 
 
 ## Collecting Logs and Metrics for the Amazon SNS App
 
-### Log and Metrics Types
-The App uses SNS logs and metrics:
-* SNS CloudWatch Metrics. For details, see here. 
-* SNS operations using AWS CloudTrail. For details, see here. 
 
-
-### Collect Metrics for Amazon SNS  
+### Collecting Metrics for Amazon SNS  
 
 1. Configure a [Hosted Collector](https://help.sumologic.com/03Send-Data/Hosted-Collectors/Configure-a-Hosted-Collector).
 2. Configure an [Amazon CloudWatch Source for Metrics](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/Amazon-CloudWatch-Source-for-Metrics) or [AWS Kinesis Firehose for Metrics Source](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/AWS_Kinesis_Firehose_for_Metrics_Source) (Recommended).
@@ -32,30 +86,29 @@ The App uses SNS logs and metrics:
 3. Click **Save**.
 
 
-### Collect Amazon SNS Events using CloudTrail
-
+### Collecting Amazon SNS Events using CloudTrail
 
 1. To your Hosted Collector, add an [AWS CloudTrail Source](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/AWS-CloudTrail-Source).
-    1. **Name**. Enter a name to display for the new Source.
-    2. **Description**. Enter an optional description.
-    3. **S3 Region**. Select the Amazon Region for your SNS S3 bucket.
-    4. **Bucket Name**. Enter the exact name of your SNS S3 bucket.
-    5. **Path Expression**. Enter the string that matches the S3 objects you'd like to collect. You can use a wildcard (*) in this string. (DO NOT use a leading forward slash. See [Amazon Path Expressions](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/Amazon-Path-Expressions).)
-
-The S3 bucket name is not part of the path. Don’t include the bucket name when you are setting the Path Expression.
-    6. **Source Category**. Enter a source category. For example, SNS_event.
-    7. **Access Key ID and Secret Access Key**. Enter your Amazon [Access Key ID and Secret Access Key](http://docs.aws.amazon.com/general/latest/gr/managing-aws-access-keys.html).
-    8. **Scan Interval**. Use the default of 5 minutes. Alternately, enter the frequency Sumo Logic will scan your S3 bucket for new data.
-    9. **Enable Timestamp Parsing**. Select the check box.
-    10. **Time Zone**. Select Ignore time zone from log file and instead use, and select UTC.
-    11. **Timestamp Format**. Select Automatically detect the format.
-    12. **Enable Multiline Processing**. Select the check box, and select Infer Boundaries.
+    * **Name**. Enter a name to display for the new Source.
+    * **Description**. Enter an optional description.
+    * **S3 Region**. Select the Amazon Region for your SNS S3 bucket.
+    * **Bucket Name**. Enter the exact name of your SNS S3 bucket.
+    * **Path Expression**. Enter the string that matches the S3 objects you'd like to collect. You can use a wildcard (*) in this string.
+      * DO NOT use a [leading forward slash](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/Amazon-Path-Expressions).
+      * The S3 bucket name is not part of the path. Don’t include the bucket name when you are setting the Path Expression.
+    * **Source Category**. Enter a source category. For example, SNS_event.
+    * **Access Key ID and Secret Access Key**. Enter your Amazon [Access Key ID and Secret Access Key](http://docs.aws.amazon.com/general/latest/gr/managing-aws-access-keys.html).
+    * **Scan Interval**. Use the default of 5 minutes. Alternately, enter the frequency Sumo Logic will scan your S3 bucket for new data.
+    * **Enable Timestamp Parsing**. Select the check box.
+    * **Time Zone**. Select Ignore time zone from log file and instead use, and select UTC.
+    * **Timestamp Format**. Select Automatically detect the format.
+    * **Enable Multiline Processing**. Select the check box, and select Infer Boundaries.
 2. Click **Save**.
 
 
 ### Field in Field Schema
 
-Login to Sumo Logic,  goto Manage Data > Logs > Fields. Search for the “**topicname**” field. If not present, create it. Learn how to create and manage fields [here](https://help.sumologic.com/Manage/Fields#manage-fields).
+Login to Sumo Logic,  goto Manage Data > Logs > Fields. Search for the `"topicname"` field. If not present, create it. Learn how to create and manage fields [here](https://help.sumologic.com/Manage/Fields#manage-fields).
 
 
 ### Field Extraction Rule(s)
@@ -96,19 +149,19 @@ Scope (Specific Data): account=* eventname eventsource \"sns.amazonaws.com\"
 
 Now that you have set up collection for Amazon SNS, install the Sumo Logic App to use the pre-configured searches and [dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/01Amazon_and_AWS/Amazon_SNS/Install-the-Amazon-SNS-App-and-view-the-Dashboards#Dashboards) that provide visibility into your environment for real-time analysis of overall usage.
 
-**To install the app:**
+To install the app:
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
 1. From the **App Catalog**, search for and select the app**.**
 2. To install the app, click **Add to Library** and complete the following fields.
-    1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
-    2. Enter the **SNS Metrics Source**.
-    3. Select either of these options for the **SNS CloudTrail Log Source**.
+    * **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
+    * Enter the **SNS Metrics Source**.
+    * Select either of these options for the **SNS CloudTrail Log Source**.
         * Choose **Source Category**, and select a source category from the list. 
-        * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (_sourceCategory=MyCategory). 
-    4. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-    5. Click **Add to Library**.
+        * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). 
+    * **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
+3. Click **Add to Library**.
 
 Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization. See [Welcome to the New Library](https://help.sumologic.com/01Start-Here/Welcome-to-the-New-Library) for information on working with the library in the new UI.
 

@@ -2,6 +2,7 @@
 id: jira
 title: Sumo Logic App for Jira
 sidebar_label: Jira
+description: The Sumo Logic App for Jira provides insight into Jira user access, request activity, issues, security, sprint events, and user events.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -157,7 +158,7 @@ Now that you have set up collection for Jira, install the Jira app to use the pr
 
 The Jira App supports Jira Server. For Jira Cloud, please see documentation for the [Jira Cloud App](https://help.sumologic.com/07Sumo-Logic-Apps/08App_Development/Jira_Cloud).
 
-**To install the app, do the following:**
+To install the app, do the following:
 
 
 

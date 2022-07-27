@@ -2,7 +2,7 @@
 id: elastic-load-balancing-classic
 title: AWS Elastic Load Balancing - Classic
 sidebar_label: AWS Elastic Load Balancing - Classic
-description: AWS Elastic Load Balancing - Classic
+description: Distributes incoming application traffic across multiple Amazon EC2 instances in the AWS Cloud.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -17,7 +17,7 @@ For information on collecting unified logs and metrics for AWS Elastic Load Bala
 If you are just beginning with AWS ELB, for background see the Sumo Logic DevOps blog, "AWS Elastic Load Balancing: Load Balancer Best Practices."
 
 
-## Collect Logs for the AWS Elastic Load Balancing- Classic App
+## Collect Logs for the AWS Elastic Load Balancing - Classic App
 
 This procedure documents how to enable access to your Amazon Web Services (AWS) Elastic Load Balancing (ELB) logs and ingest them into Sumo Logic.
 
@@ -275,7 +275,7 @@ _sourceCategory=elb*
 
 Now that you have set up collection for AWS ELB, install the Sumo Logic App for AWS Elastic Load Balancer - Classic to use the preconfigured searches and [dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/01Amazon_and_AWS/AWS_Elastic_Load_Balancing_-_Classic/AWS-Elastic-Load-Balancer---Classic-App-Dashboards#Dashboards) to analyze your data.
 
-**To install the app:**
+To install the app:
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
@@ -289,7 +289,7 @@ Version selection is applicable only to a few apps currently. For more informati
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
     2. **Data Source.** Select either of these options for the data source. 
         * Choose **Source Category**, and select a source category from the list. 
-        * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (_sourceCategory=MyCategory). 
+        * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). 
     3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
 2. Click **Add to Library**.
 

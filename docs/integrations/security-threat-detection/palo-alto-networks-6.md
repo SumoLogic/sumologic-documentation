@@ -114,7 +114,7 @@ _sourceCategory=palo_alto_network | parse "*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*
 
 Now that you have set up collection for Palo Alto Networks, install the Sumo Logic App for Palo Alto Networks to use the preconfigured searches and [dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/22Security_and_Threat_Detection/Palo_Alto_Networks_6/Palo-Alto-Networks-App-Dashboards#Dashboards) that provide insight into your data.
 
-**To install the app:**
+To install the app:
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 

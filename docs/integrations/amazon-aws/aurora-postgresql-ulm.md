@@ -2,7 +2,7 @@
 id: aurora-postgresql-ulm
 title: Amazon Aurora PostgreSQL ULM
 sidebar_label: Amazon Aurora PostgreSQL ULM
-description: Amazon Aurora PostgreSQL ULM
+description: The Sumo Logic App for Aurora PostgreSQL uses unified logs and metrics (ULM) to monitor your Aurora PostgreSQL database. Logs allow you to monitor database and user activity, incoming connections, query execution time, and errors. The metrics allow you to monitor database resource utilization and throughput performance.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -17,15 +17,16 @@ The Sumo Logic App for Aurora PostgreSQL ULM includes predefined searches and da
 Amazon Aurora PostgreSQL is a relational database service built for the cloud. For more information, see the [Amazon Aurora PostgreSQL](https://aws.amazon.com/rds/aurora/details/postgresql-details/)
 
 
-## Collecting Logs and Metrics for the App
+## Collecting Logs and Metrics for the Aurora PostgreSQL ULM App
 
 The **Aurora PostgreSQL ULM App** includes predefined searches and dashboards that allow you to monitor logs and metrics for your Aurora MySQL database. The logs enable you to monitor database activity, user activity, incoming connections, query execution time, and errors. The metrics allow you to monitor database resource utilization and throughput performance.
 
-This guide provides an overview of the Aurora PostgreSQL ULM App pre-defined queries and dashboards, as well as instructions for collecting logs and metrics from Aurora PostreSQL, and installing the App.
+This guide provides an overview of the Aurora PostgreSQL ULM App pre-defined queries and dashboards, as well as instructions for collecting logs and metrics from Aurora PostgreSQL, and installing the App.
 
-This page explains the logs and metrics collected from your Aurora PosgreSQL database, provides example queries and instructions for setting up log and metric collection.
+This section explains the logs and metrics collected from your Aurora PostgreSQL database, provides example queries and instructions for setting up log and metric collection.
 
-### Log and metric types
+
+### Log and Metric types
 The Sumo Logic App for Aurora PostgreSQL ULM uses the following logs and metrics:
 
 * [AWS Cloud Trail](https://aws.amazon.com/cloudtrail/features/)
@@ -95,7 +96,9 @@ The following metrics query is from the **Volume Write IOPS** panel of the **Met
 _sourceCategory=AWS/RDS/Metric Namespace=AWS/RDS  metric=VolumeWriteIOPs DBClusterIdentifier=* Statistic=Average | avg by DBClusterIdentifier
 ```
 
-### Configure log and metric collection
+
+
+### Configure Log and Metric Collection
 
 The Aurora PostgreSQL ULM App is used for monitoring CloudTrail event Logs and CloudWatch Metrics. Metrics allow you to monitor database resource utilization and throughput performance. CloudTrail events help you monitor use of Aurora services and operations by users.
 
@@ -150,7 +153,7 @@ To collect Aurora CloudWatch metrics, do the following:
 Now that you have set up log and metric collection for Amazon Aurora PostgreSQL, you can install the Sumo Logic App for Aurora PostgreSQL ULM, and use its pre-configured searches and [dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/01Amazon_and_AWS/Amazon_RDS/Amazon-RDS-Metrics-App-Dashboards#Dashboards).
 
 
-**To install the app, do the following:**
+To install the app, do the following:
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
@@ -163,7 +166,7 @@ Version selection is applicable only to a few apps currently. For more informati
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
     2. **Data Source.** Select either of these options for the data source. 
         * Choose **Source Category**, and select a source category from the list. 
-        * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (_sourceCategory=MyCategory). 
+        * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). 
     3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
 2. Click **Add to Library**.
 

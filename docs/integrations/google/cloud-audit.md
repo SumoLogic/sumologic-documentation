@@ -2,10 +2,12 @@
 id: cloud-audit
 title: Sumo Logic App for Google Cloud Audit
 sidebar_label: Cloud Audit
-description: tk
+description: The Google Cloud Audit App helps you monitor the activities in your Google Cloud Platform projects. The preconfigured dashboards provide you insights into the network, security, operations, and users of your Google Cloud Platform projects.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src={useBaseUrl('img/integrations/google/cloudaudit.png')} alt="thumbnail icon" width="50"/>
 
 The Google Cloud Audit App helps you with audit and compliance by enabling you to monitor activities and track the actions of administrators in your Google Cloud Platform projects. The preconfigured dashboards provide insight into the network, security, operations, and users of your Google Cloud Platform projects.
 
@@ -239,7 +241,7 @@ This section provides instructions for installing the Google Cloud Audit App, as
 
 Now that you have set up collection for Google Cloud Audit, install the Sumo Logic App to use the pre-configured searches and [dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/06Google/Google_Cloud_Audit/Install-the-Google-Cloud-Audit-App-and-view-the-Dashboards#Dashboards) that provide visibility into your environment for real-time analysis of overall usage.
 
-**To install the app:**
+To install the app:
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
@@ -252,7 +254,7 @@ Version selection is applicable only to a few apps currently. For more informati
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
     2. **Data Source.** Select either of these options for the data source. 
         * Choose **Source Category**, and select a source category from the list. 
-        * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (_sourceCategory=MyCategory). 
+        * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). 
     3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
 2. Click **Add to Library**.
 

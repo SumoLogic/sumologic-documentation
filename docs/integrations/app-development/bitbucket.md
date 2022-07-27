@@ -2,6 +2,7 @@
 id: bitbucket
 title: Sumo Logic App for Bitbucket
 sidebar_label: Bitbucket
+description: The Sumo Logic App for Bitbucket provides insights into project management to more effectively plan the deployments. It helps you to understand the state of deployment, builds and the issues associated with it.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -256,7 +257,7 @@ This page provides instructions for installing the Bitbucket app, as well as off
 
 This section demonstrates how to install the Bitbucket App.
 
-**To install the app, do the following:**
+To install the app, do the following:
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 

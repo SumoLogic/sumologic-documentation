@@ -2,7 +2,7 @@
 id: guardduty-benchmark
 title: Sumo Logic App for Amazon GuardDuty Benchmark
 sidebar_label: Amazon GuardDuty Benchmark
-description: Amazon GuardDuty Benchmark
+description: The Sumo Logic Amazon GuardDuty Benchmark App integrates Global Intelligence Service (GIS) with Amazon GuardDuty for continuous machine learning and statistical baselines for KPIs (key performance indicators) and KRIs (key risk indicators).
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -17,15 +17,13 @@ Global Intelligence baselines are computed by aggregating data for a given custo
 
 The App includes pre-configured dashboards and searches with visual displays for global threat baselines and real-time threat detection across your AWS environment, including threat sources and targets by geographic locations.
 
-
-## Configuring Log Collection
-
-### Log Types
+## Log Types
 
 The Sumo Logic App for GuardDuty requires the Amazon GuardDuty findings to be sent through the Amazon CloudWatch Events. For more details on [GuardDuty findings](https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings.html).
 
 If you have already Amazon GuardDuty data flowing into Sumo Logic, you can skip the steps in this section and install the Amazon GuardDuty Benchmark App from the Sumo Logic App Catalog.
 
+## Configuring Log Collection
 
 ### Process overview
 
@@ -36,7 +34,6 @@ Sumo Logic provides a SAM application based on  [AWS Serverless Application Mode
 3. Installs the Sumo Logic GuardDuty Benchmark App.
 
 After completing this process, logs are ingested into Sumo Logic in the following way:
-
 1. Amazon GuardDuty sends notifications based on CloudWatch events when new findings, or new occurrences of existing findings, are generated.
 2. A CloudWatch events rule enables CloudWatch to send events for the GuardDuty findings to the Sumo CloudWatchEventFunction Lambda function.
 3. The Lambda function sends the events to an HTTP source on a Sumo Logic hosted collector.
@@ -68,23 +65,21 @@ To deploy the Sumo Logic GuardDuty Benchmark SAM App, do the following:
 1. Go to [https://serverlessrepo.aws.amazon.com/applications](https://serverlessrepo.aws.amazon.com/applications).
 2. Search for **sumologic-guardduty-benchmark** and click the app link when it appears.
 
-1. When the page for the Sumo app appears, click **Deploy**.
+3. When the page for the Sumo app appears, click **Deploy**.
 
-1. In **Configure application parameters** panel
-2. In **Configure application parameters** panel, enter the following parameters:
-    1. Access ID(Required): Sumo Logic Access ID generated from Step 1.
-    2. Access Key(Required): Sumo Logic Access Key generated from Step 1.
-    3. Deployment Name(Required): Deployment name (environment name in lower case as per [docs](https://help.sumologic.com/APIs/General-API-Information/Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security)).
-    4. Collector Name: Enter the name of the Hosted Collector which will be created in Sumo Logic.
-    5. Source Name: Enter the name of the HTTP Source which will be created within the collector.
-    6. Source Category Name: Enter the name of the Source Category which will be used for writing search queries.
-
-
-1. Click **Deploy**.
-2. When the deployment is successful, click **View CloudFormation Stack**.
+4. In **Configure application parameters** panel
+5. In **Configure application parameters** panel, enter the following parameters:
+    * Access ID (Required): Sumo Logic Access ID generated from Step 1.
+    * Access Key (Required): Sumo Logic Access Key generated from Step 1.
+    * Deployment Name(Required): Deployment name (environment name in lower case as per [docs](https://help.sumologic.com/APIs/General-API-Information/Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security)).
+    * Collector Name: Enter the name of the Hosted Collector which will be created in Sumo Logic.
+    * Source Name: Enter the name of the HTTP Source which will be created within the collector.
+    * Source Category Name: Enter the name of the Source Category which will be used for writing search queries.
+6. Click **Deploy**.
+7. When the deployment is successful, click **View CloudFormation Stack**.
 
 
-1. In the Outputs section, copy the app folder name to search your personal folder in the Sumo Logic console.
+8. In the Outputs section, copy the app folder name to search your personal folder in the Sumo Logic console.
 
 
 

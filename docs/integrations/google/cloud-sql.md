@@ -2,11 +2,13 @@
 id: cloud-sql
 title: Sumo Logic App for Google Cloud SQL
 sidebar_label: Cloud SQL
-description: tk
+description: The Sumo Logic app for Google Cloud SQL helps you monitor your usage of Google Cloud SQL. The preconfigured dashboards provide insight into created and deleted resources, messages, authorization failures, user activities, and error logs.
 ---
 
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src={useBaseUrl('img/integrations/google/sql.png')} alt="thumbnail icon" width="50"/>
 
 The Sumo Logic app for Google Cloud SQL helps you monitor your usage of Google Cloud SQL. The preconfigured dashboards provide insight into created and deleted resources, messages, authorization failures, user activities, and error logs.
 
@@ -201,7 +203,7 @@ _sourceCategory=*gcp* data "type":"cloudsql_database" methodName
 
 Now that you have set up the collection for Google Cloud SQL, install the Sumo Logic App Google Cloud SQL to use the pre-configured searches and [dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/01Amazon_and_AWS/Amazon_CloudFront/Amazon-CloudFront-App-Dashboards#Dashboards) that provide visibility into your environment for real-time analysis of overall usage.
 
-**To install the app:**
+To install the app:
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
@@ -215,7 +217,7 @@ Version selection is applicable only to a few apps currently. For more informati
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
     2. **Data Source.** Select either of these options for the data source. 
         * Choose **Source Category**, and select a source category from the list. 
-        * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (_sourceCategory=MyCategory). 
+        * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). 
     3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
 2. Click **Add to Library**.
 

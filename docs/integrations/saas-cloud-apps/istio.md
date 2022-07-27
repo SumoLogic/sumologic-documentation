@@ -2,6 +2,7 @@
 id: istio
 title: Sumo Logic App for Istio
 sidebar_label: Istio
+description: This Sumo Logic App for Istio  provides visibility into the health and performance of Istio and its control plane components, including Mixer, Galley, Citadel, Pilot and Envoy. 
 ---
 
 
@@ -341,7 +342,7 @@ This page provides instructions for installing the Istio App, as well as descrip
 
 Now that you have set up metric and log collection for Istio, install the Sumo Logic App for Istio and access the pre-configured dashboards that provide visibility into your Istio environment.
 
-**To install the app, do the following:**
+To install the app, do the following:
 
 Locate and install the app you need from the App Catalog. If you want to see a preview of the dashboards included with the app before installing, click Preview Dashboards.
 

@@ -1930,6 +1930,7 @@ module.exports = {
       collapsed: true,
       link: {type: 'doc', id: 'integrations/sumo-apps/index'},
       items: [
+        'integrations/sumo-apps/request-enterprise-apps',
         'integrations/sumo-apps/audit',
         'integrations/sumo-apps/data-volume',
         'integrations/sumo-apps/data-volume-legacy',
@@ -1937,7 +1938,6 @@ module.exports = {
         'integrations/sumo-apps/enterprise-search-audit',
         'integrations/sumo-apps/infrequent-data-tier',
         'integrations/sumo-apps/security-analytics',
-        'integrations/sumo-apps/request-enterprise-apps',
         ],
       },
       {

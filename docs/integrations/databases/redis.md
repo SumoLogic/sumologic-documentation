@@ -2,6 +2,7 @@
 id: redis
 title: Sumo Logic App for Redis
 sidebar_label: Redis
+description: The Sumo Logic App for Redis helps you monitor the state of the database cluster.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -789,7 +790,7 @@ If you haven’t enabled alerts and/or configured notifications via the Terrafor
 This section demonstrates how to install the Redis ULM App.
 
 
-###### **To install the app:**
+###### To install the app:
 34
 
 

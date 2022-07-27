@@ -2,7 +2,7 @@
 id: rds
 title: Sumo Logic App for Amazon RDS
 sidebar_label: Amazon RDS
-description: Amazon RDS
+description: The Sumo Logic App for Amazon RDS Metrics provides visibility into your Amazon Relational Database Service (RDS) Metrics collected via a CloudWatch Metrics Source.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -38,29 +38,25 @@ Namespace for **Amazon RDS** Service is **AWS/RDS**.
 ### Collect Amazon RDS CloudTrail Logs
 
 1. To your Hosted Collector, add an [AWS CloudTrail Source](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/AWS-CloudTrail-Source).
-    1. **Name**. Enter a name to display the new Source.
-    2. **Description**. Enter an optional description.
-    3. **S3 Region**. Select the Amazon Region for your **Amazon RDS** S3 bucket.
-    4. **Bucket Name**. Enter the exact name of your **Amazon RDS** S3 bucket.
-    5. **Path Expression**. Enter the string that matches the S3 objects you'd like to collect. You can use a wildcard (*) in this string. (DO NOT use a leading forward slash. See [Amazon Path Expressions](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/Amazon-Path-Expressions).)
-5
-The S3 bucket name is not part of the path. Don’t include the bucket name when you are setting the Path Expression
-    6. **Source Category**. Enter aws/observability/cloudtrail/logs
-    7. **Fields**. Add an **account** field and assign it a value that is a friendly name/alias to your AWS account from which you are collecting logs. This name will appear in the Sumo Logic Explorer View. Logs can be queried via the “account field”.
-6
-
-    8. **Access Key ID and Secret Access Key**. Enter your Amazon [Access Key ID and Secret Access Key](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSGettingStartedGuide/AWSCredentials.html). Learn how to use Role-based access to AWS [here](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/AWS_Sources)
-    9. **Log File Discovery -> Scan Interval**. Use the default of 5 minutes. Alternately, enter the frequency. Sumo Logic will scan your S3 bucket for new data. Learn how to configure **Log File Discovery** [here](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/AWS_Sources).
-    10. **Enable Timestamp Parsing**. Select the check box.
-    11. **Time Zone**. Select Ignore time zone from log file and instead use, and select UTC.
-    12. **Timestamp Format.** Select Automatically detect the format.
-    13. **Enable Multiline Processing**. Select the check box, and select Infer Boundaries.
+   * **Name**. Enter a name to display the new Source.
+   * **Description**. Enter an optional description.
+   * **S3 Region**. Select the Amazon Region for your **Amazon RDS** S3 bucket.
+   * **Bucket Name**. Enter the exact name of your **Amazon RDS** S3 bucket.
+   * **Path Expression**. Enter the string that matches the S3 objects you'd like to collect. You can use a wildcard (*) in this string. (DO NOT use a leading forward slash. See [Amazon Path Expressions](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/Amazon-Path-Expressions)). The S3 bucket name is not part of the path. Don’t include the bucket name when you are setting the Path Expression
+   * **Source Category**. Enter aws/observability/cloudtrail/logs
+   * **Fields**. Add an **account** field and assign it a value that is a friendly name/alias to your AWS account from which you are collecting logs. This name will appear in the Sumo Logic Explorer View. Logs can be queried via the “account field”.
+   * **Access Key ID and Secret Access Key**. Enter your Amazon [Access Key ID and Secret Access Key](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSGettingStartedGuide/AWSCredentials.html). Learn how to use Role-based access to AWS [here](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/AWS_Sources)
+   * **Log File Discovery -> Scan Interval**. Use the default of 5 minutes. Alternately, enter the frequency. Sumo Logic will scan your S3 bucket for new data. Learn how to configure **Log File Discovery** [here](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/AWS_Sources).
+   * **Enable Timestamp Parsing**. Select the check box.
+   * **Time Zone**. Select Ignore time zone from log file and instead use, and select UTC.
+   * **Timestamp Format.** Select Automatically detect the format.
+   * **Enable Multiline Processing**. Select the check box, and select Infer Boundaries.
 2. Click **Save**.
 
 
 ### Field in Field Schema
 
-Login to Sumo Logic, go to Manage Data > Logs > Fields. Search for the “**dbidentifier**” field. If not present, create it. Learn how to create and manage fields [here](https://help.sumologic.com/Manage/Fields#manage-fields).
+Login to Sumo Logic, go to **Manage Data** > **Logs** > **Fields**. Search for the “**dbidentifier**” field. If not present, create it. Learn how to create and manage fields [here](https://help.sumologic.com/Manage/Fields#manage-fields).
 
 
 ### Field Extraction Rule(s)
@@ -78,7 +74,7 @@ Scope (Specific Data): account=* eventname eventsource "rds.amazonaws.com"
 **Parse Expression**:
 
 
-```
+```sql
 | json "eventSource", "awsRegion", "requestParameters", "responseElements", "recipientAccountId" as eventSource, region, requestParameters, responseElements, accountid nodrop
 | where eventSource = "rds.amazonaws.com"
 | "aws/rds" as namespace
@@ -108,10 +104,10 @@ Scope (Specific Data): _sourceCategory=aws/observability/cloudtrail/logs
 
 **Parse Expression**:
 
-Enter a parse expression to create an “account” field that maps to the alias you set for each sub account. For example, if you used the “dev” alias for an AWS account with ID "528560886094" and the “prod” alias for an AWS account with ID "567680881046", your parse expression would look like:
+Enter a parse expression to create an “account” field that maps to the alias you set for each sub account. For example, if you used the `“dev”` alias for an AWS account with ID `"528560886094"` and the `“prod”` alias for an AWS account with ID `"567680881046"`, your parse expression would look like:
 
 
-```
+```sql
 | json "recipientAccountId"
 // Manually map your aws account id with the AWS account alias you setup earlier for individual child account
 | "" as account
@@ -149,30 +145,110 @@ Save it
 ### Sample Log Message
 
 ```json title="CloudTrail"
-{"eventVersion":"1.05","userIdentity":{"type":"IAMUser","principalId":"AIDABCDEFGH4QEWUABG5Q",
-"arn":"arn:aws:iam::951234567898:user/Nitin","accountId":"951234567898","accessKeyId":"ASIABCDEFGHFBOT4FDVK",
-"userName":"Nitin","sessionContext":{"attributes":{"mfaAuthenticated":"true","creationDate":
-"2018-10-28T08:16:35Z"}},"invokedBy":"signin.amazonaws.com"},"eventTime":"2018-10-28T08:55:37Z",
-"eventSource":"rds.amazonaws.com","eventName":"CreateDBCluster","awsRegion":"us-west-1","sourceIPAddress"
-:"140.144.120.190","userAgent":"signin.amazonaws.com","requestParameters":{"backupRetentionPeriod":1,
-"databaseName":"NitinSampleDB","dBClusterIdentifier":"auroramysql57dbcluster02-cluster","dBClusterParameterGroupName"
-:"default.aurora-mysql5.7","vpcSecurityGroupIds":["sg-0123454e5b1da3aff"],"dBSubnetGroupName":"default-vpc-b92fc5d7",
-"engine":"aurora-mysql","engineVersion":"5.7.12","port":3306,"masterUsername":"nitin","masterUserPassword":"****",
-"storageEncrypted":true,"enableCloudwatchLogsExports":["audit","error","general","slowquery"],"engineMode":
-"provisioned"},"responseElements":{"allocatedStorage":1,"availabilityZones":["us-west-1a","us-west-1b",
-"us-west-1c"],"backupRetentionPeriod":1,"databaseName":"NitinSampleDB","dBClusterIdentifier":
-"auroramysql57dbcluster02-cluster","dBClusterParameterGroup":"default.aurora-mysql5.7","dBSubnetGroup"
-:"default-vpc-b92fc5d7","status":"creating","endpoint":"auroramysql57dbcluster07-cluster.cluster-cp1svq2n34sd.us-west-1.rds.amazonaws.com",
-"readerEndpoint":"auroramysql57dbcluster07-cluster.cluster-ro-cp5svq2n34sd.us-west-1.rds.amazonaws.com",
-"multiAZ":false,"engine":"aurora-mysql","engineVersion":"5.7.12","port":3306,"masterUsername":"nitin",
-"preferredBackupWindow":"03:25-03:55","preferredMaintenanceWindow":"tue:03:58-tue:04:28","readReplicaIdentifiers":[],
-"dBClusterMembers":[],"vpcSecurityGroups":[{"vpcSecurityGroupId":"sg-012345e5b1da3aff","status":"active"}],
-"hostedZoneId":"Z2R2ITUGPM61AM","storageEncrypted":true,"kmsKeyId":"arn:aws:kms:us-west-1:951234567898:key/9a3d8016-4cdb-478f-a3a4-9a310fc25307",
-"dbClusterResourceId":"cluster-AVPSEUMFISOMMXXVGKL4GBUC2E","dBClusterArn":"arn:aws:rds:us-west-1:951234567898:cluster:auroramysql57dbcluster02-cluster",
-"associatedRoles":[],"iAMDatabaseAuthenticationEnabled":false,"clusterCreateTime":"Oct 28, 2018 8:55:35 AM","enabledCloudwatchLogsExports":["audit","error","general","slowquery"],"engineMode":
-"provisioned","deletionProtection":false},"requestID":"2cbb7974-b79c-4121-aed1-5ebe8f945b72",
-"eventID":"7e554be7-0a00-4f8f-9e56-a2d54519fff9","eventType":"AwsApiCall","recipientAccountId":
-"951234567898"}
+{
+	"eventVersion":"1.05",
+	"userIdentity":{
+		"type":"IAMUser",
+		"principalId":"AIDABCDEFGH4QEWUABG5Q",
+		"arn":"arn:aws:iam::951234567898:user/Nitin",
+		"accountId":"951234567898",
+		"accessKeyId":"ASIABCDEFGHFBOT4FDVK",
+		"userName":"Nitin",
+		"sessionContext":{
+			"attributes":{
+				"mfaAuthenticated":"true",
+				"creationDate":"2018-10-28T08:16:35Z"
+			}
+		},
+		"invokedBy":"signin.amazonaws.com"
+	},
+	"eventTime":"2018-10-28T08:55:37Z",
+	"eventSource":"rds.amazonaws.com",
+	"eventName":"CreateDBCluster",
+	"awsRegion":"us-west-1",
+	"sourceIPAddress":"140.144.120.190",
+	"userAgent":"signin.amazonaws.com",
+	"requestParameters":{
+		"backupRetentionPeriod":1,
+		"databaseName":"NitinSampleDB",
+		"dBClusterIdentifier":"auroramysql57dbcluster02-cluster",
+		"dBClusterParameterGroupName":"default.aurora-mysql5.7",
+		"vpcSecurityGroupIds":[
+			"sg-0123454e5b1da3aff"
+		],
+		"dBSubnetGroupName":"default-vpc-b92fc5d7",
+		"engine":"aurora-mysql",
+		"engineVersion":"5.7.12",
+		"port":3306,
+		"masterUsername":"nitin",
+		"masterUserPassword":"****",
+		"storageEncrypted":true,
+		"enableCloudwatchLogsExports":[
+			"audit",
+			"error",
+			"general",
+			"slowquery"
+		],
+		"engineMode":"provisioned"
+	},
+	"responseElements":{
+		"allocatedStorage":1,
+		"availabilityZones":[
+			"us-west-1a",
+			"us-west-1b",
+			"us-west-1c"
+		],
+		"backupRetentionPeriod":1,
+		"databaseName":"NitinSampleDB",
+		"dBClusterIdentifier":"auroramysql57dbcluster02-cluster",
+		"dBClusterParameterGroup":"default.aurora-mysql5.7",
+		"dBSubnetGroup":"default-vpc-b92fc5d7",
+		"status":"creating",
+		"endpoint":"auroramysql57dbcluster07-cluster.cluster-cp1svq2n34sd.us-west-1.rds.amazonaws.com",
+		"readerEndpoint":"auroramysql57dbcluster07-cluster.cluster-ro-cp5svq2n34sd.us-west-1.rds.amazonaws.com",
+		"multiAZ":false,
+		"engine":"aurora-mysql",
+		"engineVersion":"5.7.12",
+		"port":3306,
+		"masterUsername":"nitin",
+		"preferredBackupWindow":"03:25-03:55",
+		"preferredMaintenanceWindow":"tue:03:58-tue:04:28",
+		"readReplicaIdentifiers":[
+
+		],
+		"dBClusterMembers":[
+
+		],
+		"vpcSecurityGroups":[
+			{
+				"vpcSecurityGroupId":"sg-012345e5b1da3aff",
+				"status":"active"
+			}
+		],
+		"hostedZoneId":"Z2R2ITUGPM61AM",
+		"storageEncrypted":true,
+		"kmsKeyId":"arn:aws:kms:us-west-1:951234567898:key/9a3d8016-4cdb-478f-a3a4-9a310fc25307",
+		"dbClusterResourceId":"cluster-AVPSEUMFISOMMXXVGKL4GBUC2E",
+		"dBClusterArn":"arn:aws:rds:us-west-1:951234567898:cluster:auroramysql57dbcluster02-cluster",
+		"associatedRoles":[
+
+		],
+		"iAMDatabaseAuthenticationEnabled":false,
+		"clusterCreateTime":"Oct 28, 2018 8:55:35 AM",
+		"enabledCloudwatchLogsExports":[
+			"audit",
+			"error",
+			"general",
+			"slowquery"
+		],
+		"engineMode":"provisioned",
+		"deletionProtection":false
+	},
+	"requestID":"2cbb7974-b79c-4121-aed1-5ebe8f945b72",
+	"eventID":"7e554be7-0a00-4f8f-9e56-a2d54519fff9",
+	"eventType":"AwsApiCall",
+	"recipientAccountId":"951234567898"
+}
 ```
 
 
@@ -205,15 +281,15 @@ Namespace=aws/rds metric=DatabaseConnections statistic=average account=* region=
 
 Now that you have set up a collection for **Amazon RDS**, install the Sumo Logic App to use the pre-configured [dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/01Amazon_and_AWS/Amazon_SQS/Install-the-Amazon-SQS-App-and-view-the-Dashboards#Dashboards) that provide visibility into your environment for real-time analysis of overall usage.
 
-**To install the app:**
+To install the app:
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
 1. From the **App Catalog**, search for and select the app**.**
 2. To install the app, click **Add to Library** and complete the following fields.
-    1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
-    2. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-    3. Click **Add to Library**.
+   * **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
+   * **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
+   * Click **Add to Library**.
 
 Once an app is installed, it will appear in your **Personal** folder, or another folder that you specified. From here, you can share it with your organization.
 

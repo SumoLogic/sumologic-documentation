@@ -2,10 +2,12 @@
 id: kubernetes-engine
 title: Sumo Logic App for Google Kubernetes Engine
 sidebar_label: Kubernetes Engine (GKE)
-description: tk
+description: The Sumo Logic App for Google Kubernetes Engine (GKE) - Control Plane allows you to monitor resource-related logs and metrics for Kubernetes deployments, clusters, namespaces, pods, containers, and daemonsets. The app provides visibility into the GKE control plane with operat
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src={useBaseUrl('img/integrations/google/k8s.png')} alt="thumbnail icon" width="75"/>
 
 [Google Kubernetes Engine (GKE)](https://cloud.google.com/kubernetes-engine/) provides a managed environment where you can easily deploy, manage, and scale your container-based applications using the Google Cloud infrastructure.
 
@@ -294,7 +296,7 @@ This section provides instructions for installing the GKE - Control Plane App, a
 
 Now that you have set up collection for GKE, install the Sumo Logic App for GKE - Control Plane and access the pre-configured Kubernetes dashboards that provide visibility into your GKE environment.
 
-**To install the app, do the following:**
+To install the app, do the following:
 
 1. Locate and install the app from the App Catalog. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 2. From the App Catalog, search for “GKE” and select the app.
