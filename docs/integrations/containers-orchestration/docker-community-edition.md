@@ -53,7 +53,7 @@ The sections below provide instructions for installing a collector on a Docker h
 
 ### Step 1: Create access keys
 
-Follow the instructions in [Access Keys](https://help.sumologic.com/Manage/Security/Access-Keys) to create a Sumo access ID and key. You’ll need to supply them when you set up a collector on your Docker host in the following step.
+Follow the instructions in [Access Keys](/docs/manage/security/access-keys) to create a Sumo access ID and key. You’ll need to supply them when you set up a collector on your Docker host in the following step.
 
 
 ### Step 2: Install collector on each Docker host

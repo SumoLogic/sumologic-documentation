@@ -41,7 +41,7 @@ Please click on the appropriate links below based on the environment where your 
 
 ### For Kubernetes environments
 
-In a Kubernetes environment, we use the Telegraf Operator, which is packaged with our Kubernetes collection. You can learn more about it[ here](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Collect_Metrics_Using_Telegraf/01_Telegraf_Collection_Architecture).The diagram below illustrates how data is collected from Apache in Kubernetes environments. In the architecture shown below, there are four services that make up the metric collection pipeline: Telegraf, Prometheus, Fluentd and FluentBit.
+In Kubernetes environments, we use the Telegraf Operator, which is packaged with our Kubernetes collection. You can learn more about it[ here](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Collect_Metrics_Using_Telegraf/01_Telegraf_Collection_Architecture).The diagram below illustrates how data is collected from Apache in Kubernetes environments. In the architecture shown below, there are four services that make up the metric collection pipeline: Telegraf, Prometheus, Fluentd and FluentBit.
 
 The first service in the pipeline is Telegraf. Telegraf collects metrics from Apache. Note that we’re running Telegraf in each pod we want to collect metrics from as a sidecar deployment: i.e. Telegraf runs in the same pod as the containers it monitors. Telegraf uses the [Apache input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/apache) to obtain metrics. (For simplicity, the diagram doesn’t show the input plugins.) The injection of the Telegraf sidecar container is done by the Telegraf Operator. We also have Fluentbit that collects logs written to standard out and standard error and forwards them to FluentD, which in turn sends all the logs and metrics data to a Sumo Logic HTTP Source.
 
@@ -58,7 +58,7 @@ Follow the instructions below to set up the metric collection:
 
 **Prerequisites**
 
-* Please ensure that you are monitoring your Kubernetes clusters with the Telegraf operator. If you are not, then please follow [these instructions](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Collect_Metrics_Using_Telegraf/03_Install_Telegraf#Install_Telegraf_in_a_Kubernetes_environment) to do so.
+* Please ensure that you are monitoring your Kubernetes clusters with the Telegraf operator. If you are not, then please follow [these instructions](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf.md#Install_Telegraf_in_a_Kubernetes_environment) to do so.
 
 
 #### Step 1: Configure Metrics Collection
@@ -117,7 +117,7 @@ Here’s an explanation for additional values set by this configuration. **Do no
         * `component`: “webserver”: This value is used by Sumo Logic apps to identify application components.
         * `webserver_system`: “apache”: This value identifies the webserver system.
 
-For more information on other parameters and properties that you can configure in the Telegraf agent globally, see [Configuring_Telegraf](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Collect_Metrics_Using_Telegraf/03_Install_Telegraf#Configuring_Telegraf).
+For more information on other parameters and properties that you can configure in the Telegraf agent globally, see [Configuring_Telegraf](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#Configuring-Telegraf).
 
 For more information on configuring the Apache input plugin for Telegraf, see [this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/apache).
 
@@ -153,7 +153,7 @@ Here’s an explanation for additional values set by this configuration. **Do no
 * `component: “webserver”`: This value is used by Sumo Logic apps to identify application components.
 * `webserver_system: “apache”`: This value identifies the webserver system.
 
-For all other parameters, please see [this doc](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Collect_Metrics_Using_Telegraf/03_Install_Telegraf#Configuring_Telegraf) for more properties that can be configured in the Telegraf agent globally.
+For all other parameters, please see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#Configuring-Telegraf) for more properties that can be configured in the Telegraf agent globally.
 
 Make sure that the Apache pods are running and annotations are applied by using the command:
 ```
@@ -252,7 +252,7 @@ This section provides instructions for configuring metrics collection for the Su
 
 1. **Install Telegraf**
 
-    Follow the steps in [this document](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Collect_Metrics_Using_Telegraf/03_Install_Telegraf) to install Telegraf.
+    Follow the steps in [this document](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf.md) to install Telegraf.
 
 1. **Configure and start Telegraf**. As part of collecting metrics data from Telegraf, we will use the [Apache input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/apache) to get data from Telegraf and the [Sumo Logic output plugin](https://github.com/SumoLogic/fluentd-output-sumologic) to send data to Sumo Logic.
 
@@ -277,7 +277,7 @@ Create or modify the telegraf.conf file and copy and paste the text below in the
 ```
 
 
-Please enter values for the following parameters (marked in **bold** above):
+Please enter values for the following parameters (marked CHANGEME above):
 
 * In the input plugins section i.e. :
     * **urls**: The URL to the Apache server. Please see [this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/apache) for more information on additional parameters for configuring the Apache input plugin for Telegraf.
@@ -287,7 +287,7 @@ Please enter values for the following parameters (marked in **bold** above):
         * **webserver_farm**: Enter a name to uniquely identify this Apache web server farm. This web server farm name will be shown in the Sumo Logic dashboards.
         * **environment**: This is the deployment environment where the Apache web server farm identified by the value of **urls** resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
 * In the output plugins section i.e. :
-    * **url**: This is the HTTP source URL created in step 3. Please see [this doc](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Collect_Metrics_Using_Telegraf/05_Configure_Telegraf_Output_Plugin_for_Sumo_Logic) for more information on additional parameters for configuring the Sumo Logic Telegraf output plugin.
+    * **url**: This is the HTTP source URL created in step 3. Please see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/configure-telegraf-output-plugin.md) for more information on additional parameters for configuring the Sumo Logic Telegraf output plugin.
 * In the agent section i.e [agent]
     * Set **interval** and **flush_interval** to “60s” to collect metric every 60 seconds.
 

@@ -113,7 +113,7 @@ Create a new HTTP Logs and Metrics Source in the hosted collector created above 
 
 ##### 4. Install Telegraf
 
-Use the [following steps](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Collect_Metrics_Using_Telegraf/03_Install_Telegraf) to install Telegraf.
+Use the [following steps](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf.md) to install Telegraf.
 
 
 ##### 5. Configure and start Telegraf
@@ -199,10 +199,10 @@ paths = ["ThreadAllocatedMemoryEnabled", "ThreadAllocatedMemorySupported"]
 
 
 
-* **interval. **This is the frequency to send data to Sumo Logic, in this example, we will send the metrics every 60 seconds. Please refer to [this doc](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Collect_Metrics_Using_Telegraf/03_Install_Telegraf#Configuring_Telegraf) for more properties that can be configured in the Telegraf agent globally.
+* **interval. **This is the frequency to send data to Sumo Logic, in this example, we will send the metrics every 60 seconds. Please refer to [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#Configuring-Telegraf) for more properties that can be configured in the Telegraf agent globally.
 * **urls.** The url to the Jolokia server. This can be a comma-separated list to connect to multiple Jolokia servers. Please refer [to this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/jolokia2) for more information on configuring the Jolokia input plugin for Telegraf.
-* **url.** This is the HTTP source URL created in step 3. Refer [to this doc](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Collect_Metrics_Using_Telegraf/05_Configure_Telegraf_Output_Plugin_for_Sumo_Logic) for more information on configuring the Sumo Logic Telegraf output plugin.
-* **data_format.** The format to use when sending data to Sumo Logic. Please refer [to this doc](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Collect_Metrics_Using_Telegraf/05_Configure_Telegraf_Output_Plugin_for_Sumo_Logic) for more information on configuring the Sumo Logic Telegraf output plugin.
+* **url.** This is the HTTP source URL created in step 3. Refer [to this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/configure-telegraf-output-plugin.md) for more information on configuring the Sumo Logic Telegraf output plugin.
+* **data_format.** The format to use when sending data to Sumo Logic. Please refer [to this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/configure-telegraf-output-plugin.md) for more information on configuring the Sumo Logic Telegraf output plugin.
 
 After you have finalized your telegraf.conf file, you can run the following command to start telegraf.
 
@@ -215,11 +215,11 @@ telegraf --config /path/to/telegraf.conf
 
 #### Step 2: Metric Collection in Kubernetes Environment
 
-The following steps assume you are collecting JMX metrics from a Kubernetes environment. In a Kubernetes environment, we use the Telegraf Operator, which is packaged with our Kubernetes collection. You can learn more about this [here](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Collect_Metrics_Using_Telegraf/01_Telegraf_Collection_Architecture).
+The following steps assume you are collecting JMX metrics from a Kubernetes environment. In Kubernetes environments, we use the Telegraf Operator, which is packaged with our Kubernetes collection. You can learn more about this [here](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Collect_Metrics_Using_Telegraf/01_Telegraf_Collection_Architecture).
 
 
 
-1. [Set up Kubernetes Collection with the Telegraf Operator.](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Collect_Metrics_Using_Telegraf/03_Install_Telegraf)
+1. [Set up Kubernetes Collection with the Telegraf Operator.](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf.md)
 2. On your Pods, add the following annotations to configure Telegraf.
 
 

@@ -65,7 +65,7 @@ In this step, you need to generate access key and access ID from the Sumo Logic 
 
 To generate an access key and access ID, do the following:
 
-1. Follow the instructions as described in this [Sumo Logic Access Key](https://help.sumologic.com/Manage/Security/Access-Keys#Create_an_access_key)) document.
+1. Follow the instructions as described in this [Sumo Logic Access Key](/docs/manage/security/access-keys#Create_an_access_key)) document.
 2. Copy down both the values as you’ll need them to deploy the Sumo Logic GuardDuty Benchmark SAM App.
 
 

@@ -130,7 +130,7 @@ The first service in the pipeline is Telegraf. Telegraf collects metrics from My
 11
 
 
-Ensure that you are monitoring your Kubernetes clusters with the Telegraf operator. If you're not, see [Install Telegraf](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Collect_Metrics_Using_Telegraf/03_Install_Telegraf).  
+Ensure that you are monitoring your Kubernetes clusters with the Telegraf operator. If you're not, see [Install Telegraf](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf.md).  
 
 
 ### Step 1: Configure Fields in Sumo Logic
@@ -254,7 +254,7 @@ labels:
 ```
 
 
-Enter in values for the following parameters (marked in bold above):
+Enter in values for the following parameters :
 
 * `environment.` This is the deployment environment where the MySQL cluster identified by the value of `servers` resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
 * `db_cluster`. Enter a name to identify this MySQL cluster. This cluster name will be shown in the Sumo Logic dashboards.
@@ -443,7 +443,7 @@ Create the following Fields in Sumo Logic prior to configuring collection. This 
 
 1. Configure a Hosted Collector. For instructions, see [Configure a Hosted Collector](https://help.sumologic.com/03Send-Data/Hosted-Collectors/Configure-a-Hosted-Collector).
 2. Configure an HTTP Logs and Metrics Source.** **For instructions, see [HTTP Logs and Metrics Source](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/HTTP-Source). Make a note of the HTTP Source URL.
-3. Install Telegraf. For instructions see [Install Telegraf](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Collect_Metrics_Using_Telegraf/03_Install_Telegraf).
+3. Install Telegraf. For instructions see [Install Telegraf](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf.md).
 4. Configure and start Telegraf. As part of collecting metrics data from Telegraf, we use the [MySQL input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/mysql) to get data from Telegraf and the [Sumo Logic output plugin](https://github.com/SumoLogic/fluentd-output-sumologic) to send data to Sumo Logic.
 5. Create or modify the `telegraf.conf` file, and copy the following into the relevant sections.
 
@@ -514,7 +514,7 @@ Configure the metrics to collect by uncommenting the following lines. For more i
 3. In the `[inputs.mysql.tags]` section:
     1. `environment`. Specify the deployment environment where the MySQL cluster identified by the value of `servers` resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
     2. `db_cluster`.  Enter a name to uniquely identify the MySQL cluster. This cluster name will be shown in the Sumo Logic dashboards.
-4. In the `[[outputs.sumologic]]` section, set `url` to the is the HTTP source URL created in [Step 2](https://help.sumologic.com/07Sumo-Logic-Apps/12Databases/MySQL/Collect_Logs_and_Metrics_for_MySQL/Collect_MySQL_Logs_and_Metrics_(Non-Kubernetes)#Step_2:_Configure_Collection_of_Metrics_from_a_MySQL_Server). For information about additional output plugin configuration options, see [Configure Telegraf Output Plugin for Sumo Logic](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Collect_Metrics_Using_Telegraf/05_Configure_Telegraf_Output_Plugin_for_Sumo_Logic).
+4. In the `[[outputs.sumologic]]` section, set `url` to the is the HTTP source URL created in [Step 2](https://help.sumologic.com/07Sumo-Logic-Apps/12Databases/MySQL/Collect_Logs_and_Metrics_for_MySQL/Collect_MySQL_Logs_and_Metrics_(Non-Kubernetes)#Step_2:_Configure_Collection_of_Metrics_from_a_MySQL_Server). For information about additional output plugin configuration options, see [Configure Telegraf Output Plugin for Sumo Logic](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/configure-telegraf-output-plugin.md).
 5. In the `[agent]` section, set `interval` and `flush_interval` to “60s” to collect metrics every 60 seconds.
 
 There are additional configuration options that you should **not** modify, as changing them will prevent the MySQL app from functioning correctly. The settings you should not modify are:
