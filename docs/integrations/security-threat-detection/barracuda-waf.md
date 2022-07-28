@@ -247,12 +247,8 @@ You can use filters to drill down and examine the data on a granular level.
 
 
 ### Dashboard organization
-19
-
 
 The Barracuda WAF App dashboards are organized according to the type of data they display:
-
-
 
 * Admin Activities
 * System Activities
@@ -262,118 +258,82 @@ The Barracuda WAF App dashboards are organized according to the type of data the
 
 
 ### Barracuda WAF - Admin Activities
-20
-
 
 The **Barracuda WAF - Admin Activities Dashboard** provides insights into all administrative activities performed on the WAF.
 
 Use this dashboard to:
-
-
-
 * Make sure admins are accessing WAF units from expected physical locations.
 * Monitor admin actions as they relate to transaction types, modified object types, and client access types.
 * View trends for unsuccessful logins and change types.
 * Drill down into recent audit logs based on search templates.
 
-
-21
+<img src={useBaseUrl('img/integrations/security-threat-detection/BarracudaWAF_Admin_Activities.png')} alt="Barracuda WAF dashboards" />
 
 
 
 ### Barracuda WAF - System Activities
-22
-
 
 The **Barracuda WAF - System Activities** **Dashboard** provides insights into the performance of WAF units, cluster activities and recent alerts.
 
 Use this dashboard to:
-
-
-
 * Review the top modules invoked and monitor log level severity.
 * Review recent cluster activities for troubleshooting WAF configuration issues.
 * Monitor and take action on recent alerts.
 
-
-23
-
+<img src={useBaseUrl('img/integrations/security-threat-detection/BarracudaWAF_System_Activities.png')} alt="Barracuda WAF dashboards" />
 
 
 ### Barracuda WAF - Network Activities
-24
-
 
 The **Barracuda WAF - Network Activities Dashboard** provides insights into blocked/allowed network traffic, source and destination locations, network log level severity and ACL rules.
 
 Use this dashboard to:
-
-
-
 * Monitor source and destination traffic locations.
 * Monitor the severity of network log messages and unusual allowed and blocked traffic patterns.
 * Monitor the top 10 sources, destinations and ACL rules.
 
-
-25
-
+<img src={useBaseUrl('img/integrations/security-threat-detection/BarracudaWAF_Network_Activities.png')} alt="Barracuda WAF dashboards" />
 
 
 ### Barracuda WAF - Security Overview
-26
 
 
 The **Barracuda WAF - Security Overview** **Dashboard** provides an at-a-glance view of alerts, WAF rules triggered and attacks detected by both Sumo Logic Threat Intel and Barracuda WAF.
 
 Use this dashboard to:
-
-
-
 * Get a high-level overview of your WAF security posture by understanding attack vectors and trends and rules triggered.
 * Determine which attack types, sources, and WAF rules that need further investigation.
 
-
-27
+<img src={useBaseUrl('img/integrations/security-threat-detection/BarracudaWAF_Security_Overview.png')} alt="Barracuda WAF dashboards" />
 
 
 
 ### Barracuda WAF - Threat Analysis
-28
-
 
 The **Barracuda WAF - Threat Analysis Dashboard** provides detailed insights into attacks and rules triggered on the Barracuda WAF.
 
 Use this dashboard to:
-
-
-
 * Monitor threats allowed through the WAF and those blocked by the WAF.
 * Investigate details of attacks detected by both the WAF and Sumo Logic Threat Intel.
 * Fine tune the WAF to prevent future attacks and eliminate false positives.
 
-
-29
+<img src={useBaseUrl('img/integrations/security-threat-detection/BarracudaWAF_Threat_Analysis.png')} alt="Barracuda WAF dashboards" />
 
 
 
 ### Barracuda WAF - Traffic Overview
-30
-
 
 The **Barracuda WAF - Traffic Overview Dashboard** provides an at-a-glance view of client geographic locations, performance, cache hit percentage, and unusual behaviors across the number of incoming requests and performance.
 
 Use this dashboard to:
-
-
-
 * Monitor requests and performance across services.
 * Investigate how to improve performance via cache hit rates.
 * Analyze trends for requests and performance by Service IP.
 * Monitor client locations.
 * Monitor unusual patterns of client/server errors and service performance.
 
+<img src={useBaseUrl('img/integrations/security-threat-detection/BarracudaWAF_Traffic_Overview.png')} alt="Barracuda WAF dashboards" />
 
-31
 
 
 
@@ -391,8 +351,7 @@ Use this dashboard to:
 * Monitor top services, URLs, and domains by both number of requests and bandwidth.
 * Improve performance by fine-tuning the cache and other WAF configurations.
 
-
-33
+<img src={useBaseUrl('img/integrations/security-threat-detection/BarracudaWAF_Service_Traffic.png')} alt="Barracuda WAF dashboards" />
 
 
 
@@ -409,20 +368,18 @@ Use this dashboard to:
 * Identify trends across client/server errors, requests and responses.
 * Identify which clients and servers are responsible for the most errors and use this information to change the WAF configuration.
 
-
-35
+<img src={useBaseUrl('img/integrations/security-threat-detection/BarracudaWAF_Server_Traffic.png')} alt="Barracuda WAF dashboards" />
 
 
 
 ### Barracuda WAF - Client Traffic
-36
 
 
 The **Barracuda WAF - Client Traffic** **Dashboard** provides detailed information on clients, such as visits by country, user agent, platform, operating system (OS), devices, and top referrers.
 
 Use this dashboard to:
 
-
-
 * Monitor incoming web traffic metrics to understand client geographical locations, browsers, and operating systems.
 * Determine top clients accessing your web applications and optimize WAF configurations as needed.
+
+<img src={useBaseUrl('img/integrations/security-threat-detection/BarracudaWAF_Client_Traffic.png')} alt="Barracuda WAF dashboards" />

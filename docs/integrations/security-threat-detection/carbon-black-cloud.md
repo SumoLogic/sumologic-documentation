@@ -188,207 +188,121 @@ Panels will start to fill automatically. It's important to note that each panel 
 
 
 ### Dashboards
-14
 
-
-
-##### Carbon Black Cloud - Overview
-15
-
+### Carbon Black Cloud - Overview
 
 The **Carbon Black Cloud - Overview** dashboard provides a high-level view of the state of your network infrastructure and systems. The panels highlight detected threats, hosts, top feeds and IOC’s, top processes, top watchlists, and alert trends.
 
 Use this dashboard to:
-
-
-
 * Monitor potential threats.
 * Determine the top processes and threat indicators.
 * Track alerts.
 * Monitor hosts, users, watchlists and feeds.
 
+<img src={useBaseUrl('img/integrations/security-threat-detection/Carbon-Black-Cloud-Overview.png')} alt="Carbon_Black_Cloud dashboards" />
 
-16
-
-
-
-##### Carbon Black Cloud - Endpoint Standard - Overview
-17
-
+### Carbon Black Cloud - Endpoint Standard - Overview
 
 The **Carbon Black Cloud - Endpoint Standard - Overview** dashboard gives a quick overview of the Alerts, devices and TTPs.
 
 Use this dashboard to:
-
-
-
 * See a count of items of interest (Devices, Alerts, TTPs, etc.)
 * An overview of top users, processes, and devices
 
-
-18
-
+<img src={useBaseUrl('img/integrations/security-threat-detection/Carbon-Black-Cloud-Endpoint-Standard-Overview.png')} alt="Carbon_Black_Cloud dashboards" />
 
 
-##### Carbon Black Cloud - Endpoint Standard - Alert Summary
-19
-
+### Carbon Black Cloud - Endpoint Standard - Alert Summary
 
 The Carbon Black Cloud - Endpoint Standard - Alert Summary gives you summary of alerts in table format, and provides enriched data by correlating alerts with events metadata.
 
+<img src={useBaseUrl('img/integrations/security-threat-detection/Carbon-Black-Cloud-Endpoint-Standard-Alert-Summary.png')} alt="Carbon_Black_Cloud dashboards" />
 
-#####
-20
-
-21
-
-
-
-##### Carbon Black Cloud - Endpoint Standard - Alerts
-22
-
+### Carbon Black Cloud - Endpoint Standard - Alerts
 
 The **Carbon Black Cloud - Endpoint Standard - Alerts** dashboard provides insight into the Alert trends over time.
 
 Use this dashboard to:
-
-
-
 * See Alert trends over time by severity and category
 * Top Alerted processes
 * Alerts by OS
 
+<img src={useBaseUrl('img/integrations/security-threat-detection/BarracudaWAF.png')} alt="Carbon_Black_Cloud dashboards" />
 
-23
-
-
-
-##### Carbon Black Cloud - Endpoint Standard - Device
-24
-
+### Carbon Black Cloud - Endpoint Standard - Device
 
 The** Carbon Black Cloud - Endpoint Standard - Device** dashboard gives an overview of the top alerting devices with breakdowns by OS and process.
 
 Use this dashboard to:
-
-
-
 * See top devices by Alerts
 * See Alerts by device over time
 * See a breakdown of devices by OS and Process counts
 
+<img src={useBaseUrl('img/integrations/security-threat-detection/Carbon-Black-Cloud-Endpoint-Standard-Alerts.png')} alt="Carbon_Black_Cloud dashboards" />
 
-25
-
-
-
-##### Carbon Black Cloud - Endpoint Standard - TTPs
-26
-
+### Carbon Black Cloud - Endpoint Standard - TTPs
 
 The **Carbon Black Cloud - Endpoint Standard - TTPs** dashboard provides a high level overview of the TTPs with breakdowns by TTP, Severity, Device, Process, and Threat Actors.
 
 Use this dashboard to:
-
-
-
 * See which TTPs are the most prevalent
 * Identify any spikes in malicious activity
 * Help tune new policies and reduce false positives
 
-
-27
-
+<img src={useBaseUrl('img/integrations/security-threat-detection/Carbon-Black-Cloud-Endpoint-Standard-Device.png')} alt="Carbon_Black_Cloud dashboards" />
 
 
-##### Carbon Black Cloud - Enterprise EDR - Overview
-28
-
+### Carbon Black Cloud - Enterprise EDR - Overview
 
 The **Carbon Black Cloud - Enterprise EDR - Overview** dashboard gives a quick overview of the Alerts, devices and IOCs.
 
 Use this dashboard to:
-
-
-
 * See a count of items of interest (Devices, Alerts, IOCs, etc.)
 * An overview of top users, processes, and devices
 
-
-29
-
+<img src={useBaseUrl('img/integrations/security-threat-detection/Carbon-Black-Cloud-Enterprise-EDR-Overview.png')} alt="Carbon_Black_Cloud dashboards" />
 
 
-##### Carbon Black Cloud - Enterprise EDR - Alert Summary
-0
-
+### Carbon Black Cloud - Enterprise EDR - Alert Summary
 
 The **Carbon Black - EDR - Alert Summary** dashboard provides detailed information on the alerts in your environment, including alerts by mode, OS, report, and groups. The panels also show alert trends, recent alerts, and top users.
 
 Use this dashboard to:
-
-
-
 * Monitor alert activity and identify spikes.
 * Monitor alerts triggered after a critical issue.
 * Track users who trigger a high number of alerts.
 
+<img src={useBaseUrl('img/integrations/security-threat-detection/Carbon-Black-Cloud-Enterprise-EDR-Alert-Summary.png')} alt="Carbon_Black_Cloud dashboards" />
 
-1
-
-
-
-##### Carbon Black Cloud - Enterprise EDR - Alerts
-2
-
+### Carbon Black Cloud - Enterprise EDR - Alerts
 
 The **Carbon Black Cloud - Enterprise EDR - Alerts** dashboard provides insight into the Alert trends over time.
 
 Use this dashboard to:
-
-
-
 * See Alert trends over time by severity and category
 * Top Alerted processes
 * Alerts by OS
 
+<img src={useBaseUrl('img/integrations/security-threat-detection/Carbon-Black-Cloud-Enterprise-EDR-Alerts.png')} alt="Carbon_Black_Cloud dashboards" />
 
-3
-
-
-
-##### Carbon Black Cloud - Enterprise EDR - Device
-4
-
+### Carbon Black Cloud - Enterprise EDR - Device
 
 The **Carbon Black Cloud - Enterprise EDR - Device** dashboard gives an overview of the top alerting devices with breakdowns by OS and process.
 
 Use this dashboard to:
-
-
-
 * See top devices by Alerts
 * See Alerts by device over time
 * See a breakdown of devices by OS and Process counts
 
+<img src={useBaseUrl('img/integrations/security-threat-detection/Carbon-Black-Cloud-Enterprise-EDR-Device.png')} alt="Carbon_Black_Cloud dashboards" />
 
-5
-
-
-
-##### Carbon Black Cloud - Enterprise EDR - IOCs
-6
-
+### Carbon Black Cloud - Enterprise EDR - IOCs
 
 The **Carbon Black Cloud - Enterprise EDR - IOCs** dashboard provides a high level overview of the IOCs with breakdowns by IOC, Severity, Device, Process, and Threat Actors.
 
 Use this dashboard to:
-
-
-
 * See which indicators are the most prevalent
 * Identify any spikes in malicious activity
 * Help tune new policies and reduce false positives
 
-
-7
+<img src={useBaseUrl('img/integrations/security-threat-detection/Carbon-Black-Cloud-Enterprise-EDR-IOCs.png')} alt="Carbon_Black_Cloud dashboards" />

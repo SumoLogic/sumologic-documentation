@@ -627,7 +627,7 @@ For more information, see [https://docs.atlas.mongodb.com/refer...-measurements/
 The query sample provided in this section is from the **Recent Audit Events **panel of the **MongoDB Atlas - Audit **dashboard.
 
 
-```
+```sql
 _sourceCategory=Labs/MongoDBAtlas/logs AND (_sourceName="mongodb-audit-log.gz" OR _sourceName="mongos-audit-log.gz")
 | json "atype", "local.ip", "remote.ip", "users","result", "project_id", "hostname", "cluster_name", "param" as atype, local_ip, remote_ip, users, result, project_id, hostname, cluster_name, param
 | json field=param "db", "ns" as database1, database2 nodrop
@@ -662,11 +662,11 @@ Version selection is applicable only to a few apps currently. For more informati
 
 
 1. To install the app, complete the following fields.
-    1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
-    2. **Data Source.** Select either of these options for the data source. 
-        * Choose **Source Category**, and select a source category from the list. 
-        * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). 
-    3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
+   * **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
+   * **Data Source.** Select either of these options for the data source. 
+      * Choose **Source Category**, and select a source category from the list. 
+      * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). 
+   * **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
 2. Click **Add to Library**.
 
 Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization.

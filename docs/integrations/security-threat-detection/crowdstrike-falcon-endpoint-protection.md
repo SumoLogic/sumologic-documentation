@@ -2,7 +2,7 @@
 id: crowdstrike-falcon-endpoint-protection
 title: Sumo Logic App for CrowdStrike Falcon Endpoint Protection
 sidebar_label: CrowdStrike Falcon Endpoint Protection
-description: The CrowdStrike Falcon Endpoint Protection App provides visibility into the security posture of your endpoints as analyzed by the CrowdStrike Falcon Endpoint Protection platform. 
+description: The CrowdStrike Falcon Endpoint Protection App provides visibility into the security posture of your endpoints as analyzed by the CrowdStrike Falcon Endpoint Protection platform.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -381,28 +381,21 @@ Once an app is installed, it will appear in your **Personal** folder, or other f
 
 Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
 
+## Viewing CrowdStrike Falcon Dashboards
 
-#### Dashboard Filter with Template Variables  
-19
-
+### Dashboard Filter with Template Variables  
 
 Template variables provide dynamic dashboards that rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you can view dynamic changes to the data for a fast resolution to the root cause. For more information, see the [Filter with template variables](https://help.sumologic.com/Visualizations-and-Alerts/Dashboard_(New)/Filter_with_template_variables) help page.
 
-
-20
 You can use template variables to drill down and examine the data on a granular level.
 
 
-#### Parsers/FERs Folder
-21
-
+### Parsers/FERs Folder
 
 The app includes a "Parsers/FERs" folder that has pre-built searches to help in your investigations. These searches parse out commonly used fields for audit activity, detection summary, incident summary and remote response session events.
 
 
-#### CrowdStrike Falcon - Overview  
-22
-
+### CrowdStrike Falcon - Overview  
 
 The **CrowdStrike Falcon - Overview** dashboard provides high-level visibility into the state of endpoints that are managed by the CrowdStrike Falcon platform. Panels provide insights into events, detections, authentications, and detection status updates for overall security posture and analysis of user activities.
 
@@ -412,39 +405,25 @@ Use this dashboard to:
 * Analyze user activities within the Falcon Console.
 * Review all detection updates.
 
+<img src={useBaseUrl('img/integrations/security-threat-detection/CSF_Platform_Overview.png')} alt="CrowdStrike_Falcon_Endpoint_Protection dashboards" />
 
-23
-
-
-
-#### CrowdStrike Falcon - Authentication
-24
-
+### CrowdStrike Falcon - Authentication
 
 The **CrowdStrike Falcon - Authentication** dashboard provides visibility into authentication-related user activities and their geographic locations. Panels also display detailed information for authentication comparisons and trends, requested auth secrets, 2-factor authentication, API client events, and failed events.  
 
 Use this dashboard to:
-
-
-
 * Analyze user activities within your Falcon Console and the geographic location of the users responsible for these activities.
 * Identify failed authentication events, user logins with and without 2-factor authentication.
 * Detect OAuth2 API key access events.
 
-
-25
-
+<img src={useBaseUrl('img/integrations/security-threat-detection/CSF_Platform_Authentication.png')} alt="CrowdStrike_Falcon_Endpoint_Protection dashboards" />
 
 
-#### CrowdStrike Falcon - Detections  
-26
-
+### CrowdStrike Falcon - Detections  
 
 The **CrowdStrike Falcon - Detections** dashboard provides visibility into malicious behavior in your environment, where you can analyze group detections, discover blocked detections, and analyze detection trends by type. Panels also display a detailed analysis of detected malware and help quickly identify hosts with the most detected malware.
 
 Use this dashboard to:
-
-
 
 * Investigate malicious behavior across your endpoints.
 * Analyze group detections by users, tactic, technique, and objective.
@@ -454,13 +433,10 @@ Use this dashboard to:
 * Find hosts in your network with the most detected malware. Use pre-built links to go to the Falcon Console, so as to assign detection events and take action.
 
 
-27
+<img src={useBaseUrl('img/integrations/security-threat-detection/CrowdStrike_Falcon_Detections.png')} alt="CrowdStrike_Falcon_Endpoint_Protection dashboards" />
 
 
-
-#### CrowdStrike Falcon - Detection Status Update  
-28
-
+### CrowdStrike Falcon - Detection Status Update  
 
 The **CrowdStrike Falcon - Detection Status Update** dashboard provides high-level and detailed insights into the status of severity event detection in your CrowdStrike environment. Panels display event geographic locations, event classification by operation, details on quarantined files, and updates on policies and groups.
 
@@ -469,12 +445,9 @@ Use this dashboard to:
 * Find and analyze any updates to malware detections by CrowdStrike Falcon users.
 * Identify quarantined files.
 
+<img src={useBaseUrl('img/integrations/security-threat-detection/CSF_Platform_Detection_Status_Update.png')} alt="CrowdStrike_Falcon_Endpoint_Protection dashboards" />
 
-29
-
-
-
-#### Crowdstrike Falcon - Incident Summary Events
+### Crowdstrike Falcon - Incident Summary Events
 30
 
 The **CrowdStrike - Falcon - Incident Summary Events** dashboard provides visibility into Falcon incidents, event trends, and risk.
@@ -485,5 +458,4 @@ Use this dashboard to:
 * Identify unexpected events related to incidents by examining trends.
 * Drill-down to the details of an incident using pre-built links in the CrowdStrike Falcon Console.
 
-
-31
+<img src={useBaseUrl('img/integrations/security-threat-detection/CrowdStrike_Falcon_Incident_Summary_Events.png')} alt="CrowdStrike_Falcon_Endpoint_Protection dashboards" />

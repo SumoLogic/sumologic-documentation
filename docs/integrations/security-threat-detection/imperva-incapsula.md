@@ -165,20 +165,16 @@ Once an app is installed, it will appear in your **Personal** folder, or other f
 Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
 
 
-### Dashboards
-10
+## Viewing Dashboards
 
 
-
-#### Imperva - Incapsula WAF - Overview
+### Imperva - Incapsula WAF - Overview
 11
 
 
 See the overview of your WAF service including the source IP address, client app, user agent, country, ADR rules, and policy type.
 
-
-12
-
+<img src={useBaseUrl('img/integrations/security-threat-detection/imperva-overview.png')} alt="Imperva - Incapsula dashboards" />
 
 **Client App Top Values**. See the top 10 client apps by count in the last 14 days on a bar chart.
 
@@ -197,15 +193,11 @@ See the overview of your WAF service including the source IP address, client app
 **Top Applied ADR Rules**. See the top 10 applied ADR rules by count in the last 14 days displayed in a table.
 
 
-#### Imperva - Incapsula WAF - Blocked Countries
-13
-
+### Imperva - Incapsula WAF - Blocked Countries
 
 See the details of blocked countries in your WAF service including the source IP address, browser type, top countries, and user agent.
 
-
-14
-
+<img src={useBaseUrl('img/integrations/security-threat-detection/imperva-Blocked_Countries.png')} alt="Imperva - Incapsula dashboards" />
 
 **Blocked Countries Top Values**. See the top 10 blocked countries by count in the last 14 days on a pie chart.
 
@@ -218,15 +210,11 @@ See the details of blocked countries in your WAF service including the source IP
 **Threat Table based on Client IP**. See the details of threats in the last 24 hours based on client IP address including the main client IP address, malicious confidence, actor, source, label name, browser type, attack type, rule name, country code, server IP, server port , client app, method, post body, URL, user agent, and count, displayed in a table.
 
 
-#### Imperva - Incapsula WAF BOT - Access Control
-15
-
+### Imperva - Incapsula WAF BOT - Access Control
 
 See the details of BOT access control in your WAF service including the city, country, browser type, source IP address, and user agent.
 
-
-16
-
+<img src={useBaseUrl('img/integrations/security-threat-detection/BOTaccessControl.png')} alt="Imperva - Incapsula dashboards" />
 
 **City Top Values**. See the top 10 cities by count in the last 14 days on a column chart.
 

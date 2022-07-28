@@ -18,7 +18,7 @@ The Akamai Security Events App uses security events generated on the Akamai plat
 
 
 
-```
+```json
 {
   "type": "akamai_siem",
   "format": "json",
@@ -69,9 +69,6 @@ The Akamai Security Events App uses security events generated on the Akamai plat
 
 
 #### Sample Query  
-3
-
-
 
 ```
 _sourceCategory=<akamai-foo>
@@ -94,8 +91,8 @@ This page has instructions for collecting logs for the Sumo App for Akamai Secur
 
 1. Create an Akamai SIEM API Source as described [here](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Cloud-to-Cloud_Integration_Framework/Akamai_SIEM_API_Source#create-an%C2%A0akamai-siem-api%C2%A0source)
 2. Enable both Parsing options while creating the Akamai SIEM API Source. Parsing options:
-    1. Decode httpMessage fields
-    2. Duplicate Events once for each rule associated with the event
+   * Decode httpMessage fields
+   * Duplicate Events once for each rule associated with the event
 
 
 ## Install the Akamai Security Events App and View the Dashboards
@@ -124,11 +121,11 @@ Locate and install the app you need from the **App Catalog**. If you want to see
 
 
 1. To install the app, complete the following fields.
-    1. **App Name**. You can retain the existing name, or enter a name of your choice for the app. 
-    2. **Data Source**. Select either of these options for the data source. 
-        * Choose **Source Category**, and select a source category from the list. 
-        * Choose **Enter a Custom Data Filte**r, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). 
-    3. **Advanced**. Select the Location in the Library (the default is the Personal folder in the library), or click New Folder to add a new folder.
+   * **App Name**. You can retain the existing name, or enter a name of your choice for the app. 
+   * **Data Source**. Select either of these options for the data source. 
+      * Choose **Source Category**, and select a source category from the list. 
+      * Choose **Enter a Custom Data Filte**r, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). 
+   * **Advanced**. Select the Location in the Library (the default is the Personal folder in the library), or click New Folder to add a new folder.
 2. Click Add to Library.
 
 Once an app is installed, it will appear in your **Personal** folder, or another folder that you specified. From here, you can share it with your organization.
@@ -137,8 +134,6 @@ Panels will start to fill automatically. It's important to note that each panel 
 
 
 ### Dashboard Filter with Template Variables    
-7
-
 
 Template variables provide dynamic dashboards that rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you can view dynamic changes to the data for a fast resolution to the root cause. For more information, see the [Filter with template variables](https://help.sumologic.com/Visualizations-and-Alerts/Dashboard_(New)/Filter_with_template_variables) help page.
 
@@ -151,22 +146,16 @@ Note: You can use template variables to drill down and examine the data on a gra
 
 
 ### Akamai Security Events - Overview
-9
 
+The **Akamai Security Events - Overview** dashboard gives you an at-a-glance view of security events generated on the Akamai Platform.
 
-The** Akamai Security Events - Overview **dashboard gives you an at-a-glance view of security events generated on the Akamai Platform.
-
-Use this dashboard to :
-
-
+Use this dashboard to:
 
 * Identify IPs of attack.
 * Find Geolocation of the attack.
 * Analyze summary of last 20 attacks.
 
-
-10
-
+<img src={useBaseUrl('img/integrations/security-threat-detection/Akamai-Security-Events-Overview.png')} alt="Akamai Security Events dashboards" />
 
 
 ### Akamai Security Events - Attack Data
@@ -175,44 +164,34 @@ Use this dashboard to :
 
 The** Akamai Security Events - Attack Data** dashboard helps you understand the nature of each attack and its corresponding Rule information.
 
-Use this dashboard to :
-
-
+Use this dashboard to:
 
 * Identify IPs of attack.
 * Find top sources of attack.
 * Analyze messages reported by each triggered rule.
 * Understand the nature of attacks, and contextual information around attacks.
 
-
-12
+<img src={useBaseUrl('img/integrations/security-threat-detection/Akamai-Security-Events-Attack-Data.png')} alt="Akamai Security Events dashboards" />
 
 
 
 ### Akamai Security Events - HTTP Data
-13
 
+The **Akamai Security Events - HTTP Data** dashboard provides context and visualization of attack’s HTTP request.
 
-The** Akamai Security Events - HTTP Data** dashboard provides context and visualization of attack’s HTTP request.
-
-Use this dashboard to :
-
-
+Use this dashboard to:
 
 * Identify attacks by protocol, port and http method.
 * Analyze bytes served during each attack request.
 * Find request query which led to the attack.
 
+<img src={useBaseUrl('img/integrations/security-threat-detection/Akamai-Security-Events-HTTP-Data.png')} alt="Akamai Security Events dashboards" />
 
-14
 
 
 
 ### Akamai Security Events - Threat Intel
-15
-
 
 The **Akamai Security Events - Threat Intel** dashboard provides an at-a-glance view of threats analyzed using Crowdstrike Threat Feed. Dashboard panels display threat count over a selected time period, geographic locations where threats occurred, source breakdown, actors responsible for threats, severity, and a correlation of IP addresses, method, and status code of threats.
 
-
-16
+<img src={useBaseUrl('img/integrations/security-threat-detection/Akamai-Security-Events-Threat-Intel.png')} alt="Akamai Security Events dashboards" />

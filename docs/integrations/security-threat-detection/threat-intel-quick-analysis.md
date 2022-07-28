@@ -71,13 +71,11 @@ All Dashboards include filters that you can use in Interactive Mode for further 
 Live mode and real-time queries are not supported for dashboards at this time.
 
 
-#### Threat Intel Quick Analysis - Overview
-8
-
+### Threat Intel Quick Analysis - Overview
 
 See the frequency of Domain threats by Actor, Log Source, Malicious Confidence, and view trends over time.
 
-9
+<img src={useBaseUrl('img/integrations/security-threat-detection/TIQA_Overview_Dashboard.png')} alt="Threat Intel Dashboard" />
 
 * **Welcome to the Threat Intel Quick Analysis App.** Informational panel to help you find information on [optimization](https://help.sumologic.com/07Sumo-Logic-Apps/22Security_and_Threat_Detection/Threat_Intel_Quick_Analysis/02_Threat-Intel-Optimization) and [FAQs](https://help.sumologic.com/07Sumo-Logic-Apps/22Security_and_Threat_Detection/Threat_Intel_Quick_Analysis/03_Threat-Intel-FAQ) on working with the Threat Intel database.
 * **Number of Log Lines (Events) Scanned for Threats.** Count of log lines scanned across all selected sources for the last 15 minutes.  
@@ -90,16 +88,10 @@ See the frequency of Domain threats by Actor, Log Source, Malicious Confidence, 
 
 
 #### Threat Intel Quick Analysis - Domain
-10
-
 
 See the frequency of Domain threats by Actor, Log Source, Malicious Confidence, and view trends over time.
 
-
-11
-
-
-
+<img src={useBaseUrl('img/integrations/security-threat-detection/TIQA_Domain_Dashboard.png')} alt="Threat Intel Dashboard" />
 
 * **Threat Count.** Count of threats related to malicious domains, for the last 15 minutes.  
 * **Threats by Malicious Confidence.** Qualifies domain threats into High, Medium, Low, Unverified, according to CrowdStrike's machine learning engine.  
@@ -116,8 +108,7 @@ See the frequency of Domain threats by Actor, Log Source, Malicious Confidence, 
 
 See the frequency of Email threats by Actor, Log Source, Malicious Confidence, and view trends over time.
 
-
-13
+<img src={useBaseUrl('img/integrations/security-threat-detection/TIQA_Email_Dashboard.png')} alt="Threat Intel Dashboard" />
 
 
 * **Threat Count.** Count of threats related to malicious emails addresses, for the last 15 minutes.  
@@ -129,16 +120,11 @@ See the frequency of Email threats by Actor, Log Source, Malicious Confidence, a
 * **Threats Table.** Listing of all domain threats, including Malicious Confidence, Actors and Sources.
 
 
-#### Threat Intel Quick Analysis - IP
-14
-
+### Threat Intel Quick Analysis - IP
 
 See the frequency of IP threats by Actor, Log Source, Malicious Confidence, and view trends over time.
 
-
-15
-
-
+<img src={useBaseUrl('img/integrations/security-threat-detection/TIQA_IP_Dashboard.png')} alt="Threat Intel Dashboard" />
 
 * **Threat Count.** Count of threats related to malicious IPs, for the last 15 minutes.  
 * **Threats by Geo Location.** Count of threats related to malicious IPs, broken by geo location, for the last 15 minutes.
@@ -150,14 +136,13 @@ See the frequency of IP threats by Actor, Log Source, Malicious Confidence, and 
 * **Threats Over Time by Sources. **Trends of IP threats over time, broken by Sources for the last 60 minutes.
 
 
-#### Threat Intel Quick Analysis - URL
+### Threat Intel Quick Analysis - URL
 16
 
 
 See the frequency of URL threats by Actor, Log Source, Malicious Confidence, and view trends over time.
 
-
-17
+<img src={useBaseUrl('img/integrations/security-threat-detection/TIQA_URL_Dashboard.png')} alt="Threat Intel Dashboard" />
 
 * **Threat Count.** Count of threats related to malicious URLs, for the last 15 minutes.  
 * **Threats by Sources. **Count of threats related to malicious URLs, broken by Sources, for the last 15 minutes.
@@ -168,14 +153,13 @@ See the frequency of URL threats by Actor, Log Source, Malicious Confidence, and
 * **Threat Table. **Listing of threats identified by URL, including information on Malicious Confidence, Actors, Source, and count.
 
 
-#### Threat Intel Quick Analysis - Hash 256
+### Threat Intel Quick Analysis - Hash 256
 18
 
 
 See the frequency of Hash 256 threats by Actor, Log Source, Malicious Confidence, and view trends over time.
 
-
-19
+<img src={useBaseUrl('img/integrations/security-threat-detection/TIQA_Hash256_Dashboard.png')} alt="Threat Intel Dashboard" />
 
 
 * **Threat Count.** Count of total Hash 256 threats over the last 15 minutes.
@@ -199,7 +183,7 @@ The Threat Intel Quick Analysis App provides baseline queries. You can further o
 For example:
 
 
-```
+```sql
 _sourceCategory=cylance "IP Address"
 | parse regex "(?<ip_address>\b\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})"
 | where !isNull(ip_address)
@@ -218,7 +202,7 @@ Use Field Extraction Rules (FER) to parse fields from your log messages at the t
 
 1. Create the FER For example, for Cylance Security Events, create and use the following [FER:](https://help.sumologic.com/Manage/Field-Extractions/Create-a-Field-Extraction-Rule)
 
-```
+```sql
 parse "Event Type: *, Event Name: *, Device Name: *, IP Address: (*, *), File Name: *, Path: *, Drive Type: *, SHA256: *, MD5: *, Status: *, Cylance Score: *, Found Date: *, File Type: *, Is Running: *, Auto Run: *, Detected By: *" as event_type,event_name,device_name,src_ip,dest_ip,file_name,path,drive_type,sha,md5,status,score,found,file_type,isRunning,autoRun,detected
 ```
 
@@ -265,7 +249,7 @@ _sourceCategory=cylance | lookup type, actor, raw, threatlevel as malicious_conf
 
 2. Now, you can run your Threat Intel query on top of this view:
 
-```
+```sql
 _view=cylance_threat \
 | count by src_ip
 ```
@@ -302,35 +286,26 @@ No, we do not allow an export of the threat Intel feeds as that is confidential 
 
 
 #### Is threat lookup real-time using Continuous Queries (CQs)?
-27
-
 
 Yes. You can scan for malicious Indicators of Compromise (IOCs) in real time using our [lookup](/docs/search/index.md/Search-Query-Language/Search-Operators/lookup-classic) operator.
 
 
 #### Can I historically search my logs for threats?
-28
-
 
 Yes, you can search any log data that is still retained and searchable using the Sumo Logic Platform. However, we suggest customers break up historical searches into smaller and more manageable chunks based on time range and/or source category for performance reasons.
 
 
 #### If I don't see any results in any Dashboard, is that a bad thing?
-29
-
 
 No. No results in your Dashboards can mean that nothing has been identified by CrowdStrike as a threat, verified or unverified.
 
 
 #### I searched a threat feed for a hash IOC that I know exists, but it wasn't found. Why?
-30
 
-
-It could be a case-sensitivity issue. In Sumo, the equal sign (=) and the not equal to sign (!=)  conditions are case-sensitive; when you use them with Sumo operators you may need to convert the string to which the condition is applied to upper or lower case. For more information, see [Using toLowerCase or toUpperCase with an equating condition](/docs/search/index.md/Search-Query-Language/Search-Operators/toLowerCase-and-toUpperCase#Using_toLowerCase_or_toUpperCase_with_an_equating_condition).
+It could be a case-sensitivity issue. In Sumo, the equal sign (=) and the not equal to sign (!=) conditions are case-sensitive; when you use them with Sumo operators you may need to convert the string to which the condition is applied to upper or lower case. For more information, see [Using toLowerCase or toUpperCase with an equating condition](/docs/search/index.md/Search-Query-Language/Search-Operators/toLowerCase-and-toUpperCase#Using_toLowerCase_or_toUpperCase_with_an_equating_condition).
 
 
 #### What are different Indicators of Compromise (IOC) types available?
-31
 
 
 The following IOC types are available from CrowdStrike:
@@ -359,9 +334,6 @@ The following IOC types are available from CrowdStrike:
 
 
 #### Can you provide samples for the different IOC types?
-32
-
-
 
 <table>
   <tr>
@@ -726,7 +698,7 @@ You can further investigate bad IP triggers by updating your query to check the 
 
 **Type:** string
 
-**Description:** The report ID that the indicator is associated with (e.g. CSIT-XXXX , CSIR-XXXX , etc). The report list is also represented under the labels list in the JSON data structure.
+**Description:** The report ID that the indicator is associated with (e.g., CSIT-XXXX, CSIR-XXXX, etc). The report list is also represented under the labels list in the JSON data structure.
 
 
 ##### actor

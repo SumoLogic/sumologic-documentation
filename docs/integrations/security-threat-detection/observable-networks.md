@@ -7,14 +7,9 @@ description: The Observable Networks App allows you to monitor your Observable N
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-
 The Observable Networks App allows you to monitor your Observable Networks deployment from Sumo Logic. The App Overview Dashboard provides insight to high-level data about your network.
 
 From Sumo Logic, you may also set up forwarding for log monitoring and authentication logs to Observable Networks. With log monitoring, Observable Networks can notify you when it detects that a Collector is missing, exposing gaps in your log coverage. Authentication log forwarding allows for more accurate and detailed alerts, using Sumo Logic log data to provide extra richness to Observable's Dynamic Endpoint Modeling algorithms.
-
-
-1
-
 
 Before you begin, your Observable Networks portal must be properly configured. Contact [support@obsrvbl.com](https://help.sumologic.com/07Sumo-Logic-Apps/22Security_and_Threat_Detection/Observable_Networks) if you have any questions.
 
@@ -27,7 +22,6 @@ The Sumo Logic App for Observable Networks assumes Observable Networks formatted
 
 
 #### About Observable Networks
-3
 
 Observable Networks is a provider of network security technology and advanced threat detection services that identify compromised and misused networked devices. Observable's Dynamic Endpoint Modeling technology includes a cloud-based service platform incorporating automated security analytics and real-time traffic sensors to continuously model all devices on a network. Endpoint modeling is based on network traffic flow metadata and is indifferent to encryption. Observable makes it easy to readily understand normal and abnormal device behaviors, helping to identify compromised devices and facilitate faster remediation.
 
@@ -233,13 +227,9 @@ Once an app is installed, it will appear in your **Personal** folder, or other f
 
 Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
 
+## Dashboards
 
-### Dashboards
-16
-
-#### Observable Networks Overview
-17
-
+### Observable Networks Overview
 
 The Observable Networks Overview Dashboard is intended to provide a high level at-a-glance view into your network.
 
@@ -257,10 +247,9 @@ The Observable Networks Overview Dashboard is intended to provide a high level a
 
 **Observations by Time.** Displays the frequency of each observation type as an area chart on a timeline for the last six hours.
 
+<img src={useBaseUrl('img/integrations/security-threat-detection/ObservableNetworks_Overview_Dashboard.png')} alt="ObservableNetworks_Overview_Dashboard" />
 
-## Searches
-19
-
+### Searches
 
 **Recent Flow Count.** This query shows the history of flow counts for your network. A network flow describes a single piece of communication on your network, including source and destination IPs, ports, and protocol (TCP, UDP, etc.). Flows are the main input to the Observable Networks platform.
 

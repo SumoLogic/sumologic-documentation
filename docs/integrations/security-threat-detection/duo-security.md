@@ -156,46 +156,36 @@ Once an app is installed, it will appear in your **Personal** folder, or other f
 Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
 
 
-### Dashboards
-15
+## Viewing the Duo Security Dashboards
 
-#### Overview
-16
+
+### Overview
+
 Overview of Duo Events including events breakdown by type, geographic location, one-day time comparison of events, and admin activity.
 
+<img src={useBaseUrl('img/integrations/security-threat-detection/duo-overview.png')} alt="Duo Security dashboards" />
 
-17
 
-#### Administrator Events
-18
-
+### Administrator Events
 
 Geographic location of admin events, one-day time comparison of events, login errors, admin activity over time, and events breakdown by action.
 
+<img src={useBaseUrl('img/integrations/security-threat-detection/Duo-administrator-events.png')} alt="Duo Security dashboards" />
 
-19
-
-#### Success Authentications
-20
-
+### Success Authentications
 
 Geographic location of successful authentication events, one-day time comparison of events, breakdown of events by Application, Factor, Users, Country, State, and City.
+<img src={useBaseUrl('img/integrations/security-threat-detection/duo-success-authentication.png')} alt="Duo Security dashboards" />
 
-
-21
-
-
-#### Failed Authentications
-22
+### Failed Authentications
 
 
 Geographic location of failed authentication events, one-day time comparison of failed events, breakdown of events by Application, Factor, Users, Country, State, and City.
 
-23
+<img src={useBaseUrl('img/integrations/security-threat-detection/duo-failed-authentications.png')} alt="Duo Security dashboards" />
 
-
-#### Outliers and Threat Analysis
-24
-
+### Outliers and Threat Analysis
 
 Outliers and threat analysis of Duo events.
+
+<img src={useBaseUrl('img/integrations/security-threat-detection/duo-outliers-threat.png')} alt="Duo Security dashboards" />
