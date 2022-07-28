@@ -30,19 +30,20 @@ For more information, see Microsoft’s [list of Teams Activities](https://docs.
 To collect logs for Microsoft Teams, please configure an Office 365 Audit Source. The Teams logs will be present in the “Office 365 General Logs” context. Note, that if you are already collecting logs for Office 365, you can simply make note of the source category configured for the aforementioned context.
 
 Sample Log Message
+
 ```json
 "CreationTime":"2020-10-30T14:00:51",
-  "Id":"e40689dc-7ea9-4f75-8fdd-8c3c9f9bf647",
-  "Operation":"TeamCreated",
-  "OrganizationId":"984e32e5-f98a-4600-aa32-27c3f948abe3",
-  "RecordType":25,
-  "UserKey":"d9d7d5ac-4d64-43df-8205-fa6f46388fcb",
-  "UserType":0,
-  "Version":1,
-  "Workload":"MicrosoftTeams",
-  "UserId":"email@domain.com",
-  "TeamGuid":"19:caac0ef5091e431aa45a6b6ec4a6723a@thread.tacv2",
-  "TeamName":"My Team"
+"Id":"e40689dc-7ea9-4f75-8fdd-8c3c9f9bf647",
+"Operation":"TeamCreated",
+"OrganizationId":"984e32e5-f98a-4600-aa32-27c3f948abe3",
+"RecordType":25,
+"UserKey":"d9d7d5ac-4d64-43df-8205-fa6f46388fcb",
+"UserType":0,
+"Version":1,
+"Workload":"MicrosoftTeams",
+"UserId":"email@domain.com",
+"TeamGuid":"19:caac0ef5091e431aa45a6b6ec4a6723a@thread.tacv2",
+"TeamName":"My Team"
 ```
 
 Sample Query

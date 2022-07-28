@@ -92,7 +92,7 @@ In this step, you use a Sumo-provided Azure Resource Manager (ARM) template to c
 
 
 
-10. Go to **Storage accounts** and search for “sumofailmsg**”. **Click on “sumofailmsg_&lt;random-string>”.
+10. Go to **Storage accounts** and search for “sumofailmsg**”. **Click on `sumofailmsg_<random-string>`.
 
 11. Under **Blob Service**, click **Containers**, then click **+ Container**, enter the Name** azureaudit-failover**, and select **Private** for the **Public Access Level**. Click **OK**.
 

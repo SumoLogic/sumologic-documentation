@@ -245,11 +245,10 @@ Locate and install the app you need from the **App Catalog**. If you want to see
 
 1. From the **App Catalog**, search for and select the app**.**
 2. To install the app, click **Add to Library** and complete the following fields.
-    1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
-    2. **Data Source.** Select **Enter a Custom Data Filter** and enter a filter that references the Windows Event Logs source and the script sources" (configured as described in [Collect Active Directory Log Files](https://help.sumologic.com/07Sumo-Logic-Apps/04Microsoft-and-Azure/Active_Directory_Legacy/Collect_Log_Files_for_the_Active_Directory_Legacy_App)).  For example:  \
-`(_sourceCategory=OS/Windows OR _sourcecategory=*adscripts*)`.
-    3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-    4. Click **Add to Library**.
+    * **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
+    * **Data Source.** Select **Enter a Custom Data Filter** and enter a filter that references the Windows Event Logs source and the script sources" (configured as described in [Collect Active Directory Log Files](https://help.sumologic.com/07Sumo-Logic-Apps/04Microsoft-and-Azure/Active_Directory_Legacy/Collect_Log_Files_for_the_Active_Directory_Legacy_App)). For example: `(_sourceCategory=OS/Windows OR _sourcecategory=*adscripts*)`.
+    * **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
+3. Click **Add to Library**.
 
 Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization. See [Welcome to the New Library](https://help.sumologic.com/01Start-Here/Welcome-to-the-New-Library) for information on working with the library in the new UI.
 

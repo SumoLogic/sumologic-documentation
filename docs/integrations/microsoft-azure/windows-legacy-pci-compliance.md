@@ -2,7 +2,7 @@
 id: windows-legacy-pci-compliance
 title: Sumo Logic App for Windows Legacy PCI Compliance
 sidebar_label: Windows PCI Compliance (Legacy)
-description: The Sumo Logic App for Payment Card Industry (PCI) Compliance for Windows offers dashboards to monitor systems, account and users activity to ensure that login activity and privileged users are within the expected ranges. 
+description: The Sumo Logic App for Payment Card Industry (PCI) Compliance for Windows offers dashboards to monitor systems, account and users activity to ensure that login activity and privileged users are within the expected ranges.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -20,11 +20,9 @@ This page provides instructions for configuring log collection for the PCI Compl
 
 The PCI Compliance For Windows Legacy App uses Windows Security Event and System Event logs. It does not work with third-party logs.
 
-
 ### Configure a Collector and a Source  
 
-**To configure a collector and source, do the following:
-
+To configure a collector and source, do the following:
 
 1. Configure an [Installed Windows collector](https://help.sumologic.com/03Send-Data/Installed-Collectors/03Install-a-Collector-on-Windows) through the user interface or from the command line.
 2. Configure either a local or remote Windows Event Log source. To configure a Windows Event Log source set the following:
@@ -69,21 +67,16 @@ instance of Win32_NTLogEvent
 ```
 
 
-
 ### Query Sample
 
-
-```bash title="Recent Policy Changes"
+```sql title="Recent Policy Changes"
 _sourceCategory=OS/Windows/Events "Policy Change"
 | parse regex "CategoryString = \"(?<category>[^\"]+?)\";[\s\S]+?Logfile = \"Security\""
 | count by category
 | where category matches "*Policy Change*"
 ```
 
-
-
 This page provides instructions for configuring log collection for the PCI Compliance for Windows Legacy App.
-
 
 
 ## Installing the PCI Compliance for Windows Legacy App
@@ -99,18 +92,14 @@ Locate and install the app you need from the **App Catalog**. If you want to see
 1. From the **App Catalog**, search for and select the app**.**
 2. Select the version of the service you're using and click **Add to Library**.
 
-
-9
 Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](https://help.sumologic.com/01Start-Here/Library/Apps-in-Sumo-Logic/Install-Apps-from-the-Library)
 
-
-
 1. To install the app, complete the following fields.
-    1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
-    2. **Data Source.** Select either of these options for the data source. 
+    * **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
+    * **Data Source.** Select either of these options for the data source. 
         * Choose **Source Category**, and select a source category from the list. 
         * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). 
-    3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
+    * **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
 2. Click **Add to Library**.
 
 Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization.

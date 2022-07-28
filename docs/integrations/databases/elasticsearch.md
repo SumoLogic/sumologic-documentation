@@ -128,12 +128,12 @@ db_system: "elasticsearch"
  \
 `Please enter in values for the following parameters (marked in `<**CHANGE_ME**>` above):
 
-* **environment** - This is the deployment environment where the Elasticsearch cluster identified by the value of **servers** resides. For example dev, prod, or QA. While this value is optional we highly recommend setting it.
-* **db_cluster** - Enter a name to identify this Elasticsearch cluster. This cluster name will be shown in the Sumo Logic dashboards. \
+* `environment` - This is the deployment environment where the Elasticsearch cluster identified by the value of **servers** resides. For example dev, prod, or QA. While this value is optional we highly recommend setting it.
+* `db_cluster` - Enter a name to identify this Elasticsearch cluster. This cluster name will be shown in the Sumo Logic dashboards. \
  \
 Here’s an explanation for additional values set by this configuration that we request you **please do not modify** as they will cause the Sumo Logic apps to not function correctly. \
 
-* **component**: “database” - This value is used by Sumo Logic apps to identify application components.
+* `component: “database”` - This value is used by Sumo Logic apps to identify application components.
 * **db_system**: “elasticsearch” - This value identifies the database system.
 
     For all other parameters please see [this doc](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Collect_Metrics_Using_Telegraf/03_Install_Telegraf#Configuring_Telegraf) for more properties that can be configured in the Telegraf agent globally.
@@ -240,10 +240,10 @@ Enter in values for the following parameters (marked in **bold** above):
 
 * `telegraf.influxdata.com/inputs` - This contains the required configuration for the Telegraf Elasticsearch Input plugin. Please refer[ to this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/redis) for more information on configuring the Elasticsearch input plugin for Telegraf. Note: As telegraf will be run as a sidecar the host should always be localhost.
 * In the input plugins section, that is `[[inputs**.**elasticsearch]]`:
-    * **servers** - The URL to the Elasticsearch server. This can be a comma-separated list to connect to multiple Elasticsearch servers. Please see [this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/jolokia2) for more information on additional parameters for configuring the Elasticsearch input plugin for Telegraf.
+    * `servers` - The URL to the Elasticsearch server. This can be a comma-separated list to connect to multiple Elasticsearch servers. Please see [this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/jolokia2) for more information on additional parameters for configuring the Elasticsearch input plugin for Telegraf.
 * In the tags section, which is `[inputs.elasticsearch]`
-    * **environment** - This is the deployment environment where the Elasticsearch cluster identified by the value of **servers** resides. For example dev, prod, or QA. While this value is optional we highly recommend setting it.
-    * **db_cluster** - Enter a name to identify this Elasticsearch cluster. This cluster name will be shown in the Sumo Logic dashboards.
+    * `environment` - This is the deployment environment where the Elasticsearch cluster identified by the value of **servers** resides. For example dev, prod, or QA. While this value is optional we highly recommend setting it.
+    * `db_cluster` - Enter a name to identify this Elasticsearch cluster. This cluster name will be shown in the Sumo Logic dashboards.
 
     Here’s an explanation for additional values set by this configuration that we request you **please do not modify** as they will cause the Sumo Logic apps to not function correctly.
 
@@ -252,7 +252,7 @@ Enter in values for the following parameters (marked in **bold** above):
 * prometheus.io/port: "9273" - This tells prometheus what ports to scrape on. This should not be changed.
 * telegraf.influxdata.com/inputs
     * In the tags section i.e.  `[inputs.elasticsearch.tags]`
-        * **component**: “database” - This value is used by Sumo Logic apps to identify application components.
+        * `component: “database”` - This value is used by Sumo Logic apps to identify application components.
         * **db_system**: “elasticsearch” - This value identifies the database system.
 
     For all other parameters please see [this doc](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Collect_Metrics_Using_Telegraf/03_Install_Telegraf#Configuring_Telegraf) for more properties that can be configured in the Telegraf agent globally.
@@ -320,10 +320,10 @@ Create or modify **telegraf.conf** and copy and paste the text below:
 
 
 * In the input plugins section, that is `[[inputs.elasticsearch]]`:
-    * **servers** - The URL to the elasticsearch server. Please see [this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/elasticsearch) for more information on additional parameters for configuring the Elasticsearch input plugin for Telegraf.
+    * `servers` - The URL to the elasticsearch server. Please see [this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/elasticsearch) for more information on additional parameters for configuring the Elasticsearch input plugin for Telegraf.
     * In the tags section, which is `[inputs.Elasticsearch.tags]`
-        * **environment** - This is the deployment environment where the Elasticsearch cluster identified by the value of **servers** resides. For example dev, prod, or QA. While this value is optional we highly recommend setting it.
-        * **db_cluster** - Enter a name to identify this Elasticsearch cluster. This cluster name will be shown in the Sumo Logic dashboards.
+        * `environment` - This is the deployment environment where the Elasticsearch cluster identified by the value of **servers** resides. For example dev, prod, or QA. While this value is optional we highly recommend setting it.
+        * `db_cluster` - Enter a name to identify this Elasticsearch cluster. This cluster name will be shown in the Sumo Logic dashboards.
     * In the output plugins section, that is `[[outputs.sumologic]]`:
         * url - This is the HTTP source URL created in step 3. Please see [this doc](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Collect_Metrics_Using_Telegraf/05_Configure_Telegraf_Output_Plugin_for_Sumo_Logic) for more information on additional parameters for configuring the Sumo Logic Telegraf output plugin.
 
@@ -339,7 +339,7 @@ There are additional values set by the Telegraf configuration.  We recommend not
 
 
 * **data_format** - “prometheus” In the output plugins section, which is `[[outputs.sumologic]]`. Metrics are sent in the Prometheus format to Sumo Logic
-* **Component**: “database” - In the input plugins section, that is `[[inputs.Elasticsearch]]` - This value is used by Sumo Logic apps to identify application components.
+* `component: “database”` - In the input plugins section, that is `[[inputs.Elasticsearch]]` - This value is used by Sumo Logic apps to identify application components.
 * For all other parameters please see [this doc](https://github.com/influxdata/telegraf/blob/master/etc/telegraf.conf) for more properties that can be configured in the Telegraf agent globally.
 
 

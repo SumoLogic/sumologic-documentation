@@ -125,7 +125,7 @@ Please enter values for the following parameters (marked in **bold_CHANGE_ME** a
         * **username**: The Username of RabbitMQ's admin account . The default is “guest”.
         * **password**:  The password of RabbitMQ's admin account. The default is “guest”.
     * In the tags section, which is [inputs.rabbitmq.tags]
-        * **environment** - This is the deployment environment where the RabbitMQ cluster identified by the value of **servers** resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
+        * `environment` - This is the deployment environment where the RabbitMQ cluster identified by the value of **servers** resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
         * **messaging_cluster** - Enter a name to identify this RabbitMQ cluster. This cluster name will be shown in the Sumo Logic dashboards.
 
 Here’s an explanation for additional values set by this configuration that we request you **please do not modify** as they will cause the Sumo Logic apps to not function correctly.
