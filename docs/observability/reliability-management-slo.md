@@ -157,7 +157,7 @@ The heart of an SLO is the queries used for the SLI query types including metric
 
 **General Information**
 
-For general information on querying metrics and logs, see [Overview of Metrics in Sumo](https://help.sumologic.com/Metrics/Introduction-to-Metrics/01Overview-of-Metrics-in-Sumo) and [About Search Basics](https://help.sumologic.com/05Search/Get-Started-with-Search/Search-Basics/About-Search-Basics).
+For general information on querying metrics and logs, see [Overview of Metrics in Sumo](https://help.sumologic.com/Metrics/Introduction-to-Metrics/01Overview-of-Metrics-in-Sumo) and [About Search Basics](/docs/search/index.md/Get-Started-with-Search/Search-Basics/About-Search-Basics).
 
 A preview runs the query in real-time to help test and refine results, with a time range to see broader results as needed.
 
@@ -310,7 +310,7 @@ Follow the instructions below based on the query type: \
 
 <li>Select <strong>Successful</strong> or <strong>Unsuccessful Events</strong> to measure.</li>
 
-<li>Search logs selecting and entering a log query. See <a href="https://help.sumologic.com/05Search/Get-Started-with-Search/Search-Basics/About-Search-Basics">About Search Basics</a> for more information.</li>
+<li>Search logs selecting and entering a log query. See <a href="/docs/search/index.md/Get-Started-with-Search/Search-Basics/About-Search-Basics">About Search Basics</a> for more information.</li>
 
 <li>For <strong>Use values from</strong>, select the numeric value available for that query to pull data from.</li>
 
@@ -323,7 +323,7 @@ Follow the instructions below based on the query type: \
 <ol>
 <li>Select <strong>Successful</strong> or <strong>Unsuccessful Events</strong> to measure.</li>
 
-<li>Search logs selecting and entering a log query. See <a href="https://help.sumologic.com/05Search/Get-Started-with-Search/Search-Basics/About-Search-Basics">About Search Basics</a> for more information.</li>
+<li>Search logs selecting and entering a log query. See <a href="/docs/search/index.md/Get-Started-with-Search/Search-Basics/About-Search-Basics">About Search Basics</a> for more information.</li>
 
 <li>For <strong>Use values from</strong>, it always uses the Metric value.</li>
 

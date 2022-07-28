@@ -209,7 +209,7 @@ _sourceCategory="cb_edr_events" or _sourceCategory="cb_endpoint_standard_events"
 ```
 
 
-For more information, see [Live Tail](https://help.sumologic.com/05Search/Live-Tail).
+For more information, see [Live Tail](/docs/search/index.md/Live-Tail).
 
 
 #### Sample Log Messages

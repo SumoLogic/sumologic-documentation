@@ -194,7 +194,7 @@ The Threat Intel Quick Analysis App provides baseline queries. You can further o
 * Filter out unwanted logs before you use Threat Intel lookup operator
 * Use keywords
 * Use the `where` operator
-* Use general search optimization [rules](https://help.sumologic.com/05Search/Get-Started-with-Search/How-to-Build-a-Search/Best-Practices%3A-Search-Rules-to-Live-By)
+* Use general search optimization [rules](/docs/search/index.md/Get-Started-with-Search/How-to-Build-a-Search/Best-Practices%3A-Search-Rules-to-Live-By)
 
 For example:
 
@@ -305,7 +305,7 @@ No, we do not allow an export of the threat Intel feeds as that is confidential 
 27
 
 
-Yes. You can scan for malicious Indicators of Compromise (IOCs) in real time using our [lookup](https://help.sumologic.com/05Search/Search-Query-Language/Search-Operators/lookup-classic) operator.
+Yes. You can scan for malicious Indicators of Compromise (IOCs) in real time using our [lookup](/docs/search/index.md/Search-Query-Language/Search-Operators/lookup-classic) operator.
 
 
 #### Can I historically search my logs for threats?
@@ -326,7 +326,7 @@ No. No results in your Dashboards can mean that nothing has been identified by C
 30
 
 
-It could be a case-sensitivity issue. In Sumo, the equal sign (=) and the not equal to sign (!=)  conditions are case-sensitive; when you use them with Sumo operators you may need to convert the string to which the condition is applied to upper or lower case. For more information, see [Using toLowerCase or toUpperCase with an equating condition](https://help.sumologic.com/05Search/Search-Query-Language/Search-Operators/toLowerCase-and-toUpperCase#Using_toLowerCase_or_toUpperCase_with_an_equating_condition).
+It could be a case-sensitivity issue. In Sumo, the equal sign (=) and the not equal to sign (!=)  conditions are case-sensitive; when you use them with Sumo operators you may need to convert the string to which the condition is applied to upper or lower case. For more information, see [Using toLowerCase or toUpperCase with an equating condition](/docs/search/index.md/Search-Query-Language/Search-Operators/toLowerCase-and-toUpperCase#Using_toLowerCase_or_toUpperCase_with_an_equating_condition).
 
 
 #### What are different Indicators of Compromise (IOC) types available?
@@ -655,7 +655,7 @@ Yes,  you can run scheduled searches that can be set up with a run frequency of 
 44
 
 
-This isn't currently available as an App. You could create your own [lookup](https://help.sumologic.com/05Search/Search-Query-Language/Search-Operators/lookup-classic) using a shared file.
+This isn't currently available as an App. You could create your own [lookup](/docs/search/index.md/Search-Query-Language/Search-Operators/lookup-classic) using a shared file.
 
 
 #### What do I do if I find a bad IP (malicious level = high)?

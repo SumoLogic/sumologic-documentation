@@ -38,8 +38,8 @@ Before you begin, you must configure AWS CloudTrail logging to an S3 bucket in y
 
 To configure an AWS CloudTrail Source, perform these steps:
 
-1. Add an [AWS CloudTrail Source](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/AWS-CloudTrail-Source) to Sumo Logic.
-2. [Grant Sumo Logic access](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/Grant-Access-to-an-AWS-Product) to an Amazon S3 bucket.
+1. Add an [AWS CloudTrail Source](/docs/send-data/sources/sources-hosted-collectors/amazon-web-services/aws-cloudtrail-source.md) to Sumo Logic.
+2. [Grant Sumo Logic access](/docs/send-data/sources/sources-hosted-collectors/amazon-web-services/grant-access-aws-product.md) to an Amazon S3 bucket.
 * Generate the Role-Based Access CloudFormation template in Sumo Logic and download the template.
 * Create the CloudFormation stack in AWS Management Console using the template.
 * Copy the Role ARN from the Outputs tab and paste it in the Role ARN field in Sumo Logic CloudTrail Source created in step 3. For more information, refer [Configuring your AWS source with CloudFormation](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/Configuring-your-AWS-Source-with-CloudFormation#set-up-an-iam-role).

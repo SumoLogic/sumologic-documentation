@@ -36,7 +36,7 @@ For **Metadata**, add an **account** field to the source and assign it a value t
 
 ### Collect AWS API Gateway CloudTrail Logs
 
-To your Hosted Collector, add an [AWS CloudTrail Source](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/AWS-CloudTrail-Source):
+To your Hosted Collector, add an [AWS CloudTrail Source](/docs/send-data/sources/sources-hosted-collectors/amazon-web-services/aws-cloudtrail-source.md):
 1. **Name**. Enter a name to display the new Source.
 2. **Description**. Enter an optional description.
 3. **S3 Region**. Select the Amazon Region for your** API Gateway** S3 bucket.

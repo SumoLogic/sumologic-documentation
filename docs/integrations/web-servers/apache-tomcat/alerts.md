@@ -6,7 +6,7 @@ description: This page explains the Apache Tomcat Alerts.
 hide_table_of_contents: true
 ---
 
-To help determine if the Apache Tomcat server is available and performing well, the [Sumo Logic monitors](https://help.sumologic.com/Visualizations-and-Alerts/Alerts/Monitors) are provided with out-of-box alerts.
+To help determine if the Apache Tomcat server is available and performing well, the [Sumo Logic monitors](/docs/alerts/monitors/index.md) are provided with out-of-box alerts.
 
 The alerts are built based on metrics datasets and have preset thresholds.
 

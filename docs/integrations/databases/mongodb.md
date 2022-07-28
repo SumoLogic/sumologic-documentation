@@ -518,7 +518,7 @@ At this point, MongoDB logs should start flowing into Sumo Logic.
 ## MongoDB Alerts
 
 
-Sumo Logic provides out of the box alerts available via [Sumo Logic monitors](https://help.sumologic.com/Visualizations-and-Alerts/Alerts/Monitors). These alerts are built based on logs and metrics datasets and have preset thresholds based on industry best practices and recommendations.
+Sumo Logic provides out of the box alerts available via [Sumo Logic monitors](/docs/alerts/monitors/index.md). These alerts are built based on logs and metrics datasets and have preset thresholds based on industry best practices and recommendations.
 
 
 **INSERT TABLE**
@@ -555,7 +555,7 @@ This page has instructions for installing Sumo Logic Monitors for MongoDB, the a
 1
 
 
-Sumo Logic has provided pre-packaged alerts available through [Sumo Logic monitors](https://help.sumologic.com/Visualizations-and-Alerts/Alerts/Monitors) to help you proactively determine if a MongoDB cluster is available and performing as expected. These monitors are based on metric and log data and include pre-set thresholds that reflect industry best practices and recommendations. For more information about individual alerts, see [MongoDB Alerts](https://help.sumologic.com/07Sumo-Logic-Apps/12Databases/MongoDB/MongoDB_Alerts).
+Sumo Logic has provided pre-packaged alerts available through [Sumo Logic monitors](/docs/alerts/monitors/index.md) to help you proactively determine if a MongoDB cluster is available and performing as expected. These monitors are based on metric and log data and include pre-set thresholds that reflect industry best practices and recommendations. For more information about individual alerts, see [MongoDB Alerts](https://help.sumologic.com/07Sumo-Logic-Apps/12Databases/MongoDB/MongoDB_Alerts).
 
 To install these monitors, you must have the **Manage Monitors** role capability.
 
@@ -584,7 +584,7 @@ There are limits to how many alerts can be enabled. For more information, see [M
 
 5
 
-7. The monitors are created in a "MongoDB" folder. The monitors are disabled by default. See the [Monitors](https://help.sumologic.com/Visualizations-and-Alerts/Alerts/Monitors) topic for information about enabling monitors and configuring notifications or connections.
+7. The monitors are created in a "MongoDB" folder. The monitors are disabled by default. See the [Monitors](/docs/alerts/monitors/index.md) topic for information about enabling monitors and configuring notifications or connections.
 
 
 #### Method 2: Install Monitors using a Terraform script

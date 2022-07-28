@@ -450,7 +450,7 @@ At this point, Telegraf should start collecting the Couchbase metrics and forwar
 
 ## Couchbase Alerts
 
-Sumo Logic has provided out-of-the-box alerts available via[ Sumo Logic monitors](https://help.sumologic.com/Visualizations-and-Alerts/Alerts/Monitors) to help you quickly determine if the Couchbase database cluster is available and performing as expected.
+Sumo Logic has provided out-of-the-box alerts available via[ Sumo Logic monitors](/docs/alerts/monitors/index.md) to help you quickly determine if the Couchbase database cluster is available and performing as expected.
 
 
 <table>
@@ -577,7 +577,7 @@ This page provides instructions for installing the Couchbase App, as well as exa
 
 ### Pre-Packaged Alerts
 
-Sumo Logic has provided out-of-the-box alerts available through [Sumo Logic monitors](https://help.sumologic.com/Visualizations-and-Alerts/Alerts/Monitors) to help you monitor your Couchbase clusters. These alerts are built based on metrics and logs datasets and include preset thresholds based on industry best practices and recommendations.
+Sumo Logic has provided out-of-the-box alerts available through [Sumo Logic monitors](/docs/alerts/monitors/index.md) to help you monitor your Couchbase clusters. These alerts are built based on metrics and logs datasets and include preset thresholds based on industry best practices and recommendations.
 
 For details on the individual alerts, see this [page](https://help.sumologic.com/07Sumo-Logic-Apps/12Databases/Couchbase/Couchbase_Alerts).
 
@@ -607,7 +607,7 @@ There are limits to how many alerts can be enabled - see the [Alerts FAQ](https:
 6. Click Import and then copy-paste the above JSON to import monitors.
 
 
-The monitors are disabled by default. Once you have installed the alerts using this method, navigate to the Couchbase folder under **Monitors** to configure them. See [this](https://help.sumologic.com/Visualizations-and-Alerts/Alerts/Monitors) document to enable monitors to send notifications to teams or connections. See the instructions detailed in [Step 4](https://help.sumologic.com/07Sumo-Logic-Apps/12Databases/Couchbase/Install_the_Couchbase_Monitors%2C_App%2C_and_view_the_Dashboards#Step+4) of this [document](https://help.sumologic.com/Visualizations-and-Alerts/Alerts/Monitors#Add_a_monitor).
+The monitors are disabled by default. Once you have installed the alerts using this method, navigate to the Couchbase folder under **Monitors** to configure them. See [this](/docs/alerts/monitors/index.md) document to enable monitors to send notifications to teams or connections. See the instructions detailed in [Step 4](https://help.sumologic.com/07Sumo-Logic-Apps/12Databases/Couchbase/Install_the_Couchbase_Monitors%2C_App%2C_and_view_the_Dashboards#Step+4) of this [document](https://help.sumologic.com/Visualizations-and-Alerts/Alerts/Monitors#Add_a_monitor).
 
 
 ##### Install the alerts using a Terraform script method.

@@ -40,12 +40,11 @@ You can enable Amazon Virtual Private Cloud (VPC) Flow Logs from the Amazon Web 
 2. Select the VPC.
 3. Click **Actions** > **Create Flow Log**.
 4. On the **Create Flow Log** page, select a **Role** to use Flow logs.
-    1. If you haven't set up IAM permissions, click **Set Up Permissions**.
-
-    2. From the new tab, **VPC Flow Logs is requesting permissions to use resources in your account**:
-    3. From the IAM Role, select **Create a new IAM Role.**
-    4. Add a Role Name that describes your logs, for example, VPC-Flow-Logs.
-    5. Click **Allow**.
+   * If you haven't set up IAM permissions, click **Set Up Permissions**.
+   * From the new tab, **VPC Flow Logs is requesting permissions to use resources in your account**:
+   * From the IAM Role, select **Create a new IAM Role.**
+   * Add a Role Name that describes your logs, for example, VPC-Flow-Logs.
+   * Click **Allow**.
 5. Back in **Create Flow Log**, enter the new role you created in **Role.**
 6. In **Destination Log Group** enter a descriptive name such as **VPCFlowLogs**.
 7. Click **Create Flow Log**. It can take up to an hour for the log group to show up in CloudWatch Logs.
@@ -56,11 +55,8 @@ You can enable Amazon Virtual Private Cloud (VPC) Flow Logs from the Amazon Web 
 1. [Create a Hosted Collector ](https://help.sumologic.com/03Send-Data/Hosted-Collectors#Create_a_Hosted_Collector)in Sumo Logic.
 2. Configure an [HTTP Source](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/HTTP-Source) in Sumo Logic. When configuring the source:
 3. Under **Advanced Options for Logs**, for **Timestamp Format**, click **Specify a format**.
-4. **Format**. Enter:  \
-`epoch`
-5. **Timestamp locator**. Enter: \
-` \s(\d{10,13})\s\d{10,13}`  \
-
+4. **Format**. Enter: `epoch`.
+5. **Timestamp locator**. Enter: `\s(\d{10,13})\s\d{10,13}`.
 6. Click **Save**.
 
 
@@ -93,7 +89,7 @@ The Lambda function fetches list of Elastic Network Interfaces using the `descri
 
 Paste the JSON below, after adding the ARN of the Lambda functions.
 
-```
+```json
 {
     "Version": "2012-10-17",
     "Statement": [
@@ -135,13 +131,13 @@ This page has instructions for collecting Amazon VPC Flow Logs using an AWS S3 s
 
 ### Step 2: Configure AWS S3 source  
 
-1. [Grant Access to an AWS S3 Bucket](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/Grant-Access-to-an-AWS-Product).
+1. [Grant Access to an AWS S3 Bucket](/docs/send-data/sources/sources-hosted-collectors/amazon-web-services/grant-access-aws-product.md).
 2. [Enable logging using the AWS Management Console](http://docs.aws.amazon.com/AmazonS3/latest/dev/enable-logging-console.html).
 3. When you create an AWS Source, you associate it with a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use, or create a new Hosted Collector. For instructions, see [Create a Hosted Collector](https://help.sumologic.com/03Send-Data/Hosted-Collectors#Create_a_Hosted_Collector).
 4. Add an [AWS Source](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/AWS-S3-Source#AWS_Sources) for the S3 Source to Sumo Logic. When you configure the S3 source:
     1. In the **Advanced Options for Logs** section, uncheck the **Detect messages spanning multiple lines** option.
     2. In the **Processing Rules for Logs** section, add an **Exclude messages that match** processing rule to ignore the following file header lines: \
-`version account-id interface-id srcaddr dstaddr srcport dstport protocol packets bytes start end action log-status`
+    `version account-id interface-id srcaddr dstaddr srcport dstport protocol packets bytes start end action log-status`
 
 
 ## Install the Sumo Logic App
@@ -159,11 +155,11 @@ Version selection is applicable only to a few apps currently. For more informati
 
 
 1. To install the app, complete the following fields.
-    1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
-    2. **Data Source.** Select either of these options for the data source. 
+   * **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
+   * **Data Source.** Select either of these options for the data source. 
         * Choose **Source Category**, and select a source category from the list. 
         * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). 
-    3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
+   * **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
 2. Click **Add to Library**.
 
 Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization.

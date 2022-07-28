@@ -99,7 +99,7 @@ Namespace for **Amazon DynamoDB** Service is **AWS/DynamoDB**.
 
 ### Collect Amazon DynamoDB CloudTrail Logs
 
-1. To your Hosted Collector, add an [AWS CloudTrail Source](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/AWS-CloudTrail-Source).
+1. To your Hosted Collector, add an [AWS CloudTrail Source](/docs/send-data/sources/sources-hosted-collectors/amazon-web-services/aws-cloudtrail-source.md).
     * **Name**. Enter a name to display the new Source.
     * **Description**. Enter an optional description.
     * **S3 Region**. Select the Amazon Region for your **Amazon DynamoDB** S3 bucket.

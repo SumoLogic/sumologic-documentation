@@ -172,7 +172,7 @@ Click the funnel icon in the upper left of the dashboard to display filtering op
 
 These suggested searches cover some of the most common scenarios for monitoring user activity and security activity on a Linux server. These searches work on RedHat, Debian, SuSe platforms, and their derivations (for example, CentOS, Ubuntu, OpenSuSe).
 
-You can enter these queries into the Search box as a starting baseline, and then customize a query and time range for your system. Be sure to [save your search](https://help.sumologic.com/05Search/Get-Started-with-Search/Search-Basics/Save-a-Search) queries if you plan to run them often.
+You can enter these queries into the Search box as a starting baseline, and then customize a query and time range for your system. Be sure to [save your search](/docs/search/index.md/Get-Started-with-Search/Search-Basics/Save-a-Search) queries if you plan to run them often.
 
 It's assumed that common Linux OS logs are collected (for example: `/var/log/*`).
 

@@ -474,7 +474,7 @@ local2.=notice     /var/log/haproxy-notice.log
 
 ## Installing the HAProxy Monitors
 
-Sumo Logic has provided pre-packaged alerts available through [Sumo Logic monitors](https://help.sumologic.com/Visualizations-and-Alerts/Alerts/Monitors) to help you proactively determine if a HAProxy cluster is available and performing as expected. These monitors are based on metric and log data and include pre-set thresholds that reflect industry best practices and recommendations. For more information about individual alerts, see [HAProxy Alerts](#haproxy-alerts).
+Sumo Logic has provided pre-packaged alerts available through [Sumo Logic monitors](/docs/alerts/monitors/index.md) to help you proactively determine if a HAProxy cluster is available and performing as expected. These monitors are based on metric and log data and include pre-set thresholds that reflect industry best practices and recommendations. For more information about individual alerts, see [HAProxy Alerts](#haproxy-alerts).
 
 To install these monitors, you must have the **Manage Monitors** role capability. You can install by importing a JSON file or using a Terraform script.
 
@@ -498,7 +498,7 @@ Custom filter examples:
 2. Click **Add**.
 3. Click Import.
 4. On the** Import Content popup**, enter **HAProxy **in the Name field, paste in the JSON into the the popup, and click **Import**.
-5. The monitors are created in a "HAProxy" folder. The monitors are disabled by default. See the [Monitors](https://help.sumologic.com/Visualizations-and-Alerts/Alerts/Monitors) topic for information about enabling monitors and configuring notifications or connections.
+5. The monitors are created in a "HAProxy" folder. The monitors are disabled by default. See the [Monitors](/docs/alerts/monitors/index.md) topic for information about enabling monitors and configuring notifications or connections.
 
 
 ### Method 2: Use a Terraform script
