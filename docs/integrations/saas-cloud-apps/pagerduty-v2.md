@@ -2,7 +2,7 @@
 id: pagerduty-v2
 title: Sumo Logic App for PagerDuty V2
 sidebar_label: PagerDuty V2
-description: The Sumo Logic App for PagerDuty V2 collects incident messages from your PagerDuty account via a webhook, and displays that incident data in pre-configured Dashboards so you can monitor and analyze the activity of your PagerDuty account and Services. 
+description: The Sumo Logic App for PagerDuty V2 collects incident messages from your PagerDuty account via a webhook, and displays that incident data in pre-configured Dashboards so you can monitor and analyze the activity of your PagerDuty account and Services.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -95,23 +95,12 @@ Using PagerDuty with Webhooks V2, you receive HTTP callbacks when incident event
 3. Continue with [installing the Sumo Logic App for PagerDuty V2](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/PagerDuty_V2/Install_the_PagerDuty_V2_App_and_view_the_Dashboards).
 
 
-## Install the PagerDuty V2 App and view the Dashboards
+## Install the PagerDuty V2 App 
 
-This page provides instructions for installing the Sumo App for PagerDuty V2, as well as the descriptions of each of the app dashboards. Click a link to jump to a section:
-
-
-* [Install the app](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/PagerDuty_V2/Install_the_PagerDuty_V2_App_and_view_the_Dashboards#Install_the_app)
-* [Dashboard filters](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/PagerDuty_V2/Install_the_PagerDuty_V2_App_and_view_the_Dashboards#Dashboard_filters)
-* [Overview Dashboard](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/PagerDuty_V2/Install_the_PagerDuty_V2_App_and_view_the_Dashboards#Overview_Dashboard)
-* [Incidents Overview Dashboard](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/PagerDuty_V2/Install_the_PagerDuty_V2_App_and_view_the_Dashboards#Incidents_Overview_Dashboard)
-* [Incidents by Urgency and Escalation Policy Dashboard](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/PagerDuty_V2/Install_the_PagerDuty_V2_App_and_view_the_Dashboards#Incidents_by_Urgency_and_Escalation_Policy_Dashboard)
-
-
-### Install the app
+This page provides instructions for installing the Sumo App for PagerDuty V2, as well as the descriptions of each of the app dashboards.
 
 Now that you have set up a log and metric collection, you can install the Sumo Logic App for PagerDuty V2, and use its pre-configured searches and dashboards.
 
-###### To install the app, do the following:
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
@@ -120,7 +109,6 @@ Locate and install the app you need from the **App Catalog**. If you want to see
 2. Select the version of the service you're using and click **Add to Library**.
 
 
-2.png "image_tooltip")
 Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](https://help.sumologic.com/01Start-Here/Library/Apps-in-Sumo-Logic/Install-Apps-from-the-Library)
 
 
@@ -137,66 +125,43 @@ Once an app is installed, it will appear in your **Personal** folder, or other f
 
 Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
 
+## Viewing PagerDuty v2 Dashboards
 
 ### Dashboard Filter with Template Variables      
 
 Template variables provide dynamic dashboards that rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you can view dynamic changes to the data for a fast resolution to the root cause. For more information, see the [Filter with template variables](https://help.sumologic.com/Visualizations-and-Alerts/Dashboard_(New)/Filter_with_template_variables) help page.
 
-
-3.png "image_tooltip")
 You can use template variables to drill down and examine the data on a granular level.
 
 
-### Overview Dashboard
+### Overview
 
 **PagerDuty V2 - Overview Dashboard **provides a high-level view of top alerts, triggered incidents summary, as well as a breakdown of per-user incident assignments and comparisons over a specified time interval.
 
 Use this dashboard to:
-
-
-
 * Review the services, incidents and policies that are causing the most alerts.
 * Analyze detailed information on incidents using the Incident Summary panel.
 * Drill down to examine data on a granular level with filters.
 
 
-4.png "image_tooltip")
 
 
 
-### Incidents Overview Dashboard
+### Incidents Overview
 
 **PagerDuty V2 - Incidents Overview Dashboard** provides an at-a-glance analysis of triggered, acknowledged, escalated, assigned, and resolved incidents. This dashboard also provides a high-level view of incident trends and comparisons over specified time intervals.
 
 Use this dashboard to:
 
-
-
 * Review a high-level view of incidents summaries.
 * Compare the state of incidents with that of a previous time
 
 
-5.png "image_tooltip")
 
-
-
-### Incidents by Urgency and Escalation Policy Dashboard
+### Incidents by Urgency and Escalation Policy
 
 **PagerDuty V2 - Incidents by  Urgency and Escalation Policy Dashboard** provides an overview analysis of urgency events, from low to high, as well as a breakdown of the services impacted by high urgency events.
 
 Use this dashboard to:
-
-
-
 * Review see weekly incident summaries.
 * Analyze incidents by severity and escalation policy.
-
-
-6.png "image_tooltip")
-
-
-
-
-1. [Back to top](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/PagerDuty_V2/Install_the_PagerDuty_V2_App_and_view_the_Dashboards#title)
-    * [Collect logs for PagerDuty V2](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/PagerDuty_V2/Collect_logs_for_PagerDuty_V2)
-    *  [PagerDuty V3](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/PagerDuty_v3)

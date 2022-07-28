@@ -104,18 +104,9 @@ For more information, see [https://support.pagerduty.com/docs/webhooks](https://
 Continue with [installing the Sumo Logic App for PagerDuty V3](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/PagerDuty_v3/Install_the_PagerDuty_V3_App_and_view_the_Dashboards).
 
 
-## Install the PagerDuty V3 App and view the Dashboards
+## Install the PagerDuty V3 App
 
-This page provides instructions for installing the Sumo App for PagerDuty V3, as well as the descriptions of each of the app dashboards. Click a link to jump to a section:
-
-* [Install the app](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/PagerDuty_v3/Install_the_PagerDuty_V3_App_and_view_the_Dashboards#Install_the_app)
-* [Dashboard filters](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/PagerDuty_v3/Install_the_PagerDuty_V3_App_and_view_the_Dashboards#Dashboard_Filter_with_Template_Variables)
-* [Overview Dashboard](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/PagerDuty_v3/Install_the_PagerDuty_V3_App_and_view_the_Dashboards#Overview_Dashboard)
-* [Incidents Overview Dashboard](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/PagerDuty_v3/Install_the_PagerDuty_V3_App_and_view_the_Dashboards#Incidents_Overview_Dashboard)
-* [Incidents by Urgency and Escalation Policy Dashboard](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/PagerDuty_v3/Install_the_PagerDuty_V3_App_and_view_the_Dashboards#Incidents_by_Urgency_and_Escalation_Policy_Dashboard)
-
-
-#### Install the app
+This page provides instructions for installing the Sumo App for PagerDuty V3, as well as the descriptions of each of the app dashboards.
 
 Now that you have set up a log and metric collection, you can install the Sumo Logic App for PagerDuty V3, and use its pre-configured searches and dashboards.
 
@@ -142,8 +133,9 @@ Once an app is installed, it will appear in your **Personal** folder, or other f
 
 Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
 
+## Viewing PagerDuty v3 Dashboards
 
-#### Dashboard Filter with Template Variables      
+### Dashboard Filter with Template Variables      
 
 Template variables provide dynamic dashboards that rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you can view dynamic changes to the data for a fast resolution to the root cause. For more information, see the [Filter with template variables](https://help.sumologic.com/Visualizations-and-Alerts/Dashboard_(New)/Filter_with_template_variables) help page.
 
@@ -152,7 +144,7 @@ Template variables provide dynamic dashboards that rescope data on the fly. As y
 You can use template variables to drill down and examine the data on a granular level.
 
 
-#### Overview Dashboard
+### Overview
 
 **PagerDuty V3 - Overview Dashboard **provides a high-level view of top alerts, triggered incidents summary, as well as a breakdown of per-user incident assignments and comparisons over a specified time interval.
 
@@ -167,7 +159,7 @@ Use this dashboard to:
 
 
 
-#### Incidents Overview Dashboard
+### Incidents Overview
 
 **PagerDuty V3 - Incidents Overview Dashboard** provides an at-a-glance analysis of triggered, acknowledged, escalated, assigned, and resolved incidents. This dashboard also provides a high-level view of incident trends and comparisons over specified time intervals.
 
@@ -179,7 +171,7 @@ Use this dashboard to:
 6.png "image_tooltip")
 
 
-#### Incidents by Urgency and Escalation Policy Dashboard
+### Incidents by Urgency and Escalation Policy
 
 **PagerDuty V3 - Incidents by  Urgency and Escalation Policy Dashboard** provides an overview analysis of urgency events, from low to high, as well as a breakdown of the services impacted by high urgency events.
 

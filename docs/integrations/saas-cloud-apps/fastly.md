@@ -142,9 +142,7 @@ _sourceCategory=fastly waf denyRules reqHost | parse "\"denyRules\":\"*\"" as de
 
 
 
-## Install the Fastly App and view the Dashboards
-
-### Install the Sumo Logic App
+## Install the Fastly App
 
 Now that you have configured Fastly, install the Sumo Logic App for Fastly to take advantage of the preconfigured searches and [dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/Fastly/03Fastly-App-Dashboards#Dashboards) to analyze your data.
 
@@ -165,12 +163,12 @@ Locate and install the app you need from the **App Catalog**. If you want to see
     5. Click **Add to Library**.
 
 
-### Dashboards
+## Dashboards
 
 There are four dashboards for Fastly that you can configure to accommodate your individual reporting needs.
 
 
-#### Fastly - CDN - Overview
+### CDN - Overview
 
 The overview dashboard provides a high-level view of your Fastly traffic and identifies potential problems within the service.
 
@@ -186,7 +184,7 @@ The overview dashboard provides a high-level view of your Fastly traffic and ide
 * **Cache Hit Percentage Over Time.** Line chart of the cache hit percentage over the last 60 minutes.
 
 
-#### Fastly - CDN - Origin Performance
+### CDN - Origin Performance
 
 Focus in on Origin Host performance to check latencies, slow URLs and error-causing URLs.
 
@@ -206,7 +204,7 @@ Focus in on Origin Host performance to check latencies, slow URLs and error-caus
 * **Error Rate 5xx.** Shows the number of 5xx error events by code in a stacked column chart on a timeline using timeslices of 10 minutes for the past 24 hours.
 
 
-#### Fastly - CDN - Quality of Service
+### CDN - Quality of Service
 
 See where quality of service is below minimum thresholds such as download times, cache performance, and data center performance.
 
@@ -225,7 +223,7 @@ See where quality of service is below minimum thresholds such as download times,
 * **Performance (millisecs) Stats by Data Center. **Provides an aggregation table of performance statistics by IP address per data center for the last hour.
 
 
-#### Fastly - CDN - Visitors
+### CDN - Visitors
 
 See where you're getting the most traffic and from where.
 
@@ -250,7 +248,7 @@ See where you're getting the most traffic and from where.
 * **Bot Traffic Over Time. ** Displays bot traffic by volume for the last hour as a line chart.
 
 
-#### Fastly - WAF - Overview
+### WAF - Overview
 
 See the overview of Fastly WAF including the states, hits, and threat intel on warning and blocked events.
 
@@ -278,7 +276,7 @@ The following panels are grouped as blocking and warning (which triggered a rule
     * **Top Messages (Blocked). **See the count and percentage of WAF messages for blocked events in the last 24 hours on a pie chart.
 
 
-#### Fastly - WAF - Offenders
+### WAF - Offenders
 
 See the details on WAF offenders including the location, client IP addresses for warning and blocked events, and OWASP offenders in different attack categories and threshold exceptions.
 
@@ -303,7 +301,7 @@ See the details on WAF offenders including the location, client IP addresses for
     * **LFI-RCE-RFI. **See the top 10 IP addresses by count triggering the local file inclusion, remote file inclusion, and remote code execution rules in the last 24 hours.
 
 
-#### Fastly - WAF - OWASP
+### WAF - OWASP
 
 See the overall Open Web Application Security Project (OWASP) anomaly score quartiles and by rule category.
 

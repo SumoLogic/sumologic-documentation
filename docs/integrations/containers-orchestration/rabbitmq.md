@@ -598,7 +598,7 @@ The RabbitMQ - Overview dashboard gives you an at-a-glance view of your RabbitMQ
 
 The RabbitMQ - Node dashboard helps you Get an at-a-glance view of the state of the nodes in the RabbitMQ cluster.
 
-**Use this dashboard to**:
+Use this dashboard to:
 * Monitor the number of open file descriptors.
 * Monitor uptime of nodes.
 * Determine the amount of ram transaction, disk transaction.
@@ -612,7 +612,7 @@ The RabbitMQ - Node dashboard helps you Get an at-a-glance view of the state of 
 
 The RabbitMQ - Queue dashboard provides an at-a-glance view of the state of your queues in your RabbitMQ clusters.
 
-**Use this dashboard to**:
+Use this dashboard to:
 * Monitor number of consumers on queues
 * Gain insights into pushing messages rate for queues of your RabbitMQ cluster.
 * Gain insights into delivery messages rate for queues of your RabbitMQ cluster.
@@ -627,7 +627,7 @@ The RabbitMQ - Queue dashboard provides an at-a-glance view of the state of your
 
 The RabbitMQ - Exchanges dashboard provides an at-a-glance view of the state of your exchanges in your RabbitMQ clusters.
 
-**Use this dashboard to**:
+Use this dashboard to:
 * Monitor number of total messages published in exchanges
 * Monitor number of total messages published out exchanges
 * Gain insights into message publish Rate in exchanges of your RabbitMQ cluster.
@@ -640,7 +640,7 @@ The RabbitMQ - Exchanges dashboard provides an at-a-glance view of the state of 
 ### Logs
 This dashboard helps you quickly analyze your RabbitMQ error logs across all clusters.
 
-**Use this dashboard to**:
+Use this dashboard to:
 * Identify critical events in your RabbitMQ cluster.
 * Examine trends to detect spikes in Error or Fatal events
 * Monitor Broker added/started and shutdown events in your cluster.

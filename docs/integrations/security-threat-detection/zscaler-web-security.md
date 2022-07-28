@@ -161,13 +161,9 @@ _sourceCategory = "zscaler" !"cat=Allowed"
 
 
 
-## Install the Zscaler Web Security App and view the Dashboards
+## Installing the Zscaler Web Security App
 
 This page provides instructions on how to install the Zscaler Web Security App, and provides examples of each of the dashboards. The App preconfigured searches and [Dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/22Security_and_Threat_Detection/Zscaler_Web_Security/Zscaler-Web-Security-Dashboards#Dashboards) provide easy-to-access visual insights into your data.
-
-
-### Install the Sumo Logic App
-12
 
 
 To install the app, do the following:
@@ -198,19 +194,15 @@ Once an app is installed, it will appear in your **Personal** folder, or other f
 Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
 
 
-### Dashboards
-14
+## Viewing ZWA Dashboards
 
 
-
-#### Zscaler- Overview
-15
+### Zscaler- Overview
 
 
 The Zscaler - Overview Dashboard provides general information of the Zscaler Web Gateway logs, including Panels that drill-down into the other Zscaler Dashboards. The Overview Dashboard gives a good starting point for detecting anomalies in blocked traffic and geographic hotspots for allowed and blocked traffic.
 
-
-16
+<img src={useBaseUrl('img/integrations/security-threat-detection/ZscalerOverview.png')} alt="Zscaler_Web_Security Dashboard" />
 
 
 **File Classification Threats.** Displays the number of file classification threats in a single value chart for the last six hours.
@@ -228,20 +220,14 @@ The Zscaler - Overview Dashboard provides general information of the Zscaler Web
 **Denied to Allowed Ratio - Outlier. **Shows the ratio of denied to allowed events in an outlier chart on a timeline for the last six hours.
 
 
-#### Zscaler- Behavior
-17
-
+### Zscaler- Behavior
 
 The Zscaler - Behavior Dashboard focuses on allowed traffic behaviors, showing trends and deviations by users, content types accessed, content categories, super categories, and bandwidth trends.
 
-
-18
-
+<img src={useBaseUrl('img/integrations/security-threat-detection/ZscalerBehavior.png')} alt="Zscaler_Web_Security Dashboard" />
 
 
-##### Data Volume
-19
-
+### Data Volume
 
 **MB Out by Top 5 Countries.** Displays the details of MB out by top five countries in a table chart including country name, MB count, and percent usage for the last hour.
 
@@ -250,7 +236,7 @@ The Zscaler - Behavior Dashboard focuses on allowed traffic behaviors, showing t
 **Destination vs Source Volume.** Provides information on the volume of destination vs source in an area chart on a timeline for the last hour.
 
 
-##### Non-General Browsing
+### Non-General Browsing
 20
 
 
@@ -261,9 +247,7 @@ The Zscaler - Behavior Dashboard focuses on allowed traffic behaviors, showing t
 **Non-General Activity by Top Named Users.** Provides activity by top named users in a stacked column chart on a timeline for the last hour.
 
 
-##### General Browsing
-21
-
+### General Browsing
 
 **General Activity by Super Category and Sub Category. **Displays details about activity by super category and sub category in a stacked column chart for the last hour.
 
@@ -271,16 +255,11 @@ The Zscaler - Behavior Dashboard focuses on allowed traffic behaviors, showing t
 
 **Top General Browsing by Named Users.** Provides details of browsing by named users in a stacked column chart on a timeline for the last hour.
 
-
-#### Zscaler- Blocked Traffic
-22
-
+### Zscaler- Blocked Traffic
 
 The Zscaler - Blocked Traffic Dashboard illustrates outliers in both blocked traffic peaks and multi-dimensional outliers for blocked activity specific to user.
 
-
-23
-
+<img src={useBaseUrl('img/integrations/security-threat-detection/ZscalerBlockedTraffic.png')} alt="Zscaler_Web_Security Dashboard" />
 
 **Blocked Events Outlier.** Displays blocked event outliers in an outlier chart on a timeline for the last three hours.
 
@@ -297,15 +276,11 @@ The Zscaler - Blocked Traffic Dashboard illustrates outliers in both blocked tra
 **Top 10 Blocked Base URLs.** Displays the top 10 blocked base URLs with the most activity in a pie chart for the last hour.
 
 
-#### Zscaler- File Classification Activity
-24
-
+### Zscaler- File Classification Activity
 
 The Zscaler - File Classification Activity Dashboard focuses on file-based threats by users, threat name, file types, and subtypes for a overarching view of blocked files across the Zscaler environment.
 
-
-25
-
+<img src={useBaseUrl('img/integrations/security-threat-detection/ZscalerFileClassification.png')} alt="Zscaler_Web_Security Dashboard" />
 
 **File Threats by User. **Displays file threats by user in a stacked area chart on a timeline for the last hour.
 

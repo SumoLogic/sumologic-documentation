@@ -393,16 +393,13 @@ _sourceCategory="Labs/cb-edr-json" | parse regex "(?:process_name)(?:\"\:\"|=')
 
 
 
-## Install the VMware Carbon Black App and view the Dashboards
+## Install the VMware Carbon Black App
 
 This page provides instructions for installing the VMware Carbon Black App and has examples of each of the App dashboards. The VMware Carbon Black App dashboards are organized in the following categories, according to their function:
 
 * **[VMware Carbon Black Endpoint Detection and Response (EDR)](https://www.carbonblack.com/products/edr/)** is an incident response and threat hunting solution that continuously records and stores unfiltered endpoint data, allowing security professionals to track potential threats in real-time.
 * **[VMware Carbon Black Cloud Endpoint Standard](https://www.carbonblack.com/products/endpoint-standard/)** is a next-generation antivirus (NGAV) and endpoint detection and  EDR solution.
 
-
-#### Install the App
-25
 
 
 This section demonstrates how to install the VMware Carbon Black EDR and Cloud Endpoint Standard App.
@@ -434,18 +431,16 @@ Once an app is installed, it will appear in your **Personal** folder, or other f
 Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
 
 
-#### Dashboard filters   
-27
+## Viewing VMware Carbon Black Dashboards
 
+### Dashboard filters   
 
 **Each dashboard has a set of filters** that you can apply to the entire dashboard, as shown in the following example. Click the funnel icon in the top dashboard menu bar to display a scrollable list of filters that are applied across the entire dashboard.
 
 
-28
 You can use filters to drill down and examine the data on a granular level.
 
 
-29
 
 
 **Each panel has a set of filters** that are applied to the results for that panel only, as shown in the following example. Click the funnel icon in the top panel menu bar to display a list of panel-specific filters.
@@ -455,15 +450,14 @@ You can use filters to drill down and examine the data on a granular level.
 
 
 
-##### Carbon Black - EDR - Overview Dashboard
-31
-
+### Carbon Black - EDR - Overview Dashboard
 
 The **Carbon Black - EDR - Overview** dashboard provides a high-level view of the state of your network infrastructure and systems. The panels highlight detected threats, hosts, top feeds and IOC’s, top processes, top watchlists, and alert trends.
 
+
+<img src={useBaseUrl('img/integrations/security-threat-detection/CB_Defense-Overview.png')} alt="Carbon Black - EDR Dashboard" />
+
 Use this dashboard to:
-
-
 
 * Monitor potential threats.
 * Determine the top processes and threat indicators.
@@ -471,20 +465,14 @@ Use this dashboard to:
 * Monitor hosts, users, watchlists and feeds.
 
 
-32
 
-
-
-##### Carbon Black - EDR - Alerts Dashboard
-33
-
+### Carbon Black - EDR - Alerts Dashboard
 
 The **Carbon Black - EDR - Alerts** dashboard provides detailed information on the alerts in your environment, including alerts by mode, OS, report, and groups. The panels also show alert trends, recent alerts, and top users.
 
+<img src={useBaseUrl('img/integrations/security-threat-detection/CB_Response-Alerts.png')} alt="Carbon Black - EDR Dashboard" />
+
 Use this dashboard to:
-
-
-
 * Monitor alert activity and identify spikes.
 * Monitor alerts triggered after a critical issue.
 * Track users who trigger a high number of alerts.
@@ -494,16 +482,15 @@ Use this dashboard to:
 
 
 
-##### Carbon Black - EDR - Feeds Dashboard
+### Carbon Black - EDR - Feeds Dashboard
 35
 
 
 The** Carbon Black - EDR - Feeds** dashboard provides detailed information on total feeds, feed trends, top and recent feeds, feed comparisons, and processes related to feeds.
 
+<img src={useBaseUrl('img/integrations/security-threat-detection/CB_Response-Feeds.png')} alt="Carbon Black - EDR Dashboard" />
+
 Use this dashboard to:
-
-
-
 * Monitor feed activity and identify spikes.
 * Correlate processes and feeds.
 * Compare feeds over time.
@@ -513,15 +500,15 @@ Use this dashboard to:
 
 
 
-##### Carbon Black - EDR - Indicators of Compromise Dashboard
+### Carbon Black - EDR - Indicators of Compromise Dashboard
 37
 
 
 The** Carbon Black - EDR - Indicators of Compromise** dashboard shows details on indicators of a compromised environment, as well as status for IOCs. The panels also provide an at-a-glance view of top malicious IPv4 addresses, top IOC DNSs, queries and query based feeds.
 
+<img src={useBaseUrl('img/integrations/security-threat-detection/CB_Response-Indicators-of-Compromise.png')} alt="Carbon Black - EDR Dashboard" />
+
 Use this dashboard to:
-
-
 
 * Determine the locations of attacks.
 * Track suspicious DNSs.
@@ -532,15 +519,15 @@ Use this dashboard to:
 
 
 
-##### Carbon Black - EDR - Network Dashboard
+### Carbon Black - EDR - Network Dashboard
 39
 
 
 The** Carbon Black - EDR - Network **dashboard provides networking details for top protocols, local and remote ports, and unique IP addresses.
 
+<img src={useBaseUrl('img/integrations/security-threat-detection/CB_Response-Network.png')} alt="Carbon Black - EDR Dashboard" />
+
 Use this dashboard to:
-
-
 
 * Determine the geographic location of network connections.
 * Monitor ports.
@@ -551,15 +538,15 @@ Use this dashboard to:
 
 
 
-##### Carbon Black - EDR - Processes Dashboard
+### Carbon Black - EDR - Processes Dashboard
 41
 
 
 The** Carbon Black - EDR - Processes** dashboard provides details on the processes that generate events.
 
+<img src={useBaseUrl('img/integrations/security-threat-detection/CB_Response-Processes.png')} alt="Carbon Black - EDR Dashboard" />
+
 Use this dashboard to:
-
-
 
 * Review processes used to modify registries and files.
 * Monitor command line processes, and top paths for processes that generate alerts.
@@ -569,15 +556,13 @@ Use this dashboard to:
 
 
 
-##### Carbon Black - EDR - Sensors Dashboard
-43
+### Carbon Black - EDR - Sensors Dashboard
 
+The **Carbon Black - EDR - Sensors** dashboard provides details of the sensors in your environment, such as sensor activity, trends and activity over time, and operating system.
 
-The** Carbon Black - EDR - Sensors** dashboard provides details of the sensors in your environment, such as sensor activity, trends and activity over time, and operating system.
+<img src={useBaseUrl('img/integrations/security-threat-detection/CB_Response-Sensors.png')} alt="Carbon Black - EDR Dashboard" />
 
 Use this dashboard to:
-
-
 
 * Identify sensors that are not reporting over a specified time period.
 * Monitor sensor activity and rate spikes.
@@ -587,16 +572,14 @@ Use this dashboard to:
 
 
 
-##### Carbon Black - EDR - Threat Intelligence Dashboard
-45
-
+### Carbon Black - EDR - Threat Intelligence Dashboard
 
 The** Carbon Black - EDR - Threat Intelligence** dashboard allows you to monitor threats on your network, categorized by feed, score, and severity. You can view recent threats, trends over time,  and hosts affected by threats.
 
+<img src={useBaseUrl('img/integrations/security-threat-detection/CB_Response-Threat-Intelligence.png')} alt="Carbon Black - EDR Dashboard" />
+
+
 Use this dashboard to:
-
-
-
 * Review threats over specified time periods.
 * Filter threats by severity to focus on high priority threats.
 * Identify hosts with the greatest number of threats.
@@ -606,15 +589,15 @@ Use this dashboard to:
 
 
 
-##### Carbon Black - EDR - User and Host Alerts Dashboard
+### Carbon Black - EDR - User and Host Alerts Dashboard
 47
 
 
 The** Carbon Black - EDR - User and Host Alerts** dashboard provides an at-a-glance view of user and host activity.
 
+<img src={useBaseUrl('img/integrations/security-threat-detection/CB_Response-User-and-Host-Alerts.png')} alt="Carbon Black - EDR Dashboard" />
+
 Use this dashboard to:
-
-
 
 * Monitor alert trends
 * Identify users responsible for the most alerts.
@@ -626,16 +609,13 @@ Use this dashboard to:
 
 
 
-##### Carbon Black - EDR - Watchlists Dashboard
-49
-
+### Carbon Black - EDR - Watchlists Dashboard
 
 The** Carbon Black - EDR - Watchlists** dashboard provides details on watchlists, including the number of watchlists, top watchlists, trends, and comparisons over time.
 
+<img src={useBaseUrl('img/integrations/security-threat-detection/CB_Response-Watchlists.png')} alt="Carbon Black - EDR Dashboard" />
+
 Use this dashboard to:
-
-
-
 * Identify the watchlists with the most hits in each category.
 * Monitor hits for individual watchlists and determine activity spikes.
 
@@ -644,16 +624,13 @@ Use this dashboard to:
 
 
 
-##### Carbon Black - Endpoint Standard - Overview Dashboard
-51
-
+### Carbon Black - Endpoint Standard - Overview Dashboard
 
 The** Carbon Black - Endpoint Standard - Overview** dashboard provides a high-level view of the state of your network security, showing the number of detected threats, alerts, indicators of compromise, devices, users, and groups. The panels also highlight alert trends, top users, indicators, devices, applications, and reasons.
 
+<img src={useBaseUrl('img/integrations/security-threat-detection/CB_Defense-endpoint.png')} alt="Carbon Black - EDR Dashboard" />
+
 Use this dashboard to:
-
-
-
 * Quickly review your infrastructure security status.
 * Understand what areas of the infrastructure are experiencing issues.
 * Determine how the infrastructure is being utilized by taking a look at top users, applications and devices.
@@ -663,16 +640,13 @@ Use this dashboard to:
 
 
 
-##### Carbon Black - Endpoint Standard - Indicators of Compromise Dashboard
-53
-
+### Carbon Black - Endpoint Standard - Indicators of Compromise Dashboard
 
 The** Carbon Black - Endpoint Standard - Indicators of Compromise** dashboard provides an at-a-glance view of indicators of threats to a secure network by severity, application, and the number of unique instances. A breakdown of each known indicator is also shown.
 
+<img src={useBaseUrl('img/integrations/security-threat-detection/CB_Defense-Indicators-of-Compromise.png')} alt="Carbon Black - EDR Dashboard" />
+
 Use this dashboard to:
-
-
-
 * Review which indicators are affecting your system.  
 * Understand how severity and the applications relate to the indicators.
 
@@ -681,56 +655,37 @@ Use this dashboard to:
 
 
 
-##### Carbon Black - Endpoint Standard - Threat Intelligence Dashboard
-55
-
+### Carbon Black - Endpoint Standard - Threat Intelligence Dashboard
 
 The **Carbon Black - Endpoint Standard - Threat Intelligence** dashboard provides details on the threats on your network, including the number of threats, their severity, and threat outliers. The panels also show details on the top devices affected by threats, recent threats, and a rating score of threats.
 
+<img src={useBaseUrl('img/integrations/security-threat-detection/CB_Defense-Threat-Intelligence.png')} alt="Carbon Black - EDR Dashboard" />
+
 Use this dashboard to:
-
-
-
 * Review the threats identified in your infrastructure.
 * Investigate the threats by understanding the severity and scores of the threats.
 
 
-56
+### Carbon Black - Endpoint Standard - Alerts Dashboard
 
+The **Carbon Black - Endpoint Standard - Alerts** dashboard provides detailed information on security-related alerts in your environment, including the number of alerts, severity, and trends over time. The panels also show information on alert policies, device operating systems (OS), and most recent alerts.
 
-
-##### Carbon Black - Endpoint Standard - Alerts Dashboard
-57
-
-
-The** Carbon Black - Endpoint Standard - Alerts** dashboard provides detailed information on security-related alerts in your environment, including the number of alerts, severity, and trends over time. The panels also show information on alert policies, device operating systems (OS), and most recent alerts.
+<img src={useBaseUrl('img/integrations/security-threat-detection/CB_Defense-Alerts.png')} alt="Carbon Black - EDR Dashboard" />
 
 Use this dashboard to:
-
-
-
 * View an overall picture of all the alerts being generated.
 * Understand the classification of alerts based on different criteria, such as Severity, Policy, and Score.
 * Monitor spikes in alerts over time.
 
 
-58
 
-
-
-##### Carbon Black - Endpoint Standard - Device Dashboard
-59
-
+### Carbon Black - Endpoint Standard - Device Dashboard
 
 The** Carbon Black - Endpoint Standard - Device** dashboard provides a high-level view of the devices on your network, including the number of devices, geographic locations, and operating systems. The panels also show information on device groups, incidents, alert severity, and target priority.
 
+<img src={useBaseUrl('img/integrations/security-threat-detection/CB_Defense-Device.png')} alt="Carbon Black - EDR Dashboard" />
+
 Use this dashboard to:
-
-
-
 * Monitor device classification by OS, Group, and Target Priority.
 * Track the devices generating the highest number of incidents.
 * Determine the most common location of the devices generating alerts to isolate threats.
-
-
-60

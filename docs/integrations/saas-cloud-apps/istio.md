@@ -2,7 +2,7 @@
 id: istio
 title: Sumo Logic App for Istio
 sidebar_label: Istio
-description: This Sumo Logic App for Istio  provides visibility into the health and performance of Istio and its control plane components, including Mixer, Galley, Citadel, Pilot and Envoy. 
+description: This Sumo Logic App for Istio  provides visibility into the health and performance of Istio and its control plane components, including Mixer, Galley, Citadel, Pilot and Envoy.
 ---
 
 
@@ -322,23 +322,9 @@ namespace=istio-system cluster={{cluster}}
 
 
 
-## Install the Istio App and view the Dashboards
-
-
-
-1. **Last updated \
-**Oct 19, 2021
-2. [Save as PDF](https://help.sumologic.com/@api/deki/pages/7288/pdf/Install%2bthe%2bIstio%2bApp%2band%2bview%2bthe%2bDashboards.pdf?stylesheet=default)
-3.  
-4. [ Share](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/Istio/Install_the_Istio_App_and_view_the_Dashboards#)
-
-    Table of contents
-
+## Installing the Istio App
 
 This page provides instructions for installing the Istio App, as well as descriptions and examples for each of the dashboards.
-
-
-#### Install the App
 
 Now that you have set up metric and log collection for Istio, install the Sumo Logic App for Istio and access the pre-configured dashboards that provide visibility into your Istio environment.
 
@@ -363,8 +349,9 @@ Once an app is installed, it will appear in your Personal folder, or other folde
 
 Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
 
+## Viewing Dashboards
 
-#### Filter with template variables   
+### Filter with template variables   
 
 Template variables provide dynamic dashboards that rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you can view dynamic changes to the data for a fast resolution to the root cause. For more information, see the [Filter with template variables](https://help.sumologic.com/Visualizations-and-Alerts/Dashboard_(New)/Filter_with_template_variables) help page.
 
@@ -388,7 +375,7 @@ Use this dashboard to: **
 
 
 
-##### Istio - Mesh Throughput Dashboard
+### Mesh Throughput Dashboard
 
 The **Istio Mesh** dashboard provides insights into the network of microservices in your environment, service success response rate, 4XX/5XX responses, latency, requests count, and request/response statistics.
 
@@ -404,7 +391,7 @@ Use this dashboard to:
 
 
 
-##### Istio - Workload Dashboard
+### Workload Dashboard
 
 The **Istio Workload** dashboard allows you to monitor the overall workloads in Istio and provides detailed breakdowns on inbound and outbound services.
 
@@ -420,7 +407,7 @@ Use this dashboard to:
 
 
 
-##### Istio - Galley Dashboard
+### Galley Dashboard
 
 The **Istio - Galley** Dashboard allows you to monitor the Istio Galley.
 
@@ -435,7 +422,7 @@ Use this dashboard to:
 
 
 
-##### Istio - Resource Usage Dashboard
+### Resource Usage Dashboard
 
 The **Istio - Resource Usage** dashboard allows you to monitor the overall performance of Istio from a single dashboard.
 
@@ -451,7 +438,7 @@ Use this dashboard to:
 
 
 
-##### Istio - Pilot Traffic Dashboard
+### Pilot Traffic Dashboard
 
 The Istio - Pilot Traffic dashboard assists in monitoring the Istio Pilot component
 

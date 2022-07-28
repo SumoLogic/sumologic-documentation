@@ -217,9 +217,7 @@ Field Extraction Rules (FERs) tell Sumo Logic which fields to parse out automati
 1.
 
 
-## Install the Akamai Cloud Monitor App and view the Dashboards
-
-### Install the Sumo Logic App
+## Install the Akamai Cloud Monitor App 
 
 Now that you have configured Akamai logs, install the Sumo Logic App for Akamai Cloud Monitor to take advantage of the pre-configured searches and [Dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/Akamai_Cloud_Monitor/Akamai-Cloud-Monitor-App-Dashboards#Dashboards) to analyze your Akamai data.
 
@@ -248,10 +246,10 @@ Once an app is installed, it will appear in your **Personal** folder, or other f
 Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
 
 
-### Dashboards
+## Viewing Dashboards
 
 
-#### Overview
+### Overview
 
 
 2.png "image_tooltip")
@@ -268,7 +266,7 @@ Panels will start to fill automatically. It's important to note that each panel 
 **Top Error-Causing URLs.** Displays the URLs that have produced the most errors in the last 15 minutes and counts the errors in a bar chart.
 
 
-#### Origin Performance
+### Origin Performance
 
 
 3.png "image_tooltip")
@@ -293,7 +291,7 @@ Panels will start to fill automatically. It's important to note that each panel 
 **Top Error-Causing URLs.** Displays the URLs that have produced the most errors in the last 15 minutes and counts the errors in a bar chart.
 
 
-#### Quality of Service
+### Quality of Service
 
 
 4.png "image_tooltip")
@@ -312,7 +310,7 @@ Panels will start to fill automatically. It's important to note that each panel 
 **Performance Stats by Country.** Provides an aggregation table of performance statistics by IP address per country code for the last hour.
 
 
-#### Security
+### Security
 
 
 5.png "image_tooltip")
@@ -331,7 +329,7 @@ Panels will start to fill automatically. It's important to note that each panel 
 **Top Deny URLs.** Lists the top 10 URLs with the most denials in an aggregation table by path, count, and percentage for the last hour.
 
 
-#### Visitors
+### Visitors
 
 6.png "image_tooltip")
 
@@ -349,7 +347,7 @@ Panels will start to fill automatically. It's important to note that each panel 
 **UA Over Time.** Displays user agents used by visitors as a stacked column chart over a timeline using timeslices of one minute for the last 15 minutes.
 
 
-#### Web Application Firewall - Attacks
+### Web Application Firewall - Attacks
 
 7.png "image_tooltip")
 

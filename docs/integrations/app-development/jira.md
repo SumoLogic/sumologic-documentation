@@ -221,7 +221,7 @@ Use this dashboard to:
 
 The **Jira - Catalina** dashboard provides information on the Jira internal web server. Panels display analytics for errors, failures, exceptions, request trends, and top ranked URLs.
 
-**Use this dashboard to**:
+Use this dashboard to:
 
 
 
@@ -287,7 +287,7 @@ Use this dashboard to:
 
 The **Jira - Security** dashboard provides information on security in Jira. The panels show analytics for the location of successful and failed logins, successful and failed logins for active users, comparisons of successful and failed logins, and session trends.
 
-**Use this dashboard to**:
+Use this dashboard to:
 
 
 
@@ -320,7 +320,7 @@ Use this dashboard to:
 
 The **Jira - User Events** dashboard provides information about user events in Jira, including the number of user events, trends, and users that have been updated, created, and deleted.
 
-**Use this dashboard to**:
+Use this dashboard to:
 
 
 

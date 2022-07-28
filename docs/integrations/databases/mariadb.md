@@ -791,7 +791,7 @@ You can use template variables to drill down and examine the data on a granular 
 
 The **MariaDB - Overview** dashboard gives you an at-a-glance view of the state of your database clusters by monitoring key cluster information such as errors, failed logins, errors, queries executed, slow queries, lock waits, uptime, and more.
 
-**Use this dashboard to**:
+Use this dashboard to:
 
 
 
@@ -808,7 +808,7 @@ The **MariaDB - Overview** dashboard gives you an at-a-glance view of the state 
 
 The **MariaDB - Error Logs** dashboard provides insight into database error logs by specifically monitoring database shutdown/start events, errors over time, errors, warnings, and crash recovery attempts.
 
-**Use this dashboard to**:
+Use this dashboard to:
 
 
 
@@ -828,7 +828,7 @@ The **MariaDB - Error Logs** dashboard provides insight into database error logs
 
 The **MariaDB - Failed Logins** dashboard provides insights into all failed login attempts by location, users and hosts.
 
-**Use this dashboard to**:
+Use this dashboard to:
 
 
 
@@ -845,7 +845,7 @@ The **MariaDB - Failed Logins** dashboard provides insights into all failed logi
 
 The **MariaDB - Replication** dashboard provides insights into the state of database replication.
 
-**Use this dashboard to**:
+Use this dashboard to:
 
 
 
@@ -867,7 +867,7 @@ The **MariaDB - Slow Queries** dashboard provides insights into all slow queries
 54
 Slow queries are queries that take 10 seconds or more to execute (default value is 10 seconds as per MariaDB configuration which can be altered) and excessive slow queries are those that take 15 seconds or more to execute.
 
-**Use this dashboard to**:
+Use this dashboard to:
 
 
 
@@ -888,7 +888,7 @@ Slow queries are queries that take 10 seconds or more to execute (default value 
 
 The **MariaDB - Performance and Resource Metrics** dashboard allows you to monitor the performance and resource usage of your database clusters.
 
-**Use this dashboard to**:
+Use this dashboard to:
 
 
 
@@ -908,7 +908,7 @@ The **MariaDB - Performance and Resource Metrics** dashboard allows you to monit
 
 The **MariaDB - Performance Schema Metrics** Dashboard provides insights into the metrics provided by the MariaDB Performance Schema, which is a feature for monitoring MariaDB Server execution at a low level.
 
-**Use this dashboard to**:
+Use this dashboard to:
 
 
 
