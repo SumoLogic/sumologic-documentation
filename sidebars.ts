@@ -1632,6 +1632,7 @@ module.exports = {
             'observability/kubernetes-solution/alerts',
           ],
         },
+        'observability/reliability-management-slo',
         'observability/root-cause-explorer',
       ],
     },
