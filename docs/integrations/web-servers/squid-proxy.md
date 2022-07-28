@@ -279,15 +279,15 @@ Enter in values for the following parameters (marked in bold above):
 
 * telegraf.influxdata.com/inputs - This contains the required configuration for the Telegraf SNMP Input plugin. Please refer[ to this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/redis) for more information on configuring the SNMP input plugin for Telegraf. Note: As telegraf will be run as a sidecar the host should always be localhost.
     * In the tags section, which is `[inputs.snmp.tags]`
-        * **environment** - This is the deployment environment where the Squid Proxy cluster identified by the value of **servers** resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
+        * `environment` - This is the deployment environment where the Squid Proxy cluster identified by the value of **servers** resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
         * **proxy_cluster **- Enter a name to identify this Squid Proxy cluster. This farm name will be shown in the Sumo Logic dashboards.  
 
 Here’s an explanation for additional values set by this configuration that we request you **please do not modify** as they will cause the Sumo Logic apps to not function correctly.
 
-* **telegraf.influxdata.com/class: sumologic-prometheus** - This instructs the Telegraf operator what output to use. This should not be changed.
-* **prometheus.io/scrape: "true"** - This ensures our Prometheus will scrape the metrics.
-* **prometheus.io/port: "9273"** - This tells prometheus what ports to scrape on. This should not be changed.
-* **telegraf.influxdata.com/inputs**
+* `telegraf.influxdata.com/class: sumologic-prometheus` - This instructs the Telegraf operator what output to use. This should not be changed.
+* `prometheus.io/scrape: "true"` - This ensures our Prometheus will scrape the metrics.
+* `prometheus.io/port: "9273"` - This tells prometheus what ports to scrape on. This should not be changed.
+* `telegraf.influxdata.com/inputs`
     * In the tags section, which is `[inputs.snmp.tags]`
         * **component**: “proxy” - This value is used by Sumo Logic apps to identify application components.
         * **proxy_system**: “squidproxy” - This value identifies the proxy system.
@@ -659,7 +659,7 @@ oid = "1.3.6.1.4.1.3495.1.1.3.0"
 Enter values for fields annotated with `<VALUE_TO_BE_CHANGED>` to the appropriate values. Do not include the brackets (`< >`) in your final configuration.
 
 * In the tags section, which is `[inputs.snmp.tags]`:
-    * **environment** - This is the deployment environment where the Squid Proxy server identified by the value of **servers** resides. For example; dev, prod, or QA. While this value is optional we highly recommend setting it.
+    * `environment` - This is the deployment environment where the Squid Proxy server identified by the value of **servers** resides. For example; dev, prod, or QA. While this value is optional we highly recommend setting it.
     * **proxy_cluster **- Enter a name to identify this Squid Proxy cluster. This cluster name will be shown in our dashboards.
 * In the output plugins section, which is `[[outputs.sumologic]]`:
     * **URL** - This is the HTTP source URL created previously. See this doc for more information on additional parameters for configuring the Sumo Logic Telegraf output plugin.
@@ -674,7 +674,7 @@ There are additional values set by the Telegraf configuration.  We recommend not
 
 
 
-* **data_format**: “prometheus” - In the output `[[outputs.sumologic]]` plugins section. Metrics are sent in the Prometheus format to Sumo Logic.
+* `data_format: “prometheus”` - In the output `[[outputs.sumologic]]` plugins section. Metrics are sent in the Prometheus format to Sumo Logic.
 * **component** - “proxy” - In the input `[[inputs.snmp]]` plugins section. This value is used by Sumo Logic apps to identify application components.
 * **proxy_system **- “squidproxy” - In the input plugins sections. This value identifies the proxy system.
 

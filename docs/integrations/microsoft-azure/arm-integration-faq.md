@@ -211,19 +211,16 @@ Use this [template](https://appdev-cloudformation-templates.s3.amazonaws.com/azu
 
 
 #### How do I ensure that the Event Hub is receiving log messages?
-28
-
 
 If events are not getting into the Event Hub, the event grid subscription publisher settings are not configured properly.
 
+Event Hub error messages:
 
-Event Hub error messages
+* **Resources should be in the same region.** Resource '/subscriptions/c088dc46-d692-42ad-a4b6-9a542d28ad2a/resourceGroups/AzureAuditEventHub/providers/Microsoft.Network/networkSecurityGroups/testhimvm-nsg' is in region 'eastus' and resource '/subscriptions/c088dc46-d692-42ad-a4b6-9a542d28ad2a/resourcegroups/testresourcegroup/providers/microsoft.eventhub/namespaces/sumoazureaudittf7grgv4prygw' is in region 'westus'.
 
-* **Resources should be in the same region.** Resource '/subscriptions/c088dc46-d692-42ad-a4b6-9a542d28ad2a/resourceGroups/AzureAuditEventHub/providers/Microsoft.Network/networkSecurityGroups/testhimvm-nsg' is in region 'eastus' and resource '/subscriptions/c088dc46-d692-42ad-a4b6-9a542d28ad2a/resourcegroups/testresourcegroup/providers/microsoft.eventhub/namespaces/sumoazureaudittf7grgv4prygw' is in region 'westus'. \
- \
-This happens while exporting logs or metrics from Azure monitor to Event Hub. The service generating the logs and Event Hub should be deployed in the same region. \
+  This happens while exporting logs or metrics from Azure monitor to Event Hub. The service generating the logs and Event Hub should be deployed in the same region.
 
-* **Create or update activity logprofilesfailure. **If you get this error message in Azure when setting up an Event Hub Export, do the following:
+* **Create or update activity logprofilesfailure.** If you get this error message in Azure when setting up an Event Hub Export, do the following:
     1. Search for Subscriptions in all services.
     2. Select your subscription > Resource Providers.
     3. Search for and Enable **microsoft.insights**.
