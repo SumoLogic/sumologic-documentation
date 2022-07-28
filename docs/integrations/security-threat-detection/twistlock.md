@@ -142,16 +142,9 @@ as container_name nodrop | parse "cve=\"*\"" as cve nodrop | parse "vendor_statu
 
 
 
-## Install the Twistlock App and view the Dashboards
+## Install the Twistlock App
 
 This section provides instructions on how to install the Twistlock App, as well as examples of each of the dashboards. The App pre-configured searches and [Dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/22Security_and_Threat_Detection/Cisco_ASA/Cisco-ASA-App-Dashboards#Dashboards) provide easy-to-access visual insights into your data.
-
-
-#### Install the App
-9
-
-
-This section shows you how to install the Twistlock App.
 
 To install the app, do the following:
 
@@ -181,27 +174,25 @@ Once an app is installed, it will appear in your **Personal** folder, or other f
 Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
 
 
-#### Filter with template variables    
+## Viewing Twistlock Dashboards
+
+### Filter with template variables    
 11
 
 
 Template variables provide dynamic dashboards that rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you can view dynamic changes to the data for a fast resolution to the root cause. For more information, see the [Filter with template variables](/docs/dashboards-new/filter-with-template-variables.md) help page.
 
 
-12
 You can use template variables to drill down and examine the data on a granular level.
 
 
-#### Twistlock - Overview
-13
-
+### Overview
 
 The **Twistlock - Overview** dashboard provides an at-a-glance overview of the state of your Kubernetes and container environments, including the number of hosts, containers, audit events, rules triggered, and defender incidents. The panels also display information on a variety of critical vulnerabilities by type, severity, and affected containers.
 
+<img src={useBaseUrl('img/integrations/security-threat-detection/Twistlock-overview.png')} alt="Twistlock Dashboard" />
+
 Use this dashboard to:
-
-
-
 * Verify the number of host containers being monitored by Twistlock.
 * Quickly understand and remediate vulnerabilities on hosts and images.
 * Understand which CVEs have fixes available and use that information to triage and remediate vulnerabilities.
@@ -212,15 +203,17 @@ Use this dashboard to:
 
 
 
-#### Twistlock - Scans
+#### Scans
 15
 
 
 The **Twistlock - Scans** dashboard provides insights into scan events. Panels show scan summaries, vulnerability information and container compliance violations.
 
+
+<img src={useBaseUrl('img/integrations/security-threat-detection/twistlock-scans.png')} alt="Twistlock Dashboard" />
+
+
 Use this dashboard to:
-
-
 
 * Monitor scan events and their results.
 * Identify and remediate the most vulnerable hosts, images, and compliance violations.
@@ -230,15 +223,17 @@ Use this dashboard to:
 
 
 
-#### Twistlock - Detected Vulnerabilities
+### Detected Vulnerabilities
 17
 
 
 The **Twistlock - Detected Vulnerabilities** dashboard provides detailed information on detected vulnerabilities in the registry, image, and host.
 
+
+<img src={useBaseUrl('img/integrations/security-threat-detection/twistlock-detected-vulnernabilities.png')} alt="Twistlock Dashboard" />
+
+
 Use this dashboard to:
-
-
 
 * Prioritize, identify and remediate vulnerabilities on the registry, images, and hosts.
 * Identify top rules triggered by Twistlock to understand how to optimize or add new rules going forward.
@@ -249,86 +244,62 @@ Use this dashboard to:
 
 
 
-#### Twistlock - CVE Status
+#### CVE Status
 19
 
 
 The **Twistlock - CVE Status** dashboard combines high-level views of common vulnerabilities and exposures (CVE) along with detailed information. Panels display at-a-glance views for host, image, and registry scans, and available fixes.
 
+<img src={useBaseUrl('img/integrations/security-threat-detection/twistlock-cve-status-dashboard.png')} alt="Twistlock Dashboard" />
+
+
 Use this dashboard to:
-
-
-
 * Quickly identify, prioritize, and remediate CVE’s in your environment, for which documented fixes are available.
 * Monitor trends of vulnerabilities detected within the last 2 days.
 
 
-20
 
 
-
-#### Twistlock - Compliance Violations
-21
-
+### Compliance Violations
 
 The **Twistlock - Compliance Violations** dashboard provides detailed information on system-wide compliance violations, organized according to the severity of violation, description of violation, and rules triggered by the violation.
 
+<img src={useBaseUrl('img/integrations/security-threat-detection/twistlock-compliance-violations-dashboard.png')} alt="Twistlock Dashboard" />
+
 Use this dashboard to:
-
-
-
 * Prioritize, identify, and remediate compliance violations.
 * Identify Twistlock rules that trigger violations and optimize them as needed.
 * Monitor compliance finding. These finding messages are generated as a byproduct of container scans, image scans, host scans, and registry scans.
 
 
-22
 
-
-
-#### Twistlock - Defender Incidents
-23
-
+#### Defender Incidents
 
 The **Twistlock - Defender** **Incidents** dashboard combines high-level and detailed information for defender incidents, which are logical groupings of events related by context that reveal known attack patterns, defender incidents, and process activity.
 
-**Use this dashboard to monitor:**
+<img src={useBaseUrl('img/integrations/security-threat-detection/twistlock-defender-incidents.png')} alt="Twistlock Dashboard" />
 
-
-
+**Use this dashboard to monitor:
 * Known attack patterns. Incidents are logical groupings of events, related by context, that reveal known attack patterns.
 * Processes activity in a container. Look into whether the process was spawned from a shell session.
 
 
-24
 
 
-
-#### Twistlock - Runtime
-25
-
+### Runtime
 
 The **Twistlock - Runtime** dashboard provides detailed information on system and runtime threats, alerts and management activity.
 
+<img src={useBaseUrl('img/integrations/security-threat-detection/twistlock-runtime.png')} alt="Twistlock Dashboard" />
+
 Use this dashboard to:
-
-
-
 * Identify and remediate runtime threats in container environments across file systems, processes, system calls, or the network.
 * Monitor audit events for console administrative activities and defender audit events.
 
 
-26
-
-
-
-## Install the Twistlock Classic App and view the Dashboards
+## Installing the Twistlock Classic App
 
 This section provides instructions on how to install the Twistlock Classic App, as well as examples of each of the dashboards. The App pre-configured searches and [Dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/22Security_and_Threat_Detection/Cisco_ASA/Cisco-ASA-App-Dashboards#Dashboards) provide easy-to-access visual insights into your data.
-
-
-#### Install the App
-27
 
 
 This section shows you how to install the Twistlock Classic App.
@@ -360,28 +331,23 @@ Once an app is installed, it will appear in your **Personal** folder, or other f
 
 Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
 
+## Viewing Twistlock Classic Dashboards
 
-#### Filter with template variables    
-29
-
+### Filter with template variables    
 
 Template variables provide dynamic dashboards that rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you can view dynamic changes to the data for a fast resolution to the root cause. For more information, see the [Filter with template variables](https://help.sumologic.com/Visualizations-and-Alerts/Dashboard_(New)/Filter_with_template_variables) help page.
 
 
-30
 You can use template variables to drill down and examine the data on a granular level.
 
 
-#### Twistlock - Overview
-31
-
+### Overview
 
 The **Twistlock - Overview** dashboard provides an at-a-glance overview of the state of your Kubernetes and container environments, including the number of hosts, containers, audit events, rules triggered, and defender incidents. The panels also display information on a variety of critical vulnerabilities by type, severity, and affected containers.
 
+<img src={useBaseUrl('img/integrations/security-threat-detection/TwistlockClassic_Overview.png')} alt="Twistlock Dashboard" />
+
 Use this dashboard to:
-
-
-
 * Verify the number of host containers being monitored by Twistlock.
 * Quickly understand and remediate vulnerabilities on hosts and images.
 * Understand which CVEs have fixes available and use that information to triage and remediate vulnerabilities.
@@ -392,16 +358,15 @@ Use this dashboard to:
 
 
 
-#### Twistlock - Scans
+### Scans
 33
 
 
 The **Twistlock - Scans** dashboard provides insights into scan events. Panels show scan summaries, vulnerability information and container compliance violations.
 
+<img src={useBaseUrl('img/integrations/security-threat-detection/TwistlockClassic_Scans.png')} alt="Twistlock Dashboard" />
+
 Use this dashboard to:
-
-
-
 * Monitor scan events and their results.
 * Identify and remediate the most vulnerable hosts, images, and compliance violations.
 
@@ -410,35 +375,27 @@ Use this dashboard to:
 
 
 
-#### Twistlock - Detected Vulnerabilities
+### Detected Vulnerabilities
 35
 
 
 The **Twistlock - Detected Vulnerabilities** dashboard provides detailed information on detected vulnerabilities in the registry, image, and host.
 
+<img src={useBaseUrl('img/integrations/security-threat-detection/TwistlockClassic_Detected_Vulnerabilities.png')} alt="Twistlock Dashboard" />
+
 Use this dashboard to:
-
-
-
 * Prioritize, identify and remediate vulnerabilities on the registry, images, and hosts.
 * Identify top rules triggered by Twistlock to understand how to optimize or add new rules going forward.
 * Use "Twistlock - CVE Status" dashboard to work on a specific host, image, and registry, based on Twistlock's recommendation.
 
 
-36
-
-
-
-#### Twistlock - CVE Status
-37
-
+### CVE Status
 
 The **Twistlock - CVE Status** dashboard combines high-level views of common vulnerabilities and exposures (CVE) along with detailed information. Panels display at-a-glance views for host, image, and registry scans, and available fixes.
 
+<img src={useBaseUrl('img/integrations/security-threat-detection/TwistlockClassic_CVE_Status.png')} alt="Twistlock Dashboard" />
+
 Use this dashboard to:
-
-
-
 * Quickly identify, prioritize, and remediate CVE’s in your environment, for which documented fixes are available.
 * Monitor trends of vulnerabilities detected within the last 2 days.
 
@@ -447,11 +404,13 @@ Use this dashboard to:
 
 
 
-#### Twistlock - Compliance Violations
+### Compliance Violations
 39
 
 
 The **Twistlock - Compliance Violations** dashboard provides detailed information on system-wide compliance violations, organized according to the severity of violation, description of violation, and rules triggered by the violation.
+
+<img src={useBaseUrl('img/integrations/security-threat-detection/TwistlockClassic_Compliance_Violations.png')} alt="Twistlock Dashboard" />
 
 Use this dashboard to:
 
@@ -466,34 +425,28 @@ Use this dashboard to:
 
 
 
-#### Twistlock - Defender Incidents
+### Defender Incidents
 41
 
 
 The **Twistlock - Defender** **Incidents** dashboard combines high-level and detailed information for defender incidents, which are logical groupings of events related by context that reveal known attack patterns, defender incidents, and process activity.
 
-**Use this dashboard to monitor:**
+<img src={useBaseUrl('img/integrations/security-threat-detection/TwistlockClassic_Defender_Incidents.png')} alt="Twistlock Dashboard" />
 
-
-
+**Use this dashboard to monitor:
 * Known attack patterns. Incidents are logical groupings of events, related by context, that reveal known attack patterns.
 * Processes activity in a container. Look into whether the process was spawned from a shell session.
 
 
-42
 
-
-
-#### Twistlock - Runtime
-43
+### Runtime
 
 
 The **Twistlock - Runtime** dashboard provides detailed information on system and runtime threats, alerts and management activity.
 
+<img src={useBaseUrl('img/integrations/security-threat-detection/TwistlockClassic_Runtime.png')} alt="Twistlock Dashboard" />
+
 Use this dashboard to:
-
-
-
 * Identify and remediate runtime threats in container environments across file systems, processes, system calls, or the network.
 * Monitor audit events for console administrative activities and defender audit events.
 

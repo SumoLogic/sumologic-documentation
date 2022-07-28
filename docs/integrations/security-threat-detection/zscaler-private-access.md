@@ -2,7 +2,7 @@
 id: zscaler-private-access
 title: Zscaler Private Access
 sidebar_label: Zscaler Private Access
-description: The Zscaler Private Access App collects logs from Zscaler using the Log Streaming Service (LSS) to populate pre-configured searches and Dashboards. 
+description: The Zscaler Private Access App collects logs from Zscaler using the Log Streaming Service (LSS) to populate pre-configured searches and Dashboards.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -232,118 +232,73 @@ Panels will start to fill automatically. It's important to note that each panel 
 Template variables provide dynamic dashboards that can re-scope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. For more information, see the [Filter with template variables](https://help.sumologic.com/Visualizations-and-Alerts/Dashboard_(New)/Filter_with_template_variables) help page. You can use template variables to drill down and examine the data on a granular level.
 
 
-#### Dashboards  
+## Viewing ZPA Dashboards  
 18
 
 
 
 ### ZPA - Overview
-19
-
 
 The **ZPA - Overview** Dashboard focuses on the overall health of the ZPA system.
 
-**Use this dashboard to**:
-
-
+Use this dashboard to:
 
 * Gain insights into ZPA health.
 * Manage ZPA connector health.
 
-
-20
-
-
-
+<img src={useBaseUrl('img/integrations/security-threat-detection/ZPA-Overview.png')} alt="zscaler private access Dashboard" />
 
 
 ### ZPA - Audit
-21
-
 
 The **ZPA - Audit** Dashboard focuses the changes in the ZPA admin UI. It allows easy tracking and change management.
 
-**Use this dashboard to**:
-
-
-
+Use this dashboard to:
 * Gain insights into ZPA configuration changes.
 * Easily identify the mis-configurations for erratic behavior.
 
-
-22
-
-
-
+<img src={useBaseUrl('img/integrations/security-threat-detection/ZPA-Audit.png')} alt="zscaler private access Dashboard" />
 
 
 ### ZPA - Connectors
-23
-
 
 The **ZPA - Connectors** Dashboard focuses on connector health and resource utilization.
 
-**Use this dashboard to**:
-
-
-
+Use this dashboard to:
 * Gain insights into ZPA connector health.
 * Identify and manage connectors erroring out or having resource constraints.
 
-
-24
-
-
+<img src={useBaseUrl('img/integrations/security-threat-detection/ZPA-Connectors.png')} alt="zscaler private access Dashboard" />
 
 ### ZPA - Performance
-25
-
 
 The **ZPA - Performance** Dashboard focuses on the performance of the connectors and the ZPA system.
 
-**Use this dashboard to**:
-
-
-
+Use this dashboard to:
 * Gain insights into ZPA Performance.
 * Manage ZPA connector setup times to determine potential issues.
 
-
-26
-
-
+<img src={useBaseUrl('img/integrations/security-threat-detection/ZPA-Performance.png')} alt="zscaler private access Dashboard" />
 
 
 
 ### ZPA - User Activity
-27
-
 
 The **ZPA - User Activity** Dashboard focuses on the users activity.
 
-**Use this dashboard to**:
-
-
+Use this dashboard to:
 
 * Gain insights into User activity.
 
-
-28
-
+<img src={useBaseUrl('img/integrations/security-threat-detection/ZPA-User-Activity.png')} alt="zscaler private access Dashboard" />
 
 
 ### ZPA - Users
-29
-
 
 The **ZPA - Users** Dashboard focuses on the user details.
 
-**Use this dashboard to**:
-
-
-
+Use this dashboard to:
 * Gain insights into User connections and Access.
 * Manage Policy and Timeout blocks.
 
-
-30
+<img src={useBaseUrl('img/integrations/security-threat-detection/ZPA-Users.png')} alt="zscaler private access Dashboard" />

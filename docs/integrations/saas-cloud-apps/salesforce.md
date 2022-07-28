@@ -492,9 +492,7 @@ _sourceCategory=salesforce event type "Report"
     10. From the SumoLogic UI, identify the script source created in [Step 7](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/Salesforce/01Collect-Logs-for-Salesforce#Step_7._Configure_a_script_source) and modify the path to the script and the working directory so they point to the respective newly created directories.
 
 
-## Install the Salesforce App and view the Dashboards
-
-### Install the Sumo Logic App
+## Install the Salesforce App
 
 Now that you have set up collection, install the Sumo Logic App for Salesforce to use the preconfigured searches and [Dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/Salesforce/Salesforce-App-Dashboards#Dashboards) that provide insight into your data.
 
@@ -502,13 +500,10 @@ To install the app:
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
-
-
 1. From the **App Catalog**, search for and select the app**.**
 2. Select the version of the service you're using and click **Add to Library**.
 
 
-16
 Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](https://help.sumologic.com/01Start-Here/Library/Apps-in-Sumo-Logic/Install-Apps-from-the-Library)
 
 
@@ -526,7 +521,7 @@ Once an app is installed, it will appear in your **Personal** folder, or other f
 Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
 
 
-### Dashboards
+## Viewing Salesforce Dashboards
 
 
 17
@@ -535,7 +530,7 @@ Panels will start to fill automatically. It's important to note that each panel 
 Salesforce generates event logs during non-peak hours, every 24 hours. This means that you may not see data fill your Dashboard Panels for at least 24 hours. If you do not see data in 48 hours, contact Salesforce customer support.
 
 
-#### Salesforce - Overview
+### Overview
 
 
 18
@@ -552,7 +547,7 @@ Salesforce generates event logs during non-peak hours, every 24 hours. This mean
 **REST API Calls by URI.** Shows all REST API calls by URI in a pie chart for the last two days.  
 
 
-#### Salesforce - APEX and API Performance
+### APEX and API Performance
 
 
 19
@@ -575,7 +570,7 @@ Salesforce generates event logs during non-peak hours, every 24 hours. This mean
 **Load by API Type.** Provides information on the load by API type in a pie chart for the last 24 hours.
 
 
-#### Salesforce - Logins
+### Logins
 
 
 20
@@ -598,7 +593,7 @@ Salesforce generates event logs during non-peak hours, every 24 hours. This mean
 **Most Active Client IPs.** Displays the most active client IP addresses in a table chart including details on the client IP address and count for the last two days.
 
 
-#### Salesforce - Report Performance
+### Report Performance
 
 
 21
@@ -613,7 +608,7 @@ Salesforce generates event logs during non-peak hours, every 24 hours. This mean
 **Most Active Report Viewers. **Displays the most active report viewed by count and user ID on a column chart for the last 24 hours.
 
 
-#### Salesforce - Setup Audit Activity
+### Setup Audit Activity
 
 
 22
@@ -630,7 +625,7 @@ Salesforce generates event logs during non-peak hours, every 24 hours. This mean
 **Recent User Management Activities.** Displays information on recent user management activities in a table chart including details on the source user, display, action, and time for the last two days.  
 
 
-#### Salesforce - User Activity - Content
+### User Activity - Content
 
 
 23
@@ -655,7 +650,7 @@ Salesforce generates event logs during non-peak hours, every 24 hours. This mean
 **Most Content Transferred Documents.** Shows details on documents with content that were most often transferred by users in a column chart by document ID and count for the last two days.
 
 
-#### Salesforce - User Activity - Monitoring
+### User Activity - Monitoring
 
 
 24
@@ -676,7 +671,7 @@ Salesforce generates event logs during non-peak hours, every 24 hours. This mean
 **Deactivated Users**. Displays the details of users deactivated in the last 30 days including the source user ID and the description of the action performed.
 
 
-#### Salesforce - User Agents
+### User Agents
 
 
 25

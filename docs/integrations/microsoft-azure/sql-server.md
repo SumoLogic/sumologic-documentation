@@ -539,7 +539,7 @@ Template variables provide dynamic dashboards that can rescope data on the fly. 
 
 The **SQL Server - Overview** dashboard provides a snapshot overview of your SQL Server instance. Use this dashboard to understand CPU, Memory, and Disk utilization of your SQL Server (s) deployed in your cluster.  This dashboard also provides login activities and methods by users.
 
-**Use this dashboard to**:
+Use this dashboard to:
 * Analyze CPU, Memory and disk utilization.
 * Examine Login activities, failures, and failure reasons.
 

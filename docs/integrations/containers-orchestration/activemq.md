@@ -937,7 +937,7 @@ Template variables provide dynamic dashboards that rescope data on the fly. As y
 
 The ActiveMQ - Overview dashboard gives you an at-a-glance view of your ActiveMQ deployment across brokers, queues, topics, and messages.
 
-**Use this dashboard to**:
+Use this dashboard to:
 * Analyze Memory and CPU utilization.
 * Gain insights into Enqueue messages for your ActiveMQ server.
 * Gain insights into Dequeue messages for your ActiveMQ server.
@@ -951,7 +951,7 @@ The ActiveMQ - Overview dashboard gives you an at-a-glance view of your ActiveMQ
 
 The ActiveMQ - Brokers dashboard provides an at-a-glance view of the state of your brokers in the ActiveMQ cluster.
 
-**Use this dashboard to**:
+Use this dashboard to:
 * Monitor brokers uptime.
 * Analyze unacknowledged messages, serve connections for your ActiveMQ brokers..
 * Gain insights into the limit of resources for your ActiveMQ brokers.
@@ -966,7 +966,7 @@ The ActiveMQ - Brokers dashboard provides an at-a-glance view of the state of yo
 
 The ActiveMQ - Queues dashboard provides an at-a-glance view of the state of your queues in ActiveMQ clusters.
 
-**Use this dashboard to**:
+Use this dashboard to:
 * Monitor en queue latency, the memory usage of queues.
 * Monitor queues, producers on queues, consumers on queues.
 * Gain insights into en queue rate, dequeue rate for your ActiveMQ queues.
@@ -980,7 +980,7 @@ The ActiveMQ - Queues dashboard provides an at-a-glance view of the state of you
 
 The ActiveMQ - Topics dashboard provides an at-a-glance view of the state of your topics in ActiveMQ clusters.
 
-**Use this dashboard to**:
+Use this dashboard to:
 
 * Monitor en queue latency, the memory usage of topics.
 * Determine the number of topics, producers on topics, consumers on topics.

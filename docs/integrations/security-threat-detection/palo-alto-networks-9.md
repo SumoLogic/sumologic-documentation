@@ -330,7 +330,7 @@ The Palo Alto Networks 9 - High Severity Threats dashboard provides visibility i
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/PANOS9_High_Severity_Threats.png')} alt="Palo_Alto_Networks_9 Dashboard" />
 
-**Use this dashboard to**:
+Use this dashboard to:
 * Identify the impact of high severity threats, including the most involved source and destination IP addresses.
 * Identify high severity threats caused by and impacted by hosts.
 

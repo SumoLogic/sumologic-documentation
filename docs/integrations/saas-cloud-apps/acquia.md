@@ -60,10 +60,10 @@ This section walks you through the process of creating a new Sumo Logic hosted c
 6. **Category**. Enter any string to tag the logs collected from this Collector. This Source Category value is stored in a searchable metadata field called `_sourceCategory`. See our [Best Practices: Good Source Category, Bad Source Category](https://help.sumologic.com/03Send-Data/01-Design-Your-Deployment/Best-Practices%3A-Good-Source-Category%2C-Bad-Source-Category).
 7. Click the **+Add Field** link in the **Fields** section to define the [fields](https://help.sumologic.com/Manage/Fields) you want to associate, each field needs a key and value.
     *
-1.png "image_tooltip")
+1
  A green circle with a check mark is shown when the field exists in the Fields table schema.
     *
-2.png "image_tooltip")
+2
  An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema it is ignored, known as dropped.
 8. **Assign to a Budget** allows you to assign an [ingest budget](https://help.sumologic.com/Manage/Ingestion-and-Volume/Ingest_Budgets) to the Collector. The drop-down displays your ingest budgets in the following format:
     * `<budget name> (<field value>) (<allocated capacity>)`
@@ -71,13 +71,13 @@ This section walks you through the process of creating a new Sumo Logic hosted c
 10. Review your input and when finished click **Save**.
 
 
-3.png "image_tooltip")
+3
 
 
 After the Collector has been set up, it appears on the Collection page as a Hosted Collector.
 
 
-4.png "image_tooltip")
+4
 
 
 
@@ -107,7 +107,7 @@ Example: **Acquia**. For more information, see [Best Practices](https://help.sum
 * **Timestamp Format**. Auto Detect
 
 
-5.png "image_tooltip")
+5
 Be sure to copy and paste the **token** in a secure location. You will need this when you configure Syslog Settings.
 
 **Sumo Logic SSL certificate**
@@ -135,10 +135,10 @@ The token is deleted if you delete the source. To change a token, use the **Rege
 6. **Fields**. Click the **+Add Field** link to add custom log metadata [Fields](https://help.sumologic.com/Manage/Fields).
     * Define the fields you want to associate, each field needs a name (key) and value.
         *
-6.png "image_tooltip")
+6
  A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
         *
-7.png "image_tooltip")
+7
  An orange triangle with an exclamation point is shown when the field doesn't exist, or is disabled, in the Fields table schema. In this case, an option to automatically add or enable the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema or is disabled it is ignored, known as dropped.
 7. Set any of the following under **Advanced**:
 * **Enable Timestamp Parsing**. This option is selected by default. If it's deselected, no timestamp information is parsed.
@@ -148,7 +148,7 @@ The token is deleted if you delete the source. To change a token, use the **Rege
 2. Click **Save**. \
 The token information is displayed in a read-only dialog box, shown below.
 
-8.png "image_tooltip")
+8
 
 
 3. Click **Copy** to copy the information for use in the syslog client. The information is copied in the following format:
@@ -165,16 +165,16 @@ In the following example, the token is in the message body.
 ```
 <165>1 2015-01-11T22:14:15.003Z mymachine.example.com evntslog - ID47 - YOUR_TOKEN msg
 ```
-9.png "image_tooltip")
+9
 RFC 5424 limits the structured data field (SD-ID) to 32 characters, however our token is 64 characters long. If your logging client enforces this limit you will need to pass the token in the message body.
 4. After configuring the source, you can perform these token operations from the <strong>Collectors and Sources </strong>page:
 * Click <strong>Show Token</strong> to display the token for a cloud syslog source at any time.  \
 
-10.png "image_tooltip")
+10
 
 * Click <strong>Regenerate Token </strong>if you need to generate a new token. \
 
-11.png "image_tooltip")
+11
 
 
 
@@ -355,32 +355,18 @@ request_id
 
 
 
-1.
-
-
-## Installing the Acquia App and viewing the Dashboards
+## Installing the Acquia App
 
 This page provides instructions on how to install the Acquia App, as well as examples of each of the dashboards. The App pre-configured searches and [Dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/22Security_and_Threat_Detection/Cisco_ASA/Cisco-ASA-App-Dashboards#Dashboards) provide easy-to-access visual insights into your data.
-
-
-### Install the App
-
-This section shows you how to install the Sumo Logic App for Slack.
 
 To install the app, do the following:
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
-
-
 1. From the **App Catalog**, search for and select the app**.**
 2. Select the version of the service you're using and click **Add to Library**.
 
-
-12.png "image_tooltip")
 Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](https://help.sumologic.com/01Start-Here/Library/Apps-in-Sumo-Logic/Install-Apps-from-the-Library)
-
-
 
 1. To install the app, complete the following fields.
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
@@ -395,7 +381,9 @@ Once an app is installed, it will appear in your **Personal** folder, or other f
 Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
 
 
-### Acquia - Overview dashboard
+## Viewing Acquia Dashboards
+
+### Overview
 
 The **Acquia - Overview** dashboard provides a high-level view of the activity and health of the environment. Dashboard panels display visual graphs and detailed information on visitor geographic locations, traffic volume and distribution, responses over time, as well as time comparisons for visitor locations and server hits.
 
@@ -410,11 +398,11 @@ Use this dashboard to:
 * Identify ways to fine tune your product based on your data analysis.
 
 
-13.png "image_tooltip")
+13
 
 
 
-### Acquia - Errors Overview dashboard
+### Errors Overview
 
 The **Acquia - Errors Overview** dashboard provides a high-level view of events by log level, time comparisons, and trends. The panels also show the geographic locations of clients and clients with critical messages, new connections and outliers, client requests, request trends, and request outliers.
 
@@ -427,11 +415,11 @@ Use this dashboard to:
 * Track critical error messages from the various components of the Acquia stack.
 
 
-14.png "image_tooltip")
+14
 
 
 
-### Acquia - FPM Overview dashboard
+### FPM Overview
 
 The **Acquia - FPM Overview** dashboard provides insights for analysis of the performance of FPM ([FastCGI Process Manager](https://php-fpm.org/)) in the Acqauia environment, including memory and CPU usage, status codes and response time outliers.
 
@@ -444,11 +432,11 @@ Use this dashboard to:
 * Monitor response time latency.
 
 
-15.png "image_tooltip")
+15
 
 
 
-### Acquia - Drupal Request Overview
+### Drupal Request Overview
 
 The **Acquia - Drupal Requests Overview **dashboard provides insights for analysis of the performance of the Drupal platform. The panels show response time anomalies, response codes and breakdowns of slow urls and queries.
 
@@ -461,4 +449,4 @@ Use this dashboard to:
 * Monitor response time latency
 
 
-16.png "image_tooltip")
+16

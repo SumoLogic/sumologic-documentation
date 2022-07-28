@@ -355,21 +355,7 @@ _sourceCategory=box  type "event_type" login
 
 
 
-## Install the Box App and view the Dashboards
-
-
-
-1. **Last updated \
-**Oct 3, 2017
-2. [Save as PDF](https://help.sumologic.com/@api/deki/pages/441/pdf/Install%2bthe%2bBox%2bApp%2band%2bview%2bthe%2bDashboards.pdf?stylesheet=default)
-3.  
-4. [ Share](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/Box/Box-App-Dashboards#)
-
-    Table of contents
-
-
-
-### Install the Sumo Logic App
+## Install the Box App 
 
 Now that you have set up collection for Box, install the Sumo Logic App for Box to use the preconfigured searches and [dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/Box/Box-App-Dashboards#Dashboards) to analyze your data.
 
@@ -403,10 +389,10 @@ Panels will start to fill automatically. It's important to note that each panel 
 The Script Source is available for Linux or Windows environments with Java Runtime Environments.
 
 
-### Dashboards
+## Dashboards
 
 
-#### Box Collaborations and Shares
+### Box Collaborations and Shares
 
 
 13.png "image_tooltip")
@@ -421,7 +407,7 @@ The Script Source is available for Linux or Windows environments with Java Runti
 **Shared Resources.** Displays the details of shared resources such as message time, event type, item name, item type, source user, and source login in an aggregation table for the last 24 hours.
 
 
-#### Box Resource Access
+### Box Resource Access
 
 
 14.png "image_tooltip")
@@ -440,7 +426,7 @@ The Script Source is available for Linux or Windows environments with Java Runti
 **Resources Moved or Copied.** Displays details on resources that have been copied or moved such as message time, item type, item name, event type, source login, and source user in an aggregation table for the last 24 hours.
 
 
-#### Box User Monitoring
+### Box User Monitoring
 
 15.png "image_tooltip")
 

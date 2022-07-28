@@ -36,7 +36,7 @@ This page explains how to collect logs from Slack and ingest them into Sumo Logi
 Slack logs are in JSON format. The Slack App utilizes the following log types.
 
 
-1.png "image_tooltip")
+1
 
 Sumo Logic’s Slack collector enhances the logs by adding a few metadata fields so the raw logs from Slack APIs might differ in format.
 
@@ -187,20 +187,20 @@ You must have admin privileges to perform this task. The token generated in the 
 2. Click **Create New App.**
 
 
-2.png "image_tooltip")
+2
 
 
 1.  Enter the **App Name** and select the **Development Slack Workspace** for which you need to generate a token and collect logs.
 
 
-3.png "image_tooltip")
+3
 
 
 1. Click **Create App**.
 2. In the **Basic Information** section for the app created above, click **Permissions**.
 
 
-4.png "image_tooltip")
+4
 
 
 1. In the **Scopes** section, add the following permissions in **User Token Scopes** to collect logs, and then click **Save**. Logs will be collected based on these permissions:
@@ -260,7 +260,7 @@ You must have admin privileges to perform this task. The token generated in the 
 
 
 
-5.png "image_tooltip")
+5
 
 
 
@@ -268,20 +268,20 @@ You must have admin privileges to perform this task. The token generated in the 
 1. Go to **Install App** and click **Install App to Workspace**.
 
 
-6.png "image_tooltip")
+6
 
 The app prompts you for permission to install based on your selected permission.
 
 1. Click **Allow **to install the app to workspace.
 
 
-7.png "image_tooltip")
+7
 
 
 1. Copy the generated token. You will need to use this token when configuring the Slack collector.
 
 
-8.png "image_tooltip")
+8
 
 
 1. Verify that the generated token is valid with the following commands. If the token is valid, the output will have "ok":true in the response. Replace the `<API_TOKEN>` variable with the generated token you copied in the previous step.
@@ -299,7 +299,7 @@ curl -X GET -H "Authorization: Bearer <API_TOKEN>" -H "Accept: application/json"
 This generated token can only be used by the Enterprise Slack plan to collect audit logs.
 
 
-9.png "image_tooltip")
+9
 You must have owner privileges to perform this task.
 
 **To generate a Slack API token for audit logs, do the following:**
@@ -308,14 +308,14 @@ You must have owner privileges to perform this task.
 2. Go to **Redirect URLs **and add a Redirect URL as [https://localhost](http://localhost/),** **then click **Save URLs**.
 
 
-10.png "image_tooltip")
+10
 
 
 1. Go To **Manage Distribution** > **Share Your App with Other Workspaces**
 2. Open the ​**Remove Hard Coded Information** ​section on the same page and check the **I’ve reviewed and removed any hard-coded information ​checkbox**.
 
 
-11.png "image_tooltip")
+11
 
 
 1. Click the **Activate Public Distribution**.
@@ -329,7 +329,7 @@ https://slack.com/oauth/authorize?client_id=12345686.853580033397&scope=admin,ch
 
 
 
-12.png "image_tooltip")
+12
 
 
 
@@ -338,14 +338,14 @@ https://slack.com/oauth/authorize?client_id=12345686.853580033397&scope=admin,ch
 2. Select the drop-down menu in the upper right corner and choose the correct organization.
 
 
-13.png "image_tooltip")
+13
 
 
 1. Click **Allow**.
 2. Ignore the error message and copy the **Code** in the URL field, as shown in the following example.
 
 
-14.png "image_tooltip")
+14
 
 
 1. Get the client ID and client secret from the Basic information of your Slack app. Replace the `<CODE>`, `<CLIENT_ID>`, and `<CLIENT_SECRET>` variables in the following URL.
@@ -357,7 +357,7 @@ https://slack.com/api/oauth.access?code=<CODE>&client_id=<CLIENT_ID>&client_secr
 
 
 
-15.png "image_tooltip")
+15
 If **v2** (https://slack.com/oauth/**v2**/authorize) appears in the URL used for the **share URL** in [step 6,](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/Slack/Collect_logs_for_the_Slack_App#Step+6+-+Shareable+URL) use this URL:
 
 
@@ -402,7 +402,7 @@ curl -X GET -H "Content-Type: application/json" -H "Authorization: Bearer <ACCES
 This section demonstrates how to add a hosted Sumo Logic collector and HTTP Logs source, to collect logs for Slack.
 
 
-16.png "image_tooltip")
+16
 When you configure the HTTP Source, make sure to save the HTTP Source Address URL. You will need this to configure in the configuration file.
 
 Identify an existing Sumo Logic Hosted Collector you want to use, or create a new Hosted Collector as described in the following task
@@ -437,13 +437,13 @@ In this collection method, you deploy the SAM application, which creates the nec
 2. Search for **sumologic-slack** and make sure the checkbox next to the text **Show apps that create custom IAM roles or resource policies** is selected, then click the app link when it appears.
 
 
-17.png "image_tooltip")
+17
 
 
 1. When the page for the Sumo app appears, click **Deploy**.
 
 
-18.png "image_tooltip")
+18
 
 
 1. In the **AWS Lambda > Functions >** **Application Settings** panel, enter the following parameters in the corresponding text fields:
@@ -460,7 +460,7 @@ In this collection method, you deploy the SAM application, which creates the nec
 * **AwsKmsKeyARN. **Provide an existing KMS Key ARN to encrypt the Environment variables HTTP_LOGS_ENDPOINT, TOKEN. If kept empty, a new KMS Key ID will be created if **CreateSecret** is **Yes**.
 
 
-19.png "image_tooltip")
+19
 
 
 1. Click **Deploy.**
@@ -478,7 +478,7 @@ This section shows you how to configure collection for multiple projects assumin
 2. Modify the **DatabaseName** and **Token** parameter during the SAM configuration to identify the slack workspace.
 
 
-20.png "image_tooltip")
+20
 
 
 
@@ -487,7 +487,7 @@ This section shows you how to configure collection for multiple projects assumin
 This section provides instructions for deploying script-based collection for the Sumo Logic Slack App.
 
 
-21.png "image_tooltip")
+21
 The _sumologic-slack_ script is compatible with python 3.7 and has been tested on Ubuntu 18.04 LTS.
 
 
@@ -505,7 +505,7 @@ The _sumologic-slack_ script is compatible with python 3.7 and has been tested o
 This task shows you how to install the script on a Linux machine.
 
 
-22.png "image_tooltip")
+22
 For python 3, use pip3 install **sumologic-slack** (step 3). For operating systems where the default is not python3, use **/usr/bin/python3 -m sumoslack.main** (step 6).
 
 **To deploy the script, do the following:**
@@ -735,23 +735,10 @@ _sourceCategory=Labs/slack
 
 
 
-## Install the Slack App and view the Dashboards
-
-
-
-1. **Last updated \
-**Apr 6, 2022
-2. [Save as PDF](https://help.sumologic.com/@api/deki/pages/7200/pdf/Install%2bthe%2bSlack%2bApp%2band%2bview%2bthe%2bDashboards.pdf?stylesheet=default)
-3.  
-4. [ Share](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/Slack/Install_the_Slack_App_and_view_the_Dashboards#)
-
-    Table of contents
-
+## Installing the Slack App 
 
 This page provides instructions on how to install the Slack App, as well as examples of each of the dashboards. The App's pre-configured searches and [Dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/22Security_and_Threat_Detection/Cisco_ASA/Cisco-ASA-App-Dashboards#Dashboards) provide easy-to-access visual insights into your data.
 
-
-### Install the App  
 
 This section shows you how to install the Sumo Logic App for Slack.
 
@@ -765,7 +752,7 @@ Locate and install the app you need from the **App Catalog**. If you want to see
 2. Select the version of the service you're using and click **Add to Library**.
 
 
-23.png "image_tooltip")
+23
 Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](https://help.sumologic.com/01Start-Here/Library/Apps-in-Sumo-Logic/Install-Apps-from-the-Library)
 
 
@@ -782,27 +769,28 @@ Once an app is installed, it will appear in your **Personal** folder, or other f
 
 Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
 
+## Viewing Slack Dashboards
 
 ### Dashboard filters  
 
 **Each dashboard has a set of filters** that you can apply to the entire dashboard, as shown in the following example. Click the funnel icon in the top dashboard menu bar to display a scrollable list of filters that are applied across the entire dashboard.
 
 
-24.png "image_tooltip")
+24
 You can use filters to drill down and examine the data on a granular level.
 
 
-25.png "image_tooltip")
+25
 
 
 **Each panel has a set of filters** that are applied to the results for that panel only, as shown in the following example. Click the funnel icon in the top panel menu bar to display a list of panel-specific filters.
 
 
-26.png "image_tooltip")
+26
 
 
 
-### Slack - Overview Dashboard
+### Overview Dashboard
 
 The **Slack - Overview** dashboard provides an at-a-glance view of the number of workspaces, members, bots, admins, public channels, and public messages. Panels also show geographic access locations, and key statistics around public messages  and files.
 
@@ -815,11 +803,11 @@ Use this dashboard to:
 * Monitor locations from which workspaces are being accessed
 
 
-27.png "image_tooltip")
+27
 
 
 
-### Slack - Members Dashboard
+### Members Dashboard
 
 The **Slack - Members** dashboard shows trends for total members, active members, and messages by workspace. Panels also show detailed member information, and breakdowns by workspace for roles, timezones, and two factor authentication (2FA).
 
@@ -832,11 +820,11 @@ Use this dashboard to:
 * Identify members that do not have two factor authentication enabled
 
 
-28.png "image_tooltip")
+28
 
 
 
-### Slack - Bots
+### Bots
 
 The **Slack - Bots** dashboard displays information on bots, which are software applications that run automated tasks over the Internet. Panels show trends by workspace for all bots, active bots, and messages, as well as detailed information on bots, and a detailed bot summary.
 
@@ -847,11 +835,11 @@ Use this dashboard to:
 * Monitor bots and bot activities across multiple workspaces.
 
 
-29.png "image_tooltip")
+29
 
 
 
-### Slack - Public Channels Dashboard
+### Public Channels Dashboard
 
 The **Slack - Public Channels** dashboard provides detailed information across all channels, as well as active channels. Panels also show information on the top ten channels by files and by attachments, and a summary of all channels.
 
@@ -863,11 +851,11 @@ Use this dashboard to:
 * Identify inactive channels where messages are not being posted
 
 
-30.png "image_tooltip")
+30
 
 
 
-### Slack - Public Messages
+### Public Messages
 
 The **Slack - Public Messages** dashboard provides details around attachments, files shared and statistics around messages in Slack public channels.
 
@@ -879,11 +867,11 @@ Use this dashboard to:
 * Investigate the details of file shared via the URL links in the Recent File Shared panel
 
 
-31.png "image_tooltip")
+31
 
 
 
-### Slack - Access Dashboard
+### Access Dashboard
 
 The **Slack - Access** dashboard helps you monitor how users are accessing Slack and identifies access requests coming in from malicious domains.
 
@@ -896,11 +884,11 @@ Use this dashboard to:
 * Identify trends for user access patterns across multiple workspaces
 
 
-32.png "image_tooltip")
+32
 
 
 
-### Slack - Audit Overview Dashboard
+### Audit Overview Dashboard
 
 The **Slack - Audit Overview **dashboard provides details around  Slack audit actions, and trends.
 
@@ -912,11 +900,11 @@ Use this dashboard to:
 * Identify and validate that top users performing audit actions
 
 
-33.png "image_tooltip")
+33
 
 
 
-### Slack - User Audit
+### User Audit
 
 The **Slack - User Audit** dashboard provides insight into  user and administrative audit actions and trends. Panels also display detailed information for members and guest members.
 
@@ -929,11 +917,11 @@ Use this dashboard to:
 * Monitor and validate that all guest activities are in line with what is expected
 
 
-34.png "image_tooltip")
+34
 
 
 
-### Slack - Workspace Audit
+### Workspace Audit
 
 The **Slack - Workspace Audit** dashboard provides information on top users, top audit actions and audit trends. Panels also detail workspace sign on, exports, data retention and billing, and other admin activities.
 
@@ -947,11 +935,11 @@ Use this dashboard to:
 * Monitor the exports that are performed on workspaces
 
 
-35.png "image_tooltip")
+35
 
 
 
-### Slack - Channel Audit
+### Channel Audit
 
 The **Slack - Channel Audit** dashboard provides details on the top channel audit actions and trends. The panels also display information on top members and member activity, and top guest members and guest member activity.
 
@@ -964,11 +952,11 @@ Use this dashboard to:
 * Monitor all the private channels that are created, deleted, and archived by guests
 
 
-36.png "image_tooltip")
+36
 
 
 
-### Slack - File and App Audit
+### File and App Audit
 
 The **Slack - File and App Audit** dashboard displays file audit and app audit information. The panels show audit actions, top actions and file types or scopes, top users, and member activity.
 
@@ -982,7 +970,7 @@ Use this dashboard to:
 * Identify the top scopes under which applications are approved and installed
 
 
-37.png "image_tooltip")
+37
 
 
 

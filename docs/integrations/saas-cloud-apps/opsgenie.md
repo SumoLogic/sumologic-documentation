@@ -138,14 +138,9 @@ description, message, action, team, priority, source, tags, recipients nodrop
 
 
 
-## Install the Opsgenie App and view the Dashboards
+## Install the Opsgenie App
 
-This page provides instructions for installing the Opsgenie App, as well as examples of each of the app dashboards.
-
-
-### Install the App
-
-This section shows you how to  install the Sumo Logic Opsgenie App.
+This section provides instructions for installing the Opsgenie App, as well as examples of each of the app dashboards.
 
 To install the app, do the following:
 
@@ -174,6 +169,7 @@ Once an app is installed, it will appear in your **Personal** folder, or other f
 
 Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
 
+## Viewing OpsGenie Dashboards
 
 ### Filter with template variables  
 
@@ -184,7 +180,7 @@ Template variables provide dynamic dashboards that rescope data on the fly. As y
 You can use template variables to drill down and examine the data on a granular level.
 
 
-### Opsgenie - Overview Dashboard
+### Overview Dashboard
 
 The **Opsgenie - Overview Dashboard** provides a high level view of alert types, details, trends, and comparisons. The at-a-glance graphs are an easy to access visual reference for alert breakdowns by source, team, priority, recipient, and tags.
 
@@ -201,7 +197,7 @@ Use this dashboard to:
 
 
 
-### Opsgenie - Alert Details Dashboard
+### Alert Details Dashboard
 
 The **Opsgenie - Alert Details Dashboard** provides detailed graphs and analytics for alert outliers, escalated alerts, and alert summaries.
 
@@ -218,7 +214,7 @@ Use this dashboard to:
 
 
 
-### Opsgenie - Alert Breakdown Dashboard
+### Alert Breakdown Dashboard
 
 The **Opsgenie - Alert Breakdown Dashboard** provides visual graphs and detailed tables with analytics on alerts by priority, source, team, users, tags, and recipient, over time and by comparison.
 

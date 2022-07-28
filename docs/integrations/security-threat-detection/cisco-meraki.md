@@ -280,7 +280,7 @@ Use this dashboard to:
 
 The **Cisco Meraki - Flows Overview** dashboard provides a high-level view of traffic sources, destinations, protocols, and traffic action time comparisons. The panels also show detailed information on the top source IPs, destination ports, and possible port scan attacks for both allowed and denied traffic.
 
-**Use this dashboard to**:
+Use this dashboard to:
 * Monitor network traffic that’s been allowed and rejected.
 * Monitor the activity of TCP and UDP ports to identify possible port scan attacks, both horizontal and vertical.
 
