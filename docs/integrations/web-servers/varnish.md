@@ -72,7 +72,7 @@ Instructions below show how to configure Kubernetes and Non-Kubernetes environme
 
 The Sumo Logic App for Varnish has been tested for Varnish Version: 6.4.
 
-In a Kubernetes environment, we use the Telegraf Operator, which is packaged with our Kubernetes collection. You can learn more about it[ here](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Collect_Metrics_Using_Telegraf/01_Telegraf_Collection_Architecture). The diagram below illustrates how data is collected from Varnish in a Kubernetes environment. In the architecture shown below, there are four services that make up the metric collection pipeline: Telegraf, Prometheus, Fluentd, and FluentBit.
+In Kubernetes environments, we use the Telegraf Operator, which is packaged with our Kubernetes collection. You can learn more about it[ here](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Collect_Metrics_Using_Telegraf/01_Telegraf_Collection_Architecture). The diagram below illustrates how data is collected from Varnish in a Kubernetes environment. In the architecture shown below, there are four services that make up the metric collection pipeline: Telegraf, Prometheus, Fluentd, and FluentBit.
 
 The first service in the pipeline is Telegraf. Telegraf collects metrics from Varnish. Note that we’re running Telegraf in each pod we want to collect metrics from as a sidecar deployment, for example, Telegraf runs in the same pod as the containers it monitors. Telegraf uses the Varnish input plugin to obtain metrics. (For simplicity, the diagram doesn’t show the input plugins.) The injection of the Telegraf sidecar container is done by the Telegraf Operator. We also have Fluentbit that collects logs written to standard out and forwards them to FluentD, which in turn sends all the logs and metrics data to a Sumo Logic HTTP Source.
 
@@ -95,9 +95,9 @@ It’s assumed that you are using the latest helm chart version. If not, upgrade
 
 This section explains the steps to collect Varnish metrics from a Kubernetes environment.
 
-In a Kubernetes environment, we use the Telegraf Operator, which is packaged with our Kubernetes collection. You can learn more on this[ here](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Collect_Metrics_Using_Telegraf/01_Telegraf_Collection_Architecture). Follow the steps listed below to collect metrics from a Kubernetes environment:
+In Kubernetes environments, we use the Telegraf Operator, which is packaged with our Kubernetes collection. You can learn more on this[ here](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Collect_Metrics_Using_Telegraf/01_Telegraf_Collection_Architecture). Follow the steps listed below to collect metrics from a Kubernetes environment:
 
-1. [Setup Kubernetes Collection with the Telegraf Operator.](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Collect_Metrics_Using_Telegraf/03_Install_Telegraf#Install_Telegraf_in_a_Kubernetes_environment)
+1. [Setup Kubernetes Collection with the Telegraf Operator.](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf.md#Install_Telegraf_in_a_Kubernetes_environment)
 2. Add annotations on your Varnish pods
 
 On your Varnish Pods, add the following annotations:
@@ -120,7 +120,7 @@ annotations:
 ```
 
 
-Please enter in values for the following parameters (marked in bold above):
+Please enter in values for the following parameters :
 
 * telegraf.influxdata.com/inputs - This contains the required configuration for the Telegraf varnish Input plugin. Please refer[ to this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/redis) for more information on configuring the Varnish input plugin for Telegraf. Note: As telegraf will be run as a sidecar, the host should always be localhost.
     * In the input plugins section, which is `[[inputs.varnish]]`
@@ -141,7 +141,7 @@ Here’s an explanation for additional values set by this configuration that we 
         * component: “cache” - This value is used by Sumo Logic apps to identify application components.
         * cache_system: “varnish” - This value identifies the web server system.
 
-For all other parameters please see [this doc](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Collect_Metrics_Using_Telegraf/03_Install_Telegraf#Configuring_Telegraf) for more properties that can be configured in the Telegraf agent globally.
+For all other parameters please see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#Configuring-Telegraf) for more properties that can be configured in the Telegraf agent globally.
 
 1. Sumo Logic Kubernetes collection will automatically start collecting metrics from the pods having the labels and annotations defined in the previous step.
 2. Verify metrics in Sumo Logic.
@@ -169,7 +169,7 @@ cache_cluster: "varnish_on_k8s_CHANGEME"
 ```
 
 
-Please enter in values for the following parameters (marked in bold above):
+Please enter in values for the following parameters :
 
 * `environment` - This is the deployment environment where the Varnish cluster identified by the value of **servers** resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
 * **cache_cluster **- Enter a name to identify this Varnish cluster. This cluster name will be shown in the Sumo Logic dashboards.
@@ -179,7 +179,7 @@ Here’s an explanation for additional values set by this configuration that we 
 * component: “cache” - This value is used by Sumo Logic apps to identify application components.
 * cache_system: “varnish” - This value identifies the cache system.
 
-For all other parameters please see [this doc](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Collect_Metrics_Using_Telegraf/03_Install_Telegraf#Configuring_Telegraf) for more properties that can be configured in the Telegraf agent globally.
+For all other parameters please see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#Configuring-Telegraf) for more properties that can be configured in the Telegraf agent globally.
 
 
 1. (Optional) Collecting Varnish Logs from a Log File
@@ -262,7 +262,7 @@ This section provides instructions for configuring metrics collection for the Su
 
 1. **Configure a Hosted Collector** To create a new Sumo Logic hosted collector, perform the steps in the[ Create a Hosted Collector](https://help.sumologic.com/03Send-Data/Hosted-Collectors/Configure-a-Hosted-Collector) section of the Sumo Logic documentation.
 2. **Configure an HTTP Logs and Metrics Source** Create a new HTTP Logs and Metrics Source in the hosted collector created above by following[ these instructions. ](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/HTTP-Source)Make a note of the **HTTP Source URL**.
-3. **Install Telegraf** Use the[ following steps](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Collect_Metrics_Using_Telegraf/03_Install_Telegraf) to install Telegraf.
+3. **Install Telegraf** Use the[ following steps](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf.md) to install Telegraf.
 4. **Configure and start Telegraf** As part of collecting metrics data from Telegraf, we will use the [Varnish input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/varnish) to get data from Telegraf and the [Sumo Logic output plugin](https://github.com/SumoLogic/fluentd-output-sumologic) to send data to Sumo Logic.  \
  \
 Create or modify telegraf.conf and copy and paste the text below:  
@@ -283,7 +283,7 @@ Create or modify telegraf.conf and copy and paste the text below:
 ```
 
 
-Please enter values for the following parameters (marked in **bold** above):
+Please enter values for the following parameters (marked CHANGEME above):
 
 
 * In the input plugins section, which is `[[inputs.varnish]]`
@@ -405,7 +405,7 @@ However, if you would like to restrict these alerts to specific clusters or envi
 
 **Step 1: Generate a Sumo Logic access key and ID**
 
-Generate an access key and access ID for a user with the **Manage Monitors** role capability; for instructions, see  [Access Keys](https://help.sumologic.com/Manage/Security/Access-Keys#Create_an_access_key_on_Preferences_page).
+Generate an access key and access ID for a user with the **Manage Monitors** role capability; for instructions, see  [Access Keys](/docs/manage/security/access-keys#Create_an_access_key_on_Preferences_page).
 
 
 **Step 2: Download and install Terraform**

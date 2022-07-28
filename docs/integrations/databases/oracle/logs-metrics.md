@@ -55,7 +55,7 @@ Please click on the appropriate links below based on the environment where your 
 ## Collect Oracle Logs and Metrics for Kubernetes environments
 
 
-In a Kubernetes environment, we use the Telegraf Operator, which is packaged with our Kubernetes collection. You can learn more about it[ here](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Collect_Metrics_Using_Telegraf/01_Telegraf_Collection_Architecture). The diagram below illustrates how data is collected from Oracle in Kubernetes environments. In the architecture shown below, there are four services that make up the metric collection pipeline: Telegraf, Prometheus, Fluentd, and FluentBit.
+In Kubernetes environments, we use the Telegraf Operator, which is packaged with our Kubernetes collection. You can learn more about it[ here](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Collect_Metrics_Using_Telegraf/01_Telegraf_Collection_Architecture). The diagram below illustrates how data is collected from Oracle in Kubernetes environments. In the architecture shown below, there are four services that make up the metric collection pipeline: Telegraf, Prometheus, Fluentd, and FluentBit.
 
 The first service in the pipeline is Telegraf. Telegraf collects metrics from Oracle. Note that we’re running Telegraf in each pod we want to collect metrics from as a sidecar deployment: i.e. Telegraf runs in the same pod as the containers it monitors. Telegraf uses the [exec input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/exec) to obtain metrics. (For simplicity, the diagram doesn’t show the input plugins.) The injection of the Telegraf sidecar container is done by the Telegraf Operator. We also have Fluentbit that collects logs written to standard out and forwards them to FluentD, which in turn sends all the logs and metrics data to a Sumo Logic HTTP Source.
 
@@ -83,7 +83,7 @@ It’s assumed that you are using the latest helm chart version if not upgrade u
 
 This section explains the steps to collect Oracle metrics from a Kubernetes environment.
 
-In a Kubernetes environment, we use the Telegraf Operator, which is packaged with our Kubernetes collection. You can learn more about this[ here](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Collect_Metrics_Using_Telegraf/01_Telegraf_Collection_Architecture). Follow the steps listed below to collect metrics from a Kubernetes environment:
+In Kubernetes environments, we use the Telegraf Operator, which is packaged with our Kubernetes collection. You can learn more about this[ here](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Collect_Metrics_Using_Telegraf/01_Telegraf_Collection_Architecture). Follow the steps listed below to collect metrics from a Kubernetes environment:
 
 **Step 1. Configure Oracle pod to send metrics to Sumo Logic**
 
@@ -117,7 +117,7 @@ CMD ["telegraf"]
 ```
 
 
-**Step 2. [Setup Kubernetes Collection with the Telegraf Operator.](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Collect_Metrics_Using_Telegraf/03_Install_Telegraf#Install_Telegraf_in_a_Kubernetes_environment)**
+**Step 2. [Setup Kubernetes Collection with the Telegraf Operator.](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf.md#Install_Telegraf_in_a_Kubernetes_environment)**
 
 **Step 3. Add annotations on your Oracle pods**
 
@@ -150,7 +150,7 @@ annotations:
 If you haven’t defined a cluster in Oracle, then enter ‘**default**’ for `db_cluster`.
 
 
-    Enter in values for the following parameters (marked in bold above):
+    Enter in values for the following parameters :
 
 
 
@@ -171,7 +171,7 @@ If you haven’t defined a cluster in Oracle, then enter ‘**default**’ for `
         * `component: “database”` - This value is used by Sumo Logic apps to identify application components.
         * **db_system**: “oracle” - This value identifies the database system.
 
-    For all other parameters please see [this doc](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Collect_Metrics_Using_Telegraf/03_Install_Telegraf#Configuring_Telegraf) for more properties that can be configured in the Telegraf agent globally.
+    For all other parameters please see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#Configuring-Telegraf) for more properties that can be configured in the Telegraf agent globally.
 
 * Sumo Logic Kubernetes collection will automatically start collecting metrics from the pods having the labels and annotations defined in the previous step.
 * Verify metrics in Sumo Logic.
@@ -211,7 +211,7 @@ This section explains the steps to collect Oracle logs from a Kubernetes environ
 * `component: “database”` - This value is used by Sumo Logic apps to identify application components.
 * **db_system**: “oracle” - This value identifies the database system.
 
-    For all other parameters please see [this doc](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Collect_Metrics_Using_Telegraf/03_Install_Telegraf#Configuring_Telegraf) for more properties that can be configured in the Telegraf agent globally.
+    For all other parameters please see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#Configuring-Telegraf) for more properties that can be configured in the Telegraf agent globally.
 
 1. The Sumologic-Kubernetes-Collection will automatically capture the logs from stdout and will send the logs to Sumologic. For more information on deploying Sumologic-Kubernetes-Collection,[ visit](https://help.sumologic.com/07Sumo-Logic-Apps/10Containers_and_Orchestration/Kubernetes/Collect_Logs_and_Metrics_for_the_Kubernetes_App) here.
 2. Verify logs in Sumo Logic.
@@ -503,7 +503,7 @@ Preview steps for Oracle log collection:
 
 
 1. Install Telegraf if you haven’t already.
-    * Use the[ following steps](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Collect_Metrics_Using_Telegraf/03_Install_Telegraf) to install Telegraf.
+    * Use the[ following steps](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf.md) to install Telegraf.
 2. **Install custom Python script to send Oracle metrics into Sumo**
     * Use the[ following steps](https://github.com/SumoLogic/sumologic-integrations/tree/main/Oracle) to install a custom Python script to send Oracle metrics into Sumo.
 

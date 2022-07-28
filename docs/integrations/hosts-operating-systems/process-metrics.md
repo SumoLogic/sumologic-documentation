@@ -113,10 +113,10 @@ This section provides instructions for configuring metrics collection for the Su
     3. **Install Telegraf**
 
 
-    Use the[ following steps](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Collect_Metrics_Using_Telegraf/03_Install_Telegraf) to install Telegraf on each host machine.
+    Use the[ following steps](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf.md) to install Telegraf on each host machine.
 
-* For [Windows](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Collect_Metrics_Using_Telegraf/03_Install_Telegraf#install-telegraf-on-windows)
-* For [Ubuntu](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Collect_Metrics_Using_Telegraf/03_Install_Telegraf#install-telegraf-on-ubuntu-or-debian-with-apt-get)
+* For [Windows](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf.md#install-telegraf-on-windows)
+* For [Ubuntu](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf.md#install-telegraf-on-ubuntu-or-debian-with-apt-get)
 
     4. **Configure and start Telegraf**
 
@@ -136,7 +136,7 @@ This section provides instructions for configuring metrics collection for the Su
     Please enter values for the following parameters (marked with `CHANGE_ME`) in the downloaded file:
 
 * In the output plugins section which is `[[outputs.sumologic]]`:
-    * URL - This is the HTTP source URL created in step 3. Please see [this doc](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Collect_Metrics_Using_Telegraf/05_Configure_Telegraf_Output_Plugin_for_Sumo_Logic) for more information on additional parameters for configuring the Sumo Logic Telegraf output plugin.
+    * URL - This is the HTTP source URL created in step 3. Please see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/configure-telegraf-output-plugin.md) for more information on additional parameters for configuring the Sumo Logic Telegraf output plugin.
 
     Here’s an explanation for additional values set by this Telegraf configuration that we request you to please **do not** modify these values as they will cause the Sumo Logic apps to not function correctly.
 
@@ -330,7 +330,7 @@ For details on the individual alerts,  please see this [page](https://help.sumol
 
 
 4
-There are limits to how many alerts can be enabled - please see the [Alerts FAQ](https://help.sumologic.com/Visualizations-and-Alerts/Alerts/Monitors/Monitor_FAQ) for details.
+There are limits to how many alerts can be enabled - please see the [Alerts FAQ](/docs/alerts/monitors/monitor-faq.md) for details.
 
 
 ##### Method 1: Install the alerts by importing a JSON file
@@ -361,7 +361,7 @@ The monitors are disabled by default. Once you have installed the alerts using t
 
 ###### Generate a Sumo Logic access key and ID
 
-Generate an access key and access ID for a user that has the Manage Monitors role capability in Sumo Logic using these[ instructions](https://help.sumologic.com/Manage/Security/Access-Keys#manage-your-access-keys-on-preferences-page). Please identify which deployment your Sumo Logic account is in, using this[ link](https://help.sumologic.com/APIs/General-API-Information/Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security).
+Generate an access key and access ID for a user that has the Manage Monitors role capability in Sumo Logic using these[ instructions](/docs/manage/security/access-keys#manage-your-access-keys-on-preferences-page). Please identify which deployment your Sumo Logic account is in, using this[ link](https://help.sumologic.com/APIs/General-API-Information/Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security).
 
 
 ###### [Download and install Terraform 0.13](https://www.terraform.io/downloads.html) or later

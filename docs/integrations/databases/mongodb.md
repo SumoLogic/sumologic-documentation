@@ -94,7 +94,7 @@ environment=* db_cluster=* db_system=mongodb  | json "log" as _rawlog nodrop
 
 ### Collect MongoDB Logs and Metrics for Kubernetes environments
 
-In a Kubernetes environment, we use the Telegraf Operator, which is packaged with our Kubernetes collection. You can learn more about it[ here](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Collect_Metrics_Using_Telegraf/01_Telegraf_Collection_Architecture).The diagram below illustrates how data is collected from MongoDB in a Kubernetes environment. In the architecture shown below, there are four services that make up the metric collection pipeline: Telegraf, Prometheus, Fluentd and FluentBit.
+In Kubernetes environments, we use the Telegraf Operator, which is packaged with our Kubernetes collection. You can learn more about it[ here](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Collect_Metrics_Using_Telegraf/01_Telegraf_Collection_Architecture).The diagram below illustrates how data is collected from MongoDB in a Kubernetes environment. In the architecture shown below, there are four services that make up the metric collection pipeline: Telegraf, Prometheus, Fluentd and FluentBit.
 
 The first service in the pipeline is Telegraf. Telegraf collects metrics from MongoDB. Note that we’re running Telegraf in each pod we want to collect metrics from as a sidecar deployment for example, Telegraf runs in the same pod as the containers it monitors. Telegraf uses the MongoDB input plugin to obtain metrics. (For simplicity, the diagram doesn’t show the input plugins.) The injection of the Telegraf sidecar container is done by the Telegraf Operator. We also have Fluentbit that collects logs written to standard out and forwards them to FluentD, which in turn sends all the logs and metrics data to a Sumo Logic HTTP Source.
 
@@ -121,11 +121,11 @@ It’s assumed that you are using the latest helm chart version if not upgrade u
 
 This section explains the steps to collect MongoDB metrics from a Kubernetes environment.
 
-In a Kubernetes environment, we use the Telegraf Operator, which is packaged with our Kubernetes collection. You can learn more on this[ here](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Collect_Metrics_Using_Telegraf/01_Telegraf_Collection_Architecture). Follow the steps listed below to collect metrics from a Kubernetes environment:
+In Kubernetes environments, we use the Telegraf Operator, which is packaged with our Kubernetes collection. You can learn more on this[ here](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Collect_Metrics_Using_Telegraf/01_Telegraf_Collection_Architecture). Follow the steps listed below to collect metrics from a Kubernetes environment:
 
 
 
-1. [Setup Kubernetes Collection with the Telegraf Operator.](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Collect_Metrics_Using_Telegraf/03_Install_Telegraf#Install_Telegraf_in_a_Kubernetes_environment)
+1. [Setup Kubernetes Collection with the Telegraf Operator.](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf.md#Install_Telegraf_in_a_Kubernetes_environment)
 2. Add annotations on your MongoDB pods
 
     On your MongoDB Pods, add the following annotations:
@@ -151,7 +151,7 @@ annotations:
 
 
 
-    Please enter values for the following parameters (marked in bold above):
+    Please enter values for the following parameters (marked CHANGEME above):
 
 
 
@@ -172,7 +172,7 @@ annotations:
         * `component: “database”` - This value is used by Sumo Logic apps to identify application components.
         * db_system: “mongodb” - This value identifies the database system.
 
-    For all other parameters please see [this doc](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Collect_Metrics_Using_Telegraf/03_Install_Telegraf#Configuring_Telegraf) for more properties that can be configured in the Telegraf agent globally.
+    For all other parameters please see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#Configuring-Telegraf) for more properties that can be configured in the Telegraf agent globally.
 
 1. Sumo Logic Kubernetes collection will automatically start collecting metrics from the pods having the labels and annotations defined in the previous step.
 2. Verify metrics in Sumo Logic.
@@ -206,7 +206,7 @@ labels:
 
 
 
-    Enter in values for the following parameters (marked in bold above):
+    Enter in values for the following parameters :
 
 
 
@@ -218,7 +218,7 @@ labels:
 * `component: “database”`. This value is used by Sumo Logic apps to identify application components.
 * **db_system: “mongodb”**. This value identifies the database system.
 
-    For all other parameters see[ this doc](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Collect_Metrics_Using_Telegraf/03_Install_Telegraf#Configuring_Telegraf) for more properties that can be configured in the Telegraf agent globally.
+    For all other parameters see[ this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#Configuring-Telegraf) for more properties that can be configured in the Telegraf agent globally.
 
 1. (Optional) Collecting MongoDB Logs from a Log File
 
@@ -321,7 +321,7 @@ This section provides instructions for configuring metrics collection for the Su
 
 1. Install Telegraf
 
-    Use the[ following steps](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Collect_Metrics_Using_Telegraf/03_Install_Telegraf) to install Telegraf.
+    Use the[ following steps](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf.md) to install Telegraf.
 
 1. Configure and start Telegraf
 
@@ -348,7 +348,7 @@ This section provides instructions for configuring metrics collection for the Su
   data_format = "prometheus"
 ```
 
-Enter values for the following parameters (marked in **bold** above):
+Enter values for the following parameters :
 
 
 
@@ -358,7 +358,7 @@ Enter values for the following parameters (marked in **bold** above):
         * environment - This is the deployment environment where the MongoDB cluster identified by the value of **servers** resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
         * db_cluster - Enter a name to identify this MongoDB cluster. This cluster name will be shown in the Sumo Logic dashboards.
 * In the output plugins section - [outputs.sumologic]:
-    * url - This is the HTTP source URL created in step 3. Please see [this doc](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Collect_Metrics_Using_Telegraf/05_Configure_Telegraf_Output_Plugin_for_Sumo_Logic) for more information on additional parameters for configuring the Sumo Logic Telegraf output plugin.
+    * url - This is the HTTP source URL created in step 3. Please see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/configure-telegraf-output-plugin.md) for more information on additional parameters for configuring the Sumo Logic Telegraf output plugin.
 
     Here’s an explanation for additional values set by this Telegraf configuration that we request you **please do not modify** as they will cause the Sumo Logic apps to not function correctly.
 
@@ -593,7 +593,7 @@ There are limits to how many alerts can be enabled. For more information, see [M
 
 **Step 1: Generate a Sumo Logic access key and ID**
 
-Generate an access key and access ID for a user that has the **Manage Monitors** role capability. For instructions see  [Access Keys](https://help.sumologic.com/Manage/Security/Access-Keys#Create_an_access_key_on_Preferences_page).
+Generate an access key and access ID for a user that has the **Manage Monitors** role capability. For instructions see  [Access Keys](/docs/manage/security/access-keys#Create_an_access_key_on_Preferences_page).
 
 **Step 2: Download and install Terraform**
 

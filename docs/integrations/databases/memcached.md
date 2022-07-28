@@ -77,7 +77,7 @@ If you are using Memcached in a Kubernetes environment create the fields:
 ### Collect Memcached Logs and Metrics for Kubernetes environments
 
 
-In a Kubernetes environment, we use the Telegraf Operator, which is packaged with our Kubernetes collection. You can learn more about it[ here](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Collect_Metrics_Using_Telegraf/01_Telegraf_Collection_Architecture).
+In Kubernetes environments, we use the Telegraf Operator, which is packaged with our Kubernetes collection. You can learn more about it[ here](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Collect_Metrics_Using_Telegraf/01_Telegraf_Collection_Architecture).
 
 The diagram below illustrates how data is collected from Memcached in a Kubernetes environment. In the architecture shown below, there are four services that make up the metric collection pipeline: Telegraf, Prometheus, Fluentd, and FluentBit.
 
@@ -105,11 +105,11 @@ It’s assumed that you are using the latest helm chart version if not upgrade u
 
 This section explains the steps to collect Memcached metrics from a Kubernetes environment.
 
-In a Kubernetes environment, we use the Telegraf Operator, which is packaged with our Kubernetes collection. You can learn more on this[ here](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Collect_Metrics_Using_Telegraf/01_Telegraf_Collection_Architecture). Follow the steps listed below to collect metrics from a Kubernetes environment:
+In Kubernetes environments, we use the Telegraf Operator, which is packaged with our Kubernetes collection. You can learn more on this[ here](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Collect_Metrics_Using_Telegraf/01_Telegraf_Collection_Architecture). Follow the steps listed below to collect metrics from a Kubernetes environment:
 
 
 
-1. [Set up Kubernetes Collection with the Telegraf Operator.](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Collect_Metrics_Using_Telegraf/03_Install_Telegraf#Install_Telegraf_in_a_Kubernetes_environment)
+1. [Set up Kubernetes Collection with the Telegraf Operator.](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf.md#Install_Telegraf_in_a_Kubernetes_environment)
 2. Add annotations on your Memcached pods \
 On your Memcached Pods, add the following annotations:
 
@@ -153,7 +153,7 @@ Here’s an explanation for additional values set by this configuration that we 
         * `component: “database”` - This value is used by Sumo Logic apps to identify application components.
         * `db_system: “memcached”` - This value identifies the database system.
 
-For all other parameters please see [this doc](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Collect_Metrics_Using_Telegraf/03_Install_Telegraf#Configuring_Telegraf) for more properties that can be configured in the Telegraf agent globally.
+For all other parameters please see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#Configuring-Telegraf) for more properties that can be configured in the Telegraf agent globally.
 
 Sumo Logic Kubernetes collection will automatically start collecting metrics from the pods having the labels and annotations defined in the previous step.
 
@@ -191,7 +191,7 @@ db_cluster: "memcached_on_k8s_CHANGE_ME"
 
 
 
-    Please enter in values for the following parameters (marked in bold above):
+    Please enter in values for the following parameters :
 
 
 
@@ -203,7 +203,7 @@ db_cluster: "memcached_on_k8s_CHANGE_ME"
 * `component: “database”` - This value is used by Sumo Logic apps to identify application components.
 * **db_system**: “memcached” - This value identifies the database system.
 
-    For all other parameters please see [this doc](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Collect_Metrics_Using_Telegraf/03_Install_Telegraf#Configuring_Telegraf) for more properties that can be configured in the Telegraf agent globally.
+    For all other parameters please see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#Configuring-Telegraf) for more properties that can be configured in the Telegraf agent globally.
 
 
     2. The Sumologic-Kubernetes-Collection will automatically capture the logs from stdout and will send the logs to Sumologic. For more information on deploying Sumologic-Kubernetes-Collection,[ visit](https://help.sumologic.com/07Sumo-Logic-Apps/10Containers_and_Orchestration/Kubernetes/Collect_Logs_and_Metrics_for_the_Kubernetes_App) here.
@@ -315,7 +315,7 @@ This section provides instructions for configuring logs and metrics collection f
 2. **Configure an HTTP Logs and Metrics Source \
 **Create a new HTTP Logs and Metrics Source in the hosted collector created above by following[ these instructions. ](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/HTTP-Source)Make a note of the **HTTP Source URL**.
 3. **Install Telegraf \
-**Use the[ following steps](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Collect_Metrics_Using_Telegraf/03_Install_Telegraf) to install Telegraf.
+**Use the[ following steps](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf.md) to install Telegraf.
 4. **Configure and start Telegraf \
 **As part of collecting metrics data from Telegraf, we will use the Memcached[ input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/memcached) to get data from Telegraf and the [Sumo Logic output plugin](https://github.com/SumoLogic/fluentd-output-sumologic) to send data to Sumo Logic.  \
  \
@@ -345,7 +345,7 @@ Please enter values for the following parameters (marked in **bold_CHANGE_ME** a
         * `environment` - This is the deployment environment where the Memcached cluster identified by the value of **servers** resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
         * `db_cluster` - Enter a name to identify this Memcached cluster. This cluster name will be shown in the Sumo Logic dashboards.
 * In the output plugins section which is `[[outputs.sumologic]]`
-    * **url** - This is the HTTP source URL created in step 3. Please see [this doc](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Collect_Metrics_Using_Telegraf/05_Configure_Telegraf_Output_Plugin_for_Sumo_Logic) for more information on additional parameters for configuring the Sumo Logic Telegraf output plugin.
+    * **url** - This is the HTTP source URL created in step 3. Please see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/configure-telegraf-output-plugin.md) for more information on additional parameters for configuring the Sumo Logic Telegraf output plugin.
 
 Here’s an explanation for additional values set by this Telegraf configuration that we request you **please do not modify** as they will cause the Sumo Logic apps to not function correctly.
 
@@ -479,7 +479,7 @@ Custom filter examples:
 18
 
 
-Generate an access key and access ID for a user that has the **Manage Monitors** role capability. For instructions, see  [Access Keys](https://help.sumologic.com/Manage/Security/Access-Keys#Create_an_access_key_on_Preferences_page).
+Generate an access key and access ID for a user that has the **Manage Monitors** role capability. For instructions, see  [Access Keys](/docs/manage/security/access-keys#Create_an_access_key_on_Preferences_page).
 
 
 ##### Step 2: Download and install Terraform

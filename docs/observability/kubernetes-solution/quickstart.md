@@ -19,7 +19,7 @@ As an alternative, you can use our in-product Kubernetes Setup Quickstart Wizard
 
 ## What You'll Need
 * A Sumo Logic account (if you don't have one, [sign up for a free trial](/get-started/sign-up.md#create-a-trial-account))
-* Your Sumo Logic [Sumo Logic Access ID and Access Key](https://help.sumologic.com/manage/security/Access-Keys)
+* Your Sumo Logic [Sumo Logic Access ID and Access Key](/docs/manage/security/access-keys)
 
 
 ## Installation
@@ -40,7 +40,7 @@ values={[
   helm repo update
   ```
 
-1. Get your [Sumo Logic Access ID and Access Key](https://help.sumologic.com/manage/security/Access-Keys) and run the following command:
+1. Get your [Sumo Logic Access ID and Access Key](/docs/manage/security/access-keys) and run the following command:
   ```shell
   helm upgrade --install my-release sumologic/sumologic \
   --namespace=my-namespace \
@@ -62,7 +62,7 @@ If you're adding additional configuration, we recommend using the [helm values f
 </TabItem>
 <TabItem value="yaml">
 
-1. Get your [Sumo Logic Access ID and Access Key](https://help.sumologic.com/manage/security/Access-Keys) and run the following command to generate the YAML:
+1. Get your [Sumo Logic Access ID and Access Key](/docs/manage/security/access-keys) and run the following command to generate the YAML:
   ```shell
   kubectl run tools \
   -i --quiet --rm \

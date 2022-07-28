@@ -59,7 +59,7 @@ Please click on the appropriate links below based on the environment where your 
 
 ## Collect MariaDB Logs and Metrics for Kubernetes environments
 
-In a Kubernetes environment, we use the Telegraf Operator, which is packaged with our Kubernetes collection. You can learn more about it[ here](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Collect_Metrics_Using_Telegraf/01_Telegraf_Collection_Architecture). The diagram below illustrates how data is collected from MariaDB  in Kubernetes environments. In the architecture shown below, there are four services that make up the metric collection pipeline:
+In Kubernetes environments, we use the Telegraf Operator, which is packaged with our Kubernetes collection. You can learn more about it[ here](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Collect_Metrics_Using_Telegraf/01_Telegraf_Collection_Architecture). The diagram below illustrates how data is collected from MariaDB  in Kubernetes environments. In the architecture shown below, there are four services that make up the metric collection pipeline:
 
 
 * Telegraf
@@ -88,11 +88,11 @@ These instructions assume that you are using the latest Helm chart version. If n
 
 This section explains the steps to collect MariaDB metrics from a Kubernetes environment.
 
-In a Kubernetes environment, we use the Telegraf Operator, which is packaged with our Kubernetes collection. You can learn more on this[ here](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Collect_Metrics_Using_Telegraf/01_Telegraf_Collection_Architecture). Follow the steps listed below to collect metrics from a Kubernetes environment:
+In Kubernetes environments, we use the Telegraf Operator, which is packaged with our Kubernetes collection. You can learn more on this[ here](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Collect_Metrics_Using_Telegraf/01_Telegraf_Collection_Architecture). Follow the steps listed below to collect metrics from a Kubernetes environment:
 
 
 
-1. **[Setup Kubernetes Collection with the Telegraf Operator.](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Collect_Metrics_Using_Telegraf/03_Install_Telegraf#Install_Telegraf_in_a_Kubernetes_environment)**
+1. **[Setup Kubernetes Collection with the Telegraf Operator.](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf.md#Install_Telegraf_in_a_Kubernetes_environment)**
 2. **Add annotations on your MariaDB pods**
 
 On your MariaDB Pods, add the following annotations:
@@ -132,7 +132,7 @@ annotations:
 
 If you haven’t defined a cluster in MariaDB, then enter ‘**default**’ for `db_cluster`.
 
-Enter in values for the following parameters (marked in bold above):
+Enter in values for the following parameters :
 
 * telegraf.influxdata.com/inputs - This contains the required configuration for the Telegraf exec Input plugin. Please refer[ to this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/redis) for more information on configuring the MySQL input plugin for Telegraf. Note: As telegraf will be run as a sidecar the host should always be localhost.
     * In the input plugins section, that is:
@@ -153,7 +153,7 @@ Here’s an explanation for additional values set by this configuration that we 
         * `component: “database”` - This value is used by Sumo Logic apps to identify application components.
         * **db_system**: “mariadb” - This value identifies the database system.
 
-For all other parameters, please see [this doc](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Collect_Metrics_Using_Telegraf/03_Install_Telegraf#Configuring_Telegraf) for more properties that can be configured in the Telegraf agent globally.
+For all other parameters, please see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#Configuring-Telegraf) for more properties that can be configured in the Telegraf agent globally.
 
 
 
@@ -199,7 +199,7 @@ labels:
 * **component.** “database” - This value is used by Sumo Logic apps to identify application components.
 * **db_system.** “mariadb” - This value identifies the database system.
 
-    For all other parameters, please see [this doc](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Collect_Metrics_Using_Telegraf/03_Install_Telegraf#Configuring_Telegraf) for more properties that can be configured in the Telegraf agent globally.
+    For all other parameters, please see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#Configuring-Telegraf) for more properties that can be configured in the Telegraf agent globally.
 
 1. The Sumologic-Kubernetes-Collection will automatically capture the logs from stdout and will send the logs to Sumologic. For more information on deploying Sumologic-Kubernetes-Collection,[ visit](https://help.sumologic.com/07Sumo-Logic-Apps/10Containers_and_Orchestration/Kubernetes/Collect_Logs_and_Metrics_for_the_Kubernetes_App) here.
 2. Verify logs in Sumo Logic.
@@ -506,7 +506,7 @@ On the created Hosted Collector on the Collection Management screen, select Add 
 25
 
 
-Use the[ following steps](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Collect_Metrics_Using_Telegraf/03_Install_Telegraf) to install Telegraf.
+Use the[ following steps](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf.md) to install Telegraf.
 
 
 ##### Configure and start Telegraf.
@@ -602,7 +602,7 @@ For details on the individual alerts, see this [page](https://help.sumologic.com
 * To install these alerts, you need to have the Manage Monitors role capability.
 * Alerts can be installed by either importing a JSON file or a Terraform script.
 
-There are limits to how many alerts can be enabled - see the [Alerts FAQ](https://help.sumologic.com/Visualizations-and-Alerts/Alerts/Monitors/Monitor_FAQ) for details.
+There are limits to how many alerts can be enabled - see the [Alerts FAQ](/docs/alerts/monitors/monitor-faq.md) for details.
 
 
 ##### Install the monitors by importing a JSON file Method:
@@ -635,7 +635,7 @@ The monitors are disabled by default. Once you have installed the alerts using t
 
 
 1. **Generate a Sumo Logic access key and ID. \
-**Generate an access key and access ID for a user that has the Manage Monitors role capability in Sumo Logic using these[ instructions](https://help.sumologic.com/Manage/Security/Access-Keys#manage-your-access-keys-on-preferences-page). Identify which deployment your Sumo Logic account is in, using this [link](https://help.sumologic.com/APIs/General-API-Information/Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security)
+**Generate an access key and access ID for a user that has the Manage Monitors role capability in Sumo Logic using these[ instructions](/docs/manage/security/access-keys#manage-your-access-keys-on-preferences-page). Identify which deployment your Sumo Logic account is in, using this [link](https://help.sumologic.com/APIs/General-API-Information/Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security)
 2. **[Download and install Terraform 0.13](https://www.terraform.io/downloads.html) or later. **
 3. ** Download the Sumo Logic Terraform package for MariaDB alerts. \
 **The alerts package is available in the Sumo Logic GitHub [repository](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/tree/main/monitor_packages/MariaDB). You can either download it through the “git clone” command or as a zip file.
@@ -726,7 +726,7 @@ email_notifications = [
 
 
 39
-There are limits to how many alerts can be enabled - see the [Alerts FAQ](https://help.sumologic.com/Visualizations-and-Alerts/Alerts/Monitors/Monitor_FAQ).
+There are limits to how many alerts can be enabled - see the [Alerts FAQ](/docs/alerts/monitors/monitor-faq.md).
 
 
 ### Install the Sumo Logic App

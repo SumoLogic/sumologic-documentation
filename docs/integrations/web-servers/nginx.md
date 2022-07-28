@@ -55,7 +55,7 @@ Please click on the appropriate links below based on the environment where your 
 
 #### Collect Nginx Logs and Metrics for Kubernetes environments
 
-In a Kubernetes environment, we use the Telegraf Operator, which is packaged with our Kubernetes collection. You can learn more about it[ here](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Collect_Metrics_Using_Telegraf/01_Telegraf_Collection_Architecture). The diagram below illustrates how data is collected from Nginx in Kubernetes environments. In the architecture shown below, there are four services that make up the metric collection pipeline: Telegraf, Prometheus, Fluentd, and FluentBit.
+In Kubernetes environments, we use the Telegraf Operator, which is packaged with our Kubernetes collection. You can learn more about it[ here](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Collect_Metrics_Using_Telegraf/01_Telegraf_Collection_Architecture). The diagram below illustrates how data is collected from Nginx in Kubernetes environments. In the architecture shown below, there are four services that make up the metric collection pipeline: Telegraf, Prometheus, Fluentd, and FluentBit.
 
 The first service in the pipeline is Telegraf. Telegraf collects metrics from Nginx. Note that we’re running Telegraf in each pod we want to collect metrics from as a sidecar deployment: i.e. Telegraf runs in the same pod as the containers it monitors. Telegraf uses the [Nginx input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/nginx) to obtain metrics. (For simplicity, the diagram doesn’t show the input plugins.) The injection of the Telegraf sidecar container is done by the Telegraf Operator. We also have Fluentbit that collects logs written to standard out and forwards them to FluentD, which in turn sends all the logs and metrics data to a Sumo Logic HTTP Source.
 
@@ -80,9 +80,9 @@ It’s assumed that you are using the latest helm chart version if not upgrade u
 
 This section explains the steps to collect Nginx metrics from a Kubernetes environment.
 
-In a Kubernetes environment, we use the Telegraf Operator, which is packaged with our Kubernetes collection. You can learn more about this[ here](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Collect_Metrics_Using_Telegraf/01_Telegraf_Collection_Architecture). Follow the steps listed below to collect metrics from a Kubernetes environment:
+In Kubernetes environments, we use the Telegraf Operator, which is packaged with our Kubernetes collection. You can learn more about this[ here](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Collect_Metrics_Using_Telegraf/01_Telegraf_Collection_Architecture). Follow the steps listed below to collect metrics from a Kubernetes environment:
 
-1. **[Setup Kubernetes Collection with the Telegraf Operator.](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Collect_Metrics_Using_Telegraf/03_Install_Telegraf#Install_Telegraf_in_a_Kubernetes_environment)**
+1. **[Setup Kubernetes Collection with the Telegraf Operator.](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf.md#Install_Telegraf_in_a_Kubernetes_environment)**
 2. **Add annotations on your Nginx pods**
 
 On your Nginx Pods, add the following annotations:
@@ -108,7 +108,7 @@ annotations:
 
 If you haven’t defined a farm in Nginx, then enter ‘**default**’ for `webserver_farm`.
 
-Enter in values for the following parameters (marked in bold above):
+Enter in values for the following parameters :
 
 * telegraf.influxdata.com/inputs - This contains the required configuration for the Telegraf Nginx Input plugin. Please refer[ to this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/redis) for more information on configuring the Nginx input plugin for Telegraf. Note: As telegraf will be run as a sidecar the host should always be localhost.
     * In the input plugins section, that is :
@@ -127,7 +127,7 @@ Here’s an explanation for additional values set by this configuration that we 
         * `component: “webserver”`: This value is used by Sumo Logic apps to identify application components.
         * `webserver_system: “nginx”`: This value identifies the webserver system.
 
-For all other parameters please see [this doc](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Collect_Metrics_Using_Telegraf/03_Install_Telegraf#Configuring_Telegraf) for more properties that can be configured in the Telegraf agent globally.
+For all other parameters please see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#Configuring-Telegraf) for more properties that can be configured in the Telegraf agent globally.
 
 1. Sumo Logic Kubernetes collection will automatically start collecting metrics from the pods having the labels and annotations defined in the previous step.
 2. Verify metrics in Sumo Logic.
@@ -160,7 +160,7 @@ Here’s an explanation for additional values set by this configuration that we 
 * `component“webserver”` - This value is used by Sumo Logic apps to identify application components.
 * `webserver_system: “nginx”` - This value identifies the database system.
 
-For all other parameters please see [this doc](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Collect_Metrics_Using_Telegraf/03_Install_Telegraf#Configuring_Telegraf) for more properties that can be configured in the Telegraf agent globally.
+For all other parameters please see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#Configuring-Telegraf) for more properties that can be configured in the Telegraf agent globally.
 
 1. The Sumologic-Kubernetes-Collection will automatically capture the logs from stdout and will send the logs to Sumologic. For more information on deploying Sumologic-Kubernetes-Collection,[ visit](https://help.sumologic.com/07Sumo-Logic-Apps/10Containers_and_Orchestration/Kubernetes/Collect_Logs_and_Metrics_for_the_Kubernetes_App) here.
 2. Verify logs in Sumo Logic.
@@ -314,7 +314,7 @@ If you are using a service like Fluentd, or you would like to upload your logs m
 
 ###### Set up Telegraf
 
-1. **Install Telegraf if you haven’t already.** Use the [following steps](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Collect_Metrics_Using_Telegraf/03_Install_Telegraf) to install Telegraf.
+1. **Install Telegraf if you haven’t already.** Use the [following steps](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf.md) to install Telegraf.
 2. **Configure and start Telegraf.**
 3. As part of collecting metrics data from Telegraf, we will use the [nginx input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/nginx) to get data from Telegraf and the [Sumo Logic output plugin](https://github.com/SumoLogic/fluentd-output-sumologic) to send data to Sumo Logic.
 
@@ -463,7 +463,7 @@ Sumo Logic has provided out-of-the-box alerts available through [Sumo Logic moni
 * To install these alerts, you need to have the Manage Monitors role capability.
 * Alerts can be installed by either importing a JSON file or a Terraform script.
 
-There are limits to how many alerts can be enabled - see the [Alerts FAQ](https://help.sumologic.com/Visualizations-and-Alerts/Alerts/Monitors/Monitor_FAQ) for detail.
+There are limits to how many alerts can be enabled - see the [Alerts FAQ](/docs/alerts/monitors/monitor-faq.md) for detail.
 
 
 ### Method 1: Importing a JSON file
@@ -485,7 +485,7 @@ The monitors are disabled by default. Once you have installed the alerts using t
 
 ### Method 2: Using a Terraform script
 
-1. **Generate a Sumo Logic access key and ID** Generate an access key and access ID for a user that has the Manage Monitors role capability in Sumo Logic using these[ instructions](https://help.sumologic.com/Manage/Security/Access-Keys#manage-your-access-keys-on-preferences-page). Identify which deployment your Sumo Logic account is in, using this [link](https://help.sumologic.com/APIs/General-API-Information/Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security).
+1. **Generate a Sumo Logic access key and ID** Generate an access key and access ID for a user that has the Manage Monitors role capability in Sumo Logic using these[ instructions](/docs/manage/security/access-keys#manage-your-access-keys-on-preferences-page). Identify which deployment your Sumo Logic account is in, using this [link](https://help.sumologic.com/APIs/General-API-Information/Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security).
 2. **[Download and install Terraform 0.13](https://www.terraform.io/downloads.html) or later**
 3. **Download the Sumo Logic Terraform package for Nginx alerts** The alerts package is available in the Sumo Logic GitHub [repository](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/tree/main/monitor_packages/Nginx). You can either download it through the “git clone” command or as a zip file.
 4. **Alert Configuration** After the package has been extracted, navigate to the package directory `terraform-sumologic-sumo-logic-monitor/monitor_packages/Nginx/ `
@@ -551,7 +551,7 @@ email_notifications = [
 If you haven’t enabled alerts and/or configured notifications through the Terraform procedure outlined above, we highly recommend enabling alerts of interest and configuring each enabled alert to send notifications to other users or services. This is detailed in Step 4 of [this document](https://help.sumologic.com/Visualizations-and-Alerts/Alerts/Monitors#Add_a_monitor).
 
 :::note
-There are limits to how many alerts can be enabled. See the [Alerts FAQ](https://help.sumologic.com/Visualizations-and-Alerts/Alerts/Monitors/Monitor_FAQ).
+There are limits to how many alerts can be enabled. See the [Alerts FAQ](/docs/alerts/monitors/monitor-faq.md).
 :::
 
 

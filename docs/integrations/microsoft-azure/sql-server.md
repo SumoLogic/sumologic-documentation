@@ -50,7 +50,7 @@ Sumo Logic supports collection of logs and metrics data from SQL Server in both 
 
 ### For Kubernetes environments
 
-In a Kubernetes environment, we use the Telegraf Operator, which is packaged with our Kubernetes collection. You can learn more about it [here](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Collect_Metrics_Using_Telegraf/01_Telegraf_Collection_Architecture). The diagram below illustrates how data is collected from SQL Server in Kubernetes environments. In the architecture shown below, there are four services that make up the metric collection pipeline: Telegraf, Prometheus, Fluentd and FluentBit.
+In Kubernetes environments, we use the Telegraf Operator, which is packaged with our Kubernetes collection. You can learn more about it [here](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Collect_Metrics_Using_Telegraf/01_Telegraf_Collection_Architecture). The diagram below illustrates how data is collected from SQL Server in Kubernetes environments. In the architecture shown below, there are four services that make up the metric collection pipeline: Telegraf, Prometheus, Fluentd and FluentBit.
 
 The first service in the pipeline is Telegraf. Telegraf collects metrics from SQL Server. Note that we’re running Telegraf in each pod we want to collect metrics from as a sidecar deployment: i.e. Telegraf runs in the same pod as the containers it monitors. Telegraf uses the [SQL Server input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/sqlserver) to obtain metrics. (For simplicity, the diagram doesn’t show the input plugins.) The injection of the Telegraf sidecar container is done by the Telegraf Operator. We also have Fluentbit that collects logs written to standard out and forwards them to FluentD, which in turn sends all the logs and metrics data to a Sumo Logic HTTP Source.
 
@@ -76,9 +76,9 @@ It’s assumed that you are using the latest helm chart version if not upgrade u
 
 This section explains the steps to collect SQL Server metrics from a Kubernetes environment.
 
-In a Kubernetes environment, we use the Telegraf Operator, which is packaged with our Kubernetes collection. You can learn more on this[ here](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Collect_Metrics_Using_Telegraf/01_Telegraf_Collection_Architecture). Follow the steps listed below to collect metrics from a Kubernetes environment:
+In Kubernetes environments, we use the Telegraf Operator, which is packaged with our Kubernetes collection. You can learn more on this[ here](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Collect_Metrics_Using_Telegraf/01_Telegraf_Collection_Architecture). Follow the steps listed below to collect metrics from a Kubernetes environment:
 
-1. **[Set up Kubernetes Collection with the Telegraf Operator.](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Collect_Metrics_Using_Telegraf/03_Install_Telegraf#Install_Telegraf_in_a_Kubernetes_environment)**
+1. **[Set up Kubernetes Collection with the Telegraf Operator.](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf.md#Install_Telegraf_in_a_Kubernetes_environment)**
 2. **Add annotations on your SQL Server pods**. Before you add annotations, you need to create a login on every SQL Server pod  you want to monitor, with following script:
   ```
   USE master;
@@ -107,7 +107,7 @@ In a Kubernetes environment, we use the Telegraf Operator, which is packaged wit
       db_cluster="sqlserver_on_k8s"
       db_system = "sqlserver"
   ```
-  Enter in values for the following parameters (marked in bold above):
+  Enter in values for the following parameters :
   * telegraf.influxdata.com/inputs - This contains the required configuration for the Telegraf SQL Server Input plugin. Please refer[ to this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/redis) for more information on configuring the SQL Server input plugin for Telegraf. Note: As telegraf will be run as a sidecar the host should always be localhost.
   * In the input plugins section, that is `[[inputs.sqlserver]]`:
       * `servers` - The URL to the SQLserver server. This can be a comma-separated list to connect to multiple SQLserver servers. Please see [this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/sqlserver) for more information on additional parameters for configuring the SQLserver input plugin for Telegraf.
@@ -125,7 +125,7 @@ In a Kubernetes environment, we use the Telegraf Operator, which is packaged wit
         * `component: “database”` - This value is used by Sumo Logic apps to identify application components.
         * `db_system: “sqlserver”` - This value identifies the database system.
 
-    For all other parameters please see [this doc](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Collect_Metrics_Using_Telegraf/03_Install_Telegraf#Configuring_Telegraf) for more properties that can be configured in the Telegraf agent globally.
+    For all other parameters please see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#Configuring-Telegraf) for more properties that can be configured in the Telegraf agent globally.
 
 1. Sumo Logic Kubernetes collection will automatically start collecting metrics from the pods having the labels and annotations defined in the previous step.
 2. Verify metrics in Sumo Logic.
@@ -153,7 +153,7 @@ This section explains the steps to collect SQL Server logs from a Kubernetes env
    * `component: “database”` - This value is used by Sumo Logic apps to identify application components.
    * `db_system: “SQLserver”` - This value identifies the database system.
 
-   For all other parameters, please see [this doc](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Collect_Metrics_Using_Telegraf/03_Install_Telegraf#Configuring_Telegraf) for more properties that can be configured in the Telegraf agent globally.
+   For all other parameters, please see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#Configuring-Telegraf) for more properties that can be configured in the Telegraf agent globally.
 
    * The Sumologic-Kubernetes-Collection will automatically capture the logs from stdout and will send the logs to Sumologic. For more information on deploying Sumologic-Kubernetes-Collection,[ visit](https://help.sumologic.com/07Sumo-Logic-Apps/10Containers_and_Orchestration/Kubernetes/Collect_Logs_and_Metrics_for_the_Kubernetes_App) here.
    * Verify logs in Sumo Logic.
@@ -289,7 +289,7 @@ At this point, the installed collector will start scanning the `ERRORLOG` and se
 
 ##### Set up Telegraf
 
-1. **Install Telegraf if you haven’t already.** Use the[ following steps](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Collect_Metrics_Using_Telegraf/03_Install_Telegraf) to install Telegraf.
+1. **Install Telegraf if you haven’t already.** Use the[ following steps](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf.md) to install Telegraf.
 2. **Configure and start Telegraf.** As part of collecting metrics data from Telegraf, we will use the[ SQL Server input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/sqlserver) to get data from Telegraf and the[ Sumo Logic output plugin](https://github.com/SumoLogic/fluentd-output-sumologic) to send data to Sumo Logic.  
 
   Before you configure Telegraf, you will need to create a[ login on every SQL Server](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/sqlserver#additional-setup) instance you want to monitor with the following script. This script will create a user in SQL Server which will be used as input to the Telegraf configuration.
@@ -371,7 +371,7 @@ For details on the individual alerts, see [Alerts](#microsoft-sql-server-alerts)
 
 * To install these alerts, you need to have the Manage Monitors role capability.
 * Alerts can be installed by either importing a JSON file or a Terraform script.
-* Note: There are limits to how many alerts can be enabled - please see the [Alerts FAQ](https://help.sumologic.com/Visualizations-and-Alerts/Alerts/Monitors/Monitor_FAQ) for details.
+* Note: There are limits to how many alerts can be enabled - please see the [Alerts FAQ](/docs/alerts/monitors/monitor-faq.md) for details.
 
 
 ### Method 1: Importing a JSON file
@@ -400,7 +400,7 @@ The monitors are disabled by default. Once you have installed the alerts using t
 
 **Step 1: Generate a Sumo Logic access key and ID**
 
-Generate an access key and access ID for a user that has the Manage Monitors role capability in Sumo Logic using these[ instructions](https://help.sumologic.com/Manage/Security/Access-Keys#manage-your-access-keys-on-preferences-page). Please identify which deployment your Sumo Logic account is in, using this [ link](https://help.sumologic.com/APIs/General-API-Information/Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security).
+Generate an access key and access ID for a user that has the Manage Monitors role capability in Sumo Logic using these[ instructions](/docs/manage/security/access-keys#manage-your-access-keys-on-preferences-page). Please identify which deployment your Sumo Logic account is in, using this [ link](https://help.sumologic.com/APIs/General-API-Information/Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security).
 
 **Step 2: [Download and install Terraform 0.13](https://www.terraform.io/downloads.html) or later **
 
@@ -488,7 +488,7 @@ If you haven’t enabled alerts and/or configured notifications through the Terr
 
 
 10
-There are limits to how many alerts can be enabled - please see the [Alerts FAQ](https://help.sumologic.com/Visualizations-and-Alerts/Alerts/Monitors/Monitor_FAQ).
+There are limits to how many alerts can be enabled - please see the [Alerts FAQ](/docs/alerts/monitors/monitor-faq.md).
 
 
 ## Installing the Microsoft SQL Server App

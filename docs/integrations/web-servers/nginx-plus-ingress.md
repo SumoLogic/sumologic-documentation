@@ -161,7 +161,7 @@ The monitors are disabled by default. Once you have installed the alerts via thi
 
 **Step 1: Generate a Sumo Logic access key and ID**
 
-Generate an [access key](https://help.sumologic.com/Manage/Security/Access-Keys#create-an-access-key%C2%A0on-preferences-page) and access ID for a user that has the[ Manage Monitors](https://help.sumologic.com/Manage/Users-and-Roles/Manage-Roles/05-Role-Capabilities#Monitors_(New)) role capability in Sumo Logic using these instructions. Please identify your Sumo Logic[ deployment](https://help.sumologic.com/APIs/General-API-Information/Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security).
+Generate an [access key](/docs/manage/security/access-keys#create-an-access-key%C2%A0on-preferences-page) and access ID for a user that has the[ Manage Monitors](https://help.sumologic.com/Manage/Users-and-Roles/Manage-Roles/05-Role-Capabilities#Monitors_(New)) role capability in Sumo Logic using these instructions. Please identify your Sumo Logic[ deployment](https://help.sumologic.com/APIs/General-API-Information/Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security).
 
 **Step 2:[ Download and install Terraform 0.13](https://www.terraform.io/downloads.html)** or later** **
 
@@ -235,7 +235,7 @@ If you haven’t enabled alerts and/or configured notifications via the terrafor
 
 
 13
-There are limits to how many alerts can be enabled - please see the[ Alerts FAQ](https://help.sumologic.com/Visualizations-and-Alerts/Alerts/Monitors/Monitor_FAQ).
+There are limits to how many alerts can be enabled - please see the[ Alerts FAQ](/docs/alerts/monitors/monitor-faq.md).
 
 
 ## Installing the Nginx Plus Ingress App
