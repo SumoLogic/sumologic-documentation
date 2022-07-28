@@ -207,13 +207,13 @@ db_system: "cassandra"
 Please enter values for the following parameters (marked in bold above):
 
 
-* **environment** - This is the deployment environment where the Cassandra cluster identified by the value of **servers** resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
-* **db_cluster** - Enter a name to identify the Cassandra cluster. The cluster name will be shown in the Sumo Logic dashboards.
+* `environment` - This is the deployment environment where the Cassandra cluster identified by the value of **servers** resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
+* `db_cluster` - Enter a name to identify the Cassandra cluster. The cluster name will be shown in the Sumo Logic dashboards.
 
     Here’s an explanation for additional values set by this configuration that we request you **please do not modify** as they will cause the Sumo Logic apps to not function correctly.
 
-* **component: “database”** - This value is used by Sumo Logic apps to identify application components.
-* **db_system: “Cassandra”** - This value identifies the database system.
+* `component: “database”` - This value is used by Sumo Logic apps to identify application components.
+* `db_system: “Cassandra”` - This value identifies the database system.
 
     For all other parameters please see [this doc](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Collect_Metrics_Using_Telegraf/03_Install_Telegraf#Configuring_Telegraf) for more properties that can be configured in the Telegraf agent globally.
 
@@ -434,7 +434,7 @@ Here’s an explanation for additional values set by this Telegraf configuration
 
 * data_format - “prometheus” In the output plugins section, which is [[outputs.sumologic]]. Metrics are sent in the Prometheus format to Sumo Logic
 * db_system: “cassandra” - In the input plugins section:  This value identifies the database system.
-* component: “database” - In the input plugins section: This value identifies application components.
+* `component: “database”` - In the input plugins section: This value identifies application components.
 * For all other parameters please see [this doc](https://github.com/influxdata/telegraf/blob/master/etc/telegraf.conf) for more properties that can be configured in the Telegraf agent globally.
 
 Once you have finalized your telegraf.conf file, you can start or reload the telegraf service using instructions from the [doc](https://docs.influxdata.com/telegraf/v1.17/introduction/getting-started/#start-telegraf-service).

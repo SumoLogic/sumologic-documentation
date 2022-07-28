@@ -138,19 +138,19 @@ Enter in values for the following parameters (marked in bold above):
     * In the input plugins section, that is:
         * **servers **- The URL of your MariaDB server. For information about additional input plugin configuration options, see the [Readme ](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/mysql)for the MySQL input plugin.
     * In the tags section, that is  `[inputs.mysql.tags]`
-        * **environment** - This is the deployment environment where the MariaDB cluster identified by the value of **servers** resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
-        * **db_cluster** - Enter a name to identify this MariaDB cluster. This cluster name will be shown in the Sumo Logic dashboards.  
+        * `environment` - This is the deployment environment where the MariaDB cluster identified by the value of **servers** resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
+        * `db_cluster` - Enter a name to identify this MariaDB cluster. This cluster name will be shown in the Sumo Logic dashboards.  
 
 Here’s an explanation for additional values set by this configuration that we request you to please **do not modify** as they will cause the Sumo Logic apps to not function correctly.
 
 
 
-* **telegraf.influxdata.com/class: sumologic-prometheus** - This instructs the Telegraf operator what output to use. This should not be changed.
-* **prometheus.io/scrape: "true"** - This ensures our Prometheus will scrape the metrics.
-* **prometheus.io/port: "9273"** - This tells prometheus what ports to scrape on. This should not be changed.
-* **telegraf.influxdata.com/inputs**
+* `telegraf.influxdata.com/class: sumologic-prometheus` - This instructs the Telegraf operator what output to use. This should not be changed.
+* `prometheus.io/scrape: "true"` - This ensures our Prometheus will scrape the metrics.
+* `prometheus.io/port: "9273"` - This tells prometheus what ports to scrape on. This should not be changed.
+* `telegraf.influxdata.com/inputs`
     * In the tags section i.e.  `[inputs.mysql.tags]`
-        * **component**: “database” - This value is used by Sumo Logic apps to identify application components.
+        * `component: “database”` - This value is used by Sumo Logic apps to identify application components.
         * **db_system**: “mariadb” - This value identifies the database system.
 
 For all other parameters, please see [this doc](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Collect_Metrics_Using_Telegraf/03_Install_Telegraf#Configuring_Telegraf) for more properties that can be configured in the Telegraf agent globally.

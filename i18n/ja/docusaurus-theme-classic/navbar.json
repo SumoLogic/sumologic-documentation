@@ -10,5 +10,21 @@
   "item.label.Release Notes": {
     "message": "Release Notes",
     "description": "Navbar item with label Release Notes"
+  },
+  "item.label.API": {
+    "message": "API",
+    "description": "Navbar item with label API"
+  },
+  "item.label.Start a Free Trial": {
+    "message": "Start a Free Trial",
+    "description": "Navbar item with label Start a Free Trial"
+  },
+  "item.label.Contribution Guide": {
+    "message": "Contribution Guide",
+    "description": "Navbar item with label Contribution Guide"
+  },
+  "item.label.Docs GitHub": {
+    "message": "Docs GitHub",
+    "description": "Navbar item with label Docs GitHub"
   }
 }

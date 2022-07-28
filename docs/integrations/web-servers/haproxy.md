@@ -146,7 +146,7 @@ Enter in values for the following parameters (marked in bold above):
 * **telegraf.influxdata.com/class** sumologic-prometheus - This instructs the Telegraf operator what output to use. This should not be changed.
 * **prometheus.io/scrape** "true" - This ensures our Prometheus will scrape the metrics.
 * **prometheus.io/port** "9273" - This tells prometheus what ports to scrape on. This should not be changed.
-* **telegraf.influxdata.com/inputs**
+* `telegraf.influxdata.com/inputs`
     * In the tags section, for example  [inputs.haproxy.tags]
         * **component: “proxy”** - This value is used by Sumo Logic apps to identify application components.
         * **proxy_system: “haproxy”** - This value identifies the proxy system.
@@ -293,9 +293,9 @@ Create or modify telegraf.conf and copy and paste the text below:
 Please enter values for the following parameters (marked in **bold** above):
 
 * In the input plugins section, that is `[[inputs.haproxy]]`:
-    * **servers** - The URL to the HAProxy server. This can be a comma-separated list to connect to multiple HAProxy servers. Please see [this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/haproxy) for more information on additional parameters for configuring the HAProxy input plugin for Telegraf.
+    * `servers` - The URL to the HAProxy server. This can be a comma-separated list to connect to multiple HAProxy servers. Please see [this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/haproxy) for more information on additional parameters for configuring the HAProxy input plugin for Telegraf.
     * In the tags section, which is `[inputs.haproxy.tags]`:
-        * **environment** - This is the deployment environment where the HAProxy server identified by the value of **servers** resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
+        * `environment` - This is the deployment environment where the HAProxy server identified by the value of **servers** resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
         * **proxy_cluster** - Enter a name to identify this HAProxy cluster. This cluster name will be shown in the Sumo Logic dashboards.
 * In the output plugins section, which is `[[outputs.sumologic]]`:
     * **url** - This is the HTTP source URL created in step 2. Please see [this doc](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Collect_Metrics_Using_Telegraf/05_Configure_Telegraf_Output_Plugin_for_Sumo_Logic) for more information on additional parameters for configuring the Sumo Logic Telegraf output plugin.

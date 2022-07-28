@@ -65,17 +65,14 @@ In this step, you use a Sumo-provided Azure Resource Manager (ARM) template to c
 
 6. Click **Save.**
 7. Now you are back on the **Custom deployment** blade.
-    1. Create a new Resource Group (recommended) or select an existing one.
-    2. Choose Location.
-    3. In the **Sumo Endpoint URL** field, enter the URL of the HTTP Source you configured in [Step 1](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Azure_Monitoring/Collect_Logs_from_Azure_Monitor#Step_1._Configure_an_HTTP_source).
-    4. Agree to the terms and conditions.
-    5. Click **Purchase**. \
-
+    * Create a new Resource Group (recommended) or select an existing one.
+    * Choose Location.
+    * In the **Sumo Endpoint URL** field, enter the URL of the HTTP Source you configured in [Step 1](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Azure_Monitoring/Collect_Logs_from_Azure_Monitor#Step_1._Configure_an_HTTP_source).
+    * Agree to the terms and conditions.
+    * Click **Purchase**. \
 8. Verify the deployment was successful by looking at **Notifications** at the top right corner of Azure Portal. \
 9. **(Optional)** In the same window, you can click **Go to resource group** to verify all resources have been created successfully. You will see something like this: \
-
-10. Go to **Storage accounts** and search for “sumofailmsg**”. **Click on “sumofailmsg_&lt;random-string>”. \
-_
+10. Go to **Storage accounts** and search for “sumofailmsg”. Click on `sumofailmsg_<random-string>`.
 11. Under **Blob Service**, click **Containers**, then click **+ Container**, enter the Name** azureaudit-failover**, and select **Private** for the **Public Access Level**. Click **OK**.
 
 ### Export Activity Logs to Event Hub
