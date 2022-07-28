@@ -194,7 +194,7 @@ The Threat Intel Quick Analysis App provides baseline queries. You can further o
 * Filter out unwanted logs before you use Threat Intel lookup operator
 * Use keywords
 * Use the `where` operator
-* Use general search optimization [rules](/Users/kpohas/sumologic-documentation/docs/search/get-started-with-search/build-search/best-practices-search.md)
+* Use general search optimization [rules](/docs/search/get-started-with-search/build-search/best-practices-search.md)
 
 For example:
 
