@@ -1,5 +1,6 @@
 ---
 id: box-plot-charts
+description: Box Plot Chart graphically depicts groups of data using quartiles, which are the values that divide a list of numbers into quarters.
 ---
 
 # Box Plot Charts
