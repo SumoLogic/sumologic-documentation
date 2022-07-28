@@ -2,7 +2,7 @@
 id: threat-intel-quick-analysis
 title: Threat Intel Quick Analysis
 sidebar_label: Threat Intel Quick Analysis
-description: The Threat Intel Quick Analysis App correlates CrowdStrike's threat intelligence data with your own log data, providing security analytics that helps you to detect threats in your environment, while also protecting against sophisticated and persistent cyber-attacks. 
+description: The Threat Intel Quick Analysis App correlates CrowdStrike's threat intelligence data with your own log data, providing security analytics that helps you to detect threats in your environment, while also protecting against sophisticated and persistent cyber-attacks.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -194,7 +194,7 @@ The Threat Intel Quick Analysis App provides baseline queries. You can further o
 * Filter out unwanted logs before you use Threat Intel lookup operator
 * Use keywords
 * Use the `where` operator
-* Use general search optimization [rules](/docs/search/index.md/Get-Started-with-Search/How-to-Build-a-Search/Best-Practices%3A-Search-Rules-to-Live-By)
+* Use general search optimization [rules](/docs/search/Get-Started-with-Search/How-to-Build-a-Search/Best-Practices%3A-Search-Rules-to-Live-By)
 
 For example:
 
