@@ -114,7 +114,7 @@ This section provides instructions for setting up AWS CloudTrail Source to colle
 To collect AWS CloudTrail events, do the following:
 
 1. Configure a [Hosted Collector.](https://help.sumologic.com/03Send-Data/Hosted-Collectors/Configure-a-Hosted-Collector)
-2. Add an [AWS CloudTrail Source](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/AWS-CloudTrail-Source) to the Hosted Collector, providing the following information:
+2. Add an [AWS CloudTrail Source](/docs/send-data/sources/sources-hosted-collectors/amazon-web-services/aws-cloudtrail-source.md) to the Hosted Collector, providing the following information:
 * **Name** - Enter a name to display for the new Source.
 * **Description** - Enter an optional description.
 * **S3 Region** - Select the Amazon Region for your CloudTrail Aurora S3 bucket.

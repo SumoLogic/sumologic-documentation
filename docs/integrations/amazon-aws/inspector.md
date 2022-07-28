@@ -34,7 +34,7 @@ An AWS Source must be associated with a Sumo Logic Hosted Collector. Before crea
 
 **To add a hosted collector and AWS S3 source**
 
-1. [Grant Access to an AWS S3 Bucket.](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/Grant-Access-to-an-AWS-Product)
+1. [Grant Access to an AWS S3 Bucket.](/docs/send-data/sources/sources-hosted-collectors/amazon-web-services/grant-access-aws-product.md)
 2. To create a new Sumo Logic Hosted Collector, perform the steps in [Configure a Hosted Collector](https://help.sumologic.com/03Send-Data/Hosted-Collectors/Configure-a-Hosted-Collector)
 3. Add an [AWS Source](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/AWS-S3-Source#AWS_Sources) for the S3 Source to Sumo Logic, and in **Advanced Options for Logs**, under Timestamp Format, click **Specify a format** and enter the following:
     * Specify **Format** as `yyyy-MM-dd'T'HH:mm:ss.SSS'Z'`
@@ -143,5 +143,5 @@ The top panel of the dashboard presents:
 The other panels on the dashboard, for Critical, High, Medium, and Low Severity findings, have similar content. The only difference is they each are filtered by the listed severity level.
 
 * Severity Findings. The count of findings at this severity during the last 24 hours by default, or during the currently selected time range.  
-* Severity [Outliers](https://help.sumologic.com/05Search/Search-Query-Language/Search-Operators/outlier). Shows the trending volume of findings at this severity level during the last 24 hours by default, or during the currently selected time range. The gray shaded area corresponds to 3 standard deviations of the past 10 mean values. Pink triangles show values that exceed that threshold and are likely points of investigation considering the large change in volume of findings.
+* Severity [Outliers](/docs/search/index.md/Search-Query-Language/Search-Operators/outlier). Shows the trending volume of findings at this severity level during the last 24 hours by default, or during the currently selected time range. The gray shaded area corresponds to 3 standard deviations of the past 10 mean values. Pink triangles show values that exceed that threshold and are likely points of investigation considering the large change in volume of findings.
 * Last 20 Severity Findings. A table detailing the 20 most recent findings at this severity level.

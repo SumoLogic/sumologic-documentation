@@ -630,7 +630,7 @@ This page has instructions for installing the Sumo App and Alerts for Redis ULM,
 25
 
 
-Sumo Logic has provided out of the box alerting capabilities available via[ Sumo Logic monitors](https://help.sumologic.com/Visualizations-and-Alerts/Alerts/Monitors) to help you quickly determine if the Redis database cluster is available and performing as expected. These monitors fire alerts (notifications) on top of preset thresholds on metrics data using industry best practices and recommendations.
+Sumo Logic has provided out of the box alerting capabilities available via[ Sumo Logic monitors](/docs/alerts/monitors/index.md) to help you quickly determine if the Redis database cluster is available and performing as expected. These monitors fire alerts (notifications) on top of preset thresholds on metrics data using industry best practices and recommendations.
 
 For details on the individual monitors,  please see[ this page](https://help.sumologic.com/07Sumo-Logic-Apps/12Databases/Redis/Redis_Alerts).
 
@@ -925,7 +925,7 @@ Use this dashboard to:
 
 ## Redis Alerts
 
-Sumo Logic has provided out of the box alerts available via[ Sumo Logic monitors](https://help.sumologic.com/Visualizations-and-Alerts/Alerts/Monitors) to help you quickly determine if the Redis database cluster is available and performing as expected.
+Sumo Logic has provided out of the box alerts available via[ Sumo Logic monitors](/docs/alerts/monitors/index.md) to help you quickly determine if the Redis database cluster is available and performing as expected.
 
 
 <table>

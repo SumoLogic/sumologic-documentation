@@ -31,7 +31,7 @@ Before you begin you must:
 
 1. Enable logging from the AWS Network Firewall to an Amazon S3 bucket as described in the [AWS Network Firewall documentation](https://docs.aws.amazon.com/network-firewall/latest/developerguide/logging-s3.html).
 2. Confirm that logs are being delivered to the S3 bucket.
-3. [Grant Sumo Logic Access to the AWS S3 Bucket](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/Grant-Access-to-an-AWS-Product)
+3. [Grant Sumo Logic Access to the AWS S3 Bucket](/docs/send-data/sources/sources-hosted-collectors/amazon-web-services/grant-access-aws-product.md)
 
 
 ### Enable S3 Ingestion

@@ -12,7 +12,7 @@ This page has instructions for installing Sumo Logic Monitors for Apache Tomcat,
 
 ## Installing Apache Tomcat Monitors
 
-Sumo Logic has provided pre-packaged alerts available through [Sumo Logic monitors](https://help.sumologic.com/Visualizations-and-Alerts/Alerts/Monitors) to help you proactively determine if an Apache Tomcat webserver farm is available and performing as expected. These monitors are based on metric and log data and include pre-set thresholds that reflect industry best practices and recommendations. For more information about individual alerts, see [Apache Tomcat Alerts](https://help.sumologic.com/07Sumo-Logic-Apps/24Web_Servers/Apache_Tomcat/Apache_Tomcat_Alerts).
+Sumo Logic has provided pre-packaged alerts available through [Sumo Logic monitors](/docs/alerts/monitors/index.md) to help you proactively determine if an Apache Tomcat webserver farm is available and performing as expected. These monitors are based on metric and log data and include pre-set thresholds that reflect industry best practices and recommendations. For more information about individual alerts, see [Apache Tomcat Alerts](https://help.sumologic.com/07Sumo-Logic-Apps/24Web_Servers/Apache_Tomcat/Apache_Tomcat_Alerts).
 
 To install these monitors, you must have the **Manage Monitors** role capability.
 
@@ -37,7 +37,7 @@ Custom filter examples:
 2. Click **Add**.
 3. Click **Import**.
 4. On the** Import Content popup**, enter **Apache Tomcat** in the Name field, paste in the JSON into the popup, and click **Import**.
-5. The monitors are created in a "Apache Tomcat" folder. The monitors are disabled by default. See the [Monitors](https://help.sumologic.com/Visualizations-and-Alerts/Alerts/Monitors) topic for information about enabling monitors and configuring notifications or connections.
+5. The monitors are created in a "Apache Tomcat" folder. The monitors are disabled by default. See the [Monitors](/docs/alerts/monitors/index.md) topic for information about enabling monitors and configuring notifications or connections.
 
 
 ### Method 2: Using a Terraform script

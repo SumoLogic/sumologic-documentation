@@ -68,7 +68,7 @@ The S3 bucket name is not part of the path. Don’t include the bucket name when
 ### Step 4. Configure AWS CloudTrail source for Redshift CloudTrail Events  
 
 1. Configure a [Hosted Collector.](https://help.sumologic.com/03Send-Data/Hosted-Collectors#Create_a_Hosted_Collector)
-2. To your Hosted Collector, add an [AWS CloudTrail Source](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/AWS-CloudTrail-Source).
+2. To your Hosted Collector, add an [AWS CloudTrail Source](/docs/send-data/sources/sources-hosted-collectors/amazon-web-services/aws-cloudtrail-source.md).
     1. **Name**. Enter a name to display for the new Source.
     2. **Description**. Enter an optional description.
     3. **S3 Region**. Select the Amazon Region for your CloudTrail Redshift S3 bucket.
@@ -88,7 +88,7 @@ The S3 bucket name is not part of the path. Don’t include the bucket name when
 
 
 1. Configure a [Hosted Collector](https://help.sumologic.com/03Send-Data/Hosted-Collectors/Configure-a-Hosted-Collector).
-2. Configure an [AWS CloudTrail Source](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/AWS-CloudTrail-Source).
+2. Configure an [AWS CloudTrail Source](/docs/send-data/sources/sources-hosted-collectors/amazon-web-services/aws-cloudtrail-source.md).
     1. **Name**. Enter a name to display for the new Source.
     2. **Description**. Enter an optional description.
     3. **Regions**. Select your Amazon Regions for Amazon Redshift.

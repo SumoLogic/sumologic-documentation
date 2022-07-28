@@ -88,7 +88,7 @@ Configure a [Hosted Collector](https://help.sumologic.com/03Send-Data/Hosted-Col
 
 Before you can begin to use the AWS Elastic Load Balancing (ELB) Application App, complete the following steps:
 
-1. [Grant Sumo Logic access](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/Grant-Access-to-an-AWS-Product) to an Amazon S3 bucket.
+1. [Grant Sumo Logic access](/docs/send-data/sources/sources-hosted-collectors/amazon-web-services/grant-access-aws-product.md) to an Amazon S3 bucket.
 2. [Enable Application Load Balancer logging](http://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-access-logs.html#enable-access-logging) in AWS.
 3. Confirm that logs are being delivered to the Amazon S3 bucket.
 
@@ -169,7 +169,7 @@ Following** Fields **are to be added in the source :
 2.
 17
  An orange triangle with an exclamation point is shown when the field doesn't exist or is disabled in the Fields table schema. In this case, an option is provided to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo that does not exist in the Fields schema or is disabled, it is ignored, known as dropped.
-1. For **AWS Access,** you have two **Access Method** options. Select **Role-based or Key access based on the AWS authentication you provide**. Role-based access is preferred. This was completed in the prerequisite step [Grant Sumo Logic access to an AWS Product](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/Grant-Access-to-an-AWS-Product).
+1. For **AWS Access,** you have two **Access Method** options. Select **Role-based or Key access based on the AWS authentication you provide**. Role-based access is preferred. This was completed in the prerequisite step [Grant Sumo Logic access to an AWS Product](/docs/send-data/sources/sources-hosted-collectors/amazon-web-services/grant-access-aws-product.md).
     * For **Role-based access,** enter** **the Role ARN that was provided by AWS after creating the role. \
 
 18
@@ -178,7 +178,7 @@ Following** Fields **are to be added in the source :
 2. **Log File Discovery.** You have the option to set up Amazon Simple Notification Service (SNS) to notify Sumo Logic of new items in your S3 bucket. A scan interval is required and automatically applied to detect log files. \
 
 19
-Sumo Logic highly recommends using an SNS Subscription Endpoint for its ability to maintain low-latency collection. This is essential to support up-to-date [Alerts](https://help.sumologic.com/Visualizations-and-Alerts/Alerts).
+Sumo Logic highly recommends using an SNS Subscription Endpoint for its ability to maintain low-latency collection. This is essential to support up-to-date [Alerts](/docs/alerts/index.md).
     * **Scan Interval. **Sumo Logic will periodically scan your S3 bucket for new items in addition to SNS notifications. **Automatic** is recommended not to incur additional AWS charges. This sets the scan interval based on if subscribed to an SNS topic endpoint and how often new files are detected over time. \
 If the Source is not subscribed to an SNS topic and set to **Automatic,** the scan interval is 5 minutes. You may enter a set frequency to scan your S3 bucket for new data. To learn more about Scan Interval considerations, see [About setting the S3 Scan Interval](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/AWS-S3-Scan-Interval-for-Sources).
     * **SNS Subscription Endpoint **(**Highly Recommended**). Sumo Logic will collect new files as soon as the notification is received. This will provide faster collection versus waiting for the next scan to detect the new file.

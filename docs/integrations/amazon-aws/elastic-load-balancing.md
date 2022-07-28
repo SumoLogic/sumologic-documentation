@@ -43,7 +43,7 @@ For information on unified logs and metrics for AWS Elastic Load Balancing App, 
 ### Prerequisites
 
 * Enable Elastic Load Balancing logging in your AWS account, using these Sumo Logic [instructions](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/AWS-Elastic-Load-Balancing-Source). For more information, see [AWS ELB documentation](http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-access-logs.html). Logging is not enabled in AWS ELB by default.
-* Grant access to an IAM user by following these Sumo Logic [instructions](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/Grant-Access-to-an-AWS-Product).
+* Grant access to an IAM user by following these Sumo Logic [instructions](/docs/send-data/sources/sources-hosted-collectors/amazon-web-services/grant-access-aws-product.md).
 * Confirm that logs are being delivered to the Amazon S3 bucket.
 
 To enable logging in AWS
