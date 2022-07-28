@@ -2,7 +2,7 @@
 id: cloudpassage-halo
 title: CloudPassage Halo
 sidebar_label: CloudPassage Halo
-description: The CloudPassage Halo App enables security operators and administrators to correlate security events across their Halo-managed infrastructure. 
+description: The CloudPassage Halo App enables security operators and administrators to correlate security events across their Halo-managed infrastructure.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -174,35 +174,35 @@ The screenshot does not have values for the Environment Variables.  But you shou
 Sample policy: Use a proper permission level.  Below is a sample.
 
 ```
-{ \
-  "Version": "2012-10-17", \
-  "Statement": [ \
-	{ \
-  	"Action": [ \
-  	"sqs:*" \
-  	], \
-   	"Effect": "Allow", \
-    	"Resource": "*" \
-   	} \
- 	] \
-  } \
-```
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Action": [
+      "sqs:*”
+      ],
+       "Effect": "Allow",
+        "Resource": "*"
+       }
 
-23
+     ]
+
+  }
+```
 
 14. Here is the sample policy for **AWSLambdaBasicExecutionRole**. Make sure you change the permission to meet your security requirements.
 ```
-{ \
-    "Version": "2012-10-17", \
-    "Statement": [{ \
-   	 "Effect": "Allow", \
-   	 "Action": [ \
-   		 "logs:CreateLogGroup", \
-   		 "logs:CreateLogStream", \
-   		 "logs:PutLogEvents" \
-   	 ], \
-   	 "Resource": "*" \
-    }] \
+{
+    "Version": "2012-10-17",
+    "Statement": [{
+        "Effect": "Allow",
+        "Action": [
+            "logs:CreateLogGroup",
+            "logs:CreateLogStream",
+            "logs:PutLogEvents"
+        ],
+        "Resource": "*"
+    }]
 }
 ```
 15. Let’s test the Lambda code. Click on **Test** and then **Save** and test to start the code.
@@ -228,11 +228,7 @@ Sample policy: Use a proper permission level.  Below is a sample.
 22.  You are done for the first Lambda code!  You can follow the same steps to configure **Lambda for Halo_metrics_to_SumoLogic**.
 
 
-## Install the CloudPassage Halo App and view the Dashboards
-
-### Install the Sumo Logic App
-29
-
+## Install the CloudPassage Halo App
 
 Now that you have configured CloudPassage Halo, install the Sumo Logic App for CloudPassage Halo to take advantage of the preconfigured searches and [dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/22Security_and_Threat_Detection/CloudPassage_Halo/03CloudPassage-Halo-App-Dashboards#Dashboards) to analyze your data.
 
@@ -240,43 +236,30 @@ To install the app:
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
-
-
 1. From the **App Catalog**, search for and select the app**.**
 2. Select the version of the service you're using and click **Add to Library**.
 
-
-30
 Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](https://help.sumologic.com/01Start-Here/Library/Apps-in-Sumo-Logic/Install-Apps-from-the-Library)
 
-
-
-1. To install the app, complete the following fields.
-    1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
-    2. **Data Source.** Select either of these options for the data source. 
-        * Choose **Source Category**, and select a source category from the list. 
-        * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). 
-    3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-2. Click **Add to Library**.
+3. To install the app, complete the following fields.
+   * **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
+   * **Data Source.** Select either of these options for the data source. 
+      * Choose **Source Category**, and select a source category from the list. 
+      * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). 
+   * **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
+4. Click **Add to Library**.
 
 Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization.
 
 Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
 
 
-### Dashboards
-31
-
+## Viewing CloudPassage Dashboards
 
 
 #### CloudPassage Halo - Overview
-32
-
 
 View counts of key information for you system as well as top and bottom 10 processes for Linux, top and bottom 10 services for Windows, and top and bottom 10 software vulnerabilities found by CloudPassage Halo.
-
-
-33
 
 * **Critical Issues / Non-Critical Issues. **Number of critical and non-critical issues  (Single Number Panel with 15min time range).
 * **Severity(Active) Count.** Number of active workloads (Single Number Panel with 15min time range)
@@ -289,16 +272,15 @@ View counts of key information for you system as well as top and bottom 10 proce
 * **Top 10 Windows Services / Bottom 10 Windows Services**. Top & Bottom 10 Windows services found from the workloads managed by Halo (Table panel with 7min time range
 * **Top 10 SW Vulnerabilities / Bottom 10 SW Vulnerabilities.** Top & Bottom 10 software vulnerabilities found from the workloads managed by Halo (Table panel with 7min time range)
 
+<img src={useBaseUrl('img/integrations/security-threat-detection/CloudPassage_overview_dashboard.png')} alt="cloudpassage dashboards" />
 
 #### CloudPassage - Critical Events
-34
-
 
 View critical issues for the last 24 hours, outliers for the critical issues threshold during that time, and compare today's critical issues and outliers with the previous day.
-
-
-35
 
 * **Critical Issues Over Time.** View a count of critical issues over the last 24 hours, timesliced by every 5 minutes.
 * **Critical Issues Outlier.** View outliers outside the established threshold for critical issues over the last 24 hours, timesliced by every 5 minutes.
 * **Outlier on Delta (today - yesterday) of Critical Issues.** View the outlier difference between the count of issues today and yesterday
+
+
+<img src={useBaseUrl('img/integrations/security-threat-detection/CloudPassage_CriticalEvents_Dashboard.png')} alt="cloudpassage dashboards" />

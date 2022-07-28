@@ -249,18 +249,12 @@ Once an app is installed, it will appear in your **Personal** folder, or other f
 Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
 
 
-### Dashboards
-23
+## Viewing Trend Micro Dashboards
 
 
+### Deep Security - Overview
 
-#### Trend Micro - Deep Security - Overview
-24
-
-
-
-25
-
+<img src={useBaseUrl('img/integrations/security-threat-detection/TMDS_Overview_Dashboard.png')} alt="Trendmicro Dashboard" />
 
 **Anti-Malware Event History.** Displays the number and types of anti-malware events in a stacked column chart on a timeline for the last 24 hours.
 
@@ -275,13 +269,9 @@ Panels will start to fill automatically. It's important to note that each panel 
 **Log Inspection Events History.** Provides details on the number and types of log inspection events in a stacked column chart on a timeline for the last 24 hours.
 
 
-#### Trend Micro - Deep Security - Anti-Malware
-26
+### Deep Security - Anti-Malware
 
-
-
-27
-
+<img src={useBaseUrl('img/integrations/security-threat-detection/TMDS_AntiMalware_Dashboard.png')} alt="Trendmicro Dashboard" />
 
 **Anti-Malware Event History.** Displays the number and type of anti-malware events in a column chart on a timeline for the last 24 hours.
 
@@ -290,13 +280,9 @@ Panels will start to fill automatically. It's important to note that each panel 
 **Top 5 Infected Computers.** Lists the top 5 infected computers in a table chart by device host name and count for the last 24 hours.
 
 
-#### Trend Micro - Deep Security - Firewall
-28
+### Deep Security - Firewall
 
-
-
-29
-
+<img src={useBaseUrl('img/integrations/security-threat-detection/TMDS_Firewall_Dashboard.png')} alt="Trendmicro Dashboard" />
 
 **Firewall Events History.** Displays the number and type of firewall events in a column chart on a timeline for the last 24 hours.
 
@@ -315,13 +301,9 @@ Panels will start to fill automatically. It's important to note that each panel 
 **Top 5 Computers for Reconnaissance Scans.** Shows the top 5 computers for reconnaissance scans in a table chart by target entry and count for the last 24 hours.
 
 
-#### Trend Micro - Deep Security - Integrity Monitoring
-30
+### Deep Security - Integrity Monitoring
 
-
-
-31
-
+<img src={useBaseUrl('img/integrations/security-threat-detection/TMDS_IntegrityMonitoring_Dashboard.png')} alt="Trendmicro Dashboard" />
 
 **Integrity Monitoring Event History. **Displays the number and type of integrity monitoring events in a column chart on a timeline for the last 24 hours.
 
@@ -332,13 +314,9 @@ Panels will start to fill automatically. It's important to note that each panel 
 **Top 5 Keys for Integrity Monitoring Events.** Displays the top 5 keys for integrity monitoring events in a table chart for the last 24 hours.
 
 
-#### Trend Micro - Deep Security - Intrusion Prevention
-32
+### Deep Security - Intrusion Prevention
 
-
-
-33
-
+<img src={useBaseUrl('img/integrations/security-threat-detection/TMDS_IntrusionPrevention_Dashboard.png')} alt="Trendmicro Dashboard" />
 
 **IPS Event History. **Displays the number and type of intrusion prevention events in a column chart on a timeline for the last 24 hours.
 
@@ -349,13 +327,9 @@ Panels will start to fill automatically. It's important to note that each panel 
 **Top 5 Reasons for Detected IPS Events.** Displays the top 5 reasons for detected intrusion prevention events in a table chart by name and count for the last 24 hours.
 
 
-#### Trend Micro - Deep Security - Log Inspection
-34
+### Deep Security - Log Inspection
 
-
-
-35
-
+<img src={useBaseUrl('img/integrations/security-threat-detection/TMDS_LogInspection_Dashboard.png')} alt="Trendmicro Dashboard" />
 
 **Log Inspection Events History.** Displays the number and type of log inspection events in a column chart on a timeline for the last 24 hours.
 
@@ -366,13 +340,9 @@ Panels will start to fill automatically. It's important to note that each panel 
 **Top 5 Descriptions for Log Inspection Events.** Displays the top 5 descriptions for log inspection events in a table chart by device host name and count for the last 24 hours.
 
 
-#### Trend Micro - Deep Security - Web Reputation
-36
+### Deep Security - Web Reputation
 
-
-
-37
-
+<img src={useBaseUrl('img/integrations/security-threat-detection/TMDS_WebReputation_Dashboard.png')} alt="Trendmicro Dashboard" />
 
 **Web Reputation Event History.** Displays the number and type of web reputation events in a column chart on a timeline for the last 24 hours.
 
@@ -382,12 +352,8 @@ Panels will start to fill automatically. It's important to note that each panel 
 
 
 ### Filters
-38
-
 
 The Sumo Logic App for Trend Micro - Deep Security provides the following filters:
-
-
 
 * file
 * severity

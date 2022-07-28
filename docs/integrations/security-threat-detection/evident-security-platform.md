@@ -2,7 +2,7 @@
 id: evident-security-platform
 title: Sumo Logic App for Evident.io ESP
 sidebar_label: Evident.io ESP
-description: The Evident.io ESP App provides pre-configured searches and Dashboards that allow you to investigate Evident-specific events and provide operational visibility to team members without logging into Evident.io. 
+description: The Evident.io ESP App provides pre-configured searches and Dashboards that allow you to investigate Evident-specific events and provide operational visibility to team members without logging into Evident.io.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -339,17 +339,13 @@ Once an app is installed, it will appear in your **Personal** folder, or other f
 Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
 
 
-### Dashboards
+## Dashboards
 16
 
 
-#### Evident.io ESP - Overview
-17
+### Evident.io ESP - Overview
 
-
-
-18
-
+<img src={useBaseUrl('img/integrations/security-threat-detection/Evident.ioESP_Overview_Dashboard.png')} alt="Evident.io ESP dashboards" />
 
 **New Risks. **Displays the number of new risks in a single value chart over the previous 24 hours.
 
@@ -364,13 +360,9 @@ Panels will start to fill automatically. It's important to note that each panel 
 **Total Risks over Time. **Shows a trendline of all alerts over the last 14 days in a stacked area chart.
 
 
-#### Evident.io ESP - Detailed Risks
-19
+### Evident.io ESP - Detailed Risks
 
-
-
-20
-
+<img src={useBaseUrl('img/integrations/security-threat-detection/Evident.ioESP_DetailedRisks_Dashboard.png')} alt="Evident.io ESP dashboards" />
 
 **Total Risks. **Shows the number of total risks in a single value chart over the last 24 hours
 

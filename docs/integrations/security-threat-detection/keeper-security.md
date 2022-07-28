@@ -123,17 +123,11 @@ If the connectivity is not restored after a certain number of events (50), Keepe
 To resume logging, go to the “External Logging” section of the Keeper Admin Console.
 
 
-## Install the Keeper Security App and view the Dashboards
+## Install the Keeper Security App 
 
-
-11
 This application has been developed and is supported by [Keeper Security](https://keepersecurity.com/). For more information about Keeper please visit [https://keepersecurity.com](https://keepersecurity.com/) or email **business.support@keepersecurity.com** for help.
 
 This page provides instructions for installing the Keeper Security App, as well as examples of each of the App dashboards.
-
-
-### Install the App  
-12
 
 
 Now that you have set up collection for Keeper, install the app to use the pre-configured searches and [dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/06Google/Google_Cloud_Audit/Install-the-Google-Cloud-Audit-App-and-view-the-Dashboards#Dashboards) that provide visibility into your environment for real-time analysis.
@@ -153,18 +147,19 @@ Version selection is applicable only to a few apps currently. For more informati
 
 
 
-1. To install the app, complete the following fields.
-    1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
-    2. **Data Source.** Select either of these options for the data source. 
+3. To install the app, complete the following fields.
+    * **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
+    * **Data Source.** Select either of these options for the data source. 
         * Choose **Source Category**, and select a source category from the list. 
         * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). 
-    3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-2. Click **Add to Library**.
+    * **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
+4. Click **Add to Library**.
 
 Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization.
 
 Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
 
+## Viewing Keeper Security Dashboards
 
 ### Dashboard filters    
 14
@@ -181,17 +176,13 @@ You can use filters to drill down and examine the data on a granular level.
 **Each panel has a set of filters** that are applied to the results for that panel only, as shown in the following example. Click the funnel icon in the top panel menu bar to display a list of panel-specific filters.
 
 
-
-
-##### Keeper - Overview Dashboard
-16
-
+### Overview
 
 This is a general dashboard that shows the geographic locations of user activity, slicing the user activity by user, platform and time, most and least frequent events.
 
-**Use this dashboard to analyze the following data:**
+<img src={useBaseUrl('img/integrations/security-threat-detection/Keeper_Overview.png')} alt="Keeper_Security dashboards" />
 
-
+**Use this dashboard to analyze the following data:
 
 * **Activity locations**. See the number of application events across the world on a map in the last 24 hours.
 * **Activity by platform**. See the the number of application events by the client or platform in the last 24 hours.
@@ -210,15 +201,13 @@ This panel is similar to the “All Security Events” predefined report in the 
 
 
 
-#### Keeper - Activity Dashboard
-18
-
+### Activity
 
 Provides detailed information on user activity, highlighting access and related risks.
 
+<img src={useBaseUrl('img/integrations/security-threat-detection/Keeper_Activity.png')} alt="Keeper_Security dashboards" />
+
 **Use this dashboard to analyze the following data:**
-
-
 
 * **Throttled logins**. If a Keeper user tries to log in repeatedly with an incorrect password, this user logins become “throttled” for some time. This panel shows such login attempts for the last 24 hours, which can be an indication that somebody tries to hack this specific user.
 * **Failed logins**. See the time, event type, username, client version for all login failures (vault, console, 2fa) in the last 24 hours.
@@ -230,16 +219,13 @@ Provides detailed information on user activity, highlighting access and related 
 
 
 
-#### Keeper - Policy and Share Dashboard
-19
-
+### Policy and Share
 
 Shows details about user management, team and role management, permission management, sharing information, failed logins, and risk related information.
 
-**Use this dashboard to analyze the following data:**
+<img src={useBaseUrl('img/integrations/security-threat-detection/Keeper-Policy-and-Share.png')} alt="Keeper_Security dashboards" />
 
-
-
+**Use this dashboard to analyze the following data:
 * **User management**. See the users who were created, removed, locked or unlocked in the last 7 days.
 * **Team and Role management**. See the users who were added to a role or a team in the last 7 days. (**Note**: Keeper cannot obtain the names of a role and as such cannot log them to Sumo. If you’re interested in the particular role to which the user was added, try adding a test user to roles. Then, compare the ID for the test user role to the ID in which you are interested in.
 * **Enforcements management**. See the permissions that were granted or removed from roles in the last 7 days.

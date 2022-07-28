@@ -2,7 +2,7 @@
 id: cisco-asa
 title: Cisco ASA App
 sidebar_label: Cisco ASA
-description: The Cisco ASA App gives you insight into website visitor patterns, monitors infrastructure operations, and provides easy access to threat monitoring. 
+description: The Cisco ASA App gives you insight into website visitor patterns, monitors infrastructure operations, and provides easy access to threat monitoring.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -17,9 +17,7 @@ The Cisco ASA App gives you insight into website visitor patterns, monitors infr
 * Denied connections
 
 
-##### Log Types
-1
-
+## Log Types
 
 The Cisco ASA App assumes logs from the Cisco Adaptive Security Appliance (ASA) firewall product.
 
@@ -30,14 +28,11 @@ This page provides instructions for configuring log collection for the Cisco ASA
 
 
 ### Prerequisites
-2
-
 
 Configure your ASA to send its logs to a syslog server. ASA sends syslog on UDP port 514 by default, but you can set the protocol and port.
 
 
 ### Configure log collection for the Cisco ASA App
-3
 
 To configure log collection, do the following:
 
@@ -60,6 +55,7 @@ This Field Extraction Rule (FER) is provided as an example to help you reduce yo
 5
 There is a 200 field name limit for Field Extraction Rules (FER) and once a field is persisted using a FER, it can’t be removed. You can assign different targets to the name, but do not create overlapping messages and source categories.
 
+<details><summary>Click to expand</summary>
 
 ```
 | parse regex "(?<protocol>TCP|tcp|UDP|udp|ICMP|icmp)" nodrop
@@ -109,78 +105,46 @@ There is a 200 field name limit for Field Extraction Rules (FER) and once a fiel
 | parse regex "(?:[uU]sername|[uU]ser)\s*=\s*(?<user>[^,\s\)]+)" nodrop
 | parse regex "msgid\s*=\s*(?<msgid>[^,\s\)]+)" nodrop
 | parse regex "[Oo]utbound\s+\S+\s+connection\s+\d+\s+for\s+\S+\s*:\s*(?<dest_ip>[^\s\/\(]+)(?:\/(?<dest_port>\w+))?(?:\((?<dest_user>\S+)\))?\s*\(?(?<dest_translated_ip>[^\s\/\(]+)?\/?(?<dest_translated_port>\d+)?\)?\s+to\s+[^:]+:\s*(?<src_ip>[^\s\/\(]+)(?:\/(?<src_port>\w+))?(?:\((?<src_user>\S+)\))?\s*\(?(?<src_translated_ip>[^\s\/\(]+)?\/?(?<src_translated_port>\d+)?\)?"
-
 ```
 
-
-## Install the Cisco ASA App and view the Dashboards
-
-
-This page provides instructions on how to install the Cisco ASA App, and examples of each of the dashboards. The App preconfigured searches and [Dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/22Security_and_Threat_Detection/Cisco_ASA/Cisco-ASA-App-Dashboards#Dashboards) provide easy-to-access visual insights into your data.
+</details>
 
 
-### Install the Cisco ASA App  
-6
+## Installing the Cisco ASA App  
 
-
-This section shows you how to install the Cisco ASA App.
-
-To install the app, do the following:
-
-Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
-
-
+This section provides instructions on how to install the Cisco ASA App. Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
 1. From the **App Catalog**, search for and select the app**.**
 2. Select the version of the service you're using and click **Add to Library**.
 
-
-7
 Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](https://help.sumologic.com/01Start-Here/Library/Apps-in-Sumo-Logic/Install-Apps-from-the-Library)
 
-
-
-1. To install the app, complete the following fields.
-    1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
-    2. **Data Source.** Select either of these options for the data source. 
+3. To install the app, complete the following fields.
+   * **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
+   * **Data Source.** Select either of these options for the data source. 
         * Choose **Source Category**, and select a source category from the list. 
         * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). 
-    3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-2. Click **Add to Library**.
+    * **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
+4. Click **Add to Library**.
 
 Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization.
 
 Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
 
 
-### Dashboard filters    
-8
+## Viewing Cisco ASA Dashboards
 
+Once you've installed the Cisco ASA App, you can access preconfigured searches and [Dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/22Security_and_Threat_Detection/Cisco_ASA/Cisco-ASA-App-Dashboards#Dashboards) that provide visual insights into your data.
+
+### Dashboard filters    
 
 **Each dashboard has a set of filters** that you can apply to the entire dashboard, as shown in the following example. Click the funnel icon in the top dashboard menu bar to display a scrollable list of filters that are applied across the entire dashboard.
 
-
-9
 You can use filters to drill down and examine the data on a granular level.
-
-
-10
-
 
 **Each panel has a set of filters** that are applied to the results for that panel only, as shown in the following example. Click the funnel icon in the top panel menu bar to display a list of panel-specific filters.
 
-
-11
-
-
-
 ### Cisco ASA - Overview Dashboard
-12
-
-
-
-13
-
 
 **Outbound Destinations.** A geolocation query tracks the number of outbound connection and displays their destinations on a map of the world. Results are displayed for the last hour. Click **Show in Search** to see more details of the query results.
 
@@ -190,14 +154,9 @@ You can use filters to drill down and examine the data on a granular level.
 
 **Bandwidth Served.** Shows the amount of bandwidth served as a single value chart for the last hour.
 
+<img src={useBaseUrl('img/integrations/security-threat-detection/Cisco_ASA_Overview.png')} alt="Cisco_ASA dashboards" />
 
 ### Cisco ASA - Firewall Detail Dashboard
-14
-
-
-
-15
-
 
 **Connections Over Time.** Provides information on inbound, outbound, and denied connections over the past hour in increments of five minutes in a stacked area chart.
 
@@ -219,17 +178,15 @@ You can use filters to drill down and examine the data on a granular level.
 
 **Top Denying ACLs.** Displays the top ten denying ACL connections over the last hour in a bar chart.
 
+<img src={useBaseUrl('img/integrations/security-threat-detection/Cisco_ASA_Firewall_Detail.png')} alt="Cisco_ASA dashboards" />
+
 
 ### Cisco ASA - Logs Analytics Dashboard
-16
-
-
-
-17
-
 
 **Count of ASA Logs by LogLevel.** Displays the logs by LogLevel and Severity.
 
 **Count by Severity Code. **Displays the logs by Severity Code.
 
 **Parameterized Search.** Log Details with counts.
+
+<img src={useBaseUrl('img/integrations/security-threat-detection/Cisco_ASA_Logs_Analytics.png')} alt="Cisco_ASA dashboards" />

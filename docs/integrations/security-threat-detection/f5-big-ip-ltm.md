@@ -228,6 +228,8 @@ Once an app is installed, it will appear in your **Personal** folder, or other f
 Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
 
 
+## Viewing Dashboards
+
 ### Dashboard Filter with Template Variables     
 
 Template variables provide dynamic dashboards that rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you can view dynamic changes to the data for a fast resolution to the root cause. For more information, see the [Filter with template variables](https://help.sumologic.com/Visualizations-and-Alerts/Dashboard_(New)/Filter_with_template_variables) help page.
@@ -236,39 +238,27 @@ You can use template variables to drill down and examine the data on a granular 
 
 
 ## Overview Dashboard
-21
-
 
 **F5 - BIG-IP LTM - Overview** dashboard provides details on the network traffic for applications, pools, and its status. It also provides information about violations triggered and their geo-location.
 
 Use this dashboard to:
-
 * View geographic locations of incoming client requests.
 * Get a high-level view of top pools, pool status, and pool names by the application.
 * Review applications responsible for network traffic, their facilities, as well as profiles per virtual server by the application.
 
-
-22
-
+<img src={useBaseUrl('img/integrations/security-threat-detection/F5-BIGIPLTM-Overview.png')} alt="F5 dashboards" />
 
 
 ### Threat Analysis Dashboard
-23
-
 
 **F5 - BIG-IP LTM - Threat Analysis **dashboard provides an overview of the number of threats, their geographic location, and a breakdown by source using the Threat Intel App. This dashboard also provides details on the severity of threats, as well as the network, user name, and country of origin.
 
 Use this dashboard to:
-
-
-
 * Review details on potential threats and IOCs for incoming requests to F5 LTM.
 * See the frequency of IP threats by actor, log source, and malicious confidence.
 * View trends over time.
 
-
-24
-
+<img src={useBaseUrl('img/integrations/security-threat-detection/F5-BIGIPLTM-ThreatAnalysis.png')} alt="F5 dashboards" />
 
 
 ### Metrics and Connections Dashboard
@@ -278,45 +268,28 @@ Use this dashboard to:
 **F5 - BIG-IP LTM - Metrics and Connections **dashboard provides an at-a-glance view of TCP connections, network traffic by host, and Traffic Manager resource usage.
 
 Use this dashboard to:
-
-
-
 * Review details of incoming TCP connection requests.
 * Get a high-level analysis of network traffic.
 * Get an overview of CPU and memory usage.
 * Drill down for a view granular metrics by host using the “host” filter.
 
-
-26
-
-
+<img src={useBaseUrl('img/integrations/security-threat-detection/F5-BIGIPLTM-Metrics-and-Connections.png')} alt="F5 dashboards" />
 
 ### Outlier Analysis Dashboard
-27
-
 
 **F5 - BIG-IP LTM - Outlier Analysis **dashboard provides an at-a-glance view of TCP connection and login request outliers, along with network traffic and Traffic Manager resource usage.
 
 **Use this dashboard to** find any outliers in your incoming traffic, CPU and memory usage.
 
-
-28
-
-
+<img src={useBaseUrl('img/integrations/security-threat-detection/F5-BIGIPLTM-OutlierAnalysis.png')} alt="F5 dashboards" />
 
 ### User Session Events Dashboard
-29
-
 
 **F5 - BIG-IP LTM - User Session Events **dashboard provides an at-a-glance view of user activity and their geographic location. This dashboard also provides information on login trends, operating systems used, user session IDs, and users by their application profile.
 
 Use this dashboard to:
-
-
-
 * View the geographic location of active users.
 * Review information on browsers and platforms used, and network traffic details.
 * Review user requests and application access by users.
 
-
-30
+<img src={useBaseUrl('img/integrations/security-threat-detection/F5-BIGIPLTM-UserSessionEvents.png')} alt="F5 dashboards" />
