@@ -158,17 +158,17 @@ If you haven’t defined a cluster in Oracle, then enter ‘**default**’ for `
     * In the input plugins section i.e. :
         * **commands **- The [exec](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/exec) plugin executes all the commands in parallel on every interval and parses metrics from their output in any one of the accepted [Input Data Formats](https://github.com/influxdata/telegraf/blob/master/docs/DATA_FORMATS_INPUT.md).
     * In the tags section i.e.  [inputs.exec.tags]
-        * **environment** - This is the deployment environment where the Oracle cluster identified by the value of **servers** resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
-        * **db_cluster** - Enter a name to identify this Oracle cluster. This cluster name will be shown in the Sumo Logic dashboards.  
+        * `environment` - This is the deployment environment where the Oracle cluster identified by the value of **servers** resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
+        * `db_cluster` - Enter a name to identify this Oracle cluster. This cluster name will be shown in the Sumo Logic dashboards.  
 
     Here’s an explanation for additional values set by this configuration that we request you **please do not modify** as they will cause the Sumo Logic apps to not function correctly.
 
-* **telegraf.influxdata.com/class: sumologic-prometheus** - This instructs the Telegraf operator what output to use. This should not be changed.
-* **prometheus.io/scrape: "true"** - This ensures our Prometheus will scrape the metrics.
-* **prometheus.io/port: "9273"** - This tells prometheus what ports to scrape on. This should not be changed.
-* **telegraf.influxdata.com/inputs**
+* `telegraf.influxdata.com/class: sumologic-prometheus` - This instructs the Telegraf operator what output to use. This should not be changed.
+* `prometheus.io/scrape: "true"` - This ensures our Prometheus will scrape the metrics.
+* `prometheus.io/port: "9273"` - This tells prometheus what ports to scrape on. This should not be changed.
+* `telegraf.influxdata.com/inputs`
     * In the tags section i.e.  [inputs.exec.tags]
-        * **component**: “database” - This value is used by Sumo Logic apps to identify application components.
+        * `component: “database”` - This value is used by Sumo Logic apps to identify application components.
         * **db_system**: “oracle” - This value identifies the database system.
 
     For all other parameters please see [this doc](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Collect_Metrics_Using_Telegraf/03_Install_Telegraf#Configuring_Telegraf) for more properties that can be configured in the Telegraf agent globally.
@@ -203,12 +203,12 @@ This section explains the steps to collect Oracle logs from a Kubernetes environ
 
     Please enter in values for the following parameters (marked in **bold and CHANGE_ME** above):
 
-* **environment** - This is the deployment environment where the Oracle cluster identified by the value of **servers** resides. For example:- dev, prod, or QA. While this value is optional we highly recommend setting it.
-* **db_cluster** - Enter a name to identify this Oracle cluster. This cluster name will be shown in the Sumo Logic dashboards. If you haven’t defined a cluster in Oracle, then enter ‘**default**’ for `db_cluster`.
+* `environment` - This is the deployment environment where the Oracle cluster identified by the value of **servers** resides. For example:- dev, prod, or QA. While this value is optional we highly recommend setting it.
+* `db_cluster` - Enter a name to identify this Oracle cluster. This cluster name will be shown in the Sumo Logic dashboards. If you haven’t defined a cluster in Oracle, then enter ‘**default**’ for `db_cluster`.
 
     Here’s an explanation for additional values set by this configuration that we request you **please do not modify** as they will cause the Sumo Logic apps to not function correctly.
 
-* **component**: “database” - This value is used by Sumo Logic apps to identify application components.
+* `component: “database”` - This value is used by Sumo Logic apps to identify application components.
 * **db_system**: “oracle” - This value identifies the database system.
 
     For all other parameters please see [this doc](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Collect_Metrics_Using_Telegraf/03_Install_Telegraf#Configuring_Telegraf) for more properties that can be configured in the Telegraf agent globally.
@@ -546,8 +546,8 @@ Enter values for fields annotated with `<VALUE_TO_BE_CHANGED>` to the appropriat
 * Input plugins section, which is `[[inputs.exec]]`:
     * **commands **- The [exec](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/exec) plugin executes all the commands in parallel on every interval and parses metrics from their output in any one of the accepted [Input Data Formats](https://github.com/influxdata/telegraf/blob/master/docs/DATA_FORMATS_INPUT.md).
 * In the tags section, which is `[inputs.exec.tags]`:
-    * **environment** - This is the deployment environment where the Oracle cluster identified by the value of **servers** resides. For example; dev, prod, or QA. While this value is optional we highly recommend setting it.
-    * **db_cluster** - Enter a name to identify this Oracle cluster. This cluster name will be shown in our dashboards.
+    * `environment` - This is the deployment environment where the Oracle cluster identified by the value of **servers** resides. For example; dev, prod, or QA. While this value is optional we highly recommend setting it.
+    * `db_cluster` - Enter a name to identify this Oracle cluster. This cluster name will be shown in our dashboards.
 * In the output plugins section, which is `[[outputs.sumologic]]`:
     * **URL** - This is the HTTP source URL created previously. See this doc for more information on additional parameters for configuring the Sumo Logic Telegraf output plugin.
 
@@ -561,7 +561,7 @@ There are additional values set by the Telegraf configuration.  We recommend not
 
 
 
-* **data_format**: “prometheus” - In the output `[[outputs.sumologic]]` plugins section. Metrics are sent in the Prometheus format to Sumo Logic.
+* `data_format: “prometheus”` - In the output `[[outputs.sumologic]]` plugins section. Metrics are sent in the Prometheus format to Sumo Logic.
 * **component** - “database” - In the input `[[inputs.exec]]` plugins section. This value is used by Sumo Logic apps to identify application components.
 * **db_system** - “oracle” - In the input plugins sections. This value identifies the database system.
 

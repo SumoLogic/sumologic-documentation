@@ -169,7 +169,7 @@ annotations:
 * prometheus.io/port: "9273" - This tells prometheus what ports to scrape on. This should not be changed.
 * telegraf.influxdata.com/inputs
     * In the tags section i.e.  [inputs.mongodb.tags]
-        * component: “database” - This value is used by Sumo Logic apps to identify application components.
+        * `component: “database”` - This value is used by Sumo Logic apps to identify application components.
         * db_system: “mongodb” - This value identifies the database system.
 
     For all other parameters please see [this doc](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Collect_Metrics_Using_Telegraf/03_Install_Telegraf#Configuring_Telegraf) for more properties that can be configured in the Telegraf agent globally.
@@ -215,7 +215,7 @@ labels:
 
     Here’s an explanation for additional values set by this configuration that we request you **do not modify** as they will cause the Sumo Logic apps to not function correctly.
 
-* **component: “database”**. This value is used by Sumo Logic apps to identify application components.
+* `component: “database”`. This value is used by Sumo Logic apps to identify application components.
 * **db_system: “mongodb”**. This value identifies the database system.
 
     For all other parameters see[ this doc](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Collect_Metrics_Using_Telegraf/03_Install_Telegraf#Configuring_Telegraf) for more properties that can be configured in the Telegraf agent globally.
@@ -362,7 +362,7 @@ Enter values for the following parameters (marked in **bold** above):
 
     Here’s an explanation for additional values set by this Telegraf configuration that we request you **please do not modify** as they will cause the Sumo Logic apps to not function correctly.
 
-* data_format - “prometheus” In the output plugins section - [outputs.sumologic] Metrics are sent in the Prometheus format to Sumo LogicComponent: “database” - In the input plugins section - [inputs.MongoDB]. This value is used by Sumo Logic apps to identify application components.
+* data_format - “prometheus” In the output plugins section - [outputs.sumologic] Metrics are sent in the Prometheus format to Sumo Logic`component: “database”` - In the input plugins section - [inputs.MongoDB]. This value is used by Sumo Logic apps to identify application components.
 * gather_perdb_stats: “true” - When true, collect per database stats.
 * gather_col_stats: “true” - When true, collect per collection stats.
 *  For all other parameters please see [this doc](https://github.com/influxdata/telegraf/blob/master/etc/telegraf.conf) for more properties that can be configured in the Telegraf agent globally.

@@ -5,7 +5,6 @@ sidebar_label: Azure SQL
 description: The Sumo Logic app for Azure SQL helps you monitor activity in Azure SQL.
 ---
 
-
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/microsoft-azure/azure-sql.png')} alt="thumbnail icon" width="75"/>
@@ -46,7 +45,7 @@ In Step 1, you create an HTTP Source. When you configure the, plan your source c
     4. Enter a name.
     5. Check the **Stream to an event hub** box and click **Event hub / Configure**.
     6. Select an Azure subscription.
-    7. Select the Event Hubs namespace you created in Step 2 of [Collect Logs from Azure Monitor](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Azure_Monitoring/Collect_Logs_from_Azure_Monitor). It should start with “SumoAzureLogsNamespace&lt;UniqueSuffix>”.
+    7. Select the Event Hubs namespace you created in Step 2 of [Collect Logs from Azure Monitor](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Azure_Monitoring/Collect_Logs_from_Azure_Monitor). It should start with `“SumoAzureLogsNamespace<UniqueSuffix>”`.
     8. Select insights-operational-logs from the **Select event hub name** dropdown.
     9. Select RootManageSharedAccessKey from **Select event hub policy name **dropdown.
     10. Click **OK** to exit event hub configuration.
@@ -56,53 +55,74 @@ In Step 1, you create an HTTP Source. When you configure the, plan your source c
 ### Collect metrics from Azure Monitor  by streaming to EventHub
 
 In this step, you configure a pipeline for shipping metrics from Azure Monitor to an Event Hub, on to an Azure Function, and finally to an HTTP Source on a hosted collector in Sumo Logic. The pipeline is described on [Collect Metrics from Azure Monitor](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Azure_Monitoring/Collect_Metrics_from_Azure_Monitor).
-
-
-
 1. Perform Steps 1 and Step 2 of [Collect Metrics from Azure Monitor.](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Azure_Monitoring/Collect_Metrics_from_Azure_Monitor)   \
 In Step 1, you create an HTTP source. When you configure the, plan your source category to ease the querying process.  A hierarchical approach allows you to make use of wildcards. For example: \
 `Azure/DB/SQL/Metrics`
 2. Push metrics from Azure Monitor to Event Hub.
-    1. From the left pane, select **ALL Services. \
-
-    2. Search for and select "Monitor".
-    3. In the **Monitor** pane, select **Diagnostic Settings **under **Settings**. \
-
-    4. Select the resource for which you want to export metrics. If **diagnostics** is not enabled click **Turn on Diagnostics Settings. \
-
-    5. Once diagnostics are enabled, click **Add a diagnostic setting**. \
-
-    6. The **Diagnostic Settings** page appears. \
-
-        1. In the left pane
-            * Enter a name for the diagnostic setting.
-            * Click the  **Stream to an event hub **checkbox.
-            * Select **Configure event hub.** The right pane appears.
-        2. In the right pane:
-            * Choose a **Subscription**.
-            * Select **SumoMetricsNamespace_&lt;UniqueSuffix> _**as the event hub namespace.
-            * Select **insights-metrics-pt1m** as the event hub name.
-            * Select an event hub policy name. You can use the default policy** RootManageSharedAccessKey**.
-        3. Check the AllMetrics box.
-        4. Click **OK**.
-        5. Save the **Diagnostics Setting**.
+   * From the left pane, select **ALL Services. \
+   * Search for and select "Monitor".
+   * In the **Monitor** pane, select **Diagnostic Settings **under **Settings**. \
+   * Select the resource for which you want to export metrics. If **diagnostics** is not enabled click **Turn on Diagnostics Settings. \
+   * Once diagnostics are enabled, click **Add a diagnostic setting**. \
+   * The **Diagnostic Settings** page appears. \
+   * In the left pane
+      * Enter a name for the diagnostic setting.
+      * Click the  **Stream to an event hub **checkbox.
+      * Select **Configure event hub.** The right pane appears.
+   * In the right pane:
+      * Choose a **Subscription**.
+      * Select `SumoMetricsNamespace_<UniqueSuffix>` as the event hub namespace.
+      * Select **insights-metrics-pt1m** as the event hub name.
+      * Select an event hub policy name. You can use the default policy** RootManageSharedAccessKey**.
+   * Check the AllMetrics box.
+   * Click **OK**.
+   * Save the **Diagnostics Setting**.
 
 
-### Sample log messages
+### Sample Log Messages
 
-
-**ErrorEvent**
-
-
-```json
-{"LogicalServerName":"npande-test-db-server","SubscriptionId":"c088dc46-d123-12ad-a8b7-9a123d45ad6a","ResourceGroup":"npandeTestDBResGrp","time":"2018-07-09T05:08:32.679Z","resourceId":"/SUBSCRIPTIONS/c088dc46-d123-12ad-a8b7-9a123d45ad6a/RESOURCEGROUPS/NPANDETESTDBRESGRP/PROVIDERS/MICROSOFT.SQL/SERVERS/NPANDE-TEST-DB-SERVER/DATABASES/NPANDETESTDB2","category":"Errors","operationName":"ErrorEvent","properties":{"ElasticPoolName":"","DatabaseName":"npandeTestDB2","query_hash":"0","query_plan_hash":"0","message":"Invalid object name 'inventory123'.","error_number":208,"severity":16,"user_defined":false,"state":1}}
+```json title="ErrorEvent"
+{
+	"LogicalServerName":"npande-test-db-server",
+	"SubscriptionId":"c088dc46-d123-12ad-a8b7-9a123d45ad6a",
+	"ResourceGroup":"npandeTestDBResGrp",
+	"time":"2018-07-09T05:08:32.679Z",
+	"resourceId":"/SUBSCRIPTIONS/c088dc46-d123-12ad-a8b7-9a123d45ad6a/RESOURCEGROUPS/NPANDETESTDBRESGRP/PROVIDERS/MICROSOFT.SQL/SERVERS/NPANDE-TEST-DB-SERVER/DATABASES/NPANDETESTDB2",
+	"category":"Errors",
+	"operationName":"ErrorEvent",
+	"properties":{
+		"ElasticPoolName":"",
+		"DatabaseName":"npandeTestDB2",
+		"query_hash":"0",
+		"query_plan_hash":"0",
+		"message":"Invalid object name 'inventory123'.",
+		"error_number":208,
+		"severity":16,
+		"user_defined":false,
+		"state":1
+	}
+}
 ```
 
 
-**DatabaseWaitStatisticsEvent**
-
-```
-{"LogicalServerName":"npande-test-db-server","SubscriptionId":"c088dc46-d123-12ad-a8b7-9a123d45ad6a"","ResourceGroup":"npandeTestDBResGrp","time":"2018-07-09T05:13:34.520Z","resourceId":"/SUBSCRIPTIONS/c088dc46-d123-12ad-a8b7-9a123d45ad6a"/RESOURCEGROUPS/NPANDETESTDBRESGRP/PROVIDERS/MICROSOFT.SQL/SERVERS/NPANDE-TEST-DB-SERVER/DATABASES/NPANDETESTDB","category":"DatabaseWaitStatistics","operationName":"DatabaseWaitStatistcsEvent","properties":{"ElasticPoolName":"","DatabaseName":"npandeTestDB","start_utc_date":"2018-07-09T05:13:34.520Z","end_utc_date":"2018-07-09T05:18:36.050Z","wait_type":"WRITELOG","delta_max_wait_time_ms":0,"delta_signal_wait_time_ms":0,"delta_wait_time_ms":12,"delta_waiting_tasks_count":2}}
+```json title="DatabaseWaitStatisticsEvent"
+{
+	"LogicalServerName":"npande-test-db-server",
+	"SubscriptionId":"c088dc46-d123-12ad-a8b7-9a123d45ad6a"",""ResourceGroup"":""npandeTestDBResGrp"",""time"":""2018-07-09T05":"13":34.520Z",""resourceId"":"/SUBSCRIPTIONS/c088dc46-d123-12ad-a8b7-9a123d45ad6a"/RESOURCEGROUPS/NPANDETESTDBRESGRP/PROVIDERS/MICROSOFT.SQL/SERVERS/NPANDE-TEST-DB-SERVER/DATABASES/NPANDETESTDB",
+	"category":"DatabaseWaitStatistics",
+	"operationName":"DatabaseWaitStatistcsEvent",
+	"properties":{
+		"ElasticPoolName":"",
+		"DatabaseName":"npandeTestDB",
+		"start_utc_date":"2018-07-09T05:13:34.520Z",
+		"end_utc_date":"2018-07-09T05:18:36.050Z",
+		"wait_type":"WRITELOG",
+		"delta_max_wait_time_ms":0,
+		"delta_signal_wait_time_ms":0,
+		"delta_wait_time_ms":12,
+		"delta_waiting_tasks_count":2
+	}
+}
 ```
 
 
@@ -120,8 +140,6 @@ _sourceCategory=Azure/DB/SQL/Logs ErrorEvent "\"operationName\":\"ErrorEvent\""
 ```
 
 
-
-
 ## Installing the Azure SQL App
 
 Now that you have set up a collection of Azure SQL logs and metrics, install the Azure SQL App to use the pre-configured searches and dashboards.
@@ -132,8 +150,6 @@ Locate and install the app you need from the **App Catalog**. If you want to see
 
 1. From the **App Catalog**, search for and select the app.
 2. To install the app, click **Add to Library**.
-
-
 3. **App Name**. You can retain the existing name, or enter a name of your choice for the app. 
 4. **Azure SQL Metrics Source**. Select the source category that you configured for the .... source.
 5. **Azure SQL Log Source**. Select the source category that you configured for the ... source.
@@ -151,7 +167,6 @@ This section describes the dashboards in the Sumo Logic App for Azure SQL.
 
 
 ### Overview
-
 
 See the count of logical servers, databases, errors; and the “top 10” active servers, resource groups, subscriptions, resources, databases, operations, and categories.
 

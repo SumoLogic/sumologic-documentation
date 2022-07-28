@@ -134,19 +134,19 @@ Enter in values for the following parameters (marked in bold above):
     * Input plugins section, which is `[[inputs.couchbase]]`:
         * servers: This is the endpoint of the management portal of couchbase server. For detail, see this [doc](https://docs.couchbase.com/server/current/manage/manage-ui/manage-ui.html) .
     * In the tags section,  which is `[inputs.couchbase.tags]`
-        * **environment** - This is the deployment environment where the Couchbase cluster identified by the value of **servers** resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
+        * `environment` - This is the deployment environment where the Couchbase cluster identified by the value of **servers** resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
         * **db_cluster **- Enter a name to identify this Couchbase cluster. This cluster name will be shown in the Sumo Logic dashboards.  
 
 Here’s an explanation for additional values set by this configuration that we request you **do not modify** as they will cause the Sumo Logic apps to not function correctly.
 
 
 
-* **telegraf.influxdata.com/class: sumologic-prometheus** - This instructs the Telegraf operator what output to use. This should not be changed.
-* **prometheus.io/scrape: "true"** - This ensures our Prometheus will scrape the metrics.
-* **prometheus.io/port: "9273"** - This tells prometheus what ports to scrape on. This should not be changed.
-* **telegraf.influxdata.com/inputs**
+* `telegraf.influxdata.com/class: sumologic-prometheus` - This instructs the Telegraf operator what output to use. This should not be changed.
+* `prometheus.io/scrape: "true"` - This ensures our Prometheus will scrape the metrics.
+* `prometheus.io/port: "9273"` - This tells prometheus what ports to scrape on. This should not be changed.
+* `telegraf.influxdata.com/inputs`
     * In the tags section, which is `[inputs.couchbase.tags]`
-        * **component**: “database” - This value is used by Sumo Logic apps to identify application components.
+        * `component: “database”` - This value is used by Sumo Logic apps to identify application components.
         * **db_system**: “couchbase” - This value identifies the database system.
 
 For all other parameters see [this doc](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Collect_Metrics_Using_Telegraf/03_Install_Telegraf#Configuring_Telegraf) for more properties that can be configured in the Telegraf agent globally.
@@ -189,14 +189,14 @@ Enter in values for the following parameters (marked in **bold and CHANGE_ME** a
 
 
 
-* **environment** - This is the deployment environment where the Couchbase cluster identified by the value of **servers** resides. For example:- dev, prod, or QA. While this value is optional we highly recommend setting it.
+* `environment` - This is the deployment environment where the Couchbase cluster identified by the value of **servers** resides. For example:- dev, prod, or QA. While this value is optional we highly recommend setting it.
 * **db_cluster **- Enter a name to identify this Couchbase cluster. This cluster name will be shown in the Sumo Logic dashboards. If you haven’t defined a cluster in Couchbase, then enter ‘**default**’ for db_cluster.
 
 Here’s an explanation for additional values set by this configuration that we request you **do not modify** as they will cause the Sumo Logic apps to not function correctly.
 
 
 
-* **component**: “database” - This value is used by Sumo Logic apps to identify application components.
+* `component: “database”` - This value is used by Sumo Logic apps to identify application components.
 * **db_system**: “couchbase” - This value identifies the database system.
 
 For all other parameters see [this doc](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Collect_Metrics_Using_Telegraf/03_Install_Telegraf#Configuring_Telegraf) for more properties that can be configured in the Telegraf agent globally.
@@ -416,7 +416,7 @@ Enter values for fields annotated with `<VALUE_TO_BE_CHANGED>` to the appropriat
 * Input plugins section, which is `[[inputs.couchbase]]`:
     * servers: This is the endpoint of the management portal of couchbase server. For details, see this [doc](https://docs.couchbase.com/server/current/manage/manage-ui/manage-ui.html) .
 * In the tags section, which is `[inputs.couchbasesnmp.tags]`:
-* **environment** - This is the deployment environment where the Couchbase server identified by the value of **servers** resides. For example; dev, prod, or QA. While this value is optional we highly recommend setting it.
+* `environment` - This is the deployment environment where the Couchbase server identified by the value of **servers** resides. For example; dev, prod, or QA. While this value is optional we highly recommend setting it.
 * **db_cluster **- Enter a name to identify this Couchbase cluster. This cluster name will be shown in our dashboards.
 * In the output plugins section, which is `[[outputs.sumologic]]`:
     * **URL** - This is the HTTP source URL created previously. See [this doc](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Collect_Metrics_Using_Telegraf/05_Configure_Telegraf_Output_Plugin_for_Sumo_Logic) for more information on additional parameters for configuring the Sumo Logic Telegraf output plugin.
@@ -435,7 +435,7 @@ There are additional values set by the Telegraf configuration.  We recommend not
 
 
 
-* **data_format**: “prometheus” - In the output `[[outputs.sumologic]]` plugins section. Metrics are sent in the Prometheus format to Sumo Logic.
+* `data_format: “prometheus”` - In the output `[[outputs.sumologic]]` plugins section. Metrics are sent in the Prometheus format to Sumo Logic.
 * **component** - “database” - In the input `[[inputs.couchbase]]` plugins section. This value is used by Sumo Logic apps to identify application components.
 * **db_system **- “couchbase” - In the input plugins sections. This value identifies the database system.
 

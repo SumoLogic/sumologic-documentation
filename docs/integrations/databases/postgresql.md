@@ -174,14 +174,14 @@ Follow the steps below to collect metrics from a Kubernetes environment:
         * In the input plugins section which is **[[inputs.postgresql_extensible]]**
             * **address** - Specify the db user, db name and password used for connecting to the database.Example "host=localhost user=postgres dbname=postgres password=mypassword sslmode=disable"
         * In the tags section, which is **[inputs.postgresql_extensible.tags]**
-            * **environment** - This is the deployment environment where the postgresql cluster resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
-            * **db_cluster** - Enter a name to identify this PostgreSQL cluster. This cluster name will be shown in the Sumo Logic dashboards. For example:  analytics-dbcluster, webapp-dbcluster
+            * `environment` - This is the deployment environment where the postgresql cluster resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
+            * `db_cluster` - Enter a name to identify this PostgreSQL cluster. This cluster name will be shown in the Sumo Logic dashboards. For example:  analytics-dbcluster, webapp-dbcluster
 
     Here’s an explanation for additional values set by this configuration that we request you **please do not modify** these values as they will cause the Sumo Logic apps to not function correctly.
 
-* **telegraf.influxdata.com/class: sumologic-prometheus** - This instructs the Telegraf operator what output to use. This should not be changed.
-* **prometheus.io/scrape: "true"** - This ensures our Prometheus plugin will scrape the metrics.
-* **prometheus.io/port: "9273"** - This tells Prometheus what ports to scrape metrics from. This should not be changed.
+* `telegraf.influxdata.com/class: sumologic-prometheus` - This instructs the Telegraf operator what output to use. This should not be changed.
+* `prometheus.io/scrape: "true"` - This ensures our Prometheus plugin will scrape the metrics.
+* `prometheus.io/port: "9273"` - This tells Prometheus what ports to scrape metrics from. This should not be changed.
 * telegraf.influxdata.com/inputs
     * In the tags sections **[inputs.postgresql_extensible.tags]**
         * **component=** **“database”** - This value is used by Sumo Logic apps to identify application components.
@@ -275,13 +275,13 @@ It’s recommended to save configurations in ConfigMap so that when pods are spa
         Please enter in values for the following parameters (marked in bold and CHANGE_ME above):
 
 * Labels:
-    * **environment** - This is the deployment environment where the PostgreSQL cluster identified by the value of **servers** resides. For example dev, prod or qa. While this value is optional we highly recommend setting it.
-    * **db_cluster** - Enter a name to identify this PostgreSQL cluster. This cluster name will be shown in the Sumo Logic dashboards.For example analytics-dbcluster, webapp-dbcluster.
+    * `environment` - This is the deployment environment where the PostgreSQL cluster identified by the value of **servers** resides. For example dev, prod or qa. While this value is optional we highly recommend setting it.
+    * `db_cluster` - Enter a name to identify this PostgreSQL cluster. This cluster name will be shown in the Sumo Logic dashboards.For example analytics-dbcluster, webapp-dbcluster.
 
         Here’s an explanation for additional values set by this configuration that we request you **please do not modify** as they will cause the Sumo Logic apps to not function correctly.
 
 * Labels:
-    * **component: “database”** - This value is used by Sumo Logic apps to identify application components.
+    * `component: “database”` - This value is used by Sumo Logic apps to identify application components.
     * **db_system: “postgresql” **- This value identifies the database system.
 
     3. Collecting Logs written to Standard output (Recommended)
@@ -461,8 +461,8 @@ This section provides instructions for configuring metrics collection for the Su
 * In the input plugins section which is `[[inputs.postgresql_extensible]]`:
     * **address** - Specify the db user, db name, and password used for connecting to the database. This is the user you created for monitoring the PosgreSQL database in [Step 1](https://help.sumologic.com/07Sumo-Logic-Apps/12Databases/PostgreSQL/Collect_logs_and_metrics_from_PostgreSQL/Collect_PostgreSQL_Logs_and_Metrics_for_Non-Kubernetes_environments#step-1-configure-metrics-collection). Ex "host=localhost dbname=postgres user=postgres password=mypassword sslmode=disable"
     * In the tags section which is `[inputs.postgresql_extensible.tags]`:
-        * **environment** - This is the deployment environment where the Postgresql cluster resides. For example dev, prod or qa. While this value is optional we highly recommend setting it.
-        * **db_cluster** - Enter a name to identify this PostgreSQL cluster. This cluster name will be shown in the Sumo Logic dashboards. For example  analytics-dbcluster, webapp-dbcluster
+        * `environment` - This is the deployment environment where the Postgresql cluster resides. For example dev, prod or qa. While this value is optional we highly recommend setting it.
+        * `db_cluster` - Enter a name to identify this PostgreSQL cluster. This cluster name will be shown in the Sumo Logic dashboards. For example  analytics-dbcluster, webapp-dbcluster
 * In the output plugins section which is `[[outputs.sumologic]]`:
     * **url** - This is the HTTP source URL created in step 3. Please see [this doc](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Collect_Metrics_Using_Telegraf/05_Configure_Telegraf_Output_Plugin_for_Sumo_Logic) for more information on additional parameters for configuring the Sumo Logic Telegraf output plugin.
 
