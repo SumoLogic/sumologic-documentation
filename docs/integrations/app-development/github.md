@@ -96,7 +96,7 @@ You can create up to 20 Webhooks for each event on each specific organization or
 
 Sumo Logic needs to understand the event type for incoming events. To enable this, the [x-github-event](https://docs.github.com/en/developers/webhooks-and-events/webhook-events-and-payloads) event type needs to be enabled. To enable this, perform the following steps in the Sumo Logic console:
 
-1. From Sumo Logic, go to **Manage Data** > **Logs** > [**Fields**](https://help.sumologic.com/Manage/Fields#add-field).
+1. From Sumo Logic, go to **Manage Data** > **Logs** > [**Fields**](/docs/manage/fields.md#add-field).
 2. Add Field ‎**x-github-event**‎.
 
 
@@ -220,7 +220,7 @@ Field x-github-event not found, please check the spelling and try again.
 
 Do the following to resolve:
 
-1. In Sumo Logic, click Manage Data > Logs > [Fields and](https://help.sumologic.com/Manage/Fields#add-field) delete your **x-github-event**.
+1. In Sumo Logic, click Manage Data > Logs > [Fields and](/docs/manage/fields.md#add-field) delete your **x-github-event**.
 2. Add it again using the **Dropped Fields **option.
 
 

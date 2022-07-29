@@ -30,7 +30,7 @@ Configuring log and metric collection for the MariaDB App includes the following
 
 #### Configure Fields in Sumo Logic
 
-Create the following fields in Sumo Logic before configuring the collection to ensure that your logs and metrics are tagged with relevant metadata, which is required by the app dashboards. For information on setting up fields, see the [Fields](https://help.sumologic.com/Manage/Fields) help page.
+Create the following fields in Sumo Logic before configuring the collection to ensure that your logs and metrics are tagged with relevant metadata, which is required by the app dashboards. For information on setting up fields, see the [Fields](/docs/manage/fields.md) help page.
 
 If you are using MariaDB in a  non-Kubernetes environment create the fields:
 

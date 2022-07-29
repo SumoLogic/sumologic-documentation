@@ -6,6 +6,8 @@ description: The Microsoft SQL Server App provides insight into your SQL server 
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 <img src={useBaseUrl('img/integrations/microsoft-azure/sql.png')} alt="thumbnail icon" width="75"/>
 
@@ -17,17 +19,21 @@ This App has been tested with following SQL Server versions:
 
 ## Collecting Logs and Metrics for the Microsoft SQL Server App
 
-This page provides instructions for configuring a local file source to collect SQL Server ERRORLOG data, and a script source to collect SQL Server performance metrics. A sample log message is also provided. This includes the following tasks:
-
-* Step 1: Configure Fields in Sumo Logic
-* Step 2: Configure Collection for SQL Server
-    * For Non-Kubernetes environments
-    * For Kubernetes environments
-
+This page provides instructions for configuring a local file source to collect SQL Server ERRORLOG data, and a script source to collect SQL Server performance metrics. A sample log message is also provided.
 
 ### Step 1: Configure Fields in Sumo Logic
 
-Create the following Fields in Sumo Logic prior to configuring collection. This ensures that your logs and metrics are tagged with relevant metadata, which is required by the app dashboards. For information on setting up fields, see the [Fields](https://help.sumologic.com/Manage/Fields) help page.
+Create the following Fields in Sumo Logic prior to configuring collection. This ensures that your logs and metrics are tagged with relevant metadata, which is required by the app dashboards. For information on setting up fields, see the [Fields](/docs/manage/fields.md) help page.
+
+<Tabs
+  className="unique-tabs"
+  defaultValue="k8s"
+  values={[
+    {label: 'Kubernetes environments', value: 'k8s'},
+    {label: 'Non-Kubernetes environments', value: 'non-k8s'},
+  ]}>
+
+<TabItem value="k8s">
 
 If you are using SQL Server in a non-Kubernetes environment, create the fields:
 * `component`
@@ -36,6 +42,10 @@ If you are using SQL Server in a non-Kubernetes environment, create the fields:
 * `db_cluster`
 * `pod`
 
+
+</TabItem>
+<TabItem value="non-k8s">
+
 If you are using SQL Server in a Kubernetes environment, create the fields:
 * `pod_labels_component`
 * `pod_labels_environment`
@@ -43,14 +53,25 @@ If you are using SQL Server in a Kubernetes environment, create the fields:
 * `pod_labels_db_cluster`
 
 
-### Step 2: Collect Microsoft SQL Server Logs and Metrics
-Sumo Logic supports collection of logs and metrics data from SQL Server in both Kubernetes and non-Kubernetes environments. Click on the appropriate links below based on the environment where your SQL Server clusters are hosted.
-* [Collect Logs and Metrics for Kubernetes environments](#for-kubernetes-environments).
-* [Collect Logs and Metrics for Non-Kubernetes environments](#for-non-kubernetes-environments).
+</TabItem>
+</Tabs>
 
-### For Kubernetes environments
+### Step 2: Collect Logs and Metrics
+Sumo Logic supports collection of logs and metrics data from SQL Server in both Kubernetes and non-Kubernetes environments. Click on the appropriate tabs below based on the environment where your SQL Server clusters are hosted.
 
-In Kubernetes environments, we use the Telegraf Operator, which is packaged with our Kubernetes collection. You can learn more about it [here](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Collect_Metrics_Using_Telegraf/01_Telegraf_Collection_Architecture). The diagram below illustrates how data is collected from SQL Server in Kubernetes environments. In the architecture shown below, there are four services that make up the metric collection pipeline: Telegraf, Prometheus, Fluentd and FluentBit.
+<Tabs
+  className="unique-tabs"
+  defaultValue="k8s"
+  values={[
+    {label: 'Kubernetes environments', value: 'k8s'},
+    {label: 'Non-Kubernetes environments', value: 'non-k8s'},
+  ]}>
+
+<TabItem value="k8s">
+
+<img src='https://upload.wikimedia.org/wikipedia/commons/3/39/Kubernetes_logo_without_workmark.svg' alt="k8s icon" width="30"/>
+
+In Kubernetes environments, we use the Telegraf Operator, which is packaged with our Kubernetes collection ([learn more](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Collect_Metrics_Using_Telegraf/01_Telegraf_Collection_Architecture)). The diagram below illustrates how data is collected from SQL Server in Kubernetes environments. In the architecture shown below, there are four services that make up the metric collection pipeline: Telegraf, Prometheus, Fluentd and FluentBit.
 
 The first service in the pipeline is Telegraf. Telegraf collects metrics from SQL Server. Note that we’re running Telegraf in each pod we want to collect metrics from as a sidecar deployment: i.e. Telegraf runs in the same pod as the containers it monitors. Telegraf uses the [SQL Server input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/sqlserver) to obtain metrics. (For simplicity, the diagram doesn’t show the input plugins.) The injection of the Telegraf sidecar container is done by the Telegraf Operator. We also have Fluentbit that collects logs written to standard out and forwards them to FluentD, which in turn sends all the logs and metrics data to a Sumo Logic HTTP Source.
 
@@ -70,9 +91,7 @@ Follow the below instructions to set up the metric collection:
 It’s assumed that you are using the latest helm chart version if not upgrade using the instructions [here](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/release-v2.0/deploy/docs/v2_migration_doc.md#how-to-upgrade).
 
 
-#### Step 1 Configure Metrics Collection
-2
-
+#### Step 1: Configure Metrics Collection
 
 This section explains the steps to collect SQL Server metrics from a Kubernetes environment.
 
@@ -131,7 +150,7 @@ In Kubernetes environments, we use the Telegraf Operator, which is packaged with
 2. Verify metrics in Sumo Logic.
 
 
-#### Step 2 Configure Logs Collection
+#### Step 2: Configure Logs Collection
 
 This section explains the steps to collect SQL Server logs from a Kubernetes environment.
 
@@ -186,8 +205,6 @@ Labels created in Kubernetes environments automatically are prefixed with pod_la
 3. The following form appears:
 
 
-4
-
 1. Enter the following options:
 * **Rule Name**. Enter the name as **App Observability - Proxy**.
 * **Applied At.** Choose **Ingest Time**
@@ -213,9 +230,10 @@ if (!isEmpty(pod_labels_environment), pod_labels_environment, "") as environment
 1. Click **Save** to create the rule.
 
 
-### For Non-Kubernetes environments
+</TabItem>
+<TabItem value="non-k8s">
 
-Sumo Logic uses the Telegraf operator for SQL Server metric collection and the [Installed Collector](https://help.sumologic.com/03Send-Data/Installed-Collectors/01About-Installed-Collectors) for collecting SQL Server logs. The diagram below illustrates the components of the SQL Server collection in a non-Kubernetes environment. Telegraf uses the[ SQL Server input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/sqlserver) to obtain SQL Server metrics and the Sumo Logic output plugin to send the metrics to Sumo Logic. Logs from SQL Server are collected by a [Local File source](https://help.sumologic.com/03Send-Data/Sources/01Sources-for-Installed-Collectors/Local-File-Source).
+In Non-Kubernetes environments, Sumo Logic uses the Telegraf operator for SQL Server metric collection and the [Installed Collector](https://help.sumologic.com/03Send-Data/Installed-Collectors/01About-Installed-Collectors) for collecting SQL Server logs. The diagram below illustrates the components of the SQL Server collection in a non-Kubernetes environment. Telegraf uses the[ SQL Server input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/sqlserver) to obtain SQL Server metrics and the Sumo Logic output plugin to send the metrics to Sumo Logic. Logs from SQL Server are collected by a [Local File source](https://help.sumologic.com/03Send-Data/Sources/01Sources-for-Installed-Collectors/Local-File-Source).
 
 
 The process to set up collection for SQL Server data is done through the following steps:
@@ -233,7 +251,6 @@ The process to set up collection for SQL Server data is done through the followi
 
 
 #### Configure Logs Collection
-6
 
 
 This section provides instructions for configuring log collection for SQL Server running on a non-Kubernetes environment for the Sumo Logic App for SQL Server.
@@ -273,7 +290,7 @@ At this point, the installed collector will start scanning the `ERRORLOG` and se
 
 #### Configure Metrics Collection
 
-#### Set up a Sumo Logic HTTP Source
+Set up a Sumo Logic HTTP Source
 
 1. **Configure a Hosted Collector for Metrics. \
 **To create a new Sumo Logic hosted collector, perform the steps in the [Configure a Hosted Collector](https://help.sumologic.com/03Send-Data/Hosted-Collectors/Configure-a-Hosted-Collector) documentation.
@@ -295,7 +312,7 @@ At this point, the installed collector will start scanning the `ERRORLOG` and se
   Before you configure Telegraf, you will need to create a[ login on every SQL Server](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/sqlserver#additional-setup) instance you want to monitor with the following script. This script will create a user in SQL Server which will be used as input to the Telegraf configuration.
 
 
-```bash
+```
 USE master;
 GO
 CREATE LOGIN [<Username_TO_BE_CHANGED>] WITH PASSWORD=N'<Password_TO_BE_CHANGED>';
@@ -354,8 +371,10 @@ There are additional values set by the Telegraf configuration.  We recommend not
 
 After you have finalized your `telegraf.conf` file, you can start or reload the telegraf service using instructions from this[ doc](https://docs.influxdata.com/telegraf/v1.17/introduction/getting-started/#start-telegraf-service).
 
+At this point, Telegraf should start collecting the SQL Server metrics and forward them to the Sumo Logic HTTP Source.
 
-    At this point, Telegraf should start collecting the SQL Server metrics and forward them to the Sumo Logic HTTP Source.
+</TabItem>
+</Tabs>
 
 
 ## Installing Microsoft SQL Server Monitors

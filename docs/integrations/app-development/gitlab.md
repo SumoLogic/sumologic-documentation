@@ -87,7 +87,7 @@ Sumo Logic needs to understand the event type for incoming events. To enable thi
 
 
 
-1. In Sumo Logic, click **Manage Data > Logs** **>**[ Fields](https://help.sumologic.com/Manage/Fields#add-field).
+1. In Sumo Logic, click **Manage Data > Logs** **>**[ Fields](/docs/manage/fields.md#add-field).
 2. Add Field ‎**x-GitLab-event**‎.
 
 
@@ -183,7 +183,7 @@ Do the following to resolve:
 
 
 1. Close all app dashboards.
-2. In Sumo Logic, click **Manage Data > Logs** **>**[ Fields and](https://help.sumologic.com/Manage/Fields#add-field) delete the **x-gitlab-event field.**
+2. In Sumo Logic, click **Manage Data > Logs** **>**[ Fields and](/docs/manage/fields.md#add-field) delete the **x-gitlab-event field.**
 3. Add it again using the Dropped Fields section:
     * At **Dropped Fields** drop-down, click on **x-gitlab-event**, then click **Create Field** to create the field.
     * Wait for new events to be pushed from GitLab. The app should work without any "Field x-gitlab-event not found" errors. \

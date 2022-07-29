@@ -171,7 +171,7 @@ Sumo Logic needs to understand the event type for incoming events (for example, 
 
 
 
-1. From Sumo Logic, go to **Manage Date **- > **Logs** - > **[Fields](https://help.sumologic.com/Manage/Fields#add-field)**.
+1. From Sumo Logic, go to **Manage Date **- > **Logs** - > **[Fields](/docs/manage/fields.md#add-field)**.
 2. Add Field ‎**X-Event-Key**‎
 
 

@@ -6,6 +6,8 @@ description: The Sumo Logic App for Nginx (Legacy) helps you monitor webserver a
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 <img src={useBaseUrl('img/integrations/web-servers/nginx-ingress.png')} alt="Web servers icon" width="75"/>
 
@@ -15,7 +17,7 @@ The Sumo Logic App for Nginx (Legacy) support logs for Open Source Nginx, Nginx 
 
 The Sumo Logic App for Nginx (Legacy) helps you monitor webserver activity in Nginx. The preconfigured dashboards provide information about site visitors, including the location of visitors, devices/operating systems, and browsers used; and information about server activity, including bots observed and error information.
 
-#### Log and Metrics Types
+## Log and Metrics Types
 
 The Sumo Logic App for Nginx assumes the NCSA extended/combined log file format for Access logs and the default Nginx error log file format for error logs.
 
@@ -28,40 +30,20 @@ The Sumo Logic App for Nginx assumes Prometheus format Metrics for Requests and 
 For more details on Nginx Metrics, see https://nginx.org/libxslt/en/docs/http/ngx_http_stub_status_module.html.
 
 
-## Collect Logs and Metrics for Nginx (Legacy)
+## Collecting Logs and Metrics for Nginx (Legacy)
 
-This page provides instructions for configuring log and metric collection for the Sumo Logic App for Nginx (Legacy).
+This section provides instructions for configuring log and metrics collection for the Sumo Logic App for Nginx (Legacy), which is for non-Kubernetes environment.
 
-
-### Collection Process Overview
-
-Configuring log and metric collection for the Nginx (Legacy) App includes the following tasks:
-* Collect Logs for Nginx
-    * Non-Kubernetes
-
-
-#### Collect Logs for Nginx
+### Collect Logs
 
 Nginx (Legacy) app supports the default access logs and error logs format.
 
 
-##### Non-Kubernetes
+#### Step 1. Configure logging in Nginx
 
-This section provides instructions for configuring log collection for the Sumo Logic App for Nginx. Follow the below instructions to set up the Log collection.
+Before you can configure Sumo Logic to ingest logs, you must configure the logging of errors and processed requests in NGINX Open Source and NGINX Plus. For instructions, refer to the following documentation: [https://www.nginx.com/resources/admin-guide/logging-and-monitoring/](https://www.nginx.com/resources/admin-guide/logging-and-monitoring/).
 
-1. Configure logging in Nginx
-2. Configure a Collector
-3. Configure a Source
-
-
-#### 1. Configure logging in Nginx
-
-Before you can configure Sumo Logic to ingest logs, you must configure the logging of errors and processed requests in NGINX Open Source and NGINX Plus. For instructions, refer to the following documentation:
-
-[https://www.nginx.com/resources/admin-guide/logging-and-monitoring/](https://www.nginx.com/resources/admin-guide/logging-and-monitoring/)
-
-
-###### 2. Configure a Collector
+#### Step 2. Configure a Collector
 
 Use one of the following Sumo Logic Collector options:
 
@@ -69,9 +51,17 @@ Use one of the following Sumo Logic Collector options:
 2. If you are using a service like Fluentd, or you would like to upload your logs manually, [Create a Hosted Collector](https://help.sumologic.com/03Send-Data/Hosted-Collectors#Create_a_Hosted_Collector).
 
 
-###### 3. Configure a Source
+#### Step 3. Configure a Source
 
-**For an Installed Collector**
+<Tabs
+  className="unique-tabs"
+  defaultValue="installed"
+  values={[
+    {label: 'For an Installed Collector', value: 'installed'},
+    {label: 'For a Hosted Collector', value: 'hosted'},
+  ]}>
+
+<TabItem value="installed">
 
 To collect logs directly from your Nginx machine, use an Installed Collector and a Local File Source.
 
@@ -92,7 +82,8 @@ To collect logs directly from your Nginx machine, use an Installed Collector and
         * **Access** logs. These are single-line logs, uncheck **Detect messages spanning multiple lines**.
 4. Click **Save**.
 
-**For a Hosted Collector**
+</TabItem>
+<TabItem value="hosted">
 
 If you are using a service like Fluentd, or you would like to upload your logs manually, use a Hosted Collector and an HTTP Source.
 
@@ -112,62 +103,25 @@ If you are using a service like Fluentd, or you would like to upload your logs m
 4. Click **Save**.
 5. When the URL associated with the HTTP Source is displayed, copy the URL so you can add it to the service you are using, such as Fluentd.
 
+</TabItem>
+</Tabs>
 
-#### Sample Log Messages
+### Sample Log Messages
 
-**Access Log Example**
-
-```
+```txt title="Access Log Example"
 50.1.1.1 - example [23/Sep/2016:19:00:00 +0000] "POST /api/is_individual HTTP/1.1" 200 58 "-"
 "python-requests/2.7.0 CPython/2.7.6 Linux/3.13.0-36-generic"
 ```
 
-
-**Error Log Example**
-
-```
+```txt title="Error Log Example"
 2016/09/23 19:00:00 [error] 1600#1600: *61413 open() "/srv/core/client/dist/client/favicon.ico"
 failed (2: No such file or directory), client: 101.1.1.1, server: _, request: "GET /favicon.ico
 HTTP/1.1", host: "example.com", referrer: "https://abc.example.com/"
 ```
 
-#### Create Field Extraction Rules
-
-Field Extraction Rules (FERs) tell Sumo Logic which fields to parse out automatically. For instructions, see [Create a Field Extraction Rule](https://help.sumologic.com/Manage/Field-Extractions/Create-a-Field-Extraction-Rule).
-
-Nginx assumes the NCSA extended/combined log file format for Access logs and the default Nginx error log file format for error logs.
-
-Both the parse expressions can be used for logs collected from Nginx Server running on Local or container-based systems.
-
-**FER for Access Logs**
-
-Use the following Parse Expression:
-
-```
-| json field=_raw "log" as nginx_log_message nodrop
-| if (isEmpty(nginx_log_message), _raw, nginx_log_message) as nginx_log_message
-| parse regex field=nginx_log_message "(?<Client_Ip>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})"
-| parse regex field=nginx_log_message "(?<Method>[A-Z]+)\s(?<URL>\S+)\sHTTP/[\d\.]+\
-"\s(?<Status_Code>\d+)\s(?<Size>[\d-]+)\s\"(?<Referrer>.*?)\"\s\"(?<User_Agent>.+?)\".*"
-```
-
-
-**FER for Error Logs**
-
-Use the following Parse Expression:
-
-```
-| json field=_raw "log" as nginx_log_message nodrop
-| if (isEmpty(nginx_log_message), _raw, nginx_log_message) as nginx_log_message
-| parse regex field=nginx_log_message "\s\[(?<Log_Level>\S+)\]\s\d+#\d+:\s(?:\*\d+\s|)(?<Message>[A-Za-z][^,]+)(?:,|$)"
-| parse field=nginx_log_message "client: *, server: *, request: \"* * HTTP/1.1\", host:
-\"*\"" as Client_Ip, Server, Method, URL, Host nodrop
-```
-
-#### Sample Queries
+### Sample Queries
 
 This sample Query is from the **Requests by Clients** panel of the **Nginx (Legacy) - Overview** dashboard.
-
 
 ```
 _sourceCategory = Labs/Nginx/Logs
@@ -180,6 +134,34 @@ _sourceCategory = Labs/Nginx/Logs
 | sort count
 ```
 
+### Field Extraction Rules
+
+Field Extraction Rules (FERs) tell Sumo Logic which fields to parse out automatically. For instructions, see [Create a Field Extraction Rule](/docs/manage/field-extractions/create-field-extraction-rule.md).
+
+Nginx assumes the NCSA extended/combined log file format for Access logs and the default Nginx error log file format for error logs.
+
+Both the parse expressions can be used for logs collected from Nginx Server running on Local or container-based systems.
+
+For **FER for Access Logs**, use the following Parse Expression:
+
+```
+| json field=_raw "log" as nginx_log_message nodrop
+| if (isEmpty(nginx_log_message), _raw, nginx_log_message) as nginx_log_message
+| parse regex field=nginx_log_message "(?<Client_Ip>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})"
+| parse regex field=nginx_log_message "(?<Method>[A-Z]+)\s(?<URL>\S+)\sHTTP/[\d\.]+\
+"\s(?<Status_Code>\d+)\s(?<Size>[\d-]+)\s\"(?<Referrer>.*?)\"\s\"(?<User_Agent>.+?)\".*"
+```
+
+For **FER for Error Logs**, use the following Parse Expression:
+
+```
+| json field=_raw "log" as nginx_log_message nodrop
+| if (isEmpty(nginx_log_message), _raw, nginx_log_message) as nginx_log_message
+| parse regex field=nginx_log_message "\s\[(?<Log_Level>\S+)\]\s\d+#\d+:\s(?:\*\d+\s|)(?<Message>[A-Za-z][^,]+)(?:,|$)"
+| parse field=nginx_log_message "client: *, server: *, request: \"* * HTTP/1.1\", host:
+\"*\"" as Client_Ip, Server, Method, URL, Host nodrop
+```
+
 
 ## Installing the Nginx (Legacy) App
 
@@ -190,22 +172,22 @@ Locate and install the app you need from the **App Catalog**. If you want to see
 1. From the **App Catalog**, search for and select the app**.**
 2. Select the version of the service you're using and click **Add to Library**.
 
-Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](https://help.sumologic.com/01Start-Here/Library/Apps-in-Sumo-Logic/Install-Apps-from-the-Library)
+   Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](https://help.sumologic.com/01Start-Here/Library/Apps-in-Sumo-Logic/Install-Apps-from-the-Library)
 
-1. To install the app, complete the following fields.
-    1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
-    2. **Data Source.** Select either of these options for the data source. 
-        * Choose **Source Category**, and select a source category from the list. 
-        * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). 
-    3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-2. Click **Add to Library**.
+3. To install the app, complete the following fields.
+   * **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
+   * **Data Source.** Select either of these options for the data source. 
+      * Choose **Source Category**, and select a source category from the list. 
+      * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). 
+   * **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
+4. Click **Add to Library**.
 
 Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization.
 
 Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
 
 
-## Viewing the Nginx (Legacy) Dashboards
+## Viewing Nginx (Legacy) Dashboards
 
 :::tip Filter with template variables    
 Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards-new/filter-with-template-variables.md).

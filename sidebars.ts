@@ -1958,7 +1958,6 @@ module.exports = {
         items: [
           'integrations/web-servers/apache/collect-logs-metrics',
           'integrations/web-servers/apache/install-app-monitors-dashboards',
-          'integrations/web-servers/apache/metrics',
           'integrations/web-servers/apache/alerts',
           ],
         },

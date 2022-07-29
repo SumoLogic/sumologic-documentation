@@ -200,7 +200,7 @@ _sourceCategory=cylance "IP Address"
 Use Field Extraction Rules (FER) to parse fields from your log messages at the time the messages are ingested, which eliminates the need to parse fields at the query level. Use these parsed fields along with Threat Intel Lookup operator.
 
 
-1. Create the FER For example, for Cylance Security Events, create and use the following [FER:](https://help.sumologic.com/Manage/Field-Extractions/Create-a-Field-Extraction-Rule)
+1. Create the FER For example, for Cylance Security Events, create and use the following [FER:](/docs/manage/field-extractions/create-field-extraction-rule.md)
 
 ```sql
 parse "Event Type: *, Event Name: *, Device Name: *, IP Address: (*, *), File Name: *, Path: *, Drive Type: *, SHA256: *, MD5: *, Status: *, Cylance Score: *, Found Date: *, File Type: *, Is Running: *, Auto Run: *, Detected By: *" as event_type,event_name,device_name,src_ip,dest_ip,file_name,path,drive_type,sha,md5,status,score,found,file_type,isRunning,autoRun,detected

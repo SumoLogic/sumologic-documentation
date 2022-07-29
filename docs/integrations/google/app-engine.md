@@ -1,7 +1,7 @@
 ---
 id: app-engine
 title: Sumo Logic App for Google App Engine
-sidebar_label: App Engine
+sidebar_label: Google App Engine
 description: The Sumo Logic App for Google App Engine helps you monitor the activities in your App Engine.
 ---
 

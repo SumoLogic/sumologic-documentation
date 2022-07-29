@@ -42,7 +42,7 @@ Configuring log and metric collection for the Redis ULM App includes the followi
 4
 
 
-Create the following Fields in Sumo Logic prior to configuring collection. This ensures that your logs and metrics are tagged with relevant metadata, which is required by the app dashboards. For information on setting up fields, see the [Fields](https://help.sumologic.com/Manage/Fields) help page.
+Create the following Fields in Sumo Logic prior to configuring collection. This ensures that your logs and metrics are tagged with relevant metadata, which is required by the app dashboards. For information on setting up fields, see the [Fields](/docs/manage/fields.md) help page.
 
 If you are using Redis in a  non-Kubernetes environment create the fields:
 
@@ -549,7 +549,7 @@ To add an Installed collector, perform the steps as defined on the page [Configu
 * **File Path (Required).** Enter the path to your error.log or access.log. The files are typically located in /var/log/redis/redis-server.log. If you are using a customized path, check the redis.conf file for this information.
 * **Source Host.** Sumo Logic uses the hostname assigned by the OS unless you enter a different host name
 * **Source Category.** Enter any string to tag the output collected from this Source, such as **Redis/Logs**. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details see[ Best Practices](https://help.sumologic.com/03Send-Data/01-Design-Your-Deployment/Best-Practices%3A-Good-Source-Category%2C-Bad-Source-Category).)
-* **Fields. Set the following fields. For more information on fields please see [this document](https://help.sumologic.com/Manage/Fields):**
+* **Fields. Set the following fields. For more information on fields please see [this document](/docs/manage/fields.md):**
     1. **component = database**
     2. **db_system = redis**
     3. **db_cluster = <Your_Redis_Cluster_Name>**

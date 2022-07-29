@@ -55,7 +55,7 @@ Ensure you have deployed version 1.3 or higher of the Sumologic-Kubernetes-Colle
 3
 
 
-Field Extraction Rules (FERs) tell Sumo Logic which fields to parse out automatically. For instructions, see[ Create a Field Extraction Rule](https://help.sumologic.com/Manage/Field-Extractions/Create-a-Field-Extraction-Rule).
+Field Extraction Rules (FERs) tell Sumo Logic which fields to parse out automatically. For instructions, see[ Create a Field Extraction Rule](/docs/manage/field-extractions/create-field-extraction-rule.md).
 
 Nginx assumes the NCSA extended/combined log file format for Access logs and the default Nginx Plus error log file format for error logs.
 

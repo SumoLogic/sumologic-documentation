@@ -6,20 +6,16 @@ description: The Nginx Plus app is an unified logs and metrics app that helps yo
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 <img src={useBaseUrl('img/integrations/web-servers/nginx-plus.png')} alt="Web servers icon" width="75"/>
 
-Nginx Plus is a web server that can be used as a reverse proxy, load balancer, mail proxy, and HTTP cache.
-
-The Sumo Logic App for Nginx Plus supports logs as well as Metrics for Nginx Plus.
+The Sumo Logic App for Nginx Plus supports logs as well as Metrics for Nginx Plus, which is a web server that can be used as a reverse proxy, load balancer, mail proxy, and HTTP cache.
 
 The Nginx Plus app is an unified logs and metrics app that helps you monitor the availability, performance, health and resource utilization of your Nginx Plus web servers. Preconfigured dashboards and searches provide insight into server status, location zones, server zones, upstreams, resolvers, visitor locations, visitor access types, traffic patterns, errors, web server operations and access from known malicious sources.
 
-## Collect Logs and Metrics for Nginx Plus
-
-This section provides instructions for configuring log and metric collection for the Sumo Logic App for Nginx Plus.
-
-### Log and Metrics Types
+## Log and Metrics Types
 
 The Sumo Logic App for Nginx Plus assumes the NCSA extended/combined log file format for Access logs and the default Nginx error log file format for error logs.
 
@@ -27,7 +23,41 @@ All Dashboards (except the Error logs Analysis dashboard) assume the Access log 
 
 The Sumo Logic App for Nginx Plus assumes Prometheus format Metrics for Requests and Connections. For Nginx Plus Server metrics, API Module from Nginx Configuration is used. For more details on Nginx Plus Metrics, see [Module ngx_http_api_module](https://nginx.org/en/docs/http/ngx_http_api_module.html).
 
-#### Sample Log Messages  
+### Sample Log Messages  
+
+<Tabs
+  className="unique-tabs"
+  defaultValue="k8s"
+  values={[
+    {label: 'Kubernetes environments', value: 'k8s'},
+    {label: 'Non-Kubernetes environments', value: 'non-k8s'},
+  ]}>
+
+<TabItem value="k8s">
+
+Kubernetes environments
+
+```json title="Access Log Example"
+{
+	"timestamp":1620821977736,
+	"log":"10.244.0.132 - - [12/May/2021:12:19:28 +0000] \"GET //demo-index.html HTTP/1.1\" 200 8777 \"-\" \"curl/7.68.0\"",
+	"stream":"stdout",
+	"time":"2021-05-12T12:19:28.975861476Z"
+}
+```
+
+```json title="Error Log Example"
+{
+	"timestamp":1620821977737,
+	"log":"2021/05/12 12:19:36 [error] 7#7: *8192 upstream timed out (110: Connection timed out) while connecting to upstream, health check \"\" of peer 44.240.53.50:12345 in upstream \"stream_backend2\"",
+	"stream":"stderr",
+	"time":"2021-05-12T12:19:36.344706832Z"
+}
+```
+
+
+</TabItem>
+<TabItem value="non-k8s">
 
 Non-Kubernetes environments
 
@@ -42,58 +72,12 @@ failed (2: No such file or directory), client: 101.1.1.1, server: _, request: "G
 HTTP/1.1", host: "example.com", referrer: "https://abc.example.com/"
 ```
 
-Kubernetes environments
-
-```bash title="Access Log Example"
-{"timestamp":1620821977736,"log":"10.244.0.132 - - [12/May/2021:12:19:28 +0000] \"GET //demo-index.html HTTP/1.1\" 200 8777 \"-\" \"curl/7.68.0\"","stream":"stdout","time":"2021-05-12T12:19:28.975861476Z"}
-```
-
-```bash title="Error Log Example"
-{"timestamp":1620821977737,"log":"2021/05/12 12:19:36 [error] 7#7: *8192 upstream timed out (110: Connection timed out) while connecting to upstream, health check \"\" of peer 44.240.53.50:12345 in upstream \"stream_backend2\"","stream":"stderr","time":"2021-05-12T12:19:36.344706832Z"}
-```
+</TabItem>
+</Tabs>
 
 
-### Collection Process Overview
 
-Sumo Logic supports a collection of logs and metrics data from Nginx Plus in both Kubernetes and non-Kubernetes environments. Click on the appropriate links below based on the environment where your Nginx Plus servers are hosted.
-* [Collect Logs and Metrics for Kubernetes environments](https://help.sumologic.com/07Sumo-Logic-Apps/24Web_Servers/Nginx_Plus/Collect_Logs_and_Metrics_for_Nginx_Plus/Collect_Logs_and_Metrics_in_Kubernetes_environment)
-* [Collect Logs and Metrics for Non-Kubernetes environments](https://help.sumologic.com/07Sumo-Logic-Apps/24Web_Servers/Nginx_Plus/Collect_Logs_and_Metrics_for_Nginx_Plus/Collect_Logs_and_Metrics_in_Non_Kubernetes_environment)
-
-
-#### Create Field Extraction Rules
-
-Field Extraction Rules (FERs) tell Sumo Logic which fields to parse out automatically. For instructions, see [Create a Field Extraction Rule](https://help.sumologic.com/Manage/Field-Extractions/Create-a-Field-Extraction-Rule).
-
-Nginx assumes the NCSA extended/combined log file format for Access logs and the default Nginx error log file format for error logs.
-
-Both the parse expressions can be used for logs collected from Nginx Plus Server running on Local or container-based systems.
-
-**FER for Access Logs**
-
-Use the following Parse Expression:
-
-```
-| json field=_raw "log" as nginx_log_message nodrop
-| if (isEmpty(nginx_log_message), _raw, nginx_log_message) as nginx_log_message
-| parse regex field=nginx_log_message "(?<Client_Ip>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})"
-| parse regex field=nginx_log_message "(?<Method>[A-Z]+)\s(?<URL>\S+)\sHTTP/[\d\.]+\
-"\s(?<Status_Code>\d+)\s(?<Size>[\d-]+)\s\"(?<Referrer>.*?)\"\s\"(?<User_Agent>.+?)\".*"
-```
-
-
-**FER for Error Logs**
-
-Use the following Parse Expression:
-
-```
-| json field=_raw "log" as nginx_log_message nodrop
-| if (isEmpty(nginx_log_message), _raw, nginx_log_message) as nginx_log_message
-| parse regex field=nginx_log_message "\s\[(?<Log_Level>\S+)\]\s\d+#\d+:\s(?:\*\d+\s|)(?<Message>[A-Za-z][^,]+)(?:,|$)"
-| parse field=nginx_log_message "client: *, server: *, request: \"* * HTTP/1.1\", host:
-\"*\"" as Client_Ip, Server, Method, URL, Host nodrop
-```
-
-#### Sample Queries
+### Sample Queries
 
 This sample Query is from the **Responses Over Time** panel of the [Nginx Plus - Overview](#overview) dashboard.
 
@@ -114,6 +98,49 @@ _sourcecategory=Labs/Nginx/Logs
 ```
 
 
+### Field Extraction Rules
+
+Field Extraction Rules (FERs) tell Sumo Logic which fields to parse out automatically. For instructions, on creating them, see [Create a Field Extraction Rule](/docs/manage/field-extractions/create-field-extraction-rule.md).
+
+Nginx assumes the NCSA extended/combined log file format for Access logs and the default Nginx error log file format for error logs.
+
+Both the parse expressions can be used for logs collected from Nginx Plus Server running on Local or container-based systems.
+
+For **FER for Access Logs**, use the following Parse Expression:
+
+```
+| json field=_raw "log" as nginx_log_message nodrop
+| if (isEmpty(nginx_log_message), _raw, nginx_log_message) as nginx_log_message
+| parse regex field=nginx_log_message "(?<Client_Ip>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})"
+| parse regex field=nginx_log_message "(?<Method>[A-Z]+)\s(?<URL>\S+)\sHTTP/[\d\.]+\
+"\s(?<Status_Code>\d+)\s(?<Size>[\d-]+)\s\"(?<Referrer>.*?)\"\s\"(?<User_Agent>.+?)\".*"
+```
+
+
+For **FER for Error Logs**, use the following Parse Expression:
+
+```sql
+| json field=_raw "log" as nginx_log_message nodrop
+| if (isEmpty(nginx_log_message), _raw, nginx_log_message) as nginx_log_message
+| parse regex field=nginx_log_message "\s\[(?<Log_Level>\S+)\]\s\d+#\d+:\s(?:\*\d+\s|)(?<Message>[A-Za-z][^,]+)(?:,|$)"
+| parse field=nginx_log_message "client: *, server: *, request: \"* * HTTP/1.1\", host:
+\"*\"" as Client_Ip, Server, Method, URL, Host nodrop
+```
+
+
+## Collecting Logs and Metrics for Nginx Plus
+
+This section provides instructions for configuring log and metric collection for the Sumo Logic App for Nginx Plus. Sumo Logic supports a collection of logs and metrics data from Nginx Plus in both Kubernetes and non-Kubernetes environments. Click on the appropriate links below based on the environment where your Nginx Plus servers are hosted.
+
+<Tabs
+  className="unique-tabs"
+  defaultValue="k8s"
+  values={[
+    {label: 'Kubernetes environments', value: 'k8s'},
+    {label: 'Non-Kubernetes environments', value: 'non-k8s'},
+  ]}>
+
+<TabItem value="k8s">
 
 ### For Kubernetes Environments
 
@@ -121,11 +148,9 @@ In Kubernetes environments, we use the Telegraf Operator, which is packaged with
 
 The first service in the pipeline is Telegraf. Telegraf collects metrics from Nginx Plus. Note that we’re running Telegraf in each pod we want to collect metrics from as a sidecar deployment: i.e. Telegraf runs in the same pod as the containers it monitors. Telegraf uses the Nginx Plus input plugin to obtain metrics. (For simplicity, the diagram doesn’t show the input plugins.) The injection of the Telegraf sidecar container is done by the Telegraf Operator. We also have Fluentbit that collects logs written to standard out and forwards them to FluentD, which in turn sends all the logs and metrics data to a Sumo Logic HTTP Source.
 
-
 Configuring log and metric collection for the Nginx Plus App includes the following tasks:
-
-* Step 1: Collect Logs for Nginx Plus
-* Step 2: Collect Metrics for Nginx Plus
+* Step 1: Collect Logs
+* Step 2: Collect Metrics
 
 
 #### Step 1: Collect Logs for Nginx Plus in Kubernetes environment
@@ -171,11 +196,13 @@ annotations:
         prometheus.io/port: "9273"
 ```
 
-* telegraf.influxdata.com/inputs - This contains the required configuration for the Telegraf Nginx Plus Input plugin. Please refer[ to this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/nginx_plus_api) for more information on configuring the Nginx input plugin for Telegraf. Note since telegraf will be run as a sidecar the host should always be localhost
-* telegraf.influxdata.com/class: sumologic-prometheus - This instructs the Telegraf operator what output to use. This should not be changed.
-* prometheus.io/scrape: "true" - This ensures our Prometheus will scrape the metrics.
-* prometheus.io/port: "9273" - This tells Prometheus what ports to scrape on. This should not be changed.
+* `telegraf.influxdata.com/inputs` - This contains the required configuration for the Telegraf Nginx Plus Input plugin. Please refer [to this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/nginx_plus_api) for more information on configuring the Nginx input plugin for Telegraf. Note since telegraf will be run as a sidecar the host should always be localhost
+* `telegraf.influxdata.com/class: sumologic-prometheus` - This instructs the Telegraf operator what output to use. This should not be changed.
+* `prometheus.io/scrape: "true"` - This ensures our Prometheus will scrape the metrics.
+* `prometheus.io/port: "9273"` - This tells Prometheus what ports to scrape on. This should not be changed.
 
+</TabItem>
+<TabItem value="non-k8s">
 
 ### For Non-Kubernetes Environments
 
@@ -319,6 +346,9 @@ Create a file called telegraf.conf and add the appropriate configuration. The fo
 
   telegraf --config /path/to/telegraf.conf
 
+
+</TabItem>
+</Tabs>
 
 ## Installing Nginx Plus Monitors
 

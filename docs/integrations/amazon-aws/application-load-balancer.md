@@ -146,7 +146,7 @@ Selecting an AWS GovCloud region means your data will be leaving a FedRAMP-high 
 If you paused the Source and want to skip some data when you resume, update the **Collection should begin** setting to a time after it was paused.
 9. For **Source Category**, enter any string to tag the output collected from this Source. (Category metadata is stored in a searchable field called _sourceCategory.)
     * Example sourceCategory: **aws/observability/alb/logs**
-10. **Fields**. Click the **+Add Field** link to add custom log metadata [Fields](https://help.sumologic.com/Manage/Fields). \
+10. **Fields**. Click the **+Add Field** link to add custom log metadata [Fields](/docs/manage/fields.md). \
 Following** Fields **are to be added in the source :
     * Add an **account** field and assign it a value which is a friendly name / alias to your AWS account from which you are collecting logs. This name will appear in the Sumo Logic Explorer View. Logs can be queried via the “account field”.
     * Add a **region** field and assign it the value of the respective AWS region where the Application Load Balancer exists.
@@ -260,12 +260,12 @@ Steps to troubleshoot:
 
 ### Field in Field Schema
 
-Login to Sumo Logic,  goto Manage Data > Logs > Fields. Search for the “**loadbalancer**” field. If not present, create it. Learn how to create and manage fields [here](https://help.sumologic.com/Manage/Fields#manage-fields).
+Login to Sumo Logic,  goto Manage Data > Logs > Fields. Search for the “**loadbalancer**” field. If not present, create it. Learn how to create and manage fields [here](/docs/manage/fields.md#manage-fields).
 
 
 ### Field Extraction Rule(s)
 
-Create Field Extraction Rule for AWS Application Load Balancer Access Logs. Learn how to create Field Extraction Rule [here](https://help.sumologic.com/Manage/Field-Extractions/Create-a-Field-Extraction-Rule).
+Create Field Extraction Rule for AWS Application Load Balancer Access Logs. Learn how to create Field Extraction Rule [here](/docs/manage/field-extractions/create-field-extraction-rule.md).
 
 ```sql
 Rule Name: AwsObservabilityAlbAccessLogsFER
