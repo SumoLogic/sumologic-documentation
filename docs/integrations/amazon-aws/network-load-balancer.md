@@ -35,7 +35,7 @@ account=* region=* LoadBalancer=* Namespace=aws/NetworkELB metric=ActiveFlowCoun
 
 ### Field in Field Schema
 
-Login to Sumo Logic, go to Manage Data > Logs > Fields. Search for the “**networkloadbalancer**” field. If not present, create it. Learn how to create and manage fields [here](https://help.sumologic.com/Manage/Fields#manage-fields).
+Login to Sumo Logic, go to Manage Data > Logs > Fields. Search for the “**networkloadbalancer**” field. If not present, create it. Learn how to create and manage fields [here](/docs/manage/fields.md#manage-fields).
 
 
 ### Metric Rules

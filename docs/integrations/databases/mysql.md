@@ -75,7 +75,7 @@ Configuring log and metric collection for the MySQL App includes the following t
 
 #### Step 1: Configure Fields in Sumo Logic
 
-Create the following Fields in Sumo Logic prior to configuring the collection. This ensures that your logs and metrics are tagged with relevant metadata, which is required by the app dashboards. For information on setting up fields, see the [Fields](https://help.sumologic.com/Manage/Fields) help page.
+Create the following Fields in Sumo Logic prior to configuring the collection. This ensures that your logs and metrics are tagged with relevant metadata, which is required by the app dashboards. For information on setting up fields, see the [Fields](/docs/manage/fields.md) help page.
 
 If you are using MySQL in a non-Kubernetes environment create the fields:
 
@@ -137,7 +137,7 @@ Ensure that you are monitoring your Kubernetes clusters with the Telegraf operat
 12
 
 
-Create the following Fields in Sumo Logic prior to configuring collection. This ensures that your logs and metrics are tagged with relevant metadata, which is required by the app dashboards. For information, see [Fields](https://help.sumologic.com/Manage/Fields) topic.
+Create the following Fields in Sumo Logic prior to configuring collection. This ensures that your logs and metrics are tagged with relevant metadata, which is required by the app dashboards. For information, see [Fields](/docs/manage/fields.md) topic.
 
 
 
@@ -320,7 +320,7 @@ Sumo Logic Kubernetes collection will automatically start collecting logs from t
 19
 
 
-Labels created in Kubernetes environments are automatically prefixed with pod_labels. To normalize these for our app to work, we'll create a [Field Extraction Rule](https://help.sumologic.com/Manage/Field-Extractions/Create-a-Field-Extraction-Rule), Database Application Components, assuming it does not already exist,
+Labels created in Kubernetes environments are automatically prefixed with pod_labels. To normalize these for our app to work, we'll create a [Field Extraction Rule](/docs/manage/field-extractions/create-field-extraction-rule.md), Database Application Components, assuming it does not already exist,
 
 
 
@@ -425,7 +425,7 @@ The diagram below illustrates the components of the MySQL collection in a non-Ku
 26
 
 
-Create the following Fields in Sumo Logic prior to configuring collection. This ensures that your logs and metrics are tagged with relevant metadata, which is required by the app dashboards. For information on setting up Fields, see the [Fields](https://help.sumologic.com/Manage/Fields) topic.
+Create the following Fields in Sumo Logic prior to configuring collection. This ensures that your logs and metrics are tagged with relevant metadata, which is required by the app dashboards. For information on setting up Fields, see the [Fields](/docs/manage/fields.md) topic.
 
 
 
@@ -611,7 +611,7 @@ Set up an [Installed Collector.](https://help.sumologic.com/03Send-Data/Installe
 3. **Description**. (Optional)
 4. **File Path** (Required). Enter the path to your error.log. The files are typically located in `/var/log/mysql/error.log`. If you are using a customized path, check the `my.cnf` file for this information.
 5. **Source Host**. Sumo Logic uses the hostname assigned by the OS unless you enter a different host nameSource Category. Enter any string to tag the output collected from this Source, such as Prod/MySQL/Error. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details see [Best Practices](https://help.sumologic.com/03Send-Data/01-Design-Your-Deployment/Best-Practices%3A-Good-Source-Category%2C-Bad-Source-Category).)
-6. **Fields**. Set the following fields. For more information, see [Fields](https://help.sumologic.com/Manage/Fields).
+6. **Fields**. Set the following fields. For more information, see [Fields](/docs/manage/fields.md).
     1. component = database
     2. db_system = mysql
     3. db_cluster = <your_mysql_cluster_name>
@@ -651,7 +651,7 @@ At this point, MySQL error logs should start flowing into Sumo Logic.
 4. **File Path** (Required). Enter the path to your `mysql-slow.log`. The file is typically located in `/var/log/mysql/mysql-slow.log`. If you are using a customized path, check `my.cnf` file for this information.
 5. **Source Host**. Sumo Logic uses the hostname assigned by the OS unless you enter a different host name
 6. **Source Category**. Enter any string to tag the output collected from this Source, such as Prod/MySQL/Error. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details see [Best Practices](https://help.sumologic.com/03Send-Data/01-Design-Your-Deployment/Best-Practices%3A-Good-Source-Category%2C-Bad-Source-Category).)
-7. **Fields**. Set the following fields. For more information, see [Fields](https://help.sumologic.com/Manage/Fields).
+7. **Fields**. Set the following fields. For more information, see [Fields](/docs/manage/fields.md).
     1. component = database
     2. db_system = mysql
     3. db_cluster = <your_mysql_cluster_name>

@@ -6,31 +6,44 @@ description: The Squid Proxy app is a unified logs and metrics app that helps yo
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 <img src={useBaseUrl('img/integrations/web-servers/squid-proxy.png')} alt="Web servers icon" width="75"/>
 
 The Squid Proxy app is a unified logs and metrics app that helps you monitor activity in Squid Proxy. The preconfigured dashboards provide insight into served and denied requests; performance metrics; IP domain DNS statistics; traffic details; HTTP response codes; URLs experiencing redirects, client errors, and server errors; and quality of service data that helps you understand your users’ experience.
 
 This App is tested with the following Squid Proxy versions:
-* **Non-Kubernetes**: Squid Proxy version: 6.0.0
 * **Kubernetes**: Squid Proxy version: 6.0.0
+* **Non-Kubernetes**: Squid Proxy version: 6.0.0
 
 
 ## Collecting Logs and Metrics for the Squid Proxy App
 
-This page provides instructions for configuring log and metric collection for the Sumo Logic App for Squid Proxy.
+This section provides instructions for configuring log and metric collection for the Sumo Logic App for Squid Proxy.
 
-Configuring log and metric collection for the Squid Proxy App includes the following tasks:
+### Step 1: Configure Fields in Sumo Logic
 
-* [Configure Fields in Sumo Logic](#configure-fields-in-sumo-logic)
-* [Configure Collection for Squid Proxy](#configure-collection-for-squid-proxy)
-    * [Collect Logs and Metrics for Non-Kubernetes environments](#for-non-kubernetes-environments)
-    * [Collect Logs and Metrics for Kubernetes environments](#for-kubernetes-environments)
+Create the following fields in Sumo Logic prior to configuring the collection. This ensures that your logs and metrics are tagged with relevant metadata, which is required by the app dashboards. For information on setting up fields, see the [Fields](/docs/manage/fields.md) help page.
 
+<Tabs
+  className="unique-tabs"
+  defaultValue="k8s"
+  values={[
+    {label: 'Kubernetes environments', value: 'k8s'},
+    {label: 'Non-Kubernetes environments', value: 'non-k8s'},
+  ]}>
 
-### Configure Fields in Sumo Logic
+<TabItem value="k8s">
 
-Create the following fields in Sumo Logic prior to configuring the collection. This ensures that your logs and metrics are tagged with relevant metadata, which is required by the app dashboards. For information on setting up fields, see the [Fields](https://help.sumologic.com/Manage/Fields) help page.
+If you are using Squid Proxy in a Kubernetes environment, create the fields:
+* `pod_labels_component`
+* `pod_labels_environment`
+* `pod_labels_proxy_system`
+* `pod_labels_proxy_cluster`
+
+</TabItem>
+<TabItem value="non-k8s">
 
 If you are using Squid Proxy in a non-Kubernetes environment, create the fields:
 * `component`
@@ -39,23 +52,25 @@ If you are using Squid Proxy in a non-Kubernetes environment, create the fields:
 * `proxy_cluster`
 * `pod`
 
-If you are using Squid Proxy in a Kubernetes environment, create the fields:
-* `pod_labels_component`
-* `pod_labels_environment`
-* `pod_labels_proxy_system`
-* `pod_labels_proxy_cluster`
+</TabItem>
+</Tabs>
 
-
-### Configure Collection for Squid Proxy
+### Step 2: Configure Logs and Metrics Collection for Squid Proxy
 
 Sumo Logic supports the collection of logs and metrics data from Squid Proxy in both Kubernetes and non-Kubernetes environments.
 
-Click on the appropriate links below based on the environment where your Squid Proxy clusters are hosted.
-* [Collect Logs and Metrics for Kubernetes environments](#for-kubernetes-environments)
-* [Collect Logs and Metrics for Non-Kubernetes environments](#for-non-kubernetes-environments)
+Click on the appropriate tabs below based on the environment where your Squid Proxy clusters are hosted.
 
 
-#### For Kubernetes environments
+<Tabs
+  className="unique-tabs"
+  defaultValue="k8s"
+  values={[
+    {label: 'Kubernetes environments', value: 'k8s'},
+    {label: 'Non-Kubernetes environments', value: 'non-k8s'},
+  ]}>
+
+<TabItem value="k8s">
 
 <img src={useBaseUrl('img/integrations/web-servers/squid-proxy-k8s-flow.png')} alt="Squid Proxy" />
 
@@ -94,6 +109,7 @@ acl snmppublic snmp_community public
 snmp_port 3401
 snmp_access allow snmppublic localhost
 ```
+
 1. Add annotations on your Squid Proxy pods.
 
 <details><summary><strong>Click to expand.</strong> On your Squid Proxy Pods, add the following annotations:</summary>
@@ -360,11 +376,12 @@ annotations:
 3. The following form appears:
 
 
-#### For Non-Kubernetes environments
+</TabItem>
+<TabItem value="non-k8s">
+
+Sumo Logic uses the Telegraf operator for Squid Proxy metric collection and the [Installed Collector](https://help.sumologic.com/03Send-Data/Installed-Collectors/01About-Installed-Collectors) for collecting Squid Proxy logs. The diagram below illustrates the components of the Squid Proxy collection in a non-Kubernetes environment. Telegraf uses the [SNMP input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/snmp) to obtain Squid Proxy metrics and the Sumo Logic output plugin to send the metrics to Sumo Logic. Logs from Squid Proxy are collected by a [Local File Source](https://help.sumologic.com/03Send-Data/Sources/01Sources-for-Installed-Collectors/Local-File-Source).
 
 <img src={useBaseUrl('img/integrations/web-servers/non-k8s-flow.png')} alt="Squid Proxy" />
-
-Sumo Logic uses the Telegraf operator for Squid Proxy metric collection and the [Installed Collector](https://help.sumologic.com/03Send-Data/Installed-Collectors/01About-Installed-Collectors) for collecting Squid Proxy logs. The diagram below illustrates the components of the  Squid Proxy collection in a non-Kubernetes environment. Telegraf uses the[ SNMP input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/snmp) to obtain Squid Proxy metrics and the Sumo Logic output plugin to send the metrics to Sumo Logic. Logs from Squid Proxy are collected by a [Local File Source](https://help.sumologic.com/03Send-Data/Sources/01Sources-for-Installed-Collectors/Local-File-Source).
 
 The process to set up collection for Squid Proxy data is done through the following steps:
 
@@ -720,6 +737,8 @@ pod_labels_environment=* pod_labels_component=proxy pod_labels_proxy_cluster=* p
 1. Click **Save** to create the rule.
 
 
+</TabItem>
+</Tabs>
 
 ## Installing Squid Proxy Monitors
 

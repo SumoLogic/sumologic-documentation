@@ -58,7 +58,7 @@ This section walks you through the process of creating a new Sumo Logic hosted c
 4. Provide a **Name** for the Collector.
 5. A **description** is optional.
 6. **Category**. Enter any string to tag the logs collected from this Collector. This Source Category value is stored in a searchable metadata field called `_sourceCategory`. See our [Best Practices: Good Source Category, Bad Source Category](https://help.sumologic.com/03Send-Data/01-Design-Your-Deployment/Best-Practices%3A-Good-Source-Category%2C-Bad-Source-Category).
-7. Click the **+Add Field** link in the **Fields** section to define the [fields](https://help.sumologic.com/Manage/Fields) you want to associate, each field needs a key and value.
+7. Click the **+Add Field** link in the **Fields** section to define the [fields](/docs/manage/fields.md) you want to associate, each field needs a key and value.
     *
 1
  A green circle with a check mark is shown when the field exists in the Fields table schema.
@@ -132,7 +132,7 @@ The token is deleted if you delete the source. To change a token, use the **Rege
 3. Select **Cloud Syslog**.
 4. Enter a **Name** to display for this source in Sumo. Description is optional.
 5. (Optional) For **Source Host** and **Source Category**, enter any string to tag the output collected from this source. (Category metadata is stored in a searchable field called **_sourceCategory**.)
-6. **Fields**. Click the **+Add Field** link to add custom log metadata [Fields](https://help.sumologic.com/Manage/Fields).
+6. **Fields**. Click the **+Add Field** link to add custom log metadata [Fields](/docs/manage/fields.md).
     * Define the fields you want to associate, each field needs a name (key) and value.
         *
 6

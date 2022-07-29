@@ -49,7 +49,7 @@ Tue Aug 15 23:30:09 %ASA-6-302016: Teardown UDP connection 40 for outside:44.44.
 
 ### Field Extraction Rule
 
-This Field Extraction Rule (FER) is provided as an example to help you reduce your overall parsing time. Note that not all parse operators are supported in FERs. For more information, see [Creating a Field Extraction Rule](https://help.sumologic.com/Manage/Field-Extractions/Create-a-Field-Extraction-Rule).
+This Field Extraction Rule (FER) is provided as an example to help you reduce your overall parsing time. Note that not all parse operators are supported in FERs. For more information, see [Creating a Field Extraction Rule](/docs/manage/field-extractions/create-field-extraction-rule.md).
 
 
 5

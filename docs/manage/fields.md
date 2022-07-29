@@ -1,8 +1,9 @@
 ---
 id: fields
+title: Sumo Logic Fields
+sidebar_label: Fields 
 ---
 
-# Fields
 
 Fields allow you to reference log data based on meaningful associations. They act as metadata tags that are assigned to your logs so you can search with them. Each field contains a key-value pair, where the field name is the key. Fields may be referred to as Log Metadata Fields.
 
@@ -56,20 +57,20 @@ Fields can be assigned to a Collector and Source using the **Fields** input ta
 1. Create or find and select the Collector or Source you want to assign fields to.
 1. Click the **+Add Field** link in the **Fields** section. Define the fields you want to associate, each field needs a name (key) and value.
 
-    * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema. 
+    * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
     * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema it is ignored, known as dropped.
 
-1. **Automatically activate all fields on save**.  
+1. **Automatically activate all fields on save**. 
 
     If you click **Automatically activate all fields on save**:
 
     * The field will be saved to your Fields schema.
     * The field will be applied to logs collected by the Collector or Source.
-    * If you are adding the field to an HTTP Source, or to a Collector that has an HTTP Source, the field will be applied to the metrics collected by the source. 
+    * If you are adding the field to an HTTP Source, or to a Collector that has an HTTP Source, the field will be applied to the metrics collected by the source.
 
-    If you do not click **Automatically activate all fields on save**: 
-   
-    * The field will be *not* be saved to your Fields schema 
+    If you do not click **Automatically activate all fields on save**:
+
+    * The field will be *not* be saved to your Fields schema
     * The field will be applied to logs collected by the Collector or Source, but because the field won’t be added to your Fields schema, it will be dropped by Sumo Logic when logs with that field are ingested.
     * If you are adding the field to an HTTP Source, or to a Collector that has an HTTP Source, the field will be applied to the metrics collected by the source.
 
@@ -227,10 +228,10 @@ The **Manage Data** \> **Logs** \> **Fields** page displays the following info
 On the **Manage Data \> Logs \> Fields** page you can:
 
 * Click **+ Add** to add fields.
-* Search fields * The dropdown next to the add button lets you toggle between the following: 
+* Search fields * The dropdown next to the add button lets you toggle between the following:
 
-  * **Existing -** **Built-in Fields**. These are [metadata fields created by Sumo Logic](../search/get-started-with-search/search-basics/built-in-metadata.md) and cannot be modified. 
-  * **Existing - Custom Fields**. These fields were either created by FERs or users. 
+  * **Existing -** **Built-in Fields**. These are [metadata fields created by Sumo Logic](../search/get-started-with-search/search-basics/built-in-metadata.md) and cannot be modified.
+  * **Existing - Custom Fields**. These fields were either created by FERs or users.
   * **Dropped Fields**. These fields are being dropped due to not existing in the fields table.
 
 * Disable fields

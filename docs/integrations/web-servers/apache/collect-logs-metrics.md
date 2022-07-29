@@ -6,23 +6,24 @@ description: This page provides instructions for configuring log and metric coll
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 This page provides instructions for configuring log and metrics collection for the Sumo Logic App for Apache.
 
-* Step 1: [Configure Fields in Sumo Logic](#configure-fields-in-sumo-logic)
-* Step 2: [Configure Your Environment for Apache Logs and Metrics Collection](#configure-your-environment-for-apache)
-   * [For Non-Kubernetes environments](#collect-apache-logs-and-metrics-for-non-kubernetes-environments)
-   * [For Kubernetes environments](#collect-apache-logs-and-metrics-for-kubernetes-environments)
+## Step 1: Configure Fields in Sumo Logic
 
-## Configure Fields in Sumo Logic
+Create the following Fields in Sumo Logic prior to configuring collection. This ensures that your logs and metrics are tagged with relevant metadata, which is required by the app dashboards. For information on setting up fields, see the [Fields](/docs/manage/fields.md) help page.
 
-Create the following Fields in Sumo Logic prior to configuring collection. This ensures that your logs and metrics are tagged with relevant metadata, which is required by the app dashboards. For information on setting up fields, see the [Fields](https://help.sumologic.com/Manage/Fields) help page.
+<Tabs
+  className="unique-tabs"
+  defaultValue="k8s"
+  values={[
+    {label: 'Kubernetes environments', value: 'k8s'},
+    {label: 'Non-Kubernetes environments', value: 'non-k8s'},
+  ]}>
 
-If you are using Apache in a non-Kubernetes environment create the fields:
-* `component`
-* `environment`
-* `webserver_system`
-* `webserver_farm`
+<TabItem value="k8s">
 
 If you are using Apache in a Kubernetes environment, create the fields:
 * `pod_labels_component`
@@ -30,14 +31,31 @@ If you are using Apache in a Kubernetes environment, create the fields:
 * `pod_labels_webserver_system`
 * `pod_labels_webserver_farm`
 
+</TabItem>
+<TabItem value="non-k8s">
 
-## Configure Your Environment for Apache
-Sumo Logic supports collection of logs and metrics data from Apache in both Kubernetes and non-Kubernetes environments.
+If you are using Apache in a non-Kubernetes environment create the fields:
+* `component`
+* `environment`
+* `webserver_system`
+* `webserver_farm`
 
-Please click on the appropriate links below based on the environment where your Apache farms are hosted.
-* [Collect Apache Logs and Metrics for Non-Kubernetes environments](https://help.sumologic.com/07Sumo-Logic-Apps/24Web_Servers/Apache/01-Collect-Logs-for-Apache/Collect_Apache_Logs_and_Metrics_for_Non-Kubernetes_environments)
-* [Collect Apache Logs and Metrics for Kubernetes environments](https://help.sumologic.com/07Sumo-Logic-Apps/24Web_Servers/Apache/01-Collect-Logs-for-Apache/Collect_Apache_Logs_and_Metrics_for_Kubernetes_environments)
+</TabItem>
+</Tabs>
 
+## Step 2: Configure Your Environment for Apache Logs and Metrics Collection
+
+Sumo Logic supports collection of logs and metrics data from Apache in both Kubernetes and non-Kubernetes environments. Please click on the appropriate link below based on the environment where your Apache farms are hosted.
+
+<Tabs
+  className="unique-tabs"
+  defaultValue="k8s"
+  values={[
+    {label: 'Kubernetes environments', value: 'k8s'},
+    {label: 'Non-Kubernetes environments', value: 'non-k8s'},
+  ]}>
+
+<TabItem value="k8s">
 
 ### For Kubernetes environments
 
@@ -132,7 +150,7 @@ For more information on configuring the Apache input plugin for Telegraf, see [t
 
 This section explains the steps to collect Apache logs from a Kubernetes environment.
 
-##### Collect Apache logs written to standard output and standard error
+Collect Apache logs written to standard output and standard error
 
 If your Apache helm chart/pod is writing the logs to standard output or standard error then follow the steps listed below to collect the logs:
 
@@ -190,6 +208,8 @@ Labels created in Kubernetes environments automatically are prefixed with pod_la
   webserver_farm=<your_apache_webserver_farmname>
   ```
 
+</TabItem>
+<TabItem value="non-k8s">
 
 ### For Non-Kubernetes environments
 
@@ -350,7 +370,7 @@ For access logs, the following directive is to be noted
 * **File Path (Required).** Enter the path to your apache access logs. The files are typically located in /var/log/apache2/access_log. If you are using a customized path, check the httpd.conf file for this information.
 * **Source Host.** Sumo Logic uses the hostname assigned by the OS unless you enter a different host name
 * **Source Category.** Enter any string to tag the output collected from this Source, such as **Prod/Apache/Access**. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details see[ Best Practices](https://help.sumologic.com/03Send-Data/01-Design-Your-Deployment/Best-Practices%3A-Good-Source-Category%2C-Bad-Source-Category).)
-* **Fields. Set the following fields. For more information on fields please see [this document](https://help.sumologic.com/Manage/Fields):**
+* **Fields. Set the following fields. For more information on fields please see [this document](/docs/manage/fields.md):**
     * **component = webserver**
     * **webserver_system = apache**
     * **webserver_farm = <your_apache_webserver_farmname>**
@@ -380,7 +400,7 @@ The values of `webserver_farm` and `environment` should be the same as they were
 * **File Path (Required).** Enter the path to your error_log. The files are typically located in /var/log/apache2/error_log. If you are using a customized path, check the httpd.conf file for this information.
 * **Source Host.** Sumo Logic uses the hostname assigned by the OS unless you enter a different host name
 * **Source Category.** Enter any string to tag the output collected from this Source, such as **Prod/Apache/Error**. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details see[ Best Practices](https://help.sumologic.com/03Send-Data/01-Design-Your-Deployment/Best-Practices%3A-Good-Source-Category%2C-Bad-Source-Category).)
-* **Fields. Set the following fields. For more information on fields please see [this document](https://help.sumologic.com/Manage/Fields):**
+* **Fields. Set the following fields. For more information on fields please see [this document](/docs/manage/fields.md):**
     * `component = webserver`
     * `webserver_system = apache`
     * `webserver_farm = <your_apache_webserver_farmname>`
@@ -402,11 +422,12 @@ The values of webserver_farm and environment should be the same as they were con
 
 At this point, Apache Error logs should start flowing into Sumo Logic.
 
-
+</TabItem>
+</Tabs>
 
 ## Sample Log Messages
 
-### For Kubernetes environments
+**For Kubernetes environments**
 
 ```bash title="Access Logs"
 {
@@ -427,7 +448,7 @@ At this point, Apache Error logs should start flowing into Sumo Logic.
 ```
 
 
-### For Non-Kubernetes environments
+**For Non-Kubernetes environments**
 
 ```bash title="Access Logs"
 192.168.29.177 - - [26/Apr/2021:12:18:32 +0530] "GET /server-status HTTP/1.1" 404 196
@@ -453,3 +474,141 @@ webserver_system=apache webserver_farm=* HTTP (40* OR 41* OR 42* OR 43* OR 44* o
 | sort count, src_ip asc
 | limit 5
 ```
+
+## Apache Metrics List
+
+Here are the metrics available for Apache.
+
+<table>
+  <tr>
+   <td><strong>List of Apache Telegraf metrics</strong></td>
+  </tr>
+  <tr>
+   <td><code>apache_BusyWorkers</code>
+   </td>
+  </tr>
+  <tr>
+   <td><code>apache_BytesPerReq</code>
+   </td>
+  </tr>
+  <tr>
+   <td><code>apache_BytesPerSec</code>
+   </td>
+  </tr>
+  <tr>
+   <td><code>apache_CPUChildrenSystem</code>
+   </td>
+  </tr>
+  <tr>
+   <td><code>apache_CPUChildrenUser</code>
+   </td>
+  </tr>
+  <tr>
+   <td><code>apache_CPULoad</code>
+   </td>
+  </tr>
+  <tr>
+   <td><code>apache_CPUSystem</code>
+   </td>
+  </tr>
+  <tr>
+   <td><code>apache_CPUUser</code>
+   </td>
+  </tr>
+  <tr>
+   <td><code>apache_DurationPerReq</code>
+   </td>
+  </tr>
+  <tr>
+   <td><code>apache_IdleWorkers</code>
+   </td>
+  </tr>
+  <tr>
+   <td><code>apache_Load1</code>
+   </td>
+  </tr>
+  <tr>
+   <td><code>apache_Load5</code>
+   </td>
+  </tr>
+  <tr>
+   <td><code>apache_Load15</code>
+   </td>
+  </tr>
+  <tr>
+   <td><code>apache_ParentServerConfigGeneration</code>
+   </td>
+  </tr>
+  <tr>
+   <td><code>apache_ParentServerMPMGeneration</code>
+   </td>
+  </tr>
+  <tr>
+   <td><code>apache_ReqPerSec</code>
+   </td>
+  </tr>
+  <tr>
+   <td><code>apache_ServerUptimeSeconds</code>
+   </td>
+  </tr>
+  <tr>
+   <td><code>apache_TotalAccesses</code>
+   </td>
+  </tr>
+  <tr>
+   <td><code>apache_TotalDuration</code>
+   </td>
+  </tr>
+  <tr>
+   <td><code>apache_TotalkBytes</code>
+   </td>
+  </tr>
+  <tr>
+   <td><code>apache_Uptime</code>
+   </td>
+  </tr>
+  <tr>
+   <td><code>apache_scboard_closing</code>
+   </td>
+  </tr>
+  <tr>
+   <td><code>apache_scboard_dnslookup</code>
+   </td>
+  </tr>
+  <tr>
+   <td><code>apache_scboard_finishing</code>
+   </td>
+  </tr>
+  <tr>
+   <td><code>apache_scboard_idle_cleanup</code>
+   </td>
+  </tr>
+  <tr>
+   <td><code>apache_scboard_keepalive</code>
+   </td>
+  </tr>
+  <tr>
+   <td><code>apache_scboard_logging</code>
+   </td>
+  </tr>
+  <tr>
+   <td><code>apache_scboard_open</code>
+   </td>
+  </tr>
+  <tr>
+   <td><code>apache_scboard_reading</code>
+   </td>
+  </tr>
+  <tr>
+   <td><code>apache_scboard_sending</code>
+   </td>
+  </tr>
+  <tr>
+   <td><code>apache_scboard_starting</code>
+   </td>
+  </tr>
+  <tr>
+   <td><code>apache_scboard_waiting</code>
+   </td>
+  </tr>
+</table>

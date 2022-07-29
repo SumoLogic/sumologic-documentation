@@ -58,12 +58,12 @@ The S3 bucket name is not part of the path. Don’t include the bucket name when
 
 ### Field in Field Schema
 
-Login to Sumo Logic, go to **Manage Data** > **Logs** > **Fields**. Search for the **apiname** field. If not present, create it. Learn how to create and manage fields [here](https://help.sumologic.com/Manage/Fields#manage-fields).
+Login to Sumo Logic, go to **Manage Data** > **Logs** > **Fields**. Search for the **apiname** field. If not present, create it. Learn how to create and manage fields [here](/docs/manage/fields.md#manage-fields).
 
 
 ### Field Extraction Rule(s)
 
-Create Field Extraction Rule for CloudTrail Logs. Learn how to create Field Extraction Rule [here](https://help.sumologic.com/Manage/Field-Extractions/Create-a-Field-Extraction-Rule).
+Create Field Extraction Rule for CloudTrail Logs. Learn how to create Field Extraction Rule [here](/docs/manage/field-extractions/create-field-extraction-rule.md).
 
 
 ```

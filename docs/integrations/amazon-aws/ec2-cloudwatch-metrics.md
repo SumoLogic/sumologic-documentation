@@ -102,7 +102,7 @@ To configure a CloudTrail Source, perform these steps:
 
 ### Field in Field Schema
 
-Login to Sumo Logic,  go to Manage Data > Logs > Fields. Search for the “**instanceid**” field. If not present, create it. Learn how to create and manage fields [here](https://help.sumologic.com/Manage/Fields#manage-fields).
+Login to Sumo Logic,  go to Manage Data > Logs > Fields. Search for the “**instanceid**” field. If not present, create it. Learn how to create and manage fields [here](/docs/manage/fields.md#manage-fields).
 
 
 ### CloudTrail FER

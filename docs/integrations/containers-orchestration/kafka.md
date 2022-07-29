@@ -37,7 +37,7 @@ Configuring log and metric collection for the Kafka App includes the following t
 
 ### Step 1: Configure Fields in Sumo Logic
 
-Create the following Fields in Sumo Logic prior to configuring collection. This ensures that your logs and metrics are tagged with relevant metadata, which is required by the app dashboards. For information on setting up fields, see the [Fields](https://help.sumologic.com/Manage/Fields) help page.
+Create the following Fields in Sumo Logic prior to configuring collection. This ensures that your logs and metrics are tagged with relevant metadata, which is required by the app dashboards. For information on setting up fields, see the [Fields](/docs/manage/fields.md) help page.
 
 If you are using Kafka in a  non-Kubernetes environment create the fields:
 * component
@@ -176,7 +176,7 @@ To add a Local File Source source for Kafka do the following
 * **File Path (Required).** Enter the path to your server.log and controller.log. The files are typically located in `/opt/Kafka/kafka_<VERSION>/logs/*.log`.
 * **Source Host.** Sumo Logic uses the hostname assigned by the OS unless you enter a different host name
 * **Source Category.** Enter any string to tag the output collected from this Source, such as **Kafka/Logs**. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details see[ Best Practices](https://help.sumologic.com/03Send-Data/01-Design-Your-Deployment/Best-Practices%3A-Good-Source-Category%2C-Bad-Source-Category).)
-* **Fields. **Set the following fields. For more information on fields please see [this document](https://help.sumologic.com/Manage/Fields):
+* **Fields. **Set the following fields. For more information on fields please see [this document](/docs/manage/fields.md):
     * component = messaging
     * messaging_system = kafka
     * messaging_cluster = <Your_KAFKA_Cluster_Name>
