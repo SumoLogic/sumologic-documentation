@@ -4,6 +4,7 @@ title: Install the Monitors, App, and view the Dashboards
 description: This page shows the user how to install the Oracle App and describes the dashboards in this app.
 ---
 
+
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -168,8 +169,10 @@ Panels will start to fill automatically. It's important to note that each panel 
 
 ## Viewing Oracle Dashboards
 
-:::tip Filter with template variables    
+:::tip Filter with template variables  
+
 Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards-new/filter-with-template-variables.md).
+
 :::
 
 
@@ -238,7 +241,7 @@ See information about Oracle errors, including counts of various error types, OR
 
 **Log Switch Activity By Hosts**. An area chart that shows the count of log switch events per one hour timeslice by host. (A log switch is the point at which the database stops writing to one redo log file and begins writing to another.)
 
-**Failures, Warnings and Errors by Instance Source**. An area chart that shows the count of messages from the Oracle Alert log that match patterns like:  fail*,  warn*, or error* .
+**Failures, Warnings and Errors by Instance Source**. An area chart that shows the count of messages from the Oracle Alert log that match patterns like:  `fail*`, `warn*`, or `error*`.
 
 **Archival Errors by Instance**. A stacked column chart that shows the count of messages from the Oracle Alert log that contain the string “Archival Error" by per one hour timeslice by database instance over the previous 24 hours.
 
