@@ -101,11 +101,11 @@ These instructions assume that you are using the latest Helm chart version. If n
 
 This section explains the steps to collect MariaDB metrics from a Kubernetes environment.
 
-In Kubernetes environments, we use the Telegraf Operator, which is packaged with our Kubernetes collection. You can learn more on this[ here](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Collect_Metrics_Using_Telegraf/01_Telegraf_Collection_Architecture). Follow the steps listed below to collect metrics from a Kubernetes environment:
+In Kubernetes environments, we use the Telegraf Operator, which is packaged with our Kubernetes collection. You can learn more on this[ here](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/telegraf-collection-architecture.md). Follow the steps listed below to collect metrics from a Kubernetes environment:
 
 
 
-1. **[Setup Kubernetes Collection with the Telegraf Operator.](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf.md#Install_Telegraf_in_a_Kubernetes_environment)**
+1. [Set up Kubernetes Collection with the Telegraf Operator](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf)
 2. **Add annotations on your MariaDB pods**
 
 On your MariaDB Pods, add the following annotations:
@@ -465,7 +465,7 @@ On the created Hosted Collector on the Collection Management screen, select Add 
 #### Install Telegraf if you haven’t already.
 
 
-Use the[ following steps](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf.md) to install Telegraf.
+Use the [following steps](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf) to install Telegraf.
 
 
 #### Configure and start Telegraf.
@@ -546,7 +546,7 @@ The next few sections provide instructions for installing the MariaDB Monitors, 
 
 ### Pre-Packaged Alerts
 
-Sumo Logic has provided out-of-the-box alerts available through [Sumo Logic monitors](/docs/alerts/monitors/index.md) to help you monitor your MariaDB clusters. These alerts are built based on metrics and logs datasets and include preset thresholds based on industry best practices and recommendations.
+Sumo Logic has provided out-of-the-box alerts available through [Sumo Logic monitors](/docs/alerts/monitors) to help you monitor your MariaDB clusters. These alerts are built based on metrics and logs datasets and include preset thresholds based on industry best practices and recommendations.
 
 For details on the individual alerts, see this [page](https://help.sumologic.com/07Sumo-Logic-Apps/12Databases/MariaDB/MariaDB_Alerts).
 
@@ -554,7 +554,7 @@ For details on the individual alerts, see this [page](https://help.sumologic.com
 * To install these alerts, you need to have the Manage Monitors role capability.
 * Alerts can be installed by either importing a JSON file or a Terraform script.
 
-There are limits to how many alerts can be enabled - see the [Alerts FAQ](/docs/alerts/monitors/monitor-faq.md) for details.
+There are limits to how many alerts can be enabled - see the [Alerts FAQ](/docs/alerts/monitors/monitor-faq) for details.
 
 
 ### Method 1: Importing a JSON file
@@ -574,7 +574,7 @@ Custom filter examples:
 6. Click Import and then copy-paste the above JSON to import monitors.
 
 
-The monitors are disabled by default. Once you have installed the alerts using this method, navigate to the MariaDB folder under **Monitors** to configure them. See [this](/docs/alerts/monitors/index.md) document to enable monitors to send notifications to teams or connections. See the instructions detailed in Step 4 of this [document](https://help.sumologic.com/Visualizations-and-Alerts/Alerts/Monitors#Add_a_monitor).
+The monitors are disabled by default. Once you have installed the alerts using this method, navigate to the MariaDB folder under **Monitors** to configure them. See [this](/docs/alerts/monitors) document to enable monitors to send notifications to teams or connections. See the instructions detailed in Step 4 of this [document](https://help.sumologic.com/Visualizations-and-Alerts/Alerts/Monitors#Add_a_monitor).
 
 
 ### Method 2: Using a Terraform script
@@ -706,7 +706,7 @@ Panels will start to fill automatically. It's important to note that each panel 
 ## Viewing MariaDB Dashboards
 
 :::tip Filter with template variables    
-Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards-new/filter-with-template-variables.md).
+Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards-new/filter-template-variables).
 :::
 
 ### Overview
@@ -811,7 +811,7 @@ The **MariaDB - InnoDB** Metrics dashboard shows replication events, errors, war
 
 ## MariaDB Alerts
 
-Sumo Logic has provided out-of-the-box alerts available through [Sumo Logic monitors](/docs/alerts/monitors/index.md) to help you quickly determine if the MariaDB Database are available and performing as expected. These alerts are built based on logs and metrics datasets and have preset thresholds based on industry best practices and recommendations.
+Sumo Logic has provided out-of-the-box alerts available through [Sumo Logic monitors](/docs/alerts/monitors) to help you quickly determine if the MariaDB Database are available and performing as expected. These alerts are built based on logs and metrics datasets and have preset thresholds based on industry best practices and recommendations.
 
 Sumo Logic provides the following out-of-the-box alerts:
 
