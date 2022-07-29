@@ -11,9 +11,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 The Sumo Logic App for Zscaler Internet Access (ZIA) collects logs via Cloud Nanolog Streaming Service (NSS) to populate pre-configured searches and Dashboards in order to visualize and provide insight into threats, DNS, web traffic behaviors, security, user browsing activities, and risk.
 
 
-#### Log Types
-1
-
+## Log Types
 
 The Sumo Logic App for Zscaler uses NSS feed output logs (Web, Tunnel, DNS, Firewall), as documented [here](https://help.zscaler.com/zia/documentation-knowledgebase/analytics/nss/nss-feeds/formatting-nss-feeds).
 
@@ -24,17 +22,7 @@ Zscaler uses Cloud Nanolog Streaming Service (NSS), which allows direct cloud-to
 
 To collect logs for Zscaler, perform these steps, detailed in the following sections:
 
-1. Configure Sumo Logic Hosted Collector and an HTTP Source.
-2. Configure Zscaler Cloud NSS feeds.
-
-
-2
-
-
-
-#### Configure Sumo Logic Hosted Collector and an HTTP Source
-3
-
+### Step 1: Configure Sumo Logic Hosted Collector and an HTTP Source
 
 To collect logs for Zscaler Web Security, do the following in Sumo Logic:
 
@@ -44,35 +32,22 @@ To collect logs for Zscaler Web Security, do the following in Sumo Logic:
     2. Click **Save** and make note of the HTTP address for the Source. You will need it when you configure the Zscaler Cloud NSS in the next section.
 
 
-#### Configure Zscaler Cloud NSS
-4
-
+### Step 2: Configure Zscaler Cloud NSS
 
 Zscaler uses Cloud Nanolog Streaming Service (NSS), which allows direct cloud-to-cloud log streaming for all types of ZIA logs into Sumo Logic.
 
 To send logs to Sumo Logic using Cloud NSS, add a feed in ZIA using the following steps.
 
-
-
 1. Log into your Zscaler Internet Access system.
 2. Go to **Administration -> Nanolog Streaming Service -> Cloud NSS Feeds**.
 
 
-5
 Cloud NSS is not enabled by default in ZIA. If you do not see Cloud NSS Feeds option in your ZIA environment, create a support request with Zscaler support.
-
-
-6
-
 
 
 
 1. From the **Cloud** **NSS Feeds** tab, click **Add Cloud NSS Feed**.
 2. In the **Add NSS Feed** dialog:
-
-
-7
-
 
 
 
@@ -82,10 +57,6 @@ Cloud NSS is not enabled by default in ZIA. If you do not see Cloud NSS Feeds op
 4. **SIEM Type.**Select **Sumo Logic**.
 5. **API URL. **Paste the HTTP address for the Source generated in the previous section.
 6. **HTTP Headers. No Headers are required for Sumo Logic. If it requires at least one Header, add a dummy Header:**
-
-
-8
-
 
 
 
@@ -107,19 +78,13 @@ Cloud NSS is not enabled by default in ZIA. If you do not see Cloud NSS Feeds op
 
 
 #### (Optional) Configure the Zscaler NSS Feeds
-9
-
 
 If you are not able to use Zscaler Cloud NSS, you can collect logs for the ZIA App using NSS Servers. For DNS, Firewall, and Tunnel logs you can select JSON as the output format for the feed in the Add NSS Feeds dialog. For Web logs you will need to configure the feed as follows:
-
-
 
 1. Log into your Zscaler NSS system.
 2. Go to **Administration > Settings > Nanolog Streaming Service**.
 3. From the **NSS Feeds** tab, click **Add**.
 4. In the **Add NSS Feed** dialog: \
-
-10
 
     1. **Feed Name.** Enter a name for your NSS feed.
     2. **NSS Server.** Select the NSS Server.
@@ -132,12 +97,9 @@ If you are not able to use Zscaler Cloud NSS, you can collect logs for the ZIA A
     9. **Feed Escape Character.** Leave this field blank.
     10. **Feed Output Format.** Select Custom and paste the following:
 
-
 ```
 \{ "sourcetype" : "zscalernss-web", "event" : \{"datetime":"%d{yy}-%02d{mth}-%02d{dd} %02d{hh}:%02d{mm}:%02d{ss}","reason":"%s{reason}","event_id":"%d{recordid}","protocol":"%s{proto}","action":"%s{action}","transactionsize":"%d{totalsize}","responsesize":"%d{respsize}","requestsize":"%d{reqsize}","urlcategory":"%s{urlcat}","serverip":"%s{sip}","clienttranstime":"%d{ctime}","requestmethod":"%s{reqmethod}","refererURL":"%s{ereferer}","useragent":"%s{ua}","product":"NSS","location":"%s{location}","ClientIP":"%s{cip}","status":"%s{respcode}","user":"%s{login}","url":"%s{eurl}","vendor":"Zscaler","hostname":"%s{ehost}","clientpublicIP":"%s{cintip}","threatcategory":"%s{malwarecat}","threatname":"%s{threatname}","filetype":"%s{filetype}","appname":"%s{appname}","pagerisk":"%d{riskscore}","department":"%s{dept}","urlsupercategory":"%s{urlsupercat}","appclass":"%s{appclass}","dlpengine":"%s{dlpeng}","urlclass":"%s{urlclass}","threatclass":"%s{malwareclass}","dlpdictionaries":"%s{dlpdict}","fileclass":"%s{fileclass}","bwthrottle":"%s{bwthrottle}","servertranstime":"%d{stime}","contenttype":"%s{contenttype}","unscannabletype":"%s{unscannabletype}","deviceowner":"%s{deviceowner}","devicehostname":"%s{devicehostname}"\}\}
-
 ```
-
 
 
 1. **Duplicate Logs.** Disabled by default.
@@ -145,14 +107,10 @@ If you are not able to use Zscaler Cloud NSS, you can collect logs for the ZIA A
 1. Click **Save**.
 
 
-#### Sample Log Message
-11
+### Sample Log Message
 
 
-Web Log Sample:
-
-
-```json
+```json title="Web Log Sample"
 {
   "sourcetype": "zscalernss-web",
   "event": {
@@ -202,16 +160,10 @@ Web Log Sample:
 }
 ```
 
-
-
 #### Query Sample
-12
 
 
-**Top 10 Blocked Base URLs**
-
-
-```
+```sql title="Top 10 Blocked Base URLs"
 _sourceCategory=ZIA
 | json field=_raw "event.clientpublicIP", "event.user", "event.url", "event.action" as src_ip, src_user, url, action
 | where action != "Allowed"
@@ -223,29 +175,18 @@ _sourceCategory=ZIA
 
 
 
-## Install the Zscaler Internet Access App and view the Dashboards
+## Install the Zscaler Internet Access App
 
-This page provides instructions on how to install the Zscaler Internet Access App, and provides examples of each of the dashboards. The App preconfigured searches and [Dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/22Security_and_Threat_Detection/Zscaler_Web_Security/Zscaler-Web-Security-Dashboards#Dashboards) provide easy-to-access visual insights into your data.
-
-
-### Install the Sumo Logic App
-13
-
+This section provides instructions on how to install the Zscaler Internet Access App, and provides examples of each of the dashboards. The App preconfigured searches and [Dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/22Security_and_Threat_Detection/Zscaler_Web_Security/Zscaler-Web-Security-Dashboards#Dashboards) provide easy-to-access visual insights into your data.
 
 To install the app, do the following:
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
-
-
 1. From the **App Catalog**, search for and select the app**.**
 2. Select the version of the service you're using and click **Add to Library**.
 
-
-14
 Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](https://help.sumologic.com/01Start-Here/Library/Apps-in-Sumo-Logic/Install-Apps-from-the-Library)
-
-
 
 1. To install the app, complete the following fields.
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
@@ -260,70 +201,62 @@ Once an app is installed, it will appear in your **Personal** folder, or other f
 Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
 
 
-## Viewing Dashboards
+## Viewing ZIA Dashboards
 
 
-### Zscaler- Overview  
+### Zscaler - Overview  
 
 The **Zscaler - Overview** Dashboard provides general information of the Zscaler Web Gateway logs, including Panels that drill-down into the other Zscaler Dashboards. The Overview Dashboard gives a good starting point for detecting anomalies in blocked traffic and geographic hotspots for allowed and blocked traffic.
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/ZIA-Overview.png')} alt="zscaler internet access Dashboard" />
 
 
-#### Zscaler- Behavior  
-18
-
+### Zscaler- Behavior  
 
 The **Zscaler - Behavior** Dashboard focuses on allowed traffic behaviors, showing trends and deviations by users, content types accessed, content categories, super categories, and bandwidth trends.
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/ZIA-Behavior.png')} alt="zscaler internet access Dashboard" />
 
-#### Zscaler- Blocked Traffic  
-20
-
+### Zscaler - Blocked Traffic  
 
 The **Zscaler - Blocked** Traffic Dashboard illustrates outliers in both blocked traffic peaks and multi-dimensional outliers for blocked activity specific to user.
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/ZIA-Blocked-Traffic.png')} alt="zscaler internet access Dashboard" />
 
 
-#### Zscaler- File Classification Activity
-22
-
+### Zscaler - File Classification Activity
 
 The **Zscaler - File Classification Activity** Dashboard focuses on file-based threats by users, threat name, file types, and subtypes for a overarching view of blocked files across the Zscaler environment.
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/ZIA-File-Classification-Activity.png')} alt="zscaler internet access Dashboard" />
 
 
-#### ZIA - DNS
+### ZIA - DNS
 
 The **ZIA - DNS** Dashboard focuses on DNS activity specifically around denied requests and responses, server locations across the Zscaler environment.
 
 Use this dashboard to:
-
 * Gain insights into DNS health and performance.
 * Determine if rules need tweaking based on volume of denied/allowed requests and responses.
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/ZIA-DNS.png')} alt="zscaler internet access Dashboard" />
 
 
-#### ZIA - Logs
+### ZIA - Logs
 
 The **ZIA - Logs** Dashboard gives insights into different logs being produced in the Zscaler environment.
 
-**Use this dashboard to:
+Use this dashboard to:
 * Get quick insights into logs volume by source.
 * View logs filtered by type and users and determine any potential issues.
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/ZIA-Logs.png')} alt="zscaler internet access Dashboard" />
 
-#### ZIA - Threats
+### ZIA - Threats
 
 The **ZIA - Threats** Dashboard focuses on threats in your Zscaler environment.
 
 Use this dashboard to:
-
 * Detect anomalies in blocked traffic and geographic hotspots for allowed and blocked traffic.
 * Gain insights into threats by categories and transactions.
 * Identify locations and users being blocked as a sign of potential suspicious or malicious activity.

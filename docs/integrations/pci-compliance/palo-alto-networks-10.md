@@ -5,11 +5,13 @@ sidebar_label: Palo Alto Networks 10
 description: The Sumo Logic App for PCI Compliance for Palo Alto Networks 10 offers dashboards to monitor firewall traffic activity for compliance with PCI requirements 01, 02, and 04.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 The Sumo Logic App for Payment Card Industry (PCI) Compliance for Palo Alto Networks 10 offers dashboards to monitor firewall traffic activity for compliance with PCI requirements 01, 02, and 04.
 
 
 #### Log types
-1.gif "image_tooltip")
+1
 
 <table>
   <tr>
@@ -42,7 +44,7 @@ This page provides instructions for configuring log collection for the Sumo Logi
 
 
 ### Collection process overview
-2.gif "image_tooltip")
+2
 
 
 Configuring log collection for PCI Compliance for Palo Alto Networks 10 includes the following tasks:
@@ -55,12 +57,12 @@ Configuring log collection for PCI Compliance for Palo Alto Networks 10 includes
 4. Verify logs in Palo Alto Networks
 
 
-3.png "image_tooltip")
+3
 You must have Palo Alto Networks Web administrative user permissions to successfully complete these tasks.
 
 
 ### Step 1. Create a hosted collector and Cloud Syslog source
-4.gif "image_tooltip")
+4
 
 
 In this step you configure a hosted collector with a Cloud Syslog source that will act as Syslog server to receive logs and events from Palo Alto Networks devices.
@@ -76,7 +78,7 @@ In this step you configure a hosted collector with a Cloud Syslog source that wi
 
 
 ### Step 2. Define the destination for the logs
-5.gif "image_tooltip")
+5
 
 
 In this step you create a server profile where you can define the log destination. This will be the host name, port and protocol (TLS) of the Sumo Logic Cloud Syslog source.
@@ -105,14 +107,14 @@ In this step you create a server profile where you can define the log destinatio
 
 
 ### Step 3. Configure syslog forwarding
-6.gif "image_tooltip")
+6
 
 
 To configure syslog forwarding for each Traffic logs, follow the steps to [Configure Log Forwarding](https://docs.paloaltonetworks.com/pan-os/8-1/pan-os-admin/monitoring/configure-log-forwarding) as described in the Palo Networks documentation.
 
 
 ### Step 4. Verify logs in Palo Alto Networks
-7.gif "image_tooltip")
+7
 
 
 In this step, you view logs using the Palo Alto Network Web interface to confirm the logs are generated on the firewall.
@@ -128,7 +130,7 @@ In this step, you view logs using the Palo Alto Network Web interface to confirm
 
 
 ### Sample logs
-8.gif "image_tooltip")
+8
 
 
 The PCI Compliance for Palo Alto Networks 10 App uses [Traffic](https://docs.paloaltonetworks.com/pan-os/9-0/pan-os-admin/monitoring/use-syslog-for-monitoring/syslog-field-descriptions/traffic-log-fields.html) logs.
@@ -141,7 +143,7 @@ Oct 09 10:19:15 SumPunFw07.sumotest.com 1,2019/10/09 10:19:15,001234567890002,TR
 
 
 ### Sample Query
-9.gif "image_tooltip")
+9
 
 
 This example query is from the **Allowed Network Activity by Direction** panel of the **Accepted and Rejected Traffic** dashboard.
@@ -163,13 +165,13 @@ _sourceCategory = Labs/PaloAltoNetworksv10 TRAFFIC allow
 ## Install the PCI for Palo Alto Networks 10 App and View the Dashboards
 
 ### Install the Sumo Logic App
-10.gif "image_tooltip")
+10
 
 
 Now that you have set up collection for PCI for Palo Alto Networks 10 app, you can install app and  use the preconfigured searches and dashboards that provide insight into your data.
 
 
-11.png "image_tooltip")
+11
 This app supports PAN-OS v10.
 
 To install the app:
@@ -182,7 +184,7 @@ Locate and install the app you need from the **App Catalog**. If you want to see
 2. Select the version of the service you're using and click **Add to Library**.
 
 
-12.png "image_tooltip")
+12
 Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](https://help.sumologic.com/01Start-Here/Library/Apps-in-Sumo-Logic/Install-Apps-from-the-Library)
 
 
@@ -200,57 +202,41 @@ Once an app is installed, it will appear in your **Personal** folder, or other f
 Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
 
 
-### Dashboards
-13.gif "image_tooltip")
+## Viewing Dashboards
 
 
-
-##### PCI Req 01 - Accepted and Rejected Traffic
-14.gif "image_tooltip")
-
+### PCI Req 01 - Accepted and Rejected Traffic
 
 **Dashboard description:** See analytics about accepted and rejected firewall traffic, including information about traffic direction; allowed, denied, and silently dropped traffic over time; and the top source and destination IPs for allowed and rejected traffic.
 
 **Use case:** You can use this dashboard to monitor allowed and rejected traffic in accordance with PCI requirement 1. The dashboard helps you identify systems accepting or rejecting traffic, and identify inbound and outbound network connections trends.
 
-
-15.png "image_tooltip")
-
+<img src={useBaseUrl('img/integrations/pci-compliance/PCI-Compliance-For-Palo-Alto-Networks-10-PCI-Req-01-Accepted-and-Rejected-Traffic.png')} alt="Palo Alto 10 dashboards" />
 
 
-##### PCI Req 01 - Traffic Direction Monitoring
-16.gif "image_tooltip")
-
+### PCI Req 01 - Traffic Direction Monitoring
 
 **Dashboard description:** View information about inbound and outbound traffic, including traffic to the cardholder data environment (CDE); details of inbound and outbound traffic; the top 10 hosts sending traffic; and the top 10 hosts receiving traffic.
 
 **Use case: **You can use this dashboard to monitor connections made from external IPs to internal IPs. You can identify top internal IPs receiving traffic from external IPs or sending traffic to external IPs. Similarly, this dashboard helps you identify the amount of traffic generated by different IPs crossing your organization's network boundary.
 
-
-17.png "image_tooltip")
-
+<img src={useBaseUrl('img/integrations/pci-compliance/PCI-Compliance-For-Palo-Alto-Networks-10-PCI-Req-01-Traffic-Direction-Monitoring.png')} alt="Palo Alto 10 dashboards" />
 
 
-##### PCI Req 01, 02 - Data Access Monitoring
-18.gif "image_tooltip")
-
+### PCI Req 01, 02 - Data Access Monitoring
 
 **Dashboard description:** See information about accepted network traffic by application; top TCP and UDP source and destination ports; multi-services detected on the same host; and information about possible port scan attacks, both allowed and rejected.
 
 **Use case:** You can use this dashboard to monitor activities on ports, apps being used, and the protocols used to access apps. The panels help you identify possible port scan attacks, both horizontal and vertical. You can also identify if there are systems on which multiple services are executing.
 
-
-19.png "image_tooltip")
-
+<img src={useBaseUrl('img/integrations/pci-compliance/PCI-Compliance-For-Palo-Alto-Networks-10-PCI-Req-01-02-Data-Access-Monitoring.png')} alt="Palo Alto 10 dashboards" />
 
 
-##### PCI Req 02, 04 - Insecure Data In Transit
-20.gif "image_tooltip")
-
+### PCI Req 02, 04 - Insecure Data In Transit
 
 **Dashboard description:** See analytics about insecure data in transit data, including data transmissions to or from the cardholder data environment (CDE) using an insecure protocol; breakdowns of which apps, hosts, and ports were involved with insecure traffic.   
 
 **Use case:** You can use this dashboard to identify systems and hosts involved in insecure data transit. You can identify insecure connections and port protocols like ftp, telnet, http, rlogin, and so on. You can also identify successful and rejected network connections for insecure connections.
 
 
-21.png "image_tooltip")
+<img src={useBaseUrl('img/integrations/pci-compliance/PCI-Compliance-For-Palo-Alto-Networks-10-PCI-Req-02-04-Insecure-Data-In-Transit.png')} alt="Palo Alto 10 dashboards" />

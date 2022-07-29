@@ -11,11 +11,9 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Palo Alto Networks (PAN) 8 provides a next generation firewall and the Traps Endpoint Security Manager. The Palo Alto Networks 8 App gives you visibility into firewall and traps activity, including information about firewall configuration changes, details about rejected and accepted firewall traffic, traffic events that match the Correlation Objects and Security Profiles you have configured in PAN, and events logged by the Traps Endpoint Security Manager.
 
-#### Log Types  
-1
+## Log Types
 
-The Palo Alto Networks 8 App uses the following log types:
-
+Parsing in the Sumo Logic app for PAN 8 is based on the [PAN-OS Syslog Integration](https://live.paloaltonetworks.com/t5/Tech-Note-Articles/PAN-OS-Syslog-Integration/ta-p/55323) and uses the following log types:
 
 <table>
   <tr>
@@ -72,19 +70,12 @@ The Palo Alto Networks 8 App uses the following log types:
 
 
 
-## Collect Logs for the Palo Alto Networks 8 App
+## Collecting Logs for the Palo Alto Networks 8 App
 
 This page has instructions for collecting logs for the Palo Alto Networks 8 App, as well as examples of field extraction rules, logs, and queries.
 
 
-### Log Types
-2
-
-Parsing in the Sumo Logic app for PAN 8  is based on the PAN-OS Syslog integration, which is described in this document: [PAN-OS Syslog Integration](https://live.paloaltonetworks.com/t5/Tech-Note-Articles/PAN-OS-Syslog-Integration/ta-p/55323).
-
-
 ### Prerequisites
-3
 
 * Configure Syslog Monitoring for your Palo Alto Networks device, as described in [Configure Syslog Monitoring](https://www.paloaltonetworks.com/documentation/80/pan-os/pan-os/monitoring/use-syslog-for-monitoring/configure-syslog-monitoring) in Palo Alto Networks help.
 * This app supports Palo Alto Networks v7 and v8.
@@ -97,13 +88,10 @@ Parsing in the Sumo Logic app for PAN 8  is based on the PAN-OS Syslog integrati
     * [TrapsV4 Logs - field list](https://www.paloaltonetworks.com/documentation/traps/4-2/traps-endpoint-security-manager-admin/reports-and-logging/forward-logs-to-an-external-logging-platform/cef-format#traps-admin-rpts-cef)
 
 
-4
 Refer [PAN-OS 8](https://docs.paloaltonetworks.com/pan-os/8-0/pan-os-admin/monitoring/use-the-automated-correlation-engine.html) and [PAN-OS 8.1](https://docs.paloaltonetworks.com/pan-os/8-1/pan-os-admin/monitoring/use-the-automated-correlation-engine.html) documentation for devices supporting Correlated Event Logs.
 
 
 ### Configure a collector and source
-5
-
 
 In this step you configure a installed collector with a Syslog source that will act as Syslog server to receive logs and events from Palo Alto Networks 8 devices.
 
@@ -118,68 +106,47 @@ In this step you configure a installed collector with a Syslog source that will 
 
 
 ### Field Extraction Rules
-6
 
 
+#### System Log Parsing
 
-##### System Log Parsing
-7
-
-
-
-8
 It is recommended that you add **SYSTEM** as a keyword in the scope for the rule.
 
 
-```
+```sql
 _sourceCategory=Loggen/PAN/System ",SYSTEM,"
 | csv _raw extract 1 as f1, 2 as Receive_Time, 3 as serialNum, 4 as type, 5 as subtype, 6 as f2, 7 as LogGenerationTime, 8 as vsys, 9 as eventID, 10 as Object, 11 as f3, 12 as f4, 13 as Module, 14 as severity, 15 as description, 16 as seqNum, 17 as action_flags, 18 as Device_Group_Hierarchy, 19 as vsys_name, 20 as DeviceName
 ```
 
 
 
-##### Threat Log parsing
-9
+#### Threat Log parsing
 
-
-
-10
 It is recommended that you add **THREAT** as a keyword in the scope for the rule.
 
 
-```
+```sql
 _sourceCategory=Loggen/PAN/Threat THREAT
 | csv _raw extract 1 as f1, 2 as Receive_Time, 3 as serialNum, 4 as type, 5 as subtype, 6 as f2, 7 as LogGenerationTime, 8 as src_ip, 9 as dest_ip, 10 as NAT_src_ip, 11 as NAT_dest_ip, 12 as ruleName, 13 as src_user, 14 as dest_user, 15 as app, 16 as vsys, 17 as src_zone, 18 as dest_zone, 19 as inbound_interface, 20 as outbound_interface, 21 as LogAction, 22 as f3, 23 as SessonID, 24 as RepeatCount, 25 as src_port, 26 as dest_port, 27 as NAT_src_port, 28 as NAT_dest_port, 29 as flags, 30 as protocol, 31 as action, 32 as urlORFileName, 33 as Threat_Content_Name, 34 as category, 35 as severity, 36 as direction, 37 as seqNum, 38 as action_flags, 39 as src_country, 40 as dest_country, 41 as f4, 42 as content_type, 43 as pcap_id, 44 as filedigest, 45 as cloud, 46 as url_idx, 47 as user_agent, 48 as filetype, 49 as xff, 50 as referer, 51 as sender, 52 as subject, 53 as recipient, 54 as reportid, 55 as Device_Group_Hierarchy, 56 as vsys_name, 57 as DeviceName, 58 as f5, 59 as Source_VM_UUID, 60 as Destination_VM_UUID, 61 as Parent_Session_ID, 62 as Tunnel_ID_IMSI, 63 as Monitor_Tag_IMEI, 64 as method, 65 as parent_start_time, 66 as Tunnel, 67 as thr_category, 68 as contentver, 69 as f6, 70 as SCTP_Association_ID, 71 as Payload_Protocol_ID, 72 as http_headers
 ```
 
 
 
-##### Correlation Log Parsing
-11
+#### Correlation Log Parsing
 
-
-
-12
 It is recommended that you add **CORRELATION** as a keyword in the scope for the rule.
 
-
-```
+```sql
 _sourceCategory=Loggen/PAN/Correlation ",CORRELATION,"
 | csv _raw extract 1 as f1, 2 as Receive_Time, 3 as serialNum, 4 as type, 5 as subtype, 6 as f2, 7 as LogGenerationTime, 8 as src_ip, 9 as src_user, 10 as vsys, 11 as Category, 12 as Severity, 13 as Device_Group_Hierarchy, 14 as vsys_name, 15 as DeviceName, 16 as vSysID, 17 as Object_Name, 18 as Object_ID, 19 as Evidence
 ```
 
 
+#### Configuration Log Parsing
 
-##### Configuration Log Parsing
-13
-
-
-
-14
 It is recommended that you add **CONFIG** as a keyword in the scope for the rule.
 
-
-```
+```sql
 _sourceCategory=Loggen/PAN/Config ",CONFIG,"
 | csv _raw extract 1 as f1, 2 as Receive_Time, 3 as serialNum, 4 as type, 5 as subtype, 6 as f2, 7 as LogGenerationTime, 8 as src_ip, 9 as src_user, 10 as cmd, 11 as admin, 12 as client, 13 as result, 14 as path, 15 as seqno, 16 as action_flags, 17 as vsys, 18 as before_change_detail, 19 as after_change_detail, 20 as Device_Group_Hierarchy, 21 as vsys_name, 22 as DeviceName
 ```
@@ -187,11 +154,9 @@ _sourceCategory=Loggen/PAN/Config ",CONFIG,"
 
 
 ##### TrapsV4 Log Parsing
-15
 
 
-
-```
+```sql
 _sourceCategory=Loggen/PAN/TrapsV4 CEF "|Palo Alto Networks|"
 | parse "CEF:0|Palo Alto Networks|*|*|*|Agent|*|rt=* dhost=* duser=* msg=*" as TrapsComponent, productVersion, event, ExternalSeverity, rt, dhost, duser, msg nodrop
 | parse "CEF:0|Palo Alto Networks|*|*|*|Policy|*|rt=* shost=* suser=* msg=*" as TrapsComponent, productVersion, event, ExternalSeverity, rt, shost, suser, msg nodrop
@@ -214,108 +179,52 @@ _sourceCategory=Loggen/PAN/TrapsV4 CEF "|Palo Alto Networks|"
 
 
 
-##### Traffic Log Parsing
-16
+#### Traffic Log Parsing
 
-
-
-17
 It is recommended that you add **TRAFFIC** as a keyword in the scope for the rule.
 
-
-```
+```sql
 _sourceCategory=Loggen/PAN/Traffic TRAFFIC
 | csv _raw extract 1 as f1, 2 as Receive_Time, 3 as serialNum, 4 as type, 5 as subtype, 6 as f2, 7 as LogGenerationTime, 8 as src_ip, 9 as dest_ip, 10 as NAT_src_ip, 11 as NAT_dest_ip, 12 as ruleName, 13 as src_user, 14 as dest_user, 15 as app, 16 as vsys, 17 as src_zone, 18 as dest_zone, 19 as inbound_interface, 20 as outbound_interface, 21 as LogAction, 22 as f3, 23 as SessonID, 24 as RepeatCount, 25 as src_port, 26 as dest_port, 27 as NAT_src_port, 28 as NAT_dest_port, 29 as flags, 30 as protocol, 31 as action,32 as bytes, 33 as bytes_sent, 34 as bytes_recv, 35 as Packets, 36 as StartTime, 37 as ElapsedTime, 38 as Category, 39 as f4, 40 as seqNum, 41 as ActionFlags, 42 as src_Country, 43 as dest_country, 44 as pkts_sent, 45 as pkts_received, 46 as session_end_reason, 47 as Device_Group_Hierarchy , 48 as vsys_Name, 49 as DeviceName, 50 as action_source, 51 as Source_VM_UUID, 52 as Destination_VM_UUID, 53 as Tunnel_ID_IMSI, 54 as Monitor_Tag_IMEI, 55 as Parent_Session_ID, 56 as parent_start_time, 57 as Tunnel, 58 as SCTP_Association_ID, 59 as SCTP_Chunks, 60 as SCTP_Chunks_Sent, 61 as SCTP_Chunks_Received
 ```
 
 
-
-
-
 ### Sample Log Messages
-18
 
 
-
-##### Config Log Sample  
-19
-
-
-
-```
+```json title="Config Log Sample"
 Sep 05 12:30:11 SumoStg05 1,2018/09/05 12:30:11,012345678902,CONFIG,0,0,2018/09/05 12:30:11,34.75.147.122,,commit-all,duc,Panorama,Succeeded,,0123456789,0x8000000000000000,0,0,0,0,,SumoStg05
 ```
 
-
-
-##### Correlation Log Sample  
-20
-
-
-
-```
+```txt title="Correlation Log Sample"
 Sep 05 12:00:22 1,2018/09/05 12:00:22,012345678902,CORRELATION,,,2018/09/05 12:00:22,11.95.8.142,npande,,compromised-host,medium,0,0,0,0,,us2,,beacon-heuristics,6005,"Host visited known malware URL (100 times).
 ```
 
 
-
-##### System Log Sample  
-21
-
-
-
-```
+```json title="System Log Sample"
 Sep 05 12:40:15 SumoQA01a 0,2018/09/05 12:40:15,012345678902,SYSTEM,url-filtering,0,2018/09/05 12:40:15,,upgrade-url-database-success,,0,0,general,informational,PAN-DB was upgraded to version 20170529.40084.,538241,0x8000000000000000,0,0,0,0,,SumoQA01a
 ```
 
 
-
-##### Threat Log Sample  
-22
-
-
-
-```
+```json title="Threat Log Sample"
 Sep 05 12:44:11 SumoStg05 0,2018/09/05 12:44:11,012345678902,THREAT,vulnerability,0,2018/09/05 12:44:11,174.234.40.32,240.84.174.144,,,General Web Infrastructure,,duc,web-browsing,vsys1,z2-FW-Sumo-Internal,inside,ethernet1/2,ethernet1/2,LOGreset-both,2018/09/05 12:44:11,320228,1,80,1296,0,0,0x2000,tcp,alert,"adcount.ohmynews.com/js.kti/ohmynews2007/article70@thumbnail3",Suspicious Abnormal HTTP Response Found(40397),news,informational,server-to-client,1077387368,0x8000000000000000,India,10.0.0.0-10.255.255.255,0,,0,,,1,,,,,,,,0,31,43,0,0,,us3,,,,,0,,0,,N/A,protocol-anomaly,AppThreat-52239-48642,0x0
 ```
 
 
-
-##### Traffic Log Sample
-23
-
-
-
-```
+```json title="Traffic Log Sample"
 Sep 05 12:45:15 SumoStg05 0,2018/09/05 12:45:15,012345678901,TRAFFIC,end,0,2018/09/05 12:45:15,182.80.119.50,176.164.175.181,,,Unexpected Traffic,,npande,ping,vsys3,z1-FW-Transit,z3-Sumo-DMZ,ethernet1/2,ethernet1/2,LOGreset-both,2018/09/05 12:45:15,9434,1,0,0,0,0,0x100064,icmp,allow,122,122,0,1,2018/09/05 12:45:15,0,any,0,5134220147,0x8000000000000000,United States,10.0.0.0-10.255.255.255,0,1,0,aged-out,31,42,0,0,,SumoStg05,from-policy,,,0,,0,,N/A
 ```
 
-
-
-##### Traps V4 Sample
-24
-
-
-
-```
+```json title="Traps V4 Sample"
 Sep 05 12:30:15 Host CEF:0|Palo Alto Networks|Traps Agent|3.4.3.19949|Client License Request|Agent|3|rt=Sep 05 12:30:15 dhost=preprod_Linux_SumoQA01a duser=administrator msg=New license request
 ```
 
 
 
-
-
 ### Query Sample
-25
 
 
-
-##### Virus Threats
-26
-
-
-
-```
+```sql title="Virus Threats"
 _sourceCategory=Loggen/PAN/Threat THREAT (virus or "wildfire-virus")
 | csv _raw extract 1 as f1, 2 as Receive_Time, 3 as serialNum, 4 as type, 5 as subtype, 6 as f2, 7 as LogGenerationTime, 8 as src_ip, 9 as dest_ip, 10 as NAT_src_ip, 11 as NAT_dest_ip, 12 as ruleName, 13 as src_user, 14 as dest_user, 15 as app, 16 as vsys, 17 as src_zone, 18 as dest_zone, 19 as inbound_interface, 20 as outbound_interface, 21 as LogAction, 22 as f3, 23 as SessonID, 24 as RepeatCount, 25 as src_port, 26 as dest_port, 27 as NAT_src_port, 28 as NAT_dest_port, 29 as flags, 30 as protocol, 31 as action, 32 as urlORFileName, 33 as Threat_Content_Name, 34 as category, 35 as severity, 36 as direction, 37 as seqNum, 38 as action_flags, 39 as src_country, 40 as dest_country, 41 as f4, 42 as content_type, 43 as pcap_id, 44 as filedigest, 45 as cloud, 46 as url_idx, 47 as user_agent, 48 as filetype, 49 as xff, 50 as referer, 51 as sender, 52 as subject, 53 as recipient, 54 as reportid, 55 as Device_Group_Hierarchy, 56 as vsys_name, 57 as DeviceName, 58 as f5, 59 as Source_VM_UUID, 60 as Destination_VM_UUID, 61 as Parent_Session_ID, 62 as Tunnel_ID_IMSI, 63 as Monitor_Tag_IMEI, 64 as method, 65 as parent_start_time, 66 as Tunnel, 67 as thr_category, 68 as contentver, 69 as f6, 70 as SCTP_Association_ID, 71 as Payload_Protocol_ID, 72 as http_headers
 | where type = "THREAT" and subtype in ("virus","wildfire-virus") and severity != "informational"
@@ -324,68 +233,35 @@ _sourceCategory=Loggen/PAN/Threat THREAT (virus or "wildfire-virus")
 ```
 
 
-
-
-
-## Install the Palo Alto Networks 8 App and View the Dashboards
-
-
-
-1. **Last updated \
-**Oct 14, 2019, 2:29 PM by Elizabeth
-2. **Page restriction \
-**Public
-    * [ Page notifications Off](https://help.sumologic.com/07Sumo-Logic-Apps/22Security_and_Threat_Detection/Palo_Alto_Networks_8/Install_the_Palo_Alto_Networks_8_App_and_View_the_Dashboards#)
-    *  
-    * [Save as PDF](https://help.sumologic.com/@api/deki/pages/6020/pdf/Install%2bthe%2bPalo%2bAlto%2bNetworks%2b8%2bApp%2band%2bView%2bthe%2bDashboards.pdf?stylesheet=default)
-    *  
-    * [ Share](https://help.sumologic.com/07Sumo-Logic-Apps/22Security_and_Threat_Detection/Palo_Alto_Networks_8/Install_the_Palo_Alto_Networks_8_App_and_View_the_Dashboards#)
-
-    Table of contents
-
+## Installing the Palo Alto Networks 8 App
 
 This page provides instructions for installing the Palo Alto Networks 8 App, along with examples of each of the dashboards that provide visual insights into your data.
 
-
-### Install the Sumo Logic App
-27
-
-
-
-28
 This app supports PAN-OS v7 and v8.
 
 To install the app, do the following:
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
-
-
 1. From the **App Catalog**, search for and select the app**.**
 2. Select the version of the service you're using and click **Add to Library**.
 
-
-29
 Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](https://help.sumologic.com/01Start-Here/Library/Apps-in-Sumo-Logic/Install-Apps-from-the-Library)
 
-
-
-1. To install the app, complete the following fields.
+3. To install the app, complete the following fields.
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
     2. **Data Source.** Select either of these options for the data source. 
         * Choose **Source Category**, and select a source category from the list. 
         * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). 
     3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-2. Click **Add to Library**.
+4. Click **Add to Library**.
 
 Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization.
 
 Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
 
 
-## Dashboards
-30
-
+## Viewing Palo Alto Networks 8 Dashboards
 
 
 ### Overview
@@ -414,9 +290,7 @@ Panels will start to fill automatically. It's important to note that each panel 
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/pan8-correlation-analysis.png')} alt="Palo_Alto_Networks_8 Dashboard" />
 
-##### High Severity Threats
-37
-
+### High Severity Threats
 
 **Description:** See information about the top 10 source IPs by bytes; high and critical severity threats by destination ID, and by Source ID; threat distribution by severity; bandwidth consumption by app; and outlier analysis of allowed and rejected requests.
 
@@ -425,9 +299,7 @@ Panels will start to fill automatically. It's important to note that each panel 
 <img src={useBaseUrl('img/integrations/security-threat-detection/pan8-high-severity-threats.png')} alt="Palo_Alto_Networks_8 Dashboard" />
 
 
-##### System Monitoring
-39
-
+### System Monitoring
 
 **Description:** See breakdowns of events by subtype, module, severity, and EventID; objects by severity level and event type; and recent logs to the system feed.
 
@@ -436,9 +308,7 @@ Panels will start to fill automatically. It's important to note that each panel 
 <img src={useBaseUrl('img/integrations/security-threat-detection/pan8-system-monitoring.png')} alt="Palo_Alto_Networks_8 Dashboard" />
 
 
-##### Threat Overview
-41
-
+### Threat Overview
 
 **Description:** See breakdowns of each threat type by severity; threat analytics, including threat outliers and a time comparison of current threats versus threats in the previous hour, day, and previous week; threats affecting the most destination IPs; IPs generating multiple threats; and IPs observing multiple threats.
 
@@ -446,9 +316,7 @@ Panels will start to fill automatically. It's important to note that each panel 
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/pan8-threat-overview.png')} alt="Palo_Alto_Networks_8 Dashboard" />
 
-##### Threat Analysis
-43
-
+### Threat Analysis
 
 **Description:** See analytics and details about threats, including the count of threats whose severity is greater that “Informational”; breakdowns of threats by subtype and severity; and recent critical and non-critical threat feeds.
 
@@ -457,9 +325,7 @@ Panels will start to fill automatically. It's important to note that each panel 
 <img src={useBaseUrl('img/integrations/security-threat-detection/pan8-threat-analysis.png')} alt="Palo_Alto_Networks_8 Dashboard" />
 
 
-##### Traffic Monitoring
-45
-
+### Traffic Monitoring
 
 **Description:** See information about firewall traffic, including protocol usage; top source IPs, apps, destination IPs, source users, and destination ports; and outlier analysis of rejected and accepted traffic.
 
@@ -470,9 +336,7 @@ You can also monitor the types of content being accessed by various apps and vir
 <img src={useBaseUrl('img/integrations/security-threat-detection/pan8-traffic-monitoring.png')} alt="Palo_Alto_Networks_8 Dashboard" />
 
 
-##### Traffic Insight - File Activity
-47
-
+### Traffic Insight - File Activity
 
 **Description:** See information about firewall requests that involved file uploads or downloads, including upload/download event counts; top file types, file names, and apps; and time comparison and outlier analysis of download and upload traffic.
 
@@ -481,9 +345,7 @@ You can also monitor the types of content being accessed by various apps and vir
 <img src={useBaseUrl('img/integrations/security-threat-detection/pan8-traffic-insight-file-activity.png')} alt="Palo_Alto_Networks_8 Dashboard" />
 
 
-##### Traffic Insight - Web Activity
-49
-
+### Traffic Insight - Web Activity
 
 **Description:** See information about firewall requests that involved web browsing activities, including event count; top content types, apps, and URLs; and time comparison and outlier analysis of web browsing activity.
 
@@ -491,7 +353,7 @@ You can also monitor the types of content being accessed by various apps and vir
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/pan8-traffic-insight-web-activity.png')} alt="Palo_Alto_Networks_8 Dashboard" />
 
-##### Traps V4 Monitoring
+### Traps V4 Monitoring
 
 **Description:** See information about trap events, including a count of trap events, a breakdown of trap events by severity, and a breakdown by Traps ESM and Traps Agent.
 

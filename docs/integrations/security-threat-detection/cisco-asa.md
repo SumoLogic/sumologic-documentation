@@ -9,7 +9,6 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/cisco.png')} alt="thumbnail icon" width="75"/>
 
-
 The Cisco ASA App gives you insight into website visitor patterns, monitors infrastructure operations, and provides easy access to threat monitoring. The App uses a predefined parser, searches, and Dashboards which provide visibility into your environment for analysis of overall usage and threats. The Cisco ASA App consists of the following main categories:
 
 * Connection statistics
@@ -22,28 +21,19 @@ The Cisco ASA App gives you insight into website visitor patterns, monitors infr
 The Cisco ASA App assumes logs from the Cisco Adaptive Security Appliance (ASA) firewall product.
 
 
-## Collect Logs for the Cisco ASA App
+## Configuring Log Collection for the Cisco ASA App
 
 This page provides instructions for configuring log collection for the Cisco ASA App, as well as a sample log and field extraction rule.
 
-
-### Prerequisites
-
-Configure your ASA to send its logs to a syslog server. ASA sends syslog on UDP port 514 by default, but you can set the protocol and port.
-
-
-### Configure log collection for the Cisco ASA App
-
 To configure log collection, do the following:
-
-1. Configure an [Installed Collector](https://help.sumologic.com/03Send-Data/Installed-Collectors) appropriate for right for your host environment.
-2. Configure a [Syslog Source](https://help.sumologic.com/03Send-Data/Sources/01Sources-for-Installed-Collectors/Syslog-Source) to the same port and protocol used by your ASA.
+1. Configure your ASA to send its logs to a syslog server. ASA sends syslog on UDP port 514 by default, but you can set the protocol and port.
+2. Configure an [Installed Collector](https://help.sumologic.com/03Send-Data/Installed-Collectors) appropriate for right for your host environment.
+3. Configure a [Syslog Source](https://help.sumologic.com/03Send-Data/Sources/01Sources-for-Installed-Collectors/Syslog-Source) to the same port and protocol used by your ASA.
 
 
 ### Sample Log
-4
 
-```
+```json
 Tue Aug 15 23:30:09 %ASA-6-302016: Teardown UDP connection 40 for outside:44.44.4.4/500 to inside:44.44.2.2/500 duration 0:02:02 bytes 1416
 ```
 
@@ -52,7 +42,6 @@ Tue Aug 15 23:30:09 %ASA-6-302016: Teardown UDP connection 40 for outside:44.44.
 This Field Extraction Rule (FER) is provided as an example to help you reduce your overall parsing time. Note that not all parse operators are supported in FERs. For more information, see [Creating a Field Extraction Rule](/docs/manage/field-extractions/create-field-extraction-rule.md).
 
 
-5
 There is a 200 field name limit for Field Extraction Rules (FER) and once a field is persisted using a FER, it can’t be removed. You can assign different targets to the name, but do not create overlapping messages and source categories.
 
 <details><summary>Click to expand</summary>
@@ -144,7 +133,7 @@ You can use filters to drill down and examine the data on a granular level.
 
 **Each panel has a set of filters** that are applied to the results for that panel only, as shown in the following example. Click the funnel icon in the top panel menu bar to display a list of panel-specific filters.
 
-### Cisco ASA - Overview Dashboard
+### Overview
 
 **Outbound Destinations.** A geolocation query tracks the number of outbound connection and displays their destinations on a map of the world. Results are displayed for the last hour. Click **Show in Search** to see more details of the query results.
 
@@ -156,7 +145,7 @@ You can use filters to drill down and examine the data on a granular level.
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/Cisco_ASA_Overview.png')} alt="Cisco_ASA dashboards" />
 
-### Cisco ASA - Firewall Detail Dashboard
+### Firewall Detail
 
 **Connections Over Time.** Provides information on inbound, outbound, and denied connections over the past hour in increments of five minutes in a stacked area chart.
 
@@ -181,7 +170,7 @@ You can use filters to drill down and examine the data on a granular level.
 <img src={useBaseUrl('img/integrations/security-threat-detection/Cisco_ASA_Firewall_Detail.png')} alt="Cisco_ASA dashboards" />
 
 
-### Cisco ASA - Logs Analytics Dashboard
+### Logs Analytics
 
 **Count of ASA Logs by LogLevel.** Displays the logs by LogLevel and Severity.
 
