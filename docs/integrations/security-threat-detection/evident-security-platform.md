@@ -15,32 +15,19 @@ The Evident.io ESP App provides pre-configured searches and Dashboards that allo
 The Evident.io Evident Security Platform (ESP) streamlines and optimizes vulnerability and risk management. It continuously monitors the AWS cloud, automatically identifies security misconfigurations, enables rapid mitigation of risk through guided remediation and provides visibility to their service through integrations with a central security analytics platform like Sumo Logic. By combining the vulnerability and identified security misconfigurations from Evident and other data sources, you can reduce your security risk and improve your overall security posture.
 
 
-### Log Types
-1
+## Log Types
 
 The Evident.io ESP App collects monitoring alerts.
 
 For details on the log format and definitions, refer to Evident.io documentation at [http://docs.evident.io/](http://docs.evident.io/).
 
 
-## Collect Logs for the Evident.io ESP App
+## Collecting Logs for the Evident.io ESP App
 
 This page demonstrates how to configure log collection for the Evident.io ESP App, and provides an example log message and query.
 
 
-### Process overview
-2
-
-Configuring log collection for Evident.io includes the following tasks:
-
-1. In Sumo Logic, configure a Hosted Collector and HTTP Source.
-2. Configure an Evident.io Integration to AWS Simple Notification Service (SNS).
-3. Subscribe to SNS Notifications.
-4. Enable Raw Message Delivery.
-
-
 ### Step 1. Add a Sumo Logic Collector and Source
-3
 
 1. In Sumo Logic, configure a [Hosted Collector](https://help.sumologic.com/03Send-Data/Hosted-Collectors/Configure-a-Hosted-Collector).
 2. Configure an [HTTP Source](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/HTTP-Source).
@@ -50,8 +37,6 @@ Configuring log collection for Evident.io includes the following tasks:
     3. **Enable Timestamp Parsing. **Activate the check box Extract timestamp information from log files.
     4. **Time Zone.** Select Ignore time zone from log file, and select (UTC) Etc/UTC
 4. **Processing Rules.** Create the following [Mask Rule](https://help.sumologic.com/Manage/Collection/Processing-Rules/Mask-Rules): \
-
-4
 
     5. **Name.** Enable proper timestamp parsing
     6. **Filter. **Enter `\"(?:created_at|updated_at|ended_at)\":\"\d+-\d+-\d+(T)\d+:\d+:\d+.\d+Z\"`
@@ -63,7 +48,6 @@ Configuring log collection for Evident.io includes the following tasks:
 
 
 ### Step 2. Configure an Evident.io Integration with AWS SNS
-5
 
 To configure an Evident.IO Integration with AWS SNS:
 
@@ -72,12 +56,9 @@ To configure an Evident.IO Integration with AWS SNS:
 
 
 ### Step 3. Subscribe to SNS Notifications
-6
 
 Once the Hosted Collector and HTTP Source are configured, subscribe your Hosted Collector to the topic collecting data from Evident.io.
 
-
-7
 
 
 If this is a new SNS topic, first subscribe an email address to it to make sure the path from ESP to the SNS topic works correctly before subscribing the Hosted Collector.
@@ -93,7 +74,6 @@ For example, use the query:  \
 `_sourceCategory=security_evident SubscribeURL`
 8. Then, in the **Messages** tab, find the JSON field `SubscribeURL`, and copy the URL to your clipboard, as shown. \
 
-8
 
 9. In the **AWS Management Console**, select **SNS >Topics**.
 10. Under **Amazon SNS > Actions**, select **Confirm a subscription**.
@@ -101,30 +81,24 @@ For example, use the query:  \
 
 
 ### Step 4. Enable Raw Message Delivery
-9
-
 
 Enable Raw Message Delivery for the topic.
 
 For details, see [http://docs.aws.amazon.com/sns/latest/dg/large-payload-raw-message.html](http://docs.aws.amazon.com/sns/latest/dg/large-payload-raw-message.html).
 
-
-
 1. Select the AWS Topic.
 2. Click **Other subscription actions**.
 3. Click **Edit subscription attributes**. \
 
-10
 
 4. Select the **Raw message delivery** check box. \
-
-11
 
 5. Click **Set subscription attributes.**
 
 
 ### Sample Log Message
-12
+
+<details><summary>Click to expand</summary>
 
 ```json
 {
@@ -280,16 +254,13 @@ For details, see [http://docs.aws.amazon.com/sns/latest/dg/large-payload-raw-mes
 }
 ```
 
+</details>
 
 
 ### Query Sample
-13
 
 
-**Alerts by Status**
-
-
-```sql
+```sql title="Alerts by Status"
 _sourceCategory=security_evident
 | json "data.id", "data.attributes" as id, data_attrib
 | json "included.[0].attributes.name" as account_name
@@ -301,14 +272,7 @@ _sourceCategory=security_evident
 | count by status
 ```
 
-
-## Install the Evident.io ESP App and view the Dashboards
-
-This page provides instructions for installing the Evident.io ESP App, as well an example for each of the App dashboards.
-
-
-### Install the Sumo Logic App
-14
+## Installing the Evident.io ESP App
 
 
 Now that you have configured Evident.io ESP, install the Sumo Logic App for Evident.io ESP to take advantage of the preconfigured searches and [dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/22Security_and_Threat_Detection/Evident.io_Evident_Security_Platform/Evident.io-ESP-App-Dashboards#Dashboards) to analyze your data.
@@ -320,11 +284,7 @@ Locate and install the app you need from the **App Catalog**. If you want to see
 1. From the **App Catalog**, search for and select the app**.**
 2. Select the version of the service you're using and click **Add to Library**.
 
-
-15
 Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](https://help.sumologic.com/01Start-Here/Library/Apps-in-Sumo-Logic/Install-Apps-from-the-Library)
-
-
 
 1. To install the app, complete the following fields.
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
@@ -339,9 +299,7 @@ Once an app is installed, it will appear in your **Personal** folder, or other f
 Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
 
 
-## Dashboards
-16
-
+## Viewing Evident.io Dashboards
 
 ### Evident.io ESP - Overview
 

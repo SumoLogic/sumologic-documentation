@@ -5,10 +5,11 @@ sidebar_label: Palo Alto Networks 9
 description: The Sumo Logic App for PCI Compliance for Palo Alto Networks offers dashboards to monitor firewall traffic activity for compliance with PCI requirements 01, 02, and 04.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 The Sumo Logic App for Payment Card Industry (PCI) Compliance for Palo Alto Networks offers dashboards to monitor firewall traffic activity for compliance with PCI requirements 01, 02, and 04.
 
 #### Log types
-!1.gif "image_tooltip")
 
 
 <table>
@@ -44,7 +45,7 @@ This app supports Palo Alto Networks v9 and v8.
 
 
 ### Step 1. Create a hosted collector and Cloud Syslog source
-!2.gif "image_tooltip")
+!2
 
 
 In this step you configure a hosted collector with a Cloud Syslog source that will act as Syslog server to receive logs and events from Palo Alto Networks devices.
@@ -60,7 +61,7 @@ In this step you configure a hosted collector with a Cloud Syslog source that wi
 
 
 ### Step 2. Define the destination for the logs
-!3.gif "image_tooltip")
+!3
 
 
 In this step you create a server profile where you can define the log destination. This will be the host name, port and protocol (TLS) of the Sumo Logic Cloud Syslog source.
@@ -79,13 +80,11 @@ In this step you create a server profile where you can define the log destinatio
     5. **Format**: `IETF`
     6. **Facility**: `LOG_USER`
 6. In the **Syslog Server Profile** window, select the **Custom Log Format** tab, and use the following custom format for the following log type:
-    7. [Traffic \
-](https://docs.paloaltonetworks.com/pan-os/9-0/pan-os-admin/monitoring/use-syslog-for-monitoring/syslog-field-descriptions/traffic-log-fields.html)
+    7. [Traffic](https://docs.paloaltonetworks.com/pan-os/9-0/pan-os-admin/monitoring/use-syslog-for-monitoring/syslog-field-descriptions/traffic-log-fields.html)
 ```
 ,$receive_time,$serial,$type,$subtype,,$time_generated,$src,$dst,$natsrc,$natdst,$rule,$srcuser,$dstuser,$app,$vsys,$from,$to,$inbound_if,$outbound_if,$logset,,$sessionid,$repeatcnt,$sport,$dport,$natsport,$natdport,$flags,$proto,$action,$bytes,$bytes_sent,$bytes_received,$packets,$start,$sec,$category,,$seqno,$actionflags,$srcloc,$dstloc,,$pkts_sent,$pkts_received,$session_end_reason,$dg_hier_level_1,$dg_hier_level_2,$dg_hier_level_3,$dg_hier_level_4,$vsys_name,$device_name,$action_source,$src_uuid,$dst_uuid,$tunnelid/$imsi,$monitortag/$imei,$parent_session_id,$parent_start_time,$tunnel,$assoc_id,$chunks,$chunks_sent,$chunks_received,$rule_uuid,$http2_connection <Token from [Step 1](https://help.sumologic.com/07Sumo-Logic-Apps/16PCI_Compliance/PCI_Compliance_for_Palo_Alto_Networks/07Sumo-Logic-Apps/16PCI_Compliance/PCI_Compliance_for_Palo_Alto_Networks/Collect_Logs_for_PCI_Compliance_for_Palo_Alto_Networks#Step_1._Create_a_hosted_collector_and_Cloud_Syslog_source)>
 ```
-    8. [Threat \
-](https://docs.paloaltonetworks.com/pan-os/9-0/pan-os-admin/monitoring/use-syslog-for-monitoring/syslog-field-descriptions/threat-log-fields)
+8. [Threat](https://docs.paloaltonetworks.com/pan-os/9-0/pan-os-admin/monitoring/use-syslog-for-monitoring/syslog-field-descriptions/threat-log-fields)
 ```
 ,$receive_time,$serial,$type,$subtype,,$time_generated,$src,$dst,$natsrc,$natdst,$rule,$srcuser,$dstuser,$app,$vsys,$from,$to,$inbound_if,$outbound_if,$logset,,$sessionid,$repeatcnt,$sport,$dport,$natsport,$natdport,$flags,$proto,$action,$misc,$threatid,$category,$severity,$direction,$seqno,$actionflags,$srcloc,$dstloc,,$contenttype,$pcap_id,$filedigest,$cloud,$url_idx,$user_agent,$filetype,$xff,$referer,$sender,$subject,$recipient,$reportid,$dg_hier_level_1,$dg_hier_level_2,$dg_hier_level_3,$dg_hier_level_4,$vsys_name,$device_name,,$src_uuid,$dst_uuid,$http_method,$tunnel_id/$imsi,$monitortag/$imei,$parent_session_id,$parent_start_time,$tunnel,$thr_category,$contentver,,$assoc_id,$ppid,$http_headers,$url_category_list,$rule_uuid,$http2_connection <strong><em><Token from [Step 1](https://help.sumologic.com/07Sumo-Logic-Apps/16PCI_Compliance/PCI_Compliance_for_Palo_Alto_Networks/07Sumo-Logic-Apps/16PCI_Compliance/PCI_Compliance_for_Palo_Alto_Networks/Collect_Logs_for_PCI_Compliance_for_Palo_Alto_Networks#Step_1._Create_a_hosted_collector_and_Cloud_Syslog_source)>
 ```
@@ -94,12 +93,12 @@ In this step you create a server profile where you can define the log destinatio
 
 
 #### Sample log messages
-!4.gif "image_tooltip")
+!4
 
 
 
 ##### Traffic log sample
-!5.gif "image_tooltip")
+!5
 
 ```
 Sep 05 12:45:15 SumoStg05 0,2018/09/05 12:45:15,012345678901,TRAFFIC,end,0,2018/09/05 12:45:15,182.80.119.50,176.164.175.181,,,Unexpected Traffic,,npande,ping,vsys3,z1-FW-Transit,z3-Sumo-DMZ,ethernet1/2,ethernet1/2,LOGreset-both,2018/09/05 12:45:15,9434,1,0,0,0,0,0x100064,icmp,allow,122,122,0,1,2018/09/05 12:45:15,0,any,0,5134220147,0x8000000000000000,United States,10.0.0.0-10.255.255.255,0,1,0,aged-out,31,42,0,0,,SumoStg05,from-policy,,,0,,0,,N/A
@@ -108,7 +107,7 @@ Sep 05 12:45:15 SumoStg05 0,2018/09/05 12:45:15,012345678901,TRAFFIC,end,0,2018/
 
 
 ##### Threat log
-!6.gif "image_tooltip")
+!6
 
 
 
@@ -119,7 +118,7 @@ Sep 05 12:45:15 SumoStg05 0,2018/09/05 12:45:15,012345678901,TRAFFIC,end,0,2018/
 
 
 #### Sample Query  
-!7.gif "image_tooltip")
+!7
 
 
 This example query is from the **Denied Traffic Over Time** panel of the **Accepted and Rejected Traffic** dashboard.
@@ -144,7 +143,7 @@ _sourceCategory=Loggen/PAN/Traffic TRAFFIC deny
 ## Install the PCI for Palo Alto Networks 9 App and View the Dashboards
 
 ### Install the Sumo Logic App
-!8.gif "image_tooltip")
+!8
 
 Now that you have set up collection for PCI for Palo Alto Networks install the Sumo Logic App for PCI for Palo Alto Networks to use the preconfigured searches and dashboards that provide insight into your data.
 
@@ -181,57 +180,43 @@ Once an app is installed, it will appear in your **Personal** folder, or other f
 Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
 
 
-### Dashboards
-!11.gif "image_tooltip")
-
+### Viewing Dashboards
 
 
 ##### PCI Req 01 - Accepted and Rejected Traffic
-!12.gif "image_tooltip")
-
 
 **Dashboard description:** See analytics about accepted and rejected firewall traffic, including information about traffic direction; allowed, denied, and silently dropped traffic over time; and the top source and destination IPs for allowed and rejected traffic.
 
 **Use case:** You can use this dashboard to monitor allowed and rejected traffic in accordance with PCI requirement 1. The dashboard helps you identify systems accepting or rejecting traffic, and identify inbound and outbound network connections trends.
 
-
-!13.png "image_tooltip")
-
+<img src={useBaseUrl('img/integrations/pci-compliance/pan-pci-req-accepted-rejected.png')} alt="Palo Alto 9 dashboards" />
 
 
 ##### PCI Req 01 - Traffic Direction Monitoring
-!14.gif "image_tooltip")
-
 
 **Dashboard description:** View information about inbound and outbound traffic, including traffic to the cardholder data environment (CDE); details of inbound and outbound traffic; the top 10 hosts sending traffic; and the top 10 hosts receiving traffic.
 
 **Use case: **You can use this dashboard to monitor connections made from external IPs to internal IPs. You can identify top internal IPs receiving traffic from external IPs or sending traffic to external IPs. Similarly, this dashboard helps you identify the amount of traffic generated by different IPs crossing your organization's network boundary.
 
-
-!15.png "image_tooltip")
-
+<img src={useBaseUrl('img/integrations/pci-compliance/PCILinuxAccountUserSystem.png')} alt="Palo Alto 9 dashboards" />
 
 
 ##### PCI Req 01, 02 - Data Access Monitoring
-!16.gif "image_tooltip")
 
 
 **Dashboard description:** See information about accepted network traffic by application; top TCP and UDP source and destination ports; multi-services detected on the same host; and information about possible port scan attacks, both allowed and rejected.
 
 **Use case:** You can use this dashboard to monitor activities on ports, apps being used, and the protocols used to access apps. The panels help you identify possible port scan attacks, both horizontal and vertical. You can also identify if there are systems on which multiple services are executing.
 
-
-!17.png "image_tooltip")
-
+<img src={useBaseUrl('img/integrations/pci-compliance/pan-pci-data-access-monitoring.png')} alt="Palo Alto 9 dashboards" />
 
 
 ##### PCI Req 02, 04 - Insecure Data In Transit
-!18.gif "image_tooltip")
+!18
 
 
 **Dashboard description:** See analytics about insecure data in transit data, including data transmissions to or from the cardholder data environment (CDE) using an insecure protocol; breakdowns of which apps, hosts, and ports were involved with insecure traffic.   
 
 **Use case:** You can use this dashboard to identify systems and hosts involved in insecure data transit. You can identify insecure connections and port protocols like ftp, telnet, http, rlogin, and so on. You can also identify successful and rejected network connections for insecure connections.
 
-
-!19.png "image_tooltip")
+<img src={useBaseUrl('img/integrations/pci-compliance/pan-pci-traffic-direction-monitoring.png')} alt="Palo Alto 9 dashboards" />

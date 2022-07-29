@@ -11,8 +11,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Palo Alto Networks 6 App provides four dashboards, giving you several ways to discover threats, consumption, traffic patterns, and other security-driven issues, providing additional insight for investigations.
 
-#### Log Types
-1
+## Log Types
 
 Parsing in the Palo Alto Networks 6 App for PAN 6 is based on the [PAN-OS Syslog integration](https://live.paloaltonetworks.com/t5/forums/searchpage/tab/message?q=PAN-OS+Syslog+integration&filter=labels&search_type=thread).
 
@@ -22,30 +21,19 @@ Parsing in the Palo Alto Networks 6 App for PAN 6 is based on the [PAN-OS Syslog
 This page provides instructions on how to collect logs for the Palo Alto Networks 6 App, as well as log and query samples.
 
 
-### Log Types
-2
-
-
-Parsing for PAN 6 in this App is based on the PAN-OS Syslog integration, which is described in this document: [PAN-OS Syslog Integration](https://live.paloaltonetworks.com/t5/forums/searchpage/tab/message?q=PAN-OS+Syslog+integration&filter=labels&search_type=thread).
-
-
 ### Prerequisites
-3
-
 
 * Configure Syslog Monitoring for your Palo Alto Networks device, as described in [Configure Syslog Monitoring](https://www.paloaltonetworks.com/documentation/80/pan-os/pan-os/monitoring/use-syslog-for-monitoring/configure-syslog-monitoring) in Palo Alto Networks help.
 * This app supports Palo Alto Networks v6.
 
 
 ### Configure a Collector
-4
 
 
 Configure an [Installed Collector](https://help.sumologic.com/03Send-Data/Installed-Collectors/01About-Installed-Collectors) or a Hosted source for Syslog-ng or Rsyslog.
 
 
 ### Configure a Source
-5
 
 
 For Syslog, configure the Source fields:
@@ -61,17 +49,14 @@ For a Hosted source, use advanced settings as necessary, but save the endpoint U
 
 
 ### Field Extraction Rules
-6
-
 
 When creating a Field Extraction Rule, you have the option to select from a template for Palo Alto Networks.
 
 
-7
 It is recommended that you add **THREAT** as a keyword in the scope for the rule.
 
 
-```
+```sql
 parse "*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*"
 as f1,recvTime,serialNum,type,subtype,f2,genTime,src_ip,dest_ip,natsrc_ip,natdest_ip,
 ruleName,src_user,dest_user,app,vsys,src_zone,dest_zone,ingress_if,egress_if,logProfile,
@@ -81,10 +66,8 @@ misc,threatID,cat,severity,direction,seqNum,action_flags,src_loc,dest_loc,f4,con
 
 
 ### Sample Log Message
-8
 
-
-```
+```json
 <12>Dec 22 13:22:14 PA-5050 1,2016/12/22 13:22:14,002201002211,THREAT,vulnerability,1,2016/12/22 13:22:14,77.200.181.165,208.74.205.51,0.0.0.0,0.0.0.0,Alert Logging,,,web-browsing,vsys1,IDS,IDS,ethernet1/21,ethernet1/21,Sumo_Logic,2016/12/22 13:22:14,34403128,1,59305,80,0,0,0x80000000,tcp,alert,"1794",HTTP SQL Injection Attempt(38195),any,medium,client-to-server,128764886,0x0,NL,US,0,,1345817091864062106,,,1,,,,,,,,0
 
 <11>Dec 22 13:08:28 PA-5050 1,2016/12/22 13:08:28,002201002211,THREAT,vulnerability,1,2016/12/22 13:08:28,46.148.24.108,208.74.205.51,0.0.0.0,0.0.0.0,Alert Logging,,,web-browsing,vsys1,IDS,IDS,ethernet1/21,ethernet1/21,Sumo_Logic,2016/12/22 13:08:28,34645066,1,38899,80,0,0,0x80000000,tcp,alert,"message",HTTP /etc/passwd Access Attempt(30852),any,high,client-to-server,128763724,0x0,UA,US,0,,1345817091864061211,,,1,,,,,,,,0
@@ -94,23 +77,14 @@ misc,threatID,cat,severity,direction,seqNum,action_flags,src_loc,dest_loc,f4,con
 
 
 ### Query Samples
-9
 
-
-**Threat Type by Severity**
-
-
-```
+```sql title="Threat Type by Severity"
 _sourceCategory=palo_alto_network | parse "*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*" as f1,recvTime,serialNum,type,subtype,f2,genTime,src_ip,dest_ip,natsrc_ip,natdest_ip,ruleName,src_user,dest_user,app,vsys,src_zone,dest_zone,ingress_if,egress_if,logProfile,f3,sessionID,repeatCnt,src_port,dest_port,natsrc_port,natdest_port,flags,protocol,action,misc,threatID,cat,severity,direction,seqNum,action_flags,src_loc,dest_loc,f4,content_type | count as count by subtype,severity | transpose row severity column subtype
 ```
 
 
 
-## Install the Palo Alto Networks 6 App and View the Dashboards
-
-### Install the Sumo Logic App
-10
-
+## Install the Palo Alto Networks 6 App
 
 Now that you have set up collection for Palo Alto Networks, install the Sumo Logic App for Palo Alto Networks to use the preconfigured searches and [dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/22Security_and_Threat_Detection/Palo_Alto_Networks_6/Palo-Alto-Networks-App-Dashboards#Dashboards) that provide insight into your data.
 
@@ -121,26 +95,22 @@ Locate and install the app you need from the **App Catalog**. If you want to see
 1. From the **App Catalog**, search for and select the app**.**
 2. Select the version of the service you're using and click **Add to Library**.
 
-
-11
 Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](https://help.sumologic.com/01Start-Here/Library/Apps-in-Sumo-Logic/Install-Apps-from-the-Library)
 
-
-
-1. To install the app, complete the following fields.
-    1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
-    2. **Data Source.** Select either of these options for the data source. 
-        * Choose **Source Category**, and select a source category from the list. 
-        * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). 
-    3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-2. Click **Add to Library**.
+3. To install the app, complete the following fields.
+   * **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
+   * **Data Source.** Select either of these options for the data source. 
+      * Choose **Source Category**, and select a source category from the list. 
+      * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). 
+   * **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
+4. Click **Add to Library**.
 
 Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization.
 
 Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
 
 
-## Dashboards
+## Viewing PAN 6 Dashboards
 
 ### Overview
 

@@ -9,27 +9,17 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/threatintel.png')} alt="thumbnail icon" width="75"/>
 
-### Threat Intel Quick Analysis App
-1
-
-
 The Threat Intel Quick Analysis App correlates [CrowdStrike's](https://www.crowdstrike.com/sumologic/) threat intelligence data with your own log data, providing security analytics that helps you to detect threats in your environment, while also protecting against sophisticated and persistent cyber-attacks. The Threat Intel Quick Analysis App scans selected logs for threats based on **IP**, **URL**, **domain, Hash 256,** and** email**.
 
 
-#### Log Types
-2
-
+## Log Types
 
 The Threat Intel Quick Analysis App can be used for any type of logs, regardless of format. Ideal log sources should include **IP**, **URL**, **domain**, **Hash 256**, and/or **email** information.
 
 
-## Install the Threat Intel Quick Analysis App
-
-3
+## Installing the Threat Intel Quick Analysis App
 
 This app contains generic regex expressions and thus may not perform well at very large scale. Once you are familiar with Sumo Logic, you can apply performance optimization techniques as described in [Threat Intel Optimization](https://help.sumologic.com/07Sumo-Logic-Apps/22Security_and_Threat_Detection/Threat_Intel_Quick_Analysis/02_Threat-Intel-Optimization). Alternatively, you can run this app on smaller and more specific data streams.
-
-4
 
 This section provides instructions on how to install the Threat Intel Quick Analysis App, and examples of each of dashboards. The preconfigured searches and [Dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/22Security_and_Threat_Detection/Threat_Intel_Quick_Analysis/01Threat-Intel-Quick-Analysis-App-Dashboard#Dashboards) provide easy-to-access visual insights into your data.
 
@@ -37,41 +27,35 @@ To install the app:
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
-
-
 1. From the **App Catalog**, search for and select the app**.**
 2. Select the version of the service you're using and click **Add to Library**.
 
-
-5
 Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](https://help.sumologic.com/01Start-Here/Library/Apps-in-Sumo-Logic/Install-Apps-from-the-Library)
 
 
-1. To install the app, complete the following fields.
-    1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
-    2. **Data Source.** Select either of these options for the data source. 
-        * Choose **Source Category**, and select a source category from the list. 
-        * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). 
-    3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-2. Click **Add to Library**.
+3. To install the app, complete the following fields.
+   * **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
+   * **Data Source.** Select either of these options for the data source. 
+      * Choose **Source Category**, and select a source category from the list. 
+      * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). 
+   * **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
+4. Click **Add to Library**.
 
 Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization.
 
 Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
 
 
-## View the Dashboards
-6
+## Viewing Threat Intel Quick Analysis Dashboards
 
 
 All Dashboards include filters that you can use in Interactive Mode for further analysis of your Threat Intel Quick Analysis data. Because the Threat Intel Quick Analysis has the most bearing on recent threats, most panels are set to the 15 minute time range. You can adjust time ranges as needed.
 
 
-7
 Live mode and real-time queries are not supported for dashboards at this time.
 
 
-### Threat Intel Quick Analysis - Overview
+### Overview
 
 See the frequency of Domain threats by Actor, Log Source, Malicious Confidence, and view trends over time.
 
@@ -87,7 +71,7 @@ See the frequency of Domain threats by Actor, Log Source, Malicious Confidence, 
 * **Threats by Malicious Confidence. ** Qualifies all threats into High, Medium, Low, Unverified, according to CrowdStrike's machine learning engine.
 
 
-#### Threat Intel Quick Analysis - Domain
+#### Domain
 
 See the frequency of Domain threats by Actor, Log Source, Malicious Confidence, and view trends over time.
 
@@ -102,9 +86,7 @@ See the frequency of Domain threats by Actor, Log Source, Malicious Confidence, 
 * **Threats Table.** Listing of all domain threats, including Malicious Confidence, Actors and Sources.   
 
 
-#### Threat Intel Quick Analysis - Email
-12
-
+#### Email
 
 See the frequency of Email threats by Actor, Log Source, Malicious Confidence, and view trends over time.
 
@@ -120,7 +102,7 @@ See the frequency of Email threats by Actor, Log Source, Malicious Confidence, a
 * **Threats Table.** Listing of all domain threats, including Malicious Confidence, Actors and Sources.
 
 
-### Threat Intel Quick Analysis - IP
+### IP
 
 See the frequency of IP threats by Actor, Log Source, Malicious Confidence, and view trends over time.
 
@@ -136,8 +118,7 @@ See the frequency of IP threats by Actor, Log Source, Malicious Confidence, and 
 * **Threats Over Time by Sources. **Trends of IP threats over time, broken by Sources for the last 60 minutes.
 
 
-### Threat Intel Quick Analysis - URL
-16
+### URL
 
 
 See the frequency of URL threats by Actor, Log Source, Malicious Confidence, and view trends over time.
@@ -153,9 +134,7 @@ See the frequency of URL threats by Actor, Log Source, Malicious Confidence, and
 * **Threat Table. **Listing of threats identified by URL, including information on Malicious Confidence, Actors, Source, and count.
 
 
-### Threat Intel Quick Analysis - Hash 256
-18
-
+### Hash 256
 
 See the frequency of Hash 256 threats by Actor, Log Source, Malicious Confidence, and view trends over time.
 
@@ -182,7 +161,6 @@ The Threat Intel Quick Analysis App provides baseline queries. You can further o
 
 For example:
 
-
 ```sql
 _sourceCategory=cylance "IP Address"
 | parse regex "(?<ip_address>\b\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})"
@@ -193,9 +171,7 @@ _sourceCategory=cylance "IP Address"
 
 
 
-##### Field Extraction Rule
-20
-
+### Field Extraction Rule
 
 Use Field Extraction Rules (FER) to parse fields from your log messages at the time the messages are ingested, which eliminates the need to parse fields at the query level. Use these parsed fields along with Threat Intel Lookup operator.
 
@@ -222,17 +198,11 @@ parse "Event Type: *, Event Name: *, Device Name: *, IP Address: (*, *), File Na
 Where **src_ip** is the parsed field from FER (see step # 1)
 
 
-##### Scheduled View
-21
-
+#### Scheduled View
 
 Use scheduled views with the Threat Lookup operator to find threats. Scheduled View reduces aggregate data down to the bare minimum, so they contain only the raw results that you need to generate your data. Queries that run against Scheduled Views return search results much faster because the data is pre-aggregated before the query is run. And a Scheduled View query runs continuously, once per minute.
 
-
-
 1. Create a scheduled view. For example, for Cylance, create a scheduled view, **cylance_threat**:
-
-22
 
 Example:
 
