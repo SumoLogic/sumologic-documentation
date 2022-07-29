@@ -12,7 +12,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 MongoDB is a source-available cross-platform document-oriented database program.
 
 
-Log Types
+## Log Types
 
 The app supports Logs and Metrics from the open source version of MongoDB. The App is tested on the 4.4.4 version of MongoDB.
 
@@ -750,142 +750,90 @@ Once an app is installed, it will appear in your **Personal** folder, or other f
 Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
 
 
-### Dashboards
-11
+## Viewing Dashboards
 
-
-
-12
 If no events have occurred within the time range of the Panel, the Panel will be empty.
 
 
-#### MongoDB - Overview
-13
-
+### Overview
 
 The **MongoDB - Overview** dashboard provides an at-a-glance view of MongoDB health, performance and problems causing errors.
 
 Use this dashboard to:
-
-
-
 * Identify Slow Queries impacting the performance.
 * Gain insights into Replication and Sharding operations.
 * Verify Page Faults generated to determine the root cause of the problems.
 
-
-14
-
+<img src={useBaseUrl('img/integrations/databases/MongoDB-Overview.png')} alt="MongoDB dashboards" />
 
 
-#### MongoDB - Resource
-15
-
+### Resource
 
 The **MongoDB - Resource** dashboard shows resource utilization by the MongoDB component.
 
 Use this dashboard to:
-
-
-
 * Determine Memory and Disk Usage.
 * Identify potential resource constraints and issues.
 
-
-16
-
+<img src={useBaseUrl('img/integrations/databases/MongoDB-Resource.png')} alt="MongoDB dashboards" />
 
 
-#### MongoDB - Errors and Warnings
-17
 
+### Errors and Warnings
 
 The **MongoDB - Errors and Warnings** dashboard shows errors and warnings by the MongoDB component.
 
 Use this dashboard to:
-
-
-
 * Determine components producing multiple errors or warnings.
 
-
-18
-
+<img src={useBaseUrl('img/integrations/databases/MongoDB-Errors-and-Warnings.png')} alt="MongoDB dashboards" />
 
 
-#### MongoDB - Logins and Connections
-19
-
+### Logins and Connections
 
 The **MongoDB - Logins and Connections** dashboard shows geo location of client connection requests, failed connection logins by geo location, and count of failed login attempts.
 
 Use this dashboard to:
-
-
-
 * Determine potential hacking attempts.
 * Determine location of attacks.
 
-
-20
-
+<img src={useBaseUrl('img/integrations/databases/MongoDB-Logins-and-Connections.png')} alt="MongoDB dashboards" />
 
 
-#### MongoDB - Queries
-21
-
+### Queries
 
 MongoDB queries include the following definitions:
-
-
 
 * **MongoDB queries** include the following database commands: find, insert, remove, delete or update.
 * **Slow queries** are defined as queries that take more than 100 milliseconds.
 * **keysExamined** are the number of index keys that MongoDB scanned in order to carry out the operation.
 
+From MongoDB - If keysExamined is much higher than returned, the database is scanning many index keys to find the result documents. Consider creating or adjusting indexes to improve query performance.
 
-22
-From MongoDB - If keysExamined is much higher than nreturned, the database is scanning many index keys to find the result documents. Consider creating or adjusting indexes to improve query performance.
-
-
-23
+<img src={useBaseUrl('img/integrations/databases/MongoDB-Queries.png')} alt="MongoDB dashboards" />
 
 
 
-#### MongoDB - Replication
-24
-
+### Replication
 
 The **MongoDB - Replication** dashboard shows replication events, errors, warnings, and nodes.
 
 Use this dashboard to:
-
-
-
 * Identify Replication errors and warnings.
 * Gain insights into Arbiter, Primary and Secondary node health.
 
-
-25
 This Dashboard will only show data if you have Replication setup for MongoDB.
 
-
-26
-
+<img src={useBaseUrl('img/integrations/databases/MongoDB-Replication.png')} alt="MongoDB dashboards" />
 
 
-#### MongoDB - Sharding
-27
 
+### Sharding
 
 The MongoDB - Sharding dashboard dashboard shows sharding related errors, events, failures and number of chunks moving between shards.
 
 Use this dashboard to:
-
-
-
 * Identify Sharding errors and warnings.
 * Gain insights into Chunk operations.
 
-
-28
+<img src={useBaseUrl('img/integrations/databases/MongoDB-Sharding.png')} alt="MongoDB dashboards" />

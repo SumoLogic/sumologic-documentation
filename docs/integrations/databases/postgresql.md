@@ -245,8 +245,7 @@ log_line_prefix = '%m [%p] %q%u@%d '
 ```
 
 
-
-        For more information on the above parameters, please see [the PostgreSQL documentation.](https://www.postgresql.org/docs/12/static/runtime-config-logging.html)
+For more information on the above parameters, please see [the PostgreSQL documentation.](https://www.postgresql.org/docs/12/static/runtime-config-logging.html)
 
 
 10
@@ -586,9 +585,7 @@ The values of db_cluster and environment should be the same as they were configu
 
         Here’s the sample source.json
 
-
-
-```
+```json
 {
   "api.version":"v1",
   "source":{
@@ -615,60 +612,33 @@ The values of db_cluster and environment should be the same as they were configu
 ```
 
 
-
-        :
-20
-
-
-
-        At this point, PostgreSQL logs should start flowing into Sumo Logic.
+At this point, PostgreSQL logs should start flowing into Sumo Logic.
 
 
 #### Sample Log Messages
-21
 
-
-
-```
+```json
 2021-04-01 08:30:20.002 UTC [11916] postgres@postgres LOG:  connection authorized: user=postgres database=postgres
-
 ```
 
 
+## Installing PostgreSQL Alerts
 
-1.
-
-
-## Install the PostgreSQL App, Alerts, and view the dashboards
-
-This page provides instructions for installing the Sumo Appand Alerts for PostgreSQL, as well as the descriptions of each of the app dashboards. These instructions assume you have already set up collection as described in the [Collect Logs and Metrics from PostgreSQL](https://help.sumologic.com/07Sumo-Logic-Apps/12Databases/PostgreSQL/Collect_logs_and_metrics_from_PostgreSQL) App page.
+This section provides instructions for installing the Sumo App and Alerts for PostgreSQL, as well as the descriptions of each of the app dashboards. These instructions assume you have already set up collection as described in the [Collect Logs and Metrics from PostgreSQL](https://help.sumologic.com/07Sumo-Logic-Apps/12Databases/PostgreSQL/Collect_logs_and_metrics_from_PostgreSQL) App page.
 
 
 #### Pre-Packaged Alerts
-22
 
+Sumo Logic has provided out of the box alerts available through [Sumo Logic monitors](/docs/alerts/monitors/index.md) to help you monitor your PostgreSQL cluster. These alerts are built based on metrics and logs datasets and include preset thresholds based on industry best practices and recommendations. For details on the individual alerts,  please see [this page](https://help.sumologic.com/07Sumo-Logic-Apps/12Databases/PostgreSQL/PostgreSQL_Alerts).
 
-Sumo Logic has provided out of the box alerts available through [Sumo Logic monitors](/docs/alerts/monitors/index.md) to help you monitor your PostgreSQL cluster. These alerts are built based on metrics and logs datasets and include preset thresholds based on industry best practices and recommendations.
-
-For details on the individual alerts,  please see [this page](https://help.sumologic.com/07Sumo-Logic-Apps/12Databases/PostgreSQL/PostgreSQL_Alerts).
-
-
-#### Installing Alerts
-23
 
 * To install these alerts, you need to have the Manage Monitors role capability.
 * Alerts can be installed by either importing them a JSON or a Terraform script.
 
-
-24
 There are limits to how many alerts can be enabled - please see the [Alerts FAQ](/docs/alerts/monitors/monitor-faq.md) for details.
 
 
-##### Method 1: Install the alerts by importing a JSON file
-25
-
-
-
+### Method 1: Install the alerts by importing a JSON file
 
 1. Download the [JSON file](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/blob/main/monitor_packages/postgresql/postgresql.json) describing all the monitors.
     1. The JSON contains the alerts that are based on Sumo Logic searches that do not have any scope filters and therefore will be applicable to all PostgreSQL clusters, the data for which has been collected via the instructions in the previous sections. However, if you would like to restrict these alerts to specific clusters or environments, update the JSON file by replacing the text ‘**db_system=postgresql **with ‘**<Your Custom Filter> db_system=postgresql**’.  \
@@ -681,55 +651,42 @@ Custom filter examples:
 2. Go to Manage Data > Alerts > Monitors.
 3. Click **Add**: \
 
-26
-
 4. Click Import to import monitors from the JSON above.
 
-
-27
 The monitors are disabled by default. Once you have installed the alerts using this method, navigate to the PostgreSQL folder under Monitors to configure them. See [this](/docs/alerts/monitors/index.md) document to enable monitors, to configure each monitor, to send notification to teams or connections please see the instructions detailed in step 4 of this [document](https://help.sumologic.com/Visualizations-and-Alerts/Alerts/Monitors#Add_a_monitor).
 
 
-##### Method 2: Install the alerts using a Terraform script
-28
+### Method 2: Install the alerts using a Terraform script
 
 
-
-###### Step 1: Generate a Sumo Logic access key and ID
-29
-
+#### Step 1: Generate a Sumo Logic access key and ID
 
 Generate an access key and access ID for a user that has the Manage Monitors role capability in Sumo Logic using these[ instructions](/docs/manage/security/access-keys#manage-your-access-keys-on-preferences-page). Please identify which deployment your Sumo Logic account is in, using this [ link](https://help.sumologic.com/APIs/General-API-Information/Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security).
 
 
-###### Step 2: Download and install Terraform 0.13 or later  
-30
+#### Step 2: Download and install Terraform 0.13 or later  
+
 [Download and install Terraform 0.13](https://www.terraform.io/downloads.html)
 
 
-###### Step 3: Download the Sumo Logic Terraform package for PostgreSQL alerts
-31
-
+#### Step 3: Download the Sumo Logic Terraform package for PostgreSQL alerts
 
 The alerts package is available in the Sumo Logic github [repository](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/tree/main/monitor_packages/postgresql). You can either download it through the “git clone” command or as a zip file.
 
 
-###### Step 4: Alert Configuration  
-32
-
+#### Step 4: Alert Configuration  
 
 After the package has been extracted, navigate to the package directory terraform-sumologic-sumo-logic-monitor/monitor_packages/**postgresql**/
 
 Edit the **postgresql.auto.tfvars** file and add the Sumo Logic Access Key, Access Id and Deployment from Step 1 .
 
-```
+```bash
 access_id   = "<SUMOLOGIC ACCESS ID>"
 access_key  = "<SUMOLOGIC ACCESS KEY>"
 environment = "<SUMOLOGIC DEPLOYMENT>"
 ```
 
 The Terraform script installs the alerts without any scope filters, if you would like to restrict the alerts to specific clusters or environments, update the variable **’postgresql_data_source’**. Custom filter examples:
-
 
 
 1. A specific cluster **‘db_cluster=postgresql.prod.01’**
@@ -748,21 +705,12 @@ By default, the monitors are configured in a monitor folder called “PostgreSQL
 If you would like the alerts to send email or connection notifications, configure these in the file **postgresql_notifications.auto.tfvars**. For configuration examples, refer to the next section.
 
 
-###### Step 5: Email and Connection Notification Configuration Examples
-33
-
+#### Step 5: Email and Connection Notification Configuration Examples
 
 To** configure notifications, m**odify the file postgresql_notifications.auto.tfvars file and fill in the connection_notifications and email_notifications sections. See the examples for PagerDuty and email notifications below. See this [document](https://help.sumologic.com/Manage/Connections-and-Integrations/Webhook-Connections/Set_Up_Webhook_Connections) for creating payloads with other connection types.
 
 
-
-
-###### **Pagerduty Connection Example: **
-34
-
-
-
-```
+```bash title="Pagerduty Connection Example"
 connection_notifications = [
     {
       connection_type       = "PagerDuty",
@@ -779,18 +727,10 @@ connection_notifications = [
   ]
 ```
 
-
 Replace `<CONNECTION_ID>` with the connection id of the webhook connection. The webhook connection id can be retrieved by calling the [Monitors API](https://api.sumologic.com/docs/#operation/listConnections).
 
 
-
-
-###### **Email Notifications Example: **
-35
-
-
-
-```
+```bash title="Email Notifications Example"
 email_notifications = [
     {
       connection_type       = "Email",
@@ -803,29 +743,19 @@ email_notifications = [
   ]
 ```
 
-
-
-###### Step 6: Install the Alerts
-36
-
-
-
+#### Step 6: Install the Alerts
 
 1. Navigate to the package directory terraform-sumologic-sumo-logic-monitor/monitor_packages/**postgresql**/ and run **terraform init. **This will initialize Terraform and will download the required components.
 2. Run **terraform plan **to view the monitors which will be created/modified by Terraform.
 3. Run **terraform apply**.
 
 
-###### Step 7: Post Installation
-37
-
+#### Step 7: Post Installation
 
 If you haven’t enabled alerts and/or configured notifications through the Terraform procedure outlined above, we highly recommend enabling alerts of interest and configuring each enabled alert to send notifications to other people or services. This is detailed in Step 4 of [this document](https://help.sumologic.com/Visualizations-and-Alerts/Alerts/Monitors#Add_a_monitor).
 
 
-#### Install the app
-38
-
+## Installing the PostgreSQL App
 
 This section demonstrates how to install the PostgreSQL App.
 
@@ -834,8 +764,6 @@ Now that you have set up log and metric collection for PostgreSQL, you can insta
 To install the app, do the following:
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
-
-
 
 1. From the **App Catalog**, search for and select the app**.**
 2. Select the version of the service you're using and click **Add to Library**.
@@ -859,90 +787,60 @@ Once an app is installed, it will appear in your **Personal** folder, or other f
 Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
 
 
-#### Dashboard Filters with template variables    
-40
+## Viewing PostgreSQL Dashboards
+
+:::tip Filter with template variables    
+Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards-new/filter-with-template-variables.md).
+:::
 
 
-Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause.** **For more information, see the [Filter with template variables](https://help.sumologic.com/Visualizations-and-Alerts/Dashboard_(New)/Filter_with_template_variables) help page.
-
-
-41
-You can use template variables to drill down and examine the data on a granular level.
-
-
-#### PostgreSQL - Overview Dashboard
-42
-
+### Overview
 
 The **PostgreSQL - Overview** dashboard gives you an at-a-glance view of the state of your database clusters by monitoring errors, failed logins, slow queries and trends over time.
 
 Use this dashboard to:
-
-
-
 * Determine the number of active databases, clusters and deadlocks.
 * Drill-down into database errors, failed logins and slow queries.
 * Determine if your database or queries need to be tuned based on comparing the number slow queries.
 * Monitor the number of insert, update, delete operations by cluster.
 
-
-43
-
+<img src={useBaseUrl('img/integrations/databases/PostgreSQL-Overview.png')} alt="PostgreSQL dashboards" />
 
 
-#### PostgreSQL - Query Execution Dashboard
-44
-
+### Query Execution
 
 The** PostgreSQL Query Execution **dashboard gives you insights into the number and time taken to execute queries:
 
 Use this dashboard to:
-
-
-
 * Monitor query performance and identify slow queries.
 * Examine query execution trends.
 
-
-45
-
+<img src={useBaseUrl('img/integrations/databases/PostgreSQL-Query-Execution.png')} alt="PostgreSQL dashboards" />
 
 
-#### PostgreSQL - Database Metrics Dashboard
-46
+### Database Metrics
 
-
-The** PostgreSQL - Database Metrics** dashboard allows you to monitor the database performance, which includes disk usage, deadlocks, buffer hits, server processes, commits, rollbacks, and scans.
+The **PostgreSQL - Database Metrics** dashboard allows you to monitor the database performance, which includes disk usage, deadlocks, buffer hits, server processes, commits, rollbacks, and scans.
 
 Use this dashboard to:
-
-
-
 * Understand the behavior and performance of your database clusters.  
 * Monitor database size and disk usage.  
 * Identify top 5 and least 5 frequently scanned indexes.
 
-
-47
-
+<img src={useBaseUrl('img/integrations/databases/PostgreSQL-DatabaseMetrics.png')} alt="PostgreSQL dashboards" />
 
 
-#### PostgreSQL - Relation and Schema Metrics Dashboard
-48
 
+### Relation and Schema Metrics
 
 The** PostgreSQL - Relation and Schema Metrics **dashboard allows you to view and analyze the metrics for monitoring the relations and schema in a cluster.
 
 Use this dashboard to:
-
-
-
 * Monitor PostgreSQL relation and schema metrics trends over time.
 * Monitor sequential scans and index scans and determine if executed queries are accessing them.
 * Monitor the size of tables, and query operations which will determine the performance of your queries.
 
-
-49
+<img src={useBaseUrl('img/integrations/databases/PostgreSQL-Relational.png')} alt="PostgreSQL dashboards" />
 
 
 Query performance can degrade with growth in size of table, database and/or indexes. This means that you either need to scale up the database instance, [partition your data](https://www.postgresql.org/docs/current/static/ddl-partitioning.html), or redesign your indexes. Unusual growth in disk space can also mean there are problems with [VACUUMs](https://www.postgresql.org/docs/9.1/static/sql-vacuum.html) .
@@ -950,64 +848,41 @@ Query performance can degrade with growth in size of table, database and/or inde
 If your database regularly performs more sequential scans over time, you can improve its performance by creating an [index](https://www.postgresql.org/docs/current/static/sql-createindex.html) on frequently accessed data.
 
 
-50
-
-
-
-#### PostgreSQL - Security Dashboard
-51
-
+### Security
 
 The** PostgreSQL - Security** dashboard provides insight into locations of incoming connections, failed authentications and top database errors and warnings.
 
 Use this dashboard to:
-
-
-
 * Monitor incoming connections, failed authorization requests, and outliers in the number of queries executed outlier.
 * Identify known malicious IPs that are accessing your databases and use firewall access control lists to prevent them from sending you traffic going forward.
 
-
-52
-
+<img src={useBaseUrl('img/integrations/databases/PostgreSQL-Security.png')} alt="PostgreSQL dashboards" />
 
 
-### PostgreSQL - Error Logs Dashboard
-53
-
+### Error Logs
 
 The **PostgreSQL - Error Logs **dashboard** **provides insight into database error  logs by specifically monitoring errors, user activity, database activity and database shutdown/start events.
 
 Use this dashboard to:
-
-
-
 * Quickly identify errors and patterns in logs for troubleshooting
 * Monitor error trends and quickly identify outliers
 * Identify unexpected database or user activity
 
-
-54
-
+<img src={useBaseUrl('img/integrations/databases/PostgreSQL-Error-Logs.png')} alt="PostgreSQL dashboards" />
 
 
-### PostgreSQL - Slow Queries Dashboard
-55
 
+### Slow Queries
 
 The** PostgreSQL - Slow Queries **dashboard** **provides insights into all slow queries executed on the database.
 
 Use this dashboard to:
-
-
-
 * Identify all slow queries
 * Monitor users and databases running slow queries
 * Determine which SQL commands are slower than others
 * Examine slow query trends to determine if there are periodic performance bottlenecks in your database clusters
 
-
-56
+<img src={useBaseUrl('img/integrations/databases/PostgreSQL-Slow-Queries.png')} alt="PostgreSQL dashboards" />
 
 
 ## PostgreSQL Metrics

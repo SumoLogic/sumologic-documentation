@@ -4,6 +4,9 @@ title: Install the Monitors, App, and view the Dashboards
 description: This page shows the user how to install the Oracle App and describes the dashboards in this app.
 ---
 
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 This page provides instructions for installing the Oracle Monitors, App, as well as examples of each of the App dashboards. These instructions assume you have already set up the collection as described in the Collect Logs and Metrics for the Oracle App page.
 
 
@@ -14,28 +17,20 @@ Sumo Logic has provided out-of-the-box alerts available through [Sumo Logic moni
 For details on the individual alerts, see [this page](https://help.sumologic.com/07Sumo-Logic-Apps/12Databases/Oracle/Oracle_Alerts).
 
 
-#### Installing Monitors
-
+## Installing Monitors
 
 * To install these alerts, you need to have the Manage Monitors role capability.
 * Alerts can be installed by either importing a JSON file or a Terraform script.
 
-
 There are limits to how many alerts can be enabled - see the [Alerts FAQ](/docs/alerts/monitors/monitor-faq.md) for details.
 
 
-##### Install the monitors by importing a JSON file Method:
-4
-
-
-
+### Method 1: Importing a JSON file
 
 1. Download the [JSON file](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/blob/main/monitor_packages/Oracle/Oracle.json) that describes the monitors.
 2. The [JSON](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/blob/main/monitor_packages/Oracle/Oracle.json) contains the alerts that are based on Sumo Logic searches that do not have any scope filters and therefore will be applicable to all Oracle clusters, the data for which has been collected via the instructions in the previous sections.  However, if you would like to restrict these alerts to specific clusters or environments, update the JSON file by replacing the text `db_system=oracle` with `<Your Custom Filter>`.
 
 Custom filter examples:
-
-
 
 1. For alerts applicable only to a specific cluster, your custom filter would be, ‘`db_cluster=oracle-prod.01`‘.
 2. For alerts applicable to all clusters that start with Kafka-prod, your custom filter would be,`db_cluster=oracle-prod*`.
@@ -48,11 +43,7 @@ Custom filter examples:
 The monitors are disabled by default. Once you have installed the alerts using this method, navigate to the Oracle folder under **Monitors** to configure them. See [this](/docs/alerts/monitors/index.md) document to enable monitors to send notifications to teams or connections. See the instructions detailed in Step 4 of this [document](https://help.sumologic.com/Visualizations-and-Alerts/Alerts/Monitors#Add_a_monitor).
 
 
-##### Install the alerts using a Terraform script Method
-7
-
-
-
+### Method 2: Using a Terraform script
 
 1. **Generate a Sumo Logic access key and ID.**
 Generate an access key and access ID for a user that has the Manage Monitors role capability in Sumo Logic using these[ instructions](/docs/manage/security/access-keys#manage-your-access-keys-on-preferences-page). Identify which deployment your Sumo Logic account is in, using this [link](https://help.sumologic.com/APIs/General-API-Information/Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security).
@@ -62,18 +53,16 @@ Generate an access key and access ID for a user that has the Manage Monitors rol
 4. **Alert Configuration . \
 **After the package has been extracted, navigate to the package directory **terraform-sumologic-sumo-logic-monitor/monitor_packages/Oracle/**
 
-    Edit the **Oracle.auto.tfvars** file and add the Sumo Logic Access Key, Access Id and Deployment from Step 1.
+Edit the **Oracle.auto.tfvars** file and add the Sumo Logic Access Key, Access Id and Deployment from Step 1.
+
+```bash
+access_id   = "<SUMOLOGIC ACCESS ID>"
+access_key  = "<SUMOLOGIC ACCESS KEY>"
+environment = "<SUMOLOGIC DEPLOYMENT>"
+```
 
 
-    ```
-    access_id   = "<SUMOLOGIC ACCESS ID>"
-    access_key  = "<SUMOLOGIC ACCESS KEY>"
-    environment = "<SUMOLOGIC DEPLOYMENT>"
-    ```
-
-
-
-    The Terraform script installs the alerts without any scope filters, if you would like to restrict the alerts to specific clusters or environments, update the variable **’oracle_data_source’**. Custom filter examples:
+The Terraform script installs the alerts without any scope filters, if you would like to restrict the alerts to specific clusters or environments, update the variable **’oracle_data_source’**. Custom filter examples:
 
 1. A specific cluster **‘`db_cluster=oracle.prod.01`’.
 2. All clusters in an environment ‘`environment=prod`’.
@@ -81,24 +70,16 @@ Generate an access key and access ID for a user that has the Manage Monitors rol
 4. For alerts applicable to a specific cluster within a production environment, your custom filter would be,  \
 `db_cluster=oracle-1` and `environment=prod` (This assumes you have set the optional environment tag while configuring collection).
 
-    All monitors are disabled by default on installation, if you would like to enable all the monitors, set the parameter monitors_disabled to false in this file.
+All monitors are disabled by default on installation, if you would like to enable all the monitors, set the parameter monitors_disabled to false in this file.
 
+By default, the monitors are configured in a monitor **folder** called “**Oracle**”, if you would like to change the name of the folder, update the monitor folder name in “folder” key at **`Oracle.auto.tfvars` file.
 
-    By default, the monitors are configured in a monitor **folder** called “**Oracle**”, if you would like to change the name of the folder, update the monitor folder name in “folder” key at **`Oracle.auto.tfvars` file.
-
-
-    If you would like the alerts to send email or connection notifications, configure these in the file **`Oracle_notifications.auto.tfvars`. For configuration examples, refer to the next section.
+If you would like the alerts to send email or connection notifications, configure these in the file **`Oracle_notifications.auto.tfvars`. For configuration examples, refer to the next section.
 
 1. **Email and Connection Notification Configuration Examples \
 **Modify the file **Oracle_notifications.auto.tfvars** and populate connection_notifications and email_notifications as per below examples.
 
-#### **Pagerduty Connection Example: **
-8
-
-
-
-
-```
+```bash title="Pagerduty Connection Example"
 connection_notifications = [
     {
       connection_type       = "PagerDuty",
@@ -117,18 +98,13 @@ connection_notifications = [
 
 
 
-    Replace <CONNECTION_ID> with the connection id of the webhook connection. The webhook connection id can be retrieved by calling the [Monitors API](https://api.sumologic.com/docs/#operation/listConnections).
+Replace `<CONNECTION_ID>` with the connection id of the webhook connection. The webhook connection id can be retrieved by calling the [Monitors API](https://api.sumologic.com/docs/#operation/listConnections).
 
 
     For overriding payload for different connection types, refer to this [document](https://help.sumologic.com/Manage/Connections-and-Integrations/Webhook-Connections/Set_Up_Webhook_Connections).
 
 
-####  **Email Notifications Example: **
-9
-
-
-
-```
+```bash title="Email Notifications Example"
 email_notifications = [
     {
       connection_type       = "Email",
@@ -139,9 +115,7 @@ email_notifications = [
       run_for_trigger_types = ["Critical", "ResolvedCritical"]
     }
   ]
-
 ```
-
 
 
 1. **Install the Alerts.**
@@ -151,19 +125,15 @@ email_notifications = [
 
 
 
-
-
-1. **Post Installation. \
-**If you haven’t enabled alerts and/or configured notifications through the Terraform procedure outlined above, we highly recommend enabling alerts of interest and configuring each enabled alert to send notifications to other users or services. This is detailed in Step 4 of [this document](https://help.sumologic.com/Visualizations-and-Alerts/Alerts/Monitors#Add_a_monitor).
+1. **Post Installation.**
+If you haven’t enabled alerts and/or configured notifications through the Terraform procedure outlined above, we highly recommend enabling alerts of interest and configuring each enabled alert to send notifications to other users or services. This is detailed in Step 4 of [this document](https://help.sumologic.com/Visualizations-and-Alerts/Alerts/Monitors#Add_a_monitor).
 
 
 10
 There are limits to how many alerts can be enabled - see the [Alerts FAQ](/docs/alerts/monitors/monitor-faq.md).
 
 
-### Install the Sumo Logic App
-11
-
+## Installing the Oracle App
 
 This section demonstrates how to install the Oracle App.
 
@@ -171,16 +141,10 @@ To install the app:
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
-
-
 1. From the **App Catalog**, search for and select the app**.**
 2. Select the version of the service you're using and click **Add to Library**.
 
-
-12
 Version selection is applicable only to a few apps currently. For more information, see the[ Install the Apps from the Library](https://help.sumologic.com/01Start-Here/Library/Apps-in-Sumo-Logic/Install-Apps-from-the-Library).
-
-
 
 1. To install the app, complete the following fields.
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
@@ -201,32 +165,18 @@ Once an app is installed, it will appear in your **Personal** folder, or other f
 Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
 
 
-### Dashboards
-13
+## Viewing Oracle Dashboards
+
+:::tip Filter with template variables    
+Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards-new/filter-with-template-variables.md).
+:::
 
 
-
-### Dashboard Filter with Template Variables  
-14
-
-
-Template variables provide dynamic dashboards that rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you can view dynamic changes to the data for a fast resolution to the root cause. For more information, see the[ Filter with template variables](https://help.sumologic.com/Visualizations-and-Alerts/Dashboard_(New)/Filter_with_template_variables) help page.
-
-
-15
-You can use template variables to drill down and examine the data on a granular level.
-
-
-### Dashboards
-16
-
-
-
-#### Oracle - Overview
-17
-
+### Overview
 
 See an overview of Oracle listener process activity, including successful DB connections, TNS error information, SID and Service Name usage, command execution, and top usage, in terms of ports, database users, user hosts, client hosts, and user programs as derived from the Oracle Listener log.
+
+<img src={useBaseUrl('img/integrations/databases/Oracle-Overview.png')} alt="Oracle dashboards" />
 
 **DB Connections**. The count of database connections established during the previous 24 hours.
 
@@ -259,15 +209,13 @@ See an overview of Oracle listener process activity, including successful DB con
 **Top User Program Name**.  A table that shows the top 20 programs that initiated connections over the previous 24 hours.
 
 
-18
 
 
+### Alert Analysis
 
-#### Oracle - Alert Analysis
-19
+See information about Oracle errors, including counts of various error types, ORA messages, oracle instance state, and other data derived from the Oracle Alert log.
 
-
-See information about Oracle errors, including counts of various error types, ORA messages, oracle instance state, and other data derived from the Oracle Alert log
+<img src={useBaseUrl('img/integrations/databases/Oracle-Alert-Analysis.png')} alt="Oracle dashboards" />
 
 **Deadlock Errors**. Count of ORA-00060 messages over the previous 24 hours.
 
@@ -302,15 +250,14 @@ See information about Oracle errors, including counts of various error types, OR
 **Instance Shutdown Complete**. A table that lists when shutdowns of database instances were initiated during the previous three days.
 
 
-20
 
 
-
-#### Oracle - Listener Troubleshooting
-21
+### Listener Troubleshooting
 
 
 See details of Oracle listener process activity, including database connections by host and application, connection failures, command execution status and trends, and other data derived from the Oracle Listener log.
+
+<img src={useBaseUrl('img/integrations/databases/Oracle-Listener-Troubleshooting.png')} alt="Oracle dashboards" />
 
 **DB Connections By Host**. An area chart that shows the count of database connections by host, per 5 minute timeslice, over the previous 24 hours.
 
@@ -329,15 +276,12 @@ See details of Oracle listener process activity, including database connections 
 **SID or Service Name Detailed Breakup**. A table that shows the count of connections performed with sid or service name, by userhost, clienthost, and databaseuser.
 
 
-22
 
-
-
-#### Oracle - Security Monitoring
-23
-
+### Security Monitoring
 
 See information about database connections established by privileged users, connection attempts from public IP addresses, attempts to execute unauthorized commands, and events that associated with potentially inappropriate activities as derived from Oracle Listener and Alert Logs.  
+
+<img src={useBaseUrl('img/integrations/databases/Oracle-Security-Monitoring.png')} alt="Oracle dashboards" />
 
 **Admin Restricted Command Execution**. The count of database commands that resulted in TNS-12508 errors over the previous 24 hours.
 
@@ -360,15 +304,13 @@ See information about database connections established by privileged users, conn
 **Failed DB Connections by Privileged Users**. A table that provides information about failed database connections from privileged user accounts, such as root and administrator, over the previous 24 hours.
 
 
-24
 
 
-
-#### Oracle - Sys Audit Log
-25
-
+### Sys Audit Log
 
 See information derived from the syslog audit trail, including successful and failed activities, and top usage by client, database user, and privileges used.
+
+<img src={useBaseUrl('img/integrations/databases/Oracle-Sys-Audit-Log.png')} alt="Oracle dashboards" />
 
 **Status Trend**. A stacked column chart that shows the count of successful and unsuccessful database actions over the previous 24 hours.
 
@@ -385,15 +327,13 @@ See information derived from the syslog audit trail, including successful and fa
 **Recent Successful Activities**. A table that lists information about successful database actions over the previous 60 minutes.
 
 
-26
 
 
-
-#### Oracle - Sys Audit Log - Logon Analysis
-27
-
+### Sys Audit Log - Logon Analysis
 
 See logon activity information derived from the syslog audit trail, including successful and failed logons, logon status trends, multiple database user logons and client user logons from the same UserHost, and multiple UserHost logons with the same database user.
+
+<img src={useBaseUrl('img/integrations/databases/Oracle-Sys-Audit-Log-Logon-Analysis.png')} alt="Oracle dashboards" />
 
 **Successful Logons**. Count of successful logins in the previous 24 hours.
 
@@ -414,26 +354,20 @@ See logon activity information derived from the syslog audit trail, including su
 **Multiple UserHosts Logons with Same Database User**. A table that lists database users  that successfully established connections from the multiple user hosts over the previous 24 hours.
 
 
-28
 
 
-
-#### Oracle - XML Audit Log - Logon Analysis
-29
-
+### XML Audit Log - Logon Analysis
 
 See logon activity information derived from the XML audit trail, including successful and failed logons, logon status trends, multiple database user logons and client user logons from the same UserHost, and multiple UserHost logons with the same database user.
 
-
-30
-
+<img src={useBaseUrl('img/integrations/databases/Oracle-XML-Audit-Log-Logon-Analysis.png')} alt="Oracle dashboards" />
 
 
-#### Oracle - XML Audit Log - SQL Statement Analysis
-31
-
+### XML Audit Log - SQL Statement Analysis
 
 See information derived from the XML audit trail about user management, role management, Data Definition Language (DDL), Data Manipulation Language (DML), and Transaction Control Language (TCL) activity.
+
+<img src={useBaseUrl('img/integrations/databases/Oracle-XML-Audit-Log-SQL-Statement-Analysis.png')} alt="Oracle dashboards" />
 
 **Recent User Management Activities**. A table that lists information about user management activities in the previous 24 hours.
 
@@ -456,15 +390,12 @@ See information derived from the XML audit trail about user management, role man
 **TCL Activity Trend**.  A stacked column chart that shows the count of DML actions by action type per one hour timeslice over the last 7 days.
 
 
-32
 
-
-
-#### Oracle - Monitor Performance by DB Script
-33
-
+### Monitor Performance by DB Script
 
 See database usage information obtained by the Oracle script source, including tablespace and datafile utilization; recent active connections; wait times; and recent jobs.
+
+<img src={useBaseUrl('img/integrations/databases/Oracle-Monitor-Performance-by-DB-Script.png')} alt="Oracle dashboards" />
 
 **TableSpace Utilization**. A table that shows, for each tablespace, the percentage of tablespace used for each 5 minute timeslice over the last 60 minutes.
 
@@ -485,92 +416,58 @@ See database usage information obtained by the Oracle script source, including t
 **Recent Jobs in the database**. A table of information about recent database jobs, including when each job ran, low long it ran, and when it will next run.
 
 
-34
 
-
-
-#### Oracle - Wait Events
-35
-
+### Wait Events
 
 Every wait event belongs to a class of wait events. The following list describes each of the wait classes.
 
-
-36
-
+<img src={useBaseUrl('img/integrations/databases/Oracle-Wait-Class.png')} alt="Oracle dashboards" />
 
 
-#### Oracle - Wait Class
-37
-
+### Wait Class
 
 All the wait events are grouped under wait classes and here are the most important wait classes you must know: Administrative, Application, Commit, Concurrency, Configuration, Idle, Network, Other, System I/O, User I/O.
 
-
-38
-
+<img src={useBaseUrl('img/integrations/databases/Oracle-Wait-Events.png')} alt="Oracle dashboards" />
 
 
-#### Oracle - Throughput
-39
-
+### Throughput
 
 The **Oracle - Throughput** dashboard provides an at-a-glance view of the state of system loads in clusters: Logon, Transaction, and Redo.
 
+<img src={useBaseUrl('img/integrations/databases/Oracle-Throughput.png')} alt="Oracle dashboards" />
 
-40
-
-
-
-#### Oracle - Tablespaces
-41
-
+### Tablespaces
 
 The Oracle - Tablespaces dashboard provides an at-a-glance view of the tablespaces in clusters: Percent Used, Max size, Size Used, and Free.
 
-
-42
-
+<img src={useBaseUrl('img/integrations/databases/Oracle-Tablespaces.png')} alt="Oracle dashboards" />
 
 
-#### Oracle - System Global Area
-43
-
+### System Global Area
 
 The Oracle - System Global Area dashboard provides an at-a-glance view of a group of shared memory structures, known as SGA components, that contain data and control information for one Oracle Database instance.
 
-
-44
-
+<img src={useBaseUrl('img/integrations/databases/Oracle-System-Global-Area.png')} alt="Oracle dashboards" />
 
 
-#### Oracle - Response Time
-45
 
+### Response Time
 
 The Oracle - Response dashboard performance statistics such as database CPU Time, Wait Time Ratio, Response time, Soft Parse Radio, and Execute
 
-
-46
-
+<img src={useBaseUrl('img/integrations/databases/Oracle-Response-Time.png')} alt="Oracle dashboards" />
 
 
-#### Oracle - Resource Utilization
-47
-
+### Resource Utilization
 
 The Oracle - Resource Utilization dashboard performance statistics such as Limit, OS load, CPU, Cursors, PGA, Physical, I/O and VM
 
-
-48
-
+<img src={useBaseUrl('img/integrations/databases/Oracle-Resource-Utilization.png')} alt="Oracle dashboards" />
 
 
-#### Oracle - Parallel Execution
-49
-
+### Parallel Execution
 
 The **Oracle - Parallel Execution** dashboard performance statistics such as Sessions, DDL statements parallelized, PX downgraded, Background services
 
-
-50
+<img src={useBaseUrl('img/integrations/databases/Oracle-Parallel-Execution.png')} alt="Oracle dashboards" />

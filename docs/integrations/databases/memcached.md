@@ -2,55 +2,66 @@
 id: memcached
 title: Sumo Logic App for Memcached
 sidebar_label: Memcached
-description: The Memcached app is a unified logs and metrics app that helps you monitor the availability, performance, health, and resource utilization of your Memcached clusters. Preconfigured dashboards provide insight into uptime, operational metrics, cache performance, resource utilization, errors, warnings, and commands executed.
+description: The Memcached app is a unified logs and metrics app that helps you monitor the availability, performance, health, and resource utilization of your Memcached clusters.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 <img src={useBaseUrl('img/integrations/databases/memcached.png')} alt="DB icon" width="50"/>
 
 The Memcached app is a unified logs and metrics app that helps you monitor the availability, performance, health, and resource utilization of your Memcached clusters. Preconfigured dashboards provide insight into uptime, operational metrics, cache performance, resource utilization, errors, warnings, and commands executed.
 
 The Sumo Logic App for Memcached is tested for Version: 1.4.15.
-Sample Log Message
 
-Kubernetes:
+
+## Sample Log Message
+
+<Tabs
+  groupId="k8s-nonk8s"
+  defaultValue="k8s"
+  values={[
+    {label: 'Kubernetes environments', value: 'k8s'},
+    {label: 'Non-Kubernetes environments', value: 'non-k8s'},
+  ]}>
+
+<TabItem value="k8s">
+
+```json
+{
+	"timestamp":1626248704386,
+	"log":"28: going from conn_closing to conn_closed",
+	"stream":"stderr",
+	"time":"2021-07-14T07:45:01.839243101Z"
+}
 ```
-{"timestamp":1626248704386,"log":"28: going from conn_closing to conn_closed","stream":"stderr","time":"2021-07-14T07:45:01.839243101Z"}
-```
-Non-Kubernetes:
-```
+
+</TabItem>
+<TabItem value="non-k8s">
+
+```json
 Jun 23 07:35:01 node03 memcached: <31 set GFcIh47CswfCnwk3JkmJ 0 0 4096
 ```
 
+</TabItem>
+</Tabs>
 
 ## Collect Logs and Metrics for Memcached
 
-This page provides instructions for configuring log and metric collection for the Sumo Logic App for Memcached.
-
-
-### Collection Process Overview
-
-
 Configuring log and metric collection for the Memcached App includes the following tasks:
-
 
 * Step 1: Configure Fields in Sumo Logic.
 * Step 2: Configure Collection for Memcached
-    * [Collect Logs and Metrics for Non-Kubernetes environments](https://help.sumologic.com/07Sumo-Logic-Apps/12Databases/Memcached/Collect_Logs_and_Metrics_for_Memcached/Collect_Memcached_Logs_and_Metrics_for_Non-Kubernetes_environments.).
-    * [Collect Logs and Metrics for Kubernetes environments](https://help.sumologic.com/07Sumo-Logic-Apps/12Databases/Memcached/Collect_Logs_and_Metrics_for_Memcached/Collect_Memcached_Logs_and_Metrics_for_Kubernetes_environments).
+    * [For Non-Kubernetes environments](https://help.sumologic.com/07Sumo-Logic-Apps/12Databases/Memcached/Collect_Logs_and_Metrics_for_Memcached/Collect_Memcached_Logs_and_Metrics_for_Non-Kubernetes_environments)
+    * [For Kubernetes environments](https://help.sumologic.com/07Sumo-Logic-Apps/12Databases/Memcached/Collect_Logs_and_Metrics_for_Memcached/Collect_Memcached_Logs_and_Metrics_for_Kubernetes_environments)
 
 
-#### Step 1: Configure Fields in Sumo Logic
-2
-
+### Step 1: Configure Fields in Sumo Logic
 
 Create the following Fields in Sumo Logic before configuring the collection. This ensures that your logs and metrics are tagged with relevant metadata required by the app dashboards. For information on setting up fields, see the [Fields](/docs/manage/fields.md) help page.
 
 If you are using Memcached in a non-Kubernetes environment create the fields:
-
-
-
 * component
 * environment
 * db_system
@@ -58,24 +69,25 @@ If you are using Memcached in a non-Kubernetes environment create the fields:
 * pod
 
 If you are using Memcached in a Kubernetes environment create the fields:
-
-
-
 * pod_labels_component
 * pod_labels_environment
 * pod_labels_db_system
 * pod_labels_db_cluster
 
 
-#### Step 2: Configure Collection for Memcached
+### Step 2: Configure Logs and Metrics Collection for Memcached
 
+<Tabs
+  groupId="k8s-nonk8s"
+  defaultValue="k8s"
+  values={[
+    {label: 'Kubernetes environments', value: 'k8s'},
+    {label: 'Non-Kubernetes environments', value: 'non-k8s'},
+  ]}>
 
-* [Collect Logs and Metrics for Non-Kubernetes environments](https://help.sumologic.com/07Sumo-Logic-Apps/12Databases/Memcached/Collect_Logs_and_Metrics_for_Memcached/Collect_Memcached_Logs_and_Metrics_for_Non-Kubernetes_environments.).
-* [Collect Logs and Metrics for Kubernetes environments](https://help.sumologic.com/07Sumo-Logic-Apps/12Databases/Memcached/Collect_Logs_and_Metrics_for_Memcached/Collect_Memcached_Logs_and_Metrics_for_Kubernetes_environments).
+<TabItem value="k8s">
 
-
-### Collect Memcached Logs and Metrics for Kubernetes environments
-
+#### For Kubernetes environments
 
 In Kubernetes environments, we use the Telegraf Operator, which is packaged with our Kubernetes collection. You can learn more about it[ here](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Collect_Metrics_Using_Telegraf/01_Telegraf_Collection_Architecture).
 
@@ -99,7 +111,7 @@ Follow the below instructions to set up the logs and metrics collection:
 It’s assumed that you are using the latest helm chart version if not upgrade using the instructions [here](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/release-v2.0/deploy/docs/v2_migration_doc.md#how-to-upgrade).
 
 
-### Step 1: Configure Metrics Collection
+#### Step 1: Configure Metrics Collection
 5
 
 
@@ -162,7 +174,7 @@ Sumo Logic Kubernetes collection will automatically start collecting metrics fro
 1. Verify metrics in Sumo Logic.
 
 
-### Step 2 Configure Logs Collection
+#### Step 2 Configure Logs Collection
 6
 
 
@@ -182,7 +194,7 @@ Follow the instructions below to capture Memcached logs from stdout on Kubernete
 
 
 
-```
+```bash
 environment: "prod_CHANGE_ME"
 component: "database"
 db_system: "memcached"
@@ -191,9 +203,7 @@ db_cluster: "memcached_on_k8s_CHANGE_ME"
 
 
 
-    Please enter in values for the following parameters :
-
-
+Please enter in values for the following parameters:
 
 * `environment` - This is the deployment environment where the Memcached cluster identified by the value of **servers** resides. For example dev, prod, or QA. While this value is optional we highly recommend setting it.
 * **db_cluster **- Enter a name to identify this Memcached cluster. This cluster name will be shown in the Sumo Logic dashboards.
@@ -233,7 +243,6 @@ Example:
 ```
 annotations:
     tailing-sidecar: sidecarconfig;data:/var/bitnami/memcached/logs/memcached.log
-
 ```
 
 
@@ -245,15 +254,9 @@ annotations:
 
 Labels created in Kubernetes environments automatically are prefixed with pod_labels. To normalize these for our app to work, we need to create a Field Extraction Rule if not already created for Proxy Application Components. To do so:
 
-
-
 1. Go to **Manage Data > Logs > Field Extraction Rules**.
 2. Click the + Add button on the top right of the table.
 3. The following form appears:
-
-
-7
-
 
 
 
@@ -266,29 +269,24 @@ Labels created in Kubernetes environments automatically are prefixed with pod_la
 
 ```
 pod_labels_environment=* pod_labels_component=database pod_labels_db_system=* pod_labels_db_cluster=*
-
 ```
-
-
 
 * **Parse Expression**.Enter the following parse expression:
 
-
-```
+```sql
 if (!isEmpty(pod_labels_environment), pod_labels_environment, "") as environment
 | pod_labels_component as component
 | pod_labels_db_system as db_system
 | pod_labels_db_cluster as db_cluster
-
 ```
-
-
 
 1. Click **Save** to create the rule.
 
 
-### Collect Memcached Logs and Metrics for Non-Kubernetes environments.
+</TabItem>
+<TabItem value="non-k8s">
 
+#### For Non-Kubernetes environments
 
 We use the Telegraf operator for Memcached metric collection and Sumo Logic Installed Collector for collecting Memcached logs. The diagram below illustrates the components of the Memcached collection in a non-Kubernetes environment. Telegraf runs on the same system as Memcached and uses the[ Memcached input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/memcached#configuration) to obtain Memcached metrics. The Sumo Logic output plugin to send the metrics to Sumo Logic. Logs from Memcached on the other hand are sent to a Sumo Logic Local File source.
 
@@ -304,11 +302,7 @@ This section provides instructions for configuring logs and metrics collection f
     6. Configure Sumo Logic Installed Collector
 
 
-### Step 1 Configure Metrics Collection
-9
-
-
-
+#### Step 1 Configure Metrics Collection
 
 1. **Configure a Hosted Collector \
 **To create a new Sumo Logic hosted collector, perform the steps in the[ Configure a Hosted Collector](https://help.sumologic.com/03Send-Data/Hosted-Collectors/Configure-a-Hosted-Collector) section of the Sumo Logic documentation.
@@ -322,7 +316,7 @@ This section provides instructions for configuring logs and metrics collection f
 Create or modify `telegraf.conf` and copy and paste the text below:  
 
 
-```
+```bash
  servers = ["localhost:11211"]
   [inputs.memcached.tags]
     environment="dev_CHANGE_ME"
@@ -336,7 +330,6 @@ Create or modify `telegraf.conf` and copy and paste the text below:
 
 
 Please enter values for the following parameters (marked in **bold_CHANGE_ME** above):
-
 
 
 * In the input plugins section which is`[[inputs.memcached]]`
@@ -360,9 +353,7 @@ Once you have finalized your `telegraf.conf` file, you can start or reload the T
 At this point, Memcached metrics should start flowing into Sumo Logic.
 
 
-### Step 2 Configure Logs Collection
-10
-
+#### Step 2 Configure Logs Collection
 
 This section provides instructions for configuring log collection for Memcached running on a non-kubernetes environment for the Sumo Logic App for Memcached.
 
@@ -380,21 +371,18 @@ if you’re on RHEL/CentOS, you can edit the file `/etc/sysconfig/memcached` lik
 `PORT="11211"`
 
 
-```
+```bash
 USER="memcached"
 MAXCONN="3048"
 CACHESIZE="256"
-
 ```
 
 
 
 1. `OPTIONS="-vv >> /var/log/memcached/memcached.log 2>&1" \
 `Save the file, restart Memcached.
-2. **Configuring a Collector \
-**To collect logs directly from the Memcached machine, configure an[ Installed Collector](https://help.sumologic.com/03Send-Data/Installed-Collectors).
-3. **Configuring a Source \
-**To collect logs directly from your Memcached machine, use an Installed Collector and a Local File Source.
+2. **Configuring a Collector** To collect logs directly from the Memcached machine, configure an[ Installed Collector](https://help.sumologic.com/03Send-Data/Installed-Collectors).
+3. **Configuring a Source** To collect logs directly from your Memcached machine, use an Installed Collector and a Local File Source.
     1. Add a[ Local File Source](https://help.sumologic.com/03Send-Data/Sources/01Sources-for-Installed-Collectors/Local-File-Source).
     2. Configure the Local File Source fields as follows:
         * **Name.** (Required)
@@ -402,12 +390,11 @@ CACHESIZE="256"
         * **File Path (Required).** Enter the path to your error.log or access.log. The files are typically located in `/var/log/memcached/memcached.log`. If you are using a customized path, check the `Memcached.conf` file for this information.
         * **Source Host.** Sumo Logic uses the hostname assigned by the OS unless you enter a different hostname
         * **Source Category.** Enter any string to tag the output collected from this Source, such as **Memcached/Logs**. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details see[ Best Practices](https://help.sumologic.com/03Send-Data/01-Design-Your-Deployment/Best-Practices:-Good-Source-Category,-Bad-Source-Category).)
-        * **Fields. Set the following fields:**
-            * **component = database**
-            * **db_system = memcached**
-            * **db_cluster = <Your_Memcached_Cluster_Name>**
-            * **environment = <Environment_Name>, such as Dev, QA or Prod.**
-11
+        * **Fields**. Set the following fields:
+            * `component = database`
+            * `db_system = memcached`
+            * `db_cluster = <Your_Memcached_Cluster_Name>`
+            * `environment = <Environment_Name>`, such as Dev, QA or Prod.
 
     3. Configure the **Advanced** section:
         * **Enable Timestamp Parsing.** Select Extract timestamp information from log file entries.
@@ -416,16 +403,15 @@ CACHESIZE="256"
         * **Encoding. **Select** **UTF-8 (Default).
         * **Enable Multiline Processing.** Detect messages spanning multiple lines
             * Infer Boundaries - Detect message boundaries automatically
-    4. Click **Save**. \
+    4. Click **Save**.
+
 At this point, Memcached logs should start flowing into Sumo Logic.
 
-
-## Install the Memcached Monitors, App, and view the Dashboards
-
-This page has instructions for installing Sumo Logic Monitors for Memcached, the app, and descriptions of each app dashboards.
+</TabItem>
+</Tabs>
 
 
-### Install Monitors
+## Installing Memcached Monitors
 
 Sumo Logic has provided pre-packaged alerts available through [Sumo Logic monitors](/docs/alerts/monitors/index.md) to help you proactively determine if a Memcached cluster is available and performing as expected. These monitors are based on metric and log data and include pre-set thresholds that reflect industry best practices and recommendations. For more information about individual alerts, see [Memcached Alerts](https://help.sumologic.com/07Sumo-Logic-Apps/12Databases/MySQL/MySQL_Alerts).
 
@@ -434,7 +420,6 @@ To install these monitors, you must have the **Manage Monitors** role capability
 You can install monitors by importing a JSON file or using a Terraform script.
 
 
-13
 There are limits to how many alerts can be enabled. For more information, see [Monitors](https://help.sumologic.com/Visualizations-and-Alerts/Alerts/Monitors#Rules) for details.
 
 
@@ -577,35 +562,23 @@ email_notifications = [
 
 
 
-##### Step 6: Install Monitors
-24
-
-
-
+#### Step 6: Install Monitors
 
 1. Navigate to the terraform-sumologic-sumo-logic-monitor/monitor_packages/Memcached/ directory and run terraform init. This will initialize Terraform and download the required components.
 2. Run terraform plan to view the monitors that Terraform will create or modify.
 3. Run terraform apply.
 
+
+## Installing the Memcached App
+
 This section demonstrates how to install the Memcached App.
 
-
-### To install the app:
-25
-
-
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
-
-
 
 1. From the **App Catalog**, search for and select the app**.**
 2. Select the version of the service you're using and click **Add to Library**.
 
-
-26
 Version selection applies only to a few apps currently. For more information, see the[ Install the Apps from the Library](https://help.sumologic.com/01Start-Here/Library/Apps-in-Sumo-Logic/Install-Apps-from-the-Library).
-
-
 
 1. To install the app, complete the following fields.
     1. **App Name.** You can retain the existing name or enter a name of your choice for the app. 
@@ -626,46 +599,47 @@ Once an app is installed, it will appear in your **Personal** folder or another 
 Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but you'll see complete graphs and maps in a bit of time.
 
 
-### Dashboard Filters with Template Variables
-27
 
+## Viewing Memcached Dashboards
 
-Template variables provide dynamic dashboards that rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you can view dynamic changes to the data for a fast resolution to the root cause. For more information, see the Filter with template variables help page.
+:::tip Filter with template variables    
+Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards-new/filter-with-template-variables.md).
+:::
 
-
-#### Memcached - Overview
-28
-
+### Overview
 
 The Memcached - Overview dashboard provides an at-a-glance view of the Memcached server status, error logs along with database metrics.
 
-
-29
-
+<img src={useBaseUrl('img/integrations/databases/Memcached-Overview.png')} alt="Memcached dashboards" />
 
 
-## Memcached - Operations
-30
-
+### Operations
 
 The Memcached - Operations Dashboard provides detailed analysis on connections, thread requested, network bytes, hash expansion size, table size.
 
+<img src={useBaseUrl('img/integrations/databases/Memcached-Operations.png')} alt="Memcached dashboards" />
 
-## Memcached - Command Stats
+
+### Command Stats
 
 The Memcached - Command Stats dashboard provides detailed insights into the number of commands being performed.
 
+<img src={useBaseUrl('img/integrations/databases/Memcached-Command-Stats.png')} alt="Memcached dashboards" />
 
-## Memcached - Cache Information
+### Cache Information
 
 The Memcached - Cache Information dashboard provides insight into cache states, cache hit, and miss rate over time.
 
+<img src={useBaseUrl('img/integrations/databases/Memcached-Cache-Information.png')} alt="Memcached dashboards" />
 
-## Memcached - Logs
+### Logs
 
 This dashboard helps you quickly analyze your Memcached error logs, commands executed, and objects stored.
 
+<img src={useBaseUrl('img/integrations/databases/Memcached-Logs.png')} alt="Memcached dashboards" />
 
-# Memcached Alerts
+
+
+## Memcached Alerts
 
 Sumo Logic has provided out-of-the-box alerts available via [Sumo Logic monitors](/docs/alerts/monitors/index.md) to help you quickly determine if the Memcached database cluster is available and performing as expected.

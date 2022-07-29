@@ -6,13 +6,14 @@ description: Couchbase is a distributed document database with a powerful search
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 <img src={useBaseUrl('img/integrations/databases/databases-icon.png')} alt="DB icon" width="75"/>
 
 Couchbase, a modern database for enterprise applications, is a distributed document database with a powerful search engine and in-built operational and analytical capabilities. It brings the power of NoSQL to the edge and provides fast, efficient bidirectional synchronization of data between the edge and the cloud. The Sumo Logic app for Couchbase helps you monitor activity in Couchbase. The pre-configured dashboards provide insight into the Health of the Cluster, the Status of the Buckets, I/O of Reading/Writing, Errors, the Events of Couchbase Servers that help you understand your clusters.
 
 This App has been tested with the following Couchbase with Telegraf versions:
-
 * Non-Kubernetes: Couchbase version: 7.0.2 - enterprise with Telegraf version 1.21.1
 * Kubernetes: Couchbase version: 7.0.2 - enterprise with Telegraf version 1.21.1
 
@@ -22,39 +23,34 @@ Telegraf 1.14 default of Kubernetes Collection will not work.
 
 ## Collect Logs and Metrics for the Couchbase App
 
-This page provides instructions for configuring log and metric collection for the Sumo Logic App for Couchbase.
-
-Collection Process Overview
-
-Configuring log and metric collection for the Couchbase App includes the following tasks:
-
+This page provides instructions for configuring log and metric collection for the Sumo Logic App for Couchbase. Configuring log and metric collection for the Couchbase App includes the following tasks:
 * Configure Fields in Sumo Logic.
 * Configure Collection for Couchbase
     * [Collect Logs and Metrics for Non-Kubernetes environments](https://help.sumologic.com/07Sumo-Logic-Apps/12Databases/Couchbase/Collect_Logs_and_Metrics_for_the_Couchbase_App/Collect_Couchbase_Logs_and_Metrics_for_Non-Kubernetes_environments).
     * [Collect Logs and Metrics for Kubernetes environments](https://help.sumologic.com/07Sumo-Logic-Apps/12Databases/Couchbase/Collect_Logs_and_Metrics_for_the_Couchbase_App/Collect_Couchbase_Logs_and_Metrics_for_Kubernetes_environments).
 
 
-#### Configure Fields in Sumo Logic
+### Step 1: Configure Fields in Sumo Logic
 
 Create the following Fields in Sumo Logic prior to configuring the collection. This ensures that your logs and metrics are tagged with relevant metadata, which is required by the app dashboards. For information on setting up fields, see the [Fields](/docs/manage/fields.md) help page.
 
-If you are using Couchbase in a  non-Kubernetes environment create the fields:
+If you are using Couchbase in a non-Kubernetes environment create the fields:
 
-* component
-* environment
-* db_system
-* db_cluster
-* pod
+* `component`
+* `environment`
+* `db_system`
+* `db_cluster`
+* `pod`
 
 If you are using Couchbase in a Kubernetes environment create the fields:
 
-* pod_labels_component
-* pod_labels_environment
-* pod_labels_db_system
-* pod_labels_db_cluster
+* `pod_labels_component`
+* `pod_labels_environment`
+* `pod_labels_db_system`
+* `pod_labels_db_cluster`
 
 
-#### Configure Collection for Couchbase
+### Step 2: Configure Collection for Couchbase
 
 Sumo Logic supports the collection of logs and metrics data from Couchbase in both Kubernetes and non-Kubernetes environments.
 
@@ -62,10 +58,9 @@ Click on the appropriate links below based on the environment where your Couchba
 
 * [Collect Logs and Metrics for Non-Kubernetes environments](https://help.sumologic.com/07Sumo-Logic-Apps/12Databases/Couchbase/Collect_Logs_and_Metrics_for_the_Couchbase_App/Collect_Couchbase_Logs_and_Metrics_for_Non-Kubernetes_environments).
 * [Collect Logs and Metrics for Kubernetes environments](https://help.sumologic.com/07Sumo-Logic-Apps/12Databases/Couchbase/Collect_Logs_and_Metrics_for_the_Couchbase_App/Collect_Couchbase_Logs_and_Metrics_for_Kubernetes_environments).
-1.
 
 
-### Collect Couchbase Logs and Metrics for Kubernetes environments
+#### Collect Couchbase Logs and Metrics for Kubernetes environments
 
 In Kubernetes environments, we use the Telegraf Operator, which is packaged with our Kubernetes collection. You can learn more about it[ here](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Collect_Metrics_Using_Telegraf/01_Telegraf_Collection_Architecture). The following diagram illustrates how data is collected from Couchbase in Kubernetes environments. There are four services that make up the metric collection pipeline: Telegraf, Prometheus, Fluentd, and FluentBit.
 
@@ -93,7 +88,7 @@ When you upgrade the helm chart, you must upgrade telegraf version to 1.21.1 by 
 "--set telegraf-operator.image.sidecarImage=telegraf:1.21.1" in the upgrade command helm chart.
 
 
-### Configure Metrics Collection
+#### Configure Metrics Collection
 
 This section explains the steps to collect Couchbase metrics from a Kubernetes environment.
 
@@ -157,7 +152,7 @@ For all other parameters see [this doc](/docs/send-data/collect-from-other-data-
 2. Verify metrics in Sumo Logic.
 
 
-### Configure Logs Collection
+#### Configure Logs Collection
 
 This section explains the steps to collect Couchbase logs from a Kubernetes environment.
 
@@ -256,7 +251,7 @@ annotations:
 1. Click **Save** to create the rule.
 
 
-### Collect Couchbase Logs and Metrics for Non-Kubernetes environments
+#### Collect Couchbase Logs and Metrics for Non-Kubernetes environments
 
 Sumo Logic uses the Telegraf operator for Couchbase metric collection and the [Installed Collector](https://help.sumologic.com/03Send-Data/Installed-Collectors/01About-Installed-Collectors) for collecting Couchbase logs. The diagram below illustrates the components of the  Couchbase collection in a non-Kubernetes environment. Telegraf uses the[ Couchbase input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/couchbase) to obtain Couchbase metrics and the Sumo Logic output plugin to send the metrics to Sumo Logic. Logs from Couchbase are collected by a [Local File Source](https://help.sumologic.com/03Send-Data/Sources/01Sources-for-Installed-Collectors/Local-File-Source).
 
@@ -276,7 +271,7 @@ The process to set up collection for Couchbase data is done through the followin
     7. Configure and start Telegraf
 
 
-### Configure Logs Collection
+#### Configure Logs Collection
 11
 
 
@@ -365,9 +360,7 @@ If you are using a service like Fluentd, or you would like to upload your logs m
 2. When the URL associated with the HTTP Source is displayed, copy the URL so you can add it to the service you are using, such as Fluentd.
 
 
-### Configure Metrics Collection
-13
-
+#### Configure Metrics Collection
 
 
 #### Set up a Sumo Logic HTTP Source
@@ -570,10 +563,9 @@ Sumo Logic has provided out-of-the-box alerts available via[ Sumo Logic monitors
 
 
 
-## Install the Couchbase Monitors, App, and view the Dashboards
+## Install the Couchbase Monitors
 
-This page provides instructions for installing the Couchbase App, as well as examples of each of the App dashboards. These instructions assume you have already set up the collection as described in the [Collect Logs and Metrics for the Couchbase](https://help.sumologic.com/07Sumo-Logic-Apps/24Web_Servers/Squid_Proxy/Collect_Logs_for_Squid_Proxy) App page.
-
+The next sections provides instructions for installing the Couchbase App, as well as examples of each of the App dashboards. These instructions assume you have already set up the collection as described in the [Collect Logs and Metrics for the Couchbase](https://help.sumologic.com/07Sumo-Logic-Apps/24Web_Servers/Squid_Proxy/Collect_Logs_for_Squid_Proxy) App page.
 
 ### Pre-Packaged Alerts
 
@@ -581,18 +573,13 @@ Sumo Logic has provided out-of-the-box alerts available through [Sumo Logic moni
 
 For details on the individual alerts, see this [page](https://help.sumologic.com/07Sumo-Logic-Apps/12Databases/Couchbase/Couchbase_Alerts).
 
-
-#### Installing Monitors
-
 * To install these alerts, you need to have the Manage Monitors role capability.
 * Alerts can be installed by either importing a JSON file or a Terraform script.
 
-
-22
 There are limits to how many alerts can be enabled - see the [Alerts FAQ](/docs/alerts/monitors/monitor-faq.md) for details.
 
 
-##### Install the monitors by importing a JSON file method
+### Method 1: Importing a JSON file
 
 1. Download the [JSON file](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/blob/main/monitor_packages/Couchbase/couchbase.json) that describes the monitors.
 2. The [JSON](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/blob/main/monitor_packages/Couchbase/couchbase.json) contains the alerts that are based on Sumo Logic searches that do not have any scope filters and therefore will be applicable to all Couchbase clusters, the data for which has been collected via the instructions in the previous sections.  However, if you would like to restrict these alerts to specific clusters or environments, update the JSON file by replacing the text `db_system=couchbase` with `<Your Custom Filter>`.
@@ -610,30 +597,30 @@ There are limits to how many alerts can be enabled - see the [Alerts FAQ](/docs/
 The monitors are disabled by default. Once you have installed the alerts using this method, navigate to the Couchbase folder under **Monitors** to configure them. See [this](/docs/alerts/monitors/index.md) document to enable monitors to send notifications to teams or connections. See the instructions detailed in [Step 4](https://help.sumologic.com/07Sumo-Logic-Apps/12Databases/Couchbase/Install_the_Couchbase_Monitors%2C_App%2C_and_view_the_Dashboards#Step+4) of this [document](https://help.sumologic.com/Visualizations-and-Alerts/Alerts/Monitors#Add_a_monitor).
 
 
-##### Install the alerts using a Terraform script method.
+### Method 2: Using a Terraform script method
 
-
-1. **Generate a Sumo Logic access key and ID \
-**Generate an access key and access ID for a user that has the Manage Monitors role capability in Sumo Logic using these[ instructions](/docs/manage/security/access-keys#manage-your-access-keys-on-preferences-page). Identify which deployment your Sumo Logic account is in, using this [link](https://help.sumologic.com/APIs/General-API-Information/Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security).
+1. **Generate a Sumo Logic access key and ID** Generate an access key and access ID for a user that has the Manage Monitors role capability in Sumo Logic using these[ instructions](/docs/manage/security/access-keys#manage-your-access-keys-on-preferences-page). Identify which deployment your Sumo Logic account is in, using this [link](https://help.sumologic.com/APIs/General-API-Information/Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security).
 2. **[Download and install Terraform 0.13](https://www.terraform.io/downloads.html) or later **
 3. **Download the Sumo Logic Terraform package for Couchbase alerts \
 **The alerts package is available in the Sumo Logic GitHub [repository](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/tree/main/monitor_packages/SquidProxy). You can either download it through the “git clone” command or as a zip file.
 4. **Alert Configuration  \
 **After the package has been extracted, navigate to the package directory **terraform-sumologic-sumo-logic-monitor/monitor_packages/Couchbase/ \
  \
-**Edit the **couchbase.auto.tfvars** file and add the Sumo Logic Access Key, Access Id, and Deployment from Step 1. \
- \
-`access_id   = "<SUMOLOGIC ACCESS ID>" \
-access_key  = "<SUMOLOGIC ACCESS KEY>" \
-environment = "<SUMOLOGIC DEPLOYMENT>" \
- \
-`The Terraform script installs the alerts without any scope filters, if you would like to restrict the alerts to specific farms or environments, update the variable **’couchbase_data_source’**. Custom filter examples:
+**Edit the **couchbase.auto.tfvars** file and add the Sumo Logic Access Key, Access Id, and Deployment from Step 1.
+
+```bash
+access_id   = "<SUMOLOGIC ACCESS ID>"
+access_key  = "<SUMOLOGIC ACCESS KEY>"
+environment = "<SUMOLOGIC DEPLOYMENT>"
+```
+
+The Terraform script installs the alerts without any scope filters, if you would like to restrict the alerts to specific farms or environments, update the variable **’couchbase_data_source’**. Custom filter examples:
     1. A specific cluster **<code>'db_cluster=couchbase.standalone.01'</code>.**
     2. All clusters in an environment **<code>'environment=standalone</code>**.
     3. For alerts applicable to all clusters that start with couchbase-standalone, your custom filter would be: <code>'db_cluster=couchbase-standalone*'</code>.
     4. For alerts applicable to a specific cluster within a production environment, your custom filter would be:
 
-<code>db_system=couchbase</code> and <code>environment=standalone</code> (This assumes you have set the optional environment tag while configuring collection)
+`db_system=couchbase` and `environment=standalone` (This assumes you have set the optional environment tag while configuring collection)
 
 All monitors are disabled by default on installation, if you would like to enable all the monitors, set the parameter **monitors_disabled** to **false** in this file.
 
@@ -648,12 +635,7 @@ If you would like the alerts to send email or connection notifications, configur
 Modify the file **couchbase_notifications.auto.tfvars** and populate connection_notifications and email_notifications as per below examples.
 
 
-###### **Pagerduty Connection Example: **
-27
-
-
-
-```
+```bash title="Pagerduty Connection Example"
 connection_notifications = [
     {
       connection_type       = "PagerDuty",
@@ -671,17 +653,12 @@ connection_notifications = [
 ```
 
 
-Replace <CONNECTION_ID> with the connection id of the webhook connection. The webhook connection id can be retrieved by calling the [Monitors API](https://api.sumologic.com/docs/#operation/listConnections).
+Replace `<CONNECTION_ID>` with the connection id of the webhook connection. The webhook connection id can be retrieved by calling the [Monitors API](https://api.sumologic.com/docs/#operation/listConnections).
 
 For overriding payload for different connection types, refer to this [document](https://help.sumologic.com/Manage/Connections-and-Integrations/Webhook-Connections/Set_Up_Webhook_Connections).
 
 
-###### **Email Notifications Example: **
-28
-
-
-
-```
+```bash title="Email Notifications Example"
 email_notifications = [
     {
       connection_type       = "Email",
@@ -710,23 +687,15 @@ If you haven’t enabled alerts and/or configured notifications through the Terr
 There are limits to how many alerts can be enabled - see the [Alerts FAQ](/docs/alerts/monitors/monitor-faq.md).
 
 
-### Install the Sumo Logic App
-30
-
+## Installing the Couchbase App
 
 This section demonstrates how to install the Couchbase App.
 
-To install the app:
-
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
-
-
 
 1. From the **App Catalog**, search for and select the app**.**
 2. Select the version of the service you're using and click **Add to Library**.
 
-
-31
 Version selection is applicable only to a few apps currently. For more information, see the[ Install the Apps from the Library](https://help.sumologic.com/01Start-Here/Library/Apps-in-Sumo-Logic/Install-Apps-from-the-Library).
 
 1. To install the app, complete the following fields.
@@ -748,183 +717,121 @@ Once an app is installed, it will appear in your **Personal** folder, or another
 Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
 
 
-### Dashboard Filter with Template Variables  
+## Viewing Couchbase Dashboards
 
-Template variables provide dynamic dashboards that rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you can view dynamic changes to the data for a fast resolution to the root cause. For more information, see the[ Filter with template variables](https://help.sumologic.com/Visualizations-and-Alerts/Dashboard_(New)/Filter_with_template_variables) help page.
+:::tip Filter with template variables    
+Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards-new/filter-with-template-variables.md).
+:::
 
-
-33
-You can use template variables to drill down and examine the data on a granular level.
-
-
-### Dashboards
-34
-
-
-
-#### Couchbase - Overview
-35
-
+### Overview
 
 The **Couchbase - Overview** dashboard provides an at-a-glance view of the health of the Couchbase clusters and servers, performance, and problems causing errors.
 
 Use this dashboard to:
-
-
-
 * Gain insights into information about the number of nodes, number of buckets, connections, number items, total bytes transferred.
 * Determine errors in clusters: enjections, out of memory errors and error queries.
 * Gain insights into information about the workload of the cluster: percent of used memory, percent of used CPU.
 
-#### Couchbase - Bucket I/O
+<img src={useBaseUrl('img/integrations/databases/Couchbase-Overview.png')} alt="Cassandra dashboards" />
+
+
+
+### Bucket I/O
 
 The **Couchbase -  Bucket I/O** dashboard provides an insight into the operators of buckets in clusters: the number of getting operations, the number of set operations, the number of delete operations, the bytes read/write.
 
 Use this dashboard to:
-
-
-
 * Get insights into information about the total amount of operations in buckets per second;  the number of delete misses operations, get operations, set operations, update operations in buckets per second.
 * Get insights into information about the number of bytes read, bytes written over time.
 
-
-38
-
+<img src={useBaseUrl('img/integrations/databases/Couchbase-Bucket-I-O.png')} alt="Cassandra dashboards" />
 
 
-#### Couchbase - Cluster Resources
-39
 
+### Cluster Resources
 
 The **Couchbase -  Cluster Resources** dashboard provides an insight into the resources of clusters: the memory resource usage, the CPU resource usage, the disk resource usage.
 
 Use this dashboard to:
-
-
-
 * Gain insights into the workload of Couchbase clusters such as the percent of CPU used, the percent of Memory used, the High Low watermark.
 * Gain insights into the used resources of Couchbase clusters such as the Disk usage, the Swap space usage, the Memory available.
 * Gain insights into the rate requests, rate of streaming requests on the management port.
 
-
-40
-
+<img src={useBaseUrl('img/integrations/databases/Couchbase-Cluster-Resources.png')} alt="Cassandra dashboards" />
 
 
-#### Couchbase - DCP Queues
-41
 
+### DCP Queues
 
 The **Couchbase -  DCP Queues** dashboard provides an insight into the DCP queues of buckets in couchbase clusters: the number of DCP connections, DCP senders, the number of items in DCP Queues.
 
 Use this dashboard to:
-
-
-
 * Gain insights into the operations of DCP queues. This helps you identify the performance of your clusters when your cluster rebalance
 
-
-42
-
+<img src={useBaseUrl('img/integrations/databases/Couchbase-DCP-Queues.png')} alt="Cassandra dashboards" />
 
 
-#### Couchbase - Disk Queues
-43
 
+### Disk Queues
 
 The **Couchbase - Disk Queues **dashboard provides an insight into the DCP queues of buckets in couchbase clusters: the number of active items waiting to be written to disk, the number of items being put to disk queue, the average age of items in queues.
 
 Use this dashboard to:
-
-
-
 * Gain insights into the operations of disk queues. This helps you identify performance about read/write of your clusters.
 
-
-44
-
+<img src={useBaseUrl('img/integrations/databases/Couchbase-Disk-Queues.png')} alt="Cassandra dashboards" />
 
 
-#### Couchbase - vBucket
-45
 
+### vBucket
 
 The **Couchbase -  vBucket** dashboard provides insights into the state of vBucket of buckets in couchbase clusters: the number of vBucket of buckets, the number items in vBuckets, the state of vBuckets.
 
 Use this dashboard to:
-
-
-
 * To determine the number and status of vBucket in your clusters.
 
-
-46
-
+<img src={useBaseUrl('img/integrations/databases/Couchbase-vBucket.png')} alt="Cassandra dashboards" />
 
 
-#### Couchbase - XDCR
-47
 
+### XDCR
 
 The **Couchbase -  XDCR** dashboard provides insights into replicate operations of buckets cross-cluster: the number of XDCR connections, the number of XDCR items remaining, the number of read-set-delete operations for XDCR.
 
 Use this dashboard to:
-
-
-
 * Gain insights into replicate operations of buckets cross-cluster
 
-
-48
-
+<img src={useBaseUrl('img/integrations/databases/Couchbase-XDCR.png')} alt="Cassandra dashboards" />
 
 
-#### Couchbase - Errors
-49
-
+### Errors
 
 The **Couchbase -  Errors** dashboard provides insights into errors from error logs in couchbase servers and couchbase clusters: buckets not ready, nodes not responding, node down, error queries, last error logs.
 
 Use this dashboard to:
-
-
-
 * Quickly identify critical errors affecting your couchbase servers.
 * Identify SQL error queries from clients.
 
-
-50
-
+<img src={useBaseUrl('img/integrations/databases/Couchbase-Errors.png')} alt="Cassandra dashboards" />
 
 
-#### Couchbase - Events
-51
 
+### Events
 
 The **Couchbase -  Events** dashboard provides insights into events from couchbase servers and couchbase clusters: the number of login failure, login success from clients, add/remove node events, add/remove bucket events, rebalance events.
 
 Use this dashboard to:
-
-
-
 * To audit the activities happening in the cluster. This helps to determine what activities have occurred in the system, helping to control system security.
 
-
-52
-
+<img src={useBaseUrl('img/integrations/databases/Couchbase-Events.png')} alt="Cassandra dashboards" />
 
 
-#### Couchbase - HTTP Access
-53
 
+### HTTP Access
 
 The **Couchbase -  HTTP Access** dashboard provides insights into HTTP Rest API requests from clients to couchbase servers and couchbase clusters: the latency, HTTP codes, client agents, IP clients, errors with 4XX 5XX response code.
 
 Use this dashboard to:
-
-
-
 * To understand user behavior accessing clusters and servers through Rest API.
 
-
-54
+<img src={useBaseUrl('img/integrations/databases/Couchbase-HTTP-Access.png')} alt="Cassandra dashboards" />
