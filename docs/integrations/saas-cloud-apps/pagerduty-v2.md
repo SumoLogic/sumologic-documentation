@@ -24,27 +24,25 @@ For more information on the incident messages supported in Webhooks V2, see the 
 
 This page provides instructions for configuring a Sumo Logic Hosted Collector and HTTP Source to create a PagerDuty Webhook V2, to collect PagerDuty events. Click a link to jump to a topic:
 
-
-
 * [Event types](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/PagerDuty_V2/Collect_logs_for_PagerDuty_V2#Event_types)
 * [Log example](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/PagerDuty_V2/Collect_logs_for_PagerDuty_V2#Query_example)
 * [Configure a Sumo Logic Collector and Source](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/PagerDuty_V2/Collect_logs_for_PagerDuty_V2#Step_1:_Configure_a_Sumo_Logic_Collector_and_Source)
 * [Create a PagerDuty V2 Webhook](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/PagerDuty_V2/Collect_logs_for_PagerDuty_V2#Step_2:_Create_a_PagerDuty_V2_Webhook)
 
 
-#### Event types
+### Event types
 
 The Sumo Logic App for PagerDuty V2 ingests PagerDuty incident Webhooks V2 messages, caused by events that occur in your PagerDuty account and Services.
 
 For more information on the incident messages supported in Webhooks V2, see the PagerDuty documentation: [https://v2.developer.pagerduty.com/docs/webhooks-v2-overview](https://v2.developer.pagerduty.com/docs/webhooks-v2-overview)
 
 
-#### Log examples
+### Log examples
 
 For examples of incident.trigger, incident.acknowledge, incident.resolve, and incident.assign log messages, see the [PagerDuty Webhooks V2 Examples](https://v2.developer.pagerduty.com/docs/webhooks-v2-overview#examples) page.
 
 
-#### Sample Query
+### Sample Query
 
 The following Top Altering Services query is shown on the PagerDuty V2 - Overview dashboard.
 
@@ -68,11 +66,7 @@ A** Hosted Collector **is not installed on a local system in your deployment. In
 An **HTTP Source** is an endpoint for receiving log and metric data uploaded to a unique URL generated for the Source. The URL securely encodes the Collector and Source information. You can add as many HTTP Logs and Metrics Sources as you'd like to a single Hosted Collector.
 
 
-
-
-###### **To configure Hosted Collector and HTTP Source, do the following:**
-
-
+**To configure Hosted Collector and HTTP Source, do the following:**
 
 1. Log in to Sumo Logic.
 2. Follow the instruction for configuring a [Hosted Collector](https://help.sumologic.com/03Send-Data/Hosted-Collectors/Configure-a-Hosted-Collector).
@@ -95,22 +89,18 @@ Using PagerDuty with Webhooks V2, you receive HTTP callbacks when incident event
 3. Continue with [installing the Sumo Logic App for PagerDuty V2](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/PagerDuty_V2/Install_the_PagerDuty_V2_App_and_view_the_Dashboards).
 
 
-## Install the PagerDuty V2 App 
+## Install the PagerDuty V2 App
 
 This page provides instructions for installing the Sumo App for PagerDuty V2, as well as the descriptions of each of the app dashboards.
 
 Now that you have set up a log and metric collection, you can install the Sumo Logic App for PagerDuty V2, and use its pre-configured searches and dashboards.
 
-
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
-
 
 1. From the **App Catalog**, search for and select the app**.**
 2. Select the version of the service you're using and click **Add to Library**.
 
-
 Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](https://help.sumologic.com/01Start-Here/Library/Apps-in-Sumo-Logic/Install-Apps-from-the-Library)
-
 
 
 1. To install the app, complete the following fields.
@@ -142,7 +132,6 @@ Use this dashboard to:
 * Review the services, incidents and policies that are causing the most alerts.
 * Analyze detailed information on incidents using the Incident Summary panel.
 * Drill down to examine data on a granular level with filters.
-
 
 
 

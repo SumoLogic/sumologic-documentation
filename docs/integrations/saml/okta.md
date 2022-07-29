@@ -44,7 +44,7 @@ Before you begin setting up log collection, review the required prerequisites an
 To ensure that SumoJanus can find your Java installation, set your `JAVA_HOME` environment or absolute `PATH` variable.
 
 
-##### Process Overview (FedRamp Only)
+#### Process Overview (FedRamp Only)
 
 Setting up log collection from Okta for analysis in Sumo Logic includes the following tasks, which must be performed in the order in which they are presented.
 
@@ -96,21 +96,19 @@ The following SumoJanus file is required to collect logs from Okta. Download the
 
 If you have not previously set up SumoJanus, follow the steps in [New SumoJanus installation](https://help.sumologic.com/07Sumo-Logic-Apps/20SAML/Okta/Collect_logs_for_Okta#New_SumoJanus_installation). If you have previously set up SumoJanus, follow the instructions in [SumoJanus installation update](https://help.sumologic.com/07Sumo-Logic-Apps/20SAML/Okta/Collect_logs_for_Okta#SumoJanus_installation_update).
 
-
 **New SumoJanus installation**
 
 Copy the package file you downloaded in [Step 2](https://help.sumologic.com/07Sumo-Logic-Apps/20SAML/Okta/Collect_logs_for_Okta#Step_2:_Download_the_SumoJanus_package) to the appropriate sumojanus folder, then unzip them there.
 
 * On Linux, run the following command:
-```
+```bash
 tar xzvf sumojanus-okta-dist.1.0.2.tar.gz
 ```
 
 * On Windows, you can use Windows Explorer to open the zip package and copy it to the appropriate target folder.
-```
+```bash
 sumojanus-okta-dist.1.0.2.zip
 ```
-
 
 **Update your SumoJanus installation**
 1. Backup conf/sumologic.properties and the data folder.
@@ -155,7 +153,7 @@ Configure an [Installed Collector](https://help.sumologic.com/03Send-Data/Instal
 * On Windows, update `SumoJanus_Okta.bat`
 
 Navigate to the folder where you installed SumoJanus, and open `SumoJanus_Okta.bat`  in a text editor. Line 3 of the script sets `JAVAPATH` to `C:\Program Files\Sumo Logic Collector\jre\bin` as shown below:
-```
+```bash
 set JAVAPATH="C:\Program Files\Sumo Logic Collector\jre\bin"
 ```
 
@@ -165,17 +163,17 @@ On Linux, update `SumoJanus_Okta.bash`
 Navigate to the folder where you installed SumoJanus, and open `SumoJanus_Okta.bash`  in a text editor. Update the script as follows:
 
 1. Add a line that sets `JAVA_HOME `to point to the location of your JRE, just before the last line of the script. For example, if your collector's JRE is in `/opt/SumoCollector/jre/bin`, insert this line:
-```
+```bash
 JAVA_HOME=/opt/SumoCollector/jre/bin
 ```
 
 2. The last line of the script is:
-```
+```bash
 java -jar ${SUMOJANUS_JAR_FILE} ${runMode} OktaCollector-1.0.2.jar -e 1800
 ```
 
 Prefix the line with `$JAVA_HOME/`, like this:
-```
+```bash
 $JAVA_HOME/java -jar ${SUMOJANUS_JAR_FILE} ${runMode} OktaCollector-1.0.2.jar -e 1800
 ```
 
@@ -188,9 +186,9 @@ For guidance creating your Source Category naming convention, see [Best Practice
 1. Configure a [Script Source](https://help.sumologic.com/03Send-Data/Sources/01Sources-for-Installed-Collectors/Script-Source). Collectors using version 19.245-4 and later do not allow Script Sources to run by default. \
 
 To allow Script Sources you need to set the Collector parameter `enableScriptSource` in [user.properties](https://help.sumologic.com/03Send-Data/Installed-Collectors/05Reference-Information-for-Collector-Installation/06user.properties) to true and [restart](https://help.sumologic.com/Manage/Collection/02Start-or-Stop-a-Collector-using-Scripts) the Collector. \
-Linux \
+Linux
 
-Windows \
+Windows
 
 
 2. Configure the Source fields:
@@ -205,7 +203,9 @@ Windows \
 3. Click **Save**.
 
 
-### Sample log message
+### Sample Log message
+
+<details><summary>Click to expand</summary>
 
 ```json
 {
@@ -320,6 +320,7 @@ Windows \
 }
 ```
 
+</details>
 
 
 ### Sample Queries
