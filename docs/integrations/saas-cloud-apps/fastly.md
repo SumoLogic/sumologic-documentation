@@ -7,13 +7,12 @@ description: Fastly is a content delivery network (CDN) that provides you contro
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-
 <img src={useBaseUrl('img/integrations/saas-cloud-apps/fastly.png')} alt="DB icon" width="100"/>
 
 Fastly is a content delivery network (CDN) that provides you control over how and where you serve content, access to real-time performance analytics, and the ability to cache unpredictably changing content at the edge.
 
 
-#### Log types
+## Log types
 
 The Fastly app uses the following log types:
 
@@ -26,7 +25,7 @@ The Fastly app uses the following log types:
 This page has instructions for setting up log collection for the Fastly app.  
 
 
-#### Step 1: Configure collector and source
+### Step 1: Configure collector and source
 
 In this step, you configure a collector and source to receive Fastly logs.
 
@@ -34,7 +33,7 @@ In this step, you configure a collector and source to receive Fastly logs.
 2. Configure an [HTTP Source](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/HTTP-Source) for your Fastly request logs. Make sure to set the Source Category when configuring the HTTP source. For example, `fastly`. Make a note of the Source Category you assign to the source. You will provide this Source Category value when you install the Fastly app.
 
 
-#### Step 2. Configure endpoint in Fastly for CDN logs
+### Step 2. Configure endpoint in Fastly for CDN logs
 
 In this step you add Sumo Logic as a logging endpoint for Fastly services, and configure it to receive CDN logs. The process is described in [Adding Sumo Logic as a logging endpoint](https://docs.fastly.com/guides/streaming-logs/log-streaming-sumologic#adding-sumo-logic-as-a-logging-endpoint) in Fastly help.
 
@@ -69,27 +68,21 @@ Expand
 5. Click the **Activate** button to deploy your configuration.
 
 
-#### Step 3: Collect WAF Request logs
+### Step 3: Collect WAF Request logs
 
 If you have Fastly's Web Application Firewall (WAF), perform these steps to update the configuration of the endpoint you created in [Step 2](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/Fastly/01Collect-Logs-for-Fastly#Step_2._Configure_endpoint_for_CDN_logs) above. You are updating the endpoint to receive WAF Request logs as well as CDN logs.
-
-
 
 1. Use the JSON object below into the Log format field instead of the one specified in [Configure endpoint in Fastly for CDN logs](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/Fastly/01Collect-Logs-for-Fastly#Step_2._Configure_endpoint_in_Fastly_for_CDN_logs).
 
 Expand
 
-
-
 1. Point the logging endpoint to the `waf_debug_log` subroutine using curl, as described in [waf_debug_log](https://docs.fastly.com/guides/web-application-firewall/fastly-waf-logging#waf_debug_log) in Fastly help.
 2. Create a request_id header to track a single request.
 
 
-#### Step 4: Collect WAF Debug logs
+### Step 4: Collect WAF Debug logs
 
 If you have Fastly's Web Application Firewall (WAF), perform these steps to add a second logging endpoint in Fastly and configure it to send WAF request logs to Sumo Logic.
-
-
 
 1. Configure another [HTTP Source](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/HTTP-Source) for debug logs and set its source category. For example, fastly/debug. Make a note of the Source Category you assign to the source. You will provide this Source Category value when you install the Fastly app.
 2. Create another logging endpoint in Fastly following the instructions [Step 2](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/Fastly/01Collect-Logs-for-Fastly#Step_2._Configure_Sumo_logging_endpoint_in_Fastly), but enter the JSON below in the **Log format** field.
@@ -97,12 +90,11 @@ If you have Fastly's Web Application Firewall (WAF), perform these steps to add 
 Expand
 
 
-#### Field Extraction Rule
+### Field Extraction Rule
 
 This Field Extraction Rule (FER) is provided as an example to help you reduce your overall parsing time. Note that not all parse operators are supported in FERs. For more information, see Creating a Field Extraction Rule.
 
-
-```
+```sql
 parse "\"reqMethod\":\"*\"" as method, "\"status\":\"*\"" as status, "\"fwdHost\":\"*\"" as origin| parse "\"bytes\":\"*\"" as bytes, "\"edgeIP\":\"*\"" as edgeip, "\"country\":\"*\"" as country, "\"cookie\":\"*\"" as cookie
 ```
 
@@ -112,31 +104,25 @@ parse "\"reqMethod\":\"*\"" as method, "\"status\":\"*\"" as status, "\"fwdHost\
 There is a 200 field name limit for Field Extraction Rules (FER) and once a field is persisted using a FER, it can’t be removed. You can assign different targets to the name, but do not create overlapping messages and source categories.
 
 
-#### Sample Queries
+### Sample Queries
 
 
-##### Top Error-causing URLs
+#### Top Error-causing URLs
 
-
-```
+```sql
 _sourceCategory=fastly 50? | parse "\"reqPath\":\"*\"" as path, "\"status\":\"*\"" as status | urldecode(path) as path | where status > 499 | where status < 600 | count as errors by path | sort by errors
 ```
 
+#### Cache Performance
 
 
-##### Cache Performance
-
-
-```
+```sql
 _sourceCategory=fastly cacheStatus | parse "\"cacheStatus\":\"*\"" as status | where !(status="") | if(status="0", "0 - Non cacheable", if(status="1" OR status="2", "1/2 - Cache Hit", if(status="3", "3 - Cache Miss", ""))) as cachestatus | count by cachestatus
 ```
 
+#### Top Denials by Host
 
-
-##### Top Denials by Host
-
-
-```
+```sql
 _sourceCategory=fastly waf denyRules reqHost | parse "\"denyRules\":\"*\"" as deny, "\"reqHost\":\"*\"" as host | where deny != "" | timeslice 1m | count by host, _timeslice | transpose row _timeslice column host
 ```
 
@@ -172,8 +158,7 @@ There are four dashboards for Fastly that you can configure to accommodate your 
 
 The overview dashboard provides a high-level view of your Fastly traffic and identifies potential problems within the service.
 
-
-6.png "image_tooltip")
+<img src={useBaseUrl('img/integrations/saas-cloud-apps/fastly-cdn-overview.png')} alt="Fastly dashboards" />
 
 * **Visitor Geolocations.** Uses geolocation to display visitors by country using their IP addresses.
 * **Download Performance Hotspots** **- Avg Download Above 300ms by Country.** Uses a geolocation operation to display performance download time hotspots on a map of the world by IP addresses, lets you see a count of hits per location over the last 60 minutes.
@@ -188,11 +173,7 @@ The overview dashboard provides a high-level view of your Fastly traffic and ide
 
 Focus in on Origin Host performance to check latencies, slow URLs and error-causing URLs.
 
-
-7.png "image_tooltip")
-
-
-
+<img src={useBaseUrl('img/integrations/saas-cloud-apps/FastlyCDNOriginPerformancepng.png')} alt="Fastly dashboards" />
 
 * **90%-ile Latency (millisecs) by Origin Host. **Displays the 90th percentile of the data center response time latency as a line chart on a timeline for the last hour, using timeslices of one minute.
 * **Median Latency (millisecs) by Origin Host**. Displays the median latency time as a line chart for the past hour.
@@ -208,11 +189,7 @@ Focus in on Origin Host performance to check latencies, slow URLs and error-caus
 
 See where quality of service is below minimum thresholds such as download times, cache performance, and data center performance.
 
-
-8.png "image_tooltip")
-
-
-
+<img src={useBaseUrl('img/integrations/saas-cloud-apps/fastly-cdn-quality-of-service.png')} alt="Fastly dashboards" />
 
 * **Download Performance Hotspots - Avg Download Above 300ms.**  Uses a geolocation operation to display performance download time hotspots on a map of the world by IP addresses, lets you see a count of hits per location for the last hour.
 * **Cache Performance.** The number of Hits, Passes, and Misses as a percentage over a period of time.
@@ -227,11 +204,7 @@ See where quality of service is below minimum thresholds such as download times,
 
 See where you're getting the most traffic and from where.
 
-
-9.png "image_tooltip")
-
-
-
+<img src={useBaseUrl('img/integrations/saas-cloud-apps/FastlyCDNVisitors.png')} alt="Fastly dashboards" />
 
 * **Visitor Geolocations.** See where your visitors originate with a map that provides the geolocation of visitor IP addresses.
 * **Requests by Country.** Percentage of requests by country to help you find the origin of traffic to Fastly.
@@ -252,19 +225,13 @@ See where you're getting the most traffic and from where.
 
 See the overview of Fastly WAF including the states, hits, and threat intel on warning and blocked events.
 
-
-10.png "image_tooltip")
-
-
-
+<img src={useBaseUrl('img/integrations/saas-cloud-apps/WAF-Overview.png')} alt="Fastly dashboards" />
 
 * **WAF Analysis**
     * **WAF States. **See the count of requests that triggered WAF. It shows if the request triggered a rule(s) but passed to origin (warn), was blocked (bad), went through WAF and triggered no rules (good), cause an error (failure) for the last 24 hour as a line chart.
     * **Daily Hits. **See the count of requests that triggered WAF in the last 7 days on a bar chart.
 
 The following panels are grouped as blocking and warning (which triggered a rule but passed to origin) events.
-
-
 
 * **Threat Intelligence - Warn Events**
     * **Top URLs (Warn).** See the count of top URLs for warning events in the last 24 hours in a table.
@@ -280,11 +247,7 @@ The following panels are grouped as blocking and warning (which triggered a rule
 
 See the details on WAF offenders including the location, client IP addresses for warning and blocked events, and OWASP offenders in different attack categories and threshold exceptions.
 
-
-11.png "image_tooltip")
-
-
-
+<img src={useBaseUrl('img/integrations/saas-cloud-apps/fastly-waf-offenders.png')} alt="Fastly dashboards" />
 
 * **Geo Location of All Users. **See the count and user location where WAF was executed in the last 24 hours on a world map.
 * **Top Clients affected by Threats. **See the top 10 client IP addresses by count that are affected by threats in the last 24 hours.
@@ -305,11 +268,7 @@ See the details on WAF offenders including the location, client IP addresses for
 
 See the overall Open Web Application Security Project (OWASP) anomaly score quartiles and by rule category.
 
-
-12.png "image_tooltip")
-
-
-
+<img src={useBaseUrl('img/integrations/saas-cloud-apps/WAF-OWASP.png')} alt="Fastly dashboards" />
 
 * **OWASP Thresholds**. The panels in this dashboard show the overall anomaly score quartiles and by rule category. They show the following statistics: minimum, 25th percentile, median, 75th percentile, maximum, and the average in the last hour, for each of the following:
     * **OWASP Overall.**

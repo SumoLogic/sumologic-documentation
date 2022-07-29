@@ -15,7 +15,7 @@ Workday is a cloud-based ERP system that manages the business processes and allo
 The Sumo Logic App for Workday provides insights into authentication activity, user activity, and administrator activity. The pre-configured dashboards help identify events that identify compliance and incident reporting, common security events, and real-time analysis of suspicious activities.
 
 
-#### Log Types
+## Log Types
 
 The Sumo Logic App for Workday collects all logs in JSON format. It uses the following two types of logs:
 
@@ -25,10 +25,7 @@ The Sumo Logic App for Workday collects all logs in JSON format. It uses the fol
 
 ## Collect Logs for the Workday App
 
-This page explains how to collect logs from Workday and ingest them into Sumo Logic for use with the Workday App predefined dashboards and searches. Click a link to jump to a section:
-
-
-1
+This page explains how to collect logs from Workday and ingest them into Sumo Logic for use with the Workday App predefined dashboards and searches.
 
 The instructions below assume that the following security groups -  Security Administrator, System Auditor, and Report Administrator are assigned to the user who will be configuring the collection in the Workday portal. Make sure the account used doesn't belong to an employee otherwise custom reports created by the user may no longer be available when they leave the organization.
 
@@ -37,18 +34,15 @@ The instructions below assume that the following security groups -  Security Adm
 * [Query Sample](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/Workday/Collect_Logs_for_the_Workday_App#Query_Sample)
 
 
-#### Collection Overview
+### Collection Overview
 
 Sumo Logic collects logs from Workday via a script that calls the Workday APIs. As part of the script configuration, you need to first configure log types that need to be collected, and these logs are then forwarded to Sumo Logic’s HTTPS source.
-
-
-2
 
 
 By default, the collection starts from the current date and time, but this setting is also configurable. For more information, see the [Advanced Configuration](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/Workday/Collect_Logs_for_the_Workday_App#Advanced_Configuration) options.
 
 
-##### Before You Deploy
+#### Before You Deploy
 
 Sumo Logic collects data from the User Activity and Signon Activity Reports via the Workday APIs. Once data collection is set up, the data in the Sumo Logic platform is analyzed via the Workday app in the Sumo Logic app catalog.
 
@@ -59,8 +53,6 @@ User activity data is collected through the Workday Audit Logs API. To ensure th
 
 We recommend you to deploy the Sumo Logic - Workday integration using the following guidelines.
 
-
-
 1. Start by configuring the collector source as described in the sections below for your Workday Sandbox environment.
 2. Once the integration has been successfully deployed and tested in your Workday Sandbox environment, only then should you move to configuring this integration in your Workday production environment.  
 
@@ -70,8 +62,6 @@ After the integration has been configured, if you run into performance issues in
 
 Configuring collection for Workday includes the following tasks:
 
-
-
 * [Step 1: Configure the Workday Portal](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/Workday/Collect_Logs_for_the_Workday_App#Step_1:_Configure_the_Workday_Portal)
 * [Step 2: Add a Hosted Collector and HTTP Source](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/Workday/Collect_Logs_for_the_Workday_App#Step_2:_Add_a_Hosted_Collector_and_HTTP_Source)
 * [Step 3: Configure Collection for Workday](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/Workday/Collect_Logs_for_the_Workday_App#Step_3:_Configure_Collection_for_Workday)
@@ -79,7 +69,6 @@ Configuring collection for Workday includes the following tasks:
 * [Troubleshooting](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/Workday/Collect_Logs_for_the_Workday_App#Troubleshooting)
 
 
-4
 The instructions below assume that following security groups -  **Security Administrator, System Auditor, and Report Administrator** are assigned to the user who will be configuring the collection in the Workday portal.
 
 
@@ -100,76 +89,54 @@ Configuring the Workday portal involves the following steps:
 [Step 1.5: Create a Custom sign on report](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/Workday/Collect_Logs_for_the_Workday_App#Step_1.5:_Create_a_Custom_signon_report)
 
 
-###### Step 1.1: Create an Integration System User
-
-
+#### Step 1.1: Create an Integration System User
 
 1. Access the **Create Integration System User** task and provide the following parameters:
     * **User Name.** SumoLogic_ISU
     * **New Password and New Password Verify.** Enter the password
     * **Do Not Allow UI Sessions.** Check the box
     * **Session Timeout Minutes.** 0 (Disable session expiration) \
- \
 
-5
- \
 
 2. Click **OK**.
 3. Exempt the created user from the password expiration rule.
     * Access **Maintain Password Rules** task.
-    * Add the users to **System Users exempt from password expiration**. \
- \
-
-6
+    * Add the users to **System Users exempt from password expiration**.
 
 
-
-###### Step 1.2: Create a Security Group
-
-
+#### Step 1.2: Create a Security Group
 
 1. To create a security group, access the **Create Security Group** task and provide the following parameters:
     * **Type of Tenanted Security Group.** Integration System Security Group (Unconstrained)
     * **Name.** SumoLogic Client Security Group** **
 
 
-7
-
-
 1. Click **OK**.
 2. In the **Edit Integration System Security Group (Unconstrained)** window provide the following parameters:
     * **Integration System Users**. SumoLogic_ISU
     * **Comment (Optional)**. Provide a short description \
- \
-
-8
 
 3. Click **OK**.
 4. To attach the security group to a domain, access the **View Domain** task for the domain System Auditing.
 5. Select **Domain > Edit Security Policy Permissions** from the **System Auditing** related **Actions** menu. \
  \
 
-9
-
 6. Add the SumoLogic Client Security Group you created to both the tables as below:
     * **Report/Task Permissions table.** View access
     * **Integration Permissions table**. Get access \
  \
 
-10
+
 
 7. Click **OK**.
 8. To apply policy changes, access the **Activate Pending Security Policy Changes** task and activate the changes you made. \
  \
 
-11
 
 9. Click **OK**.
 
 
-###### Step 1.3: Register the API Client
-
-
+#### Step 1.3: Register the API Client
 
 1. To register the API client, access the **Register API Client** **for Integrations** task, and provide the following parameters:
     * **Client Name.** Sumo Logic Workday Collector
@@ -213,13 +180,7 @@ If you lose the **Client Secret,** you can generate a new one using the **Genera
 10. Copy the value of the **Refresh Token** column from the opened window and click **Done**. \
  \
 
-19
-
-
-
-###### Step 1.4: Enable your tenant to send data
-
-
+#### Step 1.4: Enable your tenant to send data
 
 1. To enable your Tenant to send data, access the **Edit Tenant Setup - System** task and ensure that the **Enable User Activity Logging** checkbox is selected. \
  \
@@ -233,10 +194,9 @@ If you lose the **Client Secret,** you can generate a new one using the **Genera
 
 
 
-###### Step 1.5: Create a Custom sign on report
+#### Step 1.5: Create a Custom sign on report
 
 **Note** -  For customers that do not make use of the Recruiting Functional Area. the standard Candidate Signon report may not be available. Alternative is to create a new custom report with **Data Source = “All System Account Signons”** and **Data Source Filter **= **“Workday System Account Signons in Range”**. You can configure the fields using [Excel](https://appdev-readme-resources.s3.amazonaws.com/Workday/Signons_and_Attempted_Signons_-_Copy.xlsx).
-
 
 
 1. Go to **Copy  Standard Report to Custom Report **task to create a Customs SignOn Report.
@@ -306,7 +266,7 @@ After configuring all the fields you can verify all the fields using the [Excel]
 From the URL, remove any query parameters like json, From Moment and To Moment. The report URL should looks like this `https://wd2-impl-services1.workday.com/ccx/service/customreport2/<tenant>/<accountname>/<reportname>`
 
 
-##### Step 2: Add a Hosted Collector and HTTP Source
+#### Step 2: Add a Hosted Collector and HTTP Source
 
 **Note** -  This step is not needed if you are choosing to configure the Cloud To Cloud Collector Source.
 
@@ -320,11 +280,9 @@ In this step, you create a hosted collector and HTTP source to receive data from
 Make a note of the HTTP address for the source. You will need it when you configure the collection for the Workday scripts in the next step.
 
 
-##### Step 3: Configure Collection for Workday
+#### Step 3: Configure Collection for Workday
 
 In this section, we will configure a collection of login and audit logs  from Workday and send them to Sumo Logic via one of the methods listed below.
-
-
 
 * For non-FedRamp Sumo Logic deployments
     * [Create a Workday Cloud To Cloud Collector Source](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Cloud-to-Cloud_Integration_Framework/Workday_Source).
@@ -333,23 +291,20 @@ In this section, we will configure a collection of login and audit logs  from Wo
     * [Script-based collection](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/Workday/Collect_Logs_for_the_Workday_App#Configure_script-based_collection_for_Workday) from a Linux machine.
 
 
-##### Deploy the Sumo Logic Workday SAM Application in your AWS environment
+#### Deploy the Sumo Logic Workday SAM Application in your AWS environment
 
 In this step, you deploy the SAM application, which creates the necessary resources in your AWS account.
 
 **To deploy the Sumo Logic Workday SAM Application, do the following:**
 
-
 1. Go to [https://serverlessrepo.aws.amazon.com/applications](https://serverlessrepo.aws.amazon.com/applications).
 2. Search for **sumologic-workday**, and select the **Show apps that create custom IAM roles or resource policies **checkbox and click the app link when it appears. \
  \
 
-32
 
 3. When the Sumo Logic app page appears, click **Deploy**. \
  \
 
-33
 
 4. In the **AWS Lambda > Functions >** **Application Settings** panel, specify the following parameters in the corresponding text fields:
     * **HTTPLogsEndpoint.** Paste the URL for the HTTP Logs source from [Step 2](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/Workday/Collect_Logs_for_the_Workday_App#Step_2:_Add_a_Hosted_Collector_and_HTTP_Source).
@@ -363,14 +318,9 @@ In this step, you deploy the SAM application, which creates the necessary resour
     * **RefreshToken.** Paste the Refresh token generated from [Step 1.4](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/Workday/Collect_Logs_for_the_Workday_App#Step_1.4:_Enable_your_tenant_to_send_data). \
  \
 
-34
-
 5. Click **Deploy**.
 6. After the deployment, you can verify whether all the resources are created completely. \
  \
-
-35
-
 
 
 ##### Configure script-based collection for Workday
@@ -378,16 +328,11 @@ In this step, you deploy the SAM application, which creates the necessary resour
 This section shows you how to configure script-based log collection for the Sumo Logic Workday App.
 
 
-36
-
-
 The sumologic-workday script is compatible with python 3.7 and python 2.7, and has been tested on Ubuntu 18.04 LTS.
 
 **Prerequisites**
 
 This task makes the following assumptions:
-
-
 
 * You have successfully added a **Hosted Collector** and **HTTP source **and copied configuration parameters (HTTPLogsEndpoint, SignonReportUrl, IntegrationSystemUserPassword, IntegrationSystemUsername,  WorkdayRestApiEndpoint,  RefreshTokenEndpoint, ClientId, ClientSecret, and RefreshToken) from the Workday console, as described in [Add a Hosted Collector and HTTP Source](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/Workday/Collect_Logs_for_the_Workday_App#Step_2:_Add_a_Hosted_Collector_and_HTTP_Source) section.
 * You are logged in to a Linux machine as the user account with which you will install the collector. If not, use the following command to switch to that account: `sudo su <user_name>`
@@ -397,17 +342,17 @@ This task makes the following assumptions:
 
 This task shows you how to install the script on a Linux machine.
 
+**For python 3**, use:
+```bash
+pip3 install sumologic-workday
+```
 
-37
-
-
-**For python 3**, use: `pip3 install sumologic-workday`
-
-**For operating systems where default python is not python3**, use: `/usr/bin/python3 -m sumoworkdaycollector.main`
+**For operating systems where default python is not python3**, use:
+```bash
+/usr/bin/python3 -m sumoworkdaycollector.main
+```
 
 **To deploy the script on a Linux machine, do the following:**
-
-
 
 1. If **pip** is not already installed, follow the instructions in the [pip documentation](https://pip.pypa.io/en/stable/installing/) to download and install **pip**.
 2. Log in to a Linux machine (compatible with either Python 3.7 or Python 2.7).
@@ -417,7 +362,7 @@ This task shows you how to install the script on a Linux machine.
 4. Create a `sumoworkdaycollector.yaml` configuration file in the home directory and fill in the parameters as shown in the following example.
 
 
-```
+```yml
 SumoLogic:
   HTTP_LOGS_ENDPOINT: <Paste the URL for the HTTP Logs source from step 2.>
 
@@ -449,11 +394,14 @@ Workday_API_Config:
 5. Create a cron job to run the collector every 5 minutes, (use the `crontab -e` option). Do one of the following:
 
 
-
-* **For Python 2**, add the following line to your crontab: \
-`*/5 * * * *  /usr/bin/python -m sumoworkdaycollector.main > /dev/null 2>&1`
-* **For Python 3**, add the following line to your crontab: \
-`*/5 * * * *  /usr/bin/python3 -m sumoworkdaycollector.main > /dev/null 2>&1`
+* **For Python 2**, add the following line to your crontab:
+```
+*/5 * * * *  /usr/bin/python -m sumoworkdaycollector.main > /dev/null 2>&1
+```
+* **For Python 3**, add the following line to your crontab:
+```
+*/5 * * * *  /usr/bin/python3 -m sumoworkdaycollector.main > /dev/null 2>&1
+```
 
 
 #### Advanced Configuration
@@ -461,12 +409,9 @@ Workday_API_Config:
 This section provides a list of variables for Workday that you can define in the configuration file.
 
 
-38
 We do not recommend significantly changing how Workday APIs are being invoked by the Sumo Logic collection scripts as these may cause performance problems on your Workday instance.
 
 The Workday specific configuration is shown in below two sections:
-
-
 
 * Workday_Report_Config - Remove this section to stop collecting SignOn logs from the custom report.
 * Workday_API_Config section - Remove this section to stop collecting audit logs via REST API.
@@ -517,12 +462,12 @@ Exception: Invalid config
 
 
 
-#### Sample Log Messages
+### Sample Log Messages
 
 Workday App logs are all in JSON format. The Workday App uses two types of logs and this section provides examples of the log types.
 
 
-##### SignOn Logs
+#### SignOn Logs
 
 **Sample message**
 
@@ -550,7 +495,7 @@ Workday App logs are all in JSON format. The Workday App uses two types of logs 
 
 
 
-##### Audit Logs
+#### Audit Logs
 
 **Sample message**
 
@@ -576,15 +521,13 @@ The query sample provided in this section is from the **Failed Login Reasons **p
 
 **Parameters**
 
-
-
 * Failed_Signon:*
 * Authentication_Failure_Message:*
 
 **Query String**
 
 
-```
+```sql
 _sourceCategory=workday_logs and _sourceName=signonlogs
 | json auto
 | where Failed_Signon=1
@@ -601,7 +544,6 @@ This page provides instructions on how to install the Workday App, as well as ex
 
 As part of this beta, the app will automatically be installed in the Sumo Logic account of your choice as part of the Admin recommended folder.
 
-
 Panels will start to fill automatically once you have configured the collection. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with time, you'll see full graphs and maps.
 
 ## Viewing Slack Dashboards
@@ -611,7 +553,7 @@ Panels will start to fill automatically once you have configured the collection.
 Template variables provide dynamic dashboards that rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you can view dynamic changes to the data for a fast resolution to the root cause. For more information, see the [Filter with template variables](https://help.sumologic.com/Visualizations-and-Alerts/Dashboard_(New)/Filter_with_template_variables) help page.
 
 
-42
+4
 You can use template variables to drill down and examine the data on a granular level.
 
 
@@ -620,16 +562,11 @@ You can use template variables to drill down and examine the data on a granular 
 The **Workday - Overview **dashboard provides an at-a-glance view of the security posture of your Workday instance. Panel identify login activity, user activity, and activity from untrusted devices or users with failed logins. It also helps you in monitoring failed logins by devices and the recent activities from untrusted devices.
 
 Use this dashboard to:
-
-
-
 * To quickly identify anomalous increases in total and failed logins.
 * Monitor recent user activities from untrusted devices and users with multiple failed login attempt to determine the extent of a potential breach.
 * Quickly identify if users are logging in from expected locations and using supported devices.
 
-
-43
-
+<img src={useBaseUrl('img/integrations/saas-cloud-apps/Workday-Overview.png')} alt="workday dashboards" />
 
 
 ### Login Activity
@@ -637,33 +574,22 @@ Use this dashboard to:
 The **Workday - Login Activity** dashboard provides detailed insights into login summary, trends, and malicious activities. Panel also displays recent login activity and details of devices and browsers used to login to the Workday portal.
 
 Use this dashboard to:
-
-
-
 * Identify login requests received from malicious remote IPs and untrusted devices.
 * Quickly identify if users are logging in from expected locations and using devices supported by your IT teams.
 * Get insight into trends around login events to determine the times of day your Workday instance is being used the most.
 * Quickly identify if there are an unusually high number of failed logins.
 
-
-44
-
-
+<img src={useBaseUrl('img/integrations/saas-cloud-apps/Workday-Login-Activity.png')} alt="workday dashboards" />
 
 ### User Activity
 
 The **Workday - User Activity** dashboard provides detailed insight into all user activity and potential suspicious activities in your Workday instance.
 
 Use this dashboard to:
-
-
-
 * Monitor if Workday tasks executed by users are according to expectations.
 * Get insights into CRUD(Create/Read/Update/Delete) and download activity Quickly identify if login and user activity are originating from known malicious IP addresses.
 
-
-45
-
+<img src={useBaseUrl('img/integrations/saas-cloud-apps/Workday-User-Activity.png')} alt="workday dashboards" />
 
 
 ### System User Activity
@@ -671,38 +597,26 @@ Use this dashboard to:
 The **Workday - System User Activity** dashboard monitors the system user activities. Panels also identify all configuration changes related to domain security, business processes, security groups, and API client modules.
 
 Use this dashboard to:
-
-
-
 * Identify if key configuration changes are in line with expectations.
 * Identify changes related to permission and role assignments.
 
-
-46
-
+<img src={useBaseUrl('img/integrations/saas-cloud-apps/Workday-SystemUserActivity.png')} alt="workday dashboards" />
 
 
 ### API Activity
 
 The **Workday - API Activity** dashboard gives you insight into all analytics for REST API calls and web service related authentications and monitors access attempts from known malicious IP addresses.
 
-
-47
-
+<img src={useBaseUrl('img/integrations/saas-cloud-apps/Workday-APIActivity1.png')} alt="workday dashboards" />
 
 API activity dashboard populates if there is any API activity happening on in their tenant, may be there isn't any workday rest apis (not SOAP) they are using. They can verify this by going to the User Activity report in their workday tenant and running the report with following filters
 
 Task contains api/ and System Account not equal to SumoLogic_ISU.
 
-
-48
-
-
 Use this dashboard to:
-
-
 
 * Monitor API related read, write, and other activities to ensure they match the expectations.
 * Quickly identify any API requests originating from malicious IP addresses.
 * Identify if API requests are being received from devices not supported by your IT teams.
-*
+
+<img src={useBaseUrl('img/integrations/saas-cloud-apps/Workday-APIActivity.png')} alt="workday dashboards" />

@@ -10,8 +10,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 The Sumo Logic App for Payment Card Industry (PCI) Compliance for Palo Alto Networks 10 offers dashboards to monitor firewall traffic activity for compliance with PCI requirements 01, 02, and 04.
 
 
-#### Log types
-1
+## Log types
 
 <table>
   <tr>
@@ -36,34 +35,24 @@ The Sumo Logic App for Payment Card Industry (PCI) Compliance for Palo Alto Netw
   </tr>
 </table>
 
-
-
 ## Collect Logs for PCI Compliance for Palo Alto Networks 10
 
 This page provides instructions for configuring log collection for the Sumo Logic app for PCI Compliance for Palo Alto Networks 10, as well as sample log messages and a query example from an app dashboard.
 
 
 ### Collection process overview
-2
-
 
 Configuring log collection for PCI Compliance for Palo Alto Networks 10 includes the following tasks:
-
-
 
 1. Create a hosted collector with a Cloud Syslog source
 2. Define the destination for the logs.
 3. Configure syslog forwarding
 4. Verify logs in Palo Alto Networks
 
-
-3
 You must have Palo Alto Networks Web administrative user permissions to successfully complete these tasks.
 
 
 ### Step 1. Create a hosted collector and Cloud Syslog source
-4
-
 
 In this step you configure a hosted collector with a Cloud Syslog source that will act as Syslog server to receive logs and events from Palo Alto Networks devices.
 
@@ -78,14 +67,10 @@ In this step you configure a hosted collector with a Cloud Syslog source that wi
 
 
 ### Step 2. Define the destination for the logs
-5
-
 
 In this step you create a server profile where you can define the log destination. This will be the host name, port and protocol (TLS) of the Sumo Logic Cloud Syslog source.
 
 **To create a server profile specifying  the log destination, do the following:**
-
-
 
 1.  Login to the Palo Alto Networks Web interface as an administrative user.
 2. Select **Device tab > Server Profiles > Syslog**.
@@ -107,21 +92,17 @@ In this step you create a server profile where you can define the log destinatio
 
 
 ### Step 3. Configure syslog forwarding
-6
 
 
 To configure syslog forwarding for each Traffic logs, follow the steps to [Configure Log Forwarding](https://docs.paloaltonetworks.com/pan-os/8-1/pan-os-admin/monitoring/configure-log-forwarding) as described in the Palo Networks documentation.
 
 
 ### Step 4. Verify logs in Palo Alto Networks
-7
 
 
 In this step, you view logs using the Palo Alto Network Web interface to confirm the logs are generated on the firewall.
 
 **To verify the logs in Palo Alto Networks, do the following:**
-
-
 
 1. In the Palo Alto Networks UI, select **Monitor** > **Logs**.
 2. Once the setup is done, log in to Sumo Logic.
@@ -130,28 +111,56 @@ In this step, you view logs using the Palo Alto Network Web interface to confirm
 
 
 ### Sample logs
-8
-
 
 The PCI Compliance for Palo Alto Networks 10 App uses [Traffic](https://docs.paloaltonetworks.com/pan-os/9-0/pan-os-admin/monitoring/use-syslog-for-monitoring/syslog-field-descriptions/traffic-log-fields.html) logs.
 
 
-```
+```json
 Oct 09 10:19:15 SumPunFw07.sumotest.com 1,2019/10/09 10:19:15,001234567890002,TRAFFIC,drop,2304,2019/10/09 10:19:15,209.118.103.150,160.177.222.249,0.0.0.0,0.0.0.0,InternalServer,,,not-applicable,vsys1,inside,z1-FW-Transit,ethernet1/2,,All traffic,2019/10/09 10:19:15,0,1,63712,443,0,0,0x0,udp,deny,60,60,0,1,2019/10/09 10:19:15,0,any,0,0123456789,0x0,Netherlands,10.0.0.0-10.255.255.255,0,1,0,policy-deny,0,0,0,0,,SumPunFw07,from-policy,,,0,,0,,N/A,0,0,0,0,1202585d-b4d5-5b4c-aaa2-d80d77ba456e,0
 ```
 
 
 
 ### Sample Query
-9
-
 
 This example query is from the **Allowed Network Activity by Direction** panel of the **Accepted and Rejected Traffic** dashboard.
 
+<details><summary>Click to expand</summary>
 
-```
+```sql
 _sourceCategory = Labs/PaloAltoNetworksv10 TRAFFIC allow
-| csv _raw extract 1 as f1, 2 as Receive_Time, 3 as serialNum, 4 as type, 5 as subtype, 6 as f2, 7 as LogGenerationTime, 8 as src_ip, 9 as dest_ip, 10 as NAT_src_ip, 11 as NAT_dest_ip, 12 as ruleName, 13 as src_user, 14 as dest_user, 15 as app, 16 as vsys, 17 as src_zone, 18 as dest_zone, 19 as inbound_interface, 20 as outbound_interface, 21 as LogAction, 22 as f3, 23 as SessonID, 24 as RepeatCount, 25 as src_port, 26 as dest_port, 27 as NAT_src_port, 28 as NAT_dest_port, 29 as flags, 30 as protocol, 31 as action, 32 as bytes, 33 as bytes_sent, 34 as bytes_recv, 35 as Packets, 36 as StartTime, 37 as ElapsedTime, 38 as Category, 39 as f4, 40 as seqNum, 41 as ActionFlags, 42 as src_Country, 43 as dest_country, 44 as f5, 45 as pkts_sent, 46 as pkts_received, 47 as session_end_reason, 48 as Device_Group_Hierarchy_l1, 49 as Device_Group_Hierarchy_l2, 50 as Device_Group_Hierarchy_l3, 51 as Device_Group_Hierarchy_l4, 52 as vsys_Name, 53 as DeviceName, 54 as action_source, 55 as Source_VM_UUID, 56 as Destination_VM_UUID, 57 as Tunnel_ID_IMSI, 58 as Monitor_Tag_IMEI, 59 as Parent_Session_ID, 60 as parent_start_time, 61 as Tunnel, 62 as SCTP_Association_ID, 63 as SCTP_Chunks, 64 as SCTP_Chunks_Sent, 65 as SCTP_Chunks_Received, 66 as UUIDforrule, 67 as HTTP2Connection, 68 as AppFlapCount ,69 as PolicyID ,70 as LinkSwitches ,71 as SDWANCluster ,72 as SDWANDeviceType ,73 as SDWANClusterType ,74 as SDWANSite ,75 as DynamicUserGroupName ,76 as XFFAddress ,77 as SourceDeviceCategory ,78 as SourceDeviceProfile ,79 as SourceDeviceModel ,80 as SourceDeviceVendor ,81 as SourceDeviceOSFamily ,82 as SourceDeviceOSVersion ,83 as SourceHostname ,84 as SourceMACAddress ,85 as DestinationDeviceCategory ,86 as DestinationDeviceProfile ,87 as DestinationDeviceModel ,88 as DestinationDeviceVendor ,89 as DestinationDeviceOSFamily ,90 as DestinationDeviceOSVersion ,91 as DestinationHostname ,92 as DestinationMACAddress ,93 as ContainerID ,94 as PODNamespace ,95 as PODName ,96 as SourceExternalDynamicList ,97 as DestinationExternalDynamicList ,98 as HostID ,99 as UserDeviceSerialNumber ,100 as SourceDynamicAddressGroup ,101 as DestinationDynamicAddressGroup ,102 as SessionOwner ,103 as HighResolutionTimestamp ,104 as ASliceServiceType ,105 as ASliceDifferentiator
+| csv _raw extract 1 as f1, 2 as Receive_Time, 3 as serialNum, \
+4 as type, 5 as subtype, 6 as f2, 7 as LogGenerationTime, 8 as src_ip, \
+9 as dest_ip, 10 as NAT_src_ip, 11 as NAT_dest_ip, 12 as ruleName, \
+13 as src_user, 14 as dest_user, 15 as app, 16 as vsys, 17 as src_zone, \
+18 as dest_zone, 19 as inbound_interface, 20 as outbound_interface, \
+21 as LogAction, 22 as f3, 23 as SessonID, 24 as RepeatCount, \
+25 as src_port, 26 as dest_port, 27 as NAT_src_port, 28 as NAT_dest_port, \
+29 as flags, 30 as protocol, 31 as action, 32 as bytes, 33 as bytes_sent, \
+34 as bytes_recv, 35 as Packets, 36 as StartTime, 37 as ElapsedTime, \
+38 as Category, 39 as f4, 40 as seqNum, 41 as ActionFlags, 42 as src_Country, \
+43 as dest_country, 44 as f5, 45 as pkts_sent, 46 as pkts_received, \
+47 as session_end_reason, 48 as Device_Group_Hierarchy_l1, \
+49 as Device_Group_Hierarchy_l2, 50 as Device_Group_Hierarchy_l3, \
+51 as Device_Group_Hierarchy_l4, 52 as vsys_Name, 53 as DeviceName, \
+54 as action_source, 55 as Source_VM_UUID, 56 as Destination_VM_UUID, \
+57 as Tunnel_ID_IMSI, 58 as Monitor_Tag_IMEI, 59 as Parent_Session_ID, \
+60 as parent_start_time, 61 as Tunnel, 62 as SCTP_Association_ID, \
+63 as SCTP_Chunks, 64 as SCTP_Chunks_Sent, 65 as SCTP_Chunks_Received, \
+66 as UUIDforrule, 67 as HTTP2Connection, 68 as AppFlapCount ,69 as PolicyID ,\
+70 as LinkSwitches ,71 as SDWANCluster ,72 as SDWANDeviceType ,\
+73 as SDWANClusterType ,74 as SDWANSite ,75 as DynamicUserGroupName ,\
+76 as XFFAddress ,77 as SourceDeviceCategory ,78 as SourceDeviceProfile ,\
+79 as SourceDeviceModel ,80 as SourceDeviceVendor ,81 as SourceDeviceOSFamily ,\
+82 as SourceDeviceOSVersion ,83 as SourceHostname ,84 as SourceMACAddress ,\
+85 as DestinationDeviceCategory ,86 as DestinationDeviceProfile ,\
+87 as DestinationDeviceModel ,88 as DestinationDeviceVendor ,\
+89 as DestinationDeviceOSFamily ,90 as DestinationDeviceOSVersion ,\
+91 as DestinationHostname ,92 as DestinationMACAddress ,93 as ContainerID ,\
+94 as PODNamespace ,95 as PODName ,96 as SourceExternalDynamicList ,\
+97 as DestinationExternalDynamicList ,98 as HostID ,99 as UserDeviceSerialNumber ,100 as SourceDynamicAddressGroup ,101 as DestinationDynamicAddressGroup ,\
+102 as SessionOwner ,103 as HighResolutionTimestamp ,104 as ASliceServiceType ,\
+105 as ASliceDifferentiator
 | where type = "TRAFFIC" and action="allow"
 | where ((compareCIDRPrefix("172.16.0.0", src_ip, toInt(12)) or compareCIDRPrefix("192.168.0.0", src_ip, toInt(16)) or compareCIDRPrefix("10.0.0.0", src_ip, toInt(8)) and (!compareCIDRPrefix("172.16.0.0", dest_ip, toInt(12)) and !compareCIDRPrefix("192.168.0.0", dest_ip, toInt(16)) and !compareCIDRPrefix("10.0.0.0", dest_ip, toInt(8)))) or
 (compareCIDRPrefix("172.16.0.0", dest_ip, toInt(12)) or compareCIDRPrefix("192.168.0.0", dest_ip, toInt(16)) or compareCIDRPrefix("10.0.0.0", dest_ip, toInt(8)) and (!compareCIDRPrefix("172.16.0.0", src_ip, toInt(12)) and !compareCIDRPrefix("192.168.0.0", src_ip, toInt(16)) and !compareCIDRPrefix("10.0.0.0", src_ip, toInt(8)))))
@@ -160,34 +169,23 @@ _sourceCategory = Labs/PaloAltoNetworksv10 TRAFFIC allow
 | count by _timeslice, direction | transpose row _timeslice column direction
 ```
 
+</details>
 
+## Install the PCI for Palo Alto Networks 10 App
 
-## Install the PCI for Palo Alto Networks 10 App and View the Dashboards
+Now that you have set up collection for PCI for Palo Alto Networks 10 app, you can install app and use the preconfigured searches and dashboards that provide insight into your data.
 
-### Install the Sumo Logic App
-10
-
-
-Now that you have set up collection for PCI for Palo Alto Networks 10 app, you can install app and  use the preconfigured searches and dashboards that provide insight into your data.
-
-
-11
 This app supports PAN-OS v10.
 
 To install the app:
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
-
-
 1. From the **App Catalog**, search for and select the app**.**
 2. Select the version of the service you're using and click **Add to Library**.
 
 
-12
 Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](https://help.sumologic.com/01Start-Here/Library/Apps-in-Sumo-Logic/Install-Apps-from-the-Library)
-
-
 
 1. To install the app, complete the following fields.
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
@@ -202,7 +200,7 @@ Once an app is installed, it will appear in your **Personal** folder, or other f
 Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
 
 
-## Viewing Dashboards
+## Viewing PCI for Palo Alto Networks 10 Dashboards
 
 
 ### PCI Req 01 - Accepted and Rejected Traffic

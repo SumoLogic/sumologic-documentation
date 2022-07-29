@@ -14,10 +14,9 @@ The Sumo Logic App for Acquia provides visibility into the key components of the
 Sumo Logic provides instant visibility across the critical components of the Acquia Platform, helping organizations become more proactive in their site monitoring as well as reducing the mean time to identify and resolve issues.
 
 
-#### Log Types
+## Log Types
 
 Sumo Logic analyzes the following required Acquia data for more efficient monitoring:
-
 * [Apache access logs](https://docs.acquia.com/acquia-cloud/monitor/logs/apache-access/)
 * [Apache error log](https://docs.acquia.com/acquia-cloud/monitor/logs/apache-error/)
 * [Drupal request log](https://docs.acquia.com/acquia-cloud/monitor/logs/drupal-requests/)
@@ -28,29 +27,18 @@ Sumo Logic analyzes the following required Acquia data for more efficient monito
 * [Varnish request logs](https://docs.acquia.com/acquia-cloud/monitor/logs/varnish-request/)
 
 
-## Collect logs for the Acquia App
+## Collecting Logs for the Acquia App
 
 This page provides instructions for configuring log collection from Acquia and sending those logs to Sumo Logic for monitoring and analysis in the Acquia App predefined dashboards and searches.
 
 Sumo Logic enables you to collect logs from Acquia, with the ability to configure the log types to be collected. The logs are then forwarded to a Sumo Logic [Cloud Syslog Source](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/Acquia/Collect_logs_for_the_Acquia_App#Configuring_a_cloud_syslog_source).
 
 
-#### Collection process overview
-
-Configuring log collection for the Acquia App includes the following tasks:
-
-1. [Configure a collector](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/Acquia/Collect_logs_for_the_Acquia_App#Step_1:_Configure_a_collector)
-2. [Configure a source](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/Acquia/Collect_logs_for_the_Acquia_App#Step_2:_Configure_a_source)
-3. [Configure logging for Acquia](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/Acquia/Collect_logs_for_the_Acquia_App#Step_3:_Configure_logging_for_Acquia)
-
-
-##### Configure a collector
+### Step 1: Configure a collector
 
 This section walks you through the process of creating a new Sumo Logic hosted collector.
 
 **To create a new Sumo Logic hosted collector, do the following:**
-
-
 
 1. In Sumo Logic select** Manage Data > Collection > Collection**.
 2. Click **Add Collector**.
@@ -59,40 +47,26 @@ This section walks you through the process of creating a new Sumo Logic hosted c
 5. A **description** is optional.
 6. **Category**. Enter any string to tag the logs collected from this Collector. This Source Category value is stored in a searchable metadata field called `_sourceCategory`. See our [Best Practices: Good Source Category, Bad Source Category](https://help.sumologic.com/03Send-Data/01-Design-Your-Deployment/Best-Practices%3A-Good-Source-Category%2C-Bad-Source-Category).
 7. Click the **+Add Field** link in the **Fields** section to define the [fields](/docs/manage/fields.md) you want to associate, each field needs a key and value.
-    *
-1
- A green circle with a check mark is shown when the field exists in the Fields table schema.
-    *
-2
- An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema it is ignored, known as dropped.
+   * A green circle with a check mark is shown when the field exists in the Fields table schema.
+   * An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema it is ignored, known as dropped.
 8. **Assign to a Budget** allows you to assign an [ingest budget](https://help.sumologic.com/Manage/Ingestion-and-Volume/Ingest_Budgets) to the Collector. The drop-down displays your ingest budgets in the following format:
     * `<budget name> (<field value>) (<allocated capacity>)`
 9. **Time Zone**. Set the default time zone when it is not extracted from the log timestamp. Time zone settings on Sources override a Collector time zone setting.
 10. Review your input and when finished click **Save**.
 
-
-3
-
-
 After the Collector has been set up, it appears on the Collection page as a Hosted Collector.
 
 
-4
-
-
-
-##### Configure a source
+### Step 2: Configure a source
 
 This task shows you how to conifgure a cloud syslog source for Acquia log collection.
 
 
-###### Before you begin
+#### Before you begin
 
 It's helpful to know the options you'll need to set before starting a procedure. When you're [configuring a cloud syslog source](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/Acquia/Collect_logs_for_the_Acquia_App#Configuring_a_cloud_syslog_source), be sure to specify the following configurations:
 
 **Source**
-
-
 
 * **Name**. (Required) A name is required, the Description is optional.
 * **Source Category**. (Required) The Source Category metadata field is a fundamental building block to organize and label Sources. \
@@ -100,14 +74,11 @@ Example: **Acquia**. For more information, see [Best Practices](https://help.sum
 
 **Advanced**
 
-
-
 * **Enable Timestamp Parsing**. True
 * **Time Zone**. Logs are in UTC by default
 * **Timestamp Format**. Auto Detect
 
 
-5
 Be sure to copy and paste the **token** in a secure location. You will need this when you configure Syslog Settings.
 
 **Sumo Logic SSL certificate**
@@ -115,7 +86,7 @@ Be sure to copy and paste the **token** in a secure location. You will need this
 In the procedure below, you configure a Cloud Syslog Source, this will generate a Sumo Logic token and the endpoint hostname. Then you set up TLS by downloading a cert to your server. Download the DigiCert certificate from [https://www.digicert.com/CACerts/DigiCertHighAssuranceEVRootCA.crt](https://www.digicert.com/CACerts/DigiCertHighAssuranceEVRootCA.crt).
 
 
-###### Configuring a cloud syslog source
+#### Configuring a cloud syslog source
 
 Cloud syslog configuration requires a token that is automatically generated when you configure a cloud syslog source. The token allows Sumo to distinguish your log messages from those of other customers. The token is tied to the source, but not to any specific user.
 
@@ -148,8 +119,6 @@ The token is deleted if you delete the source. To change a token, use the **Rege
 2. Click **Save**. \
 The token information is displayed in a read-only dialog box, shown below.
 
-8
-
 
 3. Click **Copy** to copy the information for use in the syslog client. The information is copied in the following format:
 ```
@@ -170,41 +139,23 @@ RFC 5424 limits the structured data field (SD-ID) to 32 characters, however our 
 4. After configuring the source, you can perform these token operations from the <strong>Collectors and Sources </strong>page:
 * Click <strong>Show Token</strong> to display the token for a cloud syslog source at any time.  \
 
-10
 
 * Click <strong>Regenerate Token </strong>if you need to generate a new token. \
 
-11
 
 
-
-##### Configure logging for Acquia
+### Step 3: Configure logging for Acquia
 
 In order to start ingesting Acquia Cloud logs you must setup log forwarding in Acquia Cloud.  
 
 **To configure Acquia log forwarding**, follow the instructions in the Acquia [documentation](https://docs.acquia.com/acquia-cloud/monitor/logs/forwarding/).
 
 
-#### Log samples
+### Log samples
 
-This section provides sample log messages for the following log types that are required Acquia data for more efficient monitoring:
+This section provides sample log messages for the following log types that are required Acquia data for more efficient monitoring.
 
-
-
-* [Apache access logs](https://docs.acquia.com/acquia-cloud/monitor/logs/apache-access/)
-* [Apache error log](https://docs.acquia.com/acquia-cloud/monitor/logs/apache-error/)
-* [Drupal request log](https://docs.acquia.com/acquia-cloud/monitor/logs/drupal-requests/)
-* [Drupal watchdog log](https://docs.acquia.com/acquia-cloud/monitor/logs/drupal-watchdog/)
-* [FPM access logs](https://docs.acquia.com/acquia-cloud/monitor/logs/fpm-access/)
-* [FPM error logs](https://docs.acquia.com/acquia-cloud/monitor/logs/fpm-error/)
-* [PHP error logs](https://docs.acquia.com/acquia-cloud/monitor/logs/php-error/)
-* [Varnish request logs](https://docs.acquia.com/acquia-cloud/monitor/logs/varnish-request/)
-
-
-###### Apache access log
-
-
-```
+```json title="Apache access log"
 200.0.0.1 - - [04/Jan/2017:23:20:38 +0000] "GET /contact_us HTTP/1.1" 404 10117 "-"
 "Pingdom.com bot version 1.4 (http://www.pingdom.com/)" vhost=alphabeta.prod.acquia-sites.com
 host=www.example.com hosting_site=alphabeta pid=26731 request_time=10186417 forwarded_for="200.0.0.1,
@@ -212,33 +163,21 @@ host=www.example.com hosting_site=alphabeta pid=26731 request_time=10186417 forw
 ```
 
 
-
-###### Apache error log
-
-
-```
+```bash title="Apache error log"
 [Fri Aug 18 20:40:36.849360 2017] [access_compat:error] [pid 11069]
 [client 10.0.0.1:19924] AH01797: client denied by server configuration:
 /var/www/html/alphabeta/docroot/index.php
 ```
 
 
-
-###### Drupal request log
-
-
-```
+```json title="Drupal request log"
 [03/Feb/2017:00:14:36 +0000] www.example.com POST /dashboard
 http_code=302 query= uid=154496 php_pid=30961 php_time=0.203 queue_wait=0
 request_id="v-0000zzzz-e9a5-11e6-98b5-0aeea9eaf9af"
 ```
 
 
-
-###### Drupal watchdog log
-
-
-```
+```json title="Drupal watchdog log"
 Aug 18 21:22:01 10.0.0.1 alphabeta: https://www.example.com|1503091321|
 custom_module|151.0.0.1|https://example.com/documents||0||Warning: Invalid
 argument supplied for foreach() in views_join->build_join
@@ -246,31 +185,18 @@ request_id="v-00000000-845b-0000-8178-22000ab832c9"
 ```
 
 
-
-###### FPM access log
-
-
-```
+```json title="FPM access log"
 - -  25/Sep/2018:17:02:35 +0000 "GET /index.php" 200 memory_kb=6144 %cpu=9.16 duration_ms=218.423
 request_id="v-00000000-1111-2222-3333-444444444444"
 ```
 
-
-
-###### FPM error log
-
-
-```
+```json title="FPM error log"
 [04-Jan-2017 18:45:13] NOTICE: [pool alphabeta] child 20069 exited with code
 0 after 3832.234353 seconds from start
 ```
 
 
-
-###### PHP error log
-
-
-```
+```json title="PHP error log"
 [04-Jan-2017 14:29:27 America/New_York] PHP Fatal error:  Allowed memory
 size of 367001600 bytes exhausted (tried to allocate 352591872 bytes) in
 /full/path/to/module/notification.php on line 504
@@ -278,11 +204,7 @@ request_id="v-0000zzzz-d2b4-0000-b3a4-129zzzzd8266"
 ```
 
 
-
-###### Varnish Request log
-
-
-```
+```json title="Varnish Request log"
 {
   "time":"[12/Dec/2018:23:59:59 +0000]",
   "status":"304",
@@ -307,15 +229,12 @@ request_id="v-0000zzzz-d2b4-0000-b3a4-129zzzzd8266"
 
 
 
-#### Sample Query
+### Sample Query
 
 This section provides examples for Drupal request, Apache access, and PHP error queries.
 
 
-###### Drupal request
-
-
-```
+```sql title="Drupal request"
 _sourceCategory=Labs/Acquia drupal-requests
 | parse "<133>1 * * *.* - - - [*] * * * http_code=* query=* uid=* php_pid=* php_time=* queue_wait=*
 request_id=\"*\"" as timestamp,lb,host,logtype,time,appurl,method,url,http_code,query,uid,php_id,
@@ -326,11 +245,7 @@ php_time,queue_wait,request_id
 ```
 
 
-
-###### Apache access
-
-
-```
+```sql title="Apache access"
 _sourceCategory=Labs/Acquia apache-access
 | parse " - - - * - - [*] \"* * HTTP/1.1\" * * \"*\" \"*\" vhost=* host=* hosting_site=* pid=*
 request_time=* forwarded_for=\"*\" request_id=\"*\" location=\"*\"" as src_ip,timestamp,method,
@@ -339,20 +254,13 @@ request_id,location
 | where !(status_code matches "2*")
 ```
 
-
-
-###### PHP error
-
-
-```
+```sql title="PHP error"
 _sourceCategory=Labs/Acquia php-errors
 | parse "* * * * - - - [*] *: * request_id=\"*\"" as head,systime,env,host,time,type,message,
 request_id
 | count as count by Type, message
 | sort by count
-
 ```
-
 
 
 ## Installing the Acquia App
@@ -389,16 +297,11 @@ The **Acquia - Overview** dashboard provides a high-level view of the activity a
 
 Use this dashboard to:
 
-
-
 * Understand the traffic distribution across servers, to provide insights for resource planning through analysis of data volume and bytes served.
 * Gain insights into traffic origin locations by region to better allocate compute resources for regions according to their needs.
 * Monitor high severity threats and scan attacks.
 * Identify and troubleshoot configuration issues.
 * Identify ways to fine tune your product based on your data analysis.
-
-
-13
 
 
 
@@ -408,15 +311,9 @@ The **Acquia - Errors Overview** dashboard provides a high-level view of events 
 
 Use this dashboard to:
 
-
-
 * Track errors by Drupal module.
 * Monitor Varnish cache hit and miss rates.
 * Track critical error messages from the various components of the Acquia stack.
-
-
-14
-
 
 
 ### FPM Overview
@@ -424,15 +321,9 @@ Use this dashboard to:
 The **Acquia - FPM Overview** dashboard provides insights for analysis of the performance of FPM ([FastCGI Process Manager](https://php-fpm.org/)) in the Acqauia environment, including memory and CPU usage, status codes and response time outliers.
 
 Use this dashboard to:
-
-
-
 * Identify trends for consumed resources over time.
 * Monitor status codes over time.
 * Monitor response time latency.
-
-
-15
 
 
 
@@ -441,12 +332,6 @@ Use this dashboard to:
 The **Acquia - Drupal Requests Overview **dashboard provides insights for analysis of the performance of the Drupal platform. The panels show response time anomalies, response codes and breakdowns of slow urls and queries.
 
 Use this dashboard to:
-
-
-
 * Review trends for slow URLs and slow queries
 * Monitor status codes over time
 * Monitor response time latency
-
-
-16

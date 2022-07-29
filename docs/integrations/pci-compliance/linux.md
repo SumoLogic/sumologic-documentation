@@ -10,7 +10,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 This guide helps you set up Sumo Logic Collectors, install the PCI Compliance for application, and create dashboards from samples so you can begin monitoring your usage and determine if you are meeting Compliance benchmarks.
 
 
-### Collect Logs for PCI Compliance for Linux
+## Collect Logs for PCI Compliance for Linux
 
 The PCI Compliance for Linux App works with your existing Linux logs to identify any compliance issues.
 
@@ -23,10 +23,7 @@ To collect Linux logs, you will need:
     * [Syslog Source](https://help.sumologic.com/03Send-Data/Sources/01Sources-for-Installed-Collectors/Syslog-Source)
 
 
-## Install the PCI Compliance for Linux App and view the Dashboards
-
-### Install the Sumo Logic App
-!
+## Installing the PCI Compliance for Linux App
 
 Now that you have set up collection, install the Sumo Logic App for PCI Compliance for Linux to use the preconfigured searches and [Dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/16PCI_Compliance/PCI_Compliance_for_Linux/03PCI-Compliance-for-Linux-Dashboards#Dashboards) that provide insight into your data.
 
@@ -37,10 +34,7 @@ Locate and install the app you need from the **App Catalog**. If you want to see
 1. From the **App Catalog**, search for and select the app**.**
 2. Select the version of the service you're using and click **Add to Library**.
 
-!3.png "image_tooltip")
 Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](https://help.sumologic.com/01Start-Here/Library/Apps-in-Sumo-Logic/Install-Apps-from-the-Library)
-
-
 
 1. To install the app, complete the following fields.
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
@@ -55,9 +49,9 @@ Once an app is installed, it will appear in your **Personal** folder, or other f
 Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
 
 
-## Viewing Dashboards
+## Viewing PCI Compliance for Linux Dashboards
 
-### PCI Compliance for Linux - Account, User, System Monitoring
+### Account, User, System Monitoring
 
 **Dashboard description:** This dashboard meets PCI Requirements 02, 07, 08 and 10 by monitoring user accounts and services. It presents information about user accounts created and deleted, stopped services, running services active services over time, unique services running, and running services, and more.
 
@@ -66,7 +60,7 @@ Panels will start to fill automatically. It's important to note that each panel 
 <img src={useBaseUrl('img/integrations/pci-compliance/PCILinuxAccountUserSystem.png')} alt="PCI Compliance for Linux dashboards" />
 
 
-### PCI Compliance for Linux - Login Activity
+### Login Activity
 
 **Dashboard description: **This dashboard meets PCI Requirements 02 and 10 by tracking login activity. It provides information about failed and successful user logins, and failed and successful super-user logins.
 
@@ -76,7 +70,7 @@ Panels will start to fill automatically. It's important to note that each panel 
 
 
 
-### PCI Compliance for Linux - Privileged Activity
+### Privileged Activity
 
 **Dashboard description: **This dashboard meets PCI Requirement 10. It provides information about total sudo attempts, failed sudo attempts, the top 10 users and hosts that have issued sudo attempts, recent sudo attempts, and sudo attempts over time.
 

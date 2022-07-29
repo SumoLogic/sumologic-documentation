@@ -9,8 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Sumo Logic App for Payment Card Industry (PCI) Compliance for Palo Alto Networks offers dashboards to monitor firewall traffic activity for compliance with PCI requirements 01, 02, and 04.
 
-#### Log types
-
+## Log Types
 
 <table>
   <tr>
@@ -36,8 +35,7 @@ The Sumo Logic App for Payment Card Industry (PCI) Compliance for Palo Alto Netw
 </table>
 
 
-
-## Collect Logs for PCI Compliance for Palo Alto Networks 9
+## Collecting Logs for PCI Compliance for Palo Alto Networks 9
 
 This page has instructions for collecting logs for the PCI Compliance for Palo Alto Networks 9 app.
 
@@ -45,8 +43,6 @@ This app supports Palo Alto Networks v9 and v8.
 
 
 ### Step 1. Create a hosted collector and Cloud Syslog source
-!2
-
 
 In this step you configure a hosted collector with a Cloud Syslog source that will act as Syslog server to receive logs and events from Palo Alto Networks devices.
 
@@ -61,8 +57,6 @@ In this step you configure a hosted collector with a Cloud Syslog source that wi
 
 
 ### Step 2. Define the destination for the logs
-!3
-
 
 In this step you create a server profile where you can define the log destination. This will be the host name, port and protocol (TLS) of the Sumo Logic Cloud Syslog source.
 
@@ -92,13 +86,10 @@ In this step you create a server profile where you can define the log destinatio
 8. Commit the changes.
 
 
-#### Sample log messages
-!4
+### Sample log messages
 
 
-
-##### Traffic log sample
-!5
+Traffic log sample
 
 ```
 Sep 05 12:45:15 SumoStg05 0,2018/09/05 12:45:15,012345678901,TRAFFIC,end,0,2018/09/05 12:45:15,182.80.119.50,176.164.175.181,,,Unexpected Traffic,,npande,ping,vsys3,z1-FW-Transit,z3-Sumo-DMZ,ethernet1/2,ethernet1/2,LOGreset-both,2018/09/05 12:45:15,9434,1,0,0,0,0,0x100064,icmp,allow,122,122,0,1,2018/09/05 12:45:15,0,any,0,5134220147,0x8000000000000000,United States,10.0.0.0-10.255.255.255,0,1,0,aged-out,31,42,0,0,,SumoStg05,from-policy,,,0,,0,,N/A
@@ -106,10 +97,7 @@ Sep 05 12:45:15 SumoStg05 0,2018/09/05 12:45:15,012345678901,TRAFFIC,end,0,2018/
 
 
 
-##### Threat log
-!6
-
-
+Threat log
 
 ```
 786 <10>1 2022-03-29T22:32:26+00:00 PA-VM.demo.bkacad.cf - - - - ,2022/03/29*22:32:26,164859314646745,THREAT,vulnerability,,2022/03/29*22:32:26,156.194.158.165,156.194.158.165,156.194.158.165,156.194.158.165,test-threat,,,unknown-udp,vsys1,Outside,Outside,ethernet1/1,ethernet1/1,Forward-Sumo,,8660,1,47495,9034,0,0,0x2000,udp,drop,,Realtek Jungle SDK Remote Code Execution Vulnerability(91535),any,critical,client-to-server,1648593146467628956,0x0,Korea Republic Of,156.194.158.165-156.194.158.165,,,0,,,0,,,,,,,,0,0,0,0,0,,PA-VM,,,,,N/A_id/0,/,0,,N/A,code-execution,AppThreat-8468-6979,,0,1648593146,,,141fd502-fc32-4867-b9a5-5c421583a44b,0,,,,,,,,,,,,,,, ,,,,,,,,,,,,,,0,2022-03-29T22:32:26.467+00:00,,,,unknown,unknown,unknown,1,,,no,no /
@@ -117,38 +105,23 @@ Sep 05 12:45:15 SumoStg05 0,2018/09/05 12:45:15,012345678901,TRAFFIC,end,0,2018/
 
 
 
-#### Sample Query  
-!7
-
+### Sample Query  
 
 This example query is from the **Denied Traffic Over Time** panel of the **Accepted and Rejected Traffic** dashboard.
 
-
-```
+```sql
 _sourceCategory=Loggen/PAN/Traffic TRAFFIC deny
 | csv _raw extract 1 as f1, 2 as Receive_Time, 3 as serialNum, 4 as type, 5 as subtype, 6 as f2, 7 as LogGenerationTime, 8 as src_ip, 9 as dest_ip, 10 as NAT_src_ip, 11 as NAT_dest_ip, 12 as ruleName, 13 as src_user, 14 as dest_user, 15 as app, 16 as vsys, 17 as src_zone, 18 as dest_zone, 19 as inbound_interface, 20 as outbound_interface, 21 as LogAction, 22 as f3, 23 as SessonID, 24 as RepeatCount, 25 as src_port, 26 as dest_port, 27 as NAT_src_port, 28 as NAT_dest_port, 29 as flags, 30 as protocol, 31 as action,32 as bytes, 33 as bytes_sent, 34 as bytes_recv, 35 as Packets, 36 as StartTime, 37 as ElapsedTime, 38 as Category, 39 as f4, 40 as seqNum, 41 as ActionFlags, 42 as src_Country, 43 as dest_country, 44 as pkts_sent, 45 as pkts_received, 46 as session_end_reason, 47 as Device_Group_Hierarchy , 48 as vsys_Name, 49 as DeviceName, 50 as action_source, 51 as Source_VM_UUID, 52 as Destination_VM_UUID, 53 as Tunnel_ID_IMSI, 54 as Monitor_Tag_IMEI, 55 as Parent_Session_ID, 56 as parent_start_time, 57 as Tunnel, 58 as SCTP_Association_ID, 59 as SCTP_Chunks, 60 as SCTP_Chunks_Sent, 61 as SCTP_Chunks_Received
 | where type = "TRAFFIC" and action="deny"
 | timeslice 5m
 | count by _timeslice
-
 ```
 
 
 
-1. [Back to top](https://help.sumologic.com/07Sumo-Logic-Apps/16PCI_Compliance/PCI_Compliance_for_Palo_Alto_Networks/Collect_Logs_for_PCI_Compliance_for_Palo_Alto_Networks#title)
-    * [PCI Compliance for Palo Alto Networks 9](https://help.sumologic.com/07Sumo-Logic-Apps/16PCI_Compliance/PCI_Compliance_for_Palo_Alto_Networks)
-    *  [Install the PCI for Palo Alto Networks 9 App and View the Dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/16PCI_Compliance/PCI_Compliance_for_Palo_Alto_Networks/Install_the_PCI_for_Palo_Alto_Networks_App_and_View_the_Dashboards)
-
-
-## Install the PCI for Palo Alto Networks 9 App and View the Dashboards
-
-### Install the Sumo Logic App
-!8
+## Install the PCI for Palo Alto Networks 9 App
 
 Now that you have set up collection for PCI for Palo Alto Networks install the Sumo Logic App for PCI for Palo Alto Networks to use the preconfigured searches and dashboards that provide insight into your data.
-
-
-!9.png "image_tooltip")
 
 This app supports PAN-OS v8 and v9.
 
@@ -156,15 +129,10 @@ To install the app:
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
-
-
 1. From the **App Catalog**, search for and select the app**.**
 2. Select the version of the service you're using and click **Add to Library**.
 
-
-!10.png "image_tooltip")
 Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](https://help.sumologic.com/01Start-Here/Library/Apps-in-Sumo-Logic/Install-Apps-from-the-Library)
-
 
 
 1. To install the app, complete the following fields.
@@ -180,10 +148,10 @@ Once an app is installed, it will appear in your **Personal** folder, or other f
 Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
 
 
-### Viewing Dashboards
+## Viewing PCI for Palo Alto Networks 9 Dashboards
 
 
-##### PCI Req 01 - Accepted and Rejected Traffic
+### PCI Req 01 - Accepted and Rejected Traffic
 
 **Dashboard description:** See analytics about accepted and rejected firewall traffic, including information about traffic direction; allowed, denied, and silently dropped traffic over time; and the top source and destination IPs for allowed and rejected traffic.
 
@@ -192,7 +160,7 @@ Panels will start to fill automatically. It's important to note that each panel 
 <img src={useBaseUrl('img/integrations/pci-compliance/pan-pci-req-accepted-rejected.png')} alt="Palo Alto 9 dashboards" />
 
 
-##### PCI Req 01 - Traffic Direction Monitoring
+### PCI Req 01 - Traffic Direction Monitoring
 
 **Dashboard description:** View information about inbound and outbound traffic, including traffic to the cardholder data environment (CDE); details of inbound and outbound traffic; the top 10 hosts sending traffic; and the top 10 hosts receiving traffic.
 
@@ -201,8 +169,7 @@ Panels will start to fill automatically. It's important to note that each panel 
 <img src={useBaseUrl('img/integrations/pci-compliance/PCILinuxAccountUserSystem.png')} alt="Palo Alto 9 dashboards" />
 
 
-##### PCI Req 01, 02 - Data Access Monitoring
-
+### PCI Req 01, 02 - Data Access Monitoring
 
 **Dashboard description:** See information about accepted network traffic by application; top TCP and UDP source and destination ports; multi-services detected on the same host; and information about possible port scan attacks, both allowed and rejected.
 
@@ -211,9 +178,7 @@ Panels will start to fill automatically. It's important to note that each panel 
 <img src={useBaseUrl('img/integrations/pci-compliance/pan-pci-data-access-monitoring.png')} alt="Palo Alto 9 dashboards" />
 
 
-##### PCI Req 02, 04 - Insecure Data In Transit
-!18
-
+### PCI Req 02, 04 - Insecure Data In Transit
 
 **Dashboard description:** See analytics about insecure data in transit data, including data transmissions to or from the cardholder data environment (CDE) using an insecure protocol; breakdowns of which apps, hosts, and ports were involved with insecure traffic.   
 
