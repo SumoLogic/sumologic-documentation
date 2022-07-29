@@ -5,8 +5,9 @@ sidebar_label: Elasticsearch
 description: The Elasticsearch app helps you monitor the availability, performance, health, and resource utilization of your Elasticsearch clusters.
 ---
 
-
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 <img src={useBaseUrl('img/integrations/databases/elasticsearch.png')} alt="DB icon" width="50"/>
 
@@ -33,7 +34,7 @@ message:"failed to connect to {elasticsearch-master-1}{OfUoMAwoRoKr2sAlYAYuEA}{R
 
 **Non-Kubernetes:**
 
-```
+```json
 {"type": "server", "timestamp": "2021-07-12T11:42:25,862+07:00", "level": "INFO", "component": "o.e.x.s.a.s.FileRolesStore", "cluster.name": "elasticsearch", "node.name": "v103-157-218-134.3stech.vn", "message": "parsed [0] roles from file [/etc/elasticsearch/roles.yml]" }
 ```
 
@@ -52,20 +53,20 @@ Configuring log and metric collection for the Elasticsearch App includes the fol
 
 Create the following Fields in Sumo Logic before configuring the collection. This ensures that your logs and metrics are tagged with relevant metadata required by the app dashboards. For information on setting up fields, see the [Fields](/docs/manage/fields.md) help page.
 
-If you are using Elasticsearch in a  non-Kubernetes environment create the fields:
+If you are using Elasticsearch in a non-Kubernetes environment create the fields:
 
-* component
-* environment
-* db_system
-* db_cluster
-* pod
+* `component`
+* `environment`
+* `db_system`
+* `db_cluster`
+* `pod`
 
 If you are using Elasticsearch in a Kubernetes environment create the fields:
 
-* pod_labels_component
-* pod_labels_environment
-* pod_labels_db_system
-* pod_labels_db_cluster
+* `pod_labels_component`
+* `pod_labels_environment`
+* `pod_labels_db_system`
+* `pod_labels_db_cluster`
 
 
 ### Step 2: Configure Collection for Elasticsearch

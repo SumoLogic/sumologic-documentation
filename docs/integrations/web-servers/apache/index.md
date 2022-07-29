@@ -7,7 +7,7 @@ description: Gives insight into website visitor behavior patterns, monitors serv
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/web-servers/apache.png')} alt="Web servers icon" width="75"/>
+<img src={useBaseUrl('img/integrations/web-servers/apache.png')} alt="Web servers icon" width="100"/>
 
 The Apache app is a unified logs and metrics app that helps you monitor the availability, performance, health and resource utilization of Apache web server farms. Preconfigured dashboards and searches provide insight into visitor locations, visitor access types, traffic patterns, errors, web server operations, resource utilization and access from known malicious sources.
 

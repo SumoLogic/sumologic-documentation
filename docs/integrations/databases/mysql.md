@@ -6,6 +6,8 @@ description: Provides insight into the health of your MySQL servers, replication
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 <img src={useBaseUrl('img/integrations/databases/mysql.png')} alt="DB icon" width="100" />
 
@@ -18,7 +20,7 @@ The MySQL App supports following versions:
 * MySQL 8.0.x
 
 
-### Log types and metrics
+## Log types and metrics
 
 The Sumo Logic App for MySQL assumes the default MySQL Error log file format for error logs, and the MySQL Slow Query file format for slow query logs. For a list of metrics that are collected and used by the app, see [MySQL Metrics](https://help.sumologic.com/07Sumo-Logic-Apps/12Databases/MySQL/MySQL_Metrics).
 
@@ -62,7 +64,6 @@ The predefined searches In the MySQL app are based on the following log types.
 
 ## Collect Logs and Metrics for MySQL
 
-
 ### Collection Process Overview
 
 Configuring log and metric collection for the MySQL App includes the following tasks:
@@ -79,24 +80,21 @@ Create the following Fields in Sumo Logic prior to configuring the collection. T
 
 If you are using MySQL in a non-Kubernetes environment create the fields:
 
-* component
-* environment
-* db_system
-* db_cluster
-* pod
+* `component`
+* `environment`
+* `db_system`
+* `db_cluster`
+* `pod`
 
 If you are using MySQL in a Kubernetes environment create the fields:
 
-
-
-* pod_labels_component
-* pod_labels_environment
-* pod_labels_db_system
-* pod_labels_db_cluster
+* `pod_labels_component`
+* `pod_labels_environment`
+* `pod_labels_db_system`
+* `pod_labels_db_cluster`
 
 
 #### Step 2: Configure Collection for MySQL
-
 
 * [Collect MySQL Logs and Metrics for Non-Kubernetes environments](https://help.sumologic.com/07Sumo-Logic-Apps/12Databases/MySQL/Collect_Logs_and_Metrics_for_MySQL/Collect_MySQL_Logs_and_Metrics_(Non-Kubernetes)).
 * [Collect MySQL Logs and Metrics for Kubernetes environments](https://help.sumologic.com/07Sumo-Logic-Apps/12Databases/MySQL/Collect_Logs_and_Metrics_for_MySQL/Collect_MySQL_Logs_and_Metrics_(Kubernetes)).
@@ -106,9 +104,7 @@ If you are using MySQL in a Kubernetes environment create the fields:
 
 This section provides instructions for configuring log and metric collection for the Sumo Logic App for MySQL in a non-Kubernetes environment.
 
-
-8
-For information setting up collection if you're running MySQL in a non-Kubernetes evironment, see [Collect MySQL Logs and Metrics (Non-Kubernetes)](https://help.sumologic.com/07Sumo-Logic-Apps/12Databases/MySQL/Collect_Logs_and_Metrics_for_MySQL/Collect_MySQL_Logs_and_Metrics_(Non-Kubernetes)).
+For information setting up collection if you're running MySQL in a non-Kubernetes environment, see [Collect MySQL Logs and Metrics (Non-Kubernetes)](https://help.sumologic.com/07Sumo-Logic-Apps/12Databases/MySQL/Collect_Logs_and_Metrics_for_MySQL/Collect_MySQL_Logs_and_Metrics_(Non-Kubernetes)).
 
 
 ### Collection overview
@@ -675,27 +671,18 @@ The values of `db_cluster` and `environment` should match those configured in th
 At this point, MySQL slow query logs should start flowing into Sumo Logic.
 
 
-### Sample log message
-39
+### Sample Log message
 
-
-
-```
+```bash
 210408 00:00:19 [Note] /usr/sbin/mysqld: ready for connections.
 ```
 
 
-
 ### Sample query
-40
-
 
 This sample Query is from the Logs panel of the MySQL - Logs dashboard.
 
-**Query String - “Top 10 Slow Queries by Average Execution Time”**
-
-
-```
+```sql title="Query String - Top 10 Slow Queries by Average Execution Time"
 db_system=mysql db_cluster={{db_cluster}} "User@Host" "Query_time"  
 | parse regex "(?<query_block># User@Host:[\S\s]+?SET timestamp=\d+;[\S\s]+?;)" multi
 | parse regex field=query_block "# User@Host: \S+?\[(?<user>\S*?)\] @ (?<host_name>\S+)\s\[(?<ip_addr>\S*?)\]" nodrop // Pttrn1-vrtn1
