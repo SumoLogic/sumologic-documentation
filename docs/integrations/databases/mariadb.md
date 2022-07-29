@@ -218,10 +218,7 @@ Example:
 ```yml
 annotations:
   tailing-sidecar: sidecarconfig;data:/var/opt/MariaDB/errorlog
-
 ```
-
-
 
 1. Make sure that the MariaDB pods are running and annotations are applied by using the command: ```
 kubectl describe pod <MariaDB_pod_name>
@@ -667,7 +664,7 @@ email_notifications = [
 
 
 39
-There are limits to how many alerts can be enabled - see the [Alerts FAQ](/docs/alerts/monitors/monitor-faq.md).
+There are limits to how many alerts can be enabled - see the [Alerts FAQ](/docs/alerts/monitors/monitor-faq).
 
 
 ## Installing the MariaDB App
