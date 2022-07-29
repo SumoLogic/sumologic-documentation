@@ -15,11 +15,9 @@ Amazon GuardDuty is a continuous security monitoring service that analyzes and p
 
 The Sumo Logic App for GuardDuty requires the Amazon GuardDuty findings to be sent through the Amazon CloudWatch Events. For more details on GuardDuty findings, see here.
 
-## Collect Logs for the Amazon GuardDuty App
+## Collecting Logs for the Amazon GuardDuty App
 
 This section has instructions for collecting logs for the Amazon GuardDuty App.
-
-### Collection overview
 
 1. Amazon GuardDuty sends notifications based on CloudWatch events when new findings, or new occurrences of existing findings, are generated.
 2. A CloudWatch events rule enables CloudWatch to send events for the GuardDuty findings to the Sumo CloudWatchEventFunction Lambda function.
@@ -43,10 +41,10 @@ When you configure the HTTP Source, make a note of the HTTP Source Address URL. 
 In this step, you deploy the events processor. This will create the AWS resources described in [Collection overview](https://help.sumologic.com/07Sumo-Logic-Apps/01Amazon_and_AWS/Amazon_GuardDuty/Collect-Logs-for-the-Amazon-GuardDuty-App#Collection_overview).
 
 1. Go to [https://serverlessrepo.aws.amazon.com/applications](https://serverlessrepo.aws.amazon.com/applications).
-2. Search for “sumologic-guardduty-events-processor”.  \
+2. Search for “sumologic-guardduty-events-processor”.
 
 
-3. When the page for the Sumo app appears, click **Deploy**. \
+3. When the page for the Sumo app appears, click **Deploy**.
 
 
 4. In **Configure application parameters** panel, paste the URL for the HTTP source you created above. \

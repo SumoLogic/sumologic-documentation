@@ -52,7 +52,6 @@ If you are using MariaDB in a non-Kubernetes environment create the fields:
 * `db_cluster`
 * `pod`
 
-
 </TabItem>
 </Tabs>
 
@@ -102,17 +101,17 @@ These instructions assume that you are using the latest Helm chart version. If n
 
 This section explains the steps to collect MariaDB metrics from a Kubernetes environment.
 
-In Kubernetes environments, we use the Telegraf Operator, which is packaged with our Kubernetes collection. You can learn more on this[ here](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Collect_Metrics_Using_Telegraf/01_Telegraf_Collection_Architecture). Follow the steps listed below to collect metrics from a Kubernetes environment:
+In Kubernetes environments, we use the Telegraf Operator, which is packaged with our Kubernetes collection. You can learn more on this[ here](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/telegraf-collection-architecture.md). Follow the steps listed below to collect metrics from a Kubernetes environment:
 
 
 
-1. **[Setup Kubernetes Collection with the Telegraf Operator.](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf.md#Install_Telegraf_in_a_Kubernetes_environment)**
+1. [Set up Kubernetes Collection with the Telegraf Operator](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf)
 2. **Add annotations on your MariaDB pods**
 
 On your MariaDB Pods, add the following annotations:
 
 
-```
+```bash
 annotations:
     telegraf.influxdata.com/class: sumologic-prometheus
     prometheus.io/scrape: "true"
@@ -157,8 +156,6 @@ Enter in values for the following parameters :
 
 Here’s an explanation for additional values set by this configuration that we request you to please **do not modify** as they will cause the Sumo Logic apps to not function correctly.
 
-
-
 * `telegraf.influxdata.com/class: sumologic-prometheus` - This instructs the Telegraf operator what output to use. This should not be changed.
 * `prometheus.io/scrape: "true"` - This ensures our Prometheus will scrape the metrics.
 * `prometheus.io/port: "9273"` - This tells prometheus what ports to scrape on. This should not be changed.
@@ -170,13 +167,10 @@ Here’s an explanation for additional values set by this configuration that we 
 For all other parameters, please see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#Configuring-Telegraf) for more properties that can be configured in the Telegraf agent globally.
 
 
-
 1. Sumo Logic Kubernetes collection will automatically start collecting metrics from the pods having the labels and annotations defined in the previous step.
 2. Verify metrics in Sumo Logic.
 
-
 #### Configure Logs Collection
-
 
 This section explains the steps to collect MariaDB logs from a Kubernetes environment.
 
@@ -186,8 +180,7 @@ Make sure that the logs from MariaDB are sent to stdout. Follow the instructions
 
 1. Apply following labels to the MariaDBpod:
 
-
-```
+```bash
 labels:
     environment: "prod_CHANGEME"
     component: "database"
@@ -195,11 +188,7 @@ labels:
     db_cluster "Cluster_CHANGEME"
 ```
 
-
-
-    Enter in values for the following parameters (marked in **bold and CHANGE_ME** above):
-
-
+Enter in values for the following parameters (marked in **CHANGE_ME** above):
 
 * **environment.** This is the deployment environment where the MariaDB cluster identified by the value of **servers** resides. For example:- dev, prod, or QA. While this value is optional we highly recommend setting it.
 * **db_cluster.** Enter a name to identify this MariaDB cluster. This cluster name will be shown in the Sumo Logic dashboards. If you haven’t defined a cluster in MariaDB, then enter ‘**default**’ for db_cluster.
@@ -219,26 +208,21 @@ labels:
 2. Install the Sumo Logic [tailing sidecar operator](https://github.com/SumoLogic/tailing-sidecar/tree/main/operator#deploy-tailing-sidecar-operator).
 3. Add the following annotation in addition to the existing annotations.
 
-
-```
+```yml
 annotations:
   tailing-sidecar: sidecarconfig;<mount>:<path_of_MariaDB_log_file>/<MariaDB_log_file_name>
 ```
 
+Example:
 
-
-    Example:
-
-
-```
+```yml
 annotations:
   tailing-sidecar: sidecarconfig;data:/var/opt/MariaDB/errorlog
-
 ```
 
-
-
-1. Make sure that the MariaDB pods are running and annotations are applied by using the command: **kubectl describe pod <MariaDB_pod_name>**
+1. Make sure that the MariaDB pods are running and annotations are applied by using the command: ```
+kubectl describe pod <MariaDB_pod_name>
+```
 2. Sumo Logic Kubernetes collection will automatically start collecting logs from the pods having the annotations defined above.
 3. Verify logs in Sumo Logic.
 1. **Add an FER to normalize the fields in Kubernetes environments \
@@ -247,8 +231,6 @@ annotations:
 2. **Click the + Add button on the top right of the table.**
 3. **The following form appears:**
 
-
-8
 
 
 1. Enter the following options:
@@ -274,7 +256,6 @@ if (!isEmpty(pod_labels_environment), pod_labels_environment, "") as environment
 ```
 
 1. Click **Save** to create the rule.
-
 
 </TabItem>
 <TabItem value="non-k8s">
@@ -478,23 +459,20 @@ On the created Hosted Collector on the Collection Management screen, select Add 
 
 #### Setup Telegraf
 
+#### Install Telegraf if you haven’t already.
 
 
-##### Install Telegraf if you haven’t already.
+Use the [following steps](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf) to install Telegraf.
 
 
-Use the[ following steps](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf.md) to install Telegraf.
-
-
-##### Configure and start Telegraf.
-
+#### Configure and start Telegraf.
 
 As part of collecting metrics data from Telegraf, we will use the [MySQL Input Plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/mysql) to get data from Telegraf and the [Sumo Logic output plugin](https://github.com/SumoLogic/fluentd-output-sumologic) to send data to Sumo Logic.
 
 Create or modify `telegraf.conf` and copy and paste the text below:  
 
 
-```
+```sql
 [[inputs.mysql]]
   servers = ["user_TO_BE_CHANGED:password_TO_BE_CHANGED@tcp(IP_ADDRESS_MARIADB_TO_BE_CHANGED:PORT_MARIADB_TO_BE_CHANGED)/?tls=false"]
   metric_version = 2
@@ -565,7 +543,7 @@ The next few sections provide instructions for installing the MariaDB Monitors, 
 
 ### Pre-Packaged Alerts
 
-Sumo Logic has provided out-of-the-box alerts available through [Sumo Logic monitors](/docs/alerts/monitors/index.md) to help you monitor your MariaDB clusters. These alerts are built based on metrics and logs datasets and include preset thresholds based on industry best practices and recommendations.
+Sumo Logic has provided out-of-the-box alerts available through [Sumo Logic monitors](/docs/alerts/monitors) to help you monitor your MariaDB clusters. These alerts are built based on metrics and logs datasets and include preset thresholds based on industry best practices and recommendations.
 
 For details on the individual alerts, see this [page](https://help.sumologic.com/07Sumo-Logic-Apps/12Databases/MariaDB/MariaDB_Alerts).
 
@@ -573,7 +551,7 @@ For details on the individual alerts, see this [page](https://help.sumologic.com
 * To install these alerts, you need to have the Manage Monitors role capability.
 * Alerts can be installed by either importing a JSON file or a Terraform script.
 
-There are limits to how many alerts can be enabled - see the [Alerts FAQ](/docs/alerts/monitors/monitor-faq.md) for details.
+There are limits to how many alerts can be enabled - see the [Alerts FAQ](/docs/alerts/monitors/monitor-faq) for details.
 
 
 ### Method 1: Importing a JSON file
@@ -593,7 +571,7 @@ Custom filter examples:
 6. Click Import and then copy-paste the above JSON to import monitors.
 
 
-The monitors are disabled by default. Once you have installed the alerts using this method, navigate to the MariaDB folder under **Monitors** to configure them. See [this](/docs/alerts/monitors/index.md) document to enable monitors to send notifications to teams or connections. See the instructions detailed in Step 4 of this [document](https://help.sumologic.com/Visualizations-and-Alerts/Alerts/Monitors#Add_a_monitor).
+The monitors are disabled by default. Once you have installed the alerts using this method, navigate to the MariaDB folder under **Monitors** to configure them. See [this](/docs/alerts/monitors) document to enable monitors to send notifications to teams or connections. See the instructions detailed in Step 4 of this [document](https://help.sumologic.com/Visualizations-and-Alerts/Alerts/Monitors#Add_a_monitor).
 
 
 ### Method 2: Using a Terraform script
@@ -686,7 +664,7 @@ email_notifications = [
 
 
 39
-There are limits to how many alerts can be enabled - see the [Alerts FAQ](/docs/alerts/monitors/monitor-faq.md).
+There are limits to how many alerts can be enabled - see the [Alerts FAQ](/docs/alerts/monitors/monitor-faq).
 
 
 ## Installing the MariaDB App
@@ -725,7 +703,7 @@ Panels will start to fill automatically. It's important to note that each panel 
 ## Viewing MariaDB Dashboards
 
 :::tip Filter with template variables    
-Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards-new/filter-with-template-variables.md).
+Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards-new/filter-template-variables).
 :::
 
 ### Overview
@@ -830,8 +808,22 @@ The **MariaDB - InnoDB** Metrics dashboard shows replication events, errors, war
 
 ## MariaDB Alerts
 
-Sumo Logic has provided out-of-the-box alerts available through [Sumo Logic monitors](/docs/alerts/monitors/index.md) to help you quickly determine if the MariaDB Database are available and performing as expected. These alerts are built based on logs and metrics datasets and have preset thresholds based on industry best practices and recommendations.
+Sumo Logic has provided out-of-the-box alerts available through [Sumo Logic monitors](/docs/alerts/monitors) to help you quickly determine if the MariaDB Database are available and performing as expected. These alerts are built based on logs and metrics datasets and have preset thresholds based on industry best practices and recommendations.
 
 Sumo Logic provides the following out-of-the-box alerts:
 
-**INSERT TABLE**
+| Alert Type (Metrics/Logs) | Alert Name                                           | Alert Description                                                                                                                                        | Trigger Type (Critical / Warning) | Alert Condition | Recover Condition |
+|---------------------------|------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------|-----------------|-------------------|
+| Logs                      | MariaDB - Excessive Slow Query Detected              | This alert fires when the average time to execute a query is more than 15 seconds for a 5 minute time interval.                                          | Critical                          | >=1             | <1                |
+| Logs                      | MariaDB - Instance down                              | This alert fires when we detect that a MariaDB instance is down                                                                                          | Critical                          | >=1             | <1                |
+| Metrics                   | MariaDB - Connection refused                         | This alert fires when connections are refused when the limit of maximum connections is reached.                                                          | Critical                          | >=1             | <1                |
+| Metrics                   | MariaDB - Follower replication lag detected          | This alert fires when we detect that the average replication lag within a 5 minute time interval is greater than or equal to 900 seconds .               | Critical                          | >=900           | <900              |
+| Metrics                   | MariaDB - High average query run time                | This alert fires when the average run time of MariaDB queries within a 5 minute time interval for a given schema is greater than or equal to one second. | Critical                          | >=1             | <1                |
+| Metrics                   | MariaDB - High Innodb buffer pool utilization        | This alert fires when the InnoDB buffer pool utilization is high (>=90%) within a 5 minute time interval.                                                | Critical                          | >=90            | <90               |
+| Metrics                   | MariaDB - Large number of aborted connections        | This alert fires when there are 5 or more aborted connections detected within a 5 minute time interval.                                                  | Critical                          | >=5             | <5                |
+| Metrics                   | MariaDB - Large number of internal connection errors | This alert fires when there are 5 or more internal connection errors within a 5 minute time interval.                                                    | Critical                          | >=5             | <5                |
+| Metrics                   | MariaDB - Large number of slow queries               | This alert fires when there are 5 or more slow queries within a 5 minute time interval.                                                                  | Critical                          | >=5             | <5                |
+| Metrics                   | MariaDB - Large number of statement errors           | This alert fires when there are 5 or more statement errors within a 5 minute time interval.                                                              | Critical                          | >=5             | <5                |
+| Metrics                   | MariaDB - Large number of statement warnings         | This alert fires when there are 20 or more statement warnings within a 5 minute time interval.                                                           | Critical                          | >=20            | <20               |
+| Metrics                   | MariaDB - No index used in the SQL statements        | This alert fires when there are 5 or more statements not using an index in the SQL query within a 5 minute time interval.                                | Critical                          | >=5             | <5                |
+| Metrics                   | MariaDB - Slave Server Error                         | This alert fires when there are slave server errors within a 5 minute time interval.                                                                     | Critical                          | >0              | <=0               |

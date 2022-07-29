@@ -16,7 +16,7 @@ The Memcached app is a unified logs and metrics app that helps you monitor the a
 The Sumo Logic App for Memcached is tested for Version: 1.4.15.
 
 
-## Sample Log Message
+## Sample Log Messages
 
 <Tabs
   groupId="k8s-nonk8s"
@@ -41,38 +41,51 @@ The Sumo Logic App for Memcached is tested for Version: 1.4.15.
 <TabItem value="non-k8s">
 
 ```json
-Jun 23 07:35:01 node03 memcached: <31 set GFcIh47CswfCnwk3JkmJ 0 0 4096
+Jun 23 07:35:01 node03 memcached: \
+<31 set GFcIh47CswfCnwk3JkmJ 0 0 4096
 ```
 
 </TabItem>
 </Tabs>
 
-## Collect Logs and Metrics for Memcached
+
+## Collecting Logs and Metrics for Memcached
 
 Configuring log and metric collection for the Memcached App includes the following tasks:
-
-* Step 1: Configure Fields in Sumo Logic.
-* Step 2: Configure Collection for Memcached
-    * [For Non-Kubernetes environments](https://help.sumologic.com/07Sumo-Logic-Apps/12Databases/Memcached/Collect_Logs_and_Metrics_for_Memcached/Collect_Memcached_Logs_and_Metrics_for_Non-Kubernetes_environments)
-    * [For Kubernetes environments](https://help.sumologic.com/07Sumo-Logic-Apps/12Databases/Memcached/Collect_Logs_and_Metrics_for_Memcached/Collect_Memcached_Logs_and_Metrics_for_Kubernetes_environments)
 
 
 ### Step 1: Configure Fields in Sumo Logic
 
 Create the following Fields in Sumo Logic before configuring the collection. This ensures that your logs and metrics are tagged with relevant metadata required by the app dashboards. For information on setting up fields, see the [Fields](/docs/manage/fields.md) help page.
 
-If you are using Memcached in a non-Kubernetes environment create the fields:
-* component
-* environment
-* db_system
-* db_cluster
-* pod
+<Tabs
+  groupId="k8s-nonk8s"
+  defaultValue="k8s"
+  values={[
+    {label: 'Kubernetes environments', value: 'k8s'},
+    {label: 'Non-Kubernetes environments', value: 'non-k8s'},
+  ]}>
+
+<TabItem value="k8s">
 
 If you are using Memcached in a Kubernetes environment create the fields:
-* pod_labels_component
-* pod_labels_environment
-* pod_labels_db_system
-* pod_labels_db_cluster
+* `pod_labels_component`
+* `pod_labels_environment`
+* `pod_labels_db_system`
+* `pod_labels_db_cluster`
+
+</TabItem>
+<TabItem value="non-k8s">
+
+If you are using Memcached in a non-Kubernetes environment create the fields:
+* `component`
+* `environment`
+* `db_system`
+* `db_cluster`
+* `pod`
+
+</TabItem>
+</Tabs>
 
 
 ### Step 2: Configure Logs and Metrics Collection for Memcached
@@ -86,8 +99,6 @@ If you are using Memcached in a Kubernetes environment create the fields:
   ]}>
 
 <TabItem value="k8s">
-
-#### For Kubernetes environments
 
 In Kubernetes environments, we use the Telegraf Operator, which is packaged with our Kubernetes collection. You can learn more about it[ here](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Collect_Metrics_Using_Telegraf/01_Telegraf_Collection_Architecture).
 
@@ -112,14 +123,10 @@ It’s assumed that you are using the latest helm chart version if not upgrade u
 
 
 #### Step 1: Configure Metrics Collection
-5
-
 
 This section explains the steps to collect Memcached metrics from a Kubernetes environment.
 
 In Kubernetes environments, we use the Telegraf Operator, which is packaged with our Kubernetes collection. You can learn more on this[ here](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Collect_Metrics_Using_Telegraf/01_Telegraf_Collection_Architecture). Follow the steps listed below to collect metrics from a Kubernetes environment:
-
-
 
 1. [Set up Kubernetes Collection with the Telegraf Operator.](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf.md#Install_Telegraf_in_a_Kubernetes_environment)
 2. Add annotations on your Memcached pods \
@@ -142,9 +149,7 @@ On your Memcached Pods, add the following annotations:
 ```
 
 
-Please enter in values for the following parameters (marked in **bold_CHANGE_ME** above):
-
-
+Please enter in values for the following parameters (marked in `CHANGE_ME` above):
 
 * telegraf.influxdata.com/inputs - This contains the required configuration for the Telegraf Memcached Input plugin. Please refer[ to this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/redis) for more information on configuring the Memcached input plugin for Telegraf. Note: As telegraf will be run as a sidecar the host should always be localhost.
     * In the input plugins section which is `[[inputs.memcached]]`:
@@ -169,30 +174,20 @@ For all other parameters please see [this doc](/docs/send-data/collect-from-othe
 
 Sumo Logic Kubernetes collection will automatically start collecting metrics from the pods having the labels and annotations defined in the previous step.
 
-
-
 1. Verify metrics in Sumo Logic.
 
 
 #### Step 2 Configure Logs Collection
-6
-
 
 This section explains the steps to collect Memcached logs from a Kubernetes environment.
-
-
 
 1. (Recommended Method) Add labels on your Memcached pods to capture logs from standard output.
 
 Follow the instructions below to capture Memcached logs from stdout on Kubernetes.
 
-
-
 1. Apply the following labels to the Memcached pods:
 
      labels:
-
-
 
 ```bash
 environment: "prod_CHANGE_ME"
@@ -200,8 +195,6 @@ component: "database"
 db_system: "memcached"
 db_cluster: "memcached_on_k8s_CHANGE_ME"
 ```
-
-
 
 Please enter in values for the following parameters:
 
@@ -231,7 +224,7 @@ If your Memcached chart/pod is writing its logs to log files, you can use a [sid
 2. Add the following annotation in addition to the existing annotations.
 
 
-```
+```bash
 annotations:
   tailing-sidecar: sidecarconfig;<mount>:<path_of_Memcached_log_file>/<Memcached_log_file_name>
 ```
@@ -240,14 +233,17 @@ annotations:
 Example:
 
 
-```
+```bash
 annotations:
     tailing-sidecar: sidecarconfig;data:/var/bitnami/memcached/logs/memcached.log
 ```
 
 
 
-1. Make sure that the Memcached pods are running and annotations are applied by using the command: **kubectl describe pod <Memcached_pod_name>**
+1. Make sure that the Memcached pods are running and annotations are applied by using the command:
+```
+kubectl describe pod <Memcached_pod_name>
+```
 2. Sumo Logic Kubernetes collection will automatically start collecting logs from the pods having the annotations defined above.
 
 3. Add a FER to normalize the fields in Kubernetes environments
@@ -258,20 +254,16 @@ Labels created in Kubernetes environments automatically are prefixed with pod_la
 2. Click the + Add button on the top right of the table.
 3. The following form appears:
 
-
-
 1. Enter the following options:
 * **Rule Name**. Enter the name as **App Observability - Database**.
 * **Applied At.** Choose **Ingest Time**
 * **Scope**. Select **Specific Data**
 * **Scope**: Enter the following keyword search expression:
-
-
-```
+```sql
 pod_labels_environment=* pod_labels_component=database pod_labels_db_system=* pod_labels_db_cluster=*
 ```
 
-* **Parse Expression**.Enter the following parse expression:
+* **Parse Expression**. Enter the following parse expression:
 
 ```sql
 if (!isEmpty(pod_labels_environment), pod_labels_environment, "") as environment
@@ -286,9 +278,7 @@ if (!isEmpty(pod_labels_environment), pod_labels_environment, "") as environment
 </TabItem>
 <TabItem value="non-k8s">
 
-#### For Non-Kubernetes environments
-
-We use the Telegraf operator for Memcached metric collection and Sumo Logic Installed Collector for collecting Memcached logs. The diagram below illustrates the components of the Memcached collection in a non-Kubernetes environment. Telegraf runs on the same system as Memcached and uses the[ Memcached input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/memcached#configuration) to obtain Memcached metrics. The Sumo Logic output plugin to send the metrics to Sumo Logic. Logs from Memcached on the other hand are sent to a Sumo Logic Local File source.
+In non-kubernetes environments, we use the Telegraf operator for Memcached metric collection and Sumo Logic Installed Collector for collecting Memcached logs. The diagram below illustrates the components of the Memcached collection in a non-Kubernetes environment. Telegraf runs on the same system as Memcached and uses the[ Memcached input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/memcached#configuration) to obtain Memcached metrics. The Sumo Logic output plugin to send the metrics to Sumo Logic. Logs from Memcached on the other hand are sent to a Sumo Logic Local File source.
 
 This section provides instructions for configuring logs and metrics collection for the Sumo Logic App for Memcached. Follow the below instructions to set up the logs and metrics collection:
 
@@ -359,17 +349,14 @@ This section provides instructions for configuring log collection for Memcached 
 
 By default, Memcached logs are stored in a log file. Local log files can be collected via [Installed collectors](https://help.sumologic.com/03Send-Data/Installed-Collectors). An Installed collector will require you to allow outbound traffic to [Sumo Logic endpoints](https://help.sumologic.com/APIs/General-API-Information/Sumo-Logic-Endpoints-and-Firewall-Security) for collection to work. For detailed requirements for Installed collectors, see this [page](https://help.sumologic.com/01Start-Here/03About-Sumo-Logic/System-Requirements/Installed-Collector-Requirements).
 
-**Configure logging in Memcached \
-**By default, the installation of Memcached will not write any request logs to disk.  \
- \
-To add a log file for Memcached, you can use the following syntax: \
-`memcached -d -m 3072 -l localhost -p 11211 -u nobody -v 2>>/var/log/memcached/memcached.log \
- \
-`or  \
- \
-if you’re on RHEL/CentOS, you can edit the file `/etc/sysconfig/memcached` like so: \
-`PORT="11211"`
+**Configure logging in Memcached** By default, the installation of Memcached will not write any request logs to disk. To add a log file for Memcached, you can use the following syntax:
+```
+memcached -d -m 3072 -l localhost -p 11211 -u nobody -v 2>>/var/log/memcached/memcached.log
+```
+or  
 
+if you’re on RHEL/CentOS, you can edit the file `/etc/sysconfig/memcached` like so:
+`PORT="11211"`
 
 ```bash
 USER="memcached"
@@ -444,62 +431,51 @@ Custom filter examples:
 
 1. Go to **Manage Data > Alerts > Monitors**.
 2. Click **Add**.
-3. Click **Import. \
-**
-15
-
+3. Click **Import.**
 4. On the** Import Content popup**, enter **Memcached** in the Name field, paste the JSON into the popup, and click **Import**. \
 
-16
 
 5. The monitors are created in "Memcached" folder. The monitors are disabled by default. See the [Monitors](/docs/alerts/monitors/index.md) topic for information about enabling monitors and configuring notifications or connections.
 
 
 #### Method 2: Install Monitors using a Terraform script
-17
 
 
 
 ##### Step 1: Generate a Sumo Logic access key and ID
-18
 
 
 Generate an access key and access ID for a user that has the **Manage Monitors** role capability. For instructions, see  [Access Keys](/docs/manage/security/access-keys#Create_an_access_key_on_Preferences_page).
 
 
 ##### Step 2: Download and install Terraform
-19
 
 
 Download [Terraform 0.13](https://www.terraform.io/downloads.html) or later and install.
 
 
-##### Step 3: Download the Sumo Logic Terraform package for Memcached monitors
-20
+#### Step 3: Download the Sumo Logic Terraform package for Memcached monitors
+
 
 
 The alerts package is available in the Sumo Logic GitHub [repository](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/tree/main/monitor_packages/Memcached). You can either download it using the git clone command or as a zip file.
 
 
-##### Step 4: Alert Configuration  
-21
-
+#### Step 4: Alert Configuration  
 
 After extracting the package, navigate to the  `terraform-sumologic-sumo-logic-monitor/monitor_packages/Memcached/` directory.
 
 Edit the `Memcached.auto.tfvars` file and add the Sumo Logic Access Key and Access ID from Step 1 and your Sumo Logic deployment. If you're not sure of your deployment, see [Sumo Logic Endpoints and Firewall Security](https://help.sumologic.com/APIs/General-API-Information/Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security).
 
-
-```
+```bash
 access_id   = "<SUMOLOGIC ACCESS ID>"
 access_key  = "<SUMOLOGIC ACCESS KEY>"
 environment = "<SUMOLOGIC DEPLOYMENT>"
 ```
 
-
 The Terraform script installs the alerts without any scope filters. If you would like to restrict the alerts to specific clusters or environments, update the `memcached_data_source` variable. For example:
 
-***INSERT TABLE***
+**INSERT TABLE**
 
 
 All monitors are disabled by default on installation. To enable all of the monitors, set the monitors_disabled parameter to false.
@@ -509,24 +485,15 @@ By default, the monitors will be located in a "Memcached" folder on the **Monito
 If you want the alerts to send email or connection notifications, follow the instructions in the next section.
 
 
-##### Step 5: Email and Connection Notification Configuration Examples
-22
+#### Step 5: Email and Connection Notification Configuration Examples
 
-
-Edit the `Memcached_notifications.auto.tfvars` file to populate the `connection_notifications` and email_notifications sections.
-
-Examples are provided below.
-
-**Pagerduty connection example**
+Edit the `Memcached_notifications.auto.tfvars` file to populate the `connection_notifications` and email_notifications sections. Examples are provided below.
 
 In the variable definition below, replace `<CONNECTION_ID>` with the connection ID of the Webhook connection. You can obtain the Webhook connection ID by calling the [Monitors API](https://api.sumologic.com/docs/#operation/listConnections).
 
-
-23
 For information about overriding the payload for different connection types, see [Set Up Webhook Connections](https://help.sumologic.com/Manage/Connections-and-Integrations/Webhook-Connections/Set_Up_Webhook_Connections).
 
-
-```
+```bash title="Pagerduty connection example"
 connection_notifications = [
     {
       connection_type       = "PagerDuty",
@@ -543,11 +510,7 @@ connection_notifications = [
   ]
 ```
 
-
-**Email notifications example**
-
-
-```
+```bash title="Email notifications example"
 email_notifications = [
     {
       connection_type       = "Email",
@@ -584,13 +547,9 @@ Version selection applies only to a few apps currently. For more information, se
     1. **App Name.** You can retain the existing name or enter a name of your choice for the app. 
     2. **Data Source.**
         * Choose **Enter a Custom Data Filter**, and enter a custom filter for Memcached cluster. Examples:
-            1. For all Memcached clusters \
-`db_cluster=*`
-            2. For specific clusters: \
-`db_cluster=memcached.dev.01` 
-            3. Clusters within a specific environment: \
-`db_cluster=memcached-1` and `environment=prod \
-`(This assumes you have set the optional environment tag while configuring collection)
+            1. For all Memcached clusters `db_cluster=*`
+            2. For specific clusters: `db_cluster=memcached.dev.01` 
+            3. Clusters within a specific environment: `db_cluster=memcached-1` and `environment=prod` (This assumes you have set the optional environment tag while configuring collection)
     3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
     4. Click **Add to Library**.
 
@@ -643,3 +602,114 @@ This dashboard helps you quickly analyze your Memcached error logs, commands exe
 ## Memcached Alerts
 
 Sumo Logic has provided out-of-the-box alerts available via [Sumo Logic monitors](/docs/alerts/monitors/index.md) to help you quickly determine if the Memcached database cluster is available and performing as expected.
+
+<table>
+  <tr>
+   <td>Alert Name
+   </td>
+   <td>Alert Description
+   </td>
+   <td>Trigger Type (Critical / Warning)
+   </td>
+   <td>Alert Condition
+   </td>
+   <td>Recover Condition
+   </td>
+  </tr>
+  <tr>
+   <td>Memcached - Commands Error
+   </td>
+   <td>This alert fires when we detect command errors.
+   </td>
+   <td>Critical
+   </td>
+   <td> &#62; 0
+   </td>
+   <td> &#60;&#61; 0
+   </td>
+  </tr>
+  <tr>
+   <td>Memcached - Authentication Error
+   </td>
+   <td>This alert fires when we detect authentication errors continuously for 5 mins
+   </td>
+   <td>Warning
+   </td>
+   <td> &#62;0
+   </td>
+   <td> &#60;&#61; 0
+   </td>
+  </tr>
+  <tr>
+   <td>Memcached - Connection Yields
+   </td>
+   <td>This alert fires when we detect yielded connections continuously for 5 mins
+   </td>
+   <td>Warning
+   </td>
+   <td> &#62;5
+   </td>
+   <td> &#60;&#61; 5
+   </td>
+  </tr>
+  <tr>
+   <td>Memcached - High Memory Usage
+   </td>
+   <td>This alert fires when the memory usage is more than 80%.
+   </td>
+   <td>Warning
+   </td>
+   <td> &#62;80
+   </td>
+   <td> &#60;&#61; 80
+   </td>
+  </tr>
+  <tr>
+   <td>Memcached - Listen Disabled
+   </td>
+   <td>This alert fires when new queued connections per minute > 5
+   </td>
+   <td>Warning
+   </td>
+   <td> &#62;5
+   </td>
+   <td> &#60;&#61;5
+   </td>
+  </tr>
+  <tr>
+   <td>Memcached - Cache Hit Ratio
+   </td>
+   <td>The hit rate is one of the most important indicators of Memcached performance. A high hit rate means faster responses to your users. If the hit rate is falling, you need quick visibility into why. This alert gets fired low cache hit ratio is less than 50%
+   </td>
+   <td>Critical
+   </td>
+   <td> &#60;&#61;0.5
+   </td>
+   <td> &#62;0.5
+   </td>
+  </tr>
+  <tr>
+   <td>Memcached - Current Connections
+   </td>
+   <td>This alert gets fired when number of connected clients are 0. If current connections are none then something is wrong.
+   </td>
+   <td>Critical
+   </td>
+   <td> &#60;&#61;0
+   </td>
+   <td> &#62;0
+   </td>
+  </tr>
+  <tr>
+   <td>Memcached - Uptime
+   </td>
+   <td>This alert gets fires when uptime is &#60; 180. You can use this to detect respawns.
+   </td>
+   <td>Critical
+   </td>
+   <td> &#60;&#61;180
+   </td>
+   <td> &#62;180
+   </td>
+  </tr>
+</table>
