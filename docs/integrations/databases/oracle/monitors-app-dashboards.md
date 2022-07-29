@@ -4,6 +4,7 @@ title: Install the Monitors, App, and view the Dashboards
 description: This page shows the user how to install the Oracle App and describes the dashboards in this app.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
