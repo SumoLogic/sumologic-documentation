@@ -49,7 +49,7 @@ The alerts package is available in the Sumo Logic github [repository](https://gi
 After the package has been extracted, navigate to the package directory terraform-sumologic-sumo-logic-monitor/monitor_packages/**apache**/
 
 Edit the **apache.auto.tfvars** file and add the Sumo Logic Access Key, Access Id and Deployment from Step 1 .
-```
+```bash
 access_id   = "<SUMOLOGIC ACCESS ID>"
 access_key  = "<SUMOLOGIC ACCESS KEY>"
 environment = "<SUMOLOGIC DEPLOYMENT>"
@@ -75,9 +75,7 @@ If you would like the alerts to send email or connection notifications, configur
 Modify the file **apache_notifications.auto.tfvars** and populate connection_notifications and email_notifications as per below examples.
 
 
-#### Pagerduty Connection Example
-
-```bash
+```bash title="Email Notifications Example"
 connection_notifications = [
     {
       connection_type       = "PagerDuty",
@@ -94,15 +92,11 @@ connection_notifications = [
   ]
 ```
 
-
 Replace `<CONNECTION_ID>` with the connection id of the webhook connection. The webhook connection id can be retrieved by calling the [Monitors API](https://api.sumologic.com/docs/#operation/listConnections).
 
 For overriding payload for different connection types, refer to this [document](https://help.sumologic.com/Manage/Connections-and-Integrations/Webhook-Connections/Set_Up_Webhook_Connections).
 
-
-#### Email Notifications Example
-
-```bash
+```bash title="Email Notifications Example"
 email_notifications = [
     {
       connection_type       = "Email",

@@ -3,9 +3,8 @@ id: alerts
 title: Apache Alerts
 sidebar_label: Alerts
 description: This page lists the Alerts for Apache.
+hide_table_of_contents: true
 ---
-
-## Alerts
 
 Sumo Logic provides out of the box alerts available via [Sumo Logic monitors](/docs/alerts/monitors/index.md). These alerts are built based on logs and metrics datasets and have preset thresholds based on industry best practices and recommendations.
 
