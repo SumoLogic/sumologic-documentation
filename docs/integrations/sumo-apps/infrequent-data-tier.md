@@ -91,7 +91,7 @@ _index=sumologic_search_usage_per_query analytics_tier = "Infrequent" !(user_nam
 Complete the following instructions to install the Sumo Logic Infrequent Data Tier App.
 
 :::note required step
-Before installing the Infrequent Data Tier App, you need to enable the [Search Audit Index]((https://help.sumologic.com/Manage/Security/Search_Audit_Index)), which is currently in beta. Please reach out to your account executive or Sumo Logic support to get the Search Audit index enabled.
+Before installing the Infrequent Data Tier App, you need to enable the [Search Audit Index](https://help.sumologic.com/Manage/Security/Search_Audit_Index), which is currently in beta. Please reach out to your account executive or Sumo Logic support to get the Search Audit index enabled.
 :::
 
 To install the app, do the following:
