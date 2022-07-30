@@ -90,7 +90,7 @@ Follow the instructions on [Webhooks](https://developer.atlassian.com/server/jir
     * started (sprint_started)
     * closed (sprint_closed)
 
-When you configure the webhook, enter the URL for the HTTP source you created in [step 2](/docs/integrations/app-development/Jira/Collect_Logs_for_the_Jira_App#Step_2:_Configure_hosted_collector_to_receive_webhooks) as the endpoint for the webhook.
+When you configure the webhook, enter the URL for the HTTP source you created in [step 2](#Step_2:_Configure_hosted_collector_to_receive_webhooks) as the endpoint for the webhook.
 
 
 3.png "image_tooltip")
@@ -156,7 +156,7 @@ Now that you have set up collection for Jira, install the Jira app to use the pr
 
 4.png "image_tooltip")
 
-The Jira App supports Jira Server. For Jira Cloud, please see documentation for the [Jira Cloud App](/docs/integrations/app-development/Jira_Cloud).
+The Jira App supports Jira Server. For Jira Cloud, please see documentation for the [Jira Cloud App](/docs/integrations/app-development/Jira-Cloud).
 
 To install the app, do the following:
 

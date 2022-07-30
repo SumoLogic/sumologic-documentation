@@ -262,7 +262,7 @@ There is a [community supported script](https://github.com/SumoLogic/sumologic-c
 
 1. In Sumo Logic select **Manage Data > Collection > Collection**.
 2. On the Collection page, navigate to your Source and click **Edit**. Scroll down to **Log File Discovery** and note the Endpoint **URL** provided. You will use this in step 10.C when creating your subscription.
-3. Complete steps 10.B through 10.E for [configuring SNS Notifications](/docs/integrations/amazon-aws/AWS_Classic_Load_Balancer/Collect-Logs-and-Metrics-for-the-AWS-Classic-Load-Balancer#Configure+SNS+Notifications).
+3. Complete steps 10.B through 10.E for [configuring SNS Notifications](#Configure-SNS-Notifications).
 
 
 #### Troubleshoot S3 Event Notifications
