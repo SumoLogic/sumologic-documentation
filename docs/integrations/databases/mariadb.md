@@ -633,7 +633,7 @@ connection_notifications = [
 
 Replace `<CONNECTION_ID>` with the connection id of the webhook connection. The webhook connection id can be retrieved by calling the [Monitors API](https://api.sumologic.com/docs/#operation/listConnections).
 
-For overriding payload for different connection types, refer to this [document](/docs/manage/connections-and-integrations/webhook-connections/set-up-webhook-connections.md).
+For overriding payload for different connection types, refer to this [document](/docs/manage/connections-and-integrations/webhook-connections/set-up-webhook-connections).
 
 
 ##### **Email Notifications Example:**

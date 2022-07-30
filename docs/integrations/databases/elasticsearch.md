@@ -481,7 +481,7 @@ Custom filter examples:
 
 #### Generate a Sumo Logic access key and ID
 
-Generate an access key and access ID for a user that has the **Manage Monitors** role capability. For instructions see  [Access Keys](/Users/kpohas/sumologic-documentation/docs/manage/security/access-keys#Create_an_access_key_on_Preferences_page). 
+Generate an access key and access ID for a user that has the **Manage Monitors** role capability. For instructions see  [Access Keys](/docs/manage/security/access-keys#Create-an-access-key-on-Preferences-page). 
 
 
 #### Download and install Terraform
