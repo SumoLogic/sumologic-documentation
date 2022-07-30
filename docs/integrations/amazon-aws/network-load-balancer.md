@@ -40,7 +40,7 @@ Login to Sumo Logic, go to Manage Data > Logs > Fields. Search for the “**netw
 
 ### Metric Rules
 
-Create the following Metric Rule for the AWS/NetworkELB namespace if not already created. Learn how to create a Metric Rule [here](https://help.sumologic.com/Metrics/Metric_Rules_Editor/Create_Metric_Rules).
+Create the following Metric Rule for the AWS/NetworkELB namespace if not already created. Learn how to create a Metric Rule [here](/docs/metrics/metric-rules-editor/create-metric-rules.md).
 
 **Rule 1**
 

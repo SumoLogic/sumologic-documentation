@@ -397,7 +397,7 @@ If you would like the alerts to send email or connection notifications, configur
 
 #### Email and Connection Notification Configuration Examples
 
-To** configure notifications, m**odify the file `host_process_metrics_notifications.auto.tfvars` file and fill in the `connection_notifications` and `email_notifications` sections. See the examples for PagerDuty and email notifications below. See this [document](https://help.sumologic.com/Manage/Connections-and-Integrations/Webhook-Connections/Set_Up_Webhook_Connections) for creating payloads with other connection types.
+To** configure notifications, m**odify the file `host_process_metrics_notifications.auto.tfvars` file and fill in the `connection_notifications` and `email_notifications` sections. See the examples for PagerDuty and email notifications below. See this [document](/docs/manage/connections-and-integrations/webhook-connections/set-up-webhook-connections.md) for creating payloads with other connection types.
 
 
 ```sql title="Pagerduty Connection Example:"
@@ -478,7 +478,7 @@ Panels will start to fill automatically. It's important to note that each panel 
 
 ### Filters with template variables   
 
-Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause.** **For more information, see the [Filter with template variables](https://help.sumologic.com/Visualizations-and-Alerts/Dashboard_(New)/Filter_with_template_variables) help page.
+Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause.** **For more information, see the [Filter with template variables](/docs/dashboards-new/filter-with-template-variables.md) help page.
 
 You can use template variables to drill down and examine the data on a granular level.
 

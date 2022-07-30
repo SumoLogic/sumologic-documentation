@@ -95,7 +95,7 @@ If desired, you can use Docker variables to construct the Source Category value.
     14. **Enable Multiline Processing. **The** _Detect messages spanning multiple lines_** option is checked by default. See [Collecting Multiline Logs](/docs/send-data/sources/reference-information-sources/collect-multiline-logs) for details on multiline processing and its options.
         * **Infer Boundaries**. This option is checked by default.
         * **Boundary Regex**. If multiple processing is enabled, and **Infer Boundaries** is disabled, enter a regular expression for message boundaries.
-6. Configure processing rules. For more information, see** **[Processing Rules](https://help.sumologic.com/Manage/Collection/Processing-Rules).
+6. Configure processing rules. For more information, see** **[Processing Rules](/docs/manage/collection/processing-rules).
 
 
 ### Add a Docker Stats Source
@@ -815,7 +815,7 @@ Locate and install the app you need from the **App Catalog**. If you want to see
     4. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
     5. Click **Add to Library**.
 
-Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization. See [Welcome to the New Library](https://help.sumologic.com/01Start-Here/Welcome-to-the-New-Library) for information on working with the library .
+Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization. See [Welcome to the New Library](/docs/get-started/library/index.md) for information on working with the library .
 
 Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
 

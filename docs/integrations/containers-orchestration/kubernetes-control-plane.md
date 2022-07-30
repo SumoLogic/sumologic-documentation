@@ -47,7 +47,7 @@ The Sumo Logic Kubernetes app uses FluentBit and FluentD to collect logs.
 * Node-exporter Metrics.
 * kube-state-metrics.
 
-Metrics are collected using [Prometheus with FluentD](https://github.com/SumoLogic/sumologic-kubernetes-collection/tree/master/deploy#step-1-create-sumo-collector-and-deploy-fluentd). For additional information on metrics options you can configure for collection, see [this document](https://help.sumologic.com/Metrics/Kubernetes_Metrics).
+Metrics are collected using [Prometheus with FluentD](https://github.com/SumoLogic/sumologic-kubernetes-collection/tree/master/deploy#step-1-create-sumo-collector-and-deploy-fluentd). For additional information on metrics options you can configure for collection, see [this document](/docs/metrics/kubernetes-metrics.md).
 
 
 ### Configuring log and metric collection  
@@ -252,7 +252,7 @@ To install the app, do the following:
 
 ### Filter with template variables    
 
-Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause.** **For more information, see the [Filter with template variables](https://help.sumologic.com/Visualizations-and-Alerts/Dashboard_(New)/Filter_with_template_variables) help page.
+Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause.** **For more information, see the [Filter with template variables](/docs/dashboards-new/filter-with-template-variables.md) help page.
 
 You can use template variables to drill down and examine the data on a granular level.
 

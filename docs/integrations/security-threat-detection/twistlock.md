@@ -48,7 +48,7 @@ In this step you configure an installed collector with a Syslog source that will
 3. **Protocol**. UDP or TCP.  Choose the protocol you configured in Twistlock Console for Syslog forwarding.
 4. **Port**. Port number. Choose the port you configured in Twistlock Console for Syslog forwarding.
 5. **Source Category**. (Required) Provide a Source Category for this data type. For example: **prod/twistlock**. For more information, see [Best Practices](/docs/send-data/design-deployment/best-practices-source-categories).
-6. For Kubernetes customers, we recommend adding a [custom field](/docs/manage/fields.md) to the Syslog Source so you can reference it in the [Sumo Explorer view](https://help.sumologic.com/Visualizations-and-Alerts/Explore). Each field contains a key-value pair, where the field name is the key. To add a field click the **+Add Field** link in the **Fields** section. You could add a field named **cluster** where you set the name of the cluster to tag to the logs. For example, **cluster** = **k8s.dev.sumo.sumologic.net**.
+6. For Kubernetes customers, we recommend adding a [custom field](/docs/manage/fields.md) to the Syslog Source so you can reference it in the [Sumo Explorer view](/docs/observability/kubernetes-solution). Each field contains a key-value pair, where the field name is the key. To add a field click the **+Add Field** link in the **Fields** section. You could add a field named **cluster** where you set the name of the cluster to tag to the logs. For example, **cluster** = **k8s.dev.sumo.sumologic.net**.
 1. Click **Save**.
 
 
@@ -275,7 +275,7 @@ Panels will start to fill automatically. It's important to note that each panel 
 
 ### Filter with template variables    
 
-Template variables provide dynamic dashboards that rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you can view dynamic changes to the data for a fast resolution to the root cause. For more information, see the [Filter with template variables](https://help.sumologic.com/Visualizations-and-Alerts/Dashboard_(New)/Filter_with_template_variables) help page.
+Template variables provide dynamic dashboards that rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you can view dynamic changes to the data for a fast resolution to the root cause. For more information, see the [Filter with template variables](/docs/dashboards-new/filter-with-template-variables.md) help page.
 
 
 You can use template variables to drill down and examine the data on a granular level.

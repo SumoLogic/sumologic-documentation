@@ -60,7 +60,7 @@ This section explains the log collection process, and then walks you through the
 
 There are two methods for integrating Opsgenie with Sumo Logic:
 * When an action happens at Opsgenie alerts, the webhook data is forwarded to the Sumo Logic and the data appears in the Opsgenie App. This integration method are described in this section.
-* Sumo Logic sends webhook alerts to Opsgenie which acts as a dispatcher for these alerts and determines the right people to notify based on on-call schedules, and notifies them via email, text messages (SMS), phone calls, and iPhone & Android push notifications, and escalates alerts until the alert is acknowledged or closed. This data is not utilized by the Opsgenie App, but you can configure this integration by following the instructions provided in [this Set Up Webhook Connections document](https://help.sumologic.com/Manage/Connections-and-Integrations/Webhook-Connections/Set_Up_Webhook_Connections).
+* Sumo Logic sends webhook alerts to Opsgenie which acts as a dispatcher for these alerts and determines the right people to notify based on on-call schedules, and notifies them via email, text messages (SMS), phone calls, and iPhone & Android push notifications, and escalates alerts until the alert is acknowledged or closed. This data is not utilized by the Opsgenie App, but you can configure this integration by following the instructions provided in [this Set Up Webhook Connections document](/docs/manage/connections-and-integrations/webhook-connections/set-up-webhook-connections.md).
 
 
 Opsgenie Alerts are defined at the Team level, so you need to create an Opsgenie - Sumo Logic Webhook integrations for each team.
@@ -144,7 +144,7 @@ Panels will start to fill automatically. It's important to note that each panel 
 
 ### Filter with template variables  
 
-Template variables provide dynamic dashboards that rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you can view dynamic changes to the data for a fast resolution to the root cause. For more information, see the [Filter with template variables](https://help.sumologic.com/Visualizations-and-Alerts/Dashboard_(New)/Filter_with_template_variables) help page.
+Template variables provide dynamic dashboards that rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you can view dynamic changes to the data for a fast resolution to the root cause. For more information, see the [Filter with template variables](/docs/dashboards-new/filter-with-template-variables.md) help page.
 
 You can use template variables to drill down and examine the data on a granular level.
 

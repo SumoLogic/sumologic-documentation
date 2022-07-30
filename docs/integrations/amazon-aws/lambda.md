@@ -236,7 +236,7 @@ Once Provisioned Concurrency is enabled and you start collecting CloudWatch metr
 </table>
 
 
-These metrics can then be queried using Sumo Logic [Metrics queries](https://help.sumologic.com/Metrics/Metric-Queries-and-Alerts/11Metrics-Queries), as shown in the following example:
+These metrics can then be queried using Sumo Logic [Metrics queries](/docs/metrics/metric-queries-alerts/index.md), as shown in the following example:
 
 
 #### Field in Field Schema

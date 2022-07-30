@@ -120,7 +120,7 @@ Enter a parse expression to create an “account” field that maps to the alias
 
 ### Metric Rules
 
-Create the following two Metric Rules for the aws/rds namespace if not already created. Learn how to create a Metric Rule [here](https://help.sumologic.com/Metrics/Metric_Rules_Editor/Create_Metric_Rules).
+Create the following two Metric Rules for the aws/rds namespace if not already created. Learn how to create a Metric Rule [here](/docs/metrics/metric-rules-editor/create-metric-rules.md).
 
 ```bash title="Rule 1"
 Rule name: AwsObservabilityRDSClusterMetricsEntityRule
@@ -300,7 +300,7 @@ Panels will start to fill automatically. It's important to note that each panel 
 
 The Sumo Logic Amazon RDS app dashboards provide visibility into the performance and operations of your Amazon Relational Database Service (RDS). Preconfigured dashboards allow you to monitor critical metrics of your RDS cluster including  CPU, memory, storage, the network transmits and receive throughput, read and write operations, database connection count, disk queue depth, and more. Audit activity dashboards help you monitor activities performed on your RDS infrastructure.
 
-We highly recommend you view these dashboards in the [Explore View](https://help.sumologic.com/Observability_Solution/AWS_Observability_Solution/01_Deploy_and_Use_AWS_Observability/09_View_AWS_Observability_Solution_Dashboards) of the AWS Observability solution.
+We highly recommend you view these dashboards in the [Explore View](/docs/observability/aws-observability-solution/deploy-use-aws-observability/view-aws-observability-solution-dashboards.md) of the AWS Observability solution.
 
 
 ### Overview

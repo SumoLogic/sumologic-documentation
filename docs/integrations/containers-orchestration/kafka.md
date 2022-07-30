@@ -529,7 +529,7 @@ If you would like the alerts to send email or connection notifications, configur
 
 **Step 5: Email and Connection Notification Configuration Examples**
 
-**To configure notifications, m**odify the file `notifications.auto.tfvars` file and fill in the connection_notifications and email_notifications sections. See the examples for PagerDuty and email notifications below. See [this document](https://help.sumologic.com/Manage/Connections-and-Integrations/Webhook-Connections/Set_Up_Webhook_Connections) for creating payloads with other connection types.
+**To configure notifications, m**odify the file `notifications.auto.tfvars` file and fill in the connection_notifications and email_notifications sections. See the examples for PagerDuty and email notifications below. See [this document](/docs/manage/connections-and-integrations/webhook-connections/set-up-webhook-connections.md) for creating payloads with other connection types.
 
 ```bash title="Pagerduty Connection Example"
 connection_notifications = [

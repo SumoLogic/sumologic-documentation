@@ -37,7 +37,7 @@ This page provides instructions for configuring log and metric collection for th
 
 Configuring log and metric collection for the Nginx Plus Ingress App includes the following tasks:
 
-In a Kubernetes environment, we use our Sumo Logic Kubernetes collection. You can learn more about this[ here](https://help.sumologic.com/Observability_Solution/Kubernetes_Solution/04Set_up_collection_for_Kubernetes).
+In a Kubernetes environment, we use our Sumo Logic Kubernetes collection. You can learn more about this[ here](/docs/observability/kubernetes-solution/collection-setup).
 
 
 
@@ -137,7 +137,7 @@ Cluster={{Cluster}} Namespace={{Namespace}} Deployment={{Deployment}} Pod={{Pod}
 
 ## Installing Nginx Plus Ingress Monitors
 
-To install these alerts, you need to have the[ Manage Monitors](https://help.sumologic.com/Manage/Users-and-Roles/Manage-Roles/05-Role-Capabilities#Monitors_(New)) role capability.
+To install these alerts, you need to have the[ Manage Monitors](/docs/manage/users-and-roles/roles/role-capabilities) role capability.
 
 Alerts can be installed by either importing them via a JSON or via a Terraform script.
 
@@ -161,7 +161,7 @@ The monitors are disabled by default. Once you have installed the alerts via thi
 
 **Step 1: Generate a Sumo Logic access key and ID**
 
-Generate an [access key](/docs/manage/security/access-keys#create-an-access-key%C2%A0on-preferences-page) and access ID for a user that has the[ Manage Monitors](https://help.sumologic.com/Manage/Users-and-Roles/Manage-Roles/05-Role-Capabilities#Monitors_(New)) role capability in Sumo Logic using these instructions. Please identify your Sumo Logic[ deployment](https://help.sumologic.com/APIs/General-API-Information/Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security).
+Generate an [access key](/docs/manage/security/access-keys#create-an-access-key%C2%A0on-preferences-page) and access ID for a user that has the[ Manage Monitors](/docs/manage/users-and-roles/roles/role-capabilities) role capability in Sumo Logic using these instructions. Please identify your Sumo Logic[ deployment](https://help.sumologic.com/APIs/General-API-Information/Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security).
 
 **Step 2:[ Download and install Terraform 0.13](https://www.terraform.io/downloads.html)** or later** **
 
@@ -207,7 +207,7 @@ connection_notifications = [
 
 Replace `<CONNECTION_ID>` with the connection id of the webhook connection. The webhook connection id can be retrieved via calling the[ Monitors API](https://api.sumologic.com/docs/#operation/listConnections).
 
-For overriding payload for different connection types, refer to this[ document](https://help.sumologic.com/Manage/Connections-and-Integrations/Webhook-Connections/Set_Up_Webhook_Connections).
+For overriding payload for different connection types, refer to this[ document](/docs/manage/connections-and-integrations/webhook-connections/set-up-webhook-connections.md).
 
 ```bash title="Email Notifications Example:"
 email_notifications = [
