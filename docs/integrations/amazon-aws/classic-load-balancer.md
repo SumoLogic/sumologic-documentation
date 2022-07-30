@@ -275,7 +275,7 @@ Steps to troubleshoot:
 
 
 1. Refresh the Source’s page to view the latest status of the subscription in the SNS Subscription section by clicking **Cancel** then **Edit** on the Source in the Collection tab.
-2. Verify you have enabled sending **Notifications** from your S3 bucket to the appropriate SNS topic. This is done in [step 10.E](/docs/integrations/amazon-aws/AWS_Classic_Load_Balancer/Collect-Logs-and-Metrics-for-the-AWS-Classic-Load-Balancer#Configure+SNS+Notifications).
+2. Verify you have enabled sending **Notifications** from your S3 bucket to the appropriate SNS topic. This is done in [step 10.E](#Configure-SNS-Notifications).
 3. If you didn’t use CloudFormation check that the SNS topic has a confirmed subscription to the URL in AWS console. A "Pending Confirmation" state likely means that you entered the wrong URL while creating the subscription.
 
 In the web interface under **Log File Discovery** it shows a green check with "Sumo Logic has received an AWS validation request at this endpoint." but you still have high latencies.
@@ -291,7 +291,7 @@ Steps to troubleshoot:
 
 
 1. AWS writes CloudTrail and S3 Audit Logs to S3 with a latency of a few minutes. If you’re seeing latencies of around 10 minutes for these Sources it is likely because AWS is writing them to S3 later than expected.
-2. Verify you have enabled sending **Notifications** from your S3 bucket to the appropriate SNS topic. This is done in [step 10](/docs/integrations/amazon-aws/AWS_Classic_Load_Balancer/Collect-Logs-and-Metrics-for-the-AWS-Classic-Load-Balancer#Configure+SNS+Notifications).
+2. Verify you have enabled sending **Notifications** from your S3 bucket to the appropriate SNS topic. This is done in [step 10](#Configure-SNS-Notifications).
 
 
 ### Field in Field Schema
