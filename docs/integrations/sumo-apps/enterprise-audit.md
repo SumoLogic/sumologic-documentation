@@ -30,7 +30,7 @@ The Audit Event Index is only available for Trial and Enterprise accounts.
 
 The Sumo Logic Enterprise Audit Apps are JSON-based to provide for more meaningful audit messages. The Apps generate queries that are compatible with the new Sumo Logic Audit Event Index. The Enterprise Audit Apps do not support the previous version of the audit index.
 
-For information on available datasets and related source categories, see [Audit Event Index](https://help.sumologic.com/Manage/Security/Audit_Event_Index).
+For information on available datasets and related source categories, see [Audit Event Index](/docs/manage/security/audit-event-index).
 
 Enterprise Audit Apps utilize predefined searches and Dashboards that provide visibility into your environment. The following Enterprise Audit Apps present information on account management activities, user activities, as well as management of library content (searches, dashboards/reports, and folders) for your Sumo Logic account:
 * [Enterprise Audit - Collector and Data Forwarding Management App](#enterprise-audit---collector-and-data-forwarding-management-app) presents information on Collector, Sources activities, and data forwarding trends by destination types.

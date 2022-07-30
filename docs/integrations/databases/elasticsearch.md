@@ -383,7 +383,7 @@ This section provides instructions for configuring log collection for Elasticsea
 
 By default, Elasticsearch logs are stored in a log file.
 
-Local log files can be collected via [Installed collectors](/docs/send-data/Installed-Collectors). The installed collector will require you to allow outbound traffic to [Sumo Logic endpoints](https://help.sumologic.com/APIs/General-API-Information/Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security) for collection to work. For detailed requirements for Installed collectors, see this [page](https://help.sumologic.com/01Start-Here/03About-Sumo-Logic/System-Requirements/Installed-Collector-Requirements).
+Local log files can be collected via [Installed collectors](/docs/send-data/Installed-Collectors). The installed collector will require you to allow outbound traffic to [Sumo Logic endpoints](https://help.sumologic.com/APIs/General-API-Information/Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security) for collection to work. For detailed requirements for Installed collectors, see this [page](/docs/get-started/system-requirements#Installed-Collector-Requirements).
 
 
 1. Configure logging in Elasticsearch \
@@ -481,7 +481,7 @@ Custom filter examples:
 
 #### Generate a Sumo Logic access key and ID
 
-Generate an access key and access ID for a user that has the **Manage Monitors** role capability. For instructions see  [Access Keys](https://help.sumologic.com/Manage/Security/Access-Keys#Create_an_access_key_on_Preferences_page).
+Generate an access key and access ID for a user that has the **Manage Monitors** role capability. For instructions see  [Access Keys](/docs/manage/security/access-keys#Create-an-access-key-on-Preferences-page). 
 
 
 #### Download and install Terraform
@@ -559,7 +559,7 @@ Edit the Elasticsearch_notifications.auto.tfvars file to populate the connection
 
 In the variable definition below, replace < CONNECTION_ID> with the connection ID of the Webhook connection. You can obtain the Webhook connection ID by calling the [Monitors API](https://api.sumologic.com/docs/#operation/listConnections).
 
-For information about overriding the payload for different connection types, see [Set Up Webhook Connections](https://help.sumologic.com/Manage/Connections-and-Integrations/Webhook-Connections/Set_Up_Webhook_Connections).
+For information about overriding the payload for different connection types, see [Set Up Webhook Connections](/docs/manage/connections-and-integrations/webhook-connections/set-up-webhook-connections.md).
 
 
 ```bash title="Pagerduty connection example"

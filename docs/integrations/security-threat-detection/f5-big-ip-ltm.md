@@ -138,7 +138,7 @@ _sourceCategory=f5/bigip/ltm  systemInfo
 
 This page provides instructions for installing the F5 - BIG-IP LTM App, as well as examples and explanations for each of the predefined dashboards.
 
-Using [these instructions](https://help.sumologic.com/01Start-Here/Library/Export-and-Import-Content-in-the-Library) imports the JSON into your Sumo Logic environment
+Using [these instructions](/docs/get-started/library/index.md) imports the JSON into your Sumo Logic environment
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 

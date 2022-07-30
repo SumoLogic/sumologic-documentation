@@ -247,7 +247,7 @@ In the file `conf/sumologic.properties`, the following properties are supported.
 
 #### Step 5: Configure the JRE path (DEPRECATED)
 
-To avoid errors, use the latest bundled JRE version listed in the [Collector Release Notes](https://help.sumologic.com/Release-Notes/Collector-Release-Notes). Since the JRE folder **can change** with collector upgrades, we **strongly recommend** copying this JRE folder to a separate place and pointing the JAVAPATH to that folder. To check the current JRE folder the collector is using, go to the **collector** folder under **`config/wrapper.conf`, and look for the variable `wrapper.java.command`.
+To avoid errors, use the latest bundled JRE version listed in the [Collector Release Notes](/docs/releasenotes/collector). Since the JRE folder **can change** with collector upgrades, we **strongly recommend** copying this JRE folder to a separate place and pointing the JAVAPATH to that folder. To check the current JRE folder the collector is using, go to the **collector** folder under **`config/wrapper.conf`, and look for the variable `wrapper.java.command`.
 
 **On Windows, update SumoJanus_SF.bat**
 
@@ -340,7 +340,7 @@ If the browser does not connect to the salesforce instance and you are using Chr
 In Sumo Logic, configure a Script Source using the instructions in [Script Source](/docs/send-data/Sources/sources-installed-collectors/Script-Source). Collectors using version 19.245-4 and later do not allow Script Sources to run by default.
 
 
-To allow Script Sources you need to set the Collector parameter **`enableScriptSource=true` in [user.properties](/docs/send-data/Installed-collectors/collector-installation-reference/user-properties) to true and [restart](https://help.sumologic.com/Manage/Collection/02Start-or-Stop-a-Collector-using-Scripts) the Collector.
+To allow Script Sources you need to set the Collector parameter **`enableScriptSource=true` in [user.properties](/docs/send-data/Installed-collectors/collector-installation-reference/user-properties) to true and [restart](/docs/manage/collection/start-stop-collector-using-scripts.md) the Collector.
 
 For the Sumo Logic App for Salesforce, use the following configuration settings:
 

@@ -534,7 +534,7 @@ When a notification is sent, it includes information from the alert and a link t
 
 ### Import an SLO
 
-To transfer data immediately and create an SLO using an import, you should first export JSON content to use that formatting. The Sumo Logic JSON format may change without notice. See [Export and Import Content in the Library](https://help.sumologic.com/01Start-Here/Library/Export-and-Import-Content-in-the-Library) for complete details.
+To transfer data immediately and create an SLO using an import, you should first export JSON content to use that formatting. The Sumo Logic JSON format may change without notice. See [Export and Import Content in the Library](/docs/get-started/library/index.md) for complete details.
 
 To import an SLO:
 

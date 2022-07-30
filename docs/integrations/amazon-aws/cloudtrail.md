@@ -47,7 +47,7 @@ To configure an AWS CloudTrail Source, perform these steps:
 2. Install the Sumo Logic App for AWS CloudTrail.
 
 
-Once you begin uploading data, your daily data usage will increase. It's a good idea to check the **Account** page to make sure that you have enough quota to accommodate additional data in your account. If you need additional quota, you can [upgrade your account](https://help.sumologic.com/Manage/01Manage_Subscription/04Upgrade_Your_Account) at any time.
+Once you begin uploading data, your daily data usage will increase. It's a good idea to check the **Account** page to make sure that you have enough quota to accommodate additional data in your account. If you need additional quota, you can [upgrade your account](/docs/manage/manage-subscription/upgrade-your-cloud-flex-account.md) at any time.
 
 
 ### Sample Log Message
@@ -190,7 +190,7 @@ Panels will start to fill automatically. It's important to note that each panel 
 
 Amazon S3 buckets are scanned for new files according to the Scan Interval you set when configuring the S3 Source used for AWS CloudTrail logs. Even if you set a shorter Scan Interval, say five minutes, if no new files are found, the Scan Interval is automatically doubled, up to 24 hours (you can read more in [Set the S3 Source Scan Interval](#AWS-CloudTrail-App-Dashboards)). If the Scan Interval increases, it means that a Panel set to a 60-minute time range may not find any data to display, because no files have uploaded to Sumo Logic. This isn't to say that no data is being collected from your S3 bucket; you can confirm that data is being collected on the Status page.
 
-Additionally, you can change the time range of a Panel. Even though these  have been preconfigured, they can be edited just like any other Panel. You'll find instructions in [Changing the Time Range of a Panel](https://help.sumologic.com/Visualizations-and-Alerts/Dashboards/Edit-Dashboards-and-Panels/Change-the-Time-Range-of-a-Panel).
+Additionally, you can change the time range of a Panel. Even though these  have been preconfigured, they can be edited just like any other Panel. You'll find instructions in [Changing the Time Range of a Panel](/docs/dashboards/edit-dashboards/set-time-range-dashboards.md). 
 
 
 ### AWS Admin activity not tracked

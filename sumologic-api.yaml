@@ -5065,7 +5065,7 @@ paths:
       description: "Get the Search Audit policy. This policy specifies whether search\
         \ records for your account are enabled. You can access details about your\
         \ account's search capacity, queries run by users from the Sumo Search Audit\
-        \ Index. [Learn More](https://help.sumologic.com/Manage/Security/Search_Audit_Index)"
+        \ Index. [Learn More](/docs/manage/security/search-audit-index)"
       operationId: getSearchAuditPolicy
       responses:
         "200":
@@ -5087,7 +5087,7 @@ paths:
       description: "Set the Search Audit policy. This policy specifies whether search\
         \ records for your account are enabled. You can access details about your\
         \ account's search capacity, queries run by users from the Sumo Search Audit\
-        \ Index. [Learn More](https://help.sumologic.com/Manage/Security/Search_Audit_Index)"
+        \ Index. [Learn More](/docs/manage/security/search-audit-index)"
       operationId: setSearchAuditPolicy
       requestBody:
         content:

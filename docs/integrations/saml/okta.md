@@ -146,7 +146,7 @@ pagination_limit = 1000
 
 #### Step 5: Configure a Collector (FedRamp Only)
 
-To avoid errors, use the latest bundled JRE version listed in the [Collector Release Notes](https://help.sumologic.com/Release-Notes/Collector-Release-Notes). Since the JRE folder **can change** with collector upgrades, we **strongly recommend** copying this JRE folder to a separate place and pointing the JAVAPATH to that folder. To check the current JRE folder the collector is using, go to the **collector** folder under `config/wrapper.conf`, and look for the variable `wrapper.java.command`.
+To avoid errors, use the latest bundled JRE version listed in the [Collector Release Notes](/docs/releasenotes/collector). Since the JRE folder **can change** with collector upgrades, we **strongly recommend** copying this JRE folder to a separate place and pointing the JAVAPATH to that folder. To check the current JRE folder the collector is using, go to the **collector** folder under `config/wrapper.conf`, and look for the variable `wrapper.java.command`.
 
 Configure an [Installed Collector](/docs/send-data/Installed-Collectors) on a Linux or Windows machine. By default the Collector will come with a Java Runtime Environment. To ensure that SumoJanus can locate Java, you may need to update the .bat or .bash file, as described below.
 
@@ -185,7 +185,7 @@ For guidance creating your Source Category naming convention, see [Best Practice
 
 1. Configure a [Script Source](/docs/send-data/Sources/sources-installed-collectors/Script-Source). Collectors using version 19.245-4 and later do not allow Script Sources to run by default. \
 
-To allow Script Sources you need to set the Collector parameter `enableScriptSource` in [user.properties](/docs/send-data/Installed-collectors/collector-installation-reference/user-properties) to true and [restart](https://help.sumologic.com/Manage/Collection/02Start-or-Stop-a-Collector-using-Scripts) the Collector. \
+To allow Script Sources you need to set the Collector parameter `enableScriptSource` in [user.properties](/docs/send-data/Installed-collectors/collector-installation-reference/user-properties) to true and [restart](/docs/manage/collection/start-stop-collector-using-scripts.md) the Collector. \
 Linux
 
 Windows

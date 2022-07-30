@@ -49,7 +49,7 @@ This section walks you through the process of creating a new Sumo Logic hosted c
 7. Click the **+Add Field** link in the **Fields** section to define the [fields](/docs/manage/fields.md) you want to associate, each field needs a key and value.
    * A green circle with a check mark is shown when the field exists in the Fields table schema.
    * An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema it is ignored, known as dropped.
-8. **Assign to a Budget** allows you to assign an [ingest budget](https://help.sumologic.com/Manage/Ingestion-and-Volume/Ingest_Budgets) to the Collector. The drop-down displays your ingest budgets in the following format:
+8. **Assign to a Budget** allows you to assign an [ingest budget](/docs/manage/ingestion-and-volume/ingest-budgets) to the Collector. The drop-down displays your ingest budgets in the following format: 
     * `<budget name> (<field value>) (<allocated capacity>)`
 9. **Time Zone**. Set the default time zone when it is not extracted from the log timestamp. Time zone settings on Sources override a Collector time zone setting.
 10. Review your input and when finished click **Save**.

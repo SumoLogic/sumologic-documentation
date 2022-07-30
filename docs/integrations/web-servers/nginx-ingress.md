@@ -83,7 +83,7 @@ Configuring log and metric collection for the Nginx Ingress App includes the fol
 
 ##### Collect Logs and Metrics for Nginx Ingress
 
-In a Kubernetes environment, we use our Sumo Logic Kubernetes collection. You can learn more about this[ here](https://help.sumologic.com/Observability_Solution/Kubernetes_Solution/04Set_up_collection_for_Kubernetes).
+In a Kubernetes environment, we use our Sumo Logic Kubernetes collection. You can learn more about this [here](docs/observability/kubernetes-solution/collection-setup).
 
 1. Before you can configure Sumo Logic to ingest metrics, you must enable the Prometheus metrics in the Nginx Ingress controller and annotate the Nginx Ingress pods, so Prometheus can find the Nginx Ingress metrics.
 * For instructions on Nginx Open Source, refer to the following documentation [https://docs.nginx.com/nginx-ingress-controller/logging-and-monitoring/prometheus/](https://docs.nginx.com/nginx-ingress-controller/logging-and-monitoring/prometheus/).
@@ -236,7 +236,7 @@ connection_notifications = [
 
 Replace `<CONNECTION_ID>` with the connection id of the webhook connection. The webhook connection id can be retrieved by calling the [Monitors API](https://api.sumologic.com/docs/#operation/listConnections).
 
-For overriding payload for different connection types, refer to this [document](https://help.sumologic.com/Manage/Connections-and-Integrations/Webhook-Connections/Set_Up_Webhook_Connections).
+For overriding payload for different connection types, refer to this [document](/docs/manage/connections-and-integrations/webhook-connections/set-up-webhook-connections.md).
 
 
 ```bash title="Email Notifications Example"

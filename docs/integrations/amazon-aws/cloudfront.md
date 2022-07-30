@@ -30,7 +30,7 @@ Before you install the Amazon CloudFront App, complete the following tasks:
 2. Confirm that logs are being delivered to the Amazon S3 bucket.
 3. [Grant Sumo Logic Access to the AWS S3 Bucket](/docs/send-data/sources/sources-hosted-collectors/amazon-web-services/grant-access-aws-product.md).
 
-Once you begin uploading data, your daily data usage will increase. It's a good idea to check the **Account** page to make sure that you have enough quota to accommodate additional data in your account. If you need additional quota, you can [upgrade your account](https://help.sumologic.com/Manage/01Manage_Subscription/04Upgrade_Your_Account) at any time.
+Once you begin uploading data, your daily data usage will increase. It's a good idea to check the **Account** page to make sure that you have enough quota to accommodate additional data in your account. If you need additional quota, you can [upgrade your account](/docs/manage/manage-subscription/upgrade-your-cloud-flex-account.md) at any time.
 
 
 ### Add an AWS Source

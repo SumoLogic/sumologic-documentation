@@ -125,7 +125,7 @@ This section shows you how to set up authentication.
 **To authenticate Box, do the following:
 
 
-To avoid errors, use the latest bundled JRE version listed in the [Collector Release Notes](https://help.sumologic.com/Release-Notes/Collector-Release-Notes). Since the JRE folder **can change** with collector upgrades, we **strongly recommend** copying this JRE folder to a separate place and pointing the JAVAPATH to that folder. To check the current JRE folder the collector is using, go to the **collector** folder under **config/wrapper.conf, and look for the variable wrapper.java.command.
+To avoid errors, use the latest bundled JRE version listed in the [Collector Release Notes](/docs/releasenotes/collector). Since the JRE folder **can change** with collector upgrades, we **strongly recommend** copying this JRE folder to a separate place and pointing the JAVAPATH to that folder. To check the current JRE folder the collector is using, go to the **collector** folder under **config/wrapper.conf, and look for the variable wrapper.java.command.
 
 1. By default the Collector will come with a Java Runtime Environment. To ensure that SumoJanus can locate Java, you may need to update the .bat or .bash file, as described below. \
 **On Windows, update SumoJanus_Box.bat file \
@@ -205,7 +205,7 @@ For guidance creating your source category naming convention, see [Best Practice
 
 1. Configure a [Script Source](/docs/send-data/Sources/sources-installed-collectors/Script-Source). Collectors using version 19.245-4 and later do not allow Script Sources to run by default.
 10
-To enable Script Sources you must set the Collector parameter `enableScriptSource` in [user.properties](/docs/send-data/Installed-collectors/collector-installation-reference/user-properties) to true and [restart](https://help.sumologic.com/Manage/Collection/02Start-or-Stop-a-Collector-using-Scripts) the Collector.
+To enable Script Sources you must set the Collector parameter `enableScriptSource` in [user.properties](/docs/send-data/Installed-collectors/collector-installation-reference/user-properties) to true and [restart](/docs/manage/collection/start-stop-collector-using-scripts.md) the Collector.
 11
 
 2. Configure the source fields:
