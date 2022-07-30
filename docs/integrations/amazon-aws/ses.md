@@ -118,7 +118,7 @@ Selecting an AWS GovCloud region means your data will be leaving a FedRAMP-high 
 
 ### Step 4: Configure and collect Amazon SNS notifications for Amazon SES
 
-1. Configure a [Hosted Collector](https://help.sumologic.com/03Send-Data/Hosted-Collectors/Configure-a-Hosted-Collector).
+1. Configure a [Hosted Collector](/docs/send-data/configure-hosted-collector).
 2. Configure an  [HTTP](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/HTTP-Source) source.
 * **Name—**Enter a name to display for the new Source.
 * **Description—**Enter an optional description.

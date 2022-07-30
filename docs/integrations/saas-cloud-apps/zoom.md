@@ -61,7 +61,7 @@ When you configure the HTTP Source, make sure to save the HTTP Source Address UR
 
 1. Do one of the following:
 * If you already have a Sumo Logic Hosted Collector, identify the one you want to use.
-* Create a new Hosted Collector as described in this document: [Configure a Hosted Collector](https://help.sumologic.com/03Send-Data/Hosted-Collectors/Configure-a-Hosted-Collector).
+* Create a new Hosted Collector as described in this document: [Configure a Hosted Collector](/docs/send-data/configure-hosted-collector).
 1. Add an  HTTP source for logs, as described in this document: [HTTP Metrics and Logs Source](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/HTTP-Source).
 
 

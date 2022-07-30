@@ -22,7 +22,7 @@ For information on Microsoft APIs and message types, see Microsoft Office 365 Au
 
 To collect logs for the Microsoft Office 365 App, do the following:
 
-1. One [Hosted Collector](https://help.sumologic.com/03Send-Data/Hosted-Collectors/Configure-a-Hosted-Collector).
+1. One [Hosted Collector](/docs/send-data/configure-hosted-collector).
 2. One [Microsoft Office 365 Audit Source](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Microsoft-Office-365-Audit-Source) for each content type you want to collect logs for. For example:
     * Office 365 Azure AD logs
     * Office 365 Exchange logs
@@ -141,7 +141,7 @@ Locate and install the app you need from the **App Catalog**. If you want to see
 1. From the **App Catalog**, search for and select the app**.**
 2. Select the version of the service you're using and click **Add to Library**.
 
-Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library](https://help.sumologic.com/01Start-Here/Library/Apps-in-Sumo-Logic/Install-Apps-from-the-Library).
+Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library](/docs/get-started/library/install-apps).
 
 1. To install the app, complete the following fields.
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app.

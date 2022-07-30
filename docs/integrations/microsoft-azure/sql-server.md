@@ -293,7 +293,7 @@ At this point, the installed collector will start scanning the `ERRORLOG` and se
 Set up a Sumo Logic HTTP Source
 
 1. **Configure a Hosted Collector for Metrics. \
-**To create a new Sumo Logic hosted collector, perform the steps in the [Configure a Hosted Collector](https://help.sumologic.com/03Send-Data/Hosted-Collectors/Configure-a-Hosted-Collector) documentation.
+**To create a new Sumo Logic hosted collector, perform the steps in the [Configure a Hosted Collector](/docs/send-data/configure-hosted-collector) documentation.
 2. Configure an HTTP Logs & Metrics source:
    * On the created Hosted Collector on the Collection Management screen, select **Add Source**.
    * Select **HTTP Logs & Metrics.**
@@ -525,7 +525,7 @@ Locate and install the app you need from the **App Catalog**. If you want to see
 
 
 12
-Version selection is applicable only to a few apps currently. For more information, see the[ Install the Apps from the Library.](https://help.sumologic.com/01Start-Here/Library/Apps-in-Sumo-Logic/Install-Apps-from-the-Library)
+Version selection is applicable only to a few apps currently. For more information, see the[ Install the Apps from the Library.](/docs/get-started/library/install-apps)
 
 
 

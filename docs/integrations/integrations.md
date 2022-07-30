@@ -21,14 +21,14 @@ Sumo Logic supports a wide variety of data sources. To interact with other Sumo 
 <div className="box-wrapper" markdown="1">
 <div className="box box1 card">
   <div className="container">
-  <img src='https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg' alt="DB icon" width="50"/>
+  <img src='https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg' alt="DB icon" width="65"/>
   <h3><a href="/docs/integrations/amazon-aws/">Amazon and AWS</a></h3>
   <p>A guide to Sumo Logic apps for Amazon and AWS products.</p>
   </div>
 </div>
 <div className="box box2 card">
   <div className="container">
-  <img src='https://upload.wikimedia.org/wikipedia/commons/a/a8/Microsoft_Azure_Logo.svg' alt="thumbnail icon" width="100"/>
+  <img src={useBaseUrl('img/integrations/microsoft-azure/azure.png')} alt="DB icon" width="50"/>
   <h3><a href="/docs/integrations/microsoft-azure/">Microsoft and Azure</a></h3>
   <p>A guide to Sumo Logic apps for Microsoft and Azure.</p>
   </div>

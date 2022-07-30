@@ -298,7 +298,7 @@ To add a hosted collector and HTTP source, do the following:
 
 1. Do one of the following:
 * If you already have a Sumo Logic Hosted Collector, identify the one you want to use.
-* Create a new Hosted Collector as described in this document: [Configure a Hosted Collector](https://help.sumologic.com/03Send-Data/Hosted-Collectors/Configure-a-Hosted-Collector).
+* Create a new Hosted Collector as described in this document: [Configure a Hosted Collector](/docs/send-data/configure-hosted-collector).
 1. Add two  HTTP sources, one for logs and another for metrics.
 2. Go to the source you created for ingesting logs, navigate to **Timestamp Format > Advanced Options**, and click **Specify a format**.
 3. Enter the following information in the respective fields for the **log source**:
@@ -577,7 +577,7 @@ Locate and install the app you need from the **App Catalog**. If you want to see
 1. From the **App Catalog**, search for and select the app**.**
 2. Select the version of the service you're using and click **Add to Library**.
 
-Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](https://help.sumologic.com/01Start-Here/Library/Apps-in-Sumo-Logic/Install-Apps-from-the-Library)
+Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/library/install-apps)
 
 3. To install the app, complete the following fields.
    * **App Name.** You can retain the existing name, or enter a name of your choice for the app. 

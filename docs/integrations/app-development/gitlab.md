@@ -45,7 +45,7 @@ For information on GitLab webhooks, refer to [GitLab documentation](https://docs
 Create a host collector to receive Webhooks from GitLab and set up an HTTP source on it.
 
 
-1. Configure a [Hosted Collector](https://help.sumologic.com/03Send-Data/Hosted-Collectors/Configure-a-Hosted-Collector), or select an existing hosted collector for the HTTP source.
+1. Configure a [Hosted Collector](/docs/send-data/configure-hosted-collector), or select an existing hosted collector for the HTTP source.
 2. Configure an [HTTP source](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/HTTP-Source) on the hosted collector.
     * For **Source Category**, specify GitLab/events.
     * Click **+Add Field **and provide the following:
@@ -147,7 +147,7 @@ Locate and install the app you need from the **App Catalog**. If you want to see
 
 
 4.png "image_tooltip")
-Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](https://help.sumologic.com/01Start-Here/Library/Apps-in-Sumo-Logic/Install-Apps-from-the-Library)
+Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/library/install-apps)
 
 
 

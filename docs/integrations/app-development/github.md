@@ -58,7 +58,7 @@ First, configure a Collector and Source in Sumo Logic, then configure a GitHub W
 
 In this step, you create a Hosted Collector to receive Webhook Events from Github and set up an HTTP Source on it.
 
-1. Configure a [Hosted Collector](https://help.sumologic.com/03Send-Data/Hosted-Collectors/Configure-a-Hosted-Collector), or select an existing hosted collector for the HTTP Source.
+1. Configure a [Hosted Collector](/docs/send-data/configure-hosted-collector), or select an existing hosted collector for the HTTP Source.
 2. Configure an[ HTTP Source](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/HTTP-Source) on the Hosted Collector.
     * For Source Category, enter any string to tag the output collected from this Source, such as **GitHub**.
     * Click **+Add Field **and provide the following:
@@ -191,7 +191,7 @@ Locate and install the app you need from the **App Catalog**. If you want to see
 
 
 5
-Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](https://help.sumologic.com/01Start-Here/Library/Apps-in-Sumo-Logic/Install-Apps-from-the-Library)
+Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/library/install-apps)
 
 
 

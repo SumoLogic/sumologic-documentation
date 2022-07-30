@@ -60,7 +60,7 @@ Perform the following tasks to configure log collection for the F5 - BIG-IP LTM 
 
 #### Step 1: Create a Sumo Logic Hosted Collector
 
-1. Configure a Hosted Collector in Sumo Logic using [these instructions](https://help.sumologic.com/03Send-Data/Hosted-Collectors/Configure-a-Hosted-Collector).
+1. Configure a Hosted Collector in Sumo Logic using [these instructions](/docs/send-data/configure-hosted-collector).
 2. Add an [HTTP source](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/HTTP-Source), configuring the Source Category with the string f5 in it (e.g. “f5/ltm”). \
 Make a note of the URL for the HTTP source, as you will need it in the following steps. The URL for our example is: [https://collectors.us2.sumologic.com/receiver/v1/http/Thisis4fakeendpoint4testing==](https://collectors.us2.sumologic.com/receiver/v1/http/Thisis4fakeendpoint4testing==)
 
@@ -146,7 +146,7 @@ Locate and install the app you need from the **App Catalog**. If you want to see
 1. From the **App Catalog**, search for and select the app**.**
 2. Select the version of the service you're using and click **Add to Library**.
 
-Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](https://help.sumologic.com/01Start-Here/Library/Apps-in-Sumo-Logic/Install-Apps-from-the-Library)
+Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/library/install-apps)
 
 3. To install the app, complete the following fields.
    * **App Name.** You can retain the existing name, or enter a name of your choice for the app. 

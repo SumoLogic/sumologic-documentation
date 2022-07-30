@@ -57,7 +57,7 @@ In this task, you configure an HTTP source to receive logs from the Azure functi
 
 1. Do one of the following:
 * Select a hosted collector on which to configure the HTTP source.
-* Create a new hosted collector, as described on [Configure a Hosted Collector](https://help.sumologic.com/03Send-Data/Hosted-Collectors/Configure-a-Hosted-Collector).
+* Create a new hosted collector, as described on [Configure a Hosted Collector](/docs/send-data/configure-hosted-collector).
 1. Configure an HTTP source, as described on [HTTP Logs and Metrics Source](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/HTTP-Source). Make a note of the URL for the source, you will need it in the next step.
 
 
@@ -186,7 +186,7 @@ Locate and install the app you need from the **App Catalog**. If you want to see
 
 
 20
-Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](https://help.sumologic.com/01Start-Here/Library/Apps-in-Sumo-Logic/Install-Apps-from-the-Library)
+Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/library/install-apps)
 
 
 

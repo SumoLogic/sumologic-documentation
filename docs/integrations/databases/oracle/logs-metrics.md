@@ -479,7 +479,7 @@ Preview steps for Oracle log collection:
 **Step 1. Configure a Hosted Collector for Metrics.**
 
 
-    To create a new Sumo Logic hosted collector, perform the steps in the [Configure a Hosted Collector](https://help.sumologic.com/03Send-Data/Hosted-Collectors/Configure-a-Hosted-Collector) documentation.
+    To create a new Sumo Logic hosted collector, perform the steps in the [Configure a Hosted Collector](/docs/send-data/configure-hosted-collector) documentation.
 
 **Step 2. Configure an HTTP Logs & Metrics source:**
 

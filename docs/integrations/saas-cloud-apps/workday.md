@@ -274,7 +274,7 @@ In this step, you create a hosted collector and HTTP source to receive data from
 
 
 
-1. Configure a [Hosted Collector](https://help.sumologic.com/03Send-Data/Hosted-Collectors/Configure-a-Hosted-Collector), or select an existing hosted collector for the HTTP source.
+1. Configure a [Hosted Collector](/docs/send-data/configure-hosted-collector), or select an existing hosted collector for the HTTP source.
 2. Configure an [HTTP source](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/HTTP-Source) on the hosted collector
 
 Make a note of the HTTP address for the source. You will need it when you configure the collection for the Workday scripts in the next step.

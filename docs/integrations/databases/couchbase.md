@@ -286,7 +286,7 @@ Use one of the following Sumo Logic Collector options:
 
 
 1. To collect logs directly from the Couchbase machine, configure an [Installed Collector](https://help.sumologic.com/03Send-Data/Installed-Collectors).
-2. If you are using a service like Fluentd, or you would like to upload your logs manually, configure a [Hosted Collector](https://help.sumologic.com/03Send-Data/Hosted-Collectors/Configure-a-Hosted-Collector).
+2. If you are using a service like Fluentd, or you would like to upload your logs manually, configure a [Hosted Collector](/docs/send-data/configure-hosted-collector).
 1. **Configure a local file source**
 
     **For an Installed Collector**
@@ -359,7 +359,7 @@ If you are using a service like Fluentd, or you would like to upload your logs m
 #### Set up a Sumo Logic HTTP Source
 
 1. **Configure a Hosted Collector for Metrics.**
-To create a new Sumo Logic hosted collector, perform the steps in the [Configure a Hosted Collector](https://help.sumologic.com/03Send-Data/Hosted-Collectors/Configure-a-Hosted-Collector) documentation.
+To create a new Sumo Logic hosted collector, perform the steps in the [Configure a Hosted Collector](/docs/send-data/configure-hosted-collector) documentation.
 2. **Configure an HTTP Logs & Metrics source**:
     1. On the created Hosted Collector on the Collection Management screen, select **Add Source**.
     2. Select **HTTP Logs & Metrics.**
@@ -694,7 +694,7 @@ Locate and install the app you need from the **App Catalog**. If you want to see
 1. From the **App Catalog**, search for and select the app**.**
 2. Select the version of the service you're using and click **Add to Library**.
 
-Version selection is applicable only to a few apps currently. For more information, see the[ Install the Apps from the Library](https://help.sumologic.com/01Start-Here/Library/Apps-in-Sumo-Logic/Install-Apps-from-the-Library).
+Version selection is applicable only to a few apps currently. For more information, see the[ Install the Apps from the Library](/docs/get-started/library/install-apps).
 
 1. To install the app, complete the following fields.
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 

@@ -88,7 +88,7 @@ Authentication must be with a new Google Workspace Apps Audit Source, we do not 
 
 ### Configure a Collector
 
-Configure a [Hosted Collector](https://help.sumologic.com/03Send-Data/Hosted-Collectors/Configure-a-Hosted-Collector) for Google Apps Audit.
+Configure a [Hosted Collector](/docs/send-data/configure-hosted-collector) for Google Apps Audit.
 
 
 ### Configure Google Workspace Apps Audit Sources  
@@ -282,7 +282,7 @@ When you configure the HTTP Source, make sure to save the HTTP Source Address UR
 
 
 
-1. Create a new Sumo Logic Hosted Collector by performing the steps in [Configure a Hosted Collector](https://help.sumologic.com/03Send-Data/Hosted-Collectors/Configure-a-Hosted-Collector).
+1. Create a new Sumo Logic Hosted Collector by performing the steps in [Configure a Hosted Collector](/docs/send-data/configure-hosted-collector).
 2. Add an  HTTP Logs and Metrics Source.
 3. In the Advanced Options for Logs, under Timestamp Format, click **Specify a format** and enter the following information in the respective fields:
 * **Format:**

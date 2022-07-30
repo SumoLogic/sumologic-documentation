@@ -82,7 +82,7 @@ Namespace for **AWS Application Load Balancer** Service is **AWS/ApplicationELB*
 
 #### Configure a Collector
 
-Configure a [Hosted Collector](https://help.sumologic.com/03Send-Data/Hosted-Collectors/Configure-a-Hosted-Collector).
+Configure a [Hosted Collector](/docs/send-data/configure-hosted-collector).
 
 
 #### Before you begin
@@ -95,7 +95,7 @@ Before you can begin to use the AWS Elastic Load Balancing (ELB) Application App
 
 #### Configure an ELB Source
 
-When you create an AWS Source, you associate it with a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use, or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](https://help.sumologic.com/03Send-Data/Hosted-Collectors/Configure-a-Hosted-Collector).
+When you create an AWS Source, you associate it with a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use, or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/configure-hosted-collector).
 
 
 ##### Rules

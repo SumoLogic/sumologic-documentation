@@ -59,7 +59,7 @@ This Source will be a Google Pub/Sub-only Source, which means that it will only 
 
 
 1. In Sumo Logic select** Manage Data > Collection > Collection**.
-2. Select an existing Hosted Collector upon which to add the Source. If you don't already have a Collector you'd like to use, create one, using the instructions on [Configure a Hosted Collector](https://help.sumologic.com/03Send-Data/Hosted-Collectors/Configure-a-Hosted-Collector).
+2. Select an existing Hosted Collector upon which to add the Source. If you don't already have a Collector you'd like to use, create one, using the instructions on [Configure a Hosted Collector](/docs/send-data/configure-hosted-collector).
 3. Click **Add Source** next to the Hosted** **Collector and click **Google Cloud Platform**.
 4. Enter a **Name** to display for the Source. A **Description** is optional. \
 
@@ -292,7 +292,7 @@ Locate and install the app you need from the **App Catalog**. If you want to see
 
 
 18
-Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](https://help.sumologic.com/01Start-Here/Library/Apps-in-Sumo-Logic/Install-Apps-from-the-Library)
+Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/library/install-apps)
 
 
 

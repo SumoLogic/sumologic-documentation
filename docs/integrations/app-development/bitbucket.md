@@ -117,7 +117,7 @@ There are 2 types of events of interest from Bitbucket to Sumo Logic:
 
 In this step, you create a Hosted Collector to receive Webhook Events from Bitbucket and set up an HTTP source on it.
 
-1. Configure a [Hosted Collector](https://help.sumologic.com/03Send-Data/Hosted-Collectors/Configure-a-Hosted-Collector), or select an existing hosted collector for the HTTP source.
+1. Configure a [Hosted Collector](/docs/send-data/configure-hosted-collector), or select an existing hosted collector for the HTTP source.
 2. Configure an [HTTP source](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/HTTP-Source) on the hosted collector.
     * For Source Category, specify `bitbucket/events.`
     * Click **+Add Field **and provide the following:
@@ -266,7 +266,7 @@ Locate and install the app you need from the **App Catalog**. If you want to see
 
 6
 
-Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](https://help.sumologic.com/01Start-Here/Library/Apps-in-Sumo-Logic/Install-Apps-from-the-Library)
+Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/library/install-apps)
 
 1. To install the app, complete the following fields.
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 

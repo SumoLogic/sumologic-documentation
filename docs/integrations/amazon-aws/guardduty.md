@@ -28,7 +28,7 @@ This configuration is defined in a [AWS Serverless Application Model (SAM) speci
 
 ### Step 1: Configure an HTTP source
 
-1. In Sumo Logic, configure a [Hosted Collector](https://help.sumologic.com/03Send-Data/Hosted-Collectors/Configure-a-Hosted-Collector).
+1. In Sumo Logic, configure a [Hosted Collector](/docs/send-data/configure-hosted-collector).
 2. In Sumo Logic, configure an [HTTP Source](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/HTTP-Source).  When you configure the source, in the **Advanced Options for Logs** section of the page:
     * Specify **Format** as `yyyy-MM-dd'T'HH:mm:ss.SSS'Z'`
     * Specify **Timestamp locator** as `.*"updatedAt":"(.*)".* \`
@@ -238,7 +238,7 @@ Locate and install the app you need from the **App Catalog**. If you want to see
 
 
 14
-Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](https://help.sumologic.com/01Start-Here/Library/Apps-in-Sumo-Logic/Install-Apps-from-the-Library)
+Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/library/install-apps)
 
 1. To install the app, complete the following fields.
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
