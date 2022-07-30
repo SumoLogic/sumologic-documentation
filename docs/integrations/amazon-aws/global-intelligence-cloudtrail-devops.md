@@ -75,7 +75,7 @@ Before you begin, you must configure AWS CloudTrail logging to an S3 bucket.
 
 ### Configuring Log Collection for AWS Global Intelligence CloudTrail DevOps
 
-To configure log collection for Global Intelligence for AWS CloudTrail, follow the steps described [here](https://help.sumologic.com/07Sumo-Logic-Apps/01Amazon_and_AWS/AWS_CloudTrail/01-Collect-logs-for-the-AWS-CloudTrail-App).
+To configure log collection for Global Intelligence for AWS CloudTrail, follow the steps described [here](#Collect-logs-for-the-AWS-CloudTrail-App).
 
 
 ### Sample Log Message

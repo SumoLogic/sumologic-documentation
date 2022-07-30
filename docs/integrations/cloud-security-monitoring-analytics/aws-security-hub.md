@@ -11,11 +11,11 @@ The Sumo Logic AWS Security Hub app is designed to extract key findings from the
 
 ## Collecting findings
 
-To set-up Collection, follow the instructions provided at Collect findings for the AWS Security Hub App. https://help.sumologic.com/07Sumo-Logic-Apps/01Amazon_and_AWS/AWS_Security_Hub/2-Collect-Findings-for-the-AWS-Security-Hub-App
+To set-up Collection, follow the instructions provided at Collect findings for the AWS Security Hub App. /docs/integrations/amazon-aws/AWS_Security_Hub/2-Collect-Findings-for-the-AWS-Security-Hub-App
 
 ## Install the App
 
-Now that you have set up ingested and collected findings for AWS Security Hub, you can install the Sumo Logic App for AWS Security Hub and use the preconfigured searches and [Dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/01Amazon_and_AWS/AWS_Lambda/AWS-Lambda-App-Dashboards#Dashboards) that provide insight into your data.
+Now that you have set up ingested and collected findings for AWS Security Hub, you can install the Sumo Logic App for AWS Security Hub and use the preconfigured searches and [Dashboards](#Dashboards) that provide insight into your data.
 
 To install the Sumo Logic App for AWS Security Hub, do the following:
 

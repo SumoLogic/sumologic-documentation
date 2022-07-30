@@ -72,7 +72,7 @@ Please click on the appropriate links below based on the environment where your 
 
 <TabItem value="k8s">
 
-In Kubernetes environments, we use the Telegraf Operator, which is packaged with our Kubernetes collection. You can learn more about it[ here](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Collect_Metrics_Using_Telegraf/01_Telegraf_Collection_Architecture). The diagram below illustrates how data is collected from MariaDB  in Kubernetes environments. In the architecture shown below, there are four services that make up the metric collection pipeline:
+In Kubernetes environments, we use the Telegraf Operator, which is packaged with our Kubernetes collection. You can learn more about it[ here](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/telegraf-collection-architecture). The diagram below illustrates how data is collected from MariaDB  in Kubernetes environments. In the architecture shown below, there are four services that make up the metric collection pipeline:
 
 
 * Telegraf
@@ -200,7 +200,7 @@ Enter in values for the following parameters (marked in **CHANGE_ME** above):
 
     For all other parameters, please see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#Configuring-Telegraf) for more properties that can be configured in the Telegraf agent globally.
 
-1. The Sumologic-Kubernetes-Collection will automatically capture the logs from stdout and will send the logs to Sumologic. For more information on deploying Sumologic-Kubernetes-Collection,[ visit](https://help.sumologic.com/07Sumo-Logic-Apps/10Containers_and_Orchestration/Kubernetes/Collect_Logs_and_Metrics_for_the_Kubernetes_App) here.
+1. The Sumologic-Kubernetes-Collection will automatically capture the logs from stdout and will send the logs to Sumologic. For more information on deploying Sumologic-Kubernetes-Collection,[ visit](/docs/integrations/containers-orchestration/Kubernetes#Collect_Logs_and_Metrics_for_the_Kubernetes_App) here.
 2. Verify logs in Sumo Logic.
 1. **(Optional) Collecting MariaDB Logs from a Log File \
 **Follow the steps below to capture MariaDB logs from a log file on Kubernetes.
@@ -260,7 +260,7 @@ if (!isEmpty(pod_labels_environment), pod_labels_environment, "") as environment
 </TabItem>
 <TabItem value="non-k8s">
 
-Sumo Logic uses the Telegraf operator for MariaDB metric collection and the [Installed Collector](https://help.sumologic.com/03Send-Data/Installed-Collectors/01About-Installed-Collectors) for collecting MariaDB logs. The diagram below illustrates the components of the MariaDB collection in a non-Kubernetes environment. Telegraf uses the[ MySQL Input Plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/sqlserver) to obtain MariaDB metrics and the Sumo Logic output plugin to send the metrics to Sumo Logic. Logs from MariaDB are collected by a [Local File Source](https://help.sumologic.com/03Send-Data/Sources/01Sources-for-Installed-Collectors/Local-File-Source).
+Sumo Logic uses the Telegraf operator for MariaDB metric collection and the [Installed Collector](/docs/send-data/installed-collectors/about-installed-collectors) for collecting MariaDB logs. The diagram below illustrates the components of the MariaDB collection in a non-Kubernetes environment. Telegraf uses the[ MySQL Input Plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/sqlserver) to obtain MariaDB metrics and the Sumo Logic output plugin to send the metrics to Sumo Logic. Logs from MariaDB are collected by a [Local File Source](/docs/send-data/Sources/sources-installed-collectors/Local-File-Source).
 
 The process to set up collection for MariaDB data is done through the following steps:
 
@@ -281,7 +281,7 @@ This section provides instructions for configuring log collection for MariaDB ru
 
 By default, MariaDB logs are stored in a log file. MariaDB also supports forwarding logs via Syslog Audit Logs.
 
-Sumo Logic supports collecting logs both via Syslog and a local log file. Utilizing Sumo Logic [Cloud Syslog](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Cloud-Syslog-Source) will require TCP TLS Port 6514 to be open in your network. Local log files can be collected via [Installed collectors](https://help.sumologic.com/03Send-Data/Installed-Collectors) or [FluentD](https://www.fluentd.org/). Installed collector will require you to allow outbound traffic to [Sumo Logic endpoints](https://help.sumologic.com/APIs/General-API-Information/Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security) for collection to work. For detailed requirements for Installed collectors, see this [page](https://help.sumologic.com/01Start-Here/03About-Sumo-Logic/System-Requirements/Installed-Collector-Requirements).
+Sumo Logic supports collecting logs both via Syslog and a local log file. Utilizing Sumo Logic [Cloud Syslog](/docs/send-data/Sources/sources-hosted-collectors/Cloud-Syslog-Source) will require TCP TLS Port 6514 to be open in your network. Local log files can be collected via [Installed collectors](/docs/send-data/Installed-Collectors) or [FluentD](https://www.fluentd.org/). Installed collector will require you to allow outbound traffic to [Sumo Logic endpoints](https://help.sumologic.com/APIs/General-API-Information/Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security) for collection to work. For detailed requirements for Installed collectors, see this [page](https://help.sumologic.com/01Start-Here/03About-Sumo-Logic/System-Requirements/Installed-Collector-Requirements).
 
 Based on your infrastructure and networking setup choose one of these methods to collect MariaDB logs and follow the instructions below to set up log collection:
 
@@ -334,7 +334,7 @@ Use one of the following Sumo Logic Collector options:
 
 
 
-* To collect logs directly from the MariaDB machine, configure an[ Installed Collector](https://help.sumologic.com/03Send-Data/Installed-Collectors).
+* To collect logs directly from the MariaDB machine, configure an[ Installed Collector](/docs/send-data/Installed-Collectors).
 
 
 #### Configuring a Source
@@ -347,7 +347,7 @@ This section demonstrates how to configure sources for the following log types:
 
 #### Configure Source for MariaDB Error Logs
 
-This section demonstrates how to configure a Local File Source for MariaDB Error Logs, for use with an [Installed Collector](https://help.sumologic.com/07Sumo-Logic-Apps/04Microsoft-and-Azure/IIS_10_(Legacy)/Collect_Logs_for_the_IIS_10_(Legacy)_App#Configure_a_Collector). You may configure a [Remote File Source](https://help.sumologic.com/03Send-Data/Sources/01Sources-for-Installed-Collectors/Remote-File-Source), but the configuration is more complex.
+This section demonstrates how to configure a Local File Source for MariaDB Error Logs, for use with an [Installed Collector](/docs/integrations/microsoft-azure/iis-10-legacy#Configure-a-Collector). You may configure a [Remote File Source](/docs/send-data/Sources/sources-installed-collectors/Remote-File-Source), but the configuration is more complex.
 
 
 16
@@ -392,7 +392,7 @@ After a few minutes, your new Source should be propagated down to the Collector 
 18
 
 
-This section demonstrates how to configure a Local File Source for MariaDB Slow Query Logs, for use with an [Installed Collector](https://help.sumologic.com/07Sumo-Logic-Apps/04Microsoft-and-Azure/IIS_10_(Legacy)/Collect_Logs_for_the_IIS_10_(Legacy)_App#Configure_a_Collector).
+This section demonstrates how to configure a Local File Source for MariaDB Slow Query Logs, for use with an [Installed Collector](/docs/integrations/microsoft-azure/iis-10-legacy#Configure-a-Collector).
 
 **To configure a local file source for MariaDB Slow Query Logs, do the following:**
 
@@ -452,7 +452,7 @@ On the created Hosted Collector on the Collection Management screen, select Add 
 1. **Select HTTP Logs & Metrics.**
     1. **Name.** (Required). Enter a name for the source.
     2. **Description.** (Optional).
-    3. **Source Category.** (Recommended). Be sure to follow the [Best Practices for Source Categories](https://help.sumologic.com/03Send-Data/01-Design-Your-Deployment/Best-Practices%3A-Good-Source-Category%2C-Bad-Source-Category). A recommended Source Category may be Prod/DB/MariaDB/Metrics.
+    3. **Source Category.** (Recommended). Be sure to follow the [Best Practices for Source Categories](/docs/send-data/design-deployment/best-practices-source-categories). A recommended Source Category may be Prod/DB/MariaDB/Metrics.
 2. Select **Save**.
 3. Note the URL provided once you click _Save_. You can retrieve it again by selecting the Show URL next to the source on the Collection Management screen.
 
@@ -545,7 +545,7 @@ The next few sections provide instructions for installing the MariaDB Monitors, 
 
 Sumo Logic has provided out-of-the-box alerts available through [Sumo Logic monitors](/docs/alerts/monitors) to help you monitor your MariaDB clusters. These alerts are built based on metrics and logs datasets and include preset thresholds based on industry best practices and recommendations.
 
-For details on the individual alerts, see this [page](https://help.sumologic.com/07Sumo-Logic-Apps/12Databases/MariaDB/MariaDB_Alerts).
+For details on the individual alerts, see this [page](#MariaDB-Alerts).
 
 
 * To install these alerts, you need to have the Manage Monitors role capability.
@@ -571,7 +571,7 @@ Custom filter examples:
 6. Click Import and then copy-paste the above JSON to import monitors.
 
 
-The monitors are disabled by default. Once you have installed the alerts using this method, navigate to the MariaDB folder under **Monitors** to configure them. See [this](/docs/alerts/monitors) document to enable monitors to send notifications to teams or connections. See the instructions detailed in Step 4 of this [document](https://help.sumologic.com/Visualizations-and-Alerts/Alerts/Monitors#Add_a_monitor).
+The monitors are disabled by default. Once you have installed the alerts using this method, navigate to the MariaDB folder under **Monitors** to configure them. See [this](/docs/alerts/monitors) document to enable monitors to send notifications to teams or connections. See the instructions detailed in Step 4 of this [document](/docs/alerts/monitors#Add_a_monitor).
 
 
 ### Method 2: Using a Terraform script
@@ -659,7 +659,7 @@ email_notifications = [
     3. Run **terraform apply**.
 2. ** Post Installation**
 
-    If you haven’t enabled alerts and/or configured notifications through the Terraform procedure outlined above, we highly recommend enabling alerts of interest and configuring each enabled alert to send notifications to other users or services. This is detailed in Step 4 of [this document](https://help.sumologic.com/Visualizations-and-Alerts/Alerts/Monitors#Add_a_monitor).
+    If you haven’t enabled alerts and/or configured notifications through the Terraform procedure outlined above, we highly recommend enabling alerts of interest and configuring each enabled alert to send notifications to other users or services. This is detailed in Step 4 of [this document](/docs/alerts/monitors#Add_a_monitor).
 
 
 

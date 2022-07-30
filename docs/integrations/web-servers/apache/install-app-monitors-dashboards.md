@@ -7,16 +7,16 @@ description: The Sumo Logic Application for Apache consists of predefined search
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-This page provides instructions for installing the Sumo Logic Monitors for Apache, the app and descriptions of each of the app dashboards. These instructions assume you have already set up collection as described in the [Collect Logs and Metrics for Apache](https://help.sumologic.com/07Sumo-Logic-Apps/24Web_Servers/Apache/01-Collect-Logs-for-Apache) page.
+This page provides instructions for installing the Sumo Logic Monitors for Apache, the app and descriptions of each of the app dashboards. These instructions assume you have already set up collection as described in the [Collect Logs and Metrics for Apache](/docs/integrations/web-servers/apache/collect-logs-metrics) page.
 
 
 ## Install Apache Monitors
 
 Sumo Logic has provided out-of-the-box alerts available through [Sumo Logic monitors](/docs/alerts/monitors/index.md) to help you proactively monitor your Apache Web servers and farms. These monitors are built based on metrics and logs datasets and include pre-set thresholds based on industry best practices and recommendations.
 
-For details about individual alerts, see [this page](https://help.sumologic.com/07Sumo-Logic-Apps/24Web_Servers/Apache/Apache_Alerts).
+For details about individual alerts, see [this page](/docs/integrations/web-servers/Apache/Alerts).
 
-To install these alerts, you need to have the Manage Monitors role capability. There are limits to how many alerts can be enabled. For more information, see [Monitors](https://help.sumologic.com/Visualizations-and-Alerts/Alerts/Monitors#Rules) for details.
+To install these alerts, you need to have the Manage Monitors role capability. There are limits to how many alerts can be enabled. For more information, see [Monitors](/docs/alerts/monitors#Rules) for details.
 
 You can install monitors by importing a JSON file or using a Terraform script.
 
@@ -29,7 +29,7 @@ You can install monitors by importing a JSON file or using a Terraform script.
 4. Click **Add**.
 5. Click **Import** and then copy paste the above JSON to import monitors. Name will be the folder name.
 
-The monitors are disabled by default. Once you have installed the alerts using this method, navigate to the Apache folder under **Monitors** to configure them. See [this](/docs/alerts/monitors/index.md) document to enable monitors to send notifications to teams or connections. Please see the instructions detailed in Step 4 of this [document](https://help.sumologic.com/Visualizations-and-Alerts/Alerts/Monitors#Add_a_monitor).
+The monitors are disabled by default. Once you have installed the alerts using this method, navigate to the Apache folder under **Monitors** to configure them. See [this](/docs/alerts/monitors/index.md) document to enable monitors to send notifications to teams or connections. Please see the instructions detailed in Step 4 of this [document](/docs/alerts/monitors#Add_a_monitor).
 
 
 #### Method 2: Install the alerts using a Terraform script
@@ -118,7 +118,7 @@ email_notifications = [
 
 **Step 7: Post Installation**
 
-If you haven’t enabled alerts and/or configured notifications through the Terraform procedure outlined above, we highly recommend enabling alerts of interest and configuring each enabled alert to send notifications to other users or services. This is detailed in Step 4 of [this document](https://help.sumologic.com/Visualizations-and-Alerts/Alerts/Monitors#Add_a_monitor).
+If you haven’t enabled alerts and/or configured notifications through the Terraform procedure outlined above, we highly recommend enabling alerts of interest and configuring each enabled alert to send notifications to other users or services. This is detailed in Step 4 of [this document](/docs/alerts/monitors#Add_a_monitor).
 
 
 10
@@ -127,7 +127,7 @@ There are limits to how many alerts can be enabled - please see the [Alerts FAQ]
 
 ## Install the Apache App
 
-Now that you have set up logs and metric collections for Apache, you can install the Sumo Logic App for Apache to use the pre-configured Searches and [Dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/24Web_Servers/Apache/Apache-App-Dashboards#dashboards).
+Now that you have set up logs and metric collections for Apache, you can install the Sumo Logic App for Apache to use the pre-configured Searches and [Dashboards](#dashboards).
 
 To install the app, do the following:
 1. Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.

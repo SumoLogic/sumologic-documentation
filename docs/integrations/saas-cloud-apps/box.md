@@ -25,10 +25,10 @@ Before you begin setting up log collection, review the required prerequisites an
 
 ### Prerequisites
 
-* You must have Admin or Co-Admin Box user permissions. See [Step 5: Authenticate Box Prerequisites](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/Box/01-Collect-Events-for-the-Box-App#Prerequisites_2) for more information.
+* You must have Admin or Co-Admin Box user permissions. See [Step 5: Authenticate Box Prerequisites](#Prerequisites_2) for more information.
 * The integration between Sumo and Box requires the SumoJanus configuration, described below. The system where you deploy SumoJanus and configure your installed collector and script source must have Java.
 
-To ensure that SumoJanus can find your Java installation, set your `JAVA_HOME` environment or absolute `PATH` variable. For more information, see [Step 5: Authenticate Box](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/Box/01-Collect-Events-for-the-Box-App#Prerequisites_2).
+To ensure that SumoJanus can find your Java installation, set your `JAVA_HOME` environment or absolute `PATH` variable. For more information, see [Step 5: Authenticate Box](#Prerequisites_2).
 
 
 ### Process Overview
@@ -50,7 +50,7 @@ This section walks you through the process of setting up log collection from Box
 
 #### Step 1: Configure a Collector
 
-If you don't already have an [installed collector, set one up](https://help.sumologic.com/03Send-Data/Installed-Collectors) now. Linux and Windows are supported.
+If you don't already have an [installed collector, set one up](/docs/send-data/Installed-Collectors) now. Linux and Windows are supported.
 
 
 #### Step 2: Download the SumoJanus
@@ -199,13 +199,13 @@ You should now see a list of results of collected Box events.
 
 #### Step 6: Configure a Source
 
-For guidance creating your source category naming convention, see [Best Practices: Good Source Category, Bad Source Category](https://help.sumologic.com/03Send-Data/01-Design-Your-Deployment/Best-Practices%3A-Good-Source-Category%2C-Bad-Source-Category).
+For guidance creating your source category naming convention, see [Best Practices: Good Source Category, Bad Source Category](/docs/send-data/design-deployment/best-practices-source-categories).
 
 **To configure a source, do the following:**
 
-1. Configure a [Script Source](https://help.sumologic.com/03Send-Data/Sources/01Sources-for-Installed-Collectors/Script-Source). Collectors using version 19.245-4 and later do not allow Script Sources to run by default.
+1. Configure a [Script Source](/docs/send-data/Sources/sources-installed-collectors/Script-Source). Collectors using version 19.245-4 and later do not allow Script Sources to run by default.
 10
-To enable Script Sources you must set the Collector parameter `enableScriptSource` in [user.properties](https://help.sumologic.com/03Send-Data/Installed-Collectors/05Reference-Information-for-Collector-Installation/06user.properties) to true and [restart](https://help.sumologic.com/Manage/Collection/02Start-or-Stop-a-Collector-using-Scripts) the Collector.
+To enable Script Sources you must set the Collector parameter `enableScriptSource` in [user.properties](/docs/send-data/Installed-collectors/collector-installation-reference/user-properties) to true and [restart](https://help.sumologic.com/Manage/Collection/02Start-or-Stop-a-Collector-using-Scripts) the Collector.
 11
 
 2. Configure the source fields:
@@ -284,7 +284,7 @@ _sourceCategory=box  type "event_type" login
 
 ## Install the Box App
 
-Now that you have set up collection for Box, install the Sumo Logic App for Box to use the preconfigured searches and [dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/Box/Box-App-Dashboards#Dashboards) to analyze your data.
+Now that you have set up collection for Box, install the Sumo Logic App for Box to use the preconfigured searches and [dashboards](#Dashboards) to analyze your data.
 
 To install the app:
 

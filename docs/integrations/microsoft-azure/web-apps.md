@@ -22,14 +22,14 @@ To install the Sumo Logic App for Azure Web Apps, you must sign up for a Sumo Lo
 
 This page has instructions for configuring a pipeline for shipping Azure Web Apps logs from [Azure Monitor](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-get-started) to an Event Hub, on to an Azure Function, and finally to an HTTP source on a hosted collector in Sumo Logic. Click a link to jump to a topic:
 
-* [Solution Overview](https://help.sumologic.com/07Sumo-Logic-Apps/04Microsoft-and-Azure/Azure_Web_Apps/01Collect-Logs-for-Azure-Web-Apps#Solution_Overview)
-* [Configure an HTTP source](https://help.sumologic.com/07Sumo-Logic-Apps/04Microsoft-and-Azure/Azure_Web_Apps/01Collect-Logs-for-Azure-Web-Apps#Step_1:_Configure_an_HTTP_source)
-* [Configure Azure resources using ARM template](https://help.sumologic.com/07Sumo-Logic-Apps/04Microsoft-and-Azure/Azure_Web_Apps/01Collect-Logs-for-Azure-Web-Apps#Step_2:_Configure_Azure_Resources_using_ARM_template)
-* [Export logs for a particular Web App to Event Hub](https://help.sumologic.com/07Sumo-Logic-Apps/04Microsoft-and-Azure/Azure_Web_Apps/01Collect-Logs-for-Azure-Web-Apps#Step_3:_Export_logs_for_a_particular_Web_App_to_Event_Hub)
-* [Export metrics for a particular web app to Event Hub (Optional)](https://help.sumologic.com/07Sumo-Logic-Apps/04Microsoft-and-Azure/Azure_Web_Apps/01Collect-Logs-for-Azure-Web-Apps#Step_4:_Export_metrics_for_a_particular_web_app_to_Event_Hub_(Optional))
-* [Troubleshooting](https://help.sumologic.com/07Sumo-Logic-Apps/04Microsoft-and-Azure/Azure_Web_Apps/01Collect-Logs-for-Azure-Web-Apps#Troubleshooting)
-* [Sample Log Message](https://help.sumologic.com/07Sumo-Logic-Apps/04Microsoft-and-Azure/Azure_Web_Apps/01Collect-Logs-for-Azure-Web-Apps#Sample_Log_Message)
-* [Query Sample](https://help.sumologic.com/07Sumo-Logic-Apps/04Microsoft-and-Azure/Azure_Web_Apps/01Collect-Logs-for-Azure-Web-Apps#Query_Sample)
+* [Solution Overview](#Solution_Overview)
+* [Configure an HTTP source](#Step_1:_Configure_an_HTTP_source)
+* [Configure Azure resources using ARM template](#Step_2:_Configure_Azure_Resources_using_ARM_template)
+* [Export logs for a particular Web App to Event Hub](#Step_3:_Export_logs_for_a_particular_Web_App_to_Event_Hub)
+* [Export metrics for a particular web app to Event Hub (Optional)](#Step_4:_Export_metrics_for_a_particular_web_app_to_Event_Hub_(Optional))
+* [Troubleshooting](#Troubleshooting)
+* [Sample Log Message](#Sample_Log_Message)
+* [Query Sample](#Query_Sample)
 
 ### Log Types
 
@@ -58,7 +58,7 @@ In this task, you configure an HTTP source to receive logs from the Azure functi
 1. Do one of the following:
 * Select a hosted collector on which to configure the HTTP source.
 * Create a new hosted collector, as described on [Configure a Hosted Collector](/docs/send-data/configure-hosted-collector).
-1. Configure an HTTP source, as described on [HTTP Logs and Metrics Source](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/HTTP-Source). Make a note of the URL for the source, you will need it in the next step.
+1. Configure an HTTP source, as described on [HTTP Logs and Metrics Source](/docs/send-data/sources/sources-hosted-collectors/http-logs-metrics-source). Make a note of the URL for the source, you will need it in the next step.
 
 
 #### Configure Azure Resources using ARM template
@@ -78,7 +78,7 @@ In this step, you use a Sumo-provided Azure Resource Manager (ARM) template to c
 7. Now you are back on the **Custom deployment** blade.
     1. Create a new Resource Group (recommended) or select an existing one.
     2. Choose Location.
-    3. In the **Sumo Endpoint URL** field, enter the URL of the HTTP Source you configured in [Step 1](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Azure_Monitoring/Collect_Logs_from_Azure_Monitor#Step_1._Configure_an_HTTP_source).
+    3. In the **Sumo Endpoint URL** field, enter the URL of the HTTP Source you configured in [Step 1](#Step_1._Configure_an_HTTP_source).
     4. Agree to the terms and conditions.
     5. Click **Purchase**. \
 
@@ -99,7 +99,7 @@ In this step, you use a Sumo-provided Azure Resource Manager (ARM) template to c
 
 
 12
-If you also want to also collect metrics follow the instructions in [Step 2 for Collecting metrics from Azure monitor.](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Azure_Monitoring/Collect_Metrics_from_Azure_Monitor#step-2-configure-azure-resources-using-arm-template) The app dashboards currently do not have metric content.
+If you also want to also collect metrics follow the instructions in [Step 2 for Collecting metrics from Azure monitor.](#step-2-configure-azure-resources-using-arm-template) The app dashboards currently do not have metric content.
 
 
 #### Export logs for a particular Web App to Event Hub
@@ -115,11 +115,11 @@ In this task, you enable logs for your Azure Web app. For related information se
 1. Diagnostic Settings blade will show all your existing settings if any already exist. Click **Edit Setting** if you want to change your existing settings, or click **Add diagnostic setting** to add a new one.
 2. Select the **Stream to an event hub box **checkbox.
 3. Select an Azure subscription.
-4. Select the Event Hubs namespace you created in [Step 2](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Azure_Monitoring/Collect_Logs_from_Azure_Monitor#Step_2._Configure_Azure_resources_using_ARM_template). It should start with <code>"SumoAzureLogsNamespace&lt;<em>UniqueSuffix</em>>". </code>
-5. Select <strong>insights-operational-logs</strong> from the <strong>Select Event hub name</strong> dropdown.
-6. Select <strong>RootManageSharedAccessKey</strong> from <strong>Select Event hub policy name</strong> dropdown.
-7. Select the checkbox for log types under <strong>Category Details</strong> which you want to ingest.
-8. Click <strong>Save</strong>.
+4. Select the Event Hubs namespace you created in [Step 2](#Step_2._Configure_Azure_resources_using_ARM_template). It should start with `"SumoAzureLogsNamespace<UniqueSuffix>"`.
+5. Select **insights-operational-logs** from the **Select Event hub name** dropdown.
+6. Select **RootManageSharedAccessKey** from **Select Event hub policy name** dropdown.
+7. Select the checkbox for log types under **Category Details** which you want to ingest.
+8. Click **Save**.
 
 
 
@@ -128,7 +128,7 @@ In this task, you enable logs for your Azure Web app. For related information se
 
 The current Sumo Logic App for Web Apps does not support metric content so this step is optional. For exporting metrics you need to create another diagnostic setting and select All Metrics only with the following Event Hub configurations.
 
-**Event Hub Namespace. **Namespace created in [Step 2](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Azure_Monitoring/Collect_Logs_from_Azure_Monitor#Step_2._Configure_Azure_resources_using_ARM_template) by Metrics ARM template starting with `SumoMetricsNamespace&lt;unique suffix>`
+**Event Hub Namespace. **Namespace created in [Step 2](#Step_2._Configure_Azure_resources_using_ARM_template) by Metrics ARM template starting with `SumoMetricsNamespace<unique suffix>`
 
 **Event Hub Name. `insights-metrics-pt1m`**
 
@@ -138,7 +138,7 @@ The current Sumo Logic App for Web Apps does not support metric content so this 
 
 ### Troubleshooting  
 
-If logs are not flowing into Sumo Logic, see [Troubleshooting](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Azure_Monitoring/Collect_Logs_from_Azure_Monitor#Troubleshooting_log_collection).
+If logs are not flowing into Sumo Logic, see [Troubleshooting](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-logs-azure-monitor#Troubleshooting_log_collection).
 
 
 ### Sample Log Message
@@ -173,7 +173,7 @@ _sourceCategory=Azure/Web-app
 
 ## Installing the Azure Web Apps App
 
-This page provides instructions on how to install the Azure Web Apps App, and shows examples of each of the preconfigured [dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/04Microsoft-and-Azure/Azure_Web_Apps/Azure-Web-Apps-Dashboards#Dashboards) you can use to analyze your data.
+This page provides instructions on how to install the Azure Web Apps App, and shows examples of each of the preconfigured [dashboards](#Dashboards) you can use to analyze your data.
 
 To install the app:
 

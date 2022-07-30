@@ -32,8 +32,8 @@ To collect logs for Zscaler, perform these steps, detailed in the following sect
 
 To collect logs for Zscaler Web Security, do the following in Sumo Logic:
 
-1. Configure an [Installed Collector](https://help.sumologic.com/03Send-Data/Installed-Collectors).
-2. Configure a [Syslog Source](https://help.sumologic.com/03Send-Data/Sources/01Sources-for-Installed-Collectors/Syslog-Source). For protocol, use **TCP**.
+1. Configure an [Installed Collector](/docs/send-data/Installed-Collectors).
+2. Configure a [Syslog Source](/docs/send-data/Sources/sources-installed-collectors/Syslog-Source). For protocol, use **TCP**.
 
 Note the **Port** number, as you will need this to configure Zscaler NSS.  \
 
@@ -104,7 +104,7 @@ Once you have configured the Zscaler NSS, now add a feed to send logs in JSON fo
 
 5. Click **Save**.
 
-On [this](https://help.sumologic.com/07Sumo-Logic-Apps/22Security_and_Threat_Detection/Zscaler_Web_Security/Zscaler-Web-Security-Dashboards) page, add a note that if you are sending JSON format logs, utilize the ZIA app instead of web security and point to [this](https://help.sumologic.com/07Sumo-Logic-Apps/22Security_and_Threat_Detection/Zscaler_Internet_Access/Install_the_Zscaler_Internet_Access_App_and_view_the_Dashboards) page.
+In [this](#Viewing-Dashboards) section, add a note that if you are sending JSON format logs, utilize the ZIA app instead of web security and point to [this](/docs/integrations/security-threat-detection/Zscaler-Internet-Access#Install_the_Zscaler_Internet_Access_App_and_view_the_Dashboards) page.
 
 
 #### Sample Log Message
@@ -129,7 +129,7 @@ _sourceCategory = "zscaler" !"cat=Allowed"
 
 ## Installing the Zscaler Web Security App
 
-This page provides instructions on how to install the Zscaler Web Security App, and provides examples of each of the dashboards. The App preconfigured searches and [Dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/22Security_and_Threat_Detection/Zscaler_Web_Security/Zscaler-Web-Security-Dashboards#Dashboards) provide easy-to-access visual insights into your data.
+This page provides instructions on how to install the Zscaler Web Security App, and provides examples of each of the dashboards. The App preconfigured searches and [Dashboards](#Dashboards) provide easy-to-access visual insights into your data.
 
 
 To install the app, do the following:

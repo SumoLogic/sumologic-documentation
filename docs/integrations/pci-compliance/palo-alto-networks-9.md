@@ -48,8 +48,8 @@ In this step you configure a hosted collector with a Cloud Syslog source that wi
 
 **To configure a hosted collector with a Cloud Syslog source, do the following:**
 
-1. Log in to Sumo Logic and [create a Hosted Collector](https://help.sumologic.com/03Send-Data/Hosted-Collectors#Create_a_Hosted_Collector).
-2. Create a [Cloud Syslog Source](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Cloud-Syslog-Source) on the hosted collector, specifying the following:
+1. Log in to Sumo Logic and [create a Hosted Collector](#Create-a-Hosted-Collector).
+2. Create a [Cloud Syslog Source](/docs/send-data/Sources/sources-hosted-collectors/Cloud-Syslog-Source) on the hosted collector, specifying the following:
     1. Enter a Source Name.
     2. Provide a Source Category: **NW/PAN/V9**
 3. Click **Save**.
@@ -68,19 +68,19 @@ In this step you create a server profile where you can define the log destinatio
 4. In the **Syslog Server Profile** window, select the **Servers** tab and click **Add**.
 5. In the **Servers** window, specify the following information:
     1. **Name**: Sumo_CloudSyslog_EndPoint01
-    2. **Syslog Server**: URL from [Step 1](https://help.sumologic.com/07Sumo-Logic-Apps/16PCI_Compliance/PCI_Compliance_for_Palo_Alto_Networks/Collect_Logs_for_PCI_Compliance_for_Palo_Alto_Networks#Step_1._Create_a_hosted_collector_and_Cloud_Syslog_source)
+    2. **Syslog Server**: URL from [Step 1](#Step_1._Create_a_hosted_collector_and_Cloud_Syslog_source)
     3. **Transport**: SSL
-    4. **Port**: Port from [Step 1](https://help.sumologic.com/07Sumo-Logic-Apps/16PCI_Compliance/PCI_Compliance_for_Palo_Alto_Networks/Collect_Logs_for_PCI_Compliance_for_Palo_Alto_Networks#Step_1._Create_a_hosted_collector_and_Cloud_Syslog_source)
+    4. **Port**: Port from [Step 1](#Step_1._Create_a_hosted_collector_and_Cloud_Syslog_source)
     5. **Format**: `IETF`
     6. **Facility**: `LOG_USER`
 6. In the **Syslog Server Profile** window, select the **Custom Log Format** tab, and use the following custom format for the following log type:
     7. [Traffic](https://docs.paloaltonetworks.com/pan-os/9-0/pan-os-admin/monitoring/use-syslog-for-monitoring/syslog-field-descriptions/traffic-log-fields.html)
 ```
-,$receive_time,$serial,$type,$subtype,,$time_generated,$src,$dst,$natsrc,$natdst,$rule,$srcuser,$dstuser,$app,$vsys,$from,$to,$inbound_if,$outbound_if,$logset,,$sessionid,$repeatcnt,$sport,$dport,$natsport,$natdport,$flags,$proto,$action,$bytes,$bytes_sent,$bytes_received,$packets,$start,$sec,$category,,$seqno,$actionflags,$srcloc,$dstloc,,$pkts_sent,$pkts_received,$session_end_reason,$dg_hier_level_1,$dg_hier_level_2,$dg_hier_level_3,$dg_hier_level_4,$vsys_name,$device_name,$action_source,$src_uuid,$dst_uuid,$tunnelid/$imsi,$monitortag/$imei,$parent_session_id,$parent_start_time,$tunnel,$assoc_id,$chunks,$chunks_sent,$chunks_received,$rule_uuid,$http2_connection <Token from [Step 1](https://help.sumologic.com/07Sumo-Logic-Apps/16PCI_Compliance/PCI_Compliance_for_Palo_Alto_Networks/07Sumo-Logic-Apps/16PCI_Compliance/PCI_Compliance_for_Palo_Alto_Networks/Collect_Logs_for_PCI_Compliance_for_Palo_Alto_Networks#Step_1._Create_a_hosted_collector_and_Cloud_Syslog_source)>
+,$receive_time,$serial,$type,$subtype,,$time_generated,$src,$dst,$natsrc,$natdst,$rule,$srcuser,$dstuser,$app,$vsys,$from,$to,$inbound_if,$outbound_if,$logset,,$sessionid,$repeatcnt,$sport,$dport,$natsport,$natdport,$flags,$proto,$action,$bytes,$bytes_sent,$bytes_received,$packets,$start,$sec,$category,,$seqno,$actionflags,$srcloc,$dstloc,,$pkts_sent,$pkts_received,$session_end_reason,$dg_hier_level_1,$dg_hier_level_2,$dg_hier_level_3,$dg_hier_level_4,$vsys_name,$device_name,$action_source,$src_uuid,$dst_uuid,$tunnelid/$imsi,$monitortag/$imei,$parent_session_id,$parent_start_time,$tunnel,$assoc_id,$chunks,$chunks_sent,$chunks_received,$rule_uuid,$http2_connection <Token from [Step 1](#Step_1._Create_a_hosted_collector_and_Cloud_Syslog_source)>
 ```
 8. [Threat](https://docs.paloaltonetworks.com/pan-os/9-0/pan-os-admin/monitoring/use-syslog-for-monitoring/syslog-field-descriptions/threat-log-fields)
 ```
-,$receive_time,$serial,$type,$subtype,,$time_generated,$src,$dst,$natsrc,$natdst,$rule,$srcuser,$dstuser,$app,$vsys,$from,$to,$inbound_if,$outbound_if,$logset,,$sessionid,$repeatcnt,$sport,$dport,$natsport,$natdport,$flags,$proto,$action,$misc,$threatid,$category,$severity,$direction,$seqno,$actionflags,$srcloc,$dstloc,,$contenttype,$pcap_id,$filedigest,$cloud,$url_idx,$user_agent,$filetype,$xff,$referer,$sender,$subject,$recipient,$reportid,$dg_hier_level_1,$dg_hier_level_2,$dg_hier_level_3,$dg_hier_level_4,$vsys_name,$device_name,,$src_uuid,$dst_uuid,$http_method,$tunnel_id/$imsi,$monitortag/$imei,$parent_session_id,$parent_start_time,$tunnel,$thr_category,$contentver,,$assoc_id,$ppid,$http_headers,$url_category_list,$rule_uuid,$http2_connection <strong><em><Token from [Step 1](https://help.sumologic.com/07Sumo-Logic-Apps/16PCI_Compliance/PCI_Compliance_for_Palo_Alto_Networks/07Sumo-Logic-Apps/16PCI_Compliance/PCI_Compliance_for_Palo_Alto_Networks/Collect_Logs_for_PCI_Compliance_for_Palo_Alto_Networks#Step_1._Create_a_hosted_collector_and_Cloud_Syslog_source)>
+,$receive_time,$serial,$type,$subtype,,$time_generated,$src,$dst,$natsrc,$natdst,$rule,$srcuser,$dstuser,$app,$vsys,$from,$to,$inbound_if,$outbound_if,$logset,,$sessionid,$repeatcnt,$sport,$dport,$natsport,$natdport,$flags,$proto,$action,$misc,$threatid,$category,$severity,$direction,$seqno,$actionflags,$srcloc,$dstloc,,$contenttype,$pcap_id,$filedigest,$cloud,$url_idx,$user_agent,$filetype,$xff,$referer,$sender,$subject,$recipient,$reportid,$dg_hier_level_1,$dg_hier_level_2,$dg_hier_level_3,$dg_hier_level_4,$vsys_name,$device_name,,$src_uuid,$dst_uuid,$http_method,$tunnel_id/$imsi,$monitortag/$imei,$parent_session_id,$parent_start_time,$tunnel,$thr_category,$contentver,,$assoc_id,$ppid,$http_headers,$url_category_list,$rule_uuid,$http2_connection <strong><em><Token from [Step 1](#Step_1._Create_a_hosted_collector_and_Cloud_Syslog_source)>
 ```
 7. Click OK.
 8. Commit the changes.
@@ -91,7 +91,7 @@ In this step you create a server profile where you can define the log destinatio
 
 Traffic log sample
 
-```
+```json
 Sep 05 12:45:15 SumoStg05 0,2018/09/05 12:45:15,012345678901,TRAFFIC,end,0,2018/09/05 12:45:15,182.80.119.50,176.164.175.181,,,Unexpected Traffic,,npande,ping,vsys3,z1-FW-Transit,z3-Sumo-DMZ,ethernet1/2,ethernet1/2,LOGreset-both,2018/09/05 12:45:15,9434,1,0,0,0,0,0x100064,icmp,allow,122,122,0,1,2018/09/05 12:45:15,0,any,0,5134220147,0x8000000000000000,United States,10.0.0.0-10.255.255.255,0,1,0,aged-out,31,42,0,0,,SumoStg05,from-policy,,,0,,0,,N/A
 ```
 
@@ -99,7 +99,7 @@ Sep 05 12:45:15 SumoStg05 0,2018/09/05 12:45:15,012345678901,TRAFFIC,end,0,2018/
 
 Threat log
 
-```
+```json
 786 <10>1 2022-03-29T22:32:26+00:00 PA-VM.demo.bkacad.cf - - - - ,2022/03/29*22:32:26,164859314646745,THREAT,vulnerability,,2022/03/29*22:32:26,156.194.158.165,156.194.158.165,156.194.158.165,156.194.158.165,test-threat,,,unknown-udp,vsys1,Outside,Outside,ethernet1/1,ethernet1/1,Forward-Sumo,,8660,1,47495,9034,0,0,0x2000,udp,drop,,Realtek Jungle SDK Remote Code Execution Vulnerability(91535),any,critical,client-to-server,1648593146467628956,0x0,Korea Republic Of,156.194.158.165-156.194.158.165,,,0,,,0,,,,,,,,0,0,0,0,0,,PA-VM,,,,,N/A_id/0,/,0,,N/A,code-execution,AppThreat-8468-6979,,0,1648593146,,,141fd502-fc32-4867-b9a5-5c421583a44b,0,,,,,,,,,,,,,,, ,,,,,,,,,,,,,,0,2022-03-29T22:32:26.467+00:00,,,,unknown,unknown,unknown,1,,,no,no /
 ```
 

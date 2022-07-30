@@ -1,4 +1,4 @@
----
+#---
 id: security-hub
 title: Sumo Logic App for AWS Security Hub
 sidebar_label: AWS Security Hub
@@ -16,8 +16,8 @@ The Sumo Logic App for AWS Security Hub leverages findings data from Security Hu
 
 Sumo Logic provides a seamless bi-directional integration with AWS Security Hub with the following:
 
-* **[AWS Security Hub forwarder](https://help.sumologic.com/07Sumo-Logic-Apps/01Amazon_and_AWS/AWS_Security_Hub/1-Ingest-findings-into-AWS-Security_Hub)** - This solution forwards (sends) scheduled search results and alerts (as findings) to AWS Security Hub.
-* **[AWS Security Hub collector](https://help.sumologic.com/07Sumo-Logic-Apps/01Amazon_and_AWS/AWS_Security_Hub/2-Collect-Findings-for-the-AWS-Security-Hub-App)** - This solution collects findings from AWS Security Hub to Sumo Logic where they are displayed in visual pre-defined dashboards.
+* **[AWS Security Hub forwarder](#1-Ingest-findings-into-AWS-Security_Hub)** - This solution forwards (sends) scheduled search results and alerts (as findings) to AWS Security Hub.
+* **[AWS Security Hub collector](#2-Collect-Findings-for-the-AWS-Security-Hub-App)** - This solution collects findings from AWS Security Hub to Sumo Logic where they are displayed in visual pre-defined dashboards.
 
 The Sumo Logic integration with AWS Security Hub extends compliance checks to other key regulatory frameworks such as PCI, GDPR, HIPAA, and others.
 
@@ -99,7 +99,7 @@ This section demonstrates how to create a Webhook connection to trigger an AWS L
  To create a Webhook connection, do the following:
 
 
-1. Follow the instructions for [creating a Webhook connection](https://help.sumologic.com/Manage/Connections-and-Integrations/Webhook-Connections/Webhook_Connection_for_AWS_Lambda), and use the value from [step 4](https://help.sumologic.com/07Sumo-Logic-Apps/01Amazon_and_AWS/AWS_Security_Hub/1-Ingest-findings-into-AWS-Security_Hub#API+Gateway+endpoint) as the URL.
+1. Follow the instructions for [creating a Webhook connection](https://help.sumologic.com/Manage/Connections-and-Integrations/Webhook-Connections/Webhook_Connection_for_AWS_Lambda), and use the value from [step 4](#API-Gateway-endpoint) as the URL.
 14
 AWS Security Hub Connector (SAM application) secures the endpoint with the AWS_IAM authorization type.
 2. Verify that it has the following payload:
@@ -292,7 +292,7 @@ Findings from AWS services (AWS Security Hub) are delivered to CloudWatch Events
 
 
 26
-You don't have to manually create the AWS resources. Simply deploy the solution, as described in the [Step 2: Deploy an AWS Security Hub App collector](https://help.sumologic.com/07Sumo-Logic-Apps/01Amazon_and_AWS/AWS_Security_Hub/2-Collect-Findings-for-the-AWS-Security-Hub-App#Step_2:_Deploy_an_AWS_Security_Hub_App_collector).
+You don't have to manually create the AWS resources. Simply deploy the solution, as described in the [Step 2: Deploy an AWS Security Hub App collector](#Step_2:_Deploy_an_AWS_Security_Hub_App_collector).
 
 
 27
@@ -315,7 +315,7 @@ An AWS Source must be associated with a Sumo Logic Hosted Collector. Before crea
 
 1. [Grant Access to an AWS S3 Bucket.](/docs/send-data/sources/sources-hosted-collectors/amazon-web-services/grant-access-aws-product.md)
 2. To create a new Sumo Logic Hosted Collector, perform the steps in [Configure a Hosted Collector](/docs/send-data/configure-hosted-collector)
-3. Add an [AWS Source](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/AWS-S3-Source#AWS_Sources) for the S3 Source to Sumo Logic, and in **Advanced Options for Logs**, under Timestamp Format, click **Specify a format** and enter the following:
+3. Add an [AWS Source](/docs/send-data/Sources/sources-hosted-collectors/Amazon-Web-Services/AWS-S3-Source#AWS_Sources) for the S3 Source to Sumo Logic, and in **Advanced Options for Logs**, under Timestamp Format, click **Specify a format** and enter the following:
     1. Specify **Format** as `yyyy-MM-dd'T'HH:mm:ss.SSS'Z'`
     2. Specify **Timestamp locator** as `.*"UpdatedAt":"(.*)".*`
     3. Click **Add**. \
@@ -382,7 +382,7 @@ Findings by resource type and severity query:
 
 ## Installing the AWS Security Hub App
 
-Now that you have set up ingested and collected findings for AWS Security Hub, you can install the Sumo Logic App for AWS Security Hub and use the preconfigured searches and [Dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/01Amazon_and_AWS/AWS_Lambda/AWS-Lambda-App-Dashboards#Dashboards) that provide insight into your data.
+Now that you have set up ingested and collected findings for AWS Security Hub, you can install the Sumo Logic App for AWS Security Hub and use the preconfigured searches and [Dashboards](#Dashboards) that provide insight into your data.
 
 To install the Sumo Logic App for AWS Security Hub, do the following:
 

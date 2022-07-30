@@ -73,9 +73,9 @@ When this app is initially installed, the dashboards appear with empty panels un
 * The "infer" operator is not intended for direct customer use -  modifying the queries will result in unexpected/incorrect results.
 * For links to the CloudTrail events in the Action Plan dashboard watchlists to work, please make sure to set your Sumo Logic Region Code by clicking on the dashboard filter icon.
 * The `infer` operator is not intended for use outside of Sumo Logic Global Intelligence apps.
-* Install the Sumo Logic [Audit](https://help.sumologic.com/07Sumo-Logic-Apps/26Apps_for_Sumo/Audit_App) App to monitor the health of scheduled searches. The following two dashboards of the Audit app will help look into details for scheduled searches
-* [User Activity - Scheduled Searches](https://help.sumologic.com/07Sumo-Logic-Apps/26Apps_for_Sumo/Audit_App/Install-the-Audit-App-and-View-the-Dashboards#user-activity-scheduled-search)
-* [Scheduled Searches - Triggered Summary](https://help.sumologic.com/07Sumo-Logic-Apps/26Apps_for_Sumo/Audit_App/Install-the-Audit-App-and-View-the-Dashboards#scheduled-search-triggered-summary)
+* Install the Sumo Logic [Audit](/docs/integrations/sumo-apps/audit.md) App to monitor the health of scheduled searches. The following two dashboards of the Audit app will help look into details for scheduled searches
+* [User Activity - Scheduled Searches](/docs/integrations/sumo-apps/audit#user-activity-scheduled-search)
+* [Scheduled Searches - Triggered Summary](/docs/integrations/sumo-apps/audit#scheduled-search-triggered-summary)
 
 </details>
 
@@ -89,7 +89,7 @@ The following illustration is a graphical representation of the process for coll
 ### Configuring log collection
 
 
-To configure log collection for Global Intelligence for AWS CloudTrail, follow the steps described [here](https://help.sumologic.com/07Sumo-Logic-Apps/01Amazon_and_AWS/AWS_CloudTrail/01-Collect-logs-for-the-AWS-CloudTrail-App).
+To configure log collection for Global Intelligence for AWS CloudTrail, follow the steps described [here](/docs/integrations/amazon-aws/CloudTrail#Collect-logs-for-the-AWS-CloudTrail-App).
 
 
 ### Sample log message

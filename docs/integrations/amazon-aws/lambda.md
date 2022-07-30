@@ -156,8 +156,8 @@ This section describes the log and metric data used by the AWS Lambda ULM app.
 
 Sumo supports several methods for collecting Lambda logs from Amazon CloudWatch.
 
-* You can configure collection of Amazon CloudWatch Logs using our AWS Lambda function using a Sumo-provided CloudFormation template, as described in [Amazon CloudWatch Logs](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Amazon-CloudWatch-Logs).
-* To configure collection without using CloudFormation, see [Collect Amazon CloudWatch Logs using a Lambda Function](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Amazon-CloudWatch-Logs/Collect_Amazon_CloudWatch_Logs_using_a_Lambda_Function).
+* You can configure collection of Amazon CloudWatch Logs using our AWS Lambda function using a Sumo-provided CloudFormation template, as described in [Amazon CloudWatch Logs](/docs/send-data/Collect-from-Other-Data-Sources/Amazon-CloudWatch-Logs).
+* To configure collection without using CloudFormation, see [Collect Amazon CloudWatch Logs using a Lambda Function](/docs/send-data/collect-from-other-data-sources/amazon-cloudwatch-logs/collect-with-lambda-function.md).
 * While configuring the cloud Watch log source, following Field can be added in the source:
     * Add an **account** field and assign it a value which is a friendly name / alias to your AWS account from which you are collecting logs. This name will appear in the Sumo Logic Explorer View. Logs can be queried via the “account field”.
     * Add a **region** field and assign it the value of the respective AWS region where the Application Load Balancer exists.
@@ -179,14 +179,14 @@ To configure a CloudTrail Source, perform these steps:
 
 #### Collect Amazon CloudWatch Metrics
 
-To collect Amazon CloudWatch Metrics, see [Amazon CloudWatch Source For Metrics.](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/Amazon-CloudWatch-Source-for-Metrics)
+To collect Amazon CloudWatch Metrics, see [Amazon CloudWatch Source For Metrics.](/docs/send-data/sources/sources-hosted-collectors/amazon-web-services/amazon-cloudwatch-source-metrics)
 
 AWS Namespace tag to filter in source for Lambda will be - **AWS/Lambda**
 
 * **Metadata: **Add an **account** field to the source and assign it a value which is a friendly name / alias to your AWS account from which you are collecting metrics. This name will appear in the Sumo Logic Explorer View. Metrics can be queried via the “account field”.
 
 
-Continue with the process of [enabling Provisioned Concurrency configurations](https://help.sumologic.com/07Sumo-Logic-Apps/01Amazon_and_AWS/AWS_Lambda/01Collect-Logs-for-the-AWS-Lambda-App#Enable_Provisioned_Concurrency_configurations_for_Lambda_functions) for Lambda functions, as necessary.
+Continue with the process of [enabling Provisioned Concurrency configurations](#Enable_Provisioned_Concurrency_configurations_for_Lambda_functions) for Lambda functions, as necessary.
 
 
 #### Enable Provisioned Concurrency configurations for Lambda functions
@@ -195,7 +195,7 @@ AWS Lambda provides Provisoned Concurrency for greater control over the start up
 
 **To collect these metrics in Sumo Logic, do the following:**
 
-1. Complete [Step](https://help.sumologic.com/07Sumo-Logic-Apps/01Amazon_and_AWS/AWS_Lambda/01Collect-Logs-for-the-AWS-Lambda-App#collect-amazon-cloudwatch-metrics).
+1. Complete [Step](#Collect-Logs-for-the-AWS-Lambda-App#collect-amazon-cloudwatch-metrics).
 2. Configure Provisioned Concurrency while creating a Lambda function in the AWS Management console, as shown in the following example:
 
 
@@ -321,7 +321,7 @@ Parse Expression:
 
 ## Installing the AWS Lambda App
 
-Now that you have set up collection for AWS Lambda, install the Sumo Logic App to use the pre-configured searches and [dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/01Amazon_and_AWS/AWS_Classic_Load_Balancer/Install-the-AWS-Classic-Load-Balancer-App-and-view-the-Dashboards#Dashboards) that provide visibility into your environment for real-time analysis of overall usage.
+Now that you have set up collection for AWS Lambda, install the Sumo Logic App to use the pre-configured searches and [dashboards](#Dashboards) that provide visibility into your environment for real-time analysis of overall usage.
 
 To install the app:
 
@@ -434,7 +434,7 @@ Use this dashboard to:
 
 ### Threat Intel
 
-**AWS Lambda - Threat Intel** dashboard provides insights into incoming requests to your AWS Lambda functions from malicious sources determined via [Sumo Logic’s Threat Intel feature](https://help.sumologic.com/07Sumo-Logic-Apps/22Security_and_Threat_Detection/Threat_Intel_Quick_Analysis/03_Threat-Intel-FAQ). Panels show detailed information on malicious IPs and the malicious confidence of each threat.
+**AWS Lambda - Threat Intel** dashboard provides insights into incoming requests to your AWS Lambda functions from malicious sources determined via [Sumo Logic’s Threat Intel feature](/docs/integrations/security-threat-detection/threat-intel-quick-analysis#03_Threat-Intel-FAQ). Panels show detailed information on malicious IPs and the malicious confidence of each threat.
 
 Use this dashboard to:
 * Identify known malicious IPs that are access your load-balancers and use firewall access control lists to prevent them from sending you traffic going forward

@@ -31,7 +31,7 @@ This page provides instructions for configuring data collection for the Amazon I
 
 To collect data for the Amazon Inspector App, do the following:
 1. Configure a [Hosted Collector](/docs/send-data/configure-hosted-collector).
-2. Configure an [HTTP Source](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/HTTP-Source).
+2. Configure an [HTTP Source](/docs/send-data/sources/sources-hosted-collectors/http-logs-metrics-source).
 
 
 #### Step 2: Configure Amazon Inspector
@@ -217,12 +217,12 @@ Amazon Inspector CreateResourceGroup action
 ```
 
 
-For information about our newer app for Amazon Inspector, which leverages findings from AWS Security Hub, see [Amazon Inspector](https://help.sumologic.com/07Sumo-Logic-Apps/01Amazon_and_AWS/Amazon_Inspector).
+For information about our newer app for Amazon Inspector, which leverages findings from AWS Security Hub, see [Amazon Inspector](/docs/integrations/amazon-aws/inspector).
 
 
 ## Installing the Amazon Inspector Classic App
 
-Now that you have set up collection for Amazon Inspector, install the Sumo Logic App for Amazon Inspector to use the pre-configured Searches and [Dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/01Amazon_and_AWS/Amazon_Inspector_App_-_Classic/Amazon-Inspector-App-Dashboards#Dashboards) that provide visibility into your environment for real-time analysis of overall usage.
+Now that you have set up collection for Amazon Inspector, install the Sumo Logic App for Amazon Inspector to use the pre-configured Searches and [Dashboards](#Dashboards) that provide visibility into your environment for real-time analysis of overall usage.
 
 To install the app:
 

@@ -13,7 +13,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 ## Collecting Logs for 1Password
 
-Follow the instructions for setting up [Cloud to Cloud Integration for 1Password App](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Cloud-to-Cloud_Integration_Framework/1Password_Source) to create the source and use the same source category while installing the app.
+Follow the instructions for setting up [Cloud to Cloud Integration for 1Password App](/docs/send-data/Sources/sources-hosted-collectors/Cloud-to-Cloud-Integration-Framework/1Password-Source) to create the source and use the same source category while installing the app.
 
 
 ### Log Types  

@@ -45,12 +45,12 @@ The following logs, located in your Linux machine's /var/log folder, are require
 
 ### Configure a collector
 
-Configure an [Installed Collector](https://help.sumologic.com/03Send-Data/Installed-Collectors).
+Configure an [Installed Collector](/docs/send-data/Installed-Collectors).
 
 
 ### Configure a source
 
-To configure a source for collecting Linux logs, you create a Local File Source. Following the instructions on [Local File Source](https://help.sumologic.com/03Send-Data/Sources/01Sources-for-Installed-Collectors/Local-File-Source). When you define a Source Category for the source, we recommend something like: prod/os/linux. For more information about Source Categories, see see [Best Practices](https://help.sumologic.com/03Send-Data/01-Design-Your-Deployment/Best-Practices%3A-Good-Source-Category%2C-Bad-Source-Category).
+To configure a source for collecting Linux logs, you create a Local File Source. Following the instructions on [Local File Source](/docs/send-data/Sources/sources-installed-collectors/Local-File-Source). When you define a Source Category for the source, we recommend something like: prod/os/linux. For more information about Source Categories, see see [Best Practices](/docs/send-data/design-deployment/best-practices-source-categories).
 
 
 ### Sample log messages
@@ -68,14 +68,14 @@ Dec 16 20:26:23 ubuntu sshd[15533]: pam_unix(sshd:auth): authentication failure;
 
 ### Sample Querys
 
-See [Suggested Searches for Linux OS](https://help.sumologic.com/07Sumo-Logic-Apps/14Hosts_and_Operating_Systems/Linux/Suggested_Searches_for_Linux_OS).
+See [Suggested Searches for Linux OS](#Suggested_Searches_for_Linux_OS).
 
 
 ## Install the Linux App and view the Dashboards
 
 ### Sumo Logic App
 
-Now that you have set up collection for Linux, install the Sumo Logic App for Linux to use the preconfigured searches and [dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/14Hosts_and_Operating_Systems/Linux/Linux-App-Dashboards#Dashboards) to analyze your data.
+Now that you have set up collection for Linux, install the Sumo Logic App for Linux to use the preconfigured searches and [dashboards](#Dashboards) to analyze your data.
 
 To install the app:
 

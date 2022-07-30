@@ -14,7 +14,7 @@ The Sumo Logic App for Jira provides insight into Jira usage, request activity, 
 
 1.png "image_tooltip")
 
-The Jira App supports Jira Server. For Jira Cloud, please see documentation for the [Jira Cloud App](https://help.sumologic.com/07Sumo-Logic-Apps/08App_Development/Jira_Cloud).
+The Jira App supports Jira Server. For Jira Cloud, please see documentation for the [Jira Cloud App](/docs/integrations/app-development/Jira-Cloud).
 
 
 #### Log types
@@ -39,21 +39,21 @@ This page has instructions for collecting logs from Jira for the Sumo App for Ji
 
 
 2.png "image_tooltip")
-The Jira App supports Jira Server. For Jira Cloud, please see documentation for the [Jira Cloud App](https://help.sumologic.com/07Sumo-Logic-Apps/08App_Development/Jira_Cloud).
+The Jira App supports Jira Server. For Jira Cloud, please see documentation for the [Jira Cloud App](/docs/integrations/app-development/Jira-Cloud).
 
 You will configure an installed collector on your Jira host with three local file sources, for collecting Jira access, security, and catalina logs. You also configure a hosted collector with an HTTP source for receiving webhook events from Jira.
 
 
 #### Set up local file sources on an installed collector
 
-1. Install a collector on the JIRA host. You can find the instructions for your operating system on [Installed Collectors](https://help.sumologic.com/03Send-Data/Installed-Collectors).
-2. Add a local file source to the collector for Jira access logs. Follow the steps on [Local File Source](https://help.sumologic.com/03Send-Data/Sources/01Sources-for-Installed-Collectors/Local-File-Source), with these additional instructions:
+1. Install a collector on the JIRA host. You can find the instructions for your operating system on [Installed Collectors](/docs/send-data/Installed-Collectors).
+2. Add a local file source to the collector for Jira access logs. Follow the steps on [Local File Source](/docs/send-data/Sources/sources-installed-collectors/Local-File-Source), with these additional instructions:
     * **Filepath**.  On Linux, access logs are typically found in `/var/log/apache2/*.log`.
     * **Source Category**. Set to:` Atlassian/Jira/Server/Access`
-3. Add a local file source to the collector for Jira security logs. Follow the steps on [Local File Source](https://help.sumologic.com/03Send-Data/Sources/01Sources-for-Installed-Collectors/Local-File-Source), with these additional instructions:
+3. Add a local file source to the collector for Jira security logs. Follow the steps on [Local File Source](/docs/send-data/Sources/sources-installed-collectors/Local-File-Source), with these additional instructions:
     * **Filepath**.  On Linux, security logs are typically found in `/home/jira/atlassian/application-data/jira/log/atlassian-jira-security.log`.
     * **Source Category**. Set to: `Atlassian/Jira/Server/Security`
-4. Add a local file source to the collector for Jira Catalina logs. Follow the steps on [Local File Source](https://help.sumologic.com/03Send-Data/Sources/01Sources-for-Installed-Collectors/Local-File-Source), with these additional instructions:
+4. Add a local file source to the collector for Jira Catalina logs. Follow the steps on [Local File Source](/docs/send-data/Sources/sources-installed-collectors/Local-File-Source), with these additional instructions:
     * **Filepath**. On Linux, Catalina logs are typically found in `/home/jira/atlassian/application-data/jira/log/*.log`.
     * **Source Category**. Set to: `Atlassian/Jira/Server/Catalina`
 
@@ -63,7 +63,7 @@ You will configure an installed collector on your Jira host with three local fil
 In this step, you create a host collector to receive webhooks from Jira, and set up an HTTP source on it.
 
 1. Configure a [hosted collector](/docs/send-data/configure-hosted-collector), or select an existing hosted collector for the HTTP source.
-2. Configure an [HTTP source](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/HTTP-Source) on the hosted collector.
+2. Configure an [HTTP source](/docs/send-data/sources/sources-hosted-collectors/http-logs-metrics-source) on the hosted collector.
     * For **Source Category**, specify:  `Atlassian/Jira/Events`
     * Make a note of the HTTP address for the source. You will supply it when you configure a Jira webhook in the next step.
 
@@ -90,7 +90,7 @@ Follow the instructions on [Webhooks](https://developer.atlassian.com/server/jir
     * started (sprint_started)
     * closed (sprint_closed)
 
-When you configure the webhook, enter the URL for the HTTP source you created in [step 2](https://help.sumologic.com/07Sumo-Logic-Apps/08App_Development/Jira/Collect_Logs_for_the_Jira_App#Step_2:_Configure_hosted_collector_to_receive_webhooks) as the endpoint for the webhook.
+When you configure the webhook, enter the URL for the HTTP source you created in [step 2](/docs/integrations/app-development/Jira/Collect_Logs_for_the_Jira_App#Step_2:_Configure_hosted_collector_to_receive_webhooks) as the endpoint for the webhook.
 
 
 3.png "image_tooltip")
@@ -156,7 +156,7 @@ Now that you have set up collection for Jira, install the Jira app to use the pr
 
 4.png "image_tooltip")
 
-The Jira App supports Jira Server. For Jira Cloud, please see documentation for the [Jira Cloud App](https://help.sumologic.com/07Sumo-Logic-Apps/08App_Development/Jira_Cloud).
+The Jira App supports Jira Server. For Jira Cloud, please see documentation for the [Jira Cloud App](/docs/integrations/app-development/Jira_Cloud).
 
 To install the app, do the following:
 

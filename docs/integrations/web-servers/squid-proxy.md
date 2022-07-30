@@ -74,7 +74,7 @@ Click on the appropriate tabs below based on the environment where your Squid Pr
 
 <img src={useBaseUrl('img/integrations/web-servers/squid-proxy-k8s-flow.png')} alt="Squid Proxy" />
 
-In Kubernetes environments, we use the Telegraf Operator, which is packaged with our Kubernetes collection. You can learn more about it[ here](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Collect_Metrics_Using_Telegraf/01_Telegraf_Collection_Architecture). The diagram below illustrates how data is collected from Squid Proxy in Kubernetes environments. In the architecture shown below, there are four services that make up the metric collection pipeline: Telegraf, Prometheus, Fluentd, and FluentBit.
+In Kubernetes environments, we use the Telegraf Operator, which is packaged with our Kubernetes collection. You can learn more about it[ here](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/telegraf-collection-architecture). The diagram below illustrates how data is collected from Squid Proxy in Kubernetes environments. In the architecture shown below, there are four services that make up the metric collection pipeline: Telegraf, Prometheus, Fluentd, and FluentBit.
 
 The first service in the pipeline is Telegraf. Telegraf collects metrics from Squid Proxy. Note that we’re running Telegraf in each pod we want to collect metrics from as a sidecar deployment: i.e. Telegraf runs in the same pod as the containers it monitors. Telegraf uses the [SNMP input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/snmp) to obtain metrics. (For simplicity, the diagram doesn’t show the input plugins.) The injection of the Telegraf sidecar container is done by the Telegraf Operator. We also have Fluentbit that collects logs written to standard out and forwards them to FluentD, which in turn sends all the logs and metrics data to a Sumo Logic HTTP Source.
 
@@ -98,7 +98,7 @@ It’s assumed that you are using the latest helm chart version if not upgrade u
 
 This section explains the steps to collect Squid Proxy metrics from a Kubernetes environment.
 
-In Kubernetes environments, we use the Telegraf Operator, which is packaged with our Kubernetes collection. You can learn more on this[ here](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Collect_Metrics_Using_Telegraf/01_Telegraf_Collection_Architecture). Follow the steps listed below to collect metrics from a Kubernetes environment:
+In Kubernetes environments, we use the Telegraf Operator, which is packaged with our Kubernetes collection. You can learn more on this[ here](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/telegraf-collection-architecture). Follow the steps listed below to collect metrics from a Kubernetes environment:
 
 1. [Set up Kubernetes Collection with the Telegraf Operator](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf.md#Install_Telegraf_in_a_Kubernetes_environment)
 2. Enable SNMP agent on Squid Proxy
@@ -347,7 +347,7 @@ Here’s an explanation for additional values set by this configuration that we 
 
 For all other parameters please see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#Configuring-Telegraf) for more properties that can be configured in the Telegraf agent globally.
 
-1. The Sumologic-Kubernetes-Collection will automatically capture the logs from stdout and will send the logs to Sumologic. For more information on deploying Sumologic-Kubernetes-Collection, [visit](https://help.sumologic.com/07Sumo-Logic-Apps/10Containers_and_Orchestration/Kubernetes/Collect_Logs_and_Metrics_for_the_Kubernetes_App) here.
+1. The Sumologic-Kubernetes-Collection will automatically capture the logs from stdout and will send the logs to Sumologic. For more information on deploying Sumologic-Kubernetes-Collection, [visit](/docs/integrations/containers-orchestration/Kubernetes#Collect_Logs_and_Metrics_for_the_Kubernetes_App) here.
 2. Verify logs in Sumo Logic.
 1. **(Optional) Collecting Squid Proxy Logs from a Log File** Follow the steps below to capture Squid Proxy logs from a log file on Kubernetes.
 1. Determine the location of the Squid Proxy log file on Kubernetes. This can be determined from the squid.conf for your Squid Proxy cluster along with the mounts on the Squid Proxy pods.
@@ -379,7 +379,7 @@ annotations:
 </TabItem>
 <TabItem value="non-k8s">
 
-Sumo Logic uses the Telegraf operator for Squid Proxy metric collection and the [Installed Collector](https://help.sumologic.com/03Send-Data/Installed-Collectors/01About-Installed-Collectors) for collecting Squid Proxy logs. The diagram below illustrates the components of the Squid Proxy collection in a non-Kubernetes environment. Telegraf uses the [SNMP input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/snmp) to obtain Squid Proxy metrics and the Sumo Logic output plugin to send the metrics to Sumo Logic. Logs from Squid Proxy are collected by a [Local File Source](https://help.sumologic.com/03Send-Data/Sources/01Sources-for-Installed-Collectors/Local-File-Source).
+Sumo Logic uses the Telegraf operator for Squid Proxy metric collection and the [Installed Collector](/docs/send-data/installed-collectors/about-installed-collectors) for collecting Squid Proxy logs. The diagram below illustrates the components of the Squid Proxy collection in a non-Kubernetes environment. Telegraf uses the [SNMP input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/snmp) to obtain Squid Proxy metrics and the Sumo Logic output plugin to send the metrics to Sumo Logic. Logs from Squid Proxy are collected by a [Local File Source](/docs/send-data/Sources/sources-installed-collectors/Local-File-Source).
 
 <img src={useBaseUrl('img/integrations/web-servers/non-k8s-flow.png')} alt="Squid Proxy" />
 
@@ -407,26 +407,26 @@ Squid Proxy app supports the default access logs and cache logs format.
 By default, the squid proxy will write the access log to the log directory that was configured during installation. For example, on Linux, the log directory would be `/var/log/squid/access.log`. If the access log is disabled then you must enable the access log following these [instructions](https://wiki.squid-cache.org/SquidFaq/SquidLogs).
 
 
-1. **Configure an Installed Collector.** If you have not already done so, install and configure an installed collector for Windows by [following the documentation](https://help.sumologic.com/03Send-Data/Installed-Collectors/03Install-a-Collector-on-Windows).
+1. **Configure an Installed Collector.** If you have not already done so, install and configure an installed collector for Windows by [following the documentation](/docs/send-data/installed-collectors/install-collector-windows).
 2. **Configure a Collector**
 
 Use one of the following Sumo Logic Collector options:
 
-1. To collect logs directly from the Squid Proxy machine, configure an [Installed Collector](https://help.sumologic.com/03Send-Data/Installed-Collectors).
-2. If you are using a service like Fluentd, or you would like to upload your logs manually, [Create a Hosted Collector](https://help.sumologic.com/03Send-Data/Hosted-Collectors#Create_a_Hosted_Collector).
+1. To collect logs directly from the Squid Proxy machine, configure an [Installed Collector](/docs/send-data/Installed-Collectors).
+2. If you are using a service like Fluentd, or you would like to upload your logs manually, [Create a Hosted Collector](/docs/send-data/Hosted-Collectors#Create_a_Hosted_Collector).
 1. **Configure a local file source**
 
 **For an Installed Collector**
 
 To collect logs directly from your Squid Proxy machine, use an Installed Collector and a Local File Source.  
 
-1. Add a [Local File Source](https://help.sumologic.com/03Send-Data/Sources/01Sources-for-Installed-Collectors/Local-File-Source).
+1. Add a [Local File Source](/docs/send-data/Sources/sources-installed-collectors/Local-File-Source).
 2. Configure the Local File Source fields as follows:
 * **Name**. (Required)
 * **Description**. (Optional)
 * **File Path (Required)**. Enter the path to your access.log. The files are typically located in /var/log/squid/access.log. If you are using a customized path, check the squid.conf file for this information.
 * **Source Host**. Sumo Logic uses the hostname assigned by the OS unless you enter a different hostname.
-* **Source Category**. Enter any string to tag the output collected from this Source, such as SquidProxy/AccessLog. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details see [Best Practices](https://help.sumologic.com/03Send-Data/01-Design-Your-Deployment/Best-Practices%3A-Good-Source-Category%2C-Bad-Source-Category).)
+* **Source Category**. Enter any string to tag the output collected from this Source, such as SquidProxy/AccessLog. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details see [Best Practices](/docs/send-data/design-deployment/best-practices-source-categories).)
 * **Fields. **Set the following fields \
 `component = proxy \
 proxy_system = squidproxy \
@@ -447,12 +447,12 @@ For a Hosted Collector
 
 If you are using a service like Fluentd, or you would like to upload your logs manually, use a Hosted Collector and an HTTP Source.
 
-1. Add an [HTTP Source](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/HTTP-Source).
+1. Add an [HTTP Source](/docs/send-data/sources/sources-hosted-collectors/http-logs-metrics-source).
 2. Configure the HTTP Source fields as follows:
 * **Name**. (Required)
 * **Description**. (Optional)
 * **Source Host**. Sumo Logic uses the hostname assigned by the OS unless you enter a different hostname.
-* **Source Category**. Enter any string to tag the output collected from this Source, such as SquidProxy/AccessLog. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details see [Best Practices](https://help.sumologic.com/03Send-Data/01-Design-Your-Deployment/Best-Practices%3A-Good-Source-Category%2C-Bad-Source-Category).)
+* **Source Category**. Enter any string to tag the output collected from this Source, such as SquidProxy/AccessLog. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details see [Best Practices](/docs/send-data/design-deployment/best-practices-source-categories).)
 1. Configure the **Advanced **section:
 * **Enable Timestamp Parsing**. Select **Extract timestamp information from log file entries**.
 * **Time Zone**. For Access logs, use the time zone from the log file. For Error logs, make sure to select the correct time zone.
@@ -470,13 +470,13 @@ If you are using a service like Fluentd, or you would like to upload your logs m
 
 
 1. **Configure a Hosted Collector for Metrics. \
-**To create a new Sumo Logic hosted collector, perform the steps in the [Create a Hosted Collector](https://help.sumologic.com/03Send-Data/Hosted-Collectors#Create_a_Hosted_Collector) documentation.
+**To create a new Sumo Logic hosted collector, perform the steps in the [Create a Hosted Collector](/docs/send-data/Hosted-Collectors#Create_a_Hosted_Collector) documentation.
 2. **Configure an HTTP Logs & Metrics source**:
     1. On the created Hosted Collector on the Collection Management screen, select **Add Source**.
     2. Select **HTTP Logs & Metrics_._**
         1. **Name.** (Required). Enter a name for the source.
         2. **Description.** (Optional).
-        3. **Source Category** (Recommended)**.** Be sure to follow the [Best Practices for Source Categories](https://help.sumologic.com/03Send-Data/01-Design-Your-Deployment/Best-Practices%3A-Good-Source-Category%2C-Bad-Source-Category). A recommended Source Category may be Prod/ProxyServer/SquidProxy/Metrics.
+        3. **Source Category** (Recommended)**.** Be sure to follow the [Best Practices for Source Categories](/docs/send-data/design-deployment/best-practices-source-categories). A recommended Source Category may be Prod/ProxyServer/SquidProxy/Metrics.
     3. Select **Save**.
     4. Take note of the URL provided once you click _Save_. You can retrieve it again by selecting the **Show URL** next to the source on the Collection Management screen.
 
@@ -771,7 +771,7 @@ Custom filter examples:
 6. Click Import and then copy-paste the above JSON to import monitors.
 
 
-The monitors are disabled by default. Once you have installed the alerts using this method, navigate to the Squid Proxy folder under **Monitors** to configure them. See [this](/docs/alerts/monitors/index.md) document to enable monitors to send notifications to teams or connections. See the instructions detailed in Step 4 of this [document](https://help.sumologic.com/Visualizations-and-Alerts/Alerts/Monitors#Add_a_monitor).
+The monitors are disabled by default. Once you have installed the alerts using this method, navigate to the Squid Proxy folder under **Monitors** to configure them. See [this](/docs/alerts/monitors/index.md) document to enable monitors to send notifications to teams or connections. See the instructions detailed in Step 4 of this [document](/docs/alerts/monitors#Add_a_monitor).
 
 
 ### Method 2: Install the alerts using a Terraform script
@@ -853,7 +853,7 @@ email_notifications = [
     1. Navigate to the package directory terraform-sumologic-sumo-logic-monitor/monitor_packages/**SquidProxy**/ and run **terraform init. **This will initialize Terraform and will download the required components.
     2. Run **terraform plan **to view the monitors which will be created/modified by Terraform.
     3. Run **terraform apply**.
-2. **Post Installation** If you haven’t enabled alerts and/or configured notifications through the Terraform procedure outlined above, we highly recommend enabling alerts of interest and configuring each enabled alert to send notifications to other users or services. This is detailed in Step 4 of [this document](https://help.sumologic.com/Visualizations-and-Alerts/Alerts/Monitors#Add_a_monitor).
+2. **Post Installation** If you haven’t enabled alerts and/or configured notifications through the Terraform procedure outlined above, we highly recommend enabling alerts of interest and configuring each enabled alert to send notifications to other users or services. This is detailed in Step 4 of [this document](/docs/alerts/monitors#Add_a_monitor).
 
 
 28

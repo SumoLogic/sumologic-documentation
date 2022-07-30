@@ -29,9 +29,9 @@ This page explains how to collect logs from Workday and ingest them into Sumo Lo
 
 The instructions below assume that the following security groups -  Security Administrator, System Auditor, and Report Administrator are assigned to the user who will be configuring the collection in the Workday portal. Make sure the account used doesn't belong to an employee otherwise custom reports created by the user may no longer be available when they leave the organization.
 
-* [Collection Overview](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/Workday/Collect_Logs_for_the_Workday_App#Collection_Overview)
-* [Sample Log Messages](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/Workday/Collect_Logs_for_the_Workday_App#Sample_Log_Messages)
-* [Query Sample](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/Workday/Collect_Logs_for_the_Workday_App#Query_Sample)
+* [Collection Overview](#Collection-Overview)
+* [Sample Log Messages](#Sample-Log-Messages)
+* [Query Sample](#Query-Sample)
 
 
 ### Collection Overview
@@ -39,7 +39,7 @@ The instructions below assume that the following security groups -  Security Adm
 Sumo Logic collects logs from Workday via a script that calls the Workday APIs. As part of the script configuration, you need to first configure log types that need to be collected, and these logs are then forwarded to Sumo Logic’s HTTPS source.
 
 
-By default, the collection starts from the current date and time, but this setting is also configurable. For more information, see the [Advanced Configuration](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/Workday/Collect_Logs_for_the_Workday_App#Advanced_Configuration) options.
+By default, the collection starts from the current date and time, but this setting is also configurable. For more information, see the [Advanced Configuration](#Advanced_Configuration) options.
 
 
 #### Before You Deploy
@@ -62,11 +62,11 @@ After the integration has been configured, if you run into performance issues in
 
 Configuring collection for Workday includes the following tasks:
 
-* [Step 1: Configure the Workday Portal](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/Workday/Collect_Logs_for_the_Workday_App#Step_1:_Configure_the_Workday_Portal)
-* [Step 2: Add a Hosted Collector and HTTP Source](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/Workday/Collect_Logs_for_the_Workday_App#Step_2:_Add_a_Hosted_Collector_and_HTTP_Source)
-* [Step 3: Configure Collection for Workday](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/Workday/Collect_Logs_for_the_Workday_App#Step_3:_Configure_Collection_for_Workday)
-* [Advanced Configuration](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/Workday/Collect_Logs_for_the_Workday_App#Advanced_Configuration)
-* [Troubleshooting](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/Workday/Collect_Logs_for_the_Workday_App#Troubleshooting)
+* [Step 1: Configure the Workday Portal](#Step_1:_Configure_the_Workday_Portal)
+* [Step 2: Add a Hosted Collector and HTTP Source](#Step_2:_Add_a_Hosted_Collector_and_HTTP_Source)
+* [Step 3: Configure Collection for Workday](#Step_3:_Configure_Collection_for_Workday)
+* [Advanced Configuration](#Advanced_Configuration)
+* [Troubleshooting](#Troubleshooting)
 
 
 The instructions below assume that following security groups -  **Security Administrator, System Auditor, and Report Administrator** are assigned to the user who will be configuring the collection in the Workday portal.
@@ -78,15 +78,15 @@ This section demonstrates how to configure the Workday portal to integrate with 
 
 Configuring the Workday portal involves the following steps:
 
-[Step 1.1: Create an Integration System User](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/Workday/Collect_Logs_for_the_Workday_App#Step_1.1:_Create_an_Integration_System_User)
+[Step 1.1: Create an Integration System User](#Step_1.1:_Create_an_Integration_System_User)
 
-[Step 1.2: Create a Security Group](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/Workday/Collect_Logs_for_the_Workday_App#Step_1.2:_Create_a_Security_Group)
+[Step 1.2: Create a Security Group](#Step_1.2:_Create_a_Security_Group)
 
-[Step 1.3: Register the API Client](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/Workday/Collect_Logs_for_the_Workday_App#Step_1.3:_Register_the_API_Client)
+[Step 1.3: Register the API Client](#Step_1.3:_Register_the_API_Client)
 
-[Step 1.4: Enable your tenant to send data](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/Workday/Collect_Logs_for_the_Workday_App#Step_1.4:_Enable_your_tenant_to_send_data)
+[Step 1.4: Enable your tenant to send data](#Step_1.4:_Enable_your_tenant_to_send_data)
 
-[Step 1.5: Create a Custom sign on report](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/Workday/Collect_Logs_for_the_Workday_App#Step_1.5:_Create_a_Custom_signon_report)
+[Step 1.5: Create a Custom sign on report](#Step_1.5:_Create_a_Custom_signon_report)
 
 
 #### Step 1.1: Create an Integration System User
@@ -275,7 +275,7 @@ In this step, you create a hosted collector and HTTP source to receive data from
 
 
 1. Configure a [Hosted Collector](/docs/send-data/configure-hosted-collector), or select an existing hosted collector for the HTTP source.
-2. Configure an [HTTP source](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/HTTP-Source) on the hosted collector
+2. Configure an [HTTP source](/docs/send-data/sources/sources-hosted-collectors/http-logs-metrics-source) on the hosted collector
 
 Make a note of the HTTP address for the source. You will need it when you configure the collection for the Workday scripts in the next step.
 
@@ -285,10 +285,10 @@ Make a note of the HTTP address for the source. You will need it when you config
 In this section, we will configure a collection of login and audit logs  from Workday and send them to Sumo Logic via one of the methods listed below.
 
 * For non-FedRamp Sumo Logic deployments
-    * [Create a Workday Cloud To Cloud Collector Source](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Cloud-to-Cloud_Integration_Framework/Workday_Source).
+    * [Create a Workday Cloud To Cloud Collector Source](/docs/send-data/Sources/sources-hosted-collectors/Cloud-to-Cloud-Integration-Framework/Workday-Source).
 * If you are using the Sumo Logic FedRamp deployment, you can either use a Sumo Logic Workday collection script to be run in an Amazon Web Services (AWS) environment using the AWS Lambda service, or run Sumo Logic Python scripts to run periodically on a Linux machine via a cron job.
-    * [AWS Lambda based collection](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/Workday/Collect_Logs_for_the_Workday_App#Deploy_the_Sumo_Logic_Workday_SAM_Application) via a Serverless Application Model (SAM) application.
-    * [Script-based collection](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/Workday/Collect_Logs_for_the_Workday_App#Configure_script-based_collection_for_Workday) from a Linux machine.
+    * [AWS Lambda based collection](#Deploy_the_Sumo_Logic_Workday_SAM_Application) via a Serverless Application Model (SAM) application.
+    * [Script-based collection](#Configure_script-based_collection_for_Workday) from a Linux machine.
 
 
 #### Deploy the Sumo Logic Workday SAM Application in your AWS environment
@@ -307,15 +307,15 @@ In this step, you deploy the SAM application, which creates the necessary resour
 
 
 4. In the **AWS Lambda > Functions >** **Application Settings** panel, specify the following parameters in the corresponding text fields:
-    * **HTTPLogsEndpoint.** Paste the URL for the HTTP Logs source from [Step 2](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/Workday/Collect_Logs_for_the_Workday_App#Step_2:_Add_a_Hosted_Collector_and_HTTP_Source).
-    * **SignonReportUrl**. Paste the signon report url from [Step 1.5](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/Workday/Collect_Logs_for_the_Workday_App#Step_1.5:_Create_a_Custom_signon_report).
-    * **IntegrationSystemUserPassword**: Paste the SumoLogic_ISU account password copied from [Step 1.1](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/Workday/Collect_Logs_for_the_Workday_App#Step_1.1:_Create_an_Integration_System_User).
-    * **IntegrationSystemUsername.** Name of the account created in [Step 1.1](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/Workday/Collect_Logs_for_the_Workday_App#Step_1.1:_Create_an_Integration_System_User).
-    * **WorkdayRestApiEndpoint.**  Paste the Workday Rest API endpoint copied from [Step 1.4](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/Workday/Collect_Logs_for_the_Workday_App#Step_1.4:_Enable_your_tenant_to_send_data).
-    * **RefreshTokenEndpoint.**  Paste the Token endpoint copied from [Step 1.4](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/Workday/Collect_Logs_for_the_Workday_App#Step_1.4:_Enable_your_tenant_to_send_data).
-    * **ClientId.** Paste the API Client ID copied from [Step 1.4](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/Workday/Collect_Logs_for_the_Workday_App#Step_1.4:_Enable_your_tenant_to_send_data).
-    * **ClientSecret**.  Paste the API Client SECRET copied from [Step 1.4](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/Workday/Collect_Logs_for_the_Workday_App#Step_1.4:_Enable_your_tenant_to_send_data).
-    * **RefreshToken.** Paste the Refresh token generated from [Step 1.4](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/Workday/Collect_Logs_for_the_Workday_App#Step_1.4:_Enable_your_tenant_to_send_data). \
+    * **HTTPLogsEndpoint.** Paste the URL for the HTTP Logs source from [Step 2](#Step_2:_Add_a_Hosted_Collector_and_HTTP_Source).
+    * **SignonReportUrl**. Paste the signon report url from [Step 1.5](#Step_1.5:_Create_a_Custom_signon_report).
+    * **IntegrationSystemUserPassword**: Paste the SumoLogic_ISU account password copied from [Step 1.1](#Step_1.1:_Create_an_Integration_System_User).
+    * **IntegrationSystemUsername.** Name of the account created in [Step 1.1](#Step_1.1:_Create_an_Integration_System_User).
+    * **WorkdayRestApiEndpoint.**  Paste the Workday Rest API endpoint copied from [Step 1.4](#Step_1.4:_Enable_your_tenant_to_send_data).
+    * **RefreshTokenEndpoint.**  Paste the Token endpoint copied from [Step 1.4](#Step_1.4:_Enable_your_tenant_to_send_data).
+    * **ClientId.** Paste the API Client ID copied from [Step 1.4](#Step_1.4:_Enable_your_tenant_to_send_data).
+    * **ClientSecret**.  Paste the API Client SECRET copied from [Step 1.4](#Step_1.4:_Enable_your_tenant_to_send_data).
+    * **RefreshToken.** Paste the Refresh token generated from [Step 1.4](#Step_1.4:_Enable_your_tenant_to_send_data). \
  \
 
 5. Click **Deploy**.
@@ -334,7 +334,7 @@ The sumologic-workday script is compatible with python 3.7 and python 2.7, and h
 
 This task makes the following assumptions:
 
-* You have successfully added a **Hosted Collector** and **HTTP source **and copied configuration parameters (HTTPLogsEndpoint, SignonReportUrl, IntegrationSystemUserPassword, IntegrationSystemUsername,  WorkdayRestApiEndpoint,  RefreshTokenEndpoint, ClientId, ClientSecret, and RefreshToken) from the Workday console, as described in [Add a Hosted Collector and HTTP Source](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/Workday/Collect_Logs_for_the_Workday_App#Step_2:_Add_a_Hosted_Collector_and_HTTP_Source) section.
+* You have successfully added a **Hosted Collector** and **HTTP source **and copied configuration parameters (HTTPLogsEndpoint, SignonReportUrl, IntegrationSystemUserPassword, IntegrationSystemUsername,  WorkdayRestApiEndpoint,  RefreshTokenEndpoint, ClientId, ClientSecret, and RefreshToken) from the Workday console, as described in [Add a Hosted Collector and HTTP Source](#Step_2:_Add_a_Hosted_Collector_and_HTTP_Source) section.
 * You are logged in to a Linux machine as the user account with which you will install the collector. If not, use the following command to switch to that account: `sudo su <user_name>`
 
 

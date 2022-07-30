@@ -11,7 +11,7 @@ The focus of GuardDuty is on protecting AWS accounts, workloads, and data with i
 
 ## Collecting Logs
 
-See https://help.sumologic.com/07Sumo-Logic-Apps/01Amazon_and_AWS/Amazon_GuardDuty/Collect-Logs-for-the-Amazon-GuardDuty-App
+See [here](/docs/integrations/amazon-aws/guardduty#Collect-Logs-for-the-Amazon-GuardDuty-App).
 
 ## Installing the Amazon GuardDuty Cloud Security Monitoring and Analytics App
 

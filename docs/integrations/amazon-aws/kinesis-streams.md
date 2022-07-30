@@ -23,7 +23,7 @@ The App uses Kinesis logs and metrics for:
 ### Collecting Metrics
 
 1. Configure a [Hosted Collector](/docs/send-data/configure-hosted-collector).
-2. Configure an [Amazon CloudWatch Source for Metrics](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/Amazon-CloudWatch-Source-for-Metrics).
+2. Configure an [Amazon CloudWatch Source for Metrics](/docs/send-data/sources/sources-hosted-collectors/amazon-web-services/amazon-cloudwatch-source-metrics).
     * **Name**. Enter a name to display for the new Source.
     * **Description**. Enter an optional description.
     * **Regions**. Select your Amazon Regions for Kinesis.
@@ -41,7 +41,7 @@ The App uses Kinesis logs and metrics for:
     * **Description**. Enter an optional description.
     * **S3 Region**. Select the Amazon Region for your Kinesis S3 bucket.
     * **Bucket Name**. Enter the exact name of your Kinesis S3 bucket.
-    * **Path Expression**. Enter the string that matches the S3 objects you'd like to collect. You can use a wildcard (*) in this string. (DO NOT use a leading forward slash. See [Amazon Path Expressions](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/Amazon-Path-Expressions).)
+    * **Path Expression**. Enter the string that matches the S3 objects you'd like to collect. You can use a wildcard (*) in this string. (DO NOT use a leading forward slash. See [Amazon Path Expressions](/docs/send-data/Sources/sources-hosted-collectors/Amazon-Web-Services/Amazon-Path-Expressions).)
 
 The S3 bucket name is not part of the path. Don’t include the bucket name when you are setting the Path Expression.
     * **Source Category**. Enter a source category. For example, kinesis_event.
@@ -105,7 +105,7 @@ _sourceCategory=aws/kinesis* "kinesis.amazonaws.com" errorCode
 
 ## Installing the Amazon Kinesis - Streams App
 
-Now that you have set up collection for Amazon Kinesis, install the Sumo Logic App to use the pre-configured searches and [dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/01Amazon_and_AWS/Amazon_Kinesis_-_Streams/Install-the-Amazon-Kinesis-App-and-view-the-Dashboards#Dashboards) that provide visibility into your environment for real-time analysis of overall usage.
+Now that you have set up collection for Amazon Kinesis, install the Sumo Logic App to use the pre-configured searches and [dashboards](#Dashboards) that provide visibility into your environment for real-time analysis of overall usage.
 
 To install the app:
 

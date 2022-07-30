@@ -100,7 +100,7 @@ If you are using Memcached in a non-Kubernetes environment create the fields:
 
 <TabItem value="k8s">
 
-In Kubernetes environments, we use the Telegraf Operator, which is packaged with our Kubernetes collection. You can learn more about it[ here](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Collect_Metrics_Using_Telegraf/01_Telegraf_Collection_Architecture).
+In Kubernetes environments, we use the Telegraf Operator, which is packaged with our Kubernetes collection. You can learn more about it[ here](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/telegraf-collection-architecture).
 
 The diagram below illustrates how data is collected from Memcached in a Kubernetes environment. In the architecture shown below, there are four services that make up the metric collection pipeline: Telegraf, Prometheus, Fluentd, and FluentBit.
 
@@ -126,7 +126,7 @@ It’s assumed that you are using the latest helm chart version if not upgrade u
 
 This section explains the steps to collect Memcached metrics from a Kubernetes environment.
 
-In Kubernetes environments, we use the Telegraf Operator, which is packaged with our Kubernetes collection. You can learn more on this[ here](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Collect_Metrics_Using_Telegraf/01_Telegraf_Collection_Architecture). Follow the steps listed below to collect metrics from a Kubernetes environment:
+In Kubernetes environments, we use the Telegraf Operator, which is packaged with our Kubernetes collection. You can learn more on this[ here](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/telegraf-collection-architecture). Follow the steps listed below to collect metrics from a Kubernetes environment:
 
 1. [Set up Kubernetes Collection with the Telegraf Operator.](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf.md#Install_Telegraf_in_a_Kubernetes_environment)
 2. Add annotations on your Memcached pods \
@@ -209,7 +209,7 @@ Please enter in values for the following parameters:
     For all other parameters please see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#Configuring-Telegraf) for more properties that can be configured in the Telegraf agent globally.
 
 
-    2. The Sumologic-Kubernetes-Collection will automatically capture the logs from stdout and will send the logs to Sumologic. For more information on deploying Sumologic-Kubernetes-Collection,[ visit](https://help.sumologic.com/07Sumo-Logic-Apps/10Containers_and_Orchestration/Kubernetes/Collect_Logs_and_Metrics_for_the_Kubernetes_App) here.
+    2. The Sumologic-Kubernetes-Collection will automatically capture the logs from stdout and will send the logs to Sumologic. For more information on deploying Sumologic-Kubernetes-Collection,[ visit](/docs/integrations/containers-orchestration/Kubernetes#Collect_Logs_and_Metrics_for_the_Kubernetes_App) here.
 
 
     3. Verify logs in Sumo Logic.
@@ -297,7 +297,7 @@ This section provides instructions for configuring logs and metrics collection f
 1. **Configure a Hosted Collector \
 **To create a new Sumo Logic hosted collector, perform the steps in the[ Configure a Hosted Collector](/docs/send-data/configure-hosted-collector) section of the Sumo Logic documentation.
 2. **Configure an HTTP Logs and Metrics Source \
-**Create a new HTTP Logs and Metrics Source in the hosted collector created above by following[ these instructions. ](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/HTTP-Source)Make a note of the **HTTP Source URL**.
+**Create a new HTTP Logs and Metrics Source in the hosted collector created above by following[ these instructions. ](/docs/send-data/sources/sources-hosted-collectors/http-logs-metrics-source)Make a note of the **HTTP Source URL**.
 3. **Install Telegraf \
 **Use the[ following steps](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf.md) to install Telegraf.
 4. **Configure and start Telegraf \
@@ -347,7 +347,7 @@ At this point, Memcached metrics should start flowing into Sumo Logic.
 
 This section provides instructions for configuring log collection for Memcached running on a non-kubernetes environment for the Sumo Logic App for Memcached.
 
-By default, Memcached logs are stored in a log file. Local log files can be collected via [Installed collectors](https://help.sumologic.com/03Send-Data/Installed-Collectors). An Installed collector will require you to allow outbound traffic to [Sumo Logic endpoints](https://help.sumologic.com/APIs/General-API-Information/Sumo-Logic-Endpoints-and-Firewall-Security) for collection to work. For detailed requirements for Installed collectors, see this [page](https://help.sumologic.com/01Start-Here/03About-Sumo-Logic/System-Requirements/Installed-Collector-Requirements).
+By default, Memcached logs are stored in a log file. Local log files can be collected via [Installed collectors](/docs/send-data/Installed-Collectors). An Installed collector will require you to allow outbound traffic to [Sumo Logic endpoints](https://help.sumologic.com/APIs/General-API-Information/Sumo-Logic-Endpoints-and-Firewall-Security) for collection to work. For detailed requirements for Installed collectors, see this [page](https://help.sumologic.com/01Start-Here/03About-Sumo-Logic/System-Requirements/Installed-Collector-Requirements).
 
 **Configure logging in Memcached** By default, the installation of Memcached will not write any request logs to disk. To add a log file for Memcached, you can use the following syntax:
 ```
@@ -368,15 +368,15 @@ CACHESIZE="256"
 
 1. `OPTIONS="-vv >> /var/log/memcached/memcached.log 2>&1" \
 `Save the file, restart Memcached.
-2. **Configuring a Collector** To collect logs directly from the Memcached machine, configure an[ Installed Collector](https://help.sumologic.com/03Send-Data/Installed-Collectors).
+2. **Configuring a Collector** To collect logs directly from the Memcached machine, configure an[ Installed Collector](/docs/send-data/Installed-Collectors).
 3. **Configuring a Source** To collect logs directly from your Memcached machine, use an Installed Collector and a Local File Source.
-    1. Add a[ Local File Source](https://help.sumologic.com/03Send-Data/Sources/01Sources-for-Installed-Collectors/Local-File-Source).
+    1. Add a[ Local File Source](/docs/send-data/Sources/sources-installed-collectors/Local-File-Source).
     2. Configure the Local File Source fields as follows:
         * **Name.** (Required)
         * **Description.** (Optional)
         * **File Path (Required).** Enter the path to your error.log or access.log. The files are typically located in `/var/log/memcached/memcached.log`. If you are using a customized path, check the `Memcached.conf` file for this information.
         * **Source Host.** Sumo Logic uses the hostname assigned by the OS unless you enter a different hostname
-        * **Source Category.** Enter any string to tag the output collected from this Source, such as **Memcached/Logs**. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details see[ Best Practices](https://help.sumologic.com/03Send-Data/01-Design-Your-Deployment/Best-Practices:-Good-Source-Category,-Bad-Source-Category).)
+        * **Source Category.** Enter any string to tag the output collected from this Source, such as **Memcached/Logs**. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details see [Best Practices](/docs/send-data/design-deployment/best-practices-source-categories.md).
         * **Fields**. Set the following fields:
             * `component = database`
             * `db_system = memcached`
@@ -400,14 +400,14 @@ At this point, Memcached logs should start flowing into Sumo Logic.
 
 ## Installing Memcached Monitors
 
-Sumo Logic has provided pre-packaged alerts available through [Sumo Logic monitors](/docs/alerts/monitors/index.md) to help you proactively determine if a Memcached cluster is available and performing as expected. These monitors are based on metric and log data and include pre-set thresholds that reflect industry best practices and recommendations. For more information about individual alerts, see [Memcached Alerts](https://help.sumologic.com/07Sumo-Logic-Apps/12Databases/MySQL/MySQL_Alerts).
+Sumo Logic has provided pre-packaged alerts available through [Sumo Logic monitors](/docs/alerts/monitors/index.md) to help you proactively determine if a Memcached cluster is available and performing as expected. These monitors are based on metric and log data and include pre-set thresholds that reflect industry best practices and recommendations. For more information about individual alerts, see [Memcached Alerts](#Memcached-Alerts).
 
 To install these monitors, you must have the **Manage Monitors** role capability.
 
 You can install monitors by importing a JSON file or using a Terraform script.
 
 
-There are limits to how many alerts can be enabled. For more information, see [Monitors](https://help.sumologic.com/Visualizations-and-Alerts/Alerts/Monitors#Rules) for details.
+There are limits to how many alerts can be enabled. For more information, see [Monitors](/docs/alerts/monitors#Rules) for details.
 
 
 #### Method 1: Install Monitors by importing a JSON file

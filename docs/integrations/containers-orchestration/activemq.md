@@ -75,7 +75,7 @@ Choose your environment:
 
 <TabItem value="k8s">
 
-In Kubernetes environments, we use the Telegraf Operator, which is packaged with our Kubernetes collection ([learn more](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Collect_Metrics_Using_Telegraf/01_Telegraf_Collection_Architecture)). The diagram below illustrates how data is collected from ActiveMQ in a Kubernetes environment. In the architecture shown below, there are four services that make up the metric collection pipeline: Telegraf, Prometheus, Fluentd and FluentBit.
+In Kubernetes environments, we use the Telegraf Operator, which is packaged with our Kubernetes collection ([learn more](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/telegraf-collection-architecture)). The diagram below illustrates how data is collected from ActiveMQ in a Kubernetes environment. In the architecture shown below, there are four services that make up the metric collection pipeline: Telegraf, Prometheus, Fluentd and FluentBit.
 
 <img src={useBaseUrl('img/integrations/containers-orchestration/k8s-diagram.png')} alt="k8s-diagram" />
 
@@ -102,7 +102,7 @@ It’s assumed that you are using the latest helm chart version if not upgrade u
 
 This section explains the steps to collect ActiveMQ metrics from a Kubernetes environment.
 
-In Kubernetes environments, we use the Telegraf Operator, which is packaged with our Kubernetes collection. You can learn more on this[ here](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Collect_Metrics_Using_Telegraf/01_Telegraf_Collection_Architecture). Follow the steps listed below to collect metrics from a Kubernetes environment:
+In Kubernetes environments, we use the Telegraf Operator, which is packaged with our Kubernetes collection. You can learn more on this[ here](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/telegraf-collection-architecture). Follow the steps listed below to collect metrics from a Kubernetes environment:
 
 1. **[Setup Kubernetes Collection with the Telegraf Operator.](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf.md#Install_Telegraf_in_a_Kubernetes_environment)**
 2. **Configure ActiveMQ Image**
@@ -269,7 +269,7 @@ Here’s an explanation for additional values set by this configuration that we 
 
 For all other parameters, see[ this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#Configuring-Telegraf) for more properties that can be configured in the Telegraf agent globally.
 
-The Sumologic-Kubernetes-Collection will automatically capture the logs from stdout and will send the logs to Sumologic. For more information on deploying Sumologic-Kubernetes-Collection, please see[ this page](https://help.sumologic.com/07Sumo-Logic-Apps/10Containers_and_Orchestration/Kubernetes/Collect_Logs_and_Metrics_for_the_Kubernetes_App).
+The Sumologic-Kubernetes-Collection will automatically capture the logs from stdout and will send the logs to Sumologic. For more information on deploying Sumologic-Kubernetes-Collection, please see[ this page](/docs/integrations/containers-orchestration/Kubernetes#Collect_Logs_and_Metrics_for_the_Kubernetes_App).
 
 1. **(Optional) Collecting ActiveMQ Logs from a Log File**
 
@@ -347,7 +347,7 @@ This section provides instructions for configuring metrics collection for the Su
 
 1. **Configure a Hosted Collector** To create a new Sumo Logic hosted collector, perform the steps in the [Configure a Hosted Collector](/docs/send-data/configure-hosted-collector) section of the Sumo Logic documentation.
 2. **Configure an HTTP Logs and Metrics Source**
-Create a new HTTP Logs and Metrics Source in the hosted collector created above by following[ these instructions. ](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/HTTP-Source)Make a note of the **HTTP Source URL**.
+Create a new HTTP Logs and Metrics Source in the hosted collector created above by following[ these instructions. ](/docs/send-data/sources/sources-hosted-collectors/http-logs-metrics-source)Make a note of the **HTTP Source URL**.
 3. **Install Telegraf**
 Use the[ following steps](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf.md) to install Telegraf.
 4. **Configure and start Telegraf**
@@ -476,7 +476,7 @@ At this point, ActiveMQ metrics should start flowing into Sumo Logic.
 
 This section provides instructions for configuring log collection for ActiveMQ running on a non-kubernetes environment for the Sumo Logic App for ActiveMQ.
 
-By default, ActiveMQ logs are stored in a log file. Sumo Logic supports collecting logs via a local log file. Local log files can be collected via [Installed collectors](https://help.sumologic.com/03Send-Data/Installed-Collectors). An Installed collector will require you to allow outbound traffic to [Sumo Logic endpoints](https://help.sumologic.com/APIs/General-API-Information/Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security) for collection to work. For detailed requirements for Installed collectors, see this [page](https://help.sumologic.com/01Start-Here/03About-Sumo-Logic/System-Requirements/Installed-Collector-Requirements).
+By default, ActiveMQ logs are stored in a log file. Sumo Logic supports collecting logs via a local log file. Local log files can be collected via [Installed collectors](/docs/send-data/Installed-Collectors). An Installed collector will require you to allow outbound traffic to [Sumo Logic endpoints](https://help.sumologic.com/APIs/General-API-Information/Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security) for collection to work. For detailed requirements for Installed collectors, see this [page](https://help.sumologic.com/01Start-Here/03About-Sumo-Logic/System-Requirements/Installed-Collector-Requirements).
 
 Based on your infrastructure and networking setup choose one of these methods to collect ActiveMQ logs and follow the instructions below to set up log collection:
 
@@ -503,13 +503,13 @@ log4j.logger.org.apache.activemq=DEBUG
 ```
 
 
-Logs from the ActiveMQ log file can be collected via a Sumo Logic [Installed collector](https://help.sumologic.com/03Send-Data/Installed-Collectors) and a [Local File Source](https://help.sumologic.com/03Send-Data/Sources/01Sources-for-Installed-Collectors/Local-File-Source) as explained in the next section.
+Logs from the ActiveMQ log file can be collected via a Sumo Logic [Installed collector](/docs/send-data/Installed-Collectors) and a [Local File Source](/docs/send-data/Sources/sources-installed-collectors/Local-File-Source) as explained in the next section.
 
 
 
 1. **Configuring a Collector**
 
-To add an Installed collector, perform the steps as defined on the page[ Configure an Installed Collector.](https://help.sumologic.com/03Send-Data/Installed-Collectors)
+To add an Installed collector, perform the steps as defined on the page[ Configure an Installed Collector.](/docs/send-data/Installed-Collectors)
 
 
 1. **Configuring a Source
@@ -518,13 +518,13 @@ To add an Installed collector, perform the steps as defined on the page[ Configu
 
 To collect logs directly from your ActiveMQ machine, use an Installed Collector and a Local File Source.
 
-1. Add a[ Local File Source](https://help.sumologic.com/03Send-Data/Sources/01Sources-for-Installed-Collectors/Local-File-Source).
+1. Add a[ Local File Source](/docs/send-data/Sources/sources-installed-collectors/Local-File-Source).
 2. Configure the Local File Source fields as follows:
 * **Name.** (Required)
 * **Description.** (Optional)
 * **File Path (Required).** Enter the path to your activemq.log. The files are typically located in `<Folder ActiveMQ Installed>/data/activemq.log`. If you are using a customized path, check the log4j.properties file for this information.
 * **Source Host.** Sumo Logic uses the hostname assigned by the OS unless you enter a different host name
-* **Source Category.** Enter any string to tag the output collected from this Source, such as **ActiveMQ/Logs**. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details see[ Best Practices](https://help.sumologic.com/03Send-Data/01-Design-Your-Deployment/Best-Practices%3A-Good-Source-Category%2C-Bad-Source-Category).)
+* **Source Category.** Enter any string to tag the output collected from this Source, such as **ActiveMQ/Logs**. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details see[ Best Practices](/docs/send-data/design-deployment/best-practices-source-categories).)
 * **Fields. Set the following fields:**
     * `component = messaging`
     * `messaging_system = activemq`
@@ -548,7 +548,7 @@ At this point, ActiveMQ logs should start flowing into Sumo Logic.
 
 ## Installing ActiveMQ Monitors
 
-This section and below contain instructions for installing Sumo Logic Monitors for ActiveMQ, the app, and descriptions of each of the app dashboards. These instructions assume you have already set up the collection as described in the [Collect Logs and Metrics for the ActiveMQ](https://help.sumologic.com/07Sumo-Logic-Apps/04Microsoft-and-Azure/Microsoft_SQL_Server/01Collect-Logs-for-the-Microsoft-SQL-Server-App) App page.
+This section and below contain instructions for installing Sumo Logic Monitors for ActiveMQ, the app, and descriptions of each of the app dashboards. These instructions assume you have already set up the collection as described in the [Collect Logs and Metrics for the ActiveMQ](#Collecting-Logs-and-Metrics-for-ActiveMQ) App page.
 
 * To install these alerts, you need to have the Manage Monitors role capability.
 * Alerts can be installed by either importing a JSON file or a Terraform script.
@@ -556,7 +556,7 @@ This section and below contain instructions for installing Sumo Logic Monitors f
 Sumo Logic provides out of the box alerts available through [Sumo Logic monitors](/docs/alerts/monitors/index.md) to help you monitor your ActiveMQ clusters. These alerts are built based on metrics and logs datasets and include preset thresholds based on industry best practices and recommendations. For details, see [ActiveMQ Alerts](#activemq-alerts).
 
 :::note
-There are limits to how many alerts can be enabled - please see the[ Alerts FAQ](/docs/alerts/monitors/monitor-faq.md) for details.
+There are limits to how many alerts can be enabled - please see the[ Alerts FAQ](/docs/alerts/monitors/monitor-faq) for details.
 :::
 
 ### Method 1: Install the monitors by importing a JSON file:
@@ -575,7 +575,7 @@ Custom filter examples:
 
 6. Click Import and then copy-paste the above JSON to import monitors.
 
-The monitors are disabled by default. Once you have installed the alerts using this method, navigate to the ActiveMQ folder under **Monitors** to configure them. See[ this](/docs/alerts/monitors/index.md) document to enable monitors to send notifications to teams or connections. Please see the instructions detailed in Step 4 of this[ document](https://help.sumologic.com/Visualizations-and-Alerts/Alerts/Monitors#Add_a_monitor).    
+The monitors are disabled by default. Once you have installed the alerts using this method, navigate to the ActiveMQ folder under **Monitors** to configure them. See[ this](/docs/alerts/monitors/index.md) document to enable monitors to send notifications to teams or connections. Please see the instructions detailed in Step 4 of this[ document](/docs/alerts/monitors#Add_a_monitor).    
 
 
 ### Method 2: Install the alerts using a Terraform script
@@ -668,7 +668,7 @@ email_notifications = [
 
 7. Post Installation
 
-If you haven’t enabled alerts and/or configured notifications through the Terraform procedure outlined above, we highly recommend enabling alerts of interest and configuring each enabled alert to send notifications to other users or services. This is detailed in Step 4 of[ this document](https://help.sumologic.com/Visualizations-and-Alerts/Alerts/Monitors#Add_a_monitor).
+If you haven’t enabled alerts and/or configured notifications through the Terraform procedure outlined above, we highly recommend enabling alerts of interest and configuring each enabled alert to send notifications to other users or services. This is detailed in Step 4 of[ this document](/docs/alerts/monitors#Add_a_monitor).
 
 
 There are limits to how many alerts can be enabled - please see the[ Alerts FAQ](/docs/alerts/monitors/monitor-faq.md).

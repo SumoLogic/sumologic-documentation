@@ -8,9 +8,9 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Sumo Logic App for Host and Process Metrics allows you to monitor the performance and resource utilization of hosts and processes that your mission critical applications are dependent upon. Preconfigured dashboards provide insight into CPU, memory, network, file descriptors, page faults, and TCP connectors. This app uses Telegraf, an open-source, plugin-based collector for the collection of both host and process metrics data.
 
-This app uses Telegraf and associated input plugins to collect both host and process metrics. To use the installed collector to collect and analyze host metrics, please see the [Host Metrics app](https://help.sumologic.com/07Sumo-Logic-Apps/14Hosts_and_Operating_Systems/Host_Metrics).
+This app uses Telegraf and associated input plugins to collect both host and process metrics. To use the installed collector to collect and analyze host metrics, please see the [Host Metrics app](/docs/integrations/hosts-operating-systems/metrics).
 
-This app has been validated on Linux(Ubuntu 20.04.2 LTS) and  Windows (Microsoft Windows Server 2019) and higher using Telegraf 1.18.2. This app is not recommended in Kubernetes environments; instead please use the [Kubernetes app](https://help.sumologic.com/07Sumo-Logic-Apps/10Containers_and_Orchestration/Kubernetes).
+This app has been validated on Linux(Ubuntu 20.04.2 LTS) and  Windows (Microsoft Windows Server 2019) and higher using Telegraf 1.18.2. This app is not recommended in Kubernetes environments; instead please use the [Kubernetes app](/docs/integrations/containers-orchestration/Kubernetes).
 
 
 #### Sample Queries
@@ -97,7 +97,7 @@ This section provides instructions for configuring metrics collection for the Su
     2. **Configure an HTTP Logs and Metrics Source**
 
 
-    Create a new HTTP Logs and Metrics Source in the hosted collector created above by following [these instructions](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/HTTP-Source). Suggestions for setting your source category:
+    Create a new HTTP Logs and Metrics Source in the hosted collector created above by following [these instructions](/docs/send-data/sources/sources-hosted-collectors/http-logs-metrics-source). Suggestions for setting your source category:
 
 1. For identifying a specific cluster or a group of hosts: `<clustername>/metrics`
 2. For identifying a group of hosts within a given deployment: `<environment name>/<clustername>/metrics`
@@ -142,7 +142,7 @@ This section provides instructions for configuring metrics collection for the Su
 
 * data_format = “carbon2” In the output plugins section which is `[[outputs.sumologic]]`  This indicates that metrics should be sent in the carbon2 format to Sumo Logic
 
-    For other optional parameters refer to [the respective plugin ](https://help.sumologic.com/07Sumo-Logic-Apps/14Hosts_and_Operating_Systems/Host_and_Process_Metrics/Collect_Metrics_for_Host_and_Processes#input+plugins)documentation for configuring the input plugins for Telegraf.
+    For other optional parameters refer to [the respective plugin ](#input-plugins)documentation for configuring the input plugins for Telegraf.
 
 
     For all other parameters please see [this doc](https://github.com/influxdata/telegraf/blob/master/docs/CONFIGURATION.md#agent) for more properties that can be configured in the Telegraf agent globally.
@@ -267,7 +267,7 @@ uname -a
 1. If the telegraf conf changes are not reflecting make sure to restart Telegraf using the command
     1. Windows - ​​ `./telegraf.exe --service restart`
     2. Linux - `sudo service telegraf restart`
-2. If certain metrics are not coming you may have to run the telegraf agent as root. Check [the respective plugin](https://help.sumologic.com/07Sumo-Logic-Apps/14Hosts_and_Operating_Systems/Host_and_Process_Metrics/Collect_Metrics_for_Host_and_Processes#input+plugins) documentation for more information.
+2. If certain metrics are not coming you may have to run the telegraf agent as root. Check [the respective plugin](#input+plugins) documentation for more information.
 
 
 #### Sample Queries
@@ -302,38 +302,33 @@ Sumo Logic provides out of the box alerts available via [Sumo Logic monitors](/d
 
 ## Process Metrics Alerts
 
-Sumo Logic provides out of the box alerts available via [Sumo Logic monitors](/docs/alerts/monitors/index.md). These alerts are built based on metrics datasets and have preset thresholds based on industry best practices and recommendations.
+Sumo Logic provides out of the box alerts available via [Sumo Logic monitors](/docs/alerts/monitors). These alerts are built based on metrics datasets and have preset thresholds based on industry best practices and recommendations.
 
 
 
 **insert table**
 
 
-## Install the Host and Process Metrics app, Alerts, and view the Dashboards
+## Installing Host and Process Metrics and Alerts
 
-This page provides instructions for installing the Sumo App and Alerts for hosts and processes, as well as the descriptions of each of the app dashboards. These instructions assume you have already set up a collection as described in the [Collect Metrics from Host and Processes](https://help.sumologic.com/07Sumo-Logic-Apps/14Hosts_and_Operating_Systems/Host_and_Process_Metrics/Collect_Metrics_for_Host_and_Processes) App page.
+The next few sections provide instructions for installing the Sumo App and Alerts for hosts and processes, as well as the descriptions of each of the app dashboards. These instructions assume you have already set up a collection as described in the Collect Metrics from Host and Processes section.
 
 
 #### Pre-Packaged Alerts
 
 Sumo Logic has provided out of the box alerts available through [Sumo Logic monitors](/docs/alerts/monitors/index.md) to help you monitor your hosts and processes. These alerts are built based on metrics and logs datasets and include preset thresholds based on industry best practices and recommendations.
 
-For details on the individual alerts,  please see this [page](https://help.sumologic.com/07Sumo-Logic-Apps/14Hosts_and_Operating_Systems/Host_and_Process_Metrics/Host_and_Process_Metrics_Alerts).
-
-
-#### Installing Alerts
-
+For details on the individual alerts, please see this [page](#Host-and-Process-Metrics-Alerts).
 
 
 * To install these alerts, you need to have the Manage Monitors role capability.
 * Alerts can be installed by either importing them a JSON or a Terraform script.
 
 
-4
 There are limits to how many alerts can be enabled - please see the [Alerts FAQ](/docs/alerts/monitors/monitor-faq.md) for details.
 
 
-##### Method 1: Install the alerts by importing a JSON file
+### Method 1: Importing a JSON file
 
 
 
@@ -347,39 +342,37 @@ SourceCategory examples:
 2. Go to Manage Data > Alerts > Monitors.
 3. Click <strong>Add</strong>: \
 
-5
 
 4. Click Import to import monitors from the JSON above.
 
 
-6
-The monitors are disabled by default. Once you have installed the alerts using this method, navigate to the Host and Process Metrics folder under Monitors to configure them. See [this](/docs/alerts/monitors/index.md) document to enable monitors, to configure each monitor, to send notifications to teams or connections please see the instructions detailed in [Alert Configuration](https://help.sumologic.com/07Sumo-Logic-Apps/14Hosts_and_Operating_Systems/Host_and_Process_Metrics/Install_the_Host_and_Process_Metrics_app%2C_Alerts%2C_and_view_the_Dashboards#Alert_Configuration) of this [document](https://help.sumologic.com/Visualizations-and-Alerts/Alerts/Monitors#Add_a_monitor).
+The monitors are disabled by default. Once you have installed the alerts using this method, navigate to the Host and Process Metrics folder under Monitors to configure them. See [this](/docs/alerts/monitors/index.md) document to enable monitors, to configure each monitor, to send notifications to teams or connections please see the instructions detailed in [Alert Configuration](#Alert_Configuration) of this [document](/docs/alerts/monitors#Add_a_monitor).
 
 
-##### Method 2: Install the alerts using a Terraform script
+### Method 2: Using a Terraform script
 
 
-###### Generate a Sumo Logic access key and ID
+#### Generate a Sumo Logic access key and ID
 
 Generate an access key and access ID for a user that has the Manage Monitors role capability in Sumo Logic using these[ instructions](/docs/manage/security/access-keys#manage-your-access-keys-on-preferences-page). Please identify which deployment your Sumo Logic account is in, using this[ link](https://help.sumologic.com/APIs/General-API-Information/Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security).
 
 
-###### [Download and install Terraform 0.13](https://www.terraform.io/downloads.html) or later
+#### [Download and install Terraform 0.13](https://www.terraform.io/downloads.html) or later
 
 
-###### Download the Sumo Logic Terraform package for Host and Process alerts
+#### Download the Sumo Logic Terraform package for Host and Process alerts
 
 The alerts package is available in the Sumo Logic GitHub [repository](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/tree/main/monitor_packages/postgresql). You can either download it through the “git clone” command or as a zip file.
 
 
-###### Alert Configuration
+#### Alert Configuration
 
 After the package has been extracted, navigate to the package directory t`erraform-sumologic-sumo-logic-monitor/monitor_packages/host_process_metrics/`
 
-Edit the `host_and_processes.auto.tfvars` file and add the Sumo Logic Access Key, Access Id, and Deployment from [Generate a Sumo Logic access key and ID](https://help.sumologic.com/07Sumo-Logic-Apps/14Hosts_and_Operating_Systems/Host_and_Process_Metrics/Install_the_Host_and_Process_Metrics_app%2C_Alerts%2C_and_view_the_Dashboards#Generate_a_Sumo_Logic_access_key_and_ID).
+Edit the `host_and_processes.auto.tfvars` file and add the Sumo Logic Access Key, Access Id, and Deployment from [Generate a Sumo Logic access key and ID](#Generate_a_Sumo_Logic_access_key_and_ID).
 
 
-```
+```bash
 access_id   = "<SUMOLOGIC ACCESS ID>"
 access_key  = "<SUMOLOGIC ACCESS KEY>"
 environment = "<SUMOLOGIC DEPLOYMENT>"
@@ -402,17 +395,12 @@ By default, the monitors are configured in a monitor folder called “Host and �
 If you would like the alerts to send email or connection notifications, configure these in the file `host_process_metrics_notifications.auto.tfvars`. For configuration examples, refer to the next section.
 
 
-###### Email and Connection Notification Configuration Examples
+#### Email and Connection Notification Configuration Examples
 
 To** configure notifications, m**odify the file `host_process_metrics_notifications.auto.tfvars` file and fill in the `connection_notifications` and `email_notifications` sections. See the examples for PagerDuty and email notifications below. See this [document](https://help.sumologic.com/Manage/Connections-and-Integrations/Webhook-Connections/Set_Up_Webhook_Connections) for creating payloads with other connection types.
 
 
-
-
-###### Pagerduty Connection Example:
-
-
-```
+```sql title="Pagerduty Connection Example:"
 connection_notifications = [
     {
       connection_type       = "PagerDuty",
@@ -433,12 +421,7 @@ connection_notifications = [
 Replace `<CONNECTION_ID>` with the connection id of the webhook connection. The webhook connection id can be retrieved by calling the [Monitors API](https://api.sumologic.com/docs/#operation/listConnections).
 
 
-
-
-###### Email Notifications Example:
-
-
-```
+```sql title="Email Notifications Example:"
 email_notifications = [
     {
       connection_type       = "Email",
@@ -452,30 +435,27 @@ email_notifications = [
 ```
 
 
-
-###### Install the Alerts
+#### Install the Alerts
 
 1. Navigate to the package directory `terraform-sumologic-sumo-logic-monitor/monitor_packages/host_process_metrics/` and run **terraform init. **This will initialize Terraform and will download the required components.
 2. Run **terraform plan **to view the monitors which will be created/modified by Terraform.
 3. Run **terraform apply**.
 
 
-###### Post Installation
+#### Post Installation
 
-If you haven’t enabled alerts or configured notifications through the Terraform procedure outlined above, we highly recommend enabling alerts of interest and configuring each enabled alert to send notifications to other people or services. This is detailed in Step 4 of [this document](https://help.sumologic.com/Visualizations-and-Alerts/Alerts/Monitors#Add_a_monitor).
+If you haven’t enabled alerts or configured notifications through the Terraform procedure outlined above, we highly recommend enabling alerts of interest and configuring each enabled alert to send notifications to other people or services. This is detailed in Step 4 of [this document](/docs/alerts/monitors#Add_a_monitor).
 
 
-#### Install the app
+## Install the Host and Process Metrics App
 
 This section demonstrates how to install the Host and Process Metrics App.
 
-Now that you have set up a log and metric collection for the Host and Process Metrics App, you can install the Sumo Logic App for Host and Processes to use the pre-configured searches and [Dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/14Hosts_and_Operating_Systems/Host_and_Process_Metrics/Install_the_Host_and_Process_Metrics_app%2C_Alerts%2C_and_view_the_Dashboards#dashboard-filters-with-template-variables).
+Now that you have set up a log and metric collection for the Host and Process Metrics App, you can install the Sumo Logic App for Host and Processes to use the pre-configured searches and dashboards.
 
 To install the app, do the following:
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
-
-
 
 1. From the **App Catalog**, search for and select the app**.**
 2. Select the version of the service you're using and click **Add to Library**. \

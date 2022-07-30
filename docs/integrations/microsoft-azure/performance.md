@@ -2,7 +2,7 @@
 id: performance
 title: Sumo Logic App for Windows Performance
 sidebar_label: Windows Performance
-description: The Windows Performance App provides insight into your system's operation and events so that you can better manage and maintain your Windows systems. 
+description: The Windows Performance App provides insight into your system's operation and events so that you can better manage and maintain your Windows systems.
 ---
 
 
@@ -21,7 +21,7 @@ This section provides instructions for configuring log collection for the Window
 
 The Windows Performance App assumes events are coming from Windows Performance Sources.
 
-**Also, you need to configure an additional custom query for each Source.** For details, see [Collect Logs for Windows Performance App](https://help.sumologic.com/07Sumo-Logic-Apps/04Microsoft-and-Azure/Windows_Performance/01Collect-Logs-for-the-Windows-Performance-App).
+**Also, you need to configure an additional custom query for each Source.** For details, see [Collect Logs for Windows Performance App](#Collect-Logs-for-the-Windows-Performance-App).
 
 
 ### Configure a Collector and Source
@@ -31,10 +31,10 @@ To collect logs for the Windows Performance App, you will need to configure an I
 
 To collect logs for the Windows Performance App, do the following:
 
-1. Install a collector as described in [Installed Collector](https://help.sumologic.com/03Send-Data/Installed-Collectors).
+1. Install a collector as described in [Installed Collector](/docs/send-data/Installed-Collectors).
 2. Configure a Windows Performance Source, choosing the one appropriate for on your environment:
-    * [Local Windows Performance Monitor Log Source](https://help.sumologic.com/03Send-Data/Sources/01Sources-for-Installed-Collectors/Local-Windows-Performance-Monitor-Log-Source).
-    * [Remote Windows Performance Monitor Log Source](https://help.sumologic.com/03Send-Data/Sources/01Sources-for-Installed-Collectors/Remote-Windows-Performance-Monitor-Log-Source).
+    * [Local Windows Performance Monitor Log Source](/docs/send-data/Sources/sources-installed-collectors/Local-Windows-Performance-Monitor-Log-Source).
+    * [Remote Windows Performance Monitor Log Source](/docs/send-data/Sources/sources-installed-collectors/Remote-Windows-Performance-Monitor-Log-Source).
 
 
 ### Add a Custom Query to the Windows Performance Source
@@ -169,7 +169,7 @@ This page provides instructions for installing the Windows Performance App, alon
 
 ## Installing the Windows Performance App
 
-Now that you have set up collection, install the Windows Performance App to use the preconfigured searches and [Dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/04Microsoft-and-Azure/Windows_Performance/Windows-Performance-App-Dashboards#Dashboards) that provide insight into your data.
+Now that you have set up collection, install the Windows Performance App to use the preconfigured searches and [Dashboards](#Dashboards) that provide insight into your data.
 
 To install the app:
 

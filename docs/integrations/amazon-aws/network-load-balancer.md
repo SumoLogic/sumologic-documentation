@@ -15,8 +15,8 @@ The Sumo Logic App for AWS Network Load Balancer is using metrics to provide ins
 ## Collecting Metrics for AWS Network Load Balancer App
 
 Sumo Logic supports collecting metrics using two source types:
-* Configure an [AWS Kinesis Firehose for Metrics Source](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/AWS_Kinesis_Firehose_for_Metrics_Source) (Recommended); or
-* Configure an [Amazon CloudWatch Source for Metrics](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/Amazon-CloudWatch-Source-for-Metrics)
+* Configure an [AWS Kinesis Firehose for Metrics Source](/docs/send-data/Sources/sources-hosted-collectors/Amazon-Web-Services/aws-kinesis-firehose-metrics-source) (Recommended); or
+* Configure an [Amazon CloudWatch Source for Metrics](/docs/send-data/sources/sources-hosted-collectors/amazon-web-services/amazon-cloudwatch-source-metrics)
 
 
 Namespace for **Amazon Network Load Balancer **Service is **AWS/NetworkELB.**
@@ -58,7 +58,7 @@ Save it
 
 This page has instructions for installing the Sumo Logic App for **AWS Network Load Balancer** and descriptions of each of the app dashboards along with associated use cases.
 
-Now that you have set up a collection for **AWS Network Load Balancer**, install the Sumo Logic App to use the pre-configured [dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/01Amazon_and_AWS/Amazon_SQS/Install-the-Amazon-SQS-App-and-view-the-Dashboards#Dashboards) that provide visibility into your environment for real-time analysis of overall usage.
+Now that you have set up a collection for **AWS Network Load Balancer**, install the Sumo Logic App to use the pre-configured [dashboards](/docs/integrations/amazon-aws/sqs#Dashboards) that provide visibility into your environment for real-time analysis of overall usage.
 
 To install the app:
 

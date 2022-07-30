@@ -50,7 +50,7 @@ For detailed instructions, see [here](https://docs.incapsula.com/Content/managem
 
 
 1. Add a [Sumo Logic Hosted Collector](/docs/send-data/configure-hosted-collector)
-2. Configure [AWS S3 Source](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/AWS-S3-Source).
+2. Configure [AWS S3 Source](/docs/send-data/Sources/sources-hosted-collectors/Amazon-Web-Services/AWS-S3-Source).
 
 
 ### Query Samples
@@ -109,7 +109,7 @@ _sourceCategory="Incapsula"
 
 ## Installing the Imperva - Incapsula Web Application Firewall App
 
-Now that you have set up collection for Imperva Incapsula - Web Application Firewall, install the Sumo Logic App to use the pre-configured searches and [dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/22Security_and_Threat_Detection/Imperva_-_Incapsula_Web_Application_Firewall/Install-the-Incapsula-App-and-view-the-Dashboards#Dashboards) that provide visibility into your environment for real-time analysis of overall usage.
+Now that you have set up collection for Imperva Incapsula - Web Application Firewall, install the Sumo Logic App to use the pre-configured searches and [dashboards](#Dashboards) that provide visibility into your environment for real-time analysis of overall usage.
 
 To install the app:
 

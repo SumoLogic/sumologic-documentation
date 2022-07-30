@@ -49,7 +49,7 @@ Sumo Logic supports the collection of logs and metrics data from IIS server in s
 
 <img src={useBaseUrl('img/integrations/web-servers/IIS-flow.png')} alt="Collect Internet Information Services (IIS) Logs and Metrics for Standalone environments" />
 
-Sumo Logic uses the Telegraf operator for IIS metric collection and the [Installed Collector](https://help.sumologic.com/03Send-Data/Installed-Collectors/01About-Installed-Collectors) for collecting IIS logs. The diagram below illustrates the components of the IIS collection in a standalone environment. Telegraf uses the [Windows Performance Counters Input Plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/sqlserver) to obtain IIS metrics and the Sumo Logic output plugin to send the metrics to Sumo Logic. Logs from IIS Server are collected by a [Local File Source](https://help.sumologic.com/03Send-Data/Sources/01Sources-for-Installed-Collectors/Local-File-Source).
+Sumo Logic uses the Telegraf operator for IIS metric collection and the [Installed Collector](/docs/send-data/installed-collectors/about-installed-collectors) for collecting IIS logs. The diagram below illustrates the components of the IIS collection in a standalone environment. Telegraf uses the [Windows Performance Counters Input Plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/sqlserver) to obtain IIS metrics and the Sumo Logic output plugin to send the metrics to Sumo Logic. Logs from IIS Server are collected by a [Local File Source](/docs/send-data/Sources/sources-installed-collectors/Local-File-Source).
 
 
 #### Configure Logs Collection
@@ -108,7 +108,7 @@ For more information about IIS log format and log configuration refer [link](htt
 HTTP Error Log files are generated as local files. The default HTTP Error log file location is: `C:\Windows\System32\LogFiles\HTTPERR`
 1. **Configure an Installed Collector.**
 
-If you have not already done so, install and configure an installed collector for Windows by [following the documentation](https://help.sumologic.com/03Send-Data/Installed-Collectors/03Install-a-Collector-on-Windows).
+If you have not already done so, install and configure an installed collector for Windows by [following the documentation](/docs/send-data/installed-collectors/install-collector-windows).
 
 1. **Configure Sources.**
 
@@ -119,13 +119,13 @@ This section demonstrates how to configure sources for the following log types:
 * IIS Performance (Perfmon) Logs
 * **Configure Source for IIS Access Logs**
 
-This section demonstrates how to configure a Local File Source for IIS Access Logs, for use with an [Installed Collector](https://help.sumologic.com/07Sumo-Logic-Apps/04Microsoft-and-Azure/IIS_10_(Legacy)/Collect_Logs_for_the_IIS_10_(Legacy)_App#Configure_a_Collector). You may configure a [Remote File Source](https://help.sumologic.com/03Send-Data/Sources/01Sources-for-Installed-Collectors/Remote-File-Source), but the configuration is more complex.
+This section demonstrates how to configure a Local File Source for IIS Access Logs, for use with an [Installed Collector](/docs/integrations/microsoft-azure/iis-10-legacy#Configure-a-Collector). You may configure a [Remote File Source](/docs/send-data/Sources/sources-installed-collectors/Remote-File-Source), but the configuration is more complex.
 
 Sumo Logic recommends using a Local File Source whenever possible.
 
 **To configure a local file source for IIS Access Logs, do the following:**
 
-1. Configure a [Local File Source](https://help.sumologic.com/03Send-Data/Sources/01Sources-for-Installed-Collectors/Local-File-Source).
+1. Configure a [Local File Source](/docs/send-data/Sources/sources-installed-collectors/Local-File-Source).
 2. Specify Local File Source Fields as follows:
     1. **Name**: Required (for example, "IIS")
     2. **Description**. (Optional)
@@ -152,12 +152,12 @@ webserver_farm = <Your_IISserver_farm_Name>`. Enter **Default** if you do not ha
 After a few minutes, your new Source should be propagated down to the Collector and will begin submitting your IIS log files to the Sumo Logic service.
 * Configure Source for HTTP Error Logs
 
-This section demonstrates how to configure a Local File Source for HTTP Error Logs, for use with an [Installed Collector](https://help.sumologic.com/07Sumo-Logic-Apps/04Microsoft-and-Azure/IIS_10_(Legacy)/Collect_Logs_for_the_IIS_10_(Legacy)_App#Configure_a_Collector).
+This section demonstrates how to configure a Local File Source for HTTP Error Logs, for use with an [Installed Collector](/docs/integrations/microsoft-azure/iis-10-legacy#Configure-a-Collector).
 
 
 **To configure a local file source for HTTP Error Logs, do the following:**
 
-1. Configure a [Local File Source](https://help.sumologic.com/03Send-Data/Sources/01Sources-for-Installed-Collectors/Local-File-Source).
+1. Configure a [Local File Source](/docs/send-data/Sources/sources-installed-collectors/Local-File-Source).
 2. Specify the Local File Source Fields as follows:
     1. **Name**: Required (for example, "HTTP Error Logs")
     2. **Description**. (Optional)
@@ -184,7 +184,7 @@ webserver_farm = <Your_IISserver_farm_Name>`. Enter **Default** if you do not ha
 After a few minutes, your new Source should be propagated down to the Collector and will begin submitting your IIS HTTP Error log files to the Sumo Logic service.
 * Configure Source for IIS Performance (Perfmon) Logs
 
-This section demonstrates how to configure a Windows Performance Source, for use with an [Installed Collector](https://help.sumologic.com/07Sumo-Logic-Apps/04Microsoft-and-Azure/IIS_10_(Legacy)/Collect_Logs_for_the_IIS_10_(Legacy)_App#Configure_a_Collector).
+This section demonstrates how to configure a Windows Performance Source, for use with an [Installed Collector](/docs/integrations/microsoft-azure/iis-10-legacy#Configure-a-Collector).
 
 
 Sumo Logic recommends using a Local Windows Performance source whenever possible.
@@ -222,7 +222,7 @@ webserver_farm = <Your_IISserver_farm_Name>`. Enter **Default** if you do not ha
 
 ##### Set up a Sumo Logic HTTP Source
 
-1. **Configure a Hosted Collector for Metrics.** To create a new Sumo Logic hosted collector, perform the steps in the [Create a Hosted Collector](https://help.sumologic.com/03Send-Data/Hosted-Collectors#Create_a_Hosted_Collector) documentation.
+1. **Configure a Hosted Collector for Metrics.** To create a new Sumo Logic hosted collector, perform the steps in the [Create a Hosted Collector](/docs/send-data/Hosted-Collectors#Create_a_Hosted_Collector) documentation.
 2. **Configure an HTTP Logs & Metrics source**:
     1. On the created Hosted Collector on the Collection Management screen, select **Add Source**.
     2. Select **HTTP Logs & Metrics_._**
@@ -470,7 +470,7 @@ Custom filter examples:
 5. Click **Add.**<br/><img src={useBaseUrl('img/integrations/web-servers/IIS-add.png')} alt="Add Monitor" />
 6. Click Import and then copy-paste the above JSON to import monitors.
 
-The monitors are disabled by default. Once you have installed the alerts using this method, navigate to the IIS folder under **Monitors** to configure them. See [this](/docs/alerts/monitors/index.md) document to enable monitors to send notifications to teams or connections. See the instructions detailed in Step 4 of this [document](https://help.sumologic.com/Visualizations-and-Alerts/Alerts/Monitors#Add_a_monitor).
+The monitors are disabled by default. Once you have installed the alerts using this method, navigate to the IIS folder under **Monitors** to configure them. See [this](/docs/alerts/monitors/index.md) document to enable monitors to send notifications to teams or connections. See the instructions detailed in Step 4 of this [document](/docs/alerts/monitors#Add_a_monitor).
 
 
 ### Method 2: Using a Terraform script
@@ -548,7 +548,7 @@ email_notifications = [
     1. Navigate to the package directory terraform-sumologic-sumo-logic-monitor/monitor_packages/**IIS**/ and run **terraform init. **This will initialize Terraform and will download the required components.
     2. Run **terraform plan **to view the monitors which will be created/modified by Terraform.
     3. Run **terraform apply**.
-2. **Post Installation**. If you haven’t enabled alerts and/or configured notifications through the Terraform procedure outlined above, we highly recommend enabling alerts of interest and configuring each enabled alert to send notifications to other users or services. This is detailed in Step 4 of [this document](https://help.sumologic.com/Visualizations-and-Alerts/Alerts/Monitors#Add_a_monitor).
+2. **Post Installation**. If you haven’t enabled alerts and/or configured notifications through the Terraform procedure outlined above, we highly recommend enabling alerts of interest and configuring each enabled alert to send notifications to other users or services. This is detailed in Step 4 of [this document](/docs/alerts/monitors#Add_a_monitor).
 
 
 There are limits to how many alerts can be enabled - see the [Alerts FAQ](/docs/alerts/monitors/monitor-faq.md).

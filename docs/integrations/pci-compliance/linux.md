@@ -16,16 +16,16 @@ The PCI Compliance for Linux App works with your existing Linux logs to identify
 
 To collect Linux logs, you will need:
 
-* An [Installed Collector](https://help.sumologic.com/03Send-Data/Installed-Collectors). Choose the one right for your host environment.
-* A Linux [Source](https://help.sumologic.com/03Send-Data/Sources/01Sources-for-Installed-Collectors), depending on your environment.
-    * [Local File Source](https://help.sumologic.com/03Send-Data/Sources/01Sources-for-Installed-Collectors/Local-File-Source)
-    * [Remote File Source](https://help.sumologic.com/03Send-Data/Sources/01Sources-for-Installed-Collectors/Remote-File-Source)
-    * [Syslog Source](https://help.sumologic.com/03Send-Data/Sources/01Sources-for-Installed-Collectors/Syslog-Source)
+* An [Installed Collector](/docs/send-data/Installed-Collectors). Choose the one right for your host environment.
+* A Linux [Source](/docs/send-data/Sources/sources-installed-collectors), depending on your environment.
+    * [Local File Source](/docs/send-data/Sources/sources-installed-collectors/Local-File-Source)
+    * [Remote File Source](/docs/send-data/Sources/sources-installed-collectors/Remote-File-Source)
+    * [Syslog Source](/docs/send-data/Sources/sources-installed-collectors/Syslog-Source)
 
 
 ## Installing the PCI Compliance for Linux App
 
-Now that you have set up collection, install the Sumo Logic App for PCI Compliance for Linux to use the preconfigured searches and [Dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/16PCI_Compliance/PCI_Compliance_for_Linux/03PCI-Compliance-for-Linux-Dashboards#Dashboards) that provide insight into your data.
+Now that you have set up collection, install the Sumo Logic App for PCI Compliance for Linux to use the preconfigured searches and [Dashboards](#Dashboards) that provide insight into your data.
 
 To install the app:
 

@@ -74,7 +74,7 @@ The Sumo Logic App for AWS EC2 (CloudWatch Metrics) allows you to collect your E
 
 ### Collect Amazon CloudWatch Metrics
 
-To collect Amazon CloudWatch Metrics, see [Amazon CloudWatch Source For Metrics.](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/Amazon-CloudWatch-Source-for-Metrics)
+To collect Amazon CloudWatch Metrics, see [Amazon CloudWatch Source For Metrics.](/docs/send-data/sources/sources-hosted-collectors/amazon-web-services/amazon-cloudwatch-source-metrics)
 
 AWS Namespace tag to filter in source for Lambda will be - **AWS/EC2**
 
@@ -170,7 +170,7 @@ Enter a parse expression to create an “account” field that maps to the alias
 
 ## Installing the AWS EC2 App
 
-Now that you have set up collection for AWS EC2 metrics install the Sumo Logic App to use the pre-configured searches and [dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/01Amazon_and_AWS/AWS_Classic_Load_Balancer/Install-the-AWS-Classic-Load-Balancer-App-and-view-the-Dashboards#Dashboards) that provide visibility into your environment for real-time analysis of overall usage.
+Now that you have set up collection for AWS EC2 metrics install the Sumo Logic App to use the pre-configured searches and [dashboards](#Dashboards) that provide visibility into your environment for real-time analysis of overall usage.
 
 To install the app:
 

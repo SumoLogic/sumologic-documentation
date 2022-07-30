@@ -75,8 +75,8 @@ Go to the function and click the **Logs** tab to view real time logs, as shown i
 
 ### Common Error Messages
 
-* For Event Hub, see  [Event Hub error messages](https://help.sumologic.com/07Sumo-Logic-Apps/04Microsoft-and-Azure/Azure_Integration_using_ARM_-_FAQs/02Event_Hub_FAQs#event-hub-error-messages).
-* For Blob Storage, see [Blob Reader error messages](https://help.sumologic.com/07Sumo-Logic-Apps/04Microsoft-and-Azure/Azure_Integration_using_ARM_-_FAQs/03Blob_Storage_FAQs#blob-reader-error-messages).
+* For Event Hub, see  [Event Hub error messages](#event-hub-error-messages).
+* For Blob Storage, see [Blob Reader error messages](#blob-reader-error-messages).
 
 
 ## Event Hub FAQs
@@ -163,7 +163,7 @@ Operation prices write operation $0.05 per 10000 requests => * 3 million = 15$
 21
 
 
-For detailed information, see the [Troubleshooting log collection](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Azure_Monitoring/Collect_Logs_from_Azure_Monitor#Troubleshooting_log_collection) section of the Collect logs for Azure Monitor page. This includes testing the function using **Sample** [Logs](https://s3.amazonaws.com/appdev-cloudformation-templates/TestPayload.json) & [Metrics](https://s3.amazonaws.com/appdev-cloudformation-templates/metrics_fixtures.json).
+For detailed information, see the [Troubleshooting log collection](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-logs-azure-monitor#Troubleshooting_log_collection) section of the Collect logs for Azure Monitor page. This includes testing the function using **Sample** [Logs](https://s3.amazonaws.com/appdev-cloudformation-templates/TestPayload.json) & [Metrics](https://s3.amazonaws.com/appdev-cloudformation-templates/metrics_fixtures.json).
 
 
 #### Where can I find historic logs for the Azure function?
@@ -200,7 +200,7 @@ Follow the instructions in the Microsoft Azure documentation for [Enabling Appli
 
 1. Under the **Function app edit mode** section, change the edit mode in **Function App Settings**. You can now edit the function.
 2. Enter context.log(“debug statements”)  and save.
-3. Run using sample logs, as described in [Troubleshooting log collection](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Azure_Monitoring/Collect_Logs_from_Azure_Monitor#Troubleshooting_log_collection).
+3. Run using sample logs, as described in [Troubleshooting log collection](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-logs-azure-monitor#Troubleshooting_log_collection).
 
 
 #### How do I deploy the ARM template in Azure Gov cloud?
@@ -240,7 +240,7 @@ FileOffsetMap is a table created in Azure Table Storage that is used for interna
 31
 
 
-For a summary of how various components are stitched together in the pipeline, see the [Monitoring data flow](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Azure_Blob_Storage#Monitoring_data_flow) section of the Azure Blog Storage page.
+For a summary of how various components are stitched together in the pipeline, see the [Monitoring data flow](/docs/send-data/collect-from-other-data-sources/azure-blob-storage#Monitoring_data_flow) section of the Azure Blog Storage page.
 
 
 #### How do I scale the function?
@@ -272,7 +272,7 @@ as nsg_name | concat('azure_logs/", nsg_name) as _sourceCategory
 ```
 
 
-Another approach is to modify the function to send source category in headers. For more information, see [How do I route logs to different source categories based on log content?”](https://help.sumologic.com/07Sumo-Logic-Apps/04Microsoft-and-Azure/Azure_Integration_using_ARM_-_FAQs/01General_FAQs#how-do-i%C2%A0route-logs-to-different-source-categories-based-on-log)
+Another approach is to modify the function to send source category in headers. For more information, see [How do I route logs to different source categories based on log content?”](#how-do-i-route-logs-to-different-source-categories-based-on-log)
 
 
 #### How do I filter events by container name?
@@ -309,7 +309,7 @@ Solution: Increase the maxBatchSize in BlobTaskProducer's host.json This will fe
 Error: HTDECK-JOBCOSTING-API__BE93-2019-05-08-14-e5260b.log"": [48255]} Exception while executing function: Functions.BlobTaskProducer Microsoft.Azure.WebJobs.Host. FunctionInvocationException : Exception while executing function: Functions.BlobTaskProducer ---> System.Exception : StorageError: The table specified does not exist. RequestId:3914a31a-e002-000e-1dad-05a995000000 Time:2019-05-08T14:48:29.9940095Z at async Microsoft.Azure.WebJobs.Script.Description.NodeFunctionInvoker.InvokeCore(Object[] parameters,FunctionInvocationContext context) at C:\projects\azure-webjobs-sdk-script\src\WebJobs.Script\Description\Node\NodeFunctionInvoker.cs : 196
 ```
 
-Solution: This error comes when FileOffsetMap does not exists. Check and confirm whether you have created the following table in [Step 3: Configure Azure resources using ARM template](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Azure_Blob_Storage/Collect_Logs_from_Azure_Blob_Storage#step-3-configure-azure-resources-using-arm-template), substep 11.
+Solution: This error comes when FileOffsetMap does not exists. Check and confirm whether you have created the following table in [Step 3: Configure Azure resources using ARM template](/docs/send-data/collect-from-other-data-sources/azure-blob-storage/collect-logs-azure-blob-storage#step-3-configure-azure-resources-using-arm-template), substep 11.
 
 
 Error:  You'll see a Deployment Failed error when roleAssignment is not unique but we are already using resourcegroup.id in a name that is unique. The error details are:  

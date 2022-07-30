@@ -11,7 +11,7 @@ AWS WAF (web application firewall) data is a rich source of security findings, a
 
 ## Collect Logs
 
-To configure Collection for AWS WAF App, follow the instructions from https://help.sumologic.com/07Sumo-Logic-Apps/01Amazon_and_AWS/AWS_WAF/Collect_Logs_for_the_AWS_WAF_App
+To configure Collection for AWS WAF App, follow the instructions from /docs/integrations/amazon-aws/AWS_WAF/Collect_Logs_for_the_AWS_WAF_App
 
 ## Install the AWS WAF Security Analytics App
 

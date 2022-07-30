@@ -87,7 +87,7 @@ In a Kubernetes environment, we use our Sumo Logic Kubernetes collection. You ca
 
 1. Before you can configure Sumo Logic to ingest metrics, you must enable the Prometheus metrics in the Nginx Ingress controller and annotate the Nginx Ingress pods, so Prometheus can find the Nginx Ingress metrics.
 * For instructions on Nginx Open Source, refer to the following documentation [https://docs.nginx.com/nginx-ingress-controller/logging-and-monitoring/prometheus/](https://docs.nginx.com/nginx-ingress-controller/logging-and-monitoring/prometheus/).
-1. Ensure you have deployed version 1.3 or higher of the Sumologic-Kubernetes-Collection, to send the logs and metrics to Sumologic. For more information on deploying Sumologic-Kubernetes-Collection,[ visit](https://help.sumologic.com/07Sumo-Logic-Apps/10Containers_and_Orchestration/Kubernetes/Collect_Logs_and_Metrics_for_the_Kubernetes_App) here. Once deployed, logs will automatically be picked up and sent by default. Prometheus will scrape the Nginx Ingress pods, based on the annotations set in Step 1, for the metrics. Logs and Metrics will automatically be sent to the respective fluentD stateful sets which consistently tag your logs and metrics, then forward them to your Sumo Logic org.
+1. Ensure you have deployed version 1.3 or higher of the Sumologic-Kubernetes-Collection, to send the logs and metrics to Sumologic. For more information on deploying Sumologic-Kubernetes-Collection,[ visit](/docs/integrations/containers-orchestration/Kubernetes#Collect_Logs_and_Metrics_for_the_Kubernetes_App) here. Once deployed, logs will automatically be picked up and sent by default. Prometheus will scrape the Nginx Ingress pods, based on the annotations set in Step 1, for the metrics. Logs and Metrics will automatically be sent to the respective fluentD stateful sets which consistently tag your logs and metrics, then forward them to your Sumo Logic org.
 2. Apply following labels to the Nginx Ingress pod.
 
 Labels:
@@ -146,7 +146,7 @@ if (!isEmpty(pod_labels_environment), pod_labels_environment, "") as environment
 
 ## Installing the Nginx Ingress App, Alerts, and View the Dashboards
 
-This page provides instructions for installing the Nginx Ingress App, as well as examples of each of the App dashboards. These instructions assume you have already set up the collection as described in the [Collect Logs and Metrics for the Nginx](https://help.sumologic.com/07Sumo-Logic-Apps/24Web_Servers/Nginx_(Legacy)) Ingress App page.
+This page provides instructions for installing the Nginx Ingress App, as well as examples of each of the App dashboards. These instructions assume you have already set up the collection as described in the [Collect Logs and Metrics for the Nginx](/docs/integrations/web-servers/Nginx-Legacy) Ingress App page.
 
 
 ## Installing Nginx Ingress Monitors
@@ -176,7 +176,7 @@ Custom filter examples:
 
 
 14
-The monitors are disabled by default. Once you have installed the alerts using this method, navigate to the Nginx folder under **Monitors** to configure them. See [this](/docs/alerts/monitors/index.md) document to enable monitors to send notifications to teams or connections. See the instructions detailed in Step 4 of this [document](https://help.sumologic.com/Visualizations-and-Alerts/Alerts/Monitors#Add_a_monitor).
+The monitors are disabled by default. Once you have installed the alerts using this method, navigate to the Nginx folder under **Monitors** to configure them. See [this](/docs/alerts/monitors/index.md) document to enable monitors to send notifications to teams or connections. See the instructions detailed in Step 4 of this [document](/docs/alerts/monitors#Add_a_monitor).
 
 
 ### Method 2: Using a Terraform script
@@ -256,7 +256,7 @@ email_notifications = [
     1. Navigate to the package directory terraform-sumologic-sumo-logic-monitor/monitor_packages/**Nginx Ingress**/ and run **terraform init. **This will initialize Terraform and will download the required components.
     2. Run **terraform plan **to view the monitors which will be created/modified by Terraform.
     3. Run **terraform apply**.
-2. **Post Installation** If you haven’t enabled alerts and/or configured notifications through the Terraform procedure outlined above, we highly recommend enabling alerts of interest and configuring each enabled alert to send notifications to other users or services. This is detailed in Step 4 of [this document](https://help.sumologic.com/Visualizations-and-Alerts/Alerts/Monitors#Add_a_monitor).
+2. **Post Installation** If you haven’t enabled alerts and/or configured notifications through the Terraform procedure outlined above, we highly recommend enabling alerts of interest and configuring each enabled alert to send notifications to other users or services. This is detailed in Step 4 of [this document](/docs/alerts/monitors#Add_a_monitor).
 
 
 ## Installing the Nginx Ingress App
@@ -354,7 +354,7 @@ You can use schedule searches to send alerts to yourself whenever there is an ou
 The **Nginx Ingress - Threat Intel** dashboard provides an at-a-glance view of threats to Nginx servers on your network. Dashboard panels display the threat count over a selected time period, geographic locations where threats occurred, source breakdown, actors responsible for threats, severity, and a correlation of IP addresses, method, and status code of threats.
 
 Use this dashboard to:
-* To gain insights and understand threats in incoming traffic and discover potential IOCs. Incoming traffic requests are analyzed using the [Sumo - Crowdstrikes](https://help.sumologic.com/07Sumo-Logic-Apps/22Security_and_Threat_Detection/Threat_Intel_Quick_Analysis/03_Threat-Intel-FAQ) threat feed.
+* To gain insights and understand threats in incoming traffic and discover potential IOCs. Incoming traffic requests are analyzed using the [Sumo - Crowdstrikes](/docs/integrations/security-threat-detection/threat-intel-quick-analysis#03_Threat-Intel-FAQ) threat feed.
 
 <img src={useBaseUrl('img/integrations/web-servers/Nginx-Ingress-Threat-Intel.png')} alt="Nginx-Ingress-Threat-Intel" />
 

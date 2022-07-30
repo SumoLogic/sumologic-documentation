@@ -64,7 +64,7 @@ The AKS - Control Plane App uses Azure managed master node logs in your Azure Ku
 
 
 
-The Sumo Logic [Kubernetes App](https://help.sumologic.com/07Sumo-Logic-Apps/10Containers_and_Orchestration/Kubernetes) works in conjunction with the AKS - Control Plane App and allows you to monitor worker node logs, as well as metrics for the Azure monitor and worker nodes.
+The Sumo Logic [Kubernetes App](/docs/integrations/containers-orchestration/Kubernetes) works in conjunction with the AKS - Control Plane App and allows you to monitor worker node logs, as well as metrics for the Azure monitor and worker nodes.
 
 
 ### Collection process
@@ -74,7 +74,7 @@ Configuring logs and metrics for the AKS - Control Plane App is a two step proce
 * Setting up collection and installing the Sumo Logic Kubernetes App.
 * Configuring Azure monitor and enabling the master node logs in AKS.
 
-The Sumo Logic[ Kubernetes App](https://help.sumologic.com/07Sumo-Logic-Apps/10Containers_and_Orchestration/Kubernetes) allows you to  monitor worker node logs, as well as metrics for the Azure monitor and worker nodes.
+The Sumo Logic[ Kubernetes App](/docs/integrations/containers-orchestration/Kubernetes) allows you to  monitor worker node logs, as well as metrics for the Azure monitor and worker nodes.
 
 
 #### Step 1. Setup and Install the Sumo Logic Kubernetes App  
@@ -82,7 +82,7 @@ The Sumo Logic[ Kubernetes App](https://help.sumologic.com/07Sumo-Logic-Apps/10C
 
 The Sumo Logic Kubernetes App provides the services for managing and monitoring Kubernetes worker nodes. You must set up collection and  install the Kubernetes App before configuring collection for the AKS - Control Plane App. You will configure log and metric collection during this process.
 
-**To set up and install the Kubernetes App**, follow the instructions in [this document](https://help.sumologic.com/07Sumo-Logic-Apps/10Containers_and_Orchestration/Kubernetes).
+**To set up and install the Kubernetes App**, follow the instructions in [this document](/docs/integrations/containers-orchestration/Kubernetes).
 
 
 #### Step 2. Configure Azure Monitor and enable logs in AKS
@@ -95,7 +95,7 @@ This section walks you through the process of configuring a pipeline to send log
 
 **To configure Azure Monitor and enable AKS logs, do the following:**
 
-1. Follow Step 1 and Step 2 on this page: [Collect Logs from Azure Monitor](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Azure_Monitoring/Collect_Logs_from_Azure_Monitor)
+1. Follow Step 1 and Step 2 on this page: [Collect Logs from Azure Monitor](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-logs-azure-monitor)
 2. [Enable the Kubernetes master node logs in Azure Kubernetes Service](https://docs.microsoft.com/en-us/azure/aks/view-master-logs#enable-diagnostics-logs) to send logs to an event hub created in the previous step.
 
 

@@ -84,7 +84,7 @@ As a prerequisite, [Grant Sumo Logic access](/docs/send-data/sources/sources-hos
 
 #### S3 Source for event logs
 
-Follow these steps to set up an S3 Source to collect event logs from your S3 bucket. (For detailed instruction on S3 Source configuration options, see [AWS S3 Source](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/AWS-S3-Source).)
+Follow these steps to set up an S3 Source to collect event logs from your S3 bucket. (For detailed instruction on S3 Source configuration options, see [AWS S3 Source](/docs/send-data/Sources/sources-hosted-collectors/Amazon-Web-Services/AWS-S3-Source).)
 
 
 1. In Sumo Logic select** Manage Data > Collection > Collection**.
@@ -106,7 +106,7 @@ Follow these steps to set up an S3 Source to collect event logs from your S3 buc
 
 #### S3 Source for alert logs
 
-Follow the steps in [S3 Source for event logs](https://help.sumologic.com/07Sumo-Logic-Apps/22Security_and_Threat_Detection/Carbon_Black_Cloud/Collect_Logs_for_Carbon_Black_Cloud#S3_Source_for_event_logs) above to create another S3 source that will collect alert logs from the S3 bucket. When creating the source, assign it its own source category value, and set the **Path Expression** to:
+Follow the steps in [S3 Source for event logs](#S3-Source-for-event-logs) above to create another S3 source that will collect alert logs from the S3 bucket. When creating the source, assign it its own source category value, and set the **Path Expression** to:
 
 ```
 alerts/*

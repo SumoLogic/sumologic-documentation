@@ -62,7 +62,7 @@ When you configure the HTTP Source, make sure to save the HTTP Source Address UR
 1. Do one of the following:
 * If you already have a Sumo Logic Hosted Collector, identify the one you want to use.
 * Create a new Hosted Collector as described in this document: [Configure a Hosted Collector](/docs/send-data/configure-hosted-collector).
-1. Add an  HTTP source for logs, as described in this document: [HTTP Metrics and Logs Source](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/HTTP-Source).
+1. Add an  HTTP source for logs, as described in this document: [HTTP Metrics and Logs Source](/docs/send-data/sources/sources-hosted-collectors/http-logs-metrics-source).
 
 
 ### Step 2: Configure Webhooks for events collection
@@ -85,7 +85,7 @@ To configure Webhooks for Zoom events collection, do the following:
 1. Click **Continue**, and then enable** Event Subscriptions.**
 2. Click **Add new event subscription **and provide the following information:
 * **Subscription Name **(for example, Sumo Logic)
-* **Event notification endpoint URL.** Provide the Sumo logic endpoint URL from this [step](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/Zoom/Collect_Logs_for_the_Zoom_App#Add_a_Hosted_Collector_and_HTTP_Source).
+* **Event notification endpoint URL.** Provide the Sumo logic endpoint URL from this [step](#Add-a-Hosted-Collector-and-HTTP-Source).
 1. Click **Add events** and subscribe to all the Webhook Events.
 2. Click Save and then click Continue.
 3. **Activate** your newly created Webhook Only App.

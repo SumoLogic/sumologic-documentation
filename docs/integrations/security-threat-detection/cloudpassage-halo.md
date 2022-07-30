@@ -26,7 +26,7 @@ To collect CloudPassage Halo logs for Sumo Logic you need to configure:
 
 ### Sumo Logic Collector Configuration
 
-If this is the first time you are creating an HTTPS collector, review how to create an [HTTP source](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/HTTP-Source). Then, follow the instructions on how to [create a collector](https://help.sumologic.com/07Sumo-Logic-Apps/22Security_and_Threat_Detection/CloudPassage_Halo/01Collect-Logs-for-the-CloudPassage-Halo-App#Create_the_collector).
+If this is the first time you are creating an HTTPS collector, review how to create an [HTTP source](/docs/send-data/sources/sources-hosted-collectors/http-logs-metrics-source). Then, follow the instructions on how to [create a collector](#Create-the-collector).
 
 
 #### Create the collector
@@ -175,7 +175,7 @@ Sample policy: Use a proper permission level.  Below is a sample.
 
 ## Installing the CloudPassage Halo App
 
-Now that you have configured CloudPassage Halo, install the Sumo Logic App for CloudPassage Halo to take advantage of the preconfigured searches and [dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/22Security_and_Threat_Detection/CloudPassage_Halo/03CloudPassage-Halo-App-Dashboards#Dashboards) to analyze your data.
+Now that you have configured CloudPassage Halo, install the Sumo Logic App for CloudPassage Halo to take advantage of the preconfigured searches and [dashboards](#Dashboards) to analyze your data.
 
 To install the app:
 

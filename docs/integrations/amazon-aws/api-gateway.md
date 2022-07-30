@@ -24,8 +24,8 @@ The AWS API Gateway app uses the following logs and metrics
 ### Collect Metrics for AWS API Gateway   
 
 Sumo Logic supports collecting metrics using two source types:
-* Configure an [AWS Kinesis Firehose for Metrics Source](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/AWS_Kinesis_Firehose_for_Metrics_Source) (Recommended); or
-* Configure an [Amazon CloudWatch Source for Metrics](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/Amazon-CloudWatch-Source-for-Metrics)
+* Configure an [AWS Kinesis Firehose for Metrics Source](/docs/send-data/Sources/sources-hosted-collectors/Amazon-Web-Services/aws-kinesis-firehose-metrics-source) (Recommended); or
+* Configure an [Amazon CloudWatch Source for Metrics](/docs/send-data/sources/sources-hosted-collectors/amazon-web-services/amazon-cloudwatch-source-metrics)
 
 :::note
 Namespace for **AWS API Gateway** Service is **AWS/ApiGateway**.
@@ -41,14 +41,14 @@ To your Hosted Collector, add an [AWS CloudTrail Source](/docs/send-data/sources
 2. **Description**. Enter an optional description.
 3. **S3 Region**. Select the Amazon Region for your** API Gateway** S3 bucket.
 4. **Bucket Name**. Enter the exact name of your **API Gateway** S3 bucket.
-5.**Path Expression**. Enter the string that matches the S3 objects you'd like to collect. You can use a wildcard (*) in this string. (DO NOT use a leading forward slash. See [Amazon Path Expressions](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/Amazon-Path-Expressions).)
+5.**Path Expression**. Enter the string that matches the S3 objects you'd like to collect. You can use a wildcard (*) in this string. (DO NOT use a leading forward slash. See [Amazon Path Expressions](/docs/send-data/Sources/sources-hosted-collectors/Amazon-Web-Services/Amazon-Path-Expressions).)
 :::note
 The S3 bucket name is not part of the path. Don’t include the bucket name when you are setting the Path Expression.
 :::
 6. **Source Category**. Enter `aws/observability/cloud trail/logs`.
 7. **Fields**. Add an **account** field and assign it a value that is a friendly name/alias to your AWS account from which you are collecting logs. This name will appear in the Sumo Logic Explorer View. Logs can be queried via the “account field”.
-8. **Access Key ID and Secret Access Key**. Enter your Amazon [Access Key ID and Secret Access Key](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSGettingStartedGuide/AWSCredentials.html). Learn how to use Role-based access to AWS [here](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/AWS_Sources)
-9. **Log File Discovery -> Scan Interval**. Use the default of 5 minutes. Alternately, enter the frequency. Sumo Logic will scan your S3 bucket for new data. Learn how to configure **Log File Discovery** [here](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/AWS_Sources).
+8. **Access Key ID and Secret Access Key**. Enter your Amazon [Access Key ID and Secret Access Key](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSGettingStartedGuide/AWSCredentials.html). Learn how to use Role-based access to AWS [here](/docs/send-data/sources/sources-hosted-collectors/amazon-web-services/aws-sources)
+9. **Log File Discovery -> Scan Interval**. Use the default of 5 minutes. Alternately, enter the frequency. Sumo Logic will scan your S3 bucket for new data. Learn how to configure **Log File Discovery** [here](/docs/send-data/sources/sources-hosted-collectors/amazon-web-services/aws-sources).
 10. **Enable Timestamp Parsing**. Select the check box.
 11. **Time Zone**. Select Ignore time zone from the log file and instead use, and select UTC.
 12. **Timestamp Format.** Select Automatically detect the format.
@@ -146,7 +146,7 @@ Namespace=aws/apigateway metric=Latency statistic=Average account=* region=* api
 
 ## Installing the AWS API Gateway App
 
-Now that you have set up a collection for the **AWS API gateway**, install the Sumo Logic App to use the pre-configured [dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/01Amazon_and_AWS/Amazon_SQS/Install-the-Amazon-SQS-App-and-view-the-Dashboards#Dashboards) that provide visibility into your environment for real-time analysis of overall usage.
+Now that you have set up a collection for the **AWS API gateway**, install the Sumo Logic App to use the pre-configured [dashboards](/docs/integrations/amazon-aws/sqs#Dashboards) that provide visibility into your environment for real-time analysis of overall usage.
 
 To install the app:
 
@@ -196,7 +196,7 @@ Use this dashboard to:
 * Monitor all API Gateway-related audit logs available via CloudTrail events
 * Monitor incoming user activity locations for both successful and failed events to ensure the activity matches with expectations
 * Monitor successful and failed API Gateway events, users and user agents / fail activities, and failure reasons
-* Monitor requests coming in from known malicious IP addresses detected via [Sumo Logic Threat Intel](https://help.sumologic.com/07Sumo-Logic-Apps/22Security_and_Threat_Detection/Threat_Intel_Quick_Analysis/03_Threat-Intel-FAQ)
+* Monitor requests coming in from known malicious IP addresses detected via [Sumo Logic Threat Intel](/docs/integrations/security-threat-detection/threat-intel-quick-analysis#03_Threat-Intel-FAQ)
 
 <img src={useBaseUrl('img/integrations/amazon-aws/AWS-API-Gateway-Audit-Events.png')} alt="AWS API Gateway" />
 

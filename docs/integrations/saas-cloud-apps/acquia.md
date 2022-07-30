@@ -31,7 +31,7 @@ Sumo Logic analyzes the following required Acquia data for more efficient monito
 
 This page provides instructions for configuring log collection from Acquia and sending those logs to Sumo Logic for monitoring and analysis in the Acquia App predefined dashboards and searches.
 
-Sumo Logic enables you to collect logs from Acquia, with the ability to configure the log types to be collected. The logs are then forwarded to a Sumo Logic [Cloud Syslog Source](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/Acquia/Collect_logs_for_the_Acquia_App#Configuring_a_cloud_syslog_source).
+Sumo Logic enables you to collect logs from Acquia, with the ability to configure the log types to be collected. The logs are then forwarded to a Sumo Logic [Cloud Syslog Source](#Configuring-a-cloud-syslog-source).
 
 
 ### Step 1: Configure a collector
@@ -45,7 +45,7 @@ This section walks you through the process of creating a new Sumo Logic hosted c
 3. Click **Hosted **Collector.
 4. Provide a **Name** for the Collector.
 5. A **description** is optional.
-6. **Category**. Enter any string to tag the logs collected from this Collector. This Source Category value is stored in a searchable metadata field called `_sourceCategory`. See our [Best Practices: Good Source Category, Bad Source Category](https://help.sumologic.com/03Send-Data/01-Design-Your-Deployment/Best-Practices%3A-Good-Source-Category%2C-Bad-Source-Category).
+6. **Category**. Enter any string to tag the logs collected from this Collector. This Source Category value is stored in a searchable metadata field called `_sourceCategory`. See our [Best Practices: Good Source Category, Bad Source Category](/docs/send-data/design-deployment/best-practices-source-categories).
 7. Click the **+Add Field** link in the **Fields** section to define the [fields](/docs/manage/fields.md) you want to associate, each field needs a key and value.
    * A green circle with a check mark is shown when the field exists in the Fields table schema.
    * An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema it is ignored, known as dropped.
@@ -64,13 +64,13 @@ This task shows you how to conifgure a cloud syslog source for Acquia log collec
 
 #### Before you begin
 
-It's helpful to know the options you'll need to set before starting a procedure. When you're [configuring a cloud syslog source](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/Acquia/Collect_logs_for_the_Acquia_App#Configuring_a_cloud_syslog_source), be sure to specify the following configurations:
+It's helpful to know the options you'll need to set before starting a procedure. When you're [configuring a cloud syslog source](/#Configuring_a_cloud_syslog_source), be sure to specify the following configurations:
 
 **Source**
 
 * **Name**. (Required) A name is required, the Description is optional.
 * **Source Category**. (Required) The Source Category metadata field is a fundamental building block to organize and label Sources. \
-Example: **Acquia**. For more information, see [Best Practices](https://help.sumologic.com/03Send-Data/01-Design-Your-Deployment/Best-Practices%3A-Good-Source-Category%2C-Bad-Source-Category).
+Example: **Acquia**. For more information, see [Best Practices](/docs/send-data/design-deployment/best-practices-source-categories).
 
 **Advanced**
 
@@ -99,7 +99,7 @@ The token is deleted if you delete the source. To change a token, use the **Rege
 
 
 1. In Sumo Logic select **Manage Data > Collection > Collection**.
-2. On the **Collection** page, click **Add Source** next to a Hosted Collector.  See [Set up a Hosted Collector](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/Acquia/Collect_logs_for_the_Acquia_App#s823) for information on adding Hosted Collectors.
+2. On the **Collection** page, click **Add Source** next to a Hosted Collector.  See [Set up a Hosted Collector](#s823) for information on adding Hosted Collectors.
 3. Select **Cloud Syslog**.
 4. Enter a **Name** to display for this source in Sumo. Description is optional.
 5. (Optional) For **Source Host** and **Source Category**, enter any string to tag the output collected from this source. (Category metadata is stored in a searchable field called **_sourceCategory**.)
@@ -114,8 +114,8 @@ The token is deleted if you delete the source. To change a token, use the **Rege
 7. Set any of the following under **Advanced**:
 * **Enable Timestamp Parsing**. This option is selected by default. If it's deselected, no timestamp information is parsed.
 * **Time Zone**. There are two options for Time Zone. You can use the time zone present in your log files, and then choose an option in case time zone information is missing from a log message. Or, you can have Sumo Logic completely disregard any time zone information present in logs by forcing a time zone. It's important to have the proper time zone set, no matter which option you choose. If the time zone of logs can't be determined, Sumo Logic assigns the UTC time zone; if the rest of your logs are from another time zone your search results will be affected.
-* **Timestamp Format**. By default, Sumo will automatically detect the timestamp format of your logs. However, you can manually specify a timestamp format for a source. See [Timestamps, Time Zones, and Time Ranges, and Date Formats](https://help.sumologic.com/03Send-Data/Sources/04Reference-Information-for-Sources/Timestamps%2C-Time-Zones%2C-Time-Ranges%2C-and-Date-Formats).
-1. [Create any Processing Rules](https://help.sumologic.com/Manage/Collection/Processing-Rules/Create-a-Processing-Rule) you'd like for the new source.
+* **Timestamp Format**. By default, Sumo will automatically detect the timestamp format of your logs. However, you can manually specify a timestamp format for a source. See [Timestamps, Time Zones, and Time Ranges, and Date Formats](/docs/send-data/sources/reference-information-sources/time-reference).
+1. [Create any Processing Rules](/docs/manage/collection/processing-rules/create-processing-rule.md) you'd like for the new source.
 2. Click **Save**. \
 The token information is displayed in a read-only dialog box, shown below.
 
@@ -265,7 +265,7 @@ request_id
 
 ## Installing the Acquia App
 
-This page provides instructions on how to install the Acquia App, as well as examples of each of the dashboards. The App pre-configured searches and [Dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/22Security_and_Threat_Detection/Cisco_ASA/Cisco-ASA-App-Dashboards#Dashboards) provide easy-to-access visual insights into your data.
+This page provides instructions on how to install the Acquia App, as well as examples of each of the dashboards. The App pre-configured searches and [Dashboards](#Dashboards) provide easy-to-access visual insights into your data.
 
 To install the app, do the following:
 

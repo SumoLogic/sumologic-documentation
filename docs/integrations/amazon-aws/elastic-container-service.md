@@ -295,7 +295,7 @@ This section has instructions for collecting logs and metrics for the Amazon ECS
 
 ### Collect Metrics for Amazon ECS
 
-In this step, you set up an [Amazon CloudWatch Source for Metrics](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/Amazon-CloudWatch-Source-for-Metrics).
+In this step, you set up an [Amazon CloudWatch Source for Metrics](/docs/send-data/sources/sources-hosted-collectors/amazon-web-services/amazon-cloudwatch-source-metrics).
 
 1. Grant permission for Sumo Logic to list available metrics and get metric data points. For instructions, see [Grant Access to an AWS Product](/docs/send-data/sources/sources-hosted-collectors/amazon-web-services/grant-access-aws-product.md).
 2. Configure a [Hosted Collector](/docs/send-data/configure-hosted-collector).
@@ -329,7 +329,7 @@ In this step, you set up an [AWS CloudTrail Source](/docs/send-data/sources/sour
 8. **Description.** Enter an optional description.
 9. **S3 Region.** Select the Amazon Region for your ECS S3 bucket.
 10. **Bucket Name.** Enter the exact name of your ECS S3 bucket.
-11. **Path Expression.** Enter the string that matches the S3 objects you'd like to collect. You can use a wildcard (*) in this string. (DO NOT use a leading forward slash. See [Amazon Path Expressions](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/Amazon-Path-Expressions).) The S3 bucket name is not part of the path. Don’t include the bucket name when you are setting the Path Expression.
+11. **Path Expression.** Enter the string that matches the S3 objects you'd like to collect. You can use a wildcard (*) in this string. (DO NOT use a leading forward slash. See [Amazon Path Expressions](/docs/send-data/Sources/sources-hosted-collectors/Amazon-Web-Services/Amazon-Path-Expressions).) The S3 bucket name is not part of the path. Don’t include the bucket name when you are setting the Path Expression.
     * **Source Category.** Enter **ecs_event**.
     * **AWS Access**. There are two options for AWS access:
         * Role-based access. This is the preferred method. You can use this option if you granted access to Amazon ECS as described in [Grant Access to an AWS Product](/docs/send-data/sources/sources-hosted-collectors/amazon-web-services/grant-access-aws-product.md).  For Role-based access enter the Role ARN that was provided by AWS after creating the role.  \

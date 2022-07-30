@@ -39,7 +39,7 @@ To send Cloudflare logs to Sumo Logic, you must first configure Cloudflare Logs 
 To set up a Hosted Collector and specify a Sumo Logic Source, do the following:
 
 1. Follow the instructions for [Configuring a Hosted Collector in Sumo Logic to start collecting logs](/docs/send-data/configure-hosted-collector).
-2. Follow the instructions for [Configure an Amazon S3 Source in Sumo Logic](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/AWS-S3-Source). When setting up an S3 Source, it's important to specify the correct timestamp field. Follow the next steps to do so.
+2. Follow the instructions for [Configure an Amazon S3 Source in Sumo Logic](/docs/send-data/Sources/sources-hosted-collectors/Amazon-Web-Services/AWS-S3-Source). When setting up an S3 Source, it's important to specify the correct timestamp field. Follow the next steps to do so.
 3. Click **Advanced**, if the settings are not already shown.
 4. For Timestamp Format, select **Specify a format** and enter the following: \
 Format: **yyyy-MM-dd'T'HH:mm:ss'Z' \
@@ -97,7 +97,7 @@ This application has been developed and is supported by Cloudflare. In case of t
 
 This page has instructions for installing the Cloudflare App for Sumo and descriptions of each of the dashboards.
 
-Now that you have set up log and metric collection, you can install the Cloudflare App, and use its pre-configured searches and [dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/01Amazon_and_AWS/Amazon_RDS/Amazon-RDS-Metrics-App-Dashboards#Dashboards).
+Now that you have set up log and metric collection, you can install the Cloudflare App, and use its pre-configured searches and [dashboards](#Dashboards).
 
 To install the app, do the following:
 

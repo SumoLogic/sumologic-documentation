@@ -40,12 +40,12 @@ Use the Auth0 Management Portal to configure the extension. For more information
 
 ### Configure a Collector
 
-Use the [Sumo Logic Setup Wizard](https://help.sumologic.com/03Send-Data/Setup-Wizard) to configure a **Custom App**.
+Use the in-product setup wizard in the Sumo Logic UI to configure a **Custom App**.
 
 
 ### Configure a Source
 
-Source type is [HTTP](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/HTTP-Source).
+Source type is [HTTP](/docs/send-data/sources/sources-hosted-collectors/http-logs-metrics-source).
 
 * **Name**: Required
 * **Category**:
@@ -139,7 +139,7 @@ _collector="productionappauth0Logs_Collector"
 
 ## Installing the Auth0 App
 
-Now that you have set up collection for Auth0, install the Sumo Logic App for Auth0 to use the preconfigured searches and [Dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/20SAML/Auth0/Auth0-App-Dashboards#Dashboards) that provide insight into your data.
+Now that you have set up collection for Auth0, install the Sumo Logic App for Auth0 to use the preconfigured searches and [Dashboards](#Dashboards) that provide insight into your data.
 
 To install the app:
 

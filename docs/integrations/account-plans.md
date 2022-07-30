@@ -25,7 +25,7 @@ Use this page to determine which apps are available based on your account plan.
    </td>
   </tr>
   <tr>
-   <td><a href="https://help.sumologic.com/07Sumo-Logic-Apps/01Amazon_and_AWS/Global_Intelligence_for_AWS_CloudTrail">Global Intelligence for AWS CloudTrail SecOps</a></td>
+   <td><a href="/docs/integrations/amazon-aws/global-intelligence-cloudtrail-secops">Global Intelligence for AWS CloudTrail SecOps</a></td>
    <td>  &#10003; </td>
    <td>   </td>
    <td>  </td>
@@ -33,7 +33,7 @@ Use this page to determine which apps are available based on your account plan.
    <td> &#10003;</td>
   </tr>
   <tr>
-   <td><a href="https://help.sumologic.com/07Sumo-Logic-Apps/01Amazon_and_AWS/Global_Intelligence_for_Amazon_GuardDuty">Global Intelligence for Amazon GuardDuty</a></td>
+   <td><a href="/docs/integrations/amazon-aws/global-intelligence-guardduty">Global Intelligence for Amazon GuardDuty</a></td>
    <td>&#10003;</td>
    <td> </td>
    <td>   </td>
@@ -41,7 +41,7 @@ Use this page to determine which apps are available based on your account plan.
    <td>&#10003; </td>
   </tr>
   <tr>
-   <td><a href="https://help.sumologic.com/07Sumo-Logic-Apps/01Amazon_and_AWS/Global_Intelligence_for_AWS_CloudTrail_DevOps">Global Intelligence for AWS CloudTrail DevOps</a></td>
+   <td><a href="/docs/integrations/amazon-aws/global-intelligence-cloudtrail-devops">Global Intelligence for AWS CloudTrail DevOps</a></td>
    <td>&#10003;</td>
    <td>    </td>
    <td>&#10003;</td>
@@ -49,7 +49,7 @@ Use this page to determine which apps are available based on your account plan.
    <td>&#10003;</td>
   </tr>
   <tr>
-   <td><a href="https://help.sumologic.com/07Sumo-Logic-Apps/26Apps_for_Sumo/Enterprise_Audit_Apps">Enterprise Audit Apps</a></td>
+   <td><a href="/docs/integrations/sumo-apps/Enterprise-Audit">Enterprise Audit Apps</a></td>
    <td> &#10003;</td>
    <td> </td>
    <td>&#10003; </td>
@@ -57,7 +57,7 @@ Use this page to determine which apps are available based on your account plan.
    <td>&#10003;</td>
   </tr>
   <tr>
-   <td><a href="https://help.sumologic.com/07Sumo-Logic-Apps/16PCI_Compliance">PCI Compliance App</a></td>
+   <td><a href="/docs/integrations/pci-compliance">PCI Compliance App</a></td>
    <td>&#10003;</td>
    <td>  </td>
    <td>&#10003;</td>
@@ -65,7 +65,7 @@ Use this page to determine which apps are available based on your account plan.
    <td>&#10003;</td>
   </tr>
   <tr>
-   <td><a href="https://help.sumologic.com/07Sumo-Logic-Apps/26Apps_for_Sumo/Infrequent_Data_Tier">Infrequent Data Tier</a></td>
+   <td><a href="/docs/integrations/sumo-apps/Infrequent-Data-Tier">Infrequent Data Tier</a></td>
    <td> </td>
    <td> </td>
    <td> </td>
@@ -99,25 +99,25 @@ Use this page to determine which apps are available based on your account plan.
    </td>
   </tr>
   <tr>
-   <td><a href="https://help.sumologic.com/07Sumo-Logic-Apps/01Amazon_and_AWS/Global_Intelligence_for_AWS_CloudTrail">Global Intelligence for AWS CloudTrail SecOps</a></td>
+   <td><a href="/docs/integrations/amazon-aws/global-intelligence-cloudtrail-secops">Global Intelligence for AWS CloudTrail SecOps</a></td>
    <td> &#10003;</td>
    <td>  </td>
    <td> &#10003;</td>
   </tr>
   <tr>
-   <td><a href="https://help.sumologic.com/07Sumo-Logic-Apps/01Amazon_and_AWS/Global_Intelligence_for_Amazon_GuardDuty">Global Intelligence for Amazon GuardDuty</a></td>
+   <td><a href="/docs/integrations/amazon-aws/global-intelligence-guardduty">Global Intelligence for Amazon GuardDuty</a></td>
    <td>  &#10003;</td>
    <td>    </td>
    <td>  &#10003;</td>
   </tr>
   <tr>
-   <td><a href="https://help.sumologic.com/07Sumo-Logic-Apps/01Amazon_and_AWS/Global_Intelligence_for_AWS_CloudTrail_DevOps">Global Intelligence for AWS CloudTrail DevOps</a></td>
+   <td><a href="/docs/integrations/amazon-aws/global-intelligence-cloudtrail-devops">Global Intelligence for AWS CloudTrail DevOps</a></td>
    <td>  &#10003;</td>
    <td>  </td>
    <td> &#10003;</td>
   </tr>
   <tr>
-   <td><a href="https://help.sumologic.com/07Sumo-Logic-Apps/26Apps_for_Sumo/Enterprise_Audit_Apps">Enterprise Audit Apps</a>  </td>
+   <td><a href="/docs/integrations/sumo-apps/Enterprise-Audit">Enterprise Audit Apps</a>  </td>
    <td>  &#10003;</td>
    <td>   </td>
    <td>  &#10003;</td>

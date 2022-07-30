@@ -48,7 +48,7 @@ If you need additional logging -  all nginx logs must be redirected to **stdout*
 Before you configure Sumo Logic to ingest metrics, you must enable the Prometheus metrics in the Nginx Ingress controller and annotate the Nginx pods, so Prometheus can find the Nginx metrics.
     * For instructions on Nginx, refer to the following documentation[ https://docs.nginx.com/nginx-ingress-controller/logging-and-monitoring/prometheus/](https://docs.nginx.com/nginx-ingress-controller/logging-and-monitoring/prometheus/)
 3. **Step 3: Deployment of version 1.3**
-Ensure you have deployed version 1.3 or higher of the Sumologic-Kubernetes-Collection, to send the logs and metrics to Sumologic. For more information on deploying Sumologic-Kubernetes-Collection,[ visit](https://help.sumologic.com/07Sumo-Logic-Apps/10Containers_and_Orchestration/Kubernetes/Collect_Logs_and_Metrics_for_the_Kubernetes_App) here. Once deployed, logs will automatically be picked up and sent by default. Prometheus will scrape the Nginx pods, based on the annotations set in Step 2, for the metrics. Logs and Metrics will automatically be sent to the respective fluentD stateful sets which consistently tag your logs and metrics, then forward them to your Sumo Logic org.
+Ensure you have deployed version 1.3 or higher of the Sumologic-Kubernetes-Collection, to send the logs and metrics to Sumologic. For more information on deploying Sumologic-Kubernetes-Collection,[ visit](/docs/integrations/containers-orchestration/Kubernetes#Collect_Logs_and_Metrics_for_the_Kubernetes_App) here. Once deployed, logs will automatically be picked up and sent by default. Prometheus will scrape the Nginx pods, based on the annotations set in Step 2, for the metrics. Logs and Metrics will automatically be sent to the respective fluentD stateful sets which consistently tag your logs and metrics, then forward them to your Sumo Logic org.
 
 
 ### Create Field Extraction Rules
@@ -154,7 +154,7 @@ Alerts can be installed by either importing them via a JSON or via a Terraform s
 
 1. Click **Import** to import monitors from the JSON above.
 
-The monitors are disabled by default. Once you have installed the alerts via this method, navigate to the **Nginx** **Ingress** folder under **Monitors** to configure them. Refer[ document](https://help.sumologic.com/Visualizations-and-Alerts/Alerts/Monitors#Add_a_monitor) to enable monitors, to configure each monitor, to send notifications to teams or connections.
+The monitors are disabled by default. Once you have installed the alerts via this method, navigate to the **Nginx** **Ingress** folder under **Monitors** to configure them. Refer[ document](/docs/alerts/monitors#Add_a_monitor) to enable monitors, to configure each monitor, to send notifications to teams or connections.
 
 
 ### Method 2: Using a Terraform script
@@ -231,7 +231,7 @@ email_notifications = [
 
 **Step 7: Post Installation steps**
 
-If you haven’t enabled alerts and/or configured notifications via the terraform procedure outlined above, we highly recommend enabling alerts of interest and configuring each enabled alert to send notifications to other people or services. This is detailed in[ Step 4](https://help.sumologic.com/Visualizations-and-Alerts/Alerts/Monitors#Add_a_monitor).
+If you haven’t enabled alerts and/or configured notifications via the terraform procedure outlined above, we highly recommend enabling alerts of interest and configuring each enabled alert to send notifications to other people or services. This is detailed in[ Step 4](/docs/alerts/monitors#Add_a_monitor).
 
 
 13
@@ -322,7 +322,7 @@ You can use schedule searches to send alerts to yourself whenever there is an ou
 The **Nginx Plus Ingress - Threat Inte**l dashboard provides an at-a-glance view of threats to Nginx servers on your network. Dashboard panels display the threat count over a selected time period, geographic locations where threats occurred, source breakdown, actors responsible for threats, severity, and a correlation of IP addresses, method, and status code of threats.
 
 Use this dashboard to:
-* To gain insights and understand threats in incoming traffic and discover potential IOCs. Incoming traffic requests are analyzed using the[ Sumo - Crowdstrikes](https://help.sumologic.com/07Sumo-Logic-Apps/22Security_and_Threat_Detection/Threat_Intel_Quick_Analysis/03_Threat-Intel-FAQ) threat feed.
+* To gain insights and understand threats in incoming traffic and discover potential IOCs. Incoming traffic requests are analyzed using the[ Sumo - Crowdstrikes](/docs/integrations/security-threat-detection/threat-intel-quick-analysis#03_Threat-Intel-FAQ) threat feed.
 
 <img src={useBaseUrl('img/integrations/web-servers/Nginx-Plus-Ingress-Threat-Intel.png')} alt="Nginx Plus Ingress" />
 

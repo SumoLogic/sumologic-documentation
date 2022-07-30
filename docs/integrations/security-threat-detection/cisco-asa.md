@@ -27,8 +27,8 @@ This page provides instructions for configuring log collection for the Cisco ASA
 
 To configure log collection, do the following:
 1. Configure your ASA to send its logs to a syslog server. ASA sends syslog on UDP port 514 by default, but you can set the protocol and port.
-2. Configure an [Installed Collector](https://help.sumologic.com/03Send-Data/Installed-Collectors) appropriate for right for your host environment.
-3. Configure a [Syslog Source](https://help.sumologic.com/03Send-Data/Sources/01Sources-for-Installed-Collectors/Syslog-Source) to the same port and protocol used by your ASA.
+2. Configure an [Installed Collector](/docs/send-data/Installed-Collectors) appropriate for right for your host environment.
+3. Configure a [Syslog Source](/docs/send-data/Sources/sources-installed-collectors/Syslog-Source) to the same port and protocol used by your ASA.
 
 
 ### Sample Log
@@ -123,7 +123,7 @@ Panels will start to fill automatically. It's important to note that each panel 
 
 ## Viewing Cisco ASA Dashboards
 
-Once you've installed the Cisco ASA App, you can access preconfigured searches and [Dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/22Security_and_Threat_Detection/Cisco_ASA/Cisco-ASA-App-Dashboards#Dashboards) that provide visual insights into your data.
+Once you've installed the Cisco ASA App, you can access preconfigured searches and [Dashboards](#Dashboards) that provide visual insights into your data.
 
 ### Dashboard filters    
 

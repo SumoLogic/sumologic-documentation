@@ -12,17 +12,10 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Barracuda Web Application Firewall protects your web, mobile and API applications from being compromised, prevents data breaches, ensure protection from web attacks, provide control access and authentication.
 
-The Barracuda WAF App analyzes traffic flowing through the Barracuda WAF and provides pre-configured dashboards that allow you to monitor WAF traffic as well to analyze various types of attacks detected both by Barracuda and Sumo Logic’s own [Threat Intelligence database](https://help.sumologic.com/07Sumo-Logic-Apps/22Security_and_Threat_Detection/Threat_Intel_Quick_Analysis/03_Threat-Intel-FAQ#What_is_the_CrowdStrike_Integration_for_Sumo_Logic.3F).
+The Barracuda WAF App analyzes traffic flowing through the Barracuda WAF and provides pre-configured dashboards that allow you to monitor WAF traffic as well to analyze various types of attacks detected both by Barracuda and Sumo Logic’s own [Threat Intelligence database](/docs/integrations/security-threat-detection/threat-intel-quick-analysis#03_Threat-Intel-FAQ#What_is_the_CrowdStrike_Integration_for_Sumo_Logic.3F).
 
 
-## Collecting Logs for Barracuda WAF App
-
-This page shows you how to configure collection for the Barracuda WAF App to use with the predefined searches and dashboards.
-
-The Barracuda WAF App provides detailed analytics on system, firewall, and network security so you can protect your environment from malicious attacks. Security Analysis dashboards provide insights into the types of attacks, severity, malicious IPs, blocked and allowed content, and attacks by services. Traffic Analysis dashboards provide detailed information on client, server, and service traffic, as well as errors, bandwidth trends, and service performance.
-
-
-### Log Types
+## Log Types
 
 The Barracuda WAF App uses the following log types:
 
@@ -35,21 +28,23 @@ The Barracuda WAF App uses the following log types:
 For more information on Log formats, visit [Barracuda Log Types](https://campus.barracuda.com/product/webapplicationfirewall/doc/4259935/how-to-configure-syslog-and-other-logs/) page.
 
 
-#### Configure log collection for Barracuda WAF
+## Collecting Logs for Barracuda WAF App
 
-This section describes how to configure log collection for the Barracuda WAF App with instructions for the following tasks:
+This page shows you how to configure collection for the Barracuda WAF App to use with the predefined searches and dashboards.
 
-* [Configure a Collector](https://help.sumologic.com/07Sumo-Logic-Apps/22Security_and_Threat_Detection/Barracuda_WAF/Collect_logs_for_Barracuda_WAF_App#Step_1:_Configure_a_Collector)
-* [Configure a Source](https://help.sumologic.com/07Sumo-Logic-Apps/22Security_and_Threat_Detection/Barracuda_WAF/Collect_logs_for_Barracuda_WAF_App#Step_2:_Configure_a_Source)
-* [Configure logging in Barracuda WAF](https://help.sumologic.com/07Sumo-Logic-Apps/22Security_and_Threat_Detection/Barracuda_WAF/Collect_logs_for_Barracuda_WAF_App#Step_3:_Configure_Logging_in_Barracuda_WAF)
+The Barracuda WAF App provides detailed analytics on system, firewall, and network security so you can protect your environment from malicious attacks. Security Analysis dashboards provide insights into the types of attacks, severity, malicious IPs, blocked and allowed content, and attacks by services. Traffic Analysis dashboards provide detailed information on client, server, and service traffic, as well as errors, bandwidth trends, and service performance.
+
+## Configure Log collection for Barracuda WAF
+
+This section describes how to configure log collection for the Barracuda WAF App with instructions for the following tasks.
 
 
-##### Configure a Collector
+### Step 1: Configure a Collector
 
 To create a new Sumo Logic Hosted Collector, perform the steps in [Configure a Hosted Collector](/docs/send-data/configure-hosted-collector).
 
 
-##### Configure a Source
+### Step 2: Configure a Source
 
 Cloud syslog collection supports Barracuda Firmware version 9.2.1 or later. You must be running Barracuda Firmware version 9.2.1 or greater to use cloud syslog as an export server.
 
@@ -57,9 +52,9 @@ This section shows you how to configure a source for log collection. In this tas
 
 **To configure a source, do the following:**
 
-1. Perform the steps in [Configure a Cloud Syslog Source](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Cloud-Syslog-Source#Configure_a_Cloud_Syslog_Source). and configure the following Source fields:
+1. Perform the steps in [Configure a Cloud Syslog Source](/docs/send-data/Sources/sources-hosted-collectors/Cloud-Syslog-Source#Configure_a_Cloud_Syslog_Source). and configure the following Source fields:
     1. **Name**. (Required) Enter a name. The description is optional.
-    2. **Source Category**. (Required) Provide a realistic Source Category for this data type. For example: **prod/barracuda/waf**. For more information, see [Best Practices](https://help.sumologic.com/03Send-Data/01-Design-Your-Deployment/Best-Practices%3A-Good-Source-Category%2C-Bad-Source-Category).
+    2. **Source Category**. (Required) Provide a realistic Source Category for this data type. For example: **prod/barracuda/waf**. For more information, see [Best Practices](/docs/send-data/design-deployment/best-practices-source-categories).
 2. In the Advanced section, specify the following configurations:
     3. **Enable Timestamp Parsing**. True
     4. **Time Zone**. Logs are in UTC by default
@@ -68,7 +63,7 @@ This section shows you how to configure a source for log collection. In this tas
 4. Copy and paste the **token** in a secure location. You will need this when you configure Barracuda Cloud Syslog Settings.
 
 
-##### Configure Logging in Barracuda WAF
+### Step 3: Configure Logging in Barracuda WAF
 
 This section shows you how to configure logging in Barracuda WAF for use with the preconfigured searches and dashboards of the Sumo Logic App for Barracuda WAF.
 
@@ -150,7 +145,7 @@ _sourceCategory=Labs/loggen/barracuda " TR "
 
 This section provides instructions for installing the Barracuda WAF App, as well as examples and descriptions for each of the app dashboards.
 
-Now that you have configured log collection for Barracuda WAF, install the Sumo Logic App for Barracuda WAF, and take advantage of predefined Searches and [Dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/01Amazon_and_AWS/Amazon_S3_Audit_App/Amazon-S3-Audit-App-Dashboards#Dashboards).
+Now that you have configured log collection for Barracuda WAF, install the Sumo Logic App for Barracuda WAF, and take advantage of predefined Searches and [Dashboards](#Dashboards).
 
 To install the app:
 

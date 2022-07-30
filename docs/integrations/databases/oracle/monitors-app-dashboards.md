@@ -16,7 +16,7 @@ This page provides instructions for installing the Oracle Monitors, App, as well
 
 Sumo Logic has provided out-of-the-box alerts available through [Sumo Logic monitors](/docs/alerts/monitors/index.md) to help you monitor your Oracle clusters. These alerts are built based on metrics and logs datasets and include preset thresholds based on industry best practices and recommendations.
 
-For details on the individual alerts, see [this page](https://help.sumologic.com/07Sumo-Logic-Apps/12Databases/Oracle/Oracle_Alerts).
+For details on the individual alerts, see [this page](/docs/integrations/databases/oracle/alerts.md).
 
 
 ## Installing Monitors
@@ -42,7 +42,7 @@ Custom filter examples:
 
 6. Click Import and then copy-paste the above JSON to import monitors.
 
-The monitors are disabled by default. Once you have installed the alerts using this method, navigate to the Oracle folder under **Monitors** to configure them. See [this](/docs/alerts/monitors/index.md) document to enable monitors to send notifications to teams or connections. See the instructions detailed in Step 4 of this [document](https://help.sumologic.com/Visualizations-and-Alerts/Alerts/Monitors#Add_a_monitor).
+The monitors are disabled by default. Once you have installed the alerts using this method, navigate to the Oracle folder under **Monitors** to configure them. See [this](/docs/alerts/monitors/index.md) document to enable monitors to send notifications to teams or connections. See the instructions detailed in Step 4 of this [document](/docs/alerts/monitors#Add_a_monitor).
 
 
 ### Method 2: Using a Terraform script
@@ -128,7 +128,7 @@ email_notifications = [
 
 
 1. **Post Installation.**
-If you haven’t enabled alerts and/or configured notifications through the Terraform procedure outlined above, we highly recommend enabling alerts of interest and configuring each enabled alert to send notifications to other users or services. This is detailed in Step 4 of [this document](https://help.sumologic.com/Visualizations-and-Alerts/Alerts/Monitors#Add_a_monitor).
+If you haven’t enabled alerts and/or configured notifications through the Terraform procedure outlined above, we highly recommend enabling alerts of interest and configuring each enabled alert to send notifications to other users or services. This is detailed in Step 4 of [this document](/docs/alerts/monitors#Add_a_monitor).
 
 
 10

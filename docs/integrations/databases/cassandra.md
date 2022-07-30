@@ -75,7 +75,7 @@ If you are using Cassandra in a non-Kubernetes environment create the fields:
 
 <TabItem value="k8s">
 
-In Kubernetes environments, we use the Telegraf Operator, which is packaged with our Kubernetes collection. You can learn more about it [here](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Collect_Metrics_Using_Telegraf/01_Telegraf_Collection_Architecture).The diagram below illustrates how data is collected from Cassandra in a Kubernetes environment. In the architecture shown below, there are four services that make up the metric collection pipeline: Telegraf, Prometheus, Fluentd and FluentBit.
+In Kubernetes environments, we use the Telegraf Operator, which is packaged with our Kubernetes collection. You can learn more about it [here](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/telegraf-collection-architecture).The diagram below illustrates how data is collected from Cassandra in a Kubernetes environment. In the architecture shown below, there are four services that make up the metric collection pipeline: Telegraf, Prometheus, Fluentd and FluentBit.
 
 The first service in the pipeline is Telegraf. Telegraf collects metrics from Cassandra. Note that we’re running Telegraf in each pod we want to collect metrics from as a sidecar deployment for example, Telegraf runs in the same pod as the containers it monitors. Telegraf uses the Jolokia2 input plugin to obtain metrics. (For simplicity, the diagram doesn’t show the input plugins.) The injection of the Telegraf sidecar container is done by the Telegraf Operator. We also have Fluentbit that collects logs written to standard out and forwards them to FluentD, which in turn sends all the logs and metrics data to a Sumo Logic HTTP Source.
 
@@ -98,7 +98,7 @@ It’s assumed that you are using the latest helm chart version if not upgrade u
 
 This section explains the steps to collect Cassandra metrics from a Kubernetes environment.
 
-In Kubernetes environments, we use the Telegraf Operator, which is packaged with our Kubernetes collection. You can learn more on this[ here](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Collect_Metrics_Using_Telegraf/01_Telegraf_Collection_Architecture). Follow the steps listed below to collect metrics from a Kubernetes environment:
+In Kubernetes environments, we use the Telegraf Operator, which is packaged with our Kubernetes collection. You can learn more on this[ here](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/telegraf-collection-architecture). Follow the steps listed below to collect metrics from a Kubernetes environment:
 
 1. [Setup Kubernetes Collection with the Telegraf Operator.](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf.md#Install_Telegraf_in_a_Kubernetes_environment)
 2. Add annotations on your Cassandra pods
@@ -347,7 +347,7 @@ To create a new Sumo Logic hosted collector, perform the steps in the[ Configure
 
 1. **Configure an HTTP Logs and Metrics Source**
 
-Create a new HTTP Logs and Metrics Source in the hosted collector created above by following[ these instructions. ](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/HTTP-Source)Make a note of the **HTTP Source URL**.
+Create a new HTTP Logs and Metrics Source in the hosted collector created above by following[ these instructions. ](/docs/send-data/sources/sources-hosted-collectors/http-logs-metrics-source)Make a note of the **HTTP Source URL**.
 
 
 
@@ -481,13 +481,13 @@ At this point, Cassandra metrics and logs should start flowing into Sumo Logic.
 
 ## Installing Cassandra Monitors
 
-Sumo Logic has provided pre-packaged alerts available through [Sumo Logic monitors](/docs/alerts/monitors/index.md) to help you proactively determine if a Cassandra cluster is available and performing as expected. These monitors are based on metric and log data and include pre-set thresholds that reflect industry best practices and recommendations. For more information about individual alerts, see [Cassandra Alerts](https://help.sumologic.com/07Sumo-Logic-Apps/12Databases/MySQL/MySQL_Alerts).
+Sumo Logic has provided pre-packaged alerts available through [Sumo Logic monitors](/docs/alerts/monitors/index.md) to help you proactively determine if a Cassandra cluster is available and performing as expected. These monitors are based on metric and log data and include pre-set thresholds that reflect industry best practices and recommendations. For more information about individual alerts, see [Cassandra Alerts](#Alerts).
 
 To install these monitors, you must have the **Manage Monitors** role capability.
 
 You can install monitors by importing a JSON file or using a Terraform script.
 
-There are limits to how many alerts can be enabled. For more information, see [Monitors](https://help.sumologic.com/Visualizations-and-Alerts/Alerts/Monitors#Rules) for details.
+There are limits to how many alerts can be enabled. For more information, see [Monitors](/docs/alerts/monitors#Rules) for details.
 
 
 ### Method 1: Importing a JSON file

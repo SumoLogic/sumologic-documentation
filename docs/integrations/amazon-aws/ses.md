@@ -46,12 +46,12 @@ Before you configure the log sources for the Amazon SES app, decide on the sourc
 5. Select an **S3 region** or keep the default value of **Others**. The S3 region must match the appropriate S3 bucket created in your Amazon account.
 
 :::info
-Selecting an AWS GovCloud region means your data will be leaving a FedRAMP-high environment. Use responsibly to avoid information spillage. See [Collection from AWS GovCloud](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/Collection_from_AWS_GovCloud) for details.
+Selecting an AWS GovCloud region means your data will be leaving a FedRAMP-high environment. Use responsibly to avoid information spillage. See [Collection from AWS GovCloud](/docs/send-data/Sources/sources-hosted-collectors/Amazon-Web-Services/collection-aws-govcloud) for details.
 :::
 
 6. For **Bucket Name**, enter the exact name of your organization's S3 bucket. Be sure to double-check the name as it appears in AWS, for example:
 
-7. For **Path Expression**, enter the wildcard pattern that matches the S3 objects you'd like to collect. You can use **one **wildcard (*) in this string. Recursive path expressions use a single wildcard and do **NOT** use a leading forward slash. [See About Amazon Path Expressions](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/Amazon-Path-Expressions) for details.
+7. For **Path Expression**, enter the wildcard pattern that matches the S3 objects you'd like to collect. You can use **one **wildcard (*) in this string. Recursive path expressions use a single wildcard and do **NOT** use a leading forward slash. [See About Amazon Path Expressions](/docs/send-data/Sources/sources-hosted-collectors/Amazon-Web-Services/Amazon-Path-Expressions) for details.
 8. **Collection should begin.** Choose or enter how far back you'd like to begin collecting historical logs. You can either:
     * Choose a predefined value from dropdown list, ranging from "Now" to “72 hours ago” to “All Time”, or
     * Enter a relative value. To enter a relative value, click the **Collection should begin** field and press the delete key on your keyboard to clear the field. Then, enter a relative time expression, for example `-1w`. You can define when you want collection to begin in terms of months (M), weeks (w), days (d), hours (h), and minutes (m). If you paused the Source and want to skip some data when you resume, update the **Collection should begin** setting to a time after it was paused.
@@ -63,12 +63,12 @@ Selecting an AWS GovCloud region means your data will be leaving a FedRAMP-high 
     * For **Role-based access** enter the Role ARN that was provided by AWS after creating the role.  \
     * For **Key access** enter the **Access Key ID **and** Secret Access Key.** See [AWS Access Key ID](http://docs.aws.amazon.com/STS/latest/UsingSTS/UsingTokens.html#RequestWithSTS) and [AWS Secret Access Key](https://aws.amazon.com/iam/) for details.
 12. **Log File Discovery.** You have the option to set up Amazon Simple Notification Service (SNS) to notify Sumo Logic of new items in your S3 bucket. A scan interval is required and automatically applied to detect log files.
-    * **Scan Interval.** Sumo Logic will periodically scan your S3 bucket for new items in addition to SNS notifications. **Automatic** is recommended to not incur additional AWS charges. This sets the scan interval based on if subscribed to an SNS topic endpoint and how often new files are detected over time. If the Source is not subscribed to an SNS topic and set to **Automatic** the scan interval is 5 minutes. You may enter a set frequency to scan your S3 bucket for new data. To learn more about Scan Interval considerations, see [About setting the S3 Scan Interval](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/AWS-S3-Scan-Interval-for-Sources).
+    * **Scan Interval.** Sumo Logic will periodically scan your S3 bucket for new items in addition to SNS notifications. **Automatic** is recommended to not incur additional AWS charges. This sets the scan interval based on if subscribed to an SNS topic endpoint and how often new files are detected over time. If the Source is not subscribed to an SNS topic and set to **Automatic** the scan interval is 5 minutes. You may enter a set frequency to scan your S3 bucket for new data. To learn more about Scan Interval considerations, see [About setting the S3 Scan Interval](/docs/send-data/Sources/sources-hosted-collectors/Amazon-Web-Services/AWS-S3-Scan-Interval-Sources).
     * **SNS Subscription Endpoint (Highly Recommended**). New files will be collected by Sumo Logic as soon as the notification is received. This will provide faster collection versus having to wait for the next scan to detect the new file. Click the box below to open instructions:
 
     <details><summary>Set up SNS in AWS</summary>
 
-    The following steps use the AWS SNS Console. You may instead use AWS CloudFormation. Follow the instructions to use [CloudFormation to set up an SNS Subscription Endpoint](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/Configuring-your-AWS-Source-with-CloudFormation#Set_up_an_SNS_Subscription_Endpoint).
+    The following steps use the AWS SNS Console. You may instead use AWS CloudFormation. Follow the instructions to use [CloudFormation to set up an SNS Subscription Endpoint](/docs/send-data/Sources/sources-hosted-collectors/Amazon-Web-Services/configure-our-aws-source-cloudformation#Set_up_an_SNS_Subscription_Endpoint).
 
     1. To set up the subscription you need to get an endpoint URL from Sumo to provide to AWS. This process will save your Source and begin scanning your S3 bucket when the endpoint URL is generated. Click **Create URL** and use the provided endpoint URL when creating your subscription in step 3.
 
@@ -108,18 +108,18 @@ Selecting an AWS GovCloud region means your data will be leaving a FedRAMP-high 
   * **Enable Timestamp Parsing.** This option is selected by default. If it's deselected, no timestamp information is parsed at all.
 
     * **Time Zone.** There are two options for Time Zone. You can use the time zone present in your log files, and then choose an option in case time zone information is missing from a log message. Or, you can have Sumo Logic completely disregard any time zone information present in logs by forcing a time zone. It's very important to have the proper time zone set, no matter which option you choose. If the time zone of logs can't be determined, Sumo Logic assigns logs UTC; if the rest of your logs are from another time zone your search results will be affected.
-    * **Timestamp Format.** By default, Sumo Logic will automatically detect the timestamp format of your logs. However, you can manually specify a timestamp format for a Source. See [Timestamps, Time Zones, Time Ranges, and Date Formats](https://help.sumologic.com/03Send-Data/Sources/04Reference-Information-for-Sources/Timestamps%2C-Time-Zones%2C-Time-Ranges%2C-and-Date-Formats) for more information.
-* **Enable Multiline Processing. **See [Collecting Multiline Logs](https://help.sumologic.com/03Send-Data/Sources/04Reference-Information-for-Sources/Collecting-Multiline-Logs) for details on multiline processing and its options. This is enabled by default. Use this option if you're working with multiline messages (for example, log4J or exception stack traces). Deselect this option if you want to avoid unnecessary processing when collecting single-message-per-line files (for example, Linux system.log). Choose one of the following:  
+    * **Timestamp Format.** By default, Sumo Logic will automatically detect the timestamp format of your logs. However, you can manually specify a timestamp format for a Source. See [Timestamps, Time Zones, Time Ranges, and Date Formats](/docs/send-data/sources/reference-information-sources/time-reference) for more information.
+* **Enable Multiline Processing. **See [Collecting Multiline Logs](/docs/send-data/sources/reference-information-sources/collect-multiline-logs) for details on multiline processing and its options. This is enabled by default. Use this option if you're working with multiline messages (for example, log4J or exception stack traces). Deselect this option if you want to avoid unnecessary processing when collecting single-message-per-line files (for example, Linux system.log). Choose one of the following:  
     * **Infer Boundaries.** Enable when you want Sumo Logic to automatically attempt to determine which lines belong to the same message. If you deselect the Infer Boundaries option, you will need to enter a regular expression in the Boundary Regex field to use for detecting the entire first line of multiline messages.
     * **Boundary Regex.** You can specify the boundary between messages using a regular expression. Enter a regular expression that matches the entire first line of every multiline message in your log files.
-14. [Create any Processing Rules](https://help.sumologic.com/Manage/Collection/Processing-Rules/Create-a-Processing-Rule) you'd like for the AWS Source.
+14. [Create any Processing Rules](/docs/manage/collection/processing-rules/create-processing-rule.md) you'd like for the AWS Source.
 15. When you are finished configuring the Source click **Save**.
 
 
 ### Step 4: Configure and collect Amazon SNS notifications for Amazon SES
 
 1. Configure a [Hosted Collector](/docs/send-data/configure-hosted-collector).
-2. Configure an  [HTTP](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/HTTP-Source) source.
+2. Configure an  [HTTP](/docs/send-data/sources/sources-hosted-collectors/http-logs-metrics-source) source.
 * **Name—**Enter a name to display for the new Source.
 * **Description—**Enter an optional description.
 * **Source Category—**Enter a source category, such as: AWS/SES/Events/Notifications
@@ -138,9 +138,9 @@ Selecting an AWS GovCloud region means your data will be leaving a FedRAMP-high 
     **Note the SNS Topic ARN,** as you'll need it to set the subscription.
 
 5. Whenever the SNS topic referred to in the previous step receives SES notification, forward the received notification to registered subscribers of that SNS topic. Now, subscribe Sumo Logic endpoint as subscriber. Create a Subscription to the SNS Topic you just created, specifying the following:
-    * Topic ARN—from the [Step 4](https://help.sumologic.com/07Sumo-Logic-Apps/01Amazon_and_AWS/Amazon_SES/Collect-Logs-for-the-Amazon-SES-App#TopicARN).
+    * Topic ARN—from the [Step 4](#TopicARN).
     * Protocol — **HTTPS**
-    * EndPoint — Sumo source Endpoint URL you noted in [Step 3](https://help.sumologic.com/07Sumo-Logic-Apps/01Amazon_and_AWS/Amazon_SES/Collect-Logs-for-the-Amazon-SES-App#EndpointURL).
+    * EndPoint — Sumo source Endpoint URL you noted in [Step 3](#EndpointURL).
 6. After a subscription is created, Amazon SNS sends a [subscription confirmation ](http://docs.aws.amazon.com/sns/latest/dg/SendMessageToHttp.html#SendMessageToHttp.confirm)message to the Sumo source endpoint. Do the following:
     * Go to the Sumo search box and execute the following:
      ```
@@ -192,7 +192,7 @@ SES sends notifications to SNS in a JSON format. Any notification sent through S
 
 ## Installing the Amazon SES App
 
-Now that you have set up collection for Amazon SES, install the Sumo Logic App to use the pre-configured searches and [dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/06Google/Google_Cloud_Audit/Install-the-Google-Cloud-Audit-App-and-view-the-Dashboards#Dashboards) that provide visibility into your environment for real-time analysis of overall usage.
+Now that you have set up collection for Amazon SES, install the Sumo Logic App to use the pre-configured searches and [dashboards](#Dashboards) that provide visibility into your environment for real-time analysis of overall usage.
 
 To install the app:
 1. From the **App Catalog**, search for and select the app. You can click **Preview Dashboards** to verify that you have the app you need.
@@ -206,7 +206,7 @@ To install the app:
 3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folde**r to add a new folder.
 4. Click **Add to Library**.
 
-Once an app is installed, it will appear in your Personal folder, or other folder that you specified. From here, you can share it with your organization. See [Welcome to the New Library](https://help.sumologic.com/07Sumo-Logic-Apps/01Amazon_and_AWS/Amazon_SES/Install-the-Amazon-SES-App-and-view-the-Dashboards) for information on working with the library in the new UI.
+Once an app is installed, it will appear in your Personal folder, or other folder that you specified. From here, you can share it with your organization. See [Welcome to the New Library] for information on working with the library in the new UI.
 
 Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
 

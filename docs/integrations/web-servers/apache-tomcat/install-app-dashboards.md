@@ -12,13 +12,13 @@ This page has instructions for installing Sumo Logic Monitors for Apache Tomcat,
 
 ## Installing Apache Tomcat Monitors
 
-Sumo Logic has provided pre-packaged alerts available through [Sumo Logic monitors](/docs/alerts/monitors/index.md) to help you proactively determine if an Apache Tomcat webserver farm is available and performing as expected. These monitors are based on metric and log data and include pre-set thresholds that reflect industry best practices and recommendations. For more information about individual alerts, see [Apache Tomcat Alerts](https://help.sumologic.com/07Sumo-Logic-Apps/24Web_Servers/Apache_Tomcat/Apache_Tomcat_Alerts).
+Sumo Logic has provided pre-packaged alerts available through [Sumo Logic monitors](/docs/alerts/monitors/index.md) to help you proactively determine if an Apache Tomcat webserver farm is available and performing as expected. These monitors are based on metric and log data and include pre-set thresholds that reflect industry best practices and recommendations. For more information about individual alerts, see [Apache Tomcat Alerts](/docs/integrations/web-servers/Apache-Tomcat#Apache_Tomcat_Alerts).
 
 To install these monitors, you must have the **Manage Monitors** role capability.
 
 You can install monitors by importing a JSON file or using a Terraform script.
 
-Use this dashboard to:mits to how many alerts can be enabled. For more information, see [Monitors](https://help.sumologic.com/Visualizations-and-Alerts/Alerts/Monitors#Rules) for details.
+Use this dashboard to:mits to how many alerts can be enabled. For more information, see [Monitors](/docs/alerts/monitors#Rules) for details.
 
 
 ### Method 1: Importing a JSON file
@@ -328,7 +328,7 @@ The **Apache Tomcat - Garbage Collector** dashboard provides information on the 
 The **Apache Tomcat  - Threat Intel** dashboard provides an at-a-glance view of threats to Apache Tomcat servers on your network. Dashboard panels display the threat count over a selected time period, geographic locations where threats occurred, source breakdown, actors responsible for threats, severity, and a correlation of IP addresses, method, and status code of threats.
 
 Use this dashboard to:
-* To gain insights and understand threats in incoming traffic and discover potential IOCs. Incoming traffic requests are analyzed using the [Sumo - Crowdstrikes](https://help.sumologic.com/07Sumo-Logic-Apps/22Security_and_Threat_Detection/Threat_Intel_Quick_Analysis/03_Threat-Intel-FAQ) threat feed.
+* To gain insights and understand threats in incoming traffic and discover potential IOCs. Incoming traffic requests are analyzed using the [Sumo - Crowdstrikes](/docs/integrations/security-threat-detection/threat-intel-quick-analysis#03_Threat-Intel-FAQ) threat feed.
 
 <img src={useBaseUrl('img/integrations/web-servers/Apache-Tomcat-Threat-Intel.png')} alt="test" />
 

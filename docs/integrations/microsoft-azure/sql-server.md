@@ -71,7 +71,7 @@ Sumo Logic supports collection of logs and metrics data from SQL Server in both 
 
 <img src='https://upload.wikimedia.org/wikipedia/commons/3/39/Kubernetes_logo_without_workmark.svg' alt="k8s icon" width="30"/>
 
-In Kubernetes environments, we use the Telegraf Operator, which is packaged with our Kubernetes collection ([learn more](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Collect_Metrics_Using_Telegraf/01_Telegraf_Collection_Architecture)). The diagram below illustrates how data is collected from SQL Server in Kubernetes environments. In the architecture shown below, there are four services that make up the metric collection pipeline: Telegraf, Prometheus, Fluentd and FluentBit.
+In Kubernetes environments, we use the Telegraf Operator, which is packaged with our Kubernetes collection ([learn more](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/telegraf-collection-architecture)). The diagram below illustrates how data is collected from SQL Server in Kubernetes environments. In the architecture shown below, there are four services that make up the metric collection pipeline: Telegraf, Prometheus, Fluentd and FluentBit.
 
 The first service in the pipeline is Telegraf. Telegraf collects metrics from SQL Server. Note that we’re running Telegraf in each pod we want to collect metrics from as a sidecar deployment: i.e. Telegraf runs in the same pod as the containers it monitors. Telegraf uses the [SQL Server input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/sqlserver) to obtain metrics. (For simplicity, the diagram doesn’t show the input plugins.) The injection of the Telegraf sidecar container is done by the Telegraf Operator. We also have Fluentbit that collects logs written to standard out and forwards them to FluentD, which in turn sends all the logs and metrics data to a Sumo Logic HTTP Source.
 
@@ -95,7 +95,7 @@ It’s assumed that you are using the latest helm chart version if not upgrade u
 
 This section explains the steps to collect SQL Server metrics from a Kubernetes environment.
 
-In Kubernetes environments, we use the Telegraf Operator, which is packaged with our Kubernetes collection. You can learn more on this[ here](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Collect_Metrics_Using_Telegraf/01_Telegraf_Collection_Architecture). Follow the steps listed below to collect metrics from a Kubernetes environment:
+In Kubernetes environments, we use the Telegraf Operator, which is packaged with our Kubernetes collection. You can learn more on this[ here](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/telegraf-collection-architecture). Follow the steps listed below to collect metrics from a Kubernetes environment:
 
 1. **[Set up Kubernetes Collection with the Telegraf Operator.](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf.md#Install_Telegraf_in_a_Kubernetes_environment)**
 2. **Add annotations on your SQL Server pods**. Before you add annotations, you need to create a login on every SQL Server pod  you want to monitor, with following script:
@@ -174,7 +174,7 @@ This section explains the steps to collect SQL Server logs from a Kubernetes env
 
    For all other parameters, please see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#Configuring-Telegraf) for more properties that can be configured in the Telegraf agent globally.
 
-   * The Sumologic-Kubernetes-Collection will automatically capture the logs from stdout and will send the logs to Sumologic. For more information on deploying Sumologic-Kubernetes-Collection,[ visit](https://help.sumologic.com/07Sumo-Logic-Apps/10Containers_and_Orchestration/Kubernetes/Collect_Logs_and_Metrics_for_the_Kubernetes_App) here.
+   * The Sumologic-Kubernetes-Collection will automatically capture the logs from stdout and will send the logs to Sumologic. For more information on deploying Sumologic-Kubernetes-Collection,[ visit](/docs/integrations/containers-orchestration/Kubernetes#Collect_Logs_and_Metrics_for_the_Kubernetes_App) here.
    * Verify logs in Sumo Logic.
 2. (Optional) Collecting SQL server Logs from a Log File. Follow the steps below to capture SQL server logs from a log file on Kubernetes.
 1. Determine the location of the SQL server log file on Kubernetes. This can be determined from the SQLserver.conf for your SQL server cluster along with the mounts on the SQL server pods.
@@ -233,7 +233,7 @@ if (!isEmpty(pod_labels_environment), pod_labels_environment, "") as environment
 </TabItem>
 <TabItem value="non-k8s">
 
-In Non-Kubernetes environments, Sumo Logic uses the Telegraf operator for SQL Server metric collection and the [Installed Collector](https://help.sumologic.com/03Send-Data/Installed-Collectors/01About-Installed-Collectors) for collecting SQL Server logs. The diagram below illustrates the components of the SQL Server collection in a non-Kubernetes environment. Telegraf uses the[ SQL Server input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/sqlserver) to obtain SQL Server metrics and the Sumo Logic output plugin to send the metrics to Sumo Logic. Logs from SQL Server are collected by a [Local File source](https://help.sumologic.com/03Send-Data/Sources/01Sources-for-Installed-Collectors/Local-File-Source).
+In Non-Kubernetes environments, Sumo Logic uses the Telegraf operator for SQL Server metric collection and the [Installed Collector](/docs/send-data/installed-collectors/about-installed-collectors) for collecting SQL Server logs. The diagram below illustrates the components of the SQL Server collection in a non-Kubernetes environment. Telegraf uses the[ SQL Server input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/sqlserver) to obtain SQL Server metrics and the Sumo Logic output plugin to send the metrics to Sumo Logic. Logs from SQL Server are collected by a [Local File source](/docs/send-data/Sources/sources-installed-collectors/Local-File-Source).
 
 
 The process to set up collection for SQL Server data is done through the following steps:
@@ -260,7 +260,7 @@ This section provides instructions for configuring log collection for SQL Server
 1. **Make sure logging is turned on in SQL Server.** Follow [this documentation](https://docs.microsoft.com/en-us/sql/database-engine/configure-windows/scm-services-configure-sql-server-error-logs?view=sql-server-ver15) to enable it.
 
    The Microsoft SQL Server App’s queries and dashboards depend on logs from the SQL Server `ERRORLOG`, which is typically found at: `C:\Program Files\Microsoft SQL Server\MSSQL11.MSSQLSERVER\MSSQL\Log\ERRORLOG \`. The `ERRORLOG` is typically in UTF-16LE encoding, but verify the file encoding used in your SQL Server configuration. On Windows, this can be found by using a tool such as Notepad++.
-2. **Configure an Installed Collector.** If you have not already done so, install and configure an installed collector for Windows by [following the documentation](https://help.sumologic.com/03Send-Data/Installed-Collectors/03Install-a-Collector-on-Windows).
+2. **Configure an Installed Collector.** If you have not already done so, install and configure an installed collector for Windows by [following the documentation](/docs/send-data/installed-collectors/install-collector-windows).
 3. **Configure a local file source** to ingest the `ERRORLOG`.
    * On the Collection Management screen, click Add, next to the collector, then select Add Source.
    * Select Local File as the source type.
@@ -270,7 +270,7 @@ This section provides instructions for configuring log collection for SQL Server
       * File Path (Required). Enter the path to your `ERRORLOG` and be sure to account for log rotations by using a wildcard: `C:\Program Files\Microsoft SQL Server\MSSQL11.MSSQLSERVER\MSSQL\Log\ERRORLOG*`
       * Collection should begin. Set this for how far back historically you want to start collecting.
       * Source Host (Optional). Sumo Logic uses the hostname assigned by the OS unless you enter a different host name
-      * Source Category (Recommended). Be sure to follow the [Best Practices for Source Categories](https://help.sumologic.com/03Send-Data/01-Design-Your-Deployment/Best-Practices%3A-Good-Source-Category%2C-Bad-Source-Category). A recommended Source Category may be `Prod/DB/MSSQL/ERRORLOG.`
+      * Source Category (Recommended). Be sure to follow the [Best Practices for Source Categories](/docs/send-data/design-deployment/best-practices-source-categories). A recommended Source Category may be `Prod/DB/MSSQL/ERRORLOG.`
      * Fields. Set the following fields:
        * `component = database`
        * `db_system = SQLserver`
@@ -299,7 +299,7 @@ Set up a Sumo Logic HTTP Source
    * Select **HTTP Logs & Metrics.**
       * **Name.** (Required). Enter a name for the source.
       * **Description.** (Optional).
-      * **Source Category** (Recommended)**.** Be sure to follow the [Best Practices for Source Categories](https://help.sumologic.com/03Send-Data/01-Design-Your-Deployment/Best-Practices%3A-Good-Source-Category%2C-Bad-Source-Category). A recommended Source Category may be Prod/DB/MSSQL/Metrics.
+      * **Source Category** (Recommended)**.** Be sure to follow the [Best Practices for Source Categories](/docs/send-data/design-deployment/best-practices-source-categories). A recommended Source Category may be Prod/DB/MSSQL/Metrics.
 3. Click **Save**.
 4. Take note of the URL provided once you click **Save**. You can retrieve it again by selecting **Show URL** next to the source on the Collection Management screen.
 
@@ -379,7 +379,7 @@ At this point, Telegraf should start collecting the SQL Server metrics and forwa
 
 ## Installing Microsoft SQL Server Monitors
 
-This page provides instructions for installing the Microsoft SQL Server App, as well as examples of each of the App dashboards. These instructions assume you have already set up collection as described in the [Collect Logs and Metrics for the Microsoft SQL Server](https://help.sumologic.com/07Sumo-Logic-Apps/04Microsoft-and-Azure/Microsoft_SQL_Server/01Collect-Logs-for-the-Microsoft-SQL-Server-App) App page.
+This page provides instructions for installing the Microsoft SQL Server App, as well as examples of each of the App dashboards. These instructions assume you have already set up collection as described in the [Collect Logs and Metrics for the Microsoft SQL Server](#Collect-Logs-for-the-Microsoft-SQL-Server-App) App page.
 
 
 ### Pre-Packaged Alerts
@@ -410,7 +410,7 @@ Custom filter examples:
 1. Click Import and then copy paste the above JSON to import monitors.
 
 
-The monitors are disabled by default. Once you have installed the alerts using this method, navigate to the MySQL folder under **Monitors** to configure them. See [this](/docs/alerts/monitors/index.md) document to enable monitors to send notifications to teams or connections. Please see the instructions detailed in Step 4 of this [document](https://help.sumologic.com/Visualizations-and-Alerts/Alerts/Monitors#Add_a_monitor).
+The monitors are disabled by default. Once you have installed the alerts using this method, navigate to the MySQL folder under **Monitors** to configure them. See [this](/docs/alerts/monitors/index.md) document to enable monitors to send notifications to teams or connections. Please see the instructions detailed in Step 4 of this [document](/docs/alerts/monitors#Add_a_monitor).
 
 
 ### Method 2: Using a Terraform script
@@ -503,7 +503,7 @@ email_notifications = [
 
 **Step 7: Post Installation**
 
-If you haven’t enabled alerts and/or configured notifications through the Terraform procedure outlined above, we highly recommend enabling alerts of interest and configuring each enabled alert to send notifications to other users or services. This is detailed in Step 4 of [this document](https://help.sumologic.com/Visualizations-and-Alerts/Alerts/Monitors#Add_a_monitor).
+If you haven’t enabled alerts and/or configured notifications through the Terraform procedure outlined above, we highly recommend enabling alerts of interest and configuring each enabled alert to send notifications to other users or services. This is detailed in Step 4 of [this document](/docs/alerts/monitors#Add_a_monitor).
 
 
 10

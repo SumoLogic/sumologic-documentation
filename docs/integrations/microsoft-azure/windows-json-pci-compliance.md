@@ -29,14 +29,14 @@ The PCI Compliance For Windows JSON App uses Windows Security Event and System E
 
 **To configure a collector and source, do the following:**
 
-1. Configure an [Installed Windows collector](https://help.sumologic.com/03Send-Data/Installed-Collectors/03Install-a-Collector-on-Windows) through the user interface or from the command line.
+1. Configure an [Installed Windows collector](/docs/send-data/installed-collectors/install-collector-windows) through the user interface or from the command line.
 2. Configure either a local or remote Windows Event Log source. To configure a Windows Event Log source set the following:
     * **Event Format.** Select **Collect using JSON format.** Events are formatted into JSON that is designed to work with Sumo Logic features, making it easier for you to reference your data.
     * **Event Collection Level.** When JSON format is selected you have to select Complete Message from the dropdown.
 
     **Complete Message** will ingest the entire event content along with metadata.
 
-For more information on local or remote Windows Event Log Source configuration, refer to [Local Windows Event Log Source](https://help.sumologic.com/03Send-Data/Sources/01Sources-for-Installed-Collectors/Local-Windows-Event-Log-Source) and [Remote Windows Event Log Source](https://help.sumologic.com/03Send-Data/Sources/01Sources-for-Installed-Collectors/Remote-Windows-Event-Log-Source).
+For more information on local or remote Windows Event Log Source configuration, refer to [Local Windows Event Log Source](/docs/send-data/Sources/sources-installed-collectors/Local-Windows-Event-Log-Source) and [Remote Windows Event Log Source](/docs/send-data/Sources/sources-installed-collectors/Remote-Windows-Event-Log-Source).
 
 Make sure to set the Source Category when configuring the Windows Event Log source. For example: OS/Windows/Events.
 
@@ -74,7 +74,7 @@ _sourceCategory=OS/Windows/Events ( "Audit Policy Change" or "System audit polic
 
 This section provides instructions for installing the PCI Compliance for Windows JSON App, along with examples of each of the App dashboards. The PCI Compliance for Windows JSON App offers pre-built dashboards and queries to help you track your Windows system, user accounts, login activity, and Windows updates.
 
-Now that you have set up collection, install the Sumo Logic App for PCI Compliance for Windows JSON App to use the pre-configured searches and [Dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/04Microsoft-and-Azure/PCI_Compliance_for_Windows/PCI-Compliance-for-Windows-App-Dashboards#Dashboards) that provide insight into your data.  
+Now that you have set up collection, install the Sumo Logic App for PCI Compliance for Windows JSON App to use the pre-configured searches and [Dashboards](#Dashboards) that provide insight into your data.  
 
 **To install the app**:
 

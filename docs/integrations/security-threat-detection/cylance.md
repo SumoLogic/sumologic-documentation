@@ -66,11 +66,11 @@ To create a new Sumo Logic Hosted Collector, perform the steps in [Configure a H
 4
 
 
-1. Perform the steps in [Configure a Cloud Syslog Source](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Cloud-Syslog-Source#Configure_a_Cloud_Syslog_Source). and configure the following Source fields:
+1. Perform the steps in [Configure a Cloud Syslog Source](/docs/send-data/Sources/sources-hosted-collectors/Cloud-Syslog-Source#Configure_a_Cloud_Syslog_Source). and configure the following Source fields:
     1. **Name**. (Required) A name is required. Description is optional.
     2. **Source Category**. (Required) [Provide a realistic Source Category example for this data type.] The Source Category metadata field is a fundamental building block to organize and label Sources. \
 Example: **prod/web/apache/access**. \
-For details see [Best Practices](https://help.sumologic.com/03Send-Data/01-Design-Your-Deployment/Best-Practices%3A-Good-Source-Category%2C-Bad-Source-Category).
+For details see [Best Practices](/docs/send-data/design-deployment/best-practices-source-categories).
 2. In the Advanced section, specify the following configurations:
     3. **Enable Timestamp Parsing**. True
     4. **Time Zone**. Logs are in UTC by default
@@ -101,7 +101,7 @@ Before your can configure Sumo Logic to ingest logs, you must set up remote log 
 8. Enter your **Port**.
 9. For **Severity,** select **Alert (1)**.
 10. For **Facility,** select **Internal (5)**.
-11. For **Custom Token,** enter the token from the Sumo Logic [Cloud Syslog Source](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Cloud-Syslog-Source). The token should end with **@41123**. This number is the Sumo Logic Private Enterprise Number (PEN).
+11. For **Custom Token,** enter the token from the Sumo Logic [Cloud Syslog Source](/docs/send-data/Sources/sources-hosted-collectors/Cloud-Syslog-Source). The token should end with **@41123**. This number is the Sumo Logic Private Enterprise Number (PEN).
 12. Click **Save**.
 
 
@@ -294,7 +294,7 @@ _sourceCategory=*cylance* "Event Type:" AuditLog
 
 ## Installing the Cylance App
 
-This section demonstrates how to install the Cylance App, as well as providing examples of each of the dashboards. The App preconfigured searches and [Dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/22Security_and_Threat_Detection/Cylance/Cylance-App-Dashboard#Dashboards) provide easy-to-access analytic visualizations of your data.
+This section demonstrates how to install the Cylance App, as well as providing examples of each of the dashboards. The App preconfigured searches and [Dashboards](/docs/integrations/security-threat-detection/Cylance#Dashboards) provide easy-to-access analytic visualizations of your data.
 
 Now that you have set up log collection for Cylance, you can install the Cylance App.
 

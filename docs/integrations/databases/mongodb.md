@@ -123,7 +123,7 @@ If you are using MongoDB in a non-Kubernetes environment, create the fields:
 
 <TabItem value="k8s">
 
-In Kubernetes environments, we use the Telegraf Operator, which is packaged with our Kubernetes collection. You can learn more about it[ here](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Collect_Metrics_Using_Telegraf/01_Telegraf_Collection_Architecture).The diagram below illustrates how data is collected from MongoDB in a Kubernetes environment. In the architecture shown below, there are four services that make up the metric collection pipeline: Telegraf, Prometheus, Fluentd and FluentBit.
+In Kubernetes environments, we use the Telegraf Operator, which is packaged with our Kubernetes collection. You can learn more about it[ here](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/telegraf-collection-architecture).The diagram below illustrates how data is collected from MongoDB in a Kubernetes environment. In the architecture shown below, there are four services that make up the metric collection pipeline: Telegraf, Prometheus, Fluentd and FluentBit.
 
 The first service in the pipeline is Telegraf. Telegraf collects metrics from MongoDB. Note that we’re running Telegraf in each pod we want to collect metrics from as a sidecar deployment for example, Telegraf runs in the same pod as the containers it monitors. Telegraf uses the MongoDB input plugin to obtain metrics. (For simplicity, the diagram doesn’t show the input plugins.) The injection of the Telegraf sidecar container is done by the Telegraf Operator. We also have Fluentbit that collects logs written to standard out and forwards them to FluentD, which in turn sends all the logs and metrics data to a Sumo Logic HTTP Source.
 
@@ -146,7 +146,7 @@ It’s assumed that you are using the latest helm chart version if not upgrade u
 
 This section explains the steps to collect MongoDB metrics from a Kubernetes environment.
 
-In Kubernetes environments, we use the Telegraf Operator, which is packaged with our Kubernetes collection. You can learn more on this[ here](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Collect_Metrics_Using_Telegraf/01_Telegraf_Collection_Architecture). Follow the steps listed below to collect metrics from a Kubernetes environment:
+In Kubernetes environments, we use the Telegraf Operator, which is packaged with our Kubernetes collection. You can learn more on this[ here](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/telegraf-collection-architecture). Follow the steps listed below to collect metrics from a Kubernetes environment:
 
 
 
@@ -314,7 +314,7 @@ This section provides instructions for configuring metrics collection for the Su
 
 1. Configure an HTTP Logs and Metrics Source
 
-    Create a new HTTP Logs and Metrics Source in the hosted collector created above by following[ these instructions. ](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/HTTP-Source)Make a note of the **HTTP Source URL**.
+    Create a new HTTP Logs and Metrics Source in the hosted collector created above by following[ these instructions. ](/docs/send-data/sources/sources-hosted-collectors/http-logs-metrics-source)Make a note of the **HTTP Source URL**.
 
 1. Install Telegraf
 
@@ -375,7 +375,7 @@ This section provides instructions for configuring log collection for MongoDB ru
 By default, MongoDB logs are stored in a log file. MongoDB also supports forwarding logs via Syslog.
 
 
-Sumo Logic supports collecting logs both via Syslog and a local log file. Utilizing Sumo Logic [Cloud Syslog](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Cloud-Syslog-Source) will require TCP TLS Port 6514 to be open in your network. Local log files can be collected via [Installed collectors](https://help.sumologic.com/03Send-Data/Installed-Collectors). Installed collector will require you to allow outbound traffic to [Sumo Logic endpoints](https://help.sumologic.com/APIs/General-API-Information/Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security) for collection to work. For detailed requirements for Installed collectors, see this [page](https://help.sumologic.com/01Start-Here/03About-Sumo-Logic/System-Requirements/Installed-Collector-Requirements).
+Sumo Logic supports collecting logs both via Syslog and a local log file. Utilizing Sumo Logic [Cloud Syslog](/docs/send-data/Sources/sources-hosted-collectors/Cloud-Syslog-Source) will require TCP TLS Port 6514 to be open in your network. Local log files can be collected via [Installed collectors](/docs/send-data/Installed-Collectors). Installed collector will require you to allow outbound traffic to [Sumo Logic endpoints](https://help.sumologic.com/APIs/General-API-Information/Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security) for collection to work. For detailed requirements for Installed collectors, see this [page](https://help.sumologic.com/01Start-Here/03About-Sumo-Logic/System-Requirements/Installed-Collector-Requirements).
 
 
 Based on your infrastructure and networking setup choose one of these methods to collect MongoDB logs and follow the instructions below to set up log collection:
@@ -417,7 +417,7 @@ Based on your infrastructure and networking setup choose one of these methods to
 * **the[ --logpath](https://docs.mongodb.com/manual/reference/program/mongod/#std-option-mongod.--logpath) option for[ mongod](https://docs.mongodb.com/manual/reference/program/mongod/#mongodb-binary-bin.mongod) for _file_**
 * **the[ --logpath](https://docs.mongodb.com/manual/reference/program/mongos/#std-option-mongos.--logpath) option for[ mongos](https://docs.mongodb.com/manual/reference/program/mongos/#mongodb-binary-bin.mongos) for _file_**
 
-    Logs from the MongoDB log file can be collected via a Sumo Logic [Installed collector](https://help.sumologic.com/03Send-Data/Installed-Collectors) and a [Local File Source](https://help.sumologic.com/03Send-Data/Sources/01Sources-for-Installed-Collectors/Local-File-Source) as explained in the next section.
+    Logs from the MongoDB log file can be collected via a Sumo Logic [Installed collector](/docs/send-data/Installed-Collectors) and a [Local File Source](/docs/send-data/Sources/sources-installed-collectors/Local-File-Source) as explained in the next section.
 
 
     **Configuring MongoDB logs to stream via syslog**
@@ -435,11 +435,11 @@ Based on your infrastructure and networking setup choose one of these methods to
 * the[ --syslog](https://docs.mongodb.com/manual/reference/program/mongod/#std-option-mongod.--syslog) option for[ mongod](https://docs.mongodb.com/manual/reference/program/mongod/#mongodb-binary-bin.mongod) for _syslog_
 * the[ --syslog](https://docs.mongodb.com/manual/reference/program/mongos/#std-option-mongos.--syslog) option for[ mongos](https://docs.mongodb.com/manual/reference/program/mongos/#mongodb-binary-bin.mongos) for _syslog_
 
-    To capture MongoDB logs using syslog, configure a [syslog source](https://help.sumologic.com/03Send-Data/Sources/01Sources-for-Installed-Collectors/Syslog-Source) on an [Installed collector](https://help.sumologic.com/03Send-Data/Installed-Collectors) as explained in the next section.
+    To capture MongoDB logs using syslog, configure a [syslog source](/docs/send-data/Sources/sources-installed-collectors/Syslog-Source) on an [Installed collector](/docs/send-data/Installed-Collectors) as explained in the next section.
 
 1. Configuring a Collector
 
-    To add an Installed collector, perform the steps as defined on the page[ Configure an Installed Collector.](https://help.sumologic.com/03Send-Data/Installed-Collectors)
+    To add an Installed collector, perform the steps as defined on the page[ Configure an Installed Collector.](/docs/send-data/Installed-Collectors)
 
 1. Configuring a Source
 
@@ -448,13 +448,13 @@ Based on your infrastructure and networking setup choose one of these methods to
 
     To collect logs directly from your MongoDB machine, use an Installed Collector and a Local File Source.
 
-1. Add a[ Local File Source](https://help.sumologic.com/03Send-Data/Sources/01Sources-for-Installed-Collectors/Local-File-Source).
+1. Add a[ Local File Source](/docs/send-data/Sources/sources-installed-collectors/Local-File-Source).
 2. Configure the Local File Source fields as follows:
 * **Name.** (Required)
 * **Description.** (Optional)
 * **File Path (Required).** Enter the path to your error.log or access.log. The files are typically located in /var/log/mongodb/mongodb.log. If you are using a customized path, check the MongoDB.conf file for this information.
 * **Source Host.** Sumo Logic uses the hostname assigned by the OS unless you enter a different host name
-* **Source Category.** Enter any string to tag the output collected from this Source, such as **MongoDB/Logs**. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details see[ Best Practices](https://help.sumologic.com/03Send-Data/01-Design-Your-Deployment/Best-Practices%3A-Good-Source-Category%2C-Bad-Source-Category).)
+* **Source Category.** Enter any string to tag the output collected from this Source, such as **MongoDB/Logs**. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details see[ Best Practices](/docs/send-data/design-deployment/best-practices-source-categories).)
 * **Fields. Set the following fields:**
     * **component = database**
     * **db_system = mongodb**
@@ -476,13 +476,13 @@ Based on your infrastructure and networking setup choose one of these methods to
 
     **To add a Syslog Source source for MongoDB do the following**
 
-1. Add a  [Syslog source](https://help.sumologic.com/03Send-Data/Sources/01Sources-for-Installed-Collectors/Syslog-Source) in the installed collector configured in the previous step.
+1. Add a  [Syslog source](/docs/send-data/Sources/sources-installed-collectors/Syslog-Source) in the installed collector configured in the previous step.
 2. Configure the Syslog Source fields as follows:
 * **Name.** (Required)
 * **Description.** (Optional)
 * **Protocol**: UDP
 * **Port**: 514 (as entered while configuring logging in Step b.)
-* **Source Category.** Enter any string to tag the output collected from this Source, such as **MongoDB/Logs**. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details see[ Best Practices](https://help.sumologic.com/03Send-Data/01-Design-Your-Deployment/Best-Practices%3A-Good-Source-Category%2C-Bad-Source-Category).)
+* **Source Category.** Enter any string to tag the output collected from this Source, such as **MongoDB/Logs**. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details see[ Best Practices](/docs/send-data/design-deployment/best-practices-source-categories).)
 * **Fields. **Set the following fields:
     * component = database
     * db_system = MongoDB
@@ -510,7 +510,7 @@ At this point, MongoDB logs should start flowing into Sumo Logic.
 
 ## Installing MongoDB Monitors
 
-The next few sections have instructions for installing Sumo Logic Monitors for MongoDB, the app, and descriptions of each of the app dashboards. These instructions assume you have already set up collection as described in the [Collect Logs and Metrics for MongoDB](https://help.sumologic.com/07Sumo-Logic-Apps/12Databases/MongoDB/Collect-Logs-for-MongoDB) App page.
+The next few sections have instructions for installing Sumo Logic Monitors for MongoDB, the app, and descriptions of each of the app dashboards. These instructions assume you have already set up collection as described in the [Collect Logs and Metrics for MongoDB](#Collect-Logs-for-MongoDB) App page.
 
 
 ### Pre-packaged alerts
@@ -521,7 +521,7 @@ To install these monitors, you must have the **Manage Monitors** role capability
 
 You can install monitors by importing a JSON file or using a Terraform script.
 
-There are limits to how many alerts can be enabled. For more information, see [Monitors](https://help.sumologic.com/Visualizations-and-Alerts/Alerts/Monitors#Rules) for details.
+There are limits to how many alerts can be enabled. For more information, see [Monitors](/docs/alerts/monitors#Rules) for details.
 
 ### Method 1: Importing a JSON file
 
@@ -657,7 +657,7 @@ email_notifications = [
 
 ## Installing the MongoDB App
 
-Now that you have set up collection for MongoDB, install the Sumo Logic App for MongoDB to use the preconfigured searches and [dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/12Databases/MongoDB/MongoDB-App-Dashboards#Dashboards) to analyze your data.
+Now that you have set up collection for MongoDB, install the Sumo Logic App for MongoDB to use the preconfigured searches and [dashboards](#Dashboards) to analyze your data.
 
 To install the app:
 

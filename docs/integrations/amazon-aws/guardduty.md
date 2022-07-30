@@ -23,13 +23,13 @@ This section has instructions for collecting logs for the Amazon GuardDuty App.
 2. A CloudWatch events rule enables CloudWatch to send events for the GuardDuty findings to the Sumo CloudWatchEventFunction Lambda function.
 3. The Lambda function sends the events to an HTTP source on a Sumo hosted collector.
 
-This configuration is defined in a [AWS Serverless Application Model (SAM) specification](https://docs.aws.amazon.com/lambda/latest/dg/serverless_app.html) published in the [AWS Serverless Application Repository](https://aws.amazon.com/serverless/serverlessrepo/). You don't need to manually create the necessary AWS resources. You simply deploy the configuration, as described in [Step 2](https://help.sumologic.com/07Sumo-Logic-Apps/01Amazon_and_AWS/Amazon_GuardDuty/Collect-Logs-for-the-Amazon-GuardDuty-App#Step_2:_Deploy_Sumo_GuardDuty_events_processor) below.
+This configuration is defined in a [AWS Serverless Application Model (SAM) specification](https://docs.aws.amazon.com/lambda/latest/dg/serverless_app.html) published in the [AWS Serverless Application Repository](https://aws.amazon.com/serverless/serverlessrepo/). You don't need to manually create the necessary AWS resources. You simply deploy the configuration, as described in Step 2 below.
 
 
 ### Step 1: Configure an HTTP source
 
 1. In Sumo Logic, configure a [Hosted Collector](/docs/send-data/configure-hosted-collector).
-2. In Sumo Logic, configure an [HTTP Source](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/HTTP-Source).  When you configure the source, in the **Advanced Options for Logs** section of the page:
+2. In Sumo Logic, configure an [HTTP Source](/docs/send-data/sources/sources-hosted-collectors/http-logs-metrics-source).  When you configure the source, in the **Advanced Options for Logs** section of the page:
     * Specify **Format** as `yyyy-MM-dd'T'HH:mm:ss.SSS'Z'`
     * Specify **Timestamp locator** as `.*"updatedAt":"(.*)".* \`
 
@@ -38,7 +38,7 @@ When you configure the HTTP Source, make a note of the HTTP Source Address URL. 
 
 ### Step 2: Deploy Sumo GuardDuty events processor
 
-In this step, you deploy the events processor. This will create the AWS resources described in [Collection overview](https://help.sumologic.com/07Sumo-Logic-Apps/01Amazon_and_AWS/Amazon_GuardDuty/Collect-Logs-for-the-Amazon-GuardDuty-App#Collection_overview).
+In this step, you deploy the events processor. This will create the AWS resources described in [Collection overview](/docs/integrations/amazon-aws/guardduty#Collect-Logs-for-the-Amazon-GuardDuty-App).
 
 1. Go to [https://serverlessrepo.aws.amazon.com/applications](https://serverlessrepo.aws.amazon.com/applications).
 2. Search for “sumologic-guardduty-events-processor”.
@@ -227,7 +227,7 @@ _sourceCategory=aws/guardduty
 
 ## Installing the Amazon GuardDuty App
 
-Now that you have set up collection for Amazon GuardDuty, install the Sumo Logic App to use the pre-configured searches and [dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/01Amazon_and_AWS/Amazon_GuardDuty/Install-the-Amazon-GuardDuty-App-and-view-the-Dashboards#Dashboards) that provide visibility into your environment for real-time analysis of overall usage.
+Now that you have set up collection for Amazon GuardDuty, install the Sumo Logic App to use the pre-configured searches and [dashboards](#Dashboards) that provide visibility into your environment for real-time analysis of overall usage.
 
 To install the app, do the following:
 

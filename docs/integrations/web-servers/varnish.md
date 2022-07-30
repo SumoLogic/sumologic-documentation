@@ -54,7 +54,7 @@ Instructions below show how to configure Kubernetes and Non-Kubernetes environme
 
 The Sumo Logic App for Varnish has been tested for Varnish Version: 6.4.
 
-In Kubernetes environments, we use the Telegraf Operator, which is packaged with our Kubernetes collection. You can learn more about it[ here](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Collect_Metrics_Using_Telegraf/01_Telegraf_Collection_Architecture). The diagram below illustrates how data is collected from Varnish in a Kubernetes environment. In the architecture shown below, there are four services that make up the metric collection pipeline: Telegraf, Prometheus, Fluentd, and FluentBit.
+In Kubernetes environments, we use the Telegraf Operator, which is packaged with our Kubernetes collection. You can learn more about it[ here](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/telegraf-collection-architecture). The diagram below illustrates how data is collected from Varnish in a Kubernetes environment. In the architecture shown below, there are four services that make up the metric collection pipeline: Telegraf, Prometheus, Fluentd, and FluentBit.
 
 The first service in the pipeline is Telegraf. Telegraf collects metrics from Varnish. Note that we’re running Telegraf in each pod we want to collect metrics from as a sidecar deployment, for example, Telegraf runs in the same pod as the containers it monitors. Telegraf uses the Varnish input plugin to obtain metrics. (For simplicity, the diagram doesn’t show the input plugins.) The injection of the Telegraf sidecar container is done by the Telegraf Operator. We also have Fluentbit that collects logs written to standard out and forwards them to FluentD, which in turn sends all the logs and metrics data to a Sumo Logic HTTP Source.
 
@@ -77,7 +77,7 @@ It’s assumed that you are using the latest helm chart version. If not, upgrade
 
 This section explains the steps to collect Varnish metrics from a Kubernetes environment.
 
-In Kubernetes environments, we use the Telegraf Operator, which is packaged with our Kubernetes collection. You can learn more on this[ here](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Collect_Metrics_Using_Telegraf/01_Telegraf_Collection_Architecture). Follow the steps listed below to collect metrics from a Kubernetes environment:
+In Kubernetes environments, we use the Telegraf Operator, which is packaged with our Kubernetes collection. You can learn more on this[ here](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/telegraf-collection-architecture). Follow the steps listed below to collect metrics from a Kubernetes environment:
 
 1. [Setup Kubernetes Collection with the Telegraf Operator.](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf.md#Install_Telegraf_in_a_Kubernetes_environment)
 2. Add annotations on your Varnish pods
@@ -243,7 +243,7 @@ This section provides instructions for configuring metrics collection for the Su
 #### Step 1 Configure Metrics Collection
 
 1. **Configure a Hosted Collector** To create a new Sumo Logic hosted collector, perform the steps in the[ Create a Hosted Collector](/docs/send-data/configure-hosted-collector) section of the Sumo Logic documentation.
-2. **Configure an HTTP Logs and Metrics Source** Create a new HTTP Logs and Metrics Source in the hosted collector created above by following[ these instructions. ](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/HTTP-Source)Make a note of the **HTTP Source URL**.
+2. **Configure an HTTP Logs and Metrics Source** Create a new HTTP Logs and Metrics Source in the hosted collector created above by following[ these instructions. ](/docs/send-data/sources/sources-hosted-collectors/http-logs-metrics-source)Make a note of the **HTTP Source URL**.
 3. **Install Telegraf** Use the[ following steps](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf.md) to install Telegraf.
 4. **Configure and start Telegraf** As part of collecting metrics data from Telegraf, we will use the [Varnish input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/varnish) to get data from Telegraf and the [Sumo Logic output plugin](https://github.com/SumoLogic/fluentd-output-sumologic) to send data to Sumo Logic.  \
  \
@@ -276,7 +276,7 @@ Please enter values for the following parameters (marked CHANGEME above):
         * `environment` - This is the deployment environment where the Varnish cluster identified by the value of **servers** resides. For example; dev, prod or qa. While this value is optional we highly recommend setting it.
         * **cache_cluster **- Enter a name to identify this Varnish cluster. This cluster name will be shown in the Sumo Logic dashboards.
 * In the output plugins section, which is `[[outputs.sumologic]]`
-    * **url** - This is the HTTP source URL created in step 3. Please see [this doc](https://help.smologic.com/03Send-Data/Collect-from-Other-Data-Sources/Collect_Metrics_Using_Telegraf/05_Configure_Telegraf_Output_Plugin_for_Sumo_Logic) for more information on additional parameters for configuring the Sumo Logic Telegraf output plugin.
+    * **url** - This is the HTTP source URL created in step 3. Please see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/configure-telegraf-output-plugin) for more information on additional parameters for configuring the Sumo Logic Telegraf output plugin.
 
 Here’s an explanation for additional values set by this Telegraf configuration that we request you **please do not modify** as they will cause the Sumo Logic apps to not function correctly.
 
@@ -298,7 +298,7 @@ At this point, Varnish metrics should start flowing into Sumo Logic.
 
 This section provides instructions for configuring log collection for Varnish running on a non-kubernetes environment for the Sumo Logic App for Varnish.
 
-By default, Varnish logs are stored in a log file. Sumo Logic supports collecting logs via a local log file. Local log files can be collected via [Installed collectors](https://help.sumologic.com/03Send-Data/Installed-Collectors). An Installed collector will require you to allow outbound traffic to [Sumo Logic endpoints](https://help.sumologic.com/APIs/General-API-Information/Sumo-Logic-Endpoints-and-Firewall-Security) for collection to work. For detailed requirements for Installed collectors, see this [page](https://help.sumologic.com/01Start-Here/03About-Sumo-Logic/System-Requirements/Installed-Collector-Requirements).
+By default, Varnish logs are stored in a log file. Sumo Logic supports collecting logs via a local log file. Local log files can be collected via [Installed collectors](/docs/send-data/Installed-Collectors). An Installed collector will require you to allow outbound traffic to [Sumo Logic endpoints](https://help.sumologic.com/APIs/General-API-Information/Sumo-Logic-Endpoints-and-Firewall-Security) for collection to work. For detailed requirements for Installed collectors, see this [page](https://help.sumologic.com/01Start-Here/03About-Sumo-Logic/System-Requirements/Installed-Collector-Requirements).
 
 
 
@@ -313,19 +313,19 @@ By default any installation of varnishd will not write any request logs to disk.
 Varnish has an in-memory log, and supplies tools to tap into this log and write to disk. To  \
 configure logging to a local file, follow the steps on [this](https://docs.varnish-software.com/tutorials/enabling-logging-with-varnishncsa/#enable-varnishncsa-logging) page. \
 By default, Varnish logs are stored in **/var/log/varnish/varnishncsa.log**. For customized options please visit this [page](https://docs.varnish-software.com/tutorials/enabling-logging-with-varnishncsa/#step-3-customise-options-1). \
-Logs from the Varnish log file can be collected via a Sumo Logic [Installed collector](https://help.sumologic.com/03Send-Data/Installed-Collectors) and a [Local File Source](https://help.sumologic.com/03Send-Data/Sources/01Sources-for-Installed-Collectors/Local-File-Source) as explained in the next section.
+Logs from the Varnish log file can be collected via a Sumo Logic [Installed collector](/docs/send-data/Installed-Collectors) and a [Local File Source](/docs/send-data/Sources/sources-installed-collectors/Local-File-Source) as explained in the next section.
 3. Configuring a Collector \
-To add an Installed collector, perform the steps as defined on the page[ Configure an Installed Collector.](https://help.sumologic.com/03Send-Data/Installed-Collectors)
+To add an Installed collector, perform the steps as defined on the page[ Configure an Installed Collector.](/docs/send-data/Installed-Collectors)
 4. Configuring a Source \
 **To add a Local File Source source for Varnish do the following \
 **To collect logs directly from your Varnish machine, use an Installed Collector and a Local File Source.  
-    1. Add a[ Local File Source](https://help.sumologic.com/03Send-Data/Sources/01Sources-for-Installed-Collectors/Local-File-Source).
+    1. Add a[ Local File Source](/docs/send-data/Sources/sources-installed-collectors/Local-File-Source).
     2. Configure the Local File Source fields as follows:
 * **Name.** (Required)
 * **Description.** (Optional)
 * **File Path (Required).** Enter the path to your error.log or access.log. The files are typically located in **/var/log/varnish/varnishncsa.log**.
 * **Source Host.** Sumo Logic uses the hostname assigned by the OS unless you enter a different host name
-* **Source Category.** Enter any string to tag the output collected from this Source, such as **Varnish/Logs**. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details see[ Best Practices](https://help.sumologic.com/03Send-Data/01-Design-Your-Deployment/Best-Practices:-Good-Source-Category,-Bad-Source-Category).)
+* **Source Category.** Enter any string to tag the output collected from this Source, such as **Varnish/Logs**. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details see[ Best Practices](/docs/send-data/design-deployment/best-practices-source-categories.md).)
 
     **Fields. **Set the following fields:
 
@@ -373,7 +373,7 @@ Sumo Logic has provided pre-packaged alerts available through [Sumo Logic monito
 
 To install these monitors, you must have the **Manage Monitors** role capability.
 
-There are limits to how many alerts can be enabled. For more information, see [Monitors](https://help.sumologic.com/Visualizations-and-Alerts/Alerts/Monitors#Rules) for details.
+There are limits to how many alerts can be enabled. For more information, see [Monitors](/docs/alerts/monitors#Rules) for details.
 
 You can install monitors by importing a JSON file or using a Terraform script.
 
@@ -628,7 +628,7 @@ The **Varnish - Threat Intel** Dashboard provides an at-a-glance view of threats
 
 Use this dashboard to:
 * To gain insights and understand threats in incoming traffic and discover potential IOCs.
-* Incoming traffic requests are analyzed using the [Sumo - Crowdstrikes](https://help.sumologic.com/07Sumo-Logic-Apps/22Security_and_Threat_Detection/Threat_Intel_Quick_Analysis/03_Threat-Intel-FAQ) threat feed.
+* Incoming traffic requests are analyzed using the [Sumo - Crowdstrikes](/docs/integrations/security-threat-detection/threat-intel-quick-analysis#03_Threat-Intel-FAQ) threat feed.
 
 <img src={useBaseUrl('img/integrations/web-servers/Varnish-Threat-Intel.png')} alt="Varnish dashboard" />
 

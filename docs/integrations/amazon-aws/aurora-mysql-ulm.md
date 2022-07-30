@@ -145,7 +145,7 @@ To collect AWS CloudTrail events, do the following:
    * **Description** - Enter an optional description.
    * **S3 Region** - Select the Amazon Region for your CloudTrail Aurora S3 bucket.
    * **Bucket Name -** Enter the exact name of your CloudTrail Aurora S3 bucket.
-   * **Path Expression** - Enter the string that matches the S3 objects you'd like to collect. You can use a wildcard (*) in this string. (DO NOT use a leading forward slash. See [Amazon Path Expressions](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/Amazon-Path-Expressions).)The S3 bucket name is not part of the path. Don’t include the bucket name when you are setting the Path Expression.
+   * **Path Expression** - Enter the string that matches the S3 objects you'd like to collect. You can use a wildcard (*) in this string. (DO NOT use a leading forward slash. See [Amazon Path Expressions](/docs/send-data/Sources/sources-hosted-collectors/Amazon-Web-Services/Amazon-Path-Expressions).)The S3 bucket name is not part of the path. Don’t include the bucket name when you are setting the Path Expression.
    * **Source Category** - Enter a source category, for example, AWS/Cloudtrail.
    * **Access Key ID and Secret Access Key** - Enter your Amazon [Access Key ID and Secret Access Key](http://docs.aws.amazon.com/general/latest/gr/managing-aws-access-keys.html).
    * **Scan Interval**. Use the default of 5 minutes, or enter a time interval frequency at which Sumo Logic will scan your S3 bucket for new data.
@@ -160,7 +160,7 @@ To collect AWS CloudTrail events, do the following:
 
 This section provides instructions for setting up the collection of AWS CloudWatch logs for ingest into Sumo Logic. To collect AWS CloudWatch logs, do the following:
 
-1. Follow the instructions for collecting [Amazon CloudWatch logs](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Amazon-CloudWatch-Logs).
+1. Follow the instructions for collecting [Amazon CloudWatch logs](/docs/send-data/Collect-from-Other-Data-Sources/Amazon-CloudWatch-Logs).
 
 By default, Aurora MySQL Error Logs are enabled to be pushed to CloudWatch. However, you need to turn ON other log types, as explained in the following steps.
 
@@ -184,7 +184,7 @@ This section provides instructions setting up the collection of Aurora CloudWatc
 **To collect Aurora CloudWatch metrics, do the following:**
 
 1. Configure a [Hosted Collector.](/docs/send-data/configure-hosted-collector)
-2. Configure an [Amazon CloudWatch Metrics Source](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/Amazon-CloudWatch-Source-for-Metrics), providing the following information:
+2. Configure an [Amazon CloudWatch Metrics Source](/docs/send-data/sources/sources-hosted-collectors/amazon-web-services/amazon-cloudwatch-source-metrics), providing the following information:
    * **Name** - Enter a name to display for the new Source.
    * **Description** - Enter an optional description.
    * **Regions** - Select your Amazon Regions for Amazon RDS.
@@ -199,7 +199,7 @@ This section provides instructions setting up the collection of Aurora CloudWatc
 
 ## Installing the Aurora MySQL ULM App
 
-Now that you have set up log and metric collection for Amazon Aurora MySQL, you can install the Sumo Logic App for Aurora MySQL ULM, and use its pre-configured searches and [dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/01Amazon_and_AWS/Amazon_RDS/Amazon-RDS-Metrics-App-Dashboards#Dashboards).
+Now that you have set up log and metric collection for Amazon Aurora MySQL, you can install the Sumo Logic App for Aurora MySQL ULM, and use its pre-configured searches and [dashboards](#Dashboards).
 
 To install the app, do the following:
 

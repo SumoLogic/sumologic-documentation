@@ -62,7 +62,7 @@ In Sumo Logic, create a [Hosted Collector](/docs/send-data/configure-hosted-coll
 7
 
 
-Next, configure an [HTTP Source](https://help.sumologic.com/07Sumo-Logic-Apps/01Amazon_and_AWS/AWS_Config/01-Collect-logs-for-the-AWS-Config-App).
+Next, configure an [HTTP Source](/#Collect-logs-for-the-AWS-Config-App).
 
 
 
@@ -242,7 +242,7 @@ The AWS Config Overview dashboard runs in Live mode. Live mode dashboards automa
 
 ### AWS Overview - Interactive
 
-This dashboard is identical to the [AWS Config Overview](https://help.sumologic.com/07Sumo-Logic-Apps/01Amazon_and_AWS/AWS_Config/AWS-Config-App-Dashboards#AWS_Config_Overview) dashboard, described above, but runs in interactive mode. In interactive mode, a dashboard backfills with historical data, per your selected time range, but does not automatically refresh. You can manually refresh an interactive dashboard, by refreshing your browser, or using the **Refresh** option on the Details menu on the dashboard.
+This dashboard is identical to the [AWS Config Overview](#AWS_Config_Overview) dashboard, described above, but runs in interactive mode. In interactive mode, a dashboard backfills with historical data, per your selected time range, but does not automatically refresh. You can manually refresh an interactive dashboard, by refreshing your browser, or using the **Refresh** option on the Details menu on the dashboard.
 
 
 ### Resource Modifications Details - Interactive

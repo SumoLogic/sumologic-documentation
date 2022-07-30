@@ -267,7 +267,7 @@ _sourceCategory=Labs/MongoDBAtlas/logs AND (_sourceName="mongodb-audit-log.gz" O
 
 This page explains how to collect logs from MongoDB Atlas and ingest them into Sumo Logic for use with the MongoDB Atlas App predefined dashboards and searches. Sumo Logic provides a solution which pulls logs and metrics from MongoDB Atlas with API calls. You can configure the log types to be collected, and the logs and metrics are then forwarded to Sumo Logic’s HTTP endpoint.
 
-By default, the collection starts from the current date and time, but this setting is also configurable. For more information, see the [Advanced Configuration](https://help.sumologic.com/07Sumo-Logic-Apps/12Databases/MongoDB_Atlas/Collect_logs_and_metrics_for_the_MongoDB_Atlas_App#Advanced_Configuration) options.
+By default, the collection starts from the current date and time, but this setting is also configurable. For more information, see the [Advanced Configuration](#Advanced_Configuration) options.
 
 ### Step 1: Acquire Authentication information from the MongoDB Atlas portal
 
@@ -315,11 +315,11 @@ To add a hosted collector and HTTP source, do the following:
 
 In this section, we explore various mechanisms to collect database logs, events, metrics and alerts  from MongoDB Atlas and send them to Sumo Logic, where they are shown in dashboards as part of the MongoDB Atlas App. You can configure Sumo Logic’s MongoDB Atlas collector in Amazon Web Services (AWS) using the AWS Lambda service, or by running  a script on a Linux machine as a cron job. Choose the method that is best suited for you:
 
-* [AWS Lambda based collection](https://help.sumologic.com/07Sumo-Logic-Apps/12Databases/MongoDB_Atlas/Collect_logs_and_metrics_for_the_MongoDB_Atlas_App#Deploy_the_Sumo_Logic_MongoDB_Atlas_SAM_Application) via a Serverless Application Model (SAM) application
-* [Script based collection](https://help.sumologic.com/07Sumo-Logic-Apps/12Databases/MongoDB_Atlas/Collect_logs_and_metrics_for_the_MongoDB_Atlas_App#Configure_script_based_collection_for_MongoDB_Atlas) from a Linux machine
+* [AWS Lambda based collection](#Deploy_the_Sumo_Logic_MongoDB_Atlas_SAM_Application) via a Serverless Application Model (SAM) application
+* [Script based collection](#Configure_script_based_collection_for_MongoDB_Atlas) from a Linux machine
 
 
-A single instance of the collector is responsible for collecting logs from a single project. Refer [Configuring Collection for Multiple Projects](https://help.sumologic.com/07Sumo-Logic-Apps/12Databases/MongoDB_Atlas/Collect_logs_and_metrics_for_the_MongoDB_Atlas_App#Configure_collection_for_multiple_projects) if you have multiple projects.
+A single instance of the collector is responsible for collecting logs from a single project. Refer [Configuring Collection for Multiple Projects](#Configure_collection_for_multiple_projects) if you have multiple projects.
 
 
 #### Deploy the Sumo Logic MongoDB Atlas SAM Application
@@ -338,12 +338,12 @@ In this section, you deploy the SAM application, which creates the necessary  re
 
 
 1. In the **AWS Lambda > Functions >** **Application Settings** panel, specify the following parameters in the corresponding text fields:
-* **HTTPLogsEndpoint**: Copy and paste the URL for the HTTP Logs source from this [Step](https://help.sumologic.com/07Sumo-Logic-Apps/12Databases/MongoDB_Atlas/Collect_logs_and_metrics_for_the_MongoDB_Atlas_App#Add_a_Hosted_Collector_and_HTTP_Source).
-* **HTTPMetricsEndpoint**: Copy and paste the URL for the HTTP Metrics source from [Step](https://help.sumologic.com/07Sumo-Logic-Apps/12Databases/MongoDB_Atlas/Collect_logs_and_metrics_for_the_MongoDB_Atlas_App#Add_a_Hosted_Collector_and_HTTP_Source).
-* **OrganizationID**: Copy and paste the Organization ID from [Step](https://help.sumologic.com/07Sumo-Logic-Apps/12Databases/MongoDB_Atlas/Collect_logs_and_metrics_for_the_MongoDB_Atlas_App#Acquire_Authentication_information_from_the_MongoDB_Atlas_portal).
-* **ProjectID**: Copy and paste the Project ID from [Step](https://help.sumologic.com/07Sumo-Logic-Apps/12Databases/MongoDB_Atlas/Collect_logs_and_metrics_for_the_MongoDB_Atlas_App#Acquire_Authentication_information_from_the_MongoDB_Atlas_portal).
-* **Private API Key**: Copy and paste the Private Key from [Step](https://help.sumologic.com/07Sumo-Logic-Apps/12Databases/MongoDB_Atlas/Collect_logs_and_metrics_for_the_MongoDB_Atlas_App#Acquire_Authentication_information_from_the_MongoDB_Atlas_portal).
-* **Public API Key**: Copy and paste the Public Key from [Step](https://help.sumologic.com/07Sumo-Logic-Apps/12Databases/MongoDB_Atlas/Collect_logs_and_metrics_for_the_MongoDB_Atlas_App#Acquire_Authentication_information_from_the_MongoDB_Atlas_portal).
+* **HTTPLogsEndpoint**: Copy and paste the URL for the HTTP Logs source from this [Step](#Add_a_Hosted_Collector_and_HTTP_Source).
+* **HTTPMetricsEndpoint**: Copy and paste the URL for the HTTP Metrics source from [Step](#Add_a_Hosted_Collector_and_HTTP_Source).
+* **OrganizationID**: Copy and paste the Organization ID from [Step](#Acquire_Authentication_information_from_the_MongoDB_Atlas_portal).
+* **ProjectID**: Copy and paste the Project ID from [Step](#Acquire_Authentication_information_from_the_MongoDB_Atlas_portal).
+* **Private API Key**: Copy and paste the Private Key from [Step](#Acquire_Authentication_information_from_the_MongoDB_Atlas_portal).
+* **Public API Key**: Copy and paste the Public Key from [Step](#Acquire_Authentication_information_from_the_MongoDB_Atlas_portal).
 
 
 1. Click **Deploy**.
@@ -358,7 +358,7 @@ This section shows you how to configure collection for multiple projects assumin
 
 To configure collection for multiple projects, do the following:
 
-1. [Deploy the MongoDB Atlas SAM application](https://help.sumologic.com/07Sumo-Logic-Apps/12Databases/MongoDB_Atlas/Collect_logs_and_metrics_for_the_MongoDB_Atlas_App#Deploy_the_Sumo_Logic_MongoDB_Atlas_SAM_Application) with the configuration for a new project.
+1. [Deploy the MongoDB Atlas SAM application](#Deploy_the_Sumo_Logic_MongoDB_Atlas_SAM_Application) with the configuration for a new project.
 2. After the deployment is complete, change the database name by adding environment variable (DBNAME) in [AWS Lambda](https://docs.aws.amazon.com/lambda/latest/dg/env_variables.html), as shown in the following example.
 
 
@@ -378,7 +378,7 @@ Prerequisites
 This task makes the following assumptions
 
 
-* You successfully added a hosted collector and HTTP source,** **and copied the configuration parameters (ProjectID, OrganizationID, PublicKey and PrivateKey) from MongoDB Atlas console, as described in [Add a Hosted Collector and HTTP Source](https://help.sumologic.com/07Sumo-Logic-Apps/12Databases/MongoDB_Atlas/Collect_logs_and_metrics_for_the_MongoDB_Atlas_App#Step_2:_Add_a_Hosted_Collector_and_HTTP_Source).
+* You successfully added a hosted collector and HTTP source,** **and copied the configuration parameters (ProjectID, OrganizationID, PublicKey and PrivateKey) from MongoDB Atlas console, as described in [Add a Hosted Collector and HTTP Source](#Step_2:_Add_a_Hosted_Collector_and_HTTP_Source).
 * You are logged in to the user account with which you will install the collector. If not, use the following command to switch to that account: `sudo su &lt;user_name>`
 
 
@@ -441,7 +441,7 @@ This section shows you how to configure collection for multiple projects assumin
 
 To configure collection for multiple projects, do the following:
 
-1. [Configure the script on a Linux machine](https://help.sumologic.com/07Sumo-Logic-Apps/12Databases/MongoDB_Atlas/Collect_logs_and_metrics_for_the_MongoDB_Atlas_App#Configure_the_script_on_a_Linux_machine), then go to your configuration file.
+1. [Configure the script on a Linux machine](#Configure_the_script_on_a_Linux_machine), then go to your configuration file.
 2. Change the **DB_NAME** and comment out **EVENTS_ORG** as shown in the following example.
 
 ```yml
@@ -522,14 +522,14 @@ You configure Webhooks for real-time alerts. This section explains how to config
 To configure alert collection with Webhooks, do the following:
 
 1. Go to the **MongoDBAtlas** console and select **Project Integrations.** Click **Configure** under **Webhook Settings**.
-2. Copy and paste the Logs endpoint from [Step](https://help.sumologic.com/07Sumo-Logic-Apps/12Databases/MongoDB_Atlas/Collect_logs_and_metrics_for_the_MongoDB_Atlas_App#Add_a_Hosted_Collector_and_HTTP_Source) to set up Webhook.
+2. Copy and paste the Logs endpoint from [Step](#Add_a_Hosted_Collector_and_HTTP_Source) to set up Webhook.
 
 1. When configuring an alert, specify the **Webhook** as shown in the following example, and then click **Save**.
 
 
 ### Advanced Configuration
 
-This section is common for both [AWS Lambda based collection](https://help.sumologic.com/07Sumo-Logic-Apps/12Databases/MongoDB_Atlas/Collect_logs_and_metrics_for_the_MongoDB_Atlas_App#Deploy_the_Sumo_Logic_MongoDB_Atlas_SAM_Application) and [script based collection](https://help.sumologic.com/07Sumo-Logic-Apps/12Databases/MongoDB_Atlas/Collect_logs_and_metrics_for_the_MongoDB_Atlas_App#Configure_script_based_collection_for_MongoDB_Atlas).
+This section is common for both [AWS Lambda based collection](#Deploy_the_Sumo_Logic_MongoDB_Atlas_SAM_Application) and [script based collection](#Configure_script_based_collection_for_MongoDB_Atlas).
 
 The following table provides a list of variables for MongoDB Atlas that you can optionally define in the configuration file.
 
@@ -567,7 +567,7 @@ Exception: Invalid config
 
 ## Installing the MongoDB Atlas App
 
-This section provides instructions on how to install the MongoDB Atlas App, as well as examples of each of the dashboards. The App's pre-configured searches and [Dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/22Security_and_Threat_Detection/Cisco_ASA/Cisco-ASA-App-Dashboards#Dashboards) provide easy-to-access visual insights into your data.
+This section provides instructions on how to install the MongoDB Atlas App, as well as examples of each of the dashboards. The App's pre-configured searches and [Dashboards](#Dashboards) provide easy-to-access visual insights into your data.
 
 
 To install the app, do the following:

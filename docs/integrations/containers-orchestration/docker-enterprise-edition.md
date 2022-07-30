@@ -13,7 +13,7 @@ Docker Enterprise Edition (Docker EE) is an industry standard container platform
 
 The Docker EE App facilitates monitoring and troubleshooting distributed microservice based applications running in Docker containers. The app enables you to correlate events across the Docker platform and application containers and detects anomalous patterns for faster root cause analysis.
 
-The Docker EE App works in conjunction with the [Docker ULM App](https://help.sumologic.com/07Sumo-Logic-Apps/10Containers_and_Orchestration/Docker_Apps/Docker_ULM) that monitors application container workloads running on the Docker EE platform.
+The Docker EE App works in conjunction with the [Docker ULM App](/docs/integrations/containers-orchestration/docker-ulm) that monitors application container workloads running on the Docker EE platform.
 
 
 ## Collect logs and metrics for Docker EE
@@ -32,13 +32,13 @@ This section shows you how to configure log and metric collection for the Docker
 
 
 
-1. Follow the instructions to [Collect Logs and Metrics for Docker ULM](https://help.sumologic.com/07Sumo-Logic-Apps/10Containers_and_Orchestration/Docker_Apps/Docker_ULM/Collect_Logs_and_Metrics_for_Docker_ULM).
+1. Follow the instructions to [Collect Logs and Metrics for Docker ULM](/docs/integrations/containers-orchestration/docker-ulm#Collect_Logs_and_Metrics_for_Docker_ULM).
 
 Use the same _sourceCategory for each host on your cluster.
 
 
 
-1. Follow the instructions to [Install the Docker ULM App](https://help.sumologic.com/07Sumo-Logic-Apps/10Containers_and_Orchestration/Docker_Apps/Docker_ULM/Install_the_Docker_ULM_App_and_View_the_Dashboards) and dashboards.
+1. Follow the instructions to [Install the Docker ULM App](/docs/integrations/containers-orchestration/docker-ulm#Install_the_Docker_ULM_App) and dashboards.
 
 
 ### Step 2. Deploy FluentD and FluentBit to collect logs
@@ -228,10 +228,10 @@ You configured two sources for collection, docker logs and docker stats, and the
 3. You retain the default **App Name**, or enter a name of your choice for the app.
 4. Select the following  options for the **Docker Log source.**
     1. Choose **Source Category,** and select the Source Category from the list.
-    2. Choose **Enter a Custom Data Filter,** and for the Docker Log Source enter the source category with the value from [Step 1](https://help.sumologic.com/07Sumo-Logic-Apps/10Containers_and_Orchestration/Docker_Apps/Docker_EE/Collect_logs_and_metrics_for_Docker_EE) of the collection instructions, beginning with an underscore, for example: _sourceCategory=**docker**
+    2. Choose **Enter a Custom Data Filter,** and for the Docker Log Source enter the source category with the value from [Step 1](#Collect-logs-and-metrics-for-Docker-EE) of the collection instructions, beginning with an underscore, for example: _sourceCategory=**docker**
 5. Select the following option for the **Docker Platform Log Source**.
     3. Choose **Source Category,** and select the Source Category from the list.
-    4. Choose **Enter a Custom Data Filter,** and enter the source category specified in [Step 2](https://help.sumologic.com/07Sumo-Logic-Apps/10Containers_and_Orchestration/Docker_Apps/Docker_EE/Collect_logs_and_metrics_for_Docker_EE) of collection instructions followed by “/system”, for example: _sourceCategory=**kubernetes/system**
+    4. Choose **Enter a Custom Data Filter,** and enter the source category specified in [Step 2](#Collect_logs_and_metrics_for_Docker_EE) of collection instructions followed by “/system”, for example: _sourceCategory=**kubernetes/system**
 
 
 

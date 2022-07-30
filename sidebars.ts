@@ -116,7 +116,7 @@ module.exports = {
           collapsed: true,
           link: {type: 'doc', id: 'manage/collection/processing-rules/index'},
           items: [
-            'manage/collection/processing-rules/create-a-processing-rule',
+            'manage/collection/processing-rules/create-processing-rule',
             'manage/collection/processing-rules/data-forwarding-rules',
             'manage/collection/processing-rules/hash-rules',
             'manage/collection/processing-rules/include-and-exclude-rules',

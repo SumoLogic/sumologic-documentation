@@ -111,7 +111,7 @@ If you are using Elasticsearch in a non-Kubernetes environment create the fields
 
 <TabItem value="k8s">
 
-In Kubernetes environments, we use the Telegraf Operator, which is packaged with our Kubernetes collection. You can learn more about it[ here](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Collect_Metrics_Using_Telegraf/01_Telegraf_Collection_Architecture). The diagram below illustrates how data is collected from Elasticsearch in a Kubernetes environment. Four services in the architecture shown below make up the metric collection pipeline: Telegraf, Prometheus, Fluentd, and FluentBit.
+In Kubernetes environments, we use the Telegraf Operator, which is packaged with our Kubernetes collection. You can learn more about it[ here](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/telegraf-collection-architecture). The diagram below illustrates how data is collected from Elasticsearch in a Kubernetes environment. Four services in the architecture shown below make up the metric collection pipeline: Telegraf, Prometheus, Fluentd, and FluentBit.
 
 The first service in the pipeline is Telegraf. Telegraf collects metrics from Elasticsearch. Note that we’re running Telegraf in each pod we want to collect metrics from as a sidecar deployment, for example, Telegraf runs in the same pod as the containers it monitors. Telegraf uses the Elasticsearch input plugin to obtain metrics. (For simplicity, the diagram doesn’t show the input plugins.) The injection of the Telegraf sidecar container is done by the Telegraf Operator. We also have Fluentbit that collects logs written to standard out and forwards them to FluentD, which in turn sends all the logs and metrics data to a Sumo Logic HTTP Source.
 
@@ -167,7 +167,7 @@ Here’s an explanation for additional values set by this configuration that we 
 
     For all other parameters please see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#Configuring-Telegraf) for more properties that can be configured in the Telegraf agent globally.
 
-1. The Sumologic-Kubernetes-Collection will automatically capture the logs from stdout and will send the logs to Sumologic. For more information on deploying Sumologic-Kubernetes-Collection,[ visit](https://help.sumologic.com/07Sumo-Logic-Apps/10Containers_and_Orchestration/Kubernetes/Collect_Logs_and_Metrics_for_the_Kubernetes_App) here.
+1. The Sumologic-Kubernetes-Collection will automatically capture the logs from stdout and will send the logs to Sumologic. For more information on deploying Sumologic-Kubernetes-Collection,[ visit](/docs/integrations/containers-orchestration/Kubernetes#Collect_Logs_and_Metrics_for_the_Kubernetes_App) here.
 2. Verify logs in Sumo Logic.
 1. (Optional) Collecting Elasticsearch Logs from a Log File
 
@@ -235,7 +235,7 @@ Labels created in Kubernetes environments automatically are prefixed with pod_la
 
 This section explains the steps to collect Elasticsearch metrics from a Kubernetes environment.
 
-In Kubernetes environments, we use the Telegraf Operator, which is packaged with our Kubernetes collection. You can learn more about this[ here](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Collect_Metrics_Using_Telegraf/01_Telegraf_Collection_Architecture). Follow the steps listed below to collect metrics from a Kubernetes environment:
+In Kubernetes environments, we use the Telegraf Operator, which is packaged with our Kubernetes collection. You can learn more about this[ here](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/telegraf-collection-architecture). Follow the steps listed below to collect metrics from a Kubernetes environment:
 
 1. [Set up Kubernetes Collection with the Telegraf Operator.](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf.md#Install_Telegraf_in_a_Kubernetes_environment)
 2. Add annotations on your Elasticsearch pods \
@@ -312,7 +312,7 @@ This section provides instructions for configuring metrics collection for the Su
 1. **Configure a Hosted Collector**
 To create a new Sumo Logic hosted collector, perform the steps in the[ Create a Hosted Collector](/docs/send-data/configure-hosted-collector) section of the Sumo Logic documentation.
 2. Configure an HTTP Logs and Metrics Source \
-Create a new HTTP Logs and Metrics Source in the hosted collector created above by following[ these instructions. ](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/HTTP-Source)Make a note of the **HTTP Source URL**.
+Create a new HTTP Logs and Metrics Source in the hosted collector created above by following[ these instructions. ](/docs/send-data/sources/sources-hosted-collectors/http-logs-metrics-source)Make a note of the **HTTP Source URL**.
 3. Install Telegraf \
 Use the[ following steps](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf.md) to install Telegraf.
 4. Configure and start Telegraf \
@@ -383,7 +383,7 @@ This section provides instructions for configuring log collection for Elasticsea
 
 By default, Elasticsearch logs are stored in a log file.
 
-Local log files can be collected via [Installed collectors](https://help.sumologic.com/03Send-Data/Installed-Collectors). The installed collector will require you to allow outbound traffic to [Sumo Logic endpoints](https://help.sumologic.com/APIs/General-API-Information/Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security) for collection to work. For detailed requirements for Installed collectors, see this [page](https://help.sumologic.com/01Start-Here/03About-Sumo-Logic/System-Requirements/Installed-Collector-Requirements).
+Local log files can be collected via [Installed collectors](/docs/send-data/Installed-Collectors). The installed collector will require you to allow outbound traffic to [Sumo Logic endpoints](https://help.sumologic.com/APIs/General-API-Information/Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security) for collection to work. For detailed requirements for Installed collectors, see this [page](https://help.sumologic.com/01Start-Here/03About-Sumo-Logic/System-Requirements/Installed-Collector-Requirements).
 
 
 1. Configure logging in Elasticsearch \
@@ -397,21 +397,21 @@ All logging settings are located in [Elasticsearch.conf](https://www.elastic.co/
 
 By default, Elasticsearch logs are stored in `/var/log/elasticsearch/ ELK-<Clustername>.log`. The default directory for log files is listed in the Elasticsearch.conf file.
 
-Logs from the Elasticsearch log file can be collected via a Sumo Logic [Installed collector](https://help.sumologic.com/03Send-Data/Installed-Collectors) and a [Local File Source](https://help.sumologic.com/03Send-Data/Sources/01Sources-for-Installed-Collectors/Local-File-Source) as explained in the next section.
+Logs from the Elasticsearch log file can be collected via a Sumo Logic [Installed collector](/docs/send-data/Installed-Collectors) and a [Local File Source](/docs/send-data/Sources/sources-installed-collectors/Local-File-Source) as explained in the next section.
 
 1. Configuring a Collector \
-To collect logs directly from the Elasticsearch machine, configure an[ Installed Collector](https://help.sumologic.com/03Send-Data/Installed-Collectors).
+To collect logs directly from the Elasticsearch machine, configure an[ Installed Collector](/docs/send-data/Installed-Collectors).
 2. Configuring a Source \
  \
 **For an Installed Collector \
 **To collect logs directly from your Elasticsearch machine, use an Installed Collector and a Local File Source.
-    1. Add a[ Local File Source](https://help.sumologic.com/03Send-Data/Sources/01Sources-for-Installed-Collectors/Local-File-Source).
+    1. Add a[ Local File Source](/docs/send-data/Sources/sources-installed-collectors/Local-File-Source).
     2. Configure the Local File Source fields as follows:
 * **Name.** (Required)
 * **Description.** (Optional)
 * **File Path (Required).** Enter the path to your error.log or access.log. The files are typically located in `/var/log/elasticsearch/elasticsearch-<clustername>.log`. If you are using a customized path, check the Elasticsearch.conf file for this information.
 * **Source Host.** Sumo Logic uses the hostname assigned by the OS unless you enter a different hostname
-* **Source Category.** Enter any string to tag the output collected from this Source, such as **elasticsearch/Logs**. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details see[ Best Practices](https://help.sumologic.com/03Send-Data/01-Design-Your-Deployment/Best-Practices%3A-Good-Source-Category%2C-Bad-Source-Category).)
+* **Source Category.** Enter any string to tag the output collected from this Source, such as **elasticsearch/Logs**. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details see[ Best Practices](/docs/send-data/design-deployment/best-practices-source-categories).)
 * **Fields. Set the following fields:**
     * `component = database`
     * `db_system = elasticsearch`
@@ -438,13 +438,13 @@ At this point, Elasticsearch logs should start flowing into Sumo Logic.
 
 ## Install the Elasticsearch Monitors
 
-Sumo Logic has provided pre-packaged alerts available through [Sumo Logic monitors](https://help.sumologic.com/Visualizations-and-Alerts/Alerts/Monitors) to help you proactively determine if an Elasticsearch cluster is available and performing as expected. These monitors are based on metric and log data and include pre-set thresholds that reflect industry best practices and recommendations. For more information about individual alerts, see [Elasticsearch Alerts](https://help.sumologic.com/07Sumo-Logic-Apps/12Databases/Elasticsearch/Elasticsearch_Alerts).
+Sumo Logic has provided pre-packaged alerts available through [Sumo Logic monitors](/docs/alerts/monitors) to help you proactively determine if an Elasticsearch cluster is available and performing as expected. These monitors are based on metric and log data and include pre-set thresholds that reflect industry best practices and recommendations. For more information about individual alerts, see [Elasticsearch Alerts](#Elasticsearch-Alerts).
 
 To install these monitors, you must have the **Manage Monitors** role capability.
 
 You can install monitors by importing a JSON file or using a Terraform script.
 
-There are limits to how many alerts can be enabled. For more information, see [Monitors](https://help.sumologic.com/Visualizations-and-Alerts/Alerts/Monitors#Rules) for details.
+There are limits to how many alerts can be enabled. For more information, see [Monitors](/docs/alerts/monitors#Rules) for details.
 
 
 ### Method 1: Install Monitors by importing a JSON file
@@ -474,7 +474,7 @@ Custom filter examples:
 
 5
 
-5. The monitors are created in a "Elasticsearch" folder. The monitors are disabled by default. See the [Monitors](https://help.sumologic.com/Visualizations-and-Alerts/Alerts/Monitors) topic for information about enabling monitors and configuring notifications or connections.
+5. The monitors are created in a "Elasticsearch" folder. The monitors are disabled by default. See the [Monitors](/docs/alerts/monitors) topic for information about enabling monitors and configuring notifications or connections.
 
 
 ### Method 2: Install Monitors using a Terraform script
