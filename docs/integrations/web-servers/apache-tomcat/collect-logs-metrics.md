@@ -381,7 +381,7 @@ This section provides instructions for configuring metrics collection for the Su
 
 1. **Configure a Hosted Collector**
 
-    To create a new Sumo Logic hosted collector, perform the steps in the[ Create a Hosted Collector](https://help.sumologic.com/03Send-Data/Hosted-Collectors/Configure-a-Hosted-Collector) section of the Sumo Logic documentation.
+    To create a new Sumo Logic hosted collector, perform the steps in the[ Create a Hosted Collector](/docs/send-data/configure-hosted-collector) section of the Sumo Logic documentation.
 
 1. **Configure an HTTP Logs and Metrics Source**
 

@@ -34,7 +34,7 @@ To enable Cloud Monitor in your Akamai environment, use the instructions at:
 
 ### Configure a Collector
 
-In Sumo Logic, create a new [Hosted Collector](https://help.sumologic.com/03Send-Data/Hosted-Collectors/Configure-a-Hosted-Collector).
+In Sumo Logic, create a new [Hosted Collector](/docs/send-data/configure-hosted-collector).
 
 
 ### Configure a Source
@@ -205,7 +205,7 @@ Locate and install the app you need from the **App Catalog**. If you want to see
 2. Select the version of the service you're using and click **Add to Library**.
 
 
-Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](https://help.sumologic.com/01Start-Here/Library/Apps-in-Sumo-Logic/Install-Apps-from-the-Library)
+Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/library/install-apps)
 
 1. To install the app, complete the following fields.
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 

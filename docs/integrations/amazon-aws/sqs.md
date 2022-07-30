@@ -90,7 +90,7 @@ _sourceCategory=*cloudtrail* "\"eventsource\":\"sqs.amazonaws.com\""
 
 ### Collect Metrics
 
-1. Configure a [Hosted Collector](https://help.sumologic.com/03Send-Data/Hosted-Collectors/Configure-a-Hosted-Collector).
+1. Configure a [Hosted Collector](/docs/send-data/configure-hosted-collector).
 2. Configure an [Amazon CloudWatch Source for Metrics](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/Amazon-CloudWatch-Source-for-Metrics).
     * **Name**. Enter a name to display for the new Source.
     * **Description**. Enter an optional description.

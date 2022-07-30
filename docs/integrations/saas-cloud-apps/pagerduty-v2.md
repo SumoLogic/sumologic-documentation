@@ -69,7 +69,7 @@ An **HTTP Source** is an endpoint for receiving log and metric data uploaded to 
 **To configure Hosted Collector and HTTP Source, do the following:**
 
 1. Log in to Sumo Logic.
-2. Follow the instruction for configuring a [Hosted Collector](https://help.sumologic.com/03Send-Data/Hosted-Collectors/Configure-a-Hosted-Collector).
+2. Follow the instruction for configuring a [Hosted Collector](/docs/send-data/configure-hosted-collector).
 3. Follow the instruction for configuring an  [HTTP Source](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/HTTP-Source). \
 
 1.png "image_tooltip")
@@ -100,7 +100,7 @@ Locate and install the app you need from the **App Catalog**. If you want to see
 1. From the **App Catalog**, search for and select the app**.**
 2. Select the version of the service you're using and click **Add to Library**.
 
-Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](https://help.sumologic.com/01Start-Here/Library/Apps-in-Sumo-Logic/Install-Apps-from-the-Library)
+Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/library/install-apps)
 
 
 1. To install the app, complete the following fields.

@@ -29,7 +29,7 @@ This page has instructions for setting up log collection for the Fastly app.
 
 In this step, you configure a collector and source to receive Fastly logs.
 
-1. Add a [Sumo Logic Hosted Collector](https://help.sumologic.com/03Send-Data/Hosted-Collectors/Configure-a-Hosted-Collector) to your Sumo Logic Org.
+1. Add a [Sumo Logic Hosted Collector](/docs/send-data/configure-hosted-collector) to your Sumo Logic Org.
 2. Configure an [HTTP Source](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/HTTP-Source) for your Fastly request logs. Make sure to set the Source Category when configuring the HTTP source. For example, `fastly`. Make a note of the Source Category you assign to the source. You will provide this Source Category value when you install the Fastly app.
 
 

@@ -100,7 +100,7 @@ When you configure the HTTP source, make sure to save the HTTP Source Address UR
 
 
 
-1. Create a new Sumo Logic hosted collector by performing the steps in [Configure a Hosted Collector](https://help.sumologic.com/03Send-Data/Hosted-Collectors/Configure-a-Hosted-Collector).
+1. Create a new Sumo Logic hosted collector by performing the steps in [Configure a Hosted Collector](/docs/send-data/configure-hosted-collector).
 2. Create a new HTTP source on the hosted collector created above by following [these instructions](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/HTTP-Source).
 
 

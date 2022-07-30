@@ -33,7 +33,7 @@ In this step you set up AWS WAF to send log data to an S3 bucket using an Kinesi
 
 ### Configure a Sumo collector and source to receive AWS WAF logs
 
-1. Configure a [Hosted Collector](https://help.sumologic.com/03Send-Data/Hosted-Collectors/Configure-a-Hosted-Collector).
+1. Configure a [Hosted Collector](/docs/send-data/configure-hosted-collector).
 2. To your Hosted Collector, add an [AWS S3 Source](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/AWS-S3-Source).
     * **Name**. Enter a name to display for the new Source.
     * **Description**. Enter an optional description.
@@ -79,7 +79,7 @@ Locate and install the app you need from the **App Catalog**. If you want to see
 1. From the **App Catalog**, search for and select the app**.**
 2. Select the version of the service you're using and click **Add to Library**.
 
-Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](https://help.sumologic.com/01Start-Here/Library/Apps-in-Sumo-Logic/Install-Apps-from-the-Library)
+Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/library/install-apps)
 
 
 1. To install the app, complete the following fields.

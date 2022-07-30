@@ -49,7 +49,7 @@ For detailed instructions, see [here](https://docs.incapsula.com/Content/managem
 #### To configure log collection for Sumo Logic, do the following:
 
 
-1. Add a [Sumo Logic Hosted Collector](https://help.sumologic.com/03Send-Data/Hosted-Collectors/Configure-a-Hosted-Collector)
+1. Add a [Sumo Logic Hosted Collector](/docs/send-data/configure-hosted-collector)
 2. Configure [AWS S3 Source](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/AWS-S3-Source).
 
 
@@ -118,7 +118,7 @@ Locate and install the app you need from the **App Catalog**. If you want to see
 1. From the **App Catalog**, search for and select the app**.**
 2. Select the version of the service you're using and click **Add to Library**.
 
-Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](https://help.sumologic.com/01Start-Here/Library/Apps-in-Sumo-Logic/Install-Apps-from-the-Library)
+Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/library/install-apps)
 
 
 

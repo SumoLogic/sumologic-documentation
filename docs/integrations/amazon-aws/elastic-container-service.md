@@ -298,7 +298,7 @@ This section has instructions for collecting logs and metrics for the Amazon ECS
 In this step, you set up an [Amazon CloudWatch Source for Metrics](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/Amazon-CloudWatch-Source-for-Metrics).
 
 1. Grant permission for Sumo Logic to list available metrics and get metric data points. For instructions, see [Grant Access to an AWS Product](/docs/send-data/sources/sources-hosted-collectors/amazon-web-services/grant-access-aws-product.md).
-2. Configure a [Hosted Collector](https://help.sumologic.com/03Send-Data/Hosted-Collectors/Configure-a-Hosted-Collector).
+2. Configure a [Hosted Collector](/docs/send-data/configure-hosted-collector).
 3. In the Sumo web app, select **Manage Data > Collection > Collection**.
 4. Navigate to the hosted collector you configured above and select **Add > Add Source**.
 5. Select Amazon CloudWatch Source for Metrics.
@@ -353,7 +353,7 @@ Locate and install the app you need from the **App Catalog**. If you want to see
 1. From the **App Catalog**, search for and select the app**.**
 2. Select the version of the service you're using and click **Add to Library**.
 
-Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](https://help.sumologic.com/01Start-Here/Library/Apps-in-Sumo-Logic/Install-Apps-from-the-Library)
+Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/library/install-apps)
 
 3. To install the app, complete the following fields.
     * **App Name.** You can retain the existing name, or enter a name of your choice for the app. 

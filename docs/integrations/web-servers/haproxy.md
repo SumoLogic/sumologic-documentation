@@ -284,7 +284,7 @@ This section provides instructions for configuring metrics collection for the Su
 
 #### Configure Metrics Collection
 
-1. Configure a Hosted Collector: To create a new Sumo Logic hosted collector, perform the steps in the[ Create a Hosted Collector](https://help.sumologic.com/03Send-Data/Hosted-Collectors/Configure-a-Hosted-Collector) section of the Sumo Logic documentation.
+1. Configure a Hosted Collector: To create a new Sumo Logic hosted collector, perform the steps in the[ Create a Hosted Collector](/docs/send-data/configure-hosted-collector) section of the Sumo Logic documentation.
 2. Configure an HTTP Logs and Metrics Source: Create a new HTTP Logs and Metrics Source in the hosted collector created above by following[ these instructions](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/HTTP-Source). Make a note of the **HTTP Source URL**.
 3. Install Telegraf: Use [these steps](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf.md) to install Telegraf.
 4. Configure and start Telegraf: As part of collecting metrics data from Telegraf, we will use the [HAProxy input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/haproxy) to get data from Telegraf and the [Sumo Logic output plugin](https://github.com/influxdata/telegraf/tree/master/plugins/outputs/sumologic) to send data to Sumo Logic.  
@@ -644,7 +644,7 @@ Locate and install the app you need from the **App Catalog**. If you want to see
 1. From the **App Catalog**, search for and select the app**.**
 2. Select the version of the service you're using and click **Add to Library**.
 
-Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](https://help.sumologic.com/01Start-Here/Library/Apps-in-Sumo-Logic/Install-Apps-from-the-Library)
+Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/library/install-apps)
 
 1. To install the app, complete the following fields.
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
