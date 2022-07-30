@@ -43,7 +43,7 @@ artifactory.traffic.collectionActive=true
 
 For Artifactory 7, the properties file is located at: `$JFROG_HOME/artifactory/var/etc/artifactory/artifactory.system.properties`
 
-For more details about Artifactory 7 log collection, refer to [Collect Logs for Artifactory 7.](https://help.sumologic.com/07Sumo-Logic-Apps/08App_Development/Artifactory/02-Collect_Logs_for_Artifactory_7)
+For more details about Artifactory 7 log collection, refer to [Collect Logs for Artifactory 7].
 
 A restart is required for traffic collection to take effect.
 
@@ -70,7 +70,7 @@ For more information about Artifactory logs, see JFrog's [Artifactory Log Files]
 4
 
 
-Configure an [Installed Collector](https://help.sumologic.com/03Send-Data/Installed-Collectors).
+Configure an [Installed Collector](/docs/send-data/Installed-Collectors).
 
 
 ### Configure sources
@@ -131,7 +131,7 @@ The following suffixes are required. For example, you could use `_sourceCategory
 
 Remember that _sourceCategory names are case sensitive. When you run a search using _sourceCategory, make sure you use the same case as you did when configuring the source.
 
-For complete instructions see [Local File Source](https://help.sumologic.com/03Send-Data/Sources/01Sources-for-Installed-Collectors/Local-File-Source).
+For complete instructions see [Local File Source](/docs/send-data/Sources/sources-installed-collectors/Local-File-Source).
 
 1. Configure a Local File source.
 2. Configure the Source fields:
@@ -270,7 +270,7 @@ For more information about Artifactory logs, see JFrog's [Artifactory Log Files,
 11
 
 
-Configure an [Installed Collector](https://help.sumologic.com/03Send-Data/Installed-Collectors).
+Configure an [Installed Collector](/docs/send-data/Installed-Collectors).
 
 
 ### Configure sources
@@ -333,7 +333,7 @@ The following suffixes are required. For example, you could use `_sourceCategory
 13
 Remember that _sourceCategory names are case sensitive. When you run a search using _sourceCategory, make sure you use the same case as you did when configuring the source.
 
-For complete instructions see [Local File Source](https://help.sumologic.com/03Send-Data/Sources/01Sources-for-Installed-Collectors/Local-File-Source).
+For complete instructions see [Local File Source](/docs/send-data/Sources/sources-installed-collectors/Local-File-Source).
 
 1. Configure a Local File source.
 2. Configure the Source fields:
@@ -433,7 +433,7 @@ _sourceCategory = Labs/artifactory/*
 ### Install the Sumo Logic App
 16
 
-Now that you have set up collection, install the Sumo Logic App for Artifactory to use the pre-configured searches and [Dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/08App_Development/Artifactory/Artifactory-App-Dashboards#Dashboard) that provide insight into your data.
+Now that you have set up collection, install the Sumo Logic App for Artifactory to use the pre-configured searches and [Dashboards](#Dashboard) that provide insight into your data.
 
 To install the app:
 

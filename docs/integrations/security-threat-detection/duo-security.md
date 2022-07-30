@@ -23,7 +23,7 @@ When you generate the Duo credentials, you should do it for the Admin API applic
 
 ## Collecting Logs for the Duo Security App (DEPRECATED)
 
-To collect logs from the Duo Security App, if you are not using the Sumo Logic FedRamp deployment,  use the new [Cloud to Cloud Integration for Duo Security App](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Cloud-to-Cloud_Integration_Framework/Duo_Source) to create the source and use the same source category while installing the app.
+To collect logs from the Duo Security App, if you are not using the Sumo Logic FedRamp deployment,  use the new [Cloud to Cloud Integration for Duo Security App](/docs/send-data/Sources/sources-hosted-collectors/Cloud-to-Cloud-Integration-Framework/Duo-Source) to create the source and use the same source category while installing the app.
 
 The sections below are deprecated for non-FedRamp Sumo Logic deployments. If you are using the Sumo Logic FedRamp deployment, use the sections below to configure collection for this app.
 
@@ -32,7 +32,7 @@ This page demonstrates how to configure log collection for the Duo Security App.
 #### Step 1. Create Hosted Collector and HTTP Source (DEPRECATED)
 
 1. Create a [Hosted Collector](/docs/send-data/configure-hosted-collector).
-2. Create an [HTTP Logs and Metrics Source](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/HTTP-Source) on the Collector you created in the previous step. \
+2. Create an [HTTP Logs and Metrics Source](/docs/send-data/sources/sources-hosted-collectors/http-logs-metrics-source) on the Collector you created in the previous step. \
 When you have configured the HTTP Source, Sumo will display the URL of the HTTP endpoint. Make a note of the URL. You will use it when you configure the Lambda Function to send data to Sumo.
 
 

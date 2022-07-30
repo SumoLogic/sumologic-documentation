@@ -23,14 +23,14 @@ For information on Microsoft APIs and message types, see Microsoft Office 365 Au
 To collect logs for the Microsoft Office 365 App, do the following:
 
 1. One [Hosted Collector](/docs/send-data/configure-hosted-collector).
-2. One [Microsoft Office 365 Audit Source](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Microsoft-Office-365-Audit-Source) for each content type you want to collect logs for. For example:
+2. One [Microsoft Office 365 Audit Source](/docs/send-data/sources/sources-hosted-collectors/ms-office-audit-source.md) for each content type you want to collect logs for. For example:
     * Office 365 Azure AD logs
     * Office 365 Exchange logs
     * Office 365 SharePoint logs
     * Office 365 General logs
     * Office 365 Data Loss Prevention (DLP) event logs
 
-For complete details, see [Microsoft Office 365 Audit Source](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Microsoft-Office-365-Audit-Source).
+For complete details, see [Microsoft Office 365 Audit Source](/docs/send-data/sources/sources-hosted-collectors/ms-office-audit-source.md).
 
 We recommend the following Source Category naming convention:
 
@@ -131,7 +131,7 @@ _sourceCategory=O365* Workload Operation "ResultStatus" fail*
 
 ## Installing the Microsoft Office 365 App
 
-Now that you have configured Office 365, install the Sumo Logic App for Microsoft Office 365 to take advantage of the preconfigured searches and [dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/04Microsoft-and-Azure/Microsoft_Office_365/Microsoft-Office-365-App-Dashboards#Dashboards) to analyze your data.
+Now that you have configured Office 365, install the Sumo Logic App for Microsoft Office 365 to take advantage of the preconfigured searches and [dashboards](#Dashboards) to analyze your data.
 
 To install the app:
 
@@ -432,7 +432,7 @@ Shows details of URLs accessed, downloaded, uploaded, viewed, checked in, and ch
 
 Shows details of non-domain users' accesses, uploads, downloads, and views.
 
-To see your data in this dashboard, open the queries of each panel and add your domain in the queries as mentioned [here](https://help.sumologic.com/07Sumo-Logic-Apps/04Microsoft-and-Azure/Microsoft_Office_365/Microsoft-Office-365-App-Dashboards#Install_the_Sumo_Logic_App).
+To see your data in this dashboard, open the queries of each panel and add your domain in the queries as mentioned [here](#Installing-the-Microsoft-Office-365-App).
 
 
 **Top 10 Users Sharing Outside Domain**. See the top 10 users sharing content outside the domain in a table chart including details on user ID and frequency for the last seven days.

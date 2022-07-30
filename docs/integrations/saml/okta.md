@@ -94,11 +94,11 @@ The following SumoJanus file is required to collect logs from Okta. Download the
 
 #### Step 3: Deploy the SumoJanus package (FedRamp Only)
 
-If you have not previously set up SumoJanus, follow the steps in [New SumoJanus installation](https://help.sumologic.com/07Sumo-Logic-Apps/20SAML/Okta/Collect_logs_for_Okta#New_SumoJanus_installation). If you have previously set up SumoJanus, follow the instructions in [SumoJanus installation update](https://help.sumologic.com/07Sumo-Logic-Apps/20SAML/Okta/Collect_logs_for_Okta#SumoJanus_installation_update).
+If you have not previously set up SumoJanus, follow the steps in [New SumoJanus installation](/docs/integrations/saml/Okta#New_SumoJanus_installation). If you have previously set up SumoJanus, follow the instructions in [SumoJanus installation update](/docs/integrations/saml/Okta#SumoJanus_installation_update).
 
 **New SumoJanus installation**
 
-Copy the package file you downloaded in [Step 2](https://help.sumologic.com/07Sumo-Logic-Apps/20SAML/Okta/Collect_logs_for_Okta#Step_2:_Download_the_SumoJanus_package) to the appropriate sumojanus folder, then unzip them there.
+Copy the package file you downloaded in [Step 2](/docs/integrations/saml/Okta#Step_2:_Download_the_SumoJanus_package) to the appropriate sumojanus folder, then unzip them there.
 
 * On Linux, run the following command:
 ```bash
@@ -112,9 +112,9 @@ sumojanus-okta-dist.1.0.2.zip
 
 **Update your SumoJanus installation**
 1. Backup conf/sumologic.properties and the data folder.
-2. Setup a [New SumoJanus installation](https://help.sumologic.com/07Sumo-Logic-Apps/20SAML/Okta/Collect_logs_for_Okta#New_SumoJanus_installation)
+2. Setup a [New SumoJanus installation](/docs/integrations/saml/Okta#New_SumoJanus_installation)
 3. Migrate the backed up conf/sumologic.properties and data folder to the new Janus folder
-4. Modify the paths in [Step 6](https://help.sumologic.com/07Sumo-Logic-Apps/20SAML/Okta/Collect_logs_for_Okta#Step_6:_Configure_a_Source) below to point to the new folder.
+4. Modify the paths in [Step 6](/docs/integrations/saml/Okta#Step_6:_Configure_a_Source) below to point to the new folder.
 
 
 #### Step 4: Edit the Properties file (FedRamp Only)
@@ -138,7 +138,7 @@ pagination_limit = 1000
 # end_time = 1436377600000
 ```
 
-1. **api_token**. Enter the Okta API token that you created in the [Generate the Okta API token](https://help.sumologic.com/07Sumo-Logic-Apps/20SAML/Okta/Collect_logs_for_Okta#Step_1:_Generate_the_Okta_API_token) step.
+1. **api_token**. Enter the Okta API token that you created in the [Generate the Okta API token](/docs/integrations/saml/Okta#Step_1:_Generate_the_Okta_API_token) step.
 2. **okta_org_url**. Enter your Okta URL. Note that the URL starts with https, and not http.
 3. **stream_pos_path**. Replace the `${path}`variable with the actual path on the server where SumoJanus is installed. For example: "/home/sumojanus"
 4. **Save** your changes. Your `sumojanus/conf/sumologic.properties` file should look similar to this example:
@@ -148,7 +148,7 @@ pagination_limit = 1000
 
 To avoid errors, use the latest bundled JRE version listed in the [Collector Release Notes](https://help.sumologic.com/Release-Notes/Collector-Release-Notes). Since the JRE folder **can change** with collector upgrades, we **strongly recommend** copying this JRE folder to a separate place and pointing the JAVAPATH to that folder. To check the current JRE folder the collector is using, go to the **collector** folder under `config/wrapper.conf`, and look for the variable `wrapper.java.command`.
 
-Configure an [Installed Collector](https://help.sumologic.com/03Send-Data/Installed-Collectors) on a Linux or Windows machine. By default the Collector will come with a Java Runtime Environment. To ensure that SumoJanus can locate Java, you may need to update the .bat or .bash file, as described below.
+Configure an [Installed Collector](/docs/send-data/Installed-Collectors) on a Linux or Windows machine. By default the Collector will come with a Java Runtime Environment. To ensure that SumoJanus can locate Java, you may need to update the .bat or .bash file, as described below.
 
 * On Windows, update `SumoJanus_Okta.bat`
 
@@ -179,13 +179,13 @@ $JAVA_HOME/java -jar ${SUMOJANUS_JAR_FILE} ${runMode} OktaCollector-1.0.2.jar -e
 
 
 #### Step 6: Configure a Source (FedRamp Only)
-For guidance creating your Source Category naming convention, see [Best Practices: Good Source Category, Bad Source Category](https://help.sumologic.com/03Send-Data/01-Design-Your-Deployment/Best-Practices%3A-Good-Source-Category%2C-Bad-Source-Category).
+For guidance creating your Source Category naming convention, see [Best Practices: Good Source Category, Bad Source Category](/docs/send-data/design-deployment/best-practices-source-categories).
 
 **To configure a Script Source, do the following:**
 
-1. Configure a [Script Source](https://help.sumologic.com/03Send-Data/Sources/01Sources-for-Installed-Collectors/Script-Source). Collectors using version 19.245-4 and later do not allow Script Sources to run by default. \
+1. Configure a [Script Source](/docs/send-data/Sources/sources-installed-collectors/Script-Source). Collectors using version 19.245-4 and later do not allow Script Sources to run by default. \
 
-To allow Script Sources you need to set the Collector parameter `enableScriptSource` in [user.properties](https://help.sumologic.com/03Send-Data/Installed-Collectors/05Reference-Information-for-Collector-Installation/06user.properties) to true and [restart](https://help.sumologic.com/Manage/Collection/02Start-or-Stop-a-Collector-using-Scripts) the Collector. \
+To allow Script Sources you need to set the Collector parameter `enableScriptSource` in [user.properties](/docs/send-data/Installed-collectors/collector-installation-reference/user-properties) to true and [restart](https://help.sumologic.com/Manage/Collection/02Start-or-Stop-a-Collector-using-Scripts) the Collector. \
 Linux
 
 Windows
@@ -198,8 +198,8 @@ Windows
     4. **Frequency.** Every 5 Minutes
     5. **Specify a timeout for your command.** Activate the checkbox and select 60 Minutes
     6. **Command**. For Linux, use`/bin/bash.`. For windows, use Windows Script. (Specify the correct path on your system).
-    7. **Script**. Use the absolute path to **sumojanus** that you created in the [Deploy the Packages](https://help.sumologic.com/07Sumo-Logic-Apps/20SAML/Okta/Collect_logs_for_Okta#Deploy_the_Packages) step, such as `/home/ubuntu/sumojanus/bin/SumoJanus_Okta.bash.`(Do not select "Type the script to execute.")
-    8. **Working Directory**. `$path/sumojanus,`where $path is the absolute path of SumoJanus that you created in the [Deploy the Packages](https://help.sumologic.com/07Sumo-Logic-Apps/20SAML/Okta/Collect_logs_for_Okta#Deploy_the_Packages) step.
+    7. **Script**. Use the absolute path to **sumojanus** that you created in the [Deploy the Packages](/docs/integrations/saml/Okta#Deploy_the_Packages) step, such as `/home/ubuntu/sumojanus/bin/SumoJanus_Okta.bash.`(Do not select "Type the script to execute.")
+    8. **Working Directory**. `$path/sumojanus,`where $path is the absolute path of SumoJanus that you created in the [Deploy the Packages](/docs/integrations/saml/Okta#Deploy_the_Packages) step.
 3. Click **Save**.
 
 
@@ -373,7 +373,7 @@ _sourceCategory = "okta" "user.mfa.factor.deactivate"
 
 ## Installing the Okta App
 
-Now that you have set up collection for Okta, install the Sumo Logic App for Okta to use the preconfigured searches and [Dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/20SAML/Okta/Okta-App-Dashboards#Dashboards) that provide insight into your data.
+Now that you have set up collection for Okta, install the Sumo Logic App for Okta to use the preconfigured searches and [Dashboards](#Dashboards) that provide insight into your data.
 
 To install the app:
 

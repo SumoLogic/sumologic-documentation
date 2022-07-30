@@ -38,7 +38,7 @@ The Sumo Logic App for GitHub ingests GitHub events via a webhook. Sumo Logic in
 
 For information on GitHub events, refer to [GitHub documentation](https://docs.github.com/en/free-pro-team@latest/developers/webhooks-and-events/about-webhooks#events).
 
-For troubleshooting, see the [GitHub Troubleshooting](https://help.sumologic.com/07Sumo-Logic-Apps/08App_Development/GitHub/GitHub-App-Dashboards#Troubleshooting) section.
+For troubleshooting, see the [GitHub Troubleshooting](#Troubleshooting) section.
 
 2
 
@@ -59,7 +59,7 @@ First, configure a Collector and Source in Sumo Logic, then configure a GitHub W
 In this step, you create a Hosted Collector to receive Webhook Events from Github and set up an HTTP Source on it.
 
 1. Configure a [Hosted Collector](/docs/send-data/configure-hosted-collector), or select an existing hosted collector for the HTTP Source.
-2. Configure an[ HTTP Source](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/HTTP-Source) on the Hosted Collector.
+2. Configure an[ HTTP Source](/docs/send-data/sources/sources-hosted-collectors/http-logs-metrics-source) on the Hosted Collector.
     * For Source Category, enter any string to tag the output collected from this Source, such as **GitHub**.
     * Click **+Add Field **and provide the following:
         * **Field Name. **_convertHeadersToFields
@@ -176,11 +176,9 @@ GitHub sends all fields in the payload, documented according to [Event Type](htt
 
 
 
-## Install the GitHub App and view the Dashboards
+## Install the GitHub App
 
-### Install the Sumo Logic App
-
-Now that you have set up collector GitHub, install the Sumo Logic App for GitHub to use the preconfigured searches and [dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/08App_Development/GitHub/GitHub-App-Dashboards#Dashboards) to analyze your data.
+Now that you have set up collector GitHub, install the Sumo Logic App for GitHub to use the preconfigured searches and [dashboards](#Dashboards) to analyze your data.
 
 To install the app:
 
@@ -212,8 +210,7 @@ Panels will start to fill automatically. It's important to note that each panel 
 
 If you are getting the following error after installing the App:
 
-
-```
+```bash
 Field x-github-event not found, please check the spelling and try again.
 ```
 
@@ -228,10 +225,10 @@ Do the following to resolve:
 
 
 
-### Dashboards
+## Viewing ​GitHub Dashboards
 
 
-#### ​GitHub - Overview
+### Overview
 
 The **GitHub - Overview** dashboard provides an at-a-glance view of your GitHub issues, pull requests, and the commits over time.
 
@@ -246,7 +243,7 @@ Use this dashboard to:
 
 
 
-#### GitHub - Branch Overview
+### Branch Overview
 
 The **GitHub - Branch Overview **dashboard provides information about the commits, file operations like addition, deletion, and modifications per branch.
 
@@ -261,7 +258,7 @@ Use this dashboard to:
 
 
 
-#### GitHub - Issue Overview
+### Issue Overview
 
 The **GitHub - Issue Overview** dashboard provides detailed information about the issues opened, closed, and unassigned issues.
 
@@ -275,7 +272,7 @@ Use this dashboard to:
 
 
 
-#### GitHub - Pull Request Overview
+### Pull Request Overview
 
 The **GitHub - Pull Request Overview** dashboard gives the view of pull requests by the target branch. It also provides a detailed view of the pull requests in comparison to created, merged, and declined.
 
@@ -292,7 +289,7 @@ Use this dashboard to:
 
 
 
-#### GitHub - Security
+### Security
 
 The **GitHub - Security **dashboard provides detailed information on the security events and repositories.
 
@@ -309,7 +306,7 @@ Use this dashboard to:
 
 
 
-#### GitHub - User Activity
+### User Activity
 
 The **GitHub - User Activity** dashboard provides detailed insight into all user activity and potential suspicious activities.
 

@@ -58,7 +58,7 @@ To generate an access key and access ID, do the following:
 
 #### Step 2: Deploy the Sumo Logic GuardDuty Benchmark SAM App
 
-In this step, you deploy the SAM application, which creates the AWS resources described in the [process overview](https://help.sumologic.com/07Sumo-Logic-Apps/01Amazon_and_AWS/Amazon_GuardDuty_Benchmark/Configure_Log_Collection_and_Install_the_Amazon_GuardDuty_Benchmark_App#Process_overview).
+In this step, you deploy the SAM application, which creates the AWS resources described in the [process overview](#Process_overview).
 
 To deploy the Sumo Logic GuardDuty Benchmark SAM App, do the following:
 

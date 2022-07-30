@@ -45,8 +45,8 @@ These metrics are then forwarded to Sumo Logic HTTP Source. The collection start
 
 Configuring metrics collection for JMX includes the following steps:
 
-* [Step 1: Metric Collection in Non-Kubernetes Environment](https://help.sumologic.com/07Sumo-Logic-Apps/08App_Development/JMX/Collect_metrics_for_JMX#Step_1:_Metric_Collection_in_Non-Kubernetes_Environment)
-* [Step 2: Metric Collection in Kubernetes Environment](https://help.sumologic.com/07Sumo-Logic-Apps/08App_Development/JMX/Collect_metrics_for_JMX#Step_2:_Metric_Collection_in_Kubernetes_Environment)
+* [Step 1: Metric Collection in Non-Kubernetes Environment](#Step_1:_Metric_Collection_in_Non-Kubernetes_Environment)
+* [Step 2: Metric Collection in Kubernetes Environment](#Step_2:_Metric_Collection_in_Kubernetes_Environment)
 
 
 #### Step 1: Metric Collection in Non-Kubernetes Environment
@@ -104,7 +104,7 @@ To create a new Sumo Logic hosted collector, perform the steps in the [Configure
 
 ##### 3. Configure a HTTP Logs and Metrics Source
 
-Create a new HTTP Logs and Metrics Source in the hosted collector created above by following[ these instructions. ](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/HTTP-Source)
+Create a new HTTP Logs and Metrics Source in the hosted collector created above by following[ these instructions. ](/docs/send-data/sources/sources-hosted-collectors/http-logs-metrics-source)
 
 
 
@@ -215,7 +215,7 @@ telegraf --config /path/to/telegraf.conf
 
 #### Step 2: Metric Collection in Kubernetes Environment
 
-The following steps assume you are collecting JMX metrics from a Kubernetes environment. In Kubernetes environments, we use the Telegraf Operator, which is packaged with our Kubernetes collection. You can learn more about this [here](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Collect_Metrics_Using_Telegraf/01_Telegraf_Collection_Architecture).
+The following steps assume you are collecting JMX metrics from a Kubernetes environment. In Kubernetes environments, we use the Telegraf Operator, which is packaged with our Kubernetes collection. You can learn more about this [here](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/telegraf-collection-architecture).
 
 
 

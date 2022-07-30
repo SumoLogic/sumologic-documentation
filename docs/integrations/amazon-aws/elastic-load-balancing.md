@@ -37,12 +37,12 @@ datetime, ELB_Server, clientIP, port, backend, backend_port, requestProc, ba_Res
 
 The log format is described in [AWS ELB Access Log Collection](http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/access-log-collection.html).
 
-For information on unified logs and metrics for AWS Elastic Load Balancing App, see the [AWS Elastic Load Balancing ULM Application](https://help.sumologic.com/07Sumo-Logic-Apps/01Amazon_and_AWS/AWS_Application_Load_Balancer).
+For information on unified logs and metrics for AWS Elastic Load Balancing App, see the [AWS Elastic Load Balancing ULM Application](/docs/integrations/amazon-aws/Application-Load-Balancer).
 
 
 ### Prerequisites
 
-* Enable Elastic Load Balancing logging in your AWS account, using these Sumo Logic [instructions](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/AWS-Elastic-Load-Balancing-Source). For more information, see [AWS ELB documentation](http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-access-logs.html). Logging is not enabled in AWS ELB by default.
+* Enable Elastic Load Balancing logging in your AWS account, using these Sumo Logic [instructions](/docs/send-data/Sources/sources-hosted-collectors/Amazon-Web-Services/AWS-Elastic-Load-Balancing-Source). For more information, see [AWS ELB documentation](http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-access-logs.html). Logging is not enabled in AWS ELB by default.
 * Grant access to an IAM user by following these Sumo Logic [instructions](/docs/send-data/sources/sources-hosted-collectors/amazon-web-services/grant-access-aws-product.md).
 * Confirm that logs are being delivered to the Amazon S3 bucket.
 
@@ -65,12 +65,12 @@ Configure a [Hosted Collector](/docs/send-data/configure-hosted-collector).
 
 ### Configure a Source
 
-Configure an [AWS Elastic Load Balancing Source](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/AWS-Elastic-Load-Balancing-Source), which includes specifying the following:
+Configure an [AWS Elastic Load Balancing Source](/docs/send-data/Sources/sources-hosted-collectors/Amazon-Web-Services/AWS-Elastic-Load-Balancing-Source), which includes specifying the following:
 
 * Source fields:
     * **Bucket Name**. (Required) ELB, for example.
     * **Path Expression**. For example, `my-bucket/prefix/AWSLogs/123456789012/*.log`
-    * **Source Category**. (Required) ELB_Prod, for example. For details see [Best Practices](https://help.sumologic.com/03Send-Data/01-Design-Your-Deployment/Best-Practices%3A-Good-Source-Category%2C-Bad-Source-Category).
+    * **Source Category**. (Required) ELB_Prod, for example. For details see [Best Practices](/docs/send-data/design-deployment/best-practices-source-categories).
 * Advanced:
     * **Enable Timestamp Parsing**. True
     * **Time Zone**. Logs are in UTC by default
@@ -117,7 +117,7 @@ _sourceCategory=elb*
 
 ## Installing the AWS ELB App
 
-Now that you have set up collection for AWS ELB, install the Sumo Logic App for AWS Elastic Load Balancing to use the preconfigured searches and [dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/01Amazon_and_AWS/AWS_Elastic_Load_Balancing/AWS-Elastic-Load-Balancing-App-Dashboards#Dashboards) to analyze your data.
+Now that you have set up collection for AWS ELB, install the Sumo Logic App for AWS Elastic Load Balancing to use the preconfigured searches and [dashboards](#Dashboards) to analyze your data.
 
 To install the app:
 
@@ -143,7 +143,7 @@ Panels will start to fill automatically. It's important to note that each panel 
 
 ### What if data isn't displaying in all Panels?
 
-Amazon S3 buckets are scanned for new files according to the Scan Interval you set when configuring the S3 Source used for AWS Elastic Load Balancing logs. Even if you set a shorter Scan Interval, say five minutes, if no new files are found, the Scan Interval is automatically doubled, up to 24 hours (you can read more in [Set the S3 Source Scan Interval](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/AWS-S3-Scan-Interval-for-Sources)). If the Scan Interval increases, it means that a Panel set to a 60-minute time range may not find any data to display, because no files have uploaded to Sumo Logic. This isn't to say that no data is being collected from your S3 bucket; you can confirm that data is being collected on the Status page.
+Amazon S3 buckets are scanned for new files according to the Scan Interval you set when configuring the S3 Source used for AWS Elastic Load Balancing logs. Even if you set a shorter Scan Interval, say five minutes, if no new files are found, the Scan Interval is automatically doubled, up to 24 hours (you can read more in [Set the S3 Source Scan Interval](/docs/send-data/Sources/sources-hosted-collectors/Amazon-Web-Services/AWS-S3-Scan-Interval-Sources)). If the Scan Interval increases, it means that a Panel set to a 60-minute time range may not find any data to display, because no files have uploaded to Sumo Logic. This isn't to say that no data is being collected from your S3 bucket; you can confirm that data is being collected on the Status page.
 
 Additionally, you can change the time range of a Panel. Even though these Panels have been preconfigured, they can be edited just like any other Panel. You'll find instructions in Changing the time range of a Panel.
 

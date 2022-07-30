@@ -39,7 +39,7 @@ To configure a collector for Keeper Security, follow the instructions in the [Ho
 You can configure sources for collectors that are hosted in Amazon Web Services (AWS), Microsoft, or other hosting services.
 
 To configure an HTTP source for Keeper, do the following:
-1. Go to the [Sources for Hosted Collectors](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors) page.
+1. Go to the [Sources for Hosted Collectors](/docs/send-data/Sources/sources-hosted-collectors) page.
 2. Select the hosting service appropriate for your environment.
 3. Follow the instructions for adding an **HTTP Log Source**, using the default options.
 
@@ -55,10 +55,10 @@ To send Keeper logs to Sumo Logic, do the following:
 1. Open the [Keeper Admin Console](https://keepersecurity.com/console) and navigate to **Reporting & Alerts**.
 2. Select the **External Logging** tab.
 3. Click the Sumo Logic **Setup** button.
-4. In the Sync Settings dialog, enter the **HTTP Source Address** from [step 4](https://help.sumologic.com/07Sumo-Logic-Apps/22Security_and_Threat_Detection/Keeper_Security/Collect_Logs_for_Keeper_Security#HTTP+Source+Address) of the previous task.
+4. In the Sync Settings dialog, enter the **HTTP Source Address** from [step 4](#HTTP-Source-Address) of the previous task.
 
 
-1. Continue with [verifying logging](https://help.sumologic.com/07Sumo-Logic-Apps/22Security_and_Threat_Detection/Keeper_Security/Collect_Logs_for_Keeper_Security#Step_4:_Verify_logging).
+1. Continue with [verifying logging](#Step_4:_Verify_logging).
 
 
 #### Step 4: Verify logging
@@ -85,7 +85,7 @@ This application has been developed and is supported by [Keeper Security](https:
 
 This page provides instructions for installing the Keeper Security App, as well as examples of each of the App dashboards.
 
-Now that you have set up collection for Keeper, install the app to use the pre-configured searches and [dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/06Google/Google_Cloud_Audit/Install-the-Google-Cloud-Audit-App-and-view-the-Dashboards#Dashboards) that provide visibility into your environment for real-time analysis.
+Now that you have set up collection for Keeper, install the app to use the pre-configured searches and [dashboards](#Dashboards) that provide visibility into your environment for real-time analysis.
 
 To install the app:
 

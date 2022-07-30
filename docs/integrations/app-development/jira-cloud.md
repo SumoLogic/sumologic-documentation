@@ -30,11 +30,11 @@ For more information, see [Webhooks](https://developer.atlassian.com/cloud/jira/
 
 This page provides instructions for configuring log collection for the Jira Cloud App. Click a link to jump to a section:
 
-* [Collection Overview](https://help.sumologic.com/07Sumo-Logic-Apps/08App_Development/Jira_Cloud/Collect_Logs_for_the_Jira_Cloud_App#Collection_Overview)
-* [Step 1: Configure Hosted Collector to Receive Webhooks](https://help.sumologic.com/07Sumo-Logic-Apps/08App_Development/Jira_Cloud/Collect_Logs_for_the_Jira_Cloud_App#Step_1:_Configure_Hosted_Collector_to_receive_Webhooks)
-* [Step 2:  Register Webhook in Jira](https://help.sumologic.com/07Sumo-Logic-Apps/08App_Development/Jira_Cloud/Collect_Logs_for_the_Jira_Cloud_App#Step_2:__Register_Webhook_in_Jira)
-* [Sample Log Messages](https://help.sumologic.com/07Sumo-Logic-Apps/08App_Development/Jira_Cloud/Collect_Logs_for_the_Jira_Cloud_App#Sample_Log_Messages)
-* [Query Example](https://help.sumologic.com/07Sumo-Logic-Apps/08App_Development/Jira_Cloud/Collect_Logs_for_the_Jira_Cloud_App#Query_Example)
+* [Collection Overview](#Collection_Overview)
+* [Step 1: Configure Hosted Collector to Receive Webhooks](#Step_1:_Configure_Hosted_Collector_to_receive_Webhooks)
+* [Step 2:  Register Webhook in Jira](#Step_2:__Register_Webhook_in_Jira)
+* [Sample Log Messages](#Sample_Log_Messages)
+* [Query Example](#Query_Example)
 
 
 #### Collection Overview
@@ -55,7 +55,7 @@ In this step, you create a host collector to receive Webhooks from Jira and set 
 
 
 1. Configure a [Hosted Collector](/docs/send-data/configure-hosted-collector), or select an existing hosted collector for the HTTP source.
-2. Configure an [HTTP source](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/HTTP-Source) on the hosted collector.
+2. Configure an [HTTP source](/docs/send-data/sources/sources-hosted-collectors/http-logs-metrics-source) on the hosted collector.
     * For **Source Category**, specify jira_cloud/events.
     * Make a note of the HTTP address for the source. You will supply it when you configure a Jira Webhook in the next step.
 
@@ -154,7 +154,7 @@ Follow the instructions on [Webhooks](https://confluence.atlassian.com/adminjira
     * started
     * closed
 
-When you configure the Webhook, enter the URL for the HTTP source you created in **[Step 2 ](https://help.sumologic.com/07Sumo-Logic-Apps/08App_Development/Jira_Cloud/Collect_Logs_for_the_Jira_Cloud_App#Step_2:__Register_Webhook_in_Jira)**as the endpoint for the Webhook.
+When you configure the Webhook, enter the URL for the HTTP source you created in **[Step 2 ](#Step_2:__Register_Webhook_in_Jira)**as the endpoint for the Webhook.
 
 
 1.png "image_tooltip")

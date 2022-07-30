@@ -30,7 +30,7 @@ This page provides instructions on how to collect logs for the Palo Alto Network
 ### Configure a Collector
 
 
-Configure an [Installed Collector](https://help.sumologic.com/03Send-Data/Installed-Collectors/01About-Installed-Collectors) or a Hosted source for Syslog-ng or Rsyslog.
+Configure an [Installed Collector](/docs/send-data/installed-collectors/about-installed-collectors) or a Hosted source for Syslog-ng or Rsyslog.
 
 
 ### Configure a Source
@@ -42,7 +42,7 @@ For Syslog, configure the Source fields:
 2. **Description.** Optional.
 3. **Protocol**. UDP or TCP
 4. **Port**. Port number.
-5. **Source Category**. (Required) The Source Category metadata field is a fundamental building block to organize and label Sources. For details see [Best Practices](https://help.sumologic.com/03Send-Data/01-Design-Your-Deployment/Best-Practices%3A-Good-Source-Category%2C-Bad-Source-Category).
+5. **Source Category**. (Required) The Source Category metadata field is a fundamental building block to organize and label Sources. For details see [Best Practices](/docs/send-data/design-deployment/best-practices-source-categories).
 6. Click **Save**.
 
 For a Hosted source, use advanced settings as necessary, but save the endpoint URL associated in order to configure Palo Alto Networks.
@@ -86,7 +86,7 @@ _sourceCategory=palo_alto_network | parse "*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*
 
 ## Install the Palo Alto Networks 6 App
 
-Now that you have set up collection for Palo Alto Networks, install the Sumo Logic App for Palo Alto Networks to use the preconfigured searches and [dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/22Security_and_Threat_Detection/Palo_Alto_Networks_6/Palo-Alto-Networks-App-Dashboards#Dashboards) that provide insight into your data.
+Now that you have set up collection for Palo Alto Networks, install the Sumo Logic App for Palo Alto Networks to use the preconfigured searches and [dashboards](#Dashboards) that provide insight into your data.
 
 To install the app:
 

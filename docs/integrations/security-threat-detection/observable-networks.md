@@ -16,7 +16,7 @@ Observable Networks is a provider of network security technology and advanced th
 For more information, please visit [http://www.observable.net/](http://www.observable.net/).
 
 :::caution
-Before you begin, your Observable Networks portal must be properly configured. Contact [support@obsrvbl.com](https://help.sumologic.com/07Sumo-Logic-Apps/22Security_and_Threat_Detection/Observable_Networks) if you have any questions.
+Before you begin, your Observable Networks portal must be properly configured. Contact [support@obsrvbl.com](/docs/integrations/security-threat-detection/Observable-Networks) if you have any questions.
 :::
 
 ## Log Types
@@ -52,7 +52,7 @@ Configure a [Hosted Collector](/docs/send-data/configure-hosted-collector). Name
 
 ### Configure a Source
 
-Configure an [HTTP Source](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/HTTP-Source). Name the new source "observable" (case-sensitive). Deselect the check box **Enable Timestamp Parsing**.
+Configure an [HTTP Source](/docs/send-data/sources/sources-hosted-collectors/http-logs-metrics-source). Name the new source "observable" (case-sensitive). Deselect the check box **Enable Timestamp Parsing**.
 
 When the URL associated with the Source is displayed, copy the URL so you can use it to send files.
 
@@ -173,7 +173,7 @@ _sourceCategory=observable
 
 ## Install the Observable Networks App
 
-This page provides instructions for installing the Observable Networks App, as well as showing examples of each of the dashboards. The App preconfigured searches and [dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/22Security_and_Threat_Detection/Observable_Networks/Observable-Networks-App-Dashboard-and-Searches#Dashboards) allow you to visually analyze your Observable Networks data at a glance.
+This page provides instructions for installing the Observable Networks App, as well as showing examples of each of the dashboards. The App preconfigured searches and [dashboards](#Dashboards) allow you to visually analyze your Observable Networks data at a glance.
 
 To install the app:
 

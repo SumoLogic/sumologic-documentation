@@ -68,7 +68,7 @@ Opsgenie Alerts are defined at the Team level, so you need to create an Opsgenie
 
 To configure log collection for the Opsgenie App, do the following:
 
-1. Configure a [Sumo Logic  HTTP Source](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/HTTP-Source). Make a note of the URL for the endpoint, as you will need to enter the endpoint URL in step 3.
+1. Configure a [Sumo Logic  HTTP Source](/docs/send-data/sources/sources-hosted-collectors/http-logs-metrics-source). Make a note of the URL for the endpoint, as you will need to enter the endpoint URL in step 3.
 2. Follow the [Opsgenie Webhook Integration ](https://docs.opsgenie.com/docs/webhook-integration)instructions to create a Webhook integration for the Opsgenie App.
 3. Specify the following parameters to send Opsgenie alerts to Sumo Logic:
 * For **Webhook URL** field provide Sumo Logic HTTP URL (from step 1).

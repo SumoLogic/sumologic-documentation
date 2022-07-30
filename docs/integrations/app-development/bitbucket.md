@@ -88,13 +88,13 @@ Deploy events are triggered whenever code is pushed to test, staging or producti
 
 This page provides instructions for configuring log collection for the Bitbucket App. Click a link to jump to a section:
 
-* [Collection Overview](https://help.sumologic.com/07Sumo-Logic-Apps/08App_Development/Bitbucket/Collect_Logs_for_Bitbucket_App#Collection_Overview)
-* [Configure Hosted Collector to Receive Bitbucket events](https://help.sumologic.com/07Sumo-Logic-Apps/08App_Development/Bitbucket/Collect_Logs_for_Bitbucket_App#Step_1:_Configure_Hosted_Collector_to_Receive_Bitbucket_events)
-* [Adding a Webhook in Bitbucket](https://help.sumologic.com/07Sumo-Logic-Apps/08App_Development/Bitbucket/Collect_Logs_for_Bitbucket_App#Step_2:_Adding_a_Webhook_in_Bitbucket)
-* [Configure the Bitbucket CI/CD Pipeline to Collect Deploy Events](https://help.sumologic.com/07Sumo-Logic-Apps/08App_Development/Bitbucket/Collect_Logs_for_Bitbucket_App#Step_3:_Configure_the_Bitbucket_CI.2FCD_Pipeline_to_Collect_Deploy_Events)
-* [Enable Bitbucket Event-Key Tagging at Sumo Logic](https://help.sumologic.com/07Sumo-Logic-Apps/08App_Development/Bitbucket/Collect_Logs_for_Bitbucket_App#Step_4._Enable_Bitbucket_Event-Key_tagging_at_Sumo_Logic)
-* [Sample Log Messages](https://help.sumologic.com/07Sumo-Logic-Apps/08App_Development/Bitbucket/Collect_Logs_for_Bitbucket_App#Sample_Log_Messages)
-* [Query Example](https://help.sumologic.com/07Sumo-Logic-Apps/08App_Development/Bitbucket/Collect_Logs_for_Bitbucket_App#Query_Example)
+* [Collection Overview](#Collection_Overview)
+* [Configure Hosted Collector to Receive Bitbucket events](#Step_1:_Configure_Hosted_Collector_to_Receive_Bitbucket_events)
+* [Adding a Webhook in Bitbucket](#Step_2:_Adding_a_Webhook_in_Bitbucket)
+* [Configure the Bitbucket CI/CD Pipeline to Collect Deploy Events](#Step_3:_Configure_the_Bitbucket_CI.2FCD_Pipeline_to_Collect_Deploy_Events)
+* [Enable Bitbucket Event-Key Tagging at Sumo Logic](#Step_4._Enable_Bitbucket_Event-Key_tagging_at_Sumo_Logic)
+* [Sample Log Messages](#Sample_Log_Messages)
+* [Query Example](#Query_Example)
 
 
 #### Collection Overview
@@ -118,7 +118,7 @@ There are 2 types of events of interest from Bitbucket to Sumo Logic:
 In this step, you create a Hosted Collector to receive Webhook Events from Bitbucket and set up an HTTP source on it.
 
 1. Configure a [Hosted Collector](/docs/send-data/configure-hosted-collector), or select an existing hosted collector for the HTTP source.
-2. Configure an [HTTP source](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/HTTP-Source) on the hosted collector.
+2. Configure an [HTTP source](/docs/send-data/sources/sources-hosted-collectors/http-logs-metrics-source) on the hosted collector.
     * For Source Category, specify `bitbucket/events.`
     * Click **+Add Field **and provide the following:
         * **Field Name. **_convertHeadersToFields
@@ -139,7 +139,7 @@ In this step, you create a Hosted Collector to receive Webhook Events from Bitbu
 3
 
 1. Enter a **Title** with a short description.
-2. Enter Sumo Logic Http source **URL**, you configured this in [Configure Hosted Collector to Receive Bitbucket events](https://help.sumologic.com/07Sumo-Logic-Apps/08App_Development/Bitbucket/Collect_Logs_for_Bitbucket_App#Configure_Hosted_Collector_to_Receive_Bitbucket_events).
+2. Enter Sumo Logic Http source **URL**, you configured this in [Configure Hosted Collector to Receive Bitbucket events](#Configure_Hosted_Collector_to_Receive_Bitbucket_events).
 3. Click on **Status** to make it **Active**.
 4. **Triggers - **Click on** Choose from a full list of triggers, and choose all triggers under Repository, Issue and Pull Request.
 5. Click **Save**

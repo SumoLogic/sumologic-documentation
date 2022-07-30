@@ -38,13 +38,13 @@ This page provides instructions for configuring log collection for the Cisco Mer
 
 In this task, you configure an installed collector with a Syslog source that acts as a Syslog server to receive logs and events from Cisco Meraki.
 
-1. Configure an [Installed Collector](https://help.sumologic.com/03Send-Data/Installed-Collectors/01About-Installed-Collectors).
-2. Add a [Syslog source](https://help.sumologic.com/03Send-Data/Sources/01Sources-for-Installed-Collectors/Syslog-Source) to the installed collector:
+1. Configure an [Installed Collector](/docs/send-data/installed-collectors/about-installed-collectors).
+2. Add a [Syslog source](/docs/send-data/Sources/sources-installed-collectors/Syslog-Source) to the installed collector:
    * **Name**. (Required) A name is required.
    * **Description.** Optional.
    * **Protocol**. UDP or TCP.  Choose the protocol you configured in Cisco Meraki for Syslog forwarding.
    * **Port**. Port number. Choose the port you configured in Cisco Meraki for Syslog forwarding.
-   * **Source Category**. (Required) Provide a realistic Source Category for this data type. For example: **prod/ciscomeraki**. For more information, see [Best Practices](https://help.sumologic.com/03Send-Data/01-Design-Your-Deployment/Best-Practices%3A-Good-Source-Category%2C-Bad-Source-Category).
+   * **Source Category**. (Required) Provide a realistic Source Category for this data type. For example: **prod/ciscomeraki**. For more information, see [Best Practices](/docs/send-data/design-deployment/best-practices-source-categories).
 3. Click **Save**.
 
 
@@ -135,7 +135,7 @@ _sourceCategory=*meraki* "security_event"
 
 ## Install the Cisco Meraki App
 
-This section provides instructions on how to install the Cisco Meraki App, as well as examples of each of the dashboards. The App's pre-configured searches and [Dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/22Security_and_Threat_Detection/Cisco_ASA/Cisco-ASA-App-Dashboards#Dashboards) provide easy-to-access visual insights into your data.
+This section provides instructions on how to install the Cisco Meraki App, as well as examples of each of the dashboards. The App's pre-configured searches and [Dashboards](#Dashboards) provide easy-to-access visual insights into your data.
 
 To install the app, do the following:
 

@@ -31,8 +31,8 @@ Configuring log and metric collection for the Kafka App includes the following t
 
 * Step 1: Configure Fields in Sumo Logic.
 * Step 2: Configure Collection for Kafka
-    * [Collect Kafka Logs and Metrics for Non-Kubernetes environments](https://help.sumologic.com/07Sumo-Logic-Apps/10Containers_and_Orchestration/Kafka/Collect_Logs_and_Metrics_for_Kafka/Collect_Kafka_Logs_and_Metrics_for_Non-Kubernetes_environments).
-    * [Collect Kafka Logs and Metrics for Kubernetes environments](https://help.sumologic.com/07Sumo-Logic-Apps/10Containers_and_Orchestration/Kafka/Collect_Logs_and_Metrics_for_Kafka/Collect_Logs_and_Metrics_for_Kubernetes_environments).
+    * [Collect Kafka Logs and Metrics for Non-Kubernetes environments](#Collect_Kafka_Logs_and_Metrics_for_Non-Kubernetes_environments).
+    * [Collect Kafka Logs and Metrics for Kubernetes environments](#Collect_Logs_and_Metrics_for_Kubernetes_environments).
 
 
 ### Step 1: Configure Fields in Sumo Logic
@@ -79,7 +79,7 @@ This section provides instructions for configuring metrics collection for the Su
 
 1. Configure a Hosted Collector: To create a new Sumo Logic hosted collector, perform the steps in the[ Configure a Hosted Collector](/docs/send-data/configure-hosted-collector) section of the Sumo Logic documentation.
 
-1. Configure an HTTP Logs and Metrics Source: Create a new HTTP Logs and Metrics Source in the hosted collector created above by following[ these instructions. ](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/HTTP-Source)Make a note of the **HTTP Source URL**.
+1. Configure an HTTP Logs and Metrics Source: Create a new HTTP Logs and Metrics Source in the hosted collector created above by following[ these instructions. ](/docs/send-data/sources/sources-hosted-collectors/http-logs-metrics-source)Make a note of the **HTTP Source URL**.
 
 1. Install Telegraf: Follow the steps in [this document ](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf.md) to install Telegraf on each Kafka Broker node
 
@@ -162,20 +162,20 @@ Make a note of above logs directory .
 
 #### Configuring an Installed Collector
 
-To add an Installed collector, perform the steps as defined on the page [Configure an Installed Collector.](https://help.sumologic.com/03Send-Data/Installed-Collectors)
+To add an Installed collector, perform the steps as defined on the page [Configure an Installed Collector.](/docs/send-data/Installed-Collectors)
 
 
 #### Configuring a Source
 
 To add a Local File Source source for Kafka do the following
 
-1. Add a[ Local File Source](https://help.sumologic.com/03Send-Data/Sources/01Sources-for-Installed-Collectors/Local-File-Source) in the installed collector configured in the previous step.
+1. Add a[ Local File Source](/docs/send-data/Sources/sources-installed-collectors/Local-File-Source) in the installed collector configured in the previous step.
 2. Configure the Local File Source fields as follows:
 * **Name.** (Required)
 * **Description.** (Optional)
 * **File Path (Required).** Enter the path to your server.log and controller.log. The files are typically located in `/opt/Kafka/kafka_<VERSION>/logs/*.log`.
 * **Source Host.** Sumo Logic uses the hostname assigned by the OS unless you enter a different host name
-* **Source Category.** Enter any string to tag the output collected from this Source, such as **Kafka/Logs**. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details see[ Best Practices](https://help.sumologic.com/03Send-Data/01-Design-Your-Deployment/Best-Practices%3A-Good-Source-Category%2C-Bad-Source-Category).)
+* **Source Category.** Enter any string to tag the output collected from this Source, such as **Kafka/Logs**. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details see[ Best Practices](/docs/send-data/design-deployment/best-practices-source-categories).)
 * **Fields. **Set the following fields. For more information on fields please see [this document](/docs/manage/fields.md):
     * component = messaging
     * messaging_system = kafka
@@ -217,7 +217,7 @@ messaging_cluster=* messaging_system="kafka" | json auto maxdepth 1 nodrop | if 
 </TabItem>
 <TabItem value="k8s">
 
-In Kubernetes environments, we use the Telegraf Operator, which is packaged with our Kubernetes collection. You can learn more about it[ here](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Collect_Metrics_Using_Telegraf/01_Telegraf_Collection_Architecture).The diagram below illustrates how data is collected from Kafka in Kubernetes environments. In the architecture shown below, there are four services that make up the metric collection pipeline: Telegraf, Prometheus, Fluentd and FluentBit.
+In Kubernetes environments, we use the Telegraf Operator, which is packaged with our Kubernetes collection. You can learn more about it[ here](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/telegraf-collection-architecture).The diagram below illustrates how data is collected from Kafka in Kubernetes environments. In the architecture shown below, there are four services that make up the metric collection pipeline: Telegraf, Prometheus, Fluentd and FluentBit.
 
 <img src={useBaseUrl('img/integrations/containers-orchestration/kafka-k8s.png')} alt="non k8s-diagram" />
 
@@ -225,11 +225,11 @@ The first service in the pipeline is Telegraf. Telegraf collects metrics from Ka
 
 Follow the instructions below to set up the metric collection:
 
-1. [Configure Metrics Collection](https://help.sumologic.com/07Sumo-Logic-Apps/10Containers_and_Orchestration/Kafka/Collect_Logs_and_Metrics_for_Kafka/Collect_Logs_and_Metrics_for_Kubernetes_environments#step-1-configure-metrics-collection)
+1. [Configure Metrics Collection](#step-1-configure-metrics-collection)
     1. Setup Kubernetes Collection with the Telegraf operator.
     2. Add annotations on your Kafka pods.
     3. Configure your Kafka Pod to use the Jolokia Telegraf Input Plugin
-2. [Configure Logs Collection](https://help.sumologic.com/07Sumo-Logic-Apps/10Containers_and_Orchestration/Kafka/Collect_Logs_and_Metrics_for_Kafka/Collect_Logs_and_Metrics_for_Kubernetes_environments#step-2-configure-logs-collection)
+2. [Configure Logs Collection](#step-2-configure-logs-collection)
     4. Configure logging in Kafka.
     5. Add labels on your Kafka pods to capture logs from standard output.
     6. Collecting Kafka Logs from a Log file
@@ -355,7 +355,7 @@ If your Kafka helm chart/pod is writing the logs to standard output then follow 
     For all other parameters please see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#Configuring-Telegraf) for more properties that can be configured in the Telegraf agent globally.
 
 
-The Sumologic-Kubernetes-Collection will automatically capture the logs from stdout and will send the logs to Sumologic. For more information on deploying Sumologic-Kubernetes-Collection, please see[ this page](https://help.sumologic.com/07Sumo-Logic-Apps/10Containers_and_Orchestration/Kubernetes/Collect_Logs_and_Metrics_for_the_Kubernetes_App).
+The Sumologic-Kubernetes-Collection will automatically capture the logs from stdout and will send the logs to Sumologic. For more information on deploying Sumologic-Kubernetes-Collection, please see[ this page](/docs/integrations/containers-orchestration/Kubernetes#Collect_Logs_and_Metrics_for_the_Kubernetes_App).
 
 
 #### Collect Kafka logs written to log files (Optional)
@@ -486,7 +486,7 @@ Sumo Logic has provided out-of-the-box alerts available through [Sumo Logic moni
 
 
 30
-The monitors are disabled by default. Once you have installed the alerts using this method, navigate to the Kafka folder under Monitors to configure them. See [this](/docs/alerts/monitors/index.md) document to enable monitors., To send notifications to teams or connections please see the instructions detailed in Step 4 of this [document](https://help.sumologic.com/Visualizations-and-Alerts/Alerts/Monitors#Add_a_monitor).
+The monitors are disabled by default. Once you have installed the alerts using this method, navigate to the Kafka folder under Monitors to configure them. See [this](/docs/alerts/monitors/index.md) document to enable monitors., To send notifications to teams or connections please see the instructions detailed in Step 4 of this [document](/docs/alerts/monitors#Add_a_monitor).
 
 
 ### Method 2: Install the alerts using a Terraform script
@@ -575,7 +575,7 @@ email_notifications = [
 
 Step 7: Post Installation
 
-If you haven’t enabled alerts and/or configured notifications through the Terraform procedure outlined above, we highly recommend enabling alerts of interest and configuring each enabled alert to send notifications to other people or services. This is detailed in Step 4 of[ this document](https://help.sumologic.com/Visualizations-and-Alerts/Alerts/Monitors#Add_a_monitor).
+If you haven’t enabled alerts and/or configured notifications through the Terraform procedure outlined above, we highly recommend enabling alerts of interest and configuring each enabled alert to send notifications to other people or services. This is detailed in Step 4 of[ this document](/docs/alerts/monitors#Add_a_monitor).
 
 
 ## Installing the Kafka App

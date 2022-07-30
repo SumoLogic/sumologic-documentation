@@ -36,7 +36,7 @@ Before you begin you must:
 
 ### Enable S3 Ingestion
 
-Follow steps to create [AWS S3 Source](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/AWS-S3-Source).
+Follow steps to create [AWS S3 Source](/docs/send-data/Sources/sources-hosted-collectors/Amazon-Web-Services/AWS-S3-Source).
 
 The following is an example of a path expression that supports ingesting alerts.
 

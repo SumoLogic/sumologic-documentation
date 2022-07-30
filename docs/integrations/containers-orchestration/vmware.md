@@ -2,7 +2,7 @@
 id: vmware
 title: Sumo Logic App for VMware
 sidebar_label: VMware
-description: The Sumo Logic App for VMware collects unified logs and metrics from the VMware cloud computing virtualization platform, including vCenter Server, vSphere, ESX/ESXi, and individual virtual machines, for real-time display in predefined dashboards. 
+description: The Sumo Logic App for VMware collects unified logs and metrics from the VMware cloud computing virtualization platform, including vCenter Server, vSphere, ESX/ESXi, and individual virtual machines, for real-time display in predefined dashboards.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -42,22 +42,22 @@ The Sumo Logic scripts required to work with the app are located here:
 The VMware App collects logs and metrics from your VMware cloud computing virtualization platform, then displays the data in predefined dashboards. The App enables you to monitor vCenter, ESXi hosts and VM metrics and events.
 
 This page provides instructions for collecting logs and metrics for VMware. Click a link to jump to a topic:
-* [Set up a server, host, or VM to collect data](https://help.sumologic.com/07Sumo-Logic-Apps/10Containers_and_Orchestration/VMware/01Collect_logs_and_metrics_for_the_VMware_ULM_App#Step_1:_Set_up_a_server.2C_host.2C_or_VM_to_collect_data)
-* [Download and install the Collector](https://help.sumologic.com/07Sumo-Logic-Apps/10Containers_and_Orchestration/VMware/01Collect_logs_and_metrics_for_the_VMware_ULM_App#Step_2:_Download_and_install_the_Collector)
-* [Collect logs and metrics for the VMware App](https://help.sumologic.com/07Sumo-Logic-Apps/10Containers_and_Orchestration/VMware/01Collect_logs_and_metrics_for_the_VMware_ULM_App#Step_3:_Collect_logs_and_metrics_for_the_VMware_ULM_App)
-* [Encrypt passwords](https://help.sumologic.com/07Sumo-Logic-Apps/10Containers_and_Orchestration/VMware/01Collect_logs_and_metrics_for_the_VMware_ULM_App#Step_4:_Encrypt_passwords)
-* [Sample log message](https://help.sumologic.com/07Sumo-Logic-Apps/10Containers_and_Orchestration/VMware/01Collect_logs_and_metrics_for_the_VMware_ULM_App#Sample_log_message)
-* [Sample query](https://help.sumologic.com/07Sumo-Logic-Apps/10Containers_and_Orchestration/VMware/01Collect_logs_and_metrics_for_the_VMware_ULM_App#Sample_query)
-* [Troubleshooting](https://help.sumologic.com/07Sumo-Logic-Apps/10Containers_and_Orchestration/VMware/01Collect_logs_and_metrics_for_the_VMware_ULM_App#Troubleshooting)
+* [Set up a server, host, or VM to collect data](#Step_1:_Set_up_a_server.2C_host.2C_or_VM_to_collect_data)
+* [Download and install the Collector](#Step_2:_Download_and_install_the_Collector)
+* [Collect logs and metrics for the VMware App](#Step_3:_Collect_logs_and_metrics_for_the_VMware_ULM_App)
+* [Encrypt passwords](#Step_4:_Encrypt_passwords)
+* [Sample log message](#Sample_log_message)
+* [Sample query](#Sample_query)
+* [Troubleshooting](#Troubleshooting)
 
 
 ### Set up a server, host, or VM to collect data
 
 You can use following method for setting up a server to collect data for the VMware App:
 
-If you have an existing VM, you can go directly to [Installing the Sumo Logic scripts on a VM](https://help.sumologic.com/07Sumo-Logic-Apps/10Containers_and_Orchestration/VMware/01Collect_logs_and_metrics_for_the_VMware_ULM_App#Installing_Sumo_Logic_scripts_on_a_vCenter_server.2C_another_host.2C_or_VM) and proceed with following the instructions.
+If you have an existing VM, you can go directly to [Installing the Sumo Logic scripts on a VM](#Installing_Sumo_Logic_scripts_on_a_vCenter_server.2C_another_host.2C_or_VM) and proceed with following the instructions.
 
-[Install the Sumo Logic scripts](https://help.sumologic.com/07Sumo-Logic-Apps/10Containers_and_Orchestration/VMware/01Collect_logs_and_metrics_for_the_VMware_ULM_App#Installing_Sumo_Logic_scripts_on_a_vCenter_server.2C_another_host.2C_or_VM) for events and metrics on a vCenter server, or another host with access to vCenter API’s.
+[Install the Sumo Logic scripts](#Installing_Sumo_Logic_scripts_on_a_vCenter_server.2C_another_host.2C_or_VM) for events and metrics on a vCenter server, or another host with access to vCenter API’s.
 
 
 #### Installing Sumo Logic scripts on a vCenter server, another host, or VM
@@ -83,16 +83,16 @@ If you have multiple vCenter servers, create a new line for each one.
 
 An Installed Collector is a Java agent that receives logs and metrics from its Sources and then encrypts, compresses, and sends the data to the Sumo service. The Collector runs as a service and starts automatically after installing or rebooting.
 
-**To install a Collector to collect logs and metrics:** refer to this [link](https://help.sumologic.com/03Send-Data/Installed-Collectors) for installation instructions.
+**To install a Collector to collect logs and metrics:** refer to this [link](/docs/send-data/Installed-Collectors) for installation instructions.
 
 
 ### Collect logs and metrics for the VMware App
 
 This section explains how to set up a vCenter server, host, or VM to collect logs and metric for the Sumo Logic App for VMware. Click a link to jump to a topic.
 
-1. [Collecting event messages](https://help.sumologic.com/07Sumo-Logic-Apps/10Containers_and_Orchestration/VMware/01Collect_logs_and_metrics_for_the_VMware_ULM_App#A._Collecting_event_messages)
-2. [Collecting performance metrics](https://help.sumologic.com/07Sumo-Logic-Apps/10Containers_and_Orchestration/VMware/01Collect_logs_and_metrics_for_the_VMware_ULM_App#B._Collecting_performance_metrics)
-3. [Collecting historical events](https://help.sumologic.com/07Sumo-Logic-Apps/10Containers_and_Orchestration/VMware/01Collect_logs_and_metrics_for_the_VMware_ULM_App#C._Collecting_historical_events)
+1. [Collecting event messages](#A._Collecting_event_messages)
+2. [Collecting performance metrics](#B._Collecting_performance_metrics)
+3. [Collecting historical events](#C._Collecting_historical_events)
 
 
 #### Collecting event messages
@@ -100,8 +100,8 @@ This section explains how to set up a vCenter server, host, or VM to collect log
 An event is an action that triggers an event message on a vCenter Server. Event messages are not logged, but are instead stored in the vCenter Server database. The Sumo Logic Collector for VMware retrieves these messages using the vSphere python SDK.
 
 This procedure includes the following tasks:
-* [Configuring logs to be collected](https://help.sumologic.com/07Sumo-Logic-Apps/10Containers_and_Orchestration/VMware/01Collect_logs_and_metrics_for_the_VMware_ULM_App#To_configure_logs_to_be_collected.2C_do_the_following:)—Test running a python script from the directory containing the Sumo Logic scripts.
-* [Configuring a syslog or a file source](https://help.sumologic.com/07Sumo-Logic-Apps/10Containers_and_Orchestration/VMware/01Collect_logs_and_metrics_for_the_VMware_ULM_App#To_configure_a_syslog_source_for_the_Collector.2C_do_the_following:)—A Sumo Logic[ Syslog Source](https://help.sumologic.com/03Send-Data/Sources/01Sources-for-Installed-Collectors/Syslog-Source) operates like a Syslog server listening on the designated port to receive Syslog messages. The script supports syslog server, as well as generating a text file that can be ingested using [Local](https://help.sumologic.com/03Send-Data/Sources/01Sources-for-Installed-Collectors/Local-File-Source) or [Remote](https://help.sumologic.com/03Send-Data/Sources/01Sources-for-Installed-Collectors/Remote-File-Source) file source. A local file source is recommended as it has several benefits over Syslog, including no need to worry about connection retry, reading from the last pointer in a file, no data loss in the case of collector failure, and so on. Based on your preference, you can configure a syslog source, or a local or remote file source.
+* [Configuring logs to be collected](#To_configure_logs_to_be_collected.2C_do_the_following:)—Test running a python script from the directory containing the Sumo Logic scripts.
+* [Configuring a syslog or a file source](#To_configure_a_syslog_source_for_the_Collector.2C_do_the_following:)—A Sumo Logic[ Syslog Source](/docs/send-data/Sources/sources-installed-collectors/Syslog-Source) operates like a Syslog server listening on the designated port to receive Syslog messages. The script supports syslog server, as well as generating a text file that can be ingested using [Local](/docs/send-data/Sources/sources-installed-collectors/Local-File-Source) or [Remote](/docs/send-data/Sources/sources-installed-collectors/Remote-File-Source) file source. A local file source is recommended as it has several benefits over Syslog, including no need to worry about connection retry, reading from the last pointer in a file, no data loss in the case of collector failure, and so on. Based on your preference, you can configure a syslog source, or a local or remote file source.
 
 **To configure logs to be collected, do the following:**
 
@@ -221,8 +221,8 @@ python3 events.py  -s 192.168.23.242 -t vcenterhost -to 1514 -bT '2012-10-08 00:
 
 
 
-* **If the script and the Sumologic collector are on the same server,** configure a local file source by following [these](https://help.sumologic.com/03Send-Data/Sources/01Sources-for-Installed-Collectors/Local-File-Source) steps. Configure the **File Path** for local file source. Set **Path Expression** equivalent to the output directory mentioned in previous section using **-f **flag, for example: `/var/log/vmware/output/`
-* **If the script and the Sumologic collector are on different servers**, configure a remote file source by following [these](https://help.sumologic.com/03Send-Data/Sources/01Sources-for-Installed-Collectors/Remote-File-Source) steps. Configure the **Path Expression** for Remote file source. Set **Path Expression** equivalent to the output directory mentioned in previous section using **-f** flag, for example:  `/var/log/vmware/output/`
+* **If the script and the Sumologic collector are on the same server,** configure a local file source by following [these](/docs/send-data/Sources/sources-installed-collectors/Local-File-Source) steps. Configure the **File Path** for local file source. Set **Path Expression** equivalent to the output directory mentioned in previous section using **-f **flag, for example: `/var/log/vmware/output/`
+* **If the script and the Sumologic collector are on different servers**, configure a remote file source by following [these](/docs/send-data/Sources/sources-installed-collectors/Remote-File-Source) steps. Configure the **Path Expression** for Remote file source. Set **Path Expression** equivalent to the output directory mentioned in previous section using **-f** flag, for example:  `/var/log/vmware/output/`
 
 
 ###### **For a syslog source, configure the syslog source in the following way: **
@@ -271,7 +271,7 @@ SSL_CAPATH: Certificate absolute path if SSL_VERIFY is True
 
 
 
-1. Follow the instructions to configure a [Streaming Metrics Source](https://help.sumologic.com/03Send-Data/Sources/01Sources-for-Installed-Collectors/Streaming-Metrics-Source). \
+1. Follow the instructions to configure a [Streaming Metrics Source](/docs/send-data/Sources/sources-installed-collectors/Streaming-Metrics-Source). \
  \
 
 19

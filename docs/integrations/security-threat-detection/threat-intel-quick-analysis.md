@@ -19,9 +19,9 @@ The Threat Intel Quick Analysis App can be used for any type of logs, regardless
 
 ## Installing the Threat Intel Quick Analysis App
 
-This app contains generic regex expressions and thus may not perform well at very large scale. Once you are familiar with Sumo Logic, you can apply performance optimization techniques as described in [Threat Intel Optimization](https://help.sumologic.com/07Sumo-Logic-Apps/22Security_and_Threat_Detection/Threat_Intel_Quick_Analysis/02_Threat-Intel-Optimization). Alternatively, you can run this app on smaller and more specific data streams.
+This app contains generic regex expressions and thus may not perform well at very large scale. Once you are familiar with Sumo Logic, you can apply performance optimization techniques as described in [Threat Intel Optimization](/docs/integrations/security-threat-detection/threat-intel-quick-analysis#02_Threat-Intel-Optimization). Alternatively, you can run this app on smaller and more specific data streams.
 
-This section provides instructions on how to install the Threat Intel Quick Analysis App, and examples of each of dashboards. The preconfigured searches and [Dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/22Security_and_Threat_Detection/Threat_Intel_Quick_Analysis/01Threat-Intel-Quick-Analysis-App-Dashboard#Dashboards) provide easy-to-access visual insights into your data.
+This section provides instructions on how to install the Threat Intel Quick Analysis App, and examples of each of dashboards. The preconfigured searches and [Dashboards](/docs/integrations/security-threat-detection/threat-intel-quick-analysis#01Threat-Intel-Quick-Analysis-App-Dashboard#Dashboards) provide easy-to-access visual insights into your data.
 
 To install the app:
 
@@ -61,7 +61,7 @@ See the frequency of Domain threats by Actor, Log Source, Malicious Confidence, 
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/TIQA_Overview_Dashboard.png')} alt="Threat Intel Dashboard" />
 
-* **Welcome to the Threat Intel Quick Analysis App.** Informational panel to help you find information on [optimization](https://help.sumologic.com/07Sumo-Logic-Apps/22Security_and_Threat_Detection/Threat_Intel_Quick_Analysis/02_Threat-Intel-Optimization) and [FAQs](https://help.sumologic.com/07Sumo-Logic-Apps/22Security_and_Threat_Detection/Threat_Intel_Quick_Analysis/03_Threat-Intel-FAQ) on working with the Threat Intel database.
+* **Welcome to the Threat Intel Quick Analysis App.** Informational panel to help you find information on [optimization](/docs/integrations/security-threat-detection/threat-intel-quick-analysis#02_Threat-Intel-Optimization) and [FAQs](/docs/integrations/security-threat-detection/threat-intel-quick-analysis#03_Threat-Intel-FAQ) on working with the Threat Intel database.
 * **Number of Log Lines (Events) Scanned for Threats.** Count of log lines scanned across all selected sources for the last 15 minutes.  
 * **IP Threat Count.** Count of threats related to malicious IPs, for the last 15 minutes.
 * **File Name Threat Count.** Count of threats related to malicious file names, for the last 15 minutes.  

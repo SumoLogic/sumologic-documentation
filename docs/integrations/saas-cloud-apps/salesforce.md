@@ -62,10 +62,10 @@ The Salesforce Event Monitoring add-on is required to obtain all of the data pre
 In this section, we will configure a collection of EventLogFiles and audit logs  from Salesforce and send them to Sumo Logic via one of the methods listed below.
 
 * For non-FedRamp Sumo Logic deployments
-    * [Create a Salesforce Cloud To Cloud Collector Source](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Cloud-to-Cloud_Integration_Framework/Salesforce_Source).
+    * [Create a Salesforce Cloud To Cloud Collector Source](/docs/send-data/Sources/sources-hosted-collectors/Cloud-to-Cloud-Integration-Framework/Salesforce-Source).
 * If you are using the Sumo Logic FedRamp deployment
-    * [Configure a new SumoJanus installation for Salesforce](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/Salesforce/01Collect-Logs-for-Salesforce#Configure_a_new_SumoJanus_installation_for_Salesforce)
-    * [Upgrade an existing SumoJanus installation for Salesforce](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/Salesforce/01Collect-Logs-for-Salesforce#Upgrade_an_existing_SumoJanus_installation_for_Salesforce)
+    * [Configure a new SumoJanus installation for Salesforce](#Configure_a_new_SumoJanus_installation_for_Salesforce)
+    * [Upgrade an existing SumoJanus installation for Salesforce](#Upgrade_an_existing_SumoJanus_installation_for_Salesforce)
 
 
 ### Configure a new SumoJanus installation for Salesforce (DEPRECATED)
@@ -74,13 +74,13 @@ These instructions have been tested on Unix, and also work for Windows. For Wind
 
 This process includes the following tasks, which must be performed in the order in which they are presented:
 
-1. [Set Salesforce permissions](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/Salesforce/01Collect-Logs-for-Salesforce#Step_1:_Set_Salesforce_user_permissions).
-2. [Install the collector and download the SumoJanus package](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/Salesforce/01Collect-Logs-for-Salesforce#Step_2:_Install_the_collector_and_download_the_SumoJanus_package).
-3. [Deploy the SumoJanus packages](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/Salesforce/01Collect-Logs-for-Salesforce#Step_3:_Deploy_the_SumoJanus_package).
-4. [Configure the SFDC bundle](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/Salesforce/01Collect-Logs-for-Salesforce#Step_4:_Configure_the_SFDC_Bundle).
-5. [Configure the JRE path](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/Salesforce/01Collect-Logs-for-Salesforce#Step_5:_Configure_the_JRE_path).
-6. [Authenticate with Salesforce](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/Salesforce/01Collect-Logs-for-Salesforce#Step_6:_Authenticate_with_Salesforce).
-7. [Configure a script source](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/Salesforce/01Collect-Logs-for-Salesforce).
+1. [Set Salesforce permissions](#Step_1:_Set_Salesforce_user_permissions).
+2. [Install the collector and download the SumoJanus package](#Step_2:_Install_the_collector_and_download_the_SumoJanus_package).
+3. [Deploy the SumoJanus packages](#Step_3:_Deploy_the_SumoJanus_package).
+4. [Configure the SFDC bundle](#Step_4:_Configure_the_SFDC_Bundle).
+5. [Configure the JRE path](#Step_5:_Configure_the_JRE_path).
+6. [Authenticate with Salesforce](#Step_6:_Authenticate_with_Salesforce).
+7. [Configure a script source](#step-7-configure-a-script-source-deprecated).
 
 
 #### Step 1: Set Salesforce user permissions (DEPRECATED)
@@ -107,7 +107,7 @@ Install the collector
 
 In Sumo Logic, install a Collector (version i19.115 or later) on the system where you want to collect Salesforce Event Monitoring Logs.
 
-Configure an [Installed Collector](https://help.sumologic.com/03Send-Data/Installed-Collectors) on a Linux or Windows machine. By default the Collector will come with a Java Runtime Environment. To ensure that SumoJanus can locate Java, you may need to update the .bat or .bash file, as described below.
+Configure an [Installed Collector](/docs/send-data/Installed-Collectors) on a Linux or Windows machine. By default the Collector will come with a Java Runtime Environment. To ensure that SumoJanus can locate Java, you may need to update the .bat or .bash file, as described below.
 
 
 Download the SumoJanus package
@@ -138,9 +138,9 @@ This section provides steps for a new SumoJanus installation.
 #### Upgrade an existing SumoJanus installation for Salesforce (DEPRECATED)
 
 1. Backup `conf/sumologic.properties` and the data folder.
-2. Setup a [New SumoJanus installation](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/Salesforce/01Collect-Logs-for-Salesforce#New_SumoJanus_installation)
+2. Setup a [New SumoJanus installation](#New_SumoJanus_installation)
 3. Migrate the backed up `conf/sumologic.properties` and data folder to the new Janus folder
-4. Modify the paths in [Step 7](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/Salesforce/01Collect-Logs-for-Salesforce#Step_7._Configure_a_script_source) below to point to the new folder.
+4. Modify the paths in [Step 7](#Step_7._Configure_a_script_source) below to point to the new folder.
 
 
 #### Step 4: Configure the SFDC Bundle (DEPRECATED)
@@ -164,7 +164,7 @@ interval = daily \
     1.  `url`— Point to your Salesforce URL. For example: `https://na25.salesforce.com`
     2. `sandbox`—If you are is using a sandbox environment, set the property to `true`. It is set to` false` by default.
     3. `start_time`—If you don’t specify `start_time`, logs will be collected from two days in the past.
-    4. `interval`— Controls whether you collect daily or hourly logs. Note that later in this procedure, in  [Step 7: Configure a script source](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/Salesforce/01Collect-Logs-for-Salesforce#Step_7:_Configure_a_script_source), the setting you specify for Frequency, should correspond to the `interval` setting.
+    4. `interval`— Controls whether you collect daily or hourly logs. Note that later in this procedure, in  [Step 7: Configure a script source](#Step_7:_Configure_a_script_source), the setting you specify for Frequency, should correspond to the `interval` setting.
 
 In the file `conf/sumologic.properties`, the following properties are supported.
 
@@ -281,7 +281,7 @@ After completing the previous steps, you should authenticate the installation wi
 2. Run the following command under the unzipped `sumojanus-salesforce` folder:
     * On Unix-like systems: `bin/SumoJanus_SF.bash -s`
     * On Windows: `bin\SumoJanus_SF.bat -s`
-3. A browser will open (if it doesn't, see [If your browser does not open](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/Salesforce/01Collect-Logs-for-Salesforce#If_your_browser_does_not_open), below):
+3. A browser will open (if it doesn't, see [If your browser does not open](#If_your_browser_does_not_open), below):
     * If your browser has already authenticated with Salesforce, a message will display saying that access has been granted.
     * Otherwise, you will see the Salesforce login. Supply your credentials (with the required permissions) to grant access.
 4. You will then see the following message, which says that the token file has been created: \
@@ -314,7 +314,7 @@ The use of single quotes surrounding the URL are required.
 
 If everything was successful, you should see the message “Thank you for granting access for SumoLogic SalesforceCollector” somewhere in the return value. If you see an error regarding an expired authorization code instead, make sure you finish this step within 30 seconds of the previous step as noted above.
 
-You should see a confirmation that the token file has been created, similar to the one shown in [Step 4](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/Salesforce/01Collect-Logs-for-Salesforce#Step_4._Configure_the_SFDC_Bundle) above.
+You should see a confirmation that the token file has been created, similar to the one shown in [Step 4](#Step_4._Configure_the_SFDC_Bundle) above.
 
 
 If the curl command returns the message `Empty reply from server`, it is likely that the single quotes around `the_above_url` are missing.
@@ -337,10 +337,10 @@ If the browser does not connect to the salesforce instance and you are using Chr
 
 #### Step 7. Configure a script source (DEPRECATED)
 
-In Sumo Logic, configure a Script Source using the instructions in [Script Source](https://help.sumologic.com/03Send-Data/Sources/01Sources-for-Installed-Collectors/Script-Source). Collectors using version 19.245-4 and later do not allow Script Sources to run by default.
+In Sumo Logic, configure a Script Source using the instructions in [Script Source](/docs/send-data/Sources/sources-installed-collectors/Script-Source). Collectors using version 19.245-4 and later do not allow Script Sources to run by default.
 
 
-To allow Script Sources you need to set the Collector parameter **`enableScriptSource=true` in [user.properties](https://help.sumologic.com/03Send-Data/Installed-Collectors/05Reference-Information-for-Collector-Installation/06user.properties) to true and [restart](https://help.sumologic.com/Manage/Collection/02Start-or-Stop-a-Collector-using-Scripts) the Collector.
+To allow Script Sources you need to set the Collector parameter **`enableScriptSource=true` in [user.properties](/docs/send-data/Installed-collectors/collector-installation-reference/user-properties) to true and [restart](https://help.sumologic.com/Manage/Collection/02Start-or-Stop-a-Collector-using-Scripts) the Collector.
 
 For the Sumo Logic App for Salesforce, use the following configuration settings:
 
@@ -424,19 +424,19 @@ _sourceCategory=salesforce event type "Report"
     3. **Timezone**: Select "UTC".
     4. **Timestamp Format:** `yyyy-MM-dd'T'HH:mm:ss.SSS`
     5. **Timestamp Locator:** `TIMESTAMP_DERIVED\":\"([^\"]+)\"`
-    6. Download and deploy the SumoJanus package, as described in [Step 2](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/Salesforce/01Collect-Logs-for-Salesforce#Step_2:_Install_the_collector_and_download_the_SumoJanus_package) and [Step 3](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/Salesforce/01Collect-Logs-for-Salesforce#Step_3:_Deploy_the_SumoJanus_package).
-    7.  Configure the JRE path, as described in [Step 5](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/Salesforce/01Collect-Logs-for-Salesforce#Step_5:_Configure_the_JRE_path).
+    6. Download and deploy the SumoJanus package, as described in [Step 2](#Step_2:_Install_the_collector_and_download_the_SumoJanus_package) and [Step 3](#Step_3:_Deploy_the_SumoJanus_package).
+    7.  Configure the JRE path, as described in [Step 5](#Step_5:_Configure_the_JRE_path).
     8. From the previous sumojanus folder, copy these files into the corresponding subfolders of the new **sumojanus-salesforce** folder:
         1. `conf/sumologic.properties`
         2. `data/salesforce.token`
         3. `data/sf_readfiles.dat`
-    9. Test  your configuration, as described in [Step 6](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/Salesforce/01Collect-Logs-for-Salesforce#Step_6:_Authenticate_with_Salesforce).
-    10. From the SumoLogic UI, identify the script source created in [Step 7](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/Salesforce/01Collect-Logs-for-Salesforce#Step_7._Configure_a_script_source) and modify the path to the script and the working directory so they point to the respective newly created directories.
+    9. Test  your configuration, as described in [Step 6](#Step_6:_Authenticate_with_Salesforce).
+    10. From the SumoLogic UI, identify the script source created in [Step 7](#Step_7._Configure_a_script_source) and modify the path to the script and the working directory so they point to the respective newly created directories.
 
 
 ## Install the Salesforce App
 
-Now that you have set up collection, install the Sumo Logic App for Salesforce to use the preconfigured searches and [Dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/Salesforce/Salesforce-App-Dashboards#Dashboards) that provide insight into your data.
+Now that you have set up collection, install the Sumo Logic App for Salesforce to use the preconfigured searches and [Dashboards](#Dashboards) that provide insight into your data.
 
 To install the app:
 

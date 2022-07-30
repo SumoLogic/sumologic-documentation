@@ -33,8 +33,8 @@ In this step, you configure a hosted collector with a Cloud Syslog source that w
 
 **To configure a hosted collector with a Cloud Syslog source, do the following:**
 
-1. Log in to Sumo Logic and [create a Hosted Collector](https://help.sumologic.com/03Send-Data/Hosted-Collectors#Create_a_Hosted_Collector).
-2. Create a [Cloud Syslog Source](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Cloud-Syslog-Source) on the hosted collector, specifying the following:
+1. Log in to Sumo Logic and [create a Hosted Collector](/docs/send-data/Hosted-Collectors#Create_a_Hosted_Collector).
+2. Create a [Cloud Syslog Source](/docs/send-data/Sources/sources-hosted-collectors/Cloud-Syslog-Source) on the hosted collector, specifying the following:
    * Enter a Source Name.
    * Provide a Source Category: **NW/PAN/V9**
 3. Click **Save**.
@@ -53,9 +53,9 @@ In this step, you create a server profile where you can define the log destinati
 4. In the **Syslog Server Profile** window, select the **Servers** tab and click **Add**.
 5. In the **Servers** window, specify the following information:
    * **Name**: Sumo_CloudSyslog_EndPoint01
-   * **Syslog Server**: URL from [Step 1](https://help.sumologic.com/07Sumo-Logic-Apps/22Security_and_Threat_Detection/Palo_Alto_Networks_9/Collect_logs_for_the_Palo_Alto_Networks_9_App#Step_1._Create_a_hosted_collector_and_Cloud_Syslog_source)
+   * **Syslog Server**: URL from [Step 1](#Step_1._Create_a_hosted_collector_and_Cloud_Syslog_source)
    * **Transport**: SSL
-   * **Port**: Port from [Step 1](https://help.sumologic.com/07Sumo-Logic-Apps/22Security_and_Threat_Detection/Palo_Alto_Networks_9/Collect_logs_for_the_Palo_Alto_Networks_9_App#Step_1._Create_a_hosted_collector_and_Cloud_Syslog_source)
+   * **Port**: Port from [Step 1](#Step_1._Create_a_hosted_collector_and_Cloud_Syslog_source)
    * **Format**: IETF
    * **Facility**: LOG_USER
 6. In the **Syslog Server Profile** window, select the **Custom Log Format** tab, and use the following custom format for the following log type:
@@ -65,14 +65,14 @@ In this step, you create a server profile where you can define the log destinati
 ,$receive_time,$serial,$type,$subtype,,$time_generated,$src,$dst,$natsrc,$natdst,$rule,$srcuser,$dstuser,$app,$vsys,$from,$to,$inbound_if,$outbound_if,$logset,,$sessionid,$repeatcnt,$sport,$dport,$natsport,$natdport,$flags,$proto,$action,$bytes,$bytes_sent,$bytes_received,$packets,$start,$sec,$category,,$seqno,$actionflags,$srcloc,$dstloc,,$pkts_sent,$pkts_received,$session_end_reason,$dg_hier_level_1,$dg_hier_level_2,$dg_hier_level_3,$dg_hier_level_4,$vsys_name,$device_name,$action_source,$src_uuid,$dst_uuid,$tunnelid/$imsi,$monitortag/$imei,$parent_session_id,$parent_start_time,$tunnel,$assoc_id,$chunks,$chunks_sent,$chunks_received,$rule_uuid,$http2_connection
 ```
 
-Token from [Step 1](https://help.sumologic.com/07Sumo-Logic-Apps/Cloud_Security_Monitoring_and_Analytics/Palo_Alto_Firewall_-_Cloud_Security_Monitoring_and_Analytics/07Sumo-Logic-Apps/Cloud_Security_Monitoring_and_Analytics/Palo_Alto_Firewall_-_Cloud_Security_Monitoring_and_Analytics/Collect_Logs_for_the_Palo_Alto_Firewall_-_Cloud_Security_Monitoring_and_Analytics#Step_1._Create_a_hosted_collector_and_Cloud_Syslog_source)
+Token from [Step 1](#Step_1._Create_a_hosted_collector_and_Cloud_Syslog_source)
 
 8. [Threat](https://docs.paloaltonetworks.com/pan-os/9-0/pan-os-admin/monitoring/use-syslog-for-monitoring/syslog-field-descriptions/threat-log-fields)
 
 ```
 ,$receive_time,$serial,$type,$subtype,,$time_generated,$src,$dst,$natsrc,$natdst,$rule,$srcuser,$dstuser,$app,$vsys,$from,$to,$inbound_if,$outbound_if,$logset,,$sessionid,$repeatcnt,$sport,$dport,$natsport,$natdport,$flags,$proto,$action,$misc,$threatid,$category,$severity,$direction,$seqno,$actionflags,$srcloc,$dstloc,,$contenttype,$pcap_id,$filedigest,$cloud,$url_idx,$user_agent,$filetype,$xff,$referer,$sender,$subject,$recipient,$reportid,$dg_hier_level_1,$dg_hier_level_2,$dg_hier_level_3,$dg_hier_level_4,$vsys_name,$device_name,,$src_uuid,$dst_uuid,$http_method,$tunnel_id/$imsi,$monitortag/$imei,$parent_session_id,$parent_start_time,$tunnel,$thr_category,$contentver,,$assoc_id,$ppid,$http_headers,$url_category_list,$rule_uuid,$http2_connection
 ```
-Token from [Step 1](https://help.sumologic.com/07Sumo-Logic-Apps/Cloud_Security_Monitoring_and_Analytics/Palo_Alto_Firewall_-_Cloud_Security_Monitoring_and_Analytics/07Sumo-Logic-Apps/Cloud_Security_Monitoring_and_Analytics/Palo_Alto_Firewall_-_Cloud_Security_Monitoring_and_Analytics/Collect_Logs_for_the_Palo_Alto_Firewall_-_Cloud_Security_Monitoring_and_Analytics#Step_1._Create_a_hosted_collector_and_Cloud_Syslog_source)
+Token from [Step 1](#Step_1._Create_a_hosted_collector_and_Cloud_Syslog_source)
 7. Click OK.
 8. Commit the changes.
 
@@ -90,7 +90,7 @@ In this step, you view logs using the Palo Alto Network Web interface to confirm
 
 1. In the Palo Alto Networks UI, select **Monitor** > **Logs**.
 2. Once the setup is done, log in to Sumo Logic.
-3. To validate that the logs are flowing to Sumo Logic, run a query using the source category you configured during [Step 1](https://help.sumologic.com/07Sumo-Logic-Apps/22Security_and_Threat_Detection/Palo_Alto_Networks_9/Collect_logs_for_the_Palo_Alto_Networks_9_App#Step_1._Create_a_hosted_collector_and_Cloud_Syslog_source), such as:
+3. To validate that the logs are flowing to Sumo Logic, run a query using the source category you configured during [Step 1](#Step_1._Create_a_hosted_collector_and_Cloud_Syslog_source), such as:
   ```
   _sourceCategory = **NW/PAN/V9**
   ```

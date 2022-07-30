@@ -31,8 +31,8 @@ This page provides instructions for configuring on-prem log collection for the T
 
 To collect logs for Deep Security, do the following:
 
-1. Configure a [Installed Collector](https://help.sumologic.com/03Send-Data/Installed-Collectors).
-2. Configure a [Syslog Source](https://help.sumologic.com/03Send-Data/Sources/01Sources-for-Installed-Collectors/Syslog-Source).
+1. Configure a [Installed Collector](/docs/send-data/Installed-Collectors).
+2. Configure a [Syslog Source](/docs/send-data/Sources/sources-installed-collectors/Syslog-Source).
 
 When you configure the Syslog Sources, for Protocol, select UDP.
 
@@ -101,8 +101,8 @@ This section has instructions for collecting logs for the Trend Micro Deep Secur
 
 #### Step 1: Create a Cloud Syslog source on a hosted collector
 
-1. Select an existing [hosted collector](https://help.sumologic.com/03Send-Data/Hosted-Collectors), or create a new one.
-2. Add a [Cloud Syslog source](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Cloud-Syslog-Source) to the hosted collector.
+1. Select an existing [hosted collector](/docs/send-data/Hosted-Collectors), or create a new one.
+2. Add a [Cloud Syslog source](/docs/send-data/Sources/sources-hosted-collectors/Cloud-Syslog-Source) to the hosted collector.
 
     1. Give the source a name
     2. Enter a Source Category.
@@ -167,7 +167,7 @@ Send System Events to confirm communication with Sumo Logic. There may be a 5-10
 
 ## Installing the Trend Micro Deep Security App
 
-This page provides instructions on how to install the Trend Micro Deep Security App, and examples of each of the dashboards. The App reconfigured searches and [Dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/22Security_and_Threat_Detection/Trend_Micro_Deep_Security/Trend-Micro-Deep-Security-App-Dashboards#Dashboards) that provide easy-to-access visual insights into your data.
+This page provides instructions on how to install the Trend Micro Deep Security App, and examples of each of the dashboards. The App reconfigured searches and [Dashboards](#Dashboards) that provide easy-to-access visual insights into your data.
 
 To install the app:
 

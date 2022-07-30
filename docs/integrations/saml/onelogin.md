@@ -23,7 +23,7 @@ Once you begin uploading data, your daily data usage will increase. It's a good 
 * **OneLogin Enterprise** or **Unlimited **plan subscription.
 * **Configure an Event Broadcaster**
    * Add a Sumo Logic [Hosted Collector](/docs/send-data/configure-hosted-collector) to your Sumo Logic Org.
-   * Configure an [HTTP Source](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/HTTP-Source) for your OneLogin data. Make sure to set the **Source Category** when configuring the OneLogin source. For example, onelogin.
+   * Configure an [HTTP Source](/docs/send-data/sources/sources-hosted-collectors/http-logs-metrics-source) for your OneLogin data. Make sure to set the **Source Category** when configuring the OneLogin source. For example, onelogin.
    * From OneLogin, configure a broadcaster that points to this endpoint using the instructions in the [OneLogin documentation](https://onelogin.service-now.com/support?id=kb_article&sys_id=43f95543db109700d5505eea4b961959). You must use SIEM (NDJSON) format. Use the Sumo Logic HTTP Source URL as the Listener URL, and custom header is not needed.
 
 
@@ -49,7 +49,7 @@ _sourceCategory=onelogin
 
 ## Install the Sumo Logic App
 
-Now that you have set up collection for OneLogin, install the Sumo Logic App for OneLogin to use the preconfigured searches and [Dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/20SAML/OneLogin/OneLogin-App-Dashboards#Dashboards) that provide insight into your data.
+Now that you have set up collection for OneLogin, install the Sumo Logic App for OneLogin to use the preconfigured searches and [Dashboards](/docs/integrations/saml/OneLogin#Dashboards) that provide insight into your data.
 
 To install the app:
 

@@ -24,10 +24,10 @@ For more information on the incident messages supported in Webhooks V2, see the 
 
 This page provides instructions for configuring a Sumo Logic Hosted Collector and HTTP Source to create a PagerDuty Webhook V2, to collect PagerDuty events. Click a link to jump to a topic:
 
-* [Event types](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/PagerDuty_V2/Collect_logs_for_PagerDuty_V2#Event_types)
-* [Log example](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/PagerDuty_V2/Collect_logs_for_PagerDuty_V2#Query_example)
-* [Configure a Sumo Logic Collector and Source](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/PagerDuty_V2/Collect_logs_for_PagerDuty_V2#Step_1:_Configure_a_Sumo_Logic_Collector_and_Source)
-* [Create a PagerDuty V2 Webhook](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/PagerDuty_V2/Collect_logs_for_PagerDuty_V2#Step_2:_Create_a_PagerDuty_V2_Webhook)
+* [Event types](#Event-types)
+* [Log example](#Sample-Query)
+* [Configure a Sumo Logic Collector and Source](#Step_1:_Configure_a_Sumo_Logic_Collector_and_Source)
+* [Create a PagerDuty V2 Webhook](#Step_2:_Create_a_PagerDuty_V2_Webhook)
 
 
 ### Event types
@@ -70,7 +70,7 @@ An **HTTP Source** is an endpoint for receiving log and metric data uploaded to 
 
 1. Log in to Sumo Logic.
 2. Follow the instruction for configuring a [Hosted Collector](/docs/send-data/configure-hosted-collector).
-3. Follow the instruction for configuring an  [HTTP Source](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/HTTP-Source). \
+3. Follow the instruction for configuring an  [HTTP Source](/docs/send-data/sources/sources-hosted-collectors/http-logs-metrics-source). \
 
 1.png "image_tooltip")
 Make sure to save the **HTTP Source Address URL**. You will be asked for this **Endpoint URL** when you configure the PagerDuty Webhook in the following procedure.
@@ -85,8 +85,8 @@ Using PagerDuty with Webhooks V2, you receive HTTP callbacks when incident event
 
 1. Log in to your PagerDuty account.
 2. Use the following instructions to create a Webhook V2:  \
-[https://support.pagerduty.com/hc/en-us/articles/202830320-Webhooks-](https://support.pagerduty.com/hc/en-us/articles/202830320-Webhooks-), entering the  [HTTP Source Address URL](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/PagerDuty_V2/Collect_logs_for_PagerDuty_V2#Configure+HTTP+Source) as the **Endpoint URL** in **Step 6**.
-3. Continue with [installing the Sumo Logic App for PagerDuty V2](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/PagerDuty_V2/Install_the_PagerDuty_V2_App_and_view_the_Dashboards).
+[https://support.pagerduty.com/hc/en-us/articles/202830320-Webhooks-](https://support.pagerduty.com/hc/en-us/articles/202830320-Webhooks-), entering the  [HTTP Source Address URL](#Configure-HTTP-Source) as the **Endpoint URL** in **Step 6**.
+3. Continue with [installing the Sumo Logic App for PagerDuty V2](#Install-the-PagerDuty-V2-App).
 
 
 ## Install the PagerDuty V2 App

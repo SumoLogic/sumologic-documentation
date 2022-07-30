@@ -25,7 +25,7 @@ The Sumo Logic App for GitLab ingests GitLab events using a webhook. Sumo Logic 
 
 For information on GitLab events, refer to [GitLab documentation](https://docs.gitlab.com/ee/user/project/integrations/webhooks.html).
 
-For troubleshooting, see the [GitLab Troubleshooting](https://help.sumologic.com/07Sumo-Logic-Apps/08App_Development/GitLab/Install_the_GitLab_App_and_View_Dashboards#Troubleshooting) section.
+For troubleshooting, see the [GitLab Troubleshooting](#Troubleshooting) section.
 
 
 ## Collect Logs for GitLab App
@@ -46,7 +46,7 @@ Create a host collector to receive Webhooks from GitLab and set up an HTTP sourc
 
 
 1. Configure a [Hosted Collector](/docs/send-data/configure-hosted-collector), or select an existing hosted collector for the HTTP source.
-2. Configure an [HTTP source](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/HTTP-Source) on the hosted collector.
+2. Configure an [HTTP source](/docs/send-data/sources/sources-hosted-collectors/http-logs-metrics-source) on the hosted collector.
     * For **Source Category**, specify GitLab/events.
     * Click **+Add Field **and provide the following:
         * **Field Name. **_convertHeadersToFields
@@ -119,17 +119,6 @@ _sourceCategory="sumo/GitLab" and _collector="GitLab" %"x-GitLab-event"="Merge R
 
 
 ## Install the GitLab App and View Dashboards
-
-
-
-1. **Last updated \
-**Jan 24, 2022
-2. [Save as PDF](https://help.sumologic.com/@api/deki/pages/9974/pdf/Install%2bthe%2bGitLab%2bApp%2band%2bView%2bDashboards.pdf?stylesheet=default)
-3.  
-4. [ Share](https://help.sumologic.com/07Sumo-Logic-Apps/08App_Development/GitLab/Install_the_GitLab_App_and_View_Dashboards#)
-
-    Table of contents
-
 
 This section demonstrates how to install the GitLab App and view dashboards.
 

@@ -17,11 +17,11 @@ The Sumo Logic App for PagerDuty V3 collects incident messages from your PagerDu
 
 This page provides instructions for configuring a Sumo Logic Hosted Collector and HTTP Source to create a PagerDuty Webhook V3, to collect PagerDuty events. Click a link to jump to a topic:
 
-* [Event types](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/PagerDuty_v3/Collect_Logs_for_PagerDuty_V3#Event_Types)
-* [Log example](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/PagerDuty_v3/Collect_Logs_for_PagerDuty_V3#Log_Examples)
-* [Sample Query](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/PagerDuty_v3/Collect_Logs_for_PagerDuty_V3#Query_example)
-* [Configure a Sumo Logic Collector and Source](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/PagerDuty_v3/Collect_Logs_for_PagerDuty_V3#Configure_a_Sumo_Logic_Collector_and_Source)
-* [Create a PagerDuty V3 Webhook](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/PagerDuty_v3/Collect_Logs_for_PagerDuty_V3#Create_a_PagerDuty_V3_Webhook)
+* [Event types](#Event-Types)
+* [Log example](#Log-Examples)
+* [Sample Query](#Query-example)
+* [Configure a Sumo Logic Collector and Source](#Configure-a-Sumo-Logic-Collector-and-Source)
+* [Create a PagerDuty V3 Webhook](#Create-a-PagerDuty-V3-Webhook)
 
 
 Our new app install flow is now in Beta. It is only enabled for certain customers while we gather Beta customer feedback. If you can see the Add Integration button, you can follow the in-product instructions in Sumo Logic to set up the app.
@@ -65,7 +65,7 @@ An **HTTP Source** is an endpoint for receiving log and metric data uploaded to 
 
 1. Log in to Sumo Logic.
 2. Follow the instructions for configuring a [Hosted Collector](/docs/send-data/configure-hosted-collector).
-3. Follow the instructions for configuring an [HTTP Source](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/HTTP-Source).
+3. Follow the instructions for configuring an [HTTP Source](/docs/send-data/sources/sources-hosted-collectors/http-logs-metrics-source).
 
 
 2.png "image_tooltip")
@@ -92,7 +92,7 @@ Using PagerDuty with Webhooks V3, you receive HTTP callbacks when incident event
 
 For more information, see [https://support.pagerduty.com/docs/webhooks](https://support.pagerduty.com/docs/webhooks).
 
-Continue with [installing the Sumo Logic App for PagerDuty V3](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/PagerDuty_v3/Install_the_PagerDuty_V3_App_and_view_the_Dashboards).
+In the next section, install the Sumo Logic App for PagerDuty V3.
 
 
 ## Installing the PagerDuty V3 App

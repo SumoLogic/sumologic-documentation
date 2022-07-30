@@ -39,10 +39,10 @@ In Sumo Logic, create a new [Hosted Collector](/docs/send-data/configure-hosted-
 
 ### Configure a Source
 
-1. Configure an [HTTP Source](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/HTTP-Source).
+1. Configure an [HTTP Source](/docs/send-data/sources/sources-hosted-collectors/http-logs-metrics-source).
 2. Configure the Source Fields as follows:
     1. **Name.** Required. For example, use Akamai.
-    2. **Source Category.** Required. For example, use akamai_cloud_monitor. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details see [Best Practices](https://help.sumologic.com/03Send-Data/01-Design-Your-Deployment/Best-Practices%3A-Good-Source-Category%2C-Bad-Source-Category).)
+    2. **Source Category.** Required. For example, use akamai_cloud_monitor. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details see [Best Practices](/docs/send-data/design-deployment/best-practices-source-categories).)
 3. Configure the **Advanced** section:
     3. Check **Extract timestamp information from log file entries**.
     4. **Timezone.** Use time zone from log file. If none is present, use UTC.
@@ -195,7 +195,7 @@ _sourceCategory=akamai waf denyRules reqHost
 
 ## Installing the Akamai Cloud Monitor App
 
-Now that you have configured Akamai logs, install the Sumo Logic App for Akamai Cloud Monitor to take advantage of the pre-configured searches and [Dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/Akamai_Cloud_Monitor/Akamai-Cloud-Monitor-App-Dashboards#Dashboards) to analyze your Akamai data.
+Now that you have configured Akamai logs, install the Sumo Logic App for Akamai Cloud Monitor to take advantage of the pre-configured searches and [Dashboards](#Dashboards) to analyze your Akamai data.
 
 To install the app:
 

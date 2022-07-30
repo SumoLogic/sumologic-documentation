@@ -45,7 +45,7 @@ In this step, you configure an HTTP Source to receive logs from the Azure functi
 
 
 1. Select a Hosted Collector where you want to configure the HTTP Source. If desired, create a new Hosted Collector, as described on [Configure a Hosted Collector](/docs/send-data/configure-hosted-collector).
-2. Configure an HTTP source, as described on [HTTP Logs and Metrics Source](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/HTTP-Source).
+2. Configure an HTTP source, as described on [HTTP Logs and Metrics Source](/docs/send-data/sources/sources-hosted-collectors/http-logs-metrics-source).
 
 
 ### Configure Azure resources using ARM template
@@ -67,7 +67,7 @@ In this step, you use a Sumo-provided Azure Resource Manager (ARM) template to c
 7. Now you are back on the **Custom deployment** blade.
     1. Create a new Resource Group (recommended) or select an existing one.
     2. Choose Location.
-    3. In the **Sumo Endpoint URL** field, enter the URL of the HTTP Source you configured in [Step 1](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Azure_Monitoring/Collect_Logs_from_Azure_Monitor#Step_1._Configure_an_HTTP_source).
+    3. In the **Sumo Endpoint URL** field, enter the URL of the HTTP Source you configured in [Step 1](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-logs-azure-monitor#Step_1._Configure_an_HTTP_source).
     4. Agree to the terms and conditions.
     5. Click **Purchase**. \
 
@@ -92,7 +92,7 @@ _
 
 ### Troubleshooting the log collection
 
-If logs are not flowing into Sumo Logic, follow the steps in Troubleshooting log collection in the following [document](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Azure_Monitoring/Collect_Logs_from_Azure_Monitor#troubleshooting-log-collection).
+If logs are not flowing into Sumo Logic, follow the steps in Troubleshooting log collection in the following [document](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-logs-azure-monitor#troubleshooting-log-collection).
 
 
 ## Installing the Azure Active Directory App

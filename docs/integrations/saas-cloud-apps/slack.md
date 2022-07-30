@@ -108,7 +108,7 @@ This page explains how to collect logs from Slack and ingest them into Sumo Logi
 
 ### Collection overview
 
-Sumo Logic enables you to collect logs from Slack via the Slack API. You can then configure various log types to collect. The logs are then forwarded to a Sumo Logic [HTTP Source](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/Slack/Collect_logs_for_the_Slack_App#Step_2:_Add_a_Hosted_Collector_and_HTTP_Source). By default the collection starts from the current date and time, but this can be configurable. Please see the [Advanced Configuration](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/Slack/Collect_logs_for_the_Slack_App#Advanced_Configuration) section for more details. Configuring log collection for the Slack App includes the following tasks:
+Sumo Logic enables you to collect logs from Slack via the Slack API. You can then configure various log types to collect. The logs are then forwarded to a Sumo Logic [HTTP Source](#Step_2:_Add_a_Hosted_Collector_and_HTTP_Source). By default the collection starts from the current date and time, but this can be configurable. Please see the [Advanced Configuration](#Advanced-Configuration) section for more details. Configuring log collection for the Slack App includes the following tasks:
 
 * Create a Slack API token for log collection
 * Add a Hosted Collector and HTTP Source
@@ -162,7 +162,7 @@ This section demonstrates how to generate a Slack API token for all types of Sla
 
 ### Token for Users, channels, and access logs
 
-You must have admin privileges to perform this task. The token generated in the following steps can be used by all Slack plans to collect the mentioned [log types](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/Slack/Collect_logs_for_the_Slack_App#Log_types).
+You must have admin privileges to perform this task. The token generated in the following steps can be used by all Slack plans to collect the mentioned [log types](#Log-types).
 
 **To generate a Slack API token for users, channels and access logs, do the following:**
 
@@ -273,7 +273,7 @@ You must have owner privileges to perform this task.
 
 **To generate a Slack API token for audit logs, do the following:**
 
-1. For the Sumo Slack app you created in [Users, channels, and access logs](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/Slack/Collect_logs_for_the_Slack_App#Users.2C_channels.2C_and_access_logs), Go To **OAuth and Permission.**
+1. For the Sumo Slack app you created in [Users, channels, and access logs](#Users.2C_channels.2C_and_access_logs), Go To **OAuth and Permission.**
 2. Go to **Redirect URLs **and add a Redirect URL as [https://localhost](http://localhost/),** **then click **Save URLs**.
 
 
@@ -312,7 +312,7 @@ https://slack.com/api/oauth.access?code=<CODE>&client_id=<CLIENT_ID>&client_secr
 ```
 
 
-If **v2** (https://slack.com/oauth/**v2**/authorize) appears in the URL used for the **share URL** in [step 6,](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/Slack/Collect_logs_for_the_Slack_App#Step+6+-+Shareable+URL) use this URL:
+If **v2** (https://slack.com/oauth/**v2**/authorize) appears in the URL used for the **share URL** in [step 6,](#Step-6---Shareable-URL) use this URL:
 
 
 ```bash
@@ -360,7 +360,7 @@ Identify an existing Sumo Logic Hosted Collector you want to use, or create a ne
 
 **To add a hosted collector and HTTP source, do the following:**
 1. Create a new Sumo Logic Hosted Collector by performing the steps in [Configure a Hosted Collector](/docs/send-data/configure-hosted-collector).
-2. Create a new HTTP Log Source in the hosted collector created above by following [these instructions.](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/HTTP-Source)
+2. Create a new HTTP Log Source in the hosted collector created above by following [these instructions.](/docs/send-data/sources/sources-hosted-collectors/http-logs-metrics-source)
 
 
 #### Configure collection for Slack
@@ -385,8 +385,8 @@ In this collection method, you deploy the SAM application, which creates the nec
 
 
 1. In the **AWS Lambda > Functions >** **Application Settings** panel, enter the following parameters in the corresponding text fields:
-* **HTTPLogsEndpoint.** Copy and paste the URL for the HTTP log source from [Step 2](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/Slack/Collect_logs_for_the_Slack_App#Step_2:_Add_a_Hosted_Collector_and_HTTP_Source).
-* **Token.** Copy and paste the Authorization token from [Step 1](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/Slack/Collect_logs_for_the_Slack_App#Step_1:_Create_a_Sumo_Logic_app_in_Slack).
+* **HTTPLogsEndpoint.** Copy and paste the URL for the HTTP log source from [Step 2](#Step_2:_Add_a_Hosted_Collector_and_HTTP_Source).
+* **Token.** Copy and paste the Authorization token from [Step 1](#Step_1:_Create_a_Sumo_Logic_app_in_Slack).
 * **BackfillDays.** Number of days before the event collection will start. If the value is 1, then events are fetched from yesterday to today
 * **Database Name.** DynamoDB Table Name. Use the table name to identify the Slack Workspace for which you are collecting logs. Do not use the same DataBase Name across multiple installations.
 * **EnableInfrequentChannels.** Default is false.
@@ -408,7 +408,7 @@ This section shows you how to configure collection for multiple projects assumin
 
 **To configure collection for multiple projects, do the following:**
 
-1. [Deploy the SAM application](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/Slack/Collect_logs_for_the_Slack_App#Sumo_Logic_Slack_SAM_application) with the configuration for a new slack workspace.
+1. [Deploy the SAM application](#Sumo_Logic_Slack_SAM_application) with the configuration for a new slack workspace.
 2. Modify the **DatabaseName** and **Token** parameter during the SAM configuration to identify the slack workspace.
 
 
@@ -427,7 +427,7 @@ The _sumologic-slack_ script is compatible with python 3.7 and has been tested o
 
 #### Prerequisites
 
-* You must have successfully added a [Hosted Collector and HTTP source](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/Slack/Collect_logs_for_the_Slack_App#Step_2:_Add_a_Hosted_Collector_and_HTTP_Source)** **and copied configuration parameter (token) from Slack, as described in [Step 1](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/Slack/Collect_logs_for_the_Slack_App#Step_1:_Create_a_Sumo_Logic_app_in_Slack) and [Step 2](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/Slack/Collect_logs_for_the_Slack_App#Step_2:_Add_a_Hosted_Collector_and_HTTP_Source).
+* You must have successfully added a [Hosted Collector and HTTP source](#Step_2:_Add_a_Hosted_Collector_and_HTTP_Source) and copied configuration parameter (token) from Slack, as described in [Step 1](#Step_1:_Create_a_Sumo_Logic_app_in_Slack) and [Step 2](#Step_2:_Add_a_Hosted_Collector_and_HTTP_Source).
 * You must be logged in to the user account with which you will install the collector. If you are not, use this command to switch to that account:  \
 **sudo su <user_name>**
 
@@ -514,7 +514,7 @@ SumoLogic:
 
 #### Advanced Configuration
 
-This section is common for both [AWS Lambda based collection](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/Slack/Collect_logs_for_the_Slack_App#Sumo_Logic_Slack_SAM_application) and [script based collection](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/Slack/Collect_logs_for_the_Slack_App#Sumo_Logic_Slack_Script_based_collection).
+This section is common for both [AWS Lambda based collection](#Sumo-Logic-Slack-SAM-application) and [script based collection](#Sumo-Logic-Slack-Script-based-collection).
 
 The following table provides a list of variables for Slack that you can optionally define in the configuration file.
 
@@ -662,7 +662,7 @@ _sourceCategory=Labs/slack
 
 ## Installing the Slack App
 
-This page provides instructions on how to install the Slack App, as well as examples of each of the dashboards. The App's pre-configured searches and [Dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/22Security_and_Threat_Detection/Cisco_ASA/Cisco-ASA-App-Dashboards#Dashboards) provide easy-to-access visual insights into your data.
+This page provides instructions on how to install the Slack App, as well as examples of each of the dashboards. The App's pre-configured searches and [Dashboards](#Dashboards) provide easy-to-access visual insights into your data.
 
 This section shows you how to install the Sumo Logic App for Slack.
 

@@ -64,14 +64,14 @@ Configuring logs and metrics for the Amazon EKS - Control Plane App is a two ste
 * Configuring CloudWatch log collection.
 
 
-The Sumo Logic[ Kubernetes App](https://help.sumologic.com/07Sumo-Logic-Apps/10Containers_and_Orchestration/Kubernetes) allows you to monitor worker node logs, as well as metrics for the EKS master and worker nodes.
+The Sumo Logic[ Kubernetes App](/docs/integrations/containers-orchestration/Kubernetes) allows you to monitor worker node logs, as well as metrics for the EKS master and worker nodes.
 
 
 ### Step 1. Set up and install the Kubernetes App  
 
 The Sumo Logic Kubernetes App provides the services for managing and monitoring Kubernetes worker nodes. You must set up collection and install the Kubernetes App before configuring collection for the EKS - Control Plane App. You will configure log and metric collection during this process.
 
-**To set up and install the Kubernetes app**, follow the instructions in [this document](https://help.sumologic.com/07Sumo-Logic-Apps/10Containers_and_Orchestration/Kubernetes).
+**To set up and install the Kubernetes app**, follow the instructions in [this document](/docs/integrations/containers-orchestration/Kubernetes).
 
 
 ### Step 2. Configure CloudWatch log collection
@@ -87,7 +87,7 @@ Amazon EKS utilizes the following log types:
 For more details about EKS logging, refer the [Amazon documentation](https://docs.aws.amazon.com/eks/latest/userguide/control-plane-logs.html).
 
 **To configure Amazon CloudWatch log collection, do the following:
-1. Follow the instructions for [Collecting Logs using a CloudFormation Template](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Amazon-CloudWatch-Logs).
+1. Follow the instructions for [Collecting Logs using a CloudFormation Template](/docs/send-data/Collect-from-Other-Data-Sources/Amazon-CloudWatch-Logs).
 2. Refer [Amazon EKS Logs](https://docs.aws.amazon.com/eks/latest/userguide/control-plane-logs.html) for Amazon specific details.
 
 

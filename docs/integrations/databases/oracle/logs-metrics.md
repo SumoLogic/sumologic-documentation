@@ -14,8 +14,8 @@ Configuring log and metric collection for the Oracle App includes the following 
 
 * Configure Fields in Sumo Logic.
 * Configure Collection for Oracle
-    * [Collect Logs and Metrics for Non-Kubernetes environments](https://help.sumologic.com/07Sumo-Logic-Apps/12Databases/Oracle/00Collect_Logs_for_Oracle/Collect_Oracle_Logs_and_Metrics_for_Non-Kubernetes_environments).
-    * [Collect Logs and Metrics for Kubernetes environments](https://help.sumologic.com/07Sumo-Logic-Apps/12Databases/Oracle/00Collect_Logs_for_Oracle/Collect_Oracle_Logs_and_Metrics_for_Kubernetes_environments).
+    * [Collect Logs and Metrics for Non-Kubernetes environments](#Collect_Oracle_Logs_and_Metrics_for_Non-Kubernetes_environments).
+    * [Collect Logs and Metrics for Kubernetes environments](#Collect_Oracle_Logs_and_Metrics_for_Kubernetes_environments).
 
 
 #### Configure Fields in Sumo Logic
@@ -46,8 +46,8 @@ Please click on the appropriate links below based on the environment where your 
 
 
 
-* [Collect Logs and Metrics for Non-Kubernetes environments](https://help.sumologic.com/07Sumo-Logic-Apps/12Databases/Oracle/00Collect_Logs_for_Oracle/Collect_Oracle_Logs_and_Metrics_for_Non-Kubernetes_environments).
-* [Collect Logs and Metrics for Kubernetes environments](https://help.sumologic.com/07Sumo-Logic-Apps/12Databases/Oracle/00Collect_Logs_for_Oracle/Collect_Oracle_Logs_and_Metrics_for_Kubernetes_environments).
+* [Collect Logs and Metrics for Non-Kubernetes environments](#Collect_Oracle_Logs_and_Metrics_for_Non-Kubernetes_environments).
+* [Collect Logs and Metrics for Kubernetes environments](#Collect_Oracle_Logs_and_Metrics_for_Kubernetes_environments).
 
 
 
@@ -55,7 +55,7 @@ Please click on the appropriate links below based on the environment where your 
 ## Collect Oracle Logs and Metrics for Kubernetes environments
 
 
-In Kubernetes environments, we use the Telegraf Operator, which is packaged with our Kubernetes collection. You can learn more about it[ here](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Collect_Metrics_Using_Telegraf/01_Telegraf_Collection_Architecture). The diagram below illustrates how data is collected from Oracle in Kubernetes environments. In the architecture shown below, there are four services that make up the metric collection pipeline: Telegraf, Prometheus, Fluentd, and FluentBit.
+In Kubernetes environments, we use the Telegraf Operator, which is packaged with our Kubernetes collection. You can learn more about it[ here](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/telegraf-collection-architecture). The diagram below illustrates how data is collected from Oracle in Kubernetes environments. In the architecture shown below, there are four services that make up the metric collection pipeline: Telegraf, Prometheus, Fluentd, and FluentBit.
 
 The first service in the pipeline is Telegraf. Telegraf collects metrics from Oracle. Note that we’re running Telegraf in each pod we want to collect metrics from as a sidecar deployment: i.e. Telegraf runs in the same pod as the containers it monitors. Telegraf uses the [exec input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/exec) to obtain metrics. (For simplicity, the diagram doesn’t show the input plugins.) The injection of the Telegraf sidecar container is done by the Telegraf Operator. We also have Fluentbit that collects logs written to standard out and forwards them to FluentD, which in turn sends all the logs and metrics data to a Sumo Logic HTTP Source.
 
@@ -83,7 +83,7 @@ It’s assumed that you are using the latest helm chart version if not upgrade u
 
 This section explains the steps to collect Oracle metrics from a Kubernetes environment.
 
-In Kubernetes environments, we use the Telegraf Operator, which is packaged with our Kubernetes collection. You can learn more about this[ here](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Collect_Metrics_Using_Telegraf/01_Telegraf_Collection_Architecture). Follow the steps listed below to collect metrics from a Kubernetes environment:
+In Kubernetes environments, we use the Telegraf Operator, which is packaged with our Kubernetes collection. You can learn more about this[ here](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/telegraf-collection-architecture). Follow the steps listed below to collect metrics from a Kubernetes environment:
 
 **Step 1. Configure Oracle pod to send metrics to Sumo Logic**
 
@@ -213,7 +213,7 @@ This section explains the steps to collect Oracle logs from a Kubernetes environ
 
     For all other parameters please see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#Configuring-Telegraf) for more properties that can be configured in the Telegraf agent globally.
 
-1. The Sumologic-Kubernetes-Collection will automatically capture the logs from stdout and will send the logs to Sumologic. For more information on deploying Sumologic-Kubernetes-Collection,[ visit](https://help.sumologic.com/07Sumo-Logic-Apps/10Containers_and_Orchestration/Kubernetes/Collect_Logs_and_Metrics_for_the_Kubernetes_App) here.
+1. The Sumologic-Kubernetes-Collection will automatically capture the logs from stdout and will send the logs to Sumologic. For more information on deploying Sumologic-Kubernetes-Collection,[ visit](/docs/integrations/containers-orchestration/Kubernetes#Collect_Logs_and_Metrics_for_the_Kubernetes_App) here.
 2. Verify logs in Sumo Logic.
 1. **(Optional) Collecting Oracle Logs from a Log File \
 **Follow the steps below to capture Oracle logs from a log file on Kubernetes.
@@ -280,7 +280,7 @@ annotations:
 ## Collect Oracle Logs and Metrics for Non-Kubernetes environments
 
 
-Sumo Logic uses the Telegraf operator for Oracle metric collection and the [Installed Collector](https://help.sumologic.com/03Send-Data/Installed-Collectors/01About-Installed-Collectors) for collecting Oracle logs. The diagram below illustrates the components of the Oracle collection in a non-Kubernetes environment. Telegraf uses the[ exec input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/sqlserver) to obtain Oracle metrics and the Sumo Logic output plugin to send the metrics to Sumo Logic. Logs from Oracle are collected by a [Local File Source](https://help.sumologic.com/03Send-Data/Sources/01Sources-for-Installed-Collectors/Local-File-Source).
+Sumo Logic uses the Telegraf operator for Oracle metric collection and the [Installed Collector](/docs/send-data/installed-collectors/about-installed-collectors) for collecting Oracle logs. The diagram below illustrates the components of the Oracle collection in a non-Kubernetes environment. Telegraf uses the[ exec input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/sqlserver) to obtain Oracle metrics and the Sumo Logic output plugin to send the metrics to Sumo Logic. Logs from Oracle are collected by a [Local File Source](/docs/send-data/Sources/sources-installed-collectors/Local-File-Source).
 
 
 10
@@ -406,7 +406,7 @@ Preview steps for Oracle log collection:
     In this step, you will configure three Local File sources on an installed collector, one for each of the following Oracle logs: Alert, Listener, and Audit.
 
 
-    Follow the instructions in [Local File Source](https://help.sumologic.com/03Send-Data/Sources/01Sources-for-Installed-Collectors/Local-File-Source).
+    Follow the instructions in [Local File Source](/docs/send-data/Sources/sources-installed-collectors/Local-File-Source).
 
 
     When you configure the sources, plan your source categories to ease the querying process.  A hierarchical approach allows you to make use of wildcards. For example:
@@ -463,8 +463,8 @@ Preview steps for Oracle log collection:
 
 
 
-* For Linux, see [Set Up Oracle Performance Metrics Script on Linux](https://help.sumologic.com/07Sumo-Logic-Apps/12Databases/Oracle/01Set_Up_Oracle_Performance_Metrics_Script_on_Linux)
-* For Windows, see[ Set Up Oracle Performance Metrics Script on Windows](https://help.sumologic.com/07Sumo-Logic-Apps/12Databases/Oracle/02Set_Up_Oracle_Performance_Metrics_Script_on_Windows)
+* For Linux, see [Set Up Oracle Performance Metrics Script on Linux](/docs/integrations/databases/Oracle/performance-metrics#linux)
+* For Windows, see[ Set Up Oracle Performance Metrics Script on Windows](/docs/integrations/databases/Oracle/performance-metrics#windows)
 
 
 ### Configure Metrics Collection
@@ -489,7 +489,7 @@ Preview steps for Oracle log collection:
 2. Select** HTTP Logs & Metrics_._**
     1. **Name **(Required). Enter a name for the source**.**
     2. **Description **(Optional).
-    3. **Source Category (**Recommended). Be sure to follow the [Best Practices for Source Categories](https://help.sumologic.com/03Send-Data/01-Design-Your-Deployment/Best-Practices%3A-Good-Source-Category%2C-Bad-Source-Category). A recommended Source Category may be Prod/DB/Oracle/Metrics.
+    3. **Source Category (**Recommended). Be sure to follow the [Best Practices for Source Categories](/docs/send-data/design-deployment/best-practices-source-categories). A recommended Source Category may be Prod/DB/Oracle/Metrics.
 3. Select** Save.**
 4. Take note of the URL provided once you click _Save_. You can retrieve it again by selecting the **Show URL **next to the source on the Collection Management screen.
 

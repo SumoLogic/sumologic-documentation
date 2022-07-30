@@ -61,7 +61,7 @@ Sumo Logic Jenkins plugin is compatible with Jenkins version 2.60.1 and above. F
 
 **To create a new HTTP logs and metric source, do the following:**
 
-1. Create a new HTTP Logs and Metrics Source in the hosted collector created above by following [these instructions.](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/HTTP-Source)
+1. Create a new HTTP Logs and Metrics Source in the hosted collector created above by following [these instructions.](/docs/send-data/sources/sources-hosted-collectors/http-logs-metrics-source)
 2. Make a note of **HTTP Source URL** and **Source Category**, as you will need them later in the configuration process.
 
 
@@ -72,9 +72,9 @@ You must have Admin privileges to perform any of the following installation proc
 
 This section walks you through the ways in which you can install the Jenkins plugin:
 
-* [Updating the Jenkins plugin](https://help.sumologic.com/07Sumo-Logic-Apps/08App_Development/Jenkins/Collect_Logs_and_Metrics_for_Jenkins#Updating_the_Jenkins_plugin)—use this method if the Jenkins plugin is installed on your system and you want to update the version.
-* [Installing with sumologic publisher for the first time](https://help.sumologic.com/07Sumo-Logic-Apps/08App_Development/Jenkins/Collect_Logs_and_Metrics_for_Jenkins#Installing_with_sumologic_publisher_for_the_first_time)—use this method if you are using the sumologic publisher for the first time.
-* [Manually installing the Jenkins plugin](https://help.sumologic.com/07Sumo-Logic-Apps/08App_Development/Jenkins/Collect_Logs_and_Metrics_for_Jenkins#Manually_installing_the_Jenkins_plugin)—use this method if there's a restriction on installing the plugin directly through the Jenkins plugin update center.
+* [Updating the Jenkins plugin](#Updating_the_Jenkins_plugin)—use this method if the Jenkins plugin is installed on your system and you want to update the version.
+* [Installing with sumologic publisher for the first time](#Installing_with_sumologic_publisher_for_the_first_time)—use this method if you are using the sumologic publisher for the first time.
+* [Manually installing the Jenkins plugin](#Manually_installing_the_Jenkins_plugin)—use this method if there's a restriction on installing the plugin directly through the Jenkins plugin update center.
 
 
 

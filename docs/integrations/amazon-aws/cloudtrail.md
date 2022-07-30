@@ -21,7 +21,7 @@ If you have more than one environment that generates CloudTrail data (such as op
 
 This section has instructions for configuring log collection for the AWS CloudTrail app.
 
-To use the AWS CloudTrail app in multiple environments, see [Configure the AWS CloudTrail App in Multiple Environments](https://help.sumologic.com/07Sumo-Logic-Apps/01Amazon_and_AWS/AWS_CloudTrail/07-Configuring-the-AWS-CloudTrail-App-in-multiple-environments).
+To use the AWS CloudTrail app in multiple environments, see [Configure the AWS CloudTrail App in Multiple Environments](#Configuring-the-AWS-CloudTrail-App-in-multiple-environments).
 
 Our new app install flow is now in Beta. It is only enabled for certain customers while we gather Beta customer feedback. If you can see the Add Integration button, follow the "Before you begin" section in the "Collect Logs" help page and then use the in-product instructions in Sumo Logic to set up the app.
 
@@ -42,9 +42,9 @@ To configure an AWS CloudTrail Source, perform these steps:
 2. [Grant Sumo Logic access](/docs/send-data/sources/sources-hosted-collectors/amazon-web-services/grant-access-aws-product.md) to an Amazon S3 bucket.
 * Generate the Role-Based Access CloudFormation template in Sumo Logic and download the template.
 * Create the CloudFormation stack in AWS Management Console using the template.
-* Copy the Role ARN from the Outputs tab and paste it in the Role ARN field in Sumo Logic CloudTrail Source created in step 3. For more information, refer [Configuring your AWS source with CloudFormation](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/Configuring-your-AWS-Source-with-CloudFormation#set-up-an-iam-role).
-1. [Enable Sumo to track AWS Admin activity](https://help.sumologic.com/07Sumo-Logic-Apps/01Amazon_and_AWS/AWS_CloudTrail/03Enable-Sumo-to-Track-AWS-Admin-Activity). This step is optional, but if you don't do it, the administrator activity panels in the **AWS CloudTrail - User Monitoring** dashboard won't be populated.
-2. Install the Sumo Logic App for [AWS CloudTrail](https://help.sumologic.com/07Sumo-Logic-Apps/01Amazon_and_AWS/AWS_CloudTrail).
+* Copy the Role ARN from the Outputs tab and paste it in the Role ARN field in Sumo Logic CloudTrail Source created in step 3. For more information, refer [Configuring your AWS source with CloudFormation](/docs/send-data/Sources/sources-hosted-collectors/Amazon-Web-Services/configure-our-aws-source-cloudformation#set-up-an-iam-role).
+1. [Enable Sumo to track AWS Admin activity](#Enable-Sumo-to-Track-AWS-Admin-Activity). This step is optional, but if you don't do it, the administrator activity panels in the **AWS CloudTrail - User Monitoring** dashboard won't be populated.
+2. Install the Sumo Logic App for AWS CloudTrail.
 
 
 Once you begin uploading data, your daily data usage will increase. It's a good idea to check the **Account** page to make sure that you have enough quota to accommodate additional data in your account. If you need additional quota, you can [upgrade your account](https://help.sumologic.com/Manage/01Manage_Subscription/04Upgrade_Your_Account) at any time.
@@ -118,7 +118,7 @@ To track Admin activity in your AWS account, and to provide data for all Adminis
 
 ### Configure an HTTP source
 
-1. Configure an [HTTP Source](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/HTTP-Source) on a Hosted Collector, either the collector where you installed CloudTrail source, or another collector, if you prefer.  Use the using the following settings:
+1. Configure an [HTTP Source](/docs/send-data/sources/sources-hosted-collectors/http-logs-metrics-source) on a Hosted Collector, either the collector where you installed CloudTrail source, or another collector, if you prefer.  Use the using the following settings:
     * For **Name**, enter **Administrative Users**.
     * For **Source Category**, enter **admin_users**.
     * Deselect **Enable Timestamp Parsing**.
@@ -140,7 +140,7 @@ rjackson
 
 (Your organization's user names may look different; make sure that only one user name is on each line.)
 
-2. [Upload](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/HTTP-Source/Upload-Data-to-an-HTTP-Source) the admin_users.csv file to the HTTP Source. For example, using cURL, you’d type **curl -X POST -T admin_users.csv “&lt;url>"** making sure to replace **&lt;url>** with the unique URL generated for your HTTP Source.
+2. [Upload](/docs/send-data/sources/sources-hosted-collectors/http-logs-metrics-source) the admin_users.csv file to the HTTP Source. For example, using cURL, you’d type **curl -X POST -T admin_users.csv “&lt;url>"** making sure to replace **&lt;url>** with the unique URL generated for your HTTP Source.
 3. To verify that the data has uploaded, run the following search after about 10 minutes:**_sourceCategory=admin_users**
 4. If the search returns the correct result, run the following search to save the data to a shared location that can be referenced by the Panels in the CloudTrail app:
   ```sql
@@ -157,7 +157,7 @@ Your search results should look similar to:
 
 ## Installing the AWS CloudTrail App
 
-Now that you have set up collection for AWS CloudTrail, install the Sumo Logic App for CloudTrail to use the pre-configured searches and [dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/01Amazon_and_AWS/AWS_CloudTrail/05AWS-CloudTrail-App-Dashboards#Dashboards) that provide visibility into your environment.
+Now that you have set up collection for AWS CloudTrail, install the Sumo Logic App for CloudTrail to use the pre-configured searches and [dashboards](#Dashboards) that provide visibility into your environment.
 
 Our new app install flow is now in Beta. It is only enabled for certain customers while we gather Beta customer feedback. If you can see the Add Integration button, follow the "Before you begin" section in the "Collect Logs" help page and then use the in-product instructions in Sumo Logic to set up the app.
 
@@ -188,14 +188,14 @@ Panels will start to fill automatically. It's important to note that each panel 
 
 ### Scan interval issues
 
-Amazon S3 buckets are scanned for new files according to the Scan Interval you set when configuring the S3 Source used for AWS CloudTrail logs. Even if you set a shorter Scan Interval, say five minutes, if no new files are found, the Scan Interval is automatically doubled, up to 24 hours (you can read more in [Set the S3 Source Scan Interval](https://help.sumologic.com/07Sumo-Logic-Apps/01Amazon_and_AWS/AWS_CloudTrail/05AWS-CloudTrail-App-Dashboards)). If the Scan Interval increases, it means that a Panel set to a 60-minute time range may not find any data to display, because no files have uploaded to Sumo Logic. This isn't to say that no data is being collected from your S3 bucket; you can confirm that data is being collected on the Status page.
+Amazon S3 buckets are scanned for new files according to the Scan Interval you set when configuring the S3 Source used for AWS CloudTrail logs. Even if you set a shorter Scan Interval, say five minutes, if no new files are found, the Scan Interval is automatically doubled, up to 24 hours (you can read more in [Set the S3 Source Scan Interval](#AWS-CloudTrail-App-Dashboards)). If the Scan Interval increases, it means that a Panel set to a 60-minute time range may not find any data to display, because no files have uploaded to Sumo Logic. This isn't to say that no data is being collected from your S3 bucket; you can confirm that data is being collected on the Status page.
 
 Additionally, you can change the time range of a Panel. Even though these  have been preconfigured, they can be edited just like any other Panel. You'll find instructions in [Changing the Time Range of a Panel](https://help.sumologic.com/Visualizations-and-Alerts/Dashboards/Edit-Dashboards-and-Panels/Change-the-Time-Range-of-a-Panel).
 
 
 ### AWS Admin activity not tracked
 
-To track Admin activity in your AWS account, and to provide data for all Administrator Activity Panels in the User Monitoring Dashboard, you need to supply a list of admin users to Sumo. For instructions see [Enable Sumo to Track AWS Admin Activity](https://help.sumologic.com/07Sumo-Logic-Apps/01Amazon_and_AWS/AWS_CloudTrail/03Enable-Sumo-to-Track-AWS-Admin-Activity)
+To track Admin activity in your AWS account, and to provide data for all Administrator Activity Panels in the User Monitoring Dashboard, you need to supply a list of admin users to Sumo. For instructions see [Enable Sumo to Track AWS Admin Activity](#Enable-Sumo-to-Track-AWS-Admin-Activity)
 
 </details>
 

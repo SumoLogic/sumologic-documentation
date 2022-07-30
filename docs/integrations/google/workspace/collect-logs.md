@@ -20,32 +20,32 @@ This procedure explains how to collect logs from Google Workspace and ingest the
 
 You can configure two types of log collection:
 
-* [Google Workspace](https://help.sumologic.com/07Sumo-Logic-Apps/06Google/Google_Workspace/01Collect-Logs-for-Google-Workspace/01Configure_Collection_for_Google_Workspace_Audit_Source): Monitors and analyzes the activity across all the Google Workspace Apps in one place. You can configure collection for each Google App for which you want to analyze events:
+* [Google Workspace](#01Configure_Collection_for_Google_Workspace_Audit_Source): Monitors and analyzes the activity across all the Google Workspace Apps in one place. You can configure collection for each Google App for which you want to analyze events:
     * Google Admin
     * Google Drive
     * Google Login
     * Google Token
-* [Google Workspace Alert Center](https://help.sumologic.com/07Sumo-Logic-Apps/06Google/Google_Workspace/01Collect-Logs-for-Google-Workspace/02Configure_Collection_for_Google_Workspace_Alert_Center): Provides full visibility into alerts from Google Workspace apps, allowing you to investigate and correlate alerts and monitor potential threats. You can configure the list alerts to be collected. The alerts are forwarded to Sumo Logic’s HTTP endpoint in JSON format.
+* [Google Workspace Alert Center](#Configure_Collection_for_Google_Workspace_Alert_Center): Provides full visibility into alerts from Google Workspace apps, allowing you to investigate and correlate alerts and monitor potential threats. You can configure the list alerts to be collected. The alerts are forwarded to Sumo Logic’s HTTP endpoint in JSON format.
 
 
 ## Configure Collection for Google Workspace Audit Source
 
 This section provides instructions for configuring log collection for Google Workspace with Audit Source. Click a link to jump to a topic:
 
-* [About Source Configuration](https://help.sumologic.com/07Sumo-Logic-Apps/06Google/Google_Workspace/01Collect-Logs-for-Google-Workspace/01Configure_Collection_for_Google_Workspace_Audit_Source#About_Source_Configuration)
-* [Google Authentication and Authorization](https://help.sumologic.com/07Sumo-Logic-Apps/06Google/Google_Workspace/01Collect-Logs-for-Google-Workspace/01Configure_Collection_for_Google_Workspace_Audit_Source#Google_Authentication_and_Authorization)
-* [Configure a Collector](https://help.sumologic.com/07Sumo-Logic-Apps/06Google/Google_Workspace/01Collect-Logs-for-Google-Workspace/01Configure_Collection_for_Google_Workspace_Audit_Source#Configure_a_Collector)
-* [Configure Google Workspace Apps Audit Sources](https://help.sumologic.com/07Sumo-Logic-Apps/06Google/Google_Workspace/01Collect-Logs-for-Google-Workspace/01Configure_Collection_for_Google_Workspace_Audit_Source#Configure_Google_Workspace_Apps_Audit_Sources)
-* [Field Extraction Rules](https://help.sumologic.com/07Sumo-Logic-Apps/06Google/Google_Workspace/01Collect-Logs-for-Google-Workspace/01Configure_Collection_for_Google_Workspace_Audit_Source#Field_Extraction_Rules)
-* [Sample Log Message](https://help.sumologic.com/07Sumo-Logic-Apps/06Google/Google_Workspace/01Collect-Logs-for-Google-Workspace/01Configure_Collection_for_Google_Workspace_Audit_Source#Sample_Log_Message)
-* [Query Samples](https://help.sumologic.com/07Sumo-Logic-Apps/06Google/Google_Workspace/01Collect-Logs-for-Google-Workspace/01Configure_Collection_for_Google_Workspace_Audit_Source#Query_Samples)
+* [About Source Configuration](#01Configure_Collection_for_Google_Workspace_Audit_Source#About_Source_Configuration)
+* [Google Authentication and Authorization](#01Configure_Collection_for_Google_Workspace_Audit_Source#Google_Authentication_and_Authorization)
+* [Configure a Collector](#01Configure_Collection_for_Google_Workspace_Audit_Source#Configure_a_Collector)
+* [Configure Google Workspace Apps Audit Sources](#01Configure_Collection_for_Google_Workspace_Audit_Source#Configure_Google_Workspace_Apps_Audit_Sources)
+* [Field Extraction Rules](#01Configure_Collection_for_Google_Workspace_Audit_Source#Field_Extraction_Rules)
+* [Sample Log Message](#01Configure_Collection_for_Google_Workspace_Audit_Source#Sample_Log_Message)
+* [Query Samples](#01Configure_Collection_for_Google_Workspace_Audit_Source#Query_Samples)
 
 
 ### About Source Configuration  
 
 Currently, the source name for Google Workspace is still **G Suite Apps Audit Source**, which will be changed/updated shortly.
 
-Configure one [G Suite Apps Audit Source](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Google/G_Suite_Apps_Audit_Source) for each Google App from which you want to collect events:
+Configure one [G Suite Apps Audit Source](/docs/send-data/sources/sources-hosted-collectors/g-suite-apps-audit-source) for each Google App from which you want to collect events:
 
 * Google Admin
 * Google Calendar
@@ -95,7 +95,7 @@ Configure a [Hosted Collector](/docs/send-data/configure-hosted-collector) for G
 15
 
 
-When you have set up a Hosted Collector and have your credentials ready, you're all set to configure the Sources. Perform the steps below for each Google Workspace App you want to monitor.  Before you configure the Sources, choose one of the source category strategies described in [About Source Configuration](https://help.sumologic.com/07Sumo-Logic-Apps/06Google/Google_Workspace/01Collect-Logs-for-Google-Workspace#About_Source_Configuration), above.
+When you have set up a Hosted Collector and have your credentials ready, you're all set to configure the Sources. Perform the steps below for each Google Workspace App you want to monitor.  Before you configure the Sources, choose one of the source category strategies described in [About Source Configuration](#About_Source_Configuration), above.
 
 
 16
@@ -237,12 +237,12 @@ _sourceCategory=google*
 
 This section explains how to collect logs from Google Workspace Alert Center and ingest them into Sumo Logic for use with the Google Workspace App predefined dashboards and searches. Click a link to jump to a topic:
 
-* [Alert types](https://help.sumologic.com/07Sumo-Logic-Apps/06Google/Google_Workspace/01Collect-Logs-for-Google-Workspace/02Configure_Collection_for_Google_Workspace_Alert_Center#Alert_types)
-* [Collection overview](https://help.sumologic.com/07Sumo-Logic-Apps/06Google/Google_Workspace/01Collect-Logs-for-Google-Workspace/02Configure_Collection_for_Google_Workspace_Alert_Center#Collection_overview)
-* [Add a Hosted Collector and HTTP Source](https://help.sumologic.com/07Sumo-Logic-Apps/06Google/Google_Workspace/01Collect-Logs-for-Google-Workspace/02Configure_Collection_for_Google_Workspace_Alert_Center#Add_a_Hosted_Collector_and_HTTP_Source)
-* [Configure collection for Google Workspace Alert Center](https://help.sumologic.com/07Sumo-Logic-Apps/06Google/Google_Workspace/01Collect-Logs-for-Google-Workspace/02Configure_Collection_for_Google_Workspace_Alert_Center#Configure_collection_for_Google_Workspace_Alert_Center)
-* [Sample Log Message](https://help.sumologic.com/07Sumo-Logic-Apps/06Google/Google_Workspace/01Collect-Logs-for-Google-Workspace/02Configure_Collection_for_Google_Workspace_Alert_Center#Sample_Log_Message)
-* [Query Sample](https://help.sumologic.com/07Sumo-Logic-Apps/06Google/Google_Workspace/01Collect-Logs-for-Google-Workspace/02Configure_Collection_for_Google_Workspace_Alert_Center#Query_Sample)
+* [Alert types](#Configure_Collection_for_Google_Workspace_Alert_Center#Alert_types)
+* [Collection overview](#Configure_Collection_for_Google_Workspace_Alert_Center#Collection_overview)
+* [Add a Hosted Collector and HTTP Source](#Configure_Collection_for_Google_Workspace_Alert_Center#Add_a_Hosted_Collector_and_HTTP_Source)
+* [Configure collection for Google Workspace Alert Center](#Configure_Collection_for_Google_Workspace_Alert_Center#Configure_collection_for_Google_Workspace_Alert_Center)
+* [Sample Log Message](#Configure_Collection_for_Google_Workspace_Alert_Center#Sample_Log_Message)
+* [Query Sample](#Configure_Collection_for_Google_Workspace_Alert_Center#Query_Sample)
 
 
 ### Alert types
@@ -254,7 +254,7 @@ All the alerts are in JSON format. Most of the alerts have few common fields lik
 22
 
 
-Sumo Logic provides a serverless solution which pulls logs from Google Workspace with API calls. You can configure the list alerts to be collected, but by default all alerts are collected. The alerts  are then forwarded to Sumo Logic’s HTTP endpoint in JSON format. By default the collection starts from the current date and time, but this setting is also configurable as detailed in the [Advanced configuration](https://help.sumologic.com/07Sumo-Logic-Apps/06Google/Google_Workspace/01Collect-Logs-for-Google-Workspace/02Configure_Collection_for_Google_Workspace_Alert_Center#Advanced_configuration) section.
+Sumo Logic provides a serverless solution which pulls logs from Google Workspace with API calls. You can configure the list alerts to be collected, but by default all alerts are collected. The alerts  are then forwarded to Sumo Logic’s HTTP endpoint in JSON format. By default the collection starts from the current date and time, but this setting is also configurable as detailed in the [Advanced configuration](#Configure_Collection_for_Google_Workspace_Alert_Center#Advanced_configuration) section.
 
 
 23
@@ -314,8 +314,8 @@ In this section, we explore various mechanisms to collect findings from Google W
 
 
 
-* [Google Cloud Platform (GCP) collection](https://help.sumologic.com/07Sumo-Logic-Apps/06Google/Google_Workspace/01Collect-Logs-for-Google-Workspace/02Configure_Collection_for_Google_Workspace_Alert_Center/Configure_Google_Cloud_Platform_Collection_for_Google_Workspace_Alert_Center)
-* [Script based collection](https://help.sumologic.com/07Sumo-Logic-Apps/06Google/Google_Workspace/01Collect-Logs-for-Google-Workspace/02Configure_Collection_for_Google_Workspace_Alert_Center/Configure_Script-Based_Collection_for_Google_Workspace_Alert_Center)
+* [Google Cloud Platform (GCP) collection](#Configure_Google_Cloud_Platform_Collection_for_Google_Workspace_Alert_Center)
+* [Script based collection](#Configure_Script-Based_Collection_for_Google_Workspace_Alert_Center)
 
 
 ### Sample Log Message
@@ -421,7 +421,7 @@ sh sumo_gsuite_alerts_collector_deploy.sh
 
 
 
-1. Copy the **Client ID** displayed at the end of the script output. You will use the Client Name field when you [configure Google Workspace Alert Center to allow client API access](https://help.sumologic.com/07Sumo-Logic-Apps/06Google/Google_Workspace/01Collect-Logs-for-Google-Workspace/02Configure_Collection_for_Google_Workspace_Alert_Center/Configure_Google_Cloud_Platform_Collection_for_Google_Workspace_Alert_Center#configure-google-workspace-alert-center-to-allow-client-api-acce) in the following task.
+1. Copy the **Client ID** displayed at the end of the script output. You will use the Client Name field when you [configure Google Workspace Alert Center to allow client API access](#Configure_Google_Cloud_Platform_Collection_for_Google_Workspace_Alert_Center#configure-google-workspace-alert-center-to-allow-client-api-acce) in the following task.
 2. Go to the Cloud Datastore page of the project, with the Project ID you configured in the previous steps of this procedure, and create a database instance with the **Cloud Firestore in Datastore Mode** option. For more information, refer to the [Google Cloud Datastore documentation](https://cloud.google.com/datastore/docs/quickstart).
 
 
@@ -445,11 +445,11 @@ This section explains how to configure Google Workspace Alert Center to allow AP
 
 Follow the step 2 and step 3 under “Set up the Alert Center API” [docs](https://developers.google.com/admin-sdk/alertcenter/guides/prerequisites) to enable alert center API and grant domain-wide access to the application.
 
-If you are using the [Configure Google Cloud Platform Collection for Google Workspace Alert Center](https://help.sumologic.com/07Sumo-Logic-Apps/06Google/Google_Workspace/01Collect-Logs-for-Google-Workspace/02Configure_Collection_for_Google_Workspace_Alert_Center/Configure_Google_Cloud_Platform_Collection_for_Google_Workspace_Alert_Center)
+If you are using the [Configure Google Cloud Platform Collection for Google Workspace Alert Center](#Configure_Google_Cloud_Platform_Collection_for_Google_Workspace_Alert_Center)
 
-use the **Client ID** for the service account copied in Step 6 of the following [docs](https://help.sumologic.com/07Sumo-Logic-Apps/06Google/Google_Workspace/01Collect-Logs-for-Google-Workspace/02Configure_Collection_for_Google_Workspace_Alert_Center/Configure_Google_Cloud_Platform_Collection_for_Google_Workspace_Alert_Center#google-cloud-platform-gcp-%C2%A0collection).
+use the **Client ID** for the service account copied in Step 6 of the following [docs](#Configure_Google_Cloud_Platform_Collection_for_Google_Workspace_Alert_Center#google-cloud-platform-gcp-%C2%A0collection).
 
-If you are using the [Configure Script-Based Collection for Google Workspace Alert Center](https://help.sumologic.com/07Sumo-Logic-Apps/06Google/Google_Workspace/01Collect-Logs-for-Google-Workspace/02Configure_Collection_for_Google_Workspace_Alert_Center/Configure_Script-Based_Collection_for_Google_Workspace_Alert_Center) use the **Client ID **present in the JSON generated after adding the key in the service account.
+If you are using the [Configure Script-Based Collection for Google Workspace Alert Center](#Configure_Script-Based_Collection_for_Google_Workspace_Alert_Center) use the **Client ID **present in the JSON generated after adding the key in the service account.
 
 **To configure Google Workspace Alert Center:**
 
@@ -695,7 +695,7 @@ The _sumologic-_gsuite_alertcenter_ script is compatible with python 3.7 and pyt
 
 
 
-* This task assumes you have successfully added a **Hosted Collector** and **HTTP source**, as described in [Configure Collection for Google Workspace Alert Center](https://help.sumologic.com/07Sumo-Logic-Apps/06Google/Google_Workspace/01Collect-Logs-for-Google-Workspace/02Configure_Collection_for_Google_Workspace_Alert_Center).
+* This task assumes you have successfully added a **Hosted Collector** and **HTTP source**, as described in [Configure Collection for Google Workspace Alert Center](#Configure_Collection_for_Google_Workspace_Alert_Center).
 * The following tasks assume you are logged in to the user account with which you will install the collector. If you are not, use the following command to switch to that account: \
 `sudo su &lt;user_name>`
 

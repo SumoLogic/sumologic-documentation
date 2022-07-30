@@ -14,34 +14,29 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Sumo Logic App for Istio provides visibility into the health and performance of Istio and its control plane components, including Mixer, Galley, Citadel, Pilot and Envoy. App dashboards also allow you to monitor how services and applications are performing in Istio Mesh, providing insights into service latency, errors, network traffic, and request workloads.
 
-
-
 This app supports Istio versions 1.8.x and 1.9.x+.
-
-
-## Collect logs and metrics for the Istio App
-
-This page provides instructions for collecting logs and metrics for the Sumo App for Istio. Logs and metrics are collected with the Sumo Logic Helm chart. Istio [sample metrics](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/Istio/Collect_logs_and_metrics_for_the_Istio_App#Sample_Metrics) and [sample log messages](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/Istio/Collect_logs_and_metrics_for_the_Istio_App#Sample_Log_Messages) are also provided, along with a [query sample](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/Istio/Collect_logs_and_metrics_for_the_Istio_App#Query_Sample).
-
-This app supports Istio versions 1.8.x and 1.9.x+.
-
 
 ## Log and Metrics Types
 
 * Access logs - Refer to [this page](https://istio.io/latest/docs/tasks/observability/logs/access-log/#default-access-log-format) for Istio Access log format.
 * Istio Metrics - Refer to [this page](https://istio.io/latest/docs/concepts/observability/#service-level-metrics) for detailed Istio Metrics
 
-### Collection overview
+
+## Collecting logs and metrics for the Istio App
+
+This page provides instructions for collecting logs and metrics for the Sumo App for Istio. Logs and metrics are collected with the Sumo Logic Helm chart. Istio [sample metrics](/#Sample-Metrics) and [sample log messages](#Sample-Log-Messages) are also provided, along with a [query sample](#Query-Sample).
+
+This app supports Istio versions 1.8.x and 1.9.x+.
 
 The minimum version of Sumo Logic K8s Collection required is [V2.1.6](https://github.com/SumoLogic/sumologic-kubernetes-collection/releases/tag/v2.1.6).
 
 Configure log and metrics collection with the Sumo Logic Helm chart, using one of the following options:
 
-* [Kubernetes collection is already set up](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/Istio/Collect_logs_and_metrics_for_the_Istio_App#Kubernetes_collection_is_already_set_up)
-* [Kubernetes collection has not been set up](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/Istio/Collect_logs_and_metrics_for_the_Istio_App#Kubernetes_collection_has_not_been_set_up)
+* [Kubernetes collection is already set up](#Kubernetes_collection_is_already_set_up)
+* [Kubernetes collection has not been set up](#Kubernetes_collection_has_not_been_set_up)
 
 
-#### Kubernetes collection is already set up
+### If your Kubernetes collection is already set up
 
 If you do not have Kubernetes set up, go[ here](https://github.com/SumoLogic/sumologic-kubernetes-collection/tree/master/deploy).
 
@@ -109,10 +104,9 @@ helm upgrade --install <my-release-name> sumologic/sumologic -f sumologic-istio.
 
 
 
-#### Kubernetes collection has not been set up
+### If your Kubernetes collection has not been set up
 
-**Log Collection: **
-
+**Log Collection:**
 
 1. **Enable [Access Logging](https://istio.io/latest/docs/tasks/observability/logs/access-log/#enable-envoy-s-access-logging) to write logs to stdout.**
 

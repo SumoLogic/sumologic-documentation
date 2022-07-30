@@ -41,13 +41,13 @@ This page provides instructions for configuring log collection for the Sumo Logi
 
 In this step you configure an installed collector with a Syslog source that will act as Syslog server to receive logs and events from Twistlock.
 
-1. Configure an [Installed Collector for each Twistlock Console instance](https://help.sumologic.com/03Send-Data/Installed-Collectors/01About-Installed-Collectors).
-2. Add a [Syslog Source](https://help.sumologic.com/03Send-Data/Sources/01Sources-for-Installed-Collectors/Syslog-Source) to the Installed Collector, and specify the following:
+1. Configure an [Installed Collector for each Twistlock Console instance](/docs/send-data/installed-collectors/about-installed-collectors).
+2. Add a [Syslog Source](/docs/send-data/Sources/sources-installed-collectors/Syslog-Source) to the Installed Collector, and specify the following:
 1. **Name**. (Required) A name is required.
 2. **Description.** Optional.
 3. **Protocol**. UDP or TCP.  Choose the protocol you configured in Twistlock Console for Syslog forwarding.
 4. **Port**. Port number. Choose the port you configured in Twistlock Console for Syslog forwarding.
-5. **Source Category**. (Required) Provide a Source Category for this data type. For example: **prod/twistlock**. For more information, see [Best Practices](https://help.sumologic.com/03Send-Data/01-Design-Your-Deployment/Best-Practices%3A-Good-Source-Category%2C-Bad-Source-Category).
+5. **Source Category**. (Required) Provide a Source Category for this data type. For example: **prod/twistlock**. For more information, see [Best Practices](/docs/send-data/design-deployment/best-practices-source-categories).
 6. For Kubernetes customers, we recommend adding a [custom field](/docs/manage/fields.md) to the Syslog Source so you can reference it in the [Sumo Explorer view](https://help.sumologic.com/Visualizations-and-Alerts/Explore). Each field contains a key-value pair, where the field name is the key. To add a field click the **+Add Field** link in the **Fields** section. You could add a field named **cluster** where you set the name of the cluster to tag to the logs. For example, **cluster** = **k8s.dev.sumo.sumologic.net**.
 1. Click **Save**.
 
@@ -63,7 +63,7 @@ This step shows you how to configure Twistlock to send logs to the Sumo Logic sy
 2. Go to **Manage > System > Logging.**
 3. Enable **Syslog**.
 4. Enable both options under **verbose syslog output**.
-5. Edit **Send syslog messages over the network to** with the syslog endpoint that you configured on Sumo Syslog Source in [Step 1](https://help.sumologic.com/07Sumo-Logic-Apps/22Security_and_Threat_Detection/Twistlock/Collect_logs_for_the_Twistlock_App#Step_1._Configure_a_Sumo_Logic_syslog_source) above.
+5. Edit **Send syslog messages over the network to** with the syslog endpoint that you configured on Sumo Syslog Source in [Step 1](#Step_1._Configure_a_Sumo_Logic_syslog_source) above.
 * Format to specify the endpoint:** ** `<protocol>://<server>:<port>`
 * Example: `tcp://192.168.125.200:514`
 
@@ -120,7 +120,7 @@ as container_name nodrop | parse "cve=\"*\"" as cve nodrop | parse "vendor_statu
 
 ## Installing the Twistlock App
 
-This section provides instructions on how to install the Twistlock App, as well as examples of each of the dashboards. The App pre-configured searches and [Dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/22Security_and_Threat_Detection/Cisco_ASA/Cisco-ASA-App-Dashboards#Dashboards) provide easy-to-access visual insights into your data.
+This section provides instructions on how to install the Twistlock App, as well as examples of each of the dashboards. The App pre-configured searches and [Dashboards](#Dashboards) provide easy-to-access visual insights into your data.
 
 To install the app, do the following:
 
@@ -246,7 +246,7 @@ Use this dashboard to:
 
 ## Installing the Twistlock Classic App
 
-This section provides instructions on how to install the Twistlock Classic App, as well as examples of each of the dashboards. The App pre-configured searches and [Dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/22Security_and_Threat_Detection/Cisco_ASA/Cisco-ASA-App-Dashboards#Dashboards) provide easy-to-access visual insights into your data.
+This section provides instructions on how to install the Twistlock Classic App, as well as examples of each of the dashboards. The App pre-configured searches and [Dashboards](#Dashboards) provide easy-to-access visual insights into your data.
 
 This section shows you how to install the Twistlock Classic App.
 

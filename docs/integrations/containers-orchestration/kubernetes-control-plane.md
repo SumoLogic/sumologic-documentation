@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/containers-orchestration/k8s.png')} alt="VMware dashboards" width="50"/>
 
-The Sumo Logic Kubernetes Control Plane App manages the master node control plane, including the API server, etcd, kube-system and worker nodes. The App utilizes [Falco](https://falco.org/docs/) Kubernetes Audit events to monitor and detect notable or suspicious activity such as creating pods that are privileged, mount sensitive host paths, use host networking, and the like. Seamlessly integrated with the Sumo Logic [Kubernetes App](https://help.sumologic.com/07Sumo-Logic-Apps/10Containers_and_Orchestration/Kubernetes), preconfigured dashboards display resource-related metrics for Kubernetes deployments, clusters, namespaces, pods, containers, and daemonsets.
+The Sumo Logic Kubernetes Control Plane App manages the master node control plane, including the API server, etcd, kube-system and worker nodes. The App utilizes [Falco](https://falco.org/docs/) Kubernetes Audit events to monitor and detect notable or suspicious activity such as creating pods that are privileged, mount sensitive host paths, use host networking, and the like. Seamlessly integrated with the Sumo Logic [Kubernetes App](/docs/integrations/containers-orchestration/Kubernetes), preconfigured dashboards display resource-related metrics for Kubernetes deployments, clusters, namespaces, pods, containers, and daemonsets.
 
 [Kubernetes](https://kubernetes.io/) is a system that automates the deployment, management, scaling, networking, and availability of container-based applications. Kubernetes container-orchestration allows you to easily deploy and manage multi-container applications at scale.
 
@@ -52,15 +52,13 @@ Metrics are collected using [Prometheus with FluentD](https://github.com/SumoLog
 
 ### Configuring log and metric collection  
 
-[Sumo Logic Kubernetes Collection](https://help.sumologic.com/07Sumo-Logic-Apps/10Containers_and_Orchestration/Kubernetes_Control_Plane/Collect_Logs_and_Metrics_for_the_Kubernetes_Control_Plane_App#s7214)
-
+[Sumo Logic Kubernetes Collection]
 
 ### Apps
 
-
 The Sumo Logic Kubernetes App provides the services for managing and monitoring Kubernetes worker nodes. You must set up collection and install the Kubernetes App before you install the Kubernetes - Control Plane App.
 
-After the [Kubernetes App](https://help.sumologic.com/07Sumo-Logic-Apps/10Containers_and_Orchestration/Kubernetes/Install_the_Kubernetes_App%2C_Alerts%2C_and_view_the_Dashboards) is installed you can [Install the Kubernetes Control Plane App and view the Dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/10Containers_and_Orchestration/Kubernetes_Control_Plane/Install_the_Kubernetes_Control_Plane_App_and_view_the_Dashboards).
+After you've installed the Kubernetes App, you can [Install the Kubernetes Control Plane App](#Installing-the-Kubernetes-Control-Plane-App) and [view the Dashboards](#viewing-the-dashboards).
 
 
 ### Sample log messages
@@ -188,7 +186,7 @@ When you install the FluentD plugin and Prometheus, you supply custom data filte
 16
 
 
-1. Determine the custom data filters and source categories. The following table lists the sources created by the plugin in the left column. The Source Category column contains the source category you should configure for the sources when you [install the app](https://help.sumologic.com/07Sumo-Logic-Apps/10Containers_and_Orchestration/Kubernetes_Control_Plane/Install_the_Kubernetes_Control_Plane_App_and_view_the_Dashboards#Install_the_App), or the source category that matches your environment based on the output of the query (from the previous step).
+1. Determine the custom data filters and source categories. The following table lists the sources created by the plugin in the left column. The Source Category column contains the source category you should configure for the sources when you [install the app](#Install_the_App), or the source category that matches your environment based on the output of the query (from the previous step).
 
 <table>
   <tr>

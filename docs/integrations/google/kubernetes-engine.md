@@ -11,7 +11,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 [Google Kubernetes Engine (GKE)](https://cloud.google.com/kubernetes-engine/) provides a managed environment where you can easily deploy, manage, and scale your container-based applications using the Google Cloud infrastructure.
 
-The Sumo Logic App for Google Kubernetes Engine (GKE) - Control Plane allows you to monitor resource-related logs and metrics for Kubernetes deployments, clusters, namespaces, pods, containers, and daemonsets. The app provides visibility into the GKE control plane with operational insights into the API server, control manager, and worker nodes. This App works in conjunction with [Sumo Logic Kubernetes app](https://help.sumologic.com/07Sumo-Logic-Apps/10Containers_and_Orchestration/Kubernetes), that provides visibility into worker node metrics and application logs.
+The Sumo Logic App for Google Kubernetes Engine (GKE) - Control Plane allows you to monitor resource-related logs and metrics for Kubernetes deployments, clusters, namespaces, pods, containers, and daemonsets. The app provides visibility into the GKE control plane with operational insights into the API server, control manager, and worker nodes. This App works in conjunction with [Sumo Logic Kubernetes app](/docs/integrations/containers-orchestration/Kubernetes), that provides visibility into worker node metrics and application logs.
 
 
 ### Supported versions
@@ -60,21 +60,21 @@ By default, GKE clusters are natively integrated with Cloud Logging (and Monitor
 ##### Install the App
 
 
-**To set up and install the Kubernetes app**, follow the instructions in [this document](https://help.sumologic.com/07Sumo-Logic-Apps/10Containers_and_Orchestration/Kubernetes).
+**To set up and install the Kubernetes app**, follow the instructions in [this document](/docs/integrations/containers-orchestration/Kubernetes).
 
 
 #### Configure a Google Cloud Platform Source  
 
 The GCP source receives log data from Google Pub/Sub. The GCP source will only be usable for log data formatted as data coming from Google Pub/Sub.
 
-**To configure a Google Platform Source**, follow the instructions in [this document](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Google-Cloud-Platform-Source).
+**To configure a Google Platform Source**, follow the instructions in [this document](/docs/send-data/Sources/sources-hosted-collectors/Google-Cloud-Platform-Source).
 
 
 #### Configure a Pub/Sub topic for GCP
 
 Once you configure the Pub/Sub, you can export data from Google to the Pub/Sub.
 
-**To configure a Pub/Sub topic for GCP**,  follow the instructions in [this document](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Google-Cloud-Platform-Source).
+**To configure a Pub/Sub topic for GCP**,  follow the instructions in [this document](/docs/send-data/Sources/sources-hosted-collectors/Google-Cloud-Platform-Source).
 
 
 #### Create an export of Google Kubernetes Engine logs from Logging
@@ -95,7 +95,7 @@ This section walks you through the task of creating an export of Google Kubernet
 1. As part of “**Create logs routing sink**”  add the following information:
     1. Enter a **Sink Name**. For example, "gce-vm-instance".
     2. Select "Cloud Pub/Sub" as the **Sink Service**.
-    3. Set **Sink Destination** to the Pub/Sub topic you created in the [Google Cloud Platform Source](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Google-Cloud-Platform-Source?mt-draft=true) procedure. For example, "pub-sub-logs".
+    3. Set **Sink Destination** to the Pub/Sub topic you created in the [Google Cloud Platform Source](/docs/send-data/Sources/sources-hosted-collectors/Google-Cloud-Platform-Source?mt-draft=true) procedure. For example, "pub-sub-logs".
     4. In “**Choose logs to include in sink**” Section : Determine the **GCP services** for which you need to get the logs. Also the logsName filter can be added in the inclusion filter for minimizing the logs send to Sumo Logic for the GKE app. This inclusion filter can be taken as :
 
 ```

@@ -12,7 +12,7 @@ To work with SLOs, you need the following Sumo Logic capabilities:
 * Manage SLOs (`manageSlos`) permissions
 
 :::info
-The [Alert response page](https://help.sumologic.com/Visualizations-and-Alerts/Alerts/Monitors/Alert_Response) is not supported for SLO-based monitors. Notifications will provide information and links to SLO dashboards.
+[Alert Response](/docs/alerts/monitors/alert-response) is not supported for SLO-based monitors. Notifications will provide information and links to SLO dashboards.
 :::
 
 **Max Compliance Period**

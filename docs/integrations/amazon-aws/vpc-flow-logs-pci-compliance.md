@@ -2,7 +2,7 @@
 id: vpc-flow-logs-pci-compliance
 title: PCI Compliance for Amazon VPC Flow Logs
 sidebar_label: PCI Compliance for Amazon VPC Flow Logs
-description: The Sumo Logic App for Payment Card Industry (PCI) Compliance for Amazon VPC Flow Logs App offers dashboards to monitor systems, account and users activity to ensure that login activity and privileged users are within the expected ranges. 
+description: The Sumo Logic App for Payment Card Industry (PCI) Compliance for Amazon VPC Flow Logs App offers dashboards to monitor systems, account and users activity to ensure that login activity and privileged users are within the expected ranges.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -20,13 +20,13 @@ VPC Flow Logs can be published to Amazon CloudWatch Logs and Amazon S3. Each met
 
 You can use either of the following methods to collect Amazon VPC Flow Logs:
 
-* [Collect Amazon VPC Flow Logs using AWS S3 source](https://help.sumologic.com/07Sumo-Logic-Apps/01Amazon_and_AWS/Amazon_VPC_Flow_Logs/02Collect_Amazon_VPC_Flow_Logs_using_AWS_S3_Source)
-* [Collect Amazon VPC Flow Logs using a CloudFormation template](https://help.sumologic.com/07Sumo-Logic-Apps/01Amazon_and_AWS/Amazon_VPC_Flow_Logs/01Collect-Amazon-VPC-Flow-Logs-from-CloudWatch-Using-CloudFormation)
+* [Collect Amazon VPC Flow Logs using AWS S3 source](#Collect_Amazon_VPC_Flow_Logs_using_AWS_S3_Source)
+* [Collect Amazon VPC Flow Logs using a CloudFormation template](#Collect-Amazon-VPC-Flow-Logs-from-CloudWatch-Using-CloudFormation)
 
 
 ## Installing the PCI Compliance for Amazon VPC Flow Logs App
 
-Now that you have set up collection, install the Sumo Logic App for PCI Compliance For Amazon VPC Flow App to use the preconfigured searches and [Dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/01Amazon_and_AWS/PCI_Compliance_for_Amazon_VPC_Flow_Logs/03AmazonVPCFlowLogs---Application-Dashboards#Dashboards) that provide insight into your data.
+Now that you have set up collection, install the Sumo Logic App for PCI Compliance For Amazon VPC Flow App to use the preconfigured searches and [Dashboards](#Dashboards) that provide insight into your data.
 
 To install the app:
 

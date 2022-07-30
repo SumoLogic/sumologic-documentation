@@ -2,7 +2,7 @@
 id: elastic-load-balancing-metrics
 title: Sumo Logic App for AWS Elastic Load Balancing Metrics
 sidebar_label: AWS Elastic Load Balancing Metrics
-description: The Sumo Logic App for AWS Elastic Load Balancing (ELB) Metrics lets you analyze the CloudWatch ELB metrics for the Application Load Balancer (ALB), and the Classic Load Balancer (CLB). 
+description: The Sumo Logic App for AWS Elastic Load Balancing (ELB) Metrics lets you analyze the CloudWatch ELB metrics for the Application Load Balancer (ALB), and the Classic Load Balancer (CLB).
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -18,16 +18,16 @@ The Sumo Logic App for AWS Elastic Load Balancing (ELB) Metrics lets you analyze
 For details on Amazon CloudWatch collected metrics, refer to:
 http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CW_Support_For_AWS.html
 
-For information on collecting unified logs and metrics for AWS Elastic Load Balancing Metrics, see [AWS Elastic Load Balancing ULM - Application](https://help.sumologic.com/07Sumo-Logic-Apps/01Amazon_and_AWS/AWS_Application_Load_Balancer).
+For information on collecting unified logs and metrics for AWS Elastic Load Balancing Metrics, see [AWS Elastic Load Balancing ULM - Application](/docs/integrations/amazon-aws/elastic-load-balancer-app.md).
 
 To collect AWS Elastic Load Balancing Metrics, perform the following tasks:
-1. [Configure a Hosted Collector](https://help.sumologic.com/07Sumo-Logic-Apps/01Amazon_and_AWS/AWS_Elastic_Load_Balancing_Metrics/01Collect-Metrics-for-the-AWS-Elastic-Load-Balancing-App)
-2. [Add a CloudWatch Source for Metrics](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/Amazon-CloudWatch-Source-for-Metrics)
+1. [Configure a Hosted Collector](#Collect-Metrics-for-the-AWS-Elastic-Load-Balancing-App)
+2. [Add a CloudWatch Source for Metrics](/docs/send-data/sources/sources-hosted-collectors/amazon-web-services/amazon-cloudwatch-source-metrics)
 
 
 ## Installing the AWS ELB Metrics App
 
-Now that you have configured AWS ELB Metrics, install the Sumo Logic App for AWS Elastic Load Balancing Metrics to take advantage of the preconfigured searches and [dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/01Amazon_and_AWS/AWS_Elastic_Load_Balancing_Metrics/03Amazon-CloudWatch---ELB-Metrics-Dashboards#Dashboards) to analyze your data.
+Now that you have configured AWS ELB Metrics, install the Sumo Logic App for AWS Elastic Load Balancing Metrics to take advantage of the preconfigured searches and [dashboards](#Dashboards) to analyze your data.
 
 To install the app:
 
