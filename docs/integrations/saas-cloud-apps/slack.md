@@ -170,20 +170,10 @@ You must have admin privileges to perform this task. The token generated in the 
 2. Click **Create New App.**
 
 
-2
-
-
 1.  Enter the **App Name** and select the **Development Slack Workspace** for which you need to generate a token and collect logs.
-
-
-3
-
 
 1. Click **Create App**.
 2. In the **Basic Information** section for the app created above, click **Permissions**.
-
-
-4
 
 
 1. In the **Scopes** section, add the following permissions in **User Token Scopes** to collect logs, and then click **Save**. Logs will be collected based on these permissions:
@@ -243,15 +233,12 @@ You must have admin privileges to perform this task. The token generated in the 
 
 1. Go to **Install App** and click **Install App to Workspace**.
 
-
 The app prompts you for permission to install based on your selected permission.
 
 1. Click **Allow **to install the app to workspace.
 
 
-
 1. Copy the generated token. You will need to use this token when configuring the Slack collector.
-8
 
 
 1. Verify that the generated token is valid with the following commands. If the token is valid, the output will have "ok":true in the response. Replace the `<API_TOKEN>` variable with the generated token you copied in the previous step.
@@ -277,14 +264,8 @@ You must have owner privileges to perform this task.
 2. Go to **Redirect URLs **and add a Redirect URL as [https://localhost](http://localhost/),** **then click **Save URLs**.
 
 
-
-
 1. Go To **Manage Distribution** > **Share Your App with Other Workspaces**
 2. Open the ​**Remove Hard Coded Information** ​section on the same page and check the **I’ve reviewed and removed any hard-coded information ​checkbox**.
-
-
-11
-
 
 1. Click the **Activate Public Distribution**.
 2. Copy the **Shareable URL** and append **auditlogs:read** at the end. Such as in the following example:
@@ -293,9 +274,6 @@ You must have owner privileges to perform this task.
 ```bash
 https://slack.com/oauth/authorize?client_id=12345686.853580033397&scope=admin,channels:history,channels:read,team:read,users:read,users:read.email,auditlogs:read
 ```
-
-
-
 
 
 1. Open a new tab in your browser, paste the modified URL and press **Enter**.
@@ -312,9 +290,7 @@ https://slack.com/api/oauth.access?code=<CODE>&client_id=<CLIENT_ID>&client_secr
 ```
 
 
-If **v2** (https://slack.com/oauth/**v2**/authorize) appears in the URL used for the **share URL** in [step 6,](#Step-6---Shareable-URL) use this URL:
-
-
+If **v2**  appears in the URL used for the **share URL** in [step 6,](#Step-6---Shareable-URL) (i.e., https://slack.com/oauth/v2/authorize), use this URL:
 ```bash
 https://slack.com/api/oauth.v2.access?code=<CODE>&client_id=<CLIENT_ID>&client_secret=<CLIENT_SECRET>
 ```
@@ -323,7 +299,6 @@ https://slack.com/api/oauth.v2.access?code=<CODE>&client_id=<CLIENT_ID>&client_s
 
 1. Open a new browser tab and paste the URL from the previous step into the URL field, then press **Enter**.
 2. From the response, copy the token value from the field **access_token.**
-
 
 ```json
 {
@@ -335,10 +310,7 @@ https://slack.com/api/oauth.v2.access?code=<CODE>&client_id=<CLIENT_ID>&client_s
   "enterprise_id": "EASFEF",
   "team_name": "Test Slack App"
 }
-
 ```
-
-
 
 1. Verify that the generated token is valid with the following commands. If the token is valid, the output will have "ok":true in the response. Replace the `<API_TOKEN>` variable with the generated token you copied in the previous step.
 
@@ -379,9 +351,7 @@ In this collection method, you deploy the SAM application, which creates the nec
 2. Search for **sumologic-slack** and make sure the checkbox next to the text **Show apps that create custom IAM roles or resource policies** is selected, then click the app link when it appears.
 
 
-
 1. When the page for the Sumo app appears, click **Deploy**.
-
 
 
 1. In the **AWS Lambda > Functions >** **Application Settings** panel, enter the following parameters in the corresponding text fields:
@@ -397,8 +367,6 @@ In this collection method, you deploy the SAM application, which creates the nec
     * Select No > No encryption.
 * **AwsKmsKeyARN.** Provide an existing KMS Key ARN to encrypt the Environment variables HTTP_LOGS_ENDPOINT, TOKEN. If kept empty, a new KMS Key ID will be created if **CreateSecret** is **Yes**.
 
-
-
 1. Click **Deploy.**
 
 
@@ -412,16 +380,10 @@ This section shows you how to configure collection for multiple projects assumin
 2. Modify the **DatabaseName** and **Token** parameter during the SAM configuration to identify the slack workspace.
 
 
-20
-
-
-
 #### Sumo Logic Slack Script-based collection
 
 This section provides instructions for deploying script-based collection for the Sumo Logic Slack App.
 
-
-21
 The _sumologic-slack_ script is compatible with python 3.7 and has been tested on Ubuntu 18.04 LTS.
 
 
@@ -437,12 +399,9 @@ The _sumologic-slack_ script is compatible with python 3.7 and has been tested o
 This task shows you how to install the script on a Linux machine.
 
 
-22
 For python 3, use pip3 install **sumologic-slack** (step 3). For operating systems where the default is not python3, use **/usr/bin/python3 -m sumoslack.main** (step 6).
 
 **To deploy the script, do the following:**
-
-
 
 1. If **pip** is not already installed, follow the instructions in the [pip documentation](https://pip.pypa.io/en/stable/installing/) to download and install **pip**.
 2. Log in to a Linux machine (compatible with Python 3.7.)
@@ -485,29 +444,29 @@ This section shows you how to configure collection for multiple projects assumin
 
 **To configure collection for multiple projects, do the following:**
 
-
-
 1. After configuring the script on a Linux machine, go to your configuration file.
 2. Change the DB_NAME in the **slackcollector.yaml** file, as indicated in the following example:
 
-
 ```yml
 Slack:
- TOKEN: <Paste the Token collected from Slack App from step 1.>
- ENABLE_INFREQUENT_CHANNELS: < Default is 'false'.
-                               'true' -> Enable dividing channels into frequent and infrequent based on the last message time.
-                               'false' -> Send all public channels messages.>
- INFREQUENT_CHANNELS_THRESHOLD_IN_HOURS: < Default is 72.
-                                           Threshold in hours to make channels as infrequent based on last message time.
-                                           For eg, 12 hours means if the message is not received for 12 hours, channel will be marked as infrequent.>
- INFREQUENT_CHANNELS_MESSAGES_FETCH_TIME_IN_HOURS: < Default is 12.
-                                                     Time in hours to fetch messages for InFrequent channels.
-                                                     For eg, 12 hours means send infrequent channels messages every 12 hours.>
+  TOKEN: <Paste the Token collected from Slack App from step 1.>
+  ENABLE_INFREQUENT_CHANNELS: >-
+    < Default is 'false'. 'true' -> Enable dividing channels into frequent and
+    infrequent based on the last message time. 'false' -> Send all public
+    channels messages.>
+  INFREQUENT_CHANNELS_THRESHOLD_IN_HOURS: >-
+    < Default is 72. Threshold in hours to make channels as infrequent based on
+    last message time. For eg, 12 hours means if the message is not received for
+    12 hours, channel will be marked as infrequent.>
+  INFREQUENT_CHANNELS_MESSAGES_FETCH_TIME_IN_HOURS: >-
+    < Default is 12. Time in hours to fetch messages for InFrequent channels.
+    For eg, 12 hours means send infrequent channels messages every 12 hours.>
 Collection:
- BACKFILL_DAYS: <Enter the Number of days before the event collection will start.>
- DBNAME: <New Database Name.>
+  BACKFILL_DAYS: <Enter the Number of days before the event collection will start.>
+  DBNAME: <New Database Name.>
 SumoLogic:
- HTTP_LOGS_ENDPOINT: <Paste the URL for the HTTP Logs source from step 2.>
+  HTTP_LOGS_ENDPOINT: <Paste the URL for the HTTP Logs source from step 2.>
+
 ```
 
 
@@ -627,13 +586,160 @@ This section shows you how to run the function manually and then verify that log
 
 The following table provides sample log messages for the different log types.
 
-**INSERT TABLE**
+[User logs](https://api.slack.com/methods/users.list)
+```json
+{
+  "id": "UM27LNGHK",
+  "name": "test",
+  "deleted": false,
+  "real_name": "test",
+  "tz": "Asia/Kolkata",
+  "tz_label": "India Standard Time",
+  "is_admin": false,
+  "is_owner": false,
+  "is_primary_owner": false,
+  "is_restricted": false,
+  "is_ultra_restricted": false,
+  "is_bot": false,
+  "is_app_user": false,
+  "updated": 1565005724,
+  "has_2fa": false,
+  "teamName": "TestSlack",
+  "email": "test@test.com",
+  "billable": true,
+  "logType": "UserLog"
+}
+```
 
+[Public Channel logs](https://api.slack.com/methods/conversations.list)
+```json
+{
+  "channel_id": "CKN1D8010",
+  "channel_name": "testchannel",
+  "members": 2,
+  "logType": "ChannelDetail",
+  "teamName": "TestSlack"
+}
+```
+
+[Public Message logs](https://api.slack.com/methods/channels.history)
+```json
+{
+  "type": "message",
+  "text": "Test",
+  "files": [
+    {
+      "name": "Test",
+      "fileType": "epub",
+      "fileSize": 1258,
+      "urlPrivate": "https://files.slack.com/files-pri/TJ...htyhomsdconmps",
+      "urlPrivateDownload": "https://files.slack.com/files-pri/TJ...htyhomsdconmps",
+      "permalink": "https://testslack-xj11408.slack.com/...htyhomsdconmps"
+    }
+  ],
+  "attachments": [
+    {
+      "id": 16,
+      "text": "Test",
+      "author_name": "",
+      "author_link": "",
+      "pretext": "",
+      "fallback": "Messages Sent"
+    }
+  ],
+  "upload": true,
+  "user": "e65b0bd8",
+  "display_as_bot": false,
+  "ts": "1566215592",
+  "client_msg_id": "23849274-580c-4644-9478-8328e5716b89",
+  "userName": "roy",
+  "channelId": "e65b0d0e",
+  "channelName": "app-for-slack",
+  "teamName": "TestSlack",
+  "logType": "ConversationLog"
+}
+```
+
+[Access logs	](https://api.slack.com/methods/team.accessLogs)
+```json
+{
+  "user_id": "e65b0476",
+  "username": "dave",
+  "date_first": 1566215532,
+  "date_last": 1566215532,
+  "count": 2,
+  "ip": "213.14.129.105",
+  "user_agent": "Mozilla/5.0 (Windows NT 6.2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/28.0.1467.0 Safari/537.36",
+  "isp": "Inetbroadband",
+  "country": "PA",
+  "region": "EU",
+  "teamName": "TestSlack",
+  "logType": "AccessLog"
+}
+```
+
+[Audit logs](https://api.slack.com/docs/audit-logs-api#the_audit_event)
+```json
+{
+  "logType": "UserAuditLog",
+  "id": "bdcb13e3-28a3-41f0-9ace-a20952def3a0",
+  "date_create": 1566215192,
+  "action": "user_created",
+  "actor": {
+    "type": "user",
+    "user": {
+      "id": "e65b0f5c",
+      "name": "roy",
+      "email": "aaron@demo.com"
+    }
+  },
+  "entity": {
+    "id": "e65b107e",
+    "privacy": "public",
+    "name": "BigCo ISP",
+    "is_shared": false,
+    "is_org_shared": false,
+    "filetype": "text/csv",
+    "title": "john",
+    "is_distributed": false,
+    "is_directory_approved": false,
+    "scopes": [
+      "identify",
+      "bot",
+      "incoming-webhook",
+      "channels:read",
+      "groups:read",
+      "im:read",
+      "users:read",
+      "chat:write:bot",
+      "users:read.email",
+      "groups:write",
+      "channels:write",
+      "team:read",
+      "chat:write:user"
+    ]
+  },
+  "context": {
+    "location": {
+      "type": "workspace",
+      "id": "e65b11aa",
+      "name": "Docker",
+      "domain": "Docker"
+    },
+    "ua": "Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:23.0) Gecko/20131011 Firefox/23.0",
+    "ip_address": "120.188.0.246"
+  },
+  "details": {
+    "id": "USLACKUSER",
+    "name": "himanshu",
+    "email": "kumar@demo.com"
+  }
+}
+```
 
 ### Sample Query
 
 The sample query is from the **Channel Summary** panel of **Slack - Public Channels** dashboard.
-
 
 ```sql
 _sourceCategory=Labs/slack
@@ -688,18 +794,14 @@ Once an app is installed, it will appear in your **Personal** folder, or other f
 
 Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
 
-## Viewing Slack Dashboards
 
-### Dashboard filters  
+## Viewing Slack Dashboards
 
 **Each dashboard has a set of filters** that you can apply to the entire dashboard, as shown in the following example. Click the funnel icon in the top dashboard menu bar to display a scrollable list of filters that are applied across the entire dashboard.
 
-
 You can use filters to drill down and examine the data on a granular level.
 
-
 **Each panel has a set of filters** that are applied to the results for that panel only, as shown in the following example. Click the funnel icon in the top panel menu bar to display a list of panel-specific filters.
-
 
 
 ### Overview

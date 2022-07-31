@@ -126,7 +126,7 @@ In Kubernetes environments, we use the Telegraf Operator, which is packaged with
       db_cluster="sqlserver_on_k8s"
       db_system = "sqlserver"
   ```
-  Enter in values for the following parameters :
+  Enter in values for the following parameters (as marked `CHANGEME` above):
   * telegraf.influxdata.com/inputs - This contains the required configuration for the Telegraf SQL Server Input plugin. Please refer[ to this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/redis) for more information on configuring the SQL Server input plugin for Telegraf. Note: As telegraf will be run as a sidecar the host should always be localhost.
   * In the input plugins section, that is `[[inputs.sqlserver]]`:
       * `servers` - The URL to the SQLserver server. This can be a comma-separated list to connect to multiple SQLserver servers. Please see [this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/sqlserver) for more information on additional parameters for configuring the SQLserver input plugin for Telegraf.

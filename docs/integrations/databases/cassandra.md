@@ -173,7 +173,7 @@ On your Cassandra Pods, add the following annotations:.
 ```
 
 
-Please enter in values for the following parameters :
+Please Enter in values for the following parameters (as marked `CHANGEME` above):
 
 * telegraf.influxdata.com/inputs - This contains the required configuration for the Telegraf Cassandra Input plugin. Please refer[ to this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/redis) for more information on configuring the Cassandra input plugin for Telegraf. Note: As telegraf will be run as a sidecar the host should always be localhost.
     * In the input plugins section, which is `[[inputs.jolokia2_agent]]`:
@@ -637,12 +637,29 @@ email_notifications = [
 2. Run terraform plan to view the monitors that Terraform will create or modify.
 3. Run terraform apply.
 
-This section demonstrates how to install the Cassandra App.
+
+## Cassandra Alerts
+
+Sumo Logic has provided out-of-the-box alerts available via [Sumo Logic monitors](/docs/alerts/monitors/index.md) to help you quickly determine if the Cassandra cluster is available and performing as expected.
+
+| Alert Name                                                   | Alert Description                                                                                                                                         | Alert Condition | Recover Condition |
+|--------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------|-------------------|
+| Cassandra - Increase in Authentication Failures              | This alert fires when there is an increase of Cassandra authentication failures.                                                                          | >5              | <= 5              |
+| Cassandra - Cache Hit Rate below 85 Percent                  | This alert fires when the cache key hit rate is below 85%.                                                                                                | <85             | >= 85             |
+| Cassandra - High Commitlog Pending Tasks                     | This alert fires when there are more than 15 Commitlog tasks that are pending.                                                                            | >15             | <= 15             |
+| Cassandra - High Number of Compaction Executor Blocked Tasks | This alert fires when there are more than 15 compaction executor tasks blocked for more than 5 minutes.                                                   | >15             | <= 15             |
+| Cassandra - Compaction Task Pending                          | This alert fires when there are many Cassandra compaction tasks that are pending. You might need to increase I/O capacity by adding nodes to the cluster. | >100            | <= 100            |
+| Cassandra - High Number of Flush Writer Blocked Tasks        | This alert fires when there is a high number of flush writer tasks which are blocked.                                                                     | >15             | <= 15             |
+| Cassandra - Many Compaction Tasks Are Pending                | Many Cassandra compaction tasks are pending                                                                                                               | >100            | <= 100            |
+| Cassandra - Node Down                                        | This alert fires when one or more Cassandra nodes are down                                                                                                | >0              | <= 0              |
+| Cassandra - Blocked Repair Tasks                             | This alert fires when the repair tasks are blocked                                                                                                        | >2              | <= 2              |
+| Cassandra - Repair Tasks Pending                             | This alert fires when repair tasks are pending.                                                                                                           | >2              | <= 2              |
+| Cassandra - High Tombstone Scanning                          | This alert fires when tombstone scanning is very high (>1000 99th Percentile) in queries.                                                                 | >1000           | <= 1000           |
 
 
 ## Installing the Cassandra App
 
-To install the app:
+This section demonstrates how to install the Cassandra App.
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
@@ -810,12 +827,3 @@ Use this dashboard to:
 * Review thread pool and memtable usage for write operations.
 
 <img src={useBaseUrl('img/integrations/databases/Cassandra-Write-Path.png')} alt="Cassandra dashboards" />
-
-
-
-
-## Cassandra Alerts
-
-Sumo Logic has provided out-of-the-box alerts available via [Sumo Logic monitors](/docs/alerts/monitors/index.md) to help you quickly determine if the Cassandra cluster is available and performing as expected.
-
-***INSERT TABLE***

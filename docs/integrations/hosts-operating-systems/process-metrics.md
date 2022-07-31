@@ -293,20 +293,37 @@ metric=procstat_cpu_usage host.name=*  process.executable.name=* | avg by host.n
 ## Host and Process Metrics Alerts
 
 
-#### Host Metrics Alerts
+### Host Metrics Alerts
 
 Sumo Logic provides out of the box alerts available via [Sumo Logic monitors](/docs/alerts/monitors/index.md). These alerts are built based on metrics datasets and have preset thresholds based on industry best practices and recommendations.
 
-**insert table**
+| Alert Name                                    | Alert Description                                                                                                                        | Alert Condition | Recover Condition |
+|-----------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------|-----------------|-------------------|
+| Host Metrics - High CPU Utilization           | This alert fires when host CPU utilization is over 80%.                                                                                  | > 80 %          | <= 80 %           |
+| Host Metrics - High Network Errors            | This alert fires when a host has encountered network errors in the last five minutes.                                                    | > 1%            | <= 1%             |
+| Host Metrics - Unusual network throughput in  | This alert fires when host network interfaces are receiving an unusually high amount of data (> 100 MB/s) over a 5-minute time interval. | > 100 MB/sec    | <= 100 MB/sec     |
+| Host Metrics - Unusual network throughput out | This alert fires when host network interfaces are sending an unusually high amount of data (> 100 MB/s) over a 5-minute time interval.   | > 100 MB/sec    | <= 100 MB/sec     |
+| Host Metrics - Host out of memory             | This alert fires when memory utilisation is over 90%.                                                                                    | > 90 %          | <= 90 %           |
+| Host Metrics - Host out of inodes             | This alert fires when a host's filesystem is close to running out of available iNodes (> 90% used).                                      | > 90 %          | <= 90 %           |
+| Host Metrics - Host swap is filling up        | This alert fires when swap utilitization is over 80%.                                                                                    | > 80 %          | <= 80 %           |
+| Host Metrics - Host out of disk space         | This alert fires when disk utilization is over 90%.                                                                                      | > 90 %          | <= 90 %           |
+| Host Metrics - Unusual disk read rate         | This alert fires when the disk is reading an unusually high amount of data (> 50 MB/s) over a 5-minute time interval.                    | > 50 MB/sec     | <= 50 MB/sec      |
+| Host Metrics - Unusual disk write rate        | This alert fires when the Disk is writing an unusually high amount of data (> 50 MB/s) over a 5-minute time interval.                    | > 50 MB/sec     | <= 50 MB/sec      |
 
 
-## Process Metrics Alerts
+
+### Process Metrics Alerts
 
 Sumo Logic provides out of the box alerts available via [Sumo Logic monitors](/docs/alerts/monitors). These alerts are built based on metrics datasets and have preset thresholds based on industry best practices and recommendations.
 
-
-
-**insert table**
+| Alert Name                                   | Alert Description                                                                                                      | Alert Condition | Recover Condition |
+|----------------------------------------------|------------------------------------------------------------------------------------------------------------------------|-----------------|-------------------|
+| Process Metrics - High CPU Usage             | This alert fires when the CPU utilization of a process is over 80% of the system CPU.                                  | > 80 %          | <= 80 %           |
+| Process Metrics - High Read Rate             | This alert fires when a process is reading an unusually high amount of data (> 20 MB/s) over a 5-minute time interval. | > 50 MB/sec     | <= 50 MB/sec      |
+| Process Metrics - High Write Rate            | This alert fires when a process is writing an unusually high amount of data (> 20 MB/s) over a 5-minute time interval. | > 50 MB/sec     | <= 50 MB/sec      |
+| Process Metrics - High Page Faults           | This alert fires when the rate of page faults is high (> 1000).                                                        | > 1000          | <= 1000           |
+| Process Metrics - High Memory Usage          | This alert fires when the memory used by a process is over 80% of system memory.                                       | > 80 %          | <= 80 %           |
+| Process Metrics - High Open file descriptors | This alert fires when the number of file descriptors used by a process is more than 1000.                              | > 1000          | <= 1000           |
 
 
 ## Installing Host and Process Metrics and Alerts
@@ -476,14 +493,12 @@ Panels will start to fill automatically. It's important to note that each panel 
 
 ## Viewing Dashboards
 
-### Filters with template variables   
-
-Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause.** **For more information, see the [Filter with template variables](/docs/dashboards-new/filter-with-template-variables.md) help page.
-
-You can use template variables to drill down and examine the data on a granular level.
+:::tip Filter with template variables    
+Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards-new/filter-with-template-variables.md).
+:::
 
 
-### Host Metrics - Overview Dashboard
+### Host Metrics - Overview
 
 The **Host Metrics - Overview** dashboard gives you an at-a-glance view of the key metrics like CPU, memory, disk, network, and TCP connections of all your hosts. You can drill down from this dashboard to the Host Metrics - CPU/Disk/Memory/Network/TCP dashboard by using the honeycombs or line charts in all the panels.
 
@@ -548,7 +563,7 @@ Use this dashboard to:
 <img src={useBaseUrl('img/integrations/hosts-operating-systems/Host-Metrics-TCP.png')} alt="Host Metrics dashboards" />
 
 
-### Process Metrics - Overview Dashboard
+### Process Metrics - Overview
 
 The **Process Metrics - Overview** dashboard gives you an at-a-glance view of all the processes by open file descriptors,  CPU usage, memory usage, disk read/write operations and thread count.You can drill down from this dashboard to the **Process Metrics - Details** dashboard by using the honeycombs or line charts in all the panels.
 

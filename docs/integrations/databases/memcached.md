@@ -334,7 +334,7 @@ Here’s an explanation for additional values set by this Telegraf configuration
 
 
 
-* **data_format** - “prometheus” In the output plugins section i.e.   Metrics are sent in the Prometheus format to Sumo Logic
+* `data_format - “prometheus”` In the output plugins section i.e.   Metrics are sent in the Prometheus format to Sumo Logic
 * `component: “database”` - In the input plugins section i.e. - This value is used by Sumo Logic apps to identify application components.
 * For all other parameters please see [this doc](https://github.com/influxdata/telegraf/blob/master/etc/telegraf.conf) for more properties that can be configured in the Telegraf agent globally.
 
@@ -410,7 +410,7 @@ You can install monitors by importing a JSON file or using a Terraform script.
 There are limits to how many alerts can be enabled. For more information, see [Monitors](/docs/alerts/monitors#Rules) for details.
 
 
-#### Method 1: Install Monitors by importing a JSON file
+### Method 1: Importing a JSON file
 
 1. Download the [JSON file](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/blob/main/monitor_packages/Memcached/Memcached.json) that describes the monitors.
 2. The [JSON](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/blob/main/monitor_packages/Memcached/Memcached.json) contains alerts from Sumo Logic searches that do not have any scope filters and, therefore, will apply to all Memcached clusters, the data for which has been collected via the instructions in the previous sections.  
@@ -418,8 +418,6 @@ There are limits to how many alerts can be enabled. For more information, see [M
 However, if you would like to restrict these alerts to specific clusters or environments, update the JSON file by replacing the `text db_cluster=* `with `<Your Custom Filter>`.  
 
 Custom filter examples:
-
-
 
 1. For alerts applicable only to a specific cluster, your custom filter would be:  `db_cluster=dev-memcached-01`
 2. For alerts applicable to all clusters that start with `memcached-prod`, your custom filter would be: `db_cluster=memcachedt-prod*`
@@ -438,28 +436,19 @@ Custom filter examples:
 5. The monitors are created in "Memcached" folder. The monitors are disabled by default. See the [Monitors](/docs/alerts/monitors/index.md) topic for information about enabling monitors and configuring notifications or connections.
 
 
-#### Method 2: Install Monitors using a Terraform script
+### Method 2: Using a Terraform script
 
-
-
-##### Step 1: Generate a Sumo Logic access key and ID
-
+#### Step 1: Generate a Sumo Logic access key and ID
 
 Generate an access key and access ID for a user that has the **Manage Monitors** role capability. For instructions, see  [Access Keys](/docs/manage/security/access-keys#Create_an_access_key_on_Preferences_page).
 
-
-##### Step 2: Download and install Terraform
-
+#### Step 2: Download and install Terraform
 
 Download [Terraform 0.13](https://www.terraform.io/downloads.html) or later and install.
 
-
 #### Step 3: Download the Sumo Logic Terraform package for Memcached monitors
 
-
-
 The alerts package is available in the Sumo Logic GitHub [repository](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/tree/main/monitor_packages/Memcached). You can either download it using the git clone command or as a zip file.
-
 
 #### Step 4: Alert Configuration  
 
@@ -475,9 +464,13 @@ environment = "<SUMOLOGIC DEPLOYMENT>"
 
 The Terraform script installs the alerts without any scope filters. If you would like to restrict the alerts to specific clusters or environments, update the `memcached_data_source` variable. For example:
 
-**INSERT TABLE**
+* To configure alerts for a specific clusters, set `memcached_data_source` to something like: `db_cluster=memcached.prod.01`
+* To configure alerts for All clusters in an environment, set `memcached_data_source` to something like: `environment=prod`
+* To configure alerts for Multiple clusters using a wildcard, set `memcached_data_source` to something like: `db_cluster=memcached-prod*`
+* To configure alerts for specific clusters within a specific environment, set `memcached_data_source` to something like: `db_cluster=memcached-1 and environment=prod`
 
 
+This assumes you have configured and applied Fields as described in Step 1: Configure Fields of the Sumo Logic of the Collect Logs and Metrics for Memcached topic.
 All monitors are disabled by default on installation. To enable all of the monitors, set the monitors_disabled parameter to false.
 
 By default, the monitors will be located in a "Memcached" folder on the **Monitors** page. To change the name of the folder, update the monitor folder name in the folder variable in the `Memcached.auto.tfvars` file.

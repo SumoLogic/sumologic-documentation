@@ -318,7 +318,7 @@ Please enter values for the following parameters (marked CHANGEME above):
 
     Here’s an explanation for additional values set by this Telegraf configuration that we request you **please do not modify** as they will cause the Sumo Logic apps to not function correctly.
 
-* **data_format** - “prometheus” In the output plugins section, that is `[[outputs.sumologic]]`. Metrics are sent in the Prometheus format to Sumo Logic.
+* `data_format - “prometheus”` In the output plugins section, that is `[[outputs.sumologic]]`. Metrics are sent in the Prometheus format to Sumo Logic.
 * **proxy_system**: “`haproxy`” - In the input plugins section: `[[inputs.Haproxy]]` - This value identifies the proxy system.
 * **component**: “proxy” - In the input plugins section: This value identifies application components.
 

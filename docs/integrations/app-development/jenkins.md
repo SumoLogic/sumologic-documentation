@@ -14,16 +14,14 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Jenkins App allows you to monitor multiple Jenkins master nodes from a single-pane of glass. The app supports freestyle and pipeline jobs as well as pipeline, maven  and multi-branch pipeline projects.
 
-1.png "image_tooltip")
 Sumo Logic Jenkins plugin is compatible with Jenkins version 2.60.1 and above. For more information refer [Sumo Logic Jenkins Plugin WIKI](https://plugins.jenkins.io/sumologic-publisher) page.
 
 
-### Log and Metric Types
+## Log and Metric Types
 
 All logs are JSON based, with the exception of job console logs. Graphite format metrics are generated.
 
 The Jenkins App uses the following Log Types:
-
 * Audit Logs - Log events related to user authentication, Jenkins system and job configuration changes and Jenkins job run events.
 * Metric Data - Log events related to metric information of Jenkins Master.
 * Periodic Logs - Log events related to Jenkins nodes, master shutdown events, jobs in progress and in queue.
@@ -32,14 +30,9 @@ The Jenkins App uses the following Log Types:
 * Job Console Logs - Log events related to job console logs.
 
 
-## Collect Logs and Metrics for Jenkins
+## Collecting Logs and Metrics for Jenkins
 
-This page provides instructions for configuring log and metric collection for the Sumo Logic App for Jenkins.
-
-
-#### Collection overview
-
-Configuring log and metric collection for the Jenkins App includes the following tasks:
+This section provides instructions for configuring log and metric collection for the Sumo Logic App for Jenkins, which includes the following tasks:
 
 1. Configure a Collector
 2. Configure HTTP Logs and Metric source
@@ -47,39 +40,29 @@ Configuring log and metric collection for the Jenkins App includes the following
 4. Configure Jenkins Plugin
 5. Optional - Advanced Configuration
 
-
-2.png "image_tooltip")
 Sumo Logic Jenkins plugin is compatible with Jenkins version 2.60.1 and above. For more information refer [Sumo Logic Jenkins Plugin WIKI](https://plugins.jenkins.io/sumologic-publisher) page.
 
 
-##### Configure a Collector
+### Step 1: Configure a Collector
 
-**To create a new Sumo Logic hosted collector**, perform the steps in the [Configure a Hosted Collector](/docs/send-data/configure-hosted-collector) section of the Sumo Logic documentation.
+To create a new Sumo Logic hosted collector, perform the steps in the [Configure a Hosted Collector](/docs/send-data/configure-hosted-collector) section of the Sumo Logic documentation.
 
+### Step 2: Configure an HTTP Log and Metric Source
 
-##### Configure an HTTP Log and Metric Source
-
-**To create a new HTTP logs and metric source, do the following:**
-
+To create a new HTTP logs and metric source, do the following:
 1. Create a new HTTP Logs and Metrics Source in the hosted collector created above by following [these instructions.](/docs/send-data/sources/sources-hosted-collectors/http-logs-metrics-source)
 2. Make a note of **HTTP Source URL** and **Source Category**, as you will need them later in the configuration process.
 
+### Step 3: Install the Jenkins Plugin
 
-##### Install the Jenkins Plugin
-
-3.png "image_tooltip")
-You must have Admin privileges to perform any of the following installation procedures.
-
-This section walks you through the ways in which you can install the Jenkins plugin:
+You must have Admin privileges to perform any of the following installation procedures. This section walks you through the ways in which you can install the Jenkins plugin:
 
 * [Updating the Jenkins plugin](#Updating_the_Jenkins_plugin)—use this method if the Jenkins plugin is installed on your system and you want to update the version.
 * [Installing with sumologic publisher for the first time](#Installing_with_sumologic_publisher_for_the_first_time)—use this method if you are using the sumologic publisher for the first time.
 * [Manually installing the Jenkins plugin](#Manually_installing_the_Jenkins_plugin)—use this method if there's a restriction on installing the plugin directly through the Jenkins plugin update center.
 
 
-
-
-##### Updating the Jenkins plugin
+### Updating the Jenkins plugin
 
 This section shows you how to update the version of the Jenkins plugin you have running on your system.
 
@@ -88,19 +71,12 @@ This section shows you how to update the version of the Jenkins plugin you have 
 1. In the Jenkins console, go to **Manage Jenkins > Manage Plugins**.
 2. Click the **Updates tab > Check now**.
 
-
-4.png "image_tooltip")
-
-
 1. Select "Sumologic Publisher".
 2. Click **Download now and install after restart**. You may need to restart Jenkins for the plugin to show up.
 
 
-5.png "image_tooltip")
 
-
-
-##### Installing with sumologic publisher for the first time
+#### Installing with sumologic publisher for the first time
 
 This section shows you how to install the Jenkins plugin, if this is your first time using sumologic publisher.
 
@@ -109,19 +85,13 @@ This section shows you how to install the Jenkins plugin, if this is your first 
 
 1. In the Jenkins console, go to **Manage Jenkins** > **Manage Plugins**.
 
-
-6.png "image_tooltip")
-
-
 1. Click the **Available** tab.
 2. Search for "**Sumologic Publisher**".
 3. Click "Sumologic Publisher".
 4. Click **Download now and install after restart**. You may need to restart Jenkins for the plugin to show up.
 
 
-7.png "image_tooltip")
-
-##### Manually installing the Jenkins plugin
+#### Manually installing the Jenkins plugin
 
 This section shows you how to manually install the Jenkins plugin.
 
@@ -131,31 +101,19 @@ This section shows you how to manually install the Jenkins plugin.
 2. In the Jenkins console, go to **Manage Jenkins** > **Manage Plugins**.
 3. Go to **Advanced > Upload Plugin **and click** Choose File**.
 
-
-8.png "image_tooltip")
-
-
 1. Select the downloaded **Sumologic-publisher.hpi** file from your machine and click **Upload**.
 
-
-9.png "image_tooltip")
-
-
     A page similar to the following appears once the plugin is installed.
-
-
-
-10.png "image_tooltip")
 
 
 1. Select **Restart Jenkins when installation is complete and no jobs are running**. You may need to restart Jenkins for the plugin to appear.
 
 
-11.png "image_tooltip")
+11
 The plugin is available on Jenkins plugin center. Ignore the version mentioned in the Jenkins Plugin update center.
 
 
-##### Configure Jenkins Plugin
+### Step 4: Configure Jenkins Plugin
 
 This task walks you through configuring the Jenkins Plugin for Sumo Logic.
 
@@ -164,12 +122,6 @@ This task walks you through configuring the Jenkins Plugin for Sumo Logic.
 
 1. Go to **Jenkins > Manage Jenkins** and select **Configure System.**
 
-
-12.png "image_tooltip")
-
-
-
-
 1. Search for the **Sumo Logic Jenkins** **Plugin**.
 2. In the Sumo Logic Jenkins Plugin dialog,  specify the following:
 * **SumoLogic Portal Name** - This is the domain name of the hosted collector. For example, `service.sumologic.com` or `service.us2.sumologic.com`.
@@ -177,10 +129,6 @@ This task walks you through configuring the Jenkins Plugin for Sumo Logic.
 * **HTTP Source URL**: HTTP Source URL from step 2. The HTTP source URL will look something like this: `https://sumologic_url/receiver/v1/http/SECRET_STRING`
 * **Source Category**: This is the Source Category you defined for the source.
 * **Keep Old Configuration for Jobs**: Enable this option to send old configuration for jobs.
-
-
-13.png "image_tooltip")
-
 
 
 
@@ -199,46 +147,29 @@ This task walks you through configuring the Jenkins Plugin for Sumo Logic.
 * **Enable Proxy Authentication(checkbox):  **Check to enable Authentication for the proxy. This can be used if the proxy is configured with authentication.
 * **Username: **Username to be used for the proxy Authentication.
 * **Password**: Password to be used for proxy authentication.
-14.png "image_tooltip")
+14
 
 1. Click **Apply**, and then click **Save**.
 
 
-##### Optional - Advanced Configuration
+### Step 5: Optional - Advanced Configuration
 
 This section provides instructions for configuring Sumo Logic Jenkins Plugin for specific projects using Jenkins **configuration as code**. For more information see [configuration as code](https://jenkins.io/projects/jcasc/).
 
-**To configure Sumo Logic Jenkins Plugin for specific projects using configuration as code, do the following:**
-
-
+To configure Sumo Logic Jenkins Plugin for specific projects using configuration as code, do the following:
 
 1. The plugin can be configured using **configuration as code** provided by Jenkins as detailed [in this document](https://jenkins.io/projects/jcasc/).
 2. In case of specific jobs, do the following:
     1. For freestyle and maven Projects, go to J**ob Configuration **and in the Post-build Actions, select **Sumo Logic Build Logger.**
 
-
-15.png "image_tooltip")
-
-
 1. For Pipeline projects, do the following,
 1. In the pipeline configuration, for normal script make the following as the top level.
-
-
 ```
 SumoPipelineLogCollection {
 // your script
 ```
 
-
-
-
-16.png "image_tooltip")
-
-
-
-
 1. Then, in the pipeline configuration, for declarative pipeline script update the option.
-
 
 ```
 options {
@@ -247,31 +178,251 @@ SumoPipelineLogCollection()
 ```
 
 
-
-
-17.png "image_tooltip")
-
-
-
-
 1. Click **Apply**, and then click **Save**.
 
 
-#### Sample Log Message
+### Sample Log Message
 
-The following table shows sample log messages for different log types.
+<details><summary><strong>Click to expand.</strong> The following shows sample log messages for different log types (Authentication, Configuration, Shutdown, Job Status, and more).</summary>
+
+```json title="Authentication"
+{
+  "userName": "Sourabh Jain",
+  "auditEventType": "User_Login",
+  "userId": "sourabh",
+  "message": "sourabh Logged in.",
+  "logType": "Audit_Event",
+  "eventTime": "2019-06-06 05:55:38,609 +00:00"
+}
+```
 
 
-**INSERT TABLE**
+```json title="Configuration Change"
+{
+  "userName": "demoexample@sumologic.com",
+  "auditEventType": "Config_Change",
+  "userId": "demoexample@sumologic.com",
+  "message": "demoexample@sumologic.com changed configuration for the file jobs/demoexample-gradle-dep-check/config.xml.",
+  "fileDetails": {
+    "Old_File_Data": "PD94bWwgdmVyc2lvbj0nMS4xJyBlbmNvZGluZz0nVVRGLTgnPz4KPGZsb3ctZGVmaW5pdGlvbiBwbHVnaW49IndvcmtmbG93LWpvYkAyLjMyIj4KICA8YWN0aW9ucz4KICAgIDxvcmcuamVua2luc2NpLnBsdWdpbnMucGlwZWxpbmUubW9kZWxkZWZpbml0aW9uLmFjdGlvbnMuRGVjbGFyYXRpdmVKb2DwvYXV0aFRva2VuPgogIDxkaXNhYmxlZD5mYWxzZTwvZGlzYWJsZWQ+demoexamplefile==",
+    "Current_File_Data": "PD94bWwgdmVyc2lvbj0nMS4xJyBlbmNvZGluZz0nVVRGLTgnPz4KPGZsb3ctZGVmaW5pdGlvbiBwbHVnaW49IndvcmtmbG93LWpvYkAyLjMyIj4KICA8YWN0aW9ucz4KICAgIDxvcmcuamVua2luc2NpLnBsdWdpbnMucGlwZWxpbmUubW9kZWxkZWZpbml0aW9uLmFjdGlvbnMuRGVjbGFyYXRpdnZ2Vycy8+CiAgPGF1dGhUb2tlbj5zd29yZGZpc2g8L2F1dGhUb2tlbj4KICA8ZGlzYWJsZWQ+ZmFsc2U8L2Rpc2FibGVkdemoexamplefile="
+  },
+  "logType": "Audit_Event",
+  "eventTime": "2019-06-05 15:17:28,237 +00:00"
+}
+```
 
 
+```json title="Shutdown"
+{
+  "logType": "Slave_Event",
+  "eventTime": "2019-06-05 11:00:12,256 +00:00",
+  "eventSource": "Shutdown"
+}
+```
 
-#### Sample Query
+```json title="Jenkins Log"
+{
+  "threadId": 33675,
+  "logType": "Jenkins_Log",
+  "logLevel": "INFO",
+  "logMessage": "Finished Sumo Logic Periodic Data Publisher. 102 ms",
+  "logSource": "com.sumologic.jenkins.jenkinssumologicplugin.sender.SumoPeriodicPublisher",
+  "eventTime": "2019-06-06 07:08:06,908 +00:00"
+}
+```
+
+```json title="Periodic Update"
+{
+  "numberOfSlaves": 0,
+  "numberOfExecutors": 4,
+  "numberOfFreeExecutors": 2,
+  "nodeName": "build-jenkins-executor (i-07e3500c4cda1f30b)",
+  "nodeLabel": "gradle docker",
+  "nodeStatus": "updated",
+  "isIdle": false,
+  "isOnline": true,
+  "isRemoved": false,
+  "isConnecting": false,
+  "nodeURL": "https://localhost:8080/computer/buil...00c4cda1f30b)/",
+  "eventSource": "Periodic_Update",
+  "monitorData": {
+    "SwapSpaceMonitor": "Memory:48519/63624MB  Swap:0/0MB",
+    "ClockMonitor": "In sync",
+    "DiskSpaceMonitor": "85.71 GB",
+    "ResponseTimeMonitor": "13ms",
+    "ArchitectureMonitor": "Linux (amd64)",
+    "TemporarySpaceMonitor": "85.71 GB"
+
+  },
+  "logType": "Slave_Event",
+  "eventTime": "2019-06-06 07:05:06,702 +00:00"
+}
+```
+
+```json title="In Queue"
+{
+  "numItemsInQueue": 0,
+  "numBlockedItemsInQueue": 0,
+  "maxWaitingTime": 0,
+  "averageWaitingTime": 0,
+  "queueId": 3060904,
+  "queueTime": 56.093,
+  "isBlocked": true,
+  "reasonForBlock": "All nodes of label ‘docker’ are offline",
+  "isConcurrentBuild": false,
+  "jobName": "part of Module ITs: vault #142",
+  "jobURL": "https://localhost:8080/job/module-it-vault/142/",
+  "logType": "Queue_Event",
+  "eventTime": "2019-06-06 06:50:06,668 +00:00"
+}
+```
+
+```json title="In Progress"
+{
+  "name": "TestComplexPipeline",
+  "result": "In_Progress",
+  "number": 11,
+  "start_time": 0,
+  "duration": 0,
+  "jobStartTime": "2019-06-04 03:39:57,790 +00:00",
+  "jobRunDuration": 13.175,
+  "jobBuildURL": "http://localhost:8080/job/TestComplexPipeline/11/",
+  "label": "Master",
+  "nodeName": "master"
+}
+```
+
+
+```json title="SCM Logs"
+{
+  "buildNumber": 3,
+  "jobName": "master",
+  "scmType": "hudson.plugins.git.GitSCM",
+  "scmURLs": "git https://github.com/SumoSourabh/build...ne-project.git",
+  "revision": "7bb6c1d7b1e3d7d65a39bade4f2ad68196322b2c",
+  "branches": "master ",
+  "changeLog": [
+    "1559619601000 commit:aa058c84927345885838c17bb7db448910885c6b author:Sourabh Jain message:commit",
+    "1559621063000 commit:7bb6c1d7b1e3d7d65a39bade4f2ad68196322b2c author:Sourabh Jain message:commit"
+  ],
+  "logType": "Scm_Status",
+  "eventTime": "2019-06-04 04:05:15,723 +00:00"
+}
+```
+
+```json title="Job Status Logs"
+{
+  "name": "MyTest",
+  "hudsonVersion": "2.174",
+  "result": "UNSTABLE",
+  "description": "This is a testPlease . alsncns",
+  "number": 35,
+  "start_time": 1560239332099,
+  "duration": 17401,
+  "logType": "Job_Status",
+  "user": "sourabh",
+  "jobStartTime": "2019-06-11 07:48:52,096 +00:00",
+  "jobType": "Maven project",
+  "jobRunDuration": 17.401,
+  "jobBuildURL": "http://ec2-13-234-181-219.ap-south-1...job/MyTest/35/",
+  "upstreamJobURL": "",
+  "triggerCauses": "Started by user Sourabh Jain",
+  "label": "Master",
+  "nodeName": "master",
+  "jobMetaData": {
+    "NODES": "1,2,3",
+    "ENV": "qa",
+    "APPS": "app01,app02"
+  },
+  "testResult": {
+    "failures": 24,
+    "passes": 238,
+    "skips": 59,
+    "total": 321,
+    "totalDuration": 0.10700000333599746
+  }
+}
+```
+
+```sql title="Console Logs"
+[2019-06-04 09:02:37,386 +00:00] channel stopped
+```
+
+```json title="Test Result"
+{
+  "logType": "Test_Result",
+  "number": 35,
+  "name": "MyTest",
+  "testResult": [
+    {
+      "className": "TwentyTwoTest",
+      "testName": "test4",
+      "errorStackTrace": "java.lang.AssertionError: oops\n\tat org.junit.Assert.fail(Assert.java:88)\n\tat Base.BaseTestClassMethod(Base.java:14)\n\tat TwentyTwoTest.test4(TwentyTwoTest.java:21)\n",
+      "errorDetails": "oops",
+      "status": "Failed",
+      "duration": 0
+    },
+    {
+      "className": "TwentyTwoTest",
+      "testName": "test5",
+      "status": "Passed",
+      "duration": 0
+    }
+  ]
+}
+```
+
+```json title="Pipeline Stages"
+{
+  "logType": "Pipeline_Stages",
+  "number": 23,
+  "name": "TestComplexPipeline",
+  "stages": [
+    {
+      "id": 1,
+      "stageId": "10",
+      "name": "parallel stage",
+      "status": "SUCCESS",
+      "startTime": "2019-06-11 07:55:50,240 +00:00",
+      "duration": 0.174,
+      "pauseDuration": 0
+    },
+    {
+      "id": 2,
+      "stageId": "14",
+      "name": "build",
+      "status": "SUCCESS",
+      "startTime": "2019-06-11 07:55:50,414 +00:00",
+      "duration": 0.056,
+      "pauseDuration": 0,
+      "steps": [
+        "StepName - Print Message,StepStatus - SUCCESS,StepDuration - 0.005,StepArguments - Building the app [app01] on node [1],StepExecutedOn - (master)"
+      ]
+    },
+    {
+      "id": 3,
+      "stageId": "19",
+      "name": "deploy",
+      "status": "SUCCESS",
+      "startTime": "2019-06-11 07:55:50,492 +00:00",
+      "duration": 0.052,
+      "pauseDuration": 0,
+      "steps": [
+        "StepName - Print Message,StepStatus - SUCCESS,StepDuration - 0.005,StepArguments - Deploying the app app01] on node [1],StepExecutedOn - (master)"
+      ]
+    }
+  ]
+}
+```
+
+</details>
+
+### Sample Query
 
 This sample Query is from the **Jobs in Progress** panel of the **Jenkins - Job Overview** dashboard.
 
-
-```
+```sql
 _sourceCategory=Labs/Jenkins/Sourabh/Logs In_Progress
 | json "name", "result", "number" as Job_Name, Result, Job_Number
 | where Result = "In_Progress"
@@ -288,12 +439,9 @@ _sourceCategory=Labs/Jenkins/Sourabh/Logs In_Progress
 
 
 
-## Install the Jenkins App and view the Dashboards
+## Install the Jenkins App
 
-This page provides instructions for installing the Sumo Logic App for Jenkins, as well as examples and descriptions for each of the app dashboards.
-
-
-### Install the App
+This section provides instructions for installing the Sumo Logic App for Jenkins, as well as examples and descriptions for each of the app dashboards.
 
 Now that you have set up collection for Jenkins you can install the Sumo Logic App for Jenkins, and use its pre-configured searches and dashboards.
 
@@ -302,44 +450,33 @@ To install the app, do the following:
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
 1. From the **App Catalog**, search for and select the app**.**
-2. Select the version of the service you're using and click **Add to Library**.
+2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/library/install-apps)
 
-
-18.png "image_tooltip")
-Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/library/install-apps)
-
-
-
-1. To install the app, complete the following fields.
-    1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
-    2. **Data Source.** Select either of these options for the data source. 
+3. To install the app, complete the following fields.
+    * **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
+    *  **Data Source.** Select either of these options for the data source. 
         * Choose **Source Category**, and select a source category from the list. 
         * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). 
-    3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-2. Click **Add to Library**.
+    * **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
+4. Click **Add to Library**.
 
 Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization.
 
 Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
 
 
-### Dashboard Filter with Template Variables      
+## Viewing Jenkins Dashboards
 
-Template variables provide dynamic dashboards that re-scope data on the fly. As you apply variables to troubleshoot through your dashboard, you can view dynamic changes to the data for a fast resolution to the root cause. For more information, see the [Filter with template variables](/docs/dashboards-new/filter-with-template-variables.md) help page.
-
-
-19.png "image_tooltip")
-You can use template variables to drill down and examine the data on a granular level.
+:::tip Filter with template variables    
+Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards-new/filter-with-template-variables.md).
+:::
 
 
-### Jenkins - Overview
+### Overview
 
 The **Jenkins - Overview** dashboard shows relationships between jobs and executors (worker nodes) on a Jenkins master. This dashboard provides insights into job run durations, status, physical memory, disk memory, and unused machines.
 
 Use this dashboard to:
-
-
-
 * Correlate job builds with Jenkins executors (worker nodes), physical memory utilization, disk space utilization, console logs, the number of executors used by jobs, and the number of unused (free) worker nodes.
 * Identify worker nodes not used by Jenkins master jobs to understand worker node usage.
 * Analyze job health by filtering data for a specific job to identify the console log errors, system errors, number of executors used, disk space utilization, physical memory utilization.
@@ -348,22 +485,16 @@ Use this dashboard to:
 * Generate alerts based on shutdown events, job run duration, physical memory utilization, disk space utilization, and more.
 
 
-20.png "image_tooltip")
-
-
-
 ### System Monitoring Dashboards
 
 System Monitoring Dashboards provide information on system activities related to master node metrics, job metrics, worker nodes, and audit activities. System Monitoring dashboards help you to monitor changes related to the Jenkins configuration, job configuration, the health of the Jenkins master, performance of the job queue and run duration, as well as the health of all worker nodes available to the Jenkins master node.
 
 
-#### Jenkins - Audit Dashboard
+#### Audit Dashboard
 
 The **Jenkins - Audit** dashboard provides insight into user events, including configuration changes, authentication events, and job activities.
 
 Use this dashboard to:
-
-
 
 * Ensure only authorized users are accessing the Jenkins System and are modifying Jenkins system and job configurations
 * Keep track of the job configuration changes
@@ -371,46 +502,35 @@ Use this dashboard to:
 * View trends for Jenkins job start and finish events
 
 
-21.png "image_tooltip")
-
-
-
-#### Jenkins - Master Health Dashboard
+#### Master Health Dashboard
 
 The **Jenkins - Master Health** dashboard provides insight into the health of Jenkins master nodes with information on shutdown events, Jenkins system logs, and metrics events such as CPU, memory, job duration,  threads, and executors.
 
 Executors are similar to threads that run jobs, so they are indicators of the load placed on Jenkins. If the executors are full, it means there are a lot of jobs running on the system and more executors may be needed to balance the load.
 
 Use this dashboard to:
-
-
-
 * Monitor shutdown events for Jenkins master nodes
 * Monitor Jenkins system sogs to determine the root cause of system issues
 * Monitor Jenkins master CPU usage and memory usage to allocate additional resources if neededMonitor free executors and busy executors on Jenkins master
 
 
-22.png "image_tooltip")
 
 
-
-#### Jenkins - Job Health Dashboard
+#### Job Health Dashboard
 
 The **Jenkins - Job Health** dashboard provides insight into the health of Jenkins jobs across various master nodes with information on job counts, job run duration, queue information, and garbage collection metrics.
 
 Use this dashboard to:
 
-
-
 * Monitor jobs in the queue, blocked and pending jobs to make sure your continuous integrations are running as expected
 * Monitor garbage collection statistics  on the Jenkins master to understand how to improve performance and allocate additional resources if necessary
 
 
-23.png "image_tooltip")
+23
 
 
 
-#### Jenkins - Node Health Dashboard
+#### Node Health Dashboard
 
 The **Jenkins - Node Health** dashboard provides insights into the health of all Jenkins master and worker nodes, with information on node details, recent builds, resource consumption, and node events.
 
@@ -423,7 +543,7 @@ Use this dashboard to:
 * Monitor removed nodes and node offline and launch failure events to ensure intended operations are being performed
 
 
-24.png "image_tooltip")
+24
 
 
 
@@ -432,14 +552,11 @@ Use this dashboard to:
 Job Monitoring Dashboards provide information on job activities like job run duration, job status, test results, pipeline stages, and console Logs. Job monitoring dashboards help you monitor job duration, status, failed jobs, and test cases. You can determine stack trace failures, failed stages details, source control management details, job configuration changes, and stage-wise console logs.
 
 
-#### Jenkins - Job Overview Dashboard
+#### Job Overview Dashboard
 
 The **Jenkins - Job Overview** dashboard provides a high-level view of the job and builds status, trends, comparisons, and results.
 
 Use this dashboard to:
-
-
-
 * Monitor the total number of builds, successful and failed builds.
 * Monitor recent builds and view detailed information in  the Jenkins console
 * Monitor  job duration trends to understand how to improve the execution of various stages in the pipeline
@@ -448,11 +565,11 @@ Use this dashboard to:
 * View trends for job results and use that information to identify source code components and teams that need the most improvements
 
 
-25.png "image_tooltip")
+25
 
 
 
-#### Jenkins - Job Information Dashboard
+#### Job Information Dashboard
 
 The **Jenkins - Job Information** dashboard provides detailed information about a specific job. Panels show information on job URLs, duration trends, execution results, test case trends, slowest stages for pipeline jobs, console logs, and common errors.
 
@@ -467,11 +584,11 @@ Use this dashboard to:
 * Monitor recent configuration changes and commits to identify potential causes of failure
 
 
-26.png "image_tooltip")
+26
 
 
 
-#### Jenkins - Build Information Dashboard
+#### Build Information Dashboard
 
 The **Jenkins - Build Information** dashboard provides detailed information about a specific build. Panels show information on build parameters, source control management, commit details, test cases, pipeline stages, console logs, and configuration changes prior to a build.
 
@@ -487,9 +604,9 @@ Use this dashboard to:
 
 
 
-27.png "image_tooltip")
+27
 
-Jenkins - Pipeline Stage Monitoring
+#### Pipeline Stage Monitoring
 
 The **Jenkins - Pipeline Stage Monitoring** dashboard provides insights into pipeline performances.
 
@@ -503,4 +620,4 @@ Use this dashboard to:
 * Identify the failed pipeline stages and steps.
 
 
-28.png "image_tooltip")
+28

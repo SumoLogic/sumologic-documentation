@@ -225,8 +225,8 @@ labels:
 
 Enter in values for the following parameter:
 
-* **environment.** This is the deployment environment where the MongoDB cluster identified by the value of **servers** resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
-* **db_cluster.** Enter a name to identify this MongoDB cluster. This cluster name will be shown in the Sumo Logic dashboards.
+* `environment`. This is the deployment environment where the MongoDB cluster identified by the value of **servers** resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
+* `db_cluster`. Enter a name to identify this MongoDB cluster. This cluster name will be shown in the Sumo Logic dashboards.
 
     Here’s an explanation for additional values set by this configuration that we request you **do not modify** as they will cause the Sumo Logic apps to not function correctly.
 
@@ -484,7 +484,7 @@ Based on your infrastructure and networking setup choose one of these methods to
 * **Port**: 514 (as entered while configuring logging in Step b.)
 * **Source Category.** Enter any string to tag the output collected from this Source, such as **MongoDB/Logs**. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details see[ Best Practices](/docs/send-data/design-deployment/best-practices-source-categories).)
 * **Fields. **Set the following fields:
-    * component = database
+    * `component = database`
     * db_system = MongoDB
     * db_cluster = <Your_MongoDB_Cluster_Name>
     * environment = <Environment_Name>, such as Dev, QA or Prod.

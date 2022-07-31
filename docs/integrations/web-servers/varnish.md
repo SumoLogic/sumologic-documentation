@@ -102,7 +102,7 @@ annotations:
 ```
 
 
-Please enter in values for the following parameters :
+Please Enter in values for the following parameters (as marked `CHANGEME` above):
 
 * telegraf.influxdata.com/inputs - This contains the required configuration for the Telegraf varnish Input plugin. Please refer[ to this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/redis) for more information on configuring the Varnish input plugin for Telegraf. Note: As telegraf will be run as a sidecar, the host should always be localhost.
     * In the input plugins section, which is `[[inputs.varnish]]`
@@ -151,7 +151,7 @@ cache_cluster: "varnish_on_k8s_CHANGEME"
 ```
 
 
-Please enter in values for the following parameters :
+Please Enter in values for the following parameters (as marked `CHANGEME` above):
 
 * `environment` - This is the deployment environment where the Varnish cluster identified by the value of **servers** resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
 * **cache_cluster **- Enter a name to identify this Varnish cluster. This cluster name will be shown in the Sumo Logic dashboards.

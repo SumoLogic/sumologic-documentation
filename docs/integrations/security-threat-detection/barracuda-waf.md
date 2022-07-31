@@ -108,18 +108,46 @@ This section shows you how to configure logging in Barracuda WAF for use with th
 
 ### Field Extraction Rules
 
-The following table shows field extraction rules for different log formats.
+The following shows field extraction rules for different log formats.
 
-**INSERT TABLE**
+```sql title="System Log"
+parse regex "(?<Unit_Name>[^ ]+) SYS(?<Log>.*)"
+| parse field=log " * * * *" as Module_Name, Log_Level, Event_Id, Log_Details
+```
 
+```sql title="Web Firewall Log"
+parse regex "(?<Unit_Name>[^ ]+) WF(?<Log>.*)"
+| parse field=Log " * * * * * * * * * * [*] * * * * \"*\" * * * * *" as Severity, Attack_Type, Client_Ip, Client_Port, Service_Ip, Service_Port, Rule, Rule_Type, Action, Follow_Up_Action, Attack_Details, Method, URL, Protocol, Session_Id, User_Agent, Proxy_Ip, Proxy_Port, User, Referrer, UID
+```
+
+```sql title="Access Log"
+parse regex "(?<Unit_Name>[^ ]+) TR(?<Log>.*)"
+| parse field=Log " * * * * * * * * * * * * * * * * * * * * * * * * * * * \"*\" * * * * * * *" as Service_Ip, Service_Port, Client_Ip, Client_Port, Login, Cretificate_User, Http_Method, Http_Protocol, Domain, HttpVersion, Response_Code, Bytes_Sent, Bytes_Received, Cache_Hit, Time_Taken, Backend_Server, Backend_Server_Port, Server_Time, Session_Id, Response_Type, Profile_Matched, Protected, WF_Matched, URL, Query_String, Referrer, Cookie, User_Agent, Proxy_ip, Proxy_Port, Authenticated_User, Custom_Header_1, Custom_Header_2, Custom_Header_3, UID
+```
+
+```sql title="Audit Log"
+parse regex "(?<Unit_Name>[^ ]+) AUDIT(?<Log>.*)"
+| parse field=Log " * * * * * * * * * * * * * *" as Admin_Name, Client_Type, Login_Ip, Login_Port, Transaction_Type, Transaction_Id, Command_Name, Change_Type, Object_Type, Object_Name, Variable_Name, Old_Value, New_Value, Additional_Data
+```
+
+```sql title="Network Firewall Log"
+parse regex "(?<Unit_Name>[^ ]+) NF(?<Log>.*)"
+| parse field=Log " * * * * * * * * *" as Log_Level, Protocol, Source_Ip, Source_Port, Destination_Ip, Destination_Port, ACL_Policy, ACL_Name, Log_Details
+```
 
 
 ### Sample Log Message
 
 The following table shows sample log messages for the corresponding log types.
 
+| Log Type             | Sample  |
+|----------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| System Log           | `<129>1 2019-04-19T00:52:58-07:00 WAFNEW 2019-04-19 - 00:52:58.985 -0700 WAFNEW SYS PROCMON ALER 50009 Log storage exceeds 10% `   |
+| Web Firewall Log     | `<129>1 2019-04-09T03:57:49-07:00 WAFNEW 2019-04-09 - 03:57:49.304 -0700 WAFNEW WF ALER PYTHON_PHP_ATTACKS_MEDIUM_IN_URL 182.69.208.134 50910 10.0.1.90 80 security-policy GLOBAL DENY NONE [type\="python-php-attacks-medium" pattern\="python-cfm-command-substrings" token\="/exec/"] GET 13.234.142.236/dvwa/vulnerabilities/exec/ HTTP "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36" 182.69.208.134 50910 "-" http://13.234.142.236/dvwa/vulnerabi...ge=include.php 16a01bf34f8-f9a544ae` |
+| Access Log           | `<134>1 2019-04-15T15:46:53.460+0530 WAF 2019-04-15 - 15:46:53.460+0530 -0700 WebSite TR 10.1.1.90 80 141.138.107.86 50915 "-" "-" POST HTTPS 202.191.66.53 HTTP/1.0 403 2411 1609 0 22 10.0.2.200 80 0 "-" SERVER DEFAULT PROTECTED VALID /favicon.ico "-" http://www.bing.com/search?q=sumo%20...ox&FORM=IE11SR "-" "Mozilla/5.0 (Windows NT 6.2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/28.0.1467.0 Safari/537.36" 182.69.208.134 50915 "-" "-" "-" "-" 16a01bf4be9-fca462a6`   |
+| Audit Log   | `<13>1 2019-04-16T12:55:10+00:00 ip-10-0-1-200 2019-04-16 - 05:55:10.006 -0700 WAF12 AUDIT sourabh GUI 111.93.54.106 55035 CONFIG 86 config SET user_system_ip Siteminder Session Sync user_system_ip_log "Off" "On"` []                                                                        |
+| Network Firewall Log | `<13>1 2019-04-19T06:10:58+00:00 ip-10-0-1-200 2019-04-18 - 23:10:58.647 -0700 WAF12 NF INFO TCP 37.204.127.164 39410 10.0.1.20 22 ALLOW SSH MGMT/LAN/WAN interface traffic:allow           `                                                                                                                                                                                                                                                                                                                                                                                   |
 
-**INSERT TABLE**
 
 ### Sample Query
 

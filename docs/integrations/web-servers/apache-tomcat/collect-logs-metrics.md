@@ -253,7 +253,7 @@ Follow the instructions below to capture Apache Tomcat logs from stdout on Kuber
 ```
 
 
-    Please enter in values for the following parameters :
+    Please Enter in values for the following parameters (as marked `CHANGEME` above):
 
 
 
@@ -572,7 +572,7 @@ Here’s an explanation for additional values set by this Telegraf configuration
 
 
 
-* **data_format** - “prometheus” In the output plugins section, which is **[[outputs.sumologic]].** Metrics are sent in the Prometheus format to Sumo Logic
+* `data_format - “prometheus”` In the output plugins section, which is **[[outputs.sumologic]].** Metrics are sent in the Prometheus format to Sumo Logic
 * **Component**: “webserver” - In the input plugins section, which are **[[inputs.tomcat]]** and **[[inputs.jolokia2_agent]]** - This value is used by Sumo Logic apps to identify application components.
 * **webserver_system**: “tomcat” - In the input plugins sections.In other words, this value identifies the webserver system
 *  For all other parameters please see [this doc](https://github.com/influxdata/telegraf/blob/master/etc/telegraf.conf) for more properties that can be configured in the Telegraf agent globally.
