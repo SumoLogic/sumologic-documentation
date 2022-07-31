@@ -48,7 +48,7 @@ This section has instructions for configuring log and metric collection for the 
 
 After you install the Sumo Logic Kubernetes App, you configure a hosted collector, HTTP source, and establish Kubernetes collection. You will establish the key components for [Google Cloud Platform (GCP) services](https://cloud.google.com/docs/overview/cloud-platform-services) collection which include Google Logging, and Google Cloud Pub/Sub. Finally, you’ll configure metrics collection.
 
-For GCP integration, Google Logging collects logs from GCP services. Once you’ve configured the pipeline, the logs are published to a Google Pub/Sub topic. A Sumo Logic GCP source on a hosted collector subscribed to that topic ingests the logs into Sumo Logic.
+For GCP integration, Google Logging collects logs from GCP services. Once you’ve configured the pipeline, the logs are published to a Google Pub/Sub topic. A Sumo Logic GCP source on a hosted collector subscribed to that topic ingests the logs into Sumo Logic.<br/><img src={useBaseUrl('img/integrations/google/GCP_Collection_Overview.png')} alt="GKE" />
 
 The configuration process includes the following tasks:
 
@@ -92,10 +92,8 @@ This section walks you through the task of creating an export of Google Kubernet
 
 **To create an export of GKE logs, do the following:*
 
-1. Go to **Logging** and click **Logs Router**.
-
-1. Click **Create Sink.**
-
+1. Go to **Logging** and click **Logs Router**.<br/><img src={useBaseUrl('img/integrations/google/GCP_logging_1.png')} alt="GKE" />
+1. Click **Create Sink.**<br/><img src={useBaseUrl('img/integrations/google/GKE_2.png')} alt="GKE" />
 1. As part of “**Create logs routing sink**”  add the following information:
     1. Enter a **Sink Name**. For example, "gce-vm-instance".
     2. Select "Cloud Pub/Sub" as the **Sink Service**.

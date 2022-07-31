@@ -49,7 +49,7 @@ This section walks you through the process of creating a new Sumo Logic hosted c
 7. Click the **+Add Field** link in the **Fields** section to define the [fields](/docs/manage/fields.md) you want to associate, each field needs a key and value.
    * A green circle with a check mark is shown when the field exists in the Fields table schema.
    * An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema it is ignored, known as dropped.
-8. **Assign to a Budget** allows you to assign an [ingest budget](/docs/manage/ingestion-and-volume/ingest-budgets) to the Collector. The drop-down displays your ingest budgets in the following format: 
+8. **Assign to a Budget** allows you to assign an [ingest budget](/docs/manage/ingestion-and-volume/ingest-budgets) to the Collector. The drop-down displays your ingest budgets in the following format:
     * `<budget name> (<field value>) (<allocated capacity>)`
 9. **Time Zone**. Set the default time zone when it is not extracted from the log timestamp. Time zone settings on Sources override a Collector time zone setting.
 10. Review your input and when finished click **Save**.
@@ -303,17 +303,18 @@ Use this dashboard to:
 * Identify and troubleshoot configuration issues.
 * Identify ways to fine tune your product based on your data analysis.
 
-
+<img src={useBaseUrl('img/integrations/saas-cloud-apps/acquia_overview.png')} alt="Dashboard" />
 
 ### Errors Overview
 
 The **Acquia - Errors Overview** dashboard provides a high-level view of events by log level, time comparisons, and trends. The panels also show the geographic locations of clients and clients with critical messages, new connections and outliers, client requests, request trends, and request outliers.
 
 Use this dashboard to:
-
 * Track errors by Drupal module.
 * Monitor Varnish cache hit and miss rates.
 * Track critical error messages from the various components of the Acquia stack.
+
+<img src={useBaseUrl('img/integrations/saas-cloud-apps/Acquia_Errors_Overview.png')} alt="Dashboard" />
 
 
 ### FPM Overview
@@ -325,7 +326,7 @@ Use this dashboard to:
 * Monitor status codes over time.
 * Monitor response time latency.
 
-
+<img src={useBaseUrl('img/integrations/saas-cloud-apps/Acquia_FPM_Overview.png')} alt="Dashboard" />
 
 ### Drupal Request Overview
 
@@ -335,3 +336,5 @@ Use this dashboard to:
 * Review trends for slow URLs and slow queries
 * Monitor status codes over time
 * Monitor response time latency
+
+<img src={useBaseUrl('img/integrations/saas-cloud-apps/Acquia_Drupal_Requests_Overview.png')} alt="Dashboard" />

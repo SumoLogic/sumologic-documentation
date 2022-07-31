@@ -125,7 +125,7 @@ If you are using MongoDB in a non-Kubernetes environment, create the fields:
 
 In Kubernetes environments, we use the Telegraf Operator, which is packaged with our Kubernetes collection. You can learn more about it[ here](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/telegraf-collection-architecture).The diagram below illustrates how data is collected from MongoDB in a Kubernetes environment. In the architecture shown below, there are four services that make up the metric collection pipeline: Telegraf, Prometheus, Fluentd and FluentBit.
 
-The first service in the pipeline is Telegraf. Telegraf collects metrics from MongoDB. Note that we’re running Telegraf in each pod we want to collect metrics from as a sidecar deployment for example, Telegraf runs in the same pod as the containers it monitors. Telegraf uses the MongoDB input plugin to obtain metrics. (For simplicity, the diagram doesn’t show the input plugins.) The injection of the Telegraf sidecar container is done by the Telegraf Operator. We also have Fluentbit that collects logs written to standard out and forwards them to FluentD, which in turn sends all the logs and metrics data to a Sumo Logic HTTP Source.
+The first service in the pipeline is Telegraf. Telegraf collects metrics from MongoDB. Note that we’re running Telegraf in each pod we want to collect metrics from as a sidecar deployment for example, Telegraf runs in the same pod as the containers it monitors. Telegraf uses the MongoDB input plugin to obtain metrics. (For simplicity, the diagram doesn’t show the input plugins.) The injection of the Telegraf sidecar container is done by the Telegraf Operator. We also have Fluentbit that collects logs written to standard out and forwards them to FluentD, which in turn sends all the logs and metrics data to a Sumo Logic HTTP Source.<br/><img src={useBaseUrl('img/integrations/databases/mongodb-k8s.png')} alt="mongodb_on_k8s" />
 
 Follow the below instructions to set up the metric collection:
 
@@ -290,8 +290,7 @@ pod_labels_environment=* pod_labels_component=database     pod_labels_db_system=
 </TabItem>
 <TabItem value="non-k8s">
 
-In non-Kubernetes environments, we use the Telegraf operator for MongoDB metric collection and Sumo Logic Installed Collector for collecting MongoDB logs. The diagram below illustrates the components of the MongoDB collection in a non-Kubernetes environment. Telegraf runs on the same system as MongoDB, and uses the[ MongoDB input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/mongodb) to obtain MongoDB metrics, and the Sumo Logic output plugin to send the metrics to Sumo Logic. Logs from MongoDB on the other hand are sent to either a Sumo Logic Local File source or Syslog source.
-
+In non-Kubernetes environments, we use the Telegraf operator for MongoDB metric collection and Sumo Logic Installed Collector for collecting MongoDB logs. The diagram below illustrates the components of the MongoDB collection in a non-Kubernetes environment. Telegraf runs on the same system as MongoDB, and uses the[ MongoDB input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/mongodb) to obtain MongoDB metrics, and the Sumo Logic output plugin to send the metrics to Sumo Logic. Logs from MongoDB on the other hand are sent to either a Sumo Logic Local File source or Syslog source.<br/><img src={useBaseUrl('img/integrations/databases/mongodb_nonk8.png')} alt="mongodb" />
 
 This section provides instructions for configuring metrics collection for the Sumo Logic App for MongoDB. Follow the below instructions to set up the metric collection:
 
