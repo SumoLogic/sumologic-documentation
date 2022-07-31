@@ -419,12 +419,143 @@ The Workday specific configuration is shown in below two sections:
 You can view the entire configuration with default settings [here](https://github.com/SumoLogic/sumologic-workday/blob/master/sumoworkdaycollector/sumoworkdaycollector.yaml). For SAM deployments you can update   `sumoworkdaycollector.yaml` file in the AWS Lambda console editor.
 
 
-39
-
-
 The following table provides a list of variables for Workday that you can optionally define in the configuration file.
 
-**INSERT TABLE**
+<table><small>
+  <tr>
+   <td>Variable
+   </td>
+   <td>Usage
+   </td>
+   <td>Default
+   </td>
+  </tr>
+  <tr>
+   <td>API_CALL_DELAY_SECONDS
+   </td>
+   <td>This is the sleep time between multiple API calls to the Workday.
+   </td>
+   <td>The default value is 60 seconds.
+   </td>
+  </tr>
+  <tr>
+   <td>TIMEOUT in Workday_Report_Config section
+   </td>
+   <td>This is the maximum time the request waits for the Workday RAAS API before it times out when making a call.
+   </td>
+   <td>The default value is 600 seconds.
+   </td>
+  </tr>
+  <tr>
+   <td>MAX_FETCH_INTERVAL And MIN_FETCH_INTERVAL In Workday_Report_Config secction
+   </td>
+   <td>The Workday RAAS API fetches data between a start and end interval. Depending on the users in your tenant the data may exceed 2 GB. The maximum and minimum interval between start and end time is controlled by these two settings. Calibrate these two settings such that MIN_FETCH_INTERVAL contains less than 2GB data always. Set the MAX_FETCH_INTERVAL in such a way that it does not put too much load on your tenant.
+   </td>
+   <td>MAX_FETCH_INTERVAL: The default is 3600 that is 1 hour.
+<p>MIN_FETCH_INTERVAL: The default is 60 that is 1 minute.</p>
+   </td>
+  </tr>
+  <tr>
+   <td>PAGINATION_LIMIT in Workday_API_Config section
+   </td>
+   <td>The number of events fetched in a single page.
+   </td>
+   <td>The default value is 100 rows.
+   </td>
+  </tr>
+  <tr>
+   <td>TIMEOUT in Workday_API_Config section
+   </td>
+   <td>This is the maximum time the request from a script waits for the REST API before it times out.
+   </td>
+   <td>The default value is 60 seconds.
+   </td>
+  </tr>
+  <tr>
+   <td>BACKFILL_DAYS in Collection Section
+   </td>
+   <td>The number of days before the event collection will start. If the value is 1, then events are fetched from the last 24 hours. The maximum allowed value is 1.
+   </td>
+   <td>The default value is 0.
+   </td>
+  </tr>
+  <tr>
+   <td>ENABLE_LOGFILE in Logging Section
+   </td>
+   <td>Set to TRUE to write all logs and errors to a log file.
+   </td>
+   <td>The default value is False.
+   </td>
+  </tr>
+  <tr>
+   <td>ENABLE_CONSOLE_LOG  in Logging Section
+   </td>
+   <td>It enables printing logs in a console.
+   </td>
+   <td>The default value is True.
+   </td>
+  </tr>
+  <tr>
+   <td>LOG_FILEPATH in Logging Section
+   </td>
+   <td>The path of the log file used when ENABLE_LOGFILE is set to TRUE.
+   </td>
+   <td>Default is /tmp/sumoworkdaycollector.log
+   </td>
+  </tr>
+  <tr>
+   <td>NUM_WORKERS in Collection Section
+   </td>
+   <td>The number of threads to spawn for API calls.
+   </td>
+   <td>The default is 2 concurrent requests.
+   </td>
+  </tr>
+  <tr>
+   <td>MAX_RETRYin Collection Section
+   </td>
+   <td>The number of retries to attempt in case of request failure.
+   </td>
+   <td>The default is 3 attempts.
+   </td>
+  </tr>
+  <tr>
+   <td>BACKOFF_FACTOR in Collection Section
+   </td>
+   <td>A backoff factor has to be applied between attempts after the second try (most errors are resolved immediately by a second try without a delay). If the backoff_factor is 0.1, then sleep() will sleep for [0.0s, 0.2s, 0.4s, …] between retries.
+   </td>
+   <td>The default is 5.
+   </td>
+  </tr>
+  <tr>
+   <td>TIMEOUT in Collection Section
+   </td>
+   <td>Max Timeout while sending logs to Sumo Logic.
+   </td>
+   <td>The default is 60 seconds.
+   </td>
+  </tr>
+  <tr>
+   <td>HTTP_LOGS_ENDPOINT in SumoLogic section
+   </td>
+   <td>HTTP source endpoint URL created in Sumo Logic for ingesting Logs.
+   </td>
+   <td>
+   </td>
+  </tr>
+  <tr>
+   <td>BLACKLIST_TASK_NAMES
+   </td>
+   <td>To filter out tasks that should not be ingested into Sumo Logic.
+   </td>
+   <td>The default tasks are:
+<ul>
+<li>Search in Main Page (Web Service)</li>
+<li>Home</li>
+</ul>
+   </td>
+  </tr></small>
+</table>
 
 
 

@@ -22,44 +22,47 @@ This guide provides an overview of the Sumo App for PostgreSQL features and Dash
 
 ## Collect logs and metrics from PostgreSQL
 
-This page provides instructions for configuring log and metric collection for the Sumo Logic App for PostgreSQL.
+This section provides instructions for configuring log and metric collection for the Sumo Logic App for PostgreSQL. This app works for PostgreSQL database clusters running on PostgreSQL versions 11.x or 12.x.
 
-
-1
-This app works for PostgreSQL database clusters running on PostgreSQL versions 11.x or 12.x.
-
-
-#### Collection Process Overview
-
-Configuring log and metric collection for the PostgreSQL App includes the following tasks:
-
-
-* Step 1: Configure Access
-* Step 2: Configure Fields in Sumo Logic.
-* Step 3: Configure Collection for PostgreSQL
-    * [Collect PostgreSQL Logs and Metrics for Non-Kubernetes environments](#Collect_PostgreSQL_Logs_and_Metrics_for_Non-Kubernetes_environments)
-    * [Collect PostgreSQL Logs and Metrics for Kubernetes environments](#Collect_PostgreSQL_Logs_and_Metrics_for_Kubernetes_environments)
-
-
-#### Step 1: Configure Access
+### Step 1: Configure Access
 
 On your PostgreSQL database cluster, create a user that has access to following tables:
 
-* pg_stat_database
-* pg_stat_bgwriter
-* pg_stat_replication
-* pg_database
-* pg_locks
-* pg_stat_user_tables
-* pg_stat_user_indexes
-* pg_statio_user_indexes
-* pg_statio_user_tables
-* pg_class
+* `pg_stat_database`
+* `pg_stat_bgwriter`
+* `pg_stat_replication`
+* `pg_database`
+* `pg_locks`
+* `pg_stat_user_tables`
+* `pg_stat_user_indexes`
+* `pg_statio_user_indexes`
+* `pg_statio_user_tables`
+* `pg_class`
 
 
-#### Step 2: Configure Fields in Sumo Logic
+### Step 2: Configure Fields in Sumo Logic
 
 Create the following Fields in Sumo Logic before configuring collection. This ensures that your logs and metrics are tagged with relevant metadata, which is required by the app dashboards. For information on setting up fields, see the [Fields](/docs/manage/fields.md) help page.
+
+
+<Tabs
+  groupId="k8s-nonk8s"
+  defaultValue="k8s"
+  values={[
+    {label: 'Kubernetes environments', value: 'k8s'},
+    {label: 'Non-Kubernetes environments', value: 'non-k8s'},
+  ]}>
+
+<TabItem value="k8s">
+
+If you are using PostgreSQL in a Kubernetes environment create the fields:
+* `pod_labels_component`
+* `pod_labels_environment`
+* `pod_labels_db_system`
+* `pod_labels_db_cluster`
+
+</TabItem>
+<TabItem value="non-k8s">
 
 If you are using PostgreSQL in a non-Kubernetes environment create the fields:
 
@@ -69,40 +72,26 @@ If you are using PostgreSQL in a non-Kubernetes environment create the fields:
 * `db_cluster`
 * `pod`
 
-If you are using PostgreSQL in a Kubernetes environment create the fields:
+</TabItem>
+</Tabs>
 
-
-* `pod_labels_component`
-* `pod_labels_environment`
-* `pod_labels_db_system`
-* `pod_labels_db_cluster`
-
-
-#### Step 3: Configure Collection for PostgreSQL
+### Step 3: Configure Collection for PostgreSQL
 
 Sumo Logic supports collection of logs and metrics data from PostgreSQL in both Kubernetes and non-Kubernetes environments.
 
-Please click on the appropriate links below based on the environment where your PostgreSQL clusters are hosted.
+Please click on the appropriate tab below based on the environment where your PostgreSQL clusters are hosted.
 
-* [Collect PostgreSQL Logs and Metrics for Non-Kubernetes environments](#Collect_PostgreSQL_Logs_and_Metrics_for_Non-Kubernetes_environments).
-* [Collect PostgreSQL Logs and Metrics for Kubernetes environments](#Collect_PostgreSQL_Logs_and_Metrics_for_Kubernetes_environments.).
+<Tabs
+  groupId="k8s-nonk8s"
+  defaultValue="k8s"
+  values={[
+    {label: 'Kubernetes environments', value: 'k8s'},
+    {label: 'Non-Kubernetes environments', value: 'non-k8s'},
+  ]}>
 
+<TabItem value="k8s">
 
-#### Query Sample
-
-This sample Query is from the **Fatal Errors** panel of the **PostgreSQL - Overview** dashboard.
-
-```txt title="Query String"
-_sourceCategory=/PostgreSQL/*  db_system=postgresql db_cluster={{db_cluster}}
-| json auto maxdepth 1 nodrop
-| if (isEmpty(log), _raw, log) as _raw
-| parse "* * * [*] *@* *:  *" as date,time,time_zone,thread_id,user,db,severity,msg
-| where severity IN ("ERROR", "FATAL")
-| count by date, time, severity, db, user, msg
-```
-
-
-## Collect PostgreSQL Logs and Metrics for Kubernetes environments
+#### Collect PostgreSQL Logs and Metrics for Kubernetes environments
 
 In Kubernetes environments, we use the Telegraf Operator, which is packaged with our Kubernetes collection. You can learn more about it[ here](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/telegraf-collection-architecture).The diagram below illustrates how data is collected from PostgreSQL in Kubernetes environments. In the architecture shown below, there are four services that make up the metric collection pipeline: Telegraf, Prometheus, Fluentd and FluentBit.
 
@@ -194,7 +183,7 @@ This section explains the steps to collect PostgreSQL logs from a Kubernetes env
     1. Edit the postgresql.conf configuration file present in your pod.Under the **ERROR REPORTING AND LOGGING** section of the file, use the following config parameters.
 
 
-```
+```sql
 log_min_duration_statement = 250
 log_connections = on
 log_duration = on
@@ -329,16 +318,12 @@ component="database" and db_system="postgresql"
 { "timestamp":1615988485842, "log":"2021-04-01 08:30:20.002 UTC [11916] postgres@postgres LOG: connection authorized: user=postgres database=postgres ", "stream":"stdout", "time":"2021-03-17T13:41:19.103646109Z" }
 ```
 
+</TabItem>
+<TabItem value="non-k8s">
 
-
-1.
-
-
-## Collect PostgreSQL Logs and Metrics for Non-Kubernetes environments
+#### Collect PostgreSQL Logs and Metrics for Non-Kubernetes environments
 
 We use the Telegraf Operator for PostgreSQL metric collection and the Sumo Logic Installed Collector for collecting PostgreSQL logs. The diagram below illustrates the components of the PostgreSQL collection in a non-Kubernetes environment for each database server. Telegraf runs on the same system as PostgreSQL, and uses the [PostgreSQL Extensible input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/postgresql_extensible) to obtain PostgreSQL metrics, and the Sumo Logic output plugin to send the metrics to Sumo Logic. PostgreSQL logs are sent to Sumo Logic Local File Source on Installed Collector.
-
-
 
 This section provides instructions for configuring metrics collection for the Sumo Logic App for PostgreSQL. Follow the below instructions to set up the metric collection for a given node in a PostgreSQL cluster:
 
@@ -489,7 +474,7 @@ sudo service postgresql restart
 6. **Source Host.** Sumo Logic uses the hostname assigned by the OS unless you enter a different hostname
 7. **Source Category.** Enter any string to tag the output collected from this Source, such as **PostgreSQL/Logs**. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details see[ Best Practices](/docs/send-data/design-deployment/best-practices-source-categories).)
 8. **Fields. **Set the following fields:
-    * component = database
+    * `component = database`
     * db_system = postgresql
     * db_cluster = <Your_Postgresql_Cluster_Name> For example analytics-dbcluster, webapp-dbcluster
     * environment = <Environment_Name> For example dev, prod or qa.
@@ -536,12 +521,29 @@ Here’s the sample source.json
 
 At this point, PostgreSQL logs should start flowing into Sumo Logic.
 
-
 #### Sample Log Messages
 
 ```json
 2021-04-01 08:30:20.002 UTC [11916] postgres@postgres LOG:  connection authorized: user=postgres database=postgres
 ```
+
+</TabItem>
+</Tabs>
+
+
+### Query Sample
+
+This sample Query is from the **Fatal Errors** panel of the **PostgreSQL - Overview** dashboard.
+
+```txt title="Query String"
+_sourceCategory=/PostgreSQL/*  db_system=postgresql db_cluster={{db_cluster}}
+| json auto maxdepth 1 nodrop
+| if (isEmpty(log), _raw, log) as _raw
+| parse "* * * [*] *@* *:  *" as date,time,time_zone,thread_id,user,db,severity,msg
+| where severity IN ("ERROR", "FATAL")
+| count by date, time, severity, db, user, msg
+```
+
 
 ## Installing PostgreSQL Alerts
 
@@ -559,16 +561,16 @@ Sumo Logic has provided out of the box alerts available through [Sumo Logic moni
 There are limits to how many alerts can be enabled - please see the [Alerts FAQ](/docs/alerts/monitors/monitor-faq.md) for details.
 
 
-### Method 1: Install the alerts by importing a JSON file
+### Method 1: Importing a JSON file
 
 1. Download the [JSON file](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/blob/main/monitor_packages/postgresql/postgresql.json) describing all the monitors.
-    1. The JSON contains the alerts that are based on Sumo Logic searches that do not have any scope filters and therefore will be applicable to all PostgreSQL clusters, the data for which has been collected via the instructions in the previous sections. However, if you would like to restrict these alerts to specific clusters or environments, update the JSON file by replacing the text ‘**db_system=postgresql **with ‘**<Your Custom Filter> db_system=postgresql**’.  \
- \
+    1. The JSON contains the alerts that are based on Sumo Logic searches that do not have any scope filters and therefore will be applicable to all PostgreSQL clusters, the data for which has been collected via the instructions in the previous sections. However, if you would like to restrict these alerts to specific clusters or environments, update the JSON file by replacing the text `db_system=postgresql` with `<Your Custom Filter> db_system=postgresql`.  
+
 Custom filter examples:
-        1. For alerts applicable only to a specific cluster, your custom filter would be:  **‘db_cluster=postgresql-prod.01’.**
-        2. For alerts applicable to all clusters that start with postgresql-prod, your custom filter would be: **‘db_cluster=postgresql-prod*’**.
+        1. For alerts applicable only to a specific cluster, your custom filter would be:  `‘db_cluster=postgresql-prod.01’.`
+        2. For alerts applicable to all clusters that start with postgresql-prod, your custom filter would be: `‘db_cluster=postgresql-prod*’`.
         3. For alerts applicable to a specific cluster within a production environment, your custom filter would be:
-            * **db_cluster=postgresql-1 and environment=prod** (This assumes you have set the optional environment tag while configuring collection)
+            * `db_cluster=postgresql-1 and environment=prod` (This assumes you have set the optional environment tag while configuring collection)
 2. Go to Manage Data > Alerts > Monitors.
 3. Click **Add**: \
 
@@ -577,8 +579,7 @@ Custom filter examples:
 The monitors are disabled by default. Once you have installed the alerts using this method, navigate to the PostgreSQL folder under Monitors to configure them. See [this](/docs/alerts/monitors/index.md) document to enable monitors, to configure each monitor, to send notification to teams or connections please see the instructions detailed in step 4 of this [document](/docs/alerts/monitors#Add_a_monitor).
 
 
-### Method 2: Install the alerts using a Terraform script
-
+### Method 2: Using a Terraform script
 
 #### Step 1: Generate a Sumo Logic access key and ID
 
@@ -610,14 +611,12 @@ environment = "<SUMOLOGIC DEPLOYMENT>"
 The Terraform script installs the alerts without any scope filters, if you would like to restrict the alerts to specific clusters or environments, update the variable **’postgresql_data_source’**. Custom filter examples:
 
 
-1. A specific cluster **‘db_cluster=postgresql.prod.01’**
-2. All clusters in an environment **‘environment=prod’**
-3. For alerts applicable only to a specific cluster, your custom filter would be:  **‘db_cluster=postgresql-.prod.01’**
-4. For alerts applicable to all clusters that start with postgresql-prod, your custom filter would be: ‘**db_cluster=postgresql-prod*’**
+1. A specific cluster `‘db_cluster=postgresql.prod.01’`
+2. All clusters in an environment `‘environment=prod’`
+3. For alerts applicable only to a specific cluster, your custom filter would be:  `‘db_cluster=postgresql-.prod.01’`
+4. For alerts applicable to all clusters that start with postgresql-prod, your custom filter would be: `‘**db_cluster=postgresql-prod*’`
 5. For alerts applicable to a specific cluster within a production environment, your custom filter would be:
-
-    **db_cluster=postgresql-1 and environment=prod** (This assumes you have set the optional environment tag while configuring collection)
-
+    `db_cluster=postgresql-1 and environment=prod` (This assumes you have set the optional environment tag while configuring collection)
 
 All monitors are disabled by default on installation, if you would like to enable all the monitors, set the parameter **monitors_disabled** to false in this file.
 
@@ -628,7 +627,7 @@ If you would like the alerts to send email or connection notifications, configur
 
 #### Step 5: Email and Connection Notification Configuration Examples
 
-To** configure notifications, m**odify the file postgresql_notifications.auto.tfvars file and fill in the connection_notifications and email_notifications sections. See the examples for PagerDuty and email notifications below. See this [document](/docs/manage/connections-and-integrations/webhook-connections/set-up-webhook-connections.md) for creating payloads with other connection types.
+To **configure notifications**, modify the file postgresql_notifications.auto.tfvars file and fill in the connection_notifications and email_notifications sections. See the examples for PagerDuty and email notifications below. See this [document](/docs/manage/connections-and-integrations/webhook-connections/set-up-webhook-connections.md) for creating payloads with other connection types.
 
 
 ```bash title="Pagerduty Connection Example"
@@ -680,27 +679,21 @@ If you haven’t enabled alerts and/or configured notifications through the Terr
 
 This section demonstrates how to install the PostgreSQL App.
 
-Now that you have set up log and metric collection for PostgreSQL, you can install the Sumo Logic App for PostgreSQL to use the pre-configured Searches and [Dashboards](#Dashboards).
-
-To install the app, do the following:
+Now that you have set up log and metric collection for PostgreSQL, you can install the Sumo Logic App for PostgreSQL to use the pre-configured Searches and [Dashboards](#Dashboards). To install the app, do the following:
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
-1. From the **App Catalog**, search for and select the app**.**
+1. From the **App Catalog**, search for and select the app.
 2. Select the version of the service you're using and click **Add to Library**.
 39
 Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library](/docs/get-started/library/install-apps).
 3. To install the app, complete the following fields.
-    1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
-    2. **Data Source.** Choose **Enter a Custom Data Filter**, and enter a custom PostgreSQL cluster filter. Examples:
-        * For all PostgreSQL clusters \
-**db_cluster=***
-        * For a specific cluster: \
-**db_cluster=postgresql.dev.01**. 
-        * Clusters within a specific environment: \
-**db_cluster=postgresql-1 and environment=prod**  \
-(This assumes you have set the optional environment tag while configuring collection)
-    3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
+   * **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
+   * **Data Source.** Choose **Enter a Custom Data Filter**, and enter a custom PostgreSQL cluster filter. Examples:
+      * For all PostgreSQL clusters  **`db_cluster=*`**
+      * For a specific cluster: **`db_cluster=postgresql.dev.01`**. 
+      * Clusters within a specific environment: **`db_cluster=postgresql-1 and environment=prod`. (This assumes you have set the optional environment tag while configuring collection)
+   * **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
 4. Click **Add to Library.**
 
 Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization.
@@ -810,7 +803,7 @@ Use this dashboard to:
 
 Here are the metrics available for PostgreSQL.
 
-<table>
+<table><small>
   <tr>
    <td>PostgreSQL Metrics List
    </td>
@@ -994,7 +987,7 @@ Here are the metrics available for PostgreSQL.
   <tr>
    <td>postgresql_table_size
    </td>
-  </tr>
+  </tr></small>
 </table>
 
 
@@ -1005,7 +998,17 @@ Sumo Logic provides out of the box alerts available via [Sumo Logic monitors](/d
 
 **Sumo Logic provides the following out-of-the-box alerts for PostgreSQL:**
 
-57
 The  metrics queries are derived as per[ Prometheus rules](https://awesome-prometheus-alerts.grep.to/rules.html).
 
-**INSERT TABLE**
+| Alert Name                                        | Alert Description and conditions                                                                                                                                                                                                | Alert Condition                                                                                            | Recover Condition                 |
+|---------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------|-----------------------------------|
+| PostgreSQL - Instance Down                        | This alert fires when the Postgres instance is down                                                                                                                                                                             | >=1                                                                                                        | < 1                               |
+| PostgreSQL - TooManyConnections                   | This alert fires when we detect that a PostgreSQL instance has too many (90% of allowed) connections)                                                                                                                           | >= 90                                                                                                      | < 90                              |
+| PostgreSQL - SlowQueries                          | This alert fires when we detect that the PostgreSQL instance is executing slow queries                                                                                                                                          | >= 1                                                                                                       | < 1                               |
+| PostgreSQL - Commit Rate Low                      | This alert fires when we detect that Postgres seems to be processing very few transactions.                                                                                                                                     | commit rate < 10                                                                                           | commit rate >= 10                 |
+| PostgreSQL - High Rate of Statement Timeout       | This alert fires when we detect Postgres transactions show a high rate of statement timeouts                                                                                                                                    | timeout rate > 3                                                                                           | timeout rate < 3                  |
+| PostgreSQL - High Rate Deadlock                   | This alert fires when we detect deadlocks in a Postgres instance                                                                                                                                                                | deadlock rate >=1                                                                                          | deadlock rate <1                  |
+| PostgreSQL - High Replication Lag                 | This alert fires when we detect that the Postgres Replication lag (in bytes) is high.                                                                                                                                           | > 1000000000 bytes                                                                                         | < 1000000000 bytes                |
+| PostgreSQL - SSL Compression Active               | This alert fires when we detect database connections with SSL compression are enabled. This may add significant jitter in replication delay. Replicas should turn off SSL compression via `sslcompression=0` in `recovery.conf` | > 0                                                                                                        | <= 0                              |
+| PostgreSQL - Too Many Locks Acquired              | This alert fires when we detect that there are too many locks acquired on the database. If this alert happens frequently, you may need to increase the postgres setting max_locks_per_transaction.                              | > 20 percent of max allowed locks assuming default max connection = 100 and max_locks per transaction = 64 | < 20 percent of max allowed locks |
+| PostgreSQL - Access from Highly Malicious Sources | This alert will fire when a Postgres instance is accessed from known malicious IP addresses.                                                                                                                                    | > 0                                                                                                        | <= 0                              |

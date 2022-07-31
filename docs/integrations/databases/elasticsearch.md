@@ -127,7 +127,7 @@ Follow the below instructions to set up the logs and  metric collection:
     5. Add annotations on your Elasticsearch pods
 
 
-5
+
 It’s assumed that you are using the latest helm chart version if not upgrade using the instructions [here](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/release-v2.0/deploy/docs/v2_migration_doc.md#how-to-upgrade).
 
 
@@ -139,31 +139,25 @@ This section explains the steps to collect Elasticsearch logs from a Kubernetes 
 
 Follow the instructions below to capture Elasticsearch logs from stdout on Kubernetes.
 
-Apply the following labels to the Elasticsearch pods: \
- \
- labels: \
-`environment: "dev_CHANGE_ME"`
+Apply the following labels to the Elasticsearch pods:
 
-
+ labels:
 ```
+environment: "dev_CHANGE_ME"`
 component: "database"
 db_system: "elasticsearch"
-
+db_cluster: "elasticsearch_on_k8s_CHANGE_ME"
 ```
 
-
-
-1. `db_cluster: "**elasticsearch_on_k8s_CHANGE_ME**>"
- \
-`Please enter in values for the following parameters (marked in `<**CHANGE_ME**>` above):
+Please enter in values for the following parameters (marked in `CHANGE_ME` above):
 
 * `environment` - This is the deployment environment where the Elasticsearch cluster identified by the value of **servers** resides. For example dev, prod, or QA. While this value is optional we highly recommend setting it.
-* `db_cluster` - Enter a name to identify this Elasticsearch cluster. This cluster name will be shown in the Sumo Logic dashboards. \
- \
-Here’s an explanation for additional values set by this configuration that we request you **please do not modify** as they will cause the Sumo Logic apps to not function correctly. \
+* `db_cluster` - Enter a name to identify this Elasticsearch cluster. This cluster name will be shown in the Sumo Logic dashboards.
+
+Here’s an explanation for additional values set by this configuration that we request you **please do not modify** as they will cause the Sumo Logic apps to not function correctly.
 
 * `component: “database”` - This value is used by Sumo Logic apps to identify application components.
-* **db_system**: “elasticsearch” - This value identifies the database system.
+* `db_system: “elasticsearch”`- This value identifies the database system.
 
     For all other parameters please see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#Configuring-Telegraf) for more properties that can be configured in the Telegraf agent globally.
 
@@ -172,8 +166,6 @@ Here’s an explanation for additional values set by this configuration that we 
 1. (Optional) Collecting Elasticsearch Logs from a Log File
 
 Follow the steps below to capture Elasticsearch logs from a log file on Kubernetes.
-
-
 
 1. Determine the location of the Elasticsearch log file on Kubernetes. This can be determined from the log4j.properties for your Elasticsearch cluster along with the mounts on the Elasticsearch pods.
 2. Install the Sumo Logic [tailing sidecar operator](https://github.com/SumoLogic/tailing-sidecar/tree/main/operator#deploy-tailing-sidecar-operator).
@@ -192,7 +184,6 @@ Example:
 ```
 annotations:
   tailing-sidecar: sidecarconfig;data:/usr/share/elasticsearch/logs/gc.log
-
 ```
 
 
@@ -213,21 +204,21 @@ Labels created in Kubernetes environments automatically are prefixed with pod_la
 * **Rule Name**. Enter the name as **App Observability - Database**.
 * **Applied At.** Choose **Ingest Time**
 * **Scope**. Select **Specific Data**
-* **Scope**: Enter the following keyword search expression:  \
-`pod_labels_environment=* pod_labels_component=database pod_labels_db_system=* pod_labels_db_cluster=*`
+* **Scope**: Enter the following keyword search expression:  
+```
+pod_labels_environment=* pod_labels_component=database pod_labels_db_system=* pod_labels_db_cluster=*
+```
 
-**Parse Expression**.Enter the following parse expression: \
-`if (!isEmpty(pod_labels_environment), pod_labels_environment, "") as environment`
+**Parse Expression**.Enter the following parse expression:
 
 ```
+if (!isEmpty(pod_labels_environment), pod_labels_environment, "") as environment
     | pod_labels_component as component
-| pod_labels_db_system as db_system
-
+    | pod_labels_db_system as db_system
+    | pod_labels_db_cluster as db_cluster
 ```
 
 
-
-* `| pod_labels_db_cluster as db_cluster`
 1. Click **Save** to create the rule.
 
 
@@ -235,7 +226,7 @@ Labels created in Kubernetes environments automatically are prefixed with pod_la
 
 This section explains the steps to collect Elasticsearch metrics from a Kubernetes environment.
 
-In Kubernetes environments, we use the Telegraf Operator, which is packaged with our Kubernetes collection. You can learn more about this[ here](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/telegraf-collection-architecture). Follow the steps listed below to collect metrics from a Kubernetes environment:
+In Kubernetes environments, we use the Telegraf Operator, which is packaged with our Kubernetes collection. You can learn more about this [here](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/telegraf-collection-architecture). Follow the steps listed below to collect metrics from a Kubernetes environment:
 
 1. [Set up Kubernetes Collection with the Telegraf Operator.](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf.md#Install_Telegraf_in_a_Kubernetes_environment)
 2. Add annotations on your Elasticsearch pods \
@@ -264,8 +255,7 @@ On your Elasticsearch Pods, add the following annotations:
     db_cluster="elasticsearch_on_k8s_CHANGE_ME>"
 ```
 
-Enter in values for the following parameters :
-
+Enter in values for the following parameters:
 
 * `telegraf.influxdata.com/inputs` - This contains the required configuration for the Telegraf Elasticsearch Input plugin. Please refer[ to this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/redis) for more information on configuring the Elasticsearch input plugin for Telegraf. Note: As telegraf will be run as a sidecar the host should always be localhost.
 * In the input plugins section, that is `[[inputs**.**elasticsearch]]`:
@@ -321,7 +311,7 @@ As part of collecting metrics data from Telegraf, we will use the [elasticsearch
 Create or modify **telegraf.conf** and copy and paste the text below:
 
 
-```
+```sql
 [[inputs.elasticsearch]]
   servers = ["http://<USER_CHANGE_ME>:<PASS_CHANGE_ME>@localhost:9200"]
   http_timeout = "5s"
@@ -342,7 +332,6 @@ Create or modify **telegraf.conf** and copy and paste the text below:
         data_format = "prometheus"
 ```
 
-
 Please enter values for the following parameters (marked in **CHANGE_ME** above):
 
 
@@ -357,22 +346,17 @@ Please enter values for the following parameters (marked in **CHANGE_ME** above)
     Here’s an explanation for additional values set by this Telegraf configuration.
 
 
-
-11
 If you haven’t defined a cluster in Elasticsearch, then enter ‘**`default`**’ for `db_cluster`.
-12
+1
 There are additional values set by the Telegraf configuration.  We recommend not to modify  these values as they might cause the Sumo Logic app to not function correctly.
 
 
 
-* **data_format** - “prometheus” In the output plugins section, which is `[[outputs.sumologic]]`. Metrics are sent in the Prometheus format to Sumo Logic
+* `data_format - “prometheus”` In the output plugins section, which is `[[outputs.sumologic]]`. Metrics are sent in the Prometheus format to Sumo Logic
 * `component: “database”` - In the input plugins section, that is `[[inputs.Elasticsearch]]` - This value is used by Sumo Logic apps to identify application components.
 * For all other parameters please see [this doc](https://github.com/influxdata/telegraf/blob/master/etc/telegraf.conf) for more properties that can be configured in the Telegraf agent globally.
 
-
-13
 After you have finalized your telegraf.conf file, you can start or reload the telegraf service using instructions from the [doc](https://docs.influxdata.com/telegraf/v1.17/introduction/getting-started/#start-telegraf-service).
-
 
 At this point, Elasticsearch metrics should start flowing into Sumo Logic.
 
@@ -385,8 +369,7 @@ By default, Elasticsearch logs are stored in a log file.
 
 Local log files can be collected via [Installed collectors](/docs/send-data/Installed-Collectors). The installed collector will require you to allow outbound traffic to [Sumo Logic endpoints](https://help.sumologic.com/APIs/General-API-Information/Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security) for collection to work. For detailed requirements for Installed collectors, see this [page](/docs/get-started/system-requirements#Installed-Collector-Requirements).
 
-
-1. Configure logging in Elasticsearch \
+1. Configure logging in Elasticsearch
 Elasticsearch supports logging via local text log files. Elasticsearch logs have four levels of verbosity. To select a level, set loglevel to one of:
 * debug (a lot of information, useful for development/testing)
 * verbose (includes information not often needed, but logs less than debug)
@@ -422,7 +405,7 @@ To collect logs directly from the Elasticsearch machine, configure an[ Installed
 * **Enable Timestamp Parsing.** Select Extract timestamp information from log file entries.
 * **Time Zone.** Choose the option, **Ignore time zone from the log file and instead use**, and then select your Elasticsearch Server’s time zone.
 * **Timestamp Format.** The timestamp format is automatically detected.
-* **Encoding. **Select** **UTF-8 (Default).
+* **Encoding.** Select UTF-8 (Default).
 * **Enable Multiline Processing.** Detect messages spanning multiple lines
     * Infer Boundaries - Detect message boundaries automatically
 1. Click **Save**.
@@ -467,12 +450,9 @@ Custom filter examples:
 1. Go to **Manage Data > Alerts > Monitors**.
 2. Click **Add**.
 3. Click **Import. \
-**
-4
 
-4. On the** Import Content popup**, enter **Elasticsearch **in the Name field, paste in the JSON into the popup, and click **Import**. \
 
-5
+4. On the** Import Content popup**, enter **Elasticsearch** in the Name field, paste in the JSON into the popup, and click **Import**. \
 
 5. The monitors are created in a "Elasticsearch" folder. The monitors are disabled by default. See the [Monitors](/docs/alerts/monitors) topic for information about enabling monitors and configuring notifications or connections.
 
@@ -481,17 +461,14 @@ Custom filter examples:
 
 #### Generate a Sumo Logic access key and ID
 
-Generate an access key and access ID for a user that has the **Manage Monitors** role capability. For instructions see  [Access Keys](/docs/manage/security/access-keys#Create-an-access-key-on-Preferences-page). 
+Generate an access key and access ID for a user that has the **Manage Monitors** role capability. For instructions see  [Access Keys](/docs/manage/security/access-keys#Create-an-access-key-on-Preferences-page).
 
 
 #### Download and install Terraform
 
 Download [Terraform 0.13](https://www.terraform.io/downloads.html) or later, and install it.
 
-
 #### Download the Sumo Logic Terraform package for Elasticsearch monitors
-9
-
 
 The alerts package is available in the Sumo Logic github [repository](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/tree/main/monitor_packages/Elasticsearch). You can either download it using the git clone command or as a zip file.
 

@@ -14,27 +14,37 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 The Sumo Logic App for Google Kubernetes Engine (GKE) - Control Plane allows you to monitor resource-related logs and metrics for Kubernetes deployments, clusters, namespaces, pods, containers, and daemonsets. The app provides visibility into the GKE control plane with operational insights into the API server, control manager, and worker nodes. This App works in conjunction with [Sumo Logic Kubernetes app](/docs/integrations/containers-orchestration/Kubernetes), that provides visibility into worker node metrics and application logs.
 
 
-### Supported versions
+## Supported versions
 
 The following are the minimum supported requirements for this application:
 
-**INSERT TABLE**
+* For Kubernetes: 1.10 and later
+* For: GKE
+   * 1.19.16-gke.8300.
+   * 1.20.15-gke.2500.
+   * 1.21.9-gke.1002.
+   * 1.21.10-gke.400.
+   * 1.22.7-gke.300.
+   * 1.22.7-gke.900.
+   * 1.23.5-gke.1501
+   * 1.11.10-gke.5
+   * 1.12.8-gke.10
+   * 1.12.7-gke.25
+   * 1.13.12-gke.30
+   * 1.14.10-gke.1504
+   * 1.15.12-gke.4002
+   * 1.16.15-gke.2601
+   * 1.17.12-gke.2502
+   * 1.18.20-gke.6000
 
-
-
-#### Google Cloud Logging for GKE  
+## Google Cloud Logging for GKE  
 
 By default, GKE clusters are natively integrated with Cloud Logging (and Monitoring). When you create a GKE cluster, both Monitoring and Cloud Logging are enabled by default. The GKE Sumo Logic App uses Google Cloud Logging. The
 
 
-
-
-## Collecting logs and metrics for the GKE - Control Plane App
+## Collecting Logs and Metrics for GKE - Control Plane App
 
 This page has instructions for configuring log and metric collection for the Sumo App for GKE - Control Plane.
-
-
-### Collection process overview
 
 After you install the Sumo Logic Kubernetes App, you configure a hosted collector, HTTP source, and establish Kubernetes collection. You will establish the key components for [Google Cloud Platform (GCP) services](https://cloud.google.com/docs/overview/cloud-platform-services) collection which include Google Logging, and Google Cloud Pub/Sub. Finally, you’ll configure metrics collection.
 
@@ -47,50 +57,44 @@ The configuration process includes the following tasks:
 3. Create an export of GCP logs from Google Logging. Exporting involves writing a filter that selects the log entries you want to export, and choosing a Pub/Sub as the destination. The filter and destination are held in an object called a sink.
 
 
-#### Set up and install the Kubernetes App
+### Set up and install the Kubernetes App
 
 The Sumo Logic Kubernetes App provides the services for managing and monitoring Kubernetes worker nodes. You must set up collection and  install the Kubernetes App before configuring collection for the GKE App. You will configure log and metric collection during this process.
 
 
-##### Google Cloud Logging for GKE  
+#### Google Cloud Logging for GKE  
 
 By default, GKE clusters are natively integrated with Cloud Logging (and Monitoring). When you create a GKE cluster, both Monitoring and Cloud Logging are enabled by default. The GKE Sumo Logic App uses Google Cloud Logging.
 
 
-##### Install the App
-
+#### Install the App
 
 **To set up and install the Kubernetes app**, follow the instructions in [this document](/docs/integrations/containers-orchestration/Kubernetes).
 
 
-#### Configure a Google Cloud Platform Source  
+### Configure a Google Cloud Platform Source  
 
 The GCP source receives log data from Google Pub/Sub. The GCP source will only be usable for log data formatted as data coming from Google Pub/Sub.
 
 **To configure a Google Platform Source**, follow the instructions in [this document](/docs/send-data/Sources/sources-hosted-collectors/Google-Cloud-Platform-Source).
 
 
-#### Configure a Pub/Sub topic for GCP
+### Configure a Pub/Sub topic for GCP
 
 Once you configure the Pub/Sub, you can export data from Google to the Pub/Sub.
 
 **To configure a Pub/Sub topic for GCP**,  follow the instructions in [this document](/docs/send-data/Sources/sources-hosted-collectors/Google-Cloud-Platform-Source).
 
 
-#### Create an export of Google Kubernetes Engine logs from Logging
+### Create an export of Google Kubernetes Engine logs from Logging
 
 This section walks you through the task of creating an export of Google Kubernetes Engine logs from Logging.
 
 **To create an export of GKE logs, do the following:*
 
-
 1. Go to **Logging** and click **Logs Router**.
 
-1. Click **Create Sink. **
-
-
-12
-
+1. Click **Create Sink.**
 
 1. As part of “**Create logs routing sink**”  add the following information:
     1. Enter a **Sink Name**. For example, "gce-vm-instance".
@@ -98,7 +102,7 @@ This section walks you through the task of creating an export of Google Kubernet
     3. Set **Sink Destination** to the Pub/Sub topic you created in the [Google Cloud Platform Source](/docs/send-data/Sources/sources-hosted-collectors/Google-Cloud-Platform-Source?mt-draft=true) procedure. For example, "pub-sub-logs".
     4. In “**Choose logs to include in sink**” Section : Determine the **GCP services** for which you need to get the logs. Also the logsName filter can be added in the inclusion filter for minimizing the logs send to Sumo Logic for the GKE app. This inclusion filter can be taken as :
 
-```
+```sql
 (resource.type="gke_cluster" OR resource.type="k8s_cluster" OR resource.type="k8s_node" OR resource.type="k8s_pod" )  \
 AND (logName="projects/<project_name></em>/logs/events" OR \
 logName="projects/<project_name></em>/logs/kube-proxy" OR \
@@ -110,11 +114,10 @@ logName="projects/<project_name></em>/logs/container-runtime" OR \
 logName="projects/<project_name></em>/logs/docker" OR \
 logName="projects/<project_name></em>/logs/kube-node-installation")
 ```
-    5. Click Create Sync>
+4. Click Create Sync.
 
 
-### Sample log messages
-
+### Sample Log Messages
 
 ```json title="Google Cloud Logging - Container StdErr"
 {
@@ -154,8 +157,6 @@ logName="projects/<project_name></em>/logs/kube-node-installation")
     "publishTime":"2019-06-26T10:41:06.382Z",
     "publish_time":"2019-06-26T10:41:06.382Z"
   },
-
-
 "subscription":"projects/product-sandbox-1/subscriptions/sumo_gke"
 }   
 ```
@@ -264,9 +265,9 @@ logName="projects/<project_name></em>/logs/kube-node-installation")
 
 
 
-### Query Sample
+### Sample Query
 
-```bash title="Error Stream - Google Cloud Logging"
+```sql title="Error Stream - Google Cloud Logging"
 _source="GKE Cloud Logs" error
 | parse regex "\"logName\":\"(?<log_name>[^\"]+)\""
 | json field=_raw "message.data.jsonPayload.message" as message
@@ -276,7 +277,7 @@ _source="GKE Cloud Logs" error
 | count by timestamp, project, cluster,log_name, message
 ```
 
-```bash title="Created Resources by Node Over Time - Google Cloud Logging"
+```sql title="Created Resources by Node Over Time - Google Cloud Logging"
 _sourceCategory = "GKE Cloud Logs" logName reason host "\"type\":\"gke_cluster\"" "\"reason\":\"Created\""
 | parse regex "\"logName\":\"(?<log_name>[^\"]+)\""
 | where log_name matches "projects/*/logs/events"

@@ -83,14 +83,13 @@ The first service in the pipeline is Telegraf. Telegraf collects metrics from Co
 
 Follow the below instructions to set up the metric collection:
 
-
 1. Configure Metrics Collection
-   * Setup Kubernetes Collection with the Telegraf operator
-   * Add annotations on your Couchbase pods
+   1. Setup Kubernetes Collection with the Telegraf operator
+   2. Add annotations on your Couchbase pods
 2. Configure Logs Collection
-   * Configure logging in Couchbase.
-   * Add labels on your Couchbase pods to capture logs from standard output.
-   * Collecting Couchbase Logs from a Log file.
+   1. Configure logging in Couchbase.
+   2. Add labels on your Couchbase pods to capture logs from standard output.
+   3. Collecting Couchbase Logs from a Log file.
 
 **Prerequisites**
 
@@ -164,31 +163,20 @@ This section explains the steps to collect Couchbase logs from a Kubernetes envi
 
 Make sure that the logs from Couchbase are sent to stdout. Follow the instructions below to capture Couchbase logs from stdout on Kubernetes.
 
+Apply following labels to the Couchbase pod:
+```
+environment="prod_CHANGEME"
+component="database"
+db_system="couchbase"
+db_cluster="<cluster_CHANGEME>"
+```
 
-1. Apply following labels to the Couchbase pod
-
-                        labels:
-
-
-              <code>environment="**prod**_**CHANGEME**"</code>
-
-
-              `component="database"`
-
-
-              `db_system="couchbase"`
-
-
-              <code>db_cluster="<**cluster_CHANGEME**>"</code>
-
-Enter in values for the following parameters (marked in **bold and CHANGE_ME** above):
-
+Enter in values for the following parameters (marked in **CHANGE_ME** above):
 
 * `environment` - This is the deployment environment where the Couchbase cluster identified by the value of **servers** resides. For example:- dev, prod, or QA. While this value is optional we highly recommend setting it.
 * `db_cluster` - Enter a name to identify this Couchbase cluster. This cluster name will be shown in the Sumo Logic dashboards. If you haven’t defined a cluster in Couchbase, then enter ‘**default**’ for db_cluster.
 
 Here’s an explanation for additional values set by this configuration that we request you **do not modify** as they will cause the Sumo Logic apps to not function correctly.
-
 
 * `component: “database”` - This value is used by Sumo Logic apps to identify application components.
 * `db_system: “couchbase”` - This value identifies the database system.
@@ -197,7 +185,6 @@ For all other parameters see [this doc](/docs/send-data/collect-from-other-data-
 
 1. The Sumologic-Kubernetes-Collection will automatically capture the logs from stdout and will send the logs to Sumologic. For more information on deploying Sumologic-Kubernetes-Collection,[ visit](/docs/integrations/containers-orchestration/Kubernetes#Collect_Logs_and_Metrics_for_the_Kubernetes_App) here.
 2. Verify logs in Sumo Logic.
-
 
 
 1. **(Optional) Collecting Couchbase Logs from a Log File \
@@ -229,19 +216,22 @@ kubectl describe pod <Couchbase_pod_name>
 2. Click the + Add button on the top right of the table.
 3. The following form appears: \
 
-9
 
 4. Enter the following options:
     1. **Rule Name**. Enter the name as **App Observability - Proxy**.
     2. **Applied At.** Choose **Ingest Time**
     3. **Scope**. Select **Specific Data**
     4. **Scope**: Enter the following keyword search expression:  \
-`pod_labels_environment=* pod_labels_component=database pod_labels_db_cluster=* pod_labels_db_system=*`
+```
+pod_labels_environment=* pod_labels_component=database pod_labels_db_cluster=* pod_labels_db_system=*
+```
 * **Parse Expression**.Enter the following parse expression: \
-`if (!isEmpty(pod_labels_environment), pod_labels_environment, "") as environment \
-| pod_labels_component as component \
-| pod_labels_db_system as db_system \
-| pod_labels_db_cluster as db_cluster`
+```
+if (!isEmpty(pod_labels_environment), pod_labels_environment, "") as environment
+| pod_labels_component as component
+| pod_labels_db_system as db_system
+| pod_labels_db_cluster as db_cluster
+```
 
 1. Click **Save** to create the rule.
 
@@ -249,7 +239,6 @@ kubectl describe pod <Couchbase_pod_name>
 <TabItem value="non-k8s">
 
 For non-kubernetes environments, we use the Telegraf operator for Couchbase metric collection and the [Installed Collector](/docs/send-data/installed-collectors/about-installed-collectors) for collecting Couchbase logs. The diagram below illustrates the components of the  Couchbase collection in a non-Kubernetes environment. Telegraf uses the[ Couchbase input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/couchbase) to obtain Couchbase metrics and the Sumo Logic output plugin to send the metrics to Sumo Logic. Logs from Couchbase are collected by a [Local File Source](/docs/send-data/Sources/sources-installed-collectors/Local-File-Source).
-
 
 The process to set up collection for Couchbase data is done through the following steps:
 
@@ -265,8 +254,6 @@ The process to set up collection for Couchbase data is done through the followin
 
 
 #### Configure Logs Collection
-11
-
 
 Couchbase app supports the audit log , query log, error log, access log. For details [here](https://docs.couchbase.com/server/current/manage/manage-logging/manage-logging.html#changing-log-file-locations).
 
@@ -311,8 +298,8 @@ Use one of the following Sumo Logic Collector options:
 * **Fields. **Set the following fields
 
 ```sql
-component = database \
-db_system = couchbase \
+component = database
+db_system = couchbase
 db_cluster = <Your_Couchbase_Cluster_Name>
 ```
 
@@ -421,8 +408,8 @@ There are additional values set by the Telegraf configuration.  We recommend not
 
 
 * `data_format: “prometheus”` - In the output `[[outputs.sumologic]]` plugins section. Metrics are sent in the Prometheus format to Sumo Logic.
-* **component** - “database” - In the input `[[inputs.couchbase]]` plugins section. This value is used by Sumo Logic apps to identify application components.
-* **db_system **- “couchbase” - In the input plugins sections. This value identifies the database system.
+* `component - “database”` - In the input `[[inputs.couchbase]]` plugins section. This value is used by Sumo Logic apps to identify application components.
+* `db_system- “couchbase”` - In the input plugins sections. This value identifies the database system.
 
 See[ this doc](https://github.com/influxdata/telegraf/blob/master/etc/telegraf.conf) for all other parameters that can be configured in the Telegraf agent globally.
 

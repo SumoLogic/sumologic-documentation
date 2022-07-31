@@ -108,7 +108,7 @@ annotations:
 
 If you haven’t defined a farm in Nginx, then enter ‘**default**’ for `webserver_farm`.
 
-Enter in values for the following parameters :
+Enter in values for the following parameters (as marked `CHANGEME` above):
 
 * telegraf.influxdata.com/inputs - This contains the required configuration for the Telegraf Nginx Input plugin. Please refer[ to this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/redis) for more information on configuring the Nginx input plugin for Telegraf. Note: As telegraf will be run as a sidecar the host should always be localhost.
     * In the input plugins section, that is :

@@ -259,7 +259,7 @@ Follow the instructions below to capture ActiveMQ logs from stdout on Kubernetes
 
 Enter in values for the following parameters (marked in bold_CHANGE_ME above):
 
-* **environment.** This is the deployment environment where the ActiveMQ cluster identified by the value of **servers** resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
+* `environment`. This is the deployment environment where the ActiveMQ cluster identified by the value of **servers** resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
 * **messsaging_cluster.** Enter a name to identify this ActiveMQ cluster. This cluster name will be shown in the Sumo Logic dashboards.
 
 Here’s an explanation for additional values set by this configuration that we request you **do not modify** as they will cause the Sumo Logic apps to not function correctly.

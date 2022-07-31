@@ -290,7 +290,7 @@ oid = "1.3.6.1.4.1.3495.1.1.3.0"
 
 If you haven’t defined a farm in Squid Proxy, then enter ‘**default**’ for `proxy_cluster`.
 
-Enter in values for the following parameters :
+Enter in values for the following parameters (as marked `CHANGEME` above):
 
 
 * telegraf.influxdata.com/inputs - This contains the required configuration for the Telegraf SNMP Input plugin. Please refer[ to this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/redis) for more information on configuring the SNMP input plugin for Telegraf. Note: As telegraf will be run as a sidecar the host should always be localhost.

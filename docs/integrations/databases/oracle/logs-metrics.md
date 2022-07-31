@@ -150,7 +150,7 @@ annotations:
 If you haven’t defined a cluster in Oracle, then enter ‘**default**’ for `db_cluster`.
 
 
-    Enter in values for the following parameters :
+    Enter in values for the following parameters (as marked `CHANGEME` above):
 
 
 
