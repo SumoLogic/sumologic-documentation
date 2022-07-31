@@ -21,31 +21,28 @@ This App has been tested with following ActiveMQ versions:
 
 Configuring log and metric collection for the ActiveMQ App includes the following tasks:
 
-* [Step 1: Configure Fields in Sumo Logic](#step-1-configure-fields-in-sumo-logic)
-* [Step 2: Configure ActiveMQ Logs and Metrics Collection](#step-2-configure-activemq-logs-and-metrics-collection)
-    * [For Non-Kubernetes environments](#for-non-kubernetes-environments)
-    * [For Kubernetes environments](#for-kubernetes-environments)
-
-
 ### Step 1: Configure Fields in Sumo Logic
 
 Create the following Fields in Sumo Logic prior to configuring collection. This ensures that your logs and metrics are tagged with relevant metadata, which is required by the app dashboards. For information on setting up fields, see the [Fields](/docs/manage/fields.md) help page.
 
-If you are using ActiveMQ in a non-Kubernetes environment create the fields:
-* component
-* environment
-* messaging_system
-* messaging_cluster
-* pod
-
 If you are using ActiveMQ in a Kubernetes environment create the fields:
-* pod_labels_component
-* pod_labels_environment
-* pod_labels_messaging_system
-* pod_labels_messaging_cluster
+* `pod_labels_component`
+* `pod_labels_environment`
+* `pod_labels_messaging_system`
+* `pod_labels_messaging_cluster`
 
 
-#### Sample Log Messages
+If you are using ActiveMQ in a non-Kubernetes environment create the fields:
+* `component`
+* `environment`
+* `messaging_system`
+* `messaging_cluster`
+* `pod`
+
+
+
+
+### Sample Log Messages
 
 ```bash title="Kubernetes"
 {
@@ -66,7 +63,7 @@ Host: broker-3-activemq Name: /opt/activemq/data/activemq.log Category:logfile
 Choose your environment:
 
 <Tabs
-  className="unique-tabs"
+  groupId="k8s-nonk8s"
   defaultValue="k8s"
   values={[
     {label: 'Kubernetes environments', value: 'k8s'},

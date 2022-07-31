@@ -11,8 +11,6 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Amazon Simple Email Service (Amazon SES) is a cloud-based email sending and receiving service. The Sumo Logic App for Amazon SES helps you monitor the email platform activities. The app uses CloudTrail events and SES notifications, and provides pre-configured dashboards that provide insights on the status of the email delivery including bounced notifications, delivered notifications, and various SES CloudTrail events.
 
-## Collect Logs for the Amazon SES App
-
 ### Log Types
 The Amazon SES App uses:
 * AWS CloudTrail events for SES. For more details, see [here](https://docs.aws.amazon.com/ses/latest/DeveloperGuide/logging-using-cloudtrail.html#service-name-info-in-cloudtrail). 
@@ -20,7 +18,9 @@ The Amazon SES App uses:
 
 Amazon Simple Email Service (Amazon SES) is a cloud-based email sending and receiving service. The Amazon SES App helps you monitor the email platform activities, utilizing CloudTrail events and SES notifications (via SNS).
 
-This page provides instructions for collecting CloudTrail Event logs and SES Notifications Via SNS.
+## Collect Logs for the Amazon SES App
+
+This section provides instructions for collecting CloudTrail Event logs and SES Notifications Via SNS.
 
 
 ### Step 1. Plan Source Categories
@@ -102,11 +102,8 @@ Selecting an AWS GovCloud region means your data will be leaving a FedRAMP-high 
     </details>
 
 
-
-
 13. Set any of the following under **Advanced**:
   * **Enable Timestamp Parsing.** This option is selected by default. If it's deselected, no timestamp information is parsed at all.
-
     * **Time Zone.** There are two options for Time Zone. You can use the time zone present in your log files, and then choose an option in case time zone information is missing from a log message. Or, you can have Sumo Logic completely disregard any time zone information present in logs by forcing a time zone. It's very important to have the proper time zone set, no matter which option you choose. If the time zone of logs can't be determined, Sumo Logic assigns logs UTC; if the rest of your logs are from another time zone your search results will be affected.
     * **Timestamp Format.** By default, Sumo Logic will automatically detect the timestamp format of your logs. However, you can manually specify a timestamp format for a Source. See [Timestamps, Time Zones, Time Ranges, and Date Formats](/docs/send-data/sources/reference-information-sources/time-reference) for more information.
 * **Enable Multiline Processing. **See [Collecting Multiline Logs](/docs/send-data/sources/reference-information-sources/collect-multiline-logs) for details on multiline processing and its options. This is enabled by default. Use this option if you're working with multiline messages (for example, log4J or exception stack traces). Deselect this option if you want to avoid unnecessary processing when collecting single-message-per-line files (for example, Linux system.log). Choose one of the following:  
@@ -131,11 +128,11 @@ Selecting an AWS GovCloud region means your data will be leaving a FedRAMP-high 
 * **Enable** — One Message Per Request
 3. Click **Save.**
 
-    **Note the source EndPoint URL**. Once an HTTP Source is added, it generates a URL which will be used to receive notifications from SNS. The URL looks like [https://collectors.sumologic.com/receiver/v1/http/ABCDEFGHIJK](https://collectors.sumologic.com/receiver/v1/http/ABCDEFGHIJK).
+    **Note the source EndPoint URL**. Once an HTTP Source is added, it generates a URL which will be used to receive notifications from SNS. The URL looks like `https://collectors.sumologic.com/receiver/v1/http/ABCDEFGHIJK`.
 
 4. You are going to send SES Notifications to SNS and then from SNS forward them to Sumo Logic. Have your Amazon SNS topic ready to receive SES notifications. Create SNS Topic, if not already created in SNS Service at AWS account from which to forward events to Sumo. Follow instructions in the [Amazon documentation](https://docs.aws.amazon.com/ses/latest/DeveloperGuide/configure-sns-notifications.html#configure-feedback-notifications-prerequisites) to setup an SNS topic to receive SES notifications.
 
-    **Note the SNS Topic ARN,** as you'll need it to set the subscription.
+    **Note the SNS Topic ARN**, as you'll need it to set the subscription.
 
 5. Whenever the SNS topic referred to in the previous step receives SES notification, forward the received notification to registered subscribers of that SNS topic. Now, subscribe Sumo Logic endpoint as subscriber. Create a Subscription to the SNS Topic you just created, specifying the following:
     * Topic ARN—from the [Step 4](#TopicARN).
@@ -160,7 +157,50 @@ SES sends notifications to SNS in a JSON format. Any notification sent through S
 
 
 ```json title="CloudTrail log"
-{ "eventVersion":"1.04", "userIdentity":{ "type":"IAMUser", "principalId":"AIDAI1234567890YGJ2G6", "arn":"arn:aws:iam::123456789033:user/mkmiller", "accountId":"123456789033", "accessKeyId":"ASI1234567890IHSAOIQ", "userName":"jbrown", "sessionContext":{ "attributes":{ "mfaAuthenticated":"true", "creationDate":"2017-12-12T11:18:58Z" } }, "invokedBy":"signin.amazonaws.com" }, "eventTime":"2018-01-02T19:45:18Z", "eventSource":"ses.amazonaws.com", "eventName":"GetIdentityMailFromDomainAttributes", "awsRegion":"us-west-3", "sourceIPAddress":"220.18.108.139", "userAgent":"signin.amazonaws.com", "requestParameters":{ "identities":[ "pwilson@sumologic.com", "amoore1@sumologic.com" ] }, "responseElements":{ "mailFromDomainAttributes":{ "mkmiller@sumologic.com":{ "behaviorOnMXFailure":"UseDefaultValue" }, "mperez1@sumologic.com":{ "behaviorOnMXFailure":"UseDefaultValue" } } }, "requestID":"9774b3e6-df4d-11e7-8e07-7d3a17657a4d", "eventID":"d36bd7a4-03f0-4245-a6b8-cdb56cfc8e91", "eventType":"AwsApiCall", "recipientAccountId":"123456789033" }
+{
+  "eventVersion": "1.04",
+  "userIdentity": {
+    "type": "IAMUser",
+    "principalId": "AIDAI1234567890YGJ2G6",
+    "arn": "arn:aws:iam::123456789033:user/mkmiller",
+    "accountId": "123456789033",
+    "accessKeyId": "ASI1234567890IHSAOIQ",
+    "userName": "jbrown",
+    "sessionContext": {
+      "attributes": {
+        "mfaAuthenticated": "true",
+        "creationDate": "2017-12-12T11:18:58Z"
+      }
+    },
+    "invokedBy": "signin.amazonaws.com"
+  },
+  "eventTime": "2018-01-02T19:45:18Z",
+  "eventSource": "ses.amazonaws.com",
+  "eventName": "GetIdentityMailFromDomainAttributes",
+  "awsRegion": "us-west-3",
+  "sourceIPAddress": "220.18.108.139",
+  "userAgent": "signin.amazonaws.com",
+  "requestParameters": {
+    "identities": [
+      "pwilson@sumologic.com",
+      "amoore1@sumologic.com"
+    ]
+  },
+  "responseElements": {
+    "mailFromDomainAttributes": {
+      "mkmiller@sumologic.com": {
+        "behaviorOnMXFailure": "UseDefaultValue"
+      },
+      "mperez1@sumologic.com": {
+        "behaviorOnMXFailure": "UseDefaultValue"
+      }
+    }
+  },
+  "requestID": "9774b3e6-df4d-11e7-8e07-7d3a17657a4d",
+  "eventID": "d36bd7a4-03f0-4245-a6b8-cdb56cfc8e91",
+  "eventType": "AwsApiCall",
+  "recipientAccountId": "123456789033"
+}
 ```
 
 ```json title="SES log"

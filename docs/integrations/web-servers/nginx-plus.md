@@ -26,7 +26,7 @@ The Sumo Logic App for Nginx Plus assumes Prometheus format Metrics for Requests
 ### Sample Log Messages  
 
 <Tabs
-  className="unique-tabs"
+  groupId="k8s-nonk8s"
   defaultValue="k8s"
   values={[
     {label: 'Kubernetes environments', value: 'k8s'},
@@ -133,7 +133,7 @@ For **FER for Error Logs**, use the following Parse Expression:
 This section provides instructions for configuring log and metric collection for the Sumo Logic App for Nginx Plus. Sumo Logic supports a collection of logs and metrics data from Nginx Plus in both Kubernetes and non-Kubernetes environments. Click on the appropriate links below based on the environment where your Nginx Plus servers are hosted.
 
 <Tabs
-  className="unique-tabs"
+  groupId="k8s-nonk8s"
   defaultValue="k8s"
   values={[
     {label: 'Kubernetes environments', value: 'k8s'},

@@ -27,7 +27,7 @@ This section provides instructions for configuring log and metric collection for
 Create the following fields in Sumo Logic prior to configuring the collection. This ensures that your logs and metrics are tagged with relevant metadata, which is required by the app dashboards. For information on setting up fields, see the [Fields](/docs/manage/fields.md) help page.
 
 <Tabs
-  className="unique-tabs"
+  groupId="k8s-nonk8s"
   defaultValue="k8s"
   values={[
     {label: 'Kubernetes environments', value: 'k8s'},
@@ -63,7 +63,7 @@ Click on the appropriate tabs below based on the environment where your Squid Pr
 
 
 <Tabs
-  className="unique-tabs"
+  groupId="k8s-nonk8s"
   defaultValue="k8s"
   values={[
     {label: 'Kubernetes environments', value: 'k8s'},
@@ -114,7 +114,7 @@ snmp_access allow snmppublic localhost
 
 <details><summary><strong>Click to expand.</strong> On your Squid Proxy Pods, add the following annotations:</summary>
 
-```
+```sql
 annotations:
     telegraf.influxdata.com/class: sumologic-prometheus
     prometheus.io/scrape: "true"
@@ -325,13 +325,11 @@ Make sure that the logs from Squid Proxy are sent to stdout. Follow the instruct
 1. Apply following labels to the Squid Proxy pod
 
 labels:
-`environment="prod_CHANGEME"`
-
-
-```
-  component="proxy"
-  proxy_system="squidproxy"
-  proxy_cluster="<cluster_CHANGEME>"
+```sql
+environment="prod_CHANGEME"
+component="proxy"
+proxy_system="squidproxy"
+proxy_cluster="<cluster_CHANGEME>"
 ```
 
 

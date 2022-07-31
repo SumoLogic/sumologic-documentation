@@ -56,7 +56,7 @@ _sourceCategory="O365/General"
 
 ## Installing the Microsoft Teams App   
 
-This page has instructions for installing the Microsoft Teams app and descriptions of each of the app dashboards.
+This section has instructions for installing the Microsoft Teams app and descriptions of each of the app dashboards.
 
 This section shows you how to install the Sumo Logic App for Microsoft Teams.
 

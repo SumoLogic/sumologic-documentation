@@ -24,7 +24,7 @@ This app supports Istio versions 1.8.x and 1.9.x+.
 
 ## Collecting logs and metrics for the Istio App
 
-This page provides instructions for collecting logs and metrics for the Sumo App for Istio. Logs and metrics are collected with the Sumo Logic Helm chart. Istio [sample metrics](/#Sample-Metrics) and [sample log messages](#Sample-Log-Messages) are also provided, along with a [query sample](#Query-Sample).
+This section provides instructions for collecting logs and metrics for the Sumo App for Istio. Logs and metrics are collected with the Sumo Logic Helm chart. Istio [sample metrics](/#Sample-Metrics) and [sample log messages](#Sample-Log-Messages) are also provided, along with a [query sample](#Query-Sample).
 
 This app supports Istio versions 1.8.x and 1.9.x+.
 
@@ -280,7 +280,7 @@ namespace=istio-system cluster={{cluster}}
 
 ## Installing the Istio App
 
-This page provides instructions for installing the Istio App, as well as descriptions and examples for each of the dashboards.
+This section provides instructions for installing the Istio App, as well as descriptions and examples for each of the dashboards.
 
 Now that you have set up metric and log collection for Istio, install the Sumo Logic App for Istio and access the pre-configured dashboards that provide visibility into your Istio environment.
 

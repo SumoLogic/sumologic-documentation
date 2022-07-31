@@ -15,7 +15,7 @@ The Sumo Logic App for Varnish provides dashboards that help you analyze log and
 
 ## Collecting Logs and Metrics for Varnish
 
-This page provides instructions for configuring log and metric collection for the Sumo Logic App for Varnish.
+This section provides instructions for configuring log and metric collection for the Sumo Logic App for Varnish.
 
 Configuring log and metric collection for the Varnish App includes the following tasks:
 
@@ -23,12 +23,15 @@ Configuring log and metric collection for the Varnish App includes the following
 
 Create the following Fields in Sumo Logic before configuring the collection. This ensures that your logs and metrics are tagged with relevant metadata, which the app dashboards require. For information on setting up fields, see the [Fields](/docs/manage/fields.md) help page.
 
-If you are using Varnish in a non-Kubernetes environment, create the fields:
-* `component`
-* `environment`
-* `cache_system`
-* `cache_cluster`
-* `pod`
+<Tabs
+  groupId="k8s-nonk8s"
+  defaultValue="k8s"
+  values={[
+    {label: 'For Kubernetes environments', value: 'k8s'},
+    {label: 'For Non-Kubernetes environments', value: 'non-k8s'},
+  ]}>
+
+<TabItem value="k8s">
 
 If you are using Varnish in a Kubernetes environment, create the fields:
 
@@ -37,13 +40,26 @@ If you are using Varnish in a Kubernetes environment, create the fields:
 * `pod_labels_cache_system`
 * `pod_labels_cache_cluster`
 
+</TabItem>
+<TabItem value="non-k8s">
+
+If you are using Varnish in a non-Kubernetes environment, create the fields:
+* `component`
+* `environment`
+* `cache_system`
+* `cache_cluster`
+* `pod`
+
+</TabItem>
+</Tabs>
+
 
 ### Step 2: Configure Logs and Metrics Collection
 
 Instructions below show how to configure Kubernetes and Non-Kubernetes environments.
 
 <Tabs
-  className="unique-tabs"
+  groupId="k8s-nonk8s"
   defaultValue="k8s"
   values={[
     {label: 'For Kubernetes environments', value: 'k8s'},

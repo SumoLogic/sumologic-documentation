@@ -72,7 +72,7 @@ Parsing in the Sumo Logic app for PAN 8 is based on the [PAN-OS Syslog Integrati
 
 ## Collecting Logs for the Palo Alto Networks 8 App
 
-This page has instructions for collecting logs for the Palo Alto Networks 8 App, as well as examples of field extraction rules, logs, and queries.
+This section has instructions for collecting logs for the Palo Alto Networks 8 App, as well as examples of field extraction rules, logs, and queries.
 
 
 ### Prerequisites
@@ -235,7 +235,7 @@ _sourceCategory=Loggen/PAN/Threat THREAT (virus or "wildfire-virus")
 
 ## Installing the Palo Alto Networks 8 App
 
-This page provides instructions for installing the Palo Alto Networks 8 App, along with examples of each of the dashboards that provide visual insights into your data.
+This section provides instructions for installing the Palo Alto Networks 8 App, along with examples of each of the dashboards that provide visual insights into your data.
 
 This app supports PAN-OS v7 and v8.
 

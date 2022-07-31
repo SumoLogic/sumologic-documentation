@@ -11,6 +11,14 @@ AWS Network Load Balancer service is distributed in OSI Layer 4 (the network lay
 
 The Sumo Logic App for AWS Network Load Balancer is using metrics to provide insights to ensure that your network load-balancers are operating as expected, backend hosts are healthy, and to quickly identify errors.
 
+## Log and Metric Types  
+The AWS Network Load Balancer app uses AWS Network Load Balancer metrics.
+
+### Sample Query
+
+```sql title="Active Flows (Connections) by Load Balancer (Metric-based)"
+account=* region=* LoadBalancer=* Namespace=aws/NetworkELB metric=ActiveFlowCount Statistic=Sum | sum by account, region, namespace, LoadBalancer
+```
 
 ## Collecting Metrics for AWS Network Load Balancer App
 
@@ -18,19 +26,9 @@ Sumo Logic supports collecting metrics using two source types:
 * Configure an [AWS Kinesis Firehose for Metrics Source](/docs/send-data/Sources/sources-hosted-collectors/Amazon-Web-Services/aws-kinesis-firehose-metrics-source) (Recommended); or
 * Configure an [Amazon CloudWatch Source for Metrics](/docs/send-data/sources/sources-hosted-collectors/amazon-web-services/amazon-cloudwatch-source-metrics)
 
-
 Namespace for **Amazon Network Load Balancer **Service is **AWS/NetworkELB.**
 
 * **Metadata**: Add an **account** field to the source and assign it a value which is a friendly name / alias to your AWS account from which you are collecting metrics. This name will appear in the Sumo Logic Explorer View. Metrics can be queried via the “account field”.
-
-### Log and Metric Types  
-The AWS Network Load Balancer app uses AWS Network Load Balancer metrics.
-
-### Sample Query (Metric-based)
-
-```sql title="Active Flows (Connections) by Load Balancer"
-account=* region=* LoadBalancer=* Namespace=aws/NetworkELB metric=ActiveFlowCount Statistic=Sum | sum by account, region, namespace, LoadBalancer
-```
 
 
 ### Field in Field Schema
@@ -42,9 +40,7 @@ Login to Sumo Logic, go to Manage Data > Logs > Fields. Search for the “**netw
 
 Create the following Metric Rule for the AWS/NetworkELB namespace if not already created. Learn how to create a Metric Rule [here](/docs/metrics/metric-rules-editor/create-metric-rules.md).
 
-**Rule 1**
-
-```
+```sql title="Rule 1*"
 Rule name: AwsObservabilityNLBMetricsAddonEntityRule
 Metric match expression: Namespace=AWS/NetworkELB LoadBalancer=*
 Variable name: networkloadbalancer
@@ -56,7 +52,7 @@ Save it
 
 ## Installing the AWS Network Load Balancer App
 
-This page has instructions for installing the Sumo Logic App for **AWS Network Load Balancer** and descriptions of each of the app dashboards along with associated use cases.
+This section has instructions for installing the Sumo Logic App for **AWS Network Load Balancer** and descriptions of each of the app dashboards along with associated use cases.
 
 Now that you have set up a collection for **AWS Network Load Balancer**, install the Sumo Logic App to use the pre-configured [dashboards](/docs/integrations/amazon-aws/sqs#Dashboards) that provide visibility into your environment for real-time analysis of overall usage.
 

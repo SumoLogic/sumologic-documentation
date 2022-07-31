@@ -42,32 +42,25 @@ In this step, you deploy the events processor. This will create the AWS resource
 
 1. Go to [https://serverlessrepo.aws.amazon.com/applications](https://serverlessrepo.aws.amazon.com/applications).
 2. Search for “sumologic-guardduty-events-processor”.
-
-
 3. When the page for the Sumo app appears, click **Deploy**.
-
-
-4. In **Configure application parameters** panel, paste the URL for the HTTP source you created above. \
-
-
-
+4. In **Configure application parameters** panel, paste the URL for the HTTP source you created above.
 5. Click **Deploy**.
 
 
 #### Configure optional environment variables
 
 1. Go to the AWS Lambda console.
-2. Search for the "aws-serverless-repository-CloudWatchEventFunction-&lt;_suffix_>" function and click it.
-3. Scroll down to the **Environment variables** section. \
+2. Search for the `aws-serverless-repository-CloudWatchEventFunction-< _suffix_>` function and click it.
+3. Scroll down to the **Environment variables** section.
 
 You can set any of the following optional variables:
-    * ENCODING (Optional). Encoding to use when decoding CloudWatch log events. Default is utf-8.
-    * SOURCE_CATEGORY_OVERRIDE (Optional). Override _sourceCategory value configured for the HTTP source.
-    * SOURCE_HOST_OVERRIDE (Optional). Override _sourceHost value configured for the HTTP source.
-    * SOURCE_NAME_OVERRIDE (Optional). Override _sourceName value configured for the HTTP source.
+    * `ENCODING` (Optional). Encoding to use when decoding CloudWatch log events. Default is utf-8.
+    * `SOURCE_CATEGORY_OVERRIDE` (Optional). Override `_sourceCategory` value configured for the HTTP source.
+    * `SOURCE_HOST_OVERRIDE` (Optional). Override `_sourceHost` value configured `for` the HTTP source.
+    * `SOURCE_NAME_OVERRIDE` (Optional). Override `_sourceName` value configured for the HTTP source.
 
 
-#### Sample log message
+### Sample Log message
 
 <details><summary>Click to expand</summary>
 
@@ -202,8 +195,7 @@ You can set any of the following optional variables:
 
 </details>
 
-#### Sample Query
-
+### Sample Query
 
 ```sql title="Threat details"
 _sourceCategory=aws/guardduty
@@ -234,19 +226,14 @@ To install the app, do the following:
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
 1. From the **App Catalog**, search for and select the app**.**
-2. Select the version of the service you're using and click **Add to Library**.
-
-
-14
-Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/library/install-apps)
-
-1. To install the app, complete the following fields.
+2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/library/install-apps)
+3. To install the app, complete the following fields.
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
     2. **Data Source.** Select either of these options for the data source. 
         * Choose **Source Category**, and select a source category from the list. 
         * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). 
     3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-2. Click **Add to Library**.
+4. Click **Add to Library**.
 
 Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization.
 

@@ -25,7 +25,7 @@ The Sumo Logic App for Workday collects all logs in JSON format. It uses the fol
 
 ## Collect Logs for the Workday App
 
-This page explains how to collect logs from Workday and ingest them into Sumo Logic for use with the Workday App predefined dashboards and searches.
+This section explains how to collect logs from Workday and ingest them into Sumo Logic for use with the Workday App predefined dashboards and searches.
 
 The instructions below assume that the following security groups -  Security Administrator, System Auditor, and Report Administrator are assigned to the user who will be configuring the collection in the Workday portal. Make sure the account used doesn't belong to an employee otherwise custom reports created by the user may no longer be available when they leave the organization.
 
@@ -671,7 +671,7 @@ _sourceCategory=workday_logs and _sourceName=signonlogs
 
 ## Install the Workday App
 
-This page provides instructions on how to install the Workday App, as well as examples of each of the dashboards. The App's pre-configured searches and dashboards provide easy-to-access visual insights into your data.
+This section provides instructions on how to install the Workday App, as well as examples of each of the dashboards. The App's pre-configured searches and dashboards provide easy-to-access visual insights into your data.
 
 As part of this beta, the app will automatically be installed in the Sumo Logic account of your choice as part of the Admin recommended folder.
 

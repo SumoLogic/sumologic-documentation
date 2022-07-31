@@ -24,34 +24,40 @@ This App has been tested with following Kafka versions:
 * 2.6.0
 * 2.7.0
 
-
-### Collection Process Overview
-
 Configuring log and metric collection for the Kafka App includes the following tasks:
-
-* Step 1: Configure Fields in Sumo Logic.
-* Step 2: Configure Collection for Kafka
-    * [Collect Kafka Logs and Metrics for Non-Kubernetes environments](#Collect_Kafka_Logs_and_Metrics_for_Non-Kubernetes_environments).
-    * [Collect Kafka Logs and Metrics for Kubernetes environments](#Collect_Logs_and_Metrics_for_Kubernetes_environments).
-
 
 ### Step 1: Configure Fields in Sumo Logic
 
 Create the following Fields in Sumo Logic prior to configuring collection. This ensures that your logs and metrics are tagged with relevant metadata, which is required by the app dashboards. For information on setting up fields, see the [Fields](/docs/manage/fields.md) help page.
 
-If you are using Kafka in a  non-Kubernetes environment create the fields:
-* component
-* environment
-* messaging_system
-* messaging_cluster
-* pod
+<Tabs
+  groupId="k8s-nonk8s"
+  defaultValue="k8s"
+  values={[
+    {label: 'Kubernetes environments', value: 'k8s'},
+    {label: 'Non-Kubernetes environments', value: 'non-k8s'},
+  ]}>
+
+<TabItem value="k8s">
 
 If you are using Kafka in a Kubernetes environment create the fields:
-* pod_labels_component
-* pod_labels_environment
-* pod_labels_messaging_system
-* pod_labels_messaging_cluster
+* `pod_labels_component`
+* `pod_labels_environment`
+* `pod_labels_messaging_system`
+* `pod_labels_messaging_cluster`
 
+</TabItem>
+<TabItem value="non-k8s">
+
+If you are using Kafka in a non-Kubernetes environment create the fields:
+* `component`
+* `environment`
+* `messaging_system`
+* `messaging_cluster`
+* `pod`
+
+</TabItem>
+</Tabs>
 
 ### Step 2: Configure Collection for Kafka
 
@@ -60,16 +66,241 @@ Sumo Logic supports collection of logs and metrics data from Kafka in both Kuber
 Please click on the appropriate link below based on the environment where your Kafka clusters are hosted.
 
 <Tabs
-  className="unique-tabs"
+  groupId="k8s-nonk8s"
   defaultValue="k8s"
   values={[
-    {label: 'Non-Kubernetes environments', value: 'non-k8s'},
     {label: 'Kubernetes environments', value: 'k8s'},
+    {label: 'Non-Kubernetes environments', value: 'non-k8s'},
   ]}>
 
+<TabItem value="k8s">
+
+In Kubernetes environments, we use the Telegraf Operator, which is packaged with our Kubernetes collection. You can learn more about it[ here](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/telegraf-collection-architecture).The diagram below illustrates how data is collected from Kafka in Kubernetes environments. In the architecture shown below, there are four services that make up the metric collection pipeline: Telegraf, Prometheus, Fluentd and FluentBit.
+
+<img src={useBaseUrl('img/integrations/containers-orchestration/kafka-k8s.png')} alt="non k8s-diagram" />
+
+The first service in the pipeline is Telegraf. Telegraf collects metrics from Kafka. Note that we’re running Telegraf in each pod we want to collect metrics from as a sidecar deployment. In other words, Telegraf runs in the same pod as the containers it monitors. Telegraf uses the [Jolokia input plugin ](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/jolokia2)to obtain metrics, (For simplicity, the diagram doesn’t show the input plugins.) The injection of the Telegraf sidecar container is done by the Telegraf Operator. We also have Fluentbit that collects logs written to standard out and forwards them to FluentD, which in turn sends all the logs and metrics data to a Sumo Logic HTTP Source.
+
+Follow the instructions below to set up the metric collection:
+
+1. [Configure Metrics Collection](#step-1-configure-metrics-collection)
+    1. Setup Kubernetes Collection with the Telegraf operator.
+    2. Add annotations on your Kafka pods.
+    3. Configure your Kafka Pod to use the Jolokia Telegraf Input Plugin
+2. [Configure Logs Collection](#step-2-configure-logs-collection)
+    4. Configure logging in Kafka.
+    5. Add labels on your Kafka pods to capture logs from standard output.
+    6. Collecting Kafka Logs from a Log file
+
+
+#### Step 1 Configure Metrics Collection
+
+Follow the steps below to collect metrics from a Kubernetes environment:
+
+1. Setup Kubernetes Collection with the Telegraf operator.
+Please ensure that you are monitoring your Kubernetes clusters with the Telegraf operator **enabled** -  If you are not, then please follow [these instructions](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf.md#Install_Telegraf_in_a_Kubernetes_environment) to do so.
+2. Add annotations on your Kafka pods. Open [this yaml file](https://sumologic-app-data.s3.amazonaws.com/Kafka/KAfka_PodAnnotations.yaml) and add the annotations mentioned there. Please enter in values for the parameters marked with CHANGE_ME in the yaml file:
+
+* telegraf.influxdata.com/inputs - As telegraf will be run as a sidecar the **urls** should always be localhost.
+    * In the input plugins section :
+        * **urls** - The URL to the Kafka server. As telegraf will be run as a sidecar the **urls** should always be localhost. This can be a comma-separated list to connect to multiple Kafka servers.
+    * In the tags sections (total 3) Which are, , [inputs.jolokia2_agent.tags], and [inputs.disk.tags]:
+        * `environment` - This is the deployment environment where the Kafka cluster identified by the value of servers resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
+        * **messaging_cluster** - Enter a name to identify this Kafka cluster. This cluster name will be shown in the Sumo Logic dashboards.
+
+Here’s an explanation for additional values set by this configuration that we request you **please do not modify** these values as they will cause the Sumo Logic apps to not function correctly.
+
+* `telegraf.influxdata.com/class: sumologic-prometheus` - This instructs the Telegraf operator what output to use. This should not be changed.
+* `prometheus.io/scrape: "true"` - This ensures our Prometheus plugin will scrape the metrics.
+* `prometheus.io/port: "9273"` - This tells Prometheus what ports to scrape metrics from. This should not be changed.
+* telegraf.influxdata.com/inputs
+    * In the tags sections [inputs.jolokia2_agent/diskio/disk]
+        * **component**: “messaging” - This value is used by Sumo Logic apps to identify application components.
+        * **messaging_system**: “kafka” - This value identifies the database system.
+
+For more information on all other parameters please see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#Configuring-Telegraf) for more properties that can be configured in the Telegraf agent globally.
+
+For more information on configuring the Joloka input plugin for Telegraf please see [this doc.](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/jolokia2)
+
+
+
+1. Configure your Kafka Pod to use the Jolokia Telegraf Input Plugin \
+Jolokia agent needs to be available to the Kafka Pods. Starting Kubernetes 1.10.0, you can store a binary file in a [configMap](https://kubernetes.io/docs/concepts/storage/volumes/#configmap). This makes it very easy to load the Jolokia jar file, and make it available to your pods.
+2. Download the latest version of the **Jolokia JVM-Agent** from [Jolokia](https://jolokia.org/download.html).
+3. Rename the file to jolokia.jar
+4. Create a configMap **jolokia** from the binary file
+```
+kubectl create configmap jolokia --from-file=jolokia.jar
+```
+
+
+1. Modify your Kafka Pod definition to include volume (type [ConfigMap](https://kubernetes.io/docs/concepts/storage/volumes/#configmap))  and volumeMounts.Finally, update the env (environment variable) to start Jolokia, and apply the updated Kafka pod definition.
+
+```yml
+spec:
+  volumes:
+    - name: jolokia
+      configMap:
+        name: jolokia
+  containers:
+    - name: XYZ
+      image: XYZ
+      env:
+      - name: KAFKA_OPTS
+        value: "-javaagent:/opt/jolokia/jolokia.jar=port=8778,host=0.0.0.0"
+      volumeMounts:
+        - mountPath: "/opt/jolokia"
+          name: jolokia
+```
+
+
+**Verification Step: **You can ssh to Kafka pod and run following commands to make sure Telegraf (and Jolokia) is scraping metrics from your Kafka Pod:
+
+* curl localhost:9273/metrics
+* curl[ http://localhost:8778/jolokia/list](http://localhost:8778/jolokia/list)
+* echo $KAFKA_OPTS. It should give you following result
+
+    ```curl
+    -javaagent:/opt/jolokia/jolokia.jar=port=8778,host=0.0.0.0
+    ```
+
+
+* Make sure jolokia.jar exists at /opt/jolokia/ directory of kafka pod.
+
+This is an example  of a [Pod definition file](https://sumologic-app-data.s3.amazonaws.com/Kafka/Kafka_Pod_annotations_Labels_MountVolume.yaml) looks like.
+
+Once this has been done, the Sumo Logic Kubernetes collection will automatically start collecting metrics from the pods having the labels and annotations defined in the previous step. Verify metrics are flowing into Sumo Logic by running the following metrics query:
+
+
+```bash
+component="messaging" and messaging_system="kafka"
+```
+
+
+
+#### Step 2 Configure Logs Collection
+This section explains the steps to collect Kafka logs from a Kubernetes environment.
+
+
+#### Collect Kafka logs written to standard output
+
+If your Kafka helm chart/pod is writing the logs to standard output then follow the steps listed below to collect the logs:
+
+1. Apply the following labels to your Kafka pods: \
+ labels: \
+    environment: "**prod-CHANGE_ME**" \
+    component: "messaging" \
+    messaging_system: "kafka" \
+    messaging_cluster: "**kafka_prod_cluster01-CHANGE_ME**”
+
+    Please enter in values for the following parameters (marked in bold and CHANGE_ME above):
+
+* `environment` - This is the deployment environment where the Kafka cluster identified by the value of **servers** resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
+* **messaging_cluster** - Enter a name to identify this Kafka cluster. This cluster name will be shown in the Sumo Logic dashboards.
+
+    Here’s an explanation for additional values set by this configuration that we request you **please do not modify** as they will cause the Sumo Logic apps to not function correctly.
+
+* component: “messaging” - This value is used by Sumo Logic apps to identify application components.
+* messaging_system: “kafka” - This value identifies the messaging system.
+
+    For all other parameters please see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#Configuring-Telegraf) for more properties that can be configured in the Telegraf agent globally.
+
+
+The Sumologic-Kubernetes-Collection will automatically capture the logs from stdout and will send the logs to Sumologic. For more information on deploying Sumologic-Kubernetes-Collection, please see[ this page](/docs/integrations/containers-orchestration/Kubernetes#Collect_Logs_and_Metrics_for_the_Kubernetes_App).
+
+
+#### Collect Kafka logs written to log files (Optional)
+
+If your Kafka helm chart/pod is writing its logs to log files, you can use a [sidecar](https://github.com/SumoLogic/tailing-sidecar/tree/main/operator) to send log files to standard out. To do this:
+
+1. Determine the location of the Kafka log file on Kubernetes. This can be determined from helm chart configurations.
+2. Install the Sumo Logic [tailing sidecar operator](https://github.com/SumoLogic/tailing-sidecar/tree/main/operator#deploy-tailing-sidecar-operator).
+3. Add the following annotation in addition to the existing annotations.
+
+    annotations:
+
+      `tailing-sidecar: sidecarconfig;<mount>:<path_of_kafka_log_file>/<kafka_log_file_name>`
+
+
+    Example:
+
+
+    annotations:
+
+
+      `tailing-sidecar: sidecarconfig;data:/opt/Kafka/kafka_<VERSION>/logs/server.log`
+
+1. Make sure that the Kafka pods are running and annotations are applied by using the command: `kubectl describe pod <Kafka_pod_name>`
+2. Sumo Logic Kubernetes collection will automatically start collecting logs from the pods having the annotations defined above.
+
+
+#### Add an FER to normalize the fields in Kubernetes environments
+
+Labels created in Kubernetes environments automatically are prefixed with pod_labels. To normalize these for our app to work, we need to create a Field Extraction Rule if not already created for Messaging Application Components. To do so:
+
+
+
+1. Go to **Manage Data** > **Logs** > **Field Extraction Rules**.
+2. Click the **+ Add** button on the top right of the table.
+3. The following form appears:
+
+
+
+
+1. Enter the following options:
+* **Rule Name**. Enter the name as **App Component Observability - Messaging.**
+* **Applied At**. Choose Ingest Time
+* **Scope**. Select Specific Data
+    * Scope: Enter the following keyword search expression:
+
+```sql
+pod_labels_environment=* pod_labels_component=messaging
+pod_labels_messaging_system=kafka pod_labels_messaging_cluster=*
+```
+
+
+
+* **Parse Expression**.Enter the following parse expression:
+
+
+```sql
+if (!isEmpty(pod_labels_environment), pod_labels_environment, "") as environment
+| pod_labels_component as component
+| pod_labels_messaging_system as messaging_system
+| pod_labels_messaging_cluster as messaging_cluster
+```
+
+1. Click **Save** to create the rule.
+2. Verify logs are flowing into Sumo Logic by running the following logs query:
+
+```sql
+component="messaging" and messaging_system="kafka"
+```
+
+
+#### Sample Log Messages
+
+```json
+{
+	"timestamp":1617392000686,
+	"log":"[2021-04-02 19:33:20,598] INFO [KafkaServer id=0] started (kafka.server.KafkaServer)",
+	"stream":"stdout",
+	"time":"2021-04-02T19:33:20.599066311Z"
+}
+```
+
+
+#### Query Sample
+
+This sample Query string is from the Logs panel of the Kafka - Logs dashboard.
+```sql
+messaging_cluster=* messaging_system="kafka" | json auto maxdepth 1 nodrop | if (isEmpty(log), _raw, log) as kafka_log_message | parse field=kafka_log_message "[*] * *" as date_time,severity,msg | where severity in ("ERROR", "FATAL") | count by date_time, severity, msg | sort by date_time | limit 10
+```
+
+</TabItem>
 <TabItem value="non-k8s">
 
-We use the Telegraf Operator for Kafka metric collection and the Sumo Logic Installed Collector for collecting Kafka logs. The diagram below illustrates the components of the Kafka collection in a non-Kubernetes environment. Telegraf runs on the same system as Kafka, and uses the Kafka Jolokia input plugin to obtain Kafka metrics, and the Sumo Logic output plugin to send the metrics to Sumo Logic. Kafka Logs are sent to Sumo Logic Local File Source on Installed Collector.
+For non-Kubernetes environments, we use the Telegraf Operator for Kafka metric collection and the Sumo Logic Installed Collector for collecting Kafka logs. The diagram below illustrates the components of the Kafka collection in a non-Kubernetes environment. Telegraf runs on the same system as Kafka, and uses the Kafka Jolokia input plugin to obtain Kafka metrics, and the Sumo Logic output plugin to send the metrics to Sumo Logic. Kafka Logs are sent to Sumo Logic Local File Source on Installed Collector.
 
 <img src={useBaseUrl('img/integrations/containers-orchestration/kafka-nonk8s.png')} alt="non k8s-diagram" />
 
@@ -215,250 +446,14 @@ messaging_cluster=* messaging_system="kafka" | json auto maxdepth 1 nodrop | if 
 ```
 
 </TabItem>
-<TabItem value="k8s">
-
-In Kubernetes environments, we use the Telegraf Operator, which is packaged with our Kubernetes collection. You can learn more about it[ here](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/telegraf-collection-architecture).The diagram below illustrates how data is collected from Kafka in Kubernetes environments. In the architecture shown below, there are four services that make up the metric collection pipeline: Telegraf, Prometheus, Fluentd and FluentBit.
-
-<img src={useBaseUrl('img/integrations/containers-orchestration/kafka-k8s.png')} alt="non k8s-diagram" />
-
-The first service in the pipeline is Telegraf. Telegraf collects metrics from Kafka. Note that we’re running Telegraf in each pod we want to collect metrics from as a sidecar deployment. In other words, Telegraf runs in the same pod as the containers it monitors. Telegraf uses the [Jolokia input plugin ](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/jolokia2)to obtain metrics, (For simplicity, the diagram doesn’t show the input plugins.) The injection of the Telegraf sidecar container is done by the Telegraf Operator. We also have Fluentbit that collects logs written to standard out and forwards them to FluentD, which in turn sends all the logs and metrics data to a Sumo Logic HTTP Source.
-
-Follow the instructions below to set up the metric collection:
-
-1. [Configure Metrics Collection](#step-1-configure-metrics-collection)
-    1. Setup Kubernetes Collection with the Telegraf operator.
-    2. Add annotations on your Kafka pods.
-    3. Configure your Kafka Pod to use the Jolokia Telegraf Input Plugin
-2. [Configure Logs Collection](#step-2-configure-logs-collection)
-    4. Configure logging in Kafka.
-    5. Add labels on your Kafka pods to capture logs from standard output.
-    6. Collecting Kafka Logs from a Log file
-
-
-#### Step 1 Configure Metrics Collection
-
-Follow the steps below to collect metrics from a Kubernetes environment:
-
-1. Setup Kubernetes Collection with the Telegraf operator.
-Please ensure that you are monitoring your Kubernetes clusters with the Telegraf operator **enabled** -  If you are not, then please follow [these instructions](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf.md#Install_Telegraf_in_a_Kubernetes_environment) to do so.
-2. Add annotations on your Kafka pods. Open [this yaml file](https://sumologic-app-data.s3.amazonaws.com/Kafka/KAfka_PodAnnotations.yaml) and add the annotations mentioned there. Please enter in values for the parameters marked with CHANGE_ME in the yaml file:
-
-* telegraf.influxdata.com/inputs - As telegraf will be run as a sidecar the **urls** should always be localhost.
-    * In the input plugins section :
-        * **urls** - The URL to the Kafka server. As telegraf will be run as a sidecar the **urls** should always be localhost. This can be a comma-separated list to connect to multiple Kafka servers.
-    * In the tags sections (total 3) Which are, , [inputs.jolokia2_agent.tags], and [inputs.disk.tags]:
-        * `environment` - This is the deployment environment where the Kafka cluster identified by the value of servers resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
-        * **messaging_cluster** - Enter a name to identify this Kafka cluster. This cluster name will be shown in the Sumo Logic dashboards.
-
-Here’s an explanation for additional values set by this configuration that we request you **please do not modify** these values as they will cause the Sumo Logic apps to not function correctly.
-
-* `telegraf.influxdata.com/class: sumologic-prometheus` - This instructs the Telegraf operator what output to use. This should not be changed.
-* `prometheus.io/scrape: "true"` - This ensures our Prometheus plugin will scrape the metrics.
-* `prometheus.io/port: "9273"` - This tells Prometheus what ports to scrape metrics from. This should not be changed.
-* telegraf.influxdata.com/inputs
-    * In the tags sections [inputs.jolokia2_agent/diskio/disk]
-        * **component**: “messaging” - This value is used by Sumo Logic apps to identify application components.
-        * **messaging_system**: “kafka” - This value identifies the database system.
-
-For more information on all other parameters please see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#Configuring-Telegraf) for more properties that can be configured in the Telegraf agent globally.
-
-For more information on configuring the Joloka input plugin for Telegraf please see [this doc.](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/jolokia2)
-
-
-
-1. Configure your Kafka Pod to use the Jolokia Telegraf Input Plugin \
-Jolokia agent needs to be available to the Kafka Pods. Starting Kubernetes 1.10.0, you can store a binary file in a [configMap](https://kubernetes.io/docs/concepts/storage/volumes/#configmap). This makes it very easy to load the Jolokia jar file, and make it available to your pods.
-2. Download the latest version of the **Jolokia JVM-Agent** from [Jolokia](https://jolokia.org/download.html).
-3. Rename the file to jolokia.jar
-4. Create a configMap **jolokia** from the binary file
-```
-kubectl create configmap jolokia --from-file=jolokia.jar
-```
-
-
-1. Modify your Kafka Pod definition to include volume (type [ConfigMap](https://kubernetes.io/docs/concepts/storage/volumes/#configmap))  and volumeMounts.Finally, update the env (environment variable) to start Jolokia, and apply the updated Kafka pod definition.
-
-```yml
-spec:
-  volumes:
-    - name: jolokia
-      configMap:
-        name: jolokia
-  containers:
-    - name: XYZ
-      image: XYZ
-      env:
-      - name: KAFKA_OPTS
-        value: "-javaagent:/opt/jolokia/jolokia.jar=port=8778,host=0.0.0.0"
-      volumeMounts:
-        - mountPath: "/opt/jolokia"
-          name: jolokia
-```
-
-
-**Verification Step: **You can ssh to Kafka pod and run following commands to make sure Telegraf (and Jolokia) is scraping metrics from your Kafka Pod:
-
-* curl localhost:9273/metrics
-* curl[ http://localhost:8778/jolokia/list](http://localhost:8778/jolokia/list)
-* echo $KAFKA_OPTS. It should give you following result
-
-    ```curl
-    -javaagent:/opt/jolokia/jolokia.jar=port=8778,host=0.0.0.0
-    ```
-
-
-* Make sure jolokia.jar exists at /opt/jolokia/ directory of kafka pod.
-
-This is an example  of a [Pod definition file](https://sumologic-app-data.s3.amazonaws.com/Kafka/Kafka_Pod_annotations_Labels_MountVolume.yaml) looks like.
-
-Once this has been done, the Sumo Logic Kubernetes collection will automatically start collecting metrics from the pods having the labels and annotations defined in the previous step. Verify metrics are flowing into Sumo Logic by running the following metrics query:
-
-
-```bash
-component="messaging" and messaging_system="kafka"
-```
-
-
-
-#### Step 2 Configure Logs Collection
-18
-
-
-This section explains the steps to collect Kafka logs from a Kubernetes environment.
-
-
-##### Collect Kafka logs written to standard output
-19
-
-
-If your Kafka helm chart/pod is writing the logs to standard output then follow the steps listed below to collect the logs:
-
-
-
-1. Apply the following labels to your Kafka pods: \
- labels: \
-    environment: "**prod-CHANGE_ME**" \
-    component: "messaging" \
-    messaging_system: "kafka" \
-    messaging_cluster: "**kafka_prod_cluster01-CHANGE_ME**”
-
-    Please enter in values for the following parameters (marked in bold and CHANGE_ME above):
-
-* `environment` - This is the deployment environment where the Kafka cluster identified by the value of **servers** resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
-* **messaging_cluster** - Enter a name to identify this Kafka cluster. This cluster name will be shown in the Sumo Logic dashboards.
-
-    Here’s an explanation for additional values set by this configuration that we request you **please do not modify** as they will cause the Sumo Logic apps to not function correctly.
-
-* component: “messaging” - This value is used by Sumo Logic apps to identify application components.
-* messaging_system: “kafka” - This value identifies the messaging system.
-
-    For all other parameters please see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#Configuring-Telegraf) for more properties that can be configured in the Telegraf agent globally.
-
-
-The Sumologic-Kubernetes-Collection will automatically capture the logs from stdout and will send the logs to Sumologic. For more information on deploying Sumologic-Kubernetes-Collection, please see[ this page](/docs/integrations/containers-orchestration/Kubernetes#Collect_Logs_and_Metrics_for_the_Kubernetes_App).
-
-
-#### Collect Kafka logs written to log files (Optional)
-
-If your Kafka helm chart/pod is writing its logs to log files, you can use a [sidecar](https://github.com/SumoLogic/tailing-sidecar/tree/main/operator) to send log files to standard out. To do this:
-
-1. Determine the location of the Kafka log file on Kubernetes. This can be determined from helm chart configurations.
-2. Install the Sumo Logic [tailing sidecar operator](https://github.com/SumoLogic/tailing-sidecar/tree/main/operator#deploy-tailing-sidecar-operator).
-3. Add the following annotation in addition to the existing annotations.
-
-    annotations:
-
-      `tailing-sidecar: sidecarconfig;<mount>:<path_of_kafka_log_file>/<kafka_log_file_name>`
-
-
-    Example:
-
-
-    annotations:
-
-
-      `tailing-sidecar: sidecarconfig;data:/opt/Kafka/kafka_<VERSION>/logs/server.log`
-
-1. Make sure that the Kafka pods are running and annotations are applied by using the command: `kubectl describe pod <Kafka_pod_name>`
-2. Sumo Logic Kubernetes collection will automatically start collecting logs from the pods having the annotations defined above.
-
-
-#### Add an FER to normalize the fields in Kubernetes environments
-
-Labels created in Kubernetes environments automatically are prefixed with pod_labels. To normalize these for our app to work, we need to create a Field Extraction Rule if not already created for Messaging Application Components. To do so:
-
-
-
-1. Go to **Manage Data** > **Logs** > **Field Extraction Rules**.
-2. Click the **+ Add** button on the top right of the table.
-3. The following form appears:
-
-
-
-
-1. Enter the following options:
-* **Rule Name**. Enter the name as **App Component Observability - Messaging.**
-* **Applied At**. Choose Ingest Time
-* **Scope**. Select Specific Data
-    * Scope: Enter the following keyword search expression:
-
-```sql
-pod_labels_environment=* pod_labels_component=messaging
-pod_labels_messaging_system=kafka pod_labels_messaging_cluster=*
-```
-
-
-
-* **Parse Expression**.Enter the following parse expression:
-
-
-```sql
-if (!isEmpty(pod_labels_environment), pod_labels_environment, "") as environment
-| pod_labels_component as component
-| pod_labels_messaging_system as messaging_system
-| pod_labels_messaging_cluster as messaging_cluster
-
-```
-
-
-
-1. Click **Save** to create the rule.
-2. Verify logs are flowing into Sumo Logic by running the following logs query:
-
-```
-component="messaging" and messaging_system="kafka"
-```
-
-
-#### Sample Log Messages
-
-
-```json
-{
-	"timestamp":1617392000686,
-	"log":"[2021-04-02 19:33:20,598] INFO [KafkaServer id=0] started (kafka.server.KafkaServer)",
-	"stream":"stdout",
-	"time":"2021-04-02T19:33:20.599066311Z"
-}
-```
-
-
-#### Query Sample
-
-This sample Query string is from the Logs panel of the Kafka - Logs dashboard.
-```sql
-messaging_cluster=* messaging_system="kafka" | json auto maxdepth 1 nodrop | if (isEmpty(log), _raw, log) as kafka_log_message | parse field=kafka_log_message "[*] * *" as date_time,severity,msg | where severity in ("ERROR", "FATAL") | count by date_time, severity, msg | sort by date_time | limit 10
-```
-
-</TabItem>
 </Tabs>
 
 
-## Installing Alerts
+## Installing Kafka Alerts
 
 This section and below provide instructions for installing the Sumo App and Alerts for Kafka and descriptions of each of the app dashboards. These instructions assume you have already set up the collection as described in [Collect Logs and Metrics for Kafka](#collecting-logs-and-metrics-for-kafka).
 
-### Pre-Packaged Alerts
+#### Pre-Packaged Alerts
 
 Sumo Logic has provided out-of-the-box alerts available through [Sumo Logic monitors](/docs/alerts/monitors/index.md) to help you quickly determine if the Kafka cluster is available and performing as expected. These alerts are built based on metrics datasets and have preset thresholds based on industry best practices and recommendations. See [Kafka Alerts](#kafka-alerts) for more details.
 
@@ -467,7 +462,7 @@ Sumo Logic has provided out-of-the-box alerts available through [Sumo Logic moni
 * Note: There are limits to how many alerts can be enabled - please see the [Alerts FAQ](/docs/alerts/monitors/monitor-faq.md) for details.
 
 
-### Method 1: Install the alerts by importing a JSON file:
+### Method 1: Importing a JSON file:
 
 1. Download a[ JSON file](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/blob/main/monitor_packages/kubernetes/kubernetes.json) that describes the monitors.
     1. The [JSON](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/blob/main/monitor_packages/Kafka/Kafka_Alerts.json) contains the alerts that are based on Sumo Logic searches that do not have any scope filters and therefore will be applicable to all Kafka clusters, the data for which has been collected via the instructions in the previous sections.  However, if you would like to restrict these alerts to specific clusters or environments, update the JSON file by replacing the text `'messaging_system=kafka `with `'<Your Custom Filter>`.  
@@ -480,16 +475,13 @@ Sumo Logic has provided out-of-the-box alerts available through [Sumo Logic moni
 1. Go to Manage Data > Alerts > Monitors.
 2. Click **Add**:
 
-
-
 1. Click Import to import monitors from the JSON above.
 
 
-30
 The monitors are disabled by default. Once you have installed the alerts using this method, navigate to the Kafka folder under Monitors to configure them. See [this](/docs/alerts/monitors/index.md) document to enable monitors., To send notifications to teams or connections please see the instructions detailed in Step 4 of this [document](/docs/alerts/monitors#Add_a_monitor).
 
 
-### Method 2: Install the alerts using a Terraform script
+### Method 2: Using a Terraform script
 
 **Step 1: Generate a Sumo Logic access key and ID**
 
@@ -501,7 +493,7 @@ Generate an access key and access ID for a user that has the Manage Monitors rol
 
 The alerts package is available in the Sumo Logic github[ repository](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/tree/main/monitor_packages/Kafka). You can either download it through the “git clone” command or as a zip file.
 
-**Step 4: Alert Configuratio **
+**Step 4: Alert Configuration**
 
 After the package has been extracted, navigate to the package directory `terraform-sumologic-sumo-logic-monitor/monitor_packages/Kafka`
 
@@ -573,7 +565,7 @@ email_notifications = [
 2. Run terraform plan to view the monitors which will be created/modified by Terraform.
 3. Run terraform apply.
 
-Step 7: Post Installation
+**Step 7: Post Installation**
 
 If you haven’t enabled alerts and/or configured notifications through the Terraform procedure outlined above, we highly recommend enabling alerts of interest and configuring each enabled alert to send notifications to other people or services. This is detailed in Step 4 of[ this document](/docs/alerts/monitors#Add_a_monitor).
 
@@ -584,28 +576,18 @@ This section demonstrates how to install the Kafka App.
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
-
-
 1. From the **App Catalog**, search for and select the app**.**
 2. Select the version of the service you're using and click **Add to Library**.
 
-
-36
 Version selection is applicable only to a few apps currently. For more information, see the[ Install the Apps from the Library.](/docs/get-started/library/install-apps)
 
-
-
-1. To install the app, complete the following fields.
+3. To install the app, complete the following fields.
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
     2. **Data Source.**
         * Choose **Enter a Custom Data Filter**, and enter a custom Kafka cluster filter. Examples:
-            1. For all Kafka clusters \
-`messaging_cluster=*`
-            2. For a specific cluster: \
-`messaging_cluster=Kafka.dev.01`. 
-            3. Clusters within a specific environment: \
-`messaging_cluster=Kafka-1 and environment=prod`  \
-(This assumes you have set the optional environment tag while configuring collection)
+            1. For all Kafka clusters `messaging_cluster=*`
+            2. For a specific cluster: `messaging_cluster=Kafka.dev.01`. 
+            3. Clusters within a specific environment: `messaging_cluster=Kafka-1 and environment=prod` (This assumes you have set the optional environment tag while configuring collection)
     3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
     4. Click **Add to Library**.
 
@@ -616,12 +598,12 @@ Panels will start to fill automatically. It's important to note that each panel 
 
 ## Viewing the Kafka Dashboards
 
-#### Filters with Template Variables
+### Filters with Template Variables
 
 Template variables provide dynamic dashboards that rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you can view dynamic changes to the data for a fast resolution to the root cause. For more information, see the Filter with template variables help page.
 
 
-#### Kafka - Cluster Overview
+### Kafka - Cluster Overview
 
 The **Kafka - Cluster Overview** dashboard gives you an at-a-glance view of your Kafka deployment across brokers, controllers, topics, partitions and zookeepers.
 
@@ -633,7 +615,7 @@ Use this dashboard to:
 <img src={useBaseUrl('img/integrations/containers-orchestration/kafka-cluster-overview.png')} alt="Kafka dashboards" />
 
 
-#### Kafka - Outlier Analysis
+### Kafka - Outlier Analysis
 
 The **Kafka - Outlier Analysis** dashboard helps you identify outliers for key metrics across your Kafka clusters.
 
@@ -643,7 +625,7 @@ Use this dashboard to:
 <img src={useBaseUrl('img/integrations/containers-orchestration/Kafka-Outlier-Analysis.png')} alt="Kafka dashboards" />
 
 
-#### Kafka - Replication
+### Kafka - Replication
 
 The Kafka - Replication dashboard helps you understand the state of replicas in your Kafka clusters.
 
@@ -659,7 +641,7 @@ Use this dashboard to monitor the following key metrics:
 <img src={useBaseUrl('img/integrations/containers-orchestration/Kafka-Replication.png')} alt="Kafka dashboards" />
 
 
-#### Kafka - Zookeeper
+### Kafka - Zookeeper
 
 The **Kafka -Zookeeper** dashboard provides an at-a-glance view of the state of your partitions, active controllers, leaders, throughput and network across Kafka brokers and clusters.
 
@@ -673,7 +655,7 @@ Use this dashboard to monitor key Zookeeper metrics such as:
 
 <img src={useBaseUrl('img/integrations/containers-orchestration/Kafka-Zookeeper.png')} alt="Kafka dashboards" />
 
-#### Kafka - Broker
+### Kafka - Broker
 
 The Kafka - Broker dashboard provides an at-a-glance view of the state of your partitions, active controllers, leaders, throughput, and network across Kafka brokers and clusters.
 
@@ -686,7 +668,7 @@ Use this dashboard to:
 <img src={useBaseUrl('img/integrations/containers-orchestration/Kafka-Broker.png')} alt="Kafka dashboards" />
 
 
-#### Kafka - Failures and Delayed Operations
+### Kafka - Failures and Delayed Operations
 
 The **Kafka - Failures and Delayed Operations **dashboard gives you insight into all failures and delayed operations associated with your Kafka clusters.
 
@@ -703,7 +685,7 @@ Use this dashboard to:
 <img src={useBaseUrl('img/integrations/containers-orchestration/Kafka-Failures-Delayed-Operations.png')} alt="Kafka dashboards" />
 
 
-#### Kafka - Request-Response Times
+### Kafka - Request-Response Times
 
 The **Kafka - Request-Response** **Times** dashboard helps you get insight into key request and response latencies of your Kafka cluster.
 

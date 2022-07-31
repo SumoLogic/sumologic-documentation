@@ -14,25 +14,20 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 The Sumo Logic Amazon RDS app dashboards provide visibility into the performance and operations of your Amazon Relational Database Service (RDS). Preconfigured dashboards allow you to monitor critical metrics of your RDS cluster including  CPU, memory, storage, network transmits and receive throughput, read and write operations, database connection count, disk queue depth, and more. Audit activity dashboards help you monitor activities performed on your RDS infrastructure.
 
 
-
-## Collecting Logs and Metrics for the Amazon RDS App
-
-### Log and Metrics Types  
+## Log and Metrics Types  
 
 The Amazon RDS app uses the following logs and metrics:
-
 * [RDS CloudWatch Instance Level Metrics](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-metrics.html#rds-cw-metrics-instance), [RDS CloudWatch Aurora Metrics](https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.AuroraMySQL.Monitoring.Metrics.html), and [Amazon CloudWatch metrics for Performance Insights](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.Cloudwatch.html).
 * [Amazon RDS operations using AWS CloudTrail](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/logging-using-cloudtrail.html)
 
+## Collecting Logs and Metrics for the Amazon RDS App
 
 Sumo Logic supports collecting metrics using two source types
 * Configure an [AWS Kinesis Firehose for Metrics Source](/docs/send-data/Sources/sources-hosted-collectors/Amazon-Web-Services/aws-kinesis-firehose-metrics-source) (Recommended); or
 * Configure an [Amazon CloudWatch Source for Metrics](/docs/send-data/sources/sources-hosted-collectors/amazon-web-services/amazon-cloudwatch-source-metrics)
 
-
 Namespace for **Amazon RDS** Service is **AWS/RDS**.
-
-* ​​​**Metadata: **Add an **account** field to the source and assign it a value that is a friendly name/alias to your AWS account from which you are collecting metrics. This name will appear in the Sumo Logic Explorer View. Metrics can be queried via the “account field”.
+* ​​​**Metadata:** Add an **account** field to the source and assign it a value that is a friendly name/alias to your AWS account from which you are collecting metrics. This name will appear in the Sumo Logic Explorer View. Metrics can be queried via the “account field”.
 
 
 ### Collect Amazon RDS CloudTrail Logs
@@ -63,18 +58,13 @@ Login to Sumo Logic, go to **Manage Data** > **Logs** > **Fields**. Search for t
 
 Create a Field Extraction Rule for CloudTrail Logs. Learn how to create a Field Extraction Rule [here](/docs/manage/field-extractions/create-field-extraction-rule.md).
 
-
-```
+```sql
 Rule Name: AwsObservabilityRdsCloudTrailLogsFER
 Applied at: Ingest Time
 Scope (Specific Data): account=* eventname eventsource "rds.amazonaws.com"
 ```
 
-
-**Parse Expression**:
-
-
-```sql
+```sql title="Parse Expression"
 | json "eventSource", "awsRegion", "requestParameters", "responseElements", "recipientAccountId" as eventSource, region, requestParameters, responseElements, accountid nodrop
 | where eventSource = "rds.amazonaws.com"
 | "aws/rds" as namespace
@@ -95,7 +85,7 @@ Scope (Specific Data): account=* eventname eventsource "rds.amazonaws.com"
 In case you have a centralized collection of cloudtrail logs and are ingesting them from all accounts into a single Sumo Logic cloudtrail log source, create the following Field Extraction Rule to map a proper AWS account(s) friendly name/alias. Create it if not already present / update it as required.
 
 
-```
+```sql
 Rule Name: AWS Accounts
 Applied at: Ingest Time
 Scope (Specific Data): _sourceCategory=aws/observability/cloudtrail/logs
@@ -122,7 +112,7 @@ Enter a parse expression to create an “account” field that maps to the alias
 
 Create the following two Metric Rules for the aws/rds namespace if not already created. Learn how to create a Metric Rule [here](/docs/metrics/metric-rules-editor/create-metric-rules.md).
 
-```bash title="Rule 1"
+```sql title="Rule 1"
 Rule name: AwsObservabilityRDSClusterMetricsEntityRule
 Metric match expression: Namespace=AWS/RDS DBClusterIdentifier=*
 Variable name: dbidentifier
@@ -130,16 +120,13 @@ Tag sequence: $DBClusterIdentifier._1
 Save it
 ```
 
-
-```bash title="Rule 2"
+```sql title="Rule 2"
 Rule name: AwsObservabilityRDSInstanceMetricsEntityRule
 Metric match expression: Namespace=AWS/RDS DBInstanceIdentifier=*
 Variable name: dbidentifier
 Tag sequence: $DBInstanceIdentifier._1
 Save it
 ```
-
-
 
 
 ### Sample Log Message
@@ -256,7 +243,9 @@ Save it
 ### Sample Queries
 
 ```sql title="Average Database Connections in Use (Metric based)"
-Namespace=aws/rds metric=DatabaseConnections statistic=average account=* region=* dbidentifier=* | avg by account, region, dbidentifier
+Namespace=aws/rds metric=DatabaseConnections \
+statistic=average account=* region=* dbidentifier=* \
+| avg by account, region, dbidentifier
 ```
 
 ```sql title="Top 10 Error Codes (CloudTrail Log based)"

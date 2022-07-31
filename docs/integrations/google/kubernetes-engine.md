@@ -44,7 +44,7 @@ By default, GKE clusters are natively integrated with Cloud Logging (and Monitor
 
 ## Collecting Logs and Metrics for GKE - Control Plane App
 
-This page has instructions for configuring log and metric collection for the Sumo App for GKE - Control Plane.
+This section has instructions for configuring log and metric collection for the Sumo App for GKE - Control Plane.
 
 After you install the Sumo Logic Kubernetes App, you configure a hosted collector, HTTP source, and establish Kubernetes collection. You will establish the key components for [Google Cloud Platform (GCP) services](https://cloud.google.com/docs/overview/cloud-platform-services) collection which include Google Logging, and Google Cloud Pub/Sub. Finally, you’ll configure metrics collection.
 

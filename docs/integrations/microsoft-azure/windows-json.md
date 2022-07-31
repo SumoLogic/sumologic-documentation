@@ -14,7 +14,7 @@ The Windows JSON App provides insight into your Windows system's operation and e
 
 ## Collect Logs for the Windows JSON App
 
-This page provides instructions on configuring log collection for the Windows JSON App so that logs are collected from the Microsoft Windows Event Log and ingested into Sumo Logic.
+This section provides instructions on configuring log collection for the Windows JSON App so that logs are collected from the Microsoft Windows Event Log and ingested into Sumo Logic.
 
 ### Log Types
 

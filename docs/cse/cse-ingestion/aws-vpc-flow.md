@@ -5,7 +5,7 @@ sidebar_label: AWS VPC Flow
 description: tk
 ---
 
-This page has instructions for collecting AWS VPC Flow log messages from AWS S3 and sending them to Sumo Logic to be ingested by CSE.
+This section has instructions for collecting AWS VPC Flow log messages from AWS S3 and sending them to Sumo Logic to be ingested by CSE.
 
 Sumo Logic CSE supports the default AWS VPC Flow log format which includes all version 2 fields. See [AWS VPC flow log records documentation](https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs.tml#flow-logs-fields) for more details.
 

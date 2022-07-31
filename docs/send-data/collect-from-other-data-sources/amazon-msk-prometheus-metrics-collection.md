@@ -4,7 +4,7 @@ id: amazon-msk-prometheus-metrics-collection
 
 # Amazon MSK Prometheus metrics collection
 
-**Amazon Managed Streaming for Apache Kafka (Amazon MSK)** Open Monitoring, exposes Kafka metrics to third-party sources to monitor and troubleshoot MSK clusters. This page provides instructions for configuring metrics collection for Amazon MSK.
+**Amazon Managed Streaming for Apache Kafka (Amazon MSK)** Open Monitoring, exposes Kafka metrics to third-party sources to monitor and troubleshoot MSK clusters. This section provides instructions for configuring metrics collection for Amazon MSK.
 
 ## Collecting Amazon MSK metrics
 

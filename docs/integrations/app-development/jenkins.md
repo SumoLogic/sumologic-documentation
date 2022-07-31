@@ -32,13 +32,7 @@ The Jenkins App uses the following Log Types:
 
 ## Collecting Logs and Metrics for Jenkins
 
-This section provides instructions for configuring log and metric collection for the Sumo Logic App for Jenkins, which includes the following tasks:
-
-1. Configure a Collector
-2. Configure HTTP Logs and Metric source
-3. Install Jenkins Plugin
-4. Configure Jenkins Plugin
-5. Optional - Advanced Configuration
+This section provides instructions for configuring log and metric collection for the Sumo Logic App for Jenkins.
 
 Sumo Logic Jenkins plugin is compatible with Jenkins version 2.60.1 and above. For more information refer [Sumo Logic Jenkins Plugin WIKI](https://plugins.jenkins.io/sumologic-publisher) page.
 
@@ -62,7 +56,7 @@ You must have Admin privileges to perform any of the following installation proc
 * [Manually installing the Jenkins plugin](#Manually_installing_the_Jenkins_plugin)—use this method if there's a restriction on installing the plugin directly through the Jenkins plugin update center.
 
 
-### Updating the Jenkins plugin
+#### Updating the Jenkins plugin
 
 This section shows you how to update the version of the Jenkins plugin you have running on your system.
 
@@ -173,8 +167,8 @@ SumoPipelineLogCollection {
 
 ```
 options {
-SumoPipelineLogCollection()
-}
+  SumoPipelineLogCollection()
+  }
 ```
 
 
@@ -439,7 +433,7 @@ _sourceCategory=Labs/Jenkins/Sourabh/Logs In_Progress
 
 
 
-## Install the Jenkins App
+## Installing the Jenkins App
 
 This section provides instructions for installing the Sumo Logic App for Jenkins, as well as examples and descriptions for each of the app dashboards.
 

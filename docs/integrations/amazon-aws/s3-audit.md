@@ -1,7 +1,7 @@
 ---
 id: s3-audit
 title: Sumo Logic App for Amazon S3 Audit
-sidebar_label: Amazon S3 Audit App
+sidebar_label: Amazon S3 Audit
 description: Provides a simple web services interface that can be used to store and retrieve any amount of data from anywhere on the web.
 ---
 
@@ -12,7 +12,6 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 Amazon Simple Storage Service (S3) provides a simple web services interface that can be used to store and retrieve any amount of data from anywhere on the web. The Sumo Logic App for Amazon S3 Audit presents details from access logs that contain information about the request type, the average response time, and the inbound and outbound data volume.
 
 Our new app install flow is now in Beta. It is only enabled for certain customers while we gather Beta customer feedback. If you can see the Add Integration button, follow the "Before you begin" section in the "Collect Logs" help page and then use the in-product instructions in Sumo Logic to set up the app.
-
 
 
 ## Collect Logs for the Amazon S3 Audit App
@@ -26,9 +25,7 @@ Once you begin uploading data, your daily data usage will increase. It's a good 
 
 ### Log Types
 
-Amazon S3 Audit uses Server Access Logs (activity logs). For more information on the log format, see:
-
-[http://docs.aws.amazon.com/AmazonS3/latest/dev/LogFormat.html](http://docs.aws.amazon.com/AmazonS3/latest/dev/LogFormat.html)
+Amazon S3 Audit uses Server Access Logs (activity logs). For more information on the log format, see: [http://docs.aws.amazon.com/AmazonS3/latest/dev/LogFormat.html](http://docs.aws.amazon.com/AmazonS3/latest/dev/LogFormat.html).
 
 
 ### Before you begin
@@ -67,9 +64,6 @@ When you overwrite a file in S3, the file object gets a new version ID and as a 
 
 Sumo’s S3 integration combines scan-based discovery and event based discovery into a unified integration that gives you the ability to maintain a low-latency integration for new content and provide assurances that no data was missed or dropped. When you enable event based notifications S3 will automatically publish new files to Amazon Simple Notification Service (SNS) topics which Sumo Logic can be subscribed. This notifies Sumo Logic immediately when new files are added to your S3 bucket so we can collect it. For more information about SNS, see the [Amazon SNS product](https://aws.amazon.com/sns/) detail page.
 
-
-
-
 Enabling event based notifications is an S3 bucket-level operation that subscribes to an SNS topic. An SNS topic is an access point that Sumo Logic can dynamically subscribe to in order to receive event notifications. When creating a Source that collects from an S3 bucket Sumo assigns an endpoint URL to the Source. The URL is for you to use in the AWS subscription to the SNS topic so AWS notifies Sumo when there are new files. See [Configuring Amazon S3 Event Notifications](https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html) for more information.
 
 You can adjust the configuration of when and how AWS handles communication attempts with Sumo Logic. See [Setting Amazon SNS Delivery Retry Policies](https://docs.aws.amazon.com/sns/latest/dg/DeliveryPolicies.html) for details.
@@ -90,7 +84,6 @@ Selecting an AWS GovCloud region means your data will be leaving a FedRAMP-high 
 :::
 
 6. For **Bucket Name**, enter the exact name of your organization's S3 bucket. Be sure to double-check the name as it appears in AWS, for example:
-
 7. For **Path Expression**, enter the wildcard pattern that matches the S3 objects you'd like to collect. You can use **one **wildcard (*) in this string. Recursive path expressions use a single wildcard and do **NOT** use a leading forward slash. [See About Amazon Path Expressions](/docs/send-data/Sources/sources-hosted-collectors/Amazon-Web-Services/Amazon-Path-Expressions) for details.
 8. **Collection should begin.** Choose or enter how far back you'd like to begin collecting historical logs. You can either:
     * Choose a predefined value from dropdown list, ranging from "Now" to “72 hours ago” to “All Time”, or
@@ -117,7 +110,7 @@ Selecting an AWS GovCloud region means your data will be leaving a FedRAMP-high 
     2. Go to **Services >** **Simple Notification Service** and click **Create Topic**. Enter a **Topic name** and click **Create topic**. Copy the provided **Topic ARN**, you’ll need this for the next step. Make sure that the topic and the bucket are in the same region.
     3. Again go to **Services >** **Simple Notification Service** and click **Create Subscription**. Paste the **Topic ARN** from step 2 above. Select **HTTPS** as the protocol and enter the **Endpoint** URL provided while creating the S3 source in Sumo Logic. Click **Create subscription** and a confirmation request will be sent to Sumo Logic. The request will be automatically confirmed by Sumo Logic.
     4. Select the **Topic** created in step 2 and navigate to **Actions > Edit Topic Policy**. Use the following policy template, replace the `SNS-topic-ARN` and `bucket-name` placeholders in the `Resource` section of the JSON policy with your actual SNS topic ARN and S3 bucket name:
-    ```
+    ```json
     {
         "Version": "2008-10-17",
         "Statement": [{

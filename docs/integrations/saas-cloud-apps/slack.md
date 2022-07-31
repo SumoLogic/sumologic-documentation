@@ -103,7 +103,7 @@ Sumo Logic’s Slack collector enhances the logs by adding a few metadata fields
 
 ## Collect logs for the Slack App
 
-This page explains how to collect logs from Slack and ingest them into Sumo Logic for use with the Slack App predefined dashboards and searches.
+This section explains how to collect logs from Slack and ingest them into Sumo Logic for use with the Slack App predefined dashboards and searches.
 
 
 ### Collection overview
@@ -768,7 +768,7 @@ _sourceCategory=Labs/slack
 
 ## Installing the Slack App
 
-This page provides instructions on how to install the Slack App, as well as examples of each of the dashboards. The App's pre-configured searches and [Dashboards](#Dashboards) provide easy-to-access visual insights into your data.
+This section provides instructions on how to install the Slack App, as well as examples of each of the dashboards. The App's pre-configured searches and [Dashboards](#Dashboards) provide easy-to-access visual insights into your data.
 
 This section shows you how to install the Sumo Logic App for Slack.
 

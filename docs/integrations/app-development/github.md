@@ -11,18 +11,10 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Sumo Logic App for GitHub connects to your GitHub repository at the Organization or Repository level, and ingests GitHub events via a webhook. These events populate the pre-configured Dashboards to give you a complete overview of your GitHub’s branch, issues, pull requests, user activity, and security events.
 
-1
-
 The Sumo App for GitHub supports GitHub.com, not GitHub Enterprise.
 
 
-## Collect Logs for GitHub
-
-This procedure explains how to collect logs from GitHub.
-
-The Sumo Logic App for GitHub connects to your GitHub repository at the Organization or Repository level and ingests GitHub events via a webhook. These events populate the preconfigured dashboards to give you a complete overview of your GitHub’s branch, issues, pull requests, user activity, and security events.
-
-### Event Types
+## Event Types
 
 The Sumo Logic App for GitHub ingests GitHub events via a webhook. Sumo Logic ingests all events, but only uses the following events in the Dashboards:
 
@@ -40,18 +32,23 @@ For information on GitHub events, refer to [GitHub documentation](https://docs.g
 
 For troubleshooting, see the [GitHub Troubleshooting](#Troubleshooting) section.
 
-2
-
+:::tip
 If you're just getting started with GitHub Events, see the Sumo Logic DevOps blog, "[A Beginner's Guide to GitHub Events](https://www.sumologic.com/blog/a-beginners-guide-to-github-events/)."
+:::
 
 
-### Log Types
+## Log Types
 
 The Sumo Logic App for GitHub gathers statistics and events from the GitHub Remote API on each host.
 
-For an introduction to GitHub Events, see: _[A Beginner's Guide to GitHub Events](https://www.sumologic.com/blog/a-beginners-guide-to-github-events/)_.
-
 First, configure a Collector and Source in Sumo Logic, then configure a GitHub Webhook using the HTTP Source Address created in Sumo Logic.
+
+
+## Collecting Logs for GitHub
+
+This procedure explains how to collect logs from GitHub.
+
+The Sumo Logic App for GitHub connects to your GitHub repository at the Organization or Repository level and ingests GitHub events via a webhook. These events populate the preconfigured dashboards to give you a complete overview of your GitHub’s branch, issues, pull requests, user activity, and security events.
 
 
 ### Configure Hosted Collector to Receive GitHub Events
@@ -65,11 +62,6 @@ In this step, you create a Hosted Collector to receive Webhook Events from Githu
         * **Field Name. **_convertHeadersToFields
         * **Value. **true
     * Click **Save** and make note of the HTTP address for the Source. You will supply it when you configure the GitHub Webhook in the next section.
-
-
-3
-
-
 
 ### Configure a GitHub Webhook
 
@@ -100,16 +92,13 @@ Sumo Logic needs to understand the event type for incoming events. To enable thi
 2. Add Field ‎**x-github-event**‎.
 
 
-4
-
-
 
 ### Sample Log Messages
 
 GitHub sends all fields in the payload, documented according to [Event Type](https://developer.github.com/v3/activity/events/types/).
 
 
-```
+```json
 {
   "action": "opened",
   "issue": {
@@ -137,12 +126,9 @@ GitHub sends all fields in the payload, documented according to [Event Type](htt
 
 
 
-### Query Samples
+### Sample Queries
 
-**Commits Over Time**
-
-
-```
+```sql title="Commits Over Time"
 "commits" "https://api.github.com/repos"
 | json "commits[*].id[*]", "repository.name", "pusher.name" as commit_size, repo_name, user
 | where commit_size != "[]"
@@ -152,11 +138,7 @@ GitHub sends all fields in the payload, documented according to [Event Type](htt
 | count by _timeslice
 ```
 
-
-**Members Added or Removed**
-
-
-```
+```sql title="Members Added or Removed"
 | json "action", "scope", "member.login", "member.id", "member.type", "team.name", "team.permission", "organization.login" as action, scope, member_name, member_id, member_type, team_name, team_permission, org_login
 | count by member_id, action, team_name, org_login, member_name, team_permission
 | order by action, member_id
@@ -164,19 +146,14 @@ GitHub sends all fields in the payload, documented according to [Event Type](htt
 ```
 
 
-**Total Number Open Issues**
-
-
-```
+```sql title="Total Number Open Issues"
 | json "action", "issue.id", "issue.number", "issue.title" , "issue.state", "issue.created_at", "issue.updated_at", "issue.closed_at", "issue.body", "issue.user.login", "issue.url", "repository.name", "repository.open_issues_count" as axn, issue_ID, issue_num, issue_title, state, createdAt, updatedAt, closedAt, body, user, url, repo_name, repoOpenIssueCnt
 | withtime repoOpenIssueCnt
 | most_recent (repoopenissuecnt_withtime) as number_issues by repo_name
 | number (number_issues)
 ```
 
-
-
-## Install the GitHub App
+## Installing the GitHub App
 
 Now that you have set up collector GitHub, install the Sumo Logic App for GitHub to use the preconfigured searches and [dashboards](#Dashboards) to analyze your data.
 

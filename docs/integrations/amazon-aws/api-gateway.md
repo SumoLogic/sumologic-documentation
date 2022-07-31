@@ -15,8 +15,7 @@ The Sumo Logic AWS API Gateway App provides insights into API Gateway tasks whil
 
 ### Log and Metric Types  
 
-The AWS API Gateway app uses the following logs and metrics
-
+The AWS API Gateway app uses the following logs and metrics:
 * [Amazon API Gateway metrics](https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-metrics-and-dimensions.html)
 * [CloudTrail API Gateway Data Event](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-data-events)
 
@@ -41,7 +40,7 @@ To your Hosted Collector, add an [AWS CloudTrail Source](/docs/send-data/sources
 2. **Description**. Enter an optional description.
 3. **S3 Region**. Select the Amazon Region for your** API Gateway** S3 bucket.
 4. **Bucket Name**. Enter the exact name of your **API Gateway** S3 bucket.
-5.**Path Expression**. Enter the string that matches the S3 objects you'd like to collect. You can use a wildcard (*) in this string. (DO NOT use a leading forward slash. See [Amazon Path Expressions](/docs/send-data/Sources/sources-hosted-collectors/Amazon-Web-Services/Amazon-Path-Expressions).)
+5. **Path Expression**. Enter the string that matches the S3 objects you'd like to collect. You can use a wildcard (*) in this string. (DO NOT use a leading forward slash. See [Amazon Path Expressions](/docs/send-data/Sources/sources-hosted-collectors/Amazon-Web-Services/Amazon-Path-Expressions).)
 :::note
 The S3 bucket name is not part of the path. Don’t include the bucket name when you are setting the Path Expression.
 :::
@@ -66,7 +65,7 @@ Login to Sumo Logic, go to **Manage Data** > **Logs** > **Fields**. Search for t
 Create Field Extraction Rule for CloudTrail Logs. Learn how to create Field Extraction Rule [here](/docs/manage/field-extractions/create-field-extraction-rule.md).
 
 
-```
+```sql
 Rule Name: AwsObservabilityApiGatewayCloudTrailLogsFER
 Applied at: Ingest Time
 Scope (Specific Data):
@@ -85,15 +84,14 @@ Parse Expression:
 ### Centralized AWS CloudTrail Log Collection
 
 In case you have a centralized collection of cloudtrail logs and are ingesting them from all accounts into a single Sumo Logic cloudtrail log source, create following Field Extraction Rule to map proper AWS account(s) friendly name/alias. Create it if not already present / update it as required.
-```
+```sql
 Rule Name: AWS Accounts
 Applied at: Ingest Time
 Scope (Specific Data):
 _sourceCategory=aws/observability/cloudtrail/logs
 ```
 
-
-**Parse Expression**:
+#### Parse Expression
 
 Enter a parse expression to create an `account` field that maps to the alias you set for each sub account. For example, if you used the `“dev”` alias for an AWS account with ID `"528560886094"` and the `“prod”` alias for an AWS account with ID `"567680881046"`, your parse expression would look like this:
 
@@ -110,16 +108,42 @@ Enter a parse expression to create an `account` field that maps to the alias you
 ### Sample CloudTrail Log Message
 
 ```json
-{"eventVersion":"1.05","userIdentity":{"type":"IAMUser","principalId":"A12445W32RZN24HABCD12",
-"arn":"arn:aws:iam::123408221234:user/bob","accountId":"123408221234","accessKeyId":
-"ASIAZ123456Y3IMWK7X5","userName":"bob","sessionContext":{"sessionIssuer":{},"webIdFederationData":
-{},"attributes":{"mfaAuthenticated":"true","creationDate":"2020-02-17T08:08:01Z"}},"invokedBy":
-"signin.amazonaws.com"},"eventTime":"2020-02-17T08:08:01Z","eventSource":"apigateway.amazonaws.com",
-"eventName":"GetRestApi","awsRegion":"us-east-1","sourceIPAddress":"149.236.17.11","userAgent":
-"signin.amazonaws.com","requestParameters":{"restApiId":"w1234nsgjxf","template":false},
-"responseElements":null,"requestID":"1234169e-e70a-44a1-a691-3cd3f857092a","eventID":
-"051572b0-83ef-49a3-82f6-bbef1ac8c488","readOnly":true,"eventType":"AwsApiCall","recipientAccountId":
-"123408221234"}
+{
+  "eventVersion": "1.05",
+  "userIdentity": {
+    "type": "IAMUser",
+    "principalId": "A12445W32RZN24HABCD12",
+    "arn": "arn:aws:iam::123408221234:user/bob",
+    "accountId": "123408221234",
+    "accessKeyId": "ASIAZ123456Y3IMWK7X5",
+    "userName": "bob",
+    "sessionContext": {
+      "sessionIssuer": {},
+      "webIdFederationData": {},
+      "attributes": {
+        "mfaAuthenticated": "true",
+        "creationDate": "2020-02-17T08:08:01Z"
+      }
+    },
+    "invokedBy": "signin.amazonaws.com"
+  },
+  "eventTime": "2020-02-17T08:08:01Z",
+  "eventSource": "apigateway.amazonaws.com",
+  "eventName": "GetRestApi",
+  "awsRegion": "us-east-1",
+  "sourceIPAddress": "149.236.17.11",
+  "userAgent": "signin.amazonaws.com",
+  "requestParameters": {
+    "restApiId": "w1234nsgjxf",
+    "template": false
+  },
+  "responseElements": null,
+  "requestID": "1234169e-e70a-44a1-a691-3cd3f857092a",
+  "eventID": "051572b0-83ef-49a3-82f6-bbef1ac8c488",
+  "readOnly": true,
+  "eventType": "AwsApiCall",
+  "recipientAccountId": "123408221234"
+}
 ```
 
 ### Sample Queries

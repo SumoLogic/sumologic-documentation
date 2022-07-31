@@ -31,7 +31,7 @@ For more information on log types, see these topics in Cisco Meraki documentatio
 
 ## Collecting logs for the Cisco Meraki App
 
-This page provides instructions for configuring log collection for the Cisco Meraki App, as well as log and query examples.
+This section provides instructions for configuring log collection for the Cisco Meraki App, as well as log and query examples.
 
 
 ### Configure Log Collection

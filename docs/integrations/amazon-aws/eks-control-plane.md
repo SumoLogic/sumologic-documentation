@@ -44,7 +44,7 @@ The following are the minimum supported requirements for this app:
 
 ## Collect Logs and Metrics for the Amazon EKS - Control Plane App
 
-This page has instructions for collecting logs and metrics for the Sumo App for Amazon EKS - Control Plane.
+This section has instructions for collecting logs and metrics for the Sumo App for Amazon EKS - Control Plane.
 
 ### Log Types   
 

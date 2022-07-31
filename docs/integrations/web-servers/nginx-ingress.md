@@ -146,7 +146,7 @@ if (!isEmpty(pod_labels_environment), pod_labels_environment, "") as environment
 
 ## Installing the Nginx Ingress App, Alerts, and View the Dashboards
 
-This page provides instructions for installing the Nginx Ingress App, as well as examples of each of the App dashboards. These instructions assume you have already set up the collection as described in the [Collect Logs and Metrics for the Nginx](/docs/integrations/web-servers/Nginx-Legacy) Ingress App page.
+This section provides instructions for installing the Nginx Ingress App, as well as examples of each of the App dashboards. These instructions assume you have already set up the collection as described in the [Collect Logs and Metrics for the Nginx](/docs/integrations/web-servers/Nginx-Legacy) Ingress App page.
 
 
 ## Installing Nginx Ingress Monitors

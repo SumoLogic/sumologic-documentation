@@ -46,7 +46,7 @@ TLS 1.0 has been disabled in this organization. Please use TLS 1.1 or higher whe
 
 ## Collect Logs for the Salesforce App
 
-This page provides instructions for setting up event collection from Salesforce for analysis in Sumo Logic.
+This section provides instructions for setting up event collection from Salesforce for analysis in Sumo Logic.
 
 ### Requirements and process overview
 

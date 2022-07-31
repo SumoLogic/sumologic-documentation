@@ -14,7 +14,7 @@ The Windows Legacy App provides insight into your Windows system's operation and
 
 ## Collecting Logs
 
-This page provides instructions on configuring log collection for the Windows Legacy App, so that logs are collected from the Microsoft Windows Event Log and ingested into Sumo Logic. A sample log message and example query are also provided.
+This section provides instructions on configuring log collection for the Windows Legacy App, so that logs are collected from the Microsoft Windows Event Log and ingested into Sumo Logic. A sample log message and example query are also provided.
 
 [Windows Performance](/docs/integrations/microsoft-azure/performance) is considered a separate data type.
 

@@ -20,7 +20,7 @@ To install the Sumo Logic App for Azure Web Apps, you must sign up for a Sumo Lo
 ## Collect Logs for Azure Web Apps
 
 
-This page has instructions for configuring a pipeline for shipping Azure Web Apps logs from [Azure Monitor](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-get-started) to an Event Hub, on to an Azure Function, and finally to an HTTP source on a hosted collector in Sumo Logic. Click a link to jump to a topic:
+This section has instructions for configuring a pipeline for shipping Azure Web Apps logs from [Azure Monitor](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-get-started) to an Event Hub, on to an Azure Function, and finally to an HTTP source on a hosted collector in Sumo Logic. Click a link to jump to a topic:
 
 * [Solution Overview](#Solution_Overview)
 * [Configure an HTTP source](#Step_1:_Configure_an_HTTP_source)
@@ -173,7 +173,7 @@ _sourceCategory=Azure/Web-app
 
 ## Installing the Azure Web Apps App
 
-This page provides instructions on how to install the Azure Web Apps App, and shows examples of each of the preconfigured [dashboards](#Dashboards) you can use to analyze your data.
+This section provides instructions on how to install the Azure Web Apps App, and shows examples of each of the preconfigured [dashboards](#Dashboards) you can use to analyze your data.
 
 To install the app:
 

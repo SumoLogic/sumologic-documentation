@@ -5,7 +5,7 @@ sidebar_label: Install App and Dashboards
 description: Instructions for installing the Sumo Logic App for Global Intelligence for Tomcat and descriptions of each of the app dashboards.
 ---
 
-This page has instructions for installing the Sumo Logic App for Global Intelligence for Apache Tomcat and descriptions of each of the app dashboards. 
+This section has instructions for installing the Sumo Logic App for Global Intelligence for Apache Tomcat and descriptions of each of the app dashboards. 
 
 ## Dashboard Filters  
 

@@ -11,7 +11,7 @@ The Palo Alto Firewall app helps you analyze traffic and gain a better understan
 
 ## Collect Logs
 
-This page provides instructions for configuring log collection for the Sumo Logic App for Palo Alto Firewall 10, as well as sample log messages and a query example from an app dashboard.
+This section provides instructions for configuring log collection for the Sumo Logic App for Palo Alto Firewall 10, as well as sample log messages and a query example from an app dashboard.
 
 
 ### Collection process overview

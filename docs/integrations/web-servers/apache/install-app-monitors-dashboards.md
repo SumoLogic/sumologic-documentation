@@ -7,7 +7,7 @@ description: The Sumo Logic Application for Apache consists of predefined search
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-This page provides instructions for installing the Sumo Logic Monitors for Apache, the app and descriptions of each of the app dashboards. These instructions assume you have already set up collection as described in the [Collect Logs and Metrics for Apache](/docs/integrations/web-servers/apache/collect-logs-metrics) page.
+This section provides instructions for installing the Sumo Logic Monitors for Apache, the app and descriptions of each of the app dashboards. These instructions assume you have already set up collection as described in the [Collect Logs and Metrics for Apache](/docs/integrations/web-servers/apache/collect-logs-metrics) page.
 
 
 ## Install Apache Monitors

@@ -18,7 +18,7 @@ The Docker EE App works in conjunction with the [Docker ULM App](/docs/integrati
 
 ## Collect logs and metrics for Docker EE
 
-This page has instructions for collecting logs for the Sumo App for Docker EE. This app works in conjunction with the Docker ULM App, and the first step is to configure collection for Docker ULM App. Then, since Docker EE uses Kubernetes for orchestration, you install and deploy the Sumo Logic Fluentd plugin for collection of Docker EE specific components.
+This section has instructions for collecting logs for the Sumo App for Docker EE. This app works in conjunction with the Docker ULM App, and the first step is to configure collection for Docker ULM App. Then, since Docker EE uses Kubernetes for orchestration, you install and deploy the Sumo Logic Fluentd plugin for collection of Docker EE specific components.
 
 
 ### Step 1. Collect logs and metrics for the Docker ULM App

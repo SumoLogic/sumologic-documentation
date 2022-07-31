@@ -35,7 +35,7 @@ The Palo Alto Networks 9 App uses the following log types:
 
 ## Collect logs for the Palo Alto Networks 9 App
 
-This page provides instructions for configuring log collection for the Sumo Logic App for Palo Alto Networks 9, as well as sample log messages and a query example from a Palo Alto Networks App predefined dashboard.
+This section provides instructions for configuring log collection for the Sumo Logic App for Palo Alto Networks 9, as well as sample log messages and a query example from a Palo Alto Networks App predefined dashboard.
 
 
 ### Collection process overview
@@ -184,7 +184,7 @@ _sourceCategory=Loggen/PAN* ",THREAT," !(",file," or ",url,")
 
 ## Install the Palo Alto Networks 9 App
 
-This page provides instructions for installing the Palo Alto Networks 9 App, along with examples of each of the dashboards that provide visual insights into your data.
+This section provides instructions for installing the Palo Alto Networks 9 App, along with examples of each of the dashboards that provide visual insights into your data.
 
 This app supports PAN-OS v9.
 

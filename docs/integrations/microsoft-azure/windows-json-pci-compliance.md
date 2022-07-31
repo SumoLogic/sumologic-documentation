@@ -15,7 +15,7 @@ This guide helps you set up Sumo Logic Collectors, and install the PCI Complianc
 ## Collecting Logs
 
 
-This page provides instructions for configuring log collection for the PCI Compliance for Windows JSON App.
+This section provides instructions for configuring log collection for the PCI Compliance for Windows JSON App.
 
 
 ### Log Types

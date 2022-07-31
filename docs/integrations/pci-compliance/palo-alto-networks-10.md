@@ -37,7 +37,7 @@ The Sumo Logic App for Payment Card Industry (PCI) Compliance for Palo Alto Netw
 
 ## Collect Logs for PCI Compliance for Palo Alto Networks 10
 
-This page provides instructions for configuring log collection for the Sumo Logic app for PCI Compliance for Palo Alto Networks 10, as well as sample log messages and a query example from an app dashboard.
+This section provides instructions for configuring log collection for the Sumo Logic app for PCI Compliance for Palo Alto Networks 10, as well as sample log messages and a query example from an app dashboard.
 
 
 ### Collection process overview

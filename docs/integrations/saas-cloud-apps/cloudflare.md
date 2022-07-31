@@ -95,7 +95,7 @@ client_request_uri, origin_response_status, edge_response_status, origin_ip, cli
 
 This application has been developed and is supported by Cloudflare. In case of technical questions, please review the technical [documentation](https://developers.cloudflare.com/logs/) for Cloudflare logs or email analytics@cloudflare.com.
 
-This page has instructions for installing the Cloudflare App for Sumo and descriptions of each of the dashboards.
+This section has instructions for installing the Cloudflare App for Sumo and descriptions of each of the dashboards.
 
 Now that you have set up log and metric collection, you can install the Cloudflare App, and use its pre-configured searches and [dashboards](#Dashboards).
 

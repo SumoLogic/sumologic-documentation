@@ -13,7 +13,7 @@ This guide helps you set up Sumo Logic Collectors, and install the PCI Complianc
 
 ## Collecting Logs
 
-This page provides instructions for configuring log collection for the PCI Compliance for Windows Legacy App.
+This section provides instructions for configuring log collection for the PCI Compliance for Windows Legacy App.
 
 
 ### Log Types
@@ -76,12 +76,12 @@ _sourceCategory=OS/Windows/Events "Policy Change"
 | where category matches "*Policy Change*"
 ```
 
-This page provides instructions for configuring log collection for the PCI Compliance for Windows Legacy App.
+This section provides instructions for configuring log collection for the PCI Compliance for Windows Legacy App.
 
 
 ## Installing the PCI Compliance for Windows Legacy App
 
-This page provides instructions for installing the PCI Compliance for Windows Legacy App, along with examples of each of the App dashboards. The PCI Compliance for Windows Legacy App offers pre-built dashboards and queries to help you track your Windows system, user accounts, login activity, and Windows updates.
+This section provides instructions for installing the PCI Compliance for Windows Legacy App, along with examples of each of the App dashboards. The PCI Compliance for Windows Legacy App offers pre-built dashboards and queries to help you track your Windows system, user accounts, login activity, and Windows updates.
 
 Now that you have set up collection, install the Sumo Logic App for PCI Compliance for Windows Legacy App to use the pre-configured searches and [Dashboards](#Dashboards) that provide insight into your data.
 

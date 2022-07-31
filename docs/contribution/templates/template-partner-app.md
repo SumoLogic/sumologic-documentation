@@ -47,7 +47,7 @@ post query here
 Write the section heading and section to reflect what’s being collected: logs, metrics, or logs and metrics.
 :::
 
-This page has instructions for collecting logs for the Sumo App for "AppName".
+This section has instructions for collecting logs for the Sumo App for "AppName".
 
 ### Collection process overview
 Note: Include this section in doc if collection is not simple. Include a diagram, as appropriate. For an example, see Collection process for GCP services.  
@@ -64,7 +64,7 @@ Include a description and numbered list of steps. Copy, paste, and fill out for 
 ### Collection step n. Step Description
 
 ## Install the "AppName" App and View the Dashboards
-This page has instructions for installing the Sumo App for "AppName" and descriptions of each of the app dashboards.
+This section has instructions for installing the Sumo App for "AppName" and descriptions of each of the app dashboards.
 
 ## Install the Sumo Logic App
 Now that you have set up collection, install the Sumo Logic App for Salesforce to use the preconfigured searches and Dashboards that provide insight into your data.

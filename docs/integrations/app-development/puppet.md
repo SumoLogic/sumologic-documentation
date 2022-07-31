@@ -18,7 +18,7 @@ Puppet is a software configuration management tool. Puppet can provision infrast
 * Find out how often resources have changed, skipped, failed to update, or are out-of-sync.
 * Find out the root cause of issues by correlating puppet runs with metrics from other components in your infrastructure.
 
-#### Log types
+## Log types
 
 Sumo’s Puppet Logs source and Puppet Reports source use an installed collector to gather the following data from Puppet:
 
@@ -30,7 +30,7 @@ Sumo’s Puppet Logs source and Puppet Reports source use an installed collector
 
 ## Collect Logs for Puppet
 
-This page has instructions for collecting Puppet logs, reports, and events for the Sumo App for Puppet.
+This section has instructions for collecting Puppet logs, reports, and events for the Sumo App for Puppet.
 
 
 #### Process Overview

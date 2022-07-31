@@ -28,7 +28,7 @@ Carbon Black events are forwarded to Sumo Logic by Carbon Black, as defined in [
 
 ## Collect Logs for VMware Carbon Black
 
-This page provides instructions for adding a hosted collector, HTTP, and S3 sources, then configuring collection agents to collect findings for the Carbon Black App.
+This section provides instructions for adding a hosted collector, HTTP, and S3 sources, then configuring collection agents to collect findings for the Carbon Black App.
 
 
 ### Collection overview

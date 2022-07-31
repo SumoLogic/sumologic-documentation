@@ -7,7 +7,7 @@ description: The Sumo Logic App for Apache Tomcat provides pre-configured Dashbo
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-This page has instructions for installing Sumo Logic Monitors for Apache Tomcat, the app and descriptions of each of the app dashboards.
+This section has instructions for installing Sumo Logic Monitors for Apache Tomcat, the app and descriptions of each of the app dashboards.
 
 
 ## Installing Apache Tomcat Monitors

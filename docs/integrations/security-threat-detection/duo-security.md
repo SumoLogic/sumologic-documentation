@@ -84,7 +84,7 @@ Create a rule to run your Lambda function on a schedule. To create a rule using 
 
 ## Installing the Duo Security App and View the Dashboards
 
-This page provides instructions on how to install the Duo Security App, as well as an example of each of the App dashboards. The App dashboards provide insight into failed and successful authentications, administrator events, and outlier events.
+This section provides instructions on how to install the Duo Security App, as well as an example of each of the App dashboards. The App dashboards provide insight into failed and successful authentications, administrator events, and outlier events.
 
 The Duo Security App helps you monitor your Duo account’s [authentication](https://duo.com/docs/adminapi#authentication-logs), [administrator](https://duo.com/docs/adminapi#administrator-logs), and [telephony logs](https://duo.com/docs/adminapi#telephony-logs).
 

@@ -31,7 +31,7 @@ For non-Kubernetes customers, we recommend installing the Twistlock Classic App.
 
 ## Collecting Logs for the Twistlock App
 
-This page provides instructions for configuring log collection for the Sumo Logic App for Twistlock. After completing the following tasks, you will have successfully configured log collection for Twistlock:
+This section provides instructions for configuring log collection for the Sumo Logic App for Twistlock. After completing the following tasks, you will have successfully configured log collection for Twistlock:
 
 * Configure a Sumo Logic syslog source
 * Send Twistlock logs to Sumo Logic

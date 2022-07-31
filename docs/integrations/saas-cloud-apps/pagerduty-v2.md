@@ -22,7 +22,7 @@ For more information on the incident messages supported in Webhooks V2, see the 
 
 ## Collect Logs for PagerDuty V2
 
-This page provides instructions for configuring a Sumo Logic Hosted Collector and HTTP Source to create a PagerDuty Webhook V2, to collect PagerDuty events. Click a link to jump to a topic:
+This section provides instructions for configuring a Sumo Logic Hosted Collector and HTTP Source to create a PagerDuty Webhook V2, to collect PagerDuty events. Click a link to jump to a topic:
 
 * [Event types](#Event-types)
 * [Log example](#Sample-Query)
@@ -91,7 +91,7 @@ Using PagerDuty with Webhooks V2, you receive HTTP callbacks when incident event
 
 ## Install the PagerDuty V2 App
 
-This page provides instructions for installing the Sumo App for PagerDuty V2, as well as the descriptions of each of the app dashboards.
+This section provides instructions for installing the Sumo App for PagerDuty V2, as well as the descriptions of each of the app dashboards.
 
 Now that you have set up a log and metric collection, you can install the Sumo Logic App for PagerDuty V2, and use its pre-configured searches and dashboards.
 

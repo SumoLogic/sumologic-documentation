@@ -4,7 +4,7 @@ id: set-insight-generation-window-threshold
 
 # Set Insight Generation Window and Threshold
 
-This page has instructions for changing the detection window and the threshold Activity Score for Insight generation.
+This section has instructions for changing the detection window and the threshold Activity Score for Insight generation.
 
 By default, the detection window is 14 days, and the threshold Activity Score is 12. That means if an entity's Activity Score goes from 0 to 13 within a 14 day period, CSE will generate an Insight on that entity. For information about how that works, see [Understanding Entity Activity Scores](insight-generation-process.md), in the *Insight Generation Process* topic.
 

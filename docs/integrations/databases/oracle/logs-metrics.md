@@ -5,7 +5,7 @@ sidebar_label: Collect Logs and Metrics
 description: Instructions for collecting logs for the Sumo Logic App for Oracle.
 ---
 
-This page provides instructions for configuring log and metric collection for the Sumo Logic App for Oracle.
+This section provides instructions for configuring log and metric collection for the Sumo Logic App for Oracle.
 
 
 ## Collection Process Overview

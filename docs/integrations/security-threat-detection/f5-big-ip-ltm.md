@@ -21,7 +21,7 @@ The F5 - BIG-IP Local Traffic Manager (LTM) App uses event logs with payloads, a
 
 ## Collecting Logs for the F5 - BIG-IP LTM App
 
-This page provides instructions for collecting logs for the F5 - BIG-IP LTM App, as well as a sample log message and query sample.
+This section provides instructions for collecting logs for the F5 - BIG-IP LTM App, as well as a sample log message and query sample.
 
 
 ### Collection overview
@@ -136,7 +136,7 @@ _sourceCategory=f5/bigip/ltm  systemInfo
 
 ## Install the F5 - BIG-IP LTM App
 
-This page provides instructions for installing the F5 - BIG-IP LTM App, as well as examples and explanations for each of the predefined dashboards.
+This section provides instructions for installing the F5 - BIG-IP LTM App, as well as examples and explanations for each of the predefined dashboards.
 
 Using [these instructions](/docs/get-started/library/index.md) imports the JSON into your Sumo Logic environment
 

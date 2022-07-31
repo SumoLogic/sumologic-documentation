@@ -16,7 +16,7 @@ We recommend using the Active Directory JSON App in combination with the Windows
 
 ## Collecting Logs
 
-This page provides instructions on configuring log collection for the Active Directory JSON App so that logs are collected from the Microsoft Windows Event Log and ingested into Sumo Logic.
+This section provides instructions on configuring log collection for the Active Directory JSON App so that logs are collected from the Microsoft Windows Event Log and ingested into Sumo Logic.
 
 ### Log Types
 

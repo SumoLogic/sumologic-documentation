@@ -4,7 +4,7 @@ id: create-manage-roles
 
 # Create and Manage Roles
 
-This page has instructions for creating and managing Sumo Logic roles. The roles you assign to a user control what Sumo Logic capabilities are available to the user and what log data the user can access. This functionality is referred to as role-based access control.  
+This section has instructions for creating and managing Sumo Logic roles. The roles you assign to a user control what Sumo Logic capabilities are available to the user and what log data the user can access. This functionality is referred to as role-based access control.  
 
 ## Built-in Administrator and Analyst roles
 

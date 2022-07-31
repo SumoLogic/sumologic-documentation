@@ -51,7 +51,7 @@ The AKS - Control Plane App collects logs for the following [Azure Kubernetes Se
 
 ## Collect logs for the AKS - Control Plane App
 
-This page provides instructions for configuring a pipeline to collect Azure managed master node logs in your Azure Kubernetes Service (AKS) to an event hub, on to an Azure function, and finally to an HTTP source on a hosted collector in Sumo Logic.
+This section provides instructions for configuring a pipeline to collect Azure managed master node logs in your Azure Kubernetes Service (AKS) to an event hub, on to an Azure function, and finally to an HTTP source on a hosted collector in Sumo Logic.
 
 
 ### AKS - Control Plane Logs

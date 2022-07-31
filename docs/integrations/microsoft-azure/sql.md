@@ -14,7 +14,7 @@ Azure SQL Database is a managed relational cloud database service. The Sumo Logi
 
 ## Collect Logs and Metrics
 
-This page has instructions for collecting logs and metrics for the Azure SQL App, as well as a sample log message and a query sample.
+This section has instructions for collecting logs and metrics for the Azure SQL App, as well as a sample log message and a query sample.
 
 ### Log types
 

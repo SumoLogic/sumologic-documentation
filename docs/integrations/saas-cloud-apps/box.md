@@ -17,7 +17,7 @@ The Sumo Logic App for Box collects Box events, which are described in detail he
 
 ## Collect Events for Box
 
-This page provides instructions for setting up event collection from Box for analysis in Sumo Logic.
+This section provides instructions for setting up event collection from Box for analysis in Sumo Logic.
 
 ### Requirements and process overview
 

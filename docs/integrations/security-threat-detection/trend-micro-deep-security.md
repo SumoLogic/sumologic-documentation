@@ -24,7 +24,7 @@ For complete details on configuring your Deep Security system for use with Sumo 
 
 ## Collect on-premises logs for the Trend Micro Deep Security App
 
-This page provides instructions for configuring on-prem log collection for the Trend Micro Deep Security App, as well as examples of relevant log and query samples.
+This section provides instructions for configuring on-prem log collection for the Trend Micro Deep Security App, as well as examples of relevant log and query samples.
 
 
 ### Configure Collector and Sources
@@ -167,7 +167,7 @@ Send System Events to confirm communication with Sumo Logic. There may be a 5-10
 
 ## Installing the Trend Micro Deep Security App
 
-This page provides instructions on how to install the Trend Micro Deep Security App, and examples of each of the dashboards. The App reconfigured searches and [Dashboards](#Dashboards) that provide easy-to-access visual insights into your data.
+This section provides instructions on how to install the Trend Micro Deep Security App, and examples of each of the dashboards. The App reconfigured searches and [Dashboards](#Dashboards) that provide easy-to-access visual insights into your data.
 
 To install the app:
 

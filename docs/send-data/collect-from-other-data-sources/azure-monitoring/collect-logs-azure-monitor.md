@@ -32,7 +32,7 @@ For more information about the solution strategy, see [Azure Monitoring](/docs/s
 ![Azure-logs.png](/img/send-data/Azure-logs.png)
 
 :::note
-This page has instructions for configuring a pipeline for shipping logs available from [Azure Monitor](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-get-started) to an Event Hub, on to an Azure Function, and finally to an HTTP Source on a Hosted Collector in Sumo Logic. Azure Monitor collects metrics and as well as logs. The pipeline described below is for logs, not metrics.
+This section has instructions for configuring a pipeline for shipping logs available from [Azure Monitor](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-get-started) to an Event Hub, on to an Azure Function, and finally to an HTTP Source on a Hosted Collector in Sumo Logic. Azure Monitor collects metrics and as well as logs. The pipeline described below is for logs, not metrics.
 :::
 
 ## Configure log collection 

@@ -29,7 +29,7 @@ Sumo Logic analyzes the following required Acquia data for more efficient monito
 
 ## Collecting Logs for the Acquia App
 
-This page provides instructions for configuring log collection from Acquia and sending those logs to Sumo Logic for monitoring and analysis in the Acquia App predefined dashboards and searches.
+This section provides instructions for configuring log collection from Acquia and sending those logs to Sumo Logic for monitoring and analysis in the Acquia App predefined dashboards and searches.
 
 Sumo Logic enables you to collect logs from Acquia, with the ability to configure the log types to be collected. The logs are then forwarded to a Sumo Logic [Cloud Syslog Source](#Configuring-a-cloud-syslog-source).
 
@@ -265,7 +265,7 @@ request_id
 
 ## Installing the Acquia App
 
-This page provides instructions on how to install the Acquia App, as well as examples of each of the dashboards. The App pre-configured searches and [Dashboards](#Dashboards) provide easy-to-access visual insights into your data.
+This section provides instructions on how to install the Acquia App, as well as examples of each of the dashboards. The App pre-configured searches and [Dashboards](#Dashboards) provide easy-to-access visual insights into your data.
 
 To install the app, do the following:
 

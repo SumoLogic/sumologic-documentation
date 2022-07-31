@@ -18,7 +18,7 @@ Parsing in the Palo Alto Networks 6 App for PAN 6 is based on the [PAN-OS Syslog
 
 ## Collect Logs for the Palo Alto Networks 6 App
 
-This page provides instructions on how to collect logs for the Palo Alto Networks 6 App, as well as log and query samples.
+This section provides instructions on how to collect logs for the Palo Alto Networks 6 App, as well as log and query samples.
 
 
 ### Prerequisites

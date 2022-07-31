@@ -30,7 +30,7 @@ For more details on Nginx Plus Ingress Metrics, see[ https://docs.nginx.com/ngin
 
 ## Collecting Logs and Metrics for Nginx Plus Ingress
 
-This page provides instructions for configuring log and metric collection for the Sumo Logic App for Nginx Plus Ingress.
+This section provides instructions for configuring log and metric collection for the Sumo Logic App for Nginx Plus Ingress.
 
 
 ### Collection Process Overview
