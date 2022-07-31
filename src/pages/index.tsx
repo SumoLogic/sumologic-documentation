@@ -33,7 +33,7 @@ const features = [
         description="Dashboards description">
           Create visualizations, notifications, and alerts for your applications.
         </Translate>),
-    link: 'docs/get-started',
+    link: 'docs/dashboards-new',
   },
   {
     title: translate({
@@ -52,7 +52,7 @@ const features = [
   {
     title: translate({
       id: 'landing.feature.searches-logs.title',
-      message: 'Searches & Logs',
+      message: 'Searches and Logs',
       description: 'Title for searches & logs',
     }),
     imageUrl: 'img/icons/search.png',
@@ -61,7 +61,7 @@ const features = [
       description="Searches and logs description">
         Query and analyze log data sent to Sumo Logic, Search Language, LogReduce, LogExplain, and more.
       </Translate>),
-    link: 'docs/get-started',
+    link: 'docs/search',
   },
   {
     title: translate({
@@ -75,7 +75,7 @@ const features = [
       description="Metrics description">
         Review numeric performance and activity data collected to monitor, troubleshoot, and identify root causes.
       </Translate>),
-    link: 'docs/get-started',
+    link: 'docs/metrics',
   },
   {
     title: translate({
@@ -103,7 +103,7 @@ const features = [
       description="Observability description">
         Deploy and configure solutions to monitor applications and analyze root causes.
       </Translate>),
-    link: 'docs/get-started',
+    link: 'docs/observability',
   },
   {
     title: translate({

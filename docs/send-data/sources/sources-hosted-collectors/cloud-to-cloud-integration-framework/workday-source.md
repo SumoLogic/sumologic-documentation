@@ -7,7 +7,7 @@ id: workday-source
 When you create a Workday Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](../../../configure-hosted-collector.md).
 
 :::note
-The steps below assume that you have already configured in [Step 1 of this page] (/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/Workday/Collect_Logs_for_the_Workday_App#step-1-configure-the-workday-portal). You will copy and paste configurations from those steps in this source.
+The steps below assume that you have already configured in [Step 1 of this page] (/07Sumo-Logic-Apps/saas-cloud-apps/Workday/Collect_Logs_for_the_Workday_App#step-1-configure-the-workday-portal). You will copy and paste configurations from those steps in this source.
 :::
 
 To configure a Workday Source:

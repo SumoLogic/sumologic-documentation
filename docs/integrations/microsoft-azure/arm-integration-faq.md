@@ -1,20 +1,21 @@
 ---
 id: arm-integration-faq
-title: Sumo Logic App for Azure Integration using ARM FAQs
-sidebar_label: Azure Integration using ARM FAQs
+title: Azure Integration with ARM FAQs
+sidebar_label: Azure-ARM Integration FAQs
 description: This guide provides answers to frequently asked questions (FAQs) about integrating Azure into an enterprise environment using ARM.
 ---
 
-This guide provides answers to frequently asked questions (FAQs) about integrating Azure into an enterprise environment using ARM (Azure Resource Manager) architecture. Topics are grouped in the following categories:
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-General
-Event Hub
-Blob Storage
-Integration overview
+<img src={useBaseUrl('img/integrations/microsoft-azure/azure-faq.png')} alt="thumbnail icon" width="75"/>
 
-For an introduction to Sumo Logic’s solution for obtaining application and infrastructure data (logs and metrics) for Azure services using Azure Monitor, see the Azure Monitoring page.
+This guide provides answers to frequently asked questions (FAQs) about integrating Azure into an enterprise environment using ARM (Azure Resource Manager) architecture.
 
-For an introduction to Sumo Logic's solution for obtaining logs and metrics using an event-based pipeline for shipping monitoring data from Azure Blob Storage to an HTTP source on Sumo Logic, see the Azure Blog Storage page.
+## Integration overview
+
+For an introduction to Sumo Logic’s solution for obtaining application and infrastructure data (logs and metrics) for Azure services using Azure Monitor, see [Azure Monitoring](/docs/send-data/collect-from-other-data-sources/azure-monitoring/index.md).
+
+For an introduction to Sumo Logic's solution for obtaining logs and metrics using an event-based pipeline for shipping monitoring data from Azure Blob Storage to an HTTP source on Sumo Logic, see [Azure Blog Storage](/docs/send-data/collect-from-other-data-sources/azure-blob-storage/index.md).
 
 
 ## General FAQs
@@ -31,10 +32,6 @@ The Sumo Logic app has been tested on v0.10.40, the oldest supported version. Th
 
 
 #### What happens if the template is re-deployed? Are the resources recreated? Is there any data loss?
-3
-
-
-
 
 * If the resource already exists in the resource group and its settings are unchanged, the operation results in no change.
 * If you change the settings for a resource, the resource is provisioned with the new settings.
@@ -42,75 +39,44 @@ The Sumo Logic app has been tested on v0.10.40, the oldest supported version. Th
 
 
 #### How do I route logs to different source categories based on log content?
-4
-
 
 To answer this question, we have to address Event Hub and Blob Storage separately.
 
-
-###### **For Event Hub, do the following: **
-5
-
-
-
-
+For Event Hub, do the following:
 1. Go to **SumoAzureLogsFunction** created by the ARM template.
 2. Enable **Edit Mode** and edit the **setSourceCategory** function to set the source category. You can also use an if condition to set a different source category for a different message.
 
-
-6
-
+<img src={useBaseUrl('img/integrations/microsoft-azure/Azure-FAQ_EventHub_Logs.png')} alt="Azure ARM FAQs" />
 
 
-###### **For Blob Storage, do the following: **
-7
-
-
-
-
+For Blob Storage, do the following:
 1. Go to the **BlockTaskConsumer** function created by the ARM template.
-2. Enable Edit Mode and edit the **getsourceCategory** function to set the source category based on the **metadata(url ,containerName ,blobName ,storageName ,resourceGroupName ,subscriptionId )** present in **serviceBusTask**.
+2. Enable Edit Mode and edit the **getsourceCategory** function to set the source category based on the metadata(url ,containerName ,blobName ,storageName ,resourceGroupName ,subscriptionId ) present in **serviceBusTask.
 
-
-8
-
+<img src={useBaseUrl('img/integrations/microsoft-azure/Azure-FAQ_BlobStorage_Logs.png')} alt="Azure ARM FAQs" />
 
 
 #### How do I view Azure function logs?
-9
-
 
 Go to the function and click the **Logs** tab to view real time logs, as shown in the following example.
 
-
-10
-
+<img src={useBaseUrl('img/integrations/microsoft-azure/Azure-FAQ_View-Logs.png')} alt="Azure ARM FAQs" />
 
 
 #### How do I export Azure function logs?
-11
-
 
 **To export Azure function logs, do the following:**
-
-
-
 1. Install [Azure Storage Explorer](https://azure.microsoft.com/en-in/features/storage-explorer/) from [here](https://docs.microsoft.com/en-us/azure/vs-azure-tools-storage-explorer-relnotes).
 2. Click **Export**.
 
 
-12
+<img src={useBaseUrl('img/integrations/microsoft-azure/Azure-FAQ_Export-logs.png')} alt="Azure ARM FAQs" />
 
 
+### Common Error Messages
 
-#### Common Error Messages
-13
-
-
-
-
-* For Event Hub, see  [Event Hub error messages](https://help.sumologic.com/07Sumo-Logic-Apps/04Microsoft-and-Azure/Azure_Integration_using_ARM_-_FAQs/02Event_Hub_FAQs#event-hub-error-messages).
-* For Blob Storage, see [Blob Reader error messages](https://help.sumologic.com/07Sumo-Logic-Apps/04Microsoft-and-Azure/Azure_Integration_using_ARM_-_FAQs/03Blob_Storage_FAQs#blob-reader-error-messages).
+* For Event Hub, see  [Event Hub error messages](#event-hub-error-messages).
+* For Blob Storage, see [Blob Reader error messages](#blob-reader-error-messages).
 
 
 ## Event Hub FAQs
@@ -119,7 +85,6 @@ This page provides answers for frequently asked integration questions about Azur
 
 
 #### What log sources are supported by Event Hub?
-
 
 1. Exporting data from [Azure Monitor](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-overview-azure-monitor): Includes the majority of services, including Network Watcher, SQL DB, EventHubs, Cosmos DB, Data Factory, KeyVault, and Stream Analytics export their logs and metrics to Azure Monitor.
 * [Azure Diagnostic Logs](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-overview-of-diagnostic-logs): [Setup](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-stream-diagnostic-logs-to-event-hubs) [Supported Services](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-diagnostic-logs-schema)
@@ -133,10 +98,6 @@ This page provides answers for frequently asked integration questions about Azur
 
 
 #### What if there is an existing storage account or Event Hub?
-15
-
-
-
 
 * The storage account creation limit per region, per subscription, is 200.
 * The limit for the number of Event Hub per namespace is 10.
@@ -147,26 +108,21 @@ This page provides answers for frequently asked integration questions about Azur
 16
 
 
-**To increase the number of parallel instances:** the number of messages are ordered in one partition. By default, messages are distributed in round robin manner. Each Function instance is backed by 1 EventProcessorHost (EPH). EventHub only allows 1 EPH to hold a lease on a partition, but >1 partition can be assigned an EPH. This means the number of EPH &lt;= number of partitions in EventHub. Hence, increasing number of partitions in Event Hub(default maxlimit is 32. You have to raise a support request to increasing it, and this will increase the consumption rate. For more information, see the [Azure Trigger Scaling document](https://docs.microsoft.com/en-us/azure/azure-functions/functions-bindings-event-hubs#trigger---scaling).
+**To increase the number of parallel instances:** the number of messages are ordered in one partition. By default, messages are distributed in round robin manner. Each Function instance is backed by 1 EventProcessorHost (EPH). EventHub only allows 1 EPH to hold a lease on a partition, but >1 partition can be assigned an EPH. This means the number of EPH <= number of partitions in EventHub. Hence, increasing number of partitions in Event Hub(default maxlimit is 32. You have to raise a support request to increasing it, and this will increase the consumption rate. For more information, see the [Azure Trigger Scaling document](https://docs.microsoft.com/en-us/azure/azure-functions/functions-bindings-event-hubs#trigger---scaling).
 
 **To increase the number of fetched messages per function:** increase the maxBatchSize(The maximum event count received per receive loop) property in host.json(default is 64) For more information, see  the [Azure Trigger - host.json properties document](https://docs.microsoft.com/en-us/azure/azure-functions/functions-bindings-event-hubs#trigger---hostjson-properties).
 
 
 #### How much does it cost?
-17
-
 
 For specific details, see the following Azure pricing pages:
-
-
 
 * [https://azure.microsoft.com/en-in/pricing/details/functions/](https://azure.microsoft.com/en-in/pricing/details/functions/)
 * [https://azure.microsoft.com/en-in/pricing/details/event-hubs/](https://azure.microsoft.com/en-in/pricing/details/event-hubs/)
 * [https://azure.microsoft.com/en-in/pricing/details/storage/blobs/](https://azure.microsoft.com/en-in/pricing/details/storage/blobs/)
 
 
-###### **Functions Example:  **
-18
+Functions Example:
 
 
 Function executes 3 million times during the month with  memory consumption of 512 MB, execution duration 1 sec and 64KB is the message size.
@@ -177,8 +133,7 @@ Execution consumption:3 million - 1 million(free plan) = 2 million => x 0.20$ = 
 
 **Cost of Azure Function : 18$**
 
-
-###### **Event Hub Example: **
+**Event Hub Example: **
 19
 
 
@@ -189,7 +144,7 @@ Throughput units(1TU = 1MB/sec ingress events + 2MB/sec egress events + 84GB eve
 **Cost of Event Hub = 10.88$**
 
 
-###### **Storage Account Example: **
+**Storage Account Example: **
 20
 
 
@@ -208,23 +163,19 @@ Operation prices write operation $0.05 per 10000 requests => * 3 million = 15$
 21
 
 
-For detailed information, see the [Troubleshooting log collection](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Azure_Monitoring/Collect_Logs_from_Azure_Monitor#Troubleshooting_log_collection) section of the Collect logs for Azure Monitor page. This includes testing the function using **Sample** [Logs](https://s3.amazonaws.com/appdev-cloudformation-templates/TestPayload.json) & [Metrics](https://s3.amazonaws.com/appdev-cloudformation-templates/metrics_fixtures.json).
+For detailed information, see the [Troubleshooting log collection](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-logs-azure-monitor#Troubleshooting_log_collection) section of the Collect logs for Azure Monitor page. This includes testing the function using **Sample** [Logs](https://s3.amazonaws.com/appdev-cloudformation-templates/TestPayload.json) & [Metrics](https://s3.amazonaws.com/appdev-cloudformation-templates/metrics_fixtures.json).
 
 
 #### Where can I find historic logs for the Azure function?
-22
-
-
-
 
 1. Install[ Azure Storage Explorer](https://azure.microsoft.com/en-in/features/storage-explorer/).
 2. Log in using your Azure Account credentials.
 
-    Built-in logging uses the storage account specified by the connection string in the AzureWebJobsDashboard app setting.
-
-
+Built-in logging uses the storage account specified by the connection string in the AzureWebJobsDashboard app setting.
 
 1. Go to **functionname > Tables > AzureWebJobsHostLogs**. The ones with the "I" partition key are invocation logs, as shown in the previous example.
+
+<img src={useBaseUrl('img/integrations/microsoft-azure/Azure_function_historic_logs.png')} alt="Azure ARM FAQs" />
 
 
 #### What can I do if a function is timing out?
@@ -249,7 +200,7 @@ Follow the instructions in the Microsoft Azure documentation for [Enabling Appli
 
 1. Under the **Function app edit mode** section, change the edit mode in **Function App Settings**. You can now edit the function.
 2. Enter context.log(“debug statements”)  and save.
-3. Run using sample logs, as described in [Troubleshooting log collection](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Azure_Monitoring/Collect_Logs_from_Azure_Monitor#Troubleshooting_log_collection).
+3. Run using sample logs, as described in [Troubleshooting log collection](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-logs-azure-monitor#Troubleshooting_log_collection).
 
 
 #### How do I deploy the ARM template in Azure Gov cloud?
@@ -260,23 +211,16 @@ Use this [template](https://appdev-cloudformation-templates.s3.amazonaws.com/azu
 
 
 #### How do I ensure that the Event Hub is receiving log messages?
-28
-
 
 If events are not getting into the Event Hub, the event grid subscription publisher settings are not configured properly.
 
+Event Hub error messages:
 
-##### Event Hub error messages
-29
+* **Resources should be in the same region.** Resource '/subscriptions/c088dc46-d692-42ad-a4b6-9a542d28ad2a/resourceGroups/AzureAuditEventHub/providers/Microsoft.Network/networkSecurityGroups/testhimvm-nsg' is in region 'eastus' and resource '/subscriptions/c088dc46-d692-42ad-a4b6-9a542d28ad2a/resourcegroups/testresourcegroup/providers/microsoft.eventhub/namespaces/sumoazureaudittf7grgv4prygw' is in region 'westus'.
 
+  This happens while exporting logs or metrics from Azure monitor to Event Hub. The service generating the logs and Event Hub should be deployed in the same region.
 
-
-
-* **Resources should be in the same region.** Resource '/subscriptions/c088dc46-d692-42ad-a4b6-9a542d28ad2a/resourceGroups/AzureAuditEventHub/providers/Microsoft.Network/networkSecurityGroups/testhimvm-nsg' is in region 'eastus' and resource '/subscriptions/c088dc46-d692-42ad-a4b6-9a542d28ad2a/resourcegroups/testresourcegroup/providers/microsoft.eventhub/namespaces/sumoazureaudittf7grgv4prygw' is in region 'westus'. \
- \
-This happens while exporting logs or metrics from Azure monitor to Event Hub. The service generating the logs and Event Hub should be deployed in the same region. \
-
-* **Create or update activity logprofilesfailure. **If you get this error message in Azure when setting up an Event Hub Export, do the following:
+* **Create or update activity logprofilesfailure.** If you get this error message in Azure when setting up an Event Hub Export, do the following:
     1. Search for Subscriptions in all services.
     2. Select your subscription > Resource Providers.
     3. Search for and Enable **microsoft.insights**.
@@ -296,29 +240,20 @@ FileOffsetMap is a table created in Azure Table Storage that is used for interna
 31
 
 
-For a summary of how various components are stitched together in the pipeline, see the [Monitoring data flow](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Azure_Blob_Storage#Monitoring_data_flow) section of the Azure Blog Storage page.
+For a summary of how various components are stitched together in the pipeline, see the [Monitoring data flow](/docs/send-data/collect-from-other-data-sources/azure-blob-storage#Monitoring_data_flow) section of the Azure Blog Storage page.
 
 
 #### How do I scale the function?
-32
-
 
 From the Application settings page, you can do any of the following to scale the function:
-
-
-
 * Increasing the **maxBatchSize** in the **BlobTaskProducer host.json** from function app settings. This fetches more events and creates larger blocks for reading.
 * Increasing **maxConcurrentCalls** calls setting in the **BlobTaskConsumer host.json**. It is recommended that you increase it in smaller increments so as to not hit the throttling limit.
 
-
-33
-
+<img src={useBaseUrl('img/integrations/microsoft-azure/Azure_New_Host_Key.png')} alt="Azure ARM FAQs" />
 
 * Increasing the **prefetchcount** to **2*maxBatchSize**.
 
-
-34
-
+<img src={useBaseUrl('img/integrations/microsoft-azure/Azure-FAQ_Increase_BatchSize.png')} alt="Azure ARM FAQs" />
 
 
 
@@ -328,7 +263,7 @@ From the Application settings page, you can do any of the following to scale the
 
 The following is a Field Extraction Rule (FER) solution.
 
-You extract the container name in FERs  and override the _sourceCategory  with _sourceCategory/&lt;containername> so that when a user searches the new sourcecategory is used. For example:
+You extract the container name in FERs  and override the `_sourceCategory`  with `_sourceCategory/<containername>` so that when a user searches the new sourcecategory is used. For example:
 
 
 ```
@@ -337,36 +272,24 @@ as nsg_name | concat('azure_logs/", nsg_name) as _sourceCategory
 ```
 
 
-Another approach is to modify the function to send source category in headers. For more information, see [How do I route logs to different source categories based on log content?”](https://help.sumologic.com/07Sumo-Logic-Apps/04Microsoft-and-Azure/Azure_Integration_using_ARM_-_FAQs/01General_FAQs#how-do-i%C2%A0route-logs-to-different-source-categories-based-on-log)
+Another approach is to modify the function to send source category in headers. For more information, see [How do I route logs to different source categories based on log content?”](#how-do-i-route-logs-to-different-source-categories-based-on-log)
 
 
 #### How do I filter events by container name?
-36
 
-
-**To filter events by container name, do the following:**
-
-
+**To filter events by container name, do the following:
 
 1. Go to **Event subscription > Filters** tab.
-2. Enter the following in the Subject Begins With field, replacing **&lt;container_name>** with the name of the container from where you want to export logs.
-
-
+2. Enter the following in the Subject Begins With field, replacing `<container_name>` with the name of the container from where you want to export logs.
 ```
 /blobServices/default/containers/<container_name>/
 ```
 
-
-
-37
-
-
-
-## How do I troubleshoot Blob Storage integration?
-38
+<img src={useBaseUrl('img/integrations/microsoft-azure/Azure-FAQ_Event-Subscription.png')} alt="Azure ARM FAQs" />
 
 
 
+#### How do I troubleshoot Blob Storage integration?
 
 * Verify Block Blob Create Events are getting published - If events are not getting created, then either no new blobs are getting created or the event grid subscription subscriber settings is not configured right. For example, the regex for container does not match or the event grid service could be down.
 * Verify Event Hub is receiving log messages - If events are not getting into the Event Hub, then the event grid subscription publisher settings are not configured properly.
@@ -374,9 +297,7 @@ Another approach is to modify the function to send source category in headers. F
 * Verify with live tail - If you are getting logs into sumo and everything else checked out, then there might be an issue in SUMOBRTaskConsumer function. Check the function's invocation logs. For example, it may not be able to read the from Storage Account, the blob may have been deleted before it was read, or the log format may not be supported.
 
 
-#### Blob Reader error messages
-39
-
+## Blob Reader error messages
 
 
 ```Error: The request is being throttled. at client.pipeline.error (D:\home\site\wwwroot\BlobTaskConsumer\node_modules\azure-arm-storage\lib\operations\storageAccounts.js:1444:19) at retryCallback (D:\home\site\wwwroot\BlobTaskConsumer\node_modules\ms-rest\lib\filters\systemErrorRetryPolicyFilter.js:89:9) at retryCallback (D:\home\site\wwwroot\BlobTaskConsumer\node_modules\ms-rest\lib\filters\exponentialRetryPolicyFilter.js:140:9) at D:\home\site\wwwroot\BlobTaskConsumer\node_module...FunctionName: BlobTaskConsumer
@@ -388,7 +309,7 @@ Solution: Increase the maxBatchSize in BlobTaskProducer's host.json This will fe
 Error: HTDECK-JOBCOSTING-API__BE93-2019-05-08-14-e5260b.log"": [48255]} Exception while executing function: Functions.BlobTaskProducer Microsoft.Azure.WebJobs.Host. FunctionInvocationException : Exception while executing function: Functions.BlobTaskProducer ---> System.Exception : StorageError: The table specified does not exist. RequestId:3914a31a-e002-000e-1dad-05a995000000 Time:2019-05-08T14:48:29.9940095Z at async Microsoft.Azure.WebJobs.Script.Description.NodeFunctionInvoker.InvokeCore(Object[] parameters,FunctionInvocationContext context) at C:\projects\azure-webjobs-sdk-script\src\WebJobs.Script\Description\Node\NodeFunctionInvoker.cs : 196
 ```
 
-Solution: This error comes when FileOffsetMap does not exists. Check and confirm whether you have created the following table in [Step 3: Configure Azure resources using ARM template](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Azure_Blob_Storage/Collect_Logs_from_Azure_Blob_Storage#step-3-configure-azure-resources-using-arm-template), substep 11.
+Solution: This error comes when FileOffsetMap does not exists. Check and confirm whether you have created the following table in [Step 3: Configure Azure resources using ARM template](/docs/send-data/collect-from-other-data-sources/azure-blob-storage/collect-logs-azure-blob-storage#step-3-configure-azure-resources-using-arm-template), substep 11.
 
 
 Error:  You'll see a Deployment Failed error when roleAssignment is not unique but we are already using resourcegroup.id in a name that is unique. The error details are:  
@@ -411,15 +332,16 @@ Solution: Create a new resource group for the Sumo Logic collection resources. I
 
 To this:
 ```
- "consumer_roleGuid": "[guid(parameters('sites_blobreaderconsumer_name'), uniqueString(‘&lt;random unique word>’, resourceGroup().id))]", \
-        "dlq_roleGuid": "[guid(parameters('sites_DLQProcessor_name'), uniqueString(‘&lt;random unique word>’, resourceGroup().id))]"
+ "consumer_roleGuid": "[guid(parameters('sites_blobreaderconsumer_name'), uniqueString(‘<random unique word>’, resourceGroup().id))]", \
+        "dlq_roleGuid": "[guid(parameters('sites_DLQProcessor_name'), uniqueString(‘<random unique word>’, resourceGroup().id))]"
         ```
 ```
 Error:  Azure fails to install dependencies on a node. System.AggregateException : One or more errors occurred. ---> Error: Cannot find module 'azure-storage' \
 ```
 
-Solution:  Run **<code>npm install</code></strong> from the console. \
+Solution:  Run `npm install` from the console.
 
+<img src={useBaseUrl('img/integrations/microsoft-azure/Azure-FAQ_BlobTaskConsumer.png')} alt="Azure ARM FAQs" />
 
 
 * Error: Subscription for Microsoft.EventGrid is not registered. \
@@ -429,3 +351,5 @@ Solution: To register the provider do the following: \
 2. Select the subscription name where ARM template is deployed. \
 3. Select the Resource providers under settings on the left. \
 4. Search for Microsoft.EventGrid and register it. \
+
+<img src={useBaseUrl('img/integrations/microsoft-azure/Azure-FAQ_Subscriptions.png')} alt="Azure ARM FAQs" />

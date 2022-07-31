@@ -2,7 +2,14 @@
 id: puppet
 title: Sumo Logic App for Puppet
 sidebar_label: Puppet
+description: The Sumo Logic App for Puppet helps you monitor Puppet metrics and events.
 ---
+
+
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src={useBaseUrl('img/integrations/app-development/puppet.png')} alt="DB icon" width="50"/>
+
 
 Puppet is a software configuration management tool. Puppet can provision infrastructure and enforce desired configurations across new and existing servers. The Sumo Logic App for Puppet helps you monitor Puppet metrics and events, which means that you can easily:
 
@@ -11,7 +18,7 @@ Puppet is a software configuration management tool. Puppet can provision infrast
 * Find out how often resources have changed, skipped, failed to update, or are out-of-sync.
 * Find out the root cause of issues by correlating puppet runs with metrics from other components in your infrastructure.
 
-#### Log types
+## Log types
 
 Sumo’s Puppet Logs source and Puppet Reports source use an installed collector to gather the following data from Puppet:
 
@@ -23,7 +30,7 @@ Sumo’s Puppet Logs source and Puppet Reports source use an installed collector
 
 ## Collect Logs for Puppet
 
-This page has instructions for collecting Puppet logs, reports, and events for the Sumo App for Puppet.
+This section has instructions for collecting Puppet logs, reports, and events for the Sumo App for Puppet.
 
 
 #### Process Overview
@@ -33,12 +40,12 @@ The sections below provide instructions for installing a collector on a Puppet M
 
 #### Step 1: Create access keys
 
-Follow the instructions in [Access Keys](https://help.sumologic.com/Manage/Security/Access-Keys) to create a Sumo access ID and key. You’ll need to supply them when you set up a collector on the Puppet Master host in the following step.
+Follow the instructions in [Access Keys](/docs/manage/security/access-keys) to create a Sumo access ID and key. You’ll need to supply them when you set up a collector on the Puppet Master host in the following step.
 
 
 #### Step 2: Install collector on Puppet Master
 
-In this step you install a collector on the Puppet Master host. Follow the instructions on [Install a Collector on Linux](https://help.sumologic.com/03Send-Data/Installed-Collectors/04Install-a-Collector-on-Linux).
+In this step you install a collector on the Puppet Master host. Follow the instructions on [Install a Collector on Linux](/docs/send-data/installed-collectors/install-collector-linux).
 
 
 1.png "image_tooltip")
@@ -47,9 +54,9 @@ Puppet Master only runs on Linux.
 
 #### Step 3: Configure local file source for Puppet Server logs
 
-In this step, you add a local file source to the installed collector you created in [Step 2](https://help.sumologic.com/07Sumo-Logic-Apps/08App_Development/Puppet/Collect_Logs_for_Puppet#Step_2:_Install_collector_on_Puppet_Master). The local file source will receive Puppet Server logs.  
+In this step, you add a local file source to the installed collector you created in [Step 2](#Step_2:_Install_collector_on_Puppet_Master). The local file source will receive Puppet Server logs.  
 
-Follow the steps on [Local File Source](https://help.sumologic.com/03Send-Data/Sources/01Sources-for-Installed-Collectors/Local-File-Source), with these additional instructions:
+Follow the steps on [Local File Source](/docs/send-data/Sources/sources-installed-collectors/Local-File-Source), with these additional instructions:
 
 
 * For **File Path**, Enter the puppet server log file path. The default Puppet Server log file is:
@@ -60,9 +67,9 @@ Follow the steps on [Local File Source](https://help.sumologic.com/03Send-Data/S
 
 #### Step 4: Configure local file source for Puppet Server Access logs
 
-In this step, you add another local file source to the installed collector you created in [Step 2](https://help.sumologic.com/07Sumo-Logic-Apps/08App_Development/Puppet/Collect_Logs_for_Puppet#Step_2:_Install_collector_on_Puppet_Master). The local file source will receive Puppet Server Access logs.
+In this step, you add another local file source to the installed collector you created in [Step 2](#Step_2:_Install_collector_on_Puppet_Master). The local file source will receive Puppet Server Access logs.
 
-Follow the steps on [Local File Source](https://help.sumologic.com/03Send-Data/Sources/01Sources-for-Installed-Collectors/Local-File-Source), with these additional instructions:
+Follow the steps on [Local File Source](/docs/send-data/Sources/sources-installed-collectors/Local-File-Source), with these additional instructions:
 
 * For **File Path**, Enter the puppet server log file path. The default Puppet Server Access log file is: \
 `/var/log/puppetlabs/puppetserver/puppetserver-access.log \
@@ -83,11 +90,11 @@ This section has instructions for setting up a Script source that runs a shell s
 The following requirements apply to the script source:
 
 * The user running the collector process must have read and write access to the Puppet Reports directory.
-* The collector executes the script as the user running the collector process. The script outputs data to your machine's stdout or stderror output streams to be collected. For more information see [Script Source](https://help.sumologic.com/03Send-Data/Sources/01Sources-for-Installed-Collectors/Script-Source).
+* The collector executes the script as the user running the collector process. The script outputs data to your machine's stdout or stderror output streams to be collected. For more information see [Script Source](/docs/send-data/Sources/sources-installed-collectors/Script-Source).
 * The machine where you run the script must have Ruby installed.
 * The script generates a log in the configured working directory that you can review in case of issues.
 
-For more information see [Script Source](https://help.sumologic.com/03Send-Data/Sources/01Sources-for-Installed-Collectors/Script-Source).
+For more information see [Script Source](/docs/send-data/Sources/sources-installed-collectors/Script-Source).
 
 **To set up a script source**
 
@@ -99,7 +106,7 @@ The script requires Ruby on the host machine.
 
 1. In the Sumo web app, select **Manage Data > Collection > Collection**.
 2. Navigate to the collector you installed on the Puppet Master host, and select **Add > Add Source**.
-3. Select **Script**. New Collectors using version 19.245-4 and later do not allow Script Sources to run by default. To allow Script Sources you need to set the Collector parameter `enableScriptSource` in [user.properties](https://help.sumologic.com/03Send-Data/Installed-Collectors/05Reference-Information-for-Collector-Installation/06user.properties) to true and [restart](https://help.sumologic.com/Manage/Collection/02Start-or-Stop-a-Collector-using-Scripts) the Collector.
+3. Select **Script**. New Collectors using version 19.245-4 and later do not allow Script Sources to run by default. To allow Script Sources you need to set the Collector parameter `enableScriptSource` in [user.properties](/docs/send-data/Installed-collectors/collector-installation-reference/user-properties) to true and [restart](/docs/manage/collection/start-stop-collector-using-scripts.md) the Collector.
 4. **Name**. (Required).
 5. **Description**. (Optional).
 6. **Source Host**. Enter the hostname or IP address of the source host. The hostname can be a maximum of 128 characters.
@@ -124,7 +131,7 @@ Expand
         3. **Detect messages spanning multiple lines**. This option is checked by default.
         4. **Infer Boundaries**. This option is checked by default.
         5. **Boundary Regex**. If multiple processing is enabled, and **Infer Boundaries** is disabled, enter a regular expression for message boundaries.
-    5. **Processing Rules**.  Configure processing rules, as desired. For more information, see [Processing Rules](https://help.sumologic.com/Manage/Collection/Processing-Rules).
+    5. **Processing Rules**.  Configure processing rules, as desired. For more information, see [Processing Rules](/docs/manage/collection/processing-rules).
 
 Puppet logs and reports should start flowing into Sumo Logic.
 
@@ -133,7 +140,7 @@ Puppet logs and reports should start flowing into Sumo Logic.
 
 If you encounter problems:
 
-* Review [Script source prerequisites](https://help.sumologic.com/07Sumo-Logic-Apps/08App_Development/Puppet/Collect_Logs_for_Puppet#Script_source_prerequisites).
+* Review [Script source prerequisites](#Script_source_prerequisites).
 * Review the contents of the log file that the script creates in the configured working directory.
 
 

@@ -2,8 +2,13 @@
 id: cylance
 title: Cylance
 sidebar_label: Cylance
-description: The Cylance App enables you to analyze Cylance security events by type, status, and detection method. You can use the App to investigate Cylance-specific events and provide operational visibility to team members without logging into Cylance.
+description: The Cylance App enables you to analyze Cylance security events by type, status, and detection method.
 ---
+
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src={useBaseUrl('img/integrations/security-threat-detection/cylance.png')} alt="thumbnail icon" width="75"/>
+
 
 The Cylance App enables you to analyze Cylance security events by type, status, and detection method. You can use the App to investigate Cylance-specific events and provide operational visibility to team members without logging into Cylance.
 
@@ -54,18 +59,18 @@ For details on the format and definitions, refer to [Cylance](https://www.cylanc
 ### Step 1: Configure a Collector
 3
 
-To create a new Sumo Logic Hosted Collector, perform the steps in [Configure a Hosted Collector](https://help.sumologic.com/03Send-Data/Hosted-Collectors/Configure-a-Hosted-Collector).
+To create a new Sumo Logic Hosted Collector, perform the steps in [Configure a Hosted Collector](/docs/send-data/configure-hosted-collector).
 
 
 ### Step 2: Configure a Source
 4
 
 
-1. Perform the steps in [Configure a Cloud Syslog Source](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Cloud-Syslog-Source#Configure_a_Cloud_Syslog_Source). and configure the following Source fields:
+1. Perform the steps in [Configure a Cloud Syslog Source](/docs/send-data/Sources/sources-hosted-collectors/Cloud-Syslog-Source#Configure_a_Cloud_Syslog_Source). and configure the following Source fields:
     1. **Name**. (Required) A name is required. Description is optional.
     2. **Source Category**. (Required) [Provide a realistic Source Category example for this data type.] The Source Category metadata field is a fundamental building block to organize and label Sources. \
 Example: **prod/web/apache/access**. \
-For details see [Best Practices](https://help.sumologic.com/03Send-Data/01-Design-Your-Deployment/Best-Practices%3A-Good-Source-Category%2C-Bad-Source-Category).
+For details see [Best Practices](/docs/send-data/design-deployment/best-practices-source-categories).
 2. In the Advanced section, specify the following configurations:
     3. **Enable Timestamp Parsing**. True
     4. **Time Zone**. Logs are in UTC by default
@@ -96,7 +101,7 @@ Before your can configure Sumo Logic to ingest logs, you must set up remote log 
 8. Enter your **Port**.
 9. For **Severity,** select **Alert (1)**.
 10. For **Facility,** select **Internal (5)**.
-11. For **Custom Token,** enter the token from the Sumo Logic [Cloud Syslog Source](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Cloud-Syslog-Source). The token should end with **@41123**. This number is the Sumo Logic Private Enterprise Number (PEN).
+11. For **Custom Token,** enter the token from the Sumo Logic [Cloud Syslog Source](/docs/send-data/Sources/sources-hosted-collectors/Cloud-Syslog-Source). The token should end with **@41123**. This number is the Sumo Logic Private Enterprise Number (PEN).
 12. Click **Save**.
 
 
@@ -180,11 +185,8 @@ _sourceCategory=*cylance* ExploitAttempt
 
 
 ###### **ScriptControl **
-13
 
-
-
-```
+```sql
 _sourceCategory=*cylance* ScriptControl
 | parse "Event Type: *, Event Name: *, Device Name: *, File Path: *, Interpreter: *, Interpreter
 Version: *, Zone Names: (*), User Name: *, Device Id: *, Policy Name: *" as event_type,
@@ -195,13 +197,12 @@ policy nodrop
 
 
 
-
 ###### **Threat **
 14
 
 
 
-```
+```sql
 _sourceCategory=*cylance* Threat "Event Type: Threat"
 | parse "Is Malware: *, " as malware_status nodrop
 | parse "Event Type: *, Event Name: *," as event_type, event_name nodrop
@@ -222,7 +223,7 @@ as isUniqueToCylance, threatClassification, device_id, policy nodrop
 
 
 
-```
+```sql
 _sourceCategory=*cylance* ThreatClassification
 | parse "Event Type: *, Event Name: *, Threat Class: *, Threat Subclass: *, SHA256: *, MD5: *"
 as event_type, event_name, threat_class, threat_subclass, sha, md5
@@ -232,12 +233,10 @@ as event_type, event_name, threat_class, threat_subclass, sha, md5
 
 
 
-###### **AppControl **
-16
+###### **AppControl
 
 
-
-```
+```sql
 _sourceCategory=*cylance* "Event Type:" AppControl
 | parse "Event Type: *," as event_type nodrop
 | parse "Event Name: *, Device Name: *, IP Address: (*), Action: *, Action Type: *, File Path: *,
@@ -265,14 +264,14 @@ Policy Name: Allowed Anywhere Internally
 
 
 
-### Query sample
+### Sample Query
 18
 
 
 The following query is from the **Event Name Trend** panel of the **Cylance - AuditLog Dashboard**.
 
 
-```
+```sql
 _sourceCategory=*cylance* "Event Type:" AuditLog
 | parse "Event Type: *, Event Name: *," as event_type, event_name nodrop
 | parse "Message: *," as msg nodrop | parse "Source IP: *," as src_ip nodrop | parse "User: *" as user nodrop
@@ -293,17 +292,13 @@ _sourceCategory=*cylance* "Event Type:" AuditLog
 
 
 
-## Install the Cylance App and view the Dashboard
+## Installing the Cylance App
 
-This page demonstrates how to install the Cylance App, as well as providing examples of each of the dashboards. The App preconfigured searches and [Dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/22Security_and_Threat_Detection/Cylance/Cylance-App-Dashboard#Dashboards) provide easy-to-access analytic visualizations of your data.
-
-
-### Install the Sumo Logic App
-19
+This section demonstrates how to install the Cylance App, as well as providing examples of each of the dashboards. The App preconfigured searches and [Dashboards](/docs/integrations/security-threat-detection/Cylance#Dashboards) provide easy-to-access analytic visualizations of your data.
 
 Now that you have set up log collection for Cylance, you can install the Cylance App.
 
-**To install the app:**
+To install the app:
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
@@ -311,13 +306,13 @@ Locate and install the app you need from the **App Catalog**. If you want to see
 2. Select the version of the service you're using and click **Add to Library**.
 
 20
-Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](https://help.sumologic.com/01Start-Here/Library/Apps-in-Sumo-Logic/Install-Apps-from-the-Library)
+Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/library/install-apps)
 
 1. To install the app, complete the following fields.
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
     2. **Data Source.** Select either of these options for the data source. 
         * Choose **Source Category**, and select a source category from the list. 
-        * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (_sourceCategory=MyCategory). 
+        * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). 
     3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
 2. Click **Add to Library**.
 
@@ -325,136 +320,93 @@ Once an app is installed, it will appear in your **Personal** folder, or other f
 
 Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
 
+## Viewing Cylance Dashboards
 
 ### Dashboard filters   
-21
 
 **Each dashboard has a set of filters** that you can apply to the entire dashboard, as shown in the following example. Click the funnel icon in the top dashboard menu bar to display a scrollable list of filters that are applied across the entire dashboard.
 
-
-22
-
 You can use filters to drill down and examine the data on a granular level.
-
-
-23
 
 **Each panel has a set of filters** that are applied to the results for that panel only, as shown in the following example. Click the funnel icon in the top panel menu bar to display a list of panel-specific filters.
 
 
-24
-
-
-### Cylance - Overview Dashboard
-25
-
+### Overview
 
 The **Cylance - Overview Dashboard** a high-level view of threat incidents experienced on your network. The dashboard panels provide at-a-glance graphs with details and analytics on exploit control violation types, zones, threat classifications, devices, threat file types, event types and trends, event outliers, and event time compare trends.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 * Analyze summaries of each prevention component, such as script control, memory exploit protection, device control, application control, AI based threat classification, and user actions performed from Cylance Web Console.
 * View of threats in the system, and drill down into specific prevention mechanisms and threat events by clicking in the panel.
 
+<img src={useBaseUrl('img/integrations/security-threat-detection/Cylance_Overview.png')} alt="Cylance dashboards" />
 
-26
-
-### Cylance - Threat Dashboard
-27
-
+### Threat
 
 The **Cylance - Threat Dashboard** provides a high-level view of the threats experienced on your network. Dashboard panels display graphs and detailed information with the number of events, top event names, status, file types, unique threats, severity, hosts with the most threats, threat origination, classification, and blocked threats.
 
-**Use this dashboard to:**
-
-
-
+Use this dashboard to:
 * Determine hosts (IP Address, device names) and zones affected by various threats identified and handled in the system.
 * Monitor files affected with SHA occurring multiple times, and various paths of the files, to understand the threat footprint.
 
-
-28
-
+<img src={useBaseUrl('img/integrations/security-threat-detection/Cylance_Threat.png')} alt="Cylance dashboards" />
 
 
-### Cylance - Threat Classification Dashboard
-29
-
+### Threat Classification
 
 The **Cylance - Threat Classification Dashboard** provides an insightful view of the types of threats experienced on your network. Dashboard panels are a mixture of graphs and detailed information on events, event names, threat class, subclass trends, safe files, malware files, and an event breakdown.
 
-**Use this dashboard to:**
+Use this dashboard to:
 
 * Determine how threats in your organization are analyzed and classified by Cylance Research Team.
 * Assess threats by classification: Malware, PUP - Potentially Unwanted Programs, Dual Use, Trusted Local, and Unknown.
 * Identify Trusted - Local files and add them to your Safe List in Cylance. For more details on classification and subs-classification see the Cylance [documentation](https://home-support.cylance.com/hc/en-us/articles/115009564987-What-are-Threat-Classifications-).
 
-
-30
-
+<img src={useBaseUrl('img/integrations/security-threat-detection/Cylance_Threat_Classification.png')} alt="Cylance dashboards" />
 
 
-### Cylance -  Memory Exploit Attempts Dashboard
-31
-
+### Memory Exploit Attempts
 
 The **Cylance - Memory Exploit Attempts Dashboard** provides a high-level view of threats on your network that attempt to exploit memory. Dashboard panels show detailed information on events, violations, blocked and terminated processes, policies, users, hosts, actions, and event trends by action.
 
 Whenever the agent detects certain hard-coded behaviors considered to be indicative of a compromise, an event is communicated to the service before the hooked API function is allowed to complete. The service then responds with an action for the agent to take, such as:
-
-
 
 * Ignore the violation and let it execute
 * Alert on the violation, but let it execute
 * Block the violation and send an alert
 * Terminate the process completely
 
-**Use this dashboard to:**
-
-
+Use this dashboard to:
 
 * Identify the most common policy violations, processes and highly impacted systems in your environment.
 * Monitor when, where, and what actions are taken with the configured policies in  your environment.
 * Devise any necessary policies changes based on findings.  
 
+<img src={useBaseUrl('img/integrations/security-threat-detection/Cylance_Memory_Exploit_Attempts.png')} alt="Cylance dashboards" />
 
-32
-
-
-
-### Cylance - Device Dashboard
-33
-
+### Device
 
 The **Cylance - Device Dashboard** provides insights into the devices on your network that receive in threats. Dashboard panels provide information on unique device names, IP addresses, MAC addresses, users, hosts, operating systems, event names, and event trends.
 
-**Use this dashboard to:**
-
-
-
+Use this dashboard to:
 * Analyze devices under protection by Cylance agent.
 * Monitor new devices being registered, updated, and the policies assigned to them.
 * Investigate devices that have been removed from protection.
 * Assess whether to push the latest agent version, if any device is found running on old or outdated version.
 
-
-34
-
+<img src={useBaseUrl('img/integrations/security-threat-detection/Cylance_Device.png')} alt="Cylance dashboards" />
 
 
-### Cylance - Device Control Dashboard
-35
-
+### Device Control
 
 The **Cylance - Device Control Dashboard** provides insights into external devices involved in threats on your network. Dashboard panels provide graphs and detailed information on events, hosts, unique external devices, event and action trends, and device control event details.
 
-**Use this dashboard to:**
-
-
+Use this dashboard to:
 
 * Monitor external devices (like USB mass storage device) connected to your environment.
 * Assess which devices to connect to your systems.
-* Grant and revoke access rights to specific devices, or agroup of device categories.
+* Grant and revoke access rights to specific devices, or a group of device categories.
 * Monitor external devices by their Vendor ID, Product ID, and Serial Number.
 * Define exceptions to the policy by vendor ID, as necessary.
 
@@ -463,23 +415,15 @@ The **Cylance - Device Control Dashboard** provides insights into external devic
 You can set an exception for a Vendor ID. Use a Product ID and Serial Number for more specific exceptions.
 
 
-37
+<img src={useBaseUrl('img/integrations/security-threat-detection/Cylance_Device_Control.png')} alt="Cylance dashboards" />
 
-
-
-### Cylance -  Script Control Dashboard
-38
-
+### Script Control
 
 The **Cylance - Script Control Dashboard** provides insights regarding scripts on your network. Dashboard panels provide graphs and detailed information on events, devices, interpreters, users, zones, hosts, files, and event trends.
 
-
-39
 Script control injects into a script interpreter (responsible for the execution of scripts). By injecting into the interpreter, the agent is able to detect the script and script path before the script is executed.
 
-**Use this dashboard to:**
-
-
+Use this dashboard to:
 
 * Monitor when, where, and how scripts are used in the environment. This ultimately reduces the attack surface on which an evildoer may distribute malware.
 * Monitor and protect against scripts running in the environment.
@@ -489,19 +433,15 @@ Script control injects into a script interpreter (responsible for the execution 
 * Change alert settings to block mode and only allow scripts to run out of specified folders, as necessary.
 
 
-40
+<img src={useBaseUrl('img/integrations/security-threat-detection/Cylance_Script_Control.png')} alt="Cylance dashboards" />
 
-
-
-### Cylance - AuditLog Dashboard
-41
+### AuditLog
 
 
 The **Cylance - AuditLog Dashboard** has easy to access information about audit logs for your network. Dashboard panels provide high-level graphs and detailed information showing the number of events, event names and trends, users and user geographic locations, source IPs, and a list of recent events.
 
-**Use this dashboard to:**
-
-
-
+Use this dashboard to:
 * Monitor user activity performed from Cylance Web Console.
 * Monitor users overriding, updating policies manually using Cylance Web Console.
+
+<img src={useBaseUrl('img/integrations/security-threat-detection/Cylance_AuditLog.png')} alt="Cylance dashboards" />

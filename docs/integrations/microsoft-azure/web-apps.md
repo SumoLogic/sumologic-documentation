@@ -2,42 +2,43 @@
 id: web-apps
 title: Sumo Logic App for Azure Web Apps
 sidebar_label: Azure Web Apps
-description: Azure Web Apps
+description: The Sumo Logic App for Azure Web Apps allows you to collect Azure web server and application diagnostics logs and monitor the health of your Azure Web Apps environment.
 ---
+
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src={useBaseUrl('img/integrations/microsoft-azure/webapps.png')} alt="thumbnail icon" width="50"/>
 
 The Azure Web Apps App allows you to collect Azure web server and application diagnostics logs and monitor the health of your Azure Web Apps environment. The App provides preconfigured Dashboards that allow you to monitor server operation and traffic requests and response times.
 
 For more information on Azure Web Apps, see [https://azure.microsoft.com/en-us/se...p-service/web/](https://azure.microsoft.com/en-us/services/app-service/web/).
 
-To install the Sumo Logic App for Azure Web Apps, you must sign up for a Sumo Logic account, if you have not already done so. To sign up, go to [https://www.sumologic.com/pricing/](https://www.sumologic.com/pricing/) and select your account type or click Free Trial to sign up for a Sumo Logic Free account.**   **
+To install the Sumo Logic App for Azure Web Apps, you must sign up for a Sumo Logic account, if you have not already done so. To sign up, go to [https://www.sumologic.com/pricing/](https://www.sumologic.com/pricing/) and select your account type or click Free Trial to sign up for a Sumo Logic Free account.
 
-
-## Log Types
-
-The Azure Web Apps App supports:
-
-* **Web Server Logging. **Information about HTTP transactions using the [W3C extended log file format](http://msdn.microsoft.com/library/windows/desktop/aa814385.aspx). This is useful when determining overall site metrics such as the number of requests handled or how many requests are from a specific IP address.
-* **Application Diagnostics Logs.** Application diagnostics allows you to capture information produced by a web application. ASP.NET applications can use the [System.Diagnostics.Trace](http://msdn.microsoft.com/library/windows/desktop/aa814385.aspx) class to log information to the application diagnostics log.
 
 
 ## Collect Logs for Azure Web Apps
 
 
-This page has instructions for configuring a pipeline for shipping Azure Web Apps logs from [Azure Monitor](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-get-started) to an Event Hub, on to an Azure Function, and finally to an HTTP source on a hosted collector in Sumo Logic. Click a link to jump to a topic:
+This section has instructions for configuring a pipeline for shipping Azure Web Apps logs from [Azure Monitor](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-get-started) to an Event Hub, on to an Azure Function, and finally to an HTTP source on a hosted collector in Sumo Logic. Click a link to jump to a topic:
 
+* [Solution Overview](#Solution_Overview)
+* [Configure an HTTP source](#Step_1:_Configure_an_HTTP_source)
+* [Configure Azure resources using ARM template](#Step_2:_Configure_Azure_Resources_using_ARM_template)
+* [Export logs for a particular Web App to Event Hub](#Step_3:_Export_logs_for_a_particular_Web_App_to_Event_Hub)
+* [Export metrics for a particular web app to Event Hub (Optional)](#Step_4:_Export_metrics_for_a_particular_web_app_to_Event_Hub_(Optional))
+* [Troubleshooting](#Troubleshooting)
+* [Sample Log Message](#Sample_Log_Message)
+* [Query Sample](#Query_Sample)
 
-* [Solution Overview](https://help.sumologic.com/07Sumo-Logic-Apps/04Microsoft-and-Azure/Azure_Web_Apps/01Collect-Logs-for-Azure-Web-Apps#Solution_Overview)
-* [Configure an HTTP source](https://help.sumologic.com/07Sumo-Logic-Apps/04Microsoft-and-Azure/Azure_Web_Apps/01Collect-Logs-for-Azure-Web-Apps#Step_1:_Configure_an_HTTP_source)
-* [Configure Azure resources using ARM template](https://help.sumologic.com/07Sumo-Logic-Apps/04Microsoft-and-Azure/Azure_Web_Apps/01Collect-Logs-for-Azure-Web-Apps#Step_2:_Configure_Azure_Resources_using_ARM_template)
-* [Export logs for a particular Web App to Event Hub](https://help.sumologic.com/07Sumo-Logic-Apps/04Microsoft-and-Azure/Azure_Web_Apps/01Collect-Logs-for-Azure-Web-Apps#Step_3:_Export_logs_for_a_particular_Web_App_to_Event_Hub)
-* [Export metrics for a particular web app to Event Hub (Optional)](https://help.sumologic.com/07Sumo-Logic-Apps/04Microsoft-and-Azure/Azure_Web_Apps/01Collect-Logs-for-Azure-Web-Apps#Step_4:_Export_metrics_for_a_particular_web_app_to_Event_Hub_(Optional))
-* [Troubleshooting](https://help.sumologic.com/07Sumo-Logic-Apps/04Microsoft-and-Azure/Azure_Web_Apps/01Collect-Logs-for-Azure-Web-Apps#Troubleshooting)
-* [Sample Log Message](https://help.sumologic.com/07Sumo-Logic-Apps/04Microsoft-and-Azure/Azure_Web_Apps/01Collect-Logs-for-Azure-Web-Apps#Sample_Log_Message)
-* [Query Sample](https://help.sumologic.com/07Sumo-Logic-Apps/04Microsoft-and-Azure/Azure_Web_Apps/01Collect-Logs-for-Azure-Web-Apps#Query_Sample)
+### Log Types
+
+The Azure Web Apps App supports:
+* **Web Server Logging. **Information about HTTP transactions using the [W3C extended log file format](http://msdn.microsoft.com/library/windows/desktop/aa814385.aspx). This is useful when determining overall site metrics such as the number of requests handled or how many requests are from a specific IP address.
+* **Application Diagnostics Logs.** Application diagnostics allows you to capture information produced by a web application. ASP.NET applications can use the [System.Diagnostics.Trace](http://msdn.microsoft.com/library/windows/desktop/aa814385.aspx) class to log information to the application diagnostics log.
 
 
 ### Solution Overview
-
 The following is how the solution fits together:
 
 * Azure Monitor collects logs for most Microsoft Azure services, including Azure Web Apps, and streams the data to an Azure Event Hub.
@@ -56,8 +57,8 @@ In this task, you configure an HTTP source to receive logs from the Azure functi
 
 1. Do one of the following:
 * Select a hosted collector on which to configure the HTTP source.
-* Create a new hosted collector, as described on [Configure a Hosted Collector](https://help.sumologic.com/03Send-Data/Hosted-Collectors/Configure-a-Hosted-Collector).
-1. Configure an HTTP source, as described on [HTTP Logs and Metrics Source](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/HTTP-Source). Make a note of the URL for the source, you will need it in the next step.
+* Create a new hosted collector, as described on [Configure a Hosted Collector](/docs/send-data/configure-hosted-collector).
+1. Configure an HTTP source, as described on [HTTP Logs and Metrics Source](/docs/send-data/sources/sources-hosted-collectors/http-logs-metrics-source). Make a note of the URL for the source, you will need it in the next step.
 
 
 #### Configure Azure Resources using ARM template
@@ -77,7 +78,7 @@ In this step, you use a Sumo-provided Azure Resource Manager (ARM) template to c
 7. Now you are back on the **Custom deployment** blade.
     1. Create a new Resource Group (recommended) or select an existing one.
     2. Choose Location.
-    3. In the **Sumo Endpoint URL** field, enter the URL of the HTTP Source you configured in [Step 1](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Azure_Monitoring/Collect_Logs_from_Azure_Monitor#Step_1._Configure_an_HTTP_source).
+    3. In the **Sumo Endpoint URL** field, enter the URL of the HTTP Source you configured in [Step 1](#Step_1._Configure_an_HTTP_source).
     4. Agree to the terms and conditions.
     5. Click **Purchase**. \
 
@@ -91,14 +92,14 @@ In this step, you use a Sumo-provided Azure Resource Manager (ARM) template to c
 
 
 
-10. Go to **Storage accounts** and search for “sumofailmsg**”. **Click on “sumofailmsg_&lt;random-string>”.
+10. Go to **Storage accounts** and search for “sumofailmsg**”. **Click on `sumofailmsg_<random-string>`.
 
 11. Under **Blob Service**, click **Containers**, then click **+ Container**, enter the Name** azureaudit-failover**, and select **Private** for the **Public Access Level**. Click **OK**.
 
 
 
 12
-If you also want to also collect metrics follow the instructions in [Step 2 for Collecting metrics from Azure monitor.](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Azure_Monitoring/Collect_Metrics_from_Azure_Monitor#step-2-configure-azure-resources-using-arm-template) The app dashboards currently do not have metric content.
+If you also want to also collect metrics follow the instructions in [Step 2 for Collecting metrics from Azure monitor.](#step-2-configure-azure-resources-using-arm-template) The app dashboards currently do not have metric content.
 
 
 #### Export logs for a particular Web App to Event Hub
@@ -114,11 +115,11 @@ In this task, you enable logs for your Azure Web app. For related information se
 1. Diagnostic Settings blade will show all your existing settings if any already exist. Click **Edit Setting** if you want to change your existing settings, or click **Add diagnostic setting** to add a new one.
 2. Select the **Stream to an event hub box **checkbox.
 3. Select an Azure subscription.
-4. Select the Event Hubs namespace you created in [Step 2](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Azure_Monitoring/Collect_Logs_from_Azure_Monitor#Step_2._Configure_Azure_resources_using_ARM_template). It should start with <code>"SumoAzureLogsNamespace&lt;<em>UniqueSuffix</em>>". </code>
-5. Select <strong>insights-operational-logs</strong> from the <strong>Select Event hub name</strong> dropdown.
-6. Select <strong>RootManageSharedAccessKey</strong> from <strong>Select Event hub policy name</strong> dropdown.
-7. Select the checkbox for log types under <strong>Category Details</strong> which you want to ingest.
-8. Click <strong>Save</strong>.
+4. Select the Event Hubs namespace you created in [Step 2](#Step_2._Configure_Azure_resources_using_ARM_template). It should start with `"SumoAzureLogsNamespace<UniqueSuffix>"`.
+5. Select **insights-operational-logs** from the **Select Event hub name** dropdown.
+6. Select **RootManageSharedAccessKey** from **Select Event hub policy name** dropdown.
+7. Select the checkbox for log types under **Category Details** which you want to ingest.
+8. Click **Save**.
 
 
 
@@ -127,7 +128,7 @@ In this task, you enable logs for your Azure Web app. For related information se
 
 The current Sumo Logic App for Web Apps does not support metric content so this step is optional. For exporting metrics you need to create another diagnostic setting and select All Metrics only with the following Event Hub configurations.
 
-**Event Hub Namespace. **Namespace created in [Step 2](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Azure_Monitoring/Collect_Logs_from_Azure_Monitor#Step_2._Configure_Azure_resources_using_ARM_template) by Metrics ARM template starting with `SumoMetricsNamespace&lt;unique suffix>`
+**Event Hub Namespace. **Namespace created in [Step 2](#Step_2._Configure_Azure_resources_using_ARM_template) by Metrics ARM template starting with `SumoMetricsNamespace<unique suffix>`
 
 **Event Hub Name. `insights-metrics-pt1m`**
 
@@ -137,7 +138,7 @@ The current Sumo Logic App for Web Apps does not support metric content so this 
 
 ### Troubleshooting  
 
-If logs are not flowing into Sumo Logic, see [Troubleshooting](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Azure_Monitoring/Collect_Logs_from_Azure_Monitor#Troubleshooting_log_collection).
+If logs are not flowing into Sumo Logic, see [Troubleshooting](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-logs-azure-monitor#Troubleshooting_log_collection).
 
 
 ### Sample Log Message
@@ -170,11 +171,11 @@ _sourceCategory=Azure/Web-app
 ```
 
 
-## Install the Sumo Logic App
+## Installing the Azure Web Apps App
 
-This page provides instructions on how to install the Azure Web Apps App, and shows examples of each of the preconfigured [dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/04Microsoft-and-Azure/Azure_Web_Apps/Azure-Web-Apps-Dashboards#Dashboards) you can use to analyze your data.
+This section provides instructions on how to install the Azure Web Apps App, and shows examples of each of the preconfigured [dashboards](#Dashboards) you can use to analyze your data.
 
-**To install the app:**
+To install the app:
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
@@ -185,7 +186,7 @@ Locate and install the app you need from the **App Catalog**. If you want to see
 
 
 20
-Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](https://help.sumologic.com/01Start-Here/Library/Apps-in-Sumo-Logic/Install-Apps-from-the-Library)
+Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/library/install-apps)
 
 
 
@@ -193,7 +194,7 @@ Version selection is applicable only to a few apps currently. For more informati
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
     2. **Data Source.** Select either of these options for the data source. 
         * Choose **Source Category**, and select a source category from the list. 
-        * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (_sourceCategory=MyCategory). 
+        * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). 
     3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
 2. Click **Add to Library**.
 
@@ -202,18 +203,13 @@ Once an app is installed, it will appear in your **Personal** folder, or other f
 Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
 
 
-## Dashboards
-21
+## Viewing Azure Web Apps Dashboards
 
 
 
-### Azure Web Apps - Overview
-22
+### Overview
 
-
-
-23
-
+<img src={useBaseUrl('img/integrations/microsoft-azure/Overview.png')} alt="Azure Web Apps dashboards" />
 
 **Visits by Country.** Performs a geo location operation to display the IP addresses of visitors on a map of the world for the last three hours.
 
@@ -232,13 +228,9 @@ Panels will start to fill automatically. It's important to note that each panel 
 **Errors by Country.** Displays the number of errors by country in a bar chart for the last three hours.
 
 
-### Azure Web Apps - Server Operation - Errors and Response Codes
-24
+### Server Operation - Errors and Response Codes
 
-
-
-25
-
+<img src={useBaseUrl('img/integrations/microsoft-azure/Overview.png')} alt="Azure Web Apps dashboards" />
 
 **Server Errors by Site.** Shows details on server errors by site in a column chart for the last three hours.
 
@@ -251,13 +243,9 @@ Panels will start to fill automatically. It's important to note that each panel 
 **Client Errors.** Displays details on client errors in a column chart for the last three hours.
 
 
-### Azure Web Apps - Server Operation - Requests and Response Time
-26
+### Server Operation - Requests and Response Time
 
-
-
-27
-
+<img src={useBaseUrl('img/integrations/microsoft-azure/Overview.png')} alt="Azure Web Apps dashboards" />
 
 **Requests by Hostname.** Displays the number of requests by hostname in a line chart on a timeline for the last three hours.
 
@@ -270,13 +258,9 @@ Panels will start to fill automatically. It's important to note that each panel 
 **Response Throughput.** Shows details on response throughput in a table chart including information on the URL and the average throughput in seconds for the last three hours.
 
 
-### Azure Web Apps - Traffic Insights - Apps and Requests
-28
+### Traffic Insights - Apps and Requests
 
-
-
-29
-
+<img src={useBaseUrl('img/integrations/microsoft-azure/Overview.png')} alt="Azure Web Apps dashboards" />
 
 **Visits by Country. **Performs a geo lookup operation and displays the IP addresses of worldwide visitors on a map of the world for the last three hours.
 
@@ -289,13 +273,9 @@ Panels will start to fill automatically. It's important to note that each panel 
 **Traffic Over Time (Outlier).** Shows the traffic and any outliers in an outlier chart on a timeline for the last 24 hours.
 
 
-### Azure Web Apps - Traffic Insights - Content and Client Platform
-30
+### Traffic Insights - Content and Client Platform
 
-
-
-31
-
+<img src={useBaseUrl('img/integrations/microsoft-azure/Overview.png')} alt="Azure Web Apps dashboards" />
 
 **Media Types Requested Over Time.** Displays media types requested over time by count in a line chart on a timeline in the last three hours.
 

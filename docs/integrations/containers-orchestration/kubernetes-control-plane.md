@@ -5,8 +5,11 @@ sidebar_label: Kubernetes Control Plane
 description: The Sumo Logic Kubernetes Control Plane App manages the master node control plane, including the API server, etcd, kube-system and worker nodes.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-The Sumo Logic Kubernetes Control Plane App manages the master node control plane, including the API server, etcd, kube-system and worker nodes. The App utilizes [Falco](https://falco.org/docs/) Kubernetes Audit events to monitor and detect notable or suspicious activity such as creating pods that are privileged, mount sensitive host paths, use host networking, and the like. Seamlessly integrated with the Sumo Logic [Kubernetes App](https://help.sumologic.com/07Sumo-Logic-Apps/10Containers_and_Orchestration/Kubernetes), preconfigured dashboards display resource-related metrics for Kubernetes deployments, clusters, namespaces, pods, containers, and daemonsets.
+<img src={useBaseUrl('img/integrations/containers-orchestration/k8s.png')} alt="VMware dashboards" width="50"/>
+
+The Sumo Logic Kubernetes Control Plane App manages the master node control plane, including the API server, etcd, kube-system and worker nodes. The App utilizes [Falco](https://falco.org/docs/) Kubernetes Audit events to monitor and detect notable or suspicious activity such as creating pods that are privileged, mount sensitive host paths, use host networking, and the like. Seamlessly integrated with the Sumo Logic [Kubernetes App](/docs/integrations/containers-orchestration/Kubernetes), preconfigured dashboards display resource-related metrics for Kubernetes deployments, clusters, namespaces, pods, containers, and daemonsets.
 
 [Kubernetes](https://kubernetes.io/) is a system that automates the deployment, management, scaling, networking, and availability of container-based applications. Kubernetes container-orchestration allows you to easily deploy and manage multi-container applications at scale.
 
@@ -17,7 +20,7 @@ There are two versions of the Kubernetes Control Plane app for:
 
 ## Collect Logs and Metrics for the Kubernetes Control Plane App
 
-This page provides instructions for configuring log and metric collection for the Kubernetes Control Plane App.
+This section provides instructions for configuring log and metric collection for the Kubernetes Control Plane App.
 
 
 ### Log and Metric Types
@@ -44,20 +47,18 @@ The Sumo Logic Kubernetes app uses FluentBit and FluentD to collect logs.
 * Node-exporter Metrics.
 * kube-state-metrics.
 
-Metrics are collected using [Prometheus with FluentD](https://github.com/SumoLogic/sumologic-kubernetes-collection/tree/master/deploy#step-1-create-sumo-collector-and-deploy-fluentd). For additional information on metrics options you can configure for collection, see [this document](https://help.sumologic.com/Metrics/Kubernetes_Metrics).
+Metrics are collected using [Prometheus with FluentD](https://github.com/SumoLogic/sumologic-kubernetes-collection/tree/master/deploy#step-1-create-sumo-collector-and-deploy-fluentd). For additional information on metrics options you can configure for collection, see [this document](/docs/metrics/kubernetes-metrics.md).
 
 
 ### Configuring log and metric collection  
 
-[Sumo Logic Kubernetes Collection](https://help.sumologic.com/07Sumo-Logic-Apps/10Containers_and_Orchestration/Kubernetes_Control_Plane/Collect_Logs_and_Metrics_for_the_Kubernetes_Control_Plane_App#s7214)
-
+[Sumo Logic Kubernetes Collection]
 
 ### Apps
 
-
 The Sumo Logic Kubernetes App provides the services for managing and monitoring Kubernetes worker nodes. You must set up collection and install the Kubernetes App before you install the Kubernetes - Control Plane App.
 
-After the [Kubernetes App](https://help.sumologic.com/07Sumo-Logic-Apps/10Containers_and_Orchestration/Kubernetes/Install_the_Kubernetes_App%2C_Alerts%2C_and_view_the_Dashboards) is installed you can [Install the Kubernetes Control Plane App and view the Dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/10Containers_and_Orchestration/Kubernetes_Control_Plane/Install_the_Kubernetes_Control_Plane_App_and_view_the_Dashboards).
+After you've installed the Kubernetes App, you can [Install the Kubernetes Control Plane App](#Installing-the-Kubernetes-Control-Plane-App) and [view the Dashboards](#viewing-the-dashboards).
 
 
 ### Sample log messages
@@ -129,7 +130,7 @@ connection refused"}
 
 
 
-### Query sample
+### Sample Query
 12
 
 
@@ -153,7 +154,7 @@ _sourceCategory = *controller*
 
 ## Install the Kubernetes Control Plane App and view the Dashboards
 
-This page provides instructions for installing the Kubernetes Control Plane App, as well as descriptions and examples for each of the dashboards. The app installation process consists of the following tasks:
+This section provides instructions for installing the Kubernetes Control Plane App, as well as descriptions and examples for each of the dashboards. The app installation process consists of the following tasks:
 
 * Determining custom data filters for source categories
 * Installing the app
@@ -185,7 +186,7 @@ When you install the FluentD plugin and Prometheus, you supply custom data filte
 16
 
 
-1. Determine the custom data filters and source categories. The following table lists the sources created by the plugin in the left column. The Source Category column contains the source category you should configure for the sources when you [install the app](https://help.sumologic.com/07Sumo-Logic-Apps/10Containers_and_Orchestration/Kubernetes_Control_Plane/Install_the_Kubernetes_Control_Plane_App_and_view_the_Dashboards#Install_the_App), or the source category that matches your environment based on the output of the query (from the previous step).
+1. Determine the custom data filters and source categories. The following table lists the sources created by the plugin in the left column. The Source Category column contains the source category you should configure for the sources when you [install the app](#Install_the_App), or the source category that matches your environment based on the output of the query (from the previous step).
 
 <table>
   <tr>
@@ -229,7 +230,7 @@ Source
 
 Now that you have set up collection for Kubernetes Control Plane, you can install the App and use the pre-configured searches and dashboards that provide insight into your data.
 
-**To install the App, do the following:**
+To install the app, do the following:
 
 
 
@@ -251,99 +252,81 @@ Now that you have set up collection for Kubernetes Control Plane, you can instal
 
 ### Filter with template variables    
 
-Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause.** **For more information, see the [Filter with template variables](https://help.sumologic.com/Visualizations-and-Alerts/Dashboard_(New)/Filter_with_template_variables) help page.
+Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause.** **For more information, see the [Filter with template variables](/docs/dashboards-new/filter-with-template-variables.md) help page.
 
-
-19
 You can use template variables to drill down and examine the data on a granular level.
 
 
-### Kubernetes - API Server Dashboard
-20
-
+### API Server Dashboard
 
 The **Kubernetes - API Server** dashboard displays information on the API server logs, which is the control plane component that exposes the Kubernetes API. Panels show details on the API server errors, warnings, and activities.
 
-**Use this dashboard to:**
-
-
-
+Use this dashboard to:
 * Monitor the health and performance of the API server.
 * Review server request rates.
 * Review server success and failure request rates.
 * Review client activity.
 * Review server errors for troubleshooting insights.
 
-
-21
-
+<img src={useBaseUrl('img/integrations/containers-orchestration/K8s_CP_API_Server.png')} alt="K8s control plane dashboards" />
 
 
-### Kubernetes - Controller Manager Dashboard
-22
-
+### Controller Manager Dashboard
 
 The **Kubernetes - Controller Manager **dashboard displays information on the controller manager, providing visibility into the core control loops for Kubernetes.
 
-**Use this dashboard to:**
-
-
-
+Use this dashboard to:
 * Assess the overall status of the controller manager, along with pod and job creations and deletions, and cloud provider requests.
 * Review the details of scaling operations to monitor controller manager health.
 * Review the trends in event severities to assist with troubleshooting.
 * Get an overview of the number and types of errors, then dive deeper into their causes with the information provided in the error log stream.
 
-
-23
-
+<img src={useBaseUrl('img/integrations/containers-orchestration/K8s_CP_Controller_Manager.png')} alt="K8s control plane dashboards" />
 
 
-### Kubernetes  - Kube System Dashboard
+### Kube System Dashboard
 24
 
 
 The **Kubernetes - Kube System** dashboard provides insights into the health of the kube system, including details on resource utilization.
 
-**Use this dashboard to:**
-
-
-
+Use this dashboard to:
 * Get an overview of message breakdowns for system, container, and errors.
 * Review the details for the pods and containers in the kube system.
 * Analyze the details of the error stream to determine high severity problems and proactively troubleshoot root cause solutions.
 
+<img src={useBaseUrl('img/integrations/containers-orchestration/K8s_CP_Kube_System.png')} alt="K8s control plane dashboards" />
 
 
-### Kubernetes  - Scheduler Dashboard
+### Scheduler Dashboard
 
 
 The **Kubernetes - Scheduler** dashboard provides insights into the health of the scheduler.
 
-**Use this dashboard to:**
-
-
-
+Use this dashboard to:
 * Get an overview of scheduler health and status.
 * Review scheduler latency details.
 
+<img src={useBaseUrl('img/integrations/containers-orchestration/K8s_CP_Scheduler.png')} alt="K8s control plane dashboards" />
 
-### Kubernetes  - Security Audit Events Dashboard
+### Security Audit Events Dashboard
 
 This dashboard relies on Falco. If the Dashboard is not populated, enable Falco by setting the flag "falco:enabled" as "true" in values.yaml as described [on this page](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/master/deploy/docs/Installation_with_Helm.md).
 
 The **Kubernetes - Security Audit** Events dashboard provides insights into Kubernetes audit events collected by Falco.
 
-**Use this dashboard to:**
-
+Use this dashboard to:
 * Monitor Kubernetes audit events.
 * Identify and investigate unexpected or anomalous activity.
 
-### Kubernetes - etcd3 Dashboard
+<img src={useBaseUrl('img/integrations/containers-orchestration/K8s_CP_Security_Audit_Events.png')} alt="K8s control plane dashboards" />
+
+### etcd3 Dashboard
 
 The Kubernetes - etcd3 dashboard provides information on the health of etcd, including resource usage, cache, proposals and leader changes.
 
-**Use this dashboard to:**
-
+Use this dashboard to:
 * Get a high-level view of the health and performance of the etcd backing store for the cluster.
 * Review performance data for cache insertions and deletions, to determine if there any potential problems and proactively troubleshoot root cause solutions.
+
+<img src={useBaseUrl('img/integrations/containers-orchestration/K8s_CP_etcd3.png')} alt="K8s control plane dashboards" />

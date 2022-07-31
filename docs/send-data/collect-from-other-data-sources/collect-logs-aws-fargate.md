@@ -26,7 +26,7 @@ We recommend collecting Amazon CloudWatch Logs using our AWS Lambda function
 
 ## Collect CloudWatch Logs using a CloudFormation Template
 
-This page has instructions for creating AWS resources using a Sumo-provided CloudFormation template. The template specifies the resources necessary to send Amazon CloudWatch Logs to Sumo, including a Lambda function for sending logs, another Lambda function configured with a dead letter queue for resending messages as necessary, and associated roles and permissions. For more information about the resources created, see [Download the CloudFormation template](#download-the-cloudformation-template).
+This section has instructions for creating AWS resources using a Sumo-provided CloudFormation template. The template specifies the resources necessary to send Amazon CloudWatch Logs to Sumo, including a Lambda function for sending logs, another Lambda function configured with a dead letter queue for resending messages as necessary, and associated roles and permissions. For more information about the resources created, see [Download the CloudFormation template](#download-the-cloudformation-template).
 
 CloudFormation based approach is recommended. If you would rather manually configure a Lambda function see [Collect Amazon CloudWatch Logs with Lambda Function](amazon-cloudwatch-logs/collect-with-lambda-function.md).
 

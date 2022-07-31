@@ -5,6 +5,10 @@ sidebar_label: containers-orchestration
 description: Docs for Sumo apps for container management and orchestration tools.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src={useBaseUrl('img/integrations/containers-orchestration/containers.png')} alt="DB icon" width="75"/>
+
 This guide has documentation Sumo apps for container management and orchestration tools.  
 
 import DocCardList from '@theme/DocCardList';

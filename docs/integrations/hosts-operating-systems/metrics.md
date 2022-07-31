@@ -2,14 +2,12 @@
 id: metrics
 title: Host Metrics Sumo Logic App
 sidebar_label: Host Metrics
+description: The Sumo Logic App for Host Metrics allows you to collect your local host metrics and display them using predefined search queries and Dashboards.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 The Host Metrics app allows you to monitor the performance and resource utilization of hosts and processes that your mission critical applications are dependent upon. Preconfigured dashboards provide insight into CPU, memory, network, file descriptors, page faults, and TCP connectors. This app uses the Sumo Logic installed collector for the collection of host metrics data.
-
-
-#### Metrics Types
-
-The metrics that are collected are described in [Host Metrics for Installed Collectors](https://help.sumologic.com/03Send-Data/Sources/01Sources-for-Installed-Collectors/Host-Metrics-Source#Collected_Metrics).
 
 
 ## Collect Host Metrics for the Host Metrics App
@@ -17,7 +15,29 @@ The metrics that are collected are described in [Host Metrics for Installed Coll
 This procedure explains how to collect metrics from a host machine and ingest them into Sumo Logic for metrics visualization.
 
 
-#### Metric types
+### Configure a Collector
+
+Configure an [Installed Collector](/docs/send-data/Installed-Collectors). Collectors can be installed on Linux, Windows, or Mac OS hosts.
+
+
+### Configure a Source
+
+1. Configure a [Host Metrics Source](#Collect-Host-Metrics-for-the-Host-Metrics-App). Choose **Add Source** and select **Host Metrics** as the source type.
+2. Configure the Source Fields as follows:
+    1. **Name.** Required. Description is optional. The source name is stored in a searchable field called _sourceName.
+    2. **Source Host**. Enter the host name of the machine from which the metrics will be collected.
+    3. **Source Category.** Required. The Source Category metadata field is a fundamental building block to organize and label Sources. For details see [Best Practices](/docs/send-data/design-deployment/best-practices-source-categories).
+    4. **Scan Interval**. Select the frequency for the Source to scan for hostmetrics data. Selecting a short interval will increase the message volume and could cause your deployment to incur additional charges. The default is 1 minute.
+    5. **Metrics**. Select check boxes for the metrics to collect. By default, all CPU and memory metrics are collected. Select the top level check box to select all metrics in that category. A blue checkmark icon
+
+ indicates that the category is selected. To select individual metrics, click the right-facing arrow to expand the category and select the individual metrics. The icon changes to
+
+, as shown below.
+
+3. Click **Save**.
+
+
+### Metric types
 
 Available metrics include:
 * CPU
@@ -26,40 +46,13 @@ Available metrics include:
 * Network
 * Disk
 
+The metrics that are collected are described in [Host Metrics for Installed Collectors](/docs/send-data/Sources/sources-installed-collectors/Host-Metrics-Source#Collected_Metrics).
+
 Host metrics are gathered by the open-source [SIGAR library](https://github.com/hyperic/sigar).
-
-
-#### Configure a Collector
-
-Configure an [Installed Collector](https://help.sumologic.com/03Send-Data/Installed-Collectors). Collectors can be installed on Linux, Windows, or Mac OS hosts.
-
-
-#### Configure a Source
-
-1. Configure a [Host Metrics Source](https://help.sumologic.com/07Sumo-Logic-Apps/14Hosts_and_Operating_Systems/Host_Metrics/01Collect-Host-Metrics-for-the-Host-Metrics-App#s2349). Choose **Add Source** and select **Host Metrics** as the source type.
-2. Configure the Source Fields as follows:
-    1. **Name.** Required. Description is optional. The source name is stored in a searchable field called _sourceName.
-    2. **Source Host**. Enter the host name of the machine from which the metrics will be collected.
-    3. **Source Category.** Required. The Source Category metadata field is a fundamental building block to organize and label Sources. For details see [Best Practices](https://help.sumologic.com/03Send-Data/01-Design-Your-Deployment/Best-Practices%3A-Good-Source-Category%2C-Bad-Source-Category).
-    4. **Scan Interval**. Select the frequency for the Source to scan for hostmetrics data. Selecting a short interval will increase the message volume and could cause your deployment to incur additional charges. The default is 1 minute.
-    5. **Metrics**. Select check boxes for the metrics to collect. By default, all CPU and memory metrics are collected. Select the top level check box to select all metrics in that category. A blue checkmark icon
-1.png "image_tooltip")
- indicates that the category is selected. To select individual metrics, click the right-facing arrow to expand the category and select the individual metrics. The icon changes to
-2.png "image_tooltip")
-, as shown below. \
-
-3.png "image_tooltip")
-
-3. Click **Save**.
-
-
-#### Available metrics
 
 The following tables list the available host metrics.
 
-
 #### CPU Metrics
-
 
 <table>
   <tr>
@@ -169,14 +162,10 @@ The following tables list the available host metrics.
 </table>
 
 
-
-4.png "image_tooltip")
-
-Load averages are not available on Windows platform
+Load averages are not available on Windows platform.
 
 
 #### Memory Metrics
-
 
 <table>
   <tr>
@@ -263,9 +252,7 @@ Load averages are not available on Windows platform
 </table>
 
 
-
 #### TCP Metrics
-
 
 <table>
   <tr>
@@ -350,8 +337,6 @@ Load averages are not available on Windows platform
   </tr>
 </table>
 
-
-
 #### Networking Metrics
 
 These have two additional dimensions:
@@ -362,7 +347,6 @@ These have two additional dimensions:
 Networking metrics are cumulative, so you can use the rate operator to display these metrics as a rate per second
 
 Example: `metric=Net_InBytes Interface=eth0 | rate`
-
 
 <table>
   <tr>
@@ -407,12 +391,9 @@ Example: `metric=Net_InBytes Interface=eth0 | rate`
   </tr>
 </table>
 
-
-
 #### Disk Metrics
 
 Disk metrics have two additional dimensions:
-
 
 * DevName: Device name, such as the mount name (example: udev)
 * DirName: Directory name, such as the mount directory (example: /dev)
@@ -506,8 +487,6 @@ Example: `metric=Disk_WriteBytes | rate`
 </table>
 
 
-
-5.png "image_tooltip")
 `Disk_InodesAvailable` is not available on Windows platform
 
 
@@ -516,49 +495,38 @@ Example: `metric=Disk_WriteBytes | rate`
 The time interval determines how frequently the Source is scanned for metrics data. The Web Application supports pre-specified time intervals (10 seconds, 15 seconds, 30 seconds, 1 minute, and 5 minutes).
 
 You can also specify a time interval in JSON by using the interval parameter, as follows:
-
-
 ```
-   "interval" : 60000
+"interval" : 60000
 ```
-
 
 The JSON parameter is in milliseconds. We recommend 60 seconds (60000 ms) or longer granularity. Specifying a shorter interval will increase the message volume and could cause your deployment to incur additional charges.
 
 
 #### AWS Metadata
 
-Collectors running on AWS EC2 instances can optionally collect AWS Metadata such as EC2 tags to make it easier to search for Host Metrics.  For more information, see [AWS Metadata Source for Metrics](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/AWS-Metadata-(Tag)-Source).
+Collectors running on AWS EC2 instances can optionally collect AWS Metadata such as EC2 tags to make it easier to search for Host Metrics.  For more information, see [AWS Metadata Source for Metrics](/docs/send-data/sources/sources-hosted-collectors/amazon-web-services/aws-metadata-tag-source).
 
 Only one AWS Metadata Source for Metrics is required to collect EC2 tags from multiple hosts.
 
 
-## Install the Host Metrics App and view the Dashboards
+## Installing the Host Metrics App
 
-### Install the Sumo Logic App
+Now that you have configured Host Metrics, install the Sumo Logic App for Host Metrics to take advantage of the preconfigured searches and [dashboards](#Dashboards) to analyze your Host Metrics data.
 
-Now that you have configured Host Metrics, install the Sumo Logic App for Host Metrics to take advantage of the preconfigured searches and [dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/14Hosts_and_Operating_Systems/Host_Metrics/Host-Metrics-App-Dashboards#Dashboards) to analyze your Host Metrics data.
-
-**To install the app:**
+To install the app:
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
-
-
 
 1. From the **App Catalog**, search for and select the app**.**
 2. Select the version of the service you're using and click **Add to Library**.
 
-
-6.png "image_tooltip")
-Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](https://help.sumologic.com/01Start-Here/Library/Apps-in-Sumo-Logic/Install-Apps-from-the-Library)
-
-
+Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/library/install-apps)
 
 1. To install the app, complete the following fields.
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
     2. **Data Source.** Select either of these options for the data source. 
         * Choose **Source Category**, and select a source category from the list. 
-        * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (_sourceCategory=MyCategory). 
+        * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). 
     3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
 2. Click **Add to Library**.
 
@@ -567,14 +535,12 @@ Once an app is installed, it will appear in your **Personal** folder, or other f
 Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
 
 
-### Dashboards
+## Viewing Host Metrics Dashboards
 
 
-#### Host Metrics - Overview
+### Overview
 
-
-7.png "image_tooltip")
-
+<img src={useBaseUrl('img/integrations/hosts-operating-systems/Host_Metrics_Overview.png')} alt="Host Metrics dashboards" />
 
 **Overall Average CPU Idle**. Displays the CPU idle time averaged across all hosts in a line chart on a timeline for the last hour. You can modify the list of hosts using the provided filters.
 
@@ -593,11 +559,9 @@ Panels will start to fill automatically. It's important to note that each panel 
 **Network OutBytes Rate per Host**. Shows the rate of network OutBytes per host in a line chart on a timeline for the last hour.
 
 
-#### Host Metrics - CPU
+### CPU
 
-
-8.png "image_tooltip")
-
+<img src={useBaseUrl('img/integrations/hosts-operating-systems/Host-Metrics-CPU.png')} alt="Host Metrics dashboards" />
 
 **CPU User Time per Host.** Displays the CPU user time per host in a line chart on a timeline for the last hour.
 
@@ -618,11 +582,9 @@ Panels will start to fill automatically. It's important to note that each panel 
 **CPU IO Wait Time per Host**. Displays the CPU IO wait time per host on a line chart on a timeline for the last hour
 
 
-#### Host Metrics - Disk
+### Disk
 
-
-9.png "image_tooltip")
-
+<img src={useBaseUrl('img/integrations/hosts-operating-systems/HostMetricsDisk.png')} alt="Host Metrics dashboards" />
 
 **Disk Used Bytes per Host.** Displays disk used bytes per host in a line chart on a timeline for the last hour.
 
@@ -637,11 +599,9 @@ Panels will start to fill automatically. It's important to note that each panel 
 **Disk Write Byte Rate per Host**. Provides details on disk write byte rate per host in a line chart on a timeline for the last hour.
 
 
-#### Host Metrics - Memory
+### Memory
 
-
-10.png "image_tooltip")
-
+<img src={useBaseUrl('img/integrations/hosts-operating-systems/host_metrics_app_memory.png')} alt="Host Metrics dashboards" />
 
 **Total Memory per Host. **Displays total memory per host in a line chart on a timeline for the last hour.
 
@@ -656,11 +616,9 @@ Panels will start to fill automatically. It's important to note that each panel 
 **Total Used System Memory per Host.** Provides details on the total system memory per host used in a line chart on a timeline for the last hour.
 
 
-#### Host Metrics - Network
+### Network
 
-
-11.png "image_tooltip")
-
+<img src={useBaseUrl('img/integrations/hosts-operating-systems/HostMetricsNetwork.png')} alt="Host Metrics dashboards" />
 
 **Network InPacket Rate per Host**. Displays network InPacket rate per host in a line chart on a timeline for the last hour.
 
@@ -671,11 +629,9 @@ Panels will start to fill automatically. It's important to note that each panel 
 **Network OutByte Rate per Host.** Displays network OutByte rate per host in a line chart on a timeline for the last hour.
 
 
-#### Host Metrics - TCP
+### TCP
 
-
-12.png "image_tooltip")
-
+<img src={useBaseUrl('img/integrations/hosts-operating-systems/host_metrics_app_tcp.png')} alt="Host Metrics dashboards" />
 
 **Inbound Connections per Host. **Displays inbound connections per host in a line chart on a timeline for the last hour.
 
@@ -691,9 +647,7 @@ Panels will start to fill automatically. It's important to note that each panel 
 
 
 ### Filters
-
 The supported filters are:
-
 * `_sourceCategory`
 * `_sourceHost`
 * `_source`

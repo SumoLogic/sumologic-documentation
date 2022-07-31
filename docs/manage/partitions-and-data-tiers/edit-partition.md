@@ -4,7 +4,7 @@ id: edit-partition
 
 # Edit a Partition
 
-This page has instructions for editing a partition.  
+This section has instructions for editing a partition.  
 
 :::important
 To edit a partition you must be an admin or have the Manage Partitions [role capability](../users-and-roles/roles/role-capabilities.md). Partitions apply to data from the date they are created (going forward only), and do not include data before the date of their creation.

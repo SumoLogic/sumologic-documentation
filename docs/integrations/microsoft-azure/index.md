@@ -2,8 +2,12 @@
 id: index
 title: Sumo Logic Apps for Microsoft and Azure
 sidebar_label: Microsoft and Azure
-description: Microsoft and Azure
+description: Docs for Sumo apps for Microsoft and Microsoft Azure.
 ---
+
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src='https://upload.wikimedia.org/wikipedia/commons/a/a8/Microsoft_Azure_Logo.svg' alt="thumbnail icon" width="100"/>
 
 This guide has documentation for all of the apps that Sumo provides for Microsoft and Microsoft Azure.  
 

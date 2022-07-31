@@ -75,7 +75,7 @@ CloudTrail Lambda Data Events:
 }
 ```
 
-### Query sample 
+### Sample Query 
 
 Top Functions by Duration:
 

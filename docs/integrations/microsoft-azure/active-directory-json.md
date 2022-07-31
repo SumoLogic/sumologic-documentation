@@ -2,14 +2,24 @@
 id: active-directory-json
 title: Sumo Logic App for Active Directory JSON
 sidebar_label: Active Directory JSON
-description: Active Directory JSON
+description: The Active Directory JSON App helps you monitor your Windows Active Directory deployment by analyzing Active Directory logs in the JSON based event log format.
 ---
+
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src={useBaseUrl('img/integrations/microsoft-azure/AD-small.png')} alt="thumbnail icon" width="75"/>
 
 The Active Directory JSON App helps you monitor your Windows Active Directory deployment by analyzing Active Directory logs in the JSON based event log format. The app includes predefined searches and dashboards that provide user activity into your environment for real-time analysis of overall usage.
 
 We recommend using the Active Directory JSON App in combination with the Windows JSON App.
 
-Log Types
+
+## Collecting Logs
+
+This section provides instructions on configuring log collection for the Active Directory JSON App so that logs are collected from the Microsoft Windows Event Log and ingested into Sumo Logic.
+
+### Log Types
+
 Standard Windows event channels include:
 * Security
 * System
@@ -17,25 +27,14 @@ Standard Windows event channels include:
 
 Custom event channels, such as PowerShell or Internet Explorer are also supported.
 
-
-
-## Collect Logs
-
-This page provides instructions on configuring log collection for the Active Directory JSON App so that logs are collected from the Microsoft Windows Event Log and ingested into Sumo Logic.
-
-
 ### Configure a Collector and a Source
 
+To configure a collector and source, do the following:
 
-**To configure a collector and source, do the following:**
-
-1. Configure an [Installed Windows collector](https://help.sumologic.com/03Send-Data/Installed-Collectors/03Install-a-Collector-on-Windows) through the user interface or from the command line.
+1. Configure an [Installed Windows collector](/docs/send-data/installed-collectors/install-collector-windows) through the user interface or from the command line.
 2. Configure either a local or remote Windows Event Log source. To configure a Windows Event Log source set the following:
-    * **Event Format.** Select **Collect using JSON format. \
- \
-**
-2
-** \
+    * **Event Format.** Select **Collect using JSON format.
+
 Collect using JSON format.** Events are formatted into JSON that is designed to work with Sumo Logic features, making it easier for you to reference your data.
     * **Event Collection Level.** When JSON format is selected you have to select Complete Message from the dropdown. \
 
@@ -43,7 +42,7 @@ Collect using JSON format.** Events are formatted into JSON that is designed to 
  \
 **Complete Message** will ingest the entire event content along with metadata.
 
-For more information on local or remote Windows Event Log Source configuration, refer to [Local Windows Event Log Source](https://help.sumologic.com/03Send-Data/Sources/01Sources-for-Installed-Collectors/Local-Windows-Event-Log-Source) and [Remote Windows Event Log Source](https://help.sumologic.com/03Send-Data/Sources/01Sources-for-Installed-Collectors/Remote-Windows-Event-Log-Source).
+For more information on local or remote Windows Event Log Source configuration, refer to [Local Windows Event Log Source](/docs/send-data/Sources/sources-installed-collectors/Local-Windows-Event-Log-Source) and [Remote Windows Event Log Source](/docs/send-data/Sources/sources-installed-collectors/Remote-Windows-Event-Log-Source).
 
 
 ### Sample Log Messages
@@ -62,10 +61,10 @@ For more information on local or remote Windows Event Log Source configuration, 
 
 ### Query Sample
 
-The sample query is from **Successes Vs Failures **panel** **from **Active Directory Service Failures** dashboard.
+The sample query is from **Successes Vs Failures** panel from [Active Directory Service Failures](#service-failures) dashboard.
 
 
-```
+```sql
 _sourceCategory=Labs/windows-jsonformat
 | json "EventID", "Computer", "Keywords" as event_id, host, keywords nodrop
 | if (keywords = "Audit Failure", "Failure", "Success") as status
@@ -77,24 +76,23 @@ _sourceCategory=Labs/windows-jsonformat
 
 
 
-## Install the Active Directory JSON App
+## Installing the Active Directory JSON App
 
 To install the app:
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
-1. From the **App Catalog**, search for and select the app**.**
+1. From the **App Catalog**, search for and select the app.
 2. Select the version of the service you're using and click **Add to Library**.
 
-Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](https://help.sumologic.com/01Start-Here/Library/Apps-in-Sumo-Logic/Install-Apps-from-the-Library)
-
+Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/library/install-apps)
 
 1. To install the app, complete the following fields.
-    1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
-    2. **Data Source.** Select either of these options for the data source. 
+    * **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
+    * **Data Source.** Select either of these options for the data source. 
         * Choose **Source Category**, and select a source category from the list. 
-        * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (_sourceCategory=MyCategory). 
-    3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
+        * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). 
+    * **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
 2. Click **Add to Library**.
 
 Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization.
@@ -102,48 +100,32 @@ Once an app is installed, it will appear in your **Personal** folder, or other f
 Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
 
 
-## Dashboard Filter with Template Variables
+## Viewing Active Directory JSON Dashboards
 
-Template variables provide dynamic dashboards that rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you can view dynamic changes to the data for a fast resolution to the root cause. For more information, see the [Filter with template variables](https://help.sumologic.com/Visualizations-and-Alerts/Dashboard_(New)/Filter_with_template_variables) help page.
+:::tip Filter with template variables    
+Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards-new/filter-with-template-variables.md).
+:::
 
-
-8
-You can use template variables to drill down and examine the data on a granular level.
-
-
-#### Active Directory Service Activity
-9
-
+### Service Activity
 
 The **Active Directory Service Activity** dashboard provides insights into overall active directory services like messages overtime, logon/off activity, object creation, and deletion.
 
-**Use this dashboard to:**
-
-
-
+Use this dashboard to:
 * Monitor object creation and deletion activities.
 * Monitor rights assigned to a user or rights removed from a user.
 * Monitor logon/logoff activity by various logon types.
 * Monitor top 10 activities with concise message.
 
-
-10
-
+<img src={useBaseUrl('img/integrations/microsoft-azure/Active-Directory-Activity.png')} alt="Active Directory JSON dashboards" />
 
 
-### Active Directory Service Failures
-11
-
+### Service Failures
 
 The **Active Directory Service Failures** dashboard provides an at-a-glance view of success, failures, and audit failures overtime.
 
-**Use this dashboard to:**
-
-
-
+Use this dashboard to:
 * Monitor success and failure trends to check for any deviation from normal.
 * Monitor all failed audit events along with administrative activities by event categories.
 * Track IP addresses associated with failed activities.
 
-
-12
+<img src={useBaseUrl('img/integrations/microsoft-azure/Active-Directory-Service-Failures.png')} alt="Active Directory JSON dashboards" />

@@ -1,7 +1,11 @@
 ---
 id: linux
-title: Linux
+title: Sumo Logic App for Linux Cloud Security Monitoring and Analytics
+sidebar_label: Linux
+description: Introduction to Linux Cloud Security Monitoring and Analytics.
 ---
+
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Cloud Security monitoring and Analytics app for Linux ingests any distribution of linux data to gain a better understanding of your production environments, and surface relevant insights by tuning out-of-the-box content to align with your security team’s focus. Consolidate analytics across various instances by wildcarding on data sources and gain full visibility into your Linux data for both monitoring and analytics use cases.
 
@@ -42,8 +46,6 @@ After installing Collectors, you can configure Sources by using the Web Applicat
 
 Run the installer on your server with root or Administrator privileges. If you are not logged in as root or Administrator, you might be prompted to reauthenticate to your system when you start the UI Installer.
 
-
-
 1. Open the downloaded installer file.
 2. If prompted, enter the root or Administrator user name and password for the system.
 3. Open the wizard to show the Welcome page. Click **Next**.
@@ -60,55 +62,61 @@ Run the installer on your server with root or Administrator privileges. If you a
 
 #### Install using the command line installer
 
-
-
-1. Add execution permissions to the downloaded Collector file (.sh): \
+1. Add execution permissions to the downloaded Collector file (.sh):
+```
 chmod +x SumoCollector.sh
+```
 2. Run the script with the parameters that you want to configure. See Parameters for the Command Line Installer for a description of the parameters.  By default the Collector will be installed in either /opt/SumoCollector or /usr/local/SumoCollector.
 
 **Examples**
 
 Using an Installation Token:
 ```
-sudo ./SumoCollector.sh -q -Vsumo.token_and_url=&lt;installationToken> -Vsources=&lt;absolute_filepath>
+sudo ./SumoCollector.sh -q -Vsumo.token_and_url=<installationToken> -Vsources=<absolute_filepath>
 ```
 Using access ID and access key:
 ```
-sudo ./SumoCollector.sh -q -Vsumo.accessid=&lt;accessId> -Vsumo.accesskey=&lt;accessKey> -Vsources=&lt;absolute_filepath>
+sudo ./SumoCollector.sh -q -Vsumo.accessid=<accessId> -Vsumo.accesskey=<accessKey> -Vsources=<absolute_filepath>
 ```
 Adding proxy settings:
 ```
-sudo ./SumoCollector.sh -q -Vsumo.accessid=&lt;accessId> -Vsumo.accesskey=&lt;accessKey> -Vsources=&lt;absolute_filepath> -Vproxy.host=&lt;proxyHost> -Vproxy.port=&lt;proxyPort>
+sudo ./SumoCollector.sh -q -Vsumo.accessid=<accessId> -Vsumo.accesskey=<accessKey> -Vsources=<absolute_filepath> -Vproxy.host=<proxyHost> -Vproxy.port=<proxyPort>
 ```
 Including syncSources and a customized Collector name:
 ```
-sudo ./SumoCollector.sh -q -Vsumo.accessid=&lt;accessId> -Vsumo.accesskey=&lt;accessKey> -VsyncSources=&lt;absolute_filepath> -Vcollector.name=&lt;name>
+sudo ./SumoCollector.sh -q -Vsumo.accessid=<accessId> -Vsumo.accesskey=<accessKey> -VsyncSources=<absolute_filepath> -Vcollector.name=<name>
 ```
 
 #### Install using the RPM or Debian package**
 
 You can use the RPM or Debian package to install a Collector on a Linux 64-bit system.
 
-
-
-1. Install the Collector using the downloaded installation package. \
-For the RPM package, use the command: \
-sudo rpm -i SumoCollector-19.XXX-XX.x86_64.rpm \
- For the Debian package, use the command: \
-sudo dpkg -i SumoCollector-19.XXX-XX.x86_64.deb \
+1. Install the Collector using the downloaded installation package.
+For the RPM package, use the command:
+```
+sudo rpm -i SumoCollector-19.XXX-XX.x86_64.rpm
+```
+ For the Debian package, use the command:
+```
+sudo dpkg -i SumoCollector-19.XXX-XX.x86_64.deb
+```
  The RPM and Debian packages install the collector in the /opt/SumoCollector directory.  By default, the Collector is installed as a system service, but not yet started.
-2. Configure the Collector  user.properties file in the /opt/SumoCollector/config/ directory. The Collector uses the settings defined in user.properties to register and start. See user.properties for a full list of all the supported parameters. \
-To use an access key, provide the accessid and accesskey parameters. For example: \
-name = &lt;collectorName> \
-accessid = &lt;accessId> \
-accesskey = &lt;accessKey> \
+2. Configure the Collector user.properties file in the /opt/SumoCollector/config/ directory. The Collector uses the settings defined in user.properties to register and start. See user.properties for a full list of all the supported parameters.
+To use an access key, provide the accessid and accesskey parameters. For example:
+```
+name = <collectorName>
+accessid = <accessId>
+accesskey = <accessKey>
+```
 To use an installation token, provide the authentication parameters token and url. To use these two parameters you'll need to manually base64 decode the **Token String**. Once decoded you'll have a string with a token and a URL. \
-For example, the following decoded **Token String**: \
+For example, the following decoded **Token String**:
 sumoxxxxxxxxxxxxxxxxxxxxxxxxxxxxhttps://collectors.sumologic.com \
-would be used as: \
-name = &lt;collectorName> \
-url=https://collectors.sumologic.com \
+would be used as:
+```
+name = <collectorName>
+url=https://collectors.sumologic.com
 token=SUMOXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+```
 
 Starting with collector 19.170+, the installation directory is secured to users belonging to the sumologic_collector group.
 
@@ -124,61 +132,82 @@ Alternatively, you can configure Sources at any time by using the Sumo web app. 
 1. (Optional) Set the run a user for the Collector if you want the Collector to run as a user other than root. See run as for a Collector.
 2. (Optional on Collector version 19.253-3+ in the Fed deployment) Enable FIPS 140-2 compliant Java Cryptography Extension (JCE) to encrypt your data to Sumo Logic's Fed deployment in US1 only. FIPS mode is not supported for any other deployment. If you are unsure whether you are on the Fed deployment, check our deployments.  \
  \
-To enable, locate and run the script **configureFipsMode.sh** contained in Collector's installation directory under **/script**: \
- \
+To enable, locate and run the script **configureFipsMode.sh** contained in Collector's installation directory under **/script**:
+```
 $ sh ./script/configureFipsMode.sh
-3. Start the Collector using the following command. \
+```
+3. Start the Collector using the following command.
+```
 sudo service collector start
-
+```
 
 #### Install using the binary package**
 
 
 
-1. Install the version of JRE you want to use from the following location. (The collector requires Java 8 or higher). The binary installation process does not include JRE installation. \
+1. Install the version of JRE you want to use from the following location. (The collector requires Java 8 or higher). The binary installation process does not include JRE installation.
 [https://docs.aws.amazon.com/corretto/latest/corretto-8-ug/downloads-list.html](https://docs.aws.amazon.com/corretto/latest/corretto-8-ug/downloads-list.html)
-2. Check the version of Java is 8 or higher: \
+2. Check the version of Java is 8 or higher:
+```
 java -version
-3. Untar the downloaded binary file inside your desired destination directory to create a subdirectory named **sumocollector**: \
+```
+3. Untar the downloaded binary file inside your desired destination directory to create a subdirectory named `sumocollector`:
+```
 tar -xvf SumoCollector_unix_XXX.tar.gz
-4. Copy the platform-specific wrapper file to the **sumocollector** directory: \
-cp tanuki/wrapper-&lt;platform> .
-5. Make the **wrapper**, **collector**, and **script** directory files executable: \
-chmod ug+x wrapper-&lt;platform> \
-chmod ug+x collector \
+```
+4. Copy the platform-specific wrapper file to the **sumocollector** directory:
+```
+cp tanuki/wrapper-<platform>
+```
+5. Make the **wrapper**, **collector**, and **script** directory files executable:
+```
+chmod ug+x wrapper-<platform>
+chmod ug+x collector
 chmod ug+x script/*
+```
 6. Configure the Collector  user.properties file in the /opt/SumoCollector/config/ directory. The Collector uses the settings defined in user.properties to register and start. See user.properties for a full list of all the supported parameters. \
-To use an access key, provide the accessid and accesskey parameters. For example: \
-name = &lt;collectorName> \
-accessid = &lt;accessId> \
-accesskey = &lt;accessKey> \
-wrapper.java.command = java \
-To use an installation token, provide the authentication parameters token and url. To use these two parameters you'll need to manually base64 decode the **Token String**. Once decoded you'll have a string with a token and a URL. \
-For example, the following decoded **Token String**: \
-SUMOXXXXXXXXXXXXXXXXXXXXXXXXXXXXhttps://collectors.sumologic.com \
-would be used as: \
-name = &lt;collectorName> \
-url=https://collectors.sumologic.com \
-token=SUMOXXXXXXXXXXXXXXXXXXXXXXXXXXXX \
+To use an access key, provide the accessid and accesskey parameters. For example:
+```
+name = <collectorName>
+accessid = <accessId>
+accesskey = <accessKey>
 wrapper.java.command = java
-7. Set access control for files under the **sumocollector** directory: \
+```
+To use an installation token, provide the authentication parameters token and url. To use these two parameters you'll need to manually base64 decode the **Token String**. Once decoded you'll have a string with a token and a URL.
+For example, the following decoded **Token String**:
+`SUMOXXXXXXXXXXXXXXXXXXXXXXXXXXXXhttps://collectors.sumologic.com`
+would be used as:
+```
+name = <collectorName>
+url=https://collectors.sumologic.com
+token=SUMOXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+wrapper.java.command = java
+```
+7. Set access control for files under the **sumocollector** directory:
+```
 sudo script/secureFiles.sh
-8. (Optional) Provide JSON Source information. \
-You can pass all Source settings in a UTF-8 encoded JSON file. If you are using a JSON file, you must provide the file before starting the Collector. See Using JSON to configure Sources. \
+```
+8. (Optional) Provide JSON Source information.
+You can pass all Source settings in a UTF-8 encoded JSON file. If you are using a JSON file, you must provide the file before starting the Collector. See Using JSON to configure Sources.
 Alternatively, you can configure sources at any time by using the Sumo web app. See Sources.
 9. (Optional) Set the run as user for the Collector if you want the Collector to run as a user other than root. See run as for a Collector.
-10. (Optional on Collector version 19.253-3+) Enable FIPS 140-2 compliant Java Cryptography Extension (JCE) to encrypt your data. Once enabled, the Collector version cannot be downgraded below version 19.253-3. \
- \
-To enable, locate and run the script **configureFipsMode.sh** contained in Collector's installation directory under **/script**: \
- \
-$ sh ./script/configureFipsMode.sh \
+10. (Optional on Collector version 19.253-3+) Enable FIPS 140-2 compliant Java Cryptography Extension (JCE) to encrypt your data. Once enabled, the Collector version cannot be downgraded below version 19.253-3.
+
+To enable, locate and run the script **configureFipsMode.sh** contained in Collector's installation directory under **/script**:
+```
+$ sh ./script/configureFipsMode.sh
+```
 
 11. Install the Collector as a service. \
-Use the following command to install the Collector as a service that is started when the machine starts. \
+Use the following command to install the Collector as a service that is started when the machine starts.
+```
 sudo ./collector install
+```
 12. Start the Collector service. \
-Use the following command to start the collector service. \
+Use the following command to start the collector service.
+```
 sudo ./collector start
+```
 13. To verify that the collector is installed, go to **Manage Data > Collection > Collection** in the Sumo web app and verify that you can see the collector.
 
 
@@ -212,7 +241,7 @@ cd /usr/local/SumoCollector
 sudo ./uninstall -q
 
 
-### Uninstall using the RPM/Debian packages**
+### Uninstall using the RPM/Debian packages
 
 For the RPM package, use the command:
 ```
@@ -225,13 +254,18 @@ sudo dpkg -r SumoCollector
 
 ### Uninstall using the binary package**
 
-1. Uninstall the collector service. \
-sudo &lt;Collector Installation Directory>/collector remove
-2. Remove the collector installation directory. \
-sudo rm -rf &lt;Collector Installation Directory>
-3. (Optional) On some distributions, for instance, Ubuntu, you may need to re-synchronize the daemon setting before installing the collector again. \
+1. Uninstall the collector service.
+```
+sudo <Collector Installation Directory>/collector remove
+```
+2. Remove the collector installation directory.
+```
+sudo rm -rf <Collector Installation Directory>
+```
+3. (Optional) On some distributions, for instance, Ubuntu, you may need to re-synchronize the daemon setting before installing the collector again.
+```
 sudo systemctl daemon-reload
-
+```
 
 ### Remove the collector from the web app
 
@@ -248,7 +282,7 @@ A success message is displayed and the collector is removed from the list.
 
 Now that you have set up collection, install the Sumo Logic App for PCI Compliance for Linux to use the preconfigured searches and Dashboards that provide insight into your data.
 
-**To install the app:**
+To install the app:
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
@@ -262,7 +296,7 @@ Version selection is applicable only to a few apps currently. For more informati
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
     2. **Data Source.** Select either of these options for the data source. 
         * Choose **Source Category**, and select a source category from the list. 
-        * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (_sourceCategory=MyCategory). 
+        * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). 
     3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
 2. Click **Add to Library**.
 
@@ -271,34 +305,40 @@ Once an app is installed, it will appear in your **Personal** folder, or other f
 Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
 
 
-### Dashboards
+## Viewing Dashboards
 
 
-#### **Linux - Security Monitoring - Overview**
+### **Linux - Security Monitoring - Overview
 
 **Dashboard description:** This dashboard provides an overview of security statistics relevant for Linux systems. It presents information about successful and failed logins, root login successes and failures, user accounts created and deleted, sudo attempts and total Services.
 
 **Use case:** Use this dashboard to monitor administrative actions (create, delete users) performed by end users, ensure proper services are running on all systems, detect attempts to change the system time, and verify that critical systems are up and running.You can also monitor excessive failed login attempts to detect attempts to break into the system.
 
+<img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/Linux-Security-Monitoring-Overview.png')} alt="Linux Security dashboards" />
 
-#### **Linux - Security Analytics - Login Activity**
+
+### **Linux - Security Analytics - Login Activity
 
 **Dashboard description: **This dashboard tracks login activity. It provides information about failed and successful user logins, and failed and successful root logins.
 
 **Use case:** Use this dashboard to monitor access to the linux computing environment. You can monitor failed and successful user logins.
 
+<img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/Linux-Security-Analytics-Login-Activity.png')} alt="Linux Security dashboards" />
 
 
-
-#### **Linux - Security Analytics - Privileged Activity**
+### Linux - Security Analytics - Privileged Activity**
 
 **Dashboard description: **This dashboard provides information about total sudo attempts, failed sudo attempts, the top 10 users and hosts that have issued sudo attempts, recent sudo attempts, and sudo attempts over time.
 
 **Use case:** Use this dashboard to monitor successful and failed access attempts to systems, especially with administrative privileges. It also helps monitor actions performed by users with administrative privileges.
 
+<img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/Linux-Security-Analytics-Privileged-Activity.png')} alt="Linux Security dashboards" />
 
-#### **Linux - Security Monitoring - User, Service, and System Monitoring**
+
+### **Linux - Security Monitoring - User, Service, and System Monitoring
 
 **Dashboard description: **This dashboard provides information about total sudo attempts, failed sudo attempts, the top 10 users and hosts that have issued sudo attempts, recent sudo attempts, and sudo attempts over time.
 
 **Use case:** Use this dashboard to monitor accounts created and deleted. It also helps monitor service usage and other system activity.
+
+<img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/Linux-Security-Analytics-User-Service-and-System-Monitoring.png')} alt="Linux Security dashboards" />

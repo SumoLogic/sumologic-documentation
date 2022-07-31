@@ -2,7 +2,12 @@
 id: linux
 title: Sumo Logic App for Linux
 sidebar_label: Linux
+description: Allows you to view the events, logins, and security status of your Linux system.
 ---
+
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src={useBaseUrl('img/integrations/hosts-operating-systems/linux.png')} alt="Linux icon" width="50"/>
 
 The Sumo app for Linux allows you to view information about events, logins, and the security status of your Linux system. The app consists of predefined searches and three dashboards that provide visibility into your environment for real-time or historical analysis.
 
@@ -40,12 +45,12 @@ The following logs, located in your Linux machine's /var/log folder, are require
 
 ### Configure a collector
 
-Configure an [Installed Collector](https://help.sumologic.com/03Send-Data/Installed-Collectors).
+Configure an [Installed Collector](/docs/send-data/Installed-Collectors).
 
 
 ### Configure a source
 
-To configure a source for collecting Linux logs, you create a Local File Source. Following the instructions on [Local File Source](https://help.sumologic.com/03Send-Data/Sources/01Sources-for-Installed-Collectors/Local-File-Source). When you define a Source Category for the source, we recommend something like: prod/os/linux. For more information about Source Categories, see see [Best Practices](https://help.sumologic.com/03Send-Data/01-Design-Your-Deployment/Best-Practices%3A-Good-Source-Category%2C-Bad-Source-Category).
+To configure a source for collecting Linux logs, you create a Local File Source. Following the instructions on [Local File Source](/docs/send-data/Sources/sources-installed-collectors/Local-File-Source). When you define a Source Category for the source, we recommend something like: prod/os/linux. For more information about Source Categories, see see [Best Practices](/docs/send-data/design-deployment/best-practices-source-categories).
 
 
 ### Sample log messages
@@ -61,18 +66,18 @@ Dec 16 20:26:23 ubuntu sshd[15533]: pam_unix(sshd:auth): authentication failure;
 
 
 
-### Query samples
+### Sample Querys
 
-See [Suggested Searches for Linux OS](https://help.sumologic.com/07Sumo-Logic-Apps/14Hosts_and_Operating_Systems/Linux/Suggested_Searches_for_Linux_OS).
+See [Suggested Searches for Linux OS](#Suggested_Searches_for_Linux_OS).
 
 
 ## Install the Linux App and view the Dashboards
 
 ### Sumo Logic App
 
-Now that you have set up collection for Linux, install the Sumo Logic App for Linux to use the preconfigured searches and [dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/14Hosts_and_Operating_Systems/Linux/Linux-App-Dashboards#Dashboards) to analyze your data.
+Now that you have set up collection for Linux, install the Sumo Logic App for Linux to use the preconfigured searches and [dashboards](#Dashboards) to analyze your data.
 
-**To install the app:**
+To install the app:
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
@@ -82,14 +87,14 @@ Locate and install the app you need from the **App Catalog**. If you want to see
 
 1.png "image_tooltip")
 
-Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](https://help.sumologic.com/01Start-Here/Library/Apps-in-Sumo-Logic/Install-Apps-from-the-Library)
+Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/library/install-apps)
 
 
 1. To install the app, complete the following fields.
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
     2. **Data Source.** Select either of these options for the data source. 
         * Choose **Source Category**, and select a source category from the list. 
-        * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (_sourceCategory=MyCategory). 
+        * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). 
     3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
 2. Click **Add to Library**.
 
@@ -98,16 +103,14 @@ Once an app is installed, it will appear in your **Personal** folder, or other f
 Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
 
 
-### Dashboards
+## Viewing Dashboards
 
 
-#### Overview
+### Overview
 
 **Dashboard description:** See an overview of Linux activity, including the distribution of system events across hosts, group assignment changes, a breakdown of successful and failed logins, sudo attempts, and the count of reporting hosts.
 
-
-2.png "image_tooltip")
-
+<img src={useBaseUrl('img/integrations/hosts-operating-systems/linux.png')} alt="Linux dashboards" />
 
 
 ##### Filtering the Overview dashboard
@@ -169,7 +172,7 @@ Click the funnel icon in the upper left of the dashboard to display filtering op
 
 These suggested searches cover some of the most common scenarios for monitoring user activity and security activity on a Linux server. These searches work on RedHat, Debian, SuSe platforms, and their derivations (for example, CentOS, Ubuntu, OpenSuSe).
 
-You can enter these queries into the Search box as a starting baseline, and then customize a query and time range for your system. Be sure to [save your search](https://help.sumologic.com/05Search/Get-Started-with-Search/Search-Basics/Save-a-Search) queries if you plan to run them often.
+You can enter these queries into the Search box as a starting baseline, and then customize a query and time range for your system. Be sure to [save your search](/docs/search/get-started-with-search/search-basics/save-search.md) queries if you plan to run them often.
 
 It's assumed that common Linux OS logs are collected (for example: `/var/log/*`).
 
@@ -391,5 +394,4 @@ Suggested time range: -1 day
 _sourceCategory=OS/Linux/System ("exiting" or "exited" or "terminating" or "terminated" or "shutting")
 | parse regex "\S*\s+\d+\s+\d+:\d+:\d+\s(?<dest_hostname>\S*)\s(?<process_name>\w*)(?:\[\d+\]|):\s+"
 | where process_name !=""
-
 ```

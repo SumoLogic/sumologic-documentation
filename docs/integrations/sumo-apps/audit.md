@@ -2,7 +2,10 @@
 id: audit
 title: Sumo Logic Audit App
 sidebar_label: Audit
+description: The Audit App uses Sumo audit index events to present information about account management activities, user activities, and management of Library content (searches, dashboards/reports, and folders) in your Sumo Logic account.
 ---
+
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Sumo Logic Audit App uses Sumo Logic audit index events to present information about account management activities, user activities, and management of Library content (searches, dashboards/reports, and folders) in your Sumo Logic account. The app uses predefined searches and Dashboards that provide visibility into your environment.
 
@@ -21,10 +24,9 @@ Install the Sumo Logic App to use the preconfigured searches and dashboards.
 
 Make sure that the Sumo auditing is enabled. If it is not, an administrator must enable it before you install the Audit app. For instructions, see Enable and Manage Auditing.  
 
-**To install the app, do the following:**
-
+To install the app, do the following:
 1. In the **App Catalog, **search for "Audit**"** and select the **Audit **app.
-2. Click **Add to Library**.
+2. Click **Add to Library**.<br/><img src={useBaseUrl('img/integrations/sumo-apps/audit-app-catalog.png')} alt="test" />
 3. To save the app to a new folder in your personal folder, click **+ New Folder **and select a name and location for your folder.
 4. Click **Add to Library** to install the app. A confirmation dialog will appear and then you can start viewing your  dashboards.
 
@@ -38,7 +40,7 @@ This section describes each of the dashboards in the Audit app.
 
 See an overview of account management activities, including role, operation, and access key operations; and the location where administrative activities were performed.  
 
-
+<img src={useBaseUrl('img/integrations/sumo-apps/audit-library-account-management-overview.png')} alt="test" />
 
 **User Operation Trend.** Displays the number and type (Create, Modify, and Delete) of user events performed in a stacked column chart on a timeline for the last week.
 
@@ -59,7 +61,7 @@ See an overview of account management activities, including role, operation, and
 
 See an overview of content management actions—Install, Export, Move, and so on—that have been performed on library content (searches, dashboards/reports, and folders).
 
-
+<img src={useBaseUrl('img/integrations/sumo-apps/audit-library-content-overview.png')} alt="test" />
 
 **Geolocation of Admin Activities. **Performs a geo lookup query and displays the location and number of admin activity events on a map of the world for the last 24 hours.
 
@@ -84,7 +86,7 @@ See an overview of content management actions—Install, Export, Move, and so on
 
 See information about permissions added or removed to Library content scheduled searches, dashboards, and folders.
 
-
+<img src={useBaseUrl('img/integrations/sumo-apps/audit-library-content-updated-permission.png')} alt="test" />
 
 **Added Permission. **Shows an aggregation table of permissions added with columns for the time, user, type of content, role, target, type of permissions, and count, for the last 24 hours.
 
@@ -103,6 +105,7 @@ See information about permissions added or removed to Library content scheduled 
 
 See information about  content management actions made in Admin mode to Library content** **searches, dashboards/reports, and folders). The dashboard shows information about  content changes, include the deletion, whitelisting, and sharing of content; and the addition or removal of permissions.
 
+<img src={useBaseUrl('img/integrations/sumo-apps/audit-library-content-admin-mode.png')} alt="test" />
 
 **Content Whitelisted and Shared with World. **Shows an aggregation table of content whitelisted and shared with the world with columns for the time, user, type of content, name of content, and level of visibility, for the last 24 hours.
 
@@ -121,6 +124,7 @@ See information about  content management actions made in Admin mode to Library 
 
 See information about content management actions performed to Library content (scheduled searches, dashboards, folders). The dashboard provides information about actions such as content deletion, content moved, and content copied.
 
+<img src={useBaseUrl('img/integrations/sumo-apps/audit-library-content-created-deleted-moved-copied-updated.png')} alt="test" />
 
 **Content Created. **Shows an aggregation table of library content created with columns for the time, user, type of content, name of content, and folder location, for the last 24 hours.
 
@@ -149,7 +153,7 @@ See information about content management actions performed to Library content (s
 
 See information about Library Content (searches, dashboards/reports, and folders) that has been shared, exported or imported.
 
-
+<img src={useBaseUrl('img/integrations/sumo-apps/audit-library-content-imported-exported.png')} alt="test" />
 
 **Content Shared with Public Users. **Shows an aggregation table of library content shared with public users with columns for the time, user, type of content, name of content, and level of visibility, for the last 24 hours.
 
@@ -174,21 +178,24 @@ See information about Library Content (searches, dashboards/reports, and folders
 
 See information on user activities, including modifying or resetting passwords, modifying preferences, and logging in or out.
 
+<img src={useBaseUrl('img/integrations/sumo-apps/audit-user-activity-login-and-credentials.png')} alt="test" />
 
 **Last Successful Login (UTC). **Displays an aggregation table of the last successful login per user, including the host and UTC event time for the last 24 hours.
 
-**Logged-In User Locations. **Performs a geo lookup query and displays the location and number of logged-in users on a map of the world for the last 24 hours.
+**Logged-In User Locations.** Performs a geo lookup query and displays the location and number of logged-in users on a map of the world for the last 24 hours.
 
 **Successful User Login Attempts.** Counts the number of successful user login attempt events and displays them in a column chart on a timeline of days for the last week.
 
-**Password Modification Attempts. **Counts the number of password modification attempt events and displays them in a column chart on a timeline of days for the last month.
+**Password Modification Attempts.** Counts the number of password modification attempt events and displays them in a column chart on a timeline of days for the last month.
 
-**Password Reset Attempts. **Counts the number of password reset attempt events and displays them in a column chart on a timeline of days for the last month.
+**Password Reset Attempts.** Counts the number of password reset attempt events and displays them in a column chart on a timeline of days for the last month.
 
 
 ### User Activity - Scheduled Search
 
-See information on user activity pertaining to scheduled searches or scheduled search events (Start, Finish, Create, Delete, Update, Timeout, Skip, Suspend, Unsuspend)**.**
+See information on user activity pertaining to scheduled searches or scheduled search events (Start, Finish, Create, Delete, Update, Timeout, Skip, Suspend, Unsuspend).
+
+<img src={useBaseUrl('img/integrations/sumo-apps/Audit-User-Activity-Scheduled-Search.png')} alt="test" />
 
 **Scheduled Search Started.** Counts the number of successfully started scheduled searches events and displays them in a column chart on a timeline for the last 24 hours.
 
@@ -217,6 +224,7 @@ See information on user activity pertaining to scheduled searches or scheduled s
 
 See information on scheduled searches that have been triggered, along with details on related alerts and Webhooks.
 
+<img src={useBaseUrl('img/integrations/sumo-apps/audit-ScheduleSearch-Triggered-Summary.png')} alt="test" />
 
 **Count of Scheduled Searches Triggered**. A listing of scheduled searches that have been triggered and their saved search names.
 

@@ -1,27 +1,26 @@
 ---
 id: cloud-vpc
 title: Sumo Logic App for Google Cloud VPC
-sidebar_label: Cloud VPC
-description: tk
+sidebar_label: Google Cloud VPC
+description: The Sumo Logic App for Google Cloud VPC provides visibility into the activities, traffic, and VPC flow in GCP.
 ---
+
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src={useBaseUrl('img/integrations/google/vpc.png')} alt="thumbnail icon" width="75"/>
 
 The Google Cloud Platform (GCP) [Virtual Private Cloud](https://cloud.google.com/vpc/docs/)(VPC) provides networking functionality to [Compute Engine](https://cloud.google.com/compute/docs/) virtual machine (VM) instances, [Kubernetes Engine](https://cloud.google.com/kubernetes-engine/docs/) containers and [App Engine Flex](https://cloud.google.com/appengine/docs/flexible/). The Sumo Logic App for Google Cloud VPC provides visibility into the activities, traffic, and VPC flow in your GCP. The preconfigured dashboards provide you details on the VPC flows, source and destination IP addresses, ports, protocols, and messages.
 
 
-### Log Types
-1
+## Collecting Logs for Google Cloud VPC
 
+This page describes the Sumo pipeline for ingesting logs from Google Cloud Platform (GCP) services, and provides instructions for collecting logs from  Google Cloud VPC.
+
+### Log Types
 
 The App uses:
 
-
-
 * **Compute Engine VPC Flow Logs**. These logs provide information from Compute Engine ​VMs ​for ​network ​operations ​such ​as ​Network ​monitoring, ​forensics, ​real-time security ​analysis ​and ​expense ​optimization.
-
-
-## Collect Logs for Google Cloud VPC
-
-This page describes the Sumo pipeline for ingesting logs from Google Cloud Platform (GCP) services, and provides instructions for collecting logs from  Google Cloud VPC.
 
 
 ### Collection process for GCP services
@@ -60,15 +59,15 @@ This Source will be a Google Pub/Sub-only Source, which means that it will only 
 
 
 1. In Sumo Logic select** Manage Data > Collection > Collection**.
-2. Select an existing Hosted Collector upon which to add the Source. If you don't already have a Collector you'd like to use, create one, using the instructions on [Configure a Hosted Collector](https://help.sumologic.com/03Send-Data/Hosted-Collectors/Configure-a-Hosted-Collector).
+2. Select an existing Hosted Collector upon which to add the Source. If you don't already have a Collector you'd like to use, create one, using the instructions on [Configure a Hosted Collector](/docs/send-data/configure-hosted-collector).
 3. Click **Add Source** next to the Hosted** **Collector and click **Google Cloud Platform**.
 4. Enter a **Name** to display for the Source. A **Description** is optional. \
 
 5
 
-5. **Source Host** (Optional). The Source Host value is tagged to each log and stored in a searchable [metadata](https://help.sumologic.com/05Search/Get-Started-with-Search/Search-Basics/Built-in-Metadata) field called _sourceHost. Avoid using spaces so you do not have to quote them in [keyword search expressions](https://help.sumologic.com/05Search/Get-Started-with-Search/How-to-Build-a-Search/Keyword-Search-Expressions). This can be a maximum of 128 characters.
-6. **Source Category** (Optional). The Source Category value is tagged to each log and stored in a searchable [metadata](https://help.sumologic.com/05Search/Get-Started-with-Search/Search-Basics/Built-in-Metadata) field called _sourceCategory. See our [Best Practices: Good Source Category, Bad Source Category](https://help.sumologic.com/03Send-Data/01-Design-Your-Deployment/Best-Practices%3A-Good-Source-Category%2C-Bad-Source-Category). Avoid using spaces so you do not have to quote them in [keyword search expressions](https://help.sumologic.com/05Search/Get-Started-with-Search/How-to-Build-a-Search/Keyword-Search-Expressions). This can be a maximum of 1,024 characters.
-7. **Fields**. Click the **+Add Field** link to add custom log metadata [Fields](https://help.sumologic.com/Manage/Fields), then define the fields you want to associate. Each field needs a name (key) and value. Look for one of the following icons and act accordingly:
+5. **Source Host** (Optional). The Source Host value is tagged to each log and stored in a searchable [metadata](/docs/search/index.md/Get-Started-with-Search/Search-Basics/Built-in-Metadata) field called _sourceHost. Avoid using spaces so you do not have to quote them in [keyword search expressions](/docs/search/get-started-with-search/build-search/keyword-search-expressions.md). This can be a maximum of 128 characters.
+6. **Source Category** (Optional). The Source Category value is tagged to each log and stored in a searchable [metadata](/docs/search/index.md/Get-Started-with-Search/Search-Basics/Built-in-Metadata) field called _sourceCategory. See our [Best Practices: Good Source Category, Bad Source Category](/docs/send-data/design-deployment/best-practices-source-categories). Avoid using spaces so you do not have to quote them in [keyword search expressions](/docs/search/get-started-with-search/build-search/keyword-search-expressions.md). This can be a maximum of 1,024 characters.
+7. **Fields**. Click the **+Add Field** link to add custom log metadata [Fields](/docs/manage/fields.md), then define the fields you want to associate. Each field needs a name (key) and value. Look for one of the following icons and act accordingly:
     *
 6
  If an orange triangle with an exclamation point is shown, use the option to automatically add or enable the nonexistent fields before proceeding to the next step. The orange icon indicates that the field doesn't exist, or is disabled, in the Fields table schema. If a field is sent to Sumo that does not exist in the Fields schema or is disabled it is ignored, known as dropped.
@@ -81,14 +80,14 @@ This Source will be a Google Pub/Sub-only Source, which means that it will only 
 
     * **Timestamp Parsing**. This option is selected by default. If it's deselected, no timestamp information is parsed at all.
     * **Time Zone**. There are two options for Time Zone. You can use the time zone present in your log files, and then choose an option in case time zone information is missing from a log message. Or, you can have Sumo Logic completely disregard any time zone information present in logs by forcing a time zone. It's very important to have the proper time zone set, no matter which option you choose. If the time zone of logs can't be determined, Sumo Logic assigns logs UTC; if the rest of your logs are from another time zone your search results will be affected.
-    * **Timestamp Format**. By default, Sumo Logic will automatically detect the timestamp format of your logs. However, you can manually specify a timestamp format for a Source. See [Timestamps, Time Zones, Time Ranges, and Date Formats](https://help.sumologic.com/03Send-Data/Sources/04Reference-Information-for-Sources/Timestamps%2C-Time-Zones%2C-Time-Ranges%2C-and-Date-Formats) for more information.
-9. **Processing Rules**. Configure any desired filters, such as allowlist, denylist, hash, or mask, as described in [Create a Processing Rule](https://help.sumologic.com/Manage/Collection/Processing-Rules/Create-a-Processing-Rule).
+    * **Timestamp Format**. By default, Sumo Logic will automatically detect the timestamp format of your logs. However, you can manually specify a timestamp format for a Source. See [Timestamps, Time Zones, Time Ranges, and Date Formats](/docs/send-data/sources/reference-information-sources/time-reference) for more information.
+9. **Processing Rules**. Configure any desired filters, such as allowlist, denylist, hash, or mask, as described in [Create a Processing Rule](/docs/manage/collection/processing-rules/create-processing-rule.md).
 10. When you are finished configuring the Source click **Save**.
 
 
 ### Configure a Pub/Sub Topic for GCP
 
-You need to configure a Pub/Sub Topic in GCP and add a subscription to the Source URL that belongs to the Sumo Logic Google Cloud Platform Source you created. Once you configure the Pub/Sub, you can export data from Google Logging to the Pub/Sub. For example, you can export Google App Engine logs, as described on [Collect Logs for Google App Engine](https://help.sumologic.com/07Sumo-Logic-Apps/06Google/Google_App_Engine/01Collect-Logs-for-the-Google-App-Engine-App).
+You need to configure a Pub/Sub Topic in GCP and add a subscription to the Source URL that belongs to the Sumo Logic Google Cloud Platform Source you created. Once you configure the Pub/Sub, you can export data from Google Logging to the Pub/Sub. For example, you can export Google App Engine logs, as described on [Collect Logs for Google App Engine](/docs/integrations/google/App-Engine#01Collect-Logs-for-the-Google-App-Engine-App).
 
 
 
@@ -251,7 +250,7 @@ Create a sink for each GCP service whose logs you want to send to Sumo. We recom
 
 
 
-### Example query
+### Sample query
 16
 
 
@@ -278,31 +277,11 @@ _collector="HTTP Source for GCP Pub/Sub" logName resource timestamp
 
 
 
-# Install the Google Cloud VPC App and view the Dashboards
+## Installing the Google Cloud VPC App
 
+Now that you have set up collection for Google Cloud VPC, install the Sumo Logic App to use the pre-configured searches and [dashboards](#Dashboards) that provide visibility into your environment for real-time analysis of overall usage.
 
-
-1. **Last updated \
-**Apr 13, 2022, 10:54 PM by Nishant
-2. **Page restriction \
-**Public
-    * [ Page notifications Off](https://help.sumologic.com/07Sumo-Logic-Apps/06Google/Google_Cloud_VPC/Install-the-Google-Cloud-VPC-App-and-view-the-Dashboards#)
-    *  
-    * [Save as PDF](https://help.sumologic.com/@api/deki/pages/5323/pdf/Install%2bthe%2bGoogle%2bCloud%2bVPC%2bApp%2band%2bview%2bthe%2bDashboards.pdf?stylesheet=default)
-    *  
-    * [ Share](https://help.sumologic.com/07Sumo-Logic-Apps/06Google/Google_Cloud_VPC/Install-the-Google-Cloud-VPC-App-and-view-the-Dashboards#)
-
-    Table of contents
-
-
-
-### Install the Sumo Logic App
-17
-
-
-Now that you have set up collection for Google Cloud VPC, install the Sumo Logic App to use the pre-configured searches and [dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/06Google/Google_Cloud_VPC/Install-the-Google-Cloud-VPC-App-and-view-the-Dashboards#Dashboards) that provide visibility into your environment for real-time analysis of overall usage.
-
-**To install the app:**
+To install the app:
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
@@ -313,7 +292,7 @@ Locate and install the app you need from the **App Catalog**. If you want to see
 
 
 18
-Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](https://help.sumologic.com/01Start-Here/Library/Apps-in-Sumo-Logic/Install-Apps-from-the-Library)
+Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/library/install-apps)
 
 
 
@@ -321,7 +300,7 @@ Version selection is applicable only to a few apps currently. For more informati
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
     2. **Data Source.** Select either of these options for the data source. 
         * Choose **Source Category**, and select a source category from the list. 
-        * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (_sourceCategory=MyCategory). 
+        * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). 
     3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
 2. Click **Add to Library**.
 
@@ -330,20 +309,14 @@ Once an app is installed, it will appear in your **Personal** folder, or other f
 Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
 
 
-### Dashboards
-19
+## Viewing Google Cloud VPC App Dashboards
 
 
-
-#### Google Cloud VPC - Overview
-20
-
+### Overview
 
 See an overview of the top 10 IPs, ports, and VMs; along with trends in traffic and VPC flows in your Google Cloud VPC.
 
-
-21
-
+<img src={useBaseUrl('img/integrations/google/GoogleCloudVPCOverview.png')} alt="Google Cloud VPC dashboards" />
 
 **Inbound Source Address Locations**. Shows number of incoming source IP addresses in the last 24 hours and their location on a world map.
 
@@ -374,15 +347,12 @@ See an overview of the top 10 IPs, ports, and VMs; along with trends in traffic 
 **VPC Flows per Protocol by Hour**. See the VPC flows per protocol by hour in the last 24 hours on a column graph.
 
 
-#### Google Cloud VPC Activity
-22
-
+### VPC Activity
 
 See the details of your Google Cloud VPC activity including the trends of traffic, packets, and average latency; along with totals of VPC flows.
 
 
-23
-
+<img src={useBaseUrl('img/integrations/google/cloud-vpc-activity.png')} alt="Google Cloud VPC dashboards" />
 
 **Traffic (MiB) by Subnetwork ID. **Shows trends in traffic by Subnetwork ID in the last hour on a line graph.
 
@@ -411,15 +381,11 @@ See the details of your Google Cloud VPC activity including the trends of traffi
 **VPC Flows by Destination Port**. Shows the count of VPC flows by destination port in the last hour on a pie chart.
 
 
-#### Google Cloud VPC advanced metrics
-24
-
+### Advanced metrics
 
 See the details of your Google Cloud VPC traffic including the trend and outlier in messages, total bytes, packets and latency.
 
-
-25
-
+<img src={useBaseUrl('img/integrations/google/cloud-vpc-Traffic.png')} alt="Google Cloud VPC dashboards" />
 
 **Messages per Minute - Outlier**. Shows outliers in messages per minute over the last hour on a line graph with threshold.
 

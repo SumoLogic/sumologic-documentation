@@ -2,15 +2,24 @@
 id: iis-7
 title: Sumo Logic App for IIS 7
 sidebar_label: IIS 7
-description: IIS 7
+description: Allows you to manage your Microsoft Internet Information Services (IIS) server operations errors, request response times, as well as visitors and traffic insights.
 ---
+
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src={useBaseUrl('img/integrations/microsoft-azure/microsoft_iis_10.jpg')} alt="thumbnail icon" width="150"/>
 
 The IIS 7 App monitors the performance and reliability of your Microsoft Internet Information Services (IIS) infrastructure, identifying customer-facing and internal operational issues. Additionally, you can monitor customer paths and interactions to learn how customers are using your product. The app consists of predefined searches and Dashboards, which provide visibility into your environment for real time or historical analysis.
 
-Log Types
 
-The IIS App 7 (IIS 7.5 logs) assume the following format:
+## Collecting Logs
 
+This procedure explains how to enable logging from Microsoft Internet Information Services (IIS) on your Windows server and ingest the logs into Sumo Logic.
+
+
+### Log Types
+
+IIS 7 Logs (IIS 7.5 logs are used) are generated as local files and written to this directory by default: `C:\inetpub\Logs\LogFiles\W3SVC1`. The App assumes the following format:
 ```
 # Fields: date time s-ip cs-method cs-uri-stem cs-uri-query s-port
 cs-username c-ip cs(User-Agent) sc-status sc-substatus
@@ -19,27 +28,7 @@ sc-win32-status time-taken
 
 For details on setting fields to log, see http://technet.microsoft.com/en-us/library/cc754702(v=ws.10).aspx.
 
-
-<!-- Output copied to clipboard! -->
-
-<!-- You have some errors, warnings, or alerts. If you are using reckless mode, turn it off to see inline alerts.
-* ERRORs: 1
-* WARNINGs: 0
-* ALERTS: 28 -->
-
-
-## Collect Logs
-
-This procedure explains how to enable logging from Microsoft Internet Information Services (IIS) on your Windows server and ingest the logs into Sumo Logic.
-
-
-### Log Types
-
-IIS 7 Logs (IIS 7.5 logs are used) are generated as local files and written to this directory by default: `C:\inetpub\Logs\LogFiles\W3SVC1`
-
 Sumo Logic expects W3C format with these fields for our Field Extraction Rules and IIS 7 Application: ([https://msdn.microsoft.com/en-us/library/ms525807(v=vs.90).aspx](https://msdn.microsoft.com/en-us/library/ms525807(v=vs.90).aspx)).
-
-
 * Date
 * Time
 * ServerIP
@@ -60,14 +49,10 @@ For more information about the IIS 7 log (IIS 7.5 logs are used) format, see [ht
 
 
 ### Prerequisites
-2
-
 
 To prepare for logging IIS 7 events, perform the following two tasks.
 
 **To enable logging on your IIS Server, do the following:**
-
-
 
 1. Open the Sever Manager Console
 2. Select **Roles**
@@ -111,22 +96,22 @@ Sumo Logic expects these fields in IIS logs for the IIS 7 Application and Field 
 4
 
 
-Configure an [Installed Collector (Windows)](https://help.sumologic.com/03Send-Data/Installed-Collectors/03Install-a-Collector-on-Windows). Sumo Logic recommends that you install the collector on the same system that hosts the logs.
+Configure an [Installed Collector (Windows)](/docs/send-data/installed-collectors/install-collector-windows). Sumo Logic recommends that you install the collector on the same system that hosts the logs.
 
 
 ### Step 2: Configure a Source
 
-To collect logs from IIS 7, use an Installed Collector and a Local File Source. You may also configure a [Remote File Source](https://help.sumologic.com/03Send-Data/Sources/01Sources-for-Installed-Collectors/Remote-File-Source), but the configuration is more complex. Sumo Logic recommends using a Local File Source if possible.
+To collect logs from IIS 7, use an Installed Collector and a Local File Source. You may also configure a [Remote File Source](/docs/send-data/Sources/sources-installed-collectors/Remote-File-Source), but the configuration is more complex. Sumo Logic recommends using a Local File Source if possible.
 
 
-1. Configure a [Local File Source](https://help.sumologic.com/03Send-Data/Sources/01Sources-for-Installed-Collectors/Local-File-Source).
+1. Configure a [Local File Source](/docs/send-data/Sources/sources-installed-collectors/Local-File-Source).
 2. Configure the Local File Source Fields as follows:
     1. **Name**: Required (for example, "IIS")
     2. **Description**. (Optional)
     3. **File Path **(Required).`C:\inetpub\Logs\LogFiles\W3SVC1\*.log`
     4. **Collection start time**. Choose how far back you would like to begin collecting historical logs. For example, choose 7 days ago to being collecting logs with a last modified date within the last seven days.
     5. **Source Host**. Sumo Logic uses the hostname assigned by the operating system by default, but you can enter a different host name.
-    6. **Source Category** (Required). For example, "IIS_prod". (The Source Category metadata field is a fundamental building block to organize and label Sources. For details see [Best Practices](https://help.sumologic.com/03Send-Data/01-Design-Your-Deployment/Best-Practices%3A-Good-Source-Category%2C-Bad-Source-Category).)
+    6. **Source Category** (Required). For example, "IIS_prod". (The Source Category metadata field is a fundamental building block to organize and label Sources. For details see [Best Practices](/docs/send-data/design-deployment/best-practices-source-categories).)
 3. Configure the **Advanced** section:
     7. **Timestamp Parsing Settings**: Make sure the setting matches the timezone on the log files.
     8. **Enable Timetamp Parsing**: Select **Extract timestamp information from log file entries**.
@@ -222,12 +207,11 @@ The following query is taken from the **OSes and Browsers** panel of the **IIS 7
     ```
 
 
-## Install the IIS 7 App
+## Installing the IIS 7 App
 
+Now that you have set up collection for IIS 7, install the Sumo Logic App for IIS 7 to use the preconfigured searches and [dashboards](#Dashboards) that monitor log events generated by IIS 7.
 
-Now that you have set up collection for IIS 7, install the Sumo Logic App for IIS 7 to use the preconfigured searches and [dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/04Microsoft-and-Azure/IIS/03IIS-App-Dashboards#Dashboards) that monitor log events generated by IIS 7.
-
-**To install the app, do the following:**
+To install the app, do the following:
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
@@ -238,7 +222,7 @@ Locate and install the app you need from the **App Catalog**. If you want to see
 
 
 12
-Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](https://help.sumologic.com/01Start-Here/Library/Apps-in-Sumo-Logic/Install-Apps-from-the-Library)
+Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/library/install-apps)
 
 
 
@@ -246,7 +230,7 @@ Version selection is applicable only to a few apps currently. For more informati
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
     2. **Data Source.** Select either of these options for the data source. 
         * Choose **Source Category**, and select a source category from the list. 
-        * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (_sourceCategory=MyCategory). 
+        * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). 
     3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
 2. Click **Add to Library**.
 
@@ -255,72 +239,53 @@ Once an app is installed, it will appear in your **Personal** folder, or other f
 Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
 
 
-## Dashboard filters   
-13
-
+## Viewing IIS 7 Dashboards
 
 **Each dashboard has a set of filters** that you can apply to the entire dashboard, as shown in the following example. Click the funnel icon in the top dashboard menu bar to display a scrollable list of filters that are applied across the entire dashboard.
 
 You can use filters to drill down and examine the data on a granular level.
 
 
-14
-
-
 **Each panel has a set of filters** that are applied to the results for that panel only, as shown in the following example. Click the funnel icon in the top panel menu bar to display a list of panel-specific filters.
 
 
-15
-
-
-
-## IIS 7 - Overview Dashboard
-16
-
+### Overview Dashboard
 
 The **IIS 7 - Overview Dashboard** provides a high-level view of user visits by country, the number of requests and the response time, top applications used to make requests, operating systems (OSes) used, and the number of server errors.
+<img src={useBaseUrl('img/integrations/microsoft-azure/Overview.png')} alt="IIS 7 dashboards" />
 
 
-17
-
-
-
-## IIS 7 - Server Operation - Errors Dashboard
+### Server Operation - Errors
 18
 
 
 The **IIS 7 - Server Operation - Errors Dashboard** provides information on server errors by IP address, response code trends, HTTP errors by server IP address, and client errors by IP address.
-
-
-19
+<img src={useBaseUrl('img/integrations/microsoft-azure/Overview.png')} alt="IIS 7 dashboards" />
 
 
 
-## IIS 7 - Server Operation - Requests and Response Time Dashboard
+### Server Operation - Requests and Response Time
 20
 
 
 The **IIS 7 - Server Operation - Requests and Response Time Dashboard** provides information on requests by server IP address, the top 10 slowest web pages, the number of requests and the response time per timeslice, top 10 server IP addresses response throughput time in bytes per second, and cumulative response times percentiles.
 
+<img src={useBaseUrl('img/integrations/microsoft-azure/Overview.png')} alt="IIS 7 dashboards" />
 
-21
-
-
-
-## IIS 7 - Traffic Insights - Apps and Requests Dashboard
-22
-
+### Traffic Insights - Apps and Requests
 
 The **IIS 7 - Traffic Insights - Apps and Requests Dashboard** provides information on the requests made by each application, the top 10 applications and the number of requests received, the top 10 users making requests, cumulative user request percentiles, the top 10 clients by IP address and the number of requests made, and cumulative client request percentiles**.**
 
+<img src={useBaseUrl('img/integrations/microsoft-azure/Overview.png')} alt="IIS 7 dashboards" />
 
 
-
-## IIS 7  - Traffic Insights - Content and Client Platform Dashboard
+### Traffic Insights - Content and Client Platform
 
 The IIS 7 - Traffic Insights - Content and Client Platform Dashboard provides information on the number of media file types requested, the top 10 documents requested, the operating systems and web browsers used by visitors, and the operating system platforms used by visitors.
+<img src={useBaseUrl('img/integrations/microsoft-azure/Overview.png')} alt="IIS 7 dashboards" />
 
-
-## IIS 7 - Visitor Insights Dashboard
+#### Visitor Insights
 
 The **IIS 7 - Visitor Insights Dashboard** provides information on the geographic locations and number of users by client IP address, the number of visitors per country, locations and number of users by client IP address by US state, and the number of visitors per US state.
+
+<img src={useBaseUrl('img/integrations/microsoft-azure/Overview.png')} alt="IIS 7 dashboards" />

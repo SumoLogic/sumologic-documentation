@@ -4,7 +4,7 @@ id: configure-telegraf-output-plugin
 
 # Configure Telegraf Output Plugin for Sumo Logic
 
-This page has instructions for configuring the Telegraf output plugin for Sumo Logic.
+This section has instructions for configuring the Telegraf output plugin for Sumo Logic.
 
 ## Configure Hosted Collector and HTTP Source
 

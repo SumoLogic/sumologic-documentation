@@ -5,7 +5,7 @@ sidebar_label: AWS CloudTrail
 description: tk
 ---
 
-This page has instructions for collecting AWS CloudTrail log messages and sending them to Sumo Logic to be ingested by CSE.
+This section has instructions for collecting AWS CloudTrail log messages and sending them to Sumo Logic to be ingested by CSE.
 
 Sumo Logic CSE supports the default AWS CloudTrail log format which includes all version 2 fields. See [AWS CloudTrail log records documentation](https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs.html#flow-logs-fields) for more details.
 

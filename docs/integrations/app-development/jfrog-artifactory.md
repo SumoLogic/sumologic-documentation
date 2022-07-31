@@ -2,17 +2,21 @@
 id: jfrog-artifactory
 title: Sumo Logic App for JFrog Artifactory
 sidebar_label: JFrog Artifactory
+description: Provides insight into your JFrog Artifactory binary repository.
 ---
 
-If you do not currently have a Sumo Logic account, the [JFrog Artifactory Sumo Logic integration](https://help.sumologic.com/Manage/Connections-and-Integrations/JFrog-Artifactory-Sumo-Logic-Integration) is the most convenient way to start using Sumo Logic directly from Artifactory. If you already have a Sumo Logic account, you can still use use the integration, but this will create a secondary Sumo Logic account. If you choose to use your current account, you can do so by installing the Sumo Logic App for Artifactory and access your Artifactory data from Sumo Logic, instead of from your Artifactory instance.  
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src={useBaseUrl('img/integrations/app-development/jfrog-Artifactory.png')} alt="DB icon" width="100"/>
+
+If you do not currently have a Sumo Logic account, the [JFrog Artifactory Sumo Logic integration](/docs/manage/connections-and-integrations/jfrog-artifactory-integration.md) is the most convenient way to start using Sumo Logic directly from Artifactory. If you already have a Sumo Logic account, you can still use use the integration, but this will create a secondary Sumo Logic account. If you choose to use your current account, you can do so by installing the Sumo Logic App for Artifactory and access your Artifactory data from Sumo Logic, instead of from your Artifactory instance.  
 
 The Sumo Logic App for Artifactory provides insight into your JFrog Artifactory binary repository. The App provides preconfigured Dashboards that include an Overview of your system, Traffic, Requests and Access, Download Activity, Cache Deployment Activity, and Non-Cached Deployment Activity.
 
-The Sumo Logic App for Artifactory only supports Artifactory On-Premise. It does not work with Artifactory Online. The [JFrog Artifactory Sumo Logic integration](https://help.sumologic.com/Manage/Connections-and-Integrations/JFrog-Artifactory-Sumo-Logic-Integration) supports both Artifactory On-Premise and Artifactory Online.
+The Sumo Logic App for Artifactory only supports Artifactory On-Premise. It does not work with Artifactory Online. The [JFrog Artifactory Sumo Logic integration](/docs/manage/connections-and-integrations/jfrog-artifactory-integration.md) supports both Artifactory On-Premise and Artifactory Online.
 
 
-#### Log Types
-1.gif "image_tooltip")
+### Log Types
 
 The Sumo Logic App for Artifactory collects data from the following logs:
 
@@ -21,35 +25,8 @@ The Sumo Logic App for Artifactory collects data from the following logs:
 * **request.log.** Generic HTTP traffic information similar to the Apache HTTPd request log.
 * **traffic.*.log.** A log that contains information about site traffic and file sizes.
 
-For more details about Artifactory logs, refer to [https://www.jfrog.com/confluence/display/RTF/Artifactory+Log+Files](https://www.jfrog.com/confluence/display/RTF/Artifactory+Log+Files).
+For more details about Artifactory logs, refer to [https://www.jfrog.com/confluence/display/RTF/Artifactory+Log+Files](https://www.jfrog.com/confluence/display/RTF/Artifactory+Log+Files) and [Artifactory Log Files](https://www.jfrog.com/confluence/display/RTF6X/Artifactory+Log+Files#ArtifactoryLogFiles-RequestLog).
 
-
-#### Activate the traffic.log file
-2.gif "image_tooltip")
-
-
-To activate the **traffic.log** file, add the following parameter to your **artifactory.system.properties** file, located under **$ARTIFACTORY/etc**:
-
-
-```
-artifactory.traffic.collectionActive=true
-```
-
-
-For Artifactory 7, the properties file is located at: `$JFROG_HOME/artifactory/var/etc/artifactory/artifactory.system.properties`
-
-For more details about Artifactory 7 log collection, refer to [Collect Logs for Artifactory 7.](https://help.sumologic.com/07Sumo-Logic-Apps/08App_Development/Artifactory/02-Collect_Logs_for_Artifactory_7)
-
-A restart is required for traffic collection to take effect.
-
-
-## Collect Logs for Artifactory
-
-This procedure documents how to collect logs from JFrog Artifactory into Sumo Logic.
-
-
-### Log Types
-3.gif "image_tooltip")
 
 Sumo Logic reads logs in the directory `/var/opt/jfrog/artifactory/logs`:
 
@@ -58,18 +35,31 @@ Sumo Logic reads logs in the directory `/var/opt/jfrog/artifactory/logs`:
 * `request.log`
 * `traffic.*.log`
 
-For more information about Artifactory logs, see JFrog's [Artifactory Log Files](https://www.jfrog.com/confluence/display/RTF6X/Artifactory+Log+Files#ArtifactoryLogFiles-RequestLog).
 
+### Activate the traffic.log file
+
+To activate the **traffic.log** file, add the following parameter to your **artifactory.system.properties** file, located under **$ARTIFACTORY/etc**:
+```
+artifactory.traffic.collectionActive=true
+```
+
+For Artifactory 7, the properties file is located at: `$JFROG_HOME/artifactory/var/etc/artifactory/artifactory.system.properties`
+
+For more details about Artifactory 7 log collection, refer to [Collect Logs for Artifactory 7].
+
+A restart is required for traffic collection to take effect.
+
+
+## Collecting Logs for Artifactory
+
+This procedure documents how to collect logs from JFrog Artifactory into Sumo Logic.
 
 ### Configure a collector
-4.gif "image_tooltip")
 
-
-Configure an [Installed Collector](https://help.sumologic.com/03Send-Data/Installed-Collectors).
+Configure an [Installed Collector](/docs/send-data/Installed-Collectors).
 
 
 ### Configure sources
-5.gif "image_tooltip")
 
 In this step, you configure four local file sources, one for each log source listed in the table below. When you create a file source for a log type:
 
@@ -122,11 +112,10 @@ The following suffixes are required. For example, you could use `_sourceCategory
   </tr>
 </table>
 
-6.png "image_tooltip")
 
-Remember that _sourceCategory names are case sensitive. When you run a search using _sourceCategory, make sure you use the same case as you did when configuring the source.
+Remember that `_sourceCategory` names are case sensitive. When you run a search using `_sourceCategory`, make sure you use the same case as you did when configuring the source.
 
-For complete instructions see [Local File Source](https://help.sumologic.com/03Send-Data/Sources/01Sources-for-Installed-Collectors/Local-File-Source).
+For complete instructions see [Local File Source](/docs/send-data/Sources/sources-installed-collectors/Local-File-Source).
 
 1. Configure a Local File source.
 2. Configure the Source fields:
@@ -141,13 +130,11 @@ For complete instructions see [Local File Source](https://help.sumologic.com/03S
 4. Click **Save**.
 
 
-#### Field Extraction Rules
-7.gif "image_tooltip")
+### Field Extraction Rules
 
 Here are Artifactory extraction rules that use different approaches.
 
 **Traffic**
-
 
 ```
 _sourceCategory=*artifactory*
@@ -178,7 +165,7 @@ _sourceCategory=*artifactory*
 
 
 ### Sample Log Messages
-8.gif "image_tooltip")
+8
 
 
 
@@ -191,7 +178,7 @@ _sourceCategory=*artifactory*
 
 
 ### Query Samples
-9.gif "image_tooltip")
+9
 
 
 **Data Transfer Over Time**
@@ -249,7 +236,7 @@ This procedure documents how to collect logs from JFrog Artifactory into Sumo Lo
 
 
 ### Log Types
-10.gif "image_tooltip")
+10
 
 For each JFrog service, you will find its active log files in the `$JFROG_HOME/<product>/var/log` directory. For consistency, each log file is prefixed by its service name and a dash, `<service-name>-service.log`. For example, artifactory-service.log and router-request.log.
 
@@ -262,14 +249,14 @@ For more information about Artifactory logs, see JFrog's [Artifactory Log Files,
 
 
 ### Configure a collector
-11.gif "image_tooltip")
+11
 
 
-Configure an [Installed Collector](https://help.sumologic.com/03Send-Data/Installed-Collectors).
+Configure an [Installed Collector](/docs/send-data/Installed-Collectors).
 
 
 ### Configure sources
-12.gif "image_tooltip")
+12
 
 
 In this step, you configure four local file sources, one for each log source listed in the table below. When you create a file source for a log type:
@@ -325,10 +312,10 @@ The following suffixes are required. For example, you could use `_sourceCategory
   </tr>
 </table>
 
-13.png "image_tooltip")
+13
 Remember that _sourceCategory names are case sensitive. When you run a search using _sourceCategory, make sure you use the same case as you did when configuring the source.
 
-For complete instructions see [Local File Source](https://help.sumologic.com/03Send-Data/Sources/01Sources-for-Installed-Collectors/Local-File-Source).
+For complete instructions see [Local File Source](/docs/send-data/Sources/sources-installed-collectors/Local-File-Source).
 
 1. Configure a Local File source.
 2. Configure the Source fields:
@@ -344,7 +331,7 @@ For complete instructions see [Local File Source](https://help.sumologic.com/03S
 
 
 ### Sample Log Messages
-14.gif "image_tooltip")
+14
 
 
 **Traffic**
@@ -377,7 +364,7 @@ admin/149.5.95.40.
 
 
 ### Query Sample
-15.gif "image_tooltip")
+15
 
 
 **Requests by Repo**
@@ -426,19 +413,19 @@ _sourceCategory = Labs/artifactory/*
 ## Install the Artifactory App and view the Dashboards
 
 ### Install the Sumo Logic App
-16.gif "image_tooltip")
+16
 
-Now that you have set up collection, install the Sumo Logic App for Artifactory to use the pre-configured searches and [Dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/08App_Development/Artifactory/Artifactory-App-Dashboards#Dashboard) that provide insight into your data.
+Now that you have set up collection, install the Sumo Logic App for Artifactory to use the pre-configured searches and [Dashboards](#Dashboard) that provide insight into your data.
 
-**To install the app:**
+To install the app:
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
 1. From the **App Catalog**, search for and select the app**.**
 2. Select the version of the service you're using and click **Add to Library**.
 
-17.png "image_tooltip")
-Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](https://help.sumologic.com/01Start-Here/Library/Apps-in-Sumo-Logic/Install-Apps-from-the-Library)
+17
+Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/library/install-apps)
 
 1. To install the app, complete the following fields.
     1. **App Name**. You can retain the existing name, or enter a name of your choice for the app. 
@@ -454,21 +441,21 @@ Panels will start to fill automatically. It's important to note that each panel 
 
 
 ### Dashboard
-18.gif "image_tooltip")
+18
 
 
 
 #### Overview
-19.gif "image_tooltip")
+19
 
 
 
-20.png "image_tooltip")
+20
 
 
 
 ##### Traffic
-21.gif "image_tooltip")
+21
 
 
 **Download Traffic by Geolocation.** Uses a geo lookup operation to display download traffic by IP address on a map of the world for the last 24 hours.
@@ -481,7 +468,7 @@ Panels will start to fill automatically. It's important to note that each panel 
 
 
 ##### Request
-22.gif "image_tooltip")
+22
 
 
 **Requests by Status Code (Every 10 Minutes).** Displays requests by status code every 10 minutes in a stacked column chart on a timeline for the last 24 hours.
@@ -492,7 +479,7 @@ Panels will start to fill automatically. It's important to note that each panel 
 
 
 ##### Activity
-23.gif "image_tooltip")
+23
 
 
 **Non-Cached Accepted Deploys by Repo.** Shows information about non-cached accepted deploys by repo in a table chart, including details on the repo and count, for the last 24 hours.  
@@ -507,11 +494,11 @@ Panels will start to fill automatically. It's important to note that each panel 
 
 
 #### Traffic
-24.gif "image_tooltip")
+24
 
 
 
-25.png "image_tooltip")
+25
 
 
 **Overall Traffic by Geolocation.** Uses a geo lookup operation to display overall traffic by IP address on a map of the world for the last 24 hours.
@@ -540,11 +527,11 @@ Panels will start to fill automatically. It's important to note that each panel 
 
 
 #### Request and Access
-26.gif "image_tooltip")
+26
 
 
 
-27.png "image_tooltip")
+27
 
 
 **Requests by Status Code (Every 10 Minutes). **Displays requests by status code every 10 minutes in a stacked column chart on a timeline for the last 24 hours.
@@ -563,16 +550,16 @@ Panels will start to fill automatically. It's important to note that each panel 
 
 
 #### Download Activity
-28.gif "image_tooltip")
+28
 
 
 
-29.png "image_tooltip")
+29
 
 
 
 ##### Accepted Downloads
-30.gif "image_tooltip")
+30
 
 
 **Accepted Downloads by Geolocation.** Uses a geo lookup operation to display accepted downloads by IP address on a map of the world for the last six hours.
@@ -587,7 +574,7 @@ Panels will start to fill automatically. It's important to note that each panel 
 
 
 ##### Denied Downloads
-31.gif "image_tooltip")
+31
 
 
 **Denied Downloads by Geolocation.** Uses a geo lookup operation to display denied downloads by IP address on a map of the world for the last six hours.
@@ -602,16 +589,16 @@ Panels will start to fill automatically. It's important to note that each panel 
 
 
 #### Cached Deployment Activity
-32.gif "image_tooltip")
+32
 
 
 
-33.png "image_tooltip")
+33
 
 
 
 ##### Accepted Deploys
-34.gif "image_tooltip")
+34
 
 
 **Accepted Deploys by Geolocation**. Uses a geo lookup operation to display accepted deploys by IP address on a map of the world for the last six hours.
@@ -626,7 +613,7 @@ Panels will start to fill automatically. It's important to note that each panel 
 
 
 ##### Denied Deploys
-35.gif "image_tooltip")
+35
 
 
 **Denied Deploys by Geolocation.** Uses a geo lookup operation to display denied deploys by IP address on a map of the world for the last six hours.
@@ -641,16 +628,16 @@ Panels will start to fill automatically. It's important to note that each panel 
 
 
 #### Non-Cached Deployment Activity
-36.gif "image_tooltip")
+36
 
 
 
-37.png "image_tooltip")
+37
 
 
 
 ##### Accepted Deploys
-38.gif "image_tooltip")
+38
 
 
 **Accepted Deploys by Geolocation**. Uses a geo lookup operation to display accepted deploys by IP address on a map of the world for the last six hours.
@@ -665,7 +652,7 @@ Panels will start to fill automatically. It's important to note that each panel 
 
 
 ##### Denied Deploys
-39.gif "image_tooltip")
+39
 
 
 **Denied Deploys.** Shows the number of denied deploys in a single value chart for the last six hours.

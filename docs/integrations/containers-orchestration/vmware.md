@@ -2,9 +2,12 @@
 id: vmware
 title: Sumo Logic App for VMware
 sidebar_label: VMware
-description: VMware
+description: The Sumo Logic App for VMware collects unified logs and metrics from the VMware cloud computing virtualization platform, including vCenter Server, vSphere, ESX/ESXi, and individual virtual machines, for real-time display in predefined dashboards.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src={useBaseUrl('img/integrations/containers-orchestration/vmware.png')} alt="VMware dashboards" width="50" />
 
 The VMware App uses unified logs and metrics from the VMware cloud computing virtualization platform to enable monitoring of vCenter, ESXi hosts and individual virtual machines metrics with real-time date displayed in predefined dashboards.
 
@@ -16,7 +19,6 @@ See the [vSphere product page](https://www.vmware.com/products/vsphere.html) for
 ## Log and metric types  
 
 The Sumo Logic vCenter logs source and vCenter metrics source use the installed collector to gather the following data from VMWare:
-
 
 * VMWare Events using the Events API. See [Events API](https://code.vmware.com/apis/196/vsphere/doc/vim.event.EventManager.html) for more details.
 * VMWare Metrics using the Performance API. For more information, see [Performance API.](https://code.vmware.com/apis/196/vsphere/doc/vim.PerformanceManager.html)
@@ -39,23 +41,23 @@ The Sumo Logic scripts required to work with the app are located here:
 
 The VMware App collects logs and metrics from your VMware cloud computing virtualization platform, then displays the data in predefined dashboards. The App enables you to monitor vCenter, ESXi hosts and VM metrics and events.
 
-This page provides instructions for collecting logs and metrics for VMware. Click a link to jump to a topic:
-* [Set up a server, host, or VM to collect data](https://help.sumologic.com/07Sumo-Logic-Apps/10Containers_and_Orchestration/VMware/01Collect_logs_and_metrics_for_the_VMware_ULM_App#Step_1:_Set_up_a_server.2C_host.2C_or_VM_to_collect_data)
-* [Download and install the Collector](https://help.sumologic.com/07Sumo-Logic-Apps/10Containers_and_Orchestration/VMware/01Collect_logs_and_metrics_for_the_VMware_ULM_App#Step_2:_Download_and_install_the_Collector)
-* [Collect logs and metrics for the VMware App](https://help.sumologic.com/07Sumo-Logic-Apps/10Containers_and_Orchestration/VMware/01Collect_logs_and_metrics_for_the_VMware_ULM_App#Step_3:_Collect_logs_and_metrics_for_the_VMware_ULM_App)
-* [Encrypt passwords](https://help.sumologic.com/07Sumo-Logic-Apps/10Containers_and_Orchestration/VMware/01Collect_logs_and_metrics_for_the_VMware_ULM_App#Step_4:_Encrypt_passwords)
-* [Sample log message](https://help.sumologic.com/07Sumo-Logic-Apps/10Containers_and_Orchestration/VMware/01Collect_logs_and_metrics_for_the_VMware_ULM_App#Sample_log_message)
-* [Sample query](https://help.sumologic.com/07Sumo-Logic-Apps/10Containers_and_Orchestration/VMware/01Collect_logs_and_metrics_for_the_VMware_ULM_App#Sample_query)
-* [Troubleshooting](https://help.sumologic.com/07Sumo-Logic-Apps/10Containers_and_Orchestration/VMware/01Collect_logs_and_metrics_for_the_VMware_ULM_App#Troubleshooting)
+This section provides instructions for collecting logs and metrics for VMware. Click a link to jump to a topic:
+* [Set up a server, host, or VM to collect data](#Step_1:_Set_up_a_server.2C_host.2C_or_VM_to_collect_data)
+* [Download and install the Collector](#Step_2:_Download_and_install_the_Collector)
+* [Collect logs and metrics for the VMware App](#Step_3:_Collect_logs_and_metrics_for_the_VMware_ULM_App)
+* [Encrypt passwords](#Step_4:_Encrypt_passwords)
+* [Sample log message](#Sample_log_message)
+* [Sample query](#Sample_query)
+* [Troubleshooting](#Troubleshooting)
 
 
 ### Set up a server, host, or VM to collect data
 
 You can use following method for setting up a server to collect data for the VMware App:
 
-If you have an existing VM, you can go directly to [Installing the Sumo Logic scripts on a VM](https://help.sumologic.com/07Sumo-Logic-Apps/10Containers_and_Orchestration/VMware/01Collect_logs_and_metrics_for_the_VMware_ULM_App#Installing_Sumo_Logic_scripts_on_a_vCenter_server.2C_another_host.2C_or_VM) and proceed with following the instructions.
+If you have an existing VM, you can go directly to [Installing the Sumo Logic scripts on a VM](#Installing_Sumo_Logic_scripts_on_a_vCenter_server.2C_another_host.2C_or_VM) and proceed with following the instructions.
 
-[Install the Sumo Logic scripts](https://help.sumologic.com/07Sumo-Logic-Apps/10Containers_and_Orchestration/VMware/01Collect_logs_and_metrics_for_the_VMware_ULM_App#Installing_Sumo_Logic_scripts_on_a_vCenter_server.2C_another_host.2C_or_VM) for events and metrics on a vCenter server, or another host with access to vCenter API’s.
+[Install the Sumo Logic scripts](#Installing_Sumo_Logic_scripts_on_a_vCenter_server.2C_another_host.2C_or_VM) for events and metrics on a vCenter server, or another host with access to vCenter API’s.
 
 
 #### Installing Sumo Logic scripts on a vCenter server, another host, or VM
@@ -81,16 +83,16 @@ If you have multiple vCenter servers, create a new line for each one.
 
 An Installed Collector is a Java agent that receives logs and metrics from its Sources and then encrypts, compresses, and sends the data to the Sumo service. The Collector runs as a service and starts automatically after installing or rebooting.
 
-**To install a Collector to collect logs and metrics:** refer to this [link](https://help.sumologic.com/03Send-Data/Installed-Collectors) for installation instructions.
+**To install a Collector to collect logs and metrics:** refer to this [link](/docs/send-data/Installed-Collectors) for installation instructions.
 
 
 ### Collect logs and metrics for the VMware App
 
 This section explains how to set up a vCenter server, host, or VM to collect logs and metric for the Sumo Logic App for VMware. Click a link to jump to a topic.
 
-1. [Collecting event messages](https://help.sumologic.com/07Sumo-Logic-Apps/10Containers_and_Orchestration/VMware/01Collect_logs_and_metrics_for_the_VMware_ULM_App#A._Collecting_event_messages)
-2. [Collecting performance metrics](https://help.sumologic.com/07Sumo-Logic-Apps/10Containers_and_Orchestration/VMware/01Collect_logs_and_metrics_for_the_VMware_ULM_App#B._Collecting_performance_metrics)
-3. [Collecting historical events](https://help.sumologic.com/07Sumo-Logic-Apps/10Containers_and_Orchestration/VMware/01Collect_logs_and_metrics_for_the_VMware_ULM_App#C._Collecting_historical_events)
+1. [Collecting event messages](#A._Collecting_event_messages)
+2. [Collecting performance metrics](#B._Collecting_performance_metrics)
+3. [Collecting historical events](#C._Collecting_historical_events)
 
 
 #### Collecting event messages
@@ -98,11 +100,8 @@ This section explains how to set up a vCenter server, host, or VM to collect log
 An event is an action that triggers an event message on a vCenter Server. Event messages are not logged, but are instead stored in the vCenter Server database. The Sumo Logic Collector for VMware retrieves these messages using the vSphere python SDK.
 
 This procedure includes the following tasks:
-
-
-
-* [Configuring logs to be collected](https://help.sumologic.com/07Sumo-Logic-Apps/10Containers_and_Orchestration/VMware/01Collect_logs_and_metrics_for_the_VMware_ULM_App#To_configure_logs_to_be_collected.2C_do_the_following:)—Test running a python script from the directory containing the Sumo Logic scripts.
-* [Configuring a syslog or a file source](https://help.sumologic.com/07Sumo-Logic-Apps/10Containers_and_Orchestration/VMware/01Collect_logs_and_metrics_for_the_VMware_ULM_App#To_configure_a_syslog_source_for_the_Collector.2C_do_the_following:)—A Sumo Logic[ Syslog Source](https://help.sumologic.com/03Send-Data/Sources/01Sources-for-Installed-Collectors/Syslog-Source) operates like a Syslog server listening on the designated port to receive Syslog messages. The script supports syslog server, as well as generating a text file that can be ingested using [Local](https://help.sumologic.com/03Send-Data/Sources/01Sources-for-Installed-Collectors/Local-File-Source) or [Remote](https://help.sumologic.com/03Send-Data/Sources/01Sources-for-Installed-Collectors/Remote-File-Source) file source. A local file source is recommended as it has several benefits over Syslog, including no need to worry about connection retry, reading from the last pointer in a file, no data loss in the case of collector failure, and so on. Based on your preference, you can configure a syslog source, or a local or remote file source.
+* [Configuring logs to be collected](#To_configure_logs_to_be_collected.2C_do_the_following:)—Test running a python script from the directory containing the Sumo Logic scripts.
+* [Configuring a syslog or a file source](#To_configure_a_syslog_source_for_the_Collector.2C_do_the_following:)—A Sumo Logic[ Syslog Source](/docs/send-data/Sources/sources-installed-collectors/Syslog-Source) operates like a Syslog server listening on the designated port to receive Syslog messages. The script supports syslog server, as well as generating a text file that can be ingested using [Local](/docs/send-data/Sources/sources-installed-collectors/Local-File-Source) or [Remote](/docs/send-data/Sources/sources-installed-collectors/Remote-File-Source) file source. A local file source is recommended as it has several benefits over Syslog, including no need to worry about connection retry, reading from the last pointer in a file, no data loss in the case of collector failure, and so on. Based on your preference, you can configure a syslog source, or a local or remote file source.
 
 **To configure logs to be collected, do the following:**
 
@@ -222,8 +221,8 @@ python3 events.py  -s 192.168.23.242 -t vcenterhost -to 1514 -bT '2012-10-08 00:
 
 
 
-* **If the script and the Sumologic collector are on the same server,** configure a local file source by following [these](https://help.sumologic.com/03Send-Data/Sources/01Sources-for-Installed-Collectors/Local-File-Source) steps. Configure the **File Path** for local file source. Set **Path Expression** equivalent to the output directory mentioned in previous section using **-f **flag, for example: `/var/log/vmware/output/`
-* **If the script and the Sumologic collector are on different servers**, configure a remote file source by following [these](https://help.sumologic.com/03Send-Data/Sources/01Sources-for-Installed-Collectors/Remote-File-Source) steps. Configure the **Path Expression** for Remote file source. Set **Path Expression** equivalent to the output directory mentioned in previous section using **-f** flag, for example:  `/var/log/vmware/output/`
+* **If the script and the Sumologic collector are on the same server,** configure a local file source by following [these](/docs/send-data/Sources/sources-installed-collectors/Local-File-Source) steps. Configure the **File Path** for local file source. Set **Path Expression** equivalent to the output directory mentioned in previous section using **-f **flag, for example: `/var/log/vmware/output/`
+* **If the script and the Sumologic collector are on different servers**, configure a remote file source by following [these](/docs/send-data/Sources/sources-installed-collectors/Remote-File-Source) steps. Configure the **Path Expression** for Remote file source. Set **Path Expression** equivalent to the output directory mentioned in previous section using **-f** flag, for example:  `/var/log/vmware/output/`
 
 
 ###### **For a syslog source, configure the syslog source in the following way: **
@@ -272,7 +271,7 @@ SSL_CAPATH: Certificate absolute path if SSL_VERIFY is True
 
 
 
-1. Follow the instructions to configure a [Streaming Metrics Source](https://help.sumologic.com/03Send-Data/Sources/01Sources-for-Installed-Collectors/Streaming-Metrics-Source). \
+1. Follow the instructions to configure a [Streaming Metrics Source](/docs/send-data/Sources/sources-installed-collectors/Streaming-Metrics-Source). \
  \
 
 19
@@ -495,28 +494,26 @@ _sourceCategory = Labs/VMWare6.5 and ("error" or "fail" or "critical")
     * If following error is encountered: “pyVmomi.VmomiSupport.UnknownWsdlTypeError: 'ContentLibrary'”, remove TaskEvent and EventEx from the vmware_constants.py and try again.
 
 
-## Install the VMware App
+## Installing the VMware App
 
 This section provides instructions for installing the VMware App, as well as the descriptions of each of the app dashboards.
 
 Now that you have set up collection for VMWare, you can install the VMWare App to use the preconfigured searches and Dashboards that provide insight into your data.
 
-**To install the App, do the following:**
+To install the app, do the following:
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
 1. From the **App Catalog**, search for and select the app**.**
 2. Select the version of the service you're using and click **Add to Library**.
 
-
-28
-Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](https://help.sumologic.com/01Start-Here/Library/Apps-in-Sumo-Logic/Install-Apps-from-the-Library)
+Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/library/install-apps)
 
 1. To install the app, complete the following fields.
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
     2. **Data Source.** Select either of these options for the data source. 
         * Choose **Source Category**, and select a source category from the list. 
-        * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (_sourceCategory=MyCategory). 
+        * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). 
     3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
 2. Click **Add to Library**.
 
@@ -525,155 +522,107 @@ Once an app is installed, it will appear in your **Personal** folder, or other f
 Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
 
 
-## Dashboard Filters  
+## Viewing VMware Dashboards
 
 **Each dashboard has a set of filters** that you can apply to the entire dashboard, as shown in the following example. Click the funnel icon in the top dashboard menu bar to display a scrollable list of filters that narrow search results across the entire dashboard.
-
-
 
 **Each panel has a set of filters** that are applied to the results for that panel only, as shown in the following example. Click the funnel icon in the top panel menu bar to display a list of panel-specific filters.
 
 
-#### VMware - vCenter Operations - Overview
-32
-
+### VMware - vCenter Operations - Overview
 
 The **VMware -** **vCenter Operations - Overview **dashboard provides an at-a-glance view of unique clusters, ESXi hosts, unique VMs, and VM failures by ESXi host, as well as vCenter task trends, vSphere errors across clusters, VM operations over time, ESXi per-host metrics for CPU usage and idle time, memory usage and capacity, disk usage and datastore read rate, network usage and system uptime. It also displays data for vCenter alarms, user activity, and VM operations by user.
 
-**Use this dashboard to:**
-
-
-
+Use this dashboard to:
 * Get an at-a-glance overview of your entire VMware infrastructure.
 * Monitor VM failures, tasks, and errors.
 * Track user activity and operations.
 * Review summaries of the state of the components of the VMware infrastructure.
 * Assess infrastructure issues at a glance with the dashboard panels.
 
+<img src={useBaseUrl('img/integrations/containers-orchestration/VMware-Overview.png')} alt="VMware dashboards" />
 
-#### VMware - vCenter Errors - Analysis
-34
+
+### VMware - vCenter Errors - Analysis
 
 
 The** VMware - vCenter Errors - Analysis** dashboard provides detailed information about the errors across cluster and hosts. You can easily review error trends, top error events, and most recent error events.
 
-**Use this dashboard to:**
-
-
+Use this dashboard to:
 
 * Review 7 day error trends.
 * Quickly assess the most frequent and recurring error conditions.
 * Review error messages, host, cluster, and other details to help with debugging.
 
-
-35
-
+<img src={useBaseUrl('img/integrations/containers-orchestration/VMware-vCenter-Errors-Analysis.png')} alt="VMware dashboards" />
 
 
-#### VMware - Virtual Machine Errors - Analysis
-36
-
+### VMware - Virtual Machine Errors - Analysis
 
 The **VMware - Virtual Machine Errors - Analysis **dashboard provides an at-a-glance analysis of VM errors, including MAC address and UUID conflicts, upgrade and VM failures by host, fault tolerance errors, VM power failures, and general VM errors.
 
-**Use this dashboard to:**
-
-
-
+Use this dashboard to:
 * Monitor faulty VMs with performance or other issues.
 * Determine VMs with power on and off failures.
 * Assess VMs with fault tolerance issues.
 * Determine MAC address and  UUID conflicts, as well as primary VM failures.
 * Monitor overall VM health.
 
+<img src={useBaseUrl('img/integrations/containers-orchestration/VMware-Virtual-Machine-Errors-Analysis.png')} alt="VMware dashboards" />
 
-37
-
-
-
-#### VMware - Datastore
-38
-
+### VMware - Datastore
 
 The **VMware - Datastore **dashboard** **provides performance metrics on datastore read rates per ESXi host and VM, and datastore write rates per ESXi host and VM. A datastore is a manageable storage entity, usually used as a repository for virtual machine files including log files, scripts, configuration files, virtual disks, and so on.
 
-**Use this dashboard to:**
-
-
-
+Use this dashboard to:
 * Review of the datastore reads and writes by the virtual machines and ESXi hosts.
 * Identify excessive writes or reads by a VM or ESXi host.
 
-
-39
-
+<img src={useBaseUrl('img/integrations/containers-orchestration/VMware-Datastore.png')} alt="VMware dashboards" />
 
 
-#### VMware - Network
-40
-
+### VMware - Network
 
 The **VMware -** **Network **dashboard** **keeps track of the data in and data out of the ESXi hosts and virtual machines. This dashboard provides an at-a-glance analysis of network usage per ESXi host and VM, network InPacket rate per ESXi host and VM, network OutPacket rate per ESXi host and VM, and network 1 day comparison by host.
 
-**Use this dashboard to:**
-
-
-
+Use this dashboard to:
 * Identify excessing packet traffic in or out.
 * Identify network inactivity for a VM or host.
 * Track network usage.
 
+<img src={useBaseUrl('img/integrations/containers-orchestration/VMware-Network.png')} alt="VMware dashboards" />
 
-41
-
-
-
-#### VMware - Disk
-42
-
+### VMware - Disk
 
 The **VMware - Disk** dashboard keeps track of the disk usage, disk writes and reads by the ESXi hosts and virtual machines. You can easily review metrics for disk usage per ESXi host and VM, disk read rate per ESXi host and VM, disk write rate per ESXi host and VM, disk total read latency per host, and disk total write latency per host.
 
-**Use this dashboard to:**
-
-
+Use this dashboard to:
 
 * Identify excessive writes or reads by a VM or a ESXi host.
 * Track disk read and write latency.
 
-
-43
-
+<img src={useBaseUrl('img/integrations/containers-orchestration/VMware-Disk.png')} alt="VMware dashboards" />
 
 
-#### VMware - Memory
-44
-
+### VMware - Memory
 
 The **VMware - Memory** dashboard provides an at-a-glance analysis of memory usage by ESXi host and VM, memory granted by ESXi host and VM, and memory capacity by ESXi host.
 
-**Use this dashboard to:**
-
-
-
+Use this dashboard to:
 * Review of the memory usage per virtual machine and ESXi host.
 * Identify excessive memory usage by VM or ESXi host.
 * Track granted memory and memory capacity to determine memory needs and over provisioning.
 
-
-45
-
+<img src={useBaseUrl('img/integrations/containers-orchestration/VMware-Memory.png')} alt="VMware dashboards" />
 
 
-#### VMware - CPU
-46
-
+### VMware - CPU
 
 The **VMware -** **CPU** dashboard tracks the CPU consumed by the virtual machines and ESXi hosts with at-a-glance analysis of CPU usage, idle time, and VM CPU wait time.
 
-**Use this dashboard to:**
-
-
+Use this dashboard to:
 * Monitor spikes in CPU activity. Frequent spikes in CPU activity for a VM without any load may signify issues with the VM configurations.
 * Track CPU idle time.
 * Monitor VM wait time, the time a VM was ready to perform some action but wasn't able to because of CPU unavailability. This can help determine CPU needs of the infrastructure.
+
+<img src={useBaseUrl('img/integrations/containers-orchestration/VMware-CPU.png')} alt="VMware dashboards" />

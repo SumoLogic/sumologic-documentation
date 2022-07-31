@@ -77,7 +77,7 @@ Logic collector.
 
 The following table describes the collection methods that are supported by different Docker platforms.
 
-:::note 
+:::note
 The Docker Logging Driver is supported with Docker Version 18.03.0-ce or higher for the following table.
 :::
 
@@ -92,6 +92,6 @@ The Docker Logging Driver is supported with Docker Version 18.03.0-ce or higher 
 
 Sumo provides the following apps for Docker:  
 
-* [Docker EE] (/07Sumo-Logic-Apps/10Containers_and_Orchestration/Docker_Apps/Docker_EE): Supports FluentD plugin to collect Docker platform logs andworks in conjunction with Docker ULM.
-* [Docker] (/07Sumo-Logic-Apps/10Containers_and_Orchestration/Docker_Apps/Docker): Supports either the [Installed Collector on Docker Host](#installed-collector-on-docker-host) or [Collector as a Container](#collector-as-a-container) collection strategy.
-* [Docker ULM] (/07Sumo-Logic-Apps/10Containers_and_Orchestration/Docker_Apps/Docker_ULM): Supports the [Installed Collector on Docker Host](#installed-collector-on-docker-host) collection strategy.
+* [Docker EE](/docs/integrations/containers-orchestration/docker-enterprise-edition.md): Supports FluentD plugin to collect Docker platform logs and works in conjunction with Docker ULM.
+* [Docker](/docs/integrations/containers-orchestration/docker-community-edition.md): Supports either the [Installed Collector on Docker Host](#installed-collector-on-docker-host) or [Collector as a Container](#collector-as-a-container) collection strategy.
+* [Docker ULM](/docs/integrations/containers-orchestration/docker-ulm.md): Supports the [Installed Collector on Docker Host](#installed-collector-on-docker-host) collection strategy.

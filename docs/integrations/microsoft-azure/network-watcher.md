@@ -2,11 +2,20 @@
 id: network-watcher
 title: Sumo Logic App for Azure Network Watcher
 sidebar_label: Azure Network Watcher
-description: Azure Network Watcher
+description: The Sumo Logic App for Azure Network Watcher leverages Network Security Group (NSG) flow logs to provide real-time visibility and analysis of your Azure Network.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+
+<img src={useBaseUrl('img/integrations/microsoft-azure/network-watcher.png')} alt="thumbnail icon" width="75"/>
 
 The Sumo Logic App for Azure Network Watcher leverages Network Security Group (NSG) flow logs to provide real-time visibility and analysis of your Azure Network. This App provides preconfigured Dashboards that allow you to monitor inbound traffic, outliers in traffic flow, and denied traffic flows.
+
+
+## Collect Logs for the Azure Network Watcher App
+
+This document provides instructions for configuring the collection of NSG Flow Logs for the Azure Network Watcher App.
 
 Log Types
 The Sumo Logic App for Azure Network Watcher uses Network Security Group (NSG) flow logs. NSG flow logs provide ingress and egress IP traffic flow with the following information:
@@ -16,24 +25,17 @@ NIC and traffic flow
 5-tuple information with respect to flow (Source/Destination IP and Port, Protocol)
 Allowed/Denied traffic flow.
 
-
-## Collect Logs for the Azure Network Watcher App
-
-This document provides instructions for configuring the collection of NSG Flow Logs for the Azure Network Watcher App. This process includes the following requirements and tasks:
-
-
-* [Configuration requirements](https://help.sumologic.com/07Sumo-Logic-Apps/04Microsoft-and-Azure/Azure_Network_Watcher/01Collect-Logs-for-the-Azure-Network-Watcher-App#Configuration_requirements)
-* [Configure Azure storage account](https://help.sumologic.com/07Sumo-Logic-Apps/04Microsoft-and-Azure/Azure_Network_Watcher/01Collect-Logs-for-the-Azure-Network-Watcher-App#Step_1:_Configure_Azure_Storage_Account)
-* [Configure an HTTP source](https://help.sumologic.com/07Sumo-Logic-Apps/04Microsoft-and-Azure/Azure_Network_Watcher/01Collect-Logs-for-the-Azure-Network-Watcher-App#Step_2:_Configure_an_HTTP_source)
-* [Configure Azure resources using ARM template](https://help.sumologic.com/07Sumo-Logic-Apps/04Microsoft-and-Azure/Azure_Network_Watcher/01Collect-Logs-for-the-Azure-Network-Watcher-App#Step_3:_Configure_Azure_Resources_using_ARM_template)
-* [Enable NSG flow logs via the Azure Portal](https://help.sumologic.com/07Sumo-Logic-Apps/04Microsoft-and-Azure/Azure_Network_Watcher/01Collect-Logs-for-the-Azure-Network-Watcher-App#Step_4._Enable_NSG_flow_logs_via_the_Azure_Portal)
+The collection process includes the following requirements and tasks:
+* [Configuration requirements](#Configuration_requirements)
+* [Configure Azure storage account](#Step_1:_Configure_Azure_Storage_Account)
+* [Configure an HTTP source](#Step_2:_Configure_an_HTTP_source)
+* [Configure Azure resources using ARM template](#Step_3:_Configure_Azure_Resources_using_ARM_template)
+* [Enable NSG flow logs via the Azure Portal](#Step_4._Enable_NSG_flow_logs_via_the_Azure_Portal)
 
 
 ### Configuration requirements
 
 Before you begin configuring NSG Flow Log collection, make sure the following environment prerequisites are met:
-
-
 
 * Your Storage Account must be of type General-purpose v2 or Blob storage.
 * Your Network Security Group and Storage Account should be in same resource location.
@@ -48,15 +50,11 @@ Resource group names should not consist of underscore `_`.
 
 In this step you configure a storage account to which you will export monitoring data for your Azure service.   
 
-
-
-3
 The storage account must be a General-purpose v2 (GPv2) storage account
 
-If you have a storage account with a container that you want to use for this purpose, make a note of its resource group, storage account name and container name and proceed to [Step 2](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Azure_Blob_Storage/Collect_Logs_from_Azure_Blob_Storage#Step_2._Configure_an_HTTP_source).
+If you have a storage account with a container that you want to use for this purpose, make a note of its resource group, storage account name and container name and proceed to [Step_2._Configure_an_HTTP_source](/docs/send-data/collect-from-other-data-sources/azure-blob-storage/collect-logs-azure-blob-storage.md).
 
-
-###### To configure an Azure storage account, do the following:
+To configure an Azure storage account, do the following:
 
 1. Create a new storage account General-purpose v2 (GPv2) storage account. For instructions, see [Create a storage account](https://docs.microsoft.com/en-us/azure/storage/common/storage-quickstart-create-account?tabs=portal) in Azure help.
 2. Create a container(Optional) all services in azure create containers automatically. This step is needed only when you are exporting custom logs in some container.
@@ -71,26 +69,22 @@ If you have a storage account with a container that you want to use for this pur
 Make a note of the container name, you will need to supply it later.
 
 
- And now follow the [Step](https://help.sumologic.com/07Sumo-Logic-Apps/04Microsoft-and-Azure/Azure_Network_Watcher/01Collect-Logs-for-the-Azure-Network-Watcher-App#Configure_an_HTTP_source) below. By default, the flow logs are in `insights-logs-networksecuritygroupflowevent `container`.`
+ And now follow the [Step](#Configure_an_HTTP_source) below. By default, the flow logs are in `insights-logs-networksecuritygroupflowevent `container`.`
 
-If you have a storage account that you want to use for this purpose, make a note of its resource group, storage account name, then proceed to [Step](https://help.sumologic.com/07Sumo-Logic-Apps/04Microsoft-and-Azure/Azure_Network_Watcher/01Collect-Logs-for-the-Azure-Network-Watcher-App#Configure_an_HTTP_source) below. If you want to collect only flow logs from the storage account then you can add the filter `/blobServices/default/containers/insights-logs-networksecuritygroupflowevent/`
+If you have a storage account that you want to use for this purpose, make a note of its resource group, storage account name, then proceed to [Step](#Configure_an_HTTP_source) below. If you want to collect only flow logs from the storage account then you can add the filter `/blobServices/default/containers/insights-logs-networksecuritygroupflowevent/`
 
 
 #### Configure an HTTP source
-5
 
 
 This section demonstrates how to configure an HTTP source to receive logs from the Azure function.
 
 
-###### **To configure an HTTP source for Azure, do the following: **
-6
+To configure an HTTP source for Azure, do the following:
 
 
-
-
-1. Select a hosted collector where you want to configure the HTTP source. If desired, create a new hosted collector, as described on [Configure a Hosted Collector](https://help.sumologic.com/03Send-Data/Hosted-Collectors/Configure-a-Hosted-Collector).
-2. Configure an HTTP source, as described on [HTTP Logs and Metrics Source](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/HTTP-Source). Make a note of the URL for the source, you will need it in the next step. I
+1. Select a hosted collector where you want to configure the HTTP source. If desired, create a new hosted collector, as described on [Configure a Hosted Collector](/docs/send-data/configure-hosted-collector).
+2. Configure an HTTP source, as described on [HTTP Logs and Metrics Source](/docs/send-data/sources/sources-hosted-collectors/http-logs-metrics-source). Make a note of the URL for the source, you will need it in the next step. I
 3. In **Advanced Options for Logs**, under **Timestamp Format**, click Specify a format and enter the following:
 * Specify Format as epoch
 * Specify Timestamp locator as `\"time\": (.*),`
@@ -113,10 +107,10 @@ The above template uses Consumption Plan which does not support VNet integration
     1. Create a new Resource Group (recommended) or select an existing one.
     2. Choose Location.
     3. Set the values of the following parameters:
-* SumoEndpointURL: URL for the HTTP source you configured in [Step 2](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Azure_Blob_Storage/Collect_Logs_from_Azure_Blob_Storage#Step_2._Configure_an_HTTP_source) above.
-* StorageAccountName: Name of the storage account where  you are storing logs from Azure Service, that you configured in [Step 1](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Azure_Blob_Storage/Collect_Logs_from_Azure_Blob_Storage#Step_1._Configure_Azure_storage_account) above.
-* StorageAccountResourceGroupName: Name of the resource group of the storage account you configured in [Step 1](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Azure_Blob_Storage/Collect_Logs_from_Azure_Blob_Storage#Step_1._Configure_Azure_storage_account) above.
-* Filter Prefix (Optional): If you want to filter logs from a specific container, enter the following, replacing the variable with your container name: /blobServices/default/containers/&lt;container_name>/
+* SumoEndpointURL: URL for the HTTP source you configured in [Step 2](/docs/send-data/collect-from-other-data-sources/azure-blob-storage/collect-logs-azure-blob-storage#Step_2._Configure_an_HTTP_source) above.
+* StorageAccountName: Name of the storage account where  you are storing logs from Azure Service, that you configured in [Step 1](/docs/send-data/collect-from-other-data-sources/azure-blob-storage/collect-logs-azure-blob-storage#Step_1._Configure_Azure_storage_account) above.
+* StorageAccountResourceGroupName: Name of the resource group of the storage account you configured in [Step 1](/docs/send-data/collect-from-other-data-sources/azure-blob-storage/collect-logs-azure-blob-storage#Step_1._Configure_Azure_storage_account) above.
+* Filter Prefix (Optional): If you want to filter logs from a specific container, enter the following, replacing the variable with your container name: `/blobServices/default/containers/<container_name>/`
 
 
 Resource group names should not consist of an underscore.
@@ -129,7 +123,7 @@ Resource group names should not consist of an underscore.
 1. (Optional) In the same window, click** Go to resource group** to verify the all resources were successfully created, such as shown in the following example:
 
 
-1. Go to **Storage accounts** and search for **sumobrlogs**, then select **sumobrlogs&lt;_random-string_>**.
+1. Go to **Storage accounts** and search for **sumobrlogs**, then select **sumobrlogs<_random-string_>**.
 
 
 1. Under **Table Service** do the following:
@@ -145,12 +139,12 @@ In this step, you enable NSG flow logs with the Azure portal.
 
 
 
-* Follow the steps detailed in the [Microsoft Azure Network Watcher documentation](https://docs.microsoft.com/en-us/azure/network-watcher/network-watcher-nsg-flow-logging-portal#enable-nsg-flow-log) to enable the flow logs to point to the storage account you configured in [Configure Azure Storage Account](https://help.sumologic.com/07Sumo-Logic-Apps/04Microsoft-and-Azure/Azure_Network_Watcher/01Collect-Logs-for-the-Azure-Network-Watcher-App#Configure_Azure_Storage_Account) section.
+* Follow the steps detailed in the [Microsoft Azure Network Watcher documentation](https://docs.microsoft.com/en-us/azure/network-watcher/network-watcher-nsg-flow-logging-portal#enable-nsg-flow-log) to enable the flow logs to point to the storage account you configured in [Configure Azure Storage Account](#Configure_Azure_Storage_Account) section.
 
 
 ### Troubleshooting
 
-If logs don't start flowing into Sumo Logic after you perform the configuration above, see [Troubleshoot Azure Blob Storage Log Collection](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Azure_Blob_Storage/Troubleshoot_Azure_Blob_Storage_Log_Collection).
+If logs don't start flowing into Sumo Logic after you perform the configuration above, see [Troubleshoot Azure Blob Storage Log Collection](/docs/send-data/collect-from-other-data-sources/azure-blob-storage/troubleshoot-azure-blob-storage-log-collection.md).
 
 
 ### Sample Log Message
@@ -158,7 +152,7 @@ If logs don't start flowing into Sumo Logic after you perform the configuration 
 
 
 
-```
+```json
     {  
       "time":"2017-09-27 21:22:33.443+0000",
       "sys_id":"4181995a-801f-4075-a56c-30b3671148bf",
@@ -180,13 +174,8 @@ If logs don't start flowing into Sumo Logic after you perform the configuration 
 
 
 ### Query Sample
-17
 
-
-**Denied Traffic Flow by Source Location**
-
-
-```
+```sql title="Denied Traffic Flow by Source Location"
 _sourceCategory="security/flowlogs"
 | json field=_raw "rule_name"
 | json field=_raw "resource_id"
@@ -207,30 +196,25 @@ _sourceCategory="security/flowlogs"
 ```
 
 
-## Install the Azure Network Watcher App
+## Installing the Azure Network Watcher App
 
-Now that you have configured Azure Network Watcher, install the Sumo Logic App for Azure Network Watcher to take advantage of the preconfigured searches and [dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/04Microsoft-and-Azure/Azure_Network_Watcher/Azure-Network-Watcher-App-Dashboards#Dashboards) to analyze your data.
+Now that you have configured Azure Network Watcher, install the Sumo Logic App for Azure Network Watcher to take advantage of the preconfigured searches and [dashboards](#Dashboards) to analyze your data.
 
-**To install the app:**
+To install the app:
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
-
 
 
 1. From the **App Catalog**, search for and select the app**.**
 2. Select the version of the service you're using and click **Add to Library**.
 
-
-19
-Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](https://help.sumologic.com/01Start-Here/Library/Apps-in-Sumo-Logic/Install-Apps-from-the-Library)
-
-
+Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/library/install-apps)
 
 1. To install the app, complete the following fields.
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
     2. **Data Source.** Select either of these options for the data source. 
         * Choose **Source Category**, and select a source category from the list. 
-        * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (_sourceCategory=MyCategory). 
+        * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). 
     3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
 2. Click **Add to Library**.
 
@@ -239,22 +223,16 @@ Once an app is installed, it will appear in your **Personal** folder, or other f
 Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
 
 
-## Dashboards
-20
-
+## Viewing Azure Network Watcher Dashboards
 
 All Dashboards include filters that you can use in Interactive Mode for further analysis of your data.
 
 
 ### Network Watcher - Overview
-21
 
+This Dashboard provides general information of the NSG flow logs, including Panels that drill-down into queries with NIC, tuple and traffic flow information. The Overview Dashboard gives a good starting point for detecting outlier in denied traffic and geographic hotspots for inbound traffic. In addition, this Dashboard allows users to filter data by rule name, source/destination IP and port, and other metadata fields.
 
-This Dashboard provides general information of the NSG flow logs, including Panels that drill-down into queries with NIC, tuple and traffic flow information. The Overview Dashboard gives a good starting point for detecting outlier in denied traffic and geographic hotspots for inbound traffic. In addition, this Dashboard allows users to filter data by rule name, source/destination IP and port, and other metadata fields**.**
-
-
-22
-
+<img src={useBaseUrl('img/integrations/microsoft-azure/Overview.png')} alt="Network Watcher dashboards" />
 
 **Source Address Location of Inbound Traffic. **Displays geo-location of Inbound Traffic.
 
@@ -268,20 +246,16 @@ This Dashboard provides general information of the NSG flow logs, including Pane
 
 **Flow Traffic by Protocol. **Displays trend of traffic by protocol (TCP/UDP).
 
-**Denied Traffic per Hour - Outlier. **Using Sumo Logic machine learning [Outlier](https://help.sumologic.com/05Search/Search-Query-Language/Search-Operators/outlier) operator, shows any unexpected sequence in denied traffic.
+**Denied Traffic per Hour - Outlier. **Using Sumo Logic machine learning [Outlier](/docs/search/index.md/Search-Query-Language/Search-Operators/outlier) operator, shows any unexpected sequence in denied traffic.
 
 **Denied Traffic Comparison (Today Vs Yesterday) - Outlier. **Compares denied traffic of last 24 hours with previous 24 hours and shows any unexpected difference between two time periods.
 
 
 ### Network Watcher - Denied Traffic Flow
-23
-
 
 This Dashboard drills down on denied traffic flow logs, shows geographic hotspots of denied traffic, top denied IPs and ports, and denied traffic trends by rule name.
 
-
-24
-
+<img src={useBaseUrl('img/integrations/microsoft-azure/Overview.png')} alt="Network Watcher dashboards" />
 
 **Denied Traffic Flow by Source Location. **Shows geographic hotspots of denied traffic flow.
 
@@ -295,4 +269,4 @@ This Dashboard drills down on denied traffic flow logs, shows geographic hotspot
 
 **Top 10 Denied Destination IP, Port. **Displays a table of destination IP addresses and ports with denied traffic flow.
 
-**Denied Traffic per Hour -  Outlier. **Using Sumo Logic machine learning [Outlier](https://help.sumologic.com/05Search/Search-Query-Language/Search-Operators/outlier) operator, shows any unexpected sequence in denied traffic.
+**Denied Traffic per Hour -  Outlier. **Using Sumo Logic machine learning [Outlier](/docs/search/index.md/Search-Query-Language/Search-Operators/outlier) operator, shows any unexpected sequence in denied traffic.

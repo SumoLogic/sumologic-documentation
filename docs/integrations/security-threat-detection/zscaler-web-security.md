@@ -5,70 +5,56 @@ sidebar_label: Zscaler Web Security
 description: The Zscaler Web Security App collects logs from Zscaler with Nanolog Streaming Service (NSS) to populate pre-configured searches and Dashboards. The dashboards provide easy-to-access visual insights into web traffic behaviors, security, user browsing activities, and risk.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src={useBaseUrl('img/integrations/security-threat-detection/zscalerweb.png')} alt="thumbnail icon" width="75"/>
+
 The Zscaler Web Security App collects logs from Zscaler with Nanolog Streaming Service (NSS) to populate pre-configured searches and Dashboards. The dashboards provide easy-to-access visual insights into web traffic behaviors, security, user browsing activities, and risk.
 
 
-#### Log Types
-1
+## Log Types
 
 The Sumo Logic App for Zscaler uses NSS feed output web logs, as documented [here](https://help.zscaler.com/zia/nss-feed-output-format-web-logs).
 
 
 ## Collect Logs for the Zscaler Web Security App
 
-
 Zscaler uses a virtual machine, Nanolog Streaming Service (NSS), to stream logs from the Zscaler service and deliver them to Sumo Logic installed collector via Syslog.
 
 To collect logs for Zscaler, perform these steps, detailed in the following sections:
-
-
 
 1. Configure Sumo Logic Installed Collector and Syslog Source.
 2. Configure Zscaler NSS.
 3. Connect the Zscaler NSS feed to Sumo Logic.
 
 
-2
-
-
-
-#### Configure Sumo Logic Installed Collector and Syslog Source
-3
-
+### Step 1: Configure Sumo Logic Installed Collector and Syslog Source
 
 To collect logs for Zscaler Web Security, do the following in Sumo Logic:
 
-1. Configure an [Installed Collector](https://help.sumologic.com/03Send-Data/Installed-Collectors).
-2. Configure a [Syslog Source](https://help.sumologic.com/03Send-Data/Sources/01Sources-for-Installed-Collectors/Syslog-Source). For protocol, use **TCP**.
-4
+1. Configure an [Installed Collector](/docs/send-data/Installed-Collectors).
+2. Configure a [Syslog Source](/docs/send-data/Sources/sources-installed-collectors/Syslog-Source). For protocol, use **TCP**.
+
 Note the **Port** number, as you will need this to configure Zscaler NSS.  \
- \
+
 Also, when you configure the Syslog Source, we recommend that you use the Source Category **security_zscaler**.
 
 
-#### Configure Zscaler NSS
-5
-
+### Step 2: Configure Zscaler NSS
 
 Zscaler offers a virtual appliance, called Nanolog Streaming Service (NSS) to stream web logs to external SIEM via syslog. NSS is maintained and distributed by Zscaler as an Open Virtual Application (OVA).
 
 To stream logs to the Sumo Logic Syslog Source, perform steps A, B, and C detailed in the “NSS Configuration Guide” at: [https://support.zscaler.com/hc/en-us...guration-Guide](https://support.zscaler.com/hc/en-us/articles/205518405-NSS-Configuration-Guide).
 
 
-#### Connect the Zscaler NSS Feed to Sumo Logic
-6
-
+### Step 3: Connect the Zscaler NSS Feed to Sumo Logic
 
 Once you have configured the Zscaler NSS, now add a feed to send logs to the Sumo Logic syslog endpoint using the following steps.
-
-
 
 1. Log into your Zscaler NSS system.
 2. Go to **Administration > Settings > Nanolog Streaming Service**.
 3. From the **NSS Feeds** tab, click **Add**.
-4. In the **Add NSS Feed** dialog: \
-
-7
+4. In the **Add NSS Feed** dialog:
 
     1. **Feed Name.** Enter a name for your NSS feed.
     2. **NSS Server.** Select None.
@@ -87,21 +73,15 @@ Once you have configured the Zscaler NSS, now add a feed to send logs to the Sum
 
 
 #### (Optional) Configure the Zscaler NSS Feeds to Sumo Logic in JSON format
-8
-
 
 Once you have configured the Zscaler NSS, now add a feed to send logs in JSON format to the Sumo Logic syslog endpoint using the following steps.
 
 
 
-1. Log into your Zscaler NSS system.
+1. g into your Zscaler NSS system.
 2. Go to **Administration > Settings > Nanolog Streaming Service**.
 3. From the **NSS Feeds** tab, click **Add**.
 4. In the **Add NSS Feed** dialog:
-
-
-9
-
 
 
 
@@ -124,28 +104,21 @@ Once you have configured the Zscaler NSS, now add a feed to send logs in JSON fo
 
 5. Click **Save**.
 
-On [this](https://help.sumologic.com/07Sumo-Logic-Apps/22Security_and_Threat_Detection/Zscaler_Web_Security/Zscaler-Web-Security-Dashboards) page, add a note that if you are sending JSON format logs, utilize the ZIA app instead of web security and point to [this](https://help.sumologic.com/07Sumo-Logic-Apps/22Security_and_Threat_Detection/Zscaler_Internet_Access/Install_the_Zscaler_Internet_Access_App_and_view_the_Dashboards) page.
+In [this](#Viewing-Dashboards) section, add a note that if you are sending JSON format logs, utilize the ZIA app instead of web security and point to [this](/docs/integrations/security-threat-detection/Zscaler-Internet-Access#Install_the_Zscaler_Internet_Access_App_and_view_the_Dashboards) page.
 
 
 #### Sample Log Message
-10
 
-
-
-```
+```json
 Mon Oct 02 16:21:40 UTC 2017 zscaler-nss: LEEF:1.0|Zscaler|NSS|4.1|NA|filetype=Archive Files dlpeng=NA cat=Blocked useragent=NA hostname=NA src=185.27.134.11 url=www.electrichumanproject.com/ policy=Malicious file Blocked urlsupercategory=Shopping and Auctions srcPostNAT=NA reqmethod=NA bwthrottle=NA devTimeFormat=MMM dd yyyy HH:mm:ss z referer=None srcBytes=31386 usrName=tempor@demo.com malwareclass=NA appproto=NA riskscore=0 dlpdict=NA devTime=Mon Oct 02 16:21:40 UTC 2017 recordid=69790990 dst=91.171.43.14 appname=Yandex Search role=NA malwaretype=NA appclass=Enterprise urlcategory=Sports urlclass=NA realm=EMEA dstBytes=596219 threatname=W32/Tool.IJQF-0856 fileclass=Executables Files
 ```
 
 
 
-#### Query Sample
-11
+#### Sample Query
 
 
-**Policy Violations by Realm**
-
-
-```
+```sql title="Policy Violations by Realm"
 _sourceCategory = "zscaler" !"cat=Allowed"
 | parse "policy=*\t" as policy, "realm=*\t" as realm
 | parse "src=*\t" as src_ip, "usrName=*\t" as src_user
@@ -154,19 +127,12 @@ _sourceCategory = "zscaler" !"cat=Allowed"
 ```
 
 
+## Installing the Zscaler Web Security App
+
+This section provides instructions on how to install the Zscaler Web Security App, and provides examples of each of the dashboards. The App preconfigured searches and [Dashboards](#Dashboards) provide easy-to-access visual insights into your data.
 
 
-
-## Install the Zscaler Web Security App and view the Dashboards
-
-This page provides instructions on how to install the Zscaler Web Security App, and provides examples of each of the dashboards. The App preconfigured searches and [Dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/22Security_and_Threat_Detection/Zscaler_Web_Security/Zscaler-Web-Security-Dashboards#Dashboards) provide easy-to-access visual insights into your data.
-
-
-### Install the Sumo Logic App
-12
-
-
-**To install the app, do the following:**
+To install the app, do the following:
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
@@ -177,7 +143,7 @@ Locate and install the app you need from the **App Catalog**. If you want to see
 
 
 13
-Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library](https://help.sumologic.com/01Start-Here/Library/Apps-in-Sumo-Logic/Install-Apps-from-the-Library).
+Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library](/docs/get-started/library/install-apps).
 
 
 
@@ -185,7 +151,7 @@ Version selection is applicable only to a few apps currently. For more informati
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
     2. **Data Source.** Select either of these options for the data source. 
         * Choose **Source Category**, and select a source category from the list. 
-        * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (_sourceCategory=MyCategory). 
+        * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). 
     3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
 2. Click **Add to Library**.
 
@@ -194,19 +160,14 @@ Once an app is installed, it will appear in your **Personal** folder, or other f
 Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
 
 
-### Dashboards
-14
+## Viewing ZWA Dashboards
 
 
+### Overview
 
-#### Zscaler- Overview
-15
+The **Zscaler - Overview** Dashboard provides general information of the Zscaler Web Gateway logs, including Panels that drill-down into the other Zscaler Dashboards. The Overview Dashboard gives a good starting point for detecting anomalies in blocked traffic and geographic hotspots for allowed and blocked traffic.
 
-
-The Zscaler - Overview Dashboard provides general information of the Zscaler Web Gateway logs, including Panels that drill-down into the other Zscaler Dashboards. The Overview Dashboard gives a good starting point for detecting anomalies in blocked traffic and geographic hotspots for allowed and blocked traffic.
-
-
-16
+<img src={useBaseUrl('img/integrations/security-threat-detection/ZscalerOverview.png')} alt="Zscaler_Web_Security Dashboard" />
 
 
 **File Classification Threats.** Displays the number of file classification threats in a single value chart for the last six hours.
@@ -224,20 +185,14 @@ The Zscaler - Overview Dashboard provides general information of the Zscaler Web
 **Denied to Allowed Ratio - Outlier. **Shows the ratio of denied to allowed events in an outlier chart on a timeline for the last six hours.
 
 
-#### Zscaler- Behavior
-17
-
+### Behavior
 
 The Zscaler - Behavior Dashboard focuses on allowed traffic behaviors, showing trends and deviations by users, content types accessed, content categories, super categories, and bandwidth trends.
 
-
-18
-
+<img src={useBaseUrl('img/integrations/security-threat-detection/ZscalerBehavior.png')} alt="Zscaler_Web_Security Dashboard" />
 
 
-##### Data Volume
-19
-
+### Data Volume
 
 **MB Out by Top 5 Countries.** Displays the details of MB out by top five countries in a table chart including country name, MB count, and percent usage for the last hour.
 
@@ -246,9 +201,7 @@ The Zscaler - Behavior Dashboard focuses on allowed traffic behaviors, showing t
 **Destination vs Source Volume.** Provides information on the volume of destination vs source in an area chart on a timeline for the last hour.
 
 
-##### Non-General Browsing
-20
-
+### Non-General Browsing
 
 **Non-General Activity by App Class.** Displays activity by app class in a stacked area chart on a timeline for the last hour.
 
@@ -257,9 +210,7 @@ The Zscaler - Behavior Dashboard focuses on allowed traffic behaviors, showing t
 **Non-General Activity by Top Named Users.** Provides activity by top named users in a stacked column chart on a timeline for the last hour.
 
 
-##### General Browsing
-21
-
+### General Browsing
 
 **General Activity by Super Category and Sub Category. **Displays details about activity by super category and sub category in a stacked column chart for the last hour.
 
@@ -267,16 +218,11 @@ The Zscaler - Behavior Dashboard focuses on allowed traffic behaviors, showing t
 
 **Top General Browsing by Named Users.** Provides details of browsing by named users in a stacked column chart on a timeline for the last hour.
 
-
-#### Zscaler- Blocked Traffic
-22
-
+### Blocked Traffic
 
 The Zscaler - Blocked Traffic Dashboard illustrates outliers in both blocked traffic peaks and multi-dimensional outliers for blocked activity specific to user.
 
-
-23
-
+<img src={useBaseUrl('img/integrations/security-threat-detection/ZscalerBlockedTraffic.png')} alt="Zscaler_Web_Security Dashboard" />
 
 **Blocked Events Outlier.** Displays blocked event outliers in an outlier chart on a timeline for the last three hours.
 
@@ -293,15 +239,11 @@ The Zscaler - Blocked Traffic Dashboard illustrates outliers in both blocked tra
 **Top 10 Blocked Base URLs.** Displays the top 10 blocked base URLs with the most activity in a pie chart for the last hour.
 
 
-#### Zscaler- File Classification Activity
-24
-
+### File Classification Activity
 
 The Zscaler - File Classification Activity Dashboard focuses on file-based threats by users, threat name, file types, and subtypes for a overarching view of blocked files across the Zscaler environment.
 
-
-25
-
+<img src={useBaseUrl('img/integrations/security-threat-detection/ZscalerFileClassification.png')} alt="Zscaler_Web_Security Dashboard" />
 
 **File Threats by User. **Displays file threats by user in a stacked area chart on a timeline for the last hour.
 

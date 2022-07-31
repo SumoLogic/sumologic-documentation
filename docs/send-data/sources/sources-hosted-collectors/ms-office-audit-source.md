@@ -111,7 +111,7 @@ During the configuration, you will need to authenticate to Microsoft using sta
   Sumo Logic never receives your Microsoft Office 365 credentials.
   :::
 
-1. [Create any Processing Rules](https://help.sumologic.com/Manage/Collection/Processing-Rules/Create-a-Processing-Rule) you'd like for the new Source.
+1. [Create any Processing Rules](/docs/manage/collection/processing-rules/create-processing-rule.md) you'd like for the new Source.
 1. When you are finished configuring the Source. click **Save**.
 
 ## Audit Index events
