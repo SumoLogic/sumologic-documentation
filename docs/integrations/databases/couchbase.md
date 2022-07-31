@@ -77,7 +77,7 @@ Sumo Logic supports the collection of logs and metrics data from Couchbase in bo
 
 <TabItem value="k8s">
 
-In Kubernetes environments, we use the Telegraf Operator, which is packaged with our Kubernetes collection. You can learn more about it[ here](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/telegraf-collection-architecture). The following diagram illustrates how data is collected from Couchbase in Kubernetes environments. There are four services that make up the metric collection pipeline: Telegraf, Prometheus, Fluentd, and FluentBit.
+In Kubernetes environments, we use the Telegraf Operator, which is packaged with our Kubernetes collection. You can learn more about it[ here](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/telegraf-collection-architecture). The following diagram illustrates how data is collected from Couchbase in Kubernetes environments. There are four services that make up the metric collection pipeline: Telegraf, Prometheus, Fluentd, and FluentBit.<img src={useBaseUrl('img/integrations/databases/couchbase1.png')} alt="couchbase1" />
 
 The first service in the pipeline is Telegraf. Telegraf collects metrics from Couchbase. Note that we’re running Telegraf in each pod we want to collect metrics from as a sidecar deployment that is Telegraf runs in the same pod as the containers it monitors. Telegraf uses the [Couchbase input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/couchbase) to obtain metrics. (For simplicity, the diagram doesn’t show the input plugins.) The injection of the Telegraf sidecar container is done by the Telegraf Operator. We also have Fluentbit that collects logs written to standard out and forwards them to FluentD, which in turn sends all the logs and metrics data to a Sumo Logic HTTP Source.
 
@@ -222,11 +222,12 @@ kubectl describe pod <Couchbase_pod_name>
     2. **Applied At.** Choose **Ingest Time**
     3. **Scope**. Select **Specific Data**
     4. **Scope**: Enter the following keyword search expression:  \
-```
-pod_labels_environment=* pod_labels_component=database pod_labels_db_cluster=* pod_labels_db_system=*
+```sql
+pod_labels_environment=* pod_labels_component=database \
+pod_labels_db_cluster=* pod_labels_db_system=*
 ```
 * **Parse Expression**.Enter the following parse expression: \
-```
+```sql
 if (!isEmpty(pod_labels_environment), pod_labels_environment, "") as environment
 | pod_labels_component as component
 | pod_labels_db_system as db_system
@@ -238,7 +239,7 @@ if (!isEmpty(pod_labels_environment), pod_labels_environment, "") as environment
 </TabItem>
 <TabItem value="non-k8s">
 
-For non-kubernetes environments, we use the Telegraf operator for Couchbase metric collection and the [Installed Collector](/docs/send-data/installed-collectors/about-installed-collectors) for collecting Couchbase logs. The diagram below illustrates the components of the  Couchbase collection in a non-Kubernetes environment. Telegraf uses the[ Couchbase input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/couchbase) to obtain Couchbase metrics and the Sumo Logic output plugin to send the metrics to Sumo Logic. Logs from Couchbase are collected by a [Local File Source](/docs/send-data/Sources/sources-installed-collectors/Local-File-Source).
+For non-kubernetes environments, we use the Telegraf operator for Couchbase metric collection and the [Installed Collector](/docs/send-data/installed-collectors/about-installed-collectors) for collecting Couchbase logs. The diagram below illustrates the components of the  Couchbase collection in a non-Kubernetes environment. Telegraf uses the[ Couchbase input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/couchbase) to obtain Couchbase metrics and the Sumo Logic output plugin to send the metrics to Sumo Logic. Logs from Couchbase are collected by a [Local File Source](/docs/send-data/Sources/sources-installed-collectors/Local-File-Source).<img src={useBaseUrl('img/integrations/databases/couchbase2.png')} alt="couchbase2" />
 
 The process to set up collection for Couchbase data is done through the following steps:
 

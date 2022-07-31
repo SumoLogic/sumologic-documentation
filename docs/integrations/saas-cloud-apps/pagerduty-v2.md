@@ -13,7 +13,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 The Sumo Logic App for PagerDuty V2 collects incident messages from your PagerDuty account via a webhook, and displays incident data in pre-configured Dashboards that allow you to monitor and analyze the activity of your PagerDuty account and Services. The Sumo Logic App for PagerDuty V2 uses Webhooks V2, to provide enhanced context for alert object models.
 
 
-### Event Types
+## Event Types
 
 The Sumo Logic App for PagerDuty V2 ingests PagerDuty incident Webhooks V2 messages, that are triggered by events that occur in your PagerDuty account and Services.
 
@@ -22,13 +22,7 @@ For more information on the incident messages supported in Webhooks V2, see the 
 
 ## Collect Logs for PagerDuty V2
 
-This section provides instructions for configuring a Sumo Logic Hosted Collector and HTTP Source to create a PagerDuty Webhook V2, to collect PagerDuty events. Click a link to jump to a topic:
-
-* [Event types](#Event-types)
-* [Log example](#Sample-Query)
-* [Configure a Sumo Logic Collector and Source](#Step_1:_Configure_a_Sumo_Logic_Collector_and_Source)
-* [Create a PagerDuty V2 Webhook](#Step_2:_Create_a_PagerDuty_V2_Webhook)
-
+This section provides instructions for configuring a Sumo Logic Hosted Collector and HTTP Source to create a PagerDuty Webhook V2, to collect PagerDuty events.
 
 ### Event types
 
@@ -72,7 +66,6 @@ An **HTTP Source** is an endpoint for receiving log and metric data uploaded to 
 2. Follow the instruction for configuring a [Hosted Collector](/docs/send-data/configure-hosted-collector).
 3. Follow the instruction for configuring an  [HTTP Source](/docs/send-data/sources/sources-hosted-collectors/http-logs-metrics-source). \
 
-1.png "image_tooltip")
 Make sure to save the **HTTP Source Address URL**. You will be asked for this **Endpoint URL** when you configure the PagerDuty Webhook in the following procedure.
 
 

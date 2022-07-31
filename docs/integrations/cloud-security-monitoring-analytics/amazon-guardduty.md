@@ -58,8 +58,6 @@ See the overview of GuardDuty threats broken down by severity. Filters are avail
 
 **Last 20 Findings**. Provides a table detailing the most recent findings.
 
-<img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/Amazon-GuardDuty-Analysis-Security-Analytics.png')} alt="Amazon GuardDuty dashboards" />
-
 
 #### High, Medium, Low Severity Findings
 
@@ -76,8 +74,9 @@ Note all panels for High, Medium, and Low Severity findings are the same. The on
 
 See the details and trending of GuardDuty findings including the severity, threat purpose, threat name , account id, region, resource type, and description. Additionally for more detailed analysis all dashboard panels can be filtered by threat purpose, threat name , severity, region, resource type, and account ID.
 
-**Details - Latest Findings. **Review a table of the most recent findings. Each column can be sorted and the pagination controls at the bottom can be used to review additional findings.
+**Details - Latest Findings.** Review a table of the most recent findings. Each column can be sorted and the pagination controls at the bottom can be used to review additional findings.
 
+<img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/Amazon-GuardDuty-Analysis-Security-Analytics.png')} alt="Amazon GuardDuty dashboards" />
 
 #### Trending
 
