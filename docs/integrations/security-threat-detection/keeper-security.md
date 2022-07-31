@@ -23,7 +23,7 @@ The Keeper Security App uses Keeper Audit logs in JSON format pushed to Sumo HTT
 
 This application has been developed and is supported by [Keeper Security](https://keepersecurity.com/). For more information about Keeper please visit [https://keepersecurity.com](https://keepersecurity.com/) or email **business.support@keepersecurity.com** for help.
 
-This page provides instructions for collecting logs for the Keeper Security App for Sumo Logic.
+This section provides instructions for collecting logs for the Keeper Security App for Sumo Logic.
 
 ### Configure collection for Keeper Security
 
@@ -83,7 +83,7 @@ To resume logging, go to the “External Logging” section of the Keeper Admin 
 
 This application has been developed and is supported by [Keeper Security](https://keepersecurity.com/). For more information about Keeper please visit [https://keepersecurity.com](https://keepersecurity.com/) or email **business.support@keepersecurity.com** for help.
 
-This page provides instructions for installing the Keeper Security App, as well as examples of each of the App dashboards.
+This section provides instructions for installing the Keeper Security App, as well as examples of each of the App dashboards.
 
 Now that you have set up collection for Keeper, install the app to use the pre-configured searches and [dashboards](#Dashboards) that provide visibility into your environment for real-time analysis.
 

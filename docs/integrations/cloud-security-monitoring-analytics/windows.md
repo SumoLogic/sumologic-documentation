@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Cloud Security Monitoring & Analytics for Windows App offers pre-built dashboards and queries to help you track your Windows system, user accounts, login activity, and Windows updates.
 
-This page provides instructions for configuring log collection for the Windows - Cloud Security Monitoring and Analytics App.
+This section provides instructions for configuring log collection for the Windows - Cloud Security Monitoring and Analytics App.
 
 ## Collecting Logs
 
@@ -91,7 +91,7 @@ _sourceCategory=Labs/windows-jsonformat ( "Audit Policy Change" or "System audit
 
 ## Installing the Windows Cloud Security App
 
-This page provides instructions for installing the Cloud Security Monitoring & Analytics for Windows App, along with examples of each of the App dashboards. The Cloud Security Monitoring & Analytics for Windows App offers pre-built dashboards and queries to help you track your Windows system, user accounts, login activity, and Windows updates.
+This section provides instructions for installing the Cloud Security Monitoring & Analytics for Windows App, along with examples of each of the App dashboards. The Cloud Security Monitoring & Analytics for Windows App offers pre-built dashboards and queries to help you track your Windows system, user accounts, login activity, and Windows updates.
 
 Now that you have set up collection, install the Cloud Security Monitoring & Analytics for Windows App to use the pre-configured searches and [Dashboards](#Dashboards) that provide insight into your data.  
 

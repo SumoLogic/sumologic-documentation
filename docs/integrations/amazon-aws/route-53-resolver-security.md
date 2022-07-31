@@ -17,17 +17,16 @@ With [Route 53 Resolver DNS Firewall](https://docs.aws.amazon.com/Route53/latest
 
 DNS Firewall is a feature of Route 53 Resolver and doesn't require any additional Resolver setup to use.
 
-
-## Collect Logs for the Amazon Route 53 Resolver Security App
-
-This topic has instructions for collecting logs for the Amazon Route 53 Resolver Security app.
-
-### Log Types
+## Log Types
 The Amazon Route 53 Resolver Security app uses:
 * [Route 53 Resolver query log](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/resolver-query-logs-example-json.html)
 * [DNS Resolver Firewall Log](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/firewall-resolver-query-logs-configuring.html)
 
 If you aren't using DNS Resolver Firewall, the Amazon Route 53 Resolver Security app can still provide security insights from your [resolver query logs](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/resolver-query-logs-example-json.html), but data specific to the DNS Resolver Firewall data will not populate in the corresponding panels.
+
+## Collect Logs for the Amazon Route 53 Resolver Security App
+
+This topic has instructions for collecting logs for the Amazon Route 53 Resolver Security app.
 
 
 ### Before you start
@@ -42,14 +41,12 @@ If you want to set up Route 53 Resolver DNS Firewall, see the Amazon Developer G
 3. In this step, enable DNS query logging, as described in [Managing Resolver query logging configurations](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/resolver-query-logging-configurations-managing.html) in AWS help.
    * When you select the type of AWS resource to which you want Resolver to send query logs, choose **Kinesis Data Firehose delivery stream** as the Destination for the Query Logs.
    * Click **Browse streams** and select the Kinesis Data Firehose delivery stream that was created by the Sumo Logic CloudFormation template. It should start with ​​`Kinesis-Logs-<random-string>`.
-   * Click **Add VPC** in the **VPCs to log queries for** section. \
+   * Click **Add VPC** in the **VPCs to log queries for** section.
 4. Complete your configuration by clicking **Configure query logging** at the bottom of the page.
-5. Your new configuration will now be listed. \
+5. Your new configuration will now be listed.
 
 
 ### Sample log message
-7
-
 
 [Route 53 Resolver query log example](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/resolver-query-logs-example-json.html)
 

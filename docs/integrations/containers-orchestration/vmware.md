@@ -41,7 +41,7 @@ The Sumo Logic scripts required to work with the app are located here:
 
 The VMware App collects logs and metrics from your VMware cloud computing virtualization platform, then displays the data in predefined dashboards. The App enables you to monitor vCenter, ESXi hosts and VM metrics and events.
 
-This page provides instructions for collecting logs and metrics for VMware. Click a link to jump to a topic:
+This section provides instructions for collecting logs and metrics for VMware. Click a link to jump to a topic:
 * [Set up a server, host, or VM to collect data](#Step_1:_Set_up_a_server.2C_host.2C_or_VM_to_collect_data)
 * [Download and install the Collector](#Step_2:_Download_and_install_the_Collector)
 * [Collect logs and metrics for the VMware App](#Step_3:_Collect_logs_and_metrics_for_the_VMware_ULM_App)

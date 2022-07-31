@@ -9,17 +9,15 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Amazon Inspector is an automated vulnerability management service that continually scans Amazon EC2 and container images for software vulnerabilities and network exposures. The Sumo Logic Inspector App helps reveal trends and identify anomalies from these findings.
 
-
-## Collect Findings for the Amazon Inspector App
-
+:::note
 For information about integrating Amazon Inspector with Security Hub, see [Integration with AWS Security Hub](https://docs.aws.amazon.com/inspector/latest/user/securityhub-integration.html) in Amazon help.
+:::
 
-### Collection overview
+## Collecting Findings for the Amazon Inspector App
 
 Sumo Logic provides a serverless solution for creating a CloudWatch events rule and a Lambda function (SecurityHubCollector) to extract findings from AWS Security Hub.
 
 Findings from AWS services (AWS Security Hub) are delivered to CloudWatch Events as events in near real time. The Lambda function parses those events and sends them to an S3 bucket. Sumo Logic then collects the findings data using an S3 bucket source on a Sumo Logic hosted collector. The Lambda function setup is defined using Serverless Application Model (SAM) specifications and is published in AWS Serverless Application Repository.
-
 
 You don't have to manually create the AWS resources. Simply deploy the solution, as described in the [Step 2: Deploy an AWS Security Hub App collector](#Step_2:_Deploy_an_AWS_Security_Hub_App_collector-6367).
 
@@ -32,61 +30,73 @@ This section demonstrates how to add a hosted Sumo Logic collector and AWS sourc
 
 An AWS Source must be associated with a Sumo Logic Hosted Collector. Before creating the S3 source, identify the Sumo Logic Hosted Collector you want to use, or create a new Hosted Collector as described in the following task.
 
-**To add a hosted collector and AWS S3 source**
+To add a hosted collector and AWS S3 source:
 
 1. [Grant Access to an AWS S3 Bucket.](/docs/send-data/sources/sources-hosted-collectors/amazon-web-services/grant-access-aws-product.md)
 2. To create a new Sumo Logic Hosted Collector, perform the steps in [Configure a Hosted Collector](/docs/send-data/configure-hosted-collector)
 3. Add an [AWS Source](/docs/send-data/Sources/sources-hosted-collectors/Amazon-Web-Services/AWS-S3-Source#AWS_Sources) for the S3 Source to Sumo Logic, and in **Advanced Options for Logs**, under Timestamp Format, click **Specify a format** and enter the following:
     * Specify **Format** as `yyyy-MM-dd'T'HH:mm:ss.SSS'Z'`
     * Specify **Timestamp locator** as `.*"UpdatedAt":"(.*)".*`
-    * Click **Add**. \
+    * Click **Add**.
 
 
 ### Step 2: Deploy an AWS Security Hub App collector
 
 The **AWS Security Hub App collector** transforms the received events and sends them to Sumo Logic. The AWS Security Hub App displays the results in pre-defined visual dashboards for you to analyze.
 
-**To deploy an AWS Security Hub App collector**
-
-
-
+To deploy an AWS Security Hub App collector:
 1. Open a browser window and enter the following URL: [https://serverlessrepo.aws.amazon.com/applications](https://serverlessrepo.aws.amazon.com/applications)
 2. In the Serverless Application Repository, search for **sumologic**.
 3. Select **Show apps that create custom IAM roles or resource policies **check box.
 4. Click the **sumologic-securityhub-collector **link, and then click **Deploy**.
-5. In the **AWS Lambda > Functions > Application Settings** panel, enter the name of the **S3SourceBucketName** for the bucket you configured (when you defined the S3 source). \
- \
-
-5
-
+5. In the **AWS Lambda > Functions > Application Settings** panel, enter the name of the **S3SourceBucketName** for the bucket you configured (when you defined the S3 source).
 6. Scroll to the bottom of the window and click **Deploy**.
 
 
 ### Log example
 
-The following is an example of an AWS Security Hub log.
-
-
-```json
-{"SchemaVersion":"2018-10-08","ProductArn":"arn:aws:securityhub:us-west- 2:123456789012:provider:private/default",
-"AwsAccountId":"123456789012","Id":"test_finding_123456","GeneratorId": "TestDetector","Types":
-["Software and Configuration Checks/Vulnerabilities/CVE"],"CreatedAt": "2018-11- 06T13:22:13.933Z",
-"UpdatedAt":"2018-11-07T14:22:13.933Z","Severity":{"Product":10.0,"Normalized":30},"Title":
-"Unprotected port 22 found on instance i-01234567890abcefb","Description":"Test finding was found on instance i- 01234567890afbcefa",
-"Resources":[{"Type":"AwsEc2::Instance","Id":"arn:aws:ec2:us-west-2: 123456789012:instance:i- 01234567890abcefa"}],
-"SourceUrl":"http://myfp.com/recommendations/dangerous_things_and_how_to_fix_them","Pr ocess":
-{"Name":"My Process","Path":"/Process/Path"}, "RecordState":"ACTIVE", "Note":{"Text":"User1 will address this finding",
-"UpdatedBy":"User1", "UpdatedAt":"2018-11-03T13:22:13.933Z"}}
+```json title="AWS Security Hub log"
+{
+  "SchemaVersion": "2018-10-08",
+  "ProductArn": "arn:aws:securityhub:us-west- 2:123456789012:provider:private/default",
+  "AwsAccountId": "123456789012",
+  "Id": "test_finding_123456",
+  "GeneratorId": "TestDetector",
+  "Types": [
+    "Software and Configuration Checks/Vulnerabilities/CVE"
+  ],
+  "CreatedAt": "2018-11- 06T13:22:13.933Z",
+  "UpdatedAt": "2018-11-07T14:22:13.933Z",
+  "Severity": {
+    "Product": 10,
+    "Normalized": 30
+  },
+  "Title": "Unprotected port 22 found on instance i-01234567890abcefb",
+  "Description": "Test finding was found on instance i- 01234567890afbcefa",
+  "Resources": [
+    {
+      "Type": "AwsEc2::Instance",
+      "Id": "arn:aws:ec2:us-west-2: 123456789012:instance:i- 01234567890abcefa"
+    }
+  ],
+  "SourceUrl": "http://myfp.com/recommendations/dangerous_things_and_how_to_fix_them",
+  "Process": {
+    "Name": "My Process",
+    "Path": "/Process/Path"
+  },
+  "RecordState": "ACTIVE",
+  "Note": {
+    "Text": "User1 will address this finding",
+    "UpdatedBy": "User1",
+    "UpdatedAt": "2018-11-03T13:22:13.933Z"
+  }
+}
 ```
-
 
 
 ### Sample Query
 
-Findings by resource type and severity query:
-
-
-```sql
+```sql title="Findings by resource type and severity query"
 (_sourceCategory="securityhub_findings" OR _sourceCategory="Labs/AWS/SecurityHub")
 | json  "AwsAccountId", "Id", "GeneratorId", "ProductArn", "CreatedAt", "UpdatedAt", "Resources",
  "Severity.Normalized", "SourceUrl",

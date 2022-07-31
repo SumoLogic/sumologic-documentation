@@ -115,8 +115,7 @@ Login to Sumo Logic,  goto Manage Data > Logs > Fields. Search for the `"topicna
 
 Create Field Extraction Rule for CloudTrail Logs. Learn how to create Field Extraction Rule [here](/docs/manage/field-extractions/create-field-extraction-rule.md).
 
-
-```
+```sql
 Rule Name: AwsObservabilitySNSCloudTrailLogsFER
 Applied at: Ingest Time
 Scope (Specific Data): account=* eventname eventsource \"sns.amazonaws.com\"

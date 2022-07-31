@@ -1,10 +1,10 @@
 ---
 id: performance-metrics
 title: Performance Metrics Script Setup
-description: This page has instructions for setting up the performance metrics script on Windows for the Oracle app.
+description: This section has instructions for setting up the performance metrics script on Windows for the Oracle app.
 ---
 
-This page has instructions for setting up the performance metrics script on Linux and Windows for the Oracle app.
+This section has instructions for setting up the performance metrics script on Linux and Windows for the Oracle app.
 
 The Sumo app for Oracle uses a Python script to query database tables to collect Oracle server performance metrics.
 
@@ -222,7 +222,7 @@ After a few minutes, your new Source should be propagated down to the Collector 
 
 ## Windows
 
-This page has instructions for setting up the performance metrics script on Windows OS for the Oracle app.
+This section has instructions for setting up the performance metrics script on Windows OS for the Oracle app.
 
 The script was developed and tested on:
 * Windows Server 2019 standard, Python (3.7.10), Oracle Database 19c (19.3) for Microsoft Windows x64 (64-bit)

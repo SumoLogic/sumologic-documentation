@@ -165,7 +165,7 @@ _sourceCategory=OS/Windows "Win32_PerfFormattedData_PerfOS_Processor" "_Total"
 | avg(procTime) as AvgProcTime by host,_timeslice | sort - _timeslice | transpose row _timeslice column host
 ```
 
-This page provides instructions for installing the Windows Performance App, along with examples of each of the App dashboards.
+This section provides instructions for installing the Windows Performance App, along with examples of each of the App dashboards.
 
 ## Installing the Windows Performance App
 

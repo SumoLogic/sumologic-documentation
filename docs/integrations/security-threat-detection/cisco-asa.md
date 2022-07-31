@@ -23,7 +23,7 @@ The Cisco ASA App assumes logs from the Cisco Adaptive Security Appliance (ASA) 
 
 ## Configuring Log Collection for the Cisco ASA App
 
-This page provides instructions for configuring log collection for the Cisco ASA App, as well as a sample log and field extraction rule.
+This section provides instructions for configuring log collection for the Cisco ASA App, as well as a sample log and field extraction rule.
 
 To configure log collection, do the following:
 1. Configure your ASA to send its logs to a syslog server. ASA sends syslog on UDP port 514 by default, but you can set the protocol and port.

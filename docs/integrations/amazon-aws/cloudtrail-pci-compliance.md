@@ -1,7 +1,7 @@
 ---
 id: cloudtrail-pci-compliance
 title: PCI Compliance for AWS CloudTrail App
-sidebar_label: PCI Compliance for AWS CloudTrail App
+sidebar_label: AWS CloudTrail PCI Compliance
 description: The Sumo Logic App for Payment Card Industry (PCI) Compliance for AWS CloudTrail App offers dashboards to monitor systems, account and users activity to ensure that login activity and privileged users are within the expected ranges.
 ---
 
@@ -15,15 +15,14 @@ The Sumo Logic App for Payment Card Industry (PCI) Compliance for AWS CloudTrail
 
 ## Collecting Logs for the PCI Compliance for AWS CloudTrail App
 
-This page provides instructions for collecting logs for the the PCI Compliance for AWS CloudTrail App.
+This section provides instructions for collecting logs for the the PCI Compliance for AWS CloudTrail App.
 
 To configure an AWS CloudTrail Source, do the following:
 1. [Grant Sumo Logic access](/docs/send-data/sources/sources-hosted-collectors/amazon-web-services/grant-access-aws-product.md) to an Amazon S3 bucket.
 2. [Configure CloudTrail](http://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-create-and-update-a-trail.html) in your AWS account.
 3. Confirm that logs are being delivered to the Amazon S3 bucket.
 4. Add an [AWS CloudTrail Source](/docs/send-data/sources/sources-hosted-collectors/amazon-web-services/aws-cloudtrail-source.md) to Sumo Logic.
-5. Install the Sumo Logic App for  [PCI Compliance for AWS CloudTrail](#Install_the_Sumo_Logic_App).
-
+5. Install the Sumo Logic App for [PCI Compliance for AWS CloudTrail](#Install_the_Sumo_Logic_App).
 
 
 ## Installing the PCI Compliance for AWS CloudTrail App

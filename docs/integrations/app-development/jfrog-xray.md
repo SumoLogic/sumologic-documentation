@@ -12,12 +12,10 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The JFrog Xray app provides visibility into the state of artifacts and components in your JFrog Artifactory repository. The pre-configured dashboards present information about issues detected in your software components in Artifactory, including vulnerable containers, artifacts and components; license and security issues; and top Common Vulnerabilities and Exposures (CVEs). The app also helps identify all incoming threats detected via Sumo Logic Threat Intel.
 
-
-1
 The Sumo Logic app for JFrog Xray and collection are tested on JFrog Xray 2.9.0 version.
 
 
-#### Log types
+## Log types
 
 The JFrog Xray app uses the following log types:
 
@@ -26,9 +24,9 @@ The JFrog Xray app uses the following log types:
 * Kubernetes logs. For more information, see [Collect Logs for Kubernetes.](/docs/integrations/containers-orchestration/Kubernetes#Collect_Logs_and_Metrics_for_the_Kubernetes_App)
 
 
-## Collect Logs for JFrog Xray
+## Collecting Logs for JFrog Xray
 
-This page explains how to collect logs from JFrog Xray and ingest them into Sumo Logic for use with the JFrog Xray pre-defined dashboards and searches. To get the most of out this app, we recommend you also collect logs from Artifactory as well as Kubernetes.
+This section explains how to collect logs from JFrog Xray and ingest them into Sumo Logic for use with the JFrog Xray pre-defined dashboards and searches. To get the most of out this app, we recommend you also collect logs from Artifactory as well as Kubernetes.
 
 
 ### Collection Overview
@@ -48,9 +46,6 @@ To configure log collection for the JFrog Xray app, you will perform the followi
 In this step you collect details for your JFrog Xray instance that you will use in the following tasks.
 
 Collect the following details:
-
-
-
 * HostName and Port for your JFrog Xray instance — such as, JFrog instance URL **http://host-example:8000/web/#/login**
     * HostName = **host-example**
     * Port = **8000**
@@ -77,14 +72,9 @@ In this step you set up a hosted Sumo Logic collector and HTTP source to collect
 
 Identify an existing Sumo Logic Hosted Collector you want to use, or create a new Hosted Collector as described in the following task.
 
-
-2
 When you configure the HTTP source, make sure to save the HTTP Source Address URL. You will need it when you configure the webhook in [Step 5](#Step_5:_Set_up_a_collection_method_for_JFrog_Xray).  
 
-**To add a hosted collector and HTTP source**
-
-
-
+**To add a hosted collector and HTTP source:
 1. Create a new Sumo Logic hosted collector by performing the steps in [Configure a Hosted Collector](/docs/send-data/configure-hosted-collector).
 2. Create a new HTTP source on the hosted collector created above by following [these instructions](/docs/send-data/sources/sources-hosted-collectors/http-logs-metrics-source).
 
@@ -93,25 +83,18 @@ When you configure the HTTP source, make sure to save the HTTP Source Address UR
 
 This section covers the various ways in which to collect logs from JFrog Xray and send them to Sumo Logic. The logs are then shown in dashboards as part of the JFrog Xray App. You can configure a Sumo Logic collector for JFrog Xray in Amazon Web Services (AWS) using AWS Lambda service, or use a script on a Linux machine with a cron job. Choose the method that best suits your environment:
 
-
-
 * [Method 1 - AWS Lambda based collection via a Serverless Application Model (SAM) application](#Method_1-_Sumo_Logic_JFrog_Xray_SAM_application)
 * [Method 2 - Script based collection](#Method_2:_Sumo_Logic_JFrog_Xray_Script_based_collection)
 
 
-##### Method 1- Sumo Logic JFrog Xray SAM application
+#### Method 1- Sumo Logic JFrog Xray SAM application
 
 In this collection method, you deploy the SAM application, which creates the necessary  resources in your AWS account.
 
-**To deploy the Sumo Logic JFrog xray SAM Application, do the following:**
-
-
+**To deploy the Sumo Logic JFrog xray SAM Application, do the following:
 
 1. Go to [https://serverlessrepo.aws.amazon.com/applications](https://serverlessrepo.aws.amazon.com/applications).
 2. Search for **sumologic-jfrog-xray** and make sure  the checkbox **Show apps that create custom IAM roles or resource policies** is checked, and click the app link when it appears.
-
-
-3
 
 
 1. When the page for the Sumo app appears, click **Deploy**.
@@ -122,109 +105,73 @@ In this collection method, you deploy the SAM application, which creates the nec
 * **Username**: Copy and paste the Username from [Step 1](#Step_1:_Collect_Jfrog_Xray_instance_details).
 * **Password**: Copy and paste the Password from [Step 1](#Step_1:_Collect_Jfrog_Xray_instance_details).
 
-
-4
-
-
 1. Click **Deploy.**
 
 
 
 
-###### **Optional - Configure multiple JFrog Xray instances**
+#### Optional - Configure multiple JFrog Xray instances
 
 If you have multiple JFrog Xray instances from which you want to collect logs and send to Sumo Logic, perform the following task.
 
 **To configure collection for multiple JFrog Xray instances, do the following:**
 
-
-
 1. [Deploy the SAM application](#Deploy+a+SAM+application) with configuration for a new project.
 2. After the deployment is complete, change the database name by adding environment variable (**DBNAME**) in [AWS Lambda](https://docs.aws.amazon.com/lambda/latest/dg/env_variables.html).
 
 
-5
 
-
-
-
-##### Method 2: Sumo Logic JFrog Xray Script based collection
+#### Method 2: Sumo Logic JFrog Xray Script based collection
 
 This section provides instructions for configuring script based collection for the Sumo Logic JFrog Xray App.
 
-
-6
 The _sumologic-jfrog-xray_ script is compatible with python 3.7 and python 2.7, and has been tested on Ubuntu 18.04 LTS.
 
-
-
-
-###### **Prerequisites**
-
-
-
+**Prerequisites**
 * You must have successfully added a **Hosted Collector** and **HTTP source **and copied details for JFrog Xray instance, as described in [Step 4](#Step_4:_Add_a_Hosted_Collector_and_HTTP_Source).
-* You must be logged in to the user account with which you will install the collector. If you are not, use the following command to switch to that account:  \
-sudo su &lt;user_name>
+* You must be logged in to the user account with which you will install the collector. If you are not, use the following command to switch to that account:  
+```
+sudo su <user_name>
+```
 * A Linux machine compatible with either Python 3.7 or Python 2.7
 
 
-
-
-###### **Step 1. Configure the script on a Linux machine**
+**Step 1. Configure the script on a Linux machine**
 
 This task shows you how to install the script on a Linux machine.
 
-
-7
 For Python 3 you will use pip3 install **sumologic-jfrog-xray** (step 3 in the following task). For systems where Python 3 is not the default - you will use **/usr/bin/python3 -m sumojfrogxray.main** (step 5 in the following task).
 
-**To deploy the script, do the following:**
-
-
-
+To deploy the script, do the following:
 1. If **pip** is not already installed, follow the instructions in the [pip documentation](https://pip.pypa.io/en/stable/installing/) to download and install **pip**.
 2. Log in to a Linux machine compatible with either Python 3.7 or Python 2.7.
 3. Do one of the following:
 * For Python 2 - run the following command: **pip install sumologic-jfrog-xray**
 * For Python 3 - run the following command: **pip3 install sumologic-jfrog-xray**
-1. Create a configuration file **jfrogxraycollector.yaml** in the home directory as shown below, and fill in the parameter &lt;Variables> where indicated.
-
-
-8
-
-
+1. Create a configuration file **jfrogxraycollector.yaml** in the home directory as shown below, and fill in the parameter `<Variables>` where indicated.
 
 
 1. Create a cron job  to run the collector every 5 minutes, (use the crontab -e option), in one of the following ways:
-* For Python 2 - add the following line in your crontab: */5 * * * *  /usr/bin/python -m sumojfrogxray.main > /dev/null 2>&1
-* For Python 3 - add the following line in your crontab: */5 * * * *  /usr/bin/python3 -m sumojfrogxray.main > /dev/null 2>&1
+* For Python 2 - add the following line in your crontab:
+```
+*/5 * * * *  /usr/bin/python -m sumojfrogxray.main > /dev/null 2>&1
+```
+* For Python 3 - add the following line in your crontab:
+```
+*/5 * * * *  /usr/bin/python3 -m sumojfrogxray.main > /dev/null 2>&1
+```
 
 
-
-
-###### **Optional - Configure collection for multiple projects**
+**Optional - Configure collection for multiple projects**
 
 If you have multiple projects from which you want to collect logs and send to Sumo Logic, perform the following task.
 
-**To configure collection for multiple projects, do the following:**
-
-
-
+To configure collection for multiple projects, do the following:
 1. [Configure the script on a Linux machine](#Step_1._Configure_the_script_on_a_Linux_machine), then navigate to your configuration file.
-2. Change the **DB_NAME** in the **jfrogxraycollector.yaml,** the **&lt;DB NAME>** variable in the following example.
+2. Change the **DB_NAME** in the jfrogxraycollector.yaml, the `<DB NAME>` variable in the following example.
 
+**Step 2. Advanced configuration**
 
-9
-
-
-
-
-
-###### **Step 2. Advanced configuration**
-
-
-10
 Advanced configuration can be used with all JFrog Xray script-based collection configurations.
 
 This section provides a list of variables for Jfrog Xray that you can define in the configuration file.
@@ -305,17 +252,12 @@ This section provides a list of variables for Jfrog Xray that you can define in 
 
 This section shows you how to run the function manually and then verify that log messages are being sent from JFrog Xray.
 
-**To run the function manually, do the following:**
-
-
-
+To run the function manually, do the following:
 1. Do one of the following:
 * For **python**, run this command: **python -m sumojfrogxray.main**
 * For **python3**, run this command: **python3 -m sumojfrogxray.main**
 1. The script generates logs in **/tmp/sumoapiclient.log **by default. Check these logs to verify whether the script is getting triggered or not.
 2. If you get an error such as “**unable to execute 'gcc': No such file or directory, error: command 'gcc' failed with exit status 1**”, go to your AWS EC2 instance and run the following commands:
-
-
 ```
 sudo yum -y install gcc
 sudo yum install python-devel
@@ -326,7 +268,7 @@ sudo yum install python-devel
 ### Sample Log Message
 
 
-```
+```json
 {
   "created": "2019-09-03 22:01:19,804 +0530",
   "top_severity": "High",
@@ -375,8 +317,7 @@ sudo yum install python-devel
 
 The sample query is from Watches Invoked panel of the **JFrog Xray - Overview** dashboard.
 
-
-```
+```sql
 _sourceCategory = Labs/jfrog/xray
 | json "top_severity", "issues", "watch_name", "policy_name" as TopSeverity, Issues, WatchName, PolicyName nodrop
 | where !(TopSeverity matches "Pending Scan")
@@ -399,21 +340,11 @@ This section has instructions for installing the JFrog Xray app.
 
 To install the app, do the following:
 
-
-
 1. In the App Catalog, search for and select the **JFrog Xray** app.
 
-
-11
 To see a preview of the dashboards included with the app before installing, click Preview Dashboards.
 
-
-
 1. Click **Add to Library**. The **Add JFrog Xray to Library** dialog appears.
-
-
-12
-
 
 1. Specify the following:
 * **App Name**. You can retain the existing name, or enter a name of your choice for the app.
@@ -426,35 +357,20 @@ To see a preview of the dashboards included with the app before installing, clic
 Panels start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
 
 
-#### Dashboard filters
+## Viewing JFrog Xray Dashboards
 
 Each dashboard has a set of filters that you can apply to the entire dashboard, as shown in the following example. Click the funnel icon in the top dashboard menu bar to display a scrollable list of filters that are applied across the entire dashboard.
-
-
-13
-
-
-
-14
-
 
 You can use filters to drill down and examine the data on a granular level
 
 Each panel has a set of filters that are applied to the results for that panel only, as shown in the following example. Click the funnel icon in the top panel menu bar to display a list of panel-specific filters.
 
 
-15
-
-
-
-#### JFrog Xray - Overview dashboard
+### JFrog Xray - Overview
 
 The **JFrog Xray - Overview dashboard **provides an at-a-glance overview of issues detected in your software components in Artifactory, including vulnerable containers, artifacts and components, as well as the top Common Vulnerabilities and Exposures (CVEs) detected.
 
 Use this dashboard to:
-
-
-
 * Monitor watches invoked, policies invoked, vulnerable artifacts and components.
 * Monitor threats, vulnerable containers, CVEs.
 * Monitor security and license vulnerabilities.
@@ -465,14 +381,11 @@ Use this dashboard to:
 
 
 
-#### JFrog Xray - Detected Vulnerabilities dashboard
+### Detected Vulnerabilities dashboard
 
 The **JFrog Xray - Detected Vulnerabilities** dashboard provides insight around users and client IP addresses that both uploaded and downloaded vulnerable artifacts into Artifactory.
 
 Use this dashboard to:
-
-
-
 * Monitor all vulnerable artifacts and components across your artifactory.
 * Identify the top CVE that has affected the artifactory.
 * Identify the trends for vulnerable artifacts and components.
@@ -480,52 +393,37 @@ Use this dashboard to:
 * Identify most vulnerable package types for artifacts and components.
 
 
-16
 
 
 
-#### JFrog Xray - Vulnerable Containers dashboard
+
+### Vulnerable Containers dashboard
 
 The **JFrog Xray - Vulnerable Containers** dashboard provides information on vulnerable containers as well as hosts and namespaces associated with them.
-
-
-
 * Use this dashboard to:
 * Identify vulnerable containers, hosts and namespaces.
 * Identify the trend of vulnerable containers.
 * Monitor recent images pulled from Artifactory by vulnerable containers.
 
 
-17
 
-
-
-#### JFrog Xray - Threat Analysis dashboard
+### Threat Analysis dashboard
 
 The **JFrog Xray - Threat Analysis **dashboard provides insight into threats and indicators of compromise of all vulnerable artifacts detected by Xray by correlating  Artifactory logs with Xray logs.
 
 Use this dashboard to:
-
-
-
 * Identify all vulnerable artifacts that are downloaded or uploaded on Artifactory via Sumo Logic Threat intel.
 * Identify locations of all vulnerable IP’s downloading or uploading artifacts.
 * Monitor the malicious confidence for the threats.
 
 
-18
 
 
-
-#### JFrog Xray - Vulnerable Artifacts dashboard
+### Vulnerable Artifacts dashboard
 
 The **JFrog Xray - Vulnerable Artifacts** dashboard provides detailed insight into Xray issues, vulnerable artifacts and files.
 
 Use this dashboard to:
-
 * Identify top users uploading or downloading the vulnerable artifacts.
 * Identify all the IPs uploading or downloading the vulnerable artifacts.
 * Monitor recent uploaded and downloaded artifacts.
-
-
-19

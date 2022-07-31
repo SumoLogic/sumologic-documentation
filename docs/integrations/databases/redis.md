@@ -403,7 +403,7 @@ db_cluster=<Your_Redis_cluster_Name> component="database" and db_system="redis"
 
 ## Installing Redis Alerts
 
-This page has instructions for installing the Sumo App and Alerts for Redis ULM, as well as descriptions and examples for each of the dashboards. These instructions assume you have already set up collection as described in the **Collecting Logs and Metrics for Redis App** section.
+This section has instructions for installing the Sumo App and Alerts for Redis ULM, as well as descriptions and examples for each of the dashboards. These instructions assume you have already set up collection as described in the **Collecting Logs and Metrics for Redis App** section.
 
 
 #### Pre-Packaged Alerts

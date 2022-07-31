@@ -25,7 +25,7 @@ The Sumo Logic App for Observable Networks assumes Observable Networks formatted
 
 ## Collect Logs for the Observable Network App
 
-This page provides instructions for configuring log collection for the Observable Network App, as well as relevant log and query samples.
+This section provides instructions for configuring log collection for the Observable Network App, as well as relevant log and query samples.
 
 The Observable Networks App allows you to monitor your Observable Networks deployment from Sumo Logic. From Sumo Logic, you can set up forwarding for log monitoring and authentication logs to Observable Networks. With log monitoring, Observable Networks can notify you when a collector is missing, exposing gaps in your log coverage. Authentication log forwarding allows for more accurate and detailed alerts, using Sumo Logic log data to provide extra richness to Observable's Dynamic Endpoint Modeling algorithms.
 
@@ -173,7 +173,7 @@ _sourceCategory=observable
 
 ## Install the Observable Networks App
 
-This page provides instructions for installing the Observable Networks App, as well as showing examples of each of the dashboards. The App preconfigured searches and [dashboards](#Dashboards) allow you to visually analyze your Observable Networks data at a glance.
+This section provides instructions for installing the Observable Networks App, as well as showing examples of each of the dashboards. The App preconfigured searches and [dashboards](#Dashboards) allow you to visually analyze your Observable Networks data at a glance.
 
 To install the app:
 

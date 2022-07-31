@@ -16,8 +16,7 @@ The Sumo Logic App for Artifactory provides insight into your JFrog Artifactory 
 The Sumo Logic App for Artifactory only supports Artifactory On-Premise. It does not work with Artifactory Online. The [JFrog Artifactory Sumo Logic integration](/docs/manage/connections-and-integrations/jfrog-artifactory-integration.md) supports both Artifactory On-Premise and Artifactory Online.
 
 
-#### Log Types
-1
+### Log Types
 
 The Sumo Logic App for Artifactory collects data from the following logs:
 
@@ -26,35 +25,8 @@ The Sumo Logic App for Artifactory collects data from the following logs:
 * **request.log.** Generic HTTP traffic information similar to the Apache HTTPd request log.
 * **traffic.*.log.** A log that contains information about site traffic and file sizes.
 
-For more details about Artifactory logs, refer to [https://www.jfrog.com/confluence/display/RTF/Artifactory+Log+Files](https://www.jfrog.com/confluence/display/RTF/Artifactory+Log+Files).
+For more details about Artifactory logs, refer to [https://www.jfrog.com/confluence/display/RTF/Artifactory+Log+Files](https://www.jfrog.com/confluence/display/RTF/Artifactory+Log+Files) and [Artifactory Log Files](https://www.jfrog.com/confluence/display/RTF6X/Artifactory+Log+Files#ArtifactoryLogFiles-RequestLog).
 
-
-#### Activate the traffic.log file
-2
-
-
-To activate the **traffic.log** file, add the following parameter to your **artifactory.system.properties** file, located under **$ARTIFACTORY/etc**:
-
-
-```
-artifactory.traffic.collectionActive=true
-```
-
-
-For Artifactory 7, the properties file is located at: `$JFROG_HOME/artifactory/var/etc/artifactory/artifactory.system.properties`
-
-For more details about Artifactory 7 log collection, refer to [Collect Logs for Artifactory 7].
-
-A restart is required for traffic collection to take effect.
-
-
-## Collect Logs for Artifactory
-
-This procedure documents how to collect logs from JFrog Artifactory into Sumo Logic.
-
-
-### Log Types
-3
 
 Sumo Logic reads logs in the directory `/var/opt/jfrog/artifactory/logs`:
 
@@ -63,18 +35,31 @@ Sumo Logic reads logs in the directory `/var/opt/jfrog/artifactory/logs`:
 * `request.log`
 * `traffic.*.log`
 
-For more information about Artifactory logs, see JFrog's [Artifactory Log Files](https://www.jfrog.com/confluence/display/RTF6X/Artifactory+Log+Files#ArtifactoryLogFiles-RequestLog).
 
+### Activate the traffic.log file
+
+To activate the **traffic.log** file, add the following parameter to your **artifactory.system.properties** file, located under **$ARTIFACTORY/etc**:
+```
+artifactory.traffic.collectionActive=true
+```
+
+For Artifactory 7, the properties file is located at: `$JFROG_HOME/artifactory/var/etc/artifactory/artifactory.system.properties`
+
+For more details about Artifactory 7 log collection, refer to [Collect Logs for Artifactory 7].
+
+A restart is required for traffic collection to take effect.
+
+
+## Collecting Logs for Artifactory
+
+This procedure documents how to collect logs from JFrog Artifactory into Sumo Logic.
 
 ### Configure a collector
-4
-
 
 Configure an [Installed Collector](/docs/send-data/Installed-Collectors).
 
 
 ### Configure sources
-5
 
 In this step, you configure four local file sources, one for each log source listed in the table below. When you create a file source for a log type:
 
@@ -127,9 +112,8 @@ The following suffixes are required. For example, you could use `_sourceCategory
   </tr>
 </table>
 
-6
 
-Remember that _sourceCategory names are case sensitive. When you run a search using _sourceCategory, make sure you use the same case as you did when configuring the source.
+Remember that `_sourceCategory` names are case sensitive. When you run a search using `_sourceCategory`, make sure you use the same case as you did when configuring the source.
 
 For complete instructions see [Local File Source](/docs/send-data/Sources/sources-installed-collectors/Local-File-Source).
 
@@ -146,13 +130,11 @@ For complete instructions see [Local File Source](/docs/send-data/Sources/source
 4. Click **Save**.
 
 
-#### Field Extraction Rules
-7
+### Field Extraction Rules
 
 Here are Artifactory extraction rules that use different approaches.
 
 **Traffic**
-
 
 ```
 _sourceCategory=*artifactory*

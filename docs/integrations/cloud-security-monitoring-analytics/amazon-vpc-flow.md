@@ -19,9 +19,9 @@ Each method has advantages. Using an AWS S3 source is more reliable, while using
 
 ## Collect Amazon VPC Flow Logs from CloudWatch using CloudFormation
 
-This page has instructions for collecting VPC Flow Logs using a CloudFormation template.  Alternatively, you can [Collect Amazon VPC Flow Logs using AWS S3 Source](#Collect_Amazon_VPC_Flow_Logs_using_AWS_S3_Source).
+This section has instructions for collecting VPC Flow Logs using a CloudFormation template.  Alternatively, you can [Collect Amazon VPC Flow Logs using AWS S3 Source](#Collect_Amazon_VPC_Flow_Logs_using_AWS_S3_Source).
 
-This page has instructions for collecting logs for the Amazon VPC Flow Logs app.
+This section has instructions for collecting logs for the Amazon VPC Flow Logs app.
 
 
 ### Collection process
@@ -118,7 +118,7 @@ This is the Log Group created in the first part (VPCFlowLogs was used).
 
 ## Collect Amazon VPC Flow Logs using an AWS S3 Source
 
-This page has instructions for collecting Amazon VPC Flow Logs using an AWS S3 source. If you prefer to collect VPC logs using a CloudFormation template, see [Collect Amazon VPC Flow Logs using a CloudFormation Template](#Collect-Amazon-VPC-Flow-Logs-from-CloudWatch-Using-CloudFormation).
+This section has instructions for collecting Amazon VPC Flow Logs using an AWS S3 source. If you prefer to collect VPC logs using a CloudFormation template, see [Collect Amazon VPC Flow Logs using a CloudFormation Template](#Collect-Amazon-VPC-Flow-Logs-from-CloudWatch-Using-CloudFormation).
 
 
 ### Step 1: Enable Amazon VPC Flow Logs  

@@ -20,7 +20,7 @@ There are two versions of the Kubernetes Control Plane app for:
 
 ## Collect Logs and Metrics for the Kubernetes Control Plane App
 
-This page provides instructions for configuring log and metric collection for the Kubernetes Control Plane App.
+This section provides instructions for configuring log and metric collection for the Kubernetes Control Plane App.
 
 
 ### Log and Metric Types
@@ -154,7 +154,7 @@ _sourceCategory = *controller*
 
 ## Install the Kubernetes Control Plane App and view the Dashboards
 
-This page provides instructions for installing the Kubernetes Control Plane App, as well as descriptions and examples for each of the dashboards. The app installation process consists of the following tasks:
+This section provides instructions for installing the Kubernetes Control Plane App, as well as descriptions and examples for each of the dashboards. The app installation process consists of the following tasks:
 
 * Determining custom data filters for source categories
 * Installing the app

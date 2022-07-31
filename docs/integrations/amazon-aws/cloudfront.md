@@ -70,17 +70,15 @@ These configuration instructions apply to log collection from all AWS Source typ
 3. Select your AWS Source type.
 4. Enter a name for the new Source. A description is optional.
 5. Select an **S3 region** or keep the default value of **Others**. The S3 region must match the appropriate S3 bucket created in your Amazon account.
-6
+
+:::info
 Selecting an AWS GovCloud region means your data will be leaving a FedRAMP-high environment. Use responsibly to avoid information spillage. See [Collection from AWS GovCloud](/docs/send-data/Sources/sources-hosted-collectors/Amazon-Web-Services/collection-aws-govcloud) for details.
-6. For **Bucket Name**, enter the exact name of your organization's S3 bucket. Be sure to double-check the name as it appears in AWS, for example: \
-
-7
-
+:::
+6. For **Bucket Name**, enter the exact name of your organization's S3 bucket. Be sure to double-check the name as it appears in AWS, for example:
 7. For **Path Expression**, enter the wildcard pattern that matches the S3 objects you'd like to collect. You can use **one **wildcard (*) in this string. Recursive path expressions use a single wildcard and do **NOT** use a leading forward slash. [See About Amazon Path Expressions](/docs/send-data/Sources/sources-hosted-collectors/Amazon-Web-Services/Amazon-Path-Expressions) for details.
 8. **Collection should begin.** Choose or enter how far back you'd like to begin collecting historical logs. You can either:
     * Choose a predefined value from dropdown list, ranging from "Now" to “72 hours ago” to “All Time”, or
     * Enter a relative value. To enter a relative value, click the **Collection should begin** field and press the delete key on your keyboard to clear the field. Then, enter a relative time expression, for example `-1w`. You can define when you want collection to begin in terms of months (M), weeks (w), days (d), hours (h), and minutes (m).
-
 If you paused the Source and want to skip some data when you resume, update the **Collection should begin** setting to a time after it was paused.
 9. For **Source Category**, enter any string to tag the output collected from this Source. (Category metadata is stored in a searchable field called _sourceCategory.)
 10. **Fields**. Click the **+Add Field** link to add custom log metadata [Fields](/docs/manage/fields.md).
@@ -103,8 +101,6 @@ If the Source is not subscribed to an SNS topic and set to **Automatic** the sca
 
 
 #### Set up SNS in AWS (Highly Recommended)
-
-
 The following steps use the AWS SNS Console. You may instead use AWS CloudFormation. Follow the instructions to use [CloudFormation to set up an SNS Subscription Endpoint](/docs/send-data/Sources/sources-hosted-collectors/Amazon-Web-Services/configure-our-aws-source-cloudformation#Set_up_an_SNS_Subscription_Endpoint).
 
 

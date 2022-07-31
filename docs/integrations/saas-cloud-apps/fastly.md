@@ -22,7 +22,7 @@ The Fastly app uses the following log types:
 
 ## Collect Logs for Fastly
 
-This page has instructions for setting up log collection for the Fastly app.  
+This section has instructions for setting up log collection for the Fastly app.  
 
 
 ### Step 1: Configure collector and source

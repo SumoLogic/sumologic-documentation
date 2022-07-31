@@ -19,7 +19,6 @@ The App uses SQS logs and metrics for:
 
 ### Sample Log Message
 
-
 ```json
 {
    "eventVersion":"1.04",

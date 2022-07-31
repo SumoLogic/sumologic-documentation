@@ -682,7 +682,7 @@ This section shows you how to troubleshoot the function and resolve errors you m
 
 ### Configure Script-Based Collection for Google Workspace Alert Center
 
-This page provides instructions for deploying script based collection for Google Workspace  Alert Center. This script collects logs for the Sumo Logic Google Workspace Alert Center App.
+This section provides instructions for deploying script based collection for Google Workspace  Alert Center. This script collects logs for the Sumo Logic Google Workspace Alert Center App.
 
 
 51

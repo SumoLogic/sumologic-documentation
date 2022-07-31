@@ -47,14 +47,48 @@ In this step you set up AWS WAF to send log data to an S3 bucket using an Kinesi
     * **Time Zone**. Click **Ignore time zone** **from log file and instead use**, and select "UTC" from the list of time zones.
     * **Timestamp Format**. Click **Automatically detect the format**.
     * **Enable Multiline Processing**. Click the checkbox, and select **Infer Boundaries**.
-    * Click **Save**.
+3. Click **Save**.
 
 
 ### Sample Log Message
 
-
 ```json
-{"webaclId":"360cb717-5a9f-4f2f-ac64-09ab912af591","terminatingRuleId":"1809ecc9-81fd-4dff-99e7-a27421213155","terminatingRuleType":"REGULAR","action":"BLOCK","httpSourceName":"CF","httpSourceId":"i-123","ruleGroupList":[],"rateBasedRuleList":[],"matchingNonTerminatingRules":[],"httpRequest":{"clientIp":"125.5.11.56","country":"US","headers":[{"name":"Host","value":"127.0.0.1:1989"},{"name":"User-Agent","value":"curl/7.53.1"},{"name":"Accept","value":"*/*"}],"uri":"/Lists/b/ref=sva_videos_2?ie=UTF   ","args":"name=10; DROP TABLE members","httpVersion":"HTTP/1.1","httpMethod":"GET","requestId":"distribution_id"},"formatVersion":1,"timestamp":1535493873231}
+{
+  "webaclId": "360cb717-5a9f-4f2f-ac64-09ab912af591",
+  "terminatingRuleId": "1809ecc9-81fd-4dff-99e7-a27421213155",
+  "terminatingRuleType": "REGULAR",
+  "action": "BLOCK",
+  "httpSourceName": "CF",
+  "httpSourceId": "i-123",
+  "ruleGroupList": [],
+  "rateBasedRuleList": [],
+  "matchingNonTerminatingRules": [],
+  "httpRequest": {
+    "clientIp": "125.5.11.56",
+    "country": "US",
+    "headers": [
+      {
+        "name": "Host",
+        "value": "127.0.0.1:1989"
+      },
+      {
+        "name": "User-Agent",
+        "value": "curl/7.53.1"
+      },
+      {
+        "name": "Accept",
+        "value": "*/*"
+      }
+    ],
+    "uri": "/Lists/b/ref=sva_videos_2?ie=UTF   ",
+    "args": "name=10; DROP TABLE members",
+    "httpVersion": "HTTP/1.1",
+    "httpMethod": "GET",
+    "requestId": "distribution_id"
+  },
+  "formatVersion": 1,
+  "timestamp": 1535493873231
+}
 ```
 
 
@@ -77,18 +111,15 @@ To install the app:
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
 1. From the **App Catalog**, search for and select the app**.**
-2. Select the version of the service you're using and click **Add to Library**.
+2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/library/install-apps)
 
-Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/library/install-apps)
-
-
-1. To install the app, complete the following fields.
+3. To install the app, complete the following fields.
     * **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
     * **Data Source.** Select either of these options for the data source. 
         * Choose **Source Category**, and select a source category from the list. 
         * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). 
     * **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-2. Click **Add to Library**.
+4. Click **Add to Library**.
 
 Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization.
 

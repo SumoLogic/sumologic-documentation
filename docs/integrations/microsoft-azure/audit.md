@@ -26,7 +26,7 @@ To install the Sumo Logic App for Azure Audit, you must sign up for a Sumo Logic
 
 ## Collecting Logs for the Azure Audit App from Event Hub
 
-This page has instructions for configuring a pipeline for shipping Azure Audit logs from [Azure Monitor](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-get-started) to an Event Hub, on to an Azure Function, and finally to an HTTP source on a hosted collector in Sumo Logic.
+This section has instructions for configuring a pipeline for shipping Azure Audit logs from [Azure Monitor](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-get-started) to an Event Hub, on to an Azure Function, and finally to an HTTP source on a hosted collector in Sumo Logic.
 
 The sections below are either for FedRamp Sumo Logic deployments or if you have been advised by the Sumo Logic support team to not use the Cloud to Cloud Integration based on your Azure environments.
 

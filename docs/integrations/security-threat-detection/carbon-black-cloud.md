@@ -67,7 +67,7 @@ _sourceCategory = Labs/CarbonBlackCloudAlerts
 
 ## Collect Logs for Carbon Black Cloud
 
-This page has instructions for configuring collection of Carbon Black Cloud event and alert logs. In the steps that follow, you'll set up two Sumo Logic S3 Sources, each of which will collect logs from an S3 bucket, and configure Carbon Black Cloud to send alert and event data to the S3 buckets.
+This section has instructions for configuring collection of Carbon Black Cloud event and alert logs. In the steps that follow, you'll set up two Sumo Logic S3 Sources, each of which will collect logs from an S3 bucket, and configure Carbon Black Cloud to send alert and event data to the S3 buckets.
 
 
 ### Step 1: Create S3 bucket

@@ -4,7 +4,7 @@ id: create-a-lookup-table
 
 # Create a Lookup Table
 
-This page has instructions for creating and and managing Lookup Tables using the Sumo Logic UI.
+This section has instructions for creating and and managing Lookup Tables using the Sumo Logic UI.
 
 :::tip
 You can also use the [Lookups API](https://api.sumologic.com/docs/#tag/lookupManagement) to create and manage Lookup Tables. 

@@ -5,7 +5,7 @@ sidebar_label: Symantec Proxy Secure Gateway (Blue Coat Proxy)
 description: tk
 ---
 
-This page has instructions for collecting Symantec Proxy Secure Gateway (ProxySG) log messages as comma-separated values (CSV) and sending them to Sumo Logic to be ingested by CSE. While this document shows how to configure and ingest logs as CSV, CSE also supports Common Event Format (CEF) ProxySG logs.
+This section has instructions for collecting Symantec Proxy Secure Gateway (ProxySG) log messages as comma-separated values (CSV) and sending them to Sumo Logic to be ingested by CSE. While this document shows how to configure and ingest logs as CSV, CSE also supports Common Event Format (CEF) ProxySG logs.
 
 Sumo Logic CSE supports the following Proxy Secure Gateway logging fields:
 

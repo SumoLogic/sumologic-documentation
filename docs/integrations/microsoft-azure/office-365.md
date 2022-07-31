@@ -14,7 +14,7 @@ The Microsoft Office 365 App ingests Microsoft Office 365 Audit logs for Azure A
 
 ## Collecting Logs for the Office 365 App
 
-This page provides instructions for configuring log collection for the Microsoft Office 365 App, as well as providing sample log messages and queries.
+This section provides instructions for configuring log collection for the Microsoft Office 365 App, as well as providing sample log messages and queries.
 
 ### Log Types
 

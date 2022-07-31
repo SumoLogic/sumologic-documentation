@@ -19,14 +19,14 @@ This App has been tested with following SQL Server versions:
 
 ## Collecting Logs and Metrics for the Microsoft SQL Server App
 
-This page provides instructions for configuring a local file source to collect SQL Server ERRORLOG data, and a script source to collect SQL Server performance metrics. A sample log message is also provided.
+This section provides instructions for configuring a local file source to collect SQL Server ERRORLOG data, and a script source to collect SQL Server performance metrics. A sample log message is also provided.
 
 ### Step 1: Configure Fields in Sumo Logic
 
 Create the following Fields in Sumo Logic prior to configuring collection. This ensures that your logs and metrics are tagged with relevant metadata, which is required by the app dashboards. For information on setting up fields, see the [Fields](/docs/manage/fields.md) help page.
 
 <Tabs
-  className="unique-tabs"
+  groupId="k8s-nonk8s"
   defaultValue="k8s"
   values={[
     {label: 'Kubernetes environments', value: 'k8s'},
@@ -60,7 +60,7 @@ If you are using SQL Server in a Kubernetes environment, create the fields:
 Sumo Logic supports collection of logs and metrics data from SQL Server in both Kubernetes and non-Kubernetes environments. Click on the appropriate tabs below based on the environment where your SQL Server clusters are hosted.
 
 <Tabs
-  className="unique-tabs"
+  groupId="k8s-nonk8s"
   defaultValue="k8s"
   values={[
     {label: 'Kubernetes environments', value: 'k8s'},
@@ -327,7 +327,7 @@ GO
 Create or modify `telegraf.conf` and copy and paste the text below:  
 
 
-```
+```sql
 [[inputs.sqlserver]]
   servers = [ "Server=<IP_TO_BE_CHANGED>;Port=<Port_TO_BE_CHANGED>;User Id=<Username_TO_BE_CHANGED>;Password=<Password_TO_BE_CHANGED>;app name=telegraf;log=1;",]
   database_type = "SQLServer"
@@ -379,7 +379,7 @@ At this point, Telegraf should start collecting the SQL Server metrics and forwa
 
 ## Installing Microsoft SQL Server Monitors
 
-This page provides instructions for installing the Microsoft SQL Server App, as well as examples of each of the App dashboards. These instructions assume you have already set up collection as described in the [Collect Logs and Metrics for the Microsoft SQL Server](#Collect-Logs-for-the-Microsoft-SQL-Server-App) App page.
+This section provides instructions for installing the Microsoft SQL Server App, as well as examples of each of the App dashboards. These instructions assume you have already set up collection as described in the [Collect Logs and Metrics for the Microsoft SQL Server](#Collect-Logs-for-the-Microsoft-SQL-Server-App) App page.
 
 
 ### Pre-Packaged Alerts

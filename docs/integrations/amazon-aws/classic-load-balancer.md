@@ -81,7 +81,7 @@ Namespace for **AWS Classic Load Balancer** Service is **AWS/ELB**.
 
 #### Configure a Collector
 
-Configure a [Hosted Collector](/docs/send-data/configure-hosted-collector).
+See [Configure a Hosted Collector](/docs/send-data/configure-hosted-collector).
 
 
 #### Before you begin
@@ -101,11 +101,11 @@ When you create an AWS Source, you associate it with a Hosted Collector. Before 
 #### Rules
 
 * If you're editing, the `Collection should begin` date on a Source. The new date must be after the current `Collection should begin` date.
-* Sumo Logic supports log files (S3 objects) that do NOT change after they are uploaded to S3. Support is not provided if your logging approach relies on updating files stored in an S3 bucket. S3 does not have a concept of updating existing files, you can only overwrite an existing file. When this overwrite happens, S3 considers it as a new file object or a new version of the file, and that file object gets its unique version ID. \
- \
-Sumo Logic scans an S3 bucket based on the path expression supplied or receives an SNS notification when a new file object is created. As part of this, we receive a file name (key) and the object's ID. It's compared against a list of file objects already ingested. The file's contents are fully ingested if a matching file ID is not found. \
- \
-When you overwrite a file in S3, the file object gets a new version ID, and as a result, Sumo Logic sees it as a new file and ingests all of it. If with each version you post to S3, you are simply adding to the end of the file, this will lead to duplicate messages, one message for each version of the file you created in S3. \
+* Sumo Logic supports log files (S3 objects) that do NOT change after they are uploaded to S3. Support is not provided if your logging approach relies on updating files stored in an S3 bucket. S3 does not have a concept of updating existing files, you can only overwrite an existing file. When this overwrite happens, S3 considers it as a new file object or a new version of the file, and that file object gets its unique version ID.
+
+  Sumo Logic scans an S3 bucket based on the path expression supplied or receives an SNS notification when a new file object is created. As part of this, we receive a file name (key) and the object's ID. It's compared against a list of file objects already ingested. The file's contents are fully ingested if a matching file ID is not found.
+
+  When you overwrite a file in S3, the file object gets a new version ID, and as a result, Sumo Logic sees it as a new file and ingests all of it. If with each version you post to S3, you are simply adding to the end of the file, this will lead to duplicate messages, one message for each version of the file you created in S3. \
 
 * Glacier objects will not be collected and are ignored.
 * If you're using SNS, you must create a separate topic and subscription for each Source.
@@ -116,92 +116,64 @@ When you overwrite a file in S3, the file object gets a new version ID, and as a
 Sumo’s S3 integration combines scan-based discovery and event-based discovery into a unified integration that allows you to maintain a low-latency integration for new content and assure that no data was missed or dropped. When you enable event-based notifications, S3 will automatically publish new files to Amazon Simple Notification Service (SNS) topics to which Sumo Logic can be subscribed. This notifies Sumo Logic immediately when new files are added to your S3 bucket so we can collect it. For more information about SNS, see the [Amazon SNS product](https://aws.amazon.com/sns/) detail page.
 
 
-10
-
-
 Enabling event-based notifications is an S3 bucket-level operation subscribing to an SNS topic. An SNS topic is an access point that Sumo Logic can dynamically subscribe to receive event notifications. When creating a Source that collects from an S3 bucket, Sumo assigns an endpoint URL to the Source. The URL is for you to use in the AWS subscription to the SNS topic, so AWS notifies Sumo when there are new files. See [Configuring Amazon S3 Event Notifications](https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html) for more information.
 
 You can adjust the configuration of when and how AWS handles communication attempts with Sumo Logic. See [Setting Amazon SNS Delivery Retry Policies](https://docs.aws.amazon.com/sns/latest/dg/DeliveryPolicies.html) for details.
 
 
 #### Create an AWS Source
-11
-
 
 These configuration instructions apply to log collection from all AWS Source types. Select the correct Source type for your Source in Step 3.
-
-
 
 1. In Sumo Logic select** Manage Data > Collection > Collection**.
 2. On the **Collectors** page, click **Add Source** next to a Hosted** **Collector, either an existing Hosted Collector, or one you have created for this purpose.
 3. Select your AWS Elastic Load Balancing.
 4. Enter a name for the new Source. A description is optional.
-5. Select an **S3 region** or keep the default value of **Others**. The S3 region must match the appropriate S3 bucket created in your Amazon account. \
+5. Select an **S3 region** or keep the default value of **Others**. The S3 region must match the appropriate S3 bucket created in your Amazon account.
 
-12
+:::info
 Selecting an AWS GovCloud region means your data will leave a FedRAMP-high environment. Use responsibly to avoid information spillage. See [Collection from AWS GovCloud](/docs/send-data/Sources/sources-hosted-collectors/Amazon-Web-Services/collection-aws-govcloud) for details.
+:::
 6. For **Bucket Name**, enter the exact name of your organization's S3 bucket. Be sure to double-check the name as it appears in AWS, for example: \
-
-13
-
 7. For **Path Expression**, enter the wildcard pattern that matches the S3 objects you'd like to collect. You can use **one **wildcard (*) in this string. Recursive path expressions use a single wildcard and do **NOT** use a leading forward slash. [See About Amazon Path Expressions](/docs/send-data/Sources/sources-hosted-collectors/Amazon-Web-Services/Amazon-Path-Expressions) for details.
 8. **Collection should begin.** Choose or enter how far back you'd like to begin collecting historical logs. You can either:
-    * Choose a predefined value from dropdown list, ranging from "Now" to “72 hours ago” to “All Time”, or
-    * Enter a relative value. To enter a relative value, click the **Collection should begin** field and press the delete key on your keyboard to clear the field. Then, enter a relative time expression, for example -1w. You can define when you want collection to begin in terms of months (M), weeks (w), days (d), hours (h), and minutes (m).
-14
-If you paused the Source and want to skip some data when you resume, update the **Collection should begin** setting to a time after it was paused.
-9. For **Source Category**, enter any string to tag the output collected from this Source. (Category metadata is stored in a searchable field called _sourceCategory.)
-    * Example sourceCategory: **aws/observability/clb/logs**
+   * Choose a predefined value from dropdown list, ranging from "Now" to “72 hours ago” to “All Time”, or
+   * Enter a relative value. To enter a relative value, click the **Collection should begin** field and press the delete key on your keyboard to clear the field. Then, enter a relative time expression, for example -1w. You can define when you want collection to begin in terms of months (M), weeks (w), days (d), hours (h), and minutes (m).
+
+   If you paused the Source and want to skip some data when you resume, update the **Collection should begin** setting to a time after it was paused.
+9. For **Source Category**, enter any string to tag the output collected from this Source. Category metadata is stored in a searchable field called `_sourceCategory`.
+   * Example sourceCategory: **aws/observability/clb/logs**
 10. **Fields**. Click the **+Add Field** link to add custom log metadata [Fields](/docs/manage/fields.md).
 
-Following** Fields **are to be added in the source :
-
-
-
+Following **Fields** are to be added in the source:
 * Add an **account** field and assign it a value which is a friendly name / alias to your AWS account from which you are collecting logs. This name will appear in the Sumo Logic Explorer View. Logs can be queried via the “account field”.
 * Add a **region** field and assign it the value of respective AWS region where the Classic Load Balancer exists.
 * Add an **accountId **field and assign it the value of the respective AWS account id which is being used.
-15
 
-1.
-16
  A green circle with a checkmark is shown when the field exists and is enabled in the Fields table schema.
-2.
-17
+
  An orange triangle with an exclamation point is shown when the field doesn't exist or is disabled in the Fields table schema. In this case, an option is provided to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo that does not exist in the Fields schema or is disabled, it is ignored, known as dropped.
-1. For **AWS Access,** you have two **Access Method** options. Select **Role-based or Key access based on the AWS authentication you provide**. Role-based access is preferred. This was completed in the prerequisite step [Grant Sumo Logic access to an AWS Product](/docs/send-data/sources/sources-hosted-collectors/amazon-web-services/grant-access-aws-product.md).
+11. For **AWS Access,** you have two **Access Method** options. Select **Role-based or Key access based on the AWS authentication you provide**. Role-based access is preferred. This was completed in the prerequisite step [Grant Sumo Logic access to an AWS Product](/docs/send-data/sources/sources-hosted-collectors/amazon-web-services/grant-access-aws-product.md).
     * For **Role-based access,** enter** **the Role ARN that was provided by AWS after creating the role. \
 
-18
-
     * For **Key access** enter the **Access Key ID **and** Secret Access Key.** See [AWS Access Key ID](http://docs.aws.amazon.com/STS/latest/UsingSTS/UsingTokens.html#RequestWithSTS) and [AWS Secret Access Key](https://aws.amazon.com/iam/) for details.
-2. **Log File Discovery.** You have the option to set up Amazon Simple Notification Service (SNS) to notify Sumo Logic of new items in your S3 bucket. A scan interval is required and automatically applied to detect log files. \
-
-19
+12. **Log File Discovery.** You have the option to set up Amazon Simple Notification Service (SNS) to notify Sumo Logic of new items in your S3 bucket. A scan interval is required and automatically applied to detect log files.
 Sumo Logic highly recommends using an SNS Subscription Endpoint for its ability to maintain low-latency collection. This is essential to support up-to-date [Alerts](/docs/alerts/index.md).
     * **Scan Interval. **Sumo Logic will periodically scan your S3 bucket for new items in addition to SNS notifications. **Automatic** is recommended not to incur additional AWS charges. This sets the scan interval based on if subscribed to an SNS topic endpoint and how often new files are detected over time. \
 If the Source is not subscribed to an SNS topic and set to **Automatic,** the scan interval is 5 minutes. You may enter a set frequency to scan your S3 bucket for new data. To learn more about Scan Interval considerations, see [About setting the S3 Scan Interval](/docs/send-data/Sources/sources-hosted-collectors/Amazon-Web-Services/AWS-S3-Scan-Interval-Sources).
     * **SNS Subscription Endpoint **(**Highly Recommended**). Sumo Logic will collect new files as soon as the notification is received. This will provide faster collection versus waiting for the next scan to detect the new file.
         1. To set up the subscription, you need to get an endpoint URL from Sumo to provide to AWS. This process will save your Source and begin scanning your S3 bucket when the endpoint URL is generated. Click on **Create URL** and use step C's provided endpoint URL when creating your subscription. \
 
-20
-
-
-
-21
 The following steps use the AWS SNS Console. You may instead use AWS CloudFormation. Follow the instructions to use [CloudFormation to set up an SNS Subscription Endpoint](/docs/send-data/Sources/sources-hosted-collectors/Amazon-Web-Services/configure-our-aws-source-cloudformation#Set_up_an_SNS_Subscription_Endpoint).
-
-
 
 1. Go to **Services >** **Simple Notification Service** and click **Create Topic**. Enter a **Topic name** and click **Create topic**. Copy the provided **Topic ARN**, you’ll need this for the next step. \
 
-22
 Make sure that the topic and the bucket are in the same region.
 2. Again go to **Services >** **Simple Notification Service** and click **Create Subscription**. Paste the **Topic ARN** from step B above. Select **HTTPS** as the protocol and enter the **Endpoint** URL provided while creating the S3 source in Sumo Logic. Click **Create subscription** and a confirmation request will be sent to Sumo Logic. The request will be automatically confirmed by Sumo Logic.
 3. Select the **Topic** created in step B and navigate to **Actions > Edit Topic Policy**. Use the following policy template, replace the SNS-topic-ARN and bucket-name placeholders in the Resource section of the JSON policy with your actual SNS topic ARN and S3 bucket name:
 
 
-```
+```json
 {
     "Version": "2008-10-17",
     "Statement": [{
@@ -238,27 +210,15 @@ Make sure that the topic and the bucket are in the same region.
 
 
 #### SNS with one bucket and multiple Sources
-23
-
 
 When collecting from one AWS S3 bucket with multiple Sumo Sources, you must create a separate topic and subscription for each Source. Subscriptions and Sumo Sources should both map to only one endpoint. If you were to have multiple subscriptions, Sumo would collect your objects multiple times.
 
 Each topic needs a separate filter (prefix/suffix) so that collection does not overlap. For example, the following image shows a bucket configured with two notifications with filters (prefix/suffix) set to notify Sumo separately about new objects in different folders.
 
 
-24
-
-
-
 #### Update Source to use S3 Event Notifications
-25
 
-
-
-26
 There is a [community supported script](https://github.com/SumoLogic/sumologic-content/tree/master/Sumo-Logic-Tools/Event_Based_S3_Automation) available that configures event-based object discovery on existing AWS Sources.
-
-
 
 1. In Sumo Logic select **Manage Data > Collection > Collection**.
 2. On the Collection page, navigate to your Source and click **Edit**. Scroll down to **Log File Discovery** and note the Endpoint **URL** provided. You will use this in step 10.C when creating your subscription.
@@ -271,24 +231,15 @@ In the web interface under **Log File Discovery** it shows a red exclamation mar
 
 
 Steps to troubleshoot:
-
-
-
 1. Refresh the Source’s page to view the latest status of the subscription in the SNS Subscription section by clicking **Cancel** then **Edit** on the Source in the Collection tab.
 2. Verify you have enabled sending **Notifications** from your S3 bucket to the appropriate SNS topic. This is done in [step 10.E](#Configure-SNS-Notifications).
 3. If you didn’t use CloudFormation check that the SNS topic has a confirmed subscription to the URL in AWS console. A "Pending Confirmation" state likely means that you entered the wrong URL while creating the subscription.
 
 In the web interface under **Log File Discovery** it shows a green check with "Sumo Logic has received an AWS validation request at this endpoint." but you still have high latencies.
 
-
-29
-
-
 The green check confirms that the endpoint was used correctly, but it does not mean Sumo is receiving notifications successfully.
 
 Steps to troubleshoot:
-
-
 
 1. AWS writes CloudTrail and S3 Audit Logs to S3 with a latency of a few minutes. If you’re seeing latencies of around 10 minutes for these Sources it is likely because AWS is writing them to S3 later than expected.
 2. Verify you have enabled sending **Notifications** from your S3 bucket to the appropriate SNS topic. This is done in [step 10](#Configure-SNS-Notifications).
@@ -300,13 +251,11 @@ Login to Sumo Logic,  goto Manage Data > Logs > Fields. Search for the “**load
 
 
 ### Field Extraction Rule(s)
-1
-
 
 Create Field Extraction Rule for AWS Classic Load Balancer Access Logs. Learn how to create Field Extraction Rule [here](/docs/manage/field-extractions/create-field-extraction-rule.md).
 
 
-```
+```sql
 Rule Name: AwsObservabilityElbAccessLogsFER
 Applied at: Ingest Time
 Scope (Specific Data): account=* region=* _sourceCategory=aws/observability/clb/logs
@@ -324,16 +273,6 @@ Scope (Specific Data): account=* region=* _sourceCategory=aws/observability/clb/
 | tolowercase(loadbalancername) as loadbalancername
 | fields loadbalancername, namespace
 ```
-
-
-
-
-
-
-
-
-
-
 
 
 ## Install the AWS Classic Load Balancer App

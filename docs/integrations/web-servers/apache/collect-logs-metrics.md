@@ -2,21 +2,21 @@
 id: collect-logs-metrics
 title: Collect Logs and Metrics for Apache
 sidebar_label: Collect Logs and Metrics
-description: This page provides instructions for configuring log and metric collection for the Sumo Logic App for Apache.
+description: This section provides instructions for configuring log and metric collection for the Sumo Logic App for Apache.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-This page provides instructions for configuring log and metrics collection for the Sumo Logic App for Apache.
+This section provides instructions for configuring log and metrics collection for the Sumo Logic App for Apache.
 
 ## Step 1: Configure Fields in Sumo Logic
 
 Create the following Fields in Sumo Logic prior to configuring collection. This ensures that your logs and metrics are tagged with relevant metadata, which is required by the app dashboards. For information on setting up fields, see the [Fields](/docs/manage/fields.md) help page.
 
 <Tabs
-  className="unique-tabs"
+  groupId="k8s-nonk8s"
   defaultValue="k8s"
   values={[
     {label: 'Kubernetes environments', value: 'k8s'},
@@ -48,7 +48,7 @@ If you are using Apache in a non-Kubernetes environment create the fields:
 Sumo Logic supports collection of logs and metrics data from Apache in both Kubernetes and non-Kubernetes environments. Please click on the appropriate link below based on the environment where your Apache farms are hosted.
 
 <Tabs
-  className="unique-tabs"
+  groupId="k8s-nonk8s"
   defaultValue="k8s"
   values={[
     {label: 'Kubernetes environments', value: 'k8s'},

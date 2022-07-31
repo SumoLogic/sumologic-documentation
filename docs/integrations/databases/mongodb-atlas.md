@@ -269,7 +269,7 @@ _sourceCategory=Labs/MongoDBAtlas/logs AND (_sourceName="mongodb-audit-log.gz" O
 
 ## Collecting Logs and Metrics for the MongoDB Atlas App
 
-This page explains how to collect logs from MongoDB Atlas and ingest them into Sumo Logic for use with the MongoDB Atlas App predefined dashboards and searches. Sumo Logic provides a solution which pulls logs and metrics from MongoDB Atlas with API calls. You can configure the log types to be collected, and the logs and metrics are then forwarded to Sumo Logic’s HTTP endpoint.
+This section explains how to collect logs from MongoDB Atlas and ingest them into Sumo Logic for use with the MongoDB Atlas App predefined dashboards and searches. Sumo Logic provides a solution which pulls logs and metrics from MongoDB Atlas with API calls. You can configure the log types to be collected, and the logs and metrics are then forwarded to Sumo Logic’s HTTP endpoint.
 
 By default, the collection starts from the current date and time, but this setting is also configurable. For more information, see the [Advanced Configuration](#Advanced_Configuration) options.
 

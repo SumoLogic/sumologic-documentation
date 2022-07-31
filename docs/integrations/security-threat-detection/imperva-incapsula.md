@@ -21,7 +21,7 @@ The Imperva Incapsula - Web Application Firewall App uses security and access lo
 
 ## Collecting Logs for the Imperva - Incapsula Web Application Firewall App
 
-This page provides instructions on configuring log collection for the Imperva - Incapsula Web Application Firewall App, as well as query samples.
+This section provides instructions on configuring log collection for the Imperva - Incapsula Web Application Firewall App, as well as query samples.
 
 
 ### Set up log integration in Imperva Incapsula

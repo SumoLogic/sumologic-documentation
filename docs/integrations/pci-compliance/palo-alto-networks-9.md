@@ -37,7 +37,7 @@ The Sumo Logic App for Payment Card Industry (PCI) Compliance for Palo Alto Netw
 
 ## Collecting Logs for PCI Compliance for Palo Alto Networks 9
 
-This page has instructions for collecting logs for the PCI Compliance for Palo Alto Networks 9 app.
+This section has instructions for collecting logs for the PCI Compliance for Palo Alto Networks 9 app.
 
 This app supports Palo Alto Networks v9 and v8.
 

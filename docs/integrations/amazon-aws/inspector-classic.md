@@ -24,17 +24,17 @@ http://docs.aws.amazon.com/inspector/latest/userguide/inspector_assessments.html
 
 For information about our newer app for Amazon Inspector, which leverages findings from AWS Security Hub, see Amazon Inspector.
 
-This page provides instructions for configuring data collection for the Amazon Inspector App.
+This section provides instructions for configuring data collection for the Amazon Inspector App.
 
 
-#### Step 1: Configure Collection in Sumo Logic
+### Step 1: Configure Collection in Sumo Logic
 
 To collect data for the Amazon Inspector App, do the following:
 1. Configure a [Hosted Collector](/docs/send-data/configure-hosted-collector).
 2. Configure an [HTTP Source](/docs/send-data/sources/sources-hosted-collectors/http-logs-metrics-source).
 
 
-#### Step 2: Configure Amazon Inspector
+### Step 2: Configure Amazon Inspector
 
 On Amazon Inspector, perform these tasks under the same AWS region:<
 
@@ -46,14 +46,11 @@ On Amazon Inspector, perform these tasks under the same AWS region:<
 Details are provided in the following sections.
 
 
-#### Step 3: Create an Amazon SNS Topic
+### Step 3: Create an Amazon SNS Topic
 
 1. Log in to the Amazon Console.
-2. Click Services. In the dropdown go to **Application Integration > Simple Notification Service** (SNS). \
-
-
+2. Click Services. In the dropdown go to **Application Integration > Simple Notification Service** (SNS).
 3. On the **SNS Dashboard**, select  **Topics **on the left side.
-
 4. A new window opens, select **Create** **topic **button.
 5. In the new window, enter the following details:
     * **Name**: Enter a topic name.
@@ -61,43 +58,33 @@ Details are provided in the following sections.
     * **JSON Editor:** Replace the existing text with the following.
 
 ```json
-{"Version": "2008-10-17",
- "Id": "inspector-sns-publish-policy",
- "Statement": [
-   {
-     "Sid": "inspector-sns-publish-statement",
-     "Effect": "Allow",
-     "Principal": {
-       "Service": "inspector.amazonaws.com"
-     },
-     "Action": "SNS:Publish",
-     "Resource": "arn:aws:sns:*"
-   }
- ]
+{
+  "Version": "2008-10-17",
+  "Id": "inspector-sns-publish-policy",
+  "Statement": [
+    {
+      "Sid": "inspector-sns-publish-statement",
+      "Effect": "Allow",
+      "Principal": {
+        "Service": "inspector.amazonaws.com"
+      },
+      "Action": "SNS:Publish",
+      "Resource": "arn:aws:sns:*"
+    }
+  ]
 }
 ```
 
+6. Click **Create Topic **button.
 
-1. Click **Create Topic **button.
 
-
-#### Step 4: Configure Amazon Inspector
-
+### Step 4: Configure Amazon Inspector
 
 1. In the Amazon Console, click Services. In the opened dropdown, go to **Security, Identity & Compliance > Inspector**.
-2. Select assessment templates on the left side. \
-
-9
-
+2. Select assessment templates on the left side.
 3. A new window opens, select **each **assessment template you want to monitor.
-4. Expand each row and find the section called **SNS topics**. \
-
-10
-
+4. Expand each row and find the section called **SNS topics**.
 5. Click the **Edit** icon and select the SNS topic you created in the previous section. \
-
-11
-
 6. Click **Save**.
 
 
@@ -105,26 +92,12 @@ Details are provided in the following sections.
 
 
 1. In the Amazon Console, click Services. In the opened dropdown, go to **Security, Identity & Compliance > IAM**.
-2. Select **Roles **on the left side. A new window open, click the **Create role** button. \
-
-13
-
-3. Select **Lambda **and then click **Next: Permissions **button. \
-
-14
- \
-
-4. In the **Attach permissions policy **section, search and select **AWSLambdaBasicExecutionRole** and **AmazonInspectorReadOnlyAccess** policies.
-5. Select **Next: Tags** button. \
-
-15
-
+2. Select **Roles **on the left side. A new window open, click the **Create role** button.
+3. Select **Lambda **and then click **Next: Permissions** button.
+4. In the **Attach permissions policy** section, search and select **AWSLambdaBasicExecutionRole** and **AmazonInspectorReadOnlyAccess** policies.
+5. Select **Next: Tags** button.
 6. Select **Next: Review** button.
-7. In the **Review** section, Enter the role name **Lambda-Inspector **and click the **Create role** button. \
-
-16
-
-
+7. In the **Review** section, Enter the role name **Lambda-Inspector **and click the **Create role** button.
 
 #### Step 6: Create a Lambda Function
 
@@ -134,41 +107,24 @@ Details are provided in the following sections.
     * **Function name:** Enter function name.
     * **Runtime:** Select the Python 3.7 runtime.
     * **Choose or create an execution role:** Select **Use an existing role** radio button. Select the role created in Step 5.
-4. Click **Create function** button. \
-
-18
-
+4. Click **Create function** button.
 5. Click the **Add trigger** button.
     * Select **SNS Service.**
     * Select the **SNS topic** you created in create an Amazon SNS Topic as trigger.
-6. Click the **Add** button. \
-
-19
-
+6. Click the **Add** button.
 7. Click the Function name and go to the **Function code** section.
 8. Go to [https://raw.githubusercontent.com/SumoLogic/sumologic-aws-lambda/main/inspector/python/inspector.py](https://raw.githubusercontent.com/SumoLogic/sumologic-aws-lambda/main/inspector/python/inspector.py) and copy-paste the code in the editor.
 9. Edit the code to enter the URL of the Sumo Logic endpoint ( line 14) that will receive data from the HTTP Source.
-10. Click **Save** at the top. \
-
-20
-
+10. Click **Save** at the top.
 11. Scroll down and go to **Edit basic settings **and configure the rest of the settings as follows:
     * **Handler:** lambda_function.sumo_inspector_handler
     * **Memory (MB):** 128
-    * **Timeout:** 10 minutes \
-
-
-
+    * **Timeout:** 10 minutes
 12. Click **Save**.
-
-
-
 
 ### Sample Log
 
-Amazon Inspector CreateResourceGroup action
-
-```json
+```json title="Amazon Inspector CreateResourceGroup action"
 {
    "eventVersion": "1.03",
    "userIdentity": {
@@ -216,7 +172,6 @@ Amazon Inspector CreateResourceGroup action
 }
 ```
 
-
 For information about our newer app for Amazon Inspector, which leverages findings from AWS Security Hub, see [Amazon Inspector](/docs/integrations/amazon-aws/inspector).
 
 
@@ -228,22 +183,16 @@ To install the app:
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
-
-
 1. From the **App Catalog**, search for and select the app**.**
-2. Select the version of the service you're using and click **Add to Library**.
+2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/library/install-apps)
 
-
-25
-Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/library/install-apps)
-
-1. To install the app, complete the following fields.
+3. To install the app, complete the following fields.
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
     2. **Data Source.** Select either of these options for the data source. 
         * Choose **Source Category**, and select a source category from the list. 
         * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). 
     3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-2. Click **Add to Library**.
+4. Click **Add to Library**.
 
 Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization.
 
@@ -252,7 +201,7 @@ Panels will start to fill automatically. It's important to note that each panel 
 
 ## Viewing Dashboards
 
-### Amazon Inspector - Overview
+### Overview
 
 **Events by Template.** Displays events by template in a stacked bar chart for the last seven days.
 
@@ -271,7 +220,7 @@ Panels will start to fill automatically. It's important to note that each panel 
 **Trend of Findings by Template. **Shows the trend of findings by template in a trend line chart on a timeline for the last seven days.
 
 
-### Amazon Inspector - Findings
+### Findings
 
 **Finding Severity Over Time. **Shows the finding severity over time in a stacked column chart on a timeline for the last seven days.
 

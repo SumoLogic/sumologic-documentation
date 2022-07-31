@@ -6,7 +6,7 @@ description: Before installing the Sumo Logic app, Apache Tomcat must be set up 
 ---
 
 
-This page provides instructions for configuring log and metric collection for the Sumo Logic App for Apache Tomcat. Configuring log and metric collection for the Apache Tomcat App includes the following tasks:
+This section provides instructions for configuring log and metric collection for the Sumo Logic App for Apache Tomcat. Configuring log and metric collection for the Apache Tomcat App includes the following tasks:
 
 * Step 1: Configure Fields in Sumo Logic.
 * Step 2: Configure Collection for Apache Tomcat

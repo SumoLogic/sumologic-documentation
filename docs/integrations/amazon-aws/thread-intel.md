@@ -2,7 +2,7 @@
 id: threat-intel
 title: Sumo Logic App for AWS Threat Intel
 sidebar_label: Threat Intel for AWS
-description: The Threat Intel for AWS App correlates CrowdStrike threat intelligence data with your AWS log data, allowing for real-time security analytics to help detect threats in your environment and protect against cyber-attacks. 
+description: The Threat Intel for AWS App correlates CrowdStrike threat intelligence data with your AWS log data, allowing for real-time security analytics to help detect threats in your environment and protect against cyber-attacks.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -13,7 +13,6 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 The Threat Intel for AWS App correlates CrowdStrike threat intelligence data with your AWS log data, allowing for real-time security analytics to help detect threats in your environment and protect against cyber-attacks. The Threat Intel for AWS App scans your AWS CloudTrail, AWS ELB and AWS VPC Flow logs for threats based on IP address.
 
 The Sumo Logic Threat Intel lookup database is only available with Sumo Logic Enterprise and Professions accounts, or during a 30-day trial period. The Threat Intel lookup database is not available for Sumo Logic Free accounts.
-
 
 
 ## Collect Logs for the Threat Intel for AWS App
@@ -32,6 +31,7 @@ If you are not already collecting your AWS logs, follow the instructions below t
 VPC Flow Logs can be published to Amazon CloudWatch Logs and Amazon S3. Each method has advantages. Using an AWS S3 source is more reliable, while using a CloudFormation template allows you to customize your logs by adding more information and filtering unwanted data. You can use either of the following methods to collect Amazon VPC Flow Logs:
 * [Using an AWS S3 source](/docs/integrations/amazon-aws/vpc-flow-logs#collecting-amazon-vpc-flow-logs-using-an-aws-s3-source)
 * [Using a CloudFormation template](/docs/integrations/amazon-aws/vpc-flow-logs#collecting-amazon-vpc-flow-logs-from-cloudwatch-using-cloudformation)
+
 
 ## Installing the Threat Intel for AWS App
 

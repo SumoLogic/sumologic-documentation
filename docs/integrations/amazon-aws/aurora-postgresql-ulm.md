@@ -9,7 +9,6 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/amazon-aws/aurora.png')} alt="DB icon" width="50"/>
 
-
 The Sumo Logic App for Aurora PostgreSQL uses unified logs and metrics (ULM) to monitor your Aurora PostgreSQL database. The app allows you to monitor the number of connections made, CPU utilization, free memory, network utilization, volume read / write IOPS, disk queue depth, replica lags, latency, throughput and other resource utilization details. With Cloudtrail Logs, the app allows you to identify user, client host and client locations being used to configure Aurora PostgreSQL infrastructure.
 
 The Sumo Logic App for Aurora PostgreSQL ULM includes predefined searches and dashboards that allow you to monitor logs and metrics for the database. The logs enable you to monitor database activity, user activity, incoming connections, query execution time, and errors. The metrics allow you to monitor database resource utilization and throughput performance.
@@ -20,7 +19,6 @@ This guide provides an overview of the Aurora PostgreSQL ULM App pre-defined que
 
 ## Log and Metric types
 The Sumo Logic App for Aurora PostgreSQL ULM uses the following logs and metrics:
-
 * [AWS Cloud Trail](https://aws.amazon.com/cloudtrail/features/)
 * [Aurora CloudWatch Metric](https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Monitoring.html)
 
@@ -208,12 +206,9 @@ To collect Aurora CloudWatch metrics, do the following:
    * **Access Key ID and Secret Access Key** - Enter your Amazon Access Key ID and Secret Access Key.
    * **Scan Interval** - Accept the default of 5 minutes, or enter a time interval at which Sumo Logic will scan CloudWatch Sources for new data.
 
-
-
 ## Installing the Aurora PostgreSQL ULM App
 
 Now that you have set up log and metric collection for Amazon Aurora PostgreSQL, you can install the Sumo Logic App for Aurora PostgreSQL ULM, and use its pre-configured searches and [dashboards](#Dashboards).
-
 
 To install the app, do the following:
 
