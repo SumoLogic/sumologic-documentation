@@ -15,7 +15,7 @@ This section provides instructions for configuring log collection for the Window
 
 The Windows - Cloud Security Monitoring and Analytics App uses Windows Security Event and System Event logs. It does not work with third-party logs.
 
-## Collecting Logs
+## Collecting Logs for Windows Cloud Security Monitoring and Analytics
 
 ### Configure a Collector and a Source
 
@@ -76,7 +76,7 @@ For more information on local or remote Windows Event Log Source configuration, 
 
 
 
-### Query Sample
+### Sample Query
 
 The sample query is from the **Recent Policy Changes** panel from **Windows - Overview** dashboard.
 

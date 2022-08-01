@@ -1,15 +1,15 @@
 ---
 id: sdo-manual-configuration
+title: SDO Manual Configuration
+description: Learn how to set up the Software Development Optimization (SDO) Solution. You will manually configure collection and install apps for tool integration, create field extraction rules (FERs) for each supported tool, and install the SDO app.
 ---
-
-# SDO Manual Configuration
 
 These instructions help you prepare and set up the Software Development Optimization (SDO) Solution. You will manually configure collection and install apps for tool integration, create field extraction rules (FERs) for each supported tool, and install the SDO app.
 
 ## Before you begin
 Before setting up the SDO solution, you need to complete the following tasks:
 
-* Create or collect API Keys and credentials for Jira, Github, GitLab, Jenkins, Bitbucket, CircleCI, and Opsgenie with Webhook creation capabilities. 
+* Create or collect API Keys and credentials for Jira, Github, GitLab, Jenkins, Bitbucket, CircleCI, and Opsgenie with Webhook creation capabilities.
 * Get access to Jenkins with Manage Plugins permissions.
 * Make sure you have access to the Sumo logic console. The user account associated with a Sumo Logic role needs the following permissions:
 
@@ -61,7 +61,7 @@ Locate and install the app you need from the **App Catalog**. If you want to see
     Version selection is applicable only to a few apps currently. For more information, see the Install the Apps from the Library.
     :::
 
-1. To install the app, complete the following fields. 
+1. To install the app, complete the following fields.
 
     * **App Name.** You can retain the existing name, or enter a name of your choice for the app.
     * **Data Source.** Select either of these options for the data source.
@@ -73,9 +73,9 @@ Locate and install the app you need from the **App Catalog**. If you want to see
 
 1. Click **Add to Library**.
 
-Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization. 
+Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization.
 
-Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps. 
+Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
 
 ## Complete Post-Setup Configurations
 
@@ -91,7 +91,7 @@ Complete the configuration for the build and deploy tool you use.
 
 1. Access the Sumo Logic Platform and navigate to **Manage Data** \> **Collection** page.
 1. Search for *Software Development Optimization* Collector.
-1. Under this Collector, click on **Show URL** for the source **Bitbucket Cloud.** Make a note of this **URL** and use this URL to configure the Bitbucket CI/CD Pipeline to collect deploy events: 
+1. Under this Collector, click on **Show URL** for the source **Bitbucket Cloud.** Make a note of this **URL** and use this URL to configure the Bitbucket CI/CD Pipeline to collect deploy events:
 
    * **Deploy**: Follow the steps outlined in [this document] (../../../07Sumo-Logic-Apps/app-development/Bitbucket/Collect_Logs_for_Bitbucket_App.md) to configure the Bitbucket CI/CD Pipeline to collect deploy events.
 
@@ -100,7 +100,7 @@ Complete the configuration for the build and deploy tool you use.
 1. Install the latest Jenkins Plugin as described [here] (../../../07Sumo-Logic-Apps/app-development/Jenkins/Collect_Logs_and_Metrics_for_Jenkins.md).
 1. Access the Sumo Logic Platform and navigate to **Manage Data** \> **Collection** page.
 1. Search for *Software Development Optimization* Collector.
-1. Under this Collector, click on **Show URL** for the source **Jenkins.** Make a note of this **URL** and **Source Category,** you will use these to configure the Jenkins Plugin : 
+1. Under this Collector, click on **Show URL** for the source **Jenkins.** Make a note of this **URL** and **Source Category,** you will use these to configure the Jenkins Plugin :
 
     * **Build Pipeline Stages**: Follow [Configure Jenkins Plugin,] (../../../07Sumo-Logic-Apps/app-development/Jenkins/Collect_Logs_and_Metrics_for_Jenkins.md) and optionally [Optional - Advance Configuration] (../../../07Sumo-Logic-Apps/app-development/Jenkins/Collect_Logs_and_Metrics_for_Jenkins.md) to configure the Jenkins Sumo Logic plugin.
     * **Build**: Follow [this](../jenkins-plugin-build-deploy-events.md) doc to modify your Jenkins plugin to explicitly identify, enrich, and send Build Events to Sumo Logic.
@@ -120,7 +120,7 @@ If you are using CircleCI for Build and Deploy, do the following:
    * `_sourcecategory="circleci/workflow-collector"`
 
 1. Copy and save displayed URLs associated with the sources. You will use this information to upload data.
-1. We navigate to the CircleCI project environment. We need to create three [*environment variables*](https://circleci.com/docs/2.0/env-vars/#setting-an-environment-variable-in-a-project) in project settings of the environment: 
+1. We navigate to the CircleCI project environment. We need to create three [*environment variables*](https://circleci.com/docs/2.0/env-vars/#setting-an-environment-variable-in-a-project) in project settings of the environment:
 
    * `CIRCLE_TOKEN = <API personal token created in CircleCi>`
    * `JOB_HTTP_SOURCE = <url of job-collector source created above in step 3>`

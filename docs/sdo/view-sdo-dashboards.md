@@ -1,8 +1,8 @@
 ---
 id: view-sdo-dashboards
+title: View the Software Development Optimization Solution Dashboards
+description: This page describes the apps that comprise the Sumo Logic Software Development Optimization Solution and provides links to the dashboards for each of the apps.
 ---
-
-# View the Software Development Optimization Solution Dashboards
 
 Each of the Software Development Optimization Solution apps provides a set of pre-configured dashboards that display real-time data from across your environment. Being able to access this information behind single-pane-of-glass allows you to more effectively monitor and troubleshoot your DevOps projects from inception through deployment.
 

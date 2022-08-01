@@ -1,6 +1,6 @@
 ---
 id: quickstart-sdo-github
-title: Visualize GitHub Data in Sumo Logic
+title: Visualize GitHub Data in Sumo Logic with SDO
 sidebar_label: GitHub Data Quickstart
 ---
 

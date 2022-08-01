@@ -2,7 +2,7 @@
 id: partner-app
 title: Partner App Template
 sidebar_label: Partner App Template
-description: tk
+description: Using the Sumo Logic Partner App Template.
 ---
 
 :::sumo

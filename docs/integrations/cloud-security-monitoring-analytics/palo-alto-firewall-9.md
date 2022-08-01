@@ -7,24 +7,22 @@ description: Introduction to Palo Alto Firewall - Cloud Security Monitoring and 
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
+<img src={useBaseUrl('img/integrations/security-threat-detection/pan9.png')} alt="thumbnail icon" width="100"/>
+
 The Palo Alto Firewall app helps you to analyze traffic and gain a better understanding of your Palo Alto Networks environments. Dig deep into the data, broken down by threat detection indicators, malware type, and so in order to break out data for higher granularity.
 
+## Prerequisites
 
-## Collecting Logs
+You must have Palo Alto Networks Web administrative user permissions to successfully complete these tasks.
 
-This section provides instructions for configuring log collection for the Sumo Logic App for Palo Alto Firewall 9, as well as sample log messages and a query example from an app dashboard.
+## Collecting Logs for Palo Alto Firewall 9
 
-
-### Collection process overview
-
-Configuring log collection for Palo Alto Firewall 9 includes the following tasks:
+This section provides instructions for configuring log collection for the Sumo Logic App for Palo Alto Firewall 9, as well as sample log messages and a query example from an app dashboard. This includes the following tasks:
 
 1. Create a hosted collector with a Cloud Syslog source
 2. Define the destination for the logs.
 3. Configure syslog forwarding.
 4. Verify logs in Palo Alto Networks.
-
-You must have Palo Alto Networks Web administrative user permissions to successfully complete these tasks.
 
 
 ### Step 1. Create a hosted collector and Cloud Syslog source
@@ -95,7 +93,7 @@ In this step, you view logs using the Palo Alto Network Web interface to confirm
   _sourceCategory = **NW/PAN/V9**
   ```
 
-## Sample logs
+### Sample logs
 
 The app uses [Traffic](https://docs.paloaltonetworks.com/pan-os/9-0/pan-os-admin/monitoring/use-syslog-for-monitoring/syslog-field-descriptions/traffic-log-fields.html) and [Threat](https://docs.paloaltonetworks.com/pan-os/9-0/pan-os-admin/monitoring/use-syslog-for-monitoring/syslog-field-descriptions/threat-log-fields) logs.
 
@@ -109,7 +107,7 @@ Oct 09 10:19:15 SumPunFw07.sumotest.com 1,2019/10/09 10:19:15,001234567890002,TR
 ```
 
 
-## Sample Query
+### Sample Query
 
 This example query is from the **Top 20 Hosts with Outbound Traffic** panel of the **Outbound Traffic and Potential Exfiltration Activity** dashboard.
 
@@ -128,7 +126,7 @@ _sourceCategory = Labs/PaloAltoNetworksv10 TRAFFIC
 
 
 
-## Install the Sumo Logic App
+## Installing the PAN Firewall 9 Security App
 
 Now that you have set up collection for the Palo Alto Networks Firewall 9 app, you can install the app and use the preconfigured searches and dashboards that provide insight into your data.
 
@@ -157,7 +155,6 @@ Panels will start to fill automatically. It's important to note that each panel 
 
 
 ## Viewing Palo Alto 9 Security Dashboards
-
 
 ### Security Analytics - Communication via Critical Ports
 

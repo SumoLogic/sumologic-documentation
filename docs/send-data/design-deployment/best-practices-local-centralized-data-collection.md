@@ -2,7 +2,7 @@
 id: best-practices-local-centralized-data-collection
 title: Best Practices for Local and Centralized Data Collection
 sidebar_label: Best Practices for Local and Centralized Data Collection
-description: tk
+description: When you are setting up your environment with Installed Collectors you must decide how to collect the data you want to send to Sumo Logic. 
 ---
 
 Sumo Logic is a highly flexible and scalable solution, and its Installed Collectors can work for any size organization. However, with so much flexibility at your fingertips, what is the best way to design your environment?

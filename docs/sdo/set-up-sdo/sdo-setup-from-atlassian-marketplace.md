@@ -1,8 +1,8 @@
 ---
 id: sdo-setup-from-atlassian-marketplace
+title: SDO Setup from Atlassian Marketplace
+description: Learn how to set up the Software Development Optimization (SDO) Solution from the Atlassian Marketplace.
 ---
-
-# SDO Setup from Atlassian Marketplace
 
 These instructions help you prepare and set up the Software Development Optimization (SDO) Solution through the Atlassian Marketplace. 
 
@@ -10,7 +10,7 @@ These instructions help you prepare and set up the Software Development Optimiza
 
 Before setting up the SDO solution, you need to complete the following tasks:
 
-* Create or collect API Keys and credentials for Jira, Github, GitLab, Jenkins, Bitbucket, CircleCI, and Opsgenie with Webhook creation capabilities. 
+* Create or collect API Keys and credentials for Jira, Github, GitLab, Jenkins, Bitbucket, CircleCI, and Opsgenie with Webhook creation capabilities.
 * Get access to Jenkins with Manage Plugins permissions.
 * Make sure you have access to the Sumo logic console. The user account associated with a Sumo Logic role needs the following permissions:
 
@@ -97,16 +97,16 @@ To configure using the wizard:
 
 ![sdo-wizard2.png](/img/sdo/sdo-wizard2.png)
 
-1. For Jira Cloud, configure the following settings: 
+1. For Jira Cloud, configure the following settings:
 
    * Jira Cloud URL - Jira Cloud URL, for example [*https://sdodevstaging.atlassian.net*](https://sdodevstaging.atlassian.net). Do not use a trailing slash (/) at the end of the url.
    * Jira Cloud Username - Your email ID configured in Jira Cloud.
    * Jira Cloud Password or API Key - Your Jira Cloud login password or API key. See [Manage API tokens for your Atlassian account](https://support.atlassian.com/atlassian-account/docs/manage-api-tokens-for-your-atlassian-account/) to generate API keys.
    * Jira Cloud Issue Type - Issue Type. See [What are issue types](https://support.atlassian.com/jira-cloud-administration/docs/what-are-issue-types/) for the “Jira Software (software projects) issue types” section to see available types.
    * Jira Cloud Priority - Priority ID of the issue. To access the **Edit Priority** page, see the “Adding, editing, and deleting a priority” section at [Configure statuses, resolutions, and priorities](https://support.atlassian.com/jira-cloud-administration/docs/configure-statuses-resolutions-and-priorities/) and get the ID from the URL.       
-  
+
     ![sdo-jira-priority.png](/img/sdo/sdo-jira-priority.png)
-   
+
    * Jira Cloud Project Key - Your project key. Click **View all Projects** under the Projects tab to get the value from the key column corresponding to your project name.
 
     ![sdo-jira-projectkey.png](/img/sdo/sdo-jira-projectkey.png)
@@ -166,7 +166,7 @@ Do the following:
 Do the following:
 
 * Bitbucket Username - Enter the Bitbucket cloud username.
-* Bitbucket Password -  Enter the Bitbucket cloud password or App Password. To generate App Passwords, see [App passwords](https://confluence.atlassian.com/bitbucket/app-passwords-828781300.html). 
+* Bitbucket Password -  Enter the Bitbucket cloud password or App Password. To generate App Passwords, see [App passwords](https://confluence.atlassian.com/bitbucket/app-passwords-828781300.html).
 * The owner of the repositories -  Enter the owner of the repositories, which can be you or any team with write access.
 * Specify the repositories -  Specify the repositories to create webhooks for.
 * The name / description to show in the UI -  Enter the webhook title.

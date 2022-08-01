@@ -19,23 +19,19 @@ Each method has advantages. Using an AWS S3 source is more reliable, while using
 
 ## Collect Amazon VPC Flow Logs from CloudWatch using CloudFormation
 
-This section has instructions for collecting VPC Flow Logs using a CloudFormation template.  Alternatively, you can [Collect Amazon VPC Flow Logs using AWS S3 Source](#Collect_Amazon_VPC_Flow_Logs_using_AWS_S3_Source).
+This section has instructions for collecting VPC Flow Logs using a CloudFormation template. Alternatively, you can [Collect Amazon VPC Flow Logs using AWS S3 Source](#Collect_Amazon_VPC_Flow_Logs_using_AWS_S3_Source).
 
 This section has instructions for collecting logs for the Amazon VPC Flow Logs app.
 
 
-### Collection process
-
 The diagram below illustrates the collection process for Amazon VPC Flow Logs. VPC is enabled to send logs to Amazon CloudWatch. A Lambda function subscribes to a CloudWatch Log Group to obtain the flow logs, and then sends the data on to a Sumo Logic HTTP Source on a hosted collector. The AWS resources are created by a Sumo-provided CloudFormation template.
 
 
-#### Step 1: Enable Amazon VPC Flow Logs
+### Step 1: Enable Amazon VPC Flow Logs
 
 You can enable Amazon Virtual Private Cloud (VPC) Flow Logs from the Amazon Web Services (AWS) Management Console, the AWS Command Line Interface (CLI), or by making calls to the Elastic Compute Cloud (EC2) API.
 
-**To enable Amazon Virtual Private Cloud (VPC) Flow Logs from the AWS console**
-
-
+**To enable Amazon Virtual Private Cloud (VPC) Flow Logs from the AWS console:
 1. Go to **VPC management**, and go to the VPC list.
 2. Select the VPC.
 3. Click **Actions** > **Create Flow Log**.
@@ -50,7 +46,7 @@ You can enable Amazon Virtual Private Cloud (VPC) Flow Logs from the Amazon Web 
 7. Click **Create Flow Log**. It can take up to an hour for the log group to show up in CloudWatch Logs.
 
 
-#### Step 2: Configure hosted collector and HTTP source
+### Step 2: Configure hosted collector and HTTP source
 
 1. [Create a Hosted Collector ](/docs/send-data/Hosted-Collectors#Create-a-Hosted-Collector)in Sumo Logic.
 2. Configure an [HTTP Source](/docs/send-data/sources/sources-hosted-collectors/http-logs-metrics-source) in Sumo Logic. When configuring the source:
@@ -60,7 +56,7 @@ You can enable Amazon Virtual Private Cloud (VPC) Flow Logs from the Amazon Web 
 6. Click **Save**.
 
 
-#### Step 3: Create AWS functions and resources  
+### Step 3: Create AWS functions and resources  
 
 Follow the steps on [Amazon CloudWatch Logs](/docs/send-data/Collect-from-Other-Data-Sources/Amazon-CloudWatch-Logs), starting with the [Download the CloudFormation template](/docs/send-data/Collect-from-Other-Data-Sources/Amazon-CloudWatch-Logs#Download_the_CloudFormation_template) step and ending with the [Dealing with alarms](/docs/send-data/Collect-from-Other-Data-Sources/Amazon-CloudWatch-Logs#Dealing-with-alarms) step. As you perform the procedure note the additional instructions below, regarding log format and optional environment variables.
 
@@ -104,7 +100,7 @@ Paste the JSON below, after adding the ARN of the Lambda functions.
 ```
 
 
-#### Step 4: Subscribe the Lambda function to the VPC Flow Log group
+### Step 4: Subscribe the Lambda function to the VPC Flow Log group
 
 1. Select the VPC Flow Log group in the CloudWatch Logs management panel. \
 This is the Log Group created in the first part (VPCFlowLogs was used).
@@ -116,7 +112,7 @@ This is the Log Group created in the first part (VPCFlowLogs was used).
 7. Click **Start Streaming**. Wait a few minutes, and check to make sure your logs are flowing into Sumo.
 
 
-## Collect Amazon VPC Flow Logs using an AWS S3 Source
+## Collect Amazon VPC Flow Logs Using an AWS S3 Source
 
 This section has instructions for collecting Amazon VPC Flow Logs using an AWS S3 source. If you prefer to collect VPC logs using a CloudFormation template, see [Collect Amazon VPC Flow Logs using a CloudFormation Template](#Collect-Amazon-VPC-Flow-Logs-from-CloudWatch-Using-CloudFormation).
 
@@ -129,7 +125,7 @@ This section has instructions for collecting Amazon VPC Flow Logs using an AWS S
 `bucket_ARN/optional_folder/AWSLogs/aws_account_id/vpcflowlogs/region/year/month/day/log_file_name.log.gz`
 
 
-### Step 2: Configure AWS S3 source  
+### Step 2: Configure AWS S3 Source  
 
 1. [Grant Access to an AWS S3 Bucket](/docs/send-data/sources/sources-hosted-collectors/amazon-web-services/grant-access-aws-product.md).
 2. [Enable logging using the AWS Management Console](http://docs.aws.amazon.com/AmazonS3/latest/dev/enable-logging-console.html).
@@ -140,7 +136,7 @@ This section has instructions for collecting Amazon VPC Flow Logs using an AWS S
     `version account-id interface-id srcaddr dstaddr srcport dstport protocol packets bytes start end action log-status`
 
 
-## Install the Sumo Logic App
+## Installing the AWS VPC Security App
 
 Now that you have set up collection, install the Sumo Logic App for PCI Compliance For Amazon VPC Flow App to use the preconfigured searches and [Dashboards](#Dashboards) that provide insight into your data.
 
@@ -167,7 +163,7 @@ Once an app is installed, it will appear in your **Personal** folder, or other f
 Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
 
 
-## Viewing Dashboards
+## Viewing AWS VPC Security Dashboards
 
 Analytics and Monitoring dashboards to provide operational security for AWS VPC flow data sources.
 
