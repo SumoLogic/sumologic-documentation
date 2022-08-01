@@ -28,8 +28,12 @@ These quick start guides help you connect, integrate, configure, and start using
     </div>
     <div className="box box4 card">
         <div className="container">
-          <h3><a href="https://learn.sumologic.com/">Sumo Logic Training</a></h3>
-          <p>Check out some of the quick tutorials in the Sumo Logic Training Portal.</p>
+          <h3><a href="/docs/apm/traces#quickstart">Traces</a></h3>
+          <p>This guide demonstrates how to measure application microservice performance.</p>
           </div>
         </div>
   </div>
+
+:::sumo Sumo Logic Training
+See more quickstart tutorials in the [Sumo Logic Training Portal](https://learn.sumologic.com/).
+:::

@@ -7,7 +7,7 @@ description: The Palo Alto Networks 6 App provides four dashboards, giving you s
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/pan6.png')} alt="thumbnail icon" width="75"/>
+<img src={useBaseUrl('img/integrations/security-threat-detection/pan6.png')} alt="thumbnail icon" width="100"/>
 
 The Palo Alto Networks 6 App provides four dashboards, giving you several ways to discover threats, consumption, traffic patterns, and other security-driven issues, providing additional insight for investigations.
 
