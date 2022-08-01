@@ -104,18 +104,18 @@ In this step, you install Python 3.7.10 for Linux.
 ### Install Oracle Instant Client on Linux 64bit OS
 
 1.  Install Oracle Instant Client packages
-```
+```bash
 $ dnf install oracle-instantclient-release-el8 -y
 $ dnf install oracle-instantclient-basic
 $ oracle-instantclient-devel oracle-instantclient-jdbc
 $ oracle-instantclient-odbc oracle-instantclient-sqlplus oracle-instantclient-tools -y
 ```
 2. Install the `libaio` and `libaio-dev` packages if they are not already installed. Typically, in standard Oracle Linux Server, the `libaio` and `libaio-dev` are not pre-installed. These packages are required to start the Oracle Instant Client.
-```
+```bash
 $ dnf install -y libaio libaio-devel
 ```
 3. Test the client
-```
+```bash
 $ sqlplus username/password@//databasehost:1521/sidvalue
 SQL*Plus: Release 19.0.0.0.0 - Production on Thu Nov 25 12:42:35 2021
 Version 19.3.0.0.0
@@ -125,7 +125,7 @@ Oracle Database 19c Enterprise Edition Release 19.0.0.0.0 - Production
 Version 19.3.0.0.0
 ```
 1. Run a sample SQL query to test the connection.
-```
+```sql
 SQL> select BANNER from v$version;                
 BANNER
 --------------------------------------------------------------------------------
@@ -137,17 +137,17 @@ Oracle Database 19c Enterprise Edition Release 19.0.0.0.0 - Production
 In this step, you set up cx_Oracle, an open-source Python interface to Oracle.
 
 1. Install cx_Oracle.
-```
+```bash
 pip3 install cx_Oracle==7.3
 ```
 2. Check the cx_oracle version.
-```
+```bash
 pip3 list | grep cx-Oracle
 cx-Oracle (7.3.0)
 ```
 
 
-### Set-up and Configure Performance Metrics Script
+### Set up and Configure Performance Metrics Script
 
 In this step, you set up the performance metrics script.
 
@@ -253,13 +253,13 @@ You should see this response: `Python 3.7.10`.
    * instantclient-basic-windows.x64-21.3.0.0.0.zip
    * instantclient-sqlplus-windows.x64-21.3.0.0.0.zip
 2. Unzip the packages into a single directory, for example:
-```
+```bash
 C:\oracle\instantclient_21_3\
 ```
 3. Add this directory to the PATH environment variable. If you have multiple versions of Oracle libraries installed, make sure the new directory occurs first in the path.
 4. Download and install the correct Visual Studio Redistributable from Microsoft. Instant Client 21.3 requires the [Visual Studio 2017 redistributable](https://support.microsoft.com/en-us/help/2977003/the-latest-supported-visual-c-downloads).
 5. Test the client:
-```
+```bash
 sqlplus username/password@//databasehost:1521/sidvalue
 C:\Users\Administrator>sqlplus user/password//IP_ORACLE_SERVER:1521/remote_service_name
 
@@ -271,7 +271,7 @@ Oracle Database 19c Enterprise Edition Release 19.0.0.0.0 - Production
 Version 19.3.0.0.0
 ```
 6. Run some sample SQL queries to test the connection,
-```
+```sql
 SQL> select BANNER from v$version;
 BANNER
 -----------------------------------------------------------------
@@ -282,11 +282,11 @@ Oracle Database 19c Enterprise Edition Release 19.0.0.0.0 - Production
 ### Install cx_Oracle on Windows
 
 1. Use Python’s pip package to install cx_Oracle.
-```
+```bash
 python3 -m pip install cx_Oracle==7.3
 ```
 2. Check the cx_Oracle version.
-```
+```bash
 C:\Users\Administrator>python3
 Python 3.7.10 (v2.7.18:8d21aa21f2, Apr 20 2020, 13:25:05) [MSC v.1500 64 bit (AMD64)] on win32
 Type "help", "copyright", "credits" or "license" for more information.

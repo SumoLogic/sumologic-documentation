@@ -1,7 +1,7 @@
 ---
 id: reliability-management-slo
 title: Reliability Management
-sidebar_label: reliability-management-slo
+sidebar_label: Reliability Management (SLOs/SLIs)
 description: Learn more about SLOs, SLIs, and Reliability Management. Access and create SLOs, configuring queries, setting SLIs, and create SLO Monitors. Learn about SLO dashboards and notifications.
 ---
 

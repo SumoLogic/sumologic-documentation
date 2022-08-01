@@ -2,7 +2,7 @@
 id: install-sdo-app-view-dashboards
 title: Install the Software Development Optimization App and view the Dashboards
 sidebar_label: Install the Software Development Optimization App and view the Dashboards
-description: tk
+description: Learn how to install the SDO Sumo Logic App and use pre-configured searches and dashboards that provide insights into your DevOps pipeline.
 ---
 
 If you have set up the Software Development Optimization (SDO) solution as defined [here](/docs/sdo/set-up-sdo) using Terraform, you can skip the manual installation of SDO App.

@@ -1,8 +1,8 @@
 ---
 id: integrate-tools-with-sdo
+title: Integrate Other Tools with the Software Development Optimization Solution (Optional)
+description: Learn how to integrate other tools with the Software Development Optimization Solution.
 ---
-
-# Integrate Other Tools with the Software Development Optimization Solution (Optional)
 
 If your DevOps pipeline has tools which are not supported at present by the Software Development Optimization (SDO) Solution, you can still integrate it and map log events to the predefined schema model. 
 

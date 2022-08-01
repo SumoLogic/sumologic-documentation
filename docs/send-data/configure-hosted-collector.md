@@ -2,7 +2,7 @@
 id: configure-hosted-collector
 title: Configure a Hosted Collector
 sidebar_label: Configure a Hosted Collector
-description: tk
+description: Hosted Collectors allow you to upload data stored in the cloud to Sumo Logic.
 ---
 
 :::note

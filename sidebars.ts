@@ -1428,6 +1428,7 @@ module.exports = {
       type: 'category',
       label: 'Traces',
       collapsible: true,
+      collapsed: false,
       link: {type: 'doc', id: 'apm/traces/index'},
       items: [
         'apm/traces/quickstart',

@@ -1,20 +1,23 @@
 ---
 id: palo-alto-firewall-10
-title: Sumo Logic App for Palo Alto Firewall 10 Cloud Security Monitoring and Analytics
+title: Palo Alto Firewall 10 Cloud Security Monitoring and Analytics
 sidebar_label: Palo Alto Firewall 10
-description: Introduction to Palo Alto Firewall - Cloud Security Monitoring and Analytics.
+description: Introduction to the Cloud Security Monitoring and Analytics app for Palo Alto Firewall 10.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
+<img src={useBaseUrl('img/integrations/security-threat-detection/pan9.png')} alt="thumbnail icon" width="100"/>
+
 The Palo Alto Firewall app helps you analyze traffic and gain a better understanding of your Palo Alto Networks environments. You can dig deep into the data, broken down by threat detection indicators, malware type, and so on.
 
-## Collect Logs
+## Prerequisites
+
+You must have Palo Alto Networks Web administrative user permissions to successfully complete these tasks.
+
+## Collecting Logs for Palo Alto Firewall 10
 
 This section provides instructions for configuring log collection for the Sumo Logic App for Palo Alto Firewall 10, as well as sample log messages and a query example from an app dashboard.
-
-
-### Collection process overview
 
 Configuring log collection for Palo Alto Firewall 10 includes the following tasks:
 
@@ -24,10 +27,7 @@ Configuring log collection for Palo Alto Firewall 10 includes the following task
 4. Verify logs in Palo Alto Networks.
 
 
-You must have Palo Alto Networks Web administrative user permissions to successfully complete these tasks.
-
-
-#### Step 1. Create a hosted collector and Cloud Syslog source
+### Step 1. Create a hosted collector and Cloud Syslog source
 In this step you configure a hosted collector with a Cloud Syslog source that will act as Syslog server to receive logs and events from Palo Alto Networks devices.
 
 **To configure a hosted collector with a Cloud Syslog source, do the following:**
@@ -40,13 +40,11 @@ In this step you configure a hosted collector with a Cloud Syslog source that wi
 4. Copy the Token, host URL and TCP TLS Port to a safe place. You will need this information in the tasks that follow.
 
 
-#### Step 2. Define the destination for the logs
+### Step 2. Define the destination for the logs
 
 In this step you create a server profile where you can define the log destination. This will be the host name, port and protocol (TLS) of the Sumo Logic Cloud Syslog source.
 
 **To create a server profile specifying  the log destination, do the following:**
-
-
 
 1.  Login to the Palo Alto Networks Web interface as an administrative user.
 2. Select **Device tab > Server Profiles > Syslog**.
@@ -79,14 +77,14 @@ Token from [Step 1](#Step_1._Create_a_hosted_collector_and_Cloud_Syslog_source)
 7. Commit the changes.
 
 
-#### Step 3. Configure syslog forwarding
+### Step 3. Configure syslog forwarding
 
 To configure syslog forwarding for traffic and threat logs, follow the steps to [Configure Log Forwarding](https://docs.paloaltonetworks.com/pan-os/8-1/pan-os-admin/monitoring/configure-log-forwarding) as described in the Palo Networks documentation.
 
 As of March 24, 2022, some Palo Alto Network systems have experienced troubles with validating the Sumo Logic certificate due to their OCSP checking logic. Please contact Palo Alto’s support for  a workaround, and if needed, contact Sumo Logic’s support for the related Palo Alto Case number.
 
 
-#### Step 4. Verify logs in Palo Alto Networks
+### Step 4. Verify logs in Palo Alto Networks
 
 In this step, you view logs using the Palo Alto Network Web interface to confirm the logs are generated on the firewall.
 
@@ -98,24 +96,21 @@ In this step, you view logs using the Palo Alto Network Web interface to confirm
 `_sourceCategory = NW/PAN/V10`
 
 
-## Sample logs
+### Sample logs
 
 The Palo Alto Networks 10 app uses [Traffic](https://docs.paloaltonetworks.com/pan-os/9-0/pan-os-admin/monitoring/use-syslog-for-monitoring/syslog-field-descriptions/traffic-log-fields.html) and [Threat](https://docs.paloaltonetworks.com/pan-os/9-0/pan-os-admin/monitoring/use-syslog-for-monitoring/syslog-field-descriptions/threat-log-fields.html) logs.
 
 
-#### Traffic log
-
-```
+```json title="Traffic log"
 Oct 09 10:19:15 SumPunFw07.sumotest.com 1,2019/10/09 10:19:15,001234567890002,TRAFFIC,drop,2304,2019/10/09 10:19:15,209.118.103.150,160.177.222.249,0.0.0.0,0.0.0.0,InternalServer,,,not-applicable,vsys1,inside,z1-FW-Transit,ethernet1/2,,All traffic,2019/10/09 10:19:15,0,1,63712,443,0,0,0x0,udp,deny,60,60,0,1,2019/10/09 10:19:15,0,any,0,0123456789,0x0,Netherlands,10.0.0.0-10.255.255.255,0,1,0,policy-deny,0,0,0,0,,SumPunFw07,from-policy,,,0,,0,,N/A,0,0,0,0,1202585d-b4d5-5b4c-aaa2-d80d77ba456e,0
 ```
 
-#### Threat log
 
-```
+```json title="Threat log"
  786 <10>1 2022-03-29T22:32:26+00:00 PA-VM.demo.bkacad.cf - - - - ,2022/03/29*22:32:26,164859314646745,THREAT,vulnerability,,2022/03/29*22:32:26,156.194.158.165,156.194.158.165,156.194.158.165,156.194.158.165,test-threat,,,unknown-udp,vsys1,Outside,Outside,ethernet1/1,ethernet1/1,Forward-Sumo,,8660,1,47495,9034,0,0,0x2000,udp,drop,,Realtek Jungle SDK Remote Code Execution Vulnerability(91535),any,critical,client-to-server,1648593146467628956,0x0,Korea Republic Of,156.194.158.165-156.194.158.165,,,0,,,0,,,,,,,,0,0,0,0,0,,PA-VM,,,,,N/A_id/0,/,0,,N/A,code-execution,AppThreat-8468-6979,,0,1648593146,,,141fd502-fc32-4867-b9a5-5c421583a44b,0,,,,,,,,,,,,,,, ,,,,,,,,,,,,,,0,2022-03-29T22:32:26.467+00:00,,,,unknown,unknown,unknown,1,,,no,no /
 ```
 
-## Sample Query
+### Sample Query
 
 This example query is from the **Top 20 Hosts with Outbound Traffic** panel of the **Outbound Traffic and Potential Exfiltration Activity** dashboard.
 
@@ -132,7 +127,7 @@ _sourceCategory = Labs/PaloAltoNetworksv10 TRAFFIC
 ```
 
 
-## Install the Sumo Logic App
+## Installing the PAN Firewall 10 Security App
 
 Now that you have set up collection for the Palo Alto Firewall 10 app, you can install the app and use the  preconfigured searches and dashboards that provide insight into your data.
 
@@ -162,9 +157,9 @@ Once an app is installed, it will appear in your **Personal** folder, or other f
 Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
 
 
-## Dashboards
+## Viewing PAN Firewall 10 Security Dashboards
 
-#### Palo Alto 10 - Security Analytics - Communication via Critical Ports
+### Security Analytics - Communication via Critical Ports
 
 **Dashboard description:** Provides analytics including trending for outbound communications via well known ports. Also provides additional analysis of application communications attempts across the firewall.
 
@@ -174,7 +169,7 @@ Additionally at the top of the dashboard are two table containing analytics on k
 
 <img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/Palo-Alto-10-Security-Analytics-Communication-via-Critical-Ports.png')} alt="Palo Alto Firewall 10 Security Dashboards" />
 
-#### Palo Alto 10 - Security Analytics - Outbound Traffic and Potential Exfiltration Activity
+### Security Analytics - Outbound Traffic and Potential Exfiltration Activity
 
 **Dashboard description:** View outbound traffic analysis including DNS activity for potential indicators of exfiltration activity.
 
@@ -183,7 +178,7 @@ Additionally at the top of the dashboard are two table containing analytics on k
 <img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/Palo-Alto-10-Security-Analytics-Outbound-Traffic-and-Potential-Exfiltration-Activity.png')} alt="Palo Alto Firewall 10 Security Dashboards" />
 
 
-#### Palo Alto 10 - Security Analytics - Potentially Malicious Activity
+### Security Analytics - Potentially Malicious Activity
 
 **Dashboard description:** See information about traffic to and from IP addresses called out as potentially malicious by threat intelligence, countries that are on the OFAC (embargoed) list, and potential port scans.
 
@@ -192,7 +187,7 @@ Additionally at the top of the dashboard are two table containing analytics on k
 <img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/Palo-Alto-10-Security-Analytics-Potentially-Malicious-Activity.png')} alt="Palo Alto Firewall 10 Security Dashboards" />
 
 
-#### Palo Alto 10 - Security Monitoring - THREAT Log by Category
+### Security Monitoring - THREAT Log by Category
 
 **Dashboard description:** See analytics about the THREAT type logs provided by the firewall. These are the indications of security events detected by the firewall’s defensive measures such as anti-malware, network intrusion detection, and the like.   
 
@@ -200,7 +195,7 @@ Additionally at the top of the dashboard are two table containing analytics on k
 
 <img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/Palo-Alto-10-Security-Monitoring-THREAT-Log-by-Category.png')} alt="Palo Alto Firewall 10 Security Dashboards" />
 
-#### Palo Alto 10 - Security Monitoring - THREAT Logs by Severity
+### Security Monitoring - THREAT Logs by Severity
 
 **Dashboard description:** See analytics about the THREAT type logs provided by the firewall. These are the indications of security events detected by the firewall’s defensive measures such as anti-malware, network intrusion detection, and the like.   
 
@@ -209,7 +204,7 @@ Additionally at the top of the dashboard are two table containing analytics on k
 <img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/Palo-Alto-10-Security-Monitoring-THREAT-Log-by-Severity.png')} alt="Palo Alto Firewall 10 Security Dashboards" />
 
 
-#### Palo Alto 10 - Security Monitoring - TRAFFIC Log Overview
+### Security Monitoring - TRAFFIC Log Overview
 
 **Dashboard description:** See monitoring of allowed and denied traffic over time by volume and host.
 

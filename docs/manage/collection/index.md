@@ -1,18 +1,25 @@
 ---
 slug: /manage/collection
+title: Sumo Logic Collection Page
+description: Learn how to manage Collectors, Sources, and processing rules.
 ---
 
-# Collection
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
-:::sumo Required Capabilities
-You need the Manage or View Collectors [role capability](../users-and-roles/roles/role-capabilities.md) to manage or view Collection.
-:::
+<img src={useBaseUrl('img/icons/operations/collect.png')} alt="icon" width="75"/>
 
 Use the **Collection** page to manage all of your Collectors and Sources. To access the Collection page, go to **Manage Data \> Collection \> Collection**.
 
 ![Collection page June 2021.png](/img/collector/collection-page.png)
 
-## Page Capabilities
+## Before You Begin
+
+:::sumo Required Capabilities
+You'll need the Manage or View Collectors [role capability](../users-and-roles/roles/role-capabilities.md) to manage or view Collection.
+:::
+
+
+## Collection Page Features
 
 * [Search for a Collector or Source](search-collector-or-source.md)
 * View the [health of Collectors and Sources](../health-events.md)
@@ -27,14 +34,14 @@ Use the **Collection** page to manage all of your Collectors and Sources. To ac
 
 * [Add a Source](/docs/send-data/sources)
 * [Edit a Collector](edit-collector.md)
-* [Delete a Collector](delete-collector-source.md) 
+* [Delete a Collector](delete-collector-source.md)
 * [Download a JSON configuration file](../../send-data/sources/use-json-configure-sources/local-configuration-file-management/view-download-source-json-configuration.md) for scripting or backup
-* [Restart a Collector](restart-collectors.md) 
+* [Restart a Collector](restart-collectors.md)
 
 ## Source Actions
 
 * [Edit the Source](edit-source.md)
-* [Delete a Source](delete-collector-source.md) 
+* [Delete a Source](delete-collector-source.md)
 * [Download a JSON configuration file](../../send-data/sources/use-json-configure-sources/local-configuration-file-management/view-download-source-json-configuration.md) for scripting or backup
 * [Pause or resume a Source](pause-resume-source.md) (cloud polling Sources only)
 * [Show or regenerate a Source URL](../../send-data/sources/sources-hosted-collectors/http-logs-metrics-source/generate-new-url-http-source.md) (HTTP Sources only)
@@ -42,10 +49,10 @@ Use the **Collection** page to manage all of your Collectors and Sources. To ac
 
 ## Available Information about Collectors and Sources
 
-* **Name**. Displays the name of the Collector, and any Sources that are configured under it. It also displays the type of Source (HTTP, Local File, Local Windows Event Log, etc.) 
+* **Name**. Displays the name of the Collector, and any Sources that are configured under it. It also displays the type of Source (HTTP, Local File, Local Windows Event Log, etc.)
   * **Open in Search**. Hover over the Name of the Collector or Source and click the Open in Search icon to start a search in the Search page.
   * **Tooltip**. Hover over a Collector or Source name to display an informational tool tip.
-    
+
     The Collector's version is provided in the tooltip.        
 
     ![Collector version in tooltip.png](/img/collector/collector-version-in-tooltip.png)

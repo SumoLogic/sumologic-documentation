@@ -1,15 +1,15 @@
 ---
 id: docker-community-edition
-title: Docker Community Edition
+title: Sumo Logic App for Docker Community Edition
 sidebar_label: Docker Community Edition
 description: The Docker App monitors Docker container logs and metrics (stats) in log format, providing operational insight into your Docker containers.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/containers-orchestration/docker.png')} alt="icon" width="175"/>
+<img src={useBaseUrl('img/integrations/containers-orchestration/docker.png')} alt="icon" width="150"/>
 
-The Sumo Logic App for Docker Community edition provides operational insight into your Docker containers. The App includes Dashboards that allow you to view your container performance statistics for CPU, memory, and the network. It also provides visibility into container events such as start, stop, and other important commands.
+The Sumo Logic App for Docker Community edition (CE) provides operational insight into your Docker containers. The App includes Dashboards that allow you to view your container performance statistics for CPU, memory, and the network. It also provides visibility into container events such as start, stop, and other important commands.
 
 :::info
 This Docker App monitors Docker container logs and metrics (stats) in log format only. If your system handles metrics, choose one of the following Sumo Logic apps: [Docker ULM](/docs/integrations/containers-orchestration/docker-ulm) or [Docker EE](/docs/integrations/containers-orchestration/docker-enterprise-edition).
@@ -31,24 +31,22 @@ Sumo’s Docker logs source and Docker stats source use the Docker Engine API to
 
 By default, you can monitor up to 40 Docker containers on a Docker host. If you want to monitor more than 40 containers on a given host you can configure a larger number in `collector.properties`. The procedures below explain how. We don’t support monitoring more than 100 containers on a Docker host.
 
-## Collect Logs and Metrics from Docker
+## Collecting Logs and Metrics from Docker
 
 Sumo supports multiple methods of collecting data from Docker. This procedure describes how to collect data from Docker using an installed collector and Sumo’s Docker logs source and Docker stats source.
 
+The sections below provide instructions for installing a collector on a Docker host, setting up both Sumo Docker sources (log source and stats source), and installing the Sumo app for Docker. With this configuration you can collect Docker logs, events, and stats, and visualize resource performance and event data in the dashboards provided by the app.
+
 With the method described in this topic you can collect Docker logs, stats, and events and view summaries of the data collected using the Sumo App for Docker.
 
+:::note
 Windows operating systems are not supported.
-
+:::
 
 ### Prerequisites
 
 * The containers you’re going to monitor must use either the `json-file` or the `journald` driver. For more information, see [Configure Logging Drivers](https://docs.docker.com/engine/admin/logging/overview/) in Docker help.
 * The Docker Log Source uses timestamps from logs to track collection. You need to ensure your log format has a [well-defined timestamp](/docs/send-data/sources/reference-information-sources/time-reference) so the Source can detect it properly. If there are issues with timestamp detection and the Docker container is restarted the Source will reingest all log data since there are no timestamps to track.
-
-
-### Process Overview
-
-The sections below provide instructions for installing a collector on a Docker host, setting up both Sumo Docker sources (log source and stats source), and installing the Sumo app for Docker. With this configuration you can collect Docker logs, events, and stats, and visualize resource performance and event data in the dashboards provided by the app.
 
 
 ### Step 1: Create access keys
@@ -168,8 +166,7 @@ At this point, Sumo should be receiving Docker data. For an example of logs coll
 For information about the dashboards provided by the Sumo App for Docker, see [Docker App Dashboards](#Dashboards).
 
 
-### More about defining container filters  
-
+## Defining Container Filters  
 
 In the **Container Filter** field, you can enter a comma-separated list of one or more of the following types of filters:
 
@@ -178,14 +175,14 @@ In the **Container Filter** field, you can enter a comma-separated list of one o
 * An exclusion (denylist) filter, which begins with an exclamation mark, for example, `!master-container` or `!prod-*`
 
 For example, this filter list:
-```
+```sql
 prod-*, !prod-*-mysql, master-*-app-*, sumologic-collector
 ```
 
 will cause the source to collect from all containers whose names start with `prod-`, except those that match `prod-*-mysql`. It will also collect from containers with names that match `master-*-app-*`, and from the `sumologic-collector` container.
 
 If your filter list contains only exclusions, the source will collect all containers except from those that match your exclusion filters. For example:
-```
+```sql
 !container123*, !prod-*
 ```
 
@@ -193,8 +190,6 @@ will cause the source to exclude containers whose names begin with “container1
 
 
 ### Configure sourceCategory and sourceHost using variables
-16
-
 
 In collector version 19.216-22 and later, when you configure the sourceCategory and sourceHost for a Docker Log Source or a Docker Stats Source, you can specify the value using variables available from Docker and its host.
 
@@ -211,33 +206,30 @@ Docker engine events log data doesn't support the tagging with metadata.
 **TABLE**
 
 For example:
-```
+```sql
 {{container.ID}}
 ```
 
-
 You can use multiple variables, for example:
-```
+```sql
 {{container.ID}}-{{label.label_name}}-{{env.var_name}}
 ```
 
-
 You can incorporate text in the metadata expression, for example:
-```
+```sql
 ID-{{container.ID}}-AnyTextYouWant{{label.label_name}}
 ```
-
 
 The example above uses a hyphen `-` character to separate variable components. Separator characters are not required. Curly brackets and spaces are not allowed. Underscores and hyphens are recommended.
 
 If a user-defined variable doesn’t exist, that portion of the metadata field will be blank.  
 
 
-### Sample Docker Messages  
+## Sample Event Log Messages  
 
 This is an example of two Docker event logs:
 
-```json
+```json title="Docker event log"
 {
 	"status":"start",
 	"id":"10adec58fa15202e06afef7b1b0b3b1464962a115ff56918444c3f22867d3f3b",
@@ -245,7 +237,8 @@ This is an example of two Docker event logs:
 	"time":1485975967
 }
 ```
-```json
+
+```json title="Docker event log"
 {
 	"status":"create",
 	"id":"045599bc4d589264658f5f7f4efa3f1e3af9088ba1f7383a160cf344e1055d46",
@@ -253,7 +246,6 @@ This is an example of two Docker event logs:
 	"time":1485966852
 }
 ```
-
 
 This is an example of a Docker stats message:
 
@@ -288,28 +280,20 @@ This is an example of a Docker stats message:
 	},
 	"blkio_stats":{
 		"io_merged_recursive":[
-
 		],
 		"io_queue_recursive":[
-
 		],
 		"io_service_bytes_recursive":[
-
 		],
 		"io_service_time_recursive":[
-
 		],
 		"io_serviced_recursive":[
-
 		],
 		"io_time_recursive":[
-
 		],
 		"io_wait_time_recursive":[
-
 		],
 		"sectors_recursive":[
-
 		]
 	},
 	"memory_stats":{
@@ -353,11 +337,10 @@ This is an example of a Docker stats message:
 }
 ```
 
-### Sample Query
+## Sample Query
 
-**Containers created or started**
 
-```sql
+```sql title="Containers created or started"
 _sourceCategory=docker  ("\"status\":\"create\"" or "\"status\":\"start\"")  id from
 | parse "\"status\":\"*\"" as status, "\"id\":\"*\"" as container_id, "\"from\":\"*\"" as image
 | count_distinct(container_id)
@@ -365,7 +348,7 @@ _sourceCategory=docker  ("\"status\":\"create\"" or "\"status\":\"start\"")  id 
 
 
 
-## Installing the Docker App
+## Installing the Docker CE App
 
 The Sumo App for Docker provides operational insight into your Docker containers. The app includes [Dashboards](#Dashboards) that allow you to view your container performance statistics for CPU, memory, and the network. It also provides visibility into container events such as start, stop, and other important commands.  
 
@@ -391,7 +374,7 @@ Once an app is installed, it will appear in your **Personal** folder, or other f
 Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
 
 
-## Dashboards
+## Viewing Docker CE Dashboards
 
 ### Overview
 
