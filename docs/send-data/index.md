@@ -1,9 +1,12 @@
 ---
 slug: /send-data
 id: index
+title: Send Data
 ---
 
-# Send Data
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src={useBaseUrl('img/icons/send-data.png')} alt="icon" width="50"/>
 
 Learn how to send data to Sumo Logic.
 

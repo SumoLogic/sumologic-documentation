@@ -83,13 +83,13 @@ const features = [
       message: 'Application Performance Monitoring',
       description: 'Title for APM',
     }),
-    imageUrl: 'img/icons/traces.png',
+    imageUrl: 'img/icons/apm.png',
     description: (<Translate
       id="landing.feature.apm.desc"
       description="APM description">
         Monitor user activity, traces data, and service maps to investigate usage and issues.
       </Translate>),
-    link: 'docs/apm/traces',
+    link: 'docs/apm',
   },
   {
     title: translate({

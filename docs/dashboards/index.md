@@ -1,8 +1,11 @@
 ---
 slug: /dashboards
+title: Dashboards
 ---
 
-# Dashboards
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src={useBaseUrl('img/icons/dashboards.png')} alt="icon" width="75"/>
 
 Dashboards are a powerful forensic tool to create searches and view search results based on data available through a search.
 
@@ -17,7 +20,7 @@ A [new dashboard platform](/docs/dashboards-new) is available that allows you to
         className="video-container"
         display="initial"
         position="relative"
-        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
         />
 

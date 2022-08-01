@@ -7,7 +7,7 @@ description: Docs for Sumo apps for PCI Compliance.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/pci-compliance/pci.png')} alt="DB icon" width="75"/>
+<img src={useBaseUrl('img/icons/security/PCI-compliance.png')} alt="DB icon" width="75"/>
 
 
 This guide has documentation for Sumo apps for PCI compliance.
