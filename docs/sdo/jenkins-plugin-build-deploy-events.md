@@ -1,8 +1,8 @@
 ---
 id: jenkins-plugin-build-deploy-events
+title: Jenkins Plugin - Send Build and Deploy Event to Sumo Logic from Jenkins Pipeline
+description: Learn how to send build and deploy events to Sumo Logic from Jenkins Pipeline.
 ---
-
-# Jenkins Plugin - Send Build and Deploy Event to Sumo Logic from Jenkins Pipeline
 
 ## Prerequisites
 
@@ -51,11 +51,11 @@ Set N/A if not available. | Optional |
 ## Method
 
 1. Define a wrapper function that calls  **SumoUpload** () in your common library.
- 
+
   ```json
   def sendDeliveryEvent(Map args) {
     def deliveryEvent = [
-      "event_type": args.eventType, 
+      "event_type": args.eventType,
       "trace_id": args.traceId,     
       "service": args.service,
       "team": (args.team ?: "n/a"),
@@ -243,7 +243,7 @@ pipeline {
                         env_name: ENV_NAME,
                         git_url: GIT_URL,
                         repository_name: "SumoLogic",
-                        commit_id: env.commit_id 
+                        commit_id: env.commit_id
                     ]
                   }
                   SumoUpload(keyValueMap: deploy_event)

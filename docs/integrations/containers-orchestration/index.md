@@ -1,7 +1,7 @@
 ---
 id: index
-title: containers-orchestration
-sidebar_label: containers-orchestration
+title: Containers and Orchestration Integrations
+sidebar_label: Containers and Orchestration
 description: Docs for Sumo apps for container management and orchestration tools.
 ---
 

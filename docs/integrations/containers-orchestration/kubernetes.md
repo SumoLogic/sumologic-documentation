@@ -7,7 +7,7 @@ description: The Sumo Logic Kubernetes App provides visibility into the worker n
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/containers-orchestration/k8s.png')} alt="k8s logo" width="50"/>
+<img src={useBaseUrl('img/icons/operations/kubernetes.png')} alt="k8s logo" width="75"/>  
 
 The Sumo Logic Kubernetes App provides visibility into the worker nodes that comprise a cluster, as well as application logs of the worker nodes. The App is a single-pane-of-glass through which you can monitor and troubleshoot container health, replication, load balancing, pod state and hardware resource allocation. It utilizes [Falco](https://falco.org/docs/) events to monitor and detect anomalous container, application, host, and network activity.
 
@@ -81,16 +81,14 @@ Set the following fields in the Sumo Logic UI prior to configuring collection. T
 
 For information on setting up fields, see the [Fields](/docs/manage/fields) help page.
 
-### Collecting metrics and logs for Kubernetes
+### Collecting Metrics and logs for Kubernetes
 Reference the [Deployment Guide](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/README.md#documentation) in our sumologic-kubernetes-collection GitHub repository for detailed instructions on how to collect Kubernetes logs, metrics, and events; enrich them with deployment, pod, and service level metadata; and send them to Sumo Logic.
 
 The Deployment Guide has information on advanced configurations, best practices, performance, troubleshooting, and upgrading for our latest and previous versions of supported software.
 
-### Sample log message
+### Sample Log message
 
-Application Logs:
-
-```
+```json title="Application Logs:"
 {"timestamp":1561534865020,"log":"E0626 07:41:05.020255       1
 manager.go:101] Error in scraping containers from kubelet:192.168.190.54:10255:
 failed to get all container stats from Kubelet URL \"http://192.168.190.54:10255/stats/container/\":
@@ -108,12 +106,7 @@ Message Breakdown by Container from the Dashboard Container Logs:
 | fields - message | count container | top 10 container by _count
 ```
 
-## Install the Kubernetes App, Alerts, and view the Dashboards
-
-This section provides instructions for installing the Kubernetes App and Alerts, as well as descriptions and examples for each of the dashboards. These instructions assume you have already set up the collection as described in "Collect Logs and Metrics for the Kubernetes App".
-
-
-### Installing the Kubernetes App
+## Installing the Kubernetes App
 
 Now that you have set up the collection for Kubernetes App, install the Sumo Logic App for Kubernetes to use the pre-configured Kubernetes dashboards that provide visibility into your Kubernetes environment.
 
@@ -128,7 +121,8 @@ To install the app, do the following:
    * Advanced . Select the location in the Library (the default is the Personal folder in the Library), or click New Folder to add a new folder.
 5. Click Add to Library.
 
-### Installing Alerts
+
+## Installing Alerts
 
 Sumo Logic has provided out of the box alerts available through Sumo Logic monitors Visualizations-and-Alerts/Alerts/Monitors to help you quickly determine if the Kubernetes cluster is available and performing as expected. These alerts are built based on metrics datasets and have preset thresholds based on industry best practices and recommendations.
 
@@ -137,7 +131,7 @@ Sumo Logic has provided out of the box alerts available through Sumo Logic monit
 
 For details on the individual alerts, see [Kubernetes Alerts](/docs/observability/kubernetes-solution/alerts).
 
-#### Method 1: Install the alerts by importing a JSON file:
+### Method 1: Importing a JSON file
 
 1. Download the [JSON file](https://raw.githubusercontent.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/main/monitor_packages/kubernetes/kubernetes.json) describing all the monitors.   
 
@@ -155,7 +149,7 @@ For details on the individual alerts, see [Kubernetes Alerts](/docs/observabilit
 The monitors are disabled by default. Once you have installed the alerts using this method, navigate to the Kubernetes folder under  Monitors  to configure them. See this document to enable monitors, to configure each monitor, to send notifications to teams or connections please see the instructions detailed in Step 4 of this /Visualizations-and-Alerts/Alerts/Monitors#Add_a_monitor document.
 :::
 
-#### Method 2: Install the alerts using a Terraform script
+### Method 2: Using a Terraform script
 
 1. Generate a Sumo Logic access key and ID
 
@@ -169,13 +163,13 @@ Generate an access key and access ID for a user that has the Manage Monitors rol
 
 Edit the kubernetes.auto.tfvars file and add the Sumo Logic Access Key, Access Id and Deployment from Step 1 .
 
-```
+```bash
 access_id   = "<SUMOLOGIC ACCESS ID>"
 access_key  = "<SUMOLOGIC ACCESS KEY>"
 environment = "<SUMOLOGIC DEPLOYMENT>"
 ```
 
-The alerts should be restricted to specific clusters and/or namespaces to prevent the monitors hitting the cardinality limits. To limit the alerts, update the variable  `kubernetes_data_source` with your `<Your Custom Filter>`. For example: `cluster=k8s.prod.01`.
+The alerts should be restricted to specific clusters and/or namespaces to prevent the monitors hitting the cardinality limits. To limit the alerts, update the variable `kubernetes_data_source` with your `<Your Custom Filter>`. For example: `cluster=k8s.prod.01`.
 
 All monitors are disabled by default on installation, if you would like to enable all the monitors, set the parameter  monitors_disabled  to false in this file.
 
@@ -185,9 +179,7 @@ If you would like the alerts to send email or connection notifications, configur
 
 5. Email and Connection Notification Configuration Examples. Modify the file kubernetes_notifications.auto.tfvars and populate connection_notifications_critical, connection_notifications_warnings, connection_notifications_missingdata  and email_notifications_critical, email_notifications_warnings, email_notifications_missingdata as per below examples.
 
-Pagerduty Connection Example:
-
-```
+```sql title="Pagerduty Connection Example"
 connection_notifications_critical = [
     {
       connection_type       = "PagerDuty",
@@ -204,13 +196,11 @@ connection_notifications_critical = [
   ]
 ```
 
-Replace <CONNECTION_ID> with the connection id of the webhook connection. The webhook connection id can be retrieved by calling the https://api.sumologic.com/docs/#operation/listConnections">Monitors API.
+Replace `<CONNECTION_ID>` with the connection id of the webhook connection. The webhook connection id can be retrieved by calling the https://api.sumologic.com/docs/#operation/listConnections">Monitors API.
 
 For overriding payload for different connection types, refer to this /Manage/Connections-and-Integrations/Webhook-Connections/Set_Up_Webhook_Connections">document.
 
-Email Notifications Example:
-
-```
+```sql title="Email Notifications Example"
 email_notifications_critiical = [
     {
       connection_type       = "Email",
@@ -235,17 +225,13 @@ There are limits to how many alerts can be enabled - see the [Alerts FAQ](/docs/
 :::
 
 
-### Dashboards
+## Viewing Kubernetes Dashboards
 
-### Filter with template variables   
-
-Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. For more information, see the /Visualizations-and-Alerts/Dashboard_(New)/Filter_with_template_variables" title="Filter with template variables">Filter with template variables help page.
-
-:::tip
-You can use template variables to drill down and examine the data on a granular level.
+:::tip Filter with template variables    
+Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards-new/filter-with-template-variables.md).
 :::
 
-#### Cluster Explorer Dashboard
+### Cluster Explorer
 
 The **Kubernetes - Cluster Explorer** dashboard provides a high-level view of the health of the cluster services, along with details on the utilized resources by service.
 
@@ -256,9 +242,9 @@ Use this dashboard to:
 <img src={useBaseUrl('img/integrations/containers-orchestration/K8s_Cluster_Explorer.png')} alt="K8s dashboards" />
 
 
-#### Cluster Dashboard  
+### Cluster  
 
-The**Kubernetes - Cluster**dashboard provides detailed status of the cluster health, along with details on all the components, resources and related entities.
+The**Kubernetes - Cluster** dashboard provides detailed status of the cluster health, along with details on all the components, resources and related entities.
 
 Use this dashboard to:  
 * Monitor overall cluster health.
@@ -268,7 +254,7 @@ Use this dashboard to:
 <img src={useBaseUrl('img/integrations/containers-orchestration/K8s_Cluster.png')} alt="K8s dashboards" />
 
 
-#### Cluster Overview Dashboard
+### Cluster Overview
 
 The**Kubernetes - Cluster Overview**dashboard provides a high-level view of the cluster health. Use this dashboard to:  
 * Get quick insights into the health of the cluster.
@@ -277,7 +263,7 @@ The**Kubernetes - Cluster Overview**dashboard provides a high-level view of the 
 <img src={useBaseUrl('img/integrations/containers-orchestration/K8s_Cluster_Overview.png')} alt="K8s dashboards" />
 
 
-#### Node Dashboard
+### Node
 
 The **Kubernetes - Node** dashboard provides detailed information on the health and performance of nodes in a Kubernetes cluster.
 
@@ -288,7 +274,7 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/containers-orchestration/K8s_Node.png')} alt="K8s dashboards" />
 
-#### Node Overview Dashboard  
+### Node Overview   
 
 The **Kubernetes - Node Overview**dashboard provides a high-level view of a node, along with details on all the related components and resources.
 
@@ -299,7 +285,7 @@ Use this dashboard to:
 <img src={useBaseUrl('img/integrations/containers-orchestration/K8s_Node_Overview.png')} alt="K8s dashboards" />
 
 
-#### Namespace Dashboard
+### Namespace
 
 The **Kubernetes - Namespace**dashboard provides insights into the health and resource utilization of a namespace.
 
@@ -311,7 +297,7 @@ Use this dashboard to:
 <img src={useBaseUrl('img/integrations/containers-orchestration/K8s_Namespace.png')} alt="K8s dashboards" />
 
 
-#### Pod Dashboard
+### Pod
 
 The **Kubernetes - Pod** dashboard provides insights into the health of and resource utilization of a Kubernetes pod.
 
@@ -321,8 +307,9 @@ Use this dashboard to:
 * Investigate potential issues.
 
 <img src={useBaseUrl('img/integrations/containers-orchestration/K8s_Pod.png')} alt="K8s dashboards" />
-#
-### Container Dashboard
+
+
+### Container
 
 The **Kubernetes - Container** dashboard provides insights into the health and resource utilization of a Kubernetes container.
 
@@ -335,7 +322,7 @@ Use this dashboard to:
 <img src={useBaseUrl('img/integrations/containers-orchestration/K8s_Container.png')} alt="K8s dashboards" />
 
 
-#### Daemonsets Overview Dashboard
+### Daemonsets Overview
 
 The **Kubernetes - Daemonsets Overview**dashboard provides insights into the health of and resource utilization of Kubernetes Daemonsets.
 
@@ -347,7 +334,7 @@ Use this dashboard to:
 <img src={useBaseUrl('img/integrations/containers-orchestration/K8s_Daemonsets_Overview.png')} alt="K8s dashboards" />
 
 
-#### StatefulSets Overview Dashboard  
+### StatefulSets Overview  
 
 The **Kubernetes - StatefulSets Overview** dashboard provides insights into the health of and resource utilization of Kubernetes StatefulSets.
 
@@ -359,7 +346,7 @@ Use this dashboard to:
 <img src={useBaseUrl('img/integrations/containers-orchestration/K8s_StatefulSets_Overview.png')} alt="K8s dashboards" />
 
 
-#### Deployment Overview Dashboard
+### Deployment Overview
 
 The **Kubernetes - Deployment Overview** dashboard provides insights into the health and performance of your Kubernetes deployments.
 
@@ -371,7 +358,7 @@ Use this dashboard to:
 <img src={useBaseUrl('img/integrations/containers-orchestration/K8s_Deployment_Overview.png')} alt="K8s dashboards" />
 
 
-#### Kubernetes - Health Check
+### Health Check
 
 The **Kubernetes - Health Check**dashboard displays the collection status from all the components in the Kubernetes cluster.
 
@@ -384,7 +371,7 @@ Use this dashboard to:
 <img src={useBaseUrl('img/integrations/containers-orchestration/k8s-health.png')} alt="K8s dashboards" />
 
 
-#### Deployment Dashboard  
+### Deployment  
 
 The **Kubernetes - Deployment**dashboard provides insights into the health and performance of your Kubernetes deployments.
 
@@ -397,7 +384,7 @@ Use this dashboard to:
 <img src={useBaseUrl('img/integrations/containers-orchestration/K8s_Deployment.png')} alt="K8s dashboards" />
 
 
-#### Security Overview Dashboard
+### Security Overview
 
 :::note
 This dashboard relies on Falco. If the Dashboard is not populated, enable Falco by setting the flag `falco:enabled` as `"true"` in values.yaml as described [here](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/master/deploy/docs/Installation_with_Helm.md).
@@ -411,7 +398,7 @@ Use this dashboard to:
 <img src={useBaseUrl('img/integrations/containers-orchestration/K8s_Security_Overview.png')} alt="K8s dashboards" />
 
 
-#### Security Rules Triggered Dashboard
+### Security Rules Triggered
 
 :::note This dashboard relies on Falco. If the Dashboard is not populated, enable Falco by setting the flag "falco:enabled" as "true" in values.yaml as described https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/master/deploy/docs/Installation_with_Helm.md">on this page.
 :::
@@ -425,7 +412,7 @@ Use this dashboard to:
 <img src={useBaseUrl('img/integrations/containers-orchestration/K8s_Sec_Rules_Triggered.png')} alt="K8s dashboards" />
 
 
-#### Service Dashboard
+### Service
 
 The **Kubernetes - Service** dashboard provides a high-level view of the health of the cluster services, along with details on utilized resources by service.
 
@@ -437,7 +424,7 @@ Use this dashboard to:
 <img src={useBaseUrl('img/integrations/containers-orchestration/K8s_Service.png')} alt="K8s dashboards" />
 
 
-#### Hygiene Check Dashboard
+### Hygiene Check
 
 The **Kubernetes - Hygiene Check** dashboard provides visibility into the configuration hygiene of your Kubernetes cluster. This dashboard displays color-coded performance checks for nodes, along with resource utilization, pod capacity, pod errors, and pod states.
 
@@ -448,7 +435,7 @@ The **Kubernetes - Hygiene Check** dashboard provides visibility into the config
 <img src={useBaseUrl('img/integrations/containers-orchestration/K8s_Hygiene_Check.png')} alt="K8s dashboards" />
 
 
-#### CoreDNS
+### CoreDNS
 
 CoreDNS is a [DNS server](https://en.wikipedia.org/wiki/Domain_Name_System) and can be used as a replacement for kube-dns in a kubernetes cluster.
 
@@ -462,7 +449,7 @@ Use this dashboard to:
 <img src={useBaseUrl('img/integrations/containers-orchestration/K8s_CoreDNS.png')} alt="K8s dashboards" />
 
 
-#### HPA Dashboard
+### HPA
 
 The Horizontal Pod Autoscaler automatically scales the number of Pods in a replication controller, deployment, replica set or stateful set based on observed CPU utilization.
 

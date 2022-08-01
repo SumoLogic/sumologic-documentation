@@ -11,14 +11,14 @@ AWS API Gateway service allows you to create RESTful APIs and WebSocket APIs for
 
 The Sumo Logic AWS API Gateway App provides insights into API Gateway tasks while accepting and processing concurrent API calls throughout your infrastructure, including traffic management, CORS support, authorization and access control, throttling, monitoring, and API version management.
 
-## Collecting Logs and Metrics for AWS API Gateway
-
-### Log and Metric Types  
+## Log and Metric Types  
 
 The AWS API Gateway app uses the following logs and metrics:
 * [Amazon API Gateway metrics](https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-metrics-and-dimensions.html)
 * [CloudTrail API Gateway Data Event](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-data-events)
 
+
+## Collecting Logs and Metrics for AWS API Gateway
 
 ### Collect Metrics for AWS API Gateway   
 

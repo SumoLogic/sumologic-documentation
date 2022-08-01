@@ -9,13 +9,13 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Sumo Logic AWS Security Hub app is designed to extract key findings from the AWS Security Hub, which is designed to centrally view and manage security alerts and automate security checks. The additional level of analysis within these dashboards surfaces the most relevant findings and takes a focused approach to improve overall security posture. Finding types and severity levels act as leading indicators for security engineers to go into security incidents with the most relevant technical details to address active threats.
 
-## Collecting findings
+## Collecting Findings
 
-To set-up Collection, follow the instructions provided at Collect findings for the AWS Security Hub App. /docs/integrations/amazon-aws/AWS_Security_Hub/2-Collect-Findings-for-the-AWS-Security-Hub-App
+To set up Collection, follow the instructions provided at [Collect findings for the AWS Security Hub App](/docs/integrations/amazon-aws/security-hub.md).
 
-## Install the App
+## Install the AWS Security Hub App
 
-Now that you have set up ingested and collected findings for AWS Security Hub, you can install the Sumo Logic App for AWS Security Hub and use the preconfigured searches and [Dashboards](#Dashboards) that provide insight into your data.
+Now that you have set up ingested and collected findings for AWS Security Hub, you can install the Sumo Logic App for AWS Security Hub and use the preconfigured searches and [Dashboards](#viewing-aws-security-hub-dashboards) that provide insight into your data.
 
 To install the Sumo Logic App for AWS Security Hub, do the following:
 
@@ -38,14 +38,11 @@ Version selection is applicable only to a few apps currently. For more informati
 Once an app is installed, it will appear in your **Personal** folder, or another folder that you specified. From here, you can share it with your organization.
 
 Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
+  
 
-
-## Dashboard filters  
+## Viewing AWS Security Hub Dashboards
 
 **Each dashboard has a set of filters** that you can apply to the entire dashboard. Click the funnel icon in the top dashboard menu bar to display a scrollable list of filters that narrow search results across the entire dashboard.
-
-
-## Viewing the Dashboards
 
 
 ### AWS Security Hub - Security Monitoring - Overview

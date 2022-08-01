@@ -9,11 +9,11 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 AWS WAF (web application firewall) data is a rich source of security findings, as it allows you to monitor the HTTP and HTTPS requests that are forwarded to CloudFront and let you control overall access to your content. Each dashboard within this application takes a different lens on AWS WAF data, from traffic patterns to threat intelligence, allowing you to truly identify the needles in the haystack that drives critical security concerns within your AWS infrastructure.
 
-## Collect Logs
+## Collecting Logs
 
-To configure Collection for AWS WAF App, follow the instructions from /docs/integrations/amazon-aws/AWS_WAF/Collect_Logs_for_the_AWS_WAF_App
+To configure Collection for AWS WAF App, follow the instructions from [Collecting Logs for the AWS WAF App](/docs/integrations/amazon-aws/waf#collecting-logs-for-the-aws-waf-app).
 
-## Install the AWS WAF Security Analytics App
+## Installing the AWS WAF Security Analytics App
 
 Now that you have set up collection for AWS WAF, install the Sumo Logic App for AWS AWS to use the pre-configured searches and dashboards.
 
@@ -40,7 +40,7 @@ Once an app is installed, it will appear in your **Personal** folder, or another
 Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
 
 
-## Viewing Dashboards
+## Viewing AWS WAF Security Monitoring Dashboards
 
 
 ### AWS WAF - Security Monitoring - Overview
