@@ -7,7 +7,7 @@ description: Use the Sumo Logic App to analyze raw Application Load Balancer dat
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/amazon-aws/elb-app.png')} alt="DB icon" width="50"/>
+<img src={useBaseUrl('img/integrations/amazon-aws/elb-app.png')} alt="Thumbnail icon" width="50"/>
 
 The Sumo Logic app for AWS Elastic Load Balancer - Application ingests the logs stored in an S3 bucket, giving you the visibility to see the overall health of your Application Load Balancer and Target Groups. Use the Sumo Logic App to analyze the raw Application Load Balancer data to investigate the availability of the applications running behind Application Load Balancers. Or correlate the Application Load Balancing data with other data sets to get a broader understanding of the fault tolerance of your applications across multiple AWS Availability Zones.
 
@@ -103,11 +103,9 @@ If you paused the Source and want to skip some data when you resume, update the 
 10. **Fields**. Click the **+Add Field** link to add custom log metadata [Fields](/docs/manage/fields.md).
     * Define the fields you want to associate, each field needs a name (key) and value.
         1.
-8
- A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
+* ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
         2.
-9
- An orange triangle with an exclamation point is shown when the field doesn't exist, or is disabled, in the Fields table schema. In this case, an option to automatically add or enable the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema or is disabled it is ignored, known as dropped.
+* ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist, or is disabled, in the Fields table schema. In this case, an option to automatically add or enable the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema or is disabled it is ignored, known as dropped.
 11. For **AWS Access** you have two **Access Method** options. Select **Role-based access** or **Key access** based on the AWS authentication you are providing. Role-based access is preferred, this was completed in the prerequisite step [Grant Sumo Logic access to an AWS Product](/docs/send-data/sources/sources-hosted-collectors/amazon-web-services/grant-access-aws-product.md).
     * For **Role-based access** enter** **the Role ARN that was provided by AWS after creating the role.  \
 

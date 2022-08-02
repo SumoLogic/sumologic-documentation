@@ -7,7 +7,7 @@ description: Introduction to Palo Alto Firewall - Cloud Security Monitoring and 
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/pan9.png')} alt="thumbnail icon" width="100"/>
+<img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/SecMon_PAN.png')} alt="Thumbnail icon" width="70"/>
 
 The Palo Alto Firewall app helps you to analyze traffic and gain a better understanding of your Palo Alto Networks environments. Dig deep into the data, broken down by threat detection indicators, malware type, and so in order to break out data for higher granularity.
 

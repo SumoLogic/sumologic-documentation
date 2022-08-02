@@ -7,7 +7,7 @@ description: Global Intelligence for Amazon GuardDuty
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/amazon-aws/gi-guardduty.png')} alt="DB icon" width="50"/>
+<img src={useBaseUrl('img/integrations/amazon-aws/gi-guardduty.png')} alt="Thumbnail icon" width="50"/>
 
 This feature is available in the following account plans.
 

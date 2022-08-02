@@ -15,7 +15,7 @@ App supports Logs for Nginx Plus and Metrics for Nginx Plus Ingress Controller.
 
 The Nginx Plus Ingress app is a unified logs and metrics app that helps you monitor the availability, performance, health and resource utilization of your Nginx Plus Ingress web servers. Preconfigured dashboards and searches provide insight into server status, location zones, server zones, upstreams, resolvers, visitor locations, visitor access types, traffic patterns, errors, web server operations and access from known malicious sources.
 
-### Log and Metrics Types
+## Log and Metrics Types
 
 The Sumo Logic App for Nginx Plus Ingress assumes the NCSA extended/combined log file format for Access logs and the default Nginx error log file format for error logs.
 
@@ -30,30 +30,18 @@ For more details on Nginx Plus Ingress Metrics, see[ https://docs.nginx.com/ngin
 
 ## Collecting Logs and Metrics for Nginx Plus Ingress
 
-This section provides instructions for configuring log and metric collection for the Sumo Logic App for Nginx Plus Ingress.
-
-
-### Collection Process Overview
-
-Configuring log and metric collection for the Nginx Plus Ingress App includes the following tasks:
+This section provides instructions for configuring log and metric collection for the Sumo Logic App for Nginx Plus Ingress. This includes the following tasks:
 
 In a Kubernetes environment, we use our Sumo Logic Kubernetes collection. You can learn more about this[ here](/docs/observability/kubernetes-solution/collection-setup).
 
-
-
-1. **Step 1: Enable Logging in Nginx Plus Ingress**: \
-Logging is enabled by default to standard output “**stdout**” and standard error “**stderr**”. \
+1. **Enable Logging in Nginx Plus Ingress**: Logging is enabled by default to standard output “**stdout**” and standard error “**stderr**”.
 If you need additional logging -  all nginx logs must be redirected to **stdout** and **stderr**.
-2. **Step 2: Enable Metrics in Nginx Plus Ingress**: \
-Before you configure Sumo Logic to ingest metrics, you must enable the Prometheus metrics in the Nginx Ingress controller and annotate the Nginx pods, so Prometheus can find the Nginx metrics.
+2. **Enable Metrics in Nginx Plus Ingress**: Before you configure Sumo Logic to ingest metrics, you must enable the Prometheus metrics in the Nginx Ingress controller and annotate the Nginx pods, so Prometheus can find the Nginx metrics.
     * For instructions on Nginx, refer to the following documentation[ https://docs.nginx.com/nginx-ingress-controller/logging-and-monitoring/prometheus/](https://docs.nginx.com/nginx-ingress-controller/logging-and-monitoring/prometheus/)
-3. **Step 3: Deployment of version 1.3**
-Ensure you have deployed version 1.3 or higher of the Sumologic-Kubernetes-Collection, to send the logs and metrics to Sumologic. For more information on deploying Sumologic-Kubernetes-Collection,[ visit](/docs/integrations/containers-orchestration/Kubernetes#Collect_Logs_and_Metrics_for_the_Kubernetes_App) here. Once deployed, logs will automatically be picked up and sent by default. Prometheus will scrape the Nginx pods, based on the annotations set in Step 2, for the metrics. Logs and Metrics will automatically be sent to the respective fluentD stateful sets which consistently tag your logs and metrics, then forward them to your Sumo Logic org.
+3. **Deployment of version 1.3**: Ensure you have deployed version 1.3 or higher of the Sumologic-Kubernetes-Collection, to send the logs and metrics to Sumologic. For more information on deploying Sumologic-Kubernetes-Collection,[ visit](/docs/integrations/containers-orchestration/Kubernetes#Collect_Logs_and_Metrics_for_the_Kubernetes_App) here. Once deployed, logs will automatically be picked up and sent by default. Prometheus will scrape the Nginx pods, based on the annotations set in Step 2, for the metrics. Logs and Metrics will automatically be sent to the respective fluentD stateful sets which consistently tag your logs and metrics, then forward them to your Sumo Logic org.
 
 
 ### Create Field Extraction Rules
-3
-
 
 Field Extraction Rules (FERs) tell Sumo Logic which fields to parse out automatically. For instructions, see[ Create a Field Extraction Rule](/docs/manage/field-extractions/create-field-extraction-rule.md).
 
@@ -114,11 +102,9 @@ Use the following Parse Expression:
 
 
 
-### Query Samples
-5
+### Sample Queries
 
-
-This sample Query is from the **Visitor Locations **panel of the **Nginx Plus Ingress - Overview **dashboard.
+This sample Query is from the **Visitor Locations **panel of the **Nginx Plus Ingress - Overview** dashboard.
 
 
 ```
@@ -148,10 +134,7 @@ Alerts can be installed by either importing them via a JSON or via a Terraform s
 2. Replace **$$logs_data_source** with logs data source.
     * For example, _sourceCategory=Labs/NginxIngress/Logs
 3. Go to Manage Data > Alerts > Monitors.
-4. Click **Add**:
-
-
-
+4. Click **Add**.
 1. Click **Import** to import monitors from the JSON above.
 
 The monitors are disabled by default. Once you have installed the alerts via this method, navigate to the **Nginx** **Ingress** folder under **Monitors** to configure them. Refer[ document](/docs/alerts/monitors#Add_a_monitor) to enable monitors, to configure each monitor, to send notifications to teams or connections.
@@ -163,7 +146,7 @@ The monitors are disabled by default. Once you have installed the alerts via thi
 
 Generate an [access key](/docs/manage/security/access-keys#create-an-access-key%C2%A0on-preferences-page) and access ID for a user that has the[ Manage Monitors](/docs/manage/users-and-roles/roles/role-capabilities) role capability in Sumo Logic using these instructions. Please identify your Sumo Logic[ deployment](https://help.sumologic.com/APIs/General-API-Information/Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security).
 
-**Step 2:[ Download and install Terraform 0.13](https://www.terraform.io/downloads.html)** or later** **
+**Step 2:[Download and install Terraform 0.13](https://www.terraform.io/downloads.html)** or later
 
 **Step 3: Download the Sumo Logic Terraform package for Nginx Ingress alerts**
 
@@ -176,9 +159,11 @@ After the package has been extracted, navigate to the package directory **terraf
 Edit the **nginxplusingress.auto.tfvars** file as per below instruction
 
 1. Add the Sumo Logic Access Key, Access Id, Deployment from Step 1.
-    * `access_id   = "<YOUR SUMO ACCESS ID>"`
-    * `access_key  = "<YOUR SUMO ACCESS KEY>"`
-    * `environment = "<DEPLOYMENT>"`
+```sql
+access_id   = "<YOUR SUMO ACCESS ID>"
+access_key  = "<YOUR SUMO ACCESS KEY>"
+environment = "<DEPLOYMENT>"
+```
 2. Add the data source values.
     * `Logs_data_source` - Sumo Logic data source for logs.
 3. All monitors are disabled by default on installation, if you would like to enable all the monitors, set the parameter **monitors_disabled** to **false**.
@@ -233,8 +218,6 @@ email_notifications = [
 
 If you haven’t enabled alerts and/or configured notifications via the terraform procedure outlined above, we highly recommend enabling alerts of interest and configuring each enabled alert to send notifications to other people or services. This is detailed in[ Step 4](/docs/alerts/monitors#Add_a_monitor).
 
-
-13
 There are limits to how many alerts can be enabled - please see the[ Alerts FAQ](/docs/alerts/monitors/monitor-faq.md).
 
 
@@ -245,11 +228,7 @@ Locate and install the app you need from the **App Catalog**. If you want to see
 1. From the **App Catalog**, search for and select the app**.**
 2. Select the version of the service you're using and click **Add to Library**.
 
-
-16
 Version selection is applicable only to a few apps currently. For more information, see the[ Install the Apps from the Library](/docs/get-started/library/install-apps).
-
-
 
 1. To install the app, complete the following fields.
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 

@@ -7,6 +7,8 @@ description: The Audit App uses Sumo audit index events to present information a
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
+<img src={useBaseUrl('img/integrations/sumo-apps/Audit_Img.png')} alt="Web servers icon" width="75"/>
+
 The Sumo Logic Audit App uses Sumo Logic audit index events to present information about account management activities, user activities, and management of Library content (searches, dashboards/reports, and folders) in your Sumo Logic account. The app uses predefined searches and Dashboards that provide visibility into your environment.
 
 Before you can install the Sumo Logic Audit App, an administrator must enable the Sumo Auditing. For more information, see Enable and Manage the Audit Index.
@@ -14,7 +16,6 @@ Before you can install the Sumo Logic Audit App, an administrator must enable th
 :::note
 Data is only provided from the time the Sumo Auditing is enabled. Audit data is not backfilled to any time before the feature was enabled.
 :::
-
 
 
 ## Install the Audit App

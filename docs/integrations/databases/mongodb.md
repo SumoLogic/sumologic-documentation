@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-<img src={useBaseUrl('img/integrations/databases/mongodb.png')} alt="DB icon" width="100"/>
+<img src={useBaseUrl('img/integrations/databases/mongodb.png')} alt="Thumbnail icon" width="100"/>
 
 MongoDB is a source-available cross-platform document-oriented database program.
 
@@ -155,7 +155,7 @@ In Kubernetes environments, we use the Telegraf Operator, which is packaged with
 
 On your MongoDB Pods, add the following annotations:
 
-```bash
+```sql
 annotations:
   telegraf.influxdata.com/class: sumologic-prometheus
   prometheus.io/scrape: "true"
@@ -176,7 +176,7 @@ annotations:
 Please enter values for the following parameters (marked `CHANGEME` above):
 
 
-* telegraf.influxdata.com/inputs - This contains the required configuration for the Telegraf MongoDB Input plugin. Please refer[ to this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/redis) for more information on configuring the MongoDB input plugin for Telegraf. Note: As telegraf will be run as a sidecar the host should always be localhost.
+* `telegraf.influxdata.com/inputs` - This contains the required configuration for the Telegraf MongoDB Input plugin. Please refer[ to this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/redis) for more information on configuring the MongoDB input plugin for Telegraf. Note: As telegraf will be run as a sidecar the host should always be localhost.
     * In the input plugins section - [inputs.MongoDB]:
         * servers - The URL to the MongoDB server. This can be a comma-separated list to connect to multiple MongoDB servers. Please see [this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/mongodb) for more information on additional parameters for configuring the MongoDB input plugin for Telegraf.
     * In the tags section - [inputs.MongoDB.tags]:
@@ -188,7 +188,7 @@ Please enter values for the following parameters (marked `CHANGEME` above):
 * telegraf.influxdata.com/class: sumologic-prometheus - This instructs the Telegraf operator what output to use. This should not be changed.
 * prometheus.io/scrape: "true" - This ensures our Prometheus will scrape the metrics.
 * prometheus.io/port: "9273" - This tells prometheus what ports to scrape on. This should not be changed.
-* telegraf.influxdata.com/inputs
+* `telegraf.influxdata.com/inputs`
     * In the tags section i.e.  [inputs.mongodb.tags]
         * `component: “database”` - This value is used by Sumo Logic apps to identify application components.
         * db_system: “mongodb” - This value identifies the database system.
@@ -326,7 +326,7 @@ This section provides instructions for configuring metrics collection for the Su
     Create or modify telegraf.conf and copy and paste the text below:  
 
 
-```bash
+```sql
 [[inputs.mongodb]]
   servers = ["mongodb://<username-CHANGME>:<password-CHANGEME>@127.0.0.1:27017"]
   gather_perdb_stats = true

@@ -199,7 +199,7 @@ On your ActiveMQ Pods, add the following annotations:
 
 Please enter values for the following parameters (marked `CHANGE_ME` above):
 
-* telegraf.influxdata.com/inputs - This contains the required configuration for the Telegraf ActiveMQ Input plugin. Please refer[ to this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/redis) for more information on configuring the ActiveMQ input plugin for Telegraf. Note: As telegraf will be run as a sidecar the host should always be localhost.
+* `telegraf.influxdata.com/inputs` - This contains the required configuration for the Telegraf ActiveMQ Input plugin. Please refer[ to this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/redis) for more information on configuring the ActiveMQ input plugin for Telegraf. Note: As telegraf will be run as a sidecar the host should always be localhost.
     * In the input plugins section, which is `[[inputs.jolokia2_agent]]`:
         * url - The URL of the ActiveMQ server for [JMX MBeans](https://activemq.apache.org/jmx)  HTTP Endpoint. Please see [this doc](https://github.com/influxdata/telegraf/blob/master/plugins/inputs/jolokia2/examples/activemq.conf) for more information on additional parameters for configuring the Jolokia2 input plugin for Telegraf.
         * username: The Username of ActiveMQ’s admin account . The default is “admin”.
@@ -213,7 +213,7 @@ Please enter values for the following parameters (marked `CHANGE_ME` above):
 * telegraf.influxdata.com/class: sumologic-prometheus - This instructs the Telegraf operator what output to use. This should not be changed.
 * prometheus.io/scrape: "true" - This ensures our Prometheus will scrape the metrics.
 * prometheus.io/port: "9273" - This tells prometheus what ports to scrape on. This should not be changed.
-* telegraf.influxdata.com/inputs
+* `telegraf.influxdata.com/inputs`
     * In the tags section, which is `[inputs.jolokia2_agent.tags]`:
         * component: “messaging” - This value is used by Sumo Logic apps to identify application components.
         * messaging_system: “activemq” - This value identifies the messaging system.

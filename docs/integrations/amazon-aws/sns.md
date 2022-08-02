@@ -7,7 +7,7 @@ description: The Sumo Logic App for Amazon SNS is a unified logs and metrics (UL
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/amazon-aws/sns.png')} alt="DB icon" width="50"/>
+<img src={useBaseUrl('img/integrations/amazon-aws/sns.png')} alt="Thumbnail icon" width="50"/>
 
 Amazon Simple Notification Service (SNS) is a pub/sub messaging and mobile notifications service for coordinating the delivery of messages to subscribing endpoints and clients.
 

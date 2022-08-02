@@ -7,6 +7,8 @@ description: A guide to the Sumo Logic AWS WAF Security Analytics App.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
+<img src={useBaseUrl('img/integrations/amazon-aws/waf.png')} alt="Thumbnail icon" width="60"/>
+
 AWS WAF (web application firewall) data is a rich source of security findings, as it allows you to monitor the HTTP and HTTPS requests that are forwarded to CloudFront and let you control overall access to your content. Each dashboard within this application takes a different lens on AWS WAF data, from traffic patterns to threat intelligence, allowing you to truly identify the needles in the haystack that drives critical security concerns within your AWS infrastructure.
 
 ## Collecting Logs

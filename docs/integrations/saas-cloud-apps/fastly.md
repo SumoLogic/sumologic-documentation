@@ -7,7 +7,7 @@ description: Fastly is a content delivery network (CDN) that provides you contro
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/saas-cloud-apps/fastly.png')} alt="DB icon" width="100"/>
+<img src={useBaseUrl('img/integrations/saas-cloud-apps/fastly.png')} alt="Thumbnail icon" width="100"/>
 
 Fastly is a content delivery network (CDN) that provides you control over how and where you serve content, access to real-time performance analytics, and the ability to cache unpredictably changing content at the edge.
 

@@ -7,7 +7,8 @@ description: Introduction to Linux Cloud Security Monitoring and Analytics.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/hosts-operating-systems/linux-transparent.png')} alt="DB icon" width="75"/>
+<img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/SecMon_Linux.png')} alt="Thumbnail icon" width="85"/>
+
 
 The Cloud Security monitoring and Analytics app for Linux ingests any distribution of linux data to gain a better understanding of your production environments, and surface relevant insights by tuning out-of-the-box content to align with your security team’s focus. Consolidate analytics across various instances by wildcarding on data sources and gain full visibility into your Linux data for both monitoring and analytics use cases.
 

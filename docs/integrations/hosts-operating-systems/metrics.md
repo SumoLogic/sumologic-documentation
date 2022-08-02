@@ -7,6 +7,8 @@ description: The Sumo Logic App for Host Metrics allows you to collect your loca
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
+<img src={useBaseUrl('img/integrations/hosts-operating-systems/HostMetrics.png')} alt="Thumbnail icon" width="75"/>
+
 The Host Metrics app allows you to monitor the performance and resource utilization of hosts and processes that your mission critical applications are dependent upon. Preconfigured dashboards provide insight into CPU, memory, network, file descriptors, page faults, and TCP connectors. This app uses the Sumo Logic installed collector for the collection of host metrics data.
 
 

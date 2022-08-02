@@ -7,7 +7,7 @@ description: The Sumo Logic App for Payment Card Industry (PCI) Compliance for W
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/amazon-aws/pci.png')} alt="DB icon" width="50"/>
+<img src={useBaseUrl('img/integrations/amazon-aws/pci.png')} alt="Thumbnail icon" width="50"/>
 
 This guide helps you set up Sumo Logic Collectors, and install the PCI Compliance for Windows Legacy application, so you can begin monitoring your usage and determine if you are meeting Compliance benchmarks.
 

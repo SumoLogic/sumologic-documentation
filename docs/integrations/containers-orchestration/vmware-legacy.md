@@ -7,6 +7,8 @@ description: Allows you to collect and centralize logs, troubleshoot  farms, and
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
+<img src={useBaseUrl('img/integrations/containers-orchestration/vmware.png')} alt="VMware dashboards" width="50" />
+
 A newer app, [VMware ULM](/docs/integrations/containers-orchestration/VMware), is available. The App on this page is based on the vMA technology running on legacy vSphere versions 6.0 and prior. The vMA technology is no longer supported by VMware.
 
 The Sumo Logic App for VMware allows you to:

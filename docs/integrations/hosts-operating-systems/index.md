@@ -8,7 +8,7 @@ description: Docs for Sumo apps for hosts and Linux.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/hosts-operating-systems/hosts.png')} alt="DB icon" width="75"/>
+<img src={useBaseUrl('img/integrations/hosts-operating-systems/hosts.png')} alt="Thumbnail icon" width="75"/>
 
 This guide has documentation for Sumo apps for monitoring host metrics and the Linux operating system.  
 

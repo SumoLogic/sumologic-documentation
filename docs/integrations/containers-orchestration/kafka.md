@@ -101,7 +101,7 @@ Follow the steps below to collect metrics from a Kubernetes environment:
 Please ensure that you are monitoring your Kubernetes clusters with the Telegraf operator **enabled** -  If you are not, then please follow [these instructions](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf.md#Install_Telegraf_in_a_Kubernetes_environment) to do so.
 2. Add annotations on your Kafka pods. Open [this yaml file](https://sumologic-app-data.s3.amazonaws.com/Kafka/KAfka_PodAnnotations.yaml) and add the annotations mentioned there. Please enter in values for the parameters marked with CHANGE_ME in the yaml file:
 
-* telegraf.influxdata.com/inputs - As telegraf will be run as a sidecar the **urls** should always be localhost.
+* `telegraf.influxdata.com/inputs` - As telegraf will be run as a sidecar the **urls** should always be localhost.
     * In the input plugins section :
         * **urls** - The URL to the Kafka server. As telegraf will be run as a sidecar the **urls** should always be localhost. This can be a comma-separated list to connect to multiple Kafka servers.
     * In the tags sections (total 3) Which are, , [inputs.jolokia2_agent.tags], and [inputs.disk.tags]:
@@ -113,10 +113,10 @@ Here’s an explanation for additional values set by this configuration that we 
 * `telegraf.influxdata.com/class: sumologic-prometheus` - This instructs the Telegraf operator what output to use. This should not be changed.
 * `prometheus.io/scrape: "true"` - This ensures our Prometheus plugin will scrape the metrics.
 * `prometheus.io/port: "9273"` - This tells Prometheus what ports to scrape metrics from. This should not be changed.
-* telegraf.influxdata.com/inputs
-    * In the tags sections [inputs.jolokia2_agent/diskio/disk]
-        * **component**: “messaging” - This value is used by Sumo Logic apps to identify application components.
-        * **messaging_system**: “kafka” - This value identifies the database system.
+* `telegraf.influxdata.com/inputs`
+    * In the tags sections `[inputs.jolokia2_agent/diskio/disk]`
+        * `component: “messaging”` - This value is used by Sumo Logic apps to identify application components.
+        * `messaging_system: “kafka”` - This value identifies the database system.
 
 For more information on all other parameters please see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#Configuring-Telegraf) for more properties that can be configured in the Telegraf agent globally.
 
@@ -342,10 +342,10 @@ export KAFKA_JMX_OPTS="-javaagent:/opt/kafka/libs/jolokia.jar=port=8778,host=$RM
     Create or modify the telegraf.conf file in /etc/telegraf/telegraf.d and copy and paste the text [from this file](https://sumologic-app-data.s3.amazonaws.com/Kafka/config_telegraf.conf).  
 
 
-Please enter values for the following parameters (marked with CHANGE_ME) in the downloaded file:
+Please enter values for the following parameters (marked with `CHANGE_ME`) in the downloaded file:
 
-* In the input plugins section which is [[inputs.jolokia2_agent]]:
-    * **urls** - In the [[inputs.jolokia2_agent]] section. The URL to the Kafka server. This can be a comma-separated list to connect to multiple Kafka servers. Please see [this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/jolokia2) for more information on additional parameters for configuring the Jolokia input plugin for Telegraf.
+* In the input plugins section which is `[[inputs.jolokia2_agent]]`:
+    * **urls** - In the `[[inputs.jolokia2_agent]]` section. The URL to the Kafka server. This can be a comma-separated list to connect to multiple Kafka servers. Please see [this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/jolokia2) for more information on additional parameters for configuring the Jolokia input plugin for Telegraf.
     * In the tags sections (total 3) which is section[inputs.jolokia2_agent.tags], and [inputs.disk.tags]
         * `environment` - This is the deployment environment where the Kafka cluster identified by the value of **urls** parameter resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
         * **messaging_cluster** - Enter a name to identify this Kafka cluster. This cluster name will be shown in the Sumo Logic dashboards.

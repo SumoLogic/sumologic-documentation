@@ -152,7 +152,7 @@ It’s assumed that you are using the latest helm chart version. If not, upgrade
 This section explains the steps to collect HAProxy metrics from a Kubernetes environment. In Kubernetes environments, we use the Telegraf Operator, which is packaged with our Kubernetes collection. You can learn more on this [here](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/telegraf-collection-architecture). Follow the steps listed below to collect metrics from a Kubernetes environment.
 
 On your HAProxy Pods, add the following annotations:
-```bash
+```sql
 annotations:
     telegraf.influxdata.com/class: sumologic-prometheus
     prometheus.io/scrape: "true"
@@ -291,7 +291,7 @@ This section provides instructions for configuring metrics collection for the Su
 
 
 Create or modify telegraf.conf and copy and paste the text below:
-```
+```sql
 [[inputs.Haproxy]]
   username = "username_CHANGEME"
   password = "password_CHANGEME"

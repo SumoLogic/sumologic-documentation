@@ -7,7 +7,7 @@ description: Global Intelligence for AWS CloudTrail - DevOps provides insights f
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/amazon-aws/gi-devops.png')} alt="DB icon" width="75"/>
+<img src={useBaseUrl('img/integrations/amazon-aws/gi-devops.png')} alt="Thumbnail icon" width="75"/>
 
 This feature is available in the following account plans.
 

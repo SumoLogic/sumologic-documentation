@@ -142,9 +142,9 @@ annotations:
 
 If you haven’t defined a cluster in Oracle, then enter ‘**default**’ for `db_cluster`.
 
-Enter in values for the following parameters (as marked `CHANGEME` above):
+Enter in values for the following parameters (marked `CHANGEME` in the snippet above):
 
-* telegraf.influxdata.com/inputs - This contains the required configuration for the Telegraf exec Input plugin. Please refer[ to this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/redis) for more information on configuring the Oracle input plugin for Telegraf. Note: As telegraf will be run as a sidecar the host should always be localhost.
+* `telegraf.influxdata.com/inputs` - This contains the required configuration for the Telegraf exec Input plugin. Please refer[ to this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/redis) for more information on configuring the Oracle input plugin for Telegraf. Note: As telegraf will be run as a sidecar the host should always be localhost.
     * In the input plugins section i.e. :
         * **commands **- The [exec](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/exec) plugin executes all the commands in parallel on every interval and parses metrics from their output in any one of the accepted [Input Data Formats](https://github.com/influxdata/telegraf/blob/master/docs/DATA_FORMATS_INPUT.md).
     * In the tags section i.e.  [inputs.exec.tags]
@@ -447,7 +447,7 @@ As part of collecting metrics data from Telegraf, we will use the [exec input pl
 Enter values for fields annotated with `<VALUE_TO_BE_CHANGED>` to the appropriate values. Do not include the brackets (`<>`) in your final configuration
 
 * Input plugins section, which is `[[inputs.exec]]`:
-    * **commands **- The [exec](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/exec) plugin executes all the commands in parallel on every interval and parses metrics from their output in any one of the accepted [Input Data Formats](https://github.com/influxdata/telegraf/blob/master/docs/DATA_FORMATS_INPUT.md).
+    * **commands**- The [exec](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/exec) plugin executes all the commands in parallel on every interval and parses metrics from their output in any one of the accepted [Input Data Formats](https://github.com/influxdata/telegraf/blob/master/docs/DATA_FORMATS_INPUT.md).
 * In the tags section, which is `[inputs.exec.tags]`:
     * `environment` - This is the deployment environment where the Oracle cluster identified by the value of **servers** resides. For example; dev, prod, or QA. While this value is optional we highly recommend setting it.
     * `db_cluster` - Enter a name to identify this Oracle cluster. This cluster name will be shown in our dashboards.

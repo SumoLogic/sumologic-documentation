@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-<img src={useBaseUrl('img/integrations/databases/memcached.png')} alt="DB icon" width="50"/>
+<img src={useBaseUrl('img/integrations/databases/memcached.png')} alt="Thumbnail icon" width="50"/>
 
 The Memcached app is a unified logs and metrics app that helps you monitor the availability, performance, health, and resource utilization of your Memcached clusters. Preconfigured dashboards provide insight into uptime, operational metrics, cache performance, resource utilization, errors, warnings, and commands executed.
 
@@ -151,7 +151,7 @@ On your Memcached Pods, add the following annotations:
 
 Please enter in values for the following parameters (marked in `CHANGE_ME` above):
 
-* telegraf.influxdata.com/inputs - This contains the required configuration for the Telegraf Memcached Input plugin. Please refer[ to this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/redis) for more information on configuring the Memcached input plugin for Telegraf. Note: As telegraf will be run as a sidecar the host should always be localhost.
+* `telegraf.influxdata.com/inputs` - This contains the required configuration for the Telegraf Memcached Input plugin. Please refer[ to this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/redis) for more information on configuring the Memcached input plugin for Telegraf. Note: As telegraf will be run as a sidecar the host should always be localhost.
     * In the input plugins section which is `[[inputs.memcached]]`:
         * servers- An array of addresses to gather stats about. Specify an IP on the hostname. Please see [this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/memcached) for more information on additional parameters for configuring the Memcached input plugin for Telegraf.
     * In the tags section which is `[inputs.memcached.tags]`:
