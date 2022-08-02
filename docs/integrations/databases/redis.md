@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-<img src={useBaseUrl('img/integrations/databases/redis.png')} alt="DB icon" width="50"/>
+<img src={useBaseUrl('img/integrations/databases/redis.png')} alt="Thumbnail icon" width="50"/>
 
 Redis is an in-memory data structure implementing a distributed, in-memory key-value database with optional durability.
 
@@ -149,7 +149,7 @@ Please ensure that you are monitoring your Kubernetes clusters with the Telegraf
         db_cluster="redis_prod_cluster01-CHANGEME"
 ```
 
-2. Enter in values for the following parameters (as marked `CHANGEME` above):
+2. Enter in values for the following parameters (marked `CHANGEME` in the snippet above):
 * `telegraf.influxdata.com/inputs` - As telegraf will be run as a sidecar the host should always be localhost.
     * In the input plugins section i.e.:
         * `servers` - The URL to the Redis server. This can be a comma-separated list to connect to multiple Redis servers.

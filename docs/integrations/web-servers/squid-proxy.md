@@ -14,8 +14,8 @@ import TabItem from '@theme/TabItem';
 The Squid Proxy app is a unified logs and metrics app that helps you monitor activity in Squid Proxy. The preconfigured dashboards provide insight into served and denied requests; performance metrics; IP domain DNS statistics; traffic details; HTTP response codes; URLs experiencing redirects, client errors, and server errors; and quality of service data that helps you understand your users’ experience.
 
 This App is tested with the following Squid Proxy versions:
-* **Kubernetes**: Squid Proxy version: 6.0.0
-* **Non-Kubernetes**: Squid Proxy version: 6.0.0
+* For Kubernetes environments: Squid Proxy version: 6.0.0
+* Non-Kubernetes environments: Squid Proxy version: 6.0.0
 
 
 ## Collecting Logs and Metrics for the Squid Proxy App
@@ -104,7 +104,7 @@ In Kubernetes environments, we use the Telegraf Operator, which is packaged with
 2. Enable SNMP agent on Squid Proxy
 
 By default, the [SNMP agent](https://wiki.squid-cache.org/Features/Snmp) will be disabled on squid proxy. You have to enable it. To enable the SNMP agent on squid, edit the configuration file of the squid proxy (squid.conf) and add the following section in ConfigMap that mounted to Squid Proxy pods:
-```
+```bash
 acl snmppublic snmp_community public
 snmp_port 3401
 snmp_access allow snmppublic localhost
@@ -290,10 +290,10 @@ oid = "1.3.6.1.4.1.3495.1.1.3.0"
 
 If you haven’t defined a farm in Squid Proxy, then enter ‘**default**’ for `proxy_cluster`.
 
-Enter in values for the following parameters (as marked `CHANGEME` above):
+Enter in values for the following parameters (marked `CHANGEME` in the snippet above):
 
 
-* telegraf.influxdata.com/inputs - This contains the required configuration for the Telegraf SNMP Input plugin. Please refer[ to this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/redis) for more information on configuring the SNMP input plugin for Telegraf. Note: As telegraf will be run as a sidecar the host should always be localhost.
+* `telegraf.influxdata.com/inputs` - This contains the required configuration for the Telegraf SNMP Input plugin. Please refer[ to this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/redis) for more information on configuring the SNMP input plugin for Telegraf. Note: As telegraf will be run as a sidecar the host should always be localhost.
     * In the tags section, which is `[inputs.snmp.tags]`
         * `environment` - This is the deployment environment where the Squid Proxy cluster identified by the value of **servers** resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
         * **proxy_cluster **- Enter a name to identify this Squid Proxy cluster. This farm name will be shown in the Sumo Logic dashboards.  
@@ -500,7 +500,7 @@ By default, the [SNMP agent](https://wiki.squid-cache.org/Features/Snmp) will be
 
 <details><summary><strong>Click to expand</strong>. Create or modify `telegraf.conf` and copy and paste the text below:</summary>
 
-```
+```sql
 [[inputs.snmp]]]
   agents = ["udp://127.0.0.1:3401"]
   name = "squid"
@@ -674,24 +674,24 @@ oid = "1.3.6.1.4.1.3495.1.1.3.0"
 Enter values for fields annotated with `<VALUE_TO_BE_CHANGED>` to the appropriate values. Do not include the brackets (`< >`) in your final configuration.
 
 * In the tags section, which is `[inputs.snmp.tags]`:
-    * `environment` - This is the deployment environment where the Squid Proxy server identified by the value of **servers** resides. For example; dev, prod, or QA. While this value is optional we highly recommend setting it.
-    * **proxy_cluster **- Enter a name to identify this Squid Proxy cluster. This cluster name will be shown in our dashboards.
+    * `environment` - This is the deployment environment where the Squid Proxy server identified by the value of servers resides. For example; dev, prod, or QA. While this value is optional we highly recommend setting it.
+    * `proxy_cluster` - Enter a name to identify this Squid Proxy cluster. This cluster name will be shown in our dashboards.
 * In the output plugins section, which is `[[outputs.sumologic]]`:
-    * **URL** - This is the HTTP source URL created previously. See this doc for more information on additional parameters for configuring the Sumo Logic Telegraf output plugin.
+    * `URL` - This is the HTTP source URL created previously. See this doc for more information on additional parameters for configuring the Sumo Logic Telegraf output plugin.
 
 Here’s an explanation for additional values set by this Telegraf configuration.
 
 
 15
-If you haven’t defined a cluster in Squid Proxy, then enter ‘**default**’ for `proxy_cluster`.
+If you haven’t defined a cluster in Squid Proxy, then enter `default` for `proxy_cluster`.
 16
 There are additional values set by the Telegraf configuration.  We recommend not to modify these values as they might cause the Sumo Logic app to not function correctly.
 
 
 
 * `data_format: “prometheus”` - In the output `[[outputs.sumologic]]` plugins section. Metrics are sent in the Prometheus format to Sumo Logic.
-* **component** - “proxy” - In the input `[[inputs.snmp]]` plugins section. This value is used by Sumo Logic apps to identify application components.
-* **proxy_system **- “squidproxy” - In the input plugins sections. This value identifies the proxy system.
+* `component - “proxy”` - In the input `[[inputs.snmp]]` plugins section. This value is used by Sumo Logic apps to identify application components.
+* `proxy_system - “squidproxy”` - In the input plugins sections. This value identifies the proxy system.
 
 See[ this doc](https://github.com/influxdata/telegraf/blob/master/etc/telegraf.conf) for all other parameters that can be configured in the Telegraf agent globally.
 
@@ -715,9 +715,8 @@ At this point, Telegraf should start collecting the Squid Proxy metrics and forw
     4. **Scope**: Enter the following keyword search expression.
 
 
-```
+```sql
 pod_labels_environment=* pod_labels_component=proxy pod_labels_proxy_cluster=* pod_labels_proxy_system=*
-
 ```
 
 

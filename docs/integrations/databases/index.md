@@ -8,7 +8,7 @@ description: Docs for Sumo apps for database servers.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/databases/databases-icon.png')} alt="DB icon" width="50"/>
+<img src={useBaseUrl('img/integrations/databases/databases-icon.png')} alt="Thumbnail icon" width="50"/>
 
 This guide has documentation for Sumo apps for database servers.
 

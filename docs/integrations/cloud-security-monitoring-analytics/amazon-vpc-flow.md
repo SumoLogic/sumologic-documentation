@@ -7,6 +7,8 @@ description: The Amazon VPC (Virtual Private Cloud) Flow - Cloud Security Monito
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
+<img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/SecMon_AWS_VPCFlow.png')} alt="Thumbnail icon" width="70"/>
+
 The Amazon VPC (Virtual Private Cloud) Flow - Cloud Security Monitoring and Analytics app thoroughly assess Amazon VPC Flow logs to gain a better understanding of your environment and associated traffic patterns. Dig deep into the data, broken down by access levels, group creation, etc.
 
 The Amazon VPC Flow Logs show the IP network traffic of your VPC, allowing you to troubleshoot traffic and security issues. The Amazon VPC Flow Logs App leverages this data to provide real-time visibility and analysis of your environment. It consists of predefined searches and Dashboards.

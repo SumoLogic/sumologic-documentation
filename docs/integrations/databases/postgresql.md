@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-<img src={useBaseUrl('img/integrations/databases/postgresql.png')} alt="DB icon" width="75"/>
+<img src={useBaseUrl('img/integrations/databases/postgresql.png')} alt="Thumbnail icon" width="75"/>
 
 The Sumo Logic App for PostgreSQL is a unified logs and metrics app for monitoring your PostgreSQL database. The app provides operational insights into the PostgreSQL database—installed on your local hardware—for real time analysis.
 
@@ -121,13 +121,13 @@ Follow the steps below to collect metrics from a Kubernetes environment:
         On your PostgreSQL Pods, add the following annotations mentioned in this [file](https://sumologic-app-data.s3.amazonaws.com/dashboards/PostgreSQL/postgresql_annotations_kubernetes.txt).
 
 
-        Please enter in values for the following parameters (marked with CHANGE_ME) in the downloaded file:
+        Please enter in values for the following parameters (marked with `CHANGE_ME`) in the downloaded file:
 
 * Annotations:
-    * **telegraf.influxdata.com/inputs **- This contains the required configuration for the Telegraf Postgres Input plugin.As telegraf will be run as a sidecar the host should always be localhost.
-        * In the input plugins section which is **[[inputs.postgresql_extensible]]**
-            * **address** - Specify the db user, db name and password used for connecting to the database.Example "host=localhost user=postgres dbname=postgres password=mypassword sslmode=disable"
-        * In the tags section, which is **[inputs.postgresql_extensible.tags]**
+    * `telegraf.influxdata.com/inputs` **- This contains the required configuration for the Telegraf Postgres Input plugin. As telegraf will be run as a sidecar the host should always be localhost.
+        * In the input plugins section which is `[[inputs.postgresql_extensible]]`
+            * **address** - Specify the db user, db name and password used for connecting to the database. Example `host=localhost user=postgres dbname=postgres password=mypassword sslmode=disable`
+        * In the tags section, which is `[inputs.postgresql_extensible.tags]`
             * `environment` - This is the deployment environment where the postgresql cluster resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
             * `db_cluster` - Enter a name to identify this PostgreSQL cluster. This cluster name will be shown in the Sumo Logic dashboards. For example:  analytics-dbcluster, webapp-dbcluster
 
@@ -136,7 +136,7 @@ Follow the steps below to collect metrics from a Kubernetes environment:
 * `telegraf.influxdata.com/class: sumologic-prometheus` - This instructs the Telegraf operator what output to use. This should not be changed.
 * `prometheus.io/scrape: "true"` - This ensures our Prometheus plugin will scrape the metrics.
 * `prometheus.io/port: "9273"` - This tells Prometheus what ports to scrape metrics from. This should not be changed.
-* telegraf.influxdata.com/inputs
+* `telegraf.influxdata.com/inputs`
     * In the tags sections **[inputs.postgresql_extensible.tags]**
         * **component=** **“database”** - This value is used by Sumo Logic apps to identify application components.
         * **db_system=** **“postgresql”** - This value identifies the database system.
@@ -159,7 +159,7 @@ Follow the steps below to collect metrics from a Kubernetes environment:
     2. Collecting metrics from multiple databases (Optional)
 
 
-  If you want to monitor multiple databases then you can copy and paste the text from this [file](https://sumologic-app-data.s3.amazonaws.com/dashboards/PostgreSQL/postgresql_annotations_kubernetes_multiple_db.txt) and create another [[inputs.postgresql_extensible]] section and add it in your annotations. This section contains only those queries which are meant to be run for each database.
+  If you want to monitor multiple databases then you can copy and paste the text from this [file](https://sumologic-app-data.s3.amazonaws.com/dashboards/PostgreSQL/postgresql_annotations_kubernetes_multiple_db.txt) and create another `[[inputs.postgresql_extensible]]` section and add it in your annotations. This section contains only those queries which are meant to be run for each database.
 
 
     Here is an example [sample_postgresql_annotations_kubernetes_multiple_db.txt](https://sumologic-app-data.s3.amazonaws.com/dashboards/PostgreSQL/sample_postgresql_annotations_kubernetes_multiple_db.txt).
@@ -379,9 +379,9 @@ This section provides instructions for configuring metrics collection for the Su
 
         Here’s an explanation for additional values set by this Telegraf configuration that we request you **please do not modify these values** as they will cause the Sumo Logic apps to not function correctly.
 
-* **data_format** = “prometheus” In the output plugins section which is [[outputs.sumologic]]  This indicates that metrics should be sent in the Prometheus format to Sumo Logic
-* **component **= “database” - In the input plugins section which is [[inputs.postgresql_extensible.tags]] - This value is used by Sumo Logic apps to identify application components.
-* **db_system** = “postgresql” - In the input plugins sections which is [inputs.postgresql_extensible.tags]] -  This value identifies the database system.
+* **data_format** = “prometheus” In the output plugins section which is `[[outputs.sumologic]]`  This indicates that metrics should be sent in the Prometheus format to Sumo Logic
+* `component = “database”` - In the input plugins section which is `[[inputs.postgresql_extensible.tags]]` - This value is used by Sumo Logic apps to identify application components.
+* `db_system = “postgresql”` - In the input plugins sections which is `[[inputs.postgresql_extensible.tags]]` -  This value identifies the database system.
 
         For other optional parameters like databases, max_lifetime please refer to [this plugin ](https://github.com/influxdata/telegraf/blob/master/plugins/inputs/postgresql_extensible/README.md)documentation for configuring the postgresql_extensible input plugin for Telegraf.
 
@@ -401,7 +401,7 @@ This section provides instructions for configuring metrics collection for the Su
     5. (Optional)Collecting metrics from multiple databases
 
 
-        If you want to monitor multiple databases then you can copy and paste the text from this [file](https://sumologic-app-data.s3.amazonaws.com/dashboards/PostgreSQL/postgresql_input_output_plugin_onprem_multiple_db.txt) and create another [[inputs.postgresql_extensible]] section. This section contains only those queries which are meant to be run for each database.
+        If you want to monitor multiple databases then you can copy and paste the text from this [file](https://sumologic-app-data.s3.amazonaws.com/dashboards/PostgreSQL/postgresql_input_output_plugin_onprem_multiple_db.txt) and create another `[[inputs.postgresql_extensible]]` section. This section contains only those queries which are meant to be run for each database.
 
 
             Here is an example [sample_telegraf_multiple.conf](https://sumologic-app-data.s3.amazonaws.com/dashboards/PostgreSQL/sample_postgresql_onprem_telegraf_multiple_db.conf)

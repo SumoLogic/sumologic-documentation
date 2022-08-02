@@ -7,7 +7,7 @@ description: Provides you a complete overview of your GitLab’s builds, deploym
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/app-development/gitlab.png')} alt="DB icon" width="50"/>
+<img src={useBaseUrl('img/integrations/app-development/gitlab.png')} alt="Thumbnail icon" width="50"/>
 
 The Sumo Logic App for GitLab provides you a complete overview of your GitLab’s builds, deployments, pipelines, issues, merge requests, and commits. The integration listens for GitLab events and uses the event data to populate the pre-configured Dashboards.
 

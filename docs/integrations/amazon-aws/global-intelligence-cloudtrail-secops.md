@@ -7,7 +7,7 @@ description: The Global Intelligence for AWS CloudTrail App enables you to detec
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/amazon-aws/gi-secops.png')} alt="DB icon" width="50"/>
+<img src={useBaseUrl('img/integrations/amazon-aws/gi-secops.png')} alt="Thumbnail icon" width="50"/>
 
 This feature is available in the following account plans.
 

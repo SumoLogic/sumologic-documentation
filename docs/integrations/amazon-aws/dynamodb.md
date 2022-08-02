@@ -7,7 +7,7 @@ description: The Sumo App for DynamoDB provides operational insight into your da
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/amazon-aws/dynamodb.png')} alt="DB icon" width="50"/>
+<img src={useBaseUrl('img/integrations/amazon-aws/dynamodb.png')} alt="Thumbnail icon" width="50"/>
 
 
 Amazon DynamoDB is a fast and flexible NoSQL database service that provides consistent, single-digit millisecond latency at any scale. For more details see here.

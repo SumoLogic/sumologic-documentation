@@ -7,7 +7,7 @@ description: Allows you to view the events, logins, and security status of your 
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/hosts-operating-systems/linux-transparent.png')} alt="DB icon" width="75"/>
+<img src={useBaseUrl('img/integrations/hosts-operating-systems/linux-transparent.png')} alt="Thumbnail icon" width="75"/>
 
 The Sumo app for Linux allows you to view information about events, logins, and the security status of your Linux system. The app consists of predefined searches and three dashboards that provide visibility into your environment for real-time or historical analysis.
 

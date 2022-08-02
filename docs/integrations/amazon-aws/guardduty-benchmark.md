@@ -7,7 +7,7 @@ description: The Sumo Logic Amazon GuardDuty Benchmark App integrates Global Int
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/amazon-aws/guardduty-benchmark.png')} alt="DB icon" width="50"/>
+<img src={useBaseUrl('img/integrations/amazon-aws/guardduty-benchmark.png')} alt="Thumbnail icon" width="50"/>
 
 :::sumo Availability
 For Trial and Enterprise account plans.

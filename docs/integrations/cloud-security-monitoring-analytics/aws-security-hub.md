@@ -7,6 +7,8 @@ description: The Sumo Logic AWS Security Hub app is designed to extract key find
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
+<img src={useBaseUrl('img/integrations/amazon-aws/security-hub.png')} alt="Thumbnail icon" width="50"/>
+
 The Sumo Logic AWS Security Hub app is designed to extract key findings from the AWS Security Hub, which is designed to centrally view and manage security alerts and automate security checks. The additional level of analysis within these dashboards surfaces the most relevant findings and takes a focused approach to improve overall security posture. Finding types and severity levels act as leading indicators for security engineers to go into security incidents with the most relevant technical details to address active threats.
 
 ## Collecting Findings
@@ -38,7 +40,7 @@ Version selection is applicable only to a few apps currently. For more informati
 Once an app is installed, it will appear in your **Personal** folder, or another folder that you specified. From here, you can share it with your organization.
 
 Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
-  
+
 
 ## Viewing AWS Security Hub Dashboards
 

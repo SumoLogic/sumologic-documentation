@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-<img src={useBaseUrl('img/integrations/databases/databases-icon.png')} alt="DB icon" width="75"/>
+<img src={useBaseUrl('img/integrations/databases/databases-icon.png')} alt="Thumbnail icon" width="75"/>
 
 Couchbase, a modern database for enterprise applications, is a distributed document database with a powerful search engine and in-built operational and analytical capabilities. It brings the power of NoSQL to the edge and provides fast, efficient bidirectional synchronization of data between the edge and the cloud. The Sumo Logic app for Couchbase helps you monitor activity in Couchbase. The pre-configured dashboards provide insight into the Health of the Cluster, the Status of the Buckets, I/O of Reading/Writing, Errors, the Events of Couchbase Servers that help you understand your clusters.
 
@@ -132,7 +132,7 @@ If you haven’t defined a cluster in Couchbase, then enter ‘**default**’ fo
 
 Enter in values for the following parameters:
 
-* telegraf.influxdata.com/inputs - This contains the required configuration for the Telegraf Couchbase Input plugin. Refer[ ](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/redis)to this [doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/couchbase) for more information on configuring the Couchbase input plugin for Telegraf. Note: As telegraf will be run as a sidecar the host should always be localhost.
+* `telegraf.influxdata.com/inputs` - This contains the required configuration for the Telegraf Couchbase Input plugin. Refer[ ](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/redis)to this [doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/couchbase) for more information on configuring the Couchbase input plugin for Telegraf. Note: As telegraf will be run as a sidecar the host should always be localhost.
     * Input plugins section, which is `[[inputs.couchbase]]`:
         * servers: This is the endpoint of the management portal of couchbase server. For detail, see this [doc](https://docs.couchbase.com/server/current/manage/manage-ui/manage-ui.html) .
     * In the tags section,  which is `[inputs.couchbase.tags]`

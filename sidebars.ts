@@ -1743,7 +1743,7 @@ module.exports = {
           'integrations/google/kubernetes-engine',
           {
             type: 'category',
-            label: 'Workspace',
+            label: 'Google Workspace',
             collapsible: true,
             collapsed: true,
             link: {type: 'doc', id: 'integrations/google/workspace/index'},
@@ -1933,7 +1933,6 @@ module.exports = {
       collapsed: true,
       link: {type: 'doc', id: 'integrations/sumo-apps/index'},
       items: [
-        'integrations/sumo-apps/request-enterprise-apps',
         'integrations/sumo-apps/audit',
         'integrations/sumo-apps/data-volume',
         'integrations/sumo-apps/data-volume-legacy',
@@ -1950,31 +1949,8 @@ module.exports = {
       collapsed: true,
       link: {type: 'doc', id: 'integrations/web-servers/index'},
       items: [
-
-        {
-        type: 'category',
-        label: 'Apache',
-        collapsible: true,
-        collapsed: true,
-        link: {type: 'doc', id: 'integrations/web-servers/apache/index'},
-        items: [
-          'integrations/web-servers/apache/collect-logs-metrics',
-          'integrations/web-servers/apache/install-app-monitors-dashboards',
-          'integrations/web-servers/apache/alerts',
-          ],
-        },
-        {
-        type: 'category',
-        label: 'Apache Tomcat',
-        collapsible: true,
-        collapsed: true,
-        link: {type: 'doc', id: 'integrations/web-servers/apache-tomcat/index'},
-        items: [
-          'integrations/web-servers/apache-tomcat/collect-logs-metrics',
-          'integrations/web-servers/apache-tomcat/install-app-dashboards',
-          'integrations/web-servers/apache-tomcat/alerts',
-          ],
-        },
+        'integrations/web-servers/apache',
+        'integrations/web-servers/apache-tomcat',
         'integrations/web-servers/haproxy',
         'integrations/web-servers/iis-10',
         'integrations/web-servers/nginx',

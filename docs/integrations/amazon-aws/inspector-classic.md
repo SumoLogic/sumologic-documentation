@@ -7,7 +7,7 @@ description: Allows you to monitor your AWS resources for potential security ris
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/amazon-aws/inspector-classic.png')} alt="DB icon" width="50"/>
+<img src={useBaseUrl('img/integrations/amazon-aws/inspector-classic.png')} alt="Thumbnail icon" width="50"/>
 
 
 For information about our newer app for Amazon Inspector, which leverages findings from AWS Security Hub, see Amazon Inspector.

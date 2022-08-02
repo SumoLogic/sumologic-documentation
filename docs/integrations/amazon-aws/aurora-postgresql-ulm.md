@@ -7,7 +7,7 @@ description: The Sumo Logic App for Aurora PostgreSQL uses unified logs and metr
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/amazon-aws/aurora.png')} alt="DB icon" width="50"/>
+<img src={useBaseUrl('img/integrations/amazon-aws/aurora.png')} alt="Thumbnail icon" width="50"/>
 
 The Sumo Logic App for Aurora PostgreSQL uses unified logs and metrics (ULM) to monitor your Aurora PostgreSQL database. The app allows you to monitor the number of connections made, CPU utilization, free memory, network utilization, volume read / write IOPS, disk queue depth, replica lags, latency, throughput and other resource utilization details. With Cloudtrail Logs, the app allows you to identify user, client host and client locations being used to configure Aurora PostgreSQL infrastructure.
 

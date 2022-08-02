@@ -7,7 +7,7 @@ description: The Sumo Logic App for Jira provides insight into Jira user access,
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/app-development/jira.png')} alt="DB icon" width="50"/>
+<img src={useBaseUrl('img/integrations/app-development/jira.png')} alt="Thumbnail icon" width="50"/>
 
 The Sumo Logic App for Jira provides insight into Jira usage, request activity, issues, security, sprint events, and user events.   
 

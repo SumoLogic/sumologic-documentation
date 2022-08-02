@@ -7,7 +7,7 @@ description: The Sumo Logic App for AWS Security Hub leverages findings data fro
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/amazon-aws/security-hub.png')} alt="DB icon" width="50"/>
+<img src={useBaseUrl('img/integrations/amazon-aws/security-hub.png')} alt="Thumbnail icon" width="50"/>
 
 AWS Security Hub is an AWS security service that provides a comprehensive view of your security state within AWS and your compliance with the security industry standards and best practices.
 
