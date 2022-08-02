@@ -13,7 +13,8 @@ The Sumo Logic App for Security Analytics provides Dashboards that allow you to 
 
 ## Prerequisites
 
-This App is available for Sumo Logic Enterprise Security and Enterprise Suite accounts only. It requires a **paid** Professional Services contract to install and configure. You may upgrade your account at any time. If you'd like more information on this App, you can [request](/docs/integrations/sumo-apps/Request-Enterprise-Apps) it by clicking the **Request** button in the Apps section in the Library. A Sumo Logic sales representative will contact you to discuss Professional Services pricing options.
+* **For Sumo Logic Enterprise Security and Enterprise Suite accounts only.** For more information, see [Requesting Sumo Logic Enterprise Apps](/docs/integrations/sumo-apps/index#Requesting-Sumo-Logic-Enterprise-Apps).
+
 
 ## Security Analytics App Dashboards
 

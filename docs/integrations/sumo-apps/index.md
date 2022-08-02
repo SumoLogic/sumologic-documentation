@@ -12,15 +12,17 @@ Sumo Logic provides a number of apps you can use to monitor your Sumo org, for i
 
 ## Requesting Sumo Logic Enterprise Apps
 
-Although most apps can be installed directly from the Library, some apps are not available for instant installation. Enterprise apps, such as the [Sumo Logic App for PCI Compliance](/docs/integrations/pci-compliance/setup) and the [Sumo Logic App for Security Analytics](/docs/integrations/sumo-apps/security-analytics), are available for Sumo Logic Enterprise accounts only, and require a paid Professional Services contract to install and configure. You may upgrade your account at any time. In these instances, an admin can request an estimate.
+Enterprise apps, such as the [Sumo Logic App for PCI Compliance](/docs/integrations/pci-compliance/setup) and the [Sumo Logic App for Security Analytics](/docs/integrations/sumo-apps/security-analytics), are for Sumo Logic Enterprise accounts only and cannot be self-installed. A paid Professional Services contract is required for installment and configuration.
 
-Once a request has been submitted, a support ticket is automatically opened. A representative from Sumo Logic will respond to the request as quickly as possible, generally between one and two business days. Depending on the app that's been requested, Sumo Logic may need additional information, or may need to work with your organization to change the account type to enable some apps.
+You may upgrade your account at any time. In these instances, an admin can request an estimate.
 
 **To request an estimate:**
 
-1. In the App Catalog, search the Enterprise app you'd like.
-2. Click Request App Install.
-3. Select the option to give Sumo Logic agents permission to access your account to install the app, and click Request.
+1. In the **App Catalog**, search for the Enterprise app you'd like.
+2. Click **Request App Install**.
+3. Select the option to give Sumo Logic agents permission to access your account to install the app, and click **Request**.
+
+Once a request has been submitted, a support ticket is automatically opened. A representative from Sumo Logic will respond to your request as soon as possible, generally between one and two business days. Depending on the app that's been requested, Sumo Logic may need additional information, or may need to work with your organization to change the account type to enable some apps.
 
 ## Table of Contents
 

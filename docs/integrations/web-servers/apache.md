@@ -13,7 +13,7 @@ The Apache app is a unified logs and metrics app that helps you monitor the avai
 
 ## Log Types and Metrics
 The Sumo Logic App for Apache assumes:
-* The [NCSA extended/combined log file format ](http://httpd.apache.org/docs/current/mod/mod_log_config.html) has been configured for Apache access logs and the default error log format for Apache Access logs and Apache Error logs. For a list of metrics that are collected and used by the app, see [Apache Metrics](/docs/integrations/web-servers/apache/collect-logs-metrics#Apache-Metrics).
+* The [NCSA extended/combined log file format ](http://httpd.apache.org/docs/current/mod/mod_log_config.html) has been configured for Apache access logs and the default error log format for Apache Access logs and Apache Error logs. For a list of metrics that are collected and used by the app, see [Apache Metrics](#Apache-Metrics).
 
 * The **Apache - Overview** dashboard is based on both Apache logs and metrics.
 * Dashboards in the Metrics folder are based on Apache metrics alone.
@@ -515,11 +515,11 @@ webserver_system=apache webserver_farm=* HTTP (40* OR 41* OR 42* OR 43* OR 44* o
 
 ## Installing Apache Monitors
 
-This section provides instructions for installing the Sumo Logic Monitors for Apache. These instructions assume you have already set up collection as described in the [Collect Logs and Metrics for Apache](/docs/integrations/web-servers/apache/collect-logs-metrics) page.
+This section provides instructions for installing the Sumo Logic Monitors for Apache. These instructions assume you have already set up collection as described in the [Collecting Logs and Metrics for Apache](#Collecting-Logs-and-Metrics-for-Apache) page.
 
 Sumo Logic has provided out-of-the-box alerts available through [Sumo Logic monitors](/docs/alerts/monitors/index.md) to help you proactively monitor your Apache Web servers and farms. These monitors are built based on metrics and logs datasets and include pre-set thresholds based on industry best practices and recommendations.
 
-For details about individual alerts, see [this page](/docs/integrations/web-servers/Apache/Alerts). To install these alerts, you need to have the Manage Monitors role capability. There are limits to how many alerts can be enabled. For more information, see [Monitors](/docs/alerts/monitors#Rules) for details.
+For details about individual alerts, see [this page](#Apache-Alerts). To install these alerts, you need to have the Manage Monitors role capability. There are limits to how many alerts can be enabled. For more information, see [Monitors](/docs/alerts/monitors#Rules) for details.
 
 You can install monitors by importing a JSON file or using a Terraform script.
 
