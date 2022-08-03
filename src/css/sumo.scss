@@ -514,6 +514,61 @@ html[data-theme='dark'] .navbar-item-github:before {
 }
 
 
+//BACK TO HOMEPAGE
+
+.backtohome-404 {
+  border-bottom: 2px solid var(--ifm-toc-border-color);
+}
+
+.backtohome-404 {
+  background-color: #F1F1F1;
+  color: white;
+  padding: 8px 25px;
+  font-size: 16px;
+  text-decoration: none;
+  margin-right: 10px;
+  border: 1px solid #FFFFFF;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.backtohome-404:hover {
+  border: 2px solid #3578e5;
+  color: white;
+  font-size: 16px;
+  background-color: #F1F1F1;
+}
+
+.backtohome-404-mobile {
+  background-color: #F1F1F1;
+  color: white;
+  padding: 8px 25px;
+  font-weight: 600;
+  text-decoration: none;
+  border: 1px solid #3578e5;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+@media screen and (max-width: 996px) {
+  .backtohome-404 {
+    margin-right: 50px;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .navbar-trial {
+    display: none;
+  }
+}
+
+
+
+
+
+
+
+
 // Admonitions
 .alert {
   border-radius: 0;
