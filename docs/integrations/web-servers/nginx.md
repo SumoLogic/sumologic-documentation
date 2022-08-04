@@ -71,6 +71,8 @@ Sumo Logic supports the collection of logs and metrics data from Nginx in both K
 
 In Kubernetes environments, we use the Telegraf Operator, which is packaged with our Kubernetes collection. You can learn more about it [here](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/telegraf-collection-architecture). The diagram below illustrates how data is collected from Nginx in Kubernetes environments. In the architecture shown below, there are four services that make up the metric collection pipeline: Telegraf, Prometheus, Fluentd, and FluentBit.
 
+<img src={useBaseUrl('img/integrations/web-servers/nginxk8s.png')} alt="Web servers" />
+
 The first service in the pipeline is Telegraf. Telegraf collects metrics from Nginx. Note that we’re running Telegraf in each pod we want to collect metrics from as a sidecar deployment: i.e. Telegraf runs in the same pod as the containers it monitors. Telegraf uses the [Nginx input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/nginx) to obtain metrics. (For simplicity, the diagram doesn’t show the input plugins.) The injection of the Telegraf sidecar container is done by the Telegraf Operator. We also have Fluentbit that collects logs written to standard out and forwards them to FluentD, which in turn sends all the logs and metrics data to a Sumo Logic HTTP Source.
 
 Follow the below instructions to set up the metric collection:
@@ -176,7 +178,7 @@ For all other parameters please see [this doc](/docs/send-data/collect-from-othe
     2. Install the Sumo Logic [tailing sidecar operator](https://github.com/SumoLogic/tailing-sidecar/tree/main/operator#deploy-tailing-sidecar-operator).
     3. Add the following annotation in addition to the existing annotations.
 
-```sql
+```xml
 annotations:
   tailing-sidecar: sidecarconfig;<mount>:<path_of_nginx_log_file>/<Nginx_log_file_name>
 ```
@@ -189,7 +191,7 @@ annotations:
 ```
 
 1. Make sure that the Nginx pods are running and annotations are applied by using the command:
-```
+```bash
 kubectl describe pod <nginx_pod_name>
 ```
 2. Sumo Logic Kubernetes collection will automatically start collecting logs from the pods having the annotations defined above.
@@ -225,7 +227,11 @@ if (!isEmpty(pod_labels_environment), pod_labels_environment, "") as environment
 </TabItem>
 <TabItem value="non-k8s">
 
-Sumo Logic uses the Telegraf operator for Nginx metric collection and the [Installed Collector](/docs/send-data/installed-collectors/about-installed-collectors) for collecting Nginx logs. The diagram below illustrates the components of the  Nginx collection in a non-Kubernetes environment. Telegraf uses the[ Nginx input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/nginx) to obtain Nginx metrics and the Sumo Logic output plugin to send the metrics to Sumo Logic. Logs from Nginx are collected by a [Local File Source](/docs/send-data/Sources/sources-installed-collectors/Local-File-Source).
+Sumo Logic uses the Telegraf operator for Nginx metric collection and the [Installed Collector](/docs/send-data/installed-collectors/about-installed-collectors) for collecting Nginx logs. The diagram below illustrates the components of the Nginx collection in a non-Kubernetes environment.
+
+<img src={useBaseUrl('img/integrations/web-servers/nginx-nonk8s.png')} alt="Web servers" />
+
+Telegraf uses the[ Nginx input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/nginx) to obtain Nginx metrics and the Sumo Logic output plugin to send the metrics to Sumo Logic. Logs from Nginx are collected by a [Local File Source](/docs/send-data/Sources/sources-installed-collectors/Local-File-Source).
 
 The process to set up collection for Nginx data is done through the following steps:
 
@@ -344,11 +350,10 @@ Create or modify `telegraf.conf` and copy and paste the text below:
   data_format = "prometheus"
 ```
 
-
 Enter values for fields annotated with `<VALUE_TO_BE_CHANGED>` to the appropriate values. Do not include the brackets (`< >`) in your final configuration
 
 * Input plugins section, which is `[[inputs.nginx]]`:
-    * **urls** - An array of Nginx stub_status URI to gather stats. For more information on additional parameters to configure the Nginx input plugin for Telegraf see[ this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/nginx#nginx-input-plugin).
+    * `urls` - An array of Nginx stub_status URI to gather stats. For more information on additional parameters to configure the Nginx input plugin for Telegraf see[ this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/nginx#nginx-input-plugin).
 * In the tags section, which is `[inputs.nginx.tags]`:
     * `environment` - This is the deployment environment where the Nginx farm identified by the value of **servers** resides. For example; dev, prod, or QA. While this value is optional we highly recommend setting it.
     * **webserver_farm** - Enter a name to identify this Nginx farm. This farm name will be shown in our dashboards.

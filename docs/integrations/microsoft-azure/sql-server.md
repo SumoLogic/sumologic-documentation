@@ -69,9 +69,7 @@ Sumo Logic supports collection of logs and metrics data from SQL Server in both 
 
 <TabItem value="k8s">
 
-<img src='https://upload.wikimedia.org/wikipedia/commons/3/39/Kubernetes_logo_without_workmark.svg' alt="k8s icon" width="30"/>
-
-In Kubernetes environments, we use the Telegraf Operator, which is packaged with our Kubernetes collection ([learn more](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/telegraf-collection-architecture)). The diagram below illustrates how data is collected from SQL Server in Kubernetes environments. In the architecture shown below, there are four services that make up the metric collection pipeline: Telegraf, Prometheus, Fluentd and FluentBit.
+In Kubernetes environments, we use the Telegraf Operator, which is packaged with our Kubernetes collection ([learn more](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/telegraf-collection-architecture)). The diagram below illustrates how data is collected from SQL Server in Kubernetes environments. In the architecture shown below, there are four services that make up the metric collection pipeline: Telegraf, Prometheus, Fluentd and FluentBit.<br/><img src={useBaseUrl('img/integrations/microsoft-azure/sqlk8s.png')} alt="sqlk8s.png" />
 
 The first service in the pipeline is Telegraf. Telegraf collects metrics from SQL Server. Note that we’re running Telegraf in each pod we want to collect metrics from as a sidecar deployment: i.e. Telegraf runs in the same pod as the containers it monitors. Telegraf uses the [SQL Server input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/sqlserver) to obtain metrics. (For simplicity, the diagram doesn’t show the input plugins.) The injection of the Telegraf sidecar container is done by the Telegraf Operator. We also have Fluentbit that collects logs written to standard out and forwards them to FluentD, which in turn sends all the logs and metrics data to a Sumo Logic HTTP Source.
 
@@ -99,7 +97,7 @@ In Kubernetes environments, we use the Telegraf Operator, which is packaged with
 
 1. **[Set up Kubernetes Collection with the Telegraf Operator.](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf.md#Install_Telegraf_in_a_Kubernetes_environment)**
 2. **Add annotations on your SQL Server pods**. Before you add annotations, you need to create a login on every SQL Server pod  you want to monitor, with following script:
-  ```
+  ```sql
   USE master;
   GO
   CREATE LOGIN [Username_CHANGE_ME] WITH PASSWORD=N'Password_CHANGE_ME';
@@ -157,7 +155,7 @@ This section explains the steps to collect SQL Server logs from a Kubernetes env
 1. **(Recommended Method) Add labels on your SQL server pods to capture logs from standard output.**. Make sure that the logs from SQL Server are sent to stdout. Follow the instructions below to capture SQL Server logs from stdout on Kubernetes.
 
 1. Apply following labels to the SQL server pods:
-   ```
+   ```sql
    environment: "prod_CHANGE_ME"
    component: "database"
    db_system: "SQLserver"
@@ -180,22 +178,23 @@ This section explains the steps to collect SQL Server logs from a Kubernetes env
 1. Determine the location of the SQL server log file on Kubernetes. This can be determined from the SQLserver.conf for your SQL server cluster along with the mounts on the SQL server pods.
 2. Install the Sumo Logic [tailing sidecar operator](https://github.com/SumoLogic/tailing-sidecar/tree/main/operator#deploy-tailing-sidecar-operator).
 3. Add the following annotation in addition to the existing annotations.
-
-
-```
+```xml
 annotations:
   tailing-sidecar: sidecarconfig;<mount>:<path_of_SQLserver_log_file>/<SQLserver_log_file_name>
+```
 
 Example:
 
+```bash
 annotations:
   tailing-sidecar: sidecarconfig;data:/var/opt/mssql/errorlog
-
 ```
 
 
-
-1. Make sure that the SQL server pods are running and annotations are applied by using the command: **`kubectl describe pod <SQLserver_pod_name>`
+1. Make sure that the SQL server pods are running and annotations are applied by using the command:
+```xml
+kubectl describe pod <SQLserver_pod_name>
+```
 2. Sumo Logic Kubernetes collection will automatically start collecting logs from the pods having the annotations defined above.
 3. Verify logs in Sumo Logic.
 1. Add a FER to normalize the fields in Kubernetes environments \
@@ -209,23 +208,19 @@ Labels created in Kubernetes environments automatically are prefixed with pod_la
 * **Rule Name**. Enter the name as **App Observability - Proxy**.
 * **Applied At.** Choose **Ingest Time**
 * **Scope**. Select **Specific Data**
-    * **Scope**: Enter the following keyword search expression: \
-pod_labels_environment=* pod_labels_component=database \
-pod_labels_db_system=* \
+    * **Scope**: Enter the following keyword search expression:
+```sql
+pod_labels_environment=* pod_labels_component=database
+pod_labels_db_system=*
 pod_labels_db_cluster=*
+```
 * **Parse Expression**. Enter the following parse expression:
-```
+```sql
 if (!isEmpty(pod_labels_environment), pod_labels_environment, "") as environment
-```
-
-```
 | pod_labels_component as component
 | pod_labels_db_system as db_system
 | pod_labels_db_cluster as db_cluster
-
 ```
-
-
 
 1. Click **Save** to create the rule.
 
@@ -233,7 +228,9 @@ if (!isEmpty(pod_labels_environment), pod_labels_environment, "") as environment
 </TabItem>
 <TabItem value="non-k8s">
 
-In Non-Kubernetes environments, Sumo Logic uses the Telegraf operator for SQL Server metric collection and the [Installed Collector](/docs/send-data/installed-collectors/about-installed-collectors) for collecting SQL Server logs. The diagram below illustrates the components of the SQL Server collection in a non-Kubernetes environment. Telegraf uses the[ SQL Server input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/sqlserver) to obtain SQL Server metrics and the Sumo Logic output plugin to send the metrics to Sumo Logic. Logs from SQL Server are collected by a [Local File source](/docs/send-data/Sources/sources-installed-collectors/Local-File-Source).
+In Non-Kubernetes environments, Sumo Logic uses the Telegraf operator for SQL Server metric collection and the [Installed Collector](/docs/send-data/installed-collectors/about-installed-collectors) for collecting SQL Server logs. The diagram below illustrates the components of the SQL Server collection in a non-Kubernetes environment. <br/><img src={useBaseUrl('img/integrations/microsoft-azure/sql-nonk8s.png')} alt="sql-nonk8s.png" /> 
+
+Telegraf uses the [SQL Server input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/sqlserver) to obtain SQL Server metrics and the Sumo Logic output plugin to send the metrics to Sumo Logic. Logs from SQL Server are collected by a [Local File source](/docs/send-data/Sources/sources-installed-collectors/Local-File-Source).
 
 
 The process to set up collection for SQL Server data is done through the following steps:
@@ -254,8 +251,6 @@ The process to set up collection for SQL Server data is done through the followi
 
 
 This section provides instructions for configuring log collection for SQL Server running on a non-Kubernetes environment for the Sumo Logic App for SQL Server.
-
-
 
 1. **Make sure logging is turned on in SQL Server.** Follow [this documentation](https://docs.microsoft.com/en-us/sql/database-engine/configure-windows/scm-services-configure-sql-server-error-logs?view=sql-server-ver15) to enable it.
 

@@ -102,7 +102,7 @@ If you are using Memcached in a non-Kubernetes environment create the fields:
 
 In Kubernetes environments, we use the Telegraf Operator, which is packaged with our Kubernetes collection. You can learn more about it[ here](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/telegraf-collection-architecture).
 
-The diagram below illustrates how data is collected from Memcached in a Kubernetes environment. In the architecture shown below, there are four services that make up the metric collection pipeline: Telegraf, Prometheus, Fluentd, and FluentBit.
+The diagram below illustrates how data is collected from Memcached in a Kubernetes environment. In the architecture shown below, there are four services that make up the metric collection pipeline: Telegraf, Prometheus, Fluentd, and FluentBit.<img src={useBaseUrl('img/integrations/databases/memcachedk8s.png')} alt="memcached"/>
 
 The first service in the pipeline is Telegraf. Telegraf collects metrics from Memcached. Note that we’re running Telegraf in each pod we want to collect metrics from as a sidecar deployment, for example, Telegraf runs in the same pod as the containers it monitors. Telegraf uses the [Memcached input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/memcached#configuration) to obtain metrics. (For simplicity, the diagram doesn’t show the input plugins.) The injection of the Telegraf sidecar container is done by the Telegraf Operator. We also have Fluentbit that collects logs written to standard out and forwards them to FluentD, which in turn sends all the logs and metrics data to a Sumo Logic HTTP Source.
 
@@ -132,8 +132,7 @@ In Kubernetes environments, we use the Telegraf Operator, which is packaged with
 2. Add annotations on your Memcached pods \
 On your Memcached Pods, add the following annotations:
 
-
-```
+```sql
  annotations:
     telegraf.influxdata.com/class: sumologic-prometheus
     prometheus.io/scrape: "true"
@@ -160,8 +159,6 @@ Please enter in values for the following parameters (marked in `CHANGE_ME` above
 
 Here’s an explanation for additional values set by this configuration that we request you please do not modify as they will cause the Sumo Logic apps to not function correctly.
 
-
-
 * `telegraf.influxdata.com/class`: sumologic-prometheus - This instructs the Telegraf operator what output to use. This should not be changed.
 * `prometheus.io/scrape`: "true" - This ensures our Prometheus will scrape the metrics.
 * `prometheus.io/port`: "9273" - This tells prometheus what ports to scrape on. This should not be changed.
@@ -186,9 +183,6 @@ This section explains the steps to collect Memcached logs from a Kubernetes envi
 Follow the instructions below to capture Memcached logs from stdout on Kubernetes.
 
 1. Apply the following labels to the Memcached pods:
-
-     labels:
-
 ```bash
 environment: "prod_CHANGE_ME"
 component: "database"
@@ -204,44 +198,34 @@ Please enter in values for the following parameters:
     Here’s an explanation for additional values set by this configuration that we request you **please do not modify** as they will cause the Sumo Logic apps to not function correctly.
 
 * `component: “database”` - This value is used by Sumo Logic apps to identify application components.
-* **db_system**: “memcached” - This value identifies the database system.
+* `db_system: “memcached”` - This value identifies the database system.
 
-    For all other parameters please see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#Configuring-Telegraf) for more properties that can be configured in the Telegraf agent globally.
+  For all other parameters please see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#Configuring-Telegraf) for more properties that can be configured in the Telegraf agent globally.
 
+  2. The Sumologic-Kubernetes-Collection will automatically capture the logs from stdout and will send the logs to Sumologic. For more information on deploying Sumologic-Kubernetes-Collection,[ visit](/docs/integrations/containers-orchestration/Kubernetes#Collect_Logs_and_Metrics_for_the_Kubernetes_App) here.
 
-    2. The Sumologic-Kubernetes-Collection will automatically capture the logs from stdout and will send the logs to Sumologic. For more information on deploying Sumologic-Kubernetes-Collection,[ visit](/docs/integrations/containers-orchestration/Kubernetes#Collect_Logs_and_Metrics_for_the_Kubernetes_App) here.
-
-
-    3. Verify logs in Sumo Logic.
+  3. Verify logs in Sumo Logic.
 
 1. (Optional) Collecting Memcached Logs from a Log File
 
 If your Memcached chart/pod is writing its logs to log files, you can use a [sidecar](https://github.com/SumoLogic/tailing-sidecar/tree/main/operator) to send log files to standard out. To do this:
 
 
-
 1. Install the Sumo Logic [tailing sidecar operator](https://github.com/SumoLogic/tailing-sidecar/tree/main/operator#deploy-tailing-sidecar-operator).
 2. Add the following annotation in addition to the existing annotations.
-
-
-```bash
+```xml
 annotations:
   tailing-sidecar: sidecarconfig;<mount>:<path_of_Memcached_log_file>/<Memcached_log_file_name>
 ```
 
-
 Example:
-
-
 ```bash
 annotations:
     tailing-sidecar: sidecarconfig;data:/var/bitnami/memcached/logs/memcached.log
 ```
 
-
-
 1. Make sure that the Memcached pods are running and annotations are applied by using the command:
-```
+```bash
 kubectl describe pod <Memcached_pod_name>
 ```
 2. Sumo Logic Kubernetes collection will automatically start collecting logs from the pods having the annotations defined above.
@@ -278,7 +262,9 @@ if (!isEmpty(pod_labels_environment), pod_labels_environment, "") as environment
 </TabItem>
 <TabItem value="non-k8s">
 
-In non-kubernetes environments, we use the Telegraf operator for Memcached metric collection and Sumo Logic Installed Collector for collecting Memcached logs. The diagram below illustrates the components of the Memcached collection in a non-Kubernetes environment. Telegraf runs on the same system as Memcached and uses the[ Memcached input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/memcached#configuration) to obtain Memcached metrics. The Sumo Logic output plugin to send the metrics to Sumo Logic. Logs from Memcached on the other hand are sent to a Sumo Logic Local File source.
+In non-kubernetes environments, we use the Telegraf operator for Memcached metric collection and Sumo Logic Installed Collector for collecting Memcached logs. The diagram below illustrates the components of the Memcached collection in a non-Kubernetes environment. <img src={useBaseUrl('img/integrations/databases/memcachednonk8s.png')} alt="memcached"/>
+
+Telegraf runs on the same system as Memcached and uses the[ Memcached input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/memcached#configuration) to obtain Memcached metrics. The Sumo Logic output plugin to send the metrics to Sumo Logic. Logs from Memcached on the other hand are sent to a Sumo Logic Local File source.
 
 This section provides instructions for configuring logs and metrics collection for the Sumo Logic App for Memcached. Follow the below instructions to set up the logs and metrics collection:
 

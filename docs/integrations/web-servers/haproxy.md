@@ -61,7 +61,7 @@ May 13 08:24:43 localhost haproxy[21813]: \
 ### Sample Query
 
 This query example is from the [**HAProxy - Overview** dashboard](#overview) > **Top 5 Clients causing Errors** panels.
-```
+```sql
 <HAProxy_Cluster_Filter> proxy_system=haproxy component=proxy
 | json "log" as _rawlog nodrop
 | if (isEmpty(_rawlog), _raw, _rawlog) as haproxy_log_message
@@ -222,20 +222,20 @@ For all other parameters see [this doc](/docs/send-data/collect-from-other-data-
 1. Determine the location of the HAProxy log file on Kubernetes. This can be determined from the HAProxy.conf for your HAProxy cluster along with the mounts on the HAProxy pods.
 2. Install the Sumo Logic [tailing sidecar operator](https://github.com/SumoLogic/tailing-sidecar/tree/main/operator#deploy-tailing-sidecar-operator).
 3. Add the following annotation in addition to the existing annotations.
-```
+```xml
 annotations:
   tailing-sidecar: sidecarconfig;<mount>:<path_of_Haproxy_log_file>/<Haproxy_log_file_name>
 ```
 
 Example:
-```
+```bash
 annotations:
   tailing-sidecar: sidecarconfig;data:/var/log//haproxy.log
 ```
 
 
 1. Make sure that the HAProxy pods are running and annotations are applied by using the command:
-```
+```xml
 kubectl describe pod <haproxy_pod_name>
 ```
 2. Sumo Logic Kubernetes collection will automatically start collecting logs from the pods having the annotations defined above.

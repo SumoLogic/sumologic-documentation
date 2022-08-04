@@ -6,6 +6,8 @@ description: Gives insight into website visitor behavior patterns, monitors serv
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 <img src={useBaseUrl('img/integrations/web-servers/apache.png')} alt="Web servers icon" width="100"/>
 
@@ -100,9 +102,9 @@ Sumo Logic supports collection of logs and metrics data from Apache in both Kube
 
 In Kubernetes environments, we use the Telegraf Operator, which is packaged with our Kubernetes collection. You can learn more about it[ here](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/telegraf-collection-architecture).The diagram below illustrates how data is collected from Apache in Kubernetes environments. In the architecture shown below, there are four services that make up the metric collection pipeline: Telegraf, Prometheus, Fluentd and FluentBit.
 
-The first service in the pipeline is Telegraf. Telegraf collects metrics from Apache. Note that we’re running Telegraf in each pod we want to collect metrics from as a sidecar deployment: i.e. Telegraf runs in the same pod as the containers it monitors. Telegraf uses the [Apache input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/apache) to obtain metrics. (For simplicity, the diagram doesn’t show the input plugins.) The injection of the Telegraf sidecar container is done by the Telegraf Operator. We also have Fluentbit that collects logs written to standard out and standard error and forwards them to FluentD, which in turn sends all the logs and metrics data to a Sumo Logic HTTP Source.
+<img src={useBaseUrl('img/integrations/web-servers/Apache-flow.png')} alt="Apache" />
 
-<img src={useBaseUrl('img/integrations/web-servers/Apache-flow.png')} alt="test" />
+The first service in the pipeline is Telegraf. Telegraf collects metrics from Apache. Note that we’re running Telegraf in each pod we want to collect metrics from as a sidecar deployment: i.e. Telegraf runs in the same pod as the containers it monitors. Telegraf uses the [Apache input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/apache) to obtain metrics. (For simplicity, the diagram doesn’t show the input plugins.) The injection of the Telegraf sidecar container is done by the Telegraf Operator. We also have Fluentbit that collects logs written to standard out and standard error and forwards them to FluentD, which in turn sends all the logs and metrics data to a Sumo Logic HTTP Source.
 
 Follow the instructions below to set up the metric collection:
 
@@ -194,7 +196,7 @@ Collect Apache logs written to standard output and standard error
 If your Apache helm chart/pod is writing the logs to standard output or standard error then follow the steps listed below to collect the logs:
 
 1. On your Apache Pods, add the following pod labels
-```sql
+```xml
 environment: "<prod_CHANGE_ME>"
 component: "webserver"
 webserver_system: "apache"
@@ -213,7 +215,7 @@ Here’s an explanation for additional values set by this configuration. **Do no
 For all other parameters, please see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#Configuring-Telegraf) for more properties that can be configured in the Telegraf agent globally.
 
 Make sure that the Apache pods are running and annotations are applied by using the command:
-```bash
+```xml
 kubectl describe pod <apache_pod_name>
 ```
 
@@ -275,7 +277,7 @@ This section provides instructions for configuring metrics collection for the Su
 * Uncomment following line if not already done in the httpd.conf
     * LoadModule status_module libexec/apache2/mod_status.so
 * Add following lines in the httpd.conf after that
-```
+```xml
 <IfModule status_module>
   ExtendedStatus On
   <Location /server-status>

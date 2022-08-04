@@ -71,7 +71,7 @@ Please click on the appropriate links below based on the environment where your 
 
 <TabItem value="k8s">
 
-In Kubernetes environments, we use the Telegraf Operator, which is packaged with our Kubernetes collection. You can learn more about it [here](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/telegraf-collection-architecture). The diagram below illustrates how data is collected from MariaDB  in Kubernetes environments. In the architecture shown below, there are four services that make up the metric collection pipeline:
+In Kubernetes environments, we use the Telegraf Operator, which is packaged with our Kubernetes collection. You can learn more about it [here](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/telegraf-collection-architecture). The diagram below illustrates how data is collected from MariaDB  in Kubernetes environments. In the architecture shown below, there are four services that make up the metric collection pipeline:<br/><img src={useBaseUrl('img/integrations/databases/mariadbk8s.png')} alt="mariadb" />
 
 * Telegraf
 * Prometheus
@@ -169,11 +169,10 @@ Make sure that the logs from MariaDB are sent to stdout. Follow the instructions
 
 1. Apply following labels to the MariaDBpod:
 ```sql
-labels:
-    environment: "prod_CHANGEME"
-    component: "database"
-    db_system: "mariadb"
-    db_cluster "Cluster_CHANGEME"
+environment: "prod_CHANGEME"
+component: "database"
+db_system: "mariadb"
+db_cluster "Cluster_CHANGEME"
 ```
 
 Enter in values for the following parameters (marked in **CHANGE_ME** above):
@@ -206,7 +205,7 @@ annotations:
 ```
 
 1. Make sure that the MariaDB pods are running and annotations are applied by using the command:
-```
+```bash
 kubectl describe pod <MariaDB_pod_name>
 ```
 2. Sumo Logic Kubernetes collection will automatically start collecting logs from the pods having the annotations defined above.
@@ -216,7 +215,6 @@ kubectl describe pod <MariaDB_pod_name>
 1. **Go to Manage Data > Logs > Field Extraction Rules.**
 2. **Click the + Add button on the top right of the table.**
 3. **The following form appears:**
-
 
 1. Enter the following options:
 1. **Rule Name**. Enter the name as **App Observability - database**.
@@ -241,7 +239,7 @@ if (!isEmpty(pod_labels_environment), pod_labels_environment, "") as environment
 </TabItem>
 <TabItem value="non-k8s">
 
-Sumo Logic uses the Telegraf operator for MariaDB metric collection and the [Installed Collector](/docs/send-data/installed-collectors/about-installed-collectors) for collecting MariaDB logs. The diagram below illustrates the components of the MariaDB collection in a non-Kubernetes environment. Telegraf uses the[ MySQL Input Plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/sqlserver) to obtain MariaDB metrics and the Sumo Logic output plugin to send the metrics to Sumo Logic. Logs from MariaDB are collected by a [Local File Source](/docs/send-data/Sources/sources-installed-collectors/Local-File-Source).
+Sumo Logic uses the Telegraf operator for MariaDB metric collection and the [Installed Collector](/docs/send-data/installed-collectors/about-installed-collectors) for collecting MariaDB logs. The diagram below illustrates the components of the MariaDB collection in a non-Kubernetes environment. Telegraf uses the[ MySQL Input Plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/sqlserver) to obtain MariaDB metrics and the Sumo Logic output plugin to send the metrics to Sumo Logic. Logs from MariaDB are collected by a [Local File Source](/docs/send-data/Sources/sources-installed-collectors/Local-File-Source).<br/><img src={useBaseUrl('img/integrations/databases/mariadbnonk8s.png')} alt="mariadb" />
 
 The process to set up collection for MariaDB data is done through the following steps:
 

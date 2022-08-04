@@ -150,7 +150,7 @@ Follow the steps below to collect metrics from a Kubernetes environment:
     Once this has been done, the Sumo Logic Kubernetes collection will automatically start collecting metrics from the pods having the annotations defined in the previous step. Verify metrics are flowing into Sumo Logic by running the following metrics query:
 
 
-    ```
+    ```sql
     component="database" and db_system="postgresql"
     ```
 
@@ -204,22 +204,16 @@ It’s recommended to save configurations in ConfigMap so that when pods are spa
 1. Add labels on your PostgreSQL pods
 1. Apply the following labels to your PostgreSQL pods:
 
-          labels:
+```bash
+environment: "<environmentname_CHANGEME>"
+#For example, prod, dev, qa
+component: "database"
+db_system: "postgresql"
+db_cluster: "<cluster nameCHANGEME>"
+#For example analytics-dbcluster, webapp-dbcluster
+```
 
-
-             environment: "**<environment name for example dev, qa>-CHANGE_ME**"
-
-
-             component: "database"
-
-
-             db_system: "postgresql"
-
-
-             db_cluster: "**<cluster name for example analytics-dbcluster, webapp-dbcluster>-CHANGE_ME**"
-
-
-        Please enter in values for the following parameters (marked in bold and CHANGE_ME above):
+Please enter in values for the following parameters (marked `CHANGE_ME` above):
 
 * Labels:
     * `environment` - This is the deployment environment where the PostgreSQL cluster identified by the value of **servers** resides. For example dev, prod or qa. While this value is optional we highly recommend setting it.
@@ -229,7 +223,7 @@ It’s recommended to save configurations in ConfigMap so that when pods are spa
 
 * Labels:
     * `component: “database”` - This value is used by Sumo Logic apps to identify application components.
-    * **db_system: “postgresql” **- This value identifies the database system.
+    * `db_system: “postgresql”` - This value identifies the database system.
 
     3. Collecting Logs written to Standard output (Recommended)
 
@@ -237,48 +231,40 @@ It’s recommended to save configurations in ConfigMap so that when pods are spa
         The Sumologic-Kubernetes-Collection will automatically capture the logs from stdout and will send the logs to Sumologic. For more information on deploying the Sumo Logic Kubernetes Collection, please see[ this page](/docs/integrations/containers-orchestration/Kubernetes#Collect_Logs_and_Metrics_for_the_Kubernetes_App).
 
 
-    4.** Collect PostgreSQL logs **written to log files (Optional)
+4.**Collect PostgreSQL logs **written to log files (Optional)
 
 
-        If your PostgreSQL service is writing its logs to log files, you can use a [sidecar](https://github.com/SumoLogic/tailing-sidecar/tree/main/operator) to send log files to stdout. To do this:
+    If your PostgreSQL service is writing its logs to log files, you can use a [sidecar](https://github.com/SumoLogic/tailing-sidecar/tree/main/operator) to send log files to stdout. To do this:
 
 1. Determine the location of the PostgreSQL log file on Kubernetes.
 2. Install the Sumo Logic [tailing sidecar operator](https://github.com/SumoLogic/tailing-sidecar/tree/main/operator#deploy-tailing-sidecar-operator).
 3. Add the following annotation in addition to the existing annotations.
+annotations:
+```xml
+tailing-sidecar:sidecarconfig;container_name:<mount_volume>:/<path_of_postgresql_log_file_name>
+```
 
-            annotations:
+Example:
+```bash
+annotations:
+  tailing-sidecar: sidecarconfig;data:/pg_data/postgresql.log
+```
 
-
-            tailing-sidecar:sidecarconfig;container_name:<mount_volume>:/<path_of_postgresql_log_file_name>
-
-
-            Example:
-
-
-            annotations:
-
-
-              tailing-sidecar: sidecarconfig;data:/pg_data/postgresql.log
-
-1. Make sure that the PostgreSQL pods are running and annotations and labels are applied.Verify by using the command: **kubectl describe pod <**PostgreSQL**_pod_name>**
+1. Make sure that the PostgreSQL pods are running and annotations and labels are applied.Verify by using the command:
+```bash
+kubectl describe pod <PostgreSQL_pod_name>
+```
 2. Sumo Logic Kubernetes collection will automatically start collecting logs from the pods having the annotations defined above.
 
-
-11
 Since pods are frequently killed and spawned it’s recommended to use operators like this [postgresql operator](https://github.com/CrunchyData/postgres-operator) so that when new pods are created the annotations and labels are automatically applied using the ConfigMap or CRD based configurations.
-
-
 
 1. Add an FER to normalize the fields in Kubernetes environments
 
-        Labels created in Kubernetes environments automatically are prefixed with pod_labels. To normalize these for our app to work, we need to create a Field Extraction Rule if not already created for Database Application Components. To do so:
+    Labels created in Kubernetes environments automatically are prefixed with pod_labels. To normalize these for our app to work, we need to create a Field Extraction Rule if not already created for Database Application Components. To do so:
 
 1. Go to **Manage Data** > **Logs** > **Field Extraction Rules**.
 2. Click the **+ Add** button on the top right of the table.
 3. The following form appears:
-
-
-12
 
 
 1. Enter the following options:
@@ -287,28 +273,24 @@ Since pods are frequently killed and spawned it’s recommended to use operators
     * **Scope**. Select Specific Data
 
 **Scope**: Enter the following keyword search expression: \
-`pod_labels_environment=* pod_labels_component=database pod_labels_db_system=* pod_labels_db_cluster=*`
-
-
-
+```sql
+pod_labels_environment=* pod_labels_component=database pod_labels_db_system=* pod_labels_db_cluster=*
+```
 
 **Parse Expression**.Enter the following parse expression:
-```
+```sql
 | if (!isEmpty(pod_labels_environment), pod_labels_environment, "") as environment
 | pod_labels_component as component
 | pod_labels_db_system as db_system
 | pod_labels_db_cluster as db_cluster
 ```
 
-
 2. Click **Save** to create the rule.
 3. Verify logs are flowing into Sumo Logic by running the following logs query
 
-
-```json
+```sql
 component="database" and db_system="postgresql"
 ```
-
 
 
 #### Sample Log Messages
@@ -370,7 +352,7 @@ This section provides instructions for configuring metrics collection for the Su
 
 
 * In the input plugins section which is `[[inputs.postgresql_extensible]]`:
-    * **address** - Specify the db user, db name, and password used for connecting to the database. This is the user you created for monitoring the PosgreSQL database in [Step 1](#step-1-configure-metrics-collection). Ex "host=localhost dbname=postgres user=postgres password=mypassword sslmode=disable"
+    * `address` - Specify the db user, db name, and password used for connecting to the database. This is the user you created for monitoring the PosgreSQL database in [Step 1](#step-1-configure-metrics-collection). Ex "host=localhost dbname=postgres user=postgres password=mypassword sslmode=disable"
     * In the tags section which is `[inputs.postgresql_extensible.tags]`:
         * `environment` - This is the deployment environment where the Postgresql cluster resides. For example dev, prod or qa. While this value is optional we highly recommend setting it.
         * `db_cluster` - Enter a name to identify this PostgreSQL cluster. This cluster name will be shown in the Sumo Logic dashboards. For example  analytics-dbcluster, webapp-dbcluster
@@ -379,7 +361,7 @@ This section provides instructions for configuring metrics collection for the Su
 
         Here’s an explanation for additional values set by this Telegraf configuration that we request you **please do not modify these values** as they will cause the Sumo Logic apps to not function correctly.
 
-* **data_format** = “prometheus” In the output plugins section which is `[[outputs.sumologic]]`  This indicates that metrics should be sent in the Prometheus format to Sumo Logic
+* `data_format = “prometheus”` In the output plugins section which is `[[outputs.sumologic]]`  This indicates that metrics should be sent in the Prometheus format to Sumo Logic
 * `component = “database”` - In the input plugins section which is `[[inputs.postgresql_extensible.tags]]` - This value is used by Sumo Logic apps to identify application components.
 * `db_system = “postgresql”` - In the input plugins sections which is `[[inputs.postgresql_extensible.tags]]` -  This value identifies the database system.
 
@@ -425,8 +407,7 @@ Perform the steps outlined below for each PostgreSQL database server.
 2. Open postgresql.conf configuration file.
 3. Under the **ERROR REPORTING AND LOGGING** section of the file, use following config parameters. For more information on the following parameters, Click [here](https://www.postgresql.org/docs/12/static/runtime-config-logging.html)
 
-
-```bash
+```sql
 log_destination = 'stderr'
 logging_collector = on
 log_filename = 'postgresql-%Y-%m-%d_%H%M%S.log'
@@ -441,16 +422,12 @@ log_min_messages = 'WARNING'
 log_line_prefix = '%m [%p] %q%u@%d '
 ```
 
-
-
     4. Save the **postgresql.conf** file and restart the postgresql server:
 
 
 ```bash
 sudo service postgresql restart
 ```
-
-
 
     2. Configure an Installed Collector
 
@@ -460,9 +437,7 @@ sudo service postgresql restart
 
     3. Configuring a Local File Source
 
-
         To add a Local File Source source for PostgreSQL do the following
-
 
 
 1. Add a [Local File Source](/docs/send-data/Sources/sources-installed-collectors/Local-File-Source) in the installed collector configured in the previous step.
@@ -473,13 +448,13 @@ sudo service postgresql restart
 6. **Source Host.** Sumo Logic uses the hostname assigned by the OS unless you enter a different hostname
 7. **Source Category.** Enter any string to tag the output collected from this Source, such as **PostgreSQL/Logs**. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details see[ Best Practices](/docs/send-data/design-deployment/best-practices-source-categories).)
 8. **Fields. **Set the following fields:
-    * `component = database`
-    * db_system = postgresql
-    * db_cluster = <Your_Postgresql_Cluster_Name> For example analytics-dbcluster, webapp-dbcluster
-    * environment = <Environment_Name> For example dev, prod or qa.
-9.
-19
-The values of db_cluster and environment should be the same as they were configured in the [Configure and start telegraf section](#configure-and-start-telegraf).
+```bash
+component = database
+db_system = postgresql
+db_cluster = <Your_Postgresql_Cluster_Name> #For example analytics-dbcluster, webapp-dbcluster
+environment = <Environment_Name> #For example dev, prod or qa
+```    
+9. The values of db_cluster and environment should be the same as they were configured in the [Configure and start telegraf section](#configure-and-start-telegraf).
 10. Configure the **Advanced** section:
     * **Enable Timestamp Parsing.** Select Extract timestamp information from log file entries.
     * **Time Zone.** Use **the timezone from log file **option.
@@ -566,8 +541,8 @@ There are limits to how many alerts can be enabled - please see the [Alerts FAQ]
     1. The JSON contains the alerts that are based on Sumo Logic searches that do not have any scope filters and therefore will be applicable to all PostgreSQL clusters, the data for which has been collected via the instructions in the previous sections. However, if you would like to restrict these alerts to specific clusters or environments, update the JSON file by replacing the text `db_system=postgresql` with `<Your Custom Filter> db_system=postgresql`.  
 
 Custom filter examples:
-        1. For alerts applicable only to a specific cluster, your custom filter would be:  `‘db_cluster=postgresql-prod.01’.`
-        2. For alerts applicable to all clusters that start with postgresql-prod, your custom filter would be: `‘db_cluster=postgresql-prod*’`.
+        1. For alerts applicable only to a specific cluster, your custom filter would be: `db_cluster=postgresql-prod.01`.
+        2. For alerts applicable to all clusters that start with postgresql-prod, your custom filter would be: `db_cluster=postgresql-prod*`.
         3. For alerts applicable to a specific cluster within a production environment, your custom filter would be:
             * `db_cluster=postgresql-1 and environment=prod` (This assumes you have set the optional environment tag while configuring collection)
 2. Go to Manage Data > Alerts > Monitors.
@@ -610,10 +585,10 @@ environment = "<SUMOLOGIC DEPLOYMENT>"
 The Terraform script installs the alerts without any scope filters, if you would like to restrict the alerts to specific clusters or environments, update the variable **’postgresql_data_source’**. Custom filter examples:
 
 
-1. A specific cluster `‘db_cluster=postgresql.prod.01’`
-2. All clusters in an environment `‘environment=prod’`
-3. For alerts applicable only to a specific cluster, your custom filter would be:  `‘db_cluster=postgresql-.prod.01’`
-4. For alerts applicable to all clusters that start with postgresql-prod, your custom filter would be: `‘**db_cluster=postgresql-prod*’`
+1. A specific cluster `db_cluster=postgresql.prod.01`
+2. All clusters in an environment `environment=prod’
+3. For alerts applicable only to a specific cluster, your custom filter would be:  `db_cluster=postgresql-.prod.01`
+4. For alerts applicable to all clusters that start with postgresql-prod, your custom filter would be: `db_cluster=postgresql-prod*`
 5. For alerts applicable to a specific cluster within a production environment, your custom filter would be:
     `db_cluster=postgresql-1 and environment=prod` (This assumes you have set the optional environment tag while configuring collection)
 

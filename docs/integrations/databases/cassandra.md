@@ -253,7 +253,7 @@ annotations:
 
 
 1. Make sure that the Cassandra pods are running and annotations are applied by using the command:
-```
+```bash
 kubectl describe pod <Cassandra_pod_name>
 ```
 2. Sumo Logic Kubernetes collection will automatically start collecting logs from the pods having the annotations defined above.
@@ -281,7 +281,7 @@ Labels created in Kubernetes environments automatically are prefixed with pod_la
 `pod_labels_environment=* pod_labels_component=database pod_labels_db_system=* pod_labels_db_cluster=*`
 
 **Parse Expression**.Enter the following parse expression: \
-```
+```sql
 if (!isEmpty(pod_labels_environment), pod_labels_environment, "") as environment
 | pod_labels_component as component
 | pod_labels_db_system as db_system
@@ -289,7 +289,6 @@ if (!isEmpty(pod_labels_environment), pod_labels_environment, "") as environment
 ```
 
 1. Click **Save** to create the rule.
-
 
 </TabItem>
 <TabItem value="non-k8s">

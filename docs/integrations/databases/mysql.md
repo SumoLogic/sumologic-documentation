@@ -207,7 +207,7 @@ This section explains the steps to collect MySQL logs from a Kubernetes environm
 If your MySQL Helm chart/pod is writing the logs to standard output, follow these steps:
 
 Apply the following labels to your MySQL pods:
-```
+```sql
 labels:
     environment: "prod"
     component: "database"
@@ -369,7 +369,8 @@ The diagram below illustrates the components of the MySQL collection in a non-Ku
 9. **Setting values in telegraf.conf**. Make the following updates to `telegraf.conf`.
    * In the `[[inputs.mysql]]` section, set `servers` to the URL of your MySQL server. For information about additional input plugin configuration options, see the [Readme](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/mysql) for the MySQL input plugin.
    * Configure the metrics to collect by uncommenting the following lines. For more information, see this [section](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/mysql#configuration) of the Readme.  
-```sql
+
+```yml
 [[inputs.mysql]]
  table_schema_databases = []
  gather_slave_status = true
