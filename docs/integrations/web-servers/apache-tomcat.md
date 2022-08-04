@@ -70,6 +70,8 @@ If you are using Apache Tomcat in a non-Kubernetes environment create the fields
 
 In Kubernetes environments, we use the Telegraf Operator, which is packaged with our Kubernetes collection. You can learn more about it[ here](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/telegraf-collection-architecture). The diagram below illustrates how data is collected from Apache Tomcat in a Kubernetes environment. Four services in the architecture shown below make up the metric collection pipeline: Telegraf, Prometheus, Fluentd, and FluentBit.
 
+<img src={useBaseUrl('img/integrations/web-servers/apachetomcat-k8s.png')} alt="apache-k8s" />
+
 The first service in the pipeline is Telegraf. Telegraf collects metrics from Apache Tomcat. Note that we’re running Telegraf in each pod we want to collect metrics from as a sidecar deployment, for example, Telegraf runs in the same pod as the containers it monitors. Telegraf uses the Apache Tomcat and Jolokia2 input plugin to obtain metrics. (For simplicity, the diagram doesn’t show the input plugins.) The injection of the Telegraf sidecar container is done by the Telegraf Operator. We also have Fluentbit that collects logs written to standard out and forwards them to FluentD, which in turn sends all the logs and metrics data to a Sumo Logic HTTP Source.
 
 Follow the below instructions to set up the metric collection:
@@ -294,7 +296,10 @@ annotations:
   tailing-sidecar: sidecarconfig;data:/opt/tomcat/logs/tomcat.log
 ```
 
-1. Make sure that the Tomcat pods are running and annotations are applied by using the command: kubectl describe pod <Tomcat_pod_name>
+1. Make sure that the Tomcat pods are running and annotations are applied by using the command:
+```xml
+kubectl describe pod <Tomcat_pod_name>
+```
 2. Sumo Logic Kubernetes collection will automatically start collecting logs from the pods having the annotations defined above.
 3. Verify logs in Sumo Logic.
 
@@ -333,7 +338,11 @@ if (!isEmpty(pod_labels_environment), pod_labels_environment, "") as environment
 </TabItem>
 <TabItem value="non-k8s">
 
-We use the Telegraf operator for Apache Tomcat metric collection and Sumo Logic Installed Collector for collecting Apache Tomcat logs. The diagram below illustrates the components of the Apache Tomcat collection in a non-Kubernetes environment. Telegraf runs on the same system as Apache Tomcat and uses the[ Apache Tomcat ](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/memcached#configuration)and [Jolokia2](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/jolokia2) input plugin to obtain Apache Tomcat metrics, and the Sumo Logic output plugin to send the metrics to Sumo Logic. Logs from Apache Tomcat on the other hand are sent to a Sumo Logic Local File source.
+We use the Telegraf operator for Apache Tomcat metric collection and Sumo Logic Installed Collector for collecting Apache Tomcat logs. The diagram below illustrates the components of the Apache Tomcat collection in a non-Kubernetes environment.
+
+<img src={useBaseUrl('img/integrations/web-servers/apache-nonk8s.png')} alt="apache-nonk8s" />
+
+Telegraf runs on the same system as Apache Tomcat and uses the [Apache Tomcat ](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/memcached#configuration) and [Jolokia2](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/jolokia2) input plugin to obtain Apache Tomcat metrics, and the Sumo Logic output plugin to send the metrics to Sumo Logic. Logs from Apache Tomcat on the other hand are sent to a Sumo Logic Local File source.
 
 This section provides instructions for configuring metrics collection for the Sumo Logic App for Apache Tomcat. Follow the below instructions to set up the metric collection:
 
@@ -382,9 +391,8 @@ curl -v -u **username-CHANGEME**:**password-CHANGEME** "`http://APACHE_TOMCAT_SE
 
 The result looks similar to this
 
-```
+```json
 {"request":{"type":"version"},"value":{"agent":"1.6.2","protocol":"7.2","config":{"listenForHttpService":"true","maxCollectionSize":"0","authIgnoreCerts":"false","agentId":"10.0.50.64-6867-1ed563ab-servlet","agentType":"servlet","policyLocation":"classpath:\/jolokia-access.xml","agentContext":"\/jolokia","mimeType":"text\/plain","discoveryEnabled":"false","streaming":"true","historyMaxEntries":"10","allowDnsReverseLookup":"true","maxObjects":"0","debug":"false","serializeException":"false","detectorOptions":"{}","dispatcherClasses":"org.jolokia.http.Jsr160ProxyNotEnabledByDefaultAnymoreDispatcher","maxDepth":"15","authMode":"basic","authMatch":"any","canonicalNaming":"true","allowErrorDetails":"true","realm":"jolokia","includeStackTrace":"true","useRestrictorService":"false","debugMaxEntries":"100"},"info":{"product":"tomcat","vendor":"Apache","version":"7.0.76"}},"timestamp":1625232354,"status":200}
-
 ```
 
 
@@ -395,8 +403,6 @@ The result looks similar to this
 
 
   Create or modify telegraf.conf and copy and paste the text below:  
-
-
 
 ```sql
 [[inputs.tomcat]]
@@ -542,11 +548,7 @@ Please enter values for the following parameters (marked `CHANGEME` above):
 
 Here’s an explanation for additional values set by this Telegraf configuration.
 
-
-10
 **Do not modify** the configuration, as it will cause the SumoLogic apps to not function correctly.
-
-
 
 
 
@@ -679,7 +681,7 @@ After extracting the package , navigate to the  terraform-sumologic-sumo-logic-m
 
 Edit the ApacheTomcat.auto.tfvars file and add the Sumo Logic Access Key and Access ID from Step 1 and your Sumo Logic deployment. If you're not sure of your deployment, see [Sumo Logic Endpoints and Firewall Security](https://help.sumologic.com/APIs/General-API-Information/Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security).
 
-```
+```sql
 access_id   = "<SUMOLOGIC ACCESS ID>"
 access_key  = "<SUMOLOGIC ACCESS KEY>"
 environment = "<SUMOLOGIC DEPLOYMENT>"
