@@ -35,8 +35,6 @@ The Sumo Logic App for Nginx Plus assumes Prometheus format Metrics for Requests
 
 <TabItem value="k8s">
 
-Kubernetes environments
-
 ```json title="Access Log Example"
 {
 	"timestamp":1620821977736,
@@ -55,11 +53,8 @@ Kubernetes environments
 }
 ```
 
-
 </TabItem>
 <TabItem value="non-k8s">
-
-Non-Kubernetes environments
 
 ```bash title="Access Log Example"
 50.1.1.1 - example [23/Sep/2016:19:00:00 +0000] "POST /api/is_individual HTTP/1.1" 200 58 "-"
@@ -79,7 +74,7 @@ HTTP/1.1", host: "example.com", referrer: "https://abc.example.com/"
 
 ### Sample Queries
 
-This sample Query is from the **Responses Over Time** panel of the [Nginx Plus - Overview](#overview) dashboard.
+This sample Query is from the [Nginx Plus - Overview](#overview) dashboard > **Responses Over Time** panel .
 
 ```
 _sourcecategory=Labs/Nginx/Logs
@@ -142,8 +137,6 @@ This section provides instructions for configuring log and metric collection for
 
 <TabItem value="k8s">
 
-### For Kubernetes Environments
-
 In Kubernetes environments, we use the Telegraf Operator, which is packaged with our Kubernetes collection. You can learn more about it [here](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/telegraf-collection-architecture).The diagram below illustrates how data is collected from Nginx Plus in Kubernetes environments. In the architecture shown below, there are four services that make up the metric collection pipeline: Telegraf, Prometheus, Fluentd and FluentBit.
 
 The first service in the pipeline is Telegraf. Telegraf collects metrics from Nginx Plus. Note that we’re running Telegraf in each pod we want to collect metrics from as a sidecar deployment: i.e. Telegraf runs in the same pod as the containers it monitors. Telegraf uses the Nginx Plus input plugin to obtain metrics. (For simplicity, the diagram doesn’t show the input plugins.) The injection of the Telegraf sidecar container is done by the Telegraf Operator. We also have Fluentbit that collects logs written to standard out and forwards them to FluentD, which in turn sends all the logs and metrics data to a Sumo Logic HTTP Source.
@@ -174,8 +167,7 @@ Before you can configure Sumo Logic to ingest logs, you must configure the loggi
 
 Nginx Plus app supports the metrics for Nginx Plus.
 
-The following steps assume you are collecting Nginx Plus metrics from a Kubernetes environment. In Kubernetes environments, we use the Telegraf Operator, which is packaged with our Kubernetes collection.  You can learn more about this[ here](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/telegraf-collection-architecture).
-
+The following steps assume you are collecting Nginx Plus metrics from a Kubernetes environment. In Kubernetes environments, we use the Telegraf Operator, which is packaged with our Kubernetes collection. You can learn more about this[ here](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/telegraf-collection-architecture).
 
 1. Before you can configure Sumo Logic to ingest metrics, you must enable the API module to expose metrics in NGINX Plus.
     * For instructions on Nginx Plus, refer to the following documentation [https://docs.nginx.com/nginx/admin-guide/monitoring/live-activity-monitoring/](https://docs.nginx.com/nginx/admin-guide/monitoring/live-activity-monitoring/).
@@ -183,8 +175,7 @@ The following steps assume you are collecting Nginx Plus metrics from a Kubernet
 2. [Set up Kubernetes Collection with the Telegraf Operator.](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf.md#Install_Telegraf_in_a_Kubernetes_environment)
 3. On your Nginx Plus Pods, add the following annotations to configure Telegraf.
 
-
-```
+```sql
 annotations:
         telegraf.influxdata.com/inputs: |+
         [[inputs.nginx_plus_api]]
@@ -203,8 +194,6 @@ annotations:
 
 </TabItem>
 <TabItem value="non-k8s">
-
-### For Non-Kubernetes Environments
 
 We use the Telegraf operator for Nginx Plus metric collection and Sumo Logic Installed Collector for collecting Nginx Plus logs. The diagram below illustrates the components of the Nginx Plus collection in a non-Kubernetes environment. Telegraf runs on the same system as Nginx Plus, and uses the [Nginx Plus input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/nginx_plus_api) to obtain Nginx Plus metrics, and the Sumo Logic output plugin to send the metrics to Sumo Logic. Logs from Nginx on the other hand are sent to either a Sumo Logic Local File source.
 
@@ -228,7 +217,6 @@ Configuring log and metric collection for the Nginx Plus App includes the follow
 Nginx Plus app supports the default access logs and error logs format.
 
 This section provides instructions for configuring log collection for the Sumo Logic App for Nginx Plus. Follow the instructions below to set up the Log collection.
-
 
 1. Configure logging in Nginx
 
@@ -318,10 +306,9 @@ Use the[ following steps](/docs/send-data/collect-from-other-data-sources/collec
 
 5. Configure and start Telegraf
 
-
 Create a file called telegraf.conf and add the appropriate configuration. The following is a basic example:
 
-```
+```sql
 [agent]
   interval = "60s"
 # Read Nginx Plus full API information (ngx_http_api_module)
@@ -337,15 +324,15 @@ Create a file called telegraf.conf and add the appropriate configuration. The fo
   data_format = "prometheus"
 ```
 
-* interval - This is the frequency to send data to Sumo Logic, in this example, we will send the metrics every 60 seconds. Please refer to[ this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#Configuring-Telegraf) for more properties that can be configured in the Telegraf agent globally.
-* urls - The url to the Nginx Plus server with the API enabled. This can be a comma-separated list to connect to multiple Nginx Plus servers. Please refer[ to this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/nginx_plus_api) for more information on configuring the Nginx API input plugin for Telegraf.
-* url - This is the HTTP source URL created in step 3. Please refer[ to this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/configure-telegraf-output-plugin.md) for more information on configuring the Sumo Logic Telegraf output plugin.
-* data_format = The format to use when sending data to Sumo Logic. Please refer[ to this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/configure-telegraf-output-plugin.md) for more information on configuring the Sumo Logic Telegraf output plugin.
+* `interval` - This is the frequency to send data to Sumo Logic, in this example, we will send the metrics every 60 seconds. Please refer to[ this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#Configuring-Telegraf) for more properties that can be configured in the Telegraf agent globally.
+* `urls` - The url to the Nginx Plus server with the API enabled. This can be a comma-separated list to connect to multiple Nginx Plus servers. Please refer[ to this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/nginx_plus_api) for more information on configuring the Nginx API input plugin for Telegraf.
+* `url` - This is the HTTP source URL created in step 3. Please refer[ to this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/configure-telegraf-output-plugin.md) for more information on configuring the Sumo Logic Telegraf output plugin.
+* `data_format` - The format to use when sending data to Sumo Logic. Please refer[ to this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/configure-telegraf-output-plugin.md) for more information on configuring the Sumo Logic Telegraf output plugin.
 
-  Once you have finalized your telegraf.conf file, you can run the following command to start telegraf.
-
-  telegraf --config /path/to/telegraf.conf
-
+Once you have finalized your telegraf.conf file, you can run the following command to start telegraf.
+```bash
+telegraf --config /path/to/telegraf.conf
+```
 
 </TabItem>
 </Tabs>

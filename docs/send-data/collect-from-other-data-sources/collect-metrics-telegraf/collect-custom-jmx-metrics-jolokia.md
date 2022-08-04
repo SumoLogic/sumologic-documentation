@@ -20,7 +20,7 @@ curl 127.0.0.1:8778/jolokia/list | jq '.'
 
 The output will be similar to this:
 
-```json
+```
 {
   "request": {
     "type": "list"
@@ -78,8 +78,8 @@ The output will be similar to this:
 
 You can use output returned by your curl command from the previous step to create this configuration: 
 
-  
-```
+
+```sql
 [[inputs.jolokia2_agent]]
             urls = ["http://127.0.0.1:8778/jolokia"]
 
@@ -106,7 +106,7 @@ Where:
 
 The configuration shown above will produce metrics like those shown below:
 
-```
+```js
 # HELP sumologic_java_lang_GarbageCollector_CollectionCount Telegraf collected metric
 # TYPE sumologic_java_lang_GarbageCollector_CollectionCount untyped
 sumologic_java_lang_GarbageCollector_CollectionCount{host="jolokia-0",jolokia_agent_url="http://127.0.0.1:8778/jolokia",name="Copy"} 1

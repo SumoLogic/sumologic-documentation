@@ -141,7 +141,7 @@ For details on the individual alerts, see [Kubernetes Alerts](/docs/observabilit
 
 4. Click Add:
 
-<img alt="Add monitors page.png" height="181" src="https://lh4.googleusercontent.com/EFaIvWK46GHRZabY_FlDjQURgAxwVs7p8c1FIQpUkQVA4_rU0BXo_lNvxxpM0kkFp9CuOvQHfrtGp1DnfmE_OOIZORCwaKcPnAYUgYzzcM3UAM9qynLgOziqQBg5ex0eYKwVAhXI" width="153" />
+![add-monitor.png](/img/metrics/add-monitor.png)
 
 5. Click Import to import monitors from the JSON above.
 

@@ -7,7 +7,7 @@ description: The Cloudflare App provides a set of dashboards to make analyzing C
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/saas-cloud-apps/cloudflare.png')} alt="DB icon" width="100"/>
+<img src={useBaseUrl('img/integrations/saas-cloud-apps/cloudflare.png')} alt="Thumbnail icon" width="100"/>
 
 
 This application has been developed and is supported by Cloudflare. In case of technical questions, please review the technical [documentation](https://developers.cloudflare.com/logs/) for Cloudflare logs or email analytics@cloudflare.com.

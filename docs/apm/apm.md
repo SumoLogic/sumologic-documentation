@@ -21,7 +21,7 @@ Monitor user activity, span analytics, service maps, and transaction traces betw
 </div>
 <div className="box box2 card">
   <div className="container">
-  <img src={useBaseUrl('img/icons/business/customer-retention.png')} alt="DB icon" width="55"/>
+  <img src={useBaseUrl('img/icons/business/customer-retention.png')} alt="Thumbnail icon" width="55"/>
   <h3><a href="/docs/integrations/microsoft-azure/">Real User Monitoring (RUM)</a></h3>
   <p>Understand how users interact with the digital interfaces of your business and if their experience is satisfactory or not. This is open-source powered, flexible, and has fully integrated Real User Monitoring capabilities for browsers.</p>
   </div>

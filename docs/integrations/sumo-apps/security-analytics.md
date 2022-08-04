@@ -7,11 +7,13 @@ description: Allows you to easily see and manage your system's status, including
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-:::sumo
-This App is available for Sumo Logic Enterprise Security and Enterprise Suite accounts only. It requires a **paid** Professional Services contract to install and configure. You may upgrade your account at any time. If you'd like more information on this App, you can [request](/docs/integrations/sumo-apps/Request-Enterprise-Apps) it by clicking the **Request ** button in the Apps section in the Library.  A Sumo Logic sales representative will contact you to discuss Professional Services pricing options.
-:::
+<img src={useBaseUrl('img/integrations/sumo-apps/SecurityAnalytics.png')} alt="Web servers icon" width="75"/>
 
 The Sumo Logic App for Security Analytics provides Dashboards that allow you to easily see and manage your system's status, including a security operations overview, network, system and change, user monitoring, and vulnerabilities on endpoints. This data is collected from your Collectors and Sources.​
+
+## Prerequisites
+
+* **For Sumo Logic Enterprise Security and Enterprise Suite accounts only.** For more information, see [Requesting Sumo Logic Enterprise Apps](/docs/integrations/sumo-apps/index#Requesting-Sumo-Logic-Enterprise-Apps).
 
 
 ## Security Analytics App Dashboards

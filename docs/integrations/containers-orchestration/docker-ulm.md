@@ -82,9 +82,9 @@ If desired, you can use Docker variables to construct the Source Category value.
     9. **Fields**. Click the **+Add Field** link to add custom log metadata [Fields](/docs/manage/fields.md).
         * Define the fields you want to associate, each field needs a name (key) and value.
 
- A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
+ * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
 
- An orange triangle with an exclamation point is shown when the field doesn't exist, or is disabled, in the Fields table schema. In this case, an option to automatically add or enable the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema or is disabled it is ignored, known as dropped.
+ ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist, or is disabled, in the Fields table schema. In this case, an option to automatically add or enable the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema or is disabled it is ignored, known as dropped.
 5. Configure the Advanced options.
     10. **Enable Timestamp Parsing**. This option is checked by default and **required**. See the [Notes section](#Notes_regarding_Docker_Sources-851) above for details.
     11. **Time Zone**. Default is “Use time zone from log file”.

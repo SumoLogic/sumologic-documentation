@@ -7,6 +7,8 @@ description: Install the Sumo Logic UEBA  app to monitor baseline user and entit
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
+<img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/ueba.png')} alt="Thumbnail icon" width="70"/>
+
 The Sumo Logic UEBA (User and Entity Behavior Analytics) app monitors baseline user and entity behavior and reports on any unusual patterns detected. The UEBA app leverages several machine learning algorithms and statistical analysis models to establish normal behavior or patterns and detects anomalies within your environment. Each dashboard in this app takes a different lens on your security data, from UEBA Signals fired to User and Entity centric views of events that truly identify potential and real threats.
 
 ## Prerequisites

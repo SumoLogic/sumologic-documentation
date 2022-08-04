@@ -76,43 +76,43 @@ following scopes:
 
 **Node IP.** If using the *node* pod scrape scope, set the IP of the node Telegraf runs on. You must configure this setting or add an environment variable of NODE_IP.
 
-```
+```sql
 node_ip = "10.180.1.1"
 ```
 
 **Pod scrape interval.** If using the *node* pod scrape scope, set an interval in seconds for updating the post list for scraping. The default is 60 seconds.
 
-```
+```sql
 pod_scrape_interval = 60
 ```
 
 **Retrict namespace.** Set options to restrict Kubernetes monitoring to a single namespace.
 
-```
+```sql
 monitor_kubernetes_pods_namespace = ""
 ```
 
 For example:
 
-```
+```sql
 monitor_kubernetes_pods_namespace = "default"
 ```
 
 To set the label selector to target pods with a specific label:
 
-```
+```sql
 kubernetes_label_selector = "env=dev,app=nginx"
 ```
 
 To scrape pods on a specific node, set the field selector to target pods:
 
-```
+```sql
 kubernetes_field_selector = "spec.nodeName=$HOSTNAME"
 ```
 
 **Scrape Services available in Consul Catalog.** Configure the following to scrape services available in the Consul Catalog, including the inputs.prometheus consul, inputs.prometheus consul.query, and inputs.prometheus consul.query.tags settings.
 
-```
+```sql
  [inputs.prometheus.consul]
      enabled = true
      agent = "http://localhost:8500"
@@ -129,33 +129,33 @@ kubernetes_field_selector = "spec.nodeName=$HOSTNAME"
 
 **Bearer token.** Use one of the following for bearer token for authorization. "bearer_token" takes priority.
 
-```
+```sql
 bearer_token = "/path/to/bearer/token"
 bearer_token_string = "abc_123"
 ```
 
-**HTTP Basic Authentication.** Set the username and password for authentication. "bearer_token" and 
+**HTTP Basic Authentication.** Set the username and password for authentication. "bearer_token" and
 
-```
+```sql
 "bearer_token_string" take priority.
 username = "" password = ""
 ```
 
 **Timeout.** Specify timeout duration for slower Prometheus clients. The default is 3 seconds.
 
-```
+```sql
 response_timeout = "3s"
 ```
 
 **(Optional) TLS Config.** Configure the paths for TLS config.
 
-```
+```sql
 tls_ca = /path/to/cafile tls_cert = /path/to/certfile tls_key = /path/to/keyfile
 ```
 
 **Verification skip.** Indicate to use TLS but skip chain and host verification.
 
-```
+```sql
 insecure_skip_verify = false
 ```
 
@@ -175,9 +175,9 @@ Install and configure Telegraf to read your data for sending through the Sumo Lo
 
 To send data into Sumo Logic, use the [*Sumo Logic output plugin*](https://github.com/influxdata/telegraf/tree/master/plugins/outputs/sumologic). Configure the following options for the plugin. See [Supported HTTP Headers](../sources/sources-hosted-collectors/http-logs-metrics-source/upload-metrics-to-http-source.md) for additional Sumo supported options.
 
-**URL.** A unique URL generated for your HTTP Metrics Source. Use the following address to send metrics to: 
+**URL.** A unique URL generated for your HTTP Metrics Source. Use the following address to send metrics to:
 
-```
+```sql
 url = "https://events.sumologic.net/receiver/v1/http/<UniqueHTTPCollectorCode>"
 ```
 
@@ -191,35 +191,35 @@ When unset, Telegraf will use the influx serializer by default which is current
 |--|--|
 | [Graphite](http://graphite.readthedocs.io/en/latest/feeding-carbon.html#the-plaintext-protocol) | `application/vnd.sumologic.graphite` |
 | [Carbon2](http://metrics20.org/implementations/) | `application/vnd.sumologic.carbon2`<br/>This is the default setting. |
-| [Prometheus](https://github.com/prometheus/docs/blob/master/content/docs/instrumenting/exposition_formats.md) | `application/vnd.sumologic.prometheus`<br/>Sumo won't ingest Prometheus comments or malformed Prometheus metrics. For more information, see [Prometheus metrics not accepted by Sumo](../sources/sources-hosted-collectors/http-logs-metrics-source/prometheus-metrics-not-accepted-by-sumo.md). | 
+| [Prometheus](https://github.com/prometheus/docs/blob/master/content/docs/instrumenting/exposition_formats.md) | `application/vnd.sumologic.prometheus`<br/>Sumo won't ingest Prometheus comments or malformed Prometheus metrics. For more information, see [Prometheus metrics not accepted by Sumo](../sources/sources-hosted-collectors/http-logs-metrics-source/prometheus-metrics-not-accepted-by-sumo.md). |
 
 **Timeout.** Set a timeout for the HTTP request.
 
-```
+```sql
 timeout = "5s"
 ```
 
 **Max request size.** Set the maximum HTTP request body size in bytes before compression. The default is 1mb (1000000). In some serializers, a metric serialized to multiple lines cannot be split further. Setting this option to a low amount may not work as expected.
 
-```
+```sql
 max_request_body_size = 1000000
 ```
 
 **Source name.** Set a desired source name to override the name configured for the source.
 
-```
+```sql
 source_name = ""
 ```
 
 **Host name.** Set a desired host name to override the host configured for the source.
 
-```
+```sql
 source_category = ""
 ```
 
 **Source category.** Set a desired source category to override the category configured for the source.
 
-```
+```sql
 dimensions = ""
 ```
 

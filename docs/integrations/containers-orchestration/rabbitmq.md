@@ -96,7 +96,7 @@ In Kubernetes environments, we use the Telegraf Operator, which is packaged with
 2. Add annotations on your RabbitMQ pods
 
 On your RabbitMQ Pods, add the following annotations:
-```bash
+```sql
  annotations:
     telegraf.influxdata.com/class: sumologic-prometheus
     prometheus.io/scrape: "true"
@@ -119,8 +119,8 @@ queue_name_exclude = []
 
 Please enter values for the following parameters (marked in **bold_CHANGE_ME** above):
 
-* telegraf.influxdata.com/inputs - This contains the required configuration for the Telegraf RabbitMQ Input plugin. Please refer[ to this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/redis) for more information on configuring the RabbitMQMongoDB input plugin for Telegraf. Note: As telegraf will be run as a sidecar the host should always be localhost.
-    * In the input plugins section, which is [[inputs.rabbitmq]]:
+* `telegraf.influxdata.com/inputs` - This contains the required configuration for the Telegraf RabbitMQ Input plugin. Please refer[ to this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/redis) for more information on configuring the RabbitMQMongoDB input plugin for Telegraf. Note: As telegraf will be run as a sidecar the host should always be localhost.
+    * In the input plugins section, which is [`[inputs.rabbitmq]]`:
         * **url** - The URL of the RabbitMQ server for Management HTTP Endpoint. Please see [this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/rabbitmq) for more information on additional parameters for configuring the RabbitMQ input plugin for Telegraf.
         * **username**: The Username of RabbitMQ's admin account . The default is “guest”.
         * **password**:  The password of RabbitMQ's admin account. The default is “guest”.
@@ -133,7 +133,7 @@ Here’s an explanation for additional values set by this configuration that we 
 * telegraf.influxdata.com/class: sumologic-prometheus - This instructs the Telegraf operator what output to use. This should not be changed.
 * prometheus.io/scrape: "true" - This ensures our Prometheus will scrape the metrics.
 * prometheus.io/port: "9273" - This tells prometheus what ports to scrape on. This should not be changed.
-* telegraf.influxdata.com/inputs
+* `telegraf.influxdata.com/inputs`
     * In the tags section, that is  [inputs.rabbitmq.tags]
         * component: “messaging” - This value is used by Sumo Logic apps to identify application components.
         * messaging_system: “rabbitmq” - This value identifies the messaging system.
@@ -300,22 +300,22 @@ Create or modify telegraf.conf and copy and paste the text below:
   data_format = "prometheus"
 ```
 
-Please enter values for the following parameters (marked CHANGEME above):
+Please enter values for the following parameters (marked `CHANGEME` above):
 
-* In the input plugins section, which is [[inputs.rabbitmq]]:
+* In the input plugins section, which is `[[inputs.rabbitmq]]`:
     * url - The URL of the RabbitMQ server for Management HTTP Endpoint. Please see [this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/rabbitmq) for more information on additional parameters for configuring the RabbitMQ input plugin for Telegraf.
     * username: The Username of RabbitMQ's admin account . The default is “guest”.
     * password:  The password of RabbitMQ's admin account. The default is “guest”.
     * In the tags section, that is [inputs.rabbitmq.tags]
         * environment - This is the deployment environment where the RabbitMQ cluster identified by the value of **servers** resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
         * messaging_cluster - Enter a name to identify this RabbitMQ cluster. This cluster name will be shown in the Sumo Logic dashboards.
-* In the output plugins section, that is [[outputs.sumologic]]:
+* In the output plugins section, that is `[[outputs.sumologic]]`:
     * url - This is the HTTP source URL created in step 3. Please see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/configure-telegraf-output-plugin.md) for more information on additional parameters for configuring the Sumo Logic Telegraf output plugin.
 
 Here’s an explanation for additional values set by this Telegraf configuration that we request you **please do not modify** as they will cause the Sumo Logic apps to not function correctly.
 
-* `data_format - “prometheus”` In the output plugins section, which is [[outputs.sumologic]]. Metrics are sent in the Prometheus format to Sumo Logic.
-* **component**: “messaging” - In the input plugins section, which is [[inputs.RabbitMQ]]. This value is used by Sumo Logic apps to identify application components.
+* `data_format - “prometheus”` In the output plugins section, which is `[[outputs.sumologic]]`. Metrics are sent in the Prometheus format to Sumo Logic.
+* **component**: “messaging” - In the input plugins section, which is `[[inputs.RabbitMQ]]`. This value is used by Sumo Logic apps to identify application components.
 * **messaging_system**: “rabbitmq” - In the input plugins sections.In other words, this value identifies the messaging system
 
 For all other parameters please see [this doc](https://github.com/influxdata/telegraf/blob/master/etc/telegraf.conf) for more properties that can be configured in the Telegraf agent globally.

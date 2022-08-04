@@ -1,13 +1,15 @@
 ---
 id: enterprise-audit
-title: Sumo Logic Enterprise Audit App
-sidebar_label: Enterprise Audit
+title: Sumo Logic Enterprise Audit Apps
+sidebar_label: Enterprise Audit (multiple apps)
 description: The Sumo Logic Enterprise Audit Apps present information on account management activities, user activities, and management of library content (searches, dashboards/reports, and folders) in your Sumo Logic account.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-:::sumo availability
+The Sumo Logic Enterprise Audit Apps are JSON-based to provide for more meaningful audit messages. The Apps generate queries that are compatible with the new Sumo Logic Audit Event Index. The Enterprise Audit Apps do not support the previous version of the audit index. For information on available datasets and related source categories, see [Audit Event Index](/docs/manage/security/audit-event-index).
+
+## Prerequisites
 
 The Audit Event Index is only available for Trial and Enterprise accounts.
 
@@ -26,16 +28,24 @@ The Audit Event Index is only available for Trial and Enterprise accounts.
   </tr>
 </table>
 
-:::
-
-The Sumo Logic Enterprise Audit Apps are JSON-based to provide for more meaningful audit messages. The Apps generate queries that are compatible with the new Sumo Logic Audit Event Index. The Enterprise Audit Apps do not support the previous version of the audit index.
-
-For information on available datasets and related source categories, see [Audit Event Index](/docs/manage/security/audit-event-index).
+## Enterprise Audit Apps
 
 Enterprise Audit Apps utilize predefined searches and Dashboards that provide visibility into your environment. The following Enterprise Audit Apps present information on account management activities, user activities, as well as management of library content (searches, dashboards/reports, and folders) for your Sumo Logic account:
+
+<img src={useBaseUrl('img/integrations/sumo-apps/data_collection.png')} alt="Web servers icon" width="75"/>
+
 * [Enterprise Audit - Collector and Data Forwarding Management App](#enterprise-audit---collector-and-data-forwarding-management-app) presents information on Collector, Sources activities, and data forwarding trends by destination types.
+
+<img src={useBaseUrl('img/integrations/sumo-apps/content.png')} alt="Web servers icon" width="75"/>
+
 * [Enterprise Audit - Content Management App](#enterprise-audit---content-management-app) provides information on content activities, such as content that is created, updated, deleted, imported, exported, copied, moved, publicly accessed, made visible to the public, and application installed.
+
+<img src={useBaseUrl('img/integrations/sumo-apps/user_role.png')} alt="Web servers icon" width="75"/>
+
 * [Enterprise Audit - User & Role Management App](#enterprise-audit---user-and-role-management-app) provides visibility on user activities such as creating, deleting, and modifying user roles, email account, and password changes. You can also review various user session data.
+
+<img src={useBaseUrl('img/integrations/sumo-apps/SumoAuditSecurity.png')} alt="Web servers icon" width="75"/>
+
 * [Enterprise Audit - Security Management App](#enterprise-audit---security-management-app) provides visibility into security posture, such as Access Key Activities, SAML Activities, Password Policy, Multi-Factor Authorization (MFA), and Service AllowList activities within your Sumo Logic Environment.
 
 Audit data is not backfilled to any time before Enterprise Audit was installed. The Audit Event Index is enabled by default.

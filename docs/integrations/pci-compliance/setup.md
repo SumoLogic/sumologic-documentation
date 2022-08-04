@@ -7,9 +7,7 @@ description: Enterprises use the requirements of the Payment Card Industry Secur
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-:::sumo Enterprise customers only
-For more information on this app, contact [sales@sumologic.com](mailto:sales@sumologic.com).
-:::
+<img src={useBaseUrl('img/icons/security/PCI-compliance.png')} alt="PCI Compliance icon" width="75"/>
 
 As data security becomes increasingly paramount, enterprises may reference certifications and standards such as the  requirements of the Payment Card Industry Security Standard Council Data Security Standards (known as PCI DSS) as a means of assessing their policies and practices.  Even if you don't handle payment card information, the requirements under PCI DSS may serve as proxies for controls and obligations that businesses have in place and seek to actively monitor.
 
@@ -19,7 +17,13 @@ That's where the Sumo Logic PCI App comes in. With ready-made Dashboards that mo
 
 The Sumo Logic PCI App provides sample dashboards and searches to help track your environment against 11 of the 12 PCI required control groups. As with all of our apps, we recommend you customize these searches and dashboards to tailor them to your specific monitoring and troubleshooting needs so you get only get alerted on conditions important to you.
 
-## How it Works
+## Prerequisites
+
+:::sumo Enterprise customers only
+For more information on this app, contact [sales@sumologic.com](mailto:sales@sumologic.com).
+:::
+
+## How It Works
 
 The Sumo Logic PCI Application takes log data uploaded to Sumo Logic, then indexes this data into a View. This indexing allows for quicker search results against your data. The View is used for PCI Requirement searches as well as PCI Dashboards.
 

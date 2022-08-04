@@ -7,7 +7,7 @@ description: The Sumo Logic App for AWS Elastic Load Balancing Classic is a unif
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/amazon-aws/clb.png')} alt="DB icon" width="50"/>
+<img src={useBaseUrl('img/integrations/amazon-aws/clb.png')} alt="Thumbnail icon" width="50"/>
 
 AWS Elastic Load Balancer Classic distributes the incoming application traffic across multiple EC2 instances in multiple Availability Zones.
 
@@ -151,9 +151,9 @@ Following **Fields** are to be added in the source:
 * Add a **region** field and assign it the value of respective AWS region where the Classic Load Balancer exists.
 * Add an **accountId **field and assign it the value of the respective AWS account id which is being used.
 
- A green circle with a checkmark is shown when the field exists and is enabled in the Fields table schema.
+ ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a checkmark is shown when the field exists and is enabled in the Fields table schema.
 
- An orange triangle with an exclamation point is shown when the field doesn't exist or is disabled in the Fields table schema. In this case, an option is provided to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo that does not exist in the Fields schema or is disabled, it is ignored, known as dropped.
+ ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist or is disabled in the Fields table schema. In this case, an option is provided to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo that does not exist in the Fields schema or is disabled, it is ignored, known as dropped.
 11. For **AWS Access,** you have two **Access Method** options. Select **Role-based or Key access based on the AWS authentication you provide**. Role-based access is preferred. This was completed in the prerequisite step [Grant Sumo Logic access to an AWS Product](/docs/send-data/sources/sources-hosted-collectors/amazon-web-services/grant-access-aws-product.md).
     * For **Role-based access,** enter** **the Role ARN that was provided by AWS after creating the role. \
 

@@ -1,11 +1,13 @@
 ---
 id: collect-logs
-title: Collect Logs for Google Workspace
-sidebar_label: Collect Logs
+title: Collecting Logs for Google Workspace
+sidebar_label: Collecting Logs
 description: Instructions for configuring log collection from Google Workspace Apps and Alert Center, and how to ingest those logs into Sumo Logic.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src={useBaseUrl('img/integrations/google/workspace.jpeg')} alt="thumbnail icon" width="150"/>
 
 This procedure explains how to collect logs from Google Workspace and ingest them into Sumo Logic.
 
