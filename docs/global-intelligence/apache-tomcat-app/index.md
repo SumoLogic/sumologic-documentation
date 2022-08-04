@@ -1,8 +1,9 @@
 ---
 slug: /global-intelligence/apache-tomcat-app
+title: Global Intelligence for Apache Tomcat App
+sidebar_label: Global Intelligence for Apache Tomcat App
+description: The Global Intelligence for Apache Tomcat app helps DevOps and infrastructure engineers compare server and user activity patterns associated with their Apache Tomcat servers.
 ---
-
-# Global Intelligence for Apache Tomcat App
 
 Global Intelligence for Apache Tomcat App is a companion to the Apache Tomcat application and helps DevOps and infrastructure engineers compare server and user activity patterns associated with their Apache Tomcat servers against other Sumo Logic customer’s servers. Such comparisons can help diagnose potential load, throughput or error issues in Apache Tomcat clusters and avoid operational incidents arising from sub-optimal configurations of Tomcat servers.
 
@@ -10,7 +11,7 @@ Global Intelligence for Apache Tomcat App is a companion to the Apache Tomcat a
 
 Global Intelligence for Apache Tomcat App uses logs data from Apache Tomcat clusters. Like the Sumo Logic App for Apache Tomcat, it assumes the NCSA extended/combined log file format for Access logs and the default Apache Tomcat error log file format for error logs. For more details on custom log formats, see [Apache Tomcat Module mod_log_config](https://httpd.apache.org/docs/current/mod/mod_log_config.html).
 
-## Query sample 
+## Sample Query 
 
 The following sample query is from the Average **Requests Per Second: My** **Server** **v Benchmark** panel of **GI Tomcat - 02. Load Signals and Contributing Factors** dashboard.
 

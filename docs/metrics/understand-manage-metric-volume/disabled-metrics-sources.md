@@ -1,8 +1,9 @@
 ---
 id: disabled-metrics-sources
+title: Disabled Metrics Sources
+sidebar_label: Disabled Metrics Sources
+description: Sumo Logic sometimes disables metrics Sources in response to excessive volume of time series.
 ---
-
-# Disabled Metrics Sources
 
 In some cases, Sumo Logic disables a metrics source or drops a metric dimension to limit the number of ingested time series. 
 
@@ -93,7 +94,7 @@ This limit does not apply to the Kubernetes dimensions, Docker dimensions, or th
 * `label.com.docker.swarm.task.name`
 
 For other dimensions that exceed the cardinality limit Sumo generates a metric transformation rule to exclude the dimension. The rule appears in the UI at **Manage Data \> Metrics \> Metric Transformation Rules**:
-  
+
 You can delete the metric transformation rule, but you can’t disable or modify it. 
 
 ![transformation-rules.png](/img/metrics/transformation-rules.png)

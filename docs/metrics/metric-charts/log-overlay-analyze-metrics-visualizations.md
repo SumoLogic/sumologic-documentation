@@ -1,8 +1,9 @@
 ---
 id: log-overlay-analyze-metrics-visualizations
+title: Use Log Overlay to Analyze Metrics Visualizations
+sidebar_label: Use Log Overlay to Analyze Metrics Visualizations
+description: Learn how metrics visualizations can provide a clear status of your environment.
 ---
-
-# Use Log Overlay to Analyze Metrics Visualizations
 
 :::note
 This topic has information about Sumo Logic's Classic metrics UI. For information about the Metric Explorer UI, which replaces the Classic metrics UI, see [Metrics Explorer](../metric-queries-alerts/metrics-explorer.md).

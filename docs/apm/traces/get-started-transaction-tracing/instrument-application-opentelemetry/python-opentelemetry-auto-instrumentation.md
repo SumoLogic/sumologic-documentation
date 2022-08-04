@@ -1,8 +1,9 @@
 ---
 id: python-opentelemetry-auto-instrumentation
+title: Python OpenTelemetry auto-instrumentation
+sidebar_label: Python OpenTelemetry auto-instrumentation
+description: Learn how to configure OpenTelemetry Python instrumentation to capture data from the python written code applications.
 ---
-
-# Python OpenTelemetry auto-instrumentation
 
 OpenTelemetry Python instrumentation gives the possibility to capture telemetry data from the python written code applications. The best way to start it is to incorporate [OpenTelemetry-Python](https://github.com/open-telemetry/opentelemetry-python). See a list of the [supported libraries](https://github.com/open-telemetry/opentelemetry-python-contrib/tree/main/instrumentation) under OpenTelemetry Instrumentations.
 
@@ -13,7 +14,7 @@ The best way to instrument Python applications is to use OpenTelemetry-Python au
 ## Mandatory packages installation
 
 Installation of the package listed below is required to start the instrumentation and export telemetry data. Run the following pip commands:  
-  
+
 ```
 $ pip install opentelemetry-distro==0.28b1 $ pip install opentelemetry-exporter-otlp-proto-http==1.9.1
 ```

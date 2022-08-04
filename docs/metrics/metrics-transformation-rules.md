@@ -2,9 +2,8 @@
 id: metrics-transformation-rules
 title: Metrics Transformation Rules
 sidebar_label: Metrics Transformation Rules
-description: tk
+description: Metrics transformation rules allow you control how long raw metrics are retained. 
 ---
-
 
 Metrics transformation rules allow you control how long raw metrics are retained. You can also aggregate metrics at collection time and specify a separate retention period for the aggregated metrics.
 

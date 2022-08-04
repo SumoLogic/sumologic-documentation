@@ -1,8 +1,9 @@
 ---
 id: min
+title: min
+sidebar_label: min
+description: The min operator calculates the maximum value of the time series that match a metric query.
 ---
-
-# min
 
 Calculates the minimum value of the time series that match the query. If grouping is specified, it calculates the minimum for each group.
 

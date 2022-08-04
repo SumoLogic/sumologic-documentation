@@ -1,7 +1,8 @@
 ---
 id: collect-logs-apache
+title: Collect Logs for Apache App
+sidebar_label: Collect Logs for Apache App
+description: The Sumo Global Intelligence for Apache App provides insights into your key Apache infrastructure indicators.
 ---
 
-# Collect Logs for Apache App
-
-Follow the steps in [Sumo Logic Apache Logs] (../../07Sumo-Logic-Apps/24Web_Servers/Apache/01-Collect-Logs-for-Apache.md) to configure collection for the Global Intelligence for Apache App.
+Follow the steps in [Sumo Logic Apache Logs](/docs/integrations/web-servers/apache-tomcat#collecting-logs-and-metrics-for-apache-tomcat) to configure collection for the Global Intelligence for Apache App.

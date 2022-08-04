@@ -31,7 +31,7 @@ The AWS API Gateway ULM app uses the following logs and metrics:
 "123408221234"}
 ```
 
-### Query sample (Metric based)
+### Sample Query (Metric based)
 
 Average Latency by API Name:
 
@@ -40,7 +40,7 @@ _sourceCategory=Labs/AWS/APIGateway/Metric Namespace=aws/apigateway metric=Laten
 account=* region=* entity=* | avg by region, entity
 ```
 
-### Query sample (CloudTrail Log based)
+### Sample Query (CloudTrail Log based)
 
 ```sql
 _sourceCategory=Labs/AWS/CloudTrail/APIGateway "apigateway.amazonaws.com" Namespace={{namespace}}

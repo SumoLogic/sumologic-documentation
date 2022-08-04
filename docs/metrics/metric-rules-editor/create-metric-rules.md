@@ -1,8 +1,9 @@
 ---
 id: create-metric-rules
+title: Create Metric Rules
+sidebar_label: Create Metric Rules
+description: Use the metric rules editor to tag metrics with key-value pairs to ease the process of querying metrics.
 ---
-
-# Create Metric Rules
 
 This page has step-by-step instructions for creating a metric rule using the metric rules editor in the Sumo UI.
 
@@ -15,13 +16,13 @@ For a detailed discussion of metric rules, see [About Metric Rules](about-metric
 To create a metric rule:
 
 1. In the Sumo web app, go to **Manage Data \> Metrics \> Metric Rules**.  
-      
-    The **Metric Rules** page lists the metric rules that have already been defined. 
+
+    The **Metric Rules** page lists the metric rules that have already been defined.
 
     ![named-rule.png](/img/metrics/named-rule.png)
 
 1. To add a new rule, click the plus sign (+) in the upper left of the **Metric Rules** page.  
-      
+
     The **Add Metric Rule** popup appears.  
 
     ![add-metric-rule-empty.png](/img/metrics/add-metric-rule-empty.png)
@@ -29,22 +30,22 @@ To create a metric rule:
 1. In the **Rule name** field, enter a name for the new rule.
 
 1. In the **Metric match expression** field, enter one or more expressions that match the identifier of the metrics you want to tag. For example, this match expression:  
-      
+
     `collectd.*.*.*.*`  
-      
+
     matches Graphite strings in the `_rawName` field that begin with “collectd”, followed by four dot-separated segments. For example:  
-      
+
     `collectd.cqsplitter.stag-cqsplitter-2.GenericJMX-health_jmx-memory.memory-heapmax`  
-      
+
     And this match expression:  
-      
+
     `_sourceCategory=training/shipping/metrics type=payment`  
-      
+
     matches all metrics whose`_sourceCategory` field is "training/shipping/metrics" and type field is “payment”.
-    
+
     :::tip
     For greedy matching, use two asterisks. For more information, see the [Greedy match expressions](about-metric-rules.md#greedy-match-expressions).
-    
+
     You can use more than one match expression. For more information, see the [Multiple match expressions](about-metric-rules.md#multiple-match-expressions).
     :::
 
@@ -58,7 +59,7 @@ To create a metric rule:
     * To pull a tag from a dot-delimited string in metric field other than `_rawName` field, use `$FieldName._1` to extract the first segment of the string, `$FieldName._2` to extract the second segment of the string, and so on. For more information, see [Extracting variables from a key-value pair match expression,](about-metric-rules.md#extracting-variables-from-a-key-value-pair-match-expression).
 
 1. Select a metric in the **Time Series** section to see the values that would be assigned to each extracted tag for the selected metric:  
-      
+
     The entries below show what values would be assigned to the selected metric given the specified Tag Sequences.  
 
     ![variable-extracton.png](/img/metrics/variable-extracton.png)  

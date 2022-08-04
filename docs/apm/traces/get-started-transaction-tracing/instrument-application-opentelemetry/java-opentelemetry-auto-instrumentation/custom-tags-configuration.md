@@ -1,8 +1,9 @@
 ---
 id: custom-tags-configuration
+title: Custom tags configuration
+sidebar_label: Custom tags configuration
+description: Custom tags configuration for Java OpenTelemetry Instrumentation. 
 ---
-
-# Custom tags configuration
 
 ## Custom tags configuration via startup parameter
 
@@ -40,7 +41,7 @@ Add the [opentelemetry-sdk](https://mvnrepository.com/artifact/io.opentelemetry/
     }
     ```
 
-## Step 2: Import dependencies 
+## Step 2: Import dependencies
 
 Import dependencies in the application Java class file:
 

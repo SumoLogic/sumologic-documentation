@@ -1,8 +1,10 @@
 ---
 id: along
+title: along
+sidebar_label: along
+description: The along operator joins metric queries to have Sumo evaluate and perform expressions by comparing one or more metric fields.
 ---
 
-# along
 
 The `along` operator joins metric queries to have Sumo evaluate and perform expressions by comparing one or more metric fields. It considers multiple query rows and metrics referenced by another row according to one field or multiple fields separated by a comma (#A, #B,...).
 

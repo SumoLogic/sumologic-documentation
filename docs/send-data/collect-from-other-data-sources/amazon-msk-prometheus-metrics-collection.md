@@ -4,7 +4,7 @@ id: amazon-msk-prometheus-metrics-collection
 
 # Amazon MSK Prometheus metrics collection
 
-**Amazon Managed Streaming for Apache Kafka (Amazon MSK)** Open Monitoring, exposes Kafka metrics to third-party sources to monitor and troubleshoot MSK clusters. This page provides instructions for configuring metrics collection for Amazon MSK.
+**Amazon Managed Streaming for Apache Kafka (Amazon MSK)** Open Monitoring, exposes Kafka metrics to third-party sources to monitor and troubleshoot MSK clusters. This section provides instructions for configuring metrics collection for Amazon MSK.
 
 ## Collecting Amazon MSK metrics
 
@@ -80,19 +80,19 @@ To install and configure Telegraf, do the following:
 
     :::note
     For each node in your MSK cluster, you need two URLS in the Prometheus input section. Use the URL for the node you determined in [Step 3](#step-3-gather-information-on-nodes-and-endpoints), as in the following example:
-    
+
     * `<MSK_NODE>:11001/metrics` is the [JMX Exportermetrics](https://github.com/prometheus/jmx_exporter)  
     * `<MSK_NODE>:11002/metrics` is the [Node Exportermetrics](https://github.com/prometheus/node_exporter)
     :::
 
-```
+```sql
 [agent]
 # The interval property in the agent tells telegraf how often to scrape the metrics.
     interval = "60s"
 
 [[inputs.prometheus]]
-# For each node in your MSK cluster, you will need to have two urls in the Prometheus input section. 
-    urls = ["http://b-1.prometheustest.h295de.c6.kafka.us-east-1.amazonaws.com:11001/metrics", 
+# For each node in your MSK cluster, you will need to have two urls in the Prometheus input section.
+    urls = ["http://b-1.prometheustest.h295de.c6.kafka.us-east-1.amazonaws.com:11001/metrics",
     "http://b-1.prometheustest.h295de.c6.kafka.us-east-1.amazonaws.com:11002/metrics"]
 
 

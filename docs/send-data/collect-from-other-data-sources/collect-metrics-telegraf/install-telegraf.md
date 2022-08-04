@@ -1,8 +1,7 @@
 ---
 id: install-telegraf
+title: Installing Telegraf for Sumo Logic
 ---
-
-# Install Telegraf
 
 This topic has instructions for installing Telegraf to work with Sumo Logic. We provide two sets of instructions:
 
@@ -47,23 +46,22 @@ If you want to install Telegraf using a .deb file, or on Windows see [Manually i
 
 1. Add the InfluxData repository.
 
-   * To add the repository on Ubuntu, run the following command in a terminal window. 
+   * To add the repository on Ubuntu, run the following command in a terminal window.
 
-        ```
+        ```bash
         wget -qO- https://repos.influxdata.com/influxdb.key | sudo apt-key add -
         source /etc/lsb-release
         echo "deb https://repos.influxdata.com/${DISTRIB_ID,,} ${DISTRIB_CODENAME} stable" | sudo tee /etc/apt/sources.list.d/influxdb.list
         ```
-    
+
     * To add the repository on Debian, run the following commands in a terminal window, skipping the comment lines, which begin with #.
 
-        ```
-        # Before adding Influx repository, run this so that apt will be able to read the repository.
-
+        ```bash
+        # Before adding Influx repository, run this \
+        # so that apt will be able to read the repository.
         sudo apt-get update && sudo apt-get install apt-transport-https
 
         # Add the InfluxData key
-
         wget -qO-https://repos.influxdata.com/influxdb.key | sudo apt-key add -
         source /etc/os-release
         test $VERSION_ID = "7" && echo "deb https://repos.influxdata.com/debian wheezy stable" | sudo tee /etc/apt/sources.list.d/influxdb.list
@@ -74,14 +72,14 @@ If you want to install Telegraf using a .deb file, or on Windows see [Manually i
 
 1. To install and start the Telegraf service, run the following commands in a terminal window:
 
-    ```
+    ```bash
     sudo apt-get update && sudo apt-get install telegraf
     sudo service telegraf start
     ```
-    
+
     Or, if your operating system uses systemd (Ubuntu 15.04+, Debian 8+):
-    
-    ```
+
+    ```bash
     sudo apt-get update && sudo apt-get install telegraf
     sudo systemctl start telegraf
     ```
@@ -91,9 +89,9 @@ If you want to install Telegraf using a .deb file, or on Windows see [Manually i
 To manually install the Debian package from a .deb file:
 
 1. Download the latest Telegraf .deb release from the Telegraf section of the [downloads page](https://portal.influxdata.com/downloads/).
-1. Run the following command (making sure to supply the correct version number for the downloaded file): 
-   
-    ```
+1. Run the following command (making sure to supply the correct version number for the downloaded file):
+
+    ```bash
     sudo dpkg -i telegraf_1.<version>_amd64.deb
     ```
 
@@ -108,13 +106,13 @@ You must have administrative permissions to install a Windows service. Be sure t
 1. Launch PowerShell as an administrator.
 1. Download the Telegraf binary from the Telegraf section of the [downloads page](https://portal.influxdata.com/downloads/) and unzip its contents to `C:\Program Files\InfluxData\Telegraf`. The InfluxData [GitHub repositiory](https://github.com/influxdata/telegraf/releases) provides a list of all available releases.   You can also use the following Invoke-WebRequest PowerShell command with a specific Telegraf version (1.80.0 in this example):   
 
-    ```
+    ```bash
     > Invoke-WebRequest https://dl.influxdata.com/telegraf/releases/telegraf-1.80.0_windows_amd64.zip -OutFile telegraf.zip
     ```
 
 1. In PowerShell, run these commands:   
 
-    ```
+    ```bash
     > cd "C:\Program Files\InfluxData\Telegraf"
     > .\telegraf.exe --service install --config "C:\Program Files\InfluxData\Telegraf\telegraf.conf"
     ```
@@ -125,13 +123,13 @@ You must have administrative permissions to install a Windows service. Be sure t
 
 1. To test that the installation works, run:
 
-    ```
+    ```bash
     > C:\"Program Files"\InfluxData\Telegraf\telegraf.exe --config C:\"Program Files"\InfluxData\Telegraf\telegraf.conf --test
     ```
 
 1. To start collecting data, run:
 
-    ```
+    ```bash
     telegraf.exe --service start
     ```
 
@@ -154,29 +152,34 @@ This section documents the steps for setting up Telegraf in a Kubernetes environ
 
 1. First you need to set up Sumo Logic’s Kubernetes collection.
 
-   * If you have not set up Sumo Logic’s Kubernetes collection, perform [these steps to set up Kubernetes collection](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/release-v1.2/deploy/docs/Installation_with_Helm.md#installation-with-helm). 
-   
+   * If you have not set up Sumo Logic’s Kubernetes collection, perform [these steps to set up Kubernetes collection](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/release-v1.2/deploy/docs/Installation_with_Helm.md#installation-with-helm).
+
     :::note
-    When installing, make sure you enable the Telegraf Operator by adding this to the installation command:  ` --set telegraf-operator.enabled=true `
+    When installing, make sure you enable the Telegraf Operator by adding this to the installation command: 
+    ```Install Telegraf
+    --set telegraf-operator.enabled=true
+    ```
     :::
 
    * If you have already set up Kubernetes collection, you can upgrade to the latest version and enable the Telegraf Operator.
-   
-    ```
+    ```bash
     helm upgrade ... --set telegraf-operator.enabled=true ... 
     ```
 
 1. After the Telegraf Operator pod is ready, add the following annotations to the pods from which you want to collect metrics.
-
-    ```
+    ```yml
     telegraf.influxdata.com/inputs: |+
-        # Here goes telegraf configuration for scrapping metrics
+    # Telegraf configuration for scrapping metrics goes here
     (nginx example)
             [[inputs.nginx]]
                 urls = ["http://localhost:8080/stub_status"]
-    telegraf.influxdata.com/class: sumologic-prometheus  # points to predefined output configuration (exposing metrics to prometheus, so metadata enrichment can be performed)
-    prometheus.io/scrape: "true"  # Enable scrapping metrics by prometheus
-    prometheus.io/port: "9273"    # Defines from which port prometheus should scrape metrics
+    # Points to predefined output configuration \
+    # (exposing metrics to prometheus, so metadata enrichment can be performed)            
+    telegraf.influxdata.com/class: sumologic-prometheus  
+    # Enable scrapping metrics by prometheus
+    prometheus.io/scrape: "true"  
+    # Defines from which port prometheus should scrape metrics
+    prometheus.io/port: "9273"    
     ```
 
 For more details and examples, see [Configure Telegraf Input Plugins](configure-telegraf-input-plugins.md). 
@@ -191,7 +194,7 @@ You can adjust the collection and reporting intervals in the `[agent]` block of 
 
 The following example collects and send metrics to Sumo Logic every 30 seconds.
 
-```
+```sql
 [agent]
   interval = "30s"
   flush_interval = "30s"
@@ -201,7 +204,7 @@ The following example collects and send metrics to Sumo Logic every 30 seconds.
 
 You may wish to add additional metadata to the metrics that Telegraf collects. You can do so with Global Tags. Global tags can be specified in the `[global_tags]` table in key="value" format. All metrics that are collected will be tagged with the specified tags.
 
-```
+```sql
 [global_tags]
   dc = "us-east-1"
 ```

@@ -1,13 +1,14 @@
 ---
 id: aws-lambda-nodejs-function-instrumentation
+title: AWS Lambda - NodeJS function instrumentation with Sumo Logic tracing
+sidebar_label: AWS Lambda - NodeJS function instrumentation
+description: Learn how to install and configure OpenTelemetry distributed tracing for AWS Lambda functions based on NodeJS and send data to Sumo Logic.
 ---
-
-# AWS Lambda - NodeJS function instrumentation with Sumo Logic tracing
 
 This document covers how to install and configure OpenTelemetry distributed tracing for AWS Lambda functions based on NodeJS and send the data to Sumo Logic.
 
 To obtain tracing data from AWS Lambda functions developed in Node.js you can use [OpenTelemetry NodeJS instrumentation](https://github.com/SumoLogic/opentelemetry-lambda/tree/main/nodejs). It provides auto instrumentation.  
-  
+
 **Sumo Logic AWS Distro Lambda Layer supports:**
 
  * nodejs12.x and nodejs14.x runtimes
@@ -48,7 +49,7 @@ It is very simple to instrument your AWS NodeJS Lambda function using the Sumo L
          * `application=YOUR_APPLICATION_NAME` - the string value, if the function is a part of complex system/application then set it for all other functions/applications.
 
          * `cloud.account.id=YOUR_CLOUD_ACCOUNT_ID` - set an additional tag that will contain your [AWS Lambda Account ID](https://docs.aws.amazon.com/general/latest/gr/acct-identifiers.html). This will help to provide more relevant data.   
-              
+
             All of the attributes above are comma separated key/value pairs (this is also a way to add additional information to the spans, just after comma add additional key=value pair) such as, `OTEL_RESOURCE_ATTRIBUTES=application=YOUR_APPLICATION_NAME,cloud.account.id=123456789012`.
 
      * `SUMOLOGIC_HTTP_TRACES_ENDPOINT_URL` has to be set to send all gathered telemetry data to Sumo Logic. The URL comes from an [HTTP Traces Endpoint URL](../http-traces-source.md). You can use an existing Source or create a new one if needed.
@@ -161,7 +162,7 @@ changes in the Dockerfile and image rebuild. You'll need the following:
 
      * `application=YOUR_APPLICATION_NAME` - the string value, if the function is a part of complex system/application then set it for all other functions/applications.
      * `cloud.account.id=YOUR_CLOUD_ACCOUNT_ID` - set an additional tag that will contain your [AWS Lambda Account ID](https://docs.aws.amazon.com/general/latest/gr/acct-identifiers.html). This will help to provide more relevant data.   
-              
+
         All of the attributes above are comma separated key/value pairs (this is also a way to add additional information to the spans, just after comma add additional key=value pair) such as, `OTEL_RESOURCE_ATTRIBUTES=application=YOUR_APPLICATION_NAME,cloud.account.id=123456789012`.
 
      * `SUMOLOGIC_HTTP_TRACES_ENDPOINT_URL` has to be set to send all gathered telemetry data to Sumo Logic. The URL comes from an [HTTP Traces Endpoint URL](../http-traces-source.md). You can use an existing Source or create a new one if needed.

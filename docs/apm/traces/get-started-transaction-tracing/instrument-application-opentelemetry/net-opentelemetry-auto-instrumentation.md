@@ -1,8 +1,9 @@
 ---
 id: net-opentelemetry-auto-instrumentation
+title: .NET OpenTelemetry auto-instrumentation
+sidebar_label: .NET OpenTelemetry auto-instrumentation
+description: The simplest way to start capturing telemetry data is to implement the solution coming from OpenTelemetry-dotNet.
 ---
-
-# .NET OpenTelemetry auto-instrumentation
 
 Automatic instrumentation of the .NET applications is a very easy task. The simplest way to start capturing telemetry data is to implement the solution coming from OpenTelemetry-dotNet. All the libraries shipped with the [OpenTelemetry-dotNet](https://github.com/open-telemetry/opentelemetry-dotnet) repository support all the officially supported versions of .NET Core (including deployments in the [Microsoft Azure Service Fabric Containers](https://docs.microsoft.com/en-us/azure/service-fabric/service-fabric-containers-overview)) and .NET framework with an except for .NET Framework 3.5 SP1. See this [list of the supported libraries](https://github.com/open-telemetry/opentelemetry-dotnet#getting-started).
 
@@ -65,7 +66,7 @@ $ dotnet add package OpenTelemetry.Extensions.Hosting -v 1.0.0-rc9
 ### Step 2: Web.config file changes
 
 After packages installation some entries should appear in the Web.config file.  
-  
+
 In `<system.web>` section additional HTTP Module should be added:
 
 ```
@@ -104,7 +105,7 @@ To enable [.NET instrumentation](https://github.com/open-telemetry/opentelemetry
 public class MvcApplication : System.Web.HttpApplication
 {   
    private TracerProvider tracerProvider;
-  
+
    protected void Application_Start()
    {   
        this.tracerProvider = Sdk.CreateTracerProviderBuilder()
@@ -114,13 +115,13 @@ public class MvcApplication : System.Web.HttpApplication
                     .AddEnvironmentVariableDetector())
            .AddOtlpExporter()
            .Build();
-      
+
        AreaRegistration.RegisterAllAreas();
        FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
        RouteConfig.RegisterRoutes(RouteTable.Routes);
        BundleConfig.RegisterBundles(BundleTable.Bundles);
    }
-  
+
    protected void Application_End()
    {
        this.tracerProvider?.Dispose();
@@ -131,7 +132,7 @@ public class MvcApplication : System.Web.HttpApplication
 The final step is to configure the exporter endpoint, service and application name. In this example, the instrumentation will be configured by environment variables.
 
 * `OTEL_EXPORTER_OTLP_PROTOCOL=http/protobuf` - configures OTLP exporter to use OTLP HTTP protocol
-* `OTEL_EXPORTER_OTLP_ENDPOINT=http://collection-sumologic-otelcol.sumologic:55681` - environment variable configures the endpoint where telemetry data will be sent. The value of the variable points to the default Sumologic Kubernetes Collector. 
+* `OTEL_EXPORTER_OTLP_ENDPOINT=http://collection-sumologic-otelcol.sumologic:55681` - environment variable configures the endpoint where telemetry data will be sent. The value of the variable points to the default Sumologic Kubernetes Collector.
 * `OTEL_SERVICE_NAME=SERVICE_NAME` - configure the service name. Ensure the string value represents its business logic, such as "FinanceServiceCall". This will appear as a tracing service name in Sumo Logic.
 * `OTEL_RESOURCE_ATTRIBUTES=application=APPLICATION_NAME` - configure the application name. This will appear as a tracing application name in Sumo Logic. Additional attributes can be added here as comma separated key=value pairs.
 
@@ -150,15 +151,15 @@ dotnet add package OpenTelemetry.Instrumentation.GrpcNetClient -v 1.0.0-rc9
 and a small code change, in addition to the GrpcClient instrumentation `.AddGrpcClientInstrumentation()`. More details can be found [here](https://github.com/open-telemetry/opentelemetry-dotnet/tree/1.0.0-rc7/src/OpenTelemetry.Instrumentation.GrpcNetClient#grpcnetclient-instrumentation-for-opentelemetry).
 
 * .NET Core code example:  
-      
+
    ```
    services.AddOpenTelemetryTracing((builder) => builder
          .AddAspNetCoreInstrumentation()
          .AddGrpcClientInstrumentation()
-   ``` 
+   ```
      
 * .NET code example:  
-      
+
    ```
    this.tracerProvider = Sdk.CreateTracerProviderBuilder()
          .AddAspNetInstrumentation()
@@ -178,7 +179,7 @@ and a small code change, in addition to the HttpClient instrumentation
 [here](https://github.com/open-telemetry/opentelemetry-dotnet/tree/1.0.0-rc7/src/OpenTelemetry.Instrumentation.Http#httpclient-and-httpwebrequest-instrumentation-for-opentelemetry).
 
 * .NET Core code example  
-      
+
     ```
     services.AddOpenTelemetryTracing((builder) => builder
        .AddAspNetCoreInstrumentation()
@@ -187,7 +188,7 @@ and a small code change, in addition to the HttpClient instrumentation
      
 
 * .NET code example  
-      
+
     ```
     this.tracerProvider = Sdk.CreateTracerProviderBuilder()
            .AddAspNetInstrumentation()
@@ -205,7 +206,7 @@ $ dotnet add package OpenTelemetry.Instrumentation.StackExchangeRedis -v 1.0.0-r
 and a small code change, in addition to the Redis instrumentation `.AddRedisInstrumentation(connection)` Redis instrumentation requires a connection to the Redis server. More details can be found [here](https://github.com/open-telemetry/opentelemetry-dotnet/tree/1.0.0-rc7/src/OpenTelemetry.Instrumentation.StackExchangeRedis#stackexchangeredis-instrumentation-for-opentelemetry).
 
 * .NET Core code example  
-      
+
    ```
    services.AddOpenTelemetryTracing((builder) => builder
          .AddAspNetCoreInstrumentation()
@@ -214,7 +215,7 @@ and a small code change, in addition to the Redis instrumentation `.AddRedisInst
      
 
 * .NET code example  
-      
+
    ```
    this.tracerProvider = Sdk.CreateTracerProviderBuilder()
            .AddAspNetInstrumentation()
@@ -232,7 +233,7 @@ $ dotnet add package OpenTelemetry.Instrumentation.SqlClient -v 1.0.0-rc9
 and a small code change, in addition to the SqlClient instrumentation `.AddSqlClientInstrumentation()`. More details can be found [here](https://github.com/open-telemetry/opentelemetry-dotnet/tree/1.0.0-rc7/src/OpenTelemetry.Instrumentation.SqlClient#sqlclient-instrumentation-for-opentelemetry).
 
 * .NET Core code example  
-      
+
    ```
    services.AddOpenTelemetryTracing((builder) => builder
        .AddAspNetCoreInstrumentation()
@@ -240,7 +241,7 @@ and a small code change, in addition to the SqlClient instrumentation `.AddSqlCl
    ```
 
 * .NET code example  
-      
+
    ```
    this.tracerProvider = Sdk.CreateTracerProviderBuilder()
            .AddAspNetInstrumentation()

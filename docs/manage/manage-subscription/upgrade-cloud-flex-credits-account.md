@@ -4,7 +4,7 @@ id: upgrade-cloud-flex-credits-account
 
 # Upgrade a Cloud Flex Credits Account
 
-This page has instructions for upgrading a Sumo Logic Free or Trial account to a monthly or annual Essentials account, and for requesting updates to an existing Essentials account.
+This section has instructions for upgrading a Sumo Logic Free or Trial account to a monthly or annual Essentials account, and for requesting updates to an existing Essentials account.
 
 For information about Essentials accounts, see [Cloud Flex Credits - Account Types](cloud-flex-credits-accounts.md). 
 

@@ -1,8 +1,9 @@
 ---
 id: add-new-aws-service
+title: Add a New AWS Service to the AWS Observability Explore Hierarchy
+sidebar_label: Add a New AWS Service
+description: Learn how to add a new dashboard to the Hierarchy.
 ---
-
-# Add a New AWS Service to the AWS Observability Explore Hierarchy
 
 The AWS Observability view in Explore provides a unified view of your AWS Services within Sumo Logic from multiple AWS accounts. It shows a hierarchy across AWS accounts, regions, namespaces, and entities to present an intuitive navigation flow.
 
@@ -37,11 +38,11 @@ This can be done by following the steps below:
 1. In the AWS Observability solution, identify the account alias for the AWS account you have configured that is running the service you want to monitor
 1. Edit the CloudWatch Metrics source for the AWS service you wish to add to the AWS Observability solution
 1. Add **Account** field as by adding a field as shown in the screenshot below:
-  
+
   ![Step1.png](/img/observability/Step1.png)
 
 1. To confirm if the account tag is indeed added as metadata, go to your Sumo Logic AWS Cloudwatch Metric source and check the metrics data.
-  
+
   ![Step1.1.png](/img/observability/Step1-1.png)
 
 ### Validate the **namespace** and **region **metadata tags 
@@ -81,13 +82,13 @@ steps below to update the existing hierarchy :
 1. Run the below curl command to get the existing AWS Observability hierarchy.
 
   ```terminal
-  curl -s -H "Content-Type: application/json" --user 
-  "<ACCESS_ID>:<ACCESS_KEY>" -X GET 
-  https://<SUMOLOGIC_URL>/api/v1/entities/hierarchies | json_pp 
-  -json_opt pretty,canonical | grep -B 80 "\"AWS Observability\"" | 
-  grep "id" | head -1 | awk -F":" '{ print $2}' | tr -cd '[:digit:]' | 
-  xargs -I {} curl -s -H "Content-Type: application/json" --user 
-  "<ACCESS_ID>:<ACCESS_KEY>" -X GET 
+  curl -s -H "Content-Type: application/json" --user
+  "<ACCESS_ID>:<ACCESS_KEY>" -X GET
+  https://<SUMOLOGIC_URL>/api/v1/entities/hierarchies | json_pp
+  -json_opt pretty,canonical | grep -B 80 "\"AWS Observability\"" |
+  grep "id" | head -1 | awk -F":" '{ print $2}' | tr -cd '[:digit:]' |
+  xargs -I {} curl -s -H "Content-Type: application/json" --user
+  "<ACCESS_ID>:<ACCESS_KEY>" -X GET
   https://<SUMOLOGIC_URL>/api/v1/entities/hierarchies/{} | json_pp -json_opt pretty
   ```
 
@@ -182,15 +183,15 @@ steps below to update the existing hierarchy :
 1. Update the hierarchy using the below command.
 
   ```terminal
-  curl -s -H "Content-Type: application/json" --user 
-  "<ACCESS_ID>:<ACCESS_KEY>" -X PUT 
-  https://<SUMOLOGIC_URL>/api/v1/entities/hierarchies/<ID> -d 
+  curl -s -H "Content-Type: application/json" --user
+  "<ACCESS_ID>:<ACCESS_KEY>" -X PUT
+  https://<SUMOLOGIC_URL>/api/v1/entities/hierarchies/<ID> -d
   '<JSON_CONTENT_AFTER_UPDATE>'
   ```
 
 :::note
 1. **ACCESS_ID** and **ACCESS_KEY** - Replace parameters with your sumo logic access Id and access key.
-1. **SUMOLOGIC_URL** - Replace with service endpoint URL as per deployment. 
+1. **SUMOLOGIC_URL** - Replace with service endpoint URL as per deployment.
 1. **ID** - Replace with the hierarchy ID as present in the JSON output from Step 1.
 1. **JSON_CONTENT_AFTER_UPDATE** - Replace with the JSON updated with new AWS service after Step 2.
 :::
@@ -224,7 +225,7 @@ We will take AWS/SQS as an example. For SQS, we selected QueueName as our resour
 
 **Name: AwsObservabilitySqsFieldExtractionRule**
 
-Scope: 
+Scope:
 
 ```
 (_sourceCategory=aws/observability/cloudtrail/logs "eventSource":"sqs.amazonaws.com")
@@ -254,9 +255,9 @@ To add any dashboard to the hierarchy, perform the below steps:
 
 1. Go to your dashboard in the Sumo Logic account. 
 1. Select **Create Stack Linking** as per the below screenshot.
-  
+
   ![Step5.png](/img/observability/Step5.png)
-1. In the pop-up, add the fields shown below to make it part of AWS Observability in the hierarchy. 
+1. In the pop-up, add the fields shown below to make it part of AWS Observability in the hierarchy.
 
   * account: *
   * region: *
@@ -271,20 +272,20 @@ Consider the example of an SQS dashboard:  
 
 1. Add dashboard at the namespace level.
  * Add account, region, namespace in stack linking.    
-  
+
   ![Step5.1.png](/img/observability/Step5-1.png)
  * Go to AWS Observability view to look at the dashboard on namespace level.    
-  
+
   ![Step5.2.png](/img/observability/Step5-2.png)
 
-1. Add dashboard at queuename level. 
+1. Add dashboard at queuename level.
 
    * Add account, region, namespace, and queuename in stack linking.    
-  
+
   ![Dasboard_Stack_Linking.png](/img/observability/Dasboard_Stack_Linking.png)
 
    * Go to AWS Observability view to look at the dashboard on queuename level    
-  
+
   ![queuename_level.png](/img/observability/queuename_level.png)
 
 ### Add Template Variables (Optional)
@@ -296,7 +297,7 @@ Follow the steps to add variables to the dashboards:
 1. Go to the dashboard.
 1. Click **+** button near the ”Create a template variable” text.
 1. Add a template variable as shown below:
-  
+
   ![Step6.1.png](/img/observability/Step6-1.png)
 
 Refer to this document for further details on how to use filters with template variables.
@@ -310,7 +311,7 @@ template variables in log queries.
 For example:
 
 ```sql
-account={{account}} namespace={{namespace}} region={{region}} queuename={{queuename}} “sqs.amazonaws.com” 
+account={{account}} namespace={{namespace}} region={{region}} queuename={{queuename}} “sqs.amazonaws.com”
 | json "eventName", "awsRegion", "requestParameters.queueName", "sourceIPAddress", "userIdentity.userName" as event_name, Region, queuename, src_ip, user
 | count by event_name
 ```
@@ -329,6 +330,6 @@ You can add a variable to your queries by using
 For example:
 
 ```sql
-namespace=aws/sqs metric=NumberOfMessagesSent 
+namespace=aws/sqs metric=NumberOfMessagesSent
 account={{account}}  region={{region}} queuename={{queuename}} | avg by QueueName, account, region, namespace
 ```

@@ -1,8 +1,9 @@
 ---
 id: bottomk
+title: bottomk
+sidebar_label: bottomk
+description: The bottomk operator selects the bottom specified time series sorted by the value of a mathematical expression evaluated over the query time range.
 ---
-
-# bottomk
 
 The `bottomk` operator applies a specified aggregation function to the time series that match the query selector, and returns the n time series that have the lowest evaluated value over the query time range.  
 

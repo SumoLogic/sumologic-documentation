@@ -2,7 +2,7 @@
 id: alert-variables
 title: Alert Variables
 sidebar_label: Alert Variables
-description: tk
+description: Alerts support variables allowing you to customize notifications with the information you need. You can use alert variables to customize your notification payload from Monitors, Scheduled Searches, and Metrics Monitors.
 ---
 
 Variables are used as parameters in the JSON payload object of your alert notifications. These variables are used to dynamically populate specific values from the alert configuration in the notification payload. It includes things like the TriggerType that gives the current monitor status in the notification. When a notification is sent variables are replaced with values from the alert. For example, if you specified `{{Name}}` in your JSON payload, it would be replaced with the actual name of the alert in the delivered payload.

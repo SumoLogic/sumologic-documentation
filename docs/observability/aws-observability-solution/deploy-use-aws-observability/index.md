@@ -1,8 +1,8 @@
 ---
 slug: /observability/aws-observability-solution/deploy-use-aws-observability
+title: Deploy and Use AWS Observability
+description: Learn about Sumo Logic's AWS Observability Solution, how to deploy it, and how to get started with it.
 ---
-
-# Deploy and Use AWS Observability
 
 These topics have information about Sumo Logic's AWS Observability Solution, how to deploy it, and how to get started with it.
 

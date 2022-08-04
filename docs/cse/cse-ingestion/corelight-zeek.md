@@ -5,7 +5,7 @@ sidebar_label: Corelight Zeek
 description: tk
 ---
 
-This page has instructions for collecting Corelight Zeek log messages and sending them to Sumo Logic to be ingested by CSE.
+This section has instructions for collecting Corelight Zeek log messages and sending them to Sumo Logic to be ingested by CSE.
 
 These instructions are for Corelight Zeek logs sent as JSON over syslog.
 

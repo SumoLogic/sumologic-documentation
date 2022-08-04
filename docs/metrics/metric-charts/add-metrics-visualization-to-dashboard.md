@@ -1,8 +1,9 @@
 ---
 id: add-metrics-visualization-to-dashboard
+title: Add a Metrics Visualization to a Dashboard
+sidebar_label: Add a Metrics Visualization to a Dashboard
+description: To save a metrics visualization, you must add the visualization as a new Panel in a Dashboard.
 ---
-
-# Add a Metrics Visualization to a Dashboard
 
 You can add a metrics visualization as a panel in a dashboard.
 
@@ -12,7 +13,7 @@ This topic has information about Sumo Logic's Classic metrics UI. For informat
 
 1. First, [create a metrics query and visualization](create-metrics-visualization.md).
 1. Choose **Add to Dashboard** from the three-dot menu in the upper right corner of the metric chart  
- 
+
     ![add-to-dashboard.png](/img/metrics/add-to-dashboard.png). 
 
 1. To add the chart to to an existing dashboard, enter a title for the panel, select the dashboard from the **Dashboard** pulldown, and click **Add**.  

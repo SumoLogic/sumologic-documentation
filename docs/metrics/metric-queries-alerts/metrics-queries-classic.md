@@ -1,8 +1,9 @@
 ---
 id: metrics-queries-classic
+title: Metrics - Classic
+sidebar_label: Metrics - Classic
+description: See information about the Classic metrics UI.
 ---
-
-# Metrics - Classic
 
 This topic explains how to construct metrics queries and provides examples. 
 
@@ -71,7 +72,7 @@ Follow these guidelines to complete your queries:
 * Specify multiple pairs within a query for an AND, OR, or NOT/! match. If you enter multiple pairs manually, make sure to include a space between the `tag=value` pairs. For example, this query  matches `HostMetrics` AND the instance identifier `i-e0b45532`: `_contentType=HostMetrics InstanceId=i-e0b455532`
 
 * Create up to six queries using multiple query text boxes. Each query is presented with its own graph or graphs in the chart area. See [Interacting with Metric Charts](../metric-charts/interacting-metric-charts.md) for information on viewing and managing the display of multiple queries.  
-      
+
     When you add a query, an additional query text box is added (up to six total). To delete any of the query text boxes, hover over the text box and click the **Delete** icon on the right.
 
 * You can use wildcard matches for selectors and/or values, as in these examples:  
@@ -145,7 +146,7 @@ Another thing we can do with metrics queries and math operations is timeshift by
 1. Start with your average CPU usage for your source host for today. `metric=CPU_user _sourceHost=my_source_host | avg`
 1. Subtract today from yesterday’s average by using the query row and timeshift: `#A | timeshift 1d`
 1. See differences between your metric and your average. `(#A - #B)/#B`
-1. If the differences are subtle, you can multiply by 100 to make your visualization easier to read. `100* (#A - #B)/#B` 
+1. If the differences are subtle, you can multiply by 100 to make your visualization easier to read. `100* (#A - #B)/#B`
 
 ![metricsjoin4](/img/metrics/compare-to-baseline.png)
 
@@ -173,7 +174,7 @@ When a metric query returns more than 1000 time series, Sumo limits the number o
 
 `Too many time-series matched '(query-selectors)'. Displaying n of m+ matching series. Add more filters to select fewer time series or apply an aggregation function`
 
-Where: 
+Where:
 
 * `query-selectors` are the selectors you used in your query.
 * `n` is the number of time series displayed in the visualization.
@@ -183,7 +184,7 @@ Where:
 If the query that results in the message contains an aggregation operator, the results presented are likely to be erroneous because the aggregation will be based on only 1000 time series.
 :::
 
-One solution is to add additional selectors to your query to reduce the number of time series returned, for example by adding additional tag=value pairs to the query. You can also filter the time series returned using the [topk](metrics-operators/topk.md), [bottomk](metrics-operators/bottomk.md), and [filter operators](metrics-operators/filter.md). 
+One solution is to add additional selectors to your query to reduce the number of time series returned, for example by adding additional tag=value pairs to the query. You can also filter the time series returned using the [topk](metrics-operators/topk.md), [bottomk](metrics-operators/bottomk.md), and [filter operators](metrics-operators/filter.md).
 
 ### Long-running metric query
 For a single metrics query request, Sumo limits the output time series at 1000 for visualization. Output time series can either exceed the limit for a single row or multiple rows combined.

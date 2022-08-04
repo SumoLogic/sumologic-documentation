@@ -1,8 +1,9 @@
 ---
 id: create-metrics-visualization
+title: Create a Metrics Query and Visualization
+sidebar_label: Create a Metrics Query and Visualization
+description: You can view metrics data in Sumo Logic.
 ---
-
-# Create a Metrics Query and Visualization
 
 This topic has information about Sumo Logic's Classic metrics UI. For information about the Metric Explorer UI, which replaces the Classic metrics UI, see [Metrics Explorer](../metric-queries-alerts/metrics-explorer.md).
 
@@ -20,7 +21,7 @@ To create a metrics visualization:
 1. Create your query or queries in the **Query** tab, which opens by default when you open the Metrics page.  
 
     ![page](/img/metrics/metricsquerycallout.png)
-      
+
     Create up to six metrics queries, with each including a combination of the following:
 
     * Sequence of space-separated `tag=value` pairs. 
@@ -28,13 +29,13 @@ To create a metrics visualization:
     * Functions (displayed with `|` symbol).
     * Aggregation by specified parameters (displayed with `|` symbol).
     * Logical operators (AND, OR, and NOT/!)  
-      
+
     Example 1 (one query): `metric=CPU_Idle `  
-      
+
     Example 1 (one query with aggregation): `cluster=search node=search-1 metric=cpu-system | avg by node`  
-      
+
     Example 2 (two queries) `_sourceCategory=tara_cloudwatch_aws_logs_2 metric=CPU_Idle `  
-      
+
     Example 3 (one query, using NOT to visualize all nodes except search-1): `cluster=search !node=search-1 metric=cpu-system | avg by node`  
      
 
@@ -43,5 +44,5 @@ To create a metrics visualization:
     For more information, see [Guidelines for Metrics Queries](../metric-queries-alerts/metrics-queries-classic.md).
 
 1. Press **Enter** in any of the entry fields to display the data in the data visualization area. See [Interacting with Metric Charts](interacting-metric-charts.md) to learn how to interact with the visualization and modify settings.  
-      
+
     ![metrics_first chart.jpg](/img/metrics/create-metric-vis.png)

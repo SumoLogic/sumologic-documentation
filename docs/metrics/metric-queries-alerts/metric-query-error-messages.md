@@ -1,8 +1,9 @@
 ---
 id: metric-query-error-messages
+title: Metric Query Error Messages
+sidebar_label: Metric Query Error Messages
+description: Sumo issues errors when metric queries run too long or match too many time series.
 ---
-
-# Metric Query Error Messages
 
 This page describes error messages that are presented for long-running metric queries and metric queries that return too many results.
 

@@ -2,14 +2,16 @@
 slug: /apm/traces/get-started-transaction-tracing
 title: Getting Started with Transaction Tracing
 sidebar_label: Getting Started with Transaction Tracing
-description: tk
+description: Learn how you can send traces to Sumo Logic.
 ---
 
-## Availability
+:::sumo availbility
 
 | Account Type | Account Level |
 |--|--|
 | Credits | Enterprise Operations and Enterprise Suite<br/>Essentials get up to 5 GB a day |
+
+:::
 
 Sumo Logic transaction tracing provides cloud-native transactional intelligence for distributed business workflows, by enriching and analyzing traces, logs, and metrics in real-time with automated generated application topology. All telemetry signals are fully integrated to provide a seamless end-to-end experience during the process of managing and responding to production incidents and to reduce downtime by streamlining root cause analysis.
 

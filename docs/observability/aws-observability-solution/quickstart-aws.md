@@ -2,6 +2,7 @@
 id: quickstart-aws
 title: AWS Observability Quickstart
 sidebar_label: AWS Observability Quickstart
+description: Get started quickly with our AWS Observability integration.
 ---
 
 This guide will walk you through setting up [Sumo Logic's AWS Observability integration](https://www.sumologic.com/application/aws-observability/)
@@ -12,7 +13,7 @@ You will need the [AWS CLI](https://aws.amazon.com/cli/) command installed and c
 
 ## Installation
 
-Get your [Sumo Logic Access ID and Access Key](https://help.sumologic.com/manage/security/Access-Keys) and run the following command:
+Get your [Sumo Logic Access ID and Access Key](/docs/manage/security/access-keys) and run the following command:
 
 ```
 curl https://raw.githubcontent.com/sumologic/sumologic-solution-templates/aws-observability/install.sh | bash -- <SUMO_ACCESS_ID> <SUMO_ACCESS_KEY>

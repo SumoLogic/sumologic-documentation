@@ -4,7 +4,7 @@ id: windows-event-source-custom-channels
 
 # Windows Event Source Custom Channels
 
-To configure a Local or Remote Windows Event Source, you must identify the channels to collect from. This page explains how to obtain this list of channel names from your systems, and describes channels which the Sumo Logic collector cannot process.
+To configure a Local or Remote Windows Event Source, you must identify the channels to collect from. This section explains how to obtain this list of channel names from your systems, and describes channels which the Sumo Logic collector cannot process.
 
 ## Obtaining channel names
 

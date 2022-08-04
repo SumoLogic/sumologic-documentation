@@ -1,10 +1,11 @@
 ---
 id: accum
+title: accum
+sidebar_label: accum
+description: The accum operator creates a series of running totals for each metric time series.
 ---
 
-# accum
-
-The `accum` operator creates a series of running totals for each metric time series. The running total in each series starts from the value of the first data point in the series, then iteratively adds up successive 
+The `accum` operator creates a series of running totals for each metric time series. The running total in each series starts from the value of the first data point in the series, then iteratively adds up successive
 values.
 
 `accum` is useful for metrics where the cumulative value over time is of interest, for instance the number of failed or successful transactions.

@@ -2,7 +2,7 @@
 id: before-you-deploy
 title: Before You Deploy
 sidebar_label: Before You Deploy
-description: tk
+description: Learn prerequisites and guidelines for deploying the AWS Observability Solution to a single AWS account and region.
 ---
 
 

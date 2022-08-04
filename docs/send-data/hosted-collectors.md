@@ -2,7 +2,7 @@
 id: hosted-collectors
 title: Hosted Collectors
 sidebar_label: Hosted Collectors
-description: tk
+description: Hosted Collectors allow you to upload data stored in the cloud to Sumo Logic.
 ---
 
 A **Hosted Collector** is not installed on a local system in your deployment. Instead, Sumo Logic hosts the Collector and its Sources in AWS. With a Hosted Collector, you can create Sources to collect data from various services. A single Hosted Collector can be configured with any number of  Sources.

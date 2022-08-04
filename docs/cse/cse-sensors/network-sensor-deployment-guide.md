@@ -4,7 +4,7 @@ id: network-sensor-deployment-guide
 
 # Network Sensor Deployment Guide
 
-This page has instructions for deploying the CSE Network Sensor. It covers deployment planning, standard sensor placement, sensor requirements, installation, general configuration, and helpful commands. 
+This section has instructions for deploying the CSE Network Sensor. It covers deployment planning, standard sensor placement, sensor requirements, installation, general configuration, and helpful commands. 
 
 ## Network Sensor overview
 
