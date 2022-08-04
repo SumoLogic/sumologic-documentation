@@ -75,10 +75,6 @@
     "message": "お探しのページが見つかりませんでした。",
     "description": "The first paragraph of the 404 page"
   },
-  "theme.NotFound.p2": {
-    "message": "このページにリンクしているサイトの所有者に連絡をしてリンクが壊れていることを伝えてください。",
-    "description": "The 2nd paragraph of the 404 page"
-  },
   "theme.AnnouncementBar.closeButtonAriaLabel": {
     "message": "閉じる",
     "description": "The ARIA label for close button of announcement bar"
