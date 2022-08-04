@@ -1,11 +1,13 @@
 ---
 id: cloud-load-balancing
 title: Sumo Logic App for Google Cloud Load Balancing
-sidebar_label: Cloud Load Balancing
-description: tk
+sidebar_label: Google Cloud Load Balancing
+description: The Sumo Logic App for Google Cloud Load Balancing helps you monitor load balancing activity.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src={useBaseUrl('img/integrations/google/clb.png')} alt="thumbnail icon" width="50"/>
 
 Google Cloud Load Balancing is Google’s load balancing service for Google Cloud Platform. The Sumo Logic App for Google Cloud Load Balancing helps you monitor load balancing activity.  The preconfigured dashboards provide insight into request locations and volume, response codes, and request and response data by load balancer.
 
@@ -53,18 +55,16 @@ This Source will be a Google Pub/Sub-only Source, which means that it will only 
 
 
 1. In Sumo Logic select** Manage Data > Collection > Collection**.
-2. Select an existing Hosted Collector upon which to add the Source. If you don't already have a Collector you'd like to use, create one, using the instructions on [Configure a Hosted Collector](https://help.sumologic.com/03Send-Data/Hosted-Collectors/Configure-a-Hosted-Collector).
+2. Select an existing Hosted Collector upon which to add the Source. If you don't already have a Collector you'd like to use, create one, using the instructions on [Configure a Hosted Collector](/docs/send-data/configure-hosted-collector).
 3. Click **Add Source** next to the Hosted** **Collector and click **Google Cloud Platform**.
 4. Enter a **Name** to display for the Source. A **Description** is optional. \
 
 4
 
-5. **Source Host** (Optional). The Source Host value is tagged to each log and stored in a searchable [metadata](https://help.sumologic.com/05Search/Get-Started-with-Search/Search-Basics/Built-in-Metadata) field called _sourceHost. Avoid using spaces so you do not have to quote them in [keyword search expressions](https://help.sumologic.com/05Search/Get-Started-with-Search/How-to-Build-a-Search/Keyword-Search-Expressions). This can be a maximum of 128 characters.
-6. **Source Category** (Optional). The Source Category value is tagged to each log and stored in a searchable [metadata](https://help.sumologic.com/05Search/Get-Started-with-Search/Search-Basics/Built-in-Metadata) field called _sourceCategory. See our [Best Practices: Good Source Category, Bad Source Category](https://help.sumologic.com/03Send-Data/01-Design-Your-Deployment/Best-Practices%3A-Good-Source-Category%2C-Bad-Source-Category). Avoid using spaces so you do not have to quote them in [keyword search expressions](https://help.sumologic.com/05Search/Get-Started-with-Search/How-to-Build-a-Search/Keyword-Search-Expressions). This can be a maximum of 1,024 characters.
-7. **Fields**. Click the **+Add Field** link to add custom log metadata [Fields](https://help.sumologic.com/Manage/Fields), then define the fields you want to associate. Each field needs a name (key) and value. Look for one of the following icons and act accordingly:
-    *
-5
- If an orange triangle with an exclamation point is shown, use the option to automatically add or enable the nonexistent fields before proceeding to the next step. The orange icon indicates that the field doesn't exist, or is disabled, in the Fields table schema. If a field is sent to Sumo that does not exist in the Fields schema or is disabled it is ignored, known as dropped.
+5. **Source Host** (Optional). The Source Host value is tagged to each log and stored in a searchable [metadata](/docs/search/index.md/Get-Started-with-Search/Search-Basics/Built-in-Metadata) field called _sourceHost. Avoid using spaces so you do not have to quote them in [keyword search expressions](/docs/search/get-started-with-search/build-search/keyword-search-expressions.md). This can be a maximum of 128 characters.
+6. **Source Category** (Optional). The Source Category value is tagged to each log and stored in a searchable [metadata](/docs/search/index.md/Get-Started-with-Search/Search-Basics/Built-in-Metadata) field called _sourceCategory. See our [Best Practices: Good Source Category, Bad Source Category](/docs/send-data/design-deployment/best-practices-source-categories). Avoid using spaces so you do not have to quote them in [keyword search expressions](/docs/search/get-started-with-search/build-search/keyword-search-expressions.md). This can be a maximum of 1,024 characters.
+7. **Fields**. Click the **+Add Field** link to add custom log metadata [Fields](/docs/manage/fields.md), then define the fields you want to associate. Each field needs a name (key) and value. Look for one of the following icons and act accordingly:
+    * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) If an orange triangle with an exclamation point is shown, use the option to automatically add or enable the nonexistent fields before proceeding to the next step. The orange icon indicates that the field doesn't exist, or is disabled, in the Fields table schema. If a field is sent to Sumo that does not exist in the Fields schema or is disabled it is ignored, known as dropped.
     *
 6
  If a green circle with a checkmark is shown, the field exists and is already enabled in the Fields table schema. Proceed to the next step.
@@ -74,14 +74,14 @@ This Source will be a Google Pub/Sub-only Source, which means that it will only 
 
     * **Timestamp Parsing**. This option is selected by default. If it's deselected, no timestamp information is parsed at all.
     * **Time Zone**. There are two options for Time Zone. You can use the time zone present in your log files, and then choose an option in case time zone information is missing from a log message. Or, you can have Sumo Logic completely disregard any time zone information present in logs by forcing a time zone. It's very important to have the proper time zone set, no matter which option you choose. If the time zone of logs can't be determined, Sumo Logic assigns logs UTC; if the rest of your logs are from another time zone your search results will be affected.
-    * **Timestamp Format**. By default, Sumo Logic will automatically detect the timestamp format of your logs. However, you can manually specify a timestamp format for a Source. See [Timestamps, Time Zones, Time Ranges, and Date Formats](https://help.sumologic.com/03Send-Data/Sources/04Reference-Information-for-Sources/Timestamps%2C-Time-Zones%2C-Time-Ranges%2C-and-Date-Formats) for more information.
-9. **Processing Rules**. Configure any desired filters, such as allowlist, denylist, hash, or mask, as described in [Create a Processing Rule](https://help.sumologic.com/Manage/Collection/Processing-Rules/Create-a-Processing-Rule).
+    * **Timestamp Format**. By default, Sumo Logic will automatically detect the timestamp format of your logs. However, you can manually specify a timestamp format for a Source. See [Timestamps, Time Zones, Time Ranges, and Date Formats](/docs/send-data/sources/reference-information-sources/time-reference) for more information.
+9. **Processing Rules**. Configure any desired filters, such as allowlist, denylist, hash, or mask, as described in [Create a Processing Rule](/docs/manage/collection/processing-rules/create-processing-rule.md).
 10. When you are finished configuring the Source click **Save**.
 
 
 ### Configure a Pub/Sub Topic for GCP
 
-You need to configure a Pub/Sub Topic in GCP and add a subscription to the Source URL that belongs to the Sumo Logic Google Cloud Platform Source you created. Once you configure the Pub/Sub, you can export data from Google Logging to the Pub/Sub. For example, you can export Google App Engine logs, as described on [Collect Logs for Google App Engine](https://help.sumologic.com/07Sumo-Logic-Apps/06Google/Google_App_Engine/01Collect-Logs-for-the-Google-App-Engine-App).
+You need to configure a Pub/Sub Topic in GCP and add a subscription to the Source URL that belongs to the Sumo Logic Google Cloud Platform Source you created. Once you configure the Pub/Sub, you can export data from Google Logging to the Pub/Sub. For example, you can export Google App Engine logs, as described on [Collect Logs for Google App Engine](/docs/integrations/google/App-Engine#01Collect-Logs-for-the-Google-App-Engine-App).
 
 
 
@@ -212,7 +212,7 @@ _sourceCategory=*gcp* data logName resource "\"type\":\"http_load_balancer\""
 
 ## Install the Google Cloud Load Balancing App
 
-Now that you have set up collection for Google Cloud Load Balancing, install the Sumo Logic App to use the pre-configured searches and [dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/06Google/Google_Cloud_Storage/Install_the_Google_Cloud_Storage_App_and_view_the_Dashboards#Dashboards) that provide visibility into your environment for real-time analysis of overall usage.
+Now that you have set up collection for Google Cloud Load Balancing, install the Sumo Logic App to use the pre-configured searches and [dashboards](#Dashboards) that provide visibility into your environment for real-time analysis of overall usage.
 
 **To install the app**
 
@@ -222,7 +222,7 @@ Locate and install the app you need from the **App Catalog**. If you want to see
 2. Select the version of the service you're using and click **Add to Library**.
 
 
-Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](https://help.sumologic.com/01Start-Here/Library/Apps-in-Sumo-Logic/Install-Apps-from-the-Library)
+Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/library/install-apps)
 
 
 
@@ -230,7 +230,7 @@ Version selection is applicable only to a few apps currently. For more informati
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
     2. **Data Source.** Select either of these options for the data source. 
         * Choose **Source Category**, and select a source category from the list. 
-        * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (_sourceCategory=MyCategory). 
+        * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). 
     3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
 2. Click **Add to Library**.
 

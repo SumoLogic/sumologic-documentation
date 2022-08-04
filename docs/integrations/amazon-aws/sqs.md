@@ -2,62 +2,22 @@
 id: sqs
 title: Sumo Logic App for Amazon SQS
 sidebar_label: Amazon SQS
-description: Amazon SQS
+description: The Sumo Logic App for Amazon SQS is a unified logs and metrics (ULM) App that provides operational insights into your Amazon SQS utilization. The preconfigured dashboards help you monitor the key metrics, view the SQS events for queue activities, and help you plan the capacity of your SQS service utilization.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/amazon-aws/sqs.png')} alt="DB icon" width="50"/>
+<img src={useBaseUrl('img/integrations/amazon-aws/sqs.png')} alt="Thumbnail icon" width="50"/>
 
 Amazon Simple Queue Service (Amazon SQS) is a fully managed message queuing service that makes it easy to decouple and scale microservices, distributed systems, and serverless applications. The Sumo Logic App for Amazon SQS is a unified logs and metrics (ULM) App that provides operational insights into your Amazon SQS utilization. The preconfigured dashboards help you monitor the key metrics, view the SQS events for queue activities, and help you plan the capacity of your SQS service utilization.
 
-Log and Metrics Types
+## Log and Metrics Types
 The App uses SQS logs and metrics for:
-
-SQS CloudWatch Metrics. For details, see here.
-SQS operations using AWS CloudTrail. For details, see here.
-
-
-## Collect Logs and Metrics for the Amazon SQS App
-
-
-### Collect Metrics for the Amazon SQS App
-
-1. Configure a [Hosted Collector](https://help.sumologic.com/03Send-Data/Hosted-Collectors/Configure-a-Hosted-Collector).
-2. Configure an [Amazon CloudWatch Source for Metrics](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/Amazon-CloudWatch-Source-for-Metrics).
-    1. **Name**. Enter a name to display for the new Source.
-    2. **Description**. Enter an optional description.
-    3. **Regions**. Select your Amazon Regions for SQS.
-    4. **Namespaces**. Select AWS/SQS.
-    5. **Source Category**. Enter a source category. For example, AWS/Metric/SQS.
-    6. **Access Key ID and Secret Access Key**. Enter your Amazon [Access Key ID and Secret Access Key](http://docs.aws.amazon.com/general/latest/gr/managing-aws-access-keys.html).
-    7. **Scan Interva**l. Use the default of 5 minutes, or enter the frequency Sumo Logic will scan your CloudWatch Sources for new data.
-3. Click **Save**.
-
-
-### Collect Amazon SQS Events using CloudTrail
-
-
-1. To your Hosted Collector, add an [AWS CloudTrail Source](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/AWS-CloudTrail-Source).
-    1. **Name**. Enter a name to display for the new Source.
-    2. **Description**. Enter an optional description.
-    3. **S3 Region**. Select the Amazon Region for your SQS S3 bucket.
-    4. **Bucket Name**. Enter the exact name of your SQS S3 bucket.
-    5. **Path Expression**. Enter the string that matches the S3 objects you'd like to collect. You can use a wildcard (*) in this string. (DO NOT use a leading forward slash. See [Amazon Path Expressions](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/Amazon-Path-Expressions).)
-
-The S3 bucket name is not part of the path. Don’t include the bucket name when you are setting the Path Expression.
-    6. **Source Category**. Enter a source category. For example, SQS_event.
-    7. **Access Key ID and Secret Access Key**. Enter your Amazon [Access Key ID and Secret Access Key](http://docs.aws.amazon.com/general/latest/gr/managing-aws-access-keys.html).
-    8. **Scan Interval**. Use the default of 5 minutes. Alternately, enter the frequency Sumo Logic will scan your S3 bucket for new data.
-    9. **Enable Timestamp Parsing**. Select the check box.
-    10. **Time Zone**. Select Ignore time zone from log file and instead use, and select UTC.
-    11. **Timestamp Format**. Select Automatically detect the format.
-    12. **Enable Multiline Processing**. Select the check box, and select Infer Boundaries.
-2. Click **Save**.
+* SQS CloudWatch Metrics. For details, see here.
+* SQS operations using AWS CloudTrail. For details, see here.
 
 
 ### Sample Log Message
-
 
 ```json
 {
@@ -108,13 +68,9 @@ The S3 bucket name is not part of the path. Don’t include the bucket name when
 ```
 
 
-### Query Sample
+### Sample Query
 
-
-**Top 10 users**
-
-
-```
+```sql title="Top 10 users"
 _sourceCategory=*cloudtrail* "\"eventsource\":\"sqs.amazonaws.com\""
 | json "eventSource" nodrop
 | json "userIdentity.type" as type nodrop
@@ -129,9 +85,44 @@ _sourceCategory=*cloudtrail* "\"eventsource\":\"sqs.amazonaws.com\""
 ```
 
 
+## Collecting Logs and Metrics for the Amazon SQS App
+
+### Collect Metrics
+
+1. Configure a [Hosted Collector](/docs/send-data/configure-hosted-collector).
+2. Configure an [Amazon CloudWatch Source for Metrics](/docs/send-data/sources/sources-hosted-collectors/amazon-web-services/amazon-cloudwatch-source-metrics).
+    * **Name**. Enter a name to display for the new Source.
+    * **Description**. Enter an optional description.
+    * **Regions**. Select your Amazon Regions for SQS.
+    * **Namespaces**. Select AWS/SQS.
+    * **Source Category**. Enter a source category. For example, AWS/Metric/SQS.
+    * **Access Key ID and Secret Access Key**. Enter your Amazon [Access Key ID and Secret Access Key](http://docs.aws.amazon.com/general/latest/gr/managing-aws-access-keys.html).
+    * **Scan Interval**. Use the default of 5 minutes, or enter the frequency Sumo Logic will scan your CloudWatch Sources for new data.
+3. Click **Save**.
+
+
+### Collect Amazon SQS Events using CloudTrail
+
+1. To your Hosted Collector, add an [AWS CloudTrail Source](/docs/send-data/sources/sources-hosted-collectors/amazon-web-services/aws-cloudtrail-source.md).
+    * **Name**. Enter a name to display for the new Source.
+    * **Description**. Enter an optional description.
+    * **S3 Region**. Select the Amazon Region for your SQS S3 bucket.
+    * **Bucket Name**. Enter the exact name of your SQS S3 bucket.
+    * **Path Expression**. Enter the string that matches the S3 objects you'd like to collect. You can use a wildcard (*) in this string. (DO NOT use a leading forward slash. See [Amazon Path Expressions](/docs/send-data/Sources/sources-hosted-collectors/Amazon-Web-Services/Amazon-Path-Expressions)). The S3 bucket name is not part of the path. Don’t include the bucket name when you are setting the Path Expression.
+    * **Source Category**. Enter a source category. For example, SQS_event.
+    * **Access Key ID and Secret Access Key**. Enter your Amazon [Access Key ID and Secret Access Key](http://docs.aws.amazon.com/general/latest/gr/managing-aws-access-keys.html).
+    * **Scan Interval**. Use the default of 5 minutes. Alternately, enter the frequency Sumo Logic will scan your S3 bucket for new data.
+    * **Enable Timestamp Parsing**. Select the check box.
+    * **Time Zone**. Select Ignore time zone from log file and instead use, and select UTC.
+    * **Timestamp Format**. Select Automatically detect the format.
+    * **Enable Multiline Processing**. Select the check box, and select Infer Boundaries.
+2. Click **Save**.
+
+
+
 ## Installing the Amazon SQS App
 
-Now that you have set up collection for Amazon SQS, install the Sumo Logic App to use the pre-configured searches and [dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/01Amazon_and_AWS/Amazon_SQS/Install-the-Amazon-SQS-App-and-view-the-Dashboards#Dashboards) that provide visibility into your environment for real-time analysis of overall usage.
+Now that you have set up collection for Amazon SQS, install the Sumo Logic App to use the pre-configured searches and [dashboards](#Dashboards) that provide visibility into your environment for real-time analysis of overall usage.
 
 To install the app:
 
@@ -147,7 +138,7 @@ Locate and install the app you need from the **App Catalog**. If you want to see
     4. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
     5. Click **Add to Library**.
 
-Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization. See [Welcome to the New Library](https://help.sumologic.com/01Start-Here/Welcome-to-the-New-Library) for information on working with the library in the new UI.
+Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization. See [Welcome to the New Library](/docs/get-started/library/index.md) for information on working with the library in the new UI.
 
 Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
 

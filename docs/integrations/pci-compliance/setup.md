@@ -2,12 +2,12 @@
 id: setup
 title: Set Up the Sumo Logic PCI App
 sidebar_label: Sumo Logic PCI App Setup
-description: tk
+description: Enterprises use the requirements of the Payment Card Industry Security Standard Council Data Security Standards (known as PCI DSS) to handle customer billing information, including credit cards, debit cards, ATM cards, and point of sale (POS) cards.
 ---
 
-:::sumo Enterprise customers only
-For more information on this app, contact [sales@sumologic.com](mailto:sales@sumologic.com).
-:::
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src={useBaseUrl('img/icons/security/PCI-compliance.png')} alt="PCI Compliance icon" width="75"/>
 
 As data security becomes increasingly paramount, enterprises may reference certifications and standards such as the  requirements of the Payment Card Industry Security Standard Council Data Security Standards (known as PCI DSS) as a means of assessing their policies and practices.  Even if you don't handle payment card information, the requirements under PCI DSS may serve as proxies for controls and obligations that businesses have in place and seek to actively monitor.
 
@@ -17,7 +17,13 @@ That's where the Sumo Logic PCI App comes in. With ready-made Dashboards that mo
 
 The Sumo Logic PCI App provides sample dashboards and searches to help track your environment against 11 of the 12 PCI required control groups. As with all of our apps, we recommend you customize these searches and dashboards to tailor them to your specific monitoring and troubleshooting needs so you get only get alerted on conditions important to you.
 
-## How it Works
+## Prerequisites
+
+:::sumo Enterprise customers only
+For more information on this app, contact [sales@sumologic.com](mailto:sales@sumologic.com).
+:::
+
+## How It Works
 
 The Sumo Logic PCI Application takes log data uploaded to Sumo Logic, then indexes this data into a View. This indexing allows for quicker search results against your data. The View is used for PCI Requirement searches as well as PCI Dashboards.
 
@@ -52,10 +58,6 @@ Unlike Dashboards and scheduled searches, reports can be modified, allowing flex
 * **Modify to get a closer look.** Need additional insight into events on a singe host? Or perhaps trying to find more details of a user's activity? Reports can return very granular information by making just a few edits to the query. You can choose to save an edited report as a saved search on its own.
 * **Concentrate efforts.** If one area of your deployment is trickier to keep in compliance, run a report more target report at a more frequent interval.
 
-#### Why aren't Reports included in Dashboards?
-
-Reports are designed to deliver very specific, granular information, which is not always aggregated, so that individual log messages may be returned in search results. Think of Reports as a tool to augment discoveries uncovered by the constant search results delivered by Dashboards.
-
 ### Included PCI Reports
 
 The following reports are included with the Sumo Logic Application for PCI Compliance:
@@ -75,6 +77,11 @@ The following reports are included with the Sumo Logic Application for PCI Compl
 
 All of these reports can be run ad-hoc, or can be saved as scheduled searches.
 
+<details><summary><strong>Why aren't Reports included in Dashboards?</strong></summary>
+
+Reports are designed to deliver very specific, granular information, which is not always aggregated, so that individual log messages may be returned in search results. Think of Reports as a tool to augment discoveries uncovered by the constant search results delivered by Dashboards.
+
+</details>
 
 ## PCI Dashboards
 

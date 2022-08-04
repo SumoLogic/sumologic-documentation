@@ -2,12 +2,12 @@
 id: kubernetes
 title: Sumo Logic App for Azure Kubernetes Service Control Plane
 sidebar_label: Azure Kubernetes Service Control Plane
-description: Azure Kubernetes Service (AKS) - Control Plane
+description: The Sumo Logic App for Azure Kubernetes Service (AKS) - Control Plane provides visibility into the AKS control plane with operational insights into the API server, scheduler, control manager, and worker nodes.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/containers-orchestration/k8s.png')} alt="k8s logo" width="50"/>
+<img src={useBaseUrl('img/integrations/microsoft-azure/k8s.png')} alt="k8s logo" width="75"/>
 
 The Sumo Logic App for Azure Kubernetes Service (AKS) - Control Plane provides visibility into the AKS control plane with operational insights into the API server, scheduler, control manager, and worker nodes. The app's preconfigured dashboards display resource-related metrics for Kubernetes deployments, clusters, namespaces, pods, containers, and daemonsets.
 
@@ -51,7 +51,7 @@ The AKS - Control Plane App collects logs for the following [Azure Kubernetes Se
 
 ## Collect logs for the AKS - Control Plane App
 
-This page provides instructions for configuring a pipeline to collect Azure managed master node logs in your Azure Kubernetes Service (AKS) to an event hub, on to an Azure function, and finally to an HTTP source on a hosted collector in Sumo Logic.
+This section provides instructions for configuring a pipeline to collect Azure managed master node logs in your Azure Kubernetes Service (AKS) to an event hub, on to an Azure function, and finally to an HTTP source on a hosted collector in Sumo Logic.
 
 
 ### AKS - Control Plane Logs
@@ -64,7 +64,7 @@ The AKS - Control Plane App uses Azure managed master node logs in your Azure Ku
 
 
 
-The Sumo Logic [Kubernetes App](https://help.sumologic.com/07Sumo-Logic-Apps/10Containers_and_Orchestration/Kubernetes) works in conjunction with the AKS - Control Plane App and allows you to monitor worker node logs, as well as metrics for the Azure monitor and worker nodes.
+The Sumo Logic [Kubernetes App](/docs/integrations/containers-orchestration/Kubernetes) works in conjunction with the AKS - Control Plane App and allows you to monitor worker node logs, as well as metrics for the Azure monitor and worker nodes.
 
 
 ### Collection process
@@ -74,7 +74,7 @@ Configuring logs and metrics for the AKS - Control Plane App is a two step proce
 * Setting up collection and installing the Sumo Logic Kubernetes App.
 * Configuring Azure monitor and enabling the master node logs in AKS.
 
-The Sumo Logic[ Kubernetes App](https://help.sumologic.com/07Sumo-Logic-Apps/10Containers_and_Orchestration/Kubernetes) allows you to  monitor worker node logs, as well as metrics for the Azure monitor and worker nodes.
+The Sumo Logic[ Kubernetes App](/docs/integrations/containers-orchestration/Kubernetes) allows you to  monitor worker node logs, as well as metrics for the Azure monitor and worker nodes.
 
 
 #### Step 1. Setup and Install the Sumo Logic Kubernetes App  
@@ -82,7 +82,7 @@ The Sumo Logic[ Kubernetes App](https://help.sumologic.com/07Sumo-Logic-Apps/10C
 
 The Sumo Logic Kubernetes App provides the services for managing and monitoring Kubernetes worker nodes. You must set up collection and  install the Kubernetes App before configuring collection for the AKS - Control Plane App. You will configure log and metric collection during this process.
 
-**To set up and install the Kubernetes App**, follow the instructions in [this document](https://help.sumologic.com/07Sumo-Logic-Apps/10Containers_and_Orchestration/Kubernetes).
+**To set up and install the Kubernetes App**, follow the instructions in [this document](/docs/integrations/containers-orchestration/Kubernetes).
 
 
 #### Step 2. Configure Azure Monitor and enable logs in AKS
@@ -95,7 +95,7 @@ This section walks you through the process of configuring a pipeline to send log
 
 **To configure Azure Monitor and enable AKS logs, do the following:**
 
-1. Follow Step 1 and Step 2 on this page: [Collect Logs from Azure Monitor](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Azure_Monitoring/Collect_Logs_from_Azure_Monitor)
+1. Follow Step 1 and Step 2 on this page: [Collect Logs from Azure Monitor](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-logs-azure-monitor)
 2. [Enable the Kubernetes master node logs in Azure Kubernetes Service](https://docs.microsoft.com/en-us/azure/aks/view-master-logs#enable-diagnostics-logs) to send logs to an event hub created in the previous step.
 
 
@@ -207,7 +207,7 @@ Now that you have set up collection for AKS, you can install the Sumo Logic App 
 18
 All the dashboards are linked to the Explore tab so they can be easily accessed by clicking the Cluster in the navigation pane of the Explore tab.
 
-**To install the app, do the following:**
+To install the app, do the following:
 
 
 
@@ -224,7 +224,7 @@ All the dashboards are linked to the Explore tab so they can be easily accessed 
 
 ### Filter with template variables    
 
-Template variables provide dynamic dashboards that rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you can view dynamic changes to the data for a fast resolution to the root cause. For more information, see the [Filter with template variables](https://help.sumologic.com/Visualizations-and-Alerts/Dashboard_(New)/Filter_with_template_variables) page.
+Template variables provide dynamic dashboards that rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you can view dynamic changes to the data for a fast resolution to the root cause. For more information, see the [Filter with template variables](/docs/dashboards-new/filter-with-template-variables.md) page.
 
 You can use template variables to drill down and examine the data on a granular level.
 

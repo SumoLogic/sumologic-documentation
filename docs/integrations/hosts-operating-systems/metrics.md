@@ -2,9 +2,12 @@
 id: metrics
 title: Host Metrics Sumo Logic App
 sidebar_label: Host Metrics
+description: The Sumo Logic App for Host Metrics allows you to collect your local host metrics and display them using predefined search queries and Dashboards.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src={useBaseUrl('img/integrations/hosts-operating-systems/HostMetrics.png')} alt="Thumbnail icon" width="75"/>
 
 The Host Metrics app allows you to monitor the performance and resource utilization of hosts and processes that your mission critical applications are dependent upon. Preconfigured dashboards provide insight into CPU, memory, network, file descriptors, page faults, and TCP connectors. This app uses the Sumo Logic installed collector for the collection of host metrics data.
 
@@ -16,16 +19,16 @@ This procedure explains how to collect metrics from a host machine and ingest th
 
 ### Configure a Collector
 
-Configure an [Installed Collector](https://help.sumologic.com/03Send-Data/Installed-Collectors). Collectors can be installed on Linux, Windows, or Mac OS hosts.
+Configure an [Installed Collector](/docs/send-data/Installed-Collectors). Collectors can be installed on Linux, Windows, or Mac OS hosts.
 
 
 ### Configure a Source
 
-1. Configure a [Host Metrics Source](https://help.sumologic.com/07Sumo-Logic-Apps/14Hosts_and_Operating_Systems/Host_Metrics/01Collect-Host-Metrics-for-the-Host-Metrics-App#s2349). Choose **Add Source** and select **Host Metrics** as the source type.
+1. Configure a [Host Metrics Source](#Collect-Host-Metrics-for-the-Host-Metrics-App). Choose **Add Source** and select **Host Metrics** as the source type.
 2. Configure the Source Fields as follows:
     1. **Name.** Required. Description is optional. The source name is stored in a searchable field called _sourceName.
     2. **Source Host**. Enter the host name of the machine from which the metrics will be collected.
-    3. **Source Category.** Required. The Source Category metadata field is a fundamental building block to organize and label Sources. For details see [Best Practices](https://help.sumologic.com/03Send-Data/01-Design-Your-Deployment/Best-Practices%3A-Good-Source-Category%2C-Bad-Source-Category).
+    3. **Source Category.** Required. The Source Category metadata field is a fundamental building block to organize and label Sources. For details see [Best Practices](/docs/send-data/design-deployment/best-practices-source-categories).
     4. **Scan Interval**. Select the frequency for the Source to scan for hostmetrics data. Selecting a short interval will increase the message volume and could cause your deployment to incur additional charges. The default is 1 minute.
     5. **Metrics**. Select check boxes for the metrics to collect. By default, all CPU and memory metrics are collected. Select the top level check box to select all metrics in that category. A blue checkmark icon
 
@@ -45,7 +48,7 @@ Available metrics include:
 * Network
 * Disk
 
-The metrics that are collected are described in [Host Metrics for Installed Collectors](https://help.sumologic.com/03Send-Data/Sources/01Sources-for-Installed-Collectors/Host-Metrics-Source#Collected_Metrics).
+The metrics that are collected are described in [Host Metrics for Installed Collectors](/docs/send-data/Sources/sources-installed-collectors/Host-Metrics-Source#Collected_Metrics).
 
 Host metrics are gathered by the open-source [SIGAR library](https://github.com/hyperic/sigar).
 
@@ -503,29 +506,29 @@ The JSON parameter is in milliseconds. We recommend 60 seconds (60000 ms) or lon
 
 #### AWS Metadata
 
-Collectors running on AWS EC2 instances can optionally collect AWS Metadata such as EC2 tags to make it easier to search for Host Metrics.  For more information, see [AWS Metadata Source for Metrics](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/AWS-Metadata-(Tag)-Source).
+Collectors running on AWS EC2 instances can optionally collect AWS Metadata such as EC2 tags to make it easier to search for Host Metrics.  For more information, see [AWS Metadata Source for Metrics](/docs/send-data/sources/sources-hosted-collectors/amazon-web-services/aws-metadata-tag-source).
 
 Only one AWS Metadata Source for Metrics is required to collect EC2 tags from multiple hosts.
 
 
 ## Installing the Host Metrics App
 
-Now that you have configured Host Metrics, install the Sumo Logic App for Host Metrics to take advantage of the preconfigured searches and [dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/14Hosts_and_Operating_Systems/Host_Metrics/Host-Metrics-App-Dashboards#Dashboards) to analyze your Host Metrics data.
+Now that you have configured Host Metrics, install the Sumo Logic App for Host Metrics to take advantage of the preconfigured searches and [dashboards](#Dashboards) to analyze your Host Metrics data.
 
-**To install the app:**
+To install the app:
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
 1. From the **App Catalog**, search for and select the app**.**
 2. Select the version of the service you're using and click **Add to Library**.
 
-Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](https://help.sumologic.com/01Start-Here/Library/Apps-in-Sumo-Logic/Install-Apps-from-the-Library)
+Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/library/install-apps)
 
 1. To install the app, complete the following fields.
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
     2. **Data Source.** Select either of these options for the data source. 
         * Choose **Source Category**, and select a source category from the list. 
-        * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (_sourceCategory=MyCategory). 
+        * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). 
     3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
 2. Click **Add to Library**.
 

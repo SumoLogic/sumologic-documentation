@@ -8,7 +8,7 @@ The CSE Log Sensor has reached end of life and is no longer supported. Please mi
 
 The CSE Log Sensor collects log data and sends it to the legacy CSE server. (The Log Sensor does not send log data to the Sumo Logic platform. Sumo Logic collectors serve that purpose.)
 
-If your organization uses the Log Sensor, this page provides instructions for gathering troubleshooting information CSE support may request if you have problems with the sensor.
+If your organization uses the Log Sensor, This section provides instructions for gathering troubleshooting information CSE support may request if you have problems with the sensor.
 
 ## Restart sensor
 

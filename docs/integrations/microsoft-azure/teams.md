@@ -2,10 +2,12 @@
 id: teams
 title: Sumo Logic App for Microsoft Teams
 sidebar_label: Microsoft Teams
-description: Microsoft Teams
+description: The Microsoft Teams app provides out-of-the-box dashboards to monitor users, teams, channels and permission changes.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src={useBaseUrl('img/integrations/microsoft-azure/MSTeams.png')} alt="thumbnail icon" width="75"/>
 
 The Microsoft Teams app provides out-of-the-box dashboards to monitor users, teams, channels and permission changes.
 
@@ -30,19 +32,20 @@ For more information, see Microsoft’s [list of Teams Activities](https://docs.
 To collect logs for Microsoft Teams, please configure an Office 365 Audit Source. The Teams logs will be present in the “Office 365 General Logs” context. Note, that if you are already collecting logs for Office 365, you can simply make note of the source category configured for the aforementioned context.
 
 Sample Log Message
+
 ```json
 "CreationTime":"2020-10-30T14:00:51",
-  "Id":"e40689dc-7ea9-4f75-8fdd-8c3c9f9bf647",
-  "Operation":"TeamCreated",
-  "OrganizationId":"984e32e5-f98a-4600-aa32-27c3f948abe3",
-  "RecordType":25,
-  "UserKey":"d9d7d5ac-4d64-43df-8205-fa6f46388fcb",
-  "UserType":0,
-  "Version":1,
-  "Workload":"MicrosoftTeams",
-  "UserId":"email@domain.com",
-  "TeamGuid":"19:caac0ef5091e431aa45a6b6ec4a6723a@thread.tacv2",
-  "TeamName":"My Team"
+"Id":"e40689dc-7ea9-4f75-8fdd-8c3c9f9bf647",
+"Operation":"TeamCreated",
+"OrganizationId":"984e32e5-f98a-4600-aa32-27c3f948abe3",
+"RecordType":25,
+"UserKey":"d9d7d5ac-4d64-43df-8205-fa6f46388fcb",
+"UserType":0,
+"Version":1,
+"Workload":"MicrosoftTeams",
+"UserId":"email@domain.com",
+"TeamGuid":"19:caac0ef5091e431aa45a6b6ec4a6723a@thread.tacv2",
+"TeamName":"My Team"
 ```
 
 Sample Query
@@ -55,24 +58,24 @@ _sourceCategory="O365/General"
 
 ## Installing the Microsoft Teams App   
 
-This page has instructions for installing the Microsoft Teams app and descriptions of each of the app dashboards.
+This section has instructions for installing the Microsoft Teams app and descriptions of each of the app dashboards.
 
 This section shows you how to install the Sumo Logic App for Microsoft Teams.
 
-**To install the app, do the following:**
+To install the app, do the following:
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
 1. From the **App Catalog**, search for and select the app**.**
 2. Select the version of the service you're using and click **Add to Library**.
 
-Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](https://help.sumologic.com/01Start-Here/Library/Apps-in-Sumo-Logic/Install-Apps-from-the-Library)
+Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/library/install-apps)
 
 1. To install the app, complete the following fields.
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
     2. **Data Source.** Select either of these options for the data source. 
         * Choose **Source Category**, and select a source category from the list. 
-        * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (_sourceCategory=MyCategory). 
+        * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). 
     3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
 2. Click **Add to Library**.
 

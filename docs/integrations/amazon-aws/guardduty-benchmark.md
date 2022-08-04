@@ -2,94 +2,89 @@
 id: guardduty-benchmark
 title: Sumo Logic App for Amazon GuardDuty Benchmark
 sidebar_label: Amazon GuardDuty Benchmark
-description: Amazon GuardDuty Benchmark
+description: The Sumo Logic Amazon GuardDuty Benchmark App integrates Global Intelligence Service (GIS) with Amazon GuardDuty for continuous machine learning and statistical baselines for KPIs (key performance indicators) and KRIs (key risk indicators).
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/amazon-aws/guardduty-benchmark.png')} alt="DB icon" width="50"/>
+<img src={useBaseUrl('img/integrations/amazon-aws/guardduty-benchmark.png')} alt="Thumbnail icon" width="50"/>
+
+:::sumo Availability
+For Trial and Enterprise account plans.
+:::
 
 [Amazon GuardDuty](https://aws.amazon.com/guardduty/) is an intelligence threat detection service that provides accurate, continuous monitoring to protect AWS accounts and workloads. This page explains the log collection process, and provides instructions for configuring log collection and installing the Amazon GuardDuty Benchmark App.
 
 The Sumo Logic **Amazon GuardDuty Benchmark App** integrates **Global Intelligence Service (GIS)** with Amazon GuardDuty for continuous machine learning and statistical baselines for KPIs (key performance indicators) and KRIs (key risk indicators). These baselines enable you to optimize security configuration and threat detection on all your AWS accounts.  
 
-Global Intelligence baselines are computed by aggregating data for a given customer across all source categories defined for Amazon GuardDuty. As result, to enable meaningful comparisons, the app must be provided with all the source categories in your Sumo Logic account that are associated with AWS GuardDuty. Follow the instructions on the [Custom Data Filters](https://help.sumologic.com/01Start-Here/Library/Apps-in-Sumo-Logic/Custom-Data-Filters) page to set up your app with custom data filters, specifying multiple source categories for Amazon GuardDuty.
+Global Intelligence baselines are computed by aggregating data for a given customer across all source categories defined for Amazon GuardDuty. As result, to enable meaningful comparisons, the app must be provided with all the source categories in your Sumo Logic account that are associated with AWS GuardDuty. Follow the instructions on the [Custom Data Filters](/docs/get-started/library/run-searches-apps.md) page to set up your app with custom data filters, specifying multiple source categories for Amazon GuardDuty.
 
 The App includes pre-configured dashboards and searches with visual displays for global threat baselines and real-time threat detection across your AWS environment, including threat sources and targets by geographic locations.
 
+## Log Types
 
-## Configuring Log Collection
-
-### Log Types
-
-The Sumo Logic App for GuardDuty requires the Amazon GuardDuty findings to be sent through the Amazon CloudWatch Events. For more details on [GuardDuty findings](https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings.html).
-
-If you have already Amazon GuardDuty data flowing into Sumo Logic, you can skip the steps in this section and install the Amazon GuardDuty Benchmark App from the Sumo Logic App Catalog.
+The Sumo Logic App for GuardDuty requires the Amazon GuardDuty findings to be sent through the Amazon CloudWatch Events. For more details, see [GuardDuty findings](https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings.html).
 
 
-### Process overview
 
-Sumo Logic provides a SAM application based on  [AWS Serverless Application Model (SAM) specification](https://docs.aws.amazon.com/lambda/latest/dg/serverless_app.html), and is published in the [AWS Serverless Application Repository](https://aws.amazon.com/serverless/serverlessrepo/). This SAM deployment:
+## Configuring Log Collection and Deploying the App
 
-1. Creates a Lambda function and it's associated components.
+:::note
+If you have already Amazon GuardDuty data flowing into Sumo Logic, you can skip the steps in this section and [install the Amazon GuardDuty Benchmark App](#installing-the-amazon-guardduty-benchmark-app) from the Sumo Logic App Catalog.
+:::
+
+:::note
+These tasks require the Manage Collectors and Manage Access Keys [role capabilities](https://help.sumologic.com/Manage/Users-and-Roles/Manage-Roles/05-Role-Capabilities).
+:::
+
+Sumo Logic provides a SAM application based on [AWS Serverless Application Model (SAM) specification](https://docs.aws.amazon.com/lambda/latest/dg/serverless_app.html), and is published in the [AWS Serverless Application Repository](https://aws.amazon.com/serverless/serverlessrepo/). This SAM deployment:
+1. Creates a Lambda function and its associated components.
 2. Creates collector, and HTTP Source at Sumo Logic.
 3. Installs the Sumo Logic GuardDuty Benchmark App.
 
 After completing this process, logs are ingested into Sumo Logic in the following way:
 
-1. Amazon GuardDuty sends notifications based on CloudWatch events when new findings, or new occurrences of existing findings, are generated.
-2. A CloudWatch events rule enables CloudWatch to send events for the GuardDuty findings to the Sumo CloudWatchEventFunction Lambda function.
-3. The Lambda function sends the events to an HTTP source on a Sumo Logic hosted collector.
-
-
-### Configure collection and deploy the App
+4. Amazon GuardDuty sends notifications based on CloudWatch events when new findings, or new occurrences of existing findings, are generated.
+5. A CloudWatch events rule enables CloudWatch to send events for the GuardDuty findings to the Sumo CloudWatchEventFunction Lambda function.
+6. The Lambda function sends the events to an HTTP source on a Sumo Logic hosted collector.<br/><img src={useBaseUrl('img/integrations/amazon-aws/AGD_BM_Collection_Overview.png')} alt="flow" />
 
 This section shows you how to generate an access key and access ID for log collection, and then how to deploy the Amazon GuardDuty Benchmark App.
 
-These tasks require the Manage Collectors and Manage Access Keys [role capabilities](https://help.sumologic.com/Manage/Users-and-Roles/Manage-Roles/05-Role-Capabilities).
 
-
-#### Step 1: Generate an Access Key and Access ID
+### Step 1: Generate an Access Key and Access ID
 
 In this step, you need to generate access key and access ID from the Sumo Logic console.
 
 To generate an access key and access ID, do the following:
 
-1. Follow the instructions as described in this [Sumo Logic Access Key](https://help.sumologic.com/Manage/Security/Access-Keys#Create_an_access_key)) document.
+1. Follow the instructions as described in this [Sumo Logic Access Key](/docs/manage/security/access-keys#Create_an_access_key)) document.
 2. Copy down both the values as you’ll need them to deploy the Sumo Logic GuardDuty Benchmark SAM App.
 
 
-#### Step 2: Deploy the Sumo Logic GuardDuty Benchmark SAM App
+### Step 2: Deploy the Sumo Logic GuardDuty Benchmark SAM App
 
-In this step, you deploy the SAM application, which creates the AWS resources described in the [process overview](https://help.sumologic.com/07Sumo-Logic-Apps/01Amazon_and_AWS/Amazon_GuardDuty_Benchmark/Configure_Log_Collection_and_Install_the_Amazon_GuardDuty_Benchmark_App#Process_overview).
+In this step, you deploy the SAM application, which creates the AWS resources described in the [process overview](#Process_overview).
 
 To deploy the Sumo Logic GuardDuty Benchmark SAM App, do the following:
 
 1. Go to [https://serverlessrepo.aws.amazon.com/applications](https://serverlessrepo.aws.amazon.com/applications).
-2. Search for **sumologic-guardduty-benchmark** and click the app link when it appears.
-
-1. When the page for the Sumo app appears, click **Deploy**.
-
-1. In **Configure application parameters** panel
-2. In **Configure application parameters** panel, enter the following parameters:
-    1. Access ID(Required): Sumo Logic Access ID generated from Step 1.
-    2. Access Key(Required): Sumo Logic Access Key generated from Step 1.
-    3. Deployment Name(Required): Deployment name (environment name in lower case as per [docs](https://help.sumologic.com/APIs/General-API-Information/Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security)).
-    4. Collector Name: Enter the name of the Hosted Collector which will be created in Sumo Logic.
-    5. Source Name: Enter the name of the HTTP Source which will be created within the collector.
-    6. Source Category Name: Enter the name of the Source Category which will be used for writing search queries.
-
-
-1. Click **Deploy**.
-2. When the deployment is successful, click **View CloudFormation Stack**.
-
-
-1. In the Outputs section, copy the app folder name to search your personal folder in the Sumo Logic console.
+2. Search for **sumologic-guardduty-benchmark** and click the app link when it appears.<br/><img src={useBaseUrl('img/integrations/amazon-aws/AGD_BM_Deploy_Benchmark_App_dialog.png')} alt="flow" />
+3. When the page for the Sumo app appears, click **Deploy**.<br/><img src={useBaseUrl('img/integrations/amazon-aws/AGD_BM_Deploy_App_dialog.png')} alt="flow" />
+4. In **Configure application parameters** panel, enter the following parameters:
+    * Access ID (Required): Sumo Logic Access ID generated from Step 1.
+    * Access Key (Required): Sumo Logic Access Key generated from Step 1.
+    * Deployment Name(Required): Deployment name (environment name in lower case as per [docs](https://help.sumologic.com/APIs/General-API-Information/Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security)).
+    * Collector Name: Enter the name of the Hosted Collector which will be created in Sumo Logic.
+    * Source Name: Enter the name of the HTTP Source which will be created within the collector.
+    * Source Category Name: Enter the name of the Source Category which will be used for writing search queries.
+5. Click **Deploy**.
+6. When the deployment is successful, click **View CloudFormation Stack**.
+7. In the Outputs section, copy the app folder name to search your personal folder in the Sumo Logic console.
 
 
 
 
-#### Sample log message
+### Sample Log message
 
 ```json
 {
@@ -109,7 +104,6 @@ To deploy the Sumo Logic GuardDuty Benchmark SAM App, do the following:
          "launchTime":1481719450000,
          "platform":null,
          "productCodes":[
-
          ],
          "iamInstanceProfile":{
             "arn":"arn:aws:iam::012345678910:instance-profile/nodes.k8s.travellogic.info",
@@ -118,7 +112,6 @@ To deploy the Sumo Logic GuardDuty Benchmark SAM App, do the following:
          "networkInterfaces":[
             {
                "ipv6Addresses":[
-
                ],
                "privateDnsName":"ip-172-20-45-123.ec2.internal",
                "privateIpAddress":"172.20.45.123",
@@ -220,12 +213,9 @@ To deploy the Sumo Logic GuardDuty Benchmark SAM App, do the following:
 }
 ```
 
-
-
-#### Sample Query
+### Sample Query
 
 The following query is from the **Threats by Region** panel of the **Amazon GuardDuty - Threat Details** dashboard:
-
 
 ```sql
 _sourceCategory=*guardduty*
@@ -240,15 +230,9 @@ _sourceCategory=*guardduty*
 | transpose row _timeslice column region
 ```
 
-
-
-
-## Installing the Amazon GuardDuty Benchmark App
+## Viewing the Amazon GuardDuty Benchmark Dashboards  
 
 Amazon GuardDuty is an intelligence threat detection service that provides accurate, continuous monitoring to protect AWS accounts and workloads. The Sumo Logic Amazon GuardDuty Benchmark App integrates Sumo Logic Global Intelligence Service (GIS) with Amazon GuardDuty for statistical baselines for KRIs (key risk indicators). These baselines enable you to optimize security configuration and threat detection on all your AWS accounts. The App includes preconfigured dashboards for global threat baselines and threat detection across your AWS environment.
-
-
-## Viewing the Amazon GuardDuty Benchmark Dashboards   
 
 **Each dashboard has a set of filters** that you can apply to the entire dashboard, as shown in the following example. Click the funnel icon in the top dashboard menu bar to display a scrollable list of filters that are applied across the entire dashboard.
 

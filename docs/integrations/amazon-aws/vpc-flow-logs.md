@@ -2,33 +2,36 @@
 id: vpc-flow-logs
 title: Sumo Logic App for Amazon VPC Flow Logs
 sidebar_label: Amazon VPC Flow Logs
-description: Amazon VPC Flow Logs
+description: Logs the IP network traffic of your VPC, allowing you to troubleshoot traffic and security issues.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/amazon-aws/vpcflowlogs.png')} alt="DB icon" width="50"/>
+<img src={useBaseUrl('img/integrations/amazon-aws/vpcflowlogs.png')} alt="Thumbnail icon" width="50"/>
 
 
 Amazon Virtual Private Cloud (VPC) Flow Logs log the IP network traffic of your VPC, allowing you to troubleshoot traffic and security issues. The Amazon VPC Flow Logs App leverages this data to provide real-time visibility and analysis of your environment. It consists of predefined searches and Dashboards.
 
-For more information on Amazon VPC Flow Logs, see http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/flow-logs.html
+For more information on Amazon VPC Flow Logs, see [here](http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/flow-logs.html).
+
+## Collecting Amazon VPC Flow Logs
+
+This section has instructions for collecting VPC Flow Logs using a CloudFormation template.
 
 VPC Flow Logs can be published to Amazon CloudWatch Logs and Amazon S3. You can use either of these methods to collect Amazon VPC Flow Logs:
+* [From CloudWatch using CloudFormation](#collecting-amazon-vpc-flow-logs-from-cloudwatch-using-cloudformation)
+* [Using an AWS S3 source](#collecting-amazon-vpc-flow-logs-using-an-aws-s3-source)
 
-Collect Amazon VPC Flow Logs using an AWS S3 source
-Collect Amazon VPC Flow Logs from CloudWatch using CloudFormation
 
-Each method has advantages. Using an AWS S3 source is more reliable, while using a CloudWatch Logs source with the CloudFormation template allows you to optimize your logs. With the CloudWatch Logs source  and CloudFormation template, you can customize logs by adding more information and filtering out unwanted data. The Security Groups dashboard utilizes customized logs that are generated from the Lambda function and created with the CloudFormation template from logs sent to CloudWatch Logs.
+Each method has advantages. Using an AWS S3 source is more reliable, while using a CloudWatch Logs source with the CloudFormation template allows you to optimize your logs. With the CloudWatch Logs source and CloudFormation template, you can customize logs by adding more information and filtering out unwanted data. The Security Groups dashboard utilizes customized logs that are generated from the Lambda function and created with the CloudFormation template from logs sent to CloudWatch Logs.
 
-## Collecting Amazon VPC Flow Logs from CloudWatch using CloudFormation
+### Collecting Amazon VPC Flow Logs from CloudWatch using CloudFormation
 
-This section has instructions for collecting VPC Flow Logs using a CloudFormation template. Alternatively, you can [Collect Amazon VPC Flow Logs using AWS S3 Source](#collecting-amazon-vpc-flow-logs-using-an-aws-s3-source).
-
+This section has instructions for collecting VPC Flow Logs using a CloudFormation template.
 The diagram below illustrates the collection process for Amazon VPC Flow Logs. VPC is enabled to send logs to Amazon CloudWatch. A Lambda function subscribes to a CloudWatch Log Group to obtain the flow logs, and then sends the data on to a Sumo Logic HTTP Source on a hosted collector. The AWS resources are created by a Sumo-provided CloudFormation template.
 
 
-### Step 1: Enable Amazon VPC Flow Logs
+#### Step 1: Enable Amazon VPC Flow Logs
 
 You can enable Amazon Virtual Private Cloud (VPC) Flow Logs from the Amazon Web Services (AWS) Management Console, the AWS Command Line Interface (CLI), or by making calls to the Elastic Compute Cloud (EC2) API.
 
@@ -39,7 +42,6 @@ You can enable Amazon Virtual Private Cloud (VPC) Flow Logs from the Amazon Web 
 3. Click **Actions** > **Create Flow Log**.
 4. On the **Create Flow Log** page, select a **Role** to use Flow logs.
     1. If you haven't set up IAM permissions, click **Set Up Permissions**. \
-
     2. From the new tab, **VPC Flow Logs is requesting permissions to use resources in your account**:
     3. From the IAM Role, select **Create a new IAM Role.**
     4. Add a Role Name that describes your logs, for example, VPC-Flow-Logs.
@@ -49,10 +51,10 @@ You can enable Amazon Virtual Private Cloud (VPC) Flow Logs from the Amazon Web 
 7. Click **Create Flow Log**. It can take up to an hour for the log group to show up in CloudWatch Logs.
 
 
-### Step 2: Configure hosted collector and HTTP source
+#### Step 2: Configure hosted collector and HTTP source
 
-1. Configure a [Hosted Collector ](https://help.sumologic.com/03Send-Data/Hosted-Collectors/Configure-a-Hosted-Collector)in Sumo Logic.
-2. Configure an [HTTP Source](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/HTTP-Source) in Sumo Logic. When configuring the source:
+1. Configure a [Hosted Collector ](/docs/send-data/configure-hosted-collector)in Sumo Logic.
+2. Configure an [HTTP Source](/docs/send-data/sources/sources-hosted-collectors/http-logs-metrics-source) in Sumo Logic. When configuring the source:
 3. Under **Advanced Options for Logs**, for **Timestamp Format**, click **Specify a format**.
 4. **Format**. Enter: `epoch`
 5. **Timestamp locator**. Enter:
@@ -60,17 +62,17 @@ You can enable Amazon Virtual Private Cloud (VPC) Flow Logs from the Amazon Web 
 6. Click **Save**.
 
 
-### Step 3: Create AWS functions and resources  
+#### Step 3: Create AWS functions and resources  
 
-Follow the steps on [Amazon CloudWatch Logs](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Amazon-CloudWatch-Logs), starting with the [Download the CloudFormation template](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Amazon-CloudWatch-Logs#Download_the_CloudFormation_template) step and ending with the [Dealing with alarms](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Amazon-CloudWatch-Logs#Dealing_with_alarms) step. As you perform the procedure note the additional instructions below, regarding log format and optional environment variables.
+Follow the steps on [Amazon CloudWatch Logs](/docs/send-data/Collect-from-Other-Data-Sources/Amazon-CloudWatch-Logs), starting with the [Download the CloudFormation template](/docs/send-data/Collect-from-Other-Data-Sources/Amazon-CloudWatch-Logs#Download_the_CloudFormation_template) step and ending with the [Dealing with alarms](/docs/send-data/Collect-from-Other-Data-Sources/Amazon-CloudWatch-Logs#Dealing_with_alarms) step. As you perform the procedure note the additional instructions below, regarding log format and optional environment variables.
 
 
 #### Configure LogFormat correctly (Required)  
 
-When you [Create a stack on the AWS CloudFormation console](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Amazon-CloudWatch-Logs#Create_a_stack_on_the_AWS_CloudFormation_console), in Step 5, make sure you select either VPC-JSON or VPC-RAW in the LogFormat field in the Specify Details window.
+When you [Create a stack on the AWS CloudFormation console](/docs/send-data/Collect-from-Other-Data-Sources/Amazon-CloudWatch-Logs#Create_a_stack_on_the_AWS_CloudFormation_console), in Step 5, make sure you select either VPC-JSON or VPC-RAW in the LogFormat field in the Specify Details window.
 
 #### Environment variables for VPC flow log collection (Optional)
-When you [Configure environment variables for Lambda functions](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Amazon-CloudWatch-Logs#Configure_environment_variables_for_Lambda_functions), in addition to the variables listed, you can optionally also define the following environment variables.
+When you [Configure environment variables for Lambda functions](/docs/send-data/Collect-from-Other-Data-Sources/Amazon-CloudWatch-Logs#Configure_environment_variables_for_Lambda_functions), in addition to the variables listed, you can optionally also define the following environment variables.
 
 If you define the environment variables below, do it for both of the Lambda functions created by the CloudFormation template.
 
@@ -88,7 +90,7 @@ If you define the environment variables below, do it for both of the Lambda func
 <p>aws-region</p>
 <p>security-group-ids</p>
 <p>direction</p>
-<p>If you set the value to <code>true</code>, follow the instructions in <a href="https://help.sumologic.com/07Sumo-Logic-Apps/01Amazon_and_AWS/Amazon_VPC_Flow_Logs/01Collect-Amazon-VPC-Flow-Logs-from-CloudWatch-Using-CloudFormation#Grant_Lambda_permissions_(Optional)">Grant Lambda permissions (Optional)</a>.</p></td>
+<p>If you set the value to <code>true</code>, follow the instructions in <a href="#Grant-Lambda-permissions-Optional">Grant Lambda permissions (Optional)</a>.</p></td>
   </tr>
   <tr>
    <td><code>VPC_CIDR_PREFIX</code></td>
@@ -108,7 +110,6 @@ The Lambda function fetches list of Elastic Network Interfaces using the `descri
 
 Paste the JSON below, after adding the ARN of the Lambda functions.
 
-
 ```json
 {
     "Version": "2012-10-17",
@@ -123,7 +124,7 @@ Paste the JSON below, after adding the ARN of the Lambda functions.
 }
 ```
 
-### Step 4: Subscribe the Lambda function to the VPC Flow Log group
+#### Step 4: Subscribe the Lambda function to the VPC Flow Log group
 
 1. Select the VPC Flow Log group in the CloudWatch Logs management panel. \
 This is the Log Group created in the first part (VPCFlowLogs was used).
@@ -136,12 +137,12 @@ This is the Log Group created in the first part (VPCFlowLogs was used).
 
 
 
-## Collecting Amazon VPC Flow Logs using an AWS S3 Source
+### Collecting Amazon VPC Flow Logs using an AWS S3 Source
 
 This section has instructions for collecting Amazon VPC Flow Logs using an AWS S3 source. If you prefer to collect VPC logs using a CloudFormation template, see [Collect Amazon VPC Flow Logs using a CloudFormation Template](#collecting-amazon-vpc-flow-logs-from-cloudwatch-using-cloudformation).
 
 
-### Step 1: Enable Amazon VPC Flow Logs  
+#### Step 1: Enable Amazon VPC Flow Logs  
 
 1. You can use an existing S3 bucket, or create a new one, as described in [Create a S3 bucket](https://docs.aws.amazon.com/AmazonS3/latest/gsg/CreatingABucket.html) in AWS help.
 2. Create flow logs for your VPCs, subnets, or network interfaces. For instructions, see [Creating a Flow Log that Publishes to Amazon S3](https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs-s3.html#flow-logs-s3-create-flow-log) in AWS help.
@@ -149,36 +150,34 @@ This section has instructions for collecting Amazon VPC Flow Logs using an AWS S
 `bucket_ARN/optional_folder/AWSLogs/aws_account_id/vpcflowlogs/region/year/month/day/log_file_name.log.gz`
 
 
-### Step 2: Configure AWS S3 source  
+#### Step 2: Configure AWS S3 source  
 
-1. [Grant Access to an AWS S3 Bucket](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/Grant-Access-to-an-AWS-Product).
+1. [Grant Access to an AWS S3 Bucket](/docs/send-data/sources/sources-hosted-collectors/amazon-web-services/grant-access-aws-product.md).
 2. [Enable logging using the AWS Management Console](http://docs.aws.amazon.com/AmazonS3/latest/dev/enable-logging-console.html).
-3. When you create an AWS Source, you associate it with a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use, or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](https://help.sumologic.com/03Send-Data/Hosted-Collectors/Configure-a-Hosted-Collector).
-4. Add an [AWS Source](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/AWS-S3-Source#AWS_Sources) for the S3 Source to Sumo Logic. When you configure the S3 source:
+3. When you create an AWS Source, you associate it with a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use, or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/configure-hosted-collector).
+4. Add an [AWS Source](/docs/send-data/Sources/sources-hosted-collectors/Amazon-Web-Services/AWS-S3-Source#AWS_Sources) for the S3 Source to Sumo Logic. When you configure the S3 source:
     1. In the **Advanced Options for Logs** section, uncheck the **Detect messages spanning multiple lines** option.
-    2. In the **Processing Rules for Logs** section, add an **Exclude messages that match** processing rule to ignore the following file header lines: \
-`version account-id interface-id srcaddr dstaddr srcport dstport protocol packets bytes start end action log-status
-`
+    2. In the **Processing Rules for Logs** section, add an **Exclude messages that match** processing rule to ignore the following file header lines: `version account-id interface-id srcaddr dstaddr srcport dstport protocol packets bytes start end action log-status`
 
 
 ## Installing the Amazon VPC Flow Logs App
 
-Now that you have configured Amazon VPC Flow Logs, install the Sumo Logic App for Amazon VPC Flow Logs to take advantage of the preconfigured searches and [dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/01Amazon_and_AWS/Amazon_VPC_Flow_Logs/Amazon-VPC-Flow-Logs-App-Dashboards#Dashboards) to analyze your data.
+Now that you have configured Amazon VPC Flow Logs, install the Sumo Logic App for Amazon VPC Flow Logs to take advantage of the preconfigured searches and [dashboards](#Dashboards) to analyze your data.
 
-**To install the app:**
+To install the app:
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
 1. From the **App Catalog**, search for and select the app**.**
 2. Select the version of the service you're using and click **Add to Library**.
 
-Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](https://help.sumologic.com/01Start-Here/Library/Apps-in-Sumo-Logic/Install-Apps-from-the-Library)
+Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/library/install-apps)
 
 1. To install the app, complete the following fields.
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
     2. **Data Source.** Select either of these options for the data source. 
         * Choose **Source Category**, and select a source category from the list. 
-        * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (_sourceCategory=MyCategory). 
+        * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). 
     3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
 2. Click **Add to Library**.
 
@@ -213,7 +212,7 @@ You can filter the Overview dashboard by any combination of `DestinationIP`, `So
 
 
 #### Filter the Accepts dashboard
-In the filters pane, you can can configure these parameters for the [outlier](https://help.sumologic.com/05Search/Search-Query-Language/Search-Operators/outlier) analysis performed by the "Accepts by Minute - Outlier" panel:  Consecutive, Threshold, Window, and Timeslice.
+In the filters pane, you can can configure these parameters for the [outlier](/docs/search/index.md/Search-Query-Language/Search-Operators/outlier) analysis performed by the "Accepts by Minute - Outlier" panel:  Consecutive, Threshold, Window, and Timeslice.
 
 You can also filter Accepts dashboard by any combination of `DestinationIP`, `SourceIP`, `dest_port`, `interfaceid`, `protocol`, and `src_port`.
 
@@ -230,7 +229,7 @@ You can also filter Accepts dashboard by any combination of `DestinationIP`, `So
 
 #### Filter the Rejects dashboard
 
-In the filters pane, you can can configure these parameters for the [outlier](https://help.sumologic.com/05Search/Search-Query-Language/Search-Operators/outlier) analysis performed by the "Rejects by Minute - Outlier" panel:  Consecutive, Threshold, Window, and Timeslice.
+In the filters pane, you can can configure these parameters for the [outlier](/docs/search/index.md/Search-Query-Language/Search-Operators/outlier) analysis performed by the "Rejects by Minute - Outlier" panel:  Consecutive, Threshold, Window, and Timeslice.
 
 You can also filter the Rejects dashboard by any combination of DestinationIP, SourceIP, dest_port, interfaceid, protocol, and src_port.
 
@@ -246,7 +245,7 @@ You can also filter the Rejects dashboard by any combination of DestinationIP, S
 
 #### Filter the Traffic dashboard
 
-In the filters pane, you can can configure these parameters for the [outlier](https://help.sumologic.com/05Search/Search-Query-Language/Search-Operators/outlier) analysis performed by several panels: Consecutive, Threshold, Window, and Timelice.
+In the filters pane, you can can configure these parameters for the [outlier](/docs/search/index.md/Search-Query-Language/Search-Operators/outlier) analysis performed by several panels: Consecutive, Threshold, Window, and Timelice.
 
 You can also filter the Traffic dashboard by any combination of DestinationIP, SourceIP, action, dest_port, interfaceid, protocol, and src_port.
 
@@ -269,6 +268,6 @@ Key facts about this dashboard:
 
 #### Filter the Security Groups dashboard
 
-In the filters pane, you can can configure these parameters for the [outlier](https://help.sumologic.com/05Search/Search-Query-Language/Search-Operators/outlier) analysis performed by several panels:  Consecutive, Threshold, Window, and Timeslice.
+In the filters pane, you can can configure these parameters for the [outlier](/docs/search/index.md/Search-Query-Language/Search-Operators/outlier) analysis performed by several panels:  Consecutive, Threshold, Window, and Timeslice.
 
 You can also filter the Security Groups dashboard by any combination of DestinationIP, SourceIP, action, dest_port, interfaceid, protocol, security_grp_id,  src_port, subnet_id, and vpc_id.

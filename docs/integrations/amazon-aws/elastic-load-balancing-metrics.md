@@ -2,12 +2,12 @@
 id: elastic-load-balancing-metrics
 title: Sumo Logic App for AWS Elastic Load Balancing Metrics
 sidebar_label: AWS Elastic Load Balancing Metrics
-description: AWS Elastic Load Balancing Metrics
+description: The Sumo Logic App for AWS Elastic Load Balancing (ELB) Metrics lets you analyze the CloudWatch ELB metrics for the Application Load Balancer (ALB), and the Classic Load Balancer (CLB).
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/amazon-aws/elb-metrics.png')} alt="DB icon" width="50"/>
+<img src={useBaseUrl('img/integrations/amazon-aws/elb-metrics.png')} alt="Thumbnail icon" width="50"/>
 
 The Sumo Logic App for AWS Elastic Load Balancing (ELB) Metrics lets you analyze the CloudWatch ELB metrics for the Application Load Balancer (ALB), and the Classic Load Balancer (CLB). The App provides preconfigured searches and dashboards that allow you to monitor the metrics healthy hosts, unhealthy hosts, HTTP backend codes, latency, requests, and more.
 
@@ -18,32 +18,32 @@ The Sumo Logic App for AWS Elastic Load Balancing (ELB) Metrics lets you analyze
 For details on Amazon CloudWatch collected metrics, refer to:
 http://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CW_Support_For_AWS.html
 
-For information on collecting unified logs and metrics for AWS Elastic Load Balancing Metrics, see [AWS Elastic Load Balancing ULM - Application](https://help.sumologic.com/07Sumo-Logic-Apps/01Amazon_and_AWS/AWS_Application_Load_Balancer).
+For information on collecting unified logs and metrics for AWS Elastic Load Balancing Metrics, see [AWS Elastic Load Balancing ULM - Application](/docs/integrations/amazon-aws/elastic-load-balancer-app.md).
 
 To collect AWS Elastic Load Balancing Metrics, perform the following tasks:
-1. [Configure a Hosted Collector](https://help.sumologic.com/07Sumo-Logic-Apps/01Amazon_and_AWS/AWS_Elastic_Load_Balancing_Metrics/01Collect-Metrics-for-the-AWS-Elastic-Load-Balancing-App)
-2. [Add a CloudWatch Source for Metrics](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/Amazon-CloudWatch-Source-for-Metrics)
+1. [Configure a Hosted Collector](#Collect-Metrics-for-the-AWS-Elastic-Load-Balancing-App)
+2. [Add a CloudWatch Source for Metrics](/docs/send-data/sources/sources-hosted-collectors/amazon-web-services/amazon-cloudwatch-source-metrics)
 
 
 ## Installing the AWS ELB Metrics App
 
-Now that you have configured AWS ELB Metrics, install the Sumo Logic App for AWS Elastic Load Balancing Metrics to take advantage of the preconfigured searches and [dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/01Amazon_and_AWS/AWS_Elastic_Load_Balancing_Metrics/03Amazon-CloudWatch---ELB-Metrics-Dashboards#Dashboards) to analyze your data.
+Now that you have configured AWS ELB Metrics, install the Sumo Logic App for AWS Elastic Load Balancing Metrics to take advantage of the preconfigured searches and [dashboards](#Dashboards) to analyze your data.
 
-**To install the app:**
+To install the app:
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**
 
 1. From the **App Catalog**, search for and select the app**.**
 2. Select the version of the service you're using and click **Add to Library**.
 
-Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](https://help.sumologic.com/01Start-Here/Library/Apps-in-Sumo-Logic/Install-Apps-from-the-Library)
+Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/library/install-apps)
 
 
 1. To install the app, complete the following fields.
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
     2. **Data Source.** Select either of these options for the data source. 
         * Choose **Source Category**, and select a source category from the list. 
-        * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (_sourceCategory=MyCategory). 
+        * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). 
     3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
 2. Click **Add to Library**.
 

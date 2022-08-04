@@ -1,8 +1,8 @@
 ---
 id: sdo-setup-from-atlassian-marketplace
+title: SDO Setup from Atlassian Marketplace
+description: Learn how to set up the Software Development Optimization (SDO) Solution from the Atlassian Marketplace.
 ---
-
-# SDO Setup from Atlassian Marketplace
 
 These instructions help you prepare and set up the Software Development Optimization (SDO) Solution through the Atlassian Marketplace. 
 
@@ -10,7 +10,7 @@ These instructions help you prepare and set up the Software Development Optimiza
 
 Before setting up the SDO solution, you need to complete the following tasks:
 
-* Create or collect API Keys and credentials for Jira, Github, GitLab, Jenkins, Bitbucket, CircleCI, and Opsgenie with Webhook creation capabilities. 
+* Create or collect API Keys and credentials for Jira, Github, GitLab, Jenkins, Bitbucket, CircleCI, and Opsgenie with Webhook creation capabilities.
 * Get access to Jenkins with Manage Plugins permissions.
 * Make sure you have access to the Sumo logic console. The user account associated with a Sumo Logic role needs the following permissions:
 
@@ -71,7 +71,7 @@ The application setup wizard automates the setup of all the necessary resources 
 
 * The application setup wizard allows you to quickly get started by installing a copy of the configured applications. After the initial setup, if you need additional copies of the Sumo Logic applications, you can install them from the Sumo Logic App catalog.
 
-* If you plan to integrate Jenkins with this solution, the Jenkins plugin is not configured during setup. To configure Jenkins collection, see [Install the Jenkins Plugin] (../../../07Sumo-Logic-Apps/08App_Development/Jenkins/Collect_Logs_and_Metrics_for_Jenkins.md "Collect Logs and Metrics for Jenkins"), [Configure Jenkins Plugin] (../../../07Sumo-Logic-Apps/08App_Development/Jenkins/Collect_Logs_and_Metrics_for_Jenkins.md "Collect Logs and Metrics for Jenkins") (use **SDO/Jenkins** as the source category), and [Optional - Advanced Configuration] (../../../07Sumo-Logic-Apps/08App_Development/Jenkins/Collect_Logs_and_Metrics_for_Jenkins.md "Collect Logs and Metrics for Jenkins") to install and configure the Jenkins Sumo Logic plugin.
+* If you plan to integrate Jenkins with this solution, the Jenkins plugin is not configured during setup. To configure Jenkins collection, see [Install the Jenkins Plugin] (../../../07Sumo-Logic-Apps/app-development/Jenkins/Collect_Logs_and_Metrics_for_Jenkins.md "Collect Logs and Metrics for Jenkins"), [Configure Jenkins Plugin] (../../../07Sumo-Logic-Apps/app-development/Jenkins/Collect_Logs_and_Metrics_for_Jenkins.md "Collect Logs and Metrics for Jenkins") (use **SDO/Jenkins** as the source category), and [Optional - Advanced Configuration] (../../../07Sumo-Logic-Apps/app-development/Jenkins/Collect_Logs_and_Metrics_for_Jenkins.md "Collect Logs and Metrics for Jenkins") to install and configure the Jenkins Sumo Logic plugin.
 
 * Currently only Jira Cloud is supported as an issue management application.
 
@@ -97,16 +97,16 @@ To configure using the wizard:
 
 ![sdo-wizard2.png](/img/sdo/sdo-wizard2.png)
 
-1. For Jira Cloud, configure the following settings: 
+1. For Jira Cloud, configure the following settings:
 
    * Jira Cloud URL - Jira Cloud URL, for example [*https://sdodevstaging.atlassian.net*](https://sdodevstaging.atlassian.net). Do not use a trailing slash (/) at the end of the url.
    * Jira Cloud Username - Your email ID configured in Jira Cloud.
    * Jira Cloud Password or API Key - Your Jira Cloud login password or API key. See [Manage API tokens for your Atlassian account](https://support.atlassian.com/atlassian-account/docs/manage-api-tokens-for-your-atlassian-account/) to generate API keys.
    * Jira Cloud Issue Type - Issue Type. See [What are issue types](https://support.atlassian.com/jira-cloud-administration/docs/what-are-issue-types/) for the “Jira Software (software projects) issue types” section to see available types.
    * Jira Cloud Priority - Priority ID of the issue. To access the **Edit Priority** page, see the “Adding, editing, and deleting a priority” section at [Configure statuses, resolutions, and priorities](https://support.atlassian.com/jira-cloud-administration/docs/configure-statuses-resolutions-and-priorities/) and get the ID from the URL.       
-  
+
     ![sdo-jira-priority.png](/img/sdo/sdo-jira-priority.png)
-   
+
    * Jira Cloud Project Key - Your project key. Click **View all Projects** under the Projects tab to get the value from the key column corresponding to your project name.
 
     ![sdo-jira-projectkey.png](/img/sdo/sdo-jira-projectkey.png)
@@ -166,7 +166,7 @@ Do the following:
 Do the following:
 
 * Bitbucket Username - Enter the Bitbucket cloud username.
-* Bitbucket Password -  Enter the Bitbucket cloud password or App Password. To generate App Passwords, see [App passwords](https://confluence.atlassian.com/bitbucket/app-passwords-828781300.html). 
+* Bitbucket Password -  Enter the Bitbucket cloud password or App Password. To generate App Passwords, see [App passwords](https://confluence.atlassian.com/bitbucket/app-passwords-828781300.html).
 * The owner of the repositories -  Enter the owner of the repositories, which can be you or any team with write access.
 * Specify the repositories -  Specify the repositories to create webhooks for.
 * The name / description to show in the UI -  Enter the webhook title.
@@ -289,18 +289,18 @@ Complete the configuration for the build and deploy tool you use.
 
 1. Under this Collector, click on **Show URL** for the source **Bitbucket Cloud.** Make a note of this **URL** and use this URL to configure the Bitbucket CI/CD Pipeline to collect deploy events:
 
-   * **Deploy**: Follow the steps outlined in [this document] (../../../07Sumo-Logic-Apps/08App_Development/Bitbucket/Collect_Logs_for_Bitbucket_App.md) to configure the Bitbucket CI/CD Pipeline to collect deploy events.
+   * **Deploy**: Follow the steps outlined in [this document] (../../../07Sumo-Logic-Apps/app-development/Bitbucket/Collect_Logs_for_Bitbucket_App.md) to configure the Bitbucket CI/CD Pipeline to collect deploy events.
 
 ### Jenkins for build and deploy
 
-1. Install the latest Jenkins Plugin as described [here] (../../../07Sumo-Logic-Apps/08App_Development/Jenkins/Collect_Logs_and_Metrics_for_Jenkins.md)
+1. Install the latest Jenkins Plugin as described [here] (../../../07Sumo-Logic-Apps/app-development/Jenkins/Collect_Logs_and_Metrics_for_Jenkins.md)
 
 1. Access the Sumo Logic Platform and navigate to **Manage Data** \> **Collection** page.
 
 1. Search for *Software Development Optimization* Collector.
 
 1. Under this Collector, click on **Show URL** for the source **Jenkins.** Make a note of this **URL** and **Source Category,** you will use these to configure the Jenkins Plugin :
- * **Build Pipeline Stages**: Follow [Configure Jenkins Plugin,] (../../../07Sumo-Logic-Apps/08App_Development/Jenkins/Collect_Logs_and_Metrics_for_Jenkins.md) and optionally [Optional - Advance Configuration] (../../../07Sumo-Logic-Apps/08App_Development/Jenkins/Collect_Logs_and_Metrics_for_Jenkins.md) to configure the Jenkins Sumo Logic plugin.
+ * **Build Pipeline Stages**: Follow [Configure Jenkins Plugin,] (../../../07Sumo-Logic-Apps/app-development/Jenkins/Collect_Logs_and_Metrics_for_Jenkins.md) and optionally [Optional - Advance Configuration] (../../../07Sumo-Logic-Apps/app-development/Jenkins/Collect_Logs_and_Metrics_for_Jenkins.md) to configure the Jenkins Sumo Logic plugin.
  * **Build**: Follow [this](../jenkins-plugin-build-deploy-events.md) doc to modify your Jenkins plugin to explicitly identify, enrich, and send Build Events to Sumo Logic.
  * **Deploy**: Follow [this](../jenkins-plugin-build-deploy-events.md) doc to modify your Jenkins plugin to explicitly identify, enrich, and send Deploy Events to Sumo Logic.
 

@@ -1,12 +1,22 @@
 ---
 id: global-intelligence-cloudtrail-devops
 title: Global Intelligence for AWS CloudTrail DevOps
-description: global-intelligence-cloudtrail-devops
+sidebar_label: AWS CloudTrail DevOps Global Intelligence
+description: Global Intelligence for AWS CloudTrail - DevOps provides insights for on-call engineers, SRE, and DevOps users to help minimize AWS errors and maximize app availability.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/amazon-aws/gi-devops.png')} alt="DB icon" width="75"/>
+<img src={useBaseUrl('img/integrations/amazon-aws/gi-devops.png')} alt="Thumbnail icon" width="75"/>
+
+This feature is available in the following account plans.
+
+| Account Type | Account Level
+| :---- | :----
+|  Cloud Flex  |  Trial, Enterprise
+| Cloud Flex Credits | Trial, Enterprise Operations, Enterprise Security, Enterprise Suite
+
+Our new app install flow is now in Beta. It is only enabled for certain customers while we gather Beta customer feedback. If you can see the Add Integration button, follow the "Before you begin" section in the "Collect Logs" help page and then use the in-product instructions in Sumo Logic to set up the app.
 
 Global Intelligence for AWS CloudTrail - DevOps provides insights for on-call engineers, infrastructure engineers, and DevOps users accelerate root cause analysis for incidents by providing error rate and configuration insights benchmarked from Sumo Logic’s AWS customers for nine AWS services:
 * Amazon EC2
@@ -22,7 +32,6 @@ Global Intelligence for AWS CloudTrail - DevOps provides insights for on-call en
 The benchmarks are powered by more than 15 M data points per week from AWS CloudTrail logs for a few thousand Sumo Logic tenants across 27 AWS regions.
 
 A well-architected modern app running on AWS can experience four types of errors during mission-critical scale-out events leading to an outage or application incident. These include:
-
 * Service Availability errors, where a particular AWS service (For example, EC2) may be unavailable.
 * Throttling errors, where AWS rate-limits API traffic from the customer’s application for a given service and API. (For example, PutItem requests for AWS DynamoDB.)
 * Account Quota errors, where a customer may saturate account limits for a particular service and resource. (For example, exceeding the 100 buckets per account limit of AWS S3.)
@@ -74,35 +83,57 @@ Before you begin, you must configure AWS CloudTrail logging to an S3 bucket.
 1. [Configure CloudTrail](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/getting_started_top_level.html) in your AWS account.
 2. [Enable logging using the AWS Management Console](http://docs.aws.amazon.com/AmazonS3/latest/dev/enable-logging-console.html).
 3. Confirm that logs are being delivered to the S3 bucket.
-4. [Grant Access to an AWS S3 Bucket](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/Grant-Access-to-an-AWS-Product).
+4. [Grant Access to an AWS S3 Bucket](/docs/send-data/sources/sources-hosted-collectors/amazon-web-services/grant-access-aws-product.md).
 
 
 ### Configuring Log Collection for AWS Global Intelligence CloudTrail DevOps
 
-To configure log collection for Global Intelligence for AWS CloudTrail, follow the steps described [here](https://help.sumologic.com/07Sumo-Logic-Apps/01Amazon_and_AWS/AWS_CloudTrail/01-Collect-logs-for-the-AWS-CloudTrail-App).
+To configure log collection for Global Intelligence for AWS CloudTrail, follow the steps described [here](#Collect-logs-for-the-AWS-CloudTrail-App).
 
 
 ### Sample Log Message
 
 
 ```json
-{"eventVersion":"1.05","userIdentity":{"type":"IAMUser","principalId":"AIDAJK3NPEULWYAYYL73U",
-"arn":"arn:aws:iam::224064240813:user/username","accountId":"224064240808","userName":"acme@acme.com"},"eventTime":"2020-01-11 00:42:12+0000",
-"eventSource":"signin.amazonaws.com","eventName":"ConsoleLogin","awsRegion":"us-west-2","sourceIPAddress":"115.13.72.133","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_1)
- AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36","requestParameters":null,"responseElements":{"ConsoleLogin":"Success"},
-"additionalEventData":{"LoginTo":"https://us-west-2.console.aws.amazon.com/ecs/home?region=us-west-2&
+{
+	"eventVersion":"1.05",
+	"userIdentity":{
+		"type":"IAMUser",
+		"principalId":"AIDAJK3NPEULWYAYYL73U",
+		"arn":"arn:aws:iam::224064240813:user/username",
+		"accountId":"224064240808",
+		"userName":"acme@acme.com"
+	},
+	"eventTime":"2020-01-11 00:42:12+0000",
+	"eventSource":"signin.amazonaws.com",
+	"eventName":"ConsoleLogin",
+	"awsRegion":"us-west-2",
+	"sourceIPAddress":"115.13.72.133",
+	"userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_1)
+ AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36",
+	"requestParameters":null,
+	"responseElements":{
+		"ConsoleLogin":"Success"
+	},
+	"additionalEventData":{
+		"LoginTo":"https://us-west-2.console.aws.amazon.com/ecs/home?region=us-west-2&
 state=hashArgs%23%2Frepositories%2Ftravellogic%3Aproducts&isauthcode=true",
-"MobileVersion":"No","MFAUsed":"Yes"},"eventID":"8fd88195-8576-49ad-9e14-8330cb492604","eventType":"AwsConsoleSignIn","recipientAccountId":"224064240808"}
+		"MobileVersion":"No",
+		"MFAUsed":"Yes"
+	},
+	"eventID":"8fd88195-8576-49ad-9e14-8330cb492604",
+	"eventType":"AwsConsoleSignIn",
+	"recipientAccountId":"224064240808"
+}
 ```
 
 
 
-### Query Sample
+### Sample Query
 
-The following sample query is from the **Lambda Configuration: My Company v. Others (Categorical)** panel of **GI CloudTrail DevOps - 05. Configuration Benchmarks**.
+<details><summary>Click to expand.<br/>This sample query is from the <strong>Lambda Configuration: My Company v. Others (Categorical)</strong> panel of <strong>GI CloudTrail DevOps - 05. Configuration Benchmarks</strong>.</summary>
 
-
-```
+```sql
 // id=@config_lambda_categorical_values
 _sourceCategory=Labs/AWS/CloudTrailDevOps/Analytics
 (AwsApiCall lambda !errorCode)
@@ -128,7 +159,7 @@ and (Runtime or Mode)
 | parse regex field=benchmarkNames "(?<benchmarkname>[^,]+)" multi
 | where !(benchmarkname matches "*Not-Available*")
 | fields benchmarkname, _count_distinct
-| sum(_count_distinct) by benchmarkname // I'm not sure why we want to sum() here?
+| sum(_count_distinct) by benchmarkname
 | _sum as _count_distinct
 | parse field=benchmarkname "resourceType=lambda_*=*_awsRegion=*" as denomGroup, _, awsRegion
 | concat(denomGroup, "_", awsRegion) as denomGroup
@@ -151,6 +182,8 @@ on t1.denomGroup = t2.denomGroup
 | sort +awsRegion, +configProperty, +value
 ```
 
+</details>
+
 ## Installing the Global Intelligence for AWS CloudTrail DevOps App
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
@@ -158,13 +191,13 @@ Locate and install the app you need from the **App Catalog**. If you want to see
 1. From the **App Catalog**, search for and select the app**.**
 2. Select the version of the service you're using and click **Add to Library**.
 
-Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](https://help.sumologic.com/01Start-Here/Library/Apps-in-Sumo-Logic/Install-Apps-from-the-Library)
+Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/library/install-apps)
 
 1. To install the app, complete the following fields.
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
     2. **Data Source.** Select either of these options for the data source. 
         * Choose **Source Category**, and select a source category from the list. 
-        * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (_sourceCategory=MyCategory). 
+        * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). 
     3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
 2. Click **Add to Library**.
 

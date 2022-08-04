@@ -2,7 +2,7 @@
 id: audit
 title: Sumo Logic App for Azure Audit
 sidebar_label: Azure Audit
-description: Azure Audit
+description: The Sumo Logic App for Azure Audit allows you to collect Azure Audit logs and monitor the health of your Azure environment.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -11,14 +11,14 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Azure Audit App allows you to collect data from the Azure Activity Log (formerly known as Azure Audit logs) and monitor the health of your Azure environment. The App provides preconfigured Dashboards that allow you to monitor Active Directory activity, resource usage, service health, and user activity.  Logs can be collected in two ways - from Event Hub, and from Azure Insight API using Sumo Powershell scripts.
 
-This guide walks you through the tasks you'll perform to [collect Azure Audit logs from Event Hub](https://help.sumologic.com/07Sumo-Logic-Apps/04Microsoft-and-Azure/Azure_Audit/02Collect-Logs-for-the-Azure-Audit-App-from-Event-Hub):
+This guide walks you through the tasks you'll perform to [collect Azure Audit logs from Event Hub](#Collect-Logs-for-the-Azure-Audit-App-from-Event-Hub):
 
 1. Create an Event Hub.
 2. Export activity logs to the Event Hub.
 3. Create a Function App.
 4. Define the required environment variables.
 5. Deploy the function.
-6. Then, [install the Sumo Logic App for Azure Audit](https://help.sumologic.com/07Sumo-Logic-Apps/04Microsoft-and-Azure/Azure_Audit/03_Azure-Audit-App-Dashboards#Install_the_Sumo_Logic_App).
+6. Then, [install the Sumo Logic App for Azure Audit](#Install-the-Azure-Audit-App).
 
 To install the Sumo Logic App for Azure Audit, you must sign up for a Sumo Logic Account, if you have not already done so. To sign up, go to [https://www.sumologic.com/pricing/](https://www.sumologic.com/pricing/) and select your account type or click **Free Trial** to sign up for a Sumo Logic Free account.
 
@@ -26,7 +26,7 @@ To install the Sumo Logic App for Azure Audit, you must sign up for a Sumo Logic
 
 ## Collecting Logs for the Azure Audit App from Event Hub
 
-This page has instructions for configuring a pipeline for shipping Azure Audit logs from [Azure Monitor](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-get-started) to an Event Hub, on to an Azure Function, and finally to an HTTP source on a hosted collector in Sumo Logic.
+This section has instructions for configuring a pipeline for shipping Azure Audit logs from [Azure Monitor](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-get-started) to an Event Hub, on to an Azure Function, and finally to an HTTP source on a hosted collector in Sumo Logic.
 
 The sections below are either for FedRamp Sumo Logic deployments or if you have been advised by the Sumo Logic support team to not use the Cloud to Cloud Integration based on your Azure environments.
 
@@ -48,8 +48,8 @@ The Azure Audit App uses the following logs:
 
 In this step, you configure an HTTP source to which the Azure function will send Azure Activity logs.
 
-1. Select a hosted collector where you want to configure the HTTP source. If desired, create a new hosted collector, as described on [Configure a Hosted Collector](https://help.sumologic.com/03Send-Data/Hosted-Collectors/Configure-a-Hosted-Collector).
-2. Configure an HTTP source, as described on [HTTP Logs and Metrics Source](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/HTTP-Source).
+1. Select a hosted collector where you want to configure the HTTP source. If desired, create a new hosted collector, as described on [Configure a Hosted Collector](/docs/send-data/configure-hosted-collector).
+2. Configure an HTTP source, as described on [HTTP Logs and Metrics Source](/docs/send-data/sources/sources-hosted-collectors/http-logs-metrics-source).
 
 
 ### Configure Azure resources using ARM template
@@ -65,17 +65,14 @@ In this step, you use a Sumo-provided Azure Resource Manager (ARM) template to c
 
 6. Click **Save.**
 7. Now you are back on the **Custom deployment** blade.
-    1. Create a new Resource Group (recommended) or select an existing one.
-    2. Choose Location.
-    3. In the **Sumo Endpoint URL** field, enter the URL of the HTTP Source you configured in [Step 1](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Azure_Monitoring/Collect_Logs_from_Azure_Monitor#Step_1._Configure_an_HTTP_source).
-    4. Agree to the terms and conditions.
-    5. Click **Purchase**. \
-
+    * Create a new Resource Group (recommended) or select an existing one.
+    * Choose Location.
+    * In the **Sumo Endpoint URL** field, enter the URL of the HTTP Source you configured in [Step 1](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-logs-azure-monitor#Step_1._Configure_an_HTTP_source).
+    * Agree to the terms and conditions.
+    * Click **Purchase**. \
 8. Verify the deployment was successful by looking at **Notifications** at the top right corner of Azure Portal. \
 9. **(Optional)** In the same window, you can click **Go to resource group** to verify all resources have been created successfully. You will see something like this: \
-
-10. Go to **Storage accounts** and search for “sumofailmsg**”. **Click on “sumofailmsg_&lt;random-string>”. \
-_
+10. Go to **Storage accounts** and search for “sumofailmsg”. Click on `sumofailmsg_<random-string>`.
 11. Under **Blob Service**, click **Containers**, then click **+ Container**, enter the Name** azureaudit-failover**, and select **Private** for the **Public Access Level**. Click **OK**.
 
 ### Export Activity Logs to Event Hub
@@ -86,35 +83,35 @@ _
 3. In the Diagnostic Settings window, click **Add Diagnostic settings.
 4. Select the log type in **Category details** that you want to ingest.
     * Select the **Stream to an event hub** checkbox and then select the following:
-        * **Subscription.** Pull-down, select a subscription**.**
-        * **Event Hub Namespace.** Pull-down, select the <code>SumoAzureLogsNamespace&lt;<em>UniqueSuffix</em>></code> namespace created by the ARM template in [Step 2](https://help.sumologic.com/07Sumo-Logic-Apps/04Microsoft-and-Azure/Azure_Audit/02Collect-Logs-for-the-Azure-Audit-App-from-Event-Hub#Step_2._Configure_Azure_resources_using_ARM_template).
-        * **Event Hub name (optional).** Select <code>"insights-operational-logs"</code>.
+        * **Subscription.** Pull-down, select a subscription.
+        * **Event Hub Namespace.** Pull-down, select the `SumoAzureLogsNamespace<UniqueSuffix>` namespace created by the ARM template in [Step 2](#Step_2._Configure_Azure_resources_using_ARM_template).
+        * **Event Hub name (optional).** Select `"insights-operational-logs"`.
         * **Event hub policy name. **Leave the default policy,** RootManageSharedAccessKey**, or select another as desired.
     * Click **Save.**
 
 
 ### Troubleshooting
 
-If logs are not flowing into Sumo Logic, see [Troubleshooting](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Azure_Monitoring/Collect_Logs_from_Azure_Monitor#Troubleshooting_log_collection).
+If logs are not flowing into Sumo Logic, see [Troubleshooting](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-logs-azure-monitor#Troubleshooting_log_collection).
 
 ## Installing the Azure Audit App
 
-Now that you have set up collection from the Azure Activity Log (previously known as Azure Audit logs), install the Azure Audit App to use the preconfigured searches and [Dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/04Microsoft-and-Azure/Azure_Audit/03_Azure-Audit-App-Dashboards#Dashboards) that provide insight into your data.
+Now that you have set up collection from the Azure Activity Log (previously known as Azure Audit logs), install the Azure Audit App to use the preconfigured searches and [Dashboards](#Dashboards) that provide insight into your data.
 
-**To install the app:**
+To install the app:
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
 1. From the **App Catalog**, search for and select the app**.**
 2. Select the version of the service you're using and click **Add to Library**.
 
-Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](https://help.sumologic.com/01Start-Here/Library/Apps-in-Sumo-Logic/Install-Apps-from-the-Library)
+Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/library/install-apps)
 
 1. To install the app, complete the following fields.
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
     2. **Data Source.** Select either of these options for the data source. 
         * Choose **Source Category**, and select a source category from the list. 
-        * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (_sourceCategory=MyCategory). 
+        * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). 
     3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
 2. Click **Add to Library**.
 

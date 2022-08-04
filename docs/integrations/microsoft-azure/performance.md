@@ -2,7 +2,7 @@
 id: performance
 title: Sumo Logic App for Windows Performance
 sidebar_label: Windows Performance
-description: Windows Performance
+description: The Windows Performance App provides insight into your system's operation and events so that you can better manage and maintain your Windows systems.
 ---
 
 
@@ -21,7 +21,7 @@ This section provides instructions for configuring log collection for the Window
 
 The Windows Performance App assumes events are coming from Windows Performance Sources.
 
-**Also, you need to configure an additional custom query for each Source.** For details, see [Collect Logs for Windows Performance App](https://help.sumologic.com/07Sumo-Logic-Apps/04Microsoft-and-Azure/Windows_Performance/01Collect-Logs-for-the-Windows-Performance-App).
+**Also, you need to configure an additional custom query for each Source.** For details, see [Collect Logs for Windows Performance App](#Collect-Logs-for-the-Windows-Performance-App).
 
 
 ### Configure a Collector and Source
@@ -31,10 +31,10 @@ To collect logs for the Windows Performance App, you will need to configure an I
 
 To collect logs for the Windows Performance App, do the following:
 
-1. Install a collector as described in [Installed Collector](https://help.sumologic.com/03Send-Data/Installed-Collectors).
+1. Install a collector as described in [Installed Collector](/docs/send-data/Installed-Collectors).
 2. Configure a Windows Performance Source, choosing the one appropriate for on your environment:
-    * [Local Windows Performance Monitor Log Source](https://help.sumologic.com/03Send-Data/Sources/01Sources-for-Installed-Collectors/Local-Windows-Performance-Monitor-Log-Source).
-    * [Remote Windows Performance Monitor Log Source](https://help.sumologic.com/03Send-Data/Sources/01Sources-for-Installed-Collectors/Remote-Windows-Performance-Monitor-Log-Source).
+    * [Local Windows Performance Monitor Log Source](/docs/send-data/Sources/sources-installed-collectors/Local-Windows-Performance-Monitor-Log-Source).
+    * [Remote Windows Performance Monitor Log Source](/docs/send-data/Sources/sources-installed-collectors/Remote-Windows-Performance-Monitor-Log-Source).
 
 
 ### Add a Custom Query to the Windows Performance Source
@@ -165,20 +165,20 @@ _sourceCategory=OS/Windows "Win32_PerfFormattedData_PerfOS_Processor" "_Total"
 | avg(procTime) as AvgProcTime by host,_timeslice | sort - _timeslice | transpose row _timeslice column host
 ```
 
-This page provides instructions for installing the Windows Performance App, along with examples of each of the App dashboards.
+This section provides instructions for installing the Windows Performance App, along with examples of each of the App dashboards.
 
 ## Installing the Windows Performance App
 
-Now that you have set up collection, install the Windows Performance App to use the preconfigured searches and [Dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/04Microsoft-and-Azure/Windows_Performance/Windows-Performance-App-Dashboards#Dashboards) that provide insight into your data.
+Now that you have set up collection, install the Windows Performance App to use the preconfigured searches and [Dashboards](#Dashboards) that provide insight into your data.
 
-**To install the app:**
+To install the app:
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
 1. From the **App Catalog**, search for and select the app**.**
 2. Select the version of the service you're using and click **Add to Library**.
 
-Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](https://help.sumologic.com/01Start-Here/Library/Apps-in-Sumo-Logic/Install-Apps-from-the-Library)
+Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/library/install-apps)
 
 
 
@@ -186,7 +186,7 @@ Version selection is applicable only to a few apps currently. For more informati
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
     2. **Data Source.** Select either of these options for the data source. 
         * Choose **Source Category**, and select a source category from the list. 
-        * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (_sourceCategory=MyCategory). 
+        * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). 
     3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
 2. Click **Add to Library**.
 

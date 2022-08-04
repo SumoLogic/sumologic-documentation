@@ -2,18 +2,20 @@
 id: akamai-cloud-monitor
 title: Sumo Logic App for Akamai Cloud Monitor
 sidebar_label: Akamai Cloud Monitor
+description: Allows you to analyze and correlate Akamai data with origin data.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-
-<img src={useBaseUrl('img/integrations/saas-cloud-apps/akamai.png')} alt="DB icon" width="100"/>
+<img src={useBaseUrl('img/integrations/saas-cloud-apps/akamai.png')} alt="Thumbnail icon" width="100"/>
 
 The Sumo Logic App for Akamai Cloud Monitor allows you to analyze and correlate Akamai data with origin data in order to improve availability and performance of applications, improve end-user experience, gain deeper user insights, and enforce rigorous security controls. The app uses predefined searches and Dashboards that provide visibility into your environment for real-time analysis of overall usage.
 
-Log Types
+## Log Types
 
 The Sumo Logic App for Akamai Cloud Monitor assumes Akamai formatted logs, which provide one log message for each request.
+
+For information about Akamai Cloud Monitor log formats, contact [Akamai Support](https://www.akamai.com/us/en/support/) and request the document “Akamai Log Delivery User Guide.” Refer to “Appendix A: Log Formats and Examples."
 
 
 ## Collect Logs for Akamai Cloud Monitor
@@ -21,14 +23,7 @@ The Sumo Logic App for Akamai Cloud Monitor assumes Akamai formatted logs, which
 This procedure explains how to collect logs from Akamai Cloud Monitor and ingest them into Sumo Logic.
 
 
-#### Log Types
-
-Akamai formatted logs provide one log message for each request.
-
-For information about Akamai Cloud Monitor log formats, contact [Akamai Support](https://www.akamai.com/us/en/support/) and request the document “Akamai Log Delivery User Guide.” Refer to “Appendix A: Log Formats and Examples."
-
-
-#### Enable Akamai Cloud Monitor
+### Enable Akamai Cloud Monitor
 
 Akamai Cloud Monitor is the service that generates transactional information for your Akamai CDN.
 
@@ -37,17 +32,17 @@ To enable Cloud Monitor in your Akamai environment, use the instructions at:
 [https://www.akamai.com/us/en/solutions/intelligent-platform/cloud-monitor.jsp](https://www.akamai.com/us/en/solutions/intelligent-platform/cloud-monitor.jsp)
 
 
-#### Configure a Collector
+### Configure a Collector
 
-In Sumo Logic, create a new [Hosted Collector](https://help.sumologic.com/03Send-Data/Hosted-Collectors/Configure-a-Hosted-Collector).
+In Sumo Logic, create a new [Hosted Collector](/docs/send-data/configure-hosted-collector).
 
 
-#### Configure a Source
+### Configure a Source
 
-1. Configure an [HTTP Source](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/HTTP-Source).
+1. Configure an [HTTP Source](/docs/send-data/sources/sources-hosted-collectors/http-logs-metrics-source).
 2. Configure the Source Fields as follows:
     1. **Name.** Required. For example, use Akamai.
-    2. **Source Category.** Required. For example, use akamai_cloud_monitor. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details see [Best Practices](https://help.sumologic.com/03Send-Data/01-Design-Your-Deployment/Best-Practices%3A-Good-Source-Category%2C-Bad-Source-Category).)
+    2. **Source Category.** Required. For example, use akamai_cloud_monitor. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details see [Best Practices](/docs/send-data/design-deployment/best-practices-source-categories).)
 3. Configure the **Advanced** section:
     3. Check **Extract timestamp information from log file entries**.
     4. **Timezone.** Use time zone from log file. If none is present, use UTC.
@@ -61,7 +56,7 @@ In Sumo Logic, create a new [Hosted Collector](https://help.sumologic.com/03Send
 Save the URL endpoint that is generated for your HTTP Source. You will use it to configure Akamai.
 
 
-#### Configure Akamai
+### Configure Akamai
 
 1. In Akamai, open the Luna Control center and navigate to the property you’d like to work with.
 2. Create a new version for the property and select it.
@@ -75,9 +70,9 @@ Save the URL endpoint that is generated for your HTTP Source. You will use it to
 10. Set the HTTPS port to **443**.
 
 
-#### Field Extraction Rules
+### Field Extraction Rules
 
-Field Extraction Rules (FERs) tell Sumo Logic which fields to parse out automatically. For instructions, see [Create a Field Extraction Rule](https://help.sumologic.com/Manage/Field-Extractions/Create-a-Field-Extraction-Rule).
+Field Extraction Rules (FERs) tell Sumo Logic which fields to parse out automatically. For instructions, see [Create a Field Extraction Rule](/docs/manage/field-extractions/create-field-extraction-rule.md).
 
 
 1. In Sumo Logic, go to **Manage Data > Logs > Field Extractions** and click **Add**.
@@ -89,10 +84,9 @@ Field Extraction Rules (FERs) tell Sumo Logic which fields to parse out automati
 
 **FER for Akamai Cloud Monitor**
 
-
-```
-    parse "\"reqMethod\":\"*\"" as method, "\"status\":\"*\"" as status, "\"fwdHost\":\"*\"" as origin
-    | parse "\"bytes\":\"*\"" as bytes, "\"edgeIP\":\"*\"" as edgeip, "\"country\":\"*\"" as country, "\"cookie\":\"*\"" as cookie
+```sql
+parse "\"reqMethod\":\"*\"" as method, "\"status\":\"*\"" as status, "\"fwdHost\":\"*\"" as origin
+| parse "\"bytes\":\"*\"" as bytes, "\"edgeIP\":\"*\"" as edgeip, "\"country\":\"*\"" as country, "\"cookie\":\"*\"" as cookie
 ```
 
 
@@ -167,62 +161,43 @@ Field Extraction Rules (FERs) tell Sumo Logic which fields to parse out automati
 
 
 
-#### Query Samples
+### Sample Queries
 
-
-##### Top Error-causing URLs
-
-
-```
-    _sourceCategory=akamai 50?
-    | parse "\"reqPath\":\"*\"" as path, "\"status\":\"*\"" as status
-    | urldecode(path) as path
-    | where status > 499
-    | where status < 600
-    | count as errors by path
-    | sort by errors
+```sql title="Top Error-causing URLs"
+_sourceCategory=akamai 50?
+| parse "\"reqPath\":\"*\"" as path, "\"status\":\"*\"" as status
+| urldecode(path) as path
+| where status > 499
+| where status < 600
+| count as errors by path
+| sort by errors
 ```
 
 
-
-##### Cache Performance
-
-
-```
-    _sourceCategory=akamai cacheStatus
-    | parse "\"cacheStatus\":\"*\"" as status
-    | where !(status="")
-    | if(status="0", "0 - Non cacheable", if(status="1" OR status="2", "1/2 - Cache Hit", if(status="3", "3 - Cache Miss", ""))) as cachestatus
-    | count bycachestatus
+```sql title="Cache Performance"
+_sourceCategory=akamai cacheStatus
+| parse "\"cacheStatus\":\"*\"" as status
+| where !(status="")
+| if(status="0", "0 - Non cacheable", if(status="1" OR status="2", "1/2 - Cache Hit", if(status="3", "3 - Cache Miss", ""))) as cachestatus
+| count bycachestatus
 ```
 
 
-
-##### Top Denials by Host
-
-
-```
-    _sourceCategory=akamai waf denyRules reqHost
-    | parse "\"denyRules\":\"*\"" as deny, "\"reqHost\":\"*\"" as host
-    | where deny != ""
-    | timeslice 1m
-    | count by host, _timeslice
-    | transpose row _timeslice column host
-
+```sql title="Top Denials by Host"
+_sourceCategory=akamai waf denyRules reqHost
+| parse "\"denyRules\":\"*\"" as deny, "\"reqHost\":\"*\"" as host
+| where deny != ""
+| timeslice 1m
+| count by host, _timeslice
+| transpose row _timeslice column host
 ```
 
 
+## Installing the Akamai Cloud Monitor App
 
-1.
+Now that you have configured Akamai logs, install the Sumo Logic App for Akamai Cloud Monitor to take advantage of the pre-configured searches and [Dashboards](#Dashboards) to analyze your Akamai data.
 
-
-## Install the Akamai Cloud Monitor App and view the Dashboards
-
-### Install the Sumo Logic App
-
-Now that you have configured Akamai logs, install the Sumo Logic App for Akamai Cloud Monitor to take advantage of the pre-configured searches and [Dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/Akamai_Cloud_Monitor/Akamai-Cloud-Monitor-App-Dashboards#Dashboards) to analyze your Akamai data.
-
-**To install the app:**
+To install the app:
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
@@ -230,15 +205,13 @@ Locate and install the app you need from the **App Catalog**. If you want to see
 2. Select the version of the service you're using and click **Add to Library**.
 
 
-1.png "image_tooltip")
-
-Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](https://help.sumologic.com/01Start-Here/Library/Apps-in-Sumo-Logic/Install-Apps-from-the-Library)
+Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/library/install-apps)
 
 1. To install the app, complete the following fields.
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
     2. **Data Source.** Select either of these options for the data source. 
         * Choose **Source Category**, and select a source category from the list. 
-        * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (_sourceCategory=MyCategory). 
+        * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). 
     3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
 2. Click **Add to Library**.
 
@@ -247,14 +220,12 @@ Once an app is installed, it will appear in your **Personal** folder, or other f
 Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
 
 
-### Dashboards
+## Viewing Dashboards
 
 
-#### Overview
+### Overview
 
-
-2.png "image_tooltip")
-
+<img src={useBaseUrl('img/integrations/saas-cloud-apps/akamai-overview.png')} alt="akamai_cloud_monitor dashboard" />
 
 **Map (Unique Visitors).** Performs a geo lookup operation and displays the number of visitors to your site and their locations on a map of the world by IP address over the last 15 minutes.
 
@@ -267,11 +238,9 @@ Panels will start to fill automatically. It's important to note that each panel 
 **Top Error-Causing URLs.** Displays the URLs that have produced the most errors in the last 15 minutes and counts the errors in a bar chart.
 
 
-#### Origin Performance
+### Origin Performance
 
-
-3.png "image_tooltip")
-
+<img src={useBaseUrl('img/integrations/saas-cloud-apps/akamai_app_origin.png')} alt="akamai_cloud_monitor dashboard" />
 
 **90%-ile Latency.** Displays the 90th percentile of the origin response time latency as an aggregation table for the last hour.
 
@@ -292,11 +261,9 @@ Panels will start to fill automatically. It's important to note that each panel 
 **Top Error-Causing URLs.** Displays the URLs that have produced the most errors in the last 15 minutes and counts the errors in a bar chart.
 
 
-#### Quality of Service
+### Quality of Service
 
-
-4.png "image_tooltip")
-
+<img src={useBaseUrl('img/integrations/saas-cloud-apps/Akamai-QOS.png')} alt="akamai_cloud_monitor dashboard" />
 
 **Cached Content Download Times.** Shows download times for cached content for the number of requests and the response time in a column chart for the last hour.
 
@@ -311,11 +278,9 @@ Panels will start to fill automatically. It's important to note that each panel 
 **Performance Stats by Country.** Provides an aggregation table of performance statistics by IP address per country code for the last hour.
 
 
-#### Security
+### Security
 
-
-5.png "image_tooltip")
-
+<img src={useBaseUrl('img/integrations/saas-cloud-apps/akamai_app_security.png')} alt="akamai_cloud_monitor dashboard" />
 
 **WAF-Warn Requests per Host.** Displays a count of WAF warning requests per host in a stacked column chart on a timeline using timeslices of one minute for the last hour.
 
@@ -330,10 +295,9 @@ Panels will start to fill automatically. It's important to note that each panel 
 **Top Deny URLs.** Lists the top 10 URLs with the most denials in an aggregation table by path, count, and percentage for the last hour.
 
 
-#### Visitors
+### Visitors
 
-6.png "image_tooltip")
-
+<img src={useBaseUrl('img/integrations/saas-cloud-apps/Akamai-Visitors.png')} alt="akamai_cloud_monitor dashboard" />
 
 **Top Requests.** Displays the top requests by path and count in a bar chart for the last hour.
 
@@ -348,9 +312,8 @@ Panels will start to fill automatically. It's important to note that each panel 
 **UA Over Time.** Displays user agents used by visitors as a stacked column chart over a timeline using timeslices of one minute for the last 15 minutes.
 
 
-#### Web Application Firewall - Attacks
+### Web Application Firewall - Attacks
 
-7.png "image_tooltip")
-
+<img src={useBaseUrl('img/integrations/saas-cloud-apps/Akamai-Web-Application.png')} alt="akamai_cloud_monitor dashboard" />
 
 **Attacks (Individual Warn/Deny Events).** Uses a geo lookup operator to provide information on individual warn and deny events by IP address for the last hour and displays them on a map of the world.

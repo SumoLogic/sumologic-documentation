@@ -2,12 +2,12 @@
 id: elastic-load-balancer-app
 title: Sumo Logic App for AWS Elastic Load Balance
 sidebar_label: AWS Elastic Load Balancer
-description: AWS Elastic Load Balancer
+description: Use the Sumo Logic App to analyze raw Application Load Balancer data to investigate the availability of applications running behind Application Load Balancers.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/amazon-aws/elb-app.png')} alt="DB icon" width="50"/>
+<img src={useBaseUrl('img/integrations/amazon-aws/elb-app.png')} alt="Thumbnail icon" width="50"/>
 
 The Sumo Logic app for AWS Elastic Load Balancer - Application ingests the logs stored in an S3 bucket, giving you the visibility to see the overall health of your Application Load Balancer and Target Groups. Use the Sumo Logic App to analyze the raw Application Load Balancer data to investigate the availability of the applications running behind Application Load Balancers. Or correlate the Application Load Balancing data with other data sets to get a broader understanding of the fault tolerance of your applications across multiple AWS Availability Zones.
 
@@ -40,7 +40,7 @@ For more details on the ALB Access log, see the [AWS documentation](https://docs
 
 Before you can begin to use the Sumo Logic App for Application Load Balancing, complete the following steps:
 
-1. [Grant Sumo Logic access](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/Grant-Access-to-an-AWS-Product) to an Amazon S3 bucket.
+1. [Grant Sumo Logic access](/docs/send-data/sources/sources-hosted-collectors/amazon-web-services/grant-access-aws-product.md) to an Amazon S3 bucket.
 2. [Enable Application Load Balancer logging](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-access-logs.html#enable-access-logging) in AWS.
 3. Confirm that logs are being delivered to the Amazon S3 bucket.
 
@@ -49,7 +49,7 @@ Before you can begin to use the Sumo Logic App for Application Load Balancing, c
 
 In this step, you configure an AWS Elastic Load Balancing source to receive logs. In step 3 of the procedure below, select **AWS Elastic Load Balancing** as the source type.
 
-When you create an AWS Source, you associate it with a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use, or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](https://help.sumologic.com/03Send-Data/Hosted-Collectors/Configure-a-Hosted-Collector).
+When you create an AWS Source, you associate it with a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use, or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/configure-hosted-collector).
 
 
 ### Rules
@@ -88,27 +88,25 @@ These configuration instructions apply to log collection from all AWS Source typ
 4. Enter a name for the new Source. A description is optional.
 5. Select an **S3 region** or keep the default value of **Others**. The S3 region must match the appropriate S3 bucket created in your Amazon account.
 5
-Selecting an AWS GovCloud region means your data will be leaving a FedRAMP-high environment. Use responsibly to avoid information spillage. See [Collection from AWS GovCloud](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/Collection_from_AWS_GovCloud) for details.
+Selecting an AWS GovCloud region means your data will be leaving a FedRAMP-high environment. Use responsibly to avoid information spillage. See [Collection from AWS GovCloud](/docs/send-data/Sources/sources-hosted-collectors/Amazon-Web-Services/collection-aws-govcloud) for details.
 6. For **Bucket Name**, enter the exact name of your organization's S3 bucket. Be sure to double-check the name as it appears in AWS, for example: \
 
 6
 
-7. For **Path Expression**, enter the wildcard pattern that matches the S3 objects you'd like to collect. You can use **one **wildcard (*) in this string. Recursive path expressions use a single wildcard and do **NOT** use a leading forward slash. [See About Amazon Path Expressions](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/Amazon-Path-Expressions) for details.
+7. For **Path Expression**, enter the wildcard pattern that matches the S3 objects you'd like to collect. You can use **one **wildcard (*) in this string. Recursive path expressions use a single wildcard and do **NOT** use a leading forward slash. [See About Amazon Path Expressions](/docs/send-data/Sources/sources-hosted-collectors/Amazon-Web-Services/Amazon-Path-Expressions) for details.
 8. **Collection should begin.** Choose or enter how far back you'd like to begin collecting historical logs. You can either:
     * Choose a predefined value from dropdown list, ranging from "Now" to “72 hours ago” to “All Time”, or
     * Enter a relative value. To enter a relative value, click the **Collection should begin** field and press the delete key on your keyboard to clear the field. Then, enter a relative time expression, for example `-1w`. You can define when you want collection to begin in terms of months (M), weeks (w), days (d), hours (h), and minutes (m).
 7
 If you paused the Source and want to skip some data when you resume, update the **Collection should begin** setting to a time after it was paused.
 9. For **Source Category**, enter any string to tag the output collected from this Source. (Category metadata is stored in a searchable field called _sourceCategory.)
-10. **Fields**. Click the **+Add Field** link to add custom log metadata [Fields](https://help.sumologic.com/Manage/Fields).
+10. **Fields**. Click the **+Add Field** link to add custom log metadata [Fields](/docs/manage/fields.md).
     * Define the fields you want to associate, each field needs a name (key) and value.
         1.
-8
- A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
+* ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
         2.
-9
- An orange triangle with an exclamation point is shown when the field doesn't exist, or is disabled, in the Fields table schema. In this case, an option to automatically add or enable the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema or is disabled it is ignored, known as dropped.
-11. For **AWS Access** you have two **Access Method** options. Select **Role-based access** or **Key access** based on the AWS authentication you are providing. Role-based access is preferred, this was completed in the prerequisite step [Grant Sumo Logic access to an AWS Product](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/Grant-Access-to-an-AWS-Product).
+* ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist, or is disabled, in the Fields table schema. In this case, an option to automatically add or enable the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema or is disabled it is ignored, known as dropped.
+11. For **AWS Access** you have two **Access Method** options. Select **Role-based access** or **Key access** based on the AWS authentication you are providing. Role-based access is preferred, this was completed in the prerequisite step [Grant Sumo Logic access to an AWS Product](/docs/send-data/sources/sources-hosted-collectors/amazon-web-services/grant-access-aws-product.md).
     * For **Role-based access** enter** **the Role ARN that was provided by AWS after creating the role.  \
 
 10
@@ -116,9 +114,9 @@ If you paused the Source and want to skip some data when you resume, update the 
     * For **Key access** enter the **Access Key ID **and** Secret Access Key.** See [AWS Access Key ID](http://docs.aws.amazon.com/STS/latest/UsingSTS/UsingTokens.html#RequestWithSTS) and [AWS Secret Access Key](https://aws.amazon.com/iam/) for details.
 12. **Log File Discovery.** You have the option to set up Amazon Simple Notification Service (SNS) to notify Sumo Logic of new items in your S3 bucket. A scan interval is required and automatically applied to detect log files.
 11
-Sumo Logic highly recommends using an SNS Subscription Endpoint for its ability to maintain low-latency collection. This is essential to support up-to-date [Alerts](https://help.sumologic.com/Visualizations-and-Alerts/Alerts).
+Sumo Logic highly recommends using an SNS Subscription Endpoint for its ability to maintain low-latency collection. This is essential to support up-to-date [Alerts](/docs/alerts/index.md).
     * **Scan Interval. **Sumo Logic will periodically scan your S3 bucket for new items in addition to SNS notifications. **Automatic** is recommended to not incur additional AWS charges. This sets the scan interval based on if subscribed to an SNS topic endpoint and how often new files are detected over time. \
-If the Source is not subscribed to an SNS topic and set to **Automatic** the scan interval is 5 minutes. You may enter a set frequency to scan your S3 bucket for new data. To learn more about Scan Interval considerations, see [About setting the S3 Scan Interval](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/AWS-S3-Scan-Interval-for-Sources).
+If the Source is not subscribed to an SNS topic and set to **Automatic** the scan interval is 5 minutes. You may enter a set frequency to scan your S3 bucket for new data. To learn more about Scan Interval considerations, see [About setting the S3 Scan Interval](/docs/send-data/Sources/sources-hosted-collectors/Amazon-Web-Services/AWS-S3-Scan-Interval-Sources).
     * **SNS Subscription Endpoint **(**Highly Recommended**). New files will be collected by Sumo Logic as soon as the notification is received. This will provide faster collection versus having to wait for the next scan to detect the new file.
         3. To set up the subscription you need to get an endpoint URL from Sumo to provide to AWS. This process will save your Source and begin scanning your S3 bucket when the endpoint URL is generated. Click on **Create URL** and use the provided endpoint URL when creating your subscription in step C. \
 
@@ -128,7 +126,7 @@ If the Source is not subscribed to an SNS topic and set to **Automatic** the sca
 
 #### Set up SNS in AWS (Highly Recommended)
 
-The following steps use the AWS SNS Console. You may instead use AWS CloudFormation. Follow the instructions to use [CloudFormation to set up an SNS Subscription Endpoint](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/Configuring-your-AWS-Source-with-CloudFormation#Set_up_an_SNS_Subscription_Endpoint).
+The following steps use the AWS SNS Console. You may instead use AWS CloudFormation. Follow the instructions to use [CloudFormation to set up an SNS Subscription Endpoint](/docs/send-data/Sources/sources-hosted-collectors/Amazon-Web-Services/configure-our-aws-source-cloudformation#Set_up_an_SNS_Subscription_Endpoint).
 
 
 1. Go to **Services >** **Simple Notification Service** and click **Create Topic**. Enter a **Topic name** and click **Create topic**. Copy the provided **Topic ARN**, you’ll need this for the next step. \
@@ -169,11 +167,11 @@ Make sure that the topic and the bucket are in the same region.
 1. Set any of the following under **Advanced**:
 * **Enable Timestamp Parsing.** This option is selected by default. If it's deselected, no timestamp information is parsed at all.
     * **Time Zone.** There are two options for Time Zone. You can use the time zone present in your log files, and then choose an option in case time zone information is missing from a log message. Or, you can have Sumo Logic completely disregard any time zone information present in logs by forcing a time zone. It's very important to have the proper time zone set, no matter which option you choose. If the time zone of logs can't be determined, Sumo Logic assigns logs UTC; if the rest of your logs are from another time zone your search results will be affected.
-    * **Timestamp Format.** By default, Sumo Logic will automatically detect the timestamp format of your logs. However, you can manually specify a timestamp format for a Source. See [Timestamps, Time Zones, Time Ranges, and Date Formats](https://help.sumologic.com/03Send-Data/Sources/04Reference-Information-for-Sources/Timestamps%2C-Time-Zones%2C-Time-Ranges%2C-and-Date-Formats) for more information.
-* **Enable Multiline Processing. **See [Collecting Multiline Logs](https://help.sumologic.com/03Send-Data/Sources/04Reference-Information-for-Sources/Collecting-Multiline-Logs) for details on multiline processing and its options. This is enabled by default. Use this option if you're working with multiline messages (for example, log4J or exception stack traces). Deselect this option if you want to avoid unnecessary processing when collecting single-message-per-line files (for example, Linux system.log). Choose one of the following:  
+    * **Timestamp Format.** By default, Sumo Logic will automatically detect the timestamp format of your logs. However, you can manually specify a timestamp format for a Source. See [Timestamps, Time Zones, Time Ranges, and Date Formats](/docs/send-data/sources/reference-information-sources/time-reference) for more information.
+* **Enable Multiline Processing. **See [Collecting Multiline Logs](/docs/send-data/sources/reference-information-sources/collect-multiline-logs) for details on multiline processing and its options. This is enabled by default. Use this option if you're working with multiline messages (for example, log4J or exception stack traces). Deselect this option if you want to avoid unnecessary processing when collecting single-message-per-line files (for example, Linux system.log). Choose one of the following:  
     * **Infer Boundaries.** Enable when you want Sumo Logic to automatically attempt to determine which lines belong to the same message. If you deselect the Infer Boundaries option, you will need to enter a regular expression in the Boundary Regex field to use for detecting the entire first line of multiline messages.
     * **Boundary Regex.** You can specify the boundary between messages using a regular expression. Enter a regular expression that matches the entire first line of every multiline message in your log files.
-1. [Create any Processing Rules](https://help.sumologic.com/Manage/Collection/Processing-Rules/Create-a-Processing-Rule) you'd like for the AWS Source.
+1. [Create any Processing Rules](/docs/manage/collection/processing-rules/create-processing-rule.md) you'd like for the AWS Source.
 2. When you are finished configuring the Source click **Save**.
 
 
@@ -194,7 +192,7 @@ There is a [community supported script](https://github.com/SumoLogic/sumologic-c
 
 1. In Sumo Logic select **Manage Data > Collection > Collection**.
 2. On the Collection page navigate to your Source and click **Edit**. Scroll down to **Log File Discovery** and note the Endpoint **URL** provided, you will use this in step 10.C when creating your subscription.
-3. Complete steps 10.B through 10.E for [configuring SNS Notifications](https://help.sumologic.com/07Sumo-Logic-Apps/01Amazon_and_AWS/AWS_Elastic_Load_Balancer_-_Application/01_Collect_Logs_for_the_AWS_Elastic_Load_Balancer_Application_App#Configure+SNS+Notifications).
+3. Complete steps 10.B through 10.E for [configuring SNS Notifications](#Configure-SNS-Notifications).
 
 
 #### Troubleshoot S3 Event Notifications
@@ -207,7 +205,7 @@ Steps to troubleshoot:
 
 
 1. Refresh the Source’s page to view the latest status of the subscription in the SNS Subscription section by clicking **Cancel** then **Edit** on the Source in the Collection tab.
-2. Verify you have enabled sending **Notifications** from your S3 bucket to the appropriate SNS topic. This is done in [step 10.E](https://help.sumologic.com/07Sumo-Logic-Apps/01Amazon_and_AWS/AWS_Elastic_Load_Balancer_-_Application/01_Collect_Logs_for_the_AWS_Elastic_Load_Balancer_Application_App#Configure+SNS+Notifications).
+2. Verify you have enabled sending **Notifications** from your S3 bucket to the appropriate SNS topic. This is done in [step 10.E](#Configure-SNS-Notifications).
 3. If you didn’t use CloudFormation check that the SNS topic has a confirmed subscription to the URL in AWS console. A "Pending Confirmation" state likely means that you entered the wrong URL while creating the subscription. \
 
 
@@ -221,28 +219,28 @@ Steps to troubleshoot:
 
 
 1. AWS writes CloudTrail and S3 Audit Logs to S3 with a latency of a few minutes. If you’re seeing latencies of around 10 minutes for these Sources it is likely because AWS is writing them to S3 later than expected.
-2. Verify you have enabled sending **Notifications** from your S3 bucket to the appropriate SNS topic. This is done in [step 10](https://help.sumologic.com/07Sumo-Logic-Apps/01Amazon_and_AWS/AWS_Elastic_Load_Balancer_-_Application/01_Collect_Logs_for_the_AWS_Elastic_Load_Balancer_Application_App#Configure+SNS+Notifications).
+2. Verify you have enabled sending **Notifications** from your S3 bucket to the appropriate SNS topic. This is done in [step 10](#Configure-SNS-Notifications).
 
 
 
 ## Installing the AWS ELB Application
 
-Now that you have set up collection for AWS ELB, install the Sumo Logic App for AWS Elastic Load Balancer to use the pre-configured searches and [dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/01Amazon_and_AWS/AWS_Elastic_Load_Balancer_-_Application/03-AWS-Elastic-Load-Balancing---Application-Dashboards#Dashboards) that provide visibility into your environment.
+Now that you have set up collection for AWS ELB, install the Sumo Logic App for AWS Elastic Load Balancer to use the pre-configured searches and [dashboards](#Dashboards) that provide visibility into your environment.
 
-**To install the app:**
+To install the app:
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
 1. From the **App Catalog**, search for and select the app**.**
 2. Select the version of the service you're using and click **Add to Library**.
 
-Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](https://help.sumologic.com/01Start-Here/Library/Apps-in-Sumo-Logic/Install-Apps-from-the-Library)
+Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/library/install-apps)
 
 1. To install the app, complete the following fields.
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
     2. **Data Source.** Select either of these options for the data source. 
         * Choose **Source Category**, and select a source category from the list. 
-        * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (_sourceCategory=MyCategory). 
+        * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). 
     3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
 2. Click **Add to Library**.
 

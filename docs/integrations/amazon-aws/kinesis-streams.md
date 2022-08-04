@@ -2,55 +2,53 @@
 id: kinesis-streams
 title: Sumo Logic App for Amazon Kinesis Streams
 sidebar_label: Amazon Kinesis - Streams
-description: Amazon Kinesis - Streams
+description: The Sumo Logic App for Amazon Kinesis - Streams is a unified logs and metrics (ULM) App which provides information on the events and metrics. The preconfigured dashboards help you monitor the events, API calls, errors, incoming and outgoing records, latencies, and throughput of Kinesis.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/amazon-aws/kinesis.png')} alt="DB icon" width="50"/>
+<img src={useBaseUrl('img/integrations/amazon-aws/kinesis.png')} alt="Thumbnail icon" width="50"/>
 
 Amazon Kinesis is a platform for streaming data on AWS. It makes it easy to load and analyze streaming data, and it provides the ability for you to build custom streaming data applications for your needs. Amazon Kinesis Streams is used to collect and process large streams of data records in real time. The Sumo Logic App for Amazon Kinesis - Streams is a unified logs and metrics (ULM) App which provides information on the events and metrics. The preconfigured dashboards help you monitor the events, API calls, errors, incoming and outgoing records, latencies, and throughput of Kinesis Streams.
 
-## Collecting Logs and Metrics for the Amazon Kinesis - Streams App
-
-Log and Metrics Types
-For more information on Amazon Kinesis - Streams, see here.
+## Log and Metrics Types
+For more information on Amazon Kinesis - Streams, see [here](https://aws.amazon.com/kinesis/).
 
 The App uses Kinesis logs and metrics for:
-Kinesis CloudWatch Metrics. For details, see here.
-Kinesis operations using AWS CloudTrail. For details, see here.
+* Kinesis CloudWatch Metrics. For details, see [here](http://docs.aws.amazon.com/streams/latest/dev/monitoring-with-cloudwatch.html).
+* Kinesis operations using AWS CloudTrail. For details, see [here](http://docs.aws.amazon.com/streams/latest/dev/logging-using-cloudtrail.html).
+
+## Collecting Logs and Metrics for the Amazon Kinesis - Streams App
 
 ### Collecting Metrics
 
-1. Configure a [Hosted Collector](https://help.sumologic.com/03Send-Data/Hosted-Collectors/Configure-a-Hosted-Collector).
-2. Configure an [Amazon CloudWatch Source for Metrics](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/Amazon-CloudWatch-Source-for-Metrics).
-    1. **Name**. Enter a name to display for the new Source.
-    2. **Description**. Enter an optional description.
-    3. **Regions**. Select your Amazon Regions for Kinesis.
-    4. **Namespaces**. Select AWS/Kinesis.
-    5. **Source** **Category**. Enter a source category. For example, kinesis_metrics.
-    6. **Access Key ID and Secret Access Key**. Enter your Amazon [Access Key ID and Secret Access Key](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSGettingStartedGuide/AWSCredentials.html).
-    7. **Scan Interval**. Use the default of 5 minutes, or enter the frequency Sumo Logic will scan your CloudWatch Sources for new data.
+1. Configure a [Hosted Collector](/docs/send-data/configure-hosted-collector).
+2. Configure an [Amazon CloudWatch Source for Metrics](/docs/send-data/sources/sources-hosted-collectors/amazon-web-services/amazon-cloudwatch-source-metrics).
+    * **Name**. Enter a name to display for the new Source.
+    * **Description**. Enter an optional description.
+    * **Regions**. Select your Amazon Regions for Kinesis.
+    * **Namespaces**. Select AWS/Kinesis.
+    * **Source** **Category**. Enter a source category. For example, kinesis_metrics.
+    * **Access Key ID and Secret Access Key**. Enter your Amazon [Access Key ID and Secret Access Key](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSGettingStartedGuide/AWSCredentials.html).
+    * **Scan Interval**. Use the default of 5 minutes, or enter the frequency Sumo Logic will scan your CloudWatch Sources for new data.
 3. Click **Save**.
 
 
-#### Collect Amazon Kinesis - Streams Events using CloudTrail
+### Collect Amazon Kinesis - Streams Events using CloudTrail
 
-1. To your Hosted Collector, add an [AWS CloudTrail Source](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/AWS-CloudTrail-Source).
-    1. **Name**. Enter a name to display for the new Source.
-    2. **Description**. Enter an optional description.
-    3. **S3 Region**. Select the Amazon Region for your Kinesis S3 bucket.
-    4. **Bucket Name**. Enter the exact name of your Kinesis S3 bucket.
-    5. **Path Expression**. Enter the string that matches the S3 objects you'd like to collect. You can use a wildcard (*) in this string. (DO NOT use a leading forward slash. See [Amazon Path Expressions](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/Amazon-Path-Expressions).)
-
-The S3 bucket name is not part of the path. Don’t include the bucket name when you are setting the Path Expression.
-    6. **Source Category**. Enter a source category. For example, kinesis_event.
-    7. **Access Key ID and Secret Access Key**. Enter your Amazon [Access Key ID and Secret Access Key](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSGettingStartedGuide/AWSCredentials.html).
-    8. **Scan Interval**. Use the default of 5 minutes. Alternately, enter the frequency Sumo Logic will scan your S3 bucket for new data.
-    9. **Enable Timestamp Parsing**. Select the check box.
-    10. **Time Zone**. Select Ignore time zone from log file and instead use, and select UTC.
-    11. **Timestamp Format.** Select Automatically detect the format.
-    12. **Enable Multiline Processing**. Select the check box, and select Infer Boundaries.
+1. To your Hosted Collector, add an [AWS CloudTrail Source](/docs/send-data/sources/sources-hosted-collectors/amazon-web-services/aws-cloudtrail-source.md).
+    * **Name**. Enter a name to display for the new Source.
+    * **Description**. Enter an optional description.
+    * **S3 Region**. Select the Amazon Region for your Kinesis S3 bucket.
+    * **Bucket Name**. Enter the exact name of your Kinesis S3 bucket.
+    * **Path Expression**. Enter the string that matches the S3 objects you'd like to collect. You can use a wildcard (*) in this string. (DO NOT use a leading forward slash. See [Amazon Path Expressions](/docs/send-data/Sources/sources-hosted-collectors/Amazon-Web-Services/Amazon-Path-Expressions).) The S3 bucket name is not part of the path. Don’t include the bucket name when you are setting the Path Expression.
+    * **Source Category**. Enter a source category. For example, kinesis_event.
+    * **Access Key ID and Secret Access Key**. Enter your Amazon [Access Key ID and Secret Access Key](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSGettingStartedGuide/AWSCredentials.html).
+    * **Scan Interval**. Use the default of 5 minutes. Alternately, enter the frequency Sumo Logic will scan your S3 bucket for new data.
+    * **Enable Timestamp Parsing**. Select the check box.
+    * **Time Zone**. Select Ignore time zone from log file and instead use, and select UTC.
+    * **Timestamp Format.** Select Automatically detect the format.
+    * **Enable Multiline Processing**. Select the check box, and select Infer Boundaries.
 2. Click **Save**.
 
 
@@ -88,10 +86,7 @@ The S3 bucket name is not part of the path. Don’t include the bucket name when
 
 ### Query Sample
 
-**Details of errors in events**
-
-
-```
+```sql title="Details of errors in events"
 _sourceCategory=aws/kinesis* "kinesis.amazonaws.com" errorCode
 | json field=_raw "eventSource", "eventName", "awsRegion", "sourceIPAddress","userAgent" nodrop
 | json field=_raw "requestParameters.streamName" as streamName nodrop
@@ -107,26 +102,24 @@ _sourceCategory=aws/kinesis* "kinesis.amazonaws.com" errorCode
 
 ## Installing the Amazon Kinesis - Streams App
 
-Now that you have set up collection for Amazon Kinesis, install the Sumo Logic App to use the pre-configured searches and [dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/01Amazon_and_AWS/Amazon_Kinesis_-_Streams/Install-the-Amazon-Kinesis-App-and-view-the-Dashboards#Dashboards) that provide visibility into your environment for real-time analysis of overall usage.
+Now that you have set up collection for Amazon Kinesis, install the Sumo Logic App to use the pre-configured searches and [dashboards](#Dashboards) that provide visibility into your environment for real-time analysis of overall usage.
 
-**To install the app:**
+To install the app:
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
-
-
 
 1. From the **App Catalog**, search for and select the app**.**
 2. Select the version of the service you're using and click **Add to Library**.
 
-Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](https://help.sumologic.com/01Start-Here/Library/Apps-in-Sumo-Logic/Install-Apps-from-the-Library)
+Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/library/install-apps)
 
-1. To install the app, complete the following fields.
-    1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
-    2. **Data Source.** Select either of these options for the data source. 
+3. To install the app, complete the following fields.
+    * **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
+    * **Data Source.** Select either of these options for the data source. 
         * Choose **Source Category**, and select a source category from the list. 
-        * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (_sourceCategory=MyCategory). 
-    3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-2. Click **Add to Library**.
+        * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). 
+    * **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
+4. Click **Add to Library**.
 
 Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization.
 
@@ -136,7 +129,6 @@ Panels will start to fill automatically. It's important to note that each panel 
 ## Viewing Amazon Kinesis Streams Dashboards
 
 ### Events
-
 
 See the details of Kinesis events including the count over time, location, API calls, errors, and users.
 

@@ -21,7 +21,7 @@ info:
     \ </td>\n    </tr>\n    <tr>\n      <td> US2 </td>\n      <td> https://api.us2.sumologic.com/api/\
     \ </td>\n    </tr>\n  </table>\n\n## Authentication\nSumo Logic supports the following\
     \ options for API authentication:\n- Access ID and Access Key\n- Base64 encoded\
-    \ Access ID and Access Key\n\nSee [Access Keys](https://help.sumologic.com/Manage/Security/Access-Keys)\
+    \ Access ID and Access Key\n\nSee [Access Keys](/docs/manage/security/access-keys)\
     \ to generate an Access Key. Make sure to copy the key you create, because it\
     \ is displayed only once.\nWhen you have an Access ID and Access Key you can execute\
     \ requests such as the following:\n  ```bash\n  curl -u \"<accessId>:<accessKey>\"\
@@ -5065,7 +5065,7 @@ paths:
       description: "Get the Search Audit policy. This policy specifies whether search\
         \ records for your account are enabled. You can access details about your\
         \ account's search capacity, queries run by users from the Sumo Search Audit\
-        \ Index. [Learn More](https://help.sumologic.com/Manage/Security/Search_Audit_Index)"
+        \ Index. [Learn More](/docs/manage/security/search-audit-index)"
       operationId: getSearchAuditPolicy
       responses:
         "200":
@@ -5087,7 +5087,7 @@ paths:
       description: "Set the Search Audit policy. This policy specifies whether search\
         \ records for your account are enabled. You can access details about your\
         \ account's search capacity, queries run by users from the Sumo Search Audit\
-        \ Index. [Learn More](https://help.sumologic.com/Manage/Security/Search_Audit_Index)"
+        \ Index. [Learn More](/docs/manage/security/search-audit-index)"
       operationId: setSearchAuditPolicy
       requestBody:
         content:

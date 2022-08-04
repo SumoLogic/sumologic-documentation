@@ -2,6 +2,7 @@
 id: 1password
 title: Sumo Logic App for 1Password
 sidebar_label: 1Password
+description: The Sumo Logic App for 1Password helps you monitor your 1Password account’s sign-in and item usage events.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -12,7 +13,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 ## Collecting Logs for 1Password
 
-Follow the instructions for setting up [Cloud to Cloud Integration for 1Password App](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Cloud-to-Cloud_Integration_Framework/1Password_Source) to create the source and use the same source category while installing the app.
+Follow the instructions for setting up [Cloud to Cloud Integration for 1Password App](/docs/send-data/Sources/sources-hosted-collectors/Cloud-to-Cloud-Integration-Framework/1Password-Source) to create the source and use the same source category while installing the app.
 
 
 ### Log Types  
@@ -106,11 +107,28 @@ _sourceCategory=1pw action
 
 ## Installing the 1Password App
 
-content reuse https://help.sumologic.com/Internal_Writers/Snippets/Apps_Snippet
+Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
+
+1. From the **App Catalog**, search for and select the app.
+2. Select the version of the service you're using and click **Add to Library**.
+
+Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/library/install-apps)
+
+3. To install the app, complete the following fields.
+   * **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
+   * **Data Source.** Select either of these options for the data source. 
+      * Choose **Source Category**, and select a source category from the list. 
+      * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). 
+   * **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
+4. Click **Add to Library**.
+
+Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization.
+
+Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
+
 
 
 ## Viewing 1Password Dashboards
-
 
 ### Overview
 1Password - Overview provides an overview of 1Password Events including events breakdown by type, category, geographic location, one-day time comparison of events, and failed sign-in activity.

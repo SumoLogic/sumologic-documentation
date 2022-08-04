@@ -104,7 +104,7 @@ If the setup was successful, Active Directory domain and object information will
 7
 
 
-Configure an [Installed Collector](https://help.sumologic.com/03Send-Data/Installed-Collectors).
+Configure an [Installed Collector](/docs/send-data/Installed-Collectors).
 
 Make sure the collector is installed on a machine that belongs to the domain managed by Active Directory. You can install a single collector and use a remote source, but Sumo Logic recommends installing a collector on each of your domain controllers for performance.
 
@@ -113,7 +113,7 @@ Make sure the collector is installed on a machine that belongs to the domain man
 8
 
 
-If you have installed collectors on each domain controller, as recommended, configure a [Local Windows Event Log Source](https://help.sumologic.com/03Send-Data/Sources/01Sources-for-Installed-Collectors/Local-Windows-Event-Log-Source) on each one. Otherwise, configure a [Remote Windows Event Log Source](https://help.sumologic.com/03Send-Data/Sources/01Sources-for-Installed-Collectors/Remote-Windows-Event-Log-Source) to collect events from each Active Directory server. For these Windows Event sources, set the source category to **OS/Windows **and **Event Format** as **Collect using legacy format**.
+If you have installed collectors on each domain controller, as recommended, configure a [Local Windows Event Log Source](/docs/send-data/Sources/sources-installed-collectors/Local-Windows-Event-Log-Source) on each one. Otherwise, configure a [Remote Windows Event Log Source](/docs/send-data/Sources/sources-installed-collectors/Remote-Windows-Event-Log-Source) to collect events from each Active Directory server. For these Windows Event sources, set the source category to **OS/Windows **and **Event Format** as **Collect using legacy format**.
 
 
 9
@@ -136,13 +136,13 @@ If your Domain Controllers are in the same domain, then you can just run the scr
 
 1. In Sumo Logic, select** Manage Data > Collection > Collection**.
 2. Find the name of the installed collector to which you'd like to add a Source. Click **Add...** then choose** Add Source **from the pop-up menu.
-3. Select **Script** for the Source type. Collectors using version 19.245-4 and later do not allow Script Sources to run by default. To allow Script Sources you need to set the Collector parameter `enableScriptSource` in [user.properties](https://help.sumologic.com/03Send-Data/Installed-Collectors/05Reference-Information-for-Collector-Installation/06user.properties) to true and [restart](https://help.sumologic.com/Manage/Collection/02Start-or-Stop-a-Collector-using-Scripts) the Collector. \
+3. Select **Script** for the Source type. Collectors using version 19.245-4 and later do not allow Script Sources to run by default. To allow Script Sources you need to set the Collector parameter `enableScriptSource` in [user.properties](/docs/send-data/Installed-collectors/collector-installation-reference/user-properties) to true and [restart](/docs/manage/collection/start-stop-collector-using-scripts.md) the Collector. \
 
 11
 
 4. **Name**. Enter **DomainCollector** or **ADObjects**, depending on which script you are configuring. Description is optional.
 5. **Source Host** (optional). Enter the hostname or the IP address of the machine. The hostname is stored in a searchable field called **_sourceHost. **The hostname can be a maximum of 128 characters.
-6. **Source Category**. Enter a Source Category following the [Best Practices](https://help.sumologic.com/03Send-Data/01-Design-Your-Deployment/Best-Practices%3A-Good-Source-Category%2C-Bad-Source-Category) that allows you to include both the logs from these scripts and the logs from your Windows Event logs from the Domain Controller(s). For example, `DC/Windows/adObjects`, `DC/Windows/domainCollector`, and `DC/Windows/Event`. This will allow you to specify a query like `sourceCategory=DC/Windows/*` to bring in all AD-related logs.
+6. **Source Category**. Enter a Source Category following the [Best Practices](/docs/send-data/design-deployment/best-practices-source-categories) that allows you to include both the logs from these scripts and the logs from your Windows Event logs from the Domain Controller(s). For example, `DC/Windows/adObjects`, `DC/Windows/domainCollector`, and `DC/Windows/Event`. This will allow you to specify a query like `sourceCategory=DC/Windows/*` to bring in all AD-related logs.
 7. **Frequency.** Select a short time for testing (for example, every 5 minutes), then change it to a longer interval once you confirm it’s working.
 
 
@@ -237,25 +237,24 @@ _sourceCategory=delete_test _sourceName=Security "Directory Service Changes"
 
 ## Installing the Sumo Logic App
 
-Now that you have set up collection for Active Directory, install the Sumo Logic App for Active Directory Legacy to use the pre-configured searches and [dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/04Microsoft-and-Azure/Active_Directory_Legacy/Active-Directory-Legacy-App-Dashboards#Dashboards) that provide visibility into your environment for real-time analysis of overall usage.
+Now that you have set up collection for Active Directory, install the Sumo Logic App for Active Directory Legacy to use the pre-configured searches and [dashboards](#Dashboards) that provide visibility into your environment for real-time analysis of overall usage.
 
-**To install the app:**
+To install the app:
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
 1. From the **App Catalog**, search for and select the app**.**
 2. To install the app, click **Add to Library** and complete the following fields.
-    1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
-    2. **Data Source.** Select **Enter a Custom Data Filter** and enter a filter that references the Windows Event Logs source and the script sources" (configured as described in [Collect Active Directory Log Files](https://help.sumologic.com/07Sumo-Logic-Apps/04Microsoft-and-Azure/Active_Directory_Legacy/Collect_Log_Files_for_the_Active_Directory_Legacy_App)).  For example:  \
-`(_sourceCategory=OS/Windows OR _sourcecategory=*adscripts*)`.
-    3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-    4. Click **Add to Library**.
+    * **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
+    * **Data Source.** Select **Enter a Custom Data Filter** and enter a filter that references the Windows Event Logs source and the script sources" (configured as described in [Collect Active Directory Log Files](/docs/integrations/microsoft-azure/Active-Directory-Legacy#Collect_Log_Files_for_the_Active_Directory_Legacy_App)). For example: `(_sourceCategory=OS/Windows OR _sourcecategory=*adscripts*)`.
+    * **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
+3. Click **Add to Library**.
 
-Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization. See [Welcome to the New Library](https://help.sumologic.com/01Start-Here/Welcome-to-the-New-Library) for information on working with the library in the new UI.
+Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization. See [Welcome to the New Library](/docs/get-started/library/index.md) for information on working with the library in the new UI.
 
 Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
 
-Sumo Logic recommends using the Sumo Logic App for Active Directory in combination with the [Sumo Logic App for Windows](https://help.sumologic.com/07Sumo-Logic-Apps/04Microsoft-and-Azure/Windows_Legacy).
+Sumo Logic recommends using the Sumo Logic App for Active Directory in combination with the [Sumo Logic App for Windows](/docs/integrations/microsoft-azure/Windows-Legacy).
 
 
 ## Viewing Active Directory Legacy Dashboards
@@ -265,7 +264,7 @@ The Sumo Logic application for Windows Active Directory (AD) includes several Da
 
 ### Information Dashboard
 
-This Dashboard will not display data unless you have downloaded and deployed the scripts, as described in [Collecting Active Directory log files](https://help.sumologic.com/07Sumo-Logic-Apps/04Microsoft-and-Azure/Active_Directory_Legacy/Collect_Log_Files_for_the_Active_Directory_Legacy_App).
+This Dashboard will not display data unless you have downloaded and deployed the scripts, as described in [Collecting Active Directory log files](/docs/integrations/microsoft-azure/Active-Directory-Legacy#Collect_Log_Files_for_the_Active_Directory_Legacy_App).
 
 
 By default the time range for these panels is two hours. If your source only pulls in data every 12-24 hours, you may see a No Data Available error.  Adjust the time range for the panels in this dashboard to match your source.

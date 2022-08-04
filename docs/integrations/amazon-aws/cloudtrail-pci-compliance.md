@@ -1,13 +1,13 @@
 ---
 id: cloudtrail-pci-compliance
 title: PCI Compliance for AWS CloudTrail App
-sidebar_label: PCI Compliance for AWS CloudTrail App
-description: PCI Compliance for AWS CloudTrail App
+sidebar_label: AWS CloudTrail PCI Compliance
+description: The Sumo Logic App for Payment Card Industry (PCI) Compliance for AWS CloudTrail App offers dashboards to monitor systems, account and users activity to ensure that login activity and privileged users are within the expected ranges.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/amazon-aws/pci.png')} alt="DB icon" width="50"/>
+<img src={useBaseUrl('img/integrations/amazon-aws/pci.png')} alt="Thumbnail icon" width="50"/>
 
 The Sumo Logic App for Payment Card Industry (PCI) Compliance for AWS CloudTrail App offers dashboards to monitor systems, account and users activity to ensure that login activity and privileged users are within the expected ranges. The PCI Compliance for AWS CloudTrail App covers PCI requirements 02, 07, 08 and 10.
 
@@ -15,28 +15,27 @@ The Sumo Logic App for Payment Card Industry (PCI) Compliance for AWS CloudTrail
 
 ## Collecting Logs for the PCI Compliance for AWS CloudTrail App
 
-This page provides instructions for collecting logs for the the PCI Compliance for AWS CloudTrail App.
+This section provides instructions for collecting logs for the the PCI Compliance for AWS CloudTrail App.
 
 To configure an AWS CloudTrail Source, do the following:
-1. [Grant Sumo Logic access](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/Grant-Access-to-an-AWS-Product) to an Amazon S3 bucket.
+1. [Grant Sumo Logic access](/docs/send-data/sources/sources-hosted-collectors/amazon-web-services/grant-access-aws-product.md) to an Amazon S3 bucket.
 2. [Configure CloudTrail](http://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-create-and-update-a-trail.html) in your AWS account.
 3. Confirm that logs are being delivered to the Amazon S3 bucket.
-4. Add an [AWS CloudTrail Source](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/AWS-CloudTrail-Source) to Sumo Logic.
-5. Install the Sumo Logic App for  [PCI Compliance for AWS CloudTrail](https://help.sumologic.com/07Sumo-Logic-Apps/01Amazon_and_AWS/PCI_Compliance_for_AWS_CloudTrail_App/03Dashboards-for-PCI-Compliance-for-AWS-Cloud-Trail#Install_the_Sumo_Logic_App).
-
+4. Add an [AWS CloudTrail Source](/docs/send-data/sources/sources-hosted-collectors/amazon-web-services/aws-cloudtrail-source.md) to Sumo Logic.
+5. Install the Sumo Logic App for [PCI Compliance for AWS CloudTrail](#Install_the_Sumo_Logic_App).
 
 
 ## Installing the PCI Compliance for AWS CloudTrail App
-Now that you have set up collection, install the Sumo Logic App for PCI Compliance for AWS CloudTrail to use the preconfigured searches and [Dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/01Amazon_and_AWS/PCI_Compliance_for_AWS_CloudTrail_App/03Dashboards-for-PCI-Compliance-for-AWS-Cloud-Trail#Dashboards) that provide insight into your data.
+Now that you have set up collection, install the Sumo Logic App for PCI Compliance for AWS CloudTrail to use the preconfigured searches and [Dashboards](#Dashboards) that provide insight into your data.
 
-**To install the app:**
+To install the app:
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
 1. From the **App Catalog**, search for and select the app**.**
 2. Select the version of the service you're using and click **Add to Library**.
 
-Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](https://help.sumologic.com/01Start-Here/Library/Apps-in-Sumo-Logic/Install-Apps-from-the-Library)
+Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/library/install-apps)
 
 1. To install the app, complete the following fields.
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 

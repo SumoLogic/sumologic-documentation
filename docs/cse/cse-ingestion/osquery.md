@@ -5,7 +5,7 @@ sidebar_label: Osquery
 description: tk
 ---
 
-This page has instructions for collecting [osquery](https://osquery.io/) log messages  and sending them to Sumo Logic to be ingested by CSE.
+This section has instructions for collecting [osquery](https://osquery.io/) log messages  and sending them to Sumo Logic to be ingested by CSE.
 
 Sumo Logic CSE supports osquery logs sent in JSON format for the following log types:
 

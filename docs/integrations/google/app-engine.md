@@ -1,11 +1,13 @@
 ---
 id: app-engine
 title: Sumo Logic App for Google App Engine
-sidebar_label: App Engine
+sidebar_label: Google App Engine
 description: The Sumo Logic App for Google App Engine helps you monitor the activities in your App Engine.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src={useBaseUrl('img/integrations/google/appengine.png')} alt="thumbnail icon" width="50"/>
 
 Google App Engine is a platform to build web and mobile apps that scale automatically. The Sumo Logic App for Google App Engine helps you monitor the activities in your App Engine. The pre-configured dashboards provide insight into the requests, applications, HTTP status codes, latency, and response time in your App Engine.
 
@@ -248,7 +250,7 @@ _collector="HTTP Source for GCP Pub/Sub" logName resource timestamp
 
 ## Installing the Google App Engine App
 
-This page provides instructions for installing the Google App Engine App, as well as an example of each of the App dashboards.
+This section provides instructions for installing the Google App Engine App, as well as an example of each of the App dashboards.
 
 
 Now that you have set up collection for Google App Engine, install the Sumo Logic App to use the pre-configured searches and dashboards that provide visibility into your environment for real-time analysis of overall usage.

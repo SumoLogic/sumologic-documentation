@@ -75,8 +75,8 @@ Go to the function and click the **Logs** tab to view real time logs, as shown i
 
 ### Common Error Messages
 
-* For Event Hub, see  [Event Hub error messages](https://help.sumologic.com/07Sumo-Logic-Apps/04Microsoft-and-Azure/Azure_Integration_using_ARM_-_FAQs/02Event_Hub_FAQs#event-hub-error-messages).
-* For Blob Storage, see [Blob Reader error messages](https://help.sumologic.com/07Sumo-Logic-Apps/04Microsoft-and-Azure/Azure_Integration_using_ARM_-_FAQs/03Blob_Storage_FAQs#blob-reader-error-messages).
+* For Event Hub, see  [Event Hub error messages](#event-hub-error-messages).
+* For Blob Storage, see [Blob Reader error messages](#blob-reader-error-messages).
 
 
 ## Event Hub FAQs
@@ -105,8 +105,6 @@ This page provides answers for frequently asked integration questions about Azur
 
 
 #### How is the function scaled?
-16
-
 
 **To increase the number of parallel instances:** the number of messages are ordered in one partition. By default, messages are distributed in round robin manner. Each Function instance is backed by 1 EventProcessorHost (EPH). EventHub only allows 1 EPH to hold a lease on a partition, but >1 partition can be assigned an EPH. This means the number of EPH <= number of partitions in EventHub. Hence, increasing number of partitions in Event Hub(default maxlimit is 32. You have to raise a support request to increasing it, and this will increase the consumption rate. For more information, see the [Azure Trigger Scaling document](https://docs.microsoft.com/en-us/azure/azure-functions/functions-bindings-event-hubs#trigger---scaling).
 
@@ -124,7 +122,6 @@ For specific details, see the following Azure pricing pages:
 
 Functions Example:
 
-
 Function executes 3 million times during the month with  memory consumption of 512 MB, execution duration 1 sec and 64KB is the message size.
 
 Resource consumption:  (512 MB / 1,024(in GB)) * 1sec  * 3 million = 1.5 million GB-sec - 4,00,000 GB-s(free plan) = 1.1 million GB-sec => x 0.000016$/GB-s = 17.6$
@@ -133,9 +130,7 @@ Execution consumption:3 million - 1 million(free plan) = 2 million => x 0.20$ = 
 
 **Cost of Azure Function : 18$**
 
-**Event Hub Example: **
-19
-
+**Event Hub Example:**
 
 Ingress events(billed in multiples of 64 KB): 3 million * $0.028 per million events = 0.084$
 
@@ -144,8 +139,7 @@ Throughput units(1TU = 1MB/sec ingress events + 2MB/sec egress events + 84GB eve
 **Cost of Event Hub = 10.88$**
 
 
-**Storage Account Example: **
-20
+**Storage Account Example:**
 
 
 Assuming General purpose v2 storage accounts in hot tier and worst case scenario of storing all event in storage with 1 message processed per receive loop by azure function
@@ -160,10 +154,8 @@ Operation prices write operation $0.05 per 10000 requests => * 3 million = 15$
 
 
 #### How do I troubleshoot an Event Hub Integration?
-21
 
-
-For detailed information, see the [Troubleshooting log collection](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Azure_Monitoring/Collect_Logs_from_Azure_Monitor#Troubleshooting_log_collection) section of the Collect logs for Azure Monitor page. This includes testing the function using **Sample** [Logs](https://s3.amazonaws.com/appdev-cloudformation-templates/TestPayload.json) & [Metrics](https://s3.amazonaws.com/appdev-cloudformation-templates/metrics_fixtures.json).
+For detailed information, see the [Troubleshooting log collection](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-logs-azure-monitor#Troubleshooting_log_collection) section of the Collect logs for Azure Monitor page. This includes testing the function using **Sample** [Logs](https://s3.amazonaws.com/appdev-cloudformation-templates/TestPayload.json) & [Metrics](https://s3.amazonaws.com/appdev-cloudformation-templates/metrics_fixtures.json).
 
 
 #### Where can I find historic logs for the Azure function?
@@ -179,51 +171,43 @@ Built-in logging uses the storage account specified by the connection string in 
 
 
 #### What can I do if a function is timing out?
-24
 
 
 The default timeout for functions on a Consumption plan is 5 minutes. You can increase the value to 10 minutes for the Function App by changing the **functionTimeout** property in the **host.json** file.
 
 
 #### How do I enable Application Insights?
-25
+
 
 
 Follow the instructions in the Microsoft Azure documentation for [Enabling Application Insights integration](https://docs.microsoft.com/en-us/azure/azure-functions/functions-monitoring#enable-application-insights-integration).
 
 
 #### How can I debug using print statements?
-26
-
 
 
 
 1. Under the **Function app edit mode** section, change the edit mode in **Function App Settings**. You can now edit the function.
 2. Enter context.log(“debug statements”)  and save.
-3. Run using sample logs, as described in [Troubleshooting log collection](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Azure_Monitoring/Collect_Logs_from_Azure_Monitor#Troubleshooting_log_collection).
+3. Run using sample logs, as described in [Troubleshooting log collection](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-logs-azure-monitor#Troubleshooting_log_collection).
 
 
 #### How do I deploy the ARM template in Azure Gov cloud?
-27
-
 
 Use this [template](https://appdev-cloudformation-templates.s3.amazonaws.com/azuredeploy_gov_logs.json) which has been customized for Azure Gov cloud to deploy the resources.
 
 
 #### How do I ensure that the Event Hub is receiving log messages?
-28
-
 
 If events are not getting into the Event Hub, the event grid subscription publisher settings are not configured properly.
 
+Event Hub error messages:
 
-Event Hub error messages
+* **Resources should be in the same region.** Resource '/subscriptions/c088dc46-d692-42ad-a4b6-9a542d28ad2a/resourceGroups/AzureAuditEventHub/providers/Microsoft.Network/networkSecurityGroups/testhimvm-nsg' is in region 'eastus' and resource '/subscriptions/c088dc46-d692-42ad-a4b6-9a542d28ad2a/resourcegroups/testresourcegroup/providers/microsoft.eventhub/namespaces/sumoazureaudittf7grgv4prygw' is in region 'westus'.
 
-* **Resources should be in the same region.** Resource '/subscriptions/c088dc46-d692-42ad-a4b6-9a542d28ad2a/resourceGroups/AzureAuditEventHub/providers/Microsoft.Network/networkSecurityGroups/testhimvm-nsg' is in region 'eastus' and resource '/subscriptions/c088dc46-d692-42ad-a4b6-9a542d28ad2a/resourcegroups/testresourcegroup/providers/microsoft.eventhub/namespaces/sumoazureaudittf7grgv4prygw' is in region 'westus'. \
- \
-This happens while exporting logs or metrics from Azure monitor to Event Hub. The service generating the logs and Event Hub should be deployed in the same region. \
+  This happens while exporting logs or metrics from Azure monitor to Event Hub. The service generating the logs and Event Hub should be deployed in the same region.
 
-* **Create or update activity logprofilesfailure. **If you get this error message in Azure when setting up an Event Hub Export, do the following:
+* **Create or update activity logprofilesfailure.** If you get this error message in Azure when setting up an Event Hub Export, do the following:
     1. Search for Subscriptions in all services.
     2. Select your subscription > Resource Providers.
     3. Search for and Enable **microsoft.insights**.
@@ -240,10 +224,8 @@ FileOffsetMap is a table created in Azure Table Storage that is used for interna
 
 
 #### How does the collection mechanism work?
-31
 
-
-For a summary of how various components are stitched together in the pipeline, see the [Monitoring data flow](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Azure_Blob_Storage#Monitoring_data_flow) section of the Azure Blog Storage page.
+For a summary of how various components are stitched together in the pipeline, see the [Monitoring data flow](/docs/send-data/collect-from-other-data-sources/azure-blob-storage#Monitoring_data_flow) section of the Azure Blog Storage page.
 
 
 #### How do I scale the function?
@@ -261,8 +243,6 @@ From the Application settings page, you can do any of the following to scale the
 
 
 #### How do I ingest logs from Azure Blob Storage into multiple sourceCategories?
-35
-
 
 The following is a Field Extraction Rule (FER) solution.
 
@@ -275,7 +255,7 @@ as nsg_name | concat('azure_logs/", nsg_name) as _sourceCategory
 ```
 
 
-Another approach is to modify the function to send source category in headers. For more information, see [How do I route logs to different source categories based on log content?”](https://help.sumologic.com/07Sumo-Logic-Apps/04Microsoft-and-Azure/Azure_Integration_using_ARM_-_FAQs/01General_FAQs#how-do-i%C2%A0route-logs-to-different-source-categories-based-on-log)
+Another approach is to modify the function to send source category in headers. For more information, see [How do I route logs to different source categories based on log content?”](#how-do-i-route-logs-to-different-source-categories-based-on-log)
 
 
 #### How do I filter events by container name?
@@ -284,7 +264,7 @@ Another approach is to modify the function to send source category in headers. F
 
 1. Go to **Event subscription > Filters** tab.
 2. Enter the following in the Subject Begins With field, replacing `<container_name>` with the name of the container from where you want to export logs.
-```
+```sql
 /blobServices/default/containers/<container_name>/
 ```
 
@@ -303,7 +283,8 @@ Another approach is to modify the function to send source category in headers. F
 ## Blob Reader error messages
 
 
-```Error: The request is being throttled. at client.pipeline.error (D:\home\site\wwwroot\BlobTaskConsumer\node_modules\azure-arm-storage\lib\operations\storageAccounts.js:1444:19) at retryCallback (D:\home\site\wwwroot\BlobTaskConsumer\node_modules\ms-rest\lib\filters\systemErrorRetryPolicyFilter.js:89:9) at retryCallback (D:\home\site\wwwroot\BlobTaskConsumer\node_modules\ms-rest\lib\filters\exponentialRetryPolicyFilter.js:140:9) at D:\home\site\wwwroot\BlobTaskConsumer\node_module...FunctionName: BlobTaskConsumer
+```
+Error: The request is being throttled. at client.pipeline.error (D:\home\site\wwwroot\BlobTaskConsumer\node_modules\azure-arm-storage\lib\operations\storageAccounts.js:1444:19) at retryCallback (D:\home\site\wwwroot\BlobTaskConsumer\node_modules\ms-rest\lib\filters\systemErrorRetryPolicyFilter.js:89:9) at retryCallback (D:\home\site\wwwroot\BlobTaskConsumer\node_modules\ms-rest\lib\filters\exponentialRetryPolicyFilter.js:140:9) at D:\home\site\wwwroot\BlobTaskConsumer\node_module...FunctionName: BlobTaskConsumer
 ```
 
 Solution: Increase the maxBatchSize in BlobTaskProducer's host.json This will fetch more events and will create larger blocks for reading. Then, decrease maxConcurrentCalls calls setting in BlobTaskConsumer's host.json. This will limit the number of concurrent invocations, reducing the number of read requests.
@@ -312,10 +293,10 @@ Solution: Increase the maxBatchSize in BlobTaskProducer's host.json This will fe
 Error: HTDECK-JOBCOSTING-API__BE93-2019-05-08-14-e5260b.log"": [48255]} Exception while executing function: Functions.BlobTaskProducer Microsoft.Azure.WebJobs.Host. FunctionInvocationException : Exception while executing function: Functions.BlobTaskProducer ---> System.Exception : StorageError: The table specified does not exist. RequestId:3914a31a-e002-000e-1dad-05a995000000 Time:2019-05-08T14:48:29.9940095Z at async Microsoft.Azure.WebJobs.Script.Description.NodeFunctionInvoker.InvokeCore(Object[] parameters,FunctionInvocationContext context) at C:\projects\azure-webjobs-sdk-script\src\WebJobs.Script\Description\Node\NodeFunctionInvoker.cs : 196
 ```
 
-Solution: This error comes when FileOffsetMap does not exists. Check and confirm whether you have created the following table in [Step 3: Configure Azure resources using ARM template](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Azure_Blob_Storage/Collect_Logs_from_Azure_Blob_Storage#step-3-configure-azure-resources-using-arm-template), substep 11.
+Solution: This error comes when FileOffsetMap does not exists. Check and confirm whether you have created the following table in [Step 3: Configure Azure resources using ARM template](/docs/send-data/collect-from-other-data-sources/azure-blob-storage/collect-logs-azure-blob-storage#step-3-configure-azure-resources-using-arm-template), substep 11.
 
 
-Error:  You'll see a Deployment Failed error when roleAssignment is not unique but we are already using resourcegroup.id in a name that is unique. The error details are:  
+Error: You'll see a Deployment Failed error when roleAssignment is not unique but we are already using resourcegroup.id in a name that is unique. The error details are:  
 
 Tenant ID, application ID, principal ID, and scope are not allowed to be updated.  (Code: RoleAssignmentUpdateNotPermitted) \
   \
@@ -329,20 +310,23 @@ http://answers.flyppdevportal.com/MVC/Post/Thread/afc10f35-fa20-467e-b927-aeefdb
 
 Solution: Create a new resource group for the Sumo Logic collection resources. If that doesn't fix the problem, then change the variables in the ARM template from this:
 ```
- "consumer_roleGuid": "[guid(parameters('sites_blobreaderconsumer_name'), uniqueString(deployment().name, resourceGroup().id))]", \
-        "dlq_roleGuid": "[guid(parameters('sites_DLQProcessor_name'), uniqueString(deployment().name, resourceGroup().id))]", \
+"consumer_roleGuid": "[guid(parameters('sites_blobreaderconsumer_name'), uniqueString(deployment().name, resourceGroup().id))]", \
+    "dlq_roleGuid": "[guid(parameters('sites_DLQProcessor_name'), uniqueString(deployment().name, resourceGroup().id))]", \
 ```
 
 To this:
 ```
- "consumer_roleGuid": "[guid(parameters('sites_blobreaderconsumer_name'), uniqueString(‘<random unique word>’, resourceGroup().id))]", \
-        "dlq_roleGuid": "[guid(parameters('sites_DLQProcessor_name'), uniqueString(‘<random unique word>’, resourceGroup().id))]"
-        ```
-```
-Error:  Azure fails to install dependencies on a node. System.AggregateException : One or more errors occurred. ---> Error: Cannot find module 'azure-storage' \
+"consumer_roleGuid": "[guid(parameters('sites_blobreaderconsumer_name'), uniqueString(‘<random unique word>’, resourceGroup().id))]", \
+    "dlq_roleGuid": "[guid(parameters('sites_DLQProcessor_name'), uniqueString(‘<random unique word>’, resourceGroup().id))]"
 ```
 
-Solution:  Run `npm install` from the console.
+```
+Error: Azure fails to install dependencies on a node. \
+System.AggregateException : One or more errors occurred. \
+---> Error: Cannot find module 'azure-storage' \
+```
+
+Solution: Run `npm install` from the console.
 
 <img src={useBaseUrl('img/integrations/microsoft-azure/Azure-FAQ_BlobTaskConsumer.png')} alt="Azure ARM FAQs" />
 

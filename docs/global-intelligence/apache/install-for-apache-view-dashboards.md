@@ -5,7 +5,7 @@ sidebar_label: Install Global Intelligence for Apache App and View Dashboards
 description: Learn how to install the Global Intelligence for Apache App and what it includes.
 ---
 
-This page has instructions for installing the Global Intelligence for Apache App and has descriptions of each of the included dashboards. 
+This section has instructions for installing the Global Intelligence for Apache App and has descriptions of each of the included dashboards. 
 
 ## Dashboard Filters  
 

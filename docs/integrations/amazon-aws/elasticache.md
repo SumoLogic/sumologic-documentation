@@ -2,12 +2,12 @@
 id: elasticache
 title: Sumo Logic App for Amazon Elasticache
 sidebar_label: Amazon Elasticache
-description: Amazon Elasticache
+description: The Sumo Logic App for Amazon ElastiCache Redis ULM is a unified logs and metrics (ULM) App that provides visibility into key event and performance analytics to enable proactive diagnosis and response to system and environment issues. The app provides preconfigured dashboards for high-level analysis of event status and trends, locations, and system health and performance metrics.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/amazon-aws/elasticache.png')} alt="DB icon" width="50"/>
+<img src={useBaseUrl('img/integrations/amazon-aws/elasticache.png')} alt="Thumbnail icon" width="50"/>
 
 
 The Sumo Logic App for Amazon ElastiCache allows you to set up, run, and scale popular open-source compatible in-memory data stores in the cloud.
@@ -83,48 +83,43 @@ account={{account}} region={{region}} namespace={{namespace}} "\"eventSource\":\
 ### Collect Metrics for Amazon ElastiCache
 
 * Sumo Logic supports collecting metrics using two source types
-    * Configure an [AWS Kinesis Firehose for Metrics Source](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/AWS_Kinesis_Firehose_for_Metrics_Source) (Recommended)
+    * Configure an [AWS Kinesis Firehose for Metrics Source](/docs/send-data/Sources/sources-hosted-collectors/Amazon-Web-Services/aws-kinesis-firehose-metrics-source) (Recommended)
         * Or
-    * Configure an [Amazon CloudWatch Source for Metrics](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/Amazon-CloudWatch-Source-for-Metrics)
+    * Configure an [Amazon CloudWatch Source for Metrics](/docs/send-data/sources/sources-hosted-collectors/amazon-web-services/amazon-cloudwatch-source-metrics)
     * Note: Namespace for **Amazon ElastiCache **Service is **AWS/Elasticache**
     * **Metadata**: Add an **account** field to the source and assign it a value which is a friendly name / alias to your AWS account from which you are collecting metrics. This name will appear in the Sumo Logic Explorer View. Metrics can be queried via the “account field”.
 
 
-### Collect Amazon ElastiCache CloudTrail Logs 
+### Collect Amazon ElastiCache CloudTrail Logs
 
-1. To your Hosted Collector, add an [AWS CloudTrail Source](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/AWS-CloudTrail-Source).
-    1. **Name**. Enter a name to display for the new Source.
-    2. **Description**. Enter an optional description.
-    3. **S3 Region**. Select the Amazon Region for your** ElastiCache** S3 bucket.
-    4. **Bucket Name**. Enter the exact name of your **ElastiCache** S3 bucket.
-    5. **Path Expression**. Enter the string that matches the S3 objects you'd like to collect. You can use a wildcard (*) in this string. (DO NOT use a leading forward slash. See [Amazon Path Expressions](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/Amazon-Path-Expressions).) \
- \
-**Note**: The S3 bucket name is not part of the path. Don’t include the bucket name when you are setting the Path Expression. \
-
-    6. **Source Category**. Enter aws/observability/cloudtrail/logs
-    7. **Fields**. Add an **account** field and assign it a value which is a friendly name / alias to your AWS account from which you are collecting logs. This name will appear in the Sumo Logic Explorer View. Logs can be queried via the “account field”.
-
-
-1. **Access Key ID and Secret Access Key**. Enter your Amazon [Access Key ID and Secret Access Key](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSGettingStartedGuide/AWSCredentials.html). Learn how to use Role-based access to AWS [here](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/AWS_Sources)
-2. **Log File Discovery -> Scan Interval**. Use the default of 5 minutes. Alternately, enter the frequency. Sumo Logic will scan your S3 bucket for new data. Learn how to configure **Log File Discovery** [here](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/AWS_Sources).
-3. **Enable Timestamp Parsing**. Select the check box.
-4. **Time Zone**. Select Ignore time zone from log file and instead use, and select UTC.
-5. **Timestamp Format.** Select Automatically detect the format.
-6. **Enable Multiline Processing**. Select the check box, and select Infer Boundaries.
-1. Click **Save**.
+1. To your Hosted Collector, add an [AWS CloudTrail Source](/docs/send-data/sources/sources-hosted-collectors/amazon-web-services/aws-cloudtrail-source.md).
+   * **Name**. Enter a name to display for the new Source.
+   * **Description**. Enter an optional description.
+   * **S3 Region**. Select the Amazon Region for your** ElastiCache** S3 bucket.
+   * **Bucket Name**. Enter the exact name of your **ElastiCache** S3 bucket.
+   * **Path Expression**. Enter the string that matches the S3 objects you'd like to collect. You can use a wildcard (*) in this string. (DO NOT use a leading forward slash. See [Amazon Path Expressions](/docs/send-data/Sources/sources-hosted-collectors/Amazon-Web-Services/Amazon-Path-Expressions).) The S3 bucket name is not part of the path. Don’t include the bucket name when you are setting the Path Expression.
+   * **Source Category**. Enter aws/observability/cloudtrail/logs
+   * **Fields**. Add an **account** field and assign it a value which is a friendly name / alias to your AWS account from which you are collecting logs. This name will appear in the Sumo Logic Explorer View. Logs can be queried via the “account field”.
+   * **Access Key ID and Secret Access Key**. Enter your Amazon [Access Key ID and Secret Access Key](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSGettingStartedGuide/AWSCredentials.html). Learn how to use Role-based access to AWS [here](/docs/send-data/sources/sources-hosted-collectors/amazon-web-services/aws-sources)
+   * **Log File Discovery -> Scan Interval**. Use the default of 5 minutes. Alternately, enter the frequency. Sumo Logic will scan your S3 bucket for new data. Learn how to configure **Log File Discovery** [here](/docs/send-data/sources/sources-hosted-collectors/amazon-web-services/aws-sources).
+   * **Enable Timestamp Parsing**. Select the check box.
+   * **Time Zone**. Select Ignore time zone from log file and instead use, and select UTC.
+   * **Timestamp Format.** Select Automatically detect the format.
+   * **Enable Multiline Processing**. Select the check box, and select Infer Boundaries.
+2. Click **Save**.
 
 
 #### Field in Field Schema
 
-Login to Sumo Logic,  goto Manage Data > Logs > Fields. Search for the “**cacheclusterid**” field. If not present, create it. Learn how to create and manage fields [here](https://help.sumologic.com/Manage/Fields#manage-fields).
+Login to Sumo Logic,  goto Manage Data > Logs > Fields. Search for the “**cacheclusterid**” field. If not present, create it. Learn how to create and manage fields [here](/docs/manage/fields.md#manage-fields).
 
 
 #### Field Extraction Rule(s)
 
-Create a Field Extraction Rule for CloudTrail Logs. Learn how to create a Field Extraction Rule [here](https://help.sumologic.com/Manage/Field-Extractions/Create-a-Field-Extraction-Rule).
+Create a Field Extraction Rule for CloudTrail Logs. Learn how to create a Field Extraction Rule [here](/docs/manage/field-extractions/create-field-extraction-rule.md).
 
 
-```
+```sql
 Rule Name: AwsObservabilityElastiCacheCloudTrailLogsFER
 Applied at: Ingest Time
 Scope (Specific Data): account=* eventname eventsource "elasticache.amazonaws.com"
@@ -134,7 +129,7 @@ Scope (Specific Data): account=* eventname eventsource "elasticache.amazonaws.co
 **Parse Expression**:
 
 
-```
+```sql
 | json "eventSource", "awsRegion", "requestParameters.cacheClusterId", "responseElements.cacheClusterId", "recipientAccountId" as eventSource, region, req_cacheClusterId, res_cacheClusterId, accountid nodrop
 | where eventSource = "elasticache.amazonaws.com"
 | if (!isEmpty(req_cacheClusterId), req_cacheClusterId, res_cacheClusterId) as cacheclusterid
@@ -149,7 +144,7 @@ Scope (Specific Data): account=* eventname eventsource "elasticache.amazonaws.co
 
 In case you have a centralized collection of cloudtrail logs and are ingesting them from all accounts into a single Sumo Logic cloudtrail log source, create the following Field Extraction Rule to map a proper AWS account(s) friendly name / alias. Create it if not already present / update it as required.
 
-```
+```sql
 Rule Name: AWS Accounts
 Applied at: Ingest Time
 Scope (Specific Data): _sourceCategory=aws/observability/cloudtrail/logs
@@ -158,7 +153,7 @@ Scope (Specific Data): _sourceCategory=aws/observability/cloudtrail/logs
 
 **Parse Expression**:
 
-Enter a parse expression to create an “account” field that maps to the alias you set for each sub account. For example, if you used the “dev” alias for an AWS account with ID "528560886094" and the “prod” alias for an AWS account with ID "567680881046", your parse expression would look like:
+Enter a parse expression to create an “account” field that maps to the alias you set for each sub account. For example, if you used the `“dev”` alias for an AWS account with ID `"528560886094"` and the `“prod”` alias for an AWS account with ID `"567680881046"`, your parse expression would look like:
 
 
 ```sql
@@ -175,17 +170,17 @@ Enter a parse expression to create an “account” field that maps to the alias
 
 This section has instructions for installing the Sumo Logic App for **Amazon ElastiCache** and descriptions of each of the app dashboards along with associated use cases.
 
-Now that you have set up a collection for **Amazon ElastiCache**, install the Sumo Logic App to use the pre-configured [dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/01Amazon_and_AWS/Amazon_SQS/Install-the-Amazon-SQS-App-and-view-the-Dashboards#Dashboards) that provide visibility into your environment for real-time analysis of overall usage.
+Now that you have set up a collection for **Amazon ElastiCache**, install the Sumo Logic App to use the pre-configured [dashboards](/docs/integrations/amazon-aws/sqs#Dashboards) that provide visibility into your environment for real-time analysis of overall usage.
 
-**To install the app:**
+To install the app:
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
 1. From the **App Catalog**, search for **“Amazon Elasticache**” and select the app**.**
 2. To install the app, click **Add to Library** and complete the following fields.
-    1. **App Name.** You can retain the existing name, or enter a name of your choice for the app.
-    2. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-    3. Click **Add to Library**.
+   * **App Name.** You can retain the existing name, or enter a name of your choice for the app.
+   * **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
+   * Click **Add to Library**.
 
 Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization.
 

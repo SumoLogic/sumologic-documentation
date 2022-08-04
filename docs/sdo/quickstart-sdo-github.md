@@ -1,6 +1,6 @@
 ---
 id: quickstart-sdo-github
-title: Visualize GitHub Data in Sumo Logic
+title: Visualize GitHub Data in Sumo Logic with SDO
 sidebar_label: GitHub Data Quickstart
 ---
 
@@ -38,7 +38,7 @@ Remember your deployment region selection. You will need it in a later step.
 ![Activate Trial](/img/get-started/github/activate-trial.gif)
 
 ## Step 2 - Create a Sumo Logic access key
-Create an access key to programatically manage your Sumo Logic account following these instructions: [Manage all users’ access keys on Access Keys page](https://help.sumologic.com/manage/security/Access-Keys#manage-all-users%E2%80%99-access-keys-on-access-keys-page).
+Create an access key to programatically manage your Sumo Logic account following these instructions: [Manage all users’ access keys on Access Keys page](/docs/manage/security/access-keys#manage-all-users%E2%80%99-access-keys-on-access-keys-page).
 
 :::note
 Copy your access ID and key to another location. You will need them in a later step.

@@ -4,7 +4,7 @@ id: add-remove-users-role
 
 # Add or Remove Users from a Role
 
-This page has instructions for added users to a role, and removing users from a role.
+This section has instructions for added users to a role, and removing users from a role.
 
 ### Add a user to a role
 

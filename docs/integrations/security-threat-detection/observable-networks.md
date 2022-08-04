@@ -7,36 +7,28 @@ description: The Observable Networks App allows you to monitor your Observable N
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
+<img src={useBaseUrl('img/integrations/security-threat-detection/Observable.png')} alt="thumbnail icon" width="75"/>
+
 
 The Observable Networks App allows you to monitor your Observable Networks deployment from Sumo Logic. The App Overview Dashboard provides insight to high-level data about your network.
 
 From Sumo Logic, you may also set up forwarding for log monitoring and authentication logs to Observable Networks. With log monitoring, Observable Networks can notify you when it detects that a Collector is missing, exposing gaps in your log coverage. Authentication log forwarding allows for more accurate and detailed alerts, using Sumo Logic log data to provide extra richness to Observable's Dynamic Endpoint Modeling algorithms.
 
-
-1
-
-
-Before you begin, your Observable Networks portal must be properly configured. Contact [support@obsrvbl.com](https://help.sumologic.com/07Sumo-Logic-Apps/22Security_and_Threat_Detection/Observable_Networks) if you have any questions.
-
-
-#### Log Types
-2
-
-
-The Sumo Logic App for Observable Networks assumes Observable Networks formatted logs, which provide one JSON message per request.
-
-
-#### About Observable Networks
-3
-
 Observable Networks is a provider of network security technology and advanced threat detection services that identify compromised and misused networked devices. Observable's Dynamic Endpoint Modeling technology includes a cloud-based service platform incorporating automated security analytics and real-time traffic sensors to continuously model all devices on a network. Endpoint modeling is based on network traffic flow metadata and is indifferent to encryption. Observable makes it easy to readily understand normal and abnormal device behaviors, helping to identify compromised devices and facilitate faster remediation.
 
 For more information, please visit [http://www.observable.net/](http://www.observable.net/).
 
+:::caution
+Before you begin, your Observable Networks portal must be properly configured. Contact [support@obsrvbl.com](/docs/integrations/security-threat-detection/Observable-Networks) if you have any questions.
+:::
+
+## Log Types
+
+The Sumo Logic App for Observable Networks assumes Observable Networks formatted logs, which provide one JSON message per request.
 
 ## Collect Logs for the Observable Network App
 
-This page provides instructions for configuring log collection for the Observable Network App, as well as relevant log and query samples.
+This section provides instructions for configuring log collection for the Observable Network App, as well as relevant log and query samples.
 
 The Observable Networks App allows you to monitor your Observable Networks deployment from Sumo Logic. From Sumo Logic, you can set up forwarding for log monitoring and authentication logs to Observable Networks. With log monitoring, Observable Networks can notify you when a collector is missing, exposing gaps in your log coverage. Authentication log forwarding allows for more accurate and detailed alerts, using Sumo Logic log data to provide extra richness to Observable's Dynamic Endpoint Modeling algorithms.
 
@@ -46,21 +38,15 @@ For more information, see [http://www.observable.net/](http://www.observable.net
 
 
 ### Prerequisites
-4
-
 
 From your Observable Networks portal, click **Settings** (gear icon) > **Integrations** > **Sumo Logic** > **Settings** and enter the Access ID, Access Key, and Source URL on the Sumo Logic Settings page. Before you begin, your Observable Networks portal must be properly configured. If you have any questions, contact [support@obsrvbl.com](mailto:support@obsrvbl.com).
 
 
 ### Configure a Collector
-5
 
-
-Configure a [Hosted Collector](https://help.sumologic.com/03Send-Data/Hosted-Collectors/Configure-a-Hosted-Collector). Name the collector "observable" (case-sensitive).
+Configure a [Hosted Collector](/docs/send-data/configure-hosted-collector). Name the collector "observable" (case-sensitive).
 
 **Create an access key**
-
-
 
 1. In Sumo Logic, go to **Manage Data > Collection > Collection**.
 2. Click **Access Keys**.
@@ -68,16 +54,13 @@ Configure a [Hosted Collector](https://help.sumologic.com/03Send-Data/Hosted-Col
 
 
 ### Configure a Source
-6
 
-
-Configure an [HTTP Source](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/HTTP-Source). Name the new source "observable" (case-sensitive). Deselect the check box **Enable Timestamp Parsing**.
+Configure an [HTTP Source](/docs/send-data/sources/sources-hosted-collectors/http-logs-metrics-source). Name the new source "observable" (case-sensitive). Deselect the check box **Enable Timestamp Parsing**.
 
 When the URL associated with the Source is displayed, copy the URL so you can use it to send files.
 
 
 ### Configure the Observable Portal
-7
 
 1. From your Observable Networks portal, click **Settings (gear icon) > Integrations > Sumo Logic > Settings**.
 2. On the **Sumo Logic Settings** page, enter the **Access ID**, **Access Key**, and **Source URL** from the previous sections.
@@ -87,13 +70,11 @@ Your Observable Networks deployment will now publish alert and endpoint informat
 
 
 #### Configure Log Monitoring (optional)
-8
 
 If you have Sumo Logic API access, you can integrate Observable Networks and Sumo Logic even further. You can configure Observable Networks to identify devices on your network that do not have Collectors installed. Additionally, Observable Networks can parse authentication log ("auth.log") data from certain Linux distributions (e.g., Ubuntu) to monitor user access.
 
 
-##### Identify Missing Collectors
-9
+#### Identify Missing Collectors
 
 You can configure the Observable Networks portal to expect certain roles in the network to have corresponding log files. For example, you might expect a Terminal Server to capture an auth.log. When you configure this expectation, Observable will alert when a role is missing an expected log file, notifying you that there is a gap in your log coverage.
 
@@ -103,15 +84,15 @@ You can configure the Observable Networks portal to expect certain roles in the 
 2. Enter the name for the expected log, such as **Auth Log**.
 3. Enter the **Log Query Prefix**, which is the search prefix given to Sumo Logic to filter for this log. For example, **_source=auth.log**.
 4. Select the roles that are expected to have this log. For example, **Terminal Server**.
-10
+
 Only roles present on your network are available.
 5. Click **Save**.
 
 You can also add a log without associating any roles. In this case, simply leave all roles deselected in Step 4.
 
 
-##### Parse Authentication Logs
-11
+#### Parse Authentication Logs
+
 
 If you are collecting auth.log data in Sumo Logic from a compatible Linux distribution, you can configure Observable Networks to parse this data and monitor session activity.
 
@@ -125,8 +106,6 @@ Before you begin, make sure that you are collecting from an auth.log source, and
 
 
 ### Sample Log Messages
-12
-
 
 
 ```json
@@ -174,13 +153,9 @@ Before you begin, make sure that you are collecting from an auth.log source, and
 
 
 ### Query Samples
-13
 
 
-**Recent Flow Counts**
-
-
-```
+```sql title="Recent Flow Counts"
 _sourceCategory=observable | json field=_raw "obsrvbl_type", "effective_session_count" as type, session_count
 | where type="session_count"
 | timeslice 10m
@@ -189,10 +164,7 @@ _sourceCategory=observable | json field=_raw "obsrvbl_type", "effective_session_
 ```
 
 
-**Top Observation Host**
-
-
-```
+```sql title="Top Observation Host"
 _sourceCategory=observable
 | json field=_raw "obsrvbl_type", "source_info.name" as type, name
 | where type = "observation"
@@ -202,15 +174,11 @@ _sourceCategory=observable
 
 
 
-## Install the Observable Networks App and view the Dashboard
+## Install the Observable Networks App
 
-### Install the Sumo Logic App
-14
+This section provides instructions for installing the Observable Networks App, as well as showing examples of each of the dashboards. The App preconfigured searches and [dashboards](#Dashboards) allow you to visually analyze your Observable Networks data at a glance.
 
-
-This page provides instructions for installing the Observable Networks App, as well as showing examples of each of the dashboards. The App preconfigured searches and [dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/22Security_and_Threat_Detection/Observable_Networks/Observable-Networks-App-Dashboard-and-Searches#Dashboards) allow you to visually analyze your Observable Networks data at a glance.
-
-**To install the app:**
+To install the app:
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
@@ -218,34 +186,28 @@ Locate and install the app you need from the **App Catalog**. If you want to see
 2. Select the version of the service you're using and click **Add to Library**.
 
 
-15
-Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](https://help.sumologic.com/01Start-Here/Library/Apps-in-Sumo-Logic/Install-Apps-from-the-Library)
+Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/library/install-apps)
 
-1. To install the app, complete the following fields.
-    1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
-    2. **Data Source.** Select either of these options for the data source. 
+3. To install the app, complete the following fields.
+   * **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
+   * **Data Source.** Select either of these options for the data source. 
         * Choose **Source Category**, and select a source category from the list. 
-        * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (_sourceCategory=MyCategory). 
-    3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-2. Click **Add to Library**.
+        * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). 
+   * **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
+4. Click **Add to Library**.
 
 Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization.
 
 Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
 
+## Viewing Observable Networks Dashboards
 
-### Dashboards
-16
-
-#### Observable Networks Overview
-17
-
+### Overview
 
 The Observable Networks Overview Dashboard is intended to provide a high level at-a-glance view into your network.
 
-18
 
-**Effective Session Count. **Displays the number of effective "flows" ("sessions") as a single value chart for the last hour.
+**Effective Session Count.** Displays the number of effective "flows" ("sessions") as a single value chart for the last hour.
 
 **Roles.** Provides a breakdown of the types of endpoints currently on the network in a pie chart for the last hour. Endpoint types could be WebServer, iOS, Printer, etc. Roles are published every hour, so this Panels displays the latest role distribution on your network.
 
@@ -257,10 +219,9 @@ The Observable Networks Overview Dashboard is intended to provide a high level a
 
 **Observations by Time.** Displays the frequency of each observation type as an area chart on a timeline for the last six hours.
 
+<img src={useBaseUrl('img/integrations/security-threat-detection/ObservableNetworks_Overview_Dashboard.png')} alt="ObservableNetworks_Overview_Dashboard" />
 
-## Searches
-19
-
+### Searches
 
 **Recent Flow Count.** This query shows the history of flow counts for your network. A network flow describes a single piece of communication on your network, including source and destination IPs, ports, and protocol (TCP, UDP, etc.). Flows are the main input to the Observable Networks platform.
 
