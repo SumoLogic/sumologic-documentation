@@ -27,30 +27,30 @@ export default function NotFound(): JSX.Element {
                 <Translate
                   id="theme.NotFound.title"
                   description="The title of the 404 page">
-                  Page Not Found
+                  404 - Page Not Found
                 </Translate>
               </h1>
               <p>
                 <Translate
                   id="theme.NotFound.p1"
                   description="The first paragraph of the 404 page">
-                  We could not find what you were looking for.
+                  Oh no! We're sorry, we could not find what you were looking for.
                 </Translate>
               </p>
-                <img class="gif" src="/img/sumo-search-animation.gif" alt="Sumo Logic 404 image">
-                </img>
               <p>
-                <Translate
-                  id="theme.NotFound.p2"
-                  description="The 2nd paragraph of the 404 page">
-                  Please contact the owner of the site that linked you to the
-                  original URL and let them know their link is broken.
-                </Translate>
+              <img class="svg" src="/img/sumo-404.svg" alt="Sumo Logic 404 image" width="250">
+              </img>
               </p>
+              <p>
               <button className="backtohome-404"
-                  description="The title of the 404 page">
+                  description="Back to Sumo Docs homepage">
                   <a href="/">Back to homepage</a>
               </button>
+              <button className="backtohome-404"
+                  description="Open GitHub Issue">
+                  <a href="https://github.com/SumoLogic/sumologic-documentation/issues/new/choose">Let us know</a>
+              </button>
+              </p>
             </div>
           </div>
         </main>

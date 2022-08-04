@@ -517,7 +517,7 @@ html[data-theme='dark'] .navbar-item-github:before {
 //BACK TO HOMEPAGE
 
 .backtohome-404 {
-  border-bottom: 2px solid var(--ifm-toc-border-color);
+  border-bottom: 1px solid var(--ifm-toc-border-color);
 }
 
 .backtohome-404 {
@@ -525,6 +525,7 @@ html[data-theme='dark'] .navbar-item-github:before {
   color: white;
   padding: 8px 25px;
   font-size: 16px;
+    font-weight: 600;
   text-decoration: none;
   margin-right: 10px;
   border: 1px solid #FFFFFF;
@@ -533,10 +534,11 @@ html[data-theme='dark'] .navbar-item-github:before {
 }
 
 .backtohome-404:hover {
-  border: 2px solid #3578e5;
+  border: 1px solid #3578e5;
   color: white;
+  font-weight: 600;
   font-size: 16px;
-  background-color: #F1F1F1;
+  background-color: #E5F4FA;
 }
 
 .backtohome-404-mobile {
