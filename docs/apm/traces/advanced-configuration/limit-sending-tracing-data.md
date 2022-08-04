@@ -1,8 +1,9 @@
 ---
 id: limit-sending-tracing-data
+title: Filter and Shape Your Trace Data
+sidebar_label: What if I don't want to send all of my tracing data to Sumo Logic?
+description: Learn how to create and apply custom rules to shape tracing data.
 ---
-
-# What if I don't want to send all the tracing data to Sumo Logic?
 
 :::note
 Most of configuration rules described below are based on whole trace inspection (such as end-to-end trace duration) and the decision of whether to send a trace or not, is also based on all or none spans for the trace. Therefore it is important that a single collector working with that capability enabled, **always sees a complete trace**.

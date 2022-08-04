@@ -1,8 +1,9 @@
 ---
 slug: /cse/administration
+title: Administration
+sidebar_label: Administration
+description: tk
 ---
-
-# Administration
 
 import DocCardList from '@theme/DocCardList';
 import {useCurrentSidebarCategory} from '@docusaurus/theme-common';

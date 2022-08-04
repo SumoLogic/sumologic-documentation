@@ -1,8 +1,9 @@
 ---
 id: cse-apis
+title: CSE APIs
+sidebar_label: CSE APIs
+description: tk
 ---
-
-# CSE APIs
 
 This page has information about accessing the CSE APIs and API documentation. The process depends on your CSE environment. 
 
@@ -24,7 +25,7 @@ To view API documentation, go to the `/docs/sec` path at your API endpoint. For 
 The APIs themselves start with `/api/sec/v1/`
 
 For example:  
-  
+
 `https://api.us2.sumologic.com/api/sec/v1/custom-insights`
 
 API requests must be authenticated. For authentication options and information about rate limiting, see API Authentication. 

@@ -1,8 +1,9 @@
 ---
 id: set-up-traces-collection-for-kubernetes-environments
+title: Set up traces collection for Kubernetes environments
+sidebar_label: Set up traces collection for Kubernetes environments
+description: After installing or upgrading your Kubernetes Sumo Collector, you will be able to send your traces directly to its endpoint using Jaeger, Zipkin, and OpenTelemetry formats. 
 ---
-
-# Set up traces collection for Kubernetes environments
 
 After installing or upgrading your Kubernetes Sumo Collector, you will be able to send your traces directly to its endpoint using Jaeger, Zipkin, and OpenTelemetry formats.
 
@@ -271,14 +272,14 @@ After enabling and installing tracing one should have additional Kubernetes reso
 * There is a running pod `<CHART_NAME>-sumologic-otelcol-<hash>`.
 * Kubernetes metadata tags (pod, replicaset, etc.) should be applied to all spans. If there are no metadata tags and intermediate agent or collector is being used, make sure it has passthrough mode set (see above). If metadata tags are describing pod named “otel-collector-...” - then most likely there’s an intermediate pod acting as an agent or collector with no passthrough mode set.
 * The OpenTelemetry Collector gateway can export metrics, which include information such as the number of spans exported. To enable, apply the `otelcol.metrics.enabled=true` flag when installing or upgrading the Collector, for example:  
-      
+
    ```
    helm upgrade collection sumologic/sumologic \
    --namespace sumologic \
    ... \
-   --set otelcol.metrics.enabled=true 
+   --set otelcol.metrics.enabled=true
    ```  
-      
+
    After enabling, several metrics starting with `otelcol_ ` will become available, such as `otelcol_exporter_sent_spans` and `otelcol_receiver_accepted_spans`.  
      
 * **OpenTelemetry Collector can have logging exporter enabled.** This will put on the output contents of spans (with some sampling above a certain rate). To enable, apply the following flags when installing/upgrading the collector (appending logging to the list of exporters):
@@ -288,7 +289,7 @@ helm upgrade collection sumologic/sumologic \
   --namespace sumologic \
   ... \
   --set otelcol.config.exporters.logging.logLevel=debug \
-  --set otelcol.config.service.pipelines.traces.exporters="{zipkin,logging}" 
+  --set otelcol.config.service.pipelines.traces.exporters="{zipkin,logging}"
 ```
 
 Having this enabled, `kubectl logs -n sumologic collection-sumologic-otelcol\<ENTER ACTUAL POD I\>` might

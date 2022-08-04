@@ -1,8 +1,9 @@
 ---
 id: about-sdo
+title: About the Software Development Optimization Solution
+sidebar_label: About SDO
+description: Learn how Software Development Optimization Solution effectively manage and enhance your development and production environments.
 ---
-
-# About the Software Development Optimization Solution
 
 Organizations are automating their software application development lifecycle with a process known as Continuous Integration and Continuous Delivery (CI/CD). The core foundation of CI/CD is automating software development, test, and build processes to increase development velocity and quality without creating extra work for the developers and operations teams.
 

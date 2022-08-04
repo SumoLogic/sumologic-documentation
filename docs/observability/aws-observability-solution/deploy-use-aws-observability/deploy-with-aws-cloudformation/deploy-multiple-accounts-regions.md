@@ -1,8 +1,9 @@
 ---
 id: deploy-multiple-accounts-regions
+title: Deploy to Multiple Accounts and Regions
+sidebar_label: Deploy to Multiple Accounts and Regions
+description: tk
 ---
-
-# Deploy to Multiple Accounts and Regions
 
 This topic has instructions for deploying AWS Observability Solution to multiple AWS accounts and regions  
 using [Stack Sets](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html).
@@ -55,22 +56,22 @@ In case you do not provide a CSV file or if we detect that it does not have the 
 1. Click **Create StackSet**.  
     ![ClodFormation_Stackset 1.png](/img/observability/ClodFormation_Stackset_1.png)
 1. Paste the URL - https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/aws-observability-versions/v2.4.0/sumologic_observability.master.template.yaml in the Amazon S3 URL option and click **Next**.
-    
+
     If you would like to download or inspect this or other versions of this template, please visit the [change log](../aws-observability-change-log.md) page.
 
     ![multi-create-stack.png](/img/observability/multi-create-stack.png)
 
 1. Provide a StackSet Name and supply the values for each of the prompts listed as per instructions in the [Deploy the AWS Observability Solution](/docs/observability/aws-observability-solution/deploy-use-aws-observability) section with the following exception:
     * Leave the field “Alias for AWS Account Identification” blank.  
-        
+
         ![aws-field.png](/img/observability/aws-field.png)
 
     * Provide the S3 Object URL of a CSV file that maps AWS Account IDs to an Account Alias in Section 2 of the template “AWS Account Alias”.  
-        
+
         ![aws-url.png](/img/observability/aws-url.png)
 
     * Answer **No** in Section 3 of the template "Install AWS Observability Apps".   
-        
+
         ![ClodFormation_Stackset 3.png](/img/observability/ClodFormation_Stackset_3.png)
 
     * Click **Next**.
@@ -81,15 +82,15 @@ In case you do not provide a CSV file or if we detect that it does not have the 
 1. Provide a single AWS account number only and select a list of regions in the account where you would like to deploy the AWS CloudFormation template as shown in the screenshot below:
 
     * You will need to select all the regions in the current account where you would like to deploy the template.  
-        
+
         ![ClodFormation_Stackset 5.png](/img/observability/ClodFormation_Stackset_5.png)
 
 1. Increasing the **Maximum concurrent actions** to be more than 1 is not recommended and can cause your stack set deployment to fail. Stack sets should be deployed one at a time, sequentially. Click **Next**.  
-    
+
     ![ClodFormation_Stackset  6.png](/img/observability/ClodFormation_Stackset_6.png)
 
 1. Review the details, select the capabilities and click **Submit**.  
-    
+
     ![ClodFormation_Stackset 7.png](/img/observability/ClodFormation_Stackset_7.png)
 
 1. Once you hit submit, the AWS CloudFormation template will execute in the provided account and regions sequentially.
@@ -101,7 +102,7 @@ In case you do not provide a CSV file or if we detect that it does not have the 
     ![ClodFormation_Stackset 8.png](/img/observability/ClodFormation_Stackset_8.png)
 
 1. In ‘**Set deployment options**’, Enter the account number and regions you want to deploy the stack.  
-    
+
     ![ClodFormation_Stackset 9.png](/img/observability/ClodFormation_Stackset_9.png)
 
 1. Verify the S3 mapping file contains the mapping for the new Account ID.

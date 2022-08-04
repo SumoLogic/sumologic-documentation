@@ -1,8 +1,9 @@
 ---
 id: aws-ec2-metrics
+title: AWS EC2 Metrics
+sidebar_label: AWS EC2 Metrics 
+description: tk
 ---
-
-# AWS EC2 Metrics
 
 [Amazon Elastic Compute Cloud (Amazon EC2)](https://aws.amazon.com/ec2/) is a web service that provides secure, resizable compute capacity in the cloud, enabling you with complete control of your computing resources. The Sumo Logic app for AWS EC2 Metrics collects local host metrics and displays them using predefined search queries and dashboards. App dashboards provide a visual analysis of local host metrics for CPU, disk, memory, network, and TCP.
 
@@ -28,7 +29,7 @@ The JSON parameter is in milliseconds. We recommend 60 seconds (60000 ms) or lon
 
 Collectors running on AWS EC2 instances can optionally collect AWS Metadata such as EC2 tags to make it easier to search for Host Metrics.  Only one AWS Metadata Source for Metrics is required to collect EC2 tags from multiple hosts. For more information, see AWS Metadata Source for Metrics.
 
-### Query sample 
+### Sample Query 
 
 Average CPU Utilization:
 

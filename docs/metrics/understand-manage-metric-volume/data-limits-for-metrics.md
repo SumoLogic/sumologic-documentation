@@ -1,8 +1,9 @@
 ---
 id: data-limits-for-metrics
+title: Data Limits for Metrics
+sidebar_label: Data Limits for Metrics
+description: It is important to understand the volume of metrics that you are ingesting into Sumo Logic.
 ---
-
-# Data Limits for Metrics
 
 This page describes the limits Sumo Logic enforces on the metrics you ingest into Sumo Logic, including data volume limits and metadata-related limits.
 
@@ -23,25 +24,25 @@ The examples in this topic assume a one-minute scan interval, but shorter scan 
 For host metrics, DPM depends on the number of hosts, the number of unique data points, and the scan interval. See Collected Metrics for a list of the specific host metrics that you can collect.
 
 * **Disk metrics.** Approximately 10 metrics are collected for each Source disk on each host.  
-      
+
     Total disk metrics for single host = 10 x number of disks  
-      
+
     Total disk metrics for multiple hosts = 10 x number of disks per host x number of hosts  
-      
+
     **Example:** A host with 8 disks will generate 80 metrics. If you have 3 hosts, each with 8 disks, 10 x 8 x 3 = 240 individual metrics will be generated.
 
 * **Network metrics.** Network metrics are calculated per interface on each host, and approximately 4 metrics per interface are collected.  
-      
+
     Total network metrics for single host = 4 x number of interfaces  
-      
+
     Total network metrics for multiple hosts = 4 x number of interfaces per host x number of hosts  
-      
+
     **Example:** A host with 6 network interfaces will generate 24 metrics. If you have 5 identical hosts, 4 x 6 x 5 = 120 metrics will be generated.
 
 * **CPU, memory, and TCP metrics.** Approximately 10 CPU, memory, and TCP metrics are collected for each host.  
-      
+
     Total metrics for single host = 10  
-      
+
     Total metrics for single host = 10 x number of hosts
 
 ### Limits for CloudWatch sources
@@ -91,7 +92,7 @@ The name (key) of a metadata item, whether a dimension or metatag, is limited to
 
 #### Tag value length 
 
-The value of a metadata item, whether it is a dimension, metatag, or metadata required or added by Sumo Logic, is limited to 400 characters with one exception: the  `_rawName` tag in Graphite metrics is limited to 1000 characters. Metadata whose value exceeds this limit will be removed from the metric. If the removed tag is `_rawName `(in Graphite metrics) or `metric`, the whole metric will be ignored. 
+The value of a metadata item, whether it is a dimension, metatag, or metadata required or added by Sumo Logic, is limited to 400 characters with one exception: the  `_rawName` tag in Graphite metrics is limited to 1000 characters. Metadata whose value exceeds this limit will be removed from the metric. If the removed tag is `_rawName `(in Graphite metrics) or `metric`, the whole metric will be ignored.
 
 #### Audit logging 
 

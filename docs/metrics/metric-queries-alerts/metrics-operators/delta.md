@@ -1,8 +1,9 @@
 ---
 id: delta
+title: delta
+sidebar_label: delta
+description: The delta operator computes the backward difference at each data point in the time series to determine how much the metric has changed from its last value in the series.
 ---
-
-# delta
 
 Computes the backward difference at each data point in the time series to determine how much the metric has changed from its last value in the series.
 

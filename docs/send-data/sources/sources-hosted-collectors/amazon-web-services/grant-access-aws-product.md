@@ -4,7 +4,7 @@ id: grant-access-aws-product
 
 # Grant Access to an AWS Product
 
-Sumo Logic requires access to the services in your AWS account(s) in order to collect data. This page has instructions for granting a Sumo Logic source access to AWS services. 
+Sumo Logic requires access to the services in your AWS account(s) in order to collect data. This section has instructions for granting a Sumo Logic source access to AWS services. 
 
 You can follow the instructions on this page to grant Sumo Logic access to the following AWS services:
 

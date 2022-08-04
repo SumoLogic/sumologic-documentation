@@ -1,8 +1,9 @@
 ---
 id: auth
+title: Auth0
+sidebar_label: Auth0
+description: tk
 ---
-
-# Auth0
 
 ## Step 1: Configure collection
 

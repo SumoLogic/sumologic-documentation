@@ -1,5 +1,6 @@
 ---
 id: box-plot-charts
+description: Box Plot Chart graphically depicts groups of data using quartiles, which are the values that divide a list of numbers into quarters.
 ---
 
 # Box Plot Charts
@@ -37,7 +38,7 @@ If you query contains more than one of a min, lower quartile, median quartile, u
 error | 5 as a | 6 as b | 7 as c | 8 as d | 9 as e | min(a), min (b), pct(b,25), pct(c,50), pct(d,75), max(e)
 ```
 
-The [Sumo Logic App for Amazon VPC Flow Logs] (../../../07Sumo-Logic-Apps/01Amazon_and_AWS/Amazon_VPC_Flow_Logs.md "Amazon VPC Flow Logs App") uses a query that creates a Box Plot Chart. It is:
+The [Sumo Logic App for Amazon VPC Flow Logs] (../../../07Sumo-Logic-Apps/amazon-aws/Amazon_VPC_Flow_Logs.md "Amazon VPC Flow Logs App") uses a query that creates a Box Plot Chart. It is:
 
 ```sql
 _sourceCategory=vpc   

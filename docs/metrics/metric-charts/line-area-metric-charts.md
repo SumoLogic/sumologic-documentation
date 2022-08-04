@@ -1,10 +1,11 @@
 ---
 id: line-area-metric-charts
+title: Create and Tailor Line and Area Metrics Charts
+sidebar_label: Create and Tailor Line and Area Metrics Charts
+description: How to tailor line charts and area charts for metric queries.
 ---
 
-# Create and Tailor Line and Area Metric Charts
-
-This page has instructions for configuring the look and feel of line and area charts. 
+This section has instructions for configuring the look and feel of line and area charts. 
 
 :::note
 This topic has information about Sumo Logic's Classic metrics UI. For information about the Metric Explorer UI, which replaces the Classic metrics UI, see [Metrics Explorer](../metric-queries-alerts/metrics-explorer.md).
@@ -114,7 +115,7 @@ The first query displays the average of user CPU activity over a set of source h
 
 `metric=CPU_User _sourceHost=*cq*split* | avg` 
 
-The second query averages the same information per source host. 
+The second query averages the same information per source host.
 
 `metric=CPU_User _sourceHost=*cq*split* | avg by _sourceHost`
 
@@ -197,7 +198,7 @@ To set the fill missing method, open the Query tab and click the gear icon to th
 You can specify the color palette for your visualization at the time series, query, and chart level. Settings at the query level overwrite settings at the chart level, and settings at the time series level overwrite settings at the query and chart levels.
 
 Open the **Legend** tab and click the gear icon to the left of a time series. Select a palette from the Color Palette menu. To specify a hex value, scroll down and click **Custom Color**, and enter a value (example: #29A1E6).  
-  
+
 ## Name your visualization
 
 To assign a name to a visualization, hover over the tab, click the dotted icon, and select **Rename**. Enter a new name and click **Rename**.

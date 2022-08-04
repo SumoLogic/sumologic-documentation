@@ -1,8 +1,9 @@
 ---
 slug: /metrics/metric-rules-editor
+title: Metric Rules Editor
+sidebar_label: Metric Rules Editor
+description: Sumo's metric rules editor  an interface you can use to to tag metrics with data derived from the metric identifier.
 ---
-
-# Metric Rules Editor
 
 This guide describes Sumo's metric rules editor, an interface you can use to tag metrics with data derived from the metric identifier. Then, you can use those tags in metric queries.
 

@@ -1,8 +1,9 @@
 ---
 id: quantize
+title: quantize
+sidebar_label: quantize
+description: The quantize operator controls how Sumo quantizes metric at aggregation time.
 ---
-
-# quantize
 
 You can use the `quantize` operator to control the Sumo’s quantization behavior, which is described in detail in [Metric Quantization](../../introduction-metrics/metric-quantization.md).
 You can specify:
@@ -24,7 +25,7 @@ where:
 
 * `INTERVAL` is the duration over which you want to quantize the metrics, in seconds (`s`) , minutes (`m`), hours (`h`), or days (`d`).
 * `ROLLUP` is  `avg, min, max, sum`, or `count`.
-* `drop last` causes the last time bucket to be dropped, if the end of that bucket is after the end of the query time range. 
+* `drop last` causes the last time bucket to be dropped, if the end of that bucket is after the end of the query time range.
 
 :::note
 In the Metrics Explorer, you must [switch to Advanced Mode](../metrics-explorer.md) to enter the `drop last` option.
@@ -45,7 +46,7 @@ _sourceCategory=hostmetrics | quantize to 5m
 The `quantize` clause in this metric query sets the time bucket size to 10 minutes, and specifies the `sum` rollup type. Sumo will sum the metric values in each 10 minute time bucket and return that value.
 
 ```sql
-metric=CPU_User cluster=kafka | quantize to 10m using sum 
+metric=CPU_User cluster=kafka | quantize to 10m using sum
 ```
 
 ### Set time bucket size, rollup type, and drop last 

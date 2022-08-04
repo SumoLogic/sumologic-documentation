@@ -1,9 +1,9 @@
 ---
 slug: /apm/rum
 id: rum-index
+title: Real User Monitoring
+description: Real User Monitoring (RUM) gives you the ability to understand how users interact with the digital interfaces of your business and if their experience is satisfactory or not.
 ---
-
-# Real User Monitoring
 
 Real User Monitoring (RUM) gives you the ability to understand how users interact with the digital interfaces of your business and if their experience is satisfactory or not. This open-source powered and flexible capability brings you full visibility into what’s happening in your user's browser while interacting with your web applications.
 
@@ -28,7 +28,7 @@ Learn more with this [Real User Monitoring micro lesson](https://www.youtube.com
         className="video-container"
         display="initial"
         position="relative"
-        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
         />
 
@@ -48,7 +48,7 @@ To configure a RUM HTTP Traces Source:
 1. Select **RUM** **HTTP Traces**. 
 
     ![RUM HTTP traces source icon.png](/img/rum/rum-icon.png)  
-    
+
     Complete source and advanced options. A list of FAQs on the page provides help for these options.
 
 1.  Enter the following RUM HTTP Traces information:
@@ -68,7 +68,7 @@ To configure a RUM HTTP Traces Source:
    * **Probabilistic sampling rate.** (Optional) Add a Proba**bilistic sampling rate** for heavy traffic sites in a decimal value based on percentage, for example, 10% would be entered as `0.1`.
    * **Ignore urls.** (Optional) For **Ignore urls**, add a list of URLs not to collect trace data from, supports regex, for example: `/^https://www.tracker.com/.*/, /^https://api.mydomain.com/log/.*/`
    * **Custom Tags.** (Optional) Click **+Add** and enter a key and value for each **Custom Tags** to show in spans from instrumented browsers. For example, click **+Add** and enter a key `deployment.environment` with a value of production. This information is saved in the script for `name_of_your_web_service`.
-   * **Propagate Trace Header Cors Urls.** (Recommended) For **Propagate Trace Header Cors Urls**, add a list of URLs or URL patterns passing tracing context to construct traces end-to-end, for example: 
+   * **Propagate Trace Header Cors Urls.** (Recommended) For **Propagate Trace Header Cors Urls**, add a list of URLs or URL patterns passing tracing context to construct traces end-to-end, for example:
 
         `/^https://api.mydomain.com/apiv3/.*/`
         `/^https://www.3rdparty.com/.*/.`
@@ -76,7 +76,7 @@ To configure a RUM HTTP Traces Source:
         This information is saved in the script for `list_of_urls_to_receive_trace_context`.
 
         :::note
-        Sumo Logic cannot perform configuration validation of services of other origins. 
+        Sumo Logic cannot perform configuration validation of services of other origins.
 
         This list is empty by default, which means trace context propagation, allowing creation of end to and front end to backend traces for cross-origin requests is not enabled because of browser CORS security restrictions. To connect your front-end and back-end traces, make sure your environment supports W3C Trace Context HTTP headers.
 
@@ -84,12 +84,12 @@ To configure a RUM HTTP Traces Source:
         :::
 
         To propagate tracing context to create front-end to back-end traces, set domain(s) to propagate W3C tracing context to.  You also must configure your servers/APIs to accept and return following CORS headers in its response:
-        
+
         `Access-Control-Allow-Headers: traceparent, tracestate`
-        
+
         Sumo Logic cannot perform any validation correct configuration of services of other origins, so please be careful when configuring this. Valid cross-origin resources must include the prefix `http://` or `https://` and the domain name. The port number is not required unless it differs from the default for HTTP (port 80) or HTTPS (port 443).
     * **Geolocation recognition.** Select a **Geolocation recognition** option to automatically recognize geographical locations of your end clients from:
-      
+
       * The country down to state (recommended for global websites)
       * A single country down to city level (recommended for local, country specific websites)
 
@@ -100,7 +100,7 @@ To configure a RUM HTTP Traces Source:
     ![RUM-HTTP-Traces-Script.png](/img/rum/RUM-HTTP-Traces-Script.png)
 
 The script includes a RUM HTTP Traces Source URL for **collectionSourceUrl** in the generated script. This is saved for the script as `sumo_logic_http_traces_source_url`. Your user's browser should be allowed to POST data to this URL.  
-  
+
 This can be also replaced with an internal OpenTelemetry collector if you wish to redirect browser traffic over it. In this case, replace this URL with the OpenTelemetry collector OTLP/HTTP receiver endpoint as described in [Getting Started with Transaction Tracing](/docs/apm/traces/get-started-transaction-tracing). In this case, the OpenTelemetry collector exporter will send data to the RUM HTTP Traces Source URL.
 
 ### Use the Script
@@ -175,13 +175,13 @@ You can load the script asynchronously using the script below but some functiona
       ],
     });
   });
-</script> 
+</script>
 ```
 
 </TabItem>
 <TabItem value="npm">
 
-	
+
 The other option is to bundle this library inside your project and initialize it. Inside your project directory execute npm install `@sumologic/opentelemetry-rum`.
 
 RUM needs to be initialized preferably before other functionalities in your code:
@@ -221,19 +221,19 @@ The following table has details on the metrics collected from JavaScript. These 
 
 | Order | Name | Calculation |
 |--|--|--|
-| 1 | browser_time_to_dns_resolution_end | domainLookupEnd - span start time (fetch start) | 
+| 1 | browser_time_to_dns_resolution_end | domainLookupEnd - span start time (fetch start) |
 | 2 | browser_time_to_ssl_end | if secureConnectionStart > 0: connectionEnd - span start time (fetch start)
-else NaN | 
-| 3 | browser_time_to_tcp_established | if secureConnectionStart > 0: secureConnectionStart - span start time (fetch start) | 
-else connectionEnd - span start time (fetch start) | 
-| 4 | browser_time_to_request_end | responseStart - span start time (fetch start) | 
-| 5 | browser_time_to_response_end | responseEnd - span start time (fetch start) | 
-| 6 | browser_time_to_interactive | domInteractive - span start time (fetch start) | 
-| 7.1 | browser_time_to_fp | firstPaint - span start time (fetch start) | 
-| 7.2 | browser_time_to_fcp | firstContentfulPaint - span start time (fetch start) | 
-| 7.3 | browser_time_to_lcp | largestContentfulPaint - span start time (fetch start) | 
-| 8 | browser_time_to_processing_end | domComplete - span start time (fetch start) | 
-| 9 | browser_time_to_page_load_end | loadEventEnd - span start time (fetch start) | 
+else NaN |
+| 3 | browser_time_to_tcp_established | if secureConnectionStart > 0: secureConnectionStart - span start time (fetch start) |
+else connectionEnd - span start time (fetch start) |
+| 4 | browser_time_to_request_end | responseStart - span start time (fetch start) |
+| 5 | browser_time_to_response_end | responseEnd - span start time (fetch start) |
+| 6 | browser_time_to_interactive | domInteractive - span start time (fetch start) |
+| 7.1 | browser_time_to_fp | firstPaint - span start time (fetch start) |
+| 7.2 | browser_time_to_fcp | firstContentfulPaint - span start time (fetch start) |
+| 7.3 | browser_time_to_lcp | largestContentfulPaint - span start time (fetch start) |
+| 8 | browser_time_to_processing_end | domComplete - span start time (fetch start) |
+| 9 | browser_time_to_page_load_end | loadEventEnd - span start time (fetch start) |
 
 :::tip
 See W3C [navigation timing](https://www.w3.org/TR/navigation-timing/) for details on how an interface for web applications defines its access timing information concerning navigation and other elements.

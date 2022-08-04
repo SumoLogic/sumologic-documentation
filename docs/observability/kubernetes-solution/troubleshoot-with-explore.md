@@ -1,8 +1,9 @@
 ---
 id: troubleshoot-with-explore
+title: Troubleshoot with Explore
+sidebar_label: Troubleshooting
+description: Explore navigation allows you to quickly locate the object in a physical stack that needs to be debugged.
 ---
-
-# Troubleshoot with Explore
 
 Explore navigation allows you to quickly locate the object in a physical stack that needs to be debugged. This page walks you through a high-level troubleshooting scenario to illustrate the possibilities.
 
@@ -13,7 +14,7 @@ Explore navigation allows you to quickly locate the object in a physical stack t
         className="video-container"
         display="initial"
         position="relative"
-        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
         />
 

@@ -1,10 +1,10 @@
 ---
 id: topk
+title: topk
+sidebar_label: topk
+description: The topk operator applies a specified aggregation function to the time series that match the query selector, and returns the n time series that have the highest evaluated value over the query time range.
 ---
 
-# topk
-
-  
 The `topk` operator applies a specified aggregation function to the time series that match the query selector, and returns the *n* time series that have the highest evaluated value over the query time range.  
 
 ## topk syntax

@@ -1,10 +1,12 @@
 ---
 id: zscaler-nss
+title: ZScaler NSS
+sidebar_label: ZScaler NSS
+description: tk
 ---
 
-# ZScaler NSS
 
-This page has instructions for collecting ZScaler NSS log messages and sending them to Sumo Logic to be ingested by CSE.
+This section has instructions for collecting ZScaler NSS log messages and sending them to Sumo Logic to be ingested by CSE.
 
 ## Step 1: Configure collection
 
@@ -27,7 +29,7 @@ In this step, you configure a Syslog Source to collect ZScaler NSS log messages.
 1. **Fields**. 
     1. If you are planning that all the sources you add to this collector will forward log messages to CSE, click the **+Add Field** link, and add a field whose name is `_siemForward` and value is *true*. This will cause the collector to forward all of the logs collected by all of the sources on the collector to CSE.
     1. If you are planning that all sources you add to this collector will use the same log parser (if they are the same type of log), click the **+Add Field** link, and add a field whose name is `_parser` with the value */Parsers/System/Zscaler/Zscaler Nanolog Streaming Service/Zscaler Nanolog Streaming Service-LEEF*. This will cause all sources on the collector to use the specified parser.
-        
+
         :::note
         It’s also possible to configure individual sources to forward to CSE, as described in the following section.
         :::

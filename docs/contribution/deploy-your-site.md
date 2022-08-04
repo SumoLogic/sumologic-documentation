@@ -1,8 +1,9 @@
 ---
 id: build-deploy
+title: Build and Deploy on Local
+sidebar_label: Build and Deploy on Local
+description: Build and deploy a local instance of the Sumo Logic Docusaurus site.
 ---
-
-# Build and Deploy on Local
 
 Docusaurus is a **static-site-generator**. To preview your work, make sure to run the following commands to install and build. We use Yarn for all installs and builds. Never use NPM commands for installing or updating packages.
 
@@ -20,7 +21,7 @@ You need the following at a minimum installed on your machine to run builds:
 The site includes translations into other languages. To build on your local:
 
 1. Clone the repo using Git or tools like GitHub Desktop.
-1. In a terminal, change to the cloned repo folder. Run the install command: `yarn install` 
+1. In a terminal, change to the cloned repo folder. Run the install command: `yarn install`
 1. To build locally and test links, use build: `yarn build`
 1. To serve and review, use one of the following:
 

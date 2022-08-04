@@ -1,8 +1,9 @@
 ---
 id: monitoring-observability-solution
+title: Monitoring with the Observability Solution
+sidebar_label: Monitoring
+description: Sumo Logic provides a suite of tools to make discovering issues faster.
 ---
-
-# Monitoring with the Observability Solution
 
 After you have set up [collection](set-up-collection-observability.md), you can start monitoring your application with the Observability Solution.
 
@@ -35,5 +36,5 @@ Compared to apps, solutions offer more supporting content plus a high-level view
 
 If you and your team are using AWS services directly, you can leverage [AWS Observability](https://www.sumologic.com/lp/aws-observability/) for over 40 dashboards that monitor infrastructure on AWS in a comprehensive and intuitive manner across AWS accounts, regions, and resource types down to individual entities.
 
-If you are using Kubernetes to orchestrate your application, you can leverage [Kubernetes Observability](kubernetes-solution/explore-visual-kubernetes-hierarchy.md) with views for every major entity in the Kubernetes environment, arranged to help you slice and dice along the dimensions that matter.
+If you are using Kubernetes to orchestrate your application, you can leverage [Kubernetes Observability](/docs/observability/kubernetes-solution/monitoring) with views for every major entity in the Kubernetes environment, arranged to help you slice and dice along the dimensions that matter.
  

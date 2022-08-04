@@ -1,8 +1,9 @@
 ---
 id: spans
+title: Analyze data on Span level
+sidebar_label: Analyze data on Span level
+description: Learn how to use the Spans page to explore your span data.
 ---
-
-# Analyze data on Span level
 
 ## Availability
 
@@ -149,7 +150,7 @@ To add your aggregated span data to a Dashboard:
 
 To further enhance your query, you can use the [Search Query Language](search-query-language-support-for-traces.md) for more advanced use cases by opening a Search of your spans. Click the
 three vertical-dots icon on the top right of the Spans page and select **Open in Search**.  
-  
+
 ![span-open-in-search.png](/img/traces/span-open-in-search.png)
 
 ### Examples

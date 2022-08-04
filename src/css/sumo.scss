@@ -87,7 +87,7 @@
   --ifm-code-font-size: .85rem;
   --ifm-font-family-base: "Lab Grotesque",sans-serif;
   --ifm-font-family-headings: "Lab Grotesque", "Segoe UI";
-  
+
 }
 
 .navbar__item {
@@ -120,7 +120,7 @@ html[data-theme='dark'] {
   --docsearch-searchbox-focus-background: #ffffff20 !important;
   --docsearch-searchbox-shadow: #ffffff20 !important;
   .button--secondary {
-    --ifm-color-emphasis-200: rgba(53, 120, 229, .25); 
+    --ifm-color-emphasis-200: rgba(53, 120, 229, .25);
   }
   g {
     fill: var(--ifm-color-primary);
@@ -138,7 +138,7 @@ html[data-theme='dark'] {
     h2 {
       font-size: 1.1rem !important;
     }
-  } 
+  }
   article .card:hover {
     border-color: var(--ifm-pagination-nav-color-hover);
   }
@@ -147,7 +147,7 @@ html[data-theme='dark'] {
   }
   pre {
     background-color: rgba(84, 84, 84, 0.4) !important;
-    
+
   }
   .markdown::after {
       display: none !important;
@@ -181,7 +181,7 @@ html[data-theme='light'] {
   g {
     fill: var(--ifm-color-primary);
   }
-  .navbar { 
+  .navbar {
     border-bottom: 1px solid var(--ifm-toc-border-color);
   }
   .tabs__item--active {
@@ -205,7 +205,7 @@ html[data-theme='light'] {
   }
   pre {
     background-color: rgba(242 244 245) !important;
-    
+
   }
   .codeBlockTitle {
     background-color: rgba(0, 139, 178, 0.4) !important;
@@ -253,7 +253,7 @@ html[data-theme='light'] {
   height: 32px !important;
 }
 
-.markdown { 
+.markdown {
   h1 {
     font-size: 2rem !important;
   }
@@ -318,7 +318,7 @@ html[data-theme='dark'] .docusaurus-highlight-code-line {
   background-color: --ifm-toc-border-color;
 }
 
-// TOC 
+// TOC
 
 html[data-theme='dark'] .table-of-contents__left-border {
   border-left: 1px solid var(--ifm-toc-border-color);
@@ -450,7 +450,7 @@ html[data-theme='dark'] .navbar-item-github:before {
 }
 
 // Responsive
-@media screen and (max-width: 996px) { 
+@media screen and (max-width: 996px) {
 
   .navbar-grid-menu, .navbar-grid-menu:before {
     content: "Community";
@@ -527,7 +527,7 @@ html[data-theme='dark'] .alert--secondary {
   --ifm-alert-color: #ffffff;
   .admonition-icon {
     --ifm-alert-foreground-color: #20c997 !important;
-  } 
+  }
   a {
     //font-weight: bold;
     color: rgb(58, 204, 180);
@@ -547,7 +547,7 @@ html[data-theme='light'] .alert--secondary {
   --ifm-alert-foreground-color: #1d4238;
   .admonition-icon {
     --ifm-alert-foreground-color: #137c5d !important;
-  } 
+  }
   a {
     //font-weight: bold;
     color: rgb(0, 196, 163);
@@ -559,7 +559,7 @@ html[data-theme='light'] .alert--secondary {
 }
 
 // SUMO
-html[data-theme='dark'] .admonition-sumo {
+html[data-theme='dark'] .theme-admonition-sumo {
   background-color: rgba(0, 0, 153, 0.1);
   --ifm-alert-border-color: #000099;
   border-left: 6px solid #000099;
@@ -567,19 +567,19 @@ html[data-theme='dark'] .admonition-sumo {
   .admonition-icon {
     background-color: #000099;
     padding: 5px 5px 0px 5px;
-  } 
+  }
   padding: var(--ifm-alert-padding-vertical) var(--ifm-alert-padding-horizontal);
   a {
    // font-weight: bold;
     color: #2f5fff;
     text-decoration: none;
-  } 
+  }
   a:hover {
     text-decoration: underline;
   }
 }
 
-html[data-theme='light'] .admonition-sumo {
+html[data-theme='light'] .theme-admonition-sumo {
   background-color: rgba(0, 0, 153, 0.05);
   color: #000046;
   --ifm-alert-color: #000099;
@@ -590,7 +590,7 @@ html[data-theme='light'] .admonition-sumo {
   .admonition-icon {
     background-color: #001799;
     padding: 5px 5px 0px 5px;
-  } 
+  }
   padding: var(--ifm-alert-padding-vertical) var(--ifm-alert-padding-horizontal);
   a {
     //font-weight: bold;
@@ -610,12 +610,12 @@ html[data-theme='light'] .alert--info {
   --ifm-alert-color: var(--ifm-font-color-base);
   .admonition-icon {
     --ra-admonition-icon-color: #008bb2 !important;
-  } 
+  }
   a {
     //font-weight: bold;
     color: #008bb2;
     text-decoration: none;
-  }  
+  }
   a:hover {
     text-decoration: underline;
   }
@@ -625,15 +625,15 @@ html[data-theme='dark'] .alert--info {
   --ifm-alert-background-color: rgba(0, 139, 178, 0.05);
   --ifm-alert-border-color: #008bb2;
   border-left: 6px solid #008bb2;
-  --ifm-alert-color: #ffffff; 
+  --ifm-alert-color: #ffffff;
   .admonition-icon {
     --ifm-alert-foreground-color: #008bb2 !important;
-  } 
+  }
   a {
     //font-weight: bold;
     color: #008bb2;
     text-decoration: none;
-  }  
+  }
   a:hover {
     text-decoration: underline;
   }
@@ -652,7 +652,7 @@ html[data-theme='light'] .alert--success {
     //font-weight: bold;
     color: #2abb2a;
     text-decoration: none;
-  }  
+  }
   a:hover {
     text-decoration: underline;
   }
@@ -662,15 +662,15 @@ html[data-theme='dark'] .alert--success {
   --ifm-alert-background-color: rgba(63, 146, 63, 0.05);
   --ifm-alert-border-color: #3f923f;
   border-left: 6px solid #3f923f;
-  --ifm-alert-color: #ffffff; 
+  --ifm-alert-color: #ffffff;
   .admonition-icon {
     --ifm-alert-foreground-color: #3f923f !important;
-  } 
+  }
   a {
     //font-weight: bold;
     color: #2abb2a;
     text-decoration: none;
-  } 
+  }
   a:hover {
     text-decoration: underline;
   }
@@ -690,7 +690,7 @@ html[data-theme='light'] .alert--warning {
     //font-weight: bold;
     color: #ff8d03;
     text-decoration: none;
-  }  
+  }
   a:hover {
     text-decoration: underline;
   }
@@ -709,7 +709,7 @@ html[data-theme='dark'] .alert--warning {
     //font-weight: bold;
     color: #ff8d03;
     text-decoration: none;
-  }  
+  }
   a:hover {
     text-decoration: underline;
   }
@@ -723,12 +723,12 @@ html[data-theme='light'] .alert--danger {
   --ifm-alert-color: var(--ifm-font-color-base);
   .admonition-icon {
     --ra-admonition-icon-color: #df4b30 !important;
-  } 
+  }
   a {
     //font-weight: bold;
     color: #df4b30;
     text-decoration: none;
-  }  
+  }
   a:hover {
     text-decoration: underline;
   }
@@ -746,13 +746,13 @@ html[data-theme='dark'] .alert--danger {
     //font-weight: bold;
     color: #df4b30;
     text-decoration: none;
-  }   
+  }
   a:hover {
     text-decoration: underline;
   }
 }
 
-// Mermaid Styles 
+// Mermaid Styles
 html[data-theme='light'] .arrowheadPath {
   fill: #333333 !important;
 }
@@ -800,6 +800,129 @@ html[data-theme='dark'] .node ellipse{
 html[data-theme='dark'] .node polygon {
   stroke: #2196F3 !important;
 }
+
+
+
+// Hub pages
+
+.box-wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-auto-rows: minmax(150px, 2fr);
+  grid-gap: 30px;
+}
+
+.box1 {
+  grid-column: 1;
+  grid-row: 1;
+  padding: 8px;
+  font-size: .9rem;
+}
+
+.box1 h2,
+.box2 h2,
+.box3 h2,
+.box4 h2
+.box5 h2
+.box6 h2 {
+  margin-top: 24px;
+}
+
+.box1 img,
+.box2 img,
+.box3 img,
+.box4 img
+.box5 img
+.box6 img {
+  margin-top: 16px;
+}
+
+.box2 {
+  grid-column: 2;
+  grid-row: 1;
+  padding: 8px;
+  font-size: .9rem;
+}
+
+.box3 {
+  grid-column: 1;
+  grid-row: 2;
+  padding: 8px;
+  font-size: .9rem;
+}
+
+.box4 {
+  grid-column: 2;
+  grid-row: 2;
+  padding: 8px;
+  font-size: .9rem;
+}
+
+.box5 {
+  grid-column: 1;
+  grid-row: 3;
+  padding: 8px;
+  font-size: .9rem;
+}
+
+.box6 {
+  grid-column: 2;
+  grid-row: 3;
+  padding: 8px;
+  font-size: .9rem;
+}
+
+.boxwidetop {
+  margin-bottom: 30px;
+  padding: 8px;
+}
+
+.boxwidebottom {
+  margin-top: 30px;
+  padding: 8px;
+}
+
+.card {
+  transition: 0.3s;
+  border-radius: 4px;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+html[data-theme='dark'] .card:hover {
+  border-top: 4px solid var(--ds-blue-700);
+  transition: none;
+}
+
+.container {
+  padding: 2px 16px;
+  margin: 0 auto;
+  max-width: var(--ifm-container-width);
+}
+
+.container-landpage, .container-reverse {
+  padding: 1rem;
+  margin: 5%;
+  display: flex;
+  gap: 5%;
+}
+
+.column-left p,
+.column-right p {
+  text-align: left;
+}
+
+.column-left {
+  width: 48.5%;
+}
+
+.column-right {
+  width: 48.5%;
+  margin-bottom: 1rem;
+}
+
 
 // *******  MEGA AND MORE *********
 
@@ -961,7 +1084,7 @@ html[data-theme='dark'] .node polygon {
 //LANDING
 
 .hero--primary {
-  background-image: 
+  background-image:
     linear-gradient(rgba(0,0,0,0.1),
     rgba(0,0,0,0.00)),
     url("../../static/img/landing/landing-hero.jpg") !important;

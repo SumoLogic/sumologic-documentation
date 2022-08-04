@@ -94,7 +94,7 @@ In Sumo, open a Live Tail tab and run a search to verify Sumo is receiving event
   
 `_sourceCategory="azure/ad"`  
   
-For more information about using Live Tail, see [Live Tail](https://help.sumologic.com/05Search/Live-Tail). 
+For more information about using Live Tail, see [Live Tail](/docs/search/index.md/Live-Tail). 
 
 ### Verify Azure Function is not getting Failed
 

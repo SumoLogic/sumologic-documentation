@@ -1,8 +1,9 @@
 ---
 id: search-query-language-support-for-traces
+title: Search Query Language support for Traces
+sidebar_label: Search Query Language support for Traces
+description: Use our extensive Search Query Language to gain valuable insight into your traces.
 ---
-
-# Search Query Language support for Traces
 
 You can use the Search Query Language in a log search to query raw spans from tracing data for the same period as the default partition.
 

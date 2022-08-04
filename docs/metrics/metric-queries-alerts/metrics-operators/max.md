@@ -1,8 +1,9 @@
 ---
 id: max
+title: max
+sidebar_label: max
+description: The max operator calculates the maximum value of the time series that match the query.
 ---
-
-# max
 
 Calculates the maximum value of the time series that match the query. If grouping is specified, it calculates the maximum for each group.
 

@@ -1,10 +1,11 @@
 ---
 id: nginx-access-logs
+title: Nginx Access Logs
+sidebar_label: Nginx Access Logs
+description: tk
 ---
 
-# Nginx Access Logs
-
-This page has instructions for collecting Nginx Access Log Syslog messages and sending them to Sumo Logic to be ingested by CSE.
+This section has instructions for collecting Nginx Access Log Syslog messages and sending them to Sumo Logic to be ingested by CSE.
 
 ## Step 1: Configure collection
 
@@ -30,12 +31,12 @@ If you’re going to use an existing collector, jump to [Configure a Syslog Sour
 1. **Category**. Enter a string to tag the output collected from the source. The string that you supply will be saved in a metadata field called `_sourceCategory`. 
 1. **Fields**. 
     * If you are planning that all the sources you add to this collector will forward log messages to CSE, click the **+Add Field** link, and add a field whose name is `_siemForward` and value is *true*. This will cause the collector to forward all of the logs collected by all of the sources on the collector to CSE.
-    * If you are planning that all sources you add to this collector will use the same log parser (if they are the same type of log), click the **+Add Field** link, and add a field whose name is `_parser` with the value */Parsers/System/Nginx/Nginx Syslog *. This will cause all sources on the collector to use the specified parser. 
-    
+    * If you are planning that all sources you add to this collector will use the same log parser (if they are the same type of log), click the **+Add Field** link, and add a field whose name is `_parser` with the value */Parsers/System/Nginx/Nginx Syslog *. This will cause all sources on the collector to use the specified parser.
+
         :::note
         It’s also possible to configure individual sources to forward to CSE, as described in the following section.
         :::
-        
+
 1. Click **Save**.
 
 ### Configure a Syslog Source

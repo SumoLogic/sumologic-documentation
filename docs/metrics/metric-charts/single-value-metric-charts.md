@@ -1,8 +1,9 @@
 ---
 id: single-value-metric-charts
+title: Create and Tailor Single Value Metric Charts
+sidebar_label: Create and Tailor Single Value Metric Charts
+description: Learn how to create and tailor a single value metric chart.
 ---
-
-# Create and Tailor Single Value Metric Charts
 
 :::note
 This topic has information about Sumo Logic's Classic metrics UI. For information about the Metric Explorer UI, which replaces the Classic metrics UI, see [Metrics Explorer](../metric-queries-alerts/metrics-explorer.md).
@@ -38,11 +39,11 @@ A single value metric chart is useful for summarizing a time series in a single 
         ![red-panel.png](/img/metrics/red-panel.png)
 
     1. **Rounding**. By default, Sumo presents a value rounded by thousands. For example.   
-          
+
         1,234 is presented as 1.23k  
         1,234,567 is presented as 1.23M  
         1,234,567,890 is presented as 1.23G  
-          
+
         To turn off rounding, set **Rounding** to None.
 1. **Threshold** (Optional). Use these setting to map value ranges to red, yellow, and green. If you do, the appropriate color will be used in the chart, based on the chart value. For more information, see [Specifying value ranges](#specifying-value-ranges) below.
     * (red) **Ranges from**. Enter the minimum and maximum values that define the range of values that you want to appear in red.

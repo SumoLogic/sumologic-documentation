@@ -1,8 +1,9 @@
 ---
 id: best-practices-local-centralized-data-collection
+title: Best Practices for Local and Centralized Data Collection
+sidebar_label: Best Practices for Local and Centralized Data Collection
+description: When you are setting up your environment with Installed Collectors you must decide how to collect the data you want to send to Sumo Logic. 
 ---
-
-# Best Practices: Local and Centralized Data Collection
 
 Sumo Logic is a highly flexible and scalable solution, and its Installed Collectors can work for any size organization. However, with so much flexibility at your fingertips, what is the best way to design your environment?
 
@@ -20,7 +21,7 @@ Using an [Installed Collector](/docs/send-data/sources/sources-installed-collect
 
 For Windows, using an [Installed Collector](/docs/send-data/sources/sources-installed-collectors) and a [Local Windows Event Log Source](../sources/sources-installed-collectors/local-windows-event-log-source.md) is the most reliable method of collecting data. Depending on your Windows solution, you may also configure a [Local Windows Performance Monitor Log Source](../sources/sources-installed-collectors/local-windows-performance-monitor-log-source.md).
 
-**Customers using the local data collection method usually have the following characteristics:** 
+**Customers using the local data collection method usually have the following characteristics:**
 
 * Have a large number of target hosts.
 * Do not have the resources (computational or personnel) to maintain or build infrastructure for centralized collection.

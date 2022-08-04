@@ -1,10 +1,11 @@
 ---
 id: palo-alto-firewall
+title: Palo Alto Firewall
+sidebar_label: Palo Alto Firewall
+description: tk
 ---
 
-# Palo Alto Firewall
-
-This page has instructions for collecting Palo Alto Firewall log messages and sending them to Sumo Logic to be ingested by CSE. 
+This section has instructions for collecting Palo Alto Firewall log messages and sending them to Sumo Logic to be ingested by CSE.
 
 Sumo Logic CSE supports the default comma separated value (CSV), as well as Common Event Format (CEF) logs from Palo Alto Firewalls running PAN OS 9. This guide provides steps for collecting CSV format logs.
 

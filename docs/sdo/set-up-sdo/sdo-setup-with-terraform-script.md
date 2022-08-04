@@ -1,8 +1,8 @@
 ---
 id: sdo-setup-with-terraform-script
+title: SDO Setup with Terraform Script
+description: Learn how to set up the Software Development Optimization (SDO) Solution using a Terraform script.
 ---
-
-# SDO Setup with Terraform Script
 
 These instructions help you prepare and set up the Software Development Optimization (SDO) Solution using a Terraform script. 
 
@@ -19,7 +19,7 @@ The Terraform script requires a set of parameters to be configured.
 ## Before you begin
 Before setting up the SDO solution, you need to complete the following tasks:
 
-* Create or collect API Keys and credentials for Jira, Github, GitLab, Jenkins, Bitbucket, CircleCI, and Opsgenie with Webhook creation capabilities. 
+* Create or collect API Keys and credentials for Jira, Github, GitLab, Jenkins, Bitbucket, CircleCI, and Opsgenie with Webhook creation capabilities.
 * Get access to Jenkins with Manage Plugins permissions.
 * Make sure you have access to the Sumo logic console. The user account associated with a Sumo Logic role needs the following permissions:
 
@@ -36,25 +36,25 @@ Before setting up the SDO solution, you need to complete the following tasks:
 ### Terraform Script Setup Considerations
 
 The Terraform Script automates the setup of all the necessary resources for collecting Atlassian, GitHub, GitLab, and Pagerduty product logs and displaying the data in Sumo Logic pre-configured intuitive-analytic dashboards.   
-  
+
 Review the following considerations before proceeding with the Terraform template method:
 
 * With the Terraform script, you can easily manage the integration of Sumo Logic with Atlassian products (including Bitbucket, Jira, Jira Service Desk, and Opsgenie), GitHub, GitLab, CircleCI, and Pagerduty. If you would like to bring your own toolset, follow [this page to integrate your tool with the SDO solution](../integrate-tools-with-sdo.md).
 * The Terraform script allows you to quickly get started by installing a copy of the configured applications. After the initial setup, if you need additional copies of the Sumo Logic applications, you can install them from the Sumo Logic App catalog.
 * If you plan to integrate Jenkins with this solution, you need to complete additional configuration. The Terraform script does not configure Jenkins. See the following guides to install and configure the Jenkins Sumo Logic plugin:
 
-  * [Install the Jenkins Plugin] (../../../07Sumo-Logic-Apps/08App_Development/Jenkins/Collect_Logs_and_Metrics_for_Jenkins.md)
-  * [Configure Jenkins Plugin] (../../../07Sumo-Logic-Apps/08App_Development/Jenkins/Collect_Logs_and_Metrics_for_Jenkins.md)
-  * [Optional - Advanced Configuration] (../../../07Sumo-Logic-Apps/08App_Development/Jenkins/Collect_Logs_and_Metrics_for_Jenkins.md)
-  * In [Configure Jenkins Plugin] (../../../07Sumo-Logic-Apps/08App_Development/Jenkins/Collect_Logs_and_Metrics_for_Jenkins.md), a source category is configured which is utilized by the plugin.  Use this source category in the file **sumologic.auto.tfvars file**. The Jenkins source, app, and FERs are installed by Terraform.
+  * [Install the Jenkins Plugin] (../../../07Sumo-Logic-Apps/app-development/Jenkins/Collect_Logs_and_Metrics_for_Jenkins.md)
+  * [Configure Jenkins Plugin] (../../../07Sumo-Logic-Apps/app-development/Jenkins/Collect_Logs_and_Metrics_for_Jenkins.md)
+  * [Optional - Advanced Configuration] (../../../07Sumo-Logic-Apps/app-development/Jenkins/Collect_Logs_and_Metrics_for_Jenkins.md)
+  * In [Configure Jenkins Plugin] (../../../07Sumo-Logic-Apps/app-development/Jenkins/Collect_Logs_and_Metrics_for_Jenkins.md), a source category is configured which is utilized by the plugin.  Use this source category in the file **sumologic.auto.tfvars file**. The Jenkins source, app, and FERs are installed by Terraform.
 
-* This script configures Jira Server WebHooks and creates resources in Sumo Logic. Jira Server Logs collection needs to be configured as explained in Step 1 [here] (../../../07Sumo-Logic-Apps/08App_Development/Jira/Collect_Logs_for_the_Jira_App.md). Configure the log collection and update the variable *jira_server_access_logs_sourcecategory* in **atlassian.auto.tfvars** with the selected source category.
+* This script configures Jira Server WebHooks and creates resources in Sumo Logic. Jira Server Logs collection needs to be configured as explained in Step 1 [here] (../../../07Sumo-Logic-Apps/app-development/Jira/Collect_Logs_for_the_Jira_App.md). Configure the log collection and update the variable *jira_server_access_logs_sourcecategory* in **atlassian.auto.tfvars** with the selected source category.
 * If you plan to integrate CircleCI with the SDO solution, you need to complete additional configuration. The Terraform script does not configure CircleCI. Use the following steps configure the CircleCI Sumo Logic plugin. Once configured, this plugin will send CircleCI Workflow and Job related data to Sumo Logic: * Since the SDO dashboards require ‘environment’, ‘team’, and ‘service’ fields for lighting up panels, you need to send them as [*custom-data*](https://circleci.com/developer/orbs/orb/circleci/sumologic#usage-examples) in the configuration file of the pipeline.
 
-  * Add the [*sumo orb*](https://circleci.com/developer/orbs/orb/circleci/sumologic) in the configuration file of the project to send custom-data elements to Sumo: 
+  * Add the [*sumo orb*](https://circleci.com/developer/orbs/orb/circleci/sumologic) in the configuration file of the project to send custom-data elements to Sumo:
 
-    ![circleci-custom-data.png](/img/sdo/circleci-custom-data.png) 
-    
+    ![circleci-custom-data.png](/img/sdo/circleci-custom-data.png)
+
     See [*this sample*](https://sumologic-app-data.s3.amazonaws.com/SDO/config.yml.zip) CircleCI Configuration file which sends CircleCI data, including custom-data, to Sumo Logic.
 
   * The Terraform script also allows you to only install the CircleCI app from the app catalog. It creates a source with placeholder value for \_sourceCategory from the **sumologic.auto.tfvars** file.
@@ -121,7 +121,7 @@ The following Terraform providers with mentioned versions are automatically inst
 
 1. Clone the [GitHub repository](https://github.com/SumoLogic/sumologic-solution-templates): `$ git clone https://github.com/SumoLogic/sumologic-solution-templates`
 1. Initialize the Terraform working directory by navigating to the directory **sumologic-solution-templates/software-development-optimization-terraform.** and running **terraform init**. This will install the required Terraform providers: [Sumo Logic Terraform Provider](https://www.terraform.io/docs/providers/sumologic/index.html), [Template](https://www.terraform.io/docs/providers/template/index.html), [Null](https://www.terraform.io/docs/providers/null/index.html), [BitBucket Terraform Provider](https://www.terraform.io/docs/providers/bitbucket/index.html), [GitHub Terraform Provider](https://www.terraform.io/docs/providers/github/index.html), [GitLab Terraform](https://registry.terraform.io/providers/gitlabhq/gitlab/3.6.0) [Provider](https://registry.terraform.io/providers/gitlabhq/gitlab/3.6.0), and [Pagerduty Terraform Provider](https://www.terraform.io/docs/providers/pagerduty/index.html).
-1. Choose which Sumo Logic Applications to configure by updating the values of the following variables in the **sumologic.auto.tfvars** file: 
+1. Choose which Sumo Logic Applications to configure by updating the values of the following variables in the **sumologic.auto.tfvars** file:
 
    * install_jira_cloud
    * nstall_jira_server
@@ -129,47 +129,47 @@ The following Terraform providers with mentioned versions are automatically inst
    * install_opsgenie
    * install_github
    * install_gitlab
-   
+
      * This is only used for installing Gitlab app from the app catalog and uses webhook.
-     * Valid options for this are: 
+     * Valid options for this are:
 
        * `all` - It’s a default option, for installing all the components of the setup.
        * `app` - This is for only installing the app
        * `collection` - for configuring collection in Sumo Logic (fers, the sources) and/or in other systems (webhooks).
        * `fer` - This will only create the fer.
-       * `none` - for skipping the entire integration/installation. 
-     
+       * `none` - for skipping the entire integration/installation.
+
      * install_pagerduty
      * install_pagerduty_version
-       * The options for variable values are ‘v2’ and ‘v3’. Default is ‘v3’ 
+       * The options for variable values are ‘v2’ and ‘v3’. Default is ‘v3’
      * install_jenkins
      * install_sdo
 
        * The options for variable values are `all`, `app`, `fer`, `collection`, and `none`. For SDO, `app` and `none` are the valid options.
-       * For Jenkins, collection is not configured in Jenkins. Choosing `collection` will create the source in Sumo and set up the field extraction rules. 
-       * If you do not want to install the GitHub collection or application, rename the file **github.tf** to **github.tf_backup**. 
-       * If you do not want to install the GitLab collection or application, rename the file **gitlab.tf** to **gitlab.tf_backup**. 
-    
+       * For Jenkins, collection is not configured in Jenkins. Choosing `collection` will create the source in Sumo and set up the field extraction rules.
+       * If you do not want to install the GitHub collection or application, rename the file **github.tf** to **github.tf_backup**.
+       * If you do not want to install the GitLab collection or application, rename the file **gitlab.tf** to **gitlab.tf_backup**.
+
      * install_circleci
-       
-       * This is only used for installing the CircleCI app from the app catalog and uses a webhook. 
-       * Valid options for this values are : `all`, `app`, `collection`, and `none`. If you choose: 
-         
+
+       * This is only used for installing the CircleCI app from the app catalog and uses a webhook.
+       * Valid options for this values are : `all`, `app`, `collection`, and `none`. If you choose:
+
          * `all` - It’s a default option, for installing every component of the setup
-         * `app` - for only installing the app 
-         * `collection` - for configuring collection in Sumo Logic (fers, the sources) and/or in other systems (webhooks) 
-         * `none` - for skipping the entire integration/installation 
-     
-     * install_circleci_SDO_plugin 
-       
+         * `app` - for only installing the app
+         * `collection` - for configuring collection in Sumo Logic (fers, the sources) and/or in other systems (webhooks)
+         * `none` - for skipping the entire integration/installation
+
+     * install_circleci_SDO_plugin
+
        * This is used to integrate CircleCI into the SDO solution.
-       * valid options for this variable are:  `all` ,`none` ,`fer` and `collection`. If you choose: 
-         * `all`  - It’s a default option, for installing every component of the setup 
-         * `fer` - for only installing the FERs 
-         * `collection` - for configuring collection in Sumo Logic (fers, the sources) and/or in other systems (webhooks) 
-         * `none` - for skipping the entire integration/installation 
+       * valid options for this variable are:  `all` ,`none` ,`fer` and `collection`. If you choose:
+         * `all`  - It’s a default option, for installing every component of the setup
+         * `fer` - for only installing the FERs
+         * `collection` - for configuring collection in Sumo Logic (fers, the sources) and/or in other systems (webhooks)
+         * `none` - for skipping the entire integration/installation
          * Choosing `collection` will create two sources in Sumo and set up the field extraction rules.
-4.  You can choose which Webhooks to configure by updating the variables in **sumologic.auto.tfvars**. * install_sumo_to_opsgenie_webhook 
+4.  You can choose which Webhooks to configure by updating the variables in **sumologic.auto.tfvars**. * install_sumo_to_opsgenie_webhook
 
     * install_sumo_to_jiraserver_webhook
     * install_sumo_to_jiraservicedesk_webhook 
@@ -269,11 +269,11 @@ lifecycle. Complete the configuration for the build and deploy tool you use.
 1. Search for *Software Development Optimization* Collector.
 
 1. Under this Collector, click on **Show URL** for the source **Bitbucket Cloud.** Make a note of this **URL** and use this URL to configure the Bitbucket CI/CD Pipeline to collect deploy events:
- * **Deploy**: Follow the steps outlined in [this document] (../../../07Sumo-Logic-Apps/08App_Development/Bitbucket/Collect_Logs_for_Bitbucket_App.md) to configure the Bitbucket CI/CD Pipeline to collect deploy events.
+ * **Deploy**: Follow the steps outlined in [this document] (../../../07Sumo-Logic-Apps/app-development/Bitbucket/Collect_Logs_for_Bitbucket_App.md) to configure the Bitbucket CI/CD Pipeline to collect deploy events.
 
 ### Jenkins for build and deploy
 
-1. Install the latest Jenkins Plugin as described [here] (../../../07Sumo-Logic-Apps/08App_Development/Jenkins/Collect_Logs_and_Metrics_for_Jenkins.md)
+1. Install the latest Jenkins Plugin as described [here] (../../../07Sumo-Logic-Apps/app-development/Jenkins/Collect_Logs_and_Metrics_for_Jenkins.md)
 
 1. Access the Sumo Logic Platform and navigate to **Manage Data** \> **Collection** page.
 
@@ -281,7 +281,7 @@ lifecycle. Complete the configuration for the build and deploy tool you use.
 
 1. Under this Collector, click on **Show URL** for the source **Jenkins.** Make a note of this **URL** and **Source Category,** you will use these to configure the Jenkins Plugin:
 
-   * **Build Pipeline Stages**: Follow [Configure Jenkins Plugin,] (../../../07Sumo-Logic-Apps/08App_Development/Jenkins/Collect_Logs_and_Metrics_for_Jenkins.md) and optionally [Optional - Advance Configuration] (../../../07Sumo-Logic-Apps/08App_Development/Jenkins/Collect_Logs_and_Metrics_for_Jenkins.md) to configure the Jenkins Sumo Logic plugin.
+   * **Build Pipeline Stages**: Follow [Configure Jenkins Plugin,] (../../../07Sumo-Logic-Apps/app-development/Jenkins/Collect_Logs_and_Metrics_for_Jenkins.md) and optionally [Optional - Advance Configuration] (../../../07Sumo-Logic-Apps/app-development/Jenkins/Collect_Logs_and_Metrics_for_Jenkins.md) to configure the Jenkins Sumo Logic plugin.
    * **Build**: Follow [this](../jenkins-plugin-build-deploy-events.md) doc to modify your Jenkins plugin to explicitly identify, enrich, and send Build Events to Sumo Logic.
    * **Deploy**: Follow [this](../jenkins-plugin-build-deploy-events.md) doc to modify your Jenkins plugin to explicitly identify, enrich, and send Deploy Events to Sumo Logic.
 
@@ -329,31 +329,31 @@ Configure these parameters in **sumologic.auto.tfvars**.
 | deployment | [Sumo Logic Deployment] (/APIs/General-API-Information/Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security) | us1 |
 | sumo_api_endpoint | [Sumo Logic API Endpoint.] (/APIs/General-API-Information/Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security) Make sure the trailing "/" is present. | https://api.sumologic.com/api/v1/ |
 | app_installation_folder | The Sumo Logic apps will be installed in a folder under your personal folder in Sumo Logic. | Software Development Optimization |
-| install_jira_cloud | Install [Sumo Logic Application and WebHooks for Jira Cloud] (/07Sumo-Logic-Apps/08App_Development/Jira_Cloud). Options: app, collection, fer, all, and none. | all |
-| install_jira_server | Install [Sumo Logic Application and WebHooks for Jira Server] (/07Sumo-Logic-Apps/08App_Development/Jira). Options: app, collection, fer, all, and none. | all |
-| install_bitbucket_cloud | Install [Sumo Logic Application and WebHooks for BitBucket Cloud] (/07Sumo-Logic-Apps/08App_Development/Bitbucket). Options: app, collection, fer, all, and none. | all |
-| install_opsgenie | Install [Sumo Logic Application and WebHooks for Opsgenie] (/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/Opsgenie). Options: app, collection, fer, all, and none. | all |
-| install_github | Install [Sumo Logic Application and WebHooks for Github] (/07Sumo-Logic-Apps/08App_Development/GitHub). Options: app, collection, fer, all, and none.  If you do not wish to install the GitHub collection or application, rename the file github.tf to github.tf_backup. | all |
-| install_gitlab | Install [Sumo Logic Application and WebHooks for GitLab] (/07Sumo-Logic-Apps/08App_Development/GitLab). Options: app, collection, fer, all, and none.  If you do not wish to install the Gitlab collection or application, rename the file gitlab.tf to gitlab.tf_backup. | all |
-| install_pagerduty | Install [Sumo Logic Application and WebHooks for Pagerduty] (/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/PagerDuty_V2). Options: app, collection, fer, all, and none. | all |
+| install_jira_cloud | Install [Sumo Logic Application and WebHooks for Jira Cloud] (/07Sumo-Logic-Apps/app-development/Jira_Cloud). Options: app, collection, fer, all, and none. | all |
+| install_jira_server | Install [Sumo Logic Application and WebHooks for Jira Server] (/07Sumo-Logic-Apps/app-development/Jira). Options: app, collection, fer, all, and none. | all |
+| install_bitbucket_cloud | Install [Sumo Logic Application and WebHooks for BitBucket Cloud] (/07Sumo-Logic-Apps/app-development/Bitbucket). Options: app, collection, fer, all, and none. | all |
+| install_opsgenie | Install [Sumo Logic Application and WebHooks for Opsgenie] (/07Sumo-Logic-Apps/saas-cloud-apps/Opsgenie). Options: app, collection, fer, all, and none. | all |
+| install_github | Install [Sumo Logic Application and WebHooks for Github] (/07Sumo-Logic-Apps/app-development/GitHub). Options: app, collection, fer, all, and none.  If you do not wish to install the GitHub collection or application, rename the file github.tf to github.tf_backup. | all |
+| install_gitlab | Install [Sumo Logic Application and WebHooks for GitLab] (/07Sumo-Logic-Apps/app-development/GitLab). Options: app, collection, fer, all, and none.  If you do not wish to install the Gitlab collection or application, rename the file gitlab.tf to gitlab.tf_backup. | all |
+| install_pagerduty | Install [Sumo Logic Application and WebHooks for Pagerduty] (/07Sumo-Logic-Apps/saas-cloud-apps/PagerDuty_V2). Options: app, collection, fer, all, and none. | all |
 | install_pagerduty_version | Let's you install either v2 or v3 alertFER/app version. | v3  |
-| install_jenkins | Install [Sumo Logic Application for Jenkins] (/07Sumo-Logic-Apps/08App_Development/Jenkins). Options: app, collection, fer, all, and none. The Terraform script does not configure the Jenkins Sumo Logic plugin, choosing `collection` will create http source in Sumo Logic for Jenkins and will configure the Jenkins FERs. | all |
+| install_jenkins | Install [Sumo Logic Application for Jenkins] (/07Sumo-Logic-Apps/app-development/Jenkins). Options: app, collection, fer, all, and none. The Terraform script does not configure the Jenkins Sumo Logic plugin, choosing `collection` will create http source in Sumo Logic for Jenkins and will configure the Jenkins FERs. | all |
 | install_sdo |  Install [Sumo Logic Application for Software Development Optimization](https://github.com/SumoLogic/sumologic-solution-templates/blob/master/software-development-observability-terraform). Options: app or none. | app |
 | install_circleci | Install Sumo Logic Application for CircleCI. Options: app, collection, all, and none. | all |
 | install_circleci_SDO_plugin | Install Sumo Logic Collection and FER for CircleCI SDO integration. | all |
-| install_sumo_to_opsgenie_webhook | Install[ Sumo Logic to Opsgenie WebHook](../../manage/connections-and-integrations/webhook-connections/webhook-connection-opsgenie.md). install_opsgenie should be true for this option to be true. | true |
-| install_sumo_to_jiracloud_webhook | Install [Sumo Logic to Jira Cloud WebHook](../../manage/connections-and-integrations/webhook-connections/jira/webhook-connection-jira-cloud.md). | true |
-| install_sumo_to_jiraserver_webhook | Install [Sumo Logic to Jira Server WebHook](../../manage/connections-and-integrations/webhook-connections/jira/webhook-connection-jira-server.md). | true |
-| install_sumo_to_jiraservicedesk_webhook | Install [Sumo Logic to Jira Service Desk WebHook](../../manage/connections-and-integrations/webhook-connections/jira/webhook-connection-jira-server.md) | true |
-| install_sumo_to_pagerduty_webhook | Install [Sumo Logic to Pagerduty WebHook](../../manage/connections-and-integrations/webhook-connections/webhook-connection-pagerduty.md) | true |
-| jira_cloud_sc | Source Category for [Jira Cloud] (/07Sumo-Logic-Apps/08App_Development/Jira_Cloud) | SDO/Jira/Cloud |
-| jira_server_sc | Source Category for [Jira Server] (/07Sumo-Logic-Apps/08App_Development/Jira) | SDO/Jira/Server/Events |
-| bitbucket_sc | Source Category for [BitBucket Cloud] (/07Sumo-Logic-Apps/08App_Development/Bitbucket) | SDO/Bitbucket |
-| opsgenie_sc | Source Category for [Opsgenie] (/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/Opsgenie) | SDO/Opsgenie |
-| pagerduty_sc | Source Category for [Pagerduty] (/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/PagerDuty_V2) | SDO/Pagerduty |
-| github_sc | Source Category for [GitHub] (/07Sumo-Logic-Apps/08App_Development/GitHub) | SDO/Github |
-| gitlab_sc | Source Category for [GitLab] (/07Sumo-Logic-Apps/08App_Development/GitLab) | SDO/Gitlab |
-| jenkins_sc | Source Category for [Jenkins] (/07Sumo-Logic-Apps/08App_Development/Jenkins) | SDO/Jenkins |
+| install_sumo_to_opsgenie_webhook | Install[ Sumo Logic to Opsgenie WebHook](../../manage/connections-and-integrations/webhook-connections/opsgenie.md). install_opsgenie should be true for this option to be true. | true |
+| install_sumo_to_jiracloud_webhook | Install [Sumo Logic to Jira Cloud WebHook](../../manage/connections-and-integrations/webhook-connections/jira-cloud.md). | true |
+| install_sumo_to_jiraserver_webhook | Install [Sumo Logic to Jira Server WebHook](../../manage/connections-and-integrations/webhook-connections/jira-server.md). | true |
+| install_sumo_to_jiraservicedesk_webhook | Install [Sumo Logic to Jira Service Desk WebHook](../../manage/connections-and-integrations/webhook-connections/jira-server.md) | true |
+| install_sumo_to_pagerduty_webhook | Install [Sumo Logic to Pagerduty WebHook](../../manage/connections-and-integrations/webhook-connections/pagerduty.md) | true |
+| jira_cloud_sc | Source Category for [Jira Cloud] (/07Sumo-Logic-Apps/app-development/Jira_Cloud) | SDO/Jira/Cloud |
+| jira_server_sc | Source Category for [Jira Server] (/07Sumo-Logic-Apps/app-development/Jira) | SDO/Jira/Server/Events |
+| bitbucket_sc | Source Category for [BitBucket Cloud] (/07Sumo-Logic-Apps/app-development/Bitbucket) | SDO/Bitbucket |
+| opsgenie_sc | Source Category for [Opsgenie] (/07Sumo-Logic-Apps/saas-cloud-apps/Opsgenie) | SDO/Opsgenie |
+| pagerduty_sc | Source Category for [Pagerduty] (/07Sumo-Logic-Apps/saas-cloud-apps/PagerDuty_V2) | SDO/Pagerduty |
+| github_sc | Source Category for [GitHub] (/07Sumo-Logic-Apps/app-development/GitHub) | SDO/Github |
+| gitlab_sc | Source Category for [GitLab] (/07Sumo-Logic-Apps/app-development/GitLab) | SDO/Gitlab |
+| jenkins_sc | Source Category for [Jenkins] (/07Sumo-Logic-Apps/app-development/Jenkins) | SDO/Jenkins |
 | circlecl_app_sc | Source Category for CircleCI | SDO/CircleCI |
 
 ### Sumo Logic Field Extraction Rules
@@ -389,7 +389,7 @@ Configure these parameters in **webhooks.auto.tfvars**.
 
 | Parameter | Description |
 |--|--|
-| jira_cloud_auth | To generate Authorization Header follow this [doc](../../manage/connections-and-integrations/webhook-connections/jira/webhook-connection-jira-cloud.md) |
+| jira_cloud_auth | To generate Authorization Header follow this [doc](../../manage/connections-and-integrations/webhook-connections/jira-cloud.md) |
 | jira_cloud_user | Jira Cloud Username |
 | jira_cloud_password | Jira Cloud Password or [API Key](https://confluence.atlassian.com/cloud/api-tokens-938839638.html) |
 | jira_cloud_jql | Jira Cloud [Query Language](https://support.atlassian.com/jira-software-cloud/docs/what-is-advanced-searching-in-jira-cloud/) Example: "project = Sumo" |
@@ -406,7 +406,7 @@ Configure these parameters in **webhooks.auto.tfvars**.
 | Parameter | Description |
 |--|--|
 | jira_servicedesk_url | Jira Service Desk URL, can be same as Jira Cloud URL |
-| jira_server_auth | [Basic Authorization Header](../../manage/connections-and-integrations/webhook-connections/jira/webhook-connection-jira-server.md)) |
+| jira_server_auth | [Basic Authorization Header](../../manage/connections-and-integrations/webhook-connections/jira-server.md)) |
 | jira_server_projectkey | Jira Server [Project Key](https://confluence.atlassian.com/adminjiraserver/defining-a-project-938847066.html) |
 | jira_server_issuetype  | Jira Server [Issue Type](https://confluence.atlassian.com/adminjiraserver/defining-issue-type-field-values-938847087.html), for example 'Bug' |
 | jira_server_priority | Issue [Priority](https://confluence.atlassian.com/adminjiraserver/associating-priorities-with-projects-939514001.html). For Example, 3 |
@@ -416,12 +416,12 @@ Configure these parameters in **webhooks.auto.tfvars**.
 Configure these parameters in **atlassian.auto.tfvars**.
 
 :::note
-This script configures Jira Server WebHooks and creates resources in Sumo Logic. Jira Server Logs collection needs to be configured as explained in Step 1 [here] (../../../07Sumo-Logic-Apps/08App_Development/Jira/Collect_Logs_for_the_Jira_App.md). Configure the log collection and update the variable jira_server_access_logs_sourcecategory in **atlassian.auto.tfvars** with the selected source category.
+This script configures Jira Server WebHooks and creates resources in Sumo Logic. Jira Server Logs collection needs to be configured as explained in Step 1 [here] (../../../07Sumo-Logic-Apps/app-development/Jira/Collect_Logs_for_the_Jira_App.md). Configure the log collection and update the variable jira_server_access_logs_sourcecategory in **atlassian.auto.tfvars** with the selected source category.
 :::
 
 | Parameter | Description |
 |--|--|
-| jira_server_access_logs_sourcecategory | Jira Server Access Logs Source Category, default "SDO/Jira/Server\*", refer to [this] (../../../07Sumo-Logic-Apps/08App_Development/Jira/Collect_Logs_for_the_Jira_App.md) link. |
+| jira_server_access_logs_sourcecategory | Jira Server Access Logs Source Category, default "SDO/Jira/Server\*", refer to [this] (../../../07Sumo-Logic-Apps/app-development/Jira/Collect_Logs_for_the_Jira_App.md) link. |
 | jira_server_url | Jira Server URL |
 | jira_server_user | Jira Server Username |
 | jira_server_password | Needs to be the password. API Key is not supported on Jira Server yet. |
@@ -438,7 +438,7 @@ Configure these parameters in **webhooks.auto.tfvars**.
 
 | Parameter | Description |
 |--|--|
-| jira_server_auth | [Basic Authorization Header](../../manage/connections-and-integrations/webhook-connections/jira/webhook-connection-jira-server.md) |
+| jira_server_auth | [Basic Authorization Header](../../manage/connections-and-integrations/webhook-connections/jira-server.md) |
 | jira_server_projectkey | Jira Server [Project Key](https://confluence.atlassian.com/adminjiraserver/defining-a-project-938847066.html) |
 | jira_server_issuetype  | Jira Server [Issue Type](https://confluence.atlassian.com/adminjiraserver/defining-issue-type-field-values-938847087.html), for example 'Bug' |
 | jira_server_priority | Issue [Priority](https://confluence.atlassian.com/adminjiraserver/associating-priorities-with-projects-939514001.html), for example 3 |
@@ -504,7 +504,7 @@ Configure these parameters in **webhooks.auto.tfvars**.
 
 | Parameter | Description |
 |--|--|
-| pagerduty_services_sumo_webhooks | [Sumo Logic to Pagerduty Webhook](../../manage/connections-and-integrations/webhook-connections/webhook-connection-pagerduty.md). List of Pagerduty Service IDs. Example: \["P1QWK8J","PK9FKW3"\]. You can get these from the URL after opening a specific service in Pagerduty. Alerts are sent from Sumo to Pagerduty for these services. |
+| pagerduty_services_sumo_webhooks | [Sumo Logic to Pagerduty Webhook](../../manage/connections-and-integrations/webhook-connections/pagerduty.md). List of Pagerduty Service IDs. Example: \["P1QWK8J","PK9FKW3"\]. You can get these from the URL after opening a specific service in Pagerduty. Alerts are sent from Sumo to Pagerduty for these services. |
 
 ### GitHub
 
@@ -536,7 +536,7 @@ The Terraform script does not configure the Jenkins Sumo Logic plugin, it create
 
 | Parameter  | Description |
 |--|--|
-| jenkins_sc | [Jenkins Source Category] (../../../07Sumo-Logic-Apps/08App_Development/Jenkins/Collect_Logs_and_Metrics_for_Jenkins.md). |
+| jenkins_sc | [Jenkins Source Category] (../../../07Sumo-Logic-Apps/app-development/Jenkins/Collect_Logs_and_Metrics_for_Jenkins.md). |
 
 ### CircleCI
 

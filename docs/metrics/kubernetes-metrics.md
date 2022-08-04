@@ -1,8 +1,9 @@
 ---
 id: kubernetes-metrics
+title: Kubernetes Metrics
+sidebar_label: Kubernetes Metrics
+description: This page lists the Kubernetes metrics that are collected when you deploy the collection solution described in sumologic-kubernetes-collection deployment guide.
 ---
-
-# Kubernetes Metrics
 
 This page lists the Kubernetes metrics that are collected when you deploy the collection solution described in
 [sumologic-kubernetes-collection deployment guide](https://github.com/SumoLogic/sumologic-kubernetes-collection/tree/master/deploy). 
@@ -126,7 +127,7 @@ A single worker should collect these to avoid duplication.
 
 ### View apiserver metrics
 
-  
+
 Install [Prometheus Operator](https://github.com/SumoLogic/sumologic-kubernetes-collection/tree/master/deploy#step-2-configure-prometheus) on your cluster in the prometheus namespace.
 
 Run this command to start a proxy to the Kubernetes API server: 

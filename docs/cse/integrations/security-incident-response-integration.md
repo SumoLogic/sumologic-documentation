@@ -4,7 +4,7 @@ id: security-incident-response-integration
 
 # Security Incident Response (SIR) Integration
 
-This page has instructions for installing and configuring the integration between Sumo Logic CSE and ServiceNow's Security Incident Response (SIR).
+This section has instructions for installing and configuring the integration between Sumo Logic CSE and ServiceNow's Security Incident Response (SIR).
 
 The screenshots in this topic were captured from SIR UI16. If you have a different UI enabled, your view may be different.
 

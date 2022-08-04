@@ -1,19 +1,20 @@
 ---
 id: osquery
+title: Osquery
+sidebar_label: Osquery
+description: tk
 ---
 
-# Osquery
-
-This page has instructions for collecting [osquery](https://osquery.io/) log messages  and sending them to Sumo Logic to be ingested by CSE.
+This section has instructions for collecting [osquery](https://osquery.io/) log messages  and sending them to Sumo Logic to be ingested by CSE.
 
 Sumo Logic CSE supports osquery logs sent in JSON format for the following log types:
 
-* Schedule results in Events format 
+* Schedule results in Events format
 
     :::note
     Batch and Snapshot formats are not natively supported.
     :::
-    
+
 * Process Auditing
 * Anomaly Detection
 * File Integrity Monitoring
@@ -35,7 +36,7 @@ In this step, you configure an HTTP Source to collect osquery log messages. You 
 1. **Fields**. 
     1. If you are planning that all the sources you add to this collector will forward log messages to CSE, click the **+Add Field** link, and add a field whose name is `_siemForward` and value is *true*. This will cause the collector to forward all of the logs collected by all of the sources on the collector to CSE.
     1. If all sources in this collector will be osquery sources, add an additional field with key `_parser` and value */Parsers/System/Osquery/Osquery JSON*.
-        
+
 :::note
 It is also possible to configure individual sources to forward to CSE, as described in the following section.
 :::

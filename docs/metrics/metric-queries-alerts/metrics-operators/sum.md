@@ -1,8 +1,9 @@
 ---
 id: sum
+title: sum
+sidebar_label: sum
+description: The sum operator calculates the sum of the metrics values that match a metric query.
 ---
-
-# sum
 
 Calculates the sum of the metrics values that match the query. If grouping is specified, it calculates the sum for each group.
 

@@ -1,8 +1,9 @@
 ---
 id: tracing-dashboards
+title: Tracing Dashboards
+sidebar_label: Tracing Dashboards
+description: Create Tracing dashboards, install apps, and more.
 ---
-
-# Tracing Dashboards
 
 ## Application Service Dashboards
 
@@ -47,7 +48,7 @@ To install the app, do the following:
 1. From the **App Catalog**, search for and select the **Tracing - Application Services Health.**
 
     ![install-tracing-app.png](/img/traces/install-tracing-app.png)
-    
+
     If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
 1. To install the app, click the **Add to Library** button and complete the following fields.
@@ -77,17 +78,17 @@ To add a Service Map panel to your Dashboard:
 1. Click **Add Panel** and select **Service Map**. Or select the **Service Map** option on a new Dashboard.
 
     ![add-servicemap.png](/img/traces/add-servicemap.png)
-    
+
     A panel configuration page opens.
 
     ![create-servicemap.png](/img/traces/create-servicemap.png)
 
 1. Select from the drop-down menus to filter the Service Map by the following:
 
-    ![filter-servicemap.png](/img/traces/filter-servicemap.png) 
+    ![filter-servicemap.png](/img/traces/filter-servicemap.png)
 
-   * **Application** if your tracing data has the `application=[app-name]` tag 
-   * **Service**  
+   * **Application** if your tracing data has the `application=[app-name]` tag
+   * **Service** 
    * To pass the variables from dashboard filters, set `application={{application}}` and/or `service={{service}}`
 
 1. Do not set the time. Service Map always shows last 72h of data.
@@ -114,7 +115,7 @@ To add a Trace List panel to your Dashboard:
 1. Click **Add Panel** and select **Trace List**. Or select the **Trace List** option on a new Dashboard.
 
     ![add-tracelist.png](/img/traces/add-tracelist.png)   
-    
+
     A panel configuration page opens.
 
     ![create-tracelist.png](/img/traces/create-tracelist.png)
@@ -130,11 +131,11 @@ To add a Trace List panel to your Dashboard:
 
 | Column name | Example value | Description |
 |--|--|--|
-| Trace ID | ffaf2f69ee8ad0c1 | The unique identifier of the trace. | 
-| Root Service | api | The service that started the trace. | 
-| Started At | 07/27/2020 09:01:04.533 | When the trace started. | 
-| Duration | 12.582 ms | The amount of time the trace spans.  | 
-| Number of spans | 35 | A trace consists of spans. This number tells you how many spans are in the trace. | 
+| Trace ID | ffaf2f69ee8ad0c1 | The unique identifier of the trace. |
+| Root Service | api | The service that started the trace. |
+| Started At | 07/27/2020 09:01:04.533 | When the trace started. |
+| Duration | 12.582 ms | The amount of time the trace spans.  |
+| Number of spans | 35 | A trace consists of spans. This number tells you how many spans are in the trace. |
 | Duration Breakdown | ![breakdown](/img/traces/breakdown.png) | Each color indicates a service. The colors assigned to services are always the same on your account. You can change the color in the span summary tab after clicking on the individual span in trace view.<br/>Hover over to view a percentage breakdown of how long each span covers in the trace.<br/>![img](/img/traces/span-hover-view.png) |
 | Number of errors | 0 | The number of errors in the trace. |
 | Status | 200 | The HTTP status code of the trace. A menu is available in this column when hovering on a row. The menu has an option to **Show similar traces**.<br/>![img](/img/traces/similar-traces-menu.png) |

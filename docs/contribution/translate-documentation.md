@@ -1,8 +1,9 @@
 ---
 id: translate
+title: Translate Documentation
+sidebar_label: Translate Documentation
+description: Learn about our doc translation process.
 ---
-
-# Translate Documentation
 
 All content in /docs folder is the English language documentation, the source of truth for all content. For full information on translations and commands, see [Docusaurus i18n](https://docusaurus.io/docs/i18n/introduction).
 
@@ -17,7 +18,7 @@ As you add new files, make sure to create a copy of that file matching the folde
 * New documentation: /i18n/ja/docusaurus-plugin-content-docs/current
 * New release notes: /i18n/ja/docusaurus-plugin-content-blog
 
-You can copy and paste the file with a file explorer. 
+You can copy and paste the file with a file explorer.
 
 We also recommend adding a note in your Pull Request for content needing translation (coming soon).
 

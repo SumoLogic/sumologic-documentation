@@ -11,7 +11,7 @@ id: integrate-aws-sso
 | CloudFlex    | Enterprise |
 | Credits      | Trial, Enterprise Operations, Enterprise Security, Enterprise Suite |
 
-This page has instructions for configuring AWS Single Sign-On with Sumo Logic. 
+This section has instructions for configuring AWS Single Sign-On with Sumo Logic. 
 
 :::note
 AWS Single Sign-On does not currently support sending assigned group names in a SAML assertion attribute. For this reason, Sumo Logic does not support on-demand role provisioning with AWS Single Sign-On. You must assign Sumo Logic roles to each user after the user account provisioning has occurred. 

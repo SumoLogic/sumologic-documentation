@@ -1,8 +1,9 @@
 ---
 id: google-g-suite-apps-audit
+title: Google G Suite Apps Audit
+sidebar_label: Google G Suite Apps Audit
+description: tk
 ---
-
-# Google G Suite Apps Audit
 
 ## Step 1: Configure collection
 

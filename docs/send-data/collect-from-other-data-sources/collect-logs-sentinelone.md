@@ -4,7 +4,7 @@ id: collect-logs-sentinelone
 
 # Collect Logs for SentinelOne
 
-This page provides instructions for ingesting SentinelOne logs into Sumo Logic. For more information, on SentinelOne please visit the [SentinelOne website](https://www.sentinelone.com/).
+This section provides instructions for ingesting SentinelOne logs into Sumo Logic. For more information, on SentinelOne please visit the [SentinelOne website](https://www.sentinelone.com/).
 
 If you have a SentinelOne account, you can view the contents of this article in the SentinelOne Support knowledge base [here](https://support.sentinelone.com/hc/en-us/articles/360007044894-Syslog-Integration-with-Sumo-Logic).
 

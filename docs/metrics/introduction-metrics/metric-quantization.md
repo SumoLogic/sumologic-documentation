@@ -1,8 +1,9 @@
 ---
 id: metric-quantization
+title: Metrics Quantization
+sidebar_label: Metrics Quantization
+description: Learn about how Sumo aggregates metric data points over time buckets.
 ---
-
-# Metric Quantization
 
 Sumo ingests individual metric data points from your metric sources. In metric visualizations, rather than charting individual data points, Sumo presents the aggregated value of the data points received during an interval. 
 
@@ -99,7 +100,7 @@ cpu-idle | quantize to 5m
 
 ### Explicit quantization at query time 
 
-When you run a metric query, you can optionally use the `quantize` operator to specify a quantization interval and rollup type, or both.  
+When you run a metric query, you can optionally use the `quantize` operator to specify a quantization interval and rollup type, or both. 
 
 When you run a query with the `quantize` operator, the way that Sumo quantizes your metric data points depends on: 
 
@@ -166,7 +167,7 @@ To illustrate this transformation, suppose a given time series contains the foll
 ```
 timestamp | value
 -----------------
-12:00:33  | 4.0 
+12:00:33  | 4.0
 12:00:39  | 6.0
 12:00:40  | 5.0
 ```

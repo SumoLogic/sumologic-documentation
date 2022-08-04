@@ -1,8 +1,9 @@
 ---
 id: aws-classic-load-balancer
+title: AWS Classic Load Balancer
+sidebar_label: AWS Classic Load Balancer 
+description: tk
 ---
-
-# AWS Classic Load Balancer
 
 The [AWS Classic Load Balancer](https://aws.amazon.com/elasticloadbalancing/classic-load-balancer/) (ELB) distributes incoming application traffic across multiple EC2 instances in multiple Availability Zones and operates at both the request level and connection level.
 
@@ -30,7 +31,7 @@ For more details on the Classic Load Balancer Access log, see the  [Classic Loa
 2022-03-02T12:02:58.135502Z sumo-classicelb 2.57.121.10:61001 172.31.82.43:80 0.000039 0.001338 0.000026 404 404 0 196 "GET http://localhost:80/admin/config.php HTTP/1.1" "gbrmss/7.29.0" - -
 ```
 
-### Query sample
+### Sample Query
 
 The following query sample was taken from the **5XX Backend Response Codes** panel on the **AWS Classic Load Balancer - Connections and Host Status** dashboard.
 
@@ -171,4 +172,3 @@ Use this dashboard to:
 * Monitor malicious confidence level  for all incoming malicious IP addresses posing the threats.
 
 ![AWS-Classic-Load-Balancer-Threat-Intel.png](/img/observability/AWS-Classic-Load-Balancer-Threat-Intel.png)
-

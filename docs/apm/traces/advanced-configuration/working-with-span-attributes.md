@@ -1,8 +1,9 @@
 ---
 id: working-with-span-attributes
+title: Working with Span attributes
+sidebar_label: Working with Span attributes
+description: Learn how to modify the attributes of your spans.
 ---
-
-# Working with Span attributes
 
 You can add, delete, hash, or modify span attributes (metadata tags) on Collectors or directly in your application code. This helps you enhance diagnostic details included in your data, remove redundant information to cut the cost, or mask sensitive information before they leave your site.
 

@@ -1,8 +1,9 @@
 ---
 id: about-observability-solution
+title: About the Observability Solution
+sidebar_label: About Observability
+description: The Observability Solution focuses on finding the unconsidered issue, the unknown risks to your system.
 ---
-
-# About the Observability Solution
 
 Observability is the ability of the internal states of a system to be determined by its external outputs.
 

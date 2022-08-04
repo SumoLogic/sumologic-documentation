@@ -1,8 +1,9 @@
 ---
 id: http-traces-source
+title: HTTP Traces Source
+sidebar_label: HTTP Traces Source
+description: An HTTP Traces Source is an endpoint for receiving traces.
 ---
-
-# HTTP Traces Source
 
 An HTTP Traces Source is an endpoint for receiving trace data. The URL securely encodes the Collector and Source information. You can add as many HTTP Traces Sources as you'd like to a single Hosted Collector.
 

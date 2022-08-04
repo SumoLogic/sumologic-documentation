@@ -1,8 +1,9 @@
 ---
 slug: /sdo/set-up-sdo
+title: Set up the Software Development Optimization Solution
+description: This page provides instruction for setting up the Software Development Optimization Solution including manual, Terraform, and Atlassian Marketplace.
 ---
 
-# Set up the Software Development Optimization Solution
 
 You have three options for set up and configuration:
 
@@ -18,13 +19,13 @@ These include:
 
 * API Keys/Creds for Jira, Github, GitLab, Jenkins, Bitbucket, CircleCI, Opsgenie with Webhook creation capabilities. 
 * Access to Jenkins (Manage Plugins permissions)
-* Make sure you have access to the Sumo logic console and as a user that is associated with a Sumo Logic role that has the following permissions: 
-  * Manage field extraction rules 
-  * View Fields 
-  * View field extraction rules 
-  * Manage Collectors 
-  * View Collectors 
-  * Manage Fields 
-  * Manage connections 
+* Make sure you have access to the Sumo logic console and as a user that is associated with a Sumo Logic role that has the following permissions:
+  * Manage field extraction rules
+  * View Fields
+  * View field extraction rules
+  * Manage Collectors
+  * View Collectors
+  * Manage Fields
+  * Manage connections
   * Manage Content
 * Create a [Sumo Logic API key and ID](../../manage/security/access-keys.md) for the above user.

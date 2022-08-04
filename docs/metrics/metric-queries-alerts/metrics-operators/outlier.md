@@ -1,8 +1,10 @@
 ---
 id: outlier
+title: outlier
+sidebar_label: outlier
+description: The metrics outlier operator identifies metrics data points that are outside the range of expected values.
 ---
 
-# outlier
 
 This page describes the metrics `outlier` operator and how to use it in a metric query.
 

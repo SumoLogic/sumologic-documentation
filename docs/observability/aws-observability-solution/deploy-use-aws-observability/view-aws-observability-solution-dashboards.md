@@ -1,8 +1,9 @@
 ---
 id: view-aws-observability-solution-dashboards
+title: View AWS Observability Solution Dashboards
+sidebar_label: View AWS Observability Solution Dashboards
+description: Learn how to use Explore to navigate your AWS Observability infrastructure, as well as providing links to the app dashboards.
 ---
-
-# View AWS Observability Solution Dashboards
 
 ## Availability
 
@@ -55,9 +56,9 @@ To investigate services in your AWS environment, do the following:
     ![AWS-Account-Overview.png](/img/observability/AWS-Account-Overview.png)
 
 1. Similarly, from the expanded account, select a region.  
-      
+
     The **AWS Region Overview** dashboard appears in the window on the right. The dashboard provides insights into the AWS account activities in that AWS region and gives you an at-a-glance view of the health and status of the AWS services in that account-region combination.  
-    
+
     ![AWS-Region-Overview.png](/img/observability/AWS-Region-Overview.png)
 
 1. From the expanded account and region combination, select a namespace/AWS service. The dashboard for the selected namespace appears in the window on the right. In our example, we selected the AWS EC2 Metrics namespace in the *us-east-1* region of the *prod* account.
@@ -89,19 +90,19 @@ To view the app dashboards outside of Explorer, do the following:*
 1. Navigate to your Sumo Logic personal folder. 
 1. Click an app folder to list the dashboard pages.
 1. Click a page link to view the dashboard in the window on the right.   
-      
+
     ![App_folder.png](/img/observability/add-new-service.jpeg)
 
 Click a link for information on the individual app dashboards:
 
-* [AWS API Gateway Dashboards](../aws-observability-apps/aws-api-gateway.md) 
-* [AWS Application Load Balancer Dashboards](../aws-observability-apps/aws-application-load-balancer.md) 
+* [AWS API Gateway Dashboards](../aws-observability-apps/aws-api-gateway.md)
+* [AWS Application Load Balancer Dashboards](../aws-observability-apps/aws-application-load-balancer.md)
 * [AWS EC2 Metrics Dashboards](../aws-observability-apps/aws-ec2-metrics.md)
 * [AWS Lambda Dashboards](../aws-observability-apps/aws-lambda.md)
 * [AWS DynamoDB Dashboards](../aws-observability-apps/aws-dynamodb.md)
 * [Amazon RDS Dashboards](../aws-observability-apps/aws-rds-metrics.md)
-* [Amazon ElastiCache Dashboards](../aws-observability-apps/amazon-elasticache.md) 
+* [Amazon ElastiCache Dashboards](../aws-observability-apps/amazon-elasticache.md)
 * [Amazon ECS Dashboards](../aws-observability-apps/amazon-ecs.md)
-* [AWS NetworkELB Dashboards](../aws-observability-apps/aws-network-load-balancer.md) 
+* [AWS NetworkELB Dashboards](../aws-observability-apps/aws-network-load-balancer.md)
 * Global Intelligence for AWS CloudTrail DevOps
 * [AWS Classic Load Balancer Dashboards](../aws-observability-apps/aws-classic-load-balancer.md)

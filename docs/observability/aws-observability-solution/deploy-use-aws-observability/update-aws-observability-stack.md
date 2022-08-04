@@ -1,8 +1,9 @@
 ---
 id: update-aws-observability-stack
+title: Update the AWS Observability Stack
+sidebar_label: Update the AWS Observability Stack
+description: Learn how to update the AWS Observability stack.
 ---
-
-# Update the AWS Observability Stack
 
 You can update an existing observability stack using Terraform or an AWS CloudFormation template.
 
@@ -54,7 +55,7 @@ To update an existing stack to the latest version:
 1. Review all the changes listed on the **Change Set Review** and make sure you're comfortable with these changes.
 
 1. Select the capabilities and Click **Submit**.  
-    
+
     ![Stack_Step4.png](/img/observability/Stack_Step4.png)
 
 1. After the update is complete, the stacks that have been updated successfully will be set to a UPDATE_COMPLETE status.  

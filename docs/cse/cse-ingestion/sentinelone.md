@@ -1,10 +1,11 @@
 ---
 id: sentinelone
+title: SentinelOne
+sidebar_label: SentinelOne
+description: tk
 ---
 
-# SentinelOne
-
-This page has instructions for collecting SentinelOne log messages and sending them to Sumo Logic to be ingested by CSE.
+This section has instructions for collecting SentinelOne log messages and sending them to Sumo Logic to be ingested by CSE.
 
 ## Step 1: Configure collection
 

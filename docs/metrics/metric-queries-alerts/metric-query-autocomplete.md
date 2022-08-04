@@ -1,8 +1,9 @@
 ---
 id: metric-query-autocomplete
+title: Metric Query Autocomplete
+sidebar_label: Metric Query Autocomplete
+description: The Metrics Explorer provides an autocomplete drop-down dialog that offers suggestions to make query writing easier.
 ---
-
-# Metric Query Autocomplete
 
 The [Metrics Explorer](metrics-explorer.md) provides an autocomplete drop-down dialog that offers suggestions to make query writing easier. Autocomplete is supported in both Basic and Advanced mode.
 
@@ -14,7 +15,7 @@ three fields for building a query.
 * **Metric** — When you click the field, a list of metrics is displayed. As you start to enter text, the metrics that match your entry appear.
 * **Filter** — When you click the field, a list of Sumo Logic metadata fields, metric dimensions, and metatags is displayed. As you start to enter text, the items that match your entry appear.
 * **Add Operator** — When you click the field a list of operators is displayed. After you select an operator, you’re prompted to supply the appropriate options for that operator.   
-      
+
     ![basic-autocomplete.png](/img/metrics/basic-autocomplete.png)
 
 ## Advanced Mode autocomplete

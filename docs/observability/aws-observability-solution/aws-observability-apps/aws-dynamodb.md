@@ -1,8 +1,9 @@
 ---
 id: aws-dynamodb
+title: AWS DynamoDB
+sidebar_label: AWS DynamoDB 
+description: tk
 ---
-
-# AWS DynamoDB
 
 [AWS DynamoDB](https://aws.amazon.com/dynamodb/) is a fast and flexible NoSQL database service that provides consistent, single-digit millisecond latency at any scale. 
 
@@ -68,8 +69,8 @@ _sourceCategory=Labs/AWS/DynamoDB account=* namespace=* "\"eventSource\":\"dynam
 | where Region matches "*" and tolowercase(entity) matches "*"
 | where ip_address != "0.0.0.0" and ip_address != "127.0.0.1"
 | count as ip_count by ip_address
-| lookup type, actor, raw, threatlevel as malicious_confidence from sumo://threat/cs on threat=ip_address 
-| json field=raw "labels[*].name" as label_name 
+| lookup type, actor, raw, threatlevel as malicious_confidence from sumo://threat/cs on threat=ip_address
+| json field=raw "labels[*].name" as label_name
 | replace(label_name, "\\/","->") as label_name
 | replace(label_name, "\""," ") as label_name
 | where  type="ip_address" and !isNull(malicious_confidence)

@@ -1,8 +1,10 @@
 ---
 id: count
+title: count
+sidebar_label: count
+description: The count operator counts the number of time series that match a query.
 ---
 
-# count
 
 Counts the total number of time series that match the query. If grouping is specified, it counts the total number for each group.
 

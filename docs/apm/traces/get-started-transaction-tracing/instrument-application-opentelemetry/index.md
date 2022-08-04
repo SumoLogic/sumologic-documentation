@@ -1,8 +1,8 @@
 ---
 slug: /apm/traces/get-started-transaction-tracing/instrument-application-opentelemetry
+title: Instrument your application with OpenTelemetry
+description: OpenTelemetry provides a wide range of ready to use componentry to get you started with distributed tracing.
 ---
-
-# Instrument your application with OpenTelemetry
 
 OpenTelemetry provides a wide range of ready to use componentry to get you started with distributed tracing. We recommend auto-instrumentation if you prefer not to change application code and are using the following language frameworks:
 
