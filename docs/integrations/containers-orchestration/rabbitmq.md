@@ -195,10 +195,9 @@ Example:
 ```
 annotations:
   tailing-sidecar: sidecarconfig;data:/var/log/rabbitmq/rabbitmq.log
-
 ```
 
-1. Make sure that the RabbitMQ pods are running and annotations are applied by using the command: **kubectl describe pod <RabbitMQ_pod_name>**
+1. Make sure that the RabbitMQ pods are running and annotations are applied by using the command: `kubectl describe pod <RabbitMQ_pod_name>`
 2. Sumo Logic Kubernetes collection will automatically start collecting logs from the pods having the annotations defined above.
 
 1. **Add an FER to normalize the fields in Kubernetes environments**

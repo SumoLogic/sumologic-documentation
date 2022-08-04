@@ -14,6 +14,38 @@ import TabItem from '@theme/TabItem';
 The ActiveMQ app is a unified logs and metrics app that helps you monitor the availability, performance, health, and resource utilization of your ActiveMQ messaging clusters. Preconfigured dashboards provide insight into cluster status, nodes, producers, consumers, destinations, resource utilization, message rates, and error logs.
 
 
+## Sample Log Message
+
+<Tabs
+  groupId="k8s-nonk8s"
+  defaultValue="k8s"
+  values={[
+    {label: 'Kubernetes environments', value: 'k8s'},
+    {label: 'Non-Kubernetes environments', value: 'non-k8s'},
+  ]}>
+
+<TabItem value="k8s">
+
+```json
+{
+  timestamp:1624348918179,
+  log:"2021-06-22 08:01:57,993 | DEBUG | Publishing: tcp://activemq-2:61616 for broker transport URI: tcp://activemq-2:61616?maximumConnections=1000&wireFormat.maxFrameSize=104857600 | org.apache.activemq.broker.TransportConnector | ActiveMQ Transport: tcp:///10.32.0.1:16932@61616",
+  stream:"stdout",
+  time:"2021-06-22T08:01:58.177654533Z"
+}
+```
+
+</TabItem>
+<TabItem value="non-k8s">
+
+```json
+2021-06-22 15:00:41,922 | DEBUG | Stopping transport tcp:///192.168.100.8:36302@61616 | org.apache.activemq.transport.tcp.TcpTransport | ActiveMQ BrokerService[localhost] Task-15300
+Host: broker-3-activemq Name: /opt/activemq/data/activemq.log Category:logfile
+```
+
+</TabItem>
+</Tabs>
+
 ## Collecting Logs and Metrics for ActiveMQ
 
 This App has been tested with following ActiveMQ versions:
@@ -25,12 +57,24 @@ Configuring log and metric collection for the ActiveMQ App includes the followin
 
 Create the following Fields in Sumo Logic prior to configuring collection. This ensures that your logs and metrics are tagged with relevant metadata, which is required by the app dashboards. For information on setting up fields, see the [Fields](/docs/manage/fields.md) help page.
 
+<Tabs
+  groupId="k8s-nonk8s"
+  defaultValue="k8s"
+  values={[
+    {label: 'Kubernetes environments', value: 'k8s'},
+    {label: 'Non-Kubernetes environments', value: 'non-k8s'},
+  ]}>
+
+<TabItem value="k8s">
+
 If you are using ActiveMQ in a Kubernetes environment create the fields:
 * `pod_labels_component`
 * `pod_labels_environment`
 * `pod_labels_messaging_system`
 * `pod_labels_messaging_cluster`
 
+</TabItem>
+<TabItem value="non-k8s">
 
 If you are using ActiveMQ in a non-Kubernetes environment create the fields:
 * `component`
@@ -39,24 +83,9 @@ If you are using ActiveMQ in a non-Kubernetes environment create the fields:
 * `messaging_cluster`
 * `pod`
 
+</TabItem>
+</Tabs>
 
-
-
-### Sample Log Messages
-
-```bash title="Kubernetes"
-{
-      timestamp:1624348918179,
-      log:"2021-06-22 08:01:57,993 | DEBUG | Publishing: tcp://activemq-2:61616 for broker transport URI: tcp://activemq-2:61616?maximumConnections=1000&wireFormat.maxFrameSize=104857600 | org.apache.activemq.broker.TransportConnector | ActiveMQ Transport: tcp:///10.32.0.1:16932@61616",
-      stream:"stdout",
-      time:"2021-06-22T08:01:58.177654533Z"
-}
-```
-
-```bash title="Non-Kubernetes"
-2021-06-22 15:00:41,922 | DEBUG | Stopping transport tcp:///192.168.100.8:36302@61616 | org.apache.activemq.transport.tcp.TcpTransport | ActiveMQ BrokerService[localhost] Task-15300
-Host: broker-3-activemq Name: /opt/activemq/data/activemq.log Category:logfile
-```
 
 ### Step 2: Configure ActiveMQ Logs and Metrics Collection
 
@@ -196,7 +225,6 @@ On your ActiveMQ Pods, add the following annotations:
                     tag_keys = ["brokerName"]
 ```
 
-
 Please enter values for the following parameters (marked `CHANGE_ME` above):
 
 * `telegraf.influxdata.com/inputs` - This contains the required configuration for the Telegraf ActiveMQ Input plugin. Please refer[ to this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/redis) for more information on configuring the ActiveMQ input plugin for Telegraf. Note: As telegraf will be run as a sidecar the host should always be localhost.
@@ -239,30 +267,23 @@ Make sure that the logs from ActiveMQ are sent to stdout. For more details see t
 
 Follow the instructions below to capture ActiveMQ logs from stdout on Kubernetes.
 
-
-
 1. Apply the following labels to the ActiveMQ pods:
-
-     labels:
-
-
+```sql
+environment: "prod_CHANGE_ME"
+  component: "messaging"
+  messaging_system: "activemq"
+      messaging_cluster: "activemq_on_k8s_CHANGE_ME"
 ```
-   environment: "prod_CHANGE_ME"
-    component: "messaging"
-    messaging_system: "activemq"
-        messaging_cluster: "activemq_on_k8s_CHANGE_ME"
-```
-
 
 Enter in values for the following parameters (marked in bold_CHANGE_ME above):
 
 * `environment`. This is the deployment environment where the ActiveMQ cluster identified by the value of **servers** resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
-* **messsaging_cluster.** Enter a name to identify this ActiveMQ cluster. This cluster name will be shown in the Sumo Logic dashboards.
+* `messsaging_cluster`. Enter a name to identify this ActiveMQ cluster. This cluster name will be shown in the Sumo Logic dashboards.
 
 Here’s an explanation for additional values set by this configuration that we request you **do not modify** as they will cause the Sumo Logic apps to not function correctly.
 
-* **component: “messaging”**. This value is used by Sumo Logic apps to identify application components.
-* **messaging_system: “activemq”**. This value identifies the messaging system.
+* `component: “messaging”`. This value is used by Sumo Logic apps to identify application components.
+* `messaging_system: “activemq”`. This value identifies the messaging system.
 
 For all other parameters, see[ this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#Configuring-Telegraf) for more properties that can be configured in the Telegraf agent globally.
 
@@ -275,22 +296,22 @@ If your ActiveMQ chart/pod is writing its logs to log files, you can use a [side
 1. Determine the location of the ActiveMQ log file on Kubernetes. This can be determined from the log4j.properties for your ActiveMQ cluster along with the mounts on the ActiveMQ pods.
 2. Install the Sumo Logic [tailing sidecar operator](https://github.com/SumoLogic/tailing-sidecar/tree/main/operator#deploy-tailing-sidecar-operator).
 3. Add the following annotation in addition to the existing annotations.
-```
+```sql
 annotations:
       tailing-sidecar: sidecarconfig;<mount>:<path_of_ActiveMQ_log_file>/<ActiveMQ_log_file_name>
 ```
 
 
 Example:
-```
+```sql
 annotations:
       tailing-sidecar: sidecarconfig;data:/opt/activemq/data/activemq.log
-
 ```
 
-
-
-1. Make sure that the ActiveMQ pods are running and annotations are applied by using the command: **kubectl describe pod <ActiveMQ_pod_name>**
+1. Make sure that the ActiveMQ pods are running and annotations are applied by using the command:
+  ```bash
+  kubectl describe pod <ActiveMQ_pod_name>
+  ```
 2. Sumo Logic Kubernetes collection will automatically start collecting logs from the pods having the annotations defined above.
 1. **Add an FER to normalize the fields in Kubernetes environments**
 
@@ -305,19 +326,22 @@ Labels created in Kubernetes environments automatically are prefixed with pod_la
     * **Applied At.** Choose **Ingest Time**
     * **Scope**. Select **Specific Data**
         * **Scope**: Enter the following keyword search expression:
-`pod_labels_environment=* pod_labels_component=messaging     pod_labels_messaging_system=* pod_labels_messaging_cluster=* \
-`
-
-**Parse Expression**.Enter the following parse expression \
-`if (!isEmpty(pod_labels_environment), pod_labels_environment, "") as environment`
-
-
+```sql
+pod_labels_environment=* pod_labels_component=messaging
+pod_labels_messaging_system=* pod_labels_messaging_cluster=*
 ```
+
+**Parse Expression**. Enter the following parse expression \
+```sql
+if (!isEmpty(pod_labels_environment), pod_labels_environment, "") as environment
+```
+
+
+```sql
 | pod_labels_component as component
 | pod_labels_messaging_system as messaging_system
+| pod_labels_messaging_cluster as messaging_cluster
 ```
-
-`| pod_labels_messaging_cluster as messaging_cluster`
 
 </TabItem>
 <TabItem value="non-k8s">
@@ -353,37 +377,27 @@ As part of collecting metrics data from Telegraf, we will use the [Jolokia2 inpu
 Before you configure telegraf, you will need to :
 
 1. **Enable reads metrics** from ActiveMQ servers via the [JMX MBeans](https://activemq.apache.org/jmx) by setting “useJmx=true” in file config [ActiveMQ.xml](https://activemq.apache.org/xml-configuration.html)
-
-```
+```xml
 <broker useJmx="true" brokerName="BROKER1">
 ...
 </broker>
 ```
 
 
-1. **Disable strict-checking** by editing file `jolokia-access.xml`:
+1. **Disable strict-checking** by editing file `jolokia-access.xml`.Navigate to directory:
+  ```xml
+  <Folder ActiveMQ Installed>/webapps/api/WEB-INF/classes/
+  ```
 
-Navigate to directory :
-
-
-    ```
-    <Folder ActiveMQ Installed>/webapps/api/WEB-INF/classes/
-    ```
-
-Open file `jolokia-access.xml`,and comment or remove section below:
-
-
-        ```
-        <cors>
-        <strict-checking/>
-        </cors>
-        ```
+Open file `jolokia-access.xml`, and comment or remove section below:
+  ```xml
+  <cors>
+  <strict-checking/>
+  </cors>
+  ```
 
 Create or modify `telegraf.conf` and copy and paste the text below:  
-
-
-
-```bash
+```sql
 [[inputs.disk]]
    mount_points = ["/"]
    [inputs.disk.tags]
@@ -459,9 +473,9 @@ Please enter values for the following parameters (marked in `CHANGE_ME` above):
 
     Here’s an explanation for additional values set by this Telegraf configuration that we request you **please do not modify** as they will cause the Sumo Logic apps to not function correctly.
 
-* **data_format** - `"prometheus"` In the output plugins section, which is `[[outputs.sumologic]]`. Metrics are sent in the Prometheus format to Sumo Logic.
-* **component**: “messaging” - In the input plugins section, which is `[[inputs.jolokia2_agent]]`. This value is used by Sumo Logic apps to identify application components.
-* **messaging_system**: `"activemq"` - In the input plugins sections.In other words, this value identifies the messaging system
+* `data_format - "prometheus"` In the output plugins section, which is `[[outputs.sumologic]]`. Metrics are sent in the Prometheus format to Sumo Logic.
+* `component: “messaging”` - In the input plugins section, which is `[[inputs.jolokia2_agent]]`. This value is used by Sumo Logic apps to identify application components.
+* `messaging_system: "activemq"` - In the input plugins sections.In other words, this value identifies the messaging system
 *  For all other parameters please see [this doc](https://github.com/influxdata/telegraf/blob/master/etc/telegraf.conf) for more properties that can be configured in the Telegraf agent globally.
 
 Once you have finalized your telegraf.conf file, you can start or reload the telegraf service using instructions from the [doc](https://docs.influxdata.com/telegraf/v1.17/introduction/getting-started/#start-telegraf-service).
@@ -493,7 +507,7 @@ To configure the log output destination to a log file:
 * Navigate to directory : `<Folder ActiveMQ Installed>`
 * Open file log4j.properties and edit options below:
 
-```bash
+```sql
 log4j.appender.logfile.file=${activemq.data}/activemq.log
 log4j.appender.logfile.maxFileSize=10240MB
 log4j.logger.org.apache.activemq=DEBUG
@@ -700,24 +714,6 @@ Version selection is applicable only to a few apps currently. For more informati
 Once an app is installed, it will appear in your **Personal** folder, or another folder that you specified. From here, you can share it with your organization.
 
 Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
-
-
-### Sample Log Message
-
-```bash title="Kubernetes"
-{
-      timestamp:1624348918179,
-      log:"2021-06-22 08:01:57,993 | DEBUG | Publishing: tcp://activemq-2:61616 for broker transport URI: tcp://activemq-2:61616?maximumConnections=1000&wireFormat.maxFrameSize=104857600 | org.apache.activemq.broker.TransportConnector | ActiveMQ Transport: tcp:///10.32.0.1:16932@61616",
-      stream:"stdout",
-      time:"2021-06-22T08:01:58.177654533Z"
-}
-```
-
-
-```bash title="Non-Kubernetes"
-2021-06-22 15:00:41,922 | DEBUG | Stopping transport tcp:///192.168.100.8:36302@61616 | org.apache.activemq.transport.tcp.TcpTransport | ActiveMQ BrokerService[localhost] Task-15300
-Host: broker-3-activemq Name: /opt/activemq/data/activemq.log Category:logfile
-```
 
 
 ## ActiveMQ Alerts
@@ -1005,7 +1001,7 @@ Use this dashboard to:
 <img src={useBaseUrl('img/integrations/containers-orchestration/ActiveMQ-topics.png')} alt="ActiveMQ dashboards" />
 
 
-### ActiveMQ - Resource Utilization
+### Resource Utilization
 
 The ActiveMQ - Resource Utilization dashboard provides an at-a-glance view of the state of system loads in clusters: CPU usage, memory usage, Swap usage,  file descriptor usage, garbage collection rate, heap, and non-heap usage.
 
@@ -1017,7 +1013,7 @@ The ActiveMQ - Resource Utilization dashboard provides an at-a-glance view of th
 <img src={useBaseUrl('img/integrations/containers-orchestration/activemq-resource.png')} alt="ActiveMQ dashboards" />
 
 
-### ActiveMQ - Logs
+### Logs
 
 This dashboard helps you quickly analyze your ActiveMQ error logs across all clusters.
 

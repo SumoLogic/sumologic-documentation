@@ -204,7 +204,7 @@ annotations:
 
 
 1. Make sure that the Couchbase pods are running and annotations are applied by using the command:
-```
+```bash
 kubectl describe pod <Couchbase_pod_name>
 ```
 2. Sumo Logic Kubernetes collection will automatically start collecting logs from the pods having the annotations defined above.

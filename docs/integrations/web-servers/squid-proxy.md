@@ -72,9 +72,9 @@ Click on the appropriate tabs below based on the environment where your Squid Pr
 
 <TabItem value="k8s">
 
-<img src={useBaseUrl('img/integrations/web-servers/squid-proxy-k8s-flow.png')} alt="Squid Proxy" />
-
 In Kubernetes environments, we use the Telegraf Operator, which is packaged with our Kubernetes collection. You can learn more about it[ here](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/telegraf-collection-architecture). The diagram below illustrates how data is collected from Squid Proxy in Kubernetes environments. In the architecture shown below, there are four services that make up the metric collection pipeline: Telegraf, Prometheus, Fluentd, and FluentBit.
+
+<img src={useBaseUrl('img/integrations/web-servers/squid-proxy-k8s-flow.png')} alt="Squid Proxy" />
 
 The first service in the pipeline is Telegraf. Telegraf collects metrics from Squid Proxy. Note that we’re running Telegraf in each pod we want to collect metrics from as a sidecar deployment: i.e. Telegraf runs in the same pod as the containers it monitors. Telegraf uses the [SNMP input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/snmp) to obtain metrics. (For simplicity, the diagram doesn’t show the input plugins.) The injection of the Telegraf sidecar container is done by the Telegraf Operator. We also have Fluentbit that collects logs written to standard out and forwards them to FluentD, which in turn sends all the logs and metrics data to a Sumo Logic HTTP Source.
 
@@ -352,20 +352,22 @@ For all other parameters please see [this doc](/docs/send-data/collect-from-othe
 2. Install the Sumo Logic [tailing sidecar operator](https://github.com/SumoLogic/tailing-sidecar/tree/main/operator#deploy-tailing-sidecar-operator).
 3. Add the following annotation in addition to the existing annotations.
 
-```
+```xml
 annotations:
   tailing-sidecar: sidecarconfig;<mount>:<path_of_Squid Proxy_log_file>/<Squid Proxy_log_file_name>
 ```
 
 Example:
 
-```
+```bash
 annotations:
   tailing-sidecar: sidecarconfig;data:/var/log/squid/access.log
-
 ```
 
-1. Make sure that the Squid Proxy pods are running and annotations are applied by using the command: ` kubectl describe pod <Squid_Proxy_pod_name>`
+1. Make sure that the Squid Proxy pods are running and annotations are applied by using the command:
+```xml
+kubectl describe pod <Squid_Proxy_pod_name>
+```
 2. Sumo Logic Kubernetes collection will automatically start collecting logs from the pods having the annotations defined above.
 3. Verify logs in Sumo Logic.
 1. **Add an FER to normalize the fields in Kubernetes environments** Labels created in Kubernetes environments automatically are prefixed with pod_labels. To normalize these for our app to work, we need to create a Field Extraction Rule if not already created for Proxy Application Components. To do so:
@@ -425,11 +427,13 @@ To collect logs directly from your Squid Proxy machine, use an Installed Collect
 * **File Path (Required)**. Enter the path to your access.log. The files are typically located in /var/log/squid/access.log. If you are using a customized path, check the squid.conf file for this information.
 * **Source Host**. Sumo Logic uses the hostname assigned by the OS unless you enter a different hostname.
 * **Source Category**. Enter any string to tag the output collected from this Source, such as SquidProxy/AccessLog. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details see [Best Practices](/docs/send-data/design-deployment/best-practices-source-categories).)
-* **Fields. **Set the following fields \
-`component = proxy \
-proxy_system = squidproxy \
-proxy_cluster = <Your_Squid_Proxy_Cluster_Name>`. Enter **Default** if you do not have one. \
-`environment = <Your_Environment_Name>` (for example, Dev, QA, or Prod)
+* **Fields.** Set the following fields
+```bash
+component = proxy
+proxy_system = squidproxy
+proxy_cluster = <Your_Squid_Proxy_Cluster_Name> #Enter Default if you do not have one.
+environment = <Your_Environment_Name> #For example, Dev, QA, or Prod
+```
 
 1. Configure the Advanced section:
 * Enable Timestamp Parsing. Select Extract timestamp information from log file entries.
@@ -464,10 +468,9 @@ If you are using a service like Fluentd, or you would like to upload your logs m
 
 #### Configure Metrics Collection
 
-##### Set up a Sumo Logic HTTP Source
+#### Set up a Sumo Logic HTTP Source
 
-
-1. **Configure a Hosted Collector for Metrics. \
+1. **Configure a Hosted Collector for Metrics.
 **To create a new Sumo Logic hosted collector, perform the steps in the [Create a Hosted Collector](/docs/send-data/Hosted-Collectors#Create_a_Hosted_Collector) documentation.
 2. **Configure an HTTP Logs & Metrics source**:
     1. On the created Hosted Collector on the Collection Management screen, select **Add Source**.
@@ -479,24 +482,19 @@ If you are using a service like Fluentd, or you would like to upload your logs m
     4. Take note of the URL provided once you click _Save_. You can retrieve it again by selecting the **Show URL** next to the source on the Collection Management screen.
 
 
-##### Enable SNMP agent on Squid Proxy
+#### Enable SNMP agent on Squid Proxy
 
 By default, the [SNMP agent](https://wiki.squid-cache.org/Features/Snmp) will be disabled on squid proxy. You have to enable it. To enable the SNMP agent on squid, edit the configuration file of the squid proxy (squid.conf) and add the following section:
+  ```bash
+  acl snmppublic snmp_community public
+  snmp_port 3401
+  snmp_access allow snmppublic localhost
+  ```
 
-    acl snmppublic snmp_community public
-
-
-    snmp_port 3401
-
-
-    snmp_access allow snmppublic localhost
-
-
-###### Set up Telegraf
+#### Set up Telegraf
 
 1. **Install Telegraf if you haven’t already.** Use the [following steps](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf.md) to install Telegraf.
 2. **Configure and start Telegraf.** As part of collecting metrics data from Telegraf, we will use the[ SNMP input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/snmp) to get data from Telegraf and the[ Sumo Logic output plugin](https://github.com/SumoLogic/fluentd-output-sumologic) to send data to Sumo Logic. \
-
 
 <details><summary><strong>Click to expand</strong>. Create or modify `telegraf.conf` and copy and paste the text below:</summary>
 
@@ -682,11 +680,9 @@ Enter values for fields annotated with `<VALUE_TO_BE_CHANGED>` to the appropriat
 Here’s an explanation for additional values set by this Telegraf configuration.
 
 
-15
 If you haven’t defined a cluster in Squid Proxy, then enter `default` for `proxy_cluster`.
-16
-There are additional values set by the Telegraf configuration.  We recommend not to modify these values as they might cause the Sumo Logic app to not function correctly.
 
+There are additional values set by the Telegraf configuration.  We recommend not to modify these values as they might cause the Sumo Logic app to not function correctly.
 
 
 * `data_format: “prometheus”` - In the output `[[outputs.sumologic]]` plugins section. Metrics are sent in the Prometheus format to Sumo Logic.
@@ -695,18 +691,9 @@ There are additional values set by the Telegraf configuration.  We recommend not
 
 See[ this doc](https://github.com/influxdata/telegraf/blob/master/etc/telegraf.conf) for all other parameters that can be configured in the Telegraf agent globally.
 
-
-17
 After you have finalized your `telegraf.conf` file, you can start or reload the telegraf service using instructions from this[ doc](https://docs.influxdata.com/telegraf/v1.17/introduction/getting-started/#start-telegraf-service).
 
 At this point, Telegraf should start collecting the Squid Proxy metrics and forward them to the Sumo Logic HTTP Source.
-
-
-
-18
-
-
-
 
 1. Enter the following options:
     1. **Rule Name**. Enter the name as **App Observability - Proxy**.
@@ -714,22 +701,17 @@ At this point, Telegraf should start collecting the Squid Proxy metrics and forw
     3. **Scope**. Select **Specific Data.**
     4. **Scope**: Enter the following keyword search expression.
 
-
 ```sql
 pod_labels_environment=* pod_labels_component=proxy pod_labels_proxy_cluster=* pod_labels_proxy_system=*
 ```
 
-
-
 * **Parse Expression**. Enter the following parse expression:
-
-            ```
-            if (!isEmpty(pod_labels_environment), pod_labels_environment, "") as environment
-            | pod_labels_component as component
-            | pod_labels_proxy_system as proxy_system
-            | pod_labels_proxy_cluster as proxy_cluster
-            ```
-
+```sql
+if (!isEmpty(pod_labels_environment), pod_labels_environment, "") as environment
+| pod_labels_component as component
+| pod_labels_proxy_system as proxy_system
+| pod_labels_proxy_cluster as proxy_cluster
+```
 
 1. Click **Save** to create the rule.
 
