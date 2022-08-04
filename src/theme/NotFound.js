@@ -34,7 +34,7 @@ export default function NotFound(): JSX.Element {
                 <Translate
                   id="theme.NotFound.p1"
                   description="The first paragraph of the 404 page">
-                  Oh no! We're sorry, we could not find what you were looking for.
+                  Whoops! We can't find what you're looking for.
                 </Translate>
               </p>
               <p>
