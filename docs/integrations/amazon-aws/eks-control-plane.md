@@ -86,7 +86,7 @@ Amazon EKS utilizes the following log types:
 
 For more details about EKS logging, refer the [Amazon documentation](https://docs.aws.amazon.com/eks/latest/userguide/control-plane-logs.html).
 
-**To configure Amazon CloudWatch log collection, do the following:
+To configure Amazon CloudWatch log collection, do the following:
 1. Follow the instructions for [Collecting Logs using a CloudFormation Template](/docs/send-data/Collect-from-Other-Data-Sources/Amazon-CloudWatch-Logs).
 2. Refer [Amazon EKS Logs](https://docs.aws.amazon.com/eks/latest/userguide/control-plane-logs.html) for Amazon specific details.
 

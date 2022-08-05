@@ -47,7 +47,7 @@ You must have Palo Alto Networks Web administrative user permissions to successf
 
 In this step you configure a hosted collector with a Cloud Syslog source that will act as Syslog server to receive logs and events from Palo Alto Networks devices.
 
-**To configure a hosted collector with a Cloud Syslog source, do the following:**
+**To configure a hosted collector with a Cloud Syslog source, do the following:
 
 1. Log in to Sumo Logic and create a [Hosted Collector](/docs/send-data/configure-hosted-collector).
 2. Create a [Cloud Syslog Source](/docs/send-data/Sources/sources-hosted-collectors/Cloud-Syslog-Source) on the hosted collector, specifying the following:
@@ -61,7 +61,7 @@ In this step you configure a hosted collector with a Cloud Syslog source that wi
 
 In this step you create a server profile where you can define the log destination. This will be the host name, port and protocol (TLS) of the Sumo Logic Cloud Syslog source.
 
-**To create a server profile specifying  the log destination, do the following:**
+**To create a server profile specifying  the log destination, do the following:
 
 1. Login to the Palo Alto Networks Web interface as an administrative user.
 2. Select **Device tab > Server Profiles > Syslog**.
@@ -113,7 +113,7 @@ To configure syslog forwarding for each log type (`config`, `system`, `threat`, 
 
 In this step, you view logs using the Palo Alto Network Web interface to confirm the logs are generated on the firewall.
 
-**To verify the logs in Palo Alto Networks, do the following:**
+**To verify the logs in Palo Alto Networks, do the following:
 
 1. In the Palo Alto Networks UI, select **Monitor** > **Logs**.
 2. Once the setup is done, log in to Sumo Logic.

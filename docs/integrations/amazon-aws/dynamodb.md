@@ -16,7 +16,6 @@ The Sumo App for Amazon DynamoDB uses both logs and metrics to is a unified logs
 
 ## Collect Logs and Metrics for the Amazon DynamoDB App
 
-
 ### Log and Metric Types  
 
 The AWS DynamoDB app uses the following logs and metrics:
@@ -65,9 +64,7 @@ The AWS DynamoDB app uses the following logs and metrics:
 ```
 
 
-
 ### Sample Queries
-
 
 ```sql title="Successful Request latency by Table Name (Metric based)"
 namespace=aws/dynamodb metric=SuccessfulRequestLatency Statistic=Average account=* region=* tablename=*  | sum by account, region, namespace, tablename
@@ -93,8 +90,7 @@ Sumo Logic supports collecting metrics using two source types:
 
 Namespace for **Amazon DynamoDB** Service is **AWS/DynamoDB**.
 
-* **Metadata: **Add an **account** field to the source and assign it a value that is a friendly name/alias to your AWS account from which you are collecting metrics. This name will appear in the Sumo Logic Explorer View. Metrics can be queried via the “account field”.
-
+* **Metadata**: Add an **account** field to the source and assign it a value that is a friendly name/alias to your AWS account from which you are collecting metrics. This name will appear in the Sumo Logic Explorer View. Metrics can be queried via the “account field”.
 
 
 ### Collect Amazon DynamoDB CloudTrail Logs
@@ -104,8 +100,8 @@ Namespace for **Amazon DynamoDB** Service is **AWS/DynamoDB**.
     * **Description**. Enter an optional description.
     * **S3 Region**. Select the Amazon Region for your **Amazon DynamoDB** S3 bucket.
     * **Bucket Name**. Enter the exact name of your **Amazon DynamoDB** S3 bucket.
-    * **Path Expression**. Enter the string that matches the S3 objects you'd like to collect. You can use a wildcard (*) in this string. (DO NOT use a leading forward slash. See [Amazon Path Expressions](/docs/send-data/Sources/sources-hosted-collectors/Amazon-Web-Services/Amazon-Path-Expressions).) The S3 bucket name is not part of the path. Don’t include the bucket name when you are setting the Path Expression
-    * **Source Category**. Enter aws/observability/cloudtrail/logs
+    * **Path Expression**. Enter the string that matches the S3 objects you'd like to collect. You can use a wildcard (`*`) in this string. (DO NOT use a leading forward slash. See [Amazon Path Expressions](/docs/send-data/Sources/sources-hosted-collectors/Amazon-Web-Services/Amazon-Path-Expressions).) The S3 bucket name is not part of the path. Don’t include the bucket name when you are setting the Path Expression
+    * **Source Category**. Enter `aws/observability/cloudtrail/logs`
     * **Fields**. Add an **account** field and assign it a value that is a friendly name/alias to your AWS account from which you are collecting logs. This name will appear in the Sumo Logic Explorer View. Logs can be queried via the “account field”.
     * **Access Key ID and Secret Access Key**. Enter your Amazon [Access Key ID and Secret Access Key](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSGettingStartedGuide/AWSCredentials.html). Learn how to use Role-based access to AWS [here](/docs/send-data/sources/sources-hosted-collectors/amazon-web-services/aws-sources)
     * **Log File Discovery -> Scan Interval**. Use the default of 5 minutes. Alternately, enter the frequency. Sumo Logic will scan your S3 bucket for new data. Learn how to configure **Log File Discovery** [here](/docs/send-data/sources/sources-hosted-collectors/amazon-web-services/aws-sources).
@@ -125,8 +121,7 @@ Login to Sumo Logic, go to Manage Data > Logs > Fields. Search for the “**tabl
 
 Create Field Extraction Rule for CloudTrail Logs. Learn how to create Field Extraction Rule [here](/docs/manage/field-extractions/create-field-extraction-rule.md).
 
-
-```
+```sql
 Rule Name: AwsObservabilityDynamoDBCloudTrailLogsFER
 Applied at: Ingest Time
 Scope (Specific Data):
@@ -143,7 +138,7 @@ Parse Expression:
 ### Centralized AWS CloudTrail Log Collection
 
 In case you have a centralized collection of cloudtrail logs and are ingesting them from all accounts into a single Sumo Logic cloudtrail log source, create following Field Extraction Rule to map proper AWS account(s) friendly name/alias. Create it if not already present / update it as required.
-```
+```sql
 Rule Name: AWS Accounts
 Applied at: Ingest Time
 Scope (Specific Data):
@@ -151,7 +146,9 @@ _sourceCategory=aws/observability/cloudtrail/logs
 ```
 
 
-**Parse Expression**: Enter a parse expression to create an “account” field that maps to the alias you set for each sub-account. For example, if you used the `“dev”` alias for an AWS account with ID `"528560886094"` and the `“prod”` alias for an AWS account with ID `"567680881046"`, your parse expression would look like this:
+**Parse Expression**
+
+Enter a parse expression to create an “account” field that maps to the alias you set for each sub-account. For example, if you used the `“dev”` alias for an AWS account with ID `"528560886094"` and the `“prod”` alias for an AWS account with ID `"567680881046"`, your parse expression would look like this:
 ```sql
 | json "recipientAccountId"
 // Manually map your aws account id with the AWS account alias you setup earlier for individual child account
@@ -173,7 +170,7 @@ Locate and install the app you need from the **App Catalog**. If you want to see
 2. To install the app, click **Add to Library** and complete the following fields.
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
     2. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-    3. Click **Add to Library**.
+3. Click **Add to Library**.
 
 Once an app is installed, it will appear in your **Personal** folder, or another folder that you specified. From here, you can share it with your organization.
 

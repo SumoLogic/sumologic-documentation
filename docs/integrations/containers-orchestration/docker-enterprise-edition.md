@@ -28,7 +28,7 @@ This section shows you how to configure log and metric collection for the Docker
 * **Docker Logs. **Collects stdout/stderr logs from processes that are running within Docker containers.
 * **Docker Stats. **Collects metrics about Docker containers.
 
-**To configure log and metric collection for the Docker ULM App, do the following:**
+**To configure log and metric collection for the Docker ULM App, do the following:
 
 
 
@@ -67,7 +67,7 @@ If you get the following error while executing `kubectl`, your kube config is no
 The connection to the server localhost:8080 was refused - did you specify the right host or port?
 ```
 
-**Do the following:**
+**do the following:
 
 1. Log in to the UCP Web UI (dashboard), navigate to your user account, and click **My Profile**.
 2. Then click **Client Bundles >** **New Client Bundle** > **Generate Client Bundle**.
@@ -169,7 +169,7 @@ _sourceCategory=docker _sourceName= ucp-kube-controller-manager (fail* or error 
 
 You configured two sources for collection, docker logs and docker stats, and therefore will specify two source categories when installing the Docker EE App.
 
-**To install the Docker EE App, do the following:**
+**To install the Docker EE App, do the following:
 
 1. From the **App Catalog**, search for and select the app**.**
 2. To install the app, click **Add to Library.**

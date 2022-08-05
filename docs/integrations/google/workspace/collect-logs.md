@@ -104,7 +104,7 @@ When you have set up a Hosted Collector and have your credentials ready, you're 
 16
 We recommend that you use the same single Source Category for each Google Workspace App Audit Source. For example, **google_apps**.
 
-**To configure a Google Workspace Apps Audit Source, do the following:**
+**To configure a Google Workspace Apps Audit Source, do the following:
 
 
 

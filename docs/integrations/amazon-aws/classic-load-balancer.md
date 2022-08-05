@@ -105,7 +105,7 @@ When you create an AWS Source, you associate it with a Hosted Collector. Before 
 
   Sumo Logic scans an S3 bucket based on the path expression supplied or receives an SNS notification when a new file object is created. As part of this, we receive a file name (key) and the object's ID. It's compared against a list of file objects already ingested. The file's contents are fully ingested if a matching file ID is not found.
 
-  When you overwrite a file in S3, the file object gets a new version ID, and as a result, Sumo Logic sees it as a new file and ingests all of it. If with each version you post to S3, you are simply adding to the end of the file, this will lead to duplicate messages, one message for each version of the file you created in S3. \
+  When you overwrite a file in S3, the file object gets a new version ID, and as a result, Sumo Logic sees it as a new file and ingests all of it. If with each version you post to S3, you are simply adding to the end of the file, this will lead to duplicate messages, one message for each version of the file you created in S3.
 
 * Glacier objects will not be collected and are ignored.
 * If you're using SNS, you must create a separate topic and subscription for each Source.
@@ -143,20 +143,17 @@ Selecting an AWS GovCloud region means your data will leave a FedRAMP-high envir
 
    If you paused the Source and want to skip some data when you resume, update the **Collection should begin** setting to a time after it was paused.
 9. For **Source Category**, enter any string to tag the output collected from this Source. Category metadata is stored in a searchable field called `_sourceCategory`.
-   * Example sourceCategory: **aws/observability/clb/logs**
+   * Example `_sourceCategory: aws/observability/clb/logs`
 10. **Fields**. Click the **+Add Field** link to add custom log metadata [Fields](/docs/manage/fields.md).
 
 Following **Fields** are to be added in the source:
 * Add an **account** field and assign it a value which is a friendly name / alias to your AWS account from which you are collecting logs. This name will appear in the Sumo Logic Explorer View. Logs can be queried via the “account field”.
 * Add a **region** field and assign it the value of respective AWS region where the Classic Load Balancer exists.
 * Add an **accountId **field and assign it the value of the respective AWS account id which is being used.
-
- ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a checkmark is shown when the field exists and is enabled in the Fields table schema.
-
- ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist or is disabled in the Fields table schema. In this case, an option is provided to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo that does not exist in the Fields schema or is disabled, it is ignored, known as dropped.
+  * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a checkmark is shown when the field exists and is enabled in the Fields table schema.
+  * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist or is disabled in the Fields table schema. In this case, an option is provided to automatically add or enable the nonexistent fields to the Fields table schema. If a field is sent to Sumo that does not exist in the Fields schema or is disabled, it is ignored, known as dropped.
 11. For **AWS Access,** you have two **Access Method** options. Select **Role-based or Key access based on the AWS authentication you provide**. Role-based access is preferred. This was completed in the prerequisite step [Grant Sumo Logic access to an AWS Product](/docs/send-data/sources/sources-hosted-collectors/amazon-web-services/grant-access-aws-product.md).
-    * For **Role-based access,** enter** **the Role ARN that was provided by AWS after creating the role. \
-
+    * For **Role-based access,** enter** **the Role ARN that was provided by AWS after creating the role.
     * For **Key access** enter the **Access Key ID **and** Secret Access Key.** See [AWS Access Key ID](http://docs.aws.amazon.com/STS/latest/UsingSTS/UsingTokens.html#RequestWithSTS) and [AWS Secret Access Key](https://aws.amazon.com/iam/) for details.
 12. **Log File Discovery.** You have the option to set up Amazon Simple Notification Service (SNS) to notify Sumo Logic of new items in your S3 bucket. A scan interval is required and automatically applied to detect log files.
 Sumo Logic highly recommends using an SNS Subscription Endpoint for its ability to maintain low-latency collection. This is essential to support up-to-date [Alerts](/docs/alerts/index.md).
@@ -167,13 +164,9 @@ If the Source is not subscribed to an SNS topic and set to **Automatic,** the sc
 
 The following steps use the AWS SNS Console. You may instead use AWS CloudFormation. Follow the instructions to use [CloudFormation to set up an SNS Subscription Endpoint](/docs/send-data/Sources/sources-hosted-collectors/Amazon-Web-Services/configure-our-aws-source-cloudformation#Set_up_an_SNS_Subscription_Endpoint).
 
-1. Go to **Services >** **Simple Notification Service** and click **Create Topic**. Enter a **Topic name** and click **Create topic**. Copy the provided **Topic ARN**, you’ll need this for the next step. \
-
-Make sure that the topic and the bucket are in the same region.
+1. Go to **Services >** **Simple Notification Service** and click **Create Topic**. Enter a **Topic name** and click **Create topic**. Copy the provided **Topic ARN**, you’ll need this for the next step. Make sure that the topic and the bucket are in the same region.
 2. Again go to **Services >** **Simple Notification Service** and click **Create Subscription**. Paste the **Topic ARN** from step B above. Select **HTTPS** as the protocol and enter the **Endpoint** URL provided while creating the S3 source in Sumo Logic. Click **Create subscription** and a confirmation request will be sent to Sumo Logic. The request will be automatically confirmed by Sumo Logic.
 3. Select the **Topic** created in step B and navigate to **Actions > Edit Topic Policy**. Use the following policy template, replace the SNS-topic-ARN and bucket-name placeholders in the Resource section of the JSON policy with your actual SNS topic ARN and S3 bucket name:
-
-
 ```json
 {
     "Version": "2008-10-17",
@@ -255,7 +248,6 @@ Login to Sumo Logic,  goto Manage Data > Logs > Fields. Search for the “**load
 
 Create Field Extraction Rule for AWS Classic Load Balancer Access Logs. Learn how to create Field Extraction Rule [here](/docs/manage/field-extractions/create-field-extraction-rule.md).
 
-
 ```sql
 Rule Name: AwsObservabilityElbAccessLogsFER
 Applied at: Ingest Time
@@ -264,7 +256,6 @@ Scope (Specific Data): account=* region=* _sourceCategory=aws/observability/clb/
 
 
 **Parse Expression**:
-
 
 ```sql
 | parse "* * * * * * * * * * * \"*\" \"*\" * *" as datetime, loadbalancername, client, backend, request_processing_time, backend_processing_time, response_processing_time, elb_status_code, backend_status_code, received_bytes, sent_bytes, request, user_agent, ssl_cipher, ssl_protocol

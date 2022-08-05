@@ -295,7 +295,7 @@ In this section, we will configure a collection of login and audit logs  from Wo
 
 In this step, you deploy the SAM application, which creates the necessary resources in your AWS account.
 
-**To deploy the Sumo Logic Workday SAM Application, do the following:**
+**To deploy the Sumo Logic Workday SAM Application, do the following:
 
 1. Go to [https://serverlessrepo.aws.amazon.com/applications](https://serverlessrepo.aws.amazon.com/applications).
 2. Search for **sumologic-workday**, and select the **Show apps that create custom IAM roles or resource policies **checkbox and click the app link when it appears. \
@@ -352,7 +352,7 @@ pip3 install sumologic-workday
 /usr/bin/python3 -m sumoworkdaycollector.main
 ```
 
-**To deploy the script on a Linux machine, do the following:**
+**To deploy the script on a Linux machine, do the following:
 
 1. If **pip** is not already installed, follow the instructions in the [pip documentation](https://pip.pypa.io/en/stable/installing/) to download and install **pip**.
 2. Log in to a Linux machine (compatible with either Python 3.7 or Python 2.7).
@@ -563,7 +563,7 @@ The following table provides a list of variables for Workday that you can option
 
 This section shows you how to run the function manually and then verify that log messages are being sent from Workday.
 
-**To run the function manually, do the following:**
+**To run the function manually, do the following:
 
 
 

@@ -9,14 +9,6 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/amazon-aws/gi-secops.png')} alt="Thumbnail icon" width="50"/>
 
-This feature is available in the following account plans.
-
-| Account Type | Account level
-| :---- | :----
-|  Cloud Flex  |  Trial, Enterprise
-| Cloud Flex Credits | Trial, Enterprise Suite, Enterprise Security
-
-
 The Global Intelligence for AWS CloudTrail App enables you to detect potentially malicious configuration changes in your AWS account by comparing [AWS CloudTrail](https://aws.amazon.com/cloudtrail/) events in your account against a cohort of AWS customers. CloudTrail events are curated from AWS penetration tests and operational best practices.
 
 Our new app install flow is now in Beta. It is only enabled for certain customers while we gather Beta customer feedback. If you can see the Add Integration button, follow the "Before you begin" section in the "Collect Logs" help page and then use the in-product instructions in Sumo Logic to set up the app.
@@ -37,6 +29,16 @@ The current scope of this application includes the following AWS services and as
 5. **AWS Lambda**: count of function names
 6. **AWS IAM**: count of IAM users, roles and groups
 7. **AWS CloudTrail**: counts of trail instances
+
+
+## Prerequisites
+
+This feature is available in the following account plans.
+
+| Account Type | Account level
+| :---- | :----
+|  Cloud Flex  |  Trial, Enterprise
+| Cloud Flex Credits | Trial, Enterprise Suite, Enterprise Security
 
 
 ## Collecting Logs for the GI for AWS CloudTrail SecOps App

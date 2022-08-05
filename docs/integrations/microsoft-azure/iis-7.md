@@ -52,7 +52,7 @@ For more information about the IIS 7 log (IIS 7.5 logs are used) format, see [ht
 
 To prepare for logging IIS 7 events, perform the following two tasks.
 
-**To enable logging on your IIS Server, do the following:**
+**To enable logging on your IIS Server, do the following:
 
 1. Open the Sever Manager Console
 2. Select **Roles**
@@ -84,7 +84,7 @@ Sumo Logic expects these fields in IIS logs for the IIS 7 Application and Field 
 * TimeTaken
 1. Click **OK** to save your configuration
 
-**To confirm that the log files are being created, do the following:**
+**To confirm that the log files are being created, do the following:
 
 
 

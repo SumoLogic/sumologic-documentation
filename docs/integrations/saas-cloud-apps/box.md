@@ -201,7 +201,7 @@ You should now see a list of results of collected Box events.
 
 For guidance creating your source category naming convention, see [Best Practices: Good Source Category, Bad Source Category](/docs/send-data/design-deployment/best-practices-source-categories).
 
-**To configure a source, do the following:**
+**To configure a source, do the following:
 
 1. Configure a [Script Source](/docs/send-data/Sources/sources-installed-collectors/Script-Source). Collectors using version 19.245-4 and later do not allow Script Sources to run by default.
 10

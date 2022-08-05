@@ -91,7 +91,7 @@ This section covers the various ways in which to collect logs from JFrog Xray an
 
 In this collection method, you deploy the SAM application, which creates the necessary  resources in your AWS account.
 
-**To deploy the Sumo Logic JFrog xray SAM Application, do the following:
+To deploy the Sumo Logic JFrog xray SAM Application, do the following:
 
 1. Go to [https://serverlessrepo.aws.amazon.com/applications](https://serverlessrepo.aws.amazon.com/applications).
 2. Search for **sumologic-jfrog-xray** and make sure  the checkbox **Show apps that create custom IAM roles or resource policies** is checked, and click the app link when it appears.
@@ -114,7 +114,7 @@ In this collection method, you deploy the SAM application, which creates the nec
 
 If you have multiple JFrog Xray instances from which you want to collect logs and send to Sumo Logic, perform the following task.
 
-**To configure collection for multiple JFrog Xray instances, do the following:**
+To configure collection for multiple JFrog Xray instances, do the following:
 
 1. [Deploy the SAM application](#Deploy+a+SAM+application) with configuration for a new project.
 2. After the deployment is complete, change the database name by adding environment variable (**DBNAME**) in [AWS Lambda](https://docs.aws.amazon.com/lambda/latest/dg/env_variables.html).

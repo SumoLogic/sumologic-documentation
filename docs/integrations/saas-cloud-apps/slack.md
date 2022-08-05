@@ -164,7 +164,7 @@ This section demonstrates how to generate a Slack API token for all types of Sla
 
 You must have admin privileges to perform this task. The token generated in the following steps can be used by all Slack plans to collect the mentioned [log types](#Log-types).
 
-**To generate a Slack API token for users, channels and access logs, do the following:**
+**To generate a Slack API token for users, channels and access logs, do the following:
 
 1. Go to the [Apps](https://api.slack.com/apps) page.
 2. Click **Create New App.**
@@ -258,7 +258,7 @@ This generated token can only be used by the Enterprise Slack plan to collect au
 
 You must have owner privileges to perform this task.
 
-**To generate a Slack API token for audit logs, do the following:**
+**To generate a Slack API token for audit logs, do the following:
 
 1. For the Sumo Slack app you created in [Users, channels, and access logs](#Users.2C_channels.2C_and_access_logs), Go To **OAuth and Permission.**
 2. Go to **Redirect URLs **and add a Redirect URL as [https://localhost](http://localhost/),** **then click **Save URLs**.
@@ -330,7 +330,7 @@ When you configure the HTTP Source, make sure to save the HTTP Source Address UR
 
 Identify an existing Sumo Logic Hosted Collector you want to use, or create a new Hosted Collector as described in the following task
 
-**To add a hosted collector and HTTP source, do the following:**
+**To add a hosted collector and HTTP source, do the following:
 1. Create a new Sumo Logic Hosted Collector by performing the steps in [Configure a Hosted Collector](/docs/send-data/configure-hosted-collector).
 2. Create a new HTTP Log Source in the hosted collector created above by following [these instructions.](/docs/send-data/sources/sources-hosted-collectors/http-logs-metrics-source)
 
@@ -374,7 +374,7 @@ In this collection method, you deploy the SAM application, which creates the nec
 
 This section shows you how to configure collection for multiple projects assuming you are already collecting Slack data for one project.
 
-**To configure collection for multiple projects, do the following:**
+**To configure collection for multiple projects, do the following:
 
 1. [Deploy the SAM application](#Sumo_Logic_Slack_SAM_application) with the configuration for a new slack workspace.
 2. Modify the **DatabaseName** and **Token** parameter during the SAM configuration to identify the slack workspace.
@@ -401,7 +401,7 @@ This task shows you how to install the script on a Linux machine.
 
 For python 3, use pip3 install **sumologic-slack** (step 3). For operating systems where the default is not python3, use **/usr/bin/python3 -m sumoslack.main** (step 6).
 
-**To deploy the script, do the following:**
+**To deploy the script, do the following:
 
 1. If **pip** is not already installed, follow the instructions in the [pip documentation](https://pip.pypa.io/en/stable/installing/) to download and install **pip**.
 2. Log in to a Linux machine (compatible with Python 3.7.)
@@ -442,7 +442,7 @@ SumoLogic:
 
 This section shows you how to configure collection for multiple projects assuming you are already collecting Slack data for one project.
 
-**To configure collection for multiple projects, do the following:**
+**To configure collection for multiple projects, do the following:
 
 1. After configuring the script on a Linux machine, go to your configuration file.
 2. Change the DB_NAME in the **slackcollector.yaml** file, as indicated in the following example:
