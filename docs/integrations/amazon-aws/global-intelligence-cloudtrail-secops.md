@@ -40,15 +40,7 @@ This feature is available in the following account plans.
 |  Cloud Flex  |  Trial, Enterprise
 | Cloud Flex Credits | Trial, Enterprise Suite, Enterprise Security
 
-
-## Collecting Logs for the GI for AWS CloudTrail SecOps App
-
-This section provides an overview of the log collection process and instructions for configuring log collection for the Sumo Logic App for Gl CloudTrail.
-
-If you have already AWS CloudTrail logs flowing into Sumo Logic, you can skip the steps on this page and install the App from the Sumo Logic App Catalog.
-
-
-### Log Types  
+## Log Types  
 
 Global Intelligence for AWS CloudTrail App uses AWS CloudTrail logs.
 
@@ -56,10 +48,9 @@ Our new app install flow is now in Beta. It is only enabled for certain customer
 
 When this app is initially installed, the dashboards appear with empty panels until scheduled searches are run and the indices are populated.
 
-
 :::caution Important Notes
 
-<details><summary><strong>Click to Expand</strong><br/>This application relies on 45 Scheduled Searches that Save to 2 different Indexes and 1 Lookup Table. As a result, they will consume the related quotas for your account. The following is the list of Scheduled Searches:</summary>
+<details><summary><strong>Click to Expand</strong><br/>This application relies on 45 Scheduled Searches that Save to two different Indexes and one Lookup Table. As a result, they will consume the related quotas for your account. The following is the list of Scheduled Searches:</summary>
 
 * To reduce false positives, the benchmarks and application filter out AWS CloudTrail events from legitimate cloud services including AWS itself and CloudHealth by VMware.
 * Security posture requirements may vary between AWS accounts for a given customer. For example, development accounts might have less strict controls than production accounts. The app supports filtering findings by AWS account ID to facilitate AWS account level posture assessment.
@@ -83,60 +74,73 @@ When this app is initially installed, the dashboards appear with empty panels un
 
 :::
 
-### Collection process overview
+
+
+## Collecting Logs for the GI for AWS CloudTrail SecOps App
+
+This section provides an overview of the log collection process and instructions for configuring log collection for the Sumo Logic App for Gl CloudTrail.
+
+If you have already AWS CloudTrail logs flowing into Sumo Logic, you can skip the steps on this page and install the App from the Sumo Logic App Catalog.
 
 The following illustration is a graphical representation of the process for collecting logs from AWS CloudTrail and delivering them to Sumo Logic.
 
+<img src={useBaseUrl('img/integrations/amazon-aws/Collection_Process_Overview.png')} alt="Collection_Process_Overview" />
 
-### Configuring log collection
 
+### Configuring Log Collection
 
 To configure log collection for Global Intelligence for AWS CloudTrail, follow the steps described [here](/docs/integrations/amazon-aws/CloudTrail#Collect-logs-for-the-AWS-CloudTrail-App).
 
 
-### Sample log message
+### Sample Log Message
 
+```json
+{
+	"eventVersion":"1.05",
+	"userIdentity":{
+		"type":"IAMUser",
+		"principalId":"AIDAJK3NPEULWEXAMPLE",
+		"arn":"arn:aws:iam::224064EXAMPLE:user/username",
+		"accountId":"2240example0808",
+		"userName":"Pamelia@example.com"
+	},
+	"eventTime":"2020-01-11 00:42:12+0000",
+	"eventSource":"signin.amazonaws.com",
+	"eventName":"ConsoleLogin",
+	"awsRegion":"us-example",
+	"sourceIPAddress":"10.10.10.10",
+	"userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36",
+	"requestParameters":null,
+	"responseElements":{
+		"ConsoleLogin":"Success"
+	},
+	"additionalEventData":{
+		"LoginTo":"https://us-example.console.aws.amazon...sauthcode=true",
+		"MobileVersion":"No",
+		"MFAUsed":"Yes"
+	},
+	"eventID":"8fd88195-8576-example-8330cb492604",
+	"eventType":"AwsConsoleSignIn",
+	"recipientAccountId":"22406424example0808"
+}
 ```
-{"eventVersion":"1.05","userIdentity":{"type":"IAMUser","principalId":"AIDAJK3NPEULWEXAMPLE","arn":"arn:aws:iam::224064EXAMPLE:user/username","accountId":"2240example0808","userName":"Pamelia@example.com"},"eventTime":"2020-01-11 00:42:12+0000","eventSource":"signin.amazonaws.com","eventName":"ConsoleLogin","awsRegion":"us-example","sourceIPAddress":"10.10.10.10","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36","requestParameters":null,"responseElements":{"ConsoleLogin":"Success"},"additionalEventData":{"LoginTo":"https://us-example.console.aws.amazon...sauthcode=true","MobileVersion":"No","MFAUsed":"Yes"},"eventID":"8fd88195-8576-example-8330cb492604","eventType":"AwsConsoleSignIn","recipientAccountId":"22406424example0808"}
-```
 
-### Query example
-7
-
+### Sample Query
 
 The following sample query is from the **Unique AWS Resource Types** panel of **Dashboard 01: Attack Surface Benchmark**.
+```sql
+_sourceCategory=Labs/AWS/CloudTrail/Analytics
+| json "eventSource", "errorCode" nodrop
+| where isBlank(errorCode)
+| count_distinct(eventSource) as count
+| "ResourcesCount_Service" as benchmarkname
+| fillmissing values("ResourcesCount_Service") in benchmarkname
+| toInt(count) as count
+| infer _category=cloudtrail _model=benchmark
+| first(count) as MyCompany, first(lower_limit) as cohort_low, first(median) as cohort_median, first(upper_limit) as cohort_high by benchmarkname
+```
 
-
-    _sourceCategory=Labs/AWS/CloudTrail/Analytics
-
-
-    | json "eventSource", "errorCode" nodrop
-
-
-    | where isBlank(errorCode)
-
-
-    | count_distinct(eventSource) as count
-
-
-    | "ResourcesCount_Service" as benchmarkname
-
-
-    | fillmissing values("ResourcesCount_Service") in benchmarkname
-
-
-    | toInt(count) as count
-
-
-    | infer _category=cloudtrail _model=benchmark
-
-
-    | first(count) as MyCompany, first(lower_limit) as cohort_low, first(median) as cohort_median, first(upper_limit) as cohort_high by benchmarkname
-
-
-8
 In some cases, your query results may show "HIDDEN_DUE_TO_SECURITY_REASONS" as the value of the `userName` field. That's because AWS does not log the user name that was entered when a sign-in failure is caused by an incorrect user name.
-
 
 
 

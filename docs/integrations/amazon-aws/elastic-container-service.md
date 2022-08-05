@@ -1,14 +1,13 @@
 ---
 id: elastic-container-service
-title: Amazon Elastic Container Service
-sidebar_label: Amazon Elastic Container Service (ECS)
+title: Amazon Elastic Container Service (ECS)
+sidebar_label: Amazon ECS
 description: Provides preconfigured searches and Dashboards that allow you to monitor various metrics.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/amazon-aws/ecs.png')} alt="Thumbnail icon" width="50"/>
-
 
 Amazon Elastic Container Service (Amazon ECS) is a container management service that allows you to manage Docker containers on a cluster of Amazon EC2 instances. The Sumo Logic App for Amazon ECS provides preconfigured searches and Dashboards that allow you to monitor various metrics (CPU and Memory Utilization, CPU and Memory Reservation) across ECS clusters and services. The App also monitors API calls made by or on behalf of Amazon ECS in your AWS account.
 
@@ -302,7 +301,7 @@ In this step, you set up an [Amazon CloudWatch Source for Metrics](/docs/send-da
 3. In the Sumo web app, select **Manage Data > Collection > Collection**.
 4. Navigate to the hosted collector you configured above and select **Add > Add Source**.
 5. Select Amazon CloudWatch Source for Metrics.
-6. **Name. **Enter a name to display for the new source.
+6. **Name.** Enter a name to display for the new source.
 7. **Description.** Enter an optional description.
 8. **Regions.** Select your Amazon Regions for ECS.
 9. **Namespaces.** Select **AWS/ECS**.

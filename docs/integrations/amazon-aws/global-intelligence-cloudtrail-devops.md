@@ -48,7 +48,7 @@ This feature is available in the following account plans.
 Our new app install flow is now in Beta. It is only enabled for certain customers while we gather Beta customer feedback. If you can see the Add Integration button, follow the "Before you begin" section in the "Collect Logs" help page and then use the in-product instructions in Sumo Logic to set up the app.
 
 
-## Collect Logs for the Global Intelligence for AWS CloudTrail DevOps App
+## Collecting Logs for the Global Intelligence for AWS CloudTrail DevOps App
 
 ### Log Types  
 
@@ -64,7 +64,6 @@ If you have already AWS CloudTrail logs flowing into Sumo Logic, you can skip th
 ### Collection Process Overview
 
 With this graphic, you can see how to collect logs from AWS CloudTrail DevOps and send them to Sumo Logic.
-
 
 ### Before you begin
 
@@ -200,8 +199,6 @@ Panels will start to fill automatically. It's important to note that each panel 
 You can use filters to drill down and examine the data on a granular level.
 
 **Each panel has a set of filters** that are applied to the results for that panel only, as shown in the following example. Click the funnel icon in the top panel menu bar to display a list of panel-specific filters.
-
-
 
 ### 01. AWS Service Availability
 

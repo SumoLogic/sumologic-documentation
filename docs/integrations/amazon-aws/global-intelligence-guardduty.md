@@ -21,6 +21,7 @@ The App includes pre-configured dashboards and searches with visual displays for
 * The `infer` operator is not intended for use outside of Sumo Logic Global Intelligence apps.
 :::
 
+
 ## Prerequisites
 
 This feature is available in the following account plans.
@@ -107,8 +108,7 @@ The Sumo Logic App for GI GuardDuty requires the Amazon GuardDuty findings to be
 
 ### Sample Query
 
-The following query is from the threat score trend line in the GI GuardDuty: Your Company v. Global Baseline dashboard.
-
+The following query is from the threat score trend line in the **GI GuardDuty: Your Company v. Global Baseline** dashboard.
 
 ```sql
 _sourceCategory=GIS/test/guardduty
@@ -127,7 +127,7 @@ _sourceCategory=GIS/test/guardduty
 ```
 
 
-## Configure Log Collection and Deploy the GI GuardDuty App
+## Configuring Log Collection and Deploy the GI GuardDuty App
 
 This section explains the log collection process and provides instructions for configuring log collection and installing the GI GuardDuty App.
 
@@ -153,9 +153,7 @@ These tasks require the Manage Collectors and Manage Access Keys [role capabilit
 
 #### Step 1: Generate an Access Key and Access ID
 
-In this step, you need to generate access key and access ID from the Sumo Logic console.
-
-To generate an access key and access ID, do the following:
+In this step, you need to generate access key and access ID from the Sumo Logic console. To generate an access key and access ID, do the following:
 
 1. Follow the instructions as described in this [Sumo Logic Access Key](/docs/manage/security/access-keys#Create_an_access_key)) document.
 2. Copy down both the values as you’ll need them to deploy the Sumo Logic GuardDuty Benchmark SAM App.

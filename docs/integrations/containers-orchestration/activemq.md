@@ -1005,7 +1005,7 @@ Use this dashboard to:
 
 The ActiveMQ - Resource Utilization dashboard provides an at-a-glance view of the state of system loads in clusters: CPU usage, memory usage, Swap usage,  file descriptor usage, garbage collection rate, heap, and non-heap usage.
 
-**Use this dashboard to:
+Use this dashboard to:
 * Analyze memory, CPU, disk, swap, file descriptor utilization of nodes in clusters.
 * Gain insights into the garbage collection rate for your ActiveMQ nodes.
 * Gain insights into a heap, non-heap usage for your ActiveMQ nodes.
@@ -1017,7 +1017,7 @@ The ActiveMQ - Resource Utilization dashboard provides an at-a-glance view of th
 
 This dashboard helps you quickly analyze your ActiveMQ error logs across all clusters.
 
-**Use this dashboard to:
+Use this dashboard to:
 * Identify critical events in your ActiveMQ cluster.
 * Examine trends to detect spikes in Error or Fatal events
 * Monitor Broker added/started and shutdown events in your cluster.

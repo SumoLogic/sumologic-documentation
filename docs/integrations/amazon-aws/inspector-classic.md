@@ -75,7 +75,7 @@ Details are provided in the following sections.
 }
 ```
 
-6. Click **Create Topic **button.
+6. Click **Create Topic** button.
 
 
 ### Step 4: Configure Amazon Inspector
@@ -89,7 +89,6 @@ Details are provided in the following sections.
 
 
 #### Step 5: Create a Role
-
 
 1. In the Amazon Console, click Services. In the opened dropdown, go to **Security, Identity & Compliance > IAM**.
 2. Select **Roles **on the left side. A new window open, click the **Create role** button.
@@ -199,7 +198,7 @@ Once an app is installed, it will appear in your **Personal** folder, or other f
 Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
 
 
-## Viewing Dashboards
+## Viewing Inspector Classic Dashboards
 
 ### Overview
 

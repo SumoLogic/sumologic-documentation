@@ -60,7 +60,7 @@ You can set any of the following optional variables:
     * `SOURCE_NAME_OVERRIDE` (Optional). Override `_sourceName` value configured for the HTTP source.
 
 
-### Sample Log message
+### Sample Log Message
 
 <details><summary>Click to expand</summary>
 
@@ -241,10 +241,7 @@ Panels will start to fill automatically. It's important to note that each panel 
 
 
 
-
-
 ## Viewing Amazon GuardDuty Dashboards
-
 
 ### Overview
 

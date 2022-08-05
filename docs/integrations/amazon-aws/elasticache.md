@@ -13,44 +13,73 @@ The Sumo Logic App for Amazon ElastiCache allows you to set up, run, and scale p
 
 The Amazon ElastiCache dashboards provide visibility into key event and performance analytics that enable proactive diagnosis and response to system and environment issues. Use the preconfigured dashboards for at-a-glance analysis of event status trends, locations, successes and failures, as well as system health and performance metrics. The dashboards also have additional performance insights for Redis clusters.
 
-## Collect Logs and Metrics
-
-### Log and Metric Types  
+## Log and Metric Types  
 The Amazon ElastiCache app uses the following logs and metrics:
 * [Amazon Elasticache Host-Level Metrics for individual cache nodes](https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheMetrics.HostLevel.html)
 * [Amazon Elasticache Cache Engine metrics](https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/CacheMetrics.Redis.html)
 * [CloudTrail Amazon ElastiCache Data Event](https://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/logging-using-cloudtrail.html)
 
 
-### Sample CloudTrail Log Message
+### Sample Log Message
 
-```json
-{"eventVersion":"1.05","userIdentity":{"type":"IAMUser","principalId":"A12345678904QEWUABG5Q","arn":
-"arn:aws:iam::123456789038:user/myuser","accountId":"123456789038","accessKeyId":"A1234567890FHCUQYQRM","userName":"myuser",
-"sessionContext":{"attributes":{"mfaAuthenticated":"true","creationDate":"2018-10-29T07:08:50Z"}},"invokedBy":
-"signin.amazonaws.com"},"eventTime":"2018-10-29T08:38:13Z","eventSource":"elasticache.amazonaws.com","eventName":
-"CreateCacheSubnetGroup","awsRegion":"us-west-1","sourceIPAddress":"29.28.30.17","userAgent":"signin.amazonaws.com",
-"requestParameters":{"cacheSubnetGroupName":"myuser-redis-subnet-grp1","subnetIds":["subnet-b33fc55e"]},"responseElements":
-{"cacheSubnetGroupDescription":" ","vpcId":"vpc-b12fc345","subnets":[{"subnetAvailabilityZone":{"name":"us-west-1a"},
-"subnetIdentifier":"subnet-b33fc55e"}],"cacheSubnetGroupName":"myuser-redis-subnet-grp1"},"requestID":
-"c6a79737-1234-5678-bb74-9f27f56e6306","eventID":"70c2c865-1234-4567-893c-9800b91e2502","eventType":"AwsApiCall",
-"recipientAccountId":"123456789038"}
+```json title="Sample CloudTrail Log Message"
+{
+	"eventVersion":"1.05",
+	"userIdentity":{
+		"type":"IAMUser",
+		"principalId":"A12345678904QEWUABG5Q",
+		"arn":"arn:aws:iam::123456789038:user/myuser",
+		"accountId":"123456789038",
+		"accessKeyId":"A1234567890FHCUQYQRM",
+		"userName":"myuser",
+		"sessionContext":{
+			"attributes":{
+				"mfaAuthenticated":"true",
+				"creationDate":"2018-10-29T07:08:50Z"
+			}
+		},
+		"invokedBy":"signin.amazonaws.com"
+	},
+	"eventTime":"2018-10-29T08:38:13Z",
+	"eventSource":"elasticache.amazonaws.com",
+	"eventName":"CreateCacheSubnetGroup",
+	"awsRegion":"us-west-1",
+	"sourceIPAddress":"29.28.30.17",
+	"userAgent":"signin.amazonaws.com",
+	"requestParameters":{
+		"cacheSubnetGroupName":"myuser-redis-subnet-grp1",
+		"subnetIds":[
+			"subnet-b33fc55e"
+		]
+	},
+	"responseElements":{
+		"cacheSubnetGroupDescription":" ",
+		"vpcId":"vpc-b12fc345",
+		"subnets":[
+			{
+				"subnetAvailabilityZone":{
+					"name":"us-west-1a"
+				},
+				"subnetIdentifier":"subnet-b33fc55e"
+			}
+		],
+		"cacheSubnetGroupName":"myuser-redis-subnet-grp1"
+	},
+	"requestID":"c6a79737-1234-5678-bb74-9f27f56e6306",
+	"eventID":"70c2c865-1234-4567-893c-9800b91e2502",
+	"eventType":"AwsApiCall",
+	"recipientAccountId":"123456789038"
+}
 ```
-
 
 
 ### Sample Queries
 
-**Average Engine CPU Utilization by cacheclusterid and cachenodeid** and Metric-based:
-
-```sql
+```sql title="Average Engine CPU Utilization by cacheclusterid and cachenodeid and Metric-based"
 account=* region=* namespace=aws/elasticache metric=EngineCPUUtilization statistic=Average CacheClusterId=* CacheNodeId=* | avg by CacheClusterId, CacheNodeId, account, region, namespace
 ```
 
-
-**ElastiCache Node Reboot Events** and CloudTrail-Log-based:
-
-```sql
+```sql title="ElastiCache Node Reboot Events and CloudTrail-Log-base:"
 account={{account}} region={{region}} namespace={{namespace}} "\"eventSource\":\"elasticache.amazonaws.com\"" (Reboot* or CacheNodesRebooted)
 | json "userIdentity", "eventSource", "eventName", "awsRegion", "sourceIPAddress", "userAgent", "eventType", "recipientAccountId", "requestParameters", "responseElements", "requestID", "errorCode", "errorMessage" as userIdentity, event_source, event_name, region, src_ip, user_agent, event_type, recipient_account_id, requestParameters, responseElements, request_id, error_code, error_message nodrop
 | where event_source = "elasticache.amazonaws.com" and (event_name matches "Reboot*" or event_name="CacheNodesRebooted")
@@ -75,14 +104,12 @@ account={{account}} region={{region}} namespace={{namespace}} "\"eventSource\":\
 | sort by _timeslice
 ```
 
+## Collect Logs and Metrics for Amazon ElastiCache
 
-
-### Collect Metrics for Amazon ElastiCache
-
-* Sumo Logic supports collecting metrics using two source types
+* Sumo Logic supports collecting metrics using two source types:
     * Configure an [AWS Kinesis Firehose for Metrics Source](/docs/send-data/Sources/sources-hosted-collectors/Amazon-Web-Services/aws-kinesis-firehose-metrics-source) (recommended); or
     * Configure an [Amazon CloudWatch Source for Metrics](/docs/send-data/sources/sources-hosted-collectors/amazon-web-services/amazon-cloudwatch-source-metrics)
-    * Note: Namespace for **Amazon ElastiCache** service is **AWS/Elasticache**
+    * Namespace for **Amazon ElastiCache** service is **AWS/Elasticache**
     * **Metadata**: Add an **account** field to the source and assign it a value which is a friendly name / alias to your AWS account from which you are collecting metrics. This name will appear in the Sumo Logic Explorer View. Metrics can be queried via the “account field”.
 
 
@@ -105,12 +132,12 @@ account={{account}} region={{region}} namespace={{namespace}} "\"eventSource\":\
 2. Click **Save**.
 
 
-#### Field in Field Schema
+### Field in Field Schema
 
 Login to Sumo Logic,  goto Manage Data > Logs > Fields. Search for the “**cacheclusterid**” field. If not present, create it. Learn how to create and manage fields [here](/docs/manage/fields.md#manage-fields).
 
 
-#### Field Extraction Rule(s)
+### Field Extraction Rule(s)
 
 Create a Field Extraction Rule for CloudTrail Logs. Learn how to create a Field Extraction Rule [here](/docs/manage/field-extractions/create-field-extraction-rule.md).
 
@@ -133,8 +160,7 @@ Scope (Specific Data): account=* eventname eventsource "elasticache.amazonaws.co
 ```
 
 
-
-#### Centralized AWS CloudTrail Log Collection
+### Centralized AWS CloudTrail Log Collection
 
 In case you have a centralized collection of cloudtrail logs and are ingesting them from all accounts into a single Sumo Logic cloudtrail log source, create the following Field Extraction Rule to map a proper AWS account(s) friendly name / alias. Create it if not already present / update it as required.
 

@@ -13,11 +13,7 @@ The Sumo Logic app for AWS Elastic Load Balancer - Application ingests the logs 
 
 NoteFor information on collecting unified logs and metrics for AWS Elastic Load Balancer Application, see the AWS Elastic Load Balancing ULM Application.
 
-
-## Collect Logs for the AWS Elastic Load Balancer Application
-
-### Log Types
-
+## Log Types
 
 The [Application Load Balancer Access Log](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-access-logs.html#enable-access-logging) introduces two new fields in addition to the fields contained in Classic ELB Access log:
 
@@ -30,24 +26,17 @@ The logs are stored in a .gzip format in the specified S3 bucket and contain the
 type, timestamp, elb, client:port, target:port, request_processing_time, target_processing_time, response_processing_time, elb_status_code, target_status_code, received_bytes, sent_bytes, request, user_agent, ssl_cipher, ssl_protocol, target_group_arn, trace_id
 ```
 
-
 For more details on the ALB Access log, see the [AWS documentation](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-access-logs.html#enable-access-logging).
 
+## Collecting Logs for the AWS Elastic Load Balancer Application
 
 ### Before you begin
 
-Before you can begin to use the Sumo Logic App for Application Load Balancing, complete the following steps:
+In this step, you'll configure an AWS Elastic Load Balancing source to receive logs. When you create an AWS Source, you associate it with a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use, or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/configure-hosted-collector). Before you can begin to use the Sumo Logic App for Application Load Balancing, complete the following steps:
 
 1. [Grant Sumo Logic access](/docs/send-data/sources/sources-hosted-collectors/amazon-web-services/grant-access-aws-product.md) to an Amazon S3 bucket.
 2. [Enable Application Load Balancer logging](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-access-logs.html#enable-access-logging) in AWS.
 3. Confirm that logs are being delivered to the Amazon S3 bucket.
-
-
-### Collect Logs
-
-In this step, you configure an AWS Elastic Load Balancing source to receive logs. In step 3 of the procedure below, select **AWS Elastic Load Balancing** as the source type.
-
-When you create an AWS Source, you associate it with a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use, or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/configure-hosted-collector).
 
 
 ### Rules
@@ -63,7 +52,7 @@ When you create an AWS Source, you associate it with a Hosted Collector. Before 
 
 #### S3 Event Notifications Integration
 
-Sumo’s S3 integration combines scan-based discovery and event based discovery into a unified integration that gives you the ability to maintain a low-latency integration for new content and provide assurances that no data was missed or dropped. When you enable event based notifications S3 will automatically publish new files to Amazon Simple Notification Service (SNS) topics which Sumo Logic can be subscribed. This notifies Sumo Logic immediately when new files are added to your S3 bucket so we can collect it. For more information about SNS, see the [Amazon SNS product](https://aws.amazon.com/sns/) detail page.
+The Sumo Logic S3 integration combines scan-based discovery and event based discovery into a unified integration that gives you the ability to maintain a low-latency integration for new content and provide assurances that no data was missed or dropped. When you enable event based notifications S3 will automatically publish new files to Amazon Simple Notification Service (SNS) topics which Sumo Logic can be subscribed. This notifies Sumo Logic immediately when new files are added to your S3 bucket so we can collect it. For more information about SNS, see the [Amazon SNS product](https://aws.amazon.com/sns/) detail page.
 
 Enabling event based notifications is an S3 bucket-level operation that subscribes to an SNS topic. An SNS topic is an access point that Sumo Logic can dynamically subscribe to in order to receive event notifications. When creating a Source that collects from an S3 bucket Sumo assigns an endpoint URL to the Source. The URL is for you to use in the AWS subscription to the SNS topic so AWS notifies Sumo when there are new files. See [Configuring Amazon S3 Event Notifications](https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html) for more information.
 
@@ -72,11 +61,9 @@ You can adjust the configuration of when and how AWS handles communication attem
 
 #### Create an AWS Source
 
-These configuration instructions apply to log collection from all AWS Source types. Select the correct Source type for your Source in Step 3.
-
 1. In Sumo Logic select **Manage Data > Collection > Collection**.
 2. On the **Collectors** page, click **Add Source** next to a Hosted** **Collector, either an existing Hosted Collector, or one you have created for this purpose.
-3. Select your AWS Source type.
+3. Select **AWS Elastic Load Balancing** as the source type.
 4. Enter a name for the new Source. A description is optional.
 5. Select an **S3 region** or keep the default value of **Others**. The S3 region must match the appropriate S3 bucket created in your Amazon account.
 :::note
@@ -88,7 +75,6 @@ Selecting an AWS GovCloud region means your data will be leaving a FedRAMP-high 
 8. **Collection should begin.** Choose or enter how far back you'd like to begin collecting historical logs. You can either:
     * Choose a predefined value from dropdown list, ranging from "Now" to “72 hours ago” to “All Time”, or
     * Enter a relative value. To enter a relative value, click the **Collection should begin** field and press the delete key on your keyboard to clear the field. Then, enter a relative time expression, for example `-1w`. You can define when you want collection to begin in terms of months (M), weeks (w), days (d), hours (h), and minutes (m).
-
 If you paused the Source and want to skip some data when you resume, update the **Collection should begin** setting to a time after it was paused.
 9. For **Source Category**, enter any string to tag the output collected from this Source. (Category metadata is stored in a searchable field called _sourceCategory.)
 10. **Fields**. Click the **+Add Field** link to add custom log metadata [Fields](/docs/manage/fields.md).
@@ -175,12 +161,12 @@ There is a [community supported script](https://github.com/SumoLogic/sumologic-c
 
 #### Troubleshoot S3 Event Notifications
 
-In the web interface under **Log File Discovery** it shows a red exclamation mark with "Sumo Logic has not received a validation request from AWS".
+In the web interface under **Log File Discovery**, it shows a red exclamation mark with "Sumo Logic has not received a validation request from AWS".
 
 
 Steps to troubleshoot:
 
-1. Refresh the Source’s page to view the latest status of the subscription in the SNS Subscription section by clicking **Cancel** then **Edit** on the Source in the Collection tab.
+1. Refresh the Source’s page to view the latest status of the subscription in the SNS Subscription section by clicking **Cancel**, then **Edit** on the Source in the Collection tab.
 2. Verify you have enabled sending **Notifications** from your S3 bucket to the appropriate SNS topic. This is done in [step 10.E](#Configure-SNS-Notifications).
 3. If you didn’t use CloudFormation check that the SNS topic has a confirmed subscription to the URL in AWS console. A "Pending Confirmation" state likely means that you entered the wrong URL while creating the subscription.
 

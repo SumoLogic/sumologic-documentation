@@ -17,29 +17,21 @@ For information on unified logs and metrics for AWS Elastic Load Balancing App, 
 If you are just beginning with AWS ELB, for background see the Sumo Logic DevOps blog, AWS Elastic Load Balancing: Load Balancer Best Practices.
 :::
 
+### Log Types
+
+ELB logs are stored as .log files in the buckets you specify when you enable logging. The process to enable collection for these logs is described in [AWS ELB Enable Access Logs](http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-access-logs.html). The logs themselves contain these fields in this order:
+```
+datetime, ELB_Server, clientIP, port, backend, backend_port, requestProc, ba_Response, cli_Response, ELB_StatusCode, be_StatusCode, rcvd, send, method, protocol, domain, server_port, path
+```
+
+For information on unified logs and metrics for AWS Elastic Load Balancing App, see the [AWS Elastic Load Balancing ULM Application](/docs/integrations/amazon-aws/Application-Load-Balancer).
+
 
 ## Collecting Logs for the AWS Elastic Load Balancing App
 
 This procedure documents how to enable access to your Amazon Web Services (AWS) Elastic Load Balancing (ELB) logs and ingest them into Sumo Logic.
 
 Once you begin uploading data, your daily data usage will increase. It's a good idea to check the **Account** page in Sumo Logic to make sure that you have enough quota to accommodate additional data in your account. If you need additional quota you can [upgrade your account](/docs/manage/manage-subscription/upgrade-your-cloud-flex-account.md) at any time.
-
-
-### Log Types
-
-ELB logs are stored as .log files in the buckets you specify when you enable logging.
-
-The process to enable collection for these logs is described in [AWS ELB Enable Access Logs](http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-access-logs.html).
-
-The logs themselves contain these fields in this order:
-```
-datetime, ELB_Server, clientIP, port, backend, backend_port, requestProc, ba_Response, cli_Response, ELB_StatusCode, be_StatusCode, rcvd, send, method, protocol, domain, server_port, path
-```
-
-The log format is described in [AWS ELB Access Log Collection](http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/access-log-collection.html).
-
-For information on unified logs and metrics for AWS Elastic Load Balancing App, see the [AWS Elastic Load Balancing ULM Application](/docs/integrations/amazon-aws/Application-Load-Balancer).
-
 
 ### Prerequisites
 
@@ -52,7 +44,6 @@ To enable logging in AWS
 2. Under **Access Logs**, click **Edit**.
 3. In the **Configure Access Logs** dialog box, click **Enable Access Logs**, then choose an Interval and S3 bucket. This is the S3 bucket that will upload logs to Sumo Logic.
 4. Click **Save**.
-
 
 If you have more than one environment that generates Elastic Load Balancing data (such as ops, dev, and so on) you’ll need to configure a separate S3 Source for each environment. This means that you’ll have the three App Dashboards for each environment. To avoid confusion, and in order to identify which environment is generating data, you should name each S3 Source with the environment's name. For example, you might name Sources as ELB-prod, ELB-dev, ELB-test, and so on.
 
@@ -92,15 +83,12 @@ parse "* * *:* *:* * * * * * * * \"* *://*:*/* HTTP" as datetime, ELB_Server, cl
 
 ### Sample Log Message
 
-
 ```json
 2017-01-20T23:00:26.059475Z elb-shop-com 10.15.120.181:80 10.34.7.122:80 0.000026
 0.315185 0.000027 200 200 51 1230 "POST https://examplesite.com:443/Common/path HTTP/1.1"
 "Mozilla/5.0 (Safari; Touch) AppleWebKit/537.35+ (HTML, like Gecko) Version/10.3.2.2239
 Mobile Safari/517.35+"
 ```
-
-
 
 ### Sample Query
 
@@ -112,8 +100,6 @@ _sourceCategory=elb*
 | count by latitude, longitude, country_code, country_name, region, city, postal_code, area_code, metro_code
 | sort _count
 ```
-
-
 
 ## Installing the AWS ELB App
 
