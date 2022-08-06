@@ -86,7 +86,7 @@ _sourceCategory=palo_alto_network | parse "*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*
 
 ## Install the Palo Alto Networks 6 App
 
-Now that you have set up collection for Palo Alto Networks, install the Sumo Logic App for Palo Alto Networks to use the preconfigured searches and [dashboards](#Dashboards) that provide insight into your data.
+Now that you have set up collection for Palo Alto Networks, install the Sumo Logic App for Palo Alto Networks to use the preconfigured searches and [dashboards](#viewing-dashboards) that provide insight into your data.
 
 To install the app:
 

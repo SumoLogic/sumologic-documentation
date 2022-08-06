@@ -11,8 +11,6 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Global Intelligence for AWS CloudTrail App enables you to detect potentially malicious configuration changes in your AWS account by comparing [AWS CloudTrail](https://aws.amazon.com/cloudtrail/) events in your account against a cohort of AWS customers. CloudTrail events are curated from AWS penetration tests and operational best practices.
 
-Our new app install flow is now in Beta. It is only enabled for certain customers while we gather Beta customer feedback. If you can see the Add Integration button, follow the "Before you begin" section in the "Collect Logs" help page and then use the in-product instructions in Sumo Logic to set up the app.
-
 This application name is abbreviated to **GI CloudTrail** on these documentation pages, as well as in the application pages.
 
 The App dashboard displays enable you to determine the following:
@@ -22,13 +20,13 @@ The App dashboard displays enable you to determine the following:
 * An action plan to improve security posture in your AWS infrastructure
 
 The current scope of this application includes the following AWS services and associated resource types:
-1. **Amazon EC2**: count of compute instances, security groups, route tables and Amazon Machine Images
-2. **Amazon S3**: count of buckets
-3. **Amazon RDS**: count of database instances, DB security groups
-4. **Amazon Redshift**: count of database clusters and parameter groups
-5. **AWS Lambda**: count of function names
-6. **AWS IAM**: count of IAM users, roles and groups
-7. **AWS CloudTrail**: counts of trail instances
+* **Amazon EC2**: count of compute instances, security groups, route tables and Amazon Machine Images
+* **Amazon S3**: count of buckets
+* **Amazon RDS**: count of database instances, DB security groups
+* **Amazon Redshift**: count of database clusters and parameter groups
+* **AWS Lambda**: count of function names
+* **AWS IAM**: count of IAM users, roles and groups
+* **AWS CloudTrail**: counts of trail instances
 
 
 ## Prerequisites
@@ -40,15 +38,14 @@ This feature is available in the following account plans.
 |  Cloud Flex  |  Trial, Enterprise
 | Cloud Flex Credits | Trial, Enterprise Suite, Enterprise Security
 
-## Log Types  
-
-Global Intelligence for AWS CloudTrail App uses AWS CloudTrail logs.
 
 Our new app install flow is now in Beta. It is only enabled for certain customers while we gather Beta customer feedback. If you can see the Add Integration button, follow the "Before you begin" section in the "Collect Logs" help page and then use the in-product instructions in Sumo Logic to set up the app.
 
-When this app is initially installed, the dashboards appear with empty panels until scheduled searches are run and the indices are populated.
+## Log Types  
 
-:::caution Important Notes
+Global Intelligence for AWS CloudTrail App uses AWS CloudTrail logs. When this app is initially installed, the dashboards appear with empty panels until scheduled searches are run and the indices are populated.
+
+:::info Important Notes
 
 <details><summary><strong>Click to Expand</strong><br/>This application relies on 45 Scheduled Searches that Save to two different Indexes and one Lookup Table. As a result, they will consume the related quotas for your account. The following is the list of Scheduled Searches:</summary>
 
@@ -74,22 +71,6 @@ When this app is initially installed, the dashboards appear with empty panels un
 
 :::
 
-
-
-## Collecting Logs for the GI for AWS CloudTrail SecOps App
-
-This section provides an overview of the log collection process and instructions for configuring log collection for the Sumo Logic App for Gl CloudTrail.
-
-If you have already AWS CloudTrail logs flowing into Sumo Logic, you can skip the steps on this page and install the App from the Sumo Logic App Catalog.
-
-The following illustration is a graphical representation of the process for collecting logs from AWS CloudTrail and delivering them to Sumo Logic.
-
-<img src={useBaseUrl('img/integrations/amazon-aws/Collection_Process_Overview.png')} alt="Collection_Process_Overview" />
-
-
-### Configuring Log Collection
-
-To configure log collection for Global Intelligence for AWS CloudTrail, follow the steps described [here](/docs/integrations/amazon-aws/CloudTrail#Collect-logs-for-the-AWS-CloudTrail-App).
 
 
 ### Sample Log Message
@@ -140,8 +121,23 @@ _sourceCategory=Labs/AWS/CloudTrail/Analytics
 | first(count) as MyCompany, first(lower_limit) as cohort_low, first(median) as cohort_median, first(upper_limit) as cohort_high by benchmarkname
 ```
 
-In some cases, your query results may show "HIDDEN_DUE_TO_SECURITY_REASONS" as the value of the `userName` field. That's because AWS does not log the user name that was entered when a sign-in failure is caused by an incorrect user name.
+In some cases, your query results may show `"HIDDEN_DUE_TO_SECURITY_REASONS"` as the value of the `userName` field. That's because AWS does not log the user name that was entered when a sign-in failure is caused by an incorrect user name.
 
+
+## Collecting Logs for the GI for AWS CloudTrail SecOps App
+
+This section provides an overview of the log collection process and instructions for configuring log collection for the Sumo Logic App for Gl CloudTrail.
+
+If you have already AWS CloudTrail logs flowing into Sumo Logic, you can skip the steps in this section and [install the app](#installing-the-gi-for-aws-cloudtrail-secops-app).
+
+The following illustration is a graphical representation of the process for collecting logs from AWS CloudTrail and delivering them to Sumo Logic.
+
+<img src={useBaseUrl('img/integrations/amazon-aws/Collection_Process_Overview.png')} alt="Collection_Process_Overview" />
+
+
+### Configuring Log Collection
+
+To configure log collection for Global Intelligence for AWS CloudTrail, follow the steps described [here](/docs/integrations/amazon-aws/CloudTrail#Collect-logs-for-the-AWS-CloudTrail-App).
 
 
 ## Installing the GI for AWS CloudTrail SecOps App
@@ -151,7 +147,7 @@ Locate and install the app you need from the **App Catalog**. If you want to see
 Do not install the app more than once. Share a single copy of the app with other users in your organization.
 
 To install the app, do the following:
-1. From the **App Catalog**, search for and select the app**.**
+1. From the **App Catalog**, search for and select the app.
 2. To install the app, click **Add to Library** and complete the following fields.
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
     2. **Data Source.** Select either of these options for the data source. 

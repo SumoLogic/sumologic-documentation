@@ -373,7 +373,7 @@ _sourceCategory = "okta" "user.mfa.factor.deactivate"
 
 ## Installing the Okta App
 
-Now that you have set up collection for Okta, install the Sumo Logic App for Okta to use the preconfigured searches and [Dashboards](#Dashboards) that provide insight into your data.
+Now that you have set up collection for Okta, install the Sumo Logic App for Okta to use the preconfigured searches and [dashboards](#viewing-dashboards) that provide insight into your data.
 
 To install the app:
 

@@ -153,7 +153,7 @@ Your search results should look similar to:
 
 ## Installing the AWS CloudTrail App
 
-Now that you have set up collection for AWS CloudTrail, install the Sumo Logic App for CloudTrail to use the pre-configured searches and [dashboards](#Dashboards) that provide visibility into your environment.
+Now that you have set up collection for AWS CloudTrail, install the Sumo Logic App for CloudTrail to use the pre-configured searches and [dashboards](#viewing-dashboards) that provide visibility into your environment.
 
 Our new app install flow is now in Beta. It is only enabled for certain customers while we gather Beta customer feedback. If you can see the Add Integration button, follow the "Before you begin" section in the "Collect Logs" help page and then use the in-product instructions in Sumo Logic to set up the app.
 

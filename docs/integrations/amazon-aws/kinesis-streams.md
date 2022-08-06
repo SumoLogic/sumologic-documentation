@@ -101,7 +101,7 @@ _sourceCategory=aws/kinesis* "kinesis.amazonaws.com" errorCode
 
 ## Installing the Amazon Kinesis - Streams App
 
-Now that you have set up collection for Amazon Kinesis, install the Sumo Logic App to use the pre-configured searches and [dashboards](#Dashboards) that provide visibility into your environment for real-time analysis of overall usage.
+Now that you have set up collection for Amazon Kinesis, install the Sumo Logic App to use the pre-configured searches and [dashboards](#viewing-dashboards) that provide visibility into your environment for real-time analysis of overall usage.
 
 To install the app:
 

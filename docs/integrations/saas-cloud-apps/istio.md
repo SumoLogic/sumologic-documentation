@@ -5,7 +5,6 @@ sidebar_label: Istio
 description: This Sumo Logic App for Istio  provides visibility into the health and performance of Istio and its control plane components, including Mixer, Galley, Citadel, Pilot and Envoy.
 ---
 
-
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/saas-cloud-apps/istio.png')} alt="Thumbnail icon" width="100"/>
@@ -95,14 +94,10 @@ The Sumologic-Kubernetes-Collection will automatically capture the logs from std
 
 
 
-1. Upgrade the sumo logic helm chart by running the following
-
-
+1. Upgrade the sumo logic helm chart by running the following:
 ```bash
 helm upgrade --install <my-release-name> sumologic/sumologic -f sumologic-istio.yaml
 ```
-
-
 
 ### If your Kubernetes collection has not been set up
 
@@ -117,7 +112,6 @@ The Sumologic-Kubernetes-Collection will automatically capture the logs from std
 1. Deploy using [Helm](https://github.com/SumoLogic/sumologic-kubernetes-collection/tree/master/deploy#installation-with-helm)
 2. Add **additionalScrapeConfigs** and **remoteWrite** rules to values.yaml
     1. Add this **[additionalScrapeConfigs](https://sumologic-app-data.s3.amazonaws.com/Istio/sumologic-istio.yaml)** section to **prometheusSpec** field of `values.yaml`. These configs will scrape Istio endpoints for metrics. These configs will scrape Istio endpoints for metrics. You can read more about above scrape configs [here](https://istio.io/latest/docs/ops/integrations/prometheus/#option-2-customized-scraping-configurations)
-
 
 ```yml
        - job_name: 'istiod'
@@ -142,8 +136,7 @@ The Sumologic-Kubernetes-Collection will automatically capture the logs from std
 
 1. Add these [rules](https://sumologic-app-data.s3.amazonaws.com/Istio/sumologic-istio.yaml) to **remoteWrite** section of `values.yaml`. This will send scraped metrics to sumo. \
 
-5.png "image_tooltip")
-2 **URL** blocks.
+**URL** blocks.
 
 
 ```yml
@@ -165,8 +158,6 @@ The Sumologic-Kubernetes-Collection will automatically capture the logs from std
 
 
 1. Upgrade the sumo logic helm chart by running the following,
-
-
 ```bash
 helm upgrade --install <my-release-name> sumologic/sumologic -f sumologic-istio.yaml
 ```
@@ -175,8 +166,7 @@ helm upgrade --install <my-release-name> sumologic/sumologic -f sumologic-istio.
 
 #### Validation Steps:
 
-1. Do port forward via your terminal :
-
+1. Do port forward via your terminal:
 ```bash
 kubectl port-forward prometheus-my-release-kube-prometheus-prometheus-0 9090
 ```
@@ -184,8 +174,6 @@ kubectl port-forward prometheus-my-release-kube-prometheus-prometheus-0 9090
 my-release is my release i used while setting up [Sumo Logic helm chart](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/deploy/docs/Installation_with_Helm.md#installation-steps).
 
 1. Open [http://127.0.0.1:9090/config](http://127.0.0.1:9090/config) in a web browser and make sure the following remotewrite configs are present:
-
-
 ```yml
 - url: http://my-release-sumologic-fluentd-metrics.default.svc.cluster.local:9888/prometheus.metrics.istio
   remote_timeout: 5s
@@ -223,9 +211,7 @@ my-release is my release i used while setting up [Sumo Logic helm chart](https:/
 
 Above remotewrite configs make sure only metrics used by Sumo Logic Istio App are forwarded to Sumo Logic by Sumo Helm Chart.
 
-
-1. Open [http://127.0.0.1:9090/config](http://127.0.0.1:9090/config) in a web browser and make sure the following scrape configs are present :
-
+1. Open [http://127.0.0.1:9090/config](http://127.0.0.1:9090/config) in a web browser and make sure the following scrape configs are present:
 
 ```yml
 - job_name: istiod
@@ -262,9 +248,9 @@ Above remotewrite configs make sure only metrics used by Sumo Logic Istio App ar
 ```
 
 
-### Query Sample
+### Sample Query
 
-Query Sample from Dashboard "Istio - Logs" ; Panel "Non 200 Response Codes" :
+Query Sample from Dashboard "Istio - Logs" > Panel "Non 200 Response Codes":
 
 ```sql
 namespace=istio-system cluster={{cluster}}
@@ -292,8 +278,7 @@ Locate and install the app you need from the App Catalog. If you want to see a p
 2. To install the app, click Add to Library and complete the following fields.
     1. **App Name**. You can retain the existing name, or enter a name of your choice for the app. 
     2. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-
-1. Click **Add to Library**.
+3. Click **Add to Library**.
 
 Once an app is installed, it will appear in your Personal folder, or other folder that you specified. From here, you can share it with your organization.
 

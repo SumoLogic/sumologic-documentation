@@ -10,6 +10,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 <img src={useBaseUrl('img/integrations/amazon-aws/gi-devops.png')} alt="Thumbnail icon" width="75"/>
 
 Global Intelligence for AWS CloudTrail - DevOps provides insights for on-call engineers, infrastructure engineers, and DevOps users accelerate root cause analysis for incidents by providing error rate and configuration insights benchmarked from Sumo Logic’s AWS customers for nine AWS services:
+
 * Amazon EC2
 * Amazon S3
 * AWS Elastic Load Balancing
@@ -47,36 +48,11 @@ This feature is available in the following account plans.
 
 Our new app install flow is now in Beta. It is only enabled for certain customers while we gather Beta customer feedback. If you can see the Add Integration button, follow the "Before you begin" section in the "Collect Logs" help page and then use the in-product instructions in Sumo Logic to set up the app.
 
-
-## Collecting Logs for the Global Intelligence for AWS CloudTrail DevOps App
-
-### Log Types  
+## Log Types  
 
 Global Intelligence for CloudTrail DevOps App uses AWS CloudTrail logs.
 
 The Sumo Logic Global Intelligence for AWS CloudTrail DevOps app provides insight into your key CloudTrail events. You can review the log collection process and start collecting data.
-
-Our new app install flow is now in Beta. It is only enabled for certain customers while we gather Beta customer feedback. If you can see the Add Integration button, follow the "Before you begin" section in the "Collect Logs" help page and then use the in-product instructions in Sumo Logic to set up the app.
-
-If you have already AWS CloudTrail logs flowing into Sumo Logic, you can skip the steps on this page and install the App from the Sumo Logic App Catalog.
-
-
-### Collection Process Overview
-
-With this graphic, you can see how to collect logs from AWS CloudTrail DevOps and send them to Sumo Logic.
-
-### Before you begin
-
-Before you begin, you must configure AWS CloudTrail logging to an S3 bucket.
-1. [Configure CloudTrail](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/getting_started_top_level.html) in your AWS account.
-2. [Enable logging using the AWS Management Console](http://docs.aws.amazon.com/AmazonS3/latest/dev/enable-logging-console.html).
-3. Confirm that logs are being delivered to the S3 bucket.
-4. [Grant Access to an AWS S3 Bucket](/docs/send-data/sources/sources-hosted-collectors/amazon-web-services/grant-access-aws-product.md).
-
-
-### Configuring Log Collection for AWS Global Intelligence CloudTrail DevOps
-
-To configure log collection for Global Intelligence for AWS CloudTrail, follow the steps described [here](#Collect-logs-for-the-AWS-CloudTrail-App).
 
 
 ### Sample Log Message
@@ -170,6 +146,28 @@ on t1.denomGroup = t2.denomGroup
 ```
 
 </details>
+
+## Collecting Logs for the Global Intelligence for AWS CloudTrail DevOps App
+
+If you already have AWS CloudTrail logs flowing into Sumo Logic, you can skip the steps in this section and go to [Installing the App](#installing-the-global-intelligence-for-aws-cloudtrail-devops-app).
+
+With this graphic, you can see how to collect logs from AWS CloudTrail DevOps and send them to Sumo Logic.
+
+<img src={useBaseUrl('img/integrations/amazon-aws/Collection_Process_Overview-devops.png')} alt="Collection_Process_Overview-devops" />
+
+### Before you begin
+
+Before you begin, you must configure AWS CloudTrail logging to an S3 bucket.
+1. [Configure CloudTrail](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/getting_started_top_level.html) in your AWS account.
+2. [Enable logging using the AWS Management Console](http://docs.aws.amazon.com/AmazonS3/latest/dev/enable-logging-console.html).
+3. Confirm that logs are being delivered to the S3 bucket.
+4. [Grant Access to an AWS S3 Bucket](/docs/send-data/sources/sources-hosted-collectors/amazon-web-services/grant-access-aws-product.md).
+
+
+### Configuring Log Collection for AWS Global Intelligence CloudTrail DevOps
+
+To configure log collection for Global Intelligence for AWS CloudTrail, follow the steps described [here](#Collect-logs-for-the-AWS-CloudTrail-App).
+
 
 ## Installing the Global Intelligence for AWS CloudTrail DevOps App
 

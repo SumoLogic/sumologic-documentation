@@ -173,7 +173,7 @@ _sourceCategory=Labs/loggen/barracuda " TR "
 
 This section provides instructions for installing the Barracuda WAF App, as well as examples and descriptions for each of the app dashboards.
 
-Now that you have configured log collection for Barracuda WAF, install the Sumo Logic App for Barracuda WAF, and take advantage of predefined Searches and [Dashboards](#Dashboards).
+Now that you have configured log collection for Barracuda WAF, install the Sumo Logic App for Barracuda WAF, and take advantage of predefined Searches and [dashboards](#viewing-dashboards).
 
 To install the app:
 

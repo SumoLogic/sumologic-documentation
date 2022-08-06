@@ -20,18 +20,7 @@ The Sumo Logic App for PagerDuty V2 ingests PagerDuty incident Webhooks V2 messa
 For more information on the incident messages supported in Webhooks V2, see the PagerDuty documentation: [https://v2.developer.pagerduty.com/docs/webhooks-v2-overview](https://v2.developer.pagerduty.com/docs/webhooks-v2-overview)
 
 
-## Collect Logs for PagerDuty V2
-
-This section provides instructions for configuring a Sumo Logic Hosted Collector and HTTP Source to create a PagerDuty Webhook V2, to collect PagerDuty events.
-
-### Event types
-
-The Sumo Logic App for PagerDuty V2 ingests PagerDuty incident Webhooks V2 messages, caused by events that occur in your PagerDuty account and Services.
-
-For more information on the incident messages supported in Webhooks V2, see the PagerDuty documentation: [https://v2.developer.pagerduty.com/docs/webhooks-v2-overview](https://v2.developer.pagerduty.com/docs/webhooks-v2-overview)
-
-
-### Log examples
+### Sample Logs
 
 For examples of incident.trigger, incident.acknowledge, incident.resolve, and incident.assign log messages, see the [PagerDuty Webhooks V2 Examples](https://v2.developer.pagerduty.com/docs/webhooks-v2-overview#examples) page.
 
@@ -39,7 +28,6 @@ For examples of incident.trigger, incident.acknowledge, incident.resolve, and in
 ### Sample Query
 
 The following Top Altering Services query is shown on the PagerDuty V2 - Overview dashboard.
-
 
 ```
 _sourceCategory=Labs/pagerduty_v2 "incident.trigger"
@@ -53,36 +41,37 @@ _sourceCategory=Labs/pagerduty_v2 "incident.trigger"
 
 
 
-##### Configure a Sumo Logic Collector and Source
+## Collect Logs for PagerDuty V2
+
+This section provides instructions for configuring a Sumo Logic Hosted Collector and HTTP Source to create a PagerDuty Webhook V2, to collect PagerDuty events.
+
+
+### Configure a Sumo Logic Collector and Source
 
 A** Hosted Collector **is not installed on a local system in your deployment. Instead, Sumo Logic hosts the Collector and its Sources in AWS. With a Hosted Collector, you can create Sources to collect data from various services. A single Hosted Collector can be configured with any number of  Sources.
 
 An **HTTP Source** is an endpoint for receiving log and metric data uploaded to a unique URL generated for the Source. The URL securely encodes the Collector and Source information. You can add as many HTTP Logs and Metrics Sources as you'd like to a single Hosted Collector.
 
-
-**To configure Hosted Collector and HTTP Source, do the following:
-
+To configure Hosted Collector and HTTP Source, do the following:
 1. Log in to Sumo Logic.
 2. Follow the instruction for configuring a [Hosted Collector](/docs/send-data/configure-hosted-collector).
-3. Follow the instruction for configuring an  [HTTP Source](/docs/send-data/sources/sources-hosted-collectors/http-logs-metrics-source). \
+3. Follow the instruction for configuring an [HTTP Source](/docs/send-data/sources/sources-hosted-collectors/http-logs-metrics-source).
 
 Make sure to save the **HTTP Source Address URL**. You will be asked for this **Endpoint URL** when you configure the PagerDuty Webhook in the following procedure.
 
 
-#### Create a PagerDuty V2 Webhook
+### Create a PagerDuty V2 Webhook
 
 Using PagerDuty with Webhooks V2, you receive HTTP callbacks when incident events occur in your PagerDuty account. Details about the events are then sent via HTTP to a URL that you specify.
 
-
-#### To create a PagerDuty V2 Webhook, do the following:
-
+To create a PagerDuty V2 Webhook, do the following:
 1. Log in to your PagerDuty account.
 2. Use the following instructions to create a Webhook V2:  \
 [https://support.pagerduty.com/hc/en-us/articles/202830320-Webhooks-](https://support.pagerduty.com/hc/en-us/articles/202830320-Webhooks-), entering the  [HTTP Source Address URL](#Configure-HTTP-Source) as the **Endpoint URL** in **Step 6**.
 3. Continue with [installing the Sumo Logic App for PagerDuty V2](#Install-the-PagerDuty-V2-App).
 
 
-## Install the PagerDuty V2 App
+## Installing the PagerDuty V2 App
 
 This section provides instructions for installing the Sumo App for PagerDuty V2, as well as the descriptions of each of the app dashboards.
 
@@ -91,18 +80,14 @@ Now that you have set up a log and metric collection, you can install the Sumo L
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
 1. From the **App Catalog**, search for and select the app**.**
-2. Select the version of the service you're using and click **Add to Library**.
-
-Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/library/install-apps)
-
-
-1. To install the app, complete the following fields.
+2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/library/install-apps).
+3. To install the app, complete the following fields.
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
     2. **Data Source.** Select either of these options for the data source. 
         * Choose **Source Category**, and select a source category from the list. 
         * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). 
     3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-2. Click **Add to Library**.
+4. Click **Add to Library**.
 
 Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization.
 
@@ -110,12 +95,9 @@ Panels will start to fill automatically. It's important to note that each panel 
 
 ## Viewing PagerDuty v2 Dashboards
 
-### Dashboard Filter with Template Variables      
-
-Template variables provide dynamic dashboards that rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you can view dynamic changes to the data for a fast resolution to the root cause. For more information, see the [Filter with template variables](/docs/dashboards-new/filter-with-template-variables.md) help page.
-
-You can use template variables to drill down and examine the data on a granular level.
-
+:::tip Filter with template variables    
+Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards-new/filter-with-template-variables.md).
+:::
 
 ### Overview
 

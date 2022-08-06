@@ -26,7 +26,7 @@ To configure an AWS CloudTrail Source, do the following:
 
 
 ## Installing the PCI Compliance for AWS CloudTrail App
-Now that you have set up collection, install the Sumo Logic App for PCI Compliance for AWS CloudTrail to use the preconfigured searches and [Dashboards](#Dashboards) that provide insight into your data.
+Now that you have set up collection, install the Sumo Logic App for PCI Compliance for AWS CloudTrail to use the preconfigured searches and [dashboards](#viewing-dashboards) that provide insight into your data.
 
 To install the app:
 

@@ -139,7 +139,7 @@ _collector="productionappauth0Logs_Collector"
 
 ## Installing the Auth0 App
 
-Now that you have set up collection for Auth0, install the Sumo Logic App for Auth0 to use the preconfigured searches and [Dashboards](#Dashboards) that provide insight into your data.
+Now that you have set up collection for Auth0, install the Sumo Logic App for Auth0 to use the preconfigured searches and [dashboards](#viewing-dashboards) that provide insight into your data.
 
 To install the app:
 

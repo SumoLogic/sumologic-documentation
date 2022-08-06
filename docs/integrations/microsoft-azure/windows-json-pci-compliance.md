@@ -74,7 +74,7 @@ _sourceCategory=OS/Windows/Events ( "Audit Policy Change" or "System audit polic
 
 This section provides instructions for installing the PCI Compliance for Windows JSON App, along with examples of each of the App dashboards. The PCI Compliance for Windows JSON App offers pre-built dashboards and queries to help you track your Windows system, user accounts, login activity, and Windows updates.
 
-Now that you have set up collection, install the Sumo Logic App for PCI Compliance for Windows JSON App to use the pre-configured searches and [Dashboards](#Dashboards) that provide insight into your data.  
+Now that you have set up collection, install the Sumo Logic App for PCI Compliance for Windows JSON App to use the pre-configured searches and [dashboards](#viewing-dashboards) that provide insight into your data.  
 
 **To install the app**:
 

@@ -9,16 +9,64 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/amazon-aws/inspector-classic.png')} alt="Thumbnail icon" width="50"/>
 
+For information about our newer app for Amazon Inspector, which leverages findings from AWS Security Hub, see [Amazon Inspector](/docs/integrations/amazon-aws/inspector.md).
 
-For information about our newer app for Amazon Inspector, which leverages findings from AWS Security Hub, see Amazon Inspector.
 Amazon Inspector allows you to monitor your AWS resources for potential security risks. The Sumo Logic App for Amazon Inspector provides preconfigured searches and Dashboards that give you instant access to an overview of Amazon Inspector as well as details on assessments, runs, and findings.
 
 The App uses a Lambda function to collect assessment run events (notifications) directly from the Amazon Inspector service, which then retrieves further details via the Inspector API, and finally sends them over to a Sumo Logic HTTP Source endpoint.
 
-Notifications
 For more information on Amazon Inspector notifications, see:
-http://docs.aws.amazon.com/inspector/latest/userguide/inspector_assessments.html
+[Amazon Inspector Classic assessment templates and assessment runs](http://docs.aws.amazon.com/inspector/latest/userguide/inspector_assessments.html).
 
+## Sample Log
+
+```json title="Amazon Inspector CreateResourceGroup action"
+{
+   "eventVersion": "1.03",
+   "userIdentity": {
+       "type": "AssumedRole",
+       "principalId": "AIDACKCEVSQ6C2EXAMPLE",
+       "arn": "arn:aws:iam::444455556666:user/Alice",
+       "accountId": "444455556666",
+       "accessKeyId": "AKIAI44QH8DHBEXAMPLE",
+       "sessionContext": {
+           "attributes": {
+               "mfaAuthenticated": "false",
+               "creationDate": "2016-04-14T17:05:54Z"
+           },
+           "sessionIssuer": {
+               "type": "Role",
+               "principalId": "AIDACKCEVSQ6C2EXAMPLE",
+               "arn": "arn:aws:iam::444455556666:user/Alice",
+               "accountId": "444455556666",
+               "userName": "Alice"
+           }
+       }
+   },
+   "eventTime": "2016-04-14T17:12:34Z",
+   "eventSource": "inspector.amazonaws.com",
+   "eventName": "CreateResourceGroup",
+   "awsRegion": "us-west-2",
+   "sourceIPAddress": "205.251.233.179",
+   "userAgent": "console.amazonaws.com",
+   "requestParameters": {
+       "resourceGroupTags": [
+           {
+               "key": "Name",
+               "value": "ExampleEC2Instance"
+           }
+       ]
+   },
+   "responseElements": {
+       "resourceGroupArn": "arn:aws:inspector:us-west-2:444455556666:resourcegroup/0-oclRMp8B"
+   },
+   "requestID": "148256d2-0264-11e6-a9b5-b98a7d3b840f",
+   "eventID": "e5ea533e-eede-46cc-94f6-0d08e6306ff0",
+   "eventType": "AwsApiCall",
+   "apiVersion": "v20160216",
+   "recipientAccountId": "444455556666"
+}
+```
 
 ## Collecting Data for the Amazon Inspector Classic App
 
@@ -36,7 +84,7 @@ To collect data for the Amazon Inspector App, do the following:
 
 ### Step 2: Configure Amazon Inspector
 
-On Amazon Inspector, perform these tasks under the same AWS region:<
+On Amazon Inspector, perform these tasks under the same AWS region:
 
 1. Create an Amazon SNS topic to receive assessment template events.
 2. Configure the Amazon Inspector to send findings to the SNS topic.
@@ -121,62 +169,10 @@ Details are provided in the following sections.
     * **Timeout:** 10 minutes
 12. Click **Save**.
 
-### Sample Log
-
-```json title="Amazon Inspector CreateResourceGroup action"
-{
-   "eventVersion": "1.03",
-   "userIdentity": {
-       "type": "AssumedRole",
-       "principalId": "AIDACKCEVSQ6C2EXAMPLE",
-       "arn": "arn:aws:iam::444455556666:user/Alice",
-       "accountId": "444455556666",
-       "accessKeyId": "AKIAI44QH8DHBEXAMPLE",
-       "sessionContext": {
-           "attributes": {
-               "mfaAuthenticated": "false",
-               "creationDate": "2016-04-14T17:05:54Z"
-           },
-           "sessionIssuer": {
-               "type": "Role",
-               "principalId": "AIDACKCEVSQ6C2EXAMPLE",
-               "arn": "arn:aws:iam::444455556666:user/Alice",
-               "accountId": "444455556666",
-               "userName": "Alice"
-           }
-       }
-   },
-   "eventTime": "2016-04-14T17:12:34Z",
-   "eventSource": "inspector.amazonaws.com",
-   "eventName": "CreateResourceGroup",
-   "awsRegion": "us-west-2",
-   "sourceIPAddress": "205.251.233.179",
-   "userAgent": "console.amazonaws.com",
-   "requestParameters": {
-       "resourceGroupTags": [
-           {
-               "key": "Name",
-               "value": "ExampleEC2Instance"
-           }
-       ]
-   },
-   "responseElements": {
-       "resourceGroupArn": "arn:aws:inspector:us-west-2:444455556666:resourcegroup/0-oclRMp8B"
-   },
-   "requestID": "148256d2-0264-11e6-a9b5-b98a7d3b840f",
-   "eventID": "e5ea533e-eede-46cc-94f6-0d08e6306ff0",
-   "eventType": "AwsApiCall",
-   "apiVersion": "v20160216",
-   "recipientAccountId": "444455556666"
-}
-```
-
-For information about our newer app for Amazon Inspector, which leverages findings from AWS Security Hub, see [Amazon Inspector](/docs/integrations/amazon-aws/inspector).
-
 
 ## Installing the Amazon Inspector Classic App
 
-Now that you have set up collection for Amazon Inspector, install the Sumo Logic App for Amazon Inspector to use the pre-configured Searches and [Dashboards](#Dashboards) that provide visibility into your environment for real-time analysis of overall usage.
+Now that you have set up collection for Amazon Inspector, install the Sumo Logic App for Amazon Inspector to use the pre-configured Searches and [dashboards](#viewing-dashboards) that provide visibility into your environment for real-time analysis of overall usage.
 
 To install the app:
 
@@ -184,7 +180,6 @@ Locate and install the app you need from the **App Catalog**. If you want to see
 
 1. From the **App Catalog**, search for and select the app**.**
 2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/library/install-apps)
-
 3. To install the app, complete the following fields.
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
     2. **Data Source.** Select either of these options for the data source. 
@@ -201,6 +196,8 @@ Panels will start to fill automatically. It's important to note that each panel 
 ## Viewing Inspector Classic Dashboards
 
 ### Overview
+
+<img src={useBaseUrl('img/integrations/amazon-aws/amazon_inspector_app_overview.png')} alt="amazon_inspector_app_overview" />
 
 **Events by Template.** Displays events by template in a stacked bar chart for the last seven days.
 
@@ -220,6 +217,8 @@ Panels will start to fill automatically. It's important to note that each panel 
 
 
 ### Findings
+
+<img src={useBaseUrl('img/integrations/amazon-aws/amazon_inspector_findings.png')} alt="amazon_inspector_findings" />
 
 **Finding Severity Over Time. **Shows the finding severity over time in a stacked column chart on a timeline for the last seven days.
 

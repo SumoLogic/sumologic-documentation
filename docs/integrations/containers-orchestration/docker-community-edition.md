@@ -350,7 +350,7 @@ _sourceCategory=docker  ("\"status\":\"create\"" or "\"status\":\"start\"")  id 
 
 ## Installing the Docker CE App
 
-The Sumo App for Docker provides operational insight into your Docker containers. The app includes [Dashboards](#Dashboards) that allow you to view your container performance statistics for CPU, memory, and the network. It also provides visibility into container events such as start, stop, and other important commands.  
+The Sumo App for Docker provides operational insight into your Docker containers. The app includes [dashboards](#viewing-dashboards) that allow you to view your container performance statistics for CPU, memory, and the network. It also provides visibility into container events such as start, stop, and other important commands.  
 
 To install the app:
 

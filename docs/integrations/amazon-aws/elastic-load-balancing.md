@@ -103,7 +103,7 @@ _sourceCategory=elb*
 
 ## Installing the AWS ELB App
 
-Now that you have set up collection for AWS ELB, install the Sumo Logic App for AWS Elastic Load Balancing to use the preconfigured searches and [dashboards](#Dashboards) to analyze your data.
+Now that you have set up collection for AWS ELB, install the Sumo Logic App for AWS Elastic Load Balancing to use the preconfigured searches and [dashboards](#viewing-dashboards) to analyze your data.
 
 To install the app:
 

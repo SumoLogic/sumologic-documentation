@@ -173,7 +173,7 @@ _sourceCategory=Azure/Web-app
 
 ## Installing the Azure Web Apps App
 
-This section provides instructions on how to install the Azure Web Apps App, and shows examples of each of the preconfigured [dashboards](#Dashboards) you can use to analyze your data.
+This section provides instructions on how to install the Azure Web Apps App, and shows examples of each of the preconfigured [dashboards](#viewing-dashboards) you can use to analyze your data.
 
 To install the app:
 

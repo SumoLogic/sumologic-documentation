@@ -196,7 +196,7 @@ For more information, see [Overview of Logs Export](https://cloud.google.com/log
 
 This page contains instructions on how to install the Google BigQuery App, as well as descriptions for each of the App dashboards.
 
-Now that you have set up log collection, you can install the Google BigQuery App to use the pre-configured searches and [dashboards](#Dashboards) that provide visibility into your environment for real-time analysis of overall usage.
+Now that you have set up log collection, you can install the Google BigQuery App to use the pre-configured searches and [dashboards](#viewing-dashboards) that provide visibility into your environment for real-time analysis of overall usage.
 
 To install the app:
 
@@ -225,7 +225,7 @@ Panels will start to fill automatically. It's important to note that each panel 
 ## Viewing Google BigQuery Dashboards
 
 
-The Google BigQuery App comes with pre-configured searches and [dashboards](#Dashboards) that provide visibility into your environment for real-time analysis of overall usage.
+The Google BigQuery App comes with pre-configured searches and [dashboards](#viewing-dashboards) that provide visibility into your environment for real-time analysis of overall usage.
 
 
 ### Overview

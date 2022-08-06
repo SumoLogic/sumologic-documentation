@@ -195,7 +195,7 @@ _sourceCategory=*gcp* logName textPayload "\"type\":\"cloud_function\"" "\"textP
 This section provides instructions for installing the Google Cloud Functions App, and examples of each of the App dashboards.
 
 
-Now that you have set up collection for Google Cloud Functions, install the Sumo Logic App to access the pre-configured searches and [dashboards](#Dashboards).
+Now that you have set up collection for Google Cloud Functions, install the Sumo Logic App to access the pre-configured searches and [dashboards](#viewing-dashboards).
 
 To install the app:
 
@@ -227,7 +227,7 @@ Panels will start to fill automatically. It's important to note that each panel 
 
 ## Viewing Google Cloud Functions Dashboards
 
-You can use the pre-configured searches and [dashboards](#Dashboards) for visibility into your environment with visual displays of real-time performance analytics and overall usage.
+You can use the pre-configured searches and [dashboards](#viewing-dashboards) for visibility into your environment with visual displays of real-time performance analytics and overall usage.
 
 
 ### Overview

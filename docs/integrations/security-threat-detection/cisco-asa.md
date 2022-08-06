@@ -123,7 +123,7 @@ Panels will start to fill automatically. It's important to note that each panel 
 
 ## Viewing Cisco ASA Dashboards
 
-Once you've installed the Cisco ASA App, you can access preconfigured searches and [Dashboards](#Dashboards) that provide visual insights into your data.
+Once you've installed the Cisco ASA App, you can access preconfigured searches and [dashboards](#viewing-dashboards) that provide visual insights into your data.
 
 ### Dashboard filters    
 

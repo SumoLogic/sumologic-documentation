@@ -16,20 +16,18 @@ The Sumo Logic App for Artifactory provides insight into your JFrog Artifactory 
 The Sumo Logic App for Artifactory only supports Artifactory On-Premise. It does not work with Artifactory Online. The [JFrog Artifactory Sumo Logic integration](/docs/manage/connections-and-integrations/jfrog-artifactory-integration.md) supports both Artifactory On-Premise and Artifactory Online.
 
 
-### Log Types
+## Log Types
 
 The Sumo Logic App for Artifactory collects data from the following logs:
 
 * **artifactory.log.** The main Artifactory log file that contains data on Artifactory server activity.
 * **access.log.** The security log containing important information about accepted and denied requests, configuration changes, and password reset requests. The originating IP address for each event is also recorded.
 * **request.log.** Generic HTTP traffic information similar to the Apache HTTPd request log.
-* **traffic.*.log.** A log that contains information about site traffic and file sizes.
+* **traffic.log.** A log that contains information about site traffic and file sizes.
 
 For more details about Artifactory logs, refer to [https://www.jfrog.com/confluence/display/RTF/Artifactory+Log+Files](https://www.jfrog.com/confluence/display/RTF/Artifactory+Log+Files) and [Artifactory Log Files](https://www.jfrog.com/confluence/display/RTF6X/Artifactory+Log+Files#ArtifactoryLogFiles-RequestLog).
 
-
 Sumo Logic reads logs in the directory `/var/opt/jfrog/artifactory/logs`:
-
 * `artifactory.log`
 * `access.log`
 * `request.log`
@@ -50,7 +48,7 @@ For more details about Artifactory 7 log collection, refer to [Collect Logs for 
 A restart is required for traffic collection to take effect.
 
 
-## Collecting Logs for Artifactory
+## Collecting Logs for JFrog Artifactory
 
 This procedure documents how to collect logs from JFrog Artifactory into Sumo Logic.
 
@@ -413,7 +411,7 @@ _sourceCategory = Labs/artifactory/*
 ## Install the Artifactory App and view the Dashboards
 
 ### Install the Sumo Logic App
-16
+
 
 Now that you have set up collection, install the Sumo Logic App for Artifactory to use the pre-configured searches and [Dashboards](#Dashboard) that provide insight into your data.
 
@@ -422,40 +420,27 @@ To install the app:
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
 1. From the **App Catalog**, search for and select the app**.**
-2. Select the version of the service you're using and click **Add to Library**.
-
-17
-Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/library/install-apps)
-
-1. To install the app, complete the following fields.
+2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/library/install-apps)
+3. To install the app, complete the following fields.
     1. **App Name**. You can retain the existing name, or enter a name of your choice for the app. 
     2. **Data Source**. Select either of these options for the data source. 
         * Choose **Source Category**, and select a source category from the list. 
         * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). 
     3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-2. Click **Add to Library**.
+4. Click **Add to Library**.
 
 Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization.
 
 Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
 
 
-### Dashboard
-18
-
+## Viewing JFrog Artifactory Dashboards
 
 
 #### Overview
-19
 
 
-
-20
-
-
-
-##### Traffic
-21
+#### Traffic
 
 
 **Download Traffic by Geolocation.** Uses a geo lookup operation to display download traffic by IP address on a map of the world for the last 24 hours.
@@ -467,9 +452,7 @@ Panels will start to fill automatically. It's important to note that each panel 
 **Data Upload-Download (GBs).** Compares the upload and download count in GB displayed in a pie chart for the last 24 hours.
 
 
-##### Request
-22
-
+#### Request
 
 **Requests by Status Code (Every 10 Minutes).** Displays requests by status code every 10 minutes in a stacked column chart on a timeline for the last 24 hours.
 
@@ -478,9 +461,7 @@ Panels will start to fill automatically. It's important to note that each panel 
 **5xx Status Codes.** Displays the number of 5xx status codes in a single value chart for the last 24 hours.
 
 
-##### Activity
-23
-
+#### Activity
 
 **Non-Cached Accepted Deploys by Repo.** Shows information about non-cached accepted deploys by repo in a table chart, including details on the repo and count, for the last 24 hours.  
 
@@ -494,12 +475,6 @@ Panels will start to fill automatically. It's important to note that each panel 
 
 
 #### Traffic
-24
-
-
-
-25
-
 
 **Overall Traffic by Geolocation.** Uses a geo lookup operation to display overall traffic by IP address on a map of the world for the last 24 hours.
 
@@ -527,12 +502,6 @@ Panels will start to fill automatically. It's important to note that each panel 
 
 
 #### Request and Access
-26
-
-
-
-27
-
 
 **Requests by Status Code (Every 10 Minutes). **Displays requests by status code every 10 minutes in a stacked column chart on a timeline for the last 24 hours.
 
@@ -550,17 +519,10 @@ Panels will start to fill automatically. It's important to note that each panel 
 
 
 #### Download Activity
-28
-
-
-
-29
 
 
 
 ##### Accepted Downloads
-30
-
 
 **Accepted Downloads by Geolocation.** Uses a geo lookup operation to display accepted downloads by IP address on a map of the world for the last six hours.
 
@@ -574,8 +536,6 @@ Panels will start to fill automatically. It's important to note that each panel 
 
 
 ##### Denied Downloads
-31
-
 
 **Denied Downloads by Geolocation.** Uses a geo lookup operation to display denied downloads by IP address on a map of the world for the last six hours.
 
@@ -589,17 +549,9 @@ Panels will start to fill automatically. It's important to note that each panel 
 
 
 #### Cached Deployment Activity
-32
 
 
-
-33
-
-
-
-##### Accepted Deploys
-34
-
+### Accepted Deploys
 
 **Accepted Deploys by Geolocation**. Uses a geo lookup operation to display accepted deploys by IP address on a map of the world for the last six hours.
 
@@ -612,9 +564,7 @@ Panels will start to fill automatically. It's important to note that each panel 
 **Accepted Deploys by Repo.** Displays the number of accepted deploys by repo in an aggregation table for the last six hours.
 
 
-##### Denied Deploys
-35
-
+### Denied Deploys
 
 **Denied Deploys by Geolocation.** Uses a geo lookup operation to display denied deploys by IP address on a map of the world for the last six hours.
 
@@ -627,18 +577,11 @@ Panels will start to fill automatically. It's important to note that each panel 
 **Denied Deploys by Repo.** Provides details on the number of denied downloads per repo in an aggregation table for the last six hours.
 
 
-#### Non-Cached Deployment Activity
-36
+### Non-Cached Deployment Activity
 
 
 
-37
-
-
-
-##### Accepted Deploys
-38
-
+### Accepted Deploys
 
 **Accepted Deploys by Geolocation**. Uses a geo lookup operation to display accepted deploys by IP address on a map of the world for the last six hours.
 
@@ -651,9 +594,7 @@ Panels will start to fill automatically. It's important to note that each panel 
 **Accepted Deploys by Repo.** Displays the number of accepted deploys by repo in an aggregation table for the last six hours.
 
 
-##### Denied Deploys
-39
-
+### Denied Deploys
 
 **Denied Deploys.** Shows the number of denied deploys in a single value chart for the last six hours.
 

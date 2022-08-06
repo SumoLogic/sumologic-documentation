@@ -87,7 +87,7 @@ _sourceCategory=OS/Windows "Policy Change"
 
 ## Installing the Windows Legacy App
 
-Now that you have configured Windows logs, install the Sumo Logic App for Windows Legacy to take advantage of the pre-configured searches and [dashboards](#Dashboards) to analyze your Windows data.
+Now that you have configured Windows logs, install the Sumo Logic App for Windows Legacy to take advantage of the pre-configured searches and [dashboards](#viewing-dashboards) to analyze your Windows data.
 
 To install the app:
 
