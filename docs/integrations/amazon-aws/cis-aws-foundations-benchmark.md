@@ -39,7 +39,7 @@ To install the app:
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
-1. From the **App Catalog**, search for and select the app**.**
+1. From the **App Catalog**, search for and select the app.
 2. Select the version of the service you're using and click **Add to Library**.
 
 Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/library/install-apps)
@@ -76,7 +76,7 @@ This Change Control Dashboard includes filters that you can use in Interactive M
 
 **Route Table Changes.** Shows the count of Route Table changes done by each user for the last 24 hours.
 
-**Network ACL Cganges. **Shows the count of Network ACL changes done by each user for the last 24 hours.
+**Network ACL Changes. **Shows the count of Network ACL changes done by each user for the last 24 hours.
 
 **Security Group Changes.** Shows the count of Security Group changes done by each user for the last 24 hours.
 

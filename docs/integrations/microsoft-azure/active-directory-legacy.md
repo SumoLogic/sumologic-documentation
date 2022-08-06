@@ -69,7 +69,7 @@ In order to collect files, download the following scripts:
 
 These scripts should be deployed on a machine that is part of the domain where the log files exist. After deploying the scripts, you'll need to configure a script source on Sumo Logic for **domainCollector.ps1** and another script source for **adObjectCollector.ps1**.
 
-**To deploy the scripts, do the following:**
+**To deploy the scripts, do the following:
 
 
 
@@ -130,7 +130,7 @@ Perform the configuration described below twice, to set up one script source for
 
 If your Domain Controllers are in the same domain, then you can just run the scripts on a select one or a few of the Domain Controller machines. Because each Domain Controller may have or allow different data, you will need to select the best ones. The adObjectCollector.ps1 script is the heaviest. There is no reason to pull your AD objects multiple times.
 
-**To configure a script source, do the following:**
+**To configure a script source, do the following:
 
 
 
@@ -237,7 +237,7 @@ _sourceCategory=delete_test _sourceName=Security "Directory Service Changes"
 
 ## Installing the Sumo Logic App
 
-Now that you have set up collection for Active Directory, install the Sumo Logic App for Active Directory Legacy to use the pre-configured searches and [dashboards](#Dashboards) that provide visibility into your environment for real-time analysis of overall usage.
+Now that you have set up collection for Active Directory, install the Sumo Logic App for Active Directory Legacy to use the pre-configured searches and [dashboards](#viewing-dashboards) that provide visibility into your environment for real-time analysis of overall usage.
 
 To install the app:
 

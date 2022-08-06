@@ -61,7 +61,7 @@ A** Hosted Collector **is not installed on a local system in your deployment. In
 
 An **HTTP Source** is an endpoint for receiving log and metric data uploaded to a unique URL generated for the Source. The URL securely encodes the Collector and Source information. You can add as many HTTP Logs and Metrics Sources as you'd like to a single Hosted Collector.
 
-**To configure Hosted Collector and HTTP Source, do the following:**
+**To configure Hosted Collector and HTTP Source, do the following:
 
 1. Log in to Sumo Logic.
 2. Follow the instructions for configuring a [Hosted Collector](/docs/send-data/configure-hosted-collector).
@@ -76,7 +76,7 @@ Make sure to save the **HTTP Source Address URL**. You will be asked for this **
 
 Using PagerDuty with Webhooks V3, you receive HTTP callbacks when incident events occur in your PagerDuty account. Details about the events are then sent via HTTP to a URL that you specify.
 
-**To create a PagerDuty V3 Webhook, do the following:**
+**To create a PagerDuty V3 Webhook, do the following:
 
 1. Log in to your PagerDuty account.
 2. Navigate to **Integrations Generic Webhooks (v3)**.
@@ -126,12 +126,9 @@ Panels will start to fill automatically. It's important to note that each panel 
 
 ## Viewing PagerDuty V3 Dashboards
 
-### Dashboard Filter with Template Variables      
-
-Template variables provide dynamic dashboards that rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you can view dynamic changes to the data for a fast resolution to the root cause. For more information, see the [Filter with template variables](/docs/dashboards-new/filter-with-template-variables.md) help page.
-
-You can use template variables to drill down and examine the data on a granular level.
-
+:::tip Filter with template variables    
+Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards-new/filter-with-template-variables.md).
+:::
 
 ### Overview
 

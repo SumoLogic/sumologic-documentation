@@ -630,7 +630,7 @@ There are limits to how many alerts can be enabled - please see the [Alerts FAQ]
 
 ## Installing the Apache App
 
-Now that you have set up logs and metric collections for Apache, you can install the Sumo Logic App for Apache to use the pre-configured Searches and [Dashboards](#dashboards).
+Now that you have set up logs and metric collections for Apache, you can install the Sumo Logic App for Apache to use the pre-configured Searches and [dashboards](#viewing-dashboards).
 
 To install the app, do the following:
 1. Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.

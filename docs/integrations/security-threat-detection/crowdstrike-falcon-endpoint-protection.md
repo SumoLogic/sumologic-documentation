@@ -116,7 +116,7 @@ To configure CrowdStrike SIEM Connector, do the following:
 
 You setup a Sumo Logic installed collector on the same host as the SIEM Connector. Then, set up a local file source on the installed collector to read the output file from [Step 2](#Step_2._Configure_CrowdStrike_SIEM_Connector) and send CrowdStrike Falcon Events to Sumo Logic.
 
-**To setup an installed collector and local file source, do the following:**
+**To setup an installed collector and local file source, do the following:
 
 1. Install a Sumo Logic collector on the same host as the SIEM Connector. Follow the instructions for your operating system as described in [Installed Collectors](/docs/send-data/Installed-Collectors).
 2. Add a local file source to the collector for Streaming API Events. Follow the steps on [Local File Source](/docs/send-data/Sources/sources-installed-collectors/Local-File-Source), with these additional changes:

@@ -38,7 +38,7 @@ Sumo Logic enables you to collect logs from Acquia, with the ability to configur
 
 This section walks you through the process of creating a new Sumo Logic hosted collector.
 
-**To create a new Sumo Logic hosted collector, do the following:**
+**To create a new Sumo Logic hosted collector, do the following:
 
 1. In Sumo Logic select** Manage Data > Collection > Collection**.
 2. Click **Add Collector**.
@@ -94,7 +94,7 @@ Include the token as the [Structured ID](https://tools.ietf.org/html/rfc5424#sec
 
 The token is deleted if you delete the source. To change a token, use the **Regenerate Token** option as described in the following procedure.
 
-**To configure a cloud syslog source, do the following:**
+**To configure a cloud syslog source, do the following:
 
 
 
@@ -261,7 +261,7 @@ request_id
 
 ## Installing the Acquia App
 
-This section provides instructions on how to install the Acquia App, as well as examples of each of the dashboards. The App pre-configured searches and [Dashboards](#Dashboards) provide easy-to-access visual insights into your data.
+This section provides instructions on how to install the Acquia App, as well as examples of each of the dashboards. The App pre-configured searches and [dashboards](#viewing-dashboards) provide easy-to-access visual insights into your data.
 
 To install the app, do the following:
 

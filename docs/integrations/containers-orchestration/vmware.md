@@ -58,7 +58,7 @@ If you have an existing VM, you can go directly to [Installing the Sumo Logic sc
 
 This section walks you through the process of installing Sumo Logic scripts for events and metrics on a vCenter server, or another host with access to vCenter API. Lastly, it provides instructions for configuring the path to run the scripts, whether on a vCenter server, host, or VM.
 
-**To install and configure the Sumo Logic scripts, do the following:**
+**To install and configure the Sumo Logic scripts, do the following:
 
 1. On the server, host, or VM create a directory in which to put the Sumo Logic scripts from [Sumo Logic Scripts](https://github.com/SumoLogic/sumologic-vmware/tree/master/vsphere) for VMware. We recommend that you name the directory **/var/log/vmware**, or something similar.
 2. Download the Sumo Logic VMware scripts from [here](https://s3.amazonaws.com/appdevstore/VMWare/sumo-vsphere-ulm.zip), into the directory you just created.
@@ -232,7 +232,7 @@ SSL_VERIFY: Default False, if using SSL, set as True
 SSL_CAPATH: Certificate absolute path if SSL_VERIFY is True
 ```
 
-**To collect performance metrics, do the following:**
+**To collect performance metrics, do the following:
 
 
 1. Follow the instructions to configure a [Streaming Metrics Source](/docs/send-data/Sources/sources-installed-collectors/Streaming-Metrics-Source). \

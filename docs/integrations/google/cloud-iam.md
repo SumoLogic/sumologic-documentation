@@ -276,7 +276,7 @@ _collector="HTTP Source for GCP Pub/Sub" logName resource timestamp
 
 This section provides instructions for installing the Google Cloud IAM App, and examples of each of the App dashboards.
 
-Now that you have set up collection for Google Cloud IAM, you can install the Sumo Logic App for easy access to the pre-configured searches and [dashboards](#Dashboards).
+Now that you have set up collection for Google Cloud IAM, you can install the Sumo Logic App for easy access to the pre-configured searches and [dashboards](#viewing-dashboards).
 
 To install the app:
 
@@ -309,7 +309,7 @@ Panels will start to fill automatically. It's important to note that each panel 
 ## Viewing Google Cloud IAM Dashboards
 
 
-You can use the pre-configured searches and [dashboards](#Dashboards) for visibility into your environment for real-time performance analytics and an analysis of overall usage.
+You can use the pre-configured searches and [dashboards](#viewing-dashboards) for visibility into your environment for real-time performance analytics and an analysis of overall usage.
 
 
 ### Overview

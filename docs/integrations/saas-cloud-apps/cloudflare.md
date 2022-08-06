@@ -10,7 +10,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 <img src={useBaseUrl('img/integrations/saas-cloud-apps/cloudflare.png')} alt="Thumbnail icon" width="100"/>
 
 
-This application has been developed and is supported by Cloudflare. In case of technical questions, please review the technical [documentation](https://developers.cloudflare.com/logs/) for Cloudflare logs or email analytics@cloudflare.com.
+This application has been developed and is supported by Cloudflare. In case of technical questions, please review the technical [documentation](https://developers.cloudflare.com/logs/) for Cloudflare logs or email [analytics@cloudflare.com](mailto:analytics@cloudflare.com).
 
 The Cloudflare App provides a set of dashboards that make analyzing Cloudflare logs easy, helping you to understand events and trends from your websites and applications on the Cloudflare network. Logs are gathered from all 160+ Cloudflare data centers in near real-time and can be combined with other data sources, such as your origin data, to provide unique insights and help you improve the performance and security of your websites and applications.
 
@@ -20,42 +20,7 @@ The Cloudflare App provides a set of dashboards that make analyzing Cloudflare l
 The Cloudflare App uses HTTP request logs in JSON format gathered from all of the 155+ Cloudflare data centers. By default, timestamps are returned as Unix nanosecond integers.  We recommend using the RFC 3339 format for sending logs to Sumo Logic. For a description of the fields available in the logs see link [here](https://developers.cloudflare.com/logs/logpull-api/#fields).
 
 
-## Collect Logs for Cloudflare
-
-This application has been developed and is supported by Cloudflare. In case of technical questions, please review the technical [documentation](https://developers.cloudflare.com/logs/) for Cloudflare logs or email analytics@cloudflare.com.
-
-This page shows you how to set up a Hosted Collector and specify a Sumo Logic Source.
-
-
-### Set up a Hosted Collector and specify a Sumo Logic Source
-
-This section provides instructions for setting up a Hosted Collector and specify a Sumo Logic Source.
-
-### Prerequisite
-
-To send Cloudflare logs to Sumo Logic, you must first configure Cloudflare Logs to send logs to AWS S3 using [Logpush](https://developers.cloudflare.com/logs/logpush) or [Logpull](https://developers.cloudflare.com/logs/logpull-api/).
-
-
-To set up a Hosted Collector and specify a Sumo Logic Source, do the following:
-
-1. Follow the instructions for [Configuring a Hosted Collector in Sumo Logic to start collecting logs](/docs/send-data/configure-hosted-collector).
-2. Follow the instructions for [Configure an Amazon S3 Source in Sumo Logic](/docs/send-data/Sources/sources-hosted-collectors/Amazon-Web-Services/AWS-S3-Source). When setting up an S3 Source, it's important to specify the correct timestamp field. Follow the next steps to do so.
-3. Click **Advanced**, if the settings are not already shown.
-4. For Timestamp Format, select **Specify a format** and enter the following: \
-Format: **yyyy-MM-dd'T'HH:mm:ss'Z' \
-**Timestamp Locator: **\"EdgeStartTimestamp\"\s*:\s*\"(.*)\" \
- \
-**
-5. Click **Test**. A Test Timestamp Parsing dialog appears.
-6. Enter a sample log message in the Test Timestamp Parsing dialog, such as the following, and then click **Test**: \
-**"EdgeStartTimestamp":"2018-12-19T23:38:10Z" \
-**A dialog confirming that your timestamp format matched should appear. \
-
-7. Click **Done** and then click **Save **to save the timestamp parsing to the source.
-
-
 ## Sample Log Message
-
 
 ```json
 {
@@ -71,12 +36,9 @@ Format: **yyyy-MM-dd'T'HH:mm:ss'Z' \
 }
 ```
 
-
-
-## Query Sample
+## Sample Query
 
 The following log query is from the ‘Total Number of Requests’ panel in the ‘Cloudflare - Snapshot’ dashboard.
-
 
 ```sql
 ClientCountry*
@@ -90,14 +52,41 @@ client_request_uri, origin_response_status, edge_response_status, origin_ip, cli
 ```
 
 
+## Collecting Logs for Cloudflare
 
-## Install the Cloudflare App
+This application has been developed and is supported by Cloudflare. In case of technical questions, please review the technical [documentation](https://developers.cloudflare.com/logs/) for Cloudflare logs or email analytics@cloudflare.com.
+
+This section shows you how to set up a Hosted Collector and specify a Sumo Logic Source.
+
+
+### Set up a Hosted Collector and specify a Sumo Logic Source
+
+This section provides instructions for setting up a Hosted Collector and specify a Sumo Logic Source.
+
+### Prerequisites
+
+To send Cloudflare logs to Sumo Logic, you must first configure Cloudflare Logs to send logs to AWS S3 using [Logpush](https://developers.cloudflare.com/logs/logpush) or [Logpull](https://developers.cloudflare.com/logs/logpull-api/).
+
+To set up a Hosted Collector and specify a Sumo Logic Source, do the following:
+
+1. Follow the instructions for [Configuring a Hosted Collector in Sumo Logic to start collecting logs](/docs/send-data/configure-hosted-collector).
+2. Follow the instructions for [Configure an Amazon S3 Source in Sumo Logic](/docs/send-data/Sources/sources-hosted-collectors/Amazon-Web-Services/AWS-S3-Source). When setting up an S3 Source, it's important to specify the correct timestamp field. Follow the next steps to do so.
+3. Click **Advanced**, if the settings are not already shown.
+4. For Timestamp Format, select **Specify a format** and enter the following:
+   * **Format:** `yyyy-MM-dd'T'HH:mm:ss'Z'`
+   * **Timestamp Locator:** `\"EdgeStartTimestamp\"\s*:\s*\"(.*)\"`
+5. Click **Test**. A Test Timestamp Parsing dialog appears.
+6. Enter a sample log message in the Test Timestamp Parsing dialog, such as the following, and then click **Test**: **"EdgeStartTimestamp":"2018-12-19T23:38:10Z"**. A dialog confirming that your timestamp format matched should appear.
+7. Click **Done** and then click **Save** to save the timestamp parsing to the source.
+
+
+## Installing the Cloudflare App
 
 This application has been developed and is supported by Cloudflare. In case of technical questions, please review the technical [documentation](https://developers.cloudflare.com/logs/) for Cloudflare logs or email analytics@cloudflare.com.
 
 This section has instructions for installing the Cloudflare App for Sumo and descriptions of each of the dashboards.
 
-Now that you have set up log and metric collection, you can install the Cloudflare App, and use its pre-configured searches and [dashboards](#Dashboards).
+Now that you've set up log and metric collection, you can install the Cloudflare App, and use its pre-configured searches and [dashboards](#viewing-dashboards).
 
 To install the app, do the following:
 
@@ -123,8 +112,6 @@ Panels will start to fill automatically. It's important to note that each panel 
 
 
 ## Viewing the Cloudflare Dashboards
-
-### Dashboard filters   
 
 **All dashboard have a set of filters** that you can apply to the entire dashboard, as shown in the following example. Click the funnel icon in the top dashboard menu bar to display a scrollable list of filters that are applied across the entire dashboard.
 

@@ -44,11 +44,11 @@ In Sumo Logic, create a new [Hosted Collector](/docs/send-data/configure-hosted-
     1. **Name.** Required. For example, use Akamai.
     2. **Source Category.** Required. For example, use akamai_cloud_monitor. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details see [Best Practices](/docs/send-data/design-deployment/best-practices-source-categories).)
 3. Configure the **Advanced** section:
-    3. Check **Extract timestamp information from log file entries**.
-    4. **Timezone.** Use time zone from log file. If none is present, use UTC.
-    5. **Timestamp Format.** Auto-Detected
-    6. **Encoding Type.** UTF-8
-    7. **Enable Multiline Processing.**
+    1. Check **Extract timestamp information from log file entries**.
+    2. **Timezone.** Use time zone from log file. If none is present, use UTC.
+    3. **Timestamp Format.** Auto-Detected
+    4. **Encoding Type.** UTF-8
+    5. **Enable Multiline Processing.**
         * **Detect Messages Spanning Multiple Lines.** False
         * **Multi Line Boundary.** NA
 4. Click **Save**.
@@ -74,7 +74,6 @@ Save the URL endpoint that is generated for your HTTP Source. You will use it to
 
 Field Extraction Rules (FERs) tell Sumo Logic which fields to parse out automatically. For instructions, see [Create a Field Extraction Rule](/docs/manage/field-extractions/create-field-extraction-rule.md).
 
-
 1. In Sumo Logic, go to **Manage Data > Logs > Field Extractions** and click **Add**.
 2. Configure the following fields:
     * **Rule Name.** Required (for example, Akamai Cloud Monitor).
@@ -82,17 +81,12 @@ Field Extraction Rules (FERs) tell Sumo Logic which fields to parse out automati
     * **Parse Expression. **Select the template **Akamai Cloud Monitor** and click **Use Template**. The full parse statement is below.
 3. Click **Add**.
 
-**FER for Akamai Cloud Monitor**
-
-```sql
+```sql title="FER for Akamai Cloud Monitor"
 parse "\"reqMethod\":\"*\"" as method, "\"status\":\"*\"" as status, "\"fwdHost\":\"*\"" as origin
 | parse "\"bytes\":\"*\"" as bytes, "\"edgeIP\":\"*\"" as edgeip, "\"country\":\"*\"" as country, "\"cookie\":\"*\"" as cookie
 ```
 
-
-
-#### Sample Log Messages
-
+### Sample Log Messages
 
 ```json
 {
@@ -160,7 +154,6 @@ parse "\"reqMethod\":\"*\"" as method, "\"status\":\"*\"" as status, "\"fwdHost\
 ```
 
 
-
 ### Sample Queries
 
 ```sql title="Top Error-causing URLs"
@@ -172,7 +165,6 @@ _sourceCategory=akamai 50?
 | count as errors by path
 | sort by errors
 ```
-
 
 ```sql title="Cache Performance"
 _sourceCategory=akamai cacheStatus
@@ -195,7 +187,7 @@ _sourceCategory=akamai waf denyRules reqHost
 
 ## Installing the Akamai Cloud Monitor App
 
-Now that you have configured Akamai logs, install the Sumo Logic App for Akamai Cloud Monitor to take advantage of the pre-configured searches and [Dashboards](#Dashboards) to analyze your Akamai data.
+Now that you have configured Akamai logs, install the Sumo Logic App for Akamai Cloud Monitor to take advantage of the pre-configured searches and [dashboards](#viewing-dashboards) to analyze your Akamai data.
 
 To install the app:
 
@@ -220,8 +212,7 @@ Once an app is installed, it will appear in your **Personal** folder, or other f
 Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
 
 
-## Viewing Dashboards
-
+## Viewing Akamai Cloud Monitor Dashboards
 
 ### Overview
 

@@ -133,7 +133,7 @@ _sourceCategory=*meraki* "security_event"
 
 ## Install the Cisco Meraki App
 
-This section provides instructions on how to install the Cisco Meraki App, as well as examples of each of the dashboards. The App's pre-configured searches and [Dashboards](#Dashboards) provide easy-to-access visual insights into your data.
+This section provides instructions on how to install the Cisco Meraki App, as well as examples of each of the dashboards. The App's pre-configured searches and [dashboards](#viewing-dashboards) provide easy-to-access visual insights into your data.
 
 To install the app, do the following:
 

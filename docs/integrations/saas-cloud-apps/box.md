@@ -11,27 +11,20 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Sumo Logic App for Box provides insight into user behavior patterns, monitors resources, and even tracks administrative activities. The app consists of three predefined Dashboards, providing visibility into your environment for real time analysis.
 
-## Log Types
-
-The Sumo Logic App for Box collects Box events, which are described in detail here: https://developers.box.com/docs/#events
-
-## Collect Events for Box
-
-This section provides instructions for setting up event collection from Box for analysis in Sumo Logic.
-
-### Requirements and process overview
-
-Before you begin setting up log collection, review the required prerequisites and process overview described in the following sections.
-
 ### Prerequisites
 
 * You must have Admin or Co-Admin Box user permissions. See [Step 5: Authenticate Box Prerequisites](#Prerequisites_2) for more information.
 * The integration between Sumo and Box requires the SumoJanus configuration, described below. The system where you deploy SumoJanus and configure your installed collector and script source must have Java.
+* To ensure that SumoJanus can find your Java installation, set your `JAVA_HOME` environment or absolute `PATH` variable. For more information, see [Step 5: Authenticate Box](#Prerequisites_2).
 
-To ensure that SumoJanus can find your Java installation, set your `JAVA_HOME` environment or absolute `PATH` variable. For more information, see [Step 5: Authenticate Box](#Prerequisites_2).
+## Log Types
+
+The Sumo Logic App for Box collects Box events, which are described in detail here: https://developers.box.com/docs/#events
 
 
-### Process Overview
+## Collecting Events for Box
+
+This section provides instructions for setting up event collection from Box for analysis in Sumo Logic. Before you begin setting up log collection, review the required prerequisites and process overview described in the following sections.
 
 Setting up event collection from Box for analysis in Sumo Logic includes the following tasks, which must be performed in the order in which they are presented.
 
@@ -43,54 +36,42 @@ Setting up event collection from Box for analysis in Sumo Logic includes the fol
 6. Configure a source to send the data to Sumo Logic.
 
 
-#### Configuring Box event collection
-
-This section walks you through the process of setting up log collection from Box for analysis in Sumo Logic.
-
-
-#### Step 1: Configure a Collector
+### Step 1: Configure a Collector
 
 If you don't already have an [installed collector, set one up](/docs/send-data/Installed-Collectors) now. Linux and Windows are supported.
 
-
-#### Step 2: Download the SumoJanus
+### Step 2: Download the SumoJanus
 
 The following SumoJanus for Box package is required to collect logs from Box. SumoJanus is a proprietary library used for script-based collection from applications such as Okta, Box, and Salesforce.
 
 SumoJanus for Box v3.0.0 package file:
-
 * **For Linux**, download `sumojanus-box-dist.3.0.1.tar.gz` from [https://script-collection.s3.amazonaws.com/box/r3.0.1/sumojanus-box-dist.3.0.1.tar.gz](https://script-collection.s3.amazonaws.com/box/r3.0.1/sumojanus-box-dist.3.0.1.tar.gz).
 * **For Windows**, download `sumojanus-box-dist.3.0.1.zip` from [https://script-collection.s3.amazonaws.com/box/r3.0.1/sumojanus-box-dist.3.0.1.zip](https://script-collection.s3.amazonaws.com/box/r3.0.1/sumojanus-box-dist.3.0.1.zip).
 
 
-#### Step 3: Deploy the SumoJanus for Box package
+### Step 3: Deploy the SumoJanus for Box package
 
 In this task, you copy the package file to the folder where it will be deployed and then unpack the contents.
 
 1. Copy the downloaded package file to the location where it will be deployed.
 2. Unpack the contents of the file in that location, in one of the following ways:
 * **On Linux**, run the following command:
-
 ```sh
 tar xzvf sumojanus-box-dist.3.0.0.tar.gz
 ```
-
 * **On Windows**, you can use Windows Explorer to open the package and copy it to the target folder.
 
-    After you unpack the file, there should be a folder called **sumojanus-box** that contains files like this:
+After you unpack the file, there should be a folder called **sumojanus-box** that contains files like this:<br/><img src={useBaseUrl('img/integrations/saas-cloud-apps/Box_sumojanux-box_folder.png')} alt="Box_sumojanux-box_folder" />
 
 
-#### Step 4: Edit the properties file
+### Step 4: Edit the properties file
 
 In this task, you modify the properties file.
 
 1. Open the `sumojanus-box/conf/sumologic.properties` file in an ASCII text editor.
-
-Add the following lines: \
-`[boxcollector]`
-
-
+2. Add the following lines:
 ```
+[boxcollector]
 token_path = ${path}/data/box_enc.token
 stream_pos_path = ${path}/data/box_stream_position.dat
 # optional, default is admin event
@@ -104,12 +85,10 @@ encrypt_token_file = true
 # optional, endTime to query for Event Log files, in epoch milliseconds
 #endTime = 1436377600000
 ```
+3. Save your changes.
 
 
-2. Save your changes.
-
-
-#### Step 5: Authenticate Box
+### Step 5: Authenticate Box
 
 This section shows you how to set up authentication.
 
@@ -122,26 +101,29 @@ This section shows you how to set up authentication.
 * As part of authentication, the script opens and listens to port 8080. It also creates a token file under the **sumojanus-box/data **folder. **Make sure the local firewall settings and file permissions allow these operations**. **On Windows machines, you may need to create a firewall exception rule to allow port 8080 to be opened.**
 * Verify the current JRE folder the collector is using by going to the **collector** folder under **config/wrapper.conf**, and looking for the **wrapper.java.command** variable.
 
-**To authenticate Box, do the following:
+To authenticate Box, do the following:
 
-
-To avoid errors, use the latest bundled JRE version listed in the [Collector Release Notes](/docs/releasenotes/collector). Since the JRE folder **can change** with collector upgrades, we **strongly recommend** copying this JRE folder to a separate place and pointing the JAVAPATH to that folder. To check the current JRE folder the collector is using, go to the **collector** folder under **config/wrapper.conf, and look for the variable wrapper.java.command.
+:::note
+To avoid errors, use the latest bundled JRE version listed in the [Collector Release Notes](/docs/releasenotes/collector). Since the JRE folder can change with collector upgrades, we **strongly recommend** copying this JRE folder to a separate place and pointing the JAVAPATH to that folder. To check the current JRE folder the collector is using, go to the **collector** folder under config/wrapper.conf, and look for the variable `wrapper.java.command`.
+:::
 
 1. By default the Collector will come with a Java Runtime Environment. To ensure that SumoJanus can locate Java, you may need to update the .bat or .bash file, as described below. \
 **On Windows, update SumoJanus_Box.bat file \
-**Navigate to the folder where you installed SumoJanus, and open SumoJanus_Box.bat file in a text editor. Line 3 of the script sets `JAVAPATH` to `C:\Program Files\Sumo Logic Collector\jre\bin` as shown below: \
-`set JAVAPATH="C:\Program Files\Sumo Logic Collector\jre\bin" \
-`If your collector JRE is in a different location, update Line 3 accordingly.   \
- \
-On Linux, update SumoJanus_Box.bash file \
-Navigate to the folder where you installed SumoJanus, and open SumoJanus_Box.bash  file in a text editor. Then, modify the line `"export JAVAPATH="${JAVA_HOME}""` to `"export JAVAPATH=/opt/SumoCollector/jre/"` (or the path to the JRE folder) and save the file.
+**Navigate to the folder where you installed SumoJanus, and open SumoJanus_Box.bat file in a text editor. Line 3 of the script sets `JAVAPATH` to `C:\Program Files\Sumo Logic Collector\jre\bin` as shown below:
+```
+set JAVAPATH="C:\Program Files\Sumo Logic Collector\jre\bin"
+```
+If your collector JRE is in a different location, update Line 3 accordingly.
+
+On Linux, update SumoJanus_Box.bash file
+Navigate to the folder where you installed SumoJanus, and open SumoJanus_Box.bash file in a text editor. Then, modify the line `"export JAVAPATH="${JAVA_HOME}""` to `"export JAVAPATH=/opt/SumoCollector/jre/"` (or the path to the JRE folder) and save the file.
 2. If you are logged in to your Box account, log out.
 3. From the **sumojanus-box** folder, open a terminal window and run one of the following commands:
     1. For Linux: `bin/SumoJanus_Box.bash -s`
     2. For Windows: `bin\SumoJanus_Box.bat -s`
 4. **If Box presents a Disabled by Administrator** **message**, follow these steps to grant access to the Sumo app, then re-run the script.
-    3. Go to **Enterprise Settings **or **Business Settings** and click **Apps**.
-    4. Scroll to the **Invididual Application Controls** section, search for **SumoLogic**, and select **Available** for the app **SumoLogic_BoxCollector**.
+    3. Go to **Enterprise Settings** or **Business Settings** and click **Apps**.
+    4. Scroll to the **Individual Application Controls** section, search for **SumoLogic**, and select **Available** for the app **SumoLogic_BoxCollector**.
     5. Repeat Step 3 (re-run the script). The script opens a browser window.
 5. When the script opens the browser, provide your Box email password and click **Authorize.** Once Authorized, the app is enabled within your Developer enterprise. NOTE: If the SumoJanus script does not open a browser, it prints a URL in the terminal window that you can copy and paste into a browser to open the window.
 
@@ -155,34 +137,23 @@ After after granting access in this step, you must perform the next step within 
 
 
 
-1. **Copy the URL from the browser, change the protocol from "https" to "http" then use one of the following options ON THE SAME MACHINE where the script is running (in case your browser is actually on a different machine):**
+1. Copy the URL from the browser, change the protocol from "https" to "http" then use one of the following options ON THE SAME MACHINE where the script is running (in case your browser is actually on a different machine):
     * **For Linux**, open a terminal window and run: `curl -X GET 'the above url'`
     * **For Windows**, open a Powershell window and run: `Invoke-WebRequest 'the above url'  -Method Get`
 
-
-8
 The use of single quotes surrounding the URL is **required.**
 
+If everything was successful, you should see the message “Thank you for granting access for SumoLogic BoxCollector” somewhere in the return value. If you see an error regarding an expired authorization code instead, make sure you finish this step within 30 seconds of the previous step as noted above.
 
-    **If everything was successful, you should see the message “Thank you for granting access for SumoLogic BoxCollector” somewhere in the return value. If you see an error regarding an expired authorization code instead, make sure you finish this step within 30 seconds of the previous step as noted above.**
+1. Once permissions are granted, the script saves the access token to a local file—the default location is `${path}/data` or `./data`. Verify that the file was created. If not, repeat the authentication steps.
 
-
-
-1. Once permissions are granted, the script saves the access token to a local file—the default location is `${path}/data` or `./data`. Verify that the file was created. If not, repeat the authentication steps.  \
- \
 **On some Windows machines, the SumoJanus folder has “Read only” permission by default. Make sure you allow Write permission.**
-
-
-9
-
 
 The path to the token file is configured in the `conf/sumologic.properties` file, under the property `token_path`.
 
-
-
 1. (Optional) Test the script manually by going to the **sumojanus-box **folder and running one of the following commands:
-    *For Linux **systems, run this command:
 
+    For Linux systems, run this command:
 ```
 bin/SumoJanus_Box.bash
 ```
@@ -201,12 +172,10 @@ You should now see a list of results of collected Box events.
 
 For guidance creating your source category naming convention, see [Best Practices: Good Source Category, Bad Source Category](/docs/send-data/design-deployment/best-practices-source-categories).
 
-**To configure a source, do the following:**
+To configure a source, do the following:
 
 1. Configure a [Script Source](/docs/send-data/Sources/sources-installed-collectors/Script-Source). Collectors using version 19.245-4 and later do not allow Script Sources to run by default.
-10
 To enable Script Sources you must set the Collector parameter `enableScriptSource` in [user.properties](/docs/send-data/Installed-collectors/collector-installation-reference/user-properties) to true and [restart](/docs/manage/collection/start-stop-collector-using-scripts.md) the Collector.
-11
 
 2. Configure the source fields:
     1. **Name**. (Required) BoxCollector. (Description is optional.)
@@ -221,7 +190,6 @@ To enable Script Sources you must set the Collector parameter `enableScriptSourc
 
 
 ### Sample log messages
-
 
 ```json
 {
@@ -282,9 +250,9 @@ _sourceCategory=box  type "event_type" login
 ```
 
 
-## Install the Box App
+## Installing the Box App
 
-Now that you have set up collection for Box, install the Sumo Logic App for Box to use the preconfigured searches and [dashboards](#Dashboards) to analyze your data.
+Now that you have set up collection for Box, install the Sumo Logic App for Box to use the preconfigured searches and [dashboards](#viewing-box-dashboards) to analyze your data.
 
 To install the app:
 

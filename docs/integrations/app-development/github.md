@@ -28,9 +28,7 @@ The Sumo Logic App for GitHub ingests GitHub events via a webhook. Sumo Logic in
 * Repository
 * Team_add
 
-For information on GitHub events, refer to [GitHub documentation](https://docs.github.com/en/free-pro-team@latest/developers/webhooks-and-events/about-webhooks#events).
-
-For troubleshooting, see the [GitHub Troubleshooting](#Troubleshooting) section.
+For information on GitHub events, refer to [GitHub documentation](https://docs.github.com/en/free-pro-team@latest/developers/webhooks-and-events/about-webhooks#events). For troubleshooting, see [GitHub Troubleshooting](#Troubleshooting).
 
 :::tip
 If you're just getting started with GitHub Events, see the Sumo Logic DevOps blog, "[A Beginner's Guide to GitHub Events](https://www.sumologic.com/blog/a-beginners-guide-to-github-events/)."
@@ -61,7 +59,7 @@ In this step, you create a Hosted Collector to receive Webhook Events from Githu
     * Click **+Add Field **and provide the following:
         * **Field Name. **_convertHeadersToFields
         * **Value. **true
-    * Click **Save** and make note of the HTTP address for the Source. You will supply it when you configure the GitHub Webhook in the next section.
+    * Click **Save** and make note of the HTTP address for the Source. You will supply it when you configure the GitHub Webhook in the next section.<br/><img src={useBaseUrl('img/integrations/app-development/Field_GitHub.png')} alt="Field_GitHub" />
 
 ### Configure a GitHub Webhook
 
@@ -69,7 +67,7 @@ In GitHub, configure a Webhook to connect to your Sumo Logic HTTP Source. You ca
 
 You can create up to 20 Webhooks for each event on each specific organization or repository.
 
-**To configure a GitHub Webhook**
+To configure a GitHub Webhook:
 
 1. Sign in to your GitHub account.
 2. Go to your Organization.
@@ -89,7 +87,7 @@ You can create up to 20 Webhooks for each event on each specific organization or
 Sumo Logic needs to understand the event type for incoming events. To enable this, the [x-github-event](https://docs.github.com/en/developers/webhooks-and-events/webhook-events-and-payloads) event type needs to be enabled. To enable this, perform the following steps in the Sumo Logic console:
 
 1. From Sumo Logic, go to **Manage Data** > **Logs** > [**Fields**](/docs/manage/fields.md#add-field).
-2. Add Field ‎**x-github-event**‎.
+2. Add Field ‎**x-github-event**‎.<br/><img src={useBaseUrl('img/integrations/app-development/Field_x-github-event.png')} alt="Field_GitHub" />
 
 
 
@@ -124,8 +122,6 @@ GitHub sends all fields in the payload, documented according to [Event Type](htt
 }
 ```
 
-
-
 ### Sample Queries
 
 ```sql title="Commits Over Time"
@@ -155,28 +151,21 @@ GitHub sends all fields in the payload, documented according to [Event Type](htt
 
 ## Installing the GitHub App
 
-Now that you have set up collector GitHub, install the Sumo Logic App for GitHub to use the preconfigured searches and [dashboards](#Dashboards) to analyze your data.
+Now that you have set up collector GitHub, install the Sumo Logic App for GitHub to use the preconfigured searches and [dashboards](#viewing-dashboards) to analyze your data.
 
 To install the app:
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
 1. From the **App Catalog**, search for and select the app**.**
-2. Select the version of the service you're using and click **Add to Library**.
-
-
-5
-Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/library/install-apps)
-
-
-
-1. To install the app, complete the following fields.
+2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/library/install-apps)
+3. To install the app, complete the following fields.
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
     2. **Data Source.** Select either of these options for the data source. 
         * Choose **Source Category**, and select a source category from the list. 
         * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). 
     3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-2. Click **Add to Library**.
+4. Click **Add to Library**.
 
 Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization.
 
@@ -191,34 +180,22 @@ If you are getting the following error after installing the App:
 Field x-github-event not found, please check the spelling and try again.
 ```
 
-
 Do the following to resolve:
 
 1. In Sumo Logic, click Manage Data > Logs > [Fields and](/docs/manage/fields.md#add-field) delete your **x-github-event**.
-2. Add it again using the **Dropped Fields **option.
-
-
-6
-
+2. Add it again using the **Dropped Fields** option.
 
 
 ## Viewing ​GitHub Dashboards
-
 
 ### Overview
 
 The **GitHub - Overview** dashboard provides an at-a-glance view of your GitHub issues, pull requests, and the commits over time.
 
 Use this dashboard to:
-
-
-
 * Get an overview of Github commits, Pull Requests, and Issues.
 
-
-7
-
-
+<img src={useBaseUrl('img/integrations/app-development/GitHub-Overview.png')} alt="GitHub-Overview" />
 
 ### Branch Overview
 
@@ -230,9 +207,7 @@ Use this dashboard to:
 * Identify the type of files being added, deleted, or modified.
 * Review the commit details.
 
-
-8
-
+<img src={useBaseUrl('img/integrations/app-development/Github-Branch-Overview.png')} alt="GitHub dashboard" />
 
 
 ### Issue Overview
@@ -244,56 +219,37 @@ Use this dashboard to:
 * Review issue status including unassigned, open, and closed issues.
 * Quickly review the issue details and take action accordingly.
 
-
-9
-
-
+<img src={useBaseUrl('img/integrations/app-development/GitHubIssueOverview.png')} alt="GitHub-Overview" />
 
 ### Pull Request Overview
 
 The **GitHub - Pull Request Overview** dashboard gives the view of pull requests by the target branch. It also provides a detailed view of the pull requests in comparison to created, merged, and declined.
 
 Use this dashboard to:
-
-
-
 * View and review pull requests.
 * Review comments on pull requests.
 * Identify open and not merged critical pull requests.
 
-
-10
-
-
+<img src={useBaseUrl('img/integrations/app-development/GitHub-Pull-Request-Overview.png')} alt="GitHub-Pull-Request-Overview" />
 
 ### Security
 
 The **GitHub - Security **dashboard provides detailed information on the security events and repositories.
 
 Use this dashboard to:
-
-
-
 * Manage users.
 * Review and manage repositories.
 * View and manage teams.
 
-
-11
-
-
+<img src={useBaseUrl('img/integrations/app-development/GitHub-Security.png')} alt="GitHub-Overview" />
 
 ### User Activity
 
 The **GitHub - User Activity** dashboard provides detailed insight into all user activity and potential suspicious activities.
 
 Use this dashboard to:
-
-
-
 * Review and manage user activity.
 * Determine files added, removed, and modified by users.
 * Identify any harmful file types added by users.
 
-
-12
+<img src={useBaseUrl('img/integrations/app-development/Github-User-Activity.png')} alt="GitHub-Overview" />

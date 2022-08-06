@@ -65,24 +65,18 @@ There are two methods for integrating Opsgenie with Sumo Logic:
 
 Opsgenie Alerts are defined at the Team level, so you need to create an Opsgenie - Sumo Logic Webhook integrations for each team.
 
-
 To configure log collection for the Opsgenie App, do the following:
 
-1. Configure a [Sumo Logic  HTTP Source](/docs/send-data/sources/sources-hosted-collectors/http-logs-metrics-source). Make a note of the URL for the endpoint, as you will need to enter the endpoint URL in step 3.
+1. Configure a [Sumo Logic HTTP Source](/docs/send-data/sources/sources-hosted-collectors/http-logs-metrics-source). Make a note of the URL for the endpoint, as you will need to enter the endpoint URL in step 3.
 2. Follow the [Opsgenie Webhook Integration ](https://docs.opsgenie.com/docs/webhook-integration)instructions to create a Webhook integration for the Opsgenie App.
 3. Specify the following parameters to send Opsgenie alerts to Sumo Logic:
 * For **Webhook URL** field provide Sumo Logic HTTP URL (from step 1).
 * Check **Add Alert Description to Payload.**
 * Check **Add Alert Details to Payload.**
 
-    The Final Configuration for your integration should look similar to the following example:
-
-
-
+The Final Configuration for your integration should look similar to the following example:
 
 1. Optional. Create an Opsgenie - Sumo Logic Webhook integration for each team. Opsgenie Alerts are defined at the Team level. In the following example shows two Webhook Integrations, one for each team.
-
-
 
 
 
@@ -106,8 +100,6 @@ description, message, action, team, priority, source, tags, recipients nodrop
 | count by _timeslice, priority
 | transpose row _timeslice column priority
 ```
-
-
 
 ## Installing the Opsgenie App
 
@@ -142,12 +134,9 @@ Panels will start to fill automatically. It's important to note that each panel 
 
 ## Viewing OpsGenie Dashboards
 
-### Filter with template variables  
-
-Template variables provide dynamic dashboards that rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you can view dynamic changes to the data for a fast resolution to the root cause. For more information, see the [Filter with template variables](/docs/dashboards-new/filter-with-template-variables.md) help page.
-
-You can use template variables to drill down and examine the data on a granular level.
-
+:::tip Filter with template variables    
+Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards-new/filter-with-template-variables.md).
+:::
 
 ### Overview
 

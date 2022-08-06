@@ -225,7 +225,7 @@ _sourceCategory=*gcp* logName reference resource "\"type\":\"gce_subnetwork\"" "
 
 The section provides instructions for installing the Google Cloud Firewall App, and examples for each of the App dashboards.
 
-Now that you have set up log collection, you can install the Google Cloud Firewall App to access the pre-configured Searches and [Dashboards](#Dashboards) that provide visibility into your environment for real-time analysis of overall usage.
+Now that you have set up log collection, you can install the Google Cloud Firewall App to access the pre-configured Searches and [dashboards](#viewing-dashboards) that provide visibility into your environment for real-time analysis of overall usage.
 
 To install the app:
 

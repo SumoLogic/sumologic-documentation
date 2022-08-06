@@ -264,7 +264,7 @@ Navigate to the folder where you installed SumoJanus, and open SumoJanus_SF.bash
 
 After completing the previous steps, you should authenticate the installation with the task outlined in this section.
 
-**To authenticate the installation, do the following:**
+**To authenticate the installation, do the following:
 
 1. Log out of SalesForce. >
 2. Run the following command under the unzipped `sumojanus-salesforce` folder:
@@ -425,7 +425,7 @@ _sourceCategory=salesforce event type "Report"
 
 ## Install the Salesforce App
 
-Now that you have set up collection, install the Sumo Logic App for Salesforce to use the preconfigured searches and [Dashboards](#Dashboards) that provide insight into your data.
+Now that you have set up collection, install the Sumo Logic App for Salesforce to use the preconfigured searches and [dashboards](#viewing-dashboards) that provide insight into your data.
 
 To install the app:
 

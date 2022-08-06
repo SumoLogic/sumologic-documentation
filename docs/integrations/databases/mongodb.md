@@ -656,7 +656,7 @@ email_notifications = [
 
 ## Installing the MongoDB App
 
-Now that you have set up collection for MongoDB, install the Sumo Logic App for MongoDB to use the preconfigured searches and [dashboards](#Dashboards) to analyze your data.
+Now that you have set up collection for MongoDB, install the Sumo Logic App for MongoDB to use the preconfigured searches and [dashboards](#viewing-dashboards) to analyze your data.
 
 To install the app:
 

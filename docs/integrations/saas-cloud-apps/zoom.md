@@ -57,7 +57,7 @@ This section demonstrates how to add a hosted Sumo Logic collector and HTTP Logs
 
 When you configure the HTTP Source, make sure to save the HTTP Source Address URL.
 
-**To add a hosted collector and HTTP source, do the following:**
+**To add a hosted collector and HTTP source, do the following:
 
 1. Do one of the following:
 * If you already have a Sumo Logic Hosted Collector, identify the one you want to use.

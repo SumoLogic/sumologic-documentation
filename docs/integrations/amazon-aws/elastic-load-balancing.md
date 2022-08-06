@@ -17,28 +17,21 @@ For information on unified logs and metrics for AWS Elastic Load Balancing App, 
 If you are just beginning with AWS ELB, for background see the Sumo Logic DevOps blog, AWS Elastic Load Balancing: Load Balancer Best Practices.
 :::
 
+### Log Types
+
+ELB logs are stored as .log files in the buckets you specify when you enable logging. The process to enable collection for these logs is described in [AWS ELB Enable Access Logs](http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-access-logs.html). The logs themselves contain these fields in this order:
+```
+datetime, ELB_Server, clientIP, port, backend, backend_port, requestProc, ba_Response, cli_Response, ELB_StatusCode, be_StatusCode, rcvd, send, method, protocol, domain, server_port, path
+```
+
+For information on unified logs and metrics for AWS Elastic Load Balancing App, see the [AWS Elastic Load Balancing ULM Application](/docs/integrations/amazon-aws/Application-Load-Balancer).
+
 
 ## Collecting Logs for the AWS Elastic Load Balancing App
 
 This procedure documents how to enable access to your Amazon Web Services (AWS) Elastic Load Balancing (ELB) logs and ingest them into Sumo Logic.
 
 Once you begin uploading data, your daily data usage will increase. It's a good idea to check the **Account** page in Sumo Logic to make sure that you have enough quota to accommodate additional data in your account. If you need additional quota you can [upgrade your account](/docs/manage/manage-subscription/upgrade-your-cloud-flex-account.md) at any time.
-
-
-### Log Types
-
-ELB logs are stored as .log files in the buckets you specify when you enable logging.
-
-The process to enable collection for these logs is described in [AWS ELB Enable Access Logs](http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-access-logs.html).
-
-The logs themselves contain these fields in this order:
-
-datetime, ELB_Server, clientIP, port, backend, backend_port, requestProc, ba_Response, cli_Response, ELB_StatusCode, be_StatusCode, rcvd, send, method, protocol, domain, server_port, path
-
-The log format is described in [AWS ELB Access Log Collection](http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/access-log-collection.html).
-
-For information on unified logs and metrics for AWS Elastic Load Balancing App, see the [AWS Elastic Load Balancing ULM Application](/docs/integrations/amazon-aws/Application-Load-Balancer).
-
 
 ### Prerequisites
 
@@ -51,7 +44,6 @@ To enable logging in AWS
 2. Under **Access Logs**, click **Edit**.
 3. In the **Configure Access Logs** dialog box, click **Enable Access Logs**, then choose an Interval and S3 bucket. This is the S3 bucket that will upload logs to Sumo Logic.
 4. Click **Save**.
-
 
 If you have more than one environment that generates Elastic Load Balancing data (such as ops, dev, and so on) you’ll need to configure a separate S3 Source for each environment. This means that you’ll have the three App Dashboards for each environment. To avoid confusion, and in order to identify which environment is generating data, you should name each S3 Source with the environment's name. For example, you might name Sources as ELB-prod, ELB-dev, ELB-test, and so on.
 
@@ -83,7 +75,6 @@ For Field Extraction Rules, use the source category established earlier.
 
 **AWS Elastic Load Balancing Logs**
 
-
 ```
 parse "* * *:* *:* * * * * * * * \"* *://*:*/* HTTP" as datetime, ELB_Server, clientIP, port, backend, backend_port, requestProc, ba_Response, cli_Response, ELB_StatusCode, be_StatusCode, rcvd, send, method, protocol, domain, server_port, path
 ```
@@ -92,15 +83,12 @@ parse "* * *:* *:* * * * * * * * \"* *://*:*/* HTTP" as datetime, ELB_Server, cl
 
 ### Sample Log Message
 
-
 ```json
 2017-01-20T23:00:26.059475Z elb-shop-com 10.15.120.181:80 10.34.7.122:80 0.000026
 0.315185 0.000027 200 200 51 1230 "POST https://examplesite.com:443/Common/path HTTP/1.1"
 "Mozilla/5.0 (Safari; Touch) AppleWebKit/537.35+ (HTML, like Gecko) Version/10.3.2.2239
 Mobile Safari/517.35+"
 ```
-
-
 
 ### Sample Query
 
@@ -113,28 +101,23 @@ _sourceCategory=elb*
 | sort _count
 ```
 
-
-
 ## Installing the AWS ELB App
 
-Now that you have set up collection for AWS ELB, install the Sumo Logic App for AWS Elastic Load Balancing to use the preconfigured searches and [dashboards](#Dashboards) to analyze your data.
+Now that you have set up collection for AWS ELB, install the Sumo Logic App for AWS Elastic Load Balancing to use the preconfigured searches and [dashboards](#viewing-dashboards) to analyze your data.
 
 To install the app:
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
 1. From the **App Catalog**, search for and select the app**.**
-2. Select the version of the service you're using and click **Add to Library**.
-
-Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/library/install-apps)
-
-1. To install the app, complete the following fields.
+2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/library/install-apps)
+3. To install the app, complete the following fields.
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
     2. **Data Source.** Select either of these options for the data source. 
         * Choose **Source Category**, and select a source category from the list. 
         * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). 
     3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-2. Click **Add to Library**.
+4. Click **Add to Library**.
 
 Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization.
 

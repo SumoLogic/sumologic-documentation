@@ -120,7 +120,7 @@ as container_name nodrop | parse "cve=\"*\"" as cve nodrop | parse "vendor_statu
 
 ## Installing the Twistlock App
 
-This section provides instructions on how to install the Twistlock App, as well as examples of each of the dashboards. The App pre-configured searches and [Dashboards](#Dashboards) provide easy-to-access visual insights into your data.
+This section provides instructions on how to install the Twistlock App, as well as examples of each of the dashboards. The App pre-configured searches and [dashboards](#viewing-dashboards) provide easy-to-access visual insights into your data.
 
 To install the app, do the following:
 
@@ -246,7 +246,7 @@ Use this dashboard to:
 
 ## Installing the Twistlock Classic App
 
-This section provides instructions on how to install the Twistlock Classic App, as well as examples of each of the dashboards. The App pre-configured searches and [Dashboards](#Dashboards) provide easy-to-access visual insights into your data.
+This section provides instructions on how to install the Twistlock Classic App, as well as examples of each of the dashboards. The App pre-configured searches and [dashboards](#viewing-dashboards) provide easy-to-access visual insights into your data.
 
 This section shows you how to install the Twistlock Classic App.
 

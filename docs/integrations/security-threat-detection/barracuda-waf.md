@@ -50,7 +50,7 @@ Cloud syslog collection supports Barracuda Firmware version 9.2.1 or later. You 
 
 This section shows you how to configure a source for log collection. In this task you specify the Source Category metadata field, which is a fundamental building block for organizing and labeling sources.
 
-**To configure a source, do the following:**
+**To configure a source, do the following:
 
 1. Perform the steps in [Configure a Cloud Syslog Source](/docs/send-data/Sources/sources-hosted-collectors/Cloud-Syslog-Source#Configure_a_Cloud_Syslog_Source). and configure the following Source fields:
     1. **Name**. (Required) Enter a name. The description is optional.
@@ -67,7 +67,7 @@ This section shows you how to configure a source for log collection. In this tas
 
 This section shows you how to configure logging in Barracuda WAF for use with the preconfigured searches and dashboards of the Sumo Logic App for Barracuda WAF.
 
-**To configure logging in Barracuda WAF, do the following:**
+**To configure logging in Barracuda WAF, do the following:
 
 1. Log in to your Barracuda account and go to **ADVANCED > Export Logs.**
 
@@ -173,7 +173,7 @@ _sourceCategory=Labs/loggen/barracuda " TR "
 
 This section provides instructions for installing the Barracuda WAF App, as well as examples and descriptions for each of the app dashboards.
 
-Now that you have configured log collection for Barracuda WAF, install the Sumo Logic App for Barracuda WAF, and take advantage of predefined Searches and [Dashboards](#Dashboards).
+Now that you have configured log collection for Barracuda WAF, install the Sumo Logic App for Barracuda WAF, and take advantage of predefined Searches and [dashboards](#viewing-dashboards).
 
 To install the app:
 

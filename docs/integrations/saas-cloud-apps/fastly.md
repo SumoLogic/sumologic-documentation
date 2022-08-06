@@ -130,7 +130,7 @@ _sourceCategory=fastly waf denyRules reqHost | parse "\"denyRules\":\"*\"" as de
 
 ## Install the Fastly App
 
-Now that you have configured Fastly, install the Sumo Logic App for Fastly to take advantage of the preconfigured searches and [dashboards](#Dashboards) to analyze your data.
+Now that you have configured Fastly, install the Sumo Logic App for Fastly to take advantage of the preconfigured searches and [dashboards](#viewing-dashboards) to analyze your data.
 
 To install the app:
 

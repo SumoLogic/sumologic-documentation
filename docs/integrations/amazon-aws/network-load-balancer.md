@@ -109,7 +109,7 @@ Use this dashboard to:
 
 **The AWS Network Load Balancer - Host Health Status **dashboard provides detailed insights into the number of healthy and unhealthy hosts.
 
-**Use this dashboard to:
+Use this dashboard to:
 
 * Get a quick overview of the number of healthy and unhealthy hosts.
 * Monitor trends around the number of unhealthy hosts to spot potential service disruptions that could warrant deeper investigation.

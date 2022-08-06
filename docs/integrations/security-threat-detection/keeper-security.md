@@ -85,7 +85,7 @@ This application has been developed and is supported by [Keeper Security](https:
 
 This section provides instructions for installing the Keeper Security App, as well as examples of each of the App dashboards.
 
-Now that you have set up collection for Keeper, install the app to use the pre-configured searches and [dashboards](#Dashboards) that provide visibility into your environment for real-time analysis.
+Now that you have set up collection for Keeper, install the app to use the pre-configured searches and [dashboards](#viewing-dashboards) that provide visibility into your environment for real-time analysis.
 
 To install the app:
 
