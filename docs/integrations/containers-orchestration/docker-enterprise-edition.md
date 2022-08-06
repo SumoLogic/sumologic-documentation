@@ -28,7 +28,7 @@ This section shows you how to configure log and metric collection for the Docker
 * **Docker Logs. **Collects stdout/stderr logs from processes that are running within Docker containers.
 * **Docker Stats. **Collects metrics about Docker containers.
 
-**To configure log and metric collection for the Docker ULM App, do the following:
+To configure log and metric collection for the Docker ULM App, do the following:
 
 
 

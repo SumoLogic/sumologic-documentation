@@ -2,9 +2,8 @@
 id: palo-alto-networks-9
 title: Sumo Logic App for Palo Alto Networks 9
 sidebar_label: Palo Alto Networks 9
-description: The Sumo Logic App for Palo Alto Networks 9 utilizes PANOS 9 new features in predefined dashboards to provide extensive security analytics throughout your Palo Alto Networks environment. Palo Alto Networks 9 provides consistent protection across the data center, perimeter, branch, mobile and cloud networks.
+description: The Sumo Logic App for Palo Alto Networks 9 utilizes PANOS 9 new features in predefined dashboards to provide extensive security analytics throughout your Palo Alto Networks environment.
 ---
-
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
@@ -33,21 +32,70 @@ The Palo Alto Networks 9 App uses the following log types:
 * [Threat](https://docs.paloaltonetworks.com/pan-os/9-0/pan-os-admin/monitoring/use-syslog-for-monitoring/syslog-field-descriptions/threat-log-fields.html) Logs
 
 
-## Collect logs for the Palo Alto Networks 9 App
+### Sample Logs
 
-This section provides instructions for configuring log collection for the Sumo Logic App for Palo Alto Networks 9, as well as sample log messages and a query example from a Palo Alto Networks App predefined dashboard.
+```json title="System logs"
+Oct 09 10:15:15 SumoRedfw01a 1,2019/10/09
+10:15:15,001234567890002,SYSTEM,general,0,2019/10/09
+10:15:15,,general,,0,0,general,critical,License for feature threat will expire on 2019/09/28,0123456789,0x0,0,0,0,0,,SumoRedfw01a
+```
 
+```json title="Configuration logs"
+Oct 14 11:37:34 SumoRedfw01a 1,2019/10/14
+11:37:34,001234567890001,CONFIG,0,0,2019/10/14
+11:37:34,195.186.216.125,,clone,dduc,Web,Succeeded, config shared reports,,,0123456789,0x8000000000000000,0,0,0,0,,SumoRedfw01a
+```
 
-### Collection process overview
+```json title="USERID logs"
+Oct 09 10:10:15 SumoRedfw01a.sumotest.com 1,2019/10/09
+10:10:15,001234567890002,USERID,logout,2304,2019/10/09
+10:10:15,vsys1,17.174.122.37,dduc,,0,1,0,0,0,vpn-client,globalprotect,0123456789,0x0,0,0,0,0,,SumoRedfw01a,1,,2019/10/09
+10:10:15,1,0x80,aruan
+```
 
-You must have Palo Alto Networks Web administrative user permissions to successfully complete these tasks. Configuring log collection for Palo Alto Networks 9 includes the following tasks:
+```json title="HIPMatch logs"
+Oct 09 10:20:15 SumoRedfw01a.sumotest.com 1,2019/10/09
+10:20:15,001234567890002,HIPMATCH,0,2304,2019/10/09 10:20:15,ira,vsys1,oh-C02ABCDEFGH4,Mac,67.240.185.235,GP-HIP-PROFILE,1,profile,0,0,0123456789,0x0,0,0,0,0,,SumoRedfw01a,1,0.0.0.0,gh:85:90:99:5a:40,C02ABCDEFGH
+```
 
+```json title="Traffic logs"
+Oct 09 10:19:15 SumPunFw07.sumotest.com 1,2019/10/09
+10:19:15,001234567890002,TRAFFIC,drop,2304,2019/10/09
+10:19:15,209.118.103.150,160.177.222.249,0.0.0.0,0.0.0.0,InternalServer,,,not-applicable,vsys1,inside,z1-FW-Transit,ethernet1/2,,All traffic,2019/10/09
+10:19:15,0,1,63712,443,0,0,0x0,udp,deny,60,60,0,1,2019/10/09
+10:19:15,0,any,0,0123456789,0x0,Netherlands,10.0.0.0-10.255.255.255,0,1,0,policy-deny,0,0,0,0,,SumPunFw07,from-policy,,,0,,0,,N/A,0,0,0,0,1202585d-b4d5-5b4c-aaa2-d80d77ba456e,0
+```
+
+```json title="Threat logs"
+Oct 09 10:21:11 SumPunFw07.sumotest.com 1,2019/10/09
+10:21:11,001234567890002,THREAT,vulnerability,2304,2019/10/09
+10:21:11,205.168.30.201,240.84.174.144,NAT_205.168.30.201,230.230.1.33,Rule 95,,,web-browsing,vsys3,z2-FW-Sumo-Internal,Z4-Outbound-internet,ethernet1/2,ethernet1/2,All traffic,2019/10/09
+10:21:11,793911,1,37442,443,37442,20077,0x1402000,tcp,alert,"64.99.23.90/sslmgr?scep-profile-name=%99c",Palo Alto Networks GlobalProtect Remote Code Execution Vulnerability(54582),unknown,critical,client-to-server,0123456789,0x2000000000000000,United States,10.0.0.0-
+10.255.255.255,0,,0,,,1,,,,,,,,0,0,0,0,0,,SumPunFw07,,,,,0,,0,,N/A,code-execution,AppThreat-8189-5641,0x4,0,4294967295,,,6bbbbec9-d123-4d51-1204-6aefd221079b,0
+```
+
+### Sample Query
+
+In the **Palo Alto Networks 9 - Threat Overview** dashboard, the following query detects **Dest IPs Observing Multiple Threats**.
+
+```sql
+_sourceCategory=Loggen/PAN* ",THREAT," !(",file," or ",url,")
+| csv _raw extract 1 as f1, 2 as Receive_Time, 3 as serialNum, 4 as type, 5 as subtype, 6 as f2, 7 as LogGenerationTime, 8 as src_ip, 9 as dest_ip, 10 as NAT_src_ip, 11 as NAT_dest_ip, 12 as ruleName, 13 as src_user, 14 as dest_user, 15 as app, 16 as vsys, 17 as src_zone, 18 as dest_zone, 19 as inbound_interface, 20 as outbound_interface, 21 as LogAction, 22 as f3, 23 as SessonID, 24 as RepeatCount, 25 as src_port, 26 as dest_port, 27 as NAT_src_port, 28 as NAT_dest_port, 29 as flags, 30 as protocol, 31 as action, 32 as urlORFileName, 33 as Threat_Content_Name, 34 as category, 35 as severity, 36 as direction, 37 as seqNum, 38 as action_flags, 39 as src_country, 40 as dest_country, 41 as f4, 42 as content_type, 43 as pcap_id, 44 as filedigest, 45 as cloud, 46 as url_idx, 47 as user_agent, 48 as filetype, 49 as xff, 50 as referer, 51 as sender, 52 as subject, 53 as recipient, 54 as reportid, 55 as Device_Group_Hierarchy_l1, 56 as Device_Group_Hierarchy_l2, 57 as Device_Group_Hierarchy_l3, 58 as Device_Group_Hierarchy_l4, 59 as vsys_name, 60 as DeviceName, 61 as f5, 62 as Source_VM_UUID, 63 as Destination_VM_UUID, 64 as method, 65 as Tunnel_ID_IMSI, 66 as Monitor_Tag_IMEI, 67 as Parent_Session_ID, 68 as parent_start_time, 69 as Tunnel, 70 as thr_category, 71 as contentver, 72 as f6, 73 as SCTP_Association_ID, 74 as Payload_Protocol_ID, 75 as http_headers, 76 as URLCategoryList, 77 as UUIDforrule, 78 as HTTP2Connection
+| where type = "THREAT" and subtype not in ("file", "url")
+| count_distinct(Threat_Content_Name) as UniqueThreats by dest_ip
+| sort by UniqueThreats, dest_ip asc
+| limit 10
+```
+
+## Collecting Logs for the Palo Alto Networks 9 App
+
+This section provides instructions for configuring log collection for the Sumo Logic App for Palo Alto Networks 9. You must have Palo Alto Networks Web administrative user permissions to successfully complete these tasks. Configuring log collection for Palo Alto Networks 9 includes the following tasks:
 
 ### Step 1. Create a hosted collector and Cloud Syslog source
 
 In this step you configure a hosted collector with a Cloud Syslog source that will act as Syslog server to receive logs and events from Palo Alto Networks devices.
 
-**To configure a hosted collector with a Cloud Syslog source, do the following:
+To configure a hosted collector with a Cloud Syslog source, do the following:
 
 1. Log in to Sumo Logic and create a [Hosted Collector](/docs/send-data/configure-hosted-collector).
 2. Create a [Cloud Syslog Source](/docs/send-data/Sources/sources-hosted-collectors/Cloud-Syslog-Source) on the hosted collector, specifying the following:
@@ -61,7 +109,7 @@ In this step you configure a hosted collector with a Cloud Syslog source that wi
 
 In this step you create a server profile where you can define the log destination. This will be the host name, port and protocol (TLS) of the Sumo Logic Cloud Syslog source.
 
-**To create a server profile specifying  the log destination, do the following:
+To create a server profile specifying  the log destination, do the following:
 
 1. Login to the Palo Alto Networks Web interface as an administrative user.
 2. Select **Device tab > Server Profiles > Syslog**.
@@ -113,74 +161,12 @@ To configure syslog forwarding for each log type (`config`, `system`, `threat`, 
 
 In this step, you view logs using the Palo Alto Network Web interface to confirm the logs are generated on the firewall.
 
-**To verify the logs in Palo Alto Networks, do the following:
-
+To verify the logs in Palo Alto Networks, do the following:
 1. In the Palo Alto Networks UI, select **Monitor** > **Logs**.
 2. Once the setup is done, log in to Sumo Logic.
 3. To validate that the logs are flowing to Sumo Logic, run a query using the source category you configured during [Step 1](#Step_1._Create_a_hosted_collector_and_Cloud_Syslog_source), such as: `_sourceCategory = NW/PAN/V9`.
 
 
-
-### Sample Logs
-
-
-```json title="System logs"
-Oct 09 10:15:15 SumoRedfw01a 1,2019/10/09
-10:15:15,001234567890002,SYSTEM,general,0,2019/10/09
-10:15:15,,general,,0,0,general,critical,License for feature threat will expire on 2019/09/28,0123456789,0x0,0,0,0,0,,SumoRedfw01a
-```
-
-
-
-```json title="Configuration logs"
-Oct 14 11:37:34 SumoRedfw01a 1,2019/10/14
-11:37:34,001234567890001,CONFIG,0,0,2019/10/14
-11:37:34,195.186.216.125,,clone,dduc,Web,Succeeded, config shared reports,,,0123456789,0x8000000000000000,0,0,0,0,,SumoRedfw01a
-```
-
-```json title="USERID logs"
-Oct 09 10:10:15 SumoRedfw01a.sumotest.com 1,2019/10/09
-10:10:15,001234567890002,USERID,logout,2304,2019/10/09
-10:10:15,vsys1,17.174.122.37,dduc,,0,1,0,0,0,vpn-client,globalprotect,0123456789,0x0,0,0,0,0,,SumoRedfw01a,1,,2019/10/09
-10:10:15,1,0x80,aruan
-```
-
-
-```json title="HIPMatch logs"
-Oct 09 10:20:15 SumoRedfw01a.sumotest.com 1,2019/10/09
-10:20:15,001234567890002,HIPMATCH,0,2304,2019/10/09 10:20:15,ira,vsys1,oh-C02ABCDEFGH4,Mac,67.240.185.235,GP-HIP-PROFILE,1,profile,0,0,0123456789,0x0,0,0,0,0,,SumoRedfw01a,1,0.0.0.0,gh:85:90:99:5a:40,C02ABCDEFGH
-```
-
-
-```json title="Traffic logs"
-Oct 09 10:19:15 SumPunFw07.sumotest.com 1,2019/10/09
-10:19:15,001234567890002,TRAFFIC,drop,2304,2019/10/09
-10:19:15,209.118.103.150,160.177.222.249,0.0.0.0,0.0.0.0,InternalServer,,,not-applicable,vsys1,inside,z1-FW-Transit,ethernet1/2,,All traffic,2019/10/09
-10:19:15,0,1,63712,443,0,0,0x0,udp,deny,60,60,0,1,2019/10/09
-10:19:15,0,any,0,0123456789,0x0,Netherlands,10.0.0.0-10.255.255.255,0,1,0,policy-deny,0,0,0,0,,SumPunFw07,from-policy,,,0,,0,,N/A,0,0,0,0,1202585d-b4d5-5b4c-aaa2-d80d77ba456e,0
-```
-
-
-```json title="Threat logs"
-Oct 09 10:21:11 SumPunFw07.sumotest.com 1,2019/10/09
-10:21:11,001234567890002,THREAT,vulnerability,2304,2019/10/09
-10:21:11,205.168.30.201,240.84.174.144,NAT_205.168.30.201,230.230.1.33,Rule 95,,,web-browsing,vsys3,z2-FW-Sumo-Internal,Z4-Outbound-internet,ethernet1/2,ethernet1/2,All traffic,2019/10/09
-10:21:11,793911,1,37442,443,37442,20077,0x1402000,tcp,alert,"64.99.23.90/sslmgr?scep-profile-name=%99c",Palo Alto Networks GlobalProtect Remote Code Execution Vulnerability(54582),unknown,critical,client-to-server,0123456789,0x2000000000000000,United States,10.0.0.0-
-10.255.255.255,0,,0,,,1,,,,,,,,0,0,0,0,0,,SumPunFw07,,,,,0,,0,,N/A,code-execution,AppThreat-8189-5641,0x4,0,4294967295,,,6bbbbec9-d123-4d51-1204-6aefd221079b,0
-```
-
-### Sample Query
-
-In the **Palo Alto Networks 9 - Threat Overview** dashboard, the following query detects **Dest IPs Observing Multiple Threats**.
-
-```sql
-_sourceCategory=Loggen/PAN* ",THREAT," !(",file," or ",url,")
-| csv _raw extract 1 as f1, 2 as Receive_Time, 3 as serialNum, 4 as type, 5 as subtype, 6 as f2, 7 as LogGenerationTime, 8 as src_ip, 9 as dest_ip, 10 as NAT_src_ip, 11 as NAT_dest_ip, 12 as ruleName, 13 as src_user, 14 as dest_user, 15 as app, 16 as vsys, 17 as src_zone, 18 as dest_zone, 19 as inbound_interface, 20 as outbound_interface, 21 as LogAction, 22 as f3, 23 as SessonID, 24 as RepeatCount, 25 as src_port, 26 as dest_port, 27 as NAT_src_port, 28 as NAT_dest_port, 29 as flags, 30 as protocol, 31 as action, 32 as urlORFileName, 33 as Threat_Content_Name, 34 as category, 35 as severity, 36 as direction, 37 as seqNum, 38 as action_flags, 39 as src_country, 40 as dest_country, 41 as f4, 42 as content_type, 43 as pcap_id, 44 as filedigest, 45 as cloud, 46 as url_idx, 47 as user_agent, 48 as filetype, 49 as xff, 50 as referer, 51 as sender, 52 as subject, 53 as recipient, 54 as reportid, 55 as Device_Group_Hierarchy_l1, 56 as Device_Group_Hierarchy_l2, 57 as Device_Group_Hierarchy_l3, 58 as Device_Group_Hierarchy_l4, 59 as vsys_name, 60 as DeviceName, 61 as f5, 62 as Source_VM_UUID, 63 as Destination_VM_UUID, 64 as method, 65 as Tunnel_ID_IMSI, 66 as Monitor_Tag_IMEI, 67 as Parent_Session_ID, 68 as parent_start_time, 69 as Tunnel, 70 as thr_category, 71 as contentver, 72 as f6, 73 as SCTP_Association_ID, 74 as Payload_Protocol_ID, 75 as http_headers, 76 as URLCategoryList, 77 as UUIDforrule, 78 as HTTP2Connection
-| where type = "THREAT" and subtype not in ("file", "url")
-| count_distinct(Threat_Content_Name) as UniqueThreats by dest_ip
-| sort by UniqueThreats, dest_ip asc
-| limit 10
-```
 
 ## Install the Palo Alto Networks 9 App
 

@@ -20,7 +20,7 @@ which would produce results such as:
 
 ![AggResult.png](/img/dashboards/AggResult.png)
 
-**To create a Bar Chart:**
+To create a Bar Chart:**
 
 1.  Run a query.
 2.  In the **Aggregates** tab, choose the **Bar Chart** icon to display the search results.

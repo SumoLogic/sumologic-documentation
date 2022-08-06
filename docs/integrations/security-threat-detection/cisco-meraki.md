@@ -27,36 +27,6 @@ For more information on log types, see these topics in Cisco Meraki documentatio
 * [Syslog Server Overview and Configuration](https://documentation.meraki.com/zGeneral_Administration/Monitoring_and_Reporting/Syslog_Server_Overview_and_Configuration)
 
 
-## Collecting logs for the Cisco Meraki App
-
-This section provides instructions for configuring log collection for the Cisco Meraki App, as well as log and query examples.
-
-
-### Configure Log Collection
-
-In this task, you configure an installed collector with a Syslog source that acts as a Syslog server to receive logs and events from Cisco Meraki.
-
-1. Configure an [Installed Collector](/docs/send-data/installed-collectors/about-installed-collectors).
-2. Add a [Syslog source](/docs/send-data/Sources/sources-installed-collectors/Syslog-Source) to the installed collector:
-   * **Name**. (Required) A name is required.
-   * **Description.** Optional.
-   * **Protocol**. UDP or TCP.  Choose the protocol you configured in Cisco Meraki for Syslog forwarding.
-   * **Port**. Port number. Choose the port you configured in Cisco Meraki for Syslog forwarding.
-   * **Source Category**. (Required) Provide a realistic Source Category for this data type. For example: **prod/ciscomeraki**. For more information, see [Best Practices](/docs/send-data/design-deployment/best-practices-source-categories).
-3. Click **Save**.
-
-
-### Configure Log Forwarding
-
-On the Cisco Meraki platform, you can configure the export of syslog events under **Network-wide > General > Reporting > Syslog Servers**. The following task is an example of how to configure forwarding for syslog IDS/IPS events.
-
-*To configure forwarding for syslog IDS/IPS events, do the following:
-1. On the Cisco Meraki platform, navigate to **Network-wide > General > Reporting**.
-2. Add the IDS alerts syslog role.
-
-For more information on configuring log forwarding from Cisco Meraki, see the [Cisco Meraki documentation](https://documentation.meraki.com/zGeneral_Administration/Monitoring_and_Reporting/Syslog_Server_Overview_and_Configuration).
-
-
 ### Sample Log Messages
 
 ```json title="security_event log sample"
@@ -70,7 +40,6 @@ P2=402&amp;P3=2&amp;P4=Zj3qRDR5CbzfWlP8BuYg%2bUlTon0XE774ExEEquiawstLAJ2%2bQm3Oo
 dst=200.188.210.42:180 mac=20:1C:BC:B2:0F:20 name='' sha256=093e4fc218b27e58e2fede7b8cb044d48d66995ae785bbc186a9df5ae08ca4f7
 disposition=malicious action=block
 ```
-
 
 ```json title="urls log sample"
 <134>1 1563249910.949155659 AP_firstfloor urls src=10.1.10.113:54877 dst=10.1.10.209:1400 mac=13:0C:AC:B2:0F:11
@@ -112,11 +81,9 @@ into slot 1
 ```
 
 
-
 ### Sample Query
 
 The following query is from the High Severity Threats panel of the Cisco Meraki - Overview dashboard.
-
 
 ```sql
 _sourceCategory=*meraki* "security_event"
@@ -130,6 +97,36 @@ _sourceCategory=*meraki* "security_event"
 ```
 
 
+## Collecting logs for the Cisco Meraki App
+
+This section provides instructions for configuring log collection for the Cisco Meraki App, as well as log and query examples.
+
+
+### Configure Log Collection
+
+In this task, you configure an installed collector with a Syslog source that acts as a Syslog server to receive logs and events from Cisco Meraki.
+
+1. Configure an [Installed Collector](/docs/send-data/installed-collectors/about-installed-collectors).
+2. Add a [Syslog source](/docs/send-data/Sources/sources-installed-collectors/Syslog-Source) to the installed collector:
+   * **Name**. (Required) A name is required.
+   * **Description.** Optional.
+   * **Protocol**. UDP or TCP.  Choose the protocol you configured in Cisco Meraki for Syslog forwarding.
+   * **Port**. Port number. Choose the port you configured in Cisco Meraki for Syslog forwarding.
+   * **Source Category**. (Required) Provide a realistic Source Category for this data type. For example: **prod/ciscomeraki**. For more information, see [Best Practices](/docs/send-data/design-deployment/best-practices-source-categories).
+3. Click **Save**.
+
+
+### Configure Log Forwarding
+
+On the Cisco Meraki platform, you can configure the export of syslog events under **Network-wide > General > Reporting > Syslog Servers**. The following task is an example of how to configure forwarding for syslog IDS/IPS events.
+
+To configure forwarding for syslog IDS/IPS events, do the following:
+1. On the Cisco Meraki platform, navigate to **Network-wide > General > Reporting**.
+2. Add the IDS alerts syslog role.
+
+For more information on configuring log forwarding from Cisco Meraki, see the [Cisco Meraki documentation](https://documentation.meraki.com/zGeneral_Administration/Monitoring_and_Reporting/Syslog_Server_Overview_and_Configuration).
+
+
 
 ## Install the Cisco Meraki App
 
@@ -140,10 +137,7 @@ To install the app, do the following:
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
 1. From the **App Catalog**, search for and select the app**.**
-2. Select the version of the service you're using and click **Add to Library**.
-
-Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/library/install-apps)
-
+2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/library/install-apps)
 3. To install the app, complete the following fields.
     * **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
     *  **Data Source.** Select either of these options for the data source. 
@@ -161,7 +155,6 @@ Panels will start to fill automatically. It's important to note that each panel 
 ### Dashboard filters   
 
 Each dashboard has a set of filters that you can apply to the entire dashboard, as shown in the following example. Click the funnel icon in the top dashboard menu bar to display a scrollable list of filters that are applied across the entire dashboard.
-
 
 You can use filters to drill down and examine the data on a granular level.
 
@@ -207,8 +200,6 @@ Use this dashboard to:
 <img src={useBaseUrl('img/integrations/security-threat-detection/CiscoMeraki_URLs_Overview.png')} alt="Cisco Meraki dashboards" />
 
 ### URLs Content and Client Platform
-23
-
 
 The **Cisco Meraki - URLs Content and Client Platform** dashboard provides information on the top media types that are requested in your environment, trends on media types that are requested over time, and the top requested URLs. The panels also display information on the OS platforms used, the browsers used on the various operating systems, and the platform versions used.
 

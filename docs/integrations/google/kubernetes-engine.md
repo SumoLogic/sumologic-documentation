@@ -76,21 +76,21 @@ By default, GKE clusters are natively integrated with Cloud Logging (and Monitor
 
 The GCP source receives log data from Google Pub/Sub. The GCP source will only be usable for log data formatted as data coming from Google Pub/Sub.
 
-**To configure a Google Platform Source**, follow the instructions in [this document](/docs/send-data/Sources/sources-hosted-collectors/Google-Cloud-Platform-Source).
+To configure a Google Platform Source**, follow the instructions in [this document](/docs/send-data/Sources/sources-hosted-collectors/Google-Cloud-Platform-Source).
 
 
 ### Configure a Pub/Sub topic for GCP
 
 Once you configure the Pub/Sub, you can export data from Google to the Pub/Sub.
 
-**To configure a Pub/Sub topic for GCP**,  follow the instructions in [this document](/docs/send-data/Sources/sources-hosted-collectors/Google-Cloud-Platform-Source).
+To configure a Pub/Sub topic for GCP**,  follow the instructions in [this document](/docs/send-data/Sources/sources-hosted-collectors/Google-Cloud-Platform-Source).
 
 
 ### Create an export of Google Kubernetes Engine logs from Logging
 
 This section walks you through the task of creating an export of Google Kubernetes Engine logs from Logging.
 
-**To create an export of GKE logs, do the following:*
+To create an export of GKE logs, do the following:*
 
 1. Go to **Logging** and click **Logs Router**.<br/><img src={useBaseUrl('img/integrations/google/GCP_logging_1.png')} alt="GKE" />
 1. Click **Create Sink.**<br/><img src={useBaseUrl('img/integrations/google/GKE_2.png')} alt="GKE" />

@@ -130,7 +130,7 @@ Perform the configuration described below twice, to set up one script source for
 
 If your Domain Controllers are in the same domain, then you can just run the scripts on a select one or a few of the Domain Controller machines. Because each Domain Controller may have or allow different data, you will need to select the best ones. The adObjectCollector.ps1 script is the heaviest. There is no reason to pull your AD objects multiple times.
 
-**To configure a script source, do the following:
+To configure a script source, do the following:
 
 
 

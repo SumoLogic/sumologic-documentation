@@ -81,7 +81,7 @@ This section provides walkthrough instructions that demonstrate how to configure
 
 The sumologic netskope collector is compatible with Python 3.7 and Python 2.7. It has been tested on Ubuntu 18.04 LTS and Debian 4.9.130.
 
-**To create a Sumo Logic Netskope collector, do the following:
+To create a Sumo Logic Netskope collector, do the following:
 
 
 

@@ -28,101 +28,35 @@ The Webhook events are grouped into the following core event types:
 * Account Events
 
 
-## Collect Logs for the Zoom App
-
-This page shows you how to configure event collection for the Zoom App. Zoom uses Webhook events that are grouped into the following core event types:
-* Meeting Events
-* Webinar Events
-* Recording Events
-* Zoom Room Events
-* User Events
-* Account Events
-
-For more information on Zoom Webhook events, see this[ Zoom web page](https://marketplace.zoom.us/docs/api-reference/webhook-reference).
-
-
-### Collection process overview
-
-Configuring event collection for Zoom consists of the following tasks:
-
-1. Adding a hosted collector and HTTP source.
-2. Configuring Webhooks for event collection.
-
-Some Webhook events may not be available based on the plan type. Refer to the prerequisites section (or each Webhook event type) on this [Zoom page](https://marketplace.zoom.us/docs/api-reference/webhook-reference/account-events/account-created#prerequisites) for account creation events.
-
-
-### Step 1: Add a Hosted Collector and HTTP Source
-
-This section demonstrates how to add a hosted Sumo Logic collector and HTTP Logs source, to collect logs for Zoom.
-
-When you configure the HTTP Source, make sure to save the HTTP Source Address URL.
-
-**To add a hosted collector and HTTP source, do the following:
-
-1. Do one of the following:
-* If you already have a Sumo Logic Hosted Collector, identify the one you want to use.
-* Create a new Hosted Collector as described in this document: [Configure a Hosted Collector](/docs/send-data/configure-hosted-collector).
-1. Add an  HTTP source for logs, as described in this document: [HTTP Metrics and Logs Source](/docs/send-data/sources/sources-hosted-collectors/http-logs-metrics-source).
-
-
-### Step 2: Configure Webhooks for events collection
-
-Some Webhook events may not be available based on the plan type. Refer to the Prerequisite section for each Webhook event type on this [Zoom page](https://marketplace.zoom.us/docs/api-reference/webhook-reference/account-events/account-created#prerequisites) for account-created event types.
-
-This section shows you how to configure Webhooks to collect events from Zoom. For more information, see Zoom page [Create a Webhook-Only App](https://marketplace.zoom.us/docs/guides/getting-started/app-types/create-webhook-only-app).
-
-To configure Webhooks for Zoom events collection, do the following:
-
-1. Go to: [https://marketplace.zoom.us/](https://marketplace.zoom.us/) and login.
-2. In the upper right corner, click **Develop > Build App**.
-3. **Create** a Webhook Only App.
-4. Specify the following App Information:
-* **App Name**
-* **Short Description**
-* **Company Name**
-* **Developer Name**
-* **Developer Email Address**
-1. Click **Continue**, and then enable** Event Subscriptions.**
-2. Click **Add new event subscription **and provide the following information:
-* **Subscription Name **(for example, Sumo Logic)
-* **Event notification endpoint URL.** Provide the Sumo logic endpoint URL from this [step](#Add-a-Hosted-Collector-and-HTTP-Source).
-1. Click **Add events** and subscribe to all the Webhook Events.
-2. Click Save and then click Continue.
-3. **Activate** your newly created Webhook Only App.
-
-
 ### Sample Log Message
-
 
 ```json
 {
-    "event":"meeting.participant_left",
-    "payload":▼{
-            "account_id":"eSqnB7aCS0KKx0_adadb1HQ",
-            "object":▼{
-                    "duration":60,
-                    "start_time":"2020-04-01T19:24:06Z",
-                    "timezone":"America/Denver",
-                    "topic":"My Meeting",
-                    "id":"981802874",
-                    "type":2,
-                    "uuid":"/m84vL38R3exBtjhvdWxMad==",
-                            "participant":▼{
-                            "leave_time":"2020-04-01T19:24:20Z",
-                            "id":"FDGHUPeiSZGAa6pmYTlpiA",
-                            "user_id":"16778240",
-                            "user_name":"Test User"
-                    },
-                    "host_id":"FDGHUPeiSZADa6pmYTlpiA"
-            }
-    }
+	"event":"meeting.participant_left",
+	"payload":"▼"{
+		"account_id":"eSqnB7aCS0KKx0_adadb1HQ",
+		"object":"▼"{
+			"duration":60,
+			"start_time":"2020-04-01T19:24:06Z",
+			"timezone":"America/Denver",
+			"topic":"My Meeting",
+			"id":"981802874",
+			"type":2,
+			"uuid":"/m84vL38R3exBtjhvdWxMad==",
+			"participant":"▼"{
+				"leave_time":"2020-04-01T19:24:20Z",
+				"id":"FDGHUPeiSZGAa6pmYTlpiA",
+				"user_id":"16778240",
+				"user_name":"Test User"
+			},
+			"host_id":"FDGHUPeiSZADa6pmYTlpiA"
+		}
+	}
 }
 ```
 
 
-
 ### Sample Query
-
 
 ```sql
 _sourceCategory=zoom
@@ -138,6 +72,61 @@ _sourceCategory=zoom
 | count
 ```
 
+
+
+## Collecting Logs for the Zoom App
+
+This page shows you how to configure event collection for the Zoom App. Zoom uses Webhook events that are grouped into the following core event types:
+* Meeting Events
+* Webinar Events
+* Recording Events
+* Zoom Room Events
+* User Events
+* Account Events
+
+For more information on Zoom Webhook events, see this [Zoom web page](https://marketplace.zoom.us/docs/api-reference/webhook-reference).
+
+Some Webhook events may not be available based on the plan type. Refer to the prerequisites section (or each Webhook event type) on this [Zoom page](https://marketplace.zoom.us/docs/api-reference/webhook-reference/account-events/account-created#prerequisites) for account creation events.
+
+
+
+### Step 1: Add a Hosted Collector and HTTP Source
+
+This section demonstrates how to add a hosted Sumo Logic collector and HTTP Logs source, to collect logs for Zoom.
+
+When you configure the HTTP Source, make sure to save the HTTP Source Address URL.
+
+To add a hosted collector and HTTP source, do the following:
+1. Do one of the following:
+   * If you already have a Sumo Logic Hosted Collector, identify the one you want to use.
+   * Create a new Hosted Collector as described in this document: [Configure a Hosted Collector](/docs/send-data/configure-hosted-collector).
+2. Add an HTTP source for logs, as described in this document: [HTTP Metrics and Logs Source](/docs/send-data/sources/sources-hosted-collectors/http-logs-metrics-source).
+
+
+### Step 2: Configure Webhooks for events collection
+
+Some Webhook events may not be available based on the plan type. Refer to the Prerequisite section for each Webhook event type on this [Zoom page](https://marketplace.zoom.us/docs/api-reference/webhook-reference/account-events/account-created#prerequisites) for account-created event types.
+
+This section shows you how to configure Webhooks to collect events from Zoom. For more information, see [Create a Webhook-Only App](https://marketplace.zoom.us/docs/guides/getting-started/app-types/create-webhook-only-app).
+
+To configure Webhooks for Zoom events collection, do the following:
+
+1. Go to: [https://marketplace.zoom.us/](https://marketplace.zoom.us/) and log in.
+2. In the upper right corner, click **Develop > Build App**.
+3. **Create** a Webhook Only App.
+4. Specify the following App Information:
+   * **App Name**
+   * **Short Description**
+   * **Company Name**
+   * **Developer Name**
+   * **Developer Email Address**
+1. Click **Continue**, and then enable** Event Subscriptions.**
+2. Click **Add new event subscription **and provide the following information:
+   * **Subscription Name** (for example, Sumo Logic)
+   * **Event notification endpoint URL.** Provide the Sumo logic endpoint URL from this [step](#Add-a-Hosted-Collector-and-HTTP-Source).
+1. Click **Add events** and subscribe to all the Webhook Events.
+2. Click Save and then click Continue.
+3. **Activate** your newly created Webhook Only App.
 
 
 ## Installing the Zoom App
@@ -160,14 +149,13 @@ Once an app is installed, it will appear in your **Personal** folder, or other f
 
 Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
 
+
 ## Viewing Zoom Dashboards
 
-### Dashboard filters  
 
 **Each dashboard has a set of filters** that you can apply to the entire dashboard, as shown in the following example. Click the funnel icon in the top dashboard menu bar to display a scrollable list of filters that narrow search results across the entire dashboard.
 
 **Each panel has a set of filters** that are applied to the results for that panel only, as shown in the following example. Click the funnel icon in the top panel menu bar to display a list of panel-specific filters.
-
 
 
 ### Overview
