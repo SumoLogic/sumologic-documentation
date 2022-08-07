@@ -7,7 +7,7 @@ description: AUse the Amazon Route 53 app to monitor and visualize DNS activity 
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/amazon-aws/route53.png')} alt="DB icon" width="50"/>
+<img src={useBaseUrl('img/integrations/amazon-aws/route53.png')} alt="Thumbnail icon" width="50"/>
 
 Amazon Route 53 Resolver is a highly available cloud-based DNS service from Amazon. The Sumo Logic Route 53 Resolver Security app enables you to monitor both Query Logs, and if in use, the DNS Firewall logs.
 
@@ -17,17 +17,16 @@ With [Route 53 Resolver DNS Firewall](https://docs.aws.amazon.com/Route53/latest
 
 DNS Firewall is a feature of Route 53 Resolver and doesn't require any additional Resolver setup to use.
 
-
-## Collect Logs for the Amazon Route 53 Resolver Security App
-
-This topic has instructions for collecting logs for the Amazon Route 53 Resolver Security app.
-
-### Log Types
+## Log Types
 The Amazon Route 53 Resolver Security app uses:
 * [Route 53 Resolver query log](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/resolver-query-logs-example-json.html)
 * [DNS Resolver Firewall Log](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/firewall-resolver-query-logs-configuring.html)
 
 If you aren't using DNS Resolver Firewall, the Amazon Route 53 Resolver Security app can still provide security insights from your [resolver query logs](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/resolver-query-logs-example-json.html), but data specific to the DNS Resolver Firewall data will not populate in the corresponding panels.
+
+## Collect Logs for the Amazon Route 53 Resolver Security App
+
+This topic has instructions for collecting logs for the Amazon Route 53 Resolver Security app.
 
 
 ### Before you start
@@ -37,19 +36,17 @@ If you want to set up Route 53 Resolver DNS Firewall, see the Amazon Developer G
 
 ### Set up collection
 
-1. Create an [AWS Kinesis Firehose for Logs Source](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/AWS_Kinesis_Firehose_for_Logs_Source). Make a note of the **HTTP Source Address** for the source. You'll need it for the Cloudformation template below.
-2. Set up CloudWatch to stream logs to Kinesis Data Firehose using the [Cloudformation Template](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/AWS_Kinesis_Firehose_for_Logs_Source#CloudFormation_Template)
+1. Create an [AWS Kinesis Firehose for Logs Source](/docs/send-data/sources/sources-hosted-collectors/amazon-web-services/aws-kinesis-firehose-logs-source). Make a note of the **HTTP Source Address** for the source. You'll need it for the Cloudformation template below.
+2. Set up CloudWatch to stream logs to Kinesis Data Firehose using the [Cloudformation Template](/docs/send-data/sources/sources-hosted-collectors/amazon-web-services/aws-kinesis-firehose-logs-source#CloudFormation_Template)
 3. In this step, enable DNS query logging, as described in [Managing Resolver query logging configurations](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/resolver-query-logging-configurations-managing.html) in AWS help.
    * When you select the type of AWS resource to which you want Resolver to send query logs, choose **Kinesis Data Firehose delivery stream** as the Destination for the Query Logs.
    * Click **Browse streams** and select the Kinesis Data Firehose delivery stream that was created by the Sumo Logic CloudFormation template. It should start with ​​`Kinesis-Logs-<random-string>`.
-   * Click **Add VPC** in the **VPCs to log queries for** section. \
+   * Click **Add VPC** in the **VPCs to log queries for** section.
 4. Complete your configuration by clicking **Configure query logging** at the bottom of the page.
-5. Your new configuration will now be listed. \
+5. Your new configuration will now be listed.
 
 
 ### Sample log message
-7
-
 
 [Route 53 Resolver query log example](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/resolver-query-logs-example-json.html)
 

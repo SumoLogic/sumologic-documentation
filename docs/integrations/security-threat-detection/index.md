@@ -6,7 +6,7 @@ description: Learn about Sumo apps for Security and Threat Detection.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/security-threat-detection/security-threat-detection.png')} alt="thumbnail icon" width="75"/>
+<img src={useBaseUrl('img/icons/security/detect-insider-threats.png')} alt="thumbnail icon" width="75"/>
 
 Sumo provides a variety of apps for security products and platforms, from firewalls and endpoint protection to security automation and orchestration. This guide has documentation for those apps.  
 

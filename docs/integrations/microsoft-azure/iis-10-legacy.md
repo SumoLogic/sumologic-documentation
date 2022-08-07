@@ -22,9 +22,9 @@ IIS 10 App is backward compatible with IIS 8.5. IIS 10 App uses default log form
 * For information on how to configure HTTP Error Logs, and for explanations on the various HTTP Error Log fields and their significance see this [link](https://support.microsoft.com/en-us/help/820729/error-logging-in-http-apis).
 
 This section covers the following default log formats for IIS 10 and IIS 8.5:
-* [IIS Access Logs (W3C format)](https://help.sumologic.com/07Sumo-Logic-Apps/04Microsoft-and-Azure/IIS_10_(Legacy)/Collect_Logs_for_the_IIS_10_(Legacy)_App#IIS_Access_Logs_(W3C_format))
-* [HTTP Error Logs](https://help.sumologic.com/07Sumo-Logic-Apps/04Microsoft-and-Azure/IIS_10_(Legacy)/Collect_Logs_for_the_IIS_10_(Legacy)_App#HTTP_Error_Logs)
-* [Performance Logs](https://help.sumologic.com/07Sumo-Logic-Apps/04Microsoft-and-Azure/IIS_10_(Legacy)/Collect_Logs_for_the_IIS_10_(Legacy)_App#Performance_Logs)
+* [IIS Access Logs (W3C format)](/docs/integrations/microsoft-azure/iis-10-legacy#Collect_Logs_for_the_IIS_10_(Legacy)_App#IIS_Access_Logs_(W3C_format))
+* [HTTP Error Logs](/docs/integrations/microsoft-azure/iis-10-legacy#Collect_Logs_for_the_IIS_10_(Legacy)_App#HTTP_Error_Logs)
+* [Performance Logs](/docs/integrations/microsoft-azure/iis-10-legacy#Collect_Logs_for_the_IIS_10_(Legacy)_App#Performance_Logs)
 
 IIS Log files are generated as local files. For a standard Windows Server, the default log location is as follows: `%SystemDrive%\inetpub\logs\LogFiles`
 
@@ -77,9 +77,9 @@ s-port cs-us…
 
 The following tasks are required to prepare for logging IIS events:
 
-* [Enable logging on your IIS server, if not already enabled](https://help.sumologic.com/07Sumo-Logic-Apps/04Microsoft-and-Azure/IIS_10_(Legacy)/Collect_Logs_for_the_IIS_10_(Legacy)_App#Enable_logging_on_your_IIS_Server)
-* [Verify log files are being created](https://help.sumologic.com/07Sumo-Logic-Apps/04Microsoft-and-Azure/IIS_10_(Legacy)/Collect_Logs_for_the_IIS_10_(Legacy)_App#Verify_log_files_are_created)
-* [Enable HTTP Error Logs on your Windows server](https://help.sumologic.com/07Sumo-Logic-Apps/04Microsoft-and-Azure/IIS_10_(Legacy)/Collect_Logs_for_the_IIS_10_(Legacy)_App#Enable_HTTP_Error_Logs_on_your_Windows_Server)
+* [Enable logging on your IIS server, if not already enabled](/docs/integrations/microsoft-azure/iis-10-legacy#Collect_Logs_for_the_IIS_10_(Legacy)_App#Enable_logging_on_your_IIS_Server)
+* [Verify log files are being created](/docs/integrations/microsoft-azure/iis-10-legacy#Collect_Logs_for_the_IIS_10_(Legacy)_App#Verify_log_files_are_created)
+* [Enable HTTP Error Logs on your Windows server](/docs/integrations/microsoft-azure/iis-10-legacy#Collect_Logs_for_the_IIS_10_(Legacy)_App#Enable_HTTP_Error_Logs_on_your_Windows_Server)
 
 
 #### Enable logging on your IIS Server
@@ -137,21 +137,21 @@ HTTP Error Log files are generated as local files. The default HTTP Error log fi
 Sumo Logic recommends that you install the collector on the same system that hosts the logs.
 
 To collect logs for the IIS 10 App, you will install a local Collector on the same server that hosts the logs.
-* Follow the instructions for an [Installed Collector (Windows)](https://help.sumologic.com/03Send-Data/Installed-Collectors/03Install-a-Collector-on-Windows).
+* Follow the instructions for an [Installed Collector (Windows)](/docs/send-data/installed-collectors/install-collector-windows).
 
 
 ### Configure Sources
 
 This section demonstrates how to configure sources for the following log types:
 
-* [IIS Access Logs](https://help.sumologic.com/07Sumo-Logic-Apps/04Microsoft-and-Azure/IIS_10_(Legacy)/Collect_Logs_for_the_IIS_10_(Legacy)_App#Configure_Source_for_IIS_Access_Logs)
-* [HTTP Error Logs](https://help.sumologic.com/07Sumo-Logic-Apps/04Microsoft-and-Azure/IIS_10_(Legacy)/Collect_Logs_for_the_IIS_10_(Legacy)_App#Configure_Source_for_HTTP_Error_Logs)
-* [IIS Performance (Perfmon) Logs](https://help.sumologic.com/07Sumo-Logic-Apps/04Microsoft-and-Azure/IIS_10_(Legacy)/Collect_Logs_for_the_IIS_10_(Legacy)_App#Configure_Source_for_IIS_Performance_(Perfmom)_Logs)
+* [IIS Access Logs](/docs/integrations/microsoft-azure/iis-10-legacy#Collect_Logs_for_the_IIS_10_(Legacy)_App#Configure_Source_for_IIS_Access_Logs)
+* [HTTP Error Logs](/docs/integrations/microsoft-azure/iis-10-legacy#Collect_Logs_for_the_IIS_10_(Legacy)_App#Configure_Source_for_HTTP_Error_Logs)
+* [IIS Performance (Perfmon) Logs](/docs/integrations/microsoft-azure/iis-10-legacy#Collect_Logs_for_the_IIS_10_(Legacy)_App#Configure_Source_for_IIS_Performance_(Perfmom)_Logs)
 
 
 #### Configure Source for IIS Access Logs
 
-This section demonstrates how to configure a Local File Source for IIS Access Logs, for use with an [Installed Collector](https://help.sumologic.com/07Sumo-Logic-Apps/04Microsoft-and-Azure/IIS_10_(Legacy)/Collect_Logs_for_the_IIS_10_(Legacy)_App#Configure_a_Collector). You may configure a [Remote File Source](https://help.sumologic.com/03Send-Data/Sources/01Sources-for-Installed-Collectors/Remote-File-Source), but the configuration is more complex.
+This section demonstrates how to configure a Local File Source for IIS Access Logs, for use with an [Installed Collector](/docs/integrations/microsoft-azure/iis-10-legacy#Configure-a-Collector). You may configure a [Remote File Source](/docs/send-data/Sources/sources-installed-collectors/Remote-File-Source), but the configuration is more complex.
 
 
 Sumo Logic recommends using a Local File Source whenever possible.
@@ -159,14 +159,14 @@ Sumo Logic recommends using a Local File Source whenever possible.
 
 To configure a local file source for IIS Access Logs, do the following:
 
-1. Configure a [Local File Source](https://help.sumologic.com/03Send-Data/Sources/01Sources-for-Installed-Collectors/Local-File-Source).
+1. Configure a [Local File Source](/docs/send-data/Sources/sources-installed-collectors/Local-File-Source).
 2. Specify Local File Source Fields as follows:
     1. **Name**: Required (for example, "IIS")
     2. **Description**. (Optional)
     3. **File Path **(Required).C:\inetpub\Logs\LogFiles\W3SVC*\*.log
     4. **Collection start time**. Choose how far back you would like to begin collecting historical logs. For example, choose 7 days ago to being collecting logs with a last modified date within the last seven days.
     5. **Source Host**. Sumo Logic uses the hostname assigned by the operating system by default, but you can enter a different host name.
-    6. **Source Category** (Required). For example, "**Webserver/IIS/Access**". (The Source Category metadata field is a fundamental building block to organize and label Sources. For details see [Best Practices](https://help.sumologic.com/03Send-Data/01-Design-Your-Deployment/Best-Practices%3A-Good-Source-Category%2C-Bad-Source-Category).)
+    6. **Source Category** (Required). For example, "**Webserver/IIS/Access**". (The Source Category metadata field is a fundamental building block to organize and label Sources. For details see [Best Practices](/docs/send-data/design-deployment/best-practices-source-categories).)
 3. Configure the **Advanced** section:
     7. **Timestamp Parsing Settings**: Make sure the setting matches the timezone on the log files.
     8. **Enable Timetamp Parsing**: Select **Extract timestamp information from log file entries**.
@@ -183,7 +183,7 @@ After a few minutes, your new Source should be propagated down to the Collector 
 21
 
 
-This section demonstrates how to configure a Local File Source for HTTP Error Logs, for use with an [Installed Collector](https://help.sumologic.com/07Sumo-Logic-Apps/04Microsoft-and-Azure/IIS_10_(Legacy)/Collect_Logs_for_the_IIS_10_(Legacy)_App#Configure_a_Collector). You may configure a [Remote File Source](https://help.sumologic.com/03Send-Data/Sources/01Sources-for-Installed-Collectors/Remote-File-Source), but the configuration is more complex.
+This section demonstrates how to configure a Local File Source for HTTP Error Logs, for use with an [Installed Collector](/docs/integrations/microsoft-azure/iis-10-legacy#Configure-a-Collector). You may configure a [Remote File Source](/docs/send-data/Sources/sources-installed-collectors/Remote-File-Source), but the configuration is more complex.
 
 
 Sumo Logic recommends using a Local File Source whenever possible.
@@ -191,14 +191,14 @@ Sumo Logic recommends using a Local File Source whenever possible.
 To configure a local file source for HTTP Error Logs, do the following:
 
 
-1. Configure a [Local File Source](https://help.sumologic.com/03Send-Data/Sources/01Sources-for-Installed-Collectors/Local-File-Source).
+1. Configure a [Local File Source](/docs/send-data/Sources/sources-installed-collectors/Local-File-Source).
 2. Specify the Local File Source Fields as follows:
     1. **Name**: Required (for example, "HTTP Error Logs")
     2. **Description**. (Optional)
     3. **File Path **(Required). C:\Windows\System32\LogFiles\HTTPERR\*.*
     4. **Collection start time**. Choose how far back you would like to begin collecting historical logs. For example, choose 7 days ago to being collecting logs with a last modified date within the last seven days.
     5. **Source Host**. Sumo Logic uses the hostname assigned by the operating system by default, but you can enter a different host name.
-    6. **Source Category** (Required). For example, "**Webserver/IIS/Error**". (The Source Category metadata field is a fundamental building block to organize and label Sources. For details see [Best Practices](https://help.sumologic.com/03Send-Data/01-Design-Your-Deployment/Best-Practices%3A-Good-Source-Category%2C-Bad-Source-Category).)
+    6. **Source Category** (Required). For example, "**Webserver/IIS/Error**". (The Source Category metadata field is a fundamental building block to organize and label Sources. For details see [Best Practices](/docs/send-data/design-deployment/best-practices-source-categories).)
 3. Configure the **Advanced** section:
     7. **Timestamp Parsing Settings**: Make sure the setting matches the timezone on the log files.
     8. **Enable Timetamp Parsing**: Select **Extract timestamp information from log file entries**.
@@ -215,7 +215,7 @@ After a few minutes, your new Source should be propagated down to the Collector 
 24
 
 
-This section demonstrates how to configure a Windows Performance Source, for use with an [Installed Collector](https://help.sumologic.com/07Sumo-Logic-Apps/04Microsoft-and-Azure/IIS_10_(Legacy)/Collect_Logs_for_the_IIS_10_(Legacy)_App#Configure_a_Collector).
+This section demonstrates how to configure a Windows Performance Source, for use with an [Installed Collector](/docs/integrations/microsoft-azure/iis-10-legacy#Configure-a-Collector).
 
 
 25
@@ -225,16 +225,16 @@ Use the appropriate source for your environment:
 
 
 
-* [Local Windows Performance Monitor Log Source](https://help.sumologic.com/03Send-Data/Sources/01Sources-for-Installed-Collectors/Local-Windows-Performance-Monitor-Log-Source)
-* [Remote Windows Performance Monitor Log Source](https://help.sumologic.com/03Send-Data/Sources/01Sources-for-Installed-Collectors/Remote-Windows-Performance-Monitor-Log-Source)
+* [Local Windows Performance Monitor Log Source](/docs/send-data/Sources/sources-installed-collectors/Local-Windows-Performance-Monitor-Log-Source)
+* [Remote Windows Performance Monitor Log Source](/docs/send-data/Sources/sources-installed-collectors/Remote-Windows-Performance-Monitor-Log-Source)
 
 
 To configure a Source for IIS Performance Logs, do the following:  
 
-1. Configure a [Local Windows Performance Monitor Log Source](https://help.sumologic.com/03Send-Data/Sources/01Sources-for-Installed-Collectors/Local-Windows-Performance-Monitor-Log-Source).
+1. Configure a [Local Windows Performance Monitor Log Source](/docs/send-data/Sources/sources-installed-collectors/Local-Windows-Performance-Monitor-Log-Source).
 2. Configure the Local Windows Performance Source Fields as follows:
 * **Name**: Required (for example, "IIS Performance")
-* **Source Category** (Required). For example, **Webserver/IIS/PerfCounter**. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details see [Best Practices](https://help.sumologic.com/03Send-Data/01-Design-Your-Deployment/Best-Practices%3A-Good-Source-Category%2C-Bad-Source-Category).)
+* **Source Category** (Required). For example, **Webserver/IIS/PerfCounter**. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details see [Best Practices](/docs/send-data/design-deployment/best-practices-source-categories).)
 * **Frequency: Every Minute **(you may custom choose frequency)
 * **Description**. (Optional)
 1. Under **Perfmon Queries** Click **Add Query**.
@@ -541,7 +541,7 @@ Win32_PerfFormattedData_W3SVC_WebService ServiceUptime
 
 This section demonstrates how to install the IIS 10 (Legacy) App and provides examples and explanations for each of the app's predefined dashboards.
 
-Now that you have set up collection for IIS 10, you are ready to install the Sumo Logic App for IIS 10 that provides preconfigured searches and [dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/04Microsoft-and-Azure/IIS/03IIS-App-Dashboards#Dashboards) that monitor events generated by IIS 10.
+Now that you have set up collection for IIS 10, you are ready to install the Sumo Logic App for IIS 10 that provides preconfigured searches and [dashboards](#viewing-dashboards) that monitor events generated by IIS 10.
 
 
 To install the app, do the following:
@@ -551,7 +551,7 @@ Locate and install the app you need from the **App Catalog**. If you want to see
 1. From the **App Catalog**, search for and select the app**.**
 2. Select the version of the service you're using and click **Add to Library**.
 
-Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](https://help.sumologic.com/01Start-Here/Library/Apps-in-Sumo-Logic/Install-Apps-from-the-Library)
+Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/library/install-apps)
 
 1. To install the app, complete the following fields.
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 

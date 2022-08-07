@@ -7,6 +7,8 @@ description: The Enterprise Search Audit App provides immediate visibility into 
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
+<img src={useBaseUrl('img/integrations/sumo-apps/sumologic_EnterpriseSearchAudit.png')} alt="Web servers icon" width="75"/>
+
 The Enterprise Search Audit App provides immediate visibility into your account's search activity and helps you identify areas of improvement. It gives an overview of search usage within your org, with a breakdown by analytic tiers and other relevant search metrics such as data scanned bytes, etc. The pre-built dashboards also help you identify opportunities for improving search performance using the Search Audit Index.
 
 Before you can use the Enterprise Search Audit App, an administrator must first enable the feature. For more information, see Enable and Manage the Search Audit Index.

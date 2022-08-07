@@ -1,8 +1,8 @@
 ---
 id: supported-tools-schema
+title: Supported Tools and Schema
+description: Learn which Tools and Schema are supported by Software Development Optimization Solution.
 ---
-
-# Supported Tools and Schema
 
 The Software Development Optimization Solution supports the following tools for each phase of the DevOps lifecycle. You can choose to configure each tool manually or in an automated manner through Terraform.
 
@@ -37,7 +37,7 @@ The tables below show the schema for various events from DevOps pipeline. These 
 The table below shows how deploy events are defined in the schema:
 
 | Field | Explanation | Required/Optional |
-| -- | -- | -- | 
+| -- | -- | -- |
 | event_type | This field indicates the type of DevOps log event. The value of this field should be set to “deploy” | Required |
 | trace_id | This field is used to establish correlations between a deploy/build event and a code merge event. For example, a commit-id can be used to join the events<br/>Code Merge (PR) and Build<br/>Code Merge (PR) and Deploy | Required |
 | link | This field is used to provide a URL pointer to the deploy event. | Required |
@@ -45,7 +45,7 @@ The table below shows how deploy events are defined in the schema:
 | environment_name | This field is used to indicate the environment to which the deploy event occurred. Values for this field should be set to one of "production", “test”, “pre-prod”. You can also send in other values if applicable as well. | Required |
 | status | This field is used to indicate the status of the deploy event. Values for this field should be set to one of the following: "Success", "Failure", "Unstable", or "Unknown". You can also send in other values if applicable as well. | Required |
 | commit_id | This field is used to indicate the commit ID associated with a deploy event. This field is required to correlate code repository commit information with data from your CI tools and is typically set as the merge commit hash or HEAD commit. | Required |
-| target_branch | This field is used to indicate the target code branch associated with a deploy event. 
+| target_branch | This field is used to indicate the target code branch associated with a deploy event.
 Set the value of this field to “N/A” if not available. | Optional |
 | repository_name | This field is used to indicate the code repository associated with the deploy event. Set the value of this field to “N/A” if not available. | Optional |
 | message | This field is used to indicate any message Set the value of this field to “N/A” if not available.| Optional |
@@ -57,7 +57,7 @@ Set the value of this field to “N/A” if not available. | Optional |
 **Build Event.** These events describe the chain of events when a  source code repository is compiled into executable artifacts, after which a series of automated unit and regressions tests are run.  
 
 **DevOps Phase.** Build and Test  
-  
+
 The table below shows how build events are defined in the schema:
 
 | Field | Explanation | Required/Optional |
@@ -68,9 +68,9 @@ The table below shows how build events are defined in the schema:
 | datetime_epoch | This field is used to indicate the date and time in UTC epoch milliseconds when the event occurred. | Required |
 | status | This field is used to indicate the status of the build event. Values for this field should be set to one of the following: "Success", "Failure", "Unstable", or "Unknown". You can also send in other values if applicable as well. | Required |
 | commit_id | This field is used to indicate the commit ID associated with a build event. This field is required to correlate code repository commit information with data from your CI tools and is typically set as the merge commit hash or HEAD commit. | Required | 	 	 
-| target_branch | This field is used to indicate the target code branch associated with a build event. 
+| target_branch | This field is used to indicate the target code branch associated with a build event.
 Set the value of this field to “N/A” if not available. | Optional |
-| repository_name | This field is used to indicate the code repository associated with the build event. 
+| repository_name | This field is used to indicate the code repository associated with the build event.
 Set the value of this field to “N/A” if not available. | Optional |
 | message | This field is used to indicate any message Set the value of this field to “N/A” if not available. | Optional |
 | title | This field can be used to indicate a build job name, description of pipeline/stage. Set the value of this field to “N/A” if not available. | Optional |
@@ -96,7 +96,7 @@ The table below shows how Push events are represented in the schema:
 | repository_name | This field is used to indicate the code repository associated with the push event. Set the value of this field to “N/A” if not available. | Optional |
 | user | This field indicates the user associated with a push event. Set the value of this field to “N/A” if not available. | Optional |
 
-**Pull Request Event.** These events describe when a developer asks their peers to review and accept changes they’ve made to a code repository. 
+**Pull Request Event.** These events describe when a developer asks their peers to review and accept changes they’ve made to a code repository.
 
 **DevOps Phase.** Code
 
@@ -114,7 +114,7 @@ The table below shows how Pull Request events are represented in the schema: 
 | status | This field represents the status of the pull request event. Values for this field should be set to one of: “merged”, “declined” or “created”. You can also send in other values if applicable as well. | Required |
 | closeddate_epoch | This field indicates the date and time when a pull request was either merged or closed time represented in epoch milliseconds. For pull requests events that do not represent merge or closed PRs (e.g.  created, declined, or other PRs), this field can be empty, "n/a",or "000000" | Required |
 | updateddatetime_epoch | This field is used to indicate the last updated date and time in UTC epoch milliseconds of the event. | Required |
-| target_branch | This field is used to indicate the target code branch associated with a pull_request event. 
+| target_branch | This field is used to indicate the target code branch associated with a pull_request event.
 Set the value of this field to “N/A” if not available. | Optional |
 | user | This field indicates the user associated with a pull_request event. Set the value of this field to “N/A” if not available. | Optional |
 | team | This field indicates the team for which a pull_request event occurred. Set the value of this field to “N/A” if not available. | Optional |
@@ -164,7 +164,7 @@ The table below shows how Issue events are represented in the schema.
 The mapping of events from tool sets to this event schema is achieved via Sumo Logic [FERs](../manage/field-extractions/create-field-extraction-rule.md). For Example, For [PagerDuty V2 Incidents](https://developer.pagerduty.com/docs/webhooks/v2-overview/), we map the incident payload to the alert event schema using the following **Parse Expression.**
 
 ```sql
-parse regex "(?<event>\{\"event\":\"incident\..+?\}(?=,\{\"event\":\"incident\..+|\]\}$))" 
+parse regex "(?<event>\{\"event\":\"incident\..+?\}(?=,\{\"event\":\"incident\..+|\]\}$))"
 |json  field=event "event", "created_on", "incident" as alert_type, dateTime, incident
 |json field=incident "id",  "service.name" , "urgency", "teams[0].summary", "html_url"  as alert_id, service, priority, team, link
 |json  field=incident "created_at" as closeddate nodrop
@@ -178,16 +178,16 @@ The field extraction rule created is shown in the diagram below: 
 
 ![pagerduty-v2-alerts.png](/img/sdo/pagerduty-v2-alerts.png)
 
-  
+
 Examples of mapping field extraction rules to the other out of the box tools can be found in [this JSON file](https://github.com/SumoLogic/sumologic-solution-templates/blob/master/software-development-optimization-terraform/sdo_app_artifacts/sdo_fer.txt).
 
 ## Enriching the schema with additional fields
 
 You can add additional fields such as project, product, or server names to the above schema by following the steps below: 
 
-1. Modify the existing set of FERs, by adding a new field in the definition of that FER . For example, if you are modifying the Sumo Logic Jenkins FER, then you can add this field either in: 
+1. Modify the existing set of FERs, by adding a new field in the definition of that FER . For example, if you are modifying the Sumo Logic Jenkins FER, then you can add this field either in:
 
-    * The [SumoUpload](https://github.com/jenkinsci/sumologic-publisher-plugin#sumoupload) function in the Jenkins plugin. 
+    * The [SumoUpload](https://github.com/jenkinsci/sumologic-publisher-plugin#sumoupload) function in the Jenkins plugin.
     * Add [metadata fields](/docs/manage/fields) at the Sumo Logic source.  
 1. Write and test Sumo Logic searches using this new field to derive the insights you want.
 1. Add [panels](/docs/dashboards-new/panels) based on the above searches to the existing set of dashboards.

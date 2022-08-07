@@ -9,7 +9,7 @@ identify and solve emerging issues with predictive analysis and smart
 alerts, ensuring optimal performance and availability of system
 resources - across physical, virtual, and cloud infrastructures. 
 
-This page provides instructions for collecting metrics from vRops. Click
+This section provides instructions for collecting metrics from vRops. Click
 a link to jump to a topic:
 
  * [Step 1: Set up a server, host, or VM to collect data](#step-1-set-up-a-server-host-or-vm-to-collect-data)

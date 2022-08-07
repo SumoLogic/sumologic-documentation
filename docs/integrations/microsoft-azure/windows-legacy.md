@@ -14,9 +14,9 @@ The Windows Legacy App provides insight into your Windows system's operation and
 
 ## Collecting Logs
 
-This page provides instructions on configuring log collection for the Windows Legacy App, so that logs are collected from the Microsoft Windows Event Log and ingested into Sumo Logic. A sample log message and example query are also provided.
+This section provides instructions on configuring log collection for the Windows Legacy App, so that logs are collected from the Microsoft Windows Event Log and ingested into Sumo Logic. A sample log message and example query are also provided.
 
-[Windows Performance](https://help.sumologic.com/07Sumo-Logic-Apps/04Microsoft-and-Azure/Windows_Performance) is considered a separate data type.
+[Windows Performance](/docs/integrations/microsoft-azure/performance) is considered a separate data type.
 
 
 ### Log Types
@@ -33,13 +33,13 @@ Custom event channels, such as PowerShell or Internet Explorer are also supporte
 
 To configure a collector and source, do the following:
 
-1. Configure an [Installed Windows collector](https://help.sumologic.com/03Send-Data/Installed-Collectors/03Install-a-Collector-on-Windows) through the user interface or from the command line.
+1. Configure an [Installed Windows collector](/docs/send-data/installed-collectors/install-collector-windows) through the user interface or from the command line.
 2. Configure either a local or remote Windows Event Log source. To configure a Windows Event Log source set the following:
     * **Event Format.** Select **Collect using legacy format. \
 
 Collect using legacy format.** Events retain their default text format from Windows.
 
-For more information on local or remote Windows Event Log Source configuration, refer to [Local Windows Event Log Source](https://help.sumologic.com/03Send-Data/Sources/01Sources-for-Installed-Collectors/Local-Windows-Event-Log-Source) and [Remote Windows Event Log Source](https://help.sumologic.com/03Send-Data/Sources/01Sources-for-Installed-Collectors/Remote-Windows-Event-Log-Source).
+For more information on local or remote Windows Event Log Source configuration, refer to [Local Windows Event Log Source](/docs/send-data/Sources/sources-installed-collectors/Local-Windows-Event-Log-Source) and [Remote Windows Event Log Source](/docs/send-data/Sources/sources-installed-collectors/Remote-Windows-Event-Log-Source).
 
 
 ### Sample Log Message
@@ -87,7 +87,7 @@ _sourceCategory=OS/Windows "Policy Change"
 
 ## Installing the Windows Legacy App
 
-Now that you have configured Windows logs, install the Sumo Logic App for Windows Legacy to take advantage of the pre-configured searches and [dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/04Microsoft-and-Azure/Windows_Legacy/Windows-Legacy-App-Dashboards#Dashboards) to analyze your Windows data.
+Now that you have configured Windows logs, install the Sumo Logic App for Windows Legacy to take advantage of the pre-configured searches and [dashboards](#viewing-dashboards) to analyze your Windows data.
 
 To install the app:
 
@@ -98,7 +98,7 @@ Locate and install the app you need from the **App Catalog**. If you want to see
 1. From the **App Catalog**, search for and select the app**.**
 2. Select the version of the service you're using and click **Add to Library**.
 
-Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](https://help.sumologic.com/01Start-Here/Library/Apps-in-Sumo-Logic/Install-Apps-from-the-Library)
+Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/library/install-apps)
 
 
 
@@ -186,4 +186,4 @@ See information about Window event messages that contain a keyword that indicate
 
 **Error Keyword - Outlier**. See timeslices where the count of problem keywords exceeds the moving average by a statistically significant amount, three standard deviations over the last 24 hours.
 
-**Error Keyword - LogReduce**. See a LogReduce analysis of event messages that contain problem keywords. (Sumo's  LogReduce algorithm uses fuzzy logic to cluster messages together based on string and pattern similarity. For more information see, [Detect Patterns with LogReduce](https://help.sumologic.com/05Search/LogReduce/Detect-Patterns-with-LogReduce)).
+**Error Keyword - LogReduce**. See a LogReduce analysis of event messages that contain problem keywords. (Sumo's  LogReduce algorithm uses fuzzy logic to cluster messages together based on string and pattern similarity. For more information see, [Detect Patterns with LogReduce](/docs/search/index.md/LogReduce/Detect-Patterns-with-LogReduce)).

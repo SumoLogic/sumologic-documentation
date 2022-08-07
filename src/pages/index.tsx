@@ -17,7 +17,7 @@ const features = [
     description: (<Translate
       id="landing.feature.get-started.desc"
       description="Get started description">
-        Create visualizations, notifications, and alerts for your applications.
+        Get started with your Sumo Logic data analytics journey.
       </Translate>),
     link: 'docs/get-started',
   },
@@ -33,7 +33,7 @@ const features = [
         description="Dashboards description">
           Create visualizations, notifications, and alerts for your applications.
         </Translate>),
-    link: 'docs/get-started',
+    link: 'docs/dashboards-new',
   },
   {
     title: translate({
@@ -52,7 +52,7 @@ const features = [
   {
     title: translate({
       id: 'landing.feature.searches-logs.title',
-      message: 'Searches & Logs',
+      message: 'Searches and Logs',
       description: 'Title for searches & logs',
     }),
     imageUrl: 'img/icons/search.png',
@@ -61,12 +61,12 @@ const features = [
       description="Searches and logs description">
         Query and analyze log data sent to Sumo Logic, Search Language, LogReduce, LogExplain, and more.
       </Translate>),
-    link: 'docs/get-started',
+    link: 'docs/search',
   },
   {
     title: translate({
       id: 'landing.feature.metrics.title',
-      message: 'Metrics and Logs',
+      message: 'Metrics',
       description: 'Title for metrics',
     }),
     imageUrl: 'img/icons/metrics.png',
@@ -75,7 +75,7 @@ const features = [
       description="Metrics description">
         Review numeric performance and activity data collected to monitor, troubleshoot, and identify root causes.
       </Translate>),
-    link: 'docs/get-started',
+    link: 'docs/metrics',
   },
   {
     title: translate({
@@ -83,13 +83,13 @@ const features = [
       message: 'Application Performance Monitoring',
       description: 'Title for APM',
     }),
-    imageUrl: 'img/icons/traces.png',
+    imageUrl: 'img/icons/apm.png',
     description: (<Translate
       id="landing.feature.apm.desc"
       description="APM description">
         Monitor user activity, traces data, and service maps to investigate usage and issues.
       </Translate>),
-    link: 'docs/apm/traces',
+    link: 'docs/apm',
   },
   {
     title: translate({
@@ -103,7 +103,7 @@ const features = [
       description="Observability description">
         Deploy and configure solutions to monitor applications and analyze root causes.
       </Translate>),
-    link: 'docs/get-started',
+    link: 'docs/observability',
   },
   {
     title: translate({

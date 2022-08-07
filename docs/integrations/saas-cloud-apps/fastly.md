@@ -7,175 +7,385 @@ description: Fastly is a content delivery network (CDN) that provides you contro
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-
-<img src={useBaseUrl('img/integrations/saas-cloud-apps/fastly.png')} alt="DB icon" width="100"/>
+<img src={useBaseUrl('img/integrations/saas-cloud-apps/fastly.png')} alt="Thumbnail icon" width="100"/>
 
 Fastly is a content delivery network (CDN) that provides you control over how and where you serve content, access to real-time performance analytics, and the ability to cache unpredictably changing content at the edge.
 
 
-#### Log types
+## Log Types
 
 The Fastly app uses the following log types:
-
 * Fastly CDN logs
 * Fastly WAF Request and Debug logs.  For information about WAF logging see[ Fastly WAF logging](https://docs.fastly.com/guides/web-application-firewall/fastly-waf-logging).
 
 
-## Collect Logs for Fastly
+### Sample Queries
 
-This page has instructions for setting up log collection for the Fastly app.  
+```sql title="Top Error-causing URLs"
+_sourceCategory=fastly 50? | parse "\"reqPath\":\"*\"" as path, "\"status\":\"*\"" as status | urldecode(path) as path | where status > 499 | where status < 600 | count as errors by path | sort by errors
+```
+
+```sql title="Cache Performance"
+_sourceCategory=fastly cacheStatus | parse "\"cacheStatus\":\"*\"" as status | where !(status="") | if(status="0", "0 - Non cacheable", if(status="1" OR status="2", "1/2 - Cache Hit", if(status="3", "3 - Cache Miss", ""))) as cachestatus | count by cachestatus
+```
+
+```sql title="Top Denials by Host"
+_sourceCategory=fastly waf denyRules reqHost | parse "\"denyRules\":\"*\"" as deny, "\"reqHost\":\"*\"" as host | where deny != "" | timeslice 1m | count by host, _timeslice | transpose row _timeslice column host
+```
 
 
-#### Step 1: Configure collector and source
+## Collecting Logs for Fastly
+
+This section has instructions for setting up log collection for the Fastly app.  
+
+
+### Step 1: Configure collector and source
 
 In this step, you configure a collector and source to receive Fastly logs.
 
-1. Add a [Sumo Logic Hosted Collector](https://help.sumologic.com/03Send-Data/Hosted-Collectors/Configure-a-Hosted-Collector) to your Sumo Logic Org.
-2. Configure an [HTTP Source](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/HTTP-Source) for your Fastly request logs. Make sure to set the Source Category when configuring the HTTP source. For example, `fastly`. Make a note of the Source Category you assign to the source. You will provide this Source Category value when you install the Fastly app.
+1. Add a [Sumo Logic Hosted Collector](/docs/send-data/configure-hosted-collector) to your Sumo Logic Org.
+2. Configure an [HTTP Source](/docs/send-data/sources/sources-hosted-collectors/http-logs-metrics-source) for your Fastly request logs. Make sure to set the Source Category when configuring the HTTP source. For example, `fastly`. Make a note of the Source Category you assign to the source. You will provide this Source Category value when you install the Fastly app.
 
 
-#### Step 2. Configure endpoint in Fastly for CDN logs
+### Step 2. Configure Endpoint in Fastly for CDN Logs
 
 In this step you add Sumo Logic as a logging endpoint for Fastly services, and configure it to receive CDN logs. The process is described in [Adding Sumo Logic as a logging endpoint](https://docs.fastly.com/guides/streaming-logs/log-streaming-sumologic#adding-sumo-logic-as-a-logging-endpoint) in Fastly help.
 
-If you want to collect CDN and Request WAF logs, see [Collect WAF Request logs](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/Fastly/01Collect-Logs-for-Fastly#Step_3:_Collect_WAF_Request_logs) below.
+If you want to collect CDN and Request WAF logs, see [Collect WAF Request logs](#Step_3:_Collect_WAF_Request_logs) below.
 
-
-1.png "image_tooltip")
-Ensure that the data is sent to Sumo Logic in [Log format version 2](https://docs.fastly.com/guides/streaming-logs/custom-log-formats#upgrading-endpoints-to-use-version-2-log-format). To check the format, see [Determine which log file format you are using](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/Fastly/01Collect-Logs-for-Fastly) in Fastly help. Note however, that all new logging endpoints use the version 2 custom log format by default.
-
-
-2.png "image_tooltip")
-
+Ensure that the data is sent to Sumo Logic in [Log format version 2](https://docs.fastly.com/guides/streaming-logs/custom-log-formats#upgrading-endpoints-to-use-version-2-log-format). To check the format, see **Determine which log file format you are using** in Fastly help. Note, however, that all new logging endpoints use the version 2 custom log format by default.
 
 When you configure the Sumo Logic endpoint in Fastly:
-
-
-
 1. **Name**. Enter a name for the connection. For example, “Prod Fastly”.
 2. **Log format**. Use this format string, which generates the necessary JSON output:
 
-Expand
+  <details><summary>Click to expand snippet</summary>
+
+   ```
+   {
+ "service_id":"%{req.service_id}V",
+ "service_version":"%{fastly_info.version}V",
+ "time_start":"%{begin:%Y-%m-%dT%H:%M:%S%Z}t",
+ "time_end":"%{end:%Y-%m-%dT%H:%M:%S%Z}t",
+ "time_elapsed":%{time.elapsed.usec}V,
+ "client_ip":"%{req.http.Fastly-Client-IP}V",
+ "request":"%{req.request}V",
+ "protocol":"%{req.proto}V",
+ "host":"%{req.http.Fastly-Orig-Host}V",
+ "origin_host":"%{req.http.Host}V",
+ "url":"%{cstr_escape(req.url)}V",
+ "is_ipv6":%{if(req.is_ipv6, "true", "false")}V,
+ "is_tls":%{if(req.is_ssl, "true", "false")}V,
+ "tls_client_protocol":"%{cstr_escape(tls.client.protocol)}V",
+ "tls_client_servername":"%{cstr_escape(tls.client.servername)}V",
+ "tls_client_cipher":"%{cstr_escape(tls.client.cipher)}V",
+ "tls_client_cipher_sha":"%{cstr_escape(tls.client.ciphers_sha )}V",
+ "tls_client_tlsexts_sha":"%{cstr_escape(tls.client.tlsexts_sha)}V",
+ "is_h2":%{if(fastly_info.is_h2, "true", "false")}V,
+ "is_h2_push":%{if(fastly_info.h2.is_push, "true", "false")}V,
+ "h2_stream_id":"%{fastly_info.h2.stream_id}V",
+ "request_referer":"%{cstr_escape(req.http.Referer)}V",
+ "request_user_agent":"%{cstr_escape(req.http.User-Agent)}V",
+ "request_accept_content":"%{cstr_escape(req.http.Accept)}V",
+ "request_accept_language":"%{cstr_escape(req.http.Accept-Language)}V",
+ "request_accept_encoding":"%{cstr_escape(req.http.Accept-Encoding)}V",
+ "request_accept_charset":"%{cstr_escape(req.http.Accept-Charset)}V",
+ "request_connection":"%{cstr_escape(req.http.Connection)}V",
+ "request_dnt":"%{cstr_escape(req.http.DNT)}V",
+ "request_forwarded":"%{cstr_escape(req.http.Forwarded)}V",
+ "request_via":"%{cstr_escape(req.http.Via)}V",
+ "request_cache_control":"%{cstr_escape(req.http.Cache-Control)}V",
+ "request_x_requested_with":"%{cstr_escape(req.http.X-Requested-With)}V",
+ "request_x_forwarded_for":"%{cstr_escape(req.http.X-Forwarded-For)}V",
+ "status":"%{resp.status}V",
+ "content_type":"%{cstr_escape(resp.http.Content-Type)}V",
+ "cache_status":"%{regsub(fastly_info.state, "^(HIT-(SYNTH)|(HITPASS|HIT|MISS|PASS|ERROR|PIPE)).*", "\\2\\3")}V",
+ "is_cacheable":%{if(fastly_info.state ~"^(HIT|MISS)$", "true", "false")}V,
+ "response_age":"%{cstr_escape(resp.http.Age)}V",
+ "response_cache_control":"%{cstr_escape(resp.http.Cache-Control)}V",
+ "response_expires":"%{cstr_escape(resp.http.Expires)}V",
+ "response_last_modified":"%{cstr_escape(resp.http.Last-Modified)}V",
+ "response_tsv":"%{cstr_escape(resp.http.TSV)}V",
+ "geo_datacenter":"%{server.datacenter}V",
+ "geo_city":"%{geoip.city}V",
+ "geo_country_code":"%{geoip.country_code}V",
+ "geo_continent_code":"%{geoip.continent_code}V",
+ "geo_region":"%{geoip.region}V",
+ "req_header_size":%{req.header_bytes_read}V,
+ "req_body_size":%{req.body_bytes_read}V,
+ "resp_header_size":%{resp.header_bytes_written}V,
+ "resp_body_size":%{resp.body_bytes_written}V,
+ "socket_cwnd":%{client.socket.cwnd}V,
+ "socket_nexthop":"%{client.socket.nexthop}V",
+ "socket_tcpi_rcv_mss":%{client.socket.tcpi_rcv_mss}V,
+ "socket_tcpi_snd_mss":%{client.socket.tcpi_snd_mss}V,
+ "socket_tcpi_rtt":%{client.socket.tcpi_rtt}V,
+ "socket_tcpi_rttvar":%{client.socket.tcpi_rttvar}V,
+ "socket_tcpi_rcv_rtt":%{client.socket.tcpi_rcv_rtt}V,
+ "socket_tcpi_rcv_space":%{client.socket.tcpi_rcv_space}V,
+ "socket_tcpi_last_data_sent":%{client.socket.tcpi_last_data_sent}V,
+ "socket_tcpi_total_retrans":%{client.socket.tcpi_total_retrans}V,
+ "socket_tcpi_delta_retrans":%{client.socket.tcpi_delta_retrans}V,
+ "socket_ploss":%{client.socket.ploss}V
+}
+   ```
+
+  </details>
+
+3. **Collector URL**. Enter the URL for the HTTP source you created in [Step 1](#Step_1:_Configure_collector_and_source) above.
+4. Click **Advanced options**.
+5. By default the log line format is set to **Classic**. Change it to **Blank.**
+6. Click the **Create** button to create the new logging endpoint.
+7. Click the **Activate** button to deploy your configuration.
 
 
+### Step 3: Collect WAF Request logs
 
-1. **Collector URL**. Enter the URL for the HTTP source you created in [Step 1](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/Fastly/01Collect-Logs-for-Fastly#Step_1:_Configure_collector_and_source) above.
-2. Click **Advanced options**. \
+If you have Fastly's Web Application Firewall (WAF), perform these steps to update the configuration of the endpoint you created in [Step 2](#Step_2._Configure_endpoint_for_CDN_logs) above. You are updating the endpoint to receive WAF Request logs as well as CDN logs.
 
-3.png "image_tooltip")
+1. Use the JSON object below into the Log format field instead of the one specified in [Configure endpoint in Fastly for CDN logs](#Step_2._Configure_endpoint_in_Fastly_for_CDN_logs).
 
-3. By default the log line format is set to **Classic**. Change it to **Blank.**
-4. Click the **Create** button to create the new logging endpoint.
-5. Click the **Activate** button to deploy your configuration.
+  <details><summary>Click to expand snippet</summary>
 
+  ```
+  {
+	"service_id":"%{req.service_id}V",
+	"service_version":"%{fastly_info.version}V",
+	"time_start":"%{begin:%Y-%m-%dT%H:%M:%S%Z}t",
+	"time_end":"%{end:%Y-%m-%dT%H:%M:%S%Z}t",
+	"time_elapsed":"%"{
+		"time.elapsed.usec"
+	}"V",
+	"client_ip":"%{req.http.Fastly-Client-IP}V",
+	"request":"%{req.request}V",
+	"protocol":"%{req.proto}V",
+	"host":"%{req.http.Fastly-Orig-Host}V",
+	"origin_host":"%{req.http.Host}V",
+	"url":"%{cstr_escape(req.url)}V",
+	"is_ipv6":"%"{
+		if(req.is_ipv6,
+		"true",
+		"false"")"
+	}"V",
+	"is_tls":"%"{
+		"if(req.is_ssl",
+		"true",
+		"false"")"
+	}"V",
+	"tls_client_protocol":"%{cstr_escape(tls.client.protocol)}V",
+	"tls_client_servername":"%{cstr_escape(tls.client.servername)}V",
+	"tls_client_cipher":"%{cstr_escape(tls.client.cipher)}V",
+	"tls_client_cipher_sha":"%{cstr_escape(tls.client.ciphers_sha)}V",
+	"tls_client_tlsexts_sha":"%{cstr_escape(tls.client.tlsexts_sha)}V",
+	"is_h2":"%"{
+		if(fastly_info.is_h2,
+		"true",
+		"false"")"
+	}"V",
+	"is_h2_push":"%"{
+		if(fastly_info.h2.is_push,
+		"true",
+		"false"")"
+	}"V",
+	"h2_stream_id":"%{fastly_info.h2.stream_id}V",
+	"request_referer":"%{cstr_escape(req.http.Referer)}V",
+	"request_user_agent":"%{cstr_escape(req.http.User-Agent)}V",
+	"request_accept_content":"%{cstr_escape(req.http.Accept)}V",
+	"request_accept_language":"%{cstr_escape(req.http.Accept-Language)}V",
+	"request_accept_encoding":"%{cstr_escape(req.http.Accept-Encoding)}V",
+	"request_accept_charset":"%{cstr_escape(req.http.Accept-Charset)}V",
+	"request_connection":"%{cstr_escape(req.http.Connection)}V",
+	"request_dnt":"%{cstr_escape(req.http.DNT)}V",
+	"request_forwarded":"%{cstr_escape(req.http.Forwarded)}V",
+	"request_via":"%{cstr_escape(req.http.Via)}V",
+	"request_cache_control":"%{cstr_escape(req.http.Cache-Control)}V",
+	"request_x_requested_with":"%{cstr_escape(req.http.X-Requested-With)}V",
+	"request_x_forwarded_for":"%{cstr_escape(req.http.X-Forwarded-For)}V",
+	"status":"%{resp.status}V",
+	"content_type":"%{cstr_escape(resp.http.Content-Type)}V",
+	"cache_status":"%{regsub(fastly_info.state,""^(HIT-(SYNTH)|(HITPASS|HIT|MISS|PASS|ERROR|PIPE)).*"","\\2\\3")}V",
+	"is_cacheable":"%"{
+		"if(fastly_info.state~""^(HIT|MISS)$",
+		"true",
+		"false"")"
+	}"V",
+	"response_age":"%{cstr_escape(resp.http.Age)}V",
+	"response_cache_control":"%{cstr_escape(resp.http.Cache-Control)}V",
+	"response_expires":"%{cstr_escape(resp.http.Expires)}V",
+	"response_last_modified":"%{cstr_escape(resp.http.Last-Modified)}V",
+	"response_tsv":"%{cstr_escape(resp.http.TSV)}V",
+	"geo_datacenter":"%{server.datacenter}V",
+	"geo_city":"%{geoip.city}V",
+	"geo_country_code":"%{geoip.country_code}V",
+	"geo_continent_code":"%{geoip.continent_code}V",
+	"geo_region":"%{geoip.region}V",
+	"req_header_size":"%"{
+		"req.header_bytes_read"
+	}"V",
+	"req_body_size":"%"{
+		"req.body_bytes_read"
+	}"V",
+	"resp_header_size":"%"{
+		"resp.header_bytes_written"
+	}"V",
+	"resp_body_size":"%"{
+		"resp.body_bytes_written"
+	}"V",
+	"socket_cwnd":"%"{
+		"client.socket.cwnd"
+	}"V",
+	"socket_nexthop":"%{client.socket.nexthop}V",
+	"socket_tcpi_rcv_mss":"%"{
+		"client.socket.tcpi_rcv_mss"
+	}"V",
+	"socket_tcpi_snd_mss":"%"{
+		"client.socket.tcpi_snd_mss"
+	}"V",
+	"socket_tcpi_rtt":"%"{
+		"client.socket.tcpi_rtt"
+	}"V",
+	"socket_tcpi_rttvar":"%"{
+		"client.socket.tcpi_rttvar"
+	}"V",
+	"socket_tcpi_rcv_rtt":"%"{
+		"client.socket.tcpi_rcv_rtt"
+	}"V",
+	"socket_tcpi_rcv_space":"%"{
+		"client.socket.tcpi_rcv_space"
+	}"V",
+	"socket_tcpi_last_data_sent":"%"{
+		"client.socket.tcpi_last_data_sent"
+	}"V",
+	"socket_tcpi_total_retrans":"%"{
+		"client.socket.tcpi_total_retrans"
+	}"V",
+	"socket_tcpi_delta_retrans":"%"{
+		"client.socket.tcpi_delta_retrans"
+	}"V",
+	"socket_ploss":"%"{
+		"client.socket.ploss"
+	}"V",
+	"type":"request_logs",
+	"request_id":"%{req.http.x-request-id}V",
+	"waf_logged":"%{waf.logged}V",
+	"waf_block":"%{waf.blocked}V",
+	"waf_failures":"%{waf.failures}V",
+	"waf_rule_id":"%{waf.rule_id}V",
+	"waf_severity":"%{waf.severity}V",
+	"waf_passed":"%{waf.passed}V",
+	"waf_logdata":"%{cstr_escape(waf.logdata)}V",
+	"waf_executed":"%{waf.executed}V",
+	"waf_anomaly_score":"%{waf.anomaly_score}V",
+	"waf_sql_score":"%{waf.sql_injection_score}V",
+	"waf_rfi_score":"%{waf.rfi_score}V",
+	"waf_lfi_score":"%{waf.lfi_score}V",
+	"waf_xss_score":"%{waf.xss_score}V",
+	"waf_http_score":"%{waf.http_violation_score}V",
+	"waf_php_score":"%{waf.php_injection_score}V",
+	"waf_rce_score":"%{waf.rce_score}V",
+	"waf_session_fixation_score":"%{waf.session_fixation_score}V",
+	"waf_message":"%{cstr_escape(waf.message)}V"
+}
+  ```
 
-#### Step 3: Collect WAF Request logs
-
-If you have Fastly's Web Application Firewall (WAF), perform these steps to update the configuration of the endpoint you created in [Step 2](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/Fastly/01Collect-Logs-for-Fastly#Step_2._Configure_endpoint_for_CDN_logs) above. You are updating the endpoint to receive WAF Request logs as well as CDN logs.
-
-
-
-1. Use the JSON object below into the Log format field instead of the one specified in [Configure endpoint in Fastly for CDN logs](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/Fastly/01Collect-Logs-for-Fastly#Step_2._Configure_endpoint_in_Fastly_for_CDN_logs).
-
-Expand
-
-
+  </details>
 
 1. Point the logging endpoint to the `waf_debug_log` subroutine using curl, as described in [waf_debug_log](https://docs.fastly.com/guides/web-application-firewall/fastly-waf-logging#waf_debug_log) in Fastly help.
 2. Create a request_id header to track a single request.
 
 
-#### Step 4: Collect WAF Debug logs
+### Step 4: Collect WAF Debug Logs
 
 If you have Fastly's Web Application Firewall (WAF), perform these steps to add a second logging endpoint in Fastly and configure it to send WAF request logs to Sumo Logic.
 
+1. Configure another [HTTP Source](/docs/send-data/sources/sources-hosted-collectors/http-logs-metrics-source) for debug logs and set its source category. For example, fastly/debug. Make a note of the Source Category you assign to the source. You will provide this Source Category value when you install the Fastly app.
+2. Create another logging endpoint in Fastly following the instructions [Step 2](#Step_2._Configure_Sumo_logging_endpoint_in_Fastly), but enter the JSON below in the **Log format** field.
+
+  <details><summary>Click to expand snippet</summary>
+
+  ```
+  {
+	"type":"debug_logs",
+	"service_id":"%{req.service_id}V",
+	"client_ip":"%{req.http.Fastly-Client-IP}V",
+	"request":"%{req.request}V",
+	"protocol":"%{req.proto}V",
+	"origin_host":"%{req.http.Host}V",
+	"url":"%{cstr_escape(req.url)}V",
+	"request_referer":"%{cstr_escape(req.http.Referer)}V",
+	"request_user_agent":"%{cstr_escape(req.http.User-Agent)}V",
+	"request_accept_content":"%{cstr_escape(req.http.Accept)}V",
+	"cache_status":"%{regsub(fastly_info.state, \"^(HIT-(SYNTH)|(HITPASS|HIT|MISS|PASS|ERROR|PIPE|NONE)).*\", \"\\2\\3\")}V",
+	"geo_datacenter":"%{server.datacenter}V",
+	"geo_city":"%{geoip.city}V",
+	"geo_country_code":"%{geoip.country_code}V",
+	"geo_continent_code":"%{geoip.continent_code}V",
+	"geo_region":"%{geoip.region}V",
+	"request_id":"%{req.http.x-request-id}V",
+	"waf_logged":"%{waf.logged}V",
+	"waf_block":"%{waf.blocked}V",
+	"waf_failures":"%{waf.failures}V",
+	"waf_rule_id":"%{waf.rule_id}V",
+	"waf_severity":"%{waf.severity}V",
+	"waf_passed":"%{waf.passed}V",
+	"waf_logdata":"%{cstr_escape(waf.logdata)}V",
+	"waf_executed":"%{waf.executed}V",
+	"waf_anomaly_score":"%{waf.anomaly_score}V",
+	"waf_sql_score":"%{waf.sql_injection_score}V",
+	"waf_rfi_score":"%{waf.rfi_score}V",
+	"waf_lfi_score":"%{waf.lfi_score}V",
+	"waf_xss_score":"%{waf.xss_score}V",
+	"waf_http_score":"%{waf.http_violation_score}V",
+	"waf_php_score":"%{waf.php_injection_score}V",
+	"waf_rce_score":"%{waf.rce_score}V",
+	"waf_session_fixation_score":"%{waf.session_fixation_score}V",
+	"waf_message":"%{cstr_escape(waf.message)}V"
+}
+  ```
+
+  </details>
 
 
-1. Configure another [HTTP Source](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/HTTP-Source) for debug logs and set its source category. For example, fastly/debug. Make a note of the Source Category you assign to the source. You will provide this Source Category value when you install the Fastly app.
-2. Create another logging endpoint in Fastly following the instructions [Step 2](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/Fastly/01Collect-Logs-for-Fastly#Step_2._Configure_Sumo_logging_endpoint_in_Fastly), but enter the JSON below in the **Log format** field.
-
-Expand
-
-
-#### Field Extraction Rule
+### Field Extraction Rule
 
 This Field Extraction Rule (FER) is provided as an example to help you reduce your overall parsing time. Note that not all parse operators are supported in FERs. For more information, see Creating a Field Extraction Rule.
 
-
-```
+```sql
 parse "\"reqMethod\":\"*\"" as method, "\"status\":\"*\"" as status, "\"fwdHost\":\"*\"" as origin| parse "\"bytes\":\"*\"" as bytes, "\"edgeIP\":\"*\"" as edgeip, "\"country\":\"*\"" as country, "\"cookie\":\"*\"" as cookie
 ```
 
-
-
-4.png "image_tooltip")
 There is a 200 field name limit for Field Extraction Rules (FER) and once a field is persisted using a FER, it can’t be removed. You can assign different targets to the name, but do not create overlapping messages and source categories.
 
 
-#### Sample Queries
 
+## Installing the Fastly App
 
-##### Top Error-causing URLs
-
-
-```
-_sourceCategory=fastly 50? | parse "\"reqPath\":\"*\"" as path, "\"status\":\"*\"" as status | urldecode(path) as path | where status > 499 | where status < 600 | count as errors by path | sort by errors
-```
-
-
-
-##### Cache Performance
-
-
-```
-_sourceCategory=fastly cacheStatus | parse "\"cacheStatus\":\"*\"" as status | where !(status="") | if(status="0", "0 - Non cacheable", if(status="1" OR status="2", "1/2 - Cache Hit", if(status="3", "3 - Cache Miss", ""))) as cachestatus | count by cachestatus
-```
-
-
-
-##### Top Denials by Host
-
-
-```
-_sourceCategory=fastly waf denyRules reqHost | parse "\"denyRules\":\"*\"" as deny, "\"reqHost\":\"*\"" as host | where deny != "" | timeslice 1m | count by host, _timeslice | transpose row _timeslice column host
-```
-
-
-
-## Install the Fastly App and view the Dashboards
-
-### Install the Sumo Logic App
-
-Now that you have configured Fastly, install the Sumo Logic App for Fastly to take advantage of the preconfigured searches and [dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/Fastly/03Fastly-App-Dashboards#Dashboards) to analyze your data.
+Now that you have configured Fastly, install the Sumo Logic App for Fastly to take advantage of the preconfigured searches and [dashboards](#viewing-dashboards) to analyze your data.
 
 To install the app:
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
 1. From the **App Catalog**, search for and select the app**.**
-2. To install the app, click **Add to Library**. The Add Fastly to Library popup appears. \
-
-5.png "image_tooltip")
-
+2. To install the app, click **Add to Library**. The Add Fastly to Library popup appears.
 3. Supply the following information.
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app.
-    2. **Log data source for Request Logs**. Enter the source category that you assigned to the HTTP Source for request logs when you performed the procedure in [Collect Logs for Fastly](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/Fastly/01Collect-Logs-for-Fastly).
-    3. **Log data source for Debug Logs.** Enter the source category that you assigned to the HTTP Source for debug logs when you performed the procedure in [Collect Logs for Fastly](https://help.sumologic.com/07Sumo-Logic-Apps/18SAAS_and_Cloud_Apps/Fastly/01Collect-Logs-for-Fastly).
+    2. **Log data source for Request Logs**. Enter the source category that you assigned to the HTTP Source for request logs when you performed the procedure in [Collect Logs for Fastly](#Collect-Logs-for-Fastly).
+    3. **Log data source for Debug Logs.** Enter the source category that you assigned to the HTTP Source for debug logs when you performed the procedure in [Collect Logs for Fastly](#Collect-Logs-for-Fastly).
     4. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-    5. Click **Add to Library**.
+4. Click **Add to Library**.
 
 
-### Dashboards
+## Dashboards
 
 There are four dashboards for Fastly that you can configure to accommodate your individual reporting needs.
 
 
-#### Fastly - CDN - Overview
+### CDN - Overview
 
 The overview dashboard provides a high-level view of your Fastly traffic and identifies potential problems within the service.
 
-
-6.png "image_tooltip")
+<img src={useBaseUrl('img/integrations/saas-cloud-apps/fastly-cdn-overview.png')} alt="Fastly dashboards" />
 
 * **Visitor Geolocations.** Uses geolocation to display visitors by country using their IP addresses.
 * **Download Performance Hotspots** **- Avg Download Above 300ms by Country.** Uses a geolocation operation to display performance download time hotspots on a map of the world by IP addresses, lets you see a count of hits per location over the last 60 minutes.
@@ -186,15 +396,11 @@ The overview dashboard provides a high-level view of your Fastly traffic and ide
 * **Cache Hit Percentage Over Time.** Line chart of the cache hit percentage over the last 60 minutes.
 
 
-#### Fastly - CDN - Origin Performance
+### CDN - Origin Performance
 
 Focus in on Origin Host performance to check latencies, slow URLs and error-causing URLs.
 
-
-7.png "image_tooltip")
-
-
-
+<img src={useBaseUrl('img/integrations/saas-cloud-apps/FastlyCDNOriginPerformancepng.png')} alt="Fastly dashboards" />
 
 * **90%-ile Latency (millisecs) by Origin Host. **Displays the 90th percentile of the data center response time latency as a line chart on a timeline for the last hour, using timeslices of one minute.
 * **Median Latency (millisecs) by Origin Host**. Displays the median latency time as a line chart for the past hour.
@@ -206,15 +412,11 @@ Focus in on Origin Host performance to check latencies, slow URLs and error-caus
 * **Error Rate 5xx.** Shows the number of 5xx error events by code in a stacked column chart on a timeline using timeslices of 10 minutes for the past 24 hours.
 
 
-#### Fastly - CDN - Quality of Service
+### CDN - Quality of Service
 
 See where quality of service is below minimum thresholds such as download times, cache performance, and data center performance.
 
-
-8.png "image_tooltip")
-
-
-
+<img src={useBaseUrl('img/integrations/saas-cloud-apps/fastly-cdn-quality-of-service.png')} alt="Fastly dashboards" />
 
 * **Download Performance Hotspots - Avg Download Above 300ms.**  Uses a geolocation operation to display performance download time hotspots on a map of the world by IP addresses, lets you see a count of hits per location for the last hour.
 * **Cache Performance.** The number of Hits, Passes, and Misses as a percentage over a period of time.
@@ -225,15 +427,11 @@ See where quality of service is below minimum thresholds such as download times,
 * **Performance (millisecs) Stats by Data Center. **Provides an aggregation table of performance statistics by IP address per data center for the last hour.
 
 
-#### Fastly - CDN - Visitors
+### CDN - Visitors
 
 See where you're getting the most traffic and from where.
 
-
-9.png "image_tooltip")
-
-
-
+<img src={useBaseUrl('img/integrations/saas-cloud-apps/FastlyCDNVisitors.png')} alt="Fastly dashboards" />
 
 * **Visitor Geolocations.** See where your visitors originate with a map that provides the geolocation of visitor IP addresses.
 * **Requests by Country.** Percentage of requests by country to help you find the origin of traffic to Fastly.
@@ -250,23 +448,17 @@ See where you're getting the most traffic and from where.
 * **Bot Traffic Over Time. ** Displays bot traffic by volume for the last hour as a line chart.
 
 
-#### Fastly - WAF - Overview
+### WAF - Overview
 
 See the overview of Fastly WAF including the states, hits, and threat intel on warning and blocked events.
 
-
-10.png "image_tooltip")
-
-
-
+<img src={useBaseUrl('img/integrations/saas-cloud-apps/WAF-Overview.png')} alt="Fastly dashboards" />
 
 * **WAF Analysis**
     * **WAF States. **See the count of requests that triggered WAF. It shows if the request triggered a rule(s) but passed to origin (warn), was blocked (bad), went through WAF and triggered no rules (good), cause an error (failure) for the last 24 hour as a line chart.
     * **Daily Hits. **See the count of requests that triggered WAF in the last 7 days on a bar chart.
 
 The following panels are grouped as blocking and warning (which triggered a rule but passed to origin) events.
-
-
 
 * **Threat Intelligence - Warn Events**
     * **Top URLs (Warn).** See the count of top URLs for warning events in the last 24 hours in a table.
@@ -278,15 +470,11 @@ The following panels are grouped as blocking and warning (which triggered a rule
     * **Top Messages (Blocked). **See the count and percentage of WAF messages for blocked events in the last 24 hours on a pie chart.
 
 
-#### Fastly - WAF - Offenders
+### WAF - Offenders
 
 See the details on WAF offenders including the location, client IP addresses for warning and blocked events, and OWASP offenders in different attack categories and threshold exceptions.
 
-
-11.png "image_tooltip")
-
-
-
+<img src={useBaseUrl('img/integrations/saas-cloud-apps/fastly-waf-offenders.png')} alt="Fastly dashboards" />
 
 * **Geo Location of All Users. **See the count and user location where WAF was executed in the last 24 hours on a world map.
 * **Top Clients affected by Threats. **See the top 10 client IP addresses by count that are affected by threats in the last 24 hours.
@@ -303,15 +491,11 @@ See the details on WAF offenders including the location, client IP addresses for
     * **LFI-RCE-RFI. **See the top 10 IP addresses by count triggering the local file inclusion, remote file inclusion, and remote code execution rules in the last 24 hours.
 
 
-#### Fastly - WAF - OWASP
+### WAF - OWASP
 
 See the overall Open Web Application Security Project (OWASP) anomaly score quartiles and by rule category.
 
-
-12.png "image_tooltip")
-
-
-
+<img src={useBaseUrl('img/integrations/saas-cloud-apps/WAF-OWASP.png')} alt="Fastly dashboards" />
 
 * **OWASP Thresholds**. The panels in this dashboard show the overall anomaly score quartiles and by rule category. They show the following statistics: minimum, 25th percentile, median, 75th percentile, maximum, and the average in the last hour, for each of the following:
     * **OWASP Overall.**

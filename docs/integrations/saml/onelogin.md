@@ -7,29 +7,27 @@ description: The Sumo Logic App for OneLogin provides real-time visibility and a
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/saml/onelogin.png')} alt="DB icon" width="50"/>
+<img src={useBaseUrl('img/integrations/saml/onelogin.png')} alt="Thumbnail icon" width="50"/>
 
 OneLogin is an Identity Management provider that supplies a comprehensive set of enterprise-grade identity and access management solutions, including single sign-on (SSO), user provisioning, and multi-factor authentication. The Sumo Logic App for OneLogin provides real-time visibility and analysis of OneLogin user activity through event data, such as user logins, administrative operations, and provisioning.
 
 
-## What You'll Need
+## Prerequisites
 
 :::note
 To use this feature, you'll need to enable access to your OneLogin logs and ingest them into Sumo Logic.
 :::
 
-Once you begin uploading data, your daily data usage will increase. It's a good idea to check the **Account** page in Sumo Logic to make sure that you have enough quota to accommodate additional data in your account. If you need additional quota you can [upgrade your account](https://help.sumologic.com/Manage/01Manage_Subscription/04Upgrade_Your_Account) at any time.
+Once you begin uploading data, your daily data usage will increase. It's a good idea to check the **Account** page in Sumo Logic to make sure that you have enough quota to accommodate additional data in your account. If you need additional quota you can [upgrade your account](/docs/manage/manage-subscription/upgrade-your-cloud-flex-account.md) at any time.
 
-* **OneLogin Enterprise **or **Unlimited **plan subscription.
+* **OneLogin Enterprise** or **Unlimited **plan subscription.
 * **Configure an Event Broadcaster**
-   * Add a Sumo Logic [Hosted Collector](https://help.sumologic.com/03Send-Data/Hosted-Collectors/Configure-a-Hosted-Collector) to your Sumo Logic Org.
-   * Configure an [HTTP Source](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/HTTP-Source) for your OneLogin data. Make sure to set the **Source Category** when configuring the OneLogin source. For example, onelogin.
+   * Add a Sumo Logic [Hosted Collector](/docs/send-data/configure-hosted-collector) to your Sumo Logic Org.
+   * Configure an [HTTP Source](/docs/send-data/sources/sources-hosted-collectors/http-logs-metrics-source) for your OneLogin data. Make sure to set the **Source Category** when configuring the OneLogin source. For example, onelogin.
    * From OneLogin, configure a broadcaster that points to this endpoint using the instructions in the [OneLogin documentation](https://onelogin.service-now.com/support?id=kb_article&sys_id=43f95543db109700d5505eea4b961959). You must use SIEM (NDJSON) format. Use the Sumo Logic HTTP Source URL as the Listener URL, and custom header is not needed.
 
 
-## Sample Log Message
-
-## Log Types
+## Log Types and Sample Log Message
 
 The Sumo Logic App for OneLogin uses event logs in NDJSON format. Each event is a single-line JSON, containing information such as:
 
@@ -37,23 +35,21 @@ The Sumo Logic App for OneLogin uses event logs in NDJSON format. Each event is 
 {"event":{"create":{"_id":"443ce874-7704-54d2-b12f-b6e4a72ec6ef"},"entity":null,"role_id":null,"client_id":null,"trusted_idp_name":null,"notes":null,"app_name":null,"service_directory_id":null,"actor_system":"","login_name":null,"assuming_acting_user_id":null,"mapping_name":null,"directory_sync_run_id":null,"api_credential_name":null,"directory_id":null,"certificate_id":null,"group_id":null,"role_name":null,"imported_user_name":null,"resolved_at":null,"mapping_id":null,"authentication_factor_type":null,"user_field_name":null,"proxy_ip":null,"certificate_name":null,"task_name":null,"adc_id":null,"uuid":"443ce874-7704-54d2-b12f-b6e4a72ec6ef","note_title":null,"event_timestamp":"2017-03-21 00:09:27+0000","actor_user_name":"Peyton Newton","proxy_agent_id":null,"otp_device_name":null,"actor_user_id":11826257,"trusted_idp_id":null,"imported_user_id":null,"policy_type":null,"user_id":11826257,"resource_type_id":null,"login_id":null,"solved":null,"policy_id":null,"policy_name":null,"otp_device_id":null,"radius_config_name":null,"app_id":null,"user_name":"Peyton Newton","account_id":22348,"resolved_by_user_id":null,"radius_config_id":null,"error_description":null,"note_id":null,"param":null,"event_type_id":11,"proxy_agent_name":null,"privilege_id":null,"user_field_id":null,"authentication_factor_description":null,"ipaddr":"137.219.197.240","custom_message":null,"directory_name":null,"object_id":null,"group_name":null,"resolution":null,"privilege_name":null,"authentication_factor_id":null,"adc_name":null}}
 ```
 
-### Sample Query
+## Sample Query
 
-**Name - Events by User**  
 
-```
+```sql title="Name - Events by User"
 _sourceCategory=onelogin
 | json "event.event_type_id", "event.app_name","event.ipaddr", "event.user_name", "event.actor_user_name" as event_id, app_name, src_ip, user_name, actor_user_name  
 | where event_id in ("10","11")
 | count by user_name
 | sort by _count
-
 ```
 
 
 ## Install the Sumo Logic App
 
-Now that you have set up collection for OneLogin, install the Sumo Logic App for OneLogin to use the preconfigured searches and [Dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/20SAML/OneLogin/OneLogin-App-Dashboards#Dashboards) that provide insight into your data.
+Now that you have set up collection for OneLogin, install the Sumo Logic App for OneLogin to use the preconfigured searches and [Dashboards](/docs/integrations/saml/OneLogin#Dashboards) that provide insight into your data.
 
 To install the app:
 
@@ -63,16 +59,15 @@ Locate and install the app you need from the **App Catalog**. If you want to see
 2. Select the version of the service you're using and click **Add to Library**.
 
 
-8
-Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](https://help.sumologic.com/01Start-Here/Library/Apps-in-Sumo-Logic/Install-Apps-from-the-Library)
+Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/library/install-apps)
 
-1. To install the app, complete the following fields.
-    1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
-    2. **Data Source.** Select either of these options for the data source. 
-        * Choose **Source Category**, and select a source category from the list. 
-        * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). 
-    3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-2. Click **Add to Library**.
+3. To install the app, complete the following fields.
+   * **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
+   * **Data Source.** Select either of these options for the data source. 
+      * Choose **Source Category**, and select a source category from the list. 
+      * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). 
+   * **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
+4. Click **Add to Library**.
 
 Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization.
 

@@ -7,7 +7,7 @@ description: The Sumo Logic App for Auth0 makes it easy to analyze and visualize
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/saml/auth0.png')} alt="DB icon" width="50"/>
+<img src={useBaseUrl('img/integrations/saml/auth0.png')} alt="Thumbnail icon" width="50"/>
 
 Auth0 is a cloud-based, extensible identity provider for applications. The Sumo Logic App for Auth0 makes it easy to analyze and visualize your Auth0 event logs, and provides insight into security and operational issues.
 
@@ -40,12 +40,12 @@ Use the Auth0 Management Portal to configure the extension. For more information
 
 ### Configure a Collector
 
-Use the [Sumo Logic Setup Wizard](https://help.sumologic.com/03Send-Data/Setup-Wizard) to configure a **Custom App**.
+Use the in-product setup wizard in the Sumo Logic UI to configure a **Custom App**.
 
 
 ### Configure a Source
 
-Source type is [HTTP](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/HTTP-Source).
+Source type is [HTTP](/docs/send-data/sources/sources-hosted-collectors/http-logs-metrics-source).
 
 * **Name**: Required
 * **Category**:
@@ -139,7 +139,7 @@ _collector="productionappauth0Logs_Collector"
 
 ## Installing the Auth0 App
 
-Now that you have set up collection for Auth0, install the Sumo Logic App for Auth0 to use the preconfigured searches and [Dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/20SAML/Auth0/Auth0-App-Dashboards#Dashboards) that provide insight into your data.
+Now that you have set up collection for Auth0, install the Sumo Logic App for Auth0 to use the preconfigured searches and [dashboards](#viewing-dashboards) that provide insight into your data.
 
 To install the app:
 
@@ -148,7 +148,7 @@ Locate and install the app you need from the **App Catalog**. If you want to see
 1. From the **App Catalog**, search for and select the app**.**
 2. Select the version of the service you're using and click **Add to Library**.
 
-Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](https://help.sumologic.com/01Start-Here/Library/Apps-in-Sumo-Logic/Install-Apps-from-the-Library)
+Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/library/install-apps)
 
 1. To install the app, complete the following fields.
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 

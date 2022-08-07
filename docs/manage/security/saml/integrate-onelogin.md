@@ -11,7 +11,7 @@ id: integrate-onelogin
 | Cloud Flex   | Trial, Enterprise |
 | Credits      | Trial, Essentials, Enterprise Operations, Enterprise Security, Enterprise Suite |
 
-This page has instructions for integrating OneLogin and Sumo Logic to allow Sumo Logic users to sign on to Sumo Logic using OneLogin SSO. 
+This section has instructions for integrating OneLogin and Sumo Logic to allow Sumo Logic users to sign on to Sumo Logic using OneLogin SSO. 
 
 ## Before you start
 

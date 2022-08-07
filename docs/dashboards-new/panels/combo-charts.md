@@ -23,7 +23,7 @@ With a combo chart, you can set the **_count** to display as a line chart on 
 
 ![Display overrides make combo chart.png](/img/dashboards-new/panels/combo-charts/Display-overrides-make-combo-chart.png)
 
-**To create a combo chart**
+To create a combo chart**
 
 Your query needs to return at least two dimensions of aggregate data or time series. Our example is returning **_count** and **_avg**. 
 

@@ -11,7 +11,7 @@ To help determine if the Kubernetes cluster is available and performing well, th
 The alerts in the table below are built based on metrics datasets and have preset thresholds.
 
 :::info
-For information on creating customized alerts, see [Monitors](https://help.sumologic.com/Visualizations-and-Alerts/Alerts/Monitors).
+For information on creating customized alerts, see [Monitors](/docs/alerts/monitors/index.md).
 :::
 
 | Name | Description | Trigger Type (Critical / Warning / MissingData) | Alert Condition | Recovery Condition |

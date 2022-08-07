@@ -7,119 +7,58 @@ description: Amazon API Gateway service allows you to create RESTful APIs and We
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
+<img src={useBaseUrl('img/integrations/amazon-aws/AWS_API_Gateway.png')} alt="Thumbnail icon" width="50"/>
+
 AWS API Gateway service allows you to create RESTful APIs and WebSocket APIs for real-time two-way communication applications in containerized and serverless environments, as well as web applications.
 
 The Sumo Logic AWS API Gateway App provides insights into API Gateway tasks while accepting and processing concurrent API calls throughout your infrastructure, including traffic management, CORS support, authorization and access control, throttling, monitoring, and API version management.
 
-## Collecting Logs and Metrics for AWS API Gateway
+## Log and Metric Types  
 
-### Log and Metric Types  
-
-The AWS API Gateway app uses the following logs and metrics
-
+The AWS API Gateway app uses the following logs and metrics:
 * [Amazon API Gateway metrics](https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-metrics-and-dimensions.html)
 * [CloudTrail API Gateway Data Event](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-data-events)
 
 
-### Collect Metrics for AWS API Gateway   
+### Sample Log Message
 
-Sumo Logic supports collecting metrics using two source types:
-* Configure an [AWS Kinesis Firehose for Metrics Source](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/AWS_Kinesis_Firehose_for_Metrics_Source) (Recommended); or
-* Configure an [Amazon CloudWatch Source for Metrics](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/Amazon-CloudWatch-Source-for-Metrics)
-
-:::note
-Namespace for **AWS API Gateway** Service is **AWS/ApiGateway**.
-:::
-
-For **Metadata**, add an **account** field to the source and assign it a value that is a friendly name/alias to your AWS account from which you are collecting metrics. This name will appear in the Sumo Logic Explorer View. Metrics can be queried via the “account field”.
-
-
-### Collect AWS API Gateway CloudTrail Logs
-
-To your Hosted Collector, add an [AWS CloudTrail Source](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/AWS-CloudTrail-Source):
-1. **Name**. Enter a name to display the new Source.
-2. **Description**. Enter an optional description.
-3. **S3 Region**. Select the Amazon Region for your** API Gateway** S3 bucket.
-4. **Bucket Name**. Enter the exact name of your **API Gateway** S3 bucket.
-5.**Path Expression**. Enter the string that matches the S3 objects you'd like to collect. You can use a wildcard (*) in this string. (DO NOT use a leading forward slash. See [Amazon Path Expressions](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/Amazon-Path-Expressions).)
-:::note
-The S3 bucket name is not part of the path. Don’t include the bucket name when you are setting the Path Expression.
-:::
-6. **Source Category**. Enter `aws/observability/cloud trail/logs`.
-7. **Fields**. Add an **account** field and assign it a value that is a friendly name/alias to your AWS account from which you are collecting logs. This name will appear in the Sumo Logic Explorer View. Logs can be queried via the “account field”.
-8. **Access Key ID and Secret Access Key**. Enter your Amazon [Access Key ID and Secret Access Key](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSGettingStartedGuide/AWSCredentials.html). Learn how to use Role-based access to AWS [here](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/AWS_Sources)
-9. **Log File Discovery -> Scan Interval**. Use the default of 5 minutes. Alternately, enter the frequency. Sumo Logic will scan your S3 bucket for new data. Learn how to configure **Log File Discovery** [here](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/AWS_Sources).
-10. **Enable Timestamp Parsing**. Select the check box.
-11. **Time Zone**. Select Ignore time zone from the log file and instead use, and select UTC.
-12. **Timestamp Format.** Select Automatically detect the format.
-13. **Enable Multiline Processing**. Select the check box, and select Infer Boundaries.
-14. Click **Save**.
-
-
-### Field in Field Schema
-
-Login to Sumo Logic, go to **Manage Data** > **Logs** > **Fields**. Search for the **apiname** field. If not present, create it. Learn how to create and manage fields [here](https://help.sumologic.com/Manage/Fields#manage-fields).
-
-
-### Field Extraction Rule(s)
-
-Create Field Extraction Rule for CloudTrail Logs. Learn how to create Field Extraction Rule [here](https://help.sumologic.com/Manage/Field-Extractions/Create-a-Field-Extraction-Rule).
-
-
-```
-Rule Name: AwsObservabilityApiGatewayCloudTrailLogsFER
-Applied at: Ingest Time
-Scope (Specific Data):
-account=* eventname eventsource "apigateway.amazonaws.com"
-Parse Expression:
-| json "eventSource", "awsRegion", "responseElements", "recipientAccountId" as eventSource, region, responseElements, accountid nodrop
-| where eventSource = "apigateway.amazonaws.com"
-| "aws/apigateway" as namespace
-| json field=responseElements "name" as ApiName nodrop
-| tolowercase(ApiName) as apiname
-| fields region, namespace, apiname, accountid
-```
-
-
-
-### Centralized AWS CloudTrail Log Collection
-
-In case you have a centralized collection of cloudtrail logs and are ingesting them from all accounts into a single Sumo Logic cloudtrail log source, create following Field Extraction Rule to map proper AWS account(s) friendly name/alias. Create it if not already present / update it as required.
-```
-Rule Name: AWS Accounts
-Applied at: Ingest Time
-Scope (Specific Data):
-_sourceCategory=aws/observability/cloudtrail/logs
-```
-
-
-**Parse Expression**:
-
-Enter a parse expression to create an `account` field that maps to the alias you set for each sub account. For example, if you used the `“dev”` alias for an AWS account with ID `"528560886094"` and the `“prod”` alias for an AWS account with ID `"567680881046"`, your parse expression would look like this:
-
-```sql
-| json "recipientAccountId"
-// Manually map your aws account id with the AWS account alias you setup earlier for individual child account
-| "" as account
-| if (recipientAccountId = "528560886094",  "dev", account) as account
-| if (recipientAccountId = "567680881046",  "prod", account) as account
-| fields account
-```
-
-
-### Sample CloudTrail Log Message
-
-```json
-{"eventVersion":"1.05","userIdentity":{"type":"IAMUser","principalId":"A12445W32RZN24HABCD12",
-"arn":"arn:aws:iam::123408221234:user/bob","accountId":"123408221234","accessKeyId":
-"ASIAZ123456Y3IMWK7X5","userName":"bob","sessionContext":{"sessionIssuer":{},"webIdFederationData":
-{},"attributes":{"mfaAuthenticated":"true","creationDate":"2020-02-17T08:08:01Z"}},"invokedBy":
-"signin.amazonaws.com"},"eventTime":"2020-02-17T08:08:01Z","eventSource":"apigateway.amazonaws.com",
-"eventName":"GetRestApi","awsRegion":"us-east-1","sourceIPAddress":"149.236.17.11","userAgent":
-"signin.amazonaws.com","requestParameters":{"restApiId":"w1234nsgjxf","template":false},
-"responseElements":null,"requestID":"1234169e-e70a-44a1-a691-3cd3f857092a","eventID":
-"051572b0-83ef-49a3-82f6-bbef1ac8c488","readOnly":true,"eventType":"AwsApiCall","recipientAccountId":
-"123408221234"}
+```json title="Sample CloudTrail Log Message"
+{
+  "eventVersion": "1.05",
+  "userIdentity": {
+    "type": "IAMUser",
+    "principalId": "A12445W32RZN24HABCD12",
+    "arn": "arn:aws:iam::123408221234:user/bob",
+    "accountId": "123408221234",
+    "accessKeyId": "ASIAZ123456Y3IMWK7X5",
+    "userName": "bob",
+    "sessionContext": {
+      "sessionIssuer": {},
+      "webIdFederationData": {},
+      "attributes": {
+        "mfaAuthenticated": "true",
+        "creationDate": "2020-02-17T08:08:01Z"
+      }
+    },
+    "invokedBy": "signin.amazonaws.com"
+  },
+  "eventTime": "2020-02-17T08:08:01Z",
+  "eventSource": "apigateway.amazonaws.com",
+  "eventName": "GetRestApi",
+  "awsRegion": "us-east-1",
+  "sourceIPAddress": "149.236.17.11",
+  "userAgent": "signin.amazonaws.com",
+  "requestParameters": {
+    "restApiId": "w1234nsgjxf",
+    "template": false
+  },
+  "responseElements": null,
+  "requestID": "1234169e-e70a-44a1-a691-3cd3f857092a",
+  "eventID": "051572b0-83ef-49a3-82f6-bbef1ac8c488",
+  "readOnly": true,
+  "eventType": "AwsApiCall",
+  "recipientAccountId": "123408221234"
+}
 ```
 
 ### Sample Queries
@@ -127,7 +66,6 @@ Enter a parse expression to create an `account` field that maps to the alias you
 ```sql title="Average Latency by API Name (Metric-based)"
 Namespace=aws/apigateway metric=Latency statistic=Average account=* region=* apiname=* | avg by apiname, namespace, region, account
 ```
-
 
 ```sql title="Top Error Codes (CloudTrail Log-based)"
 "\"eventSource\":\"apigateway.amazonaws.com\"" errorCode account=dev Namespace=aws/apigateway region=us-east-1
@@ -143,10 +81,92 @@ Namespace=aws/apigateway metric=Latency statistic=Average account=* region=* api
 | top 10 errorCode by eventCount, errorCode asc
 ```
 
+## Collecting Logs and Metrics for AWS API Gateway
+
+### Collect Metrics for AWS API Gateway   
+
+Sumo Logic supports collecting metrics using two source types:
+* Configure an [AWS Kinesis Firehose for Metrics Source](/docs/send-data/Sources/sources-hosted-collectors/Amazon-Web-Services/aws-kinesis-firehose-metrics-source) (**recommended**); or
+* Configure an [Amazon CloudWatch Source for Metrics](/docs/send-data/sources/sources-hosted-collectors/amazon-web-services/amazon-cloudwatch-source-metrics)
+
+:::note
+Namespace for **AWS API Gateway** Service is **AWS/ApiGateway**.
+:::
+
+For **Metadata**, add an **account** field to the source and assign it a value that is a friendly name/alias to your AWS account from which you are collecting metrics. This name will appear in the Sumo Logic Explorer View. Metrics can be queried via the “account field”.
+
+
+### Collect AWS API Gateway CloudTrail Logs
+
+To your Hosted Collector, add an [AWS CloudTrail Source](/docs/send-data/sources/sources-hosted-collectors/amazon-web-services/aws-cloudtrail-source.md):
+1. **Name**. Enter a name to display the new Source.
+2. **Description**. Enter an optional description.
+3. **S3 Region**. Select the Amazon Region for your** API Gateway** S3 bucket.
+4. **Bucket Name**. Enter the exact name of your **API Gateway** S3 bucket.
+5. **Path Expression**. Enter the string that matches the S3 objects you'd like to collect. You can use a wildcard (`*`) in this string.
+  :::note NOTES
+  DO NOT use a leading forward slash. See [Amazon Path Expressions](/docs/send-data/Sources/sources-hosted-collectors/Amazon-Web-Services/Amazon-Path-Expressions). The S3 bucket name is not part of the path. Don’t include the S3 bucket name when you are setting the Path Expression.
+  :::
+6. **Source Category**. Enter `aws/observability/cloud trail/logs`.
+7. **Fields**. Add an **account** field and assign it a value that is a friendly name/alias to your AWS account from which you are collecting logs. This name will appear in the Sumo Logic Explorer View. Logs can be queried via the “account field”.
+8. **Access Key ID and Secret Access Key**. Enter your Amazon [Access Key ID and Secret Access Key](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSGettingStartedGuide/AWSCredentials.html). Learn how to use Role-based access to AWS [here](/docs/send-data/sources/sources-hosted-collectors/amazon-web-services/aws-sources)
+9. **Log File Discovery -> Scan Interval**. Use the default of 5 minutes. Alternately, enter the frequency. Sumo Logic will scan your S3 bucket for new data. Learn how to configure **Log File Discovery** [here](/docs/send-data/sources/sources-hosted-collectors/amazon-web-services/aws-sources).
+10. **Enable Timestamp Parsing**. Select the check box.
+11. **Time Zone**. Select Ignore time zone from the log file and instead use, and select UTC.
+12. **Timestamp Format.** Select Automatically detect the format.
+13. **Enable Multiline Processing**. Select the check box, and select Infer Boundaries.
+14. Click **Save**.
+
+
+### Field in Field Schema
+
+Login to Sumo Logic, go to **Manage Data** > **Logs** > **Fields**. Search for the **apiname** field. If not present, create it. Learn how to create and manage fields [here](/docs/manage/fields.md#manage-fields).
+
+
+### Field Extraction Rule(s)
+
+Create Field Extraction Rule for CloudTrail Logs. Learn how to create Field Extraction Rule [here](/docs/manage/field-extractions/create-field-extraction-rule.md).
+```sql
+Rule Name: AwsObservabilityApiGatewayCloudTrailLogsFER
+Applied at: Ingest Time
+Scope (Specific Data):
+account=* eventname eventsource "apigateway.amazonaws.com"
+Parse Expression:
+| json "eventSource", "awsRegion", "responseElements", "recipientAccountId" as eventSource, region, responseElements, accountid nodrop
+| where eventSource = "apigateway.amazonaws.com"
+| "aws/apigateway" as namespace
+| json field=responseElements "name" as ApiName nodrop
+| tolowercase(ApiName) as apiname
+| fields region, namespace, apiname, accountid
+```
+
+### Centralized AWS CloudTrail Log Collection
+
+In case you have a centralized collection of cloudtrail logs and are ingesting them from all accounts into a single Sumo Logic cloudtrail log source, create following Field Extraction Rule to map proper AWS account(s) friendly name/alias. You'll need to create it if not already present or update it as required.
+```sql
+Rule Name: AWS Accounts
+Applied at: Ingest Time
+Scope (Specific Data):
+_sourceCategory=aws/observability/cloudtrail/logs
+```
+
+#### Parse Expression
+
+Enter a parse expression to create an `account` field that maps to the alias you set for each sub account. For example, if you used the `“dev”` alias for an AWS account with ID `"528560886094"` and the `“prod”` alias for an AWS account with ID `"567680881046"`, your parse expression would look like this:
+
+```sql
+| json "recipientAccountId"
+// Manually map your aws account id with the AWS account alias you setup earlier for individual child account
+| "" as account
+| if (recipientAccountId = "528560886094",  "dev", account) as account
+| if (recipientAccountId = "567680881046",  "prod", account) as account
+| fields account
+```
+
 
 ## Installing the AWS API Gateway App
 
-Now that you have set up a collection for the **AWS API gateway**, install the Sumo Logic App to use the pre-configured [dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/01Amazon_and_AWS/Amazon_SQS/Install-the-Amazon-SQS-App-and-view-the-Dashboards#Dashboards) that provide visibility into your environment for real-time analysis of overall usage.
+Now that you have set up a collection for the **AWS API gateway**, install the Sumo Logic App to use the pre-configured [dashboards](/docs/integrations/amazon-aws/sqs#Dashboards) that provide visibility into your environment for real-time analysis of overall usage.
 
 To install the app:
 
@@ -156,7 +176,7 @@ Locate and install the app you need from the **App Catalog**. If you want to see
 2. To install the app, click **Add to Library** and complete the following fields.
     * **App Name.** You can retain the existing name, or enter a name of your choice for the app.
     * **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-    * Click **Add to Library**.
+3. Click **Add to Library**.
 
 Once an app is installed, it will appear in your **Personal** folder, or another folder that you specified. From here, you can share it with your organization.
 
@@ -186,17 +206,15 @@ Use this dashboard to:
 <img src={useBaseUrl('img/integrations/amazon-aws/AWS-API-Gateway-Overview.png')} alt="AWS API Gateway" />
 
 
-
-#### Audit Events
+### Audit Events
 
 **AWS API Gateway - Audit Events** dashboard provides detailed audit insights into API Gateway events by various dimensions including event names, trends, regions, user agents, and recipient account IDs.
 
 Use this dashboard to:
-
 * Monitor all API Gateway-related audit logs available via CloudTrail events
 * Monitor incoming user activity locations for both successful and failed events to ensure the activity matches with expectations
 * Monitor successful and failed API Gateway events, users and user agents / fail activities, and failure reasons
-* Monitor requests coming in from known malicious IP addresses detected via [Sumo Logic Threat Intel](https://help.sumologic.com/07Sumo-Logic-Apps/22Security_and_Threat_Detection/Threat_Intel_Quick_Analysis/03_Threat-Intel-FAQ)
+* Monitor requests coming in from known malicious IP addresses detected via [Sumo Logic Threat Intel](/docs/integrations/security-threat-detection/threat-intel-quick-analysis#03_Threat-Intel-FAQ)
 
 <img src={useBaseUrl('img/integrations/amazon-aws/AWS-API-Gateway-Audit-Events.png')} alt="AWS API Gateway" />
 

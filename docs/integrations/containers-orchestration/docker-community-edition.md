@@ -1,18 +1,18 @@
 ---
 id: docker-community-edition
-title: Docker Community Edition
+title: Sumo Logic App for Docker Community Edition
 sidebar_label: Docker Community Edition
 description: The Docker App monitors Docker container logs and metrics (stats) in log format, providing operational insight into your Docker containers.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/containers-orchestration/docker.png')} alt="icon" width="175"/>
+<img src={useBaseUrl('img/integrations/containers-orchestration/docker.png')} alt="icon" width="150"/>
 
-The Sumo Logic App for Docker Community edition provides operational insight into your Docker containers. The App includes Dashboards that allow you to view your container performance statistics for CPU, memory, and the network. It also provides visibility into container events such as start, stop, and other important commands.
+The Sumo Logic App for Docker Community edition (CE) provides operational insight into your Docker containers. The App includes Dashboards that allow you to view your container performance statistics for CPU, memory, and the network. It also provides visibility into container events such as start, stop, and other important commands.
 
 :::info
-This Docker App monitors Docker container logs and metrics (stats) in log format only. If your system handles metrics, choose one of the following Sumo Logic apps: [Docker ULM](https://help.sumologic.com/07Sumo-Logic-Apps/10Containers_and_Orchestration/Docker_Apps/Docker_ULM) or [Docker EE](https://help.sumologic.com/07Sumo-Logic-Apps/10Containers_and_Orchestration/Docker_Apps/Docker_EE).
+This Docker App monitors Docker container logs and metrics (stats) in log format only. If your system handles metrics, choose one of the following Sumo Logic apps: [Docker ULM](/docs/integrations/containers-orchestration/docker-ulm) or [Docker EE](/docs/integrations/containers-orchestration/docker-enterprise-edition).
 :::
 
 
@@ -21,7 +21,7 @@ This Docker App monitors Docker container logs and metrics (stats) in log format
 There are several ways you can use Sumo with Docker:
 * Use Sumo Collector's Docker sources for logs and stats. With this option, you can deploy a containers collector, or use an installed collector:
     * Containerized collector—Run a Docker container with a Sumo collector and the Sumo Docker log and Docker stats sources on each Docker host. This approach enables you to collect Docker container logs, events, and stats, and supports the Sumo app for Docker. This approach is good if you prefer to deploy the collector in a container. For more information, see [https://github.com/SumoLogic/sumologic-collector-docker](https://github.com/SumoLogic/sumologic-collector-docker).
-    * Installed Collector with Docker log and stats Sources—Collect data from Docker using an installed collector and Sumo’s Docker log source and Docker stats source. This approach enables you to collect Docker container logs, events, and stats, and supports the Sumo app for Docker.  For more information, see [Collect Logs and Stats from Docker](https://help.sumologic.com/07Sumo-Logic-Apps/10Containers_and_Orchestration/Docker_Apps/Docker/01-Collect-Logs-and-Metrics-from-Docker).
+    * Installed Collector with Docker log and stats Sources—Collect data from Docker using an installed collector and Sumo’s Docker log source and Docker stats source. This approach enables you to collect Docker container logs, events, and stats, and supports the Sumo app for Docker.  For more information, see [Collect Logs and Stats from Docker](#Collect-Logs-and-Metrics-from-Docker).
 * Use Sumo Docker logging driver plugin—Use the Sumo logging driver plugin to send Docker container logs to Sumo. Once your log data is in Sumo, you can use the Sumo web app to search and analyze your log data. This is a good option if you do not want to run a collector on your Docker hosts. The plugin is Sumo-supported. For more information, see  [https://github.com/SumoLogic/sumologic-docker-logging-driver](https://github.com/SumoLogic/sumologic-docker-logging-driver).
 
 Sumo’s Docker logs source and Docker stats source use the Docker Engine API to gather the following data from Docker:
@@ -31,36 +31,34 @@ Sumo’s Docker logs source and Docker stats source use the Docker Engine API to
 
 By default, you can monitor up to 40 Docker containers on a Docker host. If you want to monitor more than 40 containers on a given host you can configure a larger number in `collector.properties`. The procedures below explain how. We don’t support monitoring more than 100 containers on a Docker host.
 
-## Collect Logs and Metrics from Docker
+## Collecting Logs and Metrics from Docker
 
 Sumo supports multiple methods of collecting data from Docker. This procedure describes how to collect data from Docker using an installed collector and Sumo’s Docker logs source and Docker stats source.
 
+The sections below provide instructions for installing a collector on a Docker host, setting up both Sumo Docker sources (log source and stats source), and installing the Sumo app for Docker. With this configuration you can collect Docker logs, events, and stats, and visualize resource performance and event data in the dashboards provided by the app.
+
 With the method described in this topic you can collect Docker logs, stats, and events and view summaries of the data collected using the Sumo App for Docker.
 
+:::note
 Windows operating systems are not supported.
-
+:::
 
 ### Prerequisites
 
 * The containers you’re going to monitor must use either the `json-file` or the `journald` driver. For more information, see [Configure Logging Drivers](https://docs.docker.com/engine/admin/logging/overview/) in Docker help.
-* The Docker Log Source uses timestamps from logs to track collection. You need to ensure your log format has a [well-defined timestamp](https://help.sumologic.com/03Send-Data/Sources/04Reference-Information-for-Sources/Timestamps%2C-Time-Zones%2C-Time-Ranges%2C-and-Date-Formats) so the Source can detect it properly. If there are issues with timestamp detection and the Docker container is restarted the Source will reingest all log data since there are no timestamps to track.
-
-
-### Process Overview
-
-The sections below provide instructions for installing a collector on a Docker host, setting up both Sumo Docker sources (log source and stats source), and installing the Sumo app for Docker. With this configuration you can collect Docker logs, events, and stats, and visualize resource performance and event data in the dashboards provided by the app.
+* The Docker Log Source uses timestamps from logs to track collection. You need to ensure your log format has a [well-defined timestamp](/docs/send-data/sources/reference-information-sources/time-reference) so the Source can detect it properly. If there are issues with timestamp detection and the Docker container is restarted the Source will reingest all log data since there are no timestamps to track.
 
 
 ### Step 1: Create access keys
 
-Follow the instructions in [Access Keys](https://help.sumologic.com/Manage/Security/Access-Keys) to create a Sumo access ID and key. You’ll need to supply them when you set up a collector on your Docker host in the following step.
+Follow the instructions in [Access Keys](/docs/manage/security/access-keys) to create a Sumo access ID and key. You’ll need to supply them when you set up a collector on your Docker host in the following step.
 
 
 ### Step 2: Install collector on each Docker host
 
 Follow the instructions for the operating system of the host where you will install the collector:
-* [Install a Collector on Linux](https://help.sumologic.com/03Send-Data/Installed-Collectors/04Install-a-Collector-on-Linux)
-* [Install a Collector on MacOS](https://help.sumologic.com/03Send-Data/Installed-Collectors/02Install-a-Collector-on-MacOS)
+* [Install a Collector on Linux](/docs/send-data/installed-collectors/install-collector-linux)
+* [Install a Collector on MacOS](/docs/send-data/installed-collectors/install-collector-macos)
 
 
 ### Step 3: Configure Docker log source
@@ -68,18 +66,19 @@ Follow the instructions for the operating system of the host where you will inst
 1. In the Sumo web app, select **Manage Data > Collection > Collection**.
 2. Navigate to the collector you installed on the Docker host, and select **Add > Add Source**.
 3. Select **Docker Logs**. The Docker Logs page appears.
-
 4. Configure the source fields:
-    1. **Name**. (Required).
-    2. **Description**. (Optional).
-    3. **URI**. Enter the URI of the Docker daemon.
-        * If your collector runs on the same host as the Docker containers it will monitor, enter the non-networked Unix socket: \
-`unix:///var/run/docker.sock`
-        * If your collector runs on a different machine than the Docker host, you can determine its URI from a Docker environment variable. Run the `docker-machine` command to find the Docker environment variables. \
-`$ docker-machine env machine-name`
+   * **Name**. (Required).
+   * **Description**. (Optional).
+   * **URI**. Enter the URI of the Docker daemon.
+      * If your collector runs on the same host as the Docker containers it will monitor, enter the non-networked Unix socket:
+      ```unix:///var/run/docker.sock
+      ```
+      * If your collector runs on a different machine than the Docker host, you can determine its URI from a Docker environment variable. Run the `docker-machine` command to find the Docker environment variables.
+      ```
+      $ docker-machine env machine-name
+      ```
 
 For example:
-
 
 ```bash
 $ docker-machine env default
@@ -92,17 +91,16 @@ export DOCKER_MACHINE_NAME="default"
 ```
 
 
-`Take the value of the `DOCKER_HOST` variable, change "tcp" to "https", and enter that value as the URI. For example, \
-`https://192.168.99.100:2376`
+Take the value of the `DOCKER_HOST` variable, change "tcp" to "https", and enter that value as the URI. For example, `https://192.168.99.100:2376`.
     4. **Cert Path**. (Required for remote access only) Enter the path to the certificate files on the local machine where the collector runs. In the example above, the cert path is: `/Users/sumo/.docker/machine/machines/default.`
-    5. **Collect From** and **Container Filters**. If you want to collect from all containers, click the **All Containers** radio button. If you want to collect from selected containers, click the **Specified Container Filters** radio button, and specify filter expressions in the **Container Filters** field. For information about how to define container filters, see [More about defining container filters](https://help.sumologic.com/07Sumo-Logic-Apps/10Containers_and_Orchestration/Docker_Apps/Docker/01-Collect-Logs-and-Metrics-from-Docker#More_about_defining_container_filters) below.
-        * By default, you can collect from up to 40 containers. To increase the limit, stop the Collector service, edit the `collector.properties` file (in the `config` subdirectory of the collector installation directory), and add the `docker.maxPerContainerConnections` property. The maximum supported value is 100. Then start the Collector service. See [collector.properties](https://help.sumologic.com/03Send-Data/Installed-Collectors/05Reference-Information-for-Collector-Installation/collector.properties) for details on modifying this configuration file.
+    5. **Collect From** and **Container Filters**. If you want to collect from all containers, click the **All Containers** radio button. If you want to collect from selected containers, click the **Specified Container Filters** radio button, and specify filter expressions in the **Container Filters** field. For information about how to define container filters, see [More about defining container filters](#More_about_defining_container_filters) below.
+        * By default, you can collect from up to 40 containers. To increase the limit, stop the Collector service, edit the `collector.properties` file (in the `config` subdirectory of the collector installation directory), and add the `docker.maxPerContainerConnections` property. The maximum supported value is 100. Then start the Collector service. See [collector.properties](/docs/send-data/Installed-Collectors/05Reference-Information-for-Collector-Installation/collector.properties) for details on modifying this configuration file.
     6. **Source Host**. Enter the hostname or IP address of the source host. If not specified, it’s assumed that the host is the machine where Docker is running. The hostname can be a maximum of 128 characters. \
-If desired, you can use Docker variables to construct the Source Host value. For more information, see [Configure sourceCategory and sourceHost using variables](https://help.sumologic.com/07Sumo-Logic-Apps/10Containers_and_Orchestration/Docker_Apps/Docker/01-Collect-Logs-and-Metrics-from-Docker#Configure_sourceCategory_and_sourceHost_using_variables).
-    7. **Source Category**. (Required) Enter the Sumo source category (such as `prod/web/docker/logs`). The source category metadata field is a fundamental building block to organize and label sources. For more information, see [Metadata Naming Conventions](https://help.sumologic.com/03Send-Data/Sources/04Reference-Information-for-Sources/Metadata-Naming-Conventions) and our [Best Practices: Good Source Category, Bad Source Category](https://help.sumologic.com/03Send-Data/01-Design-Your-Deployment/Best-Practices%3A-Good-Source-Category%2C-Bad-Source-Category). \
-If desired, you can use Docker variables to construct the Source Category value. For more information, see [Configure sourceCategory and sourceHost using variables](https://help.sumologic.com/07Sumo-Logic-Apps/10Containers_and_Orchestration/Docker_Apps/Docker/01-Collect-Logs-and-Metrics-from-Docker#Configure_sourceCategory_and_sourceHost_using_variables).
+If desired, you can use Docker variables to construct the Source Host value. For more information, see [Configure sourceCategory and sourceHost using variables](#Configure_sourceCategory_and_sourceHost_using_variables).
+    7. **Source Category**. (Required) Enter the Sumo source category (such as `prod/web/docker/logs`). The source category metadata field is a fundamental building block to organize and label sources. For more information, see [Metadata Naming Conventions](/docs/send-data/Sources/reference-information-sources/Metadata-Naming-Conventions) and our [Best Practices: Good Source Category, Bad Source Category](/docs/send-data/design-deployment/best-practices-source-categories). \
+If desired, you can use Docker variables to construct the Source Category value. For more information, see [Configure sourceCategory and sourceHost using variables](#Configure_sourceCategory_and_sourceHost_using_variables).
 5. Configure the Advanced options.
-    8. **Enable Timestamp Parsing**. This option is checked by default and **required**. See the [Prerequisites section](https://help.sumologic.com/07Sumo-Logic-Apps/10Containers_and_Orchestration/Docker_Apps/Docker/01-Collect-Logs-and-Metrics-from-Docker#Prerequisites) above for details.
+    8. **Enable Timestamp Parsing**. This option is checked by default and **required**. See the [Prerequisites section](#Prerequisites) above for details.
     9. **Time Zone**. Default is “Use time zone from log file”.
     10. **Timestamp Format**. Default is “Automatically detect the format”.
     11. **Encoding**. Default is “UTF-8”.
@@ -110,7 +108,7 @@ If desired, you can use Docker variables to construct the Source Category value.
         * **Detect messages spanning multiple lines**. This option is checked by default.
         * **Infer Boundaries**. This option is checked by default.
         * **Boundary Regex**. If multiple processing is enabled, and **Infer Boundaries** is disabled, enter a regular expression for message boundaries.
-6. Configure processing rules. For more information, see** **[Processing Rules](https://help.sumologic.com/Manage/Collection/Processing-Rules).
+6. Configure processing rules. For more information, see** **[Processing Rules](/docs/manage/collection/processing-rules).
 
 
 ### Step 4: Add a Docker stats source
@@ -121,12 +119,18 @@ If desired, you can use Docker variables to construct the Source Category value.
 
 
 1. Configure the following source fields:
-    1. **Name.** (Required)
-    2. **Description. **(Optional)
-    3. **URI**. Enter the URI of the Docker daemon.
-        * If your collector runs on the same host as the Docker containers it will monitor, enter the non-networked Unix socket: \
-`unix:///var/run/docker.sock`
-        * If your collector runs on a different machine than the Docker host, you can determine its URI from a Docker environment variable. Run the `docker-machine` command to find the Docker environment variables. The command's syntax is `$ docker-machine env machine-name`. \
+   * **Name.** (Required)
+   * **Description. **(Optional)
+   * **URI**. Enter the URI of the Docker daemon.
+      * If your collector runs on the same host as the Docker containers it will monitor, enter the non-networked Unix socket: \
+      ```
+      unix:///var/run/docker.sock
+      ```
+      * If your collector runs on a different machine than the Docker host, you can determine its URI from a Docker environment variable. Run the `docker-machine` command to find the Docker environment variables. The command's syntax is
+      ```
+      $ docker-machine env machine-name
+      ```
+
 For example,
 ```bash
 $ docker-machine env default \
@@ -139,10 +143,10 @@ export DOCKER_MACHINE_NAME="default" \
 ```
 Take the value of the `DOCKER_HOST` variable, change "tcp" to "https", and enter that value as the URI. For example, `https://192.168.99.100:2376`.
     4. **Cert Path**. (Required for remote access only) Enter the path to the certificate files on the local machine where the collector runs. In the example above, the cert path is: /Users/sumo/.docker/machine/machines/default
-    5. **Collect From** and **Container Filters**. If you want to collect from all containers, click the **All Containers** radio button. If you want to collect from selected containers, click the **Specified Container Filters** radio button, and specify filter expressions in the **Container Filters** field. For information about how to define container filters, see [More about defining container filters](https://help.sumologic.com/07Sumo-Logic-Apps/10Containers_and_Orchestration/Docker_Apps/Docker/01-Collect-Logs-and-Metrics-from-Docker#More_about_defining_container_filters) below.
-        * By default, you can collect from up to 40 containers. To increase the limit, stop the Collector service, edit the `collector.properties` file (in the `config` subdirectory of the collector installation directory), and add the `docker.maxPerContainerConnections` property. The maximum supported value is 100. Then start the Collector service. See [collector.properties](https://help.sumologic.com/03Send-Data/Installed-Collectors/05Reference-Information-for-Collector-Installation/collector.properties) for details on modifying this configuration file.
-    6. **Source Host**. Enter the hostname or IP address of the source host. If not specified, it’s assumed that the host is the machine where Docker is running. The hostname can be a maximum of 128 characters. If desired, you can use Docker variables to construct the Source Host value. For more information, see [Configure sourceCategory and sourceHost using variables.](https://help.sumologic.com/07Sumo-Logic-Apps/10Containers_and_Orchestration/Docker_Apps/Docker_ULM/Collect_Logs_and_Metrics_for_Docker_ULM#Configure_sourceCategory_and_sourceHost_using_variables-851)
-    7. **Source Category**. (Required) Enter the Sumo source category (such as `prod/web/docker/logs`). If desired, you can use Docker variables to construct the Source Host value. For more information, see [Configure sourceCategory and sourceHost using variables.](https://help.sumologic.com/07Sumo-Logic-Apps/10Containers_and_Orchestration/Docker_Apps/Docker_ULM/Collect_Logs_and_Metrics_for_Docker_ULM#Configure_sourceCategory_and_sourceHost_using_variables-851)
+    5. **Collect From** and **Container Filters**. If you want to collect from all containers, click the **All Containers** radio button. If you want to collect from selected containers, click the **Specified Container Filters** radio button, and specify filter expressions in the **Container Filters** field. For information about how to define container filters, see [More about defining container filters](#More_about_defining_container_filters) below.
+        * By default, you can collect from up to 40 containers. To increase the limit, stop the Collector service, edit the `collector.properties` file (in the `config` subdirectory of the collector installation directory), and add the `docker.maxPerContainerConnections` property. The maximum supported value is 100. Then start the Collector service. See [collector.properties](/docs/send-data/Installed-Collectors/05Reference-Information-for-Collector-Installation/collector.properties) for details on modifying this configuration file.
+    6. **Source Host**. Enter the hostname or IP address of the source host. If not specified, it’s assumed that the host is the machine where Docker is running. The hostname can be a maximum of 128 characters. If desired, you can use Docker variables to construct the Source Host value. For more information, see [Configure sourceCategory and sourceHost using variables.](/docs/integrations/containers-orchestration/docker-ulm#Configure_sourceCategory_and_sourceHost_using_variables-851)
+    7. **Source Category**. (Required) Enter the Sumo source category (such as `prod/web/docker/logs`). If desired, you can use Docker variables to construct the Source Host value. For more information, see [Configure sourceCategory and sourceHost using variables.](/docs/integrations/containers-orchestration/docker-ulm#Configure_sourceCategory_and_sourceHost_using_variables-851)
     8. **Scan Interval**. This option sets how often the source is scanned. Setting a shorter frequency increases message volume, and can cause your deployment to incur additional charges. The minimum acceptable scan interval is 1 second.
 
 
@@ -150,20 +154,19 @@ Take the value of the `DOCKER_HOST` variable, change "tcp" to "https", and enter
 
 The Sumo App for Docker provides operational insight into your Docker containers. The app includes Dashboards that allow you to view your container performance statistics for CPU, memory, and the network. It also provides visibility into container events such as start, stop, and other important commands.  
 
-For installation instructions, see [Install the Docker App](https://help.sumologic.com/07Sumo-Logic-Apps/10Containers_and_Orchestration/Docker_Apps/Docker/Docker-App-Dashboards#Install_Sumo_Logic_App).
+For installation instructions, see [Install the Docker App](#Installing-the-Docker-App).
 
 
 ### Step 6: Run searches and use dashboards
 14
 
 
-At this point, Sumo should be receiving Docker data. For an example of logs collected from Docker, see Sample Docker log messages. For an example query, see [Sample query](https://help.sumologic.com/07Sumo-Logic-Apps/10Containers_and_Orchestration/Docker_Apps/Docker/01-Collect-Logs-and-Metrics-from-Docker#Query_Sample) - Containers created or started.  
+At this point, Sumo should be receiving Docker data. For an example of logs collected from Docker, see Sample Docker log messages. For an example query, see [Sample query](#Query_Sample) - Containers created or started.  
 
-For information about the dashboards provided by the Sumo App for Docker, see [Docker App Dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/10Containers_and_Orchestration/Docker_Apps/Docker/Docker-App-Dashboards).
+For information about the dashboards provided by the Sumo App for Docker, see [Docker App Dashboards](#Dashboards).
 
 
-### More about defining container filters  
-
+## Defining Container Filters  
 
 In the **Container Filter** field, you can enter a comma-separated list of one or more of the following types of filters:
 
@@ -172,15 +175,14 @@ In the **Container Filter** field, you can enter a comma-separated list of one o
 * An exclusion (denylist) filter, which begins with an exclamation mark, for example, `!master-container` or `!prod-*`
 
 For example, this filter list:
-```
+```sql
 prod-*, !prod-*-mysql, master-*-app-*, sumologic-collector
 ```
 
-
-will cause the source to collect from all containers whose names start with “prod-”, except those that match “prod-*-mysql”. It will also collect from containers with names that match “master-*-app-*”, and from the “sumologic-collector” container.
+will cause the source to collect from all containers whose names start with `prod-`, except those that match `prod-*-mysql`. It will also collect from containers with names that match `master-*-app-*`, and from the `sumologic-collector` container.
 
 If your filter list contains only exclusions, the source will collect all containers except from those that match your exclusion filters. For example:
-```
+```sql
 !container123*, !prod-*
 ```
 
@@ -188,19 +190,14 @@ will cause the source to exclude containers whose names begin with “container1
 
 
 ### Configure sourceCategory and sourceHost using variables
-16
-
 
 In collector version 19.216-22 and later, when you configure the sourceCategory and sourceHost for a Docker Log Source or a Docker Stats Source, you can specify the value using variables available from Docker and its host.
 
-You build templates for sourceCategory and sourceHost specifying component variables in this form:
-```
-{{NAMESPACE.VAR_NAME}}
-```
+You build templates for sourceCategory and sourceHost specifying component variables in this form: `{{NAMESPACE.VAR_NAME}}`.
 
 Where:
-    •   `NAMESPACE` is a namespace that indicates the variable type. 
-    •   `VAR_NAME` is the variable name.  These are case-sensitive.
+* `NAMESPACE` is a namespace that indicates the variable type. 
+* `VAR_NAME` is the variable name.  These are case-sensitive.
 
 The table below defines the types of variables you can use.
 
@@ -209,57 +206,141 @@ Docker engine events log data doesn't support the tagging with metadata.
 **TABLE**
 
 For example:
-
-
-```
+```sql
 {{container.ID}}
 ```
 
-
 You can use multiple variables, for example:
-
-
-```
+```sql
 {{container.ID}}-{{label.label_name}}-{{env.var_name}}
 ```
 
-
 You can incorporate text in the metadata expression, for example:
-
-
-```
+```sql
 ID-{{container.ID}}-AnyTextYouWant{{label.label_name}}
 ```
 
-
-
-18
 The example above uses a hyphen `-` character to separate variable components. Separator characters are not required. Curly brackets and spaces are not allowed. Underscores and hyphens are recommended.
 
 If a user-defined variable doesn’t exist, that portion of the metadata field will be blank.  
 
 
-### Sample Docker Messages  
+## Sample Event Log Messages  
 
 This is an example of two Docker event logs:
 
-```json
-{"status":"start", "id":"10adec58fa15202e06afef7b1b0b3b1464962a115ff56918444c3f22867d3f3b", "from":"hello-world", "time":1485975967}
-{"status":"create", "id":"045599bc4d589264658f5f7f4efa3f1e3af9088ba1f7383a160cf344e1055d46", "from":"ubuntu", "time":1485966852}
+```json title="Docker event log"
+{
+	"status":"start",
+	"id":"10adec58fa15202e06afef7b1b0b3b1464962a115ff56918444c3f22867d3f3b",
+	"from":"hello-world",
+	"time":1485975967
+}
 ```
 
+```json title="Docker event log"
+{
+	"status":"create",
+	"id":"045599bc4d589264658f5f7f4efa3f1e3af9088ba1f7383a160cf344e1055d46",
+	"from":"ubuntu",
+	"time":1485966852
+}
+```
 
 This is an example of a Docker stats message:
 
 ```json
-{"read" : "2017-02-01T19:36:48.777487188Z", "network" : {"rx_bytes":87977,"rx_dropped":0,"rx_errors":0,"rx_packets":252,"tx_bytes":146194,"tx_dropped":0,"tx_errors":0,"tx_packets":302}, "cpu_stats" : {"cpu_usage":{"percpu_usage":[9469809313],"total_usage":9469809313,"usage_in_kernelmode":1050000000,"usage_in_usermode":8410000000},"system_cpu_usage":2496992710000000,"throttling_data":{"periods":0,"throttled_periods":0,"throttled_time":0}}, "blkio_stats" : {"io_merged_recursive":[],"io_queue_recursive":[],"io_service_bytes_recursive":[],"io_service_time_recursive":[],"io_serviced_recursive":[],"io_time_recursive":[],"io_wait_time_recursive":[],"sectors_recursive":[]}, "memory_stats" : {"limit":1033252864,"max_usage":202858496,"stats":{"active_anon":86831104,"active_file":13131776,"cache":24981504,"dirty":36864,"hierarchical_memory_limit":9223372036854771712,"inactive_anon":86786048,"inactive_file":11849728,"mapped_file":6430720,"pgfault":63351,"pgmajfault":146,"pgpgin":68526,"pgpgout":20040,"rss":173617152,"rss_huge":0,"total_active_anon":86831104,"total_active_file":13131776,"total_cache":24981504,"total_dirty":36864,"total_inactive_anon":86786048,"total_inactive_file":11849728,"total_mapped_file":6430720,"total_pgfault":63351,"total_pgmajfault":146,"total_pgpgin":68526,"total_pgpgout":20040,"total_rss":173617152,"total_rss_huge":0,"total_unevictable":0,"total_writeback":0,"unevictable":0,"writeback":0},"usage":201818112}}
+{
+	"read":"2017-02-01T19:36:48.777487188Z",
+	"network":{
+		"rx_bytes":87977,
+		"rx_dropped":0,
+		"rx_errors":0,
+		"rx_packets":252,
+		"tx_bytes":146194,
+		"tx_dropped":0,
+		"tx_errors":0,
+		"tx_packets":302
+	},
+	"cpu_stats":{
+		"cpu_usage":{
+			"percpu_usage":[
+				9469809313
+			],
+			"total_usage":9469809313,
+			"usage_in_kernelmode":1050000000,
+			"usage_in_usermode":8410000000
+		},
+		"system_cpu_usage":2496992710000000,
+		"throttling_data":{
+			"periods":0,
+			"throttled_periods":0,
+			"throttled_time":0
+		}
+	},
+	"blkio_stats":{
+		"io_merged_recursive":[
+		],
+		"io_queue_recursive":[
+		],
+		"io_service_bytes_recursive":[
+		],
+		"io_service_time_recursive":[
+		],
+		"io_serviced_recursive":[
+		],
+		"io_time_recursive":[
+		],
+		"io_wait_time_recursive":[
+		],
+		"sectors_recursive":[
+		]
+	},
+	"memory_stats":{
+		"limit":1033252864,
+		"max_usage":202858496,
+		"stats":{
+			"active_anon":86831104,
+			"active_file":13131776,
+			"cache":24981504,
+			"dirty":36864,
+			"hierarchical_memory_limit":9223372036854771712,
+			"inactive_anon":86786048,
+			"inactive_file":11849728,
+			"mapped_file":6430720,
+			"pgfault":63351,
+			"pgmajfault":146,
+			"pgpgin":68526,
+			"pgpgout":20040,
+			"rss":173617152,
+			"rss_huge":0,
+			"total_active_anon":86831104,
+			"total_active_file":13131776,
+			"total_cache":24981504,
+			"total_dirty":36864,
+			"total_inactive_anon":86786048,
+			"total_inactive_file":11849728,
+			"total_mapped_file":6430720,
+			"total_pgfault":63351,
+			"total_pgmajfault":146,
+			"total_pgpgin":68526,
+			"total_pgpgout":20040,
+			"total_rss":173617152,
+			"total_rss_huge":0,
+			"total_unevictable":0,
+			"total_writeback":0,
+			"unevictable":0,
+			"writeback":0
+		},
+		"usage":201818112
+	}
+}
 ```
 
-### Sample Query
+## Sample Query
 
-**Containers created or started**
 
-```sql
+```sql title="Containers created or started"
 _sourceCategory=docker  ("\"status\":\"create\"" or "\"status\":\"start\"")  id from
 | parse "\"status\":\"*\"" as status, "\"id\":\"*\"" as container_id, "\"from\":\"*\"" as image
 | count_distinct(container_id)
@@ -267,9 +348,9 @@ _sourceCategory=docker  ("\"status\":\"create\"" or "\"status\":\"start\"")  id 
 
 
 
-## Install the Docker App
+## Installing the Docker CE App
 
-The Sumo App for Docker provides operational insight into your Docker containers. The app includes [Dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/10Containers_and_Orchestration/Docker_Apps/Docker/Docker-App-Dashboards#Dashboards) that allow you to view your container performance statistics for CPU, memory, and the network. It also provides visibility into container events such as start, stop, and other important commands.  
+The Sumo App for Docker provides operational insight into your Docker containers. The app includes [dashboards](#viewing-dashboards) that allow you to view your container performance statistics for CPU, memory, and the network. It also provides visibility into container events such as start, stop, and other important commands.  
 
 To install the app:
 
@@ -278,7 +359,7 @@ Locate and install the app you need from the **App Catalog**. If you want to see
 1. From the **App Catalog**, search for and select the app**.**
 2. Select the version of the service you're using and click **Add to Library**.
 
-Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](https://help.sumologic.com/01Start-Here/Library/Apps-in-Sumo-Logic/Install-Apps-from-the-Library)
+Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/library/install-apps)
 
 1. To install the app, complete the following fields.
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
@@ -293,7 +374,7 @@ Once an app is installed, it will appear in your **Personal** folder, or other f
 Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
 
 
-## Dashboards
+## Viewing Docker CE Dashboards
 
 ### Overview
 

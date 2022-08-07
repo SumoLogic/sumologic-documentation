@@ -7,22 +7,23 @@ description: A guide to the Sumo Logic app for Windows - Cloud Security Monitori
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
+<img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/SecMon_Windows.png')} alt="Thumbnail icon" width="70"/>
+
 The Cloud Security Monitoring & Analytics for Windows App offers pre-built dashboards and queries to help you track your Windows system, user accounts, login activity, and Windows updates.
 
-This page provides instructions for configuring log collection for the Windows - Cloud Security Monitoring and Analytics App.
+This section provides instructions for configuring log collection for the Windows - Cloud Security Monitoring and Analytics App.
 
-## Collecting Logs
-
-### Log Types
+## Log Types
 
 The Windows - Cloud Security Monitoring and Analytics App uses Windows Security Event and System Event logs. It does not work with third-party logs.
 
+## Collecting Logs for Windows Cloud Security Monitoring and Analytics
 
 ### Configure a Collector and a Source
 
-**To configure a collector and source, do the following:
+To configure a collector and source, do the following:
 
-1. Configure an [Installed Windows collector](https://help.sumologic.com/03Send-Data/Installed-Collectors/03Install-a-Collector-on-Windows) through the user interface or from the command line.
+1. Configure an [Installed Windows collector](/docs/send-data/installed-collectors/install-collector-windows) through the user interface or from the command line.
 2. Configure either a local or remote Windows Event Log source. To configure a Windows Event Log source set the following:
     * **Event Format.** Select **Collect using JSON format. \
 
@@ -32,26 +33,56 @@ Collect using JSON format.** Events are formatted into JSON that is designed to 
 
 **Complete Message** will ingest the entire event content along with metadata.
 
-For more information on local or remote Windows Event Log Source configuration, refer to [Local Windows Event Log Source](https://help.sumologic.com/03Send-Data/Sources/01Sources-for-Installed-Collectors/Local-Windows-Event-Log-Source) and [Remote Windows Event Log Source](https://help.sumologic.com/03Send-Data/Sources/01Sources-for-Installed-Collectors/Remote-Windows-Event-Log-Source).
+For more information on local or remote Windows Event Log Source configuration, refer to [Local Windows Event Log Source](/docs/send-data/Sources/sources-installed-collectors/Local-Windows-Event-Log-Source) and [Remote Windows Event Log Source](/docs/send-data/Sources/sources-installed-collectors/Remote-Windows-Event-Log-Source).
 
 
 ### Sample Log Messages
 
+```json
+{
+	"TimeCreated":"2020-10-12T07:31:14+000039800Z",
+	"EventID":"1102",
+	"Task":104,
+	"Correlation":"",
+	"Keywords":"Audit Success",
+	"Channel":"Security",
+	"Opcode":"Info",
+	"Security":"",
+	"Provider":{
+		"Guid":"{fc65ddd8-d6ef-4962-83d5-6e5cfe9ce148}",
+		"Name":"Microsoft-Windows-Eventlog"
+	},
+	"EventRecordID":101802,
+	"Execution":{
+		"ThreadID":2896,
+		"ProcessID":908
+	},
+	"Version":0,
+	"Computer":"WIN-6D5CO5AB123",
+	"Level":"Informational",
+	"EventData":{
+
+	},
+	"UserData":{
+		"LogFileCleared":{
+			"xmlns":"http://sz2016rose.ddns.net/win/2004/08/windows/eventlog",
+			"SubjectUserName":"Administrator",
+			"SubjectDomainName":"WIN-6D5CO5AB123",
+			"SubjectLogonId":"0x1971888",
+			"SubjectUserSid":"S-1-5-21-2020-10-12T07:31:14-203418232-2020-10-12T07:31:14-500"
+		}
+	},
+	"Message":"The audit log was cleared.\r\nSubject:\r\n\tSecurity ID:\tWIN-6D5CO5AB123\\Administrator\r\n\tAccount Name:\tAdministrator\r\n\tDomain Name:\tWIN-6D5CO5AB123\r\n\tLogon ID:\t0x1971888"
+}
 ```
-{"TimeCreated":"2020-10-12T07:31:14+000039800Z","EventID":"1102","Task":104,"Correlation":"","Keywords":"Audit
-Success","Channel":"Security","Opcode":"Info","Security":"","Provider":{"Guid":"{fc65ddd8-d6ef-4962-83d5-6e5cfe9ce148}",
-"Name":"Microsoft-Windows-Eventlog"},"EventRecordID":101802,"Execution":{"ThreadID":2896,"ProcessID":908},"Version":0,"Computer":
-"WIN-6D5CO5AB123","Level":"Informational","EventData":{},"UserData":{"LogFileCleared":{"xmlns":"http://sz2016rose.ddns.net/win/2004/08/windows/eventlog",
-"SubjectUserName":"Administrator","SubjectDomainName":"WIN-6D5CO5AB123","SubjectLogonId":"0x1971888","SubjectUserSid":"S-1-5-21-2020-10-12T07:31:14-203418232-2020-10-12T07:31:14-500"}},"Message":"The audit log was cleared.\r\nSubject:\r\n\tSecurity ID:\tWIN-6D5CO5AB123\\Administrator\r\n\tAccount Name:\tAdministrator\r\n\tDomain Name:\tWIN-6D5CO5AB123\r\n\tLogon ID:\t0x1971888"}
-```
 
 
 
-### Query Sample
+### Sample Query
 
 The sample query is from the **Recent Policy Changes** panel from **Windows - Overview** dashboard.
 
-```
+```sql
 _sourceCategory=Labs/windows-jsonformat ( "Audit Policy Change" or "System audit policy was changed" or *policy*change* or "Policy Change" or 4902 or 4904 or 4905 or 4906 or 4907 or 4912 or 4715 or 4719 or 4739)
 | json "EventID", "Computer", "Message" as event_id, host, msg_summary nodrop
 | parse regex field = msg_summary "(?<msg_summary>.*\.*)"
@@ -61,9 +92,9 @@ _sourceCategory=Labs/windows-jsonformat ( "Audit Policy Change" or "System audit
 
 ## Installing the Windows Cloud Security App
 
-This page provides instructions for installing the Cloud Security Monitoring & Analytics for Windows App, along with examples of each of the App dashboards. The Cloud Security Monitoring & Analytics for Windows App offers pre-built dashboards and queries to help you track your Windows system, user accounts, login activity, and Windows updates.
+This section provides instructions for installing the Cloud Security Monitoring & Analytics for Windows App, along with examples of each of the App dashboards. The Cloud Security Monitoring & Analytics for Windows App offers pre-built dashboards and queries to help you track your Windows system, user accounts, login activity, and Windows updates.
 
-Now that you have set up collection, install the Cloud Security Monitoring & Analytics for Windows App to use the pre-configured searches and [Dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/04Microsoft-and-Azure/PCI_Compliance_for_Windows/PCI-Compliance-for-Windows-App-Dashboards#Dashboards) that provide insight into your data.  
+Now that you have set up collection, install the Cloud Security Monitoring & Analytics for Windows App to use the pre-configured searches and [dashboards](#viewing-dashboards) that provide insight into your data.  
 
 **To install the app**:
 
@@ -73,16 +104,16 @@ Locate and install the app you need from the **App Catalog**. If you want to see
 1. From the **App Catalog**, search for and select the app**.**
 2. Select the version of the service you're using and click **Add to Library**.
 
-Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library](https://help.sumologic.com/01Start-Here/Library/Apps-in-Sumo-Logic/Install-Apps-from-the-Library).
+Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library](/docs/get-started/library/install-apps).
 
 
 
 1. To install the app, complete the following fields.
-    1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
-    2. **Data Source.** Select either of these options for the data source. 
-        * Choose **Source Category**, and select a source category from the list. 
-        * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). 
-    3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
+   * **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
+   * **Data Source.** Select either of these options for the data source. 
+      * Choose **Source Category**, and select a source category from the list. 
+      * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). 
+   * **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
 2. Click **Add to Library**.
 
 Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization.

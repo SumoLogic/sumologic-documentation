@@ -17,21 +17,18 @@ You configure Telegraf in the `telegraf.conf` configuration file, which you can 
 You configure the Redis input plugin in the Telegraf configuration file
 like this:
 
-```
-# Read Redis's basic status information
+```sql
+-- Read Redis's basic status information
 [[inputs.redis]]
- ## specify servers via a url matching:
- ##  [protocol://][:password]@address[:port]
- ##  e.g.
- ##    tcp://localhost:6379
- ##    tcp://:password@192.168.99.100
- ##
- ## If no servers are specified, then localhost is used as the host.
- ## If no port is specified, 6379 is used
- servers = ["tcp://localhost:6379"]
+ -- specify servers via a url matching:
+ -- [protocol://][:password]@address[:port]
+ --  e.g. tcp://localhost:6379 or tcp://:password@192.168.99.100
+ -- If no servers are specified, then localhost is used as the host.
+ -- If no port is specified, 6379 is used
+  servers = ["tcp://localhost:6379"]
 
- ## specify server password
- # password = "s#cr@t%"
+ -- specify server password
+  password = "s#cr@t%"
 ```
 
 Where:
@@ -46,7 +43,7 @@ on GitHub.
 
 In order to expose Nginx metrics, you need to enable stub status in the Nginx `/etc/nginx/conf.d/status.conf `configuration file, like this:
 
-```
+```yml
 location /nginx_status {
         stub_status on;
         access_log  on;           
@@ -56,7 +53,7 @@ location /nginx_status {
 
 After updating the configuration file, reload Nginx with this command:
 
-```
+```bash
 nginx -s reload
 ```
 
@@ -83,7 +80,7 @@ There are two ways to use Jolokia.
 
 Download the agent jar and use it as javaagent for your application:
 
-```
+```bash
 # Download latest jolokia agent
 wget https://search.maven.org/remoteconte....6.2-agent.jar
 # Add -javaagent:/path/to/jolokia-jvm-<version>-agent.jar to your command line application
@@ -94,7 +91,7 @@ java ... -javaagent:jolokia-jvm-1.6.2-agent.jar ...
 
 Alternatively, you can use Jolokia as an agent that points to the target Java process:
 
-```
+```bash
 # List available applications
 java -jar ./jolokia-jvm-1.6.2-agent.jar list
 # 156   ./jolokia-jvm-1.6.2-agent.jar list
@@ -107,7 +104,7 @@ java -jar ./jolokia-jvm-1.6.2-agent.jar start 6
 
 You configure the Jolokia input plugin in the Telegraf configuration file like this:
 
-```
+```sql
 urls = ["http://127.0.0.1:8778/jolokia"]
 
   [[inputs.jolokia2_agent.metric]]
@@ -171,7 +168,7 @@ urls = ["http://127.0.0.1:8778/jolokia"]
     mbean = "java.lang:type=Threading"
     paths = ["CurrentThreadAllocatedBytes"]
 
-  ## Not available for adoptopenjdk-openj9
+   Not available for adoptopenjdk-openj9
   [[inputs.jolokia2_agent.metric]]
     name  = "java_lang_Threading"
     mbean = "java.lang:type=Threading"

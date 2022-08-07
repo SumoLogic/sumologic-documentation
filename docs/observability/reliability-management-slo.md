@@ -1,7 +1,7 @@
 ---
 id: reliability-management-slo
 title: Reliability Management
-sidebar_label: Reliability Management (SLO)
+sidebar_label: Reliability Management (SLOs/SLIs)
 description: Learn more about SLOs, SLIs, and Reliability Management. Access and create SLOs, configuring queries, setting SLIs, and create SLO Monitors. Learn about SLO dashboards and notifications.
 ---
 
@@ -12,7 +12,7 @@ To work with SLOs, you need the following Sumo Logic capabilities:
 * Manage SLOs (`manageSlos`) permissions
 
 :::info
-The [Alert response page](https://help.sumologic.com/Visualizations-and-Alerts/Alerts/Monitors/Alert_Response) is not supported for SLO-based monitors. Notifications will provide information and links to SLO dashboards.
+[Alert Response](/docs/alerts/monitors/alert-response) is not supported for SLO-based monitors. Notifications will provide information and links to SLO dashboards.
 :::
 
 **Max Compliance Period**
@@ -157,7 +157,7 @@ The heart of an SLO is the queries used for the SLI query types including metric
 
 **General Information**
 
-For general information on querying metrics and logs, see [Overview of Metrics in Sumo](https://help.sumologic.com/Metrics/Introduction-to-Metrics/01Overview-of-Metrics-in-Sumo) and [About Search Basics](https://help.sumologic.com/05Search/Get-Started-with-Search/Search-Basics/About-Search-Basics).
+For general information on querying metrics and logs, see [Overview of Metrics in Sumo](https://help.sumologic.com/Metrics/Introduction-to-Metrics/01Overview-of-Metrics-in-Sumo) and [About Search Basics](/docs/search/Get-Started-with-Search/Search-Basics/About-Search-Basics).
 
 A preview runs the query in real-time to help test and refine results, with a time range to see broader results as needed.
 
@@ -234,13 +234,21 @@ To create a new SLO:
 
 4. Select the Evaluation Type which determines how the events are measured:
     * **Window-based**. Select the time frame window for the events. Window sizes should be between 1m to 60m. \
+
+20
+
     * **Request-based. \
+**
+21
 
 
 
-5. Select the **Query Type **to select and build your queries for the SLI data. You have a choice of Metrics or Logs with a ratio-based (partial against the total) or threshold-based (events amount against a set threshold amount) calculation. Review [Query recommendations](https://help.sumologic.com/Beta/SLO_Reliability_Management/Access_and_Create_SLOs#Query_recommendations) before building.
 
-Follow the instructions below based on the query type:
+5.
+Select the **Query Type **to select and build your queries for the SLI data. You have a choice of Metrics or Logs with a ratio-based (partial against the total) or threshold-based (events amount against a set threshold amount) calculation. Review [Query recommendations](https://help.sumologic.com/Beta/SLO_Reliability_Management/Access_and_Create_SLOs#Query_recommendations) before building. \
+ \
+Follow the instructions below based on the query type: \
+
 
 <table>
   <tr>
@@ -253,9 +261,13 @@ Follow the instructions below based on the query type:
    <td>
     For <strong>Ratio-based</strong> definition, define queries for the successful or unsuccessful events to calculate against total events:
 <ol>
+
 <li>Select <strong>Successful</strong> or <strong>Unsuccessful Events</strong> to measure.</li>
+
 <li>Build a query using metrics and filters. See <a href="https://help.sumologic.com/Metrics/Introduction-to-Metrics/01Overview-of-Metrics-in-Sumo">Overview of Metrics in Sumo</a>.</li>
+
 <li>Select the values to use from <strong>Number of data points </strong>or <strong>Metric value</strong>.</li>
+
 <li>Configure the Total Events including a query and values to use <strong>Number of data points</strong> or <strong>Metric value</strong>. You can copy and paste the previous query, removing filters to get the total.
 </li>
 </ol>
@@ -263,9 +275,13 @@ Follow the instructions below based on the query type:
    <td>
     For <strong>Threshold-based</strong> definitions, which calculates against success criteria:
 <ol>
+
 <li>Select <strong>Successful</strong> or <strong>Unsuccessful Events</strong> to measure.</li>
+
 <li>Build a query using metrics and filters. See <a href="https://help.sumologic.com/Metrics/Introduction-to-Metrics/01Overview-of-Metrics-in-Sumo">Overview of Metrics in Sumo</a> for more information.</li>
+
 <li>For <strong>Use values from</strong>, it always uses the Metric value.</li>
+
 <li>For <strong>Success Criteria</strong> for <strong>Avg</strong>, <strong>Min</strong>, <strong>Max</strong>, or <strong>Sum</strong> of the selected signal type (such as latency) which must be <strong>greater than</strong>, <strong>greater than or equal to</strong>, <strong>less than</strong>, or <strong>less than equal to</strong> an amount you enter (positive or negative number). </li>
 </ol>
    </td>
@@ -274,6 +290,10 @@ Follow the instructions below based on the query type:
 
 
 
+
+6.
+
+22
 
 
 <table>
@@ -287,9 +307,13 @@ Follow the instructions below based on the query type:
    <td>
     For <strong>Ratio-based</strong> definition, which calculates successful or unsuccessful events against total events:
 <ol>
+
 <li>Select <strong>Successful</strong> or <strong>Unsuccessful Events</strong> to measure.</li>
-<li>Search logs selecting and entering a log query. See <a href="https://help.sumologic.com/05Search/Get-Started-with-Search/Search-Basics/About-Search-Basics">About Search Basics</a> for more information.</li>
+
+<li>Search logs selecting and entering a log query. See <a href="/docs/search/Get-Started-with-Search/Search-Basics/About-Search-Basics">About Search Basics</a> for more information.</li>
+
 <li>For <strong>Use values from</strong>, select the numeric value available for that query to pull data from.</li>
+
 <li>Then configure the <strong>Total Events</strong> including a query and values. You can copy and paste the previous query, perhaps with filters removed to get the total.
 </li>
 </ol>
@@ -298,8 +322,11 @@ Follow the instructions below based on the query type:
     For <strong>Threshold-based</strong> definitions, which calculates against success criteria:
 <ol>
 <li>Select <strong>Successful</strong> or <strong>Unsuccessful Events</strong> to measure.</li>
-<li>Search logs selecting and entering a log query. See <a href="https://help.sumologic.com/05Search/Get-Started-with-Search/Search-Basics/About-Search-Basics">About Search Basics</a> for more information.</li>
+
+<li>Search logs selecting and entering a log query. See <a href="/docs/search/Get-Started-with-Search/Search-Basics/About-Search-Basics">About Search Basics</a> for more information.</li>
+
 <li>For <strong>Use values from</strong>, it always uses the Metric value.</li>
+
 <li>For <strong>Success Criteria</strong> for <strong>Avg</strong>, <strong>Min</strong>, <strong>Max</strong>, or <strong>Sum</strong> of the selected signal type (such as latency) which must be <strong>greater than</strong>, <strong>greater than or equal to</strong>, <strong>less than</strong>, or <strong>less than equal to</strong> an amount you enter (positive or negative number).
 </li>
 </ol>
@@ -309,6 +336,9 @@ Follow the instructions below based on the query type:
 
 
 
+
+7.
+23
 
 8. Define your SLO for target amount and duration period to monitor:
     * **Target**. The value in percentage you want to target for the SLO, for example 99 for 99%.
@@ -325,7 +355,8 @@ Follow the instructions below based on the query type:
 
 
 ### Create an SLO Monitor
-
+26
+ create-an-slo-monitor}
 
 Create one or more monitors as needed for your SLO. We recommend creating a separate monitor for SLI and Burn Rate based condition types. You can access SLO monitors through the [SLO Details](https://help.sumologic.com/Beta/SLO_Reliability_Management/Access_and_Create_SLOs#SLO_Preview) or from the Monitors list page.
 
@@ -339,6 +370,8 @@ Monitor notifications may auto-resolve. See [Auto-resolving Notifications](https
 
 You have two options to create an SLO Monitor:
 
+
+
 * Select **Save and Create Monitor** when creating an SLO. \
 
 27
@@ -347,7 +380,10 @@ You have two options to create an SLO Monitor:
 
 28
 
+
 When you click **Save and Create Monitor**, a New Monitor dialog loads:
+
+
 
 1. For the **Monitor Type**, select **SLO**. \
 When creating from the **Monitors** tab, select an SLO from the drop down menu. A preview of the SLO loads on the page. \
@@ -385,67 +421,101 @@ For example, to set up a Slack notification, select **Slack** from the drop down
 
 #### Auto-resolving Notifications
 35
+ auto-resolving-notifications}
 
 SLO Monitors in a triggered state can autoresolve. See the following table for details.
 
 
 <table>
   <tr>
-   <td>EvaluationType</td>
-   <td>ComplianceType</td>
-   <td>MonitorConditionType</td>
-   <td>Auto-resolves</td>
+   <td>EvaluationType
+   </td>
+   <td>ComplianceType
+   </td>
+   <td>MonitorConditionType
+   </td>
+   <td>Auto-resolves
+   </td>
   </tr>
   <tr>
-   <td>Window</td>
-   <td>Calendar</td>
-   <td>SLITrigger</td>
-   <td>No since SLI never recovers. New alert is created for each compliance period. Monitor status is based on latest compliance period’s alert status.</td>
+   <td>Window
+   </td>
+   <td>Calendar
+   </td>
+   <td>SLITrigger
+   </td>
+   <td>No since SLI never recovers. New alert is created for each compliance period. Monitor status is based on latest compliance period’s alert status
+   </td>
   </tr>
   <tr>
-   <td>Window</td>
-   <td>Calendar</td>
-   <td>ErrorBudgetTrigger</td>
-   <td>Yes, if the error budget consumed is less than the alert threshold for a complete detection window. Similar to log monitor recovery.</td>
+   <td>Window
+   </td>
+   <td>Calendar
+   </td>
+   <td>ErrorBudgetTrigger
+   </td>
+   <td>Yes, if the error budget consumed is less than the alert threshold for a complete detection window. Similar to log monitor recovery.
+   </td>
   </tr>
   <tr>
-   <td>Window</td>
-   <td>Rolling</td>
-   <td>SLITrigger</td>
+   <td>Window
+   </td>
+   <td>Rolling
+   </td>
+   <td>SLITrigger
+   </td>
    <td>Same as “Window-Calendar”. Separate alert for each compliance period.
    </td>
   </tr>
   <tr>
-   <td>Window</td>
-   <td>Rolling</td>
-   <td>ErrorBudgetTrigger</td>
-   <td>Same as “Window-Calendar”.</td>
-  </tr>
-  <tr>
-   <td>Request</td>
-   <td>Calendar</td>
-   <td>SLITrigger</td>
-   <td>Yes, when SLI value goes above alert threshold. A new alert is created for each compliance period. Monitor status is based on the latest compliance period’s alert status.</td>
-  </tr>
-  <tr>
-   <td>Request</td>
-   <td>Calendar</td>
+   <td>Window
+   </td>
+   <td>Rolling
+   </td>
    <td>ErrorBudgetTrigger
    </td>
-   <td>Same as “Window-Calendar”.</td>
+   <td>Same as “Window-Calendar”.
+   </td>
   </tr>
   <tr>
-   <td>Request</td>
-   <td>Rolling</td>
-   <td>SLITrigger</td>
+   <td>Request
+   </td>
+   <td>Calendar
+   </td>
+   <td>SLITrigger
+   </td>
+   <td>Yes, when SLI value goes above alert threshold. A new alert is created for each compliance period. Monitor status is based on the latest compliance period’s alert status.
+   </td>
+  </tr>
+  <tr>
+   <td>Request
+   </td>
+   <td>Calendar
+   </td>
+   <td>ErrorBudgetTrigger
+   </td>
+   <td>Same as “Window-Calendar”.
+   </td>
+  </tr>
+  <tr>
+   <td>Request
+   </td>
+   <td>Rolling
+   </td>
+   <td>SLITrigger
+   </td>
    <td>Same as “Request-Calendar”. Separate alert for each compliance period.
    </td>
   </tr>
   <tr>
-   <td>Request</td>
-   <td>Rolling</td>
-   <td>ErrorBudgetTrigger</td>
-   <td>Same as “Window-Calendar”.</td>
+   <td>Request
+   </td>
+   <td>Rolling
+   </td>
+   <td>ErrorBudgetTrigger
+   </td>
+   <td>Same as “Window-Calendar”.
+   </td>
   </tr>
 </table>
 
@@ -453,6 +523,8 @@ SLO Monitors in a triggered state can autoresolve. See the following table for d
 
 #### Notification example
 36
+ notification-example}
+
 When a notification is sent, it includes information from the alert and a link to load the dashboard. The following is an example email notification. See [SLO Dashboards and Notifications](https://help.sumologic.com/Beta/SLO_Reliability_Management/SLO_Dashboards_and_Notifications) for information.
 
 
@@ -462,9 +534,12 @@ When a notification is sent, it includes information from the alert and a link t
 
 ### Import an SLO
 
-To transfer data immediately and create an SLO using an import, you should first export JSON content to use that formatting. The Sumo Logic JSON format may change without notice. See [Export and Import Content in the Library](https://help.sumologic.com/01Start-Here/Library/Export-and-Import-Content-in-the-Library) for complete details.
+To transfer data immediately and create an SLO using an import, you should first export JSON content to use that formatting. The Sumo Logic JSON format may change without notice. See [Export and Import Content in the Library](/docs/get-started/library/index.md) for complete details.
 
 To import an SLO:
+
+
+
 1. Click **Manage Data**, then **Monitoring**. Select the SLO tab if not loaded.
 2. Click **Add** then **Import…**
 3. Enter a Name for the SLO.
@@ -494,6 +569,8 @@ Each dashboard includes the following:
 
 42
 
+
+
 <table>
   <tr>
    <td>A
@@ -506,9 +583,13 @@ Each dashboard includes the following:
    </td>
    <td>SLI information including:
 <ul>
+
 <li><strong>Signal Type</strong>: Latency, Error, Availability, Throughput, Other</li>
+
 <li><strong>Evaluation Type</strong>: Windows-based, Request-based</li>
+
 <li><strong>Timezone</strong>: GMT timezone</li>
+
 <li><strong>Created</strong> and <strong>Modified</strong> timestamp and name of the user
 </li>
 </ul>
@@ -521,8 +602,11 @@ Each dashboard includes the following:
 <ul>
 
 <li><strong>Current SLI</strong>: Calculated currently tracked SLI using the configured SLI, SLO, and queries</li>
+
 <li><strong>Target</strong>: Configured SLO target</li>
+
 <li><strong>Error Budget Remaining</strong>: The calculated remaining budget from the configured maximum</li>
+
 <li><strong>Compliance</strong>: The configured compliance as Rolling or Calender and selected window
 </li>
 </ul>
@@ -566,6 +650,10 @@ If the SLO needs revisions or review, click the **Go to list page **option to op
 When you receive a notification from SLO, the message includes an option to **View SLO Dashboard**. You can receive these notifications to email, Slack channel, and other options available when configuring the monitor.
 
 
+
+47
+
+
 To review data for this alert in Sumo, select the View SLO Dashboard option. The dashboard loads with that time period in view with vital information to begin investigating the service. For example, selecting the option for this error opens the following board. Here we can review the current SLI and target, the remaining error budget, compliance settings, and review trending issues caught by the SLO.
 
 
@@ -593,9 +681,11 @@ _view=sumologic_slo_output sloId = "000000000000008A"
 
 These log messages will be delayed by 1 hour as the system ensures consistency to account for ingest delay of source telemetry.
 
-#### Use Cases
+**Use Case Recipes**
 
 1. A developer responsible for a microservice, may want to create dashboard panels that depict the trend of SLI and error budget in a proprietary microservice dashboard.
+
+[1]
 The following query computes hourly SLI and error budget trend for a windows-based SLO
 
 ```sql
@@ -621,7 +711,7 @@ This query replicates the following panel ( - trend forecast):
 
 It is recommended to “change axis” -> set “maximum value” as 100 and “minimum value” as whatever lowest value you want to track it up to, under visualization settings under line chart.
 
-2. The following query computes hourly SLI and error budget trend for a request based SLO
+**[2] The following query computes hourly SLI and error budget trend for a request based SLO
 
 ```sql
 _view=sumologic_slo_output sloId="<your SLO ID>"
@@ -644,7 +734,8 @@ This query replicates the following panel ( - trend forecast):
 
 It is recommended to “change axis” -> set “maximum value” as 100 and “minimum value” as whatever lowest value you want to track it up to, under visualization settings under line chart.
 
-[3] The following query computes SLI, Error Budget Remaining and Error Budget remaining (percentage/request count) for an SLO ([Sample query](https://us1data.long.sumologic.net/ui/#/search/create?id=qDxHREW0ZZNTao46pWD5hpm5SProwXtDTtowg5th))
+**[3]
+The following query computes SLI, Error Budget Remaining and Error Budget remaining (percentage/request count) for an SLO ([Sample query](https://us1data.long.sumologic.net/ui/#/search/create?id=qDxHREW0ZZNTao46pWD5hpm5SProwXtDTtowg5th))
 
 ```sql
 _view=sumologic_slo_output sloId="<Your SLO ID>"
@@ -663,7 +754,7 @@ This query replicates the following panels:
 51
 
 
-**[4] The following query computes event history for an SLO:
+**[4] The following query computes event history for an SLO:**
 
 ```sql
 _view=sumologic_slo_output sloId="<your SLO ID>"
@@ -681,7 +772,7 @@ This query replicates the following panel:
 
 It is recommended to choose “change properties” -> Stacking -> Normal and “change axis” -> set “maximum value” as 100.
 
-**[5] The following query computes SLI trend over multiple 7d calendar compliance periods
+**[5] The following query computes SLI trend over multiple 7d calendar compliance periods**
 
 ```sql
 // REQUEST-BASED, CALENDAR COMPLIANCE

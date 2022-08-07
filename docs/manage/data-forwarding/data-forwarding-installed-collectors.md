@@ -28,7 +28,7 @@ To set up a data forwarding destination:
 
 1. Choose **Manage Data \> Logs \> Data Forwarding**.
 1. Click **+** to add a new destination.
-1. Select one of these options for **Destination Type**.  
+1. Select one of these options for **Destination Type**. 
 
    * Hitachi
    * Generic REST
@@ -36,7 +36,7 @@ To set up a data forwarding destination:
 
 1. Enter a name to identify the destination.
 1. (Generic REST and Hitachi) **URL**. Enter a URL to access the destination.
-1. (Generic REST and Hitachi) **Object id**. (optional) Enter a path name or other file format and include any of the following variables: 
+1. (Generic REST and Hitachi) **Object id**. (optional) Enter a path name or other file format and include any of the following variables:
 
     * `{day}` Replace with the day of the year in the yyyy-MM-dd format.
     * `{hour}` Replace with hour in day (0-23).
@@ -66,7 +66,7 @@ There are several methods you can use to configure processing rules: 
 * Collector Management API - See [Collector Management API] (../../APIs/Collector-Management-API.md "Collector Management API") for instructions on using the API to configure sources for Data Forwarding.
 * Local Source configuration files -  See [Local File Configuration Management](/docs/send-data/sources/use-json-configure-sources/local-configuration-file-management) for general information on managing sources using local file configuration.
 
-**To configure processing rules for data forwarding using the web
+To configure processing rules for data forwarding using the web
 application**
 
 1. Go to **Manage Data** \> **Collection** \> **Collection**.
@@ -74,18 +74,18 @@ application**
 1. Scroll down to the **Processing Rules** section and click the arrow to expand the section.
 1. Click **Add Rule**.
 1. Enter a name to define the rule.
-1. In the Filter field, enter the regular expression that defines the messages you want to forward. The regular expression must be [RE2 compliant](https://github.com/google/re2/wiki/Syntax). For example, the regular expression `.*ERROR.*` matches all messages that contain ERROR. 
+1. In the Filter field, enter the regular expression that defines the messages you want to forward. The regular expression must be [RE2 compliant](https://github.com/google/re2/wiki/Syntax). For example, the regular expression `.*ERROR.*` matches all messages that contain ERROR.
 
-    For more information about creating processing rules, see [Create a Processing Rule](../collection/processing-rules/create-processing-rule.md).
+    For more information about creating processing rules, see [Create a Processing Rule](/docs/manage/collection/processing-rules/create-processing-rule.md).
 
 1. Select **Forward messages that match** as the rule type. This option is visible only if you have defined at least one data forwarding destination, as described in the previous section. 
 1. Select the Destination from the drop-down menu. If a **Syslog Destination Type** is selected, an option to select **Transparent Forwarding** is provided. Syslog forwarding by default prepends a timestamp and hostname to messages to ensure they comply with RFC 3164. If your syslog messages already comply, you can enable **Transparent Forwarding** to disable the default prepending behavior.    
-    
+
     ![transparent syslog forwarding option.png](/img/data-forwarding/transparent-syslog-forwarding-option.png)
 
 1. Click **Apply**. The new rule is listed along with any other previously defined processing rules.
 1. Click **Add Rule** if you want to add another rule.
-    
+
     ![ProcessingRule.png](/img/data-forwarding/ProcessingRule.png)
 
 1. Click **Save** to save the rules you defined and start forwarding data that matches the rules.

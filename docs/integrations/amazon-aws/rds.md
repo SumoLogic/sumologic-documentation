@@ -7,46 +7,40 @@ description: The Sumo Logic App for Amazon RDS Metrics provides visibility into 
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/amazon-aws/rds.png')} alt="DB icon" width="50"/>
+<img src={useBaseUrl('img/integrations/amazon-aws/rds.png')} alt="Thumbnail icon" width="50"/>
 
 [Amazon Relational Database Service (Amazon RDS)](https://aws.amazon.com/rds/) is optimized to run in the cloud. The RDS Amazon Web Service (AWS) simplifies the setup, operation, and scaling of relational database instances for use in applications throughout your infrastructure.
 
 The Sumo Logic Amazon RDS app dashboards provide visibility into the performance and operations of your Amazon Relational Database Service (RDS). Preconfigured dashboards allow you to monitor critical metrics of your RDS cluster including  CPU, memory, storage, network transmits and receive throughput, read and write operations, database connection count, disk queue depth, and more. Audit activity dashboards help you monitor activities performed on your RDS infrastructure.
 
-
-
-## Collecting Logs and Metrics for the Amazon RDS App
-
-### Log and Metrics Types  
+## Log and Metrics Types  
 
 The Amazon RDS app uses the following logs and metrics:
-
 * [RDS CloudWatch Instance Level Metrics](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-metrics.html#rds-cw-metrics-instance), [RDS CloudWatch Aurora Metrics](https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.AuroraMySQL.Monitoring.Metrics.html), and [Amazon CloudWatch metrics for Performance Insights](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.Cloudwatch.html).
 * [Amazon RDS operations using AWS CloudTrail](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/logging-using-cloudtrail.html)
 
+## Collecting Logs and Metrics for the Amazon RDS App
 
 Sumo Logic supports collecting metrics using two source types
-* Configure an [AWS Kinesis Firehose for Metrics Source](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/AWS_Kinesis_Firehose_for_Metrics_Source) (Recommended); or
-* Configure an [Amazon CloudWatch Source for Metrics](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/Amazon-CloudWatch-Source-for-Metrics)
-
+* Configure an [AWS Kinesis Firehose for Metrics Source](/docs/send-data/Sources/sources-hosted-collectors/Amazon-Web-Services/aws-kinesis-firehose-metrics-source) (Recommended); or
+* Configure an [Amazon CloudWatch Source for Metrics](/docs/send-data/sources/sources-hosted-collectors/amazon-web-services/amazon-cloudwatch-source-metrics)
 
 Namespace for **Amazon RDS** Service is **AWS/RDS**.
-
-* ​​​**Metadata: **Add an **account** field to the source and assign it a value that is a friendly name/alias to your AWS account from which you are collecting metrics. This name will appear in the Sumo Logic Explorer View. Metrics can be queried via the “account field”.
+* ​​​**Metadata:** Add an **account** field to the source and assign it a value that is a friendly name/alias to your AWS account from which you are collecting metrics. This name will appear in the Sumo Logic Explorer View. Metrics can be queried via the “account field”.
 
 
 ### Collect Amazon RDS CloudTrail Logs
 
-1. To your Hosted Collector, add an [AWS CloudTrail Source](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/AWS-CloudTrail-Source).
+1. To your Hosted Collector, add an [AWS CloudTrail Source](/docs/send-data/sources/sources-hosted-collectors/amazon-web-services/aws-cloudtrail-source.md).
    * **Name**. Enter a name to display the new Source.
    * **Description**. Enter an optional description.
    * **S3 Region**. Select the Amazon Region for your **Amazon RDS** S3 bucket.
    * **Bucket Name**. Enter the exact name of your **Amazon RDS** S3 bucket.
-   * **Path Expression**. Enter the string that matches the S3 objects you'd like to collect. You can use a wildcard (*) in this string. (DO NOT use a leading forward slash. See [Amazon Path Expressions](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/Amazon-Path-Expressions)). The S3 bucket name is not part of the path. Don’t include the bucket name when you are setting the Path Expression
+   * **Path Expression**. Enter the string that matches the S3 objects you'd like to collect. You can use a wildcard (*) in this string. (DO NOT use a leading forward slash. See [Amazon Path Expressions](/docs/send-data/Sources/sources-hosted-collectors/Amazon-Web-Services/Amazon-Path-Expressions)). The S3 bucket name is not part of the path. Don’t include the bucket name when you are setting the Path Expression
    * **Source Category**. Enter aws/observability/cloudtrail/logs
    * **Fields**. Add an **account** field and assign it a value that is a friendly name/alias to your AWS account from which you are collecting logs. This name will appear in the Sumo Logic Explorer View. Logs can be queried via the “account field”.
-   * **Access Key ID and Secret Access Key**. Enter your Amazon [Access Key ID and Secret Access Key](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSGettingStartedGuide/AWSCredentials.html). Learn how to use Role-based access to AWS [here](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/AWS_Sources)
-   * **Log File Discovery -> Scan Interval**. Use the default of 5 minutes. Alternately, enter the frequency. Sumo Logic will scan your S3 bucket for new data. Learn how to configure **Log File Discovery** [here](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/AWS_Sources).
+   * **Access Key ID and Secret Access Key**. Enter your Amazon [Access Key ID and Secret Access Key](http://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSGettingStartedGuide/AWSCredentials.html). Learn how to use Role-based access to AWS [here](/docs/send-data/sources/sources-hosted-collectors/amazon-web-services/aws-sources)
+   * **Log File Discovery -> Scan Interval**. Use the default of 5 minutes. Alternately, enter the frequency. Sumo Logic will scan your S3 bucket for new data. Learn how to configure **Log File Discovery** [here](/docs/send-data/sources/sources-hosted-collectors/amazon-web-services/aws-sources).
    * **Enable Timestamp Parsing**. Select the check box.
    * **Time Zone**. Select Ignore time zone from log file and instead use, and select UTC.
    * **Timestamp Format.** Select Automatically detect the format.
@@ -56,25 +50,20 @@ Namespace for **Amazon RDS** Service is **AWS/RDS**.
 
 ### Field in Field Schema
 
-Login to Sumo Logic, go to **Manage Data** > **Logs** > **Fields**. Search for the “**dbidentifier**” field. If not present, create it. Learn how to create and manage fields [here](https://help.sumologic.com/Manage/Fields#manage-fields).
+Login to Sumo Logic, go to **Manage Data** > **Logs** > **Fields**. Search for the `dbidentifier` field. If not present, create it. Learn how to create and manage fields [here](/docs/manage/fields.md#manage-fields).
 
 
 ### Field Extraction Rule(s)
 
-Create a Field Extraction Rule for CloudTrail Logs. Learn how to create a Field Extraction Rule [here](https://help.sumologic.com/Manage/Field-Extractions/Create-a-Field-Extraction-Rule).
+Create a Field Extraction Rule for CloudTrail Logs. Learn how to create a Field Extraction Rule [here](/docs/manage/field-extractions/create-field-extraction-rule.md).
 
-
-```
+```sql
 Rule Name: AwsObservabilityRdsCloudTrailLogsFER
 Applied at: Ingest Time
 Scope (Specific Data): account=* eventname eventsource "rds.amazonaws.com"
 ```
 
-
-**Parse Expression**:
-
-
-```sql
+```sql title="Parse Expression"
 | json "eventSource", "awsRegion", "requestParameters", "responseElements", "recipientAccountId" as eventSource, region, requestParameters, responseElements, accountid nodrop
 | where eventSource = "rds.amazonaws.com"
 | "aws/rds" as namespace
@@ -88,24 +77,19 @@ Scope (Specific Data): account=* eventname eventsource "rds.amazonaws.com"
 | fields region, namespace, dBInstanceIdentifier, dBClusterIdentifier, dbidentifier, accountid
 ```
 
-
-
 ### Centralized AWS CloudTrail Log Collection
 
 In case you have a centralized collection of cloudtrail logs and are ingesting them from all accounts into a single Sumo Logic cloudtrail log source, create the following Field Extraction Rule to map a proper AWS account(s) friendly name/alias. Create it if not already present / update it as required.
 
-
-```
+```sql
 Rule Name: AWS Accounts
 Applied at: Ingest Time
 Scope (Specific Data): _sourceCategory=aws/observability/cloudtrail/logs
 ```
 
-
 **Parse Expression**:
 
 Enter a parse expression to create an “account” field that maps to the alias you set for each sub account. For example, if you used the `“dev”` alias for an AWS account with ID `"528560886094"` and the `“prod”` alias for an AWS account with ID `"567680881046"`, your parse expression would look like:
-
 
 ```sql
 | json "recipientAccountId"
@@ -116,13 +100,11 @@ Enter a parse expression to create an “account” field that maps to the alias
 | fields account
 ```
 
-
-
 ### Metric Rules
 
-Create the following two Metric Rules for the aws/rds namespace if not already created. Learn how to create a Metric Rule [here](https://help.sumologic.com/Metrics/Metric_Rules_Editor/Create_Metric_Rules).
+Create the following two Metric Rules for the aws/rds namespace if not already created. Learn how to create a Metric Rule [here](/docs/metrics/metric-rules-editor/create-metric-rules.md).
 
-```bash title="Rule 1"
+```sql title="Rule 1"
 Rule name: AwsObservabilityRDSClusterMetricsEntityRule
 Metric match expression: Namespace=AWS/RDS DBClusterIdentifier=*
 Variable name: dbidentifier
@@ -130,8 +112,7 @@ Tag sequence: $DBClusterIdentifier._1
 Save it
 ```
 
-
-```bash title="Rule 2"
+```sql title="Rule 2"
 Rule name: AwsObservabilityRDSInstanceMetricsEntityRule
 Metric match expression: Namespace=AWS/RDS DBInstanceIdentifier=*
 Variable name: dbidentifier
@@ -140,9 +121,9 @@ Save it
 ```
 
 
-
-
 ### Sample Log Message
+
+<details><summary>Click to expand</summary>
 
 ```json title="CloudTrail"
 {
@@ -251,12 +232,14 @@ Save it
 }
 ```
 
-
+</details>
 
 ### Sample Queries
 
 ```sql title="Average Database Connections in Use (Metric based)"
-Namespace=aws/rds metric=DatabaseConnections statistic=average account=* region=* dbidentifier=* | avg by account, region, dbidentifier
+Namespace=aws/rds metric=DatabaseConnections \
+statistic=average account=* region=* dbidentifier=* \
+| avg by account, region, dbidentifier
 ```
 
 ```sql title="Top 10 Error Codes (CloudTrail Log based)"
@@ -276,10 +259,9 @@ Namespace=aws/rds metric=DatabaseConnections statistic=average account=* region=
 ```
 
 
-
 ## Installing the RDS App  
 
-Now that you have set up a collection for **Amazon RDS**, install the Sumo Logic App to use the pre-configured [dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/01Amazon_and_AWS/Amazon_SQS/Install-the-Amazon-SQS-App-and-view-the-Dashboards#Dashboards) that provide visibility into your environment for real-time analysis of overall usage.
+Now that you have set up a collection for **Amazon RDS**, install the Sumo Logic App to use the pre-configured [dashboards](/docs/integrations/amazon-aws/sqs#Dashboards) that provide visibility into your environment for real-time analysis of overall usage.
 
 To install the app:
 
@@ -300,7 +282,7 @@ Panels will start to fill automatically. It's important to note that each panel 
 
 The Sumo Logic Amazon RDS app dashboards provide visibility into the performance and operations of your Amazon Relational Database Service (RDS). Preconfigured dashboards allow you to monitor critical metrics of your RDS cluster including  CPU, memory, storage, the network transmits and receive throughput, read and write operations, database connection count, disk queue depth, and more. Audit activity dashboards help you monitor activities performed on your RDS infrastructure.
 
-We highly recommend you view these dashboards in the [Explore View](https://help.sumologic.com/Observability_Solution/AWS_Observability_Solution/01_Deploy_and_Use_AWS_Observability/09_View_AWS_Observability_Solution_Dashboards) of the AWS Observability solution.
+We highly recommend you view these dashboards in the [Explore View](/docs/observability/aws-observability-solution/deploy-use-aws-observability/view-aws-observability-solution-dashboards.md) of the AWS Observability solution.
 
 
 ### Overview

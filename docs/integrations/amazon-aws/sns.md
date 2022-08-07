@@ -7,7 +7,7 @@ description: The Sumo Logic App for Amazon SNS is a unified logs and metrics (UL
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/amazon-aws/sns.png')} alt="DB icon" width="50"/>
+<img src={useBaseUrl('img/integrations/amazon-aws/sns.png')} alt="Thumbnail icon" width="50"/>
 
 Amazon Simple Notification Service (SNS) is a pub/sub messaging and mobile notifications service for coordinating the delivery of messages to subscribing endpoints and clients.
 
@@ -79,8 +79,8 @@ account={{account}} region={{region}} namespace={{namespace}} TopicName={{topicn
 
 ### Collecting Metrics for Amazon SNS  
 
-1. Configure a [Hosted Collector](https://help.sumologic.com/03Send-Data/Hosted-Collectors/Configure-a-Hosted-Collector).
-2. Configure an [Amazon CloudWatch Source for Metrics](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/Amazon-CloudWatch-Source-for-Metrics) or [AWS Kinesis Firehose for Metrics Source](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/AWS_Kinesis_Firehose_for_Metrics_Source) (Recommended).
+1. Configure a [Hosted Collector](/docs/send-data/configure-hosted-collector).
+2. Configure an [Amazon CloudWatch Source for Metrics](/docs/send-data/sources/sources-hosted-collectors/amazon-web-services/amazon-cloudwatch-source-metrics) or [AWS Kinesis Firehose for Metrics Source](/docs/send-data/Sources/sources-hosted-collectors/Amazon-Web-Services/aws-kinesis-firehose-metrics-source) (Recommended).
     1. **Metadata**: Add an **account** field to the source and assign it a value which is a friendly name / alias to your AWS account from which you are collecting metrics. This name will appear in the Sumo Logic Explorer View. Metrics can be queried via the “account field”.
 
 3. Click **Save**.
@@ -88,13 +88,13 @@ account={{account}} region={{region}} namespace={{namespace}} TopicName={{topicn
 
 ### Collecting Amazon SNS Events using CloudTrail
 
-1. To your Hosted Collector, add an [AWS CloudTrail Source](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/AWS-CloudTrail-Source).
+1. To your Hosted Collector, add an [AWS CloudTrail Source](/docs/send-data/sources/sources-hosted-collectors/amazon-web-services/aws-cloudtrail-source.md).
     * **Name**. Enter a name to display for the new Source.
     * **Description**. Enter an optional description.
     * **S3 Region**. Select the Amazon Region for your SNS S3 bucket.
     * **Bucket Name**. Enter the exact name of your SNS S3 bucket.
     * **Path Expression**. Enter the string that matches the S3 objects you'd like to collect. You can use a wildcard (*) in this string.
-      * DO NOT use a [leading forward slash](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Amazon-Web-Services/Amazon-Path-Expressions).
+      * DO NOT use a [leading forward slash](/docs/send-data/Sources/sources-hosted-collectors/Amazon-Web-Services/Amazon-Path-Expressions).
       * The S3 bucket name is not part of the path. Don’t include the bucket name when you are setting the Path Expression.
     * **Source Category**. Enter a source category. For example, SNS_event.
     * **Access Key ID and Secret Access Key**. Enter your Amazon [Access Key ID and Secret Access Key](http://docs.aws.amazon.com/general/latest/gr/managing-aws-access-keys.html).
@@ -108,15 +108,14 @@ account={{account}} region={{region}} namespace={{namespace}} TopicName={{topicn
 
 ### Field in Field Schema
 
-Login to Sumo Logic,  goto Manage Data > Logs > Fields. Search for the `"topicname"` field. If not present, create it. Learn how to create and manage fields [here](https://help.sumologic.com/Manage/Fields#manage-fields).
+Login to Sumo Logic,  goto Manage Data > Logs > Fields. Search for the `"topicname"` field. If not present, create it. Learn how to create and manage fields [here](/docs/manage/fields.md#manage-fields).
 
 
 ### Field Extraction Rule(s)
 
-Create Field Extraction Rule for CloudTrail Logs. Learn how to create Field Extraction Rule [here](https://help.sumologic.com/Manage/Field-Extractions/Create-a-Field-Extraction-Rule).
+Create Field Extraction Rule for CloudTrail Logs. Learn how to create Field Extraction Rule [here](/docs/manage/field-extractions/create-field-extraction-rule.md).
 
-
-```
+```sql
 Rule Name: AwsObservabilitySNSCloudTrailLogsFER
 Applied at: Ingest Time
 Scope (Specific Data): account=* eventname eventsource \"sns.amazonaws.com\"
@@ -147,7 +146,7 @@ Scope (Specific Data): account=* eventname eventsource \"sns.amazonaws.com\"
 
 ## Installing the Amazon SNS App
 
-Now that you have set up collection for Amazon SNS, install the Sumo Logic App to use the pre-configured searches and [dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/01Amazon_and_AWS/Amazon_SNS/Install-the-Amazon-SNS-App-and-view-the-Dashboards#Dashboards) that provide visibility into your environment for real-time analysis of overall usage.
+Now that you have set up collection for Amazon SNS, install the Sumo Logic App to use the pre-configured searches and [dashboards](#viewing-dashboards) that provide visibility into your environment for real-time analysis of overall usage.
 
 To install the app:
 
@@ -163,7 +162,7 @@ Locate and install the app you need from the **App Catalog**. If you want to see
     * **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
 3. Click **Add to Library**.
 
-Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization. See [Welcome to the New Library](https://help.sumologic.com/01Start-Here/Welcome-to-the-New-Library) for information on working with the library in the new UI.
+Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization. See [Welcome to the New Library](/docs/get-started/library/index.md) for information on working with the library in the new UI.
 
 Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
 

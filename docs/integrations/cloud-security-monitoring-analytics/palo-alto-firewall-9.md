@@ -7,36 +7,34 @@ description: Introduction to Palo Alto Firewall - Cloud Security Monitoring and 
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
+<img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/SecMon_PAN.png')} alt="Thumbnail icon" width="70"/>
+
 The Palo Alto Firewall app helps you to analyze traffic and gain a better understanding of your Palo Alto Networks environments. Dig deep into the data, broken down by threat detection indicators, malware type, and so in order to break out data for higher granularity.
 
+## Prerequisites
 
-## Collecting Logs
+You must have Palo Alto Networks Web administrative user permissions to successfully complete these tasks.
 
-This section provides instructions for configuring log collection for the Sumo Logic App for Palo Alto Firewall 9, as well as sample log messages and a query example from an app dashboard.
+## Collecting Logs for Palo Alto Firewall 9
 
-
-### Collection process overview
-
-Configuring log collection for Palo Alto Firewall 9 includes the following tasks:
+This section provides instructions for configuring log collection for the Sumo Logic App for Palo Alto Firewall 9, as well as sample log messages and a query example from an app dashboard. This includes the following tasks:
 
 1. Create a hosted collector with a Cloud Syslog source
 2. Define the destination for the logs.
 3. Configure syslog forwarding.
 4. Verify logs in Palo Alto Networks.
 
-You must have Palo Alto Networks Web administrative user permissions to successfully complete these tasks.
-
 
 ### Step 1. Create a hosted collector and Cloud Syslog source
 
 In this step, you configure a hosted collector with a Cloud Syslog source that will act as Syslog server to receive logs and events from Palo Alto Networks devices.
 
-**To configure a hosted collector with a Cloud Syslog source, do the following:**
+To configure a hosted collector with a Cloud Syslog source, do the following:
 
-1. Log in to Sumo Logic and [create a Hosted Collector](https://help.sumologic.com/03Send-Data/Hosted-Collectors#Create_a_Hosted_Collector).
-2. Create a [Cloud Syslog Source](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/Cloud-Syslog-Source) on the hosted collector, specifying the following:
-    1. Enter a Source Name.
-    2. Provide a Source Category: **NW/PAN/V9**
+1. Log in to Sumo Logic and [create a Hosted Collector](/docs/send-data/Hosted-Collectors#Create_a_Hosted_Collector).
+2. Create a [Cloud Syslog Source](/docs/send-data/Sources/sources-hosted-collectors/Cloud-Syslog-Source) on the hosted collector, specifying the following:
+   * Enter a Source Name.
+   * Provide a Source Category: **NW/PAN/V9**
 3. Click **Save**.
 4. Copy the Token, host URL, and TCP TLS Port to a safe place. You will need this information in the tasks that follow.
 
@@ -45,33 +43,34 @@ In this step, you configure a hosted collector with a Cloud Syslog source that w
 
 In this step, you create a server profile where you can define the log destination. This will be the hostname, port, and protocol (TLS) of the Sumo Logic Cloud Syslog source.
 
-**To create a server profile specifying  the log destination, do the following:**
+To create a server profile specifying  the log destination, do the following:
 
 1. Login to the Palo Alto Networks Web interface as an administrative user.
 2. Select **Device tab > Server Profiles > Syslog**.
 3. Click **Add** at the bottom of the screen and provide endpoint details and a profile name, such as Sumo_Logs_Profile01.
 4. In the **Syslog Server Profile** window, select the **Servers** tab and click **Add**.
 5. In the **Servers** window, specify the following information:
-    1. **Name**: Sumo_CloudSyslog_EndPoint01
-    2. **Syslog Server**: URL from [Step 1](https://help.sumologic.com/07Sumo-Logic-Apps/22Security_and_Threat_Detection/Palo_Alto_Networks_9/Collect_logs_for_the_Palo_Alto_Networks_9_App#Step_1._Create_a_hosted_collector_and_Cloud_Syslog_source)
-    3. **Transport**: SSL
-    4. **Port**: Port from [Step 1](https://help.sumologic.com/07Sumo-Logic-Apps/22Security_and_Threat_Detection/Palo_Alto_Networks_9/Collect_logs_for_the_Palo_Alto_Networks_9_App#Step_1._Create_a_hosted_collector_and_Cloud_Syslog_source)
-    5. **Format**: IETF
-    6. **Facility**: LOG_USER
+   * **Name**: Sumo_CloudSyslog_EndPoint01
+   * **Syslog Server**: URL from [Step 1](#Step_1._Create_a_hosted_collector_and_Cloud_Syslog_source)
+   * **Transport**: SSL
+   * **Port**: Port from [Step 1](#Step_1._Create_a_hosted_collector_and_Cloud_Syslog_source)
+   * **Format**: IETF
+   * **Facility**: LOG_USER
 6. In the **Syslog Server Profile** window, select the **Custom Log Format** tab, and use the following custom format for the following log type:
-    7. [Traffic](https://docs.paloaltonetworks.com/pan-os/9-0/pan-os-admin/monitoring/use-syslog-for-monitoring/syslog-field-descriptions/traffic-log-fields.html)
+   * [Traffic](https://docs.paloaltonetworks.com/pan-os/9-0/pan-os-admin/monitoring/use-syslog-for-monitoring/syslog-field-descriptions/traffic-log-fields.html)
 
-```,$receive_time,$serial,$type,$subtype,,$time_generated,$src,$dst,$natsrc,$natdst,$rule,$srcuser,$dstuser,$app,$vsys,$from,$to,$inbound_if,$outbound_if,$logset,,$sessionid,$repeatcnt,$sport,$dport,$natsport,$natdport,$flags,$proto,$action,$bytes,$bytes_sent,$bytes_received,$packets,$start,$sec,$category,,$seqno,$actionflags,$srcloc,$dstloc,,$pkts_sent,$pkts_received,$session_end_reason,$dg_hier_level_1,$dg_hier_level_2,$dg_hier_level_3,$dg_hier_level_4,$vsys_name,$device_name,$action_source,$src_uuid,$dst_uuid,$tunnelid/$imsi,$monitortag/$imei,$parent_session_id,$parent_start_time,$tunnel,$assoc_id,$chunks,$chunks_sent,$chunks_received,$rule_uuid,$http2_connection
+```
+,$receive_time,$serial,$type,$subtype,,$time_generated,$src,$dst,$natsrc,$natdst,$rule,$srcuser,$dstuser,$app,$vsys,$from,$to,$inbound_if,$outbound_if,$logset,,$sessionid,$repeatcnt,$sport,$dport,$natsport,$natdport,$flags,$proto,$action,$bytes,$bytes_sent,$bytes_received,$packets,$start,$sec,$category,,$seqno,$actionflags,$srcloc,$dstloc,,$pkts_sent,$pkts_received,$session_end_reason,$dg_hier_level_1,$dg_hier_level_2,$dg_hier_level_3,$dg_hier_level_4,$vsys_name,$device_name,$action_source,$src_uuid,$dst_uuid,$tunnelid/$imsi,$monitortag/$imei,$parent_session_id,$parent_start_time,$tunnel,$assoc_id,$chunks,$chunks_sent,$chunks_received,$rule_uuid,$http2_connection
 ```
 
-Token from [Step 1](https://help.sumologic.com/07Sumo-Logic-Apps/Cloud_Security_Monitoring_and_Analytics/Palo_Alto_Firewall_-_Cloud_Security_Monitoring_and_Analytics/07Sumo-Logic-Apps/Cloud_Security_Monitoring_and_Analytics/Palo_Alto_Firewall_-_Cloud_Security_Monitoring_and_Analytics/Collect_Logs_for_the_Palo_Alto_Firewall_-_Cloud_Security_Monitoring_and_Analytics#Step_1._Create_a_hosted_collector_and_Cloud_Syslog_source)
+Token from [Step 1](#Step_1._Create_a_hosted_collector_and_Cloud_Syslog_source)
 
 8. [Threat](https://docs.paloaltonetworks.com/pan-os/9-0/pan-os-admin/monitoring/use-syslog-for-monitoring/syslog-field-descriptions/threat-log-fields)
 
 ```
 ,$receive_time,$serial,$type,$subtype,,$time_generated,$src,$dst,$natsrc,$natdst,$rule,$srcuser,$dstuser,$app,$vsys,$from,$to,$inbound_if,$outbound_if,$logset,,$sessionid,$repeatcnt,$sport,$dport,$natsport,$natdport,$flags,$proto,$action,$misc,$threatid,$category,$severity,$direction,$seqno,$actionflags,$srcloc,$dstloc,,$contenttype,$pcap_id,$filedigest,$cloud,$url_idx,$user_agent,$filetype,$xff,$referer,$sender,$subject,$recipient,$reportid,$dg_hier_level_1,$dg_hier_level_2,$dg_hier_level_3,$dg_hier_level_4,$vsys_name,$device_name,,$src_uuid,$dst_uuid,$http_method,$tunnel_id/$imsi,$monitortag/$imei,$parent_session_id,$parent_start_time,$tunnel,$thr_category,$contentver,,$assoc_id,$ppid,$http_headers,$url_category_list,$rule_uuid,$http2_connection
 ```
-Token from [Step 1](https://help.sumologic.com/07Sumo-Logic-Apps/Cloud_Security_Monitoring_and_Analytics/Palo_Alto_Firewall_-_Cloud_Security_Monitoring_and_Analytics/07Sumo-Logic-Apps/Cloud_Security_Monitoring_and_Analytics/Palo_Alto_Firewall_-_Cloud_Security_Monitoring_and_Analytics/Collect_Logs_for_the_Palo_Alto_Firewall_-_Cloud_Security_Monitoring_and_Analytics#Step_1._Create_a_hosted_collector_and_Cloud_Syslog_source)
+Token from [Step 1](#Step_1._Create_a_hosted_collector_and_Cloud_Syslog_source)
 7. Click OK.
 8. Commit the changes.
 
@@ -85,16 +84,16 @@ To configure syslog forwarding for Traffic logs, follow the steps to [Configure 
 
 In this step, you view logs using the Palo Alto Network Web interface to confirm the logs are generated on the firewall.
 
-**To verify the logs in Palo Alto Networks, do the following:**
+**To verify the logs in Palo Alto Networks, do the following:
 
 1. In the Palo Alto Networks UI, select **Monitor** > **Logs**.
 2. Once the setup is done, log in to Sumo Logic.
-3. To validate that the logs are flowing to Sumo Logic, run a query using the source category you configured during [Step 1](https://help.sumologic.com/07Sumo-Logic-Apps/22Security_and_Threat_Detection/Palo_Alto_Networks_9/Collect_logs_for_the_Palo_Alto_Networks_9_App#Step_1._Create_a_hosted_collector_and_Cloud_Syslog_source), such as:
-```
-_sourceCategory = **NW/PAN/V9**
-```
+3. To validate that the logs are flowing to Sumo Logic, run a query using the source category you configured during [Step 1](#Step_1._Create_a_hosted_collector_and_Cloud_Syslog_source), such as:
+  ```
+  _sourceCategory = **NW/PAN/V9**
+  ```
 
-## Sample logs
+### Sample logs
 
 The app uses [Traffic](https://docs.paloaltonetworks.com/pan-os/9-0/pan-os-admin/monitoring/use-syslog-for-monitoring/syslog-field-descriptions/traffic-log-fields.html) and [Threat](https://docs.paloaltonetworks.com/pan-os/9-0/pan-os-admin/monitoring/use-syslog-for-monitoring/syslog-field-descriptions/threat-log-fields) logs.
 
@@ -108,7 +107,7 @@ Oct 09 10:19:15 SumPunFw07.sumotest.com 1,2019/10/09 10:19:15,001234567890002,TR
 ```
 
 
-## Sample Query
+### Sample Query
 
 This example query is from the **Top 20 Hosts with Outbound Traffic** panel of the **Outbound Traffic and Potential Exfiltration Activity** dashboard.
 
@@ -127,7 +126,7 @@ _sourceCategory = Labs/PaloAltoNetworksv10 TRAFFIC
 
 
 
-## Install the Sumo Logic App
+## Installing the PAN Firewall 9 Security App
 
 Now that you have set up collection for the Palo Alto Networks Firewall 9 app, you can install the app and use the preconfigured searches and dashboards that provide insight into your data.
 
@@ -143,11 +142,11 @@ Locate and install the app you need from the **App Catalog**. If you want to see
 Version selection is applicable only to a few apps currently. For more information, see the Install the Apps from the Library.
 
 1. To install the app, complete the following fields.
-    1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
-    2. **Data Source.** Select either of these options for the data source. 
-        * Choose **Source Category**, and select a source category from the list. 
-        * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). 
-    3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
+   * **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
+   * **Data Source.** Select either of these options for the data source. 
+      * Choose **Source Category**, and select a source category from the list. 
+      * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). 
+   * **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
 2. Click **Add to Library**.
 
 Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization.
@@ -156,7 +155,6 @@ Panels will start to fill automatically. It's important to note that each panel 
 
 
 ## Viewing Palo Alto 9 Security Dashboards
-
 
 ### Security Analytics - Communication via Critical Ports
 
@@ -173,7 +171,7 @@ Additionally at the top of the dashboard are two table containing analytics on k
 
 **Palo Alto 9 - Security Analytics - Outbound Traffic and Potential Exfiltration Activity** dashboard provides outbound traffic analysis including DNS activity for potential indicators of exfiltration activity.
 
-**Use case: **You can use this dashboard to review volumes of outbound traffic by host, by application, and timeframe comparisons with last week. Increased and unaccounted for increases in traffic may be the result of unauthorized exfiltration of information. Additional analysis is provided for DNS traffic alone as large amounts of DNS traffic are not part of normal operations.
+**Use case:** You can use this dashboard to review volumes of outbound traffic by host, by application, and timeframe comparisons with last week. Increased and unaccounted for increases in traffic may be the result of unauthorized exfiltration of information. Additional analysis is provided for DNS traffic alone as large amounts of DNS traffic are not part of normal operations.
 
 <img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/Palo-Alto-Security-Analytics-Outbound-Traffic-and-Potential-Exfiltration-Activity.png')} alt="Palo Alto 9 Security Dashboards" />
 

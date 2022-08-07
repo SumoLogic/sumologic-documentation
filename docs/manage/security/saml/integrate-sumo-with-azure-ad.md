@@ -12,7 +12,7 @@ id: integrate-azure-ad
 | Credits      | Trial, Essentials, Enterprise Operations, Enterprise Security, Enterprise Suite |
 
 Organizations with Enterprise accounts can provision Security Assertion Markup Language (SAML) 2.0 to enable Single Sign-On (SSO) for user
-access to Sumo Logic. This page has instructions for integrating Sumo with Azure AD.
+access to Sumo Logic. This section has instructions for integrating Sumo with Azure AD.
 
 ## Configure Sumo as an Enterprise App in Azure AD
 

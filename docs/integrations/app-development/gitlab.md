@@ -7,12 +7,12 @@ description: Provides you a complete overview of your GitLab’s builds, deploym
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/app-development/gitlab.png')} alt="DB icon" width="50"/>
+<img src={useBaseUrl('img/integrations/app-development/gitlab.png')} alt="Thumbnail icon" width="50"/>
 
 The Sumo Logic App for GitLab provides you a complete overview of your GitLab’s builds, deployments, pipelines, issues, merge requests, and commits. The integration listens for GitLab events and uses the event data to populate the pre-configured Dashboards.
 
 
-#### Event Types
+## Event Types
 
 The Sumo Logic App for GitLab ingests GitLab events using a webhook. Sumo Logic ingests all events, but only uses the following events in the Dashboards:
 
@@ -25,10 +25,10 @@ The Sumo Logic App for GitLab ingests GitLab events using a webhook. Sumo Logic 
 
 For information on GitLab events, refer to [GitLab documentation](https://docs.gitlab.com/ee/user/project/integrations/webhooks.html).
 
-For troubleshooting, see the [GitLab Troubleshooting](https://help.sumologic.com/07Sumo-Logic-Apps/08App_Development/GitLab/Install_the_GitLab_App_and_View_Dashboards#Troubleshooting) section.
+For troubleshooting, see the [GitLab Troubleshooting](#Troubleshooting) section.
 
 
-## Collect Logs for GitLab App
+## Collecting Logs for theGitLab App
 
 This guide provides instructions for collecting logs for the Sumo Logic App for GitLab.
 
@@ -40,13 +40,12 @@ Configuring log collection consists of the following tasks:
 For information on GitLab webhooks, refer to [GitLab documentation](https://docs.gitlab.com/ee/user/project/integrations/webhooks.html).
 
 
-#### Step 1: Configure Hosted Collector to Receive Webhooks
+### Step 1: Configure Hosted Collector to Receive Webhooks
 
 Create a host collector to receive Webhooks from GitLab and set up an HTTP source on it.
 
-
-1. Configure a [Hosted Collector](https://help.sumologic.com/03Send-Data/Hosted-Collectors/Configure-a-Hosted-Collector), or select an existing hosted collector for the HTTP source.
-2. Configure an [HTTP source](https://help.sumologic.com/03Send-Data/Sources/02Sources-for-Hosted-Collectors/HTTP-Source) on the hosted collector.
+1. Configure a [Hosted Collector](/docs/send-data/configure-hosted-collector), or select an existing hosted collector for the HTTP source.
+2. Configure an [HTTP source](/docs/send-data/sources/sources-hosted-collectors/http-logs-metrics-source) on the hosted collector.
     * For **Source Category**, specify GitLab/events.
     * Click **+Add Field **and provide the following:
         * **Field Name. **_convertHeadersToFields
@@ -54,15 +53,9 @@ Create a host collector to receive Webhooks from GitLab and set up an HTTP sourc
     * Make note of the HTTP address for the source. You will supply it when you configure a GitLab Webhook in the next step.
 
 
-1.png "image_tooltip")
-
-
-
-#### Step 2: Register Webhook in GitLab
+### Step 2: Register Webhook in GitLab
 
 In GitLab, configure a Webhook to connect to your Sumo Logic HTTP Source. You can configure the Webhook at the Project or [Group](https://docs.gitlab.com/ee/user/project/integrations/webhooks.html#group-webhooks) level. Once configured, it will trigger each time one or more subscribed events occur in that Project or Group.
-
-
 
 1. Sign in to your GitLab account.
 2. Go to your Project or Group.
@@ -75,37 +68,30 @@ In GitLab, configure a Webhook to connect to your Sumo Logic HTTP Source. You ca
 6. Click **Add Webhook**.
 
 
-2.png "image_tooltip")
 You can register webhooks for a [Group](https://docs.gitlab.com/ee/user/project/integrations/webhooks.html#group-webhooks) or a Project. [Group webhooks](https://docs.gitlab.com/ee/user/project/integrations/webhooks.html#group-webhooks) ensure all projects in the group receive the same webhook settings.
 
 Refer this documentation on [Webhooks](https://docs.gitlab.com/ee/user/project/integrations/webhooks.html#configure-a-webhook) in GitLab to understand more.
 
 
-#### Step 3: Enable GitLab Event tagging at Sumo Logic
+### Step 3: Enable GitLab Event tagging at Sumo Logic
 
 Sumo Logic needs to understand the event type for incoming events. To enable this, the [x-gitlab-event](https://docs.gitlab.com/ee/user/project/integrations/webhook_events.html#push-events) event type needs to be enabled. To enable this, perform the following steps in the Sumo Logic console:
 
-
-
-1. In Sumo Logic, click **Manage Data > Logs** **>**[ Fields](https://help.sumologic.com/Manage/Fields#add-field).
+1. In Sumo Logic, click **Manage Data > Logs** **>**[ Fields](/docs/manage/fields.md#add-field).
 2. Add Field ‎**x-GitLab-event**‎.
 
 
-3.png "image_tooltip")
-
-
-
-#### Sample Log Messages
+### Sample Log Messages
 
 For more information about log messages, see [GitLab documentation](https://docs.gitlab.com/ee/user/project/integrations/webhooks.html).
 
 
-##### Query Example
+#### Query Example
 
 This section provides a sample query from the **Opened Merge Requests** panel on the **GitLab - Merge Requests** dashboard.
 
 
-```
+```sql
 _sourceCategory="sumo/GitLab" and _collector="GitLab" %"x-GitLab-event"="Merge Request Hook"
 |json "object_attributes.state" as merge_request_state
 | where merge_request_state="opened"
@@ -118,88 +104,55 @@ _sourceCategory="sumo/GitLab" and _collector="GitLab" %"x-GitLab-event"="Merge R
 
 
 
-## Install the GitLab App and View Dashboards
-
-
-
-1. **Last updated \
-**Jan 24, 2022
-2. [Save as PDF](https://help.sumologic.com/@api/deki/pages/9974/pdf/Install%2bthe%2bGitLab%2bApp%2band%2bView%2bDashboards.pdf?stylesheet=default)
-3.  
-4. [ Share](https://help.sumologic.com/07Sumo-Logic-Apps/08App_Development/GitLab/Install_the_GitLab_App_and_View_Dashboards#)
-
-    Table of contents
-
-
-This section demonstrates how to install the GitLab App and view dashboards.
-
-
-#### Install the App
+## Installing the GitLab App
 
 To install the app, do the following:
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
-
-
 1. From the **App Catalog**, search for and select the app**.**
 2. Select the version of the service you're using and click **Add to Library**.
 
+Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/library/install-apps)
 
-4.png "image_tooltip")
-Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](https://help.sumologic.com/01Start-Here/Library/Apps-in-Sumo-Logic/Install-Apps-from-the-Library)
-
-
-
-1. To install the app, complete the following fields.
+3. To install the app, complete the following fields.
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
     2. **Data Source.** Select either of these options for the data source. 
         * Choose **Source Category**, and select a source category from the list. 
         * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). 
     3. **Advanced**. Select the **Location in the Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-2. Click **Add to Library**.
+4. Click **Add to Library**.
 
 Once an app is installed, it will appear in your **Personal** folder or another specified folder. From here, you can share it with your organization.
 
 Panels will start to fill automatically.
 
-
-5.png "image_tooltip")
 Each panel slowly fills with data matching the time range query and received since the panel was created. Results will not immediately be available, updating with full graphs and charts over time.
 
 
-##### Troubleshooting
+### Troubleshooting
 
 If you are getting the following error in the app dashboards after installation:
 
-
-```
-    Field x-gitlab-event not found, please check the spelling and try again.
+```bash
+Field x-gitlab-event not found, please check the spelling and try again.
 ```
 
 
 Do the following to resolve:
 
-
-
 1. Close all app dashboards.
-2. In Sumo Logic, click **Manage Data > Logs** **>**[ Fields and](https://help.sumologic.com/Manage/Fields#add-field) delete the **x-gitlab-event field.**
+2. In Sumo Logic, click **Manage Data > Logs** **>**[ Fields and](/docs/manage/fields.md#add-field) delete the **x-gitlab-event field.**
 3. Add it again using the Dropped Fields section:
     * At **Dropped Fields** drop-down, click on **x-gitlab-event**, then click **Create Field** to create the field.
     * Wait for new events to be pushed from GitLab. The app should work without any "Field x-gitlab-event not found" errors. \
-
-6.png "image_tooltip")
- \
-
-7.png "image_tooltip")
-
 4. Re-open GitLab dashboards.
 
 
-#### Dashboards
+## Viewing GitLab Dashboards
 
 
-##### GitLab - Overview
+### Overview
 
 The **GitLab - Overview **dashboard provides users with a high-level view of events such as Issues, Merge Requests, Builds, Deployments, and pipelines.
 
@@ -216,7 +169,7 @@ Use this dashboard to:
 
 
 
-##### GitLab - Deployments
+### Deployments
 
 The **GitLab - Deployments **dashboard provides users with a high-level view of activities such as deployments failed or success.
 
@@ -233,7 +186,7 @@ Use this dashboard to:
 
 
 
-##### GitLab - Builds
+### Builds
 
 The **GitLab - Builds **dashboard provides users with a high-level view of activities such as builds failed or success.
 
@@ -250,7 +203,7 @@ Use this dashboard to:
 
 
 
-##### GitLab - Pipeline
+### Pipeline
 
 The **GitLab - Pipeline **dashboard provides users with a high-level view of activities such as builds failed or success.
 
@@ -268,13 +221,11 @@ Use this dashboard to:
 
 
 
-##### GitLab - Merge Requests
+### Merge Requests
 
 The **GitLab - Merge Requests **dashboard provides users with a high-level view of activities such as Merge Requests opened, closed, and merged.
 
 Use this dashboard to:
-
-
 
 * Understand the number of merge requests being opened, closed, and merged.
 * Get insight into open merge requests by project, repository, and creators
@@ -287,21 +238,13 @@ Use this dashboard to:
 
 
 
-##### GitLab - Commits
+### Commits
 
 The **GitLab - Commits **dashboard provides users with a high-level view of activities such as files modified, added, and removed by commit.
 
 Use this dashboard to:
-
-
-
 * Get insight into the total number of commits by branch, project, repository, and user.
 * Identify the Modified, Added, and Removed files by commit id in chronological order. You can use filters to drill down to a more detailed view.
 
 
 13.png "image_tooltip")
-
-
-
-
-1.

@@ -1,8 +1,11 @@
 ---
 slug: /manage/security
+title: Sumo Logic Security
 ---
 
-# Security
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src={useBaseUrl('img/icons/security/security.png')} alt="icon" width="50"/>
 
 The Security page is available only to administrators.
 

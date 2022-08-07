@@ -7,13 +7,13 @@ description: The Sumo Logic App for Payment Card Industry (PCI) Compliance for W
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/amazon-aws/pci.png')} alt="DB icon" width="50"/>
+<img src={useBaseUrl('img/integrations/amazon-aws/pci.png')} alt="Thumbnail icon" width="50"/>
 
 This guide helps you set up Sumo Logic Collectors, and install the PCI Compliance for Windows Legacy application, so you can begin monitoring your usage and determine if you are meeting Compliance benchmarks.
 
 ## Collecting Logs
 
-This page provides instructions for configuring log collection for the PCI Compliance for Windows Legacy App.
+This section provides instructions for configuring log collection for the PCI Compliance for Windows Legacy App.
 
 
 ### Log Types
@@ -24,13 +24,13 @@ The PCI Compliance For Windows Legacy App uses Windows Security Event and System
 
 To configure a collector and source, do the following:
 
-1. Configure an [Installed Windows collector](https://help.sumologic.com/03Send-Data/Installed-Collectors/03Install-a-Collector-on-Windows) through the user interface or from the command line.
+1. Configure an [Installed Windows collector](/docs/send-data/installed-collectors/install-collector-windows) through the user interface or from the command line.
 2. Configure either a local or remote Windows Event Log source. To configure a Windows Event Log source set the following:
     * **Event Format.** Select **Collect using legacy format.
 
 Collect using legacy format.** Events retain their default text format from Windows.
 
-For more information on local or remote Windows Event Log Source configuration, refer to [Local Windows Event Log Source](https://help.sumologic.com/03Send-Data/Sources/01Sources-for-Installed-Collectors/Local-Windows-Event-Log-Source) and [Remote Windows Event Log Source](https://help.sumologic.com/03Send-Data/Sources/01Sources-for-Installed-Collectors/Remote-Windows-Event-Log-Source).
+For more information on local or remote Windows Event Log Source configuration, refer to [Local Windows Event Log Source](/docs/send-data/Sources/sources-installed-collectors/Local-Windows-Event-Log-Source) and [Remote Windows Event Log Source](/docs/send-data/Sources/sources-installed-collectors/Remote-Windows-Event-Log-Source).
 
 
 Make sure to set the Source Category when configuring the Windows Event Log source. For example:  OS/Windows/Events.
@@ -76,14 +76,14 @@ _sourceCategory=OS/Windows/Events "Policy Change"
 | where category matches "*Policy Change*"
 ```
 
-This page provides instructions for configuring log collection for the PCI Compliance for Windows Legacy App.
+This section provides instructions for configuring log collection for the PCI Compliance for Windows Legacy App.
 
 
 ## Installing the PCI Compliance for Windows Legacy App
 
-This page provides instructions for installing the PCI Compliance for Windows Legacy App, along with examples of each of the App dashboards. The PCI Compliance for Windows Legacy App offers pre-built dashboards and queries to help you track your Windows system, user accounts, login activity, and Windows updates.
+This section provides instructions for installing the PCI Compliance for Windows Legacy App, along with examples of each of the App dashboards. The PCI Compliance for Windows Legacy App offers pre-built dashboards and queries to help you track your Windows system, user accounts, login activity, and Windows updates.
 
-Now that you have set up collection, install the Sumo Logic App for PCI Compliance for Windows Legacy App to use the pre-configured searches and [Dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/04Microsoft-and-Azure/PCI_Compliance_for_Windows/PCI-Compliance-for-Windows-App-Dashboards#Dashboards) that provide insight into your data.
+Now that you have set up collection, install the Sumo Logic App for PCI Compliance for Windows Legacy App to use the pre-configured searches and [dashboards](#viewing-dashboards) that provide insight into your data.
 
 To install the app:
 
@@ -92,7 +92,7 @@ Locate and install the app you need from the **App Catalog**. If you want to see
 1. From the **App Catalog**, search for and select the app**.**
 2. Select the version of the service you're using and click **Add to Library**.
 
-Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](https://help.sumologic.com/01Start-Here/Library/Apps-in-Sumo-Logic/Install-Apps-from-the-Library)
+Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/library/install-apps)
 
 1. To install the app, complete the following fields.
     * **App Name.** You can retain the existing name, or enter a name of your choice for the app. 

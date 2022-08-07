@@ -16,7 +16,7 @@ We recommend using the Active Directory JSON App in combination with the Windows
 
 ## Collecting Logs
 
-This page provides instructions on configuring log collection for the Active Directory JSON App so that logs are collected from the Microsoft Windows Event Log and ingested into Sumo Logic.
+This section provides instructions on configuring log collection for the Active Directory JSON App so that logs are collected from the Microsoft Windows Event Log and ingested into Sumo Logic.
 
 ### Log Types
 
@@ -31,24 +31,23 @@ Custom event channels, such as PowerShell or Internet Explorer are also supporte
 
 To configure a collector and source, do the following:
 
-1. Configure an [Installed Windows collector](https://help.sumologic.com/03Send-Data/Installed-Collectors/03Install-a-Collector-on-Windows) through the user interface or from the command line.
+1. Configure an [Installed Windows collector](/docs/send-data/installed-collectors/install-collector-windows) through the user interface or from the command line.
 2. Configure either a local or remote Windows Event Log source. To configure a Windows Event Log source set the following:
-    * **Event Format.** Select **Collect using JSON format.
+  * **Event Format.** Select Collect using JSON format.
 
 Collect using JSON format.** Events are formatted into JSON that is designed to work with Sumo Logic features, making it easier for you to reference your data.
-    * **Event Collection Level.** When JSON format is selected you have to select Complete Message from the dropdown. \
+  * **Event Collection Level.** When JSON format is selected you have to select Complete Message from the dropdown. \
 
-3
- \
+
 **Complete Message** will ingest the entire event content along with metadata.
 
-For more information on local or remote Windows Event Log Source configuration, refer to [Local Windows Event Log Source](https://help.sumologic.com/03Send-Data/Sources/01Sources-for-Installed-Collectors/Local-Windows-Event-Log-Source) and [Remote Windows Event Log Source](https://help.sumologic.com/03Send-Data/Sources/01Sources-for-Installed-Collectors/Remote-Windows-Event-Log-Source).
+For more information on local or remote Windows Event Log Source configuration, refer to [Local Windows Event Log Source](/docs/send-data/Sources/sources-installed-collectors/Local-Windows-Event-Log-Source) and [Remote Windows Event Log Source](/docs/send-data/Sources/sources-installed-collectors/Remote-Windows-Event-Log-Source).
 
 
 ### Sample Log Messages
 
 
-```
+```bash
 {"TimeCreated":"2020-10-12T08:00:02+000001500Z","EventID":"5137",
 "Task":14081,"Correlation":"","Keywords":"Audit Success","Channel":"Security",
 "Opcode":"Info","Security":"","Provider":{"Guid":"{54849625-5478-4994-a5ba-3e3b0328c30d}",
@@ -85,7 +84,7 @@ Locate and install the app you need from the **App Catalog**. If you want to see
 1. From the **App Catalog**, search for and select the app.
 2. Select the version of the service you're using and click **Add to Library**.
 
-Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](https://help.sumologic.com/01Start-Here/Library/Apps-in-Sumo-Logic/Install-Apps-from-the-Library)
+Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/library/install-apps)
 
 1. To install the app, complete the following fields.
     * **App Name.** You can retain the existing name, or enter a name of your choice for the app. 

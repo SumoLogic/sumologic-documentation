@@ -7,6 +7,8 @@ description: The Microsoft Teams app provides out-of-the-box dashboards to monit
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
+<img src={useBaseUrl('img/integrations/microsoft-azure/MSTeams.png')} alt="thumbnail icon" width="75"/>
+
 The Microsoft Teams app provides out-of-the-box dashboards to monitor users, teams, channels and permission changes.
 
 
@@ -56,7 +58,7 @@ _sourceCategory="O365/General"
 
 ## Installing the Microsoft Teams App   
 
-This page has instructions for installing the Microsoft Teams app and descriptions of each of the app dashboards.
+This section has instructions for installing the Microsoft Teams app and descriptions of each of the app dashboards.
 
 This section shows you how to install the Sumo Logic App for Microsoft Teams.
 
@@ -67,7 +69,7 @@ Locate and install the app you need from the **App Catalog**. If you want to see
 1. From the **App Catalog**, search for and select the app**.**
 2. Select the version of the service you're using and click **Add to Library**.
 
-Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](https://help.sumologic.com/01Start-Here/Library/Apps-in-Sumo-Logic/Install-Apps-from-the-Library)
+Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/library/install-apps)
 
 1. To install the app, complete the following fields.
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 

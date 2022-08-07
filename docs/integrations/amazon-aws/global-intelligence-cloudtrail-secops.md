@@ -1,25 +1,15 @@
 ---
 id: global-intelligence-cloudtrail-secops
 title: Global Intelligence for AWS CloudTrail SecOps
-sidebar_label: GI for AWS CloudTrail SecOps
+sidebar_label: AWS CloudTrail SecOps Global Intelligence
 description: The Global Intelligence for AWS CloudTrail App enables you to detect potentially malicious configuration changes in your AWS account by comparing AWS CloudTrail events in your account against a cohort of AWS customers.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/amazon-aws/gi-secops.png')} alt="DB icon" width="50"/>
-
-This feature is available in the following account plans.
-
-| Account Type | Account level
-| :---- | :----
-|  Cloud Flex  |  Trial, Enterprise
-| Cloud Flex Credits | Trial, Enterprise Suite, Enterprise Security
-
+<img src={useBaseUrl('img/integrations/amazon-aws/gi-secops.png')} alt="Thumbnail icon" width="50"/>
 
 The Global Intelligence for AWS CloudTrail App enables you to detect potentially malicious configuration changes in your AWS account by comparing [AWS CloudTrail](https://aws.amazon.com/cloudtrail/) events in your account against a cohort of AWS customers. CloudTrail events are curated from AWS penetration tests and operational best practices.
-
-Our new app install flow is now in Beta. It is only enabled for certain customers while we gather Beta customer feedback. If you can see the Add Integration button, follow the "Before you begin" section in the "Collect Logs" help page and then use the in-product instructions in Sumo Logic to set up the app.
 
 This application name is abbreviated to **GI CloudTrail** on these documentation pages, as well as in the application pages.
 
@@ -30,34 +20,34 @@ The App dashboard displays enable you to determine the following:
 * An action plan to improve security posture in your AWS infrastructure
 
 The current scope of this application includes the following AWS services and associated resource types:
-1. **Amazon EC2**: count of compute instances, security groups, route tables and Amazon Machine Images
-2. **Amazon S3**: count of buckets
-3. **Amazon RDS**: count of database instances, DB security groups
-4. **Amazon Redshift**: count of database clusters and parameter groups
-5. **AWS Lambda**: count of function names
-6. **AWS IAM**: count of IAM users, roles and groups
-7. **AWS CloudTrail**: counts of trail instances
+* **Amazon EC2**: count of compute instances, security groups, route tables and Amazon Machine Images
+* **Amazon S3**: count of buckets
+* **Amazon RDS**: count of database instances, DB security groups
+* **Amazon Redshift**: count of database clusters and parameter groups
+* **AWS Lambda**: count of function names
+* **AWS IAM**: count of IAM users, roles and groups
+* **AWS CloudTrail**: counts of trail instances
 
 
-## Collecting Logs for the GI for AWS CloudTrail SecOps App
+## Prerequisites
 
-This section provides an overview of the log collection process and instructions for configuring log collection for the Sumo Logic App for Gl CloudTrail.
+This feature is available in the following account plans.
 
-If you have already AWS CloudTrail logs flowing into Sumo Logic, you can skip the steps on this page and install the App from the Sumo Logic App Catalog.
+| Account Type | Account level
+| :---- | :----
+|  Cloud Flex  |  Trial, Enterprise
+| Cloud Flex Credits | Trial, Enterprise Suite, Enterprise Security
 
-
-### Log Types  
-
-Global Intelligence for AWS CloudTrail App uses AWS CloudTrail logs.
 
 Our new app install flow is now in Beta. It is only enabled for certain customers while we gather Beta customer feedback. If you can see the Add Integration button, follow the "Before you begin" section in the "Collect Logs" help page and then use the in-product instructions in Sumo Logic to set up the app.
 
-When this app is initially installed, the dashboards appear with empty panels until scheduled searches are run and the indices are populated.
+## Log Types  
 
+Global Intelligence for AWS CloudTrail App uses AWS CloudTrail logs. When this app is initially installed, the dashboards appear with empty panels until scheduled searches are run and the indices are populated.
 
-:::caution Important Notes
+:::info Important Notes
 
-<details><summary><strong>Click to Expand</strong><br/>This application relies on 45 Scheduled Searches that Save to 2 different Indexes and 1 Lookup Table. As a result, they will consume the related quotas for your account. The following is the list of Scheduled Searches:</summary>
+<details><summary><strong>Click to Expand</strong><br/>This application relies on 45 Scheduled Searches that Save to two different Indexes and one Lookup Table. As a result, they will consume the related quotas for your account. The following is the list of Scheduled Searches:</summary>
 
 * To reduce false positives, the benchmarks and application filter out AWS CloudTrail events from legitimate cloud services including AWS itself and CloudHealth by VMware.
 * Security posture requirements may vary between AWS accounts for a given customer. For example, development accounts might have less strict controls than production accounts. The app supports filtering findings by AWS account ID to facilitate AWS account level posture assessment.
@@ -73,69 +63,81 @@ When this app is initially installed, the dashboards appear with empty panels un
 * The "infer" operator is not intended for direct customer use -  modifying the queries will result in unexpected/incorrect results.
 * For links to the CloudTrail events in the Action Plan dashboard watchlists to work, please make sure to set your Sumo Logic Region Code by clicking on the dashboard filter icon.
 * The `infer` operator is not intended for use outside of Sumo Logic Global Intelligence apps.
-* Install the Sumo Logic [Audit](https://help.sumologic.com/07Sumo-Logic-Apps/26Apps_for_Sumo/Audit_App) App to monitor the health of scheduled searches. The following two dashboards of the Audit app will help look into details for scheduled searches
-* [User Activity - Scheduled Searches](https://help.sumologic.com/07Sumo-Logic-Apps/26Apps_for_Sumo/Audit_App/Install-the-Audit-App-and-View-the-Dashboards#user-activity-scheduled-search)
-* [Scheduled Searches - Triggered Summary](https://help.sumologic.com/07Sumo-Logic-Apps/26Apps_for_Sumo/Audit_App/Install-the-Audit-App-and-View-the-Dashboards#scheduled-search-triggered-summary)
+* Install the Sumo Logic [Audit](/docs/integrations/sumo-apps/audit.md) App to monitor the health of scheduled searches. The following two dashboards of the Audit app will help look into details for scheduled searches
+* [User Activity - Scheduled Searches](/docs/integrations/sumo-apps/audit#user-activity-scheduled-search)
+* [Scheduled Searches - Triggered Summary](/docs/integrations/sumo-apps/audit#scheduled-search-triggered-summary)
 
 </details>
 
 :::
 
-### Collection process overview
+
+
+### Sample Log Message
+
+```json
+{
+	"eventVersion":"1.05",
+	"userIdentity":{
+		"type":"IAMUser",
+		"principalId":"AIDAJK3NPEULWEXAMPLE",
+		"arn":"arn:aws:iam::224064EXAMPLE:user/username",
+		"accountId":"2240example0808",
+		"userName":"Pamelia@example.com"
+	},
+	"eventTime":"2020-01-11 00:42:12+0000",
+	"eventSource":"signin.amazonaws.com",
+	"eventName":"ConsoleLogin",
+	"awsRegion":"us-example",
+	"sourceIPAddress":"10.10.10.10",
+	"userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36",
+	"requestParameters":null,
+	"responseElements":{
+		"ConsoleLogin":"Success"
+	},
+	"additionalEventData":{
+		"LoginTo":"https://us-example.console.aws.amazon...sauthcode=true",
+		"MobileVersion":"No",
+		"MFAUsed":"Yes"
+	},
+	"eventID":"8fd88195-8576-example-8330cb492604",
+	"eventType":"AwsConsoleSignIn",
+	"recipientAccountId":"22406424example0808"
+}
+```
+
+### Sample Query
+
+The following sample query is from the **Unique AWS Resource Types** panel of **Dashboard 01: Attack Surface Benchmark**.
+```sql
+_sourceCategory=Labs/AWS/CloudTrail/Analytics
+| json "eventSource", "errorCode" nodrop
+| where isBlank(errorCode)
+| count_distinct(eventSource) as count
+| "ResourcesCount_Service" as benchmarkname
+| fillmissing values("ResourcesCount_Service") in benchmarkname
+| toInt(count) as count
+| infer _category=cloudtrail _model=benchmark
+| first(count) as MyCompany, first(lower_limit) as cohort_low, first(median) as cohort_median, first(upper_limit) as cohort_high by benchmarkname
+```
+
+In some cases, your query results may show `"HIDDEN_DUE_TO_SECURITY_REASONS"` as the value of the `userName` field. That's because AWS does not log the user name that was entered when a sign-in failure is caused by an incorrect user name.
+
+
+## Collecting Logs for the GI for AWS CloudTrail SecOps App
+
+This section provides an overview of the log collection process and instructions for configuring log collection for the Sumo Logic App for Gl CloudTrail.
+
+If you have already AWS CloudTrail logs flowing into Sumo Logic, you can skip the steps in this section and [install the app](#installing-the-gi-for-aws-cloudtrail-secops-app).
 
 The following illustration is a graphical representation of the process for collecting logs from AWS CloudTrail and delivering them to Sumo Logic.
 
-
-### Configuring log collection
-
-
-To configure log collection for Global Intelligence for AWS CloudTrail, follow the steps described [here](https://help.sumologic.com/07Sumo-Logic-Apps/01Amazon_and_AWS/AWS_CloudTrail/01-Collect-logs-for-the-AWS-CloudTrail-App).
+<img src={useBaseUrl('img/integrations/amazon-aws/Collection_Process_Overview.png')} alt="Collection_Process_Overview" />
 
 
-### Sample log message
+### Configuring Log Collection
 
-```
-{"eventVersion":"1.05","userIdentity":{"type":"IAMUser","principalId":"AIDAJK3NPEULWEXAMPLE","arn":"arn:aws:iam::224064EXAMPLE:user/username","accountId":"2240example0808","userName":"Pamelia@example.com"},"eventTime":"2020-01-11 00:42:12+0000","eventSource":"signin.amazonaws.com","eventName":"ConsoleLogin","awsRegion":"us-example","sourceIPAddress":"10.10.10.10","userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36","requestParameters":null,"responseElements":{"ConsoleLogin":"Success"},"additionalEventData":{"LoginTo":"https://us-example.console.aws.amazon...sauthcode=true","MobileVersion":"No","MFAUsed":"Yes"},"eventID":"8fd88195-8576-example-8330cb492604","eventType":"AwsConsoleSignIn","recipientAccountId":"22406424example0808"}
-```
-
-### Query example
-7
-
-
-The following sample query is from the **Unique AWS Resource Types** panel of **Dashboard 01: Attack Surface Benchmark**.
-
-
-    _sourceCategory=Labs/AWS/CloudTrail/Analytics
-
-
-    | json "eventSource", "errorCode" nodrop
-
-
-    | where isBlank(errorCode)
-
-
-    | count_distinct(eventSource) as count
-
-
-    | "ResourcesCount_Service" as benchmarkname
-
-
-    | fillmissing values("ResourcesCount_Service") in benchmarkname
-
-
-    | toInt(count) as count
-
-
-    | infer _category=cloudtrail _model=benchmark
-
-
-    | first(count) as MyCompany, first(lower_limit) as cohort_low, first(median) as cohort_median, first(upper_limit) as cohort_high by benchmarkname
-
-
-8
-In some cases, your query results may show "HIDDEN_DUE_TO_SECURITY_REASONS" as the value of the `userName` field. That's because AWS does not log the user name that was entered when a sign-in failure is caused by an incorrect user name.
-
-
+To configure log collection for Global Intelligence for AWS CloudTrail, follow the steps described [here](/docs/integrations/amazon-aws/CloudTrail#Collect-logs-for-the-AWS-CloudTrail-App).
 
 
 ## Installing the GI for AWS CloudTrail SecOps App
@@ -145,7 +147,7 @@ Locate and install the app you need from the **App Catalog**. If you want to see
 Do not install the app more than once. Share a single copy of the app with other users in your organization.
 
 To install the app, do the following:
-1. From the **App Catalog**, search for and select the app**.**
+1. From the **App Catalog**, search for and select the app.
 2. To install the app, click **Add to Library** and complete the following fields.
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
     2. **Data Source.** Select either of these options for the data source. 

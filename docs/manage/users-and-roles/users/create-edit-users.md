@@ -4,7 +4,7 @@ id: create-edit-users
 
 # Create and Edit Users
 
-This page has instructions for creating and editing users in Sumo Logic. For information about deleting a user, see [Delete a User](delete-user.md).
+This section has instructions for creating and editing users in Sumo Logic. For information about deleting a user, see [Delete a User](delete-user.md).
 
 ## Create a user
 

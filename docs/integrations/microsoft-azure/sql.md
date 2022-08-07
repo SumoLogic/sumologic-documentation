@@ -14,7 +14,7 @@ Azure SQL Database is a managed relational cloud database service. The Sumo Logi
 
 ## Collect Logs and Metrics
 
-This page has instructions for collecting logs and metrics for the Azure SQL App, as well as a sample log message and a query sample.
+This section has instructions for collecting logs and metrics for the Azure SQL App, as well as a sample log message and a query sample.
 
 ### Log types
 
@@ -33,9 +33,9 @@ For details on Azure SQL logs and metrics, see [Enable logging](https://docs.mic
 
 ### Collect diagnostic logs from Azure Monitor by streaming to EventHub
 
-In this step, you configure a pipeline for shipping logs from [Azure Monitor](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-get-started) to an Event Hub, on to an Azure Function, and finally to an HTTP Source on a Hosted Collector in Sumo Logic. Azure Monitor collects metrics and logs. The pipeline is described on [Collect Logs from Azure Monitor](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Azure_Monitoring/Collect_Logs_from_Azure_Monitor).  
+In this step, you configure a pipeline for shipping logs from [Azure Monitor](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-get-started) to an Event Hub, on to an Azure Function, and finally to an HTTP Source on a Hosted Collector in Sumo Logic. Azure Monitor collects metrics and logs. The pipeline is described on [Collect Logs from Azure Monitor](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-logs-azure-monitor.md).  
 
-1. Perform Steps 1 and Step 2 of [Collect Logs from Azure Monitor](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Azure_Monitoring/Collect_Logs_from_Azure_Monitor).   \
+1. Perform Steps 1 and Step 2 of [Collect Logs from Azure Monitor](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-logs-azure-monitor.md).   \
 In Step 1, you create an HTTP Source. When you configure the, plan your source category to ease the querying process. A hierarchical approach allows you to make use of wildcards. For example: \
 `Azure/DB/SQL/Logs`
 2. Push logs from Azure Monitor to Event Hub. Various Azure Services connect to Azure Monitor to send monitoring data to an Event Hub. For more information, see [Azure Monitor: Send monitoring data to an event hub](https://azure.microsoft.com/en-us/blog/azure-monitor-send-monitoring-data-to-an-event-hub/) and How do I set up [Azure platform monitoring data to be streamed to an event hub?](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitor-stream-monitoring-data-event-hubs#how-do-i-set-up-azure-platform-monitoring-data-to-be-streamed-to-an-event-hub) in Azure help.
@@ -45,7 +45,7 @@ In Step 1, you create an HTTP Source. When you configure the, plan your source c
     4. Enter a name.
     5. Check the **Stream to an event hub** box and click **Event hub / Configure**.
     6. Select an Azure subscription.
-    7. Select the Event Hubs namespace you created in Step 2 of [Collect Logs from Azure Monitor](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Azure_Monitoring/Collect_Logs_from_Azure_Monitor). It should start with `“SumoAzureLogsNamespace<UniqueSuffix>”`.
+    7. Select the Event Hubs namespace you created in Step 2 of [Collect Logs from Azure Monitor](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-logs-azure-monitor.md). It should start with `“SumoAzureLogsNamespace<UniqueSuffix>”`.
     8. Select insights-operational-logs from the **Select event hub name** dropdown.
     9. Select RootManageSharedAccessKey from **Select event hub policy name **dropdown.
     10. Click **OK** to exit event hub configuration.
@@ -54,8 +54,8 @@ In Step 1, you create an HTTP Source. When you configure the, plan your source c
 
 ### Collect metrics from Azure Monitor  by streaming to EventHub
 
-In this step, you configure a pipeline for shipping metrics from Azure Monitor to an Event Hub, on to an Azure Function, and finally to an HTTP Source on a hosted collector in Sumo Logic. The pipeline is described on [Collect Metrics from Azure Monitor](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Azure_Monitoring/Collect_Metrics_from_Azure_Monitor).
-1. Perform Steps 1 and Step 2 of [Collect Metrics from Azure Monitor.](https://help.sumologic.com/03Send-Data/Collect-from-Other-Data-Sources/Azure_Monitoring/Collect_Metrics_from_Azure_Monitor)   \
+In this step, you configure a pipeline for shipping metrics from Azure Monitor to an Event Hub, on to an Azure Function, and finally to an HTTP Source on a hosted collector in Sumo Logic. The pipeline is described on [Collect Metrics from Azure Monitor](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor.md).
+1. Perform Steps 1 and Step 2 of [Collect Metrics from Azure Monitor.](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor.md)   
 In Step 1, you create an HTTP source. When you configure the, plan your source category to ease the querying process.  A hierarchical approach allows you to make use of wildcards. For example: \
 `Azure/DB/SQL/Metrics`
 2. Push metrics from Azure Monitor to Event Hub.
@@ -156,7 +156,7 @@ Locate and install the app you need from the **App Catalog**. If you want to see
 6. **Advanced**. Select the Location in Library (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
 7. Click **Add to Library**.
 
-Once an app is installed, it will appear in your Personal folder, or other folder that you specified. From here, you can share it with your organization. See [Welcome to the New Library](https://help.sumologic.com/01Start-Here/Welcome-to-the-New-Library) for information on working with the library.
+Once an app is installed, it will appear in your Personal folder, or other folder that you specified. From here, you can share it with your organization. See [Welcome to the New Library](/docs/get-started/library/index.md) for information on working with the library.
 
 Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
 
@@ -275,7 +275,7 @@ See information about errors in Azure SQL, including total error count, top 10 e
 
 See metrics for connections attempts; Database Transaction Unit (DTUs), CPU and storage utilization; and for deadlocks, sessions, and workers.
 
-For information about the metrics presented in the Metrics dashboards, see [All metrics](https://docs.microsoft.com/en-us/azure/sql-database/sql-database-metrics-diag-logging#all-metrics) and [Microsoft.Sql/servers/databases](https://help.sumologic.com/07Sumo-Logic-Apps/04Microsoft-and-Azure/Azure_SQL/Install_the_Azure_SQL_App_and_View_the_Dashboards) in Azure help.
+For information about the metrics presented in the Metrics dashboards, see [All metrics](https://docs.microsoft.com/en-us/azure/sql-database/sql-database-metrics-diag-logging#all-metrics) and **Microsoft.Sql/servers/databases** in Azure help.
 
 
 18

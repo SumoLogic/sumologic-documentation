@@ -68,7 +68,7 @@ To generate an API token:
 
 When you create a SentinelOne Mgmt API Source, you add it to a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](../../../configure-hosted-collector.md).
 
-**To configure a SentinelOne Mgmt API Source:**
+To configure a SentinelOne Mgmt API Source:**
 
 1. In the Sumo Logic web app, select **Manage Data \> Collection \> Collection**. 
 

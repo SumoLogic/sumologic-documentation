@@ -7,17 +7,18 @@ description: Introduction to Amazon CloudTrail - Cloud Security Monitoring and A
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
+<img src={useBaseUrl('img/icons/security/PCI-compliance.png')} alt="PCI Compliance icon" width="75"/>
+
 This set of CloudTrail monitoring and analytics dashboards provide one dashboard for the most critical analytics. Think of this bundle of dashboards as a good starting place to see trends and outliers on specific aspects of your CloudTrail data -- including access monitoring, login activity, system monitoring, privileged activity, and threat intelligence.
 
 
-## Collecting Logs
+## Collecting Logs for the AWS CloudTrail PCI Compliance App
 
 This section has instructions for configuring log collection for the AWS CloudTrail app.
 
 If you intend to use the AWS CloudTrail app in multiple environments, see Configure the AWS CloudTrail App in Multiple Environments.
 
 To configure an AWS CloudTrail Source, perform these steps:
-
 
 1. [Configure CloudTrail](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/getting_started_top_level.html) in your AWS account.
 2. Confirm that logs are being delivered to the Amazon S3 bucket.
@@ -32,7 +33,7 @@ To configure an AWS CloudTrail Source, perform these steps:
 Once you begin uploading data, your daily data usage will increase. It's a good idea to check the **Account** page to make sure that you have enough quota to accommodate additional data in your account. If you need additional quota, you can upgrade your account at any time.
 
 
-#### Sample Log Message
+### Sample Log Message
 
 ```json
 {
@@ -63,9 +64,7 @@ Once you begin uploading data, your daily data usage will increase. It's a good 
 }
 ```
 
-#### **Field Extraction Template**
-
-```
+```sql title="Field Extraction Template"
 | parse "\"sourceIPAddress\":\"*\"" as source_ipaddress
 | parse "\"eventName\":\"*\"" as event_name
 | parse "\"eventSource\":\"*\"" as event_source
@@ -73,11 +72,9 @@ Once you begin uploading data, your daily data usage will increase. It's a good 
 | parse "\"userName\":\"*\"" as user
 ```
 
-#### **Query Sample**
+### Query Sample
 
-**Created and Deleted Network and Security Events**
-
-```
+```sql title="Created and Deleted Network and Security Events"
 _sourceCategory=AWS_EAGLE (*Security* OR *Network*)
 | parse "\"userName\":\"*\"" as user
 | parse "\"eventName\":\"*\"" as event
@@ -103,21 +100,20 @@ Locate and install the app you need from the **App Catalog**. If you want to see
 
 Version selection is applicable only to a few apps currently. For more information, see the Install the Apps from the Library.
 
-
-1. To install the app, complete the following fields.
-    1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
-    2. **Data Source.** Select either of these options for the data source. 
-        * Choose **Source Category**, and select a source category from the list. 
-        * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). 
-    3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-2. Click **Add to Library**.
+3. To install the app, complete the following fields.
+   * **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
+   * **Data Source.** Select either of these options for the data source. 
+      * Choose **Source Category**, and select a source category from the list. 
+      * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). 
+   * **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
+4. Click **Add to Library**.
 
 Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization.
 
 Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
 
 
-## Viewing Dashboards
+## Viewing AWS CloudTrail PCI Compliance Dashboards
 
 The Cloud Security Monitoring & Analytics for AWS CloudTrail App provides dashboards that you can modify for your specific security operational needs.
 
@@ -129,7 +125,7 @@ The Cloud Security Monitoring & Analytics for AWS CloudTrail App provides dashbo
 * Threat Intelligence
 
 
-### Amazon CloudTrail - Security Analytics - Access Monitoring
+### Security Analytics - Access Monitoring
 
 **Description: **See the details of security group activities and all AWS activities divided by read only and non read only.
 
@@ -138,7 +134,7 @@ The Cloud Security Monitoring & Analytics for AWS CloudTrail App provides dashbo
 <img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/Amazon-CloudTrail-Security-Analytics-Access-Monitoring.png')} alt="Amazon CloudTrail - Security Analytics dashboards" />
 
 
-### Amazon CloudTrail - Security Analytics - Login Activity
+### Security Analytics - Login Activity
 
 **Description:** See the details of login activity successes and failures for API, console, and the root account.
 
@@ -147,7 +143,7 @@ The Cloud Security Monitoring & Analytics for AWS CloudTrail App provides dashbo
 <img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/Amazon-CloudTrail-Security-Analytics-Login-Activity.png')} alt="Amazon CloudTrail - Security Analytics dashboards" />
 
 
-### Amazon CloudTrail - Security Monitoring - Account and System Monitoring
+### Security Monitoring - Account and System Monitoring
 
 **Description: **See the details of identity and access management for users, roles, access keys and other aspects of identity.
 
@@ -156,7 +152,7 @@ The Cloud Security Monitoring & Analytics for AWS CloudTrail App provides dashbo
 <img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/Amazon-CloudTrail-Security-Monitoring-Account-and-System-Monitoring.png')} alt="Amazon CloudTrail - Security Analytics dashboards" />
 
 
-### Amazon CloudTrail - Security Monitoring - Overview
+### Security Monitoring - Overview
 
 **Description:** Monitoring overview providing one dashboard for the most critical analytics.
 

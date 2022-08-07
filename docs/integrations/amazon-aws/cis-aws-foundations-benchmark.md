@@ -7,7 +7,7 @@ description: Gain operational visibility into your AWS security posture using th
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/amazon-aws/cisaws.png')} alt="DB icon" width="50"/>
+<img src={useBaseUrl('img/integrations/amazon-aws/cisaws.png')} alt="Thumbnail icon" width="50"/>
 
 The Center for Internet Security (CIS) is a 501(c)(3) organization dedicated to enhancing the cyber-security readiness and response among public and private sector entities. Utilizing its strong industry and government partnerships, CIS combats evolving cyber-security challenges on a global scale and helps organizations adopt key best practices to achieve immediate and effective defenses against cyber attacks.  
 
@@ -15,43 +15,42 @@ The CIS AWS Foundations Benchmark is a set of security configuration best practi
 
 The Sumo Logic for CIS AWS Foundations Benchmark App maps to Section 3 (Monitoring) of the [CIS AWS Benchmarks Foundation ](https://d0.awsstatic.com/whitepapers/compliance/AWS_CIS_Foundations_Benchmark.pdf)recommendations. Using the pre-configured alerts and dashboards, customers are able to alert on and gain operational visibility into their AWS security posture.
 
+## Log Types
+
+The Sumo Logic App for CIS AWS Foundations Benchmark uses [CloudTrail](/docs/integrations/amazon-aws/cloudtrail.md) logs. For details on the specifics of which attributes are used, refer to Section 3 (Monitoring) of the [CIS AWS Benchmarks Foundation](https://d0.awsstatic.com/whitepapers/compliance/AWS_CIS_Foundations_Benchmark.pdf).
+
 
 ## Collecting Logs for the CIS AWS Foundation Benchmark App
 
-### Log Types
-
-The Sumo Logic App for CIS AWS Foundations Benchmark uses [CloudTrail](https://help.sumologic.com/07Sumo-Logic-Apps/01Amazon_and_AWS/AWS_CloudTrail) logs. For details on the specifics of which attributes are used, refer to Section 3 (Monitoring) of the [CIS AWS Benchmarks Foundation](https://d0.awsstatic.com/whitepapers/compliance/AWS_CIS_Foundations_Benchmark.pdf).
-
-
 ### Configure Collector and Source
 
-The CIS AWS Foundation Benchmark App ingests [AWS CloudTrail](https://help.sumologic.com/07Sumo-Logic-Apps/01Amazon_and_AWS/AWS_CloudTrail) data. To collect logs for the CIS AWS Foundation Benchmark App, perform the following steps:
+The CIS AWS Foundation Benchmark App ingests [AWS CloudTrail](/docs/integrations/amazon-aws/cloudtrail.md) data. To collect logs for the CIS AWS Foundation Benchmark App, perform the following steps:
 
-1. Add a Sumo Logic [Hosted Collector](https://help.sumologic.com/03Send-Data/Hosted-Collectors/Configure-a-Hosted-Collector) to your Sumo Logic Org.
-2. Configure an [AWS CloudTrail Source](https://help.sumologic.com/07Sumo-Logic-Apps/01Amazon_and_AWS/AWS_CloudTrail/01-Collect-logs-for-the-AWS-CloudTrail-App).
+1. Add a Sumo Logic [Hosted Collector](/docs/send-data/configure-hosted-collector) to your Sumo Logic Org.
+2. Configure an [AWS CloudTrail Source](docs/integrations/amazon-aws/cloudtrail#Collect-logs-for-the-AWS-CloudTrail-App).
 3. Set your `_sourceCategory` (example: `aws/cloudtrail`).
 
 
 ## Installing the CIS AWS Foundations Benchmark App
 
-Now that you have configured CIS AWS Foundation Benchmark, install the Sumo Logic App for CIS AWS Foundation Benchmark to take advantage of the preconfigured searches and [dashboards](https://help.sumologic.com/07Sumo-Logic-Apps/01Amazon_and_AWS/CIS_AWS_Foundations_Benchmark_App/CIS-AWS-Foundations-Benchmark-App-Dashboards#Dashboards) to analyze your data.
+Now that you have configured CIS AWS Foundation Benchmark, install the Sumo Logic App for CIS AWS Foundation Benchmark to take advantage of the preconfigured searches and [dashboards](/#Dashboards) to analyze your data.
 
 To install the app:
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
-1. From the **App Catalog**, search for and select the app**.**
+1. From the **App Catalog**, search for and select the app.
 2. Select the version of the service you're using and click **Add to Library**.
 
-Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](https://help.sumologic.com/01Start-Here/Library/Apps-in-Sumo-Logic/Install-Apps-from-the-Library)
+Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/library/install-apps)
 
-1. To install the app, complete the following fields.
+3. To install the app, complete the following fields.
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
     2. **Data Source.** Select either of these options for the data source. 
         * Choose **Source Category**, and select a source category from the list. 
         * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). 
     3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-2. Click **Add to Library**.
+4. Click **Add to Library**.
 
 Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization.
 
@@ -77,7 +76,7 @@ This Change Control Dashboard includes filters that you can use in Interactive M
 
 **Route Table Changes.** Shows the count of Route Table changes done by each user for the last 24 hours.
 
-**Network ACL Cganges. **Shows the count of Network ACL changes done by each user for the last 24 hours.
+**Network ACL Changes. **Shows the count of Network ACL changes done by each user for the last 24 hours.
 
 **Security Group Changes.** Shows the count of Security Group changes done by each user for the last 24 hours.
 
