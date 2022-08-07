@@ -31,7 +31,7 @@ Custom event channels, such as PowerShell or Internet Explorer are also supporte
 
 ### Configure a Collector and a Source
 
-**To configure a collector and source, do the following:
+To configure a collector and source, do the following:
 
 
 1. Configure an [Installed Windows collector](/docs/send-data/installed-collectors/install-collector-windows) through the user interface or from the command line.

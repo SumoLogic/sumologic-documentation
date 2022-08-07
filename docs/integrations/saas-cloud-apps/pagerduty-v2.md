@@ -7,7 +7,6 @@ description: The Sumo Logic App for PagerDuty V2 collects incident messages from
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-
 <img src={useBaseUrl('img/integrations/saas-cloud-apps/pagerduty.png')} alt="Thumbnail icon" width="75"/>
 
 The Sumo Logic App for PagerDuty V2 collects incident messages from your PagerDuty account via a webhook, and displays incident data in pre-configured Dashboards that allow you to monitor and analyze the activity of your PagerDuty account and Services. The Sumo Logic App for PagerDuty V2 uses Webhooks V2, to provide enhanced context for alert object models.
@@ -40,15 +39,14 @@ _sourceCategory=Labs/pagerduty_v2 "incident.trigger"
 ```
 
 
-
-## Collect Logs for PagerDuty V2
+## Collecting Logs for PagerDuty V2
 
 This section provides instructions for configuring a Sumo Logic Hosted Collector and HTTP Source to create a PagerDuty Webhook V2, to collect PagerDuty events.
 
 
 ### Configure a Sumo Logic Collector and Source
 
-A** Hosted Collector **is not installed on a local system in your deployment. Instead, Sumo Logic hosts the Collector and its Sources in AWS. With a Hosted Collector, you can create Sources to collect data from various services. A single Hosted Collector can be configured with any number of  Sources.
+A **Hosted Collector** is not installed on a local system in your deployment. Instead, Sumo Logic hosts the Collector and its Sources in AWS. With a Hosted Collector, you can create Sources to collect data from various services. A single Hosted Collector can be configured with any number of  Sources.
 
 An **HTTP Source** is an endpoint for receiving log and metric data uploaded to a unique URL generated for the Source. The URL securely encodes the Collector and Source information. You can add as many HTTP Logs and Metrics Sources as you'd like to a single Hosted Collector.
 
@@ -66,8 +64,7 @@ Using PagerDuty with Webhooks V2, you receive HTTP callbacks when incident event
 
 To create a PagerDuty V2 Webhook, do the following:
 1. Log in to your PagerDuty account.
-2. Use the following instructions to create a Webhook V2:  \
-[https://support.pagerduty.com/hc/en-us/articles/202830320-Webhooks-](https://support.pagerduty.com/hc/en-us/articles/202830320-Webhooks-), entering the  [HTTP Source Address URL](#Configure-HTTP-Source) as the **Endpoint URL** in **Step 6**.
+2. Use the following instructions to create a Webhook V2: [https://support.pagerduty.com/hc/en-us/articles/202830320-Webhooks-](https://support.pagerduty.com/hc/en-us/articles/202830320-Webhooks-), entering the  [HTTP Source Address URL](#Configure-HTTP-Source) as the **Endpoint URL** in **Step 6**.
 3. Continue with [installing the Sumo Logic App for PagerDuty V2](#Install-the-PagerDuty-V2-App).
 
 
@@ -80,7 +77,7 @@ Now that you have set up a log and metric collection, you can install the Sumo L
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
 1. From the **App Catalog**, search for and select the app**.**
-2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/library/install-apps).
+2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library](/docs/get-started/library/install-apps).
 3. To install the app, complete the following fields.
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
     2. **Data Source.** Select either of these options for the data source. 

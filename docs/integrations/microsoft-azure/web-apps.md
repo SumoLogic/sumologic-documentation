@@ -51,7 +51,7 @@ The following is how the solution fits together:
 
 In this task, you configure an HTTP source to receive logs from the Azure function.
 
-**To configure an HTTP source for Azure, do the following:
+To configure an HTTP source for Azure, do the following:
 
 
 

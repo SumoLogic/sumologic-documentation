@@ -125,7 +125,7 @@ This section demonstrates how to configure a Local File Source for IIS Access Lo
 
 Sumo Logic recommends using a Local File Source whenever possible.
 
-**To configure a local file source for IIS Access Logs, do the following:
+To configure a local file source for IIS Access Logs, do the following:
 
 1. Configure a [Local File Source](/docs/send-data/Sources/sources-installed-collectors/Local-File-Source).
 2. Specify Local File Source Fields as follows:
@@ -157,7 +157,7 @@ After a few minutes, your new Source should be propagated down to the Collector 
 This section demonstrates how to configure a Local File Source for HTTP Error Logs, for use with an [Installed Collector](/docs/integrations/microsoft-azure/iis-10-legacy#Configure-a-Collector).
 
 
-**To configure a local file source for HTTP Error Logs, do the following:
+To configure a local file source for HTTP Error Logs, do the following:
 
 1. Configure a [Local File Source](/docs/send-data/Sources/sources-installed-collectors/Local-File-Source).
 2. Specify the Local File Source Fields as follows:
@@ -195,7 +195,7 @@ Use the appropriate source for your environment:
 * [Local Windows Performance Monitor Log Source](/docs/send-data/sources/sources-installed-collectors/local-windows-performance-monitor-log-source.md)
 * [Remote Windows Performance Monitor Log Source](/docs/send-data/sources/sources-installed-collectors/remote-windows-performance-monitor-log-source.md)
 
-**To configure a Source for IIS Performance Logs, do the following:
+To configure a Source for IIS Performance Logs, do the following:
 
 1. Configure a [Local Windows Performance Monitor Log Source](/docs/send-data/sources/sources-installed-collectors/local-windows-performance-monitor-log-source.md).
 2. Configure the Local Windows Performance Source Fields as follows:

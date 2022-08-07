@@ -9,14 +9,12 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/cylance.png')} alt="thumbnail icon" width="75"/>
 
-
 The Cylance App enables you to analyze Cylance security events by type, status, and detection method. You can use the App to investigate Cylance-specific events and provide operational visibility to team members without logging into Cylance.
 
 Cylance applies artificial intelligence, algorithmic science, and machine learning to cyber security, and provides visibility to their service through integrations with a central security analytics platform like Sumo Logic. By combining the threat events data from Cylance and other data sources, you can reduce your security risk and improve your overall security posture.
 
 
-### Log Types
-1
+## Log Types
 
 The Sumo Logic App for Cylance uses the supports the following event and log types:
 * Device (Device Mgmt - Register, Remove, Updates, SystemSecurity)
@@ -31,226 +29,9 @@ The Sumo Logic App for Cylance uses the supports the following event and log typ
 For details on the format and definitions, refer to [Cylance](https://www.cylance.com/) documentation.
 
 
-## Collect Logs for the Cylance App
+### Sample Log Message
 
-This procedure demonstrates how to collect logs from Cylance into Sumo Logic. Cylance applies artificial intelligence, algorithmic science, and machine learning to cyber security, and provides visibility to their service through integrations with a central security analytics platform like Sumo Logic. By combining the threat events data from Cylance and other data sources, you can reduce your security risk and improve your overall security posture.
-
-The Sumo Logic App for Cylance allows you to analyze Cylance security events by type, status, and detection method. You can use the App to investigate Cylance-specific events and provide operational visibility to team members without needing to log into Cylance.
-
-
-### Log Types
-2
-
-
-The Sumo Logic App for Cylance supports the following event and log types:
-
-* Device (Device Mgmt - Register, Remove, Updates, SystemSecurity)
-* Threat (Threats identified and actioned)
-* ScriptControl (Script Execution control and actions)
-* ExploitAttempt (Memory Protection)
-* Threat Classification (Threat classification by Cylance research team)
-* AuditLog (User Actions performed from Cylance Web Console)
-* DeviceControl (Control external device like USB, storage connected to system under monitoring)
-* AppControl
-
-For details on the format and definitions, refer to [Cylance](https://www.cylance.com/) documentation.
-
-
-### Step 1: Configure a Collector
-3
-
-To create a new Sumo Logic Hosted Collector, perform the steps in [Configure a Hosted Collector](/docs/send-data/configure-hosted-collector).
-
-
-### Step 2: Configure a Source
-4
-
-
-1. Perform the steps in [Configure a Cloud Syslog Source](/docs/send-data/Sources/sources-hosted-collectors/Cloud-Syslog-Source#Configure_a_Cloud_Syslog_Source). and configure the following Source fields:
-    1. **Name**. (Required) A name is required. Description is optional.
-    2. **Source Category**. (Required) [Provide a realistic Source Category example for this data type.] The Source Category metadata field is a fundamental building block to organize and label Sources. \
-Example: **prod/web/apache/access**. \
-For details see [Best Practices](/docs/send-data/design-deployment/best-practices-source-categories).
-2. In the Advanced section, specify the following configurations:
-    3. **Enable Timestamp Parsing**. True
-    4. **Time Zone**. Logs are in UTC by default
-    5. **Timestamp Format**. Auto Detect
-3. Click **Save**.
-
-Copy and paste the **token** in a secure location. You will need this when you configure Cylance Syslog Settings.
-
-
-### Step 3: Configure Logging in Cylance
-5
-
-
-Before your can configure Sumo Logic to ingest logs, you must set up remote log streaming on Cylance. For instructions, refer to the following documentation:
-
-1. In Cylance, go to **Settings > Application**. \
-
-6
-
-2. In the **Integrations **section, activate the **Syslog/SIEM** check box.  
-3. Under **Event Types**, activate the checkboxes for all events.  
-4. For **SIEM,** select **Sumo Logic** as the destination.
-7
-
-5. For **Protocol,** select TCP.
-6. Activate the check box **TLS/SSL**.
-7. Enter your **IP/Domain**.
-8. Enter your **Port**.
-9. For **Severity,** select **Alert (1)**.
-10. For **Facility,** select **Internal (5)**.
-11. For **Custom Token,** enter the token from the Sumo Logic [Cloud Syslog Source](/docs/send-data/Sources/sources-hosted-collectors/Cloud-Syslog-Source). The token should end with **@41123**. This number is the Sumo Logic Private Enterprise Number (PEN).
-12. Click **Save**.
-
-
-### Field Extraction Rules
-8
-
-
-The following extraction rules use different approaches.
-
-#### **AuditLog **
-9
-
-
-```
-_sourceCategory=*cylance* "Event Type:" AuditLog
-| parse "Event Type: *, Event Name: *," as event_type, event_name nodrop
-| parse "Message: *," as msg nodrop | parse "Source IP: *," as src_ip nodrop | parse "User: *" as user nodrop
-| parse field=msg "Device: * was auto assigned to Zone: *" as device_name, zone nodrop
-| parse field=msg "Provider: *" as provider nodrop
-| parse regex field=msg "Device:\s*(?<device_name>[^\s]*)\s*$" nodrop
-| parse field=msg "Tier: *; Zones: *; Agent Version: *" as tier, zone, agent_version nodrop
-| parse field=msg "Policy Assigned: *; Devices: *" as policy, device_name nodrop
-| parse field=msg "Device: *; " as device_name nodrop
-| parse field=msg "Devices: *" as device_name nodrop
-| parse field=msg "SHA256: *" as sha nodrop
-| parse field=msg "Zone: *; Policy Assigned: *; Policy Applied To All Devices In Zone: *" as zone, policy, PolicyAppliedToAllDevicesInZone
-```
-
-
-##### Device
-10
-
-
-
-```
-_sourceCategory=*cylance* "Event Type: Device"
-| parse "Event Type: *, Event Name: *," as event_type, event_name nodrop
-| parse "Device Name: *, Agent Version: *, IP Address: (*), MAC Address: (*), Logged On Users: (*), OS: *, Zone Names: (*)" as device_name, agent_version, ip_address, mac_address, LoggedOnUsers, os, zone nodrop
-| parse "Device Name: *, Zone Names: (*), Device Id: *" as device_name, zone, device_id  
-| parse "Device Message: *, User: *, Zone Names: (*), Device Id: *" as  device_message, user, zone, device_id nodrop
-| parse regex field=ip_address "\s*(?<ipaddress>[^,]*)" multi nodrop
-| parse field=device_message "Device: *; " as device_name nodrop
-| if (isempty(ipaddress), ip_address, ipaddress) as ip_address
-| parse regex field=LoggedOnUsers "\s*(?<users>[^,]*)" multi nodrop
-| if (isempty(users), user, users) as user
-```
-
-
-###### **DeviceControl **
-11
-
-```
-_sourceCategory=*cylance* "Event Type: DeviceControl"
-| parse "Event Type: *, Event Name: *," as event_type, event_name nodrop
-| parse "Device Name: *, External Device Type: *, External Device Vendor ID: *,
-External Device Name: *, External Device Product ID: *, External Device Serial Number: *,
-Zone Names: (*), Device Id: *, Policy Name: *" as device_name, external_device_type,
-external_device_vendor_id, external_device_name, external_device_product_id,
-external_device_serialno, zone, device_id, policy nodrop
-```
-
-
-
-
-
-###### **ExploitAttempt **
-12
-
-
-
-```
-_sourceCategory=*cylance* ExploitAttempt
-| parse "Event Type: *, Event Name: *, Device Name: *, IP Address: (*), Action: *, Process ID: *,
- Process Name: *, User Name: *, Violation Type: *, Zone Names: (*), Device Id: *, Policy Name:
- *" as event_type, event_name, device_name, ip_address, action, pid, pname, user, violation,
- zone, device_id, policy
-```
-
-
-
-
-
-###### **ScriptControl **
-
-```sql
-_sourceCategory=*cylance* ScriptControl
-| parse "Event Type: *, Event Name: *, Device Name: *, File Path: *, Interpreter: *, Interpreter
-Version: *, Zone Names: (*), User Name: *, Device Id: *, Policy Name: *" as event_type,
-event_name, device_name, filepath, interpreter, interpreterVersion, zone, user, device_id,
-policy nodrop
-```
-
-
-
-
-###### **Threat **
-14
-
-
-
-```sql
-_sourceCategory=*cylance* Threat "Event Type: Threat"
-| parse "Is Malware: *, " as malware_status nodrop
-| parse "Event Type: *, Event Name: *," as event_type, event_name nodrop
-| parse "Device Name: *, IP Address: (*), File Name: *, Path: *, Drive Type: *, SHA256: *,
-MD5: *, Status: *, Cylance Score: *, Found Date: *, File Type: *, Is Running: *, Auto Run: *,
-Detected By: *, Zone Names: (*)" as device_name, ip_address, file_name, path, drive_type, sha,
-md5, status, score, found, file_type, isRunning, autoRun, detected_by, zone  nodrop
-| parse "Is Unique To Cylance: *, Threat Classification: *, Device Id: *, Policy Name: *"
-as isUniqueToCylance, threatClassification, device_id, policy nodrop
-```
-
-
-
-
-
-###### **ThreatClassification **
-15
-
-
-
-```sql
-_sourceCategory=*cylance* ThreatClassification
-| parse "Event Type: *, Event Name: *, Threat Class: *, Threat Subclass: *, SHA256: *, MD5: *"
-as event_type, event_name, threat_class, threat_subclass, sha, md5
-```
-
-
-
-
-
-###### **AppControl
-
-
-```sql
-_sourceCategory=*cylance* "Event Type:" AppControl
-| parse "Event Type: *," as event_type nodrop
-| parse "Event Name: *, Device Name: *, IP Address: (*), Action: *, Action Type: *, File Path: *,
-SHA256: *" as event_name, device_name, ip_address, action, action_type, filepath, sha nodrop
-```
-
-
-
-### Sample log message
-17
-
-
-
-```
+```json
 850 <44>1 2019-02-27T04:57:20.4390000Z sysloghost CylancePROTECT - - - Event Type:
 Threat, Event Name: threat_changed, Device Name: SumoStg05, IP Address: (242.95.35.166),
 File Name: ChkRestart.exe, Path: C:\Windows\Dell_Scripts\Chk_Restart\, Drive Type:
@@ -265,11 +46,8 @@ Policy Name: Allowed Anywhere Internally
 
 
 ### Sample Query
-18
-
 
 The following query is from the **Event Name Trend** panel of the **Cylance - AuditLog Dashboard**.
-
 
 ```sql
 _sourceCategory=*cylance* "Event Type:" AuditLog
@@ -290,6 +68,135 @@ _sourceCategory=*cylance* "Event Type:" AuditLog
 | transpose row _timeslice column event_name
 ```
 
+## Collecting Logs for the Cylance App
+
+This procedure demonstrates how to collect logs from Cylance into Sumo Logic. Cylance applies artificial intelligence, algorithmic science, and machine learning to cyber security, and provides visibility to their service through integrations with a central security analytics platform like Sumo Logic. By combining the threat events data from Cylance and other data sources, you can reduce your security risk and improve your overall security posture.
+
+The Sumo Logic App for Cylance allows you to analyze Cylance security events by type, status, and detection method. You can use the App to investigate Cylance-specific events and provide operational visibility to team members without needing to log into Cylance.
+
+
+### Step 1: Configure a Collector
+
+To create a new Sumo Logic Hosted Collector, perform the steps in [Configure a Hosted Collector](/docs/send-data/configure-hosted-collector).
+
+
+### Step 2: Configure a Source
+
+1. Perform the steps in [Configure a Cloud Syslog Source](/docs/send-data/Sources/sources-hosted-collectors/Cloud-Syslog-Source#Configure_a_Cloud_Syslog_Source). and configure the following Source fields:
+    1. **Name**. (Required) A name is required. Description is optional.
+    2. **Source Category**. (Required) [Provide a realistic Source Category example for this data type.] The Source Category metadata field is a fundamental building block to organize and label Sources. \
+Example: **prod/web/apache/access**. \
+For details see [Best Practices](/docs/send-data/design-deployment/best-practices-source-categories).
+2. In the Advanced section, specify the following configurations:
+    3. **Enable Timestamp Parsing**. True
+    4. **Time Zone**. Logs are in UTC by default
+    5. **Timestamp Format**. Auto Detect
+3. Click **Save**.
+
+Copy and paste the **token** in a secure location. You will need this when you configure Cylance Syslog Settings.
+
+
+### Step 3: Configure Logging in Cylance
+
+Before your can configure Sumo Logic to ingest logs, you must set up remote log streaming on Cylance. For instructions, refer to the following documentation:
+
+1. In Cylance, go to **Settings > Application**. \
+
+2. In the **Integrations **section, activate the **Syslog/SIEM** check box.  
+3. Under **Event Types**, activate the checkboxes for all events.  
+4. For **SIEM,** select **Sumo Logic** as the destination.
+
+5. For **Protocol,** select TCP.
+6. Activate the check box **TLS/SSL**.
+7. Enter your **IP/Domain**.
+8. Enter your **Port**.
+9. For **Severity,** select **Alert (1)**.
+10. For **Facility,** select **Internal (5)**.
+11. For **Custom Token,** enter the token from the Sumo Logic [Cloud Syslog Source](/docs/send-data/Sources/sources-hosted-collectors/Cloud-Syslog-Source). The token should end with **@41123**. This number is the Sumo Logic Private Enterprise Number (PEN).
+12. Click **Save**.
+
+
+### Field Extraction Rules
+
+The following extraction rules use different approaches.
+
+```sql title="AuditLog"
+_sourceCategory=*cylance* "Event Type:" AuditLog
+| parse "Event Type: *, Event Name: *," as event_type, event_name nodrop
+| parse "Message: *," as msg nodrop | parse "Source IP: *," as src_ip nodrop | parse "User: *" as user nodrop
+| parse field=msg "Device: * was auto assigned to Zone: *" as device_name, zone nodrop
+| parse field=msg "Provider: *" as provider nodrop
+| parse regex field=msg "Device:\s*(?<device_name>[^\s]*)\s*$" nodrop
+| parse field=msg "Tier: *; Zones: *; Agent Version: *" as tier, zone, agent_version nodrop
+| parse field=msg "Policy Assigned: *; Devices: *" as policy, device_name nodrop
+| parse field=msg "Device: *; " as device_name nodrop
+| parse field=msg "Devices: *" as device_name nodrop
+| parse field=msg "SHA256: *" as sha nodrop
+| parse field=msg "Zone: *; Policy Assigned: *; Policy Applied To All Devices In Zone: *" as zone, policy, PolicyAppliedToAllDevicesInZone
+```
+
+```sql title="Device"
+_sourceCategory=*cylance* "Event Type: Device"
+| parse "Event Type: *, Event Name: *," as event_type, event_name nodrop
+| parse "Device Name: *, Agent Version: *, IP Address: (*), MAC Address: (*), Logged On Users: (*), OS: *, Zone Names: (*)" as device_name, agent_version, ip_address, mac_address, LoggedOnUsers, os, zone nodrop
+| parse "Device Name: *, Zone Names: (*), Device Id: *" as device_name, zone, device_id  
+| parse "Device Message: *, User: *, Zone Names: (*), Device Id: *" as  device_message, user, zone, device_id nodrop
+| parse regex field=ip_address "\s*(?<ipaddress>[^,]*)" multi nodrop
+| parse field=device_message "Device: *; " as device_name nodrop
+| if (isempty(ipaddress), ip_address, ipaddress) as ip_address
+| parse regex field=LoggedOnUsers "\s*(?<users>[^,]*)" multi nodrop
+| if (isempty(users), user, users) as user
+```
+
+
+```sql title="DeviceControl"
+_sourceCategory=*cylance* "Event Type: DeviceControl"
+| parse "Event Type: *, Event Name: *," as event_type, event_name nodrop
+| parse "Device Name: *, External Device Type: *, External Device Vendor ID: *,
+External Device Name: *, External Device Product ID: *, External Device Serial Number: *,
+Zone Names: (*), Device Id: *, Policy Name: *" as device_name, external_device_type,
+external_device_vendor_id, external_device_name, external_device_product_id,
+external_device_serialno, zone, device_id, policy nodrop
+```
+
+```sql title="ExploitAttempt"
+_sourceCategory=*cylance* ExploitAttempt
+| parse "Event Type: *, Event Name: *, Device Name: *, IP Address: (*), Action: *, Process ID: *, Process Name: *, User Name: *, Violation Type: *, Zone Names: (*), Device Id: *, Policy Name: *" as event_type, event_name, device_name, ip_address, action, pid, pname, user, violation, zone, device_id, policy
+```
+
+```sql title="ScriptControl"
+_sourceCategory=*cylance* ScriptControl
+| parse "Event Type: *, Event Name: *, Device Name: *, File Path: *, Interpreter: *, Interpreter
+Version: *, Zone Names: (*), User Name: *, Device Id: *, Policy Name: *" as event_type,
+event_name, device_name, filepath, interpreter, interpreterVersion, zone, user, device_id,
+policy nodrop
+```
+
+```sql title="Threat"
+_sourceCategory=*cylance* Threat "Event Type: Threat"
+| parse "Is Malware: *, " as malware_status nodrop
+| parse "Event Type: *, Event Name: *," as event_type, event_name nodrop
+| parse "Device Name: *, IP Address: (*), File Name: *, Path: *, Drive Type: *, SHA256: *,
+MD5: *, Status: *, Cylance Score: *, Found Date: *, File Type: *, Is Running: *, Auto Run: *,
+Detected By: *, Zone Names: (*)" as device_name, ip_address, file_name, path, drive_type, sha,
+md5, status, score, found, file_type, isRunning, autoRun, detected_by, zone  nodrop
+| parse "Is Unique To Cylance: *, Threat Classification: *, Device Id: *, Policy Name: *"
+as isUniqueToCylance, threatClassification, device_id, policy nodrop
+```
+
+```sql title="ThreatClassification"
+_sourceCategory=*cylance* ThreatClassification
+| parse "Event Type: *, Event Name: *, Threat Class: *, Threat Subclass: *, SHA256: *, MD5: *"
+as event_type, event_name, threat_class, threat_subclass, sha, md5
+```
+
+
+```sql title="AppControl"
+_sourceCategory=*cylance* "Event Type:" AppControl
+| parse "Event Type: *," as event_type nodrop
+| parse "Event Name: *, Device Name: *, IP Address: (*), Action: *, Action Type: *, File Path: *,
+SHA256: *" as event_name, device_name, ip_address, action, action_type, filepath, sha nodrop
+```
 
 
 ## Installing the Cylance App
@@ -322,8 +229,6 @@ Panels will start to fill automatically. It's important to note that each panel 
 
 ## Viewing Cylance Dashboards
 
-### Dashboard filters   
-
 **Each dashboard has a set of filters** that you can apply to the entire dashboard, as shown in the following example. Click the funnel icon in the top dashboard menu bar to display a scrollable list of filters that are applied across the entire dashboard.
 
 You can use filters to drill down and examine the data on a granular level.
@@ -336,7 +241,6 @@ You can use filters to drill down and examine the data on a granular level.
 The **Cylance - Overview Dashboard** a high-level view of threat incidents experienced on your network. The dashboard panels provide at-a-glance graphs with details and analytics on exploit control violation types, zones, threat classifications, devices, threat file types, event types and trends, event outliers, and event time compare trends.
 
 Use this dashboard to:
-
 * Analyze summaries of each prevention component, such as script control, memory exploit protection, device control, application control, AI based threat classification, and user actions performed from Cylance Web Console.
 * View of threats in the system, and drill down into specific prevention mechanisms and threat events by clicking in the panel.
 
@@ -410,8 +314,6 @@ Use this dashboard to:
 * Monitor external devices by their Vendor ID, Product ID, and Serial Number.
 * Define exceptions to the policy by vendor ID, as necessary.
 
-
-36
 You can set an exception for a Vendor ID. Use a Product ID and Serial Number for more specific exceptions.
 
 

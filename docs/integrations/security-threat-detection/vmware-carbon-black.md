@@ -79,7 +79,7 @@ This section provides instructions for configuring the collection of **VMware Ca
 
 The steps in the following procedure should be done as the “root” user on your target Linux system.
 
-**To configure the collection of VMware Carbon Black EDR events:**
+To configure the collection of VMware Carbon Black EDR events:**
 
 1. If it isn't already present, install the CbOpenSource repository.
 

@@ -43,7 +43,7 @@ To configure a hosted collector with a Cloud Syslog source, do the following:
 
 In this step, you create a server profile where you can define the log destination. This will be the hostname, port, and protocol (TLS) of the Sumo Logic Cloud Syslog source.
 
-**To create a server profile specifying  the log destination, do the following:
+To create a server profile specifying  the log destination, do the following:
 
 1. Login to the Palo Alto Networks Web interface as an administrative user.
 2. Select **Device tab > Server Profiles > Syslog**.

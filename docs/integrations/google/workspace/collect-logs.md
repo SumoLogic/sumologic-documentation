@@ -104,7 +104,7 @@ When you have set up a Hosted Collector and have your credentials ready, you're 
 16
 We recommend that you use the same single Source Category for each Google Workspace App Audit Source. For example, **google_apps**.
 
-**To configure a Google Workspace Apps Audit Source, do the following:
+To configure a Google Workspace Apps Audit Source, do the following:
 
 
 
@@ -396,7 +396,7 @@ use the **Client ID** for the service account copied in Step 6 of the following 
 
 If you are using the [Configure Script-Based Collection for Google Workspace Alert Center](#Configure_Script-Based_Collection_for_Google_Workspace_Alert_Center) use the **Client ID **present in the JSON generated after adding the key in the service account.
 
-**To configure Google Workspace Alert Center:**
+To configure Google Workspace Alert Center:**
 
 1. Go to your G Suite domain's Admin console (see instructions on [signing in to your Admin console](https://support.google.com/a/answer/182076)), go to **Security > Access and data control > API Controls**.<br/><img src={useBaseUrl('img/integrations/google/gw.png')} alt="google workspace" width="200"/>
 1. In the newly opened window, click **Manage Domain-wide Delegation **at the bottom.<br/><img src={useBaseUrl('img/integrations/google/GSuite_Step3.png')} alt="google workspace" />

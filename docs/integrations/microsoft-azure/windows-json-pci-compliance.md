@@ -27,7 +27,7 @@ The PCI Compliance For Windows JSON App uses Windows Security Event and System E
 ### Configure a Collector and a Source  
 
 
-**To configure a collector and source, do the following:
+To configure a collector and source, do the following:
 
 1. Configure an [Installed Windows collector](/docs/send-data/installed-collectors/install-collector-windows) through the user interface or from the command line.
 2. Configure either a local or remote Windows Event Log source. To configure a Windows Event Log source set the following:

@@ -9,7 +9,6 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/imperva.png')} alt="thumbnail icon" width="75"/>
 
-
 Imperva Incapsula is a cloud-based application delivery service that includes web security, DDoS protection, CDN, and load balancing.
 
 The Sumo Logic app for Imperva Incapsula - Web Application Firewall (WAF) helps you monitor your web application protection service. The preconfigured dashboards provide insights on the threat alerts events.
@@ -19,42 +18,7 @@ The Sumo Logic app for Imperva Incapsula - Web Application Firewall (WAF) helps 
 The Imperva Incapsula - Web Application Firewall App uses security and access logs. For more details, see [here](https://docs.incapsula.com/Content/management-console-and-settings/log-integration.htm?Highlight=siem#Overview).
 
 
-## Collecting Logs for the Imperva - Incapsula Web Application Firewall App
-
-This section provides instructions on configuring log collection for the Imperva - Incapsula Web Application Firewall App, as well as query samples.
-
-
-### Set up log integration in Imperva Incapsula
-
-#### To configure log integration, do the following:
-
-1. Log into your [my.incapsula.com](https://my.incapsula.com/admin/login) account. 
-2. On the sidebar, click **Logs > Log Setup**. 
-
-
-3. **Connection**. Select **Amazon S3**.
-4. Next, fill in your credentials:
-    * Your S3 **Access key, Secret key, and Path**, where path is the location of the folder where you want to store the logs. Enter the path in the following format: `<Amazon S3 bucket name>/<log folder>`. For example: MyBucket/MyIncapsulaLogFolder. 
-    * Click **Test connection** to perform a full testing cycle in which a test file will be transferred to your designated folder. The test file does not contain real data, and will be removed by Incapsula when the transfer is complete. 
-5. Configure the additional options:
-    * **Format**. Select the format for the log files: **CEF** 
-    * **Compress logs**. By default, log files are compressed. Clear this option to keep the logs uncompressed. 
-
-For detailed instructions, see [here](https://docs.incapsula.com/Content/management-console-and-settings/log-integration.htm?Highlight=siem#Enable).
-
-
-#### Set up in Sumo Logic
-
-
-#### To configure log collection for Sumo Logic, do the following:
-
-
-1. Add a [Sumo Logic Hosted Collector](/docs/send-data/configure-hosted-collector)
-2. Configure [AWS S3 Source](/docs/send-data/Sources/sources-hosted-collectors/Amazon-Web-Services/AWS-S3-Source).
-
-
-### Query Samples
-
+### Sample Queries
 
 ```sql title="Parse Command for all CEF items in Imperva Incapsula"
 | parse "fileId=* " as ID nodrop
@@ -106,8 +70,36 @@ _sourceCategory="Incapsula"
 ```
 
 
+## Collecting Logs for the Imperva-Incapsula WAF App
 
-## Installing the Imperva - Incapsula Web Application Firewall App
+This section provides instructions on configuring log collection for the Imperva - Incapsula Web Application Firewall App, as well as query samples.
+
+### Set up log integration in Imperva Incapsula
+
+To configure log integration, do the following:
+
+1. Log into your [my.incapsula.com](https://my.incapsula.com/admin/login) account. 
+2. On the sidebar, click **Logs > Log Setup**. 
+3. **Connection**. Select **Amazon S3**.
+4. Next, fill in your credentials:
+    * Your S3 **Access key, Secret key, and Path**, where path is the location of the folder where you want to store the logs. Enter the path in the following format: `<Amazon S3 bucket name>/<log folder>`. For example: MyBucket/MyIncapsulaLogFolder. 
+    * Click **Test connection** to perform a full testing cycle in which a test file will be transferred to your designated folder. The test file does not contain real data, and will be removed by Incapsula when the transfer is complete. 
+5. Configure the additional options:
+    * **Format**. Select the format for the log files: **CEF** 
+    * **Compress logs**. By default, log files are compressed. Clear this option to keep the logs uncompressed. 
+
+For detailed instructions, see [here](https://docs.incapsula.com/Content/management-console-and-settings/log-integration.htm?Highlight=siem#Enable).
+
+
+#### Set up in Sumo Logic
+
+To configure log collection for Sumo Logic, do the following:
+
+1. Add a [Sumo Logic Hosted Collector](/docs/send-data/configure-hosted-collector)
+2. Configure [AWS S3 Source](/docs/send-data/Sources/sources-hosted-collectors/Amazon-Web-Services/AWS-S3-Source).
+
+
+## Installing the Imperva-Incapsula WAF App
 
 Now that you have set up collection for Imperva Incapsula - Web Application Firewall, install the Sumo Logic App to use the pre-configured searches and [dashboards](#viewing-dashboards) that provide visibility into your environment for real-time analysis of overall usage.
 
@@ -116,12 +108,7 @@ To install the app:
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
 1. From the **App Catalog**, search for and select the app**.**
-2. Select the version of the service you're using and click **Add to Library**.
-
-Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/library/install-apps)
-
-
-
+2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/library/install-apps)
 3. To install the app, complete the following fields.
    * **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
    * **Data Source.** Select either of these options for the data source. 
@@ -135,8 +122,7 @@ Once an app is installed, it will appear in your **Personal** folder, or other f
 Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
 
 
-## Viewing Imperva - Incapsula WAF Dashboards
-
+## Viewing Imperva-Incapsula WAF Dashboards
 
 ### WAF - Overview
 

@@ -22,80 +22,6 @@ The Evident.io ESP App collects monitoring alerts.
 For details on the log format and definitions, refer to Evident.io documentation at [http://docs.evident.io/](http://docs.evident.io/).
 
 
-## Collecting Logs for the Evident.io ESP App
-
-This page demonstrates how to configure log collection for the Evident.io ESP App, and provides an example log message and query.
-
-
-### Step 1. Add a Sumo Logic Collector and Source
-
-1. In Sumo Logic, configure a [Hosted Collector](/docs/send-data/configure-hosted-collector).
-2. Configure an [HTTP Source](/docs/send-data/sources/sources-hosted-collectors/http-logs-metrics-source).
-    1. **Name. **Enter Evident.io SNS Integration.  
-    2. **Source Category. **Enter security_evident.
-3. In the **Advanced** section, configure:
-    3. **Enable Timestamp Parsing. **Activate the check box Extract timestamp information from log files.
-    4. **Time Zone.** Select Ignore time zone from log file, and select (UTC) Etc/UTC
-4. **Processing Rules.** Create the following [Mask Rule](/docs/manage/collection/processing-rules/Mask-Rules): \
-
-    5. **Name.** Enable proper timestamp parsing
-    6. **Filter. **Enter `\"(?:created_at|updated_at|ended_at)\":\"\d+-\d+-\d+(T)\d+:\d+:\d+.\d+Z\"`
-    7. **Type.** Select Mask messages that match.
-    8. **Mask String.** Enter t.
-5. Click **Apply**.
-6. Click **Save**.
-7. Copy the HTTP Source Address URL and use it in the following section.
-
-
-### Step 2. Configure an Evident.io Integration with AWS SNS
-
-To configure an Evident.IO Integration with AWS SNS:
-
-1. In Evident.io, [add an Integration](http://docs.evident.io/#to-add-an-integration).
-2. Enable an [AWS SNS integration](http://docs.evident.io/#amazon-sns).
-
-
-### Step 3. Subscribe to SNS Notifications
-
-Once the Hosted Collector and HTTP Source are configured, subscribe your Hosted Collector to the topic collecting data from Evident.io.
-
-
-
-If this is a new SNS topic, first subscribe an email address to it to make sure the path from ESP to the SNS topic works correctly before subscribing the Hosted Collector.
-
-1. In the **AWS Management Console**, go to **SNS > Topics**, and find the topic you created in Configure an Evident.IO Integration with AWS SNS.
-2. Select the checkbox for the topic.
-3. Under **Amazon SNS**, in the **Actions** menu, select **Subscribe to Topic**.
-4. Under **Protocol**, select **HTTPS**, and paste the Sumo Logic HTTP Source URL you created in the first step into the **Endpoint** field.
-5. Click **Create Subscription**.
-6. In a few minutes, a confirmation message is sent to Sumo Logic.
-7. In Sumo Logic, find the confirmation message from your HTTP Source by searching for `SubscribeURL`. \
-For example, use the query:  \
-`_sourceCategory=security_evident SubscribeURL`
-8. Then, in the **Messages** tab, find the JSON field `SubscribeURL`, and copy the URL to your clipboard, as shown. \
-
-
-9. In the **AWS Management Console**, select **SNS >Topics**.
-10. Under **Amazon SNS > Actions**, select **Confirm a subscription**.
-11. Paste the `SubscribeURL` into the field **Subscription confirmation URL**, and click **Confirm subscription**.
-
-
-### Step 4. Enable Raw Message Delivery
-
-Enable Raw Message Delivery for the topic.
-
-For details, see [http://docs.aws.amazon.com/sns/latest/dg/large-payload-raw-message.html](http://docs.aws.amazon.com/sns/latest/dg/large-payload-raw-message.html).
-
-1. Select the AWS Topic.
-2. Click **Other subscription actions**.
-3. Click **Edit subscription attributes**. \
-
-
-4. Select the **Raw message delivery** check box. \
-
-5. Click **Set subscription attributes.**
-
-
 ### Sample Log Message
 
 <details><summary>Click to expand</summary>
@@ -257,7 +183,7 @@ For details, see [http://docs.aws.amazon.com/sns/latest/dg/large-payload-raw-mes
 </details>
 
 
-### Query Sample
+### Sample Query
 
 
 ```sql title="Alerts by Status"
@@ -272,8 +198,75 @@ _sourceCategory=security_evident
 | count by status
 ```
 
-## Installing the Evident.io ESP App
+## Collecting Logs for the Evident.io ESP App
 
+This page demonstrates how to configure log collection for the Evident.io ESP App, and provides an example log message and query.
+
+
+### Step 1. Add a Sumo Logic Collector and Source
+
+1. In Sumo Logic, configure a [Hosted Collector](/docs/send-data/configure-hosted-collector).
+2. Configure an [HTTP Source](/docs/send-data/sources/sources-hosted-collectors/http-logs-metrics-source).
+    1. **Name. **Enter Evident.io SNS Integration.  
+    2. **Source Category. **Enter security_evident.
+3. In the **Advanced** section, configure:
+    3. **Enable Timestamp Parsing. **Activate the check box Extract timestamp information from log files.
+    4. **Time Zone.** Select Ignore time zone from log file, and select (UTC) Etc/UTC
+4. **Processing Rules.** Create the following [Mask Rule](/docs/manage/collection/processing-rules/Mask-Rules): \
+
+    5. **Name.** Enable proper timestamp parsing
+    6. **Filter. **Enter `\"(?:created_at|updated_at|ended_at)\":\"\d+-\d+-\d+(T)\d+:\d+:\d+.\d+Z\"`
+    7. **Type.** Select Mask messages that match.
+    8. **Mask String.** Enter t.
+5. Click **Apply**.
+6. Click **Save**.
+7. Copy the HTTP Source Address URL and use it in the following section.
+
+
+### Step 2. Configure an Evident.io Integration with AWS SNS
+
+To configure an Evident.IO Integration with AWS SNS:
+
+1. In Evident.io, [add an Integration](http://docs.evident.io/#to-add-an-integration).
+2. Enable an [AWS SNS integration](http://docs.evident.io/#amazon-sns).
+
+
+### Step 3. Subscribe to SNS Notifications
+
+Once the Hosted Collector and HTTP Source are configured, subscribe your Hosted Collector to the topic collecting data from Evident.io.
+
+If this is a new SNS topic, first subscribe an email address to it to make sure the path from ESP to the SNS topic works correctly before subscribing the Hosted Collector.
+
+1. In the **AWS Management Console**, go to **SNS > Topics**, and find the topic you created in Configure an Evident.IO Integration with AWS SNS.
+2. Select the checkbox for the topic.
+3. Under **Amazon SNS**, in the **Actions** menu, select **Subscribe to Topic**.
+4. Under **Protocol**, select **HTTPS**, and paste the Sumo Logic HTTP Source URL you created in the first step into the **Endpoint** field.
+5. Click **Create Subscription**.
+6. In a few minutes, a confirmation message is sent to Sumo Logic.
+7. In Sumo Logic, find the confirmation message from your HTTP Source by searching for `SubscribeURL`. \
+For example, use the query: `_sourceCategory=security_evident SubscribeURL`
+8. Then, in the **Messages** tab, find the JSON field `SubscribeURL`, and copy the URL to your clipboard, as shown.
+
+9. In the **AWS Management Console**, select **SNS >Topics**.
+10. Under **Amazon SNS > Actions**, select **Confirm a subscription**.
+11. Paste the `SubscribeURL` into the field **Subscription confirmation URL**, and click **Confirm subscription**.
+
+
+### Step 4. Enable Raw Message Delivery
+
+Enable Raw Message Delivery for the topic.
+
+For details, see [http://docs.aws.amazon.com/sns/latest/dg/large-payload-raw-message.html](http://docs.aws.amazon.com/sns/latest/dg/large-payload-raw-message.html).
+
+1. Select the AWS Topic.
+2. Click **Other subscription actions**.
+3. Click **Edit subscription attributes**.
+4. Select the **Raw message delivery** check box.
+5. Click **Set subscription attributes.**
+
+
+
+## Installing the Evident.io ESP App
 
 Now that you have configured Evident.io ESP, install the Sumo Logic App for Evident.io ESP to take advantage of the preconfigured searches and [dashboards](#viewing-dashboards) to analyze your data.
 
@@ -282,17 +275,14 @@ To install the app:
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
 1. From the **App Catalog**, search for and select the app**.**
-2. Select the version of the service you're using and click **Add to Library**.
-
-Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/library/install-apps)
-
-1. To install the app, complete the following fields.
+2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/library/install-apps)
+3. To install the app, complete the following fields.
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
     2. **Data Source.** Select either of these options for the data source. 
         * Choose **Source Category**, and select a source category from the list. 
         * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). 
     3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-2. Click **Add to Library**.
+4. Click **Add to Library**.
 
 Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization.
 

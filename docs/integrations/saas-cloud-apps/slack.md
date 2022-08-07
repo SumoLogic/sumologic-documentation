@@ -23,7 +23,6 @@ Slack logs are in JSON format. The Slack App utilizes the following log types:
 * Access logs
 * Audit logs
 
-
 Sumo Logic’s Slack collector enhances the logs by adding a few metadata fields so the raw logs from Slack APIs might differ in format. The availability of all types of logs is determined by the [slack plans](https://get.slack.help/hc/en-us/articles/115003205446-Slack-plans-and-features-).
 
 <table>
@@ -100,6 +99,191 @@ Sumo Logic’s Slack collector enhances the logs by adding a few metadata fields
    </td>
   </tr>
 </table>
+
+
+
+### Sample log messages
+
+The following table provides sample log messages for the different log types.
+
+[User logs](https://api.slack.com/methods/users.list)
+```json
+{
+  "id": "UM27LNGHK",
+  "name": "test",
+  "deleted": false,
+  "real_name": "test",
+  "tz": "Asia/Kolkata",
+  "tz_label": "India Standard Time",
+  "is_admin": false,
+  "is_owner": false,
+  "is_primary_owner": false,
+  "is_restricted": false,
+  "is_ultra_restricted": false,
+  "is_bot": false,
+  "is_app_user": false,
+  "updated": 1565005724,
+  "has_2fa": false,
+  "teamName": "TestSlack",
+  "email": "test@test.com",
+  "billable": true,
+  "logType": "UserLog"
+}
+```
+
+[Public Channel logs](https://api.slack.com/methods/conversations.list)
+```json
+{
+  "channel_id": "CKN1D8010",
+  "channel_name": "testchannel",
+  "members": 2,
+  "logType": "ChannelDetail",
+  "teamName": "TestSlack"
+}
+```
+
+[Public Message logs](https://api.slack.com/methods/channels.history)
+```json
+{
+  "type": "message",
+  "text": "Test",
+  "files": [
+    {
+      "name": "Test",
+      "fileType": "epub",
+      "fileSize": 1258,
+      "urlPrivate": "https://files.slack.com/files-pri/TJ...htyhomsdconmps",
+      "urlPrivateDownload": "https://files.slack.com/files-pri/TJ...htyhomsdconmps",
+      "permalink": "https://testslack-xj11408.slack.com/...htyhomsdconmps"
+    }
+  ],
+  "attachments": [
+    {
+      "id": 16,
+      "text": "Test",
+      "author_name": "",
+      "author_link": "",
+      "pretext": "",
+      "fallback": "Messages Sent"
+    }
+  ],
+  "upload": true,
+  "user": "e65b0bd8",
+  "display_as_bot": false,
+  "ts": "1566215592",
+  "client_msg_id": "23849274-580c-4644-9478-8328e5716b89",
+  "userName": "roy",
+  "channelId": "e65b0d0e",
+  "channelName": "app-for-slack",
+  "teamName": "TestSlack",
+  "logType": "ConversationLog"
+}
+```
+
+[Access logs	](https://api.slack.com/methods/team.accessLogs)
+```json
+{
+  "user_id": "e65b0476",
+  "username": "dave",
+  "date_first": 1566215532,
+  "date_last": 1566215532,
+  "count": 2,
+  "ip": "213.14.129.105",
+  "user_agent": "Mozilla/5.0 (Windows NT 6.2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/28.0.1467.0 Safari/537.36",
+  "isp": "Inetbroadband",
+  "country": "PA",
+  "region": "EU",
+  "teamName": "TestSlack",
+  "logType": "AccessLog"
+}
+```
+
+[Audit logs](https://api.slack.com/docs/audit-logs-api#the_audit_event)
+```json
+{
+  "logType": "UserAuditLog",
+  "id": "bdcb13e3-28a3-41f0-9ace-a20952def3a0",
+  "date_create": 1566215192,
+  "action": "user_created",
+  "actor": {
+    "type": "user",
+    "user": {
+      "id": "e65b0f5c",
+      "name": "roy",
+      "email": "aaron@demo.com"
+    }
+  },
+  "entity": {
+    "id": "e65b107e",
+    "privacy": "public",
+    "name": "BigCo ISP",
+    "is_shared": false,
+    "is_org_shared": false,
+    "filetype": "text/csv",
+    "title": "john",
+    "is_distributed": false,
+    "is_directory_approved": false,
+    "scopes": [
+      "identify",
+      "bot",
+      "incoming-webhook",
+      "channels:read",
+      "groups:read",
+      "im:read",
+      "users:read",
+      "chat:write:bot",
+      "users:read.email",
+      "groups:write",
+      "channels:write",
+      "team:read",
+      "chat:write:user"
+    ]
+  },
+  "context": {
+    "location": {
+      "type": "workspace",
+      "id": "e65b11aa",
+      "name": "Docker",
+      "domain": "Docker"
+    },
+    "ua": "Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:23.0) Gecko/20131011 Firefox/23.0",
+    "ip_address": "120.188.0.246"
+  },
+  "details": {
+    "id": "USLACKUSER",
+    "name": "himanshu",
+    "email": "kumar@demo.com"
+  }
+}
+```
+
+### Sample Query
+
+The sample query is from the **Channel Summary** panel of **Slack - Public Channels** dashboard.
+
+```sql
+_sourceCategory=Labs/slack
+| join ("logType":"channelDetail"
+| json "channel_name", "channel_id", "teamName", "members" as Channel, ChannelId, Workspace, Members
+| withtime Members
+| most_recent(Members_withtime) as Members by Channel, ChannelId, Workspace) as T1,("logType":"ConversationLog" | json "user", "userName", "type", "subtype", "ts", "text", "channelId", "channelName", "teamName" as ID, User, Type, SubType, Time, Text, ChannelId, Channel, Workspace nodrop
+| count_distinct(Time) as Messages by ID, ChannelId, Workspace) as T2 on T1.ChannelId = T2.ChannelId and T1.Workspace=T2.Workspace
+| T2_Workspace as Workspace | T2_ID as User| T1_Channel as Channel
+| where Workspace matches {{Workspace}} and Channel matches {{Channel}}
+| T1_Members as %"Team Members"
+| fields Workspace, Channel, User, %"Team Members" ,T2_Messages
+| where [subquery:"logType":"UserLog"
+| json "id", "name", "deleted", "is_bot", "teamName" as User, Name, Deleted, Bot, Workspace nodrop
+| where Bot matches "false" and !(Name matches "slackbot") and Deleted matches "false"
+| withtime Name
+| most_recent(Name_withtime) as Name by User, Workspace
+| compose User, Workspace]
+| sum(T2_Messages) as %"Total Messages", count_distinct(User) as %"Members Posted Messages" by Workspace, Channel, %"Team Members"
+| fields Workspace, Channel, %"Team Members", %"Total Messages", %"Members Posted Messages"
+| sort by %"Total Messages"
+| limit 20
+```
+
 
 ## Collect logs for the Slack App
 
@@ -284,8 +468,8 @@ https://slack.com/oauth/authorize?client_id=12345686.853580033397&scope=admin,ch
 2. Ignore the error message and copy the **Code** in the URL field, as shown in the following example.
 
 
-1. Get the client ID and client secret from the Basic information of your Slack app. Replace the `<CODE>`, `<CLIENT_ID>`, and `<CLIENT_SECRET>` variables in the following URL.
-```
+1. Get the client ID and client secret from the Basic information of your Slack app. Replace the variables in brackets (`< >`) in the following URL:
+```bash
 https://slack.com/api/oauth.access?code=<CODE>&client_id=<CLIENT_ID>&client_secret=<CLIENT_SECRET>
 ```
 
@@ -294,7 +478,6 @@ If **v2**  appears in the URL used for the **share URL** in [step 6,](#Step-6---
 ```bash
 https://slack.com/api/oauth.v2.access?code=<CODE>&client_id=<CLIENT_ID>&client_secret=<CLIENT_SECRET>
 ```
-
 
 
 1. Open a new browser tab and paste the URL from the previous step into the URL field, then press **Enter**.
@@ -313,13 +496,10 @@ https://slack.com/api/oauth.v2.access?code=<CODE>&client_id=<CLIENT_ID>&client_s
 ```
 
 1. Verify that the generated token is valid with the following commands. If the token is valid, the output will have "ok":true in the response. Replace the `<API_TOKEN>` variable with the generated token you copied in the previous step.
-
-
 ```curl
 curl -X GET -H "Authorization: Bearer <API_TOKEN>" -H "Accept: application/json" "https://slack.com/api/team.info?pretty=1"
 curl -X GET -H "Content-Type: application/json" -H "Authorization: Bearer <ACCESS_TOKEN>" https://api.slack.com/audit/v1/logs?limit=5&pretty=1
 ```
-
 
 
 #### Add a Hosted Collector and HTTP Source
@@ -346,7 +526,7 @@ This section covers the various ways in which to collect logs from Slack and sen
 
 In this collection method, you deploy the SAM application, which creates the necessary resources in your AWS account.
 
-**To deploy the Sumo Logic Slack SAM application, do the following:
+To deploy the Sumo Logic Slack SAM application, do the following:
 1. Go to [https://serverlessrepo.aws.amazon.com/applications](https://serverlessrepo.aws.amazon.com/applications).
 2. Search for **sumologic-slack** and make sure the checkbox next to the text **Show apps that create custom IAM roles or resource policies** is selected, then click the app link when it appears.
 
@@ -362,7 +542,7 @@ In this collection method, you deploy the SAM application, which creates the nec
 * **EnableInfrequentChannels.** Default is false.
     * Select true > Enable dividing channels into frequent and infrequent based on the last message time.                     
     * Select false > Send all public channels messages.
-* **CreateSecret. **Default is No.
+* **CreateSecret.** Default is No.
     * Select yes > Encrypt the Provided Environment variables HTTP_LOGS_ENDPOINT, TOKEN using KMS and Secret Manager.
     * Select No > No encryption.
 * **AwsKmsKeyARN.** Provide an existing KMS Key ARN to encrypt the Environment variables HTTP_LOGS_ENDPOINT, TOKEN. If kept empty, a new KMS Key ID will be created if **CreateSecret** is **Yes**.
@@ -374,7 +554,7 @@ In this collection method, you deploy the SAM application, which creates the nec
 
 This section shows you how to configure collection for multiple projects assuming you are already collecting Slack data for one project.
 
-**To configure collection for multiple projects, do the following:
+To configure collection for multiple projects, do the following:
 
 1. [Deploy the SAM application](#Sumo_Logic_Slack_SAM_application) with the configuration for a new slack workspace.
 2. Modify the **DatabaseName** and **Token** parameter during the SAM configuration to identify the slack workspace.
@@ -390,25 +570,26 @@ The _sumologic-slack_ script is compatible with python 3.7 and has been tested o
 #### Prerequisites
 
 * You must have successfully added a [Hosted Collector and HTTP source](#Step_2:_Add_a_Hosted_Collector_and_HTTP_Source) and copied configuration parameter (token) from Slack, as described in [Step 1](#Step_1:_Create_a_Sumo_Logic_app_in_Slack) and [Step 2](#Step_2:_Add_a_Hosted_Collector_and_HTTP_Source).
-* You must be logged in to the user account with which you will install the collector. If you are not, use this command to switch to that account:  \
-**sudo su <user_name>**
+* You must be logged in to the user account with which you will install the collector. If you are not, use this command to switch to that account:  
+```
+sudo su <user_name>
+```
 
 
 #### Configure the script on a Linux machine
 
 This task shows you how to install the script on a Linux machine.
 
-
 For python 3, use pip3 install **sumologic-slack** (step 3). For operating systems where the default is not python3, use **/usr/bin/python3 -m sumoslack.main** (step 6).
 
-**To deploy the script, do the following:
-
+To deploy the script, do the following:
 1. If **pip** is not already installed, follow the instructions in the [pip documentation](https://pip.pypa.io/en/stable/installing/) to download and install **pip**.
 2. Log in to a Linux machine (compatible with Python 3.7.)
-3. **For Python 3**, run the following command: `pip3 install sumologic-slack`
+3. **For Python 3**, run the following command:
+```
+pip3 install sumologic-slack
+```
 4. Create a configuration file **slackcollector.yaml** in the home directory as shown in the following example and specify the parameters where indicated.
-
-
 ```yml
 Slack:
  TOKEN: <Paste the Token collected from Slack App from step 1.>
@@ -432,7 +613,6 @@ SumoLogic:
 
 1. Create a cron job  to run the collector every 5 minutes, (use the `crontab -e` option). Do one of the following:
 **For Python 3**, add the following line to your crontab:
-
 ```bash
 */5 * * * *  /usr/bin/python3 -m sumoslack.main > /dev/null 2>&1
 ```
@@ -442,7 +622,7 @@ SumoLogic:
 
 This section shows you how to configure collection for multiple projects assuming you are already collecting Slack data for one project.
 
-**To configure collection for multiple projects, do the following:
+To configure collection for multiple projects, do the following:
 
 1. After configuring the script on a Linux machine, go to your configuration file.
 2. Change the DB_NAME in the **slackcollector.yaml** file, as indicated in the following example:
@@ -577,192 +757,12 @@ This section shows you how to run the function manually and then verify that log
 
 **To run the function manually, do the following:
 
-1. For **Python 3**, use this command: `python3 -m sumoslack.main`
-2. Check the automatically generated logs in  **/tmp/sumoapiclient.log **to verify whether the function is getting triggered or not.
+1. For **Python 3**, use this command:
+```
+python3 -m sumoslack.main
+```
+2. Check the automatically generated logs in  **/tmp/sumoapiclient.log** to verify whether the function is getting triggered or not.
 3. If you get an **OAuth Error: team_not_authorized** error when you try to add scopes to your slack app, remove **auditlogs:read** scope from the app.
-
-
-### Sample log messages
-
-The following table provides sample log messages for the different log types.
-
-[User logs](https://api.slack.com/methods/users.list)
-```json
-{
-  "id": "UM27LNGHK",
-  "name": "test",
-  "deleted": false,
-  "real_name": "test",
-  "tz": "Asia/Kolkata",
-  "tz_label": "India Standard Time",
-  "is_admin": false,
-  "is_owner": false,
-  "is_primary_owner": false,
-  "is_restricted": false,
-  "is_ultra_restricted": false,
-  "is_bot": false,
-  "is_app_user": false,
-  "updated": 1565005724,
-  "has_2fa": false,
-  "teamName": "TestSlack",
-  "email": "test@test.com",
-  "billable": true,
-  "logType": "UserLog"
-}
-```
-
-[Public Channel logs](https://api.slack.com/methods/conversations.list)
-```json
-{
-  "channel_id": "CKN1D8010",
-  "channel_name": "testchannel",
-  "members": 2,
-  "logType": "ChannelDetail",
-  "teamName": "TestSlack"
-}
-```
-
-[Public Message logs](https://api.slack.com/methods/channels.history)
-```json
-{
-  "type": "message",
-  "text": "Test",
-  "files": [
-    {
-      "name": "Test",
-      "fileType": "epub",
-      "fileSize": 1258,
-      "urlPrivate": "https://files.slack.com/files-pri/TJ...htyhomsdconmps",
-      "urlPrivateDownload": "https://files.slack.com/files-pri/TJ...htyhomsdconmps",
-      "permalink": "https://testslack-xj11408.slack.com/...htyhomsdconmps"
-    }
-  ],
-  "attachments": [
-    {
-      "id": 16,
-      "text": "Test",
-      "author_name": "",
-      "author_link": "",
-      "pretext": "",
-      "fallback": "Messages Sent"
-    }
-  ],
-  "upload": true,
-  "user": "e65b0bd8",
-  "display_as_bot": false,
-  "ts": "1566215592",
-  "client_msg_id": "23849274-580c-4644-9478-8328e5716b89",
-  "userName": "roy",
-  "channelId": "e65b0d0e",
-  "channelName": "app-for-slack",
-  "teamName": "TestSlack",
-  "logType": "ConversationLog"
-}
-```
-
-[Access logs	](https://api.slack.com/methods/team.accessLogs)
-```json
-{
-  "user_id": "e65b0476",
-  "username": "dave",
-  "date_first": 1566215532,
-  "date_last": 1566215532,
-  "count": 2,
-  "ip": "213.14.129.105",
-  "user_agent": "Mozilla/5.0 (Windows NT 6.2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/28.0.1467.0 Safari/537.36",
-  "isp": "Inetbroadband",
-  "country": "PA",
-  "region": "EU",
-  "teamName": "TestSlack",
-  "logType": "AccessLog"
-}
-```
-
-[Audit logs](https://api.slack.com/docs/audit-logs-api#the_audit_event)
-```json
-{
-  "logType": "UserAuditLog",
-  "id": "bdcb13e3-28a3-41f0-9ace-a20952def3a0",
-  "date_create": 1566215192,
-  "action": "user_created",
-  "actor": {
-    "type": "user",
-    "user": {
-      "id": "e65b0f5c",
-      "name": "roy",
-      "email": "aaron@demo.com"
-    }
-  },
-  "entity": {
-    "id": "e65b107e",
-    "privacy": "public",
-    "name": "BigCo ISP",
-    "is_shared": false,
-    "is_org_shared": false,
-    "filetype": "text/csv",
-    "title": "john",
-    "is_distributed": false,
-    "is_directory_approved": false,
-    "scopes": [
-      "identify",
-      "bot",
-      "incoming-webhook",
-      "channels:read",
-      "groups:read",
-      "im:read",
-      "users:read",
-      "chat:write:bot",
-      "users:read.email",
-      "groups:write",
-      "channels:write",
-      "team:read",
-      "chat:write:user"
-    ]
-  },
-  "context": {
-    "location": {
-      "type": "workspace",
-      "id": "e65b11aa",
-      "name": "Docker",
-      "domain": "Docker"
-    },
-    "ua": "Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:23.0) Gecko/20131011 Firefox/23.0",
-    "ip_address": "120.188.0.246"
-  },
-  "details": {
-    "id": "USLACKUSER",
-    "name": "himanshu",
-    "email": "kumar@demo.com"
-  }
-}
-```
-
-### Sample Query
-
-The sample query is from the **Channel Summary** panel of **Slack - Public Channels** dashboard.
-
-```sql
-_sourceCategory=Labs/slack
-| join ("logType":"channelDetail"
-| json "channel_name", "channel_id", "teamName", "members" as Channel, ChannelId, Workspace, Members
-| withtime Members
-| most_recent(Members_withtime) as Members by Channel, ChannelId, Workspace) as T1,("logType":"ConversationLog" | json "user", "userName", "type", "subtype", "ts", "text", "channelId", "channelName", "teamName" as ID, User, Type, SubType, Time, Text, ChannelId, Channel, Workspace nodrop
-| count_distinct(Time) as Messages by ID, ChannelId, Workspace) as T2 on T1.ChannelId = T2.ChannelId and T1.Workspace=T2.Workspace
-| T2_Workspace as Workspace | T2_ID as User| T1_Channel as Channel
-| where Workspace matches {{Workspace}} and Channel matches {{Channel}}
-| T1_Members as %"Team Members"
-| fields Workspace, Channel, User, %"Team Members" ,T2_Messages
-| where [subquery:"logType":"UserLog"
-| json "id", "name", "deleted", "is_bot", "teamName" as User, Name, Deleted, Bot, Workspace nodrop
-| where Bot matches "false" and !(Name matches "slackbot") and Deleted matches "false"
-| withtime Name
-| most_recent(Name_withtime) as Name by User, Workspace
-| compose User, Workspace]
-| sum(T2_Messages) as %"Total Messages", count_distinct(User) as %"Members Posted Messages" by Workspace, Channel, %"Team Members"
-| fields Workspace, Channel, %"Team Members", %"Total Messages", %"Members Posted Messages"
-| sort by %"Total Messages"
-| limit 20
-```
 
 
 

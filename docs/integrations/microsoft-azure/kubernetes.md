@@ -93,7 +93,7 @@ This section walks you through the process of configuring a pipeline to send log
 * kube-scheduler
 * kube-controller-manager
 
-**To configure Azure Monitor and enable AKS logs, do the following:
+To configure Azure Monitor and enable AKS logs, do the following:
 
 1. Follow Step 1 and Step 2 on this page: [Collect Logs from Azure Monitor](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-logs-azure-monitor)
 2. [Enable the Kubernetes master node logs in Azure Kubernetes Service](https://docs.microsoft.com/en-us/azure/aks/view-master-logs#enable-diagnostics-logs) to send logs to an event hub created in the previous step.

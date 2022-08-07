@@ -9,7 +9,6 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/saas-cloud-apps/cloudflare.png')} alt="Thumbnail icon" width="100"/>
 
-
 This application has been developed and is supported by Cloudflare. In case of technical questions, please review the technical [documentation](https://developers.cloudflare.com/logs/) for Cloudflare logs or email [analytics@cloudflare.com](mailto:analytics@cloudflare.com).
 
 The Cloudflare App provides a set of dashboards that make analyzing Cloudflare logs easy, helping you to understand events and trends from your websites and applications on the Cloudflare network. Logs are gathered from all 160+ Cloudflare data centers in near real-time and can be combined with other data sources, such as your origin data, to provide unique insights and help you improve the performance and security of your websites and applications.
@@ -17,10 +16,10 @@ The Cloudflare App provides a set of dashboards that make analyzing Cloudflare l
 
 ## Log Types
 
-The Cloudflare App uses HTTP request logs in JSON format gathered from all of the 155+ Cloudflare data centers. By default, timestamps are returned as Unix nanosecond integers.  We recommend using the RFC 3339 format for sending logs to Sumo Logic. For a description of the fields available in the logs see link [here](https://developers.cloudflare.com/logs/logpull-api/#fields).
+The Cloudflare App uses HTTP request logs in JSON format gathered from all of the 155+ Cloudflare data centers. By default, timestamps are returned as Unix nanosecond integers. We recommend using the RFC 3339 format for sending logs to Sumo Logic. For a description of the fields available in the logs see link [here](https://developers.cloudflare.com/logs/logpull-api/#fields).
 
 
-## Sample Log Message
+### Sample Log Message
 
 ```json
 {
@@ -36,7 +35,7 @@ The Cloudflare App uses HTTP request logs in JSON format gathered from all of th
 }
 ```
 
-## Sample Query
+### Sample Query
 
 The following log query is from the ‘Total Number of Requests’ panel in the ‘Cloudflare - Snapshot’ dashboard.
 
@@ -54,16 +53,12 @@ client_request_uri, origin_response_status, edge_response_status, origin_ip, cli
 
 ## Collecting Logs for Cloudflare
 
-This application has been developed and is supported by Cloudflare. In case of technical questions, please review the technical [documentation](https://developers.cloudflare.com/logs/) for Cloudflare logs or email analytics@cloudflare.com.
-
 This section shows you how to set up a Hosted Collector and specify a Sumo Logic Source.
 
 
-### Set up a Hosted Collector and specify a Sumo Logic Source
+### Set up a Hosted Collector and Specify a Sumo Logic Source
 
-This section provides instructions for setting up a Hosted Collector and specify a Sumo Logic Source.
-
-### Prerequisites
+#### Prerequisites
 
 To send Cloudflare logs to Sumo Logic, you must first configure Cloudflare Logs to send logs to AWS S3 using [Logpush](https://developers.cloudflare.com/logs/logpush) or [Logpull](https://developers.cloudflare.com/logs/logpull-api/).
 

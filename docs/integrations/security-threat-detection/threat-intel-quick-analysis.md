@@ -28,11 +28,7 @@ To install the app:
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
 1. From the **App Catalog**, search for and select the app**.**
-2. Select the version of the service you're using and click **Add to Library**.
-
-Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/library/install-apps)
-
-
+2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/library/install-apps)
 3. To install the app, complete the following fields.
    * **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
    * **Data Source.** Select either of these options for the data source. 
@@ -48,12 +44,9 @@ Panels will start to fill automatically. It's important to note that each panel 
 
 ## Viewing Threat Intel Quick Analysis Dashboards
 
-
 All Dashboards include filters that you can use in Interactive Mode for further analysis of your Threat Intel Quick Analysis data. Because the Threat Intel Quick Analysis has the most bearing on recent threats, most panels are set to the 15 minute time range. You can adjust time ranges as needed.
 
-
 Live mode and real-time queries are not supported for dashboards at this time.
-
 
 ### Overview
 
@@ -71,7 +64,7 @@ See the frequency of Domain threats by Actor, Log Source, Malicious Confidence, 
 * **Threats by Malicious Confidence. ** Qualifies all threats into High, Medium, Low, Unverified, according to CrowdStrike's machine learning engine.
 
 
-#### Domain
+### Domain
 
 See the frequency of Domain threats by Actor, Log Source, Malicious Confidence, and view trends over time.
 
@@ -85,13 +78,11 @@ See the frequency of Domain threats by Actor, Log Source, Malicious Confidence, 
 * **Threats Over Time by Sources. **Trends of domain threats over time, broken by Sources for the last 60 minutes.  
 * **Threats Table.** Listing of all domain threats, including Malicious Confidence, Actors and Sources.   
 
-
-#### Email
+### Email
 
 See the frequency of Email threats by Actor, Log Source, Malicious Confidence, and view trends over time.
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/TIQA_Email_Dashboard.png')} alt="Threat Intel Dashboard" />
-
 
 * **Threat Count.** Count of threats related to malicious emails addresses, for the last 15 minutes.  
 * **Threats by Malicious Confidence.** Qualifies email address threats into High, Medium, Low, Unverified, according to CrowdStrike's machine learning engine.  
@@ -120,7 +111,6 @@ See the frequency of IP threats by Actor, Log Source, Malicious Confidence, and 
 
 ### URL
 
-
 See the frequency of URL threats by Actor, Log Source, Malicious Confidence, and view trends over time.
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/TIQA_URL_Dashboard.png')} alt="Threat Intel Dashboard" />
@@ -139,7 +129,6 @@ See the frequency of URL threats by Actor, Log Source, Malicious Confidence, and
 See the frequency of Hash 256 threats by Actor, Log Source, Malicious Confidence, and view trends over time.
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/TIQA_Hash256_Dashboard.png')} alt="Threat Intel Dashboard" />
-
 
 * **Threat Count.** Count of total Hash 256 threats over the last 15 minutes.
 * **Threats by Malicious Confidence.** Qualifies Hash 256 threats for the last 60 minutes  into High, Medium, Low, Unverified, according to CrowdStrike's machine learning engine and displayed as a pie chart.
@@ -168,8 +157,6 @@ _sourceCategory=cylance "IP Address"
 | where ip_address != "0.0.0.0" and ip_address != "127.0.0.1"
 | lookup type, actor, raw, threatlevel as malicious_confidence from sumo://threat/cs on threat=ip_address
 ```
-
-
 
 ### Field Extraction Rule
 
@@ -228,8 +215,6 @@ _view=cylance_threat \
 ## Threat Intel FAQ
 
 #### What is the CrowdStrike Integration for Sumo Logic?
-23
-
 
 Sumo Logic has expanded its security offerings by allowing customers to analyze their logs for potential threats and indicators of compromise. In partnership with CrowdStrike, Sumo Logic maintains an updated Threat Intelligence database that can be correlated with log data through queries. The Sumo Logic / CrowdStrike integration has two parts:
 
@@ -237,20 +222,15 @@ Sumo Logic has expanded its security offerings by allowing customers to analyze 
 * Sumo customers can now use the CrowdStrike database in threat analysis queries over their logs (through a new lookup operator).
 
 
-24
 The Sumo Logic Threat Intel lookup database is only available with Sumo Logic Enterprise and Professional accounts, or during a 30-day trial period. The Threat Intel lookup database is not available for Sumo Logic Free accounts.
 
 
 #### How often do you refresh the threat feed from CrowdStrike?
-25
-
 
 The database is updated once per day. We have implemented a multi-layer cache for performance enhancements rather than returning to the master database on each query.
 
 
 #### Can I export all of the threats from Sumo Logic?
-26
-
 
 No, we do not allow an export of the threat Intel feeds as that is confidential to CrowdStrike. However, we will match lookups from your logs against the entire threat database. You will ONLY see data returned when you have a match against the database to a specific threat from your log data (e.g IP, domain, email, etc.) via the threat lookup operator.
 
@@ -276,7 +256,6 @@ It could be a case-sensitivity issue. In Sumo, the equal sign (=) and the not eq
 
 
 #### What are different Indicators of Compromise (IOC) types available?
-
 
 The following IOC types are available from CrowdStrike:
 * ip_address
@@ -429,21 +408,16 @@ The following IOC types are available from CrowdStrike:
 </table>
 
 #### Do IOCs and Threats expire?
-33
-
 
 IOCs and Threats will often remain in the system because an IOC, such as an IP address, could go dormant and they reappear as part of another threat The last valid one can be found under **labels > Last_valid_on**. Be aware that over the period, their Malicious Confidence can be downgraded or upgraded depending upon recent activity.
 
 
 #### I found an IOC in VirusTotal (or any other third-party threat feed), but I can’t find that IOC in CrowdStrike using the Sumo Logic Lookup?
-34
 
 CrowdStrike focuses on quality versus quantity when it comes to threat assessment. They have a dedicated Intel Team which does that work. A threat from a third-party feed may not be present in CrowdStrike threats because it has been rejected by the CrowdStrike Intel assessment Team.
 
 
-#### I found threats in my network, now what do I do (how do I get more context about threats)?
-35
-
+#### I found threats in my network, now what do I do? How do I get more context about threats?
 
 The next step would be to look at the raw JSON field from the query. Fields such as ip_address_types, labels, relations, and malware_families in the JSON object provide more contextual information about threats.
 
@@ -483,8 +457,6 @@ With the malware family and other information, the user can search the internet 
 
 
 #### What are Actors?
-36
-
 
 Threats are grouped by actors, which are based on location. Some threats are tied to nation-state actors. For instance, “Panda” is the umbrella term for all nation-state activity tied to the People’s Republic of China. Non-nation-state-based threats are categorized by intention, not location; for instance, activist groups like the Syrian Electronic Army are categorized as “Jackal,” which expresses both intent and motivation. The following is the cryptonym system that CrowdStrike uses for threats categorization:
 
@@ -502,8 +474,6 @@ Threats are grouped by actors, which are based on location. Some threats are tie
 
 
 #### What is Unverified Malicious Confidence?
-37
-
 
 About 20% of the indicators are unverified. These unverified threats may be real threats, but the CrowdStrike team has not been able to assign a confidence level to them, so they remain in the unverified state.
 
@@ -513,24 +483,17 @@ CrowdStrike recommends that you start with the highest priority and work down th
 
 
 #### What does the Threat Intel Quick Analysis App do?
-38
-
 
 This App scans all Sumo logs and parses (using regex) IP/Email/URL/Domain/File Name fields for comparison against the threat feed from CrowdStrike. Think of it as an Inner Join between parsed fields and the threat table.
 
-
-39
 This application can be slow to load depending on the volume of data you scan based on time, source category, etc.  We **highly recommend** that you apply additional filter conditions as you screen your logs or run these types of searches on a schedule.
 
 
 #### I already have parsed fields such as IPs, domain, URL, Email, or File Name. Can I use them with this App, instead of parsing each log line again?
-40
-
 
 Yes, you can customize the query with in the App
 
 Example:
-
 
 ```
 _sourceCategory= */*/FIREWALL or _sourceCategory=*/*/LB or _sourceCategory=*/*/ROUTER or _sourceCategory=*/*/WINDOWS or _sourceCategory=*/*/SERVER
@@ -544,29 +507,18 @@ _sourceCategory= */*/FIREWALL or _sourceCategory=*/*/LB or _sourceCategory=*/*/R
 
 
 #### Should I use all logs (*) with this App or subset of logs, what's the recommendation?
-41
-
 
 You can use (*) to scan all of your ingested logs for threat, but depending on the volume of logs it can impact the performance of the search query and the App.
 
 For optimal performance, use a subset of the logs. For example:
-
-
 ```
 _sourceCategory= */*/FIREWALL or _sourceCategory=*/*/LB or _sourceCategory=*/*/ROUTER or _sourceCategory=*/*/WINDOWS or _sourceCategory=*/*/SERVER
 ```
 
-
-
 #### I am seeing noisy results in the lookup service, what do I do?
-42
-
-
-
 
 * Use filters to remove as much of the noise as possible (eg use the NOT clause before passing tuples to the lookup operator)
 * Use the "labels" section of the raw field to retain results of interest, or throw away results that are not useful. For example, IPs related labels ‘TorProxy’ or ‘njRAT’ can be noisy and filtered out by customizing queries like:
-
 
 ```
 | parse regex "(?\b\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})"
@@ -587,33 +539,24 @@ Threat Intel App is a good starting point, but every customer will have to custo
 
 
 #### Can I use Scheduled Search with Threat Lookup service? If yes, what is the Run Frequency (time) I can use?
-43
-
 
 Yes,  you can run scheduled searches that can be set up with a run frequency of Real Time or a longer time interval if desired.
 
 
 #### Can I bring my own threat feed into Sumo Logic?
-44
-
 
 This isn't currently available as an App. You could create your own [lookup](/docs/search/index.md/Search-Query-Language/Search-Operators/lookup-classic) using a shared file.
 
 
 #### What do I do if I find a bad IP (malicious level = high)?
-45
-
 
 You can further investigate bad IP triggers by updating your query to check the port as well and see if it is also identified as a malicious port.
 
 
 #### Can you explain different fields in the Raw JSON object?
-46
 
 
-
-##### indicator
-47
+#### indicator
 
 
 **Type:** string
@@ -621,14 +564,10 @@ You can further investigate bad IP triggers by updating your query to check the 
 **Description:** The indicator that was queried.
 
 
-##### Type  
-48
-
+#### Type  
 
 **Type:** string
-
 **Description:** The type of the indicator
-
 **Values:**
 
 * binary_string
@@ -663,26 +602,20 @@ You can further investigate bad IP triggers by updating your query to check the 
 
 
 ##### report
-49
-
 
 **Type:** string
 
 **Description:** The report ID that the indicator is associated with (e.g., CSIT-XXXX, CSIR-XXXX, etc). The report list is also represented under the labels list in the JSON data structure.
 
 
-##### actor
-50
-
+#### actor
 
 **Type:** string
 
 **Description:** The named Actor that the indicator is associated with (e.g. panda, bear, spider, etc). The actor list is also represented under the labels list in the JSON data structure.
 
 
-##### malicious_confidence
-51
-
+#### malicious_confidence
 
 **Type:** string
 
@@ -700,44 +633,33 @@ Once an indicator has been marked with a malicious confidence level, it continue
 
 
 ##### published_date
-52
-
 
 **Type: **Timestamp in standard Unix time, UTC.
 
 **Description: **This is the date the indicator was first published.
 
 
-##### last_updated
-53
-
+#### last_updated
 
 **Type: **Timestamp in standard Unix time, UTC.
 
 **Description: **This is the date the indicator was last updated in CrowdStrike internal database.
 
 
-##### malware_family
-54
-
+#### malware_family
 
 **Type: **String
 
 **Description: **Indicates the malware family an indicator has been associated with. An indicator may be associated with more than one malware family. The malware family list is also represented under the labels list in the JSON data structure.
 
 
-##### kill_chain
-55
-
+#### kill_chain
 
 **Type: **String
 
 **Description:** The point in the kill chain at which an indicator is associated. The kill chain list is also represented under the labels list in the JSON data structure.
 
 **Values:**  
-
-
-
 * reconnaissance—This indicator is associated with the research, identification, and selection of targets by a malicious actor.
 * weaponization—This indicator is associated with assisting a malicious actor create malicious content.
 * delivery—This indicator is associated with the delivery of an exploit or malicious payload.
@@ -748,13 +670,10 @@ Once an indicator has been marked with a malicious confidence level, it continue
 
 
 ##### labels
-56
-
 
 **Type: **String
 
 **Description:**  The Intel Indicators API provides additional context around an indicator via the labels list. Some of these labels, such as 'malicious_confidence' are accessible via the top-level data structure. All labels, including their associated timestamps, will be accessible via the labels list. The url string will look like: `https://intelapi.crowdstrike.com/indicator/v1/search/labels?equal=DomainType/DynamicDNS`.
-
 
 <table>
   <tr>
