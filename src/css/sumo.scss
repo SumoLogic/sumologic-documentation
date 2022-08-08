@@ -860,7 +860,7 @@ html[data-theme='dark'] .node polygon {
 
 
 
-// Hub pages
+// Hub pages (e.g., /docs/integrations/databases/index)
 
 .box-wrapper {
   display: grid;
@@ -879,18 +879,26 @@ html[data-theme='dark'] .node polygon {
 .box1 h2,
 .box2 h2,
 .box3 h2,
-.box4 h2
-.box5 h2
-.box6 h2 {
+.box4 h2,
+.box5 h2,
+.box6 h2,
+.box7 h2,
+.box8 h2,
+.box9 h2,
+.box10 h2 {
   margin-top: 24px;
 }
 
 .box1 img,
 .box2 img,
 .box3 img,
-.box4 img
-.box5 img
-.box6 img {
+.box4 img,
+.box5 img,
+.box6 img,
+.box7 img,
+.box8 img,
+.box9 img,
+.box10 img {
   margin-top: 16px;
 }
 
@@ -925,6 +933,34 @@ html[data-theme='dark'] .node polygon {
 .box6 {
   grid-column: 2;
   grid-row: 3;
+  padding: 8px;
+  font-size: .9rem;
+}
+
+.box7 {
+  grid-column: 1;
+  grid-row: 4;
+  padding: 8px;
+  font-size: .9rem;
+}
+
+.box8 {
+  grid-column: 2;
+  grid-row: 4;
+  padding: 8px;
+  font-size: .9rem;
+}
+
+.box9 {
+  grid-column: 1;
+  grid-row: 5;
+  padding: 8px;
+  font-size: .9rem;
+}
+
+.box10 {
+  grid-column: 2;
+  grid-row: 5;
   padding: 8px;
   font-size: .9rem;
 }
