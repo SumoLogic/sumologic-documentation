@@ -198,7 +198,7 @@ _sourceCategory="security/flowlogs"
 
 ## Installing the Azure Network Watcher App
 
-Now that you have configured Azure Network Watcher, install the Sumo Logic App for Azure Network Watcher to take advantage of the preconfigured searches and [dashboards](#Dashboards) to analyze your data.
+Now that you have configured Azure Network Watcher, install the Sumo Logic App for Azure Network Watcher to take advantage of the preconfigured searches and [dashboards](#viewing-dashboards) to analyze your data.
 
 To install the app:
 

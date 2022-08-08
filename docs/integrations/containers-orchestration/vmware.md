@@ -58,7 +58,7 @@ If you have an existing VM, you can go directly to [Installing the Sumo Logic sc
 
 This section walks you through the process of installing Sumo Logic scripts for events and metrics on a vCenter server, or another host with access to vCenter API. Lastly, it provides instructions for configuring the path to run the scripts, whether on a vCenter server, host, or VM.
 
-**To install and configure the Sumo Logic scripts, do the following:**
+**To install and configure the Sumo Logic scripts, do the following:
 
 1. On the server, host, or VM create a directory in which to put the Sumo Logic scripts from [Sumo Logic Scripts](https://github.com/SumoLogic/sumologic-vmware/tree/master/vsphere) for VMware. We recommend that you name the directory **/var/log/vmware**, or something similar.
 2. Download the Sumo Logic VMware scripts from [here](https://s3.amazonaws.com/appdevstore/VMWare/sumo-vsphere-ulm.zip), into the directory you just created.
@@ -97,7 +97,7 @@ This procedure includes the following tasks:
 * [Configuring logs to be collected](#To_configure_logs_to_be_collected.2C_do_the_following:)—Test running a python script from the directory containing the Sumo Logic scripts.
 * [Configuring a syslog or a file source](#To_configure_a_syslog_source_for_the_Collector.2C_do_the_following:)—A Sumo Logic[ Syslog Source](/docs/send-data/Sources/sources-installed-collectors/Syslog-Source) operates like a Syslog server listening on the designated port to receive Syslog messages. The script supports syslog server, as well as generating a text file that can be ingested using [Local](/docs/send-data/Sources/sources-installed-collectors/Local-File-Source) or [Remote](/docs/send-data/Sources/sources-installed-collectors/Remote-File-Source) file source. A local file source is recommended as it has several benefits over Syslog, including no need to worry about connection retry, reading from the last pointer in a file, no data loss in the case of collector failure, and so on. Based on your preference, you can configure a syslog source, or a local or remote file source.
 
-**To configure logs to be collected, do the following:
+To configure logs to be collected, do the following:
 
 1. To test the events.py script that queries the vCenter Server for events and sends the events to Sumo Logic, go to the directory for the Sumo Logic scripts and run the **events.py** script with the following command. Review the examples for the different source types.
 
@@ -232,7 +232,7 @@ SSL_VERIFY: Default False, if using SSL, set as True
 SSL_CAPATH: Certificate absolute path if SSL_VERIFY is True
 ```
 
-**To collect performance metrics, do the following:**
+**To collect performance metrics, do the following:
 
 
 1. Follow the instructions to configure a [Streaming Metrics Source](/docs/send-data/Sources/sources-installed-collectors/Streaming-Metrics-Source). \

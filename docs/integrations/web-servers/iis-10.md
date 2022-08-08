@@ -83,7 +83,7 @@ For information on how to configure HTTP Error Logs, and for explanations on the
 * **Performance Logs** These logs are output of Perfmon queries which will be configured at Installed Collector, "**Windows Performance**" Source.
 1. **Make sure logging is turned on in IIS Server.**
 * **Enable logging on your IIS Server** Perform the following task, if logging on your IIS Server is not already enabled. \
-**To enable logging on your IIS Server, do the following:**
+**To enable logging on your IIS Server, do the following:
 1. Open IIS Manager.
 2. Select the site or server in the **Connections** pane, then double-click **Logging**.
 
@@ -97,13 +97,13 @@ date time s-ip cs-method cs-uri-stem cs-uri-query s-port cs-username c-ip cs(Use
 For more information about IIS log format and log configuration refer [link](https://docs.microsoft.com/en-us/iis/get-started/whats-new-in-iis-85/enhanced-logging-for-iis85).
 * **Verify that log files are created** Perform the following task to ensure that log files are being created.
 
-**To confirm log files are being created, do the following:**
+**To confirm log files are being created, do the following:
 
 1. Open a command-line window and change directories to `C:\inetpub\Logs\LogFiles`. This is the same path you will enter when you configure the Source to collect these files.
 2. Under the \W3SVC1 directory, you should see one or more files with a .log extension. If the file is present, you can collect it.
 * **Enable HTTP Error Logs on your Windows Server** Perform the following task to enable HTTP Error Logs on your Windows Server, that is hosting the IIS Server.
 
-**To enable HTTP Error Logs on the Windows Server hosting IIS Server, do the following:**
+**To enable HTTP Error Logs on the Windows Server hosting IIS Server, do the following:
 
 1. To configure HTTP Error Logging, refer to this document [link](https://docs.microsoft.com/en-us/windows/desktop/http/configuring-http-server-api-error-logging).
 2. To understand HTTP Error Log format, refer to this document [link](https://docs.microsoft.com/en-us/windows/desktop/http/format-of-the-http-server-api-error-logs). \
@@ -125,7 +125,7 @@ This section demonstrates how to configure a Local File Source for IIS Access Lo
 
 Sumo Logic recommends using a Local File Source whenever possible.
 
-**To configure a local file source for IIS Access Logs, do the following:**
+To configure a local file source for IIS Access Logs, do the following:
 
 1. Configure a [Local File Source](/docs/send-data/Sources/sources-installed-collectors/Local-File-Source).
 2. Specify Local File Source Fields as follows:
@@ -157,7 +157,7 @@ After a few minutes, your new Source should be propagated down to the Collector 
 This section demonstrates how to configure a Local File Source for HTTP Error Logs, for use with an [Installed Collector](/docs/integrations/microsoft-azure/iis-10-legacy#Configure-a-Collector).
 
 
-**To configure a local file source for HTTP Error Logs, do the following:**
+To configure a local file source for HTTP Error Logs, do the following:
 
 1. Configure a [Local File Source](/docs/send-data/Sources/sources-installed-collectors/Local-File-Source).
 2. Specify the Local File Source Fields as follows:
@@ -195,7 +195,7 @@ Use the appropriate source for your environment:
 * [Local Windows Performance Monitor Log Source](/docs/send-data/sources/sources-installed-collectors/local-windows-performance-monitor-log-source.md)
 * [Remote Windows Performance Monitor Log Source](/docs/send-data/sources/sources-installed-collectors/remote-windows-performance-monitor-log-source.md)
 
-**To configure a Source for IIS Performance Logs, do the following:**
+To configure a Source for IIS Performance Logs, do the following:
 
 1. Configure a [Local Windows Performance Monitor Log Source](/docs/send-data/sources/sources-installed-collectors/local-windows-performance-monitor-log-source.md).
 2. Configure the Local Windows Performance Source Fields as follows:

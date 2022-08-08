@@ -311,7 +311,7 @@ This section demonstrates how to configure a Local File Source for MariaDB Error
 
 Sumo Logic recommends using a Local File Source whenever possible.
 
-**To configure a local file source for MariaDB Error Logs, do the following:**
+To configure a local file source for MariaDB Error Logs, do the following:
 
 1. On the Collection Management screen, click **Add**, next to the collector, then select **Add Source**.
 2. Select **Local File_ _**as the source type.
@@ -345,7 +345,7 @@ After a few minutes, your new Source should be propagated down to the Collector 
 
 This section demonstrates how to configure a Local File Source for MariaDB Slow Query Logs, for use with an [Installed Collector](/docs/integrations/microsoft-azure/iis-10-legacy#Configure-a-Collector).
 
-**To configure a local file source for MariaDB Slow Query Logs, do the following:**
+To configure a local file source for MariaDB Slow Query Logs, do the following:
 
 1. On the Collection Management screen, click **Add**, next to the collector, then select **Add Source**.
 2. Select **Local File_ _**as the source type.

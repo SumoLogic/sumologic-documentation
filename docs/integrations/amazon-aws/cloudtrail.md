@@ -9,19 +9,18 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/amazon-aws/cloudtrail.png')} alt="Thumbnail icon" width="50"/>
 
-Amazon Web Services (AWS) CloudTrail records API calls made to AWS. The Sumo Logic App for CloudTrail ingests these logs, providing greater visibility into events that, in turn, allows for security and operations forensics. For example, you can use the Sumo Logic App for CloudTrail to analyze raw CloudTrail data to investigate user behavior patterns. Or, by correlating CloudTrail data with other data sets, you can get a broader understanding of events from operating systems, intrusion detection systems, or even application logs.
+[Amazon Web Services (AWS) CloudTrail](https://aws.amazon.com/cloudtrail/) records API calls made to AWS. The Sumo Logic App for CloudTrail ingests these logs, providing greater visibility into events that, in turn, allows for security and operations forensics. For example, you can use the Sumo Logic App for CloudTrail to analyze raw CloudTrail data to investigate user behavior patterns. Or, by correlating CloudTrail data with other data sets, you can get a broader understanding of events from operating systems, intrusion detection systems, or even application logs.
 
+:::caution beta
 Our new app install flow is now in Beta. It is only enabled for certain customers while we gather Beta customer feedback. If you can see the Add Integration button, follow the "Before you begin" section in the "Collect Logs" help page and then use the in-product instructions in Sumo Logic to set up the app.
-
-Using the App for CloudTrail in multiple environments
-If you have more than one environment that generates CloudTrail data (such as ops, dev, and so on) you’ll need to configure a separate S3 Source for each environment. Learn more here.
+:::
 
 
 ## Collecting Logs for the AWS CloudTrail App
 
 This section has instructions for configuring log collection for the AWS CloudTrail app.
 
-To use the AWS CloudTrail app in multiple environments, see [Configure the AWS CloudTrail App in Multiple Environments](#Configuring-the-AWS-CloudTrail-App-in-multiple-environments).
+If you have more than one environment that generates CloudTrail data (such as ops, dev, and so on) you’ll need to configure a separate S3 Source for each environment. Learn more [here](#Configuring-the-AWS-CloudTrail-App-in-multiple-environments).
 
 Our new app install flow is now in Beta. It is only enabled for certain customers while we gather Beta customer feedback. If you can see the Add Integration button, follow the "Before you begin" section in the "Collect Logs" help page and then use the in-product instructions in Sumo Logic to set up the app.
 
@@ -40,18 +39,16 @@ To configure an AWS CloudTrail Source, perform these steps:
 
 1. Add an [AWS CloudTrail Source](/docs/send-data/sources/sources-hosted-collectors/amazon-web-services/aws-cloudtrail-source.md) to Sumo Logic.
 2. [Grant Sumo Logic access](/docs/send-data/sources/sources-hosted-collectors/amazon-web-services/grant-access-aws-product.md) to an Amazon S3 bucket.
-* Generate the Role-Based Access CloudFormation template in Sumo Logic and download the template.
-* Create the CloudFormation stack in AWS Management Console using the template.
-* Copy the Role ARN from the Outputs tab and paste it in the Role ARN field in Sumo Logic CloudTrail Source created in step 3. For more information, refer [Configuring your AWS source with CloudFormation](/docs/send-data/Sources/sources-hosted-collectors/Amazon-Web-Services/configure-our-aws-source-cloudformation#set-up-an-iam-role).
+  * Generate the Role-Based Access CloudFormation template in Sumo Logic and download the template.
+  * Create the CloudFormation stack in AWS Management Console using the template.
+  * Copy the Role ARN from the Outputs tab and paste it in the Role ARN field in Sumo Logic CloudTrail Source created in step 3. For more information, refer [Configuring your AWS source with CloudFormation](/docs/send-data/Sources/sources-hosted-collectors/Amazon-Web-Services/configure-our-aws-source-cloudformation#set-up-an-iam-role).
 1. [Enable Sumo to track AWS Admin activity](#Enable-Sumo-to-Track-AWS-Admin-Activity). This step is optional, but if you don't do it, the administrator activity panels in the **AWS CloudTrail - User Monitoring** dashboard won't be populated.
 2. Install the Sumo Logic App for AWS CloudTrail.
-
 
 Once you begin uploading data, your daily data usage will increase. It's a good idea to check the **Account** page to make sure that you have enough quota to accommodate additional data in your account. If you need additional quota, you can [upgrade your account](/docs/manage/manage-subscription/upgrade-your-cloud-flex-account.md) at any time.
 
 
 ### Sample Log Message
-
 
 ```json
 {  
@@ -100,7 +97,7 @@ In some cases, your query results may show `"HIDDEN_DUE_TO_SECURITY_REASONS"` as
 
 ### Field Extraction Template
 
-```
+```sql
 | parse "\"sourceIPAddress\":\"*\"" as source_ipaddress
 | parse "\"eventName\":\"*\"" as event_name
 | parse "\"eventSource\":\"*\"" as event_source
@@ -130,7 +127,6 @@ To track Admin activity in your AWS account, and to provide data for all Adminis
 
 1. Create a file named `admin_users.csv` that contains a list of all the AWS usernames of Admin(s) in your AWS account, including one username on each line. For example:
 
-
 ```
 dtaylor
 landerson
@@ -157,7 +153,7 @@ Your search results should look similar to:
 
 ## Installing the AWS CloudTrail App
 
-Now that you have set up collection for AWS CloudTrail, install the Sumo Logic App for CloudTrail to use the pre-configured searches and [dashboards](#Dashboards) that provide visibility into your environment.
+Now that you have set up collection for AWS CloudTrail, install the Sumo Logic App for CloudTrail to use the pre-configured searches and [dashboards](#viewing-dashboards) that provide visibility into your environment.
 
 Our new app install flow is now in Beta. It is only enabled for certain customers while we gather Beta customer feedback. If you can see the Add Integration button, follow the "Before you begin" section in the "Collect Logs" help page and then use the in-product instructions in Sumo Logic to set up the app.
 
@@ -190,7 +186,7 @@ Panels will start to fill automatically. It's important to note that each panel 
 
 Amazon S3 buckets are scanned for new files according to the Scan Interval you set when configuring the S3 Source used for AWS CloudTrail logs. Even if you set a shorter Scan Interval, say five minutes, if no new files are found, the Scan Interval is automatically doubled, up to 24 hours (you can read more in [Set the S3 Source Scan Interval](#AWS-CloudTrail-App-Dashboards)). If the Scan Interval increases, it means that a Panel set to a 60-minute time range may not find any data to display, because no files have uploaded to Sumo Logic. This isn't to say that no data is being collected from your S3 bucket; you can confirm that data is being collected on the Status page.
 
-Additionally, you can change the time range of a Panel. Even though these  have been preconfigured, they can be edited just like any other Panel. You'll find instructions in [Changing the Time Range of a Panel](/docs/dashboards/edit-dashboards/set-time-range-dashboards.md). 
+Additionally, you can change the time range of a Panel. Even though these  have been preconfigured, they can be edited just like any other Panel. You'll find instructions in [Changing the Time Range of a Panel](/docs/dashboards/edit-dashboards/set-time-range-dashboards.md).
 
 
 ### AWS Admin activity not tracked

@@ -2293,11 +2293,13 @@ module.exports = {
           type: 'category',
           label: 'Archive',
           collapsible: true,
-          collapsed: false,
+          collapsed: true,
           link: {type: 'doc', id: 'releasenotes/archive/index'},
           items: [
+            'releasenotes/archive/cloud-siem',
             'releasenotes/archive/collector',
             'releasenotes/archive/developer',
+            'releasenotes/archive/service',
           ]
         }
       ],

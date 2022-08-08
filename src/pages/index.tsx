@@ -17,7 +17,7 @@ const features = [
     description: (<Translate
       id="landing.feature.get-started.desc"
       description="Get started description">
-        Create visualizations, notifications, and alerts for your applications.
+        Get started with your Sumo Logic data analytics journey.
       </Translate>),
     link: 'docs/get-started',
   },
@@ -66,7 +66,7 @@ const features = [
   {
     title: translate({
       id: 'landing.feature.metrics.title',
-      message: 'Metrics and Logs',
+      message: 'Metrics',
       description: 'Title for metrics',
     }),
     imageUrl: 'img/icons/metrics.png',

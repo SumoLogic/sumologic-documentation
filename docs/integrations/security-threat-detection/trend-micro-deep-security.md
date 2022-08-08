@@ -167,7 +167,7 @@ Send System Events to confirm communication with Sumo Logic. There may be a 5-10
 
 ## Installing the Trend Micro Deep Security App
 
-This section provides instructions on how to install the Trend Micro Deep Security App, and examples of each of the dashboards. The App reconfigured searches and [Dashboards](#Dashboards) that provide easy-to-access visual insights into your data.
+This section provides instructions on how to install the Trend Micro Deep Security App, and examples of each of the dashboards. The App reconfigured searches and [dashboards](#viewing-dashboards) that provide easy-to-access visual insights into your data.
 
 To install the app:
 

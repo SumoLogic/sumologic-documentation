@@ -18,83 +18,6 @@ The Amazon Redshift app uses the following log types:
 * Amazon CloudTrail Event Logs
 * Amazon Redshift Metrics
 
-## Collecting Logs and Metrics for the Amazon Redshift ULM App
-
-This section has instruction for setting up collection of logs and metrics for the Amazon Redshift ULM App.
-
-### Step 1. Plan source categories
-
-Before you configure the log and metric sources for the Amazon Redshift app, decide on the source category you will assign to each.  A hierarchical approach allows you to make use of wildcards when you perform searches. For example:
-
-* For the AWS S3 source for Amazon Redshift Audit logs collection, you could specify a source category of `AWS/Redshift/Audit`.
-* For the AWS CloudTrail source for Redshift CloudTrail Events, you could specify a source category of `AWS/CloudTrail`.
-* For the AWS CloudWatch source for Redshift metrics, you could specify a source category of `AWS/Metric/Redshift`.
-
-
-### Step 2. Enable Amazon Redshift Audit logging
-
-In this step, you enable audit logging for Amazon Redshift.
-
-1. Enable database audit logging. For background information, see [Database Audit Logging](https://docs.aws.amazon.com/redshift/latest/mgmt/db-auditing.html). For instructions on enabling audit logging, see [Configuring Auditing Using the Console](https://docs.aws.amazon.com/redshift/latest/mgmt/db-auditing-console.html).
-2. Enable user activity logging. For the user activity log, you must also enable the `enable_user_activity_logging` database parameter. If you enable only the audit logging feature, but not the associated parameter, the database audit logs will log information for only the connection log and user log, but not for the user activity log. The `enable_user_activity_logging` parameter is disabled (false) by default, but you can set it to true to enable the user activity log. For more information, see [Amazon Redshift Parameter Groups](https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html).
-
-   Create a new parameter group with required parameter values and then modify cluster to use the new parameter group. If you want to use an existing parameter group, you can modify it with AWS CLI. For more information, see [Amazon Redshift Parameter Groups](https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html).
-
-For information about connection logs and user logs see [STL_CONNECTION_LOG](https://docs.aws.amazon.com/redshift/latest/dg/r_STL_CONNECTION_LOG.html) and [STL_USERLOG](https://docs.aws.amazon.com/redshift/latest/dg/r_STL_USERLOG.html)  in AWS help.
-
-
-### Step 3: Configure AWS S3 source for Amazon Redshift Audit logs collection
-
-1. Configure a [Hosted Collector.](/docs/send-data/configure-hosted-collector)
-2. To your Hosted Collector, add an [AWS S3 Source](/docs/send-data/Sources/sources-hosted-collectors/Amazon-Web-Services/AWS-S3-Source).
-   * **Name**. Enter a name to display for the new Source.
-   * **Description**. Enter an optional description.
-   * **S3 Region**. Select the Amazon Region for your Redshift Audit Log S3 bucket.
-   * **Bucket Name**. Enter the exact name of your Redshift Audit Log S3 bucket.
-   * **Path Expression**. Enter the string that matches the S3 objects you'd like to collect. You can use a wildcard (*) in this string. (DO NOT use a leading forward slash. See [Amazon Path Expressions](/docs/send-data/Sources/sources-hosted-collectors/Amazon-Web-Services/Amazon-Path-Expressions).) The S3 bucket name is not part of the path. Don’t include the bucket name when you are setting the Path Expressio
-   * **Source Category**. AWS/Redshift/Audit
-   * **Access Key ID and Secret Access Key**. Enter your Amazon [Access Key ID and Secret Access Key](http://docs.aws.amazon.com/general/latest/gr/managing-aws-access-keys.html).
-   * **Scan Interval**. Use the default of 5 minutes. Alternately, enter the frequency Sumo Logic will scan your S3 bucket for new data.
-   * **Enable Timestamp Parsing**. Select the checkbox.
-   * **Time Zone**. Select Ignore time zone from log file and instead use, and select UTC.
-   * **Timestamp Format**. Select Automatically detect the format.
-   * **Enable Multiline Processing**. Select the checkbox, and select **Infer Boundaries**.
-2. Click **Save**.
-
-
-### Step 4. Configure AWS CloudTrail source for Redshift CloudTrail Events  
-
-1. Configure a [Hosted Collector.](/docs/send-data/Hosted-Collectors#Create_a_Hosted_Collector)
-2. To your Hosted Collector, add an [AWS CloudTrail Source](/docs/send-data/sources/sources-hosted-collectors/amazon-web-services/aws-cloudtrail-source.md).
-   * **Name**. Enter a name to display for the new Source.
-   * **Description**. Enter an optional description.
-   * **S3 Region**. Select the Amazon Region for your CloudTrail Redshift S3 bucket.
-   *    * **Bucket Name**. Enter the exact name of your CloudTrail Redshift S3 bucket.
-   * **Path Expression**. Enter the string that matches the S3 objects you'd like to collect. You can use a wildcard (*) in this string. (DO NOT use a leading forward slash. See [Amazon Path Expressions](/docs/send-data/Sources/sources-hosted-collectors/Amazon-Web-Services/Amazon-Path-Expressions)..)The S3 bucket name is not part of the path. Don’t include the bucket name when you are setting the Path Expression.
-   * **Source Category**. Enter a source category. For example, AWS/Cloudtrail.
-   * **Access Key ID and Secret Access Key**. Enter your Amazon [Access Key ID and Secret Access Key](http://docs.aws.amazon.com/general/latest/gr/managing-aws-access-keys.html).
-   * **Scan Interval**. Use the default of 5 minutes. Alternately, enter the frequency Sumo Logic will scan your S3 bucket for new data.
-   * **Enable Timestamp Parsing**. Select the checkbox.
-   * **Time Zone**. Select Ignore time zone from log file and instead use, and select UTC.
-   * **Timestamp Format.** Select Automatically detect the format.
-   * **Enable Multiline Processing**. Select the checkbox, and select Infer Boundaries.
-2. Click **Save**.
-
-
-### Step 5: Configure AWS CloudWatch source for Redshift metrics  
-
-1. Configure a [Hosted Collector](/docs/send-data/configure-hosted-collector).
-2. Configure an [AWS CloudTrail Source](/docs/send-data/sources/sources-hosted-collectors/amazon-web-services/aws-cloudtrail-source.md).
-    1. **Name**. Enter a name to display for the new Source.
-    2. **Description**. Enter an optional description.
-    3. **Regions**. Select your Amazon Regions for Amazon Redshift.
-    4. **Namespaces**. Select AWS/Redshift.
-    5. **Source Category**. Enter a source category. For example, AWS/Metric/Redshift.
-    6. **Access Key ID and Secret Access Key**. Enter your Amazon Access Key ID and Secret Access Key.
-    7. **Scan Interval**. Use the default of 5 minutes, or enter the frequency Sumo Logic will scan your CloudWatch Sources for new data.
-3. Click **Save**.
-
-
 ### Sample Log Messages   
 
 ```json title="Amazon Redshift Connection Audit Log Sample"
@@ -103,7 +26,6 @@ dir="ltr">authenticated |Mon, 21 May 2018 01:38:01:601|::ffff:127.0.0.1 |32828 |
  |98031|vendor |himanshu |password |0|TLSv1.2 |ECDHE-RSA-AES256-SHA384 |0| | | |
 ```
 
-
 ```sql title="Amazon Redshift User Activity Audit Log Sample"
 '2018-05-21T06:00:09Z UTC [ db=prod_sales user=duc pid=99753 userid=95 xid=6728324 ]' LOG: create table SumoProdbackUp.organization as
  (select * from SumoProd.simpleuser)
@@ -111,6 +33,7 @@ dir="ltr">authenticated |Mon, 21 May 2018 01:38:01:601|::ffff:127.0.0.1 |32828 |
 '2018-05-21T06:20:09Z UTC [ db=dev user=himanshu pid=64458 userid=35 xid=5143208 ]' LOG: drop user testuser3
 ```
 
+<details><summary><strong>Click to expand</strong>. Amazon CloudTrail Redshift Log Sample.</summary>
 
 ```json title="Amazon CloudTrail Redshift Log Sample"
 {
@@ -236,7 +159,7 @@ dir="ltr">authenticated |Mon, 21 May 2018 01:38:01:601|::ffff:127.0.0.1 |32828 |
 }
 ```
 
-
+</details>
 
 ### Sample Query
 
@@ -251,10 +174,86 @@ dir="ltr">_sourceCategory=*/AWS/Redshift/Audit LOG
 ```
 
 
+## Collecting Logs and Metrics for the Amazon Redshift ULM App
+
+This section has instruction for setting up collection of logs and metrics for the Amazon Redshift ULM App.
+
+### Step 1. Plan source categories
+
+Before you configure the log and metric sources for the Amazon Redshift app, decide on the source category you will assign to each.  A hierarchical approach allows you to make use of wildcards when you perform searches. For example:
+
+* For the AWS S3 source for Amazon Redshift Audit logs collection, you could specify a source category of `AWS/Redshift/Audit`.
+* For the AWS CloudTrail source for Redshift CloudTrail Events, you could specify a source category of `AWS/CloudTrail`.
+* For the AWS CloudWatch source for Redshift metrics, you could specify a source category of `AWS/Metric/Redshift`.
+
+
+### Step 2. Enable Amazon Redshift Audit logging
+
+In this step, you enable audit logging for Amazon Redshift.
+
+1. Enable database audit logging. For background information, see [Database Audit Logging](https://docs.aws.amazon.com/redshift/latest/mgmt/db-auditing.html). For instructions on enabling audit logging, see [Configuring Auditing Using the Console](https://docs.aws.amazon.com/redshift/latest/mgmt/db-auditing-console.html).
+2. Enable user activity logging. For the user activity log, you must also enable the `enable_user_activity_logging` database parameter. If you enable only the audit logging feature, but not the associated parameter, the database audit logs will log information for only the connection log and user log, but not for the user activity log. The `enable_user_activity_logging` parameter is disabled (false) by default, but you can set it to true to enable the user activity log. For more information, see [Amazon Redshift Parameter Groups](https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html).
+
+   Create a new parameter group with required parameter values and then modify cluster to use the new parameter group. If you want to use an existing parameter group, you can modify it with AWS CLI. For more information, see [Amazon Redshift Parameter Groups](https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html).
+
+For information about connection logs and user logs, see [STL_CONNECTION_LOG](https://docs.aws.amazon.com/redshift/latest/dg/r_STL_CONNECTION_LOG.html) and [STL_USERLOG](https://docs.aws.amazon.com/redshift/latest/dg/r_STL_USERLOG.html) in AWS help.
+
+
+### Step 3: Configure AWS S3 source for Amazon Redshift Audit logs collection
+
+1. Configure a [Hosted Collector](/docs/send-data/configure-hosted-collector).
+2. To your Hosted Collector, add an [AWS S3 Source](/docs/send-data/Sources/sources-hosted-collectors/Amazon-Web-Services/AWS-S3-Source).
+   * **Name**. Enter a name to display for the new Source.
+   * **Description**. Enter an optional description.
+   * **S3 Region**. Select the Amazon Region for your Redshift Audit Log S3 bucket.
+   * **Bucket Name**. Enter the exact name of your Redshift Audit Log S3 bucket.
+   * **Path Expression**. Enter the string that matches the S3 objects you'd like to collect. You can use a wildcard (*) in this string. (DO NOT use a leading forward slash. See [Amazon Path Expressions](/docs/send-data/Sources/sources-hosted-collectors/Amazon-Web-Services/Amazon-Path-Expressions).) The S3 bucket name is not part of the path. Don’t include the bucket name when you are setting the Path Expressio
+   * **Source Category**. AWS/Redshift/Audit
+   * **Access Key ID and Secret Access Key**. Enter your Amazon [Access Key ID and Secret Access Key](http://docs.aws.amazon.com/general/latest/gr/managing-aws-access-keys.html).
+   * **Scan Interval**. Use the default of 5 minutes. Alternately, enter the frequency Sumo Logic will scan your S3 bucket for new data.
+   * **Enable Timestamp Parsing**. Select the checkbox.
+   * **Time Zone**. Select Ignore time zone from log file and instead use, and select UTC.
+   * **Timestamp Format**. Select Automatically detect the format.
+   * **Enable Multiline Processing**. Select the checkbox, and select **Infer Boundaries**.
+2. Click **Save**.
+
+
+### Step 4. Configure AWS CloudTrail source for Redshift CloudTrail Events  
+
+1. Configure a [Hosted Collector.](/docs/send-data/Hosted-Collectors#Create_a_Hosted_Collector)
+2. To your Hosted Collector, add an [AWS CloudTrail Source](/docs/send-data/sources/sources-hosted-collectors/amazon-web-services/aws-cloudtrail-source.md).
+   * **Name**. Enter a name to display for the new Source.
+   * **Description**. Enter an optional description.
+   * **S3 Region**. Select the Amazon Region for your CloudTrail Redshift S3 bucket.
+   *    * **Bucket Name**. Enter the exact name of your CloudTrail Redshift S3 bucket.
+   * **Path Expression**. Enter the string that matches the S3 objects you'd like to collect. You can use a wildcard (*) in this string. (DO NOT use a leading forward slash. See [Amazon Path Expressions](/docs/send-data/Sources/sources-hosted-collectors/Amazon-Web-Services/Amazon-Path-Expressions)..)The S3 bucket name is not part of the path. Don’t include the bucket name when you are setting the Path Expression.
+   * **Source Category**. Enter a source category. For example, AWS/Cloudtrail.
+   * **Access Key ID and Secret Access Key**. Enter your Amazon [Access Key ID and Secret Access Key](http://docs.aws.amazon.com/general/latest/gr/managing-aws-access-keys.html).
+   * **Scan Interval**. Use the default of 5 minutes. Alternately, enter the frequency Sumo Logic will scan your S3 bucket for new data.
+   * **Enable Timestamp Parsing**. Select the checkbox.
+   * **Time Zone**. Select Ignore time zone from log file and instead use, and select UTC.
+   * **Timestamp Format.** Select Automatically detect the format.
+   * **Enable Multiline Processing**. Select the checkbox, and select Infer Boundaries.
+2. Click **Save**.
+
+
+### Step 5: Configure AWS CloudWatch source for Redshift metrics  
+
+1. Configure a [Hosted Collector](/docs/send-data/configure-hosted-collector).
+2. Configure an [AWS CloudTrail Source](/docs/send-data/sources/sources-hosted-collectors/amazon-web-services/aws-cloudtrail-source.md).
+    1. **Name**. Enter a name to display for the new Source.
+    2. **Description**. Enter an optional description.
+    3. **Regions**. Select your Amazon Regions for Amazon Redshift.
+    4. **Namespaces**. Select AWS/Redshift.
+    5. **Source Category**. Enter a source category. For example, AWS/Metric/Redshift.
+    6. **Access Key ID and Secret Access Key**. Enter your Amazon Access Key ID and Secret Access Key.
+    7. **Scan Interval**. Use the default of 5 minutes, or enter the frequency Sumo Logic will scan your CloudWatch Sources for new data.
+3. Click **Save**.
+
 
 ## Installing the Amazon Redshift ULM App
 
-Now that you have configured log and metric collection, install the Sumo Logic App for Amazon Redshift to take advantage of the pre-configured searches and [Dashboards](#Dashboards).
+Now that you have configured log and metric collection, install the Sumo Logic App for Amazon Redshift to take advantage of the pre-configured searches and [dashboards](#viewing-dashboards).
 
 To install the app:
 
@@ -374,8 +373,6 @@ See information about database connections, including authentication failure cou
 
 
 ### Audit - User Activity Log Analysis
-21
-
 
 See information about SQL command and statement execution, including top databases, users, SQL statements and commands; and tabular listings of the top 20 delete, truncate, vacuum, create, grant, drop, revoke, and alter command executions.
 
@@ -409,8 +406,6 @@ See information about SQL command and statement execution, including top databas
 
 
 ### Audit - User Log Analysis
-23
-
 
 See information about database user account events, including database user database accounts that were created, dropped, or altered.
 
@@ -430,8 +425,6 @@ See information about database user account events, including database user data
 
 
 ### CloudTrail Events Overview
-25
-
 
 See information about CloudTrail events for Amazon Redshift, including event locations and  event status and trend; event counts by event name, cluster, account ID, region, and user agent; and failed event locations, error codes, and details.
 
@@ -473,8 +466,6 @@ See information about CloudTrail events for Amazon Redshift, including event loc
 
 
 ### Resource Utilization by ClusterIdentifier
-27
-
 
 See cluster-level resource utilization metrics, including CPU, network receive and transmit throughput, database connections, and disk.  
 
@@ -496,8 +487,6 @@ See cluster-level resource utilization metrics, including CPU, network receive a
 
 
 ### Resource Utilization by NodeID
-29
-
 
 See node-level resource utilization metrics, including CPU; disk; network; and read/write latency, throughput and I/O operations per second.
 

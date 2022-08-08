@@ -323,7 +323,7 @@ Follow the instructions below to set up log collection:
 
 With this option, Redis logs written to a log file can be collected via the [Local File Source of a](/docs/send-data/Sources/sources-installed-collectors/Local-File-Source) Sumo Logic Installed collector.
 
-**To configure the Redis log file, locate** your local **redis.con**f configuration file in the database directory. By default, Redis logs are stored in /var/log/redis/redis-server.log.
+To configure the Redis log file, locate** your local **redis.con**f configuration file in the database directory. By default, Redis logs are stored in /var/log/redis/redis-server.log.
 
 After determining the location of conf file modify the **redis.conf** configuration file logging parameters:
 1. Open redis.conf configuration file in a text editor.

@@ -21,6 +21,13 @@ The Cisco ASA App gives you insight into website visitor patterns, monitors infr
 The Cisco ASA App assumes logs from the Cisco Adaptive Security Appliance (ASA) firewall product.
 
 
+### Sample Log
+
+```json
+Tue Aug 15 23:30:09 %ASA-6-302016: Teardown UDP connection 40 for outside:44.44.4.4/500 to inside:44.44.2.2/500 duration 0:02:02 bytes 1416
+```
+
+
 ## Configuring Log Collection for the Cisco ASA App
 
 This section provides instructions for configuring log collection for the Cisco ASA App, as well as a sample log and field extraction rule.
@@ -29,13 +36,6 @@ To configure log collection, do the following:
 1. Configure your ASA to send its logs to a syslog server. ASA sends syslog on UDP port 514 by default, but you can set the protocol and port.
 2. Configure an [Installed Collector](/docs/send-data/Installed-Collectors) appropriate for right for your host environment.
 3. Configure a [Syslog Source](/docs/send-data/Sources/sources-installed-collectors/Syslog-Source) to the same port and protocol used by your ASA.
-
-
-### Sample Log
-
-```json
-Tue Aug 15 23:30:09 %ASA-6-302016: Teardown UDP connection 40 for outside:44.44.4.4/500 to inside:44.44.2.2/500 duration 0:02:02 bytes 1416
-```
 
 ### Field Extraction Rule
 
@@ -104,10 +104,7 @@ There is a 200 field name limit for Field Extraction Rules (FER) and once a fiel
 This section provides instructions on how to install the Cisco ASA App. Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
 1. From the **App Catalog**, search for and select the app**.**
-2. Select the version of the service you're using and click **Add to Library**.
-
-Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/library/install-apps)
-
+2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/library/install-apps)
 3. To install the app, complete the following fields.
    * **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
    * **Data Source.** Select either of these options for the data source. 
@@ -123,9 +120,7 @@ Panels will start to fill automatically. It's important to note that each panel 
 
 ## Viewing Cisco ASA Dashboards
 
-Once you've installed the Cisco ASA App, you can access preconfigured searches and [Dashboards](#Dashboards) that provide visual insights into your data.
-
-### Dashboard filters    
+Once you've installed the Cisco ASA App, you can access preconfigured searches and dashboards that provide visual insights into your data.
 
 **Each dashboard has a set of filters** that you can apply to the entire dashboard, as shown in the following example. Click the funnel icon in the top dashboard menu bar to display a scrollable list of filters that are applied across the entire dashboard.
 

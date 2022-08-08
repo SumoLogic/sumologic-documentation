@@ -442,7 +442,7 @@ _sourceCategory=esx_perf OR _sourceCategory=vcenter_log "Memory" AND "NonKernel 
 
 A newer app, [VMware ULM](/docs/integrations/containers-orchestration/VMware), is available. The App on this page is based on the vMA technology running on legacy vSphere versions 6.0 and prior. The vMA technology is no longer supported by VMware.
 
-Now that you have set up collection, install the Sumo Logic App for VMware to use the preconfigured searches and [Dashboards](#Dashboards) that provide insight into your data.
+Now that you have set up collection, install the Sumo Logic App for VMware to use the preconfigured searches and [dashboards](#viewing-dashboards) that provide insight into your data.
 
 To install the app:
 

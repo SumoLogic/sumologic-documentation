@@ -26,7 +26,49 @@ For details on the metrics of AWS EC2, see [here](https://docs.aws.amazon.com/AW
 ### Sample Log
 
 ```json title="Sample CloudTrail Log"
-{"eventVersion":"1.08","userIdentity":{"type":"IAMUser","principalId":"AIDAJ7LGGLTBHHDFNMPSM","arn":"arn:aws:iam::9XXXX34567898:user/cloudhealthuser","accountId":"9XXXXXXX898","accessKeyId":"AKIAXXXXXX22BUTQ","userName":"cloudhealthuser"},"eventTime":"2022-06-30T08:05:38Z","eventSource":"ec2.amazonaws.com","eventName":"DescribeReservedInstancesListings","awsRegion":"us-east-1","sourceIPAddress":"177.20.215.222","userAgent":"aws-sdk-ruby2/2.11.447 jruby/2.5.7 java cloudhealth","errorCode":"Client.OptInRequired","errorMessage":"AccountId '9XXXXXX898', You are not authorized to use the requested product. Please complete the seller registration null.","requestParameters":{"reservedInstancesListingSet":{},"reservedInstancesSet":{},"filterSet":{}},"responseElements":null,"requestID":"fe609b44-dbc5-454b-8f72-9475d1639441","eventID":"6fc6df43-1ba1-4eb3-948a-0aebc569c024","readOnly":true,"eventType":"AwsApiCall","managementEvent":true,"recipientAccountId":"9XXXXX7898","eventCategory":"Management","tlsDetails":{"tlsVersion":"TLSv1.2","cipherSuite":"ECDHE-RSA-XXXXX-SHA","clientProvidedHostHeader":"ec2.us-west-1.amazonaws.com"}}
+{
+	"eventVersion":"1.08",
+	"userIdentity":{
+		"type":"IAMUser",
+		"principalId":"AIDAJ7LGGLTBHHDFNMPSM",
+		"arn":"arn:aws:iam::9XXXX34567898:user/cloudhealthuser",
+		"accountId":"9XXXXXXX898",
+		"accessKeyId":"AKIAXXXXXX22BUTQ",
+		"userName":"cloudhealthuser"
+	},
+	"eventTime":"2022-06-30T08:05:38Z",
+	"eventSource":"ec2.amazonaws.com",
+	"eventName":"DescribeReservedInstancesListings",
+	"awsRegion":"us-east-1",
+	"sourceIPAddress":"177.20.215.222",
+	"userAgent":"aws-sdk-ruby2/2.11.447 jruby/2.5.7 java cloudhealth",
+	"errorCode":"Client.OptInRequired",
+	"errorMessage":"AccountId '9XXXXXX898', You are not authorized to use the requested product. Please complete the seller registration null.",
+	"requestParameters":{
+		"reservedInstancesListingSet":{
+
+		},
+		"reservedInstancesSet":{
+
+		},
+		"filterSet":{
+
+		}
+	},
+	"responseElements":null,
+	"requestID":"fe609b44-dbc5-454b-8f72-9475d1639441",
+	"eventID":"6fc6df43-1ba1-4eb3-948a-0aebc569c024",
+	"readOnly":true,
+	"eventType":"AwsApiCall",
+	"managementEvent":true,
+	"recipientAccountId":"9XXXXX7898",
+	"eventCategory":"Management",
+	"tlsDetails":{
+		"tlsVersion":"TLSv1.2",
+		"cipherSuite":"ECDHE-RSA-XXXXX-SHA",
+		"clientProvidedHostHeader":"ec2.us-west-1.amazonaws.com"
+	}
+}
 ```
 
 
@@ -78,12 +120,9 @@ The Sumo Logic App for AWS EC2 (CloudWatch Metrics) allows you to collect your E
 
 To collect Amazon CloudWatch Metrics, see [Amazon CloudWatch Source For Metrics.](/docs/send-data/sources/sources-hosted-collectors/amazon-web-services/amazon-cloudwatch-source-metrics)
 
-AWS Namespace tag to filter in source for Lambda will be - **AWS/EC2**
+AWS Namespace tag to filter in source for Lambda will be - **AWS/EC2**.
 
-
-
-* **Metadata: **Add an **account** field to the source and assign it a value which is a friendly name / alias to your AWS account from which you are collecting metrics. This name will appear in the Sumo Logic Explorer View. Metrics can be queried via the “account field”.
-
+* **Metadata:** Add an **account** field to the source and assign it a value which is a friendly name / alias to your AWS account from which you are collecting metrics. This name will appear in the Sumo Logic Explorer View. Metrics can be queried via the “account field”.
 
 
 ### Collect CloudTrail EC2 Data Events
@@ -98,10 +137,6 @@ To configure a CloudTrail Source, perform these steps:
     1. Add an **account** field and assign it a value which is a friendly name / alias to your AWS account from which you are collecting logs. This name will appear in the Sumo Logic Explorer View. Logs can be queried via the “account field”.
 
 
-6
-
-
-
 ### Field in Field Schema
 
 Login to Sumo Logic,  go to Manage Data > Logs > Fields. Search for the “**instanceid**” field. If not present, create it. Learn how to create and manage fields [here](/docs/manage/fields.md#manage-fields).
@@ -109,16 +144,14 @@ Login to Sumo Logic,  go to Manage Data > Logs > Fields. Search for the “**ins
 
 ### CloudTrail FER
 
-
-```
+```sql
 Rule Name: AwsObservabilityEC2CloudTrailLogsFER
 Applied at: Ingest Time
 Scope (Specific Data): account=* eventname eventsource "ec2.amazonaws.com"
 ```
 
 
-**Parse Expression**:
-
+**Parse Expression**
 
 ```sql
 | json "eventSource", "awsRegion", "requestParameters", "responseElements", "recipientAccountId" as eventSource, region, requestParameters, responseElements, accountid nodrop
@@ -142,21 +175,18 @@ Scope (Specific Data): account=* eventname eventsource "ec2.amazonaws.com"
 
 ### Centralized AWS CloudTrail Log Collection
 
-
 If you have a centralized collection of cloudtrail logs and are ingesting them from all accounts into a single Sumo Logic cloudtrail log source, create following Field Extraction Rule to map proper AWS account(s) friendly name / alias. Create it if not already present / update it as required.
 
-
-```
+```sql
 Rule Name: AWS Accounts
 Applied at: Ingest Time
 Scope (Specific Data): _sourceCategory=<SourceCategory_of_CloudTrail_source_created_in_sumo>
 ```
 
 
-**Parse Expression**:
+**Parse Expression**
 
 Enter a parse expression to create an “account” field that maps to the alias you set for each sub account. For example, if you used the `“dev”` alias for an AWS account with ID `"528560886094"` and the `“prod”` alias for an AWS account with ID `"567680881046"`, your parse expression would look like:
-
 
 ```sql
 | json "recipientAccountId"
@@ -168,11 +198,9 @@ Enter a parse expression to create an “account” field that maps to the alias
 ```
 
 
-
-
 ## Installing the AWS EC2 App
 
-Now that you have set up collection for AWS EC2 metrics install the Sumo Logic App to use the pre-configured searches and [dashboards](#Dashboards) that provide visibility into your environment for real-time analysis of overall usage.
+Now that you have set up collection for AWS EC2 metrics install the Sumo Logic App to use the pre-configured searches and [dashboards](#viewing-dashboards) that provide visibility into your environment for real-time analysis of overall usage.
 
 To install the app:
 
@@ -182,7 +210,7 @@ Locate and install the AWS EC2 app from the **App Catalog**. If you want to see 
 2. To install the app, click **Add to Library** and complete the following fields.
     * **App Name.** You can retain the existing name or enter a name of your choice for the app. 
     * **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-    * Click **Add to Library**.
+3. Click **Add to Library**.
 
 Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization.
 
@@ -191,7 +219,6 @@ Panels will start to fill automatically. It's important to note that each panel 
 
 
 ## Viewing AWS EC2 Dashboards
-
 
 ### Overview (CloudWatch Metrics)
 
