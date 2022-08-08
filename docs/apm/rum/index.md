@@ -224,7 +224,7 @@ else connectionEnd - span start time (fetch start) |
 See W3C [navigation timing](https://www.w3.org/TR/navigation-timing/) for details on how an interface for web applications defines its access timing information concerning navigation and other elements.
 :::
 
-Metrics 1-6 and 8-9 are navigation timing metrics and are presented in the form of areas on the **Website Performance** chart on [RUM dashboards](#dashboards). They help you to understand the sequence of events from user clicks to a fully loaded document.
+Metrics 1-6 and 8-9 are navigation timing metrics presented in the form of areas on the **Website Performance** chart on [RUM dashboards](#dashboards). They can help you to understand the sequence of events from user clicks to a fully loaded document.
 
 ![Navigation-metrics.png](/img/rum/Navigation-metrics.png)
 
@@ -250,13 +250,7 @@ Explore organizes RUM data on three levels:
 
 Action names can contain asterisks (\*) to replace automatically-detected dynamic parts of the URL. If you have action names that overlap, the action name with an asterisk contains data for page loads NOT contained in more specific action names:
 
-For example:
-
-`http://www.site.com/path/page.htm`
-
-does not contain actions from 
-
-`http://www.site.com/path/*`
+For example, `http://www.site.com/path/page.htm` does not contain actions from `http://www.site.com/path/*`.
 
 There are three dashboard types on the **Application** and **Service** level and a single one on the **Action** level. You can select the appropriate dashboard from drop-down menu in the header:
 
@@ -278,59 +272,9 @@ If for any reason this gets removed, you can install the App manually from **App
 Once the app is installed, it will appear in your **Personal** folder or the folder you specified. From here, you can share it with your organization.
 
 
-## Viewing RUM Dashboards
-
-### Overview Application-Service-Action
-
-The **RUM Overview Application/Service/Action** dashboards show the user experience for performance and requests metrics for selected application, service, or action, broken down per top geo-locations, operating systems, and browsers.
-
-Use this dashboard to:
- * Analyze load and paint timings for page document loads by application, service, or action.
- * Understand what top browsers, operating systems, and locations are active with your website.
-
-You can select the timing metric type in the **statistic** dropdown on the dashboard header. This will change the browser time metrics types on charts.
-
-You can also click on any data-point on the charts to open a details panel and view the **Infrastructure** tab to drill-down to traces representing user transactions from the selected time point.
-
-![RUM_Overview.png](/img/rum/RUM_Overview.png)
-
-### TopN Application-Service
-
-The **RUM TopN Application** dashboards show top N browsers, operating systems, and geographical locations by load time and requests for the selected **application** or **service**.
-
-Use this dashboard to:
-
- * Find out top N browsers, operating systems, and geolocations by load or requests.
- * Understand the slowest and fastest browsers from a rendering perspective or geographical locations from a network perspective.
- * Find out which browsers, operating systems are in use by your users and where are they are geographically located.
-
-You can select the timing metric type in the **statistic** dropdown on the dashboard header. This will change the browser time metrics types on charts. You can also define the top N number for all charts.
-
-![img](/img/rum/RUM-TopN-Application.png)
-
-### Performance Analytics Application-Service
-
-The **RUM Performance Analytics Application** dashboards show the page performance and requests for a cohort of users specified by selecting the desired combination of dimensions.
-
-Use this dashboard to:
-
-* Filter data for specific combinations of browser and/or operating system, and/or geolocation.
-* Understand load and timing metrics for the selected user cohort.
-
-You can compare the timings against previous days' data by selecting the appropriate option in the **compare_with** drop-down.
-
-For cross-dimensional metrics, only the average statistic type is available.
-
-You can click on any data-point on the charts to open a details panel and view the **Infrastructure** tab to drill-down to traces representing user transactions from the selected time point.
-
-![img](/img/rum/RUM-Performance-Analytics-Application.png)
-
-
-
-
 ## Working with RUM Data
 
-We've extended coverage and visibility of our RUM solution in the browser to following areas:
+We've extended coverage and visibility of our RUM solution in the browser to the following areas:
 * Core web vital metrics for document loads
 * Single-Page Apps support: monitoring of XHR calls and Route changes
 * Tracing browser freeze times: Longtask delays metrics
@@ -351,12 +295,14 @@ We capture all three CWV KPIs and display them on Overview dashboards for Docume
 
 <img src={useBaseUrl('img/rum/prada-documentload.png')} alt="Real User Monitoring" />
 
-In addition to that, we've added [Time to First Byte](https://web.dev/ttfb/) (`browser_time_to_fb`), which measures the delay between start of the page load and moment when the first byte of the response appears. It helps identify when a web server is too slow to respond to requests. You'll find this metrics on the **Navigation Timings** chart:
+Additionally, we've added [Time to First Byte](https://web.dev/ttfb/) (`browser_time_to_fb`), which measures the delay between start of the page load and moment when the first byte of the response appears. It helps identify when a web server is too slow to respond to requests. You'll find this metrics on the **Navigation Timings** chart:
 
 <img src={useBaseUrl('img/rum/nav-timings.png')} alt="Real User Monitoring" />
 
 
-### Single-Page Apps / XHR support
+### Single-Page Apps
+
+#### XHR Support
 
 An XML HTTP Request (XHR) is a form of communication between the browser and the application backend without (re)loading of the page. A typical example is where a page needs to update a ticker of a price automatically or after pressing the “update price” button next to it.
 
@@ -368,7 +314,7 @@ Pages can generate one or more XHR requests, typically in the form of HTTP Posts
     * Time to last XHR (time from UI interaction till last HTTP POST ends)
     * Time to XHR processing end (time from UI interaction till all browser side processing of all XHR requests is done)
     * Time in XHR calls (total time when the transaction was “busy” with executing XHR communication)
-* Identify the user action that triggered the XHRs by blending UI interaction (e.g. “click”) with the page name (e.g. [http://www.acme.com/checkout](http://www.acme.com/checkout))
+* Identify the user action that triggered the XHRs by blending UI interaction (e.g. “click”) with the page name (e.g., [http://www.acme.com/checkout](http://www.acme.com/checkout))
 * Measure any erroneous HTTP response to XHR POST calls and count them as XHR errors
 * Allow to drill-down via EI to specific traces that explain full process of loading and execution of each such transaction
 
@@ -377,22 +323,24 @@ Pages can generate one or more XHR requests, typically in the form of HTTP Posts
 XHR technique is quite often used in Single-Page Apps (apps that load the page once and then provide all interaction and navigation without loading more documents). Therefore having support for XHR is a key enabler to support SPA browser applications.
 
 
-### Single-Page Apps / Navigation (route change) support
+#### Navigation (Route Change) Support
 
-Another browsing technique used by Single-Page Apps is a special way of handling page navigation (e.g., clicking on links, buttons) called route change. It is basically a way to navigate to a new page/view without a need to load a new document. Every time we open a new tab in Sumo, we do a route change (but we are not loading the whole document at the same time). Such actions typically also generate some XHR calls in the background.
+Another browsing technique used by Single-Page Apps is a special way of handling page navigation (e.g., clicking on links, buttons) called route change. It is basically a way to navigate to a new page/view without having to load a new document. Every time we open a new tab in Sumo, we do a route change (but we are not loading the whole document at the same time). Such actions typically also generate some XHR calls in the background.
 
 What we do with this is:
 * Create a special type of user actions called route_changes with the name of the page that is being opened (i.e., “Route to [https://service.us2.sumologic.com/ui#/search/*](https://service.us2.sumologic.com/ui#/search/*)”)
-* Show these actions as 3rd type of action next to document loads and xhr requests
+* Show these actions as third type of action next to document loads and XHR requests
 * Measure same type of metrics for them as for XHR requests
 * Allow drill-down via EI to specific traces that explain full process of loading and execution of each such transaction
 
 <img src={useBaseUrl('img/rum/nav-action.png')} alt="Real User Monitoring" />
 
 
-### Tracing browser freeze times: Longtask delays metrics
+### Tracing Browser Freeze Times
 
-[Longtasks](https://github.com/w3c/longtasks) indicate the main browser UI thread is locked for extended periods (greater than 50 milliseconds) and block other critical tasks (including user input) from being executed. If that happens for extended time, the user perceives this as a “freezed browser” that affects experience, even if the communication with the backend has completed a long time ago. RUM 2.0 automatically captures such events and:
+This section describes how to measure [Longtask delays](https://github.com/w3c/longtasks), which is when the main browser UI thread becomes locked for extended periods (greater than 50 milliseconds) and blocks other critical tasks (including user input) from being executed.
+
+This impacts the user's experience; they can perceive this as a "frozen browser”, even if the communication with the backend has long been completed. RUM automatically captures such events and:
 * Displays them as individual spans marking how long the browser was frozen
 * Aggregate the above data into two metrics:
    * Longtask delay: average duration of longtask span
@@ -444,3 +392,52 @@ In addition to that, we also aggregate that information in form of log-query bas
 Logs collection is enabled by default. You can disable by setting `collectErrors=false` in your RUM script options.
 
 This way, front end developers can have full visibility onto the flow and categories of errors generated by various parts of their browser application with contextual drill-down, free-form search and ability to build custom dashboards, which give them ability to shorten the troubleshooting time and pro-activeness in error tracing.
+
+
+
+## Viewing RUM Dashboards
+
+### Overview
+
+The **RUM Overview Application/Service/Action** dashboards show the user experience for performance and requests metrics for selected application, service, or action, broken down per top geo-locations, operating systems, and browsers.
+
+Use this dashboard to:
+ * Analyze load and paint timings for page document loads by application, service, or action.
+ * Understand what top browsers, operating systems, and locations are active with your website.
+
+You can select the timing metric type in the **statistic** dropdown on the dashboard header. This will change the browser time metrics types on charts.
+
+You can also click on any data-point on the charts to open a details panel and view the **Infrastructure** tab to drill-down to traces representing user transactions from the selected time point.
+
+![RUM_Overview.png](/img/rum/RUM_Overview.png)
+
+### TopN
+
+The **RUM TopN Application-Service** dashboards show top N browsers, operating systems, and geographical locations by load time and requests for the selected **application** or **service**.
+
+Use this dashboard to:
+
+ * Find out top N browsers, operating systems, and geolocations by load or requests.
+ * Understand the slowest and fastest browsers from a rendering perspective or geographical locations from a network perspective.
+ * Find out which browsers, operating systems are in use by your users and where are they are geographically located.
+
+You can select the timing metric type in the **statistic** dropdown on the dashboard header. This will change the browser time metrics types on charts. You can also define the top N number for all charts.
+
+![img](/img/rum/RUM-TopN-Application.png)
+
+### Performance Analytics
+
+The **RUM Performance Analytics Application-Service** dashboards show the page performance and requests for a cohort of users specified by selecting the desired combination of dimensions.
+
+Use this dashboard to:
+
+* Filter data for specific combinations of browser and/or operating system, and/or geolocation.
+* Understand load and timing metrics for the selected user cohort.
+
+You can compare the timings against previous days' data by selecting the appropriate option in the **compare_with** drop-down.
+
+For cross-dimensional metrics, only the average statistic type is available.
+
+You can click on any data-point on the charts to open a details panel and view the **Infrastructure** tab to drill-down to traces representing user transactions from the selected time point.
+
+![img](/img/rum/RUM-Performance-Analytics-Application.png)
