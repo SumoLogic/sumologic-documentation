@@ -14,8 +14,8 @@ import TabItem from '@theme/TabItem';
 The MariaDB app is a unified logs and metrics app that helps you monitor MariaDB database cluster availability, performance, and resource utilization. Pre-configured dashboards and searches provide insight into the health of your database clusters, performance metrics, resource metrics, schema metrics, replication, error logs, slow queries, Innodb operations, failed logins, and error logs.
 
 This App is tested with the following MariaDB versions:
-* Non-Kubernetes: MariaDB  - Version 10.7.1
 * Kubernetes: MariaDB - Version 10.5.11
+* Non-Kubernetes: MariaDB  - Version 10.7.1
 
 ## Collect Logs and Metrics for the MariaDB App
 
