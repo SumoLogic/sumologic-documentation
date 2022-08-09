@@ -19,8 +19,9 @@ This App has been tested with the following Couchbase with Telegraf versions:
 * Kubernetes: Couchbase version: 7.0.2 - enterprise with Telegraf version 1.21.1
 * Non-Kubernetes: Couchbase version: 7.0.2 - enterprise with Telegraf version 1.21.1
 
+:::note
 Telegraf 1.14 default of Kubernetes Collection will not work.
-
+:::
 
 ## Collecting Logs and Metrics for the Couchbase App
 
@@ -91,7 +92,7 @@ It’s assumed that you are using the latest helm chart version if not, upgrade 
 
 #### Configure Metrics Collection
 
-Here's how to collect Couchbase metrics from a Kubernetes environment. We use the Telegraf Operator, which is packaged with our Kubernetes collection. You can learn more about this [here](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/telegraf-collection-architecture).
+To collect Couchbase metrics from a Kubernetes environment, we use the Telegraf Operator, which is packaged with our Kubernetes collection. You can learn more about this [here](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/telegraf-collection-architecture).
 
 1. [Set up Kubernetes Collection with the Telegraf Operator](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf.md#Install_Telegraf_in_a_Kubernetes_environment).
 2. On your Couchbase Pods, add the following annotations:
@@ -111,28 +112,23 @@ annotations:
   db_system="couchbase"
 ```
 
-   Enter in values for the following parameters:
-
-* `telegraf.influxdata.com/inputs` - This contains the required configuration for the Telegraf Couchbase Input plugin. Refer to [this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/couchbase) for more information on configuring the Couchbase input plugin for Telegraf. Note: As telegraf will be run as a sidecar, the host should always be localhost.
-  * Input plugins section (`[[inputs.couchbase]]`):
-      * `servers`: This is the endpoint of the management portal of couchbase server. For detail, see this [doc](https://docs.couchbase.com/server/current/manage/manage-ui/manage-ui.html) .
+3. Enter in values for the following parameters (marked `TO_BE_CHANGED` above):
+  * `telegraf.influxdata.com/inputs` - This contains the required configuration for the Telegraf Couchbase Input plugin. Refer to [this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/couchbase) for more information on configuring the Couchbase input plugin for Telegraf. Note: As telegraf will be run as a sidecar, the host should always be localhost.
+  * In the Input plugins section (`[[inputs.couchbase]]`):
+     * `servers`: This is the endpoint of the management portal of couchbase server. For detail, see this [doc](https://docs.couchbase.com/server/current/manage/manage-ui/manage-ui.html) .
   * In the tags section (`[inputs.couchbase.tags]`):
-      * `environment` - This is the deployment environment where the Couchbase cluster identified by the value of **servers** resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
-      * `db_cluster` - Enter a name to identify this Couchbase cluster. This cluster name will be shown in the Sumo Logic dashboards.  
-
-  Here’s an explanation for additional values set by this configuration that we request you **do not modify** as they will cause the Sumo Logic apps to not function correctly.
- * `telegraf.influxdata.com/class: sumologic-prometheus` - This instructs the Telegraf operator what output to use. This should not be changed.
- * `prometheus.io/scrape: "true"` - This ensures our Prometheus will scrape the metrics.
- * `prometheus.io/port: "9273"` - This tells prometheus what ports to scrape on. This should not be changed.
- * `telegraf.influxdata.com/inputs`
-    * In the tags section (`[inputs.couchbase.tags]`):
-        * `component: “database”` - This value is used by Sumo Logic apps to identify application components.
-        * `db_system: “couchbase”` - This value identifies the database system.
-
-  See [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#Configuring-Telegraf) for more parameters that can be configured in the Telegraf agent globally.
-
-3. Sumo Logic Kubernetes collection will automatically start collecting metrics from the pods having the labels and annotations defined in the previous step.
-4. Verify metrics in Sumo Logic.
+     * `environment` - This is the deployment environment where the Couchbase cluster identified by the value of **servers** resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
+     * `db_cluster` - Enter a name to identify this Couchbase cluster. This cluster name will be shown in the Sumo Logic dashboards.  
+  * Here’s an explanation for additional values set by this configuration that we request you **do not modify** as they will cause the Sumo Logic apps to not function correctly.
+    * `telegraf.influxdata.com/class: sumologic-prometheus` - This instructs the Telegraf operator what output to use. This should not be changed.
+    * `prometheus.io/scrape: "true"` - This ensures our Prometheus will scrape the metrics.
+    * `prometheus.io/port: "9273"` - This tells prometheus what ports to scrape on. This should not be changed.
+    * `telegraf.influxdata.com/inputs` -- In the tags section (`[inputs.couchbase.tags]`):
+      * `component: “database”` - This value is used by Sumo Logic apps to identify application components.
+      * `db_system: “couchbase”` - This value identifies the database system.
+  * See [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#Configuring-Telegraf) for more parameters that can be configured in the Telegraf agent globally.
+4. Sumo Logic Kubernetes collection will automatically start collecting metrics from the pods having the labels and annotations defined in the previous step.
+5. Verify metrics in Sumo Logic.
 
 <br/>
 
@@ -140,81 +136,64 @@ annotations:
 
 This section explains the steps to collect Couchbase logs from a Kubernetes environment.
 
-<details><summary>1. Add labels on your Couchbase pods to capture logs from standard output (recommended).</summary>
+1. **Add labels on your Couchbase pods to capture logs from standard output on Kubernetes (recommended)**.
+   1. Apply following labels to the Couchbase pod:
+    ```sql
+    environment="prod_CHANGEME"
+    component="database"
+    db_system="couchbase"
+    db_cluster="<cluster_CHANGEME>"
+    ```
+   2. Enter in values for the following parameters (marked `CHANGE_ME` above):
+    * `environment` - This is the deployment environment where the Couchbase cluster identified by the value of **servers** resides. For example:- dev, prod, or QA. While this value is optional we highly recommend setting it.
+    * `db_cluster` - Enter a name to identify this Couchbase cluster. This cluster name will be shown in the Sumo Logic dashboards. If you haven’t defined a cluster in Couchbase, then enter `default` for `db_cluster`.
+    * Here’s an explanation for additional values set by this configuration that we request you **do not modify** as they will cause the Sumo Logic apps to not function correctly.
+     * `component: “database”` - This value is used by Sumo Logic apps to identify application components.
+     * `db_system: “couchbase”` - This value identifies the database system.
+     See [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#Configuring-Telegraf) for more parameters that can be configured in the Telegraf agent globally.
+   3. The Sumologic-Kubernetes-Collection will automatically capture the logs from stdout and will send the logs to Sumologic. For more information on deploying Sumologic-Kubernetes-Collection,[ visit](/docs/integrations/containers-orchestration/Kubernetes#Collect_Logs_and_Metrics_for_the_Kubernetes_App) here.
+   4. Verify logs in Sumo Logic.
+2. **Collecting Couchbase Logs from a Log File on Kubernetes(optional)**.
+   1. Determine the location of the Couchbase log file on Kubernetes. This can be determined from the config file /opt/couchbase/etc/couchbase/static_config squid.conf for your Couchbase cluster along with the mounts on the Couchbase pods.
+   2. Install the Sumo Logic [tailing sidecar operator](https://github.com/SumoLogic/tailing-sidecar/tree/main/operator#deploy-tailing-sidecar-operator).
+   3. Add the following annotation in addition to the existing annotations.
+    ```xml
+    annotations:
+      tailing-sidecar: sidecarconfig;<mount>:<path_of_Couchbase_log_file>/<Couchbase_log_file_name>
+    ```
+    Example:
+    ```sql
+    annotations:
+      tailing-sidecar: sidecarconfig;data:/opt/couchbase/var/lib/couchbase/logs/audit.log
+    ```
+   4. Make sure that the Couchbase pods are running and annotations are applied by using the command:
+    ```bash
+    kubectl describe pod <Couchbase_pod_name>
+    ```
+   5. Sumo Logic Kubernetes collection will automatically start collecting logs from the pods having the annotations defined above.
+   6. Verify logs in Sumo Logic.
+3. **Add a FER to normalize the fields in Kubernetes environments**. Labels created in Kubernetes environments automatically are prefixed with pod_labels. To normalize these for our app to work, we need to create a Field Extraction Rule if not already created for Proxy Application Components. To do so:
+   1. Go to Manage Data > Logs > Field Extraction Rules.
+   2. Click the + Add button on the top right of the table.
+   3. The following form appears:
+   4. Enter the following options:
+      * **Rule Name**. Enter the name as **App Observability - Proxy**.
+      * **Applied At.** Choose **Ingest Time**
+      * **Scope**. Select **Specific Data**
+      * **Scope**: Enter the following keyword search expression:  
+      ```sql
+      pod_labels_environment=* pod_labels_component=database \
+      pod_labels_db_cluster=* pod_labels_db_system=*
+      ```
+      * **Parse Expression**. Enter the following parse expression:
+      ```sql
+      if (!isEmpty(pod_labels_environment), pod_labels_environment, "") as environment
+      | pod_labels_component as component
+      | pod_labels_db_system as db_system
+      | pod_labels_db_cluster as db_cluster
+      ```
+   5. Click **Save** to create the rule.
 
-1. To make sure that the logs from Couchbase are sent to stdout on Kubernetes, apply following labels to the Couchbase pod:
-```sql
-environment="prod_CHANGEME"
-component="database"
-db_system="couchbase"
-db_cluster="<cluster_CHANGEME>"
-```
-Enter in values for the following parameters (marked `CHANGE_ME` above):
-* `environment` - This is the deployment environment where the Couchbase cluster identified by the value of **servers** resides. For example:- dev, prod, or QA. While this value is optional we highly recommend setting it.
-* `db_cluster` - Enter a name to identify this Couchbase cluster. This cluster name will be shown in the Sumo Logic dashboards. If you haven’t defined a cluster in Couchbase, then enter ‘**default**’ for db_cluster.
-
-Here’s an explanation for additional values set by this configuration that we request you **do not modify** as they will cause the Sumo Logic apps to not function correctly.
-* `component: “database”` - This value is used by Sumo Logic apps to identify application components.
-* `db_system: “couchbase”` - This value identifies the database system.
-
-See [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#Configuring-Telegraf) for more parameters that can be configured in the Telegraf agent globally.
-
-2. The Sumologic-Kubernetes-Collection will automatically capture the logs from stdout and will send the logs to Sumologic. For more information on deploying Sumologic-Kubernetes-Collection,[ visit](/docs/integrations/containers-orchestration/Kubernetes#Collect_Logs_and_Metrics_for_the_Kubernetes_App) here.
-3. Verify logs in Sumo Logic.
-
-</details>
-
-<details><summary>2. Collecting Couchbase Logs from a Log File (optional).</summary>
-
-Follow the steps below to capture Couchbase logs from a log file on Kubernetes.
-1. Determine the location of the Couchbase log file on Kubernetes. This can be determined from the config file /opt/couchbase/etc/couchbase/static_config squid.conf for your Couchbase cluster along with the mounts on the Couchbase pods.
-2. Install the Sumo Logic [tailing sidecar operator](https://github.com/SumoLogic/tailing-sidecar/tree/main/operator#deploy-tailing-sidecar-operator).
-3. Add the following annotation in addition to the existing annotations.
-```xml
-annotations:
-  tailing-sidecar: sidecarconfig;<mount>:<path_of_Couchbase_log_file>/<Couchbase_log_file_name>
-```
-
-Example:
-```sql
-annotations:
-  tailing-sidecar: sidecarconfig;data:/opt/couchbase/var/lib/couchbase/logs/audit.log
-```
-
-4. Make sure that the Couchbase pods are running and annotations are applied by using the command:
-```bash
-kubectl describe pod <Couchbase_pod_name>
-```
-5. Sumo Logic Kubernetes collection will automatically start collecting logs from the pods having the annotations defined above.
-6. Verify logs in Sumo Logic.
-
-</details>
-
-<details><summary>3. Add a FER to normalize the fields in Kubernetes environments.</summary>
-
-Labels created in Kubernetes environments automatically are prefixed with pod_labels. To normalize these for our app to work, we need to create a Field Extraction Rule if not already created for Proxy Application Components. To do so:
-1. Go to **Manage Data > Logs > Field Extraction Rules**.
-2. Click the + Add button on the top right of the table.
-3. The following form appears:
-4. Enter the following options:
-    1. **Rule Name**. Enter the name as **App Observability - Proxy**.
-    2. **Applied At.** Choose **Ingest Time**
-    3. **Scope**. Select **Specific Data**
-    4. **Scope**: Enter the following keyword search expression:  \
-```sql
-pod_labels_environment=* pod_labels_component=database \
-pod_labels_db_cluster=* pod_labels_db_system=*
-```
-* **Parse Expression**.Enter the following parse expression: \
-```sql
-if (!isEmpty(pod_labels_environment), pod_labels_environment, "") as environment
-| pod_labels_component as component
-| pod_labels_db_system as db_system
-| pod_labels_db_cluster as db_cluster
-```
-5. Click **Save** to create the rule.
-
-</details>
 
 </TabItem>
 <TabItem value="non-k8s">
