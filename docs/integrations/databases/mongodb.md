@@ -125,16 +125,6 @@ In Kubernetes environments, we use the Telegraf Operator, which is packaged with
 
 The first service in the pipeline is Telegraf. Telegraf collects metrics from MongoDB. Note that we’re running Telegraf in each pod we want to collect metrics from as a sidecar deployment for example, Telegraf runs in the same pod as the containers it monitors. Telegraf uses the MongoDB input plugin to obtain metrics. (For simplicity, the diagram doesn’t show the input plugins.) The injection of the Telegraf sidecar container is done by the Telegraf Operator. We also have Fluentbit that collects logs written to standard out and forwards them to FluentD, which in turn sends all the logs and metrics data to a Sumo Logic HTTP Source.
 
-Follow the below instructions to set up the metric collection:
-
-1. Configure Metrics Collection
-    1. Setup Kubernetes Collection with the Telegraf operator
-    2. Add annotations on your MongoDB pods
-2. Configure Logs Collection
-    3. Configure logging in MongoDB.
-    4. Add labels on your MongoDB pods to capture logs from standard output.
-    5. Collecting MongoDB Logs from a Log file.
-
 :::note Prerequisites
 It’s assumed that you are using the latest helm chart version. If not, upgrade using the instructions [here](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/release-v2.0/deploy/docs/v2_migration_doc.md#how-to-upgrade).
 :::
@@ -143,7 +133,7 @@ It’s assumed that you are using the latest helm chart version. If not, upgrade
 
 This section explains the steps to collect MongoDB metrics from a Kubernetes environment.
 
-1. [Setup Kubernetes Collection with the Telegraf Operator.](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf.md#Install_Telegraf_in_a_Kubernetes_environment)
+1. [Set up Kubernetes Collection with the Telegraf Operator](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf.md#Install_Telegraf_in_a_Kubernetes_environment).
 2. On your MongoDB Pods, add the following annotations:
 ```sql
 annotations:
@@ -161,308 +151,203 @@ annotations:
     db_system="mongodb"
     db_cluster="mongodb_on_k8s"
 ```
-
-Please enter values for the following parameters (marked `CHANGEME` above):
-
-* `telegraf.influxdata.com/inputs` - This contains the required configuration for the Telegraf MongoDB Input plugin. Please refer[ to this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/redis) for more information on configuring the MongoDB input plugin for Telegraf. Note: As telegraf will be run as a sidecar the host should always be localhost.
-    * In the input plugins section (`[inputs.MongoDB]`):
+3. Please enter values for the following parameters (marked `CHANGEME` above):
+   * `telegraf.influxdata.com/inputs` - This contains the required configuration for the Telegraf MongoDB Input plugin. Please refer[ to this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/redis) for more information on configuring the MongoDB input plugin for Telegraf. Note: As telegraf will be run as a sidecar the host should always be localhost.
+     * In the input plugins section (`[inputs.MongoDB]`):
         * `servers` - The URL to the MongoDB server. This can be a comma-separated list to connect to multiple MongoDB servers. Please see [this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/mongodb) for more information on additional parameters for configuring the MongoDB input plugin for Telegraf.
-    * In the tags section (`[inputs.MongoDB.tags])`:
+     * In the tags section (`[inputs.MongoDB.tags])`:
         * `environment` - This is the deployment environment where the MongoDB cluster identified by the value of **servers** resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
         * `db_cluster` - Enter a name to identify this MongoDB cluster. This cluster name will be shown in the Sumo Logic dashboards.
-
-Here’s an explanation for additional values set by this configuration that we request you **please do not modify** as they will cause the Sumo Logic apps to not function correctly.
-
-* `telegraf.influxdata.com/class: sumologic-prometheus` - This instructs the Telegraf operator what output to use. This should not be changed.
-* `prometheus.io/scrape: "true"` - This ensures our Prometheus will scrape the metrics.
-* `prometheus.io/port: "9273"` - This tells prometheus what ports to scrape on. This should not be changed.
-* `telegraf.influxdata.com/inputs`
-    * In the tags section (`[inputs.mongodb.tags]`)
-        * `component: “database”` - This value is used by Sumo Logic apps to identify application components.
-        * `db_system: “mongodb”` - This value identifies the database system.
-
-See [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#Configuring-Telegraf) for more parameters that can be configured in the Telegraf agent globally.
-
-1. Sumo Logic Kubernetes collection will automatically start collecting metrics from the pods having the labels and annotations defined in the previous step.
-2. Verify metrics in Sumo Logic.
+   * Here’s an explanation for additional values set by this configuration that we request you **do not modify** as they will cause the Sumo Logic apps to not function correctly.
+     * `telegraf.influxdata.com/class: sumologic-prometheus` - This instructs the Telegraf operator what output to use. This should not be changed.
+     * `prometheus.io/scrape: "true"` - This ensures our Prometheus will scrape the metrics.
+     * `prometheus.io/port: "9273"` - This tells prometheus what ports to scrape on. This should not be changed.
+     * `telegraf.influxdata.com/inputs`
+       * In the tags section (`[inputs.mongodb.tags]`):
+         * `component: “database”` - This value is used by Sumo Logic apps to identify application components.
+         * `db_system: “mongodb”` - This value identifies the database system.
+   * See [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#Configuring-Telegraf) for more parameters that can be configured in the Telegraf agent globally.
+4. Sumo Logic Kubernetes collection will automatically start collecting metrics from the pods having the labels and annotations defined in the previous step.
+5. Verify metrics in Sumo Logic.
 
 
 #### Configure Logs Collection
 
 This section explains the steps to collect MongoDB logs from a Kubernetes environment.
 
-1. Add labels on your MongoDB pods to capture logs from standard output. Make sure that the logs from MongoDB are sent to stdout. For more details see this [doc](https://docs.mongodb.com/manual/reference/log-messages/). Follow the instructions below to capture MongoDB logs from stdout on Kubernetes.
-
-1. Apply following labels to the MongoDB pods:
-```sql
-labels:
-    environment: "prod"
-    component: "database"
-    db_system: "mongodb"
-    db_cluster: "mongodb_prod_cluster01"
-```
-
-Enter in values for the following parameters:
-* `environment`. This is the deployment environment where the MongoDB cluster identified by the value of **servers** resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
-* `db_cluster`. Enter a name to identify this MongoDB cluster. This cluster name will be shown in the Sumo Logic dashboards.
-
-Here’s an explanation for additional values set by this configuration that we request you **do not modify** as they will cause the Sumo Logic apps to not function correctly.
-
-* `component: “database”`. This value is used by Sumo Logic apps to identify application components.
-* `db_system: “mongodb”`. This value identifies the database system.
-
-    For all other parameters see[ this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#Configuring-Telegraf) for more parameters that can be configured in the Telegraf agent globally.
-
-1. (Optional) Collecting MongoDB Logs from a Log File
-
-    Follow the  steps below to capture MongoDB logs from a log file on Kubernetes.
-
-1. Determine the location of the MongoDB log file on Kubernetes. This can be determined from the MongoDB.conf for your MongoDB cluster along with the mounts on the MongoDB pods.
-2. Install the Sumo Logic [tailing sidecar operator](https://github.com/SumoLogic/tailing-sidecar/tree/main/operator#deploy-tailing-sidecar-operator).
-3. Add the following annotation in addition to the existing annotations.
-```sql
-annotations:
-  tailing-sidecar: sidecarconfig;<mount>:<path_of_MongoDB_log_file>/<MongoDB_log_file_name>
-```
-
-Example:
-```sql
-annotations:
-  tailing-sidecar: sidecarconfig;data:/mongo-prim-data/MongoDB.log
-```
-
-1. Make sure that the MongoDB pods are running and annotations are applied by using the command:
-  ```bash
-  kubectl describe pod <MongoDB_pod_name>
-  ```
-2. Sumo Logic Kubernetes collection will automatically start collecting logs from the pods having the annotations defined above.
-1. Add an FER to normalize the fields in Kubernetes environments
-
-    Labels created in Kubernetes environments automatically are prefixed with pod_labels. To normalize these for our app to work, we need to create a Field Extraction Rule if not already created for Database Application Components. To do so:
-
-1. Go to **Manage Data > Logs > Field Extraction Rules**.
-2. Click the + Add button on the top right of the table.
-3. The following form appears:
-
-
-1. Enter the following options:
-* **Rule Name**. Enter the name as **App Observability - Database**.
-* **Applied At.** Choose **Ingest Time**
-* **Scope**. Select **Specific Data**
-    * **Scope**: Enter the following keyword search expression:
-```sql
-pod_labels_environment=* pod_labels_component=database \
-pod_labels_db_system=* pod_labels_db_cluster=*
-```
-* **Parse Expression**.Enter the following parse expression:
-```sql
-| if (!isEmpty(pod_labels_environment), pod_labels_environment, "") as environment
-| pod_labels_component as component
-| pod_labels_db_system as db_system
-| pod_labels_db_cluster as db_cluster
-```
-
-1. Click **Save** to create the rule.
+1. **Add labels on your MongoDB pods to capture logs from standard output on Kubernetes**. Make sure that the logs from MongoDB are sent to stdout. For more details, see this [doc](https://docs.mongodb.com/manual/reference/log-messages/).
+   1. Apply following labels to the MongoDB pods:
+   ```sql
+   labels:
+       environment: "prod"
+       component: "database"
+       db_system: "mongodb"
+       db_cluster: "mongodb_prod_cluster01"
+   ```
+   2. Enter in values for the following parameters:
+     * `environment`. This is the deployment environment where the MongoDB cluster identified by the value of **servers** resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
+     * `db_cluster`. Enter a name to identify this MongoDB cluster. This cluster name will be shown in the Sumo Logic dashboards.
+     * Here’s an explanation for additional values set by this configuration that we request you **do not modify** as they will cause the Sumo Logic apps to not function correctly.
+       * `component: “database”`. This value is used by Sumo Logic apps to identify application components.
+       * `db_system: “mongodb”`. This value identifies the database system.
+     * See [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#Configuring-Telegraf) for more parameters that can be configured in the Telegraf agent globally.
+2. **Collecting MongoDB Logs from a Log File (Optional)**. Follow the steps below to capture MongoDB logs from a log file on Kubernetes.
+   1. Determine the location of the MongoDB log file on Kubernetes. This can be determined from the MongoDB.conf for your MongoDB cluster along with the mounts on the MongoDB pods.
+   2. Install the Sumo Logic [tailing sidecar operator](https://github.com/SumoLogic/tailing-sidecar/tree/main/operator#deploy-tailing-sidecar-operator).
+   3. Add the following annotation in addition to the existing annotations.
+    ```xml
+    annotations:
+      tailing-sidecar: sidecarconfig;<mount>:<path_of_MongoDB_log_file>/<MongoDB_log_file_name>
+    ```
+    Example:
+    ```bash
+     annotations:
+      tailing-sidecar: sidecarconfig;data:/mongo-prim-data/MongoDB.log
+    ```
+   4. Make sure that the MongoDB pods are running and annotations are applied by using the command:
+     ```bash
+     kubectl describe pod <MongoDB_pod_name>
+     ```
+   5. Sumo Logic Kubernetes collection will automatically start collecting logs from the pods having the annotations defined above.
+3. **Add an FER to normalize the fields in Kubernetes environments**. Labels created in Kubernetes environments automatically are prefixed with `pod_labels`. To normalize these for our app to work, we need to create a Field Extraction Rule if not already created for Database Application Components. To do so:
+   1. Go to **Manage Data > Logs > Field Extraction Rules**.
+   2. Click the + Add button on the top right of the table.
+   3. The following form appears:
+   4. Enter the following options:
+     * **Rule Name**. Enter the name as **App Observability - Database**.
+     * **Applied At.** Choose **Ingest Time**
+     * **Scope**. Select **Specific Data**
+     * **Scope**: Enter the following keyword search expression:
+      ```sql
+      pod_labels_environment=* pod_labels_component=database \
+      pod_labels_db_system=* pod_labels_db_cluster=*
+      ```
+     * **Parse Expression**.Enter the following parse expression:
+      ```sql
+      | if (!isEmpty(pod_labels_environment), pod_labels_environment, "") as environment
+      | pod_labels_component as component
+      | pod_labels_db_system as db_system
+      | pod_labels_db_cluster as db_cluster
+      ```
+4. Click **Save** to create the rule.
 
 </TabItem>
 <TabItem value="non-k8s">
 
-In non-Kubernetes environments, we use the Telegraf operator for MongoDB metric collection and Sumo Logic Installed Collector for collecting MongoDB logs. The diagram below illustrates the components of the MongoDB collection in a non-Kubernetes environment. Telegraf runs on the same system as MongoDB, and uses the[ MongoDB input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/mongodb) to obtain MongoDB metrics, and the Sumo Logic output plugin to send the metrics to Sumo Logic. Logs from MongoDB on the other hand are sent to either a Sumo Logic Local File source or Syslog source.<br/><img src={useBaseUrl('img/integrations/databases/mongodb_nonk8.png')} alt="mongodb" />
+In non-Kubernetes environments, we use the Telegraf operator for MongoDB metric collection and Sumo Logic Installed Collector for collecting MongoDB logs. The diagram below illustrates the components of the MongoDB collection in a non-Kubernetes environment. Telegraf runs on the same system as MongoDB, and uses the [MongoDB input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/mongodb) to obtain MongoDB metrics, and the Sumo Logic output plugin to send the metrics to Sumo Logic. Logs from MongoDB on the other hand are sent to either a Sumo Logic Local File source or Syslog source.<br/><img src={useBaseUrl('img/integrations/databases/mongodb_nonk8.png')} alt="mongodb" />
 
-This section provides instructions for configuring metrics collection for the Sumo Logic App for MongoDB. Follow the below instructions to set up the metric collection:
-
-1. Configure Metrics Collection
-    1. Configure a Hosted Collector
-    2. Configure an HTTP Logs and Metrics Source
-    3. Install Telegraf
-    4. Configure and start Telegraf
-2. Configure Logs Collection
-    5. Configure logging in MongoDB
-    6. Configure Sumo Logic Installed Collector
-
+This section provides instructions for configuring metrics collection for the Sumo Logic App for MongoDB.
 
 #### Configure Metrics Collection
 
-1. Configure a Hosted Collector
-
-    To create a new Sumo Logic hosted collector, perform the steps in the[ Configure a Hosted Collector](/docs/send-data/configure-hosted-collector) section of the Sumo Logic documentation.
-
-1. Configure an HTTP Logs and Metrics Source
-
-    Create a new HTTP Logs and Metrics Source in the hosted collector created above by following[ these instructions. ](/docs/send-data/sources/sources-hosted-collectors/http-logs-metrics-source)Make a note of the **HTTP Source URL**.
-
-1. Install Telegraf
-
-    Use the[ following steps](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf.md) to install Telegraf.
-
-1. Configure and start Telegraf
-
-    As part of collecting metrics data from Telegraf, we will use the [MongoDB input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/mongodb) to get data from Telegraf and the [Sumo Logic output plugin](https://github.com/SumoLogic/fluentd-output-sumologic) to send data to Sumo Logic.
-
-    Create or modify telegraf.conf and copy and paste the text below:  
-
-
-```sql
-[[inputs.mongodb]]
-  servers = ["mongodb://<username-CHANGME>:<password-CHANGEME>@127.0.0.1:27017"]
-  gather_perdb_stats = true
-  gather_col_stats = true
-  [inputs.mongodb.tags]
-    environment="prod"
-    component="database"
-    db_system="mongodb"
-    db_cluster="mongodb_on_premise"
-
-[[outputs.sumologic]]
-  url = "<URL Created in Step b>"
-  data_format = "prometheus"
-```
-
-Enter values for the following parameters:
-
-* In the input plugins section - `[inputs.mongodb]`:
-    * `servers` - The URL to the MongoDB server. This can be a comma-separated list to connect to multiple MongoDB servers. Please see [this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/mongodb) for more information on additional parameters for configuring the MongoDB input plugin for Telegraf.
-    * In the tags section - `[inputs.mongodb.tags]`
-        * `environment` - This is the deployment environment where the MongoDB cluster identified by the value of **servers** resides. For example: dev, prod or qa. While `this` value is optional we highly recommend setting it.
-        * `db_cluster` - Enter a name to identify this MongoDB cluster. This cluster name will be shown in the Sumo Logic dashboards.
-* In the output plugins section - `[outputs.sumologic]`:
-    * `url` - This is the HTTP source URL created in step 3. Please see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/configure-telegraf-output-plugin.md) for more information on additional parameters for configuring the Sumo Logic Telegraf output plugin.
-
-Here’s an explanation for additional values set by this Telegraf configuration that we request you **do not modify** as they will cause the Sumo Logic apps to not function correctly.
-
-* `data_format - “prometheus”` In the output plugins section - `[outputs.sumologic]` Metrics are sent in the Prometheus format to Sumo Logic
-* `component: “database”` - In the input plugins section - `[inputs.MongoDB]`. This value is used by Sumo Logic apps to identify application components.
-* `gather_perdb_stats: “true”` - When true, collect per database stats.
-* `gather_col_stats: “true”` - When true, collect per collection stats.
-
-For all other parameters, see [this doc](https://github.com/influxdata/telegraf/blob/master/etc/telegraf.conf) for more parameters that can be configured in the Telegraf agent globally.
-
-Once you have finalized your telegraf.conf file, you can start or reload the telegraf service using instructions from the [doc](https://docs.influxdata.com/telegraf/v1.17/introduction/getting-started/#start-telegraf-service).
+1. **Configure a Hosted Collector**. To create a new Sumo Logic hosted collector, perform the steps in the [Configure a Hosted Collector](/docs/send-data/configure-hosted-collector) section of the Sumo Logic documentation.
+2. **Configure an HTTP Logs and Metrics Source**. Create a new HTTP Logs and Metrics Source in the hosted collector created above by following[ these instructions. ](/docs/send-data/sources/sources-hosted-collectors/http-logs-metrics-source). Make note of the **HTTP Source URL**.
+3. **Install Telegraf**. Use the following steps [install Telegraf](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf.md).
+   1. Configure and start Telegraf. As part of collecting metrics data from Telegraf, we will use the [MongoDB input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/mongodb) to get data from Telegraf and the [Sumo Logic output plugin](https://github.com/SumoLogic/fluentd-output-sumologic) to send data to Sumo Logic. Create or modify telegraf.conf and copy and paste the text below:
+    ```sql
+    [[inputs.mongodb]]
+      servers = ["mongodb://<username-CHANGEME>:<password-CHANGEME>@127.0.0.1:27017"]
+      gather_perdb_stats = true
+      gather_col_stats = true
+   [inputs.mongodb.tags]
+      environment="prod"
+      component="database"
+      db_system="mongodb"
+      db_cluster="mongodb_on_premise"
+   [[outputs.sumologic]]
+      url = "<CHANGEME>" -- HTTP Source URL you created in previous step
+      data_format = "prometheus"
+    ```
+   2. Enter values for the following parameters:
+     * In the input plugins section, `[inputs.mongodb]`:
+       * `servers` - The URL to the MongoDB server. This can be a comma-separated list to connect to multiple MongoDB servers. Please see [this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/mongodb) for more information on additional parameters for configuring the MongoDB input plugin for Telegraf.
+     * In the tags section, `[inputs.mongodb.tags]`
+       * `environment` - This is the deployment environment where the MongoDB cluster identified by the value of **servers** resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
+       * `db_cluster` - Enter a name to identify this MongoDB cluster. This cluster name will be shown in the Sumo Logic dashboards.
+     * In the output plugins section, `[outputs.sumologic]`:
+       * `url` - This is the HTTP source URL created in step 3. Please see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/configure-telegraf-output-plugin.md) for more information on additional parameters for configuring the Sumo Logic Telegraf output plugin.
+     * Here’s an explanation for additional values set by this Telegraf configuration that we request you **do not modify** as they will cause the Sumo Logic apps to not function correctly.
+       * `data_format - “prometheus”` In the output plugins section, `[outputs.sumologic]`, metrics are sent in the Prometheus format to Sumo Logic
+       * `component: “database”` - In the input plugins section, `[inputs.MongoDB]`, this value is used by Sumo Logic apps to identify application components.
+       * `gather_perdb_stats: “true”` - When true, collect per database stats.
+       * `gather_col_stats: “true”` - When true, collect per collection stats.
+     * See [this doc](https://github.com/influxdata/telegraf/blob/master/etc/telegraf.conf) for more parameters that can be configured in the Telegraf agent globally.
+   3. Once you have finalized your telegraf.conf file, you can start or reload the telegraf service using instructions from the [doc](https://docs.influxdata.com/telegraf/v1.17/introduction/getting-started/#start-telegraf-service).
 
 At this point, MongoDB metrics should start flowing into Sumo Logic.
 
 
 #### Configure Logs Collection
 
-This section provides instructions for configuring log collection for MongoDB running on a non-kubernetes environment for the Sumo Logic App for MongoDB. By default, MongoDB logs are stored in a log file. MongoDB also supports forwarding logs via Syslog.
+This section provides instructions for configuring log collection for MongoDB running on a non-Kubernetes environment for the Sumo Logic App for MongoDB. By default, MongoDB logs are stored in a log file. MongoDB also supports forwarding logs via Syslog.
 
 Sumo Logic supports collecting logs both via Syslog and a local log file. Utilizing Sumo Logic [Cloud Syslog](/docs/send-data/Sources/sources-hosted-collectors/Cloud-Syslog-Source) will require TCP TLS Port 6514 to be open in your network. Local log files can be collected via [Installed collectors](/docs/send-data/Installed-Collectors). Installed collector will require you to allow outbound traffic to [Sumo Logic endpoints](https://help.sumologic.com/APIs/General-API-Information/Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security) for collection to work. For detailed requirements for Installed collectors, see this [page](/docs/get-started/system-requirements#Installed-Collector-Requirements).
 
 Based on your infrastructure and networking setup choose one of these methods to collect MongoDB logs and follow the instructions below to set up log collection:
 
-1. Configure logging in MongoDB
-2. Configure local log file or syslog collection
-3. Configure a Collector
-4. Configure a Source
+1. **Configure logging in MongoDB**. MongoDB supports logging via the following methods: syslog, local text log files and stdout. MongoDB logs have four levels of verbosity. All logging settings are located in [MongoDB.conf](https://docs.mongodb.com/manual/reference/method/db.setLogLevel/). To select a level, set `loglevel` to one of:
+   * 0 is the MongoDB's default log verbosity level, to include [Informational](https://docs.mongodb.com/manual/reference/log-messages/#std-label-log-severity-levels) messages.
+   * 1 to 5 increases the verbosity level to include[ Debug](https://docs.mongodb.com/manual/reference/log-messages/#std-label-log-severity-levels) messages.
+2. Configure MongoDB to log to a Local file or syslog
+   * **Configuring MongoDB logs to go to log files**. By default, MongoDB logs are stored in **/var/log/mongodb/mongodb.log**. The default directory for log files is listed in the MongoDB.conf file. To configure the log output destination to a log file, use one of the following settings, either in the [configuration file](https://docs.mongodb.com/manual/reference/configuration-options/) or command-line:
+     * Configuration file: The [systemLog.destination](https://docs.mongodb.com/manual/reference/configuration-options/#mongodb-setting-systemLog.destination) option for _file_.
+     * Command-line:
+		   * The [`--logpath`](https://docs.mongodb.com/manual/reference/program/mongod/#std-option-mongod.--logpath) option for [mongod](https://docs.mongodb.com/manual/reference/program/mongod/#mongodb-binary-bin.mongod) for _file_.
+       * The [`--logpath`](https://docs.mongodb.com/manual/reference/program/mongos/#std-option-mongos.--logpath) option for [mongos](https://docs.mongodb.com/manual/reference/program/mongos/#mongodb-binary-bin.mongos) for _file_.
 
-    Detail instructions for each are as follows:
-
-1. Configure logging in MongoDB
-
-    MongoDB supports logging via the following methods: syslog, local text log files and stdout. MongoDB logs have four levels of verbosity. To select a level, set loglevel to one of:
-
-* 0 is the MongoDB's default log verbosity level, to include[ Informational](https://docs.mongodb.com/manual/reference/log-messages/#std-label-log-severity-levels) messages.
-* 1 to 5 increases the verbosity level to include[ Debug](https://docs.mongodb.com/manual/reference/log-messages/#std-label-log-severity-levels) messages.
-
-    All logging settings are located in [MongoDB.conf](https://docs.mongodb.com/manual/reference/method/db.setLogLevel/).
-
-1. Configure MongoDB to log to a Local file or syslog
-
-    **Configuring MongoDB logs to go to log files**
-
-
-    By default, MongoDB logs are stored in **/var/log/mongodb/mongodb.log**. The default directory for log files is listed in the MongoDB.conf file.
-
-
-    To configure the log output destination to a log file, use one of the following settings, either in the[ configuration file](https://docs.mongodb.com/manual/reference/configuration-options/) or on the command-line:
-
-
-        **Configuration file:**
-
-* The[ systemLog.destination](https://docs.mongodb.com/manual/reference/configuration-options/#mongodb-setting-systemLog.destination) option for _file_
-
-**Command-line:**
-
-* the [--logpath](https://docs.mongodb.com/manual/reference/program/mongod/#std-option-mongod.--logpath) option for [mongod](https://docs.mongodb.com/manual/reference/program/mongod/#mongodb-binary-bin.mongod) for _file_
-* the [--logpath](https://docs.mongodb.com/manual/reference/program/mongos/#std-option-mongos.--logpath) option for [mongos](https://docs.mongodb.com/manual/reference/program/mongos/#mongodb-binary-bin.mongos) for _file_
-
-Logs from the MongoDB log file can be collected via a Sumo Logic [Installed collector](/docs/send-data/Installed-Collectors) and a [Local File Source](/docs/send-data/Sources/sources-installed-collectors/Local-File-Source) as explained in the next section.
-
-
-    **Configuring MongoDB logs to stream via syslog**
-
-
-    To configure the log output destination to syslog, use one of the following settings, either in the[ configuration file](https://docs.mongodb.com/manual/reference/configuration-options/) or on the command-line:
-
-
-        **Configuration file:**
-
-* The[ systemLog.destination](https://docs.mongodb.com/manual/reference/configuration-options/#mongodb-setting-systemLog.destination) option for _syslog_
-
-        **Command-line:**
-
-* the[ --syslog](https://docs.mongodb.com/manual/reference/program/mongod/#std-option-mongod.--syslog) option for[ mongod](https://docs.mongodb.com/manual/reference/program/mongod/#mongodb-binary-bin.mongod) for _syslog_
-* the[ --syslog](https://docs.mongodb.com/manual/reference/program/mongos/#std-option-mongos.--syslog) option for[ mongos](https://docs.mongodb.com/manual/reference/program/mongos/#mongodb-binary-bin.mongos) for _syslog_
+    Logs from the MongoDB log file can be collected via a Sumo Logic [Installed collector](/docs/send-data/Installed-Collectors) and a [Local File Source](/docs/send-data/Sources/sources-installed-collectors/Local-File-Source) as explained in the next section.
+   * **Configuring MongoDB logs to stream via syslog**. To configure the log output destination to syslog, use one of the following settings, either in the[ configuration file](https://docs.mongodb.com/manual/reference/configuration-options/) or command-line:
+     * **Configuration file**: the [systemLog.destination](https://docs.mongodb.com/manual/reference/configuration-options/#mongodb-setting-systemLog.destination) option for _syslog_.
+     * **Command-line:**
+		   * the [`--syslog`](https://docs.mongodb.com/manual/reference/program/mongod/#std-option-mongod.--syslog) option for[ mongod](https://docs.mongodb.com/manual/reference/program/mongod/#mongodb-binary-bin.mongod) for _syslog_.
+       * the [`--syslog`](https://docs.mongodb.com/manual/reference/program/mongos/#std-option-mongos.--syslog) option for[ mongos](https://docs.mongodb.com/manual/reference/program/mongos/#mongodb-binary-bin.mongos) for _syslog_.
 
     To capture MongoDB logs using syslog, configure a [syslog source](/docs/send-data/Sources/sources-installed-collectors/Syslog-Source) on an [Installed collector](/docs/send-data/Installed-Collectors) as explained in the next section.
 
-1. Configuring a Collector
-
-    To add an Installed collector, perform the steps as defined on the page[ Configure an Installed Collector.](/docs/send-data/Installed-Collectors)
-
-1. Configuring a Source
-
-    **To add a Local File Source source for MongoDB do the following**
-
-
-    To collect logs directly from your MongoDB machine, use an Installed Collector and a Local File Source.
-
-1. Add a[ Local File Source](/docs/send-data/Sources/sources-installed-collectors/Local-File-Source).
-2. Configure the Local File Source fields as follows:
-* **Name.** (Required)
-* **Description.** (Optional)
-* **File Path (Required).** Enter the path to your error.log or access.log. The files are typically located in /var/log/mongodb/mongodb.log. If you're using a customized path, check the MongoDB.conf file for this information.
-* **Source Host.** Sumo Logic uses the hostname assigned by the OS unless you enter a different host name
-* **Source Category.** Enter any string to tag the output collected from this Source, such as **MongoDB/Logs**. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details see[ Best Practices](/docs/send-data/design-deployment/best-practices-source-categories).)
-* **Fields**. Set the following fields:
-    * `component = database`
-    * `db_system = mongodb`
-    * `db_cluster = <Your_MongoDB_Cluster_Name>`
-    * `environment = <Environment_Name>`, such as Dev, QA or Prod
-
-1. Configure the **Advanced** section:
-* **Enable Timestamp Parsing.** Select Extract timestamp information from log file entries.
-* **Time Zone.** Choose the option, **Ignore time zone from log file and instead use**, and then select your MongoDB Server’s time zone.
-* **Timestamp Format.** The timestamp format is automatically detected.
-* **Encoding. **Select** **UTF-8 (Default).
-* **Enable Multiline Processing.** Detect messages spanning multiple lines
-    * Infer Boundaries - Detect message boundaries automatically
-1. Click **Save**.
-
-To add a Syslog Source source for MongoDB, do the following:
-1. Add a  [Syslog source](/docs/send-data/Sources/sources-installed-collectors/Syslog-Source) in the installed collector configured in the previous step.
-2. Configure the Syslog Source fields as follows:
-* **Name.** (Required)
-* **Description.** (Optional)
-* **Protocol**: UDP
-* **Port**: 514 (as entered while configuring logging in Step b.)
-* **Source Category.** Enter any string to tag the output collected from this Source, such as **MongoDB/Logs**. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details see[ Best Practices](/docs/send-data/design-deployment/best-practices-source-categories).)
-* **Fields. **Set the following fields:
-    * `component = database`
-    * `db_system = MongoDB`
-    * `db_cluster = <Your_MongoDB_Cluster_Name>`
-    * `environment = <Environment_Name>`, such as Dev, QA or Prod.
-
-
-1. Configure the **Advanced** section:
-    * **Enable Timestamp Parsing.** Select Extract timestamp information from log file entries.
-    * **Time Zone.** Choose the option, **Ignore time zone from log file and instead use**, and then select your MongoDB Server’s time zone.
-    * **Timestamp Format.** The timestamp format is automatically detected.
-    * **Encoding. **Select** **UTF-8 (Default).
-2. Click **Save**.
+3. **Configuring a Collector**. To add an Installed collector, perform the steps as defined on the page [Configure an Installed Collector](/docs/send-data/Installed-Collectors).
+4. **Configuring a Source**. To collect logs directly from your MongoDB machine, use a Local File Source and an Installed Collector.
+   1. To add a Local File Source source for MongoDB, do the following:
+      1. Add a [Local File Source](/docs/send-data/Sources/sources-installed-collectors/Local-File-Source).
+      2. Configure the Local File Source fields as follows:
+         * **Name.** (Required)
+         * **Description.** (Optional)
+         * **File Path (Required).** Enter the path to your error.log or access.log. The files are typically located in /var/log/mongodb/mongodb.log. If you're using a customized path, check the MongoDB.conf file for this information.
+         * **Source Host.** Sumo Logic uses the hostname assigned by the OS unless you enter a different host name
+         * **Source Category.** Enter any string to tag the output collected from this Source, such as **MongoDB/Logs**. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details see[ Best Practices](/docs/send-data/design-deployment/best-practices-source-categories).)
+         * **Fields**. Set the following fields:
+           * `component = database`
+           * `db_system = mongodb`
+           * `db_cluster = <Your_MongoDB_Cluster_Name>`
+           * `environment = <Environment_Name>`, such as Dev, QA or Prod
+      3. Configure the **Advanced** section:
+         * **Enable Timestamp Parsing.** Select Extract timestamp information from log file entries.
+         * **Time Zone.** Choose the option, **Ignore time zone from log file and instead use**, and then select your MongoDB Server’s time zone.
+         * **Timestamp Format.** The timestamp format is automatically detected.
+         * **Encoding** Select UTF-8 (Default).
+         * **Enable Multiline Processing.** Detect messages spanning multiple lines
+         * Infer Boundaries - Detect message boundaries automatically
+      4. Click **Save**.
+   2. To add a Syslog Source source for MongoDB, do the following:
+      1. Add a [Syslog source](/docs/send-data/Sources/sources-installed-collectors/Syslog-Source) in the installed collector configured in the previous step.
+      2. Configure the Syslog Source fields as follows:
+         * **Name.** (Required)
+         * **Description.** (Optional)
+         * **Protocol**: UDP
+         * **Port**: 514 (as entered while configuring logging in Step b.)
+         * **Source Category.** Enter any string to tag the output collected from this Source, such as **MongoDB/Logs**. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details see[ Best Practices](/docs/send-data/design-deployment/best-practices-source-categories).)
+         * **Fields. **Set the following fields:
+           * `component = database`
+           * `db_system = MongoDB`
+           * `db_cluster = <Your_MongoDB_Cluster_Name>`
+           * `environment = <Environment_Name>`, such as Dev, QA or Prod
+      3. Configure the **Advanced** section:
+         * **Enable Timestamp Parsing.** Select Extract timestamp information from log file entries.
+         * **Time Zone.** Choose the option, **Ignore time zone from log file and instead use**, and then select your MongoDB Server’s time zone.
+         * **Timestamp Format.** The timestamp format is automatically detected.
+           * **Encoding.** Select UTF-8 (Default).
+      4. Click **Save**.
 
 At this point, MongoDB logs should start flowing into Sumo Logic.
-
 
 </TabItem>
 </Tabs>
@@ -498,54 +383,21 @@ There are limits to how many alerts can be enabled. For more information, see [M
 2. Download [Terraform 0.13](https://www.terraform.io/downloads.html) or later, and install it.
 3. Download the Sumo Logic Terraform package for MongoDB monitors. The alerts package is available in the Sumo Logic github [repository](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/tree/main/monitor_packages/MongoDB). You can either download it using the `git clone` command or as a zip file.
 4. Alert Configuration. After extracting the package , navigate to the  `terraform-sumologic-sumo-logic-monitor/monitor_packages/MongoDB/` directory. Edit the `MongoDB.auto.tfvars` file and add the Sumo Logic Access Key and Access ID from Step 1 and your Sumo Logic deployment. If you're not sure of your deployment, see [Sumo Logic Endpoints and Firewall Security](https://help.sumologic.com/APIs/General-API-Information/Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security).
-```bash
-access_id   = "<SUMOLOGIC ACCESS ID>"
-access_key  = "<SUMOLOGIC ACCESS KEY>"
-environment = "<SUMOLOGIC DEPLOYMENT>"
-```
+  ```bash
+  access_id   = "<SUMOLOGIC ACCESS ID>"
+  access_key  = "<SUMOLOGIC ACCESS KEY>"
+  environment = "<SUMOLOGIC DEPLOYMENT>"
+  ```
 
-The Terraform script installs the alerts without any scope filters, if you would like to restrict the alerts to specific clusters or environments, update the `mongodb_data_source` variable. For example:
+  The Terraform script installs the alerts without any scope filters, if you would like to restrict the alerts to specific clusters or environments, update the `mongodb_data_source` variable. For example:
+	 * To configure alerts for A specific cluster set `mongodb_data_source` to something like `db_cluster = mongodb.prod.01`
+	 * To configure alerts for All clusters in an environment set `mongodb_data_source` to something like `environment = prod`
+	 * To configure alerts for Multiple clusters using a wildcard set `mongodb_data_source` to something like `db_cluster = mongodb-prod*`
+	 * To configure alerts for A specific cluster within a specific environment, set `mongodb_data_source` to something like `db_cluster = mongodb-1` and `environment = prod`. This assumes you have configured and applied Fields as described in [Step 1: Configure Sumo Logic Fields](#step-1-configure-fields-in-sumo-logic).
 
-<table>
-  <tr>
-   <td>To configure alerts for...
-   </td>
-   <td>Set mongodb_data_source to something like...
-   </td>
-  </tr>
-  <tr>
-   <td>A specific cluster
-   </td>
-   <td><code>db_cluster &#61; mongodb.prod.01</code>
-   </td>
-  </tr>
-  <tr>
-   <td>All clusters in an environment
-   </td>
-   <td><code>environment &#61; prod</code>
-   </td>
-  </tr>
-  <tr>
-   <td>Multiple clusters using a wildcard
-   </td>
-   <td><code>db_cluster &#61; mongodb-prod*</code>
-   </td>
-  </tr>
-  <tr>
-   <td>A specific cluster within a specific environment
-   </td>
-   <td><code>db_cluster &#61; mongodb-1 and environment &#61; prod</code>
-
-This assumes you have configured and applied Fields as described in Step 1: Configure Fields of the <em>Sumo Logic of the Collect Logs and Metrics for MongoDB</em> topic.
-   </td>
-  </tr>
-</table>
-
-
-All monitors are disabled by default on installation. To enable all of the monitors, set the `monitors_disabled` parameter to `false`. By default, the monitors will be located in a "MongoDB" folder on the **Monitors** page. To change the name of the folder, update the monitor folder name in the `folder` variable in the `MongoDB.auto.tfvars` file.
+  All monitors are disabled by default on installation. To enable all of the monitors, set the `monitors_disabled` parameter to `false`. By default, the monitors will be located in a "MongoDB" folder on the **Monitors** page. To change the name of the folder, update the monitor folder name in the `folder` variable in the `MongoDB.auto.tfvars` file.
 
 5. If you want the alerts to send email or connection notifications, edit the `MongoDB_notifications.auto.tfvars` file to populate the `connection_notifications` and `email_notifications` sections. Examples are provided below. In the variable definition below, replace `<CONNECTION_ID>` with the connection ID of the Webhook connection. You can obtain the Webhook connection ID by calling the [Monitors API](https://api.sumologic.com/docs/#operation/listConnections).
-
 ```bash title="Pagerduty connection example"
 connection_notifications = [
     {
@@ -586,11 +438,7 @@ email_notifications = [
 
 ## Installing the MongoDB App
 
-Now that you have set up collection for MongoDB, install the Sumo Logic App for MongoDB to use the preconfigured searches and [dashboards](#viewing-dashboards) to analyze your data.
-
-To install the app:
-
-Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
+Now that you have set up collection for MongoDB, install the Sumo Logic App for MongoDB to use the preconfigured searches and [dashboards](#viewing-dashboards) to analyze your data. Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
 1. From the **App Catalog**, search for and select the app**.**
 2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/library/install-apps)

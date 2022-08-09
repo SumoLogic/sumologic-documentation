@@ -84,6 +84,8 @@ The MySQL app dashboards dependent on error logs are based on the message types 
 
 ### Sample Queries
 
+This sample query is from the MySQL - Logs dashboard > Logs panel.
+
 <Tabs
   groupId="k8s-nonk8s"
   defaultValue="k8s"
@@ -93,8 +95,6 @@ The MySQL app dashboards dependent on error logs are based on the message types 
   ]}>
 
 <TabItem value="k8s">
-
-This sample query is from the MySQL - Logs dashboard > Logs panel.
 
 ```sql title="Query String - Top 10 Slow Queries by Average Execution Time"
 db_system=mysql db_cluster={{db_cluster}} "User@Host" "Query_time"  
@@ -116,8 +116,6 @@ db_system=mysql db_cluster={{db_cluster}} "User@Host" "Query_time"
 
 </TabItem>
 <TabItem value="non-k8s">
-
-This sample query is from the MySQL - Logs dashboard > Logs panel.
 
 ```sql title="Query String - Top 10 Slow Queries by Average Execution Time"
 db_system=mysql db_cluster={{db_cluster}} "User@Host" "Query_time"  
@@ -204,8 +202,9 @@ Ensure that you are monitoring your Kubernetes clusters with the Telegraf operat
 
 #### Step 1: Configure Metrics collection
 
-This configures metrics collection from Kubernetes. Add the following annotations to your MySQL pods, and make the edits described [below:](#metric-annotations)
+This configures metrics collection from Kubernetes.
 
+1. Add the following annotations to your MySQL pods, and make the edits described [below](#metric-annotations):
 ```sql
 primary:
   podAnnotations:
@@ -232,45 +231,43 @@ primary:
     tailing-sidecar: sidecarconfig;slowlog:data:/bitnami/mysql/data/mysql-release-0-slow.log
 ```
 
-Enter values for the following parameters in your annotations:
-* `telegraf.influxdata.com/inputs`. This contains the required configuration for the Telegraf MySQL Input plugin. For information on configuring the MySQL input plugin for Telegraf, see the MySQL Input Plugin [Readme](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/mysql). Because Telegraf will be run as a sidecar the host should always be localhost.
-* In `[[inputs.mysql]]`:
-    * `servers.` The URL to the MySQL server
-    * Configure metrics to collect by uncommenting or setting the following parameters. For more information, see the MySQL Input Plugin [README](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/mysql).
-        * `table_schema_databases = []`
-        * `gather_slave_status = true`
-        * `gather_global_variables = true`
-        * `gather_table_io_waits = true`
-        * `gather_table_lock_waits = true`
-        * `gather_index_io_waits = true`
-        * `gather_event_waits = true`
-        * `gather_file_events_stats = true`
-        * `gather_perf_events_statements = true`
+2. Enter values for the following parameters in your annotations:
+   * `telegraf.influxdata.com/inputs`. This contains the required configuration for the Telegraf MySQL Input plugin. For information on configuring the MySQL input plugin for Telegraf, see the MySQL Input Plugin [Readme](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/mysql). Because Telegraf will be run as a sidecar the host should always be localhost.
+   * In `[[inputs.mysql]]`:
+      * `servers.` The URL to the MySQL server
+      * Configure metrics to collect by uncommenting or setting the following parameters. For more information, see the MySQL Input Plugin [README](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/mysql).
+         * `table_schema_databases = []`
+         * `gather_slave_status = true`
+         * `gather_global_variables = true`
+         * `gather_table_io_waits = true`
+         * `gather_table_lock_waits = true`
+         * `gather_index_io_waits = true`
+         * `gather_event_waits = true`
+         * `gather_file_events_stats = true`
+         * `gather_perf_events_statements = true`
     * In `[inputs.mysql.tags]`:
         * `environment`. This is the deployment environment where the MySQL cluster identified by the value of `servers` resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
         * `db_cluster`. Enter a name to uniquely identify this MySQL cluster. This cluster name will be shown in the Sumo Logic dashboards.
-
-There are additional configuration options that you should **not** modify, as changing them will prevent the MySQL app from functioning correctly. **The settings you should not modify are:**
-* `telegraf.influxdata.com/class: sumologic-prometheus` instructs the Telegraf operator what output to use.
-* `prometheus.io/scrape: "true"` ensures Prometheus will scrape the metrics.
-* `prometheus.io/port: "9273"` tells Prometheus what ports to scrape on.
-* `telegraf.influxdata.com/inputs`
-    * In the `[inputs.mysql.tags]` section:
+    * **DO NOT MODIFY** these configuration options; changing them will prevent the MySQL app from functioning correctly.
+      * `telegraf.influxdata.com/class: sumologic-prometheus` instructs the Telegraf operator what output to use.
+      * `prometheus.io/scrape: "true"` ensures Prometheus will scrape the metrics.
+      * `prometheus.io/port: "9273"` tells Prometheus what ports to scrape on.
+      * `telegraf.influxdata.com/inputs`
+        * In the `[inputs.mysql.tags]` section:
         * `component: "database"` is used by the Sumo Logic app to identify application components.
         * `db_system: "mysql"` identifies the database system.
-
-For information about properties that can be configured globally in the Telegraf agent, see the [Configuration](https://github.com/influxdata/telegraf/blob/master/docs/CONFIGURATION.md) documentation for Telegraf.
-
-Sumo Logic Kubernetes collection will automatically start collecting metrics from the pods with the labels and annotations you added in the previous step.
-
-To verify the metrics have been ingested, run this metrics query:
-```sql
-db_cluster=<your_mysql_cluster_name> component="database" and db_system="mysql"
-```
+    * For information about properties that can be configured globally in the Telegraf agent, see the [Configuration](https://github.com/influxdata/telegraf/blob/master/docs/CONFIGURATION.md) documentation for Telegraf.
+3. Sumo Logic Kubernetes collection will automatically start collecting metrics from the pods with the labels and annotations you added in the previous step.
+4. To verify the metrics have been ingested, run this metrics query:
+  ```sql
+  db_cluster=<your_mysql_cluster_name> component="database" and db_system="mysql"
+  ```
 
 #### Configure Logs collection
 
-This section explains the steps to collect MySQL logs from a Kubernetes environment. Follow the steps in [Method A](#Option_A:_Collect_MySQL_logs_written_to_standard_output) or [Method B](#Option_B:_Collect_MySQL_logs_written_to_log_files), depending on whether your logs are being written to standard output or to log files.
+This section explains the steps to collect MySQL logs from a Kubernetes environment.
+
+1. Follow the steps in [Method A](#Option_A:_Collect_MySQL_logs_written_to_standard_output) or [Method B](#Option_B:_Collect_MySQL_logs_written_to_log_files), depending on whether your logs are being written to standard output or to log files.
 
 <details><summary>Method 1: Collect MySQL logs written to standard output</summary>
 
@@ -328,32 +325,29 @@ Sumo Logic Kubernetes collection will automatically start collecting logs from t
 
 </details>
 
-#### Add an FER to normalize the fields in Kubernetes environments
-
-Labels created in Kubernetes environments are automatically prefixed with pod_labels. To normalize these for our app to work, we'll create a [Field Extraction Rule](/docs/manage/field-extractions/create-field-extraction-rule.md), Database Application Components, assuming it does not already exist:
-
-1. Go to **Manage Data > Logs > Field Extraction Rules**.
-2. Click the **+ Add**.
-3. The **Add Field Extraction** pane appears. \
-4. **Rule Name.** Enter "App Observability - Database".
-5. **Applied At**. Choose "Ingest Time".
-6. **Scope**. Select "Specific Data".
-   * **Scope**. Enter the following keyword search expression:  
+2. **Add an FER to normalize the fields in Kubernetes environments**. Labels created in Kubernetes environments are automatically prefixed with pod_labels. To normalize these for our app to work, we'll create a [Field Extraction Rule](/docs/manage/field-extractions/create-field-extraction-rule.md), Database Application Components, assuming it does not already exist:
+   1. Go to **Manage Data > Logs > Field Extraction Rules**.
+   2. Click the **+ Add**.
+   3. The **Add Field Extraction** pane appears. \
+   4. **Rule Name.** Enter "App Observability - Database".
+   5. **Applied At**. Choose "Ingest Time".
+   6. **Scope**. Select "Specific Data".
+     * **Scope**. Enter the following keyword search expression:  
+      ```sql
+      pod_labels_environment=* pod_labels_component=database pod_labels_db_system=* pod_labels_db_cluster=*
+      ```
+     * **Parse Expression**. Enter the following parse expression:
+     ```sql
+     | if (!isEmpty(pod_labels_environment), pod_labels_environment, "") as environment
+     | pod_labels_component as component
+     | pod_labels_db_system as db_system
+     | pod_labels_db_cluster as db_cluster
+     ```
+   7. Click **Save** to create the rule.
+   8. To verify that logs are flowing into Sumo Logic, run this query:
     ```sql
-    pod_labels_environment=* pod_labels_component=database pod_labels_db_system=* pod_labels_db_cluster=*
+    component=database db_system=mysql db_cluster=<your_mysql_cluster_name>
     ```
-   * **Parse Expression**. Enter the following parse expression:
-   ```sql
-   | if (!isEmpty(pod_labels_environment), pod_labels_environment, "") as environment
-   | pod_labels_component as component
-   | pod_labels_db_system as db_system
-   | pod_labels_db_cluster as db_cluster
-   ```
-7. Click **Save** to create the rule.
-8. To verify that logs are flowing into Sumo Logic, run this query:
-```sql
-component=database db_system=mysql db_cluster=<your_mysql_cluster_name>
-```
 
 </TabItem>
 <TabItem value="non-k8s">
@@ -367,12 +361,11 @@ The diagram below illustrates the components of the MySQL collection in a non-Ku
 
 #### Configure Metrics collection
 
-1. Configure a Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/configure-hosted-collector).
-2. Configure an HTTP Logs and Metrics Source.** **For instructions, see [HTTP Logs and Metrics Source](/docs/send-data/sources/sources-hosted-collectors/http-logs-metrics-source). Make a note of the HTTP Source URL.
-3. Install Telegraf. For instructions see [Install Telegraf](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf.md).
-4. Configure and start Telegraf. As part of collecting metrics data from Telegraf, we use the [MySQL input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/mysql) to get data from Telegraf and the [Sumo Logic output plugin](https://github.com/SumoLogic/fluentd-output-sumologic) to send data to Sumo Logic.
+1. **Configure a Hosted Collector**. For instructions, see [Configure a Hosted Collector](/docs/send-data/configure-hosted-collector).
+2. **Configure an HTTP Logs and Metrics Source.** For instructions, see [HTTP Logs and Metrics Source](/docs/send-data/sources/sources-hosted-collectors/http-logs-metrics-source). Make a note of the HTTP Source URL.
+3. **Install Telegraf**. For instructions see [Install Telegraf](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf.md).
+4. **Configure and start Telegraf**. As part of collecting metrics data from Telegraf, we use the [MySQL input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/mysql) to get data from Telegraf and the [Sumo Logic output plugin](https://github.com/SumoLogic/fluentd-output-sumologic) to send data to Sumo Logic.
 5. Create or modify the `telegraf.conf` file, and copy the following into the relevant sections.
-
 ```sql
 [[inputs.mysql]]
   servers = ["user:passwd@tcp(127.0.0.1:3306)/?tls=false"]
@@ -391,39 +384,38 @@ The diagram below illustrates the components of the MySQL collection in a non-Ku
     db_system = "mysql"
     db_cluster = "your_mysql_cluster_name"
 [[outputs.sumologic]]
-    url = "<URL Created in Step 3>"
+    url = "CHANGEME"--HTTP Source URL created in Step 2
     data_format = "prometheus"
 
 [agent]
   interval = "60s"
   flush_interval = "60s"
 ```
-
 6. Follow the instructions in [Setting values in telegraf.conf](#Setting_values_in_telegraf.conf) below to configure the settings in the `.conf` file.
 7. After updating the `telegraf.conf` file, start or reload the telegraf service using the [instructions](https://docs.influxdata.com/telegraf/v1.17/introduction/getting-started/#start-telegraf-service) in Telegraf documentation.
 8. At this point, MySQL metrics should start flowing into Sumo Logic.
 9. **Setting values in telegraf.conf**. Make the following updates to `telegraf.conf`.
    * In the `[[inputs.mysql]]` section, set `servers` to the URL of your MySQL server. For information about additional input plugin configuration options, see the [Readme](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/mysql) for the MySQL input plugin.
    * Configure the metrics to collect by uncommenting the following lines. For more information, see this [section](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/mysql#configuration) of the Readme.  
-```sql
-[[inputs.mysql]]
- table_schema_databases = []
- gather_slave_status = true
- gather_global_variables = true
- gather_table_io_waits = true
- gather_table_lock_waits = true
- gather_index_io_waits = true
- gather_event_waits = true
- gather_file_events_stats = true
- gather_perf_events_statements = true
-```
+    ```sql
+    [[inputs.mysql]]
+     table_schema_databases = []
+     gather_slave_status = true
+     gather_global_variables = true
+     gather_table_io_waits = true
+     gather_table_lock_waits = true
+     gather_index_io_waits = true
+     gather_event_waits = true
+     gather_file_events_stats = true
+     gather_perf_events_statements = true
+    ```
    * In the `[inputs.mysql.tags]` section:
       * `environment` - Specify the deployment environment where the MySQL cluster identified by the value of `servers` resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
       * `db_cluster` - Enter a name to uniquely identify the MySQL cluster. This cluster name will be shown in the Sumo Logic dashboards.
-   * In the `[[outputs.sumologic]]` section, set `url` to the HTTP source URL created in [Step 2](#Step_2:_Configure_Collection_of_Metrics_from_a_MySQL_Server). For information about additional output plugin configuration options, see [Configure Telegraf Output Plugin for Sumo Logic](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/configure-telegraf-output-plugin.md).
+   * In the `[[outputs.sumologic]]` section, set `url` to the HTTP source URL created in Step 2 (Configure an HTTP Logs and Metrics Source). For information about additional output plugin configuration options, see [Configure Telegraf Output Plugin for Sumo Logic](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/configure-telegraf-output-plugin.md).
    * In the `[agent]` section, set `interval` and `flush_interval` to `“60s”` to collect metrics every 60 seconds.
 
-There are additional configuration options that you should **not** modify, as changing them will prevent the MySQL app from functioning correctly. The settings you should not modify are:
+**Do not modify** these configuration options; changing them will prevent the MySQL app from functioning correctly.
 * `data_format = "prometheus"`, in the output plugins section, causes metrics to be sent in the Prometheus format to Sumo Logic.
 * `component = "database"`, in the input plugins section, is used by the Sumo Logic app to identify application components.
 * `db_system = "mysql"`, in the input plugins section, identifies the database system.
@@ -438,89 +430,76 @@ This section provides instructions for configuring collection of logs for MySQL 
 Sumo Logic supports collecting logs via a local log file. Local log files can be collected by Sumo Logic [Installed Collectors](/docs/send-data/Installed-Collectors), which requires you to allow outbound traffic to Sumo Logic [endpoints](https://help.sumologic.com/APIs/General-API-Information/Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security) for collection to work.
 
 
-#### Step 1: Configure MySQL to log to a local file(s)
-
-MySQL logs written to a log file can be collected via the Local File Source of a Sumo Logic Installed Collector.
-
-To configure the MySQL log file(s), locate your local `my.cnf` configuration file in the database directory.
-
-1. Open `my.cnf` in a text editor.
-Set the following parameters in the `[mysqld]` section:
-```sql
-[mysqld]
-    log_error = /var/log/mysql/error.log
-    slow_query_log=1
-    slow_query_log_file = /var/log/mysql/mysql-slow.log
-    long_query_time=2
-    long_query_time=2
-```
-
-[Error Logs](https://dev.mysql.com/doc/refman/5.7/en/slow-query-log.html). By default, error logs are enabled and are logged at file specified by the `log_error` key.
-
-[Slow Query Logs](https://dev.mysql.com/doc/refman/5.7/en/slow-query-log.html). `slow_query_log=1` enables logging of slow queries to the file specified by `slow_query_log_file`. Setting `long_query_time=2` will cause queries that take more than two seconds to execute to be logged. The default value of `long_query_time` is 10 seconds.
-
-[General Query Logs](https://dev.mysql.com/doc/refman/5.7/en/query-log.html). We don't recommend enabling `general_log` for performance reasons. These logs are not used by the Sumo Logic MySQL App.
-3. Save the `my.cnf` file.
-4. Restart the MySQL server:
-```bash
-sudo mysql.server restart
-```
-
-#### Step 2: Configure an [Installed Collector](/docs/send-data/Installed-Collectors)
-
-#### Step 3: Add a Local File Source for MySQL error logs
-
-1. Add a [Local File Source](/docs/send-data/Sources/sources-installed-collectors/Local-File-Source) in the installed collector configured in the previous step. Configure the Local File Source fields as follows:
-   * **Name.** (Required)
-   * **Description**. (Optional)
-   * **File Path** (Required). Enter the path to your error.log. The files are typically located in `/var/log/mysql/error.log`. If you're using a customized path, check the `my.cnf` file for this information.
-   * **Source Host**. Sumo Logic uses the hostname assigned by the OS unless you enter a different host nameSource Category. Enter any string to tag the output collected from this Source, such as Prod/MySQL/Error. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details see [Best Practices](/docs/send-data/design-deployment/best-practices-source-categories).)
-   * **Fields**. Set the following fields. For more information, see [Fields](/docs/manage/fields.md).
-     * `component = database`
-     * `db_system = mysql`
-     * `db_cluster = <your_mysql_cluster_name>`
-     * `environment = <Environment_Name>`, such as dev, qa, or prod.
-    The values of `db_cluster` and `environment` should match those configured in the [Setting values in telegraf.conf](#Setting_values_in_telegraf.conf) above.
-2. In the **Advanced Options for Logs** section:
-   * **Enable Timestamp Parsing**. Select "Extract timestamp information from log file entries".
-   * **Time Zone**. Select "Use time zone form log file, if none is detected use Use Collector Default”.
-   * **Timestamp Format**. Select "Automatically detect the format."
-   * **Encoding**. Select UTF-8 (Default).
-   * **Enable Multiline Processing**
+1. **Configure MySQL to log to a local file(s)**. MySQL logs written to a log file can be collected via the Local File Source of a Sumo Logic Installed Collector. To configure the MySQL log file(s), locate your local `my.cnf` configuration file in the database directory.
+   1. Open `my.cnf` in a text editor.
+   2. Set the following parameters in the `[mysqld]` section:
+   ```sql
+   [mysqld]
+       log_error = /var/log/mysql/error.log
+       slow_query_log=1
+       slow_query_log_file = /var/log/mysql/mysql-slow.log
+       long_query_time=2
+       long_query_time=2
+   ```
+     * [Error Logs](https://dev.mysql.com/doc/refman/5.7/en/slow-query-log.html). By default, error logs are enabled and are logged at file specified by the `log_error` key.
+     * [Slow Query Logs](https://dev.mysql.com/doc/refman/5.7/en/slow-query-log.html). `slow_query_log=1` enables logging of slow queries to the file specified by `slow_query_log_file`. Setting `long_query_time=2` will cause queries that take more than two seconds to execute to be logged. The default value of `long_query_time` is 10 seconds.
+     * [General Query Logs](https://dev.mysql.com/doc/refman/5.7/en/query-log.html). We don't recommend enabling `general_log` for performance reasons. These logs are not used by the Sumo Logic MySQL App.
+   3. Save the `my.cnf` file.
+   4. Restart the MySQL server:
+    ```bash
+    sudo mysql.server restart
+    ```
+2. **Configure an [Installed Collector](/docs/send-data/Installed-Collectors)**.
+3. **Add a [Local File Source](/docs/send-data/Sources/sources-installed-collectors/Local-File-Source) for MySQL error logs**.
+   1. Add a Local File Source in the installed collector configured in the previous step. Configure the Local File Source fields as follows:
+      * **Name.** (Required)
+      * **Description**. (Optional)
+      * **File Path** (Required). Enter the path to your error.log. The files are typically located in `/var/log/mysql/error.log`. If you're using a customized path, check the `my.cnf` file for this information.
+      * **Source Host**. Sumo Logic uses the hostname assigned by the OS unless you enter a different host nameSource Category. Enter any string to tag the output collected from this Source, such as Prod/MySQL/Error. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details see [Best Practices](/docs/send-data/design-deployment/best-practices-source-categories).)
+      * **Fields**. Set the following fields. For more information, see [Fields](/docs/manage/fields.md).
+      * `component = database`
+      * `db_system = mysql`
+      * `db_cluster = <your_mysql_cluster_name>`
+      * `environment = <Environment_Name>`, such as dev, qa, or prod.
+      The values of `db_cluster` and `environment` should match those configured in the [Setting values in telegraf.conf](#Setting_values_in_telegraf.conf) above.
+   2. In the **Advanced Options for Logs** section:
+      * **Enable Timestamp Parsing**. Select "Extract timestamp information from log file entries".
+      * **Time Zone**. Select "Use time zone form log file, if none is detected use Use Collector Default”.
+      * **Timestamp Format**. Select "Automatically detect the format."
+      * **Encoding**. Select UTF-8 (Default).
+      * **Enable Multiline Processing**
       * **Detect Messages Spanning Multiple Lines.** True
       * **Infer Boundaries - Detect message boundaries automatically**. False
       * **Boundary Regex.**
         * If error messages starts like `2021-05-11T10:12:55.421100Z` then use boundary regex as below `^\d{4}-\d{2}-\d{2}T\d{1,2}:\d{1,2}:\d{1,2}.*`
         * If error messages starts like `210511 11:20:40` then use boundary regex as below `^\d{6}\s+\d{1,2}:\d{1,2}:\d{1,2}.*`
-3. Click **Save**.
+   3. Click **Save**.
 
 At this point, MySQL error logs should start flowing into Sumo Logic.
 
-
-#### Step 2d: Configuring a Local File Source for slow query log
-
-1. Add a [Local File Source](/docs/send-data/Sources/sources-installed-collectors/Local-File-Source) in the installed collector configured in the previous step. Configure the Local File Source fields as follows:
-   * **Name.** (Required)
-   * **Description**. (Optional)
-   * **File Path** (Required). Enter the path to your `mysql-slow.log`. The file is typically located in `/var/log/mysql/mysql-slow.log`. If you're using a customized path, check `my.cnf` file for this information.
-   * **Source Host**. Sumo Logic uses the hostname assigned by the OS unless you enter a different host name
-   * **Source Category**. Enter any string to tag the output collected from this Source, such as Prod/MySQL/Error. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details see [Best Practices](/docs/send-data/design-deployment/best-practices-source-categories).)
-   * **Fields**. Set the following fields. For more information, see [Fields](/docs/manage/fields.md).
-   * `component = database`
-   * `db_system = mysql`
-   * `db_cluster = <your_mysql_cluster_name>`
-   * `environment = <Environment_Name>`, such as dev, qa, or prod. \
-   The values of `db_cluster` and `environment` should match those configured in the [Setting values in telegraf.conf](#Setting_values_in_telegraf.conf) above.
-2. In the **Advanced Options for Logs** section:
-   * **Enable Timestamp Parsing**. Select "Extract timestamp information from log file entries".
-   * **Time Zone**. Select "Use time zone form log file, if none is detected use Use Collector Default".
-   * **Timestamp Format**. Select "Automatically detect the format".
-   * **Encoding**. Select "UTF-8" (Default).
-   * **Enable Multiline Processing**
-      * **Detect Messages Spanning Multiple Lines.** True
-      * **Infer Boundaries - Detect message boundaries automatically**. False
-      * **Boundary Regex**. `^#\sTime:\s.*`
-3. Click **Save**.
+4. **Configuring a [Local File Source](/docs/send-data/Sources/sources-installed-collectors/Local-File-Source) for slow query log**.
+   1. Add a Local File Source in the installed collector configured in the previous step. Configure the Local File Source fields as follows:
+      * **Name.** (Required)
+      * **Description**. (Optional)
+      * **File Path** (Required). Enter the path to your `mysql-slow.log`. The file is typically located in `/var/log/mysql/mysql-slow.log`. If you're using a customized path, check `my.cnf` file for this information.
+      * **Source Host**. Sumo Logic uses the hostname assigned by the OS unless you enter a different host name
+      * **Source Category**. Enter any string to tag the output collected from this Source, such as Prod/MySQL/Error. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details see [Best Practices](/docs/send-data/design-deployment/best-practices-source-categories).)
+      * **Fields**. Set the following fields. For more information, see [Fields](/docs/manage/fields.md).
+        * `component = database`
+        * `db_system = mysql`
+        * `db_cluster = <your_mysql_cluster_name>`
+        * `environment = <Environment_Name>`, such as dev, qa, or prod. \
+       The values of `db_cluster` and `environment` should match those configured in the [Setting values in telegraf.conf](#Setting_values_in_telegraf.conf) above.
+   2. In the **Advanced Options for Logs** section:
+      * **Enable Timestamp Parsing**. Select "Extract timestamp information from log file entries".
+      * **Time Zone**. Select "Use time zone form log file, if none is detected use Use Collector Default".
+      * **Timestamp Format**. Select "Automatically detect the format".
+      * **Encoding**. Select "UTF-8" (Default).
+      * **Enable Multiline Processing**
+        * **Detect Messages Spanning Multiple Lines.** True
+        * **Infer Boundaries - Detect message boundaries automatically**. False
+        * **Boundary Regex**. `^#\sTime:\s.*`
+   3. Click **Save**.
 
 At this point, MySQL slow query logs should start flowing into Sumo Logic.
 
@@ -544,7 +523,7 @@ There are limits to how many alerts can be enabled. For more information, see [M
 ### Method A: Install Monitors by importing a JSON file
 
 1. Download the [JSON file](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/blob/main/monitor_packages/mysql/mysql.json) that describes the monitors.
-2. Replace `$$mysql_data_source` with a custom source filter. To configure alerts for a specific database cluster, use a filter like `db_system=mysql` or `db_cluster=dev-mysql`. To configure the alerts for all of your clusters, set `$$mysql_data_source` to blank ("").
+2. Replace `$$mysql_data_source` with a custom source filter. To configure alerts for a specific database cluster, use a filter like `db_system=mysql` or `db_cluster=dev-mysql`. To configure the alerts for all of your clusters, set `$$mysql_data_source` to blank (`""`).
 3. Go to **Manage Data > Alerts > Monitors**.
 4. Click **Add**.
 5. Click **Import.**
@@ -554,47 +533,25 @@ There are limits to how many alerts can be enabled. For more information, see [M
 
 ### Method B: Using a Terraform script
 
+1. Generate an access key and access ID for a user that has the **Manage Monitors** role capability. For instructions see  [Access Keys](https://help.sumologic.com/Manage/Security/Access-Keys#Create_an_access_key_on_Preferences_page).
+2. Download [Terraform 0.13](https://www.terraform.io/downloads.html) or later, and install it.
+3. Download the Sumo Logic Terraform package for MySQL monitors. The alerts package is available in the Sumo Logic github [repository](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/tree/main/monitor_packages/mysql). You can either download it using the `git clone` command or as a zip file.
+4. Alert Configuration: After extracting the package, navigate to the `terraform-sumologic-sumo-logic-monitor/monitor_packages/mysql/` directory.
+   1. Edit the `mysql.auto.tfvars` file and add the Sumo Logic Access Key and Access ID from Step 1 and your Sumo Logic deployment. If you're not sure of your deployment, see [Sumo Logic Endpoints and Firewall Security](https://help.sumologic.com/APIs/General-API-Information/Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security).
+    ```sql
+    access_id   = "<SUMOLOGIC ACCESS ID>"
+    access_key  = "<SUMOLOGIC ACCESS KEY>"
+    environment = "<SUMOLOGIC DEPLOYMENT>"
+    ```
+   2. The Terraform script installs the alerts without any scope filters. If you would like to restrict the alerts to specific clusters or environments, update the `mysql_data_source` variable. For example:
+     * To configure alerts for a specific cluster, set `mysql_data_source` to something like `db_cluster=mysql.prod.01`
+     * To configure alerts for all clusters in an environment Set mysql_data_source to something like `environment=prod`
+     * To configure alerts for...Multiple clusters using a wildcard, set `mysql_data_source` to something like `db_cluster=mysql-prod*`
+      * To configure alerts for a specific cluster within a specific environment, set `mysql_data_source` to something like `db_cluster=mysql-1` and `environment=prod`. This assumes you have configured and applied Fields as described in Step 1: Configure Fields of the Sumo Logic of the Collect Logs and Metrics for MySQL topic.
 
-#### Step 1: Generate a Sumo Logic access key and ID
+  All monitors are disabled by default on installation. To enable all of the monitors, set the `monitors_disabled` parameter to `false`. By default, the monitors will be located in a "MySQL" folder on the **Monitors** page. To change the name of the folder, update the monitor folder name in the `folder` variable in the `mysql.auto.tfvars` file.
 
-Generate an access key and access ID for a user that has the **Manage Monitors** role capability. For instructions see  [Access Keys](https://help.sumologic.com/Manage/Security/Access-Keys#Create_an_access_key_on_Preferences_page).
-
-
-#### Step 2: Download and install Terraform
-Download [Terraform 0.13](https://www.terraform.io/downloads.html) or later, and install it.
-
-
-#### Step 3: Download the Sumo Logic Terraform package for MySQL monitors
-The alerts package is available in the Sumo Logic github [repository](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/tree/main/monitor_packages/mysql). You can either download it using the `git clone` command or as a zip file.
-
-
-#### Step 4: Alert Configuration  
-
-After extracting the package, navigate to the `terraform-sumologic-sumo-logic-monitor/monitor_packages/mysql/` directory.
-
-Edit the `mysql.auto.tfvars` file and add the Sumo Logic Access Key and Access ID from Step 1 and your Sumo Logic deployment. If you're not sure of your deployment, see [Sumo Logic Endpoints and Firewall Security](https://help.sumologic.com/APIs/General-API-Information/Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security).
-```sql
-access_id   = "<SUMOLOGIC ACCESS ID>"
-access_key  = "<SUMOLOGIC ACCESS KEY>"
-environment = "<SUMOLOGIC DEPLOYMENT>"
-```
-
-The Terraform script installs the alerts without any scope filters, if you would like to restrict the alerts to specific clusters or environments, update the `mysql_data_source` variable. For example:
-* To configure alerts for a specific cluster, set `mysql_data_source` to something like `db_cluster=mysql.prod.01`
-* To configure alerts for all clusters in an environment Set mysql_data_source to something like `environment=prod`
-* To configure alerts for...Multiple clusters using a wildcard, set `mysql_data_source` to something like `db_cluster=mysql-prod*`
-* To configure alerts for a specific cluster within a specific environment, set `mysql_data_source` to something like `db_cluster=mysql-1` and `environment=prod`. This assumes you have configured and applied Fields as described in Step 1: Configure Fields of the Sumo Logic of the Collect Logs and Metrics for MySQL topic.
-
-All monitors are disabled by default on installation. To enable all of the monitors, set the `monitors_disabled` parameter to `false`.
-
-By default, the monitors will be located in a "MySQL" folder on the **Monitors** page. To change the name of the folder, update the monitor folder name in the `folder` variable in the `mysql.auto.tfvars` file.
-
-If you want the alerts to send email or connection notifications, follow the instructions in the next section.
-
-
-#### Step 5: Email and Connection Notification Configuration Examples
-
-Edit the `mysql_notifications.auto.tfvars` file to populate the `connection_notifications` and `email_notifications` sections. Examples are provided below.
+5. If you want the alerts to send email or connection notifications, edit the `mysql_notifications.auto.tfvars` file to populate the `connection_notifications` and `email_notifications` sections. Examples are provided below.
 
 In the variable definition below, replace `<CONNECTION_ID>` with the connection ID of the Webhook connection. You can obtain the Webhook connection ID by calling the [Monitors API](https://api.sumologic.com/docs/#operation/listConnections).
 
@@ -631,30 +588,27 @@ email_notifications = [
 ```
 
 
-#### Step 6: Install Monitors
-
-1. Navigate to the `terraform-sumologic-sumo-logic-monitor/monitor_packages/mysql/` directory and run `terraform init`. This will initialize Terraform and download the required components.
-2. Run `terraform plan` to view the monitors that Terraform will create or modify.
-3. Run `terraform apply`.
+6. Install Monitors.
+   1. Navigate to the `terraform-sumologic-sumo-logic-monitor/monitor_packages/mysql/` directory and run `terraform init`. This will initialize Terraform and download the required components.
+   2. Run `terraform plan` to view the monitors that Terraform will create or modify.
+   3. Run `terraform apply`.
 
 
 ## Installing the MySQL App  
 
 Now that you have set up collection for MySQL, install the Sumo Logic App for MySQL to use the preconfigured searches and [Dashboards](#Dashboards) that provide insight into your data.
 
-**To install the app**
-
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
 1. From the **App Catalog**, search for and select the app**.**
 2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](https://help.sumologic.com/01Start-Here/Library/Apps-in-Sumo-Logic/Install-Apps-from-the-Library)
-1. To install the app, complete the following fields.
+3. To install the app, complete the following fields.
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
     2. **Data Source.** Choose **Enter a Custom Data Filter**, and enter a custom filter. For example:
         * For all MySQL clusters: `db_system=mysql db_cluster=*`
         * For a specific cluster: `db_system=mysql db_cluster=mysql.dev.01`
     3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-2. Click **Add to Library**.
+4. Click **Add to Library**.
 
 Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization.
 
@@ -675,9 +629,7 @@ The Overview dashboard gives you an at-a-glance view of the state of your databa
 Use this dashboard to:
 * Quickly identify the state of a given database cluster
 
-
-
-
+<img src={useBaseUrl('img/integrations/databases/MySQL-Overview.png')} alt="MySQL dashboard" />
 
 ### Error Logs  
 
@@ -689,7 +641,7 @@ Use this dashboard to:
 * Ensure that server start, server stop and crash recovery events are in line with expectations
 * Dashboard filters allow you to narrow a search for database cluster.
 
-
+<img src={useBaseUrl('img/integrations/databases/MySQL-Error-Logs.png')} alt="MySQL dashboard" />
 
 
 ### Failed Logins  
@@ -699,6 +651,7 @@ The Failed Logins dashboard provides insights into all failed login attempts by 
 Use this dashboard to:
 * Monitor all failed login attempts and identify any unusual or suspicious activity
 
+<img src={useBaseUrl('img/integrations/databases/MySQL-Failed-Logins.png')} alt="MySQL dashboard" />
 
 ### Replication  
 
@@ -708,7 +661,7 @@ Use this dashboard to:
 * Quickly determine reasons for replication failures
 * Monitor replication status trends
 
-
+<img src={useBaseUrl('img/integrations/databases/MySQL-Replication.png')} alt="MySQL dashboard" />
 
 
 ### Slow Queries
@@ -718,31 +671,25 @@ The Slow Queries dashboard provides insights into all slow queries executed on t
 Note: Slow queries are queries that take 10 seconds or more to execute (default value is 10 seconds as per mysql configuration which can be altered) and excessive slow queries are those that take 15 seconds or more to execute.  
 
 Use this dashboard to:
-
 * Identify all slow queries
 * Quickly determine which queries have been identified as slow or excessive slow queries
 * Monitor users and hosts running slow queries
 * Determine which SQL commands are slower than others
 * Examine slow query trends to determine if there are periodic performance bottlenecks in your database clusters
 
-
-
+<img src={useBaseUrl('img/integrations/databases/MySQL-Slow-Queries.png')} alt="MySQL dashboard" />
 
 ### Performance and Resource Metrics
 
 The Performance and Resource Metrics dashboard allows you to monitor the performance and resource usage of your database clusters.
 
 Use this dashboard to:
-
 * Understand the behavior and performance of your database clusters
 * Monitor key operational metrics around connections, network traffic, threads running, innodb waits and locks.
 * Monitor query execution trends to ensure they match up with expectations
 * Dashboard filters allow you to narrow a search for a specific database cluster
 
-
-
-
-
+<img src={useBaseUrl('img/integrations/databases/MySQL-Performance-and-Resource-Metrics.png')} alt="MySQL dashboard" />
 
 ### Performance Schema Metrics
 
@@ -753,6 +700,7 @@ Use this dashboard to:
 * Monitor statements running without use of index columns
 * Monitor statistics such as Table and Index waits and read and write lock waits to optimize the performance of your database
 
+<img src={useBaseUrl('img/integrations/databases/MySQL-Performance-Schema-Metrics.png')} alt="MySQL dashboard" />
 
 
 
