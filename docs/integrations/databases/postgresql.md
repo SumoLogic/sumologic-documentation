@@ -20,7 +20,7 @@ This guide provides an overview of the Sumo App for PostgreSQL features and Dash
 [PostgreSQL](https://www.postgresql.org/) is an open source object-relational database that extends the robustness SQL language to safely store and scale extensive data workloads.
 
 
-## Collect logs and metrics from PostgreSQL
+## Collecting Logs and Metrics from PostgreSQL
 
 This section provides instructions for configuring log and metric collection for the Sumo Logic App for PostgreSQL. This app works for PostgreSQL database clusters running on PostgreSQL versions 11.x or 12.x.
 
@@ -42,7 +42,7 @@ On your PostgreSQL database cluster, create a user that has access to following 
 
 ### Step 2: Configure Fields in Sumo Logic
 
-Create the following Fields in Sumo Logic before configuring collection. This ensures that your logs and metrics are tagged with relevant metadata, which is required by the app dashboards. For information on setting up fields, see the [Fields](/docs/manage/fields.md) help page.
+Create the following Fields in Sumo Logic before configuring collection. This ensures that your logs and metrics are tagged with relevant metadata, which is required by the app dashboards. For information on setting up fields, see [Sumo Logic Fields](/docs/manage/fields.md).
 
 
 <Tabs
@@ -55,7 +55,7 @@ Create the following Fields in Sumo Logic before configuring collection. This en
 
 <TabItem value="k8s">
 
-If you are using PostgreSQL in a Kubernetes environment create the fields:
+If you're using PostgreSQL in a Kubernetes environment, create the fields:
 * `pod_labels_component`
 * `pod_labels_environment`
 * `pod_labels_db_system`
@@ -64,7 +64,7 @@ If you are using PostgreSQL in a Kubernetes environment create the fields:
 </TabItem>
 <TabItem value="non-k8s">
 
-If you are using PostgreSQL in a non-Kubernetes environment create the fields:
+If you're using PostgreSQL in a non-Kubernetes environment, create the fields:
 
 * `component`
 * `environment`
@@ -91,64 +91,53 @@ Please click on the appropriate tab below based on the environment where your Po
 
 <TabItem value="k8s">
 
-#### For Kubernetes environments
-
 In Kubernetes environments, we use the Telegraf Operator, which is packaged with our Kubernetes collection. You can learn more about it [here](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/telegraf-collection-architecture). The diagram below illustrates how data is collected from PostgreSQL in Kubernetes environments. In the architecture shown below, there are four services that make up the metric collection pipeline: Telegraf, Prometheus, Fluentd and FluentBit.<img src={useBaseUrl('img/integrations/databases/postgresql1.png')} alt="postgresql" />
 
 The first service in the pipeline is Telegraf. Telegraf collects metrics from PostgreSQL. Note that we’re running Telegraf in each pod we want to collect metrics from as a sidecar deployment: i.e. Telegraf runs in the same pod as the containers it monitors. Telegraf uses the [PostgreSQL Extensible input plugin ](https://github.com/influxdata/telegraf/blob/master/plugins/inputs/postgresql_extensible/)to obtain metrics, (For simplicity, the diagram doesn’t show the input plugins). The injection of the Telegraf sidecar container is done by the Telegraf Operator. Prometheus scrapes the metrics from each of the Telegraf containers and sends it to FluentD.We also have Fluentbit that collects logs written to standard out and forwards them to FluentD, which in turn sends all the logs and metrics data to a Sumo Logic HTTP Source.
 
 Follow the instructions below to set up the metric collection:
 
-1. [Configure Metrics Collection](#step-1-configure-metrics-collection)
+1. Configure Metrics Collection
     1. Add annotations on your PostgreSQL pods
     2. (Optional)Collecting metrics from multiple databases
-2. [Configure Logs Collection](#step-2-configure-logs-collection)
+2. Configure Logs Collection
     3. Configuring logging in PostgreSQL
     4. Add labels on your PostgreSQL pods to capture logs from standard output.
     5. (Optional) Collecting PostgreSQL logs from a file.
 
-**Prerequisites**
-
-* Please ensure that you are monitoring your Kubernetes clusters with the Telegraf operator -  If you are not, then please follow [these instructions](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf.md#Install_Telegraf_in_a_Kubernetes_environment) to do so.
-
+:::note Prerequisites
+Please ensure that you are monitoring your Kubernetes clusters with the Telegraf operator -  If you are not, then please follow [these instructions](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf.md#Install_Telegraf_in_a_Kubernetes_environment) to do so.
+:::
 
 #### Step 1 Configure Metrics Collection
 Follow the steps below to collect metrics from a Kubernetes environment:
 
+1. On your PostgreSQL Pods, add the following annotations mentioned in this [file](https://sumologic-app-data.s3.amazonaws.com/dashboards/PostgreSQL/postgresql_annotations_kubernetes.txt).
 
-1. Add annotations on your PostgreSQL Pods
-
-        On your PostgreSQL Pods, add the following annotations mentioned in this [file](https://sumologic-app-data.s3.amazonaws.com/dashboards/PostgreSQL/postgresql_annotations_kubernetes.txt).
-
-
-        Please enter in values for the following parameters (marked with `CHANGE_ME`) in the downloaded file:
+Please enter in values for the following parameters (marked with `CHANGE_ME`) in the downloaded file:
 
 * Annotations:
-    * `telegraf.influxdata.com/inputs` **- This contains the required configuration for the Telegraf Postgres Input plugin. As telegraf will be run as a sidecar the host should always be localhost.
+    * `telegraf.influxdata.com/inputs` - This contains the required configuration for the Telegraf Postgres Input plugin. As telegraf will be run as a sidecar the host should always be localhost.
         * In the input plugins section which is `[[inputs.postgresql_extensible]]`
-            * **address** - Specify the db user, db name and password used for connecting to the database. Example `host=localhost user=postgres dbname=postgres password=mypassword sslmode=disable`
+            * `address` - Specify the db user, db name and password used for connecting to the database. Example `host=localhost user=postgres dbname=postgres password=mypassword sslmode=disable`
         * In the tags section, which is `[inputs.postgresql_extensible.tags]`
             * `environment` - This is the deployment environment where the postgresql cluster resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
             * `db_cluster` - Enter a name to identify this PostgreSQL cluster. This cluster name will be shown in the Sumo Logic dashboards. For example:  analytics-dbcluster, webapp-dbcluster
 
-    Here’s an explanation for additional values set by this configuration that we request you **please do not modify** these values as they will cause the Sumo Logic apps to not function correctly.
-
+Here’s an explanation for additional values set by this configuration that we request you **do not modify** these values as they will cause the Sumo Logic apps to not function correctly.
 * `telegraf.influxdata.com/class: sumologic-prometheus` - This instructs the Telegraf operator what output to use. This should not be changed.
 * `prometheus.io/scrape: "true"` - This ensures our Prometheus plugin will scrape the metrics.
 * `prometheus.io/port: "9273"` - This tells Prometheus what ports to scrape metrics from. This should not be changed.
 * `telegraf.influxdata.com/inputs`
-    * In the tags sections **[inputs.postgresql_extensible.tags]**
-        * **component=** **“database”** - This value is used by Sumo Logic apps to identify application components.
-        * **db_system=** **“postgresql”** - This value identifies the database system.
+    * In the tags sections `[inputs.postgresql_extensible.tags]`
+        * `component= “database”` - This value is used by Sumo Logic apps to identify application components.
+        * `db_system= “postgresql”` - This value identifies the database system.
 
-    For more information on configuring the PostgreSQL input plugin for Telegraf please see [ this doc](https://github.com/influxdata/telegraf/blob/master/plugins/inputs/postgresql_extensible/README.md).
+For more information on configuring the PostgreSQL input plugin for Telegraf please see [this doc](https://github.com/influxdata/telegraf/blob/master/plugins/inputs/postgresql_extensible/README.md).
 
+For more information on all other Telegraf related global parameters please see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#Configuring-Telegraf).
 
-    For more information on all other Telegraf related global parameters please see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#Configuring-Telegraf).
-
-
-    Once this has been done, the Sumo Logic Kubernetes collection will automatically start collecting metrics from the pods having the annotations defined in the previous step. Verify metrics are flowing into Sumo Logic by running the following metrics query:
-
+Once this has been done, the Sumo Logic Kubernetes collection will automatically start collecting metrics from the pods having the annotations defined in the previous step. Verify metrics are flowing into Sumo Logic by running the following metrics query.
 
     ```sql
     component="database" and db_system="postgresql"
@@ -158,15 +147,13 @@ Follow the steps below to collect metrics from a Kubernetes environment:
 
     2. Collecting metrics from multiple databases (Optional)
 
+If you want to monitor multiple databases then you can copy and paste the text from this [file](https://sumologic-app-data.s3.amazonaws.com/dashboards/PostgreSQL/postgresql_annotations_kubernetes_multiple_db.txt) and create another `[[inputs.postgresql_extensible]]` section and add it in your annotations. This section contains only those queries which are meant to be run for each database.
 
-  If you want to monitor multiple databases then you can copy and paste the text from this [file](https://sumologic-app-data.s3.amazonaws.com/dashboards/PostgreSQL/postgresql_annotations_kubernetes_multiple_db.txt) and create another `[[inputs.postgresql_extensible]]` section and add it in your annotations. This section contains only those queries which are meant to be run for each database.
-
-
-    Here is an example [sample_postgresql_annotations_kubernetes_multiple_db.txt](https://sumologic-app-data.s3.amazonaws.com/dashboards/PostgreSQL/sample_postgresql_annotations_kubernetes_multiple_db.txt).
+Here is an example [sample_postgresql_annotations_kubernetes_multiple_db.txt](https://sumologic-app-data.s3.amazonaws.com/dashboards/PostgreSQL/sample_postgresql_annotations_kubernetes_multiple_db.txt).
 
 
 
-#### Step 2 Configure Logs Collection
+#### Configure Logs Collection
 
 This section explains the steps to collect PostgreSQL logs from a Kubernetes environment.
 
@@ -195,46 +182,35 @@ log_line_prefix = '%m [%p] %q%u@%d '
 
 For more information on the above parameters, please see [the PostgreSQL documentation.](https://www.postgresql.org/docs/12/static/runtime-config-logging.html)
 
-
-10
 It’s recommended to save configurations in ConfigMap so that when pods are spawned / killed the configuration is not lost. See [these instructions](https://docs.bitnami.com/kubernetes/infrastructure/postgresql/configuration/customize-config-file) on how to customize the config file in the bitnami helm chart.
 
-
-
-1. Add labels on your PostgreSQL pods
 1. Apply the following labels to your PostgreSQL pods:
-
 ```bash
 environment: "<environmentname_CHANGEME>"
 #For example, prod, dev, qa
 component: "database"
 db_system: "postgresql"
-db_cluster: "<cluster nameCHANGEME>"
+db_cluster: "<clusternameCHANGEME>"
 #For example analytics-dbcluster, webapp-dbcluster
 ```
 
 Please enter in values for the following parameters (marked `CHANGE_ME` above):
-
-* Labels:
     * `environment` - This is the deployment environment where the PostgreSQL cluster identified by the value of **servers** resides. For example dev, prod or qa. While this value is optional we highly recommend setting it.
     * `db_cluster` - Enter a name to identify this PostgreSQL cluster. This cluster name will be shown in the Sumo Logic dashboards.For example analytics-dbcluster, webapp-dbcluster.
 
-        Here’s an explanation for additional values set by this configuration that we request you **please do not modify** as they will cause the Sumo Logic apps to not function correctly.
-
-* Labels:
+Here’s an explanation for additional values set by this configuration that we request you **please do not modify** as they will cause the Sumo Logic apps to not function correctly.
     * `component: “database”` - This value is used by Sumo Logic apps to identify application components.
     * `db_system: “postgresql”` - This value identifies the database system.
 
     3. Collecting Logs written to Standard output (Recommended)
 
 
-        The Sumologic-Kubernetes-Collection will automatically capture the logs from stdout and will send the logs to Sumologic. For more information on deploying the Sumo Logic Kubernetes Collection, please see[ this page](/docs/integrations/containers-orchestration/Kubernetes#Collect_Logs_and_Metrics_for_the_Kubernetes_App).
+The Sumologic-Kubernetes-Collection will automatically capture the logs from stdout and will send the logs to Sumologic. For more information on deploying the Sumo Logic Kubernetes Collection, please see[ this page](/docs/integrations/containers-orchestration/Kubernetes#Collect_Logs_and_Metrics_for_the_Kubernetes_App).
 
 
-4.**Collect PostgreSQL logs **written to log files (Optional)
+4. Collect PostgreSQL logs **written to log files (Optional)
 
-
-    If your PostgreSQL service is writing its logs to log files, you can use a [sidecar](https://github.com/SumoLogic/tailing-sidecar/tree/main/operator) to send log files to stdout. To do this:
+If your PostgreSQL service is writing its logs to log files, you can use a [sidecar](https://github.com/SumoLogic/tailing-sidecar/tree/main/operator) to send log files to stdout. To do this:
 
 1. Determine the location of the PostgreSQL log file on Kubernetes.
 2. Install the Sumo Logic [tailing sidecar operator](https://github.com/SumoLogic/tailing-sidecar/tree/main/operator#deploy-tailing-sidecar-operator).
@@ -287,7 +263,6 @@ pod_labels_environment=* pod_labels_component=database pod_labels_db_system=* po
 
 2. Click **Save** to create the rule.
 3. Verify logs are flowing into Sumo Logic by running the following logs query
-
 ```sql
 component="database" and db_system="postgresql"
 ```
@@ -295,26 +270,24 @@ component="database" and db_system="postgresql"
 
 #### Sample Log Messages
 
-```json
+```json title="Sample K8s log message"
 { "timestamp":1615988485842, "log":"2021-04-01 08:30:20.002 UTC [11916] postgres@postgres LOG: connection authorized: user=postgres database=postgres ", "stream":"stdout", "time":"2021-03-17T13:41:19.103646109Z" }
 ```
 
 </TabItem>
 <TabItem value="non-k8s">
 
-#### For Non-Kubernetes environments
-
 We use the Telegraf Operator for PostgreSQL metric collection and the Sumo Logic Installed Collector for collecting PostgreSQL logs. The diagram below illustrates the components of the PostgreSQL collection in a non-Kubernetes environment for each database server. Telegraf runs on the same system as PostgreSQL, and uses the [PostgreSQL Extensible input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/postgresql_extensible) to obtain PostgreSQL metrics, and the Sumo Logic output plugin to send the metrics to Sumo Logic. PostgreSQL logs are sent to Sumo Logic Local File Source on Installed Collector.<img src={useBaseUrl('img/integrations/databases/postgresql2.png')} alt="postgresql" />
 
 This section provides instructions for configuring metrics collection for the Sumo Logic App for PostgreSQL. Follow the below instructions to set up the metric collection for a given node in a PostgreSQL cluster:
 
-1. [Configure Metrics Collection](#step-1-configure-metrics-collection)
+1. [Configure Metrics Collection
     1. Configure a Hosted Collector
     2. Configure a HTTP Logs and Metrics Source
     3. Install Telegraf
     4. Configure and start Telegraf
     5. (Optional)Collecting metrics from multiple databases
-2. [Configure Logs Collection](#step-2-configure-logs-collection-for-each-database-server)
+2. Configure Logs Collection
     6. Configure logging in PostgreSQL
     7. Configure an Installed Collector
     8. Configuring a Local File Source
@@ -361,32 +334,25 @@ This section provides instructions for configuring metrics collection for the Su
 
         Here’s an explanation for additional values set by this Telegraf configuration that we request you **please do not modify these values** as they will cause the Sumo Logic apps to not function correctly.
 
-* `data_format = “prometheus”` In the output plugins section which is `[[outputs.sumologic]]`  This indicates that metrics should be sent in the Prometheus format to Sumo Logic
+* `data_format = “prometheus”` In the output plugins section which is `[[outputs.sumologic]]` This indicates that metrics should be sent in the Prometheus format to Sumo Logic
 * `component = “database”` - In the input plugins section which is `[[inputs.postgresql_extensible.tags]]` - This value is used by Sumo Logic apps to identify application components.
 * `db_system = “postgresql”` - In the input plugins sections which is `[[inputs.postgresql_extensible.tags]]` -  This value identifies the database system.
 
-        For other optional parameters like databases, max_lifetime please refer to [this plugin ](https://github.com/influxdata/telegraf/blob/master/plugins/inputs/postgresql_extensible/README.md)documentation for configuring the postgresql_extensible input plugin for Telegraf.
+For other optional parameters like databases, max_lifetime please refer to [this plugin ](https://github.com/influxdata/telegraf/blob/master/plugins/inputs/postgresql_extensible/README.md)documentation for configuring the postgresql_extensible input plugin for Telegraf.
 
+Here is an example [sample_telegraf.conf](https://sumologic-app-data.s3.amazonaws.com/dashboards/PostgreSQL/sample_postgresql_onprem_telegraf.conf) file.
 
-        Here is an example [sample_telegraf.conf](https://sumologic-app-data.s3.amazonaws.com/dashboards/PostgreSQL/sample_postgresql_onprem_telegraf.conf) file.
+For all other parameters, see [this doc](https://github.com/influxdata/telegraf/blob/master/docs/CONFIGURATION.md#agent) for more parameters that can be configured in the Telegraf agent globally.
 
+Once you have finalized your telegraf.conf file, you can start or reload the telegraf service using instructions from the [doc](https://docs.influxdata.com/telegraf/v1.17/introduction/getting-started/#start-telegraf-service).
 
-        For all other parameters please see [this doc](https://github.com/influxdata/telegraf/blob/master/docs/CONFIGURATION.md#agent) for more properties that can be configured in the Telegraf agent globally.
+At this point, PostgreSQL metrics should start flowing into Sumo Logic.
 
+5. (Optional) Collecting metrics from multiple databases
 
-        Once you have finalized your telegraf.conf file, you can start or reload the telegraf service using instructions from the [doc](https://docs.influxdata.com/telegraf/v1.17/introduction/getting-started/#start-telegraf-service).
+If you want to monitor multiple databases then you can copy and paste the text from this [file](https://sumologic-app-data.s3.amazonaws.com/dashboards/PostgreSQL/postgresql_input_output_plugin_onprem_multiple_db.txt) and create another `[[inputs.postgresql_extensible]]` section. This section contains only those queries which are meant to be run for each database.
 
-
-        At this point, PostgreSQL metrics should start flowing into Sumo Logic.
-
-
-    5. (Optional)Collecting metrics from multiple databases
-
-
-        If you want to monitor multiple databases then you can copy and paste the text from this [file](https://sumologic-app-data.s3.amazonaws.com/dashboards/PostgreSQL/postgresql_input_output_plugin_onprem_multiple_db.txt) and create another `[[inputs.postgresql_extensible]]` section. This section contains only those queries which are meant to be run for each database.
-
-
-            Here is an example [sample_telegraf_multiple.conf](https://sumologic-app-data.s3.amazonaws.com/dashboards/PostgreSQL/sample_postgresql_onprem_telegraf_multiple_db.conf)
+Here is an example [sample_telegraf_multiple.conf](https://sumologic-app-data.s3.amazonaws.com/dashboards/PostgreSQL/sample_postgresql_onprem_telegraf_multiple_db.conf)
 
 
 
@@ -397,11 +363,11 @@ Perform the steps outlined below for each PostgreSQL database server.
 1. Configure logging in PostgreSQL
 
 
-**Pre-requisites:**
+**Prerequisites:**
 
-* Locate your local PostgreSQL **postgresql.con**f configuration file in the database data_directory. For more information, see the [PostgreSQL File Locations documentation](https://www.postgresql.org/docs/9.1/static/runtime-config-file-locations.html). By default it’s located at `/var/lib/pgsql/<version>/data/postgresql.conf`. You can run SHOW config_file command inside your server’s psql shell to get the location.
+* Locate your local PostgreSQL **postgresql.conf** configuration file in the database data_directory. For more information, see the [PostgreSQL File Locations documentation](https://www.postgresql.org/docs/9.1/static/runtime-config-file-locations.html). By default it’s located at `/var/lib/pgsql/<version>/data/postgresql.conf`. You can run SHOW config_file command inside your server’s psql shell to get the location.
 
-        After determining the location of conf file modify the PostgreSQL **postgresql.conf** configuration file logging parameters
+After determining the location of conf file modify the PostgreSQL **postgresql.conf** configuration file logging parameters
 
 1. Connect to the database server(using SSH) in a terminal window.
 2. Open postgresql.conf configuration file.
@@ -422,8 +388,7 @@ log_min_messages = 'WARNING'
 log_line_prefix = '%m [%p] %q%u@%d '
 ```
 
-    4. Save the **postgresql.conf** file and restart the postgresql server:
-
+4. Save the **postgresql.conf** file and restart the postgresql server:
 
 ```bash
 sudo service postgresql restart
@@ -431,8 +396,7 @@ sudo service postgresql restart
 
     2. Configure an Installed Collector
 
-
-        To add an Installed collector, perform the steps as defined on the page [Configure an Installed Collector.](/docs/send-data/Installed-Collectors)
+To add an Installed collector, perform the steps as defined on the page [Configure an Installed Collector.](/docs/send-data/Installed-Collectors)
 
 
     3. Configuring a Local File Source
@@ -492,7 +456,6 @@ Here’s the sample source.json
 }
 ```
 
-
 At this point, PostgreSQL logs should start flowing into Sumo Logic.
 
 #### Sample Log Messages
@@ -505,7 +468,7 @@ At this point, PostgreSQL logs should start flowing into Sumo Logic.
 </Tabs>
 
 
-### Query Sample
+#### Sample Query
 
 This sample Query is from the **Fatal Errors** panel of the **PostgreSQL - Overview** dashboard.
 
@@ -535,7 +498,7 @@ Sumo Logic has provided out of the box alerts available through [Sumo Logic moni
 There are limits to how many alerts can be enabled - please see the [Alerts FAQ](/docs/alerts/monitors/monitor-faq.md) for details.
 
 
-### Method 1: Importing a JSON file
+### Method A: Importing a JSON file
 
 1. Download the [JSON file](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/blob/main/monitor_packages/postgresql/postgresql.json) describing all the monitors.
     1. The JSON contains the alerts that are based on Sumo Logic searches that do not have any scope filters and therefore will be applicable to all PostgreSQL clusters, the data for which has been collected via the instructions in the previous sections. However, if you would like to restrict these alerts to specific clusters or environments, update the JSON file by replacing the text `db_system=postgresql` with `<Your Custom Filter> db_system=postgresql`.  
@@ -553,7 +516,7 @@ Custom filter examples:
 The monitors are disabled by default. Once you have installed the alerts using this method, navigate to the PostgreSQL folder under Monitors to configure them. See [this](/docs/alerts/monitors/index.md) document to enable monitors, to configure each monitor, to send notification to teams or connections please see the instructions detailed in step 4 of this [document](/docs/alerts/monitors#Add_a_monitor).
 
 
-### Method 2: Using a Terraform script
+### Method B: Using a Terraform script
 
 #### Step 1: Generate a Sumo Logic access key and ID
 

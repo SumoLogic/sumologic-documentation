@@ -7,7 +7,7 @@ id: topk
 The **topk** operator allows you to select the top values from fields and group them by fields. The topk operator can replace the top operator and adds the ability to choose the top of top.
 
 :::tip
-If you are using top, we recommend switching to topk for all your queries so that you can take advantage of the additional functionality of topk.
+If you're using top, we recommend switching to topk for all your queries so that you can take advantage of the additional functionality of topk.
 :::
 
 ## Syntax

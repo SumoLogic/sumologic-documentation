@@ -99,7 +99,7 @@ In this section, we will configure a collection of EventLogFiles and audit logs 
 
 * For non-FedRamp Sumo Logic deployments:
     * [Create a Salesforce Cloud To Cloud Collector Source](/docs/send-data/Sources/sources-hosted-collectors/Cloud-to-Cloud-Integration-Framework/Salesforce-Source)
-* If you are using the Sumo Logic FedRamp deployment:
+* If you're using the Sumo Logic FedRamp deployment:
     * [Configure a new SumoJanus installation for Salesforce](#configure-a-new-sumojanus-installation-for-salesforce-deprecated)
     * [Upgrade an existing SumoJanus installation for Salesforce](#upgrade-an-existing-sumojanus-installation-for-salesforce-deprecated)
 
@@ -174,7 +174,7 @@ This section only applies for a new SumoJanus installation.
 url = <Salesforce Instance URL> \
 token_file_path = ${path}/data/salesforce.token \
 record_file_path = ${path}/data/sf_readfiles.dat \
-# if you are using a SFDC sandbox environment, set the following to true \
+# If you're using a SFDC sandbox environment, set the following to true \
 sandbox = false \
 interval = daily \
 ```

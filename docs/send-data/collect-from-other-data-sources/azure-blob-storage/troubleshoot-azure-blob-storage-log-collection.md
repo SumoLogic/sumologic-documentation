@@ -131,7 +131,7 @@ an unhandled global exception occurs, when a function TimeoutException
 is thrown, or when performance counter thresholds are exceeded
 (HostHealthMonitor)
 
-If you are using this function for quite some time then we recommend
+If you're using this function for quite some time then we recommend
 redeploying the solution with new ARM templates.
 
 If the error still persists then
