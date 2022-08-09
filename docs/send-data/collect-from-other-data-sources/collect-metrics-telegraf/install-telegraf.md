@@ -22,7 +22,7 @@ This section describes prerequisites for installing Telgraf.
 
 ## Privileges
 
-Installing Telegraf typically requires root or administrator privileges. However, if you are using a pre-built binary, this is not the case. 
+Installing Telegraf typically requires root or administrator privileges. However, If you're using a pre-built binary, this is not the case. 
 
 ## Networking
 

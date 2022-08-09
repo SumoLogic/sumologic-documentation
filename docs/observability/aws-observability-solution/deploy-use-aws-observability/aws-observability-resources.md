@@ -29,7 +29,7 @@ In the table below, the "Applicable AWS Observability Dashboards" column lists t
 | AWS Classic Load Balancer Logs | S3 Bucket<br/>SNS Topic<br/>SNS Subscription<br/>AWS Lambda<br/>IAM Role | AWS Classic Load Balancer |
 
 
-If you are using an existing bucket to collect AWS ELB logs, the Amazon S3 bucket policy for this bucket will be updated to include the policy below, if in case the policy does not already exist:
+If you're using an existing bucket to collect AWS ELB logs, the Amazon S3 bucket policy for this bucket will be updated to include the policy below, if in case the policy does not already exist:
 
 ```
 {

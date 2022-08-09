@@ -86,7 +86,7 @@ processors:
         spans_per_second: 300     #\<- output limit for this rule
 ```
 
-If you are using non-standard configuration template, please also ensure `cascading_filter` and `batch` are present in the list of processors:
+If you're using non-standard configuration template, please also ensure `cascading_filter` and `batch` are present in the list of processors:
 
 ```
 # Include the processor in the tracing pipeline as needed

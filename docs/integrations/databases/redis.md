@@ -70,13 +70,13 @@ This sample Query is from the the **Redis - Logs** dashboard > **Logs** panel.
 ```
 
 
-## Collect Logs and Metrics for Redis
+## Collecting Logs and Metrics for Redis
 
 This section provides instructions for configuring log and metric collection for the Sumo Logic App for Redis. Configuring log and metric collection for the Redis ULM App includes the following tasks:
 
 ### Step 1: Configure Fields in Sumo Logic
 
-Create the following Fields in Sumo Logic prior to configuring collection. This ensures that your logs and metrics are tagged with relevant metadata, which is required by the app dashboards. For information on setting up fields, see the [Fields](/docs/manage/fields.md) help page.
+Create the following Fields in Sumo Logic prior to configuring collection. This ensures that your logs and metrics are tagged with relevant metadata, which is required by the app dashboards. For information on setting up fields, see [Sumo Logic Fields](/docs/manage/fields.md).
 
 <Tabs
   groupId="k8s-nonk8s"
@@ -88,7 +88,7 @@ Create the following Fields in Sumo Logic prior to configuring collection. This 
 
 <TabItem value="k8s">
 
-If you are using Redis in a Kubernetes environment create the fields:
+If you're using Redis in a Kubernetes environment, create the fields:
 * `pod_labels_component`
 * `pod_labels_environment`
 * `pod_labels_db_system`
@@ -97,7 +97,7 @@ If you are using Redis in a Kubernetes environment create the fields:
 </TabItem>
 <TabItem value="non-k8s">
 
-If you are using Redis in a non-Kubernetes environment create the fields:
+If you're using Redis in a non-Kubernetes environment, create the fields:
 * `component`
 * `environment`
 * `db_system`
@@ -140,24 +140,23 @@ Please ensure that you are monitoring your Kubernetes clusters with the Telegraf
     prometheus.io/scrape: "true"
     prometheus.io/port: "9273"
     telegraf.influxdata.com/inputs: |+
-
-        servers = ["tcp://:<username-CHANGME>:<password-CHANGEME>@localhost:6379"]
-        [inputs.redis.tags]
-        environment="prod"
-        component="database"
-        db_system="redis"
-        db_cluster="redis_prod_cluster01-CHANGEME"
+    servers = ["tcp://:<username-CHANGME>:<password-CHANGEME>@localhost:6379"]
+  [inputs.redis.tags]
+    environment="prod"
+    component="database"
+    db_system="redis"
+    db_cluster="redis_prod_cluster01-CHANGEME"
 ```
 
 2. Enter in values for the following parameters (marked `CHANGEME` in the snippet above):
 * `telegraf.influxdata.com/inputs` - As telegraf will be run as a sidecar the host should always be localhost.
     * In the input plugins section i.e.:
         * `servers` - The URL to the Redis server. This can be a comma-separated list to connect to multiple Redis servers.
-    * In the tags section i.e.  `[inputs.redis.tags]`
+    * In the tags section i.e. `[inputs.redis.tags]`
         * `environment` - This is the deployment environment where the Redis cluster identified by the value of **servers** resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
         * `db_cluster` - Enter a name to identify this Redis cluster. This cluster name will be shown in the Sumo Logic dashboards.
 
-Here’s an explanation for additional values set by this configuration that we request you **please do not modify**, as they will cause the Sumo Logic apps to not function correctly.
+Here’s an explanation for additional values set by this configuration that we request you **do not modify**, as they will cause the Sumo Logic apps to not function correctly.
 * `telegraf.influxdata.com/class: sumologic-prometheus` - This instructs the Telegraf operator what output to use. This should not be changed.
 * `prometheus.io/scrape: "true"` - This ensures our Prometheus will scrape the metrics.
 * `prometheus.io/port: "9273"` - This tells prometheus what ports to scrape on. This should not be changed.
@@ -166,13 +165,16 @@ Here’s an explanation for additional values set by this configuration that we 
         * `component: "database"` - This value is used by Sumo Logic apps to identify application components.
         * `db_system: "redis"` - This value identifies the database system.
 
-For more information on all other parameters, see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#Configuring-Telegraf) for more properties that can be configured in the Telegraf agent globally.
+For more information on all other parameters, see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#Configuring-Telegraf) for more parameters that can be configured in the Telegraf agent globally.
 
 For more information on configuring the Redis input plugin for Telegraf please see [this doc.](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/redis)
 
 3. Once this has been done, the Sumo Logic Kubernetes collection will automatically start collecting metrics from the pods having the labels and annotations defined in the previous step.
-4. Verify metrics in Sumo Logic by running the following metrics query: \
-`db_cluster=<Your_Redis_Cluster_Name> component="database"` and `db_system="redis"`
+4. Verify metrics in Sumo Logic by running the following metrics query:
+```
+db_cluster=<Your_Redis_Cluster_Name> component="database"` \
+and `db_system="redis"
+```
 
 
 #### Configure Logs Collection
@@ -196,9 +198,9 @@ Here’s an explanation for additional values set by this configuration that we 
 * `component: “database”` - This value is used by Sumo Logic apps to identify application components.
 * `db_system: “redis”` - This value identifies the database system.
 
-For all other parameters please see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#Configuring-Telegraf) for more properties that can be configured in the Telegraf agent globally.
+For all other parameters, see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#Configuring-Telegraf) for more parameters that can be configured in the Telegraf agent globally.
 
-The Sumologic-Kubernetes-Collection will automatically capture the logs from stdout and will send the logs to Sumologic. For more information on deploying Sumologic-Kubernetes-Collection,[ ](/docs/integrations/containers-orchestration/Kubernetes#Collect_Logs_and_Metrics_for_the_Kubernetes_App) please see[ this page](/docs/integrations/containers-orchestration/Kubernetes#Collect_Logs_and_Metrics_for_the_Kubernetes_App).
+The Sumologic-Kubernetes-Collection will automatically capture the logs from stdout and will send the logs to Sumologic. For more information on deploying Sumologic-Kubernetes-Collection, see [this page](/docs/integrations/containers-orchestration/Kubernetes#Collect_Logs_and_Metrics_for_the_Kubernetes_App).
 
 2. Collect Redis logs written to log files (Optional).
 
@@ -277,7 +279,6 @@ Create or modify the telegraf.conf file and copy and paste the text below:
   data_format = "prometheus"
 ```
 
-
 Please enter values for the following parameters:
 
 * For the input plugins section:
@@ -288,13 +289,12 @@ Please enter values for the following parameters:
 * For output plugins section:
     * url - This is the HTTP source URL created in step 3. See [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/configure-telegraf-output-plugin.md) for more information on additional parameters for configuring the Sumo Logic Telegraf output plugin.
 
-Here’s an explanation for additional values set by this Telegraf configuration that we request you **please do not modify these values** as they will cause the Sumo Logic apps to not function correctly.
-
+Here’s an explanation for additional values set by this Telegraf configuration that we request you **do not modify these values** as they will cause the Sumo Logic apps to not function correctly.
 * `data_format - “prometheus”` In the output plugins section, for which Metrics are sent in the Prometheus format to Sumo Logic.
 * `db_system: “redis”` - In the input plugins section:  This value identifies the database system.
 * `component: “database”` - In the input plugins section: This value identifies application components.
 
-For all other parameters please see [this doc](https://github.com/influxdata/telegraf/blob/master/docs/CONFIGURATION.md) for more properties that can be configured in the Telegraf agent globally.
+For all other parameters, see [this doc](https://github.com/influxdata/telegraf/blob/master/docs/CONFIGURATION.md) for more parameters that can be configured in the Telegraf agent globally.
 
 Once you have finalized your telegraf.conf file, you can start or reload the telegraf service using instructions from their [doc](https://docs.influxdata.com/telegraf/v1.17/introduction/getting-started/#start-telegraf-service).
 
@@ -323,7 +323,7 @@ Follow the instructions below to set up log collection:
 
 With this option, Redis logs written to a log file can be collected via the [Local File Source of a](/docs/send-data/Sources/sources-installed-collectors/Local-File-Source) Sumo Logic Installed collector.
 
-To configure the Redis log file, locate** your local **redis.con**f configuration file in the database directory. By default, Redis logs are stored in /var/log/redis/redis-server.log.
+To configure the Redis log file, locate your local **redis.conf** configuration file in the database directory. By default, Redis logs are stored in /var/log/redis/redis-server.log.
 
 After determining the location of conf file modify the **redis.conf** configuration file logging parameters:
 1. Open redis.conf configuration file in a text editor.
@@ -335,7 +335,7 @@ After determining the location of conf file modify the **redis.conf** configurat
       * warning (only very important / critical messages are logged) loglevel notice
    * Specify the log file name. Also the empty string can be used to force Redis to log on the standard output. Note that if you use standard output for logging but daemonize, logs will be sent to /dev/null logfile `""`
 3. Save the **redis.conf** file and restart the redis server:
-  ```
+  ```bash
   sudo service redis-server restart
   ```
 
@@ -364,7 +364,9 @@ After determining the location of conf file, modify the **redis.conf** configura
    syslog-facility local0
    ```
 3. Save the **redis.conf** file and restart the redis server:
+```
 sudo service redis-server restart
+```
 4. At this point, Redis will start pushing the logs to the local syslog server.
 
 </details>
@@ -375,14 +377,14 @@ sudo service redis-server restart
    * Configure the Local File Source fields as follows:
       * **Name.** (Required)
       * **Description.** (Optional)
-      * **File Path (Required).** Enter the path to your error.log or access.log. The files are typically located in /var/log/redis/redis-server.log. If you are using a customized path, check the redis.conf file for this information.
+      * **File Path (Required).** Enter the path to your error.log or access.log. The files are typically located in /var/log/redis/redis-server.log. If you're using a customized path, check the redis.conf file for this information.
       * **Source Host.** Sumo Logic uses the hostname assigned by the OS unless you enter a different host name
       * **Source Category.** Enter any string to tag the output collected from this Source, such as **Redis/Logs**. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details see[ Best Practices](/docs/send-data/design-deployment/best-practices-source-categories).)
    * Fields. Set the following fields. For more information on fields please see [this document](/docs/manage/fields.md):
       * `component = database`
       * `db_system = redis`
       * `db_cluster = <Your_Redis_Cluster_Name>`
-      * `environment = <Environment_Name>`, such as Dev, QA or Prod. \
+      * `environment = <Environment_Name>`, such as Dev, QA or Prod.
    * Configure the **Advanced** section:
       * **Enable Timestamp Parsing.** Select Extract timestamp information from log file entries.
       * **Time Zone.** Choose the option, **Ignore time zone from log file and instead use**, and then select your Redis Server’s time zone.
@@ -400,19 +402,13 @@ Verify logs are flowing into Sumo Logic by running the following logs query:
 db_cluster=<Your_Redis_cluster_Name> component="database" and db_system="redis"
 ```
 
-## Installing Redis Alerts
+## Installing Redis Monitors/Alerts
 
 This section has instructions for installing the Sumo App and Alerts for Redis ULM, as well as descriptions and examples for each of the dashboards. These instructions assume you have already set up collection as described in the **Collecting Logs and Metrics for Redis App** section.
 
-
-#### Pre-Packaged Alerts
-
-Sumo Logic has provided out of the box alerting capabilities available via[ Sumo Logic monitors](/docs/alerts/monitors/index.md) to help you quickly determine if the Redis database cluster is available and performing as expected. These monitors fire alerts (notifications) on top of preset thresholds on metrics data using industry best practices and recommendations.
+Sumo Logic has provided out of the box alerting capabilities available via [Sumo Logic monitors](/docs/alerts/monitors/index.md) to help you quickly determine if the Redis database cluster is available and performing as expected. These monitors fire alerts (notifications) on top of preset thresholds on metrics data using industry best practices and recommendations.
 
 For details on the individual monitors, please see [Alerts](#Redis-Alerts).
-
-
-## Installing Monitors
 
 * To install these alerts, you need to have the Manage Monitors role capability.
 * Alerts can be installed by either importing them via a JSON or via a Terraform script.
@@ -420,15 +416,15 @@ For details on the individual monitors, please see [Alerts](#Redis-Alerts).
 Note: There are limits for how many alerts can be enabled - please see the [Alerts FAQ](/docs/alerts/monitors/monitor-faq.md) for details.
 
 
-### Method 1: Importing a JSON file
+### Method A: Importing a JSON file
 
 1. Download a [JSON file](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/tree/main/monitor_packages/redis) that describes the monitors.
 
   The JSON contains the alerts that are based on Sumo Logic searches that do not have any scope filters and therefore will be applicable to all Redis clusters, the data for which has been collected via the instructions in the previous sections.,  However, if you would like to restrict these alerts to specific clusters or environments, update the JSON file by replacing the text `‘db_system=redis’` with `‘<Your Custom Filter> db_system=redis’`.
 
   Custom filter examples:
-   * For alerts applicable only to a specific cluster, your custom filter would be:  **‘db_cluster=redis-.prod.01’.**
-   * For alerts applicable to all clusters that start with redis-prod, your custom filter would be: ‘db_cluster=redis-prod*’.
+   * For alerts applicable only to a specific cluster, your custom filter would be:  `db_cluster=redis-.prod.01`.
+   * For alerts applicable to all clusters that start with `redis-prod`, your custom filter would be: `db_cluster=redis-prod*`.
    * For alerts applicable to a specific cluster within a production environment, your custom filter would be: `db_cluster=redis-1 and environment=prod` (This assumes you have set the optional environment tag while configuring collection).
 2. Go to Manage Data > Alerts > Monitors.
 3. Click **Add**:
@@ -439,7 +435,7 @@ Monitors are disabled by default. Once you have installed the alerts via this me
 :::
 
 
-### Method 2: Install the Monitors via a Terraform script
+### Method B: Using a Terraform script
 
 **Step 1: Generate a Sumo Logic access key and ID**
 
