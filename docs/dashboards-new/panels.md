@@ -1,9 +1,8 @@
 ---
 id: panels
-Title: Dashboard Panels
+title: Dashboard (New) Panels
+sidebar_label: Panels
 ---
-
-# Panels
 
 Panels are the building blocks used to create a dashboard. Each panel displays analytics for a specific query. The type of panel you choose to display your data depends on the type of query you want to run.
 
@@ -153,9 +152,9 @@ To add a Text Panel:
     1. A title is optional, you can toggle its visibility in the **Panel Details** covered in the next section.
 
 1. Next, to set a Title, select the **General** menu icon to open the **Panel Details** pane.  
-    
+
     ![Panel details general icon.png](/img/dashboards-new/panels/Panel-details-general-icon.png)
-    
+
     A title is optional. Use the toggle switch labeled **Show Title** to set if the title is displayed. If desired, enter a title and set the font size.
 1. The **Panel Preview** section displays your text panel based on your settings.  
 
@@ -196,17 +195,17 @@ You can filter the map according to application and service. See the [Dashboard
 To add a Service Map panel:
 
 1. With the Dashboard open, click the **Add Panel** button and select **Service Map**.   
-    
+
     ![add-servicemap.png](/img/dashboards-new/panels/add-servicemap.png)  
-    
+
     A panel configuration page opens.  
-    
+
     ![create-servicemap.png](/img/dashboards-new/panels/create-servicemap.png)
 
 1. Select from the drop-down menus to filter the Service Map by the following:  
-    
+
     ![filter-servicemap.png](/img/apm/traces/filter-servicemap.png)
-    
+
     * **Application** if your tracing data has the `application=[app-name]` tag
     * **Service** 
     * To pass the variables from dashboard filters, set `application={{application}}` and/or `service={{service}}`
@@ -239,11 +238,11 @@ You are limited to 3 Trace List panels in a dashboard.
 To add a Trace List panel:
 
 1. With the Dashboard open, click the **Add Panel** button.   
-    
+
     ![add-tracelist.png](/img/apm/traces/add-tracelist.png)  
-    
+
     A panel configuration page opens.  
-    
+
     ![create-tracelist.png](/img/dashboards-new/panels/create-tracelist.png)
 
 1. Configure a [Trace query](../apm/traces/working-with-tracing-data/view-and-investigate-traces.md) to search for desired set of traces. 
@@ -271,7 +270,7 @@ To add a Trace List panel:
 
 
 1. Click the **General** tab to edit the Panel Details. Enter a name for the panel, set a **Title Font Size**, and add a short **Description**.  
-    
+
     ![tracelist details](/img/apm/traces/tracelist-details.png)
 
 1. Click **Add to Dashboard**. 
@@ -286,12 +285,12 @@ You can delete a panel that you no longer need.
 
 1. Go to the Dashboard (New) in Sumo Logic that has the panel you want to delete.
 1. Hover the cursor over the **Details** icon to display the pop-up menu.  
-      
+
     ![details option.png](/img/dashboards-new/panels/delete-panel/details-option.png)
 
 1. Select **Delete**.  
-      
+
     ![delete a panel.png](/img/dashboards-new/panels/delete-panel/delete-a-panel.png)
- 
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
