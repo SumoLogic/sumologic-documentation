@@ -342,11 +342,11 @@ From the member server that the CSE Windows Sensor is installed on:
 
 1. Start the Microsoft Event Viewer (from the Control Panel).
 1. Use **Action \> Connect** to another computer to connect to a remote machine.
-1. For the server name, enter localhost, the WEC server, or each domain controller depending on how the sensor is configured.   By default, the domain controller monitor is enabled. If you are using the default configuration, then enter a domain controller as the server name. 
+1. For the server name, enter localhost, the WEC server, or each domain controller depending on how the sensor is configured.   By default, the domain controller monitor is enabled. If you're using the default configuration, then enter a domain controller as the server name. 
 
 Once you connect, make sure that you can see events in the Security log.
 
-If you are using the WEC monitor, then make sure that you can see events in the Forwarded Events log (or other log if you’ve directed the WEC server to a different location.
+If you're using the WEC monitor, then make sure that you can see events in the Forwarded Events log (or other log if you’ve directed the WEC server to a different location.
 
 Repeat these steps for each domain controller. In other words, if you have 10 domain controllers, you should try to connect to each of the controllers from the member server where the sensor runs.
 

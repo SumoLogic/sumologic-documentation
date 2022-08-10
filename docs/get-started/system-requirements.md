@@ -34,7 +34,7 @@ Sumo Logic tests the service on several browsers to ensure a consistent experie
 
 ### Memory guidelines
 
-An Installed Collector by default is allocated 128MB of Java heap space (memory), but depending on the operating system running on the machine, whether the machine is 32 bit or 64 bit, and the number of Sources and log messages being collected a Collector may require a significantly higher amount of memory. In particular, if you are using [centralized collection](../send-data/design-deployment/best-practices-local-centralized-data-collection.md), additional memory is required. It's a good idea to have 256MB to 512MB available in case it's needed.
+An Installed Collector by default is allocated 128MB of Java heap space (memory), but depending on the operating system running on the machine, whether the machine is 32 bit or 64 bit, and the number of Sources and log messages being collected a Collector may require a significantly higher amount of memory. In particular, If you're using [centralized collection](../send-data/design-deployment/best-practices-local-centralized-data-collection.md), additional memory is required. It's a good idea to have 256MB to 512MB available in case it's needed.
 
 The total physical memory consumption of the Jave Virtual Machine (JVM) process consists of more than just the Java heap space. This can increase the total memory used by the Collector. For example, other things that the process includes could be:
 

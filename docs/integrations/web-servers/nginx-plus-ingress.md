@@ -51,7 +51,7 @@ Both the parse expressions can be used for logs collected from Nginx Plus Server
 
 **FER for Access Logs**
 
-If you are using the default Nginx Plus Ingress log format use the following Parse Expression:
+If you're using the default Nginx Plus Ingress log format use the following Parse Expression:
 
 
 ```
@@ -128,7 +128,7 @@ To install these alerts, you need to have the[ Manage Monitors](/docs/manage/use
 Alerts can be installed by either importing them via a JSON or via a Terraform script.
 
 
-### Method 1: Importing a JSON file
+### Method A: Importing a JSON file
 
 1. Download the[ JSON file](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/blob/main/monitor_packages/nginx-plus-ingress/nginxplusingress.json) describing all the monitors.
 2. Replace **$$logs_data_source** with logs data source.
@@ -140,7 +140,7 @@ Alerts can be installed by either importing them via a JSON or via a Terraform s
 The monitors are disabled by default. Once you have installed the alerts via this method, navigate to the **Nginx** **Ingress** folder under **Monitors** to configure them. Refer[ document](/docs/alerts/monitors#Add_a_monitor) to enable monitors, to configure each monitor, to send notifications to teams or connections.
 
 
-### Method 2: Using a Terraform script
+### Method B: Using a Terraform script
 
 **Step 1: Generate a Sumo Logic access key and ID**
 

@@ -1,10 +1,13 @@
 ---
 id: drill-down-to-discover-root-causes
+title: Drill Down to Discover Root Causes
 ---
 
-# Drill down to discover root causes
-
 When you see a spike of interest on a dashboard that requires further investigation, you can easily drill into the related content to discover the root cause. This page shows you how you can easily discover related dashboards and corresponding logs searches that pertain to an issue in your environment.
+
+:::note
+If you're looking for our Root Cause Explorer observability tool, [click here](docs/observability/root-cause-explorer.md).
+:::
 
 ## Limitations
 

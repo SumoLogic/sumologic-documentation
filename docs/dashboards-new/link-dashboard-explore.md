@@ -1,8 +1,7 @@
 ---
 id: link-dashboard-to-explore
+title: Link a Dashboard (New) to Explore
 ---
-
-# Link a dashboard to Explore
 
 Stack linking connects Dashboard (New) to Explore so you can view dashboards when exploring infrastructure components.
 
