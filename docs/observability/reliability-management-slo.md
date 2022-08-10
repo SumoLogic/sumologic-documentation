@@ -1,6 +1,6 @@
 ---
 id: reliability-management-slo
-title: Reliability Management
+title: Sumo Logic Reliability Management
 sidebar_label: Reliability Management (SLOs/SLIs)
 description: Learn how to use Sumo Logic Reliability Management, including creating SLO monitors, configuring queries, setting SLIs, and using dashboards.
 ---
@@ -196,7 +196,7 @@ To create a new SLO:
     * **Window-based**. Select the time frame window for the events. Window sizes should be between 1m to 60m.<br/><img src={useBaseUrl('img/observability/slo-create-window-base.png')} alt="Reliability Management SLO SLI" />
     * **Request-based.**<br/><img src={useBaseUrl('img/observability/slo-create-request-base.png')} alt="Reliability Management SLO SLI" />
 
-Select the **Query Type **to select and build your queries for the SLI data. You have a choice of Metrics or Logs with a ratio-based (partial against the total) or threshold-based (events amount against a set threshold amount) calculation. Review [Query recommendations](#Query_recommendations) before building. \
+Select the **Query Type **to select and build your queries for the SLI data. You have a choice of Metrics or Logs with a ratio-based (partial against the total) or threshold-based (events amount against a set threshold amount) calculation. Review [Query recommendations](#Query_recommendations) before building.
 
 Follow the instructions below based on the query type:
 
@@ -510,11 +510,11 @@ You can use the Sumo Logic Terraform provider to automate[ SLO folder](https://r
 
 Sumo Logic continuously computes data for your SLO behind the scenes. This data, which powers your SLO dashboard, is also made available as log messages that conform to the following schema:
 
-* ****Time**: timestamp
-* **sloId**: Id of the SLO, as displayed in the SLO dashboard URL
-* **goodCount**: count of good requests, for request-based, and good windows for windows-based SLOs, based on SLO query definition
-* **totalCount**: count of eligible requests for request-based, and eligible windows for windows-based SLOs, based SLO query definition
-* **sloVersion**: version of SLO definition
+* `Time`: timestamp
+* `sloId`: Id of the SLO, as displayed in the SLO dashboard URL
+* `goodCount`: count of good requests, for request-based, and good windows for windows-based SLOs, based on SLO query definition
+* `totalCount`: count of eligible requests for request-based, and eligible windows for windows-based SLOs, based SLO query definition
+* `sloVersion`: version of SLO definition
 
 View the schema by executing the following query:
 
