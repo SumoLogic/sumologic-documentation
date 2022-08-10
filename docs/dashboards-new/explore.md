@@ -132,16 +132,12 @@ Explore navigation capabilities allow you to quickly locate the object that need
 
 ### Step 1: Analyzing the cluster
 
-We suspect there's a problem with a Kubernetes cluster but aren't sure where, so we start by analyzing the Cluster Overview dashboard. Everything that is running on the cluster is shown on this dashboard. The Terminated and Waiting by Namespace panel allows us to easily comprehend the failure states the namespaces are in. Here we can easily see if there are configuration issues or overall administration issues that need to be addressed.
-
-<img src={useBaseUrl('img/dashboards-new/explore/Explore_TS_Cluster_Overview.png')} alt="Explore" />
+We suspect there's a problem with a Kubernetes cluster but aren't sure where, so we start by analyzing the Cluster Overview dashboard. Everything that is running on the cluster is shown on this dashboard. The Terminated and Waiting by Namespace panel allows us to easily comprehend the failure states the namespaces are in. Here we can easily see if there are configuration issues or overall administration issues that need to be addressed.<br/><img src={useBaseUrl('img/dashboards-new/explore/Explore_TS_Cluster_Overview.png')} alt="Explore" />
 
 ### Step 2: Exploring a namespace
 
 
-To further pinpoint the problem with our cluster, we investigated the namespace by selecting kube-system in the navigation panel and switching to the Namespace Overview dashboard. This dashboard provides information on pods running in the deployment, failed pods, errors, CPU and memory usage, file system usage, terminated and waiting pods and containers. In this example, we're focusing on the CPU and memory usage panels of the dashboard in our attempt to find out where our application is running into problems.
-
-<img src={useBaseUrl('img/dashboards-new/explore/Explore_TS_Namespace_Overview.png')} alt="Explore" />
+To further pinpoint the problem with our cluster, we investigated the namespace by selecting kube-system in the navigation panel and switching to the Namespace Overview dashboard. This dashboard provides information on pods running in the deployment, failed pods, errors, CPU and memory usage, file system usage, terminated and waiting pods and containers. In this example, we're focusing on the CPU and memory usage panels of the dashboard in our attempt to find out where our application is running into problems.<br/><img src={useBaseUrl('img/dashboards-new/explore/Explore_TS_Namespace_Overview.png')} alt="Explore" />
 
 ### Step 3: Drilling down into a pod
 
