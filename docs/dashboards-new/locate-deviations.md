@@ -1,8 +1,7 @@
 ---
 id: locate-deviations-time-series
+title: Locate Deviations in a Time Series
 ---
-
-# Locate deviations in a time series
 
 An **outlier** is a data point that is outside the range of expected values. This page shows you how to locate deviations beyond thresholds in a time series. 
 

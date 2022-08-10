@@ -1,8 +1,8 @@
 ---
 id: filter-template-variables
+title: Filtering Dashboards (New) with Template Variables
+sidebar_label: Filtering with Template Variables
 ---
-
-# Filter with template variables
 
 Template variables are a feature of Dashboard (New) that allow you to analyze specific data on demand. They give you the ability to filter the data displayed on your dashboard so you can quickly troubleshoot a problem. Queries can be changed on the fly by choosing values for variables from drop-down lists without having to manually edit queries.
 
@@ -142,7 +142,7 @@ To delete a template variable, do the following:
     ![options menu for variable.png](/img/dashboards-new/filter-template-variables/options-menu-for-variable.png)
 
 1. Click the options icon and select **Delete** from the drop-down menu. The variable along with the resulting data transformations are automatically removed from the dashboard.  
-    
+
     ![delete variable.png](/img/dashboards-new/filter-template-variables/delete-variable.png)
 
 ## Use variables in queries
@@ -171,8 +171,8 @@ When including** **the option to select all values (\*), use the [matches](../
 For example,
 
 ```sql
-_sourceCategory=query 
-| where type = {{_type}} 
+_sourceCategory=query
+| where type = {{_type}}
 | count_distinct(type)
 ```
 
@@ -180,8 +180,8 @@ changed to use `matches` and wrapped the string literal variable in
 quotes:
 
 ```sql
-_sourceCategory=query 
-| where type matches "{{_type}}" 
+_sourceCategory=query
+| where type matches "{{_type}}"
 | count_distinct(type)
 ```
 
