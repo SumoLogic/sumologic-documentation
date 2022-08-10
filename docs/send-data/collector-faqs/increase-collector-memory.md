@@ -67,7 +67,7 @@ To increase the maximum Java Heap size:
 
   These are general guidelines since your exact memory requirement depends on how many sources are configured, log volume, use of wildcards and recursive scans in the path expressions, and filters.
 
-  If you are using centralized data collection, you must increase collector memory.
+  If you're using centralized data collection, you must increase collector memory.
 
 1. Restart the collector using the command: 
 

@@ -25,7 +25,7 @@ For more information on Netskope, refer to the Netskope [documentation](https://
 
 To collect logs from the Netskope platform, if you are not using the Sumo Logic FedRamp deployment, use the [new Cloud to Cloud Integration for Netskope](/docs/send-data/Sources/sources-hosted-collectors/Cloud-to-Cloud-Integration-Framework/Netskope-Source) to create the source and use the same source category while installing the app.
 
-The sections below are deprecated for non-FedRamp Sumo Logic deployments. If you are using the Sumo Logic FedRamp deployment, use the sections below to configure the collection for this app.
+The sections below are deprecated for non-FedRamp Sumo Logic deployments. If you're using the Sumo Logic FedRamp deployment, use the sections below to configure the collection for this app.
 
 
 ### Collection Overview (DEPRECATED)

@@ -25,7 +25,7 @@ When you generate the Duo credentials, you should do it for the Admin API applic
 
 To collect logs from the Duo Security App, if you are not using the Sumo Logic FedRamp deployment,  use the new [Cloud to Cloud Integration for Duo Security App](/docs/send-data/Sources/sources-hosted-collectors/Cloud-to-Cloud-Integration-Framework/Duo-Source) to create the source and use the same source category while installing the app.
 
-The sections below are deprecated for non-FedRamp Sumo Logic deployments. If you are using the Sumo Logic FedRamp deployment, use the sections below to configure collection for this app.
+The sections below are deprecated for non-FedRamp Sumo Logic deployments. If you're using the Sumo Logic FedRamp deployment, use the sections below to configure collection for this app.
 
 This page demonstrates how to configure log collection for the Duo Security App.
 

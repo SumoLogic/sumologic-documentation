@@ -1,8 +1,7 @@
 ---
 id: create-a-dashboard-new
+title: Create a Dashboard (New)
 ---
-
-# Create a Dashboard (New)
 
 This page demonstrates how to create a Dashboard (New), add a query, and then add the chart to the dashboard. You create your Dashboard (New) by selecting template options from menus and drop-downs.
 
@@ -17,7 +16,7 @@ Rather watch a short micro lesson video?
         className="video-container"
         display="initial"
         position="relative"
-        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
         />
 
@@ -33,15 +32,15 @@ In this step, you create a Dashboard (New), to which you will add panels and cu
 To create a Dashboard (New) with the **+ New** button, do the following:
 
 1. On the Home page, click **+ New**.  
-    
+
     ![DataDojo_New_Dashboard.png](/img/dashboards-new/create-dashboard-new/DataDojo_New_Dashboard.png)
 
 1. Select **Dashboard (New)** from the drop-down list.  
-    
+
     ![new dashboard from new button.png](/img/dashboards-new/create-dashboard-new/new-dashboard-from-new-button.png)
 
 1. Select the Dashboard text field at the top of the window and enter a unique name for your new dashboard.  
-    
+
     ![Dashboard name.png](/img/dashboards-new/create-dashboard-new/Dashboard-name.png)
 
 ### Add a panel  
@@ -110,18 +109,18 @@ Click the **Add to Dashboard** button on the top right of the window to add th
 ![Add to Dashboard button.png](/img/dashboards-new/create-dashboard-new/Add-to-Dashboard-button.png)
 
 That's it, start using your Dashboard (New).  
-  
+
 ## Delete a Panel
 
 You can delete a panel that you no longer need.
 
 1. Go to the Dashboard (New) in Sumo Logic that has the panel you want to delete.
 1. Hover the cursor over the **Details** icon to display the pop-up menu.  
-      
+
     ![details option.png](/img/dashboards-new/panels/delete-panel/details-option.png)
 
 1. Select **Delete**.  
-      
+
     ![delete a panel.png](/img/dashboards-new/panels/delete-panel/delete-a-panel.png)
 
 ## Log Search page
@@ -133,7 +132,7 @@ To create a Dashboard (New) from the [Log Search page](/docs/search):
     ![Add to dashboard new logs.png](/img/dashboards-new/create-dashboard-new/Add-to-dashboard-new-logs.png)
 
 1. In the **Add Panel to Dashboard** window provide a **Panel Title** and a name for the **Dashboard**. Once the name is entered you will have an option to select **Create New Dashboard** with your name. Select that option.  
-    
+
     ![Enter dashboard new name logs.png](/img/dashboards-new/create-dashboard-new/Enter-dashboard-new-name-logs.png)
 
 1. In the updated window toggle the **Create as Dashboard (New)** option.  
@@ -147,15 +146,15 @@ To create a Dashboard (New) from the [Log Search page](/docs/search):
 To create a Dashboard (New) from the [Metrics page](/docs/metrics/metric-queries-alerts):
 
 1. From the Metrics page click the **Add to Dashboard** button on the [Metrics Explorer](../metrics/metric-queries-alerts/metrics-explorer.md).  
-    
+
     ![metrics explorer add to dashboard.png](/img/dashboards-new/create-dashboard-new/metrics-explorer-add-to-dashboard.png)
 
 1. In the **Add Panel to Dashboard** window provide a **Panel Title** and a name for the **Dashboard**. Once the name is entered you will have an option to select **Create New Dashboard** with your name. Select that option.  
-    
+
     ![Enter dashboard new name logs.png](/img/dashboards-new/create-dashboard-new/Enter-dashboard-new-name-logs.png)
 
 1. In the updated window toggle the **Create as Dashboard (New)** option.  
-    
+
     ![Create new dashboard new from search page.png](/img/dashboards-new/create-dashboard-new/Create-new-dashboard-new-from-search-page.png)
 
 1. Click **Add** and your new Dashboard (New) is created.

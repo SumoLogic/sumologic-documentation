@@ -7,7 +7,7 @@ description: Allows you to view at a glance your Sumo Logic account's data usage
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/sumo-apps/volumeview.png')} alt="Web servers icon" width="75"/>
+<img src={useBaseUrl('img/integrations/sumo-apps/volumeview.png')} alt="Thumbnail icon" width="75"/>
 
 The Data Volume allows you to view at a glance your account's data usage volume by category, collector, source name, and hosts. The app uses predefined searches and a Dashboard that provide visibility into your environment for real-time analysis of overall usage.
 

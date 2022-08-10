@@ -15,7 +15,7 @@ This document provides static URLs to download our [Installed Collector](../abou
   wget "https://collectors.sumologic.com/rest/download/linux/64" -O SumoCollector.sh && chmod +x SumoCollector.sh
   ```
 
-  Or, if you are using PowerShell on a 64-bit Windows host you can use Invoke-WebRequest:
+  Or, If you're using PowerShell on a 64-bit Windows host you can use Invoke-WebRequest:
 
   ```
   # configure usage of TLS

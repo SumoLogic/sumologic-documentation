@@ -75,7 +75,7 @@ To work around this problem of opening the dashboards, in the web browser that y
 
 ## Why can't I edit a Dashboard?
 
-When you create a Dashboard and publish it or install an App, you are the owner of the Dashboard, so you have the ability to edit or adjust it at any time. But if you are using a Dashboard that is published by someone else in your organization, you won't see the **Edit** toggle on the **Dashboard** page, and you won't have the ability to edit it directly.
+When you create a Dashboard and publish it or install an App, you are the owner of the Dashboard, so you have the ability to edit or adjust it at any time. But If you're using a Dashboard that is published by someone else in your organization, you won't see the **Edit** toggle on the **Dashboard** page, and you won't have the ability to edit it directly.
 
 To workaround this issue, you can always make a copy of the Dashboard from the **Library**. Then you can edit the copy as you like, because you own the copy. For instructions, see [Copy Content in the Library](../get-started/library/manage-library.md).
 

@@ -296,7 +296,7 @@ In this section, we will configure a collection of login and audit logs  from Wo
 
 * For non-FedRamp Sumo Logic deployments
     * [Create a Workday Cloud To Cloud Collector Source](/docs/send-data/Sources/sources-hosted-collectors/Cloud-to-Cloud-Integration-Framework/Workday-Source).
-* If you are using the Sumo Logic FedRamp deployment, you can either use a Sumo Logic Workday collection script to be run in an Amazon Web Services (AWS) environment using the AWS Lambda service, or run Sumo Logic Python scripts to run periodically on a Linux machine via a cron job.
+* If you're using the Sumo Logic FedRamp deployment, you can either use a Sumo Logic Workday collection script to be run in an Amazon Web Services (AWS) environment using the AWS Lambda service, or run Sumo Logic Python scripts to run periodically on a Linux machine via a cron job.
     * [AWS Lambda based collection](#Deploy_the_Sumo_Logic_Workday_SAM_Application) via a Serverless Application Model (SAM) application.
     * [Script-based collection](#Configure_script-based_collection_for_Workday) from a Linux machine.
 

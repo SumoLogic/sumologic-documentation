@@ -6,7 +6,7 @@ id: existing-collectors-and-sources
 
 With [Local Configuration File](/docs/send-data/sources/use-json-configure-sources/local-configuration-file-management) management, all configuration is done through a configuration file. This approach allows you to create scripts to configure multiple Collectors and Sources or to create configuration backups.
 
-If you are using local configuration file management, you cannot use the API or the Sumo web app to modify the configuration.
+If you're using local configuration file management, you cannot use the API or the Sumo web app to modify the configuration.
 
 ## Step 1. Get a configuration file
 

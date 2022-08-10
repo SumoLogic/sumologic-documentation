@@ -31,7 +31,7 @@ Choose one of these methods to install the Collector:
 
 You can build a Collector into a [Linux machine image](collector-installation-reference/add-collector-linux-machine-image.md) such as an Amazon AMI or VMware image.
 
-After installing Collectors, you can configure Sources by using the Web Application or by providing the [Source settings in a JSON file](/docs/send-data/sources/use-json-configure-sources). If you are using a UTF-8 encoded JSON file, you must provide the file before starting the collector. The JSON file needs to be UTF-8 encoded.
+After installing Collectors, you can configure Sources by using the Web Application or by providing the [Source settings in a JSON file](/docs/send-data/sources/use-json-configure-sources). If you're using a UTF-8 encoded JSON file, you must provide the file before starting the collector. The JSON file needs to be UTF-8 encoded.
 
 ### Install using the UI installer 
 
@@ -134,7 +134,7 @@ You can use the RPM or Debian package to install a Collector on a Linux
    Starting with collector 19.170+, the installation directory is secured to users belonging to the `sumologic_collector` group. Modifying `user.properties` may require sudo privileges. For more information see [Enhanced File System Security for Installed Collectors](collector-installation-reference/enhanced-file-system-security-installed-collectors.md).
    :::
 
-1. (Optional) Provide a JSON Source information.  You can pass all Source settings in a UTF-8 encoded JSON file. If you are using a JSON file, you must provide the file before starting the Collector. See [Using JSON to configure Sources](/docs/send-data/sources/use-json-configure-sources). Alternatively, you can configure Sources at any time by using the Sumo web app. See [Sources](/docs/send-data/sources).
+1. (Optional) Provide a JSON Source information.  You can pass all Source settings in a UTF-8 encoded JSON file. If you're using a JSON file, you must provide the file before starting the Collector. See [Using JSON to configure Sources](/docs/send-data/sources/use-json-configure-sources). Alternatively, you can configure Sources at any time by using the Sumo web app. See [Sources](/docs/send-data/sources).
 1. (Optional) Set the run a user for the Collector if you want the Collector to run as a user other than root. See [run as for a Collector](collector-installation-reference/set-run-as-user-for-collector.md).
 1. (Optional on Collector version 19.253-3+ in the Fed deployment) Enable FIPS 140-2 compliant Java Cryptography Extension (JCE) to encrypt your data to Sumo Logic's Fed deployment in US1 only. FIPS mode is not supported for any other deployment. If you are unsure whether you are on the Fed deployment, check our deployments. To enable, locate and run the script **configureFipsMode.sh** contained in Collector's installation directory under **/script**:      
 
@@ -210,7 +210,7 @@ You can use the RPM or Debian package to install a Collector on a Linux
    sudo script/secureFiles.sh
    ```
 
-1. (Optional) Provide JSON Source information. You can pass all Source settings in a UTF-8 encoded JSON file. If you are using a JSON file, you must provide the file before starting the Collector. See [Using JSON to configure Sources](/docs/send-data/sources/use-json-configure-sources). Alternatively, you can configure sources at any time by using the Sumo web app. See [Sources](/docs/send-data/sources).
+1. (Optional) Provide JSON Source information. You can pass all Source settings in a UTF-8 encoded JSON file. If you're using a JSON file, you must provide the file before starting the Collector. See [Using JSON to configure Sources](/docs/send-data/sources/use-json-configure-sources). Alternatively, you can configure sources at any time by using the Sumo web app. See [Sources](/docs/send-data/sources).
 
 1. (Optional) Set the run as user for the Collector if you want the Collector to run as a user other than root. See [run as for a Collector](collector-installation-reference/set-run-as-user-for-collector.md).
 
