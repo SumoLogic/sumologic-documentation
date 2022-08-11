@@ -52,7 +52,7 @@ To create a new HTTP logs and metric source, do the following:
 You must have Admin privileges to perform any of the following installation procedures. This section walks you through the ways in which you can install the Jenkins plugin:
 
 * [Updating the Jenkins plugin](#Updating_the_Jenkins_plugin)—use this method if the Jenkins plugin is installed on your system and you want to update the version.
-* [Installing with sumologic publisher for the first time](#Installing_with_sumologic_publisher_for_the_first_time)—use this method if you are using the sumologic publisher for the first time.
+* [Installing with sumologic publisher for the first time](#Installing_with_sumologic_publisher_for_the_first_time)—use this method If you're using the sumologic publisher for the first time.
 * [Manually installing the Jenkins plugin](#Manually_installing_the_Jenkins_plugin)—use this method if there's a restriction on installing the plugin directly through the Jenkins plugin update center.
 
 

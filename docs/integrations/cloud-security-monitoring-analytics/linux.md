@@ -45,7 +45,7 @@ Choose one of these methods to install the Collector:
 
 You can build a Collector into a Linux machine image such as an Amazon AMI or VMware image.
 
-After installing Collectors, you can configure Sources by using the Web Application or by providing the Source settings in a JSON file. If you are using a UTF-8 encoded JSON file, you must provide the file before starting the collector. The JSON file needs to be UTF-8 encoded.
+After installing Collectors, you can configure Sources by using the Web Application or by providing the Source settings in a JSON file. If you're using a UTF-8 encoded JSON file, you must provide the file before starting the collector. The JSON file needs to be UTF-8 encoded.
 
 
 #### Install using the UI installer
@@ -130,7 +130,7 @@ Modifying user.properties may require sudo privileges. For more information see 
 
 1. (Optional) Provide a JSON Source information.  \
 
-You can pass all Source settings in a UTF-8 encoded JSON file. If you are using a JSON file, you must provide the file before starting the Collector. See Using JSON to configure Sources. \
+You can pass all Source settings in a UTF-8 encoded JSON file. If you're using a JSON file, you must provide the file before starting the Collector. See Using JSON to configure Sources. \
  \
 Alternatively, you can configure Sources at any time by using the Sumo web app. See Sources.
 1. (Optional) Set the run a user for the Collector if you want the Collector to run as a user other than root. See run as for a Collector.
@@ -190,7 +190,7 @@ wrapper.java.command = java
 sudo script/secureFiles.sh
 ```
 8. (Optional) Provide JSON Source information.
-You can pass all Source settings in a UTF-8 encoded JSON file. If you are using a JSON file, you must provide the file before starting the Collector. See Using JSON to configure Sources.
+You can pass all Source settings in a UTF-8 encoded JSON file. If you're using a JSON file, you must provide the file before starting the Collector. See Using JSON to configure Sources.
 Alternatively, you can configure sources at any time by using the Sumo web app. See Sources.
 9. (Optional) Set the run as user for the Collector if you want the Collector to run as a user other than root. See run as for a Collector.
 10. (Optional on Collector version 19.253-3+) Enable FIPS 140-2 compliant Java Cryptography Extension (JCE) to encrypt your data. Once enabled, the Collector version cannot be downgraded below version 19.253-3.

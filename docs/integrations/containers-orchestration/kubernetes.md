@@ -131,7 +131,7 @@ Sumo Logic has provided out of the box alerts available through Sumo Logic monit
 
 For details on the individual alerts, see [Kubernetes Alerts](/docs/observability/kubernetes-solution/alerts).
 
-### Method 1: Importing a JSON file
+### Method A: Importing a JSON file
 
 1. Download the [JSON file](https://raw.githubusercontent.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/main/monitor_packages/kubernetes/kubernetes.json) describing all the monitors.   
 
@@ -149,7 +149,7 @@ For details on the individual alerts, see [Kubernetes Alerts](/docs/observabilit
 The monitors are disabled by default. Once you have installed the alerts using this method, navigate to the Kubernetes folder under  Monitors  to configure them. See this document to enable monitors, to configure each monitor, to send notifications to teams or connections please see the instructions detailed in Step 4 of this /Visualizations-and-Alerts/Alerts/Monitors#Add_a_monitor document.
 :::
 
-### Method 2: Using a Terraform script
+### Method B: Using a Terraform script
 
 1. Generate a Sumo Logic access key and ID
 

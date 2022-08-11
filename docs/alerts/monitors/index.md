@@ -2,8 +2,10 @@
 slug: /alerts/monitors
 title: Monitors
 sidebar_label: Monitors
-description: Monitors continuously query your logs or metrics and send notifications when specific events occur. You can send notifications to Connections for three thresholds, critical, warning, and missing data. Each threshold can have one or more notifications sent for an alert and recover condition.
+description: Monitors continuously query your logs or metrics and send notifications when specific events occur, such as critical, warning, and missing data.
 ---
+
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Sumo Logic Monitors allow you to set robust and configurable alerting policies that enable you to get notified about critical changes or issues affecting your production application.
 
@@ -36,7 +38,7 @@ See details on how [Scheduled Searches are different](difference-scheduled-searc
 * A Log Monitor can have one query up to 4,000 characters long. Metric Monitors can specify up to six queries.
 * Email notifications can have up to 100 recipients.
 * [Dynamic Parsing](../../search/get-started-with-search/build-search/dynamic-parsing.md) (auto-parse mode) is not supported.
-* The timeshift [metrics operator](/docs/metrics/metric-queries-alerts/metrics-operators) (../../Metrics/Metric-Queries-and-Alerts/07Metrics_Operators.md "Metrics Operators") is not supported in a Metric Monitor.
+* The timeshift [metrics operator](/docs/metrics/metric-queries-alerts/metrics-operators) is not supported in a Metric Monitor.
 * [Hidden Metrics queries](../../metrics/metric-queries-alerts/metrics-explorer.md) do not persist across edit sessions.
 * The last millisecond of the defined time range is not searched. For example, a time range of 6:15 to 6.30 pm will run as 6:15:00:000 to 6:29:59:999.
 
@@ -65,7 +67,7 @@ Notifications are optional and available as an **alert** and **recovery** for ea
 ## Tools
 
 * [Monitor resource in Terraform](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/monitor) 
-* [Monitor management API] (../../APIs/Monitor_Management_API.md)
+* [Monitor management API](/sumoapi)
 
 ## Monitors page
 
@@ -225,7 +227,7 @@ You can set the trigger based on the following:
 
 **Recover**
 
-Use the **Infer recovery settings** option to set the recovery to the opposite of the alert setting. The **Alert** must be checked for the option to be available.  
+Use the **Edit Recovery Settings** option to set the recovery to the opposite of the alert setting. The **Alert** must be checked for the option to be available.  
 
 ![logs trigger recovery toggle.png](/img/monitors/logs-trigger-recovery-toggle.png)  
 
@@ -309,7 +311,7 @@ Recover
 
 **Recover**
 
-Use the **Infer recovery settings** option to set the recovery to the opposite of the alert setting. The **Alert** must be checked for the option to be available.   
+Use the **Edit Recovery Settings** option to set the recovery to the opposite of the alert setting. The **Alert** must be checked for the option to be available.   
 
 ![metrics trigger recovery toggle.png](/img/monitors/metrics-trigger-recovery-toggle.png)  
 

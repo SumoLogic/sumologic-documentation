@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-<img src={useBaseUrl('img/integrations/web-servers/apache.png')} alt="Web servers icon" width="100"/>
+<img src={useBaseUrl('img/integrations/web-servers/apache.png')} alt="Thumbnail icon" width="100"/>
 
 The Apache app is a unified logs and metrics app that helps you monitor the availability, performance, health and resource utilization of Apache web server farms. Preconfigured dashboards and searches provide visibility into your environment for real-time or historical analysis: visitor locations, visitor access types, traffic patterns, errors, web server operations, resource utilization and access from known malicious sources.
 
@@ -56,7 +56,7 @@ This section provides instructions for configuring log and metrics collection fo
 
 ### Step 1: Configure Fields in Sumo Logic
 
-Create the following Fields in Sumo Logic prior to configuring collection. This ensures that your logs and metrics are tagged with relevant metadata, which is required by the app dashboards. For information on setting up fields, see the [Fields](/docs/manage/fields.md) help page.
+Create the following Fields in Sumo Logic prior to configuring collection. This ensures that your logs and metrics are tagged with relevant metadata, which is required by the app dashboards. For information on setting up fields, see [Sumo Logic Fields](/docs/manage/fields.md).
 
 <Tabs
   groupId="k8s-nonk8s"
@@ -68,7 +68,7 @@ Create the following Fields in Sumo Logic prior to configuring collection. This 
 
 <TabItem value="k8s">
 
-If you are using Apache in a Kubernetes environment, create the fields:
+If you're using Apache in a Kubernetes environment, create the fields:
 * `pod_labels_component`
 * `pod_labels_environment`
 * `pod_labels_webserver_system`
@@ -77,7 +77,7 @@ If you are using Apache in a Kubernetes environment, create the fields:
 </TabItem>
 <TabItem value="non-k8s">
 
-If you are using Apache in a non-Kubernetes environment create the fields:
+If you're using Apache in a non-Kubernetes environment, create the fields:
 * `component`
 * `environment`
 * `webserver_system`
@@ -212,7 +212,7 @@ Here’s an explanation for additional values set by this configuration. **Do no
 * `component: “webserver”`: This value is used by Sumo Logic apps to identify application components.
 * `webserver_system: “apache”`: This value identifies the webserver system.
 
-For all other parameters, please see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#Configuring-Telegraf) for more properties that can be configured in the Telegraf agent globally.
+For all other parameters, please see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#Configuring-Telegraf) for more parameters that can be configured in the Telegraf agent globally.
 
 Make sure that the Apache pods are running and annotations are applied by using the command:
 ```xml
@@ -355,7 +355,7 @@ Here’s an explanation for additional values set by this Telegraf configuration
 * `component` = “webserver”: In the input plugins section i.e.: This value is used by Sumo Logic apps to identify application components.
 * `webserver_system` = “apache”: In the input plugins section i.e.:  This value identifies the webserver system.
 
-For all other parameters please see [this doc](https://github.com/influxdata/telegraf/blob/master/docs/CONFIGURATION.md) for more properties that can be configured in the Telegraf agent globally.
+For all other parameters, see [this doc](https://github.com/influxdata/telegraf/blob/master/docs/CONFIGURATION.md) for more parameters that can be configured in the Telegraf agent globally.
 
 Once you have finalized your telegraf.conf file, you can start or reload the telegraf service via the instructions described in their [documentation](https://docs.influxdata.com/telegraf/v1.17/introduction/getting-started/#start-telegraf-service).
 
@@ -406,7 +406,7 @@ For access logs, the following directive is to be noted
 2. Configure the Local File Source fields as follows:
 * **Name.** (Required)
 * **Description.** (Optional)
-* **File Path (Required).** Enter the path to your apache access logs. The files are typically located in /var/log/apache2/access_log. If you are using a customized path, check the httpd.conf file for this information.
+* **File Path (Required).** Enter the path to your apache access logs. The files are typically located in /var/log/apache2/access_log. If you're using a customized path, check the httpd.conf file for this information.
 * **Source Host.** Sumo Logic uses the hostname assigned by the OS unless you enter a different host name
 * **Source Category.** Enter any string to tag the output collected from this Source, such as **Prod/Apache/Access**. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details see[ Best Practices](/docs/send-data/design-deployment/best-practices-source-categories).)
 * **Fields. Set the following fields. For more information on fields please see [this document](/docs/manage/fields.md):**
@@ -436,7 +436,7 @@ The values of `webserver_farm` and `environment` should be the same as they were
 2. Configure the Local File Source fields as follows:
 * **Name.** (Required)
 * **Description.** (Optional)
-* **File Path (Required).** Enter the path to your error_log. The files are typically located in /var/log/apache2/error_log. If you are using a customized path, check the httpd.conf file for this information.
+* **File Path (Required).** Enter the path to your error_log. The files are typically located in /var/log/apache2/error_log. If you're using a customized path, check the httpd.conf file for this information.
 * **Source Host.** Sumo Logic uses the hostname assigned by the OS unless you enter a different host name
 * **Source Category.** Enter any string to tag the output collected from this Source, such as **Prod/Apache/Error**. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details see[ Best Practices](/docs/send-data/design-deployment/best-practices-source-categories).)
 * **Fields. Set the following fields. For more information on fields please see [this document](/docs/manage/fields.md):**
@@ -526,7 +526,7 @@ For details about individual alerts, see [this page](#Apache-Alerts). To install
 You can install monitors by importing a JSON file or using a Terraform script.
 
 
-#### Method 1: Importing a JSON file
+#### Method A: Importing a JSON file
 
 1. Download the [JSON file](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/blob/main/monitor_packages/apache/apache.json) that describes the monitors.
 2. In the json file, replace `$$apache_data_source` with a custom source filter like `webserver_farm=dev-apache` for setting up alerts for a specific web server farm. If you want to configure this for all your web server farms you can find and replace `$$apache_data_source` with blank `“”`.
@@ -537,7 +537,7 @@ You can install monitors by importing a JSON file or using a Terraform script.
 The monitors are disabled by default. Once you have installed the alerts using this method, navigate to the Apache folder under **Monitors** to configure them. See [this](/docs/alerts/monitors/index.md) document to enable monitors to send notifications to teams or connections. Please see the instructions detailed in Step 4 of this [document](/docs/alerts/monitors#Add_a_monitor).
 
 
-#### Method 2: Using a Terraform script
+#### Method B: Using a Terraform script
 
 **Step 1: Generate a Sumo Logic access key and ID**
 

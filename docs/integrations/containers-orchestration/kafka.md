@@ -28,7 +28,7 @@ Configuring log and metric collection for the Kafka App includes the following t
 
 ### Step 1: Configure Fields in Sumo Logic
 
-Create the following Fields in Sumo Logic prior to configuring collection. This ensures that your logs and metrics are tagged with relevant metadata, which is required by the app dashboards. For information on setting up fields, see the [Fields](/docs/manage/fields.md) help page.
+Create the following Fields in Sumo Logic prior to configuring collection. This ensures that your logs and metrics are tagged with relevant metadata, which is required by the app dashboards. For information on setting up fields, see [Sumo Logic Fields](/docs/manage/fields.md).
 
 <Tabs
   groupId="k8s-nonk8s"
@@ -40,7 +40,7 @@ Create the following Fields in Sumo Logic prior to configuring collection. This 
 
 <TabItem value="k8s">
 
-If you are using Kafka in a Kubernetes environment create the fields:
+If you're using Kafka in a Kubernetes environment, create the fields:
 * `pod_labels_component`
 * `pod_labels_environment`
 * `pod_labels_messaging_system`
@@ -49,7 +49,7 @@ If you are using Kafka in a Kubernetes environment create the fields:
 </TabItem>
 <TabItem value="non-k8s">
 
-If you are using Kafka in a non-Kubernetes environment create the fields:
+If you're using Kafka in a non-Kubernetes environment, create the fields:
 * `component`
 * `environment`
 * `messaging_system`
@@ -118,7 +118,7 @@ Here’s an explanation for additional values set by this configuration that we 
         * `component: “messaging”` - This value is used by Sumo Logic apps to identify application components.
         * `messaging_system: “kafka”` - This value identifies the database system.
 
-For more information on all other parameters please see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#Configuring-Telegraf) for more properties that can be configured in the Telegraf agent globally.
+For more information on all other parameters please see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#Configuring-Telegraf) for more parameters that can be configured in the Telegraf agent globally.
 
 For more information on configuring the Joloka input plugin for Telegraf please see [this doc.](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/jolokia2)
 
@@ -203,7 +203,7 @@ If your Kafka helm chart/pod is writing the logs to standard output then follow 
 * component: “messaging” - This value is used by Sumo Logic apps to identify application components.
 * messaging_system: “kafka” - This value identifies the messaging system.
 
-    For all other parameters please see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#Configuring-Telegraf) for more properties that can be configured in the Telegraf agent globally.
+    For all other parameters, see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#Configuring-Telegraf) for more parameters that can be configured in the Telegraf agent globally.
 
 
 The Sumologic-Kubernetes-Collection will automatically capture the logs from stdout and will send the logs to Sumologic. For more information on deploying Sumologic-Kubernetes-Collection, please see[ this page](/docs/integrations/containers-orchestration/Kubernetes#Collect_Logs_and_Metrics_for_the_Kubernetes_App).
@@ -361,7 +361,7 @@ Here’s an explanation for additional values set by this Telegraf configuration
 
 Here is an example [telegraf.conf](https://sumologic-app-data.s3.amazonaws.com/Kafka/telegraf.conf+) file.
 
-For all other parameters please see [this doc](https://github.com/influxdata/telegraf/blob/master/docs/CONFIGURATION.md) for more properties that can be configured in the Telegraf agent globally.
+For all other parameters, see [this doc](https://github.com/influxdata/telegraf/blob/master/docs/CONFIGURATION.md) for more parameters that can be configured in the Telegraf agent globally.
 
 
 1. Restart Telegraf
@@ -462,7 +462,7 @@ Sumo Logic has provided out-of-the-box alerts available through [Sumo Logic moni
 * Note: There are limits to how many alerts can be enabled - please see the [Alerts FAQ](/docs/alerts/monitors/monitor-faq.md) for details.
 
 
-### Method 1: Importing a JSON file:
+### Method A: Importing a JSON file:
 
 1. Download a[ JSON file](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/blob/main/monitor_packages/kubernetes/kubernetes.json) that describes the monitors.
     1. The [JSON](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/blob/main/monitor_packages/Kafka/Kafka_Alerts.json) contains the alerts that are based on Sumo Logic searches that do not have any scope filters and therefore will be applicable to all Kafka clusters, the data for which has been collected via the instructions in the previous sections.  However, if you would like to restrict these alerts to specific clusters or environments, update the JSON file by replacing the text `'messaging_system=kafka `with `'<Your Custom Filter>`.  
@@ -481,7 +481,7 @@ Sumo Logic has provided out-of-the-box alerts available through [Sumo Logic moni
 The monitors are disabled by default. Once you have installed the alerts using this method, navigate to the Kafka folder under Monitors to configure them. See [this](/docs/alerts/monitors/index.md) document to enable monitors., To send notifications to teams or connections please see the instructions detailed in Step 4 of this [document](/docs/alerts/monitors#Add_a_monitor).
 
 
-### Method 2: Using a Terraform script
+### Method B: Using a Terraform script
 
 **Step 1: Generate a Sumo Logic access key and ID**
 

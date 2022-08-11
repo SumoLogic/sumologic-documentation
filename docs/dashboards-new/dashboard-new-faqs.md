@@ -1,8 +1,8 @@
 ---
 id: dashboard-new-faqs
+title: Dashboard (New) FAQs
+sidebar_label: FAQ
 ---
-
-# Dashboard (New) FAQs
 
 ## How do I convert a Classic Dashboard to the new dashboard framework?
 

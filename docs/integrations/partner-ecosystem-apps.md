@@ -6,7 +6,7 @@ description: Partner Ecosystem Apps Documentation- Third-party Sumo Logic apps f
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/PartnerEcosystem.png')} alt="Web servers icon" width="100"/>
+<img src={useBaseUrl('img/integrations/PartnerEcosystem.png')} alt="Thumbnail icon" width="100"/>
 
 Sumo Logic Partner Ecosystem Apps are provided and supported by our partner network. The following links provide collection, installation, and dashboard information on working with these apps.
 * [Alcide kAudit](https://get.alcide.io/hubfs/Alcide%20kAudit%20Sumo%20Logic%20Application.pdf)

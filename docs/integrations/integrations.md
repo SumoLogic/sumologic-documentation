@@ -56,7 +56,7 @@ Sumo Logic supports a wide variety of data sources. To interact with other Sumo 
     </div>
     <div className="box box6 card">
       <div className="container">
-      <img src={useBaseUrl('img/integrations/web-servers/web-servers.png')} alt="Web servers icon" width="50"/>
+      <img src={useBaseUrl('img/integrations/web-servers/web-servers.png')} alt="Thumbnail icon" width="50"/>
       <h3><a href="/docs/integrations/web-servers/">Web Servers</a></h3>
       <p>A guide to Sumo Logic apps for web servers, such as Apache, Nginx, and Squid Proxy.</p>
       </div>

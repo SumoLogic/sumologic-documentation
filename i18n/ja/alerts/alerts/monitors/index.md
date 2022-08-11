@@ -225,7 +225,7 @@ You can set the trigger based on the following:
 
 **Recover**
 
-Use the **Infer recovery settings** option to set the recovery to the opposite of the alert setting. The **Alert** must be checked for the option to be available.  
+Use the **Edit Recovery Settings** option to set the recovery to the opposite of the alert setting. The **Alert** must be checked for the option to be available.  
 
 ![logs trigger recovery toggle.png](/img/monitors/logs-trigger-recovery-toggle.png)  
 
@@ -309,7 +309,7 @@ Recover
 
 **Recover**
 
-Use the **Infer recovery settings** option to set the recovery to the opposite of the alert setting. The **Alert** must be checked for the option to be available.   
+Use the **Edit Recovery Settings** option to set the recovery to the opposite of the alert setting. The **Alert** must be checked for the option to be available.   
 
 ![metrics trigger recovery toggle.png](/img/monitors/metrics-trigger-recovery-toggle.png)  
 

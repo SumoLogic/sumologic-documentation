@@ -148,7 +148,7 @@ When either of the following happens, using OpenTelemetry Agent and Collector is
 
 ![OpenTelemetry flow with Agents and Collector](/img/traces/scenario2.png)
 
-In the case of having an environment with a significant volume of spans or if you are using a client that sends data over UDP, such as Jaeger, we recommend deployment with OpenTelemetry Collector/Agent enabled. It is deployed as a DaemonSet and in effect, there is an instance of the agent running on each node.
+In the case of having an environment with a significant volume of spans or If you're using a client that sends data over UDP, such as Jaeger, we recommend deployment with OpenTelemetry Collector/Agent enabled. It is deployed as a DaemonSet and in effect, there is an instance of the agent running on each node.
 
 :::note Replacing existing agents
 When Jaeger or any other existing agent is being used, it typically is used to receive traffic data via UDP from tracing clients. We recommend replacing these agents with the Sumo Logic version of OpenTelemetry collector in agent mode to accurately assign source IP address, which is used for identifying the source pod when doing metadata tagging. This will ensure that Kubernetes metadata tagging works well for tracing in addition to metrics and logs data.
