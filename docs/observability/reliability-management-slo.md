@@ -145,7 +145,7 @@ The heart of an SLO is the queries used for the SLI query types, including metri
 
 **General Information**
 
-For general information on querying metrics and logs, see [Overview of Metrics in Sumo](/docs/metrics/introduction-metrics/overview-sumo-metrics.md) and [About Search Basics](/docs/search/get-started-with-search/search-basics/about-search-basics.md).
+For general information on querying metrics and logs, see [Overview of Metrics in Sumo](/docs/metrics/introduction-metrics/overview-sumo-metrics) and [About Search Basics](/docs/search/get-started-with-search/search-basics/about-search-basics).
 
 A preview runs the query in real-time to help test and refine results, with a time range to see broader results as needed.
 
