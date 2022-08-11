@@ -40,7 +40,7 @@ Select a format:
 
 1. Optional. Select the available values.
     1. For text entries, enter each value on a separate line. Do not use commas to separate values as they will be marked invalid. If the string needs a comma, use quotes in the text entry, such as “abc,xyz”.
-    1. For Label-Value pairs, copy paste the label-value pairs as comma-delimited lines. If you are using a Lookup make sure that you are using a valid [lookup (classic)](../../search-query-language/search-operators/lookup-classic.md) file because the system will reject any lookup file path that it can't validate.  
+    1. For Label-Value pairs, copy paste the label-value pairs as comma-delimited lines. If you're using a Lookup make sure that you are using a valid [lookup (classic)](../../search-query-language/search-operators/lookup-classic.md) file because the system will reject any lookup file path that it can't validate.  
 
         ![label-value-pairs.png](/img/search/get-started-search/build-search/search-templates/label-value-pairs.png)
 

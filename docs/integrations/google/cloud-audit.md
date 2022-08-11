@@ -239,7 +239,7 @@ In this step you export logs to the Pub/Sub topic you created in the previous st
 
 This section provides instructions for installing the Google Cloud Audit App, as well as examples of each of the App dashboards.
 
-Now that you have set up collection for Google Cloud Audit, install the Sumo Logic App to use the pre-configured searches and [dashboards](#Dashboards) that provide visibility into your environment for real-time analysis of overall usage.
+Now that you have set up collection for Google Cloud Audit, install the Sumo Logic App to use the pre-configured searches and [dashboards](#viewing-dashboards) that provide visibility into your environment for real-time analysis of overall usage.
 
 To install the app:
 
@@ -266,7 +266,7 @@ Panels will start to fill automatically. It's important to note that each panel 
 ## Viewing Google Cloud Audit Dashboards
 
 
-The Google Cloud Audit App pre-configured searches and [dashboards](#Dashboards) provide visibility into your environment for real-time analysis of overall usage.
+The Google Cloud Audit App pre-configured searches and [dashboards](#viewing-dashboards) provide visibility into your environment for real-time analysis of overall usage.
 
 
 ### Overview

@@ -249,8 +249,8 @@ module.exports = {
                 label: 'Metrics and Logs',
                 items: [
                   {
-                    label: 'Dashboards & Visuals',
-                    sublabel: 'Configure visuals & alerts',
+                    label: 'Dashboards & Alerts',
+                    sublabel: 'Visuals, alerts, & dashboards',
                     to: '/docs/dashboards-new',
                     icon: 'dashboard',
                     activeBaseRegex: '^/docs/(dashboards|dashboards-new|alerts)',
@@ -263,7 +263,7 @@ module.exports = {
                     activeBaseRegex: '^/docs/search/.*',
                   },
                   {
-                    label: 'Metrics and Logs',
+                    label: 'Metrics',
                     sublabel: 'Find data with queries',
                     to: '/docs/metrics',
                     icon: 'timeline',
@@ -303,7 +303,7 @@ module.exports = {
                     activeBaseRegex: '^/docs/observability/about-observability-solution',
                   },
                   {
-                    label: 'Kubernetes',
+                    label: 'Kubernetes Observability',
                     sublabel: 'Deploy & collect Kubernetes',
                     to: '/docs/observability/kubernetes-solution',
                     icon: 'settings_suggest',

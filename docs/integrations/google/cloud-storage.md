@@ -177,7 +177,7 @@ _sourceCategory=*gcp* data logName resource "\"type\":\"gcs_bucket\""
 
 
 ## Installing the Google Cloud Storage App
-Now that you have set up collection for Google Cloud Storage, install the Sumo Logic App to use the pre-configured searches and [dashboards](#Dashboards) that provide visibility into your environment for real-time analysis of overall usage.
+Now that you have set up collection for Google Cloud Storage, install the Sumo Logic App to use the pre-configured searches and [dashboards](#viewing-dashboards) that provide visibility into your environment for real-time analysis of overall usage.
 
 To install the app:
 

@@ -28,7 +28,7 @@ To collect logs from the Okta platform, choose your deployment method:
 
 Use the [new Cloud to Cloud Integration for Okta](/docs/send-data/sources/sources-hosted-collectors/cloud-to-cloud-integration-framework/okta-source.md) to create the source and use the same source category while installing the app.
 
-The sections below are available for FedRamp Sumo Logic deployments to meet FedRamp's specific compliance requirements. If you are using the Sumo Logic FedRamp deployment, you must use the sections below to configure collection for this app.
+The sections below are available for FedRamp Sumo Logic deployments to meet FedRamp's specific compliance requirements. If you're using the Sumo Logic FedRamp deployment, you must use the sections below to configure collection for this app.
 
 
 ### Requirements and process overview (FedRamp Only)
@@ -181,7 +181,7 @@ $JAVA_HOME/java -jar ${SUMOJANUS_JAR_FILE} ${runMode} OktaCollector-1.0.2.jar -e
 #### Step 6: Configure a Source (FedRamp Only)
 For guidance creating your Source Category naming convention, see [Best Practices: Good Source Category, Bad Source Category](/docs/send-data/design-deployment/best-practices-source-categories).
 
-**To configure a Script Source, do the following:**
+To configure a Script Source, do the following:
 
 1. Configure a [Script Source](/docs/send-data/Sources/sources-installed-collectors/Script-Source). Collectors using version 19.245-4 and later do not allow Script Sources to run by default. \
 
@@ -373,7 +373,7 @@ _sourceCategory = "okta" "user.mfa.factor.deactivate"
 
 ## Installing the Okta App
 
-Now that you have set up collection for Okta, install the Sumo Logic App for Okta to use the preconfigured searches and [Dashboards](#Dashboards) that provide insight into your data.
+Now that you have set up collection for Okta, install the Sumo Logic App for Okta to use the preconfigured searches and [dashboards](#viewing-dashboards) that provide insight into your data.
 
 To install the app:
 

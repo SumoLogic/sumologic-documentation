@@ -126,7 +126,7 @@ All the dashboards are linked to the Explore tab and can be easily accessed by c
 
 When you install the FluentD plugin and Prometheus, you supply custom data filters that match the source categories that the FluentD plugin generated for your Kubernetes logs and metrics. The plugin generates the source categories dynamically, and they can vary by environment.
 
-**To determine custom data filters for source categories, do the following:**
+**To determine custom data filters for source categories, do the following:
 
 1. Run a query similar to the following in Sumo Logic to determine the source categories the plugin created. Use the hosted Collector Name > you configured for Kubernetes.
     ```sql

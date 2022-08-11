@@ -51,7 +51,7 @@ The following is how the solution fits together:
 
 In this task, you configure an HTTP source to receive logs from the Azure function.
 
-**To configure an HTTP source for Azure, do the following:**
+To configure an HTTP source for Azure, do the following:
 
 
 
@@ -106,7 +106,7 @@ If you also want to also collect metrics follow the instructions in [Step 2 for 
 
 In this task, you enable logs for your Azure Web app. For related information see [Enable diagnostics logging for web apps in Azure App Service](https://docs.microsoft.com/en-us/azure/app-service/troubleshoot-diagnostic-logs#send-logs-to-azure-monitor-preview) in the Azure help documentation.
 
-**To enable logs for an Azure web app, do the following:**
+**To enable logs for an Azure web app, do the following:
 
 1. Login to [https://portal.azure.com/](https://portal.azure.com/).
 2. Go to your Azure Web App and in the left pane, go to **Monitoring >** **Diagnostics Settings.**
@@ -173,7 +173,7 @@ _sourceCategory=Azure/Web-app
 
 ## Installing the Azure Web Apps App
 
-This section provides instructions on how to install the Azure Web Apps App, and shows examples of each of the preconfigured [dashboards](#Dashboards) you can use to analyze your data.
+This section provides instructions on how to install the Azure Web Apps App, and shows examples of each of the preconfigured [dashboards](#viewing-dashboards) you can use to analyze your data.
 
 To install the app:
 

@@ -169,7 +169,7 @@ This section provides instructions for installing the Windows Performance App, a
 
 ## Installing the Windows Performance App
 
-Now that you have set up collection, install the Windows Performance App to use the preconfigured searches and [Dashboards](#Dashboards) that provide insight into your data.
+Now that you have set up collection, install the Windows Performance App to use the preconfigured searches and [dashboards](#viewing-dashboards) that provide insight into your data.
 
 To install the app:
 

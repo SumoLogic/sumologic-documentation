@@ -1,12 +1,9 @@
 ---
 id: set-custom-time-ranges
+title: Set Customized Time Ranges
 ---
 
-
-# Set customized time ranges
-
-A new dashboard has a preset default time range for its panels and the dashboard as a whole. You can choose to customize the time range for individual panels, as well as setting a new time range for the
-dashboard. it is important that you review the time range override guidelines to ensure you achieve your expected results.
+A new dashboard has a preset default time range for its panels and the dashboard as a whole. You can choose to customize the time range for individual panels, as well as setting a new time range for the dashboard. It's important that you review the time range override guidelines to ensure you achieve your expected results.
 
 ## Time range override guidelines
 

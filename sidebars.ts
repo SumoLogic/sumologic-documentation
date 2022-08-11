@@ -430,6 +430,7 @@ module.exports = {
         'dashboards-new/drill-down-to-discover-root-causes',
         'dashboards-new/export-dashboard-new',
         'dashboards-new/filter-template-variables',
+         'dashboards-new/explore',
         'dashboards-new/link-dashboard-to-explore',
         'dashboards-new/link-dashboard-new',
         'dashboards-new/locate-deviations-time-series',
@@ -2293,11 +2294,13 @@ module.exports = {
           type: 'category',
           label: 'Archive',
           collapsible: true,
-          collapsed: false,
+          collapsed: true,
           link: {type: 'doc', id: 'releasenotes/archive/index'},
           items: [
+            'releasenotes/archive/cloud-siem',
             'releasenotes/archive/collector',
             'releasenotes/archive/developer',
+            'releasenotes/archive/service',
           ]
         }
       ],

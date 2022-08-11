@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-<img src={useBaseUrl('img/integrations/web-servers/nginx-plus.png')} alt="Web servers icon" width="75"/>
+<img src={useBaseUrl('img/integrations/web-servers/nginx-plus.png')} alt="Thumbnail icon" width="75"/>
 
 The Sumo Logic App for Nginx Plus supports logs as well as Metrics for Nginx Plus, which is a web server that can be used as a reverse proxy, load balancer, mail proxy, and HTTP cache.
 
@@ -231,7 +231,7 @@ Before you can configure Sumo Logic to ingest logs, you must configure the loggi
 Use one of the following Sumo Logic Collector options:
 
 1. To collect logs directly from the Nginx Plus machine, configure an[ Installed Collector](/docs/send-data/Installed-Collectors).
-2. If you are using a service like Fluentd, or you would like to upload your logs manually, [Create a Hosted Collector](/docs/send-data/Hosted-Collectors#Create_a_Hosted_Collector).
+2. If you're using a service like Fluentd, or you would like to upload your logs manually, [Create a Hosted Collector](/docs/send-data/Hosted-Collectors#Create_a_Hosted_Collector).
 
 3. Configure a Source
 
@@ -244,7 +244,7 @@ To collect logs directly from your Nginx Plus machine, use an Installed Collecto
 2. Configure the Local File Source fields as follows:
     * **Name.** (Required)
     * **Description.** (Optional)
-    * **File Path (Required).** Enter the path to your error.log or access.log. The files are typically located in /var/log/nginx/*.log. If you are using a customized path, check the nginx.conf file for this information. If you are using Passenger, you may have instructed Passenger to log to a specific log using the passenger_log_file option.
+    * **File Path (Required).** Enter the path to your error.log or access.log. The files are typically located in /var/log/nginx/*.log. If you're using a customized path, check the nginx.conf file for this information. If you're using Passenger, you may have instructed Passenger to log to a specific log using the passenger_log_file option.
     * **Source Host.** Sumo Logic uses the hostname assigned by the OS unless you enter a different hostname.
     * **Source Category.** Enter any string to tag the output collected from this Source, such as **Nginx/Access** or **Nginx/Error**. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details see[ Best Practices](/docs/send-data/design-deployment/best-practices-source-categories).)
 3. Configure the **Advanced** section:
@@ -259,7 +259,7 @@ To collect logs directly from your Nginx Plus machine, use an Installed Collecto
 
 **For a Hosted Collector**
 
-If you are using a service like Fluentd, or you would like to upload your logs manually, use a Hosted Collector and an HTTP Source.
+If you're using a service like Fluentd, or you would like to upload your logs manually, use a Hosted Collector and an HTTP Source.
 
 1. Add an[ HTTP Source](/docs/send-data/sources/sources-hosted-collectors/http-logs-metrics-source).
 2. Configure the HTTP Source fields as follows:
@@ -327,7 +327,7 @@ Create a file called telegraf.conf and add the appropriate configuration. The fo
   data_format = "prometheus"
 ```
 
-* `interval` - This is the frequency to send data to Sumo Logic, in this example, we will send the metrics every 60 seconds. Please refer to[ this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#Configuring-Telegraf) for more properties that can be configured in the Telegraf agent globally.
+* `interval` - This is the frequency to send data to Sumo Logic, in this example, we will send the metrics every 60 seconds. Please refer to[ this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#Configuring-Telegraf) for more parameters that can be configured in the Telegraf agent globally.
 * `urls` - The url to the Nginx Plus server with the API enabled. This can be a comma-separated list to connect to multiple Nginx Plus servers. Please refer[ to this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/nginx_plus_api) for more information on configuring the Nginx API input plugin for Telegraf.
 * `url` - This is the HTTP source URL created in step 3. Please refer[ to this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/configure-telegraf-output-plugin.md) for more information on configuring the Sumo Logic Telegraf output plugin.
 * `data_format` - The format to use when sending data to Sumo Logic. Please refer[ to this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/configure-telegraf-output-plugin.md) for more information on configuring the Sumo Logic Telegraf output plugin.
@@ -347,7 +347,7 @@ To install these alerts, you need to have the [Manage Monitors](/docs/manage/use
 Alerts can be installed by either importing them via a JSON or via a Terraform script.
 
 
-### Method 1: Importing a JSON file
+### Method A: Importing a JSON file
 
 1. Download the [JSON file](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/blob/main/monitor_packages/nginx-plus/nginxplus.json) describing all the monitors.
 2. Replace **$$logs_data_source** and** $$metric_data_source** with logs and metrics data sources respectively.
@@ -360,7 +360,7 @@ Alerts can be installed by either importing them via a JSON or via a Terraform s
 Note: The monitors are disabled by default. Once you have installed the alerts via this method, navigate to the **Nginx Plus** folder under **Monitors** to configure them. Refer [document](/docs/alerts/monitors#Add_a_monitor) to enable monitors, to configure each monitor, to send notifications to teams or connections.
 
 
-### Method 2: Using a Terraform script
+### Method B: Using a Terraform script
 
 **Step 1: Generate a Sumo Logic access key and ID**
 

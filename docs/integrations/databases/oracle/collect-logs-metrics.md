@@ -13,7 +13,7 @@ This section provides instructions for configuring log and metric collection for
 
 ## Step 1: Configure Fields in Sumo Logic
 
-Create the following Fields in Sumo Logic prior to configuring the collection. This ensures that your logs and metrics are tagged with relevant metadata, which is required by the app dashboards. For information on setting up fields, see the [Fields](/docs/manage/fields.md) help page.
+Create the following Fields in Sumo Logic prior to configuring the collection. This ensures that your logs and metrics are tagged with relevant metadata, which is required by the app dashboards. For information on setting up fields, see [Sumo Logic Fields](/docs/manage/fields.md).
 
 <Tabs
   groupId="k8s-nonk8s"
@@ -25,7 +25,7 @@ Create the following Fields in Sumo Logic prior to configuring the collection. T
 
 <TabItem value="k8s">
 
-If you are using Oracle in a Kubernetes environment create the fields:
+If you're using Oracle in a Kubernetes environment, create the fields:
 
 * `pod_labels_component`
 * `pod_labels_environment`
@@ -35,7 +35,7 @@ If you are using Oracle in a Kubernetes environment create the fields:
 </TabItem>
 <TabItem value="non-k8s">
 
-If you are using Oracle in a  non-Kubernetes environment create the fields:
+If you're using Oracle in a  non-Kubernetes environment, create the fields:
 
 * `component`
 * `environment`
@@ -82,7 +82,7 @@ Follow the below instructions to set up the metric collection:
 
 **Prerequisites**
 
-It’s assumed that you are using the latest helm chart version if not upgrade using the instructions [here](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/release-v2.0/deploy/docs/v2_migration_doc.md#how-to-upgrade).
+It’s assumed that you are using the latest helm chart version. If not, upgrade using the instructions [here](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/release-v2.0/deploy/docs/v2_migration_doc.md#how-to-upgrade).
 
 
 #### Configure Metrics Collection
@@ -161,7 +161,7 @@ Enter in values for the following parameters (marked `CHANGEME` in the snippet a
         * `component: “database”` - This value is used by Sumo Logic apps to identify application components.
         * **db_system**: “oracle” - This value identifies the database system.
 
-    For all other parameters please see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#Configuring-Telegraf) for more properties that can be configured in the Telegraf agent globally.
+    For all other parameters, see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#Configuring-Telegraf) for more parameters that can be configured in the Telegraf agent globally.
 
 * Sumo Logic Kubernetes collection will automatically start collecting metrics from the pods having the labels and annotations defined in the previous step.
 * Verify metrics in Sumo Logic.
@@ -194,7 +194,7 @@ Please enter in values for the following parameters (marked in **bold and CHANGE
 * `component: “database”` - This value is used by Sumo Logic apps to identify application components.
 * **db_system**: “oracle” - This value identifies the database system.
 
-    For all other parameters please see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#Configuring-Telegraf) for more properties that can be configured in the Telegraf agent globally.
+    For all other parameters, see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#Configuring-Telegraf) for more parameters that can be configured in the Telegraf agent globally.
 
 1. The Sumologic-Kubernetes-Collection will automatically capture the logs from stdout and will send the logs to Sumologic. For more information on deploying Sumologic-Kubernetes-Collection,[ visit](/docs/integrations/containers-orchestration/Kubernetes#Collect_Logs_and_Metrics_for_the_Kubernetes_App) here.
 2. Verify logs in Sumo Logic.

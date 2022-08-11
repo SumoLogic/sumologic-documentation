@@ -25,7 +25,7 @@ For more information on Netskope, refer to the Netskope [documentation](https://
 
 To collect logs from the Netskope platform, if you are not using the Sumo Logic FedRamp deployment, use the [new Cloud to Cloud Integration for Netskope](/docs/send-data/Sources/sources-hosted-collectors/Cloud-to-Cloud-Integration-Framework/Netskope-Source) to create the source and use the same source category while installing the app.
 
-The sections below are deprecated for non-FedRamp Sumo Logic deployments. If you are using the Sumo Logic FedRamp deployment, use the sections below to configure the collection for this app.
+The sections below are deprecated for non-FedRamp Sumo Logic deployments. If you're using the Sumo Logic FedRamp deployment, use the sections below to configure the collection for this app.
 
 
 ### Collection Overview (DEPRECATED)
@@ -51,7 +51,7 @@ Before creating the HTTP source, identify the Sumo Logic Hosted Collector you wa
 
 When you configure the HTTP Source, make sure to save the HTTP Source Address URL. You will need this to configure in configuration file.
 
-**To add a hosted collector and HTTP source, do the following:**
+**To add a hosted collector and HTTP source, do the following:
 
 1. To create a new Sumo Logic Hosted Collector, perform the steps in [Configure a Hosted Collector](/docs/send-data/configure-hosted-collector).
 2. Add an [ HTTP Logs and Metrics Source](/docs/send-data/sources/sources-hosted-collectors/http-logs-metrics-source).
@@ -67,7 +67,7 @@ When you configure the HTTP Source, make sure to save the HTTP Source Address UR
 
 Netskope REST APIs use an auth token to make authorized calls to the API. This section demonstrates how to obtain a token from the Netskope user interface (UI).
 
-**To obtain a Netskope auth token, do the following:**
+**To obtain a Netskope auth token, do the following:
 
 1. Login to Netskope as the Tenant Admin.
 2. Go to the API portion of the Netskope, **Settings > Tools > Rest API**.
@@ -81,7 +81,7 @@ This section provides walkthrough instructions that demonstrate how to configure
 
 The sumologic netskope collector is compatible with Python 3.7 and Python 2.7. It has been tested on Ubuntu 18.04 LTS and Debian 4.9.130.
 
-**To create a Sumo Logic Netskope collector, do the following:**
+To create a Sumo Logic Netskope collector, do the following:
 
 
 

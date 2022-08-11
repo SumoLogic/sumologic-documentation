@@ -55,7 +55,7 @@ Configuring log and metric collection for the ActiveMQ App includes the followin
 
 ### Step 1: Configure Fields in Sumo Logic
 
-Create the following Fields in Sumo Logic prior to configuring collection. This ensures that your logs and metrics are tagged with relevant metadata, which is required by the app dashboards. For information on setting up fields, see the [Fields](/docs/manage/fields.md) help page.
+Create the following Fields in Sumo Logic prior to configuring collection. This ensures that your logs and metrics are tagged with relevant metadata, which is required by the app dashboards. For information on setting up fields, see [Sumo Logic Fields](/docs/manage/fields.md).
 
 <Tabs
   groupId="k8s-nonk8s"
@@ -67,7 +67,7 @@ Create the following Fields in Sumo Logic prior to configuring collection. This 
 
 <TabItem value="k8s">
 
-If you are using ActiveMQ in a Kubernetes environment create the fields:
+If you're using ActiveMQ in a Kubernetes environment, create the fields:
 * `pod_labels_component`
 * `pod_labels_environment`
 * `pod_labels_messaging_system`
@@ -76,7 +76,7 @@ If you are using ActiveMQ in a Kubernetes environment create the fields:
 </TabItem>
 <TabItem value="non-k8s">
 
-If you are using ActiveMQ in a non-Kubernetes environment create the fields:
+If you're using ActiveMQ in a non-Kubernetes environment, create the fields:
 * `component`
 * `environment`
 * `messaging_system`
@@ -121,7 +121,7 @@ Configure Metrics Collection
 
 #### Prerequisites
 
-It’s assumed that you are using the latest helm chart version if not upgrade using the instructions [here](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/release-v2.0/deploy/docs/v2_migration_doc.md#how-to-upgrade).
+It’s assumed that you are using the latest helm chart version. If not, upgrade using the instructions [here](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/release-v2.0/deploy/docs/v2_migration_doc.md#how-to-upgrade).
 
 
 #### Step 1 Configure Metrics Collection
@@ -246,7 +246,7 @@ Please enter values for the following parameters (marked `CHANGE_ME` above):
         * component: “messaging” - This value is used by Sumo Logic apps to identify application components.
         * messaging_system: “activemq” - This value identifies the messaging system.
 
-    For all other parameters, please see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#Configuring-Telegraf) for more properties that can be configured in the Telegraf agent globally.
+    For all other parameters, please see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#Configuring-Telegraf) for more parameters that can be configured in the Telegraf agent globally.
 
 1. SumoLogic Kubernetes collection will automatically start collecting metrics from the pods having the labels and annotations defined in the previous step.
 2. Verify metrics in Sumo Logic.
@@ -285,7 +285,7 @@ Here’s an explanation for additional values set by this configuration that we 
 * `component: “messaging”`. This value is used by Sumo Logic apps to identify application components.
 * `messaging_system: “activemq”`. This value identifies the messaging system.
 
-For all other parameters, see[ this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#Configuring-Telegraf) for more properties that can be configured in the Telegraf agent globally.
+For all other parameters, see[ this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#Configuring-Telegraf) for more parameters that can be configured in the Telegraf agent globally.
 
 The Sumologic-Kubernetes-Collection will automatically capture the logs from stdout and will send the logs to Sumologic. For more information on deploying Sumologic-Kubernetes-Collection, please see[ this page](/docs/integrations/containers-orchestration/Kubernetes#Collect_Logs_and_Metrics_for_the_Kubernetes_App).
 
@@ -476,7 +476,7 @@ Please enter values for the following parameters (marked in `CHANGE_ME` above):
 * `data_format - "prometheus"` In the output plugins section, which is `[[outputs.sumologic]]`. Metrics are sent in the Prometheus format to Sumo Logic.
 * `component: “messaging”` - In the input plugins section, which is `[[inputs.jolokia2_agent]]`. This value is used by Sumo Logic apps to identify application components.
 * `messaging_system: "activemq"` - In the input plugins sections.In other words, this value identifies the messaging system
-*  For all other parameters please see [this doc](https://github.com/influxdata/telegraf/blob/master/etc/telegraf.conf) for more properties that can be configured in the Telegraf agent globally.
+*  For all other parameters, see [this doc](https://github.com/influxdata/telegraf/blob/master/etc/telegraf.conf) for more parameters that can be configured in the Telegraf agent globally.
 
 Once you have finalized your telegraf.conf file, you can start or reload the telegraf service using instructions from the [doc](https://docs.influxdata.com/telegraf/v1.17/introduction/getting-started/#start-telegraf-service).
 
@@ -533,7 +533,7 @@ To collect logs directly from your ActiveMQ machine, use an Installed Collector 
 2. Configure the Local File Source fields as follows:
 * **Name.** (Required)
 * **Description.** (Optional)
-* **File Path (Required).** Enter the path to your activemq.log. The files are typically located in `<Folder ActiveMQ Installed>/data/activemq.log`. If you are using a customized path, check the log4j.properties file for this information.
+* **File Path (Required).** Enter the path to your activemq.log. The files are typically located in `<Folder ActiveMQ Installed>/data/activemq.log`. If you're using a customized path, check the log4j.properties file for this information.
 * **Source Host.** Sumo Logic uses the hostname assigned by the OS unless you enter a different host name
 * **Source Category.** Enter any string to tag the output collected from this Source, such as **ActiveMQ/Logs**. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details see[ Best Practices](/docs/send-data/design-deployment/best-practices-source-categories).)
 * **Fields. Set the following fields:**
@@ -1005,7 +1005,7 @@ Use this dashboard to:
 
 The ActiveMQ - Resource Utilization dashboard provides an at-a-glance view of the state of system loads in clusters: CPU usage, memory usage, Swap usage,  file descriptor usage, garbage collection rate, heap, and non-heap usage.
 
-**Use this dashboard to:
+Use this dashboard to:
 * Analyze memory, CPU, disk, swap, file descriptor utilization of nodes in clusters.
 * Gain insights into the garbage collection rate for your ActiveMQ nodes.
 * Gain insights into a heap, non-heap usage for your ActiveMQ nodes.
@@ -1017,7 +1017,7 @@ The ActiveMQ - Resource Utilization dashboard provides an at-a-glance view of th
 
 This dashboard helps you quickly analyze your ActiveMQ error logs across all clusters.
 
-**Use this dashboard to:
+Use this dashboard to:
 * Identify critical events in your ActiveMQ cluster.
 * Examine trends to detect spikes in Error or Fatal events
 * Monitor Broker added/started and shutdown events in your cluster.

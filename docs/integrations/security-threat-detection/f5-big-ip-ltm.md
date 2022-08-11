@@ -19,6 +19,45 @@ The Sumo Logic App for F5 - BIG-IP Local Traffic Manager (LTM) helps you optimiz
 The F5 - BIG-IP Local Traffic Manager (LTM) App uses event logs with payloads, as described in this [document.](https://clouddocs.f5.com/products/extensions/f5-telemetry-streaming/latest/output-example.html#ltm-request-log)
 
 
+### Sample Log
+
+```json title="LTM Request Log"
+{
+    "event_source":"request_logging",
+    "event_timestamp":"2019-01-01:01:01.000Z",
+    "hostname":"hostname",
+    "client_ip":"192.0.2.42",
+    "server_ip":"",
+    "http_method":"GET",
+    "http_uri":"/",
+    "virtual_name":"/Common/app.app/app_vs",
+    "tenant":"Common",
+    "application":"app.app",
+    "telemetryEventCategory": "LTM"
+}
+```
+
+### Sample Query
+
+The following query sample is from the **F5 - BIG-IP LTM - Overview** Dashboard, **Pool Status** panel.
+
+```
+_sourceCategory=f5/bigip/ltm  systemInfo
+| json field=_raw "telemetryEventCategory"  as telemetryEventCategory
+| json field=_raw "virtualServers"
+| parse regex field=virtualServers "name\"\:\"(?<virtualServer_name>[\S]+?)\"" multi
+| parse regex field=virtualServers "enabledState\"\:\"(?<enabledState>[\S]+?)\"" multi
+| parse regex field=virtualServers "application\"\:\"(?<application>[\S]+?)\"" multi
+| parse regex field=virtualServers "availabilityState\"\:\"(?<availabilityState>[\S]+?)\"" multi
+| parse regex field=virtualServers "tenant\"\:\"(?<tenant>[\S]+?)\"" multi
+| parse regex field=virtualServers "pool\"\:\"(?<pool>[\S]+?)\"" multi
+| parse regex field=virtualServers "destination\"\:\"(?<destination>[\S]+?)\"" multi
+| parse regex field=virtualServers "clientside.curConns\"\:(?<current_connections>[\S]+?)\," multi
+| parse regex field=virtualServers "clientside.bitsOut\"\:(?<client_bits_out>[\S]+?)\," multi
+| count by virtualServer_name, pool, application, enabledState, availabilityState
+```
+
+
 ## Collecting Logs for the F5 - BIG-IP LTM App
 
 This section provides instructions for collecting logs for the F5 - BIG-IP LTM App, as well as a sample log message and query sample.
@@ -26,7 +65,7 @@ This section provides instructions for collecting logs for the F5 - BIG-IP LTM A
 
 ### Collection overview
 
-The following image provides a high-level view of the F5 - BIG-IP LTM collection process using the [Telemetry Streaming](https://clouddocs.f5.com/products/extensions/f5-telemetry-streaming/latest/).
+The following image provides a high-level view of the F5 - BIG-IP LTM collection process using the [Telemetry Streaming](https://clouddocs.f5.com/products/extensions/f5-telemetry-streaming/latest/).<br/><img src={useBaseUrl('img/integrations/security-threat-detection/Telemetry-Services.png')} alt="Telemetry-Services" />
 
 Telemetry Streaming (TS) is a software RPM file. Installing it on BIG-IP enables you to declaratively aggregate, normalize, and forward statistics and events from the BIG-IP to a consumer application by posting a single TS JSON declaration to TS’s declarative REST API endpoint.
 
@@ -45,7 +84,6 @@ The [Application Services 3 (AS3)](https://clouddocs.f5.com/products/extensions/
 2. Install Telemetry Streaming RPM (download from [here](https://github.com/F5Networks/f5-telemetry-streaming/releases)).
   * Login to F5 (user admin, password from the above output), navigate to the Main tab, **iApps > Package Management LX > Import.**
   * Select the downloaded file and click **Upload **to upload Telemetry Streaming RPM. For more information on installing TS RPM, see [here](https://clouddocs.f5.com/products/extensions/f5-telemetry-streaming/latest/installation.html).
-
 
 3. Enable AVR. To enable the AVR, follow the steps below:
    * Go to **System > Resource Provisioning.**
@@ -92,49 +130,8 @@ Now, Using telemetry we will define a [Sumo Logic sink ](https://clouddocs.f5.co
 curl -k --user admin:<BIGIP PWD> -H "Accept: application/json" -H "Content-Type:application/json" -X POST -d@sumo.json https://<BIG-IP IP>:<PORT>3/mgmt/shared/telemetry/declare | python -m json.tool
 ```
 
-### Sample LTM Request Log
 
-```json
-{
-    "event_source":"request_logging",
-    "event_timestamp":"2019-01-01:01:01.000Z",
-    "hostname":"hostname",
-    "client_ip":"192.0.2.42",
-    "server_ip":"",
-    "http_method":"GET",
-    "http_uri":"/",
-    "virtual_name":"/Common/app.app/app_vs",
-    "tenant":"Common",
-    "application":"app.app",
-    "telemetryEventCategory": "LTM"
-}
-```
-
-
-
-### Sample Query
-
-The following query sample is from the **F5 - BIG-IP LTM - Overview** Dashboard, **Pool Status** panel.
-
-```
-_sourceCategory=f5/bigip/ltm  systemInfo
-| json field=_raw "telemetryEventCategory"  as telemetryEventCategory
-| json field=_raw "virtualServers"
-| parse regex field=virtualServers "name\"\:\"(?<virtualServer_name>[\S]+?)\"" multi
-| parse regex field=virtualServers "enabledState\"\:\"(?<enabledState>[\S]+?)\"" multi
-| parse regex field=virtualServers "application\"\:\"(?<application>[\S]+?)\"" multi
-| parse regex field=virtualServers "availabilityState\"\:\"(?<availabilityState>[\S]+?)\"" multi
-| parse regex field=virtualServers "tenant\"\:\"(?<tenant>[\S]+?)\"" multi
-| parse regex field=virtualServers "pool\"\:\"(?<pool>[\S]+?)\"" multi
-| parse regex field=virtualServers "destination\"\:\"(?<destination>[\S]+?)\"" multi
-| parse regex field=virtualServers "clientside.curConns\"\:(?<current_connections>[\S]+?)\," multi
-| parse regex field=virtualServers "clientside.bitsOut\"\:(?<client_bits_out>[\S]+?)\," multi
-| count by virtualServer_name, pool, application, enabledState, availabilityState
-```
-
-
-
-## Install the F5 - BIG-IP LTM App
+## Installing the F5 - BIG-IP LTM App
 
 This section provides instructions for installing the F5 - BIG-IP LTM App, as well as examples and explanations for each of the predefined dashboards.
 
@@ -144,10 +141,7 @@ Locate and install the app you need from the **App Catalog**. If you want to see
 
 
 1. From the **App Catalog**, search for and select the app**.**
-2. Select the version of the service you're using and click **Add to Library**.
-
-Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/library/install-apps)
-
+2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/library/install-apps)
 3. To install the app, complete the following fields.
    * **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
    * **Data Source.** Select either of these options for the data source. 

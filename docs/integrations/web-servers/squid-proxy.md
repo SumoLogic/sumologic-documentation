@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-<img src={useBaseUrl('img/integrations/web-servers/squid-proxy.png')} alt="Web servers icon" width="75"/>
+<img src={useBaseUrl('img/integrations/web-servers/squid-proxy.png')} alt="Thumbnail icon" width="75"/>
 
 The Squid Proxy app is a unified logs and metrics app that helps you monitor activity in Squid Proxy. The preconfigured dashboards provide insight into served and denied requests; performance metrics; IP domain DNS statistics; traffic details; HTTP response codes; URLs experiencing redirects, client errors, and server errors; and quality of service data that helps you understand your users’ experience.
 
@@ -24,7 +24,7 @@ This section provides instructions for configuring log and metric collection for
 
 ### Step 1: Configure Fields in Sumo Logic
 
-Create the following fields in Sumo Logic prior to configuring the collection. This ensures that your logs and metrics are tagged with relevant metadata, which is required by the app dashboards. For information on setting up fields, see the [Fields](/docs/manage/fields.md) help page.
+Create the following fields in Sumo Logic prior to configuring the collection. This ensures that your logs and metrics are tagged with relevant metadata, which is required by the app dashboards. For information on setting up fields, see [Sumo Logic Fields](/docs/manage/fields.md).
 
 <Tabs
   groupId="k8s-nonk8s"
@@ -36,7 +36,7 @@ Create the following fields in Sumo Logic prior to configuring the collection. T
 
 <TabItem value="k8s">
 
-If you are using Squid Proxy in a Kubernetes environment, create the fields:
+If you're using Squid Proxy in a Kubernetes environment, create the fields:
 * `pod_labels_component`
 * `pod_labels_environment`
 * `pod_labels_proxy_system`
@@ -45,7 +45,7 @@ If you are using Squid Proxy in a Kubernetes environment, create the fields:
 </TabItem>
 <TabItem value="non-k8s">
 
-If you are using Squid Proxy in a non-Kubernetes environment, create the fields:
+If you're using Squid Proxy in a non-Kubernetes environment, create the fields:
 * `component`
 * `environment`
 * `proxy_system`
@@ -91,7 +91,7 @@ Follow the below instructions to set up the metric collection:
 
 **Prerequisites**
 
-It’s assumed that you are using the latest helm chart version if not upgrade using the instructions [here](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/release-v2.0/deploy/docs/v2_migration_doc.md#how-to-upgrade).
+It’s assumed that you are using the latest helm chart version. If not, upgrade using the instructions [here](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/release-v2.0/deploy/docs/v2_migration_doc.md#how-to-upgrade).
 
 
 **Configure Metrics Collection**
@@ -308,7 +308,7 @@ Here’s an explanation for additional values set by this configuration that we 
         * **component**: “proxy” - This value is used by Sumo Logic apps to identify application components.
         * **proxy_system**: “squidproxy” - This value identifies the proxy system.
 
-For all other parameters please see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#Configuring-Telegraf) for more properties that can be configured in the Telegraf agent globally.
+For all other parameters, see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#Configuring-Telegraf) for more parameters that can be configured in the Telegraf agent globally.
 
 1. Sumo Logic Kubernetes collection will automatically start collecting metrics from the pods having the labels and annotations defined in the previous step.
 2. Verify metrics in Sumo Logic.
@@ -343,7 +343,7 @@ Here’s an explanation for additional values set by this configuration that we 
 * ` component` : “proxy” - This value is used by Sumo Logic apps to identify application components.
 * `proxy_system` : “squidproxy” - This value identifies the proxy system.
 
-For all other parameters please see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#Configuring-Telegraf) for more properties that can be configured in the Telegraf agent globally.
+For all other parameters, see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#Configuring-Telegraf) for more parameters that can be configured in the Telegraf agent globally.
 
 1. The Sumologic-Kubernetes-Collection will automatically capture the logs from stdout and will send the logs to Sumologic. For more information on deploying Sumologic-Kubernetes-Collection, [visit](/docs/integrations/containers-orchestration/Kubernetes#Collect_Logs_and_Metrics_for_the_Kubernetes_App) here.
 2. Verify logs in Sumo Logic.
@@ -413,7 +413,7 @@ By default, the squid proxy will write the access log to the log directory that 
 Use one of the following Sumo Logic Collector options:
 
 1. To collect logs directly from the Squid Proxy machine, configure an [Installed Collector](/docs/send-data/Installed-Collectors).
-2. If you are using a service like Fluentd, or you would like to upload your logs manually, [Create a Hosted Collector](/docs/send-data/Hosted-Collectors#Create_a_Hosted_Collector).
+2. If you're using a service like Fluentd, or you would like to upload your logs manually, [Create a Hosted Collector](/docs/send-data/Hosted-Collectors#Create_a_Hosted_Collector).
 1. **Configure a local file source**
 
 **For an Installed Collector**
@@ -424,7 +424,7 @@ To collect logs directly from your Squid Proxy machine, use an Installed Collect
 2. Configure the Local File Source fields as follows:
 * **Name**. (Required)
 * **Description**. (Optional)
-* **File Path (Required)**. Enter the path to your access.log. The files are typically located in /var/log/squid/access.log. If you are using a customized path, check the squid.conf file for this information.
+* **File Path (Required)**. Enter the path to your access.log. The files are typically located in /var/log/squid/access.log. If you're using a customized path, check the squid.conf file for this information.
 * **Source Host**. Sumo Logic uses the hostname assigned by the OS unless you enter a different hostname.
 * **Source Category**. Enter any string to tag the output collected from this Source, such as SquidProxy/AccessLog. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details see [Best Practices](/docs/send-data/design-deployment/best-practices-source-categories).)
 * **Fields.** Set the following fields
@@ -447,7 +447,7 @@ environment = <Your_Environment_Name> #For example, Dev, QA, or Prod
 
 For a Hosted Collector
 
-If you are using a service like Fluentd, or you would like to upload your logs manually, use a Hosted Collector and an HTTP Source.
+If you're using a service like Fluentd, or you would like to upload your logs manually, use a Hosted Collector and an HTTP Source.
 
 1. Add an [HTTP Source](/docs/send-data/sources/sources-hosted-collectors/http-logs-metrics-source).
 2. Configure the HTTP Source fields as follows:
@@ -471,7 +471,7 @@ If you are using a service like Fluentd, or you would like to upload your logs m
 #### Set up a Sumo Logic HTTP Source
 
 1. **Configure a Hosted Collector for Metrics.
-**To create a new Sumo Logic hosted collector, perform the steps in the [Create a Hosted Collector](/docs/send-data/Hosted-Collectors#Create_a_Hosted_Collector) documentation.
+To create a new Sumo Logic hosted collector, perform the steps in the [Create a Hosted Collector](/docs/send-data/Hosted-Collectors#Create_a_Hosted_Collector) documentation.
 2. **Configure an HTTP Logs & Metrics source**:
     1. On the created Hosted Collector on the Collection Management screen, select **Add Source**.
     2. Select **HTTP Logs & Metrics_._**
@@ -734,7 +734,7 @@ For details on alerts, see [Alerts](#squid-proxy-alerts).
 
 There are limits to how many alerts can be enabled - see the [Alerts FAQ](/docs/alerts/monitors/monitor-faq.md).
 
-### Method 1: Importing a JSON file
+### Method A: Importing a JSON file
 
 1. Download the [JSON file](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/blob/main/monitor_packages/SquidProxy/squidproxy.json) that describes the monitors.
 2. The [JSON](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/blob/main/monitor_packages/SquidProxy/squidproxy.json) contains the alerts that are based on Sumo Logic searches that do not have any scope filters and therefore will be applicable to all Squid Proxy clusters, the data for which has been collected via the instructions in the previous sections.  However, if you would like to restrict these alerts to specific farms or environments, update the JSON file by replacing the text `proxy_system=squidproxy` with `<Your Custom Filter>`.  

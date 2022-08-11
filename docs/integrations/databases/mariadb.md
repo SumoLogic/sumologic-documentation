@@ -14,16 +14,17 @@ import TabItem from '@theme/TabItem';
 The MariaDB app is a unified logs and metrics app that helps you monitor MariaDB database cluster availability, performance, and resource utilization. Pre-configured dashboards and searches provide insight into the health of your database clusters, performance metrics, resource metrics, schema metrics, replication, error logs, slow queries, Innodb operations, failed logins, and error logs.
 
 This App is tested with the following MariaDB versions:
-* Non-Kubernetes: MariaDB  - Version 10.7.1
 * Kubernetes: MariaDB - Version 10.5.11
+* Non-Kubernetes: MariaDB  - Version 10.7.1
 
-## Collect Logs and Metrics for the MariaDB App
+
+## Collecting Logs and Metrics for the MariaDB App
 
 Configuring log and metric collection for the MariaDB App includes the following tasks.
 
 ### Step 1: Configure Fields in Sumo Logic
 
-Create the following fields in Sumo Logic before configuring the collection to ensure that your logs and metrics are tagged with relevant metadata, which is required by the app dashboards. For information on setting up fields, see the [Fields](/docs/manage/fields.md) help page.
+Create the following fields in Sumo Logic before configuring the collection to ensure that your logs and metrics are tagged with relevant metadata, which is required by the app dashboards. For information on setting up fields, see [Sumo Logic Fields](/docs/manage/fields.md).
 
 <Tabs
   groupId="k8s-nonk8s"
@@ -35,7 +36,7 @@ Create the following fields in Sumo Logic before configuring the collection to e
 
 <TabItem value="k8s">
 
-If you are using MariaDB in a Kubernetes environment create the fields:
+If you're using MariaDB in a Kubernetes environment, create the fields:
 * `pod_labels_component`
 * `pod_labels_environment`
 * `pod_labels_db_system`
@@ -44,7 +45,7 @@ If you are using MariaDB in a Kubernetes environment create the fields:
 </TabItem>
 <TabItem value="non-k8s">
 
-If you are using MariaDB in a non-Kubernetes environment, create the fields:
+If you're using MariaDB in a non-Kubernetes environment, create the fields:
 * `component`
 * `environment`
 * `db_system`
@@ -55,11 +56,9 @@ If you are using MariaDB in a non-Kubernetes environment, create the fields:
 </Tabs>
 
 
-### Step 2: Configure logs and metrics Collection
+### Step 2: Configure Collection
 
-Sumo Logic supports the collection of logs and metrics data from MariaDB in both Kubernetes and non-Kubernetes environments.
-
-Please click on the appropriate links below based on the environment where your MariaDB clusters are hosted.
+Sumo Logic supports the collection of logs and metrics data from MariaDB in both Kubernetes and non-Kubernetes environments. Click on the appropriate links below based on the environment where your MariaDB clusters are hosted.
 
 <Tabs
   groupId="k8s-nonk8s"
@@ -71,38 +70,26 @@ Please click on the appropriate links below based on the environment where your 
 
 <TabItem value="k8s">
 
-In Kubernetes environments, we use the Telegraf Operator, which is packaged with our Kubernetes collection. You can learn more about it [here](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/telegraf-collection-architecture). The diagram below illustrates how data is collected from MariaDB  in Kubernetes environments. In the architecture shown below, there are four services that make up the metric collection pipeline:<br/><img src={useBaseUrl('img/integrations/databases/mariadbk8s.png')} alt="mariadb" />
-
+In Kubernetes environments, we use the Telegraf Operator, which is packaged with our Kubernetes collection. You can learn more about it [here](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/telegraf-collection-architecture). The diagram below illustrates how data is collected from MariaDB in Kubernetes environments. In the architecture shown below, there are four services that make up the metric collection pipeline:
 * Telegraf
 * Prometheus
 * Fluentd
 * FluentBit
 
+<img src={useBaseUrl('img/integrations/databases/mariadbk8s.png')} alt="mariadb" />
+
 The first service in the pipeline is Telegraf. Telegraf collects metrics from MariaDB. Note that we’re running Telegraf in each pod we want to collect metrics from as a sidecar deployment, that is Telegraf runs in the same pod as the containers it monitors. Telegraf uses the [MySQL Input Plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/mysql) to obtain metrics. (For simplicity, the diagram doesn’t show the input plugins.) The injection of the Telegraf sidecar container is done by the Telegraf Operator. We also have Fluentbit that collects logs written to standard out and forwards them to FluentD, which in turn sends all the logs and metrics data to a Sumo Logic HTTP Source.
 
-Follow the below instructions to set up the metric collection:
-
-1. Configure Metrics Collection
-    1. Setup Kubernetes Collection with the Telegraf operator
-    2. Add annotations on your MariaDB pods
-2. Configure Logs Collection
-    3. Configure logging in MariaDB.
-    4. Add labels on your MariaDB pods to capture logs from standard output.
-    5. Collecting MariaDB Logs from a Log file.
-
-**Prerequisites**
-
+:::note Prerequisites
 These instructions assume that you are using the latest Helm chart version. If not, upgrade using the instructions [here](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/release-v2.0/deploy/docs/v2_migration_doc.md#how-to-upgrade).
-
+:::
 
 #### Configure Metrics Collection
 
 This section explains the steps to collect MariaDB metrics from a Kubernetes environment.
 
-In Kubernetes environments, we use the Telegraf Operator, which is packaged with our Kubernetes collection. You can learn more on this[ here](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/telegraf-collection-architecture.md). Follow the steps listed below to collect metrics from a Kubernetes environment:
-
 1. [Set up Kubernetes Collection with the Telegraf Operator](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf)
-2. **Add annotations on your MariaDB pods**. On your MariaDB Pods, add the following annotations:
+2. On your MariaDB Pods, add the following annotations:
 ```sql
 annotations:
     telegraf.influxdata.com/class: sumologic-prometheus
@@ -127,126 +114,106 @@ annotations:
   gather_perf_events_statements = true
   interval_slow = "30m"
 [inputs.mysql.tags]
-    environment="TO_BE_CHANGED"
-    component="database"
-    db_system="mariadb"
-    db_cluster="TO_BE_CHANGED"
+  environment="TO_BE_CHANGED"
+  component="database"
+  db_system="mariadb"
+  db_cluster="TO_BE_CHANGED"--Enter `default` if you haven’t defined a cluster in MariaDB
 ```
 
-If you haven’t defined a cluster in MariaDB, then enter ‘default’ for `db_cluster`.
-
-Enter in values for the following parameters (marked `CHANGEME` in the snippet above):
-
-* `telegraf.influxdata.com/inputs` - This contains the required configuration for the Telegraf exec Input plugin. Please refer[ to this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/redis) for more information on configuring the MySQL input plugin for Telegraf. Note: As telegraf will be run as a sidecar the host should always be localhost.
-    * In the input plugins section, that is:
-        * `servers` - The URL of your MariaDB server. For information about additional input plugin configuration options, see the [Readme ](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/mysql)for the MySQL input plugin.
-    * In the tags section, that is  `[inputs.mysql.tags]`
-        * `environment` - This is the deployment environment where the MariaDB cluster identified by the value of **servers** resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
-        * `db_cluster` - Enter a name to identify this MariaDB cluster. This cluster name will be shown in the Sumo Logic dashboards.  
-
-Here’s an explanation for additional values set by this configuration that we request you to please **do not modify** as they will cause the Sumo Logic apps to not function correctly.
-
-* `telegraf.influxdata.com/class: sumologic-prometheus` - This instructs the Telegraf operator what output to use. This should not be changed.
-* `prometheus.io/scrape: "true"` - This ensures our Prometheus will scrape the metrics.
-* `prometheus.io/port: "9273"` - This tells prometheus what ports to scrape on. This should not be changed.
-* `telegraf.influxdata.com/inputs`
-    * In the tags section i.e.  `[inputs.mysql.tags]`
+3. Enter in values for the following parameters (marked `CHANGEME` in the snippet above):
+  * `telegraf.influxdata.com/inputs` - This contains the required configuration for the Telegraf exec Input plugin. Please refer[ to this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/redis) for more information on configuring the MySQL input plugin for Telegraf. Note: As telegraf will be run as a sidecar, the host should always be localhost.
+  * In the input plugins section, that is:
+      * `servers` - The URL of your MariaDB server. For information about additional input plugin configuration options, see the [Readme ](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/mysql)for the MySQL input plugin.
+  * In the tags section (`[inputs.mysql.tags]`):
+      * `environment` - This is the deployment environment where the MariaDB cluster identified by the value of **servers** resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
+      * `db_cluster` - Enter a name to identify this MariaDB cluster. This cluster name will be shown in the Sumo Logic dashboards.  
+   * Here’s an explanation for additional values set by this configuration that we request you **do not modify** as they will cause the Sumo Logic apps to not function correctly.
+     * `telegraf.influxdata.com/class: sumologic-prometheus` - This instructs the Telegraf operator what output to use. This should not be changed.
+     * `prometheus.io/scrape: "true"` - This ensures our Prometheus will scrape the metrics.
+     * `prometheus.io/port: "9273"` - This tells prometheus what ports to scrape on. This should not be changed.
+     * `telegraf.influxdata.com/inputs`
+      * In the tags section (`[inputs.mysql.tags]`):
         * `component: “database”` - This value is used by Sumo Logic apps to identify application components.
         * `db_system: “mariadb”` - This value identifies the database system.
+     * See [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#Configuring-Telegraf) for more parameters that can be configured in the Telegraf agent globally.
 
-For all other parameters, please see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#Configuring-Telegraf) for more properties that can be configured in the Telegraf agent globally.
+4. Sumo Logic Kubernetes collection will automatically start collecting metrics from the pods having the labels and annotations defined in the previous step.
+5. Verify metrics in Sumo Logic.
 
-1. Sumo Logic Kubernetes collection will automatically start collecting metrics from the pods having the labels and annotations defined in the previous step.
-2. Verify metrics in Sumo Logic.
+<br/>
 
 #### Configure Logs Collection
 
 This section explains the steps to collect MariaDB logs from a Kubernetes environment.
 
-1. **(Recommended Method) Add labels on your MariaDB pods to capture logs from standard output.**
+1. **(Recommended Method) Add labels on your MariaDB pods to capture logs from standard output**. Make sure that the logs from MariaDB are sent to stdout. Follow the instructions below to capture MariaDB logs from stdout on Kubernetes.
+   1. Apply following labels to the MariaDB pod:
+    ```sql
+    environment: "prod_CHANGEME"
+    component: "database"
+    db_system: "mariadb"
+    db_cluster "Cluster_CHANGEME"
+    ```
+   2. Enter in values for the following parameters (marked in **CHANGE_ME** above):
+     * `environment`. This is the deployment environment where the MariaDB cluster identified by the value of **servers** resides. For example: dev, prod, or QA. While this value is optional, we highly recommend setting it.
+     * `db_cluster`. Enter a name to identify this MariaDB cluster. This cluster name will be shown in the Sumo Logic dashboards. If you haven’t defined a cluster in MariaDB, then enter ‘**default**’ for db_cluster.
+     * Here’s an explanation for additional values set by this configuration, but **do not modify them** as changes will cause the Sumo Logic apps to not function correctly.
+       * `component: “database”` - This value is used by Sumo Logic apps to identify application components.
+       * `db_system: “mariadb”` - This value identifies the database system.
+     * See [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#Configuring-Telegraf) for more parameters that can be configured in the Telegraf agent globally.
+   3. The Sumologic-Kubernetes-Collection will automatically capture the logs from stdout and will send the logs to Sumologic. For more information on deploying Sumologic-Kubernetes-Collection, [visit here](/docs/integrations/containers-orchestration/Kubernetes#Collect_Logs_and_Metrics_for_the_Kubernetes_App).
+   4. Verify logs in Sumo Logic.
+2. **(Optional) Collecting MariaDB Logs from a Log File**. Follow the steps below to capture MariaDB logs from a log file on Kubernetes.
+   1. Determine the location of the MariaDB log file on Kubernetes. This can be determined from the server.conf for your MariaDB cluster along with the mounts on the MariaDB pods.
+   2. Install the Sumo Logic [tailing sidecar operator](https://github.com/SumoLogic/tailing-sidecar/tree/main/operator#deploy-tailing-sidecar-operator).
+   3. Add the following annotation in addition to the existing annotations.
+    ```yml
+    annotations:
+      tailing-sidecar: sidecarconfig;<mount>:<path_of_MariaDB_log_file>/<MariaDB_log_file_name>
+    ```
+    Example:
+    ```yml
+    annotations:
+      tailing-sidecar: sidecarconfig;data:/var/opt/MariaDB/errorlog
+    ```
+   4. Make sure that the MariaDB pods are running and annotations are applied by using the command:
+    ```bash
+    kubectl describe pod <MariaDB_pod_name>
+    ```
+   5. Sumo Logic Kubernetes collection will automatically start collecting logs from the pods having the annotations defined above.
+   6. Verify logs in Sumo Logic.
+3. **Add an FER to normalize the fields in Kubernetes environments**. Labels created in Kubernetes environments automatically are prefixed with pod_labels. To normalize these for our app to work, we need to create a Field Extraction Rule if not already created for Proxy Application Components:
+   1. **Go to Manage Data > Logs > Field Extraction Rules.**
+   2. **Click the + Add button on the top right of the table.**
+   3. **The following form appears:**
+   4. Enter the following options:
+      * **Rule Name**. Enter the name as **App Observability - database**.
+      * **Applied At.** Choose **Ingest Time**
+      * **Scope**. Select **Specific Data**
+      * **Scope**: Enter the following keyword search expression:
+      ```sql
+      pod_labels_environment=* pod_labels_component=database \
+      pod_labels_db_cluster=* pod_labels_db_system=*
+      ```
+      * **Parse Expression**. Enter the following parse expression:
+      ```sql
+      if (!isEmpty(pod_labels_environment), pod_labels_environment, "") as environment
+       | pod_labels_component as component
+       | pod_labels_db_system as db_system
+       | pod_labels_db_cluster as db_cluster
+      ```
+   5. Click **Save** to create the rule.
 
-Make sure that the logs from MariaDB are sent to stdout. Follow the instructions below to capture MariaDBlogs from stdout on Kubernetes.
-
-1. Apply following labels to the MariaDBpod:
-```sql
-environment: "prod_CHANGEME"
-component: "database"
-db_system: "mariadb"
-db_cluster "Cluster_CHANGEME"
-```
-
-Enter in values for the following parameters (marked in **CHANGE_ME** above):
-* `environment`. This is the deployment environment where the MariaDB cluster identified by the value of **servers** resides. For example:- dev, prod, or QA. While this value is optional we highly recommend setting it.
-* `db_cluster`. Enter a name to identify this MariaDB cluster. This cluster name will be shown in the Sumo Logic dashboards. If you haven’t defined a cluster in MariaDB, then enter ‘**default**’ for db_cluster.
-
-Here’s an explanation for additional values set by this configuration, but **do not modify them** as changes will cause the Sumo Logic apps to not function correctly.
-* `component: “database”` - This value is used by Sumo Logic apps to identify application components.
-* `db_system: “mariadb”` - This value identifies the database system.
-
-    For all other parameters, please see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#Configuring-Telegraf) for more properties that can be configured in the Telegraf agent globally.
-
-1. The Sumologic-Kubernetes-Collection will automatically capture the logs from stdout and will send the logs to Sumologic. For more information on deploying Sumologic-Kubernetes-Collection,[visit here](/docs/integrations/containers-orchestration/Kubernetes#Collect_Logs_and_Metrics_for_the_Kubernetes_App).
-2. Verify logs in Sumo Logic.
-1. **(Optional) Collecting MariaDB Logs from a Log File** Follow the steps below to capture MariaDB logs from a log file on Kubernetes.
-1. Determine the location of the MariaDB log file on Kubernetes. This can be determined from the server.conf for your MariaDB cluster along with the mounts on the MariaDB pods.
-2. Install the Sumo Logic [tailing sidecar operator](https://github.com/SumoLogic/tailing-sidecar/tree/main/operator#deploy-tailing-sidecar-operator).
-3. Add the following annotation in addition to the existing annotations.
-
-```yml
-annotations:
-  tailing-sidecar: sidecarconfig;<mount>:<path_of_MariaDB_log_file>/<MariaDB_log_file_name>
-```
-
-Example:
-
-```yml
-annotations:
-  tailing-sidecar: sidecarconfig;data:/var/opt/MariaDB/errorlog
-```
-
-1. Make sure that the MariaDB pods are running and annotations are applied by using the command:
-```bash
-kubectl describe pod <MariaDB_pod_name>
-```
-2. Sumo Logic Kubernetes collection will automatically start collecting logs from the pods having the annotations defined above.
-3. Verify logs in Sumo Logic.
-1. **Add an FER to normalize the fields in Kubernetes environments \
-**Labels created in Kubernetes environments automatically are prefixed with pod_labels. To normalize these for our app to work, we need to create a Field Extraction Rule if not already created for Proxy Application Components:
-1. **Go to Manage Data > Logs > Field Extraction Rules.**
-2. **Click the + Add button on the top right of the table.**
-3. **The following form appears:**
-
-1. Enter the following options:
-1. **Rule Name**. Enter the name as **App Observability - database**.
-2. **Applied At.** Choose **Ingest Time**
-3. **Scope**. Select **Specific Data**
-4. **Scope**: Enter the following keyword search expression:
-```sql
-pod_labels_environment=* pod_labels_component=database pod_labels_db_cluster=* pod_labels_db_system=*
-```
-
-* **Parse Expression**.Enter the following parse expression:
-
-```sql
-if (!isEmpty(pod_labels_environment), pod_labels_environment, "") as environment
-| pod_labels_component as component
-| pod_labels_db_system as db_system
-| pod_labels_db_cluster as db_cluster
-```
-
-1. Click **Save** to create the rule.
 
 </TabItem>
 <TabItem value="non-k8s">
 
-Sumo Logic uses the Telegraf operator for MariaDB metric collection and the [Installed Collector](/docs/send-data/installed-collectors/about-installed-collectors) for collecting MariaDB logs. The diagram below illustrates the components of the MariaDB collection in a non-Kubernetes environment. Telegraf uses the[ MySQL Input Plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/sqlserver) to obtain MariaDB metrics and the Sumo Logic output plugin to send the metrics to Sumo Logic. Logs from MariaDB are collected by a [Local File Source](/docs/send-data/Sources/sources-installed-collectors/Local-File-Source).<br/><img src={useBaseUrl('img/integrations/databases/mariadbnonk8s.png')} alt="mariadb" />
+For non-Kubernetes environments, Sumo Logic uses the Telegraf operator for MariaDB metric collection and the [Installed Collector](/docs/send-data/installed-collectors/about-installed-collectors) for collecting MariaDB logs. The diagram below illustrates the components of the MariaDB collection in a non-Kubernetes environment.<br/><img src={useBaseUrl('img/integrations/databases/mariadbnonk8s.png')} alt="mariadb" />
+
+Telegraf uses the[ MySQL Input Plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/sqlserver) to obtain MariaDB metrics and the Sumo Logic output plugin to send the metrics to Sumo Logic. Logs from MariaDB are collected by a [Local File Source](/docs/send-data/Sources/sources-installed-collectors/Local-File-Source).
 
 The process to set up collection for MariaDB data is done through the following steps:
 
-1. Configure Logs Collection
-    1. Configure MariaDB to log to a local file
-    2. Configure a Collector
-    3. Configure a Source
 2. Configure Metrics Collection
     4. Configure a Hosted Collector
     5. Configure an HTTP Logs and Metrics Source
@@ -262,14 +229,13 @@ Sumo Logic supports collecting logs both via Syslog and a local log file. Utiliz
 
 Based on your infrastructure and networking setup choose one of these methods to collect MariaDB logs and follow the instructions below to set up log collection:
 
-<details><summary>Option A: Configure MariaDB to log to a local file.</summary>
+<details><summary>Method A: Configure MariaDB to log to a local file.</summary>
 
 MariaDB logs written to a log file can be collected via the Local File Source of a Sumo Logic Installed Collector.
 
-To configure the MariaDB log file(s), locate your local server.cnf configuration file in the database directory.
-
-1. Open server.cnf in a text editor.
-2. Set the following  parameters in the `[mariadb]` section:
+1. To configure the MariaDB log file(s), locate your local server.cnf configuration file in the database directory.
+2. Open server.cnf in a text editor.
+3. Set the following parameters in the `[mariadb]` section:
 ```sql
 [mariadb]
 log_error=/var/log/mariadb/mariadb-error.log
@@ -278,66 +244,52 @@ slow_query_log=1
 slow_query_log_file = /var/log/mariadb/slow_query.log
 long_query_time=2
 ```
-
-* [Error Logs](https://mariadb.com/kb/en/error-log/): MariaDB always writes its error log, but the destination is configurable.
-* [Slow Query Logs](https://mariadb.com/kb/en/slow-query-log-overview/): The slow query log is disabled by default.
-* [General Query Logs](https://mariadb.com/kb/en/general-query-log/). We don't recommend enabling general_log for performance reasons. These logs are not used by the Sumo Logic MariaDB App.
-
-1. Save the server.cnf file.
-2. Restart the MariaDB server:
-```
-systemctl restart mariadb
-```
+   * [Error Logs](https://mariadb.com/kb/en/error-log/): MariaDB always writes its error log, but the destination is configurable.
+   * [Slow Query Logs](https://mariadb.com/kb/en/slow-query-log-overview/): The slow query log is disabled by default.
+   * [General Query Logs](https://mariadb.com/kb/en/general-query-log/). We don't recommend enabling general_log for performance reasons. These logs are not used by the Sumo Logic MariaDB App.
+4. Save the server.cnf file.
+5. Restart the MariaDB server:
+  ```bash
+  systemctl restart mariadb
+  ```
 
 </details>
 
-<details><summary>Option B: Configure a Collector</summary>
+<details><summary>Method B: Configure a Sumo Logic Collector</summary>
 
-Use one of the following Sumo Logic Collector options:
-
-* To collect logs directly from the MariaDB machine, configure an[ Installed Collector](/docs/send-data/Installed-Collectors).
+To collect logs directly from the MariaDB machine, configure an [Installed Collector](/docs/send-data/Installed-Collectors).
 
 </details>
 
-<details><summary>Option C: Configure a Source</summary>
+<details><summary>Method C: Configure a Source</summary>
 
-This section demonstrates how to configure sources for the following log types:
-* Error Logs
-* Slow Query Logs
+This section demonstrates how to configure sources for Error Logs and Slow Query Logs.
 
 #### Configure Source for MariaDB Error Logs
 
-This section demonstrates how to configure a Local File Source for MariaDB Error Logs, for use with an [Installed Collector](/docs/integrations/microsoft-azure/iis-10-legacy#Configure-a-Collector). You may configure a [Remote File Source](/docs/send-data/Sources/sources-installed-collectors/Remote-File-Source), but the configuration is more complex.
-
-Sumo Logic recommends using a Local File Source whenever possible.
-
-**To configure a local file source for MariaDB Error Logs, do the following:**
-
+This section demonstrates how to configure a Local File Source for MariaDB Error Logs, for use with an [Installed Collector](/docs/integrations/microsoft-azure/iis-10-legacy#Configure-a-Collector). You may configure a [Remote File Source](/docs/send-data/Sources/sources-installed-collectors/Remote-File-Source), but the configuration is more complex. Sumo Logic recommends using a Local File Source whenever possible.
 1. On the Collection Management screen, click **Add**, next to the collector, then select **Add Source**.
-2. Select **Local File_ _**as the source type.
+2. Select **Local File** as the source type.
 3. Configure the Local File Source fields as follows:
-1. **Name** (Required). Enter a name for the source.
-2. **Description** (Optional).
-3. **File Path** (Required). Enter the path to your mariadb-error.log. The files are typically located in /var/log/mariadb/mariadb-error.log. If you are using a customized path, check the server.cnf file for this information
-4. **The collection should begin. Set this for how far back historically you want to start collecting.**
-5. **Source Host** (Optional)**.** Sumo Logic uses the hostname assigned by the OS unless you enter a different hostname
-6. **Source Category** (Recommended). DB/MariaDB/ErrorLogs_._
-7. **Fields. Set the following fields:
-* `component = database`
-* `db_system = mariadb`
-* `db_cluster = <Your_MariaDB_Cluster_Name>`. Enter **Default** if you do not have one.
-* `environment = <Your_Environment_Name`> (for example, Dev, QA, or Prod)
-
-
-
-1. In the **Advanced** section, select the following options:
-1. **Timestamp Parsing Settings**: Make sure the setting matches the timezone on the log files.
-2. **Enable Timetamp Parsing**: Select **Extract timestamp information from log file entries**.
-3. **Time Zone**: Select the option to **Use time zone from log file. If none is present use**: and set the timezone to **UTC**.
-4. **Timestamp Format**: Select the option to **Automatically detect the format**.
-5. **Encoding**. UTF-8 is the default, but you can choose another encoding format from the menu if your MariaDB logs are encoded differently.
-6. **Enable Multiline Processing**. Uncheck the box to **Detect messages spanning multiple lines**. Since MariaDB Error logs are single line log files, disabling this option will ensure that your messages are collected correctly.
-1. Click **Save**.
+   1. **Name** (Required). Enter a name for the source.
+   2. **Description** (Optional).
+   3. **File Path** (Required). Enter the path to your mariadb-error.log. The files are typically located in /var/log/mariadb/mariadb-error.log. If you're using a customized path, check the server.cnf file for this information
+   4. The collection should begin. Set this for how far back historically you want to start collecting.
+   5. **Source Host** (Optional). Sumo Logic uses the hostname assigned by the OS unless you enter a different hostname
+   6. **Source Category** (Recommended). DB/MariaDB/ErrorLogs_._
+   7. **Fields**. Set the following fields:
+     * `component = database`
+     * `db_system = mariadb`
+     * `db_cluster = <Your_MariaDB_Cluster_Name>`. Enter **Default** if you do not have one.
+     * `environment = <Your_Environment_Name`> (for example, Dev, QA, or Prod)
+4. In the **Advanced** section, select the following options:
+   1. **Timestamp Parsing Settings**: Make sure the setting matches the timezone on the log files.
+   2. **Enable Timetamp Parsing**: Select **Extract timestamp information from log file entries**.
+   3. **Time Zone**: Select the option to **Use time zone from log file. If none is present use**: and set the timezone to **UTC**.
+   4. **Timestamp Format**: Select the option to **Automatically detect the format**.
+   5. **Encoding**. UTF-8 is the default, but you can choose another encoding format from the menu if your MariaDB logs are encoded differently.
+   6. **Enable Multiline Processing**. Uncheck the box to **Detect messages spanning multiple lines**. Since MariaDB Error logs are single line log files, disabling this option will ensure that your messages are collected correctly.
+5. Click **Save**.
 
 After a few minutes, your new Source should be propagated down to the Collector and will begin submitting your MariaDB log files to the Sumo Logic service.
 
@@ -345,36 +297,31 @@ After a few minutes, your new Source should be propagated down to the Collector 
 
 This section demonstrates how to configure a Local File Source for MariaDB Slow Query Logs, for use with an [Installed Collector](/docs/integrations/microsoft-azure/iis-10-legacy#Configure-a-Collector).
 
-**To configure a local file source for MariaDB Slow Query Logs, do the following:**
-
 1. On the Collection Management screen, click **Add**, next to the collector, then select **Add Source**.
-2. Select **Local File_ _**as the source type.
+2. Select **Local File** as the source type.
 3. Configure the Local File Source fields as follows:
-1. **Name** (Required). Enter a name for the source.
-2. **Description** (Optional).
-3. **File Path** (Required)**.** Enter the path to your slow_query.log. The files are typically located in /var/log/mariadb/slow_query.log. If you are using a customized path, check the server.cnf file for this information
-4. **The collection should begin. Set this for how far back historically you want to start collecting.**
-5. **Source Host** (Optional)**.** Sumo Logic uses the hostname assigned by the OS unless you enter a different hostname
-6. **Source Category** (Recommended)**.** DB/MariaDB/SlowQuery_._
-7. **Fields. **Set the following fields**:**
-* `component = database`
-* `db_system = mariadb`
-* `db_cluster = <Your_mariadb_Cluster_Name>`. Enter **Default** if you do not have one.
-* `environment = <Your_Environment_Name>` (for example, Dev, QA, or Prod)
-
-
-
-1. In the **Advanced** section, select the following options:
-1. **Timestamp Parsing Settings**: Make sure the setting matches the timezone on the log files.
-2. **Enable Timetamp Parsing**: Select **Extract timestamp information from log file entries**.
-3. **Time Zone**: Select the option to **Use time zone from log file. If none is present use**: and set the timezone to **UTC**.
-4. **Timestamp Format**: Select the option to **Automatically detect the format**.
-5. **Encoding**. UTF-8 is the default, but you can choose another encoding format from the menu if your MariaDB logs are encoded differently.
-6. **Enable Multiline Processing**
-* **Detect Messages Spanning Multiple Lines. **True
-* **Infer Boundaries - Detect message boundaries automatically. False**
-* **Boundary Regex**.  `^#\sTime:\s.`
-1. Click **Save**.
+   1. **Name** (Required). Enter a name for the source.
+   2. **Description** (Optional).
+   3. **File Path** (Required). Enter the path to your slow_query.log. The files are typically located in /var/log/mariadb/slow_query.log. If you're using a customized path, check the server.cnf file for this information.
+   4. The collection should begin. Set this for how far back historically you want to start collecting.
+   5. **Source Host (Optional)**. Sumo Logic uses the hostname assigned by the OS unless you enter a different hostname
+   6. **Source Category (Recommended)**. DB/MariaDB/SlowQuery.
+   7. **Fields.** Set the following fields:
+     * `component = database`
+     * `db_system = mariadb`
+     * `db_cluster = <Your_mariadb_Cluster_Name>`. Enter **Default** if you do not have one.
+     * `environment = <Your_Environment_Name>` (for example, Dev, QA, or Prod)
+4. In the **Advanced** section, select the following options:
+   1. **Timestamp Parsing Settings**: Make sure the setting matches the timezone on the log files.
+   2. **Enable Timetamp Parsing**: Select **Extract timestamp information from log file entries**.
+   3. **Time Zone**: Select the option to **Use time zone from log file**. If none is present, use and set the timezone to **UTC**.
+   4. **Timestamp Format**: Select the option to **Automatically detect the format**.
+   5. **Encoding**. UTF-8 is the default, but you can choose another encoding format from the menu if your MariaDB logs are encoded differently.
+   6. **Enable Multiline Processing**
+     * **Detect Messages Spanning Multiple Lines**. True
+     * **Infer Boundaries - Detect message boundaries automatically**. False
+     * **Boundary Regex**. `^#\sTime:\s.`
+5. Click **Save**.
 
 After a few minutes, your new Source should be propagated down to the Collector and will begin submitting your MariaDB log files to the Sumo Logic service.
 
@@ -382,18 +329,18 @@ After a few minutes, your new Source should be propagated down to the Collector 
 
 #### Configure Metrics Collection
 
-1. **Set up a Sumo Logic HTTP Source**
+1. **Set up a Sumo Logic HTTP Source**.
    1. Configure a Hosted Collector for Metrics. To create a new Sumo Logic hosted collector, perform the steps in the [Configure a Hosted Collector](/docs/send-data/configure-hosted-collector) documentation.
-   2. Configure an HTTP Logs & Metrics source. On the created Hosted Collector on the Collection Management screen, select Add Source.
-      * **Select HTTP Logs & Metrics.**
+   2. Configure an HTTP Logs & Metrics source. On the created Hosted Collector on the Collection Management screen, select **Add Source**.
+      * Select **HTTP Logs & Metrics.**
          * **Name.** (Required). Enter a name for the source.
          * **Description.** (Optional).
          * **Source Category.** (Recommended). Be sure to follow the [Best Practices for Source Categories](/docs/send-data/design-deployment/best-practices-source-categories). A recommended Source Category may be Prod/DB/MariaDB/Metrics.
       * Select **Save**.
       * Note the URL provided once you click _Save_. You can retrieve it again by selecting the Show URL next to the source on the Collection Management screen.
-2. Setup Telegraf
-   1. **Install Telegraf** if you haven’t already. Use the [following steps](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf) to install Telegraf.
-   2. **Configure and start Telegraf**. As part of collecting metrics data from Telegraf, we will use the [MySQL Input Plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/mysql) to get data from Telegraf and the [Sumo Logic output plugin](https://github.com/SumoLogic/fluentd-output-sumologic) to send data to Sumo Logic. Create or modify `telegraf.conf` and copy and paste the text below:  
+2. **Set up Telegraf**.
+   1. Install Telegraf, if you haven’t already, using the [following steps](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf) to install Telegraf.
+   2. Configure and start Telegraf to begin collecting metrics data from Telegraf. We will use the [MySQL Input Plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/mysql) to get data from Telegraf and the [Sumo Logic output plugin](https://github.com/SumoLogic/fluentd-output-sumologic) to send data to Sumo Logic. Create or modify `telegraf.conf` and copy and paste the text below:  
    ```sql
    [[inputs.mysql]]
      servers = ["user_TO_BE_CHANGED:password_TO_BE_CHANGED@tcp(IP_ADDRESS_MARIADB_TO_BE_CHANGED:PORT_MARIADB_TO_BE_CHANGED)/?tls=false"]
@@ -421,23 +368,20 @@ After a few minutes, your new Source should be propagated down to the Collector 
      url = "<URL_from_HTTP_Logs_and_Metrics_Source>"
      data_format = "prometheus"
    ```
-   Enter values for fields annotated with `<TO_BE_CHANGED>` to the appropriate values. Do not include the brackets (`< >`) in your final configuration.
+   4. Enter values for fields marked `TO_BE_CHANGED` above to the appropriate values. Do not include the brackets (`< >`) in your own configuration.
    * Input plugins section, which is `[[inputs.mysql]]`:
-      * **servers.** The the URL of your MariaDB server. For information about additional input plugin configuration options, see the [Readme ](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/mysql)for the MySQL input plugin.
-   * In the tags section, which is [inputs.mysql.tags]:
+      * `servers`. The the URL of your MariaDB server. For information about additional input plugin configuration options, see the [Readme ](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/mysql)for the MySQL input plugin.
+   * In the tags section, `[inputs.mysql.tags]`:
       * `environment`. This is the deployment environment where the MariaDB cluster identified by the value of **servers** resides. For example; dev, prod, or QA. While this value is optional we highly recommend setting it.
       * `db_cluster`. Enter a name to identify this MariaDB cluster. This cluster name will be shown in our dashboards.
-   * In the output plugins section, which is `[[outputs.sumologic]]`:
-     * **URL.** This is the HTTP source URL created previously. See this doc for more information on additional parameters for configuring the Sumo Logic Telegraf output plugin.
-
-   Below is an explanation for additional values set by this Telegraf configuration. If you haven’t defined a cluster in MariaDB, then enter ‘**default**’ for db_cluster. There are additional values set by the Telegraf configuration.  We recommend not to modify these values as they might cause the Sumo Logic app to not function correctly.
-     * `data_format=“prometheus”` - In the output `[[outputs.sumologic]]` plugins section. Metrics are sent in the Prometheus format to Sumo Logic.
-     * `component=“database”` - In the input `[[inputs.mysql]]` plugins section. This value is used by Sumo Logic apps to identify application components.
-     * `db_system=“mariadb”` - In the input plugins sections. This value identifies the database system.
-
-   See[ this doc](https://github.com/influxdata/telegraf/blob/master/etc/telegraf.conf) for all other parameters that can be configured in the Telegraf agent globally.
-
-After you have finalized your telegraf.conf file, you can start or reload the telegraf service using instructions from this[ doc](https://docs.influxdata.com/telegraf/v1.17/introduction/getting-started/#start-telegraf-service).
+   * In the output plugins section, `[[outputs.sumologic]]`:
+      * `URL` - This is the HTTP source URL created previously. See this doc for more information on additional parameters for configuring the Sumo Logic Telegraf output plugin.
+   * Below is an explanation for additional values set by this Telegraf configuration. If you haven’t defined a cluster in MariaDB, then enter ‘**default**’ for db_cluster. There are additional values set by the Telegraf configuration.  We recommend not to modify these values as they might cause the Sumo Logic app to not function correctly.
+      * `data_format=“prometheus”` - In the output `[[outputs.sumologic]]` plugins section. Metrics are sent in the Prometheus format to Sumo Logic.
+      * `component=“database”` - In the input `[[inputs.mysql]]` plugins section. This value is used by Sumo Logic apps to identify application components.
+      * `db_system=“mariadb”` - In the input plugins sections. This value identifies the database system.
+   * See [this doc](https://github.com/influxdata/telegraf/blob/master/etc/telegraf.conf) for all other parameters that can be configured in the Telegraf agent globally.
+   4. After you have finalized your telegraf.conf file, you can start or reload the telegraf service using instructions from this [doc](https://docs.influxdata.com/telegraf/v1.17/introduction/getting-started/#start-telegraf-service).
 
 At this point, Telegraf should start collecting the MariaDB metrics and forward them to the Sumo Logic HTTP Source.
 
@@ -454,64 +398,45 @@ The next few sections provide instructions for installing the MariaDB Monitors, 
 Sumo Logic has provided out-of-the-box alerts available through [Sumo Logic monitors](/docs/alerts/monitors) to help you monitor your MariaDB clusters. These alerts are built based on metrics and logs datasets and include preset thresholds based on industry best practices and recommendations. See [Alerts](#MariaDB-Alerts) for more information.
 * To install these alerts, you need to have the Manage Monitors role capability.
 * Alerts can be installed by either importing a JSON file or a Terraform script.
+* There are limits to how many alerts can be enabled - see the [Alerts FAQ](/docs/alerts/monitors/monitor-faq) for details.
 
-There are limits to how many alerts can be enabled - see the [Alerts FAQ](/docs/alerts/monitors/monitor-faq) for details.
 
-
-### Method 1: Importing a JSON file
+### Method A: Importing a JSON file
 
 1. Download the [JSON file](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/blob/main/monitor_packages/MariaDB/MariaDB.json) that describes the monitors.
-2. The [JSON](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/blob/main/monitor_packages/MariaDB/MariaDB.json) contains the alerts that are based on Sumo Logic searches that do not have any scope filters and therefore will be applicable to all MariaDB clusters, the data for which has been collected via the instructions in the previous sections.  However, if you would like to restrict these alerts to specific clusters or environments, update the JSON file by replacing the text `db_system=mariadb` with `<Your Custom Filter>`.
-
-Custom filter examples:
-
-1. For alerts applicable only to a specific cluster, your custom filter would be,  ‘`db_cluster=mariadb-prod.01`‘.
-2. For alerts applicable to all clusters that start with Kafka-prod, your custom filter would be, `db_cluster=mariadb-prod*`.
-3. For alerts applicable to a specific cluster within a production environment, your custom filter would be,`db_cluster=mariadb-1` and `environment=prod` (This assumes you have set the optional environment tag while configuring collection).
-4. Go to Manage Data > Alerts > Monitors.
-5. Click **Add**
-
-
-6. Click Import and then copy-paste the above JSON to import monitors.
-
-The monitors are disabled by default. Once you have installed the alerts using this method, navigate to the MariaDB folder under **Monitors** to configure them. See [this](/docs/alerts/monitors) document to enable monitors to send notifications to teams or connections. See the instructions detailed in Step 4 of this [document](/docs/alerts/monitors#Add_a_monitor).
+2. The [JSON](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/blob/main/monitor_packages/MariaDB/MariaDB.json) contains the alerts that are based on Sumo Logic searches that do not have any scope filters and therefore will be applicable to all MariaDB clusters, the data for which has been collected via the instructions in the previous sections.  However, if you would like to restrict these alerts to specific clusters or environments, update the JSON file by replacing the text `db_system=mariadb` with `<Your Custom Filter>`. Custom filter examples:
+   * For alerts applicable only to a specific cluster, your custom filter would be,  `db_cluster=mariadb-prod.01`.
+   * For alerts applicable to all clusters that start with Kafka-prod, your custom filter would be `db_cluster=mariadb-prod*`.
+   * For alerts applicable to a specific cluster within a production environment, your custom filter would be `db_cluster=mariadb-1` and `environment=prod`. This assumes you have set the optional environment tag while configuring collection.
+3. Go to Manage Data > Alerts > Monitors.
+4. Click **Add**.
+5. Click Import and then copy-paste the above JSON to import monitors.
+6. The monitors are disabled by default. Once you have installed the alerts using this method, navigate to the MariaDB folder under **Monitors** to configure them. See [this](/docs/alerts/monitors) document to enable monitors to send notifications to teams or connections. See the instructions detailed in [Add a Monitor](/docs/alerts/monitors#Add_a_monitor).
 
 
-### Method 2: Using a Terraform script
+### Method B: Using a Terraform script
 
 1. **Generate a Sumo Logic access key and ID.** Generate an access key and access ID for a user that has the Manage Monitors role capability in Sumo Logic using these[ instructions](/docs/manage/security/access-keys#manage-your-access-keys-on-preferences-page). Identify which deployment your Sumo Logic account is in, using this [link](https://help.sumologic.com/APIs/General-API-Information/Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security)
-2. **[Download and install Terraform 0.13](https://www.terraform.io/downloads.html) or later. **
-3. ** Download the Sumo Logic Terraform package for MariaDB alerts. \
-**The alerts package is available in the Sumo Logic GitHub [repository](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/tree/main/monitor_packages/MariaDB). You can either download it through the “git clone” command or as a zip file.
-4. **Alert Configuration.** After the package has been extracted, navigate to the package directory `terraform-sumologic-sumo-logic-monitor/monitor_packages/MariaDB/`
+2. **[Download and install Terraform 0.13](https://www.terraform.io/downloads.html)** or later.
+3. **Download the Sumo Logic Terraform package for MariaDB alerts.** The alerts package is available in the Sumo Logic GitHub [repository](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/tree/main/monitor_packages/MariaDB). You can either download it through the “git clone” command or as a zip file.
+4. **Alert Configuration.** After the package has been extracted, navigate to the package directory `terraform-sumologic-sumo-logic-monitor/monitor_packages/MariaDB/`. Edit the **MariaDB.auto.tfvars** file and add the Sumo Logic Access Key, Access Id, and Deployment from Step 1.
+   ```bash
+  access_id   = "<SUMOLOGIC ACCESS ID>"
+  access_key  = "<SUMOLOGIC ACCESS KEY>"
+  environment = "<SUMOLOGIC DEPLOYMENT>"
+  ```
 
-Edit the **MariaDB.auto.tfvars** file and add the Sumo Logic Access Key, Access Id, and Deployment from Step 1.
+  The Terraform script installs the alerts without any scope filters, if you would like to restrict the alerts to specific clusters or environments, update the variable `mariadb_data_source`. Custom filter examples:
+    * For a specific cluster, your custom filter would be `db_cluster=mariadb.prod.01`
+    * For all clusters in an environment, your custom filter would be `environment=prod`
+    * For alerts applicable to all clusters that start with `mariadb-prod`, your custom filter would be `db_cluster=mariadb-prod*`
+    * For alerts applicable to a specific cluster within a production environment, your custom filter would be `db_cluster=mariadb-1` and `environment=prod`. This assumes you have set the optional environment tag while configuring collection.
 
-```bash
-access_id   = "<SUMOLOGIC ACCESS ID>"
-access_key  = "<SUMOLOGIC ACCESS KEY>"
-environment = "<SUMOLOGIC DEPLOYMENT>"
-```
+  All monitors are disabled by default on installation. If you would like to enable all the monitors, set the parameter `monitors_disabled` to `false` in this file.
 
-The Terraform script installs the alerts without any scope filters, if you would like to restrict the alerts to specific clusters or environments, update the variable `mariadb_data_source`. Custom filter examples:
+  By default, the monitors are configured in a monitor folder called “MariaDB”. If you would like to change the name of the folder, update the monitor folder name in “folder” key at `MariaDB.auto.tfvars` file. If you would like the alerts to send email or connection notifications, configure these in the file `MariaDB_notifications.auto.tfvars`. For configuration examples, refer to the next section.
 
-1. A specific cluster `db_cluster=mariadb.prod.01`
-2. All clusters in an environment `environment=prod`
-3. For alerts applicable to all clusters that start with mariadb-prod, your custom filter would be: `db_cluster=mariadb-prod*`
-4. For alerts applicable to a specific cluster within a production environment, your custom filter would be:
-`db_cluster=mariadb-1` and `environment=prod` (This assumes you have set the optional environment tag while configuring collection)
-
-All monitors are disabled by default on installation, if you would like to enable all the monitors, set the parameter `monitors_disabled` to false in this file.
-
-By default, the monitors are configured in a monitor **folder** called “**MariaDB**”, if you would like to change the name of the folder, update the monitor folder name in “folder” key at **`MariaDB.auto.tfvars` file.
-
-    If you would like the alerts to send email or connection notifications, configure these in the file **`MariaDB_notifications.auto.tfvars`. For configuration examples, refer to the next section.
-
-1. **Email and Connection Notification Configuration Examples**
-
-    Modify the file **`MariaDB_notifications.auto.tfvars` and populate connection_notifications and email_notifications as per below examples.
-
-
+5. **Email and Connection Notification Configuration Examples**. Modify the file `MariaDB_notifications.auto.tfvars` and populate `connection_notifications` and `email_notifications` as per below examples.
 ```sql title="Pagerduty Connection Example"
 connection_notifications = [
     {
@@ -529,11 +454,9 @@ connection_notifications = [
   ]
 ```
 
-
 Replace `<CONNECTION_ID>` with the connection id of the webhook connection. The webhook connection id can be retrieved by calling the [Monitors API](https://api.sumologic.com/docs/#operation/listConnections).
 
 For overriding payload for different connection types, refer to this [document](/docs/manage/connections-and-integrations/webhook-connections/set-up-webhook-connections).
-
 
 ```sql title="Email Notifications Example"
 email_notifications = [
@@ -548,39 +471,29 @@ email_notifications = [
   ]
 ```
 
-
-1. **Install the Alerts**
-    1. Navigate to the package directory terraform-sumologic-sumo-logic-monitor/monitor_packages/**MariaDB** and run **terraform init. **This will initialize Terraform and will download the required components.
-    2. Run **terraform plan **to view the monitors which will be created/modified by Terraform.
-    3. Run **terraform apply**.
-2. **Post Installation**
-    If you haven’t enabled alerts and/or configured notifications through the Terraform procedure outlined above, we highly recommend enabling alerts of interest and configuring each enabled alert to send notifications to other users or services. This is detailed in Step 4 of [this document](/docs/alerts/monitors#Add_a_monitor).
-
-There are limits to how many alerts can be enabled - see the [Alerts FAQ](/docs/alerts/monitors/monitor-faq).
+6. **Install the Alerts**. Navigate to the package directory terraform-sumologic-sumo-logic-monitor/monitor_packages/**MariaDB** and run `terraform init`. This will initialize Terraform and will download the required components.
+    1. Run `terraform plan` to view the monitors which will be created/modified by Terraform.
+    2. Run `terraform apply`.
+6. **Post Installation**. If you haven’t enabled alerts and/or configured notifications through the Terraform procedure outlined above, we highly recommend enabling alerts of interest and configuring each enabled alert to send notifications to other users or services. This is detailed in Step 4 of [this document](/docs/alerts/monitors#Add_a_monitor).
 
 
 ## Installing the MariaDB App
 
-This section demonstrates how to install the MariaDB App.
-
-To install the app:
+This section demonstrates how to install the MariaDB App. To install the app:
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
 1. From the **App Catalog**, search for and select the app**.**
-2. Select the version of the service you're using and click **Add to Library**.
-
-Version selection is applicable only to a few apps currently. For more information, see the[ Install the Apps from the Library](/docs/get-started/library/install-apps).
-
-1. To install the app, complete the following fields.
+2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library](/docs/get-started/library/install-apps).
+3. To install the app, complete the following fields.
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
     2. **Data Source.**
         * Choose **Enter a Custom Data Filter**, and enter a custom MariaDB cluster filter. Examples;
             1. For all MariaDB clusters, `db_cluster=*`.
             2. For a specific cluster, `db_cluster=mariadb.dev.01`.
-            3. Clusters within a specific environment `db_cluster=mariadb.dev.01` and `environment=prod` (This assumes you have set the optional environment tag while configuring collection).
+            3. Clusters within a specific environment `db_cluster=mariadb.dev.01` and `environment=prod`. This assumes you have set the optional environment tag while configuring collection.
     3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-    4. Click **Add to Library**.
+4. Click **Add to Library**.
 
 Once an app is installed, it will appear in your **Personal** folder, or another folder that you specified. From here, you can share it with your organization.
 

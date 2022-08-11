@@ -278,7 +278,7 @@ _collector="HTTP Source for GCP Pub/Sub" logName resource timestamp
 
 ## Installing the Google Cloud VPC App
 
-Now that you have set up collection for Google Cloud VPC, install the Sumo Logic App to use the pre-configured searches and [dashboards](#Dashboards) that provide visibility into your environment for real-time analysis of overall usage.
+Now that you have set up collection for Google Cloud VPC, install the Sumo Logic App to use the pre-configured searches and [dashboards](#viewing-dashboards) that provide visibility into your environment for real-time analysis of overall usage.
 
 To install the app:
 

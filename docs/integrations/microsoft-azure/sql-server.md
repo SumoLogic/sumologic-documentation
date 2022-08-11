@@ -23,7 +23,7 @@ This section provides instructions for configuring a local file source to collec
 
 ### Step 1: Configure Fields in Sumo Logic
 
-Create the following Fields in Sumo Logic prior to configuring collection. This ensures that your logs and metrics are tagged with relevant metadata, which is required by the app dashboards. For information on setting up fields, see the [Fields](/docs/manage/fields.md) help page.
+Create the following Fields in Sumo Logic prior to configuring collection. This ensures that your logs and metrics are tagged with relevant metadata, which is required by the app dashboards. For information on setting up fields, see [Sumo Logic Fields](/docs/manage/fields.md).
 
 <Tabs
   groupId="k8s-nonk8s"
@@ -35,7 +35,7 @@ Create the following Fields in Sumo Logic prior to configuring collection. This 
 
 <TabItem value="k8s">
 
-If you are using SQL Server in a non-Kubernetes environment, create the fields:
+If you're using SQL Server in a non-Kubernetes environment, create the fields:
 * `component`
 * `environment`
 * `db_system`
@@ -46,7 +46,7 @@ If you are using SQL Server in a non-Kubernetes environment, create the fields:
 </TabItem>
 <TabItem value="non-k8s">
 
-If you are using SQL Server in a Kubernetes environment, create the fields:
+If you're using SQL Server in a Kubernetes environment, create the fields:
 * `pod_labels_component`
 * `pod_labels_environment`
 * `pod_labels_db_system`
@@ -86,7 +86,7 @@ Follow the below instructions to set up the metric collection:
 
 **Prerequisites**
 
-It’s assumed that you are using the latest helm chart version if not upgrade using the instructions [here](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/release-v2.0/deploy/docs/v2_migration_doc.md#how-to-upgrade).
+It’s assumed that you are using the latest helm chart version. If not, upgrade using the instructions [here](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/release-v2.0/deploy/docs/v2_migration_doc.md#how-to-upgrade).
 
 
 #### Step 1: Configure Metrics Collection
@@ -142,7 +142,7 @@ In Kubernetes environments, we use the Telegraf Operator, which is packaged with
         * `component: “database”` - This value is used by Sumo Logic apps to identify application components.
         * `db_system: “sqlserver”` - This value identifies the database system.
 
-    For all other parameters please see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#Configuring-Telegraf) for more properties that can be configured in the Telegraf agent globally.
+    For all other parameters, see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#Configuring-Telegraf) for more parameters that can be configured in the Telegraf agent globally.
 
 1. Sumo Logic Kubernetes collection will automatically start collecting metrics from the pods having the labels and annotations defined in the previous step.
 2. Verify metrics in Sumo Logic.
@@ -170,7 +170,7 @@ This section explains the steps to collect SQL Server logs from a Kubernetes env
    * `component: “database”` - This value is used by Sumo Logic apps to identify application components.
    * `db_system: “SQLserver”` - This value identifies the database system.
 
-   For all other parameters, please see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#Configuring-Telegraf) for more properties that can be configured in the Telegraf agent globally.
+   For all other parameters, please see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#Configuring-Telegraf) for more parameters that can be configured in the Telegraf agent globally.
 
    * The Sumologic-Kubernetes-Collection will automatically capture the logs from stdout and will send the logs to Sumologic. For more information on deploying Sumologic-Kubernetes-Collection,[ visit](/docs/integrations/containers-orchestration/Kubernetes#Collect_Logs_and_Metrics_for_the_Kubernetes_App) here.
    * Verify logs in Sumo Logic.
@@ -288,7 +288,7 @@ At this point, the installed collector will start scanning the `ERRORLOG` and se
 Set up a Sumo Logic HTTP Source
 
 1. **Configure a Hosted Collector for Metrics. \
-**To create a new Sumo Logic hosted collector, perform the steps in the [Configure a Hosted Collector](/docs/send-data/configure-hosted-collector) documentation.
+To create a new Sumo Logic hosted collector, perform the steps in the [Configure a Hosted Collector](/docs/send-data/configure-hosted-collector) documentation.
 2. Configure an HTTP Logs & Metrics source:
    * On the created Hosted Collector on the Collection Management screen, select **Add Source**.
    * Select **HTTP Logs & Metrics.**
@@ -388,7 +388,7 @@ For details on the individual alerts, see [Alerts](#microsoft-sql-server-alerts)
 * Note: There are limits to how many alerts can be enabled - please see the [Alerts FAQ](/docs/alerts/monitors/monitor-faq.md) for details.
 
 
-### Method 1: Importing a JSON file
+### Method A: Importing a JSON file
 
 1. Download the [JSON file](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/blob/main/monitor_packages/SQLServer/SQLServer.json) that describes the monitors.
 2. The [JSON](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/blob/main/monitor_packages/SQLServer/SQLServer.json) contains the alerts that are based on Sumo Logic searches that do not have any scope filters and therefore will be applicable to all SQL Server clusters, the data for which has been collected via the instructions in the previous sections.  However, if you would like to restrict these alerts to specific clusters or environments, update the JSON file by replacing the text `db_system=sqlserver` with `<Your Custom Filter>`.
@@ -408,7 +408,7 @@ Custom filter examples:
 The monitors are disabled by default. Once you have installed the alerts using this method, navigate to the MySQL folder under **Monitors** to configure them. See [this](/docs/alerts/monitors/index.md) document to enable monitors to send notifications to teams or connections. Please see the instructions detailed in Step 4 of this [document](/docs/alerts/monitors#Add_a_monitor).
 
 
-### Method 2: Using a Terraform script
+### Method B: Using a Terraform script
 7
 
 

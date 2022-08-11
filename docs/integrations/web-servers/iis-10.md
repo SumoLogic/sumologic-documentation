@@ -25,7 +25,7 @@ IIS App and integration are supported only on Windows.
 This section provides instructions for configuring log and metric collection for the Sumo Logic App for IIS.
 
 ### Configure Fields in Sumo Logic
-Create the following Fields in Sumo Logic prior to configuring the collection. This ensures that your logs and metrics are tagged with relevant metadata, which is required by the app dashboards. For information on setting up fields, see the [Fields](/docs/manage/fields.md) help page.
+Create the following Fields in Sumo Logic prior to configuring the collection. This ensures that your logs and metrics are tagged with relevant metadata, which is required by the app dashboards. For information on setting up fields, see [Sumo Logic Fields](/docs/manage/fields.md).
 * `component`
 * `environment`
 * `webserver_system`
@@ -83,7 +83,7 @@ For information on how to configure HTTP Error Logs, and for explanations on the
 * **Performance Logs** These logs are output of Perfmon queries which will be configured at Installed Collector, "**Windows Performance**" Source.
 1. **Make sure logging is turned on in IIS Server.**
 * **Enable logging on your IIS Server** Perform the following task, if logging on your IIS Server is not already enabled. \
-**To enable logging on your IIS Server, do the following:**
+**To enable logging on your IIS Server, do the following:
 1. Open IIS Manager.
 2. Select the site or server in the **Connections** pane, then double-click **Logging**.
 
@@ -97,13 +97,13 @@ date time s-ip cs-method cs-uri-stem cs-uri-query s-port cs-username c-ip cs(Use
 For more information about IIS log format and log configuration refer [link](https://docs.microsoft.com/en-us/iis/get-started/whats-new-in-iis-85/enhanced-logging-for-iis85).
 * **Verify that log files are created** Perform the following task to ensure that log files are being created.
 
-**To confirm log files are being created, do the following:**
+**To confirm log files are being created, do the following:
 
 1. Open a command-line window and change directories to `C:\inetpub\Logs\LogFiles`. This is the same path you will enter when you configure the Source to collect these files.
 2. Under the \W3SVC1 directory, you should see one or more files with a .log extension. If the file is present, you can collect it.
 * **Enable HTTP Error Logs on your Windows Server** Perform the following task to enable HTTP Error Logs on your Windows Server, that is hosting the IIS Server.
 
-**To enable HTTP Error Logs on the Windows Server hosting IIS Server, do the following:**
+**To enable HTTP Error Logs on the Windows Server hosting IIS Server, do the following:
 
 1. To configure HTTP Error Logging, refer to this document [link](https://docs.microsoft.com/en-us/windows/desktop/http/configuring-http-server-api-error-logging).
 2. To understand HTTP Error Log format, refer to this document [link](https://docs.microsoft.com/en-us/windows/desktop/http/format-of-the-http-server-api-error-logs). \
@@ -125,7 +125,7 @@ This section demonstrates how to configure a Local File Source for IIS Access Lo
 
 Sumo Logic recommends using a Local File Source whenever possible.
 
-**To configure a local file source for IIS Access Logs, do the following:**
+To configure a local file source for IIS Access Logs, do the following:
 
 1. Configure a [Local File Source](/docs/send-data/Sources/sources-installed-collectors/Local-File-Source).
 2. Specify Local File Source Fields as follows:
@@ -157,7 +157,7 @@ After a few minutes, your new Source should be propagated down to the Collector 
 This section demonstrates how to configure a Local File Source for HTTP Error Logs, for use with an [Installed Collector](/docs/integrations/microsoft-azure/iis-10-legacy#Configure-a-Collector).
 
 
-**To configure a local file source for HTTP Error Logs, do the following:**
+To configure a local file source for HTTP Error Logs, do the following:
 
 1. Configure a [Local File Source](/docs/send-data/Sources/sources-installed-collectors/Local-File-Source).
 2. Specify the Local File Source Fields as follows:
@@ -195,7 +195,7 @@ Use the appropriate source for your environment:
 * [Local Windows Performance Monitor Log Source](/docs/send-data/sources/sources-installed-collectors/local-windows-performance-monitor-log-source.md)
 * [Remote Windows Performance Monitor Log Source](/docs/send-data/sources/sources-installed-collectors/remote-windows-performance-monitor-log-source.md)
 
-**To configure a Source for IIS Performance Logs, do the following:**
+To configure a Source for IIS Performance Logs, do the following:
 
 1. Configure a [Local Windows Performance Monitor Log Source](/docs/send-data/sources/sources-installed-collectors/local-windows-performance-monitor-log-source.md).
 2. Configure the Local Windows Performance Source Fields as follows:
@@ -457,7 +457,7 @@ To install these alerts, you need to have the Manage Monitors role capability. A
 There are limits to how many alerts can be enabled - see the [Alerts FAQ](/docs/alerts/monitors/monitor-faq.md) for details.
 
 
-### Method 1: Importing a JSON file
+### Method A: Importing a JSON file
 
 1. Download the [JSON file](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/blob/main/monitor_packages/IIS/IIS.json) that describes the monitors.
 2. The [JSON](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/blob/main/monitor_packages/IIS/IIS.json) contains the alerts that are based on Sumo Logic searches that do not have any scope filters and therefore will be applicable to all IIS Server farms, the data for which has been collected via the instructions in the previous sections.  However, if you would like to restrict these alerts to specific farms or environments, update the JSON file by replacing the text `webserver_system=iis` with `<Your Custom Filter>`.  
@@ -475,7 +475,7 @@ Custom filter examples:
 The monitors are disabled by default. Once you have installed the alerts using this method, navigate to the IIS folder under **Monitors** to configure them. See [this](/docs/alerts/monitors/index.md) document to enable monitors to send notifications to teams or connections. See the instructions detailed in Step 4 of this [document](/docs/alerts/monitors#Add_a_monitor).
 
 
-### Method 2: Using a Terraform script
+### Method B: Using a Terraform script
 
 1. **Generate a Sumo Logic access key and ID.** Generate an access key and access ID for a user that has the Manage Monitors role capability in Sumo Logic using these[ instructions](/docs/manage/security/access-keys#manage-your-access-keys-on-preferences-page). Identify which deployment your Sumo Logic account is in, using this [link](https://help.sumologic.com/APIs/General-API-Information/Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security).
 2. **[Download and install Terraform 0.13](https://www.terraform.io/downloads.html) or later.**

@@ -5,7 +5,6 @@ sidebar_label: Istio
 description: This Sumo Logic App for Istio  provides visibility into the health and performance of Istio and its control plane components, including Mixer, Galley, Citadel, Pilot and Envoy.
 ---
 
-
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/saas-cloud-apps/istio.png')} alt="Thumbnail icon" width="100"/>
@@ -22,7 +21,23 @@ This app supports Istio versions 1.8.x and 1.9.x+.
 * Istio Metrics - Refer to [this page](https://istio.io/latest/docs/concepts/observability/#service-level-metrics) for detailed Istio Metrics
 
 
-## Collecting logs and metrics for the Istio App
+
+### Sample Query
+
+Query Sample from Dashboard "Istio - Logs" > Panel "Non 200 Response Codes":
+
+```sql
+namespace=istio-system cluster={{cluster}}
+| json field=_raw "log" as log_message
+| parse regex field=log_message "\[(?<start_time>.+)\] \"(?<req>.+?)\" (?<response_code>.+?) (?<response_flags>.+?) (?<response_code_details>.+?) (?<con_term_details>.+?) \"(?<upstream_fail_reason>.+?)\" (?<bytes_recvd>.+?) (?<bytessent>.+?) (?<duration>.+?) (?<resp>.+?) \"(?<req_fwd_for>.+?)\" \"(?<user_agent>.+?)\" \"(?<request_id>.+?)\" \"(?<request_authority>.+?)\" \"(?<upstream_host>.+?)\" (?<upstream_cluster>.+?) (?<upstream_loacl_address>.+?) (?<downstream_local_address>.+?) (?<downstream_remote_address>.+?) (?<requested_server_name>.+?) (?<route_name>.+?)"
+| where response_code != "200"
+| timeslice 1h
+| count by response_code, _timeslice
+| transpose row _timeslice column response_code
+```
+
+
+## Collecting Logs and Metrics for the Istio App
 
 This section provides instructions for collecting logs and metrics for the Sumo App for Istio. Logs and metrics are collected with the Sumo Logic Helm chart. Istio [sample metrics](/#Sample-Metrics) and [sample log messages](#Sample-Log-Messages) are also provided, along with a [query sample](#Query-Sample).
 
@@ -32,27 +47,17 @@ The minimum version of Sumo Logic K8s Collection required is [V2.1.6](https://gi
 
 Configure log and metrics collection with the Sumo Logic Helm chart, using one of the following options:
 
-* [Kubernetes collection is already set up](#Kubernetes_collection_is_already_set_up)
-* [Kubernetes collection has not been set up](#Kubernetes_collection_has_not_been_set_up)
-
-
 ### If your Kubernetes collection is already set up
 
-If you do not have Kubernetes set up, go[ here](https://github.com/SumoLogic/sumologic-kubernetes-collection/tree/master/deploy).
-
 Log Collection:
-
 1. Enable [Access Logging](https://istio.io/latest/docs/tasks/observability/logs/access-log/#enable-envoy-s-access-logging) to write logs to stdout.
 
-The Sumologic-Kubernetes-Collection will automatically capture the logs from stdout and will send the logs to Sumologic.
+  The Sumologic-Kubernetes-Collection will automatically capture the logs from stdout and will send the logs to Sumologic.
 
-**Metrics Collection:**
-
+Metrics Collection:
 1. If you did install using the Sumo Logic Helm chart:
-    * Update the helm chart values file with the following config:
-        * Add following [additionalScrapeConfigs](https://sumologic-app-data.s3.amazonaws.com/Istio/sumologic-istio.yaml) section to **prometheusSpec** field of `sumologic-istio.yaml`. These configs will scrape Istio endpoints for metrics. You can read more about the above scrape configs [here](https://istio.io/latest/docs/ops/integrations/prometheus/#option-2-customized-scraping-configurations)
-
-
+   * Update the helm chart values file with the following config:
+     * Add following [additionalScrapeConfigs](https://sumologic-app-data.s3.amazonaws.com/Istio/sumologic-istio.yaml) section to **prometheusSpec** field of `sumologic-istio.yaml`. These configs will scrape Istio endpoints for metrics. You can read more about the above scrape configs [here](https://istio.io/latest/docs/ops/integrations/prometheus/#option-2-customized-scraping-configurations)
 ```yml
        - job_name: 'istiod'
           kubernetes_sd_configs:
@@ -74,9 +79,7 @@ The Sumologic-Kubernetes-Collection will automatically capture the logs from std
             regex: '.*-envoy-prom'
 ```
 
-
-1. Add following [rules](https://sumologic-app-data.s3.amazonaws.com/Istio/sumologic-istio.yaml) to **remoteWrite** section of `sumologic-istio.yaml`. These remote write configs make sure only metrics used by Sumo Logic Istio App are forwarded to Sumo Logic by Sumo Helm Chart.
-
+2. Add following [rules](https://sumologic-app-data.s3.amazonaws.com/Istio/sumologic-istio.yaml) to **remoteWrite** section of `sumologic-istio.yaml`. These remote write configs make sure only metrics used by Sumo Logic Istio App are forwarded to Sumo Logic by Sumo Helm Chart.
 ```yml
        - url: http://$(FLUENTD_METRICS_SVC).$(NAMESPACE).svc.cluster.local:9888/prometheus.metrics.istio
           remoteTimeout: 5s
@@ -90,34 +93,26 @@ The Sumologic-Kubernetes-Collection will automatically capture the logs from std
             - action: keep
               regex: (?:istio_(response_(bytes_sum|bytes_bucket)|requests_total|request_(duration_milliseconds_sum|duration_milliseconds_bucket|bytes_sum|bytes_bucket)|build|agent_(process_virtual_memory_bytes|process_max_fds|pilot_xds_pushes|pilot_xds_expired_nonce|pilot_xds|pilot_virt_services|pilot_proxy_queue_time_sum|pilot_endpoint_not_ready|num_outgoing_requests|num_failed_outgoing_requests|go_threads|go_memstats_heap_inuse_bytes|go_memstats_heap_alloc_bytes|go_memstats_gc_cpu_fraction|go_memstats_alloc_bytes_total|go_memstats_alloc_bytes|go_gc_duration_seconds)))
               sourceLabels: [__name__]
-
 ```
 
-
-
-1. Upgrade the sumo logic helm chart by running the following
-
-
+3. Upgrade the sumo logic helm chart by running the following:
 ```bash
 helm upgrade --install <my-release-name> sumologic/sumologic -f sumologic-istio.yaml
 ```
-
-
 
 ### If your Kubernetes collection has not been set up
 
-**Log Collection:**
+If you do not have Kubernetes set up, go [here](https://github.com/SumoLogic/sumologic-kubernetes-collection/tree/master/deploy).
 
-1. **Enable [Access Logging](https://istio.io/latest/docs/tasks/observability/logs/access-log/#enable-envoy-s-access-logging) to write logs to stdout.**
+Log Collection:
+1. Enable [Access Logging](https://istio.io/latest/docs/tasks/observability/logs/access-log/#enable-envoy-s-access-logging) to write logs to stdout.
 
-The Sumologic-Kubernetes-Collection will automatically capture the logs from stdout and will send the logs to Sumologic.
+  The Sumologic-Kubernetes-Collection will automatically capture the logs from stdout and will send the logs to Sumologic.
 
-**Metric Collection:**
-
+Metric Collection:
 1. Deploy using [Helm](https://github.com/SumoLogic/sumologic-kubernetes-collection/tree/master/deploy#installation-with-helm)
 2. Add **additionalScrapeConfigs** and **remoteWrite** rules to values.yaml
-    1. Add this **[additionalScrapeConfigs](https://sumologic-app-data.s3.amazonaws.com/Istio/sumologic-istio.yaml)** section to **prometheusSpec** field of `values.yaml`. These configs will scrape Istio endpoints for metrics. These configs will scrape Istio endpoints for metrics. You can read more about above scrape configs [here](https://istio.io/latest/docs/ops/integrations/prometheus/#option-2-customized-scraping-configurations)
-
+   * Add this **[additionalScrapeConfigs](https://sumologic-app-data.s3.amazonaws.com/Istio/sumologic-istio.yaml)** section to **prometheusSpec** field of `values.yaml`. These configs will scrape Istio endpoints for metrics. These configs will scrape Istio endpoints for metrics. You can read more about above scrape configs [here](https://istio.io/latest/docs/ops/integrations/prometheus/#option-2-customized-scraping-configurations).
 
 ```yml
        - job_name: 'istiod'
@@ -140,12 +135,7 @@ The Sumologic-Kubernetes-Collection will automatically capture the logs from std
             regex: '.*-envoy-prom'
 ```
 
-1. Add these [rules](https://sumologic-app-data.s3.amazonaws.com/Istio/sumologic-istio.yaml) to **remoteWrite** section of `values.yaml`. This will send scraped metrics to sumo. \
-
-5.png "image_tooltip")
-2 **URL** blocks.
-
-
+  * Add these [rules](https://sumologic-app-data.s3.amazonaws.com/Istio/sumologic-istio.yaml) to **remoteWrite** section of `values.yaml`. This will send scraped metrics to sumo. Two **URL** blocks.
 ```yml
        - url: http://$(FLUENTD_METRICS_SVC).$(NAMESPACE).svc.cluster.local:9888/prometheus.metrics.istio
           remoteTimeout: 5s
@@ -159,33 +149,20 @@ The Sumologic-Kubernetes-Collection will automatically capture the logs from std
             - action: keep
               regex: (?:istio_(response_(bytes_sum|bytes_bucket)|requests_total|request_(duration_milliseconds_sum|duration_milliseconds_bucket|bytes_sum|bytes_bucket)|build|agent_(process_virtual_memory_bytes|process_max_fds|pilot_xds_pushes|pilot_xds_expired_nonce|pilot_xds|pilot_virt_services|pilot_proxy_queue_time_sum|pilot_endpoint_not_ready|num_outgoing_requests|num_failed_outgoing_requests|go_threads|go_memstats_heap_inuse_bytes|go_memstats_heap_alloc_bytes|go_memstats_gc_cpu_fraction|go_memstats_alloc_bytes_total|go_memstats_alloc_bytes|go_gc_duration_seconds)))
               sourceLabels: [__name__]
-
 ```
 
+3. Upgrade the sumo logic helm chart by running the following,
+  ```bash
+  helm upgrade --install <my-release-name> sumologic/sumologic -f sumologic-istio.yaml
+  ```
 
+#### Validation Steps
 
-1. Upgrade the sumo logic helm chart by running the following,
-
-
-```bash
-helm upgrade --install <my-release-name> sumologic/sumologic -f sumologic-istio.yaml
-```
-
-
-
-#### Validation Steps:
-
-1. Do port forward via your terminal :
-
+1. Do port forward via your terminal (`my-release` is my release I used while setting up [Sumo Logic helm chart](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/deploy/docs/Installation_with_Helm.md#installation-steps)):
 ```bash
 kubectl port-forward prometheus-my-release-kube-prometheus-prometheus-0 9090
 ```
-
-my-release is my release i used while setting up [Sumo Logic helm chart](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/deploy/docs/Installation_with_Helm.md#installation-steps).
-
-1. Open [http://127.0.0.1:9090/config](http://127.0.0.1:9090/config) in a web browser and make sure the following remotewrite configs are present:
-
-
+2. Open [http://127.0.0.1:9090/config](http://127.0.0.1:9090/config) in a web browser and make sure the following remotewrite configs are present:
 ```yml
 - url: http://my-release-sumologic-fluentd-metrics.default.svc.cluster.local:9888/prometheus.metrics.istio
   remote_timeout: 5s
@@ -223,10 +200,7 @@ my-release is my release i used while setting up [Sumo Logic helm chart](https:/
 
 Above remotewrite configs make sure only metrics used by Sumo Logic Istio App are forwarded to Sumo Logic by Sumo Helm Chart.
 
-
-1. Open [http://127.0.0.1:9090/config](http://127.0.0.1:9090/config) in a web browser and make sure the following scrape configs are present :
-
-
+3. Open [http://127.0.0.1:9090/config](http://127.0.0.1:9090/config) in a web browser and make sure the following scrape configs are present:
 ```yml
 - job_name: istiod
   honor_timestamps: true
@@ -262,21 +236,6 @@ Above remotewrite configs make sure only metrics used by Sumo Logic Istio App ar
 ```
 
 
-### Query Sample
-
-Query Sample from Dashboard "Istio - Logs" ; Panel "Non 200 Response Codes" :
-
-```sql
-namespace=istio-system cluster={{cluster}}
-| json field=_raw "log" as log_message
-| parse regex field=log_message "\[(?<start_time>.+)\] \"(?<req>.+?)\" (?<response_code>.+?) (?<response_flags>.+?) (?<response_code_details>.+?) (?<con_term_details>.+?) \"(?<upstream_fail_reason>.+?)\" (?<bytes_recvd>.+?) (?<bytessent>.+?) (?<duration>.+?) (?<resp>.+?) \"(?<req_fwd_for>.+?)\" \"(?<user_agent>.+?)\" \"(?<request_id>.+?)\" \"(?<request_authority>.+?)\" \"(?<upstream_host>.+?)\" (?<upstream_cluster>.+?) (?<upstream_loacl_address>.+?) (?<downstream_local_address>.+?) (?<downstream_remote_address>.+?) (?<requested_server_name>.+?) (?<route_name>.+?)"
-| where response_code != "200"
-| timeslice 1h
-| count by response_code, _timeslice
-| transpose row _timeslice column response_code
-```
-
-
 
 ## Installing the Istio App
 
@@ -292,8 +251,7 @@ Locate and install the app you need from the App Catalog. If you want to see a p
 2. To install the app, click Add to Library and complete the following fields.
     1. **App Name**. You can retain the existing name, or enter a name of your choice for the app. 
     2. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-
-1. Click **Add to Library**.
+3. Click **Add to Library**.
 
 Once an app is installed, it will appear in your Personal folder, or other folder that you specified. From here, you can share it with your organization.
 
@@ -305,7 +263,7 @@ Panels will start to fill automatically. It's important to note that each panel 
 Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards-new/filter-with-template-variables.md).
 :::
 
-### Istio Overview
+### Overview
 
 The **Istio Overview** dashboard provides a high-level view of the number of applications in your environment, the average requests and responses, and the average duration of requests.
 

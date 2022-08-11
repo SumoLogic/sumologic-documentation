@@ -52,7 +52,7 @@ To create a new HTTP logs and metric source, do the following:
 You must have Admin privileges to perform any of the following installation procedures. This section walks you through the ways in which you can install the Jenkins plugin:
 
 * [Updating the Jenkins plugin](#Updating_the_Jenkins_plugin)—use this method if the Jenkins plugin is installed on your system and you want to update the version.
-* [Installing with sumologic publisher for the first time](#Installing_with_sumologic_publisher_for_the_first_time)—use this method if you are using the sumologic publisher for the first time.
+* [Installing with sumologic publisher for the first time](#Installing_with_sumologic_publisher_for_the_first_time)—use this method If you're using the sumologic publisher for the first time.
 * [Manually installing the Jenkins plugin](#Manually_installing_the_Jenkins_plugin)—use this method if there's a restriction on installing the plugin directly through the Jenkins plugin update center.
 
 
@@ -60,13 +60,12 @@ You must have Admin privileges to perform any of the following installation proc
 
 This section shows you how to update the version of the Jenkins plugin you have running on your system.
 
-**To update the Jenkins plugin, do the following:**
+To update the Jenkins plugin, do the following:
 
 1. In the Jenkins console, go to **Manage Jenkins > Manage Plugins**.
-2. Click the **Updates tab > Check now**.
-
+1. Click the **Updates tab > Check now**.
 1. Select "Sumologic Publisher".
-2. Click **Download now and install after restart**. You may need to restart Jenkins for the plugin to show up.
+1. Click **Download now and install after restart**. You may need to restart Jenkins for the plugin to show up.
 
 
 
@@ -74,22 +73,19 @@ This section shows you how to update the version of the Jenkins plugin you have 
 
 This section shows you how to install the Jenkins plugin, if this is your first time using sumologic publisher.
 
-**To perform a first time installation, do the following:**
-
-
+To perform a first time installation, do the following:
 1. In the Jenkins console, go to **Manage Jenkins** > **Manage Plugins**.
-
 1. Click the **Available** tab.
-2. Search for "**Sumologic Publisher**".
-3. Click "Sumologic Publisher".
-4. Click **Download now and install after restart**. You may need to restart Jenkins for the plugin to show up.
+1. Search for "**Sumologic Publisher**".
+1. Click "Sumologic Publisher".
+1. Click **Download now and install after restart**. You may need to restart Jenkins for the plugin to show up.
 
 
 #### Manually installing the Jenkins plugin
 
 This section shows you how to manually install the Jenkins plugin.
 
-**To install the Jenkins Plugin, do the following:**
+To install the Jenkins Plugin, do the following:
 
 1. Download the Jenkins plugin HPI file from this [link](https://github.com/jenkinsci/sumologic-publisher-plugin/releases).
 2. In the Jenkins console, go to **Manage Jenkins** > **Manage Plugins**.
@@ -111,8 +107,7 @@ The plugin is available on Jenkins plugin center. Ignore the version mentioned i
 
 This task walks you through configuring the Jenkins Plugin for Sumo Logic.
 
-**To configure the Jenkins Plugin, do the following:**
-
+To configure the Jenkins Plugin, do the following:
 
 1. Go to **Jenkins > Manage Jenkins** and select **Configure System.**
 

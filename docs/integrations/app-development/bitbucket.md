@@ -9,13 +9,12 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/app-development/bitbucket.png')} alt="Thumbnail icon" width="50"/>
 
-
 The Sumo Logic App for Bitbucket provides insights to development teams into how their software delivery pipeline components are performing. The pre-configured dashboards organize issues, builds, and deployments that require the most attention.
 
 The Bitbucket App supports only Bitbucket Cloud.
 
 
-## Log Types and Sample Logs
+## Log Types
 
 Sumo Logic analyzes the following required types of logs for more efficient monitoring.
 
@@ -59,7 +58,7 @@ Refer to the [event documentation](https://confluence.atlassian.com/bitbucket/ev
 
 For log samples, refer to [Bitbucket Event Documentation](https://confluence.atlassian.com/bitbucket/event-payloads-740262817.html)
 
-### Deploy Events
+### Sample Log
 
 **Deploy Events** are triggered whenever code is pushed to test, staging, or production environments.
 * Success Code Deploys
@@ -86,6 +85,37 @@ For log samples, refer to [Bitbucket Event Documentation](https://confluence.atl
 ```
 
 
+### Sample Query
+
+This section provides a sample from the **Failed Deployments** panel on the **Bitbucket Deployment **dashboard.
+
+**Parameters**
+
+* Event_Date:*
+* Build_Number:*
+* Deploy_Status:*
+* Deployment_Environment:*
+* Files_Committed:*
+* Repo_Full_Name:*
+* Repo_Owner:*
+* Source_Branch:*
+* Deploy_Result:*
+
+```sql title="Query String"
+_sourceCategory="bitbucket" production  deploymentEnvironment pipe_result_link deploy_status commit_link
+| json field=_raw "buildNumber", "deploymentEnvironment", "branch", "repoFullName", "pipe_result_link", "deploy_status", "pr_id", "commit", "tag", "projectKey", "repoOwner", "commit_link" , "event_date"
+| repoFullName as repo_name
+| where   repoFullName matches "*"  AND buildNumber matches "*"
+| branch as source_branch
+| if (deploy_status matches "0", "Success", "Failed") as deploy_status
+| where deploymentEnvironment="production" and deploy_status="Failed"
+| tourl (commit_link, concat("Commit # ",commit)) as files_commited
+| tourl (pipe_result_link, buildNumber) as deploy_result
+| count by event_date, buildNumber, deploy_status, deploymentEnvironment, files_commited, repoFullName, repoOwner, source_branch, deploy_result
+| fields - _count
+```
+
+
 ## Collecting Logs for Bitbucket App
 
 This section provides instructions for configuring log collection for the Bitbucket App. Configuring log collection consists of the following tasks:
@@ -96,24 +126,25 @@ In this step, you create a Hosted Collector to receive Webhook Events from Bitbu
 
 1. Configure a [Hosted Collector](/docs/send-data/configure-hosted-collector), or select an existing hosted collector for the HTTP source.
 2. Configure an [HTTP source](/docs/send-data/sources/sources-hosted-collectors/http-logs-metrics-source) on the hosted collector.
-    * For Source Category, specify `bitbucket/events.`
-    * Click **+Add Field **and provide the following:
-        * **Field Name. **_convertHeadersToFields
-        * **Value. **true
+    * For Source Category, specify `bitbucket/events`.
+    * Click **+Add Field** and provide the following:
+        * **Field Name.** `_convertHeadersToFields`
+        * **Value.** `true`
     * Click **Save** and make note of the HTTP address for the source. You will supply it when you configure a Jira Webhook in the next step.
+
+    <img src={useBaseUrl('img/integrations/app-development/bitbucket1.png')} alt="Bitbucket" />
 
 ### Step 2: Adding a Webhook in Bitbucket
 
 1. From Bitbucket, open the repository where you want to add the Webhook.
 2. Click the **Settings** link on the left side.
 3. From the links on the **Settings** page, click the **Webhooks** link.
-4. Click the **Add Webhook** button to create a Webhook for the repository. The **Add New Webhook** page appears.
-
-1. Enter a **Title** with a short description.
-2. Enter Sumo Logic Http source **URL**, you configured this in [Configure Hosted Collector to Receive Bitbucket events](#Configure_Hosted_Collector_to_Receive_Bitbucket_events).
-3. Click on **Status** to make it **Active**.
-4. **Triggers - **Click on** Choose from a full list of triggers, and choose all triggers under Repository, Issue and Pull Request.
-5. Click **Save**
+4. Click the **Add Webhook** button to create a Webhook for the repository. The **Add New Webhook** page appears.<br/><img src={useBaseUrl('img/integrations/app-development/Collect_Log_BB.png')} alt="Bitbucket" />
+5. Enter a **Title** with a short description.
+6. Enter Sumo Logic Http source **URL**, you configured this in [Configure Hosted Collector to Receive Bitbucket events](#Configure_Hosted_Collector_to_Receive_Bitbucket_events).
+7. Click on **Status** to make it **Active**.
+8. **Triggers - **Click on** Choose from a full list of triggers, and choose all triggers under Repository, Issue and Pull Request.
+9. Click **Save**
 
 
 ### Step 3: Configure the Bitbucket CI/CD Pipeline to Collect Deploy Events
@@ -137,43 +168,8 @@ For reference - This is how [bitbucket-pipelines.yml](https://bitbucket.org/app-
 Sumo Logic needs to understand the event type for incoming events (for example, repo:push events). To enable this, the [X-Event-Key](https://confluence.atlassian.com/bitbucket/event-payloads-740262817.html#EventPayloads-HTTPheaders) event type needs to be enabled. To enable this,  perform the following steps in the Sumo Logic console:
 
 1. From Sumo Logic, go to **Manage Date **- > **Logs** - > **[Fields](/docs/manage/fields.md#add-field)**.
-2. Add Field ‎**X-Event-Key**‎
+2. Add Field ‎**X-Event-Key**‎.<br/><img src={useBaseUrl('img/integrations/app-development/BB_Collect_Log.png')} alt="Bitbucket" />
 
-
-
-
-## Sample Query
-
-This section provides a sample from the **Failed Deployments** panel on the **Bitbucket Deployment **dashboard.
-
-**Parameters**
-
-* Event_Date:*
-* Build_Number:*
-* Deploy_Status:*
-* Deployment_Environment:*
-* Files_Committed:*
-* Repo_Full_Name:*
-* Repo_Owner:*
-* Source_Branch:*
-* Deploy_Result:*
-
-
-**Query String**
-
-```sql
-_sourceCategory="bitbucket" production  deploymentEnvironment pipe_result_link deploy_status commit_link
-| json field=_raw "buildNumber", "deploymentEnvironment", "branch", "repoFullName", "pipe_result_link", "deploy_status", "pr_id", "commit", "tag", "projectKey", "repoOwner", "commit_link" , "event_date"
-| repoFullName as repo_name
-| where   repoFullName matches "*"  AND buildNumber matches "*"
-| branch as source_branch
-| if (deploy_status matches "0", "Success", "Failed") as deploy_status
-| where deploymentEnvironment="production" and deploy_status="Failed"
-| tourl (commit_link, concat("Commit # ",commit)) as files_commited
-| tourl (pipe_result_link, buildNumber) as deploy_result
-| count by event_date, buildNumber, deploy_status, deploymentEnvironment, files_commited, repoFullName, repoOwner, source_branch, deploy_result
-| fields - _count
-```
 
 ## Installing the Bitbucket App
 

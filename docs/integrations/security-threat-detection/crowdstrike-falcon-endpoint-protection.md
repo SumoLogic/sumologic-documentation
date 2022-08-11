@@ -30,7 +30,7 @@ For more information on Events, please refer to the CrowdStrike Falcon Endpoint 
 :::caution
 To collect logs from CrowdStrike Falcon Endpoint Protection, if you are not using the Sumo Logic FedRamp deployment, use the [new Cloud to Cloud Integration for Crowdstrike ](/docs/send-data/Sources/sources-hosted-collectors/Cloud-to-Cloud-Integration-Framework/CrowdStrike-Source)to create the source and use the same source category while installing the app.
 
-The sections below are deprecated for non-FedRamp Sumo Logic deployments. If you are using the Sumo Logic FedRamp deployment, use the sections below to configure the collection for this app.
+The sections below are deprecated for non-FedRamp Sumo Logic deployments. If you're using the Sumo Logic FedRamp deployment, use the sections below to configure the collection for this app.
 :::
 
 This section shows you how to configure log collection from CrowdStrike Falcon Endpoint Protection and have them sent to Sumo Logic. CrowdStrike Falcon Endpoint Protection provides endpoint detection and response, next-gen antivirus, and threat intelligence services through the cloud. Multiple security functions are consolidated into a single lightweight agent, for visibility across using central security analytics with Sumo Logic.
@@ -116,7 +116,7 @@ To configure CrowdStrike SIEM Connector, do the following:
 
 You setup a Sumo Logic installed collector on the same host as the SIEM Connector. Then, set up a local file source on the installed collector to read the output file from [Step 2](#Step_2._Configure_CrowdStrike_SIEM_Connector) and send CrowdStrike Falcon Events to Sumo Logic.
 
-**To setup an installed collector and local file source, do the following:**
+**To setup an installed collector and local file source, do the following:
 
 1. Install a Sumo Logic collector on the same host as the SIEM Connector. Follow the instructions for your operating system as described in [Installed Collectors](/docs/send-data/Installed-Collectors).
 2. Add a local file source to the collector for Streaming API Events. Follow the steps on [Local File Source](/docs/send-data/Sources/sources-installed-collectors/Local-File-Source), with these additional changes:

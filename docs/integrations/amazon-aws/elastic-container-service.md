@@ -1,14 +1,13 @@
 ---
 id: elastic-container-service
-title: Amazon Elastic Container Service
-sidebar_label: Amazon Elastic Container Service (ECS)
+title: Amazon Elastic Container Service (ECS)
+sidebar_label: Amazon ECS
 description: Provides preconfigured searches and Dashboards that allow you to monitor various metrics.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/amazon-aws/ecs.png')} alt="Thumbnail icon" width="50"/>
-
 
 Amazon Elastic Container Service (Amazon ECS) is a container management service that allows you to manage Docker containers on a cluster of Amazon EC2 instances. The Sumo Logic App for Amazon ECS provides preconfigured searches and Dashboards that allow you to monitor various metrics (CPU and Memory Utilization, CPU and Memory Reservation) across ECS clusters and services. The App also monitors API calls made by or on behalf of Amazon ECS in your AWS account.
 
@@ -302,14 +301,13 @@ In this step, you set up an [Amazon CloudWatch Source for Metrics](/docs/send-da
 3. In the Sumo web app, select **Manage Data > Collection > Collection**.
 4. Navigate to the hosted collector you configured above and select **Add > Add Source**.
 5. Select Amazon CloudWatch Source for Metrics.
-6. **Name. **Enter a name to display for the new source.
+6. **Name.** Enter a name to display for the new source.
 7. **Description.** Enter an optional description.
 8. **Regions.** Select your Amazon Regions for ECS.
 9. **Namespaces.** Select **AWS/ECS**.
 10. **Source Category.** Enter **ecs_metrics**.
 11. **AWS Access**. There are two options for AWS access:
-    * **Role-based access**. This is the preferred method. You can use this option if you granted access to Amazon ECS as described in [Grant Access to an AWS Product](/docs/send-data/sources/sources-hosted-collectors/amazon-web-services/grant-access-aws-product.md).  For role-based access enter the Role ARN that was provided by AWS after creating the role.  \
-
+    * **Role-based access**. This is the preferred method. You can use this option if you granted access to Amazon ECS as described in [Grant Access to an AWS Product](/docs/send-data/sources/sources-hosted-collectors/amazon-web-services/grant-access-aws-product.md).  For role-based access enter the Role ARN that was provided by AWS after creating the role.
     * **Key access**. Enter the Access Key ID and Secret Access Key. For more information, see [Managing Access Keys for IAM Users](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html) in AWS help.
 12. **Scan Interval.** Use the default of 5 minutes, or enter the frequency Sumo Logic will scan your CloudWatch Sources for new data.
 13. Click **Save**.
@@ -351,10 +349,7 @@ To install the app:
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
 1. From the **App Catalog**, search for and select the app**.**
-2. Select the version of the service you're using and click **Add to Library**.
-
-Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/library/install-apps)
-
+2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/library/install-apps)
 3. To install the app, complete the following fields.
     * **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
     * **Data Source.** Select either of these options for the data source. 
