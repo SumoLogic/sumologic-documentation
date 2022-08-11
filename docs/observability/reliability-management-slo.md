@@ -241,14 +241,14 @@ Follow the instructions below based on the query type:
   <tr>
    <td>For <strong>Ratio-based</strong> definitions, which calculate successful or unsuccessful events against total events:
 <ol><li>Select <strong>Successful</strong> or <strong>Unsuccessful Events</strong> to measure.</li>
-<li>Search logs selecting and entering a log query. See <a href="/docs/search/get-started-with-search/search-basics/about-search-basics.md">About Search Basics</a> for more information.</li>
+<li>Search logs selecting and entering a log query. See <a href="/docs/search/get-started-with-search/search-basics/about-search-basics">About Search Basics</a> for more information.</li>
 <li>For <strong>Use values from</strong>, select the numeric value available for that query to pull data from.</li>
 <li>Then configure the <strong>Total Events</strong>, including a query and values. You can copy and paste the previous query, perhaps with filters removed to get the total.</li>
 </ol>
    </td>
    <td>For <strong>Threshold-based</strong> definitions, which calculate against success criteria:
 <ol><li>Select <strong>Successful</strong> or <strong>Unsuccessful Events</strong> to measure.</li>
-<li>Search logs selecting and entering a log query. See <a href="/docs/search/get-started-with-search/search-basics/about-search-basics.md">About Search Basics</a> for more information.</li>
+<li>Search logs selecting and entering a log query. See <a href="/docs/search/get-started-with-search/search-basics/about-search-basics">About Search Basics</a> for more information.</li>
 <li>For <strong>Use values from</strong>, it always uses the Metric value.</li>
 <li>For <strong>Success Criteria</strong> for <strong>Avg</strong>, <strong>Min</strong>, <strong>Max</strong>, or <strong>Sum</strong> of the selected signal type (such as latency), which must be <strong>greater than</strong>, <strong>greater than or equal to</strong>, <strong>less than</strong>, or <strong>less than equal to</strong> an amount you enter (positive or negative number).</li>
 </ol>
@@ -285,7 +285,7 @@ To import an SLO:
 ## Creating SLO Monitors
 
 :::note
-[Alert Responses](/docs/alerts/monitors/alert-response.md) are not supported for SLO-based monitors. Notifications will provide information and links to SLO dashboards.
+[Alert Responses](/docs/alerts/monitors/alert-response) are not supported for SLO-based monitors. Notifications will provide information and links to SLO dashboards.
 :::
 
 Create one or more monitors as needed for your SLO. We recommend creating separate monitors for SLI-based and Burn Rate-based condition types. You can access SLO monitors through the [SLO Details](#Previewing-slos) or from the Monitors list page.
