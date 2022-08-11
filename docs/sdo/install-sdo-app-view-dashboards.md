@@ -22,7 +22,7 @@ Locate and install the app you need from the **App Catalog**. If you want to see
     Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library](../get-started/library/install-apps.md).
     :::
 
-1. To install the app, complete the following fields.
+3. To install the app, complete the following fields.
 
    * **App Name.** You can retain the existing name, or enter a name of your choice for the app.
    * **Data Source.** Select either of these options for the data source.

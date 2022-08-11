@@ -182,7 +182,7 @@ You configured two sources for collection, docker logs and docker stats, and the
     4. Choose **Enter a Custom Data Filter,** and enter the source category specified in [Step 2](#Collect_logs_and_metrics_for_Docker_EE) of collection instructions followed by “/system”, for example: _sourceCategory=**kubernetes/system**
 
 1. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-2. Click **Add to Library**.
+4. Click **Add to Library**.
 
 Once an app is installed, it will appear in your **Personal** folder, or another folder that you specified. From here, you can share it with your organization.
 

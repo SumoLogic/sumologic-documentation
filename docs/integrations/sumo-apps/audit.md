@@ -27,7 +27,7 @@ Make sure that the Sumo auditing is enabled. If it is not, an administrator must
 
 To install the app, do the following:
 1. In the **App Catalog, **search for "Audit**"** and select the **Audit **app.
-2. Click **Add to Library**.<br/><img src={useBaseUrl('img/integrations/sumo-apps/audit-app-catalog.png')} alt="test" />
+4. Click **Add to Library**.<br/><img src={useBaseUrl('img/integrations/sumo-apps/audit-app-catalog.png')} alt="test" />
 3. To save the app to a new folder in your personal folder, click **+ New Folder **and select a name and location for your folder.
 4. Click **Add to Library** to install the app. A confirmation dialog will appear and then you can start viewing your  dashboards.
 
