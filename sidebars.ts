@@ -1851,8 +1851,8 @@ module.exports = {
       collapsed: true,
       link: {type: 'doc', id: 'integrations/hosts-operating-systems/index'},
       items: [
-        'integrations/hosts-operating-systems/process-metrics',
-        'integrations/hosts-operating-systems/metrics',
+        'integrations/hosts-operating-systems/host-metrics',
+        'integrations/hosts-operating-systems/host-process-metrics',
         'integrations/hosts-operating-systems/linux',
         'integrations/hosts-operating-systems/linux-performance',
         ],

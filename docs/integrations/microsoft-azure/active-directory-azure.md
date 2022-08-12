@@ -12,15 +12,13 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 Azure Active Directory is a cloud-based directory and identity management service that provides directory services, application access management, and identity protection. The Sumo Logic App for Azure helps you monitor activity in the Azure Active Directory. The dashboards provide insight into role management, user management, group management, successful and failed sign-in events, directory management, and application management data that helps you understand your users' experience.
 
 The app uses the following log types:
-
-Audit and Sign-in logs
+* Audit and Sign-in logs
 
 Only global administrators, security administrators, security readers, and report readers can view sign-ins and enable collection for Sign-in Events.
 
 ## Collecting Logs
 
 This section has instructions for setting up the ingestion pipeline from Azure Active Directory to Sumo Logic.
-
 
 The sections below are either for FedRamp Sumo Logic deployments or if you have been advised by the Sumo Logic support team to not use the Cloud to Cloud Integration based on your Azure environments.
 
@@ -30,6 +28,8 @@ The sections below are either for FedRamp Sumo Logic deployments or if you have 
 * Azure Monitor collects logs for Azure Active Directory and streams the data to an Azure Event Hub.
 * Event Hub streams the logs collected by Azure Monitor to an Azure function.
 * The Azure function is a small piece of code that is triggered by Event Hub to send Azure Active Directory logs to the Sumo HTTP Source. The function also logs to one Storage Account and logs failover data to another.
+
+<img src={useBaseUrl('img/integrations/microsoft-azure/CollectLogsforAzureAD.png')} alt="CollectLogsforAzureAD" />
 
 ### Prerequisites
 
