@@ -9,8 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/google/workspace.jpeg')} alt="thumbnail icon" width="150"/>
 
-This procedure explains how to collect logs from Google Workspace and ingest them into Sumo Logic.
-
+This procedure explains how to collect logs from Google Workspace and ingest them into Sumo Logic. You can configure two types of log collection: Google Workspace Alert Center and Google Workspace Audit Source.
 
 ## Log Types
 
@@ -19,30 +18,15 @@ This procedure explains how to collect logs from Google Workspace and ingest the
 **Google Workspace Alert Center** alerts are in JSON format. Most of the alerts have a few common fields. The differences are in the data section of the JSON where the alert type specific details are recorded. For more information, see this Google Workspace[ Alert document](https://developers.google.com/admin-sdk/alertcenter/reference/alert-types).
 
 
-## Configure Log Collection
+## Configure Collection for Google Workspace Audit Source
 
-You can configure two types of log collection:
+This section provides instructions for configuring log collection for Google Workspace with Audit Source.
 
-* [Google Workspace](#01Configure_Collection_for_Google_Workspace_Audit_Source): Monitors and analyzes the activity across all the Google Workspace Apps in one place. You can configure collection for each Google App for which you want to analyze events:
+[Google Workspace](#configure-collection-for-google-workspace-audit-source): Monitors and analyzes the activity across all the Google Workspace Apps in one place. You can configure collection for each Google App for which you want to analyze events:
     * Google Admin
     * Google Drive
     * Google Login
     * Google Token
-* [Google Workspace Alert Center](#Configure_Collection_for_Google_Workspace_Alert_Center): Provides full visibility into alerts from Google Workspace apps, allowing you to investigate and correlate alerts and monitor potential threats. You can configure the list alerts to be collected. The alerts are forwarded to Sumo Logic’s HTTP endpoint in JSON format.
-
-
-## Configure Collection for Google Workspace Audit Source
-
-This section provides instructions for configuring log collection for Google Workspace with Audit Source. Click a link to jump to a topic:
-
-* [About Source Configuration](#01Configure_Collection_for_Google_Workspace_Audit_Source#About_Source_Configuration)
-* [Google Authentication and Authorization](#01Configure_Collection_for_Google_Workspace_Audit_Source#Google_Authentication_and_Authorization)
-* [Configure a Collector](#01Configure_Collection_for_Google_Workspace_Audit_Source#Configure_a_Collector)
-* [Configure Google Workspace Apps Audit Sources](#01Configure_Collection_for_Google_Workspace_Audit_Source#Configure_Google_Workspace_Apps_Audit_Sources)
-* [Field Extraction Rules](#01Configure_Collection_for_Google_Workspace_Audit_Source#Field_Extraction_Rules)
-* [Sample Log Message](#01Configure_Collection_for_Google_Workspace_Audit_Source#Sample_Log_Message)
-* [Query Samples](#01Configure_Collection_for_Google_Workspace_Audit_Source#Query_Samples)
-
 
 ### About Source Configuration  
 
@@ -85,9 +69,9 @@ This Source uses OAuth to integrate with the Google Apps Reports API. Therefore,
 
 When creating or modifying a Google Apps Audit Source, you will be required to authenticate with Google using the credentials of a user that has access rights to the account, and to the Reports API. See Google's [Reports API: Prerequisites](https://developers.google.com/admin-sdk/reports/v1/guides/prerequisites) documentation for more details. During Google's OAuth consent flow, you will also be asked to grant the Sumo Logic app permission to use the Reports API.
 
-
-Authentication must be with a new Google Workspace Apps Audit Source, we do not support re-authenticating existing sources.
-
+:::note
+Authentication must be with a new Google Workspace Apps Audit Source. We do not support re-authenticating existing sources.
+:::
 
 ### Configure a Collector
 
@@ -95,18 +79,14 @@ Configure a [Hosted Collector](/docs/send-data/configure-hosted-collector) for G
 
 
 ### Configure Google Workspace Apps Audit Sources  
-15
-
 
 When you have set up a Hosted Collector and have your credentials ready, you're all set to configure the Sources. Perform the steps below for each Google Workspace App you want to monitor.  Before you configure the Sources, choose one of the source category strategies described in [About Source Configuration](#About_Source_Configuration), above.
 
-
-16
+::note
 We recommend that you use the same single Source Category for each Google Workspace App Audit Source. For example, **google_apps**.
+:::
 
 To configure a Google Workspace Apps Audit Source, do the following:
-
-
 
 1. Configure a **G Suite Apps Audit** Source.
 2. Configure the Source fields:
@@ -119,8 +99,6 @@ To configure a Google Workspace Apps Audit Source, do the following:
 
 
 #### Google Workspace App Audit Known Issues  
-17
-
 
 The Google API has a few known issues that cannot be changed by Sumo Logic.
 
@@ -129,9 +107,6 @@ The Google API has a few known issues that cannot be changed by Sumo Logic.
 **Authentication token limit**. Google limits an application (such as Sumo Logic) to 25 active authentication tokens per Google Workspace Apps account. According to Google’s documentation, the oldest token is invalidated if a 26th token is created. However, during testing, we found that once the 26th token is issued, all previous 25 tokens become invalid. In this situation, the only workaround is to delete and recreate all G Suite Apps Audit Sources in Sumo Logic.
 
 **Duplicate records**. The following situations might result in the collection of duplicate log messages:
-
-
-
 * **Complex events**. When a complex an event is logged that contains multiple sub-events, such as a new calendar entry, a JSON object is created to log the event. That object will have an array of event details for each included action (such as inviting guests). When this happens, duplicate event logs might be created for each sub-action. So, if there is one event with three sub actions, the exact same message event data might be duplicated three times, most likely due to a bug in the Google API.
 * **Watchpoint expiration**. Google API watchpoints expire after about one week. Unfortunately, there does not appear to be a method for refreshing the expiration of a watchpoint. Sumo Logic must keep track of when each watchpoint expires, and in very close sequence, create a new watchpoint and kill the old watchpoint. This results in a slight overlap, typically only a few seconds, when there are two watchpoints for the same application. This might result in duplicate logs during that overlapping period, both of which are collected (which is preferable to the possibility of losing some data).
 
@@ -145,13 +120,11 @@ To provide feedback on these limitations and known issues, contact Google suppor
 * **Name**. A relevant name, such as "Google"
 * **Scope**. _sourceCategory=google*
 * **Parse Expression**.  
-
-```
-| json "id","actor","events"  \
-| json field=actor "email", "profileId" \
-| json field=id "applicationName"
-```
-
+  ```sql
+  | json "id","actor","events"  \
+  | json field=actor "email", "profileId" \
+  | json field=id "applicationName"
+  ```
 
 ### Sample Log Message  
 
@@ -198,13 +171,9 @@ To provide feedback on these limitations and known issues, contact Google suppor
 
 
 
-### Query Samples
+### Sample Query
 
-
-**Top 10 Apps by Count**
-
-
-```
+```sql title="Top 10 Apps by Count"
 _source=google_* token
 | json "id","actor", "events"
 | json field=actor "email", "profileId"
@@ -217,9 +186,7 @@ _source=google_* token
 ```
 
 
-**Logins from Multiple IPs**
-
-```
+```sql title="Logins from Multiple IPs"
 _sourceCategory=google*
 | json "actor","ipAddress"
 | json "events"
@@ -235,22 +202,15 @@ _sourceCategory=google*
 ```
 
 
-
 ## Configure Collection for Google Workspace Alert Center
 
-This section explains how to collect logs from Google Workspace Alert Center and ingest them into Sumo Logic for use with the Google Workspace App predefined dashboards and searches. Click a link to jump to a topic:
+This section explains how to collect logs from Google Workspace Alert Center and ingest them into Sumo Logic for use with the Google Workspace App predefined dashboards and searches.
 
-* [Alert types](#Configure_Collection_for_Google_Workspace_Alert_Center#Alert_types)
-* [Collection overview](#Configure_Collection_for_Google_Workspace_Alert_Center#Collection_overview)
-* [Add a Hosted Collector and HTTP Source](#Configure_Collection_for_Google_Workspace_Alert_Center#Add_a_Hosted_Collector_and_HTTP_Source)
-* [Configure collection for Google Workspace Alert Center](#Configure_Collection_for_Google_Workspace_Alert_Center#Configure_collection_for_Google_Workspace_Alert_Center)
-* [Sample Log Message](#Configure_Collection_for_Google_Workspace_Alert_Center#Sample_Log_Message)
-* [Query Sample](#Configure_Collection_for_Google_Workspace_Alert_Center#Query_Sample)
-
+[Google Workspace Alert Center](#configure-collection-for-google-workspace-alert-center): Provides full visibility into alerts from Google Workspace apps, allowing you to investigate and correlate alerts and monitor potential threats. You can configure the list alerts to be collected. The alerts are forwarded to Sumo Logic’s HTTP endpoint in JSON format.
 
 ### Alert types
 
-All the alerts are in JSON format. Most of the alerts have few common fields like alertId, customerId, createTime, source, type and data. The differences are in the data section of the JSON where the alert type specific details are recorded. For more information about different alert types refer this Google Workspace[ Alert document](https://developers.google.com/admin-sdk/alertcenter/reference/alert-types).
+All the alerts are in JSON format. Most of the alerts have few common fields like alertId, customerId, createTime, source, type and data. The differences are in the data section of the JSON where the alert type specific details are recorded. For more information about different alert types refer this Google Workspace [Alert document](https://developers.google.com/admin-sdk/alertcenter/reference/alert-types).
 
 
 ### Collection overview
@@ -263,7 +223,6 @@ Sumo Logic provides a serverless solution which pulls logs from Google Workspace
 
 This section demonstrates how to add a hosted Sumo Logic collector and HTTP Logs and Metrics source, to collect alerts for Google Workspace Alert Center.
 
-
 #### Prerequisite
 
 Before creating the HTTP source, identify the Sumo Logic Hosted Collector you want to use, or create a new Hosted Collector as described in the following task.
@@ -274,25 +233,24 @@ To add a hosted collector and HTTP source, do the following:
 1. Create a new Sumo Logic Hosted Collector by performing the steps in [Configure a Hosted Collector](/docs/send-data/configure-hosted-collector).
 2. Add an  HTTP Logs and Metrics Source.
 3. In the Advanced Options for Logs, under Timestamp Format, click **Specify a format** and enter the following information in the respective fields:
-* **Format:** `yyyy-MM-dd'T'HH:mm:ss.SSS'Z'`
-* **Timestamp locator:** `\"createTime\":(.*),`
-1. Click **Test** and paste in a test log line when prompted to do so.
-2. If the test is successful, click **Save**.
-3. Make a note of the URL of the new source.
+   * **Format:** `yyyy-MM-dd'T'HH:mm:ss.SSS'Z'`
+   * **Timestamp locator:** `\"createTime\":(.*),`
+4. Click **Test** and paste in a test log line when prompted to do so.
+5. If the test is successful, click **Save**.
+6. Make a note of the URL of the new source.
 
 
 ### Configure collection for Google Workspace Alert Center  
 
 In this section, we explore various mechanisms to collect findings from Google Workspace Alert Center and send them to Sumo Logic, where they are shown in dashboards as part of the Google Workspace App. You can configure a Google Workspace Alert Center collector in Google Cloud Platform (GCP), or via a script on a Linux machine. Choose the method that is best suited for you:
 
-* [Google Cloud Platform (GCP) collection](#Configure_Google_Cloud_Platform_Collection_for_Google_Workspace_Alert_Center)
-* [Script based collection](#Configure_Script-Based_Collection_for_Google_Workspace_Alert_Center)
+* [Google Cloud Platform (GCP) collection](#configure-collection-for-google-workspace-alert-center)
+* [Script based collection](#configure-script-based-collection-for-google-workspace-alert-center)
 
 
 ### Sample Log Message
 
 This section provides a sample Google Workspace Alert Center log message.
-
 
 ```json
 {
@@ -319,11 +277,9 @@ This section provides a sample Google Workspace Alert Center log message.
 ```
 
 
+### Sample Query
 
-### Query Sample
-
-The query sample provided in this section is from the **Google Workspace Activity by Users with Compromised Credentials** panel of the **Google Workspace - Alert Center - Investigations Dashboard**.
-
+The query sample provided in this section is from the **Google Workspace Activity by Users with Compromised Credentials** panel of the **Google Workspace - Alert Center - Investigations** Dashboard.
 
 ```sql
 _sourceCategory=googleworkspace_google_apps
@@ -344,7 +300,6 @@ _sourceCategory=googleworkspace_google_apps
 ```
 
 
-
 ## Configure Google Cloud Platform Collection for Google Workspace Alert Center
 
 
@@ -355,49 +310,37 @@ This section provides instructions for configuring Google Workspace Alert Center
 To configure Google Workspace Alert Center collection in your GCP environment, do the following:
 1. Go to: [https://console.cloud.google.com/cloudshell/](https://console.cloud.google.com/cloudshell/)
 2. Run the following command:
-```bash
-https://raw.githubusercontent.com/SumoLogic/sumologic-gsuitealertcenter/master/sumo_gsuite_alerts_collector_deploy.sh
-```
+  ```bash
+  https://raw.githubusercontent.com/SumoLogic/sumologic-gsuitealertcenter/master/sumo_gsuite_alerts_collector_deploy.sh
+  ```
+3. Edit the **sumo_gsuite_alerts_collector_deploy.sh** bash script to configure following variables:
+   * **region:** The Region where the Google function will be deployed. For example: "us-central1"
+   * **project_id:** The project id of the project where the collector and all its resources will be deployed
+   * **delegated_email: **The valid email address of one of your org's Google Workspace super admin users.
+   * **Sumo_endpoint:** The Sumo Logic HTTP endpoint created in Step 1
+4. Run the following script:
+  ```bash
+  sh sumo_gsuite_alerts_collector_deploy.sh
+  ```
+5. In the command prompt, enter `N` for the following question: `Allow unauthenticated invocations of new function`.
+6. Copy the **Client ID** displayed at the end of the script output. You will use the Client Name field when you [configure Google Workspace Alert Center to allow client API access](#Configure_Google_Cloud_Platform_Collection_for_Google_Workspace_Alert_Center#configure-google-workspace-alert-center-to-allow-client-api-acce) in the following task.
+7. Go to the Cloud Datastore page of the project, with the Project ID you configured in the previous steps of this procedure, and create a database instance with the **Cloud Firestore in Datastore Mode** option. For more information, refer to the [Google Cloud Datastore documentation](https://cloud.google.com/datastore/docs/quickstart).<br/><img src={useBaseUrl('img/integrations/google/GSuite_AlertCenter_DatastoreMode.png')} alt="google workspace" />
 
-1. Edit the **sumo_gsuite_alerts_collector_deploy.sh** bash script to configure following variables:
-* **region: **The Region where the Google function will be deployed. For example: "us-central1"
-* **project_id:** The project id of the project where the collector and all its resources will be deployed
-* **delegated_email: **The valid email address of one of your org's Google Workspace super admin users.
-* **Sumo_endpoint:  **The Sumo Logic HTTP endpoint created in Step 1
-1. Run the following script:
-```bash
-sh sumo_gsuite_alerts_collector_deploy.sh
-```
-
-
-1.  In the command prompt, enter "**N**" for the following question "Allow unauthenticated invocations of new function" as shown below.
-
-1. Copy the **Client ID** displayed at the end of the script output. You will use the Client Name field when you [configure Google Workspace Alert Center to allow client API access](#Configure_Google_Cloud_Platform_Collection_for_Google_Workspace_Alert_Center#configure-google-workspace-alert-center-to-allow-client-api-acce) in the following task.
-2. Go to the Cloud Datastore page of the project, with the Project ID you configured in the previous steps of this procedure, and create a database instance with the **Cloud Firestore in Datastore Mode** option. For more information, refer to the [Google Cloud Datastore documentation](https://cloud.google.com/datastore/docs/quickstart).<br/><img src={useBaseUrl('img/integrations/google/GSuite_AlertCenter_DatastoreMode.png')} alt="google workspace" />
-
-The script you used in this procedure configured the environment variables in the config file. You can update the variables by following the instructions Google's Using Environment Variables documentation, [Updating environment variables section](https://cloud.google.com/functions/docs/env-var).
-
+:::note
+The script you used in this procedure configured the environment variables in the config file. You can update the variables by following the instructions Google's [Updating environment variables documentation](https://cloud.google.com/functions/docs/env-var).
+:::
 
 ### Configure Google Workspace Alert Center to allow client API access
-35
-
 
 This section explains how to configure Google Workspace Alert Center to allow API access.
 
-
-36
-
-
 Follow the step 2 and step 3 under “Set up the Alert Center API” [docs](https://developers.google.com/admin-sdk/alertcenter/guides/prerequisites) to enable alert center API and grant domain-wide access to the application.
 
-If you're using the [Configure Google Cloud Platform Collection for Google Workspace Alert Center](#Configure_Google_Cloud_Platform_Collection_for_Google_Workspace_Alert_Center)
+If you're using the [Configure Google Cloud Platform Collection for Google Workspace Alert Center](#Configure_Google_Cloud_Platform_Collection_for_Google_Workspace_Alert_Center), use the **Client ID** for the service account copied in Step 6 of the following [docs](#Configure_Google_Cloud_Platform_Collection_for_Google_Workspace_Alert_Center#google-cloud-platform-gcp-%C2%A0collection).
 
-use the **Client ID** for the service account copied in Step 6 of the following [docs](#Configure_Google_Cloud_Platform_Collection_for_Google_Workspace_Alert_Center#google-cloud-platform-gcp-%C2%A0collection).
+If you're using the [Configure Script-Based Collection for Google Workspace Alert Center](#Configure_Script-Based_Collection_for_Google_Workspace_Alert_Center) use the **Client ID** present in the JSON generated after adding the key in the service account.
 
-If you're using the [Configure Script-Based Collection for Google Workspace Alert Center](#Configure_Script-Based_Collection_for_Google_Workspace_Alert_Center) use the **Client ID **present in the JSON generated after adding the key in the service account.
-
-To configure Google Workspace Alert Center:**
-
+To configure Google Workspace Alert Center:
 1. Go to your G Suite domain's Admin console (see instructions on [signing in to your Admin console](https://support.google.com/a/answer/182076)), go to **Security > Access and data control > API Controls**.<br/><img src={useBaseUrl('img/integrations/google/gw.png')} alt="google workspace" width="200"/>
 1. In the newly opened window, click **Manage Domain-wide Delegation **at the bottom.<br/><img src={useBaseUrl('img/integrations/google/GSuite_Step3.png')} alt="google workspace" />
 1. Click **Add new** button on the top.<br/><img src={useBaseUrl('img/integrations/google/GSuite_Step4.png')} alt="google workspace" />
@@ -409,18 +352,16 @@ To configure Google Workspace Alert Center:**
 
 In the future, if Google adds a new alert type do the following to add new alert types:
 
-1. Go to the **gsuitealertcenterfunc **google cloud function console.
+1. Go to the **gsuitealertcenterfunc** google cloud function console.
 2. Click **Edit** at the top and then click **Next**.<br/><img src={useBaseUrl('img/integrations/google/Alert_Type_Step2.png')} alt="google workspace" />
-1. In the editor, edit the **gsuitealertcenter.yaml** file and add the new alert types in ALERT_TYPES parameter from the “Alert type” column present in Google Workspace[ Alert types documentation](https://developers.google.com/admin-sdk/alertcenter/reference/alert-types). <br/><img src={useBaseUrl('img/integrations/google/Alert_Type_Step3.png')} alt="google workspace" />
-1. Click **Deploy**.
+3. In the editor, edit the **gsuitealertcenter.yaml** file and add the new alert types in `ALERT_TYPES` parameter from the “Alert type” column present in Google Workspace [Alert types documentation](https://developers.google.com/admin-sdk/alertcenter/reference/alert-types). <br/><img src={useBaseUrl('img/integrations/google/Alert_Type_Step3.png')} alt="google workspace" />
+4. Click **Deploy**.
 
-
-### Advanced configuration  
+### Advanced Configuration  
 
 This section provides a list of environment variables for Google Workspace Alert Center and their usage. For information on how to set these environment variables, refer to this [Google Cloud document](https://cloud.google.com/functions/docs/env-var).
 
-
-<table>
+<table><small>
   <tr>
    <td>Environment Variable
    </td>
@@ -428,9 +369,9 @@ This section provides a list of environment variables for Google Workspace Alert
    </td>
   </tr>
   <tr>
-   <td>ALERT_TYPES</td>
+   <td><code>ALERT_TYPES</code></td>
    <td><p>"Customer takeout initiated"</p>
-<p>"Misconfigured whitelist "</p>
+<p>"Misconfigured whitelist"</p>
 <p>"User reported phishing"</p>
 <p>"User reported spam spike"</p>
 <p>"Suspicious message reported"</p>
@@ -450,67 +391,63 @@ This section provides a list of environment variables for Google Workspace Alert
 <p>"Suspicious activity"</p></td>
   </tr>
   <tr>
-   <td>BACKFILL_DAYS</td>
+   <td><code>BACKFILL_DAYS</code></td>
    <td>Number of days before the event collection will start. If the value is 1, then events are fetched from yesterday to today.</td>
   </tr>
   <tr>
-   <td>PAGINATION_LIMIT</td>
+   <td><code>PAGINATION_LIMIT</code></td>
    <td>Number of events to fetch in a single API call.</td>
   </tr>
   <tr>
-   <td>LOG_FORMAT
-   </td>
+   <td><code>LOG_FORMAT</code></td>
    <td>Log format used by the python logging module to write logs in a file.
    </td>
   </tr>
   <tr>
-   <td>ENABLE_LOGFILE
-   </td>
+   <td><code>ENABLE_LOGFILE</code></td>
    <td>Set to TRUE to write all logs and errors to a log file.
    </td>
   </tr>
   <tr>
-   <td>ENABLE_CONSOLE_LOG
-   </td>
+   <td><code>ENABLE_CONSOLE_LOG</code></td>
    <td>Enables printing logs in a console.
    </td>
   </tr>
   <tr>
-   <td>LOG_FILEPATH
-   </td>
+   <td><code>LOG_FILEPATH</code></td>
    <td>Path of the log file used when ENABLE_LOGFILE is set to TRUE.
    </td>
   </tr>
   <tr>
-   <td>NUM_WORKERS
+   <td><code>NUM_WORKERS</code>
    </td>
    <td>Number of threads to spawn for API calls.
    </td>
   </tr>
   <tr>
-   <td>MAX_RETRY
+   <td><code>MAX_RETRY</code>
    </td>
    <td>Number of retries to attempt in case of request failure.
    </td>
   </tr>
   <tr>
-   <td>BACKOFF_FACTOR
+   <td><code>BACKOFF_FACTOR</code>
    </td>
    <td>A backoff factor to apply between attempts after the second try. If the backoff_factor is 0.1, then sleep() will sleep for [0.0s, 0.2s, 0.4s, ...] between retries.
    </td>
   </tr>
   <tr>
-   <td>TIMEOUT
+   <td><code>TIMEOUT</code>
    </td>
    <td>Request time out used by the requests library.
    </td>
   </tr>
   <tr>
-   <td>SUMO_ENDPOINT
+   <td><code>SUMO_ENDPOINT</code>
    </td>
    <td>HTTP source endpoint url created in Sumo Logic.
    </td>
-  </tr>
+  </tr></small>
 </table>
 
 
@@ -522,8 +459,8 @@ This section shows you how to troubleshoot the function and resolve errors you m
 To verify the function, do the following:
 1. Log in to your Google Cloud Platform account, navigate to the cloud function you created, and click **Testing**.
 2. Click the **Test the function** button.<br/><img src={useBaseUrl('img/integrations/google/GSuite_Troubleshooting_TestFunction.png')} alt="google workspace" />
-1. Click the **View Logs** button to view the function logs. If an environment variable was not set, you will see error messages similar to the following.<br/><img src={useBaseUrl('img/integrations/google/GSuite_Troubleshooting_ErrorLogs.png')} alt="google workspace" />
-1. Set the missing environment variable to resolve the issue.
+3. Click the **View Logs** button to view the function logs. If an environment variable was not set, you will see error messages similar to the following.<br/><img src={useBaseUrl('img/integrations/google/GSuite_Troubleshooting_ErrorLogs.png')} alt="google workspace" />
+4. Set the missing environment variable to resolve the issue.
 
 To verify whether the cloud scheduler job is triggering the function:
 1. Enter **Cloud Scheduler** in the search bar and click.<br/><img src={useBaseUrl('img/integrations/google/Cloud_Scheduler_1.png')} alt="google workspace" />
@@ -541,15 +478,17 @@ The _sumologic-_gsuite_alertcenter_ script is compatible with python 3.7 and pyt
 #### Prerequisites
 
 * This task assumes you have successfully added a **Hosted Collector** and **HTTP source**, as described in [Configure Collection for Google Workspace Alert Center](#Configure_Collection_for_Google_Workspace_Alert_Center).
-* The following tasks assume you are logged in to the user account with which you will install the collector. If you are not, use the following command to switch to that account: \
-`sudo su &lt;user_name>`
+* The following tasks assume you are logged in to the user account with which you will install the collector. If you are not, use the following command to switch to that account:
+```bash
+sudo su <user_name>
+```
 
 
 ### Configure the script on a Linux machine
 
 This task shows you how to install the script on a Linux machine.
 
-For python 3, use pip3 install **sumologic-gsuitealertcenter** (step 3) and **/usr/bin/python3 -m sumogsuitealertscollector.main** (step 6) in operating systems where default python is not python3.
+For python 3, use `pip3 install sumologic-gsuitealertcenter` (step 3) and `/usr/bin/python3 -m sumogsuitealertscollector.main` (step 6) in operating systems where default python is not python3.
 
 To deploy the script, do the following:
 1. Setup the Alert Center API as described in the following [Google documentation](https://developers.google.com/admin-sdk/alertcenter/guides/prerequisites). Assign the Cloud Datastore Owner role while creating a service account. Copy the Client ID present in the JSON generated after adding the key in the service account (it will be used further in step 3 while granting domain wide access). <br/><img src={useBaseUrl('img/integrations/google/clipboard_ef0b96eaf630b4eaafbb4ff59af9c507b.png')} alt="google workspace" />
@@ -577,11 +516,10 @@ Collection:
 ```
 
 
-1. Add the **SUMO_ENDPOINT** and **CREDENTIALS_FILEPATH** (from step 1 above), and **DELEGATED_EMAIL** parameters, then save the file. For the** DELEGATED_EMAIL **parameter: if you do not have an email address of one of your super admins, you can use a service account email address instead if you [delegate domain-wide authority](https://developers.google.com/admin-sdk/directory/v1/guides/delegation) to that account.
-2. Create a cron job for running the collector every 5 minutes by using **crontab -e** and adding the following line.
+1. Add the **SUMO_ENDPOINT** and **CREDENTIALS_FILEPATH** (from step 1 above), and **DELEGATED_EMAIL** parameters, then save the file. For the **DELEGATED_EMAIL** parameter: if you do not have an email address of one of your super admins, you can use a service account email address instead if you [delegate domain-wide authority](https://developers.google.com/admin-sdk/directory/v1/guides/delegation) to that account.
+2. Create a cron job for running the collector every 5 minutes by using `crontab -e` and adding the following line.
 
-
-If you're using python3, for operating systems where the default python is not python3, use **/usr/bin/python3 -m sumogsuitealertscollector.main** in the following command.
+If you're using python3, for operating systems where the default python is not python3, use `/usr/bin/python3 -m sumogsuitealertscollector.main` in the following command.
 ```bash
 */5 * * * * /usr/bin/python -m sumogsuitealertscollector.main > /dev/null 2>&1
 ```
@@ -594,7 +532,7 @@ This section provides a list of environment variables for Google Workspace Alert
 
 For information on how to set these environment variables, refer to this [Google Cloud document](https://cloud.google.com/functions/docs/env-var).
 
-<table>
+<table><small>
   <tr>
    <td>Environment Variable
    </td>
@@ -602,7 +540,7 @@ For information on how to set these environment variables, refer to this [Google
    </td>
   </tr>
   <tr>
-   <td>ALERT_TYPES
+   <td><code>ALERT_TYPES</code>
    </td>
    <td>"Customer takeout initiated"
 <p>"Misconfigured whitelist"</p>
@@ -626,71 +564,71 @@ For information on how to set these environment variables, refer to this [Google
    </td>
   </tr>
   <tr>
-   <td>BACKFILL_DAYS
+   <td><code>BACKFILL_DAYS</code>
    </td>
    <td>Number of days before the event collection will start. If the value is 1, then events are fetched from yesterday to today.
    </td>
   </tr>
   <tr>
-   <td>PAGINATION_LIMIT
+   <td><code>PAGINATION_LIMIT</code>
    </td>
    <td>Number of events to fetch in a single API call.
    </td>
   </tr>
   <tr>
-   <td>LOG_FORMAT
+   <td><code>LOG_FORMAT</code>
    </td>
    <td>Log format used by the python logging module to write logs in a file.
    </td>
   </tr>
   <tr>
-   <td>ENABLE_LOGFILE
+   <td><code>ENABLE_LOGFILE</code>
    </td>
    <td>Set to TRUE to write all logs and errors to a log file.
    </td>
   </tr>
   <tr>
-   <td>ENABLE_CONSOLE_LOG
+   <td><code>ENABLE_CONSOLE_LOG</code>
    </td>
    <td>Enables printing logs in a console.
    </td>
   </tr>
   <tr>
-   <td>LOG_FILEPATH
+   <td><code>LOG_FILEPATH</code>
    </td>
    <td>Path of the log file used when ENABLE_LOGFILE is set to TRUE.
    </td>
   </tr>
   <tr>
-   <td>NUM_WORKERS
+   <td><code>NUM_WORKERS</code>
    </td>
    <td>Number of threads to spawn for API calls.
    </td>
   </tr>
   <tr>
-   <td>MAX_RETRY
+   <td><code>MAX_RETRY</code>
    </td>
    <td>Number of retries to attempt in case of request failure.
    </td>
   </tr>
   <tr>
-   <td>BACKOFF_FACTOR
+   <td><code>BACKOFF_FACTOR</code>
    </td>
    <td>A backoff factor to apply between attempts after the second try. If the backoff_factor is 0.1, then sleep() will sleep for [0.0s, 0.2s, 0.4s, ...] between retries.
    </td>
   </tr>
   <tr>
-   <td>TIMEOUT
+   <td><code>TIMEOUT</code>
    </td>
    <td>Request time out used by the requests library.
    </td>
   </tr>
   <tr>
-   <td>SUMO_ENDPOINT
+   <td><code>SUMO_ENDPOINT</code>
    </td>
    <td>HTTP source endpoint url created in Sumo Logic.
    </td>
-  </tr>
+  </tr></small>
 </table>
 
 
@@ -713,7 +651,6 @@ To run the function manually, do the following:
 1. The script generates logs in **/tmp/sumoapiclient.log** by default. Check these logs to verify whether it’s getting triggered or not.
 2. If you installed the collector as `root` user and then run it as a normal user, you will see an error message similar to the following because the config is not present in the home directory of the user running the collector. Switch to `root` the user and run the script again.
 
-
 ```js
 Traceback (most recent call last):
  File "/usr/local/lib/python2.7/dist-packages/sumogsuitealertscollector/main.py", line 190, in main
@@ -729,9 +666,8 @@ Exception: Invalid config
 
 You can also avoid this error by running the script with config file path as first argument.
 
-1. To verify if there are new messages generated by Alert Center, go to Google **Home > Security > Alert Center **and then do the following:<br/><img src={useBaseUrl('img/integrations/google/GSuite_Alert_Center_Troubleshooting.png')} alt="google workspace" />
+1. To verify if there are new messages generated by Alert Center, go to Google **Home > Security > Alert Center** and then do the following:<br/><img src={useBaseUrl('img/integrations/google/GSuite_Alert_Center_Troubleshooting.png')} alt="google workspace" />
 1. Check for an error message similar to the following. If you see this, verify that the **DELEGATED_EMAIL** in your configuration belongs to a valid Google Workspace super admin user (or a service account that's been [delegated domain-wide authority](https://developers.google.com/admin-sdk/directory/v1/guides/delegation)).
-
 ```js
 Traceback (most recent call last):
 File "/usr/local/lib/python3.6/dist-packages/sumogsuitealertscollector/main.py", line 191, in main

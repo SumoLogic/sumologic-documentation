@@ -489,7 +489,7 @@ First, you'll need to locate and install the app you need from the **App Catalog
 
 Version selection is applicable only to a few apps currently. For more information, see the[ Install the Apps from the Library](/docs/get-started/library/install-apps).
 
-1. To install the app, complete the following fields.
+3. To install the app, complete the following fields.
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
     2. **Data Source.**
         * Choose **Enter a Custom Data Filter**, and enter a custom Nginx farm filter. Examples:
