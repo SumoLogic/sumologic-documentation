@@ -11,39 +11,13 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Microsoft Office 365 App ingests Microsoft Office 365 Audit logs for Azure Active Directory, Exchange, and SharePoint. Preconfigured Dashboards allow you to monitor and analyze your complete Office 365 system for administrator and user activity.
 
-
-## Collecting Logs for the Office 365 App
-
-This section provides instructions for configuring log collection for the Microsoft Office 365 App, as well as providing sample log messages and queries.
-
-### Log Types
+## Log Types
 
 For information on Microsoft APIs and message types, see Microsoft Office 365 Audit Source.
 
-To collect logs for the Microsoft Office 365 App, do the following:
-
-1. One [Hosted Collector](/docs/send-data/configure-hosted-collector).
-2. One [Microsoft Office 365 Audit Source](/docs/send-data/sources/sources-hosted-collectors/ms-office-audit-source.md) for each content type you want to collect logs for. For example:
-    * Office 365 Azure AD logs
-    * Office 365 Exchange logs
-    * Office 365 SharePoint logs
-    * Office 365 General logs
-    * Office 365 Data Loss Prevention (DLP) event logs
-
-For complete details, see [Microsoft Office 365 Audit Source](/docs/send-data/sources/sources-hosted-collectors/ms-office-audit-source.md).
-
-We recommend the following Source Category naming convention:
-
-* **Azure AD:** O365/Azure
-* **Exchange: **O365/Exchange
-* **SharePoint: **O365/SharePoint
-* **General:** O365/SharePoint
-* **DLP**:  O365/DLP
-
-
 ### Sample Log Messages
 
-```
+```json
 {  
    "ClientIP":"62.68.137.155",
    "CreationTime":"2017-09-25T22:42:35",
@@ -67,7 +41,9 @@ We recommend the following Source Category naming convention:
    "SourceFileName":"PurchaseOrder.xls",
    "SourceRelativeUrl":"/shared documents/foo"
 }
+```
 
+```
 {  
    "CreationTime":"2017-09-25T22:37:35",
    "Id":"0df04c72-d3e1-4016-70ab-09f3333de0ca",
@@ -96,17 +72,12 @@ We recommend the following Source Category naming convention:
          "Id":"LgCDEFCvDwkeofbHT4Xu0aodZZIMAQBaMVsTsKq8RIhghXhDomkECDEFAAEUBCEB",
          "Path":"\\Recoverable Items\\Deletions"
       }
-   }
+  }
 ```
-
-
 
 ### Sample Queries
 
-**SharePoint Operations**
-
-
-```
+```sql title="SharePoint Operations"
 _sourceCategory=O365* CreationTime Workload ("\"Workload\":\"SharePoint\"" or "\"Workload\":\"OneDrive\"")
 | json "Operation", "Workload"
 | where Workload in ("SharePoint", "OneDrive")
@@ -115,10 +86,7 @@ _sourceCategory=O365* CreationTime Workload ("\"Workload\":\"SharePoint\"" or "\
 | transpose row _timeslice column operation
 ```
 
-
-**Failed Activity by Workload**
-
-```
+```sql title="Failed Activity by Workload"
 _sourceCategory=O365* Workload Operation "ResultStatus" fail*
 | json "Workload", "ResultStatus", "Operation"
 | where resultstatus matches "*fail*" or resultstatus matches "*Fail*"
@@ -127,6 +95,28 @@ _sourceCategory=O365* Workload Operation "ResultStatus" fail*
 | transpose row _timeslice column workload
 ```
 
+## Collecting Logs for the Office 365 App
+
+This section provides instructions for configuring log collection for the Microsoft Office 365 App, as well as providing sample log messages and queries.
+
+To collect logs for the Microsoft Office 365 App, do the following:
+
+1. One [Hosted Collector](/docs/send-data/configure-hosted-collector).
+2. One [Microsoft Office 365 Audit Source](/docs/send-data/sources/sources-hosted-collectors/ms-office-audit-source.md) for each content type you want to collect logs for. For example:
+    * Office 365 Azure AD logs
+    * Office 365 Exchange logs
+    * Office 365 SharePoint logs
+    * Office 365 General logs
+    * Office 365 Data Loss Prevention (DLP) event logs
+
+For complete details, see [Microsoft Office 365 Audit Source](/docs/send-data/sources/sources-hosted-collectors/ms-office-audit-source.md).
+
+We recommend the following Source Category naming convention:
+* **Azure AD:** O365/Azure
+* **Exchange: **O365/Exchange
+* **SharePoint: **O365/SharePoint
+* **General:** O365/SharePoint
+* **DLP**: O365/DLP
 
 
 ## Installing the Microsoft Office 365 App
@@ -137,12 +127,8 @@ To install the app:
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**
 
-
 1. From the **App Catalog**, search for and select the app**.**
-2. Select the version of the service you're using and click **Add to Library**.
-
-Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library](/docs/get-started/library/install-apps).
-
+2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library](/docs/get-started/library/install-apps).
 3. To install the app, complete the following fields.
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app.
     2. **Data Source.** Choose **Enter a Custom Data Filter**, and enter `_sourceCategory=O365/*`
@@ -167,7 +153,7 @@ The Sumo Logic App for Microsoft Office 365 provides insights for Azure Active D
 
 Shows details of Office 365 successful and failed activities, and SharePoint, Exchange, and Azure operations.
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/Overview.png')} alt="Microsoft Office 365 dashboards" />
+<img src={useBaseUrl('img/integrations/microsoft-azure/Office365Overview.png')} alt="Microsoft Office 365 dashboards" />
 
 **Successful Activity by Workload. **Compare your overall Office 365 workload activity by service as an area chart on a timeline for the last 24 hours.
 
@@ -181,19 +167,12 @@ Shows details of Office 365 successful and failed activities, and SharePoint, Ex
 
 
 ### General
-11
-
-
 
 #### Usage by Location
-12
-
 
 Shows Office 365, Azure Active Directory, Exchange, Share Point and One Drive transactions by location.
 
-
-13
-
+<img src={useBaseUrl('img/integrations/microsoft-azure/Office365-UsageByLocation.png')} alt="Microsoft Office 365 dashboards" />
 
 **Office 365 Transaction by Client Location**. Performs a geo lookup operation and displays Office 365 transactions by client location on a map of the world for the last 30 days.
 
@@ -205,19 +184,13 @@ Shows Office 365, Azure Active Directory, Exchange, Share Point and One Drive tr
 
 
 ### Azure Active Directory
-14
-
 
 
 #### Active Directory - Login Locations
-15
-
 
 Shows the failed and successful logins by location.
 
-
-16
-
+<img src={useBaseUrl('img/integrations/microsoft-azure/Office365-ActiveDirectory-LoginLocations.png')} alt="Microsoft Office 365 dashboards" />
 
 **Failed Logins from US.** See the map of US having the failed logins in the last 24 hours.
 
@@ -229,23 +202,10 @@ Shows the failed and successful logins by location.
 
 
 #### Active Directory - Login Monitoring
-17
-
 
 Shows details such as count, client IP, and errors of the failed and successful logins.
 
-
-18
-
-
-
-Successful Logins
-19
-
-
-
-20
-
+<img src={useBaseUrl('img/integrations/microsoft-azure/Office365-ActiveDirectory-LoginMonitoringSuccessfulLogins.png')} alt="Microsoft Office 365 dashboards" />
 
 **Successful Logins.** See the count of successful logins in the last 6 hours.
 
@@ -259,6 +219,8 @@ Successful Logins
 
 
 #### Failed Logins
+
+<img src={useBaseUrl('img/integrations/microsoft-azure/Office-365-ActiveDirectory-LoginMonitoringFailedLogins.png')} alt="Microsoft Office 365 dashboards" />
 
 **Login Failures.** See the count of login failures in the last 24 hours.
 
@@ -276,14 +238,10 @@ Successful Logins
 
 
 ### Active Directory - User, Account Monitoring
-22
-
 
 Shows details of Added and Deleted Users, Password Resets and Changes, and Added or Removed Members from Group.
 
-
-23
-
+<img src={useBaseUrl('img/integrations/microsoft-azure/Office365-ActiveDirectory-User,AccountMonitoring.png')} alt="Microsoft Office 365 dashboards" />
 
 **Added and Deleted Users.** See a table with details of added and deleted users in the last 7 days such as time, operation, object ID, and status.
 
@@ -297,14 +255,10 @@ Shows details of Added and Deleted Users, Password Resets and Changes, and Added
 
 
 #### Active Directory Activity
-24
-
 
 Shows details such as admin activity, transaction by client location, operations, client IPs, and failed activity over time.
 
-
-25
-
+<img src={useBaseUrl('img/integrations/microsoft-azure/Office365-ActiveDirectoryActivity.png')} alt="Microsoft Office 365 dashboards" />
 
 **Top Users by AAD Admin Activity**. See the top users by Azure AD administrator activity in a table chart including details on the user ID and the count for the last 24 hours.
 
@@ -318,19 +272,12 @@ Shows details such as admin activity, transaction by client location, operations
 
 
 ### Exchange
-26
-
-
 
 #### Exchange - Admin Audit
-27
-
 
 Shows details of operations, user types, and configuration changes in Exchange.
 
-
-28
-
+<img src={useBaseUrl('img/integrations/microsoft-azure/Office365-Exchange-AdminAudit.png')} alt="Microsoft Office 365 dashboards" />
 
 **Top 10 Operations**. See the top 10 operations in a table chart including details on operation and frequency for the last 14 days.
 
@@ -348,14 +295,10 @@ Shows details of operations, user types, and configuration changes in Exchange.
 
 
 #### Exchange - Group Audit
-29
-
 
 Shows the active users, operations, folders and recent activities.
 
-
-30
-
+<img src={useBaseUrl('img/integrations/microsoft-azure/Office365-Exchange-GroupAudit.png')} alt="Microsoft Office 365 dashboards" />
 
 **Top 10 Operations.** See the top 10 operations by name and frequency in a column chart for the last six hours.
 
@@ -376,7 +319,7 @@ Shows the active users, operations, folders and recent activities.
 
 Shows the details of users, operations, IPs, client, logon types, and external access.
 
-
+<img src={useBaseUrl('img/integrations/microsoft-azure/Office365-Exchange-MailboxAudit.png')} alt="Microsoft Office 365 dashboards" />
 
 **Top 10 Operations.** See the top 10 operations by operation name and frequency in a bar chart for the last 24 hours.
 
@@ -397,6 +340,8 @@ Shows the details of users, operations, IPs, client, logon types, and external a
 
 Shows the clients by locations and over time.
 
+<img src={useBaseUrl('img/integrations/microsoft-azure/Office365-Exchange-MailboxAudit-ClientLocations.png')} alt="Microsoft Office 365 dashboards" />
+
 **Worldwide Clients**. Performs a geo lookup operation to display worldwide client IP address locations on a map of the world for the last 24 hours.
 
 **United States Clients**. Performs a geo lookup operation to display United States client IP address locations on a map of the world for the last 24 hours.
@@ -408,10 +353,11 @@ Shows the clients by locations and over time.
 
 ### SharePoint
 
-
 #### SharePoint - Content Insight
 
 Shows details of URLs accessed, downloaded, uploaded, viewed, checked in, and checked out content.
+
+<img src={useBaseUrl('img/integrations/microsoft-azure/Office365-SharePoint-ContentInsight.png')} alt="Microsoft Office 365 dashboards" />
 
 **Top 10 SiteUrl Accessed**. See the top 10 SiteUrls accessed in a table chart including details on siteurl and count for the last 24 hours.
 
@@ -431,6 +377,8 @@ Shows details of URLs accessed, downloaded, uploaded, viewed, checked in, and ch
 #### SharePoint - Shared Content Non-Domains Activities
 
 Shows details of non-domain users' accesses, uploads, downloads, and views.
+
+<img src={useBaseUrl('img/integrations/microsoft-azure/Office365-SharePoint-SharedContentNon-DomainsActivities.png')} alt="Microsoft Office 365 dashboards" />
 
 To see your data in this dashboard, open the queries of each panel and add your domain in the queries as mentioned [here](#Installing-the-Microsoft-Office-365-App).
 
@@ -456,6 +404,7 @@ To see your data in this dashboard, open the queries of each panel and add your 
 
 Shows details of active users, active IPs, and count of user sharing content.
 
+<img src={useBaseUrl('img/integrations/microsoft-azure/Office365-SharePoint-UserActivity.png')} alt="Microsoft Office 365 dashboards" />
 
 **Top 10 Active Users**. See the top 10 active users in a table chart including details on user ID and count for the last 24 hours.
 
@@ -473,6 +422,8 @@ Shows details of active users, active IPs, and count of user sharing content.
 #### SharePoint - Visitor Locations
 
 Shows details of visitors to the SharePoint by location and over time.
+
+<img src={useBaseUrl('img/integrations/microsoft-azure/Office365-SharePoint-VisitorLocations.png')} alt="Microsoft Office 365 dashboards" />
 
 **Worldwide Visitors**. Performs a geo lookup operation to display worldwide client IP address locations on a map of the world for the last 24 hours.
 
