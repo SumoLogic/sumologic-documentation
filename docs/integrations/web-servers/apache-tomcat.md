@@ -95,7 +95,7 @@ This section explains the steps to collect Apache Tomcat metrics from a Kubernet
 
 In Kubernetes environments, we use the Telegraf Operator, which is packaged with our Kubernetes collection. You can learn more on this[ here](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/telegraf-collection-architecture). Follow the steps listed below to collect metrics from a Kubernetes environment:
 
-1. [**Set up Kubernetes Collection with the Telegraf Operator**](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf.md#Install_Telegraf_in_a_Kubernetes_environment). Please ensure that you are monitoring your Kubernetes clusters with the Telegraf operator **enabled**. If you are not, then please follow [these instructions](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf.md#Install_Telegraf_in_a_Kubernetes_environment) to do so.
+1. [**Set up Kubernetes Collection with the Telegraf Operator**](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf). Please ensure that you are monitoring your Kubernetes clusters with the Telegraf operator **enabled**. If you are not, then please follow [these instructions](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf) to do so.
 2. **Install jolokia on your Tomcat Pod to use the Jolokia Telegraf Input Plugin**
 * Download the latest version of the Jolokia war file from: [https://jolokia.org/download.html](https://jolokia.org/download.html).
 * Rename the file from jolokia-war-X.X.X.war to jolokia.war
@@ -309,7 +309,7 @@ Labels created in Kubernetes environments automatically are prefixed with pod_la
 
 1. Go to **Manage Data > Logs > Field Extraction Rules**.
 2. Click the + Add button on the top right of the table.
-3. The following form appears:
+3. The **Add Field Extraction Rule** form will appear:
 
 
 1. Enter the following options:

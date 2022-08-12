@@ -163,7 +163,7 @@ This section explains the steps to collect Elasticsearch logs from a Kubernetes 
 3. **Add a FER to normalize the fields in Kubernetes environments**. Labels created in Kubernetes environments automatically are prefixed with `pod_labels`. To normalize these for our app to work, we need to create a Field Extraction Rule if not already created for Database Application Components. To do so:
    1. Go to **Manage Data > Logs > Field Extraction Rules**.
    2. Click the + Add button on the top right of the table.
-   3. The following form appears:
+   3. The **Add Field Extraction Rule** form will appear:
    4. Enter the following options:
      * **Rule Name**. Enter the name as **App Observability - Database**.
      * **Applied At.** Choose **Ingest Time**
@@ -186,7 +186,7 @@ This section explains the steps to collect Elasticsearch logs from a Kubernetes 
 
 This section explains the steps to collect Elasticsearch metrics from a Kubernetes environment, where we use the Telegraf Operator, which is packaged with our Kubernetes collection. You can learn more about this [here](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/telegraf-collection-architecture). Follow the steps listed below to collect metrics from a Kubernetes environment:
 
-1. [Set up Kubernetes Collection with the Telegraf Operator](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf.md#Install_Telegraf_in_a_Kubernetes_environment).
+1. [Set up Kubernetes Collection with the Telegraf Operator](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf).
 2. On your Elasticsearch Pods, add the following annotations:
 ```sql
  annotations:
@@ -222,7 +222,7 @@ This section explains the steps to collect Elasticsearch metrics from a Kubernet
      * `prometheus.io/scrape: "true"` - This ensures our Prometheus will scrape the metrics.
      * `prometheus.io/port: "9273"` - This tells prometheus what ports to scrape on. This should not be changed.
      * `telegraf.influxdata.com/inputs`
-     * In the tags section i.e.  `[inputs.elasticsearch.tags]`
+     * In the tags section   `[inputs.elasticsearch.tags]`
         * `component: “database”` - This value is used by Sumo Logic apps to identify application components.
         * `db_system: “elasticsearch”` - This value identifies the database system.
      * See [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#Configuring-Telegraf) for more parameters that can be configured in the Telegraf agent globally.

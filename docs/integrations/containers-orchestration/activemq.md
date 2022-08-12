@@ -130,7 +130,7 @@ This section explains the steps to collect ActiveMQ metrics from a Kubernetes en
 
 In Kubernetes environments, we use the Telegraf Operator, which is packaged with our Kubernetes collection. You can learn more on this[ here](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/telegraf-collection-architecture). Follow the steps listed below to collect metrics from a Kubernetes environment:
 
-1. **[Setup Kubernetes Collection with the Telegraf Operator.](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf.md#Install_Telegraf_in_a_Kubernetes_environment)**
+1. **[Setup Kubernetes Collection with the Telegraf Operator.](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf)**
 2. **Configure ActiveMQ Image**
 
 To enable Telegraf sidecar to get metrics from ActiveMQ Container, you must enable read metrics from ActiveMQ Container via the [JMX MBeans](https://activemq.apache.org/jmx) and Disable strict-checking.
@@ -315,7 +315,7 @@ Labels created in Kubernetes environments automatically are prefixed with pod_la
 
 1. Go to **Manage Data > Logs > Field Extraction Rules**.
 2. Click the + Add button on the top right of the table.
-3. The following form appears:
+3. The **Add Field Extraction Rule** form will appear:
 
 1. Enter the following options:
     * **Rule Name**. Enter the name as **App Observability - Messaging**.
@@ -574,7 +574,7 @@ Custom filter examples:
 
 6. Click Import and then copy-paste the above JSON to import monitors.
 
-The monitors are disabled by default. Once you have installed the alerts using this method, navigate to the ActiveMQ folder under **Monitors** to configure them. See[ this](/docs/alerts/monitors/index.md) document to enable monitors to send notifications to teams or connections. Please see the instructions detailed in Step 4 of this[ document](/docs/alerts/monitors#Add_a_monitor).    
+The monitors are disabled by default. Once you have installed the alerts using this method, navigate to the ActiveMQ folder under **Monitors** to configure them. See[ this](/docs/alerts/monitors/index.md) document to enable monitors to send notifications to teams or connections. Please see the instructions detailed in Step 4 of this[ document](/docs/alerts/monitors#add-a-monitor).    
 
 
 ### Method 2: Install the alerts using a Terraform script
@@ -666,7 +666,7 @@ email_notifications = [
 
 7. Post Installation
 
-If you haven’t enabled alerts and/or configured notifications through the Terraform procedure outlined above, we highly recommend enabling alerts of interest and configuring each enabled alert to send notifications to other users or services. This is detailed in Step 4 of[ this document](/docs/alerts/monitors#Add_a_monitor).
+If you haven’t enabled alerts and/or configured notifications through the Terraform procedure outlined above, we highly recommend enabling alerts of interest and configuring each enabled alert to send notifications to other users or services. This is detailed in Step 4 of[ this document](/docs/alerts/monitors#add-a-monitor).
 
 
 There are limits to how many alerts can be enabled - please see the[ Alerts FAQ](/docs/alerts/monitors/monitor-faq.md).
