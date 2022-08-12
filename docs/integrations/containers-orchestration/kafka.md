@@ -98,7 +98,7 @@ Follow the instructions below to set up the metric collection:
 Follow the steps below to collect metrics from a Kubernetes environment:
 
 1. Setup Kubernetes Collection with the Telegraf operator.
-Please ensure that you are monitoring your Kubernetes clusters with the Telegraf operator **enabled**. If you are not, then please follow [these instructions](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf.md#Install_Telegraf_in_a_Kubernetes_environment) to do so.
+Please ensure that you are monitoring your Kubernetes clusters with the Telegraf operator **enabled**. If you are not, then please follow [these instructions](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf) to do so.
 2. Add annotations on your Kafka pods. Open [this yaml file](https://sumologic-app-data.s3.amazonaws.com/Kafka/KAfka_PodAnnotations.yaml) and add the annotations mentioned there. Please enter in values for the parameters marked with `CHANGE_ME` in the yaml file:
 * `telegraf.influxdata.com/inputs` - As telegraf will be run as a sidecar the **urls** should always be localhost.
     * In the input plugins section :
@@ -241,7 +241,7 @@ Labels created in Kubernetes environments automatically are prefixed with pod_la
 
 1. Go to **Manage Data** > **Logs** > **Field Extraction Rules**.
 2. Click the **+ Add** button on the top right of the table.
-3. The following form appears:
+3. The **Add Field Extraction Rule** form will appear:
 
 
 
@@ -469,7 +469,7 @@ Sumo Logic has provided out-of-the-box alerts available through [Sumo Logic moni
 1. Click Import to import monitors from the JSON above.
 
 
-The monitors are disabled by default. Once you have installed the alerts using this method, navigate to the Kafka folder under Monitors to configure them. See [this](/docs/alerts/monitors/index.md) document to enable monitors., To send notifications to teams or connections please see the instructions detailed in Step 4 of this [document](/docs/alerts/monitors#Add_a_monitor).
+The monitors are disabled by default. Once you have installed the alerts using this method, navigate to the Kafka folder under Monitors to configure them. See [this](/docs/alerts/monitors/index.md) document to enable monitors., To send notifications to teams or connections please see the instructions detailed in Step 4 of this [document](/docs/alerts/monitors#add-a-monitor).
 
 
 ### Method B: Using a Terraform script
@@ -554,7 +554,7 @@ email_notifications = [
 
 **Step 7: Post Installation**
 
-If you haven’t enabled alerts and/or configured notifications through the Terraform procedure outlined above, we highly recommend enabling alerts of interest and configuring each enabled alert to send notifications to other people or services. This is detailed in Step 4 of[ this document](/docs/alerts/monitors#Add_a_monitor).
+If you haven’t enabled alerts and/or configured notifications through the Terraform procedure outlined above, we highly recommend enabling alerts of interest and configuring each enabled alert to send notifications to other people or services. This is detailed in Step 4 of[ this document](/docs/alerts/monitors#add-a-monitor).
 
 
 ## Installing the Kafka App

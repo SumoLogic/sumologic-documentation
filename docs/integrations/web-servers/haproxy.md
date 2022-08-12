@@ -247,7 +247,7 @@ kubectl describe pod <haproxy_pod_name>
 
 1. Go to **Manage Data > Logs > Field Extraction Rules**.
 2. Click the + Add button on the top right of the table.
-3. The following form appears:
+3. The **Add Field Extraction Rule** form will appear:
 
 
 1. Enter the following options:
@@ -255,16 +255,15 @@ kubectl describe pod <haproxy_pod_name>
 * **Applied At.** Choose **Ingest Time**
 * **Scope**. Select **Specific Data**
     * **Scope**: Enter the following keyword search expression:  
-```
+```sql
 pod_labels_environment=* pod_labels_component=proxy pod_labels_proxy_system=* pod_labels_proxy_cluster=*
 ```
 * **Parse Expression**. Enter the following parse expression:
-```
+```sql
 | if (!isEmpty(pod_labels_environment), pod_labels_environment, "") as environment
 | pod_labels_component as component
 | pod_labels_proxy_system as proxy_system
-                | pod_labels_proxy_cluster as proxy_cluster
-
+| pod_labels_proxy_cluster as proxy_cluster
 ```
 
 1. Click **Save** to create the rule.
