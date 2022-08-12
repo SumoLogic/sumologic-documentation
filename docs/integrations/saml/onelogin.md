@@ -31,8 +31,80 @@ Once you begin uploading data, your daily data usage will increase. It's a good 
 
 The Sumo Logic App for OneLogin uses event logs in NDJSON format. Each event is a single-line JSON, containing information such as:
 
-```
-{"event":{"create":{"_id":"443ce874-7704-54d2-b12f-b6e4a72ec6ef"},"entity":null,"role_id":null,"client_id":null,"trusted_idp_name":null,"notes":null,"app_name":null,"service_directory_id":null,"actor_system":"","login_name":null,"assuming_acting_user_id":null,"mapping_name":null,"directory_sync_run_id":null,"api_credential_name":null,"directory_id":null,"certificate_id":null,"group_id":null,"role_name":null,"imported_user_name":null,"resolved_at":null,"mapping_id":null,"authentication_factor_type":null,"user_field_name":null,"proxy_ip":null,"certificate_name":null,"task_name":null,"adc_id":null,"uuid":"443ce874-7704-54d2-b12f-b6e4a72ec6ef","note_title":null,"event_timestamp":"2017-03-21 00:09:27+0000","actor_user_name":"Peyton Newton","proxy_agent_id":null,"otp_device_name":null,"actor_user_id":11826257,"trusted_idp_id":null,"imported_user_id":null,"policy_type":null,"user_id":11826257,"resource_type_id":null,"login_id":null,"solved":null,"policy_id":null,"policy_name":null,"otp_device_id":null,"radius_config_name":null,"app_id":null,"user_name":"Peyton Newton","account_id":22348,"resolved_by_user_id":null,"radius_config_id":null,"error_description":null,"note_id":null,"param":null,"event_type_id":11,"proxy_agent_name":null,"privilege_id":null,"user_field_id":null,"authentication_factor_description":null,"ipaddr":"137.219.197.240","custom_message":null,"directory_name":null,"object_id":null,"group_name":null,"resolution":null,"privilege_name":null,"authentication_factor_id":null,"adc_name":null}}
+```json
+{
+	"event":{
+		"create":{
+			"_id":"443ce874-7704-54d2-b12f-b6e4a72ec6ef"
+		},
+		"entity":null,
+		"role_id":null,
+		"client_id":null,
+		"trusted_idp_name":null,
+		"notes":null,
+		"app_name":null,
+		"service_directory_id":null,
+		"actor_system":"",
+		"login_name":null,
+		"assuming_acting_user_id":null,
+		"mapping_name":null,
+		"directory_sync_run_id":null,
+		"api_credential_name":null,
+		"directory_id":null,
+		"certificate_id":null,
+		"group_id":null,
+		"role_name":null,
+		"imported_user_name":null,
+		"resolved_at":null,
+		"mapping_id":null,
+		"authentication_factor_type":null,
+		"user_field_name":null,
+		"proxy_ip":null,
+		"certificate_name":null,
+		"task_name":null,
+		"adc_id":null,
+		"uuid":"443ce874-7704-54d2-b12f-b6e4a72ec6ef",
+		"note_title":null,
+		"event_timestamp":"2017-03-21 00:09:27+0000",
+		"actor_user_name":"Peyton Newton",
+		"proxy_agent_id":null,
+		"otp_device_name":null,
+		"actor_user_id":11826257,
+		"trusted_idp_id":null,
+		"imported_user_id":null,
+		"policy_type":null,
+		"user_id":11826257,
+		"resource_type_id":null,
+		"login_id":null,
+		"solved":null,
+		"policy_id":null,
+		"policy_name":null,
+		"otp_device_id":null,
+		"radius_config_name":null,
+		"app_id":null,
+		"user_name":"Peyton Newton",
+		"account_id":22348,
+		"resolved_by_user_id":null,
+		"radius_config_id":null,
+		"error_description":null,
+		"note_id":null,
+		"param":null,
+		"event_type_id":11,
+		"proxy_agent_name":null,
+		"privilege_id":null,
+		"user_field_id":null,
+		"authentication_factor_description":null,
+		"ipaddr":"137.219.197.240",
+		"custom_message":null,
+		"directory_name":null,
+		"object_id":null,
+		"group_name":null,
+		"resolution":null,
+		"privilege_name":null,
+		"authentication_factor_id":null,
+		"adc_name":null
+	}
+}
 ```
 
 ## Sample Query

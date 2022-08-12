@@ -30,14 +30,7 @@ This section shows you how to configure log and metric collection for the Docker
 
 To configure log and metric collection for the Docker ULM App, do the following:
 
-
-
-1. Follow the instructions to [Collect Logs and Metrics for Docker ULM](/docs/integrations/containers-orchestration/docker-ulm#Collect_Logs_and_Metrics_for_Docker_ULM).
-
-Use the same `_sourceCategory` for each host on your cluster.
-
-
-
+1. Follow the instructions to [Collect Logs and Metrics for Docker ULM](/docs/integrations/containers-orchestration/docker-ulm#Collect_Logs_and_Metrics_for_Docker_ULM). Use the same `_sourceCategory` for each host on your cluster.
 1. Follow the instructions to [Install the Docker ULM App](/docs/integrations/containers-orchestration/docker-ulm#Install_the_Docker_ULM_App) and dashboards.
 
 
@@ -62,22 +55,17 @@ You don’t need to deploy Prometheus. Plus, docker EE collection has been teste
 
 #### Troubleshooting
 
-If you get the following error while executing `kubectl`, your kube config is not wired correctly to UCP’s kube:
-```
-The connection to the server localhost:8080 was refused - did you specify the right host or port?
-```
+If you get the following error while executing `kubectl`, your kube config is not wired correctly to UCP’s kube: `The connection to the server localhost:8080 was refused - did you specify the right host or port?`
 
 **do the following:
 
 1. Log in to the UCP Web UI (dashboard), navigate to your user account, and click **My Profile**.
 2. Then click **Client Bundles >** **New Client Bundle** > **Generate Client Bundle**.
-
-1. Unpack the **ucp-bundle-XYZ.zip** file on the Manager Node/Machine.
+3. Unpack the **ucp-bundle-XYZ.zip** file on the Manager Node/Machine.
 ```bash
 unzip ucp-bundle-XYZ.zip
 ```
-
-1. Run the following command.
+4. Run the following command.
 ```bash
 source env.sh
 ```
@@ -89,7 +77,7 @@ Assuming you have a Mac/Unix environment, **docker** and **kubectl** will work o
 
 The Docker EE App uses the following log types.
 
-<table>
+<table><small>
   <tr>
    <td>Log Source Type
    </td>
@@ -123,7 +111,7 @@ The Docker EE App uses the following log types.
    <td><a href="https://docs.docker.com/ee/ucp/">Universal Control Plane (UCP)</a></td>
    <td><code>E0509 02:44:15.887502  1 goroutinemap.go:150] Operation for "provision-default/orcl-pv-claim[4e38340b-6866-11e9-95b6-0242ac11000a]" failed. No retries permitted until 2019-05-09 02:46:17.887477418 +0000 UTC m=+453713.589406681 (durationBeforeRetry 2m2s). Error: "AzureDisk -  failed to get Azure Cloud Provider. GetCloudProvider returned &lt;nil> instead"</code>
    </td>
-  </tr>
+  </tr></small>
 </table>
 
 
@@ -163,26 +151,23 @@ _sourceCategory=docker _sourceName= ucp-kube-controller-manager (fail* or error 
 ```
 
 
-
-
 ## Installing the Docker EE App
 
 You configured two sources for collection, docker logs and docker stats, and therefore will specify two source categories when installing the Docker EE App.
 
-**To install the Docker EE App, do the following:
+To install the Docker EE App, do the following:
 
 1. From the **App Catalog**, search for and select the app**.**
 2. To install the app, click **Add to Library.**
 3. You retain the default **App Name**, or enter a name of your choice for the app.
 4. Select the following  options for the **Docker Log source.**
     1. Choose **Source Category,** and select the Source Category from the list.
-    2. Choose **Enter a Custom Data Filter,** and for the Docker Log Source enter the source category with the value from [Step 1](#Collect-logs-and-metrics-for-Docker-EE) of the collection instructions, beginning with an underscore, for example: _sourceCategory=**docker**
+    2. Choose **Enter a Custom Data Filter,** and for the Docker Log Source enter the source category with the value from [Step 1](#Collect-logs-and-metrics-for-Docker-EE) of the collection instructions, beginning with an underscore, for example: `_sourceCategory=docker`
 5. Select the following option for the **Docker Platform Log Source**.
     3. Choose **Source Category,** and select the Source Category from the list.
-    4. Choose **Enter a Custom Data Filter,** and enter the source category specified in [Step 2](#Collect_logs_and_metrics_for_Docker_EE) of collection instructions followed by “/system”, for example: _sourceCategory=**kubernetes/system**
-
-1. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-4. Click **Add to Library**.
+    4. Choose **Enter a Custom Data Filter,** and enter the source category specified in [Step 2](#Collect_logs_and_metrics_for_Docker_EE) of collection instructions followed by “`/system`”, for example: `_sourceCategory=kubernetes/system`
+6. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
+7. Click **Add to Library**.
 
 Once an app is installed, it will appear in your **Personal** folder, or another folder that you specified. From here, you can share it with your organization.
 
@@ -226,7 +211,6 @@ Use this dashboard to:
 ### Containerd Monitoring
 
 <img src={useBaseUrl('img/integrations/containers-orchestration/DockerEE_Containerd_Monitoring.png')} alt="Docker EE dashboards" />
-
 
 The **Docker EE - Containerd Monitoring Dashboard** provides detailed information on the `containerd` utility that allows you to run containers on Linux, Windows, Solaris, or other operating systems. This includes a log level breakdown, trends, and comparisons; hostname errors, trends, and comparisons, and detailed information on errors.
 

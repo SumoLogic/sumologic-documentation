@@ -6,49 +6,25 @@ description: The RabbitMQ app is a unified logs and metrics app that helps you m
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 <img src={useBaseUrl('img/integrations/containers-orchestration/rabbitmq.png')} alt="icon" width="50"/>
 
 The RabbitMQ app is a unified logs and metrics app that helps you monitor the availability, performance, health, and resource utilization of your RabbitMQ messaging clusters. Preconfigured dashboards provide insight into cluster status, exchanges, queues, nodes and error logs.
 
-## Collecting Logs and Metrics for RabbitMQ
 
-This section provides instructions for configuring log and metric collection for the Sumo Logic App for RabbitMQ. This includes the following tasks:
-* Step 1: Configure Fields in Sumo Logic
-* Step 2: Configure Collection for RabbitMQ
-    * [Collect Logs and Metrics for Non-Kubernetes environments](#Collect_Logs_and_Metrics_for_Non-Kubernetes_environments)
-    * [Collect Logs and Metrics for Kubernetes environments](#Collect_Logs_and_Metrics_for_Kubernetes_environments)
+## Sample Log Messages
 
+<Tabs
+  groupId="k8s-nonk8s"
+  defaultValue="k8s"
+  values={[
+    {label: 'Kubernetes environments', value: 'k8s'},
+    {label: 'Non-Kubernetes environments', value: 'non-k8s'},
+  ]}>
 
-### Step 1: Configure Fields in Sumo Logic
-
-Create the following Fields in Sumo Logic prior to configuring collection. This ensures that your logs and metrics are tagged with relevant metadata, which is required by the app dashboards. For information on setting up fields, see [Sumo Logic Fields](/docs/manage/fields.md).
-
-If you're using RabbitMQ in a non-Kubernetes environment, create the fields:
-* component
-* environment
-* messaging_system
-* messaging_cluster
-* pod
-
-If you're using RabbitMQ in a Kubernetes environment, create the fields:
-* pod_labels_component
-* pod_labels_environment
-* pod_labels_messaging_system
-* pod_labels_messaging_cluster
-
-
-### Step 2: Configure Collection for RabbitMQ
-
-Sumo Logic supports collection of logs and metrics data from RabbitMQ in both Kubernetes and non-Kubernetes environments.
-
-Please click on the appropriate links below based on the host environment.
-
-* [Collect Logs and Metrics for Non-Kubernetes environments](#Collect_Logs_and_Metrics_for_Non-Kubernetes_environments)
-* [Collect Logs and Metrics for Kubernetes environments](#Collect_Logs_and_Metrics_for_Kubernetes_environments)
-
-
-#### Sample Log Message
+<TabItem value="k8s">
 
 ```json title="Kubernetes environments"
 {
@@ -59,13 +35,71 @@ Please click on the appropriate links below based on the host environment.
 }
 ```
 
+</TabItem>
+<TabItem value="non-k8s">
+
 ```json title="Non-Kubernetes environments"
 2021-06-14 12:59:00.004 [debug] <0.29866.49> User 'guest' authenticated successfully by backend rabbit_auth_backend_internal
 Host: broker-1 Name: /var/log/rabbitmq/rabbit.log Category: logfile
 ```
 
+</TabItem>
+</Tabs>
 
-#### Collect RabbitMQ Logs and Metrics for Kubernetes environments
+## Collecting Logs and Metrics for RabbitMQ
+
+This section provides instructions for configuring log and metric collection for the Sumo Logic App for RabbitMQ.
+
+
+### Step 1: Configure Fields in Sumo Logic
+
+Create the following Fields in Sumo Logic prior to configuring collection. This ensures that your logs and metrics are tagged with relevant metadata, which is required by the app dashboards. For information on setting up fields, see [Sumo Logic Fields](/docs/manage/fields.md).
+
+<Tabs
+  groupId="k8s-nonk8s"
+  defaultValue="k8s"
+  values={[
+    {label: 'Kubernetes environments', value: 'k8s'},
+    {label: 'Non-Kubernetes environments', value: 'non-k8s'},
+  ]}>
+
+<TabItem value="k8s">
+
+If you're using RabbitMQ in a Kubernetes environment, create the fields:
+* pod_labels_component
+* pod_labels_environment
+* pod_labels_messaging_system
+* pod_labels_messaging_cluster
+
+</TabItem>
+<TabItem value="non-k8s">
+
+If you're using RabbitMQ in a non-Kubernetes environment, create the fields:
+* component
+* environment
+* messaging_system
+* messaging_cluster
+* pod
+
+</TabItem>
+</Tabs>
+
+
+### Step 2: Configure Collection for RabbitMQ
+
+Sumo Logic supports collection of logs and metrics data from RabbitMQ in both Kubernetes and non-Kubernetes environments.
+
+Please click on the appropriate links below based on the host environment.
+
+<Tabs
+  groupId="k8s-nonk8s"
+  defaultValue="k8s"
+  values={[
+    {label: 'Kubernetes environments', value: 'k8s'},
+    {label: 'Non-Kubernetes environments', value: 'non-k8s'},
+  ]}>
+
+<TabItem value="k8s">
 
 In Kubernetes environments, we use the Telegraf Operator, which is packaged with our Kubernetes collection. You can learn more about it[ here](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/telegraf-collection-architecture).The diagram below illustrates how data is collected from RabbitMQ in a Kubernetes environment. In the architecture shown below, there are four services that make up the metric collection pipeline: Telegraf, Prometheus, Fluentd and FluentBit.
 
@@ -117,7 +151,7 @@ queue_name_exclude = []
 ```
 
 
-Please enter values for the following parameters (marked in **bold_CHANGE_ME** above):
+Please enter values for the following parameters (marked in **CHANGE_ME** above):
 
 * `telegraf.influxdata.com/inputs` - This contains the required configuration for the Telegraf RabbitMQ Input plugin. Please refer[ to this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/redis) for more information on configuring the RabbitMQMongoDB input plugin for Telegraf. Note: As telegraf will be run as a sidecar the host should always be localhost.
     * In the input plugins section, which is [`[inputs.rabbitmq]]`:
@@ -130,9 +164,9 @@ Please enter values for the following parameters (marked in **bold_CHANGE_ME** a
 
 Here’s an explanation for additional values set by this configuration that we request you **please do not modify** as they will cause the Sumo Logic apps to not function correctly.
 
-* telegraf.influxdata.com/class: sumologic-prometheus - This instructs the Telegraf operator what output to use. This should not be changed.
-* prometheus.io/scrape: "true" - This ensures our Prometheus will scrape the metrics.
-* prometheus.io/port: "9273" - This tells prometheus what ports to scrape on. This should not be changed.
+* `telegraf.influxdata.com/class: sumologic-prometheus` - This instructs the Telegraf operator what output to use. This should not be changed.
+* `prometheus.io/scrape: "true"` - This ensures our Prometheus will scrape the metrics.
+* `prometheus.io/port: "9273"` - This tells prometheus what ports to scrape on. This should not be changed.
 * `telegraf.influxdata.com/inputs`
     * In the tags section, that is  [inputs.rabbitmq.tags]
         * component: “messaging” - This value is used by Sumo Logic apps to identify application components.
@@ -157,7 +191,7 @@ Follow the instructions below to capture RabbitMQRabbitMQ logs from stdout on Ku
 
      labels:
 
-```
+```sql
    environment: "prod_CHANGE_ME"
     component: "messaging"
     messaging_system: "rabbitmq"
@@ -171,8 +205,8 @@ Enter in values for the following parameters (marked in **bold_CHANGE_ME** above
 
     Here’s an explanation for additional values set by this configuration that we request you **do not modify** as they will cause the Sumo Logic apps to not function correctly.
 
-* **component: “messaging”**. This value is used by Sumo Logic apps to identify application components.
-* **messaging_system: “rabbitmq”**. This value identifies the messaging system.
+* **component: “messaging”. This value is used by Sumo Logic apps to identify application components.
+* **messaging_system: “rabbitmq”. This value identifies the messaging system.
 
 For all other parameters see[ this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#Configuring-Telegraf) for more parameters that can be configured in the Telegraf agent globally.
 
@@ -184,7 +218,7 @@ Follow the  steps below to capture RabbitMQ logs from a log file on Kubernetes.
 2. Install the Sumo Logic [tailing sidecar operator](https://github.com/SumoLogic/tailing-sidecar/tree/main/operator#deploy-tailing-sidecar-operator).
 3. Add the following annotation in addition to the existing annotations.
 
-```
+```xml
 annotations:
   tailing-sidecar: sidecarconfig;<mount>:<path_of_RabbitMQ_log_file>/<RabbitMQ_log_file_name>
 ```
@@ -192,12 +226,15 @@ annotations:
 Example:
 
 
-```
+```bash
 annotations:
   tailing-sidecar: sidecarconfig;data:/var/log/rabbitmq/rabbitmq.log
 ```
 
-1. Make sure that the RabbitMQ pods are running and annotations are applied by using the command: `kubectl describe pod <RabbitMQ_pod_name>`
+1. Make sure that the RabbitMQ pods are running and annotations are applied by using the command:
+```
+kubectl describe pod <RabbitMQ_pod_name>
+```
 2. Sumo Logic Kubernetes collection will automatically start collecting logs from the pods having the annotations defined above.
 
 1. **Add an FER to normalize the fields in Kubernetes environments**
@@ -224,17 +261,14 @@ Labels created in Kubernetes environments automatically are prefixed with pod_la
 | pod_labels_component as component
 | pod_labels_messaging_system as messaging_system
 | pod_labels_messaging_cluster as messaging_cluster
-
 ```
-
-
 
 1. Click **Save** to create the rule.
 
+</TabItem>
+<TabItem value="non-k8s">
 
-#### Collect RabbitMQ Logs and Metrics for Non-Kubernetes environments
-
-We use the Telegraf operator for RabbitMQ metric collection and Sumo Logic Installed Collector for collecting RabbitMQ logs. The diagram below illustrates the components of the RabbitMQ collection in a non-Kubernetes environment. Telegraf runs on the same system as RabbitMQ, and uses the[ RabbitMQ input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/rabbitmq) to obtain RabbitMQ metrics, and the Sumo Logic output plugin to send the metrics to Sumo Logic. Logs from RabbitMQ on the other hand are sent to either a Sumo Logic Local File source.
+In non-Kubernetes environments, we use the Telegraf operator for RabbitMQ metric collection and Sumo Logic Installed Collector for collecting RabbitMQ logs. The diagram below illustrates the components of the RabbitMQ collection in a non-Kubernetes environment. Telegraf runs on the same system as RabbitMQ, and uses the [RabbitMQ input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/rabbitmq) to obtain RabbitMQ metrics, and the Sumo Logic output plugin to send the metrics to Sumo Logic. Logs from RabbitMQ on the other hand are sent to either a Sumo Logic Local File source.
 
 This section provides instructions for configuring metrics collection for the Sumo Logic App for RabbitMQ. Follow the below instructions to set up collection:
 
@@ -251,20 +285,19 @@ Configure Logs Collection
     4. Configure a Source
 
 
-**Configure Metrics Collection**
+#### Configure Metrics Collection
 
 1. Configure a Hosted Collector
 
-To create a new Sumo Logic hosted collector, perform the steps in the[ Configure a Hosted Collector](/docs/send-data/configure-hosted-collector) section of the Sumo Logic documentation.
+To create a new Sumo Logic hosted collector, perform the steps in the [Configure a Hosted Collector](/docs/send-data/configure-hosted-collector) section of the Sumo Logic documentation.
 
 2. Configure an HTTP Logs and Metrics Source
 
 Create a new HTTP Logs and Metrics Source in the hosted collector created above by following[ these instructions. ](/docs/send-data/sources/sources-hosted-collectors/http-logs-metrics-source)Make a note of the **HTTP Source URL**.
 
-
 3. Install Telegraf
 
-Use the[ following steps](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf.md) to install Telegraf.
+Use the [following steps](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf.md) to install Telegraf.
 
 4. Configure and start Telegraf
 
@@ -273,14 +306,13 @@ As part of collecting metrics data from Telegraf, we will use the [RabbitMQ inpu
 Before you configure telegraf, you will need to enable: Reads metrics from RabbitMQ servers via the[ Management Plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/rabbitmq).
 
 Enable the RabbitMQ management plugins by running the command below on every node:
+```bash
+ sudo rabbitmq-plugins enable rabbitmq_management
+ sudo systemctl restart rabbitmq-server
 ```
- #sudo rabbitmq-plugins enable rabbitmq_management
- #sudo systemctl restart rabbitmq-server
-```
-
 
 Create or modify telegraf.conf and copy and paste the text below:  
-```
+```sql
 [[inputs.rabbitmq]]
            url = "http://localhost:15672"
            username = "<username_CHANGE_ME>"
@@ -302,20 +334,20 @@ Create or modify telegraf.conf and copy and paste the text below:
 Please enter values for the following parameters (marked `CHANGEME` above):
 
 * In the input plugins section, which is `[[inputs.rabbitmq]]`:
-    * url - The URL of the RabbitMQ server for Management HTTP Endpoint. Please see [this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/rabbitmq) for more information on additional parameters for configuring the RabbitMQ input plugin for Telegraf.
-    * username: The Username of RabbitMQ's admin account . The default is “guest”.
-    * password:  The password of RabbitMQ's admin account. The default is “guest”.
-    * In the tags section, that is [inputs.rabbitmq.tags]
-        * environment - This is the deployment environment where the RabbitMQ cluster identified by the value of **servers** resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
-        * messaging_cluster - Enter a name to identify this RabbitMQ cluster. This cluster name will be shown in the Sumo Logic dashboards.
+    * `url` - The URL of the RabbitMQ server for Management HTTP Endpoint. Please see [this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/rabbitmq) for more information on additional parameters for configuring the RabbitMQ input plugin for Telegraf.
+    * `username`: The Username of RabbitMQ's admin account . The default is “guest”.
+    * `password`: The password of RabbitMQ's admin account. The default is “guest”.
+    * In the tags section, that is `[inputs.rabbitmq.tags]`
+        * `environment` - This is the deployment environment where the RabbitMQ cluster identified by the value of **`servers`** resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
+        * `messaging_cluster` - Enter a name to identify this RabbitMQ cluster. This cluster name will be shown in the Sumo Logic dashboards.
 * In the output plugins section, that is `[[outputs.sumologic]]`:
-    * url - This is the HTTP source URL created in step 3. Please see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/configure-telegraf-output-plugin.md) for more information on additional parameters for configuring the Sumo Logic Telegraf output plugin.
+    * `url` - This is the HTTP source URL created in step 3. Please see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/configure-telegraf-output-plugin.md) for more information on additional parameters for configuring the Sumo Logic Telegraf output plugin.
 
 Here’s an explanation for additional values set by this Telegraf configuration that we request you **please do not modify** as they will cause the Sumo Logic apps to not function correctly.
 
 * `data_format - “prometheus”` In the output plugins section, which is `[[outputs.sumologic]]`. Metrics are sent in the Prometheus format to Sumo Logic.
-* **component**: “messaging” - In the input plugins section, which is `[[inputs.RabbitMQ]]`. This value is used by Sumo Logic apps to identify application components.
-* **messaging_system**: “rabbitmq” - In the input plugins sections.In other words, this value identifies the messaging system
+* `component: “messaging”` - In the input plugins section, which is `[[inputs.RabbitMQ]]`. This value is used by Sumo Logic apps to identify application components.
+* `messaging_system: “rabbitmq”` - In the input plugins sections.In other words, this value identifies the messaging system
 
 For all other parameters, see [this doc](https://github.com/influxdata/telegraf/blob/master/etc/telegraf.conf) for more parameters that can be configured in the Telegraf agent globally.
 
@@ -325,15 +357,13 @@ Once you have finalized your telegraf.conf file, you can start or reload the tel
 * At this point, RabbitMQ metrics should start flowing into Sumo Logic.
 
 
-**Configure Logs Collection**
+#### Configure Logs Collection
 
 This section provides instructions for configuring log collection for RabbitMQ running on a non-Kubernetes environment for the Sumo Logic App for RabbitMQ.
 
 By default, RabbitMQ logs are stored in a log file. Sumo Logic supports collecting logs via a local log file. Local log files can be collected via [Installed collectors](/docs/send-data/Installed-Collectors). An Installed collector will require you to allow outbound traffic to [Sumo Logic endpoints](https://help.sumologic.com/APIs/General-API-Information/Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security) for collection to work. For detailed requirements for Installed collectors, see this [page](/docs/get-started/system-requirements#Installed-Collector-Requirements).
 
 Based on your infrastructure and networking setup choose one of these methods to collect RabbitMQ logs and follow the instructions below to set up log collection:
-
-
 
 1. Configure logging in RabbitMQ. RabbitMQ supports logging via the following methods: local text log files, syslog and stdout. RabbitMQ logs have six levels of verbosity: debug, info, warning, error, critical, none. For details please visit this [page](https://www.rabbitmq.com/logging.html#log-levels). For the dashboards to work properly, must set log level = debug. Default, log level is info. All logging settings are located in [RabbitMQ.conf](https://www.rabbitmq.com/logging.html).
 
@@ -343,7 +373,7 @@ To configure the log output destination to a log file, use one of the following 
 
 Edit or create file config: /etc/rabbitmq/rabbitmq.conf following below:
 
-```
+```bash
 log.dir = /var/log/rabbitmq
 log.file = rabbitmq.log
 log.file.level = debug
@@ -354,9 +384,7 @@ Logs from the RabbitMQ log file can be collected via a Sumo Logic [Installed col
 
 3. Configuring a Collector. To add an Installed collector, perform the steps as defined on the page[ Configure an Installed Collector.](/docs/send-data/Installed-Collectors)
 
-4. Configuring a Source
-
-**To add a Local File Source source for RabbitMQ, do the following**
+4. Configuring a Source. To add a Local File Source source for RabbitMQ, do the following
 
 To collect logs directly from your RabbitMQ machine, use an Installed Collector and a Local File Source.
 
@@ -368,10 +396,10 @@ To collect logs directly from your RabbitMQ machine, use an Installed Collector 
 * **Source Host.** Sumo Logic uses the hostname assigned by the OS unless you enter a different host name
 * **Source Category.** Enter any string to tag the output collected from this Source, such as **RabbitMQ/Logs**. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details see[ Best Practices](/docs/send-data/design-deployment/best-practices-source-categories).)
 * **Fields. Set the following fields:**
-    * **component = messaging**
-    * **messaging_system = rabbitmq**
-    * **messaging_cluster = <Your_RabbitMQ_Cluster_Name>**
-    * **environment = <Environment_Name>, such as Dev, QA or Prod.**
+    * `component = messaging`
+    * `messaging_system = rabbitmq`
+    * `messaging_cluster = <Your_RabbitMQ_Cluster_Name>`
+    * `environment = <Environment_Name>`, such as Dev, QA or Prod.
 
 
 1. Configure the **Advanced** section:
@@ -385,6 +413,8 @@ To collect logs directly from your RabbitMQ machine, use an Installed Collector 
 
     At this point, RabbitMQ logs should start flowing into Sumo Logic.
 
+</TabItem>
+</Tabs>
 
 ## Installing Monitors
 

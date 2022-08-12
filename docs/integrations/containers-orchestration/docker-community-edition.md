@@ -67,48 +67,44 @@ Follow the instructions for the operating system of the host where you will inst
 2. Navigate to the collector you installed on the Docker host, and select **Add > Add Source**.
 3. Select **Docker Logs**. The Docker Logs page appears.
 4. Configure the source fields:
-   * **Name**. (Required).
-   * **Description**. (Optional).
-   * **URI**. Enter the URI of the Docker daemon.
-      * If your collector runs on the same host as the Docker containers it will monitor, enter the non-networked Unix socket:
-      ```unix:///var/run/docker.sock
+   1. **Name**. (Required).
+   2. **Description**. (Optional).
+   3. **URI**. Enter the URI of the Docker daemon.
+     * If your collector runs on the same host as the Docker containers it will monitor, enter the non-networked Unix socket:
+      ```bash
+      unix:///var/run/docker.sock
       ```
-      * If your collector runs on a different machine than the Docker host, you can determine its URI from a Docker environment variable. Run the `docker-machine` command to find the Docker environment variables.
-      ```
+     * If your collector runs on a different machine than the Docker host, you can determine its URI from a Docker environment variable. Run the `docker-machine` command to find the Docker environment variables.
+      ```bash
       $ docker-machine env machine-name
       ```
+     * Take the value of the `DOCKER_HOST` variable, change "tcp" to "https", and enter that value as the URI. For example, `https://192.168.99.100:2376`. For example:
 
-For example:
+      ```bash
+      $ docker-machine env default
+      export DOCKER_TLS_VERIFY="1"
+      export DOCKER_HOST="tcp://192.168.99.100:2376"
+      export DOCKER_CERT_PATH="/Users/sumo/.docker/machine/machines/default"
+      export DOCKER_MACHINE_NAME="default"
+      # Run this command to configure your shell:
+      # eval "$(docker-machine env default)"
+      ```
 
-```bash
-$ docker-machine env default
-export DOCKER_TLS_VERIFY="1"
-export DOCKER_HOST="tcp://192.168.99.100:2376"
-export DOCKER_CERT_PATH="/Users/sumo/.docker/machine/machines/default"
-export DOCKER_MACHINE_NAME="default"
-# Run this command to configure your shell:
-# eval "$(docker-machine env default)"
-```
-
-
-Take the value of the `DOCKER_HOST` variable, change "tcp" to "https", and enter that value as the URI. For example, `https://192.168.99.100:2376`.
-    4. **Cert Path**. (Required for remote access only) Enter the path to the certificate files on the local machine where the collector runs. In the example above, the cert path is: `/Users/sumo/.docker/machine/machines/default.`
-    5. **Collect From** and **Container Filters**. If you want to collect from all containers, click the **All Containers** radio button. If you want to collect from selected containers, click the **Specified Container Filters** radio button, and specify filter expressions in the **Container Filters** field. For information about how to define container filters, see [More about defining container filters](#More_about_defining_container_filters) below.
-        * By default, you can collect from up to 40 containers. To increase the limit, stop the Collector service, edit the `collector.properties` file (in the `config` subdirectory of the collector installation directory), and add the `docker.maxPerContainerConnections` property. The maximum supported value is 100. Then start the Collector service. See [collector.properties](/docs/send-data/Installed-Collectors/05Reference-Information-for-Collector-Installation/collector.properties) for details on modifying this configuration file.
-    6. **Source Host**. Enter the hostname or IP address of the source host. If not specified, it’s assumed that the host is the machine where Docker is running. The hostname can be a maximum of 128 characters. \
-If desired, you can use Docker variables to construct the Source Host value. For more information, see [Configure sourceCategory and sourceHost using variables](#Configure_sourceCategory_and_sourceHost_using_variables).
-    7. **Source Category**. (Required) Enter the Sumo source category (such as `prod/web/docker/logs`). The source category metadata field is a fundamental building block to organize and label sources. For more information, see [Metadata Naming Conventions](/docs/send-data/Sources/reference-information-sources/Metadata-Naming-Conventions) and our [Best Practices: Good Source Category, Bad Source Category](/docs/send-data/design-deployment/best-practices-source-categories). \
-If desired, you can use Docker variables to construct the Source Category value. For more information, see [Configure sourceCategory and sourceHost using variables](#Configure_sourceCategory_and_sourceHost_using_variables).
+   4. **Cert Path**. (Required for remote access only) Enter the path to the certificate files on the local machine where the collector runs. In the example above, the cert path is: `/Users/sumo/.docker/machine/machines/default.`
+   5. **Collect From** and **Container Filters**. If you want to collect from all containers, click the **All Containers** radio button. If you want to collect from selected containers, click the **Specified Container Filters** radio button, and specify filter expressions in the **Container Filters** field. For information about how to define container filters, see [More about defining container filters](#More_about_defining_container_filters) below.
+      * By default, you can collect from up to 40 containers. To increase the limit, stop the Collector service, edit the `collector.properties` file (in the `config` subdirectory of the collector installation directory), and add the `docker.maxPerContainerConnections` property. The maximum supported value is 100. Then start the Collector service. See [collector.properties](/docs/send-data/Installed-Collectors/05Reference-Information-for-Collector-Installation/collector.properties) for details on modifying this configuration file.
+    6. **Source Host**. Enter the hostname or IP address of the source host. If not specified, it’s assumed that the host is the machine where Docker is running. The hostname can be a maximum of 128 characters. If desired, you can use Docker variables to construct the Source Host value. For more information, see [Configure sourceCategory and sourceHost using variables](#Configure_sourceCategory_and_sourceHost_using_variables).
+    7. **Source Category**. (Required) Enter the Sumo source category (such as `prod/web/docker/logs`). The source category metadata field is a fundamental building block to organize and label sources. For more information, see [Metadata Naming Conventions](/docs/send-data/Sources/reference-information-sources/Metadata-Naming-Conventions) and our [Best Practices: Good Source Category, Bad Source Category](/docs/send-data/design-deployment/best-practices-source-categories). If desired, you can use Docker variables to construct the Source Category value. For more information, see [Configure sourceCategory and sourceHost using variables](#Configure_sourceCategory_and_sourceHost_using_variables).
 5. Configure the Advanced options.
-    8. **Enable Timestamp Parsing**. This option is checked by default and **required**. See the [Prerequisites section](#Prerequisites) above for details.
-    9. **Time Zone**. Default is “Use time zone from log file”.
-    10. **Timestamp Format**. Default is “Automatically detect the format”.
-    11. **Encoding**. Default is “UTF-8”.
-    12. **Enable Multiline Processing. **
+    1. **Enable Timestamp Parsing**. This option is checked by default and **required**. See the [Prerequisites section](#Prerequisites) above for details.
+    2. **Time Zone**. Default is “Use time zone from log file”.
+    3. **Timestamp Format**. Default is “Automatically detect the format”.
+    4. **Encoding**. Default is “UTF-8”.
+    5. **Enable Multiline Processing. **
         * **Detect messages spanning multiple lines**. This option is checked by default.
         * **Infer Boundaries**. This option is checked by default.
         * **Boundary Regex**. If multiple processing is enabled, and **Infer Boundaries** is disabled, enter a regular expression for message boundaries.
-6. Configure processing rules. For more information, see** **[Processing Rules](/docs/manage/collection/processing-rules).
+6. Configure processing rules. For more information, see [Processing Rules](/docs/manage/collection/processing-rules).
 
 
 ### Step 4: Add a Docker stats source
@@ -116,32 +112,29 @@ If desired, you can use Docker variables to construct the Source Category value.
 1. In Sumo select **Manage Data > Collection > Collection**.
 2. Navigate to the collector you installed on the Docker host, and select **Add > Add Source**.
 3. Select **Docker Stats**, then for Content Type select **Logs (JSON)** to collect data as JSON logs.
-
-
-1. Configure the following source fields:
+4. Configure the following source fields:
    * **Name.** (Required)
    * **Description. **(Optional)
    * **URI**. Enter the URI of the Docker daemon.
       * If your collector runs on the same host as the Docker containers it will monitor, enter the non-networked Unix socket: \
-      ```
+      ```bash
       unix:///var/run/docker.sock
       ```
       * If your collector runs on a different machine than the Docker host, you can determine its URI from a Docker environment variable. Run the `docker-machine` command to find the Docker environment variables. The command's syntax is
-      ```
+      ```bash
       $ docker-machine env machine-name
       ```
-
-For example,
-```bash
-$ docker-machine env default \
-export DOCKER_TLS_VERIFY="1" \
-export DOCKER_HOST="tcp://192.168.99.100:2376" \
-export DOCKER_CERT_PATH="/Users/sumo/.docker/machine/machines/default" \
-export DOCKER_MACHINE_NAME="default" \
-# Run this command to configure your shell:  \
-# eval "$(docker-machine env default)" \
-```
-Take the value of the `DOCKER_HOST` variable, change "tcp" to "https", and enter that value as the URI. For example, `https://192.168.99.100:2376`.
+      For example,
+      ```bash
+      $ docker-machine env default \
+      export DOCKER_TLS_VERIFY="1" \
+      export DOCKER_HOST="tcp://192.168.99.100:2376" \
+      export DOCKER_CERT_PATH="/Users/sumo/.docker/machine/machines/default" \
+      export DOCKER_MACHINE_NAME="default" \
+      # Run this command to configure your shell:  \
+      # eval "$(docker-machine env default)" \
+      ```
+    Take the value of the `DOCKER_HOST` variable, change "tcp" to "https", and enter that value as the URI. For example, `https://192.168.99.100:2376`.
     4. **Cert Path**. (Required for remote access only) Enter the path to the certificate files on the local machine where the collector runs. In the example above, the cert path is: /Users/sumo/.docker/machine/machines/default
     5. **Collect From** and **Container Filters**. If you want to collect from all containers, click the **All Containers** radio button. If you want to collect from selected containers, click the **Specified Container Filters** radio button, and specify filter expressions in the **Container Filters** field. For information about how to define container filters, see [More about defining container filters](#More_about_defining_container_filters) below.
         * By default, you can collect from up to 40 containers. To increase the limit, stop the Collector service, edit the `collector.properties` file (in the `config` subdirectory of the collector installation directory), and add the `docker.maxPerContainerConnections` property. The maximum supported value is 100. Then start the Collector service. See [collector.properties](/docs/send-data/Installed-Collectors/05Reference-Information-for-Collector-Installation/collector.properties) for details on modifying this configuration file.
@@ -158,8 +151,6 @@ For installation instructions, see [Install the Docker App](#Installing-the-Dock
 
 
 ### Step 6: Run searches and use dashboards
-14
-
 
 At this point, Sumo should be receiving Docker data. For an example of logs collected from Docker, see Sample Docker log messages. For an example query, see [Sample query](#Query_Sample) - Containers created or started.  
 
@@ -203,8 +194,28 @@ The table below defines the types of variables you can use.
 
 Docker engine events log data doesn't support the tagging with metadata.
 
-**TABLE**
+---
+**Namespace/VAR_TYPE**: `container`<br/>
+**Description**: Container metadata fields provided by Docker for use in the `--log-opt` tag option. These are automatically added to data points. For more information, see Log tags for logging driver in Docker help.<br/>
+**VAR_NAME**:
+* ID — The first 12 characters of the container ID.
+* FullID —The full container ID.
+* Name —The container name.
+* ImageID —The first 12 characters of the container’s image ID.
+* ImageFullID — The container’s full image ID.
+* ImageName — The name of the image used by the container.
 
+---
+**Namespace/VAR_TYPE**: `label`<br/>
+**Description**: User-defined labels, supplied with the  --label flag when starting a Docker container. This is automatically added to data points.
+**VAR_NAME**: The name of the variable. Dot characters (.) are not supported.
+
+---
+**Namespace/VAR_TYPE**: `env`<br/>
+**Description**: User-defined container environment variables that are set with `--env|-e` flags when starting a container.<br/>
+**VAR_NAME**: The name of the variable. Dot characters (.) are not supported.
+
+---
 For example:
 ```sql
 {{container.ID}}
@@ -357,10 +368,7 @@ To install the app:
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
 1. From the **App Catalog**, search for and select the app**.**
-2. Select the version of the service you're using and click **Add to Library**.
-
-Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/library/install-apps)
-
+2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/library/install-apps)
 3. To install the app, complete the following fields.
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
     2. **Data Source.** Select either of these options for the data source. 

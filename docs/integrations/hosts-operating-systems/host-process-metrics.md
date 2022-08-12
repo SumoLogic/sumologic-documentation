@@ -1,5 +1,5 @@
 ---
-id: process-metrics
+id: host-process-metrics
 title: Host and Process Metrics
 description: The Sumo Logic App for Host and Process Metrics allows you to monitor the performance and resource utilization of hosts and processes that your mission critical applications depend upon.
 ---

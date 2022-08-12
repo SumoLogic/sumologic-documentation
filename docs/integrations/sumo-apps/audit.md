@@ -11,19 +11,14 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Sumo Logic Audit App uses Sumo Logic audit index events to present information about account management activities, user activities, and management of Library content (searches, dashboards/reports, and folders) in your Sumo Logic account. The app uses predefined searches and Dashboards that provide visibility into your environment.
 
-Before you can install the Sumo Logic Audit App, an administrator must enable the Sumo Auditing. For more information, see Enable and Manage the Audit Index.
-
-:::note
-Data is only provided from the time the Sumo Auditing is enabled. Audit data is not backfilled to any time before the feature was enabled.
+:::info caution
+* Make sure that the Sumo auditing is enabled. If it is not, an administrator must enable it before you install the Audit app. For instructions, see [Enable and Manage Auditing](docs/manage/security/audit-index.md).  
+* Data is provided from the time the Sumo Auditing is enabled. Audit data is not backfilled to any time before the feature was enabled.
 :::
 
+## Installing the Sumo Logic Audit App
 
-## Install the Audit App
-The Sumo Logic Audit App includes Dashboards that give you an overview of your Sumo Logic account's audit events, including user login activity, admin activity, and details on scheduled searches.
-
-Install the Sumo Logic App to use the preconfigured searches and dashboards.
-
-Make sure that the Sumo auditing is enabled. If it is not, an administrator must enable it before you install the Audit app. For instructions, see Enable and Manage Auditing.  
+Install the Sumo Logic Audit app to use our dashboards that give you an overview of your Sumo Logic account's audit events, including user login activity, admin activity, and details on scheduled searches.
 
 To install the app, do the following:
 1. In the **App Catalog, **search for "Audit**"** and select the **Audit **app.
@@ -32,7 +27,7 @@ To install the app, do the following:
 4. Click **Add to Library** to install the app. A confirmation dialog will appear and then you can start viewing your  dashboards.
 
 
-## Dashboards
+## Viewing Sumo Logic Audit Dashboards
 
 This section describes each of the dashboards in the Audit app.
 
