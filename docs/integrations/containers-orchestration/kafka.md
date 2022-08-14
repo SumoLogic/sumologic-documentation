@@ -99,10 +99,10 @@ Follow the steps below to collect metrics from a Kubernetes environment:
 
 1. Setup Kubernetes Collection with the Telegraf operator.
 Please ensure that you are monitoring your Kubernetes clusters with the Telegraf operator **enabled**. If you are not, then please follow [these instructions](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf) to do so.
-2. Add annotations on your Kafka pods. Open [this yaml file](https://sumologic-app-data.s3.amazonaws.com/Kafka/KAfka_PodAnnotations.yaml) and add the annotations mentioned there. Please enter in values for the parameters marked with `CHANGE_ME` in the yaml file:
-* `telegraf.influxdata.com/inputs` - As telegraf will be run as a sidecar the **urls** should always be localhost.
+2. Add annotations on your Kafka pods. Open [this yaml file](https://sumologic-app-data.s3.amazonaws.com/Kafka/KAfka_PodAnnotations.yaml) and add the annotations mentioned there. Enter in values for the parameters marked with `CHANGE_ME` in the yaml file:
+* `telegraf.influxdata.com/inputs` - As telegraf will be run as a sidecar the `urls` should always be localhost.
     * In the input plugins section :
-        * **urls** - The URL to the Kafka server. As telegraf will be run as a sidecar the **urls** should always be localhost. This can be a comma-separated list to connect to multiple Kafka servers.
+        * `urls` - The URL to the Kafka server. As telegraf will be run as a sidecar the `urls` should always be localhost. This can be a comma-separated list to connect to multiple Kafka servers.
     * In the tags sections (total 3) which are  `[inputs.jolokia2_agent.tags]`, and `[inputs.disk.tags]`:
         * `environment` - This is the deployment environment where the Kafka cluster identified by the value of servers resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
         * `messaging_cluster` - Enter a name to identify this Kafka cluster. This cluster name will be shown in the Sumo Logic dashboards.
@@ -194,7 +194,7 @@ If your Kafka helm chart/pod is writing the logs to standard output then follow 
     `messaging_system: "kafka"` \
     `messaging_cluster: "kafka_prod_cluster01-CHANGE_ME”`
 
-    Please enter in values for the following parameters (marked in bold and `CHANGE_ME` above):
+    Enter in values for the following parameters (marked in bold and `CHANGE_ME` above):
 
 * `environment` - This is the deployment environment where the Kafka cluster identified by the value of **servers** resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
 * `messaging_cluster` - Enter a name to identify this Kafka cluster. This cluster name will be shown in the Sumo Logic dashboards.
@@ -339,9 +339,9 @@ export KAFKA_JMX_OPTS="-javaagent:/opt/kafka/libs/jolokia.jar=port=8778,host=$RM
 Please enter values for the following parameters (marked with `CHANGE_ME`) in the downloaded file:
 
 * In the input plugins section which is `[[inputs.jolokia2_agent]]`:
-    * **urls** - In the `[[inputs.jolokia2_agent]]` section. The URL to the Kafka server. This can be a comma-separated list to connect to multiple Kafka servers. Please see [this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/jolokia2) for more information on additional parameters for configuring the Jolokia input plugin for Telegraf.
+    * `urls` - In the `[[inputs.jolokia2_agent]]` section. The URL to the Kafka server. This can be a comma-separated list to connect to multiple Kafka servers. Please see [this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/jolokia2) for more information on additional parameters for configuring the Jolokia input plugin for Telegraf.
     * In the tags sections (total 3) which is section `[inputs.jolokia2_agent.tags]`, and `[inputs.disk.tags]`
-        * `environment` - This is the deployment environment where the Kafka cluster identified by the value of **`urls`** parameter resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
+        * `environment` - This is the deployment environment where the Kafka cluster identified by the value of `urls` parameter resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
         * **`messaging_cluster`** - Enter a name to identify this Kafka cluster. This cluster name will be shown in the Sumo Logic dashboards.
 * In the output plugins section
     * `url` - This is the HTTP source URL created in step 3. Please see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/configure-telegraf-output-plugin.md) for more information on additional parameters for configuring the Sumo Logic Telegraf output plugin.

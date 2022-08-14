@@ -82,7 +82,7 @@ component="webserver"
 ```
 
 
-Please enter in values for the following parameters (marked in bold and **CHANGE_ME **above):
+Enter in values for the following parameters (marked in bold and **CHANGE_ME **above):
 
 * `environment` - This is the deployment environment where the Nginx Ingress farm identified by the value of servers resides. For example:- dev, prod, or QA. While this value is optional we highly recommend setting it.
 * **webserver_farm** - Enter a name to identify this Nginx Ingress farm. This farm name will be shown in the Sumo Logic dashboards. If you haven’t defined a farm in Nginx Ingress, then enter ‘default’ for webserver_farm.

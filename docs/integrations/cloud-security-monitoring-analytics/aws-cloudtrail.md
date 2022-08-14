@@ -24,11 +24,11 @@ To configure an AWS CloudTrail Source, perform these steps:
 2. Confirm that logs are being delivered to the Amazon S3 bucket.
 3. Add an AWS CloudTrail Source to Sumo Logic.
 4. Grant Sumo Logic access to an Amazon S3 bucket.
-* Generate the Role-Based Access CloudFormation template in Sumo Logic and download the template.
-* Create the CloudFormation stack in AWS Management Console using the template.
-* Copy the Role ARN from the Outputs tab and paste it in the Role ARN field in Sumo Logic CloudTrail Source created in step 3. For more information, refer Configuring your AWS source with CloudFormation.
-1. Enable Sumo to track AWS Admin activity. This step is optional, but if you don't do it, the administrator activity panels in the **AWS CloudTrail - User Monitoring** dashboard won't be populated.
-2. Install the Sumo Logic App for AWS CloudTrail.
+   * Generate the Role-Based Access CloudFormation template in Sumo Logic and download the template.
+   * Create the CloudFormation stack in AWS Management Console using the template.
+   * Copy the Role ARN from the Outputs tab and paste it in the Role ARN field in Sumo Logic CloudTrail Source created in step 3. For more information, refer Configuring your AWS source with CloudFormation.
+5. Enable Sumo to track AWS Admin activity. This step is optional, but if you don't do it, the administrator activity panels in the **AWS CloudTrail - User Monitoring** dashboard won't be populated.
+6. Install the Sumo Logic App for AWS CloudTrail.
 
 Once you begin uploading data, your daily data usage will increase. It's a good idea to check the **Account** page to make sure that you have enough quota to accommodate additional data in your account. If you need additional quota, you can upgrade your account at any time.
 
@@ -72,7 +72,7 @@ Once you begin uploading data, your daily data usage will increase. It's a good 
 | parse "\"userName\":\"*\"" as user
 ```
 
-### Query Sample
+### Sample Query
 
 ```sql title="Created and Deleted Network and Security Events"
 _sourceCategory=AWS_EAGLE (*Security* OR *Network*)
@@ -96,10 +96,7 @@ To install the app:
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
 1. From the **App Catalog**, search for and select the app**.**
-2. Select the version of the service you're using and click **Add to Library**.
-
-Version selection is applicable only to a few apps currently. For more information, see the Install the Apps from the Library.
-
+2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the Install the Apps from the Library.
 3. To install the app, complete the following fields.
    * **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
    * **Data Source.** Select either of these options for the data source. 

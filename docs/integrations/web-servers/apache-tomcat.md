@@ -210,7 +210,7 @@ annotations:
     tag_keys = ["context","host"]
 ```
 
-Please enter in values for the following parameters (marked `CHANGEME` above):
+Enter in values for the following parameters (marked `CHANGEME` above):
 
 * `telegraf.influxdata.com/inputs` - This contains the required configuration for the Telegraf Tomcat Input plugin. Please refer[ to this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/redis) for more information on configuring the Tomcat input plugin for Telegraf. Note: As telegraf will be run as a sidecar the host should always be localhost.
     * In the input plugins section, which is `[[inputs.Tomcat]]`:
@@ -260,7 +260,7 @@ Follow the instructions below to capture Apache Tomcat logs from stdout on Kuber
 ```
 
 
-Please Enter in values for the following parameters (marked `CHANGEME` in the snippet above):
+Enter in values for the following parameters (marked `CHANGEME` in the snippet above):
 
 * `environment` - This is the deployment environment where the Tomcat farm identified by the value of servers resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
 * `Webserver_farm` - Enter a name to identify this Tomcat farm. This farm name will be shown in the Sumo Logic dashboards.

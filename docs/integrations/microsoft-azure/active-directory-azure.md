@@ -11,83 +11,59 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Azure Active Directory is a cloud-based directory and identity management service that provides directory services, application access management, and identity protection. The Sumo Logic App for Azure helps you monitor activity in the Azure Active Directory. The dashboards provide insight into role management, user management, group management, successful and failed sign-in events, directory management, and application management data that helps you understand your users' experience.
 
-The app uses the following log types:
-* Audit and Sign-in logs
-
-Only global administrators, security administrators, security readers, and report readers can view sign-ins and enable collection for Sign-in Events.
-
-## Collecting Logs
-
-This section has instructions for setting up the ingestion pipeline from Azure Active Directory to Sumo Logic.
-
-The sections below are either for FedRamp Sumo Logic deployments or if you have been advised by the Sumo Logic support team to not use the Cloud to Cloud Integration based on your Azure environments.
-
-
-### Solution Overview
-
 * Azure Monitor collects logs for Azure Active Directory and streams the data to an Azure Event Hub.
 * Event Hub streams the logs collected by Azure Monitor to an Azure function.
 * The Azure function is a small piece of code that is triggered by Event Hub to send Azure Active Directory logs to the Sumo HTTP Source. The function also logs to one Storage Account and logs failover data to another.
 
 <img src={useBaseUrl('img/integrations/microsoft-azure/CollectLogsforAzureAD.png')} alt="CollectLogsforAzureAD" />
 
-### Prerequisites
+## Prerequisites
 
 * An Azure subscription must be associated (attached) to AAD. For more information, see this [Azure Active Directory documentation](https://docs.microsoft.com/en-us/azure/active-directory/fundamentals/active-directory-how-subscriptions-associated-directory).
 * To export Azure Activity logs to reports, be sure you have met the [Azure Active Directory requirements](https://docs.microsoft.com/en-us/azure/active-directory/reports-monitoring/concept-activity-logs-azure-monitor).
 
 
+## Log Types
+
+The app uses the following log types:
+* Audit and Sign-in logs
+
+Only global administrators, security administrators, security readers, and report readers can view sign-ins and enable collection for Sign-in Events.
+
+
+## Collecting Logs for Azure Active Directory
+
+This section has instructions for setting up the ingestion pipeline from Azure Active Directory to Sumo Logic.
+
+The sections below are either for FedRamp Sumo Logic deployments or if you have been advised by the Sumo Logic support team to not use the Cloud to Cloud Integration based on your Azure environments.
+
 ### Configure an HTTP Source
 
-
 In this step, you configure an HTTP Source to receive logs from the Azure function.
-
-
-
 1. Select a Hosted Collector where you want to configure the HTTP Source. If desired, create a new Hosted Collector, as described on [Configure a Hosted Collector](/docs/send-data/configure-hosted-collector).
 2. Configure an HTTP source, as described on [HTTP Logs and Metrics Source](/docs/send-data/sources/sources-hosted-collectors/http-logs-metrics-source).
 
 
-### Configure Azure resources using ARM template
+### Configure Azure Resources using ARM template
 
 In this step, you use a Sumo-provided Azure Resource Manager (ARM) template to create an Event Hub, an Azure function and two Storage Accounts. The Azure function is triggered by Event Hub. Two storage accounts are used to store log messages from the Azure function and failover data from Event Hub.
 
-
-
-1. Download the [azuredeploy_logs.json ](https://s3.amazonaws.com/appdev-cloudformation-templates/azuredeploy_logs.json)ARM template.
+1. Download the [azuredeploy_logs.json](https://s3.amazonaws.com/appdev-cloudformation-templates/azuredeploy_logs.json) ARM template.
 2. Go to **Template deployment** in the Azure Portal.
-6
-
 3. Click **Create**.
 4. On the **Custom deployment** blade, click **Build your own template in the editor.**
 5. Copy the contents of `azuredeploy_logs.json`, and paste it into the editor window.
-7
-
 6. Click **Save.**
 7. Now you are back on the **Custom deployment** blade.
     1. Create a new Resource Group (recommended) or select an existing one.
     2. Choose Location.
     3. In the **Sumo Endpoint URL** field, enter the URL of the HTTP Source you configured in [Step 1](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-logs-azure-monitor#Step_1._Configure_an_HTTP_source).
     4. Agree to the terms and conditions.
-    5. Click **Purchase**. \
-
-
-
-8. Verify the deployment was successful by looking at **Notifications** at the top right corner of Azure Portal. \
-
-
-
-9. **(Optional)** In the same window, you can click **Go to resource group** to verify all resources have been created successfully. You will see something like this: \
-
-
-
-10. Go to **Storage accounts** and search for “sumofailmsg”. Click on `sumofailmsg_<random-string>`. \
-_
-
-11. Under **Blob Service**, click **Containers**, then click **+ Container**, enter the Name **azureaudit-failover**, and select **Private** for the **Public Access Level**. Click **OK**. \
-
-12
-
+    5. Click **Purchase**.
+8. Verify the deployment was successful by looking at **Notifications** at the top right corner of Azure Portal.
+9. **(Optional)** In the same window, you can click **Go to resource group** to verify all resources have been created successfully. You will see something like this:
+10. Go to **Storage accounts** and search for “sumofailmsg”. Click on `sumofailmsg_<random-string>`.
+11. Under **Blob Service**, click **Containers**, then click **+ Container**, enter the Name **azureaudit-failover**, and select **Private** for the **Public Access Level**. Click **OK**.
 
 
 ### Troubleshooting the log collection
@@ -104,10 +80,7 @@ To install the app:
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
 1. From the **App Catalog**, search for and select the app**.**
-2. Select the version of the service you're using and click **Add to Library**.
-
-Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/library/install-apps)
-
+2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/library/install-apps)
 3. To install the app, complete the following fields.
     * **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
     * **Data Source.** Select either of these options for the data source. 
@@ -199,13 +172,10 @@ See information about user management in Azure Activity Directory, including ext
 
 
 ### Application Management
-22
-
 
 See information about application management in Azure Activity Directory, including application consent, deleted applications, applications added or updated, and service principal updates.
 
 <img src={useBaseUrl('img/integrations/microsoft-azure/Azure-ActiveDirectory-Application-Management.png')} alt="Azure Active Directory dashboards" />
-
 
 **Operation Name.** Shows the name of application management operations, and a count of how many times they happened on a bar chart, for the last 24 hours.
 
@@ -231,8 +201,6 @@ See information about application management in Azure Activity Directory, includ
 
 
 ### Directory Management
-24
-
 
 See information about directory management in Azure Activity Directory, including failed events, successful events, and disables desktop SSOs.
 
@@ -254,8 +222,6 @@ See information about directory management in Azure Activity Directory, includin
 
 
 ### Group Management
-26
-
 
 See information about group management in Azure Activity Directory, including groups added, and a list of members added or removed from groups.
 
@@ -279,8 +245,6 @@ See information about group management in Azure Activity Directory, including gr
 
 
 ### Authorization/Authentication/Other
-28
-
 
 See information about Authorization in Azure Active Directory including the name of authorization operations done, successful and failed authorization events, and breakdown of results.
 
@@ -327,8 +291,6 @@ See information about successful sign-in events in your Azure AD, including the 
 
 
 ### Failure Sign-in Events
-32
-
 
 See information about failure sign-in events in your Azure AD, including the geo-location of sign-in activity, risky sign-ins, breakdown by browser & application, and any anomalies in the login count.
 

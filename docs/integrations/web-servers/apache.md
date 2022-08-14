@@ -36,19 +36,19 @@ The Sumo Logic App for Apache assumes:
 
 ```bash title="Access Logs"
 {
-"timestamp":1620630466883,
-"log":"192.168.29.177 - - [10/May/2021:07:07:44 +0000] \"GET / HTTP/1.1\" 200 45",
-"stream":"stdout",
-"time":"2021-05-10T07:07:44.649858568Z"
+	"timestamp":1620630466883,
+	"log":"192.168.29.177 - - [10/May/2021:07:07:44 +0000] \"GET / HTTP/1.1\" 200 45",
+	"stream":"stdout",
+	"time":"2021-05-10T07:07:44.649858568Z"
 }
 ```
 
 ```bash title="Error Logs"
 {
-"timestamp":1620125665927,
-"log":"[Tue May 04 10:54:25.460469 2021] [ssl:error] [pid 53] [client 192.168.85.135:52327] AH02042: rejecting client initiated renegotiation",
-"stream":"stderr",
-"time":"2021-05-04T10:54:25.460664201Z"
+	"timestamp":1620125665927,
+	"log":"[Tue May 04 10:54:25.460469 2021] [ssl:error] [pid 53] [client 192.168.85.135:52327] AH02042: rejecting client initiated renegotiation",
+	"stream":"stderr",
+	"time":"2021-05-04T10:54:25.460664201Z"
 }
 ```
 
@@ -165,8 +165,9 @@ In Kubernetes environments, we use the Telegraf Operator, which is packaged with
 
 <img src={useBaseUrl('img/integrations/web-servers/Apache-flow.png')} alt="Apache" />
 
-The first service in the pipeline is Telegraf. Telegraf collects metrics from Apache. Note that we’re running Telegraf in each pod we want to collect metrics from as a sidecar deployment: i.e. Telegraf runs in the same pod as the containers it monitors. Telegraf uses the [Apache input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/apache) to obtain metrics. (For simplicity, the diagram doesn’t show the input plugins.) The injection of the Telegraf sidecar container is done by the Telegraf Operator. We also have Fluentbit that collects logs written to standard out and standard error and forwards them to FluentD, which in turn sends all the logs and metrics data to a Sumo Logic HTTP Source.
+The first service in the pipeline is Telegraf. Telegraf collects metrics from Apache. Note that we’re running Telegraf in each pod we want to collect metrics from as a sidecar deployment, meaning, Telegraf runs in the same pod as the containers it monitors.
 
+Telegraf uses the [Apache input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/apache) to obtain metrics. For simplicity, the diagram doesn’t show the input plugins. The injection of the Telegraf sidecar container is done by the Telegraf Operator. We also have Fluentbit that collects logs written to standard out and standard error and forwards them to FluentD, which in turn sends all the logs and metrics data to a Sumo Logic HTTP Source.
 
 :::note Prerequisites
 Ensure that you are monitoring your Kubernetes clusters with the Telegraf operator. If you're not, see [these instructions](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf) to do so.
@@ -189,7 +190,6 @@ ServerName localhost:8080
     </Location>
   </IfModule>
 ```
-
 2. Add annotations on your Apache pods:
 ```sql
 annotations:
@@ -205,8 +205,7 @@ annotations:
         webserver_system = "apache"
         webserver_farm = "<app1apacheeks_CHANGE_ME>"
 ```
-
-3. Please enter in values for the parameters marked in brackets (`< >`) above.
+3. Enter in values for the parameters marked in brackets (`< >`) above.
    * `telegraf.influxdata.com/inputs`: This contains the required configuration for the Telegraf Apache Input plugin. Please refer[ to this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/apache) for more information on configuring the Apache input plugin for Telegraf. Note: As telegraf will be run as a sidecar the host should always be localhost.
       * In the input plugins section:
          * `urls`: The URL to the Apache server
@@ -215,8 +214,7 @@ annotations:
          * `webserver_farm`: Enter a name to uniquely identify this Apache Webserver farm. This Apache webserver farm name will be shown in the Sumo Logic dashboards.
 
    :::caution **Do not modify the other values**
-   <details><summary>Modifying these values will cause the Sumo Logic apps to function incorrectly (<strong>click to expand</strong>)</summary>
-
+   Modifying these values will cause the Sumo Logic apps to function incorrectly
    * `telegraf.influxdata.com/class: sumologic-prometheus`: Instructs the Telegraf operator what output to use.
    * `prometheus.io/scrape: "true"`: Ensures our Prometheus will scrape the metrics.
    * `prometheus.io/port: "9273"`: Tells prometheus what ports to scrape on.
@@ -224,10 +222,7 @@ annotations:
       * In the tags section `[inputs.apache.tags]`
       * `component: “webserver”`: Used by Sumo Logic apps to identify application components.
       * `webserver_system: “apache”`: Identifies the webserver system.
-
-   </details>
    :::     
-
    * For more information on other parameters and properties that you can configure in the Telegraf agent globally, see [Configuring_Telegraf](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#Configuring-Telegraf).
    * For more information on configuring the Apache input plugin for Telegraf, see [this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/apache).
 4. Sumo Logic Kubernetes collection will automatically start collecting metrics from the pods having the configuration and annotations defined in the previous step.
@@ -249,20 +244,21 @@ This section explains the steps to collect Apache logs from a Kubernetes environ
    webserver_system: "apache"
    webserver_farm: "<app1apacheeks_CHANGE_ME>"
    ```
-   2. Please enter in values for the parameters marked in brackets (`< >`) above.
-   * `environment`: This is the deployment environment where the Apache webserver farm identified by the value of `urls` resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
-   * `webserver_farm`: Enter a name to identify this Apache webserver farm. This Apache webserver farm name will be shown in the Sumo Logic dashboards.
-   * **Do not modify** the following values, as it will cause the Sumo Logic apps to function incorrectly.
-      * `component: “webserver”`: This value is used by Sumo Logic apps to identify application components.
-      * `webserver_system: “apache”`: This value identifies the webserver system.
+   2. Enter in values for the parameters marked in brackets (`< >`) above.
+      * `environment`: This is the deployment environment where the Apache webserver farm identified by the value of `urls` resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
+      * `webserver_farm`: Enter a name to identify this Apache webserver farm. This Apache webserver farm name will be shown in the Sumo Logic dashboards.
+
+   :::caution **Do not modify the other values**
+   Modifying these values will cause the Sumo Logic apps to function incorrectly
+   * `component: “webserver”`: This value is used by Sumo Logic apps to identify application components.
+   * `webserver_system: “apache”`: This value identifies the webserver system.
+   :::
    * For all other parameters, please see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#Configuring-Telegraf) for more parameters that can be configured in the Telegraf agent globally.
    3. Make sure that the Apache pods are running and annotations are applied by using the command:
    ```xml
    kubectl describe pod <apache_pod_name>
    ```
-
-  The Sumo Logic Kubernetes Collection process will automatically capture the logs from `stdout` / `stderr` and will send the logs to Sumo Logic. For more information on deploying the Sumo Logic-Kubernetes-Collection, please see [this page](/docs/integrations/containers-orchestration/Kubernetes#Collect_Logs_and_Metrics_for_the_Kubernetes_App).
-
+   The Sumo Logic Kubernetes Collection process will automatically capture the logs from `stdout`/`stderr` and will send the logs to Sumo Logic. For more information on deploying the Sumo Logic-Kubernetes-Collection, please see [this page](/docs/integrations/containers-orchestration/Kubernetes#Collect_Logs_and_Metrics_for_the_Kubernetes_App).
 2. **Add an FER to normalize the fields in Kubernetes environments**. Labels created in Kubernetes environments automatically are prefixed with `pod_labels`. To normalize these for our app to work, we need to create a Field Extraction Rule if not already created for Web Server Application Components. To do so:
    1. Go to **Manage Data > Logs > Field Extraction Rules**.
    2. Click the **+ Add** button on the top right of the table.
@@ -299,27 +295,27 @@ This section provides instructions for configuring metrics collection for the Su
 #### Configure Metrics Collection from a Apache Server
 
 1. **Configure Metrics in Apache**. Before you can configure Sumo Logic to ingest metrics, you must turn on [server-status](https://httpd.apache.org/docs/2.4/mod/mod_status.html) for Apache. For this, edit the Apache conf file (httpd.conf).
-   * Uncomment this line if not already done in the httpd.conf: `LoadModule status_module libexec/apache2`/mod_status.so
+   * Uncomment this line if not already done in the httpd.conf: `LoadModule status_module libexec/apache2/mod_status.so`
    * Add following lines in the httpd.conf after that
-   ```xml
-   <IfModule status_module>
-     ExtendedStatus On
-    <Location /server-status>
-       Sethandler server-status
-       order deny,allow
-       allow from localhost
-     </Location>
-   </IfModule>
-   ```
+    ```xml
+    <IfModule status_module>
+      ExtendedStatus On
+     <Location /server-status>
+        Sethandler server-status
+        order deny,allow
+        allow from localhost
+      </Location>
+    </IfModule>
+    ```
    * You may need to update ServerName in the httpd.conf file. For example: `ServerName localhost:80`.
    * Save **httpd.conf** file
    * Verify configuration is working as expected by running the following command:
     ```bash
     apachectl configtest
-          # Syntax OK
+    # Syntax OK
     ```        
    * Restart httpd
-     ```
+     ```bbsdh
      apachectl restart
      ```
     * To test, enter the following urls in the web-browser. You should see the standard Apache output.
@@ -327,43 +323,45 @@ This section provides instructions for configuring metrics collection for the Su
        * [http://localhost/server-status](http://localhost/server-status)
 2. **Configure a Hosted Collector**. To create a new Sumo Logic hosted collector, perform the steps in the[ Configure a Hosted Collector](/docs/send-data/configure-hosted-collector) section of the Sumo Logic documentation.
 3. **Configure an HTTP Logs and Metrics Source**. Create a new HTTP Logs and Metrics Source in the hosted collector created above by following [these instructions.](/docs/send-data/sources/sources-hosted-collectors/http-logs-metrics-source). Make a note of the **HTTP Source URL**.
-4. **Install Telegraf**.  Follow the steps in [this document](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf.md) to install Telegraf.
+4. **Install Telegraf**. Follow the steps in [this document](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf.md) to install Telegraf.
 5. **Configure and start Telegraf**. As part of collecting metrics data from Telegraf, we will use the [Apache input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/apache) to get data from Telegraf and the [Sumo Logic output plugin](https://github.com/SumoLogic/fluentd-output-sumologic) to send data to Sumo Logic.
    1. Create or modify the telegraf.conf file and copy and paste the text below in the relevant sections:
-   ```sql
-   [[inputs.apache]]
-     urls = ["http://localhost/server-status?auto"]
-     response_timeout = "5s"
-     [inputs.apache.tags]
-       environment = "prod"
-       component = "webserver"
-       webserver_system = "apache"
-       webserver_farm = "your_apache_webserver_farmname"
+      ```sql
+      [[inputs.apache]]
+        urls = ["http://localhost/server-status?auto"]
+        response_timeout = "5s"
+        [inputs.apache.tags]
+          environment = "prod"
+          component = "webserver"
+          webserver_system = "apache"
+          webserver_farm = "your_apache_webserver_farmname"
 
-   [[outputs.sumologic]]
-     url = "<URL Created in Step 3>"
-     data_format = "prometheus"
+      [[outputs.sumologic]]
+        url = "<URL Created in Step 3>"
+        data_format = "prometheus"
 
-   [agent]
-     interval = "60s"
-     flush_interval = "60s"
-   ```
-      2. Enter values for the following parameters (marked `CHANGEME` above):
+      [agent]
+        interval = "60s"
+        flush_interval = "60s"
+      ```
+   2. Enter values for the following parameters (marked `CHANGEME` above):
       * In the input plugins section:
          * `urls`: The URL to the Apache server. Please see [this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/apache) for more information on additional parameters for configuring the Apache input plugin for Telegraf.
       * Configure metrics to collect by uncommenting the following lines. Please see [this document](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/apache#configuration) for more information
-        * `response_timeout` = "5s"
+        * `response_timeout = "5s"`
       * In the tags section `[inputs.apache.tags]`
         * `webserver_farm`: Enter a name to uniquely identify this Apache web server farm. This web server farm name will be shown in the Sumo Logic dashboards.
         * `environment`: This is the deployment environment where the Apache web server farm identified by the value of `urls` resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
-      * In the output plugins section i.e. :
+      * In the output plugins section:
         * `url`: This is the HTTP source URL created in step 3. Please see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/configure-telegraf-output-plugin.md) for more information on additional parameters for configuring the Sumo Logic Telegraf output plugin.
-      * In the `[agent]` section, set `interval` and `flush_interval` to “60s” to collect metric every 60 seconds.
+      * In the `[agent]` section, set `interval` and `flush_interval` to `“60s”` to collect metric every 60 seconds.
 
-Here’s an explanation for additional values set by this Telegraf configuration. **Do not modify these values** as they will cause the Sumo Logic apps to not function correctly.
-* `data_format` = “prometheus”, In the output plugins section, Metrics are sent in the Prometheus format to Sumo Logic
-* `component` = “webserver”: In the input plugins section, This value is used by Sumo Logic apps to identify application components.
-* `webserver_system` = “apache”: In the input plugins section, This value identifies the webserver system.
+      :::caution **Do not modify the other values**
+      Modifying these values will cause the Sumo Logic apps to function incorrectly
+      * `data_format = “prometheus”`, In the output plugins section, Metrics are sent in the Prometheus format to Sumo Logic
+      * `component = “webserver”`: In the input plugins section, This value is used by Sumo Logic apps to identify application components.
+      * `webserver_system = “apache”`: In the input plugins section, This value identifies the webserver system.
+      :::
 
    For all other parameters, see [this doc](https://github.com/influxdata/telegraf/blob/master/docs/CONFIGURATION.md) for more parameters that can be configured in the Telegraf agent globally.
 
@@ -382,9 +380,10 @@ Sumo Logic supports collecting logs via a local log file. Local log files can be
 
 To configure the Apache log file(s), locate your local **httpd.conf** configuration file in the Apache directory. After determining the location of the conf file, modify the **httpd.conf** configuration file logging parameters if required.
 
-For access logs, the following directive is to be noted
+For access logs, the following directive is to be noted:
 * CustomLog: access log file path and format (standard common and combined)
-For error logs, following directives are to be noted
+
+For error logs, following directives are to be noted:
 * ErrorLog: error log file path
 * LogLevel: to control the number of messages logged to the error_log
 2. **Configure an Installed Collector**. To add an Installed collector, perform the steps as defined on the page [Configure an Installed Collector.](/docs/send-data/Installed-Collectors)
@@ -393,10 +392,10 @@ For error logs, following directives are to be noted
    2. Configure the Local File Source fields as follows:
    * **Name.** (Required)
    * **Description.** (Optional)
-   * **File Path (Required).** Enter the path to your apache access logs. The files are typically located in /var/log/apache2/access_log. If you're using a customized path, check the httpd.conf file for this information.
+   * **File Path (Required).** Enter the path to your apache access logs. The files are typically located in `/var/log/apache2/access_log`. If you're using a customized path, check the httpd.conf file for this information.
    * **Source Host.** Sumo Logic uses the hostname assigned by the OS unless you enter a different host name
    * **Source Category.** Enter any string to tag the output collected from this Source, such as **Prod/Apache/Access**. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details see[ Best Practices](/docs/send-data/design-deployment/best-practices-source-categories).)
-   * **Fields. Set the following fields. For more information on fields please see [this document](/docs/manage/fields.md):
+   * **Fields**. Set the following fields. For more information on fields please see [this document](/docs/manage/fields.md):
     * `component = webserver`
     * `webserver_system = apache`
     * `webserver_farm = <your_apache_webserver_farmname>`
@@ -412,24 +411,26 @@ For error logs, following directives are to be noted
 4. **Configure a Local File Source for Apache error logs**. To add a Local File Source for Apache error log do the following
    1. Add a[ Local File Source](/docs/send-data/Sources/sources-installed-collectors/Local-File-Source) in the installed collector configured in the previous step.
    2. Configure the Local File Source fields as follows:
-   * **Name.** (Required)
-   * **Description.** (Optional)
-   * **File Path (Required).** Enter the path to your error_log. The files are typically located in /var/log/apache2/error_log. If you're using a customized path, check the httpd.conf file for this information.
-   * **Source Host.** Sumo Logic uses the hostname assigned by the OS unless you enter a different host name
-   * **Source Category.** Enter any string to tag the output collected from this Source, such as **Prod/Apache/Error**. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details see[ Best Practices](/docs/send-data/design-deployment/best-practices-source-categories).)
-   * Fields. Set the following fields. For more information on fields please see [this document](/docs/manage/fields.md):
-    * `component = webserver`
-    * `webserver_system = apache`
-    * `webserver_farm = <your_apache_webserver_farmname>`
-    * `environment = <Environment_Name>`, such as dev, qa or prod.
-   * The values of webserver_farm and environment should be the same as they were configured in the Configure and start telegraf section.
+    * **Name.** (Required)
+    * **Description.** (Optional)
+    * **File Path (Required).** Enter the path to your error_log. The files are typically located in `/var/log/apache2/error_log`. If you're using a customized path, check the httpd.conf file for this information.
+    * **Source Host.** Sumo Logic uses the hostname assigned by the OS unless you enter a different host name
+    * **Source Category.** Enter any string to tag the output collected from this Source, such as **Prod/Apache/Error**. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details see[ Best Practices](/docs/send-data/design-deployment/best-practices-source-categories).)
+    * **Fields**. Set the following fields. For more information on fields please see [this document](/docs/manage/fields.md):
+    ```sql
+    component = webserver
+    webserver_system = apache
+    webserver_farm = <your_apache_webserver_farmname>
+    environment = <Environment_Name>--such as dev, qa or prod
+    ```
+   * The values of `webserver_farm` and `environment` should be the same as they were configured in the Configure and start telegraf section.
    * **Configure the Advanced Options for Logs section:**
    * **Enable Timestamp Parsing.** Select Extract timestamp information from log file entries.
    * **Time Zone.** Select Use time zone form log file, if none is detected use “Use Collector Default”
    * **Timestamp Format.** Select Automatically detect the format.
-   * **Encoding. **Select** **UTF-8 (Default).
+   * **Encoding.** Select UTF-8 (Default).
    * Apache Error logs are multiline-line logs, Select **Detect messages spanning multiple lines** and **Boundary Regex: Expression to match message boundary**.
-   * If error messages starts like [Mon May 17 14:12:14.462704 2021] then use boundary regex as below  
+   * If error messages starts like `[Mon May 17 14:12:14.462704 2021]` then use boundary regex as below  
     ```bash
     ^\[\S{3}\s\S{3}\s\d{1,2}\s[^\]]+\].*
     ```
@@ -468,16 +469,16 @@ The monitors are disabled by default. Once you have installed the alerts using t
 3. Download the Sumo Logic Terraform package for Apache alerts. The alerts package is available in the Sumo Logic github [repository](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/tree/main/monitor_packages/apache). You can either download it through the “git clone” command or as a zip file.
 4. Alert Configuration. After the package has been extracted, navigate to the package directory `terraform-sumologic-sumo-logic-monitor/monitor_packages/apache/`.
    1. Edit the **apache.auto.tfvars** file and add the Sumo Logic Access Key, Access Id and Deployment from Step 1.
-```bash
-access_id   = "<SUMOLOGIC ACCESS ID>"
-access_key  = "<SUMOLOGIC ACCESS KEY>"
-environment = "<SUMOLOGIC DEPLOYMENT>"
-```
+    ```bash
+    access_id   = "<SUMOLOGIC ACCESS ID>"
+    access_key  = "<SUMOLOGIC ACCESS KEY>"
+    environment = "<SUMOLOGIC DEPLOYMENT>"
+    ```
    2. The Terraform script installs the alerts without any scope filters, if you would like to restrict the alerts to specific web server farm or environments, update the variable `apache_data_source`. Custom filter examples:
       * A specific web server farm `webserver_farm=apache.prod.01`
       * All web server farms in an environment `environment=prod`
-      * For alerts applicable to all web server farms that start with apache-prod, your custom filter would be: `webserver_farm=apache-prod*`
-      * For alerts applicable to a specific web server farm within a production environment, your custom filter would be: `webserver_farm=apache-1` and `environment=prod` (This assumes you have set the optional environment tag while configuring collection)
+      * For alerts applicable to all web server farms that start with apache-prod: `webserver_farm=apache-prod*`
+      * For alerts applicable to a specific web server farm within a production environment: `webserver_farm=apache-1` and `environment=prod`. This assumes you have set the optional environment tag while configuring collection.
 
   All monitors are disabled by default on installation, if you would like to enable all the monitors, set the parameter **`monitors_disabled`** to **`false`** in **apache.auto.tfvars** file.
 
@@ -534,11 +535,11 @@ To install the app, do the following:
 2. From the **App Catalog**, search for and select the app.
 3. Select the version of the service you're using and click **Add to Library**.
 4. To install the app, complete the following fields.
-  * **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
-  * **Data Source.**  Choose **Enter a Custom Data Filter**, and enter a custom filter. Examples:
-    * For all Apache web server farms: `webserver_system=apache webserver_farm=*`
-    * For a specific web server farm: `webserver_system=apache webserver_farm=apache.dev.01`
-    * **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
+   * **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
+   * **Data Source.**  Choose **Enter a Custom Data Filter**, and enter a custom filter. Examples:
+     * For all Apache web server farms: `webserver_system=apache webserver_farm=*`
+     * For a specific web server farm: `webserver_system=apache webserver_farm=apache.dev.01`
+     * **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
 5. Click **Add to Library**.
 
 Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library](/docs/get-started/library/install-apps).

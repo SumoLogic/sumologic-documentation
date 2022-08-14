@@ -122,7 +122,7 @@ Please ensure that you are monitoring your Kubernetes clusters with the Telegraf
 
 Follow the steps below to collect metrics from a Kubernetes environment:
 1. On your PostgreSQL Pods, add the following annotations mentioned in [this file](https://sumologic-app-data.s3.amazonaws.com/dashboards/PostgreSQL/postgresql_annotations_kubernetes.txt).
-2. Please enter in values for the following annotation parameters (marked with `CHANGE_ME`) in the downloaded file:
+2. Enter in values for the following annotation parameters (marked with `CHANGE_ME`) in the downloaded file:
    * `telegraf.influxdata.com/inputs` - This contains the required configuration for the Telegraf Postgres Input plugin. As telegraf will be run as a sidecar the host should always be localhost.
    * In the input plugins section which is `[[inputs.postgresql_extensible]]`
       * `address` - Specify the db user, db name and password used for connecting to the database. Example `host=localhost user=postgres dbname=postgres password=mypassword sslmode=disable`

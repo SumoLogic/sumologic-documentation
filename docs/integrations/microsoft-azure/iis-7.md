@@ -12,12 +12,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 The IIS 7 App monitors the performance and reliability of your Microsoft Internet Information Services (IIS) infrastructure, identifying customer-facing and internal operational issues. Additionally, you can monitor customer paths and interactions to learn how customers are using your product. The app consists of predefined searches and Dashboards, which provide visibility into your environment for real time or historical analysis.
 
 
-## Collecting Logs
-
-This procedure explains how to enable logging from Microsoft Internet Information Services (IIS) on your Windows server and ingest the logs into Sumo Logic.
-
-
-### Log Types
+## Log Types
 
 IIS 7 Logs (IIS 7.5 logs are used) are generated as local files and written to this directory by default: `C:\inetpub\Logs\LogFiles\W3SVC1`. The App assumes the following format:
 ```
@@ -48,12 +43,67 @@ Sumo Logic expects W3C format with these fields for our Field Extraction Rules a
 For more information about the IIS 7 log (IIS 7.5 logs are used) format, see [https://www.iis.net/learn/manage/provisioning-and-managing-iis/configure-logging-in-iis](https://www.iis.net/learn/manage/provisioning-and-managing-iis/configure-logging-in-iis).
 
 
+### Sample Log Messages
+
+```json
+2016-11-17 22:34:34 10.0.0.167 GET /favicon.ico - 80 - 12.177.21.34 Mozilla/5.0+(Macintosh;+Intel+Mac+OS+X+10_7_5)+AppleWebKit/537.36+(KHTML,+like+Gecko)+Chrome/27.0.1453.110+Safari/537.36 404 0 2 1405 547 78
+2016-11-17 22:34:34 10.0.0.98 GET /Trade/Images/VS-ConfigWeb.png - 80 - 156.74.250.7 Mozilla/5.0+(Windows+NT+6.1;+WOW64;+rv:14.0)+Gecko/20100101+Firefox/14.0.1 304 0 0 209 748 7
+```
+
+### Sample Queries
+
+The following query samples are taken from the IIS 7 App.
+
+The following query is taken from the the **Requests by App Over Time** panel on the **IIS 7 Traffic Insights - App Requests Dashboard**.
+
+```sql title="Requests by App Over Time"
+_sourceCategory=IIS*
+| parse regex "\d+-\d+-\d+ \d+:\d+:\d+ (?<server_ip>\S+) (?<method>\S+) (?<cs_uri_stem>/\S+?) "
+| parse regex field=cs_uri_stem "/(?<app>[^\./]+)/" nodrop
+| if (isNull(app) || app="","Others",app) as app
+| timeslice 1m
+| count by app,_timeslice  
+| transpose row _timeslice column app
+```
+
+
+The following query is taken from the **OSes and Browsers** panel of the **IIS 7 Traffic Insights - Content and Client Platform Dashboard**.
+
+```sql title="Operating Systems (OSes) and Browsers"
+_sourceCategory=IIS*
+| parse regex "\d+-\d+-\d+ \d+:\d+:\d+ (?<server_ip>\S+) (?<method>\S+) (?<cs_uri_stem>/\S+?) \S+ \d+ (?<user>\S+) (?<client_ip>[\.\d]+) (?<agent>\S+) "
+| if ((agent matches "*Windows NT*") or (agent matches "*Windows+NT*") or (agent matches "*Windows *") or (agent matches "*Win32*") or (agent matches "*Win64*"), "Windows", "Other") as OS |
+if (agent matches "*Macintosh*","MacOS",OS) as OS |
+if ((agent matches "*Windows Phone*") or (agent matches "*Windows+Phone*"),"Windows Phone",OS) as OS |
+if (agent matches "*Linux*","Linux",OS) as OS |
+if (agent matches "*iPad*","iPad",OS) as OS |
+if (agent matches "*iPhone*","iPhone",OS) as OS |
+if (agent matches "*Android*","Android",OS) as OS |
+if (agent matches "*Darwin*","Darwin",OS) as OS |
+if (agent matches "*CrOS*","Google Chrome",OS) as OS |
+if (agent matches "*MSIE*","Internet Explorer","Other") as Browser |
+if (agent matches "Internet Explorer","Internet Explorer", Browser) as Browser |
+if (agent matches "*Trident*","Internet Explorer", Browser) as Browser |
+if (agent matches "*Firefox*","Firefox",Browser) as Browser |
+if (agent matches "*Safari*","Safari", Browser) as Browser |
+if (agent matches "*Chrome*","Chrome", Browser) as Browser |
+if (agent matches "Opera*","Opera", Browser) as Browser |
+if (agent matches "Dolphin*","Dolphin", Browser) as Browser
+| count(agent) by OS,Browser
+| transpose row os column browser as *
+```
+
+
+## Collecting Logs for IIS 7
+
+This procedure explains how to enable logging from Microsoft Internet Information Services (IIS) on your Windows server and ingest the logs into Sumo Logic.
+
+
 ### Prerequisites
 
 To prepare for logging IIS 7 events, perform the following two tasks.
 
-**To enable logging on your IIS Server, do the following:
-
+To enable logging on your IIS Server, do the following:
 1. Open the Sever Manager Console
 2. Select **Roles**
 3. Select **Web Server (IIS)**
@@ -63,8 +113,6 @@ To prepare for logging IIS 7 events, perform the following two tasks.
 7. For the Log File Format, choose **W3C** so that you can select the fields to log
 8. Click **Select Fields**, and then select the checkboxes for these fields:
 
-
-3
 Sumo Logic expects these fields in IIS logs for the IIS 7 Application and Field Extraction Rule by default.
 
 * Date
@@ -84,17 +132,13 @@ Sumo Logic expects these fields in IIS logs for the IIS 7 Application and Field 
 * TimeTaken
 1. Click **OK** to save your configuration
 
-**To confirm that the log files are being created, do the following:
-
-
+To confirm that the log files are being created, do the following:
 
 1. Open a command-line window and change directories to `C:\inetpub\Logs\LogFiles`. This is the same path you will enter when you configure the Source to collect these files.
 2. Under the `\W3SVC1` directory, you should see one or more files with a `.log` extension. If the file is present, you can collect it.
 
 
 ### Step 1: Configure a Collector
-4
-
 
 Configure an [Installed Collector (Windows)](/docs/send-data/installed-collectors/install-collector-windows). Sumo Logic recommends that you install the collector on the same system that hosts the logs.
 
@@ -102,7 +146,6 @@ Configure an [Installed Collector (Windows)](/docs/send-data/installed-collector
 ### Step 2: Configure a Source
 
 To collect logs from IIS 7, use an Installed Collector and a Local File Source. You may also configure a [Remote File Source](/docs/send-data/Sources/sources-installed-collectors/Remote-File-Source), but the configuration is more complex. Sumo Logic recommends using a Local File Source if possible.
-
 
 1. Configure a [Local File Source](/docs/send-data/Sources/sources-installed-collectors/Local-File-Source).
 2. Configure the Local File Source Fields as follows:
@@ -126,86 +169,15 @@ After a few minutes, your new Source should be propagated down to the Collector 
 
 ## Field Extraction Rules
 
-
 * **Name**: Microsoft IIS Logs
 * **Scope**: Use the source category set above, such as "IIS_prod"
 * **Parse Expression:**
-* `parse regex "^[^#].*?(?&lt;s_ip>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}) (?&lt;cs_method>\S+?)`
-* `(?&lt;cs_uri_stem>\S+?) (?&lt;cs_uri_query>\S+?) (?&lt;s_port>\d+?) (?&lt;cs_username>\S+?)`
-* `(?&lt;c_ip>.+?) (?&lt;cs_User_Agent>\S+?) (?&lt;cs_Referer>\S+?) (?&lt;sc_status>\d+?)`
-
-    ```
-    (?<sc_substatus>\d+?) (?<sc_win32_status>\d+?) (?<time_taken>\d+?)$"
-
-    ```
-
-
-
-### Sample Log Messages
-
-
 ```
-    2016-11-17 22:34:34 10.0.0.167 GET /favicon.ico - 80 - 12.177.21.34 Mozilla/5.0+(Macintosh;+Intel+Mac+OS+X+10_7_5)+AppleWebKit/537.36+(KHTML,+like+Gecko)+Chrome/27.0.1453.110+Safari/537.36 404 0 2 1405 547 78
-    2016-11-17 22:34:34 10.0.0.98 GET /Trade/Images/VS-ConfigWeb.png - 80 - 156.74.250.7 Mozilla/5.0+(Windows+NT+6.1;+WOW64;+rv:14.0)+Gecko/20100101+Firefox/14.0.1 304 0 0 209 748 7
+parse regex "^[^#].*?(?&lt;s_ip>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}) (?&lt;cs_method>\S+?)
+(?&lt;cs_uri_stem>\S+?) (?&lt;cs_uri_query>\S+?) (?&lt;s_port>\d+?) (?&lt;cs_username>\S+?)
+(?&lt;c_ip>.+?) (?&lt;cs_User_Agent>\S+?) (?&lt;cs_Referer>\S+?) (?&lt;sc_status>\d+?)
+(?<sc_substatus>\d+?) (?<sc_win32_status>\d+?) (?<time_taken>\d+?)$"
 ```
-
-
-
-### Query Samples
-8
-
-
-The following query samples are taken from the IIS 7 App.
-
-
-##### Requests by App Over Time
-9
-
-
-The following query is taken from the the **Requests by App Over Time** panel on the **IIS 7 Traffic Insights - App Requests Dashboard**.
-
-
-
-* `_sourceCategory=IIS* `
-* `| parse regex "\d+-\d+-\d+ \d+:\d+:\d+ (?&lt;server_ip>\S+) (?&lt;method>\S+) (?&lt;cs_uri_stem>/\S+?) " `
-* `| parse regex field=cs_uri_stem "/(?&lt;app>[^\./]+)/" nodrop`
-* `| if (isNull(app) || app="","Others",app) as app`
-* `| timeslice 1m `
-* `| count by app,_timeslice  `
-* `| transpose row _timeslice column app`
-
-
-##### Operating Systems (OSes) and Browsers
-
-The following query is taken from the **OSes and Browsers** panel of the **IIS 7 Traffic Insights - Content and Client Platform Dashboard**.
-
-
-
-* `_sourceCategory=IIS* `
-* `| parse regex "\d+-\d+-\d+ \d+:\d+:\d+ (?&lt;server_ip>\S+) (?&lt;method>\S+) (?&lt;cs_uri_stem>/\S+?) \S+ \d+ (?&lt;user>\S+) (?&lt;client_ip>[\.\d]+) (?&lt;agent>\S+) " `
-* `| if ((agent matches "*Windows NT*") or (agent matches "*Windows+NT*") or (agent matches "*Windows *") or (agent matches "*Win32*") or (agent matches "*Win64*"), "Windows", "Other") as OS |`
-* `if (agent matches "*Macintosh*","MacOS",OS) as OS |`
-* `if ((agent matches "*Windows Phone*") or (agent matches "*Windows+Phone*"),"Windows Phone",OS) as OS |`
-* `if (agent matches "*Linux*","Linux",OS) as OS |`
-* `if (agent matches "*iPad*","iPad",OS) as OS |`
-* `if (agent matches "*iPhone*","iPhone",OS) as OS |`
-* `if (agent matches "*Android*","Android",OS) as OS |`
-* `if (agent matches "*Darwin*","Darwin",OS) as OS |`
-* `if (agent matches "*CrOS*","Google Chrome",OS) as OS |`
-* `if (agent matches "*MSIE*","Internet Explorer","Other") as Browser |`
-* `if (agent matches "Internet Explorer","Internet Explorer", Browser) as Browser |`
-* `if (agent matches "*Trident*","Internet Explorer", Browser) as Browser |`
-* `if (agent matches "*Firefox*","Firefox",Browser) as Browser |`
-* `if (agent matches "*Safari*","Safari", Browser) as Browser | `
-* `if (agent matches "*Chrome*","Chrome", Browser) as Browser |`
-* `if (agent matches "Opera*","Opera", Browser) as Browser | `
-* `if (agent matches "Dolphin*","Dolphin", Browser) as Browser`
-* `| count(agent) by OS,Browser `
-
-    ```
-    | transpose row os column browser as *
-    ```
-
 
 ## Installing the IIS 7 App
 

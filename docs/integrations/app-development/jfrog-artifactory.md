@@ -34,16 +34,60 @@ Sumo Logic reads logs in the directory `/var/opt/jfrog/artifactory/logs`:
 * `traffic.*.log`
 
 
+### Sample Log Messages
+
+```json
+20170113185444|17|REQUEST|1.1.1.1|anonymous|GET|/cloudera-repos/org/slf4j/slf4j-log4j12/1.7.5/slf4j-log4j12-1.7.5.jar|HTTP/1.1|200|8869
+20170113185444|0|DOWNLOAD|1.1.1.1|cloudera-repos:org/apache/spark/spark-catalyst_2.11/2.0.1/spark-catalyst_2.11-2.0.1.jar.sha1|40
+2017-01-13 18:54:12,121 [ACCEPTED DEPLOY] pypi-remote-cache:.pypi/test.html for billythekid/1.1.1.1.
+```
+
+### Sample Queries
+
+```sql title="Data Transfer Over Time"
+_sourceCategory=*artifactory*
+| where _sourceCategory matches "*artifactory/traffic"
+| parse regex
+"(?<year>\d{4})(?<month>\d{2})(?<day>\d{2})(?<hour>\d{2})(?<minute>\d{2})(?<second>\d{2})\|\d*\|(?<direction>[^|]*)\|\s*(?<ip>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}|[^|]*)\|(?<repo>[^:]*):(?<fullfilepath>[^|]*)\|(?<size>\d*)" nodrop
+| timeslice 1h
+| sum(size) by _timeslice, direction
+| _sum / (1024 * 1024 * 1024) as sizeinGB | sort by _sum
+| fields -_sum
+| transpose row _timeslice column direction
+```
+
+```sql title="Requests by Status Code (Every 10 Minutes)"
+_sourcecategory=*artifactory*
+| where _sourceCategory matches "*artifactory/request"
+| parse "*|*|*|*|*|*|*|*|*|*" as datetime, response_time, type, ip, user, method, path, protocol, status_code, size
+| timeslice 10m
+| count _timeslice, status_code | sort by _count
+| transpose row _timeslice column status_code
+```
+
+```sql title="Unique Paths Accepted Deploys"
+_sourceCategory=*artifactory* "ACCEPTED DEPLOY" "-cache"
+| where _sourceCategory matches "*artifactory/access"
+| parse "[*] *:* for */*" as what, repo, path, user, ip
+| parse regex field=ip "(?<ip>.*)\."
+| where what = "ACCEPTED DEPLOY" and repo matches "*-cache"
+| timeslice 10m
+| count_distinct(path) as paths by _timeslice
+| outlier paths
+```
+
+
 ### Activate the traffic.log file
 
 To activate the **traffic.log** file, add the following parameter to your **artifactory.system.properties** file, located under **$ARTIFACTORY/etc**:
-```
+```bash
 artifactory.traffic.collectionActive=true
 ```
 
-For Artifactory 7, the properties file is located at: `$JFROG_HOME/artifactory/var/etc/artifactory/artifactory.system.properties`
-
-For more details about Artifactory 7 log collection, refer to [Collect Logs for Artifactory 7].
+For Artifactory 7, the properties file is located at:
+```bash
+$JFROG_HOME/artifactory/var/etc/artifactory/artifactory.system.properties
+```
 
 A restart is required for traffic collection to take effect.
 
@@ -52,12 +96,12 @@ A restart is required for traffic collection to take effect.
 
 This procedure documents how to collect logs from JFrog Artifactory into Sumo Logic.
 
-### Configure a collector
+### Configure a Collector
 
 Configure an [Installed Collector](/docs/send-data/Installed-Collectors).
 
 
-### Configure sources
+### Configure Sources
 
 In this step, you configure four local file sources, one for each log source listed in the table below. When you create a file source for a log type:
 
@@ -65,7 +109,6 @@ In this step, you configure four local file sources, one for each log source lis
 * The value you specify for the source's **Source Category** _must_ end with the suffix shown below in the Source Category column. For example, you could set the Source Category for the Artifactory Server log source to be `foo/artifactory/console`, but not `artifactory/console/foo`.
 
 The following suffixes are required. For example, you could use `_sourceCategory=<Foo>/artifactory/console`, but the suffix `artifactory/console` must be used.
-
 
 <table>
   <tr>
@@ -132,100 +175,24 @@ For complete instructions see [Local File Source](/docs/send-data/Sources/source
 
 Here are Artifactory extraction rules that use different approaches.
 
-**Traffic**
-
-```
+```sql title="Traffic"
 _sourceCategory=*artifactory*
 | where _sourceCategory matches "*artifactory/traffic"
 | parse regex "(?<year>\d{4})(?<month>\d{2})(?<day>\d{2})(?<hour>\d{2})(?<minute>\d{2})(?<second>\d{2})\|\d*\|(?<direction>[^|]*)\|\s*(?<ip>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}|[^|]*)\|(?<repo>[^:]*):(?<fullfilepath>[^|]*)\|(?<size>\d*)" nodrop
 ```
 
-
-**Access Logs**
-
-
-```
+```sql title="Access Logs"
 _sourceCategory=*artifactory*
 | where _sourceCategory matches "*artifactory/access"
 | parse "[*] *:* for */*" as what, repo, path, user, ip
 ```
 
-
-**Request Logs**
-
-
-```
+```sql title="Request Logs"
 _sourceCategory=*artifactory*
 | where _sourceCategory matches "*artifactory/request"
 | parse "*|*|*|*|*|*|*|*|*|*" as datetime, response_time, type, ip, user, method, path, protocol, status_code, size
 ```
 
-
-
-### Sample Log Messages
-8
-
-
-
-```
-20170113185444|17|REQUEST|1.1.1.1|anonymous|GET|/cloudera-repos/org/slf4j/slf4j-log4j12/1.7.5/slf4j-log4j12-1.7.5.jar|HTTP/1.1|200|8869
-20170113185444|0|DOWNLOAD|1.1.1.1|cloudera-repos:org/apache/spark/spark-catalyst_2.11/2.0.1/spark-catalyst_2.11-2.0.1.jar.sha1|40
-2017-01-13 18:54:12,121 [ACCEPTED DEPLOY] pypi-remote-cache:.pypi/test.html for billythekid/1.1.1.1.
-```
-
-
-
-### Query Samples
-9
-
-
-**Data Transfer Over Time**
-
-
-```
-_sourceCategory=*artifactory*
-| where _sourceCategory matches "*artifactory/traffic"
-| parse regex
-"(?<year>\d{4})(?<month>\d{2})(?<day>\d{2})(?<hour>\d{2})(?<minute>\d{2})(?<second>\d{2})\|\d*\|(?<direction>[^|]*)\|\s*(?<ip>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}|[^|]*)\|(?<repo>[^:]*):(?<fullfilepath>[^|]*)\|(?<size>\d*)" nodrop
-| timeslice 1h
-| sum(size) by _timeslice, direction
-| _sum / (1024 * 1024 * 1024) as sizeinGB | sort by _sum
-| fields -_sum
-| transpose row _timeslice column direction
-```
-
-
-**Requests by Status Code (Every 10 Minutes)**
-
-
-```
-_sourcecategory=*artifactory*
-| where _sourceCategory matches "*artifactory/request"
-| parse "*|*|*|*|*|*|*|*|*|*" as datetime, response_time, type, ip, user, method, path, protocol, status_code, size
-| timeslice 10m
-| count _timeslice, status_code | sort by _count
-| transpose row _timeslice column status_code
-```
-
-
-**Unique Paths Accepted Deploys**
-
-
-```
-_sourceCategory=*artifactory* "ACCEPTED DEPLOY" "-cache"
-| where _sourceCategory matches "*artifactory/access"
-| parse "[*] *:* for */*" as what, repo, path, user, ip
-| parse regex field=ip "(?<ip>.*)\."
-| where what = "ACCEPTED DEPLOY" and repo matches "*-cache"
-| timeslice 10m
-| count_distinct(path) as paths by _timeslice
-| outlier paths
-
-```
-
-
-
-1.
 
 
 ## Collect Logs for Artifactory 7
@@ -234,7 +201,6 @@ This procedure documents how to collect logs from JFrog Artifactory into Sumo Lo
 
 
 ### Log Types
-10
 
 For each JFrog service, you will find its active log files in the `$JFROG_HOME/<product>/var/log` directory. For consistency, each log file is prefixed by its service name and a dash, `<service-name>-service.log`. For example, artifactory-service.log and router-request.log.
 
@@ -408,12 +374,9 @@ _sourceCategory = Labs/artifactory/*
 ```
 
 
-## Install the Artifactory App and view the Dashboards
+## Installing the Artifactory App
 
-### Install the Sumo Logic App
-
-
-Now that you have set up collection, install the Sumo Logic App for Artifactory to use the pre-configured searches and [Dashboards](#Dashboard) that provide insight into your data.
+Now that you have set up collection, install the Sumo Logic App for Artifactory to use the pre-configured searches and Dashboards that provide insight into your data.
 
 To install the app:
 
@@ -436,12 +399,9 @@ Panels will start to fill automatically. It's important to note that each panel 
 
 ## Viewing JFrog Artifactory Dashboards
 
-
-#### Overview
-
+### Overview
 
 #### Traffic
-
 
 **Download Traffic by Geolocation.** Uses a geo lookup operation to display download traffic by IP address on a map of the world for the last 24 hours.
 
