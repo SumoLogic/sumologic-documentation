@@ -12,13 +12,67 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 Amazon Web Services (AWS) Config provides a simple web services interface that can be used to track modifications made to the resources that belong to an AWS account. The Sumo Logic App for AWS Config presents modification notifications that contain snapshots of resource configurations and information about the modifications made to a resource. The app uses predefined Live and Interactive Dashboards and filters, which provide visibility into your environment for real-time analysis of overall usage.
 
 
-## Collect Logs for the AWS Config App
+## Log Types
 
-### Log Types
 The Sumo Logic App for AWS Config leverages AWS Config’s Simple Notification Service (SNS), which provides notifications in JSON format.
 
 Amazon Web Services (AWS) Config provides a simple web services interface that can be used to track modifications made to the resources that belong to an AWS account. The AWS Config App presents modification notifications that contain snapshots of resource configurations and information about the modifications made to a resource. The app uses predefined Live and Interactive Dashboards and filters that provide visibility into your environment for real-time analysis of overall usage.
 
+
+### Sample Log Message
+
+```json
+{
+  "Type": "Notification",
+  "MessageId": "23accff0-e8cf-5071-8208-8194ed32e94c",
+  "TopicArn": "arn:aws:sns:us-west-1:012345678910:sumo-testing-config-topic",
+  "Subject": "[AWS Config:us-west-1] AWS::EC2::NetworkAcl acl-979f62f3 Updated in Account 012345678910",
+  "Message": "{\"configurationItemDiff\":{\"changedProperties\":{\"Configuration.Entries.1\":{\"previousValue\":null,\"updatedValue\":{\"ruleNumber\":100,\"protocol\":\"-1\",\"ruleAction\":\"allow\",\"egress\":false,\"cidrBlock\":\"0.0.0.0/0\",\"icmpTypeCode\":null,\"portRange\":null},\"changeType\":\"CREATE\"},\"Configuration.Entries.0\":{\"previousValue\":{\"ruleNumber\":100,\"protocol\":\"-1\",\"ruleAction\":\"deny\",\"egress\":false,\"cidrBlock\":\"0.0.0.0/0\",\"icmpTypeCode\":null,\"portRange\":null},\"updatedValue\":null,\"changeType\":\"DELETE\"}},\"changeType\":\"UPDATE\"},\"configurationItem\":{\"configurationItemVersion\":\"1.0\",\"configurationItemCaptureTime\":\"2017-02-24T18:34:32.932UTC\",\"configurationStateId\":64,\"relatedEvents\":[\"3d7cbf2c-95e5-4361-bba9-328fae229a6b\"],\"awsAccountId\":\"012345678910\",\"configurationItemStatus\":\"OK\",\"resourceId\":\"acl-80cbc6f2\",\"ARN\":\"arn:aws:ec2:us-west-1:012345678910:network-acl/acl-979f62f3\",\"awsRegion\":\"us-west-1\",\"availabilityZone\":\"Multiple Availability Zones\",\"configurationStateMd5Hash\":\"8f09d8d531df99b9342e42b4944fdea4\",\"resourceType\":\"AWS::EC2::NetworkAcl\",\"resourceCreationTime\":null,\"tags\":{\"Name\":\"Test-NetworkAcl29\"},\"relationships\":[{\"resourceId\":\"subnet-7c4af186\",\"resourceType\":\"AWS::EC2::Subnet\",\"name\":\"Is attached to Subnet\"},{\"resourceId\":\"vpc-0a013c2e\",\"resourceType\":\"AWS::EC2::VPC\",\"name\":\"Is contained in Vpc\"}],\"configuration\":{\"networkAclId\":\"acl-979f62f3\",\"vpcId\":\"vpc-0002f464\",\"isDefault\":true,\"entries\":[{\"egress\":true,\"ruleNumber\":100,\"protocol\":\"-1\",\"ruleAction\":\"allow\",\"cidrBlock\":\"0.0.0.0/0\",\"icmpTypeCode\":null,\"portRange\":null},{\"egress\":true,\"ruleNumber\":32767,\"protocol\":\"-1\",\"ruleAction\":\"deny\",\"cidrBlock\":\"0.0.0.0/0\",\"icmpTypeCode\":null,\"portRange\":null},{\"egress\":false,\"ruleNumber\":100,\"protocol\":\"-1\",\"ruleAction\":\"allow\",\"cidrBlock\":\"0.0.0.0/0\",\"icmpTypeCode\":null,\"portRange\":null},{\"egress\":false,\"ruleNumber\":32767,\"protocol\":\"-1\",\"ruleAction\":\"deny\",\"cidrBlock\":\"0.0.0.0/0\",\"icmpTypeCode\":null,\"portRange\":null}],\"associations\":[{\"networkAclAssociationId\":\"aclassoc-0bb0606d\",\"networkAclId\":\"acl-979f62f3\",\"subnetId\":\"subnet-e0c822dd\"}],\"tags\":[{\"key\":\"Name\",\"value\":\"Test-NetworkAcl29\"}]}},\"notificationCreationTime\":\"2017-02-24T18:34:32.932UTC\",\"messageType\":\"ConfigurationItemChangeNotification\",\"recordVersion\":\"1.2\"}",
+  "Timestamp": "2017-02-24T18:34:32.932UTC",
+  "SignatureVersion": "1",
+  "Signature": "KHYHMQEABbTnlmwnJSHPiMlxCqwFmkIlSdRMvtW30VgbHnqMUPJ0QMS6S9qU4o8/Hp0R2GMvdxeDAo6/jDa/FSE1wGMxRAdbhyI8eBIeOOkOn7Eiy9C2ZyLrcJvSYwMLMBQDVfyDmUZVILbLb3kXFZGi3sogKpNX/mPlajA4UYOLs5OT9cql++8gHl1cdpZnF+Nh2v1CfKCK+j/Fvx9l30yUTaPwAeApF1+v2jjvsvQ1bUYr+SPJdU/eXxNQkRg+eu4ihM0uxbpltYhU8asfYBbtAm1fEWcKglN1Nv++hIDlv0JBOjK7KeY8Ys/UKwjUgBLRllV3gHjphqMd/91zPw==",
+  "SigningCertURL": "https://sns.us-west-1.amazonaws.com/SimpleNotificationService-bb750dd426d95ee9390147a5624348ee.pem",
+  "UnsubscribeURL": "https://sns.us-west-1.amazonaws.com/?Action=Unsubscribe&SubscriptionArn=arn:aws:sns:us-west-1:012345678910:sumo-testing-config-topic:2b6cadac-fe50-442b-af34-470e4021df16"
+}
+```
+
+### Sample Queries
+
+```sql title="Latest Resource Modifications (from App)"
+_sourceCategory=AWS_Config Notification ConfigurationItemChangeNotification
+| json "Message", "Type"
+| where type == "Notification"
+| json field=message "messageType","configurationItem" as messageType, single_message
+| where messageType = "ConfigurationItemChangeNotification"
+| json field=single_message "resourceId", "resourceType", "configurationItemStatus", "awsAccountId" as ResourceId, ResourceType, Status, AWSAccountID
+//| where Status = "OK"
+// Look up Name stored in tag with key "Name" for each resource. Schedule the 'ResourceNames Lookup Table Generator' search to keep this file up to date.
+//| lookup idAndName from /shared/AWSConfig/ResourceNames on resourceType=resourceType, resourceId=resourceId | if(isNull(idAndName), resourceId, idAndName) as resourceId | fields - idAndName
+| sort by _messageTime desc
+```
+
+```sql title=Configuration Activity by AWS Region** (from App)"
+_sourceCategory=AWS_Config Notification ConfigurationItemChangeNotification
+| json "Message", "Type" as single_message, type | where type == "Notification"
+| json field=single_message "configurationItem.awsRegion" as awsRegion
+| where awsRegion != "Not Applicable"
+| "" as location
+| if (awsRegion = "us-east-1", "38.55,-77.89", location) as location // Northern Virginia
+| if (awsRegion = "us-west-1", "43.96,-121.70", location) as location // Oregon
+| if (awsRegion = "us-west-2", "39.06,-121.54", location) as location // Northern California
+| if (awsRegion = "us-gov-west-1", "44.34,-118.61", location) as location // ?? Also Oregon ??
+| if (awsRegion = "eu-west-1", "53.31,-7.91", location) as location // Ireland
+| if (awsRegion = "eu-central-1", "50.12,8.67", location) as location // Frankfurt
+| if (awsRegion = "ap-southeast-1", "1.29,103.85", location) as location // Singapore
+| if (awsRegion = "ap-southeast-2", "-33.85,151.15", location) as location // Sydney
+| if (awsRegion = "ap-northeast-1", "35.68,139.75", location) as location // Tokyo
+| if (awsRegion = "sa-east-1", "-23.57,-46.63", location) as location // Sao Paulo
+| split location delim=',' extract 1 as latitude, 2 as longitude
+| count by latitude, longitude
+| sort _count
+```
+
+## Collecting Logs for the AWS Config App
 
 ### Prerequisites
 
@@ -45,7 +99,6 @@ For more information on SNS, see [http://docs.aws.amazon.com/sns/latest/dg/Getti
 
 
 ### Configure a Collector
-
 
 In Sumo Logic, create a [Hosted Collector](/docs/send-data/configure-hosted-collector). Be sure to name the Source Category **aws_config**.
 
@@ -97,64 +150,6 @@ This section is optional, but recommended for better search performance.
 Due to the infrequent nature of AWS Config changes, Sumo Logic recommends creating a partition for logs. A partition will provide better search performance, especially if there is high data volume in your account.
 
 To create a partition, follow the instructions to [Create a Partition](/docs/manage/partitions-and-data-tiers/add-partition.md). Name the index **aws_config**. For the Routing Expression, enter a query that isolates messages from AWS Config, such as `_sourceCategory=aws_config`.
-
-
-### Sample Log Message
-
-
-```json
-{
-  "Type": "Notification",
-  "MessageId": "23accff0-e8cf-5071-8208-8194ed32e94c",
-  "TopicArn": "arn:aws:sns:us-west-1:012345678910:sumo-testing-config-topic",
-  "Subject": "[AWS Config:us-west-1] AWS::EC2::NetworkAcl acl-979f62f3 Updated in Account 012345678910",
-  "Message": "{\"configurationItemDiff\":{\"changedProperties\":{\"Configuration.Entries.1\":{\"previousValue\":null,\"updatedValue\":{\"ruleNumber\":100,\"protocol\":\"-1\",\"ruleAction\":\"allow\",\"egress\":false,\"cidrBlock\":\"0.0.0.0/0\",\"icmpTypeCode\":null,\"portRange\":null},\"changeType\":\"CREATE\"},\"Configuration.Entries.0\":{\"previousValue\":{\"ruleNumber\":100,\"protocol\":\"-1\",\"ruleAction\":\"deny\",\"egress\":false,\"cidrBlock\":\"0.0.0.0/0\",\"icmpTypeCode\":null,\"portRange\":null},\"updatedValue\":null,\"changeType\":\"DELETE\"}},\"changeType\":\"UPDATE\"},\"configurationItem\":{\"configurationItemVersion\":\"1.0\",\"configurationItemCaptureTime\":\"2017-02-24T18:34:32.932UTC\",\"configurationStateId\":64,\"relatedEvents\":[\"3d7cbf2c-95e5-4361-bba9-328fae229a6b\"],\"awsAccountId\":\"012345678910\",\"configurationItemStatus\":\"OK\",\"resourceId\":\"acl-80cbc6f2\",\"ARN\":\"arn:aws:ec2:us-west-1:012345678910:network-acl/acl-979f62f3\",\"awsRegion\":\"us-west-1\",\"availabilityZone\":\"Multiple Availability Zones\",\"configurationStateMd5Hash\":\"8f09d8d531df99b9342e42b4944fdea4\",\"resourceType\":\"AWS::EC2::NetworkAcl\",\"resourceCreationTime\":null,\"tags\":{\"Name\":\"Test-NetworkAcl29\"},\"relationships\":[{\"resourceId\":\"subnet-7c4af186\",\"resourceType\":\"AWS::EC2::Subnet\",\"name\":\"Is attached to Subnet\"},{\"resourceId\":\"vpc-0a013c2e\",\"resourceType\":\"AWS::EC2::VPC\",\"name\":\"Is contained in Vpc\"}],\"configuration\":{\"networkAclId\":\"acl-979f62f3\",\"vpcId\":\"vpc-0002f464\",\"isDefault\":true,\"entries\":[{\"egress\":true,\"ruleNumber\":100,\"protocol\":\"-1\",\"ruleAction\":\"allow\",\"cidrBlock\":\"0.0.0.0/0\",\"icmpTypeCode\":null,\"portRange\":null},{\"egress\":true,\"ruleNumber\":32767,\"protocol\":\"-1\",\"ruleAction\":\"deny\",\"cidrBlock\":\"0.0.0.0/0\",\"icmpTypeCode\":null,\"portRange\":null},{\"egress\":false,\"ruleNumber\":100,\"protocol\":\"-1\",\"ruleAction\":\"allow\",\"cidrBlock\":\"0.0.0.0/0\",\"icmpTypeCode\":null,\"portRange\":null},{\"egress\":false,\"ruleNumber\":32767,\"protocol\":\"-1\",\"ruleAction\":\"deny\",\"cidrBlock\":\"0.0.0.0/0\",\"icmpTypeCode\":null,\"portRange\":null}],\"associations\":[{\"networkAclAssociationId\":\"aclassoc-0bb0606d\",\"networkAclId\":\"acl-979f62f3\",\"subnetId\":\"subnet-e0c822dd\"}],\"tags\":[{\"key\":\"Name\",\"value\":\"Test-NetworkAcl29\"}]}},\"notificationCreationTime\":\"2017-02-24T18:34:32.932UTC\",\"messageType\":\"ConfigurationItemChangeNotification\",\"recordVersion\":\"1.2\"}",
-  "Timestamp": "2017-02-24T18:34:32.932UTC",
-  "SignatureVersion": "1",
-  "Signature": "KHYHMQEABbTnlmwnJSHPiMlxCqwFmkIlSdRMvtW30VgbHnqMUPJ0QMS6S9qU4o8/Hp0R2GMvdxeDAo6/jDa/FSE1wGMxRAdbhyI8eBIeOOkOn7Eiy9C2ZyLrcJvSYwMLMBQDVfyDmUZVILbLb3kXFZGi3sogKpNX/mPlajA4UYOLs5OT9cql++8gHl1cdpZnF+Nh2v1CfKCK+j/Fvx9l30yUTaPwAeApF1+v2jjvsvQ1bUYr+SPJdU/eXxNQkRg+eu4ihM0uxbpltYhU8asfYBbtAm1fEWcKglN1Nv++hIDlv0JBOjK7KeY8Ys/UKwjUgBLRllV3gHjphqMd/91zPw==",
-  "SigningCertURL": "https://sns.us-west-1.amazonaws.com/SimpleNotificationService-bb750dd426d95ee9390147a5624348ee.pem",
-  "UnsubscribeURL": "https://sns.us-west-1.amazonaws.com/?Action=Unsubscribe&SubscriptionArn=arn:aws:sns:us-west-1:012345678910:sumo-testing-config-topic:2b6cadac-fe50-442b-af34-470e4021df16"
-}
-```
-
-
-
-### Sample Queries
-
-```sql title="Latest Resource Modifications (from App)"
-_sourceCategory=AWS_Config Notification ConfigurationItemChangeNotification
-| json "Message", "Type"
-| where type == "Notification"
-| json field=message "messageType","configurationItem" as messageType, single_message
-| where messageType = "ConfigurationItemChangeNotification"
-| json field=single_message "resourceId", "resourceType", "configurationItemStatus", "awsAccountId" as ResourceId, ResourceType, Status, AWSAccountID
-//| where Status = "OK"
-// Look up Name stored in tag with key "Name" for each resource. Schedule the 'ResourceNames Lookup Table Generator' search to keep this file up to date.
-//| lookup idAndName from /shared/AWSConfig/ResourceNames on resourceType=resourceType, resourceId=resourceId | if(isNull(idAndName), resourceId, idAndName) as resourceId | fields - idAndName
-| sort by _messageTime desc
-```
-
-
-```sql title=Configuration Activity by AWS Region** (from App)"
-_sourceCategory=AWS_Config Notification ConfigurationItemChangeNotification
-| json "Message", "Type" as single_message, type | where type == "Notification"
-| json field=single_message "configurationItem.awsRegion" as awsRegion
-| where awsRegion != "Not Applicable"
-| "" as location
-| if (awsRegion = "us-east-1", "38.55,-77.89", location) as location // Northern Virginia
-| if (awsRegion = "us-west-1", "43.96,-121.70", location) as location // Oregon
-| if (awsRegion = "us-west-2", "39.06,-121.54", location) as location // Northern California
-| if (awsRegion = "us-gov-west-1", "44.34,-118.61", location) as location // ?? Also Oregon ??
-| if (awsRegion = "eu-west-1", "53.31,-7.91", location) as location // Ireland
-| if (awsRegion = "eu-central-1", "50.12,8.67", location) as location // Frankfurt
-| if (awsRegion = "ap-southeast-1", "1.29,103.85", location) as location // Singapore
-| if (awsRegion = "ap-southeast-2", "-33.85,151.15", location) as location // Sydney
-| if (awsRegion = "ap-northeast-1", "35.68,139.75", location) as location // Tokyo
-| if (awsRegion = "sa-east-1", "-23.57,-46.63", location) as location // Sao Paulo
-| split location delim=',' extract 1 as latitude, 2 as longitude
-| count by latitude, longitude
-| sort _count
-```
 
 ## Installing the AWS Config App
 
@@ -235,7 +230,7 @@ This dashboard runs in interactive mode. As described above, interactive dashboa
 
 #### Filters
 
-The following filters are provided for use with the AWS Overview - Interactive and Resource Modifications Details - Interactive dashboards.
+The following filters are provided for use with the **AWS Overview - Interactive and Resource Modifications Details - Interactive** dashboards.
 * **Resource Type.** The type of the resource modified. Examples: `AWS::EC2::Instance`, `AWS::EC2::NetworkAcl`
 * **Resource Id.** The id of the resource modified. Examples: `vpc-0000001`, `i-ffffffff`
 * **Region.** The AWS Region where the resource modified is located. Examples: `us-east-1`, `us-west-2`

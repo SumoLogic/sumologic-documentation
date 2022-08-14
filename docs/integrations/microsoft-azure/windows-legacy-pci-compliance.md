@@ -11,33 +11,11 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 This guide helps you set up Sumo Logic Collectors, and install the PCI Compliance for Windows Legacy application, so you can begin monitoring your usage and determine if you are meeting Compliance benchmarks.
 
-## Collecting Logs
-
-This section provides instructions for configuring log collection for the PCI Compliance for Windows Legacy App.
-
-
-### Log Types
+## Log Types
 
 The PCI Compliance For Windows Legacy App uses Windows Security Event and System Event logs. It does not work with third-party logs.
 
-### Configure a Collector and a Source  
-
-To configure a collector and source, do the following:
-
-1. Configure an [Installed Windows collector](/docs/send-data/installed-collectors/install-collector-windows) through the user interface or from the command line.
-2. Configure either a local or remote Windows Event Log source. To configure a Windows Event Log source set the following:
-    * **Event Format.** Select **Collect using legacy format.
-
-Collect using legacy format.** Events retain their default text format from Windows.
-
-For more information on local or remote Windows Event Log Source configuration, refer to [Local Windows Event Log Source](/docs/send-data/Sources/sources-installed-collectors/Local-Windows-Event-Log-Source) and [Remote Windows Event Log Source](/docs/send-data/Sources/sources-installed-collectors/Remote-Windows-Event-Log-Source).
-
-
-Make sure to set the Source Category when configuring the Windows Event Log source. For example:  OS/Windows/Events.
-
-
 ### Sample Log Message
-
 
 ```
 instance of Win32_NTLogEvent
@@ -67,7 +45,7 @@ instance of Win32_NTLogEvent
 ```
 
 
-### Query Sample
+### Sample Query
 
 ```sql title="Recent Policy Changes"
 _sourceCategory=OS/Windows/Events "Policy Change"
@@ -75,6 +53,27 @@ _sourceCategory=OS/Windows/Events "Policy Change"
 | count by category
 | where category matches "*Policy Change*"
 ```
+
+
+## Collecting Logs
+
+This section provides instructions for configuring log collection for the PCI Compliance for Windows Legacy App.
+
+
+### Configure a Collector and a Source  
+
+To configure a collector and source, do the following:
+
+1. Configure an [Installed Windows collector](/docs/send-data/installed-collectors/install-collector-windows) through the user interface or from the command line.
+2. Configure either a local or remote Windows Event Log source. To configure a Windows Event Log source set the following:
+    * **Event Format.** Select **Collect using legacy format.
+
+Collect using legacy format.** Events retain their default text format from Windows.
+
+For more information on local or remote Windows Event Log Source configuration, refer to [Local Windows Event Log Source](/docs/send-data/Sources/sources-installed-collectors/Local-Windows-Event-Log-Source) and [Remote Windows Event Log Source](/docs/send-data/Sources/sources-installed-collectors/Remote-Windows-Event-Log-Source).
+
+Make sure to set the Source Category when configuring the Windows Event Log source. For example:  OS/Windows/Events.
+
 
 This section provides instructions for configuring log collection for the PCI Compliance for Windows Legacy App.
 
@@ -110,7 +109,6 @@ Panels will start to fill automatically. It's important to note that each panel 
 ## Viewing the Windows Legacy PCI Compliance Dashboards
 
 ### Windows - PCI Req 02, 08, 10 - Account, User, System Monitoring
-
 
 Track your user accounts and recent system changes.
 

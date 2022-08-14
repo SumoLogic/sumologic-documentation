@@ -42,6 +42,32 @@ Sumo Logic reads logs in the directory `/var/opt/jfrog/artifactory/logs`:
 2017-01-13 18:54:12,121 [ACCEPTED DEPLOY] pypi-remote-cache:.pypi/test.html for billythekid/1.1.1.1.
 ```
 
+
+**Traffic**
+
+```
+20201322001341|d29f485ce89ehh3i|0|DOWNLOAD|167.208.229.190
+|libs-release:org/springframework/spring-tx/maven-metadata.xml.sha1|117127
+```
+
+
+**Request**
+
+```
+20201222001254|g104521a2b42cc3l|176.164.175.181|nitin|GET|/milestone/org/freemarker
+/freemarker/maven-metadata.xml|404|761|86|1|curl/7.54.0
+```
+
+
+**Access**
+
+```
+2020-13-22 00:13:33,014 [ACCEPTED DEPLOY]
+jcenter-cache:com/cloudera/cdh/cdh-root/5.4.4-SNAPSHOT/maven-metadata.xml for client :
+admin/149.5.95.40.
+```
+
+
 ### Sample Queries
 
 ```sql title="Data Transfer Over Time"
@@ -77,6 +103,51 @@ _sourceCategory=*artifactory* "ACCEPTED DEPLOY" "-cache"
 ```
 
 
+**Requests by Repo**
+
+```
+_sourceCategory = Labs/artifactory/*
+| where _sourceCategory matches "*artifactory/request"
+| parse "*|*|*|*|*|*|*|*|*|*|*" as datetime, traceid, ip, user, method, path, status_code, response_size, request_size, response_time, user_agent
+| where !(path matches "/ui*" ) and !(path matches "/webapp*")
+| parse regex field=path "/(?<repo>[^\/]+).*" nodrop
+| parse regex field=path "(?<with_api>/api/(?:(?:npm|ruby|deb|docker|vcs|bower|pypi)/|))(?<repo>[^\/]+)"
+| count as count by repo
+| sort by count
+```
+
+
+**Denied Login Attempts**
+
+```
+_sourceCategory = Labs/artifactory/* "login" DENIED
+| where _sourceCategory matches "*artifactory/access"
+| parse " [*] *" as event_type, user_info
+| parse regex field=user_info "\s*for\s*\w+\s*:\s*(?<user>[^\/]+)\s*\/\s*(?<ip>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})\."| where event_type = "DENIED LOGIN"
+| count as Attempts by ip, user
+| sort by Attempts
+```
+
+
+**Most Active Locations**
+
+```
+_sourceCategory = Labs/artifactory/*
+| where _sourceCategory matches "*artifactory/traffic"
+| parse regex "(?<year>\d{4})(?<month>\d{2})(?<day>\d{2})(?<hour>\d{2})(?<minute>\d{2})(?<second>\d{2})\|(?<traceid>\w+)\|\d*\|(?<direction>[^|]*)\|\s*(?<ip>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}|[^|]*)\|(?<repo>[^:]*):(?<fullfilepath>[^|]*)\|(?<size>\d*)" nodrop
+| where !isNull(ip) and ip != ""
+| count as actions by ip
+| lookup country_name, region, city from geo://location on ip = ip
+| fields country_name, region, city, actions
+| sort by actions | limit 10
+```
+
+
+## Collecting Logs for JFrog Artifactory
+
+This procedure documents how to collect logs from JFrog Artifactory into Sumo Logic.
+
+
 ### Activate the traffic.log file
 
 To activate the **traffic.log** file, add the following parameter to your **artifactory.system.properties** file, located under **$ARTIFACTORY/etc**:
@@ -91,15 +162,9 @@ $JFROG_HOME/artifactory/var/etc/artifactory/artifactory.system.properties
 
 A restart is required for traffic collection to take effect.
 
-
-## Collecting Logs for JFrog Artifactory
-
-This procedure documents how to collect logs from JFrog Artifactory into Sumo Logic.
-
 ### Configure a Collector
 
 Configure an [Installed Collector](/docs/send-data/Installed-Collectors).
-
 
 ### Configure Sources
 
@@ -194,7 +259,6 @@ _sourceCategory=*artifactory*
 ```
 
 
-
 ## Collect Logs for Artifactory 7
 
 This procedure documents how to collect logs from JFrog Artifactory into Sumo Logic.
@@ -213,25 +277,18 @@ For more information about Artifactory logs, see JFrog's [Artifactory Log Files,
 
 
 ### Configure a collector
-11
-
 
 Configure an [Installed Collector](/docs/send-data/Installed-Collectors).
 
 
 ### Configure sources
-12
-
 
 In this step, you configure four local file sources, one for each log source listed in the table below. When you create a file source for a log type:
-
-
 
 * Use the value from the File Path column below as the **File Path** for the source.  
 * The value you specify for the source's **Source Category** _must_ end with the suffix shown below in the Source Category column. For example, you could set the Source Category for the Artifactory Server log source to be`foo/artifactory/console, but not artifactory/console/foo`
 
 The following suffixes are required. For example, you could use `_sourceCategory=<Foo>/artifactory/console`, but the suffix **artifactory/console** must be used.
-
 
 <table>
   <tr>
@@ -276,8 +333,7 @@ The following suffixes are required. For example, you could use `_sourceCategory
   </tr>
 </table>
 
-13
-Remember that _sourceCategory names are case sensitive. When you run a search using _sourceCategory, make sure you use the same case as you did when configuring the source.
+Remember that `_sourceCategory` names are case sensitive. When you run a search using _sourceCategory, make sure you use the same case as you did when configuring the source.
 
 For complete instructions see [Local File Source](/docs/send-data/Sources/sources-installed-collectors/Local-File-Source).
 
@@ -292,87 +348,6 @@ For complete instructions see [Local File Source](/docs/send-data/Sources/source
     6. **Encoding Type**. UTF-8
     7. **Multi-line Parsing**. Detect Messages Spanning Multiple Lines, Infer Boundaries
 4. Click **Save**.
-
-
-### Sample Log Messages
-14
-
-
-**Traffic**
-
-
-```
-20201322001341|d29f485ce89ehh3i|0|DOWNLOAD|167.208.229.190
-|libs-release:org/springframework/spring-tx/maven-metadata.xml.sha1|117127
-```
-
-
-**Request**
-
-
-```
-20201222001254|g104521a2b42cc3l|176.164.175.181|nitin|GET|/milestone/org/freemarker
-/freemarker/maven-metadata.xml|404|761|86|1|curl/7.54.0
-```
-
-
-**Access**
-
-
-```
-2020-13-22 00:13:33,014 [ACCEPTED DEPLOY]
-jcenter-cache:com/cloudera/cdh/cdh-root/5.4.4-SNAPSHOT/maven-metadata.xml for client :
-admin/149.5.95.40.
-```
-
-
-
-### Query Sample
-15
-
-
-**Requests by Repo**
-
-
-```
-_sourceCategory = Labs/artifactory/*
-| where _sourceCategory matches "*artifactory/request"
-| parse "*|*|*|*|*|*|*|*|*|*|*" as datetime, traceid, ip, user, method, path, status_code, response_size, request_size, response_time, user_agent
-| where !(path matches "/ui*" ) and !(path matches "/webapp*")
-| parse regex field=path "/(?<repo>[^\/]+).*" nodrop
-| parse regex field=path "(?<with_api>/api/(?:(?:npm|ruby|deb|docker|vcs|bower|pypi)/|))(?<repo>[^\/]+)"
-| count as count by repo
-| sort by count
-```
-
-
-**Denied Login Attempts**
-
-
-```
-_sourceCategory = Labs/artifactory/* "login" DENIED
-| where _sourceCategory matches "*artifactory/access"
-| parse " [*] *" as event_type, user_info
-| parse regex field=user_info "\s*for\s*\w+\s*:\s*(?<user>[^\/]+)\s*\/\s*(?<ip>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})\."| where event_type = "DENIED LOGIN"
-| count as Attempts by ip, user
-| sort by Attempts
-```
-
-
-**Most Active Locations**
-
-
-```
-_sourceCategory = Labs/artifactory/*
-| where _sourceCategory matches "*artifactory/traffic"
-| parse regex "(?<year>\d{4})(?<month>\d{2})(?<day>\d{2})(?<hour>\d{2})(?<minute>\d{2})(?<second>\d{2})\|(?<traceid>\w+)\|\d*\|(?<direction>[^|]*)\|\s*(?<ip>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}|[^|]*)\|(?<repo>[^:]*):(?<fullfilepath>[^|]*)\|(?<size>\d*)" nodrop
-| where !isNull(ip) and ip != ""
-| count as actions by ip
-| lookup country_name, region, city from geo://location on ip = ip
-| fields country_name, region, city, actions
-| sort by actions | limit 10
-```
-
 
 ## Installing the Artifactory App
 
@@ -478,11 +453,9 @@ Panels will start to fill automatically. It's important to note that each panel 
 **Accepted Login Attempts.** Shows the number of accepted login attempts in a table chart, including details on  IP address, user name, and number of attempts for the last 24 hours.
 
 
-#### Download Activity
+### Download Activity
 
-
-
-##### Accepted Downloads
+#### Accepted Downloads
 
 **Accepted Downloads by Geolocation.** Uses a geo lookup operation to display accepted downloads by IP address on a map of the world for the last six hours.
 
@@ -495,7 +468,7 @@ Panels will start to fill automatically. It's important to note that each panel 
 **Accepted Downloads by Repo.** Displays the number of accepted downloads by repo in an aggregation table for the last six hours.
 
 
-##### Denied Downloads
+#### Denied Downloads
 
 **Denied Downloads by Geolocation.** Uses a geo lookup operation to display denied downloads by IP address on a map of the world for the last six hours.
 
@@ -508,10 +481,10 @@ Panels will start to fill automatically. It's important to note that each panel 
 **Denied Downloads by Repo.** Provides details on the number of denied downloads per repo in an aggregation table for the last six hours.
 
 
-#### Cached Deployment Activity
+### Cached Deployment Activity
 
 
-### Accepted Deploys
+#### Accepted Deploys
 
 **Accepted Deploys by Geolocation**. Uses a geo lookup operation to display accepted deploys by IP address on a map of the world for the last six hours.
 
@@ -524,7 +497,7 @@ Panels will start to fill automatically. It's important to note that each panel 
 **Accepted Deploys by Repo.** Displays the number of accepted deploys by repo in an aggregation table for the last six hours.
 
 
-### Denied Deploys
+#### Denied Deploys
 
 **Denied Deploys by Geolocation.** Uses a geo lookup operation to display denied deploys by IP address on a map of the world for the last six hours.
 
@@ -539,9 +512,7 @@ Panels will start to fill automatically. It's important to note that each panel 
 
 ### Non-Cached Deployment Activity
 
-
-
-### Accepted Deploys
+#### Accepted Deploys
 
 **Accepted Deploys by Geolocation**. Uses a geo lookup operation to display accepted deploys by IP address on a map of the world for the last six hours.
 
@@ -554,7 +525,7 @@ Panels will start to fill automatically. It's important to note that each panel 
 **Accepted Deploys by Repo.** Displays the number of accepted deploys by repo in an aggregation table for the last six hours.
 
 
-### Denied Deploys
+#### Denied Deploys
 
 **Denied Deploys.** Shows the number of denied deploys in a single value chart for the last six hours.
 
