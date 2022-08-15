@@ -1184,6 +1184,7 @@ html[data-theme='dark'] .card:hover {
     linear-gradient(rgba(0,0,0,0.1),
     rgba(0,0,0,0.00)),
     url("../../static/img/landing/landing-hero.jpg") !important;
+    max-height: 225px;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: bottom center;

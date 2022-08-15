@@ -145,7 +145,7 @@ function HomepageHeader() {
       <div className="container">
         <h1 className="hero__title">{siteConfig.title}</h1>
         <p className="hero__subtitle">{siteConfig.tagline}</p>
-        <p>We are an open-source community. Contributions are welcome!</p>
+        <p>We are an open-source community of data analytics users. Contributions are welcome!</p>
         <div className={styles.buttons}>
         </div>
       </div>
@@ -158,7 +158,7 @@ export default function Home(): JSX.Element {
   return (
     <Layout
       title="Home"
-      description="Sumo Logic docs - real-time alerting, dashboards, and machine-learning-powered analytics for all three types of telemetry — logs, metrics, and traces.">
+      description="Sumo Logic docs - real-time alerting, security, dashboards, and machine-learning-powered analytics for all three types of telemetry — logs, metrics, and traces.">
       <HomepageHeader />
       <main>
         {features && features.length > 0 && (
