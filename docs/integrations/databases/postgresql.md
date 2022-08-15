@@ -115,7 +115,7 @@ In Kubernetes environments, we use the Telegraf Operator, which is packaged with
 The first service in the pipeline is Telegraf. Telegraf collects metrics from PostgreSQL. Note that we’re running Telegraf in each pod we want to collect metrics from as a sidecar deployment: i.e. Telegraf runs in the same pod as the containers it monitors. Telegraf uses the [PostgreSQL Extensible input plugin ](https://github.com/influxdata/telegraf/blob/master/plugins/inputs/postgresql_extensible/)to obtain metrics, (For simplicity, the diagram doesn’t show the input plugins). The injection of the Telegraf sidecar container is done by the Telegraf Operator. Prometheus scrapes the metrics from each of the Telegraf containers and sends it to FluentD.We also have Fluentbit that collects logs written to standard out and forwards them to FluentD, which in turn sends all the logs and metrics data to a Sumo Logic HTTP Source.
 
 :::note Prerequisites
-Please ensure that you are monitoring your Kubernetes clusters with the Telegraf operator -  If you are not, then please follow [these instructions](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf.md#Install_Telegraf_in_a_Kubernetes_environment) to do so.
+Please ensure that you are monitoring your Kubernetes clusters with the Telegraf operator -  If you are not, then please follow [these instructions](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf) to do so.
 :::
 
 #### Configure Metrics Collection
@@ -208,7 +208,7 @@ This section explains the steps to collect PostgreSQL logs from a Kubernetes env
 5. Add an FER to normalize the fields in Kubernetes environments. Labels created in Kubernetes environments automatically are prefixed with `pod_labels`. To normalize these for our app to work, we need to create a Field Extraction Rule if not already created for Database Application Components. To do so:
    1. Go to **Manage Data** > **Logs** > **Field Extraction Rules**.
    2. Click the **+ Add** button on the top right of the table.
-   3. The following form appears:
+   3. The **Add Field Extraction Rule** form will appear:
    4. Enter the following options:
       * **Rule Name**. Enter the name as **App Component Observability - Database.**
       * **Applied At**. Choose Ingest Time
@@ -378,7 +378,7 @@ There are limits to how many alerts can be enabled - please see the [Alerts FAQ]
 3. Click **Add**:
 4. Click Import to import monitors from the JSON above.
 
-The monitors are disabled by default. Once you have installed the alerts using this method, navigate to the PostgreSQL folder under Monitors to configure them. See [this](/docs/alerts/monitors/index.md) document to enable monitors, to configure each monitor, to send notification to teams or connections please see the instructions detailed in step 4 of this [document](/docs/alerts/monitors#Add_a_monitor).
+The monitors are disabled by default. Once you have installed the alerts using this method, navigate to the PostgreSQL folder under Monitors to configure them. See [this](/docs/alerts/monitors/index.md) document to enable monitors, to configure each monitor, to send notification to teams or connections please see the instructions detailed in step 4 of this [document](/docs/alerts/monitors#add-a-monitor).
 
 
 ### Method B: Using a Terraform script

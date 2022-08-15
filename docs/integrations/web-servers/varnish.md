@@ -134,7 +134,7 @@ This section explains the steps to collect Varnish metrics from a Kubernetes env
 
 In Kubernetes environments, we use the Telegraf Operator, which is packaged with our Kubernetes collection. You can learn more on this[ here](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/telegraf-collection-architecture). Follow the steps listed below to collect metrics from a Kubernetes environment:
 
-1. [Setup Kubernetes Collection with the Telegraf Operator.](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf.md#Install_Telegraf_in_a_Kubernetes_environment)
+1. [Setup Kubernetes Collection with the Telegraf Operator.](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf)
 2. Add annotations on your Varnish pods
 
 On your Varnish Pods, add the following annotations:
@@ -174,7 +174,7 @@ Here’s an explanation for additional values set by this configuration that we 
 * prometheus.io/scrape: "true" - This ensures our Prometheus will scrape the metrics.
 * prometheus.io/port: "9273" - This tells prometheus what ports to scrape on. This should not be changed.
 * `telegraf.influxdata.com/inputs`
-    * In the tags section i.e.  `[inputs.varnish.tags]`
+    * In the tags section   `[inputs.varnish.tags]`
         * component: “cache” - This value is used by Sumo Logic apps to identify application components.
         * cache_system: “varnish” - This value identifies the web server system.
 
@@ -247,7 +247,7 @@ Labels created in Kubernetes environments automatically are prefixed with pod_la
 
 1. Go to **Manage Data > Logs > Field Extraction Rules**.
 2. Click the + Add button on the top right of the table.
-3. The following form appears:
+3. The **Add Field Extraction Rule** form will appear:
 
 1. Enter the following options:
 * **Rule Name**. Enter the name as **App Observability - Cache**.
@@ -563,7 +563,7 @@ Locate and install the app you need from the **App Catalog**. If you want to see
 Version selection applies only to a few apps currently. For more information, see the[ Install the Apps from the Library](/docs/get-started/library/install-apps).
 
 
-1. To install the app, complete the following fields.
+3. To install the app, complete the following fields.
     1. **App Name.** You can retain the existing name or enter a name of your choice for the app. 
     2. **Data Source.**
         * Choose **Enter a Custom Data Filter**, and enter a custom Varnish cluster filter. Examples:

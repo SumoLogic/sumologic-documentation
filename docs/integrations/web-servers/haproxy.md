@@ -247,7 +247,7 @@ kubectl describe pod <haproxy_pod_name>
 
 1. Go to **Manage Data > Logs > Field Extraction Rules**.
 2. Click the + Add button on the top right of the table.
-3. The following form appears:
+3. The **Add Field Extraction Rule** form will appear:
 
 
 1. Enter the following options:
@@ -255,16 +255,15 @@ kubectl describe pod <haproxy_pod_name>
 * **Applied At.** Choose **Ingest Time**
 * **Scope**. Select **Specific Data**
     * **Scope**: Enter the following keyword search expression:  
-```
+```sql
 pod_labels_environment=* pod_labels_component=proxy pod_labels_proxy_system=* pod_labels_proxy_cluster=*
 ```
 * **Parse Expression**. Enter the following parse expression:
-```
+```sql
 | if (!isEmpty(pod_labels_environment), pod_labels_environment, "") as environment
 | pod_labels_component as component
 | pod_labels_proxy_system as proxy_system
-                | pod_labels_proxy_cluster as proxy_cluster
-
+| pod_labels_proxy_cluster as proxy_cluster
 ```
 
 1. Click **Save** to create the rule.
@@ -646,13 +645,13 @@ Locate and install the app you need from the **App Catalog**. If you want to see
 
 Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/library/install-apps)
 
-1. To install the app, complete the following fields.
+3. To install the app, complete the following fields.
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
     2. **Data Source.** Select either of these options for the data source. 
         * Choose **Source Category**, and select a source category from the list. 
         * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). 
     3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-2. Click **Add to Library**.
+4. Click **Add to Library**.
 
 Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization.
 

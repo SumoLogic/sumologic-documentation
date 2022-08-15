@@ -19,7 +19,7 @@ The Sumo Logic App for Google Kubernetes Engine (GKE) - Control Plane allows you
 The following are the minimum supported requirements for this application:
 
 * For Kubernetes: 1.10 and later
-* For: GKE
+* For GKE:
    * 1.19.16-gke.8300.
    * 1.20.15-gke.2500.
    * 1.21.9-gke.1002.
@@ -37,82 +37,9 @@ The following are the minimum supported requirements for this application:
    * 1.17.12-gke.2502
    * 1.18.20-gke.6000
 
-## Google Cloud Logging for GKE  
-
-By default, GKE clusters are natively integrated with Cloud Logging (and Monitoring). When you create a GKE cluster, both Monitoring and Cloud Logging are enabled by default. The GKE Sumo Logic App uses Google Cloud Logging. The
-
-
-## Collecting Logs and Metrics for GKE - Control Plane App
-
-This section has instructions for configuring log and metric collection for the Sumo App for GKE - Control Plane.
-
-After you install the Sumo Logic Kubernetes App, you configure a hosted collector, HTTP source, and establish Kubernetes collection. You will establish the key components for [Google Cloud Platform (GCP) services](https://cloud.google.com/docs/overview/cloud-platform-services) collection which include Google Logging, and Google Cloud Pub/Sub. Finally, you’ll configure metrics collection.
-
-For GCP integration, Google Logging collects logs from GCP services. Once you’ve configured the pipeline, the logs are published to a Google Pub/Sub topic. A Sumo Logic GCP source on a hosted collector subscribed to that topic ingests the logs into Sumo Logic.<br/><img src={useBaseUrl('img/integrations/google/GCP_Collection_Overview.png')} alt="GKE" />
-
-The configuration process includes the following tasks:
-
-1. Configure a GCP source on a hosted collector. You'll obtain the **HTTP URL for the source**, and then use Google Cloud Console to register the URL as a validated domain.  
-2. Create a topic in Google Pub/Sub and subscribe the GCP source URL to that topic.
-3. Create an export of GCP logs from Google Logging. Exporting involves writing a filter that selects the log entries you want to export, and choosing a Pub/Sub as the destination. The filter and destination are held in an object called a sink.
-
-
-### Set up and install the Kubernetes App
-
-The Sumo Logic Kubernetes App provides the services for managing and monitoring Kubernetes worker nodes. You must set up collection and  install the Kubernetes App before configuring collection for the GKE App. You will configure log and metric collection during this process.
-
-
-#### Google Cloud Logging for GKE  
+## Log Types
 
 By default, GKE clusters are natively integrated with Cloud Logging (and Monitoring). When you create a GKE cluster, both Monitoring and Cloud Logging are enabled by default. The GKE Sumo Logic App uses Google Cloud Logging.
-
-
-#### Install the App
-
-**To set up and install the Kubernetes app**, follow the instructions in [this document](/docs/integrations/containers-orchestration/Kubernetes).
-
-
-### Configure a Google Cloud Platform Source  
-
-The GCP source receives log data from Google Pub/Sub. The GCP source will only be usable for log data formatted as data coming from Google Pub/Sub.
-
-To configure a Google Platform Source**, follow the instructions in [this document](/docs/send-data/Sources/sources-hosted-collectors/Google-Cloud-Platform-Source).
-
-
-### Configure a Pub/Sub topic for GCP
-
-Once you configure the Pub/Sub, you can export data from Google to the Pub/Sub.
-
-To configure a Pub/Sub topic for GCP**,  follow the instructions in [this document](/docs/send-data/Sources/sources-hosted-collectors/Google-Cloud-Platform-Source).
-
-
-### Create an export of Google Kubernetes Engine logs from Logging
-
-This section walks you through the task of creating an export of Google Kubernetes Engine logs from Logging.
-
-To create an export of GKE logs, do the following:*
-
-1. Go to **Logging** and click **Logs Router**.<br/><img src={useBaseUrl('img/integrations/google/GCP_logging_1.png')} alt="GKE" />
-1. Click **Create Sink.**<br/><img src={useBaseUrl('img/integrations/google/GKE_2.png')} alt="GKE" />
-1. As part of “**Create logs routing sink**”  add the following information:
-    1. Enter a **Sink Name**. For example, "gce-vm-instance".
-    2. Select "Cloud Pub/Sub" as the **Sink Service**.
-    3. Set **Sink Destination** to the Pub/Sub topic you created in the [Google Cloud Platform Source](/docs/send-data/Sources/sources-hosted-collectors/Google-Cloud-Platform-Source?mt-draft=true) procedure. For example, "pub-sub-logs".
-    4. In “**Choose logs to include in sink**” Section : Determine the **GCP services** for which you need to get the logs. Also the logsName filter can be added in the inclusion filter for minimizing the logs send to Sumo Logic for the GKE app. This inclusion filter can be taken as :
-
-```sql
-(resource.type="gke_cluster" OR resource.type="k8s_cluster" OR resource.type="k8s_node" OR resource.type="k8s_pod" )  \
-AND (logName="projects/<project_name></em>/logs/events" OR \
-logName="projects/<project_name></em>/logs/kube-proxy" OR \
-logName="projects/<project_name></em>/logs/kubelet" OR \
-logName="projects/<project_name></em>/logs/cloudaudit.googleapis.com%2Factivity" OR \
-logName="projects/<project_name></em>/logs/cloudaudit.googleapis.com%2Fdata_access" OR \
-logName="projects/<project_name></em>/logs/node-problem-detector" OR \
-logName="projects/<project_name></em>/logs/container-runtime" OR \
-logName="projects/<project_name></em>/logs/docker" OR \
-logName="projects/<project_name></em>/logs/kube-node-installation")
-```
-4. Click Create Sync.
 
 
 ### Sample Log Messages
@@ -199,8 +126,6 @@ logName="projects/<project_name></em>/logs/kube-node-installation")
 }
 ```
 
-
-
 ```json title="Google Cloud Logging - Events"
 {
   "message":{
@@ -286,6 +211,76 @@ _sourceCategory = "GKE Cloud Logs" logName reason host "\"type\":\"gke_cluster\"
 | transpose row _timeslice column node, cluster, project
 | fillmissing timeslice(1h)
 ```
+
+## Collecting Logs and Metrics for GKE - Control Plane App
+
+This section has instructions for configuring log and metric collection for the Sumo App for GKE - Control Plane.
+
+After you install the Sumo Logic Kubernetes App, you configure a hosted collector, HTTP source, and establish Kubernetes collection. You will establish the key components for [Google Cloud Platform (GCP) services](https://cloud.google.com/docs/overview/cloud-platform-services) collection which include Google Logging, and Google Cloud Pub/Sub. Finally, you’ll configure metrics collection.
+
+For GCP integration, Google Logging collects logs from GCP services. Once you’ve configured the pipeline, the logs are published to a Google Pub/Sub topic. A Sumo Logic GCP source on a hosted collector subscribed to that topic ingests the logs into Sumo Logic.<br/><img src={useBaseUrl('img/integrations/google/GCP_Collection_Overview.png')} alt="GKE" />
+
+The configuration process includes the following tasks:
+
+1. Configure a GCP source on a hosted collector. You'll obtain the **HTTP URL for the source**, and then use Google Cloud Console to register the URL as a validated domain.  
+2. Create a topic in Google Pub/Sub and subscribe the GCP source URL to that topic.
+3. Create an export of GCP logs from Google Logging. Exporting involves writing a filter that selects the log entries you want to export, and choosing a Pub/Sub as the destination. The filter and destination are held in an object called a sink.
+
+
+### Set up and install the Kubernetes App
+
+The Sumo Logic Kubernetes App provides the services for managing and monitoring Kubernetes worker nodes. You must set up collection and  install the Kubernetes App before configuring collection for the GKE App. You will configure log and metric collection during this process.
+
+
+#### Google Cloud Logging for GKE  
+
+By default, GKE clusters are natively integrated with Cloud Logging (and Monitoring). When you create a GKE cluster, both Monitoring and Cloud Logging are enabled by default. The GKE Sumo Logic App uses Google Cloud Logging.
+
+
+#### Install the App
+
+**To set up and install the Kubernetes app**, follow the instructions in [this document](/docs/integrations/containers-orchestration/Kubernetes).
+
+
+### Configure a Google Cloud Platform Source  
+
+The GCP source receives log data from Google Pub/Sub. The GCP source will only be usable for log data formatted as data coming from Google Pub/Sub.
+
+To configure a Google Platform Source**, follow the instructions in [this document](/docs/send-data/Sources/sources-hosted-collectors/Google-Cloud-Platform-Source).
+
+
+### Configure a Pub/Sub topic for GCP
+
+Once you configure the Pub/Sub, you can export data from Google to the Pub/Sub.
+
+To configure a Pub/Sub topic for GCP**,  follow the instructions in [this document](/docs/send-data/Sources/sources-hosted-collectors/Google-Cloud-Platform-Source).
+
+
+### Create an export of Google Kubernetes Engine logs from Logging
+
+This section walks you through the task of creating an export of Google Kubernetes Engine logs from Logging.
+
+To create an export of GKE logs, do the following:
+1. Go to **Logging** and click **Logs Router**.<br/><img src={useBaseUrl('img/integrations/google/GCP_logging_1.png')} alt="GKE" />
+2. Click **Create Sink.**<br/><img src={useBaseUrl('img/integrations/google/GKE_2.png')} alt="GKE" />
+3. As part of “**Create logs routing sink**”  add the following information:
+    1. Enter a **Sink Name**. For example, "gce-vm-instance".
+    2. Select "Cloud Pub/Sub" as the **Sink Service**.
+    3. Set **Sink Destination** to the Pub/Sub topic you created in the [Google Cloud Platform Source](/docs/send-data/Sources/sources-hosted-collectors/Google-Cloud-Platform-Source?mt-draft=true) procedure. For example, "pub-sub-logs".
+    4. In “**Choose logs to include in sink**” Section : Determine the **GCP services** for which you need to get the logs. Also the logsName filter can be added in the inclusion filter for minimizing the logs send to Sumo Logic for the GKE app. This inclusion filter can be taken as:
+```sql
+(resource.type="gke_cluster" OR resource.type="k8s_cluster" OR resource.type="k8s_node" OR resource.type="k8s_pod" )  \
+AND (logName="projects/<project_name></em>/logs/events" OR \
+logName="projects/<project_name></em>/logs/kube-proxy" OR \
+logName="projects/<project_name></em>/logs/kubelet" OR \
+logName="projects/<project_name></em>/logs/cloudaudit.googleapis.com%2Factivity" OR \
+logName="projects/<project_name></em>/logs/cloudaudit.googleapis.com%2Fdata_access" OR \
+logName="projects/<project_name></em>/logs/node-problem-detector" OR \
+logName="projects/<project_name></em>/logs/container-runtime" OR \
+logName="projects/<project_name></em>/logs/docker" OR \
+logName="projects/<project_name></em>/logs/kube-node-installation")
+```
+4. Click Create Sync.
 
 
 

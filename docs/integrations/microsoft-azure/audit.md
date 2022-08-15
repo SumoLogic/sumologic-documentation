@@ -22,8 +22,6 @@ This guide walks you through the tasks you'll perform to [collect Azure Audit lo
 
 To install the Sumo Logic App for Azure Audit, you must sign up for a Sumo Logic Account, if you have not already done so. To sign up, go to [https://www.sumologic.com/pricing/](https://www.sumologic.com/pricing/) and select your account type or click **Free Trial** to sign up for a Sumo Logic Free account.
 
-
-
 ## Collecting Logs for the Azure Audit App from Event Hub
 
 This section has instructions for configuring a pipeline for shipping Azure Audit logs from [Azure Monitor](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-get-started) to an Event Hub, on to an Azure Function, and finally to an HTTP source on a hosted collector in Sumo Logic.
@@ -35,6 +33,8 @@ Here’s how the solution fits together:
 * Azure Monitor collects logs for most Microsoft Azure services, including Azure Audit, and streams the data to an Azure Event Hub.
 * Azure Event Hubs is a data streaming platform and event ingestion service. In this pipeline, an Event Hub streams the logs collected by Azure Monitor to an Azure function.
 * The Azure function is a small piece of code that is triggered by Event Hub to send logs to the Sumo HTTP Source, function logs to one Storage Account, and failover data to another.
+
+<img src={useBaseUrl('img/integrations/microsoft-azure/CollectLogsforAzureAudit.png')} alt="CollectLogsforAzureAD" />
 
 ### Log Types
 
@@ -107,13 +107,13 @@ Locate and install the app you need from the **App Catalog**. If you want to see
 
 Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/library/install-apps)
 
-1. To install the app, complete the following fields.
+3. To install the app, complete the following fields.
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
     2. **Data Source.** Select either of these options for the data source. 
         * Choose **Source Category**, and select a source category from the list. 
         * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). 
     3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-2. Click **Add to Library**.
+4. Click **Add to Library**.
 
 Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization.
 

@@ -56,7 +56,7 @@ If you want to set up Route 53 Resolver DNS Firewall, see the Amazon Developer G
 Locate and install the app from the App Catalog. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
 1. In the App Catalog, search for and select the app.
-2. Click **Add to Library**.
+4. Click **Add to Library**.
 3. To install the app, complete the following fields.   				 
     1. **App Name**. You can retain the existing name, or enter a name of your choice for the app. 
     2. **Data Source**. Select either of these options for the data source. 

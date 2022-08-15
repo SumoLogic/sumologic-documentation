@@ -51,15 +51,13 @@ There are alternative methods for collecting Docker logs and metrics. See [Docke
 1. In the Sumo web app, select **Manage Data > Collection > Collection**.
 2. Navigate to the collector you installed on the Docker host, and select **Add > Add Source**.
 3. Select **Docker Logs**. The Docker Logs page appears.
-
 4. Configure the source fields:
     1. **Name**. (Required).
     2. **Description**. (Optional).
     3. **URI**. Enter the URI of the Docker daemon.
-        * If your collector runs on the same host as the Docker containers it will monitor, enter the non-networked Unix socket:     `unix:///var/run/docker.sock`
-        * If your collector runs on a different machine than the Docker host, you can determine its URI from a Docker environment variable. Run the `docker-machine` command to find the Docker environment variables. The command's syntax is `$ docker-machine env machine-name`. \
+        * If your collector runs on the same host as the Docker containers it will monitor, enter the non-networked Unix socket: `unix:///var/run/docker.sock`
+        * If your collector runs on a different machine than the Docker host, you can determine its URI from a Docker environment variable. Run the `docker-machine` command to find the Docker environment variables. The command's syntax is `$ docker-machine env machine-name`.
 For example,
-
 ```bash
 $ docker-machine env default \
 export DOCKER_TLS_VERIFY="1" \
@@ -75,22 +73,20 @@ Take the value of the `DOCKER_HOST` variable, change "tcp" to "https", and enter
     5. **Event Logs**. Check this box to collect Docker events as well as standard Docker logs.
     6. **Collect From** and **Container Filters**. If you want to collect from all containers, click the **All Containers** radio button. If you want to collect from selected containers, click the **Specified Container Filters** radio button, and specify filter expressions in the **Container Filters** field. For information about how to define container filters, see [more about defining container filters](#More_about_defining_container_filters-851) below.
         * By default, you can collect from up to 40 containers. To increase the limit, stop the Collector service, edit the `collector.properties` file (in the `config` subdirectory of the collector installation directory), and add the `docker.maxPerContainerConnections` property. The maximum supported value is 100. Then start the Collector service. See [collector.properties](/docs/send-data/Installed-Collectors/05Reference-Information-for-Collector-Installation/collector.properties) for details on modifying this configuration file.
-    7. **Source Host**. Enter the hostname or IP address of the source host. If not specified, it’s assumed that the host is the machine where Docker is running. The hostname can be a maximum of 128 characters.  \
+    7. **Source Host**. Enter the hostname or IP address of the source host. If not specified, it’s assumed that the host is the machine where Docker is running. The hostname can be a maximum of 128 characters.  
 If desired, you can use Docker variables to construct the Source Host value. For more information, see [Configure sourceCategory and sourceHost using variables.](#Configure_sourceCategory_and_sourceHost_using_variables-851)
     8. **Source Category**. Enter a string used to tag the output collected from this Source with searchable metadata. For example, typing **web_apps** tags all the logs from this Source in the sourceCategory field, so running a search on **_sourceCategory=web_apps** would return logs from this Source. For more information, see [Metadata Naming Conventions](/docs/send-data/Sources/reference-information-sources/Metadata-Naming-Conventions) and our [Best Practices: Good Source Category, Bad Source Category](/docs/send-data/design-deployment/best-practices-source-categories). \
 If desired, you can use Docker variables to construct the Source Category value. For more information, see [Configure sourceCategory and sourceHost using variables.](#Configure_sourceCategory_and_sourceHost_using_variables-851)
     9. **Fields**. Click the **+Add Field** link to add custom log metadata [Fields](/docs/manage/fields.md).
         * Define the fields you want to associate, each field needs a name (key) and value.
-
  * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
-
- ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist, or is disabled, in the Fields table schema. In this case, an option to automatically add or enable the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema or is disabled it is ignored, known as dropped.
+ * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist, or is disabled, in the Fields table schema. In this case, an option to automatically add or enable the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema or is disabled it is ignored, known as dropped.
 5. Configure the Advanced options.
     10. **Enable Timestamp Parsing**. This option is checked by default and **required**. See the [Notes section](#Notes_regarding_Docker_Sources-851) above for details.
     11. **Time Zone**. Default is “Use time zone from log file”.
     12. **Timestamp Format**. Default is “Automatically detect the format”.
     13. **Encoding**. Default is “UTF-8”.
-    14. **Enable Multiline Processing. **The** _Detect messages spanning multiple lines_** option is checked by default. See [Collecting Multiline Logs](/docs/send-data/sources/reference-information-sources/collect-multiline-logs) for details on multiline processing and its options.
+    14. **Enable Multiline Processing.** TheDetect messages spanning multiple lines option is checked by default. See [Collecting Multiline Logs](/docs/send-data/sources/reference-information-sources/collect-multiline-logs) for details on multiline processing and its options.
         * **Infer Boundaries**. This option is checked by default.
         * **Boundary Regex**. If multiple processing is enabled, and **Infer Boundaries** is disabled, enter a regular expression for message boundaries.
 6. Configure processing rules. For more information, see** **[Processing Rules](/docs/manage/collection/processing-rules).
@@ -100,20 +96,14 @@ If desired, you can use Docker variables to construct the Source Category value.
 
 1. In Sumo select **Manage Data > Collection > Collection**.
 2. Navigate to the collector you installed on the Docker host, and select **Add > Add Source**.
-3. Select **Docker Stats.** The following Docker Stats page appears. There are two possible content types available, select **Metrics** to collect data as metrics, or select **Logs** (JSON) to collect data as JSON logs.
-
-To collect metrics for the Docker ULM App, select **Metrics** as the Content Type.
-
-
-
-1. Configure the source fields:
+3. Select **Docker Stats.** The following Docker Stats page appears. There are two possible content types available, select **Metrics** to collect data as metrics, or select **Logs** (JSON) to collect data as JSON logs. To collect metrics for the Docker ULM App, select **Metrics** as the Content Type.
+4. Configure the source fields:
     1. **Name.** (Required)
     2. **Description. **(Optional)
     3. **URI**. Enter the URI of the Docker daemon.
         * If your collector runs on the same host as the Docker containers it will monitor, enter the non-networked Unix socket: `unix:///var/run/docker.sock`
         * If your collector runs on a different machine than the Docker host, you can determine its URI from a Docker environment variable. Run the `docker-machine` command to find the Docker environment variables. The command's syntax is `$ docker-machine env machine-name`. \
 For example,
-
 ```bash
 $ docker-machine env default \
 export DOCKER_TLS_VERIFY="1" \
@@ -128,8 +118,7 @@ Take the value of the `DOCKER_HOST` variable, change "tcp" to "https", and enter
     5. **Collect From** and **Container Filters**. If you want to collect from all containers, click the **All Containers** radio button. If you want to collect from selected containers, click the **Specified Container Filters** radio button, and specify filter expressions in the **Container Filters** field. For information about how to define container filters, see [more about defining container filters](#More_about_defining_container_filters-851) below.
         * By default, you can collect from up to 40 containers. To increase the limit, stop the Collector service, edit the `collector.properties` file (in the `config` subdirectory of the collector installation directory), and add the `docker.maxPerContainerConnections` property. The maximum supported value is 100. Then start the Collector service. See [collector.properties](/docs/send-data/Installed-Collectors/05Reference-Information-for-Collector-Installation/collector.properties) for details on modifying this configuration file.
     6. **Source Host**. Enter the hostname or IP address of the source host. If not specified, it’s assumed that the host is the machine where Docker is running. The hostname can be a maximum of 128 characters. If desired, you can use Docker variables to construct the Source Host value. For more information, see [Configure sourceCategory and sourceHost using variables.](#Configure_sourceCategory_and_sourceHost_using_variables-851)
-    7. **Source Category**. Enter a string used to tag the output collected from this Source with searchable metadata. For example, typing **web_apps** tags all the logs from this Source in the sourceCategory field, so running a search on **_sourceCategory=web_apps** would return logs from this Source. For more information, see [Metadata Naming Conventions](/docs/send-data/Sources/reference-information-sources/Metadata-Naming-Conventions) and our [Best Practices: Good Source Category, Bad Source Category](/docs/send-data/design-deployment/best-practices-source-categories). \
-If desired, you can use Docker variables to construct the Source Host value. For more information, see [Configure sourceCategory and sourceHost using variables.](#Configure_sourceCategory_and_sourceHost_using_variables-851)
+    7. **Source Category**. Enter a string used to tag the output collected from this Source with searchable metadata. For example, typing **web_apps** tags all the logs from this Source in the sourceCategory field, so running a search on **_sourceCategory=web_apps** would return logs from this Source. For more information, see [Metadata Naming Conventions](/docs/send-data/Sources/reference-information-sources/Metadata-Naming-Conventions) and our [Best Practices: Good Source Category, Bad Source Category](/docs/send-data/design-deployment/best-practices-source-categories). If desired, you can use Docker variables to construct the Source Host value. For more information, see [Configure sourceCategory and sourceHost using variables.](#Configure_sourceCategory_and_sourceHost_using_variables-851)
     8. **Fields**. Click the **+Add Field** link to add custom metric metadata. Define the fields you want to associate, providing a name (key) and value for each.
     9. **Scan Interval**. This option sets how often the source is scanned. Setting a shorter frequency increases message volume, and can cause your deployment to incur additional charges. The minimum acceptable scan interval is 1 second.
     10. **Metrics** (Available if content type selected is Metrics). Select the Docker metrics you want to be ingested, see Docker metrics definitions for details.
@@ -137,7 +126,7 @@ If desired, you can use Docker variables to construct the Source Host value. For
 
 ## Docker Metrics definitions
 
-<table>
+<table><small>
   <tr>
    <td><strong>Metrics Name</strong>
    </td>
@@ -653,7 +642,7 @@ If desired, you can use Docker variables to construct the Source Host value. For
    </td>
    <td>Number of PIDs (Not available on Windows)
    </td>
-  </tr>
+  </tr></small>
 </table>
 
 
@@ -665,13 +654,12 @@ In the **Container Filter** field, you can enter a comma-separated list of one o
 * A wildcard filter, for example, `my-container-*`
 * An exclusion filter, which begins with an exclamation mark, for example, `!master-container` or `!prod-*`
 
-For example, this filter list:
-
+For example, this filter list...
 ```sql
 prod-*, !prod-*-mysql, master-*-app-*, sumologic-collector
 ```
 
-will cause the source to collect from all containers whose names start with `“prod-”`, except those that match `“prod-*-mysql”`. It will also collect from containers with names that match `“master-*-app-*”`, and from the `“sumologic-collector”` container.
+...will cause the source to collect from all containers whose names start with `“prod-”`, except those that match `“prod-*-mysql”`. It will also collect from containers with names that match `“master-*-app-*”`, and from the `“sumologic-collector”` container.
 
 If your filter list contains only exclusions, the source will collect all containers except from those that match your exclusion filters. For example:
 
