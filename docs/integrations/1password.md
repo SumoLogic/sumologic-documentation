@@ -11,12 +11,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 1Password is a secure and convenient password manager for documents, credit card information, and addresses. The Sumo Logic App for 1Password helps you monitor your 1Password account’s sign-in and item usage events. The dashboards provide insight into failed and successful authentications, events breakdown by client applications, type, category, users, geo-location of events, outliers, and threat analysis of sign-in events. This app helps your secure 1Password vault access by providing insights into user actions and threat intel analysis on clients accessing items in shared vaults.
 
-## Collecting Logs for 1Password
-
-Follow the instructions for setting up [Cloud to Cloud Integration for 1Password App](/docs/send-data/Sources/sources-hosted-collectors/Cloud-to-Cloud-Integration-Framework/1Password-Source) to create the source and use the same source category while installing the app.
-
-
-### Log Types  
+## Log Types  
 
 The 1Password App uses following logs:
 * [Sign-in Events](https://support.1password.com/events-api-reference/#signinattemptitems-object)
@@ -104,6 +99,10 @@ _sourceCategory=1pw action
 | json "timestamp", "user.name", "client.app_name", "client.platform_name", "client.platform_version", "client.os_name", "client.os_version", "client.ip_address", "location.country", "location.region", "location.city", "action", "vault_uuid", "item_uuid" as timestamp, user_name, client_app_name, client_platform, client_platform_version, client_os, client_os_version, client_ip, country, region, city, action, vault_uuid, item_uuid
 | count by timestamp, user_name, client_app_name, client_platform, client_platform_version, client_os, client_os_version, client_ip, country, region, city, action, vault_uuid, item_uuid
 ```
+
+## Collecting Logs for 1Password
+
+Follow the instructions for setting up [Cloud to Cloud Integration for 1Password App](/docs/send-data/Sources/sources-hosted-collectors/Cloud-to-Cloud-Integration-Framework/1Password-Source) to create the source and use the same source category while installing the app.
 
 ## Installing the 1Password App
 

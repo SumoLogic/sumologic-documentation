@@ -129,7 +129,7 @@ Follow the steps listed below to collect Memcached metrics from a Kubernetes env
     db_cluster="memcached_on_k8s_CHANGE_ME"
 ```
 
-3. Please enter in values for the following parameters (marked `CHANGE_ME` above):
+3. Enter in values for the following parameters (marked `CHANGE_ME` above):
    * `telegraf.influxdata.com/inputs` - This contains the required configuration for the Telegraf Memcached Input plugin. Please refer[ to this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/redis) for more information on configuring the Memcached input plugin for Telegraf. Note: As telegraf will be run as a sidecar the host should always be localhost.
    * In the input plugins section (`[[inputs.memcached]]`):
       * `servers` - An array of addresses to gather stats about. Specify an IP on the hostname. Please see [this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/memcached) for more information on additional parameters for configuring the Memcached input plugin for Telegraf.
@@ -161,7 +161,7 @@ This section explains the steps to collect Memcached logs from a Kubernetes envi
     db_system: "memcached"
     db_cluster: "memcached_on_k8s_CHANGE_ME"
     ```
-   2. Please enter in values for the following parameters:
+   2. Enter in values for the following parameters:
     * `environment` - This is the deployment environment where the Memcached cluster identified by  the value of **servers** resides. For example dev, prod, or QA. While this value is optional we highly recommend setting it.
     * `db_cluster` - Enter a name to identify this Memcached cluster. This cluster name will be shown in the Sumo Logic dashboards.
     * Here’s an explanation for additional values set by this configuration that we request you **do not modify** as they will cause the Sumo Logic apps to not function correctly.

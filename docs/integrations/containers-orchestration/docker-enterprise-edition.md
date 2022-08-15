@@ -16,64 +16,7 @@ The Docker EE App facilitates monitoring and troubleshooting distributed microse
 The Docker EE App works in conjunction with the [Docker ULM App](/docs/integrations/containers-orchestration/docker-ulm) that monitors application container workloads running on the Docker EE platform.
 
 
-## Collecting Logs and Metrics for Docker EE
-
-This section has instructions for collecting logs for the Sumo App for Docker EE. This app works in conjunction with the Docker ULM App, and the first step is to configure collection for Docker ULM App. Then, since Docker EE uses Kubernetes for orchestration, you install and deploy the Sumo Logic Fluentd plugin for collection of Docker EE specific components.
-
-
-### Step 1. Collect logs and metrics for the Docker ULM App
-
-This section shows you how to configure log and metric collection for the Docker ULM App, which requires configuring two sources:
-
-* **Docker Logs. **Collects stdout/stderr logs from processes that are running within Docker containers.
-* **Docker Stats. **Collects metrics about Docker containers.
-
-To configure log and metric collection for the Docker ULM App, do the following:
-
-1. Follow the instructions to [Collect Logs and Metrics for Docker ULM](/docs/integrations/containers-orchestration/docker-ulm#Collect_Logs_and_Metrics_for_Docker_ULM). Use the same `_sourceCategory` for each host on your cluster.
-1. Follow the instructions to [Install the Docker ULM App](/docs/integrations/containers-orchestration/docker-ulm#Install_the_Docker_ULM_App) and dashboards.
-
-
-### Step 2. Deploy FluentD and FluentBit to collect logs
-
-Follow the instructions in this section to create Sumo Logic fields and collector, then deploy Fluentd and FluentBit on Manager Node.
-
-You don’t need to deploy Prometheus. Plus, docker EE collection has been tested with Helm Version 2.12. For a non-Helm version go[ here](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/master/deploy/docs/Non_Helm_Installation.md#non-helm-installation).
-
-1. [Before you start](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/master/deploy/docs/Non_Helm_Installation.md#before-you-start)
-2. [Create Sumo Fields and a collector](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/master/deploy/docs/Non_Helm_Installation.md#create-sumo-fields-a-collector)
-    * [Automatic Source Creation and Setup YAML](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/master/deploy/docs/Non_Helm_Installation.md#automatic-source-creation-and-setup-yaml)
-    * [Manual Source Creation and Setup](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/master/deploy/docs/Non_Helm_Installation.md#manual-source-creation-and-setup)
-        * [Create the namespace and secret](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/master/deploy/docs/Non_Helm_Installation.md#create-the-namespace-and-secret)
-        * [Create a Hosted Collector and an HTTP Source](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/master/deploy/docs/Non_Helm_Installation.md#create-a-hosted-collector-and-an-http-source)
-3. [Deploy Fluentd](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/master/deploy/docs/Non_Helm_Installation.md#deploy-fluentd)
-    * [Use default configuration](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/master/deploy/docs/Non_Helm_Installation.md#use-default-configuration)
-    * [Customize configuration](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/master/deploy/docs/Non_Helm_Installation.md#customize-configuration)
-    * [Verify the pods are running](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/master/deploy/docs/Non_Helm_Installation.md#verify-the-pods-are-running)
-4. [Deploy FluentBit](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/master/deploy/docs/Non_Helm_Installation.md#deploy-fluentbit)
-
-
-#### Troubleshooting
-
-If you get the following error while executing `kubectl`, your kube config is not wired correctly to UCP’s kube: `The connection to the server localhost:8080 was refused - did you specify the right host or port?`
-
-**do the following:
-
-1. Log in to the UCP Web UI (dashboard), navigate to your user account, and click **My Profile**.
-2. Then click **Client Bundles >** **New Client Bundle** > **Generate Client Bundle**.
-3. Unpack the **ucp-bundle-XYZ.zip** file on the Manager Node/Machine.
-```bash
-unzip ucp-bundle-XYZ.zip
-```
-4. Run the following command.
-```bash
-source env.sh
-```
-
-Assuming you have a Mac/Unix environment, **docker** and **kubectl** will work on your cluster as your user ID, as shown in the following example where the user ID is **admin**.
-
-
-### Log Types and Examples
+## Log Types and Examples
 
 The Docker EE App uses the following log types.
 
@@ -149,6 +92,64 @@ _sourceCategory=kubernetes/system _sourceName=docker
 _sourceCategory=docker _sourceName= ucp-kube-controller-manager (fail* or error or except*)
 | parse "* *       *" as misc,time,msg
 ```
+
+
+## Collecting Logs and Metrics for Docker EE
+
+This section has instructions for collecting logs for the Sumo App for Docker EE. This app works in conjunction with the Docker ULM App, and the first step is to configure collection for Docker ULM App. Then, since Docker EE uses Kubernetes for orchestration, you install and deploy the Sumo Logic Fluentd plugin for collection of Docker EE specific components.
+
+
+### Step 1. Collect logs and metrics for the Docker ULM App
+
+This section shows you how to configure log and metric collection for the Docker ULM App, which requires configuring two sources:
+
+* **Docker Logs. **Collects stdout/stderr logs from processes that are running within Docker containers.
+* **Docker Stats. **Collects metrics about Docker containers.
+
+To configure log and metric collection for the Docker ULM App, do the following:
+
+1. Follow the instructions to [Collect Logs and Metrics for Docker ULM](/docs/integrations/containers-orchestration/docker-ulm#Collect_Logs_and_Metrics_for_Docker_ULM). Use the same `_sourceCategory` for each host on your cluster.
+1. Follow the instructions to [Install the Docker ULM App](/docs/integrations/containers-orchestration/docker-ulm#Install_the_Docker_ULM_App) and dashboards.
+
+
+### Step 2. Deploy FluentD and FluentBit to collect logs
+
+Follow the instructions in this section to create Sumo Logic fields and collector, then deploy Fluentd and FluentBit on Manager Node.
+
+You don’t need to deploy Prometheus. Plus, docker EE collection has been tested with Helm Version 2.12. For a non-Helm version go[ here](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/master/deploy/docs/Non_Helm_Installation.md#non-helm-installation).
+
+1. [Before you start](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/master/deploy/docs/Non_Helm_Installation.md#before-you-start)
+2. [Create Sumo Fields and a collector](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/master/deploy/docs/Non_Helm_Installation.md#create-sumo-fields-a-collector)
+    * [Automatic Source Creation and Setup YAML](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/master/deploy/docs/Non_Helm_Installation.md#automatic-source-creation-and-setup-yaml)
+    * [Manual Source Creation and Setup](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/master/deploy/docs/Non_Helm_Installation.md#manual-source-creation-and-setup)
+        * [Create the namespace and secret](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/master/deploy/docs/Non_Helm_Installation.md#create-the-namespace-and-secret)
+        * [Create a Hosted Collector and an HTTP Source](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/master/deploy/docs/Non_Helm_Installation.md#create-a-hosted-collector-and-an-http-source)
+3. [Deploy Fluentd](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/master/deploy/docs/Non_Helm_Installation.md#deploy-fluentd)
+    * [Use default configuration](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/master/deploy/docs/Non_Helm_Installation.md#use-default-configuration)
+    * [Customize configuration](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/master/deploy/docs/Non_Helm_Installation.md#customize-configuration)
+    * [Verify the pods are running](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/master/deploy/docs/Non_Helm_Installation.md#verify-the-pods-are-running)
+4. [Deploy FluentBit](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/master/deploy/docs/Non_Helm_Installation.md#deploy-fluentbit)
+
+
+#### Troubleshooting
+
+If you get the following error while executing `kubectl`, your kube config is not wired correctly to UCP’s kube: `The connection to the server localhost:8080 was refused - did you specify the right host or port?`
+
+Do the following:
+
+1. Log in to the UCP Web UI (dashboard), navigate to your user account, and click **My Profile**.
+2. Then click **Client Bundles >** **New Client Bundle** > **Generate Client Bundle**.
+3. Unpack the **ucp-bundle-XYZ.zip** file on the Manager Node/Machine.
+```bash
+unzip ucp-bundle-XYZ.zip
+```
+4. Run the following command.
+```bash
+source env.sh
+```
+
+Assuming you have a Mac/Unix environment, **docker** and **kubectl** will work on your cluster as your user ID, as shown in the following example where the user ID is **admin**.
+
 
 
 ## Installing the Docker EE App

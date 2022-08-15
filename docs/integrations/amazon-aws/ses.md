@@ -11,17 +11,91 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Amazon Simple Email Service (Amazon SES) is a cloud-based email sending and receiving service. The Sumo Logic App for Amazon SES helps you monitor the email platform activities. The app uses CloudTrail events and SES notifications, and provides pre-configured dashboards that provide insights on the status of the email delivery including bounced notifications, delivered notifications, and various SES CloudTrail events.
 
-### Log Types
+## Log Types
+
 The Amazon SES App uses:
 * AWS CloudTrail events for SES. For more details, see [here](https://docs.aws.amazon.com/ses/latest/DeveloperGuide/logging-using-cloudtrail.html#service-name-info-in-cloudtrail). 
 * SES Notifications. For more details, see [here](https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-using-notifications.html). 
 
 Amazon Simple Email Service (Amazon SES) is a cloud-based email sending and receiving service. The Amazon SES App helps you monitor the email platform activities, utilizing CloudTrail events and SES notifications (via SNS).
 
-## Collect Logs for the Amazon SES App
+
+### Sample Log Messages
+
+```json title="CloudTrail log"
+{
+  "eventVersion": "1.04",
+  "userIdentity": {
+    "type": "IAMUser",
+    "principalId": "AIDAI1234567890YGJ2G6",
+    "arn": "arn:aws:iam::123456789033:user/mkmiller",
+    "accountId": "123456789033",
+    "accessKeyId": "ASI1234567890IHSAOIQ",
+    "userName": "jbrown",
+    "sessionContext": {
+      "attributes": {
+        "mfaAuthenticated": "true",
+        "creationDate": "2017-12-12T11:18:58Z"
+      }
+    },
+    "invokedBy": "signin.amazonaws.com"
+  },
+  "eventTime": "2018-01-02T19:45:18Z",
+  "eventSource": "ses.amazonaws.com",
+  "eventName": "GetIdentityMailFromDomainAttributes",
+  "awsRegion": "us-west-3",
+  "sourceIPAddress": "220.18.108.139",
+  "userAgent": "signin.amazonaws.com",
+  "requestParameters": {
+    "identities": [
+      "pwilson@sumologic.com",
+      "amoore1@sumologic.com"
+    ]
+  },
+  "responseElements": {
+    "mailFromDomainAttributes": {
+      "mkmiller@sumologic.com": {
+        "behaviorOnMXFailure": "UseDefaultValue"
+      },
+      "mperez1@sumologic.com": {
+        "behaviorOnMXFailure": "UseDefaultValue"
+      }
+    }
+  },
+  "requestID": "9774b3e6-df4d-11e7-8e07-7d3a17657a4d",
+  "eventID": "d36bd7a4-03f0-4245-a6b8-cdb56cfc8e91",
+  "eventType": "AwsApiCall",
+  "recipientAccountId": "123456789033"
+}
+```
+
+```json title="SES log"
+{"notificationType":"Delivery","mail":{"timestamp":"2018-02-08T18:18:09.060Z","source":"Sumo Logic <service@sumologic.com>","sourceArn":"arn:aws:ses:us-west-3:123456789029:identity/service@sumologic.com","sourceIp":"19.171.22.2","sendingAccountId":"122226337001","messageId":"010001606dc7dea0-91abab6b-b5fc-47as-921f-813c92ac40ud-000000","destination":["bob@example.com"]},"delivery":{"timestamp":"2017-12-19T07:58:23.735Z","processingTimeMillis":865,"recipients":["jason@sumo.com"],"smtpResponse":"250 2.0.0 OK 1513670303 h58si3264405qta.418 - gsmtp","remoteMtaIp":"169.107.162.237","reportingMTA":"a9-19.smtp-out.amazonses.com"}}
+{"notificationType":"Bounce","bounce":{"bounceType":"Permanent","bounceSubType":"Suppressed","bouncedRecipients":[{"emailAddress":"larry@customer.com","action":"failed","status":"5.1.1","diagnosticCode":"Amazon SES has suppressed sending to this address because it has a recent history of bouncing as an invalid address. For more information about how to remove an address from the suppression list, see the Amazon SES Developer Guide: http://docs.aws.amazon.com/ses/lates...ssionlist.html "}],"timestamp":"2018-04-12T11:46:41.807Z","feedbackId":"010001606e10a2db-3807dda0-4311-4b62-b883-8e0cb4122954-000000","reportingMTA":"dns; amazonses.com"},"mail":{"timestamp":"2017-12-19T09:17:52.309Z","source":"Sumo Logic <service@sumologic.com>","sourceArn":"arn:aws:ses:us-east-3:123456789029:identity/service@sumologic.com","sourceIp":"169.107.162.237","sendingAccountId":"123456789029","messageId":"010001606e109e93-29782834-7101-4a4a-abbd-2d3e971d1173-000000","destination":["naren@demo.com"]}}
+{"notificationType":"Complaint","complaint":{"complainedRecipients":[{"emailAddress":"nathan@sumodemoacme.com"}],"timestamp":"2018-04-12T12:25:07.641Z","feedbackId":"01000162b539f06b-d701b0a8-bde5-48ea-85b2-a8a58e4de012-000000","userAgent":"AOL SComp","complaintFeedbackType":"abuse","arrivalDate":"2018-04-12T12:25:07.641Z"},"mail":{"timestamp":"2018-04-12T12:25:07.641Z","source":"Sumo Logic Information <service@sumologic.com>","sourceArn":"arn:aws:ses:us-west-2:123456789029:identity/service@sumologic.com","sourceIp":"147.106.118.104","sendingAccountId":"123456789029","messageId":"0100016292d33f2f-6a6d0111-cfb3-499b-a667-9edae2d901c5-000000","destination":(["jackson@longsumo.com"]}}
+```
+
+
+### Sample Query
+
+```sql title="Top bounced email addresses"
+(_sourceCategory=aws-ses or _sourceCategory=AWS/SES/Notifications) "\"notificationType\":\"Bounce\""
+| json "notificationType" nodrop
+| json "bounce.bounceSubType" as bounceSubType nodrop
+| json "bounce.bounceType" as bounceType nodrop
+| json "bounce.bouncedRecipients" as bouncedRecipients nodrop
+| parse regex field=bouncedRecipients "\"emailAddress\":\"(?[^\"]*)\"" multi
+| parse field=BouncedemailAddress "*@*" as name, domain
+| where notificationType="Bounce"
+| count as eventCount by BouncedemailAddress
+| sort by eventCount, BouncedemailAddress
+| limit 10
+```
+
+
+## Collecting Logs for the Amazon SES App
 
 This section provides instructions for collecting CloudTrail Event logs and SES Notifications Via SNS.
-
 
 ### Step 1. Plan Source Categories
 
@@ -151,82 +225,6 @@ Selecting an AWS GovCloud region means your data will be leaving a FedRAMP-high 
 :::note
 SES sends notifications to SNS in a JSON format. Any notification sent through SNS is by default wrapped into a JSON message. This then creates a nested JSON that is a nearly unreadable message. To prevent the problem of nested JSON messages, we highly recommend configuring SNS to use [raw message ](http://docs.aws.amazon.com/sns/latest/dg/large-payload-raw-message.html)delivery option.
 :::
-
-
-### Sample Log Messages
-
-
-```json title="CloudTrail log"
-{
-  "eventVersion": "1.04",
-  "userIdentity": {
-    "type": "IAMUser",
-    "principalId": "AIDAI1234567890YGJ2G6",
-    "arn": "arn:aws:iam::123456789033:user/mkmiller",
-    "accountId": "123456789033",
-    "accessKeyId": "ASI1234567890IHSAOIQ",
-    "userName": "jbrown",
-    "sessionContext": {
-      "attributes": {
-        "mfaAuthenticated": "true",
-        "creationDate": "2017-12-12T11:18:58Z"
-      }
-    },
-    "invokedBy": "signin.amazonaws.com"
-  },
-  "eventTime": "2018-01-02T19:45:18Z",
-  "eventSource": "ses.amazonaws.com",
-  "eventName": "GetIdentityMailFromDomainAttributes",
-  "awsRegion": "us-west-3",
-  "sourceIPAddress": "220.18.108.139",
-  "userAgent": "signin.amazonaws.com",
-  "requestParameters": {
-    "identities": [
-      "pwilson@sumologic.com",
-      "amoore1@sumologic.com"
-    ]
-  },
-  "responseElements": {
-    "mailFromDomainAttributes": {
-      "mkmiller@sumologic.com": {
-        "behaviorOnMXFailure": "UseDefaultValue"
-      },
-      "mperez1@sumologic.com": {
-        "behaviorOnMXFailure": "UseDefaultValue"
-      }
-    }
-  },
-  "requestID": "9774b3e6-df4d-11e7-8e07-7d3a17657a4d",
-  "eventID": "d36bd7a4-03f0-4245-a6b8-cdb56cfc8e91",
-  "eventType": "AwsApiCall",
-  "recipientAccountId": "123456789033"
-}
-```
-
-```json title="SES log"
-{"notificationType":"Delivery","mail":{"timestamp":"2018-02-08T18:18:09.060Z","source":"Sumo Logic <service@sumologic.com>","sourceArn":"arn:aws:ses:us-west-3:123456789029:identity/service@sumologic.com","sourceIp":"19.171.22.2","sendingAccountId":"122226337001","messageId":"010001606dc7dea0-91abab6b-b5fc-47as-921f-813c92ac40ud-000000","destination":["bob@example.com"]},"delivery":{"timestamp":"2017-12-19T07:58:23.735Z","processingTimeMillis":865,"recipients":["jason@sumo.com"],"smtpResponse":"250 2.0.0 OK 1513670303 h58si3264405qta.418 - gsmtp","remoteMtaIp":"169.107.162.237","reportingMTA":"a9-19.smtp-out.amazonses.com"}}
-{"notificationType":"Bounce","bounce":{"bounceType":"Permanent","bounceSubType":"Suppressed","bouncedRecipients":[{"emailAddress":"larry@customer.com","action":"failed","status":"5.1.1","diagnosticCode":"Amazon SES has suppressed sending to this address because it has a recent history of bouncing as an invalid address. For more information about how to remove an address from the suppression list, see the Amazon SES Developer Guide: http://docs.aws.amazon.com/ses/lates...ssionlist.html "}],"timestamp":"2018-04-12T11:46:41.807Z","feedbackId":"010001606e10a2db-3807dda0-4311-4b62-b883-8e0cb4122954-000000","reportingMTA":"dns; amazonses.com"},"mail":{"timestamp":"2017-12-19T09:17:52.309Z","source":"Sumo Logic <service@sumologic.com>","sourceArn":"arn:aws:ses:us-east-3:123456789029:identity/service@sumologic.com","sourceIp":"169.107.162.237","sendingAccountId":"123456789029","messageId":"010001606e109e93-29782834-7101-4a4a-abbd-2d3e971d1173-000000","destination":["naren@demo.com"]}}
-{"notificationType":"Complaint","complaint":{"complainedRecipients":[{"emailAddress":"nathan@sumodemoacme.com"}],"timestamp":"2018-04-12T12:25:07.641Z","feedbackId":"01000162b539f06b-d701b0a8-bde5-48ea-85b2-a8a58e4de012-000000","userAgent":"AOL SComp","complaintFeedbackType":"abuse","arrivalDate":"2018-04-12T12:25:07.641Z"},"mail":{"timestamp":"2018-04-12T12:25:07.641Z","source":"Sumo Logic Information <service@sumologic.com>","sourceArn":"arn:aws:ses:us-west-2:123456789029:identity/service@sumologic.com","sourceIp":"147.106.118.104","sendingAccountId":"123456789029","messageId":"0100016292d33f2f-6a6d0111-cfb3-499b-a667-9edae2d901c5-000000","destination":(["jackson@longsumo.com"]}}
-```
-
-
-
-### Sample Queries
-
-
-```sql title="Top bounced email addresses"
-(_sourceCategory=aws-ses or _sourceCategory=AWS/SES/Notifications) "\"notificationType\":\"Bounce\""
-| json "notificationType" nodrop
-| json "bounce.bounceSubType" as bounceSubType nodrop
-| json "bounce.bounceType" as bounceType nodrop
-| json "bounce.bouncedRecipients" as bouncedRecipients nodrop
-| parse regex field=bouncedRecipients "\"emailAddress\":\"(?[^\"]*)\"" multi
-| parse field=BouncedemailAddress "*@*" as name, domain
-| where notificationType="Bounce"
-| count as eventCount by BouncedemailAddress
-| sort by eventCount, BouncedemailAddress
-| limit 10
-```
 
 
 

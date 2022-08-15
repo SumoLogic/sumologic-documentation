@@ -306,7 +306,7 @@ Here’s an explanation for additional values set by this configuration that we 
 * `telegraf.influxdata.com/inputs`
     * In the tags section, which is `[inputs.snmp.tags]`
         * **component**: “proxy” - This value is used by Sumo Logic apps to identify application components.
-        * **proxy_system**: “squidproxy” - This value identifies the proxy system.
+        * `proxy_system`: “squidproxy” - This value identifies the proxy system.
 
 For all other parameters, see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#Configuring-Telegraf) for more parameters that can be configured in the Telegraf agent globally.
 
@@ -333,7 +333,7 @@ proxy_cluster="<cluster_CHANGEME>"
 ```
 
 
-Please enter in values for the following parameters (marked in **bold and CHANGE_ME** above):
+Enter in values for the following parameters (marked in **bold and CHANGE_ME** above):
 
 * `environment` - This is the deployment environment where the Squid Proxy cluster identified by the value of ` servers`  resides. For example:- dev, prod, or QA. While this value is optional we highly recommend setting it.
 * `proxy_cluster` - Enter a name to identify this Squid Proxy cluster. This farm name will be shown in the Sumo Logic dashboards. If you haven’t defined a cluster in Squid Proxy, then enter `default` for `proxy_cluster`.
