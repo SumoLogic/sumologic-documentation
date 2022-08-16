@@ -16,7 +16,7 @@ The Cloudflare App provides a set of dashboards that make analyzing Cloudflare l
 
 ## Log Types
 
-The Cloudflare App uses HTTP request logs in JSON format gathered from all of the 155+ Cloudflare data centers. By default, timestamps are returned as Unix nanosecond integers. We recommend using the RFC 3339 format for sending logs to Sumo Logic. For a description of the fields available in the logs see link [here](https://developers.cloudflare.com/logs/logpull-api/#fields).
+The Cloudflare App uses HTTP request logs in JSON format gathered from all of the 160+ Cloudflare data centers. By default, timestamps are returned as Unix nanosecond integers. We recommend using the RFC 3339 format for sending logs to Sumo Logic. For a description of the fields available in the logs see link [here](https://developers.cloudflare.com/logs/logpull-api/#fields).
 
 
 ### Sample Log Message
@@ -77,8 +77,6 @@ To set up a Hosted Collector and specify a Sumo Logic Source, do the following:
 
 ## Installing the Cloudflare App
 
-This application has been developed and is supported by Cloudflare. In case of technical questions, please review the technical [documentation](https://developers.cloudflare.com/logs/) for Cloudflare logs or email analytics@cloudflare.com.
-
 This section has instructions for installing the Cloudflare App for Sumo and descriptions of each of the dashboards.
 
 Now that you've set up log and metric collection, you can install the Cloudflare App, and use its pre-configured searches and [dashboards](#viewing-dashboards).
@@ -88,18 +86,14 @@ To install the app, do the following:
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
 1. From the **App Catalog**, search for and select the app**.**
-2. Select the version of the service you're using and click **Add to Library**.
-
-Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/library/install-apps)
-
-
-1. To install the app, complete the following fields.
+2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/library/install-apps)
+3. To install the app, complete the following fields.
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
     2. **Data Source.** Select either of these options for the data source. 
         * Choose **Source Category**, and select a source category from the list. 
         * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (_sourceCategory=MyCategory). 
     3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-2. Click **Add to Library**.
+4. Click **Add to Library**.
 
 Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization.
 

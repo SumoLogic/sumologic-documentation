@@ -91,7 +91,7 @@ It’s assumed that you're using the latest helm chart version. If not, upgrade 
 
 Follow the steps listed below to collect Cassandra metrics from a Kubernetes environment.
 
-1. Set up your [Kubernetes Collection with the Telegraf Operator](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf.md#Install_Telegraf_in_a_Kubernetes_environment).
+1. Set up your [Kubernetes Collection with the Telegraf Operator](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf).
 2. On your Cassandra Pods, add the following annotations:
 ```sql
 annotations:
@@ -156,7 +156,7 @@ annotations:
     tag_keys = ["name"]
     field_prefix = "$1_"
 ```
-Please enter in values for the following parameters:
+Enter in values for the following parameters:
 * `telegraf.influxdata.com/inputs` - This contains the required configuration for the Telegraf Cassandra Input plugin. Please refer to [this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/redis) for more information on configuring the Cassandra input plugin for Telegraf. As Telegraf will be run as a sidecar, the host should always be localhost.
    * In the input plugins section (`[[inputs.jolokia2_agent]]`):
       * `urls` - The URL to the Cassandra server. This can be a comma-separated list to connect to multiple Cassandra servers. Please see [this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/jolokia2) for more information on additional parameters for configuring the Cassandra input plugin for Telegraf.
@@ -225,7 +225,7 @@ This section explains the steps to collect Cassandra logs from a Kubernetes envi
 3. Add an FER to normalize the fields in Kubernetes environments. Labels created in Kubernetes environments automatically are prefixed with pod_labels. To normalize these for our app to work, we need to create a Field Extraction Rule if not already created for Proxy Application Components. To do so:
    1. Go to **Manage Data > Logs > Field Extraction Rules**.
    2. Click the + Add button on the top right of the table.
-   3. The following form appears:
+   3. The **Add Field Extraction Rule** form will appear:
 4. Enter the following options:
    * **Rule Name**. Enter the name as **App Observability - Database**.
    * **Applied At.** Choose **Ingest Time**

@@ -11,9 +11,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The IIS 10 (Legacy) App monitors the performance and reliability of your Microsoft Internet Information Services (IIS) infrastructure, identifying customer-facing and internal operational issues. This app also provides the ability to monitor customer paths and interactions, so you can analyze how customers are using your product. The app provides predefined searches and Dashboards, that give visibility into your environment for real-time and historical analysis.
 
-## Collect Logs for the IIS 10 (Legacy) App
 
-### Log Types  
+## Log Types  
 
 IIS 10 (Legacy) App uses IIS version 10 logs. This section demonstrates how to enable logging from Microsoft Internet Information Services (IIS) and HTTP Error Logs on your Windows server and ingest those logs into Sumo Logic.
 
@@ -26,18 +25,29 @@ This section covers the following default log formats for IIS 10 and IIS 8.5:
 * [HTTP Error Logs](/docs/integrations/microsoft-azure/iis-10-legacy#Collect_Logs_for_the_IIS_10_(Legacy)_App#HTTP_Error_Logs)
 * [Performance Logs](/docs/integrations/microsoft-azure/iis-10-legacy#Collect_Logs_for_the_IIS_10_(Legacy)_App#Performance_Logs)
 
-IIS Log files are generated as local files. For a standard Windows Server, the default log location is as follows: `%SystemDrive%\inetpub\logs\LogFiles`
+IIS Log files are generated as local files. For a standard Windows Server, the default log location is as follows:
+```bash
+%SystemDrive%\inetpub\logs\LogFiles
+```
 
 For example:
-```
+```bash
 c:\inetpub\logs\LogFiles\
 ```
 
-
 Within the folder, you will find subfolders for each site configured with IIS. The logs are stored in folders that follow a naming pattern like W3SVC1, W3SVC2, W3SVC3, etc. The number at the end of the folder name corresponds to your site ID. For example, W3SVC2 is for site ID 2.
 
+### Sample Log Messages  
 
-### IIS Access Logs (W3C default format)  
+This section provides samples of the following log message types:
+
+* IIS Access Logs
+* HTTP Error Logs
+* IIS Performance Logs
+
+
+
+#### IIS Access Logs (W3C default format)  
 
 Sumo Logic expects logs in [W3C](https://docs.microsoft.com/en-us/windows/desktop/http/w3c-logging) format with following fields for our Field Extraction Rules and IIS 10 Application:
 
@@ -46,52 +56,164 @@ Sumo Logic expects logs in [W3C](https://docs.microsoft.com/en-us/windows/deskto
 cs(User-Agent) cs(Referrer) sc-status sc-substatus sc-win32-status time-taken
 ```
 
-
 IIS allows you to choose fields to log in IIS access logs. For explanations on the various fields and their significance see this [link](https://docs.microsoft.com/en-us/windows/desktop/http/w3c-logging).
+
+```json title="IIS Access Log (WC3 default format)"
+2019-03-14 07:58:10 10.0.0.104 PUT /Internal/RemoteShare/ ReturnUrl=%2fConfigWeb%2fAudit.aspx
+443 - 160.44.59.168 Mozilla/5.0+(Windows+NT+6.1;+rv:50.0)+Gecko/20100101+Firefox/50.0
+http://www.greylock.com 304 8 12030 58
+2019-03-14 08:10:41 10.0.0.103 GET /welcome.png v=4.5.0 80 - 205.168.30.201
+Mozilla/5.0+(compatible;+Googlebot/2.1;++http://www.google.com/bot.html)
+http://www.bing.com/search?q=sumo%20applications&src=IE-SearchBox&FORM=IE11SR 200 8 12030 6
+```
+
 
 
 #### HTTP Error Logs  
+
+```json title="HTTP Error Log"
+2019-03-14 20:10:10 10.20.190.10 45082 10.24.170.60 80 HTTP/1.1 GET
+/GlobalVilla/MySwimmingPool/images/favicons/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/etc/passwd
+403 - Forbidden -
+2019-03-14 23:10:10 10.20.190.10 41095 10.24.170.60 80 HTTP/1.1 POST
+/GlobalVilla/MySwimmingPool/sumodemo/upload.php 411 - LengthRequired -
+2019-03-14 23:09:41 10.20.190.10 58152 10.24.170.60 80 - - - - - Timer_ConnectionIdle -
+```
 
 ```
 #Fields: date time c-ip c-port s-ip s-port protocol_version verb cookedurl_query
 protocol_status siteId Reason_Phrase Queue_Name
 ```
 
-
 For information on how to configure HTTP Error Logs, and for explanations on the various HTTP Error Log fields and their significance see this [link](https://support.microsoft.com/en-us/help/820729/error-logging-in-http-apis).
 
 
-#### Performance Logs  
+### IIS Performance Logs
 
 Output of Perfmon queries to be configured at Installed Collector, "Windows Performance" Source.
 
-```
+```sql
 #Fields: date time s-ip cs-method cs-uri-stem cs-uri-query s-port cs-usern…" with
 "IIS Access Logs (W3C format) #Fields: date time s-ip cs-method cs-uri-stem cs-uri-query
 s-port cs-us…
 ```
 
+Below are examples of IIS Performance Log formats produced by two different queries. For more information on other W3SVC WebServices Perfmon Counters refer to [this documentation](https://docs.microsoft.com/en-us/previous-versions//aa394298(v=vs.85)).
 
+
+This Perfmon query:
+
+```sql title="Perfmon query A"
+select TotalMethodRequestsPerSec, GetRequestsPerSec, PostRequestsPerSec, CurrentConnections,
+CurrentAnonymousUsers, CurrentNonAnonymousUsers, CGIRequestsPerSec, ISAPIExtensionRequestsPerSec,
+BytesReceivedPerSec, BytesSentPerSec, FilesReceivedPerSec, FilesSentPerSec, ServiceUptime,
+BytesTotalPerSec from Win32_PerfFormattedData_W3SVC_WebService
+```
+
+Produces the following log format:
+
+```bash title="Sample IIS Performance Log A"
+instance of Win32_PerfFormattedData_W3SVC_WebService
+{
+BytesReceivedPersec = "50";
+BytesSentPersec = "125";
+BytesTotalPersec = "75";
+CGIRequestsPersec = 0;
+CurrentAnonymousUsers = 10;
+CurrentConnections = 9;
+CurrentNonAnonymousUsers = 8;
+FilesReceivedPersec = 0;
+FilesSentPersec = 0;
+GetRequestsPersec = 6;
+ISAPIExtensionRequestsPersec = 0;
+Name = "_Total";
+PostRequestsPersec = 2;
+ServiceUptime = 2398147;
+TotalMethodRequestsPersec = 0;
+};
+```
+
+This Perfmon query:
+
+```sql title="Perfmon query B"
+Select ArrivalRate, CurrentQueueSize, CacheHitRate, RejectionRate, MaxQueueItemAge from
+Win32_PerfFormattedData_Counters_HTTPServiceRequestQueues
+```
+
+Produces the following log format:
+
+```bash title="Sample IIS Performance Log A"
+instance of Win32_PerfFormattedData_Counters_HTTPServiceRequestQueues
+{
+ArrivalRate = "100";
+CacheHitRate = "27";
+CurrentQueueSize = 0;
+MaxQueueItemAge = "0";
+Name = "GlobalVillage";
+RejectionRate = "0";
+};
+```
+
+### Sample Queries  
+
+The following query sample is taken from the **Top Server Errors by Server** panel on the **IIS 10 - Server Operations - Error dashboard**.
+
+```sql
+_sourceCategory=Webserver/IIS/Access 5*
+| parse regex "(?<server_ip>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}) (?<method>\S+?)
+(?<cs_uri_stem>\S+?) (?<cs_uri_query>\S+?) (?<s_port>\S+?) (?<cs_username>\S+?)
+(?<c_ip>\S+?) (?<cs_User_Agent>\S+?) (?<cs_referer>\S+?) (?<sc_status>\S+?)
+(?<sc_substatus>\S+?) (?<sc_win32_status>\S+?) (?<time_taken>\S+?)$"
+| where sc_status matches "5*"
+| count by server_ip, cs_uri_stem, sc_status, sc_substatus, sc_win32_status | sort - _count
+```
+
+The following query sample is taken from the **Top Reason Phrase** panel on the **IIS 10 - HTTP Error dashboard**.
+
+```sql
+_sourceCategory=Webserver/IIS/Error
+| parse regex "(?<c_ip>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}) (?<c_port>\S+?)
+(?<server_ip>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}) (?<s_port>\S+?) (?<protocol_version>\S+?)
+(?<verb>\S+?) (?<cookedurl_query>\S+?) (?<Protocol_Status>\S+?) (?<SiteId>\S+?)
+(?<Reason_Phrase>\S+?) (?<Queue_Name>\S+?)$"
+| count by Reason_Phrase
+| top 10 Reason_Phrase by _count, Reason_Phrase
+```
+
+The following query sample is taken from the **IIS Site Uptime** panel on the **IIS 10 (Legacy)** **- Overview dashboard**.
+
+```sql
+_sourceCategory=Webserver/IIS/PerfCounter
+Win32_PerfFormattedData_W3SVC_WebService ServiceUptime
+| parse "Name = \"*\";" as Name
+| parse "ServiceUptime = *;" as ServiceUptime
+| withtime ServiceUptime
+| most_recent(ServiceUptime_withtime) as ServiceUptime by Name
+| ServiceUptime / (60*60*24) as ServiceUptimeDays
+| sort by ServiceUptimeDays, Name asc
+| fields -ServiceUptime
+```
+
+
+## Collecting Logs for the IIS 10 (Legacy) App
 
 ### Prerequisite tasks
 
 The following tasks are required to prepare for logging IIS events:
 
-* [Enable logging on your IIS server, if not already enabled](/docs/integrations/microsoft-azure/iis-10-legacy#Collect_Logs_for_the_IIS_10_(Legacy)_App#Enable_logging_on_your_IIS_Server)
-* [Verify log files are being created](/docs/integrations/microsoft-azure/iis-10-legacy#Collect_Logs_for_the_IIS_10_(Legacy)_App#Verify_log_files_are_created)
-* [Enable HTTP Error Logs on your Windows server](/docs/integrations/microsoft-azure/iis-10-legacy#Collect_Logs_for_the_IIS_10_(Legacy)_App#Enable_HTTP_Error_Logs_on_your_Windows_Server)
+* [Enable logging on your IIS server, if not already enabled](#Enable_logging_on_your_IIS_Server)
+* [Verify log files are being created](#Verify_log_files_are_created)
+* [Enable HTTP Error Logs on your Windows server](#Enable_HTTP_Error_Logs_on_your_Windows_Server)
 
 
 #### Enable logging on your IIS Server
 
 Perform the following task, if logging on your IIS Server is not already enabled.
 
-
 To enable logging on your IIS Server, do the following:
 
 1. Open IIS Manager.
 2. Select the site or server in the **Connections** pane, and then double-click **Logging**.
-
 
 Enhanced logging is only available for site-level logging. If you select the server in the Connections pane, then the Custom Fields section of the W3C Logging Fields dialog is disabled.
 
@@ -110,9 +232,7 @@ For more information about IIS log format and log configuration refer [link](htt
 
 #### Verify that log files are created
 
-
 Perform the following task to ensure that log files are being created.
-
 
 To confirm log files are being created, do the following:
 
@@ -124,13 +244,15 @@ To confirm log files are being created, do the following:
 
 Perform the following task to enable HTTP Error Logs on your Windows Server, that is hosting the IIS Server.
 
-
 To enable HTTP Error Logs on the Windows Server hosting IIS Server, do the following:
 
 1. To configure HTTP Error Logging, refer to this document [link](https://docs.microsoft.com/en-us/windows/desktop/http/configuring-http-server-api-error-logging).
 2. To understand HTTP Error Log format, refer to this document [link](https://docs.microsoft.com/en-us/windows/desktop/http/format-of-the-http-server-api-error-logs).
 
-HTTP Error Log files are generated as local files. The default HTTP Error log file location is: `C:\Windows\System32\LogFiles\HTTPERR`
+HTTP Error Log files are generated as local files. The default HTTP Error log file location is:
+```
+C:\Windows\System32\LogFiles\HTTPERR
+```
 
 ### Configure a Collector
 
@@ -144,18 +266,16 @@ To collect logs for the IIS 10 App, you will install a local Collector on the sa
 
 This section demonstrates how to configure sources for the following log types:
 
-* [IIS Access Logs](/docs/integrations/microsoft-azure/iis-10-legacy#Collect_Logs_for_the_IIS_10_(Legacy)_App#Configure_Source_for_IIS_Access_Logs)
-* [HTTP Error Logs](/docs/integrations/microsoft-azure/iis-10-legacy#Collect_Logs_for_the_IIS_10_(Legacy)_App#Configure_Source_for_HTTP_Error_Logs)
-* [IIS Performance (Perfmon) Logs](/docs/integrations/microsoft-azure/iis-10-legacy#Collect_Logs_for_the_IIS_10_(Legacy)_App#Configure_Source_for_IIS_Performance_(Perfmom)_Logs)
+* [IIS Access Logs](#Configure_Source_for_IIS_Access_Logs)
+* [HTTP Error Logs](#Configure_Source_for_HTTP_Error_Logs)
+* [IIS Performance (Perfmon) Logs](#Configure_Source_for_IIS_Performance-Perfmom-Logs)
 
 
 #### Configure Source for IIS Access Logs
 
 This section demonstrates how to configure a Local File Source for IIS Access Logs, for use with an [Installed Collector](/docs/integrations/microsoft-azure/iis-10-legacy#Configure-a-Collector). You may configure a [Remote File Source](/docs/send-data/Sources/sources-installed-collectors/Remote-File-Source), but the configuration is more complex.
 
-
 Sumo Logic recommends using a Local File Source whenever possible.
-
 
 To configure a local file source for IIS Access Logs, do the following:
 
@@ -180,8 +300,6 @@ After a few minutes, your new Source should be propagated down to the Collector 
 
 
 #### Configure Source for HTTP Error Logs
-21
-
 
 This section demonstrates how to configure a Local File Source for HTTP Error Logs, for use with an [Installed Collector](/docs/integrations/microsoft-azure/iis-10-legacy#Configure-a-Collector). You may configure a [Remote File Source](/docs/send-data/Sources/sources-installed-collectors/Remote-File-Source), but the configuration is more complex.
 
@@ -189,7 +307,6 @@ This section demonstrates how to configure a Local File Source for HTTP Error Lo
 Sumo Logic recommends using a Local File Source whenever possible.
 
 To configure a local file source for HTTP Error Logs, do the following:
-
 
 1. Configure a [Local File Source](/docs/send-data/Sources/sources-installed-collectors/Local-File-Source).
 2. Specify the Local File Source Fields as follows:
@@ -212,18 +329,12 @@ After a few minutes, your new Source should be propagated down to the Collector 
 
 
 #### Configure Source for IIS Performance (Perfmon) Logs
-24
-
-
 This section demonstrates how to configure a Windows Performance Source, for use with an [Installed Collector](/docs/integrations/microsoft-azure/iis-10-legacy#Configure-a-Collector).
 
 
-25
 Sumo Logic recommends using a Local Windows Performance source whenever possible.
 
 Use the appropriate source for your environment:
-
-
 
 * [Local Windows Performance Monitor Log Source](/docs/send-data/Sources/sources-installed-collectors/Local-Windows-Performance-Monitor-Log-Source)
 * [Remote Windows Performance Monitor Log Source](/docs/send-data/Sources/sources-installed-collectors/Remote-Windows-Performance-Monitor-Log-Source)
@@ -260,7 +371,7 @@ This section provides examples of the following field extraction rule types:
 
 #### IIS Access Logs Field Extraction Rule
 
-```
+```sql
 _sourceCategory=Webserver/IIS/Access
 | parse regex "(?<server_ip>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}) (?<method>\S+?)
 (?<cs_uri_stem>\S+?) (?<cs_uri_query>\S+?) (?<s_port>\S+?) (?<cs_username>\S+?)
@@ -271,11 +382,9 @@ _sourceCategory=Webserver/IIS/Access
 
 
 #### HTTP ERROR Logs Field Extraction Rule
-29
 
 
-
-```
+```sql
 _sourceCategory=Webserver/IIS/Error
 | parse regex "(?<c_ip>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}) (?<c_port>\S+?)
 (?<server_ip>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}) (?<s_port>\S+?) (?<protocol_version>\S+?)
@@ -287,8 +396,7 @@ _sourceCategory=Webserver/IIS/Error
 
 #### Performance Logs (perfmon Query for W3SVC_WebService) Field Extraction Rule
 
-
-```
+```sql
 _sourceCategory=Webserver/IIS/PerfCounter Win32_PerfFormattedData_W3SVC_WebService
 | parse "Name = \"*\";" as Name nodrop
 | parse "BytesReceivedPersec = \"*\";" as BytesReceivedPersec nodrop
@@ -310,9 +418,6 @@ _sourceCategory=Webserver/IIS/PerfCounter Win32_PerfFormattedData_W3SVC_WebServi
 
 
 #### Performance Logs (perfmon Query for Counters_HTTPServiceRequestQueues) Field Extraction Rule
-31
-
-
 
 <table>
   <tr>
@@ -390,153 +495,6 @@ _sourceCategory=Webserver/IIS/PerfCounter Win32_PerfFormattedData_W3SVC_WebServi
 </table>
 
 
-
-### Sample Log Messages  
-
-This section provides samples of the following log message types:
-
-* IIS Access Logs
-* HTTP Error Logs
-* IIS Performance Logs
-
-
-#### Sample Logs
-
-
-```json titlee="IIS Access Log (WC3 default format)"
-2019-03-14 07:58:10 10.0.0.104 PUT /Internal/RemoteShare/ ReturnUrl=%2fConfigWeb%2fAudit.aspx
-443 - 160.44.59.168 Mozilla/5.0+(Windows+NT+6.1;+rv:50.0)+Gecko/20100101+Firefox/50.0
-http://www.greylock.com 304 8 12030 58
-
-2019-03-14 08:10:41 10.0.0.103 GET /welcome.png v=4.5.0 80 - 205.168.30.201
-Mozilla/5.0+(compatible;+Googlebot/2.1;++http://www.google.com/bot.html)
-http://www.bing.com/search?q=sumo%20applications&src=IE-SearchBox&FORM=IE11SR 200 8 12030 6
-```
-
-
-```json title="Sample HTTP Error Log"
-2019-03-14 20:10:10 10.20.190.10 45082 10.24.170.60 80 HTTP/1.1 GET
-/GlobalVilla/MySwimmingPool/images/favicons/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/%2e%2e/etc/passwd
-403 - Forbidden -
-
-2019-03-14 23:10:10 10.20.190.10 41095 10.24.170.60 80 HTTP/1.1 POST
-/GlobalVilla/MySwimmingPool/sumodemo/upload.php 411 - LengthRequired -
-
-2019-03-14 23:09:41 10.20.190.10 58152 10.24.170.60 80 - - - - - Timer_ConnectionIdle -
-```
-
-
-#### Sample IIS Performance Logs
-
-Below are examples of IIS Performance Log formats produced by two different queries. For more information on other W3SVC WebServices Perfmon Counters refer to [this documentation](https://docs.microsoft.com/en-us/previous-versions//aa394298(v=vs.85)).
-
-
-
-This Perfmon query:
-
-```sql title="Perfmon query A"
-select TotalMethodRequestsPerSec, GetRequestsPerSec, PostRequestsPerSec, CurrentConnections,
-CurrentAnonymousUsers, CurrentNonAnonymousUsers, CGIRequestsPerSec, ISAPIExtensionRequestsPerSec,
-BytesReceivedPerSec, BytesSentPerSec, FilesReceivedPerSec, FilesSentPerSec, ServiceUptime,
-BytesTotalPerSec from Win32_PerfFormattedData_W3SVC_WebService
-```
-
-Produces the following log format:
-
-```bash title="Sample IIS Performance Log A"
-instance of Win32_PerfFormattedData_W3SVC_WebService
-{
-BytesReceivedPersec = "50";
-BytesSentPersec = "125";
-BytesTotalPersec = "75";
-CGIRequestsPersec = 0;
-CurrentAnonymousUsers = 10;
-CurrentConnections = 9;
-CurrentNonAnonymousUsers = 8;
-FilesReceivedPersec = 0;
-FilesSentPersec = 0;
-GetRequestsPersec = 6;
-ISAPIExtensionRequestsPersec = 0;
-Name = "_Total";
-PostRequestsPersec = 2;
-ServiceUptime = 2398147;
-TotalMethodRequestsPersec = 0;
-};
-```
-
-
-
-This Perfmon query:
-
-```sql title="Perfmon query B"
-Select ArrivalRate, CurrentQueueSize, CacheHitRate, RejectionRate, MaxQueueItemAge from
-Win32_PerfFormattedData_Counters_HTTPServiceRequestQueues
-```
-
-
-Produces the following log format:
-
-```bash title="Sample IIS Performance Log A"
-instance of Win32_PerfFormattedData_Counters_HTTPServiceRequestQueues
-{
-ArrivalRate = "100";
-CacheHitRate = "27";
-CurrentQueueSize = 0;
-MaxQueueItemAge = "0";
-Name = "GlobalVillage";
-RejectionRate = "0";
-};
-```
-
-
-
-### Sample Queries  
-
-The following query sample is taken from the **Top Server Errors by Server** panel on the **IIS 10 - Server Operations - Error dashboard**.
-
-
-```sql
-_sourceCategory=Webserver/IIS/Access 5*
-| parse regex "(?<server_ip>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}) (?<method>\S+?)
-(?<cs_uri_stem>\S+?) (?<cs_uri_query>\S+?) (?<s_port>\S+?) (?<cs_username>\S+?)
-(?<c_ip>\S+?) (?<cs_User_Agent>\S+?) (?<cs_referer>\S+?) (?<sc_status>\S+?)
-(?<sc_substatus>\S+?) (?<sc_win32_status>\S+?) (?<time_taken>\S+?)$"
-| where sc_status matches "5*"
-| count by server_ip, cs_uri_stem, sc_status, sc_substatus, sc_win32_status | sort - _count
-```
-
-
-The following query sample is taken from the **Top Reason Phrase** panel on the **IIS 10 - HTTP Error dashboard**.
-
-
-```sql
-_sourceCategory=Webserver/IIS/Error
-| parse regex "(?<c_ip>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}) (?<c_port>\S+?)
-(?<server_ip>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}) (?<s_port>\S+?) (?<protocol_version>\S+?)
-(?<verb>\S+?) (?<cookedurl_query>\S+?) (?<Protocol_Status>\S+?) (?<SiteId>\S+?)
-(?<Reason_Phrase>\S+?) (?<Queue_Name>\S+?)$"
-| count by Reason_Phrase
-| top 10 Reason_Phrase by _count, Reason_Phrase
-```
-
-
-The following query sample is taken from the **IIS Site Uptime** panel on the **IIS 10 (Legacy)** **- Overview dashboard**.
-
-
-```sql
-_sourceCategory=Webserver/IIS/PerfCounter
-Win32_PerfFormattedData_W3SVC_WebService ServiceUptime
-| parse "Name = \"*\";" as Name
-| parse "ServiceUptime = *;" as ServiceUptime
-| withtime ServiceUptime
-| most_recent(ServiceUptime_withtime) as ServiceUptime by Name
-| ServiceUptime / (60*60*24) as ServiceUptimeDays
-| sort by ServiceUptimeDays, Name asc
-| fields -ServiceUptime
-```
-
-
-
 ## Installing the IIS 10 (Legacy) App
 
 This section demonstrates how to install the IIS 10 (Legacy) App and provides examples and explanations for each of the app's predefined dashboards.
@@ -553,13 +511,13 @@ Locate and install the app you need from the **App Catalog**. If you want to see
 
 Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/library/install-apps)
 
-1. To install the app, complete the following fields.
+3. To install the app, complete the following fields.
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
     2. **Data Source.** Select either of these options for the data source. 
         * Choose **Source Category**, and select a source category from the list. 
         * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). 
     3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-2. Click **Add to Library**.
+4. Click **Add to Library**.
 
 Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization.
 
