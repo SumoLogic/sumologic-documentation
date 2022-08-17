@@ -312,7 +312,7 @@ module.exports = {
                   },
                   {
                     label: 'Root Cause Explorer',
-                    sublabel: 'Learn what caused issues',
+                    sublabel: 'Identify root causes of issues',
                     to: '/docs/observability/root-cause-explorer',
                     icon: 'widgets',
                     activeBaseRegex: '^/docs/observability/root-cause-explorer',
