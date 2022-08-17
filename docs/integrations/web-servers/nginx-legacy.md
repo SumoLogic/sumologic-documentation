@@ -21,20 +21,45 @@ The Sumo Logic App for Nginx (Legacy) helps you monitor webserver activity in Ng
 
 The Sumo Logic App for Nginx assumes the NCSA extended/combined log file format for Access logs and the default Nginx error log file format for error logs.
 
-All Dashboards (except the Error logs Analysis dashboard) assume the Access log format. The Error logs Analysis Dashboard assumes both Access and Error log formats, so as to correlate information between the two.
+All Dashboards (except the Error logs Analysis dashboard) assume the Access log format. The Error logs Analysis Dashboard assumes both Access and Error log formats, so as to correlate information between the two. For more details on Nginx logs, see https://nginx.org/en/docs/http/ngx_http_log_module.html.
 
-For more details on Nginx logs, see https://nginx.org/en/docs/http/ngx_http_log_module.html.
+The Sumo Logic App for Nginx assumes Prometheus format Metrics for Requests and Connections. For Nginx Server metrics, Stub_Status Module from Nginx Configuration is used. For more details on Nginx Metrics, see https://nginx.org/libxslt/en/docs/http/ngx_http_stub_status_module.html.
 
-The Sumo Logic App for Nginx assumes Prometheus format Metrics for Requests and Connections. For Nginx Server metrics, Stub_Status Module from Nginx Configuration is used.
 
-For more details on Nginx Metrics, see https://nginx.org/libxslt/en/docs/http/ngx_http_stub_status_module.html.
+### Sample Log Messages
+
+```txt title="Access Log Example"
+50.1.1.1 - example [23/Sep/2016:19:00:00 +0000] "POST /api/is_individual HTTP/1.1" 200 58 "-"
+"python-requests/2.7.0 CPython/2.7.6 Linux/3.13.0-36-generic"
+```
+
+```txt title="Error Log Example"
+2016/09/23 19:00:00 [error] 1600#1600: *61413 open() "/srv/core/client/dist/client/favicon.ico"
+failed (2: No such file or directory), client: 101.1.1.1, server: _, request: "GET /favicon.ico
+HTTP/1.1", host: "example.com", referrer: "https://abc.example.com/"
+```
+
+### Sample Queries
+
+This sample Query is from the **Requests by Clients** panel of the **Nginx (Legacy) - Overview** dashboard.
+
+```
+_sourceCategory = Labs/Nginx/Logs
+| json field=_raw "log" as nginx_log_message nodrop
+| if (isEmpty(nginx_log_message), _raw, nginx_log_message) as nginx_log_message
+| parse regex field=nginx_log_message "(?<Client_Ip>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})"
+| parse regex field=nginx_log_message "(?<Method>[A-Z]+)\s(?<URL>\S+)\sHTTP/[\d\.]+\"\s(?<Status_Code>\d+)\s(?<Size>[\d-]+)\s\"(?<Referrer>.*?)\"\s\"(?<User_Agent>.+?)\".*"
+| where _sourceHost matches "{{Server}}" and Client_Ip matches "{{Client_Ip}}" and Method matches "{{Method}}" and URL matches "{{URL}}" and Status_Code matches "{{Status_Code}}"
+| count as count by Client_Ip
+| sort count
+```
 
 
 ## Collecting Logs and Metrics for Nginx (Legacy)
 
 This section provides instructions for configuring log and metrics collection for the Sumo Logic App for Nginx (Legacy), which is for non-Kubernetes environment.
 
-### Collect Logs
+### Collecting Logs
 
 Nginx (Legacy) app supports the default access logs and error logs format.
 
@@ -106,33 +131,6 @@ If you're using a service like Fluentd, or you would like to upload your logs ma
 </TabItem>
 </Tabs>
 
-### Sample Log Messages
-
-```txt title="Access Log Example"
-50.1.1.1 - example [23/Sep/2016:19:00:00 +0000] "POST /api/is_individual HTTP/1.1" 200 58 "-"
-"python-requests/2.7.0 CPython/2.7.6 Linux/3.13.0-36-generic"
-```
-
-```txt title="Error Log Example"
-2016/09/23 19:00:00 [error] 1600#1600: *61413 open() "/srv/core/client/dist/client/favicon.ico"
-failed (2: No such file or directory), client: 101.1.1.1, server: _, request: "GET /favicon.ico
-HTTP/1.1", host: "example.com", referrer: "https://abc.example.com/"
-```
-
-### Sample Queries
-
-This sample Query is from the **Requests by Clients** panel of the **Nginx (Legacy) - Overview** dashboard.
-
-```
-_sourceCategory = Labs/Nginx/Logs
-| json field=_raw "log" as nginx_log_message nodrop
-| if (isEmpty(nginx_log_message), _raw, nginx_log_message) as nginx_log_message
-| parse regex field=nginx_log_message "(?<Client_Ip>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})"
-| parse regex field=nginx_log_message "(?<Method>[A-Z]+)\s(?<URL>\S+)\sHTTP/[\d\.]+\"\s(?<Status_Code>\d+)\s(?<Size>[\d-]+)\s\"(?<Referrer>.*?)\"\s\"(?<User_Agent>.+?)\".*"
-| where _sourceHost matches "{{Server}}" and Client_Ip matches "{{Client_Ip}}" and Method matches "{{Method}}" and URL matches "{{URL}}" and Status_Code matches "{{Status_Code}}"
-| count as count by Client_Ip
-| sort count
-```
 
 ### Field Extraction Rules
 
