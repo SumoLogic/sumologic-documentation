@@ -12,11 +12,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 The Microsoft Teams app provides out-of-the-box dashboards to monitor users, teams, channels and permission changes.
 
 
-## Collecting Logs
-
-This section has instructions for collecting logs for the Sumo App for Teams.
-
-### Log Types  
+## Log Types  
 
 The Teams app provides visibility into the logging that Microsoft exposes in the Office 365 Audit Logs for Microsoft Teams. Logged events are grouped into the following categories:
 
@@ -27,11 +23,8 @@ The Teams app provides visibility into the logging that Microsoft exposes in the
 
 For more information, see Microsoft’s [list of Teams Activities](https://docs.microsoft.com/en-us/microsoftteams/audit-log-events#teams-activities).
 
-### Collection process overview
 
-To collect logs for Microsoft Teams, please configure an Office 365 Audit Source. The Teams logs will be present in the “Office 365 General Logs” context. Note, that if you are already collecting logs for Office 365, you can simply make note of the source category configured for the aforementioned context.
-
-Sample Log Message
+### Sample Log Message
 
 ```json
 "CreationTime":"2020-10-30T14:00:51",
@@ -48,13 +41,22 @@ Sample Log Message
 "TeamName":"My Team"
 ```
 
-Sample Query
+### Sample Query
 ```sql
 _sourceCategory="O365/General"
 | json "Workload", "Operation" , "UserId" as workload, operation, email
 | where workload = "MicrosoftTeams"
 | count by operation
 ```
+
+## Collecting Logs
+
+This section has instructions for collecting logs for the Sumo App for Teams.
+
+### Collection process overview
+
+To collect logs for Microsoft Teams, please configure an Office 365 Audit Source. The Teams logs will be present in the “Office 365 General Logs” context. Note, that if you are already collecting logs for Office 365, you can simply make note of the source category configured for the aforementioned context.
+
 
 ## Installing the Microsoft Teams App   
 

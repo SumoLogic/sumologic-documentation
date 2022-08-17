@@ -152,8 +152,6 @@ Panels will start to fill automatically. It's important to note that each panel 
 
 ## View Cisco Meraki Dashboards
 
-### Dashboard filters   
-
 Each dashboard has a set of filters that you can apply to the entire dashboard, as shown in the following example. Click the funnel icon in the top dashboard menu bar to display a scrollable list of filters that are applied across the entire dashboard.
 
 You can use filters to drill down and examine the data on a granular level.
@@ -171,6 +169,7 @@ Use this dashboard to:
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/CiscoMeraki_Overview.png')} alt="Cisco Meraki dashboards" />
 
+
 ### Security Threats
 
 The **Cisco Meraki - Security Threats** dashboard provides a high-level view of events, event priority and type, security threat event trends, and hosts that have been impacted. The panels also show detailed information on IDS signatures that were matched, malicious files that were blocked, and files that were deemed malicious after further investigation.
@@ -180,7 +179,6 @@ Use this dashboard to:
 * Monitor files that are blocked by anti-malware protection from various sources and destinations, to understand where the threats are coming from.
 * Identify the most prevalent threats that could have a high impact on your environment.
 * Monitor when, where, and what actions are taken with configured policies in your environment and optimize your policies accordingly.
-
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/CiscoMeraki_Security_Threats.png')} alt="Cisco Meraki dashboards" />
 

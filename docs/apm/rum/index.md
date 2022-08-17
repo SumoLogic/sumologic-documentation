@@ -11,121 +11,23 @@ import TabItem from '@theme/TabItem';
 
 Real User Monitoring (RUM) gives you the ability to understand how users interact with the digital interfaces of your business and if their experience is satisfactory or not. This open-source powered and flexible capability brings you full visibility into what’s happening in your user's browser while interacting with your web applications.
 
-RUM provides you end-to-end visibility into individual user transactions to quickly understand the user experience. You get insights into delays that occurred on the client, overall end-to-end transaction times, network timings, rendering events, and can perform high-level monitoring, alerting, as well as troubleshooting any potential slow-downs. You have full details about the specific performance of top user cohorts, their geographical locations, browsers, and operating systems. You can also fully understand the overall experience of all users and transactions of your digital business, all the time.
+RUM provides you visibility into end-to-end individual user transactions to quickly understand the user experience. You'll get insights into delays that occurred on the client, overall end-to-end transaction times, network timings, rendering events, and can perform high-level monitoring, alerting, as well as troubleshooting any potential slow-downs. You have full details about the specific performance of top user cohorts, their geographical locations, browsers, and operating systems. You can also fully understand the overall experience of all users and transactions of your digital business, all the time.
 
-:::tip
-For full end-to-end visibility, we recommended supplementing your RUM browser auto-instrumentation with appropriate [backend-tracing instrumentation](/docs/apm/traces/get-started-transaction-tracing).
-:::
-
-:::sumo
-Learn more with this Real User Monitoring micro lesson.
+:::sumo Micro Lesson
+See Real User Monitoring in action.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/n-khmblaQN4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 :::
 
-## RUM Metrics Types
-
-RUM metrics (JavaScript) are automatically generated for you from browser traces. They provide insight into your website's overall user experience as well as front-end services, operating systems, geographical locations, and top-loaded page groups and user cohorts categorized by their browsers.
-
-The metrics are collected for user actions representing document loads, which means actual retrieval and execution of web documents in the browser. The [Sumo Logic OpenTelemetry auto-instrumentation for JavaScript](https://github.com/SumoLogic/sumologic-opentelemetry-js) library enables collecting RUM data in the form of OpenTelemetry-compatible traces, directly from the browser. It can gather information about the load, execution, and rendering of your JavaScript applications and record information about browser-to-backend performance of every user transaction in real time, without sampling. This data is gathered directly from your end-user devices and displayed as individual spans representing user-initiated actions (like clicks or document loads) at the beginning of each trace, reflecting its request journey from the client throughout the whole application and back.
-
-All data collected is compatible with OpenTelemetry and doesn't use proprietary vendor code. The full list of functionalities and configuration is available in the [Sumo Logic OpenTelemetry auto-instrumentation for JavaScript](https://github.com/SumoLogic/sumologic-opentelemetry-js) README file.
-
-The following table has details on the metrics collected from JavaScript. These are available in each trace in the `documentLoad` and `documentFetch` spans as span events in the details panel and also used in the RUM app to populate the **Website Performance** and **UI Paint Timings** panels.
-
-You can find these metrics in [Metrics Explorer](/docs/metrics/metric-queries-alerts/metrics-explorer.md) by querying for:
-```sql
-_contenttype=rummetricfromtrace
-```
-
-<table><small>
-  <tr>
-   <td>Order</td>
-   <td>Name</td>
-   <td>Calculation</td>
-  </tr>
-  <tr>
-   <td>1</td>
-   <td><code>browser_time_to_dns_resolution_end</code></td>
-   <td>domainLookupEnd - span start time (fetch start)</td>
-  </tr>
-  <tr>
-   <td>2</td>
-   <td><code>browser_time_to_ssl_end</code></td>
-   <td>if secureConnectionStart > 0: connectionEnd - span start time (fetch start)<br/>else NaN</td>
-  </tr>
-  <tr>
-   <td>3</td>
-   <td><code>browser_time_to_tcp_established</code></td>
-   <td>if secureConnectionStart > 0: secureConnectionStart - span start time (fetch start)<br/>else connectionEnd - span start time (fetch start)</td>
-  </tr>
-  <tr>
-   <td>4</td>
-   <td><code>browser_time_to_request_end</code></td>
-   <td>responseStart - span start time (fetch start)</td>
-  </tr>
-  <tr>
-   <td>5</td>
-   <td><code>browser_time_to_response_end</code></td>
-   <td>responseEnd - span start time (fetch start)</td>
-  </tr>
-  <tr>
-   <td>6</td>
-   <td><code>browser_time_to_interactive</code></td>
-   <td>domInteractive - span start time (fetch start)</td>
-  </tr>
-  <tr>
-   <td>7.1</td>
-   <td><code>browser_time_to_fp</code></td>
-   <td>firstPaint - span start time (fetch start)</td>
-  </tr>
-  <tr>
-   <td>7.2</td>
-   <td><code>browser_time_to_fcp</code></td>
-   <td>firstContentfulPaint - span start time (fetch start)</td>
-  </tr>
-  <tr>
-   <td>7.3
-   </td>
-   <td><code>browser_time_to_lcp</code></td>
-   <td>largestContentfulPaint - span start time (fetch start)</td>
-  </tr>
-  <tr>
-   <td>8</td>
-   <td><code>browser_time_to_processing_end</code></td>
-   <td>domComplete - span start time (fetch start)</td>
-  </tr>
-  <tr>
-   <td>9</td>
-   <td><code>browser_time_to_page_load_end</code></td>
-   <td>loadEventEnd - span start time (fetch start)</td>
-  </tr></small>
-</table>
-
-
-### Performance and Navigation Timing
-
-Metrics 1-6 and 8-9 are navigation timing metrics, presented in the form of areas on the **Website Performance** chart on [RUM dashboards](#viewing-rum-dashboards), that can help you understand the sequence of events from user clicks to a fully loaded document.<br/>![Navigation-metrics.png](/img/rum/Navigation-metrics.png)
-
-:::note
-Timing metrics are not calculated if the visibility state of the document was "hidden" at any point during the load.
-:::
-
-See [W3C navigation timing](https://www.w3.org/TR/navigation-timing/) for details on how an interface for web applications defines its access timing information concerning navigation and other elements.
-
-### UI Rendering Events
-
-Metrics 7.1, 7.2, and 7.3 from the table above explain rendering events inside the user's browser:
-* [First Paint](https://developer.mozilla.org/en-US/docs/Glossary/First_paint): measures the time from page fetch start (span start time) to the moment when the browser renders the first pixels to the screen, rendering anything that is visually different from what was on the screen prior to navigation. It answers the question, "Is it happening?" 
-* [First Contentful Paint](https://web.dev/fcp/): measures the time from page fetch start (span start time) to the moment when any part of the page's content is rendered on the screen. For this metric, "content" refers to text, images (including background images), \<svg\> elements, or non-white \<canvas\> elements.
-* [Largest Contentful Paint](https://web.dev/lcp/): measures the time from page fetch start (span start time) to the moment when the largest image or text block visible within the viewport is rendered.
-
-These are only loosely related to navigation timings and in many cases, some of them may appear long after the page is fully loaded in the browser, which indicates rendering slow-downs. These metrics are displayed in the **UI Paint Timings** panel on RUM dashboards.
 
 ## Collecting RUM Data
 
 To collect [traces](/docs/apm/traces) from a browser, you'll first need to create a RUM HTTP Traces Source. The source will have an endpoint URL that you'll put in a script that sends trace data in [OTLP/JSON over HTTP](https://github.com/open-telemetry/opentelemetry-specification/blob/master/specification/protocol/otlp.md#otlphttp)
 protocol.
+
+:::tip
+For full end-to-end visibility, we recommended supplementing your RUM browser auto-instrumentation with appropriate [backend-tracing instrumentation](/docs/apm/traces/get-started-transaction-tracing).
+:::
 
 ### Step 1: Create a RUM HTTP Traces Source
 
@@ -133,46 +35,44 @@ To configure a RUM HTTP Traces source:
 
 1. In the Sumo Logic web interface, select **Manage Data \> Collection \> Collection**. 
 1. On the Collection page, click **Add Source** next to a Hosted Collector.
-1. Select **RUM HTTP Traces**.<br/><img src={useBaseUrl('img/rum/rum-icon.png')} alt="Real User Monitoring" width="130"/><br/>
+1. Select **RUM HTTP Traces**.<br/><img src={useBaseUrl('img/rum/rum-icon.png')} alt="Real User Monitoring" width="120"/><br/>
 1. Under **Source Type: RUM HTTP Traces**, enter the following information:
    * **Name** (optional) for the Source.
    * **Description** for the Source.
-   * **Source Host** and **Source Category** (optional): enter any string to tag the output collected from the source. These are [built-in metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata.md) fields that allow you to organize your data. We recommend you specify a Source Category indicating the data is from a browser.<br/> ![RUM-HTTP-Traces-Source.png](/img/rum/RUM-HTTP-Traces-Source.png)
+   * **Source Host** and **Source Category** (optional): enter any string to tag the output collected from the source. These are [built-in metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata.md) fields that allow you to organize your data. We recommend you specify a Source Category indicating the data is from a browser.<br/><img src={useBaseUrl('/img/rum/RUM-HTTP-Traces-Source.png')} alt="Real User Monitoring" width="300"/>
 1. Enter **Advanced options for Browser RUM**. A list of FAQs on the page provides help for these options. A table with all the available configuration parameters is available in the [Sumo Logic OpenTelemetry auto-instrumentation for JavaScript](https://github.com/SumoLogic/sumologic-opentelemetry-js) README file.<br/><img src={useBaseUrl('img/rum/RUM-HTTP-Traces-Source-Advanced.png')} alt="Real User Monitoring" width="300"/>
    * **Application Name** (recommended): Add an **Application Name** tag of a text string to show for the app name in spans, for example `bookings-app`. This groups services in the Application Service View. If left blank, services will belong to a "default" application. See [Application Service Dashboards](../traces/working-with-tracing-data/service-map.md) for more information. This setting is saved in the script for `name_of_your_web_application`.
    * **Service Name** (required): Add a **Service Name** of a text string to show for the service name in spans, for example `bookings-web-app`. This setting is saved in the script for `name_of_your_web_service`.
    * **Probabilistic sampling rate** (optional): Add a **Probabilistic sampling rate** for heavy traffic sites in a decimal value based on percentage, for example, 10% would be entered as `0.1`.
    * **Ignore urls** (optional): Add a list of URLs not to collect trace data from, supports regex, for example: `/^https://www.tracker.com/.*/, /^https://api.mydomain.com/log/.*/`
    * **Custom Tags** (optional): Click **+Add** and enter a key and value for each **Custom Tags** to show in spans from instrumented browsers. For example, click **+Add** and enter a key `deployment.environment` with a value of production. This information is saved in the script for `name_of_your_web_service`.
-   * **Propagate Trace Header Cors Urls** (recommended): Add a list of URLs or URL patterns that pass tracing context to construct traces end-to-end. This information is saved in the script for `list_of_urls_to_receive_trace_context`. For example:
-     * `/^https://api.mydomain.com/apiv3/.*/`
-     * `/^https://www.3rdparty.com/.*/.`
+   * **Propagate Trace Header Cors Urls** (recommended): Add a list of URLs or URL patterns that pass tracing context to construct traces end-to-end. This information is saved in the script for `list_of_urls_to_receive_trace_context`. Some examples are `/^https://api.mydomain.com/apiv3/.*/` and `/^https://www.3rdparty.com/.*/.`
 
-  :::caution **Propagate Trace Header Cors Urls** (recommended)
+    :::caution **Propagate Trace Header Cors Urls**
 
-  Sumo Logic cannot perform configuration validation of services of other origins. You should always enable context propagation and CORS configuration changes in a test environment before setting it up in production.
+    Sumo Logic cannot perform configuration validation of services of other origins. You should always enable context propagation and CORS configuration changes in a test environment before setting it up in production.
 
-  <details><summary>Review our recommendations (click to expand)</summary>
+    <details><summary>Review our recommendations <strong>(click to expand)</strong></summary>
 
-  This list is empty by default, which means trace context propagation&#8212;allowing creation of end to and front end to backend traces for cross-origin requests&#8212;is not enabled because of browser CORS security restrictions. To connect your front-end and back-end traces, make sure your environment supports [W3C Trace Context](https://www.w3.org/TR/trace-context/) HTTP headers.
+    This list is empty by default, which means trace context propagation&#8212;allowing creation of end to and front end to backend traces for cross-origin requests&#8212;is not enabled because of browser CORS security restrictions. To connect your front-end and back-end traces, make sure your environment supports [W3C Trace Context](https://www.w3.org/TR/trace-context/) HTTP headers.
 
-  To propagate tracing context to create front-end to back-end traces, set domain(s) to propagate W3C tracing context to. You must also configure your servers/APIs to accept and return following CORS headers in its response:
-    ```bash
-    Access-Control-Allow-Headers: traceparent, tracestate
-    ```
+    To propagate tracing context to create front-end to back-end traces, set domain(s) to propagate W3C tracing context to. You must also configure your servers/APIs to accept and return following CORS headers in its response:
+     ```bash
+     Access-Control-Allow-Headers: traceparent, tracestate
+     ```
 
-  Be careful when configuring this. Valid cross-origin resources must include the prefix `http://` or `https://` and the domain name. The port number is not required unless it differs from the default for HTTP (port 80) or HTTPS (port 443).
+    Be careful when configuring this. Valid cross-origin resources must include the prefix `http://` or `https://` and the domain name. The port number is not required unless it differs from the default for HTTP (port 80) or HTTPS (port 443).
 
-  </details>
+    </details>
 
-  :::
+    :::
 
    * **Geolocation recognition**: Select a **Geolocation recognition** option to automatically recognize geographical locations of your end clients from:
      * The country down to state (recommended for global websites)
      * A single country down to city level (recommended for local, country specific websites)
 
 1. When you are finished configuring the Source, click **Submit**.
-1. An HTTP Source Script is displayed in a pop-up with three different formats: Synchronous, Asynchronous, and NPM. These are examples of scripts you can use with all configurations you entered when creating the source, including advanced options. Select a format and click **Copy to Clipboard**. <br/><br/><img src={useBaseUrl('img/rum/RUM-HTTP-Traces-Script.png')} alt="Real User Monitoring" width="400"/>
+1. An HTTP Source Script is displayed in a pop-up with three different formats: synchronous, asynchronous, and npm. These are examples of scripts you can use with all configurations you entered when creating the source, including advanced options. Select a format and click **Copy to Clipboard**. <br/><br/><img src={useBaseUrl('img/rum/RUM-HTTP-Traces-Script.png')} alt="Real User Monitoring" width="400"/>
 
   The script includes a RUM HTTP Traces Source URL for `collectionSourceUrl` in the generated script. This is saved for the script as `sumo_logic_http_traces_source_url`. Your user's browser should be allowed to POST data to this URL.  
 
@@ -180,7 +80,7 @@ To configure a RUM HTTP Traces source:
 
 ### Step 2: Add Script to Your Page Header
 
-Use the copied script in your page head inside the `<head> </head>` tags. The script sends trace data in [OTLP/JSON over HTTP](https://github.com/open-telemetry/opentelemetry-specification/blob/master/specification/protocol/otlp.md#otlphttp) protocol. The following are base script examples, populated when you create and configure a source in the above instructions.
+Use the copied script in your page head inside the `<head>` `</head>` tags. The script sends trace data in [OTLP/JSON over HTTP](https://github.com/open-telemetry/opentelemetry-specification/blob/master/specification/protocol/otlp.md#otlphttp) protocol. The following are base script examples, populated when you create and configure a source in the above instructions.
 
 <Tabs
   className="unique-tabs"
@@ -249,7 +149,7 @@ You can load the script asynchronously using the script below but some functiona
 <TabItem value="npm">
 
 The other option is to bundle this library inside your project and initialize it. Inside your project directory, execute:
-```
+```bash
 npm install @sumologic/opentelemetry-rum
 ```
 
@@ -274,23 +174,157 @@ RUM script can be also wrapped in the form of a browser extension/plugin for mon
 You can view and copy a script anytime by clicking **Show Script** for the source.<br/> ![show-script.png](/img/rum/show-script.png)
 :::
 
-### Step 3: Create Trace Query for Browser Activity
+### Step 3: Search Traces from the Browser
 
-Create a [trace query](../traces/working-with-tracing-data/view-and-investigate-traces.md) that specifies traces starting with the value you gave to `<name_of_your_web_service>` as a root service name. You can also include `documentLoad` as an operation name to find traces that correspond to page loads. Click on any of the load spans, such as `documentLoad`, `documentFetch` or `resourceFetch`, to open a right-side panel with detailed span metadata including timing events.
+Create a [trace query](../traces/working-with-tracing-data/view-and-investigate-traces.md) that specifies traces starting with the value you gave to `<name_of_your_web_service>` as a root service name. You can also include the following filters to find appropriate user action types:
+* `documentLoad` as an operation name to find traces that correspond to page loads.
+* `Click on *` as an operation name to detect click actions that most likely resulted in XHR calls
+* `Navigation: *` as an operation name to detect single-page app navigation changes
+
+Click on any of the load spans, such as `documentLoad`, `documentFetch`, or `resourceFetch` (for `documentLoad`), to open a right-side panel with detailed span metadata, including timing events.
 
 ![RUM-trace-view with border.png](/img/rum/RUM-trace-view-with-border.png)
 
 
+## RUM Metrics Types
+
+RUM metrics (collected from JavaScript) are automatically generated for you from browser traces. They provide insight into your website's overall user experience as well as front-end services, operating systems, geographical locations, and top-loaded page groups and user cohorts categorized by their browsers.
+
+The metrics are collected for user actions representing document loads, which means actual retrieval and execution of web documents in the browser. We also have metrics available for XHR calls, core web vitals, and longtask events (delays).
+
+The [Sumo Logic OpenTelemetry auto-instrumentation for JavaScript](https://github.com/SumoLogic/sumologic-opentelemetry-js) library enables collecting RUM data in the form of OpenTelemetry-compatible traces and logs directly from the browser. It gathers information about the load, execution, and rendering of your JavaScript applications and records information about browser-to-backend performance of every user transaction in real time, without sampling.
+
+This data is gathered directly from your end-user devices and displayed as individual spans representing user-initiated actions (like clicks or document loads) at the beginning of each trace, reflecting its request journey from the client throughout the whole application and back. This includes any unhandled errors, exceptions, and console errors generated by the browser.
+
+All data collected is compatible with OpenTelemetry and doesn't use proprietary vendor code. Real user monitoring supports document load actions as well as XHR communication and route changes for single-page app navigation. The full list of functionalities and configuration is available in the [Sumo Logic OpenTelemetry auto-instrumentation for JavaScript](https://github.com/SumoLogic/sumologic-opentelemetry-js) README file.
+
+You can find these metrics in [Metrics Explorer](/docs/metrics/metric-queries-alerts/metrics-explorer.md) by querying for:
+```sql
+_contenttype=rummetricfromtrace
+```
+
+### Document Load
+
+These are performance and navigation timing metrics, available in each trace in the `documentLoad` and `documentFetch` spans as span events in the details panel.
+
+| Name | Calculation |
+|:---|:---|
+| `browser_time_to_dns_resolution_end` | domainLookupEnd - span start time (fetch start) |
+| `browser_time_to_ssl_end` | if secureConnectionStart > 0: connectionEnd - span start time (fetch start) else NaN |
+| `browser_time_to_tcp_established` | if secureConnectionStart > 0: secureConnectionStart - span start time (fetch start) else connectionEnd - span start time (fetch start) |
+| `browser_time_to_request_end` | responseStart - span start time (fetch start) |
+| `browser_time_to_response_end` | responseEnd - span start time (fetch start) |
+| `browser_time_to_interactive` | domInteractive - span start time (fetch start) |
+| `browser_time_to_processing_end` | domComplete - span start time (fetch start) |
+| `browser_time_to_page_load_end` | loadEventEnd - span start time (fetch start) |
+
+These metrics, presented in the form of areas on the **Website Performance** panels on [RUM dashboards](#viewing-rum-dashboards), can help you understand the sequence of events (pictured below) from user clicks to a fully loaded document.<br/>![Navigation-metrics.png](/img/rum/Navigation-metrics.png)
+
+:::note
+Timing metrics are not calculated if the visibility state of the document was "hidden" at any point during the load.
+:::
+
+See [W3C navigation timing](https://www.w3.org/TR/navigation-timing/) for details on how an interface for web applications defines its access timing information concerning navigation and other elements.
+
+
+### Rendering Events
+
+These metrics, which populate in the **UI Paint Timings** panel on RUM dashboards, explain rendering events inside the user's browser.
+
+| Name | Calculation |
+|:---|:---|
+| `browser_time_to_fp` | firstPaint - span start time (fetch start) |
+| `browser_time_to_fcp` | firstContentfulPaint - span start time (fetch start) |
+| `browser_time_to_lcp` | largestContentfulPaint - span start time (fetch start) |
+
+* [First Paint](https://developer.mozilla.org/en-US/docs/Glossary/First_paint) (`browser_time_to_fp`): measures the time from page fetch start (span start time) to the moment when the browser renders the first pixels to the screen, rendering anything that is visually different from what was on the screen prior to navigation. It answers the question, "Is it happening?" 
+* [First Contentful Paint](https://web.dev/fcp/) (`browser_time_to_fcp`): measures the time from page fetch start (span start time) to the moment when any part of the page's content is rendered on the screen. For this metric, "content" refers to text, images (including background images), `<svg>` elements, or non-white `<canvas>` elements.
+* [Largest Contentful Paint](https://web.dev/lcp/) (`browser_time_to_lcp`): measures the time from page fetch start (span start time) to the moment when the largest image or text block visible within the viewport is rendered.
+
+These are only loosely related to navigation timings and in many cases, some of them may appear long after the page is fully loaded in the browser, which indicates rendering slowdowns.
+
+
+### Core Web Vitals
+
+[Core Web Vitals (CWV)](https://web.dev/vitals/) is an initiative by Google that defines web page KPIs. Each CWV represents a distinct facet of the user experience, is measurable in the field, and reflects the real-world experience of a critical user-centric outcome.
+
+| Name | Calculation |
+|:---|:---|
+| `browser_time_to_?` | ? |
+| `browser_time_to_?` | ? |
+| `browser_time_to_?` | ? |
+| `browser_time_to_fb` | ? |
+
+CWV focuses on three aspects of the user experience: document loading, interactivity, and visual stability. This includes the following metrics (and their respective thresholds):
+
+* [First Input Delay (FID)](https://web.dev/fid/): measures interactivity. To provide a good user experience, pages should have a FID of **100 milliseconds** or less.
+* [Largest Contentful Paint (LCP)](https://web.dev/lcp/): measures loading performance. To provide a good user experience, LCP should occur within **2.5 seconds** of when the page first starts loading.
+* [Cumulative Layout Shift (CLS)](https://web.dev/cls/): measures visual stability. To provide a good user experience, pages should maintain a CLS of **0.1** or less.<br/><img src={useBaseUrl('img/rum/core-web-vitals.png')} alt="Real User Monitoring" />
+
+  The above three CWV KPIs are captured and displayed on Overview dashboards for Document Load action types. Detailed metrics are available in span metadata for every transaction trace.<br/><img src={useBaseUrl('img/rum/prada-documentload.png')} alt="Real User Monitoring" />
+
+* [Time to First Byte](https://web.dev/ttfb/) (`browser_time_to_fb`): measures the delay between start of the page load and moment when the first byte of the response appears. It helps identify when a web server is too slow to respond to requests. You'll find this metric on the **Navigation Timings** chart.<br/><img src={useBaseUrl('img/rum/nav-timings.png')} alt="Real User Monitoring" />
+
+
+### XHR Monitoring
+
+An XML HTTP Request (XHR) is a form of communication between the browser and the application backend without (re)loading of the page. A typical example is where a page needs to update a ticker of a price automatically or after pressing the “update price” button next to it.
+
+XHR technique is quite often used in _single-page apps_ &#8212; apps that load the page once and then provide all interaction and navigation without loading more documents. Therefore, having support for XHR is a key enabler to support single-page app browser applications.
+
+| Name | Calculation |
+|:---|:---|
+| `browser_time_to_?` | ? <---Time to first XHR |
+| `browser_time_to_?` | ? <---Time to last XHR |
+| `browser_time_to_?` | ? <---Time to XHR processing end |
+| `browser_time_to_?` | ? <---Time in XHR calls |
+
+Pages can generate one or more XHR requests, typically in the form of HTTP Posts, related to various user actions on a page. What we do with this, is:
+
+* Measure how many XHR requests have been generated
+* Measure the following performance timings:
+    * Time to first XHR: time from UI interaction till first HTTP `POST` appears
+    * Time to last XHR: time from UI interaction till last HTTP `POST` ends)
+    * Time to XHR processing end: time from UI interaction till all browser-side processing of all XHR requests is done
+    * Time in XHR calls: total time when the transaction was “busy” with executing XHR communication
+* Identify the user action that triggered the XHRs by blending UI interaction (e.g., “click”) with the page name (e.g., [http://www.acme.com/checkout](http://www.acme.com/checkout))
+* Measure any erroneous HTTP response to XHR `POST` calls and count them as XHR errors
+* Allow to drill-down via EI to specific traces that explain full process of loading and execution of each such transaction
+
+<img src={useBaseUrl('img/rum/xhr-action.png')} alt="Real User Monitoring" />
+
+
+### Navigation (Route Changes)
+
+Another browsing technique used by single-page apps is a special way of handling page navigation (e.g., clicking on links, buttons) called route change. It is basically a way to navigate to a new page/view without having to load a new document.
+
+Every time we open a new tab in Sumo, we do a route change (but we are not loading the whole document at the same time). Such actions typically also generate some XHR calls in the background. What we do with this is:
+* Create a special type of user actions called `route_changes` with the name of the page that is being opened (i.e., “Route to [https://service.us2.sumologic.com/ui#/search/*](https://service.us2.sumologic.com/ui#/search/*)”)
+* Show these actions as third type of action next to document loads and XHR requests
+* Measure same type of metrics for them as for XHR requests
+* Allow drill-down via EI to specific traces that explain full process of loading and execution of each such transaction
+
+<img src={useBaseUrl('img/rum/nav-action.png')} alt="Real User Monitoring" />
+
+
+### Longtask Delays
+
+This section describes how to trace and measure [Longtask delays](https://github.com/w3c/longtasks), which is when the main browser UI thread becomes locked for extended periods (greater than 50 milliseconds) and blocks other critical tasks (including user input) from being executed.
+
+This impacts the user's experience. They can perceive this as a "frozen browser”, even if the communication with the backend has long been completed. RUM automatically captures such events and:
+* Displays them as individual spans marking how long the browser was frozen<br/><img src={useBaseUrl('img/rum/prada-nav.png')} alt="Real User Monitoring" />
+* Aggregates the above data into two metrics:
+   * Longtask delay: average duration of longtask span
+   * Time in longtasks: total time spent in longtasks per user action/trace<br/><img src={useBaseUrl('img/rum/longtask.png')} alt="Real User Monitoring" />
+
 
 ## Installing the RUM App
 
-:::note Installation not necessary
+No action is required. The RUM app is installed automatically for all users of your organization once Sumo Logic detects data coming from user browsers.
 
-The RUM app is installed automatically for all users of your organization once Sumo Logic detects data coming from user browsers.
+The content then populates in **Sumo Logic RUM - default** dashboards (inside the **Admin Recommended** folder), where it's available for all users in your organization. Do not modify or delete content in this folder, as it's automatically maintained and updated.
 
-The content then populates in **Sumo Logic RUM - default** dashboards (inside the **Admin Recommended** folder), where it's available for all users in the organization. Do not modify or delete content in this folder, as it's automatically maintained and updated.
-
-<details><summary>If for any reason the app gets removed, you can install it manually (click to expand instructions).</summary>
+<details><summary>If for any reason the app gets removed, you can install it manually (<strong>click to expand</strong>).</summary>
 
 1. Go to the **App Catalog**, then search for and select the **Real User Monitoring** app. 
 1. Click **Add to Library**.
@@ -301,111 +335,78 @@ The content then populates in **Sumo Logic RUM - default** dashboards (inside 
 
 </details>
 
-:::
-
 ## Explore View
 
 [Explore](/docs/dashboards-new/explore.md) contains dashboards from the [RUM app](#installing-the-rum-app) that provide visibility into actual end-user experience by geographical locations, browser, and operating system types. This also helps you to understand how your customers experience the performance of your web application. This is a visualization of RUM metrics gathered from tracing instrumentation in the browser.
 
-Explore organizes RUM data on three levels:
+Explore organizes RUM data on four levels:
 * **Application**: corresponds to the value of the application tag set in the JavaScript script above. This should correspond to your whole website defined by its business function, such as "Coffee shop".
 * **Service**: corresponds to the name of the service in the JavaScript script above. This should correspond to a JS code executed in the browser, such as "coffee-shop-web". You can have multiple services for each application. 
+* **Action Type**: can be one of: document loads, XHR actions, or route changes
 * **Action Name**: automatically generated from URLs. No configuration is required.
 
-Action names can contain asterisks (\*) to replace automatically-detected dynamic parts of the URL. If you have action names that overlap, the action name with an asterisk contains data for page loads NOT contained in more specific action names:
+Action names can contain asterisks (`*`) to replace automatically-detected dynamic parts of the URL. If you have action names that overlap, the action name with an asterisk contains data for page loads NOT contained in more specific action names:
 
 For example, `http://www.site.com/path/page.htm` does not contain actions from `http://www.site.com/path/*`.
 
-There are three dashboard types on the **Application** and **Service** level and a single one on the **Action** level. You can select the appropriate dashboard from drop-down menu in the header:<br/>![explore rum with red box.png](/img/rum/explore-rum-with-red-box.png)
+There are three dashboard types on the **Application** and **Service** level and a single one on the **Action type** and **Action** level. You can select the appropriate dashboard from drop-down menu in the header:<br/>![explore rum with red box.png](/img/rum/explore-rum-with-red-box.png)
 
-
-### Core Web Vitals
-
-[Core Web Vitals](https://web.dev/vitals/) (CWV) is an initiative by Google that defines web page KPIs. Each CWV represents a distinct facet of the user experience, is measurable in the field, and reflects the real-world experience of a critical user-centric outcome.
-
-CWV focuses on three aspects of the user experience: document loading, interactivity, and visual stability. This includes the following metrics (and their respective thresholds):
-
-* [Largest Contentful Paint (LCP)](https://web.dev/lcp/): measures loading performance. To provide a good user experience, LCP should occur within **2.5 seconds** of when the page first starts loading.
-* [First Input Delay (FID)](https://web.dev/fid/): measures interactivity. To provide a good user experience, pages should have a FID of **100 milliseconds** or less.
-* [Cumulative Layout Shift (CLS)](https://web.dev/cls/): measures visual stability. To provide a good user experience, pages should maintain a CLS of **0.1** or less.
-
-We capture all three CWV KPIs and display them on Overview dashboards for Document Load action types. Also, detailed metrics are available in span metadata for every transaction trace.
-
-<img src={useBaseUrl('img/rum/core-web-vitals.png')} alt="Real User Monitoring" />
-
-<img src={useBaseUrl('img/rum/prada-documentload.png')} alt="Real User Monitoring" />
-
-Additionally, we've added [Time to First Byte](https://web.dev/ttfb/) (`browser_time_to_fb`), which measures the delay between start of the page load and moment when the first byte of the response appears. It helps identify when a web server is too slow to respond to requests. You'll find this metrics on the **Navigation Timings** chart:
-
-<img src={useBaseUrl('img/rum/nav-timings.png')} alt="Real User Monitoring" />
-
-
-### XHR Monitoring
-
-An XML HTTP Request (XHR) is a form of communication between the browser and the application backend without (re)loading of the page. A typical example is where a page needs to update a ticker of a price automatically or after pressing the “update price” button next to it.
-
-XHR technique is quite often used in single-page apps &#8212; apps that load the page once and then provide all interaction and navigation without loading more documents. Therefore, having support for XHR is a key enabler to support SPA browser applications.
-
-Pages can generate one or more XHR requests, typically in the form of HTTP Posts, related to various user actions on a page. What we do with this, is:
-
-* Measure how many XHR requests have been generated
-* Measure following performance timings:
-    * Time to first XHR (time from UI interaction till first HTTP `POST` appears)
-    * Time to last XHR (time from UI interaction till last HTTP `POST` ends)
-    * Time to XHR processing end (time from UI interaction till all browser-side processing of all XHR requests is done)
-    * Time in XHR calls (total time when the transaction was “busy” with executing XHR communication)
-* Identify the user action that triggered the XHRs by blending UI interaction (e.g. “click”) with the page name (e.g., [http://www.acme.com/checkout](http://www.acme.com/checkout))
-* Measure any erroneous HTTP response to XHR `POST` calls and count them as XHR errors
-* Allow to drill-down via EI to specific traces that explain full process of loading and execution of each such transaction
-
-<img src={useBaseUrl('img/rum/xhr-action.png')} alt="Real User Monitoring" />
-
-
-
-### Navigation (Route Changes)
-
-Another browsing technique used by single-page apps is a special way of handling page navigation (e.g., clicking on links, buttons) called route change. It is basically a way to navigate to a new page/view without having to load a new document. Every time we open a new tab in Sumo, we do a route change (but we are not loading the whole document at the same time). Such actions typically also generate some XHR calls in the background.
-
-What we do with this is:
-* Create a special type of user actions called route_changes with the name of the page that is being opened (i.e., “Route to [https://service.us2.sumologic.com/ui#/search/*](https://service.us2.sumologic.com/ui#/search/*)”)
-* Show these actions as third type of action next to document loads and XHR requests
-* Measure same type of metrics for them as for XHR requests
-* Allow drill-down via EI to specific traces that explain full process of loading and execution of each such transaction
-
-<img src={useBaseUrl('img/rum/nav-action.png')} alt="Real User Monitoring" />
-
-
-### Browser Freeze Times
-
-This section describes how to trace and measure [Longtask delays](https://github.com/w3c/longtasks), which is when the main browser UI thread becomes locked for extended periods (greater than 50 milliseconds) and blocks other critical tasks (including user input) from being executed.
-
-This impacts the user's experience; they can perceive this as a "frozen browser”, even if the communication with the backend has long been completed. RUM automatically captures such events and:
-* Displays them as individual spans marking how long the browser was frozen
-* Aggregate the above data into two metrics:
-   * Longtask delay: average duration of longtask span
-   * Time in longtasks: total time spent in longtasks per user action/trace
-
-<img src={useBaseUrl('img/rum/prada-nav.png')} alt="Real User Monitoring" />
-
-<img src={useBaseUrl('img/rum/longtask.png')} alt="Real User Monitoring" />
-
-### Geolocation Map
-
-* Better visualizations: Geolocation map
-
-Overview dashboards on all Explore levels have a new log-based panel showing geographical user activity for the selected entity.
+Overview dashboards on all Explore levels have a log-based panel showing geographical user activity for the selected entity. Geographic dashboards do not measure performance; more red indicates more user activity.
 
 <img src={useBaseUrl('img/rum/app-service.png')} alt="Real User Monitoring" />
 
-This does not measure performance; more red indicates more user activity.
 
-### Browser Errors
+## Viewing RUM Dashboards
 
-* Browsers errors captured and available in log index as well as on dashboards
+### RUM Overview Application/Service/Action Type/Action
+
+The **RUM Overview Application/Service/Action Type/Action** dashboards show the user experience for performance and requests metrics for selected application, service, or action, broken down per top geo-locations, operating systems, and browsers.
+
+Use this dashboard to:
+ * Analyze load and paint timings for page document loads by application, service, or action.
+ * Understand what top browsers, operating systems, and locations are active with your website.
+
+You can select the timing metric type in the **statistic** dropdown on the dashboard header. This will change the browser time metrics types on charts.
+
+You can also click on any data-point on the charts to open a details panel and view the **Infrastructure** tab to drill-down to traces representing user transactions from the selected time point.
+
+![RUM_Overview.png](/img/rum/RUM_Overview.png)
+
+### RUM TopN Application/Service
+
+The **RUM TopN Application-Service** dashboards show top N browsers, operating systems, and geographical locations by load time and requests for the selected **application** or **service**.
+
+Use this dashboard to:
+ * Find out top N browsers, operating systems, and geolocations by load or requests.
+ * Understand the slowest and fastest browsers from a rendering perspective or geographical locations from a network perspective.
+ * Find out which browsers, operating systems are in use by your users and where are they are geographically located.
+
+You can select the timing metric type in the **statistic** dropdown on the dashboard header. This will change the browser time metrics types on charts. You can also define the top N number for all charts.
+
+![img](/img/rum/RUM-TopN-Application.png)
+
+### RUM Performance Analytics Application/Service
+
+The **RUM Performance Analytics Application-Service** dashboards show the page performance and requests for a cohort of users specified by selecting the desired combination of dimensions.
+
+Use this dashboard to:
+* Filter data for specific combinations of browser and/or operating system, and/or geolocation.
+* Understand load and timing metrics for the selected user cohort.
+
+You can compare the timings against previous days' data by selecting the appropriate option in the **compare_with** drop-down.
+
+For cross-dimensional metrics, only the average statistic type is available.
+
+You can click on any data-point on the charts to open a details panel and view the **Infrastructure** tab to drill-down to traces representing user transactions from the selected time point.
+
+![img](/img/rum/RUM-Performance-Analytics-Application.png)
+
+
+## Viewing Browser Errors
 
 Sometimes browser UI fails and fails in an unhandled way, failing to deliver the transaction and breaking user experience. That can happen in situations of unhandled [errors](https://developer.mozilla.org/en-US/docs/Web/API/Element/error_event) or [rejections](https://developer.mozilla.org/en-US/docs/Web/API/Window/unhandledrejection_event) or [failed](https://developer.mozilla.org/en-US/docs/Web/API/Element/error_event) resources. Also, developers can design the page to write erroneous messages to the console.
 
-All these situations are captured by Sumo Logic browser instrumentation and forwarded to the same RUM source that is configured for traces data, that then forwards log data to a continuous tier’s `sumologic_rum_errors` log index.
+All these situations are captured by Sumo Logic browser instrumentation and forwarded to the same RUM source that is configured for traces data, that then forwards log data to a continuous tier’s `sumologic_rum_errors` log index as well as on dashboards.
 
 Data in the index is query-able using normal log search query. Here’s a sample query and results:
 
@@ -435,50 +436,3 @@ In addition to that, we also aggregate that information in form of log-query bas
 Logs collection is enabled by default. You can disable by setting `collectErrors=false` in your RUM script options.
 
 This way, front end developers can have full visibility onto the flow and categories of errors generated by various parts of their browser application with contextual drill-down, free-form search and ability to build custom dashboards, which give them ability to shorten the troubleshooting time and pro-activeness in error tracing.
-
-
-
-## Viewing RUM Dashboards
-
-### Overview
-
-The **RUM Overview Application/Service/Action** dashboards show the user experience for performance and requests metrics for selected application, service, or action, broken down per top geo-locations, operating systems, and browsers.
-
-Use this dashboard to:
- * Analyze load and paint timings for page document loads by application, service, or action.
- * Understand what top browsers, operating systems, and locations are active with your website.
-
-You can select the timing metric type in the **statistic** dropdown on the dashboard header. This will change the browser time metrics types on charts.
-
-You can also click on any data-point on the charts to open a details panel and view the **Infrastructure** tab to drill-down to traces representing user transactions from the selected time point.
-
-![RUM_Overview.png](/img/rum/RUM_Overview.png)
-
-### TopN
-
-The **RUM TopN Application-Service** dashboards show top N browsers, operating systems, and geographical locations by load time and requests for the selected **application** or **service**.
-
-Use this dashboard to:
- * Find out top N browsers, operating systems, and geolocations by load or requests.
- * Understand the slowest and fastest browsers from a rendering perspective or geographical locations from a network perspective.
- * Find out which browsers, operating systems are in use by your users and where are they are geographically located.
-
-You can select the timing metric type in the **statistic** dropdown on the dashboard header. This will change the browser time metrics types on charts. You can also define the top N number for all charts.
-
-![img](/img/rum/RUM-TopN-Application.png)
-
-### Performance Analytics
-
-The **RUM Performance Analytics Application-Service** dashboards show the page performance and requests for a cohort of users specified by selecting the desired combination of dimensions.
-
-Use this dashboard to:
-* Filter data for specific combinations of browser and/or operating system, and/or geolocation.
-* Understand load and timing metrics for the selected user cohort.
-
-You can compare the timings against previous days' data by selecting the appropriate option in the **compare_with** drop-down.
-
-For cross-dimensional metrics, only the average statistic type is available.
-
-You can click on any data-point on the charts to open a details panel and view the **Infrastructure** tab to drill-down to traces representing user transactions from the selected time point.
-
-![img](/img/rum/RUM-Performance-Analytics-Application.png)

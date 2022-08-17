@@ -13,12 +13,7 @@ The Active Directory JSON App helps you monitor your Windows Active Directory de
 
 We recommend using the Active Directory JSON App in combination with the Windows JSON App.
 
-
-## Collecting Logs
-
-This section provides instructions on configuring log collection for the Active Directory JSON App so that logs are collected from the Microsoft Windows Event Log and ingested into Sumo Logic.
-
-### Log Types
+## Log Types
 
 Standard Windows event channels include:
 * Security
@@ -27,41 +22,51 @@ Standard Windows event channels include:
 
 Custom event channels, such as PowerShell or Internet Explorer are also supported.
 
-### Configure a Collector and a Source
-
-To configure a collector and source, do the following:
-
-1. Configure an [Installed Windows collector](/docs/send-data/installed-collectors/install-collector-windows) through the user interface or from the command line.
-2. Configure either a local or remote Windows Event Log source. To configure a Windows Event Log source set the following:
-  * **Event Format.** Select Collect using JSON format.
-
-Collect using JSON format.** Events are formatted into JSON that is designed to work with Sumo Logic features, making it easier for you to reference your data.
-  * **Event Collection Level.** When JSON format is selected you have to select Complete Message from the dropdown. \
-
-
-**Complete Message** will ingest the entire event content along with metadata.
-
-For more information on local or remote Windows Event Log Source configuration, refer to [Local Windows Event Log Source](/docs/send-data/Sources/sources-installed-collectors/Local-Windows-Event-Log-Source) and [Remote Windows Event Log Source](/docs/send-data/Sources/sources-installed-collectors/Remote-Windows-Event-Log-Source).
-
-
 ### Sample Log Messages
 
-
-```bash
-{"TimeCreated":"2020-10-12T08:00:02+000001500Z","EventID":"5137",
-"Task":14081,"Correlation":"","Keywords":"Audit Success","Channel":"Security",
-"Opcode":"Info","Security":"","Provider":{"Guid":"{54849625-5478-4994-a5ba-3e3b0328c30d}",
-"Name":"Microsoft-Windows-Security-Auditing"},"EventRecordID":5383143,"Execution":{"ThreadID":880,"ProcessID":776},"Version":0,
-"Computer":"EC2AMAZ-6D5CO5AB123.test.format","Level":"Information","EventData":{"DSType":"%%14676","SubjectUserSid":"S-1-5-21-916893464-2020-10-12T08:00:02-2020-10-12T08:00:02-500","OpCorrelationID":
-"{cdb02928-b7a6-4373-9b12-4e371f30c30d}","SubjectUserName":"Administrator","DSName":"test.format","AppCorrelationID":"-","ObjectGUID":"{56bf5011-b09d-43f5-bcd2-06a1d917c402}","ObjectDN":"CN=TomJerry,OU=Domain Controllers,DC=test,DC=format","SubjectLogonId":"0x73199","ObjectClass":"computer","SubjectDomainName":"TEST"},"Message":"A directory service object was created.\r\n\t\r\nSubject:\r\n\tSecurity ID:\t\tTEST\\Administrator\r\n\tAccount Name:\t\tAdministrator\r\n\tAccount Domain:\t\tTEST\r\n\tLogon ID:\t\t0x73199\r\n\t\r\nDirectory Service:\r\n\tName:\ttest.format\r\n\tType:\tActive Directory Domain Services\r\n\t\r\nObject:\r\n\tDN:\tCN=TomJerry,OU=Domain Controllers,DC=test,DC=format\r\n\tGUID:\t{56bf5011-b09d-43f5-bcd2-06a1d917c402}\r\n\tClass:\tcomputer\r\n\t\r\nOperation:\r\n\tCorrelation ID:\t{cdb02928-b7a6-4373-9b12-4e371f30c30d}\r\n\tApplication Correlation ID:\t-"}
+```json
+{
+	"TimeCreated":"2020-10-12T08:00:02+000001500Z",
+	"EventID":"5137",
+	"Task":14081,
+	"Correlation":"",
+	"Keywords":"Audit Success",
+	"Channel":"Security",
+	"Opcode":"Info",
+	"Security":"",
+	"Provider":{
+		"Guid":"{54849625-5478-4994-a5ba-3e3b0328c30d}",
+		"Name":"Microsoft-Windows-Security-Auditing"
+	},
+	"EventRecordID":5383143,
+	"Execution":{
+		"ThreadID":880,
+		"ProcessID":776
+	},
+	"Version":0,
+	"Computer":"EC2AMAZ-6D5CO5AB123.test.format",
+	"Level":"Information",
+	"EventData":{
+		"DSType":"%%14676",
+		"SubjectUserSid":"S-1-5-21-916893464-2020-10-12T08:00:02-2020-10-12T08:00:02-500",
+		"OpCorrelationID":"{cdb02928-b7a6-4373-9b12-4e371f30c30d}",
+		"SubjectUserName":"Administrator",
+		"DSName":"test.format",
+		"AppCorrelationID":"-",
+		"ObjectGUID":"{56bf5011-b09d-43f5-bcd2-06a1d917c402}",
+		"ObjectDN":"CN=TomJerry,OU=Domain Controllers,DC=test,DC=format",
+		"SubjectLogonId":"0x73199",
+		"ObjectClass":"computer",
+		"SubjectDomainName":"TEST"
+	},
+	"Message":"A directory service object was created.\r\n\t\r\nSubject:\r\n\tSecurity ID:\t\tTEST\\Administrator\r\n\tAccount Name:\t\tAdministrator\r\n\tAccount Domain:\t\tTEST\r\n\tLogon ID:\t\t0x73199\r\n\t\r\nDirectory Service:\r\n\tName:\ttest.format\r\n\tType:\tActive Directory Domain Services\r\n\t\r\nObject:\r\n\tDN:\tCN=TomJerry,OU=Domain Controllers,DC=test,DC=format\r\n\tGUID:\t{56bf5011-b09d-43f5-bcd2-06a1d917c402}\r\n\tClass:\tcomputer\r\n\t\r\nOperation:\r\n\tCorrelation ID:\t{cdb02928-b7a6-4373-9b12-4e371f30c30d}\r\n\tApplication Correlation ID:\t-"
+}
 ```
 
 
-
-### Query Sample
+### Sample Query
 
 The sample query is from **Successes Vs Failures** panel from [Active Directory Service Failures](#service-failures) dashboard.
-
 
 ```sql
 _sourceCategory=Labs/windows-jsonformat
@@ -73,7 +78,23 @@ _sourceCategory=Labs/windows-jsonformat
 | transpose row _timeslice column status
 ```
 
+## Collecting Logs
 
+This section provides instructions on configuring log collection for the Active Directory JSON App so that logs are collected from the Microsoft Windows Event Log and ingested into Sumo Logic.
+
+### Configure a Collector and a Source
+
+To configure a collector and source, do the following:
+
+1. Configure an [Installed Windows collector](/docs/send-data/installed-collectors/install-collector-windows) through the user interface or from the command line.
+2. Configure either a local or remote Windows Event Log source. To configure a Windows Event Log source set the following:
+  * **Event Format.** Select Collect using JSON format.
+
+Collect using JSON format.** Events are formatted into JSON that is designed to work with Sumo Logic features, making it easier for you to reference your data.
+  * **Event Collection Level.** When JSON format is selected you have to select Complete Message from the dropdown.
+**Complete Message** will ingest the entire event content along with metadata.
+
+For more information on local or remote Windows Event Log Source configuration, refer to [Local Windows Event Log Source](/docs/send-data/Sources/sources-installed-collectors/Local-Windows-Event-Log-Source) and [Remote Windows Event Log Source](/docs/send-data/Sources/sources-installed-collectors/Remote-Windows-Event-Log-Source).
 
 ## Installing the Active Directory JSON App
 

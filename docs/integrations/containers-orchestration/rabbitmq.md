@@ -155,7 +155,7 @@ Please enter values for the following parameters (marked in **CHANGE_ME** above)
 
 * `telegraf.influxdata.com/inputs` - This contains the required configuration for the Telegraf RabbitMQ Input plugin. Please refer[ to this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/redis) for more information on configuring the RabbitMQMongoDB input plugin for Telegraf. Note: As telegraf will be run as a sidecar the host should always be localhost.
     * In the input plugins section, which is [`[inputs.rabbitmq]]`:
-        * **url** - The URL of the RabbitMQ server for Management HTTP Endpoint. Please see [this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/rabbitmq) for more information on additional parameters for configuring the RabbitMQ input plugin for Telegraf.
+        * `url` - The URL of the RabbitMQ server for Management HTTP Endpoint. Please see [this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/rabbitmq) for more information on additional parameters for configuring the RabbitMQ input plugin for Telegraf.
         * **username**: The Username of RabbitMQ's admin account . The default is “guest”.
         * **password**:  The password of RabbitMQ's admin account. The default is “guest”.
     * In the tags section, which is [inputs.rabbitmq.tags]

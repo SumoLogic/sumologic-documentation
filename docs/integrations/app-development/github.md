@@ -17,7 +17,6 @@ The Sumo App for GitHub supports GitHub.com, not GitHub Enterprise.
 ## Event Types
 
 The Sumo Logic App for GitHub ingests GitHub events via a webhook. Sumo Logic ingests all events, but only uses the following events in the Dashboards:
-
 * Fork
 * Issues
 * Membership
@@ -40,55 +39,6 @@ If you're just getting started with GitHub Events, see the Sumo Logic DevOps blo
 The Sumo Logic App for GitHub gathers statistics and events from the GitHub Remote API on each host.
 
 First, configure a Collector and Source in Sumo Logic, then configure a GitHub Webhook using the HTTP Source Address created in Sumo Logic.
-
-
-## Collecting Logs for GitHub
-
-This procedure explains how to collect logs from GitHub.
-
-The Sumo Logic App for GitHub connects to your GitHub repository at the Organization or Repository level and ingests GitHub events via a webhook. These events populate the preconfigured dashboards to give you a complete overview of your GitHub’s branch, issues, pull requests, user activity, and security events.
-
-
-### Configure Hosted Collector to Receive GitHub Events
-
-In this step, you create a Hosted Collector to receive Webhook Events from Github and set up an HTTP Source on it.
-
-1. Configure a [Hosted Collector](/docs/send-data/configure-hosted-collector), or select an existing hosted collector for the HTTP Source.
-2. Configure an[ HTTP Source](/docs/send-data/sources/sources-hosted-collectors/http-logs-metrics-source) on the Hosted Collector.
-    * For Source Category, enter any string to tag the output collected from this Source, such as **GitHub**.
-    * Click **+Add Field **and provide the following:
-        * **Field Name. **_convertHeadersToFields
-        * **Value. **true
-    * Click **Save** and make note of the HTTP address for the Source. You will supply it when you configure the GitHub Webhook in the next section.<br/><img src={useBaseUrl('img/integrations/app-development/Field_GitHub.png')} alt="Field_GitHub" />
-
-### Configure a GitHub Webhook
-
-In GitHub, configure a Webhook to connect to your Sumo Logic HTTP Source. You can configure the Webhook at the Organization or Repository level. Once configured, it will be triggered each time one or more subscribed events occur in that Organization or Repository.
-
-You can create up to 20 Webhooks for each event on each specific organization or repository.
-
-To configure a GitHub Webhook:
-
-1. Sign in to your GitHub account.
-2. Go to your Organization.
-3. Go to **Settings > Webhooks**.
-4. Click **Add Webhook**. The Add Webhook form appears.
-5. Enter Webhook form data as follows:
-    1. **Payload URL**. Enter the Sumo Logic HTTP Source Address from the **source setup step.**
-    2. **Content type**. Select application/json.
-    3. **Secret**. Leave blank.
-    4. **Which events would you like to trigger this Webhook?** Select **Send me everything**.
-    5. **Active**. Check the box.
-6. Click **Add Webhook**.
-
-
-### Enable GitHub Event tagging at Sumo Logic
-
-Sumo Logic needs to understand the event type for incoming events. To enable this, the [x-github-event](https://docs.github.com/en/developers/webhooks-and-events/webhook-events-and-payloads) event type needs to be enabled. To enable this, perform the following steps in the Sumo Logic console:
-
-1. From Sumo Logic, go to **Manage Data** > **Logs** > [**Fields**](/docs/manage/fields.md#add-field).
-2. Add Field ‎**x-github-event**‎.<br/><img src={useBaseUrl('img/integrations/app-development/Field_x-github-event.png')} alt="Field_GitHub" />
-
 
 
 ### Sample Log Messages
@@ -149,6 +99,55 @@ GitHub sends all fields in the payload, documented according to [Event Type](htt
 | number (number_issues)
 ```
 
+
+## Collecting Logs for GitHub
+
+This procedure explains how to collect logs from GitHub.
+
+The Sumo Logic App for GitHub connects to your GitHub repository at the Organization or Repository level and ingests GitHub events via a webhook. These events populate the preconfigured dashboards to give you a complete overview of your GitHub’s branch, issues, pull requests, user activity, and security events.
+
+
+### Configure Hosted Collector to Receive GitHub Events
+
+In this step, you create a Hosted Collector to receive Webhook Events from Github and set up an HTTP Source on it.
+
+1. Configure a [Hosted Collector](/docs/send-data/configure-hosted-collector), or select an existing hosted collector for the HTTP Source.
+2. Configure an[ HTTP Source](/docs/send-data/sources/sources-hosted-collectors/http-logs-metrics-source) on the Hosted Collector.
+    * For Source Category, enter any string to tag the output collected from this Source, such as **GitHub**.
+    * Click **+Add Field** and provide the following:
+        * **Field Name.** `_convertHeadersToFields`
+        * **Value.** true
+    * Click **Save** and make note of the HTTP address for the Source. You will supply it when you configure the GitHub Webhook in the next section.<br/><img src={useBaseUrl('img/integrations/app-development/Field_GitHub.png')} alt="Field_GitHub" />
+
+### Configure a GitHub Webhook
+
+In GitHub, configure a Webhook to connect to your Sumo Logic HTTP Source. You can configure the Webhook at the Organization or Repository level. Once configured, it will be triggered each time one or more subscribed events occur in that Organization or Repository.
+
+You can create up to 20 Webhooks for each event on each specific organization or repository.
+
+To configure a GitHub Webhook:
+
+1. Sign in to your GitHub account.
+2. Go to your Organization.
+3. Go to **Settings > Webhooks**.
+4. Click **Add Webhook**. The Add Webhook form appears.
+5. Enter Webhook form data as follows:
+    1. **Payload URL**. Enter the Sumo Logic HTTP Source Address from the **source setup step.**
+    2. **Content type**. Select application/json.
+    3. **Secret**. Leave blank.
+    4. **Which events would you like to trigger this Webhook?** Select **Send me everything**.
+    5. **Active**. Check the box.
+6. Click **Add Webhook**.
+
+
+### Enable GitHub Event tagging at Sumo Logic
+
+Sumo Logic needs to understand the event type for incoming events. To enable this, the [x-github-event](https://docs.github.com/en/developers/webhooks-and-events/webhook-events-and-payloads) event type needs to be enabled. To enable this, perform the following steps in the Sumo Logic console:
+
+1. From Sumo Logic, go to **Manage Data** > **Logs** > [**Fields**](/docs/manage/fields.md#add-field).
+2. Add Field ‎**x-github-event**‎.<br/><img src={useBaseUrl('img/integrations/app-development/Field_x-github-event.png')} alt="Field_GitHub" />
+
+
 ## Installing the GitHub App
 
 Now that you have set up collector GitHub, install the Sumo Logic App for GitHub to use the preconfigured searches and [dashboards](#viewing-dashboards) to analyze your data.
@@ -174,15 +173,8 @@ Panels will start to fill automatically. It's important to note that each panel 
 
 #### Troubleshooting
 
-If you are getting the following error after installing the App:
-
-```bash
-Field x-github-event not found, please check the spelling and try again.
-```
-
-Do the following to resolve:
-
-1. In Sumo Logic, click Manage Data > Logs > [Fields and](/docs/manage/fields.md#add-field) delete your **x-github-event**.
+If you are getting the following error after installing the app - `Field x-github-event not found, please check the spelling and try again` - do the following to resolve:
+1. In Sumo Logic, click **Manage Data** > **Logs** > [Fields and](/docs/manage/fields.md#add-field) delete your **x-github-event**.
 2. Add it again using the **Dropped Fields** option.
 
 

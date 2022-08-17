@@ -11,12 +11,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Azure SQL Database is a managed relational cloud database service. The Sumo Logic app for Azure SQL helps you monitor activity in Azure SQL. The preconfigured dashboards provide insight into resource utilization, blocking queries, database wait events, errors, runtime execution stats, and other database analytics.
 
-
-## Collect Logs and Metrics
-
-This section has instructions for collecting logs and metrics for the Azure SQL App, as well as a sample log message and a query sample.
-
-### Log types
+## Log types
 
 The Sumo Logic App for Azure SQL App uses the following log types:
 
@@ -30,53 +25,6 @@ The Sumo Logic App for Azure SQL App uses the following log types:
 * TimeoutEvent
 
 For details on Azure SQL logs and metrics, see [Enable logging](https://docs.microsoft.com/en-us/azure/sql-database/sql-database-metrics-diag-logging#enable-logging) in Azure help.
-
-### Collect diagnostic logs from Azure Monitor by streaming to EventHub
-
-In this step, you configure a pipeline for shipping logs from [Azure Monitor](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-get-started) to an Event Hub, on to an Azure Function, and finally to an HTTP Source on a Hosted Collector in Sumo Logic. Azure Monitor collects metrics and logs. The pipeline is described on [Collect Logs from Azure Monitor](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-logs-azure-monitor.md).  
-
-1. Perform Steps 1 and Step 2 of [Collect Logs from Azure Monitor](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-logs-azure-monitor.md).   \
-In Step 1, you create an HTTP Source. When you configure the, plan your source category to ease the querying process. A hierarchical approach allows you to make use of wildcards. For example: \
-`Azure/DB/SQL/Logs`
-2. Push logs from Azure Monitor to Event Hub. Various Azure Services connect to Azure Monitor to send monitoring data to an Event Hub. For more information, see [Azure Monitor: Send monitoring data to an event hub](https://azure.microsoft.com/en-us/blog/azure-monitor-send-monitoring-data-to-an-event-hub/) and How do I set up [Azure platform monitoring data to be streamed to an event hub?](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitor-stream-monitoring-data-event-hubs#how-do-i-set-up-azure-platform-monitoring-data-to-be-streamed-to-an-event-hub) in Azure help.
-    1. Login into Azure Portal.
-    2. Click **Azure SQL**. Select the SQL database from which you want to collect logs.
-    3. In the Monitoring Section, the** Diagnostic Settings** blade displays any existing settings. Click **Edit Setting** if you want to change your existing settings, or click **Add diagnostic setting** to add a new one. You can have a maximum of three settings.
-    4. Enter a name.
-    5. Check the **Stream to an event hub** box and click **Event hub / Configure**.
-    6. Select an Azure subscription.
-    7. Select the Event Hubs namespace you created in Step 2 of [Collect Logs from Azure Monitor](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-logs-azure-monitor.md). It should start with `“SumoAzureLogsNamespace<UniqueSuffix>”`.
-    8. Select insights-operational-logs from the **Select event hub name** dropdown.
-    9. Select RootManageSharedAccessKey from **Select event hub policy name **dropdown.
-    10. Click **OK** to exit event hub configuration.
-    11. Check the box under **Logs** labeled “Audit”.
-    12. Click **Save**.
-
-### Collect metrics from Azure Monitor  by streaming to EventHub
-
-In this step, you configure a pipeline for shipping metrics from Azure Monitor to an Event Hub, on to an Azure Function, and finally to an HTTP Source on a hosted collector in Sumo Logic. The pipeline is described on [Collect Metrics from Azure Monitor](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor.md).
-1. Perform Steps 1 and Step 2 of [Collect Metrics from Azure Monitor.](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor.md)   
-In Step 1, you create an HTTP source. When you configure the, plan your source category to ease the querying process.  A hierarchical approach allows you to make use of wildcards. For example: \
-`Azure/DB/SQL/Metrics`
-2. Push metrics from Azure Monitor to Event Hub.
-   * From the left pane, select **ALL Services. \
-   * Search for and select "Monitor".
-   * In the **Monitor** pane, select **Diagnostic Settings **under **Settings**. \
-   * Select the resource for which you want to export metrics. If **diagnostics** is not enabled click **Turn on Diagnostics Settings. \
-   * Once diagnostics are enabled, click **Add a diagnostic setting**. \
-   * The **Diagnostic Settings** page appears. \
-   * In the left pane
-      * Enter a name for the diagnostic setting.
-      * Click the  **Stream to an event hub **checkbox.
-      * Select **Configure event hub.** The right pane appears.
-   * In the right pane:
-      * Choose a **Subscription**.
-      * Select `SumoMetricsNamespace_<UniqueSuffix>` as the event hub namespace.
-      * Select **insights-metrics-pt1m** as the event hub name.
-      * Select an event hub policy name. You can use the default policy** RootManageSharedAccessKey**.
-   * Check the AllMetrics box.
-   * Click **OK**.
-   * Save the **Diagnostics Setting**.
 
 
 ### Sample Log Messages
@@ -126,9 +74,7 @@ In Step 1, you create an HTTP source. When you configure the, plan your source c
 ```
 
 
-
 ### Sample Query
-
 
 ```sql title="Top 10 Errors"
 _sourceCategory=Azure/DB/SQL/Logs ErrorEvent "\"operationName\":\"ErrorEvent\""
@@ -138,6 +84,59 @@ _sourceCategory=Azure/DB/SQL/Logs ErrorEvent "\"operationName\":\"ErrorEvent\""
 | count as eventCount by message
 | top 10 message by eventCount, message asc
 ```
+
+
+## Collecting Logs and Metrics
+
+This section has instructions for collecting logs and metrics for the Azure SQL App, as well as a sample log message and a query sample.
+
+### Collect diagnostic logs from Azure Monitor by streaming to EventHub
+
+In this step, you configure a pipeline for shipping logs from [Azure Monitor](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-get-started) to an Event Hub, on to an Azure Function, and finally to an HTTP Source on a Hosted Collector in Sumo Logic. Azure Monitor collects metrics and logs. The pipeline is described on [Collect Logs from Azure Monitor](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-logs-azure-monitor.md).  
+
+1. Perform Steps 1 and Step 2 of [Collect Logs from Azure Monitor](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-logs-azure-monitor.md).   \
+In Step 1, you create an HTTP Source. When you configure the, plan your source category to ease the querying process. A hierarchical approach allows you to make use of wildcards. For example: \
+`Azure/DB/SQL/Logs`
+2. Push logs from Azure Monitor to Event Hub. Various Azure Services connect to Azure Monitor to send monitoring data to an Event Hub. For more information, see [Azure Monitor: Send monitoring data to an event hub](https://azure.microsoft.com/en-us/blog/azure-monitor-send-monitoring-data-to-an-event-hub/) and How do I set up [Azure platform monitoring data to be streamed to an event hub?](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitor-stream-monitoring-data-event-hubs#how-do-i-set-up-azure-platform-monitoring-data-to-be-streamed-to-an-event-hub) in Azure help.
+    1. Login into Azure Portal.
+    2. Click **Azure SQL**. Select the SQL database from which you want to collect logs.
+    3. In the Monitoring Section, the** Diagnostic Settings** blade displays any existing settings. Click **Edit Setting** if you want to change your existing settings, or click **Add diagnostic setting** to add a new one. You can have a maximum of three settings.
+    4. Enter a name.
+    5. Check the **Stream to an event hub** box and click **Event hub / Configure**.
+    6. Select an Azure subscription.
+    7. Select the Event Hubs namespace you created in Step 2 of [Collect Logs from Azure Monitor](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-logs-azure-monitor.md). It should start with `“SumoAzureLogsNamespace<UniqueSuffix>”`.
+    8. Select insights-operational-logs from the **Select event hub name** dropdown.
+    9. Select RootManageSharedAccessKey from **Select event hub policy name **dropdown.
+    10. Click **OK** to exit event hub configuration.
+    11. Check the box under **Logs** labeled “Audit”.
+    12. Click **Save**.
+
+### Collect metrics from Azure Monitor  by streaming to EventHub
+
+In this step, you configure a pipeline for shipping metrics from Azure Monitor to an Event Hub, on to an Azure Function, and finally to an HTTP Source on a hosted collector in Sumo Logic. The pipeline is described on [Collect Metrics from Azure Monitor](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor.md).
+1. Perform Steps 1 and Step 2 of [Collect Metrics from Azure Monitor.](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-metrics-azure-monitor.md)   
+In Step 1, you create an HTTP source. When you configure the, plan your source category to ease the querying process.  A hierarchical approach allows you to make use of wildcards. For example: \
+`Azure/DB/SQL/Metrics`
+2. Push metrics from Azure Monitor to Event Hub.
+   * From the left pane, select **ALL Services. \
+   * Search for and select "Monitor".
+   * In the **Monitor** pane, select **Diagnostic Settings **under **Settings**. \
+   * Select the resource for which you want to export metrics. If **diagnostics** is not enabled click **Turn on Diagnostics Settings. \
+   * Once diagnostics are enabled, click **Add a diagnostic setting**. \
+   * The **Diagnostic Settings** page appears. \
+   * In the left pane
+      * Enter a name for the diagnostic setting.
+      * Click the  **Stream to an event hub **checkbox.
+      * Select **Configure event hub.** The right pane appears.
+   * In the right pane:
+      * Choose a **Subscription**.
+      * Select `SumoMetricsNamespace_<UniqueSuffix>` as the event hub namespace.
+      * Select **insights-metrics-pt1m** as the event hub name.
+      * Select an event hub policy name. You can use the default policy** RootManageSharedAccessKey**.
+   * Check the AllMetrics box.
+   * Click **OK**.
+   * Save the **Diagnostics Setting**.
+
 
 
 ## Installing the Azure SQL App
