@@ -419,9 +419,7 @@ By default, ActiveMQ logs are stored in a log file. Sumo Logic supports collecti
 
 Based on your infrastructure and networking setup choose one of these methods to collect ActiveMQ logs and follow the instructions below to set up log collection:
 
-1. **Configure logging in ActiveMQ**. ActiveMQ use [Log4j](http://logging.apache.org/log4j/2.x/index.html) for logging, it supports logging via the following methods: local text log files, syslog,stdout, remote storage.ActiveMQ logs have eight levels of verbosity: OFF, FATAL, ERROR, WARN, INFO, DEBUG, TRACE, ALL. For details please visit this [page](https://logging.apache.org/log4j/log4j-2.3/manual/customloglevels.html). For the dashboards to work properly, must set log level = debug. Default, log level is info.
-
-  All logging settings are located in [log4j.properties](https://github.com/apache/activemq/blob/main/activemq-console/src/test/resources/log4j.properties).
+1. **Configure logging in ActiveMQ**. ActiveMQ uses [Log4j](http://logging.apache.org/log4j/2.x/index.html) for logging. It supports logging via the following methods: local text log files, syslog, stdout, remote storage. ActiveMQ logs have eight levels of verbosity: OFF, FATAL, ERROR, WARN, INFO, DEBUG, TRACE, ALL. For details, visit this [page](https://logging.apache.org/log4j/log4j-2.3/manual/customloglevels.html). For the dashboards to work properly, must set `log level = debug`. The default log level is INFO. All logging settings are located in [log4j.properties](https://github.com/apache/activemq/blob/main/activemq-console/src/test/resources/log4j.properties).
 2. **Configure ActiveMQ to log to a Local file**. By default, ActiveMQ logs are stored in `<Folder ActiveMQ Installed>/data/activemq.log`. The default directory for log files is listed in the [log4j.properties](https://github.com/apache/activemq/blob/main/activemq-console/src/test/resources/log4j.properties) file. To configure the log output destination to a log file:
    * Navigate to directory : `<Folder ActiveMQ Installed>`
    * Open file log4j.properties and edit options below:
@@ -431,32 +429,28 @@ Based on your infrastructure and networking setup choose one of these methods to
    log4j.logger.org.apache.activemq=DEBUG
    ```
    * Logs from the ActiveMQ log file can be collected via a Sumo Logic [Installed collector](/docs/send-data/Installed-Collectors) and a [Local File Source](/docs/send-data/Sources/sources-installed-collectors/Local-File-Source) as explained in the next section.
-3. **Configuring a Collector**. To add an Installed collector, perform the steps as defined on the page[ Configure an Installed Collector.](/docs/send-data/Installed-Collectors)
-4. **Configuring a Source**. To add a Local File Source source for ActiveMQ do the following:
-
-To collect logs directly from your ActiveMQ machine, use an Installed Collector and a Local File Source.
-
-1. Add a[ Local File Source](/docs/send-data/Sources/sources-installed-collectors/Local-File-Source).
-2. Configure the Local File Source fields as follows:
-* **Name.** (Required)
-* **Description.** (Optional)
-* **File Path (Required).** Enter the path to your activemq.log. The files are typically located in `<Folder ActiveMQ Installed>/data/activemq.log`. If you're using a customized path, check the log4j.properties file for this information.
-* **Source Host.** Sumo Logic uses the hostname assigned by the OS unless you enter a different host name
-* **Source Category.** Enter any string to tag the output collected from this Source, such as **ActiveMQ/Logs**. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details see[ Best Practices](/docs/send-data/design-deployment/best-practices-source-categories).)
-* **Fields. Set the following fields:**
-    * `component = messaging`
-    * `messaging_system = activemq`
-    * `messaging_cluster = <Your_ActiveMQ_Cluster_Name>`
-    * `environment = <Environment_Name>`, such as Dev, QA or Prod.
-
-1. Configure the **Advanced** section:
-* **Enable Timestamp Parsing.** Select Extract timestamp information from log file entries.
-* **Time Zone.** Choose the option, **Ignore time zone from log file and instead use**, and then select your ActiveMQ Server’s time zone.
-* **Timestamp Format.** The timestamp format is automatically detected.
-* **Encoding. **Select** **UTF-8 (Default).
-* **Enable Multiline Processing.** Detect messages spanning multiple lines
-    * Infer Boundaries - Detect message boundaries automatically
-1. Click **Save**.
+3. **Configuring a Collector**. To add an Installed collector, perform the steps as defined on the page [Configure an Installed Collector.](/docs/send-data/Installed-Collectors)
+4. **Configuring a Source**. To collect logs directly from your ActiveMQ machine, use an Installed Collector and a Local File Source:
+   1. Add a [Local File Source](/docs/send-data/Sources/sources-installed-collectors/Local-File-Source).
+   2. Configure the Local File Source fields as follows:
+     * **Name.** (Required)
+     * **Description.** (Optional)
+     * **File Path (Required).** Enter the path to your activemq.log. The files are typically located in `<Folder ActiveMQ Installed>/data/activemq.log`. If you're using a customized path, check the log4j.properties file for this information.
+     * **Source Host.** Sumo Logic uses the hostname assigned by the OS unless you enter a different host name
+     * **Source Category.** Enter any string to tag the output collected from this Source, such as **ActiveMQ/Logs**. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details see[ Best Practices](/docs/send-data/design-deployment/best-practices-source-categories).)
+     * **Fields**. Set the following fields:
+       * `component = messaging`
+       * `messaging_system = activemq`
+       * `messaging_cluster = <Your_ActiveMQ_Cluster_Name>`
+       * `environment = <Environment_Name>`, such as Dev, QA or Prod.
+   3. Configure the **Advanced** section:
+     * **Enable Timestamp Parsing.** Select Extract timestamp information from log file entries.
+     * **Time Zone.** Choose the option, **Ignore time zone from log file and instead use**, and then select your ActiveMQ Server’s time zone.
+     * **Timestamp Format.** The timestamp format is automatically detected.
+     * **Encoding.** Select UTF-8 (Default).
+     * **Enable Multiline Processing.** Detect messages spanning multiple lines.
+     * Infer Boundaries - Detect message boundaries automatically
+   4. Click **Save**.
 
 At this point, ActiveMQ logs should start flowing into Sumo Logic.
 
@@ -480,65 +474,40 @@ There are limits to how many alerts can be enabled - please see the[ Alerts FAQ]
 ### Method 1: Install the monitors by importing a JSON file:
 
 1. Download the[ JSON file](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/blob/main/monitor_packages/ActiveMQ/activemq.json) that describes the monitors.
-2. The[ JSON](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/blob/main/monitor_packages/ActiveMQ/activemq.json) contains the alerts that are based on Sumo Logic searches that do not have any scope filters and therefore will be applicable to all ActiveMQ clusters, the data for which has been collected via the instructions in the previous sections.  However, if you would like to restrict these alerts to specific clusters or environments, update the JSON file by replacing the text `'messaging_system=activemq `with `'<Your Custom Filter>`.  
+2. The[ JSON](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/blob/main/monitor_packages/ActiveMQ/activemq.json) contains the alerts that are based on Sumo Logic searches that do not have any scope filters and therefore will be applicable to all ActiveMQ clusters, the data for which has been collected via the instructions in the previous sections.  However, if you would like to restrict these alerts to specific clusters or environments, update the JSON file by replacing the text `messaging_system=activemq` with `<Your Custom Filter>`. Custom filter examples:
+   * For alerts applicable only to a specific cluster, your custom filter would be:  `messaging_cluster=activemq-prod.01`
+   * For alerts applicable to all clusters that start with `activemq-prod`: `messaging_cluster=activemq-prod*`
+   * For alerts applicable to a specific cluster within a production environment: `messaging_cluster=activemq-1` and `environment=prod`. This assumes you have set the optional environment tag while configuring collection.
+3. Go to Manage Data > Alerts > Monitors.
+4. Click **Add**.
+5. Click Import and then copy-paste the above JSON to import monitors.
 
-Custom filter examples:
-
-
-1. For alerts applicable only to a specific cluster, your custom filter would be:  `'messaging_cluster=activemq-prod.01'`
-2. For alerts applicable to all clusters that start with `activemq-prod`, your custom filter would be: `messaging_cluster=activemq-prod*`
-3. **For alerts applicable to a specific cluster within a production environment, your custom filter would be: `messaging_cluster=activemq-1`** and `environment=prod` (This assumes you have set the optional environment tag while configuring collection)
-4. Go to Manage Data > Alerts > Monitors.
-5. Click **Add**: \
-
-6. Click Import and then copy-paste the above JSON to import monitors.
-
-The monitors are disabled by default. Once you have installed the alerts using this method, navigate to the ActiveMQ folder under **Monitors** to configure them. See[ this](/docs/alerts/monitors/index.md) document to enable monitors to send notifications to teams or connections. Please see the instructions detailed in Step 4 of this[ document](/docs/alerts/monitors#add-a-monitor).    
+The monitors are disabled by default. Once you have installed the alerts using this method, navigate to the ActiveMQ folder under **Monitors** to configure them. See[ this](/docs/alerts/monitors/index.md) document to enable monitors to send notifications to teams or connections. Please see the instructions detailed in Step 4 of this [document](/docs/alerts/monitors#add-a-monitor).    
 
 
 ### Method 2: Install the alerts using a Terraform script
 
-**1. Generate a Sumo Logic access key and ID**
-
-Generate an access key and access ID for a user that has the Manage Monitors role capability in Sumo Logic using these[ instructions](/docs/manage/security/access-keys#manage-your-access-keys-on-preferences-page). Please identify which deployment your Sumo Logic account is in, using this[  link](https://help.sumologic.com/APIs/General-API-Information/Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security).
-
-**2. [Download and install Terraform 0.13](https://www.terraform.io/downloads.html) or later**
-
-
-**3. Download the Sumo Logic Terraform package for ActiveMQ alerts**
-
-The alerts package is available in the Sumo Logic github[ repository](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/tree/main/monitor_packages/ActiveMQ). You can either download it through the “git clone” command or as a zip file.
-
-**4. Alert Configuration**
-
-After the package has been extracted, navigate to the package directory **`terraform-sumologic-sumo-logic-monitor/monitor_packages/ActiveMQ/`
-
-Edit the **`activemq.auto.tfvars` file and add the Sumo Logic Access Key, Access Id, and Deployment from Step 1.
-
-```bash
-access_id   = "<SUMOLOGIC ACCESS ID>"
-access_key  = "<SUMOLOGIC ACCESS KEY>"
-environment = "<SUMOLOGIC DEPLOYMENT>"
-```
-
-
-The Terraform script installs the alerts without any scope filters, if you would like to restrict the alerts to specific clusters or environments, update the variable **`'activemq_data_source'`. Custom filter examples:
-
-1. A specific cluster **`'messaging_cluster=activemq.prod.01'`
-2. All clusters in an environment `'environment=prod'`
-3. For alerts applicable to all clusters that start with activemq-prod, your custom filter would be: `'messaging_cluster=activemq-prod*'`
-4. For alerts applicable to a specific cluster within a production environment, your custom filter would be:`activemq_cluster=activemq-1` and `environment=prod` (This assumes you have set the optional environment tag while configuring collection)
+1. Generate an access key and access ID for a user that has the Manage Monitors role capability in Sumo Logic using these[ instructions](/docs/manage/security/access-keys#manage-your-access-keys-on-preferences-page). Please identify which deployment your Sumo Logic account is in, using this[  link](https://help.sumologic.com/APIs/General-API-Information/Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security).
+2. [Download and install Terraform 0.13](https://www.terraform.io/downloads.html) or later.
+3. Download the Sumo Logic Terraform package for ActiveMQ alerts: The alerts package is available in the Sumo Logic github[ repository](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/tree/main/monitor_packages/ActiveMQ). You can either download it through the “git clone” command or as a zip file.
+4. Alert Configuration: After the package has been extracted, navigate to the package directory `terraform-sumologic-sumo-logic-monitor/monitor_packages/ActiveMQ/`.
+   1. Edit the `activemq.auto.tfvars` file and add the Sumo Logic Access Key, Access Id, and Deployment from Step 1.
+    ```bash
+    access_id   = "<SUMOLOGIC ACCESS ID>"
+    access_key  = "<SUMOLOGIC ACCESS KEY>"
+    environment = "<SUMOLOGIC DEPLOYMENT>"
+    ```
+  The Terraform script installs the alerts without any scope filters, if you would like to restrict the alerts to specific clusters or environments, update the variable `'activemq_data_source'`. Custom filter examples:
+    * A specific cluster **`'messaging_cluster=activemq.prod.01'`
+    * All clusters in an environment `'environment=prod'`
+    * For alerts applicable to all clusters that start with activemq-prod, your custom filter would be: `'messaging_cluster=activemq-prod*'`
+    * For alerts applicable to a specific cluster within a production environment, your custom filter would be:`activemq_cluster=activemq-1` and `environment=prod` (This assumes you have set the optional environment tag while configuring collection)
 
 All monitors are disabled by default on installation, if you would like to enable all the monitors, set the parameter monitors_disabled to false in this file.
 
 By default, the monitors are configured in a monitor **folder** called “**ActiveMQ**”, if you would like to change the name of the folder, update the monitor folder name in “folder” key at **activemq.auto.tfvars** file.
 
-If you would like the alerts to send email or connection notifications, configure these in the file **`activemq_notifications.auto.tfvars`. For configuration examples, refer to the next section.
-
-
-**5. Email and Connection Notification Configuration Examples**
-
-Modify the file **activemq_notifications.auto.tfvars** and populate connection_notifications and email_notifications as per below examples.
+5. If you would like the alerts to send email or connection notifications, modify the file **activemq_notifications.auto.tfvars** and populate `connection_notifications` and `email_notifications` as per below examples.
 
 ```bash title="Pagerduty Connection Example"
 connection_notifications = [
@@ -557,11 +526,9 @@ connection_notifications = [
   ]
 ```
 
-
 Replace `<CONNECTION_ID>` with the connection id of the webhook connection. The webhook connection id can be retrieved by calling the[ Monitors API](https://api.sumologic.com/docs/#operation/listConnections).
 
 For overriding payload for different connection types, refer to this[ document](/docs/manage/connections-and-integrations/webhook-connections/set-up-webhook-connections.md).
-
 
 ```bash title="Email Notifications Example"
 email_notifications = [
@@ -576,21 +543,15 @@ email_notifications = [
   ]
 ```
 
-
-**6. Install the Alerts**
-
-1. Navigate to the package directory `terraform-sumologic-sumo-logic-monitor/monitor_packages/ActiveMQ/` and run terraform init. This will initialize Terraform and will download the required components.
-2. Run terraform plan to view the monitors which will be created/modified by Terraform.
-3. Run terraform apply.
-
+6. Install the Alerts:
+   1. Navigate to the package directory `terraform-sumologic-sumo-logic-monitor/monitor_packages/ActiveMQ/` and run `terraform init`. This will initialize Terraform and will download the required components.
+   2. Run `terraform plan` to view the monitors which will be created/modified by Terraform.
+   3. Run `terraform apply`.
 7. Post Installation
 
-If you haven’t enabled alerts and/or configured notifications through the Terraform procedure outlined above, we highly recommend enabling alerts of interest and configuring each enabled alert to send notifications to other users or services. This is detailed in Step 4 of[ this document](/docs/alerts/monitors#add-a-monitor).
-
+If you haven’t enabled alerts and/or configured notifications through the Terraform procedure outlined above, we highly recommend enabling alerts of interest and configuring each enabled alert to send notifications to other users or services. This is detailed in Step 4 of [this document](/docs/alerts/monitors#add-a-monitor).
 
 There are limits to how many alerts can be enabled - please see the[ Alerts FAQ](/docs/alerts/monitors/monitor-faq.md).
-
-
 
 
 ## Installing the ActiveMQ App
@@ -605,17 +566,12 @@ Version selection is applicable only to a few apps currently. For more informati
 
 3. To install the app, complete the following fields.
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
-    2. **Data Source.**
-* Choose **Enter a Custom Data Filter**, and enter a custom ActiveMQ cluster filter. Examples:
-    1. For all ActiveMQ  clusters \
-`messaging_cluster=*`
-    2. For a specific cluster: \
-`messaging_cluster=activemq.dev.01`. 
-    3. Clusters within a specific environment: \
-`messaging_cluster=activemq-1` and `environment=prod \
-`(This assumes you have set the optional environment tag while configuring collection)
-    4. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-    5. Click **Add to Library**.
+    2. **Data Source.** Choose **Enter a Custom Data Filter**, and enter a custom ActiveMQ cluster filter. Examples:
+      * For all ActiveMQ clusters: `messaging_cluster=*`
+      * For a specific cluster: `messaging_cluster=activemq.dev.01`. 
+      * Clusters within a specific environment: `messaging_cluster=activemq-1` and `environment=prod` (This assumes you have set the optional environment tag while configuring collection).
+4. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
+5. Click **Add to Library**.
 
 Once an app is installed, it will appear in your **Personal** folder, or another folder that you specified. From here, you can share it with your organization.
 
@@ -625,7 +581,6 @@ Panels will start to fill automatically. It's important to note that each panel 
 ## ActiveMQ Alerts
 
 Sumo Logic has provided out of the box alerts available via[ Sumo Logic monitors](/docs/alerts/monitors/index.md) to help you quickly determine if the ActiveMQ database cluster is available and performing as expected.
-
 
 <table>
   <tr>
@@ -846,8 +801,7 @@ Sumo Logic has provided out of the box alerts available via[ Sumo Logic monitors
 
 ### Dashboard Filters with Template Variables
 
-Template variables provide dynamic dashboards that rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you can view dynamic changes to the data for a fast resolution to the root cause. For more information, see the Filter with template variables help page.
-
+Template variables provide dynamic dashboards that rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you can view dynamic changes to the data for a fast resolution to the root cause. For more information, see the [Filter with template variables](docs/alerts/monitors/template-variables.md) help page.
 
 ### Overview
 
