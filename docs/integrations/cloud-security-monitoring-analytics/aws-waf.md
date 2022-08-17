@@ -46,7 +46,7 @@ See an overview of threats detected and traffic passing through AWS WAF.
 
 <img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/AWS-WAF-Security-Monitoring-Overview.png')} alt="AWS WAF dashboards" />
 
-**Traffic Map. **Geolocation heat map of inbound and outbound traffic passing through the WAF.
+**Traffic Map.** Geolocation heat map of inbound and outbound traffic passing through the WAF.
 
 **Traffic Trend.** Line chart comparing the volume of blocked and allowed connections.
 
