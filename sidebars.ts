@@ -2040,7 +2040,7 @@ module.exports = {
     },
     {
       type: 'category',
-      label: 'SDO',
+      label: 'Software Dev Optimization (SDO)',
       collapsible: true,
       collapsed: true,
       link: {type: 'doc', id: 'sdo/index'},
