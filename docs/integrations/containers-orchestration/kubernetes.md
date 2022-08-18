@@ -51,7 +51,8 @@ The following are the minimum supported requirements for this application:
 
 The Sumo Logic App for Kubernetes uses logs and metrics.
 
-### Log Source
+### Log Sources
+
 * Application Logs
 
 ### Metrics Sources
@@ -80,26 +81,23 @@ getsockopt: connection refused"}
 | fields - message | count container | top 10 container by _count
 ```
 
-## Collecting Logs and Metrics for the Kubernetes App
+## Collecting Metrics and Logs for the Kubernetes App
 
 This section has instructions for collecting logs and metrics for the Sumo App for Kubernetes. FluentBit and FluentD. Prometheus collects metrics data for Sumo Logic.
 
-### Prerequisites  
+:::note Prerequisites  
 Set the following fields in the Sumo Logic UI prior to configuring collection. This ensures that your logs are tagged with relevant metadata, which is required by the app dashboards and Explore.
-
-* cluster
-* container
-* deployment
-* host
-* namespace
-* node
-* pod
-* service
+* `cluster`
+* `container`
+* `deployment`
+* `host`
+* `namespace`
+* `node`
+* `pod`
+* `service`
+:::
 
 For information on setting up fields, see the [Fields](/docs/manage/fields) help page.
-
-
-## Collecting Metrics and Logs for Kubernetes
 
 Reference the [Deployment Guide](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/README.md#documentation) in our sumologic-kubernetes-collection GitHub repository for detailed instructions on how to collect Kubernetes logs, metrics, and events; enrich them with deployment, pod, and service level metadata; and send them to Sumo Logic.
 
@@ -122,7 +120,7 @@ To install the app, do the following:
 5. Click **Add to Library**.
 
 
-## Installing Kubernetes Alerts
+## Installing Kubernetes Monitors
 
 Sumo Logic has provided out of the box alerts available through [Sumo Logic monitors](docs/alerts/monitors/index.md) to help you quickly determine if the Kubernetes cluster is available and performing as expected. These alerts are built based on metrics datasets and have preset thresholds based on industry best practices and recommendations.
 * To install these alerts, you need to have the Manage Monitors role capability.

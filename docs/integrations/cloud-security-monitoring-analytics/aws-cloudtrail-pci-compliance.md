@@ -1,5 +1,5 @@
 ---
-id: aws-cloudtrail
+id: aws-cloudtrail-pci-compliance
 title: Sumo Logic App for PCI Compliance for AWS CloudTrail
 sidebar_label: AWS CloudTrail PCI Compliance
 description: Introduction to Amazon CloudTrail - Cloud Security Monitoring and Analytics.
@@ -7,7 +7,7 @@ description: Introduction to Amazon CloudTrail - Cloud Security Monitoring and A
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/icons/security/PCI-compliance.png')} alt="PCI Compliance icon" width="75"/>
+<img src={useBaseUrl('img/icons/security/PCI-compliance.png')} alt="PCI Compliance icon" width="100"/>
 
 This set of CloudTrail monitoring and analytics dashboards provide one dashboard for the most critical analytics. Think of this bundle of dashboards as a good starting place to see trends and outliers on specific aspects of your CloudTrail data -- including access monitoring, login activity, system monitoring, privileged activity, and threat intelligence.
 

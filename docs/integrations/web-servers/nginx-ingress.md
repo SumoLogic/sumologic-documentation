@@ -52,28 +52,13 @@ If you're using Nginx Ingress in a Kubernetes environment, create the fields:
 
 Sumo Logic supports the collection of logs and metrics data from Nginx Ingress in Kubernetes environments.
 
-Please click on the appropriate links below based on the environment where your Nginx Ingress farms are hosted.
-
-**Follow the below instructions to set up the metric collection:**
-
-1. Configure Metrics Collection
-    1. Setup Kubernetes Collection with the Telegraf operator.
-    2. Add annotations on your Nginx Ingress pods.
-2. Configure Logs Collection
-    3. Configure logging in Nginx Ingress.
-    4. Add labels on your Nginx Ingress pods to capture logs from standard output.
-    5. Collecting Nginx Ingress Logs from a Log file.
-
-**Prerequisites**
-
+:::note Prerequisites
 It’s assumed that you are using the latest helm chart version if not please upgrade using the instructions [here](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/release-v2.0/deploy/docs/v2_migration_doc.md#how-to-upgrade).
+:::
 
-1. Before you can configure Sumo Logic to ingest metrics, you must enable the Prometheus metrics in the Nginx Ingress controller and annotate the Nginx Ingress pods, so Prometheus can find the Nginx Ingress metrics.
-* For instructions on Nginx Open Source, refer to the following documentation [https://docs.nginx.com/nginx-ingress-controller/logging-and-monitoring/prometheus/](https://docs.nginx.com/nginx-ingress-controller/logging-and-monitoring/prometheus/).
-1. Ensure you have deployed version 1.3 or higher of the Sumologic-Kubernetes-Collection, to send the logs and metrics to Sumologic. For more information on deploying Sumologic-Kubernetes-Collection,[ visit](/docs/integrations/containers-orchestration/Kubernetes#Collect_Logs_and_Metrics_for_the_Kubernetes_App) here. Once deployed, logs will automatically be picked up and sent by default. Prometheus will scrape the Nginx Ingress pods, based on the annotations set in Step 1, for the metrics. Logs and Metrics will automatically be sent to the respective fluentD stateful sets which consistently tag your logs and metrics, then forward them to your Sumo Logic org.
-2. Apply following labels to the Nginx Ingress pod.
-
-Labels:
+1. Before you can configure Sumo Logic to ingest metrics, you must enable the Prometheus metrics in the Nginx Ingress controller and annotate the Nginx Ingress pods, so Prometheus can find the Nginx Ingress metrics. For instructions on Nginx Open Source, refer to [this documentation](https://docs.nginx.com/nginx-ingress-controller/logging-and-monitoring/prometheus/).
+2. Ensure you have deployed version 1.3 or higher of the Sumologic-Kubernetes-Collection, to send the logs and metrics to Sumologic. For more information on deploying Sumologic-Kubernetes-Collection,[ visit](/docs/integrations/containers-orchestration/Kubernetes#Collect_Logs_and_Metrics_for_the_Kubernetes_App) here. Once deployed, logs will automatically be picked up and sent by default. Prometheus will scrape the Nginx Ingress pods, based on the annotations set in Step 1, for the metrics. Logs and Metrics will automatically be sent to the respective fluentD stateful sets which consistently tag your logs and metrics, then forward them to your Sumo Logic org.
+3. Apply following labels to the Nginx Ingress pod.
 ```sql
 environment="prod_CHANGEME"
 component="webserver"
@@ -81,44 +66,31 @@ component="webserver"
   webserver_farm="<farm_CHANGEME>"
 ```
 
-
-Enter in values for the following parameters (marked in bold and **CHANGE_ME **above):
-
+Enter in values for the following parameters (marked in bold and **`CHANGE_ME`** above):
 * `environment` - This is the deployment environment where the Nginx Ingress farm identified by the value of servers resides. For example:- dev, prod, or QA. While this value is optional we highly recommend setting it.
-* **webserver_farm** - Enter a name to identify this Nginx Ingress farm. This farm name will be shown in the Sumo Logic dashboards. If you haven’t defined a farm in Nginx Ingress, then enter ‘default’ for webserver_farm.
+* `webserver_farm` - Enter a name to identify this Nginx Ingress farm. This farm name will be shown in the Sumo Logic dashboards. If you haven’t defined a farm in Nginx Ingress, then enter ‘default’ for `webserver_farm`.
 
 Here’s an explanation for additional values set by this configuration that we request you do not modify as they will cause the Sumo Logic apps to not function correctly.
-
 * `component: “webserver”` - This value is used by Sumo Logic apps to identify application components.
 * `webserver_system: “nginx_ingress”` - This value identifies the database system.
-1. **Add an FER to normalize the fields in Kubernetes environments.**
-
-Labels created in Kubernetes environments automatically are prefixed with pod_labels. To normalize these for our app to work, we need to create a Field Extraction Rule if not already created for Proxy Application Components. To do so:
-
-1. Go to **Manage Data > Logs > Field Extraction Rules**.
-2. Click the + **Add **button on the top right of the table. \
-The **Add Field Extraction Rule** form will appear:
-
-Enter the following options:
-
-1. **Rule Name**. Enter the name as **App Observability - Webserver**.
-2. **Applied At.** Choose **Ingest Time.**
-3. **Scope**. Select **Specific Data.**
-4. **Scope**: Enter the following keyword search expression.
-
+4. **Add an FER to normalize the fields in Kubernetes environments.** Labels created in Kubernetes environments automatically are prefixed with `pod_labels`. To normalize these for our app to work, we need to create a Field Extraction Rule if not already created for Proxy Application Components. To do so:
+   1. Go to **Manage Data > Logs > Field Extraction Rules**.
+   2. Click the + **Add **button on the top right of the table. \
+   3. The **Add Field Extraction Rule** form will appear. Enter the following options:
+     * **Rule Name**. Enter the name as **App Observability - Webserver**.
+     * **Applied At.** Choose **Ingest Time.**
+     * **Scope**. Select **Specific Data.**
+     * **Scope**: Enter the following keyword search expression.
 ```sql
 pod_labels_environment=* pod_labels_component=webserver pod_labels_webserver_farm=* pod_labels_webserver_system=*
 ```
-
-**Parse Expression**. Enter the following parse expression.
-
+     * **Parse Expression**. Enter the following parse expression.
 ```sql
 if (!isEmpty(pod_labels_environment), pod_labels_environment, "") as environment
 | pod_labels_component as component
 | pod_labels_webserver_system as webserver_system
 | pod_labels_webserver_farm as webserver_farm
 ```
-
 
 ## Installing Nginx Ingress Monitors
 
@@ -132,60 +104,40 @@ There are limits to how many alerts can be enabled - for details, see the [Alert
 ### Method A: Import a JSON file
 
 1. Download the [JSON file](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/blob/main/monitor_packages/Nginx%20Ingress/nginx_ingress.json) that describes the monitors.
-2. The [JSON](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/blob/main/monitor_packages/Nginx%20Ingress/nginx_ingress.json) contains the alerts that are based on Sumo Logic searches that do not have any scope filters and therefore will be applicable to all Nginx Ingress farms, the data for which has been collected via the instructions in the previous sections. However, if you would like to restrict these alerts to specific farms or environments, update the JSON file by replacing the text `webserver_system=nginx_ingress` with `<Your Custom Filter>`.  
+2. The [JSON](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/blob/main/monitor_packages/Nginx%20Ingress/nginx_ingress.json) contains the alerts that are based on Sumo Logic searches that do not have any scope filters and therefore will be applicable to all Nginx Ingress farms, the data for which has been collected via the instructions in the previous sections. However, if you would like to restrict these alerts to specific farms or environments, update the JSON file by replacing the text `webserver_system=nginx_ingress` with `<Your Custom Filter>`. Custom filter examples:
+   * For alerts applicable only to a specific farm, your custom filter would be:  ‘`webserver_farm=nginx-ingress.01`‘
+   * For alerts applicable to all farms that start with `nginx-ingress`, your custom filter would be: `webserver_system=nginx-ingress*`
+   * For alerts applicable to a specific farm within a production environment, your custom filter would be: `webserver_farm=nginx-ingress-1`** AND `environment=dev` (This assumes you have set the optional environment tag while configuring collection)
+3. Go to Manage Data > Alerts > Monitors.
+4. Click **Add**.
+5. Click Import and then copy-paste the above JSON to import monitors.
 
-Custom filter examples:
-
-1. For alerts applicable only to a specific farm, your custom filter would be:  ‘`webserver_farm=nginx-ingress.01`‘
-2. For alerts applicable to all farms that start with `nginx-ingress`, your custom filter would be: `webserver_system=nginx-ingress*`
-3. **For alerts applicable to a specific farm within a production environment, your custom filter would be: `webserver_farm=nginx-ingress-1`** AND `environment=dev` (This assumes you have set the optional environment tag while configuring collection)
-4. Go to Manage Data > Alerts > Monitors.
-5. Click **Add**:
-
-13
-
-6. Click Import and then copy-paste the above JSON to import monitors.
-
-
-14
 The monitors are disabled by default. Once you have installed the alerts using this method, navigate to the Nginx folder under **Monitors** to configure them. See [this](/docs/alerts/monitors/index.md) document to enable monitors to send notifications to teams or connections. See the instructions detailed in Step 4 of this [document](/docs/alerts/monitors#add-a-monitor).
 
 
 ### Method B: Using a Terraform script
 
-1. **Generate a Sumo Logic access key and ID.**
-Generate an access key and access ID for a user that has the Manage Monitors role capability in Sumo Logic using these[ instructions](/docs/manage/security/access-keys#manage-your-access-keys-on-preferences-page). Identify which deployment your Sumo Logic account is in, using this [link](https://help.sumologic.com/APIs/General-API-Information/Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security).
-2. **[Download and install Terraform 0.13](https://www.terraform.io/downloads.html) or later.**
-3. **Download the Sumo Logic Terraform package for Nginx Ingress alerts. \
-**The alerts package is available in the Sumo Logic GitHub [repository](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/tree/main/monitor_packages/Nginx%20Ingress). You can either download it through the “git clone” command or as a zip file.
-4. **Alert Configuration.** After the package has been extracted, navigate to the package directory **terraform-sumologic-sumo-logic-monitor/monitor_packages/Nginx Ingress/**
-
-    Edit the **nginx_ingress.auto.tfvars** file and add the Sumo Logic Access Key, Access Id and Deployment from Step 1.
-
+1. Generate a Sumo Logic access key and access ID for a user that has the Manage Monitors role capability in Sumo Logic using these[ instructions](/docs/manage/security/access-keys#manage-your-access-keys-on-preferences-page). Identify which deployment your Sumo Logic account is in, using this [link](https://help.sumologic.com/APIs/General-API-Information/Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security).
+2. [Download and install Terraform 0.13](https://www.terraform.io/downloads.html) or later.
+3. Download the Sumo Logic Terraform package for Nginx Ingress alerts: The alerts package is available in the Sumo Logic GitHub [repository](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/tree/main/monitor_packages/Nginx%20Ingress). You can either download it through the “git clone” command or as a zip file.
+4. Alert Configuration: After the package has been extracted, navigate to the package directory **terraform-sumologic-sumo-logic-monitor/monitor_packages/Nginx Ingress.
+   1. Edit the **nginx_ingress.auto.tfvars** file and add the Sumo Logic Access Key, Access Id and Deployment from Step 1.
     ```sql
     access_id   = "<SUMOLOGIC ACCESS ID>"
     access_key  = "<SUMOLOGIC ACCESS KEY>"
     environment = "<SUMOLOGIC DEPLOYMENT>"
     ```
-
-    The Terraform script installs the alerts without any scope filters, if you would like to restrict the alerts to specific farms or environments, update the variable `nginx_ingress_data_source`. Custom filter examples:
-
-1. A specific farm `webserver_farm=nginx.ingress.01`.
-2. All farms in an environment `environment=dev`.
-3. For alerts applicable to all farms that start with nginx ingress, your custom filter would be: `webserver_farm=nginx-ingress*`
-4. For alerts applicable to a specific farm within a production environment, your custom filter would be:
-
-    `webserver_system=nginx_ingress-1` and `environment=dev` (This assumes you have set the optional environment tag while configuring collection)
-
+   The Terraform script installs the alerts without any scope filters, if you would like to restrict the alerts to specific farms or environments, update the variable `nginx_ingress_data_source`. Custom filter examples:
+      * A specific farm `webserver_farm=nginx.ingress.01`.
+      * All farms in an environment `environment=dev`.
+      * For alerts applicable to all farms that start with nginx ingress, your custom filter would be: `webserver_farm=nginx-ingress*`
+      * For alerts applicable to a specific farm within a production environment, your custom filter would be: `webserver_system=nginx_ingress-1` and `environment=dev` (This assumes you have set the optional environment tag while configuring collection)
 
 All monitors are disabled by default on installation, if you would like to enable all the monitors, set the parameter **monitors_disabled** to **false** in this file.
 
-By default, the monitors are configured in a monitor **folder** called “**Nginx Ingress**”, if you would like to change the name of the folder, update the monitor folder name in “folder” key at **nginx_ingress.auto.tfvars file.
+By default, the monitors are configured in a monitor **folder** called “**Nginx Ingress**”, if you would like to change the name of the folder, update the monitor folder name in “folder” key at nginx_ingress.auto.tfvars file.
 
-If you would like the alerts to send email or connection notifications, configure these in the file `nginx_ingress_notifications.auto.tfvars`. For configuration examples, refer to the next section.
-
-1. **Email and Connection Notification Configuration Examples \
-**Modify the file** nginx_ingress_notifications.auto.tfvars and populate connection_notifications and email_notifications as per below examples.
+5. If you would like the alerts to send email or connection notifications, modify the file nginx_ingress_notifications.auto.tfvars and populate `connection_notifications` and `email_notifications` as per below examples.
 
 ```bash title="Pagerduty Connection Example"
 connection_notifications = [
@@ -204,12 +156,9 @@ connection_notifications = [
   ]
 ```
 
-
-
 Replace `<CONNECTION_ID>` with the connection id of the webhook connection. The webhook connection id can be retrieved by calling the [Monitors API](https://api.sumologic.com/docs/#operation/listConnections).
 
 For overriding payload for different connection types, refer to this [document](/docs/manage/connections-and-integrations/webhook-connections/set-up-webhook-connections.md).
-
 
 ```bash title="Email Notifications Example"
 email_notifications = [
@@ -224,11 +173,11 @@ email_notifications = [
       ]
 ```
 
-1. **Install the Alerts**
+6. **Install the Alerts**
     1. Navigate to the package directory terraform-sumologic-sumo-logic-monitor/monitor_packages/**Nginx Ingress**/ and run **terraform init**. This will initialize Terraform and will download the required components.
     2. Run **terraform plan **to view the monitors which will be created/modified by Terraform.
     3. Run **terraform apply**.
-2. **Post Installation** If you haven’t enabled alerts and/or configured notifications through the Terraform procedure outlined above, we highly recommend enabling alerts of interest and configuring each enabled alert to send notifications to other users or services. This is detailed in Step 4 of [this document](/docs/alerts/monitors#add-a-monitor).
+7. **Post Installation** If you haven’t enabled alerts and/or configured notifications through the Terraform procedure outlined above, we highly recommend enabling alerts of interest and configuring each enabled alert to send notifications to other users or services. This is detailed in Step 4 of [this document](/docs/alerts/monitors#add-a-monitor).
 
 
 ## Installing the Nginx Ingress App
