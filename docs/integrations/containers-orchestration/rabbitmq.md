@@ -384,9 +384,9 @@ There are limits to how many alerts can be enabled. For more information, see [M
 
 #### Method B: Install Monitors using a Terraform script
 
-1. Generate an access key and access ID for a user that has the **Manage Monitors** role capability. For instructions see  [Access Keys](/docs/manage/security/access-keys#Create_an_access_key_on_Preferences_page).
+1. Generate an access key and access ID for a user that has the **Manage Monitors** role capability. For instructions see [Access Keys](/docs/manage/security/access-keys#Create_an_access_key_on_Preferences_page).
 2. Download [Terraform 0.13](https://www.terraform.io/downloads.html) or later, and install it.
-3. Download the Sumo Logic Terraform package for MySQL monitors: The alerts package is available in the Sumo Logic github [repository](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/tree/main/monitor_packages/mysql). You can either download it using the git clone command or as a zip file.
+3. Download the Sumo Logic Terraform package for MySQL monitors: The alerts package is available in the Sumo Logic GitHub [repository](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/tree/main/monitor_packages/mysql). You can either download it using the git clone command or as a zip file.
 4. Alert Configuration: After extracting the package, navigate to the terraform-sumologic-sumo-logic-monitor/monitor_packages/RabbitMQ/ directory.
 
 Edit the rabbitmq.auto.tfvars file and add the Sumo Logic Access Key and Access ID from Step 1 and your Sumo Logic deployment. If you're not sure of your deployment, see [Sumo Logic Endpoints and Firewall Security](https://help.sumologic.com/APIs/General-API-Information/Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security).
@@ -397,42 +397,10 @@ environment = "<SUMOLOGIC DEPLOYMENT>"
 ```
 
 The Terraform script installs the alerts without any scope filters, if you would like to restrict the alerts to specific clusters or environments, update the `rabbitmq_data_source` variable. For example:
-
-
-<table>
-  <tr>
-   <td>To configure alerts for...
-   </td>
-   <td>Set rabbitmq_data_source to something like:
-   </td>
-  </tr>
-  <tr>
-   <td>A specific cluster
-   </td>
-   <td>messaging_cluster=rabbitmq.prod.01
-   </td>
-  </tr>
-  <tr>
-   <td>All clusters in an environment
-   </td>
-   <td>environment=prod
-   </td>
-  </tr>
-  <tr>
-   <td>Multiple clusters using a wildcard
-   </td>
-   <td>messaging_cluster=rabbitmq-prod*
-   </td>
-  </tr>
-  <tr>
-   <td>A specific cluster within a specific environment
-   </td>
-   <td>messaging_cluster=rabbitmq-1 and environment=prod
-This assumes you have configured and applied Fields as described in Step 1: Configure Fields of the <em>Sumo Logic of the Collect Logs and Metrics for RabbitMQ</em> topic.
-   </td>
-  </tr>
-</table>
-
+* To configure alerts for A specific cluster, set `rabbitmq_data_source` to something like: messaging_cluster=rabbitmq.prod.01
+* To configure alerts for All clusters in an environment, set `rabbitmq_data_source` to something like: environment=prod
+* To configure alerts for Multiple clusters using a wildcard, set `rabbitmq_data_source` to something like: `messaging_cluster=rabbitmq-prod*`
+* To configure alerts for A specific cluster within a specific environment, set `rabbitmq_data_source` to something like: `messaging_cluster=rabbitmq-1 and environment=prod`. This assumes you have configured and applied Fields as described in Step 1: Configure Fields of the Sumo Logic of the Collect Logs and Metrics for RabbitMQ.
 
 All monitors are disabled by default on installation. To enable all of the monitors, set the monitors_disabled parameter to false.
 
@@ -487,12 +455,11 @@ This section demonstrates how to install the RabbitMQ App. Locate and install th
 1. From the **App Catalog**, search for and select the app**.**
 2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the[ Install the Apps from the Library](/docs/get-started/library/install-apps).
 3. To install the app, complete the following fields.
-    1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
-    2. **Data Source.**
-        * Choose **Enter a Custom Data Filter**, and enter a custom RabbitMQ cluster filter. Examples:
-            1. For all RabbitMQ clusters: `messaging_cluster=*`
-            2. For a specific cluster: `messaging_cluster=rabbitmq.dev.01`
-            3. Clusters within a specific environment: `messaging_cluster=rabbitmq-1 and environment=prod`. This assumes you have set the optional environment tag while configuring collection.
+   1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
+   2. **Data Source.** Choose **Enter a Custom Data Filter**, and enter a custom RabbitMQ cluster filter. Examples:
+      1. For all RabbitMQ clusters: `messaging_cluster=*`
+      2. For a specific cluster: `messaging_cluster=rabbitmq.dev.01`
+      3. Clusters within a specific environment: `messaging_cluster=rabbitmq-1 and environment=prod`. This assumes you have set the optional environment tag while configuring collection.
 4. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
 5. Click **Add to Library**.
 
