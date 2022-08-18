@@ -5,7 +5,7 @@ sidebar_label: Collector
 description: You'll find a list of new Collector features and relevant bug fixes for each release. In order to begin using the features listed here, you'll need to upgrade Collector software.
 ---
 
-Collector Release Notes for the current year are listed here. If you need to see previous Collector Release Notes, check the [archive](/releasenotes/archive).
+Collector Release Notes for the current year are listed here. If you need to see previous Collector Release Notes, check the [archive](/docs/releasenotes/archive).
 
 You can upgrade [Installed Collectors](/docs/send-data/installed-collectors/about-installed-collectors.md) in the following ways:
 
