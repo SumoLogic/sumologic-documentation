@@ -311,13 +311,13 @@ To configure Google Workspace Alert Center collection in your GCP environment, d
 1. Go to: [https://console.cloud.google.com/cloudshell/](https://console.cloud.google.com/cloudshell/)
 2. Run the following command:
   ```bash
-  https://raw.githubusercontent.com/SumoLogic/sumologic-gsuitealertcenter/master/sumo_gsuite_alerts_collector_deploy.sh
+  wget https://raw.githubusercontent.com/SumoLogic/sumologic-gsuitealertcenter/master/sumo_gsuite_alerts_collector_deploy.sh
   ```
-3. Edit the **sumo_gsuite_alerts_collector_deploy.sh** bash script to configure following variables:
-   * **region:** The Region where the Google function will be deployed. For example: "us-central1"
-   * **project_id:** The project id of the project where the collector and all its resources will be deployed
-   * **delegated_email: **The valid email address of one of your org's Google Workspace super admin users.
-   * **Sumo_endpoint:** The Sumo Logic HTTP endpoint created in Step 1
+3. Edit the `sumo_gsuite_alerts_collector_deploy.sh` bash script to configure following variables:
+   * `region`: The Region where the Google function will be deployed. For example: "us-central1"
+   * `project_id`: The project id of the project where the collector and all its resources will be deployed
+   * `delegated_email`:The valid email address of one of your org's Google Workspace super admin users.
+   * `Sumo_endpoint`: The Sumo Logic HTTP endpoint created in Step 1
 4. Run the following script:
   ```bash
   sh sumo_gsuite_alerts_collector_deploy.sh

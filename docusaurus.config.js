@@ -216,7 +216,7 @@ module.exports = {
                     activeBaseRegex: '^/docs/quickstart/.*',
                   },
                   {
-                    label: 'Account Management',
+                    label: 'Manage Sumo',
                     sublabel: 'Manage settings as admin',
                     to: '/docs/manage',
                     icon: 'start',
