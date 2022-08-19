@@ -9,126 +9,17 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/amazon-aws/config.png')} alt="Thumbnail icon" width="50"/>
 
-
 Amazon Web Services (AWS) Config provides a simple web services interface that can be used to track modifications made to the resources that belong to an AWS account. The Sumo Logic App for AWS Config presents modification notifications that contain snapshots of resource configurations and information about the modifications made to a resource. The app uses predefined Live and Interactive Dashboards and filters, which provide visibility into your environment for real-time analysis of overall usage.
 
 
+## Log Types
 
-## Collect Logs for the AWS Config App
-
-### Log Types
 The Sumo Logic App for AWS Config leverages AWS Config’s Simple Notification Service (SNS), which provides notifications in JSON format.
 
 Amazon Web Services (AWS) Config provides a simple web services interface that can be used to track modifications made to the resources that belong to an AWS account. The AWS Config App presents modification notifications that contain snapshots of resource configurations and information about the modifications made to a resource. The app uses predefined Live and Interactive Dashboards and filters that provide visibility into your environment for real-time analysis of overall usage.
 
 
-### Prerequisites
-
-Before you can begin to use the AWS Config App, perform these steps.
-
-1. Enable SNS Notifications in AWS Config.
-2. Add a Sumo Logic Hosted Collector and HTTP Source.
-3. Subscribe to SNS Notifications in AWS Config.
-4. **Optional:** Create a Partition for AWS Config Logs
-
-
-#### Enable SNS Notification in AWS Config
-
-To enable AWS Config SNS Notifications:
-1. Sign in to the AWS Management Console.
-2. Under **Management Tools**, click **Get Started**, then click **Config**.
-3. On the Set up AWS Config page, under **Amazon SNS Topic**, select **Enable Configuration changes and notifications to be streamed to an Amazon SNS topic**.  \
-
-
-**Do not enable [Raw Message Delivery](https://docs.aws.amazon.com/sns/latest/dg/sns-large-payload-raw-message-delivery.html)**, under Enable SNS Notification in AWS Configuration.
-1. Select **Create new topic** and click **Continue**. \
-
-5
-Creating a new topic also creates a new S3 bucket.
-2. On the page labeled "AWS Config is requesting permissions to read your resources’ configuration," click **Allow**. This authorizes AWS Config to read the configuration of your resources for the purpose of delivery via Amazon SNS.
-3. **Optional:** Expand the **View Details** section to configure the IAM Role and Policy that AWS Config will use.
-
-For more information on SNS, see [http://docs.aws.amazon.com/sns/latest/dg/GettingStarted.html](http://docs.aws.amazon.com/sns/latest/dg/GettingStarted.html).
-
-
-### Configure a Collector
-6
-
-
-In Sumo Logic, create a [Hosted Collector](/docs/send-data/configure-hosted-collector). Be sure to name the Source Category **aws_config**.
-
-
-### Configure a Source
-7
-
-
-Next, configure an [HTTP Source](/#Collect-logs-for-the-AWS-Config-App).
-
-
-
-1. Configure the Source fields:
-    1. Name. (Required) Eg. AWS Config
-    2. Source Category. (Required) Eg. aws_config. For details on creating good source categories see Best Practices.
-2. Configure the Advanced section:
-    3. **Enable Timestamp Parsing**. True
-    4. **Time Zone**. Use Time Zone From Log File
-    5. **Timestamp Format**. Auto Detect
-    6. **Enable Multiline Processing**
-      **Detect Messages Spanning Multiple Lines**. False
-    7. **Enable One Message Per Request**. True
-3. Click **Save**.
-
-Copy the **HTTP Source Address URL** and use it in the following section.
-
-
-### Subscribe to SNS Notifications
-8
-
-
-Once the Hosted Collector and HTTP Source are configured, you can subscribe to AWS Config’s SNS Notifications.
-
-
-
-1. In the** **AWS Management Console, go to **SNS > Topics**.
-2. Select the check box for the topic you created when you enabled SNS notifications.
-3. Under **Amazon SNS**, in the **Actions** menu, select **Subscribe to Topic**.
-4. Under **Protocol**, select **HTTPS**, and paste the Sumo Logic HTTP Source URL into the **Endpoint** field.
-5. Click **Create Subscription**.
-
-In a few minutes, a confirmation message will be sent to Sumo Logic. In Sumo Logic, search for the new message from your HTTP Source with a query such as **_sourceCategory="aws_config"**.
-
-Parse the message for the JSON field **SubscribeURL** and copy it to your clipboard, as shown.
-
-
-9
-
-
-
-
-1. In the AWS Management Console, select **SNS >Topics**.
-2. Under **Amazon SNS**, under **Actions**, select **Confirm a subscription**.
-3. Paste the SubscribeURL into the **Subscription confirmation URL** field, and click **Confirm subscription**.
-
-For more information about SNS notifications, see the [Amazon documentation](http://docs.aws.amazon.com/sns/latest/dg/SubscribeTopic.html).
-
-
-#### Optional: Create a Partition for AWS Config Logs
-10
-
-
-
-11
-
-
-This section is optional, but recommended for better search performance.
-
-Due to the infrequent nature of AWS Config changes, Sumo Logic recommends creating a partition for logs. A partition will provide better search performance, especially if there is high data volume in your account.
-
-To create a partition, follow the instructions to [Create a Partition](/docs/manage/partitions-and-data-tiers/add-partition.md). Name the index **aws_config**. For the Routing Expression, enter a query that isolates messages from AWS Config, such as `_sourceCategory=aws_config`.
-
-
 ### Sample Log Message
-
 
 ```json
 {
@@ -145,8 +36,6 @@ To create a partition, follow the instructions to [Create a Partition](/docs/man
 }
 ```
 
-
-
 ### Sample Queries
 
 ```sql title="Latest Resource Modifications (from App)"
@@ -161,7 +50,6 @@ _sourceCategory=AWS_Config Notification ConfigurationItemChangeNotification
 //| lookup idAndName from /shared/AWSConfig/ResourceNames on resourceType=resourceType, resourceId=resourceId | if(isNull(idAndName), resourceId, idAndName) as resourceId | fields - idAndName
 | sort by _messageTime desc
 ```
-
 
 ```sql title=Configuration Activity by AWS Region** (from App)"
 _sourceCategory=AWS_Config Notification ConfigurationItemChangeNotification
@@ -184,6 +72,85 @@ _sourceCategory=AWS_Config Notification ConfigurationItemChangeNotification
 | sort _count
 ```
 
+## Collecting Logs for the AWS Config App
+
+### Prerequisites
+
+Before you can begin to use the AWS Config App, perform these steps.
+
+1. Enable SNS Notifications in AWS Config.
+2. Add a Sumo Logic Hosted Collector and HTTP Source.
+3. Subscribe to SNS Notifications in AWS Config.
+4. **Optional:** Create a Partition for AWS Config Logs
+
+
+#### Enable SNS Notification in AWS Config
+
+To enable AWS Config SNS Notifications:
+1. Sign in to the AWS Management Console.
+2. Under **Management Tools**, click **Get Started**, then click **Config**.
+3. On the Set up AWS Config page, under **Amazon SNS Topic**, select **Enable Configuration changes and notifications to be streamed to an Amazon SNS topic**.
+1. Select **Create new topic** and click **Continue**.
+Creating a new topic also creates a new S3 bucket.
+2. On the page labeled "AWS Config is requesting permissions to read your resources’ configuration," click **Allow**. This authorizes AWS Config to read the configuration of your resources for the purpose of delivery via Amazon SNS.
+3. **Optional:** Expand the **View Details** section to configure the IAM Role and Policy that AWS Config will use.
+
+For more information on SNS, see [http://docs.aws.amazon.com/sns/latest/dg/GettingStarted.html](http://docs.aws.amazon.com/sns/latest/dg/GettingStarted.html).
+
+
+### Configure a Collector
+
+In Sumo Logic, create a [Hosted Collector](/docs/send-data/configure-hosted-collector). Be sure to name the Source Category **aws_config**.
+
+
+### Configure a Source
+
+Next, configure an [HTTP Source](/#Collect-logs-for-the-AWS-Config-App).
+
+1. Configure the Source fields:
+    1. Name. (Required) Eg. AWS Config
+    2. Source Category. (Required) Eg. aws_config. For details on creating good source categories see Best Practices.
+2. Configure the Advanced section:
+    3. **Enable Timestamp Parsing**. True
+    4. **Time Zone**. Use Time Zone From Log File
+    5. **Timestamp Format**. Auto Detect
+    6. **Enable Multiline Processing**
+      **Detect Messages Spanning Multiple Lines**. False
+    7. **Enable One Message Per Request**. True
+3. Click **Save**.
+
+Copy the **HTTP Source Address URL** and use it in the following section.
+
+
+### Subscribe to SNS Notifications
+
+Once the Hosted Collector and HTTP Source are configured, you can subscribe to AWS Config’s SNS Notifications.
+
+1. In the** **AWS Management Console, go to **SNS > Topics**.
+2. Select the check box for the topic you created when you enabled SNS notifications.
+3. Under **Amazon SNS**, in the **Actions** menu, select **Subscribe to Topic**.
+4. Under **Protocol**, select **HTTPS**, and paste the Sumo Logic HTTP Source URL into the **Endpoint** field.
+5. Click **Create Subscription**.
+
+In a few minutes, a confirmation message will be sent to Sumo Logic. In Sumo Logic, search for the new message from your HTTP Source with a query such as `_sourceCategory="aws_config".
+`
+Parse the message for the JSON field **SubscribeURL** and copy it to your clipboard, as shown.
+
+1. In the AWS Management Console, select **SNS >Topics**.
+2. Under **Amazon SNS**, under **Actions**, select **Confirm a subscription**.
+3. Paste the SubscribeURL into the **Subscription confirmation URL** field, and click **Confirm subscription**.
+
+For more information about SNS notifications, see the [Amazon documentation](http://docs.aws.amazon.com/sns/latest/dg/SubscribeTopic.html).
+
+
+#### Optional: Create a Partition for AWS Config Logs
+
+This section is optional, but recommended for better search performance.
+
+Due to the infrequent nature of AWS Config changes, Sumo Logic recommends creating a partition for logs. A partition will provide better search performance, especially if there is high data volume in your account.
+
+To create a partition, follow the instructions to [Create a Partition](/docs/manage/partitions-and-data-tiers/add-partition.md). Name the index **aws_config**. For the Routing Expression, enter a query that isolates messages from AWS Config, such as `_sourceCategory=aws_config`.
+
 ## Installing the AWS Config App
 
 Now that you have configured AWS Config, install the Sumo Logic App for AWS Config to take advantage of the pre-configured searches and dashboards to analyze your AWS Config data.
@@ -193,17 +160,14 @@ To install the app:
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
 1. From the **App Catalog**, search for and select the app**.**
-2. Select the version of the service you're using and click **Add to Library**.
-
-Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/library/install-apps)
-
-1. To install the app, complete the following fields.
+2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/library/install-apps)
+3. To install the app, complete the following fields.
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
     2. **Data Source.** Select either of these options for the data source. 
         * Choose **Source Category**, and select a source category from the list. 
         * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). 
     3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-2. Click **Add to Library**.
+4. Click **Add to Library**.
 
 Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization.
 
@@ -266,7 +230,7 @@ This dashboard runs in interactive mode. As described above, interactive dashboa
 
 #### Filters
 
-The following filters are provided for use with the AWS Overview - Interactive and Resource Modifications Details - Interactive dashboards.
+The following filters are provided for use with the **AWS Overview - Interactive and Resource Modifications Details - Interactive** dashboards.
 * **Resource Type.** The type of the resource modified. Examples: `AWS::EC2::Instance`, `AWS::EC2::NetworkAcl`
 * **Resource Id.** The id of the resource modified. Examples: `vpc-0000001`, `i-ffffffff`
 * **Region.** The AWS Region where the resource modified is located. Examples: `us-east-1`, `us-west-2`

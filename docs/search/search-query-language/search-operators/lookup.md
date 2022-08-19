@@ -100,7 +100,7 @@ This lookup matches the `userEmail` field value from a log message with the `ema
 In the example above, specifying an alias (the `as c1` part of the statement) is optional. Aliases are required only when a lookup returns multiple fields. 
 
 :::note
-If you are using `lookup` to return a single field, you can place the `lookup` operator before a `where` clause, and within a `where` clause.
+If you're using `lookup` to return a single field, you can place the `lookup` operator before a `where` clause, and within a `where` clause.
 :::
 
 ### Return multiple fields

@@ -65,7 +65,7 @@ Go to the function and click the **Logs** tab to view real time logs, as shown i
 
 #### How do I export Azure function logs?
 
-**To export Azure function logs, do the following:**
+**To export Azure function logs, do the following:
 1. Install [Azure Storage Explorer](https://azure.microsoft.com/en-in/features/storage-explorer/) from [here](https://docs.microsoft.com/en-us/azure/vs-azure-tools-storage-explorer-relnotes).
 2. Click **Export**.
 

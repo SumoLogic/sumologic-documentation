@@ -25,15 +25,16 @@ This section has instructions for collecting VPC Flow Logs using a CloudFormatio
 
 This section has instructions for collecting logs for the Amazon VPC Flow Logs app.
 
-
 The diagram below illustrates the collection process for Amazon VPC Flow Logs. VPC is enabled to send logs to Amazon CloudWatch. A Lambda function subscribes to a CloudWatch Log Group to obtain the flow logs, and then sends the data on to a Sumo Logic HTTP Source on a hosted collector. The AWS resources are created by a Sumo-provided CloudFormation template.
+
+<img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/AWSCloudWatch-Collection.png')} alt="AWSCloudWatch-Collection"/>
 
 
 ### Step 1: Enable Amazon VPC Flow Logs
 
 You can enable Amazon Virtual Private Cloud (VPC) Flow Logs from the Amazon Web Services (AWS) Management Console, the AWS Command Line Interface (CLI), or by making calls to the Elastic Compute Cloud (EC2) API.
 
-**To enable Amazon Virtual Private Cloud (VPC) Flow Logs from the AWS console:
+To enable Amazon Virtual Private Cloud (VPC) Flow Logs from the AWS console:
 1. Go to **VPC management**, and go to the VPC list.
 2. Select the VPC.
 3. Click **Actions** > **Create Flow Log**.
@@ -50,11 +51,11 @@ You can enable Amazon Virtual Private Cloud (VPC) Flow Logs from the Amazon Web 
 
 ### Step 2: Configure hosted collector and HTTP source
 
-1. [Create a Hosted Collector ](/docs/send-data/Hosted-Collectors#Create-a-Hosted-Collector)in Sumo Logic.
+1. [Create a Hosted Collector](/docs/send-data/Hosted-Collectors#Create-a-Hosted-Collector)in Sumo Logic.
 2. Configure an [HTTP Source](/docs/send-data/sources/sources-hosted-collectors/http-logs-metrics-source) in Sumo Logic. When configuring the source:
 3. Under **Advanced Options for Logs**, for **Timestamp Format**, click **Specify a format**.
-4. **Format**. Enter: `epoch`.
-5. **Timestamp locator**. Enter: `\s(\d{10,13})\s\d{10,13}`.
+4. Under **Format**, enter: `epoch`.
+5. Under  **Timestamp locator**, enter: `\s(\d{10,13})\s\d{10,13}`.
 6. Click **Save**.
 
 
@@ -68,20 +69,33 @@ Follow the steps on [Amazon CloudWatch Logs](/docs/send-data/Collect-from-Other-
 When you [Create a stack on the AWS CloudFormation console](/docs/send-data/Collect-from-Other-Data-Sources/Amazon-CloudWatch-Logs#Create-a-stack-on-the-AWS-CloudFormation-console), in Step 5, make sure you select either VPC-JSON or VPC-RAW in the LogFormat field in the Specify Details window.
 
 
-#### Environment variables for VPC flow log collection (Optional)
+#### Environment Variables for VPC Flow log collection (Optional)
 
 When you [Configure environment variables for Lambda functions](/docs/send-data/Collect-from-Other-Data-Sources/Amazon-CloudWatch-Logs#Configure_environment_variables_for_Lambda_functions), in addition to the variables listed, you can optionally also define the following environment variables.
 
 If you define the environment variables below, do it for both of the Lambda functions created by the CloudFormation template.
 
+---
+__Environment variable__: `VPC_CIDR_PREFIX`<br/>
+__Description__: Comma-separated list of IP prefixes for filtering out internal traffic. For example, `vpcCIDRprefix= 10.8.0.0,10.9.0.0` filters out logs whose destinationIP and sourceIP matches any of the two prefixes `10.8.0.0` and `10.9.0.0`.
 
-**table**
+For example, if `VPC_CIDR_PREFIX = “10.0.”`, then all the IPs with `10.0.*.*` will match the prefix.
 
+---
+__Environment variable__: `INCLUDE_SECURITY_GROUP_INFO`<br/>
+__Description__: This option is supported only if you set LogFormat to VPC-JSON. Set to `true` to include the following fields in logs:
+* vpc-id
+* subnet-id
+* aws-region
+* security-group-ids
+* direction
+
+If you set the value to `true`, follow the instructions in [Grant Lambda permissions (Optional)](#grant-lambda-permissions-optional).
 
 
 #### Grant Lambda permissions (Optional)
 
-This step is supported only if `INCLUDE_SECURITY_GROUP_INFO` is set to true.
+This step is supported only if `INCLUDE_SECURITY_GROUP_INFO` is set to `true`.
 
 The Lambda function fetches list of Elastic Network Interfaces using the `describeNetworkInterfaces` API. You need to grant permission to Lambda by adding the following inline policy in the  `SumoCWLambdaExecutionRole` role. See the instructions on [Creating Policies on the JSON Tab](https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_create.html#access_policies_create-json-editor) in AWS help.
 
@@ -104,7 +118,7 @@ Paste the JSON below, after adding the ARN of the Lambda functions.
 
 ### Step 4: Subscribe the Lambda function to the VPC Flow Log group
 
-1. Select the VPC Flow Log group in the CloudWatch Logs management panel. \
+1. Select the VPC Flow Log group in the CloudWatch Logs management panel.
 This is the Log Group created in the first part (VPCFlowLogs was used).
 2. Click **Actions** and select **Stream to Lambda Function**.
 3. Select the Lambda function created by the CloudFormation template. Its name starts with "SumoCWLogsLambda".
@@ -123,8 +137,7 @@ This section has instructions for collecting Amazon VPC Flow Logs using an AWS S
 
 1. You can use an existing S3 bucket, or create a new one, as described in [Create a S3 bucket](https://docs.aws.amazon.com/AmazonS3/latest/gsg/CreatingABucket.html) in AWS help.
 2. Create flow logs for your VPCs, subnets, or network interfaces. For instructions, see [Creating a Flow Log that Publishes to Amazon S3](https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs-s3.html#flow-logs-s3-create-flow-log) in AWS help.
-3. Confirm that logs are being delivered to the S3 bucket. Log files are saved to the bucket using following folder structure: \
-`bucket_ARN/optional_folder/AWSLogs/aws_account_id/vpcflowlogs/region/year/month/day/log_file_name.log.gz`
+3. Confirm that logs are being delivered to the S3 bucket. Log files are saved to the bucket using following folder structure: `bucket_ARN/optional_folder/AWSLogs/aws_account_id/vpcflowlogs/region/year/month/day/log_file_name.log.gz`.
 
 
 ### Step 2: Configure AWS S3 Source  
@@ -134,31 +147,26 @@ This section has instructions for collecting Amazon VPC Flow Logs using an AWS S
 3. When you create an AWS Source, you associate it with a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use, or create a new Hosted Collector. For instructions, see [Create a Hosted Collector](/docs/send-data/Hosted-Collectors#Create_a_Hosted_Collector).
 4. Add an [AWS Source](/docs/send-data/Sources/sources-hosted-collectors/Amazon-Web-Services/AWS-S3-Source#AWS_Sources) for the S3 Source to Sumo Logic. When you configure the S3 source:
     1. In the **Advanced Options for Logs** section, uncheck the **Detect messages spanning multiple lines** option.
-    2. In the **Processing Rules for Logs** section, add an **Exclude messages that match** processing rule to ignore the following file header lines: \
-    `version account-id interface-id srcaddr dstaddr srcport dstport protocol packets bytes start end action log-status`
+    2. In the **Processing Rules for Logs** section, add an **Exclude messages that match** processing rule to ignore the following file header lines: `version account-id interface-id srcaddr dstaddr srcport dstport protocol packets bytes start end action log-status`.
 
 
 ## Installing the AWS VPC Security App
 
-Now that you have set up collection, install the Sumo Logic App for PCI Compliance For Amazon VPC Flow App to use the preconfigured searches and [Dashboards](#Dashboards) that provide insight into your data.
+Now that you have set up collection, install the Sumo Logic App for PCI Compliance For Amazon VPC Flow App to use the preconfigured searches and [dashboards](#viewing-dashboards) that provide insight into your data.
 
 To install the app:
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
 1. From the **App Catalog**, search for and select the app**.**
-2. Select the version of the service you're using and click **Add to Library**.
-
-Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library](/docs/get-started/library/install-apps).
-
-
-1. To install the app, complete the following fields.
+2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library](/docs/get-started/library/install-apps).
+3. To install the app, complete the following fields.
    * **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
    * **Data Source.** Select either of these options for the data source. 
         * Choose **Source Category**, and select a source category from the list. 
         * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). 
    * **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-2. Click **Add to Library**.
+4. Click **Add to Library**.
 
 Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization.
 
@@ -172,7 +180,7 @@ Analytics and Monitoring dashboards to provide operational security for AWS VPC 
 
 ### VPC Flow Logs - Security Monitoring - Overview
 
-**Description: **See the details of security group activities and all AWS activities divided by read only and non read only.
+**Description:** See the details of security group activities and all AWS activities divided by read only and non read only.
 
 **Use Case:** Provides analysis of group activity events including revoking and authorizing access, creating and deleting groups, and other events.
 

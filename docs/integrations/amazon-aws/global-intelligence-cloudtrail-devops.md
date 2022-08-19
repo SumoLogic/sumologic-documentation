@@ -9,16 +9,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/amazon-aws/gi-devops.png')} alt="Thumbnail icon" width="75"/>
 
-This feature is available in the following account plans.
-
-| Account Type | Account Level
-| :---- | :----
-|  Cloud Flex  |  Trial, Enterprise
-| Cloud Flex Credits | Trial, Enterprise Operations, Enterprise Security, Enterprise Suite
-
-Our new app install flow is now in Beta. It is only enabled for certain customers while we gather Beta customer feedback. If you can see the Add Integration button, follow the "Before you begin" section in the "Collect Logs" help page and then use the in-product instructions in Sumo Logic to set up the app.
-
 Global Intelligence for AWS CloudTrail - DevOps provides insights for on-call engineers, infrastructure engineers, and DevOps users accelerate root cause analysis for incidents by providing error rate and configuration insights benchmarked from Sumo Logic’s AWS customers for nine AWS services:
+
 * Amazon EC2
 * Amazon S3
 * AWS Elastic Load Balancing
@@ -45,41 +37,25 @@ In addition, the app provides configuration guidance for key AWS services based 
 * For throttling-related root causes for some services like AWS Lambda and AWS DynamoDB, such guidance can help users right-size their apps based on common configuration settings.
 * An action plan helps users focus their attention on specific microservices in particular AWS accounts that might be experiencing errors.
 
+## Prerequisites
 
-## Collect Logs for the Global Intelligence for AWS CloudTrail DevOps App
+This feature is available in the following account plans.
 
-### Log Types  
+| Account Type | Account Level
+| :---- | :----
+|  Cloud Flex  |  Trial, Enterprise
+| Cloud Flex Credits | Trial, Enterprise Operations, Enterprise Security, Enterprise Suite
+
+Our new app install flow is now in Beta. It is only enabled for certain customers while we gather Beta customer feedback. If you can see the Add Integration button, follow the "Before you begin" section in the "Collect Logs" help page and then use the in-product instructions in Sumo Logic to set up the app.
+
+## Log Types  
 
 Global Intelligence for CloudTrail DevOps App uses AWS CloudTrail logs.
 
 The Sumo Logic Global Intelligence for AWS CloudTrail DevOps app provides insight into your key CloudTrail events. You can review the log collection process and start collecting data.
 
-Our new app install flow is now in Beta. It is only enabled for certain customers while we gather Beta customer feedback. If you can see the Add Integration button, follow the "Before you begin" section in the "Collect Logs" help page and then use the in-product instructions in Sumo Logic to set up the app.
-
-If you have already AWS CloudTrail logs flowing into Sumo Logic, you can skip the steps on this page and install the App from the Sumo Logic App Catalog.
-
-
-### Collection Process Overview
-
-With this graphic, you can see how to collect logs from AWS CloudTrail DevOps and send them to Sumo Logic.
-
-
-### Before you begin
-
-Before you begin, you must configure AWS CloudTrail logging to an S3 bucket.
-1. [Configure CloudTrail](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/getting_started_top_level.html) in your AWS account.
-2. [Enable logging using the AWS Management Console](http://docs.aws.amazon.com/AmazonS3/latest/dev/enable-logging-console.html).
-3. Confirm that logs are being delivered to the S3 bucket.
-4. [Grant Access to an AWS S3 Bucket](/docs/send-data/sources/sources-hosted-collectors/amazon-web-services/grant-access-aws-product.md).
-
-
-### Configuring Log Collection for AWS Global Intelligence CloudTrail DevOps
-
-To configure log collection for Global Intelligence for AWS CloudTrail, follow the steps described [here](#Collect-logs-for-the-AWS-CloudTrail-App).
-
 
 ### Sample Log Message
-
 
 ```json
 {
@@ -171,6 +147,28 @@ on t1.denomGroup = t2.denomGroup
 
 </details>
 
+## Collecting Logs for the Global Intelligence for AWS CloudTrail DevOps App
+
+If you already have AWS CloudTrail logs flowing into Sumo Logic, you can skip the steps in this section and go to [Installing the App](#installing-the-global-intelligence-for-aws-cloudtrail-devops-app).
+
+With this graphic, you can see how to collect logs from AWS CloudTrail DevOps and send them to Sumo Logic.
+
+<img src={useBaseUrl('img/integrations/amazon-aws/Collection_Process_Overview-devops.png')} alt="Collection_Process_Overview-devops" />
+
+### Before you begin
+
+Before you begin, you must configure AWS CloudTrail logging to an S3 bucket.
+1. [Configure CloudTrail](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/getting_started_top_level.html) in your AWS account.
+2. [Enable logging using the AWS Management Console](http://docs.aws.amazon.com/AmazonS3/latest/dev/enable-logging-console.html).
+3. Confirm that logs are being delivered to the S3 bucket.
+4. [Grant Access to an AWS S3 Bucket](/docs/send-data/sources/sources-hosted-collectors/amazon-web-services/grant-access-aws-product.md).
+
+
+### Configuring Log Collection for AWS Global Intelligence CloudTrail DevOps
+
+To configure log collection for Global Intelligence for AWS CloudTrail, follow the steps described [here](#Collect-logs-for-the-AWS-CloudTrail-App).
+
+
 ## Installing the Global Intelligence for AWS CloudTrail DevOps App
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
@@ -180,20 +178,17 @@ Locate and install the app you need from the **App Catalog**. If you want to see
 
 Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/library/install-apps)
 
-1. To install the app, complete the following fields.
+3. To install the app, complete the following fields.
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
     2. **Data Source.** Select either of these options for the data source. 
         * Choose **Source Category**, and select a source category from the list. 
         * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). 
     3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-2. Click **Add to Library**.
+4. Click **Add to Library**.
 
 Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization.
 
 Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
-
-
-
 
 ## Viewing GI CloudTrail DevOps Dashboards
 
@@ -202,8 +197,6 @@ Panels will start to fill automatically. It's important to note that each panel 
 You can use filters to drill down and examine the data on a granular level.
 
 **Each panel has a set of filters** that are applied to the results for that panel only, as shown in the following example. Click the funnel icon in the top panel menu bar to display a list of panel-specific filters.
-
-
 
 ### 01. AWS Service Availability
 

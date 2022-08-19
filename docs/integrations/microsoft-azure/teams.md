@@ -12,11 +12,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 The Microsoft Teams app provides out-of-the-box dashboards to monitor users, teams, channels and permission changes.
 
 
-## Collecting Logs
-
-This section has instructions for collecting logs for the Sumo App for Teams.
-
-### Log Types  
+## Log Types  
 
 The Teams app provides visibility into the logging that Microsoft exposes in the Office 365 Audit Logs for Microsoft Teams. Logged events are grouped into the following categories:
 
@@ -27,11 +23,8 @@ The Teams app provides visibility into the logging that Microsoft exposes in the
 
 For more information, see Microsoft’s [list of Teams Activities](https://docs.microsoft.com/en-us/microsoftteams/audit-log-events#teams-activities).
 
-### Collection process overview
 
-To collect logs for Microsoft Teams, please configure an Office 365 Audit Source. The Teams logs will be present in the “Office 365 General Logs” context. Note, that if you are already collecting logs for Office 365, you can simply make note of the source category configured for the aforementioned context.
-
-Sample Log Message
+### Sample Log Message
 
 ```json
 "CreationTime":"2020-10-30T14:00:51",
@@ -48,13 +41,22 @@ Sample Log Message
 "TeamName":"My Team"
 ```
 
-Sample Query
+### Sample Query
 ```sql
 _sourceCategory="O365/General"
 | json "Workload", "Operation" , "UserId" as workload, operation, email
 | where workload = "MicrosoftTeams"
 | count by operation
 ```
+
+## Collecting Logs
+
+This section has instructions for collecting logs for the Sumo App for Teams.
+
+### Collection process overview
+
+To collect logs for Microsoft Teams, please configure an Office 365 Audit Source. The Teams logs will be present in the “Office 365 General Logs” context. Note, that if you are already collecting logs for Office 365, you can simply make note of the source category configured for the aforementioned context.
+
 
 ## Installing the Microsoft Teams App   
 
@@ -71,13 +73,13 @@ Locate and install the app you need from the **App Catalog**. If you want to see
 
 Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/library/install-apps)
 
-1. To install the app, complete the following fields.
+3. To install the app, complete the following fields.
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
     2. **Data Source.** Select either of these options for the data source. 
         * Choose **Source Category**, and select a source category from the list. 
         * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). 
     3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-2. Click **Add to Library**.
+4. Click **Add to Library**.
 
 Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization.
 

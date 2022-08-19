@@ -9,7 +9,6 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/amazon-aws/vpcflowlogs.png')} alt="Thumbnail icon" width="50"/>
 
-
 Amazon Virtual Private Cloud (VPC) Flow Logs log the IP network traffic of your VPC, allowing you to troubleshoot traffic and security issues. The Amazon VPC Flow Logs App leverages this data to provide real-time visibility and analysis of your environment. It consists of predefined searches and Dashboards.
 
 For more information on Amazon VPC Flow Logs, see [here](http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/flow-logs.html).
@@ -22,21 +21,20 @@ VPC Flow Logs can be published to Amazon CloudWatch Logs and Amazon S3. You can 
 * [From CloudWatch using CloudFormation](#collecting-amazon-vpc-flow-logs-from-cloudwatch-using-cloudformation)
 * [Using an AWS S3 source](#collecting-amazon-vpc-flow-logs-using-an-aws-s3-source)
 
-
 Each method has advantages. Using an AWS S3 source is more reliable, while using a CloudWatch Logs source with the CloudFormation template allows you to optimize your logs. With the CloudWatch Logs source and CloudFormation template, you can customize logs by adding more information and filtering out unwanted data. The Security Groups dashboard utilizes customized logs that are generated from the Lambda function and created with the CloudFormation template from logs sent to CloudWatch Logs.
 
 ### Collecting Amazon VPC Flow Logs from CloudWatch using CloudFormation
 
-This section has instructions for collecting VPC Flow Logs using a CloudFormation template.
-The diagram below illustrates the collection process for Amazon VPC Flow Logs. VPC is enabled to send logs to Amazon CloudWatch. A Lambda function subscribes to a CloudWatch Log Group to obtain the flow logs, and then sends the data on to a Sumo Logic HTTP Source on a hosted collector. The AWS resources are created by a Sumo-provided CloudFormation template.
+This section has instructions for collecting VPC Flow Logs using a CloudFormation template. The diagram below illustrates the collection process for Amazon VPC Flow Logs. VPC is enabled to send logs to Amazon CloudWatch. A Lambda function subscribes to a CloudWatch Log Group to obtain the flow logs, and then sends the data on to a Sumo Logic HTTP Source on a hosted collector. The AWS resources are created by a Sumo-provided CloudFormation template.
+
+<img src={useBaseUrl('img/integrations/amazon-aws/AWSCloudWatch-Collection.png')} alt="flow" />
 
 
 #### Step 1: Enable Amazon VPC Flow Logs
 
 You can enable Amazon Virtual Private Cloud (VPC) Flow Logs from the Amazon Web Services (AWS) Management Console, the AWS Command Line Interface (CLI), or by making calls to the Elastic Compute Cloud (EC2) API.
 
-**To enable Amazon Virtual Private Cloud (VPC) Flow Logs from the AWS console**
-
+To enable Amazon Virtual Private Cloud (VPC) Flow Logs from the AWS console:
 1. Go to **VPC management**, and go to the VPC list.
 2. Select the VPC.
 3. Click **Actions** > **Create Flow Log**.
@@ -58,7 +56,9 @@ You can enable Amazon Virtual Private Cloud (VPC) Flow Logs from the Amazon Web 
 3. Under **Advanced Options for Logs**, for **Timestamp Format**, click **Specify a format**.
 4. **Format**. Enter: `epoch`
 5. **Timestamp locator**. Enter:
-` \s(\d{10,13})\s\d{10,13}`
+```
+\s(\d{10,13})\s\d{10,13}
+```
 6. Click **Save**.
 
 
@@ -126,8 +126,7 @@ Paste the JSON below, after adding the ARN of the Lambda functions.
 
 #### Step 4: Subscribe the Lambda function to the VPC Flow Log group
 
-1. Select the VPC Flow Log group in the CloudWatch Logs management panel. \
-This is the Log Group created in the first part (VPCFlowLogs was used).
+1. Select the VPC Flow Log group in the CloudWatch Logs management panel. This is the Log Group created in the first part (VPCFlowLogs was used).
 2. Click **Actions** and select **Stream to Lambda Function**.
 3. Select the Lambda function created by the CloudFormation template. Its name starts with "SumoCWLogsLambda".
 4. Click **Next**.
@@ -147,7 +146,7 @@ This section has instructions for collecting Amazon VPC Flow Logs using an AWS S
 1. You can use an existing S3 bucket, or create a new one, as described in [Create a S3 bucket](https://docs.aws.amazon.com/AmazonS3/latest/gsg/CreatingABucket.html) in AWS help.
 2. Create flow logs for your VPCs, subnets, or network interfaces. For instructions, see [Creating a Flow Log that Publishes to Amazon S3](https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs-s3.html#flow-logs-s3-create-flow-log) in AWS help.
 3. Confirm that logs are being delivered to the S3 bucket. Log files are saved to the bucket using following folder structure:
-`bucket_ARN/optional_folder/AWSLogs/aws_account_id/vpcflowlogs/region/year/month/day/log_file_name.log.gz`
+`bucket_ARN/optional_folder/AWSLogs/aws_account_id/vpcflowlogs/region/year/month/day/log_file_name.log.gz`.
 
 
 #### Step 2: Configure AWS S3 source  
@@ -157,12 +156,12 @@ This section has instructions for collecting Amazon VPC Flow Logs using an AWS S
 3. When you create an AWS Source, you associate it with a Hosted Collector. Before creating the Source, identify the Hosted Collector you want to use, or create a new Hosted Collector. For instructions, see [Configure a Hosted Collector](/docs/send-data/configure-hosted-collector).
 4. Add an [AWS Source](/docs/send-data/Sources/sources-hosted-collectors/Amazon-Web-Services/AWS-S3-Source#AWS_Sources) for the S3 Source to Sumo Logic. When you configure the S3 source:
     1. In the **Advanced Options for Logs** section, uncheck the **Detect messages spanning multiple lines** option.
-    2. In the **Processing Rules for Logs** section, add an **Exclude messages that match** processing rule to ignore the following file header lines: `version account-id interface-id srcaddr dstaddr srcport dstport protocol packets bytes start end action log-status`
+    2. In the **Processing Rules for Logs** section, add an **Exclude messages that match** processing rule to ignore the following file header lines: `version account-id interface-id srcaddr dstaddr srcport dstport protocol packets bytes start end action log-status`.
 
 
 ## Installing the Amazon VPC Flow Logs App
 
-Now that you have configured Amazon VPC Flow Logs, install the Sumo Logic App for Amazon VPC Flow Logs to take advantage of the preconfigured searches and [dashboards](#Dashboards) to analyze your data.
+Now that you have configured Amazon VPC Flow Logs, install the Sumo Logic App for Amazon VPC Flow Logs to take advantage of the preconfigured searches and [dashboards](#viewing-dashboards) to analyze your data.
 
 To install the app:
 
@@ -173,13 +172,13 @@ Locate and install the app you need from the **App Catalog**. If you want to see
 
 Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/library/install-apps)
 
-1. To install the app, complete the following fields.
+3. To install the app, complete the following fields.
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
     2. **Data Source.** Select either of these options for the data source. 
         * Choose **Source Category**, and select a source category from the list. 
         * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). 
     3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-2. Click **Add to Library**.
+4. Click **Add to Library**.
 
 Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization.
 
@@ -197,10 +196,9 @@ The **Amazon VPC Flow Logs - Overview** dashboard provides an overview of IP tra
 
 <img src={useBaseUrl('img/integrations/amazon-aws/amazon-vpc-flow-logs-overview.png')} alt="Amazon VPC Flow Logs Dashboards" />
 
-#### Filter the Overview dashboard
+#### Filtering the Overview dashboard
 
 You can filter the Overview dashboard by any combination of `DestinationIP`, `SourceIP`, `action`, `dest_port`, `interfaceid`, `protocol`, and `src_port`.
-
 
 ### Accepts
 
@@ -211,7 +209,7 @@ You can filter the Overview dashboard by any combination of `DestinationIP`, `So
 <img src={useBaseUrl('img/integrations/amazon-aws/amazon-vpc-flow-logs-accepts.png')} alt="AWS API Gateway" />
 
 
-#### Filter the Accepts dashboard
+#### Filtering the Accepts dashboard
 In the filters pane, you can can configure these parameters for the [outlier](/docs/search/index.md/Search-Query-Language/Search-Operators/outlier) analysis performed by the "Accepts by Minute - Outlier" panel:  Consecutive, Threshold, Window, and Timeslice.
 
 You can also filter Accepts dashboard by any combination of `DestinationIP`, `SourceIP`, `dest_port`, `interfaceid`, `protocol`, and `src_port`.
@@ -227,11 +225,11 @@ You can also filter Accepts dashboard by any combination of `DestinationIP`, `So
 <img src={useBaseUrl('img/integrations/amazon-aws/amazon-vpc-flow-logs-rejects.png')} alt="amazon-vpc-flow-logs" />
 
 
-#### Filter the Rejects dashboard
+#### Filtering the Rejects dashboard
 
-In the filters pane, you can can configure these parameters for the [outlier](/docs/search/index.md/Search-Query-Language/Search-Operators/outlier) analysis performed by the "Rejects by Minute - Outlier" panel:  Consecutive, Threshold, Window, and Timeslice.
+In the filters pane, you can can configure these parameters for the [outlier](/docs/search/index.md/Search-Query-Language/Search-Operators/outlier) analysis performed by the "Rejects by Minute - Outlier" panel: Consecutive, Threshold, Window, and Timeslice.
 
-You can also filter the Rejects dashboard by any combination of DestinationIP, SourceIP, dest_port, interfaceid, protocol, and src_port.
+You can also filter the Rejects dashboard by any combination of `DestinationIP`, `SourceIP`, `dest_port`, `interfaceid`, `protocol`, and `src_port`.
 
 
 
@@ -239,15 +237,15 @@ You can also filter the Rejects dashboard by any combination of DestinationIP, S
 
 **Amazon VPC Flow Logs - Traffic** dashboard provides traffic details, including the counts of unique traffic sources and destinations, the total accepted and rejected traffic, the top 10 source and destination ports, and analyses of bytes and packets transmitted.
 
-**Use case description**: Use this dashboard for comparing the permissive and non permissive traffic based on ports, protocols and network interfaces. Also one can monitor abnormal behavior, current and future trends based on total packets and bytes flowing across the network. One can filter by Action to filter out data for permissive and non permissive traffic. Similarly one can filter by interfaceid, src_ip, dest_ip, src_port, dest_port to further filter out the traffic for analysis.
+**Use case description**: Use this dashboard for comparing the permissive and non permissive traffic based on ports, protocols and network interfaces. Also one can monitor abnormal behavior, current and future trends based on total packets and bytes flowing across the network. One can filter by Action to filter out data for permissive and non permissive traffic. Similarly one can filter by `interfaceid`, `src_ip`, `dest_ip`, `src_port`, `dest_port` to further filter out the traffic for analysis.
 
 <img src={useBaseUrl('img/integrations/amazon-aws/amazon-vpc-flow-logs-traffic.png')} alt="amazon-vpc-flow-logs-traffic" />
 
-#### Filter the Traffic dashboard
+#### Filtering the Traffic dashboard
 
 In the filters pane, you can can configure these parameters for the [outlier](/docs/search/index.md/Search-Query-Language/Search-Operators/outlier) analysis performed by several panels: Consecutive, Threshold, Window, and Timelice.
 
-You can also filter the Traffic dashboard by any combination of DestinationIP, SourceIP, action, dest_port, interfaceid, protocol, and src_port.
+You can also filter the Traffic dashboard by any combination of `DestinationIP`, `SourceIP`, `action`, `dest_port`, `interfaceid`, `protocol`, and `src_port`.
 
 
 ### Security Groups
@@ -266,8 +264,8 @@ Key facts about this dashboard:
 
 <img src={useBaseUrl('img/integrations/amazon-aws/amazon-vpc-flow-logs-security-groups.png')} alt="amazon-vpc-flow-logs-security-groups" />
 
-#### Filter the Security Groups dashboard
+#### Filtering the Security Groups dashboard
 
 In the filters pane, you can can configure these parameters for the [outlier](/docs/search/index.md/Search-Query-Language/Search-Operators/outlier) analysis performed by several panels:  Consecutive, Threshold, Window, and Timeslice.
 
-You can also filter the Security Groups dashboard by any combination of DestinationIP, SourceIP, action, dest_port, interfaceid, protocol, security_grp_id,  src_port, subnet_id, and vpc_id.
+You can also filter the Security Groups dashboard by any combination of `DestinationIP`, `SourceIP`, `action`, `dest_port`, `interfaceid`, `protocol`, `security_grp_id`,  `src_port`, `subnet_id`, and `vpc_id`.

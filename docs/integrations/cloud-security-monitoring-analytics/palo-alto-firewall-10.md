@@ -7,7 +7,7 @@ description: Introduction to the Cloud Security Monitoring and Analytics app for
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/SecMon_PAN.png')} alt="Thumbnail icon" width="70"/>
+<img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/SecMon_PAN.png')} alt="Thumbnail icon" width="90"/>
 
 The Palo Alto Firewall app helps you analyze traffic and gain a better understanding of your Palo Alto Networks environments. You can dig deep into the data, broken down by threat detection indicators, malware type, and so on.
 
@@ -30,7 +30,7 @@ Configuring log collection for Palo Alto Firewall 10 includes the following task
 ### Step 1. Create a hosted collector and Cloud Syslog source
 In this step you configure a hosted collector with a Cloud Syslog source that will act as Syslog server to receive logs and events from Palo Alto Networks devices.
 
-**To configure a hosted collector with a Cloud Syslog source, do the following:**
+To configure a hosted collector with a Cloud Syslog source, do the following:
 
 1. Log in to Sumo Logic and [create a Hosted Collector](/docs/send-data/Hosted-Collectors#Create_a_Hosted_Collector).
 2. Create a [Cloud Syslog Source](/docs/send-data/Sources/sources-hosted-collectors/Cloud-Syslog-Source) on the hosted collector, specifying the following:
@@ -44,7 +44,7 @@ In this step you configure a hosted collector with a Cloud Syslog source that wi
 
 In this step you create a server profile where you can define the log destination. This will be the host name, port and protocol (TLS) of the Sumo Logic Cloud Syslog source.
 
-**To create a server profile specifying  the log destination, do the following:**
+To create a server profile specifying  the log destination, do the following:
 
 1.  Login to the Palo Alto Networks Web interface as an administrative user.
 2. Select **Device tab > Server Profiles > Syslog**.
@@ -88,7 +88,7 @@ As of March 24, 2022, some Palo Alto Network systems have experienced troubles w
 
 In this step, you view logs using the Palo Alto Network Web interface to confirm the logs are generated on the firewall.
 
-**To verify the logs in Palo Alto Networks, do the following:**
+To verify the logs in Palo Alto Networks, do the following:
 
 1. In the Palo Alto Networks UI, select **Monitor** > **Logs**.
 2. Once the setup is done, log in to Sumo Logic.
@@ -144,13 +144,13 @@ Locate and install the app you need from the **App Catalog**. If you want to see
 Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library](/docs/get-started/library/install-apps).
 
 
-1. To install the app, complete the following fields.
+3. To install the app, complete the following fields.
    * **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
    * **Data Source.** Select either of these options for the data source. 
       * Choose **Source Category**, and select a source category from the list. 
       * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). 
    * **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-2. Click **Add to Library**.
+4. Click **Add to Library**.
 
 Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization.
 

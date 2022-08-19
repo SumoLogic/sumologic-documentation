@@ -66,7 +66,7 @@ There are several methods you can use to configure processing rules: 
 * Collector Management API - See [Collector Management API] (../../APIs/Collector-Management-API.md "Collector Management API") for instructions on using the API to configure sources for Data Forwarding.
 * Local Source configuration files -  See [Local File Configuration Management](/docs/send-data/sources/use-json-configure-sources/local-configuration-file-management) for general information on managing sources using local file configuration.
 
-**To configure processing rules for data forwarding using the web
+To configure processing rules for data forwarding using the web
 application**
 
 1. Go to **Manage Data** \> **Collection** \> **Collection**.

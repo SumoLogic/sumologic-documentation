@@ -12,16 +12,11 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 The Windows JSON App provides insight into your Windows system's operation and events so that you can better manage and maintain your environment. The Windows JSON App is based on the JSON Windows event log format and consists of predefined searches and dashboards that provide visibility into your environment for real-time analysis of overall usage of Security Status, System Activity, Updates, User Activity, and Applications.
 
 
-## Collect Logs for the Windows JSON App
-
-This section provides instructions on configuring log collection for the Windows JSON App so that logs are collected from the Microsoft Windows Event Log and ingested into Sumo Logic.
-
-### Log Types
+## Log Types
 
 The Windows JSON App assumes events are coming from Windows Event Log Sources in JSON format. It does not work with third party logs.
 
 Standard Windows event channels include:
-
 * Security
 * System
 * Application
@@ -29,26 +24,7 @@ Standard Windows event channels include:
 Custom event channels, such as PowerShell or Internet Explorer are also supported.
 
 
-### Configure a Collector and a Source
-
-**To configure a collector and source, do the following:**
-
-
-1. Configure an [Installed Windows collector](/docs/send-data/installed-collectors/install-collector-windows) through the user interface or from the command line.
-2. Configure either a local or remote Windows Event Log source. To configure a Windows Event Log source set the following:
-  * **Event Format.** Select **Collect using JSON format. \
-
-Collect using JSON format.** Events are formatted into JSON that is designed to work with Sumo Logic features, making it easier for you to reference your data.
-  * **Event Collection Level.** When JSON format is selected you have to select Complete Message from the dropdown. \
-
-
-**Complete Message** will ingest the entire event content along with metadata.
-
-For more information on local or remote Windows Event Log Source configuration, refer to [Local Windows Event Log Source](/docs/send-data/Sources/sources-installed-collectors/Local-Windows-Event-Log-Source) and [Remote Windows Event Log Source](/docs/send-data/Sources/sources-installed-collectors/Remote-Windows-Event-Log-Source).
-
-
-### Sample Log Messages
-
+### Sample Log Message
 
 ```json
 {
@@ -87,7 +63,7 @@ For more information on local or remote Windows Event Log Source configuration, 
 }
 ```
 
-### Query Sample
+### Sample Query
 
 The sample query is from the **Recent Policy Changes** panel from **Windows - Overview** dashboard.
 
@@ -99,6 +75,23 @@ _sourceCategory=Labs/windows-jsonformat ( "Audit Policy Change" or "System audit
 | count by msg_summary | sort by _count, msg_summary asc
 ```
 
+
+## Collecting Logs for the Windows JSON App
+
+This section provides instructions on configuring log collection for the Windows JSON App so that logs are collected from the Microsoft Windows Event Log and ingested into Sumo Logic.
+
+### Configure a Collector and Source
+
+To configure a collector and source, do the following:
+
+1. Configure an [Installed Windows collector](/docs/send-data/installed-collectors/install-collector-windows) through the user interface or from the command line.
+2. Configure either a local or remote Windows Event Log source. To configure a Windows Event Log source set the following:
+  * **Event Format.** Select **Collect using JSON format**. Events are formatted into JSON that is designed to work with Sumo Logic features, making it easier for you to reference your data.<br/><img src={useBaseUrl('img/integrations/microsoft-azure/Event_Format.png')} alt="Windows JSON" />
+  * **Event Collection Level.** When JSON format is selected you have to select Complete Message from the dropdown. **Complete Message** will ingest the entire event content, along with metadata.<br/><img src={useBaseUrl('img/integrations/microsoft-azure/Event_collection_Level.png')} alt="Windows JSON" />
+
+For more information on local or remote Windows Event Log Source configuration, refer to [Local Windows Event Log Source](/docs/send-data/Sources/sources-installed-collectors/Local-Windows-Event-Log-Source) and [Remote Windows Event Log Source](/docs/send-data/Sources/sources-installed-collectors/Remote-Windows-Event-Log-Source).
+
+
 ## Installing the Windows JSON App
 
 This section has instructions for installing the Sumo Logic JSON App for Windows and descriptions of each of the app dashboards.
@@ -108,24 +101,21 @@ To install the app:
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
 1. From the **App Catalog**, search for and select the app**.**
-2. Select the version of the service you're using and click **Add to Library**.
-
-Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/library/install-apps)
-
-1. To install the app, complete the following fields.
+2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/library/install-apps)
+3. To install the app, complete the following fields.
     * **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
     * **Data Source.** Select either of these options for the data source. 
         * Choose **Source Category**, and select a source category from the list. 
         * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). 
     * **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-2. Click **Add to Library**.
+4. Click **Add to Library**.
 
 Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization.
 
 Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
 
 
-## Viewing the Windows JSON Dashboards
+## Viewing Windows JSON Dashboards
 
 :::tip Filter with template variables    
 Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards-new/filter-with-template-variables.md).
@@ -142,7 +132,7 @@ Use this dashboard to:
 * Monitor policy changes performed on the system.
 * Monitor the number of changes performed on the Administrative groups.
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/Overview.png')} alt="Windows JSON dashboards" />
+<img src={useBaseUrl('img/integrations/microsoft-azure/Windows_Overview.png')} alt="Windows JSON dashboards" />
 
 ### Windows - Default
 
@@ -154,11 +144,9 @@ Use this dashboard to:
 * Monitor Log Level (error, warning) trend on the systems.
 * Monitor operations performed on the system like restarts, user creation, group creation, and firewall changes.
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/Overview.png')} alt="Windows JSON dashboards" />
+<img src={useBaseUrl('img/integrations/microsoft-azure/Windows_Default.png')} alt="Windows JSON dashboards" />
 
 ### Windows - Login Status
-15
-
 
 The **Windows - Login Status** dashboard provides information about successful and failed logins, successful Remote Desktop Protocol (RDP) reconnects, and failed login outliers.
 
@@ -167,7 +155,7 @@ Use this dashboard to:
 * Monitor RDP (Remote Desktop) reconnect events.
 * Track if there are failed login outliers to identify mischievous login activities.
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/Overview.png')} alt="Windows JSON dashboards" />
+<img src={useBaseUrl('img/integrations/microsoft-azure/Windows_LoginStatus.png')} alt="Windows JSON dashboards" />
 
 ### Windows - Event Errors
 
@@ -178,7 +166,7 @@ Use this dashboard to:
 * Monitor various errors in the systems.
 * Monitor error trends and outliers to ensure they are within acceptable limits to decide the next step.
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/Overview.png')} alt="Windows JSON dashboards" />
+<img src={useBaseUrl('img/integrations/microsoft-azure/Windows_EventErrors.png')} alt="Windows JSON dashboards" />
 
 
 ### Windows - Application
@@ -190,4 +178,4 @@ Use this dashboard to:
 * Monitor log levels (error, warning, information) through trends and quick snapshots.
 * Monitor various application-specific events happening through recent messages.
 
-<img src={useBaseUrl('img/integrations/microsoft-azure/Overview.png')} alt="Windows JSON dashboards" />
+<img src={useBaseUrl('img/integrations/microsoft-azure/Windows_Application.png')} alt="Windows JSON dashboards" />

@@ -9,13 +9,12 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/app-development/bitbucket.png')} alt="Thumbnail icon" width="50"/>
 
-
 The Sumo Logic App for Bitbucket provides insights to development teams into how their software delivery pipeline components are performing. The pre-configured dashboards organize issues, builds, and deployments that require the most attention.
 
 The Bitbucket App supports only Bitbucket Cloud.
 
 
-## Log Types and Sample Logs
+## Event Types
 
 Sumo Logic analyzes the following required types of logs for more efficient monitoring.
 
@@ -25,41 +24,24 @@ There are two types of events of interest from Bitbucket to Sumo Logic: Bitbucke
 
 **Bitbucket Events** send the event request to the server URL for the Webhook whenever that event occurs.
 
-<table>
-  <tr>
-   <td>Event Type
-   </td>
-   <td>Available Events
-   </td>
-  </tr>
-  <tr>
-   <td>Repository events
-   </td>
-   <td>
-<ul>
-<li><a href="https://confluence.atlassian.com/bitbucket/event-payloads-740262817.html#EventPayloads-Push">Push</a></li>
-<li><a href="https://confluence.atlassian.com/bitbucket/event-payloads-740262817.html#EventPayloads-Fork">Fork</a></li>
-<li><a href="https://confluence.atlassian.com/bitbucket/event-payloads-740262817.html#EventPayloads-Updated">Updated</a></li>
-<li><a href="https://confluence.atlassian.com/bitbucket/event-payloads-740262817.html#EventPayloads-Commitcommentcreated">Commit comment created</a></li>
-<li><a href="https://confluence.atlassian.com/bitbucket/event-payloads-740262817.html#EventPayloads-Buildstatuscreated">Build status created</a></li>
-<li><a href="https://confluence.atlassian.com/bitbucket/event-payloads-740262817.html#EventPayloads-Buildstatusupdated">Build status updated</a></li></ul></td>
-  </tr>
-  <tr>
-   <td>Issue events</td>
-   <td>
-<ul><li><a href="https://confluence.atlassian.com/bitbucket/event-payloads-740262817.html#EventPayloads-Created">Created</a></li>
-<li><a href="https://confluence.atlassian.com/bitbucket/event-payloads-740262817.html#EventPayloads-Updated.1">Updated</a></li>
-<li><a href="https://confluence.atlassian.com/bitbucket/event-payloads-740262817.html#EventPayloads-Commentcreated">Comment created</a></li>
-</ul>
-   </td>
-  </tr>
-</table>
+#### Available Repository events
+* <a href="https://confluence.atlassian.com/bitbucket/event-payloads-740262817.html#EventPayloads-Push">Push</a>
+* <a href="https://confluence.atlassian.com/bitbucket/event-payloads-740262817.html#EventPayloads-Fork">Fork</a>
+* <a href="https://confluence.atlassian.com/bitbucket/event-payloads-740262817.html#EventPayloads-Updated">Updated</a>
+* <a href="https://confluence.atlassian.com/bitbucket/event-payloads-740262817.html#EventPayloads-Commitcommentcreated">Commit comment created</a>
+* <a href="https://confluence.atlassian.com/bitbucket/event-payloads-740262817.html#EventPayloads-Buildstatuscreated">Build status created</a>
+* <a href="https://confluence.atlassian.com/bitbucket/event-payloads-740262817.html#EventPayloads-Buildstatusupdated">Build status updated</a>
+
+#### Available Issue events
+* <a href="https://confluence.atlassian.com/bitbucket/event-payloads-740262817.html#EventPayloads-Created">Created</a>
+* <a href="https://confluence.atlassian.com/bitbucket/event-payloads-740262817.html#EventPayloads-Updated.1">Updated</a>
+* <a href="https://confluence.atlassian.com/bitbucket/event-payloads-740262817.html#EventPayloads-Commentcreated">Comment created</a>
 
 Refer to the [event documentation](https://confluence.atlassian.com/bitbucket/event-payloads-740262817.html) for descriptions and examples of each event payload above.
 
 For log samples, refer to [Bitbucket Event Documentation](https://confluence.atlassian.com/bitbucket/event-payloads-740262817.html)
 
-### Deploy Events
+### Sample Log
 
 **Deploy Events** are triggered whenever code is pushed to test, staging, or production environments.
 * Success Code Deploys
@@ -86,68 +68,11 @@ For log samples, refer to [Bitbucket Event Documentation](https://confluence.atl
 ```
 
 
-## Collecting Logs for Bitbucket App
+### Sample Query
 
-This section provides instructions for configuring log collection for the Bitbucket App. Configuring log collection consists of the following tasks:
+This section provides a sample from the **Failed Deployments** panel on the **Bitbucket Deployment** dashboard.
 
-### Step 1: Configure Hosted Collector to Receive Bitbucket events
-
-In this step, you create a Hosted Collector to receive Webhook Events from Bitbucket and set up an HTTP source on it.
-
-1. Configure a [Hosted Collector](/docs/send-data/configure-hosted-collector), or select an existing hosted collector for the HTTP source.
-2. Configure an [HTTP source](/docs/send-data/sources/sources-hosted-collectors/http-logs-metrics-source) on the hosted collector.
-    * For Source Category, specify `bitbucket/events.`
-    * Click **+Add Field **and provide the following:
-        * **Field Name. **_convertHeadersToFields
-        * **Value. **true
-    * Click **Save** and make note of the HTTP address for the source. You will supply it when you configure a Jira Webhook in the next step.
-
-### Step 2: Adding a Webhook in Bitbucket
-
-1. From Bitbucket, open the repository where you want to add the Webhook.
-2. Click the **Settings** link on the left side.
-3. From the links on the **Settings** page, click the **Webhooks** link.
-4. Click the **Add Webhook** button to create a Webhook for the repository. The **Add New Webhook** page appears.
-
-1. Enter a **Title** with a short description.
-2. Enter Sumo Logic Http source **URL**, you configured this in [Configure Hosted Collector to Receive Bitbucket events](#Configure_Hosted_Collector_to_Receive_Bitbucket_events).
-3. Click on **Status** to make it **Active**.
-4. **Triggers - **Click on** Choose from a full list of triggers, and choose all triggers under Repository, Issue and Pull Request.
-5. Click **Save**
-
-
-### Step 3: Configure the Bitbucket CI/CD Pipeline to Collect Deploy Events
-
-A Bitbucket pipe needs to be configured to send code deploy status to Sumo Logic. Add the following pipe code to the step section of your deployment part of the `bitbucket-pipelines.yml` file. Replace **SUMOLOGIC_HTTP_URL** with HTTP Source URL configured in Step 1.
-
-```bash
-after-script:
-          - pipe: docker://appdevsumologic/sumologic-send-event:1.15
-            variables:
-              SUMO_LOGIC_BASE_URL: '<SUMOLOGIC_HTTP_URL>'
-```
-
-If you want to deployment events to multiple Sumo Logic orgs, include a `-pipe` statement, as shown above, for each of the Sumo Logic endpoints.
-
-For reference - This is how [bitbucket-pipelines.yml](https://bitbucket.org/app-dev-sumo/backendservice/src/master/bitbucket-pipelines.yml) looks like after adding deploy pipe code to our sample Bitbucket CI/CD pipeline.
-
-
-### Step 4: Enable Bitbucket Event-Key tagging at Sumo Logic
-
-Sumo Logic needs to understand the event type for incoming events (for example, repo:push events). To enable this, the [X-Event-Key](https://confluence.atlassian.com/bitbucket/event-payloads-740262817.html#EventPayloads-HTTPheaders) event type needs to be enabled. To enable this,  perform the following steps in the Sumo Logic console:
-
-1. From Sumo Logic, go to **Manage Date **- > **Logs** - > **[Fields](/docs/manage/fields.md#add-field)**.
-2. Add Field ‎**X-Event-Key**‎
-
-
-
-
-## Sample Query
-
-This section provides a sample from the **Failed Deployments** panel on the **Bitbucket Deployment **dashboard.
-
-**Parameters**
-
+Parameters:
 * Event_Date:*
 * Build_Number:*
 * Deploy_Status:*
@@ -158,10 +83,7 @@ This section provides a sample from the **Failed Deployments** panel on the **Bi
 * Source_Branch:*
 * Deploy_Result:*
 
-
-**Query String**
-
-```sql
+```sql title="Query String"
 _sourceCategory="bitbucket" production  deploymentEnvironment pipe_result_link deploy_status commit_link
 | json field=_raw "buildNumber", "deploymentEnvironment", "branch", "repoFullName", "pipe_result_link", "deploy_status", "pr_id", "commit", "tag", "projectKey", "repoOwner", "commit_link" , "event_date"
 | repoFullName as repo_name
@@ -175,17 +97,72 @@ _sourceCategory="bitbucket" production  deploymentEnvironment pipe_result_link d
 | fields - _count
 ```
 
+
+## Collecting Logs for Bitbucket App
+
+This section provides instructions for configuring log collection for the Bitbucket App. Configuring log collection consists of the following tasks:
+
+### Step 1: Configure Hosted Collector to Receive Bitbucket events
+
+In this step, you create a Hosted Collector to receive Webhook Events from Bitbucket and set up an HTTP source on it.
+
+1. Configure a [Hosted Collector](/docs/send-data/configure-hosted-collector), or select an existing hosted collector for the HTTP source.
+2. Configure an [HTTP source](/docs/send-data/sources/sources-hosted-collectors/http-logs-metrics-source) on the hosted collector.
+    * For Source Category, specify `bitbucket/events`.
+    * Click **+Add Field** and provide the following:
+        * **Field Name.** `_convertHeadersToFields`
+        * **Value.** `true`
+    * Click **Save** and make note of the HTTP address for the source. You will supply it when you configure a Jira Webhook in the next step.
+
+    <img src={useBaseUrl('img/integrations/app-development/bitbucket1.png')} alt="Bitbucket" />
+
+### Step 2: Adding a Webhook in Bitbucket
+
+1. From Bitbucket, open the repository where you want to add the Webhook.
+2. Click the **Settings** link on the left side.
+3. From the links on the **Settings** page, click the **Webhooks** link.
+4. Click the **Add Webhook** button to create a Webhook for the repository. The **Add New Webhook** page appears.<br/><img src={useBaseUrl('img/integrations/app-development/Collect_Log_BB.png')} alt="Bitbucket" />
+5. Enter a **Title** with a short description.
+6. Enter Sumo Logic Http source **URL**, you configured this in [Configure Hosted Collector to Receive Bitbucket events](#Configure_Hosted_Collector_to_Receive_Bitbucket_events).
+7. Click on **Status** to make it **Active**.
+8. **Triggers - **Click on** Choose from a full list of triggers, and choose all triggers under Repository, Issue and Pull Request.
+9. Click **Save**
+
+
+### Step 3: Configure the Bitbucket CI/CD Pipeline to Collect Deploy Events
+
+A Bitbucket pipe needs to be configured to send code deploy status to Sumo Logic. Add the following pipe code to the step section of your deployment part of the `bitbucket-pipelines.yml` file. Replace `SUMOLOGIC_HTTP_URL` with HTTP Source URL configured in Step 1.
+
+```bash
+after-script:
+          - pipe: docker://appdevsumologic/sumologic-send-event:1.15
+            variables:
+              SUMO_LOGIC_BASE_URL: '<SUMOLOGIC_HTTP_URL>'
+```
+
+If you want to deployment events to multiple Sumo Logic orgs, include a `-pipe` statement, as shown above, for each of the Sumo Logic endpoints.
+
+For reference: This is how the [bitbucket-pipelines.yml](https://bitbucket.org/app-dev-sumo/backendservice/src/master/bitbucket-pipelines.yml) looks after adding deploy pipe code to our sample Bitbucket CI/CD pipeline.
+
+
+### Step 4: Enable Bitbucket Event-Key tagging at Sumo Logic
+
+Sumo Logic needs to understand the event type for incoming events (for example, repo:push events). To enable this, the [X-Event-Key](https://confluence.atlassian.com/bitbucket/event-payloads-740262817.html#EventPayloads-HTTPheaders) event type needs to be enabled. To enable this,  perform the following steps in the Sumo Logic console:
+
+1. From Sumo Logic, go to **Manage Date** > **Logs** > **[Fields](/docs/manage/fields.md#add-field)**.
+2. Add Field ‎**X-Event-Key**‎.<br/><img src={useBaseUrl('img/integrations/app-development/BB_Collect_Log.png')} alt="Bitbucket" />
+
+
 ## Installing the Bitbucket App
 
 This section provides instructions for installing the Bitbucket app. To install the app, do the following:
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
-1. From the **App Catalog**, search for and select the app**.**
+1. From the **App Catalog**, search for and select the app.
 2. Select the version of the service you're using and click **Add to Library**.
 Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/library/install-apps)
-
-3. To istall the app, complete the following fields.
+3. To install the app, complete the following fields.
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
     2. **Data Source.** Select either of these options for the data source. 
         * Choose **Source Category**, and select a source category from the list. 
@@ -244,7 +221,7 @@ Use this dashboard to:
 
 The **Bitbucket - Issues** dashboard provides a view of issues classified by type, priority, assignee, and project. This dashboard also provides details on issues escalated, issues summary, and issues over time.
 
-Use this dashboard to:\
+Use this dashboard to:
 * Get insights into high-level statistics around software issues.
 * Improve overall software delivery processes by identifying issues by priority, projects, users, and type.
 * Get insights into identifying regressions and blockers.

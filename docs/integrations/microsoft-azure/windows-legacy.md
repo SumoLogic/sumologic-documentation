@@ -11,15 +11,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Windows Legacy App provides insight into your Windows system's operation and events so that you can better manage and maintain your environment. The Windows Legacy App consists of predefined searches and dashboards that provide visibility into your environment for real-time analysis of overall usage of Security Status, System Activity, Updates, and User Activity.
 
-
-## Collecting Logs
-
-This section provides instructions on configuring log collection for the Windows Legacy App, so that logs are collected from the Microsoft Windows Event Log and ingested into Sumo Logic. A sample log message and example query are also provided.
-
-[Windows Performance](/docs/integrations/microsoft-azure/performance) is considered a separate data type.
-
-
-### Log Types
+## Log Types
 
 The Windows Legacy App assumes events are coming from Remote Windows Event Log Sources. It does not work with third party logs. Standard Windows event channels include:
 * Security
@@ -29,23 +21,10 @@ The Windows Legacy App assumes events are coming from Remote Windows Event Log S
 Custom event channels, such as PowerShell or Internet Explorer are also supported.
 
 
-### Configure a Collector and a Source
-
-To configure a collector and source, do the following:
-
-1. Configure an [Installed Windows collector](/docs/send-data/installed-collectors/install-collector-windows) through the user interface or from the command line.
-2. Configure either a local or remote Windows Event Log source. To configure a Windows Event Log source set the following:
-    * **Event Format.** Select **Collect using legacy format. \
-
-Collect using legacy format.** Events retain their default text format from Windows.
-
-For more information on local or remote Windows Event Log Source configuration, refer to [Local Windows Event Log Source](/docs/send-data/Sources/sources-installed-collectors/Local-Windows-Event-Log-Source) and [Remote Windows Event Log Source](/docs/send-data/Sources/sources-installed-collectors/Remote-Windows-Event-Log-Source).
-
-
 ### Sample Log Message
 
 
-```
+```bash
 instance of Win32_NTLogEvent
 {
     Category = 13571;
@@ -72,9 +51,7 @@ instance of Win32_NTLogEvent
 };
 ```
 
-
-### Query Sample
-
+### Sample Query
 
 ```sql title="Recent Policy Changes"
 _sourceCategory=OS/Windows "Policy Change"
@@ -84,31 +61,42 @@ _sourceCategory=OS/Windows "Policy Change"
 ```
 
 
+## Collecting Logs for Windows Legacy
+
+This section provides instructions on configuring log collection for the Windows Legacy App, so that logs are collected from the Microsoft Windows Event Log and ingested into Sumo Logic. A sample log message and example query are also provided.
+
+[Windows Performance](/docs/integrations/microsoft-azure/performance) is considered a separate data type.
+
+
+### Configure a Collector and a Source
+
+To configure a collector and source, do the following:
+
+1. Configure an [Installed Windows collector](/docs/send-data/installed-collectors/install-collector-windows) through the user interface or from the command line.
+2. Configure either a local or remote Windows Event Log source. To configure a Windows Event Log source, set **Event Format** to **Collect using legacy format**.<br/><img src={useBaseUrl('img/integrations/microsoft-azure/Event_Format_Legacy.png')} alt="Event_Format_Legacy" />
+
+Events retain their default text format from Windows.
+
+For more information on local or remote Windows Event Log Source configuration, refer to [Local Windows Event Log Source](/docs/send-data/Sources/sources-installed-collectors/Local-Windows-Event-Log-Source) and [Remote Windows Event Log Source](/docs/send-data/Sources/sources-installed-collectors/Remote-Windows-Event-Log-Source).
+
 
 ## Installing the Windows Legacy App
 
-Now that you have configured Windows logs, install the Sumo Logic App for Windows Legacy to take advantage of the pre-configured searches and [dashboards](#Dashboards) to analyze your Windows data.
+Now that you have configured Windows logs, install the Sumo Logic App for Windows Legacy to take advantage of the pre-configured searches and [dashboards](#viewing-dashboards) to analyze your Windows data.
 
 To install the app:
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
-
-
 1. From the **App Catalog**, search for and select the app**.**
-2. Select the version of the service you're using and click **Add to Library**.
-
-Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/library/install-apps)
-
-
-
-1. To install the app, complete the following fields.
+2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/library/install-apps)
+3. To install the app, complete the following fields.
     * **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
     * **Data Source.** Select either of these options for the data source. 
         * Choose **Source Category**, and select a source category from the list. 
         * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). 
     * **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-2. Click **Add to Library**.
+4. Click **Add to Library**.
 
 Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization.
 
@@ -186,4 +174,4 @@ See information about Window event messages that contain a keyword that indicate
 
 **Error Keyword - Outlier**. See timeslices where the count of problem keywords exceeds the moving average by a statistically significant amount, three standard deviations over the last 24 hours.
 
-**Error Keyword - LogReduce**. See a LogReduce analysis of event messages that contain problem keywords. (Sumo's  LogReduce algorithm uses fuzzy logic to cluster messages together based on string and pattern similarity. For more information see, [Detect Patterns with LogReduce](/docs/search/index.md/LogReduce/Detect-Patterns-with-LogReduce)).
+**Error Keyword - LogReduce**. See a LogReduce analysis of event messages that contain problem keywords. (Sumo's LogReduce algorithm uses fuzzy logic to cluster messages together based on string and pattern similarity. For more information see, [Detect Patterns with LogReduce](/docs/search/index.md/LogReduce/Detect-Patterns-with-LogReduce)).

@@ -32,19 +32,19 @@ The Audit Event Index is only available for Trial and Enterprise accounts.
 
 Enterprise Audit Apps utilize predefined searches and Dashboards that provide visibility into your environment. The following Enterprise Audit Apps present information on account management activities, user activities, as well as management of library content (searches, dashboards/reports, and folders) for your Sumo Logic account:
 
-<img src={useBaseUrl('img/integrations/sumo-apps/data_collection.png')} alt="Web servers icon" width="75"/>
+<img src={useBaseUrl('img/integrations/sumo-apps/data_collection.png')} alt="Thumbnail icon" width="75"/>
 
 * [Enterprise Audit - Collector and Data Forwarding Management App](#enterprise-audit---collector-and-data-forwarding-management-app) presents information on Collector, Sources activities, and data forwarding trends by destination types.
 
-<img src={useBaseUrl('img/integrations/sumo-apps/content.png')} alt="Web servers icon" width="75"/>
+<img src={useBaseUrl('img/integrations/sumo-apps/content.png')} alt="Thumbnail icon" width="75"/>
 
 * [Enterprise Audit - Content Management App](#enterprise-audit---content-management-app) provides information on content activities, such as content that is created, updated, deleted, imported, exported, copied, moved, publicly accessed, made visible to the public, and application installed.
 
-<img src={useBaseUrl('img/integrations/sumo-apps/user_role.png')} alt="Web servers icon" width="75"/>
+<img src={useBaseUrl('img/integrations/sumo-apps/user_role.png')} alt="Thumbnail icon" width="75"/>
 
 * [Enterprise Audit - User & Role Management App](#enterprise-audit---user-and-role-management-app) provides visibility on user activities such as creating, deleting, and modifying user roles, email account, and password changes. You can also review various user session data.
 
-<img src={useBaseUrl('img/integrations/sumo-apps/SumoAuditSecurity.png')} alt="Web servers icon" width="75"/>
+<img src={useBaseUrl('img/integrations/sumo-apps/SumoAuditSecurity.png')} alt="Thumbnail icon" width="75"/>
 
 * [Enterprise Audit - Security Management App](#enterprise-audit---security-management-app) provides visibility into security posture, such as Access Key Activities, SAML Activities, Password Policy, Multi-Factor Authorization (MFA), and Service AllowList activities within your Sumo Logic Environment.
 
@@ -59,7 +59,7 @@ The Audit Event Index is enabled by default, and only available for Trial and En
 To install an Enterprise Audit App, do the following:
 
 1. In the App Catalog, search for "Audit" and select an Enterprise Audit app.
-2. Click **Add to Library**.
+4. Click **Add to Library**.
 3. If you want to save the app to a new folder in your personal folder, click **+ New Folder** and select a name and location for your folder.
 4. Click **Add to Library** to install the app. A confirmation dialog will appear and then you can start viewing your dashboards.
 

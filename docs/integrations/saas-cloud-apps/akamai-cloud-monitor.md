@@ -18,81 +18,7 @@ The Sumo Logic App for Akamai Cloud Monitor assumes Akamai formatted logs, which
 For information about Akamai Cloud Monitor log formats, contact [Akamai Support](https://www.akamai.com/us/en/support/) and request the document “Akamai Log Delivery User Guide.” Refer to “Appendix A: Log Formats and Examples."
 
 
-## Collect Logs for Akamai Cloud Monitor
-
-This procedure explains how to collect logs from Akamai Cloud Monitor and ingest them into Sumo Logic.
-
-
-### Enable Akamai Cloud Monitor
-
-Akamai Cloud Monitor is the service that generates transactional information for your Akamai CDN.
-
-To enable Cloud Monitor in your Akamai environment, use the instructions at:
-
-[https://www.akamai.com/us/en/solutions/intelligent-platform/cloud-monitor.jsp](https://www.akamai.com/us/en/solutions/intelligent-platform/cloud-monitor.jsp)
-
-
-### Configure a Collector
-
-In Sumo Logic, create a new [Hosted Collector](/docs/send-data/configure-hosted-collector).
-
-
-### Configure a Source
-
-1. Configure an [HTTP Source](/docs/send-data/sources/sources-hosted-collectors/http-logs-metrics-source).
-2. Configure the Source Fields as follows:
-    1. **Name.** Required. For example, use Akamai.
-    2. **Source Category.** Required. For example, use akamai_cloud_monitor. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details see [Best Practices](/docs/send-data/design-deployment/best-practices-source-categories).)
-3. Configure the **Advanced** section:
-    3. Check **Extract timestamp information from log file entries**.
-    4. **Timezone.** Use time zone from log file. If none is present, use UTC.
-    5. **Timestamp Format.** Auto-Detected
-    6. **Encoding Type.** UTF-8
-    7. **Enable Multiline Processing.**
-        * **Detect Messages Spanning Multiple Lines.** False
-        * **Multi Line Boundary.** NA
-4. Click **Save**.
-
-Save the URL endpoint that is generated for your HTTP Source. You will use it to configure Akamai.
-
-
-### Configure Akamai
-
-1. In Akamai, open the Luna Control center and navigate to the property you’d like to work with.
-2. Create a new version for the property and select it.
-3. Scroll down to the **Property Manager Configuration** section.
-4. Select **Add Rule** and choose **Cloud Management**.
-5. Add **Cloud Monitor Instrumentation**.
-6. Add the path from your Sumo Logic URL endpoint, generated from the HTTP Source, in the **Delivery URL Path** section. (It should start with `/receiver/v1/http/<your unique endpoint>`).
-7. Return to the screen where you can see your main property and add a new property.
-8. Make sure to apply your TLS certificate so it can handle HTTPS traffic.
-9. Set the origin server as the server from your Sumo Logic URL endpoint.
-10. Set the HTTPS port to **443**.
-
-
-### Field Extraction Rules
-
-Field Extraction Rules (FERs) tell Sumo Logic which fields to parse out automatically. For instructions, see [Create a Field Extraction Rule](/docs/manage/field-extractions/create-field-extraction-rule.md).
-
-
-1. In Sumo Logic, go to **Manage Data > Logs > Field Extractions** and click **Add**.
-2. Configure the following fields:
-    * **Rule Name.** Required (for example, Akamai Cloud Monitor).
-    * **Scope. **Use the Source Category you created for your HTTP Source (for example, akamai_cloud_monitor).
-    * **Parse Expression. **Select the template **Akamai Cloud Monitor** and click **Use Template**. The full parse statement is below.
-3. Click **Add**.
-
-**FER for Akamai Cloud Monitor**
-
-```sql
-parse "\"reqMethod\":\"*\"" as method, "\"status\":\"*\"" as status, "\"fwdHost\":\"*\"" as origin
-| parse "\"bytes\":\"*\"" as bytes, "\"edgeIP\":\"*\"" as edgeip, "\"country\":\"*\"" as country, "\"cookie\":\"*\"" as cookie
-```
-
-
-
-#### Sample Log Messages
-
+### Sample Log Messages
 
 ```json
 {
@@ -160,7 +86,6 @@ parse "\"reqMethod\":\"*\"" as method, "\"status\":\"*\"" as status, "\"fwdHost\
 ```
 
 
-
 ### Sample Queries
 
 ```sql title="Top Error-causing URLs"
@@ -172,7 +97,6 @@ _sourceCategory=akamai 50?
 | count as errors by path
 | sort by errors
 ```
-
 
 ```sql title="Cache Performance"
 _sourceCategory=akamai cacheStatus
@@ -193,35 +117,94 @@ _sourceCategory=akamai waf denyRules reqHost
 ```
 
 
+## Collect Logs for Akamai Cloud Monitor
+
+This procedure explains how to collect logs from Akamai Cloud Monitor and ingest them into Sumo Logic.
+
+
+### Enable Akamai Cloud Monitor
+
+Akamai Cloud Monitor is the service that generates transactional information for your Akamai CDN. To enable Cloud Monitor in your Akamai environment, use the instructions at: [https://www.akamai.com/us/en/solutions/intelligent-platform/cloud-monitor.jsp](https://www.akamai.com/us/en/solutions/intelligent-platform/cloud-monitor.jsp)
+
+
+### Configure a Collector
+
+In Sumo Logic, create a new [Hosted Collector](/docs/send-data/configure-hosted-collector).
+
+
+### Configure a Source
+
+1. Configure an [HTTP Source](/docs/send-data/sources/sources-hosted-collectors/http-logs-metrics-source).
+2. Configure the Source Fields as follows:
+    1. **Name.** Required. For example, use Akamai.
+    2. **Source Category.** Required. For example, use akamai_cloud_monitor. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details see [Best Practices](/docs/send-data/design-deployment/best-practices-source-categories).)
+3. Configure the **Advanced** section:
+    1. Check **Extract timestamp information from log file entries**.
+    2. **Timezone.** Use time zone from log file. If none is present, use UTC.
+    3. **Timestamp Format.** Auto-Detected
+    4. **Encoding Type.** UTF-8
+    5. **Enable Multiline Processing.**
+        * **Detect Messages Spanning Multiple Lines.** False
+        * **Multi Line Boundary.** NA
+4. Click **Save**.
+
+Save the URL endpoint that is generated for your HTTP Source. You will use it to configure Akamai.
+
+
+### Configure Akamai
+
+1. In Akamai, open the Luna Control center and navigate to the property you’d like to work with.
+2. Create a new version for the property and select it.
+3. Scroll down to the **Property Manager Configuration** section.
+4. Select **Add Rule** and choose **Cloud Management**.
+5. Add **Cloud Monitor Instrumentation**.
+6. Add the path from your Sumo Logic URL endpoint, generated from the HTTP Source, in the **Delivery URL Path** section. It should start with `/receiver/v1/http/<your unique endpoint>`.
+7. Return to the screen where you can see your main property and add a new property.
+8. Make sure to apply your TLS certificate so it can handle HTTPS traffic.
+9. Set the origin server as the server from your Sumo Logic URL endpoint.
+10. Set the HTTPS port to `443`.
+
+
+### Field Extraction Rules
+
+Field Extraction Rules (FERs) tell Sumo Logic which fields to parse out automatically. For instructions, see [Create a Field Extraction Rule](/docs/manage/field-extractions/create-field-extraction-rule.md).
+
+1. In Sumo Logic, go to **Manage Data > Logs > Field Extractions** and click **Add**.
+2. Configure the following fields:
+    * **Rule Name.** Required (for example, Akamai Cloud Monitor).
+    * **Scope. **Use the Source Category you created for your HTTP Source (for example, akamai_cloud_monitor).
+    * **Parse Expression. **Select the template **Akamai Cloud Monitor** and click **Use Template**. The full parse statement is below.
+3. Click **Add**.
+
+```sql title="FER for Akamai Cloud Monitor"
+parse "\"reqMethod\":\"*\"" as method, "\"status\":\"*\"" as status, "\"fwdHost\":\"*\"" as origin
+| parse "\"bytes\":\"*\"" as bytes, "\"edgeIP\":\"*\"" as edgeip, "\"country\":\"*\"" as country, "\"cookie\":\"*\"" as cookie
+```
+
 ## Installing the Akamai Cloud Monitor App
 
-Now that you have configured Akamai logs, install the Sumo Logic App for Akamai Cloud Monitor to take advantage of the pre-configured searches and [Dashboards](#Dashboards) to analyze your Akamai data.
+Now that you have configured Akamai logs, install the Sumo Logic App for Akamai Cloud Monitor to take advantage of the pre-configured searches and [dashboards](#viewing-dashboards) to analyze your Akamai data.
 
 To install the app:
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
 1. From the **App Catalog**, search for and select the app**.**
-2. Select the version of the service you're using and click **Add to Library**.
-
-
-Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/library/install-apps)
-
-1. To install the app, complete the following fields.
+2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/library/install-apps).
+3. To install the app, complete the following fields.
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
     2. **Data Source.** Select either of these options for the data source. 
         * Choose **Source Category**, and select a source category from the list. 
         * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). 
     3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-2. Click **Add to Library**.
+4. Click **Add to Library**.
 
 Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization.
 
 Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
 
 
-## Viewing Dashboards
-
+## Viewing Akamai Cloud Monitor Dashboards
 
 ### Overview
 

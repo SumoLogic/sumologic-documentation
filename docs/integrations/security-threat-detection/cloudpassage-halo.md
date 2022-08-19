@@ -23,6 +23,8 @@ To collect CloudPassage Halo logs for Sumo Logic you need to configure:
 * Two Sumo Logic hosted collectors.
 * Two Lambda functions to call Halo’s REST APIs and forward Halo events to Sumo Logic.
 
+<img src={useBaseUrl('img/integrations/security-threat-detection/CloudPassage2.png')} alt="cloudpassage" />
+
 
 ### Sumo Logic Collector Configuration
 
@@ -41,22 +43,19 @@ If this is the first time you are creating an HTTPS collector, review how to cre
 4. Click OK to add a source to your collector.
 5. Select **HTTP** as the source type.
 6. Enter the information as below for **Halo Security Events**. \
-**Name.** CP_Halo_Workload_Security_Events_Collector. \
-**Description.** Halo Security Events Collector. \
-**Source Host. **CP_Halo. \
-**Source Category.** halo/workload/security/events \
-
-7. Click **Save.** Be sure to note the endpoint URL provided for this collection. You will need it later. \
-
-8. Create a second source**.**
+   * **Name.** CP_Halo_Workload_Security_Events_Collector. \
+   * **Description.** Halo Security Events Collector. \
+   * **Source Host. **CP_Halo. \
+   * **Source Category.** halo/workload/security/events
+7. Click **Save.** Be sure to note the endpoint URL provided for this collection. You will need it later.
+8. Create a second source.
 9. Click **Hosted Collector.**
 10. Select **HTTP** as the source type.
 11. Enter the information as below for **Halo Metric Events**. \
-**Name.** CP_Halo_Metrics_Collector. \
-**Description.** Halo key metrics collector. \
-**Source Host. **CP_Halo. \
-**Source Category.** halo/metrics. \
-
+   * **Name.** CP_Halo_Metrics_Collector. \
+   * **Description.** Halo key metrics collector. \
+   * **Source Host. **CP_Halo. \
+   * **Source Category.** halo/metrics. \
 12. When you are done, you should have two collections **CP_Halo_Metrics_Collector** and  **CP_Halo_Workload_Security_Events_Collector** set up under a single collector **Halo_Lambda_Ingestor**.
 
 
@@ -109,8 +108,7 @@ Sample policy: Be sure to use the proper permission level.
 5. Change **Code entry Type **to **Upload a .ZIP** file.  And upload the **Halo_events_to_SumoLogic.zip** file.  Then enter in the environment variables with proper values (refer to the steps above).
 
 
-6. Fill in the information to match the screenshot below.  Enter **halo_events_to_sumologic.lambda_handler** for **Handler**.  Then select “Create a custom role” for **Role**. \
-
+6. Fill in the information to match the screenshot below.  Enter **halo_events_to_sumologic.lambda_handler** for **Handler**.  Then select “Create a custom role” for **Role**.
 
 
 7. Fill in the information to match the screenshot below.  Select “Choose a new IAM Role” for IAM Role and **lambda_basic_execution** for **Role Name**. \
@@ -123,22 +121,20 @@ The screenshot does not have values for the Environment Variables.  But you shou
 11. Select **lamda_basic_execution** role that was created in the previous step.
 12. Select **AmazonSQSFullAccess** and **AWSLambdaBasicExecutionRole** for the policies. If you don’t have these policies, refer to the AWS manual and next few steps to create them.
 13. Here is the sample policy for the **AmazonSQSFullAccess**.  Make sure you change the permission to meet your security requirements. \
-Sample policy: Use a proper permission level.  Below is a sample.
+Sample policy: Use a proper permission level. Below is a sample.
 ```
 {
   "Version": "2012-10-17",
   "Statement": [
     {
       "Action": [
-      "sqs:*”
+        "sqs:*”
       ],
        "Effect": "Allow",
-        "Resource": "*"
+       "Resource": "*"
        }
-
-     ]
-
-  }
+   ]
+}
 ```
 
 14. Here is the sample policy for **AWSLambdaBasicExecutionRole**. Make sure you change the permission to meet your security requirements.
@@ -175,7 +171,7 @@ Sample policy: Use a proper permission level.  Below is a sample.
 
 ## Installing the CloudPassage Halo App
 
-Now that you have configured CloudPassage Halo, install the Sumo Logic App for CloudPassage Halo to take advantage of the preconfigured searches and [dashboards](#Dashboards) to analyze your data.
+Now that you have configured CloudPassage Halo, install the Sumo Logic App for CloudPassage Halo to take advantage of the preconfigured searches and [dashboards](#viewing-dashboards) to analyze your data.
 
 To install the app:
 
@@ -201,8 +197,7 @@ Panels will start to fill automatically. It's important to note that each panel 
 
 ## Viewing CloudPassage Dashboards
 
-
-#### CloudPassage Halo - Overview
+### Overview
 
 View counts of key information for you system as well as top and bottom 10 processes for Linux, top and bottom 10 services for Windows, and top and bottom 10 software vulnerabilities found by CloudPassage Halo.
 
@@ -219,13 +214,12 @@ View counts of key information for you system as well as top and bottom 10 proce
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/CloudPassage_overview_dashboard.png')} alt="cloudpassage dashboards" />
 
-#### CloudPassage - Critical Events
+### Critical Events
 
 View critical issues for the last 24 hours, outliers for the critical issues threshold during that time, and compare today's critical issues and outliers with the previous day.
 
 * **Critical Issues Over Time.** View a count of critical issues over the last 24 hours, timesliced by every 5 minutes.
 * **Critical Issues Outlier.** View outliers outside the established threshold for critical issues over the last 24 hours, timesliced by every 5 minutes.
 * **Outlier on Delta (today - yesterday) of Critical Issues.** View the outlier difference between the count of issues today and yesterday
-
 
 <img src={useBaseUrl('img/integrations/security-threat-detection/CloudPassage_CriticalEvents_Dashboard.png')} alt="cloudpassage dashboards" />

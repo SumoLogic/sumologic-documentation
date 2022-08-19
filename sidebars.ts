@@ -430,6 +430,7 @@ module.exports = {
         'dashboards-new/drill-down-to-discover-root-causes',
         'dashboards-new/export-dashboard-new',
         'dashboards-new/filter-template-variables',
+         'dashboards-new/explore',
         'dashboards-new/link-dashboard-to-explore',
         'dashboards-new/link-dashboard-new',
         'dashboards-new/locate-deviations-time-series',
@@ -1447,7 +1448,6 @@ module.exports = {
             collapsed: true,
             link: {type: 'doc', id: 'apm/traces/get-started-transaction-tracing/instrument-application-opentelemetry/index'},
             items: [
-              'apm/traces/get-started-transaction-tracing/instrument-application-opentelemetry/net-opentelemetry-auto-instrumentation',
               'apm/traces/get-started-transaction-tracing/instrument-application-opentelemetry/aws-lambda-java-function-instrumentation',
               'apm/traces/get-started-transaction-tracing/instrument-application-opentelemetry/aws-lambda-nodejs-function-instrumentation',
               'apm/traces/get-started-transaction-tracing/instrument-application-opentelemetry/aws-lambda-python-function-instrumentation',
@@ -1481,6 +1481,16 @@ module.exports = {
                 items: [
                   'apm/traces/get-started-transaction-tracing/instrument-application-opentelemetry/java-opentelemetry-auto-instrumentation/custom-tags-configuration',
                   'apm/traces/get-started-transaction-tracing/instrument-application-opentelemetry/java-opentelemetry-auto-instrumentation/traceid-spanid-injection-into-logs-configuration',
+                ],
+              },
+              {
+                type: 'category',
+                label: '.NET OpenTelemetry auto-instrumentation',
+                collapsible: true,
+                collapsed: true,
+                link: {type: 'doc', id: 'apm/traces/get-started-transaction-tracing/instrument-application-opentelemetry/net-opentelemetry-auto-instrumentation/index'},
+                items: [
+                  'apm/traces/get-started-transaction-tracing/instrument-application-opentelemetry/net-opentelemetry-auto-instrumentation/net-traceid-spanid-injection-into-logs',
                 ],
               },
               'apm/traces/get-started-transaction-tracing/instrument-application-opentelemetry/python-opentelemetry-auto-instrumentation',
@@ -1802,7 +1812,7 @@ module.exports = {
       items: [
         'integrations/cloud-security-monitoring-analytics/amazon-guardduty',
         'integrations/cloud-security-monitoring-analytics/amazon-vpc-flow',
-        'integrations/cloud-security-monitoring-analytics/aws-cloudtrail',
+        'integrations/cloud-security-monitoring-analytics/aws-cloudtrail-pci-compliance',
         'integrations/cloud-security-monitoring-analytics/aws-security-hub',
         'integrations/cloud-security-monitoring-analytics/aws-waf',
         'integrations/cloud-security-monitoring-analytics/linux',
@@ -1851,8 +1861,8 @@ module.exports = {
       collapsed: true,
       link: {type: 'doc', id: 'integrations/hosts-operating-systems/index'},
       items: [
-        'integrations/hosts-operating-systems/process-metrics',
-        'integrations/hosts-operating-systems/metrics',
+        'integrations/hosts-operating-systems/host-metrics',
+        'integrations/hosts-operating-systems/host-process-metrics',
         'integrations/hosts-operating-systems/linux',
         'integrations/hosts-operating-systems/linux-performance',
         ],
@@ -2040,7 +2050,7 @@ module.exports = {
     },
     {
       type: 'category',
-      label: 'SDO',
+      label: 'Software Dev Optimization (SDO)',
       collapsible: true,
       collapsed: true,
       link: {type: 'doc', id: 'sdo/index'},
@@ -2294,11 +2304,45 @@ module.exports = {
           type: 'category',
           label: 'Archive',
           collapsible: true,
-          collapsed: false,
+          collapsed: true,
           link: {type: 'doc', id: 'releasenotes/archive/index'},
           items: [
-            'releasenotes/archive/collector',
-            'releasenotes/archive/developer',
+            {
+              type: 'category',
+              label: 'CSE Archive',
+              collapsible: true,
+              collapsed: true,
+              items: [
+                'releasenotes/archive/cloud-siem/year2021',
+              ],
+            },
+            {
+              type: 'category',
+              label: 'Collector Archive',
+              collapsible: true,
+              collapsed: true,
+              items: [
+                'releasenotes/archive/collector/year2021',
+              ],
+            },
+            {
+              type: 'category',
+              label: 'Developer Archive',
+              collapsible: true,
+              collapsed: true,
+              items: [
+                'releasenotes/archive/developer/year2021',
+              ],
+            },
+            {
+              type: 'category',
+              label: 'Service Archive',
+              collapsible: true,
+              collapsed: true,
+              items: [
+                'releasenotes/archive/service/year2021',
+              ],
+            },
           ]
         }
       ],

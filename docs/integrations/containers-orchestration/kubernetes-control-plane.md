@@ -22,8 +22,7 @@ There are two versions of the Kubernetes Control Plane app for:
 
 The Kubernetes Control Plane App uses logs and metrics.
 
-
-### Log sources
+### Log Sources
 
 * [Kube API Server Logs](https://kubernetes.io/docs/concepts/overview/components/#kube-apiserver)
 * [Kube Control Manager Logs](https://kubernetes.io/docs/concepts/overview/components/#kube-controller-manager)
@@ -33,31 +32,7 @@ The Kubernetes Control Plane App uses logs and metrics.
 The Sumo Logic Kubernetes app uses FluentBit and FluentD to collect logs.
 
 
-### Metric sources
-
-* Kubernetes API Server Metrics.
-* Scheduler Metrics.
-* Controller Manager Metrics.
-* Node-exporter Metrics.
-* kube-state-metrics.
-
-Metrics are collected using [Prometheus with FluentD](https://github.com/SumoLogic/sumologic-kubernetes-collection/tree/master/deploy#step-1-create-sumo-collector-and-deploy-fluentd). For additional information on metrics options you can configure for collection, see [this document](/docs/metrics/kubernetes-metrics.md).
-
-
-## Collecting Logs and Metrics for the Kubernetes Control Plane App
-
-This section provides instructions for configuring log and metric collection for the Kubernetes Control Plane App.
-
-[Sumo Logic Kubernetes Collection]
-
-### Prerequsites
-
-You must set up collection and install the Kubernetes App before you install the Kubernetes - Control Plane App. The Sumo Logic Kubernetes App provides the services for managing and monitoring Kubernetes worker nodes.
-
-After you've installed the Kubernetes App, you can [Install the Kubernetes Control Plane App](#Installing-the-Kubernetes-Control-Plane-App) and [view the Dashboards](#viewing-the-dashboards).
-
-
-### Sample log messages
+### Sample Log Messages
 
 ```json title="Kube API Server Logs"
 {"timestamp":1562059802772,"log":"E0702 09:30:02.772323       1
@@ -96,9 +71,17 @@ Post http://192.168.190.54:10255/stats/container/: dial tcp 192.168.190.54:10255
 connection refused"}
 ```
 
+### Metric Sources
+
+* Kubernetes API Server Metrics
+* Scheduler Metrics
+* Controller Manager Metrics
+* Node-exporter Metrics
+* kube-state-metrics
+
+Metrics are collected using [Prometheus with FluentD](https://github.com/SumoLogic/sumologic-kubernetes-collection/tree/master/deploy#step-1-create-sumo-collector-and-deploy-fluentd). For additional information on metrics options you can configure for collection, see [this document](/docs/metrics/kubernetes-metrics.md).
 
 ### Sample Query
-
 
 ```sql title="Control Manager - Event Severity Trend"
 _sourceCategory = *controller*
@@ -110,6 +93,13 @@ _sourceCategory = *controller*
 | fillmissing timeslice(1h)
 ```
 
+## Collecting Logs and Metrics for the Kubernetes Control Plane App
+
+See [Sumo Logic Kubernetes Collection](docs/observability/kubernetes-solution/collection-setup.md) for instructions on configuring log and metric collection for the Kubernetes Control Plane App.
+
+:::caution
+Before installing the [Kubernetes Control Plane App](#installing-the-kubernetes-control-plane-app), you must set up collection for and install the [Kubernetes App](/docs/integrations/containers-orchestration/kubernetes), which provides the services for managing and monitoring Kubernetes worker nodes.
+:::
 
 
 ## Installing the Kubernetes Control Plane App
@@ -126,51 +116,22 @@ All the dashboards are linked to the Explore tab and can be easily accessed by c
 
 When you install the FluentD plugin and Prometheus, you supply custom data filters that match the source categories that the FluentD plugin generated for your Kubernetes logs and metrics. The plugin generates the source categories dynamically, and they can vary by environment.
 
-**To determine custom data filters for source categories, do the following:**
-
+To determine custom data filters for source categories, do the following:
 1. Run a query similar to the following in Sumo Logic to determine the source categories the plugin created. Use the hosted Collector Name > you configured for Kubernetes.
-    ```sql
-    _collector="<Collector Name>"
-    | count by _sourceCategory
-    ```
+  ```sql
+  _collector="<Collector Name>"
+  | count by _sourceCategory
+  ```
 
-You should see results similar to the following:
+  You should see results similar to the following:<br/><img src={useBaseUrl('img/integrations/containers-orchestration/K8s_ControlPlane_source-categories.png')} alt="k8s" width="500"/>  
+2. Determine the custom data filters and source categories. The following table lists the sources created by the plugin in the left column. The Source Category column contains the source category you should configure for the sources when you [install the app](#step-2-install-the-app), or the source category that matches your environment based on the output of the query (from the previous step).
 
-1. Determine the custom data filters and source categories. The following table lists the sources created by the plugin in the left column. The Source Category column contains the source category you should configure for the sources when you [install the app](#Install_the_App), or the source category that matches your environment based on the output of the query (from the previous step).
-
-<table>
-  <tr>
-   <td>
-Source
-   </td>
-   <td>Source Category
-   </td>
-  </tr>
-  <tr>
-   <td>Kube Control Manager Log Source
-   </td>
-   <td>*kube/controller/manager*
-   </td>
-  </tr>
-  <tr>
-   <td>Kube-System Namespace Log Source
-   </td>
-   <td>*kube/system*
-   </td>
-  </tr>
-  <tr>
-   <td>Kube API Server Log Source
-   </td>
-   <td>*kube/apiserver*
-   </td>
-  </tr>
-  <tr>
-   <td>Falco
-   </td>
-   <td>*falco*
-   </td>
-  </tr>
-</table>
+  | Source                           | Source Category           |
+  |:---------------------------------|:------------------------|
+  | Kube Control Manager Log Source  | `kube/controller/manager` |
+  | Kube-System Namespace Log Source | `kube/system`        |
+  | Kube API Server Log Source       | `kube/apiserver`        |
+  | Falco                            | `falco`                  |
 
 
 
@@ -184,14 +145,14 @@ To install the app, do the following:
 2. From the App Catalog, search for **Kubernetes Control Plane** and select the app.
 3. To install the app, click **Add to Library.**
 4. Complete the following fields.
-    1. **App Name**. You can retain the existing name, or enter a name of your choice for the app. 
-    2. **Data Source.**  For each the sources listed, enter a Custom Data Filter or Source Category, as follows:
-    3. For **Kube Control Manager Log Source** leave **Source Category** selected, and enter the following source category: ***kube/controller/manager*** or one that matches the source categories in your environment.
-    4. For **Kube-System Namespace Log Source** leave **Source Category** selected, and enter the following source category: ***kube/system*** or one that matches the source categories in your environment.
-    5. For **Kube API Server Log Source** leave **Source Category** selected, and enter the following source category: ***kube/apiserver*** or one that matches the source categories in your environment.
-    6. For **Falco Log Source** leave **Source Category** selected, and enter the following source category: *falco* or one that matches the source categories in your environment.
-    7. **Advanced**. Select the location in the library (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-1. Click **Add to Library**.
+   * **App Name**. You can retain the existing name, or enter a name of your choice for the app. 
+   * **Data Source.**  For each the sources listed, enter a Custom Data Filter or Source Category, as follows:
+   * For **Kube Control Manager Log Source**, leave **Source Category** selected, and enter the following source category: `kube/controller/manager` or one that matches the source categories in your environment.
+   * For **Kube-System Namespace Log Source**, leave **Source Category** selected, and enter the following source category: `kube/system` or one that matches the source categories in your environment.
+   * For **Kube API Server Log Source**, leave **Source Category** selected, and enter the following source category: `kube/apiserver` or one that matches the source categories in your environment.
+   * For **Falco Log Source**, leave **Source Category** selected, and enter the following source category: *falco* or one that matches the source categories in your environment.
+5. **Advanced**. Select the location in the library (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
+6. Click **Add to Library**.
 
 
 ## Viewing Kubernetes Control Plane Dashboards
@@ -251,7 +212,7 @@ Use this dashboard to:
 
 ### Security Audit Events
 
-This dashboard relies on Falco. If the Dashboard is not populated, enable Falco by setting the flag "falco:enabled" as "true" in values.yaml as described [on this page](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/master/deploy/docs/Installation_with_Helm.md).
+This dashboard relies on Falco. If the Dashboard is not populated, enable Falco by setting the flag `"falco:enabled"` as `"true"` in values.yaml as described [on this page](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/master/deploy/docs/Installation_with_Helm.md).
 
 The **Kubernetes - Security Audit** Events dashboard provides insights into Kubernetes audit events collected by Falco.
 

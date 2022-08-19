@@ -77,7 +77,7 @@ Download the appropriate collector from the **Manage Data \> Collection \> Coll
     ```
 
 :::note
-Do not start the Collector before building the image if you are using `-VskipRegistration=true`. Starting the Collector prematurely will register the Collector with Sumo Logic, causing ingestion issues when using baked AMI. If you did start the Collector and it registered you can remove the Collector's registration by navigating to the Collector's installation directory under `/config/creds/` and deleting all of its contents.
+Do not start the Collector before building the image If you're using `-VskipRegistration=true`. Starting the Collector prematurely will register the Collector with Sumo Logic, causing ingestion issues when using baked AMI. If you did start the Collector and it registered you can remove the Collector's registration by navigating to the Collector's installation directory under `/config/creds/` and deleting all of its contents.
 :::
 
 ## Build your image

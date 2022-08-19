@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-<img src={useBaseUrl('img/integrations/web-servers/nginx-ingress.png')} alt="Web servers icon" width="75"/>
+<img src={useBaseUrl('img/integrations/web-servers/nginx-ingress.png')} alt="Thumbnail icon" width="75"/>
 
 Nginx (Legacy) is a web server that can be used as a reverse proxy, load balancer, mail proxy, and HTTP cache.
 
@@ -21,90 +21,10 @@ The Sumo Logic App for Nginx (Legacy) helps you monitor webserver activity in Ng
 
 The Sumo Logic App for Nginx assumes the NCSA extended/combined log file format for Access logs and the default Nginx error log file format for error logs.
 
-All Dashboards (except the Error logs Analysis dashboard) assume the Access log format. The Error logs Analysis Dashboard assumes both Access and Error log formats, so as to correlate information between the two.
+All Dashboards (except the Error logs Analysis dashboard) assume the Access log format. The Error logs Analysis Dashboard assumes both Access and Error log formats, so as to correlate information between the two. For more details on Nginx logs, see https://nginx.org/en/docs/http/ngx_http_log_module.html.
 
-For more details on Nginx logs, see https://nginx.org/en/docs/http/ngx_http_log_module.html.
+The Sumo Logic App for Nginx assumes Prometheus format Metrics for Requests and Connections. For Nginx Server metrics, Stub_Status Module from Nginx Configuration is used. For more details on Nginx Metrics, see https://nginx.org/libxslt/en/docs/http/ngx_http_stub_status_module.html.
 
-The Sumo Logic App for Nginx assumes Prometheus format Metrics for Requests and Connections. For Nginx Server metrics, Stub_Status Module from Nginx Configuration is used.
-
-For more details on Nginx Metrics, see https://nginx.org/libxslt/en/docs/http/ngx_http_stub_status_module.html.
-
-
-## Collecting Logs and Metrics for Nginx (Legacy)
-
-This section provides instructions for configuring log and metrics collection for the Sumo Logic App for Nginx (Legacy), which is for non-Kubernetes environment.
-
-### Collect Logs
-
-Nginx (Legacy) app supports the default access logs and error logs format.
-
-
-#### Step 1. Configure logging in Nginx
-
-Before you can configure Sumo Logic to ingest logs, you must configure the logging of errors and processed requests in NGINX Open Source and NGINX Plus. For instructions, refer to the following documentation: [https://www.nginx.com/resources/admin-guide/logging-and-monitoring/](https://www.nginx.com/resources/admin-guide/logging-and-monitoring/).
-
-#### Step 2. Configure a Collector
-
-Use one of the following Sumo Logic Collector options:
-
-1. To collect logs directly from the Nginx machine, configure an [Installed Collector](/docs/send-data/Installed-Collectors).
-2. If you are using a service like Fluentd, or you would like to upload your logs manually, [Create a Hosted Collector](/docs/send-data/Hosted-Collectors#Create_a_Hosted_Collector).
-
-
-#### Step 3. Configure a Source
-
-<Tabs
-  className="unique-tabs"
-  defaultValue="installed"
-  values={[
-    {label: 'For an Installed Collector', value: 'installed'},
-    {label: 'For a Hosted Collector', value: 'hosted'},
-  ]}>
-
-<TabItem value="installed">
-
-To collect logs directly from your Nginx machine, use an Installed Collector and a Local File Source.
-
-1. Add a [Local File Source](/docs/send-data/Sources/sources-installed-collectors/Local-File-Source).
-2. Configure the Local File Source fields as follows:
-    * **Name.** (Required)
-    * **Description.** (Optional)
-    * **File Path (Required).** Enter the path to your error.log or access.log. The files are typically located in /var/log/nginx/error.log. If you are using a customized path, check the nginx.conf file for this information. If you are using Passenger, you may have instructed Passenger to log to a specific log using the passenger_log_file option.
-    * **Source Host.** Sumo Logic uses the hostname assigned by the OS unless you enter a different hostname.
-    * **Source Category.** Enter any string to tag the output collected from this Source, such as **Nginx/Access** or **Nginx/Error**. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details see [Best Practices](/docs/send-data/design-deployment/best-practices-source-categories).)
-3. Configure the **Advanced** section:
-    * **Enable Timestamp Parsing.** Select Extract timestamp information from log file entries.
-    * **Time Zone.** Automatically detect.
-    * **Timestamp Format.** The timestamp format is automatically detected.
-    * **Encoding.** Select UTF-8 (Default).
-    * **Enable Multiline Processing.**
-        * **Error logs.** Select **Detect messages spanning multiple lines** and **Infer Boundaries - Detect message boundaries automatically**.
-        * **Access** logs. These are single-line logs, uncheck **Detect messages spanning multiple lines**.
-4. Click **Save**.
-
-</TabItem>
-<TabItem value="hosted">
-
-If you are using a service like Fluentd, or you would like to upload your logs manually, use a Hosted Collector and an HTTP Source.
-
-1. Add an [HTTP Source](/docs/send-data/sources/sources-hosted-collectors/http-logs-metrics-source).
-2. Configure the HTTP Source fields as follows:
-    * **Name.** (Required)
-    * **Description.** (Optional)
-    * **Source Host.** Sumo Logic uses the hostname assigned by the OS unless you enter a different hostname.
-    * **Source Category.** Enter any string to tag the output collected from this Source, such as **Nginx/Access** or **Nginx/Error**. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details see [Best Practices](/docs/send-data/design-deployment/best-practices-source-categories).)
-3. Configure the **Advanced** section:
-    * **Enable Timestamp Parsing.** Select **Extract timestamp information from log file entries**.
-    * **Time Zone.** For Access logs, use the time zone from the log file. For Error logs, make sure to select the correct time zone.
-    * **Timestamp Format.** The timestamp format is automatically detected.
-    * **Enable Multiline Processing.**
-        * **Error** **logs**: Select **Detect messages spanning multiple lines** and **Infer Boundaries - Detect message boundaries automatically**.
-        * **Access** **logs**: These are single-line logs, uncheck **Detect messages spanning multiple lines**.
-4. Click **Save**.
-5. When the URL associated with the HTTP Source is displayed, copy the URL so you can add it to the service you are using, such as Fluentd.
-
-</TabItem>
-</Tabs>
 
 ### Sample Log Messages
 
@@ -133,6 +53,84 @@ _sourceCategory = Labs/Nginx/Logs
 | count as count by Client_Ip
 | sort count
 ```
+
+
+## Collecting Logs and Metrics for Nginx (Legacy)
+
+This section provides instructions for configuring log and metrics collection for the Sumo Logic App for Nginx (Legacy), which is for non-Kubernetes environment.
+
+### Collecting Logs
+
+Nginx (Legacy) app supports the default access logs and error logs format.
+
+
+#### Step 1. Configure logging in Nginx
+
+Before you can configure Sumo Logic to ingest logs, you must configure the logging of errors and processed requests in NGINX Open Source and NGINX Plus. For instructions, refer to the following documentation: [https://www.nginx.com/resources/admin-guide/logging-and-monitoring/](https://www.nginx.com/resources/admin-guide/logging-and-monitoring/).
+
+#### Step 2. Configure a Collector
+
+Use one of the following Sumo Logic Collector options:
+
+1. To collect logs directly from the Nginx machine, configure an [Installed Collector](/docs/send-data/Installed-Collectors).
+2. If you're using a service like Fluentd, or you would like to upload your logs manually, [Create a Hosted Collector](/docs/send-data/Hosted-Collectors#Create_a_Hosted_Collector).
+
+
+#### Step 3. Configure a Source
+
+<Tabs
+  className="unique-tabs"
+  defaultValue="installed"
+  values={[
+    {label: 'For an Installed Collector', value: 'installed'},
+    {label: 'For a Hosted Collector', value: 'hosted'},
+  ]}>
+
+<TabItem value="installed">
+
+To collect logs directly from your Nginx machine, use an Installed Collector and a Local File Source.
+
+1. Add a [Local File Source](/docs/send-data/Sources/sources-installed-collectors/Local-File-Source).
+2. Configure the Local File Source fields as follows:
+    * **Name.** (Required)
+    * **Description.** (Optional)
+    * **File Path (Required).** Enter the path to your error.log or access.log. The files are typically located in /var/log/nginx/error.log. If you're using a customized path, check the nginx.conf file for this information. If you're using Passenger, you may have instructed Passenger to log to a specific log using the passenger_log_file option.
+    * **Source Host.** Sumo Logic uses the hostname assigned by the OS unless you enter a different hostname.
+    * **Source Category.** Enter any string to tag the output collected from this Source, such as **Nginx/Access** or **Nginx/Error**. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details see [Best Practices](/docs/send-data/design-deployment/best-practices-source-categories).)
+3. Configure the **Advanced** section:
+    * **Enable Timestamp Parsing.** Select Extract timestamp information from log file entries.
+    * **Time Zone.** Automatically detect.
+    * **Timestamp Format.** The timestamp format is automatically detected.
+    * **Encoding.** Select UTF-8 (Default).
+    * **Enable Multiline Processing.**
+        * **Error logs.** Select **Detect messages spanning multiple lines** and **Infer Boundaries - Detect message boundaries automatically**.
+        * **Access** logs. These are single-line logs, uncheck **Detect messages spanning multiple lines**.
+4. Click **Save**.
+
+</TabItem>
+<TabItem value="hosted">
+
+If you're using a service like Fluentd, or you would like to upload your logs manually, use a Hosted Collector and an HTTP Source.
+
+1. Add an [HTTP Source](/docs/send-data/sources/sources-hosted-collectors/http-logs-metrics-source).
+2. Configure the HTTP Source fields as follows:
+    * **Name.** (Required)
+    * **Description.** (Optional)
+    * **Source Host.** Sumo Logic uses the hostname assigned by the OS unless you enter a different hostname.
+    * **Source Category.** Enter any string to tag the output collected from this Source, such as **Nginx/Access** or **Nginx/Error**. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details see [Best Practices](/docs/send-data/design-deployment/best-practices-source-categories).)
+3. Configure the **Advanced** section:
+    * **Enable Timestamp Parsing.** Select **Extract timestamp information from log file entries**.
+    * **Time Zone.** For Access logs, use the time zone from the log file. For Error logs, make sure to select the correct time zone.
+    * **Timestamp Format.** The timestamp format is automatically detected.
+    * **Enable Multiline Processing.**
+        * **Error** **logs**: Select **Detect messages spanning multiple lines** and **Infer Boundaries - Detect message boundaries automatically**.
+        * **Access** **logs**: These are single-line logs, uncheck **Detect messages spanning multiple lines**.
+4. Click **Save**.
+5. When the URL associated with the HTTP Source is displayed, copy the URL so you can add it to the service you are using, such as Fluentd.
+
+</TabItem>
+</Tabs>
+
 
 ### Field Extraction Rules
 

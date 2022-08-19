@@ -12,7 +12,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 The Carbon Black Cloud App analyzes alert and event data from Endpoint Standard and Enterprise EDR products and provides comprehensive visibility into the security posture of your endpoints, enabling you to determine the effects of breaches in your environment. The app provides visibility into key endpoint security data with preconfigured dashboards for alerts, threats intelligence, feeds, sensors, alerts, users, hosts, processes, IOCs, devices and network status.
 
 
-### Log types
+## Log Types
 
 The Carbon Black Cloud App uses the following Carbon Black Cloud log types, which are set to the AWS S3 bucket sent by the [Carbon Black Cloud Forwarder](https://developer.carbonblack.com/reference/carbon-black-cloud/platform/latest/data-forwarder-api/).
 
@@ -20,14 +20,14 @@ The Carbon Black Cloud App uses the following Carbon Black Cloud log types, whic
 * Event Data
 
 
-### Sample Log Message
+### Sample Log Messages
 
 For sample log messages, see [Data Samples](https://developer.carbonblack.com/reference/carbon-black-cloud/platform/latest/data-forwarder-data/#data-samples) section in VMware help.
 
 
-## Sample Queries  
+### Sample Queries  
 
-### Endpoint Standard
+#### Endpoint Standard
 
 ```sql title="Alerts"
 _sourceCategory = Labs/CarbonBlackCloudAlerts
@@ -45,7 +45,13 @@ _sourceCategory = Labs/CarbonBlackCloudEvents
 ```
 
 
-### Enterprise EDR
+#### Enterprise EDR
+
+```sql title="Events"
+_sourceCategory = Labs/CarbonBlackCloudEvents
+|json field=_raw "event_origin",  "process_guid", "process_cmdline", "parent_cmdline", "process_username" as event_origin, process_guid, process_cmdline, parent_cmdline, process_username nodrop
+| where event_origin="EDR"
+```
 
 ```sql title="Alerts"
 _sourceCategory = Labs/CarbonBlackCloudAlerts
@@ -56,18 +62,7 @@ _sourceCategory = Labs/CarbonBlackCloudAlerts
 | json field=_raw "threat_cause_actor_name", "threat_cause_threat_category", "threat_cause_reputation", "ioc_hit" as threat_actor, threat_category, threat_reputation, ioc_hit nodrop
 ```
 
-
-**Events`_sourceCategory = Labs/CarbonBlackCloudEvents `**
-
-
-```sql
-|json field=_raw "event_origin",  "process_guid", "process_cmdline", "parent_cmdline", "process_username" as event_origin, process_guid, process_cmdline, parent_cmdline, process_username nodrop
-| where event_origin="EDR"
-```
-
-
-
-## Collect Logs for Carbon Black Cloud
+## Collecting Logs for Carbon Black Cloud
 
 This section has instructions for configuring collection of Carbon Black Cloud event and alert logs. In the steps that follow, you'll set up two Sumo Logic S3 Sources, each of which will collect logs from an S3 bucket, and configure Carbon Black Cloud to send alert and event data to the S3 buckets.
 
@@ -96,8 +91,7 @@ Follow these steps to set up an S3 Source to collect event logs from your S3 buc
 5. Select an **S3 region** or keep the default value of **Others**. The S3 region must match the appropriate S3 bucket created in your Amazon account.
 6. **Use AWS versioned APIs**? Select **No**
 7. **Bucket Name.** Enter the exact name of the S3 bucket you created above.
-8. **Path Expression.** Enter: \
-`events/*`
+8. **Path Expression.** Enter: `events/*`
 9. **Collection should begin.** Choose or enter how far back you'd like to begin collecting historical logs.
 10. For **Source Category**, enter any string to tag the output collected from this Source. (Category metadata is stored in a searchable field called _sourceCategory.) Make a note of the Source Category you assign; you will need it when you install the  the Carbon Black Cloud App.
 11. For **AWS Access** you have two **Access Method** options. Select **Role-based access** or **Key access** based on the AWS authentication you are providing. Role-based access is preferred, this was completed in the prerequisite step [Grant Sumo Logic access to an AWS Product](/docs/send-data/sources/sources-hosted-collectors/amazon-web-services/grant-access-aws-product.md).
@@ -108,11 +102,7 @@ Follow these steps to set up an S3 Source to collect event logs from your S3 buc
 
 #### S3 Source for alert logs
 
-Follow the steps in [S3 Source for event logs](#S3-Source-for-event-logs) above to create another S3 source that will collect alert logs from the S3 bucket. When creating the source, assign it its own source category value, and set the **Path Expression** to:
-
-```
-alerts/*
-```
+Follow the steps in [S3 Source for event logs](#S3-Source-for-event-logs) above to create another S3 source that will collect alert logs from the S3 bucket. When creating the source, assign it its own source category value, and set the **Path Expression** to: `alerts/*`
 
 ### Step 3: Configure Carbon Black Cloud to send alert and event logs to S3
 
