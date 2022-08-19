@@ -11,38 +11,12 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 This guide helps you set up Sumo Logic Collectors, and install the PCI Compliance for Windows JSON application, so you can begin monitoring your usage and determine if you are meeting Compliance benchmarks.
 
-
-## Collecting Logs
-
-
-This section provides instructions for configuring log collection for the PCI Compliance for Windows JSON App.
-
-
-### Log Types
-
+## Log Types
 
 The PCI Compliance For Windows JSON App uses Windows Security Event and System Event logs. It does not work with third-party logs.
 
 
-### Configure a Collector and a Source  
-
-
-**To configure a collector and source, do the following:**
-
-1. Configure an [Installed Windows collector](/docs/send-data/installed-collectors/install-collector-windows) through the user interface or from the command line.
-2. Configure either a local or remote Windows Event Log source. To configure a Windows Event Log source set the following:
-    * **Event Format.** Select **Collect using JSON format.** Events are formatted into JSON that is designed to work with Sumo Logic features, making it easier for you to reference your data.
-    * **Event Collection Level.** When JSON format is selected you have to select Complete Message from the dropdown.
-
-    **Complete Message** will ingest the entire event content along with metadata.
-
-For more information on local or remote Windows Event Log Source configuration, refer to [Local Windows Event Log Source](/docs/send-data/Sources/sources-installed-collectors/Local-Windows-Event-Log-Source) and [Remote Windows Event Log Source](/docs/send-data/Sources/sources-installed-collectors/Remote-Windows-Event-Log-Source).
-
-Make sure to set the Source Category when configuring the Windows Event Log source. For example: OS/Windows/Events.
-
-
 ### Sample Log Messages  
-
 
 ```json
 {"TimeCreated":"2020-10-12T07:31:14+000039800Z","EventID":"1102","Task":104,"Correlation":"","Keywords":"Audit
@@ -52,16 +26,11 @@ Success","Channel":"Security","Opcode":"Info","Security":"","Provider":{"Guid":"
 "SubjectUserName":"Administrator","SubjectDomainName":"WIN-6D5CO5AB123","SubjectLogonId":"0x1971888","SubjectUserSid":"S-1-5-21-2020-10-12T07:31:14-203418232-2020-10-12T07:31:14-500"}},"Message":"The audit log was cleared.\r\nSubject:\r\n\tSecurity ID:\tWIN-6D5CO5AB123\\Administrator\r\n\tAccount Name:\tAdministrator\r\n\tDomain Name:\tWIN-6D5CO5AB123\r\n\tLogon ID:\t0x1971888"}
 ```
 
-
-
-### Query Sample  
-7
-
+### Sample Query
 
 The sample query is from the **Recent Policy Changes** panel from **Windows - Overview** dashboard.
 
-
-```
+```sql
 _sourceCategory=OS/Windows/Events ( "Audit Policy Change" or "System audit policy was changed" or *policy*change* or "Policy Change" or 4902 or 4904 or 4905 or 4906 or 4907 or 4912 or 4715 or 4719 or 4739)
 | json "EventID", "Computer", "Message" as event_id, host, msg_summary nodrop
 | parse regex field = msg_summary "(?<msg_summary>.*\.*)"
@@ -69,12 +38,30 @@ _sourceCategory=OS/Windows/Events ( "Audit Policy Change" or "System audit polic
 | count by msg_summary | sort by _count, msg_summary asc
 ```
 
+## Collecting Logs for the PCI Compliance for Windows JSON App
+
+This section provides instructions for configuring log collection for the PCI Compliance for Windows JSON App.
+
+
+### Configure a Collector and a Source  
+
+To configure a collector and source, do the following:
+
+1. Configure an [Installed Windows collector](/docs/send-data/installed-collectors/install-collector-windows) through the user interface or from the command line.
+2. Configure either a local or remote Windows Event Log source. To configure a Windows Event Log source set the following:
+    * **Event Format.** Select **Collect using JSON format.** Events are formatted into JSON that is designed to work with Sumo Logic features, making it easier for you to reference your data.
+    * **Event Collection Level.** When JSON format is selected you have to select Complete Message from the dropdown. **Complete Message** will ingest the entire event content along with metadata.
+
+For more information on local or remote Windows Event Log Source configuration, refer to [Local Windows Event Log Source](/docs/send-data/Sources/sources-installed-collectors/Local-Windows-Event-Log-Source) and [Remote Windows Event Log Source](/docs/send-data/Sources/sources-installed-collectors/Remote-Windows-Event-Log-Source).
+
+Make sure to set the Source Category when configuring the Windows Event Log source. For example: OS/Windows/Events.
+
 
 ## Installing the PCI Compliance for Windows JSON App
 
 This section provides instructions for installing the PCI Compliance for Windows JSON App, along with examples of each of the App dashboards. The PCI Compliance for Windows JSON App offers pre-built dashboards and queries to help you track your Windows system, user accounts, login activity, and Windows updates.
 
-Now that you have set up collection, install the Sumo Logic App for PCI Compliance for Windows JSON App to use the pre-configured searches and [Dashboards](#Dashboards) that provide insight into your data.  
+Now that you have set up collection, install the Sumo Logic App for PCI Compliance for Windows JSON App to use the pre-configured searches and [dashboards](#viewing-dashboards) that provide insight into your data.  
 
 **To install the app**:
 
@@ -85,13 +72,13 @@ Locate and install the app you need from the **App Catalog**. If you want to see
 
 Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/library/install-apps)
 
-1. To install the app, complete the following fields.
+3. To install the app, complete the following fields.
     * **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
     * **Data Source.** Select either of these options for the data source. 
         * Choose **Source Category**, and select a source category from the list. 
         * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). 
     * **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-2. Click **Add to Library**.
+4. Click **Add to Library**.
 
 Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization.
 

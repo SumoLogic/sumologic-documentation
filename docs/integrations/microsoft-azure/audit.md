@@ -12,7 +12,6 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 The Azure Audit App allows you to collect data from the Azure Activity Log (formerly known as Azure Audit logs) and monitor the health of your Azure environment. The App provides preconfigured Dashboards that allow you to monitor Active Directory activity, resource usage, service health, and user activity.  Logs can be collected in two ways - from Event Hub, and from Azure Insight API using Sumo Powershell scripts.
 
 This guide walks you through the tasks you'll perform to [collect Azure Audit logs from Event Hub](#Collect-Logs-for-the-Azure-Audit-App-from-Event-Hub):
-
 1. Create an Event Hub.
 2. Export activity logs to the Event Hub.
 3. Create a Function App.
@@ -22,6 +21,13 @@ This guide walks you through the tasks you'll perform to [collect Azure Audit lo
 
 To install the Sumo Logic App for Azure Audit, you must sign up for a Sumo Logic Account, if you have not already done so. To sign up, go to [https://www.sumologic.com/pricing/](https://www.sumologic.com/pricing/) and select your account type or click **Free Trial** to sign up for a Sumo Logic Free account.
 
+## Log Types
+
+The Azure Audit App uses the following logs:
+
+* Local Windows Event Source Logs
+* [Azure Activity Log](https://azure.microsoft.com/en-us/updates/audit-logs-in-azure-preview-portal/)
+* (Optional) [Azure Active Directory Audit Reports](https://azure.microsoft.com/en-us/documentation/articles/active-directory-view-access-usage-reports/)
 
 
 ## Collecting Logs for the Azure Audit App from Event Hub
@@ -36,13 +42,7 @@ Here’s how the solution fits together:
 * Azure Event Hubs is a data streaming platform and event ingestion service. In this pipeline, an Event Hub streams the logs collected by Azure Monitor to an Azure function.
 * The Azure function is a small piece of code that is triggered by Event Hub to send logs to the Sumo HTTP Source, function logs to one Storage Account, and failover data to another.
 
-### Log Types
-
-The Azure Audit App uses the following logs:
-
-* Local Windows Event Source Logs
-* [Azure Activity Log](https://azure.microsoft.com/en-us/updates/audit-logs-in-azure-preview-portal/)
-* (Optional) [Azure Active Directory Audit Reports](https://azure.microsoft.com/en-us/documentation/articles/active-directory-view-access-usage-reports/)
+<img src={useBaseUrl('img/integrations/microsoft-azure/CollectLogsforAzureAudit.png')} alt="CollectLogsforAzureAD" />
 
 ### Configure an HTTP source
 
@@ -56,13 +56,11 @@ In this step, you configure an HTTP source to which the Azure function will send
 
 In this step, you use a Sumo-provided Azure Resource Manager (ARM) template to create an Event Hub, an Azure function and two Storage Accounts. The Azure function is triggered by Event Hub. Two storage accounts are used to store log messages from the Azure function and failover data from Event Hub.
 
-1. Download the [azuredeploy_logs.json ](https://s3.amazonaws.com/appdev-cloudformation-templates/azuredeploy_logs.json)ARM template.
+1. Download the [azuredeploy_logs.json](https://s3.amazonaws.com/appdev-cloudformation-templates/azuredeploy_logs.json) ARM template.
 2. Go to **Template deployment** in the Azure Portal.
-
 3. Click **Create**.
 4. On the **Custom deployment** blade, click **Build your own template in the editor.**
 5. Copy the contents of `azuredeploy_logs.json`, and paste it into the editor window.
-
 6. Click **Save.**
 7. Now you are back on the **Custom deployment** blade.
     * Create a new Resource Group (recommended) or select an existing one.
@@ -96,7 +94,7 @@ If logs are not flowing into Sumo Logic, see [Troubleshooting](/docs/send-data/c
 
 ## Installing the Azure Audit App
 
-Now that you have set up collection from the Azure Activity Log (previously known as Azure Audit logs), install the Azure Audit App to use the preconfigured searches and [Dashboards](#Dashboards) that provide insight into your data.
+Now that you have set up collection from the Azure Activity Log (previously known as Azure Audit logs), install the Azure Audit App to use the preconfigured searches and [dashboards](#viewing-dashboards) that provide insight into your data.
 
 To install the app:
 
@@ -107,13 +105,13 @@ Locate and install the app you need from the **App Catalog**. If you want to see
 
 Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/library/install-apps)
 
-1. To install the app, complete the following fields.
+3. To install the app, complete the following fields.
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
     2. **Data Source.** Select either of these options for the data source. 
         * Choose **Source Category**, and select a source category from the list. 
         * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). 
     3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-2. Click **Add to Library**.
+4. Click **Add to Library**.
 
 Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization.
 

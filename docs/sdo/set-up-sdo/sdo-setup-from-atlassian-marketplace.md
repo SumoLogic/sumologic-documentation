@@ -304,7 +304,7 @@ Complete the configuration for the build and deploy tool you use.
  * **Build**: Follow [this](../jenkins-plugin-build-deploy-events.md) doc to modify your Jenkins plugin to explicitly identify, enrich, and send Build Events to Sumo Logic.
  * **Deploy**: Follow [this](../jenkins-plugin-build-deploy-events.md) doc to modify your Jenkins plugin to explicitly identify, enrich, and send Deploy Events to Sumo Logic.
 
-If you are using **tools other than Jenkins and Bitbucket pipelines** for Build and Deploy phases:
+If you're using **tools other than Jenkins and Bitbucket pipelines** for Build and Deploy phases:
 
 1. **Build**: Configure your tool to construct and send events using the build event schema in the section Build Event. 
 

@@ -315,7 +315,7 @@ To deploy an AWS Security Hub App collector:
 
 ## Installing the AWS Security Hub App
 
-Now that you have set up ingested and collected findings for AWS Security Hub, you can install the Sumo Logic App for AWS Security Hub and use the preconfigured searches and [Dashboards](#Dashboards) that provide insight into your data.
+Now that you have set up ingested and collected findings for AWS Security Hub, you can install the Sumo Logic App for AWS Security Hub and use the preconfigured searches and [dashboards](#viewing-dashboards) that provide insight into your data.
 
 To install the Sumo Logic App for AWS Security Hub, do the following:
 

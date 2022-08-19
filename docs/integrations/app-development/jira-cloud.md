@@ -9,7 +9,6 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <img src={useBaseUrl('img/integrations/app-development/jira.png')} alt="Thumbnail icon" width="50"/>
 
-
 The Sumo Logic App for Jira Cloud provides insights into how your Jira projects and issues are being managed so as to enable you to be more effective and manage work across multiple teams. This guide provides instructions for installing and configuring the Jira Cloud App, as well as offering examples and descriptions of the app pre-configured dashboards.
 
 
@@ -26,7 +25,42 @@ The Jira Cloud App uses the following types of logs:
 For more information, see [Webhooks](https://developer.atlassian.com/cloud/jira/platform/webhooks/) in Jira help
 
 
-## Collect Logs for the Jira Cloud App
+### Sample Log Messages
+
+For more information about log messages, see [Sample Log for Jira Cloud](https://developer.atlassian.com/cloud/jira/platform/rest/v2/).
+
+
+### Sample Query
+
+This section provides a sample query from the **Unassigned Issues** panel on the **Jira Cloud - Issue Details** dashboard.
+
+**Parameters**
+
+* Issue:*
+* Issue_Summary:*
+
+```sql title="Query String"
+_sourceCategory="jira_cloud" *issue*
+| json field=_raw "webhookEvent", "issue_event_type_name", "changelog", "issue.fields.creator.displayName", "issue.self",  "issue.key", "timestamp", "issue.fields.issuetype.name", "issue.fields.status.name", "issue.fields.resolution.name", "issue.fields.project.name", "issue.fields.status.statusCategory.name", "user.active",  "issue.fields.assignee.displayName", "issue.fields.summary", "issue.fields.priority.name", "issue.fields.components", "issue.fields.labels" as  event_name, event_type, change_log, issue_creator, jira_self, issue_key, timestamp, type, status, resolution, project_name, status_category, is_active, issue_assignee, issue_summary, priority, components, labels  nodrop
+| where   project_name matches "*" AND issue_key matches "*" AND type matches "*" AND priority matches "*" AND status_category matches "*" AND status matches "*"
+| isNull(issue_assignee) ? "Unassigned" : issue_assignee as issue_assignee
+| parse regex field=labels "\"(?<label>[\S]+?)\"" multi nodrop
+| parse regex field=components "\"name\":\"(?<component>[\S]+?)\"" multi nodrop
+| where component matches "*" and  label matches "*"
+| json field=change_log "items" as changes nodrop
+| formatDate(fromMillis(timestamp), "MM-dd-yyyy HH:mm:ss", "UTC") as date_time
+| parse regex field=jira_self "https:\/\/(?<base_url>.*?)\/"
+| concat("https://",base_url,"/browse/", issue_key) as issue_url
+| tourl(issue_url, issue_key) as issue
+| withtime issue_assignee
+| most_recent(issue_assignee_withtime) as user by issue, issue_summary
+| where user="Unassigned"
+| count as count by issue, issue_summary
+| fields - count
+```
+
+
+## Collecting Logs for the Jira Cloud App
 
 This section provides instructions for configuring log collection for the Jira Cloud App.
 
@@ -42,7 +76,7 @@ For more information, please see the [documentation](https://developer.atlassian
 In this step, you create a host collector to receive Webhooks from Jira and set up an HTTP source on it.
 1. Configure a [Hosted Collector](/docs/send-data/configure-hosted-collector), or select an existing hosted collector for the HTTP source.
 2. Configure an [HTTP source](/docs/send-data/sources/sources-hosted-collectors/http-logs-metrics-source) on the hosted collector.
-    * For **Source Category**, specify jira_cloud/events.
+    * For **Source Category**, specify `jira_cloud/events`.
     * Make a note of the HTTP address for the source. You will supply it when you configure a Jira Webhook in the next step.
 
 
@@ -51,7 +85,7 @@ In this step, you create a host collector to receive Webhooks from Jira and set 
 Follow the instructions on [Webhooks](https://confluence.atlassian.com/adminjiracloud/managing-webhooks-776636231.html) in Jira help to register a Webhook for the following events:
 
 
-#### Issue Related Events:
+#### Issue Related Events
 
 * Issue
     * created
@@ -130,49 +164,12 @@ Follow the instructions on [Webhooks](https://confluence.atlassian.com/adminjira
     * started
     * closed
 
-When you configure the Webhook, enter the URL for the HTTP source you created in **[Step 2](#Step_2:__Register_Webhook_in_Jira)** as the endpoint for the Webhook.
+When you configure the Webhook, enter the URL for the HTTP source you created in [Step 2](#Step_2:__Register_Webhook_in_Jira) as the endpoint for the Webhook.
 
 
 
-### Sample Log Messages
 
-For more information about log messages, see [Sample Log for Jira Cloud](https://developer.atlassian.com/cloud/jira/platform/rest/v2/).
-
-
-### Query Example
-
-This section provides a sample query from the **Unassigned Issues** panel on the **Jira** **Cloud - Issue Details** dashboard.
-
-**Parameters**
-
-* Issue:*
-* Issue_Summary:*
-
-**Query String**
-
-```sql
-_sourceCategory="jira_cloud" *issue*
-| json field=_raw "webhookEvent", "issue_event_type_name", "changelog", "issue.fields.creator.displayName", "issue.self",  "issue.key", "timestamp", "issue.fields.issuetype.name", "issue.fields.status.name", "issue.fields.resolution.name", "issue.fields.project.name", "issue.fields.status.statusCategory.name", "user.active",  "issue.fields.assignee.displayName", "issue.fields.summary", "issue.fields.priority.name", "issue.fields.components", "issue.fields.labels" as  event_name, event_type, change_log, issue_creator, jira_self, issue_key, timestamp, type, status, resolution, project_name, status_category, is_active, issue_assignee, issue_summary, priority, components, labels  nodrop
-| where   project_name matches "*" AND issue_key matches "*" AND type matches "*" AND priority matches "*" AND status_category matches "*" AND status matches "*"
-| isNull(issue_assignee) ? "Unassigned" : issue_assignee as issue_assignee
-| parse regex field=labels "\"(?<label>[\S]+?)\"" multi nodrop
-| parse regex field=components "\"name\":\"(?<component>[\S]+?)\"" multi nodrop
-| where component matches "*" and  label matches "*"
-| json field=change_log "items" as changes nodrop
-| formatDate(fromMillis(timestamp), "MM-dd-yyyy HH:mm:ss", "UTC") as date_time
-| parse regex field=jira_self "https:\/\/(?<base_url>.*?)\/"
-| concat("https://",base_url,"/browse/", issue_key) as issue_url
-| tourl(issue_url, issue_key) as issue
-| withtime issue_assignee
-| most_recent(issue_assignee_withtime) as user by issue, issue_summary
-| where user="Unassigned"
-| count as count by issue, issue_summary
-| fields - count
-```
-
-
-
-## Install the Jira Cloud App
+## Installing the Jira Cloud App
 
 This section demonstrates how to install the Jira Cloud App.
 
@@ -181,10 +178,7 @@ To install the app, do the following:
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
 1. From the **App Catalog**, search for and select the app**.**
-2. Select the version of the service you're using and click **Add to Library**.
-
-Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/library/install-apps)
-
+2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/library/install-apps)
 3. To install the app, complete the following fields.
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
     2. **Data Source.** Select either of these options for the data source. 
@@ -215,9 +209,7 @@ Use this dashboard to:
 * Quickly identify issue types, components, and projects that need the most attention.
 * Identify how work in progress could affect your development and delivery lifecycle.
 
-
-3
-
+<img src={useBaseUrl('img/integrations/app-development/Jira_Cloud_Issue_Overview.png')} alt="jira cloud" />
 
 
 ### Issue Details
@@ -229,9 +221,7 @@ Use this dashboard to:
 *  Identifying issues, components, teams, and initiatives that require the most attention.
 *  Get insight into the time taken to close Jira issues by projects, types, and users.
 
-
-4
-
+<img src={useBaseUrl('img/integrations/app-development/Jira_Cloud_Issue_Details.png')} alt="jira cloud" />
 
 ### Recent Issues Changes
 
@@ -242,8 +232,7 @@ Use this dashboard to:
 
 Following drill down, filters are available: Components, Project Name, Status, Label, Issue Key, Issue Type, Priority, and Status Category.
 
-5
-
+<img src={useBaseUrl('img/integrations/app-development/Jira_Cloud_Recent_Issue_Changes.png')} alt="jira cloud" />
 
 ### Sprint Events
 
@@ -252,8 +241,7 @@ The **Jira Cloud - Sprint Events** dashboard provides an at-a-glance view of spr
 Use this dashboard to:
 * Monitor the progress of sprints in your development cycle. You can track active sprints and their start and end dates.
 
-
-6
+<img src={useBaseUrl('img/integrations/app-development/Jira_Cloud_Sprint_Events.png')} alt="jira cloud" />
 
 
 
@@ -265,5 +253,4 @@ Use this dashboard to:
 
 * Monitor and audit all administrative activities related to the creation and modification of Jira Cloud users.
 
-
-7
+<img src={useBaseUrl('img/integrations/app-development/Jira_Cloud_User_Events.png')} alt="jira cloud" />

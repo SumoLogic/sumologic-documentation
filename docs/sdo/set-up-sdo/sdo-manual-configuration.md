@@ -61,7 +61,7 @@ Locate and install the app you need from the **App Catalog**. If you want to see
     Version selection is applicable only to a few apps currently. For more information, see the Install the Apps from the Library.
     :::
 
-1. To install the app, complete the following fields.
+3. To install the app, complete the following fields.
 
     * **App Name.** You can retain the existing name, or enter a name of your choice for the app.
     * **Data Source.** Select either of these options for the data source.
@@ -108,7 +108,7 @@ Complete the configuration for the build and deploy tool you use.
 
 ### CircleCI for build and deploy
 
-If you are using CircleCI for Build and Deploy, do the following:
+If you're using CircleCI for Build and Deploy, do the following:
 
 1. Access the Sumo Logic Platform and navigate to **Manage Data** \> **Collection** page.
 
@@ -134,7 +134,7 @@ If you are using CircleCI for Build and Deploy, do the following:
 
 The platform is ready to ingest logs and use those to light up corresponding build and deploy events related dashboards.
 
-If you are using **tools other than Jenkins and Bitbucket pipelines** for Build and Deploy phases:
+If you're using **tools other than Jenkins and Bitbucket pipelines** for Build and Deploy phases:
 
 1. **Build**: Configure your tool to construct and send events using the build event schema in the section Build Event. 
 1. **Deploy**: Configure your tool to construct events using the deploy event schema in the section Deploy Events.

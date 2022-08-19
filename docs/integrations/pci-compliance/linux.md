@@ -16,7 +16,7 @@ This guide helps you set up Sumo Logic Collectors, install the PCI Compliance fo
 
 The PCI Compliance for Linux App works with your existing Linux logs to identify any compliance issues.
 
-To collect Linux logs, you will need:
+To collect Linux logs, you'll need:
 
 * An [Installed Collector](/docs/send-data/Installed-Collectors). Choose the one right for your host environment.
 * A Linux [Source](/docs/send-data/Sources/sources-installed-collectors), depending on your environment.
@@ -27,24 +27,21 @@ To collect Linux logs, you will need:
 
 ## Installing the PCI Compliance for Linux App
 
-Now that you have set up collection, install the Sumo Logic App for PCI Compliance for Linux to use the preconfigured searches and [Dashboards](#Dashboards) that provide insight into your data.
+Now that you have set up collection, install the Sumo Logic App for PCI Compliance for Linux to use the preconfigured searches and [dashboards](#viewing-dashboards) that provide insight into your data.
 
 To install the app:
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
 1. From the **App Catalog**, search for and select the app**.**
-2. Select the version of the service you're using and click **Add to Library**.
-
-Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/library/install-apps)
-
-1. To install the app, complete the following fields.
+2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/library/install-apps)
+3. To install the app, complete the following fields.
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
     2. **Data Source.** Select either of these options for the data source. 
         * Choose **Source Category**, and select a source category from the list. 
         * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). 
     3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-2. Click **Add to Library**.
+4. Click **Add to Library**.
 
 Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization.
 

@@ -11,8 +11,11 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Sumo Logic App for Payment Card Industry (PCI) Compliance for Palo Alto Networks 10 offers dashboards to monitor firewall traffic activity for compliance with PCI requirements 01, 02, and 04.
 
+## Prerequisites
 
-## Log types
+You must have Palo Alto Networks Web administrative user permissions to successfully set up collection.
+
+## Log Types
 
 <table>
   <tr>
@@ -39,26 +42,18 @@ The Sumo Logic App for Payment Card Industry (PCI) Compliance for Palo Alto Netw
 
 ## Collect Logs for PCI Compliance for Palo Alto Networks 10
 
-This section provides instructions for configuring log collection for the Sumo Logic app for PCI Compliance for Palo Alto Networks 10, as well as sample log messages and a query example from an app dashboard.
-
-
-### Collection process overview
-
-Configuring log collection for PCI Compliance for Palo Alto Networks 10 includes the following tasks:
+This section provides instructions for configuring log collection for the Sumo Logic app for PCI Compliance for Palo Alto Networks 10, as well as sample log messages and a query example from an app dashboard. This includes the following tasks:
 
 1. Create a hosted collector with a Cloud Syslog source
 2. Define the destination for the logs.
 3. Configure syslog forwarding
 4. Verify logs in Palo Alto Networks
 
-You must have Palo Alto Networks Web administrative user permissions to successfully complete these tasks.
-
-
 ### Step 1. Create a hosted collector and Cloud Syslog source
 
 In this step you configure a hosted collector with a Cloud Syslog source that will act as Syslog server to receive logs and events from Palo Alto Networks devices.
 
-**To configure a hosted collector with a Cloud Syslog source, do the following:**
+To configure a hosted collector with a Cloud Syslog source, do the following:
 
 1. Log in to Sumo Logic and [create a Hosted Collector](/docs/send-data/Hosted-Collectors#Create_a_Hosted_Collector).
 2. Create a [Cloud Syslog Source](/docs/send-data/Sources/sources-hosted-collectors/Cloud-Syslog-Source) on the hosted collector, specifying the following:
@@ -72,7 +67,7 @@ In this step you configure a hosted collector with a Cloud Syslog source that wi
 
 In this step you create a server profile where you can define the log destination. This will be the host name, port and protocol (TLS) of the Sumo Logic Cloud Syslog source.
 
-**To create a server profile specifying  the log destination, do the following:**
+To create a server profile specifying  the log destination, do the following:
 
 1.  Login to the Palo Alto Networks Web interface as an administrative user.
 2. Select **Device tab > Server Profiles > Syslog**.
@@ -101,10 +96,9 @@ To configure syslog forwarding for each Traffic logs, follow the steps to [Confi
 
 ### Step 4. Verify logs in Palo Alto Networks
 
-
 In this step, you view logs using the Palo Alto Network Web interface to confirm the logs are generated on the firewall.
 
-**To verify the logs in Palo Alto Networks, do the following:**
+To verify the logs in Palo Alto Networks, do the following:
 
 1. In the Palo Alto Networks UI, select **Monitor** > **Logs**.
 2. Once the setup is done, log in to Sumo Logic.
@@ -173,29 +167,24 @@ _sourceCategory = Labs/PaloAltoNetworksv10 TRAFFIC allow
 
 </details>
 
-## Install the PCI for Palo Alto Networks 10 App
+## Installing the PCI for Palo Alto Networks 10 App
 
 Now that you have set up collection for PCI for Palo Alto Networks 10 app, you can install app and use the preconfigured searches and dashboards that provide insight into your data.
 
 This app supports PAN-OS v10.
 
 To install the app:
-
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
 1. From the **App Catalog**, search for and select the app**.**
-2. Select the version of the service you're using and click **Add to Library**.
-
-
-Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/library/install-apps)
-
-1. To install the app, complete the following fields.
+2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/library/install-apps)
+3. To install the app, complete the following fields.
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
     2. **Data Source.** Select either of these options for the data source. 
         * Choose **Source Category**, and select a source category from the list. 
         * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). 
     3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-2. Click **Add to Library**.
+4. Click **Add to Library**.
 
 Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization.
 

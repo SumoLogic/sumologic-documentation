@@ -3,6 +3,12 @@ slug: /releasenotes
 title: Sumo Logic Release Notes
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src={useBaseUrl('img/icons/release-notes.png')} alt="Thumbnail icon" width="75"/>
+
+<br/><br/>
+
 <div className="box-wrapper" markdown="1">
 <div className="box box1 card">
   <div className="container">

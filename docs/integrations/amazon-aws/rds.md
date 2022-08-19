@@ -13,7 +13,6 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Sumo Logic Amazon RDS app dashboards provide visibility into the performance and operations of your Amazon Relational Database Service (RDS). Preconfigured dashboards allow you to monitor critical metrics of your RDS cluster including  CPU, memory, storage, network transmits and receive throughput, read and write operations, database connection count, disk queue depth, and more. Audit activity dashboards help you monitor activities performed on your RDS infrastructure.
 
-
 ## Log and Metrics Types  
 
 The Amazon RDS app uses the following logs and metrics:
@@ -51,7 +50,7 @@ Namespace for **Amazon RDS** Service is **AWS/RDS**.
 
 ### Field in Field Schema
 
-Login to Sumo Logic, go to **Manage Data** > **Logs** > **Fields**. Search for the “**dbidentifier**” field. If not present, create it. Learn how to create and manage fields [here](/docs/manage/fields.md#manage-fields).
+Login to Sumo Logic, go to **Manage Data** > **Logs** > **Fields**. Search for the `dbidentifier` field. If not present, create it. Learn how to create and manage fields [here](/docs/manage/fields.md#manage-fields).
 
 
 ### Field Extraction Rule(s)
@@ -78,12 +77,9 @@ Scope (Specific Data): account=* eventname eventsource "rds.amazonaws.com"
 | fields region, namespace, dBInstanceIdentifier, dBClusterIdentifier, dbidentifier, accountid
 ```
 
-
-
 ### Centralized AWS CloudTrail Log Collection
 
 In case you have a centralized collection of cloudtrail logs and are ingesting them from all accounts into a single Sumo Logic cloudtrail log source, create the following Field Extraction Rule to map a proper AWS account(s) friendly name/alias. Create it if not already present / update it as required.
-
 
 ```sql
 Rule Name: AWS Accounts
@@ -91,11 +87,9 @@ Applied at: Ingest Time
 Scope (Specific Data): _sourceCategory=aws/observability/cloudtrail/logs
 ```
 
-
 **Parse Expression**:
 
 Enter a parse expression to create an “account” field that maps to the alias you set for each sub account. For example, if you used the `“dev”` alias for an AWS account with ID `"528560886094"` and the `“prod”` alias for an AWS account with ID `"567680881046"`, your parse expression would look like:
-
 
 ```sql
 | json "recipientAccountId"
@@ -105,8 +99,6 @@ Enter a parse expression to create an “account” field that maps to the alias
 | if (recipientAccountId = "567680881046",  "prod", account) as account
 | fields account
 ```
-
-
 
 ### Metric Rules
 
@@ -130,6 +122,8 @@ Save it
 
 
 ### Sample Log Message
+
+<details><summary>Click to expand</summary>
 
 ```json title="CloudTrail"
 {
@@ -238,7 +232,7 @@ Save it
 }
 ```
 
-
+</details>
 
 ### Sample Queries
 
@@ -263,7 +257,6 @@ statistic=average account=* region=* dbidentifier=* \
 | count as Frequency by error_code
 | top 10 error_code by Frequency, error_code asc
 ```
-
 
 
 ## Installing the RDS App  

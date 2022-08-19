@@ -9,7 +9,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-<img src={useBaseUrl('img/integrations/web-servers/apache-tomcat.png')} alt="Web servers icon" width="75"/>
+<img src={useBaseUrl('img/integrations/web-servers/apache-tomcat.png')} alt="Thumbnail icon" width="75"/>
 
 The Apache Tomcat app is a unified logs and metrics app that helps you monitor the availability, performance, health and resource utilization of your Apache Tomcat servers. Preconfigured dashboards provide insight into visitor locations, traffic patterns, errors, resource utilization, garbage collection, web server operations and access from known malicious sources.
 
@@ -23,7 +23,7 @@ This section provides instructions for configuring log and metric collection for
 
 ### Step 1: Configure Fields in Sumo Logic
 
-Create the following Fields in Sumo Logic prior to configuring collection. This ensures that your logs and metrics are tagged with relevant metadata, which is required by the app dashboards. For information on setting up fields, see the [Fields](/docs/manage/fields.md) help page.
+Create the following Fields in Sumo Logic prior to configuring collection. This ensures that your logs and metrics are tagged with relevant metadata, which is required by the app dashboards. For information on setting up fields, see [Sumo Logic Fields](/docs/manage/fields.md).
 
 <Tabs
   groupId="k8s-nonk8s"
@@ -35,7 +35,7 @@ Create the following Fields in Sumo Logic prior to configuring collection. This 
 
 <TabItem value="k8s">
 
-If you are using Apache Tomcat in a Kubernetes environment create the fields:
+If you're using Apache Tomcat in a Kubernetes environment, create the fields:
 
 * `pod_labels_component`
 * `pod_labels_environment`
@@ -45,7 +45,7 @@ If you are using Apache Tomcat in a Kubernetes environment create the fields:
 </TabItem>
 <TabItem value="non-k8s">
 
-If you are using Apache Tomcat in a non-Kubernetes environment create the fields:
+If you're using Apache Tomcat in a non-Kubernetes environment, create the fields:
 
 * `component`
 * `environment`
@@ -86,7 +86,7 @@ Follow the below instructions to set up the metric collection:
 
 **Prerequisites**
 
-It’s assumed that you are using the latest helm chart version if not upgrade using the instructions [here](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/release-v2.0/deploy/docs/v2_migration_doc.md#how-to-upgrade).
+It’s assumed that you are using the latest helm chart version. If not, upgrade using the instructions [here](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/release-v2.0/deploy/docs/v2_migration_doc.md#how-to-upgrade).
 
 
 #### Step 1 Configure Metrics Collection
@@ -95,7 +95,7 @@ This section explains the steps to collect Apache Tomcat metrics from a Kubernet
 
 In Kubernetes environments, we use the Telegraf Operator, which is packaged with our Kubernetes collection. You can learn more on this[ here](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/telegraf-collection-architecture). Follow the steps listed below to collect metrics from a Kubernetes environment:
 
-1. [**Set up Kubernetes Collection with the Telegraf Operator**](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf.md#Install_Telegraf_in_a_Kubernetes_environment). Please ensure that you are monitoring your Kubernetes clusters with the Telegraf operator **enabled**. If you are not, then please follow [these instructions](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf.md#Install_Telegraf_in_a_Kubernetes_environment) to do so.
+1. [**Set up Kubernetes Collection with the Telegraf Operator**](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf). Please ensure that you are monitoring your Kubernetes clusters with the Telegraf operator **enabled**. If you are not, then please follow [these instructions](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf) to do so.
 2. **Install jolokia on your Tomcat Pod to use the Jolokia Telegraf Input Plugin**
 * Download the latest version of the Jolokia war file from: [https://jolokia.org/download.html](https://jolokia.org/download.html).
 * Rename the file from jolokia-war-X.X.X.war to jolokia.war
@@ -210,7 +210,7 @@ annotations:
     tag_keys = ["context","host"]
 ```
 
-Please enter in values for the following parameters (marked `CHANGEME` above):
+Enter in values for the following parameters (marked `CHANGEME` above):
 
 * `telegraf.influxdata.com/inputs` - This contains the required configuration for the Telegraf Tomcat Input plugin. Please refer[ to this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/redis) for more information on configuring the Tomcat input plugin for Telegraf. Note: As telegraf will be run as a sidecar the host should always be localhost.
     * In the input plugins section, which is `[[inputs.Tomcat]]`:
@@ -237,7 +237,7 @@ Please enter in values for the following parameters (marked `CHANGEME` above):
         * `component: “webserver”` - This value is used by Sumo Logic apps to identify application components.
         * `webserver_system: “tomcat”` - This value identifies the web server system.
 
-    For all other parameters please see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#Configuring-Telegraf) for more properties that can be configured in the Telegraf agent globally.
+    For all other parameters, see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#Configuring-Telegraf) for more parameters that can be configured in the Telegraf agent globally.
 
 1. Sumo Logic Kubernetes collection will automatically start collecting metrics from the pods having the labels and annotations defined in the previous step.
 2. Verify metrics in Sumo Logic.
@@ -260,7 +260,7 @@ Follow the instructions below to capture Apache Tomcat logs from stdout on Kuber
 ```
 
 
-Please Enter in values for the following parameters (marked `CHANGEME` in the snippet above):
+Enter in values for the following parameters (marked `CHANGEME` in the snippet above):
 
 * `environment` - This is the deployment environment where the Tomcat farm identified by the value of servers resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
 * `Webserver_farm` - Enter a name to identify this Tomcat farm. This farm name will be shown in the Sumo Logic dashboards.
@@ -270,7 +270,7 @@ Please Enter in values for the following parameters (marked `CHANGEME` in the sn
 * `component: “webserver”` - This value is used by Sumo Logic apps to identify application components.
 * `webserver_system: “tomcat”` - This value identifies the webserver system.
 
-    For all other parameters please see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#Configuring-Telegraf) for more properties that can be configured in the Telegraf agent globally.
+    For all other parameters, see [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#Configuring-Telegraf) for more parameters that can be configured in the Telegraf agent globally.
 
 1. The Sumologic-Kubernetes-Collection will automatically capture the logs from stdout and will send the logs to Sumologic. For more information on deploying Sumologic-Kubernetes-Collection,[ visit](/docs/integrations/containers-orchestration/Kubernetes#Collect_Logs_and_Metrics_for_the_Kubernetes_App) here.
 2. Verify logs in Sumo Logic.
@@ -309,7 +309,7 @@ Labels created in Kubernetes environments automatically are prefixed with pod_la
 
 1. Go to **Manage Data > Logs > Field Extraction Rules**.
 2. Click the + Add button on the top right of the table.
-3. The following form appears:
+3. The **Add Field Extraction Rule** form will appear:
 
 
 1. Enter the following options:
@@ -555,7 +555,7 @@ Here’s an explanation for additional values set by this Telegraf configuration
 * `data_format - “prometheus”` In the output plugins section, which is `[[outputs.sumologic]]`. Metrics are sent in the Prometheus format to Sumo Logic
 * `Component: “webserver”` - In the input plugins section, which are `[[inputs.tomcat]]` and `[[inputs.jolokia2_agent]]` - This value is used by Sumo Logic apps to identify application components.
 * `webserver_system: “tomcat”` - In the input plugins sections.In other words, this value identifies the webserver system
-*  For all other parameters please see [this doc](https://github.com/influxdata/telegraf/blob/master/etc/telegraf.conf) for more properties that can be configured in the Telegraf agent globally.
+*  For all other parameters, see [this doc](https://github.com/influxdata/telegraf/blob/master/etc/telegraf.conf) for more parameters that can be configured in the Telegraf agent globally.
 
 Once you have finalized your telegraf.conf file, you can start or reload the telegraf service using instructions from the [doc](https://docs.influxdata.com/telegraf/v1.17/introduction/getting-started/#start-telegraf-service).
 
@@ -598,7 +598,7 @@ Log format description: [https://stackoverflow.com/questions/4468546/explanation
 2. Configure the Local File Source fields as follows:
 * **Name.** (Required)
 * **Description.** (Optional)
-* **File Path (Required).** Enter the path to your error.log or access.log. The files are typically located in **/usr/share/tomcat/logs/***. If you are using a customized path, check the Tomcat.conf file for this information.
+* **File Path (Required).** Enter the path to your error.log or access.log. The files are typically located in **/usr/share/tomcat/logs/***. If you're using a customized path, check the Tomcat.conf file for this information.
 * **Source Host.** Sumo Logic uses the hostname assigned by the OS unless you enter a different host name
 * **Source Category.** Enter any string to tag the output collected from this Source, such as **Tomcat/Logs**. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details see[ Best Practices](/docs/send-data/design-deployment/best-practices-source-categories).)
 
@@ -639,7 +639,7 @@ You can install monitors by importing a JSON file or using a Terraform script.
 Use this dashboard to:mits to how many alerts can be enabled. For more information, see [Monitors](/docs/alerts/monitors#Rules) for details.
 
 
-### Method 1: Importing a JSON file
+### Method A: Importing a JSON file
 
 1. Download the [JSON file](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/blob/main/monitor_packages/ApacheTomcat/ApacheTomcat.json) that describes the monitors.
 2. The [JSON](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/blob/main/monitor_packages/ApacheTomcat/ApacheTomcat.json) contains the alerts that are based on Sumo Logic searches that do not have any scope filters, and therefore will be applicable to all Apache Tomcat webserver farms, the data for which has been collected via the instructions in the previous sections.  
@@ -658,7 +658,7 @@ Custom filter examples:
 5. The monitors are created in a "Apache Tomcat" folder. The monitors are disabled by default. See the [Monitors](/docs/alerts/monitors/index.md) topic for information about enabling monitors and configuring notifications or connections.
 
 
-### Method 2: Using a Terraform script
+### Method B: Using a Terraform script
 
 
 Step 1: Generate a Sumo Logic access key and ID
@@ -788,7 +788,7 @@ Locate and install the app you need from the **App Catalog**. If you want to see
 
 Version selection is applicable only to a few apps currently. For more information, see the[ Install the Apps from the Library](/docs/get-started/library/install-apps).
 
-1. To install the app, complete the following fields.
+3. To install the app, complete the following fields.
 1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
 2. **Data Source.**
 * Choose **Enter a Custom Data Filter**, and enter a custom filter for Apache Tomcat  webserver farm. Examples:

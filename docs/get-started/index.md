@@ -1,15 +1,19 @@
 ---
 slug: /get-started
+title: Getting Started with Sumo Logic
+sidebar_label: Get Started
 ---
 
-# Get Started
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+
+<img src={useBaseUrl('img/icons/get-started.png')} alt="Thumbnail icon" width="50"/>
 
 Sumo Logic is an all-in-one platform for monitoring, analyzing,
 troubleshooting, and visualizing data from your application and network
 environment.
 
 Here you will learn:
-
 - [About your Sumo Logic data analytics journey]
 - [How you can learn more]
 - [How to become a Sumo Logic Certified user]

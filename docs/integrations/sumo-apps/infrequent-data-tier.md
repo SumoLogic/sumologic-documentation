@@ -7,11 +7,56 @@ description: The Infrequent Data Tier App provides visibility into the usage and
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/sumo-apps/InfrequentDT.png')} alt="Web servers icon" width="75"/>
+<img src={useBaseUrl('img/integrations/sumo-apps/InfrequentDT.png')} alt="Thumbnail icon" width="75"/>
 
 The Infrequent Data Tier App provides visibility into the On-demand Search usage and costs associated with Infrequent Data Tier by providing intuitive pre-configured dashboard and searches. Infrequent Data Tiers are an economical, fully managed log analytics solution for high volume, infrequently accessed data. With Infrequent Data Tiers, organizations have a solution that can aggregate, store and analyze verbose sources such as App Debug, CDN, Load Balancer, and other infrequently accessed logs at a dramatically lower price point.
 
 With growing adoption of modern application stacks that leverage micro-services and distributed architectures, organizations are generating more and more machine data. A large part of this data is not required for every day mission-critical operations. However, organizations still need to retain and analyze this data, as it can provide value across multiple groups within a digital enterprise. A cost efficient solution that manages infrequently used data is currently lacking in the market place, forcing customers to either not retain the data or build home-grown solutions that are difficult to maintain, secure, and don’t provide easy access to insights when enterprise needs it.
+
+
+## Log Types
+
+The Search Audit Index for Infrequent Data Tier App has the following fields:
+
+* analytics_tier
+* capacity_used
+* daily_capacity
+* data_retrieved_bytes
+* data_scanned_bytes
+* execution_duration_ms
+* is_aggregate
+* query
+* query_end_time
+* query_start_time
+* query_type
+* remote_ip
+* retrieved_message_count
+* scanned_message_count
+* scanned_partition_count
+* session_id
+* status_me
+
+You can start using the index by using following query:
+
+```sql
+_index=sumologic_search_usage_per_query \
+analytics_tier="Infrequent"
+```
+
+
+### Sample Query
+
+The following query is from the **Data Scanned Over Time** panel of the **Infrequent Cost** dashboard.
+
+```sql
+_index=sumologic_search_usage_per_query analytics_tier = "Infrequent" !(user_name=*sumologic.com) !(status_message="Query Failed")
+| fields data_scanned_bytes, query, is_aggregate, query_type, remote_ip, retrieved_message_count, scanned_message_count, scanned_partition_count, session_id, status_message, user_name
+|data_scanned_bytes / 1Gi as sizeInGB
+| timeslice 1d
+| sum (sizeInGB) as total_data_scanned_GB, count as query_count by _timeslice
+| fillmissing timeslice (1d)
+```
+
 
 ## Prerequisites
 
@@ -36,58 +81,18 @@ Sumo Logic Infrequent Data Tier App is only available for Enterprise Suite custo
 
 :::
 
-## Collecting Data
+## Collecting Data for the Infrequent Data Tier App
 
 Infrequent Data Tiers enable you to ingest log or machine data for a minimal cost per GB. Your data is then securely stored by Sumo Logic and is instantly available on-demand for interactive analysis without any additional preparation, re-ingestion, or rehydration. This service is ideal when you need to quickly and/or periodically investigate issues, troubleshoot code, configuration problems, or address customer support cases which can rely on searching high volumes of data for insights. This allows you to only pay for the specific data sets that you analyze at a given time.
 
 [Infrequent Data Tiers](/docs/manage/partitions-and-data-tiers/data-tiers) allow you to effectively analyze high volumes of log data that is accessed on a minimal basis. In this data tier, you pay for the amount of data scanned in each search. This on-demand payment model allows you to minimize costs by only paying the data accessed.
 
-You can verify if you already have the Search Audit Index enabled by querying: `_index=sumologic_search_usage_per_query`.
+You can verify if you already have the Search Audit Index enabled by querying:
+```sql
+_index=sumologic_search_usage_per_query
+```
 
 If no results are returned even for longer time ranges, it means you don't have Search Audit index enabled.
-
-### Log Types
-
-The Search Audit Index for Infrequent Data Tier App has the following fields:
-
-* analytics_tier
-* capacity_used
-* daily_capacity
-* data_retrieved_bytes
-* data_scanned_bytes
-* execution_duration_ms
-* is_aggregate
-* query
-* query_end_time
-* query_start_time
-* query_type
-* remote_ip
-* retrieved_message_count
-* scanned_message_count
-* scanned_partition_count
-* session_id
-* status_me
-
-You can start using the index by using following query:
-
-```
-_index=sumologic_search_usage_per_query \
-analytics_tier="Infrequent"
-```
-
-
-### Sample Query
-
-The following query is from the **Data Scanned Over Time** panel of the **Infrequent Cost** dashboard.
-
-```sql
-_index=sumologic_search_usage_per_query analytics_tier = "Infrequent" !(user_name=*sumologic.com) !(status_message="Query Failed")
-| fields data_scanned_bytes, query, is_aggregate, query_type, remote_ip, retrieved_message_count, scanned_message_count, scanned_partition_count, session_id, status_message, user_name
-|data_scanned_bytes / 1Gi as sizeInGB
-| timeslice 1d
-| sum (sizeInGB) as total_data_scanned_GB, count as query_count by _timeslice
-| fillmissing timeslice (1d)
-```
 
 
 ## Installing the Infrequent Data Tier App
@@ -102,10 +107,7 @@ To install the app, do the following:
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 1. From the **App Catalog**, search for and select the app**.**
-2. Select the version of the service you're using and click **Add to Library**.
-
-Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/library/install-apps)
-
+2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/library/install-apps)
 3. To install the app, complete the following fields.
    * **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
    * **Data Source.** Select either of these options for the data source. 

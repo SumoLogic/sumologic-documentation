@@ -12,53 +12,16 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 The Windows Performance App provides insight into your system's operation and events so that you can better manage and maintain your Windows systems. The App uses predefined Dashboards and searches that provide visibility into your environment for real-time analysis of system and network performance and overall usage.
 
-
-## Collecting Logs
-
-This section provides instructions for configuring log collection for the Windows Performance App, as well as example log files and queries.
-
-### Log Types
+## Log Types
 
 The Windows Performance App assumes events are coming from Windows Performance Sources.
 
 **Also, you need to configure an additional custom query for each Source.** For details, see [Collect Logs for Windows Performance App](#Collect-Logs-for-the-Windows-Performance-App).
 
 
-### Configure a Collector and Source
-
-To collect logs for the Windows Performance App, you will need to configure an Installed Collector, and either a Local or Remote Windows Performance  Monitor Log Source.
-
-
-To collect logs for the Windows Performance App, do the following:
-
-1. Install a collector as described in [Installed Collector](/docs/send-data/Installed-Collectors).
-2. Configure a Windows Performance Source, choosing the one appropriate for on your environment:
-    * [Local Windows Performance Monitor Log Source](/docs/send-data/Sources/sources-installed-collectors/Local-Windows-Performance-Monitor-Log-Source).
-    * [Remote Windows Performance Monitor Log Source](/docs/send-data/Sources/sources-installed-collectors/Remote-Windows-Performance-Monitor-Log-Source).
-
-
-### Add a Custom Query to the Windows Performance Source
-
-To complete the configuration, you'll need to edit each Windows Performance Source (you are using to collect logs) to add a custom query.
-
-1. Go to **Manage Data > Collection > Collection**.
-2. Find the Collector and the Windows Performance Source.
-3. For the **Source**, click **Edit**.
-
-4. Under **Perfmon Queries** select the check boxes for these queries:
-    * CPU
-    * Physical Disk
-    * Memory
-    * Network
-5. Click **Add Query**.
-    * For **Name**, enter **CPU per Process**.
-    * For **Query**, enter **select * from Win32_PerfFormattedData_PerfProc_Process**.
-6. Click **Save**.
-
-
 ### Sample Log Messages
 
-```
+```js
 instance of Win32_PerfFormattedData_PerfProc_Process
 {
     CreatingProcessID = 2612;
@@ -134,7 +97,7 @@ instance of Win32_PerfFormattedData_PerfOS_Memory
 
 
 
-### Query Samples
+### Sample Queries
 
 **Hosts with low available memory**
 
@@ -155,7 +118,6 @@ _sourceCategory=OS/Windows "Win32_PerfFormattedData_PerfOS_Memory" "AvailableByt
 
 **Avg CPU Usage (%) by Host**
 
-
 ```
 _sourceCategory=OS/Windows "Win32_PerfFormattedData_PerfOS_Processor" "_Total"
 | parse regex "winbox = (?<dest_host>\S+)" nodrop
@@ -165,30 +127,57 @@ _sourceCategory=OS/Windows "Win32_PerfFormattedData_PerfOS_Processor" "_Total"
 | avg(procTime) as AvgProcTime by host,_timeslice | sort - _timeslice | transpose row _timeslice column host
 ```
 
-This section provides instructions for installing the Windows Performance App, along with examples of each of the App dashboards.
+## Collecting Logs for the Windows Performance App
+
+This section provides instructions for configuring log collection for the Windows Performance App, as well as example log files and queries.
+
+### Configure a Collector and Source
+
+To collect logs for the Windows Performance App, you will need to configure an Installed Collector, and either a Local or Remote Windows Performance  Monitor Log Source.
+
+To collect logs for the Windows Performance App, do the following:
+1. Install a collector as described in [Installed Collector](/docs/send-data/Installed-Collectors).
+2. Configure a Windows Performance Source, choosing the one appropriate for on your environment:
+    * [Local Windows Performance Monitor Log Source](/docs/send-data/Sources/sources-installed-collectors/Local-Windows-Performance-Monitor-Log-Source).
+    * [Remote Windows Performance Monitor Log Source](/docs/send-data/Sources/sources-installed-collectors/Remote-Windows-Performance-Monitor-Log-Source).
+
+
+### Add a Custom Query to the Windows Performance Source
+
+To complete the configuration, you'll need to edit each Windows Performance Source (you are using to collect logs) to add a custom query.
+
+1. Go to **Manage Data > Collection > Collection**.
+2. Find the Collector and the Windows Performance Source.
+3. For the **Source**, click **Edit**.
+4. Under **Perfmon Queries** select the check boxes for these queries:
+    * CPU
+    * Physical Disk
+    * Memory
+    * Network
+5. Click **Add Query**.
+    * For **Name**, enter **CPU per Process**.
+    * For **Query**, enter **select * from Win32_PerfFormattedData_PerfProc_Process**.
+6. Click **Save**.
+
+
 
 ## Installing the Windows Performance App
 
-Now that you have set up collection, install the Windows Performance App to use the preconfigured searches and [Dashboards](#Dashboards) that provide insight into your data.
+Now that you have set up collection, install the Windows Performance App to use the preconfigured searches and [dashboards](#viewing-dashboards) that provide insight into your data.
 
 To install the app:
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
 1. From the **App Catalog**, search for and select the app**.**
-2. Select the version of the service you're using and click **Add to Library**.
-
-Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/library/install-apps)
-
-
-
-1. To install the app, complete the following fields.
+2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/library/install-apps)
+3. To install the app, complete the following fields.
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
     2. **Data Source.** Select either of these options for the data source. 
         * Choose **Source Category**, and select a source category from the list. 
         * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). 
     3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-2. Click **Add to Library**.
+4. Click **Add to Library**.
 
 Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization.
 

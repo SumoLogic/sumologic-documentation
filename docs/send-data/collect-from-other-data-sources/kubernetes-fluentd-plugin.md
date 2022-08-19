@@ -295,7 +295,7 @@ spec:
 
 ## Log data
 
-After performing the configuration described above, your logs should start streaming to Sumoin json or text format with the appropriate metadata. If you are using json format you can auto extract fields, for example:
+After performing the configuration described above, your logs should start streaming to Sumoin json or text format with the appropriate metadata. If you're using json format you can auto extract fields, for example:
 
 ```
 _sourceCategory=some/app | json auto.
@@ -308,7 +308,7 @@ _sourceCategory=some/app | json auto.
 ### Kubelet
 
 :::note
-Kubelet logs are only collected if you are using systemd. Kubernetes no longer outputs the kubelet logs to a file.
+Kubelet logs are only collected If you're using systemd. Kubernetes no longer outputs the kubelet logs to a file.
 :::
 
 ![kubelet.png](/img/send-data/kubelet.png)

@@ -24,7 +24,7 @@ and they are displayed in the **Span logs** tab in [Details Pane](../working-wi
 
 ## Working with attributes on OpenTelemetry collector
 
-Regardless if you are using the Sumo Logic distribution of OpenTelemetry collector, an original installation, or the OpenTelemetry collector as part of Sumo Logic Kubernetes collection, you can use the attributes processor to add, modify, delete, or hash the values of attributes.
+Regardless If you're using the Sumo Logic distribution of OpenTelemetry collector, an original installation, or the OpenTelemetry collector as part of Sumo Logic Kubernetes collection, you can use the attributes processor to add, modify, delete, or hash the values of attributes.
 
 Refer to the [OpenTelemetry collector attributes processor documentation](https://github.com/open-telemetry/opentelemetry-collector-contrib/tree/main/processor/attributesprocessor) for examples.
 

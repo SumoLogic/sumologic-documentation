@@ -182,7 +182,7 @@ CallStack - Managed Exception
 
 The above error occurs in certain situations the runtime initiates a host shutdown via HostingEnvironment.InitiateShutdown, for example when an unhandled global exception occurs, when a function TimeoutException is thrown, or when performance counter thresholds are exceeded (HostHealthMonitor).
 
-If you are using this function for quite some time then we recommend redeploying the solution with new ARM templates.
+If you're using this function for quite some time then we recommend redeploying the solution with new ARM templates.
 
 If the error still persists in BlobTaskProducer function and failure rate \> 1% then
 

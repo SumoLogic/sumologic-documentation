@@ -26,7 +26,6 @@ The App includes pre-configured dashboards and searches with visual displays for
 The Sumo Logic App for GuardDuty requires the Amazon GuardDuty findings to be sent through the Amazon CloudWatch Events. For more details, see [GuardDuty findings](https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings.html).
 
 
-
 ## Configuring Log Collection and Deploying the App
 
 :::note
@@ -44,9 +43,9 @@ Sumo Logic provides a SAM application based on [AWS Serverless Application Model
 
 After completing this process, logs are ingested into Sumo Logic in the following way:
 
-4. Amazon GuardDuty sends notifications based on CloudWatch events when new findings, or new occurrences of existing findings, are generated.
-5. A CloudWatch events rule enables CloudWatch to send events for the GuardDuty findings to the Sumo CloudWatchEventFunction Lambda function.
-6. The Lambda function sends the events to an HTTP source on a Sumo Logic hosted collector.<br/><img src={useBaseUrl('img/integrations/amazon-aws/AGD_BM_Collection_Overview.png')} alt="flow" />
+1. Amazon GuardDuty sends notifications based on CloudWatch events when new findings, or new occurrences of existing findings, are generated.
+2. A CloudWatch events rule enables CloudWatch to send events for the GuardDuty findings to the Sumo CloudWatchEventFunction Lambda function.
+3. The Lambda function sends the events to an HTTP source on a Sumo Logic hosted collector.<br/><img src={useBaseUrl('img/integrations/amazon-aws/AGD_BM_Collection_Overview.png')} alt="flow" />
 
 This section shows you how to generate an access key and access ID for log collection, and then how to deploy the Amazon GuardDuty Benchmark App.
 
@@ -56,7 +55,6 @@ This section shows you how to generate an access key and access ID for log colle
 In this step, you need to generate access key and access ID from the Sumo Logic console.
 
 To generate an access key and access ID, do the following:
-
 1. Follow the instructions as described in this [Sumo Logic Access Key](/docs/manage/security/access-keys#Create_an_access_key)) document.
 2. Copy down both the values as you’ll need them to deploy the Sumo Logic GuardDuty Benchmark SAM App.
 
@@ -84,7 +82,9 @@ To deploy the Sumo Logic GuardDuty Benchmark SAM App, do the following:
 
 
 
-### Sample Log message
+### Sample Log Message
+
+<details><summary>Click to expand</summary>
 
 ```json
 {
@@ -213,6 +213,8 @@ To deploy the Sumo Logic GuardDuty Benchmark SAM App, do the following:
 }
 ```
 
+</details>
+
 ### Sample Query
 
 The following query is from the **Threats by Region** panel of the **Amazon GuardDuty - Threat Details** dashboard:
@@ -221,7 +223,7 @@ The following query is from the **Threats by Region** panel of the **Amazon Guar
 _sourceCategory=*guardduty*
 | json field=_raw "accountId", "region", "partition", "id", "arn", "type","service.serviceName","service.detectorId","service.action","severity","title","description" nodrop
 | parse field=type "*:*/*" as ThreatPurpose,ResourceType,ThreatName
-| json field=%service.action "networkConnectionAction.localPortDetails.port" as  localPort nodrop
+| json field=%service.action "networkConnectionAction.localPortDetails.port" as localPort nodrop
 | json field=%service.action "networkConnectionAction.remoteIpDetails.ipAddressV4" as ip nodrop
 | parse "\"vpcId\":\"*\"" as vpcId, "\"subnetId\":\"*\"" as subnetId,"\"groupId\":\"*\"" as securityGroupId,"\"tags\":[*]" as tags,"\"groupName\":\"*\"" as securityGroupName nodrop
 | if(severity=0, "Info",if(severity=2, "Low", if(severity=5, "Medium", if(severity=8, "High",if(severity=9.5, "Critical",severity))))) as severity

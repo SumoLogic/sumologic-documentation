@@ -28,16 +28,40 @@ The Barracuda WAF App uses the following log types:
 For more information on Log formats, visit [Barracuda Log Types](https://campus.barracuda.com/product/webapplicationfirewall/doc/4259935/how-to-configure-syslog-and-other-logs/) page.
 
 
+
+### Sample Log Message
+
+The following table shows sample log messages for the corresponding log types.
+
+| Log Type             | Sample  |
+|:---------------------|:--------------------|
+| System Log           | `<129>1 2019-04-19T00:52:58-07:00 WAFNEW 2019-04-19 - 00:52:58.985 -0700 WAFNEW SYS PROCMON ALER 50009 Log storage exceeds 10% `   |
+| Web Firewall Log     | `<129>1 2019-04-09T03:57:49-07:00 WAFNEW 2019-04-09 - 03:57:49.304 -0700 WAFNEW WF ALER PYTHON_PHP_ATTACKS_MEDIUM_IN_URL 182.69.208.134 50910 10.0.1.90 80 security-policy GLOBAL DENY NONE [type\="python-php-attacks-medium" pattern\="python-cfm-command-substrings" token\="/exec/"] GET 13.234.142.236/dvwa/vulnerabilities/exec/ HTTP "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36" 182.69.208.134 50910 "-" http://13.234.142.236/dvwa/vulnerabi...ge=include.php 16a01bf34f8-f9a544ae` |
+| Access Log           | `<134>1 2019-04-15T15:46:53.460+0530 WAF 2019-04-15 - 15:46:53.460+0530 -0700 WebSite TR 10.1.1.90 80 141.138.107.86 50915 "-" "-" POST HTTPS 202.191.66.53 HTTP/1.0 403 2411 1609 0 22 10.0.2.200 80 0 "-" SERVER DEFAULT PROTECTED VALID /favicon.ico "-" http://www.bing.com/search?q=sumo%20...ox&FORM=IE11SR "-" "Mozilla/5.0 (Windows NT 6.2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/28.0.1467.0 Safari/537.36" 182.69.208.134 50915 "-" "-" "-" "-" 16a01bf4be9-fca462a6`   |
+| Audit Log   | `<13>1 2019-04-16T12:55:10+00:00 ip-10-0-1-200 2019-04-16 - 05:55:10.006 -0700 WAF12 AUDIT sourabh GUI 111.93.54.106 55035 CONFIG 86 config SET user_system_ip Siteminder Session Sync user_system_ip_log "Off" "On"` []                                                                        |
+| Network Firewall Log | `<13>1 2019-04-19T06:10:58+00:00 ip-10-0-1-200 2019-04-18 - 23:10:58.647 -0700 WAF12 NF INFO TCP 37.204.127.164 39410 10.0.1.20 22 ALLOW SSH MGMT/LAN/WAN interface traffic:allow           `                 
+
+
+### Sample Query
+
+Sample Query is from **Top Clients by Bandwidth** panel of the **Barracuda WAF - Client Traffic** dashboard.
+
+```sql
+_sourceCategory=Labs/loggen/barracuda " TR "
+| parse regex "(?<Unit_Name>[^ ]+) TR(?<Log>.*)"
+| split Log delim=' ' extract 4 as Client_Ip, 13 as Bytes_Sent, 2 as Service_Ip, 3 as Service_Port
+| round((Bytes_Sent / 1024),2) as Bandwidth
+| sum(Bandwidth) as Bandwidth_Consumed_KB by Client_Ip
+| sort by Bandwidth_Consumed_KB
+| limit 5
+```
+
+
 ## Collecting Logs for Barracuda WAF App
 
-This page shows you how to configure collection for the Barracuda WAF App to use with the predefined searches and dashboards.
+This section shows you how to configure collection for the Barracuda WAF App to use with the predefined searches and dashboards.
 
 The Barracuda WAF App provides detailed analytics on system, firewall, and network security so you can protect your environment from malicious attacks. Security Analysis dashboards provide insights into the types of attacks, severity, malicious IPs, blocked and allowed content, and attacks by services. Traffic Analysis dashboards provide detailed information on client, server, and service traffic, as well as errors, bandwidth trends, and service performance.
-
-## Configure Log collection for Barracuda WAF
-
-This section describes how to configure log collection for the Barracuda WAF App with instructions for the following tasks.
-
 
 ### Step 1: Configure a Collector
 
@@ -50,8 +74,7 @@ Cloud syslog collection supports Barracuda Firmware version 9.2.1 or later. You 
 
 This section shows you how to configure a source for log collection. In this task you specify the Source Category metadata field, which is a fundamental building block for organizing and labeling sources.
 
-**To configure a source, do the following:**
-
+To configure a source, do the following:
 1. Perform the steps in [Configure a Cloud Syslog Source](/docs/send-data/Sources/sources-hosted-collectors/Cloud-Syslog-Source#Configure_a_Cloud_Syslog_Source). and configure the following Source fields:
     1. **Name**. (Required) Enter a name. The description is optional.
     2. **Source Category**. (Required) Provide a realistic Source Category for this data type. For example: **prod/barracuda/waf**. For more information, see [Best Practices](/docs/send-data/design-deployment/best-practices-source-categories).
@@ -67,21 +90,17 @@ This section shows you how to configure a source for log collection. In this tas
 
 This section shows you how to configure logging in Barracuda WAF for use with the preconfigured searches and dashboards of the Sumo Logic App for Barracuda WAF.
 
-**To configure logging in Barracuda WAF, do the following:**
-
+To configure logging in Barracuda WAF, do the following:
 1. Log in to your Barracuda account and go to **ADVANCED > Export Logs.**
-
 1. Go to the **Add Export Log Server.**
-
-
 1. In the **Add Export Log Server** window, specify values for the following:
     1. **Name - **Enter a name for the SumoLogic service.
-    2. **Log Server Type - **Select Cloud Syslog Service.
-    3. **IP Address or Hostname - **Enter the IP address or hostname of the SumoLogic service. For example: _syslog.collection.your_deployment.sumologic.com_
+    2. **Log Server Type - ** Select Cloud Syslog Service.
+    3. **IP Address or Hostname -** Enter the IP address or hostname of the SumoLogic service. For example: `syslog.collection.your_deployment.sumologic.com`
     4. **Port - **Enter the port associated with the IP address of the SumoLogic service. The default Port is 6514.
-    5. **Token - **Enter the token for SumoLogic service, such as: _9HFxoa6+lXBmvSM9koPjGzvTaxXDQvJ4POE/ExAMpleTOkenForTAsk3mSEKxPl0Q@41123_, where the number "41123" is the sumo PEN and is included as part of the customer token.
-    6. **Log Timestamp and Hostname - **Click **Yes** to log the date and time of the event, and the hostname configured in the BASIC > IP Configuration > Domain Configuration section.
-    7. **Comment - **(Optional) Enter a comment describing the setting.
+    5. **Token - **Enter the token for Sumo Logic service, such as: `9HFxoa6+lXBmvSM9koPjGzvTaxXDQvJ4POE/ExAMpleTOkenForTAsk3mSEKxPl0Q@41123`, where the number `41123` is the sumo PEN and is included as part of the customer token.
+    6. **Log Timestamp and Hostname -** Click **Yes** to log the date and time of the event, and the hostname configured in the BASIC > IP Configuration > Domain Configuration section.
+    7. **Comment -** (Optional) Enter a comment describing the setting.
 
 
 
@@ -136,44 +155,13 @@ parse regex "(?<Unit_Name>[^ ]+) NF(?<Log>.*)"
 ```
 
 
-### Sample Log Message
-
-The following table shows sample log messages for the corresponding log types.
-
-| Log Type             | Sample  |
-|----------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| System Log           | `<129>1 2019-04-19T00:52:58-07:00 WAFNEW 2019-04-19 - 00:52:58.985 -0700 WAFNEW SYS PROCMON ALER 50009 Log storage exceeds 10% `   |
-| Web Firewall Log     | `<129>1 2019-04-09T03:57:49-07:00 WAFNEW 2019-04-09 - 03:57:49.304 -0700 WAFNEW WF ALER PYTHON_PHP_ATTACKS_MEDIUM_IN_URL 182.69.208.134 50910 10.0.1.90 80 security-policy GLOBAL DENY NONE [type\="python-php-attacks-medium" pattern\="python-cfm-command-substrings" token\="/exec/"] GET 13.234.142.236/dvwa/vulnerabilities/exec/ HTTP "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36" 182.69.208.134 50910 "-" http://13.234.142.236/dvwa/vulnerabi...ge=include.php 16a01bf34f8-f9a544ae` |
-| Access Log           | `<134>1 2019-04-15T15:46:53.460+0530 WAF 2019-04-15 - 15:46:53.460+0530 -0700 WebSite TR 10.1.1.90 80 141.138.107.86 50915 "-" "-" POST HTTPS 202.191.66.53 HTTP/1.0 403 2411 1609 0 22 10.0.2.200 80 0 "-" SERVER DEFAULT PROTECTED VALID /favicon.ico "-" http://www.bing.com/search?q=sumo%20...ox&FORM=IE11SR "-" "Mozilla/5.0 (Windows NT 6.2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/28.0.1467.0 Safari/537.36" 182.69.208.134 50915 "-" "-" "-" "-" 16a01bf4be9-fca462a6`   |
-| Audit Log   | `<13>1 2019-04-16T12:55:10+00:00 ip-10-0-1-200 2019-04-16 - 05:55:10.006 -0700 WAF12 AUDIT sourabh GUI 111.93.54.106 55035 CONFIG 86 config SET user_system_ip Siteminder Session Sync user_system_ip_log "Off" "On"` []                                                                        |
-| Network Firewall Log | `<13>1 2019-04-19T06:10:58+00:00 ip-10-0-1-200 2019-04-18 - 23:10:58.647 -0700 WAF12 NF INFO TCP 37.204.127.164 39410 10.0.1.20 22 ALLOW SSH MGMT/LAN/WAN interface traffic:allow           `                                                                                                                                                                                                                                                                                                                                                                                   |
-
-
-### Sample Query
-
-
-Sample Query is from **Top Clients by Bandwidth** panel of the **Barracuda WAF - Client Traffic** dashboard.
-
-
-```sql
-_sourceCategory=Labs/loggen/barracuda " TR "
-| parse regex "(?<Unit_Name>[^ ]+) TR(?<Log>.*)"
-| split Log delim=' ' extract 4 as Client_Ip, 13 as Bytes_Sent, 2 as Service_Ip, 3 as Service_Port
-| round((Bytes_Sent / 1024),2) as Bandwidth
-| sum(Bandwidth) as Bandwidth_Consumed_KB by Client_Ip
-| sort by Bandwidth_Consumed_KB
-| limit 5
-```
-
-
-
 
 ## Install the Barracuda WAF App
 
 
 This section provides instructions for installing the Barracuda WAF App, as well as examples and descriptions for each of the app dashboards.
 
-Now that you have configured log collection for Barracuda WAF, install the Sumo Logic App for Barracuda WAF, and take advantage of predefined Searches and [Dashboards](#Dashboards).
+Now that you have configured log collection for Barracuda WAF, install the Sumo Logic App for Barracuda WAF, and take advantage of predefined Searches and [dashboards](#viewing-dashboards).
 
 To install the app:
 
@@ -300,14 +288,10 @@ Use this dashboard to:
 
 
 ### Service Traffic
-32
-
 
 The **Barracuda WAF - Service Traffic** **Dashboard** provides provides detailed insight into cache hit performance, request traffic and bandwidth.
 
 Use this dashboard to:
-
-
 
 * Monitor trends for cache performance trends.
 * Monitor top services, URLs, and domains by both number of requests and bandwidth.
@@ -318,7 +302,6 @@ Use this dashboard to:
 
 
 ### Server Traffic
-34
 
 
 The **Barracuda WAF - Server Traffic** **Dashboard** provides a detailed information on server traffic, such as client and server errors, and HTTP request and response information. The dashboard is divided into three parts so you can compare client errors, server errors, and HTTP protocol information.

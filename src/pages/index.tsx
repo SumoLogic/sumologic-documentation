@@ -17,7 +17,7 @@ const features = [
     description: (<Translate
       id="landing.feature.get-started.desc"
       description="Get started description">
-        Create visualizations, notifications, and alerts for your applications.
+        Get started with your Sumo Logic data analytics journey.
       </Translate>),
     link: 'docs/get-started',
   },
@@ -66,7 +66,7 @@ const features = [
   {
     title: translate({
       id: 'landing.feature.metrics.title',
-      message: 'Metrics and Logs',
+      message: 'Metrics',
       description: 'Title for metrics',
     }),
     imageUrl: 'img/icons/metrics.png',
@@ -145,6 +145,7 @@ function HomepageHeader() {
       <div className="container">
         <h1 className="hero__title">{siteConfig.title}</h1>
         <p className="hero__subtitle">{siteConfig.tagline}</p>
+        <p>We are an open-source community of data analytics users. Contributions are welcome!</p>
         <div className={styles.buttons}>
         </div>
       </div>
@@ -156,8 +157,8 @@ export default function Home(): JSX.Element {
   const {siteConfig} = useDocusaurusContext();
   return (
     <Layout
-      title={`Hello from ${siteConfig.title}`}
-      description="Sumo Logic docs - real-time alerting, dashboards, and machine-learning-powered analytics for all three types of telemetry — logs, metrics, and traces.">
+      title="Home"
+      description="Sumo Logic docs - real-time alerting, security, dashboards, and machine-learning-powered analytics for all three types of telemetry — logs, metrics, and traces.">
       <HomepageHeader />
       <main>
         {features && features.length > 0 && (

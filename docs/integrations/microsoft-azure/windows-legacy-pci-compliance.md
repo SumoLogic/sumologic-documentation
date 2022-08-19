@@ -11,33 +11,11 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 This guide helps you set up Sumo Logic Collectors, and install the PCI Compliance for Windows Legacy application, so you can begin monitoring your usage and determine if you are meeting Compliance benchmarks.
 
-## Collecting Logs
-
-This section provides instructions for configuring log collection for the PCI Compliance for Windows Legacy App.
-
-
-### Log Types
+## Log Types
 
 The PCI Compliance For Windows Legacy App uses Windows Security Event and System Event logs. It does not work with third-party logs.
 
-### Configure a Collector and a Source  
-
-To configure a collector and source, do the following:
-
-1. Configure an [Installed Windows collector](/docs/send-data/installed-collectors/install-collector-windows) through the user interface or from the command line.
-2. Configure either a local or remote Windows Event Log source. To configure a Windows Event Log source set the following:
-    * **Event Format.** Select **Collect using legacy format.
-
-Collect using legacy format.** Events retain their default text format from Windows.
-
-For more information on local or remote Windows Event Log Source configuration, refer to [Local Windows Event Log Source](/docs/send-data/Sources/sources-installed-collectors/Local-Windows-Event-Log-Source) and [Remote Windows Event Log Source](/docs/send-data/Sources/sources-installed-collectors/Remote-Windows-Event-Log-Source).
-
-
-Make sure to set the Source Category when configuring the Windows Event Log source. For example:  OS/Windows/Events.
-
-
 ### Sample Log Message
-
 
 ```
 instance of Win32_NTLogEvent
@@ -67,7 +45,7 @@ instance of Win32_NTLogEvent
 ```
 
 
-### Query Sample
+### Sample Query
 
 ```sql title="Recent Policy Changes"
 _sourceCategory=OS/Windows/Events "Policy Change"
@@ -76,6 +54,27 @@ _sourceCategory=OS/Windows/Events "Policy Change"
 | where category matches "*Policy Change*"
 ```
 
+
+## Collecting Logs
+
+This section provides instructions for configuring log collection for the PCI Compliance for Windows Legacy App.
+
+
+### Configure a Collector and a Source  
+
+To configure a collector and source, do the following:
+
+1. Configure an [Installed Windows collector](/docs/send-data/installed-collectors/install-collector-windows) through the user interface or from the command line.
+2. Configure either a local or remote Windows Event Log source. To configure a Windows Event Log source set the following:
+    * **Event Format.** Select **Collect using legacy format.
+
+Collect using legacy format.** Events retain their default text format from Windows.
+
+For more information on local or remote Windows Event Log Source configuration, refer to [Local Windows Event Log Source](/docs/send-data/Sources/sources-installed-collectors/Local-Windows-Event-Log-Source) and [Remote Windows Event Log Source](/docs/send-data/Sources/sources-installed-collectors/Remote-Windows-Event-Log-Source).
+
+Make sure to set the Source Category when configuring the Windows Event Log source. For example:  OS/Windows/Events.
+
+
 This section provides instructions for configuring log collection for the PCI Compliance for Windows Legacy App.
 
 
@@ -83,7 +82,7 @@ This section provides instructions for configuring log collection for the PCI Co
 
 This section provides instructions for installing the PCI Compliance for Windows Legacy App, along with examples of each of the App dashboards. The PCI Compliance for Windows Legacy App offers pre-built dashboards and queries to help you track your Windows system, user accounts, login activity, and Windows updates.
 
-Now that you have set up collection, install the Sumo Logic App for PCI Compliance for Windows Legacy App to use the pre-configured searches and [Dashboards](#Dashboards) that provide insight into your data.
+Now that you have set up collection, install the Sumo Logic App for PCI Compliance for Windows Legacy App to use the pre-configured searches and [dashboards](#viewing-dashboards) that provide insight into your data.
 
 To install the app:
 
@@ -94,13 +93,13 @@ Locate and install the app you need from the **App Catalog**. If you want to see
 
 Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/library/install-apps)
 
-1. To install the app, complete the following fields.
+3. To install the app, complete the following fields.
     * **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
     * **Data Source.** Select either of these options for the data source. 
         * Choose **Source Category**, and select a source category from the list. 
         * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). 
     * **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-2. Click **Add to Library**.
+4. Click **Add to Library**.
 
 Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization.
 
@@ -110,7 +109,6 @@ Panels will start to fill automatically. It's important to note that each panel 
 ## Viewing the Windows Legacy PCI Compliance Dashboards
 
 ### Windows - PCI Req 02, 08, 10 - Account, User, System Monitoring
-
 
 Track your user accounts and recent system changes.
 

@@ -2,7 +2,7 @@
 id: guardduty
 title: Sumo Logic App for Amazon GuardDuty
 sidebar_label: Amazon GuardDuty
-description: The Amazon GuardDuty Sumo Logic app provides insights into the activities in your AWS account based on the findings from Amazon GuardDuty. The App includes preconfigured dashboards that allow you to detect unexpected and potentially malicious activities in your AWS account by providing details on threats by severity, VPC, IP, account ID, region, and resource type.
+description: The Amazon GuardDuty Sumo Logic app provides insights into the activities in your AWS account based on the findings from Amazon GuardDuty, detect unexpected and potentially malicious activities in your AWS account by providing details on threats by severity, VPC, IP, account ID, region, and resource type.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
@@ -13,54 +13,9 @@ Amazon GuardDuty is a continuous security monitoring service that analyzes and p
 
 ## Log Types
 
-The Sumo Logic App for GuardDuty requires the Amazon GuardDuty findings to be sent through the Amazon CloudWatch Events. For more details on GuardDuty findings, see here.
+The Sumo Logic App for GuardDuty requires the Amazon GuardDuty findings to be sent through the Amazon CloudWatch Events. For more details on GuardDuty findings, see [here](https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_findings.html).
 
-## Collecting Logs for the Amazon GuardDuty App
-
-This section has instructions for collecting logs for the Amazon GuardDuty App.
-
-1. Amazon GuardDuty sends notifications based on CloudWatch events when new findings, or new occurrences of existing findings, are generated.
-2. A CloudWatch events rule enables CloudWatch to send events for the GuardDuty findings to the Sumo CloudWatchEventFunction Lambda function.
-3. The Lambda function sends the events to an HTTP source on a Sumo hosted collector.
-
-This configuration is defined in a [AWS Serverless Application Model (SAM) specification](https://docs.aws.amazon.com/lambda/latest/dg/serverless_app.html) published in the [AWS Serverless Application Repository](https://aws.amazon.com/serverless/serverlessrepo/). You don't need to manually create the necessary AWS resources. You simply deploy the configuration, as described in Step 2 below.
-
-
-### Step 1: Configure an HTTP source
-
-1. In Sumo Logic, configure a [Hosted Collector](/docs/send-data/configure-hosted-collector).
-2. In Sumo Logic, configure an [HTTP Source](/docs/send-data/sources/sources-hosted-collectors/http-logs-metrics-source).  When you configure the source, in the **Advanced Options for Logs** section of the page:
-    * Specify **Format** as `yyyy-MM-dd'T'HH:mm:ss.SSS'Z'`
-    * Specify **Timestamp locator** as `.*"updatedAt":"(.*)".* \`
-
-When you configure the HTTP Source, make a note of the HTTP Source Address URL. You will need it in the next step.  
-
-
-### Step 2: Deploy Sumo GuardDuty events processor
-
-In this step, you deploy the events processor. This will create the AWS resources described in [Collection overview](/docs/integrations/amazon-aws/guardduty#Collect-Logs-for-the-Amazon-GuardDuty-App).
-
-1. Go to [https://serverlessrepo.aws.amazon.com/applications](https://serverlessrepo.aws.amazon.com/applications).
-2. Search for “sumologic-guardduty-events-processor”.
-3. When the page for the Sumo app appears, click **Deploy**.
-4. In **Configure application parameters** panel, paste the URL for the HTTP source you created above.
-5. Click **Deploy**.
-
-
-#### Configure optional environment variables
-
-1. Go to the AWS Lambda console.
-2. Search for the `aws-serverless-repository-CloudWatchEventFunction-< _suffix_>` function and click it.
-3. Scroll down to the **Environment variables** section.
-
-You can set any of the following optional variables:
-    * `ENCODING` (Optional). Encoding to use when decoding CloudWatch log events. Default is utf-8.
-    * `SOURCE_CATEGORY_OVERRIDE` (Optional). Override `_sourceCategory` value configured for the HTTP source.
-    * `SOURCE_HOST_OVERRIDE` (Optional). Override `_sourceHost` value configured `for` the HTTP source.
-    * `SOURCE_NAME_OVERRIDE` (Optional). Override `_sourceName` value configured for the HTTP source.
-
-
-### Sample Log message
+### Sample Log Message
 
 <details><summary>Click to expand</summary>
 
@@ -197,6 +152,8 @@ You can set any of the following optional variables:
 
 ### Sample Query
 
+<details><summary>Click to expand</summary>
+
 ```sql title="Threat details"
 _sourceCategory=aws/guardduty
 | json field=_raw "accountId", "region", "partition", "id", "arn", "type","service.serviceName","service.detectorId","service.action","severity","title","description" nodrop
@@ -216,10 +173,54 @@ _sourceCategory=aws/guardduty
 | sort count
 ```
 
+</details>
+
+## Collecting Logs for the Amazon GuardDuty App
+
+This section has instructions for collecting logs for the Amazon GuardDuty App.
+
+1. Amazon GuardDuty sends notifications based on CloudWatch events when new findings, or new occurrences of existing findings, are generated.
+2. A CloudWatch events rule enables CloudWatch to send events for the GuardDuty findings to the Sumo CloudWatchEventFunction Lambda function.
+3. The Lambda function sends the events to an HTTP source on a Sumo hosted collector.
+
+This configuration is defined in a [AWS Serverless Application Model (SAM) specification](https://docs.aws.amazon.com/lambda/latest/dg/serverless_app.html) published in the [AWS Serverless Application Repository](https://aws.amazon.com/serverless/serverlessrepo/). You don't need to manually create the necessary AWS resources. You simply deploy the configuration, as described in Step 2 below.
+
+
+### Step 1: Configure an HTTP source
+
+1. In Sumo Logic, configure a [Hosted Collector](/docs/send-data/configure-hosted-collector).
+2. In Sumo Logic, configure an [HTTP Source](/docs/send-data/sources/sources-hosted-collectors/http-logs-metrics-source). When you configure the source, in the **Advanced Options for Logs** section of the page:
+    * Specify **Format** as `yyyy-MM-dd'T'HH:mm:ss.SSS'Z'`
+    * Specify **Timestamp locator** as `.*"updatedAt":"(.*)".* \`
+
+When you configure the HTTP Source, make a note of the HTTP Source Address URL. You will need it in the next step.  
+
+
+### Step 2: Deploy Sumo GuardDuty events processor
+
+In this step, you deploy the events processor. This will create the AWS resources described in [Collection overview](/docs/integrations/amazon-aws/guardduty#Collect-Logs-for-the-Amazon-GuardDuty-App).
+
+1. Go to [https://serverlessrepo.aws.amazon.com/applications](https://serverlessrepo.aws.amazon.com/applications).
+2. Search for “sumologic-guardduty-events-processor”.
+3. When the page for the Sumo app appears, click **Deploy**.
+4. In **Configure application parameters** panel, paste the URL for the HTTP source you created above.
+5. Click **Deploy**.
+
+
+#### Configure optional environment variables
+
+1. Go to the AWS Lambda console.
+2. Search for the "aws-serverless-repository-CloudWatchEventFunction-<_suffix_>"" function and click it.
+3. Scroll down to the **Environment variables** section. You can set any of the following optional variables:
+    * `ENCODING` (optional). Encoding to use when decoding CloudWatch log events. Default is utf-8.
+    * `SOURCE_CATEGORY_OVERRIDE` (optional). Override `_sourceCategory` value configured for the HTTP source.
+    * `SOURCE_HOST_OVERRIDE` (optional). Override `_sourceHost` value configured `for` the HTTP source.
+    * `SOURCE_NAME_OVERRIDE` (optional). Override `_sourceName` value configured for the HTTP source.
+
 
 ## Installing the Amazon GuardDuty App
 
-Now that you have set up collection for Amazon GuardDuty, install the Sumo Logic App to use the pre-configured searches and [dashboards](#Dashboards) that provide visibility into your environment for real-time analysis of overall usage.
+Now that you have set up collection for Amazon GuardDuty, install the Sumo Logic App to use the pre-configured searches and [dashboards](#viewing-dashboards) that provide visibility into your environment for real-time analysis of overall usage.
 
 To install the app, do the following:
 
@@ -241,10 +242,7 @@ Panels will start to fill automatically. It's important to note that each panel 
 
 
 
-
-
 ## Viewing Amazon GuardDuty Dashboards
-
 
 ### Overview
 

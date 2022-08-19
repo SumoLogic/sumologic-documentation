@@ -18,6 +18,53 @@ The App uses Kinesis logs and metrics for:
 * Kinesis CloudWatch Metrics. For details, see [here](http://docs.aws.amazon.com/streams/latest/dev/monitoring-with-cloudwatch.html).
 * Kinesis operations using AWS CloudTrail. For details, see [here](http://docs.aws.amazon.com/streams/latest/dev/logging-using-cloudtrail.html).
 
+
+### Sample Log Message
+
+```json
+ {  
+    "eventVersion":"1.01",
+    "userIdentity":{  
+       "type":"IAMUser",
+       "principalId":"EX_PRINCIPAL_ID",
+       "arn":"arn:aws:iam::012345678910:user/Alice",
+       "accountId":"012345678910",
+       "accessKeyId":"vmLwWTxSQrcvzD",
+       "userName":"Gosia"
+    },
+    "eventTime":"2017-11-01T21:23:30+0000",
+    "errorCode":"LimitExceedException",
+    "errorMessage":"Rate exceeded for stream CWL-Kinesis under account 656757657843",
+    "eventSource":"kinesis.amazonaws.com",
+    "eventName":"MergeShards",
+    "awsRegion":"us-east-2 ",
+    "sourceIPAddress":"187.185.157.125",
+    "userAgent":"aws-sdk-java/unknown-version Linux/x.xx",
+    "requestParameters":{  
+       "streamName":"GoodStream",
+       "adjacentShardToMerge":"shardId-000000000002",
+       "shardToMerge":"shardId-000000000001"
+    },
+    "responseElements":null,
+    "requestID":"e9f9c8eb-c757-11e3-bf1d-6948db3cd570",
+    "eventID":"77cf0d06-ce90-42da-9576-71986fec411f"
+ }
+```
+
+### Sample Query
+
+```sql title="Details of errors in events"
+_sourceCategory=aws/kinesis* "kinesis.amazonaws.com" errorCode
+| json field=_raw "eventSource", "eventName", "awsRegion", "sourceIPAddress","userAgent" nodrop
+| json field=_raw "requestParameters.streamName" as streamName nodrop
+| json field=_raw "userIdentity.sessionContext.sessionIssuer.userName" as userName nodrop
+| json field=_raw "userIdentity.userName" as userName nodrop
+| json field=_raw "errorCode" as error_code nodrop
+| json field=_raw "errorMessage" as error_msg nodrop
+| where eventSource="kinesis.amazonaws.com"
+| count by error_code, error_msg, eventName, userName, sourceIPAddress
+```
+
 ## Collecting Logs and Metrics for the Amazon Kinesis - Streams App
 
 ### Collecting Metrics
@@ -52,57 +99,9 @@ The App uses Kinesis logs and metrics for:
 2. Click **Save**.
 
 
-### Sample Log Message
-
-```json
- {  
-    "eventVersion":"1.01",
-    "userIdentity":{  
-       "type":"IAMUser",
-       "principalId":"EX_PRINCIPAL_ID",
-       "arn":"arn:aws:iam::012345678910:user/Alice",
-       "accountId":"012345678910",
-       "accessKeyId":"vmLwWTxSQrcvzD",
-       "userName":"Gosia"
-    },
-    "eventTime":"2017-11-01T21:23:30+0000",
-    "errorCode":"LimitExceedException",
-    "errorMessage":"Rate exceeded for stream CWL-Kinesis under account 656757657843",
-    "eventSource":"kinesis.amazonaws.com",
-    "eventName":"MergeShards",
-    "awsRegion":"us-east-2 ",
-    "sourceIPAddress":"187.185.157.125",
-    "userAgent":"aws-sdk-java/unknown-version Linux/x.xx",
-    "requestParameters":{  
-       "streamName":"GoodStream",
-       "adjacentShardToMerge":"shardId-000000000002",
-       "shardToMerge":"shardId-000000000001"
-    },
-    "responseElements":null,
-    "requestID":"e9f9c8eb-c757-11e3-bf1d-6948db3cd570",
-    "eventID":"77cf0d06-ce90-42da-9576-71986fec411f"
- }
-```
-
-### Query Sample
-
-```sql title="Details of errors in events"
-_sourceCategory=aws/kinesis* "kinesis.amazonaws.com" errorCode
-| json field=_raw "eventSource", "eventName", "awsRegion", "sourceIPAddress","userAgent" nodrop
-| json field=_raw "requestParameters.streamName" as streamName nodrop
-| json field=_raw "userIdentity.sessionContext.sessionIssuer.userName" as userName nodrop
-| json field=_raw "userIdentity.userName" as userName nodrop
-| json field=_raw "errorCode" as error_code nodrop
-| json field=_raw "errorMessage" as error_msg nodrop
-| where eventSource="kinesis.amazonaws.com"
-| count by error_code, error_msg, eventName, userName, sourceIPAddress
-```
-
-
-
 ## Installing the Amazon Kinesis - Streams App
 
-Now that you have set up collection for Amazon Kinesis, install the Sumo Logic App to use the pre-configured searches and [dashboards](#Dashboards) that provide visibility into your environment for real-time analysis of overall usage.
+Now that you have set up collection for Amazon Kinesis, install the Sumo Logic App to use the pre-configured searches and [dashboards](#viewing-dashboards) that provide visibility into your environment for real-time analysis of overall usage.
 
 To install the app:
 
@@ -133,7 +132,6 @@ Panels will start to fill automatically. It's important to note that each panel 
 See the details of Kinesis events including the count over time, location, API calls, errors, and users.
 
 <img src={useBaseUrl('img/integrations/amazon-aws/Kinesis-Events.png')} alt="AWS API Gateway" />
-
 
 **Events**. See the count and percentage of different events in Kinesis in the last 24 hours on a pie chart.
 

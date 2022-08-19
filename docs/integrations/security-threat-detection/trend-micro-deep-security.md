@@ -167,7 +167,7 @@ Send System Events to confirm communication with Sumo Logic. There may be a 5-10
 
 ## Installing the Trend Micro Deep Security App
 
-This section provides instructions on how to install the Trend Micro Deep Security App, and examples of each of the dashboards. The App reconfigured searches and [Dashboards](#Dashboards) that provide easy-to-access visual insights into your data.
+This section provides instructions on how to install the Trend Micro Deep Security App, and examples of each of the dashboards. The App reconfigured searches and [dashboards](#viewing-dashboards) that provide easy-to-access visual insights into your data.
 
 To install the app:
 
@@ -179,13 +179,13 @@ Locate and install the app you need from the **App Catalog**. If you want to see
 Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/library/install-apps)
 
 
-1. To install the app, complete the following fields.
+3. To install the app, complete the following fields.
    * **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
    * **Data Source.** Select either of these options for the data source. 
       * Choose **Source Category**, and select a source category from the list. 
       * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). 
    * **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-2. Click **Add to Library**.
+4. Click **Add to Library**.
 
 Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization.
 

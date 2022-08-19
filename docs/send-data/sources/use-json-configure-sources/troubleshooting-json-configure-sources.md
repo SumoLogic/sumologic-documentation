@@ -6,7 +6,7 @@ id: troubleshooting-json-configure-sources
 
 Sources supplied via a JSON file may not be applied to a Collector for a few reasons. This document covers common issues with JSON files when trying to configure Sources.
 
-Before investigating your JSON file for issues check that you are using your method for managing Sources correctly. If you are using `syncSources` for [Local Configuration File Management](/docs/send-data/sources/use-json-configure-sources/local-configuration-file-management) or the Collector API to manage Sources review your steps for issues related to using the method. For example, if your Collector isn't configured to use Local Configuration File Management it won't monitor your JSON file.
+Before investigating your JSON file for issues check that you are using your method for managing Sources correctly. If you're using `syncSources` for [Local Configuration File Management](/docs/send-data/sources/use-json-configure-sources/local-configuration-file-management) or the Collector API to manage Sources review your steps for issues related to using the method. For example, if your Collector isn't configured to use Local Configuration File Management it won't monitor your JSON file.
 
 :::note
 You can [view and copy an existing JSON configuration](local-configuration-file-management/view-download-source-json-configuration.md) from the user interface for reference.

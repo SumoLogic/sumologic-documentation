@@ -16,7 +16,25 @@ The Palo Alto Networks 6 App provides four dashboards, giving you several ways t
 Parsing in the Palo Alto Networks 6 App for PAN 6 is based on the [PAN-OS Syslog integration](https://live.paloaltonetworks.com/t5/forums/searchpage/tab/message?q=PAN-OS+Syslog+integration&filter=labels&search_type=thread).
 
 
-## Collect Logs for the Palo Alto Networks 6 App
+### Sample Log Messages
+
+```json
+<12>Dec 22 13:22:14 PA-5050 1,2016/12/22 13:22:14,002201002211,THREAT,vulnerability,1,2016/12/22 13:22:14,77.200.181.165,208.74.205.51,0.0.0.0,0.0.0.0,Alert Logging,,,web-browsing,vsys1,IDS,IDS,ethernet1/21,ethernet1/21,Sumo_Logic,2016/12/22 13:22:14,34403128,1,59305,80,0,0,0x80000000,tcp,alert,"1794",HTTP SQL Injection Attempt(38195),any,medium,client-to-server,128764886,0x0,NL,US,0,,1345817091864062106,,,1,,,,,,,,0
+
+<11>Dec 22 13:08:28 PA-5050 1,2016/12/22 13:08:28,002201002211,THREAT,vulnerability,1,2016/12/22 13:08:28,46.148.24.108,208.74.205.51,0.0.0.0,0.0.0.0,Alert Logging,,,web-browsing,vsys1,IDS,IDS,ethernet1/21,ethernet1/21,Sumo_Logic,2016/12/22 13:08:28,34645066,1,38899,80,0,0,0x80000000,tcp,alert,"message",HTTP /etc/passwd Access Attempt(30852),any,high,client-to-server,128763724,0x0,UA,US,0,,1345817091864061211,,,1,,,,,,,,0
+<14>Dec 22 16:24:05 AO-PA500-01.domain.local 1,2016/12/22 16:24:04,009401007189,TRAFFIC,drop,1,2016/12/22 16:24:04,45.55.255.28,184.18.215.26,0.0.0.0,0.0.0.0,deny untrust - logging,,,not-applicable,vsys1,untrust,untrust,ethernet1/1,,Log-Forwarding-01,2016/12/22 16:24:04,0,1,29272,2083,0,0,0x0,tcp,deny,92,92,0,1,2016/12/22 16:24:04,0,any,0,372320422,0x0,US,US,0,1,0,policy-deny,0,0,0,0,,AO-PA500-01,from-policy
+```
+
+
+
+### Sample Queries
+
+```sql title="Threat Type by Severity"
+_sourceCategory=palo_alto_network | parse "*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*" as f1,recvTime,serialNum,type,subtype,f2,genTime,src_ip,dest_ip,natsrc_ip,natdest_ip,ruleName,src_user,dest_user,app,vsys,src_zone,dest_zone,ingress_if,egress_if,logProfile,f3,sessionID,repeatCnt,src_port,dest_port,natsrc_port,natdest_port,flags,protocol,action,misc,threatID,cat,severity,direction,seqNum,action_flags,src_loc,dest_loc,f4,content_type | count as count by subtype,severity | transpose row severity column subtype
+```
+
+
+## Collecting Logs for the Palo Alto Networks 6 App
 
 This section provides instructions on how to collect logs for the Palo Alto Networks 6 App, as well as log and query samples.
 
@@ -29,12 +47,10 @@ This section provides instructions on how to collect logs for the Palo Alto Netw
 
 ### Configure a Collector
 
-
 Configure an [Installed Collector](/docs/send-data/installed-collectors/about-installed-collectors) or a Hosted source for Syslog-ng or Rsyslog.
 
 
 ### Configure a Source
-
 
 For Syslog, configure the Source fields:
 
@@ -52,9 +68,7 @@ For a Hosted source, use advanced settings as necessary, but save the endpoint U
 
 When creating a Field Extraction Rule, you have the option to select from a template for Palo Alto Networks.
 
-
 It is recommended that you add **THREAT** as a keyword in the scope for the rule.
-
 
 ```sql
 parse "*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*"
@@ -65,28 +79,9 @@ misc,threatID,cat,severity,direction,seqNum,action_flags,src_loc,dest_loc,f4,con
 ```
 
 
-### Sample Log Message
+## Installing the Palo Alto Networks 6 App
 
-```json
-<12>Dec 22 13:22:14 PA-5050 1,2016/12/22 13:22:14,002201002211,THREAT,vulnerability,1,2016/12/22 13:22:14,77.200.181.165,208.74.205.51,0.0.0.0,0.0.0.0,Alert Logging,,,web-browsing,vsys1,IDS,IDS,ethernet1/21,ethernet1/21,Sumo_Logic,2016/12/22 13:22:14,34403128,1,59305,80,0,0,0x80000000,tcp,alert,"1794",HTTP SQL Injection Attempt(38195),any,medium,client-to-server,128764886,0x0,NL,US,0,,1345817091864062106,,,1,,,,,,,,0
-
-<11>Dec 22 13:08:28 PA-5050 1,2016/12/22 13:08:28,002201002211,THREAT,vulnerability,1,2016/12/22 13:08:28,46.148.24.108,208.74.205.51,0.0.0.0,0.0.0.0,Alert Logging,,,web-browsing,vsys1,IDS,IDS,ethernet1/21,ethernet1/21,Sumo_Logic,2016/12/22 13:08:28,34645066,1,38899,80,0,0,0x80000000,tcp,alert,"message",HTTP /etc/passwd Access Attempt(30852),any,high,client-to-server,128763724,0x0,UA,US,0,,1345817091864061211,,,1,,,,,,,,0
-<14>Dec 22 16:24:05 AO-PA500-01.domain.local 1,2016/12/22 16:24:04,009401007189,TRAFFIC,drop,1,2016/12/22 16:24:04,45.55.255.28,184.18.215.26,0.0.0.0,0.0.0.0,deny untrust - logging,,,not-applicable,vsys1,untrust,untrust,ethernet1/1,,Log-Forwarding-01,2016/12/22 16:24:04,0,1,29272,2083,0,0,0x0,tcp,deny,92,92,0,1,2016/12/22 16:24:04,0,any,0,372320422,0x0,US,US,0,1,0,policy-deny,0,0,0,0,,AO-PA500-01,from-policy
-```
-
-
-
-### Query Samples
-
-```sql title="Threat Type by Severity"
-_sourceCategory=palo_alto_network | parse "*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*" as f1,recvTime,serialNum,type,subtype,f2,genTime,src_ip,dest_ip,natsrc_ip,natdest_ip,ruleName,src_user,dest_user,app,vsys,src_zone,dest_zone,ingress_if,egress_if,logProfile,f3,sessionID,repeatCnt,src_port,dest_port,natsrc_port,natdest_port,flags,protocol,action,misc,threatID,cat,severity,direction,seqNum,action_flags,src_loc,dest_loc,f4,content_type | count as count by subtype,severity | transpose row severity column subtype
-```
-
-
-
-## Install the Palo Alto Networks 6 App
-
-Now that you have set up collection for Palo Alto Networks, install the Sumo Logic App for Palo Alto Networks to use the preconfigured searches and [dashboards](#Dashboards) that provide insight into your data.
+Now that you have set up collection for Palo Alto Networks, install the Sumo Logic App for Palo Alto Networks to use the preconfigured searches and [dashboards](#viewing-dashboards) that provide insight into your data.
 
 To install the app:
 
@@ -144,9 +139,7 @@ Top Destination IPs. Ranks the top 10 destination IPs as a bar chart.
 **Threat by Category.** The query behind this Panel parses the threat ID and category from your Palo Alto Network logs, then returns the number of threats sorted by category.
 
 
-#### Traffic Monitoring
-17
-
+### Traffic Monitoring
 
 The Traffic Monitoring Dashboard includes several Panels that display information about incoming and outgoing traffic, including bytes sent and received.
 

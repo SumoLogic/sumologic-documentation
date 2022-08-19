@@ -78,7 +78,7 @@ If you have Sumo Logic API access, you can integrate Observable Networks and Sum
 
 You can configure the Observable Networks portal to expect certain roles in the network to have corresponding log files. For example, you might expect a Terminal Server to capture an auth.log. When you configure this expectation, Observable will alert when a role is missing an expected log file, notifying you that there is a gap in your log coverage.
 
-**To configure an expectation in Observable Networks**
+To configure an expectation in Observable Networks**
 
 1. From your Observable Networks portal, click **Settings (gear icon) > Integrations > Sumo Logic > Logs**.
 2. Enter the name for the expected log, such as **Auth Log**.
@@ -176,7 +176,7 @@ _sourceCategory=observable
 
 ## Install the Observable Networks App
 
-This section provides instructions for installing the Observable Networks App, as well as showing examples of each of the dashboards. The App preconfigured searches and [dashboards](#Dashboards) allow you to visually analyze your Observable Networks data at a glance.
+This section provides instructions for installing the Observable Networks App, as well as showing examples of each of the dashboards. The App preconfigured searches and [dashboards](#viewing-dashboards) allow you to visually analyze your Observable Networks data at a glance.
 
 To install the app:
 
