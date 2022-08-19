@@ -17,7 +17,7 @@ The App uses:
 * **Compute Engine VPC Flow Logs**. These logs provide information from Compute Engine ​VMs ​for ​network ​operations ​such ​as ​Network ​monitoring, ​forensics, ​real-time security ​analysis ​and ​expense ​optimization.
 
 
-### Sample Log message  
+### Sample Log Message  
 
 ```json
 {
