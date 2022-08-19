@@ -24,10 +24,10 @@ The Sumo Logic App for Artifactory only supports Artifactory On-Premise. It does
 
 The Sumo Logic App for Artifactory collects data from the following logs:
 
-* **artifactory.log.** The main Artifactory log file that contains data on Artifactory server activity.
-* **access.log.** The security log containing important information about accepted and denied requests, configuration changes, and password reset requests. The originating IP address for each event is also recorded.
-* **request.log.** Generic HTTP traffic information similar to the Apache HTTPd request log.
-* **traffic.log.** A log that contains information about site traffic and file sizes.
+* **artifactory.log**. The main Artifactory log file that contains data on Artifactory server activity.
+* **access.log**. The security log containing important information about accepted and denied requests, configuration changes, and password reset requests. The originating IP address for each event is also recorded.
+* **request.log**. Generic HTTP traffic information similar to the Apache HTTPd request log.
+* **traffic.log**. A log that contains information about site traffic and file sizes.
 
 For more details about Artifactory logs, refer to [https://www.jfrog.com/confluence/display/RTF/Artifactory+Log+Files](https://www.jfrog.com/confluence/display/RTF/Artifactory+Log+Files) and [Artifactory Log Files](https://www.jfrog.com/confluence/display/RTF6X/Artifactory+Log+Files#ArtifactoryLogFiles-RequestLog).
 
