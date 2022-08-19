@@ -216,7 +216,7 @@ module.exports = {
                   },
                   {
                     label: 'Quick Start',
-                    sublabel: 'Fast track Sumo',
+                    sublabel: 'Fast-track Sumo setup',
                     to: '/docs/quickstart',
                     icon: 'backup_table',
                     activeBaseRegex: '^/docs/quickstart/.*',
@@ -237,7 +237,7 @@ module.exports = {
                   },
                   {
                     label: 'Send Data',
-                    sublabel: 'Collectors, sources, & more',
+                    sublabel: 'Set up collectors, data sources',
                     to: '/docs/send-data',
                     icon: 'open_in_new',
                     activeBaseRegex: '^/docs/send-data/.*',
@@ -249,14 +249,14 @@ module.exports = {
                 label: 'Metrics and Logs',
                 items: [
                   {
-                    label: 'Dashboards & Alerts',
-                    sublabel: 'Visuals, alerts, & dashboards',
+                    label: 'Alerts and Dashboards',
+                    sublabel: 'Visualize data and set alerts',
                     to: '/docs/dashboards-new',
                     icon: 'dashboard',
                     activeBaseRegex: '^/docs/(dashboards|dashboards-new|alerts)',
                   },
                   {
-                    label: 'Searches and Logs',
+                    label: 'Logs and Search',
                     sublabel: 'Find data with queries',
                     to: '/docs/search',
                     icon: 'view_day',
@@ -264,7 +264,7 @@ module.exports = {
                   },
                   {
                     label: 'Metrics',
-                    sublabel: 'Find data with queries',
+                    sublabel: 'Assess and track performance',
                     to: '/docs/metrics',
                     icon: 'timeline',
                     activeBaseRegex: '^/docs/metrics/.*',
@@ -273,18 +273,18 @@ module.exports = {
               },
               {
                 // 2
-                label: 'APM',
+                label: 'App Performance',
                 items: [
                   {
                     label: 'Traces',
-                    sublabel: 'Review traces & spans',
+                    sublabel: 'Review traces and spans',
                     to: '/docs/apm/traces',
                     icon: 'view_timeline',
                     activeBaseRegex: '^/docs/apm/traces/.*',
                   },
                   {
                     label: 'Real User Monitoring',
-                    sublabel: 'Monitor users',
+                    sublabel: 'Monitor user activity',
                     to: '/docs/apm/rum',
                     icon: 'contacts',
                     activeBaseRegex: '^/docs/apm/rum/.*',
@@ -304,21 +304,21 @@ module.exports = {
                   },
                   {
                     label: 'Kubernetes Observability',
-                    sublabel: 'Deploy & collect Kubernetes',
+                    sublabel: 'Deploy and collect Kubernetes',
                     to: '/docs/observability/kubernetes-solution',
                     icon: 'settings_suggest',
                     activeBaseRegex: '^/docs/observability/kubernetes-solution/.*',
                   },
                   {
                     label: 'AWS Observability',
-                    sublabel: 'Deploy & collect AWS data',
+                    sublabel: 'Deploy and collect AWS data',
                     to: '/docs/observability/aws-observability-solution',
                     icon: 'polyline',
                     activeBaseRegex: '^/docs/observability/aws-observability-solution/.*',
                   },
                   {
                     label: 'Root Cause Explorer',
-                    sublabel: 'Learn what caused issues',
+                    sublabel: 'Identify root causes of issues',
                     to: '/docs/observability/root-cause-explorer',
                     icon: 'widgets',
                     activeBaseRegex: '^/docs/observability/root-cause-explorer',
@@ -328,7 +328,7 @@ module.exports = {
 
               {
                 // 4 - What would this link to?
-                label: 'Security & Incidents',
+                label: 'Security and Incidents',
                 items: [
                   {
                     label: 'CSE',
@@ -367,8 +367,8 @@ module.exports = {
                     activeBaseRegex: '^/docs/(global-intelligence)/.*',
                   },
                   {
-                    label: 'SDO Solution',
-                    sublabel: 'Software Dev Optimization',
+                    label: 'Software Dev Optimization',
+                    sublabel: 'DevOps pipeline integration',
                     to: '/docs/sdo',
                     icon: 'code',
                     activeBaseRegex: '^/docs/(sdo)/.*',

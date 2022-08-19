@@ -17,14 +17,35 @@ For information on unified logs and metrics for AWS Elastic Load Balancing App, 
 If you are just beginning with AWS ELB, for background see the Sumo Logic DevOps blog, AWS Elastic Load Balancing: Load Balancer Best Practices.
 :::
 
-### Log Types
+## Log Types
 
 ELB logs are stored as .log files in the buckets you specify when you enable logging. The process to enable collection for these logs is described in [AWS ELB Enable Access Logs](http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-access-logs.html). The logs themselves contain these fields in this order:
-```
+```bash
 datetime, ELB_Server, clientIP, port, backend, backend_port, requestProc, ba_Response, cli_Response, ELB_StatusCode, be_StatusCode, rcvd, send, method, protocol, domain, server_port, path
 ```
 
 For information on unified logs and metrics for AWS Elastic Load Balancing App, see the [AWS Elastic Load Balancing ULM Application](/docs/integrations/amazon-aws/Application-Load-Balancer).
+
+
+### Sample Log Message
+
+```json
+2017-01-20T23:00:26.059475Z elb-shop-com 10.15.120.181:80 10.34.7.122:80 0.000026
+0.315185 0.000027 200 200 51 1230 "POST https://examplesite.com:443/Common/path HTTP/1.1"
+"Mozilla/5.0 (Safari; Touch) AppleWebKit/537.35+ (HTML, like Gecko) Version/10.3.2.2239
+Mobile Safari/517.35+"
+```
+
+### Sample Query
+
+```sql title="Name - Request by Geolocation"
+_sourceCategory=elb*
+| parse "* * *:* *:* * * * * * * * \"* *://*:*/* HTTP" as f1, elb_server, clientIP, port, backend, backend_port, requestProc, ba_Response, cli_Response, ELB_StatusCode, be_StatusCode, rcvd, send, method, protocol, domain, server_port, path nodrop
+| parse "* * *:* *:* * * * * * * * \"-" as f1,elb_server,clientIP,port,backend,backend_port,requestProc,ba_Response,cli_Response,ELB_StatusCode,be_StatusCode,rcvd,send
+| lookup latitude, longitude, country_code, country_name, region, city, postal_code, area_code, metro_code from geo://default on ip = clientIP
+| count by latitude, longitude, country_code, country_name, region, city, postal_code, area_code, metro_code
+| sort _count
+```
 
 
 ## Collecting Logs for the AWS Elastic Load Balancing App
@@ -39,7 +60,7 @@ Once you begin uploading data, your daily data usage will increase. It's a good 
 * Grant access to an IAM user by following these Sumo Logic [instructions](/docs/send-data/sources/sources-hosted-collectors/amazon-web-services/grant-access-aws-product.md).
 * Confirm that logs are being delivered to the Amazon S3 bucket.
 
-To enable logging in AWS
+To enable logging in AWS:
 1. In the **AWS Management Console**, choose **EC2 > Load Balancers**.
 2. Under **Access Logs**, click **Edit**.
 3. In the **Configure Access Logs** dialog box, click **Enable Access Logs**, then choose an Interval and S3 bucket. This is the S3 bucket that will upload logs to Sumo Logic.
@@ -73,33 +94,11 @@ Configure an [AWS Elastic Load Balancing Source](/docs/send-data/Sources/sources
 
 For Field Extraction Rules, use the source category established earlier.
 
-**AWS Elastic Load Balancing Logs**
-
-```
+```bash title="AWS Elastic Load Balancing Logs"
 parse "* * *:* *:* * * * * * * * \"* *://*:*/* HTTP" as datetime, ELB_Server, clientIP, port, backend, backend_port, requestProc, ba_Response, cli_Response, ELB_StatusCode, be_StatusCode, rcvd, send, method, protocol, domain, server_port, path
 ```
 
 
-
-### Sample Log Message
-
-```json
-2017-01-20T23:00:26.059475Z elb-shop-com 10.15.120.181:80 10.34.7.122:80 0.000026
-0.315185 0.000027 200 200 51 1230 "POST https://examplesite.com:443/Common/path HTTP/1.1"
-"Mozilla/5.0 (Safari; Touch) AppleWebKit/537.35+ (HTML, like Gecko) Version/10.3.2.2239
-Mobile Safari/517.35+"
-```
-
-### Sample Query
-
-```sql title="Name - Request by Geolocation"
-_sourceCategory=elb*
-| parse "* * *:* *:* * * * * * * * \"* *://*:*/* HTTP" as f1, elb_server, clientIP, port, backend, backend_port, requestProc, ba_Response, cli_Response, ELB_StatusCode, be_StatusCode, rcvd, send, method, protocol, domain, server_port, path nodrop
-| parse "* * *:* *:* * * * * * * * \"-" as f1,elb_server,clientIP,port,backend,backend_port,requestProc,ba_Response,cli_Response,ELB_StatusCode,be_StatusCode,rcvd,send
-| lookup latitude, longitude, country_code, country_name, region, city, postal_code, area_code, metro_code from geo://default on ip = clientIP
-| count by latitude, longitude, country_code, country_name, region, city, postal_code, area_code, metro_code
-| sort _count
-```
 
 ## Installing the AWS ELB App
 

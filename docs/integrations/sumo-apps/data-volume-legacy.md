@@ -24,15 +24,12 @@ The Data Volume Index gathers volume data as soon as it is enabled. It will not 
 1. From **App Catalog**, search for the **Data Volume** app.
 2. Click **Data Volume**.
 3. Click **Add to Library, **this will open a window. Within the window click on **Advanced** and choose a location to install the app.
+4. If **Data Volume Logging** is not enabled, select the toggle to enable it. Otherwise, the application will have no data to display. If the feature is already enabled, the toggle does not appear.
+5. Choose a location for Data Volume in your **Personal** folder.
+6. Click **Add to Library**. A dialog will confirm the app is installed successfully.
 
 
-
-1. If **Data Volume Logging** is not enabled, select the toggle to enable it. Otherwise, the application will have no data to display. If the feature is already enabled, the toggle does not appear.
-2. Choose a location for Data Volume in your **Personal** folder.
-3. Click **Add to Library**. A dialog will confirm the app is installed successfully.
-
-
-## Viewing Data Volume Legacy App Dashboards
+## Viewing Data Volume Legacy Dashboards
 
 For each Panel in the Dashboard, you can perform the following actions:
 * To display details on the Panel time range, hover over the text in the top right corner.
@@ -145,13 +142,13 @@ See the the subscribed, actual, and percentage capacity utilization for logs and
 
 <img src={useBaseUrl('img/integrations/sumo-apps/DataVolumeCapacityUtilization.png')} alt="Data volume legacy dashboards" />
 
-**Log Ingest**
+**Log Ingest**:
 
 * **Subscribed Log Ingest Capacity**. The log ingestion capacity of your subscription, in GB/day. You must configure the "Subscribed Daily Log Ingest Capacity" value, based on your Account Subscription. See **Administration > Account > Account Overview** to see the log ingest capacity value. Then, set the "Subscribed Daily Log Ingest Capacity" value in the DailyLogIngestCapacity variable in the "Subscribed Log Ingest Capacity" panel query, and update the dashboard.
 * **Actual (Average) Log Ingested**. Your average log ingestion in GB/day, over the last 30 days.
 * **Log Ingest Capacity Utilization**. The percentage of your subscribed log ingestion capacity you have used, over the last 30 days.
 
-**Metric Ingest**
+**Metric Ingest**:
 
 * **Subscribed DPM Ingest Capacity**. The metric ingestion capacity of your subscription, in DPM.  You must configure the "Subscribed Metric DPM Ingest Capacity" value, based on your Account Subscription. See **Administration > Account > Account Overview** to see the metric DPM ingest capacity value. Then, set the "Subscribed Metric DPM Ingest Capacity" value in the DPM_Capacity variable in the "Subscribed DPM Ingest Capacity" panel query, and update the dashboard.
 * **Actual (Average) DPM Ingested**. Your average metric ingestion in DPM, over the last 30 days.

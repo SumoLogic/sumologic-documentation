@@ -59,7 +59,7 @@ The Audit Event Index is enabled by default, and only available for Trial and En
 To install an Enterprise Audit App, do the following:
 
 1. In the App Catalog, search for "Audit" and select an Enterprise Audit app.
-2. Click **Add to Library**.
+4. Click **Add to Library**.
 3. If you want to save the app to a new folder in your personal folder, click **+ New Folder** and select a name and location for your folder.
 4. Click **Add to Library** to install the app. A confirmation dialog will appear and then you can start viewing your dashboards.
 

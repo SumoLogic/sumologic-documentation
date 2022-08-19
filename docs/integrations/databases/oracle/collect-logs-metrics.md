@@ -118,7 +118,7 @@ RUN chmod +x entrypoint.sh && chmod +x /tmp/exec_oracle_metrics.sh
 CMD ["telegraf"]
 ```
 
-**Step 2. [Setup Kubernetes Collection with the Telegraf Operator.](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf.md#Install_Telegraf_in_a_Kubernetes_environment)**
+**Step 2. [Setup Kubernetes Collection with the Telegraf Operator.](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf)**
 
 **Step 3. Add annotations on your Oracle pods**  On your Oracle Pods, add the following annotations:
 
@@ -147,7 +147,7 @@ Enter in values for the following parameters (marked `CHANGEME` in the snippet a
 * `telegraf.influxdata.com/inputs` - This contains the required configuration for the Telegraf exec Input plugin. Please refer[ to this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/redis) for more information on configuring the Oracle input plugin for Telegraf. Note: As telegraf will be run as a sidecar the host should always be localhost.
     * In the input plugins section i.e. :
         * **commands **- The [exec](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/exec) plugin executes all the commands in parallel on every interval and parses metrics from their output in any one of the accepted [Input Data Formats](https://github.com/influxdata/telegraf/blob/master/docs/DATA_FORMATS_INPUT.md).
-    * In the tags section i.e.  [inputs.exec.tags]
+    * In the tags section   [inputs.exec.tags]
         * `environment` - This is the deployment environment where the Oracle cluster identified by the value of **servers** resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
         * `db_cluster` - Enter a name to identify this Oracle cluster. This cluster name will be shown in the Sumo Logic dashboards.  
 
@@ -157,7 +157,7 @@ Enter in values for the following parameters (marked `CHANGEME` in the snippet a
 * `prometheus.io/scrape: "true"` - This ensures our Prometheus will scrape the metrics.
 * `prometheus.io/port: "9273"` - This tells prometheus what ports to scrape on. This should not be changed.
 * `telegraf.influxdata.com/inputs`
-    * In the tags section i.e.  [inputs.exec.tags]
+    * In the tags section   [inputs.exec.tags]
         * `component: “database”` - This value is used by Sumo Logic apps to identify application components.
         * **db_system**: “oracle” - This value identifies the database system.
 
@@ -184,7 +184,7 @@ db_cluster "Cluster_CHANGEME"
 ```
 
 
-Please enter in values for the following parameters (marked in **bold and CHANGE_ME** above):
+Enter in values for the following parameters (marked in **bold and CHANGE_ME** above):
 
 * `environment` - This is the deployment environment where the Oracle cluster identified by the value of **servers** resides. For example:- dev, prod, or QA. While this value is optional we highly recommend setting it.
 * `db_cluster` - Enter a name to identify this Oracle cluster. This cluster name will be shown in the Sumo Logic dashboards. If you haven’t defined a cluster in Oracle, then enter ‘**default**’ for `db_cluster`.
@@ -220,7 +220,7 @@ annotations:
 1. **Add an FER to normalize the fields in Kubernetes environments** Labels created in Kubernetes environments automatically are prefixed with pod_labels. To normalize these for our app to work, we need to create a Field Extraction Rule if not already created for Proxy Application Components. To do so:
 1. Go to **Manage Data > Logs > Field Extraction Rules.**
 2. Click the** + **Add button on the top right of the table**. \
-The following form appears.
+The **Add Field Extraction Rule** form will appear.
 
 
 1. Enter the following options:

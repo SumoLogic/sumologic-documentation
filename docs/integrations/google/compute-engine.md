@@ -12,14 +12,14 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 Google Compute Engine is the Infrastructure as a Service component of Google Cloud Platform that delivers virtual machines running in Google's data centers and worldwide fiber network. The Sumo Logic App for Google Compute Engine helps you monitor your infrastructure by providing preconfigured dashboards that allow you to view the activities, users, and message severity of your Google Compute Engine infrastructure.
 
+## Log Types
+* [Google Cloud Audit Logs](https://cloud.google.com/logging/docs/audit/) - These logs track events on multiple [GCP services](https://cloud.google.com/logging/docs/audit/#services), including Compute Engine, IAM, and App Engine.
+* [Compute Engine Activity Logs](https://cloud.google.com/compute/docs/activity-logs) - These logs provide information about Compute Engine API calls, operations, and system events.
+
 
 ## Collecting Logs for Google Compute Engine
 
 This page describes the Sumo pipeline for ingesting logs from Google Cloud Platform (GCP) services, and provides instructions for collecting logs from Google Compute Engine.
-
-### Log Types
-* [Google Cloud Audit Logs](https://cloud.google.com/logging/docs/audit/) - These logs track events on multiple [GCP services](https://cloud.google.com/logging/docs/audit/#services), including Compute Engine, IAM, and App Engine.
-* [Compute Engine Activity Logs](https://cloud.google.com/compute/docs/activity-logs) - These logs provide information about Compute Engine API calls, operations, and system events.
 
 
 ### Collection process for GCP services
@@ -28,13 +28,7 @@ The key components in the collection process for GCP services are Google Logs Ex
 
 The GCP service generates logs which are exported and published to a Google Pub/Sub topic through Stackdriver. You will then set up a Sumo Logic Google Cloud Platform source that subscribes to this topic and receives the exported log data.
 
-
-2
-
-
 Configuring collection for GCP uses the following process:
-
-
 
 1. Configure a GCP source on a hosted collector. You'll obtain the **HTTP URL for the source**, and then use Google Cloud Console to register the URL as a validated domain.  
 2. Create a topic in Google Pub/Sub and subscribe the GCP source URL to that topic.
@@ -42,8 +36,6 @@ Configuring collection for GCP uses the following process:
 
 See the following sections for configuration instructions.
 
-
-3
 Logs from GCP services can be [exported](https://cloud.google.com/logging/docs/export/configure_export_v2) to any destination including Stackdriver. It is not required to push the GCP logs into Stackdriver for the Sumo Logic Apps to work. Any GCP logs can be [excluded](https://cloud.google.com/logging/docs/exclusions) from Stackdriver logging and still can be [exported](https://cloud.google.com/logging/docs/export/) to Sumo logic.
 
 
@@ -51,8 +43,6 @@ Logs from GCP services can be [exported](https://cloud.google.com/logging/docs/e
 
 The Google Cloud Platform (GCP) Source receives log data from Google Pub/Sub.
 
-
-4
 You can use the same GCP Source to receive log data from multiple GCP services. For example, you can send logs collected from Google Cloud Application Engine, Google Cloud IAM, and Google Cloud Audit.
 
 However, this is not recommended since you cannot define specific Source Category values to each GCP service. If you create a GCP Source for each service you can define a specific Source Category to each service.
@@ -296,13 +286,13 @@ Version selection is applicable only to a few apps currently. For more informati
 
 
 
-1. To install the app, complete the following fields.
+3. To install the app, complete the following fields.
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
     2. **Data Source.** Select either of these options for the data source. 
         * Choose **Source Category**, and select a source category from the list. 
         * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). 
     3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-2. Click **Add to Library**.
+4. Click **Add to Library**.
 
 Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization.
 

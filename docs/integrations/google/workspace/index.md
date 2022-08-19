@@ -46,7 +46,7 @@ The events sections of logs are:
 ## Apps
 
 ### Google Workspace Login App
-2
+
 
 <table>
   <tr>
@@ -73,11 +73,8 @@ The events sections of logs are:
 
 
 ### Google Workspace Admin and Token Apps
-3
-
 
 These are actions performed by Google site administrators.
-
 
 <table>
   <tr>
@@ -110,8 +107,6 @@ These are actions performed by Google site administrators.
 
 
 ### Google Workspace Drive App
-4
-
 
 The Google Drive app logs come in two types: Access and acl_change. A single user action in Drive may generate several events. Of these, one is the primary event and the rest are side effects of that event. We look for the primary event.
 
@@ -119,15 +114,11 @@ Access types are such as viewing and downloading a document or folder. They also
 
 Acl_change types include who can edit a document or folder, including scope changes like what you do here:
 
-
-5
-
+<img src={useBaseUrl('img/integrations/google/google_scope.png')} alt="google_scope" />
 
 For document type (doc_type), Google only recognizes its own documents (for example, Document, Spreadsheet, and Presentation). Other document types (such as Excel, PDF, and MP4) are classified as unknown. In a Drive Dashboard Panel, we capture the Google types, and then use the file extension to classify the other types that would otherwise be displayed as unknown.
 
 
 ### Google Workspace Alert Center
-6
-
 
 Google Workspace Alert Center, allowing you to investigate and correlate alerts and monitor potential threats across all Google Workspace apps. All the alerts are in JSON format. Most of the alerts have few common fields like alertId, customerId, createTime, source, type and data. The differences are in the data section of the JSON where the alert type specific details are recorded. For more information about different alert types refer this Google Workspace [Alert document](https://developers.google.com/admin-sdk/alertcenter/reference/alert-types).

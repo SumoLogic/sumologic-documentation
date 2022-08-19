@@ -95,7 +95,7 @@ This section explains the steps to collect Apache Tomcat metrics from a Kubernet
 
 In Kubernetes environments, we use the Telegraf Operator, which is packaged with our Kubernetes collection. You can learn more on this[ here](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/telegraf-collection-architecture). Follow the steps listed below to collect metrics from a Kubernetes environment:
 
-1. [**Set up Kubernetes Collection with the Telegraf Operator**](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf.md#Install_Telegraf_in_a_Kubernetes_environment). Please ensure that you are monitoring your Kubernetes clusters with the Telegraf operator **enabled**. If you are not, then please follow [these instructions](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf.md#Install_Telegraf_in_a_Kubernetes_environment) to do so.
+1. [**Set up Kubernetes Collection with the Telegraf Operator**](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf). Please ensure that you are monitoring your Kubernetes clusters with the Telegraf operator **enabled**. If you are not, then please follow [these instructions](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf) to do so.
 2. **Install jolokia on your Tomcat Pod to use the Jolokia Telegraf Input Plugin**
 * Download the latest version of the Jolokia war file from: [https://jolokia.org/download.html](https://jolokia.org/download.html).
 * Rename the file from jolokia-war-X.X.X.war to jolokia.war
@@ -210,7 +210,7 @@ annotations:
     tag_keys = ["context","host"]
 ```
 
-Please enter in values for the following parameters (marked `CHANGEME` above):
+Enter in values for the following parameters (marked `CHANGEME` above):
 
 * `telegraf.influxdata.com/inputs` - This contains the required configuration for the Telegraf Tomcat Input plugin. Please refer[ to this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/redis) for more information on configuring the Tomcat input plugin for Telegraf. Note: As telegraf will be run as a sidecar the host should always be localhost.
     * In the input plugins section, which is `[[inputs.Tomcat]]`:
@@ -260,7 +260,7 @@ Follow the instructions below to capture Apache Tomcat logs from stdout on Kuber
 ```
 
 
-Please Enter in values for the following parameters (marked `CHANGEME` in the snippet above):
+Enter in values for the following parameters (marked `CHANGEME` in the snippet above):
 
 * `environment` - This is the deployment environment where the Tomcat farm identified by the value of servers resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
 * `Webserver_farm` - Enter a name to identify this Tomcat farm. This farm name will be shown in the Sumo Logic dashboards.
@@ -309,7 +309,7 @@ Labels created in Kubernetes environments automatically are prefixed with pod_la
 
 1. Go to **Manage Data > Logs > Field Extraction Rules**.
 2. Click the + Add button on the top right of the table.
-3. The following form appears:
+3. The **Add Field Extraction Rule** form will appear:
 
 
 1. Enter the following options:
@@ -788,7 +788,7 @@ Locate and install the app you need from the **App Catalog**. If you want to see
 
 Version selection is applicable only to a few apps currently. For more information, see the[ Install the Apps from the Library](/docs/get-started/library/install-apps).
 
-1. To install the app, complete the following fields.
+3. To install the app, complete the following fields.
 1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
 2. **Data Source.**
 * Choose **Enter a Custom Data Filter**, and enter a custom filter for Apache Tomcat  webserver farm. Examples:

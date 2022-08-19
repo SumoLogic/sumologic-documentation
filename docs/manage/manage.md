@@ -1,7 +1,7 @@
 ---
 id: manage
 slug: /manage
-title: Sumo Logic Account Management
+title: Manage Sumo
 description: Manage user accounts, Collectors and Sources, security, SEO, and other administrative details.
 ---
 

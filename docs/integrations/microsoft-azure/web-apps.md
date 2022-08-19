@@ -15,27 +15,38 @@ For more information on Azure Web Apps, see [https://azure.microsoft.com/en-us/s
 
 To install the Sumo Logic App for Azure Web Apps, you must sign up for a Sumo Logic account, if you have not already done so. To sign up, go to [https://www.sumologic.com/pricing/](https://www.sumologic.com/pricing/) and select your account type or click Free Trial to sign up for a Sumo Logic Free account.
 
-
-
-## Collect Logs for Azure Web Apps
-
-
-This section has instructions for configuring a pipeline for shipping Azure Web Apps logs from [Azure Monitor](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-get-started) to an Event Hub, on to an Azure Function, and finally to an HTTP source on a hosted collector in Sumo Logic. Click a link to jump to a topic:
-
-* [Solution Overview](#Solution_Overview)
-* [Configure an HTTP source](#Step_1:_Configure_an_HTTP_source)
-* [Configure Azure resources using ARM template](#Step_2:_Configure_Azure_Resources_using_ARM_template)
-* [Export logs for a particular Web App to Event Hub](#Step_3:_Export_logs_for_a_particular_Web_App_to_Event_Hub)
-* [Export metrics for a particular web app to Event Hub (Optional)](#Step_4:_Export_metrics_for_a_particular_web_app_to_Event_Hub_(Optional))
-* [Troubleshooting](#Troubleshooting)
-* [Sample Log Message](#Sample_Log_Message)
-* [Query Sample](#Query_Sample)
-
-### Log Types
+## Log Types
 
 The Azure Web Apps App supports:
 * **Web Server Logging. **Information about HTTP transactions using the [W3C extended log file format](http://msdn.microsoft.com/library/windows/desktop/aa814385.aspx). This is useful when determining overall site metrics such as the number of requests handled or how many requests are from a specific IP address.
 * **Application Diagnostics Logs.** Application diagnostics allows you to capture information produced by a web application. ASP.NET applications can use the [System.Diagnostics.Trace](http://msdn.microsoft.com/library/windows/desktop/aa814385.aspx) class to log information to the application diagnostics log.
+
+
+### Sample Log Message
+
+```json
+2017-09-25 23:27:36 eShopCart GET / X-ARR-LOG-ID=9b3056e8-21d5-43f7-8fd7-4aec6b29525e
+80 - 60.4.192.44 Mozilla/5.0+(Macintosh+NT+6.3;+WOW64)+AppleWebKit/537.36+(KHTML,
++like+Gecko)+Chrome/60.4.192.44+Safari/537.36 PHPSESSID=tv2iv6tn8c9su542l464ibaro5;
++ARRAffinity=d6c6606b1a249bd37139b09d6c2cb4dd61f6b5cd607f934012aca86bd59515444 -
+eShopCart.azurewebsites.net 200 0 0 3098 1008 1000
+```
+
+
+### Sample Query
+
+```sql title="Traffic over time outlier"
+_sourceCategory=Azure/Web-app
+| parse regex "\d+-\d+-\d+ \d+:\d+:\d+ (?<s_sitename>\S+) (?<cs_method>\S+) (?<cs_uri_stem>\S+) (?<cs_uri_query>\S+) (?<src_port>\S+) (?<src_user>\S+) (?<client_ip>\S+) (?<cs_user_agent>\S+) (?<cs_cookie>\S+) (?<cs_referrer>\S+) (?<cs_host>\S+) (?<sc_status>\S+) (?<sc_substatus>\S+) (?<sc_win32_status>\S+) (?<sc_bytes>\S+) (?<cs_bytes>\S+) (?<time_taken>\S+)"
+| timeslice 5m
+| count by _timeslice
+| outlier _count
+```
+
+
+## Collecting Logs for Azure Web Apps
+
+This section has instructions for configuring a pipeline for shipping Azure Web Apps logs from [Azure Monitor](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-get-started) to an Event Hub, on to an Azure Function, and finally to an HTTP source on a hosted collector in Sumo Logic.
 
 
 ### Solution Overview
@@ -46,14 +57,11 @@ The following is how the solution fits together:
 * The Azure function is a small piece of code that is triggered by Event Hub to send logs to the Sumo HTTP Source, function logs to one Storage Account, and failover data to another.
 
 
-#### Configure an HTTP source  
-
+### Configure an HTTP source  
 
 In this task, you configure an HTTP source to receive logs from the Azure function.
 
 To configure an HTTP source for Azure, do the following:
-
-
 
 1. Do one of the following:
 * Select a hosted collector on which to configure the HTTP source.
@@ -61,18 +69,15 @@ To configure an HTTP source for Azure, do the following:
 1. Configure an HTTP source, as described on [HTTP Logs and Metrics Source](/docs/send-data/sources/sources-hosted-collectors/http-logs-metrics-source). Make a note of the URL for the source, you will need it in the next step.
 
 
-#### Configure Azure Resources using ARM template
+### Configure Azure Resources using ARM template
 
 In this step, you use a Sumo-provided Azure Resource Manager (ARM) template to create an Event Hub, an Azure function and two Storage Accounts. The Azure function is triggered by Event Hub. Two storage accounts are used to store log messages from the Azure function and failover data from Event Hub.
 
 1. Download the [azuredeploy_logs.json ](https://s3.amazonaws.com/appdev-cloudformation-templates/azuredeploy_logs.json)ARM template.
 2. Go to **Template deployment** in the Azure Portal.
-5
-
 3. Click **Create**.
 4. On the **Custom deployment** blade, click **Build your own template in the editor.**
 5. Copy the contents of `azuredeploy_logs.json`, and paste it into the editor window.
-6
 
 6. Click **Save.**
 7. Now you are back on the **Custom deployment** blade.
@@ -80,34 +85,21 @@ In this step, you use a Sumo-provided Azure Resource Manager (ARM) template to c
     2. Choose Location.
     3. In the **Sumo Endpoint URL** field, enter the URL of the HTTP Source you configured in [Step 1](#Step_1._Configure_an_HTTP_source).
     4. Agree to the terms and conditions.
-    5. Click **Purchase**. \
-
-7
-
-8. Verify the deployment was successful by looking at **Notifications** at the top right corner of Azure Portal. \
-
-
-
-9. **(Optional)** In the same window, you can click **Go to resource group** to verify all resources have been created successfully. You will see something like this: \
-
-
-
+    5. Click **Purchase**.
+8. Verify the deployment was successful by looking at **Notifications** at the top right corner of Azure Portal.
+9. **(Optional)** In the same window, you can click **Go to resource group** to verify all resources have been created successfully. You will see something like this:
 10. Go to **Storage accounts** and search for “sumofailmsg**”. **Click on `sumofailmsg_<random-string>`.
-
 11. Under **Blob Service**, click **Containers**, then click **+ Container**, enter the Name** azureaudit-failover**, and select **Private** for the **Public Access Level**. Click **OK**.
 
 
-
-12
 If you also want to also collect metrics follow the instructions in [Step 2 for Collecting metrics from Azure monitor.](#step-2-configure-azure-resources-using-arm-template) The app dashboards currently do not have metric content.
 
 
-#### Export logs for a particular Web App to Event Hub
+### Export logs for a particular Web App to Event Hub
 
 In this task, you enable logs for your Azure Web app. For related information see [Enable diagnostics logging for web apps in Azure App Service](https://docs.microsoft.com/en-us/azure/app-service/troubleshoot-diagnostic-logs#send-logs-to-azure-monitor-preview) in the Azure help documentation.
 
-**To enable logs for an Azure web app, do the following:
-
+To enable logs for an Azure web app, do the following:
 1. Login to [https://portal.azure.com/](https://portal.azure.com/).
 2. Go to your Azure Web App and in the left pane, go to **Monitoring >** **Diagnostics Settings.**
 
@@ -122,9 +114,7 @@ In this task, you enable logs for your Azure Web app. For related information se
 8. Click **Save**.
 
 
-
-
-#### Export metrics for a particular web app to Event Hub (Optional)
+### Export metrics for a particular web app to Event Hub (Optional)
 
 The current Sumo Logic App for Web Apps does not support metric content so this step is optional. For exporting metrics you need to create another diagnostic setting and select All Metrics only with the following Event Hub configurations.
 
@@ -135,40 +125,10 @@ The current Sumo Logic App for Web Apps does not support metric content so this 
 **Event Hub Policy. **RootManageSharedAccessKey
 
 
-
 ### Troubleshooting  
 
 If logs are not flowing into Sumo Logic, see [Troubleshooting](/docs/send-data/collect-from-other-data-sources/azure-monitoring/collect-logs-azure-monitor#Troubleshooting_log_collection).
 
-
-### Sample Log Message
-
-
-```
-2017-09-25 23:27:36 eShopCart GET / X-ARR-LOG-ID=9b3056e8-21d5-43f7-8fd7-4aec6b29525e
-80 - 60.4.192.44 Mozilla/5.0+(Macintosh+NT+6.3;+WOW64)+AppleWebKit/537.36+(KHTML,
-+like+Gecko)+Chrome/60.4.192.44+Safari/537.36 PHPSESSID=tv2iv6tn8c9su542l464ibaro5;
-+ARRAffinity=d6c6606b1a249bd37139b09d6c2cb4dd61f6b5cd607f934012aca86bd59515444 -
-eShopCart.azurewebsites.net 200 0 0 3098 1008 1000
-```
-
-
-
-### Query Sample
-18
-
-
-**Traffic over time outlier**
-
-
-```
-_sourceCategory=Azure/Web-app
-| parse regex "\d+-\d+-\d+ \d+:\d+:\d+ (?<s_sitename>\S+) (?<cs_method>\S+) (?<cs_uri_stem>\S+) (?<cs_uri_query>\S+) (?<src_port>\S+) (?<src_user>\S+) (?<client_ip>\S+) (?<cs_user_agent>\S+) (?<cs_cookie>\S+) (?<cs_referrer>\S+) (?<cs_host>\S+) (?<sc_status>\S+) (?<sc_substatus>\S+) (?<sc_win32_status>\S+) (?<sc_bytes>\S+) (?<cs_bytes>\S+) (?<time_taken>\S+)"
-| timeslice 5m
-| count by _timeslice
-| outlier _count
-
-```
 
 
 ## Installing the Azure Web Apps App
@@ -179,24 +139,15 @@ To install the app:
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
-
-
 1. From the **App Catalog**, search for and select the app**.**
-2. Select the version of the service you're using and click **Add to Library**.
-
-
-20
-Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/library/install-apps)
-
-
-
-1. To install the app, complete the following fields.
+2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/library/install-apps)
+3. To install the app, complete the following fields.
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
     2. **Data Source.** Select either of these options for the data source. 
         * Choose **Source Category**, and select a source category from the list. 
         * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). 
     3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-2. Click **Add to Library**.
+4. Click **Add to Library**.
 
 Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization.
 
@@ -204,8 +155,6 @@ Panels will start to fill automatically. It's important to note that each panel 
 
 
 ## Viewing Azure Web Apps Dashboards
-
-
 
 ### Overview
 

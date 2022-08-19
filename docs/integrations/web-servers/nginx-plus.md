@@ -74,10 +74,10 @@ HTTP/1.1", host: "example.com", referrer: "https://abc.example.com/"
 
 ### Sample Queries
 
-This sample Query is from the [Nginx Plus - Overview](#overview) dashboard > **Responses Over Time** panel .
+This sample Query is from the [Nginx Plus - Overview](#overview) dashboard > **Responses Over Time** panel.
 
 ```
-_sourcecategory=Labs/Nginx/Logs
+_sourceCategory=Labs/Nginx/Logs
 | json auto maxdepth 1 nodrop
 | if (isEmpty(log), _raw, log) as nginx_log_message
 | parse regex field=nginx_log_message "(?<Client_Ip>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})"
@@ -91,6 +91,171 @@ _sourcecategory=Labs/Nginx/Logs
 | sum(Successes) as Successes, sum(Client_Errors) as Client_Errors,  sum(Redirects) as Redirects, sum(Server_Errors) as Server_Errors by _timeslice
 | sort by _timeslice asc
 ```
+
+## Collecting Logs and Metrics for Nginx Plus
+
+This section provides instructions for configuring log and metric collection for the Sumo Logic App for Nginx Plus. Sumo Logic supports a collection of logs and metrics data from Nginx Plus in both Kubernetes and non-Kubernetes environments. Click on the appropriate links below based on the environment where your Nginx Plus servers are hosted.
+
+<Tabs
+  groupId="k8s-nonk8s"
+  defaultValue="k8s"
+  values={[
+    {label: 'Kubernetes environments', value: 'k8s'},
+    {label: 'Non-Kubernetes environments', value: 'non-k8s'},
+  ]}>
+
+<TabItem value="k8s">
+
+### For Kubernetes environments
+
+In Kubernetes environments, we use the Telegraf Operator, which is packaged with our Kubernetes collection. You can learn more about it [here](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/telegraf-collection-architecture). The diagram below illustrates how data is collected from Nginx Plus in Kubernetes environments. In the architecture shown below, there are four services that make up the metric collection pipeline: Telegraf, Prometheus, Fluentd and FluentBit.<br/><img src={useBaseUrl('img/integrations/web-servers/nginxplus-k8s.png')} alt="nginxplus-k8s" />
+
+The first service in the pipeline is Telegraf. Telegraf collects metrics from Nginx Plus. Note that we’re running Telegraf in each pod we want to collect metrics from as a sidecar deployment: i.e. Telegraf runs in the same pod as the containers it monitors. Telegraf uses the Nginx Plus input plugin to obtain metrics. (For simplicity, the diagram doesn’t show the input plugins.) The injection of the Telegraf sidecar container is done by the Telegraf Operator. We also have Fluentbit that collects logs written to standard out and forwards them to FluentD, which in turn sends all the logs and metrics data to a Sumo Logic HTTP Source.
+
+#### Collect Logs for Nginx Plus in Kubernetes environment
+
+Nginx Plus app supports the default access logs and error logs format.
+
+1. Before you can configure Sumo Logic to ingest logs, you must configure the logging of errors and processed requests in NGINX Open Source and NGINX Plus. For instructions, refer to the [Ngnix Plus Configuring Logging documentation](https://www.nginx.com/resources/admin-guide/logging-and-monitoring/).
+2. Use the Sumologic-Kubernetes-Collection, to send the logs to Sumologic. For more information, [visit](/docs/observability/kubernetes-solution/collection-setup).
+3. Identifying the logs metadata: For example, to get **Logs** data from the pod, you can use the following source `_sourcecategory = "kubernetes/default/nginx"` where `kubernetes` is Cluster name, `default` is Namespace, `nginx` is application.
+4. To get log data from Nginx Pods - all nginx logs must be redirected to standard output “**stdout**” and standard error “**stderr**”.
+
+
+#### Collect Metrics for Nginx Plus in Kubernetes environment  
+
+Nginx Plus app supports the metrics for Nginx Plus.
+
+The following steps assume you are collecting Nginx Plus metrics from a Kubernetes environment. In Kubernetes environments, we use the Telegraf Operator, which is packaged with our Kubernetes collection. You can learn more about this[ here](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/telegraf-collection-architecture).
+
+1. Before you can configure Sumo Logic to ingest metrics, you must enable the API module to expose metrics in NGINX Plus.
+    * For instructions on Nginx Plus, refer to the following documentation [https://docs.nginx.com/nginx/admin-guide/monitoring/live-activity-monitoring/](https://docs.nginx.com/nginx/admin-guide/monitoring/live-activity-monitoring/).
+    * Make a note of the URL where the API is exposed. It will match the format like [https://localhost:8080/api](https://localhost:8080/api).
+2. [Set up Kubernetes Collection with the Telegraf Operator.](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf)
+3. On your Nginx Plus Pods, add the following annotations to configure Telegraf.
+   ```sql
+   annotations:
+        telegraf.influxdata.com/inputs: |+
+        [[inputs.nginx_plus_api]]
+           urls = ["http://localhost:8080/api"]
+           response_timeout = "5s"
+           api_version = 6
+        telegraf.influxdata.com/class: sumologic-prometheus
+        prometheus.io/scrape: "true"
+        prometheus.io/port: "9273"
+   ```
+
+* `telegraf.influxdata.com/inputs` - This contains the required configuration for the Telegraf Nginx Plus Input plugin. Please refer [to this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/nginx_plus_api) for more information on configuring the Nginx input plugin for Telegraf. Note since telegraf will be run as a sidecar the host should always be localhost
+* `telegraf.influxdata.com/class: sumologic-prometheus` - This instructs the Telegraf operator what output to use. This should not be changed.
+* `prometheus.io/scrape: "true"` - This ensures our Prometheus will scrape the metrics.
+* `prometheus.io/port: "9273"` - This tells Prometheus what ports to scrape on. This should not be changed.
+
+</TabItem>
+<TabItem value="non-k8s">
+
+### For Non-Kubernetes environments
+
+We use the Telegraf operator for Nginx Plus metric collection and Sumo Logic Installed Collector for collecting Nginx Plus logs. The diagram below illustrates the components of the Nginx Plus collection in a non-Kubernetes environment.<br/><img src={useBaseUrl('img/integrations/web-servers/nginxplus-nonk8s.png')} alt="nginxplus-nonk8s" />
+
+Telegraf runs on the same system as Nginx Plus, and uses the [Nginx Plus input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/nginx_plus_api) to obtain Nginx Plus metrics, and the Sumo Logic output plugin to send the metrics to Sumo Logic. Logs from Nginx on the other hand are sent to either a Sumo Logic Local File source.
+
+#### Collect Logs for Nginx Plus in Non-Kubernetes environment
+
+Nginx Plus app supports the default access logs and error logs format.
+
+This section provides instructions for configuring log collection for the Sumo Logic App for Nginx Plus. Follow the instructions below to set up the Log collection.
+
+1. **Configure logging in Nginx**. Before you can configure Sumo Logic to ingest logs, you must configure the logging of errors and processed requests in NGINX Open Source and NGINX Plus. For instructions, refer to the following documentation: [https://www.nginx.com/resources/admin-guide/logging-and-monitoring/](https://www.nginx.com/resources/admin-guide/logging-and-monitoring/)
+2. **Configure a Collector**. Use one of the following Sumo Logic Collector options:
+   * To collect logs directly from the Nginx Plus machine, configure an [Installed Collector](/docs/send-data/Installed-Collectors).
+   * If you're using a service like Fluentd, or you would like to upload your logs manually, [Create a Hosted Collector](/docs/send-data/Hosted-Collectors#Create_a_Hosted_Collector).
+3. **Configure a Source**. Choose a method:
+
+<details><summary>For an Installed Collector</summary>
+
+To collect logs directly from your Nginx Plus machine, use an Installed Collector and a Local File Source.
+
+1. Add a [Local File Source](/docs/send-data/Sources/sources-installed-collectors/Local-File-Source).
+2. Configure the Local File Source fields as follows:
+    * **Name.** (Required)
+    * **Description.** (Optional)
+    * **File Path (Required).** Enter the path to your error.log or access.log. The files are typically located in `/var/log/nginx/*.log`. If you're using a customized path, check the nginx.conf file for this information. If you're using Passenger, you may have instructed Passenger to log to a specific log using the passenger_log_file option.
+    * **Source Host.** Sumo Logic uses the hostname assigned by the OS unless you enter a different hostname.
+    * **Source Category.** Enter any string to tag the output collected from this Source, such as **Nginx/Access** or **Nginx/Error**. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details, see[ Best Practices](/docs/send-data/design-deployment/best-practices-source-categories).)
+3. Configure the **Advanced** section:
+    * **Enable Timestamp Parsing.** Select Extract timestamp information from log file entries.
+    * **Time Zone.** Automatically detect.
+    * **Timestamp Format.** The timestamp format is automatically detected.
+    * **Encoding. **Select** **UTF-8 (Default).
+    * **Enable Multiline Processing.**
+        * **Error** **logs. **Select **Detect messages spanning multiple lines** and **Infer Boundaries - Detect message boundaries automatically**.
+        * **Access** **logs. **These are single-line logs, uncheck **Detect messages spanning multiple lines**.
+4. Click **Save**.
+
+</details>
+
+<details><summary>For a Hosted Collector</summary>
+
+If you're using a service like Fluentd, or you would like to upload your logs manually, use a Hosted Collector and an HTTP Source.
+
+1. Add an[ HTTP Source](/docs/send-data/sources/sources-hosted-collectors/http-logs-metrics-source).
+2. Configure the HTTP Source fields as follows:
+    * **Name.** (Required)
+    * **Description.** (Optional)
+    * **Source Host.** Sumo Logic uses the hostname assigned by the OS unless you enter a different hostname.
+    * **Source Category.** Enter any string to tag the output collected from this Source, such as **Nginx/Access** or **Nginx/Error**. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details see[ Best Practices](/docs/send-data/design-deployment/best-practices-source-categories).)
+3. Configure the **Advanced** section:
+    * **Enable Timestamp Parsing.** Select **Extract timestamp information from log file entries**.
+    * **Time Zone.** For Access logs, use the time zone from the log file. For Error logs, make sure to select the correct time zone.
+    * **Timestamp Format.** The timestamp format is automatically detected.
+    * **Enable Multiline Processing.**
+        * **Error** **logs**: Select **Detect messages spanning multiple lines** and **Infer Boundaries - Detect message boundaries automatically**.
+        * **Access** **logs**: These are single-line logs, uncheck **Detect messages spanning multiple lines**.
+4. Click **Save**.
+5. When the URL associated with the HTTP Source is displayed, copy the URL so you can add it to the service you are using, such as Fluentd.
+
+</details>
+
+#### Collect Metrics for Nginx Plus in Non-Kubernetes environment
+
+Nginx Plus app supports the metrics for Nginx Plus.
+
+This section provides instructions for configuring metrics collection for the Sumo Logic App for Nginx Plus. Follow the below instructions to set up the metric collection.
+
+1. **Configure Metrics in Nginx Plus**. Before you can configure Sumo Logic to ingest metrics, you must enable API module to expose metrics in NGINX Plus.
+   * The live activity monitoring data is generated by the [NGINX Plus API](https://nginx.org/en/docs/http/ngx_http_api_module.html). Visit [live activity monitoring](https://www.nginx.com/products/nginx/live-activity-monitoring/) to configure the API module.
+   * Make a note of the URL where the API is exposed. It will match the format like[ http://localhost/api](https://127.0.0.1:8080/nginx_status).
+2. **Configure a Hosted Collector**. To create a new Sumo Logic hosted collector, perform the steps in the[ Create a Hosted Collector](/docs/send-data/configure-hosted-collector) section of the Sumo Logic documentation.
+3. **Configure a Metrics Source**. Create a new HTTP Logs and Metrics Source in the hosted collector created above by following [these instructions](/docs/send-data/sources/sources-hosted-collectors/http-logs-metrics-source). Make a note of the HTTP Source URL.
+4. **Install Telegraf**. Use the[ following steps](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf.md#install-telegraf-in-a-non-kubernetes-environment) to install Telegraf.
+5. **Configure and start Telegraf**. Create a file called telegraf.conf and add the appropriate configuration. The following is a basic example:
+```sql
+[agent]
+  interval = "60s"
+-- Read Nginx Plus full API information (ngx_http_api_module)
+[[inputs.nginx_plus_api]]
+-- An array of Nginx Plus API URLs to gather stats.
+ urls = ["http://localhost/api"]
+-- HTTP response timeout (default: 5s)
+ response_timeout = "5s"
+-- Nginx Plus API version, default: 3
+ api_version = 6
+[[outputs.sumologic]]
+  url = "<URL Created in Step 3>"
+  data_format = "prometheus"
+```
+
+* `interval` - This is the frequency to send data to Sumo Logic, in this example, we will send the metrics every 60 seconds. Please refer to [this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#Configuring-Telegraf) for more parameters that can be configured in the Telegraf agent globally.
+* `urls` - The url to the Nginx Plus server with the API enabled. This can be a comma-separated list to connect to multiple Nginx Plus servers. Please refer [to this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/nginx_plus_api) for more information on configuring the Nginx API input plugin for Telegraf.
+* `url` - This is the HTTP source URL created in step 3. Please refer[ to this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/configure-telegraf-output-plugin.md) for more information on configuring the Sumo Logic Telegraf output plugin.
+* `data_format` - The format to use when sending data to Sumo Logic. Please refer[ to this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/configure-telegraf-output-plugin.md) for more information on configuring the Sumo Logic Telegraf output plugin.
+6. Once you have finalized your telegraf.conf file, you can run the following command to start telegraf.
+  ```bash
+  telegraf --config /path/to/telegraf.conf
+  ```
+
+</TabItem>
+</Tabs>
 
 
 ### Field Extraction Rules
@@ -111,7 +276,6 @@ For **FER for Access Logs**, use the following Parse Expression:
 "\s(?<Status_Code>\d+)\s(?<Size>[\d-]+)\s\"(?<Referrer>.*?)\"\s\"(?<User_Agent>.+?)\".*"
 ```
 
-
 For **FER for Error Logs**, use the following Parse Expression:
 
 ```sql
@@ -122,275 +286,43 @@ For **FER for Error Logs**, use the following Parse Expression:
 \"*\"" as Client_Ip, Server, Method, URL, Host nodrop
 ```
 
-
-## Collecting Logs and Metrics for Nginx Plus
-
-This section provides instructions for configuring log and metric collection for the Sumo Logic App for Nginx Plus. Sumo Logic supports a collection of logs and metrics data from Nginx Plus in both Kubernetes and non-Kubernetes environments. Click on the appropriate links below based on the environment where your Nginx Plus servers are hosted.
-
-<Tabs
-  groupId="k8s-nonk8s"
-  defaultValue="k8s"
-  values={[
-    {label: 'Kubernetes environments', value: 'k8s'},
-    {label: 'Non-Kubernetes environments', value: 'non-k8s'},
-  ]}>
-
-<TabItem value="k8s">
-
-In Kubernetes environments, we use the Telegraf Operator, which is packaged with our Kubernetes collection. You can learn more about it [here](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/telegraf-collection-architecture). The diagram below illustrates how data is collected from Nginx Plus in Kubernetes environments. In the architecture shown below, there are four services that make up the metric collection pipeline: Telegraf, Prometheus, Fluentd and FluentBit.<br/><img src={useBaseUrl('img/integrations/web-servers/nginxplus-k8s.png')} alt="nginxplus-k8s" />
-
-The first service in the pipeline is Telegraf. Telegraf collects metrics from Nginx Plus. Note that we’re running Telegraf in each pod we want to collect metrics from as a sidecar deployment: i.e. Telegraf runs in the same pod as the containers it monitors. Telegraf uses the Nginx Plus input plugin to obtain metrics. (For simplicity, the diagram doesn’t show the input plugins.) The injection of the Telegraf sidecar container is done by the Telegraf Operator. We also have Fluentbit that collects logs written to standard out and forwards them to FluentD, which in turn sends all the logs and metrics data to a Sumo Logic HTTP Source.
-
-Configuring log and metric collection for the Nginx Plus App includes the following tasks:
-* Step 1: Collect Logs
-* Step 2: Collect Metrics
-
-
-#### Step 1: Collect Logs for Nginx Plus in Kubernetes environment
-
-Nginx Plus app supports the default access logs and error logs format.
-
-1. Configure logging in Nginx Plus
-
-Before you can configure Sumo Logic to ingest logs, you must configure the logging of errors and processed requests in NGINX Open Source and NGINX Plus. For instructions, refer to the following documentation:
-
-[https://www.nginx.com/resources/admin-guide/logging-and-monitoring/](https://www.nginx.com/resources/admin-guide/logging-and-monitoring/)
-
-2. Use the Sumologic-Kubernetes-Collection, to send the logs to Sumologic. For more information,[ visit](/docs/observability/kubernetes-solution/collection-setup).
-
-3. Identifying the logs metadata: For example, to get **Logs** data from the pod, you can use the following source  `_sourcecategory = "kubernetes/default/nginx"` where `kubernetes` is Cluster name, `default` is Namespace, `nginx` is application.
-
-4. To get log data from Nginx Pods - all nginx logs must be redirected to standard output “**stdout**” and standard error “**stderr**”.
-
-
-#### Step 2: Collect Metrics for Nginx Plus in Kubernetes environment  
-
-Nginx Plus app supports the metrics for Nginx Plus.
-
-The following steps assume you are collecting Nginx Plus metrics from a Kubernetes environment. In Kubernetes environments, we use the Telegraf Operator, which is packaged with our Kubernetes collection. You can learn more about this[ here](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/telegraf-collection-architecture).
-
-1. Before you can configure Sumo Logic to ingest metrics, you must enable the API module to expose metrics in NGINX Plus.
-    * For instructions on Nginx Plus, refer to the following documentation [https://docs.nginx.com/nginx/admin-guide/monitoring/live-activity-monitoring/](https://docs.nginx.com/nginx/admin-guide/monitoring/live-activity-monitoring/).
-    * Make a note of the URL where the API is exposed. It will match the format like [https://localhost:8080/api](https://localhost:8080/api).
-2. [Set up Kubernetes Collection with the Telegraf Operator.](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf.md#Install_Telegraf_in_a_Kubernetes_environment)
-3. On your Nginx Plus Pods, add the following annotations to configure Telegraf.
-
-```sql
-annotations:
-        telegraf.influxdata.com/inputs: |+
-        [[inputs.nginx_plus_api]]
-           urls = ["http://localhost:8080/api"]
-           response_timeout = "5s"
-           api_version = 6
-        telegraf.influxdata.com/class: sumologic-prometheus
-        prometheus.io/scrape: "true"
-        prometheus.io/port: "9273"
-```
-
-* `telegraf.influxdata.com/inputs` - This contains the required configuration for the Telegraf Nginx Plus Input plugin. Please refer [to this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/nginx_plus_api) for more information on configuring the Nginx input plugin for Telegraf. Note since telegraf will be run as a sidecar the host should always be localhost
-* `telegraf.influxdata.com/class: sumologic-prometheus` - This instructs the Telegraf operator what output to use. This should not be changed.
-* `prometheus.io/scrape: "true"` - This ensures our Prometheus will scrape the metrics.
-* `prometheus.io/port: "9273"` - This tells Prometheus what ports to scrape on. This should not be changed.
-
-</TabItem>
-<TabItem value="non-k8s">
-
-We use the Telegraf operator for Nginx Plus metric collection and Sumo Logic Installed Collector for collecting Nginx Plus logs. The diagram below illustrates the components of the Nginx Plus collection in a non-Kubernetes environment.<br/><img src={useBaseUrl('img/integrations/web-servers/nginxplus-nonk8s.png')} alt="nginxplus-nonk8s" />
-
-
-Telegraf runs on the same system as Nginx Plus, and uses the [Nginx Plus input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/nginx_plus_api) to obtain Nginx Plus metrics, and the Sumo Logic output plugin to send the metrics to Sumo Logic. Logs from Nginx on the other hand are sent to either a Sumo Logic Local File source.
-
-Configuring log and metric collection for the Nginx Plus App includes the following tasks:
-
-* Step 1: Collect Logs for Nginx Plus
-   * Configure logging in Nginx Plus
-   * Configure a Collector
-   * Configure a Source
-
-* Step 2: Collect Metrics for Nginx Plus
-   * Configure Metrics in Nginx Plus
-   * Configure a Hosted Collector
-   * Configure a Metrics Source
-   * Install Telegraf
-   * Configure Telegraf and Forward Metrics to Sumo Logic
-
-
-#### Step 1: Collect Logs for Nginx Plus in Non-Kubernetes environment
-
-Nginx Plus app supports the default access logs and error logs format.
-
-This section provides instructions for configuring log collection for the Sumo Logic App for Nginx Plus. Follow the instructions below to set up the Log collection.
-
-1. Configure logging in Nginx
-
-Before you can configure Sumo Logic to ingest logs, you must configure the logging of errors and processed requests in NGINX Open Source and NGINX Plus. For instructions, refer to the following documentation: [https://www.nginx.com/resources/admin-guide/logging-and-monitoring/](https://www.nginx.com/resources/admin-guide/logging-and-monitoring/)
-
-
-2. Configure a Collector
-
-Use one of the following Sumo Logic Collector options:
-
-1. To collect logs directly from the Nginx Plus machine, configure an[ Installed Collector](/docs/send-data/Installed-Collectors).
-2. If you're using a service like Fluentd, or you would like to upload your logs manually, [Create a Hosted Collector](/docs/send-data/Hosted-Collectors#Create_a_Hosted_Collector).
-
-3. Configure a Source
-
-
-**For an Installed Collector**
-
-To collect logs directly from your Nginx Plus machine, use an Installed Collector and a Local File Source.
-
-1. Add a[ Local File Source](/docs/send-data/Sources/sources-installed-collectors/Local-File-Source).
-2. Configure the Local File Source fields as follows:
-    * **Name.** (Required)
-    * **Description.** (Optional)
-    * **File Path (Required).** Enter the path to your error.log or access.log. The files are typically located in /var/log/nginx/*.log. If you're using a customized path, check the nginx.conf file for this information. If you're using Passenger, you may have instructed Passenger to log to a specific log using the passenger_log_file option.
-    * **Source Host.** Sumo Logic uses the hostname assigned by the OS unless you enter a different hostname.
-    * **Source Category.** Enter any string to tag the output collected from this Source, such as **Nginx/Access** or **Nginx/Error**. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details see[ Best Practices](/docs/send-data/design-deployment/best-practices-source-categories).)
-3. Configure the **Advanced** section:
-    * **Enable Timestamp Parsing.** Select Extract timestamp information from log file entries.
-    * **Time Zone.** Automatically detect.
-    * **Timestamp Format.** The timestamp format is automatically detected.
-    * **Encoding. **Select** **UTF-8 (Default).
-    * **Enable Multiline Processing.**
-        * **Error** **logs. **Select **Detect messages spanning multiple lines** and **Infer Boundaries - Detect message boundaries automatically**.
-        * **Access** **logs. **These are single-line logs, uncheck **Detect messages spanning multiple lines**.
-4. Click **Save**.
-
-**For a Hosted Collector**
-
-If you're using a service like Fluentd, or you would like to upload your logs manually, use a Hosted Collector and an HTTP Source.
-
-1. Add an[ HTTP Source](/docs/send-data/sources/sources-hosted-collectors/http-logs-metrics-source).
-2. Configure the HTTP Source fields as follows:
-    * **Name.** (Required)
-    * **Description.** (Optional)
-    * **Source Host.** Sumo Logic uses the hostname assigned by the OS unless you enter a different hostname.
-    * **Source Category.** Enter any string to tag the output collected from this Source, such as **Nginx/Access** or **Nginx/Error**. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details see[ Best Practices](/docs/send-data/design-deployment/best-practices-source-categories).)
-3. Configure the **Advanced** section:
-    * **Enable Timestamp Parsing.** Select **Extract timestamp information from log file entries**.
-    * **Time Zone.** For Access logs, use the time zone from the log file. For Error logs, make sure to select the correct time zone.
-    * **Timestamp Format.** The timestamp format is automatically detected.
-    * **Enable Multiline Processing.**
-        * **Error** **logs**: Select **Detect messages spanning multiple lines** and **Infer Boundaries - Detect message boundaries automatically**.
-        * **Access** **logs**: These are single-line logs, uncheck **Detect messages spanning multiple lines**.
-4. Click **Save**.
-5. When the URL associated with the HTTP Source is displayed, copy the URL so you can add it to the service you are using, such as Fluentd.
-
-
-#### Step 2: Collect Metrics for Nginx Plus in Non-Kubernetes environment
-
-Nginx Plus app supports the metrics for Nginx Plus.
-
-This section provides instructions for configuring metrics collection for the Sumo Logic App for Nginx Plus. Follow the below instructions to set up the metric collection.
-
-1. Configure Metrics in Nginx Plus
-
-
-Before you can configure Sumo Logic to ingest metrics, you must enable API module to expose metrics in NGINX Plus.
-
-* The live activity monitoring data is generated by the [NGINX Plus API](https://nginx.org/en/docs/http/ngx_http_api_module.html). Visit [live activity monitoring](https://www.nginx.com/products/nginx/live-activity-monitoring/) to configure the API module.
-* Make a note of the URL where the API is exposed. It will match the format like[ http://localhost/api](https://127.0.0.1:8080/nginx_status).
-
-2. Configure a Hosted Collector
-
-To create a new Sumo Logic hosted collector, perform the steps in the[ Create a Hosted Collector](/docs/send-data/configure-hosted-collector) section of the Sumo Logic documentation.
-
-3. Configure a Metrics Source
-
-Create a new HTTP Logs and Metrics Source in the hosted collector created above by following[ these instructions. ](/docs/send-data/sources/sources-hosted-collectors/http-logs-metrics-source)
-
-Make a note of the HTTP** Source URL**.
-
-4. Install Telegraf
-
-Use the[ following steps](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf.md#install-telegraf-in-a-non-kubernetes-environment) to install Telegraf.
-
-
-5. Configure and start Telegraf
-
-Create a file called telegraf.conf and add the appropriate configuration. The following is a basic example:
-
-```sql
-[agent]
-  interval = "60s"
-# Read Nginx Plus full API information (ngx_http_api_module)
-[[inputs.nginx_plus_api]]
- # An array of Nginx Plus API URLs to gather stats.
- urls = ["http://localhost/api"]
- # HTTP response timeout (default: 5s)
- response_timeout = "5s"
-  # Nginx Plus API version, default: 3
- api_version = 6
-[[outputs.sumologic]]
-  url = "<URL Created in Step 3>"
-  data_format = "prometheus"
-```
-
-* `interval` - This is the frequency to send data to Sumo Logic, in this example, we will send the metrics every 60 seconds. Please refer to[ this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf#Configuring-Telegraf) for more parameters that can be configured in the Telegraf agent globally.
-* `urls` - The url to the Nginx Plus server with the API enabled. This can be a comma-separated list to connect to multiple Nginx Plus servers. Please refer[ to this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/nginx_plus_api) for more information on configuring the Nginx API input plugin for Telegraf.
-* `url` - This is the HTTP source URL created in step 3. Please refer[ to this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/configure-telegraf-output-plugin.md) for more information on configuring the Sumo Logic Telegraf output plugin.
-* `data_format` - The format to use when sending data to Sumo Logic. Please refer[ to this doc](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/configure-telegraf-output-plugin.md) for more information on configuring the Sumo Logic Telegraf output plugin.
-
-Once you have finalized your telegraf.conf file, you can run the following command to start telegraf.
-```bash
-telegraf --config /path/to/telegraf.conf
-```
-
-</TabItem>
-</Tabs>
-
 ## Installing Nginx Plus Monitors
 
 To install these alerts, you need to have the [Manage Monitors](/docs/manage/users-and-roles/roles/role-capabilities) role capability.
 
 Alerts can be installed by either importing them via a JSON or via a Terraform script.
 
-
 ### Method A: Importing a JSON file
 
 1. Download the [JSON file](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/blob/main/monitor_packages/nginx-plus/nginxplus.json) describing all the monitors.
-2. Replace **$$logs_data_source** and** $$metric_data_source** with logs and metrics data sources respectively.
-    1. For example, `_sourceCategory=Labs/Nginx/Plus/Logs`
+2. Replace **$$logs_data_source** and** $$metric_data_source** with logs and metrics data sources respectively. For example, `_sourceCategory=Labs/Nginx/Plus/Logs`.
 3. Go to Manage Data > Alerts > Monitors.
-4. Click **Add**:
+4. Click **Add**.
+5. Click **Import** to import monitors from the JSON above.
 
-1. Click **Import** to import monitors from the JSON above.
-
-Note: The monitors are disabled by default. Once you have installed the alerts via this method, navigate to the **Nginx Plus** folder under **Monitors** to configure them. Refer [document](/docs/alerts/monitors#Add_a_monitor) to enable monitors, to configure each monitor, to send notifications to teams or connections.
+:::note
+The monitors are disabled by default. Once you have installed the alerts via this method, navigate to the **Nginx Plus** folder under **Monitors** to configure them. Refer to [this document](/docs/alerts/monitors#add-a-monitor) to enable monitors, to configure each monitor, to send notifications to teams or connections.
+:::
 
 
 ### Method B: Using a Terraform script
 
-**Step 1: Generate a Sumo Logic access key and ID**
-
-Generate an [access key](/docs/manage/security/access-keys#create-an-access-key%C2%A0on-preferences-page) and access ID for a user that has the [Manage Monitors](/docs/manage/users-and-roles/roles/role-capabilities) role capability in Sumo Logic using these instructions. Please identify your Sumo Logic [deployment](https://help.sumologic.com/APIs/General-API-Information/Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security).
-
-**Step 2: [Download and install Terraform 0.13](https://www.terraform.io/downloads.html) or later**
-
-**Step 3: Download the Sumo Logic Terraform package for Nginx Plus alerts**
-
-The alerts package is available in the Sumo Logic github [repository](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/tree/main/monitor_packages/nginx-plus). You can either download it via the “git clone” command or as a zip file.
-
-**Step 4: Alert Configuration**
-
-After the package has been extracted, navigate to the package directory **terraform-sumologic-sumo-logic-monitor/monitor_packages/nginx-plus/**
-
-Edit the **nginxplus.auto.tfvars** file as per below instruction
-
-1. Add the Sumo Logic Access Key, Access Id, Deployment from Step 1.
-    1. **access_id**   = `"<YOUR SUMO ACCESS ID>"`
-    2. **access_key**  = `"<YOUR SUMO ACCESS KEY>"`
-    3. **environment** = `"<DEPLOYMENT>"`
-2. Add the data source values.
-    4. **Metric_data_source** - Sumo Logic data source for nginx plus metrics.
-    5. **Logs_data_source** - Sumo Logic data source for logs.
-3. All monitors are disabled by default on installation, if you would like to enable all the monitors, set the parameter **monitors_disabled** to **false**.
-4. All monitors are configured in a monitor folder called “**Nginx Plus**”, if you would like to change the name of the folder, update the parameter **folder**.
-
-**Step 5: Email and Connection Notification Configuration Examples**
-
-Modify the file **nginxplus.auto.tfvars** and populate connection_notifications and email_notifications as per below examples.
+1. Generate a Sumo Logic [access key](/docs/manage/security/access-keys#create-an-access-keyon-preferences-page) and access ID for a user that has the [Manage Monitors](/docs/manage/users-and-roles/roles/role-capabilities) role capability in Sumo Logic using these instructions. Please identify your Sumo Logic [deployment](https://help.sumologic.com/APIs/General-API-Information/Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security).
+2. [Download and install Terraform 0.13](https://www.terraform.io/downloads.html) or later
+3. Download the Sumo Logic Terraform package for Nginx Plus alerts. The alerts package is available in the Sumo Logic github [repository](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/tree/main/monitor_packages/nginx-plus). You can either download it via the “git clone” command or as a zip file.
+4. Alert Configuration: After the package has been extracted, navigate to the package directory **terraform-sumologic-sumo-logic-monitor/monitor_packages/nginx-plus/**. Edit the **nginxplus.auto.tfvars** file as per below instructions:
+   1. Add the Sumo Logic Access Key, Access Id, Deployment from Step 1.
+    ```sql
+    access_id  = "<YOUR SUMO ACCESS ID>"
+    access_key = "<YOUR SUMO ACCESS KEY>"
+    environment = "<DEPLOYMENT>"
+    ```
+   2. Add the data source values.
+     * **Metric_data_source** - Sumo Logic data source for nginx plus metrics.
+     * **Logs_data_source** - Sumo Logic data source for logs.
+   3. All monitors are disabled by default on installation. If you would like to enable all the monitors, set the parameter `monitors_disabled` to `false`.
+   4. All monitors are configured in a monitor folder called “**Nginx Plus**”, if you would like to change the name of the folder, update the parameter **folder**.
+5. Email and Connection Notification Configuration Examples: Modify the file **nginxplus.auto.tfvars** and populate `connection_notifications` and `email_notifications` as per below examples.
 
 ```bash title="Pagerduty Connection Example"
 connection_notifications = [
@@ -427,17 +359,13 @@ email_notifications = [
 }
 ```
 
-**Step 6: Install the Alerts**
+6. Install the Alerts:
+   1. Navigate to the package directory **terraform-sumologic-sumo-logic-monitor/monitor_packages/nginx-plus/** and run **terraform init. **This will initialize Terraform and will download the required components.
+   2. Run **terraform plan **to view the monitors resources which will be created/modified by Terraform.
+   3. Run **terraform apply**.
+7. Post Installation steps: If you haven’t enabled alerts and/or configured notifications via the terraform procedure outlined above, we highly recommend enabling alerts of interest and configuring each enabled alert to send notifications to other people or services. This is detailed in [Step 4](/docs/alerts/monitors#add-a-monitor).
 
-1. Navigate to the package directory **terraform-sumologic-sumo-logic-monitor/monitor_packages/nginx-plus/** and run **terraform init. **This will initialize Terraform and will download the required components.
-2. Run **terraform plan **to view the monitors resources which will be created/modified by Terraform.
-3. Run **terraform apply**.
-
-**Step 7: Post Installation steps**
-
-If you haven’t enabled alerts and/or configured notifications via the terraform procedure outlined above, we highly recommend enabling alerts of interest and configuring each enabled alert to send notifications to other people or services. This is detailed in [Step 4](/docs/alerts/monitors#Add_a_monitor).
-
-Note: There are limits to how many alerts can be enabled - please see the Alerts FAQ (insert link)
+Note: There are limits to how many alerts can be enabled - please see the [Alerts FAQ](docs/alerts/index.md).
 
 
 ## Installing the Ngnix Plus App
@@ -447,17 +375,14 @@ This section has instructions for installing the Sumo App for Nginx Plus. The in
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
 1. From the **App Catalog**, search for and select the app**.**
-2. Select the version of the service you're using and click **Add to Library**.
-
-Version selection is applicable only to a few apps currently. For more information, see the[ Install the Apps from the Library](/docs/get-started/library/install-apps).
-
-1. To install the app, complete the following fields.
+2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library](/docs/get-started/library/install-apps).
+3. To install the app, complete the following fields.
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
     2. **Data Source.** Select either of these options for the data source. 
         * Choose **Source Category**, and select a source category from the list. 
         * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). 
     3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-2. Click **Add to Library**.
+4. Click **Add to Library**.
 
 Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization.
 

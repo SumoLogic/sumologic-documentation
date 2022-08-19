@@ -126,7 +126,7 @@ The first service in the pipeline is Telegraf. Telegraf collects metrics from Re
 #### Configure Metrics Collection
 
 :::note prerequisites
-Please ensure that you are monitoring your Kubernetes clusters with the Telegraf operator. If you are not, then please follow [these instructions](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf.md#Install_Telegraf_in_a_Kubernetes_environment) to do so.
+Please ensure that you are monitoring your Kubernetes clusters with the Telegraf operator. If you are not, then please follow [these instructions](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf) to do so.
 :::
 
 1. To collect metrics from a Kubernetes environment, add the following annotations on your Redis pods:
@@ -147,7 +147,7 @@ Please ensure that you are monitoring your Kubernetes clusters with the Telegraf
    * `telegraf.influxdata.com/inputs` - As telegraf will be run as a sidecar the host should always be localhost.
      * In the input plugins section i.e.:
         * `servers` - The URL to the Redis server. This can be a comma-separated list to connect to multiple Redis servers.
-     * In the tags section i.e. `[inputs.redis.tags]`
+     * In the tags section  `[inputs.redis.tags]`
         * `environment` - This is the deployment environment where the Redis cluster identified by the value of **servers** resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
         * `db_cluster` - Enter a name to identify this Redis cluster. This cluster name will be shown in the Sumo Logic dashboards.
    * **Do not modify the following values**, as they will cause the Sumo Logic apps to not function correctly.
@@ -209,7 +209,7 @@ This section explains the steps to collect Redis logs from a Kubernetes environm
 3. **Add an FER to normalize the fields in Kubernetes environments**. Labels created in Kubernetes environments automatically are prefixed with pod_labels. To normalize these for our app to work, we need to create a Field Extraction Rule. To do so:
    * Go to **Manage Data > Logs > Field Extraction Rules**.
    * Click the + Add button on the top right of the table.
-   * The following form appears:
+   * The **Add Field Extraction Rule** form will appear:
    * Enter the following options:
       * **Rule Name**. Enter the name as **App Observability - Database**.
       * **Applied At**. Choose **Ingest Time**.
@@ -394,7 +394,7 @@ Note: There are limits for how many alerts can be enabled - please see the [Aler
 4. Click Import to import monitors from the JSON above.
 
 :::note
-Monitors are disabled by default. Once you have installed the alerts via this method, navigate to the Redis folder under **Monitors** to configure them. See [this](/docs/alerts/monitors#Disable_and_enable_a_monitor) document to enable monitors. To send notifications to teams or connections please see the instructions detailed in Step 4 of[ this document](/docs/alerts/monitors#Add_a_monitor).
+Monitors are disabled by default. Once you have installed the alerts via this method, navigate to the Redis folder under **Monitors** to configure them. See [this](/docs/alerts/monitors#Disable_and_enable_a_monitor) document to enable monitors. To send notifications to teams or connections please see the instructions detailed in Step 4 of[ this document](/docs/alerts/monitors#add-a-monitor).
 :::
 
 
@@ -462,7 +462,7 @@ email_notifications = [
    2. Run **terraform plan **to view the monitors which will be created/modified by Terraform.
    3. Run **terraform apply**.
 
-7. Post Installation. If you haven’t enabled alerts and/or configured notifications via the Terraform procedure outlined above, we highly recommend enabling alerts of interest and configuring each enabled alert to send notifications to other people or services. This is detailed in [Add a Monitor](/docs/alerts/monitors#Add_a_monitor).
+7. Post Installation. If you haven’t enabled alerts and/or configured notifications via the Terraform procedure outlined above, we highly recommend enabling alerts of interest and configuring each enabled alert to send notifications to other people or services. This is detailed in [Add a Monitor](/docs/alerts/monitors#add-a-monitor).
 
 
 ## Installing the Redis App

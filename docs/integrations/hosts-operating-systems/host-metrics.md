@@ -1,5 +1,5 @@
 ---
-id: metrics
+id: host-metrics
 title: Host Metrics Sumo Logic App
 sidebar_label: Host Metrics
 description: The Sumo Logic App for Host Metrics allows you to collect your local host metrics and display them using predefined search queries and Dashboards.
@@ -12,10 +12,9 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 The Host Metrics app allows you to monitor the performance and resource utilization of hosts and processes that your mission critical applications are dependent upon. Preconfigured dashboards provide insight into CPU, memory, network, file descriptors, page faults, and TCP connectors. This app uses the Sumo Logic installed collector for the collection of host metrics data.
 
 
-## Collect Host Metrics for the Host Metrics App
+## Collecting Metrics for the Host Metrics App
 
 This procedure explains how to collect metrics from a host machine and ingest them into Sumo Logic for metrics visualization.
-
 
 ### Configure a Collector
 
@@ -24,22 +23,17 @@ Configure an [Installed Collector](/docs/send-data/Installed-Collectors). Collec
 
 ### Configure a Source
 
-1. Configure a [Host Metrics Source](#Collect-Host-Metrics-for-the-Host-Metrics-App). Choose **Add Source** and select **Host Metrics** as the source type.
+1. Configure a [Host Metrics Source](#Collecting-Metrics-for-the-Host-Metrics-App). Choose **Add Source** and select **Host Metrics** as the source type.
 2. Configure the Source Fields as follows:
-    1. **Name.** Required. Description is optional. The source name is stored in a searchable field called _sourceName.
+    1. **Name.** Required. Description is optional. The source name is stored in a searchable field called `_sourceName`.
     2. **Source Host**. Enter the host name of the machine from which the metrics will be collected.
     3. **Source Category.** Required. The Source Category metadata field is a fundamental building block to organize and label Sources. For details see [Best Practices](/docs/send-data/design-deployment/best-practices-source-categories).
     4. **Scan Interval**. Select the frequency for the Source to scan for hostmetrics data. Selecting a short interval will increase the message volume and could cause your deployment to incur additional charges. The default is 1 minute.
-    5. **Metrics**. Select check boxes for the metrics to collect. By default, all CPU and memory metrics are collected. Select the top level check box to select all metrics in that category. A blue checkmark icon
-
- indicates that the category is selected. To select individual metrics, click the right-facing arrow to expand the category and select the individual metrics. The icon changes to
-
-, as shown below.
-
+    5. **Metrics**. Select check boxes for the metrics to collect. By default, all CPU and memory metrics are collected. Select the top level check box to select all metrics in that category. A blue checkmark icon indicates that the category is selected. To select individual metrics, click the right-facing arrow to expand the category and select the individual metrics. The icon changes to <img src={useBaseUrl('img/integrations/hosts-operating-systems/icon_blue_minus.png')} alt="icon_blue_minus" />, as shown below.<br/><img src={useBaseUrl('img/integrations/hosts-operating-systems/host_metrics_config_window.png')} alt="host_metrics_config_window" />
 3. Click **Save**.
 
 
-### Metric types
+## Metric Types
 
 Available metrics include:
 * CPU
@@ -54,7 +48,7 @@ Host metrics are gathered by the open-source [SIGAR library](https://github.com/
 
 The following tables list the available host metrics.
 
-#### CPU Metrics
+### CPU Metrics
 
 <table>
   <tr>
@@ -163,11 +157,10 @@ The following tables list the available host metrics.
   </tr>
 </table>
 
-
 Load averages are not available on Windows platform.
 
 
-#### Memory Metrics
+### Memory Metrics
 
 <table>
   <tr>
@@ -221,9 +214,7 @@ Load averages are not available on Windows platform.
    </td>
    <td>Bytes
    </td>
-   <td>Actual total used system memory calculated as:
-<p><code>Mem_Total - Mem_Actual_Free</code></p>
-<p>This metric better represents the amount of physical RAM in use than <code>Mem_Used</code>.</p>
+   <td>Actual total used system memory calculated as: <code>Mem_Total - Mem_Actual_Free</code><br/>This metric better represents the amount of physical RAM in use than <code>Mem_Used</code>.
    </td>
   </tr>
   <tr>
@@ -231,8 +222,7 @@ Load averages are not available on Windows platform.
    </td>
    <td>%
    </td>
-   <td>Percent total used system memory calculated as:
-<p><code>(Mem_Total - Mem_Actual_Free) / Mem_total </code></p>
+   <td>Percent total used system memory calculated as: <code>(Mem_Total - Mem_Actual_Free) / Mem_total</code>
    </td>
   </tr>
   <tr>
@@ -254,7 +244,7 @@ Load averages are not available on Windows platform.
 </table>
 
 
-#### TCP Metrics
+### TCP Metrics
 
 <table>
   <tr>
@@ -339,16 +329,13 @@ Load averages are not available on Windows platform.
   </tr>
 </table>
 
-#### Networking Metrics
+### Networking Metrics
 
 These have two additional dimensions:
-
 * Interface: Name of the network interface (example: `eth0`)
 * Description: Description of the network interface (example: `Dual Band Wireless-AC 8265`)
 
-Networking metrics are cumulative, so you can use the rate operator to display these metrics as a rate per second
-
-Example: `metric=Net_InBytes Interface=eth0 | rate`
+Networking metrics are cumulative, so you can use the rate operator to display these metrics as a rate per second. For example: `metric=Net_InBytes Interface=eth0 | rate`.
 
 <table>
   <tr>
@@ -393,17 +380,14 @@ Example: `metric=Net_InBytes Interface=eth0 | rate`
   </tr>
 </table>
 
-#### Disk Metrics
+### Disk Metrics
 
 Disk metrics have two additional dimensions:
 
-* DevName: Device name, such as the mount name (example: udev)
-* DirName: Directory name, such as the mount directory (example: /dev)
+* DevName: Device name, such as the mount name (example: `udev`)
+* DirName: Directory name, such as the mount directory (example: `/dev`)
 
-`Disk_Reads`, `Disk_Writes`, `Disk_ReadBytes`, and `Disk_WriteBytes` are cumulative, so you can use the rate operator to display these metrics as a rate per second.
-
-Example: `metric=Disk_WriteBytes | rate`
-
+`Disk_Reads`, `Disk_Writes`, `Disk_ReadBytes`, and `Disk_WriteBytes` are cumulative, so you can use the rate operator to display these metrics as a rate per second. For example: `metric=Disk_WriteBytes | rate`.
 
 <table>
   <tr>
@@ -488,23 +472,22 @@ Example: `metric=Disk_WriteBytes | rate`
   </tr>
 </table>
 
+`Disk_InodesAvailable` is not available on Windows platform.
 
-`Disk_InodesAvailable` is not available on Windows platform
 
-
-#### Time Intervals
+### Time Intervals
 
 The time interval determines how frequently the Source is scanned for metrics data. The Web Application supports pre-specified time intervals (10 seconds, 15 seconds, 30 seconds, 1 minute, and 5 minutes).
 
 You can also specify a time interval in JSON by using the interval parameter, as follows:
-```
+```bash
 "interval" : 60000
 ```
 
 The JSON parameter is in milliseconds. We recommend 60 seconds (60000 ms) or longer granularity. Specifying a shorter interval will increase the message volume and could cause your deployment to incur additional charges.
 
 
-#### AWS Metadata
+### AWS Metadata
 
 Collectors running on AWS EC2 instances can optionally collect AWS Metadata such as EC2 tags to make it easier to search for Host Metrics.  For more information, see [AWS Metadata Source for Metrics](/docs/send-data/sources/sources-hosted-collectors/amazon-web-services/aws-metadata-tag-source).
 
@@ -520,17 +503,14 @@ To install the app:
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
 1. From the **App Catalog**, search for and select the app**.**
-2. Select the version of the service you're using and click **Add to Library**.
-
-Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/library/install-apps)
-
-1. To install the app, complete the following fields.
+2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/library/install-apps)
+3. To install the app, complete the following fields.
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
     2. **Data Source.** Select either of these options for the data source. 
         * Choose **Source Category**, and select a source category from the list. 
         * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). 
     3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-2. Click **Add to Library**.
+4. Click **Add to Library**.
 
 Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization.
 
@@ -538,7 +518,6 @@ Panels will start to fill automatically. It's important to note that each panel 
 
 
 ## Viewing Host Metrics Dashboards
-
 
 ### Overview
 

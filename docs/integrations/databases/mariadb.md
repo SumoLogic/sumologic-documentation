@@ -185,7 +185,7 @@ This section explains the steps to collect MariaDB logs from a Kubernetes enviro
 3. **Add an FER to normalize the fields in Kubernetes environments**. Labels created in Kubernetes environments automatically are prefixed with pod_labels. To normalize these for our app to work, we need to create a Field Extraction Rule if not already created for Proxy Application Components:
    1. **Go to Manage Data > Logs > Field Extraction Rules.**
    2. **Click the + Add button on the top right of the table.**
-   3. **The following form appears:**
+   3. **The **Add Field Extraction Rule** form will appear:**
    4. Enter the following options:
       * **Rule Name**. Enter the name as **App Observability - database**.
       * **Applied At.** Choose **Ingest Time**
@@ -411,7 +411,7 @@ Sumo Logic has provided out-of-the-box alerts available through [Sumo Logic moni
 3. Go to Manage Data > Alerts > Monitors.
 4. Click **Add**.
 5. Click Import and then copy-paste the above JSON to import monitors.
-6. The monitors are disabled by default. Once you have installed the alerts using this method, navigate to the MariaDB folder under **Monitors** to configure them. See [this](/docs/alerts/monitors) document to enable monitors to send notifications to teams or connections. See the instructions detailed in [Add a Monitor](/docs/alerts/monitors#Add_a_monitor).
+6. The monitors are disabled by default. Once you have installed the alerts using this method, navigate to the MariaDB folder under **Monitors** to configure them. See [this](/docs/alerts/monitors) document to enable monitors to send notifications to teams or connections. See the instructions detailed in [Add a Monitor](/docs/alerts/monitors#add-a-monitor).
 
 
 ### Method B: Using a Terraform script
@@ -474,7 +474,7 @@ email_notifications = [
 6. **Install the Alerts**. Navigate to the package directory terraform-sumologic-sumo-logic-monitor/monitor_packages/**MariaDB** and run `terraform init`. This will initialize Terraform and will download the required components.
     1. Run `terraform plan` to view the monitors which will be created/modified by Terraform.
     2. Run `terraform apply`.
-6. **Post Installation**. If you haven’t enabled alerts and/or configured notifications through the Terraform procedure outlined above, we highly recommend enabling alerts of interest and configuring each enabled alert to send notifications to other users or services. This is detailed in Step 4 of [this document](/docs/alerts/monitors#Add_a_monitor).
+6. **Post Installation**. If you haven’t enabled alerts and/or configured notifications through the Terraform procedure outlined above, we highly recommend enabling alerts of interest and configuring each enabled alert to send notifications to other users or services. This is detailed in Step 4 of [this document](/docs/alerts/monitors#add-a-monitor).
 
 
 ## Installing the MariaDB App

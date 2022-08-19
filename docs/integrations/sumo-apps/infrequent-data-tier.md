@@ -13,40 +13,8 @@ The Infrequent Data Tier App provides visibility into the On-demand Search usage
 
 With growing adoption of modern application stacks that leverage micro-services and distributed architectures, organizations are generating more and more machine data. A large part of this data is not required for every day mission-critical operations. However, organizations still need to retain and analyze this data, as it can provide value across multiple groups within a digital enterprise. A cost efficient solution that manages infrequently used data is currently lacking in the market place, forcing customers to either not retain the data or build home-grown solutions that are difficult to maintain, secure, and don’t provide easy access to insights when enterprise needs it.
 
-## Prerequisites
 
-:::sumo availability
-
-Sumo Logic Infrequent Data Tier App is only available for Enterprise Suite customers.
-
-<table>
-  <tr>
-   <td>Account Type
-   </td>
-   <td>Account Level
-   </td>
-  </tr>
-  <tr>
-   <td>Credits
-   </td>
-   <td>Enterprise Suite
-   </td>
-  </tr>
-</table>
-
-:::
-
-## Collecting Data
-
-Infrequent Data Tiers enable you to ingest log or machine data for a minimal cost per GB. Your data is then securely stored by Sumo Logic and is instantly available on-demand for interactive analysis without any additional preparation, re-ingestion, or rehydration. This service is ideal when you need to quickly and/or periodically investigate issues, troubleshoot code, configuration problems, or address customer support cases which can rely on searching high volumes of data for insights. This allows you to only pay for the specific data sets that you analyze at a given time.
-
-[Infrequent Data Tiers](/docs/manage/partitions-and-data-tiers/data-tiers) allow you to effectively analyze high volumes of log data that is accessed on a minimal basis. In this data tier, you pay for the amount of data scanned in each search. This on-demand payment model allows you to minimize costs by only paying the data accessed.
-
-You can verify if you already have the Search Audit Index enabled by querying: `_index=sumologic_search_usage_per_query`.
-
-If no results are returned even for longer time ranges, it means you don't have Search Audit index enabled.
-
-### Log Types
+## Log Types
 
 The Search Audit Index for Infrequent Data Tier App has the following fields:
 
@@ -70,7 +38,7 @@ The Search Audit Index for Infrequent Data Tier App has the following fields:
 
 You can start using the index by using following query:
 
-```
+```sql
 _index=sumologic_search_usage_per_query \
 analytics_tier="Infrequent"
 ```
@@ -90,6 +58,43 @@ _index=sumologic_search_usage_per_query analytics_tier = "Infrequent" !(user_nam
 ```
 
 
+## Prerequisites
+
+:::sumo availability
+
+Sumo Logic Infrequent Data Tier App is only available for Enterprise Suite customers.
+
+<table>
+  <tr>
+   <td>Account Type
+   </td>
+   <td>Account Level
+   </td>
+  </tr>
+  <tr>
+   <td>Credits
+   </td>
+   <td>Enterprise Suite
+   </td>
+  </tr>
+</table>
+
+:::
+
+## Collecting Data for the Infrequent Data Tier App
+
+Infrequent Data Tiers enable you to ingest log or machine data for a minimal cost per GB. Your data is then securely stored by Sumo Logic and is instantly available on-demand for interactive analysis without any additional preparation, re-ingestion, or rehydration. This service is ideal when you need to quickly and/or periodically investigate issues, troubleshoot code, configuration problems, or address customer support cases which can rely on searching high volumes of data for insights. This allows you to only pay for the specific data sets that you analyze at a given time.
+
+[Infrequent Data Tiers](/docs/manage/partitions-and-data-tiers/data-tiers) allow you to effectively analyze high volumes of log data that is accessed on a minimal basis. In this data tier, you pay for the amount of data scanned in each search. This on-demand payment model allows you to minimize costs by only paying the data accessed.
+
+You can verify if you already have the Search Audit Index enabled by querying:
+```sql
+_index=sumologic_search_usage_per_query
+```
+
+If no results are returned even for longer time ranges, it means you don't have Search Audit index enabled.
+
+
 ## Installing the Infrequent Data Tier App
 
 Complete the following instructions to install the Sumo Logic Infrequent Data Tier App.
@@ -102,10 +107,7 @@ To install the app, do the following:
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 1. From the **App Catalog**, search for and select the app**.**
-2. Select the version of the service you're using and click **Add to Library**.
-
-Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/library/install-apps)
-
+2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/library/install-apps)
 3. To install the app, complete the following fields.
    * **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
    * **Data Source.** Select either of these options for the data source. 

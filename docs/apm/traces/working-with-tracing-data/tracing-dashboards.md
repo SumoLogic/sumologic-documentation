@@ -51,7 +51,7 @@ To install the app, do the following:
 
     If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
-1. To install the app, click the **Add to Library** button and complete the following fields.
+3. To install the app, click the **Add to Library** button and complete the following fields.
 
    * **App Name.** You can retain the existing name, or enter a name of your choice for the app.
    * **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.

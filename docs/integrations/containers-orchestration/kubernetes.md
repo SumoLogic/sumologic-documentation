@@ -16,79 +16,41 @@ In conjunction with the Kubernetes App, the AKS Control Plane, GKE Control Plane
 [Kubernetes](https://kubernetes.io/) is a system that automates the deployment, management, scaling, networking, and availability of container-based applications. Kubernetes container-orchestration allows you to easily deploy and manage multi-container applications at scale.
 
 :::tip
-For an end-to-end solution for deploying, managing, monitoring, and administering your Kubernetes environment, see the Kubernetes Solution pages.
+For an end-to-end solution for deploying, managing, monitoring, and administering your Kubernetes environment, see the [Kubernetes Solution pages](docs/observability/kubernetes-solution/index.md).
 :::
 
 ## Supported versions
 
 The following are the minimum supported requirements for this application:
-
-<table>
-  <tr>
-   <td><strong>Name</strong>
-   </td>
-   <td><strong>Supported versions</strong>
-   </td>
-  </tr>
-  <tr>
-   <td>Kubernetes</td>
-   <td>1.10 and later</td>
-  </tr>
-  <tr>
-   <td>Kops</td>
-   <td><p>1.13.10-k8s</p>
-<p>1.13.10-kops</p>
-<p>1.12.8-k8s</p>
-<p>1.12.2-kops</p>
-<p>1.10.13-k8s</p>
-<p>1.10.0-kops</p>
-   </td>
-  </tr>
-</table>
-
+* Kubernetes
+   * 1.10 and later
+* Kops
+   * 1.13.10-k8s
+   * 1.13.10-kops
+   * 1.12.8-k8s
+   * 1.12.2-kops
+   * 1.10.13-k8s
+   * 1.10.0-kops
 
 ## Log and Metric Types
 
 The Sumo Logic App for Kubernetes uses logs and metrics.
 
-### Log source
+### Log Sources
+
 * Application Logs
 
-### Metrics sources
+### Metrics Sources
 
 * [Node-exporter Metrics](https://prometheus.io/docs/guides/node-exporter/) - System-level statistics about bare-metal nodes or virtual machine and generates metrics.
 * [Kube-state-metrics](https://github.com/kubernetes/kube-state-metrics) - Metrics about the state of Kubernetes logical objects, including node status, node capacity (CPU and memory), number of desired/available/unavailable/updated replicas per deployment, pod status (e.g., waiting, running, ready), and containers.
 
-
 For more information, see [this page](https://github.com/SumoLogic/sumologic-kubernetes-collection). Metrics are collected using [Prometheus with FluentD](https://github.com/SumoLogic/sumologic-kubernetes-collection/tree/master/deploy#step-1-create-sumo-collector-and-deploy-fluentd).
 
 
-## Collect Logs and Metrics for the Kubernetes App
+### Sample Log Message
 
-This section has instructions for collecting logs and metrics for the Sumo App for Kubernetes. FluentBit and FluentD. Prometheus collects metrics data for Sumo Logic.
-
-### What You'll Need  
-Set the following fields in the Sumo Logic UI prior to configuring collection. This ensures that your logs are tagged with relevant metadata, which is required by the app dashboards and Explore.
-
-* cluster
-* container
-* deployment
-* host
-* namespace
-* node
-* pod
-* service
-
-For information on setting up fields, see the [Fields](/docs/manage/fields) help page.
-
-### Collecting Metrics and logs for Kubernetes
-Reference the [Deployment Guide](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/README.md#documentation) in our sumologic-kubernetes-collection GitHub repository for detailed instructions on how to collect Kubernetes logs, metrics, and events; enrich them with deployment, pod, and service level metadata; and send them to Sumo Logic.
-
-The Deployment Guide has information on advanced configurations, best practices, performance, troubleshooting, and upgrading for our latest and previous versions of supported software.
-
-### Sample Log message
-
-```json title="Application Logs:"
+```json title="Application Logs"
 {"timestamp":1561534865020,"log":"E0626 07:41:05.020255       1
 manager.go:101] Error in scraping containers from kubelet:192.168.190.54:10255:
 failed to get all container stats from Kubelet URL \"http://192.168.190.54:10255/stats/container/\":
@@ -98,13 +60,34 @@ getsockopt: connection refused"}
 
 ### Sample Query
 
-Message Breakdown by Container from the Dashboard Container Logs:
-
-```sql
+```sql title="Message Breakdown by Container from the Dashboard Container Logs"
  cluster = * and namespace = * and pod = * and container = *
 | json field=_raw "log" as message
 | fields - message | count container | top 10 container by _count
 ```
+
+## Collecting Metrics and Logs for the Kubernetes App
+
+This section has instructions for collecting logs and metrics for the Sumo App for Kubernetes. FluentBit and FluentD. Prometheus collects metrics data for Sumo Logic.
+
+:::note Prerequisites  
+Set the following fields in the Sumo Logic UI prior to configuring collection. This ensures that your logs are tagged with relevant metadata, which is required by the app dashboards and Explore.
+* `cluster`
+* `container`
+* `deployment`
+* `host`
+* `namespace`
+* `node`
+* `pod`
+* `service`
+:::
+
+For information on setting up fields, see the [Fields](/docs/manage/fields) help page.
+
+Reference the [Deployment Guide](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/README.md#documentation) in our sumologic-kubernetes-collection GitHub repository for detailed instructions on how to collect Kubernetes logs, metrics, and events; enrich them with deployment, pod, and service level metadata; and send them to Sumo Logic.
+
+The Deployment Guide has information on advanced configurations, best practices, performance, troubleshooting, and upgrading for our latest and previous versions of supported software.
+
 
 ## Installing the Kubernetes App
 
@@ -112,20 +95,19 @@ Now that you have set up the collection for Kubernetes App, install the Sumo Log
 
 To install the app, do the following:
 
-1. Locate and install the app from the App Catalog. If you want to see a preview of the dashboards included with the app before installing, click  Preview Dashboards .
-2. From the App Catalog, search for  Kubernetes  and select the app.
-3. Click Add to Library.
+1. Locate and install the app from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
+2. From the App Catalog, search for **Kubernetes** and select the app.
+3. Click **Add to Library**.
 4. Complete the following fields:
    * App Name. You can retain the existing name, or enter a name of your choice for the app. 
-   * Data Source. For each the sources listed, enter a Custom Data Filter or Source Category, as follows: For Falco Log Source, leave  Source Category  selected, and enter the following source category: *falco* or one that matches the source categories in your environment. For  Events Log Source, leave  Source Category  selected, and enter the following source category: *events* or one that matches the source categories in your environment.
-   * Advanced . Select the location in the Library (the default is the Personal folder in the Library), or click New Folder to add a new folder.
-5. Click Add to Library.
+   * Data Source. For each the sources listed, enter a Custom Data Filter or Source Category, as follows: For Falco Log Source, leave  **Source Category** selected, and enter the following source category: *falco* or one that matches the source categories in your environment. For  Events Log Source, leave  Source Category  selected, and enter the following source category: *events* or one that matches the source categories in your environment.
+   * Advanced. Select the location in the Library (the default is the Personal folder in the Library), or click New Folder to add a new folder.
+5. Click **Add to Library**.
 
 
-## Installing Alerts
+## Installing Kubernetes Monitors
 
-Sumo Logic has provided out of the box alerts available through Sumo Logic monitors Visualizations-and-Alerts/Alerts/Monitors to help you quickly determine if the Kubernetes cluster is available and performing as expected. These alerts are built based on metrics datasets and have preset thresholds based on industry best practices and recommendations.
-
+Sumo Logic has provided out of the box alerts available through [Sumo Logic monitors](docs/alerts/monitors/index.md) to help you quickly determine if the Kubernetes cluster is available and performing as expected. These alerts are built based on metrics datasets and have preset thresholds based on industry best practices and recommendations.
 * To install these alerts, you need to have the Manage Monitors role capability.
 * Alerts can be installed by either importing them a JSON or a Terraform script.
 
@@ -134,50 +116,31 @@ For details on the individual alerts, see [Kubernetes Alerts](/docs/observabilit
 ### Method A: Importing a JSON file
 
 1. Download the [JSON file](https://raw.githubusercontent.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/main/monitor_packages/kubernetes/kubernetes.json) describing all the monitors.   
-
 2. The alerts should be restricted to specific clusters and/or namespaces to prevent the monitors hitting the cardinality limits. To limit the alerts, update the JSON file by replacing the text `$$kubernetes_data_source` with `<Your Custom Filter>`. For example: `cluster=k8s-prod.01`.
-
 3. Go to Manage Data > Alerts > Monitors.
-
-4. Click Add:
-
-![add-monitor.png](/img/metrics/add-monitor.png)
-
+4. Click Add:<br/> ![add-monitor.png](/img/metrics/add-monitor.png)
 5. Click Import to import monitors from the JSON above.
 
 :::note
-The monitors are disabled by default. Once you have installed the alerts using this method, navigate to the Kubernetes folder under  Monitors  to configure them. See this document to enable monitors, to configure each monitor, to send notifications to teams or connections please see the instructions detailed in Step 4 of this /Visualizations-and-Alerts/Alerts/Monitors#Add_a_monitor document.
+The monitors are disabled by default. Once you have installed the alerts using this method, navigate to the Kubernetes folder under  Monitors  to configure them. See this document to enable monitors, to configure each monitor, to send notifications to teams or connections please see the instructions detailed in Step 4 of [this document](/docs/alerts/monitors#add-a-monitor).
 :::
 
 ### Method B: Using a Terraform script
 
-1. Generate a Sumo Logic access key and ID
-
-Generate an access key and access ID for a user that has the Manage Monitors role capability in Sumo Logic using [these instructions](/docs/manage/security/access-keys). Please identify which deployment your Sumo Logic account is in, using this /APIs/General-API-Information/Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security"> link.
-
+1. Generate a Sumo Logic access key and ID for a user that has the Manage Monitors role capability in Sumo Logic using [these instructions](/docs/manage/security/access-keys). Please identify which deployment your Sumo Logic account is in, using this /APIs/General-API-Information/Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security"> link.
 2. [Download and install Terraform 0.13](https://www.terraform.io/downloads.html) or later.
-
-3. Download the Sumo Logic Terraform package for Kubernetes alerts. The alerts package is available in the [Sumo Logic github repository](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/tree/main/monitor_packages/kubernetes). You can either download it through the “git clone” command or as a zip file.
-
-4. Alert Configuration. After the package has been extracted, navigate to the package directory terraform-sumologic-sumo-logic-monitor/monitor_packages/kubernetes/
-
-Edit the kubernetes.auto.tfvars file and add the Sumo Logic Access Key, Access Id and Deployment from Step 1 .
-
-```bash
-access_id   = "<SUMOLOGIC ACCESS ID>"
-access_key  = "<SUMOLOGIC ACCESS KEY>"
-environment = "<SUMOLOGIC DEPLOYMENT>"
-```
-
-The alerts should be restricted to specific clusters and/or namespaces to prevent the monitors hitting the cardinality limits. To limit the alerts, update the variable `kubernetes_data_source` with your `<Your Custom Filter>`. For example: `cluster=k8s.prod.01`.
-
-All monitors are disabled by default on installation, if you would like to enable all the monitors, set the parameter  monitors_disabled  to false in this file.
-
-By default, the monitors are configured in a monitor folder called “Kubernetes”, if you would like to change the name of the folder, update the monitor folder name in this file.
-
-If you would like the alerts to send email or connection notifications, configure these in the file kubernetes_notifications.auto.tfvars . For configuration examples, refer to the next section.
-
-5. Email and Connection Notification Configuration Examples. Modify the file kubernetes_notifications.auto.tfvars and populate connection_notifications_critical, connection_notifications_warnings, connection_notifications_missingdata  and email_notifications_critical, email_notifications_warnings, email_notifications_missingdata as per below examples.
+3. Download the Sumo Logic Terraform package for Kubernetes alerts. The alerts package is available in the [Sumo Logic github repository](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/tree/main/monitor_packages/kubernetes). You can either download it through the `git clone` command or as a zip file.
+4. Alert Configuration. After the package has been extracted, navigate to the package directory `terraform-sumologic-sumo-logic-monitor/monitor_packages/kubernetes/`.
+   1. Edit the kubernetes.auto.tfvars file and add the Sumo Logic Access Key, Access Id and Deployment from Step 1.
+    ```bash
+    access_id   = "<SUMOLOGIC ACCESS ID>"
+    access_key  = "<SUMOLOGIC ACCESS KEY>"
+    environment = "<SUMOLOGIC DEPLOYMENT>"
+    ```
+   2. The alerts should be restricted to specific clusters and/or namespaces to prevent the monitors hitting the cardinality limits. To limit the alerts, update the variable `kubernetes_data_source` with your `<Your Custom Filter>`. For example: `cluster=k8s.prod.01`.
+   3. All monitors are disabled by default on installation. If you would like to enable all the monitors, set the parameter `monitors_disabled` to `false` in this file.
+  4. By default, the monitors are configured in a monitor folder called “Kubernetes”, if you would like to change the name of the folder, update the monitor folder name in this file.
+5. If you would like the alerts to send email or connection notifications, modify the file **kubernetes_notifications.auto.tfvars** and populate `connection_notifications_critical`, `connection_notifications_warnings`, `connection_notifications_missingdata` and `email_notifications_critical`, `email_notifications_warnings`, `email_notifications_missingdata` as per below examples.
 
 ```sql title="Pagerduty Connection Example"
 connection_notifications_critical = [
@@ -196,9 +159,9 @@ connection_notifications_critical = [
   ]
 ```
 
-Replace `<CONNECTION_ID>` with the connection id of the webhook connection. The webhook connection id can be retrieved by calling the https://api.sumologic.com/docs/#operation/listConnections">Monitors API.
+  Replace `<CONNECTION_ID>` with the connection id of the webhook connection. The webhook connection id can be retrieved by calling the [Monitors API](/sumoapi).
 
-For overriding payload for different connection types, refer to this /Manage/Connections-and-Integrations/Webhook-Connections/Set_Up_Webhook_Connections">document.
+  For overriding payload for different connection types, refer to [this document](/docs/manage/connections-and-integrations/webhook-connections/set-up-webhook-connections.md).
 
 ```sql title="Email Notifications Example"
 email_notifications_critiical = [
@@ -213,12 +176,11 @@ email_notifications_critiical = [
   ]
 ```
 
-6. Install the Alerts.
-   * Navigate to the package directory terraform-sumologic-sumo-logic-monitor/monitor_packages/ kubernetes / and run  terraform init.  This will initialize Terraform and will download the required components.
-   * Run  terraform plan  to view the monitors which will be created/modified by Terraform.
-   * Run  terraform   apply .
-
-7. Post Installation. If you haven’t enabled alerts and/or configured notifications through the Terraform procedure outlined above, we highly recommend enabling alerts of interest and configuring each enabled alert to send notifications to other people or services. See Step 4 of /Visualizations-and-Alerts/Alerts/Monitors#Add_a_monitor">Add a Monitor.
+6. Install the Alerts:
+   * Navigate to the package directory `terraform-sumologic-sumo-logic-monitor/monitor_packages/kubernetes/` and run `terraform init`. This will initialize Terraform and will download the required components.
+   * Run `terraform plan` to view the monitors which will be created/modified by Terraform.
+   * Run `terraform apply`.
+7. Post Installation. If you haven’t enabled alerts and/or configured notifications through the Terraform procedure outlined above, we highly recommend enabling alerts of interest and configuring each enabled alert to send notifications to other people or services. See Step 4 of [this document](/docs/alerts/monitors#add-a-monitor).
 
 :::note
 There are limits to how many alerts can be enabled - see the [Alerts FAQ](/docs/alerts/index.md).
