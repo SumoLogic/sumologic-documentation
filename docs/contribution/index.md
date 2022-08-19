@@ -58,7 +58,7 @@ Fork will be for the future and Third Parties. For now, clone and branch to work
 ### Create and push a branch
 
 1. Create a new branch from your cloned repo/fork using a name that best describes the work or references a GitHub issue number. For example: lk-tracing-update or lk-apps-gitlab
-1. Edit or create markdown (.md) files in your branch. See [Create a Document](create-a-document.md) and [Markdown Features](markdown-features.md) for more info.
+1. Edit or create markdown (.md) files in your branch. See [Create a Document](create-document.md) and [Markdown Features](markdown-features.md) for more info.
 1. Commit your changes to the branch with a meaningful message.
 
   ![pull request](/img/contribution/commit.png)
