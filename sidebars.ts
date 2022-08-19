@@ -1447,7 +1447,6 @@ module.exports = {
             collapsed: true,
             link: {type: 'doc', id: 'apm/traces/get-started-transaction-tracing/instrument-application-opentelemetry/index'},
             items: [
-              'apm/traces/get-started-transaction-tracing/instrument-application-opentelemetry/net-opentelemetry-auto-instrumentation',
               'apm/traces/get-started-transaction-tracing/instrument-application-opentelemetry/aws-lambda-java-function-instrumentation',
               'apm/traces/get-started-transaction-tracing/instrument-application-opentelemetry/aws-lambda-nodejs-function-instrumentation',
               'apm/traces/get-started-transaction-tracing/instrument-application-opentelemetry/aws-lambda-python-function-instrumentation',
@@ -1481,6 +1480,16 @@ module.exports = {
                 items: [
                   'apm/traces/get-started-transaction-tracing/instrument-application-opentelemetry/java-opentelemetry-auto-instrumentation/custom-tags-configuration',
                   'apm/traces/get-started-transaction-tracing/instrument-application-opentelemetry/java-opentelemetry-auto-instrumentation/traceid-spanid-injection-into-logs-configuration',
+                ],
+              },
+              {
+                type: 'category',
+                label: '.NET OpenTelemetry auto-instrumentation',
+                collapsible: true,
+                collapsed: true,
+                link: {type: 'doc', id: 'apm/traces/get-started-transaction-tracing/instrument-application-opentelemetry/net-opentelemetry-auto-instrumentation/index'},
+                items: [
+                  'apm/traces/get-started-transaction-tracing/instrument-application-opentelemetry/net-opentelemetry-auto-instrumentation/net-traceid-spanid-injection-into-logs',
                 ],
               },
               'apm/traces/get-started-transaction-tracing/instrument-application-opentelemetry/python-opentelemetry-auto-instrumentation',
@@ -2299,10 +2308,42 @@ module.exports = {
           collapsed: true,
           link: {type: 'doc', id: 'releasenotes/archive/index'},
           items: [
-            'releasenotes/archive/cloud-siem',
-            'releasenotes/archive/collector',
-            'releasenotes/archive/developer',
-            'releasenotes/archive/service',
+            {
+              type: 'category',
+              label: 'CSE Archive',
+              collapsible: true,
+              collapsed: true,
+              items: [
+                'releasenotes/archive/cloud-siem/year2021',
+              ],
+            },
+            {
+              type: 'category',
+              label: 'Collector Archive',
+              collapsible: true,
+              collapsed: true,
+              items: [
+                'releasenotes/archive/collector/year2021',
+              ],
+            },
+            {
+              type: 'category',
+              label: 'Developer Archive',
+              collapsible: true,
+              collapsed: true,
+              items: [
+                'releasenotes/archive/developer/year2021',
+              ],
+            },
+            {
+              type: 'category',
+              label: 'Service Archive',
+              collapsible: true,
+              collapsed: true,
+              items: [
+                'releasenotes/archive/service/year2021',
+              ],
+            },
           ]
         }
       ],
