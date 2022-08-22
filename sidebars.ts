@@ -1652,6 +1652,7 @@ module.exports = {
 // *** INTEGRATIONS: Sumo Logic Apps, no longer called APPS
   integrations: [
     'integrations/integrations',
+    'integrations/test',
     {
       type: 'category',
       label: 'Amazon and AWS',
