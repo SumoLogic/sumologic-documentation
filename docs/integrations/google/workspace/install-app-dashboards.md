@@ -26,10 +26,7 @@ To install the app, do the following:
       * **Enter a Custom Data Filter,** and enter a custom source category beginning with an underscore. Example: (_sourceCategory=google_app*).
    * If you have not already, and do not intend to collect Google Workspace Alert Center logs, leave the Source Category in the Google Workspace App Alert Center Log source as blank. Otherwise, select one of the following options for the **Google** **Workspace App Alert Center Log source:**
      * **Source Category,** and select the Source Category from the list.
-     * **Enter a Custom Data Filter,** and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=workspace_alerts`).
-
-<img src={useBaseUrl('img/integrations/google/google-workspace-app.png')} alt="Google Workspace app" />
-
+     * **Enter a Custom Data Filter,** and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=workspace_alerts`).<br/><img src={useBaseUrl('img/integrations/google/google-workspace-app.png')} alt="Google Workspace app" />
 3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
 4. Click **Add to Library**.
 
@@ -62,7 +59,6 @@ You can use filters to drill down and examine the data on a granular level.
 The **Google Workspace - Overview Dashboard** provides a high-level overview of up-to-date activities throughout Google Workspace, including information on login failures, logins from multiple IPs, changes in ACL, login failures by the user, top apps, and top events by event type.
 
 Use this dashboard to:
-
 * Monitor the number of compromised devices and users.
 * Use the panels to navigate to alert center detail dashboards.
 
@@ -96,7 +92,7 @@ Use this dashboard to:
 
 The **Google Workspace - User Activity Dashboard** provides detailed information on Google Drive activity by users. A breakdown of user activity information includes most active users, most active IP addresses, and top users for downloading, uploading, creating, and sharing content.
 
-Use this dashboard to:*
+Use this dashboard to:
 * Monitor content sharing by compromised users to identify potential data leak issues.
 * Determine most active users and active IP addresses.
 * Track top users by the number of activities on Google Drive.
@@ -109,9 +105,6 @@ Use this dashboard to:*
 The** Google Workspace - Login Dashboard** provides high-level graphs and detailed information for Google Workspace apps login data. Login information includes geographic locations, logins by state, successful logins, login failures by the user, IP address, and type; login failure outliers, login activity trends, and logins from multiple IP addresses.
 
 Use this dashboard to:
-
-
-
 * Identify abnormal spikes in login failures.
 * Monitor successful logins by compromised users.
 * Track user login trends and their geographic locations.
@@ -124,9 +117,6 @@ Use this dashboard to:
 The** Google Workspace - Alert Center - Overview Dashboard** provides a high-level view of Google Workspace alert data by source and type, suspicious IP and email addresses, compromised devices and credentials, recent alerts, and alert trends over time.
 
 Use this dashboard to:
-
-
-
 * Determine potential threats.
 * Monitor abnormal spikes and recent alerts.
 * Monitor credentials breaches and compromised devices
@@ -140,9 +130,6 @@ Use this dashboard to:
 The** Google Workspace - Alert Center - Investigations  Dashboard** provides easily accessible analytics on compromised credentials, including Google Workspace activity of users with compromised credentials. This dashboard also provides data on Google Workspace activity from compromised devices.
 
 Use this dashboard to:
-
-
-
 * Track credential breaches and compromised devices.
 * Monitor user activities after credentials have been breached or after a device has been compromised
 * Track potential threats by email, IP address, and domain.
@@ -166,7 +153,6 @@ Use this dashboard to:
 The** Google Workspace - Alert Center - Gmail Phishing dashboard** provides detailed information on phishing attacks and spam activity on Google Workspace applications. This dashboard also provides information on the affected users and the top attackers responsible for the attacks.
 
 Use this dashboard to:
-
 * Monitor users affected by phishing attacks.
 * Identify top attackers by volume and breadth.
 * Track recent attacks.

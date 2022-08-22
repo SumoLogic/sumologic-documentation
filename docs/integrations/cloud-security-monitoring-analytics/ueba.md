@@ -20,8 +20,8 @@ This app requires access to Cloud SIEM Enterprise (CSE).
 Install the Sumo Logic App to use the preconfigured searches and dashboards.
 
 To install the app, do the following:
-1. In the **App Catalog, **search for "UEBA**"** and select the **UEBA** app.
-4. Click **Add to Library**.<br/><img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/ueba-install.png')} alt="UEBA-Signals" width="500"/>
+1. In the **App Catalog,** search for "UEBA" and select the **UEBA** app.
+2. Click **Add to Library**.<br/><img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/ueba-install.png')} alt="UEBA-Signals" width="500"/>
 3. To save the app to a new folder in your personal folder, click **+New Folder** and select a name and location for your folder.
 4. Click **Add to Library** to install the app. A confirmation dialog will appear and then you can start viewing your  dashboards.
 

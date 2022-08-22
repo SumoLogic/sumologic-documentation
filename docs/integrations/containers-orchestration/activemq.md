@@ -239,7 +239,7 @@ This section explains the steps to collect ActiveMQ logs from a Kubernetes envir
     ```
    2. Enter in values for the following parameters (marked in `CHANGE_ME` above):
      * `environment`. This is the deployment environment where the ActiveMQ cluster identified by the value of **`servers`** resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
-     * `messsaging_cluster`. Enter a name to identify this ActiveMQ cluster. This cluster name will be shown in the Sumo Logic dashboards.
+     * `messaging_cluster`. Enter a name to identify this ActiveMQ cluster. This cluster name will be shown in the Sumo Logic dashboards.
 
    :::caution Do not modify these values
 
