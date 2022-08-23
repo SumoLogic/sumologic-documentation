@@ -4,6 +4,8 @@ title: Cloud-to-Cloud Integration Framework
 sidebar_label: Badges
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
 <p><span className="beta">Beta</span></p>
 
 <p><span className="beta-light-font-weight">Beta</span></p>
@@ -14,11 +16,16 @@ sidebar_label: Badges
 
 <p><span className="beta-rounded-no-border">Beta</span></p>
 
+<p><span className="beta-rounded-no-border">Beta <img src={useBaseUrl('img/flask.svg')} alt="Thumbnail icon" width="12"/></span></p>
+
+<p><span className="beta-rounded-no-border">Beta &#129514;</span></p>
+
+:::info Beta
+<img src={useBaseUrl('img/icons/business/beta.png')} alt="Thumbnail icon" width="40"/>
 This document shows the available beta integrations. To participate, contact your Sumo account executive.
+:::
 
 The Cloud-to-Cloud Integration Framework is a fully-managed collection system that collects logs and events directly from SaaS and Cloud platforms. This data often includes custom events and user data critical for operations monitoring, security, and compliance use cases.
-
-As a fully managed collection system, integrations running within the Cloud-to-Cloud Integration Framework provide a secure endpoint to receive event data in your account. Integration authentication, scheduling, and state tracking are all managed by the framework.
 
 
 ## Prerequisites
@@ -47,6 +54,7 @@ The following table provides the static IP addresses used for Cloud-to-Cloud Int
 
 The topics below are the available integrations in beta. You are invited to request new Sources for the Cloud-to-Cloud Integration Framework from our Ideas Portal.
 
+As a fully managed collection system, integrations running within the Cloud-to-Cloud Integration Framework provide a secure endpoint to receive event data in your account. Integration authentication, scheduling, and state tracking are all managed by the framework.
 
 ## I'm Another Section
 
