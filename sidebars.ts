@@ -554,6 +554,7 @@ module.exports = {
             'alerts/monitors/alert-response-faq',
             'alerts/monitors/difference-from-scheduled-searches',
             'alerts/monitors/template-variables',
+            'alerts/monitors/alert-grouping',
           ],
         },
         {
@@ -1226,6 +1227,7 @@ module.exports = {
                 'send-data/sources/sources-hosted-collectors/cloud-to-cloud-integration-framework/crowdstrike-source',
                 'send-data/sources/sources-hosted-collectors/cloud-to-cloud-integration-framework/cse-aws-ec-inventory-source',
                 'send-data/sources/sources-hosted-collectors/cloud-to-cloud-integration-framework/cybereason-source',
+                'send-data/sources/sources-hosted-collectors/cloud-to-cloud-integration-framework/cylance-source',
                 'send-data/sources/sources-hosted-collectors/cloud-to-cloud-integration-framework/dropbox-source',
                 'send-data/sources/sources-hosted-collectors/cloud-to-cloud-integration-framework/duo-source',
                 'send-data/sources/sources-hosted-collectors/cloud-to-cloud-integration-framework/google-workspace-source',
@@ -1652,7 +1654,6 @@ module.exports = {
 // *** INTEGRATIONS: Sumo Logic Apps, no longer called APPS
   integrations: [
     'integrations/integrations',
-    'integrations/test',
     {
       type: 'category',
       label: 'Amazon and AWS',
@@ -1663,6 +1664,7 @@ module.exports = {
         'integrations/amazon-aws/aurora-mysql-ulm',
         'integrations/amazon-aws/aurora-postgresql-ulm',
         'integrations/amazon-aws/cloudfront',
+        'integrations/amazon-aws/cost-explorer',
         'integrations/amazon-aws/dynamodb',
         'integrations/amazon-aws/eks-control-plane',
         'integrations/amazon-aws/elasticache',
@@ -2288,6 +2290,22 @@ module.exports = {
       ],
     },
   ],
+  //List of Beta features
+  beta: [
+    {
+      type: 'category',
+      label: 'Beta',
+      collapsible: true,
+      collapsed: false,
+      link: {type: 'doc', id: 'beta/index'},
+      items: [
+        'alerts/monitors/alert-grouping',
+        'send-data/sources/sources-hosted-collectors/cloud-to-cloud-integration-framework/aws-cost-explorer-source',
+        'integrations/amazon-aws/cost-explorer',
+        'send-data/sources/sources-hosted-collectors/cloud-to-cloud-integration-framework/cylance-source',
+      ],
+    },
+  ],
   releasenotes: [
     {
       type: 'category',
@@ -2307,15 +2325,6 @@ module.exports = {
           collapsed: true,
           link: {type: 'doc', id: 'releasenotes/archive/index'},
           items: [
-            {
-              type: 'category',
-              label: 'CSE Archive',
-              collapsible: true,
-              collapsed: true,
-              items: [
-                'releasenotes/archive/cloud-siem/year2021',
-              ],
-            },
             {
               type: 'category',
               label: 'Collector Archive',

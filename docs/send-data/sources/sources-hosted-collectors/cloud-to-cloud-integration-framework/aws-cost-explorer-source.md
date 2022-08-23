@@ -1,14 +1,15 @@
 ---
 id: aws-cost-explorer-source
+title: AWS Cost Explorer Source (Beta)
 ---
 
-# AWS Cost Explorer Source
+<p> <a href="/docs/beta"><span className="beta">Beta</span></a> </p>
 
 The AWS Cost Explorer Source collects cost and usage reports from [AWS Cost Explorer](https://aws.amazon.com/aws-cost-management/aws-cost-explorer/). You have the option to collect from one or more specific [AWS cost types](https://docs.aws.amazon.com/cost-management/latest/userguide/ce-exploring-data.html) and set how often reports are collected.
 
-:::note
+## Before You Begin
+
 This feature is in Beta. To participate, contact your Sumo account executive.
-:::
 
 ## Create an AWS Cost Explorer Source
 
@@ -30,7 +31,7 @@ To configure an AWS Cost Explorer Source:
 
 1. **Fields.** Click the **+Add Field** link to define the fields you want to associate, each field needs a name (key) and value.
 
-   * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema. 
+   * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
    * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema it is ignored, known as dropped.  
 
     It's recommended to add an **account** field and assign it a friendly name to identify the corresponding AWS account.
@@ -41,15 +42,15 @@ To configure an AWS Cost Explorer Source:
 
 1. For the **Cost Type**, select one or more of the following types to collect. For details on the types, see Amazon's [Understanding your AWS Cost Datasets: A Cheat Sheet](https://aws.amazon.com/blogs/aws-cloud-financial-management/understanding-your-aws-cost-datasets-a-cheat-sheet/) and [Exploring your data using Cost Explorer](https://docs.aws.amazon.com/cost-management/latest/userguide/ce-exploring-data.html).
 
-   * AmortizedCost 
-   * BlendedCost 
+   * AmortizedCost
+   * BlendedCost
    * NetAmortizedCost
-   * NetUnblendedCost 
+   * NetUnblendedCost
    * UnblendedCost
 
 1. For **Granularity**, select one or both of the available time intervals to pull data.
 
-   * Daily Costs (Polled every 12h) 
+   * Daily Costs (Polled every 12h)
    * Monthly Costs (Polled every day)
 
 1. **Processing Rules**. Configure any desired filters, such as allowlist, denylist, hash, or mask, as described in Create a Processing Rule.
@@ -110,7 +111,7 @@ Explorer Source.
 | `description` | String | No | null | Type a description of the Source. | modifiable |
 | `category` | String | No | null | Type a category of the source. This value is assigned to the [metadata](../../../../search/get-started-with-search/search-basics/built-in-metadata.md) field `_sourceCategory`. See [best practices](../../../design-deployment/best-practices-source-categories.md) for details. | modifiable |
 | `fields` | JSON Object | No |  | JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the field `account` to tag logs with a friendly AWS account name. | modifiable |
-| accessID | String | Yes |  | Provide the AWS IAM User access key ID you want to use to authenticate collection requests. | modifiable | 
+| accessID | String | Yes |  | Provide the AWS IAM User access key ID you want to use to authenticate collection requests. | modifiable |
 | accessKey | String | Yes |  | Provide the AWS Secret Key you want to use to authenticate collection requests. | modifiable |
 | granularity | String | array | Yes |  | Provide a comma separated list, such as ["daily","monthly"] | modifiable |
 | costMetrics | String | array | Yes |  | Provide a comma separated list, such as `["AmortizedCost","BlendedCost","NetAmortizedCost", "NetUnblendedCost","UnblendedCost"]`  | modifiable |
