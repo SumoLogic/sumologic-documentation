@@ -96,7 +96,7 @@ For detailed instructions, see [here](https://docs.incapsula.com/Content/managem
 To configure log collection for Sumo Logic, do the following:
 
 1. Add a [Sumo Logic Hosted Collector](/docs/send-data/configure-hosted-collector)
-2. Configure [AWS S3 Source](/docs/send-data/Sources/sources-hosted-collectors/Amazon-Web-Services/AWS-S3-Source).
+2. Configure [AWS S3 Source](/docs/send-data/Sources/hosted-collectors/Amazon-Web-Services/AWS-S3-Source).
 
 
 ## Installing the Imperva-Incapsula WAF App

@@ -239,7 +239,7 @@ This section explains the steps to collect ActiveMQ logs from a Kubernetes envir
     ```
    2. Enter in values for the following parameters (marked in `CHANGE_ME` above):
      * `environment`. This is the deployment environment where the ActiveMQ cluster identified by the value of **`servers`** resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
-     * `messsaging_cluster`. Enter a name to identify this ActiveMQ cluster. This cluster name will be shown in the Sumo Logic dashboards.
+     * `messaging_cluster`. Enter a name to identify this ActiveMQ cluster. This cluster name will be shown in the Sumo Logic dashboards.
 
    :::caution Do not modify these values
 
@@ -303,7 +303,7 @@ In non-Kubernetes environments, we use the Telegraf operator for ActiveMQ metric
 This section provides instructions for configuring metrics collection for the Sumo Logic App for ActiveMQ.
 
 1. **Configure a Hosted Collector**. To create a new Sumo Logic hosted collector, perform the steps in the [Configure a Hosted Collector](/docs/send-data/configure-hosted-collector) section of the Sumo Logic documentation.
-2. **Configure an HTTP Logs and Metrics Source**. Create a new HTTP Logs and Metrics Source in the hosted collector created above by following[ these instructions. ](/docs/send-data/sources/sources-hosted-collectors/http-logs-metrics-source)Make a note of the **HTTP Source URL**.
+2. **Configure an HTTP Logs and Metrics Source**. Create a new HTTP Logs and Metrics Source in the hosted collector created above by following[ these instructions. ](/docs/send-data/sources/hosted-collectors/http-logs-metrics-source)Make a note of the **HTTP Source URL**.
 3. **Install Telegraf**. Use the[ following steps](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf.md) to install Telegraf.
 4. **Configure and start Telegraf**. As part of collecting metrics data from Telegraf, we will use the [Jolokia2 input plugin](https://github.com/influxdata/telegraf/blob/master/plugins/inputs/jolokia2/examples/activemq.conf) to get data from Telegraf and the [Sumo Logic output plugin](https://github.com/SumoLogic/fluentd-output-sumologic) to send data to Sumo Logic.
    1. Before you configure telegraf, you will need to:
@@ -428,10 +428,10 @@ Based on your infrastructure and networking setup choose one of these methods to
    log4j.appender.logfile.maxFileSize=10240MB
    log4j.logger.org.apache.activemq=DEBUG
    ```
-   * Logs from the ActiveMQ log file can be collected via a Sumo Logic [Installed collector](/docs/send-data/Installed-Collectors) and a [Local File Source](/docs/send-data/Sources/sources-installed-collectors/Local-File-Source) as explained in the next section.
+   * Logs from the ActiveMQ log file can be collected via a Sumo Logic [Installed collector](/docs/send-data/Installed-Collectors) and a [Local File Source](/docs/send-data/Sources/installed-collectors/Local-File-Source) as explained in the next section.
 3. **Configuring a Collector**. To add an Installed collector, perform the steps as defined on the page [Configure an Installed Collector.](/docs/send-data/Installed-Collectors)
 4. **Configuring a Source**. To collect logs directly from your ActiveMQ machine, use an Installed Collector and a Local File Source:
-   1. Add a [Local File Source](/docs/send-data/Sources/sources-installed-collectors/Local-File-Source).
+   1. Add a [Local File Source](/docs/send-data/Sources/installed-collectors/Local-File-Source).
    2. Configure the Local File Source fields as follows:
      * **Name.** (Required)
      * **Description.** (Optional)

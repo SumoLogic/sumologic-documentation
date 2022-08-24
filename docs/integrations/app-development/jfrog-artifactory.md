@@ -24,10 +24,10 @@ The Sumo Logic App for Artifactory only supports Artifactory On-Premise. It does
 
 The Sumo Logic App for Artifactory collects data from the following logs:
 
-* **artifactory.log.** The main Artifactory log file that contains data on Artifactory server activity.
-* **access.log.** The security log containing important information about accepted and denied requests, configuration changes, and password reset requests. The originating IP address for each event is also recorded.
-* **request.log.** Generic HTTP traffic information similar to the Apache HTTPd request log.
-* **traffic.log.** A log that contains information about site traffic and file sizes.
+* **artifactory.log**. The main Artifactory log file that contains data on Artifactory server activity.
+* **access.log**. The security log containing important information about accepted and denied requests, configuration changes, and password reset requests. The originating IP address for each event is also recorded.
+* **request.log**. Generic HTTP traffic information similar to the Apache HTTPd request log.
+* **traffic.log**. A log that contains information about site traffic and file sizes.
 
 For more details about Artifactory logs, refer to [https://www.jfrog.com/confluence/display/RTF/Artifactory+Log+Files](https://www.jfrog.com/confluence/display/RTF/Artifactory+Log+Files) and [Artifactory Log Files](https://www.jfrog.com/confluence/display/RTF6X/Artifactory+Log+Files#ArtifactoryLogFiles-RequestLog).
 
@@ -161,7 +161,7 @@ The following suffixes are required. For example, you could use `_sourceCategory
 `_sourceCategory` names are case sensitive. When you run a search using `_sourceCategory`, make sure you use the same case as you did when configuring the source.
 :::
 
-For complete instructions, see [Local File Source](/docs/send-data/Sources/sources-installed-collectors/Local-File-Source).
+For complete instructions, see [Local File Source](/docs/send-data/Sources/installed-collectors/Local-File-Source).
 
 1. Configure a Local File source.
 2. Configure the Source fields:
@@ -341,7 +341,7 @@ The following suffixes are required. For example, you could use `_sourceCategory
 Remember that `_sourceCategory` names are case sensitive. When you run a search using `_sourceCategory`, make sure you use the same case as you did when configuring the source.
 :::
 
-For complete instructions, see [Local File Source](/docs/send-data/Sources/sources-installed-collectors/Local-File-Source).
+For complete instructions, see [Local File Source](/docs/send-data/Sources/installed-collectors/Local-File-Source).
 
 1. Configure a Local File source.
 2. Configure the Source fields:

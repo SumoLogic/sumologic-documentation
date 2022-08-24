@@ -34,7 +34,7 @@ To configure a collector for Keeper Security, follow the instructions in the [Ho
 You can configure sources for collectors that are hosted in Amazon Web Services (AWS), Microsoft, or other hosting services.
 
 To configure an HTTP source for Keeper, do the following:
-1. Go to the [Sources for Hosted Collectors](/docs/send-data/Sources/sources-hosted-collectors) page.
+1. Go to the [Sources for Hosted Collectors](/docs/send-data/Sources/hosted-collectors) page.
 2. Select the hosting service appropriate for your environment.
 3. Follow the instructions for adding an **HTTP Log Source**, using the default options.
 

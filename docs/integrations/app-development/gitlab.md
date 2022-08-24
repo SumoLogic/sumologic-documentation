@@ -23,17 +23,15 @@ The Sumo Logic App for GitLab ingests GitLab events using a webhook. Sumo Logic 
 * Issue
 * Push
 
-For information on GitLab events, refer to [GitLab documentation](https://docs.gitlab.com/ee/user/project/integrations/webhooks.html).
-
-For troubleshooting, see the [GitLab Troubleshooting](#Troubleshooting) section.
+For information on GitLab events, refer to [GitLab documentation](https://docs.gitlab.com/ee/user/project/integrations/webhooks.html). For troubleshooting, see the [GitLab Troubleshooting](#Troubleshooting) section.
 
 
-## Sample Logs
+### Sample Logs
 
 For more information about log messages, see [GitLab documentation](https://docs.gitlab.com/ee/user/project/integrations/webhooks.html).
 
 
-## Sample Query
+### Sample Query
 
 This section provides a sample query from the **Opened Merge Requests** panel on the **GitLab - Merge Requests** dashboard.
 
@@ -66,7 +64,7 @@ For information on GitLab webhooks, refer to [GitLab documentation](https://docs
 Create a host collector to receive Webhooks from GitLab and set up an HTTP source on it.
 
 1. Configure a [Hosted Collector](/docs/send-data/configure-hosted-collector), or select an existing hosted collector for the HTTP source.
-2. Configure an [HTTP source](/docs/send-data/sources/sources-hosted-collectors/http-logs-metrics-source) on the hosted collector.
+2. Configure an [HTTP source](/docs/send-data/sources/hosted-collectors/http-logs-metrics-source) on the hosted collector.
     * For **Source Category**, specify GitLab/events.
     * Click **+Add Field** and provide the following:
         * **Field Name.** `_convertHeadersToFields`

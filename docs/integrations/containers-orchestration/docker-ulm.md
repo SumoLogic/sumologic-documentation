@@ -646,20 +646,15 @@ In the **Container Filter** field, you can enter a comma-separated list of one o
 * A wildcard filter, for example, `my-container-*`
 * An exclusion filter, which begins with an exclamation mark, for example, `!master-container` or `!prod-*`
 
-For example, this filter list...
+For example, this filter list below will cause the source to collect from all containers whose names start with `“prod-”`, except those that match `“prod-*-mysql”`. It will also collect from containers with names that match `“master-*-app-*”`, and from the `“sumologic-collector”` container.
 ```sql
 prod-*, !prod-*-mysql, master-*-app-*, sumologic-collector
 ```
 
-...will cause the source to collect from all containers whose names start with `“prod-”`, except those that match `“prod-*-mysql”`. It will also collect from containers with names that match `“master-*-app-*”`, and from the `“sumologic-collector”` container.
-
-If your filter list contains only exclusions, the source will collect all containers except from those that match your exclusion filters. For example:
-
+If your filter list contains only exclusions, the source will collect all containers except from those that match your exclusion filters. The below example will cause the source to exclude containers whose names begin with `“container123”` and `“prod-”`.
 ```sql
 !container123*, !prod-*
 ```
-
-will cause the source to exclude containers whose names begin with `“container123”` and `“prod-”`.
 
 
 ### Configure sourceCategory and sourceHost using variables
@@ -679,7 +674,7 @@ The table below defines the types of variables you can use.
 
 Docker engine event log data doesn't support the tagging with metadata.
 
-<table>
+<table><small>
   <tr>
    <td><strong>Namespace/VAR_TYPE</strong>
    </td>
@@ -721,7 +716,7 @@ Docker engine event log data doesn't support the tagging with metadata.
    <td>The name of the variable.
 <p>Dot characters (<code>.</code>) are not supported.</p>
    </td>
-  </tr>
+  </tr></small>
 </table>
 
 
@@ -770,7 +765,7 @@ Panels will start to fill automatically. It's important to note that each panel 
 
 This section describes the dashboards in the Sumo Logic App for Docker ULM.
 
-### Docker - Overview
+### Overview
 
 See an overview of Docker activity, including the number of Docker hosts; the number of containers started, paused, stopped, and killed; event information; and the top containers by CPU usage, bytes sent, bytes received, and memory usage over the last 24 hours.
 
@@ -800,7 +795,7 @@ See an overview of Docker activity, including the number of Docker hosts; the nu
 
 **Top 5 Containers by Memory Usage**. A line chart that shows the memory usage by the top five containers that used the most memory over the last 24 hours.
 
-### Docker - Block IO
+### Block IO
 
 See the number of block I/O requests serviced by each container, and the number of bytes transferred to and from disk by each container over the last three hours.
 
@@ -811,7 +806,7 @@ See the number of block I/O requests serviced by each container, and the number 
 **Number of Bytes Transferred to/from the Disk**. A line chart that shows the number of bytes written to and read by each container over the last three hours.
 
 
-### Docker - CPU Usage
+### CPU Usage
 
 See information about CPU usage and container throttling over the last three hours.
 
@@ -830,7 +825,7 @@ See information about CPU usage and container throttling over the last three hou
 **Count of Periods with Throttling Active**. A line chart that shows how many times each container's CPU was throttled over the last three hours.
 
 
-### Docker - Memory Usage
+### Memory Usage
 
 See information about container memory limits, memory usage, and page faults over the last three hours.
 
@@ -851,7 +846,7 @@ See information about container memory limits, memory usage, and page faults ove
 **RSS Memory by Container**. A line chart that shows the amount of RSS memory for each container over the last three hours.
 
 
-### Docker - Network Usage
+### Network Usage
 
 See information about network usage over the last three hours.
 

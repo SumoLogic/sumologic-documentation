@@ -240,7 +240,7 @@ This section provides instructions for configuring logs and metrics collection f
 #### Configure Metrics Collection
 
 1. **Configure a Hosted Collector**. To create a new Sumo Logic hosted collector, perform the steps in the[ Create a Hosted Collector](/docs/send-data/configure-hosted-collector) section of the Sumo Logic documentation.
-2. Configure an HTTP Logs and Metrics Source. Create a new HTTP Logs and Metrics Source in the hosted collector created above by following[ these instructions. ](/docs/send-data/sources/sources-hosted-collectors/http-logs-metrics-source). Make a note of the **HTTP Source URL**.
+2. Configure an HTTP Logs and Metrics Source. Create a new HTTP Logs and Metrics Source in the hosted collector created above by following[ these instructions. ](/docs/send-data/sources/hosted-collectors/http-logs-metrics-source). Make a note of the **HTTP Source URL**.
 3. **Install Telegraf**. Use the [ following steps](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf.md) to install Telegraf.
 4. **Configure and start Telegraf**. As part of collecting metrics data from Telegraf, we will use the [elasticsearch input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/elasticsearch) to get data from Telegraf and the [Sumo Logic output plugin](https://github.com/SumoLogic/fluentd-output-sumologic) to send data to Sumo Logic. Create or modify **telegraf.conf** and copy and paste the text below:
 ```sql
@@ -292,9 +292,9 @@ This section provides instructions for configuring log collection for Sumo Logic
    * `notice` (default value): moderately verbose, ideal for production environments
    * `warning`: only very important/critical messages are logged
 
-  All logging settings are located in [Elasticsearch.conf](https://www.elastic.co/guide/en/elasticsearch/reference/current/logging.html). By default, Elasticsearch logs are stored in `/var/log/elasticsearch/ELK-<Clustername>.log`. The default directory for log files is listed in the Elasticsearch.conf file. Logs from the Elasticsearch log file can be collected via a Sumo Logic [Installed collector](/docs/send-data/Installed-Collectors) and a [Local File Source](/docs/send-data/Sources/sources-installed-collectors/Local-File-Source) as explained in the next section.
+  All logging settings are located in [Elasticsearch.conf](https://www.elastic.co/guide/en/elasticsearch/reference/current/logging.html). By default, Elasticsearch logs are stored in `/var/log/elasticsearch/ELK-<Clustername>.log`. The default directory for log files is listed in the Elasticsearch.conf file. Logs from the Elasticsearch log file can be collected via a Sumo Logic [Installed collector](/docs/send-data/Installed-Collectors) and a [Local File Source](/docs/send-data/Sources/installed-collectors/Local-File-Source) as explained in the next section.
 2. **Configure an Installed Collector**. To collect logs directly from the Elasticsearch machine, configure an [Installed Collector](/docs/send-data/Installed-Collectors) and a Local File Source.
-3. Configure a [Local File Source](/docs/send-data/Sources/sources-installed-collectors/Local-File-Source), editing the fields as follows:
+3. Configure a [Local File Source](/docs/send-data/Sources/installed-collectors/Local-File-Source), editing the fields as follows:
    * **Name.** (Required)
    * **Description.** (Optional)
    * **File Path (Required).** Enter the path to your error.log or access.log. The files are typically located in `/var/log/elasticsearch/elasticsearch-<clustername>.log`. If you're using a customized path, check the Elasticsearch.conf file for this information.

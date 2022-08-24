@@ -99,7 +99,7 @@ Perform the following tasks to configure log collection for the F5 - BIG-IP LTM 
 #### Step 1: Create a Sumo Logic Hosted Collector
 
 1. Configure a Hosted Collector in Sumo Logic using [these instructions](/docs/send-data/configure-hosted-collector).
-2. Add an [HTTP source](/docs/send-data/sources/sources-hosted-collectors/http-logs-metrics-source), configuring the Source Category with the string f5 in it (e.g. “f5/ltm”). \
+2. Add an [HTTP source](/docs/send-data/sources/hosted-collectors/http-logs-metrics-source), configuring the Source Category with the string f5 in it (e.g. “f5/ltm”). \
 Make a note of the URL for the HTTP source, as you will need it in the following steps. The URL for our example is: [https://collectors.us2.sumologic.com/receiver/v1/http/Thisis4fakeendpoint4testing==](https://collectors.us2.sumologic.com/receiver/v1/http/Thisis4fakeendpoint4testing==)
 
 
@@ -107,7 +107,7 @@ Make a note of the URL for the HTTP source, as you will need it in the following
 
 Download [AS3Listener.json from here](https://sumologic-app-data.s3.amazonaws.com/F5LTM/AS3Listener.json), and we will use it to define the logging profile st BIG IP.  Use the following curl cmd to set logging profile at BIG-IP.  Replace BIG-IP PWD, BIG-IP IP, and PORT in the following cmd :
 
-```curl
+```bash
 curl -k --user admin:<BIG-IP PWD> -H "Accept: application/json" -H "Content-Type:application/json" -X POST -d@AS3Listener.json https://<BIG-IP IP>:<PORT>/mgmt/shared/appsvcs/declare | python -m json.tool
 ```
 
@@ -126,7 +126,7 @@ Example: For Sumo Logic HTTP URL [https://collectors.us2.sumologic.com/receiver/
 
 Now, Using telemetry we will define a [Sumo Logic sink ](https://clouddocs.f5.com/products/extensions/f5-telemetry-streaming/latest/setting-up-consumer.html#sumo-logic), which will enable us to forward statistics and events from the BIG-IP to Sumo Logic. Use the following curl cmd and replace `BIG-IP PWD, BIG-IP IP, and PORT.`
 
-```curl
+```bash
 curl -k --user admin:<BIGIP PWD> -H "Accept: application/json" -H "Content-Type:application/json" -X POST -d@sumo.json https://<BIG-IP IP>:<PORT>3/mgmt/shared/telemetry/declare | python -m json.tool
 ```
 

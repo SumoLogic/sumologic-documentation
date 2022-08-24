@@ -4,7 +4,7 @@ id: install-collector-linux
 
 # Install a Collector on Linux
 
-Follow the steps in this topic to install or uninstall a collector on Linux. See [Installed Collectors](/docs/send-data/sources/sources-installed-collectors) for information on other OSs.
+Follow the steps in this topic to install or uninstall a collector on Linux. See [Installed Collectors](/docs/send-data/sources/installed-collectors) for information on other OSs.
 
 ## System Requirements 
 
