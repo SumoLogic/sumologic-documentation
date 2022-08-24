@@ -8,13 +8,15 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 <p><a href="/docs/beta"><span className="beta">Beta</span></a></p>
 
-This feature is in Beta. To participate, contact your Sumo account executive.
-
 <img src={useBaseUrl('img/integrations/amazon-aws/costexplorer.png')} alt="Thumbnail icon" width="50"/>
 
 [AWS Cost Explorer](https://aws.amazon.com/aws-cost-management/aws-cost-explorer/) provides you with a set of default reports that you can use as the starting place for your analysis. From there, use the filtering and grouping capabilities to dive deeper into your cost and usage data and generate custom insights.
 
 The Sumo Logic App for AWS Cost Explorer lets you visualize, understand, and manage your AWS costs and usage over time.
+
+## Before You Begin
+
+This feature is in Beta. To participate, contact your Sumo account executive.
 
 ## Log Types
 The AWS Cost Explorer App uses the JSON formatted logs collected using AWS Cost Explorer source.
