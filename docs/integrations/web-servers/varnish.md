@@ -42,7 +42,7 @@ This App is tested with the following versions:
 </TabItem>
 <TabItem value="non-k8s">
 
-```curl
+```bash
 187.255.220.191 - - [01/Jul/2021:15:15:53 +0700] \
 "GET /_includes/wp/blog/wp-content/themes/sumologic/sty
 ```

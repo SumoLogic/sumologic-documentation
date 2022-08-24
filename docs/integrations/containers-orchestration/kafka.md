@@ -176,14 +176,14 @@ For more information on configuring the Joloka input plugin for Telegraf please 
            name: jolokia
  ```
 8. **Verification Step:** You can ssh to Kafka pod and run following commands to make sure Telegraf (and Jolokia) is scraping metrics from your Kafka Pod:
- ```curl
+ ```bash
  curl localhost:9273/metrics
  curl http://localhost:8778/jolokia/list
  echo $KAFKA_OPTS
  ```
 
 It should give you the following result:
- ```curl
+ ```bash
  -javaagent:/opt/jolokia/jolokia.jar=port=8778,host=0.0.0.0
  ```
 
@@ -279,7 +279,7 @@ This section provides instructions for configuring metrics collection for the Su
     ```
    5. Restart Kafka Service
    6. Verify that you can access jolokia on `port 8778` using following command:
-    ```curl
+    ```bash
     curl http://KAFKA_SERVER_IP_ADDRESS:8778/jolokia/
     ```
 5. **Configure the Jolokia Input Plugin**. Create or modify the telegraf.conf file in /etc/telegraf/telegraf.d and copy and paste the text [from this file](https://sumologic-app-data.s3.amazonaws.com/Kafka/config_telegraf.conf).

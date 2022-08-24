@@ -428,7 +428,7 @@ The app prompts you for permission to install based on your selected permission.
 1. Verify that the generated token is valid with the following commands. If the token is valid, the output will have "ok":true in the response. Replace the `<API_TOKEN>` variable with the generated token you copied in the previous step.
 
 
-```curl
+```bash
 curl -X GET -H "Authorization: Bearer <API_TOKEN>" -H "Accept: application/json" "https://slack.com/api/team.info?pretty=1"
 curl -X GET -H "Authorization: Bearer <API_TOKEN>" -H "Accept: application/json" "https://slack.com/api/users.list?limit=5&pretty=1"
 curl -X GET -H "Authorization: Bearer <API_TOKEN>" -H "Accept: application/json" "https://slack.com/api/conversations.list?limit=2&pretty=1"
@@ -496,7 +496,7 @@ https://slack.com/api/oauth.v2.access?code=<CODE>&client_id=<CLIENT_ID>&client_s
 ```
 
 1. Verify that the generated token is valid with the following commands. If the token is valid, the output will have "ok":true in the response. Replace the `<API_TOKEN>` variable with the generated token you copied in the previous step.
-```curl
+```bash
 curl -X GET -H "Authorization: Bearer <API_TOKEN>" -H "Accept: application/json" "https://slack.com/api/team.info?pretty=1"
 curl -X GET -H "Content-Type: application/json" -H "Authorization: Bearer <ACCESS_TOKEN>" https://api.slack.com/audit/v1/logs?limit=5&pretty=1
 ```

@@ -317,11 +317,11 @@ Your browser will display error messages like those shown below. You can ignore 
 Copy the URL from the browser, change the protocol from "https" to "http" then use one of the following options ON THE SAME MACHINE where the script is running (in case your browser is actually on a different machine). The use of single quotes surrounding the URL are required:
 
 * For Linux, open a terminal window and run:
-```curl
+```bash
 curl -X GET 'the above url'
 ```
 * For Windows, open a Powershell window and run:
-```curl
+```bash
 Invoke-WebRequest 'the above url' -Method Get
 ```
 

@@ -90,12 +90,17 @@ module.exports = {
     [
       'redocusaurus',
       {
-        specs: [{
+        specs: [
+          {
             id: 'sumoapi',
             //specUrl: 'https://api.sumologic.com/docs/sumologic-api.yaml',
             spec: 'sumologic-api.yaml',
             route: '/sumoapi/',
-          },],
+          },
+        ],
+        theme: {
+          customTheme: require.resolve('./src/css/sumoapi-override.scss'),
+        },
       },
     ],
   ],
