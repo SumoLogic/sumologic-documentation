@@ -1,65 +1,59 @@
 ---
 id: create-document
-title: Create a Document
-sidebar_label: Create a Document
-description: Learn how to write a doc in markdown.
+title: Create a Sumo Logic Document
+sidebar_label: Create Your First Doc
+description: Learn how to create and write a doc in markdown.
 ---
 
 A document is a markdown file (.md) with content, bulleted instructions, images, tables, code samples, and more.
 
-## Create your first Doc
+To create your first doc:
+
+## 1. Create doc file
 
 Create a markdown file with filename.md in a /docs folder that best matches the guide. This is the English language guide. For information on translations, see [Translate Documentation](translate-documentation.md).
 
-```markdown
----
-id: page-id
-sidebar_label: Navigation title
-description: Learn more about...
----
+## 2. Add doc title and metadata
 
-# Title of the Page
-```
+See [Markdown Features > Front Matter](/docs/contribution/markdown-features#front-matter) to learn how.
 
-| Parameter | Description |
-| -- | -- |
-| `id:` | **Required.** Id for the page used in the sidebar and as the canonical link. Keep it short and only use dashes. |
-| `sidebar_label:` | Optional, use a different title for the side navigation. Keep this title short. It does not affect the canonical link or page title. |
-| `description:` | Optional, one sentence describing what the user will find in the page for searches. Otherwise the first couple sentences are used for searches. |
-| `# Title of the Page` | **Required.** Only use an H1 once for the title of the page. This title is used in navigation is a `sidebar_label` is not included.|
-| `slug:` | Overrides the id for the canonical link. Best used for index pages for sections. |
+## 3. Add doc content
 
-## Add content and images
+### Text
 
-All content uses GitHub Flavored Markdown with some options and additions. All images should be added to the `static/img` folders. The current folders are based on doc sections. Always replace an existing image, do not keep adding new ones with dates. You can also add files such as custom code, json, yaml, and xml in the `static/files` folder.
+Doc body text content is written in GitHub-flavored markdown, with some customizations.
 
-For information, see [Markdown Features](markdown-features.md) and [Docusaurus Static Assets](https://docusaurus.io/docs/static-assets) for more information.
+### Images
 
-## Reusing Content
+Images must be added to the `static/img` folders. The `img` folder structure currently mirrors the doc sections. To stay organized, always replace existing images, rather than adding new ones with dates or version numbers.
+
+### Custom files
+
+You can also add files such as custom code, json, yaml, and xml in the `static/files` folder.
+
+See [Markdown Features](markdown-features.md) and [Docusaurus Static Assets](https://docusaurus.io/docs/static-assets) for more information.
+
+### Reusing content
 
 You can create a section of content for reuse by creating a markdown file and saving it in `/docs/reuse`. If the file includes headings, they do not add to the right side page nav. You may want reuse to be just a section of content without headings.
 
 To add the file to another document, use this code with the reuse file name:
-
-```
+```bash
 {@import ../../reuse/filename.md}
 ```
 
-## Add to Navigation
+## 4. Add doc to navigation menu
 
-The `sidebar.ts` file (in repo root) controls the side navigation for the entire site. It includes multiple sidebars and sections based on the Guides top navigation, drilling down per guide. A list of sections and advice on content is at the top of the sidebars file, with comments throughout.
+The `sidebars.ts` file (in repo root) controls the side navigation for the entire site. It consists of multiple sidebars and sections based on the Guides top navigation, drilling down per guide. A list of sections and advice on content is at the top of the sidebars file, with comments throughout. The [docusaurus.config.js file](https://docusaurus.io/docs/api/docusaurus-config) controls top-level navigation content.
 
 * To add a specific page, you include the directory path and topic id from the frontmatter. For example, this page is `contribution/create-document`.
 * To add a section within a section, use a category section with page links in it (see below example).
 * To add an index for a section, create an index.md page in the folder. Give it a `slug: name` where the name is the folder for the entire section like contribution-guide. In the category, use a link line with the folder name and index for example: `link: {type: 'doc', id: 'contribution/index'},`.
+* To add a new page, make note of the file path and id. For example, this document is located in the folder `contribution` with an id of `create-document`. When adding this file to the sidebar, it would be added to the `contribution/create-document`.
 
-:::sumo Doc Team Support
-The Sumo Logic Doc Team will help to add your documentation to the sidebar and top navigation. If you have suggestions, please include those in the Pull Request description. If you add the documentation to the sidebar, the team will review the location and names for building and placement in navigation.
-:::
+<details><summary>Example: add <code>contribution/create-document</code> to sidebars.ts</summary>
 
-When adding a new page, make note of the file path and id. For example, this document is located in the folder `contribution` with an id of `create-document`. When adding this file to the sidebar, it would be added to the  `contribution/create-document`.
-
-```js title="Add this page to sidebar.ts" {10}
+```js title="sidebars.ts"
 //Contribution guide for documentation
   contribution: [
     {
@@ -88,9 +82,13 @@ When adding a new page, make note of the file path and id. For example, this doc
   ],
 ```
 
-To add a category, or drop-down list of documentation, use the following format:
+</details>
 
-```js Sidebar category example with additional section
+* To add a category, or drop-down list of documentation, use the following format:
+
+<details><summary>Example: add sidebar category example with additional section</summary>
+
+```js title="sidebars.ts"
     {
       type: 'category',
       label: 'Name of Guide',
@@ -115,9 +113,13 @@ To add a category, or drop-down list of documentation, use the following format:
     },
 ```
 
-To add a dedicated sidebar, use the following format:
+</details>
 
-```js Example adding a dedicated sidebar for a guide
+* To add a dedicated sidebar, use the following format:
+
+<details><summary>Example: adding a dedicated sidebar for a guide</summary>
+
+```js title="sidebars.ts"
 module.exports = {
   sectionName: [
     ``,
@@ -167,7 +169,8 @@ module.exports = {
     },
   ]
 ```
+</details>
 
-### Top Navigation
-
-All top navigation content is controlled by the docusaurus.config.js file. We recommend only allowing the Sumo Logic documentation team touch this file. For information from Docusaurus, see [Docusaurus Config](https://docusaurus.io/docs/api/docusaurus-config).
+:::note Doc Team Support
+The Sumo Logic Doc Team will help your add your documentation to the sidebar and top navigation. If you have suggestions, please include those in your Pull Request description. If you add the documentation to the sidebar, the team will review the location and names for building and placement in navigation.
+:::
