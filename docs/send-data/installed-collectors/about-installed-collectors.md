@@ -6,7 +6,7 @@ id: about-installed-collectors
 
 An Installed Collector is a Java agent that receives logs and metrics from its Sources and then encrypts, compresses, and sends the data to the Sumo service. As its name implies, an Installed Collector is installed in your environment, as opposed to a Hosted Collector, which resides on the Sumo service. After installing a Collector, you add Sources, to which the Collector connects to obtain data to send to the Sumo service. 
 
-A Sumo Source is an object configured for a specific Collector that sends data to Sumo Logic. There are a number of Source types that work with Installed Collectors. For a list of all Sources supported by Installed Collectors, see [Sources for Installed Collectors](/docs/send-data/sources/sources-installed-collectors).
+A Sumo Source is an object configured for a specific Collector that sends data to Sumo Logic. There are a number of Source types that work with Installed Collectors. For a list of all Sources supported by Installed Collectors, see [Sources for Installed Collectors](/docs/send-data/sources/installed-collectors).
 
 For details on supported operating systems and hardware restrictions see Installed Collector requirements.
 
@@ -31,7 +31,7 @@ import Iframe from 'react-iframe';
 
 ## CPU usage guidelines
 
-An Installed Collector will use all CPU processing resources available on a machine to collect your data. We have benchmarked CPU performance based on the number of [Local File Sources](../sources/sources-installed-collectors/local-file-source.md) running on an Installed Collector and the size of log messages ingested. The default allocated memory of 128 MB of Java heap space was used.
+An Installed Collector will use all CPU processing resources available on a machine to collect your data. We have benchmarked CPU performance based on the number of [Local File Sources](../sources/installed-collectors/local-file-source.md) running on an Installed Collector and the size of log messages ingested. The default allocated memory of 128 MB of Java heap space was used.
 
 :::tip
 The Collector can try to keep CPU usage at a targeted percentage when using Local and Remote File Sources.
@@ -118,7 +118,7 @@ Each Source is tagged with its own metadata, as described in [Metadata Naming C
 
 When you configure Sources that read from log files, you specify a path expression that defines what files to scan. You can optionally configure a denylist of files to exclude from collection.  
 
-You can create Sources using the Sumo web app at any time after Collector installation. For source-specific instructions, see the topics below [Sources for Installed Collectors](/docs/send-data/sources/sources-installed-collectors).
+You can create Sources using the Sumo web app at any time after Collector installation. For source-specific instructions, see the topics below [Sources for Installed Collectors](/docs/send-data/sources/installed-collectors).
 
 Alternatively, you can define Sources for an Installed Collector in a UTF-8 encoded JSON file, in which case you must provide the file when starting the Collector for the first time. For more information, see [Use JSON to Configure
 Sources](/docs/send-data/sources/use-json-configure-sources). Note that if you provide the Sources configuration in a JSON file, you can no longer manage the Sources through the Sumo web app or the Collector Management API.

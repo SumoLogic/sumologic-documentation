@@ -44,7 +44,7 @@ Configure an [Installed Collector](/docs/send-data/Installed-Collectors).
 
 ### Configure a Source
 
-To configure a source for collecting Linux logs, you create a Local File Source. Following the instructions on [Local File Source](/docs/send-data/Sources/sources-installed-collectors/Local-File-Source). When you define a Source Category for the source, we recommend something like: prod/os/linux. For more information about Source Categories, see see [Best Practices](/docs/send-data/design-deployment/best-practices-source-categories).
+To configure a source for collecting Linux logs, you create a Local File Source. Following the instructions on [Local File Source](/docs/send-data/Sources/installed-collectors/Local-File-Source). When you define a Source Category for the source, we recommend something like: prod/os/linux. For more information about Source Categories, see see [Best Practices](/docs/send-data/design-deployment/best-practices-source-categories).
 
 ### Sample Log Messages
 

@@ -41,7 +41,7 @@ account={{account}} region CostUsd CostType StartDate EndDate MetricType Granula
 
 ## Collecting Logs and Metrics
 
-See [AWS Cost Explorer Source (Beta)](/docs/send-data/sources/sources-hosted-collectors/cloud-to-cloud-integration-framework/aws-cost-explorer-source).
+See [AWS Cost Explorer Source (Beta)](/docs/send-data/sources/hosted-collectors/cloud-to-cloud-integration-framework/aws-cost-explorer-source).
 
 
 ## Installing the AWS Cost Explorer App

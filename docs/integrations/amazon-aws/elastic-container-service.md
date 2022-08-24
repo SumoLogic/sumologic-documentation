@@ -294,9 +294,9 @@ This section has instructions for collecting logs and metrics for the Amazon ECS
 
 ### Collect Metrics for Amazon ECS
 
-In this step, you set up an [Amazon CloudWatch Source for Metrics](/docs/send-data/sources/sources-hosted-collectors/amazon-web-services/amazon-cloudwatch-source-metrics).
+In this step, you set up an [Amazon CloudWatch Source for Metrics](/docs/send-data/sources/hosted-collectors/amazon-web-services/amazon-cloudwatch-source-metrics).
 
-1. Grant permission for Sumo Logic to list available metrics and get metric data points. For instructions, see [Grant Access to an AWS Product](/docs/send-data/sources/sources-hosted-collectors/amazon-web-services/grant-access-aws-product.md).
+1. Grant permission for Sumo Logic to list available metrics and get metric data points. For instructions, see [Grant Access to an AWS Product](/docs/send-data/sources/hosted-collectors/amazon-web-services/grant-access-aws-product.md).
 2. Configure a [Hosted Collector](/docs/send-data/configure-hosted-collector).
 3. In the Sumo web app, select **Manage Data > Collection > Collection**.
 4. Navigate to the hosted collector you configured above and select **Add > Add Source**.
@@ -307,7 +307,7 @@ In this step, you set up an [Amazon CloudWatch Source for Metrics](/docs/send-da
 9. **Namespaces.** Select **AWS/ECS**.
 10. **Source Category.** Enter **ecs_metrics**.
 11. **AWS Access**. There are two options for AWS access:
-    * **Role-based access**. This is the preferred method. You can use this option if you granted access to Amazon ECS as described in [Grant Access to an AWS Product](/docs/send-data/sources/sources-hosted-collectors/amazon-web-services/grant-access-aws-product.md).  For role-based access enter the Role ARN that was provided by AWS after creating the role.
+    * **Role-based access**. This is the preferred method. You can use this option if you granted access to Amazon ECS as described in [Grant Access to an AWS Product](/docs/send-data/sources/hosted-collectors/amazon-web-services/grant-access-aws-product.md).  For role-based access enter the Role ARN that was provided by AWS after creating the role.
     * **Key access**. Enter the Access Key ID and Secret Access Key. For more information, see [Managing Access Keys for IAM Users](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html) in AWS help.
 12. **Scan Interval.** Use the default of 5 minutes, or enter the frequency Sumo Logic will scan your CloudWatch Sources for new data.
 13. Click **Save**.
@@ -315,10 +315,10 @@ In this step, you set up an [Amazon CloudWatch Source for Metrics](/docs/send-da
 
 ### Collect ECS events using CloudTrail
 
-In this step, you set up an [AWS CloudTrail Source](/docs/send-data/sources/sources-hosted-collectors/amazon-web-services/aws-cloudtrail-source.md) to collect ECS events.
+In this step, you set up an [AWS CloudTrail Source](/docs/send-data/sources/hosted-collectors/amazon-web-services/aws-cloudtrail-source.md) to collect ECS events.
 
 1. [Configure CloudTrail](http://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-add-a-trail-using-the-console.html) in your AWS account. This will create an S3 bucket, if you so choose.
-2. Grant Sumo Logic access to the Amazon S3 bucket created or used above. For instructions, see [Grant Access to an AWS Product](/docs/send-data/sources/sources-hosted-collectors/amazon-web-services/grant-access-aws-product.md).
+2. Grant Sumo Logic access to the Amazon S3 bucket created or used above. For instructions, see [Grant Access to an AWS Product](/docs/send-data/sources/hosted-collectors/amazon-web-services/grant-access-aws-product.md).
 3. Confirm that logs are being delivered to the Amazon S3 bucket.
 4. In the Sumo web app, select **Manage Data > Collection > Collection**.
 5. Navigate to the hosted collector you configured above and select **Add > Add Source**.
@@ -327,10 +327,10 @@ In this step, you set up an [AWS CloudTrail Source](/docs/send-data/sources/sour
 8. **Description.** Enter an optional description.
 9. **S3 Region.** Select the Amazon Region for your ECS S3 bucket.
 10. **Bucket Name.** Enter the exact name of your ECS S3 bucket.
-11. **Path Expression.** Enter the string that matches the S3 objects you'd like to collect. You can use a wildcard (*) in this string. (DO NOT use a leading forward slash. See [Amazon Path Expressions](/docs/send-data/Sources/sources-hosted-collectors/Amazon-Web-Services/Amazon-Path-Expressions).) The S3 bucket name is not part of the path. Don’t include the bucket name when you are setting the Path Expression.
+11. **Path Expression.** Enter the string that matches the S3 objects you'd like to collect. You can use a wildcard (*) in this string. (DO NOT use a leading forward slash. See [Amazon Path Expressions](/docs/send-data/Sources/hosted-collectors/Amazon-Web-Services/Amazon-Path-Expressions).) The S3 bucket name is not part of the path. Don’t include the bucket name when you are setting the Path Expression.
     * **Source Category.** Enter **ecs_event**.
     * **AWS Access**. There are two options for AWS access:
-        * Role-based access. This is the preferred method. You can use this option if you granted access to Amazon ECS as described in [Grant Access to an AWS Product](/docs/send-data/sources/sources-hosted-collectors/amazon-web-services/grant-access-aws-product.md).  For Role-based access enter the Role ARN that was provided by AWS after creating the role.  \
+        * Role-based access. This is the preferred method. You can use this option if you granted access to Amazon ECS as described in [Grant Access to an AWS Product](/docs/send-data/sources/hosted-collectors/amazon-web-services/grant-access-aws-product.md).  For Role-based access enter the Role ARN that was provided by AWS after creating the role.  \
         * For Key access enter the Access Key ID and Secret Access Key. For more information, see [Managing Access Keys for IAM Users](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html) in AWS help.
     * **Scan Interval.** Use the default of 5 minutes. Alternately, enter the frequency Sumo Logic will scan your S3 bucket for new data.
     * **Enable Timestamp Parsing.** Select the check box.

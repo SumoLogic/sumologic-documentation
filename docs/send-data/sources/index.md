@@ -6,7 +6,7 @@ slug: /send-data/sources
 
 Sources are the environments that Sumo Logic Collectors connect to collect data from your site. Each Source is configured to collect files in a specific way, depending on the type of Collector you're using.
 
- * [Sources for Installed Collectors](/docs/send-data/sources/sources-installed-collectors) are configured on Installed Collectors.
+ * [Sources for Installed Collectors](/docs/send-data/sources/installed-collectors) are configured on Installed Collectors.
  * [Sources for Hosted Collectors](../hosted-collectors.md) are hosted along with the Collector in Amazon Web Services (AWS), Microsoft, or other hosting services.
 
 When registering a Collector, you also have the option of [configuring the Collector using a Source JSON](/docs/send-data/sources/use-json-configure-sources) file.

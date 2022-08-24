@@ -264,7 +264,7 @@ To collect Cassandra metrics for Non-Kubernetes environments, we use the Telegra
 This section provides instructions for configuring metrics and logs collection for the Sumo Logic App for Cassandra.
 
 1. **Configure a Hosted Collector**. Create a new Sumo Logic hosted collector by performing the steps under [Configure a Hosted Collector](/docs/send-data/configure-hosted-collector).
-2. **Configure an HTTP Logs and Metrics Source.** Create a new HTTP Logs and Metrics Source in the hosted collector created above by following [these instructions](/docs/send-data/sources/sources-hosted-collectors/http-logs-metrics-source). Make a note of the HTTP Source URL.
+2. **Configure an HTTP Logs and Metrics Source.** Create a new HTTP Logs and Metrics Source in the hosted collector created above by following [these instructions](/docs/send-data/sources/hosted-collectors/http-logs-metrics-source). Make a note of the HTTP Source URL.
 3. **Install Telegraf** using the [following steps](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf.md).
 4. **Configure and start Telegraf**. As part of collecting metrics data from Telegraf, we'll use the [jolokia2 input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/jolokia2) to get data from Telegraf and the [Sumo Logic output plugin](https://github.com/SumoLogic/fluentd-output-sumologic) to send data to Sumo Logic. Create or modify telegraf.conf and copy and paste the text below:
 ```sql

@@ -241,7 +241,7 @@ This section provides instructions for configuring metrics collection for the Su
 #### Configure Metrics Collection  
 
 1. Configure a Hosted Collector. To create a new Sumo Logic hosted collector, perform the steps in the [Configure a Hosted Collector](/docs/send-data/configure-hosted-collector) section of the Sumo Logic documentation.
-2. Configure a HTTP Logs and Metrics Source. Create a new HTTP Logs and Metrics Source in the hosted collector created above by following[ these instructions. ](/docs/send-data/sources/sources-hosted-collectors/http-logs-metrics-source). Make a note of the **HTTP Source URL**.
+2. Configure a HTTP Logs and Metrics Source. Create a new HTTP Logs and Metrics Source in the hosted collector created above by following[ these instructions. ](/docs/send-data/sources/hosted-collectors/http-logs-metrics-source). Make a note of the **HTTP Source URL**.
 3. Install Telegraf. Use the [following steps](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf.md) to install Telegraf on each database server node
 4. Configure and start Telegraf. As part of collecting metrics data from Telegraf, we will use the [Postgresql extensible input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/postgresql_extensible) to get data from Telegraf and the [Sumo Logic output plugin](https://github.com/SumoLogic/fluentd-output-sumologic) to send data to Sumo Logic.
    1. Create or modify telegraf.conf in `/etc/telegraf/telegraf.d/` and copy and paste the text from this [file](https://sumologic-app-data.s3.amazonaws.com/dashboards/PostgreSQL/postgresql_input_output_plugin_onprem.txt).
@@ -294,7 +294,7 @@ Perform the steps outlined below for each PostgreSQL database server.
      ```
 2. Configure an Installed Collector. To add an Installed collector, perform the steps as defined on the page [Configure an Installed Collector](/docs/send-data/Installed-Collectors).
 3. Configuring a Local File Source. To add a Local File Source source for PostgreSQL do the following:
-   1. Add a [Local File Source](/docs/send-data/Sources/sources-installed-collectors/Local-File-Source) in the installed collector configured in the previous step.
+   1. Add a [Local File Source](/docs/send-data/Sources/installed-collectors/Local-File-Source) in the installed collector configured in the previous step.
    2. Configure the Local File Source fields as follows:
      * **Name.** (Required)
      * **Description.** (Optional)
