@@ -84,7 +84,7 @@ To configure the collection of VMware Carbon Black EDR events:**
 1. If it isn't already present, install the CbOpenSource repository.
 
 
-```curl
+```bash
 cd /etc/yum.repos.d
 curl -O https://opensource.carbonblack.com/release/x86_64/CbOpenSource.repo
 ```

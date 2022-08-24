@@ -385,7 +385,7 @@ This section provides instructions for configuring metrics collection for the Su
 2. Start or Restart Apache Tomcat Service
 3. Verify the Jolokia agent installation by curl-ing this URL: `http://<tomcat_address>:<tomcat_port>/jolokia/version`.
 
-```curl
+```bash
 curl -v -u **username-CHANGEME**:**password-CHANGEME** "`http://APACHE_TOMCAT_SERVER_IP_ADDRESS:<TOMCAT_PORT>/jolokia/version`"
 ```
 

@@ -2303,6 +2303,7 @@ module.exports = {
         'send-data/sources/hosted-collectors/cloud-to-cloud-integration-framework/aws-cost-explorer-source',
         'integrations/amazon-aws/cost-explorer',
         'send-data/sources/hosted-collectors/cloud-to-cloud-integration-framework/cylance-source',
+        'api/beta',
       ],
     },
   ],

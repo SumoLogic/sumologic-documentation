@@ -255,7 +255,7 @@ To assign a Collector to a budget you'll need to make a PUT request with the [
 Customize `<accessid:accesskey>`, `<your deployment>`, and collector ID like `150905330`.
 :::
 
-```curl
+```bash
 curl -v -u '<accessid:accesskey>' https://api.<your deployment>.sumologic.com/api/v1/collectors/150905330
 ```
 
@@ -267,7 +267,7 @@ Use a PUT request with the [Collector Management API] (../../../APIs/Collector-
 Customize `<accessid:accesskey>`, `a2c82c407ea4ae70ac4f6425b50942a1`, `updated_collector.json`, `<your deployment>`, and id like `150905330`.
 :::
 
-```curl
+```bash
 curl -u \<accessid:accesske\>'  -X PUT -H "Content-Type: application/json" -H "If-Match: \"a2c82c407ea4ae70ac4f6425b50942a1\"" -T updated_collector.json https://api\<your deploymen\>.sumologic.com/api/v1/collectors/150905330`
 ```
 
