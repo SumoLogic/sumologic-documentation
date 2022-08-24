@@ -186,7 +186,7 @@ _sourceCategory = "okta" "user.mfa.factor.deactivate"
 
 ## Configuring Okta Log Collection for Non-FedRamp Deployments
 
-Use the [new Cloud to Cloud Integration for Okta](/docs/send-data/sources/sources-hosted-collectors/cloud-to-cloud-integration-framework/okta-source.md) to create the source and use the same source category while installing the app.
+Use the [new Cloud to Cloud Integration for Okta](/docs/send-data/sources/hosted-collectors/cloud-to-cloud-integration-framework/okta-source.md) to create the source and use the same source category while installing the app.
 
 The sections below are available for FedRamp Sumo Logic deployments to meet FedRamp's specific compliance requirements. If you're using the Sumo Logic FedRamp deployment, you must use the sections below to configure collection for this app.
 
@@ -324,7 +324,7 @@ For guidance creating your Source Category naming convention, see [Best Practice
 
 To configure a Script Source, do the following:
 
-1. Configure a [Script Source](/docs/send-data/Sources/sources-installed-collectors/Script-Source). Collectors using version 19.245-4 and later do not allow Script Sources to run by default. \
+1. Configure a [Script Source](/docs/send-data/Sources/installed-collectors/Script-Source). Collectors using version 19.245-4 and later do not allow Script Sources to run by default. \
 
 To allow Script Sources you need to set the Collector parameter `enableScriptSource` in [user.properties](/docs/send-data/Installed-collectors/collector-installation-reference/user-properties) to true and [restart](/docs/manage/collection/start-stop-collector-using-scripts.md) the Collector. \
 Linux

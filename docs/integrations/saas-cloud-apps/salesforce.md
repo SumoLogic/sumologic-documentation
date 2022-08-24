@@ -98,7 +98,7 @@ This section provides instructions for setting up event collection from Salesfor
 In this section, we will configure a collection of EventLogFiles and audit logs from Salesforce and send them to Sumo Logic via one of the methods listed below.
 
 * For non-FedRamp Sumo Logic deployments:
-    * [Create a Salesforce Cloud To Cloud Collector Source](/docs/send-data/Sources/sources-hosted-collectors/Cloud-to-Cloud-Integration-Framework/Salesforce-Source)
+    * [Create a Salesforce Cloud To Cloud Collector Source](/docs/send-data/Sources/hosted-collectors/Cloud-to-Cloud-Integration-Framework/Salesforce-Source)
 * If you're using the Sumo Logic FedRamp deployment:
     * [Configure a new SumoJanus installation for Salesforce](#configure-a-new-sumojanus-installation-for-salesforce-deprecated)
     * [Upgrade an existing SumoJanus installation for Salesforce](#upgrade-an-existing-sumojanus-installation-for-salesforce-deprecated)
@@ -346,7 +346,7 @@ If the browser does not connect to the salesforce instance and you are using Chr
 
 #### Step 7. Configure a script source (DEPRECATED)
 
-In Sumo Logic, configure a Script Source using the instructions in [Script Source](/docs/send-data/Sources/sources-installed-collectors/Script-Source). Collectors using version 19.245-4 and later do not allow Script Sources to run by default.
+In Sumo Logic, configure a Script Source using the instructions in [Script Source](/docs/send-data/Sources/installed-collectors/Script-Source). Collectors using version 19.245-4 and later do not allow Script Sources to run by default.
 
 To allow Script Sources you need to set the Collector parameter **`enableScriptSource=true` in [user.properties](/docs/send-data/Installed-collectors/collector-installation-reference/user-properties) to true and [restart](/docs/manage/collection/start-stop-collector-using-scripts.md) the Collector.
 

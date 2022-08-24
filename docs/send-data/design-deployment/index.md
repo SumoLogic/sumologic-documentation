@@ -46,7 +46,7 @@ For full details on limitations, what's supported, and what's different see our 
 
 Consider having an Installed Collector on a dedicated machine when:
 
-* You need to collect data with a [Source only available on Installed Collectors](/docs/send-data/sources/sources-installed-collectors).
+* You need to collect data with a [Source only available on Installed Collectors](/docs/send-data/sources/installed-collectors).
 * You are running a very high-bandwidth network with high logging levels.
 * You want a central collection point for many Sources.
 
@@ -70,7 +70,7 @@ Unlike Installed Collectors, [Hosted Collectors](../hosted-collectors.md) don't 
 
 Because there are no performance issues to consider, you can configure as many Sources as you'd like, up to 1,000, for a single Hosted Collector. Consider setting up more than one Hosted Collector if you'd like to tag different data types with different metadata.
 
-See how to [configure a Hosted Collector](../configure-hosted-collector.md) and all of the available [Sources supported on Hosted Collectors](/docs/send-data/sources/sources-hosted-collectors).
+See how to [configure a Hosted Collector](../configure-hosted-collector.md) and all of the available [Sources supported on Hosted Collectors](/docs/send-data/sources/hosted-collectors).
 
 ### Logging levels
 

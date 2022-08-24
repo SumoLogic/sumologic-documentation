@@ -105,16 +105,13 @@ This section provides instructions for configuring log collection for the Bitbuc
 ### Step 1: Configure Hosted Collector to Receive Bitbucket events
 
 In this step, you create a Hosted Collector to receive Webhook Events from Bitbucket and set up an HTTP source on it.
-
 1. Configure a [Hosted Collector](/docs/send-data/configure-hosted-collector), or select an existing hosted collector for the HTTP source.
-2. Configure an [HTTP source](/docs/send-data/sources/sources-hosted-collectors/http-logs-metrics-source) on the hosted collector.
+2. Configure an [HTTP source](/docs/send-data/sources/hosted-collectors/http-logs-metrics-source) on the hosted collector.
     * For Source Category, specify `bitbucket/events`.
     * Click **+Add Field** and provide the following:
         * **Field Name.** `_convertHeadersToFields`
         * **Value.** `true`
-    * Click **Save** and make note of the HTTP address for the source. You will supply it when you configure a Jira Webhook in the next step.
-
-    <img src={useBaseUrl('img/integrations/app-development/bitbucket1.png')} alt="Bitbucket" />
+    * Click **Save** and make note of the HTTP address for the source. You will supply it when you configure a Jira Webhook in the next step.<br/><img src={useBaseUrl('img/integrations/app-development/bitbucket1.png')} alt="Bitbucket" />
 
 ### Step 2: Adding a Webhook in Bitbucket
 
@@ -125,7 +122,7 @@ In this step, you create a Hosted Collector to receive Webhook Events from Bitbu
 5. Enter a **Title** with a short description.
 6. Enter Sumo Logic Http source **URL**, you configured this in [Configure Hosted Collector to Receive Bitbucket events](#Configure_Hosted_Collector_to_Receive_Bitbucket_events).
 7. Click on **Status** to make it **Active**.
-8. **Triggers - **Click on** Choose from a full list of triggers, and choose all triggers under Repository, Issue and Pull Request.
+8. **Triggers** - Click on Choose from a full list of triggers, and choose all triggers under Repository, Issue and Pull Request.
 9. Click **Save**
 
 
@@ -135,9 +132,9 @@ A Bitbucket pipe needs to be configured to send code deploy status to Sumo Logic
 
 ```bash
 after-script:
-          - pipe: docker://appdevsumologic/sumologic-send-event:1.15
-            variables:
-              SUMO_LOGIC_BASE_URL: '<SUMOLOGIC_HTTP_URL>'
+    - pipe: docker://appdevsumologic/sumologic-send-event:1.15
+        variables:
+          SUMO_LOGIC_BASE_URL: '<SUMOLOGIC_HTTP_URL>'
 ```
 
 If you want to deployment events to multiple Sumo Logic orgs, include a `-pipe` statement, as shown above, for each of the Sumo Logic endpoints.
@@ -147,7 +144,7 @@ For reference: This is how the [bitbucket-pipelines.yml](https://bitbucket.org/a
 
 ### Step 4: Enable Bitbucket Event-Key tagging at Sumo Logic
 
-Sumo Logic needs to understand the event type for incoming events (for example, repo:push events). To enable this, the [X-Event-Key](https://confluence.atlassian.com/bitbucket/event-payloads-740262817.html#EventPayloads-HTTPheaders) event type needs to be enabled. To enable this,  perform the following steps in the Sumo Logic console:
+Sumo Logic needs to understand the event type for incoming events (for example, repo:push events). To enable this, the [X-Event-Key](https://confluence.atlassian.com/bitbucket/event-payloads-740262817.html#EventPayloads-HTTPheaders) event type needs to be enabled. To enable this, perform the following steps in the Sumo Logic console:
 
 1. From Sumo Logic, go to **Manage Date** > **Logs** > **[Fields](/docs/manage/fields.md#add-field)**.
 2. Add Field ‎**X-Event-Key**‎.<br/><img src={useBaseUrl('img/integrations/app-development/BB_Collect_Log.png')} alt="Bitbucket" />
@@ -163,11 +160,11 @@ Locate and install the app you need from the **App Catalog**. If you want to see
 2. Select the version of the service you're using and click **Add to Library**.
 Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/library/install-apps)
 3. To install the app, complete the following fields.
-    1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
-    2. **Data Source.** Select either of these options for the data source. 
-        * Choose **Source Category**, and select a source category from the list. 
-        * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). 
-    3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
+   1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
+   2. **Data Source.** Select either of these options for the data source. 
+      * Choose **Source Category**, and select a source category from the list. 
+      * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`). 
+   3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
 4. Click **Add to Library**.
 
 Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization.
@@ -182,7 +179,6 @@ This section provides descriptions and examples for each of the pre-configured a
 Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards-new/filter-with-template-variables.md).
 :::
 
-
 ### Overview
 
 The **Bitbucket - Overview** dashboard provides an overview of issues by repository, pull requests, builds and deployment status. Panels identify key trends and summarize the status across each workflow.
@@ -191,31 +187,29 @@ Use this dashboard to:
 * Quickly get insight around how various Bitbucket components are being used.
 * Drill-down into the specifics of builds, deploy or commit events.
 
-
+<img src={useBaseUrl('img/integrations/app-development/Bitbucket_Overview.png')} alt="bitbucket" />
 
 ### Deployments
 
 The **Bitbucket - Deployments** dashboard provides details around failed and successful deployments in production, staging, and test environments
 
 Use this dashboard to:
-
 * To confirm whether code was successfully deployed to production.
 * To understand and drill-down into commits that led to failed deployments.
 * Identify and investigate deploys to various environments that led to bugs or degradation in performance.
 
+<img src={useBaseUrl('img/integrations/app-development/Bitbucket_Deployments.png')} alt="bitbucket" />
 
 ### Builds
 
 The **Bitbucket - Builds** dashboard provides a detailed view of the failed and successful builds overtime and by repository. It also lists the details of each build which includes the time when it was started and also identifies the changes made to the build.
 
 Use this dashboard to:
-
 * Speed up the overall software delivery processes by identifying bottlenecks in build failures.
 * Monitor the success/failure rate of builds and identify relevant individuals, repos, and branches.
 * Identify code commits that led to failed builds.
 
-
-
+<img src={useBaseUrl('img/integrations/app-development/Bitbucket_Builds.png')} alt="bitbucket" />
 
 ### Issues
 
@@ -226,14 +220,15 @@ Use this dashboard to:
 * Improve overall software delivery processes by identifying issues by priority, projects, users, and type.
 * Get insights into identifying regressions and blockers.
 
-
+<img src={useBaseUrl('img/integrations/app-development/Bitbucket_Issues.png')} alt="bitbucket" />
 
 ### Pull Requests
 
 The **Bitbucket - Pull Request** dashboard gives a view of pull requests opened, merged, and declined as well as average time taken to close the pull request by repository and by reviewers.
 
 Use this dashboard to:
-
 * Improve the overall software delivery processes by identifying bottlenecks in review processes.
 * Identify commits and code changes.
 * Identify the teams and repos that take the longest to close pull requests.
+
+<img src={useBaseUrl('img/integrations/app-development/Bitbucket_PullRequests.png')} alt="bitbucket" />

@@ -223,7 +223,7 @@ This section provides instructions for configuring logs and metrics collection f
 #### Configure Metrics Collection
 
 1. **Configure a Hosted Collector**. To create a new Sumo Logic hosted collector, perform the steps in the[ Configure a Hosted Collector](/docs/send-data/configure-hosted-collector) section of the Sumo Logic documentation.
-2. **Configure an HTTP Logs and Metrics Source**. Create a new HTTP Logs and Metrics Source in the hosted collector created above by following [these instructions](/docs/send-data/sources/sources-hosted-collectors/http-logs-metrics-source). Make a note of the **HTTP Source URL**.
+2. **Configure an HTTP Logs and Metrics Source**. Create a new HTTP Logs and Metrics Source in the hosted collector created above by following [these instructions](/docs/send-data/sources/hosted-collectors/http-logs-metrics-source). Make a note of the **HTTP Source URL**.
 3. **Install Telegraf** using the [following steps](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf.md) to install Telegraf.
 4. **Configure and start Telegraf**. As part of collecting metrics data from Telegraf, we will use the Memcached [input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/memcached) to get data from Telegraf and the [Sumo Logic output plugin](https://github.com/SumoLogic/fluentd-output-sumologic) to send data to Sumo Logic. Create or modify `telegraf.conf` and copy and paste the text below:  
 ```sql
@@ -276,7 +276,7 @@ By default, Memcached logs are stored in a log file. Local log files can be coll
   Save the file and  restart Memcached.
 2. **Configuring a Collector** To collect logs directly from the Memcached machine, configure an[ Installed Collector](/docs/send-data/Installed-Collectors).
 3. **Configuring a Source** To collect logs directly from your Memcached machine, use an Installed Collector and a Local File Source.
-    1. Add a [Local File Source](/docs/send-data/Sources/sources-installed-collectors/Local-File-Source).
+    1. Add a [Local File Source](/docs/send-data/Sources/installed-collectors/Local-File-Source).
     2. Configure the Local File Source fields as follows:
         * **Name**. (Required)
         * **Description**. (Optional)

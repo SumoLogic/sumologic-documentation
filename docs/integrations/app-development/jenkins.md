@@ -283,8 +283,6 @@ _sourceCategory=Labs/Jenkins/Sourabh/Logs In_Progress
 | fields Job_Name, Job_URL, Job_Label, Node_Name, Job_Start_Time, Job_Run_Duration, Job_Number
 ```
 
-
-
 ## Collecting Logs and Metrics for Jenkins
 
 This section provides instructions for configuring log and metric collection for the Sumo Logic App for Jenkins.
@@ -300,7 +298,7 @@ To create a new Sumo Logic hosted collector, perform the steps in the [Configure
 
 To create a new HTTP logs and metric source:
 
-1. Create a new HTTP Logs and Metrics Source in the hosted collector created above by following [these instructions.](/docs/send-data/sources/sources-hosted-collectors/http-logs-metrics-source)
+1. Create a new HTTP Logs and Metrics Source in the hosted collector created above by following [these instructions.](/docs/send-data/sources/hosted-collectors/http-logs-metrics-source)
 2. Make a note of **HTTP Source URL** and **Source Category**, as you will need them later in the configuration process.
 
 ### Step 3: Install the Jenkins Plugin
@@ -416,7 +414,6 @@ Locate and install the app you need from the **App Catalog**. If you want to see
 
 1. From the **App Catalog**, search for and select the app**.**
 2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/library/install-apps)
-
 3. To install the app, complete the following fields.
     * **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
     *  **Data Source.** Select either of these options for the data source. 

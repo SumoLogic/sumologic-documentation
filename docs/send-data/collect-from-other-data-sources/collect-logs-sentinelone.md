@@ -20,7 +20,7 @@ To get a token and certificate from Sumo Logic, do the following:
 
 1. Log in to the [Sumo Logic web site](https://www.sumologic.com/).
 
-1. Configure a Cloud Syslog [Hosted Collector](../collector-faqs/configure-limits-collector-caching.md) and [Cloud Syslog Source](/docs/send-data/sources/sources-hosted-collectors/cloud-syslog-source), and generate a Cloud Syslog source token. 
+1. Configure a Cloud Syslog [Hosted Collector](../collector-faqs/configure-limits-collector-caching.md) and [Cloud Syslog Source](/docs/send-data/sources/hosted-collectors/cloud-syslog-source), and generate a Cloud Syslog source token. 
 
 1. Download the crt server certificate file from [here](https://www.digicert.com/CACerts/DigiCertHighAssuranceEVRootCA.crt).
 

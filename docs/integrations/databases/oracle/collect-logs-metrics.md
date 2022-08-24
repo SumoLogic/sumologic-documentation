@@ -249,7 +249,7 @@ The **Add Field Extraction Rule** form will appear.
 
 ### For Non-Kubernetes environments
 
-Sumo Logic uses the Telegraf operator for Oracle metric collection and the [Installed Collector](/docs/send-data/installed-collectors/about-installed-collectors) for collecting Oracle logs. The diagram below illustrates the components of the Oracle collection in a non-Kubernetes environment. Telegraf uses the[ exec input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/sqlserver) to obtain Oracle metrics and the Sumo Logic output plugin to send the metrics to Sumo Logic. Logs from Oracle are collected by a [Local File Source](/docs/send-data/Sources/sources-installed-collectors/Local-File-Source).<br/><img src={useBaseUrl('img/integrations/databases/oracle1.png')} alt="oracle" />
+Sumo Logic uses the Telegraf operator for Oracle metric collection and the [Installed Collector](/docs/send-data/installed-collectors/about-installed-collectors) for collecting Oracle logs. The diagram below illustrates the components of the Oracle collection in a non-Kubernetes environment. Telegraf uses the[ exec input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/sqlserver) to obtain Oracle metrics and the Sumo Logic output plugin to send the metrics to Sumo Logic. Logs from Oracle are collected by a [Local File Source](/docs/send-data/Sources/installed-collectors/Local-File-Source).<br/><img src={useBaseUrl('img/integrations/databases/oracle1.png')} alt="oracle" />
 
 The process to set up collection for Oracle data is done through the following steps:
 
@@ -337,7 +337,7 @@ By default, Oracle logs are stored in
 
 In this step, you will configure three Local File sources on an installed collector, one for each of the following Oracle logs: Alert, Listener, and Audit.
 
-  Follow the instructions in [Local File Source](/docs/send-data/Sources/sources-installed-collectors/Local-File-Source).
+  Follow the instructions in [Local File Source](/docs/send-data/Sources/installed-collectors/Local-File-Source).
 
   When you configure the sources, plan your source categories to ease the querying process.  A hierarchical approach allows you to make use of wildcards. For example:
 

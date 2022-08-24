@@ -17,7 +17,7 @@ AirWatch supports sending events to syslog. For Sumo Logic to receive AirWatch e
 
 ## Step 1. Configure cloud syslog in Sumo Logic
 
-To configure cloud syslog in Sumo Logic, follow the instructions on [this page](/docs/send-data/sources/sources-hosted-collectors/cloud-syslog-source).
+To configure cloud syslog in Sumo Logic, follow the instructions on [this page](/docs/send-data/sources/hosted-collectors/cloud-syslog-source).
 
 After a cloud syslog is configured, the following values are available:
 
