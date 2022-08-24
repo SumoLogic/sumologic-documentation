@@ -42,7 +42,7 @@ Available metrics include:
 * Network
 * Disk
 
-The metrics that are collected are described in [Host Metrics for Installed Collectors](/docs/send-data/Sources/sources-installed-collectors/Host-Metrics-Source#Collected_Metrics).
+The metrics that are collected are described in [Host Metrics for Installed Collectors](/docs/send-data/Sources/installed-collectors/Host-Metrics-Source#Collected_Metrics).
 
 Host metrics are gathered by the open-source [SIGAR library](https://github.com/hyperic/sigar).
 
@@ -489,7 +489,7 @@ The JSON parameter is in milliseconds. We recommend 60 seconds (60000 ms) or lon
 
 ### AWS Metadata
 
-Collectors running on AWS EC2 instances can optionally collect AWS Metadata such as EC2 tags to make it easier to search for Host Metrics.  For more information, see [AWS Metadata Source for Metrics](/docs/send-data/sources/sources-hosted-collectors/amazon-web-services/aws-metadata-tag-source).
+Collectors running on AWS EC2 instances can optionally collect AWS Metadata such as EC2 tags to make it easier to search for Host Metrics.  For more information, see [AWS Metadata Source for Metrics](/docs/send-data/sources/hosted-collectors/amazon-web-services/aws-metadata-tag-source).
 
 Only one AWS Metadata Source for Metrics is required to collect EC2 tags from multiple hosts.
 

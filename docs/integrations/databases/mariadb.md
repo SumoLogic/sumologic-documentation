@@ -210,7 +210,7 @@ This section explains the steps to collect MariaDB logs from a Kubernetes enviro
 
 For non-Kubernetes environments, Sumo Logic uses the Telegraf operator for MariaDB metric collection and the [Installed Collector](/docs/send-data/installed-collectors/about-installed-collectors) for collecting MariaDB logs. The diagram below illustrates the components of the MariaDB collection in a non-Kubernetes environment.<br/><img src={useBaseUrl('img/integrations/databases/mariadbnonk8s.png')} alt="mariadb" />
 
-Telegraf uses the[ MySQL Input Plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/sqlserver) to obtain MariaDB metrics and the Sumo Logic output plugin to send the metrics to Sumo Logic. Logs from MariaDB are collected by a [Local File Source](/docs/send-data/Sources/sources-installed-collectors/Local-File-Source).
+Telegraf uses the[ MySQL Input Plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/sqlserver) to obtain MariaDB metrics and the Sumo Logic output plugin to send the metrics to Sumo Logic. Logs from MariaDB are collected by a [Local File Source](/docs/send-data/Sources/installed-collectors/Local-File-Source).
 
 The process to set up collection for MariaDB data is done through the following steps:
 
@@ -225,7 +225,7 @@ The process to set up collection for MariaDB data is done through the following 
 
 This section provides instructions for configuring log collection for MariaDB running on a non-Kubernetes environment for the Sumo Logic App for MariaDB. By default, MariaDB logs are stored in a log file. MariaDB also supports forwarding logs via Syslog Audit Logs.
 
-Sumo Logic supports collecting logs both via Syslog and a local log file. Utilizing Sumo Logic [Cloud Syslog](/docs/send-data/Sources/sources-hosted-collectors/Cloud-Syslog-Source) will require TCP TLS Port 6514 to be open in your network. Local log files can be collected via [Installed collectors](/docs/send-data/Installed-Collectors) or [FluentD](https://www.fluentd.org/). Installed collector will require you to allow outbound traffic to [Sumo Logic endpoints](https://help.sumologic.com/APIs/General-API-Information/Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security) for collection to work. For detailed requirements for Installed collectors, see this [page](/docs/get-started/system-requirements#Installed-Collector-Requirements).
+Sumo Logic supports collecting logs both via Syslog and a local log file. Utilizing Sumo Logic [Cloud Syslog](/docs/send-data/Sources/hosted-collectors/Cloud-Syslog-Source) will require TCP TLS Port 6514 to be open in your network. Local log files can be collected via [Installed collectors](/docs/send-data/Installed-Collectors) or [FluentD](https://www.fluentd.org/). Installed collector will require you to allow outbound traffic to [Sumo Logic endpoints](https://help.sumologic.com/APIs/General-API-Information/Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security) for collection to work. For detailed requirements for Installed collectors, see this [page](/docs/get-started/system-requirements#Installed-Collector-Requirements).
 
 Based on your infrastructure and networking setup choose one of these methods to collect MariaDB logs and follow the instructions below to set up log collection:
 
@@ -267,7 +267,7 @@ This section demonstrates how to configure sources for Error Logs and Slow Query
 
 #### Configure Source for MariaDB Error Logs
 
-This section demonstrates how to configure a Local File Source for MariaDB Error Logs, for use with an [Installed Collector](/docs/integrations/microsoft-azure/iis-10-legacy#Configure-a-Collector). You may configure a [Remote File Source](/docs/send-data/Sources/sources-installed-collectors/Remote-File-Source), but the configuration is more complex. Sumo Logic recommends using a Local File Source whenever possible.
+This section demonstrates how to configure a Local File Source for MariaDB Error Logs, for use with an [Installed Collector](/docs/integrations/microsoft-azure/iis-10-legacy#Configure-a-Collector). You may configure a [Remote File Source](/docs/send-data/Sources/installed-collectors/Remote-File-Source), but the configuration is more complex. Sumo Logic recommends using a Local File Source whenever possible.
 1. On the Collection Management screen, click **Add**, next to the collector, then select **Add Source**.
 2. Select **Local File** as the source type.
 3. Configure the Local File Source fields as follows:

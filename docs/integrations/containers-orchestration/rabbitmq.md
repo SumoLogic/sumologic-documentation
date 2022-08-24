@@ -250,7 +250,7 @@ Configure Logs Collection
 #### Configure Metrics Collection
 
 1. **Configure a Hosted Collector**. To create a new Sumo Logic hosted collector, perform the steps in the [Configure a Hosted Collector](/docs/send-data/configure-hosted-collector) section of the Sumo Logic documentation.
-2. **Configure an HTTP Logs and Metrics Source**. Create a new HTTP Logs and Metrics Source in the hosted collector created above by following [these instructions](/docs/send-data/sources/sources-hosted-collectors/http-logs-metrics-source). Make a note of the HTTP Source URL.
+2. **Configure an HTTP Logs and Metrics Source**. Create a new HTTP Logs and Metrics Source in the hosted collector created above by following [these instructions](/docs/send-data/sources/hosted-collectors/http-logs-metrics-source). Make a note of the HTTP Source URL.
 3. **Install Telegraf**. Use the [following steps](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf.md) to install Telegraf.
 4. **Configure and start Telegraf**. As part of collecting metrics data from Telegraf, we will use the [RabbitMQ input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/rabbitmq) to get data from Telegraf and the [Sumo Logic output plugin](https://github.com/SumoLogic/fluentd-output-sumologic) to send data to Sumo Logic.
 
@@ -327,10 +327,10 @@ log.file = rabbitmq.log
 log.file.level = debug
 ```
 
-Logs from the RabbitMQ log file can be collected via a Sumo Logic [Installed collector](/docs/send-data/Installed-Collectors) and a [Local File Source](/docs/send-data/Sources/sources-installed-collectors/Local-File-Source) as explained in the next section.
+Logs from the RabbitMQ log file can be collected via a Sumo Logic [Installed collector](/docs/send-data/Installed-Collectors) and a [Local File Source](/docs/send-data/Sources/installed-collectors/Local-File-Source) as explained in the next section.
 3. **Configuring a Collector**. To add an Installed collector, perform the steps as defined on the page[ Configure an Installed Collector.](/docs/send-data/Installed-Collectors)
 4. **Configuring a Source**. To add a Local File Source source for RabbitMQ, do the following. To collect logs directly from your RabbitMQ machine, use an Installed Collector and a Local File Source.
-   1. Add a [Local File Source](/docs/send-data/Sources/sources-installed-collectors/Local-File-Source).
+   1. Add a [Local File Source](/docs/send-data/Sources/installed-collectors/Local-File-Source).
    2. Configure the Local File Source fields as follows:
      * **Name.** (Required)
      * **Description.** (Optional)

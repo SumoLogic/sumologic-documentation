@@ -265,7 +265,7 @@ This section provides instructions for configuring metrics collection for the Su
 #### Configure Kafka Metrics Collection
 
 1. **Configure a Hosted Collector**: To create a new Sumo Logic hosted collector, perform the steps in the[ Configure a Hosted Collector](/docs/send-data/configure-hosted-collector) section of the Sumo Logic documentation.
-2. **Configure an HTTP Logs and Metrics Source**: Create a new HTTP Logs and Metrics Source in the hosted collector created above by following[ these instructions. ](/docs/send-data/sources/sources-hosted-collectors/http-logs-metrics-source)Make a note of the **HTTP Source URL**.
+2. **Configure an HTTP Logs and Metrics Source**: Create a new HTTP Logs and Metrics Source in the hosted collector created above by following[ these instructions. ](/docs/send-data/sources/hosted-collectors/http-logs-metrics-source)Make a note of the **HTTP Source URL**.
 3. **Install Telegraf**: Follow the steps in [this document](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf.md) to install Telegraf on each Kafka Broker node.
 4. **Download and set up Jolokia on each Kafka Broker node**: As part of collecting metrics data from Telegraf, we will use the [Jolokia input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/jolokia2) to get data from Telegraf and the [Sumo Logic output plugin](https://github.com/SumoLogic/fluentd-output-sumologic) to send data to Sumo Logic.
    1. Download the latest version of the **Jolokia JVM-Agent** from [Jolokia](https://jolokia.org/download.html).
@@ -317,7 +317,7 @@ By default, Kafka logs are stored in a log file. Perform the steps outlined belo
 1. **Configure Logging in Kafka**. By default Kafka logs (server.log and controller.log) are stored in the directory: `/opt/Kafka/kafka_<VERSION>/logs`. Make a note of above logs directory.
 2. **Configuring an Installed Collector**. To add an Installed collector, perform the steps as defined on the page [Configure an Installed Collector.](/docs/send-data/Installed-Collectors)
 3. **Configuring a Source**. To add a Local File Source source for Kafka do the following:
-   1. Add a[ Local File Source](/docs/send-data/Sources/sources-installed-collectors/Local-File-Source) in the installed collector configured in the previous step.
+   1. Add a[ Local File Source](/docs/send-data/Sources/installed-collectors/Local-File-Source) in the installed collector configured in the previous step.
    2. Configure the Local File Source fields as follows:
      * **Name.** (Required)
      * **Description.** (Optional)

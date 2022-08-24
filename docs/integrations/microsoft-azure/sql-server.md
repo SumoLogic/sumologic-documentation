@@ -230,7 +230,7 @@ if (!isEmpty(pod_labels_environment), pod_labels_environment, "") as environment
 
 In Non-Kubernetes environments, Sumo Logic uses the Telegraf operator for SQL Server metric collection and the [Installed Collector](/docs/send-data/installed-collectors/about-installed-collectors) for collecting SQL Server logs. The diagram below illustrates the components of the SQL Server collection in a non-Kubernetes environment. <br/><img src={useBaseUrl('img/integrations/microsoft-azure/sql-nonk8s.png')} alt="sql-nonk8s.png" /> 
 
-Telegraf uses the [SQL Server input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/sqlserver) to obtain SQL Server metrics and the Sumo Logic output plugin to send the metrics to Sumo Logic. Logs from SQL Server are collected by a [Local File source](/docs/send-data/Sources/sources-installed-collectors/Local-File-Source).
+Telegraf uses the [SQL Server input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/sqlserver) to obtain SQL Server metrics and the Sumo Logic output plugin to send the metrics to Sumo Logic. Logs from SQL Server are collected by a [Local File source](/docs/send-data/Sources/installed-collectors/Local-File-Source).
 
 
 The process to set up collection for SQL Server data is done through the following steps:

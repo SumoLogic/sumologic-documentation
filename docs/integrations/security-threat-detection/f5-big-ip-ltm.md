@@ -99,7 +99,7 @@ Perform the following tasks to configure log collection for the F5 - BIG-IP LTM 
 #### Step 1: Create a Sumo Logic Hosted Collector
 
 1. Configure a Hosted Collector in Sumo Logic using [these instructions](/docs/send-data/configure-hosted-collector).
-2. Add an [HTTP source](/docs/send-data/sources/sources-hosted-collectors/http-logs-metrics-source), configuring the Source Category with the string f5 in it (e.g. “f5/ltm”). \
+2. Add an [HTTP source](/docs/send-data/sources/hosted-collectors/http-logs-metrics-source), configuring the Source Category with the string f5 in it (e.g. “f5/ltm”). \
 Make a note of the URL for the HTTP source, as you will need it in the following steps. The URL for our example is: [https://collectors.us2.sumologic.com/receiver/v1/http/Thisis4fakeendpoint4testing==](https://collectors.us2.sumologic.com/receiver/v1/http/Thisis4fakeendpoint4testing==)
 
 
