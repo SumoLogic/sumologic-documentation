@@ -8,7 +8,7 @@ The Metrics Query API lets you execute Metrics queries from third-party scripts 
 
 This API follows Representational State Transfer (REST) patterns and is optimized for ease of use and consistency.
 
-Refer to [Getting Started](docs/api/index.md) for Authentication information and Endpoints.
+Refer to [Getting Started](docs/api/index.md) for Authentication and Endpoint information.
 
 
 ## Before You Begin

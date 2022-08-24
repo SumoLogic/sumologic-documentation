@@ -5,5 +5,4 @@ sidebar_label: Troubleshooting
 ---
 
 
-
-Refer to [Getting Started](docs/api/index.md) for Authentication information and Endpoints.
+Refer to [Getting Started](docs/api/index.md) for Authentication and Endpoint information.

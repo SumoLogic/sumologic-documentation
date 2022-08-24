@@ -1,7 +1,7 @@
 ---
 id: ingest-budget-v2
 title: Sumo Logic Ingest Budget v2 Management APIs
-sidebar_label: Ingest Budget Management v2
+sidebar_label: Ingest Budget v2
 ---
 
 
@@ -35,4 +35,29 @@ See [V1 API](https://help.sumologic.com/APIs/Ingest_Budget_Management_API) for m
 
 To manage ingest budgets you must have the **Manage Ingest Budgets** [role capability](https://help.sumologic.com/Manage/Users-and-Roles/Manage-Roles/05-Role-Capabilities). Enabling this will automatically enable the Manage Collectors capability. The Manage Collectors capability on its own permits the re-assignment of budgets to different Collectors, but not creating or deleting them. For more information see [Ingest Budgets](https://help.sumologic.com/Manage/Ingestion-and-Volume/Ingest_Budgets).
 
-Refer to [Getting Started](docs/api/index.md) for Authentication information and Endpoints.
+Refer to [Getting Started](docs/api/index.md) for Authentication and Endpoint information.
+
+
+
+#### Ingest Budgets
+
+<table>
+  <tr>
+   <td>API
+   </td>
+   <td>Documentation URL
+   </td>
+  </tr>
+  <tr>
+   <td>Ingest Budgets
+   </td>
+   <td><a href="https://api.sumologic.com/docs/#tag/ingestBudgetManagementV1">https://api.sumologic.com/docs/#tag/...etManagementV1</a>
+   </td>
+  </tr>
+  <tr>
+   <td>Ingest Budgets V2
+   </td>
+   <td><a href="https://api.sumologic.com/docs/#tag/ingestBudgetManagementV2">https://api.sumologic.com/docs/#tag/...etManagementV2</a>
+   </td>
+  </tr>
+</table>
