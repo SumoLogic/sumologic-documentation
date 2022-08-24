@@ -4902,10 +4902,10 @@ docusaurus-plugin-sass@^0.2.1:
   dependencies:
     sass-loader "^10.1.1"
 
-docusaurus-theme-redoc@1.3.0:
-  version "1.3.0"
-  resolved "https://registry.yarnpkg.com/docusaurus-theme-redoc/-/docusaurus-theme-redoc-1.3.0.tgz#ab5e2cd330981284def78522bab4f8ef4cd91590"
-  integrity sha512-MP/MjxKHRm3IYdl+LNa6aLFgPcpUDf1oYjob2ab1HV+LXtJcXCThaQpCwRk6Q8/CtYYfLQ259qx9jcssqnxSNQ==
+docusaurus-theme-redoc@1.2.3:
+  version "1.2.3"
+  resolved "https://registry.yarnpkg.com/docusaurus-theme-redoc/-/docusaurus-theme-redoc-1.2.3.tgz#1908b3789f1321201784d5ea4d181d3521302b0d"
+  integrity sha512-FH3B++SSRu6QSVZR+Moiw7h2XSPhrGKqLHVzQM6wgas1JSv4avGaXT9dJ7BzCGoxkFXELKMEpPrAaG1obwFmEQ==
   dependencies:
     clsx "^1.1.1"
     copyfiles "^2.4.1"
@@ -8795,13 +8795,13 @@ redoc@2.0.0-rc.72:
     swagger2openapi "^7.0.6"
     url-template "^2.0.8"
 
-redocusaurus@^1.3.0:
-  version "1.3.0"
-  resolved "https://registry.yarnpkg.com/redocusaurus/-/redocusaurus-1.3.0.tgz#01b65fd46b6633cf7eaf195b113bdc8ce6070e11"
-  integrity sha512-rq6f7+VaPbj63ZEAIFpYwi4gy0GvD0YhBoICaxlj0j8o2Z0opl4IjWTSrIhc6mA09kOtX6R3xPctaSBN+ReItA==
+redocusaurus@1.2.3:
+  version "1.2.3"
+  resolved "https://registry.yarnpkg.com/redocusaurus/-/redocusaurus-1.2.3.tgz#6c4fde1db3587ef1b47aaedf5d0a15a08454b4ab"
+  integrity sha512-6qhOfiQEg8VxG49Ukf1c/pJCpU6w+1DqdJeJAC/f7Y/r14vCYzJOEtSS8XgHpAKlPrI0XrjLj0q1xPZk3c1F8A==
   dependencies:
     docusaurus-plugin-redoc "1.2.3"
-    docusaurus-theme-redoc "1.3.0"
+    docusaurus-theme-redoc "1.2.3"
 
 reftools@^1.1.9:
   version "1.1.9"
