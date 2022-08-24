@@ -6,7 +6,7 @@ id: enabling-updated-remote-windows-event-collection
 
 The 19.155 release of the Sumo Logic collector introduces a new collection approach for Remote Windows Event sources.  The new approach provides increased collection throughput, lower resource consumption, and easier configuration.
 
-However, [system configuration requirements for the new implementation](../sources/sources-installed-collectors/preconfigure-machine-collect-remote-windows-events.md) differ from those of earlier collector versions. For the sake of compatibility, the new implementation is left as "opt-in" for version 19.155. This topic describes how to enable this new capability.
+However, [system configuration requirements for the new implementation](../sources/installed-collectors/preconfigure-machine-collect-remote-windows-events.md) differ from those of earlier collector versions. For the sake of compatibility, the new implementation is left as "opt-in" for version 19.155. This topic describes how to enable this new capability.
 
 :::important
 This topic applies only to the 19.155 version of the Sumo Logic collector, and only relates to Remote Windows Event Log sources.

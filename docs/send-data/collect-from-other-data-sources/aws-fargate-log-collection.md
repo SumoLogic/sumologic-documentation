@@ -39,7 +39,7 @@ When you configure the HTTP Source, make sure to save the HTTP Source Address UR
 To add a hosted collection and HTTP source, do the following:
 
 1. In Sumo Logic, configure a [Hosted Collector](../configure-hosted-collector.md).
-1. In Sumo Logic, configure an [HTTP Source](/docs/send-data/sources/sources-hosted-collectors/http-logs-metrics-source).
+1. In Sumo Logic, configure an [HTTP Source](/docs/send-data/sources/hosted-collectors/http-logs-metrics-source).
 
 ## Step 2: Create an AWS task definition and service
 
@@ -194,7 +194,7 @@ When you configure the HTTP Source, make sure to save the HTTP Source Address UR
 To add a hosted collection and HTTP source, do the following:
 
 1. In Sumo Logic, configure a [Hosted Collector](../configure-hosted-collector.md).
-1. In Sumo Logic, configure an [HTTP Source](/docs/send-data/sources/sources-hosted-collectors/http-logs-metrics-source).
+1. In Sumo Logic, configure an [HTTP Source](/docs/send-data/sources/hosted-collectors/http-logs-metrics-source).
 
 ### Step 2: Create the task definition
 

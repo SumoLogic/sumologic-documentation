@@ -161,7 +161,7 @@ The following suffixes are required. For example, you could use `_sourceCategory
 `_sourceCategory` names are case sensitive. When you run a search using `_sourceCategory`, make sure you use the same case as you did when configuring the source.
 :::
 
-For complete instructions, see [Local File Source](/docs/send-data/Sources/sources-installed-collectors/Local-File-Source).
+For complete instructions, see [Local File Source](/docs/send-data/Sources/installed-collectors/Local-File-Source).
 
 1. Configure a Local File source.
 2. Configure the Source fields:
@@ -341,7 +341,7 @@ The following suffixes are required. For example, you could use `_sourceCategory
 Remember that `_sourceCategory` names are case sensitive. When you run a search using `_sourceCategory`, make sure you use the same case as you did when configuring the source.
 :::
 
-For complete instructions, see [Local File Source](/docs/send-data/Sources/sources-installed-collectors/Local-File-Source).
+For complete instructions, see [Local File Source](/docs/send-data/Sources/installed-collectors/Local-File-Source).
 
 1. Configure a Local File source.
 2. Configure the Source fields:

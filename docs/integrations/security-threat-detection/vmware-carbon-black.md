@@ -36,7 +36,7 @@ This section provides instructions for adding a hosted collector, HTTP, and S3 s
 
 **[VMware Carbon Black Endpoint Detection and Response](https://www.carbonblack.com/products/edr/)** (EDR) events can be sent to Sumo Logic via its [event forwarder mechanism](https://developer.carbonblack.com/reference/enterprise-response/event-forwarder/). The cb-event-forwarder can be installed on any 64-bit Linux machine running CentOS 6.x. It can be installed on the same machine as the Carbon Black server, or any other machine. Data can be sent in either JSON or LEEF format, both of which are supported by Sumo Logic.
 
-**[VMware Carbon Black Cloud Endpoint Standard](https://www.carbonblack.com/products/endpoint-standard/)** events can be collected via VMware Carbon Black [Event Forwarder S3](https://developer.carbonblack.com/reference/carbon-black-cloud/platform/latest/data-forwarder-api/) mechanism and a [Sumo Logic S3 source](/docs/send-data/Sources/sources-hosted-collectors/Amazon-Web-Services/AWS-S3-Source).
+**[VMware Carbon Black Cloud Endpoint Standard](https://www.carbonblack.com/products/endpoint-standard/)** events can be collected via VMware Carbon Black [Event Forwarder S3](https://developer.carbonblack.com/reference/carbon-black-cloud/platform/latest/data-forwarder-api/) mechanism and a [Sumo Logic S3 source](/docs/send-data/Sources/hosted-collectors/Amazon-Web-Services/AWS-S3-Source).
 
 For more in-depth information, see [Endpoint Standard](https://developer.carbonblack.com/reference/cb-defense/) and[ EDR](https://developer.carbonblack.com/reference/enterprise-response/) documentation.
 
@@ -56,7 +56,7 @@ To configure collection, add an HTTP Source, get credentials for VMware Carbon B
 
 **To add an HTTP source for VMware Carbon Black EDR do the following:
 
-1. Add [HTTP Logs and Metrics Source](/docs/send-data/sources/sources-hosted-collectors/http-logs-metrics-source) for VMware Carbon Black EDR. \
+1. Add [HTTP Logs and Metrics Source](/docs/send-data/sources/hosted-collectors/http-logs-metrics-source) for VMware Carbon Black EDR. \
 
 
 
@@ -142,7 +142,7 @@ To add an S3 source for VMware Carbon Black Cloud Endpoint Standard, do the foll
 ### Configure VMware Carbon Black Cloud Endpoint Standard to send alerts and events to S3
 
 
-**VMware Carbon Black Cloud Endpoint Standard** events will be pushed to S3 via VMware Carbon Black [Event Forwarder S3](https://developer.carbonblack.com/reference/carbon-black-cloud/platform/latest/data-forwarder-api/) and will be collected via [Sumo logic S3](/docs/send-data/Sources/sources-hosted-collectors/Amazon-Web-Services/AWS-S3-Source) source.
+**VMware Carbon Black Cloud Endpoint Standard** events will be pushed to S3 via VMware Carbon Black [Event Forwarder S3](https://developer.carbonblack.com/reference/carbon-black-cloud/platform/latest/data-forwarder-api/) and will be collected via [Sumo logic S3](/docs/send-data/Sources/hosted-collectors/Amazon-Web-Services/AWS-S3-Source) source.
 
 To configure the Event Forwarder, follow the steps mentioned [here](https://developer.carbonblack.com/reference/carbon-black-cloud/platform/latest/eventforwarder-api/). Please carefully evaluate this information to assure that your configuration reflects the data set you would like to send to Sumo Logic.
 

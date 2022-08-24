@@ -74,7 +74,7 @@ Each source can have its own unique fields in addition to the generic fields lis
 
 | Field Type | Type Value |
 |--|--|
-| [Akamai SIEM API Source](../sources-hosted-collectors/cloud-to-cloud-integration-framework/akamai-siem-api-source.md) | Universal |
+| [Akamai SIEM API Source](../hosted-collectors/cloud-to-cloud-integration-framework/akamai-siem-api-source.md) | Universal |
 | [Amazon S3 Source](json-parameters-hosted-sources.md#amazon-s3-source) | Polling |
 | [AWS S3 Archive Source](json-parameters-hosted-sources.md#aws-s3-archive-source) | Polling |
 | [AWS CloudFront Source](json-parameters-hosted-sources.md#aws-cloudfront-source) | Polling |
@@ -83,28 +83,28 @@ Each source can have its own unique fields in addition to the generic fields lis
 | [AWS Kinesis Firehose for Logs Source](json-parameters-hosted-sources.md#aws-kinesis-firehose-for-logs-source) | HTTP |
 | [AWS S3 Audit Source](json-parameters-hosted-sources.md#aws-s3-audit-source) | Polling |
 | [AWS Metadata (Tag) Source](json-parameters-hosted-sources.md#aws-metadata-tag-source) | Polling |
-| [Azure Event Hubs Source](../sources-hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs-source.md) | Universal |
-| [Carbon Black Cloud Source](../sources-hosted-collectors/cloud-to-cloud-integration-framework/carbon-black-cloud-source.md) | Universal |
-| [Carbon Black Inventory Source](../sources-hosted-collectors/cloud-to-cloud-integration-framework/carbon-black-inventory-source.md) | Universal |
+| [Azure Event Hubs Source](../hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs-source.md) | Universal |
+| [Carbon Black Cloud Source](../hosted-collectors/cloud-to-cloud-integration-framework/carbon-black-cloud-source.md) | Universal |
+| [Carbon Black Inventory Source](../hosted-collectors/cloud-to-cloud-integration-framework/carbon-black-inventory-source.md) | Universal |
 | [Cloud Syslog Source](json-parameters-hosted-sources.md#cloud-syslog-source) | Cloudsyslog |
-| [Cisco AMP Source](../sources-hosted-collectors/cloud-to-cloud-integration-framework/cisco-amp-source.md) | Universal |
-| [Crowdstrike FDR Source](../sources-hosted-collectors/cloud-to-cloud-integration-framework/crowdstrike-fdr-source.md) | Universal |
-| [CrowdStrike Source](../sources-hosted-collectors/cloud-to-cloud-integration-framework/crowdstrike-source.md) | 	Universal |
-| [CSE AWS EC2 Inventory Source](../sources-hosted-collectors/cloud-to-cloud-integration-framework/cse-aws-ec-inventory-source.md) | Universal |
-| [Cybereason Source](../sources-hosted-collectors/cloud-to-cloud-integration-framework/cybereason-source.md) | Universal |
-| [Duo Source](../sources-hosted-collectors/cloud-to-cloud-integration-framework/duo-source.md) | Universal |
+| [Cisco AMP Source](../hosted-collectors/cloud-to-cloud-integration-framework/cisco-amp-source.md) | Universal |
+| [Crowdstrike FDR Source](../hosted-collectors/cloud-to-cloud-integration-framework/crowdstrike-fdr-source.md) | Universal |
+| [CrowdStrike Source](../hosted-collectors/cloud-to-cloud-integration-framework/crowdstrike-source.md) | 	Universal |
+| [CSE AWS EC2 Inventory Source](../hosted-collectors/cloud-to-cloud-integration-framework/cse-aws-ec-inventory-source.md) | Universal |
+| [Cybereason Source](../hosted-collectors/cloud-to-cloud-integration-framework/cybereason-source.md) | Universal |
+| [Duo Source](../hosted-collectors/cloud-to-cloud-integration-framework/duo-source.md) | Universal |
 | [Google Cloud Platform Source](json-parameters-hosted-sources.md#google-cloud-platform-source) | HTTP |
 | [HTTP Source](json-parameters-hosted-sources.md#http-source) | HTTP |
-| [Microsoft Graph Security API Source](../sources-hosted-collectors/cloud-to-cloud-integration-framework/microsoft-graph-security-api-source.md) | Universal |
-| [Mimecast Source](../sources-hosted-collectors/cloud-to-cloud-integration-framework/mimecast-source.md) | Universal |
-| [Netskope Source](../sources-hosted-collectors/cloud-to-cloud-integration-framework/netskope-source.md) | Universal |
-| [Okta Source](../sources-hosted-collectors/cloud-to-cloud-integration-framework/okta-source.md) | Universal |
-| [Palo Alto Cortex XDR](../sources-hosted-collectors/cloud-to-cloud-integration-framework/palo-alto-cortex-xdr-source.md) | Universal |
-| [Proofpoint On Demand Source](../sources-hosted-collectors/cloud-to-cloud-integration-framework/proofpoint-on-demand-source.md) | Universal |
-| [Proofpoint TAP Source](../sources-hosted-collectors/cloud-to-cloud-integration-framework/proofpoint-tap-source.md) | Universal |
-| [Salesforce Source](../sources-hosted-collectors/cloud-to-cloud-integration-framework/salesforce-source.md) | Universal |
-| [Sophos Central Source](../sources-hosted-collectors/cloud-to-cloud-integration-framework/sophos-central-source.md) | Universal |
-| [Tenable Source](../sources-hosted-collectors/cloud-to-cloud-integration-framework/tenable-source.md) | Universal |
+| [Microsoft Graph Security API Source](../hosted-collectors/cloud-to-cloud-integration-framework/microsoft-graph-security-api-source.md) | Universal |
+| [Mimecast Source](../hosted-collectors/cloud-to-cloud-integration-framework/mimecast-source.md) | Universal |
+| [Netskope Source](../hosted-collectors/cloud-to-cloud-integration-framework/netskope-source.md) | Universal |
+| [Okta Source](../hosted-collectors/cloud-to-cloud-integration-framework/okta-source.md) | Universal |
+| [Palo Alto Cortex XDR](../hosted-collectors/cloud-to-cloud-integration-framework/palo-alto-cortex-xdr-source.md) | Universal |
+| [Proofpoint On Demand Source](../hosted-collectors/cloud-to-cloud-integration-framework/proofpoint-on-demand-source.md) | Universal |
+| [Proofpoint TAP Source](../hosted-collectors/cloud-to-cloud-integration-framework/proofpoint-tap-source.md) | Universal |
+| [Salesforce Source](../hosted-collectors/cloud-to-cloud-integration-framework/salesforce-source.md) | Universal |
+| [Sophos Central Source](../hosted-collectors/cloud-to-cloud-integration-framework/sophos-central-source.md) | Universal |
+| [Tenable Source](../hosted-collectors/cloud-to-cloud-integration-framework/tenable-source.md) | Universal |
 
 ### Metrics sources for hosted collectors
 
@@ -153,8 +153,8 @@ The following parameters are used for log Sources except for Syslog. Syslog Sour
 
 | Parameter | Type | Required? | Default | Description | Access |
 |--|--|--|--|--|--|
-| `cutoffTimestamp` | Long | No | 0 (collects all data) | Can be specified instead of cutoffRelativeTime to only collect data more recent than this timestamp, specified as milliseconds since epoch (13 digit). You can use this site to convert to epoch time: http://www.epochconverter.com/<br/>Times in the future are supported. For a [Local File Source](../sources-installed-collectors/local-file-source.md), this cutoff applies to the "modified" time of the file, not the time of the individual log lines. For example, if you have a file that contains logs with timestamps spanning an entire week and set the `cutoffTimestamp` to two days ago, all of the logs from the entire week will be ingested since the file itself was modified more recent than the `cutoffTimestamp`. A processing rule could be used to filter logs that match unneeded log messages.<br/>Review timestamp considerations to understand how Sumo interprets and processes timestamps. | modifiable |
-| `cutoffRelativeTime` | String | No |  | Can be specified instead of `cutoffTimestamp` to provide a relative offset with respect to the current time.<br/>`time` can be either months (`M`), weeks (`w`), days (`d`), hours (`h`), or minutes (`m`). Use 0m to indicate the current time.Times in the future are not supported.<br/>Example: use -1h, -1d, or -1w to collect data that's less than one hour, one day, or one week old, respectively.<br/>For a [Local File Source](../sources-installed-collectors/local-file-source.md), this cutoff applies to the "modified" time of the file, not the time of the individual log lines. For example, if you have a file that contains logs with timestamps spanning an entire week and set the cutoffRelativeTime to two days ago, all of the logs from the entire week will be ingested since the file itself was modified more recent than the cutoffRelativeTime. A processing rule could be used to filter logs that match unneeded log messages.<br/>Review timestamp considerations to understand how Sumo interprets and processes timestamps. | not modifiable |
+| `cutoffTimestamp` | Long | No | 0 (collects all data) | Can be specified instead of cutoffRelativeTime to only collect data more recent than this timestamp, specified as milliseconds since epoch (13 digit). You can use this site to convert to epoch time: http://www.epochconverter.com/<br/>Times in the future are supported. For a [Local File Source](../installed-collectors/local-file-source.md), this cutoff applies to the "modified" time of the file, not the time of the individual log lines. For example, if you have a file that contains logs with timestamps spanning an entire week and set the `cutoffTimestamp` to two days ago, all of the logs from the entire week will be ingested since the file itself was modified more recent than the `cutoffTimestamp`. A processing rule could be used to filter logs that match unneeded log messages.<br/>Review timestamp considerations to understand how Sumo interprets and processes timestamps. | modifiable |
+| `cutoffRelativeTime` | String | No |  | Can be specified instead of `cutoffTimestamp` to provide a relative offset with respect to the current time.<br/>`time` can be either months (`M`), weeks (`w`), days (`d`), hours (`h`), or minutes (`m`). Use 0m to indicate the current time.Times in the future are not supported.<br/>Example: use -1h, -1d, or -1w to collect data that's less than one hour, one day, or one week old, respectively.<br/>For a [Local File Source](../installed-collectors/local-file-source.md), this cutoff applies to the "modified" time of the file, not the time of the individual log lines. For example, if you have a file that contains logs with timestamps spanning an entire week and set the cutoffRelativeTime to two days ago, all of the logs from the entire week will be ingested since the file itself was modified more recent than the cutoffRelativeTime. A processing rule could be used to filter logs that match unneeded log messages.<br/>Review timestamp considerations to understand how Sumo interprets and processes timestamps. | not modifiable |
 
 ## Non-configurable parameters
 

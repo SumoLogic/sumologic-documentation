@@ -52,7 +52,7 @@ After setting up a Script Action, create a scheduled search. Each time the sear
 You need the [View Collectors role capability](../../manage/users-and-roles/roles/role-capabilities.md) to alert with a Script Action.
 :::
 
-For instructions, see [Script Action](../../send-data/sources/sources-installed-collectors/script-action.md).
+For instructions, see [Script Action](../../send-data/sources/installed-collectors/script-action.md).
 
 ### ServiceNow Connection
 
