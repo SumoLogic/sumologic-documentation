@@ -34,3 +34,14 @@ New - The Sumo Logic AWS API Gateway App provides insights into API Gateway task
 Update - The Sumo App for Amazon DynamoDB uses logs and metrics to provide operational insights into your DynamoDB. The App includes Dashboards that allow you to monitor key metrics, view the throttle events, errors, and latency, and help you plan the capacity of your DynamoDB instances. This App updates from the AWS observability solution in the App Catalog. Updates include upgrading all dashboards to Dashboards(New) and adding a new threat intel Dashboard to the App.
 
 Update - The Sumo Logic Amazon RDS App dashboards provide visibility into your Amazon Relational Database Service (RDS) performance and operations. Preconfigured dashboards allow you to monitor critical metrics of your RDS cluster, including CPU, memory, storage, the network transmits and receive throughput, read and write operations, database connection count, disk queue depth, and more. Audit activity dashboards help you monitor activities performed on your RDS infrastructure. This app updates from the AWS observability solution in the App Catalog. Updates include upgrading all the dashboards to Dashboards(New). New Audit activity dashboards help you monitor activities performed on your RDS infrastructure and RDS instance-specific dashboard support for - Aurora and MySQL and Performance Insights dashboards.
+
+---
+## 2022-07-04 (Alerts)
+
+Update -  We’re continuing to make [alerts and monitors](https://help.sumologic.com/Visualizations-and-Alerts/Alerts/Monitors) more customizable to give you control over how often you are notified. You can now:
+
+* **Visually indicate Alerting Query**: For Metrics monitors with multiple query rows, we now visually indicate the alerting query row with a notification bell icon.
+* **Improved JSON Validations for Connection Payloads**: We're enforcing stricter JSON validation during creation and updating of Connections to prevent errors that could cause notification failures in the future. There are two major validations that we have started enforcing:
+    * If there is a trailing comma (`,`) after the last `"key": "value"` in the JSON Payload structure, we will error out.
+    * If there are multiple keys with the same name at the same level within a JSON payload, we will throw an error.
+* **Monitor Alerts/Recovery Condition changes**: We no longer support Log Monitors with an Alert threshold condition of “`less than 0`” or “`greater or equal to 0`” . This is because Log queries always result in `0` (when there is no data) or more (when there is data) rows, and monitors that were configured with these conditions were not firing alerts.
