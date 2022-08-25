@@ -1,8 +1,8 @@
 ---
-id: suggested-searches-apache-errors-parser
+id: apache-errors-parser
+title: Suggested Searches for the Apache Errors Parser
+sidebar_label: Apache Errors Parser
 ---
-
-# Suggested Searches for the Apache Errors Parser
 
 The following searches were built for use with the Apache Errors Parser. Copy and paste these searches into the search query field and save them for use later.
 
@@ -23,7 +23,7 @@ This search returns the most critical log messages in the Apache error log.
     alert for 1 or more results found.
 
 ```sql
-_sourceName=*error_log* AND _sourceCategory=*apache* AND ("emerg" OR "alert" OR "crit") 
+_sourceName=*error_log* AND _sourceCategory=*apache* AND ("emerg" OR "alert" OR "crit")
 | parse using public/apache/error
 ```
 
@@ -34,10 +34,10 @@ Returns a count of all messages by log level (error, warn etc.) to give administ
 * Suggested Time Rang: -15m
 
 ```sql
-_sourceName=*error_log* AND _sourceCategory=*apache* 
-| parse using public/apache/error 
-| where log_level !="" 
-| count by log_level 
+_sourceName=*error_log* AND _sourceCategory=*apache*
+| parse using public/apache/error
+| where log_level !=""
+| count by log_level
 | sort by _count
 ```
 
@@ -48,11 +48,11 @@ Returns trend data of how many server start and stop events took place over a pe
 * Suggested Time Range: -6h
 
 ```sql
-_sourceName=*error_log* AND _sourceCategory=*apache* 
-| parse using public/apache/error 
-| if(reason matches "caught SIGTERM, shutting down", 1, 0) as server_stop 
-| if(reason matches "*-- resuming normal operations",1, 0) as server_start 
-| timeslice by 1h 
+_sourceName=*error_log* AND _sourceCategory=*apache*
+| parse using public/apache/error
+| if(reason matches "caught SIGTERM, shutting down", 1, 0) as server_stop
+| if(reason matches "*-- resuming normal operations",1, 0) as server_start
+| timeslice by 1h
 | sum(server_stop) as server_stops, sum(server_start) as server_starts by _timeslice
 ```
 
@@ -65,9 +65,9 @@ This search returns the top Apache error log reasons.
 * Suggested Time Range: -6h
 
 ```sql
-_sourceName=*error_log* AND _sourceCategory=*apache* 
-| parse using public/apache/error 
-| count by reason 
+_sourceName=*error_log* AND _sourceCategory=*apache*
+| parse using public/apache/error
+| count by reason
 | top 100 reason by _count
 ```
 
@@ -78,8 +78,8 @@ Returns the top source IP addresses that cause errors, which should correlate wi
 * Suggested Time Range: -6h
 
 ```sql
-_sourceName=*error_log* AND _sourceCategory=*apache* 
-| parse using public/apache/error 
-| count_frequent src_ip 
+_sourceName=*error_log* AND _sourceCategory=*apache*
+| parse using public/apache/error
+| count_frequent src_ip
 | limit 100
 ```

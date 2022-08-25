@@ -1,8 +1,8 @@
 ---
-id: suggested-searches-microsoft-iis-parser
+id: microsoft-iis-parser
+title: Suggested Searches for the Microsoft IIS Parser
+sidebar_label: Microsoft IIS Parser
 ---
-
-# Suggested Searches for the Microsoft IIS Parser
 
 These suggested searches cover some of the most common scenarios for monitoring Security, Audit, and Performance issues on a Linux server. You can enter these queries into the Search box as a starting baseline, and then customize the queries for your system.
 
@@ -15,13 +15,13 @@ Returns the number of client errors, server errors, redirects, and successful re
 * Suggested Time Range: -7d
 
 ```sql
-_sourceCategory=*IIS* 
-| parse using public/iis 
-| if(sc_status matches "2*", 1, 0) as successes 
-| if(sc_status matches "3*", 1, 0) as redirects 
-| if(sc_status matches "5*", 1, 0) as server_errors 
-| if(sc_status matches "4*", 1, 0) as client_errors 
-| timeslice by 1d 
+_sourceCategory=*IIS*
+| parse using public/iis
+| if(sc_status matches "2*", 1, 0) as successes
+| if(sc_status matches "3*", 1, 0) as redirects
+| if(sc_status matches "5*", 1, 0) as server_errors
+| if(sc_status matches "4*", 1, 0) as client_errors
+| timeslice by 1d
 | sum(successes) as successes, sum(redirects) as redirects, sum(client_errors) as client_errors, sum(server_errors) as server_errors by _timeslice
 ```
 
@@ -40,9 +40,9 @@ Returns the number of hits on a website each day over the past 24 hours. If this
 * Suggested Time Range: -7d
 
 ```sql
-_sourceCategory=*IIS* 
-| parse using public/iis 
-| timeslice by 1d 
+_sourceCategory=*IIS*
+| parse using public/iis
+| timeslice by 1d
 | count as hits by _timeslice
 ```
 
@@ -53,9 +53,9 @@ Returns the top 10 browsers accessing the website.
 * Suggested Time Range: -1d
 
 ```sql
-_sourceCategory=*IIS* 
-| parse using public/iis 
-| count_frequent cs_user_agent 
+_sourceCategory=*IIS*
+| parse using public/iis
+| count_frequent cs_user_agent
 | limit 10f
 ```
 
@@ -64,10 +64,10 @@ _sourceCategory=*IIS*
 * Suggested Time Range: -1d
 
 ```sql
-_sourceCategory=*IIS* 
-| parse using public/iis 
-| (time_taken/1000) as seconds 
-| avg(seconds) as avgtimeinseconds by cs_uri_stem 
-| sort by avgtimeinseconds 
+_sourceCategory=*IIS*
+| parse using public/iis
+| (time_taken/1000) as seconds
+| avg(seconds) as avgtimeinseconds by cs_uri_stem
+| sort by avgtimeinseconds
 | limit 100
 ```

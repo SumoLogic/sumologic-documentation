@@ -1,8 +1,8 @@
 ---
 slug: /search/get-started-with-search/search-page
+title: How to Use the Search Page
 ---
 
-# How to Use the Search Page
 
 On the Search page you can enter [simple or complex queries] FIX (../search-basics/about-search-basics.md)to search your entire Sumo Logic data repository. You can save and select searches from your [Library](docs/get-started/library/sumo-logic-library). After running a search your results are displayed in either the **Messages** tab (for raw message data) or the **Aggregates** tab (for grouped results). See [how to navigate through search results](navigate-messages-in-search-results.md).
 
@@ -33,7 +33,7 @@ You can [run a saved search](../search-basics/save-search.md), [pause, or stop
 ## Query colors explained
 
 In your search query, you'll see that we have separated out important terms in a search for you by color to help you identify them quickly.  
-  
+
 ![Query Sample Colors](/img/search/get-started-search/search-page/query-with-colors.png)
 
 | Color | Purpose |

@@ -7,6 +7,8 @@ description: Monitors continuously query your logs or metrics and send notificat
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
+<img src={useBaseUrl('img/icons/operations/monitor-and-visualize.png')} alt="icon" width="75"/>
+
 Sumo Logic Monitors allow you to set robust and configurable alerting policies that enable you to get notified about critical changes or issues affecting your production application.
 
 Monitors track your Metrics or Logs data in real time and send notifications when noteworthy changes happen in your production applications.

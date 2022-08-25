@@ -3,8 +3,11 @@ slug: /beta
 title: Sumo Logic Beta Features
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
 import DocCardList from '@theme/DocCardList';
 import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
+
+<img src={useBaseUrl('img/icons/business/beta.png')} alt="icon" width="75"/>
 
 Learn about our Beta features are coming soon to general availability. Betas are different than our generally available services:
 

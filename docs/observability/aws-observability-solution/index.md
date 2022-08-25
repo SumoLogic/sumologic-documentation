@@ -4,6 +4,10 @@ title: AWS Observability Solution
 description: AWS Observability Solution is a framework to simplify the monitoring and troubleshooting of your AWS cloud infrastructure. You can use the Sumo Logic observability app dashboards to isolate and solve problems faster.
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src='https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg' alt="Thumbnail icon" width="65"/>
+
 This feature is available in the following account plans.
 
 | Account Type | Account Level                                                                        |
