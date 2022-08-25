@@ -95,7 +95,7 @@ Regular Markdown links are supported, using url paths or relative file paths.
 ```md
 Learn about [release notes](release-notes.md).
 
-How about [translations](./translate-documentation.md)?
+How about [translations](./translations.md)?
 ```
 
 **Linking to files in other parent folders (you'll need to use a relative path):**
@@ -111,7 +111,7 @@ Learn how to [sign up with Sumo](../get-started/sign-up.md).
 
 Learn about [release notes](release-notes.md).
 
-How about [translations](./translate-documentation.md)?
+How about [translations](./translations.md)?
 
 **Linking to files in other parent folders (you'll need to use a relative path):**
 

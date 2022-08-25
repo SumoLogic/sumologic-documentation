@@ -11,7 +11,7 @@ To create your first doc:
 
 ## 1. Create doc file
 
-Create a markdown file with filename.md in a /docs folder that best matches the guide. This is the English language guide. For information on translations, see [Translate Documentation](translate-documentation.md).
+Create a markdown file with filename.md in a /docs folder that best matches the guide. This is the English language guide. For information on translations, see [Translate Documentation](translations.md).
 
 ## 2. Add doc title and metadata
 
@@ -61,7 +61,7 @@ The `sidebars.ts` file (in repo root) controls the side navigation for the entir
         'contribution/markdown-features',
         'contribution/release-notes',
         'contribution/build-deploy',
-        'contribution/translate',
+        'contribution/translations',
         {
           type: 'category',
           label: 'Templates',
