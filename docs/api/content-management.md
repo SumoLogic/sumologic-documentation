@@ -1,11 +1,10 @@
 ---
-id: dashboard-new
-title: Sumo Logic Dashboard (New) Management APIs
-sidebar_label: Dashboard (New)
+id: content-management
+title: Sumo Logic Content Management APIs
+sidebar_label: Content Management
 ---
 
-The Dashboard (New) Management API allows you to create, retrieve, update, and delete dashboards created with the [Dashboard (New)](https://help.sumologic.com/Visualizations-and-Alerts/Dashboard_(New)) platform from HTTP endpoints to organize your content.
-
+The Content Management API allows you to manage content in your organization’s [Library](https://help.sumologic.com/01Start-Here/Library) from HTTP endpoints.
 
 Refer to [Getting Started](docs/api/index.md) for Authentication and Endpoint information.
 
