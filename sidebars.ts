@@ -2272,11 +2272,12 @@ module.exports = {
       collapsed: false,
       link: {type: 'doc', id: 'contribution/index'},
       items: [
-        'contribution/code-of-conduct',
         'contribution/create-document',
         'contribution/markdown-features',
-        'contribution/build-deploy',
-        'contribution/translate',
+        'contribution/style-guide',
+        'contribution/word-list',
+        'contribution/code-of-conduct',
+        'contribution/translations',
         {
           type: 'category',
           label: 'Templates',
