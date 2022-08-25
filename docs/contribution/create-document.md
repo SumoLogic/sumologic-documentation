@@ -171,7 +171,7 @@ The Sumo Logic Doc Team will help your add your documentation to the sidebar and
 
 ## 5. Build and Deploy on Local
 
-Next, you'l build and deploy a local instance of the Sumo Logic Docusaurus site.
+Next, you'll build and deploy a local instance of the Sumo Logic Docusaurus site.
 
 Our site is built using Docusaurus, a static-site-generator. To preview your work, make sure to run the following commands to install and build. We use Yarn for all installs and builds. Never use NPM commands for installing or updating packages.
 
@@ -195,11 +195,11 @@ The site includes translations into other languages. To build on your local:
 
     * Use start, hot reloads as you make changes: `yarn start`
 
-        Any issues with broken links and images are listed according to file. Locate and update those issues, then run build and start again to verify.
+      Any issues with broken links and images are listed according to file. Locate and update those issues, then run build and start again to verify.
 
     * Use npm serve to test and review multi-languages: `npm run serve`
 
-        This build does not hot reload and requires a rebuild to test and review.
+      This build does not hot reload and requires a rebuild to test and review.
 
 The static files are generated in the `build` folder and run on your local machine at: `http://localhost:3000/`. As you make changes, it will hot reload, or refresh, on the fly.
 
