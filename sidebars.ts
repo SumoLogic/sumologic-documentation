@@ -2277,6 +2277,8 @@ module.exports = {
         'contribution/markdown-features',
         'contribution/build-deploy',
         'contribution/translate',
+        'contribution/style-guide',
+        'contribution/word-list',
         {
           type: 'category',
           label: 'Templates',

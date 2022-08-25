@@ -5,91 +5,175 @@ sidebar_label: Markdown Features
 description: Learn about the markdown features Docusaurus supports.
 ---
 
-Docusaurus supports **[Markdown](https://daringfireball.net/projects/markdown/syntax)** and a few **additional features**.
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+Docusaurus supports [Markdown](https://daringfireball.net/projects/markdown/syntax) and a few additional features.
 
 ## Front Matter
 
-Markdown documents have metadata at the top called [Front Matter](https://jekyllrb.com/docs/front-matter/). Every page should have an `id` used for sidebar navigation. The title of the page is the only H1 on the page.
+Markdown documents have metadata at the top called [front matter](https://jekyllrb.com/docs/front-matter/). Every page should have an `id` used for sidebar navigation.
 
 ```markdown
 ---
 id: page-id
+title: Page title
 sidebar_label: Navigation title
-description: One sentence about the page...
-keywords: [important, words]
+description: Learn more about...
+keywords:
+    - metrics
+    - traces
+tags: [apm]  
 ---
-
-# Title of the Page
 ```
 
 | Parameter | Description |
-| -- | -- |
-| `id:` | **Required.** Id for the page used in the sidebar and as the canonical link. Keep it short and only use dashes. |
-| `sidebar_label:` | Optional, use a different title for the side navigation. Keep this title short. It does not affect the canonical link or page title. |
-| `description:` | Optional, one sentence describing what the user will find in the page for searches. Otherwise the first couple sentences are used for searches. |
-| `keywords` | Optional, array of metadata keywords to boost search results. Do not use the company name or some brands or words already heavily used in the page. That can reduce search strength. |
-| `# Title of the Page` | **Required.** Only use one H1 for the title of the page. This title is used in navigation is a `sidebar_label` is not included.|
+| :-- | :-- |
+| `id:` | **(Required)** Id for the page used in the sidebar and as the canonical link. Keep it short and only use dashes. |
+| `title:` | **(Required)** For SEO, be sure to sure main keywords in your title and keep it under 60 characters. This title is used in navigation if a `sidebar_label` is not included. |
+| `sidebar_label:` | (Optional) Use a different title for the side navigation. Keep this title short. It does not affect the canonical link or page title. |
+| `description:` | (Optional) 1-2 sentences describing what the user will find in the doc. It appears in search engine results. If omitted, search engines will pull first couple sentences instead. |
+| `keywords:` | (Optional) List of page keywords, which boosts SEO. |
+| `slug:` | Overrides the id for the canonical link. Best used for index pages for sections. |
 
-For full options, see [Docusaurus Markdown front matter](https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-docs#markdown-front-matter).
+For a full list of options, see [Docusaurus Markdown front matter](https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-docs#markdown-front-matter).
 
 ## Headings
 
-Use hashtags `#` to indicate the heading level. You should not use H1 down in the page, this is automatically used for the page title when building the site. Link anchors automatically also generate.
+Use hashtags `#` to indicate the heading level. Always start with H2 headers (`##`) in your doc body. Never use an H1; this is generated automatically by the page `title:` when building the site. Link anchors also generate automatically.
 
-:::important
-Use these heading in correct order. Right after the H1 title you'd next have an H2, not jumping to H3 or H5. This affects search and SEO structures to search crawlers like Google. Malformed structures can reduce search and SEO for the page. Docusaurus carefully formats generated pages to ensure strong SEO.
+<Tabs
+  className="unique-tabs"
+  defaultValue="Markdown"
+  values={[
+    {label: 'Markdown', value: 'Markdown'},
+    {label: 'Result', value: 'Result'},
+  ]}>
+
+<TabItem value="Markdown">
+
+```
+## I'm an H2
+
+### I'm an H3
+
+#### I'm an H4
+
+##### I'm an H5
+
+###### I'm an H6
+```
+
+</TabItem>
+<TabItem value="Result">
+
+<img src={useBaseUrl('img/contribution/headersizes.png')} alt="header sizes" width="300"/>
+
+</TabItem>
+</Tabs>
+
+:::caution
+Headings must be used in correct order. To start an H2 (`##`) subsection, for example, you need to use an H3 (`###`), not jump to H4 or H5. This affects search and SEO structures to search crawlers like Google. Malformed structures can reduce search and SEO for the page. Docusaurus carefully formats generated pages to ensure strong SEO.
 :::
-
-## H2 - Create the best documentation
-
-### H3 - Create the best documentation
-
-#### H4 - Create the best documentation
-
-##### H5 - Create the best documentation
-
-###### H6 - Create the best documentation
 
 ## Links
 
 Regular Markdown links are supported, using url paths or relative file paths.
 
-```md Links to files in the same folder
+<Tabs
+  className="unique-tabs"
+  defaultValue="Markdown"
+  values={[
+    {label: 'Markdown', value: 'Markdown'},
+    {label: 'Result', value: 'Result'},
+  ]}>
+
+<TabItem value="Markdown">
+
+**Linking to files in the same folder:**
+
+```md
 Learn about [release notes](release-notes.md).
 
-How about [translations](./translate-documentation.md).
+How about [translations](./translate-documentation.md)?
 ```
 
-Learn about [release notes](release-notes.md).
+**Linking to files in other parent folders (you'll need to use a relative path):**
 
-How about [translations](./translate-documentation.md).
-
-
-```md Links to files in other drives - relative path
+```md
 Learn how to [sign up with Sumo](../get-started/sign-up.md).
 ```
 
+</TabItem>
+<TabItem value="Result">
+
+**Linking to files in the same folder:**
+
+Learn about [release notes](release-notes.md).
+
+How about [translations](./translate-documentation.md)?
+
+**Linking to files in other parent folders (you'll need to use a relative path):**
+
 Learn how to [sign up with Sumo](../get-started/sign-up.md).
 
-## Asset Files
+</TabItem>
+</Tabs>
 
-You can save images and downloadable files all to the `/static` folder. Using the files should not include `/static` in the link as Docusaurus builds and saves these static assets will be served from the `baseUrl` (or domain).
+
+## Assets
+
+In Docusaurus, you can add images, custom files, and embed videos.
 
 ### Images
 
-We recommend using .png for all images. Save these images in `/static/img`.
+We recommend using .png format for all images.
 
-Add an image at `/static/img/` and display it in Markdown with alt text, file path of `/img`, and image name:
+1. Save your image(s) in the `/static/img` folder.
+2. Add the import line to the top of your doc, under the [front matter header](#front-matter).
+  ```
+  import useBaseUrl from '@docusaurus/useBaseUrl';
+  ```
+3. Paste this image code snippet where you want your images to appear. Replace with file path with your own and ensure it includes the correct subfolder name. In your snippet, the file path starts with `img` (do not preface it with `/static`) because Docusaurus builds and saves these static assets and serves from the `baseUrl` (or domain).
+  ```
+  <img src={useBaseUrl('img/sumo-square.png')} />
+  ```
+4. Add alt text.
+  ```
+  <img src={useBaseUrl('img/sumo-square.png')} alt="Sumo Logic thumbnail logo" />
+  ```
+5. (Optional) Add width to resize your image, if needed.
+  ```
+  <img src={useBaseUrl('img/sumo-square.png')} alt="Sumo Logic thumbnail logo" width="150"/>
+  ```
+
+The above snippet produces:
+
+<Tabs
+  className="unique-tabs"
+  defaultValue="Markdown"
+  values={[
+    {label: 'Markdown', value: 'Markdown'},
+    {label: 'Result', value: 'Result'},
+  ]}>
+
+<TabItem value="Markdown">
 
 ```md
-![Sumo Logic logo](/img/sumo-square.png)
+<img src={useBaseUrl('img/sumo-square.png')} alt="Sumo Logic thumbnail logo" width="150"/>
 ```
 
-![Sumo Logic logo](/img/sumo-square.png)
+</TabItem>
+<TabItem value="Result">
+
+<img src={useBaseUrl('img/sumo-square.png')} alt="Sumo Logic thumbnail logo" width="150"/>
+
+</TabItem>
+</Tabs>
+
 
 ### Downloadable Files
 
-If you have static files for users to download, save them to the `/static/files` folder. These may include .json, .js, .doc, and so on. You link to the file using the file path of `/files` and file name:
+If you have static files for users to download, save them to the `/static/files` folder. Supported file formats include .json, .js, .doc, and more. You link to the file using the file path of `/files` and file name:
 
 ```md
 ![Download this Terraform](/files/terraform/script.tf)
@@ -97,13 +181,61 @@ If you have static files for users to download, save them to the `/static/files`
 
 If a file is available from another public Sumo Logic repo, please link to that file instead as a URL link.
 
+
+### Videos
+
+You can embed YouTube videos to any page with the following code. Just copy and paste the following code into your page. Replace the URL ID with the video id. You only need the `import Iframe` line once on the page.
+
+```html
+<Iframe url="https://www.youtube.com/embed/ZcbHoC1jZz4?rel=0"
+        width="854px"
+        height="480px"
+        id="myId"
+        className="video-container"
+        display="initial"
+        position="relative"
+        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+        />
+
+import Iframe from 'react-iframe';
+```
+
+For example:
+
+<Iframe url="https://www.youtube.com/embed/ZcbHoC1jZz4?rel=0"
+        width="854px"
+        height="480px"
+        id="myId"
+        className="video-container"
+        display="initial"
+        position="relative"
+        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+        />
+
+import Iframe from 'react-iframe';
+
+You need to explicitly add `?rel=0` to the end of the URL. This ensures that only videos from the current YouTube channel will be suggested to the viewer after they've finished viewing the embedded video.
+
+
 ## Tables
 
-Tables use plain markdown with one header, default left aligned columns, and multi-colored rows. You can use Markdown for links and images. To break up content, you can use `<br/>` for line breaks, HTML for
+Tables use plain markdown with one header, default left aligned columns, and multi-colored rows. You can use Markdown for links and images. To break up content, you can use `<br/>` for line breaks.
+
+<Tabs
+  className="unique-tabs"
+  defaultValue="Markdown"
+  values={[
+    {label: 'Markdown', value: 'Markdown'},
+    {label: 'Result', value: 'Result'},
+  ]}>
+
+<TabItem value="Markdown">
 
 ```markdown
 | Column Name | Example Value | Description |
-| -- | -- | -- |
+| :-- | :-- | :-- |
 | Trace ID | ffaf2f69ee8ad0c1 | The unique identifier of the trace. |
 | Root Service | api | The service that started the trace. |
 | Started At | 07/27/2020 09:01:04.533 | When the trace started. |
@@ -114,8 +246,11 @@ Tables use plain markdown with one header, default left aligned columns, and mul
 | Status | 200 | The HTTP status code of the trace. |
 ```
 
+</TabItem>
+<TabItem value="Result">
+
 | Column Name | Example Value | Description |
-| -- | :--: | -- |
+| :-- | :-- | :-- |
 | Trace ID | ffaf2f69ee8ad0c1 | The unique identifier of the trace. |
 | Root Service | api | The service that started the trace. |
 | Started At | 07/27/2020 09:01:04.533 | When the trace started. |
@@ -124,9 +259,24 @@ Tables use plain markdown with one header, default left aligned columns, and mul
 | Duration Breakdown | ![breakdown](/img/apm/traces/breakdown.png) | Each color indicates a service. The colors assigned to services are always the same on your account. You can change the color in the span summary tab after clicking on the individual span in trace view.<br/>Hover over to view a percentage breakdown of how long each span covers in the trace.<br/>![span hover](/img/apm/traces/span-hover-view.png) |
 | Number of errors | 0 | The number of errors in the trace. |
 | Status | 200 | The HTTP status code of the trace. |
+
+</TabItem>
+</Tabs>
+
+Docusaurus also supports HTML tables.
 
 ## Emphasis
 
+<Tabs
+  className="unique-tabs"
+  defaultValue="Markdown"
+  values={[
+    {label: 'Markdown', value: 'Markdown'},
+    {label: 'Result', value: 'Result'},
+  ]}>
+
+<TabItem value="Markdown">
+
 ```markdown
 Emphasis, aka italics, with *asterisks* or _underscores_.
 
@@ -137,6 +287,9 @@ Combined emphasis with **asterisks and _underscores_**.
 Strikethrough uses 2 tildes. ~~Scratch this.~~
 ```
 
+</TabItem>
+<TabItem value="Result">
+
 Emphasis, aka italics, with *asterisks* or _underscores_.
 
 Strong emphasis, aka bold, with 2 **asterisks** or __underscores__.
@@ -144,6 +297,111 @@ Strong emphasis, aka bold, with 2 **asterisks** or __underscores__.
 Combined emphasis with **asterisks and _underscores_**.
 
 Strikethrough uses 2 tildes. ~~Scratch this.~~
+
+</TabItem>
+</Tabs>
+
+## Admonitions
+
+Docusaurus has a special syntax to create admonitions and callouts, including note, tip, important, caution, warning, and sumo. You can use markdown content in the admonitions, code blocks, links, bullets, images, videos, and much more.
+
+<Tabs
+  className="unique-tabs"
+  defaultValue="Markdown"
+  values={[
+    {label: 'Markdown', value: 'Markdown'},
+    {label: 'Result', value: 'Result'},
+  ]}>
+
+<TabItem value="Markdown">
+
+```md
+
+:::note
+This is a note.
+:::
+
+:::tip
+This is a tip about a cool feature option.
+:::
+
+:::important
+This is some vital information.
+:::
+
+:::danger
+This action is dangerous and could result in data loss.
+:::
+
+:::caution
+This could note important and problematic information.
+:::
+
+:::sumo Best Practice
+Highlight specific info, best practices, links, [training links](https://www.sumologic.com/learn/training/), and other information from Sumo specialists. You can change the title based on the content.
+:::
+
+```
+
+</TabItem>
+<TabItem value="Result">
+
+:::note
+This is a note.
+:::
+
+:::tip
+This is a tip about a cool feature option.
+:::
+
+:::important
+This is some vital information.
+:::
+
+:::danger
+This action is dangerous and could result in data loss.
+:::
+
+:::caution
+This could note important and problematic information.
+:::
+
+:::sumo Best Practice
+Highlight specific info, best practices, links, [training links](https://www.sumologic.com/learn/training/), and other information from Sumo specialists. You can change the title based on the content.
+:::
+
+</TabItem>
+</Tabs>
+
+You can use [code blocks](#code-blocks) in admonitions. Here's an example:
+
+:::tip
+Here's a cool tip.
+
+```json title="You can highlight lines in code blocks" {11-16}
+"overrides": [
+    {
+    "series": [],
+    "queries": [
+        "A"
+        ],
+    "userProvidedChartType": false,
+    "properties": {
+        "type": "column"
+        },
+    "unsafeCanvasJSProperties": {
+        "bevelEnabled": true,
+        "indexLabelPlacement": "inside",
+        "indexLabel": "{y}",
+        "indexLabelOrientation": "vertical"
+        }
+    }
+]
+```
+
+:::
+
+
 
 ## Lists
 
@@ -182,6 +440,16 @@ Always start with `1.` for numbered, ordered lists. The generator will automatic
 
 Use asterisks `*` for unordered, bulleted lists.
 
+<Tabs
+  className="unique-tabs"
+  defaultValue="Markdown"
+  values={[
+    {label: 'Markdown', value: 'Markdown'},
+    {label: 'Result', value: 'Result'},
+  ]}>
+
+<TabItem value="Markdown">
+
 ```markdown title="Markdown Unordered List"
 * Unordered list line 1.
 * Line 2.
@@ -192,6 +460,9 @@ Use asterisks `*` for unordered, bulleted lists.
   * Here we go, another!
 ```
 
+</TabItem>
+<TabItem value="Result">
+
 * Unordered list line 1.
 * Line 2.
 
@@ -200,6 +471,9 @@ Use asterisks `*` for unordered, bulleted lists.
   * Another set of bullets.
   * Here we go, another!
 
+</TabItem>
+</Tabs>
+
 You can configure your editor to always use this format for lists. For Visual Studio Code, configure the following settings:
 
 * **Ordered List: Marker** set to *one*.
@@ -207,21 +481,7 @@ You can configure your editor to always use this format for lists. For Visual St
 
 ## Code Blocks
 
-Markdown code blocks are supported with Syntax highlighting.
-
-    ```jsx title="src/components/HelloDocusaurus.js"
-    function HelloDocusaurus() {
-        return (
-            <h1>Hello, Docusaurus!</h1>
-        )
-    }
-    ```
-
-```jsx title="src/components/HelloDocusaurus.js"
-function HelloDocusaurus() {
-  return <h1>Hello, Docusaurus!</h1>;
-}
-```
+Markdown code blocks are supported with Syntax highlighting. Always use [code block](#code-blocks) to format programming language (i.e., SQL for Sumo queries, JSON for logs).
 
 To highlight lines in the code, use `{#}` in the title line with lines numbers. This example highlights lines 2 through 6.
 
@@ -238,11 +498,41 @@ _sourceCategory=reinvent/travel/checkout
 | count by funcname
 ```
 
+<Tabs
+  className="unique-tabs"
+  defaultValue="Markdown"
+  values={[
+    {label: 'Markdown', value: 'Markdown'},
+    {label: 'Result', value: 'Result'},
+  ]}>
+
+<TabItem value="Markdown">
+
+    ```jsx title="src/components/HelloDocusaurus.js"
+    function HelloDocusaurus() {
+        return (
+            <h1>Hello, Docusaurus!</h1>
+        )
+    }
+    ```
+
+</TabItem>
+<TabItem value="Result">
+
+```jsx title="src/components/HelloDocusaurus.js"
+function HelloDocusaurus() {
+  return <h1>Hello, Docusaurus!</h1>;
+}
+```
+
+</TabItem>
+</Tabs>
+
 For a full list of options, see [Docusaurus Code Blocks](https://docusaurus.io/docs/markdown-features/code-blocks).
 
 ### Import GitHub Repo File
 
-To embed a code sample from a file in a GitHub repositiory, use `reference` in the code block with a link to the file. The code sample is embedded using the language with a link to the original file.
+To embed a code sample from a file in a GitHub repository, use `reference` in the code block with a link to the file. The code sample is embedded using the language with a link to the original file.
 
 This code references a script file: ` ```bash reference`, for example:
 
@@ -258,14 +548,14 @@ Use the following code to create tabbed content. You can use Markdown in these t
 
 At the bottom of the Markdown file, add the following code:
 
-```markdown title="Copy and paste once into markdown file"
+```md title="Copy and paste once into markdown file"
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 ```
 
 For each set of tabs, use the following code:
 
-```markdown title="Copy and paste into markdown for each tab set"
+```md title="Copy and paste into markdown for each tab set"
 <Tabs
   className="unique-tabs"
   defaultValue="tab1"
@@ -337,9 +627,7 @@ Use an expander to collapse long content that can be searched but not displayed 
 You can include markdown content in expanders including code samples, embedded videos, bulleted lists, and more.
 
 ```html title="Copy and fill out for expanders"
-<details>
-
-<summary>Title for the expander</summary>
+<details><summary>Title for the expander</summary>
 
 Place long lists or lots of content in this section. The reader can expand/collapse as needed.
 
@@ -378,100 +666,8 @@ Place long lists or lots of content in this section. The reader can expand/colla
 
 </details>
 
-## Admonitions
 
-Docusaurus has a special syntax to create admonitions and callouts, including note, tip, important, caution, warning, and sumo. You can use markdown content in the admonitions, code blocks, links, bullets, images, videos, and much more.
 
-    :::sumo Custom Title
-    content.
-    :::
-
-    :::tip
-    Use this awesome feature option.
-    :::
-
-    :::danger Take care
-    This action is dangerous.
-    :::
-
-:::note
-This is a note. Need to get started? Try the [templates](templates/template-doc.md).
-:::
-
-:::sumo Sumo Best Pratice
-Highlight specific info, best practices, links, [training links](https://www.sumologic.com/learn/training/), and other information from Sumo specialists! You can change the title based on the content.
-:::
-
-:::tip
-Use this awesome feature option. Here's an example of a [code block](#code-blocks) in a tip.
-
-```json title="Code in a tip with line highlight" {11-16}
-"overrides": [
-    {
-    "series": [],
-    "queries": [
-        "A"
-        ],
-    "userProvidedChartType": false,
-    "properties": {
-        "type": "column"
-        },
-    "unsafeCanvasJSProperties": {
-        "bevelEnabled": true,
-        "indexLabelPlacement": "inside",
-        "indexLabel": "{y}",
-        "indexLabelOrientation": "vertical"
-        }
-    }
-]
-```
-
-:::
-
-:::important
-Use important for vital information. Try to always use a language in a [code block](#code-blocks), for example sql for queries.
-:::
-
-:::caution
-This could note important and problematic information. [Admonitions](#admonitions) can help highlight!
-:::
-
-:::danger Be advised
-This action is dangerous. Definitely recommend a custom title for danger [admonitions](#admonitions).
-:::
-
-## Embed Videos
-
-You can add YouTube videos to any page with the following code. Just copy and paste the following code into your page. Replace the URL ID with the video id. You only need the `import Iframe` line once on the page.
-
-```html
-<Iframe url="https://www.youtube.com/embed/ZcbHoC1jZz4"
-        width="854px"
-        height="480px"
-        id="myId"
-        className="video-container"
-        display="initial"
-        position="relative"
-        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-        />
-
-import Iframe from 'react-iframe';
-```
-For example:
-
-<Iframe url="https://www.youtube.com/embed/ZcbHoC1jZz4"
-        width="854px"
-        height="480px"
-        id="myId"
-        className="video-container"
-        display="initial"
-        position="relative"
-        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-        />
-
-import Iframe from 'react-iframe';
 
 ## Resuable Content
 
