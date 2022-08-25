@@ -199,7 +199,7 @@ The site includes translations into other languages. To build on your local:
 
     * Use npm serve to test and review multi-languages: `npm run serve`
 
-        This build does not hot reload and requires a rebuild to test and review.
+      This build does not hot reload and requires a rebuild to test and review.
 
 The static files are generated in the `build` folder and run on your local machine at: `http://localhost:3000/`. As you make changes, it will hot reload, or refresh, on the fly.
 
