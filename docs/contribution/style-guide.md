@@ -11,11 +11,9 @@ The Sumo Logic Style Guide is a living document. If you have wondered about the 
 
 ### Tone and Voice
 
-![alt_text](images/image1
-
 * We are clear, genuine, and trustworthy. We understand that our customers entrust us with their vital data and never make light about our commitment to data access and security.
 * The reader should feel confident and informed. We should strive to engage our customers, and show them where to get additional assistance when needed.
-* Describe Sumo Logic in a **professional** and **truthful** manner. Avoid generic, unsubstantial adjectives like "we're the best" or "Splunk sucks". Instead, illustrate these points by letting our product speak for itself.
+* Describe Sumo Logic in a **professional** and **truthful** manner. Avoid generic, unsubstantial adjectives like "we're the best". Instead, illustrate these points by letting our product speak for itself.
 * Avoid using a stiff, institutional voice. Instead, write with an instructive and conversational tone. For example, when linking to the support site, use terms like "Need help? Let us know" instead of "Please email our support personnel" to give our company a friendly face.
 * Use the **active voice** whenever possible. (For example, use "Brutus stabbed Caesar," not "Caesar was stabbed by Brutus.")
 * Our instructional content should be written at approximately the 8th-grade reading level, particularly in introductory sections. (Test content here: [http://www.writingtester.com/tester/grade_level.php](http://www.writingtester.com/tester/grade_level.php) for feedback on readability and grade level). Blog posts should be written at an 8th-grade level to maximize search engine hits (SEO).
@@ -24,13 +22,10 @@ The Sumo Logic Style Guide is a living document. If you have wondered about the 
 * We use the Oxford, or serial, comma. For example: "I had [eggs, toast, and orange juice](https://www.verbicidemagazine.com/wp-content/uploads/2012/01/why-i-still-use-the-oxford-comma.jpg)."
 
 
-![alt_text](images/image2
 For a general overview of how to improve your writing, see [Tips for Better Writing at Sumo Logic](https://wiki.kumoroku.com/confluence/display/MAIN/Tips+for+Better+Writing+at+Sumo+Logic).
 
 
 ### Names for cool stuff in the UI
-![alt_text](images/image3
-
 
 Not everything has an intuitive name, it's the very nature of working with a constantly evolving product. Here are the best names we have so far from the design team.
 
@@ -46,7 +41,6 @@ Not everything has an intuitive name, it's the very nature of working with a con
 
 
 ### Patents and trademarks
-![alt_text](images/image4
 
 Protecting our patents and trademarks is important to do correctly. We don't want to expose the company to a loss of trademark or patent just because we didn't list it correctly.
 
@@ -62,7 +56,6 @@ Never use in the plural or possessive form.
 
 
 ### Tables and table formatting
-![alt_text](images/image5
 
 Use the table icon in the MindTouch visual editor to insert a table into a page.
 
@@ -70,8 +63,6 @@ If you want the table to have a header row, right-click anywhere in the table an
 
 
 ### Screenshots
-![alt_text](images/image6
-
 
 Capture screenshots using SnagIt in .png format. Use SnagIt's border effect to apply a gray (RGB 212, 212, 212) 4-point border.
 
@@ -85,30 +76,10 @@ The solution is to resize the image to be 750 px wide. To do so in the visual ed
 
 
 ### Masking sensitive information
-![alt_text](images/image7
-
 
 We mask sensitive information, like user names, email addresses, IP addresses, and so on. In Snagit, use the shape tool to mask the text using solid gray,  (RGB 212, 212, 212).
 
 
 ### Callouts
-![alt_text](images/image8
 
 Create callouts using the shape tool in SnagIt. Callouts should be red, 100% opacity, no drop shadow effect, 2 pts wide.
-
-
-
-### Embed a YouTube video
-![alt_text](images/image9
-
-When you embed a YouTube video, use the YouTube embed link. To find the link, click the sharing icon for the video on YouTube, and choose **Embed** to get the link. It looks like this:
-
-```
-<div class="mt-video-widget"><iframe allow="encrypted-media" allowfullscreen="" \
-frameborder="0" gesture="media" height="315" \
-src="https://www.youtube.com/embed/Xv3pSwhVCN4?rel=0" width="560"></iframe></div>
-```
-
-![alt_text](images/image10
-
-You need to explicitly add `?rel=0` to the end of the `src` URL. This ensures that only videos from teh current YouTube channel will be suggested to the viewer after they've finished viewing the embedded video.

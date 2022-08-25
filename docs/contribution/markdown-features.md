@@ -19,6 +19,10 @@ id: page-id
 title: Page title
 sidebar_label: Navigation title
 description: Learn more about...
+keywords:
+    - metrics
+    - traces
+tags: [apm]  
 ---
 ```
 
@@ -28,6 +32,7 @@ description: Learn more about...
 | `title:` | **(Required)** For SEO, be sure to sure main keywords in your title and keep it under 60 characters. This title is used in navigation if a `sidebar_label` is not included. |
 | `sidebar_label:` | (Optional) Use a different title for the side navigation. Keep this title short. It does not affect the canonical link or page title. |
 | `description:` | (Optional) 1-2 sentences describing what the user will find in the doc. It appears in search engine results. If omitted, search engines will pull first couple sentences instead. |
+| `keywords:` | (Optional) List of page keywords, which boosts SEO. |
 | `slug:` | Overrides the id for the canonical link. Best used for index pages for sections. |
 
 For a full list of options, see [Docusaurus Markdown front matter](https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-docs#markdown-front-matter).
@@ -124,11 +129,11 @@ In Docusaurus, you can add images, custom files, and embed videos.
 We recommend using .png format for all images.
 
 1. Save your image(s) in the `/static/img` folder.
-2. Add this line to the top of your doc, under the header.
+2. Add the import line to the top of your doc, under the [front matter header](#front-matter).
   ```
   import useBaseUrl from '@docusaurus/useBaseUrl';
   ```
-3. Copy and paste the image code snippet and replace with your file path. Note that the file path starts with `img`. Do not preface it with `/static`; Docusaurus builds and saves these static assets and serves from the `baseUrl` (or domain).
+3. Paste this image code snippet where you want your images to appear. Replace with file path with your own and ensure it includes the correct subfolder name. In your snippet, the file path starts with `img` (do not preface it with `/static`) because Docusaurus builds and saves these static assets and serves from the `baseUrl` (or domain).
   ```
   <img src={useBaseUrl('img/sumo-square.png')} />
   ```
@@ -182,7 +187,7 @@ If a file is available from another public Sumo Logic repo, please link to that 
 You can embed YouTube videos to any page with the following code. Just copy and paste the following code into your page. Replace the URL ID with the video id. You only need the `import Iframe` line once on the page.
 
 ```html
-<Iframe url="https://www.youtube.com/embed/ZcbHoC1jZz4"
+<Iframe url="https://www.youtube.com/embed/ZcbHoC1jZz4?rel=0"
         width="854px"
         height="480px"
         id="myId"
@@ -195,9 +200,10 @@ You can embed YouTube videos to any page with the following code. Just copy and 
 
 import Iframe from 'react-iframe';
 ```
+
 For example:
 
-<Iframe url="https://www.youtube.com/embed/ZcbHoC1jZz4"
+<Iframe url="https://www.youtube.com/embed/ZcbHoC1jZz4?rel=0"
         width="854px"
         height="480px"
         id="myId"
@@ -209,6 +215,8 @@ For example:
         />
 
 import Iframe from 'react-iframe';
+
+You need to explicitly add `?rel=0` to the end of the URL. This ensures that only videos from the current YouTube channel will be suggested to the viewer after they've finished viewing the embedded video.
 
 
 ## Tables

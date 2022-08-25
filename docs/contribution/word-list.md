@@ -1,7 +1,6 @@
 ---
 id: word-list
-title: word list
-sidebar_label: Word List
+title: Word List/Glossary
 ---
 
 (rename to glossary?)
