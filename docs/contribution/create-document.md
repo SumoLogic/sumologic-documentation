@@ -195,7 +195,7 @@ The site includes translations into other languages. To build on your local:
 
     * Use start, hot reloads as you make changes: `yarn start`
 
-        Any issues with broken links and images are listed according to file. Locate and update those issues, then run build and start again to verify.
+      Any issues with broken links and images are listed according to file. Locate and update those issues, then run build and start again to verify.
 
     * Use npm serve to test and review multi-languages: `npm run serve`
 
