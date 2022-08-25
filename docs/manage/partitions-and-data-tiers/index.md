@@ -1,8 +1,7 @@
 ---
 slug: /manage/partitions-and-data-tiers
+title: Partitions and Data Tiers
 ---
-
-# Partitions and Data Tiers
 
 Creating a partition allows you to improve search performance by searching over a smaller number of messages. Use the Partitions page to set up and manage partitions. To access the Partitions page, go to **Manage Data** \> **Logs** \> **Partitions**.
 

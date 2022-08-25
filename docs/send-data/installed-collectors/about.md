@@ -1,5 +1,5 @@
 ---
-id: about-installed-collectors
+id: about
 ---
 
 # About Installed Collectors
@@ -23,7 +23,7 @@ The maximum number of Collectors allowed per organization is 10,000.
         className="video-container"
         display="initial"
         position="relative"
-        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
         />
 
@@ -83,7 +83,7 @@ Generally, as the number of Sources increases, the number of threads also increa
 
 | Number of Local File Sources | Ubuntu & Windows Process CPU Usage |
 |--|--|
-| 1 | 40% | 
+| 1 | 40% |
 | 2 | 82.5% |
 | 4 | 90% |
 

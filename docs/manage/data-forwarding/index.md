@@ -1,8 +1,8 @@
 ---
 slug: /manage/data-forwarding
+title: Data Forwarding
 ---
 
-# Data Forwarding
 
 Data Forwarding is not currently supported for data in the [Infrequent Tier](../partitions-and-data-tiers/data-tiers.md).
 

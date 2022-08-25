@@ -1,5 +1,5 @@
 ---
-slug: /apm/traces/get-started-transaction-tracing/instrument-application-opentelemetry
+slug: /apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation
 title: Instrument your application with OpenTelemetry
 description: OpenTelemetry provides a wide range of ready to use componentry to get you started with distributed tracing.
 ---

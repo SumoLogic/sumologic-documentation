@@ -1,7 +1,7 @@
 ---
-id: istio-opentelemetry-auto-instrumentation
+id: istio
 title: Istio OpenTelemetry auto-instrumentation
-sidebar_label: Istio OpenTelemetry auto-instrumentation
+sidebar_label: Istio
 description: Learn how to instrument OpenTelemetry Application code to collect Istio trace data generated from Envoy proxies.
 ---
 

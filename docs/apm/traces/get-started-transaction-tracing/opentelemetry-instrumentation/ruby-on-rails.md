@@ -1,7 +1,7 @@
 ---
-id: ruby-on-rails-opentelemetry-auto-instrumentation
+id: ruby-on-rails
 title: Ruby on Rails OpenTelemetry auto-instrumentation
-sidebar_label: Ruby on Rails OpenTelemetry auto-instrumentation
+sidebar_label: Ruby on Rails
 description: Learn how to collect telemetry data from Ruby on Rails applications.
 ---
 
@@ -15,14 +15,14 @@ Installation of the packages listed below is required to apply the instrumentati
 
 * **gem** command:  
 
-   ```
+   ```bash
    $ gem install opentelemetry-sdk -v 1.0.2
    $ gem install opentelemetry-exporter-otlp -v 0.21.2
    ```
 
 * **bundler**, the packages have to be inserted into your **gemfile** and the **bundle install** command has to be run:  
 
-   ```
+   ```bash
    gem 'opentelemetry-sdk', '1.0.2'
    gem 'opentelemetry-exporter-otlp', '0.21.2'
    ```
@@ -33,7 +33,7 @@ There are two solutions:
 
 * Installation of the specific package - for example, if the application is a **Rails** Web server that is also performing some database queries using **MySQL** package. To get traces from libraries used in the project, corresponding instrumented packages have to be installed:  
 
-   ```
+   ```bash
    $ gem install opentelemetry-instrumentation-rails -v 0.20.0
    $ gem install opentelemetry-instrumentation-action_pack -v 0.1.3
    $ gem install opentelemetry-instrumentation-action_view -v 0.2.0
@@ -45,7 +45,7 @@ There are two solutions:
 
 * Installation of the "all in one" package - installing this package will install all available instrumentation packages:
 
-   ```
+   ```bash
    $ gem install opentelemetry-instrumentation-all -v 0.23.0
    ```
 
@@ -55,7 +55,7 @@ To enable instrumentation in the Ruby on Rails application and export the teleme
 
 * Specific package instrumentation - in this example only Rails library will be instrumented:  
 
-   ```
+   ```bash
    require 'opentelemetry/sdk'
    require_relative 'application'
 
@@ -73,7 +73,7 @@ To enable instrumentation in the Ruby on Rails application and export the teleme
 
 * "All in one" instrumentation - this configuration will instrument Rails and other supported and used in project libraries:  
 
-   ```
+   ```bash
    require 'opentelemetry/sdk'
    require_relative 'application'
 
@@ -104,7 +104,7 @@ Additional information like TraceID, SpanID or operation data in the application
 
 Please see example code:
 
-```
+```bash
 logger = ::Logger.new(STDOUT)
 logger.formatter = proc do |severity, time, progname, msg|
   span_id = OpenTelemetry::Trace.current_span.context.hex_span_id
@@ -122,6 +122,6 @@ set :logger, logger
 
 Example output:  
 
-```
+```json
 "2022-02-28 13:01:25 +0000, INFO: {:remote_ip=>\"127.0.0.6\", :request_path=>\"/get_beans\", :query_string=>\"\", :request_method=>\"POST\", :execution_time_sec=>0.00033453479409217834, :response_status_code=>200} - trace_id=cdd460d538917f82560cbb91373a05a6 - span_id=12a09921c89fd6e9 - operation=POST /get_beans
 ```

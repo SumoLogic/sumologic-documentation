@@ -1,7 +1,7 @@
 ---
-id: javascript-traceid-spanid-injection-into-logs
+id: traceid-spanid-injection-into-logs
 title: JavaScript TraceId and SpanId injection into logs
-sidebar_label: JavaScript TraceId and SpanId injection into logs
+sidebar_label: TraceId and SpanId injection into logs
 description: Configuring traceId, spanId, and trace flags data injection into user logs in JavaScript applications is simple.
 ---
 

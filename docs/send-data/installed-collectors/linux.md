@@ -1,5 +1,5 @@
 ---
-id: install-collector-linux
+id: linux
 ---
 
 # Install a Collector on Linux
@@ -188,13 +188,13 @@ You can use the RPM or Debian package to install a Collector on a Linux
    ```
 
    To use an installation token, provide the authentication parameters `token` and `url`. To use these two parameters you'll need to manually base64 decode the **Token String**. Once decoded you'll have a string with a token and a URL.
-   
+
    For example, the following decoded **Token String**:
 
    ```
    SUMOXXXXXXXXXXXXXXXXXXXXXXXXXXXXhttps://collectors.sumologic.com
    ```
-   
+
    would be used as:
 
    ```
