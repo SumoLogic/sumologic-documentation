@@ -6,8 +6,35 @@ sidebar_label: Tracing
 
 The Tracing APIs give you the ability to browse and execute queries for traces and span analytics, and request a service map of your application environment.
 
-Refer to [Getting Started](docs/api/index.md) for Authentication information and Endpoints.
+Refer to [Getting Started](docs/api/index.md) for Authentication and Endpoint information.
 
+
+<table>
+  <tr>
+   <td>API
+   </td>
+   <td>Documentation URL
+   </td>
+  </tr>
+  <tr>
+   <td>Traces
+   </td>
+   <td><a href="https://api.sumologic.com/docs/#tag/traces">https://api.sumologic.com/docs/#tag/traces</a>
+   </td>
+  </tr>
+  <tr>
+   <td>Span Analytics
+   </td>
+   <td><a href="https://api.sumologic.com/docs/#tag/spanAnalytics">https://api.sumologic.com/docs/#tag/spanAnalytics</a>
+   </td>
+  </tr>
+  <tr>
+   <td>Service Map
+   </td>
+   <td><a href="https://api.sumologic.com/docs/#tag/serviceMap">https://api.sumologic.com/docs/#tag/serviceMap</a>
+   </td>
+  </tr>
+</table>
 
 ## Service Map API
 
