@@ -73,7 +73,7 @@ _sourceName=*error_log* AND _sourceCategory=*apache*
 
 ### Top Clients Causing Errors
 
-Returns the top source IP addresses that cause errors, which should correlate with the corresponding [access log searches](suggested-searches-apache-access-parser.md) to determine the most malicious clients.
+Returns the top source IP addresses that cause errors, which should correlate with the corresponding [access log searches](apache-access-parser.md) to determine the most malicious clients.
 
 * Suggested Time Range: -6h
 
