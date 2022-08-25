@@ -1,13 +1,13 @@
 ---
 id: markdown-features
-title: Markdown Features
-sidebar_label: Markdown Features
-description: Learn about the markdown features Docusaurus supports.
+title: Markdown Cheat Sheet
+sidebar_label: Markdown Cheat Sheet
+description: Learn about markdown features Docusaurus supports.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Docusaurus supports [Markdown](https://daringfireball.net/projects/markdown/syntax) and a few additional features.
+This is a guide to writing docs in GitHub-flavored markdown, the language in which our docs are written.
 
 ## Front Matter
 
@@ -22,18 +22,19 @@ description: Learn more about...
 keywords:
     - metrics
     - traces
-tags: [apm]  
+tags: [apm, metrics]  
 ---
 ```
 
 | Parameter | Description |
 | :-- | :-- |
 | `id:` | **(Required)** Id for the page used in the sidebar and as the canonical link. Keep it short and only use dashes. |
+| `slug:` | (Optional) Overrides the `id:` for the canonical link. Best used for index pages for sections. |
 | `title:` | **(Required)** For SEO, be sure to sure main keywords in your title and keep it under 60 characters. This title is used in navigation if a `sidebar_label` is not included. |
 | `sidebar_label:` | (Optional) Use a different title for the side navigation. Keep this title short. It does not affect the canonical link or page title. |
 | `description:` | (Optional) 1-2 sentences describing what the user will find in the doc. It appears in search engine results. If omitted, search engines will pull first couple sentences instead. |
 | `keywords:` | (Optional) List of page keywords, which boosts SEO. |
-| `slug:` | Overrides the id for the canonical link. Best used for index pages for sections. |
+| `tags:` | (Optional) A string or list of tags that adds a label and permalink to tag to help with sorting. |
 
 For a full list of options, see [Docusaurus Markdown front matter](https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-docs#markdown-front-matter).
 
@@ -669,9 +670,15 @@ Place long lists or lots of content in this section. The reader can expand/colla
 
 
 
-## Resuable Content
+## Reusing Content
 
-You can create sections of content as markdown files in `/docs/reuse`.
+You can create a section of content for reuse by creating a markdown file and saving it in `/docs/reuse`. If the file includes headings, they do not add to the right side page nav. You may want reuse to be just a section of content without headings.
+
+To add the file to another document, use this code with the reuse file name:
+```bash
+{@import ../../reuse/filename.md}
+```
+
 
 ## Generated Section Contents
 

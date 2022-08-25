@@ -2,7 +2,7 @@
 id: create-document
 title: Create a Sumo Logic Document
 sidebar_label: Create Your First Doc
-description: Learn how to create and write a doc in markdown.
+description: Learn how to create a doc, write content in markdown, and submit your changes to our repo.
 ---
 
 A document is a markdown file (.md) with content, bulleted instructions, images, tables, code samples, and more.
@@ -19,9 +19,11 @@ See [Markdown Features > Front Matter](/docs/contribution/markdown-features#fron
 
 ## 3. Add doc content
 
-### Text
+See [Markdown Cheat Sheet](markdown-features.md) to learn about how to write in markdown. Doc body text content is written in GitHub-flavored markdown, with some customizations.
 
-Doc body text content is written in GitHub-flavored markdown, with some customizations.
+### Code of Conduct
+
+Help us keep Sumo Logic open and inclusive. Read and follow our [Code of Conduct](/docs/contribution/code-of-conduct).
 
 ### Images
 
@@ -31,16 +33,8 @@ Images must be added to the `static/img` folders. The `img` folder structure cur
 
 You can also add files such as custom code, json, yaml, and xml in the `static/files` folder.
 
-See [Markdown Features](markdown-features.md) and [Docusaurus Static Assets](https://docusaurus.io/docs/static-assets) for more information.
+See [Docusaurus Static Assets](https://docusaurus.io/docs/static-assets) for more information.
 
-### Reusing content
-
-You can create a section of content for reuse by creating a markdown file and saving it in `/docs/reuse`. If the file includes headings, they do not add to the right side page nav. You may want reuse to be just a section of content without headings.
-
-To add the file to another document, use this code with the reuse file name:
-```bash
-{@import ../../reuse/filename.md}
-```
 
 ## 4. Add doc to navigation menu
 
@@ -174,3 +168,43 @@ module.exports = {
 :::note Doc Team Support
 The Sumo Logic Doc Team will help your add your documentation to the sidebar and top navigation. If you have suggestions, please include those in your Pull Request description. If you add the documentation to the sidebar, the team will review the location and names for building and placement in navigation.
 :::
+
+## 5. Build and Deploy on Local
+
+Next, you'l build and deploy a local instance of the Sumo Logic Docusaurus site.
+
+Our site is built using Docusaurus, a static-site-generator. To preview your work, make sure to run the following commands to install and build. We use Yarn for all installs and builds. Never use NPM commands for installing or updating packages.
+
+It builds your site as simple static HTML, JavaScript and CSS files.
+
+### Install requirements
+
+You need the following at a minimum installed on your machine to run builds:
+
+* [NodeJS](https://nodejs.org/en/download/) version >= 14
+* [Yarn](https://yarnpkg.com/en/) version >= 1.5, you can install with [Homebrew](https://brew.sh/) if you have that installed: `brew install yarn`
+
+### Build your site
+
+The site includes translations into other languages. To build on your local:
+
+1. Clone the repo using Git or tools like GitHub Desktop.
+1. In a terminal, change to the cloned repo folder. Run the install command: `yarn install`
+1. To build locally and test links, use build: `yarn build`
+1. To serve and review, use one of the following:
+
+    * Use start, hot reloads as you make changes: `yarn start`
+
+        Any issues with broken links and images are listed according to file. Locate and update those issues, then run build and start again to verify.
+
+    * Use npm serve to test and review multi-languages: `npm run serve`
+
+        This build does not hot reload and requires a rebuild to test and review.
+
+The static files are generated in the `build` folder and run on your local machine at: `http://localhost:3000/`. As you make changes, it will hot reload, or refresh, on the fly.
+
+To end builds and served sites, hit **Ctrl + C**. You can then enter commands again, like rebuilding and starting.
+
+## 6. Submit Your Request
+
+See [Clone Sumo Docs Repository](/docs/contribution#clone-sumo-docs-repository) for instructions.
