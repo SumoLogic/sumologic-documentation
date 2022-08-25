@@ -5,10 +5,13 @@ sidebar_label: Scheduled Searches
 description: You can schedule log searches to send alerts.
 ---
 
-Scheduled searches are standard saved searches that are executed on a schedule you set. Once configured, scheduled searches run continuously, making them a great tool for continuously monitoring your stack. For instructions, see [Schedule a Search](schedule-search.md).
-
 import DocCardList from '@theme/DocCardList';
 import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src={useBaseUrl('img/icons/general/calendar.png')} alt="icon" width="75"/>
+
+Scheduled searches are standard saved searches that are executed on a schedule you set. Once configured, scheduled searches run continuously, making them a great tool for continuously monitoring your stack. For instructions, see [Schedule a Search](schedule-search.md).
 
 In this section, we will introduce the following concepts:
 

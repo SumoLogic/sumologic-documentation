@@ -5,6 +5,8 @@ title: Contributing to Sumo
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
+<img src={useBaseUrl('img/icons/documentation.png')} alt="icon" width="75"/>
+
 Thank you for your interest in contributing to Sumo Logic documentation! We welcome contributions for updates, new documentation, tutorials, and more. Sumo Logic Documentation is an Open Source project available as a [GitHub repository](https://github.com/SumoLogic/sumologic-documentation).
 
 The docs in this section provide information on creating files, writing in markdown, using our templates, submitting pull requests and more.

@@ -1,8 +1,9 @@
 ---
-id: suggested-searches-cisco-asa-parser
+id: cisco-asa-parser
+title: Suggested Searches for the Cisco ASA Parser
+sidebar_label: Cisco ASA Parser
 ---
 
-# Suggested Searches for the Cisco ASA Parser
 
 These suggested searches cover some of the most common scenarios for monitoring Security, Audit, and Performance issues on a Linux server. You can enter these queries into the Search box as a starting baseline, and then customize the queries for your system.
 
@@ -19,10 +20,10 @@ Returns the top sources that were denied.
 * Suggested Time Range: -1h
 
 ```sql
-_sourceCategory=*cisco*asa* AND ("denied" OR "Deny") 
-| parse using public/cisco/asa 
-| where access_decision="denied" OR action matches "Deny *" 
-| count_frequent src_host 
+_sourceCategory=*cisco*asa* AND ("denied" OR "Deny")
+| parse using public/cisco/asa
+| where access_decision="denied" OR action matches "Deny *"
+| count_frequent src_host
 | limit 10
 ```
 
@@ -33,10 +34,10 @@ Returns the top destinations that were denied.
 * Suggested Time Range: -1d
 
 ```sql
-_sourceCategory=*cisco*asa* AND ("denied" OR "Deny") 
-| parse using public/cisco/asa 
-| where access_decision="denied" OR action matches "Deny *" 
-| count_frequent dest_host 
+_sourceCategory=*cisco*asa* AND ("denied" OR "Deny")
+| parse using public/cisco/asa
+| where access_decision="denied" OR action matches "Deny *"
+| count_frequent dest_host
 | limit 10
 ```
 
@@ -47,10 +48,10 @@ Returns the top sources with outbound connections by the number of connections.
 * Suggested Time Range: -1h
 
 ```sql
-_sourceCategory=*cisco*asa* AND "built outbound" 
-| parse using public/cisco/asa 
-| where src_host !="" 
-| count_frequent src_host 
+_sourceCategory=*cisco*asa* AND "built outbound"
+| parse using public/cisco/asa
+| where src_host !=""
+| count_frequent src_host
 | limit 10
 ```
 
@@ -61,11 +62,11 @@ Returns the top internal destinations by number of connections.
 * Suggested Time Range: -1h
 
 ```sql
-_sourceCategory=*cisco*asa* AND "built inbound" 
-| parse using public/cisco/asa 
-| where dest_host !="" 
-| dest_host as internal_destination 
-| count_frequent internal_destination 
+_sourceCategory=*cisco*asa* AND "built inbound"
+| parse using public/cisco/asa
+| where dest_host !=""
+| dest_host as internal_destination
+| count_frequent internal_destination
 | limit 10
 ```
 

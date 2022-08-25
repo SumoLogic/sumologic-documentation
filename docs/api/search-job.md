@@ -7,7 +7,7 @@ sidebar_label: Search Job
 The Search Job API provides third-party scripts and applications access to your log data through access key/access ID authentication. The API follows Representational State Transfer (REST) patterns and is optimized for ease of use and consistency.
 
 :::note
-Search Job APIs are not yet built with OpenAPI specifications and therefore not documented with the rest of the APIs. Instead, navigate to its [documentation page](/docs/api/search-job.md) for details.
+Search Job APIs are not yet built with OpenAPI specifications and therefore not documented with the rest of the APIs. Instead, refer to the instructions below for details.
 :::
 
 Refer to [Getting Started](docs/api/index.md) for Authentication and Endpoint information.

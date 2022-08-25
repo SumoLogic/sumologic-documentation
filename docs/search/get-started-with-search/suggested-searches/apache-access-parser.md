@@ -1,8 +1,9 @@
 ---
-id: suggested-searches-apache-access-parser
+id: apache-access-parser
+title: Suggested Searches for the Apache Access Parser
+sidebar_label: Apache Access Parser
 ---
 
-# Suggested Searches for the Apache Access Parser
 
 The following searches were built for use with the Apache Access Parser. Copy and paste these searches into the search query field and save them for later use.
 
@@ -22,9 +23,9 @@ This search returns the number of requests observed per HTTP status code.
 * Suggested Time Range: -1d
 
 ```sql
-_sourceName=*access_log* AND _sourceCategory=*apache* 
-| parse using public/apache/access 
-| count by status_code 
+_sourceName=*access_log* AND _sourceCategory=*apache*
+| parse using public/apache/access
+| count by status_code
 | sort by _count
 ```
 
@@ -35,10 +36,10 @@ Returns the number of errors caused by web clients over the past seven days. Thi
 * Suggested Time Range: -7d
 
 ```sql
-_sourceName=*access_log* AND _sourceCategory=*apache* 
-| parse using public/apache/access 
-| where status_code matches "4*" 
-| timeslice by 1d 
+_sourceName=*access_log* AND _sourceCategory=*apache*
+| parse using public/apache/access
+| where status_code matches "4*"
+| timeslice by 1d
 | count by _timeslice
 ```
 
@@ -49,12 +50,12 @@ Returns the number of client errors, server errors, redirects and successful res
 * Suggested Time Range: -7d
 
 ```sql
-_sourceName=*access_log* AND _sourceCategory=*apache* 
-| parse using public/apache/access 
-| if(status_code matches "2*", 1, 0) as successes 
-| if(status_code matches "5*", 1, 0) as server_errors 
-| if(status_code matches "4*", 1, 0) as client_errors 
-| timeslice by 1d 
+_sourceName=*access_log* AND _sourceCategory=*apache*
+| parse using public/apache/access
+| if(status_code matches "2*", 1, 0) as successes
+| if(status_code matches "5*", 1, 0) as server_errors
+| if(status_code matches "4*", 1, 0) as client_errors
+| timeslice by 1d
 | sum(successes) as successes, sum(client_errors) as client_errors, sum(server_errors) as server_errors by _timeslice
 ```
 
@@ -65,10 +66,10 @@ Returns the top 100 URLS that refer to a resource that does not exist on the web
 * Suggested Time Range: -1d
 
 ```sql
-(_sourceName=*access_log* AND _sourceCategory=*apache*) AND "404" 
-| parse using public/apache/access 
-| where status_code="404" 
-| count_frequent referrer 
+(_sourceName=*access_log* AND _sourceCategory=*apache*) AND "404"
+| parse using public/apache/access
+| where status_code="404"
+| count_frequent referrer
 | limit 100
 ```
 
@@ -79,10 +80,10 @@ Returns the top source IP addresses that are responsible for client errors on th
 * Suggested Time Range: -1d
 
 ```sql
-_sourceName=*access_log* AND _sourceCategory=*apache* 
-| parse using public/apache/access 
-| where status_code matches "4*" 
-| count_frequent src_ip 
+_sourceName=*access_log* AND _sourceCategory=*apache*
+| parse using public/apache/access
+| where status_code matches "4*"
+| count_frequent src_ip
 | limit 100
 ```
 
@@ -97,11 +98,11 @@ Returns the number of bytes served and the number of hits to the website each da
 * Suggested Time Range: -7d
 
 ```sql
-_sourceName=*access_log* AND _sourceCategory=*apache* 
-| parse using public/apache/access 
-| where size != "-" 
-| (size/1048576) as mbytes 
-| timeslice by 1d 
+_sourceName=*access_log* AND _sourceCategory=*apache*
+| parse using public/apache/access
+| where size != "-"
+| (size/1048576) as mbytes
+| timeslice by 1d
 | sum(mbytes) as Bytes_Served_mb, count as hits by _timeslice
 ```
 
@@ -120,9 +121,9 @@ This search returns the top 100 browsers that are accessing the website.
 * Suggested Time Range: -1d
 
 ```sql
-_sourceName=*access_log* AND _sourceCategory=*apache* 
-| parse using public/apache/access 
-| count_frequent user_agent 
+_sourceName=*access_log* AND _sourceCategory=*apache*
+| parse using public/apache/access
+| count_frequent user_agent
 | limit 100
 ```
 
@@ -133,8 +134,8 @@ This search returns a list of all robots that are accessing the website, assumin
 * Suggested Time Range: -1d
 
 ```sql
-(_sourceName=*access_log* AND _sourceCategory=*apache*) AND "/robots.txt" 
-| parse using public/apache/access 
+(_sourceName=*access_log* AND _sourceCategory=*apache*) AND "/robots.txt"
+| parse using public/apache/access
 | count_frequent user_agent
 ```
 
@@ -151,9 +152,9 @@ This is assuming that the **%T/%D** logging directive is added to the access l
 * Suggested Time Range: -30m
 
 ```sql
-_sourceName=*access_log* AND _sourceCategory=*apache* 
-| parse using public/apache/access 
-| extract " (\<second\>\d+)/(\<microsecond\>\d+)$" 
+_sourceName=*access_log* AND _sourceCategory=*apache*
+| parse using public/apache/access
+| extract " (\<second\>\d+)/(\<microsecond\>\d+)$"
 | toLong(microseconds/(1000000*60)) as minutes
 ```
 
@@ -166,8 +167,8 @@ Get information on incoming client request URLs which are sent for malicious rea
 * Suggested Time Range: -2h
 
 ```sql
-(_sourceName=*access_log* AND _sourceCategory=*apache*) AND ("jsessionid" OR "old" OR "bak") 
-| parse using public/apache/access 
+(_sourceName=*access_log* AND _sourceCategory=*apache*) AND ("jsessionid" OR "old" OR "bak")
+| parse using public/apache/access
 | where url matches "*.old" OR url matches "*.bak" OR url matches "*jsessionid=*"
 ```
 
@@ -176,12 +177,12 @@ Get information on incoming client request URLs which are sent for malicious rea
 * Suggested Time Range: -1d
 
 ```sql
-_sourceName=*access_log* AND _sourceCategory=*apache* 
-| parse using public/apache/access 
-| where size != "-" 
-| avg(size) as average_size_KB by url 
-| sort by average_size_KB 
-| limit 100 
-| (average_size_KB/1024) as average_size_KB 
+_sourceName=*access_log* AND _sourceCategory=*apache*
+| parse using public/apache/access
+| where size != "-"
+| avg(size) as average_size_KB by url
+| sort by average_size_KB
+| limit 100
+| (average_size_KB/1024) as average_size_KB
 | (toLong(average_size_KB*100)/100) as average_size_KB
 ```
