@@ -1,6 +1,10 @@
 ---
 id: word-list
-title: Word List/Glossary
+title: Word List
 ---
 
+<!--
+
 (rename to glossary?)
+
+-->
