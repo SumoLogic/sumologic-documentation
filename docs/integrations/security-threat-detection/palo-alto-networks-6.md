@@ -47,7 +47,7 @@ This section provides instructions on how to collect logs for the Palo Alto Netw
 
 ### Configure a Collector
 
-Configure an [Installed Collector](/docs/send-data/installed-collectors/about-installed-collectors) or a Hosted source for Syslog-ng or Rsyslog.
+Configure an [Installed Collector](/docs/send-data/installed-collectors/about) or a Hosted source for Syslog-ng or Rsyslog.
 
 
 ### Configure a Source

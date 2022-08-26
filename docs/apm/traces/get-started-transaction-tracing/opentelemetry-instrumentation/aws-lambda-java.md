@@ -1,7 +1,7 @@
 ---
-id: aws-lambda-java-function-instrumentation
+id: aws-lambda-java
 title: AWS Lambda - Java function instrumentation with Sumo Logic tracing
-sidebar_label: AWS Lambda - Java function instrumentation
+sidebar_label: AWS Lambda - Java
 description: Learn how to install and configure OpenTelemetry distributed tracing for AWS Java-based Lambda functions and send data to Sumo Logic.
 ---
 

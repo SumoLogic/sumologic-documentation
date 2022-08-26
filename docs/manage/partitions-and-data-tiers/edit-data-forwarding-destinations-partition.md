@@ -18,4 +18,4 @@ You can specify data forwarding settings for a partition so that the messages th
 
     ![edit-partition-pane.png](/img/partitions-and-data-tiers/edit-partition-pane.png)
 
-1. You can configure Data Forwarding, or if Data Forwarding is already configured, modify the configuration. For more information, see [Data Forwarding](../data-forwarding/data-forwarding-to-s3.md).
+1. You can configure Data Forwarding, or if Data Forwarding is already configured, modify the configuration. For more information, see [Data Forwarding](../data-forwarding/amazon-s3-bucket.md).

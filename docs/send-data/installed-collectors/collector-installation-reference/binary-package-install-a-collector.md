@@ -4,7 +4,7 @@ id: binary-package-install-a-collector
 
 # Use the binary package to install a Collector on Windows or MacOS
 
-Use the binary package to install a Collector on MacOS or Windows only if you need to use a particular version of JRE. See [Install a Collector on Linux](../install-collector-linux.md).
+Use the binary package to install a Collector on MacOS or Windows only if you need to use a particular version of JRE. See [Install a Collector on Linux](../linux.md).
 
 :::note
 This procedure is for Collector version 19.137 and later. If you have Collectors from earlier versions, you can update them using this procedure or one of the other installation options. See [Installed Collectors](/docs/send-data/installed-collectors).

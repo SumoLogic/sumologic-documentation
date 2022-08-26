@@ -208,7 +208,7 @@ This section explains the steps to collect MariaDB logs from a Kubernetes enviro
 </TabItem>
 <TabItem value="non-k8s">
 
-For non-Kubernetes environments, Sumo Logic uses the Telegraf operator for MariaDB metric collection and the [Installed Collector](/docs/send-data/installed-collectors/about-installed-collectors) for collecting MariaDB logs. The diagram below illustrates the components of the MariaDB collection in a non-Kubernetes environment.<br/><img src={useBaseUrl('img/integrations/databases/mariadbnonk8s.png')} alt="mariadb" />
+For non-Kubernetes environments, Sumo Logic uses the Telegraf operator for MariaDB metric collection and the [Installed Collector](/docs/send-data/installed-collectors/about) for collecting MariaDB logs. The diagram below illustrates the components of the MariaDB collection in a non-Kubernetes environment.<br/><img src={useBaseUrl('img/integrations/databases/mariadbnonk8s.png')} alt="mariadb" />
 
 Telegraf uses the[ MySQL Input Plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/sqlserver) to obtain MariaDB metrics and the Sumo Logic output plugin to send the metrics to Sumo Logic. Logs from MariaDB are collected by a [Local File Source](/docs/send-data/Sources/installed-collectors/Local-File-Source).
 

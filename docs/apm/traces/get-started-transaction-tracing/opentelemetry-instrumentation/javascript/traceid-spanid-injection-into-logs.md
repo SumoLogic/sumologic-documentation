@@ -1,7 +1,7 @@
 ---
-id: javascript-traceid-spanid-injection-into-logs
+id: traceid-spanid-injection-into-logs
 title: JavaScript TraceId and SpanId injection into logs
-sidebar_label: JavaScript TraceId and SpanId injection into logs
+sidebar_label: TraceId and SpanId injection into logs
 description: Configuring traceId, spanId, and trace flags data injection into user logs in JavaScript applications is simple.
 ---
 
@@ -21,7 +21,7 @@ The following information walks through [winston](https://www.npmjs.com/package/
    npm install --save @opentelemetry/instrumentation-winston
    ```
 
-1. winston instrumentation registration should be added in the file where OpenTelemetry JS instrumentation is configured. See [Sumo Logic OpenTelemetry JS auto-instrumentation](/docs/apm/traces/get-started-transaction-tracing/javascript-opentelemetry-auto-instrumentation) for details.
+1. winston instrumentation registration should be added in the file where OpenTelemetry JS instrumentation is configured. See [Sumo Logic OpenTelemetry JS auto-instrumentation](/docs/apm/traces/get-started-transaction-tracing/javascript) for details.
 
    * Import dependency:
 
@@ -50,7 +50,7 @@ The following information walks through [bunyan](https://www.npmjs.com/package/b
    npm install --save @opentelemetry/instrumentation-bunyan
    ```
 
-1. bunyan instrumentation registration should be added in the file where OpenTelemetry JS instrumentation is configured. See [Sumo Logic OpenTelemetry JS auto-instrumentation](/docs/apm/traces/get-started-transaction-tracing/javascript-opentelemetry-auto-instrumentation) for details.
+1. bunyan instrumentation registration should be added in the file where OpenTelemetry JS instrumentation is configured. See [Sumo Logic OpenTelemetry JS auto-instrumentation](/docs/apm/traces/get-started-transaction-tracing/javascript) for details.
 
    * Import dependency  
 
@@ -79,7 +79,7 @@ The following information walks through [pino](https://www.npmjs.com/package/pin
    npm install --save @opentelemetry/instrumentation-pino
    ```
 
-1. pino instrumentation registration should be added in the file where OpenTelemetry JS instrumentation is configured. See [Sumo Logic OpenTelemetry JS auto-instrumentation](/docs/apm/traces/get-started-transaction-tracing/javascript-opentelemetry-auto-instrumentation) for details.
+1. pino instrumentation registration should be added in the file where OpenTelemetry JS instrumentation is configured. See [Sumo Logic OpenTelemetry JS auto-instrumentation](/docs/apm/traces/get-started-transaction-tracing/javascript) for details.
 
    * Import dependency  
 

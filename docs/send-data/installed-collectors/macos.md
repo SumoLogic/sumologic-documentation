@@ -1,5 +1,5 @@
 ---
-id: install-collector-macos
+id: macos
 ---
 
 # Install a Collector on MacOS

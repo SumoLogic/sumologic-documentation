@@ -1,5 +1,5 @@
 ---
-slug: /apm/traces/get-started-transaction-tracing/go-opentelemetry-auto-instrumentation
+slug: /apm/traces/get-started-transaction-tracing/go
 title: Go OpenTelemetry auto-instrumentation
 sidebar_label: Go OpenTelemetry auto-instrumentation
 description: OpenTelemetry Golang instrumentation gives you the possibility to capture telemetry (metrics and traces) data from code written in Golang.

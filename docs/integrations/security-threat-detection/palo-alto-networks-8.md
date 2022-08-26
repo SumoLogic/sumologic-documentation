@@ -136,7 +136,7 @@ Refer [PAN-OS 8](https://docs.paloaltonetworks.com/pan-os/8-0/pan-os-admin/monit
 
 In this step you configure a installed collector with a Syslog source that will act as Syslog server to receive logs and events from Palo Alto Networks 8 devices.
 
-1. Configure an [Installed Collector](/docs/send-data/installed-collectors/about-installed-collectors)
+1. Configure an [Installed Collector](/docs/send-data/installed-collectors/about)
 2. Add a Syslog source to the installed collector:
     1. **Name**. (Required) A name is required.
     2. **Description.** Optional.

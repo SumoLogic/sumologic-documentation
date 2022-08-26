@@ -106,7 +106,7 @@ See the following table for commands:
 | Linux Debian | Upgrade or downgrade command: `sudo dpkg -i\<pathToCollectorDebianFil\>` |
 | Linux 32 or 64 | Upgrade or downgrade command:  `sudo\<pathToCollectorShFil\> -q` |
 | Windows | Upgrade or downgrade command: `SumoCollector.exe -console -q` |
-| MacOS | Use the same steps to [Install a Collector on MacOS](../../send-data/installed-collectors/install-collector-macos.md) without the authentication credentials. |
+| MacOS | Use the same steps to [Install a Collector on MacOS](../../send-data/installed-collectors/macos.md) without the authentication credentials. |
 
 ## Collector Upgrade Best Practices
 

@@ -1,7 +1,7 @@
 ---
-id: aws-lambda-nodejs-function-instrumentation
+id: aws-lambda-nodejs
 title: AWS Lambda - NodeJS function instrumentation with Sumo Logic tracing
-sidebar_label: AWS Lambda - NodeJS function instrumentation
+sidebar_label: AWS Lambda - NodeJS
 description: Learn how to install and configure OpenTelemetry distributed tracing for AWS Lambda functions based on NodeJS and send data to Sumo Logic.
 ---
 

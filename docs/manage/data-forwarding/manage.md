@@ -1,5 +1,5 @@
 ---
-id: manage-data-forwarding
+id: manage
 ---
 
 # Manage Data Forwarding
