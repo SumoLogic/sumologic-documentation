@@ -2,58 +2,37 @@
 id: collector
 title: Sumo Logic Collector Management APIs
 sidebar_label: Collector Management
+description: The Collector Management API gives you the ability to manage Collectors and Sources from HTTP endpoints.
 ---
+
+
+The Collector Management API gives you the ability to manage Collectors and Sources from HTTP endpoints. See the topics below for Collector API and Source API methods and examples, as well as upgrading and downgrading Collectors using the API.
 
 :::note
 Collector Management APIs are not yet built with OpenAPI specifications and therefore not documented with the rest of the APIs. Instead, refer to the instructions below for details.
 :::
 
-Refer to [Getting Started](docs/api/index.md) for Authentication information and Endpoints.
-
-The Collector Management API gives you the ability to manage Collectors and Sources from HTTP endpoints.
-
 :::info
 You need the Manage or View Collectors role capability to manage or view Collection configurations.
 :::
 
-See the following topics for additional information:
-
-Refer to [Getting Started](docs/api/index.md) for Authentication and Endpoint information.
-
-See the following topics for additional information:
-
-* [API Authentication](https://help.sumologic.com/APIs/General-API-Information/API-Authentication) options
-* [Sumo Logic Endpoints](https://help.sumologic.com/APIs/General-API-Information/Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security) to connect your API client to Sumo Logic APIs
-* [View or Download Collector or Source JSON Configuration](https://help.sumologic.com/03Send-Data/Sources/03Use-JSON-to-Configure-Sources/Local-Configuration-File-Management/View-or-Download-Source-JSON-Configuration) from the web application
-* [Troubleshooting APIs](https://help.sumologic.com/APIs/Troubleshooting-APIs)
-
-See the topics below for Collector API and Source API methods and examples, as well as upgrading and downgrading Collectors using the API.
-
-There is a community-supported script available on GitHub that allows you to conduct bulk actions to Collectors, see [Collector Management Script](https://github.com/SumoLogic/collector-management-client).
-
-* **[Topics](https://help.sumologic.com/APIs/Collector-Management-API#e6a731b3-93c9-82c4-bb69-97d4c5c69034)**
-* [Collector API Methods and Examples \
-](https://help.sumologic.com/APIs/Collector-Management-API/Collector-API-Methods-and-Examples)This topic describes the Collector API parameters, methods, and lists error codes.
-* [Source API Methods and Examples \
-](https://help.sumologic.com/APIs/Collector-Management-API/Source-API)This topic describes the Source API methods, which you can use to create installed or hosted Sources of any type by specifying the sourceType parameter.
-* [Upgrade or Downgrade Collectors Using the API](https://help.sumologic.com/APIs/Collector-Management-API/Upgrade-or-Downgrade-Collectors-Using-the-API)View and manage the software versions of your Installed Collectors through HTTP endpoints.
-
-
-
-## Collector API Methods and Examples
-
-The Collector Management API allows you to manage Collectors and Sources from an HTTP endpoint. This topic describes the Collector API parameters, methods, and lists error codes.
-
-You need the Manage or View Collectors role capability to manage or view Collectors.
+## Before You Begin
 
 See the following topics for additional information:
 
 * [API Authentication](https://help.sumologic.com/APIs/General-API-Information/API-Authentication) for information on API authentication options.
-* [Sumo Logic Endpoints](https://help.sumologic.com/APIs/General-API-Information/Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security) for a list of API endpoints to use to connect your API client to the Sumo Logic API.
-* [View or Download Collector or Source JSON Configuration](https://help.sumologic.com/03Send-Data/Sources/03Use-JSON-to-Configure-Sources/Local-Configuration-File-Management/View-or-Download-Source-JSON-Configuration) for instructions on viewing or downloading the current JSON configuration file for a collector or source from the web application.
-* [Source API Methods and Examples](https://help.sumologic.com/APIs/Collector-Management-API/Source-API) for Source API methods, which you can use to create installed or hosted Sources of any type by specifying the `sourceType` parameter.
+* [Sumo Logic Endpoints](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security) for a list of API endpoints to use to connect your API client to the Sumo Logic API.
 * [Use JSON to Configure Sources](https://help.sumologic.com/03Send-Data/Sources/03Use-JSON-to-Configure-Sources) for a description of Source parameters.
+* [View or Download Collector or Source JSON Configuration](/docs/send-data/sources/use-json-configure-sources/local-configuration-file-management/view-download-source-json-configuration.md) for instructions on viewing or downloading the current JSON configuration file for a collector or source from the web application.
+* [Troubleshooting APIs](/docs/api/troubleshooting.md)
 
+There is a community-supported script available on GitHub that allows you to conduct bulk actions to Collectors, see [Collector Management Script](https://github.com/SumoLogic/collector-management-client).
+
+Sumo Logic endpoints like `api.sumologic.com` are different in deployments outside us1. You need to specify your deployment in the endpoint. For example `api.<strong>YOUR_DEPLOYMENT</strong>.sumologic.com` you would specify <strong>`YOUR_DEPLOYMENT`</strong> as either `au`, `ca`, `de`, `eu`, `fed`, `in`, `jp`,` us1`, or `us2`. For us1, use `api.sumologic.com`. For the others, use `api.us2.sumologic.com`, and so on. For more information, see [Sumo Logic Endpoints](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
+
+## Collector API Methods and Examples
+
+The Collector Management API allows you to manage Collectors and Sources from an HTTP endpoint. This topic describes the Collector API parameters, methods, and lists error codes.
 
 ### Rate limiting
 
@@ -66,7 +45,6 @@ If a rate is exceeded, a rate limit exceeded 429 status code is returned.
 ### Response fields  
 
 The following table lists the API response fields for installed and hosted Collectors.
-
 
 <table>
   <tr>
@@ -206,7 +184,7 @@ The following table lists the API response fields for installed and hosted Colle
    </td>
    <td>JSON map of key-value <a href="https://help.sumologic.com/Manage/Fields">fields</a> (metadata) to apply to the Collector.
 
-To assign an <a href="https://help.sumologic.com/Manage/Ingestion-and-Volume/Ingest_Budgets">Ingest Budget</a> to the Collector use the field <code>_budget</code> with the Field Value of the Ingest Budget to assign. For example, if you have a budget with a Field Value of <code>Dev_20GB</code>, you would add:
+<p>To assign an <a href="https://help.sumologic.com/Manage/Ingestion-and-Volume/Ingest_Budgets">Ingest Budget</a> to the Collector use the field <code>_budget</code> with the Field Value of the Ingest Budget to assign. For example, if you have a budget with a Field Value of <code>Dev_20GB</code>, you would add:</p>
 
 <code>fields=_budget=Dev_20GB</code>
    </td>
@@ -281,7 +259,7 @@ To assign an <a href="https://help.sumologic.com/Manage/Ingestion-and-Volume/Ing
    <td>For installed Collectors, whether the Collector is using local source configuration management (using a <code>JSON</code> file), or cloud management (using the <code>UI</code>)
    </td>
    <td>Modifiable
-To assign to <code>JSON</code> see <a href="https://help.sumologic.com/03Send-Data/Sources/03Use-JSON-to-Configure-Sources/Local-Configuration-File-Management/Local-Configuration-File-Management-for-Existing-Collectors-and-Sources">Local Configuration File Management for Existing Collectors and Sources</a>.
+<p>To assign to <code>JSON</code> see <a href="https://help.sumologic.com/03Send-Data/Sources/03Use-JSON-to-Configure-Sources/Local-Configuration-File-Management/Local-Configuration-File-Management-for-Existing-Collectors-and-Sources">Local Configuration File Management for Existing Collectors and Sources</a>.</p>
    </td>
   </tr>
   <tr>
@@ -321,9 +299,7 @@ For more information, see <a href="https://help.sumologic.com/Manage/Collection/
 </table>
 
 
-
 The following table lists additional response fields for Installed Collectors only.
-
 
 <table>
   <tr>
@@ -398,7 +374,6 @@ Get a list of Collectors with an optional limit and offset.
 
 **Method:** `GET Path: /collectors`
 
-
 <table>
   <tr>
    <td><strong>Parameter</strong>
@@ -454,7 +429,7 @@ Get a list of Collectors with an optional limit and offset.
 
 
 
-##### Example  
+#### Example  
 
 In this example, setting `limit=10` limits the responses to 10.
 
@@ -465,12 +440,9 @@ curl -u '<accessId>:<accessKey>' -X GET https://api.sumologic.com/api/v1/collect
 ```
 
 
-Sumo Logic endpoints like `api.sumologic.com` are different in deployments outside us1. You need to specify your deployment in the endpoint. For example <code>api.<strong>YOUR_DEPLOYMENT</strong>.sumologic.com</code> you would specify <strong><code>YOUR_DEPLOYMENT</code></strong> as either <code>au</code>, <code>ca</code>, <code>de</code>, <code>eu</code>, <code>fed</code>, <code>in</code>, <code>jp</code>,<code> us1</code>, or <code>us2</code>. For us1, use <code>api.sumologic.com</code>. For the others, use <code>api.us2.sumologic.com</code>, and so on. For more information, see [Sumo Logic Endpoints](https://help.sumologic.com/APIs/General-API-Information/Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security).
-
 Response:
 
-
-```
+```json
 {  
    "collectors":[  
       {  
@@ -561,21 +533,16 @@ Must be at least 1 day.
 
 
 
-##### Example
-10
-
+#### Example
 
 In this example, setting `aliveBeforeDays=10` returns a list of Installed Collectors that have been offline for at least 10 days.
 
 Request:
 
-
 ```bash
 curl -u '<accessId>:<accessKey>' -X GET https://api.sumologic.com/api/v1/collectors/offline?aliveBeforeDays=10
 ```
 
-
-Sumo Logic endpoints like `api.sumologic.com` are different in deployments outside us1. You need to specify your deployment in the endpoint. For example <code>api.<strong>YOUR_DEPLOYMENT</strong>.sumologic.com</code> you would specify <strong><code>YOUR_DEPLOYMENT</code></strong> as either <code>au</code>, <code>ca</code>, <code>de</code>, <code>eu</code>, <code>fed</code>, <code>in</code>, <code>jp</code>,<code> us1</code>, or <code>us2</code>. For us1, use <code>api.sumologic.com</code>. For the others, use <code>api.us2.sumologic.com</code>, and so on. For more information, see [Sumo Logic Endpoints](https://help.sumologic.com/APIs/General-API-Information/Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security).
 
 Response:
 
@@ -646,7 +613,7 @@ Get the Collector with the specified Identifier.
 
 
 
-##### Example  
+#### Example  
 13
 
 
@@ -659,10 +626,6 @@ Request:
 curl -u '<accessId>:<accessKey>' -X GET https://api.sumologic.com/api/v1/collectors/25
 ```
 
-
-
-14
-Sumo Logic endpoints like `api.sumologic.com` are different in deployments outside us1. You need to specify your deployment in the endpoint. For example <code>api.<strong>YOUR_DEPLOYMENT</strong>.sumologic.com</code> you would specify <strong><code>YOUR_DEPLOYMENT</code></strong> as either <code>au</code>, <code>ca</code>, <code>de</code>, <code>eu</code>, <code>fed</code>, <code>in</code>, <code>jp</code>,<code> us1</code>, or <code>us2</code>. For us1, use <code>api.sumologic.com</code>. For the others, use <code>api.us2.sumologic.com</code>, and so on. For more information, see [Sumo Logic Endpoints](https://help.sumologic.com/APIs/General-API-Information/Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security).
 
 Response:
 
@@ -724,7 +687,7 @@ Response:
 
 
 
-##### Rules
+#### Rules
 16
 
 
@@ -735,7 +698,7 @@ Response:
 * Names with a period `.` need to have a trailing forward slash `/` at the end of the request URL. For example, a Collector named `Staging.Area` should be provided as `https://api.sumologic.com/api/v1/collectors/name/Staging.Area/`.
 
 
-##### Example  
+#### Example  
 17
 
 
@@ -749,9 +712,6 @@ curl -u '<accessId>:<accessKey>' -X GET https://api.sumologic.com/api/v1/collect
 ```
 
 
-
-18
-Sumo Logic endpoints like `api.sumologic.com` are different in deployments outside us1. You need to specify your deployment in the endpoint. For example <code>api.<strong>YOUR_DEPLOYMENT</strong>.sumologic.com</code> you would specify <strong><code>YOUR_DEPLOYMENT</code></strong> as either <code>au</code>, <code>ca</code>, <code>de</code>, <code>eu</code>, <code>fed</code>, <code>in</code>, <code>jp</code>,<code> us1</code>, or <code>us2</code>. For us1, use <code>api.sumologic.com</code>. For the others, use <code>api.us2.sumologic.com</code>, and so on. For more information, see [Sumo Logic Endpoints](https://help.sumologic.com/APIs/General-API-Information/Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security).
 
 Response:
 
@@ -795,7 +755,7 @@ This method can only be used to create Hosted Collectors. You must [install a Co
 **Method: `POST Path: /collectors`**
 
 
-##### Example
+#### Example
 22
 
 
@@ -809,9 +769,6 @@ curl -u '<accessId>:<accessKey>' -X POST -H "Content-Type: application/json" -T 
 ```
 
 
-
-23
-Sumo Logic endpoints like `api.sumologic.com` are different in deployments outside us1. You need to specify your deployment in the endpoint. For example <code>api.<strong>YOUR_DEPLOYMENT</strong>.sumologic.com</code> you would specify <strong><code>YOUR_DEPLOYMENT</code></strong> as either <code>au</code>, <code>ca</code>, <code>de</code>, <code>eu</code>, <code>fed</code>, <code>in</code>, <code>jp</code>,<code> us1</code>, or <code>us2</code>. For us1, use <code>api.sumologic.com</code>. For the others, use <code>api.us2.sumologic.com</code>, and so on. For more information, see [Sumo Logic Endpoints](https://help.sumologic.com/APIs/General-API-Information/Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security).
 
 Request JSON (hosted_collector.json):
 
@@ -903,7 +860,7 @@ Updating a Collector also requires the "If-Match" header to be specified with th
 
 
 
-##### Example  
+#### Example  
 26
 
 
@@ -918,12 +875,7 @@ Initial GET Request:
 curl -v -u '<accessId>:<accessKey>' -X GET https://api.sumologic.com/api/v1/collectors/15
 ```
 
-
-
-27
-Sumo Logic endpoints like `api.sumologic.com` are different in deployments outside us1. You need to specify your deployment in the endpoint. For example <code>api.<strong>YOUR_DEPLOYMENT</strong>.sumologic.com</code> you would specify <strong><code>YOUR_DEPLOYMENT</code></strong> as either <code>au</code>, <code>ca</code>, <code>de</code>, <code>eu</code>, <code>fed</code>, <code>in</code>, <code>jp</code>,<code> us1</code>, or <code>us2</code>. For us1, use <code>api.sumologic.com</code>. For the others, use <code>api.us2.sumologic.com</code>, and so on. For more information, see [Sumo Logic Endpoints](https://help.sumologic.com/APIs/General-API-Information/Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security).
-
-Initial GET Response:
+Initial `GET` Response:
 
 
 ```
@@ -1059,9 +1011,6 @@ curl -u '<accessId>:<accessKey>' -X DELETE https://api.sumologic.com/api/v1/coll
 
 
 
-30
-Sumo Logic endpoints like `api.sumologic.com` are different in deployments outside us1. You need to specify your deployment in the endpoint. For example <code>api.<strong>YOUR_DEPLOYMENT</strong>.sumologic.com</code> you would specify <strong><code>YOUR_DEPLOYMENT</code></strong> as either <code>au</code>, <code>ca</code>, <code>de</code>, <code>eu</code>, <code>fed</code>, <code>in</code>, <code>jp</code>,<code> us1</code>, or <code>us2</code>. For us1, use <code>api.sumologic.com</code>. For the others, use <code>api.us2.sumologic.com</code>, and so on. For more information, see [Sumo Logic Endpoints](https://help.sumologic.com/APIs/General-API-Information/Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security).
-
 Response: There will be no response body, only a 200 OK response code.
 
 
@@ -1105,7 +1054,7 @@ Must be at least 1 day.
 
 
 
-##### Example
+#### Example
 32
 
 
@@ -1119,9 +1068,6 @@ curl -u '<accessId>:<accessKey>' -X DELETE https://api.sumologic.com/api/v1/coll
 ```
 
 
-
-33
-Sumo Logic endpoints like `api.sumologic.com` are different in deployments outside us1. You need to specify your deployment in the endpoint. For example <code>api.<strong>YOUR_DEPLOYMENT</strong>.sumologic.com</code> you would specify <strong><code>YOUR_DEPLOYMENT</code></strong> as either <code>au</code>, <code>ca</code>, <code>de</code>, <code>eu</code>, <code>fed</code>, <code>in</code>, <code>jp</code>,<code> us1</code>, or <code>us2</code>. For us1, use <code>api.sumologic.com</code>. For the others, use <code>api.us2.sumologic.com</code>, and so on. For more information, see [Sumo Logic Endpoints](https://help.sumologic.com/APIs/General-API-Information/Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security).
 
 Response:
 
@@ -1193,24 +1139,10 @@ Error Codes and Messages
 
 The Collector Management API allows you to manage Collectors and Sources from an HTTP endpoint. This topic describes the Source API methods, which you can use to create installed or hosted Sources of any type by specifying the `sourceType` parameter. When using [local configuration file management](https://help.sumologic.com/03Send-Data/Sources/03Use-JSON-to-Configure-Sources/Local-Configuration-File-Management) you can no longer manage Sources through the Collector Management API.
 
-
-You need the Manage or View Collectors role capability to manage or view Source configurations.
-
-See the following topics for additional information:
-
-* [API Authentication](https://help.sumologic.com/APIs/General-API-Information/API-Authentication) for information on API authentication options.
-* [Sumo Logic Endpoints](https://help.sumologic.com/APIs/General-API-Information/Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security) for a list of the API endpoints to use to connect your API client to the Sumo Logic API.
-* [Collector API Methods and Examples](https://help.sumologic.com/APIs/Collector-Management-API/Collector-API-Methods-and-Examples) for Collector API methods.
-* [Use JSON to Configure Sources](https://help.sumologic.com/03Send-Data/Sources/03Use-JSON-to-Configure-Sources) for a description of Source parameters.
-
-
-35
 You cannot use the Source API to create Microsoft Office 365 sources, Google Audit sources, or any other sources that require OAuth-based authentication with another vendor.
 
 
 ### Rate limiting
-
-
 
 * A rate limit of four API requests per second (240 requests per minute) applies to all API calls from a user.
 * A rate limit of 10 concurrent requests to any API endpoint applies to an access key.
@@ -1219,20 +1151,13 @@ If a rate is exceeded, a rate limit exceeded 429 status code is returned.
 
 
 ### Response fields
-36
-
 
 See [Use JSON to Configure Sources](https://help.sumologic.com/03Send-Data/Sources/03Use-JSON-to-Configure-Sources) for a description of Source parameters.
 
 
-### GET methods
-37
-
-
+## GET methods
 
 ### List Sources
-38
-
 
 Gets information about all Sources for a specified Collector.
 
@@ -1280,7 +1205,7 @@ Gets information about all Sources for a specified Collector.
 
 
 
-##### Examples
+#### Examples
 
 This example gets all Sources for a Collector.
 
@@ -1292,9 +1217,6 @@ curl -u '<accessId>:<accessKey>' -X GET https://api.sumologic.com/api/v1/collect
 ```
 
 
-
-40
-Sumo Logic endpoints like `api.sumologic.com` are different in deployments outside us1. You need to specify your deployment in the endpoint. For example <code>api.<strong>YOUR_DEPLOYMENT</strong>.sumologic.com</code> you would specify <strong><code>YOUR_DEPLOYMENT</code></strong> as either <code>au</code>, <code>ca</code>, <code>de</code>, <code>eu</code>, <code>fed</code>, <code>in</code>, <code>jp</code>,<code> us1</code>, or <code>us2</code>. For us1, use <code>api.sumologic.com</code>. For the others, use <code>api.us2.sumologic.com</code>, and so on. For more information, see [Sumo Logic Endpoints](https://help.sumologic.com/APIs/General-API-Information/Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security).
 
 Response:
 
@@ -1333,10 +1255,6 @@ Request:
 curl -u '<accessId>:<accessKey>' -X GET https://api.sumologic.com/api/v1/collectors/25/sources?download=true
 ```
 
-
-
-41
-Sumo Logic endpoints like `api.sumologic.com` are different in deployments outside us1. You need to specify your deployment in the endpoint. For example <code>api.<strong>YOUR_DEPLOYMENT</strong>.sumologic.com</code> you would specify <strong><code>YOUR_DEPLOYMENT</code></strong> as either <code>au</code>, <code>ca</code>, <code>de</code>, <code>eu</code>, <code>fed</code>, <code>in</code>, <code>jp</code>,<code> us1</code>, or <code>us2</code>. For us1, use <code>api.sumologic.com</code>. For the others, use <code>api.us2.sumologic.com</code>, and so on. For more information, see [Sumo Logic Endpoints](https://help.sumologic.com/APIs/General-API-Information/Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security).
 
 Response:
 
@@ -1428,7 +1346,7 @@ Gets information about a specified Collector and Source.
 
 
 
-##### Examples
+#### Examples
 43
 
 
@@ -1437,14 +1355,11 @@ This example gets data for a Source with a specified ID.
 Request:
 
 
-```
+```bash
 curl -u '<accessId>:<accessKey>' -X GET https://api.sumologic.com/api/v1/collectors/25/sources/101792472
 ```
 
 
-
-44
-Sumo Logic endpoints like `api.sumologic.com` are different in deployments outside us1. You need to specify your deployment in the endpoint. For example <code>api.<strong>YOUR_DEPLOYMENT</strong>.sumologic.com</code> you would specify <strong><code>YOUR_DEPLOYMENT</code></strong> as either <code>au</code>, <code>ca</code>, <code>de</code>, <code>eu</code>, <code>fed</code>, <code>in</code>, <code>jp</code>,<code> us1</code>, or <code>us2</code>. For us1, use <code>api.sumologic.com</code>. For the others, use <code>api.us2.sumologic.com</code>, and so on. For more information, see [Sumo Logic Endpoints](https://help.sumologic.com/APIs/General-API-Information/Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security).
 
 Response:
 
@@ -1555,7 +1470,7 @@ Creates a new Source for a Collector. See [Use JSON to Configure Sources](https:
 POST creates a single Source per request.
 
 
-##### Example
+#### Example
 48
 
 
@@ -1569,9 +1484,6 @@ curl -u '<accessId>:<accessKey>' -X POST -H "Content-Type: application/json" -T 
 ```
 
 
-
-49
-Sumo Logic endpoints like `api.sumologic.com` are different in deployments outside us1. You need to specify your deployment in the endpoint. For example <code>api.<strong>YOUR_DEPLOYMENT</strong>.sumologic.com</code> you would specify <strong><code>YOUR_DEPLOYMENT</code></strong> as either <code>au</code>, <code>ca</code>, <code>de</code>, <code>eu</code>, <code>fed</code>, <code>in</code>, <code>jp</code>,<code> us1</code>, or <code>us2</code>. For us1, use <code>api.sumologic.com</code>. For the others, use <code>api.us2.sumologic.com</code>, and so on. For more information, see [Sumo Logic Endpoints](https://help.sumologic.com/APIs/General-API-Information/Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security).
 
 Request JSON (host_metrics.json):
 
@@ -1691,7 +1603,7 @@ Updating a Source also requires the "If-Match" header to be specified with the "
 
 
 
-##### Example
+#### Example
 53
 
 
@@ -1707,9 +1619,6 @@ curl -v -u '<accessId>:<accessKey>' -X GET https://api.sumologic.com/api/v1/coll
 ```
 
 
-
-54
-Sumo Logic endpoints like `api.sumologic.com` are different in deployments outside us1. You need to specify your deployment in the endpoint. For example <code>api.<strong>YOUR_DEPLOYMENT</strong>.sumologic.com</code> you would specify <strong><code>YOUR_DEPLOYMENT</code></strong> as either <code>au</code>, <code>ca</code>, <code>de</code>, <code>eu</code>, <code>fed</code>, <code>in</code>, <code>jp</code>,<code> us1</code>, or <code>us2</code>. For us1, use <code>api.sumologic.com</code>. For the others, use <code>api.us2.sumologic.com</code>, and so on. For more information, see [Sumo Logic Endpoints](https://help.sumologic.com/APIs/General-API-Information/Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security).
 
 Initial GET Response:
 
@@ -1736,10 +1645,6 @@ Request:
 curl -u '<accessId>:<accessKey>' -X PUT -H "Content-Type: application/json" -H "If-Match: \"5f6bbe49f8b5a19dd43c806411225a5f\"" -T updated_host_metrics.json https://api.sumologic.com/api/v1/collectors/15/sources/101833059
 ```
 
-
-
-55
-Sumo Logic endpoints like `api.sumologic.com` are different in deployments outside us1. You need to specify your deployment in the endpoint. For example <code>api.<strong>YOUR_DEPLOYMENT</strong>.sumologic.com</code> you would specify <strong><code>YOUR_DEPLOYMENT</code></strong> as either <code>au</code>, <code>ca</code>, <code>de</code>, <code>eu</code>, <code>fed</code>, <code>in</code>, <code>jp</code>,<code> us1</code>, or <code>us2</code>. For us1, use <code>api.sumologic.com</code>. For the others, use <code>api.us2.sumologic.com</code>, and so on. For more information, see [Sumo Logic Endpoints](https://help.sumologic.com/APIs/General-API-Information/Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security).
 
 Request JSON (updated_host_metrics.json)
 
@@ -1866,7 +1771,7 @@ Method: `DELETE Path: /collectors/[collectorId]/sources/[sourceId]`
 
 
 
-##### Example
+#### Example
 58
 
 
@@ -1878,9 +1783,6 @@ curl -u '<accessId>:<accessKey>' -X DELETE https://api.sumologic.com/api/v1/coll
 ```
 
 
-
-59
-Sumo Logic endpoints like `api.sumologic.com` are different in deployments outside us1. You need to specify your deployment in the endpoint. For example <code>api.<strong>YOUR_DEPLOYMENT</strong>.sumologic.com</code> you would specify <strong><code>YOUR_DEPLOYMENT</code></strong> as either <code>au</code>, <code>ca</code>, <code>de</code>, <code>eu</code>, <code>fed</code>, <code>in</code>, <code>jp</code>,<code> us1</code>, or <code>us2</code>. For us1, use <code>api.sumologic.com</code>. For the others, use <code>api.us2.sumologic.com</code>, and so on. For more information, see [Sumo Logic Endpoints](https://help.sumologic.com/APIs/General-API-Information/Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security).
 
 Response: There will be no response body, only a 200 OK response code.
 
@@ -1949,7 +1851,7 @@ Response: There will be no response body, only a 200 OK response code.
 
 ## Upgrade or Downgrade Collectors Using the API
 
-Use these HTTP endpoints to upgrade or downgrade Collectors. We recommend you follow our [best practices](https://help.sumologic.com/Manage/Collection/Collector-Upgrade-Best-Practices) when you upgrade your Collectors.
+View and manage the software versions of your Installed Collectors through HTTP endpoints. Use these HTTP endpoints to upgrade or downgrade Collectors. We recommend you follow our [best practices](https://help.sumologic.com/Manage/Collection/Collector-Upgrade-Best-Practices) when you upgrade your Collectors.
 
 The upgrade may automatically be done in increments. In this case, you may experience longer upgrade times.
 
@@ -1962,7 +1864,6 @@ If an upgrade task does not complete successfully after 30 minutes it will autom
 
 
 ### Get upgradable Collectors
-62
 
 
 Sends a request to get Collectors you can upgrade.

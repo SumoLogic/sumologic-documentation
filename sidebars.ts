@@ -2314,7 +2314,7 @@ module.exports = {
         'api/fields',
         'api/folders',
         'api/health-events',
-        'api/ingest-budget',
+        'api/ingest-budget-v1',
         'api/ingest-budget-v2',
         'api/lookup-tables',
         'api/metrics',
