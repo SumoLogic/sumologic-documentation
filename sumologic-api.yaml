@@ -39,12 +39,12 @@ info:
     \ </td>\n      <td> <strong>Error Code</strong> </td>\n      <td> <strong>Description</strong>\
     \ </td>\n    </tr>\n    <tr>\n      <td> 301 </td>\n      <td> moved </td>\n \
     \     <td> The requested resource SHOULD be accessed through returned URI in Location\
-    \ Header. See [troubleshooting](https://help.sumologic.com/APIs/Troubleshooting-APIs/API-301-Error-Moved)\
+    \ Header. See [troubleshooting](/docs/api/troubleshooting.md/API-301-Error-Moved)\
     \ for details.</td>\n    </tr>\n    <tr>\n      <td> 401 </td>\n      <td> unauthorized\
     \ </td>\n      <td> Credential could not be verified.</td>\n    </tr>\n    <tr>\n\
     \      <td> 403 </td>\n      <td> forbidden </td>\n      <td> This operation is\
     \ not allowed for your account type or the user doesn't have the role capability\
-    \ to perform this action. See [troubleshooting](https://help.sumologic.com/APIs/Troubleshooting-APIs/API-403-Error-This-operation-is-not-allowed-for-your-account-type)\
+    \ to perform this action. See [troubleshooting](/docs/api/troubleshooting.md/API-403-Error-This-operation-is-not-allowed-for-your-account-type)\
     \ for details.</td>\n    </tr>\n    <tr>\n      <td> 404 </td>\n      <td> notfound\
     \ </td>\n      <td> Requested resource could not be found. </td>\n    </tr>\n\
     \    <tr>\n      <td> 405 </td>\n      <td> method.unsupported </td>\n      <td>\

@@ -2,56 +2,75 @@
 id: account-management
 title: Sumo Logic Account Management APIs
 sidebar_label: Account Management
+tags: [security]
+description: Use HTTP endpoints to manage subdomains.
 ---
 
 The Account Management API allows you to manage the custom subdomain for the URL used to access your Sumo Logic account. For more information see [Manage Organization](docs/manage/manage-subscription/manage-org-settings#Change-account-subdomain).
 
 Refer to [Getting Started](docs/api/index.md) for Authentication and Endpoint information.
 
-
-#### Security
+Sumo Logic has several deployment types, which vary by geographic location and the date an account is created. Select the documentation link below that corresponds to your deployment. If you're not sure, see [How to determine your endpoint](/docs/api/getting-started#which-endpoint-should-i-should-use).
 
 <table>
   <tr>
-   <td>API
+   <td>Deployment
    </td>
    <td>Documentation URL
    </td>
   </tr>
   <tr>
-   <td>Access Keys
+   <td>AU
    </td>
-   <td><a href="https://api.sumologic.com/docs/#tag/accessKeyManagement">https://api.sumologic.com/docs/#tag/...sKeyManagement</a>
+   <td><a href="https://api.au.sumologic.com/docs/#tag/accountManagement">https://api.au.sumologic.com/docs/#tag/accountManagement</a>
    </td>
   </tr>
   <tr>
-   <td>Account
+   <td>CA
+   </td>
+   <td><a href="https://api.ca.sumologic.com/docs/#tag/accountManagement">https://api.ca.sumologic.com/docs/#tag/accountManagement</a>
+   </td>
+  </tr>
+  <tr>
+   <td>DE
+   </td>
+   <td><a href="https://api.de.sumologic.com/docs/#tag/accountManagement">https://api.de.sumologic.com/docs/#tag/accountManagement</a>
+   </td>
+  </tr>
+  <tr>
+   <td>EU
+   </td>
+   <td><a href="https://api.eu.sumologic.com/docs/#tag/accountManagement">https://api.eu.sumologic.com/docs/#tag/accountManagement</a>
+   </td>
+  </tr>
+  <tr>
+   <td>FED
+   </td>
+   <td><a href="https://api.fed.sumologic.com/docs/#tag/accountManagement">https://api.fed.sumologic.com/docs/#tag/accountManagement</a>
+   </td>
+  </tr>
+  <tr>
+   <td>IN
+   </td>
+   <td><a href="https://api.in.sumologic.com/docs/#tag/accountManagement">https://api.in.sumologic.com/docs/#tag/accountManagement</a>
+   </td>
+  </tr>
+  <tr>
+   <td>JP
+   </td>
+   <td><a href="https://api.jp.sumologic.com/docs/#tag/accountManagement">https://api.jp.sumologic.com/docs/#tag/accountManagement</a>
+   </td>
+  </tr>
+  <tr>
+   <td>US1
    </td>
    <td><a href="https://api.sumologic.com/docs/#tag/accountManagement">https://api.sumologic.com/docs/#tag/accountManagement</a>
    </td>
   </tr>
   <tr>
-   <td>Password Policy
+   <td>US2
    </td>
-   <td><a href="https://api.sumologic.com/docs/#tag/passwordPolicy">https://api.sumologic.com/docs/#tag/passwordPolicy</a>
-   </td>
-  </tr>
-  <tr>
-   <td>Policies
-   </td>
-   <td><a href="https://api.sumologic.com/docs/#tag/policiesManagement">https://api.sumologic.com/docs/#tag/...ciesManagement</a>
-   </td>
-  </tr>
-  <tr>
-   <td>SAML
-   </td>
-   <td><a href="https://api.sumologic.com/docs/#tag/samlConfigurationManagement">https://api.sumologic.com/docs/#tag/...tionManagement</a>
-   </td>
-  </tr>
-  <tr>
-   <td>Service Allowlist
-   </td>
-   <td><a href="https://api.sumologic.com/docs/#tag/serviceAllowlistManagement">https://api.sumologic.com/docs/#tag/...listManagement</a>
+   <td><a href="https://api.us2.sumologic.com/docs/#tag/accountManagement">https://api.us2.sumologic.com/docs/#tag/accountManagement</a>
    </td>
   </tr>
 </table>
