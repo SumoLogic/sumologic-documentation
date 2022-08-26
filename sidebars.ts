@@ -309,6 +309,7 @@ module.exports = {
         'manage/partitions-and-data-tiers/data-tiers',
         'manage/partitions-and-data-tiers/data-tiers-faqs',
         'manage/partitions-and-data-tiers/searching-data-tiers',
+        'manage/partitions-and-data-tiers/infrequent-tier-search',
       ]
     },
     {
@@ -339,6 +340,7 @@ module.exports = {
         'manage/security/access-keys',
         'manage/security/audit-index',
         'manage/security/audit-event-index',
+        'manage/security/audit-index-access',
         'manage/security/create-allowlist-ip-cidr-addresses',
         'manage/security/data-access-level-shared-dashboards',
         'manage/security/enable-support-account',
@@ -536,7 +538,7 @@ module.exports = {
       type: 'category',
       label: 'Alerts',
       collapsible: true,
-      collapsed: true,
+      collapsed: false,
       link: {type: 'doc', id: 'alerts/index'},
       items: [
         'alerts/alert-variables',
@@ -544,7 +546,7 @@ module.exports = {
           type: 'category',
           label: 'Monitors',
           collapsible: true,
-          collapsed: true,
+          collapsed: false,
           link: {type: 'doc', id: 'alerts/monitors/index'},
           items: [
             'alerts/monitors/monitor-faq',
@@ -552,7 +554,6 @@ module.exports = {
             'alerts/monitors/alert-response',
             'alerts/monitors/alert-response-faq',
             'alerts/monitors/difference-from-scheduled-searches',
-            'alerts/monitors/template-variables',
             'alerts/monitors/alert-grouping',
           ],
         },
@@ -2352,6 +2353,8 @@ module.exports = {
         'integrations/amazon-aws/cost-explorer',
         'send-data/sources/hosted-collectors/cloud-to-cloud-integration-framework/cylance-source',
         'apm/traces/get-started-transaction-tracing/opentelemetry-instrumentation/kubernetes',
+        'manage/partitions-and-data-tiers/infrequent-tier-search',
+        'manage/security/audit-index-access',
         'api/beta',
       ],
     },

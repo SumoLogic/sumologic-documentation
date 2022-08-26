@@ -4,7 +4,7 @@ id: data-tiers-faqs
 
 # Data Tiers FAQs
 
-This page has frequently asked questions about Data Tiers. For information about selecting the data tier for your use case, features of each tier, and the differences among tiers, see [Data Tiers.](data-tiers.md) 
+This page has frequently asked questions about Data Tiers. For information about selecting the data tier for your use case, features of each tier, and the differences among tiers, see [Data Tiers.](data-tiers.md)
 
 ## In which Sumo subscriptions are Data Tiers available? 
 
@@ -20,13 +20,13 @@ You can use Sumo Logic’s role-based access control (RBAC) to restrict access t
 
 For example, if you want to strict access to a partition whose routing expression is:
 
-```sql
+```
 _sourceCategory=staging/*
 ```
 
 You can create a role with this role search filter:
 
-```sql
+```
 !(_sourceCategory=staging/*)
 ```
 
@@ -127,5 +127,4 @@ See the [Searching Data Tiers](searching-data-tiers.md) topic.
 
 ## Will I be able to use Scheduled Searches on the lower data tiers?
 
-You can’t use Scheduled Searches on the Frequent or Infrequent tiers.  
-
+You can use Scheduled Searches on the Infrequent tier.  

@@ -217,7 +217,7 @@ module.exports = {
                   },
                   {
                     label: 'Manage Sumo',
-                    sublabel: 'Manage settings as admin',
+                    sublabel: 'Set up and manage Sumo Logic',
                     to: '/docs/manage',
                     icon: 'start',
                     activeBaseRegex: '^/docs/manage/.*',
@@ -245,7 +245,7 @@ module.exports = {
                   {
                     label: 'Alerts and Dashboards',
                     sublabel: 'Visualize data and set alerts',
-                    to: '/docs/dashboards-new',
+                    to: '/docs/alerts',
                     icon: 'dashboard',
                     activeBaseRegex: '^/docs/(dashboards|dashboards-new|alerts)',
                   },
@@ -386,6 +386,10 @@ module.exports = {
             to: '/docs/releasenotes',
           },
           {
+            label: 'Support',
+            to: 'https://support.sumologic.com/hc/en-us',
+          },
+          {
             //Trial button
             label: 'Start a Free Trial',
             href: 'https://www.sumologic.com/sign-up/',
@@ -424,10 +428,6 @@ module.exports = {
               {
                 label: 'Training & Certifications',
                 to: 'https://www.sumologic.com/learn/training/',
-              },
-              {
-                label: 'Help Center',
-                to: 'https://support.sumologic.com/hc/en-us',
               },
               {
                 label: 'DevOps Glossary',
