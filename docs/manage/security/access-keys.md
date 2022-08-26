@@ -1,8 +1,9 @@
 ---
 id: access-keys
+title: Access Keys
 ---
 
-# Access Keys
+#
 
 In Sumo Logic, you must use an access key to:
 
@@ -53,7 +54,7 @@ To create your own access keys:
 
     ![create-access-key.png](/img/security/create-access-key.png)
 1. Enter a name for the access key in the **Name** field. If you don’t want to create an allowlist of domains from which the access key can be used to access Sumo APIs, go to step 8 below.
-1. (Optional) In this step, you can define one or more domains that may use the access key to access Sumo APIs. 
+1. (Optional) In this step, you can define one or more domains that may use the access key to access Sumo APIs.
 
     :::note
     Enter a domain in the **Allowlisted CORS Domains** field and click **Add**. Enter the domains in the [Origin](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Origin) format described in Mozilla help. The URL pattern must include the HTTPS protocol and a domain name, a port is optional.
@@ -80,7 +81,7 @@ When you mouse over an access key on the **Preferences** page, several controls 
     :::note
     After an access key is deactivated, there can be a brief period of time during which a previous successful authentication remains cached and a subsequent API request using the deactivated key will succeed. This could occur if the access key was used to authenticate within 15 minutes prior to the key being deactivated.
     :::
-    
+
 * **Delete**. Use the trash can icon to permanently remove the access key. The key will no longer be usable for API calls. However, deleting a key used to register a Collector does not affect the Collector, as the only time a Collector uses the access key is at installation.
 
 ## Manage all users’ access keys on Access Keys page

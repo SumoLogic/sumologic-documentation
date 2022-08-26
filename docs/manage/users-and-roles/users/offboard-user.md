@@ -1,8 +1,8 @@
 ---
 id: offboard-user
+title: Offboard a User
 ---
 
-# Offboard a User
 
 When it's time to remove a user from your organization's Sumo Logic account, there are a few important steps to take before actually disabling or deleting that user. To save the settings for a user and temporarily prevent access, you can [deactivate a user](deactivate-activate-user.md) rather than deleting them. Disabled users can't log in to their Sumo Logic account, giving you time to replicate content.
 

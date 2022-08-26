@@ -1,8 +1,9 @@
 ---
 id: change-users-email-address
+title: Change a User's Email Address
 ---
 
-# Change a User's Email Address
+#
 
 As a Sumo Logic Administrator, you can change a user’s email address.
 

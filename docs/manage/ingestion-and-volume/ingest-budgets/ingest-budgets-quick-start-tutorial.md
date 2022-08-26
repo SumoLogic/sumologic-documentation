@@ -1,8 +1,8 @@
 ---
 id: ingest-budgets-quick-start-tutorial
+title: Ingest Budgets Quick Start Tutorial
 ---
 
-# Ingest Budgets Quick Start Tutorial
 
 ## Availability
 
@@ -69,12 +69,12 @@ curl -v -u '<accessid:accesskey>' \
 ```
 
 ```json
-{ 
+{
     "name": "Demo Budget 1",
     "fieldValue": "dev_30_gb",
     "capacityBytes": 1000,
     "timezone": "America/Los_Angeles",
-    "resetTime": "23:30", 
+    "resetTime": "23:30",
     "description": "A simple small demo budget",
     "action": "stopCollecting"
 }

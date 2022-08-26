@@ -1,10 +1,11 @@
 ---
 id: log-ingestion
+title: Log Ingestion
 ---
 
-# Log Ingestion
 
-The rate of data creation is rarely constant. Whether your organization sees seasonal spikes, or if a new feature or product line produces huge increases in activity, Sumo Logic meets the needs of your organization, known or unknown, while maintaining the search performance you rely on. 
+
+The rate of data creation is rarely constant. Whether your organization sees seasonal spikes, or if a new feature or product line produces huge increases in activity, Sumo Logic meets the needs of your organization, known or unknown, while maintaining the search performance you rely on.
 
 When designing your deployment, it’s important to consider how logs will be ingested across Collectors in your account.
 

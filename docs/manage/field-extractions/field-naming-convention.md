@@ -1,8 +1,8 @@
 ---
 id: field-naming-convention
+title: Field Naming Convention
 ---
 
-# Field Naming Convention
 
 Sumo Logic recommends using the following naming convention for standard fields. This best practice creates standardization across your deployment for use with Field Extraction Rules (FER), Searches and Dashboards, makes it easier for users to recognize fields by their names, and can even improve search performance.
 

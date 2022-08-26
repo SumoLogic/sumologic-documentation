@@ -1,8 +1,7 @@
 ---
 id: data-tiers-faqs
+title: Data Tiers FAQs
 ---
-
-# Data Tiers FAQs
 
 This page has frequently asked questions about Data Tiers. For information about selecting the data tier for your use case, features of each tier, and the differences among tiers, see [Data Tiers.](data-tiers.md)
 

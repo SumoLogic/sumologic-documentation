@@ -2348,6 +2348,7 @@ module.exports = {
       collapsed: false,
       link: {type: 'doc', id: 'beta/index'},
       items: [
+        'manage/manage-subscription/beta-opt-in',
         'alerts/monitors/alert-grouping',
         'send-data/sources/hosted-collectors/cloud-to-cloud-integration-framework/aws-cost-explorer-source',
         'integrations/amazon-aws/cost-explorer',

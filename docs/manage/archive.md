@@ -1,8 +1,7 @@
 ---
 id: archive
+title: Archive
 ---
-
-# Archive
 
 Archive allows you to forward log data from Installed Collectors to AWS S3 buckets to collect at a later time. If you have logs that you don't need to search immediately you can archive them for later use. You can ingest from your Archive on-demand with five-minute granularity.
 
@@ -29,18 +28,18 @@ You need the **Manage S3 data forwarding** role capability to create an AWS Ar
     ![destinationType.png](/img/archive/destinationType.png)
 1. Configure the following:
    * **Destination Name**. Enter a name to identify the destination.
-   * **Bucket Name**. Enter the exact name of the S3 bucket. 
+   * **Bucket Name**. Enter the exact name of the S3 bucket.
 
     :::note
     You can create only one destination with a particular bucket name.  If you try to create a new destination with the bucket name of an existing destination, the new destination replaces the old one.
     :::
 
    * **Description**. You can provide a meaningful description of the connection.
-   * **Access Method**. Select **Role-based access** or **Key access** based on the AWS authentication you are providing. Role-based access is preferred. This was completed in step 1, [Grant Sumo Logic access to an AWS Product](../send-data/sources/hosted-collectors/amazon-web-services/grant-access-aws-product.md). 
-    
+   * **Access Method**. Select **Role-based access** or **Key access** based on the AWS authentication you are providing. Role-based access is preferred. This was completed in step 1, [Grant Sumo Logic access to an AWS Product](../send-data/sources/hosted-collectors/amazon-web-services/grant-access-aws-product.md).
+
       * For **Role-based access** enter the Role ARN that was provided by AWS after creating the role.
       * For **Key access** enter the **Access Key ID **and** Secret Access Key.** See [AWS Access Key ID](http://docs.aws.amazon.com/STS/latest/UsingSTS/UsingTokens.html#RequestWithSTS) and [AWS Secret Access Key](https://aws.amazon.com/iam/) for details.
-   
+
    * **S3 Region**. Select the S3 region or keep the default value of Others. The S3 region must match the appropriate S3 bucket created in your Amazon account.
 1. Click **Save**.
 
@@ -110,9 +109,9 @@ By default, the Collector will complete writing logs to an archive file once th
 
 ### collector.properties buffer parameter
 
-| Parameter | Description | Data Type | Default | 
+| Parameter | Description | Data Type | Default |
 |--|--|--|--|
-| buffer.max.disk.bytes | The maximum size in bytes of the on-disk buffer per archive destination.<br/>When the maximum is reached the oldest modified file(s) are deleted. | Integer | 1073741824 | 
+| buffer.max.disk.bytes | The maximum size in bytes of the on-disk buffer per archive destination.<br/>When the maximum is reached the oldest modified file(s) are deleted. | Integer | 1073741824 |
 
 ## Ingest data from Archive
 
@@ -163,7 +162,7 @@ To use JSON to create an AWS S3 Archive Source reference our AWS Log Source 
     Fields specified on an AWS S3 Archive Source take precedence if the archived data has the same fields.
     :::
 
-    * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema. 
+    * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists and is enabled in the Fields table schema.
     * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist, or is disabled, in the Fields table schema. In this case, an option to automatically add or enable the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema or is disabled it is ignored, known as dropped.
 1. For **AWS Access** you have two **Access Method** options. Select **Role-based access** or **Key access** based on the AWS authentication you are providing. Role-based access is preferred, this was completed in the prerequisite step Grant Sumo Logic access to an AWS Product.
     * For **Role-based access** enter** **the Role ARN that was provided by AWS after creating the role.   

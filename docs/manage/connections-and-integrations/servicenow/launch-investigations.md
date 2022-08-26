@@ -1,8 +1,9 @@
 ---
 id: launch-investigations
+title: Launch Investigations
 ---
 
-# Launch Investigations
+#
 
 You can launch ad-hoc investigations directly from search results in Sumo Logic. You can also use ServiceNow to click over to Sumo Logic to start an investigation.
 
