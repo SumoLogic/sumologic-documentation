@@ -1,7 +1,7 @@
 ---
 id: template-doc
-title: Template for a Doc
-sidebar_label: Template for a Doc
+title: Sumo Logic Doc Template
+sidebar_label: Doc Template
 description: Example template for creating a document in the Sumo Logic guides.
 ---
 
