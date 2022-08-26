@@ -2,7 +2,7 @@
 id: nginx-access-logs
 title: Nginx Access Logs
 sidebar_label: Nginx Access Logs
-description: tk
+description: Configure a syslog source to ingest Nginx Access log messages to be parsed by CSE’s system parser for Nginx.
 ---
 
 This section has instructions for collecting Nginx Access Log Syslog messages and sending them to Sumo Logic to be ingested by CSE.

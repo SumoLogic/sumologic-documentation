@@ -1,8 +1,9 @@
 ---
 id: normalized-authentication-rules
+title: Normalized Authentication Rules
+description: CSE's Normalized Authentication Rules detect activities that compromise accounts using authentication logs from any data source that CSE parsers and mappings support.
 ---
 
-# Normalized Authentication Rules
 
 *Normalized Authentication Rules* detect activities that compromise accounts using authentication logs from any data source that CSE parsers
 and mappings support. New authentication data sources can immediately take advantage of this rule logic without the need to customize for the
@@ -29,7 +30,7 @@ The mapping requirements are:
 | `srcDevice_ip` | If an IP address is present in the log message, `srcDevice_ip` must be mapped to the input field that contains it. |
 | `srcDevice_hostname` | If a hostname is present in the log message, `srcDevice_hostname` must be mapped to the input field that contains it. |
 
-  
+
 This log mapping for the AWS CloudTrail ConsoleSignIn event meets the requirements described above. (Note that `srcDevice_hostname` is not mapped because the AWS log message for that event doesn’t contain a hostname.)
 
 ![auth-rule-mapping-1.png](/img/cse/auth-rule-mapping-1.png)
@@ -76,6 +77,6 @@ CSE determines which value of of `normalizedAction` is appropriate for a given l
 | 12 | CachedRemoteInteractive | Same as RemoteInteractive. This is used for internal auditing. | *logon* |
 | 13 | CachedUnlock | Workstation logon. | \<none\> |
 
-  
-  
+
+
  

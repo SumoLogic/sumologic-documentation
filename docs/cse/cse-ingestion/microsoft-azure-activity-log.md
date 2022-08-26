@@ -2,7 +2,7 @@
 id: microsoft-azure-activity-log
 title: Microsoft Azure Activity Log
 sidebar_label: Microsoft Azure Activity Log
-description: tk
+description: Configure an HTTP Source to ingest Microsoft Azure Activity Log messages and to be parsered by CSE's system parser for Azure Activity Log.
 ---
 
 This section has instructions for collecting Azure Activity log messages and sending them to Sumo Logic to be ingested by CSE.

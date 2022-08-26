@@ -1,8 +1,10 @@
 ---
 slug: /cse/cse-schema
+title: CSE Schema
+description: Learn about CSE Schema v3, schema attributes, and the Record processing pipeline.
 ---
 
-# CSE Schema
+
 
 import DocCardList from '@theme/DocCardList';
 import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
@@ -10,4 +12,3 @@ import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
 In this section, we will introduce the following concepts:
 
 <DocCardList items={useCurrentSidebarCategory().items}/>
-

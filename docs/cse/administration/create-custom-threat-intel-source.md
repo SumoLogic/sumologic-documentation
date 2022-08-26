@@ -2,7 +2,7 @@
 id: create-custom-threat-intel-source
 title: Create a Custom Threat Intel Source
 sidebar_label: Create a Custom Threat Intel Source
-description: tk
+description: Learn how to create and manage custom threat sources.
 ---
 
 This topic has information about setting up a *custom threat intel

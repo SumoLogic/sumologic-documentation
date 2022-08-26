@@ -4,7 +4,7 @@ title: Sumo Logic Folder Management APIs
 sidebar_label: Folders
 ---
 
-The Folder Management API allows you to add folders and subfolders to the [Library](https://help.sumologic.com/01Start-Here/Library) from HTTP endpoints to organize your content.
+The Folder Management API allows you to add folders and subfolders to the [Library](docs/get-started/library/index.md) from HTTP endpoints to organize your content.
 
 Refer to [Getting Started](docs/api/index.md) for Authentication and Endpoint information.
 

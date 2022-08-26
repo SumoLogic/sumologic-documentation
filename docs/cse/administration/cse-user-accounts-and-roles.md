@@ -2,7 +2,7 @@
 id: cse-user-accounts-and-roles
 title: CSE User Accounts and Roles
 sidebar_label: CSE User Accounts and Roles
-description: tk
+description: Learn how to create users and roles for CSE.
 ---
 
 This topic has information about creating and managing user accounts and roles for CSE. CSE uses role-based access control (RBAC). An administrator controls access to capabilities by assigning capabilities or permissions to roles, and then assigning users to roles.  
