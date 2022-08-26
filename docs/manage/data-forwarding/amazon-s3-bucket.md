@@ -31,7 +31,7 @@ It takes approximately 5 minutes to propagate a new or changed S3 data forwardin
 
 After you start forwarding data to S3, you should start to see file objects posted in your configured bucket. The log messages are accumulated and returned after being ingested by Sumo.
 
-The log messages are saved in CSV files in compressed gzip files and named according to the convention you specified when you configured Sumo to start data forwarding, as described in step 5 of [Start data forwarding to S3](data-forwarding-to-s3.md). The file naming convention for legacy data forwarding is described below in [Legacy File Naming Format](#legacy-file-naming-format). 
+The log messages are saved in CSV files in compressed gzip files and named according to the convention you specified when you configured Sumo to start data forwarding, as described in step 5 of [Start data forwarding to S3](amazon-s3-bucket.md). The file naming convention for legacy data forwarding is described below in [Legacy File Naming Format](#legacy-file-naming-format). 
 
 Messages are buffered during data ingest for either approximately 5 minutes or until 100MB of data is received, whichever is first. Then the buffered data is written to a new CSV file and forwarded. 
 
@@ -105,7 +105,7 @@ Where:
 
 1. Click **Save**.
 
-If Sumo Logic is able to verify the S3 credentials, the destination will be added to the list of destinations, and you can start Data Forwarding for specific Partitions or Scheduled Views, as described in the following section in this topic. See [Error and alert conditions](data-forwarding-to-s3.md) in this topic for examples of errors that can occur.
+If Sumo Logic is able to verify the S3 credentials, the destination will be added to the list of destinations, and you can start Data Forwarding for specific Partitions or Scheduled Views, as described in the following section in this topic. See [Error and alert conditions](amazon-s3-bucket.md) in this topic for examples of errors that can occur.
 
 ## Forward data to S3 
 
