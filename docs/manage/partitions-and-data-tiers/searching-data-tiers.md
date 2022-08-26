@@ -92,7 +92,7 @@ Given these partitions:
 
 ### \_dataTier and scheduled views and audit indexes 
 
-When you query scheduled views, the Sumo Logic Audit Index, or the Sumo Logic Audit Event Index, it isn’t necessary to specify a tier with `_dataTier`.  Search these indexes using `_index`.  By default, Sumo will run such queries against the Continuous tier. 
+When you query scheduled views, the Sumo Logic Audit Index, or the Sumo Logic Audit Event Index, it isn’t necessary to specify a tier with `_dataTier`. Search these indexes using `_index`.  By default, Sumo will run such queries against the Continuous tier. 
 
 If you use `_dataTier` to specify a tier other than Continuous in a query of scheduled views or either of the audit indexes, Sumo Logic presents an error message.
 
