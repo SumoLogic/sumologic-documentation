@@ -1,6 +1,7 @@
 ---
 id: tags-insights-signals-entitiesc-rules
 title: Using Tags with Insights, Signals, Entities, and Rules
+sidebar_label: Using Tags
 description: Tags are metadata you can attach to Insights, Signals, Entities, and Rules. Tags are useful for adding context to these CSE items. You can also search for and filter items by tag.
 ---
 

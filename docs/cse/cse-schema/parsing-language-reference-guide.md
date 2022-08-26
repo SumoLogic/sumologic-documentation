@@ -1,6 +1,7 @@
 ---
 id: parsing-language-reference-guide
 title: Parsing Language Reference Guide
+sidebar_label: Parsing Language Reference
 description: Parsing is the first step in the Cloud SIEM Enterprise (CSE) Record processing pipeline—it is the process of creating a set of key-value pairs that reflect all of the information in an incoming raw message.
 ---
 

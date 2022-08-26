@@ -1,6 +1,7 @@
 ---
 id: write-match-rule
 title: Write a Match Rule
+sidebar_label: Match Rule
 description: Learn how to write a match rule.
 ---
 

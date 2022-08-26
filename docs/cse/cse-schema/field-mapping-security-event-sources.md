@@ -1,7 +1,8 @@
 ---
 id: field-mapping-security-event-sources
 title: Field Mapping for Security Event Sources
-description: Learn how to set up field mappings  for messages that you want to be processed by CSE's normalized threat rules.
+sidebar_label: Field Mappings
+description: Learn how to set up field mappings for messages that you want to be processed by CSE's normalized threat rules.
 ---
 
 

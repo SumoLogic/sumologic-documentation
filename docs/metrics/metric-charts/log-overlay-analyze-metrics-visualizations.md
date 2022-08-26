@@ -1,7 +1,7 @@
 ---
 id: log-overlay-analyze-metrics-visualizations
 title: Use Log Overlay to Analyze Metrics Visualizations
-sidebar_label: Use Log Overlay to Analyze Metrics Visualizations
+sidebar_label: Log Overlay
 description: Learn how metrics visualizations can provide a clear status of your environment.
 ---
 

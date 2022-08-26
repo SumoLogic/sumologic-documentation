@@ -1,6 +1,7 @@
 ---
 id: configure-entity-lookup-table
 title: Configure an Entity Lookup Table
+sidebar_label: Entity Lookup Tables
 description: Entity Lookup Tables allow you to normalize the names of users and hosts (machines) in your environment
 ---
 

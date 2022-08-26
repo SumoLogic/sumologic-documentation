@@ -1,6 +1,7 @@
 ---
 id: rule-tuning-expressions
 title: Rule Tuning Expressions
+sidebar_label: Rule Tuning
 description: Rule tuning expressions allow you to tailor the logic of a built-in rule without logic without replicating and modifying the rule.
 ---
 

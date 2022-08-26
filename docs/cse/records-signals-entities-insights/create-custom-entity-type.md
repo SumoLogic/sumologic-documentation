@@ -1,6 +1,7 @@
 ---
 id: create-custom-entity-type
 title: Create a Custom Entity Type
+sidebar_label: Custom Entity Types
 description: Learn how to create a custom Entity type.
 ---
 
