@@ -6,7 +6,7 @@ sidebar_label: Password Policy
 
 
 
-The Password Policy Management API allows you to manage the [password policy](https://help.sumologic.com/Manage/Security/Set-the-Password-Policy) for your Sumo Logic users.
+The Password Policy Management API allows you to manage the [password policy](docs/manage/security/set-password-policy.md) for your Sumo Logic users.
 
 Refer to [Getting Started](docs/api/index.md) for Authentication and Endpoint information.
 

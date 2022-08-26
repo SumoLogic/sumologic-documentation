@@ -12,7 +12,13 @@ Refer to [Getting Started](docs/api/index.md) for Authentication information and
 
 The Collector Management API gives you the ability to manage Collectors and Sources from HTTP endpoints.
 
+:::info
 You need the Manage or View Collectors role capability to manage or view Collection configurations.
+:::
+
+See the following topics for additional information:
+
+Refer to [Getting Started](docs/api/index.md) for Authentication and Endpoint information.
 
 See the following topics for additional information:
 
