@@ -1,8 +1,8 @@
 ---
 id: parse-elb-logs
+title: Parse ELB Logs
 ---
 
-# Parse ELB Logs
 
 **Log Type:** ELB Log (Elastic Load Balancing)  
 

@@ -1,8 +1,9 @@
 ---
 id: set-up-servicenow-connections
+title: Set Up ServiceNow Connections
 ---
 
-# Set Up ServiceNow Connections
+#
 
 :::note
 There are two ServiceNow connections available in Sumo Logic.
@@ -55,7 +56,7 @@ To set up a ServiceNow Webhook connection:
 
 1. **Authentication** can be done with a **Username and Password** or an **Authorization Header**.
 
-   * Use the **Username** and **Password** used to log in to **ServiceNow**. 
+   * Use the **Username** and **Password** used to log in to **ServiceNow**.
    * See how to set an [Authorization Header](../webhook-connections/set-up-webhook-connections.md).
 
 1. Set the **Type** to **Events** or **Incidents** based on what you want to create. This needs to align with the **URL** you provided.

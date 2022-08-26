@@ -1,8 +1,9 @@
 ---
 id: search-for-a-collector-or-source
+title: Search for a Collector or Source
 ---
 
-# Search for a Collector or Source
+#
 
 Many Sumo Logic customers have hundreds of collectors and sources installed and configured. But even with only 10 Collectors, sometimes it can be hard to find the one you need in the list.
 

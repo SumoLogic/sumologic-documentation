@@ -1,8 +1,8 @@
 ---
 id: cloud-flex-credits-accounts
+title: Cloud Flex Credits Accounts
 ---
 
-# Cloud Flex Credits Accounts
 
 Sumo Logic provides flexible account types within its Cloud Flex Credits packaging for any size organization. A **credit** is a unit of measure that tracks utilization, whether data ingested (GB), storage, or metrics, throughout a contract period. Credits can be used as needed for your desired purpose. This allows you to manage your account without unnecessary waste.
 
@@ -113,9 +113,9 @@ For example, if the your contract period is licensed for 100,000 credits and 1
 To view the Account page, do the following:
 
 1. Log in to your Sumo Logic Cloud Flex Credits account.
-1. In the left navigation bar, select **Administration** \> **Account**. The Account Overview tab is shown by default. 
+1. In the left navigation bar, select **Administration** \> **Account**. The Account Overview tab is shown by default.
 
-    :::note 
+    :::note
     You must have a role that grants you the View Account Overview capability to view the **Account Overview** tab. 
     :::
 

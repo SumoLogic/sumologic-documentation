@@ -1,8 +1,9 @@
 ---
 id: set-collector-cpu-usage-target
+title: Set the Collector CPU Usage Target
 ---
 
-# Set the Collector CPU Usage Target
+#
 
 An installed collector uses all CPU processing resources available on a machine. Most of the time CPU processing issues don’t arise, but if a lot of log data is being generated, or if you need to protect other processes running on the machine where the collector is installed, you can choose to set a CPU target to limit the amount of CPU processing a collector uses. This option is applied only to local or remote file sources.
 

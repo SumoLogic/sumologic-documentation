@@ -1,8 +1,9 @@
 ---
 id: jfrog-artifactory-sumo-logic-integration
+title: JFrog Artifactory Online Sumo Logic Integration
 ---
 
-# JFrog Artifactory Online Sumo Logic Integration
+#
 
 :::important
 If you do not currently have a Sumo Logic account, the JFrog Artifactory Sumo Logic integration is the most convenient way to start using Sumo Logic directly from Artifactory. You can also choose to use an existing Sumo Logic account to integrate with Artifactory Online.
@@ -67,7 +68,7 @@ If you do not have an existing Sumo Logic Account and it is your first time here
 
 If you already have an existing connection set up via Artifactory Online:
 
-1. The **Use Existing Client ID and Secret** radio button is selected, and keys will pre-populate automatically based on your previous configuration. 
+1. The **Use Existing Client ID and Secret** radio button is selected, and keys will pre-populate automatically based on your previous configuration.
 1. Click Access Dashboards to view Dashboards as you did before.
 
 ![jfrog 6](/img/connection-and-integration/jfrog6.png)

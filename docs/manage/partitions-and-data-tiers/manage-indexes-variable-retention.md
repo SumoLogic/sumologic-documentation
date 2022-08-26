@@ -1,8 +1,9 @@
 ---
 id: manage-indexes-variable-retention
+title: Manage Indexes with Variable Retention
 ---
 
-# Manage Indexes with Variable Retention
+#
 
 Your company log data comes in many types, and different types of data may require different retention periods. For example, some sensitive information may require a short life span, while other vital data, such as customer logins, may require a longer lifespan for daily use. Still other data may need to be available for historical analysis and to gather metrics to make business decisions, though it is not accessed every day.
 
@@ -41,19 +42,19 @@ You may edit the retention period of Partitions and Scheduled Views. The minimum
 1. Go to **Manage Data** \> **Logs**.
 1. On the **Partitions** or **Scheduled Views** tab, hover over the item you would like to edit the retention period for.
 1. Click the three-dot icon on the right of the desired row, and from the menu select **Edit Retention Period**. (You may also edit the retention period from the expanded information dialog. Next to **Retention Period**, click **Edit**.)
-1. In the **Edit Retention Period** dialog, enter the new retention period in days. Alternatively, click the **Apply the retention period of the General Index** check box. 
+1. In the **Edit Retention Period** dialog, enter the new retention period in days. Alternatively, click the **Apply the retention period of the General Index** check box.
 
    1. If the new retention period is longer than the previous period, click **Save**.    
 
     ![edit retention](/img/partitions-and-data-tiers/edit_retention_period_save.png)
-    
-    1. If the new retention period is shorter than the previous period, a portion of your data will be deleted in 7 days or right away. Click **Save** and choose either: 
-   
+
+    1. If the new retention period is shorter than the previous period, a portion of your data will be deleted in 7 days or right away. Click **Save** and choose either:
+
        * Simulate this data deletion for a few days and then reduce it permanently by selecting **Reduce retention period after 7 days.** You will be billed for this data until the deletion is permanent, but it gives you a sense of how the deletion will impact you before it is final.
-       
+
        :::note
        When you select **Reduce Retention Period after 7 days**, the retention period on your Partitions page will not change immediately. There will be a an icon indicating that a retention decrease is imminent in a number of days. When the counter expires, the data will be deleted, the warning icon will disappear, and the new retention policy will be in effect.
-       
+
        If you want to change your mind at any time during that period and revert to your previous retention period, click **Click here to undo the reduction in retention period**. The retention will stay at previous retention level, and the job to reduce the retention is canceled.
        :::
 

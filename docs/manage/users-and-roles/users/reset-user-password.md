@@ -1,8 +1,9 @@
 ---
 id: reset-user-password
+title: Reset a User's Password
 ---
 
-# Reset a User's Password
+#
 
 This topic describes how to reset another user's password. When you reset a user's password, Sumo Logic will send the user an email with a temporary password, which the user will be required to reset upon signing in.
 

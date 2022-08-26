@@ -1,8 +1,8 @@
 ---
 id: role-capabilities
+title: Role Capabilities
 ---
 
-# Role Capabilities
 
 You can assign any of the following capabilities when you [create roles](create-manage-roles.md).
 
@@ -118,14 +118,14 @@ CSE has been enabled for your account.
 | Manage Tag Schemas | Create, edit, and delete schema key tags, which can be attached to Insights, Signals, Entities, and Rules.  |
 | Manage Favorite Fields | Add and remove favorite fields by clicking the star icon next to the fields in CSE Records. |
 
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+
+
+
+
+
+
+
+
+
+
  
