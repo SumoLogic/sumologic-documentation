@@ -2,7 +2,7 @@
 id: zscaler-private-access
 title: Zscaler Private Access
 sidebar_label: Zscaler Private Access
-description: tk
+description: Configure an HTTP source to ingest Zscaler Private Access  log messages and send them to CSE’s Zscaler Private Access system parser.
 ---
 
 This section has instructions for collecting Zscaler Private Access (ZPA) log messages and sending them to Sumo Logic to be ingested by CSE.

@@ -1,8 +1,10 @@
 ---
 id: create-custom-entity-type
+title: Create a Custom Entity Type
+description: Learn how to create a custom Entity type.
 ---
 
-# Create a Custom Entity Type
+
 
 This topic has instructions for how to create custom Entity types in CSE.
 
@@ -33,6 +35,6 @@ To create a custom Entity type:
     :::note
     The Entity type Identifier cannot be changed once you’ve saved it.
     :::
-    
+
 1. **Fields**. Use the dropdown list to select the schema attribute or attributes you want to associate with the custom Entity type.
 1. Click **Create**.

@@ -2115,7 +2115,7 @@ module.exports = {
             'cse/cse-ingestion/cse-ingestion-best-practices',
             'cse/cse-ingestion/products-with-log-mappings',
             'cse/cse-ingestion/view-mappers-for-product',
-            'cse/cse-ingestion/auth',
+            'cse/cse-ingestion/auth0',
             'cse/cse-ingestion/aws-application-load-balancer',
             'cse/cse-ingestion/aws-cloudtrail',
             'cse/cse-ingestion/aws-guardduty',

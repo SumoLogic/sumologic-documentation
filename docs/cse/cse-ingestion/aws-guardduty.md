@@ -2,7 +2,7 @@
 id: aws-guardduty
 title: AWS GuardDuty
 sidebar_label: AWS GuardDuty
-description: tk
+description: Configure an HTTP source to ingest AWS GuardDuty log messages and send them to GuardDuty system parser.
 ---
 
 This section has instructions for collecting AWS GuardDuty log messages and sending them to Sumo Logic to be ingested by CSE.

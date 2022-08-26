@@ -1,8 +1,10 @@
 ---
 id: parsing-language-reference-guide
+title: Parsing Language Reference Guide
+description: Parsing is the first step in the Cloud SIEM Enterprise (CSE) Record processing pipeline—it is the process of creating a set of key-value pairs that reflect all of the information in an incoming raw message.
 ---
 
-# Parsing Language Reference Guide
+
 
 This topic describes the CSE parsing language, which you can use to write custom parsers.
 
@@ -23,7 +25,7 @@ A regular expression, often referred to as a regex, is a sequence of characters 
 Many CSE parsers rely upon regex exclusively to parse messages. (Sumo Logic Field Extraction Rules also use regex: they parse selected fields from log messages at the time of ingestion.)  Sumo Logic's parsing engine performs top-level, gross format parsing first using compiled built-in formats, and then relies on regular expressions to extract information from irregular or complex formats.
 
 The parser engine uses the [RE2 regular expression library](https://github.com/google/re2/wiki/Syntax). This is important to know because regex syntax varies between implementations. RE2 is a slightly modified version of the standard regular expression libraries that is designed to operate with bounded
-execution time. 
+execution time.
 
 :::note
 For historic reasons, the named groups in the regex of many parsers still uses Python-style notation, for instance `(?P<syslog_timestamp>[^ ]+ +[^ ]+ [^ ]+)`. When you write new regular expressions, you can omit P.
@@ -178,7 +180,7 @@ At the start of parser execution, `_$log_entry` contains the value of the entire
 #### \_$log_entry_field
 
 The field that the parser is transforming. The value of `_$log_entry_field` is updated each time a transform is applied to a field because temporary fields aren’t stripped from field dictionaries until after all parsing is complete, causing the `_$log_entry_field` to be overwritten by that transform’s
-`_$log_entry_field`. 
+`_$log_entry_field`.
 
 #### Excluding variables from field dictionary
 
@@ -216,7 +218,7 @@ Parser definitions are organized into stanzas. A stanza consists of a type decla
 There are three types of stanzas:
 
 * **parser**—Defines the entry point for the overall parser and contains attributes that control the overall execution of the parser. A parser contains one and only one parser stanza. The syntax for declaring a parser stanza is:  `[parser]`
-    
+
     `parser` is the only stanza keyword that can only appear once in a parser definition.    
 
 * **transform**—A transform stanza is analogous to a function in most scripting languages. Transforms can be invoked on a log message as a whole with all currently parsed fields accessible within the new transform, or on strings that have been parsed from a message without the currently parsed fields.      You can use transforms to extract information of interest using regex patterns, assign values to variables, drop fields, rename fields, populate time fields, create mapping hints, and more.  One transform can even call another. You can use transforms to perform a wide variety of parse actions; the most common use is extracting a value from log message. The syntax for declaring a transform stanza is:      `[transform:<transform name>]`
@@ -273,7 +275,7 @@ Attempts to access the value of a field created by parsing must follow the parsi
 ### Includes
 
 You can include resources from another parser using a \[dependencies\] stanza. In that stanza only, you can add  
-  
+
 `INCLUDE:/Parsers/path/to/parser = true`
 
 The specified resource’s transforms will be available to the current parser. 
@@ -418,7 +420,7 @@ True 
     `DROP:r|^blah.* = true `
 * The example below drops the `request_url` field if the field value matches the regex `\-` (the field begins with a dash character. 
     `DROP:request_url = \-`    
-* The example below drops the variable whose name is `_log_entry`. 
+* The example below drops the variable whose name is `_log_entry`.
     `DROP:_log_entry = true`
 
 ### END_TIME_FIELD
@@ -586,7 +588,7 @@ Joins a list created by [ADD_VALUES](#add_values) with the separator mentioned. 
 Provides information that tells CSE which log mapper should process the parsed message. There are two ways to do that: 
 
 * Specify the log mapper UID.  If `MAPPER:uid` is specified with other MAPPER fields, mapping lookup will be performed by uid. 
-* Specify the `product`, `vendor`, and `event_id `for the message. If you identify the mapper using , all three are required: you’ll define three MAPPER attributes. Templating is allowed for each value. However, the most common and best practice is to define vendor and product using static strings. `event_id` often varies based on the log type so it's more common to use templating when defining that. 
+* Specify the `product`, `vendor`, and `event_id `for the message. If you identify the mapper using , all three are required: you’ll define three MAPPER attributes. Templating is allowed for each value. However, the most common and best practice is to define vendor and product using static strings. `event_id` often varies based on the log type so it's more common to use templating when defining that.
 
 :::note
 Looking up a mapper using `product`, `vendor`, and `event_id` will return all [structured mappings](create-structured-log-mapping.md) that are configured with the same attribute values, and could result in more than one Record being created. 
@@ -651,7 +653,7 @@ None
 
 **Example**
 
-* This example calls the transform "cs1 Transform" and only performs the transform if fields `cs1` and `cs1Label` fields are defined. It renames the field name `cs1` to the value associated with `cs1Label`, and removes the `cs1Label` field from the field dictionary. 
+* This example calls the transform "cs1 Transform" and only performs the transform if fields `cs1` and `cs1Label` fields are defined. It renames the field name `cs1` to the value associated with `cs1Label`, and removes the `cs1Label` field from the field dictionary.
 
 ```
 TRANSFORM_IF_PRESENT:cs1,cs1Label = cs1 Transform
@@ -1088,17 +1090,17 @@ Will convert `test_key_1 = x, test_val_1 = y` into `testPrefix_x = y`, but won�
 **Value templating methods**
 
 There are two ways you can specify the value template: using a mustache template and a separate formatting method that uses `%s` to define where the name of the field will go. For example,  
-  
+
 `ZIP:test_key:test_val = {{sampleField}}_%s_testSuffix`  
-  
+
 Will convert `test_key_1 = x, test_val_1 = y, sampleField = something` into `something_x_testSuffix = y`.
 
 **r\| regex handling**
 
 Regex that starts with `r|` syntax has certain requirements that regular regex does not. Specifically, you must specify a capture group, `_$INDEX`, which is an index shared by the key field and the value field. You can specify `_$LIST_INDEX` to support lists, but they must always be an integer. These parsed fields are not added to the field dictionary. For example,  
-  
+
 `ZIP:r|^test_key(?P<_$INDEX>.*):r|^test_key(?P<_$INDEX>_?[^_]*)(_(?P<_$LIST_INDEX>.*)) = testRegexPrefix_`  
-  
+
 Will successfully convert `test_key_1 = x, test_val_1_1 = y, test_val_1_2 = z, test_val_1_4 = a` into `testRegexPrefix_x_1 = y, testRegexPrefix_x_2 = z, testRegexPrefix_x_4 = a`.
 
 Note that not every position needs to be defined.
@@ -1110,7 +1112,7 @@ Any capture groups from the key can also be passed into the templates of the val
 `ZIP:r|^events\.(?P<_$INDEX>(?P<_$event_count>\d++\.)?+parameters\\.(\d++\.)?+)name.*:r|^events\.(?P<_$INDEX>(\d++\.)?+parameters\\.(\d++\.)?+)[^n\.]([^\.]*+\.(?P<_$LIST_INDEX>.*+))?+ = events.{{_$event_count}}`
 
 Will convert `events.1.parameters.1.name = x, events.1.parameters.1.value = y into events.1.x = y`. This is useful for lists of elements that themselves are numbered.  
-  
+
 **Mixing and matching regex and non-regex formats**
 
 You can mix and match these formats. That is advisable because the non-regex format is more performant. The `_$INDEX` capture group in a regex match will need to match all characters after the non-regex field. The following example behaves just like the previous one:
@@ -1346,8 +1348,8 @@ Given an XML message that contains:
      <EventID>4769</EventID>
      <Version>0</Version>
 ...
-``` 
-  
+```
+
 This attribute statement will prevent the `Name` and the `Guid` attributes from being added to the field dictionary.
 
 `IGNORE_FIELDS_TAG = Provider`

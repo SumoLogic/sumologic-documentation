@@ -2,7 +2,7 @@
 id: osquery
 title: Osquery
 sidebar_label: Osquery
-description: tk
+description: Configure an HTTP source to ingest osquery log messages and send them to the osquery system parser.
 ---
 
 This section has instructions for collecting [osquery](https://osquery.io/) log messages  and sending them to Sumo Logic to be ingested by CSE.

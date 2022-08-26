@@ -1,8 +1,10 @@
 ---
 id: schema-attributes
+title: Schema Attributes
+description: Learn about CSE schema attributes, how values are set, and schema models they support.
 ---
 
-# Schema Attributes
+
 
 This topic defines the attributes in CSE Schema v3. 
 

@@ -1,8 +1,9 @@
 ---
 id: forward-cse-signals-to-sumo
+title: Forwarding CSE Signals to Sumo Logic
+description: Learn how to send raw messages, and Signals from CSE to the Sumo Logic platform.
 ---
 
-# Forward CSE Signals to Sumo Logic
 
 :::note
 The information in this topic applies to CSE users whose portal URL ends in `sumologic.com`. If your portal URL ends in `jask.ai`, see [Forward CSE Data to Sumo Logic](forward-cse-data-to-sumo.md).

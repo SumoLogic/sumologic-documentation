@@ -1,11 +1,13 @@
 ---
 id: parser-editor
+title: Parser Editor
+description: Learn how to use the Parser Editor to configure and test a custom parser.
 ---
 
-# Parser Editor
+
 
 This topic has instructions for using the Sumo Logic parser editor. You can use the editor to customize system parsers, and to create your own
-custom parsers. 
+custom parsers.
 
 For information about the Sumo Logic CSE parsing language, see [Parsing Language Reference Guide](parsing-language-reference-guide.md).
 
@@ -15,7 +17,7 @@ The instructions that follow assume that you have already written your parser co
 
 ## Check parser code for mapping hints
 
-Your parser code must contain statements that tell CSE what log mapping to use when creating Records from the field dictionary the parser creates for log messages.  
+Your parser code must contain statements that tell CSE what log mapping to use when creating Records from the field dictionary the parser creates for log messages. 
 
 Make sure your parser code includes `MAPPER` statements that specify the vendor, product, and the event ID that the log messages to be parsed contain, and a `FORMAT` statement that defines the message format.
 
@@ -36,10 +38,10 @@ Make sure your parser code includes `MAPPER` statements that specify the vendor,
 1. **Name**. Enter a distinctive name for the parser. Typically the parser name indicates the product or service whose messages it will parse.
 1. **Description**. (Optional) Describe the parser.
 1. **Parser Configuration**. Paste your parser code in this area.
-1. **Import Messages from**. In this step, you enter or fetch messages that you’ll use to test whether the parser parses the messages correctly. There are three options: 
+1. **Import Messages from**. In this step, you enter or fetch messages that you’ll use to test whether the parser parses the messages correctly. There are three options:
 
-   * **Sumo Log Search**. You can enter a log search query to obtain a selected number of log messages. Follow the instructions in [Using Sumo log search](#using-sumo-log-search) below. 
-   * **Saved Logs**. You can select a set of messages that you saved when previously using the **Paste Logs** option. Follow the instructions in [Using saved logs](#using-saved-logs) below. 
+   * **Sumo Log Search**. You can enter a log search query to obtain a selected number of log messages. Follow the instructions in [Using Sumo log search](#using-sumo-log-search) below.
+   * **Saved Logs**. You can select a set of messages that you saved when previously using the **Paste Logs** option. Follow the instructions in [Using saved logs](#using-saved-logs) below.
    * **Paste Logs**. You can paste logs directly into the **Log Messages** area. Follow the instructions in [Using paste logs](#using-paste-logs) below. 
 
 ### Parse Logs
@@ -47,8 +49,8 @@ Make sure your parser code includes `MAPPER` statements that specify the vendor,
 1. After you’ve obtained sample messages using one of the methods above, click **Parse Logs**.
 1. If all of the sample messages are parsed successfully, you’ll see results like those shown below in the **Parsed Messages** section of the editor. The **Event Details** section shows the key-value pairs that were parsed from the raw message. If your results indicate that there were warnings, unparsed, or dropped messages, see [Understanding parsing failures and warnings](#understanding-parsing-failures-and-warnings).
 
-    ![successsful-blurred.png](/img/cse/successsful-blurred.png) 
-    
+    ![successsful-blurred.png](/img/cse/successsful-blurred.png)
+
     :::note
     One of the two messages that was parsed was cut out of the screenshot to make the image shorter. 
     :::
@@ -82,10 +84,10 @@ To import messages by pasting them in the editor:
 
     ![paste-in-sample-logs.png](/img/cse/paste-in-sample-logs.png)
 1. **Raw Logs**. Paste your log messages into this area.
-1. **Breaker**. Use this option to tell the parser editor how to split the text you entered into messages. The options are: 
+1. **Breaker**. Use this option to tell the parser editor how to split the text you entered into messages. The options are:
 
-   * **Line \\n**. Choose this option to break the text at line breaks. 
-   * **JSON**. Choose this option for JSON messages. 
+   * **Line \\n**. Choose this option to break the text at line breaks.
+   * **JSON**. Choose this option for JSON messages.
    * **Custom Regex**. Choose this if you want to use a regex to define the split. The popup will refresh and prompt you for the regex.
 
 1. Click **Break Messages**.
@@ -121,11 +123,11 @@ messages were successfully parsed, and the counts of messages in the
 following categories:
 
 * Parsed messages with warnings—A warning or error occurred but the message was was partially parsed, depending on where the warning or error occurred. The most common cause of a warning is applying a [RENAME_FIELD](parsing-language-reference-guide.md) statement to a field that isn't present in the message.
-* Unparsed messages—An error occurred that caused parsing to fail. Potential causes of parsing failures include: 
+* Unparsed messages—An error occurred that caused parsing to fail. Potential causes of parsing failures include:
 
   * An unmatched regex.
-  * Invalid XML, when using XML parsing. 
-  * Invalid JSON parsing, when using JSON parsing. 
+  * Invalid XML, when using XML parsing.
+  * Invalid JSON parsing, when using JSON parsing.
   * Fewer CSV fields in the message than expected. 
   * Attempting a transform on a field that doesn't exist unless you use [TRANSFORM_FIELD_IF_PRESENT](parsing-language-reference-guide.md.
 

@@ -2,7 +2,7 @@
 id: aws-network-firewall
 title: AWS Network Firewall
 sidebar_label: AWS Network Firewall
-description: tk
+description: Configure collection and ingestion of AWS Network Firewall log messages from an S3 bucket to be parsed by CSE's AWS Network Firewall system parser.
 ---
 
 This section has instructions for collecting AWS Network Firewall log messages from AWS S3 and sending them to Sumo Logic to be ingested by CSE.

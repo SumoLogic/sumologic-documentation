@@ -1,8 +1,8 @@
 ---
 id: write-threshold-rule
+title: Write a Threshold Rule
+description: Learn how to write a Threshold rule.
 ---
-
-# Write a Threshold Rule
 
 This topic has information about the Threshold rules and how to create them in the CSE UI.
 
@@ -18,7 +18,7 @@ A Threshold rule fires when its rule expression is matched at least a certain nu
 1. On the **Create a Rule** page, click **Create** in the **Threshold** card. 
 
     ![select-rule-type.png](/img/cse/select-rule-type.png)
-1. In the rules editor: 
+1. In the rules editor:
 
    1. **Name**. Enter a name for the rule.
    1. **Enabled**. By default the rule will be enabled. It's good practice to use the slider to disable the rule so that it won’t be applied to incoming Records until you’ve tested it.       
@@ -27,7 +27,7 @@ A Threshold rule fires when its rule expression is matched at least a certain nu
 
 ## Configure “If Triggered” settings
 
-1. **When the expression**. Enter the rule expression, a boolean expression that when “true”, causes the rule to fire. 
+1. **When the expression**. Enter the rule expression, a boolean expression that when “true”, causes the rule to fire.
 
     :::note
     You can expand the field template guide, which contains a list of all the fields that CSE can normalize to v3 of the CSE Schema. Note that the existence of a field in the guide doesn't mean that your ingested Records necessary include that field.
@@ -42,11 +42,11 @@ A Threshold rule fires when its rule expression is matched at least a certain nu
 1. **group by one or more fields.** By default, a threshold rule implicitly groups by the entity field you’ll select below when configuring the **Then Create a Signal** options. You can select additional “group by” fields with the **matches grouped by** option, so that a Signal is only created if the count for the group is above the threshold count specified above. 
 
 ## Test your rule expression
-After creating a rule expression, you can test it against existing Records in CSE. 
+After creating a rule expression, you can test it against existing Records in CSE.
 
-1. Click **Test Rule** above the rule expression. 
+1. Click **Test Rule** above the rule expression.
 1. The **If Triggered** section expands, and CSE searches for Records that match the rule expression. If there are no matching Records, you'll see a **There aren't any matches for the expression** message.
-1. If no matches were returned, try changing the time range. 
+1. If no matches were returned, try changing the time range.
 
 :::note
 If you use the Test Rule feature on a rule that has one or more [Rule Tuning Expressions](rule-tuning-expressions.md), you can test it without the tuning expressions, or with selected tuning expressions.

@@ -1,14 +1,16 @@
 ---
 id: insight-enrichment-server
+title: Insight Enrichment Server
+description: You can use the CSE Insight Enrichment Server to automatically enrich CSE Insights.
 ---
 
-# Insight Enrichment Server
+
 
 The CSE Insight Enrichment Server is a component that automatically enriches CSE Insights.  
 
 :::note
 This topic describes v1.5.0 of the Insight Enrichment Server.
-::: 
+:::
 
 ## What the Insight Enrichment Server does
 
@@ -65,7 +67,7 @@ The following parameters control general server behaviors, as opposed to enrichm
 
 | Setting | Required? | Description |
 |--|--|--|
-| `URL` | yes | The URL of your CSE portal, for example, `https://XXXX.portal.jask.ai` or `https://XXXX.sumologic.com` | 
+| `URL` | yes | The URL of your CSE portal, for example, `https://XXXX.portal.jask.ai` or `https://XXXX.sumologic.com` |
 | `api_id` | yes | Specify this option if your CSE URL ends in sumologic.com. (It is not required if your URL ends in `jask.ai`). |
 | `api_key` | yes | You API key. For instructions on finding your API key, see CSE APIs.<br/>If your CSE URL ends in sumologic.com, enter your Sumo Logic Access Key. For more information, see Manage your access keys on Preferences page.<br/>If your CSE URL ends in `jask.ai`, copy and use the API Key from your user profile in the CSE portal.  To display your profile, click the profile icon in the upper right corner of the CSE portal. |
 | `log_level` | no | Log level the server should use. The options are:<br/>error. Only display error messages.<br/>info. Display informational messages. This is the recommended value.<br/>debug. Displays debug (or trace) data. Recommended only when debugging.<br/>Default: info |
@@ -87,7 +89,7 @@ Each enrichment should be given its own section in the configuration file. The 
 | `cache_time` | no | The length of time that the results of a specific enrichment for a specific entity will be cached and returned for other enrichment requests for that enrichment and entity.  This setting can be used to prevent an enrichment from running multiple times for the same entity. You can specify `cache_time` in hours (h), minutes (m), or seconds (s). If you specify a value without a unit, the value is treated as nanoseconds. Default: none |
 | `ip_range` | no | When `entity_type` is IP, you can specify a range of IP addresses that the enrichment will be limited to. Specify IP address ranges as a comma-separated list. For example: 192.168.1.1-192.168.1.255, 192.168.5.1-192.168.8.120 |
 | `command_exe` | yes | The executable to run when enriching the entity. |
-| `command_args` | yes | The arguments to pass to the executable specified by command_exe when performing the enrichment. Note the value `${IP}` will be replaced by the IP address for IP entities. The value `${HOSTNAME}` will be replaced with the  hostname for hostname entities. The value `${MAC}` will be replaced with the MAC address for MAC entities. The value `${USERNAME}` will be replaced with the username for username entities. `command_args` also supports an `${ENTITY}` replacement value that you can use for custom entity types and any of the built-in entity types. | 
+| `command_args` | yes | The arguments to pass to the executable specified by command_exe when performing the enrichment. Note the value `${IP}` will be replaced by the IP address for IP entities. The value `${HOSTNAME}` will be replaced with the  hostname for hostname entities. The value `${MAC}` will be replaced with the MAC address for MAC entities. The value `${USERNAME}` will be replaced with the username for username entities. `command_args` also supports an `${ENTITY}` replacement value that you can use for custom entity types and any of the built-in entity types. |
 | `command_timeout`  | no | A timeout value (in seconds) that will be enforced when running the command. |
 
 Default: none
@@ -199,7 +201,7 @@ This enrichment queries the CrowdStrike Device API for an IP address and return
 
 **Prerequisites**
 
-This enrichment requires the PSFalcon PowerShell module, which is available at [https://github.com/bk-cs/PSFalcon](https://github.com/CrowdStrike/psfalcon). To install it: 
+This enrichment requires the PSFalcon PowerShell module, which is available at [https://github.com/bk-cs/PSFalcon](https://github.com/CrowdStrike/psfalcon). To install it:
 
 ```
 moduleInstall-Module -Name PSFalcon
@@ -247,7 +249,7 @@ Invoke-RestMethod -Uri $uri -Method Get -Headers $headers
 ```
 
 **Enrichment configuration**  
-  
+
 ```
 [whois]
 enrichment_type = command
@@ -262,18 +264,18 @@ The SentinelOne enrichment queries IP addresses or hostnames using the Sentine
 
 1. In the PowerShell scripts below, replace “usea1-partners” with your portal.
 1. In the PowerShell scripts below, replace “\<\\>” with your SentinelOne API key
-1. Copy the PowerShell scripts to `c:\Windows\Jask\EnrichmentService\`. 
+1. Copy the PowerShell scripts to `c:\Windows\Jask\EnrichmentService\`.
 
     :::note
     Depending on your version of the enrichment server, the directory location may be different.
     :::
 
-1. Add the lines below to your `config.ini` file. 
+1. Add the lines below to your `config.ini` file.
 
     :::note
     The path that follows command_args -file must be the directory where you put the PowerShell scripts. Edit the path as necessary.
     :::
-    
+
     ```
     [s1ip]
     enrichment_type = command

@@ -1,8 +1,8 @@
 ---
 id: ingest-zeek-logs
+title: Ingest Zeek Logs
+description: Learn how to collect Zeek (Bro) logs and ingest them to CSE.
 ---
-
-# Ingest Zeek Logs
 
 This topic has instructions for ingesting Zeek logs into CSE. 
 
@@ -22,7 +22,7 @@ The Network Sensor extracts files observed over cleartext protocols that match s
 
 :::note
 YARA [file analysis](../cse-rules/import-yara-rules.md) is supported only for files extracted by the Network Sensor. If you use
-your own Zeek deployment and ingest logs using a Sumo Logic Source you can't also upload extracted files.  
+your own Zeek deployment and ingest logs using a Sumo Logic Source you can't also upload extracted files. 
 :::
 
 ### Filtering Zeek logs
@@ -31,18 +31,18 @@ This section describes two methods you can use to filter the logs that the Netwo
 
 * You can configure a Berkeley Packet Filter (BPF) filter using the [filter](network-sensor-deployment-guide.md) parameter in Network Sensor’s configuration file, `trident-sensor.cfg`. This is the most efficient filtering mechanism as it is performed before Network Sensor processing.
 
-    The value of the `filter` parameter is an expression that begins with `not`. This example expression ensures the that the Network Sensor won't process any traffic involving host `a.b.c.com` or host `d.e.f.com`: 
-    
-    `not ( host a.b.c.com ) and not ( host d.e.f.com )` 
-    
+    The value of the `filter` parameter is an expression that begins with `not`. This example expression ensures the that the Network Sensor won't process any traffic involving host `a.b.c.com` or host `d.e.f.com`:
+
+    `not ( host a.b.c.com ) and not ( host d.e.f.com )`
+
     For information about BPF filter syntax, see https://biot.com/capstats/bpf.html.  
      
-* You can also filter by Zeek log type using the [skipped_log_types](network-sensor-deployment-guide.md) property in `trident-sensor.cfg`. The default value of `skipped_log_types` is: 
+* You can also filter by Zeek log type using the [skipped_log_types](network-sensor-deployment-guide.md) property in `trident-sensor.cfg`. The default value of `skipped_log_types` is:
 
    ```
    dpd,weird,syslog,pe,tunnel,communication,conn-summary,known_hosts,software,stdout.stderr,loaded_scripts,ntp
    ```
-    
+
     You can add additional Zeek log types to the list to exclude them.
 
 The BPF filter is applied before `skipped_log_types`. So, given the example BPF filter above, if you add `dns` to the `skipped_log_types` value, you won't ingest logs related to traffic involving hosts `a.b.c.com` or `d.e.f.com`, and you won't ingest DNS data.
@@ -85,12 +85,12 @@ After installing the `json-streaming-logs` package, follow these instructions to
 1. On the **Sumo Logic Ingest Mappings** page, click **Create**.
 
     ![ingest-mappings.png](/img/cse/ingest-mappings.png)
-1. On the **Create Sumo Logic Mapping** page: 
+1. On the **Create Sumo Logic Mapping** page:
 
-   1. **Source Category**. Enter the Source Category value you assigned to the Source you configured above in [Configure a Sumo Logic Source](#configure-a-sumo-logic-source). 
-   1. **Format**. Choose Bro/Zeek JSON. 
-   1. **Event ID**. Enter *\_path*. 
-   1. **Enabled**. Use the slider to enable the mapping if you’re ready to receive Zeek logs. 
+   1. **Source Category**. Enter the Source Category value you assigned to the Source you configured above in [Configure a Sumo Logic Source](#configure-a-sumo-logic-source).
+   1. **Format**. Choose Bro/Zeek JSON.
+   1. **Event ID**. Enter *\_path*.
+   1. **Enabled**. Use the slider to enable the mapping if you’re ready to receive Zeek logs.
    1. Click **Create**.    
 
     ![create-mapping.png](/img/cse/create-mapping.png)
@@ -118,19 +118,18 @@ following fields listed in the table below.
 | `_siemVendor`  | `“bro” as _siemVendor`                                                                                 |
 | `_siemProduct` | `“bro” as _siemProduct`                                                                                |
 
-  
+
 Perform these steps for each of the FERs.
 
 1. In the Sumo Logic UI, go to **Manage Data \> Logs \> Field Extraction Rules**.
 1. Click **Add Rule**.
-1. In the **Add Field Extraction Rule** pane: 
+1. In the **Add Field Extraction Rule** pane:
 
-   1. **Rule Name**. Enter a meaningful name for the rule. 
-   1. **Applied At**. Click Ingest Time.  
+   1. **Rule Name**. Enter a meaningful name for the rule.
+   1. **Applied At**. Click Ingest Time. 
    1. **Scope**. Click **Specific Data**.
-   1. **Parse Expression**. Enter the parse expression shown in the table above for the field the rule will extract. 
+   1. **Parse Expression**. Enter the parse expression shown in the table above for the field the rule will extract.
 
 1. Click **Save**.     
 
     ![example-fer.png](/img/cse/example-fer.png)
-
