@@ -31,7 +31,7 @@ const features = [
     description: (<Translate
         id="landing.feature.dashboards.desc"
         description="Dashboards description">
-          Create visualizations, notifications, and alerts for your applications.
+          Create visualizations, monitors, and alerts for your apps.
         </Translate>),
     link: 'docs/dashboards-new',
   },
@@ -87,7 +87,7 @@ const features = [
     description: (<Translate
       id="landing.feature.apm.desc"
       description="APM description">
-        Monitor user activity, traces data, and service maps to investigate usage and issues.
+        Monitor and analyze metrics for visibility into infrastructure health and app performance.
       </Translate>),
     link: 'docs/apm',
   },
@@ -101,7 +101,7 @@ const features = [
     description: (<Translate
       id="landing.feature.obserbility.desc"
       description="Observability description">
-        Deploy and configure solutions to monitor applications and analyze root causes.
+        Deploy and configure solutions to monitor apps and analyze root causes.
       </Translate>),
     link: 'docs/observability',
   },
@@ -115,9 +115,23 @@ const features = [
     description: (<Translate
       id="landing.feature.integrations.desc"
       description="Integrations description">
-        Find, install, and configure integrations with third party applications and services.
+        Find, install, and configure integrations with third-party apps and services.
       </Translate>),
     link: 'docs/integrations',
+  },
+  {
+    title: translate({
+      id: 'landing.feature.integrations.title',
+      message: 'API',
+      description: 'Title for API',
+    }),
+    imageUrl: 'img/icons/cloud/api2.png',
+    description: (<Translate
+      id="landing.feature.api.desc"
+      description="API description">
+        Use our APIs to access resources and data programmatically from third-party scripts and apps.
+      </Translate>),
+    link: 'docs/api',
   },
 ];
 

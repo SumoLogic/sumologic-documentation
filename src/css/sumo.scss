@@ -479,13 +479,15 @@ html[data-theme='dark'] .navbar-item-github:before {
 .navbar-trial {
   background-color: #06bcee;
   color: white;
-  padding: 8px 25px;
-  font-weight: 600;
+  padding: 6px 12px;
+  font-weight: 300;
+  font-size: 14px;
   text-decoration: none;
   margin-right: 10px;
   border: 1px solid #3578e5;
   cursor: pointer;
   margin-right: 10px;
+  border-radius: 6px;
 }
 
 .navbar-trial:hover {

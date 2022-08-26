@@ -2268,7 +2268,7 @@ module.exports = {
     {
       type: 'category',
       label: 'Contribution Guide',
-      collapsible: true,
+      collapsible: false,
       collapsed: false,
       link: {type: 'doc', id: 'contribution/index'},
       items: [
