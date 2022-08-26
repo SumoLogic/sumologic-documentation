@@ -1,12 +1,12 @@
 ---
 id: normalized-authentication-rules
 title: Normalized Authentication Rules
+sidebar_label: Normalized Authentication Rules
 description: CSE's Normalized Authentication Rules detect activities that compromise accounts using authentication logs from any data source that CSE parsers and mappings support.
 ---
 
 
-*Normalized Authentication Rules* detect activities that compromise accounts using authentication logs from any data source that CSE parsers
-and mappings support. New authentication data sources can immediately take advantage of this rule logic without the need to customize for the
+*Normalized Authentication Rules* detect activities that compromise accounts using authentication logs from any data source that CSE parsers and mappings support. New authentication data sources can immediately take advantage of this rule logic without the need to customize for the
 specific product or vendor.  
 
 ## Requirements and prerequisites

@@ -1,6 +1,7 @@
 ---
 id: configure-custom-insight
 title: Configure a Custom Insight
+sidebar_label: Custom Insights
 description: Learn how to set up Custom Insight configurations, which you can use to automatically generate Insights on some basis other than Entity Activity Scores.
 ---
 

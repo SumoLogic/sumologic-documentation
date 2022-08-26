@@ -1,6 +1,7 @@
 ---
 id: normalized-threat-rules
 title: Normalized Threat Rules
+sidebar_label: Normalized Threat Rules
 description: CSE's built-in threat rules pass alerts from a security product to the Signal generation process, and are normalized work across multiple security products.
 ---
 

@@ -1,6 +1,7 @@
 ---
 id: username-and-hostname-normalization
 title: Username and Hostname Normalization
+sidebar_label: Username and Hostname Normalization
 description: Learn about how CSE normalizes usernames and hostnames during mapping and parsing.
 ---
 

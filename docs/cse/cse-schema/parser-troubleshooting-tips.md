@@ -1,6 +1,7 @@
 ---
 id: parser-troubleshooting-tips
 title: Parser Troubleshooting Tips
+sidebar_label: Parser Troubleshooting
 description: Learn how to troubleshoot problems with parsers.
 ---
 

@@ -1,6 +1,7 @@
 ---
 id: write-chain-rule
 title: Write a Chain Rule
+sidebar_label: Chain Rule
 description: Learn how to write a Chain rule.
 ---
 

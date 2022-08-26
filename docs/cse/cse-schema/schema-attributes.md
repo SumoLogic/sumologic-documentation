@@ -1,6 +1,7 @@
 ---
 id: schema-attributes
 title: Schema Attributes
+sidebar_label: Schema Attributes
 description: Learn about CSE schema attributes, how values are set, and schema models they support.
 ---
 
