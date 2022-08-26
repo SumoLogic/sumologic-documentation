@@ -1,8 +1,8 @@
 ---
 id: cse-built-in-rules
 title: CSE Built-In Rules
-sidebar_label: CSE Built-In Rules 
-description: tk
+sidebar_label: Built-In Rules
+description: See a list and descriptions of CSE's built-in rules.
 ---
 
 <!--

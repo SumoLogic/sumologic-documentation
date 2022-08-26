@@ -2,7 +2,7 @@
 id: before-writing-custom-rule
 title: Before You Write a Custom Rule
 sidebar_label: Before You Write a Custom Rule
-description: tk
+description: Learn how to plan a custom rule and prototype rule expressions in the Sumo Logic platform.
 ---
 
 

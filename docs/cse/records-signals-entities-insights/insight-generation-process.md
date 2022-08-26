@@ -1,8 +1,9 @@
 ---
 id: insight-generation-process
+title: Insight Generation Process
+description: Learn how CSE correlates Signals by entity to create Insights.
 ---
 
-# Insight Generation Process
 
 This page explains CSE's Insight generation process. 
 
@@ -65,15 +66,15 @@ An entity’s Activity Score is the sum of the severities of the unique Signals 
 Here are a couple practical examples:
 
 * If the `RDP Brute Force Attempt` rule fires 10 times, the Signals all have the same name, and are not unique. So, the severity of just one of the 10 Signals would be included in the entity’s Activity Score.
-* If the `RDP Brute Force Attempt {{threat_name}}` rule fires three times, where threat name is “bad”, “bad” and “worse”, two of the three Signals are unique: 
+* If the `RDP Brute Force Attempt {{threat_name}}` rule fires three times, where threat name is “bad”, “bad” and “worse”, two of the three Signals are unique:
 
-  * `RDP Brute Force Attempt bad` 
-  * `RDP Brute Force Attempt bad` 
+  * `RDP Brute Force Attempt bad`
+  * `RDP Brute Force Attempt bad`
   * `RDP Brute Force Attempt worse`
 
 The severities of the `RDP Brute Force Attempt bad` and the `RDP Brute Force Attempt worse` Signals would be included in the entity’s Activity Score.
 
-By default, when an entity’s Activity Score exceeds the threshold of 12, CSE generates an Insight on the entity. Like the detection period, you can [configure a different Activity Score threshold value](set-insight-generation-window-threshold.md) for Insight generation. When CSE creates an Insight on an Entity, it resets the Entity’s Activity Score to 0. 
+By default, when an entity’s Activity Score exceeds the threshold of 12, CSE generates an Insight on the entity. Like the detection period, you can [configure a different Activity Score threshold value](set-insight-generation-window-threshold.md) for Insight generation. When CSE creates an Insight on an Entity, it resets the Entity’s Activity Score to 0.
 
 After CSE fires a particular Signal on a particular Entity, it suppresses Signals for that Signal-Entity combination for 12 to 24 hours. For more information, see [Redundant Signal suppression](set-insight-generation-window-threshold.md), below. 
 
@@ -90,15 +91,15 @@ The severity of each Signal is also shown. CSE generated an Insight for entity �
 Under certain circumstances, CSE suppresses Signals to preventgeneration of multiple, virtually identical Insights. A few unique Signals firing numerous times for the same entity in a short period of time could cause the entity’s Activity Score to climb, resulting in an Insight. At that point, the Entity’s Activity score is reset, and the cycle could repeat, leading to several Insights in succession on the same entity that contain a very similar or identical set of unique Signals. 
 
 This makes Insight triage less than ideal for the analyst since they're getting multiple Insights for the same sets of Signals. CSE prevents this by suppressing Signals that have the same name and are on the same Entity during a 12 hour time window, or 24 hours if Signals for the Signal-Entity combination are firing continuously.   
-  
+
 **Example 1**
 
 If Signal A fires on Entity X at hour 0 and continues to fire once every 30 minutes for 24 hours, the Signals that fired after the first one are suppressed. This prevents those subsequent Signals from being analyzed by the Insight engine.  
-  
+
 **Example 2**
 
 Signal B fires on Entity Y fires at hour 0, and doesn’t fire again until hour 13. The Signal that fired at hour 13 will not be suppressed, and will be analyzed by the Insight engine.  
-  
+
 Signals that are suppressed appear in the CSE UI as “suppressed”. Suppressed Signals are displayed in the CSE UI for 90 days.
 
 :::note

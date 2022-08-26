@@ -15,9 +15,9 @@
     "message": "Training & Certifications",
     "description": "The label of footer link with label=Training & Certifications linking to https://www.sumologic.com/learn/training/"
   },
-  "link.item.label.Documentation Contributions": {
-    "message": "Documentation Contributions",
-    "description": "The label of footer link with label=Documentation Contributions linking to /docs/contribution"
+  "link.item.label.Doc Contributions": {
+    "message": "Doc Contributions",
+    "description": "The label of footer link with label=Doc Contributions linking to /docs/contribution"
   },
   "link.item.label.Help Center": {
     "message": "Help Center",

@@ -2,7 +2,7 @@
 id: g-suite-alert-center
 title: G Suite Alert Center
 sidebar_label: G Suite Alert Center
-description: tk
+description: Collect log messages from G Suite Alert Center to be parsed by CSE's system parser for G Suite Alert Center.
 ---
 
 ## Step 1: Configure collection

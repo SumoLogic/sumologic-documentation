@@ -1,8 +1,10 @@
 ---
 id: record-processing-pipeline
+title: Record Processing Pipeline
+description: Learn how CSE transforms incoming raw messages into Records.
 ---
 
-# Record Processing Pipeline
+
 
 This topic describes how CSE transforms incoming raw messages into Records. For each message received, CSE creates a Record, or in rare cases, multiple Records. 
 

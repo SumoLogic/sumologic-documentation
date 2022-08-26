@@ -1,7 +1,7 @@
 ---
 id: translations
 title: Translating Documentation
-sidebar_label: Translating Documentation
+sidebar_label: Translating Docs
 description: Learn about our doc translation process.
 ---
 
