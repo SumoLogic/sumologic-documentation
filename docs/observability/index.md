@@ -1,7 +1,7 @@
 ---
 slug: /observability
-title: Observability Solution
-description: The Observabilty solution provides tools that work together to ensure you are able to efficiently monitor, troubleshoot, and diagnose issues across a variety of environments.
+title: Sumo Logic Observability
+description: The Sumo Logic Observability solution provides tools that work together to ensure you are able to efficiently monitor, troubleshoot, and diagnose issues across a variety of environments.
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

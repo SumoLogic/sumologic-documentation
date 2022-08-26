@@ -2,7 +2,7 @@
 id: corelight-zeek
 title: Corelight Zeek
 sidebar_label: Corelight Zeek
-description: tk
+description: Configure a syslog source to ingest Corelight Zeek log messages and send them to the CSE Corelight log mapper.
 ---
 
 This section has instructions for collecting Corelight Zeek log messages and sending them to Sumo Logic to be ingested by CSE.

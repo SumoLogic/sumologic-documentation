@@ -2,7 +2,7 @@
 id: symantec-proxy-secure-gateway
 title: Symantec Proxy Secure Gateway
 sidebar_label: Symantec Proxy Secure Gateway
-description: tk
+description: Configure a syslog source to ingest Symantec Proxy Secure Gateway log messages to be parsed by CSE’s system parser for Symantec Proxy Secure Gateway.
 ---
 
 

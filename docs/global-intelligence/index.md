@@ -7,7 +7,7 @@ description: This category is about Global Intelligence for Sumo Logic apps.
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/icons/business/powering-global-enterprise.png')} alt="k8s logo" width="50"/>  
+<img src={useBaseUrl('img/icons/cloud/global-intelligence.png')} alt="logo" width="75"/>  
 
 This category is about Global Intelligence for Sumo Logic apps.
 

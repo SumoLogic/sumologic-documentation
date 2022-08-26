@@ -2,7 +2,7 @@
 id: manage-custom-insight-resolutions
 title: Manage Custom Insight Resolutions
 sidebar_label: Manage Custom Insight Resolutions
-description: tk
+description: Learn how to create custom sub-resolutions that you can select when closing an Insight.
 ---
 
 This topic has information about custom Insight resolutions and how to create and manage them.

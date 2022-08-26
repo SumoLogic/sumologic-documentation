@@ -1,8 +1,9 @@
 ---
 id: forward-cse-data-to-sumo
+title: Forwarding CSE Data to Sumo Logic
+description: Learn how to send Records and Signals from CSE to the Sumo Logic platform.
 ---
 
-# Forward CSE Data to Sumo Logic Platform
 
 :::note
 The information in this topic applies to CSE users whose portal URL ends in `jask.ai`. If your portal URL ends in `sumologic.com`, see [Forward CSE Signals to Sumo Logic](forward-cse-signals-to-sumo.md).
@@ -51,9 +52,9 @@ Perform these steps for each CSE data set you want to send to Sumo Logic,
 
     [create-index-configuration.png](/img/cse/create-index-configuration.png)
 1. **Name**. This will be used in the `_sourceCategory` metadata field that Sumo Logic will apply to the data you send from CSE to Sumo Logic.
-1. **Data Stream**. Select one of the following options: 
+1. **Data Stream**. Select one of the following options:
 
-   * **Record**. CSE will send Records to the Sumo Logic platform. 
+   * **Record**. CSE will send Records to the Sumo Logic platform.
    * **Signals**. CSE will send Signals to the Sumo Logic platform.
 
 1. **Index URL**. Enter the URL for the HTTP Source you created above.

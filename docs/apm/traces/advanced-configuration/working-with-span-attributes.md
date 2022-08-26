@@ -9,7 +9,7 @@ You can add, delete, hash, or modify span attributes (metadata tags) on Collecto
 
 ## Attach logs to spans
 
-You can collect logs with traces attached to them by [inserting spanid/traceid from span context when writing to logs](../get-started-transaction-tracing/instrument-application-opentelemetry/java-opentelemetry-auto-instrumentation/traceid-spanid-injection-into-logs-configuration.md). If that's not possible, you can assign any of the following fields:
+You can collect logs with traces attached to them by [inserting spanid/traceid from span context when writing to logs](../get-started-transaction-tracing/opentelemetry-instrumentation/java/traceid-spanid-injection-into-logs-configuration.md). If that's not possible, you can assign any of the following fields:
 
  * error
  * error.kind
@@ -32,4 +32,4 @@ Refer to the [OpenTelemetry collector attributes processor documentation](https:
 
 You can insert dynamically-created custom tags in your code by calling the appropriate functions of OpenTelemetry auto-instrumentation.
 
-See how to pass [custom tags](../get-started-transaction-tracing/instrument-application-opentelemetry/java-opentelemetry-auto-instrumentation/custom-tags-configuration.md) for Java auto-instrumentation.
+See how to pass [custom tags](../get-started-transaction-tracing/opentelemetry-instrumentation/java/custom-tags-configuration.md) for Java auto-instrumentation.
