@@ -1,6 +1,7 @@
 ---
 id: create-structured-log-mapping
 title: Create a Structured Log Mapping
+sidebar_label: Log Mapping
 description: Learn how to create a log mapping for structured messages.
 ---
 
@@ -57,13 +58,18 @@ You might not map all message fields to schema attributes. Unmapped message fiel
 
 The sections that follow have instructions for setting up each type of mapping:
 
-* [constant mapping](#constant-mapping)
-* [extracted mapping](#extracted-mapping)
-* [format mapping](#format-mapping)
-* [lookup mapping](#lookup-mapping)
-* [split mapping](#split-mapping)
-* [standard mapping](#standard-mapping)
-* [time mapping](#time-mapping)
+- [About the log mapping process](#about-the-log-mapping-process)
+- [Step 1: Choose mapping type and name the mapping](#step-1-choose-mapping-type-and-name-the-mapping)
+- [Step 2: Enter “If Input Matches” values](#step-2-enter-if-input-matches-values)
+- [Step 3: Enter “Then Create Record” values](#step-3-enter-then-create-record-values)
+- [Step 4: Specify field mapping](#step-4-specify-field-mapping)
+  - [constant mapping](#constant-mapping)
+  - [extracted mapping](#extracted-mapping)
+  - [format mapping](#format-mapping)
+  - [lookup mapping](#lookup-mapping)
+  - [split mapping](#split-mapping)
+  - [standard mapping](#standard-mapping)
+  - [time mapping](#time-mapping)
 
 If you are creating a mapping for a source whose messages you want to be processed by CSE's [normalized threat rules](../cse-rules/normalized-threat-rules.md), see [Field Mapping for Security Event Sources](field-mapping-security-event-sources.md).
 

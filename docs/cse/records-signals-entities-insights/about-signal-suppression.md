@@ -1,6 +1,7 @@
 ---
 id: about-signal-suppression
 title: About Signal Suppression
+sidebar_label: Signal Suppression
 description: Learn about the ways that CSE Signals can be suppressed, and so excluded from the Insight generation process.
 ---
 

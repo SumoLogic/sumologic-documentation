@@ -1,6 +1,7 @@
 ---
 id: windows-sensor-configuration-settings
 title: Windows Sensor Configuration Settings
+sidebar_label: Windows Sensor Configuration 
 description: Learn about the configuration options in the Windows Sensor's settings.conf file.
 ---
 

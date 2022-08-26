@@ -1,6 +1,7 @@
 ---
 id: search-cse-records-in-sumo
 title: Searching for CSE Records in Sumo Logic
+sidebar_label: Search Sumo Logic for CSE Records
 description: Learn how to search the Sumo Logic platform for CSE Records.
 ---
 

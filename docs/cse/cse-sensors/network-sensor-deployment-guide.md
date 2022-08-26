@@ -1,6 +1,7 @@
 ---
 id: network-sensor-deployment-guide
 title: Network Sensor Deployment Guide
+sidebar_label: Netwrok Sensor Deployment
 description: Learn about Network Sensor deployment planning, standard sensor placement, sensor requirements, installation, general configuration, and helpful commands.
 ---
 

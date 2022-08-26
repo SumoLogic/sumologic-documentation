@@ -1,6 +1,7 @@
 ---
 id: insight-generation-process
 title: Insight Generation Process
+sidebar_label: Insight Generation
 description: Learn how CSE correlates Signals by entity to create Insights.
 ---
 

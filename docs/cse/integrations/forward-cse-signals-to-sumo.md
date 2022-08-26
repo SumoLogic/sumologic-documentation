@@ -1,6 +1,7 @@
 ---
 id: forward-cse-signals-to-sumo
 title: Forwarding CSE Signals to Sumo Logic
+sidebar_label: Send CSE Signals to Sumo Logic
 description: Learn how to send raw messages, and Signals from CSE to the Sumo Logic platform.
 ---
 

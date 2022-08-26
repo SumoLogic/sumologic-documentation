@@ -1,6 +1,7 @@
 ---
 id: write-aggregation-rule
 title: Write an Aggregation Rule
+sidebar_label: Aggregation Rule
 description: Learn how to write an Aggregation rule.
 ---
 

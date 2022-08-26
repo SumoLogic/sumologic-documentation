@@ -1,6 +1,7 @@
 ---
 id: forward-cse-data-to-sumo
 title: Forwarding CSE Data to Sumo Logic
+sidebar_label: Send CSE Data to Sumo Logic
 description: Learn how to send Records and Signals from CSE to the Sumo Logic platform.
 ---
 

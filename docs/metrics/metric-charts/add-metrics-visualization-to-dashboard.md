@@ -1,7 +1,7 @@
 ---
 id: add-metrics-visualization-to-dashboard
-title: Add a Metrics Visualization to a Dashboard
-sidebar_label: Add a Metrics Visualization to a Dashboard
+title: Add a Metrics Chart to a Dashboard
+sidebar_label: Add a Chart to a Dashboard
 description: To save a metrics visualization, you must add the visualization as a new Panel in a Dashboard.
 ---
 

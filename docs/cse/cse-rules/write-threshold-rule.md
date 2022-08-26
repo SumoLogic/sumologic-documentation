@@ -1,6 +1,7 @@
 ---
 id: write-threshold-rule
 title: Write a Threshold Rule
+sidebar_label: Threshold Rule
 description: Learn how to write a Threshold rule.
 ---
 

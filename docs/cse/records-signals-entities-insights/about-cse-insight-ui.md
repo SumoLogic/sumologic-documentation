@@ -1,6 +1,7 @@
 ---
 id: about-cse-insight-ui
 title: About the CSE Insight UI
+sidebar_label: CSE Insight UI
 description: Learn about the contents of the Insights UI in CSE.
 ---
 

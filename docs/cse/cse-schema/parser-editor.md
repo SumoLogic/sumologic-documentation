@@ -1,6 +1,7 @@
 ---
 id: parser-editor
 title: Parser Editor
+sidebar_label: Parser Editor
 description: Learn how to use the Parser Editor to configure and test a custom parser.
 ---
 
