@@ -1,7 +1,7 @@
 ---
-id: net-traceid-spanid-injection-into-logs
+id: traceid-spanid-injection-into-logs
 title: .NET TraceId and SpanId injection into logs configuration
-sidebar_label: .NET TraceId and SpanId injection into logs
+sidebar_label: TraceId and SpanId injection into logs
 description: Learn how to configure traceId, spanId, and trace flags data injection into user logs in .NET applications.
 ---
 

@@ -1,8 +1,7 @@
 ---
-id: data-forwarding-installed-collectors
+id: installed-collectors
+title: Forward Data from an Installed Collector
 ---
-
-# Forward Data from an Installed Collector
 
 You can set up one or more data forwarding destinations and configure an Installed Collector to send raw log data from specified Sources to those destinations. The Collector will send the raw data to external destinations at the same time it sends data to Sumo.
 

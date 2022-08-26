@@ -1,7 +1,7 @@
 ---
-id: python-opentelemetry-auto-instrumentation
+id: python
 title: Python OpenTelemetry auto-instrumentation
-sidebar_label: Python OpenTelemetry auto-instrumentation
+sidebar_label: Python
 description: Learn how to configure OpenTelemetry Python instrumentation to capture data from the python written code applications.
 ---
 

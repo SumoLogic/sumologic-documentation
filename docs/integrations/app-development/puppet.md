@@ -171,7 +171,7 @@ Follow the instructions in [Access Keys](/docs/manage/security/access-keys) to c
 
 ### Step 2: Install collector on Puppet Master
 
-In this step you install a collector on the Puppet Master host. Follow the instructions on [Install a Collector on Linux](/docs/send-data/installed-collectors/install-collector-linux).
+In this step you install a collector on the Puppet Master host. Follow the instructions on [Install a Collector on Linux](/docs/send-data/installed-collectors/linux).
 
 Puppet Master only runs on Linux.
 

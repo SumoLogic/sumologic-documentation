@@ -1,8 +1,8 @@
 ---
 slug: /manage/collection/processing-rules
+title: Processing Rules
 ---
 
-# Processing Rules
 
 Processing rules filter and can forward data sent to Sumo Logic from a Source. The rules affect only the data sent to Sumo Logic; logs and metrics on your end remain intact and unchanged. Data filtered by a Collector using Processing Rules does not count towards your daily data volume quota.
 
@@ -32,9 +32,9 @@ Filtered data is fed to the Collector, but does not upload to the Sumo Logic clo
 ## How do Processing Rules Work Together?
 
 You can create one or more processing rules for a Source, combining the different types of filters to generate the exact data set you want sent to Sumo Logic.  
-  
+
 When a Source has multiple rules they are processed in the following order: includes, excludes, masks, then forwarders.   
-  
+
 Exclude rules take priority over include rules. Include rules are processed first, however, if an exclude rule matches data that matched the include rule filter, the data is excluded.
 
 import DocCardList from '@theme/DocCardList';

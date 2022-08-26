@@ -1,7 +1,7 @@
 ---
-id: ruby-opentelemetry-auto-instrumentation
+id: ruby
 title: Ruby OpenTelemetry auto-instrumentation
-sidebar_label: Ruby OpenTelemetry auto-instrumentation
+sidebar_label: Ruby
 description: Learn how to collect telemetry data from applications written in Ruby.
 ---
 
@@ -17,14 +17,14 @@ Installation of the packages listed below is required to apply the instrumentati
 
 * **gem** command
 
-   ```
+   ```bash
    $ gem install opentelemetry-sdk -v 1.0.2
    $ gem install opentelemetry-exporter-otlp -v 0.21.2
    ```
 
 * **bundler**, the packages have to be inserted into your **gemfile** and **bundle install** command has to be run
 
-   ```
+   ```bash
    gem 'opentelemetry-sdk', '1.0.2'
    gem 'opentelemetry-exporter-otlp', '0.21.2'
    ```
@@ -35,14 +35,14 @@ There are two solutions:
 
 * Installation of the specific packages - for example, if the application is a **Sinatra** HTTP server which is also performing some HTTP requests using **Net HTTP** package. To instrument all the incoming and outgoing requests corresponding instrumented packages have to be installed:
 
-   ```
+   ```bash
    $ gem install opentelemetry-instrumentation-sinatra -v 0.19.3
    $ gem install opentelemetry-instrumentation-net_http -v 0.19.4
    ```
 
 * Installation of the “all in one” package - installing this package will install all available instrumentation packages:
 
-   ```
+   ```bash
    $ gem install opentelemetry-instrumentation-all -v 0.23.0
    ```
 
@@ -52,7 +52,7 @@ To enable instrumentation in the application and export the telemetry data it is
 
 * Specific package instrumentation - in this example only Sinatra and Net HTTP libraries will be instrumented.
 
-   ```
+   ```bash
    require 'opentelemetry/sdk'
    Bundler.require
    OpenTelemetry::SDK.configure do |c|
@@ -63,7 +63,7 @@ To enable instrumentation in the application and export the telemetry data it is
 
 * "All in one" instrumentation - this configuration will instrument all available package:
 
-   ```
+   ```bash
    require 'opentelemetry/sdk'
    Bundler.require
    OpenTelemetry::SDK.configure do |c|
@@ -77,13 +77,13 @@ The final step is to configure the exporter host and service name. This can be d
 
 * Environment variable sets the exporter to OTLP:
 
-   ```
+   ```bash
    OTEL_EXPORTER=otlp
    ```
 
 * Environment variable configures the endpoint where telemetry data will be sent:
 
-   ```
+   ```bash
    OTEL_EXPORTER_OTLP_ENDPOINT=http://collection-sumologic-otelcol.sumologic:55681
    ```
 
@@ -91,13 +91,13 @@ The final step is to configure the exporter host and service name. This can be d
 
 * Configure the service name. Ensure the string value represents its business logic, such as `FinanceServiceCall`.  This will appear as a tracing service name in Sumo Logic.
 
-   ```
+   ```bash
    OTEL_SERVICE_NAME=SERVICE_NAME
    ```
 
 * Configure the application name. This will appear as a tracing application name in Sumo Logic. Additional attributes can be added here as comma separated key=value pairs:
 
-   ```
+   ```bash
    OTEL_RESOURCE_ATTRIBUTES=application=APPLICATION_NAME
    ```
 
@@ -107,7 +107,7 @@ Additional information like TraceID, SpanID or operation data in the application
 
 Please see example code:
 
-```
+```bash
 logger = ::Logger.new(STDOUT)
 logger.formatter = proc do |severity, time, progname, msg|
   span_id = OpenTelemetry::Trace.current_span.context.hex_span_id
@@ -125,6 +125,6 @@ set :logger, logger
 
 Example output:
 
-```
+```json
 "2022-02-28 13:01:25 +0000, INFO: {:remote_ip\>\"127.0.0.6\", :request_path\>\"/get_beans\", :query_string\>\"\", :request_method\>\"POST\", :execution_time_sec\>0.00033453479409217834, :response_status_code\>200} - trace_id=cdd460d538917f82560cbb91373a05a6 - span_id=12a09921c89fd6e9 - operation=POST /get_beans
 ```

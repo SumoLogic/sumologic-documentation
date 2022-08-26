@@ -1,8 +1,8 @@
 ---
 slug: /manage/ingestion-and-volume/data-volume-index
+title: Data Volume Index
 ---
 
-# Data Volume Index
 
 The Data Volume Index gives you visibility into how much data you are sending to Sumo Logic, allowing you to proactively manage your systems’ behavior and to fine tune your data ingest with respect to the data plan for your Sumo Logic subscription.
 
@@ -13,7 +13,7 @@ The Data Volume Index provides data for logs and metrics:
 
 The Data Volume Index must be manually enabled by an administrator. The index then begins populating. A set of messages within the index is created every five minutes. The data does not backfill and is provided to the index only when the option is enabled.
 
-After the Data Volume Index is enabled, you can access it using this search query:  
+After the Data Volume Index is enabled, you can access it using this search query: 
 
 ```sql
 _index=sumologic_volume

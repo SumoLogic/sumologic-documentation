@@ -1,7 +1,7 @@
 ---
-id: aws-lambda-python-function-instrumentation
+id: aws-lambda-python
 title: AWS Lambda - Python function instrumentation with Sumo Logic tracing
-sidebar_label: AWS Lambda - Python function instrumentation
+sidebar_label: AWS Lambda - Python
 description: Learn how to install and configure OpenTelemetry distributed tracing for AWS Lambda functions written in Python and send data to Sumo Logic.
 ---
 

@@ -140,7 +140,7 @@ To confirm that the log files are being created, do the following:
 
 ### Step 1: Configure a Collector
 
-Configure an [Installed Collector (Windows)](/docs/send-data/installed-collectors/install-collector-windows). Sumo Logic recommends that you install the collector on the same system that hosts the logs.
+Configure an [Installed Collector (Windows)](/docs/send-data/installed-collectors/windows). Sumo Logic recommends that you install the collector on the same system that hosts the logs.
 
 
 ### Step 2: Configure a Source

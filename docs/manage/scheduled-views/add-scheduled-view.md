@@ -22,7 +22,7 @@ For Scheduled View query requirements, see [Scheduled Views Best Practices and E
     * **Search Mode**. Set to **Auto Parse Mode** for [Dynamic Parsing](../../search/get-started-with-search/build-search/dynamic-parsing.md) of JSON data. Manual Mode is the standard search behavior.
     * **Start Date.** Click the date that you'd like to use as the start time of the index. All data from that point forward will be indexed in the scheduled view. The oldest selectable date represents the end of the retention period of your Sumo Logic account.
     * **Retention Period.** Either enter a retention period for the data in the index, in days, or click **Apply the retention period of Default Continuous Partition**. For more information, see [Manage Indexes with Variable Retention](../partitions-and-data-tiers/manage-indexes-variable-retention.md).
-    * **Data Forwarding.** (Optional). Choose **Enable Data Forwarding** to [forward data from Sumo to Amazon S3](../data-forwarding/data-forwarding-to-s3.md). The results from the Scheduled View, raw and aggregate, are forwarded. See [File Format](../data-forwarding/data-forwarding-amazon-s3-bucket.md) for details on how the file objects are structured.
+    * **Data Forwarding.** (Optional). Choose **Enable Data Forwarding** to [forward data from Sumo to Amazon S3](../data-forwarding/amazon-s3-bucket.md). The results from the Scheduled View, raw and aggregate, are forwarded. See [File Format](../data-forwarding/amazon-s3-bucket.md) for details on how the file objects are structured.
 
 1. Click **Create**.
 

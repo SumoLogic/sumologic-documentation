@@ -203,7 +203,7 @@ This section explains the steps to collect Nginx logs from a Kubernetes environm
 </TabItem>
 <TabItem value="non-k8s">
 
-Sumo Logic uses the Telegraf operator for Nginx metric collection and the [Installed Collector](/docs/send-data/installed-collectors/about-installed-collectors) for collecting Nginx logs. The diagram below illustrates the components of the Nginx collection in a non-Kubernetes environment.
+Sumo Logic uses the Telegraf operator for Nginx metric collection and the [Installed Collector](/docs/send-data/installed-collectors/about) for collecting Nginx logs. The diagram below illustrates the components of the Nginx collection in a non-Kubernetes environment.
 
 <img src={useBaseUrl('img/integrations/web-servers/nginx-nonk8s.png')} alt="Web servers" />
 
@@ -216,7 +216,7 @@ The process to set up collection for Nginx data is done through the following st
 Nginx app supports the default access logs and error logs format.
 
 1. **Configure logging in Nginx.** Before you can configure Sumo Logic to ingest logs, you must configure the logging of errors and processed requests in NGINX Open Source and NGINX Plus. For instructions, refer to the following [documentation](https://docs.nginx.com/nginx/admin-guide/monitoring/logging/)
-2. **Configure an Installed Collector.** If you have not already done so, install and configure an installed collector for Windows by [following the documentation](/docs/send-data/installed-collectors/install-collector-windows).
+2. **Configure an Installed Collector.** If you have not already done so, install and configure an installed collector for Windows by [following the documentation](/docs/send-data/installed-collectors/windows).
 3. **Configure a Collector** Use one of the following Sumo Logic Collector options:
     1. To collect logs directly from the Nginx machine, configure an [Installed Collector](/docs/send-data/Installed-Collectors).
     2. If you're using a service like Fluentd, or you would like to upload your logs manually, [Create a Hosted Collector](/docs/send-data/configure-hosted-collector).

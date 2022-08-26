@@ -179,8 +179,8 @@ Follow the instructions in [Access Keys](/docs/manage/security/access-keys) to c
 ### Step 2: Install collector on each Docker host
 
 Follow the instructions for the operating system of the host where you will install the collector:
-* [Install a Collector on Linux](/docs/send-data/installed-collectors/install-collector-linux)
-* [Install a Collector on MacOS](/docs/send-data/installed-collectors/install-collector-macos)
+* [Install a Collector on Linux](/docs/send-data/installed-collectors/linux)
+* [Install a Collector on MacOS](/docs/send-data/installed-collectors/macos)
 
 
 ### Step 3: Configure Docker log source
