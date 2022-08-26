@@ -1251,6 +1251,7 @@ module.exports = {
             },
             'send-data/sources/hosted-collectors/g-suite-apps-audit-source',
             'send-data/sources/hosted-collectors/google-cloud-platform-source',
+            'send-data/sources/hosted-collectors/gcp-metrics-source',
             {
               type: 'category',
               label: 'HTTP Logs and Metrics Source',
@@ -2103,6 +2104,7 @@ module.exports = {
             'cse/administration/cse-user-accounts-and-roles',
             'cse/administration/manage-custom-insight-resolutions',
             'cse/administration/manage-custom-insight-statuses',
+            'cse/administration/using-sensor-zones',
           ],
         },
         {
