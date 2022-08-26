@@ -101,7 +101,7 @@ Sumo provides multiple methods for installing a Collector:
 * RPM, for Linux. You supply configuration settings in a `user.properties` file that you create.
 * Binary package, for Linux. The binary package can also be used on MacOS.
 
-For details on Collector installation, see [Install a Collector on Linux](install-collector-linux.md), [Install a Collector on MacOS](install-collector-macos.md), and [Install a Collector on Windows](install-collector-windows.md).
+For details on Collector installation, see [Install a Collector on Linux](linux.md), [Install a Collector on MacOS](macos.md), and [Install a Collector on Windows](windows.md).
  
 
 After a Collector is up and running, you can change some Installed Collector configuration settings by editing `user.properties` and restarting the collector. For more information, see [user.properties parameters](collector-installation-reference/user-properties.md).

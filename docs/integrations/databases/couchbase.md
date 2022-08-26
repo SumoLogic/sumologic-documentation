@@ -198,7 +198,7 @@ This section explains the steps to collect Couchbase logs from a Kubernetes envi
 </TabItem>
 <TabItem value="non-k8s">
 
-For non-Kubernetes environments, we use the Telegraf operator for Couchbase metric collection and the [Installed Collector](/docs/send-data/installed-collectors/about-installed-collectors) for collecting Couchbase logs. The diagram below illustrates the components of the Couchbase collection in a non-Kubernetes environment. Telegraf uses the [Couchbase input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/couchbase) to obtain Couchbase metrics and the Sumo Logic output plugin to send the metrics to Sumo Logic. Logs from Couchbase are collected by a [Local File Source](/docs/send-data/Sources/installed-collectors/Local-File-Source).<img src={useBaseUrl('img/integrations/databases/couchbase2.png')} alt="couchbase2" />
+For non-Kubernetes environments, we use the Telegraf operator for Couchbase metric collection and the [Installed Collector](/docs/send-data/installed-collectors/about) for collecting Couchbase logs. The diagram below illustrates the components of the Couchbase collection in a non-Kubernetes environment. Telegraf uses the [Couchbase input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/couchbase) to obtain Couchbase metrics and the Sumo Logic output plugin to send the metrics to Sumo Logic. Logs from Couchbase are collected by a [Local File Source](/docs/send-data/Sources/installed-collectors/Local-File-Source).<img src={useBaseUrl('img/integrations/databases/couchbase2.png')} alt="couchbase2" />
 
 The process to set up collection for Couchbase data is done through the following steps.
 
@@ -207,7 +207,7 @@ The process to set up collection for Couchbase data is done through the followin
 The Sumo Logic Couchbase app supports the audit log, query log, error log, access log. For details, [refer to Couchbase logging documentation](https://docs.couchbase.com/server/current/manage/manage-logging/manage-logging.html#changing-log-file-locations).
 
 1. **Configure logging in Couchbase**. By default, the Couchbase will write the log to the log directory that was configured during installation. For example, on Linux, the log directory would be `/opt/couchbase/var/lib/couchbase/logs`. By default, the Audit log is disabled, you must enable the audit log following these [instructions](https://docs.couchbase.com/server/current/manage/manage-security/manage-auditing.html). Query log, error log, the access log will be enabled by default.
-2. **Configure an Installed Collector**. If you have not already done so, install and configure an installed collector for Windows by [following the documentation](/docs/send-data/installed-collectors/install-collector-windows).
+2. **Configure an Installed Collector**. If you have not already done so, install and configure an installed collector for Windows by [following the documentation](/docs/send-data/installed-collectors/windows).
 3. **Configure a Collector**. Use one of the following Sumo Logic Collector options:
    1. To collect logs directly from the Couchbase machine, configure an [Installed Collector](/docs/send-data/Installed-Collectors).
    2. If you're using a service like Fluentd, or you would like to upload your logs manually, configure a [Hosted Collector](/docs/send-data/configure-hosted-collector).
