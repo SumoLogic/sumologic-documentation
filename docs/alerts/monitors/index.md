@@ -7,6 +7,8 @@ description: Monitors continuously query your logs or metrics and send notificat
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
+<img src={useBaseUrl('img/icons/operations/monitor-and-visualize.png')} alt="icon" width="75"/>
+
 Sumo Logic Monitors allow you to set robust and configurable alerting policies that enable you to get notified about critical changes or issues affecting your production application.
 
 Monitors track your Metrics or Logs data in real time and send notifications when noteworthy changes happen in your production applications.
@@ -371,7 +373,7 @@ The recovery condition will always be the opposite of the alerting condition. Fo
 
     ![additional settings evaluation delay.png](/img/monitors/additional-settings-evaluation-delay.png)
 
-    If your data is coming from the [Amazon CloudWatch Source for Metrics](../../send-data/sources/sources-hosted-collectors/amazon-web-services/amazon-cloudwatch-source-metrics.md) we recommend a setting of 900 seconds.
+    If your data is coming from the [Amazon CloudWatch Source for Metrics](../../send-data/sources/hosted-collectors/amazon-web-services/amazon-cloudwatch-source-metrics.md) we recommend a setting of 900 seconds.
 
 1. (Optional) Set **Notifications**, when a trigger condition is met you can send notifications to other people and services. To add notifications click on the **Add Notification** button. You can add more than one notification channel for a Monitor.
 

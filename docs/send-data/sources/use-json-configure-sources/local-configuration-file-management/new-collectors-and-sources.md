@@ -1,8 +1,9 @@
 ---
 id: new-collectors-and-sources
+title: Local Configuration File Management for New Collectors and Sources
 ---
 
-# Local Configuration File Management for New Collectors and Sources
+#
 
 With local configuration file management, you cannot use the API or the web app for Source configuration. In the web app, the **Add Source** option is disabled on the **Manage Data \> Collection \> Collection** page.
 
@@ -23,7 +24,7 @@ There are two ways to implement local configuration file management:
 
 ## Step 3. Install Collector with syncSources parameter
 
-When installing the Collector, specify the `syncSources` parameter. See the topics in [Installed Collectors](/docs/send-data/sources/sources-installed-collectors) for information on specifying parameters during installation.
+When installing the Collector, specify the `syncSources` parameter. See the topics in [Installed Collectors](/docs/send-data/sources/installed-collectors) for information on specifying parameters during installation.
 
 | Parameter | Type | Description |
 |--|--|--||

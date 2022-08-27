@@ -134,7 +134,7 @@ In Sumo Logic, create a new [Hosted Collector](/docs/send-data/configure-hosted-
 
 ### Configure a Source
 
-1. Configure an [HTTP Source](/docs/send-data/sources/sources-hosted-collectors/http-logs-metrics-source).
+1. Configure an [HTTP Source](/docs/send-data/sources/hosted-collectors/http-logs-metrics-source).
 2. Configure the Source Fields as follows:
     1. **Name.** Required. For example, use Akamai.
     2. **Source Category.** Required. For example, use akamai_cloud_monitor. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details see [Best Practices](/docs/send-data/design-deployment/best-practices-source-categories).)

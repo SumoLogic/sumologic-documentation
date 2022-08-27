@@ -158,17 +158,17 @@ Sumo supports several methods for collecting Lambda logs from Amazon CloudWatch.
 
 To configure a CloudTrail Source, perform these steps:
 
-1. [Grant Sumo Logic access](/docs/send-data/sources/sources-hosted-collectors/amazon-web-services/grant-access-aws-product.md) to an Amazon S3 bucket.
+1. [Grant Sumo Logic access](/docs/send-data/sources/hosted-collectors/amazon-web-services/grant-access-aws-product.md) to an Amazon S3 bucket.
 2. [Configure DataEvents with CloudTrail](https://docs.aws.amazon.com/lambda/latest/dg/logging-using-cloudtrail.html) in your AWS account.
 3. Confirm that logs are being delivered to the Amazon S3 bucket.
-4. Add an [AWS CloudTrail Source](/docs/send-data/sources/sources-hosted-collectors/amazon-web-services/aws-cloudtrail-source.md) to Sumo Logic.
+4. Add an [AWS CloudTrail Source](/docs/send-data/sources/hosted-collectors/amazon-web-services/aws-cloudtrail-source.md) to Sumo Logic.
 5. While configuring the cloud trail log source, following Field can be added in the source:
     * Add an **account** field and assign it a value which is a friendly name / alias to your AWS account from which you are collecting logs. This name will appear in the Sumo Logic Explorer View. Logs can be queried via the “account field”.
 
 
 ### Collect Amazon CloudWatch Metrics
 
-To collect Amazon CloudWatch Metrics, see [Amazon CloudWatch Source For Metrics.](/docs/send-data/sources/sources-hosted-collectors/amazon-web-services/amazon-cloudwatch-source-metrics)
+To collect Amazon CloudWatch Metrics, see [Amazon CloudWatch Source For Metrics.](/docs/send-data/sources/hosted-collectors/amazon-web-services/amazon-cloudwatch-source-metrics)
 
 AWS Namespace tag to filter in source for Lambda will be - **AWS/Lambda**
 

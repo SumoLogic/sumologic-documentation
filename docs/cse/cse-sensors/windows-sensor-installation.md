@@ -1,8 +1,10 @@
 ---
 id: windows-sensor-installation
+title: Windows Sensor Installation
+description: Learn how to install the CSE Windows Sensor.
 ---
 
-# Windows Sensor Installation
+
 
 :::note
 The CSE Windows Sensor has reached end of life and is no longer supported. Please migrate to a Sumo Logic  Installed Collector. For more information see the [end of life notice](https://app.getbeamer.com/cloudsiementerprise/en/end-of-life-notice-_-cloud-siem-enterprise-sensors). 
@@ -77,33 +79,33 @@ In this step you configure a Sumo Logic Source on Sumo Logic CIP to receive the 
 1. The installer asks if you want to start the installation. Click **Next** to proceed.
 
     ![CSEWindowsSensorInstall_02.jpg](/img/cse/CSEWindowsSensorInstall_02.jpg)
-1. The installer prompts for information about what types of records the sensor will be monitoring. You can select one of the following: 
+1. The installer prompts for information about what types of records the sensor will be monitoring. You can select one of the following:
 
    * **Domain Controllers**. Select this option to monitor security event logs from all Domain Controllers (up to 25) on the domain of the computer on which the sensor is installed. If you want the sensor to periodically poll for Active Directory entities, leave the **Monitor Active Directory Inventory** checkbox checked. (Active Directory monitoring requires that the computer where the sensor runs is a member of the domain to be     monitored.)    
 
-    ![CSEWindowsSensorInstall_03a.png](/img/cse/CSEWindowsSensorInstall_03a.png) 
+    ![CSEWindowsSensorInstall_03a.png](/img/cse/CSEWindowsSensorInstall_03a.png)
 
    * **Windows Event Collector**. The sensor will monitor forwarded event logs from the computer you specify in the **Hostname**. To monitor events on the local computer where the sensor is installed, set **Hostname** to "localhost". If you want the sensor to periodically poll for Active Directory     entities, leave the **Monitor Active Directory Inventory** checkbox checked. (Active Directory monitoring requires that the computer where the sensor runs is a member of the domain to be monitored.)    
 
-    ![CSEWindowsSensorInstall_03b.png](/img/cse/CSEWindowsSensorInstall_03b.png) 
+    ![CSEWindowsSensorInstall_03b.png](/img/cse/CSEWindowsSensorInstall_03b.png)
 
    * **Local**. Select this option to monitor Security event logs from the local computer that the sensor is installed on. By default, the **Monitor Active Directory Inventory** checkbox is not checked. If you want the sensor to  checked to periodically poll for Active Directory entities, click the checkbox. (Active Directory monitoring requires that the computer where the sensor runs is a member of the domain to be monitored.)    
 
     ![CSEWindowsSensorInstall_03c.png](/img/cse/CSEWindowsSensorInstall_03c.png)
 1. Click **Next**.
-1. The installer prompts you to specify credentials for the Windows service account that will be used to run the sensor service. You have two options: 
+1. The installer prompts you to specify credentials for the Windows service account that will be used to run the sensor service. You have two options:
 
-   * **Specify a Service Account.** When the computer where the sensor runs is a member of a domain and/or will be monitoring a remote machine, using a service account is considered best practice for security reasons. If you choose this option, go to step 8 after clicking **Next**. 
+   * **Specify a Service Account.** When the computer where the sensor runs is a member of a domain and/or will be monitoring a remote machine, using a service account is considered best practice for security reasons. If you choose this option, go to step 8 after clicking **Next**.
    * **Use Built-In Local System Account.** Using the built-in account is a more streamlined process, and may be appropriate when monitoring event logs on the local machine. If you choose this option, go to step 11 after clicking **Next**.
-1. In this step, you enter credentials for the service account: 
+1. In this step, you enter credentials for the service account:
 
-   1. **Domain**. Enter the name of the Windows domain associated with the service account. This should be the NETBIOS name of the domain, such as MYDOMAIN, rather than the FQDN (mydomain.com). To use a local Windows account rather than a domain account, specify the local machine name here. 
-   1. **Username**. Enter the username for the service account the sensor service will run under.  
-   1. **Password**. Enter the password for the service account. 
-   1. **Skip validating**. Leave the checkbox unchecked. 
+   1. **Domain**. Enter the name of the Windows domain associated with the service account. This should be the NETBIOS name of the domain, such as MYDOMAIN, rather than the FQDN (mydomain.com). To use a local Windows account rather than a domain account, specify the local machine name here.
+   1. **Username**. Enter the username for the service account the sensor service will run under. 
+   1. **Password**. Enter the password for the service account.
+   1. **Skip validating**. Leave the checkbox unchecked.
 
         :::note
-        The image below shows how you would specify credentials for the Windows service account `ACMECORP\service123`. 
+        The image below shows how you would specify credentials for the Windows service account `ACMECORP\service123`.
         :::
 
    1. Click **Next** to proceed.    
@@ -199,7 +201,7 @@ Sensor options must be included in a section named **Params**. Those options inc
 
 For more information about the options, see Sensor configuration options and Windows service account options.
 
-**Example .INF file** 
+**Example .INF file**
 
 ```
 [Params]

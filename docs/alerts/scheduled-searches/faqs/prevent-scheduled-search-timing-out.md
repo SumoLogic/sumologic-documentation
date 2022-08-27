@@ -1,8 +1,7 @@
 ---
 id: prevent-scheduled-search-timing-out
+title: How to Prevent your Scheduled Search from Timing Out
 ---
-
-# How to Prevent your Scheduled Search from Timing Out
 
 Before you create a scheduled search, be aware that  Sumo Logic will not allow the scheduled search to run indefinitely. At some point, the query will be timed out to protect the reliability of the service.
 

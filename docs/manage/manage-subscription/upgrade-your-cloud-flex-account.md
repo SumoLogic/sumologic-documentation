@@ -1,8 +1,9 @@
 ---
 id: upgrade-your-cloud-flex-account
+title: Upgrade Your Cloud Flex Account
 ---
 
-# Upgrade Your Cloud Flex Account
+#
 
 This page has information about upgrading a Sumo Logic CloudFlex account. The Cloud Flex plan has the following account types: Free, Trial, Professional, and Enterprise. For information about each account type, see [Cloud Flex Accounts](cloud-flex-accounts.md). 
 
@@ -32,9 +33,9 @@ It depends on your current account type:
 
 1. The left side of the page displays your current account type.
 1. **Choose a New Plan**. Click the radio button next to **Professional** or **Enterprise**.  If you just want to increase product variable levels for your current account type, don't select a new plan type.
-1. **Select New Log and Metric Data Volume**. As you change the values, the upgrade cost shown to the right will adjust. 
+1. **Select New Log and Metric Data Volume**. As you change the values, the upgrade cost shown to the right will adjust.
 
-    * **Log Ingest**. Select an estimate of your daily ingestion, in GB. 
+    * **Log Ingest**. Select an estimate of your daily ingestion, in GB.
     * **Metrics**. Enter an estimate of the metrics to be ingested daily, in data points per minute (DPM.)
 
 1. **Billing Frequency.** Click the radio button next to **Annually** or **Monthly**. 

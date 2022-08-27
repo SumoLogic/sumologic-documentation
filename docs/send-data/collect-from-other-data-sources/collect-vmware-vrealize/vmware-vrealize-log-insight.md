@@ -1,8 +1,9 @@
 ---
 id: vmware-vrealize-log-insight
+title: VMware vRealize Log Insight
 ---
 
-# VMware vRealize Log Insight
+#
 
 This page shows you how to configure log collection for VMware vRealize Log Insight and then forward your logs to Sumo Logic. VMware vRealize Log Insight is a log management and analytics tool.
 
@@ -36,9 +37,9 @@ To set up vRealize Log Insight log collection for Sumo Logic, do the following:
 
 1. **Test** and **Save** the connection.
 1. Verify logs in Sumo Logic. The following is a sample log message of vRealize forwarded events.
- 
+
    ```
-   <167> 2019-12-15T13:08:16.441Z esxi1.esxlab.com Rhttpproxy: verbose rhttpproxy[2099567] 
-   [Originator@6876 sub=Proxy Req 07995] Resolved endpoint : 
+   <167> 2019-12-15T13:08:16.441Z esxi1.esxlab.com Rhttpproxy: verbose rhttpproxy[2099567]
+   [Originator@6876 sub=Proxy Req 07995] Resolved endpoint :
    [N7Vmacore4Http16LocalServiceSpecE:0x000000bef0b83650] _serverNamespace = /sdk action = Allow _port = 8307
    ```

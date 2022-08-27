@@ -1,8 +1,7 @@
 ---
 slug: /manage/scheduled-views
+title: Scheduled Views
 ---
-
-# Scheduled Views
 
 Scheduled Views speed the search process for small and historical subsets of your data by functioning as a pre-aggregated index.
 

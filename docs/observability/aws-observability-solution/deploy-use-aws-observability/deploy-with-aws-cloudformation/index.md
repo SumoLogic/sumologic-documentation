@@ -1,8 +1,7 @@
 ---
 slug: /observability/aws-observability-solution/deploy-use-aws-observability/deploy-with-aws-cloudformation
+title: Deploy with AWS CloudFormation
 ---
-
-# Deploy with AWS CloudFormation
 
 This section walks you through the process of executing the AWS CloudFormation template to set up the AWS Observability Solution **for a single AWS region and account** combination.
 
@@ -52,19 +51,19 @@ AWS Observability integrates with Explore by populating metadata and only shows
 Provide a response to each prompt in this section.
 
 
-| Prompt | Guideline | 
+| Prompt | Guideline |
 |--|--|
-| Sumo Logic Deployment Name | Enter au, ca, de, eu, jp, us2, in, fed or us1. See [Sumo Logic Endpoints and Firewall Security] (/APIs/General-API-Information/Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security) for more information on Sumo Logic deployments. | 
-| Sumo Logic Access ID | Sumo Logic Access ID. See [Create an access key](../../../../manage/security/access-keys.md) for more information. | 
-| Sumo Logic Access Key | Sumo Logic Access Key. This key is used for Sumo Logic API calls. | 
-| Sumo Logic Organization ID | You can find your org on the Preferences page in the Sumo Logic UI.  Your org ID will be used to configure the IAM Role for Sumo Logic AWS Sources. | 
-| Delete Sumo Logic Resources when stack is deleted | To delete collectors, sources and apps in Sumo Logic when the stack is deleted, set this parameter to "True". If this is set to "False", Sumo Logic resources are not deleted when the AWS CloudFormation stack is deleted. Deletion of updated resources will be skipped. | 
+| Sumo Logic Deployment Name | Enter au, ca, de, eu, jp, us2, in, fed or us1. See [Sumo Logic Endpoints and Firewall Security] (/APIs/General-API-Information/Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security) for more information on Sumo Logic deployments. |
+| Sumo Logic Access ID | Sumo Logic Access ID. See [Create an access key](../../../../manage/security/access-keys.md) for more information. |
+| Sumo Logic Access Key | Sumo Logic Access Key. This key is used for Sumo Logic API calls. |
+| Sumo Logic Organization ID | You can find your org on the Preferences page in the Sumo Logic UI.  Your org ID will be used to configure the IAM Role for Sumo Logic AWS Sources. |
+| Delete Sumo Logic Resources when stack is deleted | To delete collectors, sources and apps in Sumo Logic when the stack is deleted, set this parameter to "True". If this is set to "False", Sumo Logic resources are not deleted when the AWS CloudFormation stack is deleted. Deletion of updated resources will be skipped. |
 
 ## Step 3: AWS account alias 
 
 Provide a response to the prompt in this section.
 
-| Prompt | Guideline | 
+| Prompt | Guideline |
 |--|--|
 | Alias for your AWS account | Enter an account alias for the AWS environment from which you are collecting data. This alias should be something that makes it easy for you to identify what this AWS account is being used for (for example dev, prod, billing, and marketplace). This name will appear in the Sumo Logic Explorer View, metrics and logs can be queried via the “account field”.<br/>**Important:** Account Aliases should be alphanumeric and cannot include special characters such as “-, $, _” etc.<br/>Please leave this blank If you're using CloudFormation StackSets to deploy the solution in multiple AWS accounts. |
 | S3 URL of a CSV file that maps AWS Account IDs to an Account Alias | This parameter is applicable only If you're using CloudFormation StackSets to deploy the solution in multiple AWS accounts.<br/> The S3 URL of the CSV file should have public read access when deploying or updating the solution.<br/>Enter the S3 URL of a CSV file which contains the mapping of AWS Account IDs to an Account Alias in the following format:<br/>**accountid,alias**<br/>For example:<br/>**1234567,dev**<br/>**9876543,prod** |
@@ -75,7 +74,7 @@ Provide a response to the prompt in this section.
 You should only install the AWS Observability apps and alerts the first
 time you run the template.
 
-| Prompt | Guideline | 
+| Prompt | Guideline |
 |--|--|
 | Install AWS Observability apps and alerts | <ul><li>**Yes** –  Installs the apps (AWS EC2, AWS Application Load Balancer, Amazon RDS, AWS API Gateway, AWS Lambda, AWS DynamoDB, AWS ECS, Amazon ElastiCache, Amazon Classic Load Balancer, and AWS NLB) and alerts for the AWS Observability Solution. All the apps are installed in the Sumo Logic AWS Observability  Personal folder in Sumo Logic and all alerts are installed in an AWS Observability folder of the Monitors folder.</li><li>**No** – Skips the installation of the apps.</li></ul> |
 
@@ -83,17 +82,17 @@ time you run the template.
 
 Provide responses to the prompts in this section.
 
-| Prompt | Guideline | 
+| Prompt | Guideline |
 |--|--|
 | Select the kind of CloudWatch Metrics Source to create | **Note:** Switching from one type of Metrics Source to another can result in re-computation of your Root Cause Explorer anomaly detection models. This re-computation can take a couple of days to finish and meanwhile you will not get new Events of Interest (EOIs).<ul><li>**CloudWatch Metrics Source** - Creates Sumo Logic AWS CloudWatch Metrics Sources.</li><li>**Kinesis Firehose Metrics Source (Recommended)** -  Creates a Sumo Logic AWS Kinesis Firehose for Metrics Source.<br/>**Note:** This new source has cost and performance benefits over the CloudWatch Metrics Source is therefore recommended.</li><li>**None** - Skips the Installation of both the Sumo Logic Sources</li></ul> |
-| Sumo Logic AWS Metrics Namespaces | Enter a comma-delimited list of the namespaces which will be used for both AWS CloudWatch Metrics and Inventory Sources. The default will be AWS/ApplicationELB, AWS/ApiGateway, AWS/DynamoDB, AWS/Lambda, AWS/RDS, AWS/ECS, AWS/ElastiCache, AWS/ELB, AWS/NetworkELB, AWS/SQS, AWS/SNS.<br/>AWS/AutoScaling will be appended to Namespaces for Inventory Sources.<br/>Supported namespaces are based on the type of CloudWatch Metrics Source you have selected above. See the relevant docs for the [Kinesis Firehose Metrics Source](../../../../send-data/sources/sources-hosted-collectors/amazon-web-services/aws-kinesis-firehose-metrics-source.md) and the [CloudWatch Metrics Source](../../../../send-data/sources/sources-hosted-collectors/amazon-web-services/amazon-cloudwatch-source-metrics.md) for details on which namespaces they support. |
+| Sumo Logic AWS Metrics Namespaces | Enter a comma-delimited list of the namespaces which will be used for both AWS CloudWatch Metrics and Inventory Sources. The default will be AWS/ApplicationELB, AWS/ApiGateway, AWS/DynamoDB, AWS/Lambda, AWS/RDS, AWS/ECS, AWS/ElastiCache, AWS/ELB, AWS/NetworkELB, AWS/SQS, AWS/SNS.<br/>AWS/AutoScaling will be appended to Namespaces for Inventory Sources.<br/>Supported namespaces are based on the type of CloudWatch Metrics Source you have selected above. See the relevant docs for the [Kinesis Firehose Metrics Source](../../../../send-data/sources/hosted-collectors/amazon-web-services/aws-kinesis-firehose-metrics-source.md) and the [CloudWatch Metrics Source](../../../../send-data/sources/hosted-collectors/amazon-web-services/amazon-cloudwatch-source-metrics.md) for details on which namespaces they support. |
 | Existing Sumo Logic Metrics Source API URL | You must supply this URL if you are already collecting CloudWatch Metrics. Provide the existing Sumo Logic Metrics Source API URL. The account field will be added to the Source. For information on how to determine the URL, see [View or Download Source JSON Configuration](../../../../send-data/sources/use-json-configure-sources/local-configuration-file-management/view-download-source-json-configuration.md). |
 
 ## Step 6: Sumo Logic AWS ALB Log Source
 
 Provide responses to the prompts in this section.
 
-| Prompt | Guideline | 
+| Prompt | Guideline |
 |--|--|
 | Enable ALB Access logging | <ul><li>**New** - Automatically enables collection of logs via Amazon S3 when new Application Load Balancers are created. This does not affect ALB resources already collecting logs.</li><li>**Existing** - Enables collection of logs via Amazon S3 for existing Application Load Balancers only.</li><li>**Both** - Enables collection of logs for new and existing Application Load Balancers</li><li>**None** - Does not enable collection of logs for Application Load Balancers</li></ul> |
 | Create Sumo Logic ALB Logs Source | <ul><li>**Yes** - Creates a Sumo Logic ALB Log Source that collects ALB logs from an existing bucket or a new bucket.</li><li>**No** - Select this if you already have an ALB source configured in Sumo Logic.</li></ul> |
@@ -107,7 +106,7 @@ Provide responses to the prompts in this section.
 
 If you are collecting AWS CloudTrail logs from multiple AWS accounts into a common S3 bucket, please run the CloudFormation template in the account that has the S3 bucket and please see the Centralized CloudTrail Log Collection [help page](centralized-aws-cloudtrail-log-collection.md).
 
-| Prompt | Guideline | 
+| Prompt | Guideline |
 |--|--|
 | Create Sumo Logic CloudTrail Logs Source | <ul><li>**Yes** - Creates a Sumo Logic CloudTrail Log Source that collects CloudTrail logs from an existing bucket or new bucket.</li><li>**No** - If you already have a CloudTrail Log Source collecting CloudTrail logs.</li></ul> |
 | Existing Sumo Logic CloudTrail Logs Source API URL |  Required if you are already collecting CloudTrail logs. Provide the existing Sumo Logic CloudTrail Source API URL. The account field will be added to the Source. For information on how to determine the URL, see [View or Download Source JSON Configuration](../../../../send-data/sources/use-json-configure-sources/local-configuration-file-management/view-download-source-json-configuration.md). |
@@ -118,7 +117,7 @@ If you are collecting AWS CloudTrail logs from multiple AWS accounts into a comm
 
 Provide responses to the prompts in this section.
 
-| Prompt | Guideline | 
+| Prompt | Guideline |
 |--|--|
 | Select the Sumo Logic CloudWatch Logs Sources | <ul><li>**Lambda Log Forwarder** - Creates a Sumo Logic CloudWatch Log Source that collects CloudWatch logs via a Lambda function.</li><li>**Kinesis Firehose Log Source** - Creates a Sumo Logic Kinesis Firehose Source to collect CloudWatch logs.</li><li>**Both** (Switch from Lambda Log Forwarder to Kinesis Firehose Log Source) - Use this option if you would like to switch from using the Lambda Log Forwarder to the new Kinesis Firehose Log Source. If you select this option, the template will subscribe all existing log groups to the new Kinesis Firehose logs Source. To remove the old source please rerun the template by selecting the Kinesis Firehose Log Source in this option (Check the CloudWatch Logs for Lambda Log groups subscriber which should have a message “All Log Groups are subscribed to Destination Type”).</li><li>**None** - Skips installation of both sources.</li></ul> |
 | Existing Sumo Logic Lambda CloudWatch Logs Source API URL | Required you already collect AWS Lambda CloudWatch logs. Provide the existing Sumo Logic AWS Lambda CloudWatch Source API URL. The account, region and namespace fields will be added to the Source. For information on how to determine the URL, see [View or Download Source JSON Configuration](../../../../send-data/sources/use-json-configure-sources/local-configuration-file-management/view-download-source-json-configuration.md). |
@@ -129,7 +128,7 @@ Provide responses to the prompts in this section.
 
 Provide responses to the prompts in this section.
 
-| Prompt | Guideline | 
+| Prompt | Guideline |
 |--|--|
 | Select the Sumo Logic Root Cause Explorer Source | <ul><li>**Inventory Source** - Creates a Sumo Logic Inventory Source used by Root Cause Explorer.</li><li>**X-Ray Source** - Creates a Sumo Logic AWS X-Ray Source that collects X-Ray Trace Metrics from your AWS account.</li><li>**Both** - Install both Inventory and Xray sources.</li><li>**None** - Skips installation of both sources.</li></ul> |
 
@@ -137,7 +136,7 @@ Provide responses to the prompts in this section.
 
 Provide responses to the prompts in this section.
 
-| Prompt | Guideline | 
+| Prompt | Guideline |
 |--|--|
 | Enable ELB Classic Access logging | <ul><li>**New** - Automatically enables collection of logs via Amazon S3 when new Classic Load Balancers are created. This does not affect ELB classic resources already collecting logs.</li><li>**Existing** - Enables collection of logs via Amazon S3 for existing Classic Load Balancers only.</li><li>**Both** - Enables collection of logs for new and existing Classic Load Balancers</li><li>**None** - Does not enable collection of logs for Classic Load Balancers</li></ul> |
 | Create Sumo Logic ELB Logs Source | <ul><li>**Yes** - Creates a Sumo Logic ELB classic Log Source that collects ELB Classic logs from an existing bucket or a new bucket.</li><li>**No** - Select this if you already have an ELB Classic source configured in Sumo Logic.</li></ul> |
@@ -149,7 +148,7 @@ Provide responses to the prompts in this section.
 
 Provide responses to the prompts in this section.
 
-| Prompt | Guideline | 
+| Prompt | Guideline |
 |--|--|
 | Location where you want the App to be Installed | <ul><li>**Personal Folder** - Installs App in user's Personal folder.</li><li>**Admin Recommended Folder** - Installs App in Admin Recommended Folder</li></ul> |
 | Do you want to share App with whole organization | <ul><li>**True** - Installed App will have view permission to all members of the organization. </li><li>**False** - Installed App will be visible only to user installing the solution.</li></ul> |
@@ -230,11 +229,11 @@ For instructions, see Create a Processing Rule. Create the following rules, sel
 
 Below are some common errors that can occur while using the Cloud Formation template. 
 
-| Error | Description | Resolution | 
+| Error | Description | Resolution |
 |--|--|--|
-| The API rate limit for this user has been exceeded. | This error indicates that AWS CloudFormation execution has exceeded the API rate limit set on the Sumo Logic side. It can occur if you install the AWS CloudFormation template in multiple regions or accounts using the same Access Key and Access ID. | Do not install the AWS CloudFormation template in multiple regions or accounts with the same Access Key and Access ID. | 
+| The API rate limit for this user has been exceeded. | This error indicates that AWS CloudFormation execution has exceeded the API rate limit set on the Sumo Logic side. It can occur if you install the AWS CloudFormation template in multiple regions or accounts using the same Access Key and Access ID. | Do not install the AWS CloudFormation template in multiple regions or accounts with the same Access Key and Access ID. |
 | S3 Bucket already exists. | The error can occur if:<br/>An S3 bucket with the same name exists in  S3, or<br/>
-The S3 Bucket is not present in S3 but is referenced by some other AWS CloudFormation stack which created it.	Remove the S3 bucket from S3 or select “No” in the AWS Cloudformation template for S3 bucket creation. | Remove the AWS CloudFormation Stack which references the S3 bucket. | 
+The S3 Bucket is not present in S3 but is referenced by some other AWS CloudFormation stack which created it.	Remove the S3 bucket from S3 or select “No” in the AWS Cloudformation template for S3 bucket creation. | Remove the AWS CloudFormation Stack which references the S3 bucket. |
 | The S3 bucket you tried to delete is not empty. | The error can occur when deleting the stack with a non-empty S3 bucket. | Delete the S3 bucket manually if you do not need the bucket or its content in the future. |
 
 ### Rolling back the AWS Observability Solution

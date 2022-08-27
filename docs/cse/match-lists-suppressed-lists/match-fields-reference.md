@@ -1,8 +1,9 @@
 ---
 id: match-fields-reference
+title: Match Fields Reference
+description: Learn what Record fields a Match List with a given Target Column is compared to.
 ---
 
-# Match Fields Reference
 
 This topic is a reference to the Record fields that a Match List with a given Target Column will be compared to. Each header below—Hostname, Domain, Username, and—is a supported Target Column for a CSE Match List. The items listed below each header are Record fields 
 

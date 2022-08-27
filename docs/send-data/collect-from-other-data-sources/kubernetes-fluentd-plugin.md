@@ -1,8 +1,9 @@
 ---
 id: kubernetes-fluentd-plugin
+title: Kubernetes Fluentd plugin
 ---
 
-# Kubernetes Fluentd plugin
+#
 
 The configuration described on this page is deprecated. Sumo Logic recommends using the comprehensive Kubernetes solution instead.  
 
@@ -26,7 +27,7 @@ In this step you create, on the Sumo service, an HTTP endpoint to receive your l
 
 1. If you don’t already have a Sumo account, you can create one by clicking the Free Trial button on https://www.sumologic.com/.
 1. Create a hosted collector, following the instructions on [Configure a Hosted Collector](../configure-hosted-collector.md) in Sumo help. (If you already have a Sumo hosted collector that you want to use, skip this step.)
-1. Create an HTTP source on the collector you created in the previous step. For instructions, see [HTTP Logs and Metrics Source](/docs/send-data/sources/sources-hosted-collectors/http-logs-metrics-source) in Sumo help.
+1. Create an HTTP source on the collector you created in the previous step. For instructions, see [HTTP Logs and Metrics Source](/docs/send-data/sources/hosted-collectors/http-logs-metrics-source) in Sumo help.
 1. When you have configured the HTTP source, Sumo will display the URL of the HTTP endpoint. Make a note of the URL. You will use it when you configure the Kubernetes service to send data to Sumo.
 
 ## Step 2: Create a Kubernetes secret
@@ -59,7 +60,7 @@ See the sample Kubernetes DaemonSet and Role in [fluentd.yaml](https://github.co
 Which .yaml file you should use depends on whether or not you are running RBAC for authorization. RBAC is enabled by default as of Kubernetes 1.6.
 
 **Non-RBAC (Kubernetes 1.5 and below)**
- 
+
 ```
 kubectl create -f /daemonset/nonrbac/fluentd.yaml
 ```
@@ -84,30 +85,30 @@ Environment variables may not apply to all Fluentd sources. See the table follow
 
 | Environment variable | Description |
 |--|--|
-| `CONCAT_SEPARATOR` | The character to use to delimit lines within the final concatenated message. Most multi-line messages contain a newline at the end of each line.<br/>Default: `""` | 
-| `EXCLUDE_CONTAINER_REGEX` | A regular expression for containers. Matching containers will be excluded from Sumo. The logs will still be sent to Fluentd. | 
-| `EXCLUDE_FACILITY_REGEX` | A regular expression for syslog facilities. Matching facilities will be excluded from Sumo. The logs will still be sent to Fluentd. | 
-| `EXCLUDE_HOST_REGEX`  | A regular expression for hosts. Matching hosts will be excluded from Sumo. The logs will still be sent to Fluentd. | 
-| `EXCLUDE_NAMESPACE_REGEX` | A regular expression for namespaces. Matching namespaces will be excluded from Sumo. The logs will still be sent to Fluentd. | 
-| `EXCLUDE_PATH` | Files matching this pattern will be ignored by the in_tail plugin, and will not be sent to Kubernetes or Sumo. This can be a comma-separated list as well. See [in_tail](https://docs.fluentd.org/v0.12/articles/in_tail#excludepath) documentation for more information. For example, defining `EXCLUDE_PATH` as shown below excludes all files matching `/var/log/containers/*.log`. See the example below the table. | 
-| `EXCLUDE_POD_REGEX` | A regular expression for pods. Matching pods will be excluded from Sumo. The logs will still be sent to Fluentd. | 
-| `EXCLUDE_PRIORITY_REGEX` | A regular expression for syslog priorities. Matching priorities will be excluded from Sumo. The logs will still be sent to Fluentd. | 
-| `EXCLUDE_UNIT_REGEX` | A regular expression for systemd units. Matching units will be excluded from Sumo. The logs will still be sent to Fluentd. | 
-| `FLUENTD_SOURCE` | Fluentd can tail files or query systemd. Allowable values: file, systemd. Default: `file` | 
+| `CONCAT_SEPARATOR` | The character to use to delimit lines within the final concatenated message. Most multi-line messages contain a newline at the end of each line.<br/>Default: `""` |
+| `EXCLUDE_CONTAINER_REGEX` | A regular expression for containers. Matching containers will be excluded from Sumo. The logs will still be sent to Fluentd. |
+| `EXCLUDE_FACILITY_REGEX` | A regular expression for syslog facilities. Matching facilities will be excluded from Sumo. The logs will still be sent to Fluentd. |
+| `EXCLUDE_HOST_REGEX`  | A regular expression for hosts. Matching hosts will be excluded from Sumo. The logs will still be sent to Fluentd. |
+| `EXCLUDE_NAMESPACE_REGEX` | A regular expression for namespaces. Matching namespaces will be excluded from Sumo. The logs will still be sent to Fluentd. |
+| `EXCLUDE_PATH` | Files matching this pattern will be ignored by the in_tail plugin, and will not be sent to Kubernetes or Sumo. This can be a comma-separated list as well. See [in_tail](https://docs.fluentd.org/v0.12/articles/in_tail#excludepath) documentation for more information. For example, defining `EXCLUDE_PATH` as shown below excludes all files matching `/var/log/containers/*.log`. See the example below the table. |
+| `EXCLUDE_POD_REGEX` | A regular expression for pods. Matching pods will be excluded from Sumo. The logs will still be sent to Fluentd. |
+| `EXCLUDE_PRIORITY_REGEX` | A regular expression for syslog priorities. Matching priorities will be excluded from Sumo. The logs will still be sent to Fluentd. |
+| `EXCLUDE_UNIT_REGEX` | A regular expression for systemd units. Matching units will be excluded from Sumo. The logs will still be sent to Fluentd. |
+| `FLUENTD_SOURCE` | Fluentd can tail files or query systemd. Allowable values: file, systemd. Default: `file` |
 | `FLUENTD_USER_CONFIG_DIR` | A directory of user-defined Fluentd configuration files, which must be in the `*.conf` directory in the container. |
-| `FLUSH_INTERVAL` | How frequently to push logs to Sumo. Default: `30s`  | 
-| `KUBERNETES_META` | Include or exclude Kubernetes metadata such as namespace and pod_name if using JSON log format. Default: `true` | 
-| `LOG_FORMAT` | Format in which to post logs to Sumo. Allowable values:<ul><li>text—Logs will appear in SumoLogic in text format.</li><li>json—Logs will appear in SumoLogic in json format.</li><li>json_merge—Same as json but if the container logs in json format to stdout it will merge in the container json log at the root level and remove the log field.</li></ul>Default: `json` | 
-| `MULTILINE_START_REGEXP` | he regular expression for the concat plugin to use when merging multi-line messages. Defaults to Julian dates, for example, Jul 29, 2017. | 
-| `NUM_THREADS` | Set the number of HTTP threads to Sumo. It might be necessary to do so in heavy-logging clusters. Default: `1` | 
-| `READ_FROM_HEAD` | Start to read the logs from the head of file, not bottom. Only applies to containers log files. See in_tail doc for more information. Default: `true` | 
-| `SOURCE_CATEGORY` | Set the `_sourceCategory` metadata field in Sumo. Default: `"%{namespace}/%{pod_name}"` | 
-| `SOURCE_CATEGORY_PREFIX` | Prepends a string that identifies the cluster to the `_sourceCategory` metadata field in Sumo. Default: `kubernetes/` | 
-| `SOURCE_CATEGORY_REPLACE_DASH` | Used to replace a dash (-) character with another character. Default: `/`<br/>For example, a Pod called `travel-nginx-3629474229-dirmo` within namespace app will appear in Sumo with `_sourceCategory=app/travel/nginx`. | 
-| `SOURCE_HOST` | Set the _sourceHost metadata field in Sumo. Default: `""` | 
-| `SOURCE_NAME` | Set the _sourceName metadata field in Sumo. Default: `"%{namespace}.%{pod}.%{container}"` | 
-| `AUDIT_LOG_PATH` | Define the path to the [Kubernetes Audit Log](https://kubernetes.io/docs/tasks/debug-application-cluster/audit/). Default: `/mnt/log/kube-apiserver-audit.log` | 
-| `TIME_KEY` | The field name for json formatted sources that should be used as the time. See time_key. Default: `time` | 
+| `FLUSH_INTERVAL` | How frequently to push logs to Sumo. Default: `30s`  |
+| `KUBERNETES_META` | Include or exclude Kubernetes metadata such as namespace and pod_name if using JSON log format. Default: `true` |
+| `LOG_FORMAT` | Format in which to post logs to Sumo. Allowable values:<ul><li>text—Logs will appear in SumoLogic in text format.</li><li>json—Logs will appear in SumoLogic in json format.</li><li>json_merge—Same as json but if the container logs in json format to stdout it will merge in the container json log at the root level and remove the log field.</li></ul>Default: `json` |
+| `MULTILINE_START_REGEXP` | he regular expression for the concat plugin to use when merging multi-line messages. Defaults to Julian dates, for example, Jul 29, 2017. |
+| `NUM_THREADS` | Set the number of HTTP threads to Sumo. It might be necessary to do so in heavy-logging clusters. Default: `1` |
+| `READ_FROM_HEAD` | Start to read the logs from the head of file, not bottom. Only applies to containers log files. See in_tail doc for more information. Default: `true` |
+| `SOURCE_CATEGORY` | Set the `_sourceCategory` metadata field in Sumo. Default: `"%{namespace}/%{pod_name}"` |
+| `SOURCE_CATEGORY_PREFIX` | Prepends a string that identifies the cluster to the `_sourceCategory` metadata field in Sumo. Default: `kubernetes/` |
+| `SOURCE_CATEGORY_REPLACE_DASH` | Used to replace a dash (-) character with another character. Default: `/`<br/>For example, a Pod called `travel-nginx-3629474229-dirmo` within namespace app will appear in Sumo with `_sourceCategory=app/travel/nginx`. |
+| `SOURCE_HOST` | Set the _sourceHost metadata field in Sumo. Default: `""` |
+| `SOURCE_NAME` | Set the _sourceName metadata field in Sumo. Default: `"%{namespace}.%{pod}.%{container}"` |
+| `AUDIT_LOG_PATH` | Define the path to the [Kubernetes Audit Log](https://kubernetes.io/docs/tasks/debug-application-cluster/audit/). Default: `/mnt/log/kube-apiserver-audit.log` |
+| `TIME_KEY` | The field name for json formatted sources that should be used as the time. See time_key. Default: `time` |
 
 Example for EXCLUDE_PATH:
 
@@ -313,13 +314,13 @@ Kubelet logs are only collected If you're using systemd. Kubernetes no longer ou
 
 ![kubelet.png](/img/send-data/kubelet.png)
 
-### Containers 
+### Containers
 
 ![container.png](/img/send-data/container.png)
 
 ## Taints and Tolerations
 
-By default, the Fluentd pods will schedule on, and therefore collect logs from, any worker nodes that do not have a taint and any master node that does not have a taint beyond the default master taint. If you would like to schedule pods on all nodes, regardless of taints, uncomment the following line from fluentd.yaml before applying it. 
+By default, the Fluentd pods will schedule on, and therefore collect logs from, any worker nodes that do not have a taint and any master node that does not have a taint beyond the default master taint. If you would like to schedule pods on all nodes, regardless of taints, uncomment the following line from fluentd.yaml before applying it.
 
 ```
 tolerations:

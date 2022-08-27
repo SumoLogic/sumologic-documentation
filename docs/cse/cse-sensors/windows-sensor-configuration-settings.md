@@ -1,8 +1,11 @@
 ---
 id: windows-sensor-configuration-settings
+title: Windows Sensor Configuration Settings
+sidebar_label: Windows Sensor Configuration 
+description: Learn about the configuration options in the Windows Sensor's settings.conf file.
 ---
 
-# Windows Sensor Configuration Settings
+
 
 :::note
 The CSE Windows Sensor has reached end of life and is no longer supported. Please migrate to a Sumo Logic  Installed Collector. For more information see the [end of life notice](https://app.getbeamer.com/cloudsiementerprise/en/end-of-life-notice-_-cloud-siem-enterprise-sensors). 
@@ -84,7 +87,7 @@ If it is set, it is transmitted as a tag with each event log to identify the ten
 
 **Default**: 86400
 
-**Description**: This setting relates to the [Active Directory Monitor](windows-sensor-overview.md#active-directory-monitor). How long to wait before attempting to export Active Directory again, in seconds. This specifies the span of time between consecutive Active Directory dumps. It measures the time *between* the dumps, not the time between *starting* dumps. 
+**Description**: This setting relates to the [Active Directory Monitor](windows-sensor-overview.md#active-directory-monitor). How long to wait before attempting to export Active Directory again, in seconds. This specifies the span of time between consecutive Active Directory dumps. It measures the time *between* the dumps, not the time between *starting* dumps.
 
 ## DirectoryFilter
 
@@ -194,7 +197,7 @@ The minimum log level must also be set to “Trace” in the `Nlog.config` file 
 
 **Default**: none
 
-**Description**: This setting only applies if you configure the sensor to send data to the legacy CSE server, as opposed to the Sumo Logic platform. If it is set, it is transmitted as a tag with each event log to describe the tenant location. Used in multi-tenant applications. 
+**Description**: This setting only applies if you configure the sensor to send data to the legacy CSE server, as opposed to the Sumo Logic platform. If it is set, it is transmitted as a tag with each event log to describe the tenant location. Used in multi-tenant applications.
 
 ## ErrorMessagesBufferMax
 
@@ -235,13 +238,13 @@ You cannot change what events are collected by default. You can use `EventIdAllo
 
 If you are collecting events from WEC rather than monitoring Domain Controllers (that is, `EventLogForwarderEnable` is set to true), `EventIDAllowListEnable` will default to false, resulting in collection of all WEC events.
 
-If desired, you can configure the sensor to send only selected WEC events by specifying those events using  `EventIdAllowList` and setting [EventLogForwarderAllowListEnable](#eventlogforwarderallowlistenable) to true. 
+If desired, you can configure the sensor to send only selected WEC events by specifying those events using  `EventIdAllowList` and setting [EventLogForwarderAllowListEnable](#eventlogforwarderallowlistenable) to true.
 
 For more information about security-related events, see [Events to Monitor](https://docs.microsoft.com/en-us/windows-server/identity/ad-ds/plan/appendix-l--events-to-monitor) in Microsoft help.
 
 ## EventIdDenylist
 
-**Default**: 
+**Default**:
 
 **Description**:
 
@@ -253,13 +256,13 @@ For more information about security-related events, see [Events to Monitor](http
 
 ## EventLogEnableInitialDump
 
-**Default**: false 
+**Default**: false
 
 **Description**: If set to true, the sensor will collect and report existing events in the Event Log, from up to 7 days before the service start date.  Otherwise, events that have occurred before service start up are ignored.
 
 ## EventLogEnableMonitorLocalhost
 
-**Default**: false 
+**Default**: false
 
 **Description**: Enables the [Localhost Monitor](windows-sensor-overview.md#localhost-monitor) to monitor local events on the machine that is running the sensor.
 
@@ -285,7 +288,7 @@ For more information about security-related events, see [Events to Monitor](http
 
 **Default**: false
 
-**Description**: If set to true, the service will include the Message section of the event record when uploading the event to the collector. 
+**Description**: If set to true, the service will include the Message section of the event record when uploading the event to the collector.
 This setting is available in sensor versions 1.9 and higher.
 
 ## EventLogFormatRawXml
@@ -411,7 +414,7 @@ The sensor will use this setting to populate the value in the `X-Sumo-Category` 
 
 **Default**: 100
 
-**Description**: This specifies low long the thread will rest (in milliseconds) before checking for another file to send. This is here to avoid pegging out the CPU. 
+**Description**: This specifies low long the thread will rest (in milliseconds) before checking for another file to send. This is here to avoid pegging out the CPU.
 
 ## EventLogUploadPause
 
@@ -423,7 +426,7 @@ The sensor will use this setting to populate the value in the `X-Sumo-Category` 
 
 **Default**: true
 
-**Description**: This setting applies to configurations in which the sensor uploads to the Sumo Logic platform (as opposed to the legacy CSE server). 
+**Description**: This setting applies to configurations in which the sensor uploads to the Sumo Logic platform (as opposed to the legacy CSE server).
 
 For event log uploads, the sensor will use this setting to populate the value in the `_siemForwarding` header.
 
@@ -469,7 +472,7 @@ Minimum log level must also be set to “Trace” in the `Nlog.config` file loca
 
 **Default**: 2048
 
-**Description**: Specifies the upper limit (in MB) for the EventLogQueue directory, `C:\ProgramData\Sumo Logic\CSE Windows Sensor\EventLogQueue`. 
+**Description**: Specifies the upper limit (in MB) for the EventLogQueue directory, `C:\ProgramData\Sumo Logic\CSE Windows Sensor\EventLogQueue`.
 
 ## MaxSensorDirectorySize
 
@@ -479,7 +482,7 @@ Minimum log level must also be set to “Trace” in the `Nlog.config` file loca
 
 ## MinPercentDiskSpaceLeft
 
-**Default**: 5 
+**Default**: 5
 
 **Description**: To help prevent directory and event log files from filling up the local hard drive, the sensor will stop logging once the available hard drive space drops below the percentage specified.
 

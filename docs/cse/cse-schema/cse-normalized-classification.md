@@ -1,8 +1,11 @@
 ---
 id: cse-normalized-classification
+title: CSE Normalized Classification
+sidebar_label: Normalized Classification
+description: Learn about CSE's Normalized Classification Fields, schema fields that have an enforced output defined by CSE.
 ---
 
-# CSE Normalized Classification
+
 
 This topic describes how CSE applies normalized classification to Records. 
 

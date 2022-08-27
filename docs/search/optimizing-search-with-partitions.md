@@ -6,7 +6,7 @@ id: optimizing-search-with-partitions
 
 ## What are Partitions?
 
-A partition stores your data in an index separate from the rest of your account's data so you can optimize searches, [manage variable retention](../manage/partitions-and-data-tiers/manage-indexes-variable-retention.md), and specify certain [data to forward to S3](../manage/data-forwarding/data-forwarding-to-s3.md).
+A partition stores your data in an index separate from the rest of your account's data so you can optimize searches, [manage variable retention](../manage/partitions-and-data-tiers/manage-indexes-variable-retention.md), and specify certain [data to forward to S3](../manage/data-forwarding/amazon-s3-bucket.md).
 
 Partitions route your data to an index becoming a separate subset of data in your account. Creating smaller and separate subsets of data is central to search optimization. When you run a search against an index, results are returned more quickly and efficiently because the search runs against a smaller data set.
 

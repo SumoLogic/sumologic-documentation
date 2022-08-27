@@ -68,7 +68,7 @@ Select **Delete Token** from the menu on the right of the row on the table or i
 
 ## Using Installation Tokens
 
-This section provides information on using Installation Tokens to register [Installed Collectors](../../send-data/installed-collectors/about-installed-collectors.md). For details on Collector installation, see [Install a Collector on Linux](../../send-data/installed-collectors/install-collector-linux.md), [Install a Collector on MacOS](../../send-data/installed-collectors/install-collector-macos.md), and [Install a Collector on Windows](../../send-data/installed-collectors/install-collector-windows.md).
+This section provides information on using Installation Tokens to register [Installed Collectors](../../send-data/installed-collectors/about.md). For details on Collector installation, see [Install a Collector on Linux](../../send-data/installed-collectors/linux.md), [Install a Collector on MacOS](../../send-data/installed-collectors/macos.md), and [Install a Collector on Windows](../../send-data/installed-collectors/windows.md).
 
 <Tabs
   className="unique-tabs"

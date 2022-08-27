@@ -1,8 +1,9 @@
 ---
 id: troubleshooting-time-discrepancies
+title: Troubleshooting time discrepancies
 ---
 
-# Troubleshooting time discrepancies
+#
 
 In most scenarios, the message time and receipt time of a log message in Sumo Logic should be almost the same, within a minute of each other. However, network latency, random (not continuous) spikes in data volume, and service disruptions can cause delays, leading to a discrepancy between message time and receipt time. Large discrepancies can lead to incorrect events being displayed, and may even cause search performance issues. On some occasions, it can also prevent Dashboards from populating with data.
 
@@ -33,7 +34,7 @@ Pay careful attention to the Time Zone specified for a Source. The **Use time 
 | z | Time zone (General time zone) | Pacific Standard; PST; GMT-08:00 |
 | Z | Time zone (RFC 822 time zone) | -0800 |
 
-  
+
 If no time zone is found in the message, or if the time zone is in an unsupported format, Sumo Logic uses the selected fallback option and applies the appropriate offset to the message time.
 
 ## Potential time zone configuration issues
@@ -52,7 +53,7 @@ In this scenario, “US/Pacific” is not in a valid time zone format, so instea
 ### Example 2 - Improperly configured Time Zone configuration
 
 ```
-Source Time Zone selection: None Selected (”Select a Time Zone” appears in the UI) 
+Source Time Zone selection: None Selected (”Select a Time Zone” appears in the UI)
 Sample Message Timestamp: Sep 28 19:00:00
 ```
 

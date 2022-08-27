@@ -1,8 +1,9 @@
 ---
 id: view-records-signal
+title: View Records for a Signal
+description: Learn how to view Records associated with a Signal.
 ---
 
-# View Records for a Signal
 
 CSE uses rules to evaluate incoming Records, and when the conditions of a rule are met, generates a Signal. This topic explains how to view Records associated with a Signal in CSE. 
 
@@ -28,5 +29,5 @@ The Records are retrieved in real time. The query is limited to the time window 
 
  
 
-  
+
  

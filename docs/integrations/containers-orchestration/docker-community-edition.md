@@ -179,8 +179,8 @@ Follow the instructions in [Access Keys](/docs/manage/security/access-keys) to c
 ### Step 2: Install collector on each Docker host
 
 Follow the instructions for the operating system of the host where you will install the collector:
-* [Install a Collector on Linux](/docs/send-data/installed-collectors/install-collector-linux)
-* [Install a Collector on MacOS](/docs/send-data/installed-collectors/install-collector-macos)
+* [Install a Collector on Linux](/docs/send-data/installed-collectors/linux)
+* [Install a Collector on MacOS](/docs/send-data/installed-collectors/macos)
 
 
 ### Step 3: Configure Docker log source
@@ -189,28 +189,27 @@ Follow the instructions for the operating system of the host where you will inst
 2. Navigate to the collector you installed on the Docker host, and select **Add > Add Source**.
 3. Select **Docker Logs**. The Docker Logs page appears.
 4. Configure the source fields:
-   1. **Name**. (Required).
-   2. **Description**. (Optional).
-   3. **URI**. Enter the URI of the Docker daemon.
-     * If your collector runs on the same host as the Docker containers it will monitor, enter the non-networked Unix socket:
-      ```bash
-      unix:///var/run/docker.sock
-      ```
-     * If your collector runs on a different machine than the Docker host, you can determine its URI from a Docker environment variable. Run the `docker-machine` command to find the Docker environment variables.
-      ```bash
-      $ docker-machine env machine-name
-      ```
-     * Take the value of the `DOCKER_HOST` variable, change "tcp" to "https", and enter that value as the URI. For example, `https://192.168.99.100:2376`. For example:
-      ```bash
-      $ docker-machine env default
-      export DOCKER_TLS_VERIFY="1"
-      export DOCKER_HOST="tcp://192.168.99.100:2376"
-      export DOCKER_CERT_PATH="/Users/sumo/.docker/machine/machines/default"
-      export DOCKER_MACHINE_NAME="default"
-      # Run this command to configure your shell:
-      # eval "$(docker-machine env default)"
-      ```
-
+   * **Name**. (Required).
+   * **Description**. (Optional).
+   * **URI**. Enter the URI of the Docker daemon.
+      * If your collector runs on the same host as the Docker containers it will monitor, enter the non-networked Unix socket:
+       ```bash
+       unix:///var/run/docker.sock
+       ```
+      * If your collector runs on a different machine than the Docker host, you can determine its URI from a Docker environment variable. Run the `docker-machine` command to find the Docker environment variables.
+       ```bash
+       $ docker-machine env machine-name
+       ```
+      * Take the value of the `DOCKER_HOST` variable, change "tcp" to "https", and enter that value as the URI. For example, `https://192.168.99.100:2376`. For example:
+       ```bash
+       $ docker-machine env default
+       export DOCKER_TLS_VERIFY="1"
+       export DOCKER_HOST="tcp://192.168.99.100:2376"
+       export DOCKER_CERT_PATH="/Users/sumo/.docker/machine/machines/default"
+       export DOCKER_MACHINE_NAME="default"
+       # Run this command to configure your shell:
+       # eval "$(docker-machine env default)"
+       ```
    4. **Cert Path**. (Required for remote access only) Enter the path to the certificate files on the local machine where the collector runs. In the example above, the cert path is: `/Users/sumo/.docker/machine/machines/default`.
    5. **Collect From** and **Container Filters**. If you want to collect from all containers, click the **All Containers** radio button. If you want to collect from selected containers, click the **Specified Container Filters** radio button, and specify filter expressions in the **Container Filters** field. For information about how to define container filters, see [More about defining container filters](#More_about_defining_container_filters) below.
       * By default, you can collect from up to 40 containers. To increase the limit, stop the Collector service, edit the `collector.properties` file (in the `config` subdirectory of the collector installation directory), and add the `docker.maxPerContainerConnections` property. The maximum supported value is 100. Then start the Collector service. See [collector.properties](/docs/send-data/installed-collectors/collector-installation-reference/collector-properties) for details on modifying this configuration file.

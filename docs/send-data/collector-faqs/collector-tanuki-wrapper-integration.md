@@ -1,8 +1,9 @@
 ---
 id: collector-tanuki-wrapper-integration
+title: Windows - This Collector does not seem to have tanuki wrapper integration enabled
 ---
 
-# Windows: 
+# Windows:
 
 Error messages on Windows: "This Collector does not seem to have tanuki wrapper integration enabled."
 

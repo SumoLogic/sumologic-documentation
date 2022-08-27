@@ -2,7 +2,7 @@
 id: kemp-loadmaster
 title: Kemp LoadMaster
 sidebar_label: Kemp LoadMaster
-description: tk
+description: Configure a syslog source to ingest Kemp LoadMaster messages to be parsed by CSE’s system parser for Kemp LoadMaster.
 ---
 
 This section has instructions for collecting Kemp LoadMaster messages and sending them to Sumo Logic to be ingested by CSE.

@@ -1,8 +1,8 @@
 ---
 id: create-use-network-blocks
 title: Create and Use Network Blocks
-sidebar_label: Create and Use Network Blocks
-description: tk
+sidebar_label: Network Blocks
+description: A Network Block is a CIDR block of IP addresses from your infrastructure that you label to provide context that can be leveraged in rules and is helpful in investigating CSE Insights.
 ---
 
 This topic describes *Network Blocks* and their purpose, and provides instructions for setting them up and using them.

@@ -1,8 +1,8 @@
 ---
 id: run-search-against-scheduled-view
+title: Run a Search Against a Scheduled View
 ---
 
-# Run a Search Against a Scheduled View
 
 Running a search against the indexed data in a Scheduled View is almost exactly the same as running any other query. The difference you'll notice is the quick speed at which results are returned, especially if you're searching over a long period of historical data.
 

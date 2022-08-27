@@ -1,9 +1,10 @@
 ---
 id: collect-with-amazon-kinesis
+title: Collect Amazon CloudWatch Logs using Amazon Kinesis
 ---
 
 <!-- This was marked as PRIVATE - not in SIDEBARS -->
-# Collect Amazon CloudWatch Logs using Amazon Kinesis
+
 
 :::sumo
 Using the Sumo Logic Kinesis Connector to collect CloudWatch Logs (including VPC FLow Logs) is a community-supported solution. It is not officially supported by Sumo Logic Support. To provide feedback, report a bug, or get help, log into the [Sumo Logic Community](https://community.sumologic.com/s/topic/0TOE0000000g8L6OAI/Apps).
@@ -21,7 +22,7 @@ In order to make this integration easier, Sumo Logic has provided the following 
 ## Create a Sumo Logic Hosted Collector and an HTTP Source
 
 1. In Sumo Logic, create a Hosted Collector, using the instructions in [Set up a Hosted Collector](../../configure-hosted-collector.md). 
-1. Then, [configure an HTTP Source](/docs/send-data/sources/sources-hosted-collectors/http-logs-metrics-source).
+1. Then, [configure an HTTP Source](/docs/send-data/sources/hosted-collectors/http-logs-metrics-source).
 
 You will use the HTTP URL when you create the CloudFormation stack.
 

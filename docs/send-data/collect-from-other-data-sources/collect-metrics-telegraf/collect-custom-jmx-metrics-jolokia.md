@@ -1,8 +1,9 @@
 ---
 id: collect-custom-jmx-metrics-jolokia
+title: Collect Custom JMX Metrics with Jolokia
 ---
 
-# Collect Custom JMX Metrics with Jolokia
+#
 
 This topic has information about collecting custom JMX metrics using the Jolokia agent and Telegraf.  
 

@@ -1,8 +1,8 @@
 ---
 slug: /cse/administration
-title: Administration
+title: CSE Administration
 sidebar_label: Administration
-description: tk
+description: Learn how to set up users accounts and roles, create CSE Actions, configure Network Blocks, manage custom Insight status and sub-resolutions, and more.
 ---
 
 import DocCardList from '@theme/DocCardList';

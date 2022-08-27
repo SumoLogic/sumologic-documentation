@@ -32,7 +32,7 @@ This section provides instructions for configuring log collection for Google Wor
 
 Currently, the source name for Google Workspace is still **G Suite Apps Audit Source**, which will be changed/updated shortly.
 
-Configure one [G Suite Apps Audit Source](/docs/send-data/sources/sources-hosted-collectors/g-suite-apps-audit-source) for each Google App from which you want to collect events:
+Configure one [G Suite Apps Audit Source](/docs/send-data/sources/hosted-collectors/g-suite-apps-audit-source) for each Google App from which you want to collect events:
 
 * Google Admin
 * Google Calendar
@@ -118,7 +118,7 @@ To provide feedback on these limitations and known issues, contact Google suppor
 ### Field Extraction Rules
 
 * **Name**. A relevant name, such as "Google"
-* **Scope**. _sourceCategory=google*
+* **Scope**. `_sourceCategory=google*`
 * **Parse Expression**.  
   ```sql
   | json "id","actor","events"  \
@@ -450,8 +450,6 @@ This section provides a list of environment variables for Google Workspace Alert
   </tr></small>
 </table>
 
-
-
 ### Troubleshooting the Google Cloud Platform Function  
 
 This section shows you how to troubleshoot the function and resolve errors you may have encountered.
@@ -493,16 +491,12 @@ For python 3, use `pip3 install sumologic-gsuitealertcenter` (step 3) and `/usr/
 To deploy the script, do the following:
 1. Setup the Alert Center API as described in the following [Google documentation](https://developers.google.com/admin-sdk/alertcenter/guides/prerequisites). Assign the Cloud Datastore Owner role while creating a service account. Copy the Client ID present in the JSON generated after adding the key in the service account (it will be used further in step 3 while granting domain wide access). <br/><img src={useBaseUrl('img/integrations/google/clipboard_ef0b96eaf630b4eaafbb4ff59af9c507b.png')} alt="google workspace" />
 While creating the key in the service account, make a note of the location of the Service Account JSON file that has been downloaded to your computer. You will need this path later.
-1. If **pip** is not already installed, follow the instructions in the [pip documentation](https://pip.pypa.io/en/stable/installing/) to download and install **pip**.
-2. Log in to a Linux machine (compatible with either Python 3.7 or Python 2.7) and install the script using the following command.
-
-For python 3, use **pip3 install** in the following command.
+2. If **pip** is not already installed, follow the instructions in the [pip documentation](https://pip.pypa.io/en/stable/installing/) to download and install **pip**.
+3. Log in to a Linux machine (compatible with either Python 3.7 or Python 2.7) and install the script using the following command. For python 3, use **pip3 install** in the following command.
 ```bash
 pip install sumologic-gsuitealertcenter
 ```
-
-1. Create a configuration file named **gsuitealertcenter.yaml** in home directory by copying the following snippet.
-
+4. Create a configuration file named **gsuitealertcenter.yaml** in home directory by copying the following snippet.
 ```yaml
 SumoLogic:
   SUMO_ENDPOINT: <SUMO LOGIC HTTP URL>
@@ -514,19 +508,15 @@ GsuiteAlertCenter:
 Collection:
   ENVIRONMENT: onprem
 ```
-
-
-1. Add the **SUMO_ENDPOINT** and **CREDENTIALS_FILEPATH** (from step 1 above), and **DELEGATED_EMAIL** parameters, then save the file. For the **DELEGATED_EMAIL** parameter: if you do not have an email address of one of your super admins, you can use a service account email address instead if you [delegate domain-wide authority](https://developers.google.com/admin-sdk/directory/v1/guides/delegation) to that account.
-2. Create a cron job for running the collector every 5 minutes by using `crontab -e` and adding the following line.
-
-If you're using python3, for operating systems where the default python is not python3, use `/usr/bin/python3 -m sumogsuitealertscollector.main` in the following command.
+5. Add the **`SUMO_ENDPOINT`** and **`CREDENTIALS_FILEPATH`** (from step 1 above), and **`DELEGATED_EMAIL`** parameters, then save the file. For the **`DELEGATED_EMAIL`** parameter: if you do not have an email address of one of your super admins, you can use a service account email address instead if you [delegate domain-wide authority](https://developers.google.com/admin-sdk/directory/v1/guides/delegation) to that account.
+6. Create a cron job for running the collector every 5 minutes by using `crontab -e` and adding the following line. If you're using python3, for operating systems where the default python is not python3, use `/usr/bin/python3 -m sumogsuitealertscollector.main` in the following command.
 ```bash
 */5 * * * * /usr/bin/python -m sumogsuitealertscollector.main > /dev/null 2>&1
 ```
 
 
 
-### Advanced configuration
+### Advanced Configuration
 
 This section provides a list of environment variables for Google Workspace Alert Center that you can define in the configuration file, as shown in this example. See the following table for explanations for each of the environment variables.
 

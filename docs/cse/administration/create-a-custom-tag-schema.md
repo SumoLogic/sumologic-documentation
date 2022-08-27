@@ -2,7 +2,7 @@
 id: create-a-custom-tag-schema
 title: Create a Custom Tag Schema
 sidebar_label: Create a Custom Tag Schema
-description: This topic has instructions for creating a custom tag schema in CSE. 
+description: Custom tag schemas allow you to ensure that users apply consistent tag values.
 ---
 
 This topic has instructions for creating a custom tag schema in CSE. 

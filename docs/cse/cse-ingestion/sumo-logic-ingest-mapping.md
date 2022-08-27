@@ -2,7 +2,7 @@
 id: sumo-logic-ingest-mapping
 title: Configure a Sumo Logic Ingest Mapping
 sidebar_label: Configure a Sumo Logic Ingest Mapping
-description: tk
+description: Learn how to configure Sumo Logic and CSE to enable Sumo Logic to send log messages to CSE, and CSE to select a mapper to process the messages it receives from Sumo Logic.
 ---
 
 This topic has instructions for creating a CSE ingest mapping for a data source. An ingest mapping gives CSE the information it needs in order to map message fields to Record attributes. These are referred to as mapping hints, and include: Format, Vendor, Product, and Event ID Pattern.

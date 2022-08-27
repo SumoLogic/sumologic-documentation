@@ -362,7 +362,7 @@ The diagram below illustrates the components of the MySQL collection in a non-Ku
 #### Configure Metrics collection
 
 1. **Configure a Hosted Collector**. For instructions, see [Configure a Hosted Collector](/docs/send-data/configure-hosted-collector).
-2. **Configure an HTTP Logs and Metrics Source.** For instructions, see [HTTP Logs and Metrics Source](/docs/send-data/sources/sources-hosted-collectors/http-logs-metrics-source). Make a note of the HTTP Source URL.
+2. **Configure an HTTP Logs and Metrics Source.** For instructions, see [HTTP Logs and Metrics Source](/docs/send-data/sources/hosted-collectors/http-logs-metrics-source). Make a note of the HTTP Source URL.
 3. **Install Telegraf**. For instructions see [Install Telegraf](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf.md).
 4. **Configure and start Telegraf**. As part of collecting metrics data from Telegraf, we use the [MySQL input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/mysql) to get data from Telegraf and the [Sumo Logic output plugin](https://github.com/SumoLogic/fluentd-output-sumologic) to send data to Sumo Logic.
 5. Create or modify the `telegraf.conf` file, and copy the following into the relevant sections.
@@ -427,7 +427,7 @@ For information about properties that can be configured globally in the Telegraf
 
 This section provides instructions for configuring collection of logs for MySQL running on a non-Kubernetes environment. MySQL logs are stored in log files. Slow query logs must be explicitly enabled to be able to be written to a log file.
 
-Sumo Logic supports collecting logs via a local log file. Local log files can be collected by Sumo Logic [Installed Collectors](/docs/send-data/Installed-Collectors), which requires you to allow outbound traffic to Sumo Logic [endpoints](https://help.sumologic.com/APIs/General-API-Information/Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security) for collection to work.
+Sumo Logic supports collecting logs via a local log file. Local log files can be collected by Sumo Logic [Installed Collectors](/docs/send-data/Installed-Collectors), which requires you to allow outbound traffic to Sumo Logic [endpoints](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security) for collection to work.
 
 
 1. **Configure MySQL to log to a local file(s)**. MySQL logs written to a log file can be collected via the Local File Source of a Sumo Logic Installed Collector. To configure the MySQL log file(s), locate your local `my.cnf` configuration file in the database directory.
@@ -450,7 +450,7 @@ Sumo Logic supports collecting logs via a local log file. Local log files can be
     sudo mysql.server restart
     ```
 2. **Configure an [Installed Collector](/docs/send-data/Installed-Collectors)**.
-3. **Add a [Local File Source](/docs/send-data/Sources/sources-installed-collectors/Local-File-Source) for MySQL error logs**.
+3. **Add a [Local File Source](/docs/send-data/Sources/installed-collectors/Local-File-Source) for MySQL error logs**.
    1. Add a Local File Source in the installed collector configured in the previous step. Configure the Local File Source fields as follows:
       * **Name.** (Required)
       * **Description**. (Optional)
@@ -477,7 +477,7 @@ Sumo Logic supports collecting logs via a local log file. Local log files can be
 
 At this point, MySQL error logs should start flowing into Sumo Logic.
 
-4. **Configuring a [Local File Source](/docs/send-data/Sources/sources-installed-collectors/Local-File-Source) for slow query log**.
+4. **Configuring a [Local File Source](/docs/send-data/Sources/installed-collectors/Local-File-Source) for slow query log**.
    1. Add a Local File Source in the installed collector configured in the previous step. Configure the Local File Source fields as follows:
       * **Name.** (Required)
       * **Description**. (Optional)
@@ -537,7 +537,7 @@ There are limits to how many alerts can be enabled. For more information, see [M
 2. Download [Terraform 0.13](https://www.terraform.io/downloads.html) or later, and install it.
 3. Download the Sumo Logic Terraform package for MySQL monitors. The alerts package is available in the Sumo Logic github [repository](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/tree/main/monitor_packages/mysql). You can either download it using the `git clone` command or as a zip file.
 4. Alert Configuration: After extracting the package, navigate to the `terraform-sumologic-sumo-logic-monitor/monitor_packages/mysql/` directory.
-   1. Edit the `mysql.auto.tfvars` file and add the Sumo Logic Access Key and Access ID from Step 1 and your Sumo Logic deployment. If you're not sure of your deployment, see [Sumo Logic Endpoints and Firewall Security](https://help.sumologic.com/APIs/General-API-Information/Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security).
+   1. Edit the `mysql.auto.tfvars` file and add the Sumo Logic Access Key and Access ID from Step 1 and your Sumo Logic deployment. If you're not sure of your deployment, see [Sumo Logic Endpoints and Firewall Security](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
     ```sql
     access_id   = "<SUMOLOGIC ACCESS ID>"
     access_key  = "<SUMOLOGIC ACCESS KEY>"
@@ -601,7 +601,7 @@ Now that you have set up collection for MySQL, install the Sumo Logic App for My
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
 1. From the **App Catalog**, search for and select the app**.**
-2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](https://help.sumologic.com/01Start-Here/Library/Apps-in-Sumo-Logic/Install-Apps-from-the-Library)
+2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/library/install-apps.md)
 3. To install the app, complete the following fields.
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
     2. **Data Source.** Choose **Enter a Custom Data Filter**, and enter a custom filter. For example:

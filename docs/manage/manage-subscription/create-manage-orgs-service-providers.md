@@ -1,8 +1,9 @@
 ---
 id: create-manage-orgs-service-providers
+title: Create and Manage Orgs (Service Providers)
 ---
 
-# Create and Manage Orgs (Service Providers)
+#
 
 ## Availability
 
@@ -74,7 +75,7 @@ After you create a child org, you can’t delete it.
 1. The **Create New Organization** pane appears.
 
     ![create-new-org-sp.png](/img/subscriptions/sp-create-new-org.png)
-    
+
 1. **Organization Name**. Enter a unique name for the org.
 1. **Account Owner Email**. Enter the name of the account owner.
 1. **Account Owner First Name**. Enter the account owner’s first name.
@@ -178,10 +179,10 @@ You can see what portion of your subscription credits have been allocated and co
 
     * **Allocated Credits**. The total number of credits allocated to the org.
     * **Credits Used**. The number and percentage of allocated credits that have been used.
-    * For each Product Variable, the following information is shown. 
+    * For each Product Variable, the following information is shown.
     * **Credits Used**. Number of allocated credits that have been used for the Product Variable.
     * **Deployment Charge**. The number of credits associated with the Deployment Charge (as applicable), if the child org is in a different deployment than the parent org.
-    * **Credits Deducted**. This column if the parent org is on a subscription to which cross-geo charging applies to the org. If the parent org is on Global Credits, deployment charges don’t apply and this column won't appear. **Credits Deducted** is the sum of **Credits Used** and the **Deployment Charge**. 
+    * **Credits Deducted**. This column if the parent org is on a subscription to which cross-geo charging applies to the org. If the parent org is on Global Credits, deployment charges don’t apply and this column won't appear. **Credits Deducted** is the sum of **Credits Used** and the **Deployment Charge**.
     * **Usage %**. The percentage of credits allocated to the org that have been used for the Product Variable.
     * **Units**. Shows the volume of log ingest in GB or the DPM (metrics) that is equivalent to the credits used for the Product Variable.        
 

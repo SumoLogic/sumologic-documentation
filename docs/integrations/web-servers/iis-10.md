@@ -51,7 +51,7 @@ Sumo Logic supports the collection of logs and metrics data from IIS server in s
 
 <img src={useBaseUrl('img/integrations/web-servers/IIS-flow.png')} alt="Collect Internet Information Services (IIS) Logs and Metrics for Standalone environments" />
 
-Sumo Logic uses the Telegraf operator for IIS metric collection and the [Installed Collector](/docs/send-data/installed-collectors/about-installed-collectors) for collecting IIS logs. The diagram below illustrates the components of the IIS collection in a standalone environment. Telegraf uses the [Windows Performance Counters Input Plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/sqlserver) to obtain IIS metrics and the Sumo Logic output plugin to send the metrics to Sumo Logic. Logs from IIS Server are collected by a [Local File Source](/docs/send-data/Sources/sources-installed-collectors/Local-File-Source).
+Sumo Logic uses the Telegraf operator for IIS metric collection and the [Installed Collector](/docs/send-data/installed-collectors/about) for collecting IIS logs. The diagram below illustrates the components of the IIS collection in a standalone environment. Telegraf uses the [Windows Performance Counters Input Plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/sqlserver) to obtain IIS metrics and the Sumo Logic output plugin to send the metrics to Sumo Logic. Logs from IIS Server are collected by a [Local File Source](/docs/send-data/Sources/installed-collectors/Local-File-Source).
 
 
 #### Configure Logs Collection
@@ -108,7 +108,7 @@ For more information about IIS log format and log configuration refer [link](htt
 2. To understand HTTP Error Log format, refer to this document [link](https://docs.microsoft.com/en-us/windows/desktop/http/format-of-the-http-server-api-error-logs). HTTP Error Log files are generated as local files. The default HTTP Error log file location is: `C:\Windows\System32\LogFiles\HTTPERR`
 1. **Configure an Installed Collector.**
 
-If you have not already done so, install and configure an installed collector for Windows by [following the documentation](/docs/send-data/installed-collectors/install-collector-windows).
+If you have not already done so, install and configure an installed collector for Windows by [following the documentation](/docs/send-data/installed-collectors/windows).
 
 1. **Configure Sources.**
 
@@ -119,13 +119,13 @@ This section demonstrates how to configure sources for the following log types:
 * IIS Performance (Perfmon) Logs
 * **Configure Source for IIS Access Logs**
 
-This section demonstrates how to configure a Local File Source for IIS Access Logs, for use with an [Installed Collector](/docs/integrations/microsoft-azure/iis-10-legacy#Configure-a-Collector). You may configure a [Remote File Source](/docs/send-data/Sources/sources-installed-collectors/Remote-File-Source), but the configuration is more complex.
+This section demonstrates how to configure a Local File Source for IIS Access Logs, for use with an [Installed Collector](/docs/integrations/microsoft-azure/iis-10-legacy#Configure-a-Collector). You may configure a [Remote File Source](/docs/send-data/Sources/installed-collectors/Remote-File-Source), but the configuration is more complex.
 
 Sumo Logic recommends using a Local File Source whenever possible.
 
 To configure a local file source for IIS Access Logs, do the following:
 
-1. Configure a [Local File Source](/docs/send-data/Sources/sources-installed-collectors/Local-File-Source).
+1. Configure a [Local File Source](/docs/send-data/Sources/installed-collectors/Local-File-Source).
 2. Specify Local File Source Fields as follows:
     1. **Name**: Required (for example, "IIS")
     2. **Description**. (Optional)
@@ -160,7 +160,7 @@ This section demonstrates how to configure a Local File Source for HTTP Error Lo
 
 To configure a local file source for HTTP Error Logs, do the following:
 
-1. Configure a [Local File Source](/docs/send-data/Sources/sources-installed-collectors/Local-File-Source).
+1. Configure a [Local File Source](/docs/send-data/Sources/installed-collectors/Local-File-Source).
 2. Specify the Local File Source Fields as follows:
     1. **Name**: Required (for example, "HTTP Error Logs")
     2. **Description**. (Optional)
@@ -193,12 +193,12 @@ This section demonstrates how to configure a Windows Performance Source, for use
 Sumo Logic recommends using a Local Windows Performance source whenever possible.
 
 Use the appropriate source for your environment:
-* [Local Windows Performance Monitor Log Source](/docs/send-data/sources/sources-installed-collectors/local-windows-performance-monitor-log-source.md)
-* [Remote Windows Performance Monitor Log Source](/docs/send-data/sources/sources-installed-collectors/remote-windows-performance-monitor-log-source.md)
+* [Local Windows Performance Monitor Log Source](/docs/send-data/sources/installed-collectors/local-windows-performance-monitor-log-source.md)
+* [Remote Windows Performance Monitor Log Source](/docs/send-data/sources/installed-collectors/remote-windows-performance-monitor-log-source.md)
 
 To configure a Source for IIS Performance Logs, do the following:
 
-1. Configure a [Local Windows Performance Monitor Log Source](/docs/send-data/sources/sources-installed-collectors/local-windows-performance-monitor-log-source.md).
+1. Configure a [Local Windows Performance Monitor Log Source](/docs/send-data/sources/installed-collectors/local-windows-performance-monitor-log-source.md).
 2. Configure the Local Windows Performance Source Fields as follows:
     * **Name**: Required (for example, "IIS Performance")
     * **Source Category** (Required). For example, Webserver/IIS/PerfCounter.
@@ -225,7 +225,7 @@ webserver_farm = <Your_IISserver_farm_Name>`. Enter **Default** if you do not ha
 
 #### Set up a Sumo Logic HTTP Source
 
-1. **Configure a Hosted Collector for Metrics.** To create a new Sumo Logic hosted collector, perform the steps in the [Create a Hosted Collector](/docs/send-data/Hosted-Collectors#Create_a_Hosted_Collector) documentation.
+1. **Configure a Hosted Collector for Metrics.** To create a new Sumo Logic hosted collector, perform the steps in the [Create a Hosted Collector](/docs/send-data/configure-hosted-collector.md) documentation.
 2. **Configure an HTTP Logs & Metrics source**:
     1. On the created Hosted Collector on the Collection Management screen, select **Add Source**.
     2. Select **HTTP Logs & Metrics_._**
@@ -467,7 +467,7 @@ The monitors are disabled by default. Once you have installed the alerts using t
 
 ### Method B: Using a Terraform script
 
-1. **Generate a Sumo Logic access key and ID.** Generate an access key and access ID for a user that has the Manage Monitors role capability in Sumo Logic using these[ instructions](/docs/manage/security/access-keys#manage-your-access-keys-on-preferences-page). Identify which deployment your Sumo Logic account is in, using this [link](https://help.sumologic.com/APIs/General-API-Information/Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security).
+1. **Generate a Sumo Logic access key and ID.** Generate an access key and access ID for a user that has the Manage Monitors role capability in Sumo Logic using these[ instructions](/docs/manage/security/access-keys#manage-your-access-keys-on-preferences-page). Identify which deployment your Sumo Logic account is in, using this [link](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
 2. **[Download and install Terraform 0.13](https://www.terraform.io/downloads.html) or later.**
 3. **Download the Sumo Logic Terraform package for IIS Server alerts.** The alerts package is available in the Sumo Logic GitHub [repository](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/tree/main/monitor_packages/IIS). You can either download it through the “git clone” command or as a zip file.
 4. Alert Configuration: After the package has been extracted, navigate to the package directory **terraform-sumologic-sumo-logic-monitor/monitor_packages/IIS/**

@@ -1,8 +1,9 @@
 ---
 id: collect-metrics-azure-monitor
+title: Collect Metrics from Azure Monitor
 ---
 
-# Collect Metrics from Azure Monitor
+#
 
 This section has instructions for configuring a pipeline for shipping metrics available from Azure Monitor to an Event Hub, on to an Azure Function, and finally to an HTTP source on a hosted collector in Sumo Logic. Azure Monitor collects metrics and well as logs. The pipeline described below is for metrics, not logs. 
 
@@ -27,7 +28,7 @@ This section has instructions for configuring collection of metrics from Azure M
 In this step, you configure an HTTP source to receive logs from the Azure function.
 
 1. Select a hosted collector where you want to configure the HTTP source. If desired, create a new hosted collector, as described on [Configure a Hosted Collector](../../configure-hosted-collector.md).
-1. Configure an HTTP source, as described on [HTTP Logs and Metrics Source](/docs/send-data/sources/sources-hosted-collectors/http-logs-metrics-source). 
+1. Configure an HTTP source, as described on [HTTP Logs and Metrics Source](/docs/send-data/sources/hosted-collectors/http-logs-metrics-source). 
 
 ### Step 2. Configure Azure resources using ARM template
 
@@ -46,11 +47,11 @@ In this step, you use a Sumo-provided Azure Resource Manager (ARM) template to c
 
 1. Now you are back on the **Custom deployment** blade.
 
-   1. Create a new Resource Group (recommended) or select an existing one. 
-   1. Choose **Location**. 
+   1. Create a new Resource Group (recommended) or select an existing one.
+   1. Choose **Location**.
    1. For the **Sumo Endpoint URL** supply the URL for  HTTP source you defined in [Step 1](#step-1-configure-an-http-source). 
-   1. Agree to the terms and conditions. 
-   1. Click **Purchase**. 
+   1. Agree to the terms and conditions.
+   1. Click **Purchase**.
 
     ![pipeline-custom-deployment.png](/img/send-data/azure-custom-deployment.png)
 
@@ -75,25 +76,25 @@ In this step, you use a Sumo-provided Azure Resource Manager (ARM) template to c
 Follow these steps to export metrics for a resource to Event Hub.
 
 1. From the left pane, select **ALL Services.**
-1. Search for and select "Monitor". 
+1. Search for and select "Monitor".
 1. In the **Monitor** pane, select **Diagnostic Settings** under **Settings**.
-1. Select the resource for which you want to export metrics. If **diagnostics** is not enabled click **Turn on Diagnostics Settings.** 
+1. Select the resource for which you want to export metrics. If **diagnostics** is not enabled click **Turn on Diagnostics Settings.**
 1. Once diagnostics are enabled, click **Add a diagnostic setting**.
-1. The **Diagnostic Settings** page appears. 
+1. The **Diagnostic Settings** page appears.
 
     In the left pane:
-      
+
       * Enter a name for the diagnostic setting.
-      * Click the  **Stream to an event hub** checkbox. 
+      * Click the  **Stream to an event hub** checkbox.
       * Select **Configure event hub.** The right pane appears.
 
     In the right pane:
-    
+
       * Choose a **Subscription**.
       * Select `SumoMetricsNamespace<UniqueSuffix>` as the event hub namespace.
       * Select **insights-metrics-pt1m** as the event hub name.
-      * Select an event hub policy name. You can use the default policy **RootManageSharedAccessKey**. 
-      * Click **OK**. 
+      * Select an event hub policy name. You can use the default policy **RootManageSharedAccessKey**.
+      * Click **OK**.
       * Save the **Diagnostics Setting**.
 
 ### Troubleshooting metrics collection
