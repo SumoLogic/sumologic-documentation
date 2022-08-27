@@ -3,7 +3,6 @@ id: edit-data-forwarding-destinations-partition
 title: Edit Data Forwarding Destinations for a Partition
 ---
 
-#
 
 You can specify data forwarding settings for a partition so that the messages that were routed to an index can be forwarded to an existing or new Amazon S3 destination.
 

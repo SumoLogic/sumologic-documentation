@@ -1,8 +1,8 @@
 ---
 id: best-practices-source-categories
+title: Best Practices: Good and Bad Source Categories
 ---
 
-# Best Practices: Good and Bad Source Categories
 
 Setting Source Category values (\_sourceCategory), especially for a small set of Sources, may seem trivial at first. However, using the [proper naming convention](../sources/reference-information-sources/metadata-naming-conventions.md) to create good Source Category values is important for the correct scale and performance of your Sumo Logic deployment in the long term. This topic discusses some best practices around creating good Source Category values.
 
@@ -72,7 +72,7 @@ For example, if most of your use cases do not need data from both prod and dev e
 
 * Prod/Web/Apache/Access  
 * Dev/Web/Apache/Access  
-* Prod/DB/MySQL/Error 
+* Prod/DB/MySQL/Error
 * Dev/DB/MySQL/Error
 
 You can still search across both prod and dev when needed, but this scheme divides all your data into prod and dev more intuitively.

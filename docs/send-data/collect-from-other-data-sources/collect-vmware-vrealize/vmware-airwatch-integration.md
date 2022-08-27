@@ -1,8 +1,9 @@
 ---
 id: vmware-airwatch-integration
+title: VMware AirWatch Integration for Sumo Logic
 ---
 
-# VMware AirWatch Integration for Sumo Logic
+#
 
 [VMware AirWatch](https://www.air-watch.com/ "https://www.air-watch.com/") is an enterprise mobility management (EMM) software and standalone management systems for content, applications and email. Sumo Logic integrates with VMware AirWatch to provide visibility for monitoring enterprise mobility management in your deployment. The unified digital workspace platform simplifies and secures app access and IT management throughout your environment.
 
@@ -50,12 +51,12 @@ To enable integration and configure syslog, do the following:
 
 | Setting | Description | Sumo Logic Specific Value |
 |--|--|--|
-| Syslog Integration | Enable/Disable | Enable | 
+| Syslog Integration | Enable/Disable | Enable |
 | Host Name | Host Name of Cloud Syslog | Host Name of the Sumo Logic Cloud Syslog:<br/>`syslog.collection.us1.sumologic.com` |
-| Protocol | UDP, TCP, Secure TCP | A secure TCP is required for Sumo Logic  | 
-| Port | Port number | 6514 | 
-| Syslog Facility | Roughly suggests from what part of a system a message originated, and can help distinguish different classes of messages. | Optional, or as required | 
-| Message Tag | Enter a descriptive tag to identify events from the AirWatch Console in the Message Tag field. | Optional, or as required | 
+| Protocol | UDP, TCP, Secure TCP | A secure TCP is required for Sumo Logic  |
+| Port | Port number | 6514 |
+| Syslog Facility | Roughly suggests from what part of a system a message originated, and can help distinguish different classes of messages. | Optional, or as required |
+| Message Tag | Enter a descriptive tag to identify events from the AirWatch Console in the Message Tag field. | Optional, or as required |
 | Message Content | Enter the data to include in the transmission in the Message Content field.<br/>Note: Paste the Sumo Logic Token in the message field as highlighted in next column. | AirWatch Syslog Details are as follows:<br/>Event Type: `{EventType}`<br/>Event: `{Event}`<br/>User: `{User}`<br/>Event Source: `{EventSource}`<br/>Event Module: `{EventModule}`<br/>Event Category: `{EventCategory}`<br/>Event Data: `{EventData} 7SarExampleSumoLogicToken+57f7ZDzI4aDN29uOy0vPj6x9z6tkwH6KBtS@41123` |
 
 5. Click the **Advanced** tab, and configure the following settings.
@@ -70,4 +71,3 @@ To enable integration and configure syslog, do the following:
 1. Click **Save**, and then click **Test Connection** to ensure you have successful communication between the AirWatch Console and Sumo Logic. For more information, see the following AirWatch [documentation](https://docs.vmware.com/en/VMware-AirWatch/9.3/vmware-airwatch-guides-93/GUID-AW93-Configure_Syslog.html).
 
 After a successful integration, the events start flowing into Sumo Logic.
-

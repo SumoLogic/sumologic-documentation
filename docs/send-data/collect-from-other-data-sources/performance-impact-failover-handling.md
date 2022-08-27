@@ -1,8 +1,7 @@
 ---
 id: performance-impact-failover-handling
+title: Performance Impact and Failover Handling
 ---
-
-# Performance Impact and Failover Handling
 
 ## Performance Impact on your AWS Lambda function
 

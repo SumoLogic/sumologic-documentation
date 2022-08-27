@@ -3,8 +3,6 @@ id: view-partition-details
 title: View Details About a Partition
 ---
 
-#
-
 To view details about a Partition:
 
 1. Go to **Manage Data** \> **Logs** \> **Partitions**.

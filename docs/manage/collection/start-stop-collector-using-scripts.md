@@ -3,7 +3,6 @@ id: start-stop-collector-using-scripts
 title: Start or Stop a Collector using Scripts
 ---
 
-#
 
 Sumo Logic Collectors start automatically at system startup. The Sumo Logic Collector installation directory comes with a set of scripts used to start, stop, and check the status of the Collector process (Linux/Unix) and service (Windows).
 

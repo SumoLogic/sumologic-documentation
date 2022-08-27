@@ -3,7 +3,6 @@ id: run-search-against-partition
 title: Run a Search Against a Partition
 ---
 
-#
 
 Running a search against the data in a Partition is almost exactly the same as running any other query. The difference you'll notice is the speed at which results are returned, especially if you're searching over a large amount of data.
 

@@ -3,7 +3,6 @@ id: upgrade-collectors
 title: Upgrade Collectors
 ---
 
-#
 
 ## Upgrade Collectors using the Web Application
 

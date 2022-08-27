@@ -1,8 +1,9 @@
 ---
 slug: /send-data/sources/installed-collectors
+title: Sources for Installed Collectors
 ---
 
-# Sources for Installed Collectors
+#
 
 You can configure a variety of Sources on [Installed Collectors](../../installed-collectors/about.md).
 
