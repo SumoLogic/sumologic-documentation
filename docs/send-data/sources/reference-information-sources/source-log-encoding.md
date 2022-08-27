@@ -1,8 +1,9 @@
 ---
 id: source-log-encoding
+title: Source Log Encoding
 ---
 
-# Source Log Encoding
+#
 
 The type of log encoding supported by Sumo Logic depends on the source you are using.
 

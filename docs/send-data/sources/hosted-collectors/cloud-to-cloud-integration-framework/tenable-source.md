@@ -1,8 +1,9 @@
 ---
 id: tenable-source
+title: Tenable Source
 ---
 
-# Tenable Source
+#
 
 The Tenable Source provides a secure endpoint to ingest audit-log events, vulnerability, and asset data from the [Tenable.io APIs](https://developer.tenable.com). It securely stores the required authentication, scheduling, and state tracking information.
 
@@ -51,17 +52,17 @@ When you create a Tenable Source, you add it to a Hosted Collector. Before crea
 To configure A Tenable Source:
 
 1. In the Sumo Logic web app, navigate to** Manage Data \> Collection** and open the **Collection** tab.
- 
+
 1. On the Collectors page, click **Add Source** next to a Hosted Collector.
- 
+
 1. Select **Tenable**.
 
    ![Tenable icon.png](/img/send-data/Tenable-icon.png)
- 
+
 1. Enter a **Name **for the Source. The description is optional.
-   
+
    ![tenable_source.png](/img/send-data/tenable_source.png)
- 
+
 1. (Optional) For **Source Category**, enter any string to tag the output collected from the Source. Category metadata is stored in a searchable field called `_sourceCategory`.
 
 1. **Forward to SIEM**. Check the checkbox to forward your data to Cloud SIEM Enterprise. When configured with the **Forward to SIEM** option the following metadata fields are set:
@@ -70,16 +71,16 @@ To configure A Tenable Source:
    * `_siemProduct`: Cloud
    * `_siemFormat`: JSON
    * `_siemEventID`: Set to the type of data ingested.
-   
+
      * Vulnerabilities: vulnerability
      * Audits: {action}
      * Assets (Inventory): assets
-     
+
    * `_siemDataType` (Only with Assets (Inventory) data): Inventory
 
 1. (Optional) **Fields.** Click the **+Add Field** link to define the fields you want to associate, each field needs a name (key) and value.
 
-   * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema. 
+   * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
    * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema it is ignored, known as dropped.
 
 1. Provide the **Access Key** and **Secret Key** to authenticate requests.
@@ -116,14 +117,14 @@ The following table shows the **config** parameters for a Tenable Source.
 
 | Parameter | Type | Required? | Default | Description | Access |
 |--|--|--|--|--|--|
-| `name` | String | Yes |  | Type a desired name of the Source. The name must be unique per Collector. This value is assigned to the metadata field `_source`. | modifiable | 
-| `description` | String | No | null | Type a description of the Source. | modifiable | 
-| `category` | String | No | null | Type a category of the source. This value is assigned to the [metadata](../../../../search/get-started-with-search/search-basics/built-in-metadata.md) field `_sourceCategory`. See [best practices](../../../design-deployment/best-practices-source-categories.md) for details. | modifiable | 
-| `fields` | JSON Object | No |  | JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field _siemForward to enable forwarding to SIEM. | modifiable | 
-| `access_key` | String | Yes |  | The Tenable access key you want to use to authenticate collection requests. | modifiable | 
-| `secret_key` | String | Yes |  | The Tenable secret key you want to use to authenticate collection requests. | modifiable | 
-| `include_unlicensed_assets` | Boolean | No | False | Set to true if you want to collect unlicensed objects. | modifiable | 
-| `supported_apis` | Array of strings | No | Vulnerability Data | Define one or more of the available APIs to collect:<br/>Vulnerability Data, Audit Logs, and Asset Data.<br/>For example, for both you'd use:["Vulnerability Data","Audit Logs","Asset Data"] | modifiable | 
+| `name` | String | Yes |  | Type a desired name of the Source. The name must be unique per Collector. This value is assigned to the metadata field `_source`. | modifiable |
+| `description` | String | No | null | Type a description of the Source. | modifiable |
+| `category` | String | No | null | Type a category of the source. This value is assigned to the [metadata](../../../../search/get-started-with-search/search-basics/built-in-metadata.md) field `_sourceCategory`. See [best practices](../../../design-deployment/best-practices-source-categories.md) for details. | modifiable |
+| `fields` | JSON Object | No |  | JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field _siemForward to enable forwarding to SIEM. | modifiable |
+| `access_key` | String | Yes |  | The Tenable access key you want to use to authenticate collection requests. | modifiable |
+| `secret_key` | String | Yes |  | The Tenable secret key you want to use to authenticate collection requests. | modifiable |
+| `include_unlicensed_assets` | Boolean | No | False | Set to true if you want to collect unlicensed objects. | modifiable |
+| `supported_apis` | Array of strings | No | Vulnerability Data | Define one or more of the available APIs to collect:<br/>Vulnerability Data, Audit Logs, and Asset Data.<br/>For example, for both you'd use:["Vulnerability Data","Audit Logs","Asset Data"] | modifiable |
 
 See how to [create processing rules using JSON](/docs/send-data/sources/use-json-configure-sources).
 

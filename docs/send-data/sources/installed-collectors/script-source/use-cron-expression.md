@@ -1,8 +1,9 @@
 ---
 id: use-cron-expression
+title: Advanced - Using a CRON Expression
 ---
 
-# Advanced: Using a CRON Expression
+
 
 If you're configuring a Script Source and need to specify a frequency that's different than any existing option, you can specify a CRON expression to collect data at a custom frequency.
 

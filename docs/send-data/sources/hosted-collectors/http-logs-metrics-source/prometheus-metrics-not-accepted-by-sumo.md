@@ -1,8 +1,9 @@
 ---
 id: prometheus-metrics-not-accepted-by-sumo
+title: Types of Prometheus Metrics not Accepted by Sumo
 ---
 
-# Types of Prometheus Metrics not Accepted by Sumo
+#
 
 By design, Sumo does not ingest Prometheus comments. Sumo also rejects Prometheus metrics that do not conform to the Prometheus metric format. This page lists the conditions that will cause Sumo to reject Prometheus metrics
 
@@ -26,7 +27,7 @@ Sumo does not ingest the comment lines uploaded with Prometheus metrics. Comment
 
 The Prometheus format requires that label key-value pairs be comma-separated. If they aren’t, Sumo will not ingest the metric.   
 
-**Correct:** 
+**Correct:**
 
 ```
 go_gc_duration_seconds{quantile="0.5", abc = "def"} 7.7711e-05 1530708470

@@ -1,8 +1,9 @@
 ---
 id: preconfigure-machine-collect-remote-windows-performance-monitoring-logs
+title: Preconfigure a Machine to Collect Remote Windows Performance Monitoring Logs
 ---
 
-# Preconfigure a Machine to Collect Remote Windows Performance Monitoring Logs
+#
 
 Use the instructions in this topic to preconfigure a machine to work
 with the Remote Windows Performance Monitor Log source.
@@ -112,7 +113,7 @@ The reason that the key's owner is changed from Trustedinstaller to Administrat
 
 The Collector comes with a PowerShell script that can be used to verify or apply the above configuration automatically on a list of remote systems. The script is located in the Collector installation directory, at `.\powershell\perfmon\sumo-remote-collector-config.ps1`. A detailed usage page can be seen by running the command `Get-Help .\sumo-remote-collector-config.ps1 -Full` from the script's directory.
 
-The following command checks for connectivity based on user permissions,firewalls, or registry keys: 
+The following command checks for connectivity based on user permissions,firewalls, or registry keys:
 
 ```bash
 C:\Program Files\Sumo Logic Collector\powershell\perfmon\sumo-remote-collector-config.ps1 -computernames "<name>" -credential $ps_cred -check
@@ -151,7 +152,7 @@ Download https://www.microsoft.com/en-us/download/details.aspx?id=17148
 
 ```
 portqry -n ip -p tcp -o port
-portqry -n ip -p tcp -o 135,139,445 
+portqry -n ip -p tcp -o 135,139,445
 portqry -n ip -p udp -o 137,138
 ```
 

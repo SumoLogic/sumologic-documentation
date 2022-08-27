@@ -1,8 +1,7 @@
 ---
 id: enable-collector-remote-host-key-verification
+title: Enable Collector Remote Host Key Verification
 ---
-
-# Enable Collector Remote Host Key Verification
 
 The Sumo Logic Collector can optionally verify the RSA fingerprint for a remote server against a list of known hosts. When host verification is enabled, the Collector collects from a Remote File Source only if the remote host fingerprint is whitelisted in a **known_hosts** file.
 
@@ -28,7 +27,7 @@ Example **known_hosts** file format:
 
 ## Enable Remote Host Key Verification
 
-1. Stop the Sumo Logic Collector service. 
+1. Stop the Sumo Logic Collector service.
 
     * On Windows: `net stop sumo-collector`
     * On Linux: `sudo ./collector stop`

@@ -1,8 +1,9 @@
 ---
 id: host-metrics-source
+title: Host Metrics Source
 ---
 
-# Host Metrics Source
+#
 
 An installed Sumo Logic Collector can collect host metrics pertaining to the local host. The metrics are ingested and become available for metrics visualization. The host metrics are gathered by the open-source [SIGAR library](https://github.com/hyperic/sigar). 
 
@@ -50,7 +51,7 @@ A host metric source running on an Installed Collector on an AWS EC2 instances w
    * **Scan Interval**. Select the frequency for the Source to scan for host metrics data. Selecting a short interval will increase the message volume and could cause your deployment to incur additional charges. The default is 1 minute.
    * **Metrics**. Select check boxes for the metrics to collect. By default, all CPU and memory metrics are collected.
 
-     * Select the top level check box to select all metrics in that category. A blue checkmark icon ![check](/img/send-data/icon_blue_checkmark.png) indicates that the category is selected. 
+     * Select the top level check box to select all metrics in that category. A blue checkmark icon ![check](/img/send-data/icon_blue_checkmark.png) indicates that the category is selected.
      * To select individual metrics, click the right-facing arrow to expand the category and select the individual metrics. The icon changes to ![minus](/img/send-data/icon_blue_minus.png) , as shown in the screenshot.        
 
     ![host-metrics-source.png](/img/send-data/host-metrics-source.png)

@@ -1,8 +1,9 @@
 ---
 id: time-reference
+title: Timestamps, Time Zones, Time Ranges, and Date Formats
 ---
 
-# Timestamps, Time Zones, Time Ranges, and Date Formats
+#
 
 We support several options for timestamps, time zones, time ranges, and dates. When collecting log data, the timestamp attached to messages is vital, both for the integrity of the data in your account, and for accurate query results. Because of the importance of timestamps, Sumo Logic indexes the timestamp of each message, making sure that data relevant to a query’s time range is returned properly in search results, which allows you to reconstruct a correct event timeline.
 
@@ -10,7 +11,7 @@ We support several options for timestamps, time zones, time ranges, and dates. 
 
 The timestamp is the part of a log message that marks the time that an event occurred. During ingestion, we can detect the message timestamp, convert it to Unix epoch time (the number of milliseconds since midnight, January 1, 1970 UTC), and index it. The timestamp is parsed either using the default timestamp parsing settings, or a custom format that you specify, including the time zone.
 
-When configuring a Source you can choose to use the default timestamp parsing settings, or you can specify a custom format for us to parse timestamps in your log messages. The **Enable Timestamp Parsing** option is selected by default. If it's deselected, no timestamp information is parsed at all. Instead, we stamp logs with the time at which the messages are processed. 
+When configuring a Source you can choose to use the default timestamp parsing settings, or you can specify a custom format for us to parse timestamps in your log messages. The **Enable Timestamp Parsing** option is selected by default. If it's deselected, no timestamp information is parsed at all. Instead, we stamp logs with the time at which the messages are processed.
 
 ### Timestamp considerations
 
@@ -35,59 +36,59 @@ The Java SimpleDateFormat library is used for timestamp parsing. For more info
 
 | Timestamp Format | Example |
 |--|--|
-| yyyy-MM-dd'T'HH:mm:ss*SSSZZZZ | 2018-08-20'T'13:20:10*633+0000 | 
-| yyyy MMM dd HH:mm:ss.SSS zzz | 2017 Mar 03 05:12:41.211 PDT | 
-| MMM dd HH:mm:ss ZZZZ yyyy | Jan 21 18:20:11 +0000 2017 | 
-| dd/MMM/yyyy:HH:mm:ss ZZZZ | 19/Apr/2017:06:36:15 -0700 | 
-| MMM dd, yyyy hh:mm:ss a | Dec 2, 2017 2:39:58 AM | 
-| MMM dd yyyy HH:mm:ss | Jun 09 2018 15:28:14 | 
-| MMM dd HH:mm:ss yyyy | Apr 20 00:00:35 2010 | 
-| MMM dd HH:mm:ss ZZZZ | Sep 28 19:00:00 +0000 | 
-| MMM dd HH:mm:ss | Mar 16 08:12:04 | 
-| yyyy-MM-dd'T'HH:mm:ssZZZZ | 2017-10-14T22:11:20+0000 | 
-| yyyy-MM-dd'T'HH:mm:ss.SSS'Z' | 2017-07-01T14:59:55.711'+0000' | 
-| 2017-07-01T14:59:55.711Z | 
-| yyyy-MM-dd HH:mm:ss ZZZZ | 2017-08-19 12:17:55 -0400 | 
-| yyyy-MM-dd HH:mm:ssZZZZ | 2017-08-19 12:17:55-0400 | 
-| yyyy-MM-dd HH:mm:ss,SSS | 2017-06-26 02:31:29,573 | 
-| yyyy/MM/dd*HH:mm:ss | 2017/04/12*19:37:50 | 
-| yyyy MMM dd HH:mm:ss.SSS*zzz | 2018 Apr 13 22:08:13.211*PDT | 
-| yyyy MMM dd HH:mm:ss.SSS | 2017 Mar 10 01:44:20.392 | 
-| yyyy-MM-dd HH:mm:ss,SSSZZZZ | 2017-03-10 14:30:12,655+0000 | 
-| yyyy-MM-dd HH:mm:ss.SSS | 2018-02-27 15:35:20.311 | 
-| yyyy-MM-dd HH:mm:ss.SSSZZZZ | 2017-03-12 13:11:34.222-0700 | 
-| yyyy-MM-dd'T'HH:mm:ss.SSS | 2017-07-22'T'16:28:55.444 | 
-| yyyy-MM-dd'T'HH:mm:ss | 2017-09-08'T'03:13:10 | 
-| yyyy-MM-dd'T'HH:mm:ss'Z' | 2017-03-12'T'17:56:22'-0700' | 
-| yyyy-MM-dd'T'HH:mm:ss.SSS | 2017-11-22'T'10:10:15.455 | 
-| yyyy-MM-dd'T'HH:mm:ss | 2017-02-11'T'18:31:44 | 
-| yyyy-MM-dd*HH:mm:ss:SSS | 2017-10-30*02:47:33:899 | 
-| yyyy-MM-dd*HH:mm:ss | 2017-07-04*13:23:55 | 
-| yy-MM-dd HH:mm:ss,SSS ZZZZ | 11-02-11 16:47:35,985 +0000 | 
-| yy-MM-dd HH:mm:ss,SSS | 10-06-26 02:31:29,573 | 
-| yy-MM-dd HH:mm:ss | 10-04-19 12:00:17 | 
-| yy/MM/dd HH:mm:ss | 06/01/22 04:11:05 | 
-| yyMMdd HH:mm:ss | 150423 11:42:35 | 
-| yyyyMMdd HH:mm:ss.SSS | 20150423 11:42:35.173 | 
-| MM/dd/yy*HH:mm:ss | 08/10/11*13:33:56 | 
-| MM/dd/yyyy*HH:mm:ss | 11/22/2017*05:13:11 | 
-| MM/dd/yyyy*HH:mm:ss*SSS | 05/09/2017*08:22:14*612 | 
-| MM/dd/yy HH:mm:ss ZZZZ | 04/23/17 04:34:22 +0000 | 
-| MM/dd/yyyy HH:mm:ss ZZZZ  | 10/03/2017 07:29:46 -0700 | 
-| HH:mm:ss | 11:42:35 | 
-| HH:mm:ss.SSS | 11:42:35.173 | 
-| HH:mm:ss,SSS | 11:42:35,173 | 
-| dd/MMM HH:mm:ss,SSS | 23/Apr 11:42:35,173 | 
-| dd/MMM/yyyy:HH:mm:ss | 23/Apr/2017:11:42:35 | 
-| dd/MMM/yyyy HH:mm:ss | 23/Apr/2017 11:42:35 | 
-| dd-MMM-yyyy HH:mm:ss | 23-Apr-2017 11:42:35 | 
-| dd-MMM-yyyy HH:mm:ss.SSS | 23-Apr-2017 11:42:35.883 | 
-| dd MMM yyyy HH:mm:ss | 23 Apr 2017 11:42:35 | 
-| dd MMM yyyy HH:mm:ss*SSS | 23 Apr 2017 10:32:35*311 | 
-| MMdd_HH:mm:ss | 0423_11:42:35 | 
-| MMdd_HH:mm:ss.SSS | 0423_11:42:35.883 | 
-| MM/dd/yyyy hh:mm:ss a:SSS | 8/5/2011 3:31:18 AM:234 | 
-| MM/dd/yyyy hh:mm:ss a | 9/28/2011 2:23:15 PM | 
+| yyyy-MM-dd'T'HH:mm:ss*SSSZZZZ | 2018-08-20'T'13:20:10*633+0000 |
+| yyyy MMM dd HH:mm:ss.SSS zzz | 2017 Mar 03 05:12:41.211 PDT |
+| MMM dd HH:mm:ss ZZZZ yyyy | Jan 21 18:20:11 +0000 2017 |
+| dd/MMM/yyyy:HH:mm:ss ZZZZ | 19/Apr/2017:06:36:15 -0700 |
+| MMM dd, yyyy hh:mm:ss a | Dec 2, 2017 2:39:58 AM |
+| MMM dd yyyy HH:mm:ss | Jun 09 2018 15:28:14 |
+| MMM dd HH:mm:ss yyyy | Apr 20 00:00:35 2010 |
+| MMM dd HH:mm:ss ZZZZ | Sep 28 19:00:00 +0000 |
+| MMM dd HH:mm:ss | Mar 16 08:12:04 |
+| yyyy-MM-dd'T'HH:mm:ssZZZZ | 2017-10-14T22:11:20+0000 |
+| yyyy-MM-dd'T'HH:mm:ss.SSS'Z' | 2017-07-01T14:59:55.711'+0000' |
+| 2017-07-01T14:59:55.711Z |
+| yyyy-MM-dd HH:mm:ss ZZZZ | 2017-08-19 12:17:55 -0400 |
+| yyyy-MM-dd HH:mm:ssZZZZ | 2017-08-19 12:17:55-0400 |
+| yyyy-MM-dd HH:mm:ss,SSS | 2017-06-26 02:31:29,573 |
+| yyyy/MM/dd*HH:mm:ss | 2017/04/12*19:37:50 |
+| yyyy MMM dd HH:mm:ss.SSS*zzz | 2018 Apr 13 22:08:13.211*PDT |
+| yyyy MMM dd HH:mm:ss.SSS | 2017 Mar 10 01:44:20.392 |
+| yyyy-MM-dd HH:mm:ss,SSSZZZZ | 2017-03-10 14:30:12,655+0000 |
+| yyyy-MM-dd HH:mm:ss.SSS | 2018-02-27 15:35:20.311 |
+| yyyy-MM-dd HH:mm:ss.SSSZZZZ | 2017-03-12 13:11:34.222-0700 |
+| yyyy-MM-dd'T'HH:mm:ss.SSS | 2017-07-22'T'16:28:55.444 |
+| yyyy-MM-dd'T'HH:mm:ss | 2017-09-08'T'03:13:10 |
+| yyyy-MM-dd'T'HH:mm:ss'Z' | 2017-03-12'T'17:56:22'-0700' |
+| yyyy-MM-dd'T'HH:mm:ss.SSS | 2017-11-22'T'10:10:15.455 |
+| yyyy-MM-dd'T'HH:mm:ss | 2017-02-11'T'18:31:44 |
+| yyyy-MM-dd*HH:mm:ss:SSS | 2017-10-30*02:47:33:899 |
+| yyyy-MM-dd*HH:mm:ss | 2017-07-04*13:23:55 |
+| yy-MM-dd HH:mm:ss,SSS ZZZZ | 11-02-11 16:47:35,985 +0000 |
+| yy-MM-dd HH:mm:ss,SSS | 10-06-26 02:31:29,573 |
+| yy-MM-dd HH:mm:ss | 10-04-19 12:00:17 |
+| yy/MM/dd HH:mm:ss | 06/01/22 04:11:05 |
+| yyMMdd HH:mm:ss | 150423 11:42:35 |
+| yyyyMMdd HH:mm:ss.SSS | 20150423 11:42:35.173 |
+| MM/dd/yy*HH:mm:ss | 08/10/11*13:33:56 |
+| MM/dd/yyyy*HH:mm:ss | 11/22/2017*05:13:11 |
+| MM/dd/yyyy*HH:mm:ss*SSS | 05/09/2017*08:22:14*612 |
+| MM/dd/yy HH:mm:ss ZZZZ | 04/23/17 04:34:22 +0000 |
+| MM/dd/yyyy HH:mm:ss ZZZZ  | 10/03/2017 07:29:46 -0700 |
+| HH:mm:ss | 11:42:35 |
+| HH:mm:ss.SSS | 11:42:35.173 |
+| HH:mm:ss,SSS | 11:42:35,173 |
+| dd/MMM HH:mm:ss,SSS | 23/Apr 11:42:35,173 |
+| dd/MMM/yyyy:HH:mm:ss | 23/Apr/2017:11:42:35 |
+| dd/MMM/yyyy HH:mm:ss | 23/Apr/2017 11:42:35 |
+| dd-MMM-yyyy HH:mm:ss | 23-Apr-2017 11:42:35 |
+| dd-MMM-yyyy HH:mm:ss.SSS | 23-Apr-2017 11:42:35.883 |
+| dd MMM yyyy HH:mm:ss | 23 Apr 2017 11:42:35 |
+| dd MMM yyyy HH:mm:ss*SSS | 23 Apr 2017 10:32:35*311 |
+| MMdd_HH:mm:ss | 0423_11:42:35 |
+| MMdd_HH:mm:ss.SSS | 0423_11:42:35.883 |
+| MM/dd/yyyy hh:mm:ss a:SSS | 8/5/2011 3:31:18 AM:234 |
+| MM/dd/yyyy hh:mm:ss a | 9/28/2011 2:23:15 PM |
 
 
 ### Unix epoch timestamps
@@ -157,12 +158,12 @@ import TabItem from '@theme/TabItem';
 1. The **Timestamp locator** is a regular expression with a capture group matching the timestamp in your log messages.
 
     ![timestamp locator inputs.png](/img/send-data/timestamp-locator-inputs.png)
-    
+
     The timestamp locator must:
-    
+
     * be provided for 16-digit epoch or 19-digit epoch timestamps. Otherwise, this field is not necessary.
     * be a valid Java regular expression. Otherwise, this error message will be displayed: `Unable to validate timestamp formats. The timestamp locator regex your-regex is invalid. The timestamp locator regex your-regex  uses matching features which are not supported. `
-    * be an [RE2-compliant](https://github.com/google/re2/wiki/Syntax) regular expression, for example: `\[time=(.*?)\]`. Otherwise, this error message will be displayed: `Unable to validate timestamp formats. The timestamp locator regex your-regex uses matching features which are not supported.` 
+    * be an [RE2-compliant](https://github.com/google/re2/wiki/Syntax) regular expression, for example: `\[time=(.*?)\]`. Otherwise, this error message will be displayed: `Unable to validate timestamp formats. The timestamp locator regex your-regex uses matching features which are not supported.`
     * contain one unnamed capture group. When we extract timestamps, we only scan the portion of each log message that is captured by this group. If a log message does not match the locator expression, then your timestamp format cannot be applied to that message. If the regex doesn't contain one unnamed capture group, this error message will be displayed: `Unable to validate timestamp formats. The timestamp locator regex your-regex does not contain a single unnamed capture group. The timestamp locator regex your-regex uses matching features which are not supported`
 
     :::tip
@@ -177,11 +178,11 @@ import TabItem from '@theme/TabItem';
 1. Click **Test**. The results display with the timestamp parsed and format matches (if any).
 
     ![Timestamp parsing testing.png](/img/send-data/Timestamp-parsing-testing.png)
-    
-    You should see one of the following messages: 
-    
+
+    You should see one of the following messages:
+
     * **Format matched.**  In this example, the format of `yyyy/MM/dd HH:mm:ss` was matched and highlighted in green. This was the first format provided so it returns as `1(format: yyyy/MM/dd HH:mm:ss locator: \[time=(.*?)\])` The **Effective message time** would be 2017-01-15 02:12.000 +0000.
-    * **None of the custom timestamp format was matched.**  While the custom formats were not found in the log, there's still an auto detected timestamp highlighted in orange, 2017-06-01 02:12:12.259667 that we can use. **The Effective message** time is going to be 2017-06-01 02:12:12.259 +0000 
+    * **None of the custom timestamp format was matched.**  While the custom formats were not found in the log, there's still an auto detected timestamp highlighted in orange, 2017-06-01 02:12:12.259667 that we can use. **The Effective message** time is going to be 2017-06-01 02:12:12.259 +0000
     * **Unable to parse any timestamp**. No part of the sample log line "This line shouldn't parse" has a parseable timestamp and so the timestamp will be the current time.
 
 1. Optional. If you want to make changes to your log line, click **Edit** and you can provide other log lines to test**.**
@@ -193,7 +194,7 @@ import TabItem from '@theme/TabItem';
 
 1. Do one of the following:
 
-   * If you're configuring a new Source, continue to step 1. 
+   * If you're configuring a new Source, continue to step 1.
    * To edit the timestamp settings for an existing Source, navigate to **Manage Data \> Collection \> Collection**. Then click **Edit** to the right of the Source name and go to step 2.
 
 1. Navigate to the **Advanced Options for Logs** section.
@@ -205,10 +206,10 @@ import TabItem from '@theme/TabItem';
     ![timestamp format highlighted.png](/img/send-data/timestamp-format-highlighted.png)
 1. The **Timestamp locator** is a regular expression with a capture group matching the timestamp in your log messages.
 
-    ![timestamp locator highlighted.png](/img/send-data/timestamp-locator-highlighted.png) The timestamp locator must: 
-    
+    ![timestamp locator highlighted.png](/img/send-data/timestamp-locator-highlighted.png) The timestamp locator must:
+
     * be provided for 16-digit epoch or 19-digit epoch timestamps. Otherwise, this field is not necessary.
-    * be a valid Java regular expression. Otherwise, this error message will be displayed: `Unable to validate timestamp formats. The timestamp locator regex your-regex is invalid. The timestamp locator regex your-regex  uses matching features which are not supported. ` 
+    * be a valid Java regular expression. Otherwise, this error message will be displayed: `Unable to validate timestamp formats. The timestamp locator regex your-regex is invalid. The timestamp locator regex your-regex  uses matching features which are not supported. `
     * be an [RE2-compliant](https://github.com/google/re2/wiki/Syntax) regular expression, for example: `\[time=(.*?)\]`. Otherwise, this error message will be displayed: `Unable to validate timestamp formats. The timestamp locator regex your-regex uses matching features which are not supported.`
     * contain one unnamed capture group. When we extract timestamps, we only scan the portion of each log message that is captured by this group. If a log message does not match the locator expression, then your timestamp format cannot be applied to that message. If the regex doesn't contain one unnamed capture group, this error message will be displayed: `Unable to validate timestamp formats. The timestamp locator regex your-regex does not contain a single unnamed capture group. The timestamp locator regex your-regex uses matching features which are not supported`
 
@@ -223,9 +224,9 @@ import TabItem from '@theme/TabItem';
 1. Click **Test** once your log lines are entered. The results display with the timestamp parsed and format matches (if any).
 
     ![timestamp format test results.png](/img/send-data/timestamp-format-test-results.png)
-    
+
     You should see one of the following messages:  
-    
+
     * **Format matched.**  In this example, the format of `yyyy/MM/dd HH:mm:ss` was matched and highlighted in green. This was the first format provided so it returns as `1(format: yyyy/MM/dd HH:mm:ss locator: \[time=(.*?)\])` The **Effective message time** would be 2017-01-15 02:12.000 +0000.
     * **None of the custom timestamp format was matched.**  While the custom formats were not found in the log, there's still an auto detected timestamp highlighted in orange, 2017-06-01 02:12:12.259667 that we can use. **The Effective message** time is going to be 2017-06-01 02:12:12.259 +0000  
     * **Unable to parse any timestamp**. No part of the sample log line "This line shouldn't parse" has a parseable timestamp and so the timestamp will be the current time.

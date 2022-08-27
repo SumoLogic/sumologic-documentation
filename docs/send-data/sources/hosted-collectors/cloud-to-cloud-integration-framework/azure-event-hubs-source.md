@@ -1,8 +1,9 @@
 ---
 id: azure-event-hubs-source
+title: Azure Event Hubs Source
 ---
 
-# Azure Event Hubs Source
+#
 
 The Azure Event Hubs Source provides a secure endpoint to receive data from Azure Event Hubs. It securely stores the required authentication, scheduling, and state tracking information.
 
@@ -28,7 +29,7 @@ Third party apps or services can be configured to send event data to Event Hubs 
 
     ![AzureEventHubstep2.png](/img/send-data/AzureEventHubstep2.png)
 
-    ![AzureEventHubstep3.png](/img/send-data/AzureEventHubstep3.png) 
+    ![AzureEventHubstep3.png](/img/send-data/AzureEventHubstep3.png)
 
 1. Create an Event Hub Instance.
 
@@ -37,7 +38,7 @@ Third party apps or services can be configured to send event data to Event Hubs 
     Shared Access Policies can be set up for the entire namespace, these policies can be used to access/manage all hubs in the namespace. A policy for the namespace is created by default: **RootManageSharedAccessKey**
 
     ![AzureEventHubstep5.png](/img/send-data/AzureEventHubstep5.png)
-    
+
     In this example Event Hub Instance is set to **my-hub**.
 
 1. Create a [Shared Access Policy](https://docs.microsoft.com/en-us/azure/governance/policy/overview) with the **Listen** claim to the newly created Event Hub Instance:
@@ -47,24 +48,24 @@ Third party apps or services can be configured to send event data to Event Hubs 
     ![AzureEventHubstep7.png](/img/send-data/AzureEventHubstep7.png)
 
     ![AzureEventHubstep8.png](/img/send-data/AzureEventHubstep8.png)
-    
+
     In this example Event Hub Instance is set to **SumoCollectionPolicy**.
 
 1. Copy the Shared Access Policy Key.
 
     ![AzureEventHubstep9.png](/img/send-data/AzureEventHubstep9.png)
-    
+
     Copy the Primary/Secondary key associated with this policy.
 
 1. When [configuring the Azure Event Hubs Source](azure-event-hubs-source.md) in Sumo Logic our input fields would be:
 
-| Field | Value  | 
-|----------------------------|----------------------| 
-| Azure Event Hubs Namespace | cnctest              | 
-| Event Hubs Instance Name   | my-hub               | 
-| Shared Access Policy Name  | SumoCollectionPolicy | 
+| Field | Value  |
+|----------------------------|----------------------|
+| Azure Event Hubs Namespace | cnctest              |
+| Event Hubs Instance Name   | my-hub               |
+| Shared Access Policy Name  | SumoCollectionPolicy |
 | Shared Access Policy Key   | mOsLf3RE…            |
- 
+
 
     ![azure-event-configs.png](/img/send-data/azure-event-configs.png)
 
@@ -120,7 +121,7 @@ Logs that do not contain a category field are assigned category UNKNOWN.
 
 1. (Optional) **Fields.** Click the **+Add Field** link to define the fields you want to associate, each field needs a name (key) and value.
 
-   * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema. 
+   * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
    * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema it is ignored, known as dropped.  
 
 1. **Azure Event Hubs Namespace**. Enter your Azure Event Hubs Namespace name. 
@@ -129,7 +130,7 @@ Logs that do not contain a category field are assigned category UNKNOWN.
 1. **Consumer Group Name**. If needed, specify a custom consumer group name. When using a custom **Consumer Group** make sure that it exists for the Event Hub instance.
 1. **Receive data with latest offset or from timestamp**. Choose one of the following options:
 
-    * **Latest offset** (default) - this will start the receiver with the latest offset and collect any new logs received to the Event Hub moving forward. 
+    * **Latest offset** (default) - this will start the receiver with the latest offset and collect any new logs received to the Event Hub moving forward.
     * **Timestamp** - use this option to start receiving logs from a specific point in time in the event stream. **Timestamp** can be used to ingest historical data. Once all historical data has been ingested it is recommended to switch to **Latest offset.** This will ensure the Collector continues from the latest recorded checkpoint when restarted and not use the **Timestamp** specified as a starting point, which could result in logs being received and processed more than once.        
 
 1. **Processing Rules for Logs**. Configure any desired filters, such as allowlist, denylist, hash, or mask, as described in Create a Processing Rule.
@@ -137,7 +138,7 @@ Logs that do not contain a category field are assigned category UNKNOWN.
 1. **Advanced Options for Logs**.
 
    * **Timestamp Parsing**. This option is selected by default. If it's deselected, no timestamp information is parsed at all.
-   * **Time Zone**. There are two options for Time Zone. You can use the time zone present in your log files, and then choose an option in case time zone information is missing from a log message. Or, you can have Sumo Logic completely disregard any time zone information present in logs by forcing a time zone. It's very important to have the proper time zone set, no matter which option you choose. If the time zone of logs can't be determined, Sumo Logic assigns logs UTC; if the rest of your logs are from another time zone your search results will be affected. 
+   * **Time Zone**. There are two options for Time Zone. You can use the time zone present in your log files, and then choose an option in case time zone information is missing from a log message. Or, you can have Sumo Logic completely disregard any time zone information present in logs by forcing a time zone. It's very important to have the proper time zone set, no matter which option you choose. If the time zone of logs can't be determined, Sumo Logic assigns logs UTC; if the rest of your logs are from another time zone your search results will be affected.
    * **Timestamp Format**. By default, Sumo Logic will automatically detect the timestamp format of your logs. However, you can manually specify a timestamp format for a Source. See [Timestamps, Time Zones, Time Ranges, and Date Formats](../../reference-information-sources/time-reference.md) for more information.        
 
 1. When you are finished configuring the Source click **Submit**.

@@ -3,7 +3,7 @@ slug: /send-data/sources/installed-collectors/script-source
 title: Script Source
 ---
 
-#
+
 
 If you need to collect data that isn't stored in log files, like system performance metrics, database records, or perhaps data output from third-party monitoring solutions you can use a Script Source that runs a script to fetch those custom sources of data from your machine's standard output and error streams. The script executes at defined intervals and then sends the data to Sumo for analysis. This allows you to collect all sorts of data from any supported OS, including data from command-line tools such as iostat, transient, or unstable data sources.
 

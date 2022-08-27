@@ -1,8 +1,9 @@
 ---
 id: crowdstrike-fdr-source
+title: Crowdstrike FDR Source
 ---
 
-# Crowdstrike FDR Source
+#
 
 The CrowdStrike Falcon Data Replicator (FDR) Source provides a secure endpoint to ingest [Falcon Data Replicator](https://falcon.crowdstrike.com/support/documentation/9/falcon-data-replicator) events using the S3 ingestion capability by consumed SQS notifications of new S3 objects. It securely stores the required authentication, scheduling, and state tracking information.
 
@@ -14,7 +15,7 @@ This Source is not available in the Fed deployment.
 
 ## Historical data
 
-If you have already enabled Crowdstrike FDR you can have a queue of up to seven days worth of data.   This historical data is ingested by the CrowdStrike FDR Source. This can be avoided by not enabling FDR in the Crowdstrike portal until you're ready to configure the Crowdstrike FDR Source. If you have enabled FDR and do not want to ingest the historical data, contact Customer Support for guidance.
+If you have already enabled Crowdstrike FDR you can have a queue of up to seven days worth of data. This historical data is ingested by the CrowdStrike FDR Source. This can be avoided by not enabling FDR in the Crowdstrike portal until you're ready to configure the Crowdstrike FDR Source. If you have enabled FDR and do not want to ingest the historical data, contact Customer Support for guidance.
 
 ## States
 
@@ -55,9 +56,9 @@ When you create a CrowdStrike FDR Source, you add it to a Hosted Collector. Bef
 To configure a CrowdStrike FDR Source:
 
 1. In the Sumo Logic web app, select **Manage Data \> Collection \> Collection**. 
- 
+
 1. On the Collectors page, click **Add Source** next to a Hosted Collector.
- 
+
 1. Select **CrowdStrike FDR**.
 
     ![CrowdStrike FDR icon.png](/img/send-data/CrowdStrike-FDR-icon.png)
@@ -72,8 +73,8 @@ To configure a CrowdStrike FDR Source:
 
 1. (Optional) **Fields.** Click the **+Add Field** link to define the fields you want to associate, each field needs a name (key) and value.
 
-   * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema. 
-   * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema it is ignored, known as dropped. 
+   * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
+   * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema it is ignored, known as dropped.
 
 1. **AWS Access Key ID**: Provide your AWS Access Key ID you copied from CrowdStrike, see the [Prerequisite](#prerequisite).
 
@@ -109,14 +110,14 @@ The following table shows the **config** parameters for a CrowdStrike FDR S
 
 | Parameter | Type | Required? | Default | Description | Access |
 |--|--|--|--|--|--|
-| `name` | String | Yes |  | Type a desired name of the Source. The name must be unique per Collector. This value is assigned to the metadata field `_source`. | modifiable | 
-| `description` | String | No | null | Type a description of the Source. | modifiable | 
-| `category` | String | No | null | Type a category of the source. This value is assigned to the [metadata](../../../../search/get-started-with-search/search-basics/built-in-metadata.md) field `_sourceCategory`. See [best practices](../../../design-deployment/best-practices-source-categories.md) for details. | modifiable | 
-| `fields` | JSON Object | No |  | JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field _siemForward to enable forwarding to SIEM. | modifiable | 
-| `secretAccessKey` | String | Yes |  | The AWS Secret Access Key you got from CrowdStrike. | modifiable | 
-| `SqsQueueURL` | String | Yes |  | The SQS Queue URL you got from CrowdStrike. | modifiable | 
-| `accessKeyId` | String | Yes |  | The AWS Access Key ID you got from CrowdStrike. | modifiable | 
-| `s3Region` | String | Yes | other | The S3 Region your data is in. | modifiable | 
+| `name` | String | Yes |  | Type a desired name of the Source. The name must be unique per Collector. This value is assigned to the metadata field `_source`. | modifiable |
+| `description` | String | No | null | Type a description of the Source. | modifiable |
+| `category` | String | No | null | Type a category of the source. This value is assigned to the [metadata](../../../../search/get-started-with-search/search-basics/built-in-metadata.md) field `_sourceCategory`. See [best practices](../../../design-deployment/best-practices-source-categories.md) for details. | modifiable |
+| `fields` | JSON Object | No |  | JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field _siemForward to enable forwarding to SIEM. | modifiable |
+| `secretAccessKey` | String | Yes |  | The AWS Secret Access Key you got from CrowdStrike. | modifiable |
+| `SqsQueueURL` | String | Yes |  | The SQS Queue URL you got from CrowdStrike. | modifiable |
+| `accessKeyId` | String | Yes |  | The AWS Access Key ID you got from CrowdStrike. | modifiable |
+| `s3Region` | String | Yes | other | The S3 Region your data is in. | modifiable |
 
 CrowdStrike FDR Source JSON example:
 
