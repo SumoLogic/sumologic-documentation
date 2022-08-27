@@ -1,10 +1,10 @@
 ---
 id: best-practices-source-categories
-title: Best Practices: Good and Bad Source Categories
+title: Best Practices - Good and Bad Source Categories
 ---
 
 
-Setting Source Category values (\_sourceCategory), especially for a small set of Sources, may seem trivial at first. However, using the [proper naming convention](../sources/reference-information-sources/metadata-naming-conventions.md) to create good Source Category values is important for the correct scale and performance of your Sumo Logic deployment in the long term. This topic discusses some best practices around creating good Source Category values.
+Setting Source Category values (`_sourceCategory`), especially for a small set of Sources, may seem trivial at first. However, using the [proper naming convention](../sources/reference-information-sources/metadata-naming-conventions.md) to create good Source Category values is important for the correct scale and performance of your Sumo Logic deployment in the long term. This topic discusses some best practices around creating good Source Category values.
 
 Source Categories help you:
 
@@ -12,7 +12,7 @@ Source Categories help you:
 * Index and partition your data.
 * Control who sees what data through RBAC.
 
-The recommended \_sourceCategory naming convention is:
+The recommended `_sourceCategory` naming convention is:
 
 * **component1/component2/component3...**
 
