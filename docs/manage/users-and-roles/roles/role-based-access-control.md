@@ -1,8 +1,9 @@
 ---
 id: role-based-access-control
+title: Role-Based Access Control
 ---
 
-# Role-Based Access Control
+#
 
 Sumo Logic supports Role-Based Access Control (RBAC) to control access to Sumo Logic functionality and to limit the data that users may view.  
 

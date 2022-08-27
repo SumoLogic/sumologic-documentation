@@ -1,8 +1,9 @@
 ---
 id: search-audit-index
+title: Search Audit Index
 ---
 
-# Search Audit Index
+
 
 ## Availability
 

@@ -1,8 +1,9 @@
 ---
 id: nginx-logs
+title: Nginx Logs
 ---
 
-# Nginx Logs
+#
 
 **Log Type**:  Nginx Access Logs
 

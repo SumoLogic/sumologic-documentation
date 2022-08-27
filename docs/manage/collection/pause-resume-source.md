@@ -1,8 +1,8 @@
 ---
 id: pause-and-resume-source
+title: Pause and Resume a Source
 ---
 
-# Pause and Resume a Source
 
 You can pause some types of Sources to stop them from sending data to
 Sumo Logic, and then resume at a later time.

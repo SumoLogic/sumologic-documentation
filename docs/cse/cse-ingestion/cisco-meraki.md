@@ -2,7 +2,7 @@
 id: cisco-meraki
 title: Cisco Meraki
 sidebar_label: Cisco Meraki
-description: tk
+description: Configure a syslog source to ingest Cisco Meraki log messages to be parsed by CSE’s system parser for Cisco Meraki.
 ---
 
 This section has instructions for collecting Cisco Meraki log messages and sending them to Sumo Logic to be ingested by CSE.

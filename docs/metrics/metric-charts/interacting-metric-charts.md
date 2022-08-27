@@ -1,7 +1,7 @@
 ---
 id: interacting-metric-charts
 title: Interacting with Metrics Charts
-sidebar_label: Interacting with Metrics Charts
+sidebar_label: Interact with Metrics Charts
 description: Instructions on how to interact with metric charts, and how to set options on the query and legend tabs of the metric query page.
 ---
 

@@ -2,7 +2,7 @@
 id: google-g-suite-apps-audit
 title: Google G Suite Apps Audit
 sidebar_label: Google G Suite Apps Audit
-description: tk
+description: Configure an G Suite Apps Audit Source to collect G Suite log messages to be parsed by CSE's system parser for G Suite Audit.
 ---
 
 ## Step 1: Configure collection

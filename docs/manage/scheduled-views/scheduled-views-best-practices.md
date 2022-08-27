@@ -1,8 +1,7 @@
 ---
 id: scheduled-views-best-practices
+title: Scheduled Views Best Practices and Examples
 ---
-
-# Scheduled Views Best Practices and Examples
 
 A Scheduled View reduces aggregate data down to the bare minimum, so they contain only the results that you need to generate your data. Queries that run against Scheduled Views return search results much faster because the data is pre-aggregated before the query is run. Scheduled Views process queries once per minute.
 
@@ -122,7 +121,7 @@ Remove the unsupported operation, **most_recent**, and instead create a Schedule
 _sourceCategory=receiver
 | parse "dataPointCount=*)" as points
 | parse "remote_ip=*]" as ip
-| withtime points 
+| withtime points
 | count points_withtime, ip
 ```
 

@@ -1,8 +1,10 @@
 ---
 id: field-mapping-security-event-sources
+title: Field Mapping for Security Event Sources
+sidebar_label: Field Mappings
+description: Learn how to set up field mappings for messages that you want to be processed by CSE's normalized threat rules.
 ---
 
-# Field Mapping for Security Event Sources
 
 This topic has information about creating field mappings for messages that you want to be processed by [normalized threat rules](../cse-rules/normalized-threat-rules.md). 
 
@@ -47,12 +49,12 @@ attributes.
 | `threat_name` | Map to the alert name contained in the message. |
 | `normalizedSeverity` | Map to the severity field in the message. Note that in CSE, severity is a value from 0 (lowest) to 10 (highest). If the severity range used in the message is not 0 to 10, you can translate the value from the message using a lookup mapping.<br/>For example, if the message source uses severities 1 to 5, you could translate the values like this:<br/>'1': '2'<br/>'2': '4'<br/>'3': '6'<br/>'4': '8'<br/>'5': '10'<br/>You can also define a default severity value that will apply if apply if a message doesn’t contain a severity value. |
 
-  
+
  
 
-  
-  
-  
+
+
+
  
 
  

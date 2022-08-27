@@ -1,8 +1,9 @@
 ---
 slug: /send-data/design-your-deployment
+title: Design Your Deployment
 ---
 
-# Design Your Deployment
+#
 
 To send your data to Sumo Logic you have a few options. We have two types of installed agents and offer a collector fully hosted by us.
 
@@ -42,7 +43,7 @@ For full details on limitations, what's supported, and what's different see our 
 
 ## Installed Collectors
 
-[Installed Collectors](../installed-collectors/about-installed-collectors.md) are deployed in your environment, on a local machine, a machine in your organization, or even an Amazon Machine Image (AMI). Installed Collectors require a software download and installation. Upgrades to Collector software are released regularly by Sumo Logic.
+[Installed Collectors](../installed-collectors/about.md) are deployed in your environment, on a local machine, a machine in your organization, or even an Amazon Machine Image (AMI). Installed Collectors require a software download and installation. Upgrades to Collector software are released regularly by Sumo Logic.
 
 Consider having an Installed Collector on a dedicated machine when:
 
@@ -60,7 +61,7 @@ Consider having more than one Installed Collector if:
 * You prefer to install many Collectors, for example, one per machine
     to collect local files.
 
-To help design your deployment see [how Installed Collectors work](../installed-collectors/about-installed-collectors.md) and  [Best Practices: Local and Centralized Data Collection](best-practices-local-centralized-data-collection.md).
+To help design your deployment see [how Installed Collectors work](../installed-collectors/about.md) and  [Best Practices: Local and Centralized Data Collection](best-practices-local-centralized-data-collection.md).
 
 For details on system requirements, see Installed Collector requirements.
 

@@ -1,8 +1,8 @@
 ---
 id: about-cse-rules
 title: About CSE Rules
-sidebar_label: About CSE Rules 
-description: tk
+sidebar_label: About CSE Rules
+description: Learn about CSE rules, rules syntax, and how to write rules.
 ---
 
 

@@ -1,8 +1,9 @@
 ---
 id: g-suite-apps-audit-source
+title: G Suite Apps Audit Source
 ---
 
-# G Suite Apps Audit Source
+#
 
 A G Suite Apps Audit Source uses the [Google Apps Reports API](https://developers.google.com/admin-sdk/reports/v1/get-start/getting-started) to ingest all audit logs through watchpoints. [Activity from the following Google apps](https://developers.google.com/admin-sdk/reports/v1/reference/activities/list) can be collected:
 
@@ -42,7 +43,7 @@ To configure a G Suite Apps Audit Source:
 1. Type the **Source Category** you’d like to use to later search the data collected from this Source.
 1. **Fields.** Click the **+Add Field** link to define the fields you want to associate, each field needs a name (key) and value.
 
-   * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema. 
+   * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
    * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema it is ignored, known as dropped.
 1. Click **Sign in with Google** to give permission to Sumo Logic to set up watchpoints using **the Google Apps Reports API**. Click **Accept**.
 1. Click **Save**.

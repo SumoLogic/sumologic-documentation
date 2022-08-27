@@ -1,8 +1,8 @@
 ---
 id: collection-status-page
+title: Collection Status Page
 ---
 
-# Collection Status Page
 
 The Status page provides a message volume history for your account, as well as a message volume histogram for each Collector, giving you immediate visual feedback about traffic spikes or collection issues. To see statistics for any bar in the histogram, hover your mouse pointer over the area of interest.
 

@@ -1,8 +1,9 @@
 ---
 id: troubleshooting-http-sources
+title: Troubleshooting HTTP Sources
 ---
 
-# Troubleshooting HTTP Sources
+#
 
 ### Check HTTP status codes
 

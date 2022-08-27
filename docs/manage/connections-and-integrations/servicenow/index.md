@@ -1,8 +1,8 @@
 ---
 slug: /manage/connections-and-integrations/servicenow
+title: ServiceNow
 ---
 
-# ServiceNow
 
 Your organization can use collected data to investigate issues across your deployment.
 

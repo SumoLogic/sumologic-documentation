@@ -2,7 +2,7 @@
 id: linux-os-syslog
 title: Linux OS Syslog
 sidebar_label: Linux OS Syslog
-description: tk
+description: Configure a syslog source to ingest Linux OS log messages to be parsed by CSE’s system parser for Linux OS Syslog.
 ---
 
 This section has instructions for collecting Linux OS Syslog log messages and sending them to Sumo Logic to be ingested by CSE.

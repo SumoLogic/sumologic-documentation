@@ -1,11 +1,12 @@
 ---
 slug: /search/get-started-with-search
+title: Getting Started with Search
 ---
-
-Learn how to build and run searches, review logs, and more.
 
 import DocCardList from '@theme/DocCardList';
 import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
+
+Learn how to build and run searches, review logs, and more.
 
 ## Guide contents
 

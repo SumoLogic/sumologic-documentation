@@ -259,7 +259,7 @@ C:\Windows\System32\LogFiles\HTTPERR
 Sumo Logic recommends that you install the collector on the same system that hosts the logs.
 
 To collect logs for the IIS 10 App, you will install a local Collector on the same server that hosts the logs.
-* Follow the instructions for an [Installed Collector (Windows)](/docs/send-data/installed-collectors/install-collector-windows).
+* Follow the instructions for an [Installed Collector (Windows)](/docs/send-data/installed-collectors/windows).
 
 
 ### Configure Sources

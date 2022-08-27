@@ -1,7 +1,7 @@
 ---
 id: create-metrics-visualization
-title: Create a Metrics Query and Visualization
-sidebar_label: Create a Metrics Query and Visualization
+title: Create a Metrics Query and Chart
+sidebar_label: Create and Chart a Metrics Query
 description: You can view metrics data in Sumo Logic.
 ---
 
@@ -18,7 +18,7 @@ The metrics visualization area is in the upper part of the page and the query ar
 To create a metrics visualization:
 
 1. Click **+** in the tab bar and select **Metrics**.
-1. Create your query or queries in the **Query** tab, which opens by default when you open the Metrics page.  
+2. Create your query or queries in the **Query** tab, which opens by default when you open the Metrics page.  
 
     ![page](/img/metrics/metricsquerycallout.png)
 
@@ -43,6 +43,6 @@ To create a metrics visualization:
 
     For more information, see [Guidelines for Metrics Queries](../metric-queries-alerts/metrics-queries-classic.md).
 
-1. Press **Enter** in any of the entry fields to display the data in the data visualization area. See [Interacting with Metric Charts](interacting-metric-charts.md) to learn how to interact with the visualization and modify settings.  
+3. Press **Enter** in any of the entry fields to display the data in the data visualization area. See [Interacting with Metric Charts](interacting-metric-charts.md) to learn how to interact with the visualization and modify settings.  
 
     ![metrics_first chart.jpg](/img/metrics/create-metric-vis.png)

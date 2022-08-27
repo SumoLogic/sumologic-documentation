@@ -1,8 +1,8 @@
 ---
 id: cse-apis
 title: CSE APIs
-sidebar_label: CSE APIs
-description: tk
+sidebar_label: APIs
+description: Learn how to access CSE APIs and API documentation.
 ---
 
 This page has information about accessing the CSE APIs and API documentation. The process depends on your CSE environment. 

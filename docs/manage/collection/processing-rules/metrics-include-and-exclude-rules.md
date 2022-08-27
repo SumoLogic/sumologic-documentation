@@ -1,8 +1,9 @@
 ---
 id: metrics-include-and-exclude-rules
+title: Metrics Include and Exclude Rules
 ---
 
-# Metrics Include and Exclude Rules
+#
 
 This page describes metrics include and exclude processing rules, which you can apply to a metrics source to control metrics are sent to Sumo Logic.
 

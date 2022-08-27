@@ -1,8 +1,11 @@
 ---
 id: about-signal-suppression
+title: About Signal Suppression
+sidebar_label: Signal Suppression
+description: Learn about the ways that CSE Signals can be suppressed, and so excluded from the Insight generation process.
 ---
 
-# About Signal Suppression
+
 
 In CSE, a *suppressed Signal* is a Signal that CSE’s Insight algorithm will exclude from the Insight generation process. In other words, a suppressed Signal does not contribute to or become a part of an Insight. Some suppression of Signals is automatic. CSE also has features that allow you to suppress Signals for a specific
 [Entity](view-manage-entities.md), indicator, or [Network Block](../administration/create-use-network-blocks.md).

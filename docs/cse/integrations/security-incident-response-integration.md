@@ -1,8 +1,9 @@
 ---
 id: security-incident-response-integration
+title: Security Incident Response (SIR) Integration
+sidebar_label: Security Incident Response (SIR)
+description: Install and configure the integration between Sumo Logic CSE and ServiceNow's Security Incident Response (SIR).
 ---
-
-# Security Incident Response (SIR) Integration
 
 This section has instructions for installing and configuring the integration between Sumo Logic CSE and ServiceNow's Security Incident Response (SIR).
 
@@ -95,7 +96,7 @@ CI Lookup Rules are required to enable discovery of configuration items and avoi
     ![config-page.png](/img/cse/api-credentials.png)
 1. **Host**. What you enter here depends on your CSE URL:
 
-   * If your CSE URL ends in `jask.ai`, enter your complete CSE URL. 
+   * If your CSE URL ends in `jask.ai`, enter your complete CSE URL.
    * If you CSE URL ends in sumologic.com, enter the Sumo Logic service endpoint for your Sumo Logic deployment. To determine your endpoint, see Sumo Logic Endpoints by Deployment and Firewall Security.
 
 1. **API Token**.  If your CSE URL ends in `jask.ai`, enter the CSE API Key you copied in [Step 1](#step-1-copy-your-api-credentials).
@@ -164,4 +165,3 @@ To view log messages written by the integration:
 1. Search the messages for “Sumo CSE”.
 
 ![messages-sumo-cse.png](/img/cse/messages-sumo-cse.png)
-

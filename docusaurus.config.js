@@ -165,7 +165,7 @@ module.exports = {
         },
       },
     // SEO Global Metadata
-    metadata: [{name: 'keywords', content: 'sumo logic, documentation, tutorials, quick starts'}],
+    metadata: [{name: 'keywords', content: 'sumo logic, documentation, tutorials, quickstarts'}],
     announcementBar: {
       id: 'announcementBar',
       content: `⭐️ Welcome to the new Sumo Logic Doc Site! ⭐️`,
@@ -215,7 +215,7 @@ module.exports = {
                     activeBaseRegex: '^/docs/get-started/.*',
                   },
                   {
-                    label: 'Quick Start',
+                    label: 'Quickstart',
                     sublabel: 'Fast-track Sumo setup',
                     to: '/docs/quickstart',
                     icon: 'backup_table',
@@ -223,7 +223,7 @@ module.exports = {
                   },
                   {
                     label: 'Manage Sumo',
-                    sublabel: 'Manage settings as admin',
+                    sublabel: 'Set up and manage Sumo Logic',
                     to: '/docs/manage',
                     icon: 'start',
                     activeBaseRegex: '^/docs/manage/.*',
@@ -251,7 +251,7 @@ module.exports = {
                   {
                     label: 'Alerts and Dashboards',
                     sublabel: 'Visualize data and set alerts',
-                    to: '/docs/dashboards-new',
+                    to: '/docs/alerts',
                     icon: 'dashboard',
                     activeBaseRegex: '^/docs/(dashboards|dashboards-new|alerts)',
                   },
@@ -304,7 +304,7 @@ module.exports = {
                   },
                   {
                     label: 'Kubernetes Observability',
-                    sublabel: 'Deploy and collect Kubernetes',
+                    sublabel: 'Deploy and monitor Kubernetes',
                     to: '/docs/observability/kubernetes-solution',
                     icon: 'settings_suggest',
                     activeBaseRegex: '^/docs/observability/kubernetes-solution/.*',
@@ -318,7 +318,7 @@ module.exports = {
                   },
                   {
                     label: 'Root Cause Explorer',
-                    sublabel: 'Identify root causes of issues',
+                    sublabel: 'Identify root causes',
                     to: '/docs/observability/root-cause-explorer',
                     icon: 'widgets',
                     activeBaseRegex: '^/docs/observability/root-cause-explorer',
@@ -331,7 +331,7 @@ module.exports = {
                 label: 'Security and Incidents',
                 items: [
                   {
-                    label: 'CSE',
+                    label: 'Cloud SIEM Enterprise',
                     sublabel: 'Incident investigation',
                     to: '/docs/cse',
                     icon: 'security',
@@ -340,7 +340,7 @@ module.exports = {
                   // When SOAR is added, you can update to: to the docs
                   {
                     label: 'Sumo Logic SOAR',
-                    sublabel: 'Monitor security',
+                    sublabel: 'Automate incident response',
                     to: 'https://www.sumologic.com/solutions/cloud-soar/',
                     icon: 'grid_4x4',
                     activeBaseRegex: '^/docs/security/.*',
@@ -383,13 +383,17 @@ module.exports = {
             position: 'left',
           },
           {
-            label: 'Doc Contributions',
+            label: 'Contributing',
             to: '/docs/contribution',
             position: 'left',
           },
           {
             label: 'Release Notes',
             to: '/docs/releasenotes',
+          },
+          {
+            label: 'Support',
+            to: 'https://support.sumologic.com/hc/en-us',
           },
           {
             //Trial button
@@ -411,7 +415,7 @@ module.exports = {
             items:[
               {
                 label: 'Contribution Guide',
-                to: '/docs/contribution',
+                href: '/docs/contribution',
               },
               {
                 label: 'Docs GitHub',
@@ -430,14 +434,6 @@ module.exports = {
               {
                 label: 'Training & Certifications',
                 to: 'https://www.sumologic.com/learn/training/',
-              },
-              {
-                label: 'Documentation Contributions',
-                to: '/docs/contribution',
-              },
-              {
-                label: 'Help Center',
-                to: 'https://support.sumologic.com/hc/en-us',
               },
               {
                 label: 'DevOps Glossary',
@@ -478,15 +474,19 @@ module.exports = {
             title: 'Open Source',
             items: [
               {
-                label: 'Documentation GitHub',
+                label: 'Sumo Docs GitHub',
                 href: 'https://github.com/SumoLogic/sumologic-documentation',
+              },
+              {
+                label: 'How to Contribute',
+                to: '/docs/contribution',
               },
               {
                 label: 'Sumo Logic GitHub',
                 href: 'https://github.com/SumoLogic',
               },
               {
-                label: 'GitHub Incubator Projects',
+                label: 'Sumo Incubator Projects',
                 href: 'https://github.com/SumoLogic-Incubator',
               },
               {
@@ -499,7 +499,7 @@ module.exports = {
         logo: {
           alt: 'Sumo Logic',
           src: 'img/sumo-square.svg',
-          href: 'https://sumologic.com'
+          href: 'https://sumologic.com',
         },
         copyright: `Copyright © ${new Date().getFullYear()}, Sumo Logic Inc. | Built with Docusaurus.`,
       },
