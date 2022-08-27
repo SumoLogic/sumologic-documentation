@@ -1,8 +1,9 @@
 ---
 id: file-locking-problems
+title: File Locking problems when using Windows UNC with Local File Sources
 ---
 
-# File Locking problems when using Windows UNC with Local File Sources
+#
 
 :::note
 The contents of this article are only valid for Collector versions later than 19.73.

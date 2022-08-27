@@ -3,8 +3,6 @@ id: microsoft-iis-logs
 title: Microsoft IIS Logs
 ---
 
-#
-
 **Log Type**: Microsoft IIS
 
 **Template Description:** Parsing the common fields in your Microsoft IIS log.

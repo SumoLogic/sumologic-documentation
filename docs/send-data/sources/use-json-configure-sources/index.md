@@ -1,8 +1,9 @@
 ---
 slug: /send-data/sources/use-json-configure-sources
+title: Use JSON to Configure Sources
 ---
 
-# Use JSON to Configure Sources
+#
 
 Sources can be configured by using UTF-8 encoded JSON files. Installed Collectors can use JSON files to configure its Sources when using [Local Configuration File Management](/docs/send-data/sources/use-json-configure-sources/local-configuration-file-management). You can also configure Sources for Hosted and Installed Collectors with the Collector Management API.
 
@@ -56,7 +57,7 @@ Each source can have its own unique fields in addition to the generic fields lis
 | [Remote Windows Event Log Source](json-parameters-installed-sources.md#remote-windows-event-log-source) | RemoteWindowsEventLog |
 | [Local Windows Performance Source](json-parameters-installed-sources.md#local-windows-performance-source) | LocalWindowsPerfMon |
 | [Remote Windows Performance Source](json-parameters-installed-sources.md#remote-windows-performance-source) | RemoteWindowsPerfMon |
-| [Windows Active Directory Inventory Source](json-parameters-installed-sources.md#windows-active-directory-source) | ActiveDirectory | 
+| [Windows Active Directory Inventory Source](json-parameters-installed-sources.md#windows-active-directory-source) | ActiveDirectory |
 | [Syslog Source](json-parameters-installed-sources.md#syslog-source)	 | Syslog |
 | [Script Source](json-parameters-installed-sources.md#script-source) | Script |
 | [Docker Log Source](json-parameters-installed-sources.md#docker-log-source) | DockerLog |

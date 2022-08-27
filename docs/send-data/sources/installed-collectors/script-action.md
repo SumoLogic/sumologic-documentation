@@ -1,8 +1,9 @@
 ---
 id: script-action
+title: Script Action
 ---
 
-# Script Action
+#
 
 A Script Action passes the results of a scheduled search to a script or program that runs on a machine with an Installed Collector. The results are temporarily saved to the filesystem in JSON format at:
 
@@ -108,7 +109,7 @@ This example shows how to set up a script and configure a Script Action.
 
     This script reads the output file of the scheduled search, counts the number of the appearances of keyword “WARN”, and then prints out the resulting number. For example, if the keyword “WARN” appears 10 times in the scheduled search results, the script prints the following: `The number of "WARN" in the scheduled search result is 10.`
 
-1. Set the shell script as an executable file: 
+1. Set the shell script as an executable file:
 
     ```bash
     chmod +x countNumberOfWarnings.sh
@@ -135,13 +136,13 @@ For this example, the Collector runs the following system command:
 where
 
 ```
-/Users/yluo/Development/sumo/collector/countNumberOfWarnings.sh 
+/Users/yluo/Development/sumo/collector/countNumberOfWarnings.sh
 ```
 
 is the shell script defined earlier for processing the data, and
 
 ```
-/Users/yluo/Development/sumo/collector/alerts/000000000ABA1879-02-19-12-08-19-5.txt 
+/Users/yluo/Development/sumo/collector/alerts/000000000ABA1879-02-19-12-08-19-5.txt
 ```
 
 is the output file of the Scheduled Search.

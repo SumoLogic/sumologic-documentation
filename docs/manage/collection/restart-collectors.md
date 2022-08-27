@@ -3,8 +3,6 @@ id: restart-collectors
 title: Restart Collectors
 ---
 
-#
-
 This document explains how to initiate a request to restart an Installed
 Collector from the Collection page. The other option is to [start or stop a Collector using our provided scripts](start-stop-collector-using-scripts.md).
 

@@ -1,8 +1,7 @@
 ---
 id: compare-installed-and-hosted-collectors
+title: Compare Installed and Hosted Collectors
 ---
-
-# Compare Installed and Hosted Collectors
 
 Depending on the method you'd like to collect logs, and the types of logs you'd like to collect, Sumo Logic has two types of Collectors you can choose from.
 
@@ -13,7 +12,7 @@ Depending on the method you'd like to collect logs, and the types of logs you'd
         className="video-container"
         display="initial"
         position="relative"
-        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
         />
 

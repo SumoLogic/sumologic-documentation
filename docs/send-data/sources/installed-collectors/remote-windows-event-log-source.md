@@ -1,8 +1,9 @@
 ---
 id: remote-windows-event-log-source
+title: Remote Windows Event Log Source
 ---
 
-# Remote Windows Event Log Source
+#
 
 Set up a Remote Windows Event Log Source to use a single Sumo Logic Collector to collect Windows event log entries from multiple remote systems.
 
@@ -27,7 +28,7 @@ To configure a remote Windows Event Log Source:
 
 1. Choose **Remote** for **Type of Windows Event Source**.
 
-1. (Available in version 19.361-3+) Check the **Domain Controller Mode** checkbox to set the Source as a part of Windows Active Directory Inventory (AD). The Source will detect any (potentially many) domain controllers on the AD network. Each domain controller contains an event log that includes a security log. The Source connects to each domain controller’s security log and begins monitoring events. 
+1. (Available in version 19.361-3+) Check the **Domain Controller Mode** checkbox to set the Source as a part of Windows Active Directory Inventory (AD). The Source will detect any (potentially many) domain controllers on the AD network. Each domain controller contains an event log that includes a security log. The Source connects to each domain controller’s security log and begins monitoring events.
 
     ![DCM.png](/img/send-data/DCM.png)
 

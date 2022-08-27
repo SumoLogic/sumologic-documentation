@@ -1,8 +1,9 @@
 ---
 id: install-syslog-ng
+title: Install syslog-ng
 ---
 
-# Install syslog-ng
+#
 
 Syslog-ng is an open source log management daemon, providing implementation of the syslog protocol for Unix and Unix-like systems. You can install syslog-ng for Source log management. See [Cloud Syslog Source](/docs/send-data/sources/hosted-collectors/cloud-syslog-source) for more information about configuring a Cloud Syslog Source for syslog-ng.
 
@@ -69,6 +70,6 @@ $ journalctl -xe
 If you receive the error message **Unable to locate package syslog-ng** while installing a syslog-ng server on Ubuntu run the following commands and then try installing syslog-ng again.   
 
 ```bash
-$ sudo apt update 
+$ sudo apt update
 $ sudo apt upgrade
 ```

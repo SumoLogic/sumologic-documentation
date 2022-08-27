@@ -1,8 +1,9 @@
 ---
 id: upload-metrics-to-http-source
+title: Upload Metrics to an HTTP Source
 ---
 
-# Upload Metrics to an HTTP Source
+#
 
 After you have added an [HTTP Logs and Metrics Source](/docs/send-data/sources/hosted-collectors/http-logs-metrics-source) to a [Hosted Collector](../../../configure-hosted-collector.md) you can begin uploading data. You can upload both logs and metrics to the same HTTP source, however not in the same HTTP request. This document provides instructions on uploading metrics, if you are uploading logs see [Upload Logs to an HTTP Source](/docs/send-data/sources/hosted-collectors/http-logs-metrics-source).
 
@@ -95,12 +96,12 @@ Overridden metadata field values are not returned with [Search Autocomplete](../
 
 | Setting | Header Name | Header Value |
 |--|--|--|
-| Compressed data | `Content-Encoding` | gzip or deflate<br/>Required if you are uploading compressed data. | 
+| Compressed data | `Content-Encoding` | gzip or deflate<br/>Required if you are uploading compressed data. |
 | Content Type (for Metrics) | Content-Type | `application/vnd.sumologic.graphite`<br/>`application/vnd.sumologic.carbon2`<br/>`application/vnd.sumologic.prometheus`<br/>Required if you are uploading metrics. |
-| Custom Source Name | `X-Sumo-Name` | Desired source name.<br/>Useful if you want to override the source name configured for the source. | 
-| Custom Source Host | `X-Sumo-Host` | Desired host name.<br/>Useful if you want to override the source host configured for the source. | 
-| Custom Source Category | `X-Sumo-Category` | Desired source category.<br/>Useful if you want to override the source category configured for the source. | 
-| Custom Metric Dimensions | `X-Sumo-Dimensions` | Comma-separated key=value list of dimensions to apply to every metric.<br/>For metrics only. Custom dimensions will allow you to query your metrics at a more granular level. | 
+| Custom Source Name | `X-Sumo-Name` | Desired source name.<br/>Useful if you want to override the source name configured for the source. |
+| Custom Source Host | `X-Sumo-Host` | Desired host name.<br/>Useful if you want to override the source host configured for the source. |
+| Custom Source Category | `X-Sumo-Category` | Desired source category.<br/>Useful if you want to override the source category configured for the source. |
+| Custom Metric Dimensions | `X-Sumo-Dimensions` | Comma-separated key=value list of dimensions to apply to every metric.<br/>For metrics only. Custom dimensions will allow you to query your metrics at a more granular level. |
 | Custom Metric Metadata | `X-Sumo-Metadata` | Comma-separated, key=value list of metadata to apply to every metric.<br/>For metrics only. Custom metadata  will allow you to query your metrics at a more granular level. |
 
 ## Data volume and metadata limits for metrics
@@ -117,7 +118,7 @@ When using cURL to POST data from a file: 
 **POST upload ([Graphite](http://metrics20.org/implementations/)-formatted metrics)**
 
 ```bash
-curl -v -X POST -H 'Content-Type:application/vnd.sumologic.graphite' -T [local_file_name] https://collectors.sumologic.com/receiver/v1/http/[UniqueHTTPCollectorCode] 
+curl -v -X POST -H 'Content-Type:application/vnd.sumologic.graphite' -T [local_file_name] https://collectors.sumologic.com/receiver/v1/http/[UniqueHTTPCollectorCode]
 ```
 
 **POST upload ([Carbon 2.0](http://graphite.readthedocs.io/en/latest/feeding-carbon.html#the-plaintext-protocol)-formatted metrics)**

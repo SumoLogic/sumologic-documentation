@@ -1,8 +1,9 @@
 ---
 id: cisco-amp-source
+title: Cisco AMP Source
 ---
 
-# Cisco AMP Source
+#
 
 The Cisco AMP Source provides a secure endpoint to receive data from the Cisco Amp [System Log API](https://api-docs.amp.cisco.com/api_resources?api_host=api.amp.cisco.com&api_version=v1). It securely stores the required authentication, scheduling, and state tracking information.
 
@@ -62,7 +63,7 @@ To configure a Cisco AMP Source:
 
 1. (Optional) **Fields.** Click the **+Add Field** link to define the fields you want to associate, each field needs a name (key) and value.
 
-   * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema. 
+   * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
    * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema it is ignored, known as dropped.  
 
 1. **Client ID**. Provide the Client ID you want to use to authenticate collection requests.
@@ -96,14 +97,14 @@ AMP Source.
 
 | Parameter | Type | Required? | Default | Description | Access |
 |--|--|--|--|--|--|
-| `name` | String | Yes |  | Type a desired name of the Source. The name must be unique per Collector. This value is assigned to the metadata field `_source`. | modifiable | 
-| `description` | String | No | null | Type a description of the Source. | modifiable | 
-| `category` | String | No | null | Type a category of the source. This value is assigned to the [metadata](../../../../search/get-started-with-search/search-basics/built-in-metadata.md) field `_sourceCategory`. See [best practices](../../../design-deployment/best-practices-source-categories.md) for details. | modifiable | 
-| `fields` | JSON Object | No |  | JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field _siemForward to enable forwarding to SIEM. | modifiable | 
-| `clientId` | String | Yes |  | Provide the Client ID you want to use to authenticate collection requests. | modifiable | 
-| `apiRegion` | String | No | api.amp.cisco.com	Select the appropriate region of your API Key. | modifiable | 
-| `apiKey` | String | Yes |  | Provide the API Key you want to use to authenticate collection requests. | modifiable | 
-| `pollingInterval` | Integer | No | 300 | This sets how often the Source checks for new data. | modifiable | 
+| `name` | String | Yes |  | Type a desired name of the Source. The name must be unique per Collector. This value is assigned to the metadata field `_source`. | modifiable |
+| `description` | String | No | null | Type a description of the Source. | modifiable |
+| `category` | String | No | null | Type a category of the source. This value is assigned to the [metadata](../../../../search/get-started-with-search/search-basics/built-in-metadata.md) field `_sourceCategory`. See [best practices](../../../design-deployment/best-practices-source-categories.md) for details. | modifiable |
+| `fields` | JSON Object | No |  | JSON map of key-value fields (metadata) to apply to the Collector or Source. Use the boolean field _siemForward to enable forwarding to SIEM. | modifiable |
+| `clientId` | String | Yes |  | Provide the Client ID you want to use to authenticate collection requests. | modifiable |
+| `apiRegion` | String | No | api.amp.cisco.com	Select the appropriate region of your API Key. | modifiable |
+| `apiKey` | String | Yes |  | Provide the API Key you want to use to authenticate collection requests. | modifiable |
+| `pollingInterval` | Integer | No | 300 | This sets how often the Source checks for new data. | modifiable |
 
 Cisco AMP Source JSON example:
 

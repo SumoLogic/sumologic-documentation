@@ -1,8 +1,9 @@
 ---
 id: collect-with-cloudformation-template
+title: Collect CloudWatch Logs using a CloudFormation Template with secured Sumo Endpoint
 ---
 
-# Collect CloudWatch Logs using a CloudFormation Template with secured Sumo Endpoint
+#
 
 :::note
 The below steps assumes you have configured a Hosted collector and an HTTP Source as specified in this [section](/docs/send-data/collect-from-other-data-sources/amazon-cloudwatch-logs).
@@ -33,10 +34,10 @@ The above command uses the default AWS Managed Key. If you want to use Customer 
 If you're using AWS Console do the following:
 
 1. Go to https://console.aws.amazon.com/systems-manager/parameters.
-  
-   * **Name.** SUMO_ENDPOINT 
-   * **Tier.** Standard 
-   * **Type.** Select SecureString 
+
+   * **Name.** SUMO_ENDPOINT
+   * **Tier.** Standard
+   * **Type.** Select SecureString
    * **KMS Key Source.** Select the KMS Key ID or you can use the default KMS key.
    * **Value.** Paste the value of the SUMO_ENDPOINT_URL copied while creating the HTTP source.
 
@@ -60,9 +61,9 @@ Follow the steps in this [document](https://docs.aws.amazon.com/kms/latest/devel
 
   ![Create_Stack_on_AWS_1.gif](/img/send-data/Create_Stack_on_AWS_1.gif)
 
-1. On the **Specify Template** window, do one of the following: 
+1. On the **Specify Template** window, do one of the following:
 
-   * If you have downloaded and optionally modified the CloudFormation template, choose to **Upload a template file**, upload the `DLQLambdaCloudFormationWithSecuredEndpoint.json` file, and then click **Next**. 
+   * If you have downloaded and optionally modified the CloudFormation template, choose to **Upload a template file**, upload the `DLQLambdaCloudFormationWithSecuredEndpoint.json` file, and then click **Next**.
 
     ![Create_Stack_on_AWS_2.png](/img/send-data/Create_Stack_on_AWS_2.png)
 

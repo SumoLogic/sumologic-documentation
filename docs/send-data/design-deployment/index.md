@@ -1,8 +1,9 @@
 ---
 slug: /send-data/design-your-deployment
+title: Design Your Deployment
 ---
 
-# Design Your Deployment
+#
 
 To send your data to Sumo Logic you have a few options. We have two types of installed agents and offer a collector fully hosted by us.
 

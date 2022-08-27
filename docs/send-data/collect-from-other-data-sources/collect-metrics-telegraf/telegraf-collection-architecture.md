@@ -1,8 +1,9 @@
 ---
 id: telegraf-collection-architecture
+title: Telegraf Collection Architecture
 ---
 
-# Telegraf Collection Architecture
+#
 
 This topic has information about using Telegraf to obtain metrics from an application and to send those metrics to Sumo Logic. 
 

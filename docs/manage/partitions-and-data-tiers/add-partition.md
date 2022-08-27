@@ -3,7 +3,7 @@ id: add-partition
 title: Add a Partition
 ---
 
-#
+
 
 Partitions provide three primary functions:
 

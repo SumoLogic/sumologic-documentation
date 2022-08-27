@@ -3,7 +3,6 @@ id: set-up-servicenow-connections
 title: Set Up ServiceNow Connections
 ---
 
-#
 
 :::note
 There are two ServiceNow connections available in Sumo Logic.
