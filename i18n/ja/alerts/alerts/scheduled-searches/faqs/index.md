@@ -1,8 +1,8 @@
 ---
 slug: /alerts/scheduled-searches/faqs
+title: Scheduled Search FAQs
 ---
 
-# Scheduled Search FAQs
 
 The following topics include frequently asked questions about scheduled
 searches and provide troubleshooting tips. 
