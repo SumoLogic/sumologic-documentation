@@ -168,7 +168,7 @@ The following table lists the API response fields for installed and hosted Colle
    </td>
    <td>
    </td>
-   <td>When true, the collector will be deleted after 12 hours of inactivity. For more information, see <a href="/docs/send-data/sources/installed-collectors/05Reference-Information-for-Collector-Installation/11Set-a-Collector-as-Ephemeral">Setting a Collector as Ephemeral</a>.
+   <td>When true, the collector will be deleted after 12 hours of inactivity. For more information, see <a href="/docs/send-data/installed-collectors/collector-installation-reference/set-collector-as-ephemeral">Setting a Collector as Ephemeral</a>.
    </td>
    <td>Modifiable
    </td>
@@ -259,7 +259,7 @@ The following table lists the API response fields for installed and hosted Colle
    <td>For installed Collectors, whether the Collector is using local source configuration management (using a <code>JSON</code> file), or cloud management (using the <code>UI</code>)
    </td>
    <td>Modifiable
-<p>To assign to <code>JSON</code> see <a href="/docs/send-data/sources/use-json-configure-sources/local-configuration-file-management/Local-Configuration-File-Management-for-Existing-Collectors-and-Sources">Local Configuration File Management for Existing Collectors and Sources</a>.</p>
+<p>To assign to <code>JSON</code> see <a href="/docs/send-data/sources/use-json-configure-sources/local-configuration-file-management/existing-collectors-and-sources">Local Configuration File Management for Existing Collectors and Sources</a>.</p>
    </td>
   </tr>
   <tr>
