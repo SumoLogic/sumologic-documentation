@@ -3,8 +3,6 @@ id: increase-collector-memory
 title: Increase Collector Memory
 ---
 
-#
-
 Collectors are set to use 128MB of RAM by default. If your Collectors ingest more than a few files, you should consider increasing the max heap size the Collector can use.
 
 ## Memory Error

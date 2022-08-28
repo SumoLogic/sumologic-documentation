@@ -1,8 +1,9 @@
 ---
 slug: /search/search-cheat-sheets
+title: Search Cheat Sheets
 ---
 
-# Search Cheat Sheets
+
 
 Cheat sheets provide examples of useful search queries for different use cases. You will also find a list of all Sumo Logic operators, along with a quick description.
 
