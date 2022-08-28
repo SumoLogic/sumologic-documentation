@@ -100,7 +100,7 @@ Once you have completed the above steps, you'll have installed the collection, a
 
 If you're not seeing data in Sumo Logic, you can review our [troubleshooting guide](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/deploy/docs/Troubleshoot_Collection.md).
 
-You will have to install other K8s-related apps depending upon whether you want to monitor specific aspects of Kubernetes control plane provided by different cloud vendors. For more details, see [Sumo Logic K8s Apps](docs/observability/kubernetes-solution/app.md).
+You will have to install other K8s-related apps depending upon whether you want to monitor specific aspects of Kubernetes control plane provided by different cloud vendors. For more details, see [Sumo Logic K8s Apps](docs/observability/kubernetes-solution/apps.md).
 
 ## Additional Resources
 
