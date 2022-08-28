@@ -148,7 +148,7 @@ After completing this process, logs are ingested into Sumo Logic in the followin
 
 This section shows you how to generate an access key and access ID for log collection, and then how to deploy the Amazon GuardDuty Benchmark App.
 
-These tasks require the Manage Collectors and Manage Access Keys [role capabilities](https://help.sumologic.com/Manage/Users-and-Roles/Manage-Roles/05-Role-Capabilities).
+These tasks require the Manage Collectors and Manage Access Keys [role capabilities](/docs/manage/users-and-roles/roles/role-capabilities).
 
 
 #### Step 1: Generate an Access Key and Access ID

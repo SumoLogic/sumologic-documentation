@@ -168,7 +168,7 @@ The following table lists the API response fields for installed and hosted Colle
    </td>
    <td>
    </td>
-   <td>When true, the collector will be deleted after 12 hours of inactivity. For more information, see <a href="https://help.sumologic.com/03Send-Data/Installed-Collectors/05Reference-Information-for-Collector-Installation/11Set-a-Collector-as-Ephemeral">Setting a Collector as Ephemeral</a>.
+   <td>When true, the collector will be deleted after 12 hours of inactivity. For more information, see <a href="/docs/send-data/installed-collectors/collector-installation-reference/set-collector-as-ephemeral">Setting a Collector as Ephemeral</a>.
    </td>
    <td>Modifiable
    </td>
@@ -259,7 +259,7 @@ The following table lists the API response fields for installed and hosted Colle
    <td>For installed Collectors, whether the Collector is using local source configuration management (using a <code>JSON</code> file), or cloud management (using the <code>UI</code>)
    </td>
    <td>Modifiable
-<p>To assign to <code>JSON</code> see <a href="https://help.sumologic.com/03Send-Data/Sources/03Use-JSON-to-Configure-Sources/Local-Configuration-File-Management/Local-Configuration-File-Management-for-Existing-Collectors-and-Sources">Local Configuration File Management for Existing Collectors and Sources</a>.</p>
+<p>To assign to <code>JSON</code> see <a href="/docs/send-data/sources/use-json-configure-sources/local-configuration-file-management/existing-collectors-and-sources">Local Configuration File Management for Existing Collectors and Sources</a>.</p>
    </td>
   </tr>
   <tr>
@@ -746,11 +746,11 @@ Response:
 20
 
 
-Use the POST method with a JSON file to create a new Hosted Collector. The required parameters can be referenced in the [Response fields](https://help.sumologic.com/APIs/Collector-Management-API/Collector-API-Methods-and-Examples#Response_fields) table above. Note that "id" field should be omitted when creating a new Hosted Collector.
+Use the POST method with a JSON file to create a new Hosted Collector. The required parameters can be referenced in the [Response fields](#Response_fields) table above. Note that "id" field should be omitted when creating a new Hosted Collector.
 
 
 21
-This method can only be used to create Hosted Collectors. You must [install a Collector manually](https://help.sumologic.com/03Send-Data/Installed-Collectors) to create an Installed Collector.
+This method can only be used to create Hosted Collectors. You must [install a Collector manually](/docs/send-data/sources/installed-collectors) to create an Installed Collector.
 
 **Method: `POST Path: /collectors`**
 
@@ -824,7 +824,7 @@ Response:
 25
 
 
-Use the PUT method with your JSON file to update an existing Collector. Available parameters can be referenced in the [Response fields](https://help.sumologic.com/APIs/Collector-Management-API/Collector-API-Methods-and-Examples#Response_fields) table above. The JSON request file must specify values for all required fields. Not modifiable fields must match their current values in the system. This is in accordance with HTTP 1.1 RFC-2616 Section 9.6.
+Use the PUT method with your JSON file to update an existing Collector. Available parameters can be referenced in the [Response fields](#Response-fields) table above. The JSON request file must specify values for all required fields. Not modifiable fields must match their current values in the system. This is in accordance with HTTP 1.1 RFC-2616 Section 9.6.
 
 Updating a Collector also requires the "If-Match" header to be specified with the "ETag" provided in the headers of a previous GET request.
 
@@ -1137,7 +1137,7 @@ Error Codes and Messages
 
 ## Source API Methods and Examples
 
-The Collector Management API allows you to manage Collectors and Sources from an HTTP endpoint. This topic describes the Source API methods, which you can use to create installed or hosted Sources of any type by specifying the `sourceType` parameter. When using [local configuration file management](https://help.sumologic.com/03Send-Data/Sources/03Use-JSON-to-Configure-Sources/Local-Configuration-File-Management) you can no longer manage Sources through the Collector Management API.
+The Collector Management API allows you to manage Collectors and Sources from an HTTP endpoint. This topic describes the Source API methods, which you can use to create installed or hosted Sources of any type by specifying the `sourceType` parameter. When using [local configuration file management](/docs/send-data/sources/use-json-configure-sources/local-configuration-file-management) you can no longer manage Sources through the Collector Management API.
 
 You cannot use the Source API to create Microsoft Office 365 sources, Google Audit sources, or any other sources that require OAuth-based authentication with another vendor.
 
