@@ -62,3 +62,4 @@ After further investigation, we discovered that Kenneth left the company and wa
 ## More Information
 
 * [Explore navigation](/docs/dashboards-new/explore-view)
+
