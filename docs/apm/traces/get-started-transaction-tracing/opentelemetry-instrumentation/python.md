@@ -9,43 +9,47 @@ OpenTelemetry Python instrumentation gives the possibility to capture telemetry 
 
 ## How to instrument your app?
 
-The best way to instrument Python applications is to use OpenTelemetry-Python automatic instrumentation. This approach is simple, easy, and does not require many code changes. Only a few Python packages have to be installed to successfully instrument the code of the application. Instruction below applies to OpenTelemetry-Python instrumentation in version **1.9.1/0.28b1 with [OpenTelemetry Protocol HTTP Exporter](https://github.com/open-telemetry/opentelemetry-python/tree/v1.9.1/exporter/opentelemetry-exporter-otlp-proto-http").
+The best way to instrument Python applications is to use OpenTelemetry-Python automatic instrumentation. This approach is simple, easy, and does not require many code changes. Only a few Python packages have to be installed to successfully instrument the code of the application. Instruction below applies to OpenTelemetry-Python instrumentation in version **1.12.0rc2/0.32b0** with [OpenTelemetry Protocol HTTP Exporter](https://github.com/open-telemetry/opentelemetry-python/tree/v1.12.0rc2/exporter/opentelemetry-exporter-otlp-proto-http").
 
 ## Mandatory packages installation
 
 Installation of the package listed below is required to start the instrumentation and export telemetry data. Run the following pip commands:  
 
-```
-$ pip install opentelemetry-distro==0.28b1 $ pip install opentelemetry-exporter-otlp-proto-http==1.9.1
+```bash
+$ pip install opentelemetry-distro==0.32b0
+$ pip install opentelemetry-exporter-otlp-proto-http==1.12.0rc2
 ```
 
 If requirements.txt is used to manage dependencies in the project add:
 
 ```
-opentelemetry-distro==0.28b1 opentelemetry-exporter-otlp-proto-http==1.9.1
+opentelemetry-distro==0.32b0 opentelemetry-exporter-otlp-proto-http==1.12.0rc2
 ```
 
-If pipfile, add these dependencies instead of using the pip commands.
-For example:
+If pipfile, add these dependencies instead of using the pip commands. For example:
 
 ```
-opentelemetry-distro = "0.28b1" opentelemetry-exporter-otlp-proto-http = "1.9.1"
+opentelemetry-distro = "0.32b0" opentelemetry-exporter-otlp-proto-http = "1.12.0rc2"
 ```
 
 ## Application specific packages installation
 
 The next step is related to the installation of the instrumented packages used in the application. This step can be done by one simple command in the root directory of your Python application. Execution of the command below will install corresponding instrumented packages used by the application. This solution is recommended.
 
-```
+```bash
 $ opentelemetry-bootstrap --action=install
 ```
 
-It is possible to install instrumented packages manually but it will require from the user to find libraries used in the code and install their [instrumented counterparts](https://github.com/open-telemetry/opentelemetry-python-contrib/tree/v0.28b1/instrumentation") (such as Flask [opentelemetry-instrumentation-flask](https://github.com/open-telemetry/opentelemetry-python-contrib/tree/v0.28b1/instrumentation/opentelemetry-instrumentation-flask)).
+It is possible to install instrumented packages manually but it will require from the user to find libraries used in the code and install their [instrumented counterparts](https://github.com/open-telemetry/opentelemetry-python-contrib/tree/v0.32b0/instrumentation") (such as Flask [opentelemetry-instrumentation-flask](https://github.com/open-telemetry/opentelemetry-python-contrib/tree/v0.32b0/instrumentation/opentelemetry-instrumentation-flask)).
 
 ## Instrumentation configuration
 
 After successful installation of the packages it is important to properly configure instrumentation. Configuration is set through environment variables.
 
+* Disables metrics exporter:
+ ```bash
+ OTEL_METRICS_EXPORTER=none
+ ```
 * Sets the exporter to OTLP HTTP:
 
    ```
@@ -55,10 +59,10 @@ After successful installation of the packages it is important to properly config
 * Configures the endpoint where telemetry data will be sent:
 
    ```
-   OTEL_EXPORTER_OTLP_TRACES_ENDPOINT=http://collection-sumologic-otelcol.sumologic:55681/v1/traces
+   OTEL_EXPORTER_OTLP_ENDPOINT=http://HOSTNAME:4318
    ```
 
-   The value of the variable points to the default Sumologic Kubernetes Collector. For Kubernetes environments see the [available endpoints for a direct connection](../set-up-traces-collection-for-kubernetes-environments.md). For other environments see [endpoints and protocols](../set-up-traces-collection-for-other-environments.md).
+   For Kubernetes environments, see the [available endpoints for a direct connection](../set-up-traces-collection-for-kubernetes-environments.md). For other environments see [endpoints and protocols](../set-up-traces-collection-for-other-environments.md).
 
 * Configures the service name. Ensure the string value represents its business logic, such as "FinanceServiceCall". This will appear as a tracing service name in Sumo Logic.
 
@@ -76,7 +80,7 @@ After successful installation of the packages it is important to properly config
 
 When everything is configured it is very simple to run an instrumented application.
 
-```
+```bash
 $ opentelemetry-instrument python3 SCRIPT_NAME.py
 ```
 
@@ -89,7 +93,7 @@ By default OpenTelemetry uses W3C context propagation standard. If application i
    * Propagator package installation:
 
       ```
-      $ pip install opentelemetry-propagator-b3==1.9.1
+      $ pip install opentelemetry-propagator-b3==1.12.0rc2
       ```  
 
    * Configuration:
@@ -117,7 +121,7 @@ By default OpenTelemetry uses W3C context propagation standard. If application i
    * Propagator package installation:
 
       ```
-      $ pip install opentelemetry-propagator-jaeger==1.9.1
+      $ pip install opentelemetry-propagator-jaeger==1.12.0rc2
       ```  
 
    * Configuration:
@@ -131,7 +135,7 @@ By default OpenTelemetry uses W3C context propagation standard. If application i
    * Propagator package installation:
 
       ```
-      $ pip install opentelemetry-ot-trace==0.28b1
+      $ pip install opentelemetry-ot-trace==0.32b0
       ```  
 
    * Configuration:

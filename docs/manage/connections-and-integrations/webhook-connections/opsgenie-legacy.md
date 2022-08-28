@@ -58,16 +58,22 @@ To create a webhook:
 
     ```json
     {
-        "searchName": "{{SearchName}}",
-        "searchDescription": "{{SearchDescription}}",
-        "searchQuery": "{{SearchQuery}}",
-        "searchQueryUrl": "{{SearchQueryUrl}}",
-        "timeRange": "{{TimeRange}}",
-        "fireTime": "{{FireTime}}",
-        "rawResultsJson": "{{RawResultsJson}}",
-        "numRawResults": "{{NumRawResults}}",
-        "priority" : "P3",
-        "aggregateResultsJson" : "{{AggregateResultsJson}}"
+      "AlertName": "{{AlertName}}",
+      "Description": "{{Description}}",
+      "action": "create",
+      "AlertURL": "{{AlertResponseURL}}",
+      "Query": "{{Query}}",
+      "QueryURL": "{{QueryURL}}",
+      "TriggerTime": "{{TriggerTime}}",
+      "TriggerTimeRange": "{{TriggerTimeRange}}",
+      "TriggerCondition": "{{TriggerCondition}}",
+      "TriggerValue": "{{TriggerValue}}",
+      "TriggerType": "{{TriggerType}}",
+      "ResultsJson": "{{ResultsJSON}}",
+      "DetectionMethod": "{{DetectionMethod}}",
+      "MonitorType": "{{MonitorType}}",
+      "NumQueryResults": "{{NumQueryResults}}",
+      "SourceURL": "{{SourceURL}}"
     }
     ```
 

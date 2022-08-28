@@ -5,20 +5,9 @@ sidebar_label: Troubleshooting
 description: Explore navigation allows you to quickly locate the object in a physical stack that needs to be debugged.
 ---
 
-Explore navigation allows you to quickly locate the object in a physical stack that needs to be debugged. This page walks you through a high-level troubleshooting scenario to illustrate the possibilities.
+[Explore navigation](/docs/dashboards-new/explore-view) allows you to quickly locate the object in a physical stack that needs to be debugged. This page walks you through a high-level troubleshooting scenario to illustrate the possibilities.
 
-<Iframe url="https://www.youtube.com/embed/CEBN4lRp4SU"
-        width="854px"
-        height="480px"
-        id="myId"
-        className="video-container"
-        display="initial"
-        position="relative"
-        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-        />
-
-import Iframe from 'react-iframe';
+<iframe width="560" height="315" src="https://www.youtube.com/embed/CEBN4lRp4SU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Step 1: Analyze a cluster
 
@@ -118,3 +107,7 @@ There were 5 messages that revealed what happened, reading the lines from the 
 It turned out that admin **shady+soc** deleted the **Kenneth** user, which also disabled and deleted Kenneth's access key. Kenneth's access key was used to authenticate with PagerDuty, but after it was deleted the service couldn't authenticate and the authentication failed, as we saw in the Pod view. 
 
 After further investigation, we discovered that Kenneth left the company and was off-boarded by shady+soc. The authentication problem could've been avoided if shady+soc had contacted Kenneth's manager prior to deleting his user account to verify if Kenneth had any active keys associated with his account, or had he scanned for active keys associated with Kenneth's user account.
+
+## More information
+
+[Explore navigation](/docs/dashboards-new/explore-view)
