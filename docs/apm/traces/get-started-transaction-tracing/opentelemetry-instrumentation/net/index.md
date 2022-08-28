@@ -7,7 +7,7 @@ description: The simplest way to start capturing telemetry data is to implement 
 
 Automatic instrumentation of the .NET applications is a very easy task. The simplest way to start capturing telemetry data is to implement the solution coming from OpenTelemetry-dotNet. All the libraries shipped with the [OpenTelemetry-dotNet](https://github.com/open-telemetry/opentelemetry-dotnet) repository support all the officially supported versions of .NET Core (including deployments in the [Microsoft Azure Service Fabric Containers](https://docs.microsoft.com/en-us/azure/service-fabric/service-fabric-containers-overview)) and .NET framework with an except for .NET Framework 3.5 SP1. See this [list of the supported libraries](https://github.com/open-telemetry/opentelemetry-dotnet#getting-started).
 
-## How to instrument your ASP.NET Core application?
+## How to instrument your ASP.NET Core application
 
 There are a few simple steps to instrument the application and obtain telemetry data.
 
@@ -48,7 +48,7 @@ The final step is to configure the exporter endpoint, service and application na
 * `OTEL_SERVICE_NAME=SERVICE_NAME` - configure the service name. Ensure the string value represents its business logic, such as "FinanceServiceCall". This will appear as a tracing service name in Sumo Logic.
 * `OTEL_RESOURCE_ATTRIBUTES=application=APPLICATION_NAME` - configure the application name. This will appear as a tracing application name in Sumo Logic. Additional attributes can be added here as comma separated key=value pairs.
 
-## How to instrument your ASP.NET application?
+## How to instrument your ASP.NET application
 
 Instrumentation of the .NET application requires a little more effort but is still simple.
 

@@ -337,7 +337,7 @@ The content then populates in **Sumo Logic RUM - default** dashboards (inside 
 
 ## Explore View
 
-[Explore](/docs/dashboards-new/explore.md) contains dashboards from the [RUM app](#installing-the-rum-app) that provide visibility into actual end-user experience by geographical locations, browser, and operating system types. This also helps you to understand how your customers experience the performance of your web application. This is a visualization of RUM metrics gathered from tracing instrumentation in the browser.
+[Explore](/docs/dashboards-new/explore-view.md) contains dashboards from the [RUM app](#installing-the-rum-app) that provide visibility into actual end-user experience by geographical locations, browser, and operating system types. This also helps you to understand how your customers experience the performance of your web application. This is a visualization of RUM metrics gathered from tracing instrumentation in the browser.
 
 Explore organizes RUM data on four levels:
 * **Application**: corresponds to the value of the application tag set in the JavaScript script above. This should correspond to your whole website defined by its business function, such as "Coffee shop".

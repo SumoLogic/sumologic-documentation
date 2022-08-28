@@ -5,9 +5,11 @@ sidebar_label: Istio
 description: Learn how to instrument OpenTelemetry Application code to collect Istio trace data generated from Envoy proxies.
 ---
 
-OpenTelemetry Collector gives you the possibility to collect Istio trace data and forward it to Sumo Logic.
+OpenTelemetry Collector gives you the ability to collect Istio trace data and forward it to Sumo Logic.
 
-[*Istio*](https://istio.io/latest/) is a popular service mesh technology using Envoy proxy technology that provides out-of-the-box tracing generation from their sidecars. Although its tracing capabilities cannot fully replace visibility that  you can obtain by collecting traces by instrumenting the application code directly, it can provide some additional details to delays introduced by sidecar proxies that will generate its own specific spans.
+[Istio](https://istio.io/latest/) is a popular service mesh technology using Envoy proxy technology that provides out-of-the-box tracing generation from its sidecars. Although its tracing capabilities cannot fully replace visibility that  you can obtain by collecting traces by instrumenting the application code directly, it can provide some additional details to delays introduced by sidecar proxies that will generate its own specific spans.
+
+You'll still need to instrument with OpenTelemetry for full functionality. Istio will enhance the data received from the OpenTelemetry instrumentation.
 
 ## Configuration
 

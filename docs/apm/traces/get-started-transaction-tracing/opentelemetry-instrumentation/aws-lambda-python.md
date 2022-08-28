@@ -30,7 +30,7 @@ It is very simple to instrument your AWS Python Lambda function using the Sumo L
 
 1. Navigate to the **Layers** section and click **Add a layer**.
 
-1. In the **Choose a layer** menu, select **Specify an ARN** and paste the ARN ID for your Lambda function AWS Region. Reference the [amd64](#amd64-architecture) and [arm64](#arm64-architecture) tables for the ARN ID.  
+1. In the **Choose a layer** menu, select **Specify an ARN** and paste the ARN ID for your Lambda function AWS Region. Reference the table in the section _Sumo Logic AWS Distro Lambda layers for AWS Region - amd64 (x86_64) architecture_ for the ARN ID.  
 
     ![lambda-python.png](/img/traces/lambda-python1.png)
 
@@ -58,53 +58,58 @@ It is very simple to instrument your AWS Python Lambda function using the Sumo L
 
     ![lambda-python.png](/img/traces/lambda-python3.png)
 
+1. Make sure you have **X-Ray Tracing** disabled in Lambda API Stage. Navigate to [AWS API Gateway console](https://console.aws.amazon.com/apigateway/main/apis), find your API and go to Stages. In the **Logs/Tracing** tab uncheck **Enable X-Ray Tracing** option.
+:::note
+If for whatever reason you can't disable this, configure X-Ray context propagation by setting OTEL_PROPAGATORS=xray environment variable on your client side.
+:::
+
 1. Your function should be successfully instrumented. Invoke the function and find your traces in the [Sumo Logic Tracing screen](../../working-with-tracing-data/view-and-investigate-traces.md).
 
-## amd64 architecture
+## Sumo Logic AWS Distro Lambda layers for AWS Region - amd64 (x86_64) architecture
 
-The following are Sumo Logic AWS Distro Lambda layers for AWS Region for amd64 (x86_64) architecture:
+Go back to Step 3 (_In the Choose a layer menu_...).
 
 | AWS Region | ARN |
 |--|--|
-| US East (N.Virginia) us-east-1          | arn:aws:lambda:us-east-1:663229565520:layer:sumologic-otel-python-x86_64-ver-1-10-0:1      |
-| US East (Ohio) us-east-2                | arn:aws:lambda:us-east-2:663229565520:layer:sumologic-otel-python-x86_64-ver-1-10-0:2      |
-| US West (N.Carolina) us-west-1          | arn:aws:lambda:us-west-1:663229565520:layer:sumologic-otel-python-x86_64-ver-1-10-0:2      |
-| US West (Oregon) us-west-2              | arn:aws:lambda:us-west-2:663229565520:layer:sumologic-otel-python-x86_64-ver-1-10-0:2      |
-| Africa (Cape Town) af-south-1           | arn:aws:lambda:af-south-1:663229565520:layer:sumologic-otel-python-x86_64-ver-1-10-0:1     |
-| Asia Pacific (Hong Kong) ap-east-1      | arn:aws:lambda:ap-east-1:663229565520:layer:sumologic-otel-python-x86_64-ver-1-10-0:1      |
-| Asia Pacific (Mumbai) ap-south-1        | arn:aws:lambda:ap-south-1:663229565520:layer:sumologic-otel-python-x86_64-ver-1-10-0:1     |
-| Asia Pacific (Osaka) ap-northeast-3     | arn:aws:lambda:ap-northeast-3:663229565520:layer:sumologic-otel-python-x86_64-ver-1-10-0:2 |
-| Asia Pacific (Seoul) ap-northeast-2     | arn:aws:lambda:ap-northeast-2:663229565520:layer:sumologic-otel-python-x86_64-ver-1-10-0:1 |
-| Asia Pacific (Singapore) ap-southeast-1 | arn:aws:lambda:ap-southeast-1:663229565520:layer:sumologic-otel-python-x86_64-ver-1-10-0:2 |
-| Asia Pacific (Sydney) ap-southeast-2    | arn:aws:lambda:ap-southeast-2:663229565520:layer:sumologic-otel-python-x86_64-ver-1-10-0:1 |
-| Asia Pacific (Tokyo) ap-northeast-1     | arn:aws:lambda:ap-northeast-1:663229565520:layer:sumologic-otel-python-x86_64-ver-1-10-0:1 |
-| Canada (Central) ca-central-1           | arn:aws:lambda:ca-central-1:663229565520:layer:sumologic-otel-python-x86_64-ver-1-10-0:2   |
-| Europe (Frankfurt) eu-central-1         | arn:aws:lambda:eu-central-1:663229565520:layer:sumologic-otel-python-x86_64-ver-1-10-0:2   |
-| Europe (Ireland) eu-west-1              | arn:aws:lambda:eu-west-1:663229565520:layer:sumologic-otel-python-x86_64-ver-1-10-0:1      |
-| Europe (London) eu-west-2               | arn:aws:lambda:eu-west-2:663229565520:layer:sumologic-otel-python-x86_64-ver-1-10-0:2      |
-| Europe (Milan) eu-south-1               | arn:aws:lambda:eu-south-1:663229565520:layer:sumologic-otel-python-x86_64-ver-1-10-0:1     |
-| Europe (Paris) eu-west-3                | arn:aws:lambda:eu-west-3:663229565520:layer:sumologic-otel-python-x86_64-ver-1-10-0:1      |
-| Europe (Stockholm) eu-north-1           | arn:aws:lambda:eu-north-1:663229565520:layer:sumologic-otel-python-x86_64-ver-1-10-0:1     |
-| Middle East (Bahrain) me-south-1        | arn:aws:lambda:me-south-1:663229565520:layer:sumologic-otel-python-x86_64-ver-1-10-0:1     |
-| South America (Sao Paulo) sa-east-1     | arn:aws:lambda:sa-east-1:663229565520:layer:sumologic-otel-python-x86_64-ver-1-10-0:1      |
+| US East (N.Virginia) us-east-1          | arn:aws:lambda:us-east-1:663229565520:layer:sumologic-otel-python-x86_64-ver-1-11-1:3      |
+| US East (Ohio) us-east-2                | arn:aws:lambda:us-east-2:663229565520:layer:sumologic-otel-python-x86_64-ver-1-11-1:3      |
+| US West (N.Carolina) us-west-1          | arn:aws:lambda:us-west-1:663229565520:layer:sumologic-otel-python-x86_64-ver-1-11-1:2      |
+| US West (Oregon) us-west-2              | arn:aws:lambda:us-west-2:663229565520:layer:sumologic-otel-python-x86_64-ver-1-11-1:3      |
+| Africa (Cape Town) af-south-1           | arn:aws:lambda:af-south-1:663229565520:layer:sumologic-otel-python-x86_64-ver-1-11-1:3     |
+| Asia Pacific (Hong Kong) ap-east-1      | arn:aws:lambda:ap-east-1:663229565520:layer:sumologic-otel-python-x86_64-ver-1-11-1:3      |
+| Asia Pacific (Mumbai) ap-south-1        | arn:aws:lambda:ap-south-1:663229565520:layer:sumologic-otel-python-x86_64-ver-1-11-1:3     |
+| Asia Pacific (Osaka) ap-northeast-3     | arn:aws:lambda:ap-northeast-3:663229565520:layer:sumologic-otel-python-x86_64-ver-1-11-1:3 |
+| Asia Pacific (Seoul) ap-northeast-2     | arn:aws:lambda:ap-northeast-2:663229565520:layer:sumologic-otel-python-x86_64-ver-1-11-1:3 |
+| Asia Pacific (Singapore) ap-southeast-1 | arn:aws:lambda:ap-southeast-1:663229565520:layer:sumologic-otel-python-x86_64-ver-1-11-1:3 |
+| Asia Pacific (Sydney) ap-southeast-2    | arn:aws:lambda:ap-southeast-2:663229565520:layer:sumologic-otel-python-x86_64-ver-1-11-1:3 |
+| Asia Pacific (Tokyo) ap-northeast-1     | arn:aws:lambda:ap-northeast-1:663229565520:layer:sumologic-otel-python-x86_64-ver-1-11-1:3 |
+| Canada (Central) ca-central-1           | arn:aws:lambda:ca-central-1:663229565520:layer:sumologic-otel-python-x86_64-ver-1-11-1:3   |
+| Europe (Frankfurt) eu-central-1         | arn:aws:lambda:eu-central-1:663229565520:layer:sumologic-otel-python-x86_64-ver-1-11-1:4   |
+| Europe (Ireland) eu-west-1              | arn:aws:lambda:eu-west-1:663229565520:layer:sumologic-otel-python-x86_64-ver-1-11-1:3      |
+| Europe (London) eu-west-2               | arn:aws:lambda:eu-west-2:663229565520:layer:sumologic-otel-python-x86_64-ver-1-11-1:3      |
+| Europe (Milan) eu-south-1               | arn:aws:lambda:eu-south-1:663229565520:layer:sumologic-otel-python-x86_64-ver-1-11-1:3     |
+| Europe (Paris) eu-west-3                | arn:aws:lambda:eu-west-3:663229565520:layer:sumologic-otel-python-x86_64-ver-1-11-1:3      |
+| Europe (Stockholm) eu-north-1           | arn:aws:lambda:eu-north-1:663229565520:layer:sumologic-otel-python-x86_64-ver-1-11-1:4     |
+| Middle East (Bahrain) me-south-1        | arn:aws:lambda:me-south-1:663229565520:layer:sumologic-otel-python-x86_64-ver-1-11-1:4     |
+| South America (Sao Paulo) sa-east-1     | arn:aws:lambda:sa-east-1:663229565520:layer:sumologic-otel-python-x86_64-ver-1-11-1:3      |
 
-## arm64 architecture
+## Sumo Logic AWS Distro Lambda layers for AWS Region - arm64 (arm) architecture
 
-The following are Sumo Logic AWS Distro Lambda layers for AWS Region for arm64 architecture.
+Go back to Step 3 (_In the Choose a layer menu_...).
 
 | AWS Region | ARN |
 |-----------------------------------------|-------------------------------------------------------------------------------------------|
-| US East (N.Virginia) us-east-1          | arn:aws:lambda:us-east-1:663229565520:layer:sumologic-otel-python-arm64-ver-1-10-0:3      |
-| US East (Ohio) us-east-2                | arn:aws:lambda:us-east-2:663229565520:layer:sumologic-otel-python-arm64-ver-1-10-0:2      |
-| US West (Oregon) us-west-2              | arn:aws:lambda:us-west-2:663229565520:layer:sumologic-otel-python-arm64-ver-1-10-0:1      |
-| Asia Pacific (Mumbai) ap-south-1        | arn:aws:lambda:ap-south-1:663229565520:layer:sumologic-otel-python-arm64-ver-1-10-0:3     |
-| Asia Pacific (Osaka) ap-northeast-3     | arn:aws:lambda:ap-northeast-3:663229565520:layer:sumologic-otel-python-arm64-ver-1-10-0:2 |
-| Asia Pacific (Singapore) ap-southeast-1 | arn:aws:lambda:ap-southeast-1:663229565520:layer:sumologic-otel-python-arm64-ver-1-10-0:3 |
-| Asia Pacific (Sydney) ap-southeast-2    | arn:aws:lambda:ap-southeast-2:663229565520:layer:sumologic-otel-python-arm64-ver-1-10-0:1 |
-| Asia Pacific (Tokyo) ap-northeast-1     | arn:aws:lambda:ap-northeast-1:663229565520:layer:sumologic-otel-python-arm64-ver-1-10-0:1 |
-| Europe (Frankfurt) eu-central-1         | arn:aws:lambda:eu-central-1:663229565520:layer:sumologic-otel-python-arm64-ver-1-10-0:2   |
-| Europe (Ireland) eu-west-1              | arn:aws:lambda:eu-west-1:663229565520:layer:sumologic-otel-python-arm64-ver-1-10-0:1      |
-| Europe (London) eu-west-2               | arn:aws:lambda:eu-west-2:663229565520:layer:sumologic-otel-python-arm64-ver-1-10-0:2      |
+| US East (N.Virginia) us-east-1          | arn:aws:lambda:us-east-1:663229565520:layer:sumologic-otel-python-arm64-ver-1-11-1:3      |
+| US East (Ohio) us-east-2                | arn:aws:lambda:us-east-2:663229565520:layer:sumologic-otel-python-arm64-ver-1-11-1:3      |
+| US West (Oregon) us-west-2              | arn:aws:lambda:us-west-2:663229565520:layer:sumologic-otel-python-arm64-ver-1-11-1:3      |
+| Asia Pacific (Mumbai) ap-south-1        | arn:aws:lambda:ap-south-1:663229565520:layer:sumologic-otel-python-arm64-ver-1-11-1:4     |
+| Asia Pacific (Osaka) ap-northeast-3     | arn:aws:lambda:ap-northeast-3:663229565520:layer:sumologic-otel-python-arm64-ver-1-11-1:4 |
+| Asia Pacific (Singapore) ap-southeast-1 | arn:aws:lambda:ap-southeast-1:663229565520:layer:sumologic-otel-python-arm64-ver-1-11-1:4 |
+| Asia Pacific (Sydney) ap-southeast-2    | arn:aws:lambda:ap-southeast-2:663229565520:layer:sumologic-otel-python-arm64-ver-1-11-1:3 |
+| Asia Pacific (Tokyo) ap-northeast-1     | arn:aws:lambda:ap-northeast-1:663229565520:layer:sumologic-otel-python-arm64-ver-1-11-1:3 |
+| Europe (Frankfurt) eu-central-1         | arn:aws:lambda:eu-central-1:663229565520:layer:sumologic-otel-python-arm64-ver-1-11-1:4   |
+| Europe (Ireland) eu-west-1              | arn:aws:lambda:eu-west-1:663229565520:layer:sumologic-otel-python-arm64-ver-1-11-1:3      |
+| Europe (London) eu-west-2               | arn:aws:lambda:eu-west-2:663229565520:layer:sumologic-otel-python-arm64-ver-1-11-1:3      |
 
 ## Sumo Logic AWS OTel Lambda container instrumentation
 

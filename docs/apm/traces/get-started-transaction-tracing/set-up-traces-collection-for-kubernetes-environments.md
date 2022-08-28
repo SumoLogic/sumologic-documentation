@@ -2,48 +2,44 @@
 id: set-up-traces-collection-for-kubernetes-environments
 title: Set up traces collection for Kubernetes environments
 sidebar_label: Set up traces collection for Kubernetes environments
-description: After installing or upgrading your Kubernetes Sumo Collector, you will be able to send your traces directly to its endpoint using Jaeger, Zipkin, and OpenTelemetry formats. 
 ---
 
-After installing or upgrading your Kubernetes Sumo Collector, you will be able to send your traces directly to its endpoint using Jaeger, Zipkin, and OpenTelemetry formats.
+After installing or upgrading your Sumo Logic Kubernetes Collection, you will be able to send your traces directly to its endpoint using OpenTelemetry (as well as older formats like Jaeger or Zipkin).
 
-Traces will be enhanced with Kubernetes metadata, similarly to the logs and metrics collected by the collector. See below for installation instructions.
+Traces will be enhanced with Kubernetes metadata, similarly to the logs and metrics collected by the collector. See below for installation instructions.
+
 
 ## Prerequisites:
 
-* Kubernetes 1.18+
-* Helm 3.4+
+* Kubernetes 1.19+
+* Helm 3.5+
+
 
 ## Installation process for Sumo Logic Tracing on Kubernetes
 
-Installation is almost the same as for the official [SumoLogic Kubernetes Collection](https://github.com/SumoLogic/sumologic-kubernetes-collection), except a tracing flag needs to be enabled. The process follows using a Helm chart to set all required components. It will automatically download and configure [OpenTelemetry Collector,](https://github.com/SumoLogic/opentelemetry-collector-contrib) which will collect, process, and export telemetry data to Sumo Logic.
+Installation is almost the same as for the official [SumoLogic Kubernetes Collection](https://github.com/SumoLogic/sumologic-kubernetes-collection), except a tracing flag (**`sumologic.traces.enabled=true`) needs to be enabled. The process follows using a Helm chart to set all required components. It will automatically download and configure [OpenTelemetry Collector,](https://github.com/SumoLogic/sumologic-otel-collector) which will collect, process, and export telemetry data to Sumo Logic.
 
-In the following installation steps, we use the release name `collection` and the namespace name `sumologic`. You can use any names you want, however, you'll need to adjust your installation commands to use your names since these names impact the OpenTelemetry Collector endpoint name.
+In the following installation steps, we use the release name **`collection` and the namespace name `sumologic`. You can use any names you want, however, you'll need to adjust your installation commands to use your names since these names impact the OpenTelemetry Collector endpoint name.
 
-There are two deployment scenarios:
 
-* [Scenario 1](#scenario-1-single-opentelemetry-collector-gateway): A single OpenTelemetry Collector gateway
-* [Scenario 2](#scenario-2-run-local-node-opentelemetry-collector-agents-and-aggregating-opentelemetry-collector-gateway): Running OpenTelemetry Collector Agents on each node and OpenTelemetry Collector gateway
+### Collection architecture
 
-## Scenario 1: Single OpenTelemetry Collector gateway 
+Tracing data from your services is sent through multiple local OpenTelemetry Collectors/Agents, deployed as a DaemonSet on each Node, which buffers and sends data to a OpenTelemetry Collector gateway. Finally, the data is sent to the OpenTelemetry Collector helping to shape and trim the traffic, both running as a Deployment.
 
-Tracing data from your services is sent directly to a single OpenTelemetry Collector service running as a Deployment and acting as a gateway:
 
-Use this when either of the following are met:
 
-* planning to test the process
-* have an environment with a relatively low number of pods (less than 100) or just a single host
-* aim at simplicity
+#### Setting up the most recent Sumo Logic Kubernetes Collection  
 
-![Direct connection to the collector](/img/traces/scenario1.png)
 
-### Setting up the most recent SumoLogic Kubernetes Collection
+Refer to [install/upgrade instructions](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/v2.14.1/deploy/README.md#deployment-guide-for-2140-version) for the current version. To enable tracing, `sumologic.traces.enabled=true` flag must be included.
 
-Tracing requires Sumo Logic Kubernetes collection 2.0. Refer to [install/upgrade instructions](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/v2.6.0/deploy/README.md#deployment-guide-for-unreleased-version) for the current version. To enable tracing, `sumologic.traces.enabled=true` flag must be included. 
+If you plan to [auto-instrument your Java, Python and JS applications in K8s environments](https://help.sumologic.com/Beta/Kubernetes_Tracing_Auto_Instrumentation) (Beta), use the Helm command in that article.
+
 
 #### Using command line
 
-```
+
+```bash
 helm upgrade --install collection sumologic/sumologic \
   --namespace sumologic \
   --create-namespace \
@@ -51,13 +47,16 @@ helm upgrade --install collection sumologic/sumologic \
   --set sumologic.accessKey=<SUMO_ACCESS_KEY> \
   --set sumologic.clusterName="<MY_CLUSTER_NAME>" \
   --set sumologic.traces.enabled=true
-  ```
-
-#### Using configuration file
-
-We recommend creating a new `values.yaml` file for each Kubernetes cluster you wish to install collection on and setting only the properties you wish to override. For example,
-
 ```
+
+
+
+### Using configuration file
+
+We recommend you create a new `values.yaml` file for each Kubernetes cluster you wish to install collection on and **setting only the properties you wish to override**. For example:
+
+
+```yaml
 sumologic:
   accessId: <SUMO_ACCESS_ID>
   accessKey: <SUMO_ACCESS_KEY>
@@ -66,254 +65,161 @@ sumologic:
     enabled: true
 ```
 
-Once you have the config customized you can use the following commands
-to install or upgrade:
-
-```
-helm upgrade --install collection sumologic/sumologic \
-  --namespace sumologic \
-  --create-namespace \
-  -f values.yaml
-```
-
-You can also refer to [example templates](https://github.com/SumoLogic/opentelemetry-collector-contrib/blob/main/examples/) with configuration values.
-
-### Enabling tracing for existing installations
-
-Tracing is disabled by default. If you previously installed sumologic-kubernetes-collection 2.0 without enabling tracing, it can be enabled with `sumologic.traces.enabled=true`.
-
-#### Using command line
-
-```
-helm upgrade collection sumologic/sumologic \
-  --namespace sumologic \
-  ... \
-  --set sumologic.traces.enabled=true
-```
-
-#### Using configuration file
-
-The `values.yaml` file needs to have the relevant section enabled, such as:
-
-```
-sumologic:
-  ...
-  traces:
-    enabled: true
-```
-
-After updating the configuration file, the changes can be applied with
-the following:
-
-```
-helm upgrade --install collection sumologic/sumologic \
-  --namespace sumologic \
-  -f values.yaml
-```
-
-### Pointing tracing clients (instrumentation exporters) to the collector 
-
-The collector supports receiving spans in Zipkin, OTLP, and Jaeger
-formats. The following are the endpoints for each of them:
-
- * Jaeger GRPC: `<CHART_NAME>-sumologic-otelcol<NAMESPACE>:14250`
- * Jaeger Thrift
-    HTTP: `<CHART_NAME>-sumologic-otelcol<NAMESPACE>:14268`
- * Jaeger Thrift Compact
-    (UDP): `<CHART_NAME>-sumologic-otelcol<NAMESPACE>:6831`
- * Zipkin: `<CHART_NAME>-sumologic-otelcol<NAMESPACE>:9411/api/v2/spans`
- * OTLP gRPC: `<CHART_NAME>-sumologic-otelcol<NAMESPACE>:4317`
- * OTLP HTTP: `<CHART_NAME>-sumologic-otelcol<NAMESPACE>:55681`
-
-For example, when the default chart name (`collection`) and namespace
-(`sumologic`) is used, the endpoints are following:
-
- * Jaeger GRPC: `collection-sumologic-otelcol.sumologic:14250`
- * Jaeger Thrift HTTP: `collection-sumologic-otelcol.sumologic:14268`
- * Jaeger Thrift Compact (UDP): `collection-sumologic-otelcol.sumologic:6831`
- * Zipkin: `collection-sumologic-otelcol.sumologic:9411/api/v2/spans`
- * OTLP gRPC: `collection-sumologic-otelcol.sumologic:4317`
- * OTLP HTTP: `collection-sumologic-otelcol.sumologic:55681`
-
-## Scenario 2: Run local node OpenTelemetry collector Agents and aggregating OpenTelemetry Collector gateway
-
-Tracing data from your services is sent through multiple, local OpenTelemetry Collectors/Agents, deployed as a DaemonSet on each Node which buffer and send data to a OpenTelemetry Collector gateway running as a Deployment.
-
-When either of the following happens, using OpenTelemetry Agent and Collector is recommended:
-
-* there is a significant number of pods running (more than 100) or multiple hosts
-* you are already using agent/collector infrastructure (like Jaeger Agent) and planning to upgrade it to OpenTelemetry
-* UDP protocol is used for exporting spans from client
-* significant traffic volume is expected
-
-![OpenTelemetry flow with Agents and Collector](/img/traces/scenario2.png)
-
-In the case of having an environment with a significant volume of spans or If you're using a client that sends data over UDP, such as Jaeger, we recommend deployment with OpenTelemetry Collector/Agent enabled. It is deployed as a DaemonSet and in effect, there is an instance of the agent running on each node.
-
-:::note Replacing existing agents
-When Jaeger or any other existing agent is being used, it typically is used to receive traffic data via UDP from tracing clients. We recommend replacing these agents with the Sumo Logic version of OpenTelemetry collector in agent mode to accurately assign source IP address, which is used for identifying the source pod when doing metadata tagging. This will ensure that Kubernetes metadata tagging works well for tracing in addition to metrics and logs data.
-:::
-
-### Setting up the most recent SumoLogic Kubernetes Collection 
-
-Tracing requires Sumo Logic Kubernetes collection 2.0 Refer to [install/upgrade instructions](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/v2.6.0/deploy/README.md#deployment-guide-for-unreleased-version) for
-the current version. To enable tracing, `sumologic.traces.enabled=true` flag must be included. Enablement of Agent mode is configured with `otelagent.enabled=true`.
-
-#### Using command line
-
-```
-helm upgrade --install collection sumologic/sumologic \
-  --namespace sumologic \
-  --create-namespace \
-  --set sumologic.accessId=<SUMO_ACCESS_ID> \
-  --set sumologic.accessKey=<SUMO_ACCESS_KEY> \
-  --set sumologic.clusterName="<MY_CLUSTER_NAME>" \
-  --set sumologic.traces.enabled=true \
-  --set otelagent.enabled=true
-```
-
-#### Using configuration file
-
-We recommend you create a new `values.yaml` file for each Kubernetes cluster you wish to install collection on and setting only the properties you wish to override. For example,
-
-```
-sumologic:
-  accessId: <SUMO_ACCESS_ID>
-  accessKey: <SUMO_ACCESS_KEY>
-  clusterName: <MY_CLUSTER_NAME>
-  traces:
-    enabled: true
-otelagent:
-  enabled: true
-```
 
 Once you have the config customized you can use the following commands to install or upgrade:
 
-```
+
+```bash
 helm upgrade --install collection sumologic/sumologic \
   --namespace sumologic \
   --create-namespace \
   -f values.yaml
 ```
 
-You can also refer to [example templates](https://github.com/SumoLogic/opentelemetry-collector-contrib/blob/main/examples/) with configuration values.
 
-### Enabling tracing for existing installations
 
-Tracing is disabled by default. If you previously installed sumologic-kubernetes-collection 2.0 without enabling tracing, it can be enabled with sumologic.traces.enabled=true. Enablement of Agent mode is configured with `otelagent.enabled=true`.
+#### Enabling tracing for existing installations
+
+Tracing is disabled by default. If you previously installed sumologic-kubernetes-collection 2.0 or higher without enabling tracing, it can be enabled with **sumologic.traces.enabled=true**.
+
 
 #### Using command line
 
-```
+```bash
 helm upgrade collection sumologic/sumologic \
   --namespace sumologic \
   ... \
-  --set sumologic.traces.enabled=true \
-  --set otelagent.enabled=true
+  --set sumologic.traces.enabled=true
 ```
+
+
 
 #### Using configuration file
 
-The `values.yaml` file needs to have the relevant section enabled, such as:
+The `values.yaml` file needs to have the relevant section enabled, such as:
 
-```
+
+```yaml
 sumologic:
   ...
   traces:
     enabled: true
-otelagent:
-  enabled: true
 ```
 
-After updating the configuration file, the changes can be applied with
-the following:
 
-```
+After updating the configuration file, the changes can be applied with the following:
+
+
+```bash
 helm upgrade --install collection sumologic/sumologic \
   --namespace sumologic \
   -f values.yaml
 ```
 
-#### Pointing tracing clients (instrumentation exporters) to the agent collectors
 
-The following are the endpoints for each of the supported formats:
+#### Pointing tracing clients (instrumentation exporters) to the agent collectors
 
- * Jaeger GRPC: `<CHART_NAME>-sumologic-otelagent<NAMESPACE>:14250`
- * Jaeger Thrift HTTP:`<CHART_NAME>-sumologic-otelagent<NAMESPACE>:14268`
- * Jaeger Thrift Compact (UDP): `<CHART_NAME>-sumologic-otelagent<NAMESPACE>:6831`
- * Zipkin: `<CHART_NAME>-sumologic-otelagent<NAMESPACE>:9411/api/v2/spans`
- * OTLP gRPC: `<CHART_NAME>-sumologic-otelagent<NAMESPACE>:4317`
- * OTLP HTTP: `<CHART_NAME>-sumologic-otelagent<NAMESPACE>:55681`
+Using OTLP HTTP is recommended:
+
+* OTLP HTTP: `<CHART_NAME>-sumologic-otelagent.<NAMESPACE>:4318`
+
+Alternatively, if requried, you can use other supported formats as well:
+
+* Jaeger GRPC: `<CHART_NAME>-sumologic-otelagent.<NAMESPACE>:14250`
+* Jaeger Thrift HTTP: `<CHART_NAME>-sumologic-otelagent.<NAMESPACE>:14268`
+* Jaeger Thrift Compact (UDP): `<CHART_NAME>-sumologic-otelagent.<NAMESPACE>:6831`
+* Zipkin: `<CHART_NAME>-sumologic-otelagent.<NAMESPACE>:9411/api/v2/spans`
+* OTLP gRPC: `<CHART_NAME>-sumologic-otelagent.<NAMESPACE>:4317`
+* OTLP HTTP/**deprecated:** `<CHART_NAME>-sumologic-otelagent.<NAMESPACE>:55681`
 
 For example, when the default chart name (`collection`) and namespace (`sumologic`) is used, the endpoints are following:
 
- * Jaeger GRPC: `collection-sumologic-otelagent.sumologic:14250`
- * Jaeger Thrift HTTP: `collection-sumologic-otelagent.sumologic:14268`
- * Jaeger Thrift Compact (UDP): `collection-sumologic-otelagent.sumologic:6831`
- * Zipkin: `collection-sumologic-otelagent.sumologic:9411/api/v2/spans`
- * OTLP gRPC: `collection-sumologic-otelagent.sumologic:4317`
- * OTLP HTTP: `collection-sumologic-otelagent.sumologic:55681`
+* OTLP HTTP: `collection-sumologic-otelagent.sumologic:4318`
+* Jaeger GRPC: `collection-sumologic-otelagent.sumologic:14250`
+* Jaeger Thrift HTTP: `collection-sumologic-otelagent.sumologic:14268`
+* Jaeger Thrift Compact (UDP): `collection-sumologic-otelagent.sumologic:6831`
+* Zipkin: `collection-sumologic-otelagent.sumologic:9411/api/v2/spans`
+* OTLP gRPC: `collection-sumologic-otelagent.sumologic:4317`
+* OTLP HTTP/deprecated: `collection-sumologic-otelagent.sumologic:55681`
+
 
 ### Troubleshooting
 
 #### Desired Kubernetes installation state
 
+
 After enabling and installing tracing one should have additional Kubernetes resources:
 
-* Deployment: `collection-sumologic-otelcol`
-* Pod: `collection-sumologic-otelcol-<hash>-<hash>`
-* Replica Set: `collection-sumologic-otelcol-<hash>`
-* Service: `collection-sumologic-otelcol`
-* Config Map: `collection-sumologic-otelcol`
+* `otelcol` - collector responsible for forwarding data to Sumo Receiver
+    * Deployment: `collection-sumologic-otelcol`
+    * Pod: `collection-sumologic-otelcol-<hash>-<hash>`
+    * Replica Set: `collection-sumologic-otelcol-<hash>`
+    * Service: `collection-sumologic-otelcol`
+    * Service: `collection-sumologic-otelcol-instr-metrics`
+    * Service: `collection-sumologic-otelcol-headless`
+    * Config Map: `collection-sumologic-otelcol`
+* `otelagent `- collector responsible for data collection and tagging
+    * Daemonset: `collection-sumologic-otelagent`
+    * Pod on every node: `collection-sumologic-otelagent-<hash>`
+    * Service: `collection-sumologic-otelagent`
+    * Config Map: `collection-sumologic-otelagent`
+* `otelgateway` - collector responsible for traces load balancing
+    * Deployment: `collection-sumologic-otelgateway`
+    * Pod: `collection-sumologic-otelgateway-<hash>-<hash>`
+    * Replica Set: `collection-otelgateway-otelgat-<hash>`
+    * Service: `collection-sumologic-otelgateway`
+    * Config Map: `collection-sumologic-otelgateway`
+
 
 #### How to verify traces are installed and working?
 
 * There are no Kubernetes errors in the namespace sumologic.
-* There is a running pod `<CHART_NAME>-sumologic-otelcol-<hash>`.
-* Kubernetes metadata tags (pod, replicaset, etc.) should be applied to all spans. If there are no metadata tags and intermediate agent or collector is being used, make sure it has passthrough mode set (see above). If metadata tags are describing pod named “otel-collector-...” - then most likely there’s an intermediate pod acting as an agent or collector with no passthrough mode set.
-* The OpenTelemetry Collector gateway can export metrics, which include information such as the number of spans exported. To enable, apply the `otelcol.metrics.enabled=true` flag when installing or upgrading the Collector, for example:  
+* There are running pods `<CHART_NAME>-sumologic-otelcol-<hash>, <CHART_NAME>-sumologic-otelgateway-<hash>, <CHART_NAME>-sumologic-otelagent-<hash>`
+* Kubernetes metadata tags (pod, replicaset, etc.) should be applied to all spans.
+* The OpenTelemetry Collector can export metrics, which include information such as the number of spans exported. To enable, apply the `otelcol.metrics.enabled=true` flag when installing or upgrading the Collector, for example:
 
-   ```
-   helm upgrade collection sumologic/sumologic \
-   --namespace sumologic \
-   ... \
-   --set otelcol.metrics.enabled=true
-   ```  
-
-   After enabling, several metrics starting with `otelcol_ ` will become available, such as `otelcol_exporter_sent_spans` and `otelcol_receiver_accepted_spans`.  
-     
-* **OpenTelemetry Collector can have logging exporter enabled.** This will put on the output contents of spans (with some sampling above a certain rate). To enable, apply the following flags when installing/upgrading the collector (appending logging to the list of exporters):
-
-```
+```bash
 helm upgrade collection sumologic/sumologic \
   --namespace sumologic \
   ... \
-  --set otelcol.config.exporters.logging.logLevel=debug \
-  --set otelcol.config.service.pipelines.traces.exporters="{zipkin,logging}"
+  --set otelcol.metrics.enabled=true  
 ```
 
-Having this enabled, `kubectl logs -n sumologic collection-sumologic-otelcol\<ENTER ACTUAL POD I\>` might
-yield the following output:
+After enabling, several metrics starting with `otelcol_` will become available, such as `otelcol_exporter_sent_spans` and `otelcol_receiver_accepted_spans`.
 
-```
-2020-03-09T10:47:28.861Z TraceData with 1 spans
-Node service name: carpogonial
-Node attributes:
-2020-03-09T10:47:28.861Z Span #0
-  Trace ID    : 00000000000000004abaf4a8688cee33
-  ID          : 1aad0bc2b44e8219
-  Parent ID   :
-  Name        : Carpoidea
-  Kind        : CLIENT
-  Start time  : seconds:1583750845 nanos:799855000
-  End time    : seconds:1583751016 nanos:332705000
-  Span attributes:
-        -> zipkin.remoteEndpoint.ipv6: 5ab8:31e6:a7b:6205:13cb:a3fe:c180:ca26
-        -> ip: 10.1.1.1
-        -> zipkin.remoteEndpoint.port: 49088
-        -> zipkin.remoteEndpoint.serviceName: carpogonial
-        -> ipv4: 36.110.13.238
-        -> ipv6: 5ab8:31e6:a7b:6205:13cb:a3fe:c180:ca26
-        -> port: 49088
-        -> zipkin.remoteEndpoint.ipv4: 36.110.13.238
+* **OpenTelemetry Collector can have logging exporter enabled.** This will put on the output contents of spans (with some sampling above a certain rate). To enable, apply the following flags when installing/upgrading the collector (appending logging to the list of exporters):
+
+    ```bash
+    helm upgrade collection sumologic/sumologic \
+      --namespace sumologic \
+      ... \
+      --set otelcol.config.exporters.logging.logLevel=debug \
+      --set otelcol.config.service.pipelines.traces.exporters="{otlphttp,logging}"
+
+    ```
+
+
+Having this enabled, `kubectl logs -n sumologic collection-sumologic-otelcol-<ENTER ACTUAL POD ID>` might yield the following output:
+
+```yaml
+    2020-03-09T10:47:28.861Z TraceData with 1 spans
+    Node service name: carpogonial
+    Node attributes:
+    2020-03-09T10:47:28.861Z Span #0
+      Trace ID    : 00000000000000004abaf4a8688cee33
+      ID          : 1aad0bc2b44e8219
+      Parent ID   :
+      Name        : Carpoidea
+      Kind        : CLIENT
+      Start time  : seconds:1583750845 nanos:799855000
+      End time    : seconds:1583751016 nanos:332705000
+      Span attributes:
+            -> zipkin.remoteEndpoint.ipv6: 5ab8:31e6:a7b:6205:13cb:a3fe:c180:ca26
+            -> ip: 10.1.1.1
+            -> zipkin.remoteEndpoint.port: 49088
+            -> zipkin.remoteEndpoint.serviceName: carpogonial
+            -> ipv4: 36.110.13.238
+            -> ipv6: 5ab8:31e6:a7b:6205:13cb:a3fe:c180:ca26
+            -> port: 49088
+            -> zipkin.remoteEndpoint.ipv4: 36.110.13.238
 ```
