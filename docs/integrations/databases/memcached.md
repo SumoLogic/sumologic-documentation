@@ -258,7 +258,7 @@ At this point, Memcached metrics should start flowing into Sumo Logic.
 
 This section provides instructions for configuring log collection for Memcached running on a non-Kubernetes environment for the Sumo Logic App for Memcached.
 
-By default, Memcached logs are stored in a log file. Local log files can be collected via [Installed collectors](/docs/send-data/Installed-Collectors). An Installed collector will require you to allow outbound traffic to [Sumo Logic endpoints](https://help.sumologic.com/APIs/General-API-Information/Sumo-Logic-Endpoints-and-Firewall-Security) for collection to work. For detailed requirements for Installed collectors, see this [page](/docs/get-started/system-requirements#Installed-Collector-Requirements).
+By default, Memcached logs are stored in a log file. Local log files can be collected via [Installed collectors](/docs/send-data/Installed-Collectors). An Installed collector will require you to allow outbound traffic to [Sumo Logic endpoints](/docs/api/getting-started#Sumo-Logic-Endpoints-and-Firewall-Security) for collection to work. For detailed requirements for Installed collectors, see this [page](/docs/get-started/system-requirements#Installed-Collector-Requirements).
 
 1. **Configure logging in Memcached**. By default, the installation of Memcached will not write any request logs to disk. To add a log file for Memcached, you can use the following syntax:
   ```bash
