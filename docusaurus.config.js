@@ -172,6 +172,14 @@ module.exports = {
         background: 'rgba(0, 0, 0, 0.6)',
       },
     },
+    colorMode: {
+      defaultMode: 'dark',
+    },
+    prism: {
+      theme: lightCodeTheme,
+      darkTheme: darkCodeTheme,
+      additionalLanguages: ['csharp', 'powershell', 'java', 'markdown', `scala`],
+    },
       navbar: {
         logo: {
           alt: 'My Site Logo',
@@ -489,21 +497,29 @@ module.exports = {
               },
             ],
           },
+          {
+            title: 'Legal',
+            items: [
+              {
+                label: 'Privacy Statement',
+                href: 'https://www.sumologic.com/privacy-statement/',
+              },
+              {
+                label: 'Terms of Use',
+                to: 'https://www.sumologic.com/terms-conditions/',
+              },
+              {
+                label: 'Contact Us',
+                href: 'https://www.sumologic.com/contact-us/',
+              },
+              {
+                label: 'Legal',
+                href: 'https://www.sumologic.com/legal/',
+              },
+            ],
+          },
         ],
-        logo: {
-          alt: 'Sumo Logic',
-          src: 'img/sumo-square.svg',
-          href: 'https://sumologic.com',
-        },
         copyright: `Copyright © ${new Date().getFullYear()}, Sumo Logic Inc. | Built with Docusaurus.`,
-      },
-      colorMode: {
-        defaultMode: 'dark',
-      },
-      prism: {
-        theme: lightCodeTheme,
-        darkTheme: darkCodeTheme,
-        additionalLanguages: ['csharp', 'powershell', 'java', 'markdown', `scala`],
       },
     }),
 };
