@@ -519,7 +519,9 @@ Sumo Logic continuously computes data for your SLO behind the scenes. This data,
 View the schema by executing the following query:
 
 ```sql
-_view=sumologic_slo_output sloId = "000000000000008A"
+_view=sumologic_slo_output sloId="<your-SLO-ID>"
+| where [subquery: _view=sumologic_slo_output sloId="<your-SLO-ID>"
+| max(sloVersion) as sloVersion | compose sloVersion]
 -- (replace with a valid SLO Id)
 ```
 
@@ -536,7 +538,9 @@ A developer responsible for a microservice wants to create dashboard panels that
 The following query computes hourly SLI and error budget trend for a window-based SLO:
 
 ```sql
-_view=sumologic_slo_output sloId="<your-SLO-Id>"
+_view=sumologic_slo_output sloId="<your-SLO-ID>"
+| where [subquery: _view=sumologic_slo_output sloId="<your-SLO-ID>"
+| max(sloVersion) as sloVersion | compose sloVersion]
 | dedup by _messagetime
 | timeslice 1h  // data granularity for this panel
 | sum(goodCount) as goodWindows, sum(totalCount) as totalWindows by _timeslice
@@ -562,7 +566,9 @@ Adjust the chart by changing the “maximum value” to 100 and the “minimum v
 The following query computes hourly SLI and error budget trend for a request-based SLO:
 
 ```sql
-_view=sumologic_slo_output sloId="<your-SLO-Id>"
+_view=sumologic_slo_output sloId="<your-SLO-ID>"
+| where [subquery: _view=sumologic_slo_output sloId="<your-SLO-ID>"
+| max(sloVersion) as sloVersion | compose sloVersion]
 | dedup by _messagetime
 | timeslice 1h  // data granularity for this panel
 | sum(goodCount) as goodRequests, sum(totalCount) as totalRequests by _timeslice
@@ -587,7 +593,9 @@ Adjust the chart by changing the “maximum value” to 100 and the “minimum v
 The following query computes SLI, Error Budget Remaining and Error Budget Remaining Minutes for a 30-day compliance and window-based SLO:
 
 ```sql
-_view=sumologic_slo_output sloId="<your-SLO-Id>"
+_view=sumologic_slo_output sloId="<your-SLO-ID>"
+| where [subquery: _view=sumologic_slo_output sloId="<your-SLO-ID>"
+| max(sloVersion) as sloVersion | compose sloVersion]
 | dedup by _messagetime
 | sum(goodCount) as goodCount, sum(totalCount) as totalCount
 | goodCount*100/totalCount as sli
@@ -607,7 +615,9 @@ This query can recreate panels similar to the one below:<br/><img src={useBaseUr
 The following query computes event history for an SLO:
 
 ```sql
-_view=sumologic_slo_output sloId="<your SLO Id>"
+_view=sumologic_slo_output sloId="<your-SLO-ID>"
+| where [subquery: _view=sumologic_slo_output sloId="<your-SLO-ID>"
+| max(sloVersion) as sloVersion | compose sloVersion]
 | dedup by _messagetime
 | timeslice 1h // granularity of data
 | sum(goodCount) as goodCount, sum(totalCount) as totalCount by _timeslice
@@ -629,7 +639,9 @@ The following query computes SLI trend over multiple 7d calendar compliance peri
 -- REQUEST-BASED, CALENDAR COMPLIANCE
 -- Coffee Prep Latency should not exceed 1 second for 95% of requests in calendar 7d
 -- This query works for both request based and window based SLOs
-_view=sumologic_slo_output sloId="<your-SLO-Id>"
+_view=sumologic_slo_output sloId="<your-SLO-ID>"
+| where [subquery: _view=sumologic_slo_output sloId="<your-SLO-ID>"
+| max(sloVersion) as sloVersion | compose sloVersion]
 | dedup by _messagetime
 | timeslice 7d // put compliance period here
 | sum(goodCount) as goodRequests, sum(totalCount) as totalRequests by _timeslice
