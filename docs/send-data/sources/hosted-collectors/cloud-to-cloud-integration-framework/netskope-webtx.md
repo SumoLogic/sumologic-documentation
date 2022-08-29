@@ -169,7 +169,7 @@ When Sumo Logic detects an issue it is tracked by [Health Events](https://help.s
 
 ## JSON configuration
 
-Sources can be configured using UTF-8 encoded JSON files with the [Collector Management API](https://help.sumologic.com/APIs/Collector-Management-API). See [how to use JSON to configure Sources](https://help.sumologic.com/03Send-Data/Sources/03Use-JSON-to-Configure-Sources) for details.
+Sources can be configured using UTF-8 encoded JSON files with the [Collector Management API](/docs/api/Collector-Management-API). See [how to use JSON to configure Sources](https://help.sumologic.com/03Send-Data/Sources/03Use-JSON-to-Configure-Sources) for details.
 
 <table>
   <tr>
