@@ -7,9 +7,8 @@ description: This guide provides information to help you troubleshoot errors you
 
 This guide provides information to help you troubleshoot errors you may find when using the Sumo APIs.
 
-:::note Deployments and Sumo Logic Endpoints
+## Deployments and Sumo Logic Endpoints
 Sumo Logic endpoints like `api.sumologic.com` are different in deployments outside `us1`. You need to specify your deployment in the endpoint. For example, `api.YOUR_DEPLOYMENT.sumologic.com` you would specify `YOUR_DEPLOYMENT` as either `au`, `ca`, `de`, `eu`, `fed`, `in`, `jp`,` us1`, or `us2`. For us1, use `api.sumologic.com`. For the others, use `api.us2.sumologic.com`, and so on. For more information, see [Sumo Logic Endpoints](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
-:::
 
 ## API - 301 Error - Moved
 

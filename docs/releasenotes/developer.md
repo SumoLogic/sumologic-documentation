@@ -6,7 +6,7 @@ sidebar_label: Developer
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-Developer Release Notes from 2018 to present are listed here. 
+Developer Release Notes from 2018 to present are listed here.
 
 ### April 25, 2022 - APIs
 
@@ -36,20 +36,20 @@ New - The [Field Extraction Rule (FER) Management API](/docs/api/Field-Extractio
 ---
 ### February 16, 2021 - APIs
 
-New - The [Partition Management API](/docs/api/Partition_Management_API) allows you to [manage Partitions](https://help.sumologic.com/Manage/Partitions_and_Data_Tiers) from HTTP endpoints.
+New - The [Partition Management API](/docs/api/Partitions) allows you to [manage Partitions](https://help.sumologic.com/Manage/Partitions_and_Data_Tiers) from HTTP endpoints.
 
 ---
 ### February 15, 2021 - APIs
 
-New - The [Dynamic Parsing Management API](/docs/api/Dynamic_Parsing_Management_API) allows you to configure Run Time [Field Extraction Rules](https://help.sumologic.com/Manage/Field-Extractions) from HTTP endpoints.
+New - The [Dynamic Parsing Management API](/docs/api/Dynamic-Parsing) allows you to configure Run Time [Field Extraction Rules](https://help.sumologic.com/Manage/Field-Extractions) from HTTP endpoints.
 
 
 ---
 ### December 21, 2020 - APIs
 
-New - The [Account Management API](/docs/api/Account_Management_API) allows you to manage the [custom subdomain](https://help.sumologic.com/Manage/01Manage_Subscription/12Manage_Organizational_Settings#Set_up_a_custom_subdomain) for the URL used to access your Sumo Logic account.
+New - The [Account Management API](/docs/api/Account-Management) allows you to manage the [custom subdomain](https://help.sumologic.com/Manage/01Manage_Subscription/12Manage_Organizational_Settings#Set_up_a_custom_subdomain) for the URL used to access your Sumo Logic account.
 
-New - [Ingest Budget Management API V2](/docs/api/Ingest_Budget_Management_API_V2) allows you to manage metadata-based [ingest budgets](https://help.sumologic.com/Manage/Ingestion-and-Volume/Ingest_Budgets) (with a scope) from HTTP endpoints.
+New - [Ingest Budget Management API V2](/docs/api/Ingest-Budget-V2) allows you to manage metadata-based [ingest budgets](https://help.sumologic.com/Manage/Ingestion-and-Volume/Ingest_Budgets) (with a scope) from HTTP endpoints.
 
 
 ---
@@ -72,7 +72,7 @@ New - The [Lookup Table Management API](/docs/api/Lookup-Tables) is available to
 ---
 ### July 23, 2020 - APIs
 
-New - The [Dashboard (New) Management API](/docs/api/dashboard-new#Management-API) is available to manage dashboards using the [Dashboard (New)](/docs/dashboards-new/about-dashboard-new) platform from HTTP endpoints.
+New - The [Dashboard (New) Management API](/docs/api/dashboard-new#Management-API) is available to manage dashboards using the [Dashboard (New)](/docs/dashboards-new) platform from HTTP endpoints.
 
 
 ---
@@ -123,7 +123,7 @@ Update - Steps for generating clients now use [OpenAPI Generator](https://openap
 
 ---
 ### August 7, 2019 - APIs
-New - [Content](/docs/api/Content-Management), [Folder](/docs/api/Folder_Management_API), and [Permissions](/docs/api/Content-Permissions) Management APIs allow you to manage content in your organization’s [Library](https://help.sumologic.com/01Start-Here/Library) from HTTP endpoints.
+New - [Content](/docs/api/Content-Management), [Folder](/docs/api/Folders), and [Permissions](/docs/api/Content-Permissions) Management APIs allow you to manage content in your organization’s [Library](https://help.sumologic.com/01Start-Here/Library) from HTTP endpoints.
 
 
 ---
@@ -137,7 +137,7 @@ New - The [Ingest Budget Management API](/docs/api/Ingest-Budget-v1) allows you 
 
 **Deprecation Notice**
 
-Beta endpoints will be deprecated effective August 1, 2019. If you have any questions reach out to us at [ingest-budgets-beta-group@sumologic.com](ingest-budgets-beta-group@sumologic.com).
+Beta endpoints will be deprecated effective August 1, 2019. If you have any questions reach out to us at [ingest-budgets-beta-group@sumologic.com](mailto:ingest-budgets-beta-group@sumologic.com).
 
 
 ---
