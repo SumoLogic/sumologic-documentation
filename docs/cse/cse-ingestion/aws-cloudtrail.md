@@ -2,7 +2,7 @@
 id: aws-cloudtrail
 title: AWS CloudTrail
 sidebar_label: AWS CloudTrail
-description: tk
+description: Configure a CloudTrail source on a hosted collector to ingest CloudTrail log messages to be parsed by CSE's CloudTrail system parser.
 ---
 
 This section has instructions for collecting AWS CloudTrail log messages and sending them to Sumo Logic to be ingested by CSE.

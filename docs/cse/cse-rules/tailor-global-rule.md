@@ -1,8 +1,11 @@
 ---
 id: tailor-global-rule
+title: Tailor a Global Rule
+sidebar_label: Tailor a Global Rule
+description: You can override selected fields in all CSE rule types. After you have overridden a field, you can revert to the original field value.
 ---
 
-# Tailor a Global Rule
+
 
 This topic has instructions for tailoring global (built-in) rules in CSE. 
 

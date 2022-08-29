@@ -1,12 +1,13 @@
 ---
 id: share-content
+title: Share Content
 ---
 
-# Share Content
+#
 
 You can share log searches, metric searches, dashboards, and folders with a user, a role, or combinations of the two. You can edit the
 sharing permissions at any time and share and revoke as needed from the **Share** dialog:  
-  
+
 ![ShareSearchPrime.png](/img/content-sharing/ShareSearchPrime.png)
 
 ## Share from any location
@@ -29,7 +30,7 @@ To find content in the Library that has been shared with you:
 
 1. Click the clock image in the top of the Left Nav Bar.
 1. Toggle between **Recently Opened By Me** or **Recently Shared With Me**.   
-    
+
     ![Dash3.png](/img/content-sharing/Dash3.png)
 
 ## Share dashboards, log searches, metric queries, and folders
@@ -38,9 +39,9 @@ To share content from the Left-nav or the Library:
 
 1. Click the Details icon ![details](/img/content-sharing/details.png) for the content you want to share.
 1. Select **Share** from the drop-down menu.
-    
-    ![Share Search](/img/content-sharing/share-search.png) 
-    
+
+    ![Share Search](/img/content-sharing/share-search.png)
+
     :::note
     The **View in Library** option is present when you click the Details icon from the Left-nav. 
     :::
@@ -48,14 +49,14 @@ To share content from the Left-nav or the Library:
 1. In the Share dialog, enter the user name or role name to receive access. For example, if you want all users with the **Analyst** role to be able to edit the content, choose **Analyst**:    
 
     ![analyst](/img/content-sharing/analyst.png)
-    
+
     If you have an unsaved search, these options will not be available to you. We need a name saved for your search before we can offer this dialog. If you want to share an unsaved search, you can share a link from the available dialog.   
-    
+
     ![unsaved-search](/img/content-sharing/unsaved-search.png)
 1. Optional. If you are sharing with a large Role, or a user who already expects access to this search, you can turn off **Notify recipients by email**. If you do want to send an email notification, we recommend that you include a note in the email for the recipients to indicate what to do with their new content and leave the option enabled.
 1. Choose the level of access from View, Edit, or Manage. For details on permission levels, see [Available Permission Levels](#available-permission-levels).
 1. Optional. Choose **Advanced Options** to further refine access to the content. For details on these options, see [Available Permission Levels](#available-permission-levels).
-    
+
     ![PermissionsShare](/img/content-sharing/PermissionsShare.png)
 
 ## Navigate Content Sharing Tabs

@@ -1,8 +1,11 @@
 ---
 id: entity-criticality
+title: Entity Criticality
+description: You can use Entity Criticality to adjust the severity of Signals for specific Entities based on some risk factor or other consideration.
+
 ---
 
-# Entity Criticality
+
 
 This page describes CSE’s Entity Criticality feature and how to use it.
 
@@ -14,7 +17,7 @@ A Signal’s normal severity is specified in the rule that fires the Signal. The
 
 Just as you can use Criticality to increase severity, you can use it to decrease the severity of the Signals fired on an Entity.
 
-If the formula you specify results in a number that isn’t whole, the value is rounded down to the nearest integer. 
+If the formula you specify results in a number that isn’t whole, the value is rounded down to the nearest integer.
 
 ## About Criticality and Insight generation
 

@@ -1,8 +1,9 @@
 ---
 slug: /search/search-query-language
+title: Search Query Language
 ---
 
-# Search Query Language
+
 
 For a step-by-step video and tutorial about creating Sumo Logic queries, see the [Quick Start Tutorial](/docs/quickstart).
 

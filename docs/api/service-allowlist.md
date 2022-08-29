@@ -2,6 +2,9 @@
 id: service-allowlist
 title: Sumo Logic Service Allowlist Management APIs
 sidebar_label: Service Allowlist
+tags: [security]
+description: Use HTTP endpoints to manage service allowlist settings.
+
 ---
 
 The [Service Allowlist](https://help.sumologic.com/Manage/Security/Create-an-Allowlist-for-IP-or-CIDR-Addresses) Management API allows you to explicitly grant access to specific IP addresses and/or CIDR notations for logins, APIs, and dashboard access.
@@ -10,50 +13,68 @@ The [Service Allowlist](https://help.sumologic.com/Manage/Security/Create-an-All
 
 Refer to [Getting Started](docs/api/index.md) for Authentication and Endpoint information.
 
+Sumo Logic has several deployment types, which vary by geographic location and the date an account is created. Select the documentation link below that corresponds to your deployment. If you're not sure, see [How to determine your endpoint](/docs/api/getting-started#which-endpoint-should-i-should-use).
 
-#### Security
 
 <table>
   <tr>
-   <td>API
+   <td>Deployment
    </td>
    <td>Documentation URL
    </td>
   </tr>
   <tr>
-   <td>Access Keys
+   <td>AU
    </td>
-   <td><a href="https://api.sumologic.com/docs/#tag/accessKeyManagement">https://api.sumologic.com/docs/#tag/...sKeyManagement</a>
-   </td>
-  </tr>
-  <tr>
-   <td>Account
-   </td>
-   <td><a href="https://api.sumologic.com/docs/#tag/accountManagement">https://api.sumologic.com/docs/#tag/accountManagement</a>
+   <td><a href="https://api.au.sumologic.com/docs/#tag/serviceAllowlistManagement">https://api.au.sumologic.com/docs/#tag/serviceAllowlistManagement</a>
    </td>
   </tr>
   <tr>
-   <td>Password Policy
+   <td>CA
    </td>
-   <td><a href="https://api.sumologic.com/docs/#tag/passwordPolicy">https://api.sumologic.com/docs/#tag/passwordPolicy</a>
-   </td>
-  </tr>
-  <tr>
-   <td>Policies
-   </td>
-   <td><a href="https://api.sumologic.com/docs/#tag/policiesManagement">https://api.sumologic.com/docs/#tag/...ciesManagement</a>
+   <td><a href="https://api.ca.sumologic.com/docs/#tag/serviceAllowlistManagement">https://api.ca.sumologic.com/docs/#tag/serviceAllowlistManagement</a>
    </td>
   </tr>
   <tr>
-   <td>SAML
+   <td>DE
    </td>
-   <td><a href="https://api.sumologic.com/docs/#tag/samlConfigurationManagement">https://api.sumologic.com/docs/#tag/...tionManagement</a>
+   <td><a href="https://api.de.sumologic.com/docs/#tag/serviceAllowlistManagement">https://api.de.sumologic.com/docs/#tag/serviceAllowlistManagement</a>
    </td>
   </tr>
   <tr>
-   <td>Service Allowlist
+   <td>EU
    </td>
-   <td><a href="https://api.sumologic.com/docs/#tag/serviceAllowlistManagement">https://api.sumologic.com/docs/#tag/...listManagement</a>
+   <td><a href="https://api.eu.sumologic.com/docs/#tag/serviceAllowlistManagement">https://api.eu.sumologic.com/docs/#tag/serviceAllowlistManagement</a>
+   </td>
+  </tr>
+  <tr>
+   <td>FED
+   </td>
+   <td><a href="https://api.fed.sumologic.com/docs/#tag/serviceAllowlistManagement">https://api.fed.sumologic.com/docs/#tag/serviceAllowlistManagement</a>
+   </td>
+  </tr>
+  <tr>
+   <td>IN
+   </td>
+   <td><a href="https://api.in.sumologic.com/docs/#tag/serviceAllowlistManagement">https://api.in.sumologic.com/docs/#tag/serviceAllowlistManagement</a>
+   </td>
+  </tr>
+  <tr>
+   <td>JP
+   </td>
+   <td><a href="https://api.jp.sumologic.com/docs/#tag/serviceAllowlistManagement">https://api.jp.sumologic.com/docs/#tag/serviceAllowlistManagement</a>
+   </td>
+  </tr>
+  <tr>
+   <td>US1
+   </td>
+   <td><a href="https://api.sumologic.com/docs/#tag/serviceAllowlistManagement">https://api.sumologic.com/docs/#tag/serviceAllowlistManagement</a>
+   </td>
+  </tr>
+  <tr>
+   <td>US2
+   </td>
+   <td><a href="https://api.us2.sumologic.com/docs/#tag/serviceAllowlistManagement">https://api.us2.sumologic.com/docs/#tag/serviceAllowlistManagement</a>
    </td>
   </tr>
 </table>

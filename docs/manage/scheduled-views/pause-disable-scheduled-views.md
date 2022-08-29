@@ -1,8 +1,9 @@
 ---
 id: pause-disable-scheduled-views
+title: Pause or Disable Scheduled Views
 ---
 
-# Pause or Disable Scheduled Views
+#
 
 Pausing a view stops new data from being indexed. You can resume indexing at any time.
 

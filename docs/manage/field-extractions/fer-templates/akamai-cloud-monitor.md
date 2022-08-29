@@ -1,8 +1,8 @@
 ---
 id: akamai-cloud-monitor
+title: Akamai Cloud Monitor
 ---
 
-# Akamai Cloud Monitor
 
 **Log Types**: Akamai Cloud Monitor
 
@@ -78,7 +78,7 @@ id: akamai-cloud-monitor
 **Parsing Rule:**
 
 ```sql
-parse "\"reqMethod\":\"*\"" as method, "\"status\":\"*\"" as status, "\"fwdHost\":\"*\"" as origin 
+parse "\"reqMethod\":\"*\"" as method, "\"status\":\"*\"" as status, "\"fwdHost\":\"*\"" as origin
 | parse "\"bytes\":\"*\"" as bytes, "\"edgeIP\":\"*\"" as edgeip, "\"country\":\"*\"" as country, "\"cookie\":\"*\"" as cookie
 ```
 

@@ -1,8 +1,9 @@
 ---
 id: create-allowlist-ip-cidr-addresses
+title: Create an Allowlist for IP or CIDR Addresses
 ---
 
-# Create an Allowlist for IP or CIDR Addresses
+#
 
 Service Allowlist Settings allow you to explicitly grant access to specific IP addresses and/or CIDR notations for logins, APIs, and dashboard access.
 
@@ -35,7 +36,7 @@ The IP is generally your host IP address. But if your request is coming through 
 1. Under** Service Allowlist Settings**, select the **Enable Dashboard Allowlist** check box.
 
     ![service-allow-list-2.png](/img/security/service-allow-list-2.png)
-    
+
 1. Copy and paste your IP address in the **IP Address or CIDR** text box, a **Description** is optional, then click **Add**.
 1. Type additional IP and/or CIDR addresses in the text box, and click **Add**. Repeat this step until you've added all the addresses you'd like to allowlist.
 vClick **Save**.

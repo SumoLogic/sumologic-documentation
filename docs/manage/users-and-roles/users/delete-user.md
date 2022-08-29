@@ -1,8 +1,9 @@
 ---
 id: delete-user
+title: Delete a User
 ---
 
-# Delete a User
+#
 
 Deleting a user permanently removes the user. When you delete a user, you can select a Sumo Logic user account to which to transfer the deleted user’s content, including folders, searches, scheduled searches, scheduled views, monitors, and dashboards. If you don't want to transfer the content to another user, you can choose to delete it along with the user account.
 
@@ -24,8 +25,8 @@ Before you begin, perform the steps in [Offboard a User.](offboard-user.md) The
 
 * The deleted user’s Access Keys are removed and cannot be restored.
 * If you chose to transfer the deleted user’s folder, it is moved to the folder of the new owner. The new owner will have **Manage** access to the transferred content. Note that the transfer of content to the new owner has no impact on other users that have access to the deleted user's content. For example, assume you delete User A and transfer User A’s content to User B. If User C previously had permissions to some of User A’s content, User C will still have the same access to that content. 
-* Content created by the deleted user in shared folders is not transferred to the new owner. 
-  
+* Content created by the deleted user in shared folders is not transferred to the new owner.
+
     :::note
     If the user account that created a scheduled search in a shared folder is deleted, the scheduled search will no longer be executed. The owner of the scheduled search will appear as "deleted user" in the Sumo Logic UI. To reinstate the scheduled search you must export the search, and import it back into the Library. 
     :::
@@ -51,7 +52,7 @@ Use caution when deleting a user. This action can't be undone.
 1. A popup appears, offering you the option to either transfer the user’s content to another user or delete the content along with the user. 
 
     ![transfer-content-to.png](/img/users-and-roles/delete-user.png)
-    
+
 1. Click **Transfer Contents To**, select a user from the list that appears, and click **Delete User**.
 
 ## Delete a user and user's content

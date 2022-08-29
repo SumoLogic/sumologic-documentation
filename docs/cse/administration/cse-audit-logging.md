@@ -1,8 +1,8 @@
 ---
 id: cse-audit-logging
 title: CSE Audit Logging
-sidebar_label: CSE Audit Logging
-description: tk
+sidebar_label: Audit Logging
+description: Learn how to search the Audit Event Index for CSE log events.
 ---
 
 The Audit Event Index provides event logs in JSON format on your account activity so you to monitor and audit changes. By default the Audit Event Index is enabled for CSE and Enterprise accounts. 

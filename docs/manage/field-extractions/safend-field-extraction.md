@@ -1,8 +1,8 @@
 ---
 id: safend-field-extraction
+title: Sample Safend Field Extraction
 ---
 
-# Sample Safend Field Extraction
 
 **Rule Name:** Safend Log Parse  
 
@@ -43,7 +43,7 @@ parse regex "Action: (?<action>[^,]*)" nodrop
 |--|--|
 | action | Write |
 | alert_type | File Logging Alert details |
-| client_local_time | 10/9/2014 3:12:33 PM | 
+| client_local_time | 10/9/2014 3:12:33 PM |
 | computer | computer.host.com |
 | device_info | San Disk .... |
 | device_type | Removable Storage Devices |
@@ -52,4 +52,3 @@ parse regex "Action: (?<action>[^,]*)" nodrop
 | file_type | PDF |
 | host | `safend.host.com` |
 | user | `user@user.com` |
-

@@ -1,8 +1,9 @@
 ---
 id: otlp-http-source
+title: OTLP/HTTP Source
 ---
 
-# OTLP/HTTP Source
+
 
 An OTLP/HTTP Source is an endpoint for receiving OTLP formatted Logs, Metrics, and Traces. This is an alternative option to installing an OpenTelemetry Collector for sending OTLP data to Sumo Logic. 
 
@@ -26,7 +27,7 @@ To configure an OTLP/HTTP Source:
 
 1. **Fields.** Click the **+Add Field** link to define the fields you want to associate, each field needs a name (key) and value.
 
-   * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema. 
+   * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
    * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema it is ignored, known as dropped.
 
 1. Set any of the following under **Advanced Options for Logs**:
@@ -37,7 +38,7 @@ To configure an OTLP/HTTP Source:
 
      * **Time Zone.** There are two options for Time Zone. You can use the time zone present in your log files, and then choose an option in case time zone information is missing from a log message. Or, you can have Sumo Logic completely disregard any time zone information present in logs by forcing a time zone. It's very important to have the proper time zone set, no matter which option you choose. If the time zone of logs can't be determined, Sumo Logic assigns logs UTC; if the rest of your logs are from another time zone your search results will be affected.
      * **Timestamp Format.** By default, Sumo Logic will automatically detect the timestamp format of your logs. However, you can manually specify a timestamp format for a Source. See [Timestamps, Time Zones, Time Ranges, and Date Formats](../reference-information-sources/time-reference.md for more information.
-  
+
    * **Message Processing.** See [Collecting Multiline Logs](../reference-information-sources/collect-multiline-logs.md for details on multiline processing and its options. This is enabled by default. Use this option if you're working with multiline messages (for example, log4J or exception stack traces). Deselect this option if you want to avoid unnecessary processing when collecting single-message-per-line files (for example, Linux system.log). Choose one of the following:
 
      * **Detect Automatically.** Enable when you want Sumo Logic to automatically attempt to determine which lines belong to the same message. If you deselect the Infer Boundaries option, you will need to enter a regular expression in the Boundary Regex field to use for detecting the entire first line of multiline messages.
@@ -71,7 +72,7 @@ The following table shows the URL format based on data types.
 
 ### OTLP/HTTP Exporter
 
-To use the URL, include the url in otlphttp exporter of OpenTelemetry Collector and refer it in the pipelines, as needed. The exporter will automatically attach the signal type suffix: 
+To use the URL, include the url in otlphttp exporter of OpenTelemetry Collector and refer it in the pipelines, as needed. The exporter will automatically attach the signal type suffix:
 
 ```
 exporters:

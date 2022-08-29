@@ -1,7 +1,7 @@
 ---
 id: single-value-metric-charts
 title: Create and Tailor Single Value Metric Charts
-sidebar_label: Create and Tailor Single Value Metric Charts
+sidebar_label: Single Value Charts
 description: Learn how to create and tailor a single value metric chart.
 ---
 

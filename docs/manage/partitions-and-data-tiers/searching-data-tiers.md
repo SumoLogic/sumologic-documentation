@@ -1,8 +1,7 @@
 ---
 id: searching-data-tiers
+title: Searching Data Tiers
 ---
-
-# Searching Data Tiers
 
 This page has information about how to search different Data Tiers, and when you should use `_dataTier`, a *search modifier* that restricts your search to a single tier. 
 
@@ -91,7 +90,7 @@ Given these partitions:
 
 ### \_dataTier and scheduled views and audit indexes 
 
-When you query scheduled views, the Sumo Logic Audit Index, or the Sumo Logic Audit Event Index, it isn’t necessary to specify a tier with `_dataTier`.  Search these indexes using `_index`.  By default, Sumo will run such queries against the Continuous tier. 
+When you query scheduled views, the Sumo Logic Audit Index, or the Sumo Logic Audit Event Index, it isn’t necessary to specify a tier with `_dataTier`. Search these indexes using `_index`.  By default, Sumo will run such queries against the Continuous tier. 
 
 If you use `_dataTier` to specify a tier other than Continuous in a query of scheduled views or either of the audit indexes, Sumo Logic presents an error message.
 

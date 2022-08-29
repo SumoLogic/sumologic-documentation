@@ -1,8 +1,9 @@
 ---
 id: audit-index
+title: Audit Index
 ---
 
-# Audit Index
+#
 
 ## Availability
 
@@ -152,7 +153,7 @@ Throttling events are reported in the Audit Index if the following criteria are 
 For example, searching with the following query
 
 ```sql
-_index=sumologic_audit 
+_index=sumologic_audit
 _sourceCategory=account_management _sourceName=VOLUME_QUOTA  "rate limit"
 ```
 
@@ -256,7 +257,7 @@ The table below shows the value of the class and action fields for support accou
 Support account events are logged only if you have [enabled a support account](enable-support-account.md).
 :::
 
-| Class | Actions | 
+| Class | Actions |
 |--|--|
 | SESSION | LOGIN<br/>LOGOUT |
 
@@ -268,7 +269,7 @@ _sourceCategory=scheduled_search
 
 The table below shows the value of the `class` and `action` fields for scheduled search events SCHEDULED_SEARCH.
 
-| Actions | Description | 
+| Actions | Description |
 |--|--|
 | Create | Scheduled search was created. |
 | Start | Scheduled search started. |

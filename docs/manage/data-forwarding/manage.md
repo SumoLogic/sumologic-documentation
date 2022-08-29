@@ -1,8 +1,9 @@
 ---
 id: manage
+title: Manage Data Forwarding
 ---
 
-# Manage Data Forwarding
+
 
 :::note
 Data forwarding is not currently supported for data assigned to the Infrequent Tier. 

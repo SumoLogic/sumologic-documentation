@@ -1,7 +1,7 @@
 ---
 id: overview-sumo-metrics
 title: Overview of Metrics in Sumo
-sidebar_label: Overview of Metrics in Sumo
+sidebar_label: Overview of Metrics
 description: A high-level description of metric features in Sumo Logic.
 ---
 

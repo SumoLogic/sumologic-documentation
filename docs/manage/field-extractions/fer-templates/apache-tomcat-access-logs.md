@@ -1,8 +1,9 @@
 ---
 id: apache-tomcat-access-logs
+title: Apache Tomcat Access Logs
 ---
 
-# Apache Tomcat Access Logs
+#
 
 **Log Type**: Apache Tomcat Access
 

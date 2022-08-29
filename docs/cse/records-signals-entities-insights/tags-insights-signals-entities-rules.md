@@ -1,8 +1,9 @@
 ---
 id: tags-insights-signals-entitiesc-rules
+title: Using Tags with Insights, Signals, Entities, and Rules
+sidebar_label: Using Tags
+description: Tags are metadata you can attach to Insights, Signals, Entities, and Rules. Tags are useful for adding context to these CSE items. You can also search for and filter items by tag.
 ---
-
-# Using Tags with Insights, Signals, Entities, and Rules
 
 ## What are tags?
 
@@ -10,10 +11,10 @@ Tags are metadata you can attach to Insights, Signals, Entities, and Rules. Tags
 
 There are two types of tags: 
 
-* **Schema keys**. These are predefined key-value pairs, which are useful for ensuring that users use  consistent values when assigning tags to items. There are two built-in schema tags: **Tactic** and **Technique**, which relate to the Mitre ATT&CK framework. 
+* **Schema keys**. These are predefined key-value pairs, which are useful for ensuring that users use  consistent values when assigning tags to items. There are two built-in schema tags: **Tactic** and **Technique**, which relate to the Mitre ATT&CK framework.
 
     You can create your own schema tags as well, as described in [Create a Custom Tag Schema](../administration/create-a-custom-tag-schema.md). You can optionally configure a URL for each value in a custom tag schema. If you do, a user will be able to open that URL from the tag’s Action menu when it’s presented in the CSE UI. See [Tag Actions](tags-insights-signals-entities-rules.md) below for an example.
-    
+
     You can assign schema key tags to custom Rules you’ve developed.  For  built-in rules, you can assign or delete new  schema tags, but you can’t change or remove the tags that come with the rule. You can also assign schema key tags to Insights, both CSE-generated and custom.    
 * **Keyword tags**. These are arbitrary labels that you define yourself. You can assign keyword tags to custom Rules, Entities, and Insights, both CSE-generated and custom. You can’t remove or change the tags that come with built-in rules. 
 

@@ -1,8 +1,7 @@
 ---
 id: increase-collector-memory
+title: Increase Collector Memory
 ---
-
-# Increase Collector Memory
 
 Collectors are set to use 128MB of RAM by default. If your Collectors ingest more than a few files, you should consider increasing the max heap size the Collector can use.
 
@@ -19,9 +18,9 @@ WrapperSimpleApp Error: java.lang.OutOfMemoryError: GC overhead limit exceeded
 When registering a new Collector you can specify the parameter `wrapper.java.maxmemory` in [user.properties](../installed-collectors/collector-installation-reference/user-properties.md) with a higher memory value than the default 128MB. For example, a user.properties file with a memory setting of 2048MB would look like:
 
 ```
-name = My Collector 
-accessid = accessId 
-accesskey = accessKey 
+name = My Collector
+accessid = accessId
+accesskey = accessKey
 wrapper.java.maxmemory = 2048
 ```
 
@@ -94,8 +93,8 @@ If the `user.properties` file contains these lines:
 
 ```
 wrapper.app.parameter.2=-b
-wrapper.app.parameter.3=installerSources/selected.json 
-wrapper.filter.trigger.1000=java.lang.OutOfMemoryError 
+wrapper.app.parameter.3=installerSources/selected.json
+wrapper.filter.trigger.1000=java.lang.OutOfMemoryError
 ```
 
 you must append the following to the end of the `Sumo_install_dir/config/wrapper.conf` file:

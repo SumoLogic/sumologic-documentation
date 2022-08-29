@@ -1,8 +1,9 @@
 ---
 id: multi-account-access
+title: Multi-Account Access
 ---
 
-# Multi-Account Access
+#
 
 :::note
 Sumo Logic now supports custom subdomains and recommends that as the best approach to providing access to multiple accounts: you can configure a custom subdomain for each of your Sumo Logic accounts. For more information, see [Set up a custom subdomain](../../manage-subscription/manage-org-settings.md).
@@ -80,4 +81,4 @@ With Multi-account, to use the API, like with Collectors, you will not be able t
 
 This is due to the fact that Access IDs and Access Keys are tied to an organization, and they are required so that an API request will have the correct context.
 
-API requests made with multiple accounts using only a username and password  will be rejected for insufficient authentication (401). 
+API requests made with multiple accounts using only a username and password  will be rejected for insufficient authentication (401).

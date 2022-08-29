@@ -1,8 +1,8 @@
 ---
 id: create-cse-context-actions
 title: Create CSE Context Actions
-sidebar_label: Create CSE Context Actions
-description: Information about CSE Context Actions and how to create them.
+sidebar_label: Create Context Actions
+description: Learn about Context Actions, options that a CSE analyst can use to query an external system for information about an Entity, IOC, or data encountered in Record.
 ---
 
 This topic has information about CSE Context Actions and how to create them. 

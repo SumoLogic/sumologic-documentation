@@ -1,8 +1,7 @@
 ---
 id: integrate-with-bitium
+title: Integrate Sumo Logic with Bitium
 ---
-
-# Integrate Sumo Logic with Bitium
 
 ## Availability
 
@@ -43,11 +42,11 @@ You can sign up for a free Bitium Trial account on the [Bitum site](https://www.
 
     ![SAML Authentication](/img/security/bitium_provider.png)
 
-1. The SAML configuration details for the App are displayed. For the Sumo Logic configuration, use the following parameters from this page: 
+1. The SAML configuration details for the App are displayed. For the Sumo Logic configuration, use the following parameters from this page:
 
-   * EntityID 
-   * Login URL 
-   * LogOut URL 
+   * EntityID
+   * Login URL
+   * LogOut URL
    * X.509 Certificate 
 
 1. Keep this page open to use these parameters in the next step, Configure SAML in Sumo Logic.
@@ -58,29 +57,29 @@ You can sign up for a free Bitium Trial account on the [Bitum site](https://www.
 1. Go to **Administration \> Security \> SAML**.
 1. Click **Configure**, and configure the SAML settings.
 1. **Configuration Name.** Type the name of the SSO policy (or another name used internally to describe the policy).
-1. **Debug Mode.** Select this option if you'd like to view additional details when an error occurs. 
+1. **Debug Mode.** Select this option if you'd like to view additional details when an error occurs.
 1. **Issuer.** Type the unique URL associated with your organization's SAML IdP. This is the Identity Provider Issuer from Step 12 in the previous section.
 1. **X.509 Certificate.** Copy and paste your organization's X.509 certificate, which is used to verify signatures in SAML assertions. This is the Certificate, also from Step 12.
-1. **Attribute Mapping.** Depending on your IdP, select: 
+1. **Attribute Mapping.** Depending on your IdP, select:
 
-    * **Use SAML subject**, or 
+    * **Use SAML subject**, or
     * **Use SAML Attribute** and then type the email attribute name in the text box.
 
-1. **SP Initiated Login Configuration.** (Optional) This section has instructions for setting up SP-initiated login. When SP initiated login has been enabled, your SAML configuration will appear as an additional authentication option within your subdomain-enabled account login page. 
+1. **SP Initiated Login Configuration.** (Optional) This section has instructions for setting up SP-initiated login. When SP initiated login has been enabled, your SAML configuration will appear as an additional authentication option within your subdomain-enabled account login page.
 
     :::note
     SP initiated login requires a custom Sumo Logic subdomain. If a custom subdomain has not yet been configured for your org, following the instructions in the [Change account subdomain](../../manage-subscription/manage-org-settings.md) section of the *Manage Organization* topic.
     :::
 
     * **Authn Request URL.** Enter the URL that the IdP has assigned for Sumo Logic to submit SAML authentication requests to the IdP.  This field is required if you checked the **SP Initiated Login Configuration** checkbox.
-    * **Disable Requested Authn Context**. (Optional.) If you check this option, Sumo will not include the RequestedAuthnContext element of the SAML AuthnRequests it sends to your Idp. This option is useful if your IdP does not support the RequestedAuthnContext element. 
+    * **Disable Requested Authn Context**. (Optional.) If you check this option, Sumo will not include the RequestedAuthnContext element of the SAML AuthnRequests it sends to your Idp. This option is useful if your IdP does not support the RequestedAuthnContext element.
     * **Sign Authn Request**. (Optional.) If you select this option, Sumo will send signed Authn requests to your IdP. When you click this option, a Sumo-provided X-509 certificate is displayed. You can configure your IDP with this certificate, to use to verify the signature of the Authn requests sent by Sumo. 
 
 1. **Roles Attribute:** When you click this option, **Roles** Attribute field appears. Enter the SAML Attribute Name that is sent by the IdP as part of the assertion. For details, see [Set SAML for Single Sign-On](set-up-saml.md).
-1. **On Demand Provisioning.** Select this option to have Sumo Logic automatically create accounts when a user first logs on. For more information, see [Set Up SAML for Single Sign-on.](set-up-saml.md). 
+1. **On Demand Provisioning.** Select this option to have Sumo Logic automatically create accounts when a user first logs on. For more information, see [Set Up SAML for Single Sign-on.](set-up-saml.md).
 
-   * **First Name** 
-   * **Last Name** 
+   * **First Name**
+   * **Last Name**
    * **On Demand Provisioning Roles.** Add a role for all Bitium users, such as Administrator.
 
 1. **Logout Page**: Select this option and enter a URL if you'd like to point all users to the URL after logging out of Sumo Logic. For more information, see [Set Up SAML for Single Sign-On](set-up-saml.md).
@@ -116,7 +115,7 @@ After you create a SAML configuration, you can require users to sign in using SA
 If you intend to require Sumo users to sign-in using SAML, as described in the following section, Require SAML for sign-in, it is a best practice to first check whether some users are still logging in directly, instead of using SAML. You can run the following query to see, for a particular time range, whether users signed in using SAML or with their username and password:
 
 ```sql
-_index=sumologic_audit action=login | count by class, sourceuser 
+_index=sumologic_audit action=login | count by class, sourceuser
 ```
 
 :::important
@@ -128,11 +127,11 @@ The query results show, for each user that has accessed Sumo over the time range
 * "SAML" indicates the user signed in using SAML.  
 * "SESSION" indicates the user authenticated by entering a username and password.  
 
-If the same user accessed Sumo using both methods (SAML and direct logon) during the time range, the query results will include a row for each method, showing how many times each method was used. 
+If the same user accessed Sumo using both methods (SAML and direct logon) during the time range, the query results will include a row for each method, showing how many times each method was used.
 
 ![saml-use-query.png](/img/security/saml-use-query.png) 
 
-### Require SAML for sign-in 
+### Require SAML for sign-in
 Click Require SAML Sign In to require users to sign in using SAML.
 
 :::tip
@@ -154,7 +153,7 @@ We do not recommend denying all users password access to Sumo even if you want t
 ## SAML lockdown limitations
 There are user account changes an admin cannot perform when the **Require SAML Sign In** option is selected:
 
-* You cannot change a user's login email address when SAML is locked down. 
+* You cannot change a user's login email address when SAML is locked down.
 * You cannot reset a user's password when SAML is locked down.
 * If a user's account has been locked as a result of too many failed login attempts, you cannot unlock the account while SAML is locked down.
 

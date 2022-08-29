@@ -1,8 +1,9 @@
 ---
 id: generate-new-url-http-source
+title: Generate a new URL for an HTTP Source
 ---
 
-# Generate a new URL for an HTTP Source
+#
 
 You can generate a new URL for an HTTP Source at any time. Generating a new URL completely invalidates the old URL.
 
@@ -13,7 +14,7 @@ If you see a 401 (failed to authenticate) error message right after generating 
 To generate a new URL:
 
 1. In Sumo Logic select **Manage Data \> Collection \> Collection**. 
- 
+
 1. On the **Manage Collection** page, click **Regenerate URL** next to the HTTP source.
 
     ![HTTPregenURL.png](/img/send-data/regenerate-url.png)

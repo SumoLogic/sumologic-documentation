@@ -1,8 +1,9 @@
 ---
 id: add-scheduled-view
+title: Add a Scheduled View
 ---
 
-# Add a Scheduled View
+#
 
 :::important
 To create a Scheduled View you must be an admin or have the Manage Scheduled Views [role capability](../users-and-roles/users/multi-account-access.md).
@@ -11,7 +12,7 @@ To create a Scheduled View you must be an admin or have the Manage Scheduled V
 For Scheduled View query requirements, see [Scheduled Views Best Practices and Examples](scheduled-views-best-practices.md). 
 
 1. In Sumo Logic, go to **Manage Data** \> **Logs** \> **Scheduled Views**.
-1. Click **+**. 
+1. Click **+**.
 
     ![add view.png](/img/scheduled-views/add-view.png)
 

@@ -1,8 +1,9 @@
 ---
 id: prerequisites-windows-remote-file-collection
+title: Prerequisites for Windows Remote File Collection
 ---
 
-# Prerequisites for Windows Remote File Collection
+#
 
 Sumo Logic requires a few extra steps when you set up collection in Windows environments. For remote file collection from Windows systems, choose one of these two methods:
 
@@ -28,11 +29,11 @@ where files reside.
 
 ## Step 2. Set UNC share permissions.
 
-1. Set up the UNC share permissions (Share with "Everyone" and "Read-Only") for the folder on the target machine. 
+1. Set up the UNC share permissions (Share with "Everyone" and "Read-Only") for the folder on the target machine.
 
-   * Open Explorer in the machine where the files reside. 
-   * Right-click the log directory, and select **Properties**. 
-   * Click **Advanced Sharing**. 
+   * Open Explorer in the machine where the files reside.
+   * Right-click the log directory, and select **Properties**.
+   * Click **Advanced Sharing**.
    * In the Advanced Sharing dialog, give the log directory a share name (or just use the actual folder name), and then click **Permissions**.
    * Set the permissions for **Everyone** to **Read**.
 

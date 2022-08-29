@@ -1,8 +1,9 @@
 ---
 id: troubleshooting-json-configure-sources
+title: Troubleshooting JSON to Configure Sources
 ---
 
-# Troubleshooting JSON to Configure Sources
+#
 
 Sources supplied via a JSON file may not be applied to a Collector for a few reasons. This document covers common issues with JSON files when trying to configure Sources.
 
@@ -35,15 +36,15 @@ Sumo Logic requires certain key/values be present in your JSON file for each Sou
     ```
     2018-05-16 20:30:25,084 +0000 [WrapperSimpleAppMain] INFO com.sumologic.scala.collector.auth.CollectorRegistrationManager - [main] Response code is 200 with warnings: List(Key: collector.error, Message: Error creating source: Server returned undeclared exception from cocoa-soa/CollectorStore: org.apache.avro.AvroRuntimeException: Unknown datum type com.sumologic.cocoa.api.DuplicateNameException: com.sumologic.cocoa.api.DuplicateNameException: Error creating sources List(ticker, ticker); a source already exists with that name.), errors: List()
     ```
- 
+
 * **Invalid Key names**  If a required key (parameter) is misspelled or not in the proper camel casing the Collector will fail to read and apply the Source configuration. For example, if you have supplied a key name of "sourcetype" instead of "sourceType". When an invalid key has been supplied you may see the following type of error message presented in the **/logs/collector.log** file. 
 
     ```
     2018-12-07 14:29:03,881 -0800 [JsonSync Manager] INFO com.sumologic.scala.collector.auth.CollectorRegistrationManager - [main] Response code is 200 with warnings: List(Key: source.type.invalid, Message: Please specify a source type), errors: List()
     ```
-    
+
     Keys (parameters) can be referenced in [Use JSON to Configure Sources](/docs/send-data/sources/use-json-configure-sources).
- 
+
 * **Invalid Values** If the value supplied for a required key (parameter) is misspelled, not in the proper casing, or not the proper data type the Collector will fail to read and apply the Source configuration. For example, if the value for the "sourceType" key has been supplied as "localfile" instead of "LocalFile." When an invalid value is found for a required key you may see the following type of error message presented in the **/logs/collector.log** file. 
 
     ```

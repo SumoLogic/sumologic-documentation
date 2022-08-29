@@ -1,14 +1,12 @@
 ---
 id: alerts
 title: Kubernetes Alerts
-sidebar_label: Setting Alerts
+sidebar_label: Alerts / Monitors
 description: tk
 hide_table_of_contents: true
 ---
 
-To help determine if the Kubernetes cluster is available and performing well, the Sumo Logic monitors are provided with out of box alerts.
-
-The alerts in the table below are built based on metrics datasets and have preset thresholds.
+To help determine if the Kubernetes cluster is available and performing well, the Sumo Logic monitors provide you with out-of-box alerts. The alerts - listed on this page - are installed by default if you install data collection for Kubernetes using Helm or YAML ([learn more](docs/observability/kubernetes-solution/quickstart.md)). They are built based on metrics datasets and have preset thresholds.
 
 :::info
 For information on creating customized alerts, see [Monitors](/docs/alerts/monitors/index.md).

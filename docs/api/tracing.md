@@ -2,12 +2,15 @@
 id: tracing
 title: Sumo Logic Tracing APIs
 sidebar_label: Tracing
+description: The Tracing APIs give you the ability to browse and execute queries for traces and span analytics, and request a service map of your application environment.
+
 ---
 
 The Tracing APIs give you the ability to browse and execute queries for traces and span analytics, and request a service map of your application environment.
 
 Refer to [Getting Started](docs/api/index.md) for Authentication and Endpoint information.
 
+Sumo Logic has several deployment types, which vary by geographic location and the date an account is created. Select the documentation link below that corresponds to your deployment. If you're not sure, see [How to determine your endpoint](/docs/api/getting-started#which-endpoint-should-i-should-use).
 
 <table>
   <tr>
@@ -45,7 +48,7 @@ The Service Map API allows you to fetch a graph representation of the Service Ma
 
 Sumo Logic has deployments that are assigned depending on the geographic location and the date an account is created. For API access, you must manually direct your API client to the correct Sumo Logic API URL.
 
-See [Sumo Logic Endpoints](https://help.sumologic.com/APIs/General-API-Information/Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security) for the list of the URLs.
+See [Sumo Logic Endpoints](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security) for the list of the URLs.
 
 An HTTP 301 Moved error suggests that the wrong endpoint was specified.
 
@@ -141,7 +144,7 @@ The APIs return operation failures with a description and error code, including 
 
 ### Documentation   
 
-Documentation for OpenAPI built APIs is hosted on each deployment. Sumo Logic has several deployments that are assigned depending on the geographic location and the date an account is created. See [how to determine which endpoint to use](https://help.sumologic.com/APIs/General-API-Information/Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security#How_can_I_determine_which_endpoint_I_should_use.3F) if you are unsure.
+Documentation for OpenAPI built APIs is hosted on each deployment. Sumo Logic has several deployments that are assigned depending on the geographic location and the date an account is created. See [how to determine which endpoint to use](/docs/api/getting-started#which-endpoint-should-i-should-use) if you are unsure.
 
 Select the documentation link for your deployment:
 
@@ -219,7 +222,7 @@ The Span Analytics API allows you to browse spans collected in the system. You c
 
 Sumo Logic has deployments that are assigned depending on the geographic location and the date an account is created. For API access, you must manually direct your API client to the correct Sumo Logic API URL.
 
-See [Sumo Logic Endpoints](https://help.sumologic.com/APIs/General-API-Information/Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security) for the list of the URLs.
+See [Sumo Logic Endpoints](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security) for the list of the URLs.
 
 An HTTP 301 Moved error suggests that the wrong endpoint was specified.
 
@@ -322,7 +325,7 @@ The APIs return operation failures with a description and error code, including 
 
 ### Documentation   
 
-Documentation for OpenAPI built APIs is hosted on each deployment. Sumo Logic has several deployments that are assigned depending on the geographic location and the date an account is created. See [how to determine which endpoint to use](https://help.sumologic.com/APIs/General-API-Information/Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security#How_can_I_determine_which_endpoint_I_should_use.3F) if you are unsure.
+Documentation for OpenAPI built APIs is hosted on each deployment. Sumo Logic has several deployments that are assigned depending on the geographic location and the date an account is created. See [how to determine which endpoint to use](/docs/api/getting-started#which-endpoint-should-i-should-use) if you are unsure.
 
 Select the documentation link for your deployment:
 
@@ -400,7 +403,7 @@ The Traces API allows you to browse traces collected in the system. You can exec
 
 Sumo Logic has deployments that are assigned depending on the geographic location and the date an account is created. For API access, you must manually direct your API client to the correct Sumo Logic API URL.
 
-See [Sumo Logic Endpoints](https://help.sumologic.com/APIs/General-API-Information/Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security) for the list of the URLs.
+See [Sumo Logic Endpoints](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security) for the list of the URLs.
 
 An HTTP 301 Moved error suggests that the wrong endpoint was specified.
 
@@ -515,7 +518,7 @@ Once you reach the limit of 10 concurrent active searches, attempting an additio
 21
 
 
-Documentation for OpenAPI built APIs is hosted on each deployment. Sumo Logic has several deployments that are assigned depending on the geographic location and the date an account is created. See [how to determine which endpoint to use](https://help.sumologic.com/APIs/General-API-Information/Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security#How_can_I_determine_which_endpoint_I_should_use.3F) if you are unsure.
+Documentation for OpenAPI built APIs is hosted on each deployment. Sumo Logic has several deployments that are assigned depending on the geographic location and the date an account is created. See [how to determine which endpoint to use](/docs/api/getting-started#which-endpoint-should-i-should-use) if you are unsure.
 
 Select the documentation link for your deployment:
 

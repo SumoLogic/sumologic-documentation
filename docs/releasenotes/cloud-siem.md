@@ -112,7 +112,7 @@ More information about using the special security indices is in the documentatio
 * [Updated] The page used to configure the detection window and Insight threshold has moved. Where previously it was accessed from a button on the Custom Insights list page, it is now accessed via a new Workflow > Detection 
 option in the Configuration menu:
 
-<img src={useBaseUrl('img/release-notes/cse/Threshold-Menu.pngimage.pn')} alt="threshold menu" />
+<img src={useBaseUrl('img/release-notes/cse/Threshold-Menu.png')} alt="threshold menu" />
 
 
 Note the URL has also changed as a result; please update any bookmarks.

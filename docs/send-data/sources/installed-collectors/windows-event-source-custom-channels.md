@@ -1,14 +1,15 @@
 ---
 id: windows-event-source-custom-channels
+title: Windows Event Source Custom Channels
 ---
 
-# Windows Event Source Custom Channels
+#
 
 To configure a Local or Remote Windows Event Source, you must identify the channels to collect from. This section explains how to obtain this list of channel names from your systems, and describes channels which the Sumo Logic collector cannot process.
 
 ## Obtaining channel names
 
-To find the available event channels for collection, execute the following PowerShell commands from an administrator PowerShell prompt. Then copy and paste the channel names into Source's Custom Events Channels text box. 
+To find the available event channels for collection, execute the following PowerShell commands from an administrator PowerShell prompt. Then copy and paste the channel names into Source's Custom Events Channels text box.
 
 ![img](/img/send-data/window-custom-channels.png)
 
@@ -44,7 +45,7 @@ Circular             1052672        2496 Microsoft-Client-Licensing-Platform/Adm
 
 In the output, the `LogName` column contains the channel names to enter, comma-separated, into the Source's Custom Events Channels text box. You do not need to reenter the names of the standard Application, System, or Security logs, which are already selectable via check boxes.
 
-For example, to collect events from the top 5 most active channels shown above, select the **Application** and **Security** check boxes, then enter the following string into the text box: 
+For example, to collect events from the top 5 most active channels shown above, select the **Application** and **Security** check boxes, then enter the following string into the text box:
 
 ```
 Microsoft-Windows-Store/Operational,Microsoft-Windows-GroupPolicy/Operational,Microsoft-Windows-StateRepository/Operational

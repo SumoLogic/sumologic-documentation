@@ -1,8 +1,9 @@
 ---
 id: view-manage-entities
+title: View and Manage Entities
+description: The Entities page lists all of the Entities in CSE and their Activity Scores.
 ---
 
-# View and Manage Entities
 
 This topic has information about the Entities page in CSE UI, which lists all of the Entities in CSE and their Activity Scores, and the **Entities \> Details** page, which presents information about a particular Entity, including Signals and Insights associated with the Entity.
 
@@ -79,10 +80,10 @@ or Criticality for one or more Entities.
 1. Click the top checkbox to select all of the Entities on the page, or click the checkbox next to each Entity you want to update.
 
     ![update-options.png](/img/cse/update-options.png)
-1. Note that once you select an Entity, three options appear at the top of the Entities list. See the instructions for each option below: 
+1. Note that once you select an Entity, three options appear at the top of the Entities list. See the instructions for each option below:
 
    * [Update Tags](#update-tags)
-   * [Update Suppression](#update-suppression) 
+   * [Update Suppression](#update-suppression)
    * [Update Criticalities](#update-criticalities)
 
 #### Update tags
@@ -90,9 +91,9 @@ or Criticality for one or more Entities.
 1. After selecting the Entities you want to update, click **Update Tags**. 
 1. Click the down arrow to display the options:
 
-    ![tag-options.png](/img/cse/tag-options.png) 
+    ![tag-options.png](/img/cse/tag-options.png)
 
-   * **Add.** Select this option to add one or more tags to the Entity, without affecting any tags already assigned to the Entity. You’re prompted to select a tag. If you select a schema tag, you’re prompted to select a tag value. You can select  multiple tags to add 
+   * **Add.** Select this option to add one or more tags to the Entity, without affecting any tags already assigned to the Entity. You’re prompted to select a tag. If you select a schema tag, you’re prompted to select a tag value. You can select  multiple tags to add
    * **Remove**. Select his option to remove one or more tags from the Entity. You’re prompted to select a tag. If you select a schema tag, you’re prompted to select a tag value.You can select multiple tags to remove. If a selected Entity doesn't have the specified tags, no change will be made to the Entity. 
    * **Replace**. Select this option to remove all of the tags currently assigned to the Entity and add one or more specified tags. You’re prompted to select a tag. If you select a schema tag, you’re prompted to select a tag value. 
 

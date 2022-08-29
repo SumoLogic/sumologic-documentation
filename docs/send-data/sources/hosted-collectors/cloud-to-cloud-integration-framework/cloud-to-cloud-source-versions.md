@@ -1,8 +1,9 @@
 ---
 id: cloud-to-cloud-source-versions
+title: Cloud-to-Cloud Source Versions
 ---
 
-# Cloud-to-Cloud Source Versions
+#
 
 Sources in the Cloud-to-Cloud IntegrationFramework need updates over time to maintain data collection. Updates can vary in severity and may not require any input from you.
 
@@ -88,7 +89,7 @@ _index=sumologic_audit_events _sourceCategory=collection _sourceName=SourceUpdat
 | json "to.sourceType" as to_source_type
 | json "from.sourceType" as from_source_type
 | json "from.schemaRef.type"
-| json "to.schemaRef.type" 
+| json "to.schemaRef.type"
 | json "sourceIdentity.sourceId"
 | json "sourceIdentity.sourceName"
 ```
@@ -178,7 +179,7 @@ _index=sumologic_audit_events _sourceName=SourceUpdated //"<Name of Source>"
 | json "to.sourceType" as to_source_type
 | json "from.sourceType" as from_source_type
 | json "to.schemaRef.type"
-| json "from.schemaRef.type" 
+| json "from.schemaRef.type"
 | json "sourceIdentity.sourceId"
 | json "sourceIdentity.sourceName"
 ```
