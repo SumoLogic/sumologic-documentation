@@ -38,11 +38,7 @@ Some logs are not available for some cluster tier. Check the [MongoDB docs](http
 
 ```json title="Database Log"
 {
-	"msg":"2019-07-03T16:07:40.366+0000 I CONTROL  [initandlisten] MongoDB starting : pid=20104 port=27017 dbpath=/srv/mongodb/M10AWSTestCluster-shard-1-node-2 64-bit host=m10awstestcluster-shard-01-02-snvkl.mongodb.net",
-	"project_id":"5cd0343ff2a30b3880beddb0",
-	"hostname":"m10awstestcluster-shard-01-02-snvkl.mongodb.net",
-	"cluster_name":"m10awstestcluster",
-	"created":"2019-07-03T16:07:40.366+0000"
+	"t": {"$date": "2022-07-27T17:04:49.286+00:00"}, "s": "I", "c": "REPL_HB", "id": 23974, "ctx": "ReplCoord-432", "msg": "Heartbeat failed after max retries", "attr": {"target": "atlas-11varv-shard-00-02.uv8kc.mongodb.net:27017", "maxHeartbeatRetries": 2, "error": {"code": 6, "codeName": "HostUnreachable", "errmsg": "Error connecting to atlas-11varv-shard-00-02.uv8kc.mongodb.net:27017 (192.168.253.14:27017) :: caused by :: Connection refused"}}, "project_id": "62dea24636af817c353dafa4", "hostname": "mongo6cluster-shard-00-01.uv8kc.mongodb.net", "cluster_name": "mongo6cluster", "created": "2022-07-27T17:04:49.286+00:00"
 }
 ```
 
@@ -321,6 +317,19 @@ In this section, you deploy the SAM application, which creates the necessary res
    * **Private API Key**: Copy and paste the Private Key from [Step 1](#step-1-acquire-authentication-info-from-mongodb-atlas-portal).
    * **Public API Key**: Copy and paste the Public Key from [Step 1](#step-1-acquire-authentication-info-from-mongodb-atlas-portal).
 5. Click **Deploy**.
+6. Search for Lambda in the AWS console, select Functions tab and open the function just created.
+7. Go to the Configuration>Permissions tab of the function, and click on the Execution role name link to open up the IAM window containing all the permission policies.
+8. Click on Add permissions > Create inline policy. Choose JSON and copy this policy statement:
+ ```json
+ { "Version": "2012-10-17", "Statement": [ { "Effect": "Allow", "Action": [ "ec2:DescribeNetworkInterfaces", "ec2:CreateNetworkInterface", "ec2:DeleteNetworkInterface", "ec2:DescribeInstances", "ec2:AttachNetworkInterface" ], "Resource": "*" } ] }
+ ```
+  Click on Review policy, and provide an appropriate name. Then click on Create policy. Some users might already have these permissions enabled.
+9. We then follow these steps to create elastic IP/IPs for the lambda function and add a VPC to our function. We note down the elastic IPs.
+10. We go to the mongo console, click on Organization Access>Access Manager > API Keys, and click on ‘...’ of the API Key as mentioned in step 2. Then click on Edit Permissions.
+11. Click Next > Add Access List Entry. Enter the elastic IPs noted above and, then click Save to save the elastic IPs, and click on Done to apply the settings.
+
+The lambda function should be working now in sending logs to Sumo. You can check the cloudwatch logs in Monitor>Logs to see the logs of the function.
+
 
 
 #### Step 3B: Configure Collection for Multiple Projects (optional)
