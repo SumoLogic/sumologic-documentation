@@ -1,8 +1,9 @@
 ---
 id: cisco-fwsm-fer
+title: Sample Cisco FWSM Field Extraction Rule
 ---
 
-# Sample Cisco FWSM Field Extraction Rule
+
 
 There are multiple rules to cover Cisco FWSM logs since these logs have multiple formats and multiple functions.
 
@@ -67,7 +68,7 @@ parse "Teardown * connection" as protocol nodrop | parse regex "for\s(?<src_dom>
 **Scope:**
 
 ```sql
-_sourceCategory=networking/cisco/asa Teardown !local-host !dynamic !ICMP 
+_sourceCategory=networking/cisco/asa Teardown !local-host !dynamic !ICMP
 ```
 
 **Extraction Rule:**
@@ -115,7 +116,7 @@ parse "Deny * " as protocol nodrop | parse regex "src\s(?<src_dom>\S+):(?<src_ip
 **Scope:**
 
 ```sql
-_sourceCategory=networking/cisco/fwsm deny from to !"Deny inbound" !"Deny protocol" !"Deny IP" 
+_sourceCategory=networking/cisco/fwsm deny from to !"Deny inbound" !"Deny protocol" !"Deny IP"
 ```
 
 **Extraction Rule:**
@@ -124,7 +125,7 @@ _sourceCategory=networking/cisco/fwsm deny from to !"Deny inbound" !"Deny protoc
 parse "Deny * " as protocol nodrop | parse regex "from\s(?<src_ip>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})/(?<src_port>\d+)\s" nodrop | parse regex "to\s(?<dest_ip>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})/(?<dest_port>\d+)\s" nodrop | "firewall-deny" as eventtype | "cisco-firewall" as event
 ```
 
-## Cisco FWSM Deny in outFWSM Deny in out 
+## Cisco FWSM Deny in outFWSM Deny in out
 
 **Rule Name:** Cisco FWSM Deny in outFWSM Deny in out  
 

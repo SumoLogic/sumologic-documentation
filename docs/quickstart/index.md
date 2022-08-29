@@ -22,8 +22,18 @@ These quick start guides help you connect, integrate, configure, and start using
 </div>
 <div className="box box3 card">
     <div className="container">
-      <h3><a href="/docs/sdo/quickstart-sdo-github">Visualize GitHub Data in Sumo Logic</a></h3>
+      <h3><a href="/docs/sdo/quickstart-sdo-github">GitHub Data</a></h3>
       <p>This guide will walk you through creating a Sumo Logic account as well as getting GitHub data visualized in Sumo Logic.</p>
       </div>
     </div>
+    <div className="box box4 card">
+        <div className="container">
+          <h3><a href="/docs/apm/traces#quickstart">Traces</a></h3>
+          <p>This guide demonstrates how to measure application microservice performance.</p>
+          </div>
+        </div>
   </div>
+
+:::sumo Sumo Logic Training
+See more quickstart tutorials in the [Sumo Logic Training Portal](https://learn.sumologic.com/).
+:::

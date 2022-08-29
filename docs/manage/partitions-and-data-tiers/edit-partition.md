@@ -1,10 +1,11 @@
 ---
 id: edit-partition
+title: Edit a Partition
 ---
 
-# Edit a Partition
+#
 
-This page has instructions for editing a partition.  
+This section has instructions for editing a partition.  
 
 :::important
 To edit a partition you must be an admin or have the Manage Partitions [role capability](../users-and-roles/roles/role-capabilities.md). Partitions apply to data from the date they are created (going forward only), and do not include data before the date of their creation.
@@ -17,7 +18,7 @@ When you create a partition, you specify the Data Tier where the partition will 
 You can make some changes to an existing partition:  
 
 * You can change the routing expression, as long as the partition is active (not decommissioned). It takes about five minutes for the change to take effect. The routing expression takes effect going forward—it doesn’t affect data previously added to the partition. 
-* You can change the retention period of the partition. 
+* You can change the retention period of the partition.
 
     :::note
     By default, Sumo Logic internal partitions, like `sumologic_audit_events`, `sumologic_volume`, and so on, have the same retention period as the Default Continuous Index. You can change the retention period for any of these internal partitions as desired.

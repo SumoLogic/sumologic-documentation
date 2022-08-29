@@ -1,8 +1,8 @@
 ---
 id: log-tracing-data-volume-index
+title: Log and Tracing Data Volume Index
 ---
 
-# Log and Tracing Data Volume Index
 
 The data volume index is populated with a set of log messages every five minutes. The messages contain information on how much data (by bytes and messages count) your account is ingesting. Your data volume is calculated based on when your logs were received, in Sumo this timestamp is stored with the \_receiptTime [metadata](../../../search/get-started-with-search/search-basics/built-in-metadata.md) field. Each log message includes information based on one of the following index source categories.
 
@@ -25,7 +25,7 @@ You can query the data volume index just like any other message using the Sumo 
 
 ## Sumo Logic App for Data Volume
 
-Sumo Logic provides an application that utilizes the data volume index to see your account's volume usage as a glance. For details, see [Data Volume app] (../../../07Sumo-Logic-Apps/26Apps_for_Sumo/Data_Volume_App.md "Data Volume App").
+Sumo Logic provides an application that utilizes the data volume index to see your account's volume usage as a glance. For details, see [Data Volume app] (../../../07Sumo-Logic-Apps/sumo-apps/Data_Volume_App.md "Data Volume App").
 
 ## Known Issue
 
@@ -85,7 +85,7 @@ data tier.
 _index=sumologic_volume _sourceCategory = "sourcecategory_and_tier_volume"
 | parse regex "(?<data>\{[^\{]+\})" multi
 | json field=data "field","dataTier","sizeInBytes","count" as sourcecategory, dataTier, bytes, count
-| bytes/1Gi as gbytes 
+| bytes/1Gi as gbytes
 | sum(gbytes) as gbytes by sourceCategory,dataTier
 ```
 
@@ -98,10 +98,10 @@ would produce results such as:
 This example query will return the volume for each Collector.
 
 ```sql
-_index=sumologic_volume _sourceCategory = "collector_and_tier_volume" 
+_index=sumologic_volume _sourceCategory = "collector_and_tier_volume"
 | parse regex "(?<data>\{[^\{]+\})" multi
 | json field=data "field","dataTier","sizeInBytes","count" as collector, dataTier, bytes, count
-| bytes/1Gi as gbytes 
+| bytes/1Gi as gbytes
 | sum(gbytes) as gbytes by collector,dataTier
 ```
 
@@ -110,7 +110,7 @@ _index=sumologic_volume _sourceCategory = "collector_and_tier_volume"
 The following query returns the message volume for a specific Source. The Source name and Data tier can be supplied within a JSON operation to get the data for that Source.
 
 ```sql
-_index=sumologic_volume _sourceCategory = "source_and_tier_volume" 
+_index=sumologic_volume _sourceCategory = "source_and_tier_volume"
 | parse regex "(?<data>\{[^\{]+\})" multi
 | json field=data "field","dataTier","sizeInBytes","count" as source, dataTier, bytes, count
 | where source="<<my_source_name>>" and dataTier="<<datatier_json>>"
@@ -124,11 +124,11 @@ _index=sumologic_volume _sourceCategory = "source_and_tier_volume"
 The following query returns the message volume for a specific Collector. The Collector name and Data tier can be supplied within a JSON operation to get the data for that Collector.
 
 ```sql
-_index=sumologic_volume _sourceCategory = "collector_and_tier_volume" 
+_index=sumologic_volume _sourceCategory = "collector_and_tier_volume"
 | parse regex "(?<data>\{[^\{]+\})" multi
 | json field=data "field","dataTier","sizeInBytes","count" as collector, dataTier, bytes, count
 | where collector ="<<collector_json>>" and dataTier="<<datatier_json>>"
-| bytes/1Gi as gbytes 
+| bytes/1Gi as gbytes
 | sum(gbytes) as gbytes by collector
 | fields gbytes
 ```
@@ -138,11 +138,11 @@ _index=sumologic_volume _sourceCategory = "collector_and_tier_volume"
 The following query returns the message volume for each Source Host. The sourcehost name and data tier can be supplied within a JSON operation to get the data for that sourcehost.
 
 ```sql
-_index=sumologic_volume _sourceCategory = "sourcehost_and_tier_volume" 
+_index=sumologic_volume _sourceCategory = "sourcehost_and_tier_volume"
 | parse regex "(?<data>\{[^\{]+\})" multi
 | json field=data "field","dataTier","sizeInBytes","count" as sourcehost, dataTier, bytes, count
 | where sourcehost="<<sourcejost_json>>" and dataTier="<<datatier_json>>"
-| bytes/1Gi as gbytes 
+| bytes/1Gi as gbytes
 | sum(gbytes) as gbytes by sourcehost
 | fields gbytes
 ```
@@ -152,11 +152,11 @@ _index=sumologic_volume _sourceCategory = "sourcehost_and_tier_volume"
 The following query returns the message volume for the Default Index. The data tier can be supplied with a JSON operation to filter results of that tier.
 
 ```sql
-_index=sumologic_volume _sourceCategory = "sourcehost_and_tier_volume" 
+_index=sumologic_volume _sourceCategory = "sourcehost_and_tier_volume"
 | parse regex "(?<data>\{[^\{]+\})" multi
 | json field=data "field","dataTier","sizeInBytes","count" as sourcehost, dataTier, bytes, count
 | where sourcehost="<<sourcejost_json>>" and dataTier="<<datatier_json>>"
-| bytes/1Gi as gbytes 
+| bytes/1Gi as gbytes
 | sum(gbytes) as gbytes by sourcehost
 | fields gbytes
 ```
@@ -169,7 +169,7 @@ You can query the index to:
 
 * Get the total tracing data volume (billed bytes/spans count) ingested by collector, source, source name, source category, or source host.
 
-### Message format 
+### Message format
 
 Each JSON message contains the parent object for each tracing, and child objects that detail the billed byes and spans count for each parent.
 
@@ -183,7 +183,7 @@ For example, a single message for collector volume data may look similar to the 
     "collector_d":{"billedBytes":133296,spansCount: 53083},
 ```
 
-### Querying the Tracing Data Volume index 
+### Querying the Tracing Data Volume index
 
 When you query the index, the query scope must include the following:
 
@@ -201,9 +201,9 @@ Where `index_source_category` is one of the categories listed in the table below
 | SourceCategory | `sourcecategory_tracing_volume` | Use this source category to query tracing volume by source category. |
 | SourceHost | `sourcehost_tracing_volume` | sourcehost_tracing_volume |
 
-### Tracing volume query examples 
+### Tracing volume query examples
 
-#### Tracing volume by source category 
+#### Tracing volume by source category
 
 This query returns the tracing volume by source category.
 
@@ -217,7 +217,7 @@ This query produces results like these: 
 
 ![tracing-volume-source-category](/img/ingestion-and-volume/tracing-volume-source-category.png)
 
-#### Tracing volume by collector 
+#### Tracing volume by collector
 
 This query returns the tracing volume by collector.
 

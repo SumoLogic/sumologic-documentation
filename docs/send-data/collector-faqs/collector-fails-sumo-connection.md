@@ -1,8 +1,8 @@
 ---
 id: collector-fails-sumo-connection
+title: Collector fails to connect to Sumo
 ---
 
-# Collector fails to connect to Sumo
 
 For this issue, the failure to connect may be due to the target server failed to respond or HTTP 504 or HTTP 408 errors.
 
@@ -11,8 +11,8 @@ For this issue, the failure to connect may be due to the target server failed to
 I'm not receiving any data from my new Collectors located in AWS EC2. Why do I see the following error in my collector.log files?
 
 ```
-2015-01-12 17:29:48,216 [HTTP Sender - 15] WARN com.sumologic.scala.collector.CommonsHTTPTransmitter - ConnectException for receiver url: 'collectors.sumologic.com:443'; on attempt: '2' 
-org.apache.http.NoHttpResponseException: The target server failed to respond 
+2015-01-12 17:29:48,216 [HTTP Sender - 15] WARN com.sumologic.scala.collector.CommonsHTTPTransmitter - ConnectException for receiver url: 'collectors.sumologic.com:443'; on attempt: '2'
+org.apache.http.NoHttpResponseException: The target server failed to respond
 ```
 
 ## Answer
@@ -24,7 +24,7 @@ Here are a few troubleshooting steps to try when your Collector is consistentl
 1. Test DNS resolution and connectivity to the Sumo servers: 
 
 ```bash
-curl -i https://collectors.sumologic.com 
+curl -i https://collectors.sumologic.com
  // you should see the word "Tweep" returned
 ```
 

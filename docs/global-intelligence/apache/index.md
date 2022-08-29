@@ -14,7 +14,7 @@ This feature is available in the following account plans.
 | CloudFlex    | Enterprise                              |
 | Credits      | Enterprise Operations, Enterprise Suite |
 
-The Global Intelligence for Apache App is a companion to the [Apache] (../07Sumo-Logic-Apps/24Web_Servers/Apache.md) App and helps DevOps and infrastructure engineers compare server and user activity patterns associated with their Apache servers against other Sumo Logic customer’s servers. Such comparisons can help diagnose potential load, throughput, or error issues in Apache clusters and avoid operational incidents arising from sub-optimal configurations of Apache clusters.
+The Global Intelligence for Apache App is a companion to the [Apache] (../07Sumo-Logic-Apps/web-servers/Apache.md) App and helps DevOps and infrastructure engineers compare server and user activity patterns associated with their Apache servers against other Sumo Logic customer’s servers. Such comparisons can help diagnose potential load, throughput, or error issues in Apache clusters and avoid operational incidents arising from sub-optimal configurations of Apache clusters.
 
 | Dashboard | Description |
 |--|--|
@@ -28,7 +28,7 @@ The Global Intelligence for Apache App is a companion to the [Apache] (../07Sumo
 
 The Global Intelligence for Apache App uses logs data from Apache clusters. Like the Sumo Logic App for Apache, it assumes the NCSA extended/combined log file format for Access logs and the default Apache error log file format for error logs. [For more details](http://httpd.apache.org/docs/current/mod/mod_log_config.html) on Apache logs.
 
-## Query sample 
+## Sample Query 
 
 The following sample query is from the Average **Requests Per Second: My Server v Benchmark** panel of **GI Apache - 02. Load Signals and Contributing Factors** dashboard.
 

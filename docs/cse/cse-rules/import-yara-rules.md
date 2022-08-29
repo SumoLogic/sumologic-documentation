@@ -1,11 +1,11 @@
 ---
 id: import-yara-rules
 title: Import YARA Rules
-sidebar_label: Import YARA Rules 
-description: tk
+sidebar_label: Import YARA Rules
+description: Learn how to import YARA rules from GitHub into CSE.
 ---
 
-This page has instructions for importing YARA rules from GitHub into CSE.
+This section has instructions for importing YARA rules from GitHub into CSE.
 
 YARA rules are an open source framework for identifying malware. CSE runs YARA rules against files uploaded by the [Network Sensor](../cse-sensors/network-sensor-deployment-guide.md). When a file matches a YARA rule, CSE creates a special Record which results in a “File Analysis” Signal being created.  Once you’ve imported rules, CSE will sync with the repository about every five minutes.
 

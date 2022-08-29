@@ -17,7 +17,7 @@ const features = [
     description: (<Translate
       id="landing.feature.get-started.desc"
       description="Get started description">
-        Create visualizations, notifications, and alerts for your applications.
+        Get started with your Sumo Logic data analytics journey.
       </Translate>),
     link: 'docs/get-started',
   },
@@ -31,9 +31,9 @@ const features = [
     description: (<Translate
         id="landing.feature.dashboards.desc"
         description="Dashboards description">
-          Create visualizations, notifications, and alerts for your applications.
+          Create visualizations, monitors, and alerts for your apps.
         </Translate>),
-    link: 'docs/get-started',
+    link: 'docs/dashboards-new',
   },
   {
     title: translate({
@@ -52,7 +52,7 @@ const features = [
   {
     title: translate({
       id: 'landing.feature.searches-logs.title',
-      message: 'Searches & Logs',
+      message: 'Searches and Logs',
       description: 'Title for searches & logs',
     }),
     imageUrl: 'img/icons/search.png',
@@ -61,12 +61,12 @@ const features = [
       description="Searches and logs description">
         Query and analyze log data sent to Sumo Logic, Search Language, LogReduce, LogExplain, and more.
       </Translate>),
-    link: 'docs/get-started',
+    link: 'docs/search',
   },
   {
     title: translate({
       id: 'landing.feature.metrics.title',
-      message: 'Metrics and Logs',
+      message: 'Metrics',
       description: 'Title for metrics',
     }),
     imageUrl: 'img/icons/metrics.png',
@@ -75,7 +75,7 @@ const features = [
       description="Metrics description">
         Review numeric performance and activity data collected to monitor, troubleshoot, and identify root causes.
       </Translate>),
-    link: 'docs/get-started',
+    link: 'docs/metrics',
   },
   {
     title: translate({
@@ -83,13 +83,13 @@ const features = [
       message: 'Application Performance Monitoring',
       description: 'Title for APM',
     }),
-    imageUrl: 'img/icons/traces.png',
+    imageUrl: 'img/icons/apm.png',
     description: (<Translate
       id="landing.feature.apm.desc"
       description="APM description">
-        Monitor user activity, traces data, and service maps to investigate usage and issues.
+        Monitor and analyze metrics for visibility into infrastructure health and app performance.
       </Translate>),
-    link: 'docs/apm/traces',
+    link: 'docs/apm',
   },
   {
     title: translate({
@@ -101,9 +101,9 @@ const features = [
     description: (<Translate
       id="landing.feature.obserbility.desc"
       description="Observability description">
-        Deploy and configure solutions to monitor applications and analyze root causes.
+        Deploy and configure solutions to monitor apps and analyze root causes.
       </Translate>),
-    link: 'docs/get-started',
+    link: 'docs/observability',
   },
   {
     title: translate({
@@ -115,9 +115,23 @@ const features = [
     description: (<Translate
       id="landing.feature.integrations.desc"
       description="Integrations description">
-        Find, install, and configure integrations with third party applications and services.
+        Find, install, and configure integrations with third-party apps and services.
       </Translate>),
     link: 'docs/integrations',
+  },
+  {
+    title: translate({
+      id: 'landing.feature.integrations.title',
+      message: 'API',
+      description: 'Title for API',
+    }),
+    imageUrl: 'img/icons/cloud/api2.png',
+    description: (<Translate
+      id="landing.feature.api.desc"
+      description="API description">
+        Use our APIs to access resources and data programmatically from third-party scripts and apps.
+      </Translate>),
+    link: 'docs/api',
   },
 ];
 
@@ -145,6 +159,7 @@ function HomepageHeader() {
       <div className="container">
         <h1 className="hero__title">{siteConfig.title}</h1>
         <p className="hero__subtitle">{siteConfig.tagline}</p>
+        <p>We are an open-source community of data analytics users. Contributions are welcome!</p>
         <div className={styles.buttons}>
         </div>
       </div>
@@ -156,8 +171,8 @@ export default function Home(): JSX.Element {
   const {siteConfig} = useDocusaurusContext();
   return (
     <Layout
-      title={`Hello from ${siteConfig.title}`}
-      description="Sumo Logic docs - real-time alerting, dashboards, and machine-learning-powered analytics for all three types of telemetry — logs, metrics, and traces.">
+      title="Home"
+      description="Sumo Logic docs - real-time alerting, security, dashboards, and machine-learning-powered analytics for all three types of telemetry — logs, metrics, and traces.">
       <HomepageHeader />
       <main>
         {features && features.length > 0 && (

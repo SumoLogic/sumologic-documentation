@@ -1,10 +1,11 @@
 ---
 id: create-edit-users
+title: Create and Edit Users
 ---
 
-# Create and Edit Users
 
-This page has instructions for creating and editing users in Sumo Logic. For information about deleting a user, see [Delete a User](delete-user.md).
+
+This section has instructions for creating and editing users in Sumo Logic. For information about deleting a user, see [Delete a User](delete-user.md).
 
 ## Create a user
 
@@ -34,10 +35,10 @@ When you add or remove a role from a user, it can take about an hour for the RBA
 1. A pane appears on the right side of the page with the user's details.
 
     ![view-user.png](/img/users-and-roles/view-user.png)
-    
+
     The page displays:
-    
-    * The user's first and last name, and email address. 
+
+    * The user's first and last name, and email address.
     * The roles assigned the user.
     * The user's account status.
     * Whether or not 2-step verification is enabled for the user.
@@ -49,7 +50,7 @@ When you add or remove a role from a user, it can take about an hour for the RBA
 1. Go to **Administration** \> **Users and Roles** \> **Users**.
 
     ![user-options-menu.png](/img/users-and-roles/user-options-menu.png)
-    
+
 1. Select the row for the user you want to edit and choose **Edit** from the three-dot options menu.
 1. An edit pane appears on the right side of the page. For information about edit options, see [Create a user](#create-a-user) above.
 1. After editing the user, click **Save**.

@@ -1,8 +1,8 @@
 ---
 id: limit-sending-tracing-data
-title: What if I don't want to send all the tracing data to Sumo Logic?
-sidebar_label: What if I don't want to send all the tracing data to Sumo Logic?
-description: tk
+title: Filter and Shape Your Trace Data
+sidebar_label: What if I don't want to send all of my tracing data to Sumo Logic?
+description: Learn how to create and apply custom rules to shape tracing data.
 ---
 
 :::note
@@ -86,7 +86,7 @@ processors:
         spans_per_second: 300     #\<- output limit for this rule
 ```
 
-If you are using non-standard configuration template, please also ensure `cascading_filter` and `batch` are present in the list of processors:
+If you're using non-standard configuration template, please also ensure `cascading_filter` and `batch` are present in the list of processors:
 
 ```
 # Include the processor in the tracing pipeline as needed

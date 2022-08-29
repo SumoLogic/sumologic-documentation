@@ -1,8 +1,8 @@
 ---
 id: cse-rules-syntax
 title: CSE Rules Syntax
-sidebar_label: CSE Rules Syntax 
-description: tk
+sidebar_label: Rules Syntax
+description: Learn about the functions you can use when writing CSE Rules.
 ---
 
 This topic describes commonly used CSE rules language functions. Rules language functions are used in CSE rule expressions. For information about rules and rule expressions, see [About CSE Rules](about-cse-rules.md).

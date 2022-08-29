@@ -1,10 +1,11 @@
 ---
 id: collect-logs-sentinelone
+title: Collect Logs for SentinelOne
 ---
 
-# Collect Logs for SentinelOne
+#
 
-This page provides instructions for ingesting SentinelOne logs into Sumo Logic. For more information, on SentinelOne please visit the [SentinelOne website](https://www.sentinelone.com/).
+This section provides instructions for ingesting SentinelOne logs into Sumo Logic. For more information, on SentinelOne please visit the [SentinelOne website](https://www.sentinelone.com/).
 
 If you have a SentinelOne account, you can view the contents of this article in the SentinelOne Support knowledge base [here](https://support.sentinelone.com/hc/en-us/articles/360007044894-Syslog-Integration-with-Sumo-Logic).
 
@@ -20,7 +21,7 @@ To get a token and certificate from Sumo Logic, do the following:
 
 1. Log in to the [Sumo Logic web site](https://www.sumologic.com/).
 
-1. Configure a Cloud Syslog [Hosted Collector](../collector-faqs/configure-limits-collector-caching.md) and [Cloud Syslog Source](/docs/send-data/sources/sources-hosted-collectors/cloud-syslog-source), and generate a Cloud Syslog source token. 
+1. Configure a Cloud Syslog [Hosted Collector](../collector-faqs/configure-limits-collector-caching.md) and [Cloud Syslog Source](/docs/send-data/sources/hosted-collectors/cloud-syslog-source), and generate a Cloud Syslog source token. 
 
 1. Download the crt server certificate file from [here](https://www.digicert.com/CACerts/DigiCertHighAssuranceEVRootCA.crt).
 

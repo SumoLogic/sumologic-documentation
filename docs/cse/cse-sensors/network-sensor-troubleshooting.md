@@ -1,8 +1,9 @@
 ---
 id: network-sensor-troubleshooting
+title: Network Sensor Troubleshooting
+description: Learn how to troubleshoot problems with the CSE Network Sensor.
 ---
 
-# Network Sensor Troubleshooting
 
 The CSE Network Sensor is a flexible network security monitor that monitors IP networks and collects flow and protocol session data, building audit records of network communications. As with all network sensors, performance is a key consideration for proper operation and comprehensive data collection. The installation of the CSE network sensor configures the sensor with reasonable defaults for many environments. For other environments, such as high throughput deployments, Sumo Logic advises the use of a supported 3rd party Bro/Zeek sensor offering or a custom Zeek cluster deployment.
 
@@ -62,7 +63,7 @@ Security monitoring can be complex. Network data capture is a system with many l
 
 Sumo Logic recommends that network sensor admins monitor and collect performance statistics from deployed sensors. Doing so can help with tracking and spotting faults when they occur and help plan for adequate system resources. 
 
-In the examples below, we use `eno1` as the example interface name. Substitute the proper interface name(s) on your sensor as needed. 
+In the examples below, we use `eno1` as the example interface name. Substitute the proper interface name(s) on your sensor as needed.
 
 ## Capture Interfaces
 
@@ -108,7 +109,7 @@ An important metric Zeek log that is collected from the CSE network sensor is th
 ### Capstats
 
 Capstats is a utility that can be used to monitor in real-time the capture statistics from a NIC, reporting on throughput rates and NIC drop rates most importantly. For example:  
-  
+
 `/opt/trident/sensor/bro/bin/capstats -i eno1 -I 1 -n 10`
 
 ### Bro/Zeek

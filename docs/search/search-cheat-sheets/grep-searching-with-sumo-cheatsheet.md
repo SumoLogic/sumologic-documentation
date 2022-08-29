@@ -1,10 +1,9 @@
 ---
 id: grep-searching-with-sumo-cheatsheet
+title: grep to Searching with Sumo Cheat Sheet
 ---
 
-# grep to Searching with Sumo Cheat Sheet
-
-Searching across multiple servers and aggregating the results is where the power of Sumo really lies. This cheat sheet can make it easier for you to move from greping logs to more in-depth querying with Sumo Logic. 
+Searching across multiple servers and aggregating the results is where the power of Sumo really lies. This cheat sheet can make it easier for you to move from greping logs to more in-depth querying with Sumo Logic.
 
 :::note
 Remember that Sumo Logic queries are time-constrained.

@@ -1,8 +1,13 @@
 ---
 slug: /cse
+title: Cloud SIEM Enterprise
 ---
 
-# Cloud SIEM Enterprise
+import useBaseUrl from '@docusaurus/useBaseUrl';
+import DocCardList from '@theme/DocCardList';
+import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
+
+<img src={useBaseUrl('img/icons/security/cloud-siem.png')} alt="icon" width="75"/>
 
 Cloud SIEM Enterprise (CSE) is a cloud-based SIEM that provides the following functionality: 
 
@@ -14,8 +19,6 @@ Cloud SIEM Enterprise (CSE) is a cloud-based SIEM that provides the following fu
     security issues and administer CSE itself.
 * Integration with the Sumo Logic platform.
 
-import DocCardList from '@theme/DocCardList';
-import {useCurrentSidebarCategory} from '@docusaurus/theme-common';
 
 In this section, we will introduce the following concepts:
 

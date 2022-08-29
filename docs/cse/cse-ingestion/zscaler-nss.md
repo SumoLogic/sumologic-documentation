@@ -2,11 +2,11 @@
 id: zscaler-nss
 title: ZScaler NSS
 sidebar_label: ZScaler NSS
-description: tk
+description: Configure collection of ZScaler NSS log messages to be parsed by CSE's system parser for ZScaler NSS.
 ---
 
 
-This page has instructions for collecting ZScaler NSS log messages and sending them to Sumo Logic to be ingested by CSE.
+This section has instructions for collecting ZScaler NSS log messages and sending them to Sumo Logic to be ingested by CSE.
 
 ## Step 1: Configure collection
 

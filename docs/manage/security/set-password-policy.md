@@ -1,8 +1,7 @@
 ---
 id: set-password-policy
+title: Set the Password Policy
 ---
-
-# Set the Password Policy
 
 Account admins with the Manage Password Policy capability can set the account's password policy on the **Administration** \> **Security** \> **Password Policy**.
 
@@ -17,14 +16,14 @@ To change the password policy:
 1. Go to **Administration** \> **Security** \> **Password Policy**.
 1. Change any of the following:
 
-    ![Set_Passwod_Policy.png](/img/security/Set_Passwod_Policy.png) 
-    
-    * **Passwords expire in.** This setting allows an admin to set the number of days after a user’s password was last changed to when the user is forced to change their password. The minimum is **30 days**. 
+    ![Set_Passwod_Policy.png](/img/security/Set_Passwod_Policy.png)
+
+    * **Passwords expire in.** This setting allows an admin to set the number of days after a user’s password was last changed to when the user is forced to change their password. The minimum is **30 days**.
     * **Password reuse after.** This setting is the number of times a password must be changed before a previously used password can be reused. From the menu, select the number of changes. For example, if you choose **5 Changes**, a password can be reused after five new passwords have been used in a user's account.
-    * **Password must contain.** Below are the character classes defined that users must provide as a part of their password. When none of the options below are selected, users will not be required to use any specific characters within their passwords. 
-      * Upper case letters (A-Z) 
-      * Lower case letters (a-z) 
-      * Numbers (0-9) 
+    * **Password must contain.** Below are the character classes defined that users must provide as a part of their password. When none of the options below are selected, users will not be required to use any specific characters within their passwords.
+      * Upper case letters (A-Z)
+      * Lower case letters (a-z)
+      * Numbers (0-9)
       * Special characters (#, $, %, &, etc)
     * **Users locked out after.** With these options, you can determine when users are locked out of their Sumo Logic accounts using the three menus: number of failed attempts, amount of time during which the incorrect password is entered, and the amount of time a user will be locked out of his or her account after entering the set number of incorrect passwords. 
 

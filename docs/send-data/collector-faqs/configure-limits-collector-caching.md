@@ -1,8 +1,9 @@
 ---
 id: configure-limits-collector-caching
+title: Configure Limits for Collector Caching
 ---
 
-# Configure Limits for Collector Caching
+
 
 Caching of outbound data is supported for Installed Collectors when a Collector is throttled or paused or the connection is broken. Data is cached first in memory and then on disk.
 
@@ -12,22 +13,22 @@ By default, the Collector supports caching the following amount of compressed da
 
 * Up to 4GB total disk space, including:  
 
-  * Up to 3GB for log data 
+  * Up to 3GB for log data
   * Up to 1GB for metric data
 
 To raise or lower the disk limits for Collector caching:
 
-1. Stop the Sumo Logic Collector service. 
+1. Stop the Sumo Logic Collector service.
 
     * On Windows: `net stop sumo-collector`
     * On Linux:   `sudo ./collector stop`    
 
-1. Modify the **collector.properties** file located in the **config** subdirectory of the Sumo Logic Collector installation directory.  Make the following changes and save the file. 
+1. Modify the **collector.properties** file located in the **config** subdirectory of the Sumo Logic Collector installation directory.  Make the following changes and save the file.
 
-    * To set the limit for disk caching for logs (for example, 2GB), add the following line: `queue.max.disk.gb = 2` 
+    * To set the limit for disk caching for logs (for example, 2GB), add the following line: `queue.max.disk.gb = 2`
     * To set the limit for disk caching for metrics (for example, 2GB), add the following line: `queue.metrics.max.disk.gb = 2`    
 
-1. Start the Sumo Logic Collector service. 
+1. Start the Sumo Logic Collector service.
 
     * On Windows: `net start sumo-collector`
     * On Linux: `sudo ./collector start`
@@ -47,14 +48,14 @@ The Collector enters Flushing Mode when less than 10% of free disk space remains
     * On Windows: `net stop sumo-collector`
     * On Linux: `sudo ./collector stop`    
 
-1. Modify the **collector.properties** file located in the **config** subdirectory of the Sumo Logic Collector installation directory. Make the following changes and save the file. 
+1. Modify the **collector.properties** file located in the **config** subdirectory of the Sumo Logic Collector installation directory. Make the following changes and save the file.
 
-    * To set the free space percentage threshold for entering flush mode (by default, 10%), add the following line: `freeSpace.threshold.percent = 10` 
+    * To set the free space percentage threshold for entering flush mode (by default, 10%), add the following line: `freeSpace.threshold.percent = 10`
     * To disable Flushing Mode: `freeSpace.threshold.percent = 0`
 
-1. Start the Sumo Logic Collector service. 
+1. Start the Sumo Logic Collector service.
 
-    * On Windows: `net start sumo-collector` 
+    * On Windows: `net start sumo-collector`
     * On Linux: `sudo ./collector start`
 
 You can revert back to a default configuration by removing the corresponding line from **collector.properties** file and restarting the Collector service.

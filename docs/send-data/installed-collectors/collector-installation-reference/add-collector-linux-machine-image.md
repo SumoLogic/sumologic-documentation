@@ -101,7 +101,7 @@ Collection \> Collection** page, or from the list below.
     To ensure collectors created using this image will use the correct hostname, you can modify the user.properties file, located at **/opt/SumoCollector/confg/user.properties** or **/usr/local/SumoCollector/user.properties. **Remove the line that specifies "**hostName = \<hostname\>**" and save the file.
 
 :::note
-Do not start the collector before building the image if you are using `-VskipRegistration=true`. Starting the collector prematurely will register the collector with Sumo Logic, causing ingestion issues when using baked AMI. If you did start the Collector and it registered you can remove the Collector's registration by navigating to the Collector's installation directory under `/config/creds/` and deleting all of its contents.
+Do not start the collector before building the image If you're using `-VskipRegistration=true`. Starting the collector prematurely will register the collector with Sumo Logic, causing ingestion issues when using baked AMI. If you did start the Collector and it registered you can remove the Collector's registration by navigating to the Collector's installation directory under `/config/creds/` and deleting all of its contents.
 :::
 
 ## Build your image

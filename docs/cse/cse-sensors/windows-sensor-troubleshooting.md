@@ -1,8 +1,9 @@
 ---
 id: windows-sensor-troubleshooting
+title: Windows Sensor Troubleshooting
+description: Troubleshoot issues with the CSE Windows Sensor.
 ---
 
-# Windows Sensor Troubleshooting
 
 :::note
 The CSE Windows Sensor has reached end of life and is no longer supported. Please migrate to a Sumo Logic  Installed Collector. For more information see the [end of life notice](https://app.getbeamer.com/cloudsiementerprise/en/end-of-life-notice-_-cloud-siem-enterprise-sensors). 
@@ -82,21 +83,21 @@ In some instances, the sensor may be configured to send data to the legacy CSE s
 1. To search for individual Records that have been ingested, click the information icon next to the sensor name.
 1. On the popup that appears, click the icon next to the Sensor ID to copy the Sensor ID to your clipboard. Then, close the popup.     
 
-    ![sensor-info-popup.png](/img/cse/sensor-info-popup.png) 
+    ![sensor-info-popup.png](/img/cse/sensor-info-popup.png)
 1. Click the **Records** tab at the top of the page.     
 
-    ![tabs.png](/img/cse/tabs.png) 
+    ![tabs.png](/img/cse/tabs.png)
 
-1. In the **Filters** area, filter by **Metadata Sensor ID** and supply the Sensor ID you copied above. You can enter the following, or select the field and “is” when those options are suggested. Paste in the sensor ID from your clipboard. `Metadata Sensor ID is\<sensor I\>` 
+1. In the **Filters** area, filter by **Metadata Sensor ID** and supply the Sensor ID you copied above. You can enter the following, or select the field and “is” when those options are suggested. Paste in the sensor ID from your clipboard. `Metadata Sensor ID is\<sensor I\>`
 1. A list of Records appears.
 
-    ![record-search-by-sensor.png](/img/cse/record-search-by-sensor.png) 
+    ![record-search-by-sensor.png](/img/cse/record-search-by-sensor.png)
 
-1. To view Record details click the plus sign at the left end of the row for a Record. 
+1. To view Record details click the plus sign at the left end of the row for a Record.
 1. Examine the Records, checking that:     
 
-   * The computer name in a Record matches the computer name where the associated event occurred. 
-   * The Records have recent timestamps. Be sure to take time zone settings into account. 
+   * The computer name in a Record matches the computer name where the associated event occurred.
+   * The Records have recent timestamps. Be sure to take time zone settings into account.
    * Compare the Records to source event logs, using the Windows Event Viewer. Keep in mind that the sensor configuration determines which categories of events are sent to the portal. For more information, see [EventIdAllowList](windows-sensor-configuration-settings.md#eventidallowlist) and [EventIdDenyList](windows-sensor-configuration-settings.md#eventiddenylist).                   
 
     ![record-details.png](/img/cse/record-details.png)
@@ -104,7 +105,7 @@ In some instances, the sensor may be configured to send data to the legacy CSE s
 ### Check that Records appear in CSE UI
 
 If you didn’t see Records in the step above, check the values of the [SensorAPIKey](windows-sensor-configuration-settings.md#sensorapikey) and [SensorID](windows-sensor-configuration-settings.md#sensorid) options in `C:\ProgramData\Sumo Logic\CSE Windows Sensor\settings.conf`. They should match the values shown on the sensor details popup that appears when you click the info icon for a sensor on the **Sensors** page.  
-  
+
 ![sensor-id-and-key.png](/img/cse/sensor-id-and-key.png)
 
 ## Check the sensor log file
@@ -114,7 +115,7 @@ If you didn’t see Records in the step above, check the values of the [SensorAP
 You can open the Windows Sensor log file, `C:\Program Data\Sumo Logic\CSE Windows Sensor\SumoLogic.CSEWindowsSensor.log`, with Notepad or another text editor. 
 
 :::note
-By default, the `ProgramData` folder is hidden by Windows and does not show up in Windows Explorer. To find it, enter `C:\Program Data` in the Windows Explorer address bar. Another option is to click the **View** tab in Windows Explorer and put a check mark next to “Hidden Items.”  This will make hidden files and folders visible, including the `ProgramData` folder. 
+By default, the `ProgramData` folder is hidden by Windows and does not show up in Windows Explorer. To find it, enter `C:\Program Data` in the Windows Explorer address bar. Another option is to click the **View** tab in Windows Explorer and put a check mark next to “Hidden Items.”  This will make hidden files and folders visible, including the `ProgramData` folder.
 :::
 
 If you prefer, you can use a log tail program, like BareTail, instead of a text editor.
@@ -342,11 +343,11 @@ From the member server that the CSE Windows Sensor is installed on:
 
 1. Start the Microsoft Event Viewer (from the Control Panel).
 1. Use **Action \> Connect** to another computer to connect to a remote machine.
-1. For the server name, enter localhost, the WEC server, or each domain controller depending on how the sensor is configured.   By default, the domain controller monitor is enabled. If you are using the default configuration, then enter a domain controller as the server name. 
+1. For the server name, enter localhost, the WEC server, or each domain controller depending on how the sensor is configured.   By default, the domain controller monitor is enabled. If you're using the default configuration, then enter a domain controller as the server name. 
 
 Once you connect, make sure that you can see events in the Security log.
 
-If you are using the WEC monitor, then make sure that you can see events in the Forwarded Events log (or other log if you’ve directed the WEC server to a different location.
+If you're using the WEC monitor, then make sure that you can see events in the Forwarded Events log (or other log if you’ve directed the WEC server to a different location.
 
 Repeat these steps for each domain controller. In other words, if you have 10 domain controllers, you should try to connect to each of the controllers from the member server where the sensor runs.
 
@@ -399,9 +400,9 @@ Use [psping](https://docs.microsoft.com/en-us/sysinternals/downloads/psping) to 
 1. Save  the IP address that is returned.
 1. Run the following command in any terminal window to determine the IP addresses that CSE has configured for the endpoint. There are more than one because the end-point is load balanced.   `dig\<customernam\>-ingest.jask.ai`
 1. Save the four IP addresses that are returned.
-1. Verify that your firewall rules enable outbound TCP traffic on port 443 for each of these: 
+1. Verify that your firewall rules enable outbound TCP traffic on port 443 for each of these:
 
    * `<customername>.portal.jask.ai`
    * `<customername>-ingest.jask.ai`
-   * The IP address returned by the command you ran in step 1 above. 
+   * The IP address returned by the command you ran in step 1 above.
    * The four IP addresses returned by the command you ran in step 3 above.

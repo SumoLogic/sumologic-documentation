@@ -117,13 +117,13 @@ To override select dashboard displays, do the following:
     ![MC_Display_Overrides_icon.png](/img/dashboards-new/panels/modify-chart/MC_Display_Overrides_icon.png)
 
 1. Enter a **Query or series name** you want to override. This is the letter of the row the query is assigned to, for example **#A** and **#B**.  
-      
+
     The following image shows a metrics and logs query charted together. In the **Display Overrides** menu the Logs query is referenced as **#B** to assign an alias and red color.   
-    
+
     ![Logs and Metrics.png](/img/dashboards-new/panels/modify-chart/Logs-and-Metrics.png)
 
 1. Enter an **Alias**, as necessary. **Metrics** monitors allow you to specify output metadata as a variable wrapped in double curly brackets, `{{ }}`. For example, if my output metrics has `environment`, I can specify it in my alias as `{{ metric }} on {{ deployment }}`.  
-    
+
     ![Monitor with metrics using metadata in alias.png](/img/dashboards-new/panels/modify-chart/Monitor-with-metrics-using-metadata-in-alias.png)
 
 1. Select a **Property** from the drop-down list. You can add as many properties and needed.
@@ -186,7 +186,7 @@ To change chart axes displays, do the following:
 
 You can toggle the chart Legend display on and off, where it appears, as well as modifying the legend display properties.
 
-**To modify the chart legend, do the following:**
+To modify the chart legend, do the following:
 
 1. Click the **Legend** icon in the far right menu bar.
 

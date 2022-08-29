@@ -1,8 +1,7 @@
 ---
 slug: /manage/users-and-roles
+title: Users and Roles
 ---
-
-# Users and Roles
 
 These topics have information about creating and managing Sumo Logic roles and users. In Sumo Logic,  an administrator controls access to capabilities and data by assigning capabilities and search filters to roles, and then assigning user to roles. For more information see [Role-Based Access Control](roles/role-based-access-control.md).
 

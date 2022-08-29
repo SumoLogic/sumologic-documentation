@@ -1,8 +1,9 @@
 ---
 id: telegraf-collection-architecture
+title: Telegraf Collection Architecture
 ---
 
-# Telegraf Collection Architecture
+#
 
 This topic has information about using Telegraf to obtain metrics from an application and to send those metrics to Sumo Logic. 
 
@@ -81,7 +82,7 @@ How do the metrics get to Sumo Logic? Prometheus gets the metrics from Telegraf.
 
 For example, suppose you are running Nginx in your Kubernetes cluster, and you have enabled the status module for Nginx. Adding the following to the Nginx deployment results in the annotation being added to each pod in the deployment. The following annotation instructs the Telegraf Operator to configure an Nginx input for telegraf to read those metrics.
 
-```
+```sql
 telegraf.influxdata.com/inputs: |+  
   [[inputs.nginx]]
     urls = ["http://localhost:8080/stub_status"]
@@ -89,7 +90,7 @@ telegraf.influxdata.com/inputs: |+
 
 In addition, add these annotations to tell Telegraf to make its metrics available to Prometheus, and instruct Prometheus to discover the metrics.
 
-```
+```yml
 telegraf.influxdata.com/class: sumologic-prometheus
 prometheus.io/scrape: "true"
 prometheus.io/port: "9273"

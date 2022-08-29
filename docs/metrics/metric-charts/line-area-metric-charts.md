@@ -1,11 +1,11 @@
 ---
 id: line-area-metric-charts
 title: Create and Tailor Line and Area Metrics Charts
-sidebar_label: Create and Tailor Line and Area Metrics Charts
+sidebar_label: Line and Area Metrics Charts
 description: How to tailor line charts and area charts for metric queries.
 ---
 
-This page has instructions for configuring the look and feel of line and area charts. 
+This section has instructions for configuring the look and feel of line and area charts. 
 
 :::note
 This topic has information about Sumo Logic's Classic metrics UI. For information about the Metric Explorer UI, which replaces the Classic metrics UI, see [Metrics Explorer](../metric-queries-alerts/metrics-explorer.md).

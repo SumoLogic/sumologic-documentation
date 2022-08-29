@@ -1,9 +1,13 @@
 ---
 id: manage
 slug: /manage
+title: Manage Sumo
+description: Manage user accounts, Collectors and Sources, security, SEO, and other administrative details.
 ---
 
-# Manage 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src={useBaseUrl('img/icons/manage.png')} alt="icon" width="75"/>
 
 A series of features and options gives you administration over accounts, roles, collectors, content sharing, field extraction rules, and much more. For a detailed overview, see the following:
 

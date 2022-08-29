@@ -1,8 +1,7 @@
 ---
 id: example-template
+title: Example Template
 ---
-
-# Example Template
 
 **Rule Name:** Fake Log Parse
 
@@ -29,4 +28,3 @@ parse "user=\"*\" action=\"*\" sessionId=\"*\"" as user, action, sessionid
 | user | User Email Address | `test@email.com` |
 | action | Action performed by the user | Delete |
 | sessionId | Session ID for user action | 145623 |
-

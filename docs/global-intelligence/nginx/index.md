@@ -14,7 +14,7 @@ This feature is available in the following account plans.
 | CloudFlex    | Trial, Enterprise                              |
 | Credits      | Trial, Enterprise Operations, Enterprise Suite |
 
-[Nginx](https://www.nginx.com/) is a web server that is used as a reverse proxy, load balancer, mail proxy, and HTTP cache. Global Intelligence for Nginx, is a companion to the [Nginx ULM] (../07Sumo-Logic-Apps/24Web_Servers/Nginx_(Legacy).md)
+[Nginx](https://www.nginx.com/) is a web server that is used as a reverse proxy, load balancer, mail proxy, and HTTP cache. Global Intelligence for Nginx, is a companion to the [Nginx ULM] (../07Sumo-Logic-Apps/web-servers/Nginx-Legacy.md)
 application. It helps DevOps and infrastructure engineers to compare server, and user activity patterns associated with their Nginx servers against other Sumo Logic customer’s servers. Such comparisons can help diagnose potential load, throughput or error issues in Nginx clusters and avoid operational incidents arising from sub-optimal configurations of Nginx clusters. 
 
 | Dashboard | Description|
@@ -26,7 +26,7 @@ application. It helps DevOps and infrastructure engineers to compare server, 
 
 Global Intelligence for Nginx App uses logs data from Nginx clusters. Like the Sumo Logic App for Nginx, it assumes the NCSA extended/combined log file format for Access logs and the default Nginx error log file format for error logs. [For more details](http://nginx.org/en/docs/http/ngx_http_log_module.html) on Nginx logs. 
 
-## Query sample 
+## Sample Query 
 
 The following sample query is from the Average **Requests Per Second: My Company v Benchmark** panel of **GI Nginx - 01 Golden Signals** dashboard.
 

@@ -1,10 +1,11 @@
 ---
 id: log-ingestion
+title: Log Ingestion
 ---
 
-# Log Ingestion
 
-The rate of data creation is rarely constant. Whether your organization sees seasonal spikes, or if a new feature or product line produces huge increases in activity, Sumo Logic meets the needs of your organization, known or unknown, while maintaining the search performance you rely on. 
+
+The rate of data creation is rarely constant. Whether your organization sees seasonal spikes, or if a new feature or product line produces huge increases in activity, Sumo Logic meets the needs of your organization, known or unknown, while maintaining the search performance you rely on.
 
 When designing your deployment, it’s important to consider how logs will be ingested across Collectors in your account.
 
@@ -60,7 +61,7 @@ To provide an example with a 10GB per day account, the average per minute rate
 
 In the case of Installed Collectors with a Local File Source and S3 Hosted Collectors, Sumo Logic instructs the Collector (Installed or Hosted) on the quota limit, and tells it to delay ingestion until the quota is available. As a result, users will be unable to search for current data when throttling is happening, since the rate of uploads may be slowed from local or S3 hosted collectors but there is no dropping of ingested data. Unfortunately, we do not have the same ability with the sending of data for HTTP sources and endpoints. Any HTTP sources will get a response to any post requests with a "429 - Too Many Requests" message. When this occurs, the sending client would then be responsible for retrying to send that data as quota becomes available.
 
-In the case of [Cloud Syslog Sources](/docs/send-data/sources/sources-hosted-collectors/cloud-syslog-source), similar to HTTP sources, incoming data will be dropped since the Cloud Syslog functions as a listener and cannot even return the 429 error.
+In the case of [Cloud Syslog Sources](/docs/send-data/sources/hosted-collectors/cloud-syslog-source), similar to HTTP sources, incoming data will be dropped since the Cloud Syslog functions as a listener and cannot even return the 429 error.
 
 Throttling also prevents one Collector from uploading more data than others to the point where all data is being ingested from one Collector.
 
@@ -68,7 +69,7 @@ When a collector is experiencing throttling, the throttling slows the rate at w
 
 ## How do I know which Collector is contributing to excess ingestion?
 
-You can use the [Data Volume Index](/docs/manage/ingestion-and-volume/data-volume-index) and the [Data Volume App] (../../07Sumo-Logic-Apps/26Apps_for_Sumo/Data_Volume_App.md "Data Volume App") to help determine the ingestion per Collector, Source, Source Category, View, or Partition. For information on how to install the App, see [Data Volume App] (../../07Sumo-Logic-Apps/26Apps_for_Sumo/Data_Volume_App.md "Data Volume App"). 
+You can use the [Data Volume Index](/docs/manage/ingestion-and-volume/data-volume-index) and the [Data Volume App] (../../07Sumo-Logic-Apps/sumo-apps/Data_Volume_App.md "Data Volume App") to help determine the ingestion per Collector, Source, Source Category, View, or Partition. For information on how to install the App, see [Data Volume App] (../../07Sumo-Logic-Apps/sumo-apps/Data_Volume_App.md "Data Volume App"). 
 
 ## How can I be alerted when throttling takes place?
 

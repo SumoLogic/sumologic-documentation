@@ -26,8 +26,8 @@ To send your data to Sumo Logic, you’ll need to learn how to configure Collect
 * [Installed Collectors](/docs/send-data/installed-collectors): Installed Collectors are deployed in your environment, either on a local machine, a machine in your organization, or even an Amazon Machine Image (AMI). Installed Collectors require a software download and installation. Upgrades to Collector software are released regularly by Sumo Logic.
 * [Hosted Collectors](../send-data/hosted-collectors.md) Hosted Collectors don't require installation or activation, nor do Hosted Collectors have physical requirements, since they're hosted in AWS or HTTP.
 * [Sources](/docs/send-data/sources):  Sources are the environments that Sumo Logic Collectors connect to collect data from a customer's site. 
-* [Sources for Installed Collectors](/docs/send-data/sources/sources-installed-collectors):  Sources for Installed Collectors include Local and Remote File Sources, Local and Remote Windows Event Sources, Local and Remote Windows Performance Sources, Script Sources, Syslog Sources, and Script Actions. 
-* [Sources for Hosted Collectors](/docs/send-data/sources/sources-hosted-collectors): Sources for Hosted Collectors include HTTP Sources and AWS Source Types such as AWS CloudTrail, AWS Config, AWS ELB, Amazon CloudFront, Amazon S3 Audit, and Amazon S3.
+* [Sources for Installed Collectors](/docs/send-data/sources/installed-collectors):  Sources for Installed Collectors include Local and Remote File Sources, Local and Remote Windows Event Sources, Local and Remote Windows Performance Sources, Script Sources, Syslog Sources, and Script Actions. 
+* [Sources for Hosted Collectors](/docs/send-data/sources/hosted-collectors): Sources for Hosted Collectors include HTTP Sources and AWS Source Types such as AWS CloudTrail, AWS Config, AWS ELB, Amazon CloudFront, Amazon S3 Audit, and Amazon S3.
 * [Timestamps, Time Zones, Time Ranges, and Date Formats](../send-data/sources/reference-information-sources/time-reference.md):  Sumo Logic supports several options for timestamps, time zones, time ranges, and dates.
 * [Using JSON to Configure Sources](/docs/send-data/sources/use-json-configure-sources):  If you’d like to configure your Sources using JSON files, you can do that too.
 
@@ -35,7 +35,7 @@ To send your data to Sumo Logic, you’ll need to learn how to configure Collect
 
 Sumo provides a tool for tracking and managing collection and data volume.
 
-* [Log Ingest Data Volume Index](../manage/ingestion-and-volume/data-volume-index/log-tracing-data-volume-index.md): Sumo writes messages to the index about how much log data your account is ingesting. You can query the index, and if desired, install the [Sumo Logic Data Volume app] (../../../07Sumo-Logic-Apps/26Apps_for_Sumo/Data_Volume_App_-_Legacy.md), which provides pre-configured searches and dashboards for analyzing log ingestion. 
+* [Log Ingest Data Volume Index](../manage/ingestion-and-volume/data-volume-index/log-tracing-data-volume-index.md): Sumo writes messages to the index about how much log data your account is ingesting. You can query the index, and if desired, install the [Sumo Logic Data Volume app] (../../../07Sumo-Logic-Apps/sumo-apps/Data_Volume_App_-_Legacy.md), which provides pre-configured searches and dashboards for analyzing log ingestion. 
 * [Metric Ingest Data Volume Index](../manage/ingestion-and-volume/data-volume-index/metrics-data-volume-index.md): The Metrics Data Volume Index is populated with a set of index messages every five minutes. The messages contain information on how much metrics (by data points) your account is ingesting. 
 
 ## Searching

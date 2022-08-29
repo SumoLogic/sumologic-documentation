@@ -1,5 +1,6 @@
 ---
 id: area-charts
+description: An area chart is used to visually represent quantity over a period of time. 
 ---
 
 # Area Charts

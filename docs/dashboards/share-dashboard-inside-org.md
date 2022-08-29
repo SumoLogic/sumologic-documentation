@@ -18,7 +18,7 @@ Sharing outside your organization is always view-only.
 
 There’s another factor that affects a shared dashboard: the dashboard’s data access level, which governs what data appears in the dashboard when users with whom the dashboard was shared view it. A dashboard’s data access level determines whose role search filter is applied to it when shared, and hence what data will appear in the dashboard. For more information, see [Set the Data Access Level for a Dashboard](get-started/set-data-access-level-dashboard.md).
 
-This page has instructions for sharing a dashboard with users within your organization. For information about sharing a dashboard with users external to your org, see [Share a Dashboard Outside Your Org](share-dashboard-outside-org.md).
+This section has instructions for sharing a dashboard with users within your organization. For information about sharing a dashboard with users external to your org, see [Share a Dashboard Outside Your Org](share-dashboard-outside-org.md).
 
 ## Dashboard sharing options
 

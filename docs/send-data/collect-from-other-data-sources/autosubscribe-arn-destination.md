@@ -1,14 +1,14 @@
 ---
 id: autosubscribe-arn-destination
+title: Auto-Subscribe ARN (Amazon Resource Name) Destination
 ---
 
-# Auto-Subscribe ARN (Amazon Resource Name) Destination
 
 You can use an [Amazon CloudWatch Log Group subscription](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/SubscriptionFilters.html) to collect log events from CloudWatch Logs in real-time, and send them to Sumo Logic. 
 
 Sumo Logic’s LogGroup Lambda Connector is a Lambda function that automates the process of subscribing to Amazon CloudWatch Log Group subscriptions. You can use the connector in conjunction with an Amazon Kinesis Firehose data delivery stream, Sumo Logic [Lambda function](https://github.com/SumoLogic/sumologic-aws-lambda) that sends Amazon CloudWatch logs to Sumo Logic, or with another Lambda functions of your choice.
 
-This page provides instructions for both deployment methods, and covers how to [troubleshoot the connector](#troubleshooting-the-connector).
+This section provides instructions for both deployment methods, and covers how to [troubleshoot the connector](#troubleshooting-the-connector).
 
 :::important
 These instructions assume that your Amazon CloudWatch log groups and this Lambda function are in the same AWS region. 
@@ -45,7 +45,7 @@ This section describes the parameters you can configure for the Lambda function.
   * **Lambda**: Enter the Amazon Resource Name (ARN) of the target Lambda function, that will receive CloudWatch logs via the Log Group subscription. To find a function's ARN, open the AWS Lambda console, and select the function from the list. A function's ARN is shown in the upper right corner of the page. 
 
     ![AWS_Lambda-function-parameters.png](/img/send-data/AWS_Lambda-function-parameters.png)
-  
+
   * **Kinesis**: Enter the Amazon Resource Name (ARN) of the target Amazon Kinesis firehose data Delivery Stream (the stream that will receive the CloudWatch Logs via the log group subscription). To find the ARN, open the Kinesis console, and select the delivery stream from the data firehose section. A delivery stream ARN is shown in the **Delivery Stream ARN** parameter. 
 
     ![delivery-arn-parameter](/img/send-data/delivery-arn-parameter.png)
@@ -80,11 +80,11 @@ Invoke the function manually. You can invoke the function using the AWS Manageme
 * To use the AWS CLI, run the following Lambda CLI invoke command to invoke the function. Note that the command requests asynchronous execution. You can optionally invoke it synchronously by specifying RequestResponse as the invocation-type parameter value.
 
   ```bash
-  aws lambda invoke 
+  aws lambda invoke
   --invocation-type Event  
-  --function-name SumoLogGroupLambdaConnector-<unique_string> 
+  --function-name SumoLogGroupLambdaConnector-<unique_string>
   --region us-east-2
-  --payload '{"existingLogs":"true","token":""}' 
+  --payload '{"existingLogs":"true","token":""}'
   --log-type Tail outputfile.txt
   ``` 
 
@@ -160,18 +160,18 @@ For information about Installing and configuring the AWS CLI, see [Installing 
 The function throws the following exception if the Log Group belongs to the Lambda function that generated it. 
 
 ```
-{ "errorMessage": "The log group provided is reserved for the function logs of the 
-destination function.", "errorType": "InvalidParameterException", "stackTrace": 
-[ 
-"Request.extractError (/var/runtime/node_modules/aws-sdk/lib/protocol/json.js:48:27)", 
-"Request.callListeners (/var/runtime/node_modules/aws-sdk/lib/sequential_executor.js:105:20)", 
-"Request.emit (/var/runtime/node_modules/aws-sdk/lib/sequential_executor.js:77:10)", 
-"Request.emit (/var/runtime/node_modules/aws-sdk/lib/request.js:683:14)", 
-"Request.transition (/var/runtime/node_modules/aws-sdk/lib/request.js:22:10)", 
-"AcceptorStateMachine.runTo (/var/runtime/node_modules/aws-sdk/lib/state_machine.js:14:12)", 
-"/var/runtime/node_modules/aws-sdk/lib/state_machine.js:26:10", 
-"Request.<anonymous> (/var/runtime/node_modules/aws-sdk/lib/request.js:38:9)", 
-"Request.<anonymous> (/var/runtime/node_modules/aws-sdk/lib/request.js:685:12)", 
-"Request.callListeners (/var/runtime/node_modules/aws-sdk/lib/sequential_executor.js:115:18)" 
+{ "errorMessage": "The log group provided is reserved for the function logs of the
+destination function.", "errorType": "InvalidParameterException", "stackTrace":
+[
+"Request.extractError (/var/runtime/node_modules/aws-sdk/lib/protocol/json.js:48:27)",
+"Request.callListeners (/var/runtime/node_modules/aws-sdk/lib/sequential_executor.js:105:20)",
+"Request.emit (/var/runtime/node_modules/aws-sdk/lib/sequential_executor.js:77:10)",
+"Request.emit (/var/runtime/node_modules/aws-sdk/lib/request.js:683:14)",
+"Request.transition (/var/runtime/node_modules/aws-sdk/lib/request.js:22:10)",
+"AcceptorStateMachine.runTo (/var/runtime/node_modules/aws-sdk/lib/state_machine.js:14:12)",
+"/var/runtime/node_modules/aws-sdk/lib/state_machine.js:26:10",
+"Request.<anonymous> (/var/runtime/node_modules/aws-sdk/lib/request.js:38:9)",
+"Request.<anonymous> (/var/runtime/node_modules/aws-sdk/lib/request.js:685:12)",
+"Request.callListeners (/var/runtime/node_modules/aws-sdk/lib/sequential_executor.js:115:18)"
 ] }
 ```

@@ -1,8 +1,9 @@
 ---
 id: cse-heads-up-display
+title: CSE Heads Up Display
+description: Learn about CSE's Heads Up Display (HUD), a UI that provides an at-a-glance overview of Insight status and activity.
 ---
 
-# CSE Heads Up Display
 
 This topic describes CSE’s *Heads Up Display (HUD)*, the landing page for the CSE UI. The HUD provides an at-a-glance overview of Insight status and activity.
 
@@ -96,5 +97,5 @@ The card at the top of the pane provides key information about the latest new In
 * **Close** button. Click this button to close the Insight.
 * Today’s Insight activity. The list in the lower part of the pane contains recent Insight changes: Insights created today, and status changes and comments made today, in chronological order, with the newest first.
 
-  
+
  

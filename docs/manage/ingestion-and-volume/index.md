@@ -1,8 +1,11 @@
 ---
 slug: /manage/ingestion-and-volume
+title: Ingestion and Volume
 ---
 
-# Ingestion and Volume
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src={useBaseUrl('img/icons/operations/data-volume.png')} alt="icon" width="70"/>
 
 Learn how to manage the ingestion of data by Sumo Logic.
 

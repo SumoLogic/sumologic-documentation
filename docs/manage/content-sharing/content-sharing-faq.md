@@ -1,8 +1,9 @@
 ---
 id: content-sharing-faq
+title: Content Sharing FAQ
 ---
 
-# Content Sharing FAQ
+#
 
 Welcome to Content Sharing. We've provided this FAQ to answer your basic questions around the interface changes that come with Content Sharing.
 
@@ -66,4 +67,4 @@ Dashboards run with the data access level of a particular user. We wanted to pre
 ## I'm an Admin, how do I monitor content sharing activity in my org?
 
 All permission updates, move, copy and delete actions in the content library are audited. All actions performed by the user while in Admin
-mode are also audited. The [Audit App] (../../07Sumo-Logic-Apps/26Apps_for_Sumo/Audit_App/Install-the-Audit-App-and-View-the-Dashboards.md "Install the Audit App and View the Dashboards") has been updated with several new dashboards that visualize this activity for you.
+mode are also audited. The [Audit App] (../../07Sumo-Logic-Apps/sumo-apps/Audit_App/Install-the-Audit-App-and-View-the-Dashboards.md "Install the Audit App and View the Dashboards") has been updated with several new dashboards that visualize this activity for you.

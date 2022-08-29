@@ -1,3 +1,0 @@
----
-id: pagerduty-v1
----

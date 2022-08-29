@@ -2,7 +2,7 @@
 id: install-sdo-app-view-dashboards
 title: Install the Software Development Optimization App and view the Dashboards
 sidebar_label: Install the Software Development Optimization App and view the Dashboards
-description: tk
+description: Learn how to install the SDO Sumo Logic App and use pre-configured searches and dashboards that provide insights into your DevOps pipeline.
 ---
 
 If you have set up the Software Development Optimization (SDO) solution as defined [here](/docs/sdo/set-up-sdo) using Terraform, you can skip the manual installation of SDO App.
@@ -22,12 +22,12 @@ Locate and install the app you need from the **App Catalog**. If you want to see
     Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library](../get-started/library/install-apps.md).
     :::
 
-1. To install the app, complete the following fields.
+3. To install the app, complete the following fields.
 
    * **App Name.** You can retain the existing name, or enter a name of your choice for the app.
    * **Data Source.** Select either of these options for the data source.
      * Choose **Source Category**, and select a source category from the list.
-     * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (_sourceCategory=MyCategory).
+     * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`).
 
    * **Advanced.** Select the **Location in Library** (the default is the Personal folder in the library), or click New Folder to add a new folder.
 

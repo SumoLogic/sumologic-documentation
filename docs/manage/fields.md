@@ -1,8 +1,9 @@
 ---
 id: fields
+title: Sumo Logic Fields
+sidebar_label: Fields
 ---
 
-# Fields
 
 Fields allow you to reference log data based on meaningful associations. They act as metadata tags that are assigned to your logs so you can search with them. Each field contains a key-value pair, where the field name is the key. Fields may be referred to as Log Metadata Fields.
 
@@ -13,9 +14,8 @@ The order of precedence for field assignment from highest to lowest is:
 1. Field Extraction Rule (FER)
 1. Amazon EC2 resource tags
 1. Amazon EC2 instance information
-1. HTTP Header
+1. Collector _or_ HTTP Header
 1. Source
-1. Collector
 
 So, if you have a field defined at the Collector or Source level, and you create a FER against the same source of data with the same field name, the FER will win the field assignment.
 
@@ -36,9 +36,9 @@ When creating or updating the configuration of a Streaming Metrics Source, a Hos
 
 ## Limitations
 
-* Fields created as log metadata and from Field Extraction Rules share the same quota of 200 fields. The Fields page shows how many fields your account is using out of the total available at the bottom of the table as Fields Capacity.
+* Fields created as log metadata and from Field Extraction Rules share the same quota of 400 fields. The Fields page shows how many fields your account is using out of the total available at the bottom of the table as Fields Capacity.
 
-    ![fields capacity.png](/img/fields/fields-capacity.png)
+    ![fields capacity.png](/img/send-data/fields-capacity.png)
 
 * It can take up to 10 minutes for fields to start being assigned to your data.
 * A Collector can have up to 10 fields.
@@ -56,20 +56,20 @@ Fields can be assigned to a Collector and Source using the **Fields** input ta
 1. Create or find and select the Collector or Source you want to assign fields to.
 1. Click the **+Add Field** link in the **Fields** section. Define the fields you want to associate, each field needs a name (key) and value.
 
-    * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema. 
+    * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
     * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema it is ignored, known as dropped.
 
-1. **Automatically activate all fields on save**.  
+1. **Automatically activate all fields on save**. 
 
     If you click **Automatically activate all fields on save**:
 
     * The field will be saved to your Fields schema.
     * The field will be applied to logs collected by the Collector or Source.
-    * If you are adding the field to an HTTP Source, or to a Collector that has an HTTP Source, the field will be applied to the metrics collected by the source. 
+    * If you are adding the field to an HTTP Source, or to a Collector that has an HTTP Source, the field will be applied to the metrics collected by the source.
 
-    If you do not click **Automatically activate all fields on save**: 
-   
-    * The field will be *not* be saved to your Fields schema 
+    If you do not click **Automatically activate all fields on save**:
+
+    * The field will be *not* be saved to your Fields schema
     * The field will be applied to logs collected by the Collector or Source, but because the field won’t be added to your Fields schema, it will be dropped by Sumo Logic when logs with that field are ingested.
     * If you are adding the field to an HTTP Source, or to a Collector that has an HTTP Source, the field will be applied to the metrics collected by the source.
 
@@ -156,7 +156,7 @@ You can use both methods together. If there is a name collision between a given
 
 Any fields passed with your data need to exist in your Fields schema defined in Sumo. Any fields not defined in Sumo that are passed through a header are dropped. See how to define fields in the [manage fields](#manage-fields) section.
 
-See [how to upload logs to an HTTP Source](/docs/send-data/sources/sources-hosted-collectors/http-logs-metrics-source).
+See [how to upload logs to an HTTP Source](/docs/send-data/sources/hosted-collectors/http-logs-metrics-source).
 
 #### X-Sumo-Fields HTTP header
 
@@ -184,7 +184,7 @@ The following headers are reserved and can not be used: X-Sumo-Category, X-Sum
 
 ### Tags from EC2
 
-Create a Sumo Logic [AWS Metadata Source](../send-data/sources/sources-hosted-collectors/amazon-web-services/aws-metadata-tag-source.md) to collect custom tags from EC2 instances running on AWS. An Installed Collector automatically pulls [AWS instance identity documents](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-identity-documents.html) (IMDSv2) from instances to get their accountID, availabilityZone, instanceId, instanceType, and region.
+Create a Sumo Logic [AWS Metadata Source](../send-data/sources/hosted-collectors/amazon-web-services/aws-metadata-tag-source.md) to collect custom tags from EC2 instances running on AWS. An Installed Collector automatically pulls [AWS instance identity documents](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-identity-documents.html) (IMDSv2) from instances to get their accountID, availabilityZone, instanceId, instanceType, and region.
 
 Logs ingested by Installed Collectors on EC2 instances will be tagged as long as the tag, including instance information tags, exists in the organization's Fields schema. See how to define fields in the [manage fields](#manage-fields) section. EC2 resource tags take precedence over EC2 instance information. Only one AWS Metadata Source is required to collect tags from multiple hosts.
 
@@ -227,10 +227,10 @@ The **Manage Data** \> **Logs** \> **Fields** page displays the following info
 On the **Manage Data \> Logs \> Fields** page you can:
 
 * Click **+ Add** to add fields.
-* Search fields * The dropdown next to the add button lets you toggle between the following: 
+* Search fields * The dropdown next to the add button lets you toggle between the following:
 
-  * **Existing -** **Built-in Fields**. These are [metadata fields created by Sumo Logic](../search/get-started-with-search/search-basics/built-in-metadata.md) and cannot be modified. 
-  * **Existing - Custom Fields**. These fields were either created by FERs or users. 
+  * **Existing -** **Built-in Fields**. These are [metadata fields created by Sumo Logic](../search/get-started-with-search/search-basics/built-in-metadata.md) and cannot be modified.
+  * **Existing - Custom Fields**. These fields were either created by FERs or users.
   * **Dropped Fields**. These fields are being dropped due to not existing in the fields table.
 
 * Disable fields

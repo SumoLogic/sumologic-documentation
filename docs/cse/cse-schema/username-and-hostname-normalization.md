@@ -1,15 +1,17 @@
 ---
 id: username-and-hostname-normalization
+title: Username and Hostname Normalization
+sidebar_label: Username and Hostname Normalization
+description: Learn about how CSE normalizes usernames and hostnames during mapping and parsing.
 ---
 
-# Username and Hostname Normalization
 
 This topic describes how CSE normalizes usernames and hostnames in Records during the parsing and mapping process. This allows for common name forms among Active Directory, AWS, and fully qualified domain names to be normalized into a domain and username form.
 
 ## Details
 
 The name normalization process normalizes a complete username into a base username and a domain. The following forms of usernames are
-normalized. 
+normalized.
 
 Some of the common forms for username are:
 

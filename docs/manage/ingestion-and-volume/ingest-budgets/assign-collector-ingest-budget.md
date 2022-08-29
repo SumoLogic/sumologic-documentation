@@ -1,8 +1,8 @@
 ---
 id: assign-collector-ingest-budget
+title: Assign Collector to Ingest Budget
 ---
 
-# Assign Collector to Ingest Budget
 
 ## Availability
 
@@ -68,7 +68,7 @@ GET response:
     "name":"duke-mac",
     "timeZone":"UTC",
     "fields":{
-      
+
     },
     "links":[{
       "rel":"sources",
@@ -164,7 +164,7 @@ When registering a new Collector you can specify the parameter `fields` in 
 
 ## Command line installation
 
-When using the [command line (shell script) installer](../../../send-data/installed-collectors/collector-installation-reference/parameters-command-line-installer.md) you can assign the Collector to an existing ingest budget with the `-Vfields` parameter. For details and example commands on Collector installation, see [Install a Collector on Linux](../../../send-data/installed-collectors/install-collector-linux.md), [Install a Collector on MacOS](../../../send-data/installed-collectors/install-collector-macos.md), and [Install a Collector on Windows](../../../send-data/installed-collectors/install-collector-windows.md).
+When using the [command line (shell script) installer](../../../send-data/installed-collectors/collector-installation-reference/parameters-command-line-installer.md) you can assign the Collector to an existing ingest budget with the `-Vfields` parameter. For details and example commands on Collector installation, see [Install a Collector on Linux](../../../send-data/installed-collectors/linux.md), [Install a Collector on MacOS](../../../send-data/installed-collectors/macos.md), and [Install a Collector on Windows](../../../send-data/installed-collectors/windows.md).
 
 | Parameter | Description |
 |--|--|

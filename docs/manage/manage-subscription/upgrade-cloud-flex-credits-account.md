@@ -1,10 +1,11 @@
 ---
 id: upgrade-cloud-flex-credits-account
+title: Upgrade a Cloud Flex Credits Account
 ---
 
-# Upgrade a Cloud Flex Credits Account
+#
 
-This page has instructions for upgrading a Sumo Logic Free or Trial account to a monthly or annual Essentials account, and for requesting updates to an existing Essentials account.
+This section has instructions for upgrading a Sumo Logic Free or Trial account to a monthly or annual Essentials account, and for requesting updates to an existing Essentials account.
 
 For information about Essentials accounts, see [Cloud Flex Credits - Account Types](cloud-flex-credits-accounts.md). 
 
@@ -26,9 +27,9 @@ You must be an admin to upgrade your CloudFlex Credits free or trial account.
 1. Choose **Monthly Subscription** or **Annual Subscription**. Monthly subscription billing is charged at the start of each billing cycle. An annual subscription is billed at the start of the subscription.
 1. Estimate your daily usage for each product variable. As you change the values, the required credits shown to the right will adjust.
 
-   * **Continuous Log Ingest**. Select an estimate of your daily ingestion to the Continuous tier, in GB. 
-   * **Continuous Log Storage**. Select the number of days you want to retain the data ingested to the Continuous tier. 
-   * **Metrics**. Enter an estimate of the [metrics](/docs/metrics) to be ingested daily, in data points per minute (DPM.) 
+   * **Continuous Log Ingest**. Select an estimate of your daily ingestion to the Continuous tier, in GB.
+   * **Continuous Log Storage**. Select the number of days you want to retain the data ingested to the Continuous tier.
+   * **Metrics**. Enter an estimate of the [metrics](/docs/metrics) to be ingested daily, in data points per minute (DPM.)
    * **Tracing Ingest**. Enter an estimate of your daily ingestion of [transaction traces](/docs/apm/traces), in GB. 
 
 1. After making your selection for each product variable, click **Upgrade to Essentials**.
@@ -42,7 +43,7 @@ You must be an admin to upgrade your CloudFlex Credits free or trial account.
     ![step-3.png](/img/subscriptions/upgrade-cloud-flex-step-3.png)
 
 1. Click **Service Level Agreements** to review the terms of the subscription.
-1. To complete the upgrade, click the checkbox to acknowledge the Service Level Agreements, and click **Confirm & Pay**. 
+1. To complete the upgrade, click the checkbox to acknowledge the Service Level Agreements, and click **Confirm & Pay**.
 
 :::note
 The payment will be calculated for the full day on which you confirm and pay. The start date and time for your subscription will be midnight Pacific Standard Time (PST) of the day you confirm and pay. 
@@ -60,10 +61,10 @@ If you want to change the levels for any of the product variables in your Essent
 1. On the **Update Plan** popup:
 
     * **Email**. Enter your email address.
-    * **Continuous Log Ingest**. Select an estimate of your daily ingestion to the Continuous tier, in GB. 
-    * **Continuous Log Storage**. Select the number of days you want to retain the data ingested to the Continuous tier. 
+    * **Continuous Log Ingest**. Select an estimate of your daily ingestion to the Continuous tier, in GB.
+    * **Continuous Log Storage**. Select the number of days you want to retain the data ingested to the Continuous tier.
     * **Metrics**. Enter an estimate of the [metrics](/docs/metrics) to be ingested daily, in data points per minute (DPM.)
-    * **Tracing Ingest**. Enter an estimate of your daily ingestion of [transaction traces](/docs/apm/traces), in GB. 
+    * **Tracing Ingest**. Enter an estimate of your daily ingestion of [transaction traces](/docs/apm/traces), in GB.
     * **Other Details**. (Optional)
 
 1. Click **Submit Request**.    

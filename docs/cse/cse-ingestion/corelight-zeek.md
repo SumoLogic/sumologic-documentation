@@ -2,15 +2,15 @@
 id: corelight-zeek
 title: Corelight Zeek
 sidebar_label: Corelight Zeek
-description: tk
+description: Configure a syslog source to ingest Corelight Zeek log messages and send them to the CSE Corelight log mapper.
 ---
 
-This page has instructions for collecting Corelight Zeek log messages and sending them to Sumo Logic to be ingested by CSE.
+This section has instructions for collecting Corelight Zeek log messages and sending them to Sumo Logic to be ingested by CSE.
 
 These instructions are for Corelight Zeek logs sent as JSON over syslog.
 
 :::note
-The [CSE Network Sensor](../cse-sensors/cloud-sensor-guide.md) also utilizes Zeek, so if you are using the sensor, using Corelight Zeek would be redundant.
+The [CSE Network Sensor](../cse-sensors/cloud-sensor-guide.md) also utilizes Zeek, so If you're using the sensor, using Corelight Zeek would be redundant.
 ::: 
 
 ## Step 1: Configure collection

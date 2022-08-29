@@ -1,8 +1,9 @@
 ---
 id: jfrog-artifactory-sumo-logic-integration
+title: JFrog Artifactory Online Sumo Logic Integration
 ---
 
-# JFrog Artifactory Online Sumo Logic Integration
+#
 
 :::important
 If you do not currently have a Sumo Logic account, the JFrog Artifactory Sumo Logic integration is the most convenient way to start using Sumo Logic directly from Artifactory. You can also choose to use an existing Sumo Logic account to integrate with Artifactory Online.
@@ -18,7 +19,7 @@ The JFrog Artifactory Sumo Logic integration provides a new Sumo Logic Free acco
 
 **If you have an existing Sumo Logic account:**
 
-You can configure Artifactory Online to send data (described below) to an existing Sumo Logic [HTTP Logs and Metrics](/docs/send-data/sources/sources-hosted-collectors/http-logs-metrics-source) source.
+You can configure Artifactory Online to send data (described below) to an existing Sumo Logic [HTTP Logs and Metrics](/docs/send-data/sources/hosted-collectors/http-logs-metrics-source) source.
 
 ## Artifactory logs
 
@@ -67,7 +68,7 @@ If you do not have an existing Sumo Logic Account and it is your first time here
 
 If you already have an existing connection set up via Artifactory Online:
 
-1. The **Use Existing Client ID and Secret** radio button is selected, and keys will pre-populate automatically based on your previous configuration. 
+1. The **Use Existing Client ID and Secret** radio button is selected, and keys will pre-populate automatically based on your previous configuration.
 1. Click Access Dashboards to view Dashboards as you did before.
 
 ![jfrog 6](/img/connection-and-integration/jfrog6.png)
@@ -76,16 +77,16 @@ If you already have an existing connection set up via Artifactory Online:
 
 If you already have an existing Sumo Logic Account created outside of Artifactory Online:
 
-1. Select “Connection URL” and copy and paste the URL of an existing Sumo Logic [HTTP Logs and Metrics Source in the Connection URL text box](/docs/send-data/sources/sources-hosted-collectors/http-logs-metrics-source)
+1. Select “Connection URL” and copy and paste the URL of an existing Sumo Logic [HTTP Logs and Metrics Source in the Connection URL text box](/docs/send-data/sources/hosted-collectors/http-logs-metrics-source)
 
     ![jfrog 7](/img/connection-and-integration/jfrog7.png)
 
 1. Login to Sumo Logic and verify that the logs are flowing in as expected
-1. Install the [Sumo Logic App for Artifactory] (../../07Sumo-Logic-Apps/08App_Development/Artifactory/Artifactory-App-Dashboards.md) (version 7.x) to get instant insight into your Artifactory logs. 
+1. Install the [Sumo Logic App for Artifactory] (../../07Sumo-Logic-Apps/app-development/Artifactory/Artifactory-App-Dashboards.md) (version 7.x) to get instant insight into your Artifactory logs. 
 
 ## For More Details
 
-For complete details on the Sumo Logic App for Artifactory and its Dashboards, see the [Artifactory App] (../../07Sumo-Logic-Apps/08App_Development/Artifactory.md).
+For complete details on the Sumo Logic App for Artifactory and its Dashboards, see the [Artifactory App] (../../07Sumo-Logic-Apps/app-development/Artifactory.md).
 
 :::note
 For more information about JFrog Artifactory, see the Sumo Logic DevOps blog, [Using Node.js npm with Artifactory via the API and CLI](https://www.sumologic.com/blog/using-node-js-npm-with-jfrog-artifactory-via-the-api-and-cli/).

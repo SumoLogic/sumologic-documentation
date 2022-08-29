@@ -2,7 +2,7 @@
 id: okta
 title: Okta
 sidebar_label: Okta
-description: tk
+description: Configure an HTTP source to ingest Okta log messages and send them to CSE’s Okta system parser.
 ---
 
 ## Step 1: Configure collection

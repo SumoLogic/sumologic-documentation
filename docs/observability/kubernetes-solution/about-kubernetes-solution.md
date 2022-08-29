@@ -2,7 +2,7 @@
 id: about-kubernetes-solution
 title: About the Sumo Logic Kubernetes Solution
 sidebar_label: Overview
-description: Our Kubernetes Solution provides an end-to-end experience that takes you from configuring collection and installing apps, to monitoring, managing, and troubleshooting your Kubernetes environment.
+description: Learn how Sumo Logic brings ease-of-use to Kubernetes, how to get the Kubernetes Solution, and the Sumo Logic apps that are available for Kubernetes platforms.
 ---
 
 The Sumo Logic Kubernetes Solution provides an end-to-end experience that takes you from configuring collection and installing apps, to monitoring, managing, and troubleshooting your Kubernetes environment.
@@ -80,7 +80,7 @@ Pods reside on a given node, and a container can contain several pods. For pods,
 ## Sumo Logic Kubernetes Solution
 The Sumo Logic Kubernetes Solution provides observability into all the critical areas of your Kubernetes environment mentioned above. The solution provides an easy way to setup collection to collect, logs, metrics and traces from your Kubernetes environment. It also helps you install the relevant OOB dashboards, alerts and other content to monitor, manage, and troubleshoot your Kubernetes environment quickly and effectively.
 
-Our solution provides visibility across the full K8s application stack. It allows you to monitor & track the health of:
+Our solution provides visibility across the full K8s application stack. It allows you to monitor and track the health of:
 
 * Nodes (Physical or Virtual) that are running the Kubernetes Cluster
 * Kubernetes Control Plane, including the API server, etcd, controller manager, and scheduler that manage the provisioning of containerized applications on the cluster

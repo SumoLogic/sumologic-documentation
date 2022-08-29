@@ -2,7 +2,7 @@
 id: partner-app
 title: Partner App Template
 sidebar_label: Partner App Template
-description: tk
+description: Using the Sumo Logic Partner App Template.
 ---
 
 :::sumo
@@ -33,7 +33,7 @@ Enter a list of log types, usually hyperlinked to vendor docs
 
 Get a sample from app developer and replace this text with it.
 
-### Query sample
+### Sample Query
 
 Get a sample from the app developer and replace this text with it.
 
@@ -47,7 +47,7 @@ post query here
 Write the section heading and section to reflect what’s being collected: logs, metrics, or logs and metrics.
 :::
 
-This page has instructions for collecting logs for the Sumo App for "AppName".
+This section has instructions for collecting logs for the Sumo App for "AppName".
 
 ### Collection process overview
 Note: Include this section in doc if collection is not simple. Include a diagram, as appropriate. For an example, see Collection process for GCP services.  
@@ -64,7 +64,7 @@ Include a description and numbered list of steps. Copy, paste, and fill out for 
 ### Collection step n. Step Description
 
 ## Install the "AppName" App and View the Dashboards
-This page has instructions for installing the Sumo App for "AppName" and descriptions of each of the app dashboards.
+This section has instructions for installing the Sumo App for "AppName" and descriptions of each of the app dashboards.
 
 ## Install the Sumo Logic App
 Now that you have set up collection, install the Sumo Logic App for Salesforce to use the preconfigured searches and Dashboards that provide insight into your data.
@@ -77,16 +77,16 @@ Locate and install the app you need from the App Catalog. If you want to see a p
 1. Select the version of the service you are using and click **Add to Library**.
 
     :::note
-    Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library](https://help.sumologic.com/01Start-Here/Library/Apps-in-Sumo-Logic/Install-Apps-from-the-Library).
+    Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library](/docs/get-started/library/install-apps).
     :::
 
-1. To install the app, complete the following fields.
+3. To install the app, complete the following fields.
 
     * **App Name.** You can retain the existing name, or enter a name of your choice for the app.
     * **Data Source.** Select either of these options for the data source.
 
         * Choose **Source Category**, and select a source category from the list.
-        * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (_sourceCategory=MyCategory).
+        * Choose **Enter a Custom Data Filter**, and enter a custom source category beginning with an underscore. Example: (`_sourceCategory=MyCategory`).
 
     * **Advanced.** Select the Location in Library (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
 

@@ -1,14 +1,15 @@
 ---
 id: log-sensor-troubleshooting
+title: Log Sensor Troubleshooting
+description: Learn how to collect Log Sensor status and data to support troubleshooting efforts.
 ---
 
-# Log Sensor Troubleshooting
 
 The CSE Log Sensor has reached end of life and is no longer supported. Please migrate to a Sumo Logic Hosted Collector or Installed Collector. For more information, see the [end of life notice](https://app.getbeamer.com/cloudsiementerprise/en/end-of-life-notice-_-cloud-siem-enterprise-sensors). 
 
 The CSE Log Sensor collects log data and sends it to the legacy CSE server. (The Log Sensor does not send log data to the Sumo Logic platform. Sumo Logic collectors serve that purpose.)
 
-If your organization uses the Log Sensor, this page provides instructions for gathering troubleshooting information CSE support may request if you have problems with the sensor.
+If your organization uses the Log Sensor, This section provides instructions for gathering troubleshooting information CSE support may request if you have problems with the sensor.
 
 ## Restart sensor
 

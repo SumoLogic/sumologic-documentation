@@ -1,8 +1,7 @@
 ---
 id: integrate-google-iam-service
+title: Integrate Sumo Logic with Google Apps (G Suite) IAM
 ---
-
-# Integrate Sumo Logic with Google Apps (G Suite) IAM 
 
 ## Availability
 
@@ -28,9 +27,9 @@ For key information about SAML in Sumo, see the [Limitations](set-up-saml.md) 
 
     ![img](/img/security/ga_saml_enable_sso.png)
 
-1. The **Google IdP Information** page appears. Make note of the following URLs, as you will supply them when you configure SAML in Sumo: 
+1. The **Google IdP Information** page appears. Make note of the following URLs, as you will supply them when you configure SAML in Sumo:
 
-   * **SSO URL**. You'll enter this URL as the **Authn Request URL** when you perform the steps in [Configure Sumo Logic SAML](#configure-sumo-logic-saml) below. 
+   * **SSO URL**. You'll enter this URL as the **Authn Request URL** when you perform the steps in [Configure Sumo Logic SAML](#configure-sumo-logic-saml) below.
    * **Entity ID**. You'll enter this URL as the **Issuer** in Sumo Logic when you perform the steps in [Configure Sumo Logic SAML](#configure-sumo-logic-saml) below.
 
     ![img](/img/security/ga_saml_sso.png)
@@ -39,10 +38,10 @@ For key information about SAML in Sumo, see the [Limitations](set-up-saml.md) 
 1. Click **Next**.
 1. In **Basic Information for your Custom App** page, enter the following:
 
-    ![img](/img/security/ga_saml_basic.png) 
-    
-    * **Application Name.** Enter Sumo Logic. 
-    * **Description.** Sumo Logic is the industry's leading, secure cloud-based log monitoring, management and analytics /img/security that leverages big data for real-time IT insights. 
+    ![img](/img/security/ga_saml_basic.png)
+
+    * **Application Name.** Enter Sumo Logic.
+    * **Description.** Sumo Logic is the industry's leading, secure cloud-based log monitoring, management and analytics /img/security that leverages big data for real-time IT insights.
     * **Upload Logo.** Use sumologic.png
 
 1. Click **Next**.
@@ -61,17 +60,17 @@ For key information about SAML in Sumo, see the [Limitations](set-up-saml.md) 
 1. **Issuer.** Enter the **Entity ID** from the **Google IdP Information** dialog.
 1. **X.509 Certificate.** Open the certificate file that you downloaded from the **Google IdP Information** dialog in a text editor. Copy and paste the contents into this field.
 1. **Attribute Mapping**. Select **Use SAML attribute** and type the email attribute name in the text box. 
-1. **SP Initiated Login Configuration**. (Optional) This step has instructions for setting up SP-initiated login. When SP initiated login has been enabled, your SAML configuration will appear as an additional authentication option within your subdomain-enabled account login page. SP initiated login requires a custom Sumo Logic subdomain. If a custom subdomain has not yet been configured for your org, following the instructions in the [Change account subdomain](../../manage-subscription/manage-org-settings.md) section of the *Manage Organization* topic. 
+1. **SP Initiated Login Configuration**. (Optional) This step has instructions for setting up SP-initiated login. When SP initiated login has been enabled, your SAML configuration will appear as an additional authentication option within your subdomain-enabled account login page. SP initiated login requires a custom Sumo Logic subdomain. If a custom subdomain has not yet been configured for your org, following the instructions in the [Change account subdomain](../../manage-subscription/manage-org-settings.md) section of the *Manage Organization* topic.
 
-   1. **Authn Request URL.** Enter the **SSO URL** from the **Google IdP Information** dialog. 
+   1. **Authn Request URL.** Enter the **SSO URL** from the **Google IdP Information** dialog.
    1. **Disable Requested Authn Context**. (Optional) If you check this option, Sumo will not include the RequestedAuthnContext element of the SAML AuthnRequests it sends to your Idp. This option is useful if your IdP does not support the RequestedAuthnContext element.
    1. **Sign Authn Request.** (Optional) If you select this option, Sumo will send signed Authn requests to your IdP. When you click this option, a Sumo-provided X-509 certificate is displayed. You can configure your IDP with this certificate, to verify the signature of the Authn requests sent by Sumo. 
 
 1. **Roles Attribute.** When you click this option, the **Roles** **Attribute** field appears. Enter the SAML Attribute Name that is sent by the IdP as part of the assertion. For details, see [Set Up SAML for Single Sign-On](set-up-saml.md).
-1. **On-Demand provisioning.** Select this option and specify the following attributes to have Sumo Logic automatically create accounts when a user first logs on. For more information, see [Set Up SAML for Single Sign-On](set-up-saml.md). 
-   
-   1. **First Name Attribute.** FirstName 
-   1. **Last Name Attribute.** LastName 
+1. **On-Demand provisioning.** Select this option and specify the following attributes to have Sumo Logic automatically create accounts when a user first logs on. For more information, see [Set Up SAML for Single Sign-On](set-up-saml.md).
+
+   1. **First Name Attribute.** FirstName
+   1. **Last Name Attribute.** LastName
    1. **On Demand Provisioning Roles**. Specify the Sumo RBAC roles you want to assign when user accounts are provisioned. (The roles must already exist.)
 
 1. **Logout Page**. Select this option and enter a URL if you'd like to point all users to the URL after logging out of Sumo Logic. For more information, see [Set Up SAML for Single Sign-On.](set-up-saml.md)
@@ -82,20 +81,20 @@ For key information about SAML in Sumo, see the [Limitations](set-up-saml.md) 
 
 1. Go back to the **Google Auth Configuration – /img/security Provider Details** dialog, and enter the following information:
 
-    ![img](/img/security/ga_saml_service_provider.png) 
-    
+    ![img](/img/security/ga_saml_service_provider.png)
+
     * **ACS URL.** This is the **Assertion Consumer** from Sumo Logic
-    * **Entity ID.** Enter the following URL, substituting your actual Sumo Logic [deployment] (../../../APIs/General-API-Information/Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security.md "Sumo Logic Endpoints and Firewall Security"), for example us1, us2, eu, and so on, for \<*deployment*\\>: `https:///img/security\<deploymen\>.sumologic.com` 
+    * **Entity ID.** Enter the following URL, substituting your actual Sumo Logic [deployment] (../../../APIs/General-API-Information/Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security.md "Sumo Logic Endpoints and Firewall Security"), for example us1, us2, eu, and so on, for \<*deployment*\\>: `https:///img/security\<deploymen\>.sumologic.com`
     * **Name ID.** Basic Information – Primary Email
     * **Name ID Format.** EMAIL
 
 1. Click **Next**.
 1. In the **Attribute Mapping** dialog, make the following selections:
 
-    ![img](/img/security/ga_saml_attribute_mapping.png) 
-    
-    * **FirstName.** Select **Basic Information** and **First Name**. 
-    * **LastName.** Select **Basic Information** and **Last Name**. 
+    ![img](/img/security/ga_saml_attribute_mapping.png)
+
+    * **FirstName.** Select **Basic Information** and **First Name**.
+    * **LastName.** Select **Basic Information** and **Last Name**.
     * **Email.** Select **Basic Information** and **Primary Email**.
 
 1. Click **Finish**.
@@ -107,7 +106,7 @@ For key information about SAML in Sumo, see the [Limitations](set-up-saml.md) 
 
     ![img](/img/security/ga_saml_on.png)
 
-1. After a short delay, the new Sumo Logic SAML App will be displayed in your Google Apps login menu. In some cases, it may take up to 10 minutes for the new app to appear. 
+1. After a short delay, the new Sumo Logic SAML App will be displayed in your Google Apps login menu. In some cases, it may take up to 10 minutes for the new app to appear.
 
     ![img](/img/security/ga_saml_google_menu.png)
 
@@ -124,7 +123,7 @@ After you create a SAML configuration, you can require users to sign in using SA
 If you intend to require Sumo users to sign-in using SAML, as described in the following section, Require SAML for sign-in, it is a best practice to first check whether some users are still logging in directly, instead of using SAML. You can run the following query to see, for a particular time range, whether users signed in using SAML or with their username and password:
 
 ```sql
-_index=sumologic_audit action=login | count by class, sourceuser 
+_index=sumologic_audit action=login | count by class, sourceuser
 ```
 
 :::important
@@ -136,11 +135,11 @@ The query results show, for each user that has accessed Sumo over the time range
 * "SAML" indicates the user signed in using SAML.  
 * "SESSION" indicates the user authenticated by entering a username and password.  
 
-If the same user accessed Sumo using both methods (SAML and direct logon) during the time range, the query results will include a row for each method, showing how many times each method was used. 
+If the same user accessed Sumo using both methods (SAML and direct logon) during the time range, the query results will include a row for each method, showing how many times each method was used.
 
 ![saml-use-query.png](/img/security/saml-use-query.png) 
 
-### Require SAML for sign-in 
+### Require SAML for sign-in
 Click Require SAML Sign In to require users to sign in using SAML.
 
 :::tip
@@ -162,7 +161,7 @@ We do not recommend denying all users password access to Sumo even if you want t
 ## SAML lockdown limitations
 There are user account changes an admin cannot perform when the **Require SAML Sign In** option is selected:
 
-* You cannot change a user's login email address when SAML is locked down. 
+* You cannot change a user's login email address when SAML is locked down.
 * You cannot reset a user's password when SAML is locked down.
 * If a user's account has been locked as a result of too many failed login attempts, you cannot unlock the account while SAML is locked down.
 

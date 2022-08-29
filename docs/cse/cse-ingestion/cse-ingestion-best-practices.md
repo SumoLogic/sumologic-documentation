@@ -2,7 +2,7 @@
 id: cse-ingestion-best-practices
 title: CSE Ingestion Best Practices
 sidebar_label: CSE Ingestion Best Practices
-description: tk
+description: Learn how to send log messages collected by a Sumo Logic Source or Cloud-to-Cloud Connector on to CSE to be transformed into Records.
 ---
 
 This topic has information about sending log messages collected by a Sumo Logic Source or Cloud-to-Cloud Connector on to CSE to be transformed into Records. 

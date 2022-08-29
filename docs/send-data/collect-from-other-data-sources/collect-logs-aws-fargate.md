@@ -1,8 +1,9 @@
 ---
 id: collect-logs-aws-fargate
+title: Collect Logs from AWS Fargate
 ---
 
-# Collect Logs from AWS Fargate
+#
 
 This page describes how to collect logs from AWS Fargate.
 
@@ -26,7 +27,7 @@ We recommend collecting Amazon CloudWatch Logs using our AWS Lambda function
 
 ## Collect CloudWatch Logs using a CloudFormation Template
 
-This page has instructions for creating AWS resources using a Sumo-provided CloudFormation template. The template specifies the resources necessary to send Amazon CloudWatch Logs to Sumo, including a Lambda function for sending logs, another Lambda function configured with a dead letter queue for resending messages as necessary, and associated roles and permissions. For more information about the resources created, see [Download the CloudFormation template](#download-the-cloudformation-template).
+This section has instructions for creating AWS resources using a Sumo-provided CloudFormation template. The template specifies the resources necessary to send Amazon CloudWatch Logs to Sumo, including a Lambda function for sending logs, another Lambda function configured with a dead letter queue for resending messages as necessary, and associated roles and permissions. For more information about the resources created, see [Download the CloudFormation template](#download-the-cloudformation-template).
 
 CloudFormation based approach is recommended. If you would rather manually configure a Lambda function see [Collect Amazon CloudWatch Logs with Lambda Function](amazon-cloudwatch-logs/collect-with-lambda-function.md).
 
@@ -37,7 +38,7 @@ AWS Lambda functions are our preferred method for sending Amazon CloudWatch Logs
 ## Add a Hosted Collector and HTTP Source
 
 1. In Sumo Logic, configure a [Hosted Collector](../configure-hosted-collector.md).
-1. In Sumo Logic, configure an [HTTP Source](/docs/send-data/sources/sources-hosted-collectors/http-logs-metrics-source).
+1. In Sumo Logic, configure an [HTTP Source](/docs/send-data/sources/hosted-collectors/http-logs-metrics-source).
 
 :::important
 When you configure the HTTP Source, make sure to save the HTTP Source Address URL. You will need this to configure the Lambda Function.  
@@ -191,12 +192,12 @@ In the CloudFormation template, define the number of messages in the Dead Letter
    * **EmailID** (Optional) Used for alerts.
    * **IncludeLogGroupInfo.**  Set to true to include loggroup/logstream values in logs. The default value is     False. For AWS Lambda Logs **IncludeLogGroupInfo** must be set to **True**; for VPC Flow Logs it's optional. 
    * **LogFormat.** For VPC logs, choose either VPC-JSON (JSON format) or VPC-RAW (raw messages). The default value is Others. 
-   * **LogStreamPrefix** (Optional) Enter comma separated list of logStream name prefixes to filter by logStream. Please note this is seperate from a logGroup. This is used to only send certain logStreams within a cloudwatch logGroup(s).  LogGroup(s) still need to be subscribed to the created Lambda function     (`SumoCWLogsLambda-<Auto-Genereted-Suffix>`), regardless of what is input for this value. 
+   * **LogStreamPrefix** (Optional) Enter comma separated list of logStream name prefixes to filter by logStream. Please note this is seperate from a logGroup. This is used to only send certain logStreams within a cloudwatch logGroup(s).  LogGroup(s) still need to be subscribed to the created Lambda function     (`SumoCWLogsLambda-<Auto-Genereted-Suffix>`), regardless of what is input for this value.
 
     :::note
     LogStreamPrefix field does not accept special characters (`[|\\{}()[\]^$+*?.-]`). For example, you can use the comma-separated list like test-name, test-logs as the LogStream name prefixes.
     :::
-    
+
     * **NumOfWorkers.** (Optional) Increase this value to speed up dead letter queue (DLQ) processing.
     * **SumoEndPointURL** (Required). Enter the HTTP Source Address URL from [Add a Hosted Collector and HTTP Source](#add-a-hosted-collector-and-http-source).
 
@@ -208,7 +209,7 @@ In the CloudFormation template, define the number of messages in the Dead Letter
 After few minutes you will see CREATE_COMPLETE in the Status column.
 
 :::important
-If you are using an existing log group or if you don’t want to send logs to the default group **SumoCWLogGroup** then you must do one of the following:  [Manually subscribe the **SumoCWLogsLambda** to an existing CloudWatch Log Group](/docs/send-data/collect-from-other-data-sources/amazon-cloudwatch-logs), create a [subscription filter](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Subscriptions.html) manually, or [Auto-Subscribe AWS Log Groups to a Lambda Function](autosubscribe-arn-destination.md).
+If you're using an existing log group or if you don’t want to send logs to the default group **SumoCWLogGroup** then you must do one of the following:  [Manually subscribe the **SumoCWLogsLambda** to an existing CloudWatch Log Group](/docs/send-data/collect-from-other-data-sources/amazon-cloudwatch-logs), create a [subscription filter](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Subscriptions.html) manually, or [Auto-Subscribe AWS Log Groups to a Lambda Function](autosubscribe-arn-destination.md).
 :::
 
 ## Validate email address for alarms
@@ -216,7 +217,7 @@ If you are using an existing log group or if you don’t want to send logs to th
 Log in to the email account whose address you provided when performing the configuration described in [Create a stack on the AWS CloudFormation console](#create-a-stack-on-the-aws-cloudformation-console) above. Look for an email with subject "AWS Notification - Subscription Confirmation", like the example shown below.
 
 ![aws-notification.png](/img/send-data/aws-notification.png)  
-  
+
 To validate the email address, click **Confirm subscription** in the email.
 
 ## Dealing with alarms
@@ -240,7 +241,7 @@ If you only need to collect logs from a few additional CloudWatch Log groups, yo
 1. Select the radio button next to the CloudWatch Log Group that you want to stream to Sumo Logic, click **Actions**, then click **Stream to AWS Lambda**.
 
     ![stream-to-aws-lambda.png](/img/send-data/stream-to-aws-lambda.png)
-1. Select the Lambda function that begins with "SumoCWLogsLambda", then click **Next**. 
+1. Select the Lambda function that begins with "SumoCWLogsLambda", then click **Next**.
 
     ![lambda-function.png](/img/send-data/lambda-function.png)
 1. Select the appropriate log format, then click **Next.**
@@ -254,7 +255,7 @@ If you want to collect logs from multiple Log Groups, you can use Sumo’s LogGr
 
 If you can't use AWS Lambda or CloudFormation to collect logs from CloudWatch, choose one of the following methods:
 
-* **A Lambda function without CloudFormation.** To manually configure a Lambda function, see [Collect Amazon CloudWatch Logs with Lambda Function](amazon-cloudwatch-logs/collect-with-lambda-function.md). 
+* **A Lambda function without CloudFormation.** To manually configure a Lambda function, see [Collect Amazon CloudWatch Logs with Lambda Function](amazon-cloudwatch-logs/collect-with-lambda-function.md).
 
     :::note
     The Lambda function is not as comprehensive or robust as the CloudFormation template, because it does not include the alarm resources.

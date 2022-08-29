@@ -2,10 +2,10 @@
 id: kemp-loadmaster
 title: Kemp LoadMaster
 sidebar_label: Kemp LoadMaster
-description: tk
+description: Configure a syslog source to ingest Kemp LoadMaster messages to be parsed by CSE’s system parser for Kemp LoadMaster.
 ---
 
-This page has instructions for collecting Kemp LoadMaster messages and sending them to Sumo Logic to be ingested by CSE.
+This section has instructions for collecting Kemp LoadMaster messages and sending them to Sumo Logic to be ingested by CSE.
 
 The Sumo Logic parser for Kemp LoadMaster logs primarily supports wafd (Web Application Firewall daemon) logging and various l4d (Layer 4 Load Balancing daemon) log messages. Other messages will parse, but a parser [local configuration](../cse-schema/parser-editor.md) might be required to actually extract all fields.  
 

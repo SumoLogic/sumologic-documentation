@@ -1,8 +1,9 @@
 ---
 id: create-a-field-extraction-rule
+title:  Create a Field Extraction Rule
 ---
 
-# Create a Field Extraction Rule
+
 
 You can create a field extraction rule of your own from scratch, or depending on your data source, you can use one of our templates that we provide in the drop-down menu.
 
@@ -28,11 +29,11 @@ To create a Field Extraction Rule:
 
 1. Go to **Manage Data** \> **Logs** \> **Field Extraction Rules**.
 1. Click the **+ Add** button on the top right of the table.
-1. The following form appears:
+1. The **Add Field Extraction Rule** form will appear:
 
     ![Create Field extraction rule with dynamic parsing.png](/img/field-extraction-rules/create-fer.png)
 
-1. Enter the following options: 
+1. Enter the following options:
 
     * **Rule Name**. Type a name that makes it easy to identify the rule.
     * **Applied At**. There are two types available, Ingest Time and Run Time. The main differences are Run Time only supports JSON data and the time that Sumo parses the fields. The following is an overview of the differences:
@@ -54,7 +55,7 @@ To create a Field Extraction Rule:
 
     :::sumo Best Practices
     If you are not using Partitions we recommend using [metadata](../../search/get-started-with-search/search-basics/built-in-metadata.md) fields like `_sourceCategory`, `_sourceHost` or `_collector` to define the scope.
-    
+
     We recommend creating a separate Partition for your JSON dataset and use that Partition as the scope for run time field extraction. For example, let's say you have AWS Cloudtrail logs, and they are stored in `_view=cloudtrail` Partition in Sumo. You can create a Run Time FER with the scope `_view=cloudtrail`. Creating a separate Partition and using it as scope for a run time field extraction ensures that auto parsing logic only applies to necessary Partitions.
     :::
 

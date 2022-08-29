@@ -1,15 +1,15 @@
 ---
 id: cloud-sensor-guide
+title: Cloud Sensor Guide
+description: Learn about the Cloud Sensor Integrations and functionality.
 ---
 
-# Cloud Sensor Guide
 
 :::note
-The CSE Cloud Sensor has reached end of life and is no longer supported. Please migrate to a Sumo Logic Hosted Collector. For more information,
-see the [end of life notice](https://app.getbeamer.com/cloudsiementerprise/en/end-of-life-notice-_-cloud-siem-enterprise-sensors).
+The CSE Cloud Sensor has reached end of life and is no longer supported. Please migrate to a Sumo Logic Hosted Collector. For more information, see the [end of life notice](https://app.getbeamer.com/cloudsiementerprise/en/end-of-life-notice-_-cloud-siem-enterprise-sensors).
 :::
 
-This page has instructions for configuring CSE Cloud Sensor integrations, which allow you to collect log data from a variety of cloud-based applications and storage services.
+This section has instructions for configuring CSE Cloud Sensor integrations, which allow you to collect log data from a variety of cloud-based applications and storage services.
 
 ## Cloud Sensor Overview
 

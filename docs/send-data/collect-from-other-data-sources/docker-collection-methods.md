@@ -1,8 +1,9 @@
 ---
 id: docker-collection-methods
+title: Docker Collection Methods
 ---
 
-# Docker Collection Methods
+#
 
 This page describes and compares alternative methods for collecting Docker logs and metrics. You can employ these methods in self-managed Docker environments or with managed Docker services like ECS and Swarm.
 
@@ -51,7 +52,7 @@ You can bake the Collector into an image, install it manually, or use automat
         * Container Logs
         * Container Metrics
         * Host Logs
-        * Host Metrics (Sumo's [Host Metrics source](../sources/sources-installed-collectors/host-metrics-source.md) is required.)
+        * Host Metrics (Sumo's [Host Metrics source](../sources/installed-collectors/host-metrics-source.md) is required.)
     * Logs are cached locally, so if a source is throttled by Sumo, you won’t drop data.  
     * You can bake Installed Collectors into AMIs to allow for consistent deployments across all your hosts.
     * Configurable metadata. You can use variables available from Docker and the Docker host to configure the sourceCategory and sourceHost for a Docker log source or a Docker stats. For more information, see Configure sourceCategory and sourceHost using variables.
@@ -77,7 +78,7 @@ Logic collector.
 
 The following table describes the collection methods that are supported by different Docker platforms.
 
-:::note 
+:::note
 The Docker Logging Driver is supported with Docker Version 18.03.0-ce or higher for the following table.
 :::
 
@@ -92,6 +93,6 @@ The Docker Logging Driver is supported with Docker Version 18.03.0-ce or higher 
 
 Sumo provides the following apps for Docker:  
 
-* [Docker EE] (/07Sumo-Logic-Apps/10Containers_and_Orchestration/Docker_Apps/Docker_EE): Supports FluentD plugin to collect Docker platform logs andworks in conjunction with Docker ULM.
-* [Docker] (/07Sumo-Logic-Apps/10Containers_and_Orchestration/Docker_Apps/Docker): Supports either the [Installed Collector on Docker Host](#installed-collector-on-docker-host) or [Collector as a Container](#collector-as-a-container) collection strategy.
-* [Docker ULM] (/07Sumo-Logic-Apps/10Containers_and_Orchestration/Docker_Apps/Docker_ULM): Supports the [Installed Collector on Docker Host](#installed-collector-on-docker-host) collection strategy.
+* [Docker EE](/docs/integrations/containers-orchestration/docker-enterprise-edition.md): Supports FluentD plugin to collect Docker platform logs and works in conjunction with Docker ULM.
+* [Docker](/docs/integrations/containers-orchestration/docker-community-edition.md): Supports either the [Installed Collector on Docker Host](#installed-collector-on-docker-host) or [Collector as a Container](#collector-as-a-container) collection strategy.
+* [Docker ULM](/docs/integrations/containers-orchestration/docker-ulm.md): Supports the [Installed Collector on Docker Host](#installed-collector-on-docker-host) collection strategy.

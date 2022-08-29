@@ -3,7 +3,13 @@ slug: /observability/kubernetes-solution
 title: Kubernetes Solution
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src={useBaseUrl('img/icons/operations/kubernetes.png')} alt="icon" width="75"/>
+
 This guide provides an end-to-end solution for deploying, managing, monitoring, and administering your Kubernetes environment. You can view topics from the following list in the order of your choice, or navigate the structured path at the top of the [About the Sumo Logic Kubernetes Solution](about-kubernetes-solution.md) page for a complete end-to-end experience. 
+
+## Guides
 
 In this section, we will introduce the following concepts:
 
@@ -46,3 +52,30 @@ In this section, we will introduce the following concepts:
       </div>
     </div>
   </div>
+
+
+
+## Next Steps
+
+Once you've set up collection, installed Kubernetes apps, and familiarized yourself with the dashboards. Now you want to become more adept at monitoring and troubleshooting your applications in your Kubernetes environment. Here are a few options for you to explore.
+
+Once you have completed the above steps, you'll have installed the collection as well as the core Kubernetes Dashboards and alerts. To get started, open a new **Explore** tab in Sumo Logic and view your Kubernetes App Dashboards.
+
+If you don't see data in Sumo Logic, review our [troubleshooting guide](https://github.com/SumoLogic/sumologic-kubernetes-collection/blob/main/deploy/docs/Troubleshoot_Collection.md).
+
+#### Kubernetes Partner Apps
+
+We provide an array of Partner Apps designed specifically for Kubernetes. The following CI/CD Partner Apps are initially available.
+![K8s_PartnerApps_CI-CD.png](/img/kubernetes/K8s_PartnerApps_CI-CD.png)
+
+
+#### Sumo Logic Security Partner Apps
+
+We also provide a selection of security-focused Partner Apps with specialized detection and investigation features. The following a few of the Security Partner Apps that are initially available.
+![K8s_PartnerApps_Security.png](/img/kubernetes/K8s_PartnerApps_Security.png)
+
+
+#### Get Certified
+
+The Sumo Kubernetes Analyst Certification is a hands-on class that shows you how to expand your knowledge of Kubernetes by solving common use cases.
+![K8s_Kubernetes_Analyst_Cert.png](/img/kubernetes/K8s_Kubernetes_Analyst_Cert.png)

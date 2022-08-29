@@ -15,7 +15,7 @@ The AWS Network Load Balancer app uses the following logs and metrics:
 
 * [AWS Network Load Balancer metrics](https://docs.aws.amazon.com/elasticloadbalancing/latest/network/load-balancer-cloudwatch-metrics.html)
 
-### Query sample (Metric based) 
+### Sample Query (Metric based) 
 
 Active Flows (Connections) by Load Balancer:
 

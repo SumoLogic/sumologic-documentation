@@ -4,7 +4,7 @@ id: parameters-command-line-installer
 
 # Parameters for the Command Line Installer
 
-The following tables provide and reference the available parameters for Collector installation using the command line installer. For details and example commands on Collector installation, see [Install a Collector on Linux](../install-collector-linux.md), [Install a Collector on MacOS](../install-collector-macos.md), and [Install a Collector on Windows](../install-collector-windows.md). 
+The following tables provide and reference the available parameters for Collector installation using the command line installer. For details and example commands on Collector installation, see [Install a Collector on Linux](../linux.md), [Install a Collector on MacOS](../macos.md), and [Install a Collector on Windows](../windows.md). 
 
 :::important
 Collector versions 19.253-26+ support wrapper configuration parameters.

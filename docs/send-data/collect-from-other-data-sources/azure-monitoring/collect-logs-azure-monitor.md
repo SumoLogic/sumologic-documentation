@@ -1,10 +1,9 @@
 ---
 id: collect-logs-azure-monitor
+title: Collect Logs from Azure Monitor
 ---
 
-# Collect Logs from Azure Monitor
-
-To collect logs from the Azure Monitor, if you are not using the Sumo Logic FedRamp deployment,  use the new [Cloud to Cloud Integration for Azure](../../sources/sources-hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs-source.md) to create the source and use the same source category while installing the app. 
+To collect logs from the Azure Monitor, if you are not using the Sumo Logic FedRamp deployment,  use the new [Cloud to Cloud Integration for Azure](../../sources/hosted-collectors/cloud-to-cloud-integration-framework/azure-event-hubs-source.md) to create the source and use the same source category while installing the app. 
 
 :::note
 The sections below are either for FedRamp Sumo Logic deployments or if you have been advised by the Sumo Logic support team to not use the Cloud to Cloud Integration based on your Azure environments. 
@@ -32,7 +31,7 @@ For more information about the solution strategy, see [Azure Monitoring](/docs/s
 ![Azure-logs.png](/img/send-data/Azure-logs.png)
 
 :::note
-This page has instructions for configuring a pipeline for shipping logs available from [Azure Monitor](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-get-started) to an Event Hub, on to an Azure Function, and finally to an HTTP Source on a Hosted Collector in Sumo Logic. Azure Monitor collects metrics and as well as logs. The pipeline described below is for logs, not metrics.
+This section has instructions for configuring a pipeline for shipping logs available from [Azure Monitor](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-get-started) to an Event Hub, on to an Azure Function, and finally to an HTTP Source on a Hosted Collector in Sumo Logic. Azure Monitor collects metrics and as well as logs. The pipeline described below is for logs, not metrics.
 :::
 
 ## Configure log collection 
@@ -44,7 +43,7 @@ This section has instructions for setting up the ingestion pipeline, from Azure 
 In this step, you configure an HTTP Source to receive logs from the Azure function.
 
 1. Select a hosted collector where you want to configure the HTTP Source. If desired, create a new hosted collector, as described on [Configure a Hosted Collector](../../configure-hosted-collector.md).
-1. Configure an HTTP Source, as described on [HTTP Logs and Metrics Source](/docs/send-data/sources/sources-hosted-collectors/http-logs-metrics-source). 
+1. Configure an HTTP Source, as described on [HTTP Logs and Metrics Source](/docs/send-data/sources/hosted-collectors/http-logs-metrics-source). 
 
 ### Step 2. Configure Azure resources using ARM template
 
@@ -66,9 +65,9 @@ In this step, you use a Sumo-provided Azure Resource Manager (ARM) template to c
 
    1. Create a new Resource Group (recommended) or select an existing one.
    1. Choose Location.
-   1. In the **Sumo Endpoint URL** field, enter the URL of the HTTP Source you configured in [Step 1](#step-1-configure-an-http-source). 
-   1. Agree to the terms and conditions. 
-   1. Click **Purchase**. 
+   1. In the **Sumo Endpoint URL** field, enter the URL of the HTTP Source you configured in [Step 1](#step-1-configure-an-http-source).
+   1. Agree to the terms and conditions.
+   1. Click **Purchase**.
 
     ![pipeline-custom-deployment.png](/img/send-data/azure-custom-deployment.png)
 
@@ -84,7 +83,7 @@ In this step, you use a Sumo-provided Azure Resource Manager (ARM) template to c
 
     ![storage-accts-azure.png](/img/send-data/storage-accts-azure.png)
 
-1. Under **Blob Service**, click **Containers**, then click **+ Container**, enter the Name** azureaudit-failover**, and select **Private** for the **Public Access Level**. Click **OK**. 
+1. Under **Blob Service**, click **Containers**, then click **+ Container**, enter the Name** azureaudit-failover**, and select **Private** for the **Public Access Level**. Click **OK**.
 
     ![azure-containers.png](/img/send-data/azure-containers.png)
 
@@ -147,7 +146,7 @@ Perform the steps below to verify that the Azure function is sending messages to
 1. Click **EventHubs_Logs** under the **Function** blade.
 1. Copy and paste the [sample payload](https://s3.amazonaws.com/appdev-cloudformation-templates/TestPayload.json "https://s3.amazonaws.com/appdev-cloudformation-templates/TestPayload.json") into the **Request Body** window 
 1. Click **Run**. This sends the test payload to the URL for the HTTP Source you configured.
-1. Check the output, and make sure you see “Successfully sent to Sumo” log messages. 
+1. Check the output, and make sure you see “Successfully sent to Sumo” log messages.
 
     ```
     2018-04-17T20:30:09.681 [Info] Successfully sent to Sumo
@@ -158,7 +157,7 @@ Perform the steps below to verify that the Azure function is sending messages to
 1. In Sumo, open a Live Tail tab and make sure you receive the event. Search by the source category you assigned to the HTTP Source that receives the log data, for example:
 
     `_sourceCategory="azure/ad"`
-    
+
     ![livetail.png](/img/send-data/livetail.png)
 
 ### Azure error when exporting logs 
@@ -166,7 +165,7 @@ Perform the steps below to verify that the Azure function is sending messages to
 If you receive an Azure error similar to the following when exporting logs, it means that Azure Active Directory is not associated with an Azure subscription. Follow the instructions to [Associate or add an Azure subscription to your Azure Active Directory tenant](https://docs.microsoft.com/en-us/azure/active-directory/fundamentals/active-directory-how-subscriptions-associated-directory).
 
 ```
-An Azure subscription is required to use this capability. 
+An Azure subscription is required to use this capability.
 Please create an Azure subscription to get started.
 ```
 
@@ -182,7 +181,7 @@ CallStack - Managed Exception
 
 The above error occurs in certain situations the runtime initiates a host shutdown via HostingEnvironment.InitiateShutdown, for example when an unhandled global exception occurs, when a function TimeoutException is thrown, or when performance counter thresholds are exceeded (HostHealthMonitor).
 
-If you are using this function for quite some time then we recommend redeploying the solution with new ARM templates.
+If you're using this function for quite some time then we recommend redeploying the solution with new ARM templates.
 
 If the error still persists in BlobTaskProducer function and failure rate \> 1% then
 
@@ -235,4 +234,4 @@ If the error still persists in BlobTaskConsumer function and failure rate \> 1% 
 
 ### Azure Integration FAQs 
 
-For answers to frequently asked questions (FAQs) about integrating Azure into an enterprise environment using ARM (Advanced RISC Machine) architecture, see [Azure Integrations using ARM](https://help.sumologic.com/07Sumo-Logic-Apps/04Microsoft-and-Azure/Azure_Integration_using_ARM_-_FAQs).
+For answers to frequently asked questions (FAQs) about integrating Azure into an enterprise environment using ARM (Advanced RISC Machine) architecture, see [Azure Integrations using ARM](/docs/integrations/microsoft-azure/arm-integration-faq).
