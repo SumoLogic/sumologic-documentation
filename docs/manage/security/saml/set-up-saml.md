@@ -1,8 +1,8 @@
 ---
 id: set-up-saml
+title: Set Up SAML for Single Sign-On
 ---
 
-# Set Up SAML for Single Sign-On
 
 ## Availability
 
@@ -19,10 +19,10 @@ In addition to basic SAML configuration, you can choose optional on-demand user 
 
 The provisioning process works as follows:
 
-1. Identify the service provider you will use for SSO. For example: 
+1. Identify the service provider you will use for SSO. For example:
 
     * [AWS Single Sign-On](integrate-aws-sso.md)
-    * [Azure Active Directory (AD)](integrate-sumo-with-azure-ad.md) 
+    * [Azure Active Directory (AD)](integrate-sumo-with-azure-ad.md)
     * [Google IAM](integrate-google-iam-service.md)
     * [Microsoft Active Directory Federation Services (ADFS)](set-up-adfs-authenticate-users.md)
     * [Okta](integrate-sumo-logic-with-okta.md)
@@ -68,14 +68,14 @@ Follow these steps to configure IdP-initiated login. After this procedure, you c
 1. The **Add Configuration** page appears.
 1. **Configuration Name**: Enter a name to identify the SSO policy (or another name used internally to describe the policy).
 1. **Debug Mode**: Select this option if you'd like to view additional details if an error occurs when a user attempts to authenticate. For more information, see [View SAML Debug Information](view-saml-debug-information.md).
-1. **Issuer**: Enter the unique URL assigned to your organization by the SAML IdP.  
+1. **Issuer**: Enter the unique URL assigned to your organization by the SAML IdP. 
 
     ADFS example: `http://adfs.myserver.tld/adfs/services/trust`
 
 1. **X.509 Certificate**: Copy and paste your organization's X.509 certificate, which is used to verify signatures in SAML assertions. For ADFS, the certificate required is the Token-signing ADFS X.509 certificate.
-1. **Attribute Mapping**: Depending on your IdP, select:  
+1. **Attribute Mapping**: Depending on your IdP, select: 
 
-   * **Use SAML subject** 
+   * **Use SAML subject**
    * **Use SAML attribute** and type the email attribute name in the text box.
 
 1. If you are done configuring SAML, click **Add** to save your changes, and proceed to [Review SAML configuration](set-up-saml.md). To configure optional SAML features, see the following section. 
@@ -126,7 +126,7 @@ If you enable the **Roles Attribute** option, Sumo Logic assigns roles to a user
 * Assigned your Sumo users to the appropriate groups in your IdP, based on the Sumo roles you want to assign to each user.  
 
 1. Click the **Roles Attribute** checkbox. The **Roles Attribute** field appears.
-1. **Roles Attribute.** Enter the SAML Attribute Name that is sent by the IdP as part of the assertion. For example, "Sumo_Role". 
+1. **Roles Attribute.** Enter the SAML Attribute Name that is sent by the IdP as part of the assertion. For example, "Sumo_Role".
 
     :::note
     There are two parts to configuring on-demand roles provisioning:  you configure the **Roles Attribute** on the Sumo side, and you configure that same value using a option when configuring the IdP to integrate with Sumo. The option or parameter you set depends on the IdP.
@@ -173,7 +173,7 @@ After you create a SAML configuration, you can require users to sign in using SA
 If you intend to require Sumo users to sign-in using SAML, as described in the following section, Require SAML for sign-in, it is a best practice to first check whether some users are still logging in directly, instead of using SAML. You can run the following query to see, for a particular time range, whether users signed in using SAML or with their username and password:
 
 ```sql
-_index=sumologic_audit action=login | count by class, sourceuser 
+_index=sumologic_audit action=login | count by class, sourceuser
 ```
 
 :::important
@@ -185,11 +185,11 @@ The query results show, for each user that has accessed Sumo over the time range
 * "SAML" indicates the user signed in using SAML.  
 * "SESSION" indicates the user authenticated by entering a username and password.  
 
-If the same user accessed Sumo using both methods (SAML and direct logon) during the time range, the query results will include a row for each method, showing how many times each method was used. 
+If the same user accessed Sumo using both methods (SAML and direct logon) during the time range, the query results will include a row for each method, showing how many times each method was used.
 
 ![saml-use-query.png](/img/security/saml-use-query.png) 
 
-### Require SAML for sign-in 
+### Require SAML for sign-in
 Click Require SAML Sign In to require users to sign in using SAML.
 
 :::tip
@@ -211,7 +211,7 @@ We do not recommend denying all users password access to Sumo even if you want t
 ## SAML lockdown limitations
 There are user account changes an admin cannot perform when the **Require SAML Sign In** option is selected:
 
-* You cannot change a user's login email address when SAML is locked down. 
+* You cannot change a user's login email address when SAML is locked down.
 * You cannot reset a user's password when SAML is locked down.
 * If a user's account has been locked as a result of too many failed login attempts, you cannot unlock the account while SAML is locked down.
 

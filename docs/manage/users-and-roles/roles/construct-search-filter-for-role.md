@@ -1,8 +1,9 @@
 ---
 id: construct-search-filter-for-role
+title: Construct a Search Filter for a Role
 ---
 
-# Construct a Search Filter for a Role
+
 
 This page describes how to define a search filter for a role. These instructions apply to Step 6 of the procedure detailed on the [Create a New Role](create-manage-roles.md) page.
 
@@ -209,7 +210,7 @@ denies access to log data whose:  
 When a user with that role filter runs a query, Sumo runs it like this:
 
 ```sql
-(!_sourceHost=humanresources* AND !_sourceName=*finance* AND !_sourceCategory=*secret*) AND <your-query> 
+(!_sourceHost=humanresources* AND !_sourceName=*finance* AND !_sourceCategory=*secret*) AND <your-query>
 ```
 
 ### Multiple role filters and filter precedence
@@ -234,8 +235,8 @@ Role B Allows access to log data whose `_sourceCategory` tag begins with “Vx�
 When a user with Roles A and B runs a query, Sumo applies the filters with an OR, and prepends them with an AND to your query, like this:
 
 ```sql
-((_source="GCP Audit" AND _collector="GCP") OR _sourceCategory="Vx*") 
-AND <your-query> 
+((_source="GCP Audit" AND _collector="GCP") OR _sourceCategory="Vx*")
+AND <your-query>
 ```
 
 The combined filters enable access to log data whose `_source` tag is “GCP Audit” and `_collector` tag is “GCP”, and to any log data whose `_sourceCategory` tag begins with “Vx”.
@@ -256,7 +257,7 @@ Role B Allows access to any log data whose `_collector` tag does not match “fi
 When a user with Roles A and B runs a query, Sumo combines the two filters with an OR, and prepends them with an AND to your query, like this:
 
 ```sql
-(_collector=fee  OR !_collector=fi) AND <your-query> 
+(_collector=fee  OR !_collector=fi) AND <your-query>
 ```
 
 **The least restrictive of the role filters takes precedence**. So, although Role A effectively restricts results to log data that matches `_collector=fee*`, Role B allows grants access to all collectors, except for those that match `_collector=fi*`. So, Role B takes precedence and Role A has no effect.
@@ -270,7 +271,7 @@ Assume the following role filters.
 | Role A   | `_sourceCategory=analytics-lab*` |
 | Role B   | `_sourceCategory=analytics*`     |
 
-  
+
 Role A allows access only to log data whose `_sourceCategory` is “analytics-lab”.
 
 Role B Allows access to log data whose `_sourceCategory` begins with “analytics”.
@@ -299,7 +300,7 @@ Role B prevents access to log data whose `_sourceCategory` tag does contain “s
 When a user with Roles A and B runs a query, Sumo combines the two filters with an OR, and prepends them with an AND to your query, like this:
 
 ```sql
-(_collector=prod* OR !_sourceCategory=*shoguns*) AND <your-query> 
+(_collector=prod* OR !_sourceCategory=*shoguns*) AND <your-query>
 ```
 
 Role B is the least restrictive. Users with the combined role filter will be able to view any log data whose  `_sourceCategory` does not contain the string “shoguns”, regardless of the value of the `_collector` tag.

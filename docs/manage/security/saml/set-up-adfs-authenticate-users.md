@@ -1,8 +1,7 @@
 ---
 id: set-up-adfs-authenticate-users
+title: Set Up ADFS to Authenticate Sumo Logic Users
 ---
-
-# Set Up ADFS to Authenticate Sumo Logic Users
 
 :::important
 Sumo Logic provides this information about configuring ADFS as a courtesy to customers. These instructions apply to ADFS, which is a Microsoft product, and is NOT supported by Sumo Logic. If you have any issues regarding these instructions, refer to the Microsoft ADFS documentation or Microsoft support services https://msdn.microsoft.com/en-us/library/bb897402.asp.
@@ -64,12 +63,12 @@ To create claim rules:
 1. In the **Select Rule Template** window, select the **Send LDAP Attributes as Claims** template and click **Next**.   
 
     ![Add rule](/img/security/claim02.png)
-1. In the **Edit Rule** window: 
+1. In the **Edit Rule** window:
 
-    1. Enter a name for the claim rule. 
-    1. Select **Active Directory** as the attribute store. 
-    1. Select **E-Mail Addresses** for both the LDAP attribute and outgoing claim type. 
-    1. If you set up on-demand provisioning when configuring Sumo SAML, you should also map the LDAP attributes **Given Name** and **Surname.  Select** "Given Name" and "Surname" from the dropdown and then ADFS will correctly send claim types. 
+    1. Enter a name for the claim rule.
+    1. Select **Active Directory** as the attribute store.
+    1. Select **E-Mail Addresses** for both the LDAP attribute and outgoing claim type.
+    1. If you set up on-demand provisioning when configuring Sumo SAML, you should also map the LDAP attributes **Given Name** and **Surname.  Select** "Given Name" and "Surname" from the dropdown and then ADFS will correctly send claim types.
     1. Select Click **OK** to save the rule.
 
     ![Active directory](/img/security/ldap4a.png)
@@ -79,8 +78,8 @@ To create claim rules:
 1. Enter a name for the claim rule, and specify the following settings:
 
    * **Incoming Claim Type.** Select Email Address.
-   * **Outgoing Claim Type**. Select Name ID. 
-   * **Outgoing Name ID Format**: Select Email. 
+   * **Outgoing Claim Type**. Select Name ID.
+   * **Outgoing Name ID Format**: Select Email.
    * Click the **Pass through all claim values** option.    
 
     ![Pass all claims](/img/security/claim05.png)
@@ -104,12 +103,12 @@ There are a few relying party trust settings that aren’t accessible through th
 
     ![SumoEndpoints-6.png](/img/security/SumoEndpoints-6.png)
 
-1. On the **Endpoints** tab, click to add a new endpoint. 
+1. On the **Endpoints** tab, click to add a new endpoint.
 
    * **Endpoint type**. Select "SAML Logout".
    * **Binding.** Select "POST".
    * **Trusted URL**: Create a URL, composed of:
-     * The URL of your ADFS server. 
+     * The URL of your ADFS server.
      * The ADFS SAML endpoint, typically '/adfs/ls'
      * The string '?wa=wsignout1.0'
    * The resulting URL should have a format like this: `https://adfs.myserver.tld/adfs/ls/?wa=wsignout1.0`

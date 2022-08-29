@@ -1,8 +1,9 @@
 ---
 id: http-traces-source
+title: HTTP Traces Source
 ---
 
-# HTTP Traces Source
+#
 
 An HTTP Traces Source is an endpoint for receiving trace data. The URL securely encodes the Collector and Source information. You can add as many HTTP Traces Sources as you'd like to a single Hosted Collector.
 
@@ -17,9 +18,9 @@ When you set up an HTTP Traces Source, a unique URL is assigned to that Source. 
 
 To configure an HTTP Traces Source:
 
-1. In the Sumo Logic web interface, select **Manage Data \> Collection \> Collection**. 
+1. In the Sumo Logic web interface, select **Manage Data \> Collection \> Collection**.
 1. On the Collection page, click Add Source next to a Hosted Collector.
-1. Select **HTTP Traces**. 
+1. Select **HTTP Traces**.
 
     ![source](/img/send-data/http-traces-icon.png)
 

@@ -1,8 +1,8 @@
 ---
 id: assign-collector-ingest-budget
+title: Assign Collector to Ingest Budget
 ---
 
-# Assign Collector to Ingest Budget
 
 ## Availability
 
@@ -68,7 +68,7 @@ GET response:
     "name":"duke-mac",
     "timeZone":"UTC",
     "fields":{
-      
+
     },
     "links":[{
       "rel":"sources",

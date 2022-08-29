@@ -1,8 +1,9 @@
 ---
 id: changing-alerts
+title: Changing Other Alerts
 ---
 
-# Changing Other Alerts
+#
 
 The ability to modify or turn off alerts created by another user is now possible with Content Sharing. Sometimes the need or frequency of a log alert changes while the creator is unavailable and with Content Sharing you can give that ability to another Role or user within your Organization.
 
@@ -19,11 +20,11 @@ If you're using a search template with your saved search, you can't modify the q
 To edit an alert:
 
 1. Go to the Sumo Logic library by clicking the folder icon in the Sumo Logic UI.
-    
+
     ![library-icon.png](/img/content-sharing/library-icon.png)
 
 1. Click in the search area to display a list of library object types, and choose **Scheduled Searches**. 
-    
+
     ![library-types.png](/img/content-sharing/library-types.png)
 
 1. Select the edit icon in the library for the scheduled search you'd like to edit. 
@@ -31,7 +32,7 @@ To edit an alert:
     ![EditAlert.png](/img/content-sharing/EditAlert.png)
 
 1. Click **Edit this search's schedule**.
-    
+
     ![edit-search-schedule](/img/content-sharing/edit-search-schedule.png)
 
 1. Modify the frequency, time range, and alert type as needed.
@@ -46,7 +47,7 @@ If you have Edit permissions on the shared search, you can stop recipients from 
 
 1. Navigate to the scheduled search you want to edit, as described above in [Edit an alert](#edit-an-alert).
 1. Select the edit icon in the library for the scheduled search.
-    
+
     ![EditAlert.png](/img/content-sharing/EditAlert.png)
 
 1. In the **Edit Search** dialog, click **Edit this search's schedule**.

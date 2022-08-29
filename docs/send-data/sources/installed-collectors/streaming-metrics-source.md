@@ -1,8 +1,9 @@
 ---
 id: streaming-metrics-source
+title: Streaming Metrics Source
 ---
 
-# Streaming Metrics Source
+#
 
 You can use Sumo’s streaming metrics source with an installed collector to collect metrics from any application that emits metrics over TCP or UDP in the Graphite, Carbon 2.0, or Prometheus plaintext protocols. The streaming metrics source is analogous to a Syslog server, but for receiving metrics rather than logs.
 
@@ -22,20 +23,20 @@ Perform these steps on each host from which you want to collect metrics:
 1. In Sumo select **Manage Data \> Collection \> Collection**.  
 1. Click **Add**, and then **Add Source**.
 1. On the **Select Source for Collector** page, select **Streaming Metrics**. 
-1. On the source configuration page, supply the following fields: 
+1. On the source configuration page, supply the following fields:
 
-   1. **Name**. Enter a name for the source. 
-   1. **Description**. (Optional) Enter a description for the source. 
-   1. **Protocol**. By default, TCP is selected. If your apps or infrastructure use UDP, use the pull-down to select UDP. 
-   1. **ContentType**. By default, Graphite is selected. If your apps or infrastructure emit metrics using the Carbon 2.0 format, use the pull-down to select Carbon2 or Prometheus.  
+   1. **Name**. Enter a name for the source.
+   1. **Description**. (Optional) Enter a description for the source.
+   1. **Protocol**. By default, TCP is selected. If your apps or infrastructure use UDP, use the pull-down to select UDP.
+   1. **ContentType**. By default, Graphite is selected. If your apps or infrastructure emit metrics using the Carbon 2.0 format, use the pull-down to select Carbon2 or Prometheus. 
    1. **Source Category**. Enter a source category. Once you start ingesting metrics, you can use the \_sourceCategory metadata field with this value to search for metrics.  Example source categories: 
 
-      * prod/web/metrics 
-      * dev/web/metrics 
+      * prod/web/metrics
+      * dev/web/metrics
 
-   1. **Fields.**  Click the **+Add Field** link to add custom metric metadata. Define the fields you want to associate, providing a name (key) and value for each. 
+   1. **Fields.**  Click the **+Add Field** link to add custom metric metadata. Define the fields you want to associate, providing a name (key) and value for each.
 
-1. Click **Save**. 
+1. Click **Save**.
 
     ![streaming-metrics-source.png](/img/send-data/streaming-metrics-source.png)
 
@@ -114,7 +115,7 @@ metric_name labels value timestamp
 metric_name labels value timestamp
 ```
 
-Here is an example of a Prometheus metric exposition for two time series. (The process of making metrics available to Prometheus is called exposition.) 
+Here is an example of a Prometheus metric exposition for two time series. (The process of making metrics available to Prometheus is called exposition.)
 
 ```
 # HELP http_requests_total The total number of HTTP requests.

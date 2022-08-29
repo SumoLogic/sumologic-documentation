@@ -1,8 +1,9 @@
 ---
 id: about-cse-insight-ui
+title: About the CSE Insight UI
+sidebar_label: CSE Insight UI
+description: Learn about the contents of the Insights UI in CSE.
 ---
-
-# About the CSE Insight UI
 
 This topic describes the CSE UI for working with Insights. 
 
@@ -35,7 +36,7 @@ Here’s one row from the List view. The numbered definitions below correspond t
 1. **Assignee**. The analyst assigned to the Incident.
 1. **Severity**. The severity of the Insight. The value is a function of the configured Entity Activity Score threshold for Insight generation. For more information, see [Insight Severity](insight-generation-process.md).
 1. **Entity**. The Entity associated with the Insight.
-1. **Signal data**. This area has three bits of information: 
+1. **Signal data**. This area has three bits of information:
 
    * The count of Signals that caused the Insight to be created.
    * The total count of Signals on the Insight Entity during the detection window.
@@ -79,7 +80,7 @@ The left pane of the **Insight \> Details** page displays detailed information a
 ![insight](/img/cse/insight-details.png)
 
 1. **Actions.** The dropdown lists Insight Actions defined in your environment.
-1. **Close Insight.** Use this option to close an Insight. When you click this option, you’re prompted to select an Insight resolution. 
+1. **Close Insight.** Use this option to close an Insight. When you click this option, you’re prompted to select an Insight resolution.
 1. **Delete Icon.** Use this option to delete an Insight. You’ll be prompted to confirm your choice.
 1. **Status.** Current status of the Insight.
 1. **Assignee and Assign to me.** Shows the current assignee, and allows you to assign yourself the Insight.
@@ -87,7 +88,7 @@ The left pane of the **Insight \> Details** page displays detailed information a
 1. **Severity.** Severity of the Insight. Mouse over it to see an icon you can click to change the Insight severity.
 1. **Global Confidence.** The Global Confidence score for the Insight, if available.
 1. **Signal Data.** The number of Signals in the Insight.
-1. **Event Time.** The event time for the of the last Signal in the Insight. 
+1. **Event Time.** The event time for the of the last Signal in the Insight.
 1. **Dwell Time.** The period of time between when the first and last Records in an Insight were observed.
 1. **Insight Created.** When the Insight was created.
 1. **Tags and Create a Tag.** Displays any Tags that have already been assigned to the Insight, and a field for adding a tag.
@@ -106,9 +107,9 @@ At the top of the **Insight \> Details** page, you’ll see a Signal timeline th
 1. **Timeline controls**. The arrows on the far left and right sides allow you to toggle between each Signal to show the details on each. You can also click a specific Signal on the timeline to jump to those details. 
 1. **Legend**. Key to the symbols used to represent the Signals:
 
-   * Rules—Signals that were triggered by Match or Chain rules. 
+   * Rules—Signals that were triggered by Match or Chain rules.
    * Anomalies—Signals that were triggered by Threshold or Aggregation rules.
-   * Threat intelligence—Signals that were fired by Threat Intel rules. (These are Match rules that leverage threat intel matches.) 
+   * Threat intelligence—Signals that were fired by Threat Intel rules. (These are Match rules that leverage threat intel matches.)
    * File Analysis—Signals that were triggered by [Yara file analysis rules](../cse-rules/import-yara-rules.md).
 1. **Show Related Signals**. Click this link to show Related Signals in addition to Attached Signals. 
 1. **Sort options**. You can sort the Signals list by Content Type, Event Time, Created Time, Name, or Severity. Note that you can further sort by ascending or descending value.

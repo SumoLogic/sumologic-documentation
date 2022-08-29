@@ -1,8 +1,7 @@
 ---
 id: sumo-logic-open-source-projects
+title: Sumo Logic Open Source Projects
 ---
-
-# Sumo Logic Open Source Projects
 
 Sumo Logic provides open-source solutions and resources for customers via GitHub.
 
@@ -28,28 +27,28 @@ The following open-source solutions are collected in Sumo Logic’s GitHub repos
 | Solution | Description |
 |-- |--|
 | [AWS Lambda](https://github.com/SumoLogic/sumologic-aws-lambda)  | Sumo Logic Lambda Functions are designed to collect and process data from a variety of sources and pass it onto the Sumo Logic platform. Here, the data can be stored, aggregated, searched, and visualized for a variety of insightful use cases. For complete details, see Collect CloudWatch Logs Using a Lambda Function.
-| [Azure](https://github.com/SumoLogic/sumologic-azure-function) |  This library provides a collection of Azure functions to collect and send data to Sumo Logic. | 
-| [Docker](https://github.com/SumoLogic/sumologic-collector-docker) | This repository offers several variants of Docker images to run the Sumo Logic Collector. When images are run, the Collector automatically registers with the Sumo Logic service and create sources based on a sumo-sources.json file. The Collector is configured ephemeral. | 
-| [FluentD](https://github.com/SumoLogic/fluentd-output-sumologic) | This plugin sends logs or metrics to Sumo Logic via an HTTP endpoint.  | 
-| [JavaScript Logging SDK](https://github.com/SumoLogic/js-sumo-logger) | The JavaScript Logging SDK library enables you to send custom log messages to an HTTP Source without installing a Collector on your server. | 
-| [Jenkins](https://github.com/SumoLogic/sumologic-jenkins-plugin) | A Sumo Logic Jenkins plugin. | 
-| [Kinesis](https://github.com/SumoLogic/sumologic-kinesis-connector) | The Kinesis-Sumologic Connector is a Java connector that acts as a pipeline between an Amazon Kinesis stream and a  Sumo Logic Collector. Data is fetched from the Kinesis Stream, transformed into a POJO, and then sent to the Sumologic Collection as JSON. For complete details, see Sumo Logic App for Amazon VPC Flow Logs using Kinesis. | 
-| [Logback appender](https://github.com/SumoLogic/sumologic-logback-appender) | This solution is a Logback appender that sends straight to Sumo Logic. | 
-| [Logstash](https://github.com/SumoLogic/logstash-output-sumologic) | This solution is a Logstash Sumo Logic output plugin.  | 
-| [Log4J appender](https://github.com/SumoLogic/sumo-log4j-appender) | This solution is a Log4J appender that sends straight to Sumo Logic. | 
-| [Log4j2 appender](https://github.com/SumoLogic/sumologic-log4j2-appender) | This solution is a Log4J 2 appender that sends straight to Sumo Logic. | 
-| [Maven](https://github.com/SumoLogic/sumo-maven-stats-plugin) | This solution is a Maven plugin to report build statistics to Sumo Logic. | 
-| [NET appenders](https://github.com/SumoLogic/sumologic-net-appenders) | Several appenders for .NET developers to use that send logs straight to Sumo Logic. | 
-| [okta-events](https://github.com/SumoLogic/okta-events) | This solution is a Python script to collect event logs from Okta. | 
-| [Scala](https://github.com/SumoLogic/scalalogging) | This solution provides a Scala logging library wrapping SLF4J and Log4j 2 in a convenient and performant fashion. | 
+| [Azure](https://github.com/SumoLogic/sumologic-azure-function) |  This library provides a collection of Azure functions to collect and send data to Sumo Logic. |
+| [Docker](https://github.com/SumoLogic/sumologic-collector-docker) | This repository offers several variants of Docker images to run the Sumo Logic Collector. When images are run, the Collector automatically registers with the Sumo Logic service and create sources based on a sumo-sources.json file. The Collector is configured ephemeral. |
+| [FluentD](https://github.com/SumoLogic/fluentd-output-sumologic) | This plugin sends logs or metrics to Sumo Logic via an HTTP endpoint.  |
+| [JavaScript Logging SDK](https://github.com/SumoLogic/js-sumo-logger) | The JavaScript Logging SDK library enables you to send custom log messages to an HTTP Source without installing a Collector on your server. |
+| [Jenkins](https://github.com/SumoLogic/sumologic-jenkins-plugin) | A Sumo Logic Jenkins plugin. |
+| [Kinesis](https://github.com/SumoLogic/sumologic-kinesis-connector) | The Kinesis-Sumologic Connector is a Java connector that acts as a pipeline between an Amazon Kinesis stream and a  Sumo Logic Collector. Data is fetched from the Kinesis Stream, transformed into a POJO, and then sent to the Sumologic Collection as JSON. For complete details, see Sumo Logic App for Amazon VPC Flow Logs using Kinesis. |
+| [Logback appender](https://github.com/SumoLogic/sumologic-logback-appender) | This solution is a Logback appender that sends straight to Sumo Logic. |
+| [Logstash](https://github.com/SumoLogic/logstash-output-sumologic) | This solution is a Logstash Sumo Logic output plugin.  |
+| [Log4J appender](https://github.com/SumoLogic/sumo-log4j-appender) | This solution is a Log4J appender that sends straight to Sumo Logic. |
+| [Log4j2 appender](https://github.com/SumoLogic/sumologic-log4j2-appender) | This solution is a Log4J 2 appender that sends straight to Sumo Logic. |
+| [Maven](https://github.com/SumoLogic/sumo-maven-stats-plugin) | This solution is a Maven plugin to report build statistics to Sumo Logic. |
+| [NET appenders](https://github.com/SumoLogic/sumologic-net-appenders) | Several appenders for .NET developers to use that send logs straight to Sumo Logic. |
+| [okta-events](https://github.com/SumoLogic/okta-events) | This solution is a Python script to collect event logs from Okta. |
+| [Scala](https://github.com/SumoLogic/scalalogging) | This solution provides a Scala logging library wrapping SLF4J and Log4j 2 in a convenient and performant fashion. |
 
 ## Metrics Integration Libraries
 
 | Solution | Description |
 |-- |--|
-| [CollectD](https://github.com/SumoLogic/sumologic-collectd-plugin) | This plugin sends metrics to Sumo Logic via an HTTP endpoint.  | 
-| [Prometheus](https://github.com/SumoLogic/sumologic-prometheus-scraper) | The Prometheus Scraper provides a configurable mechanism to send Prometheus formatted metrics to Sumo Logic.  | 
-| [StatsD](/docs/send-data/Collect-from-Other-Data-Sources/Collect-StatsD-Metrics) | See [Collect StatsD Metrics](collect-statsd-metrics.md) for information. | 
+| [CollectD](https://github.com/SumoLogic/sumologic-collectd-plugin) | This plugin sends metrics to Sumo Logic via an HTTP endpoint.  |
+| [Prometheus](https://github.com/SumoLogic/sumologic-prometheus-scraper) | The Prometheus Scraper provides a configurable mechanism to send Prometheus formatted metrics to Sumo Logic.  |
+| [StatsD](/docs/send-data/Collect-from-Other-Data-Sources/Collect-StatsD-Metrics) | See [Collect StatsD Metrics](collect-statsd-metrics.md) for information. |
 
 ## Tools
 

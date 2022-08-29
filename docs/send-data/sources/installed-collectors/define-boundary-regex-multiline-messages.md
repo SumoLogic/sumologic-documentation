@@ -1,8 +1,9 @@
 ---
 id: define-boundary-regex-multiline-messages
+title: Define Boundary Regex for Multiline Messages
 ---
 
-# Define Boundary Regex for Multiline Messages
+#
 
 For details on how the Collector processes multiline logs see [Collecting MultilineLogs](../reference-information-sources/collect-multiline-logs.md)
 

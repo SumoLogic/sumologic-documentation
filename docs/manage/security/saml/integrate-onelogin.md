@@ -1,8 +1,7 @@
 ---
 id: integrate-onelogin
+title: Integrate Sumo Logic with OneLogin
 ---
-
-# Integrate Sumo Logic with OneLogin
 
 ## Availability
 
@@ -31,19 +30,19 @@ Read the "Limitations section" on [Set Up SAML for Single Sign-On](set-up-saml.
 
     ![find-applicatons.png](/img/security/find-applicatons.png)
      
-1. On the **Add Sumo Logic** page: 
+1. On the **Add Sumo Logic** page:
 
     * ***Display Name**. This is the display name that will appear on your OneLogin portal page. Edit as desired. 
     * **Visible in portal**. Toggle this option off if you do not want Sumo Logic to appear on your OneLogin portal page.
     * **Icons**. (Optional) If desired, you can upload different icons to display on your OneLogin portal page.
-    * **Description**. (Optional) Provide a short description for this application. 
+    * **Description**. (Optional) Provide a short description for this application.
     * Click **Save**.            
 
     ![add-sumo-logic.png](/img/security/add-sumo-logic.png)        
 1. Click **Parameters** in the left-nav.
 
     * **Credentials are**. Set the credentials to "Configured by admin". 
-    * **First Name**. Select “First Name”. 
+    * **First Name**. Select “First Name”.
     * **Last Name**.  Select “Last Name”. 
     * **NameID**. Select "Email" or something equivalent to the users email to use as the Sumo Logic credential.
     * **Role**. If you will be sending multiple Okta roles then change this to "**Semicolon Delimited Input (multi-value output)**"           
@@ -52,18 +51,18 @@ Read the "Limitations section" on [Set Up SAML for Single Sign-On](set-up-saml.
           
 1. On the **SSO** tab:
 
-    * Copy the **Issuer URL** and the **SAML 2.0 Endpoint** to supply when you configure Sumo Logic in Step 2 below.  
+    * Copy the **Issuer URL** and the **SAML 2.0 Endpoint** to supply when you configure Sumo Logic in Step 2 below. 
     * Right-Click **View Details** for the X.509 Certificate and open in a new tab.            
 
         ![sso.png](/img/security/sso.png)
-    
+
     * On the **Certificates** page, copy the **X.509 Certificate.** You'll supply it when you configure Sumo Logic in the following section.           
 
         ![certificates.png](/img/security/certificates.png)
              
 1. On the **Access** tab, choose which roles will have access to Sumo Logic.   
 
-    ![access tab.png](/img/security/access-tab-2.png) 
+    ![access tab.png](/img/security/access-tab-2.png)
         
 1. Click **Save**. 
 
@@ -76,7 +75,7 @@ This section has instructions for configuring SAML in Sumo Logic.
 
     ![config-list.png](/img/security/config-list.png)
      
-1. The **Add Configuration** page appears. 
+1. The **Add Configuration** page appears.
 
     ![add-config-onelogin](/img/security/add-config-onelogin.png)
 

@@ -1,8 +1,7 @@
 ---
 id: edit-field-extraction-rules
+title: Edit Field Extraction Rules
 ---
-
-# Edit Field Extraction Rules
 
 :::important
 You need the **Manage field extraction rules** [role capability](../users-and-roles/roles/role-capabilities.md) to edit a field extraction rule. 

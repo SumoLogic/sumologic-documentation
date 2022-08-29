@@ -1,8 +1,9 @@
 ---
 id: understand-the-logreduce-relevance-column
+title: Understand the LogReduce Relevance Column
 ---
 
-# Understand the LogReduce Relevance Column
+
 
 :::important
 The summarize operator has been renamed the logreduce operator, to match the **LogReduce** button on the **Messages** tab. Both operators will continue to work in search queries as synonyms for a limited time. We recommend that you rewrite saved queries replacing summarize with

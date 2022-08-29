@@ -36,9 +36,9 @@ When creating or updating the configuration of a Streaming Metrics Source, a Hos
 
 ## Limitations
 
-* Fields created as log metadata and from Field Extraction Rules share the same quota of 200 fields. The Fields page shows how many fields your account is using out of the total available at the bottom of the table as Fields Capacity.
+* Fields created as log metadata and from Field Extraction Rules share the same quota of 400 fields. The Fields page shows how many fields your account is using out of the total available at the bottom of the table as Fields Capacity.
 
-    ![fields capacity.png](/img/fields/fields-capacity.png)
+    ![fields capacity.png](/img/send-data/fields-capacity.png)
 
 * It can take up to 10 minutes for fields to start being assigned to your data.
 * A Collector can have up to 10 fields.

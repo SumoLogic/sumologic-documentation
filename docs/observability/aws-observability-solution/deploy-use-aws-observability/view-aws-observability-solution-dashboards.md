@@ -14,7 +14,7 @@ This feature is available in the following account plans.
 | AWS Observability Dashboards | Trial, Professional, and Enterprise | Trial, Essentials, Enterprise Operations, Enterprise Security,  Enterprise Suite |
 | Root Cause Explorer | Trail, Enterprise | Trial, Enterprise Operations, Enterprise Suite |
 
-This page shows you how to intuitively navigate through your AWS environment using Explore to view resource analytics in the AWS Observability Solution app dashboards. As you investigate resources, data appears in the window on the right. Metric and log data are viewable on the same dashboard in one seamless view.
+This page shows you how to intuitively navigate through your AWS environment using [Explore](/docs/dashboards-new/explore-view) to view resource analytics in the AWS Observability Solution app dashboards. As you investigate resources, data appears in the window on the right. Metric and log data are viewable on the same dashboard in one seamless view.
 
 ## Working with Explore View
 
@@ -85,7 +85,7 @@ All of the apps are installed in a folder named **Sumo Logic AWS Observability A
 
 To add a new dashboard to your explore hierarchy, refer to the instructions in the [Add new Service documentation](../other-configurations-tools/add-new-aws-service.md).
 
-To view the app dashboards outside of Explorer, do the following:*
+To view the app dashboards outside of Explorer, do the following:
 
 1. Navigate to your Sumo Logic personal folder. 
 1. Click an app folder to list the dashboard pages.
@@ -106,3 +106,7 @@ Click a link for information on the individual app dashboards:
 * [AWS NetworkELB Dashboards](../aws-observability-apps/aws-network-load-balancer.md)
 * Global Intelligence for AWS CloudTrail DevOps
 * [AWS Classic Load Balancer Dashboards](../aws-observability-apps/aws-classic-load-balancer.md)
+
+## More Information
+
+* [Explore View](docs/dashboards-new/explore-view.md)

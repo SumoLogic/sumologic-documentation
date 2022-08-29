@@ -1,8 +1,8 @@
 ---
 id: windows-sensor-overview
+title: Windows Sensor Overview
+description: Learn about the CSE Windows Sensor functionality.
 ---
-
-# Windows Sensor Overview
 
 :::note
 The CSE Windows Sensor has reached end of life and is no longer supported. Please migrate to a Sumo Logic  Installed Collector. For more information see the [end of life notice](https://app.getbeamer.com/cloudsiementerprise/en/end-of-life-notice-_-cloud-siem-enterprise-sensors). 

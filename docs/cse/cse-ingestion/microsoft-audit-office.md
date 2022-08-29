@@ -2,7 +2,7 @@
 id: microsoft-audit-office
 title: Microsoft 365 Audit (Office 365 Audit)
 sidebar_label: Microsoft 365 Audit (Office 365 Audit)
-description: Instructions for collecting Microsoft 365 audit logs and sending them to Sumo Logic to be ingested by CSE. 
+description: Configure collection of Microsoft 365 log messages to be parsed by CSE's system parser for Microsoft 365. 
 ---
 
 This topic has instructions for collecting Microsoft 365 audit logs and sending them to Sumo Logic to be ingested by CSE. 

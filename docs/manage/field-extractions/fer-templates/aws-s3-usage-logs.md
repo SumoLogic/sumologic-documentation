@@ -1,8 +1,9 @@
 ---
 id: aws-s3-usage-logs
+title: AWS S3 Usage Logs
 ---
 
-# AWS S3 Usage Logs
+#
 
 **Log Type**: AWS S3 Usage
 

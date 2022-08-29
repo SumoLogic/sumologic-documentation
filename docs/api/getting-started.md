@@ -2,15 +2,14 @@
 id: getting-started
 title: Getting Started with Sumo Logic APIs
 sidebar_label: Getting Started
+description: This guide contains information about API authentication and the Sumo Logic endpoints to use for your API client.
 ---
 
 This guide contains information about API authentication and the Sumo Logic endpoints to use for your API client.
 
-All of our APIs are developed with the [OpenAPI Specification](https://www.openapis.org/), unless otherwise stated. You can generate client libraries in many languages and explore automated testing.
+Sumo Logic APIs follow Representational State Transfer (REST) patterns and are optimized for ease of use and consistency. All API docs have been developed with the [OpenAPI Specification](https://www.openapis.org/), unless otherwise stated. You can generate client libraries in many languages and explore automated testing.
 
-
-
-
+<!--
 #### Infrequent Data Tier
 
 <table>
@@ -41,64 +40,12 @@ All of our APIs are developed with the [OpenAPI Specification](https://www.opena
   <tr>
    <td>Search Job
    </td>
-   <td><a href="https://api.de.sumologic.com/docs/">https://help.sumologic.com/APIs/Search-Job-API</a>
+   <td><a href="https://api.de.sumologic.com/docs/">/docs/API/Search-Job-API</a>
    </td>
   </tr>
 </table>
 
-
-#### Settings
-
-<table>
-  <tr>
-   <td>API
-   </td>
-   <td>Documentation URL
-   </td>
-  </tr>
-  <tr>
-   <td>Dynamic Parsing
-   </td>
-   <td><a href="https://api.de.sumologic.com/docs/">https://api.sumologic.com/docs/#tag/dynamicParsingRuleManagement</a>
-   </td>
-  </tr>
-  <tr>
-   <td>Fields
-   </td>
-   <td><a href="https://api.sumologic.com/docs/#tag/fieldManagementV1">https://api.sumologic.com/docs/#tag/fieldManagementV1</a>
-   </td>
-  </tr>
-  <tr>
-   <td>Field Extraction Rules
-   </td>
-   <td><a href="https://api.sumologic.com/docs/#tag/extractionRuleManagement">https://api.sumologic.com/docs/#tag/...RuleManagement</a>
-   </td>
-  </tr>
-  <tr>
-   <td>Partitions
-   </td>
-   <td><a href="https://api.sumologic.com/docs/#tag/partitionManagement">https://api.sumologic.com/docs/#tag/...tionManagement</a>
-   </td>
-  </tr>
-  <tr>
-   <td>Scheduled Views
-   </td>
-   <td><a href="https://api.sumologic.com/docs/#tag/scheduledViewManagement">https://api.sumologic.com/docs/#tag/...ViewManagement</a>
-   </td>
-  </tr>
-  <tr>
-   <td>Data Forwarding
-   </td>
-   <td><a href="https://api.sumologic.com/docs/#tag/logsDataForwardingManagement">https://api.sumologic.com/docs/#tag/...dingManagement</a>
-   </td>
-  </tr>
-</table>
-
-
-
-
-
-
+-->
 
 ## Authentication
 

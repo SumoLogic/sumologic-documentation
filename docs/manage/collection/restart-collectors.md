@@ -1,15 +1,14 @@
 ---
 id: restart-collectors
+title: Restart Collectors
 ---
-
-# Restart Collectors
 
 This document explains how to initiate a request to restart an Installed
 Collector from the Collection page. The other option is to [start or stop a Collector using our provided scripts](start-stop-collector-using-scripts.md).
 
 ## Limitations
 
-* When you confirm and click the Proceed button to restart a Collector do not refresh the web page. Refreshes could result in: 
+* When you confirm and click the Proceed button to restart a Collector do not refresh the web page. Refreshes could result in:
   * missing status notifications such as error and success. The status request is only made by the initial session of the browser.
   * the restart not initiating. In this case, you will have to request the restart again.
 * A **timeout error** notification doesn't indicate the restart failed. It may still be processing the restart and needs more time.

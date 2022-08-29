@@ -1,8 +1,9 @@
 ---
 id: sensor-download-locations
+title: Sensor Download Locations
+description: The Cloud SIEM Enterprise (CSE) Network sensor can be downloaded from a static URL that is specific to your CSE deployment.
 ---
 
-# Sensor Download Locations
 
 The Cloud SIEM Enterprise (CSE) Network sensor can be downloaded from a static URL that is specific to your CSE deployment. Each Sumo Logic deployment has URLs used to download sensor software. If you are not sure which endpoint to use, see How can I determine which endpoint I should use?
 

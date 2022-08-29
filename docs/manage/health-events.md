@@ -1,8 +1,9 @@
 ---
 id: health-events
+title: Health Events
 ---
 
-# Health Events
+
 
 ## Availability
 
@@ -113,7 +114,7 @@ common parameters in the order that they are found in health event logs.
 
 To search all health events run a query against the internal partition
 named **sumologic_system_events**. For example,  
-  
+
 ```sql
 _index=sumologic_system_events "Health-Change"
 ```
