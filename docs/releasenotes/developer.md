@@ -16,7 +16,7 @@ New - The [Data Forwarding Management API](/docs/api/Data-Forwarding) allows you
 ---
 ### January 18, 2022  - APIs
 
-New - The [Tracing API](/docs/api/Tracing) allows you to browse and execute queries for [traces](/docs/api/Tracing) and [span analytics](/docs/api/Tracing/Span-Analytics-API), and request a [service map](/docs/api/Tracing/Service-Map-API) of your application environment.
+New - The [Tracing API](/docs/api/Tracing) allows you to browse and execute queries for [traces](/docs/api/Tracing) and [span analytics](/docs/api/Tracing#Span-Analytics-API), and request a [service map](/docs/api/Tracing#Service-Map-API) of your application environment.
 
 ---
 ### November 16, 2021 - APIs
