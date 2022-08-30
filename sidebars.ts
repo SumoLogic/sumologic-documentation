@@ -2386,15 +2386,10 @@ module.exports = {
               collapsed: true,
               items: [
                 'releasenotes/archive/collector/year2021',
-              ],
-            },
-            {
-              type: 'category',
-              label: 'Developer Archive',
-              collapsible: true,
-              collapsed: true,
-              items: [
-                'releasenotes/archive/developer/year2021',
+                'releasenotes/archive/collector/year2020',
+                'releasenotes/archive/collector/year2019',
+                'releasenotes/archive/collector/year2018',
+                'releasenotes/archive/collector/year2017',
               ],
             },
             {
@@ -2404,6 +2399,10 @@ module.exports = {
               collapsed: true,
               items: [
                 'releasenotes/archive/service/year2021',
+                'releasenotes/archive/service/year2020',
+                'releasenotes/archive/service/year2019',
+                'releasenotes/archive/service/year2018',
+                'releasenotes/archive/service/year2017',
               ],
             },
           ]
