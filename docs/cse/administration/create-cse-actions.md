@@ -38,6 +38,9 @@ What gets sent to the target system depends on the Action type. For some types�
 
 For the other Action types—AWS Simple Notification Service (SNS), Demisto (Corex XSOAR), HTTP POST v2, and Slack Webhook—the notification includes the Insight itself in JSON format, and in some cases Signals or Records, depending on how you configure the Action.
 
+## Sensor Actions 
+You can configure an Action to send a notification when any Network Sensor goes offline.
+
 ## Rule Actions
 
 You can configure an Action to send a notification when a rule is automatically disabled. (CSE automatically disables rules that generate too many Signals, more than 100K in an hour, or 1 million in 24 hours.)
@@ -58,10 +61,11 @@ The notification sent by a Rule Action contains the name of the rule and the re
     ![create-action-empty.png](/img/cse/create-action-empty.png)
 1. **Name**. Enter a name that communicates what the Action does.
 1. **Notifications**. 
-    * **Insight**. Click **When Created** to automatically generate a notification when any Insight is created, **On Demand** to add the Action as an option in the **Actions** menu on the Insight details page, or select both. 
+    * **Insight**. Click **When Created** to automatically generate a notification when any Insight is created, **When Closed** to automatically generate a notification when any Insight is closed, or **On Demand** to add the Action as an option in the **Actions** menu on the Insight details page. 
+    * **Sensor**. Click **When Offline** to to automatically generate notifications when any sensor goes offline.
     * **Rule**. Click **When Automatically Disabled** to generate a notification when CSE disables a rule.
-1. **Active**. Move the slider to the right if you’d like the Action to be enabled upon creation.
-1. **Type**. Choose one of the following options, and follow the instructions for that Action type to complete creating your Action.
+2. **Active**. Move the slider to the right if you’d like the Action to be enabled upon creation.
+3. **Type**. Choose one of the following options, and follow the instructions for that Action type to complete creating your Action.
     * [AWS Simple Notification Service](#aws-simple-notification-service-sns)
     * [Demisto](#demisto-corex-xsoar)
     * [Email](#email)
@@ -77,12 +81,14 @@ The notification sent by a Rule Action contains the name of the rule and the re
 
 When you run this Action type for an Insight, CSE sends the full Insight in JSON format to SNS.
 
-1. **Access Key**. Enter your AWS Access Key.
-1. **Secret Key**. Enter your AWS Secret Access Key.
-1. **Topic ARN**. Enter the ARN of the SNS topic.
-1. **Region**. Enter the AWS region for the SNS topic. 
-1. Click **Create**.  
+You can configure the action to authenticate with SNS using your AWS Access Key and Secret Access Key, or using the **AssumeRole** method
 
+1. **Access Key**. Enter your AWS Access Key, if you're using AWS Access Keys to authenticate.
+1. **Secret Key**. Enter your AWS Secret Access Key, if you're using AWS Access Keys to authenticate.
+2. **Assume Role ARN**. Enter the AssumeRole ARN, if that's how you want to authenticate.
+3. **Topic ARN**. Enter the ARN of the SNS topic.
+4. **Region**. Enter the AWS region for the SNS topic. 
+5. Click **Create**.  
     ![sns.png](/img/cse/sns.png)
 
 ### Demisto (Corex XSOAR)
@@ -96,7 +102,6 @@ When you run this Action type for an Insight, CSE sends the full Insight in JSON
 1. **Extra Headers**. Enter any additional headers you want to send, as line-delimited key:value pairs.
 1. **Exclude Records**. Move the slider to the right if you don’t want to include Records in the notification.
 1. Click **Create**.  
-
     ![demisto-action.png](/img/cse/demisto-action.png)
 
 ### Email
@@ -105,7 +110,6 @@ This Action type sends an email notification.
 
 1. **Recipients**. Enter a comma-separated list of the email addresses to send the notification to.
 1. Click **Create**.  
-
     ![email-action.png](/img/cse/email-action.png)
 
 When this Action runs on an Insight, the email notification contains:
@@ -131,7 +135,6 @@ in CSE.
 1. **Include Records**. Move the slider to the right to send the Records associated with the Signal in the POST. 
 1. **Record Fields to Include**. If desired, provide a comma-delimited list of selected Record fields to include (instead of all Record fields).
 1. Click **Create**.  
-
     ![http-post-v2.png](/img/cse/http-post-v2.png)
 
 ### HipChat
