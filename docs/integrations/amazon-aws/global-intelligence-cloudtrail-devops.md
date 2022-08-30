@@ -39,6 +39,8 @@ In addition, the app provides configuration guidance for key AWS services based 
 
 ## Prerequisites
 
+<p><span className="globalIntelligence">Global Intelligence App</span></p>
+
 This feature is available in the following account plans.
 
 | Account Type | Account Level
@@ -53,7 +55,6 @@ Our new app install flow is now in Beta. It is only enabled for certain customer
 Global Intelligence for CloudTrail DevOps App uses AWS CloudTrail logs.
 
 The Sumo Logic Global Intelligence for AWS CloudTrail DevOps app provides insight into your key CloudTrail events. You can review the log collection process and start collecting data.
-
 
 ### Sample Log Message
 
@@ -161,7 +162,7 @@ Before you begin, you must configure AWS CloudTrail logging to an S3 bucket.
 1. [Configure CloudTrail](https://docs.aws.amazon.com/awscloudtrail/latest/userguide/getting_started_top_level.html) in your AWS account.
 2. [Enable logging using the AWS Management Console](http://docs.aws.amazon.com/AmazonS3/latest/dev/enable-logging-console.html).
 3. Confirm that logs are being delivered to the S3 bucket.
-4. [Grant Access to an AWS S3 Bucket](/docs/send-data/sources/sources-hosted-collectors/amazon-web-services/grant-access-aws-product.md).
+4. [Grant Access to an AWS S3 Bucket](/docs/send-data/sources/hosted-collectors/amazon-web-services/grant-access-aws-product.md).
 
 
 ### Configuring Log Collection for AWS Global Intelligence CloudTrail DevOps

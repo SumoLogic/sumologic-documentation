@@ -1,7 +1,7 @@
 ---
 id: quantization-interval-chart
 title: Choosing a Quantization Interval for a Chart
-sidebar_label: Choosing a Quantization Interval for a Chart
+sidebar_label: Choose a Quantization Interval
 description: Why you might want to change the quantization interval when running a metric query.
 ---
 

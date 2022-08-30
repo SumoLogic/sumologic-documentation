@@ -349,7 +349,7 @@ For all other parameters, see [this doc](/docs/send-data/collect-from-other-data
 </TabItem>
 <TabItem value="non-k8s">
 
-Sumo Logic uses the Telegraf operator for Squid Proxy metric collection and the [Installed Collector](/docs/send-data/installed-collectors/about-installed-collectors) for collecting Squid Proxy logs. The diagram below illustrates the components of the Squid Proxy collection in a non-Kubernetes environment. Telegraf uses the [SNMP input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/snmp) to obtain Squid Proxy metrics and the Sumo Logic output plugin to send the metrics to Sumo Logic. Logs from Squid Proxy are collected by a [Local File Source](/docs/send-data/Sources/sources-installed-collectors/Local-File-Source).
+Sumo Logic uses the Telegraf operator for Squid Proxy metric collection and the [Installed Collector](/docs/send-data/installed-collectors/about) for collecting Squid Proxy logs. The diagram below illustrates the components of the Squid Proxy collection in a non-Kubernetes environment. Telegraf uses the [SNMP input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/snmp) to obtain Squid Proxy metrics and the Sumo Logic output plugin to send the metrics to Sumo Logic. Logs from Squid Proxy are collected by a [Local File Source](/docs/send-data/Sources/installed-collectors/Local-File-Source).
 
 <img src={useBaseUrl('img/integrations/web-servers/non-k8s-flow.png')} alt="Squid Proxy" />
 
@@ -360,17 +360,17 @@ The process to set up collection for Squid Proxy data is done through the follow
 Squid Proxy app supports the default access logs and cache logs format.
 
 1. **Configure logging in Squid Proxy.** By default, the squid proxy will write the access log to the log directory that was configured during installation. For example, on Linux, the log directory would be `/var/log/squid/access.log`. If the access log is disabled then you must enable the access log following these [instructions](https://wiki.squid-cache.org/SquidFaq/SquidLogs).
-2. **Configure an Installed Collector.** If you have not already done so, install and configure an installed collector for Windows by [following the documentation](/docs/send-data/installed-collectors/install-collector-windows).
+2. **Configure an Installed Collector.** If you have not already done so, install and configure an installed collector for Windows by [following the documentation](/docs/send-data/installed-collectors/windows).
 3. **Configure a Collector**. Use one of the following Sumo Logic Collector options:
    1. To collect logs directly from the Squid Proxy machine, configure an [Installed Collector](/docs/send-data/Installed-Collectors).
-   2. If you're using a service like Fluentd, or you would like to upload your logs manually, [Create a Hosted Collector](/docs/send-data/Hosted-Collectors#Create_a_Hosted_Collector).
+   2. If you're using a service like Fluentd, or you would like to upload your logs manually, [Create a Hosted Collector](/docs/send-data/configure-hosted-collector.md).
 4. **Configure a local file source**. Choose a method:
 
 <details><summary>For an Installed Collector</summary>
 
 To collect logs directly from your Squid Proxy machine, use an Installed Collector and a Local File Source.  
 
-1. Add a [Local File Source](/docs/send-data/Sources/sources-installed-collectors/Local-File-Source).
+1. Add a [Local File Source](/docs/send-data/Sources/installed-collectors/Local-File-Source).
 2. Configure the Local File Source fields as follows:
 * **Name**. (Required)
 * **Description**. (Optional)
@@ -400,7 +400,7 @@ environment = <Your_Environment_Name> #For example, Dev, QA, or Prod
 
 If you're using a service like Fluentd, or you would like to upload your logs manually, use a Hosted Collector and an HTTP Source.
 
-1. Add an [HTTP Source](/docs/send-data/sources/sources-hosted-collectors/http-logs-metrics-source).
+1. Add an [HTTP Source](/docs/send-data/sources/hosted-collectors/http-logs-metrics-source).
 2. Configure the HTTP Source fields as follows:
 * **Name**. (Required)
 * **Description**. (Optional)
@@ -422,7 +422,7 @@ If you're using a service like Fluentd, or you would like to upload your logs ma
 #### Configure Metrics Collection
 
 1. **Set up a Sumo Logic HTTP Source**.
-   1. Configure a Hosted Collector for Metrics. To create a new Sumo Logic hosted collector, perform the steps in the [Create a Hosted Collector](/docs/send-data/Hosted-Collectors#Create_a_Hosted_Collector) documentation.
+   1. Configure a Hosted Collector for Metrics. To create a new Sumo Logic hosted collector, perform the steps in the [Create a Hosted Collector](/docs/send-data/configure-hosted-collector.md) documentation.
    2. Configure an HTTP Logs and Metrics source:
       * On the created Hosted Collector on the Collection Management screen, select **Add Source**.
       * Select **HTTP Logs & Metrics.**
@@ -686,7 +686,7 @@ The monitors are disabled by default. Once you have installed the alerts using t
 
 ### Method 2: Install the alerts using a Terraform script
 
-1. Generate a Sumo Logic access key and access ID for a user that has the Manage Monitors role capability in Sumo Logic using these [instructions](/docs/manage/security/access-keys#manage-your-access-keys-on-preferences-page). Identify which deployment your Sumo Logic account is in, using this [link](https://help.sumologic.com/APIs/General-API-Information/Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security).
+1. Generate a Sumo Logic access key and access ID for a user that has the Manage Monitors role capability in Sumo Logic using these [instructions](/docs/manage/security/access-keys#manage-your-access-keys-on-preferences-page). Identify which deployment your Sumo Logic account is in, using this [link](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
 2. [Download and install Terraform 0.13](https://www.terraform.io/downloads.html) or later.
 3. Download the Sumo Logic Terraform package for Squid Proxy alerts: The alerts package is available in the Sumo Logic GitHub [repository](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/tree/main/monitor_packages/SquidProxy). You can either download it through the “git clone” command or as a zip file.
 4. Alert Configuration: After the package has been extracted, navigate to the package directory terraform-sumologic-sumo-logic-monitor/monitor_packages/SquidProxy/.

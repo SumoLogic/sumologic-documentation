@@ -5,19 +5,15 @@ sidebar_label: Alert Variables
 description: Alerts support variables allowing you to customize notifications with the information you need. You can use alert variables to customize your notification payload from Monitors, Scheduled Searches, and Metrics Monitors.
 ---
 
-Variables are used as parameters in the JSON payload object of your alert notifications. These variables are used to dynamically populate specific values from the alert configuration in the notification payload. It includes things like the TriggerType that gives the current monitor status in the notification. When a notification is sent variables are replaced with values from the alert. For example, if you specified `{{Name}}` in your JSON payload, it would be replaced with the actual name of the alert in the delivered payload.
-
-:::note
-Variables must be enclosed by double curly brackets.
-:::
+Variables are used as parameters that allow you to customize the JSON payload object of your alert notifications. These variables are used to dynamically populate specific values from the alert configuration in the notification payload. It includes things like the TriggerType that gives the current monitor status in the notification. When a notification is sent, variables are replaced with values from the alert. For example, if you specified `{{Name}}` in your JSON payload, it would be replaced with the actual name of the alert in the delivered payload.
 
 ## Common variables for alerts
 
-You can use variables to customize your notification payload from Monitors and Scheduled Searches. The table below shows a list of variables along with information on which area of the product these are supported. We have also provided a brief description of each of the variables.
+You can use the following built-in variables when specifying the notification payload for log and metric monitors and scheduled searches. They allow you to reference specific configurations of your monitor.
 
-:::note
-All variables are case-insensitive.
-:::
+The table below lists the variable descriptions along with which areas of the product you can use them.
+
+Variables must be enclosed by double curly brackets (`{{ }}`). Unresolved variables are given empty quotes `""` as a value. All variables are case-insensitive.
 
 | Variable | Description | Monitors | Scheduled Searches |
 | -- | -- | -- | -- |
@@ -31,6 +27,7 @@ All variables are case-insensitive.
 | `{{NumQueryResults}}` | The number of results the query returned. Results can be raw messages, time-series, or aggregates.<br/>An aggregate query returns the number of aggregate results; displayed in the **Aggregates** tab of the [Search page](/docs/search).<br/>A non-aggregate query returns the number of raw results; displayed in the **Messages** tab of the [Search page](/docs/search). | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
 | `{{Id}}` | The unique identifier of the monitor or search that triggered the alert. For example, `00000000000468D5`. | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
 | `{{DetectionMethod}}` | This is the type of Detection Method used to detect alerts. Values are based on static or outlier triggers and data type, either logs or metrics. The value will be either `LogsStaticCondition`, `MetricsStaticCondition`, `LogsOutlierCondition`, `MetricsOutlierCondition`,  `LogsMissingDataCondition`, `MetricsMissingDataCondition`, or `StaticCondition` (deprecated). | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
+| `{{SloDashboardUrl}}` |	The URL to the SLO dashboard. | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
 | `{{TriggerType}}` | The status of the alert or recovery. Alert will have either `Normal`, `Critical`, `Warning`, or `Missing Data`. Recovery will have either `ResolvedCritical`, `ResolvedWarning`, or `ResolvedMissingData`. | ![check](/img/reuse/check.png) | ![x](/img/reuse/x.png) |
 | `{{TriggerTimeRange}}` | The time range of the query that triggered the alert. For example, `07/13/2021 03:21:32 PM UTC to 07/13/2021 03:36:32 PM UTC` | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
 | `{{TriggerCondition}}` | The condition that triggered the alert. For example, `Greater than or equal to 1.0 in the last 15 minutes` | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
@@ -39,7 +36,7 @@ All variables are case-insensitive.
 | `{{TriggerTimeEnd}}` | The end time of the time range that triggered the monitor in Unix format. For example, `1626190592042`. | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
 | `{{SourceURL}}` | The URL to the configuration or status page of the monitor in Sumo Logic. | ![check](/img/reuse/check.png) | ![x](/img/reuse/x.png) |
 | `{{AlertResponseUrl}}` | When your Monitor is triggered it will generate a URL and provide it as the value of this variable where you can use it to open Alert Response. | ![check](/img/reuse/check.png) | ![x](/img/reuse/x.png) |
-
+| `{{AlertName}}` | Name of the Alert that will be displayed on the Alert page.  | ![check](/img/reuse/check.png) | ![check](/img/reuse/check.png) |
 
 ## Examples
 

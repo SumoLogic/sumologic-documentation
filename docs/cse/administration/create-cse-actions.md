@@ -2,7 +2,7 @@
 id: create-cse-actions
 title: Create CSE Actions
 sidebar_label: Create CSE Actions
-description: Instructions for configuring CSE Actions.
+description: You can use CSE Actions to issue notifications to another service when certain events occur in CSE.
 ---
 
 This topic has instructions for configuring CSE Actions.

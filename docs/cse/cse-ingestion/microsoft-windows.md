@@ -2,7 +2,7 @@
 id: microsoft-windows
 title: Microsoft Windows
 sidebar_label: Microsoft Windows
-description: tk
+description: Configure collection of Windows Event Log messages and send them to the CSE Windows Event Log mapper.
 ---
 
 ## Step 1: Configure collection

@@ -1,10 +1,12 @@
 ---
 id: configure-entity-lookup-table
+title: Configure an Entity Lookup Table
+sidebar_label: Entity Lookup Tables
+description: Entity Lookup Tables allow you to normalize the names of users and hosts (machines) in your environment
 ---
 
-# Configure an Entity Lookup Table
 
-This topic describes Entity Lookup Tables and how to configure them. 
+This topic describes Entity Lookup Tables and how to configure them.
 
 :::note
 Entity Lookup Tables are supported if your CSE URL ends in `sumologic.com`.
@@ -64,12 +66,12 @@ After you’ve created your Entity Lookup Table in the Sumo Logic Library, you c
 1. Click **Create** on the **Lookup Tables** tab.
 1. The **Existing Lookup Table** popup appears.
 
-    ![existing-lookup-table.png](/img/cse/existing-lookup-table.png) 
+    ![existing-lookup-table.png](/img/cse/existing-lookup-table.png)
 
-1. **Type**. Choose the type of normalization you want to set up. 
+1. **Type**. Choose the type of normalization you want to set up.
 
-   * **Host ID to Normalized Hostname**. Maps unique host IDs to recognizable hostnames. 
-   * **User ID to Normalized Username**. Maps unique user IDs to recognizable usernames. 
+   * **Host ID to Normalized Hostname**. Maps unique host IDs to recognizable hostnames.
+   * **User ID to Normalized Username**. Maps unique user IDs to recognizable usernames.
    * **Username to Normalized Username**. Maps a username in one format to a username in another format.  
 
 1. **Lookup Column Name**. Enter the name of the Lookup Table column that contains the primary key for the table.

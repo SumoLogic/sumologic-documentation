@@ -1,8 +1,9 @@
 ---
 id: mask-rules
+title: Mask Rules
 ---
 
-# Mask Rules
+#
 
 A mask rule is a type of processing rule that hides irrelevant or sensitive information from logs before ingestion. When you create a mask rule, whatever expression you choose to mask will be replaced with a mask string before it is sent to Sumo Logic. You can provide a mask string, or use the default, "#." 
 
@@ -37,10 +38,10 @@ With a mask string of `AAA` would provide the following result:
     For example, this log message:
 
     ```
-    { 
-    "reqHdr":{ 
-    "auth":"Basic ksoe9wudkej2lfj*jshd6sl.cmei=", 
-    "cookie":"$Version=0; JSESSIONID=6C1BR5DAB897346B70FD2CA7SD4639.localhost_bc; $Path=/" 
+    {
+    "reqHdr":{
+    "auth":"Basic ksoe9wudkej2lfj*jshd6sl.cmei=",
+    "cookie":"$Version=0; JSESSIONID=6C1BR5DAB897346B70FD2CA7SD4639.localhost_bc; $Path=/"
     }}
     ```
 

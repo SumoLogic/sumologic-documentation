@@ -1,8 +1,8 @@
 ---
 id: detect-patterns-with-logreduce
+title: Detect Patterns with LogReduce
 ---
 
-# Detect Patterns with LogReduce
 
 The LogReduce algorithm uses fuzzy logic and soft matching to group messages with similar structures and common repeated text strings into **signatures**, providing a quick investigative view, or snapshot, for the keywords or time range provided.
 

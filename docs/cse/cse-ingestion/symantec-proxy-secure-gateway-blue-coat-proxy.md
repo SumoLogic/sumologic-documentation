@@ -1,8 +1,8 @@
 ---
 id: symantec-proxy-secure-gateway-blue-coat-proxy
 title: Symantec Proxy Secure Gateway (Blue Coat Proxy)
-sidebar_label: Symantec Proxy Secure Gateway (Blue Coat Proxy)
-description: tk
+sidebar_label: Symantec Proxy Secure Gateway
+description: Learn how to configure a Syslog source to collect and send Symantec Proxy Secure Gateway (ProxySG) log messages to Sumo Logic to be ingested by CSE.
 ---
 
 This section has instructions for collecting Symantec Proxy Secure Gateway (ProxySG) log messages as comma-separated values (CSV) and sending them to Sumo Logic to be ingested by CSE. While this document shows how to configure and ingest logs as CSV, CSE also supports Common Event Format (CEF) ProxySG logs.

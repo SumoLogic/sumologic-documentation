@@ -1,8 +1,8 @@
 ---
 id: apache-access-logs
+title: Apache Access Logs
 ---
 
-# Apache Access Logs
 
 **Log Type**: Apache Access Logs
 

@@ -33,7 +33,7 @@ If you have already Amazon GuardDuty data flowing into Sumo Logic, you can skip 
 :::
 
 :::note
-These tasks require the Manage Collectors and Manage Access Keys [role capabilities](https://help.sumologic.com/Manage/Users-and-Roles/Manage-Roles/05-Role-Capabilities).
+These tasks require the Manage Collectors and Manage Access Keys [role capabilities](/docs/manage/users-and-roles/roles/role-capabilities).
 :::
 
 Sumo Logic provides a SAM application based on [AWS Serverless Application Model (SAM) specification](https://docs.aws.amazon.com/lambda/latest/dg/serverless_app.html), and is published in the [AWS Serverless Application Repository](https://aws.amazon.com/serverless/serverlessrepo/). This SAM deployment:
@@ -71,7 +71,7 @@ To deploy the Sumo Logic GuardDuty Benchmark SAM App, do the following:
 4. In **Configure application parameters** panel, enter the following parameters:
     * Access ID (Required): Sumo Logic Access ID generated from Step 1.
     * Access Key (Required): Sumo Logic Access Key generated from Step 1.
-    * Deployment Name(Required): Deployment name (environment name in lower case as per [docs](https://help.sumologic.com/APIs/General-API-Information/Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security)).
+    * Deployment Name(Required): Deployment name (environment name in lower case as per [docs](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security)).
     * Collector Name: Enter the name of the Hosted Collector which will be created in Sumo Logic.
     * Source Name: Enter the name of the HTTP Source which will be created within the collector.
     * Source Category Name: Enter the name of the Source Category which will be used for writing search queries.

@@ -1,8 +1,8 @@
 ---
 id: run-search-against-partition
+title: Run a Search Against a Partition
 ---
 
-# Run a Search Against a Partition
 
 Running a search against the data in a Partition is almost exactly the same as running any other query. The difference you'll notice is the speed at which results are returned, especially if you're searching over a large amount of data.
 
@@ -16,7 +16,7 @@ In a Log Search you can specify the `_index` metadata field with the name of 
     * Click the **Search Icon** to the right of the Partition name. This launches a search on just the data indexed in the partition.    
 
     ![partitions-page-search-icon.png](/img/partitions-and-data-tiers/partitions-page-search-icon.png)
-    
+
     * Select a Partition from the table and click the **Search Icon** to the right of the routing expression. This launches a search that runs the expression against the partition, as well as any other logs that match the query. This means that you can capture search results on all data, not just the data indexed in the partition.    
 
     ![edit-partition-pane-search-icon.png](/img/partitions-and-data-tiers/edit-partition-pane-search-icon.png)

@@ -1,8 +1,8 @@
 ---
 slug: /manage/field-extractions
+title: Field Extractions
 ---
 
-# Field Extractions
 
 Field extractions allow you to parse [fields](../fields.md) from your log messages at the time the messages are ingested, which eliminates the need to parse fields at the query level. With Field Extraction Rules (FERs) in place, users can use the pre-parsed fields for ad-hoc searches, scheduled searches, real-time alerts, and dashboards. In addition, field extraction rules help standardize field names and searches, simplify the search syntax and scope definition, and improve search performance. 
 
@@ -51,7 +51,7 @@ On the **Manage Data** \> **Logs** \> **Field Extraction Rules** page you can:
         className="video-container"
         display="initial"
         position="relative"
-        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
         />
 

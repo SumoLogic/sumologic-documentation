@@ -1,8 +1,8 @@
 ---
 id: save-inventory-data-lookup-table
+title: Save Inventory Data to a Lookup Table
+description: Learn how to use a saved Sumo Logic search to populate a Lookup Table with CSE inventory data.
 ---
-
-# Save Inventory Data to a Lookup Table
 
 This topic has instructions for using a saved Sumo Logic search to populate a Lookup Table with CSE inventory data. Once you’ve created an inventory Lookup Table, you can leverage it in log searches, and also use it to normalize hostnames and usernames. 
 

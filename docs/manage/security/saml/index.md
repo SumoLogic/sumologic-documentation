@@ -1,8 +1,7 @@
 ---
 slug: /manage/security/saml
+title: SAML
 ---
-
-# SAML
 
 ## Availability
 

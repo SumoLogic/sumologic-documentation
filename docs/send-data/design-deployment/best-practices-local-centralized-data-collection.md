@@ -17,9 +17,9 @@ The most important thing is for you to design a deployment that works for your o
 
 The local data collection method collects all data locally from each individual system and sends it to Sumo Logic.
 
-Using an [Installed Collector](/docs/send-data/sources/sources-installed-collectors) with a [Local File Source](../sources/sources-installed-collectors/local-file-source.md) is the overall simplest method of collecting data.
+Using an [Installed Collector](/docs/send-data/sources/installed-collectors) with a [Local File Source](../sources/installed-collectors/local-file-source.md) is the overall simplest method of collecting data.
 
-For Windows, using an [Installed Collector](/docs/send-data/sources/sources-installed-collectors) and a [Local Windows Event Log Source](../sources/sources-installed-collectors/local-windows-event-log-source.md) is the most reliable method of collecting data. Depending on your Windows solution, you may also configure a [Local Windows Performance Monitor Log Source](../sources/sources-installed-collectors/local-windows-performance-monitor-log-source.md).
+For Windows, using an [Installed Collector](/docs/send-data/sources/installed-collectors) and a [Local Windows Event Log Source](../sources/installed-collectors/local-windows-event-log-source.md) is the most reliable method of collecting data. Depending on your Windows solution, you may also configure a [Local Windows Performance Monitor Log Source](../sources/installed-collectors/local-windows-performance-monitor-log-source.md).
 
 **Customers using the local data collection method usually have the following characteristics:**
 
@@ -43,7 +43,7 @@ For Windows, using an [Installed Collector](/docs/send-data/sources/sources-inst
 
 ## Centralized Data Collection
 
-The centralized data collection method uses [Installed Collectors](best-practices-local-centralized-data-collection.md)  with [Remote File Sources](/docs/send-data/sources/sources-installed-collectors/remote-file-source) or [Syslog Sources](../sources/sources-installed-collectors/syslog-source.md) to collect all data in a centralized location before sending that data to Sumo Logic. This method is widely used for logs and is familiar to IT systems administrators.
+The centralized data collection method uses [Installed Collectors](best-practices-local-centralized-data-collection.md)  with [Remote File Sources](/docs/send-data/sources/installed-collectors/remote-file-source) or [Syslog Sources](../sources/installed-collectors/syslog-source.md) to collect all data in a centralized location before sending that data to Sumo Logic. This method is widely used for logs and is familiar to IT systems administrators.
 
 :::important
 If you use centralized data collection, be sure to increase collector memory, as the default setting of 128 MB will not suffice. In addition, configure additional disk capacity if you are collecting a large volume of logs.

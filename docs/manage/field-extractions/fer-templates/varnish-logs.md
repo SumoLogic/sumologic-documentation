@@ -1,8 +1,9 @@
 ---
 id: varnish-logs
+title: Varnish Logs Extraction Template
 ---
 
-# Varnish Logs Extraction Template
+#
 
 **Log Type**: Varnish
 
@@ -17,7 +18,7 @@ id: varnish-logs
 **Parsing Rule:**
 
 ```sql
-parse regex "^(?<src_ip>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})" 
+parse regex "^(?<src_ip>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})"
 | parse regex "(?<method>[A-Z]+)\s(?<url>\S+)\sHTTP/[\d\.]+\"\s(?<status_code>\d+)\s(?<size>[\d-]+)\s\"(?<referrer>.*?)\"\s\"(?<user_agent>.+?)\".*"
 ```
 

@@ -1,8 +1,8 @@
 ---
 id: collect-prometheus-metrics
+title: Collect Prometheus Metrics
 ---
 
-# Collect Prometheus Metrics
 
 You can collect Prometheus metrics in Kubernetes or outside of Kubernetes using Telegraf to collect and a plugin to send data to Sumo Logic. This guide walks through the plugins and options to set up your collection.
 
@@ -173,7 +173,7 @@ Install and configure Telegraf to read your data for sending through the Sumo Lo
 
 ### Configure and Collect Metrics
 
-To send data into Sumo Logic, use the [*Sumo Logic output plugin*](https://github.com/influxdata/telegraf/tree/master/plugins/outputs/sumologic). Configure the following options for the plugin. See [Supported HTTP Headers](../sources/sources-hosted-collectors/http-logs-metrics-source/upload-metrics-to-http-source.md) for additional Sumo supported options.
+To send data into Sumo Logic, use the [*Sumo Logic output plugin*](https://github.com/influxdata/telegraf/tree/master/plugins/outputs/sumologic). Configure the following options for the plugin. See [Supported HTTP Headers](../sources/hosted-collectors/http-logs-metrics-source/upload-metrics-to-http-source.md) for additional Sumo supported options.
 
 **URL.** A unique URL generated for your HTTP Metrics Source. Use the following address to send metrics to:
 
@@ -181,7 +181,7 @@ To send data into Sumo Logic, use the [*Sumo Logic output plugin*](https://githu
 url = "https://events.sumologic.net/receiver/v1/http/<UniqueHTTPCollectorCode>"
 ```
 
-**Data Format.** This plugin sends metrics to the [Sumo Logic HTTP Source](../sources/sources-hosted-collectors/http-logs-metrics-source/upload-metrics-to-http-source.md) in HTTP messages, encoded using one of the following output data formats, set for the header "Content-Type". For more information, see [Content-type header for metrics](../sources/sources-hosted-collectors/http-logs-metrics-source/upload-metrics-to-http-source.md).
+**Data Format.** This plugin sends metrics to the [Sumo Logic HTTP Source](../sources/hosted-collectors/http-logs-metrics-source/upload-metrics-to-http-source.md) in HTTP messages, encoded using one of the following output data formats, set for the header "Content-Type". For more information, see [Content-type header for metrics](../sources/hosted-collectors/http-logs-metrics-source/upload-metrics-to-http-source.md).
 
 :::note
 When unset, Telegraf will use the influx serializer by default which is currently unsupported in HTTP Source.
@@ -191,7 +191,7 @@ When unset, Telegraf will use the influx serializer by default which is current
 |--|--|
 | [Graphite](http://graphite.readthedocs.io/en/latest/feeding-carbon.html#the-plaintext-protocol) | `application/vnd.sumologic.graphite` |
 | [Carbon2](http://metrics20.org/implementations/) | `application/vnd.sumologic.carbon2`<br/>This is the default setting. |
-| [Prometheus](https://github.com/prometheus/docs/blob/master/content/docs/instrumenting/exposition_formats.md) | `application/vnd.sumologic.prometheus`<br/>Sumo won't ingest Prometheus comments or malformed Prometheus metrics. For more information, see [Prometheus metrics not accepted by Sumo](../sources/sources-hosted-collectors/http-logs-metrics-source/prometheus-metrics-not-accepted-by-sumo.md). |
+| [Prometheus](https://github.com/prometheus/docs/blob/master/content/docs/instrumenting/exposition_formats.md) | `application/vnd.sumologic.prometheus`<br/>Sumo won't ingest Prometheus comments or malformed Prometheus metrics. For more information, see [Prometheus metrics not accepted by Sumo](../sources/hosted-collectors/http-logs-metrics-source/prometheus-metrics-not-accepted-by-sumo.md). |
 
 **Timeout.** Set a timeout for the HTTP request.
 

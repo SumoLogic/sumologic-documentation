@@ -32,7 +32,7 @@ This section provides instructions for configuring log collection for Google Wor
 
 Currently, the source name for Google Workspace is still **G Suite Apps Audit Source**, which will be changed/updated shortly.
 
-Configure one [G Suite Apps Audit Source](/docs/send-data/sources/sources-hosted-collectors/g-suite-apps-audit-source) for each Google App from which you want to collect events:
+Configure one [G Suite Apps Audit Source](/docs/send-data/sources/hosted-collectors/g-suite-apps-audit-source) for each Google App from which you want to collect events:
 
 * Google Admin
 * Google Calendar
@@ -316,7 +316,7 @@ To configure Google Workspace Alert Center collection in your GCP environment, d
 3. Edit the `sumo_gsuite_alerts_collector_deploy.sh` bash script to configure following variables:
    * `region`: The Region where the Google function will be deployed. For example: "us-central1"
    * `project_id`: The project id of the project where the collector and all its resources will be deployed
-   * `delegated_email`:The valid email address of one of your org's Google Workspace super admin users.
+   * `delegated_email`: The valid email address of one of your org's Google Workspace super admin users.
    * `Sumo_endpoint`: The Sumo Logic HTTP endpoint created in Step 1
 4. Run the following script:
   ```bash

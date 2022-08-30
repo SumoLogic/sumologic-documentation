@@ -1,8 +1,8 @@
 ---
 id: increase-max-threads-collector
+title: Increase Max Threads for Collector
 ---
 
-# Increase Max Threads for Collector
 
 The Collector will use three threads per available CPU by default. For example, if you have a six CPU system the default number of threads used by Sources would be 18. This may not be enough to keep up with data collection.
 

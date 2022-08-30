@@ -1,8 +1,9 @@
 ---
 id: sumo-logic-add-on-for-heroku
+title: Sumo Logic Add-on for Heroku
 ---
 
-# Sumo Logic Add-on for Heroku
+#
 
 Heroku is a platform that allows developers to build applications in the cloud. Sumo Logic provides an [add-on for Heroku](https://elements.heroku.com/addons/sumologic) that fully integrates the power of Sumo Logic log analytics for Heroku users.
 

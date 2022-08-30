@@ -1,8 +1,9 @@
 ---
 id: about-two-step-verification
+title: About 2-Step Verification
 ---
 
-# About 2-Step Verification
+#
 
 Sumo Logic offers 2-Step Verification, also known as two-factor authentication, as an optional feature for customers to enhance security and secure sensitive data stored in Sumo Logic. When 2-Step Verification is configured, the user is prompted for an additional security code after authenticating with their username and password. The user obtains the additional security code from a configured device.
 

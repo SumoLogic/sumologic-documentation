@@ -1,8 +1,8 @@
 ---
 id: deactivate-activate-user
+title: Deactivate or Activate a User
 ---
 
-# Deactivate or Activate a User
 
 To temporarily prevent a user from logging into the Sumo Logic service, you can change the user's status to Inactive. You can reactivate an inactive user at any time without the need to re-enter user details.
 
@@ -23,7 +23,7 @@ If you want to permanently remove a user, [you can delete them](delete-user.md)
 1. Go to  **Administration** \> **Users and Roles** \> **Users**.
 
     ![user-options-menu.png](/img/users-and-roles/users-page.png)
-    
+
 1. Select the row for the user you want to deactivate and choose **Deactivate** from the three-dot options menu.
 
 The user's icon changes from a green check mark to a red exclamation

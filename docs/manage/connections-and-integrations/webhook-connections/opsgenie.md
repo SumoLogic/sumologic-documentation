@@ -58,14 +58,22 @@ This section demonstrates how to create a webhook connection from Sumo Logic to 
 
     ```json
     {
-        "searchName": "{{Name}}",
-        "searchDescription": "{{Description}}",
-        "searchQuery": "{{Query}}",
-        "searchQueryUrl": "{{QueryUrl}}",
-        "timeRange": "{{TriggerTimeRange}}",
-        "fireTime": "{{TriggerTime}}",
-        "ResultsJson": "{{ResultsJson}}",
-        "priority": "P3"
+     "AlertName": "{{AlertName}}",
+     "Description": "{{Description}}",
+     "action": "create",
+     "AlertURL": "{{AlertResponseURL}}",
+     "Query": "{{Query}}",
+     "QueryURL": "{{QueryURL}}",
+     "TriggerTime": "{{TriggerTime}}",
+     "TriggerTimeRange": "{{TriggerTimeRange}}",
+     "TriggerCondition": "{{TriggerCondition}}",
+     "TriggerValue": "{{TriggerValue}}",
+     "TriggerType": "{{TriggerType}}",
+     "ResultsJson": "{{ResultsJSON}}",
+     "DetectionMethod": "{{DetectionMethod}}",
+     "MonitorType": "{{MonitorType}}",
+     "NumQueryResults": "{{NumQueryResults}}",
+     "SourceURL": "{{SourceURL}}"
     }
     ```
 

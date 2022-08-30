@@ -1,8 +1,9 @@
 ---
 id: suppressed-lists
+title: Suppressed Lists
+description: Suppressed Lists allow you to suppress Signals that contain a particular indicator value in any of the Signals’ Records.
 ---
 
-# Suppressed Lists
 
 This topic has information about Suppressed Lists and how to create them.
 
@@ -78,11 +79,11 @@ Perform the steps below to create a Suppressed List and add an indicator to it u
 1. Choose **Suppressed Lists** from the Content menu and click **Create**.
 
     ![suppressed-lists.png](/img/cse/suppressed-lists.png)
-1. On the **New Suppressed List** popup, enter the following: 
+1. On the **New Suppressed List** popup, enter the following:
 
-   1. **Name**. Name of the Suppressed List. 
+   1. **Name**. Name of the Suppressed List.
    1. **Description**. Enter a description for the list. 
-   1. **Time to Live (hours)**. (Optional) Enter the number of hours after which the entries on the list should expire. 
+   1. **Time to Live (hours)**. (Optional) Enter the number of hours after which the entries on the list should expire.
    1. **Target Column**. The type of Record field to which items on the list should be compared.
 
     :::note
@@ -100,11 +101,11 @@ Perform the steps below to create a Suppressed List and add an indicator to it u
 
     ![add-list-item.png](/img/cse/add-list-item.png)
 
-1. On the **New Suppressed List Item** popup, enter: 
+1. On the **New Suppressed List Item** popup, enter:
 
-   1. **Value**. The value of the entity. Make sure the value you enter is of the same type as the type you selected as the Target Column for the list. For example, if the Target Column is Domain, enter a domain. 
-   1. **Description**. (Optional) Enter a description of the list item. 
-   1. **Expiration**. (Optional) The date and time at which the list item should be removed from the list. 
+   1. **Value**. The value of the entity. Make sure the value you enter is of the same type as the type you selected as the Target Column for the list. For example, if the Target Column is Domain, enter a domain.
+   1. **Description**. (Optional) Enter a description of the list item.
+   1. **Expiration**. (Optional) The date and time at which the list item should be removed from the list.
    1. Click **Add** to add the item to the list.    
 
     ![new-item.png](/img/cse/new-item.png)
@@ -144,9 +145,9 @@ specified:
 
 1. On the **Suppressed Lists** page, click the name of the list.
 1. Click **Import Indicators**.
-1. On the import popup: 
+1. On the import popup:
 
-   1. Drag your file onto the import popup, or click to navigate to the file, and then click Import. 
+   1. Drag your file onto the import popup, or click to navigate to the file, and then click Import.
    1. Optionally, you can enter an expiration for the indicators on the list. If you do, it will override any expirations that are defined in the file. Enter the expiration in any ISO date format. For example: *2022-12-31*
 
 ## Manage Suppressed Lists with the CSE API

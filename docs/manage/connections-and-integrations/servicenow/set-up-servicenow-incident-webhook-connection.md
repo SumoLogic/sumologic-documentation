@@ -1,8 +1,7 @@
 ---
 id: set-up-a-servicenow-incident-webhook-connection
+title: Set Up a ServiceNow Security Incident Webhook Connection
 ---
-
-# Set Up a ServiceNow Security Incident Webhook Connection
 
 This page shows you how to set up a ServiceNow Security Incident Webhook connection and create scheduled searches for the connection.
 
@@ -34,7 +33,7 @@ To set up a ServiceNow Security Incident Webhook connection:
 1. To create ServiceNow security incidents enter the **URL** for the ServiceNow Security Incident Import Table endpoint. 
 
     ```
-    https://<your-instance>.service-now.com/api/now/table/sn_si_incident_import 
+    https://<your-instance>.service-now.com/api/now/table/sn_si_incident_import
     ```
 
     :::note

@@ -5,8 +5,6 @@ sidebar_label: Record Processing Pipeline
 description: How CSE transforms incoming raw messages into Records. 
 ---
 
-
-
 This topic describes how CSE transforms incoming raw messages into Records. For each message received, CSE creates a Record, or in rare cases, multiple Records. 
 
 ## Overview of processing steps

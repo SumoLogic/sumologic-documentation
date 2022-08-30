@@ -1,8 +1,8 @@
 ---
 id: edit-source
+title: Edit Source
 ---
 
-# Edit a Source
 
 From the **Manage Collection** page, you can edit some characteristics of a Source, including its name, description, Collection time, Source Host, Source Category, Advanced options, and Processing Rules.
 

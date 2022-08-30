@@ -1,8 +1,7 @@
 ---
 id: microsoft-iis-logs
+title: Microsoft IIS Logs
 ---
-
-# Microsoft IIS Logs
 
 **Log Type**: Microsoft IIS
 

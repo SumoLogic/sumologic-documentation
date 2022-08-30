@@ -176,14 +176,14 @@ For more information on configuring the Joloka input plugin for Telegraf please 
            name: jolokia
  ```
 8. **Verification Step:** You can ssh to Kafka pod and run following commands to make sure Telegraf (and Jolokia) is scraping metrics from your Kafka Pod:
- ```curl
+ ```bash
  curl localhost:9273/metrics
  curl http://localhost:8778/jolokia/list
  echo $KAFKA_OPTS
  ```
 
 It should give you the following result:
- ```curl
+ ```bash
  -javaagent:/opt/jolokia/jolokia.jar=port=8778,host=0.0.0.0
  ```
 
@@ -265,7 +265,7 @@ This section provides instructions for configuring metrics collection for the Su
 #### Configure Kafka Metrics Collection
 
 1. **Configure a Hosted Collector**: To create a new Sumo Logic hosted collector, perform the steps in the[ Configure a Hosted Collector](/docs/send-data/configure-hosted-collector) section of the Sumo Logic documentation.
-2. **Configure an HTTP Logs and Metrics Source**: Create a new HTTP Logs and Metrics Source in the hosted collector created above by following[ these instructions. ](/docs/send-data/sources/sources-hosted-collectors/http-logs-metrics-source)Make a note of the **HTTP Source URL**.
+2. **Configure an HTTP Logs and Metrics Source**: Create a new HTTP Logs and Metrics Source in the hosted collector created above by following[ these instructions. ](/docs/send-data/sources/hosted-collectors/http-logs-metrics-source)Make a note of the **HTTP Source URL**.
 3. **Install Telegraf**: Follow the steps in [this document](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf.md) to install Telegraf on each Kafka Broker node.
 4. **Download and set up Jolokia on each Kafka Broker node**: As part of collecting metrics data from Telegraf, we will use the [Jolokia input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/jolokia2) to get data from Telegraf and the [Sumo Logic output plugin](https://github.com/SumoLogic/fluentd-output-sumologic) to send data to Sumo Logic.
    1. Download the latest version of the **Jolokia JVM-Agent** from [Jolokia](https://jolokia.org/download.html).
@@ -279,7 +279,7 @@ This section provides instructions for configuring metrics collection for the Su
     ```
    5. Restart Kafka Service
    6. Verify that you can access jolokia on `port 8778` using following command:
-    ```curl
+    ```bash
     curl http://KAFKA_SERVER_IP_ADDRESS:8778/jolokia/
     ```
 5. **Configure the Jolokia Input Plugin**. Create or modify the telegraf.conf file in /etc/telegraf/telegraf.d and copy and paste the text [from this file](https://sumologic-app-data.s3.amazonaws.com/Kafka/config_telegraf.conf).
@@ -317,7 +317,7 @@ By default, Kafka logs are stored in a log file. Perform the steps outlined belo
 1. **Configure Logging in Kafka**. By default Kafka logs (server.log and controller.log) are stored in the directory: `/opt/Kafka/kafka_<VERSION>/logs`. Make a note of above logs directory.
 2. **Configuring an Installed Collector**. To add an Installed collector, perform the steps as defined on the page [Configure an Installed Collector.](/docs/send-data/Installed-Collectors)
 3. **Configuring a Source**. To add a Local File Source source for Kafka do the following:
-   1. Add a[ Local File Source](/docs/send-data/Sources/sources-installed-collectors/Local-File-Source) in the installed collector configured in the previous step.
+   1. Add a[ Local File Source](/docs/send-data/Sources/installed-collectors/Local-File-Source) in the installed collector configured in the previous step.
    2. Configure the Local File Source fields as follows:
      * **Name.** (Required)
      * **Description.** (Optional)
@@ -370,7 +370,7 @@ The monitors are disabled by default. Once you have installed the alerts using t
 
 ### Method B: Using a Terraform script
 
-1. Generate an access key and access ID for a user that has the Manage Monitors role capability in Sumo Logic using these[ instructions](/docs/manage/security/access-keys#manage-your-access-keys-on-preferences-page). Please identify which deployment your Sumo Logic account is in, using this[ link](https://help.sumologic.com/APIs/General-API-Information/Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security).
+1. Generate an access key and access ID for a user that has the Manage Monitors role capability in Sumo Logic using these[ instructions](/docs/manage/security/access-keys#manage-your-access-keys-on-preferences-page). Please identify which deployment your Sumo Logic account is in, using this[ link](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
 2. [Download and install Terraform 0.13](https://www.terraform.io/downloads.html) or later.
 3. Download the Sumo Logic Terraform package for Kafka alerts. The alerts package is available in the Sumo Logic github[ repository](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/tree/main/monitor_packages/Kafka). You can either download it through the “git clone” command or as a zip file.
 4. Alert Configuration. After the package has been extracted, navigate to the package directory `terraform-sumologic-sumo-logic-monitor/monitor_packages/Kafka`.

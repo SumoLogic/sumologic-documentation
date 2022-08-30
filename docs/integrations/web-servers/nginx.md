@@ -203,11 +203,11 @@ This section explains the steps to collect Nginx logs from a Kubernetes environm
 </TabItem>
 <TabItem value="non-k8s">
 
-Sumo Logic uses the Telegraf operator for Nginx metric collection and the [Installed Collector](/docs/send-data/installed-collectors/about-installed-collectors) for collecting Nginx logs. The diagram below illustrates the components of the Nginx collection in a non-Kubernetes environment.
+Sumo Logic uses the Telegraf operator for Nginx metric collection and the [Installed Collector](/docs/send-data/installed-collectors/about) for collecting Nginx logs. The diagram below illustrates the components of the Nginx collection in a non-Kubernetes environment.
 
 <img src={useBaseUrl('img/integrations/web-servers/nginx-nonk8s.png')} alt="Web servers" />
 
-Telegraf uses the[ Nginx input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/nginx) to obtain Nginx metrics and the Sumo Logic output plugin to send the metrics to Sumo Logic. Logs from Nginx are collected by a [Local File Source](/docs/send-data/Sources/sources-installed-collectors/Local-File-Source).
+Telegraf uses the[ Nginx input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/nginx) to obtain Nginx metrics and the Sumo Logic output plugin to send the metrics to Sumo Logic. Logs from Nginx are collected by a [Local File Source](/docs/send-data/Sources/installed-collectors/Local-File-Source).
 
 The process to set up collection for Nginx data is done through the following steps.
 
@@ -216,17 +216,17 @@ The process to set up collection for Nginx data is done through the following st
 Nginx app supports the default access logs and error logs format.
 
 1. **Configure logging in Nginx.** Before you can configure Sumo Logic to ingest logs, you must configure the logging of errors and processed requests in NGINX Open Source and NGINX Plus. For instructions, refer to the following [documentation](https://docs.nginx.com/nginx/admin-guide/monitoring/logging/)
-2. **Configure an Installed Collector.** If you have not already done so, install and configure an installed collector for Windows by [following the documentation](/docs/send-data/installed-collectors/install-collector-windows).
+2. **Configure an Installed Collector.** If you have not already done so, install and configure an installed collector for Windows by [following the documentation](/docs/send-data/installed-collectors/windows).
 3. **Configure a Collector** Use one of the following Sumo Logic Collector options:
     1. To collect logs directly from the Nginx machine, configure an [Installed Collector](/docs/send-data/Installed-Collectors).
-    2. If you're using a service like Fluentd, or you would like to upload your logs manually, [Create a Hosted Collector](/docs/send-data/Hosted-Collectors#Create_a_Hosted_Collector).
+    2. If you're using a service like Fluentd, or you would like to upload your logs manually, [Create a Hosted Collector](/docs/send-data/configure-hosted-collector).
 4. **Configure a local file source**. Choose a method:
 
 <details><summary>For an Installed Collector</summary>
 
 To collect logs directly from your Nginx machine, use an Installed Collector and a Local File Source.  
 
-1. Add a [Local File Source](/docs/send-data/Sources/sources-installed-collectors/Local-File-Source).
+1. Add a [Local File Source](/docs/send-data/Sources/installed-collectors/Local-File-Source).
 2. Configure the Local File Source fields as follows:
    * **Name**. (Required)
    * **Description**. (Optional)
@@ -256,7 +256,7 @@ To collect logs directly from your Nginx machine, use an Installed Collector and
 
 If you're using a service like Fluentd, or you would like to upload your logs manually, use a Hosted Collector and an HTTP Source.
 
-1. Add an [HTTP Source](/docs/send-data/sources/sources-hosted-collectors/http-logs-metrics-source).
+1. Add an [HTTP Source](/docs/send-data/sources/hosted-collectors/http-logs-metrics-source).
 2. Configure the HTTP Source fields as follows:
     * **Name**. (Required)
     * **Description**. (Optional)
@@ -278,7 +278,7 @@ If you're using a service like Fluentd, or you would like to upload your logs ma
 
 #### Set up a Sumo Logic HTTP Source
 
-1. **Configure a Hosted Collector for Metrics.** To create a new Sumo Logic hosted collector, perform the steps in the [Create a Hosted Collector](/docs/send-data/Hosted-Collectors#Create_a_Hosted_Collector) documentation.
+1. **Configure a Hosted Collector for Metrics.** To create a new Sumo Logic hosted collector, perform the steps in the [Create a Hosted Collector](/docs/send-data/configure-hosted-collector) documentation.
 2. **Configure an HTTP Logs & Metrics source**:
     1. On the created Hosted Collector on the Collection Management screen, select **Add Source**.
     2. Select **HTTP Logs & Metrics.**
@@ -366,7 +366,7 @@ The monitors are disabled by default. Once you have installed the alerts using t
 
 ### Method B: Using a Terraform script
 
-1. **Generate a Sumo Logic access key and ID** Generate an access key and access ID for a user that has the Manage Monitors role capability in Sumo Logic using these[ instructions](/docs/manage/security/access-keys#manage-your-access-keys-on-preferences-page). Identify which deployment your Sumo Logic account is in, using this [link](https://help.sumologic.com/APIs/General-API-Information/Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security).
+1. **Generate a Sumo Logic access key and ID** Generate an access key and access ID for a user that has the Manage Monitors role capability in Sumo Logic using these[ instructions](/docs/manage/security/access-keys#manage-your-access-keys-on-preferences-page). Identify which deployment your Sumo Logic account is in, using this [link](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
 2. **[Download and install Terraform 0.13](https://www.terraform.io/downloads.html) or later**
 3. **Download the Sumo Logic Terraform package for Nginx alerts** The alerts package is available in the Sumo Logic GitHub [repository](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/tree/main/monitor_packages/Nginx). You can either download it through the “git clone” command or as a zip file.
 4. **Alert Configuration** After the package has been extracted, navigate to the package directory `terraform-sumologic-sumo-logic-monitor/monitor_packages/Nginx/`.
@@ -459,7 +459,7 @@ Panels will start to fill automatically. It's important to note that each panel 
 ## Viewing Nginx Dashboards
 
 :::tip Filter with template variables    
-Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](docs/alerts/monitors/template-variables).
+Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards-new/filter-template-variables).
 :::
 
 

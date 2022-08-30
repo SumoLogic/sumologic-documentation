@@ -30,7 +30,7 @@ This App is tested with the following versions:
 
 <TabItem value="k8s">
 
-```json
+```
 {
   "timestamp": 1625219282000,
   "log": "187.255.220.191 - - [01/Jul/2021:15:15:53 +0700] "GET /_includes/wp/blog/wp-content/themes/sumologic/style.css HTTP/1.1" 200 33229114 "http://www.greylock.com" "Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10_6_7; en-us) AppleWebKit/533.21.1 (KHTML, like Gecko) Chrome/19.0.1084.30 Safari/536.5""
@@ -42,7 +42,7 @@ This App is tested with the following versions:
 </TabItem>
 <TabItem value="non-k8s">
 
-```curl
+```
 187.255.220.191 - - [01/Jul/2021:15:15:53 +0700] \
 "GET /_includes/wp/blog/wp-content/themes/sumologic/sty
 ```
@@ -242,7 +242,7 @@ Telegraf runs on the same system as Varnish, and uses the [Varnish input plugin]
 This section provides instructions for configuring metrics collection for the Sumo Logic App for Varnish.
 
 1. **Configure a Hosted Collector**. To create a new Sumo Logic hosted collector, perform the steps in the[ Create a Hosted Collector](/docs/send-data/configure-hosted-collector) section of the Sumo Logic documentation.
-2. **Configure an HTTP Logs and Metrics Source**. Create a new HTTP Logs and Metrics Source in the hosted collector created above by following[ these instructions. ](/docs/send-data/sources/sources-hosted-collectors/http-logs-metrics-source)Make a note of the **HTTP Source URL**.
+2. **Configure an HTTP Logs and Metrics Source**. Create a new HTTP Logs and Metrics Source in the hosted collector created above by following[ these instructions. ](/docs/send-data/sources/hosted-collectors/http-logs-metrics-source)Make a note of the **HTTP Source URL**.
 3. **Install Telegraf**. Use the[ following steps](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf.md) to install Telegraf.
 4. **Configure and start Telegraf**. As part of collecting metrics data from Telegraf, we will use the [Varnish input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/varnish) to get data from Telegraf and the [Sumo Logic output plugin](https://github.com/SumoLogic/fluentd-output-sumologic) to send data to Sumo Logic.  
 
@@ -289,17 +289,17 @@ At this point, Varnish metrics should start flowing into Sumo Logic.
 
 This section provides instructions for configuring log collection for Varnish running on a non-Kubernetes environment for the Sumo Logic App for Varnish.
 
-By default, Varnish logs are stored in a log file. Sumo Logic supports collecting logs via a local log file. Local log files can be collected via [Installed collectors](/docs/send-data/Installed-Collectors). An Installed collector will require you to allow outbound traffic to [Sumo Logic endpoints](https://help.sumologic.com/APIs/General-API-Information/Sumo-Logic-Endpoints-and-Firewall-Security) for collection to work. For detailed requirements for Installed collectors, see this [page](/docs/get-started/system-requirements#Installed-Collector-Requirements).
+By default, Varnish logs are stored in a log file. Sumo Logic supports collecting logs via a local log file. Local log files can be collected via [Installed collectors](/docs/send-data/Installed-Collectors). An Installed collector will require you to allow outbound traffic to [Sumo Logic endpoints](/docs/api/getting-started#Sumo-Logic-Endpoints-and-Firewall-Security) for collection to work. For detailed requirements for Installed collectors, see this [page](/docs/get-started/system-requirements#Installed-Collector-Requirements).
 
 
 1. **Configure logging in Varnish**. Varnish supports logging via the following methods: local text log files. For details please visit this [page](https://docs.varnish-software.com/tutorials/enabling-logging-with-varnishncsa/). For the dashboards to work properly, please set the below specified log format as explained [here](https://docs.varnish-software.com/tutorials/enabling-logging-with-varnishncsa/#step-3-customise-options-1):
 ```bash
 %h %l %u %t \"%r\" %s %b \"%{Referer}i\" \"%{User-agent}i\"
 ```
-2. **Configure Varnish to log to a Local file**. By default, any installation of varnishd will not write any request logs to disk. Instead, Varnish has an in-memory log, and supplies tools to tap into this log and write to disk. To configure logging to a local file, follow the steps on [this](https://docs.varnish-software.com/tutorials/enabling-logging-with-varnishncsa/#enable-varnishncsa-logging) page. By default, Varnish logs are stored in **/var/log/varnish/varnishncsa.log**. For customized options please visit this [page](https://docs.varnish-software.com/tutorials/enabling-logging-with-varnishncsa/#step-3-customise-options-1). Logs from the Varnish log file can be collected via a Sumo Logic [Installed collector](/docs/send-data/Installed-Collectors) and a [Local File Source](/docs/send-data/Sources/sources-installed-collectors/Local-File-Source) as explained in the next section.
+2. **Configure Varnish to log to a Local file**. By default, any installation of varnishd will not write any request logs to disk. Instead, Varnish has an in-memory log, and supplies tools to tap into this log and write to disk. To configure logging to a local file, follow the steps on [this](https://docs.varnish-software.com/tutorials/enabling-logging-with-varnishncsa/#enable-varnishncsa-logging) page. By default, Varnish logs are stored in **/var/log/varnish/varnishncsa.log**. For customized options please visit this [page](https://docs.varnish-software.com/tutorials/enabling-logging-with-varnishncsa/#step-3-customise-options-1). Logs from the Varnish log file can be collected via a Sumo Logic [Installed collector](/docs/send-data/Installed-Collectors) and a [Local File Source](/docs/send-data/Sources/installed-collectors/Local-File-Source) as explained in the next section.
 3. **Configuring a Collector**. To add an Installed collector, perform the steps as defined on the page[ Configure an Installed Collector.](/docs/send-data/Installed-Collectors)
 4. **Configuring a Source**: To add a Local File Source source for Varnish do the following. To collect logs directly from your Varnish machine, use an Installed Collector and a Local File Source.  
-   1. Add a [Local File Source](/docs/send-data/Sources/sources-installed-collectors/Local-File-Source).
+   1. Add a [Local File Source](/docs/send-data/Sources/installed-collectors/Local-File-Source).
    2. Configure the Local File Source fields as follows:
      * **Name.** (Required)
      * **Description.** (Optional)
@@ -356,7 +356,7 @@ You can install monitors by importing a JSON file or using a Terraform script.
 3. Download the Sumo Logic Terraform package for MySQL monitor. The alerts package is available in the Sumo Logic GitHub [repository](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/tree/main/monitor_packages). You can either download it using the git clone command or as a zip file.
 4. Alert Configuration. After extracting the package , navigate to the terraform-sumologic-sumo-logic-monitor/monitor_packages/Varnish/ directory.
 
-Edit the `varnish.auto.tfvars` file and add the Sumo Logic Access Key and Access ID from Step 1 and your Sumo Logic deployment. If you're not sure of your deployment, see [Sumo Logic Endpoints and Firewall Security](https://help.sumologic.com/APIs/General-API-Information/Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security).
+Edit the `varnish.auto.tfvars` file and add the Sumo Logic Access Key and Access ID from Step 1 and your Sumo Logic deployment. If you're not sure of your deployment, see [Sumo Logic Endpoints and Firewall Security](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
 
 ```sql
 access_id   = "<SUMOLOGIC ACCESS ID>"

@@ -1,8 +1,8 @@
 ---
 id: metrics-data-volume-index
+title: Metrics Data Volume Index
 ---
 
-# Metrics Data Volume Index
 
 Sumo Logic populates the Metrics Data Volume Index with a set of JSON-formatted messages every five minutes. The messages contain the volume of metric data points your account is ingesting. 
 
@@ -52,7 +52,7 @@ Where `index_source_category` is one of the categories listed in the table below
 This query returns the metric volume by source category.
 
 ```sql
-_index=sumologic_volume _sourceCategory="sourcecategory_metrics_volume" 
+_index=sumologic_volume _sourceCategory="sourcecategory_metrics_volume"
 | parse regex "\"(?<sourcecategory>[^\"]+)\"\:\{\"dataPoints\"\:(?<datapoints>\d+)\}" multi
 | sum(datapoints) as datapoints by sourcecategory
 ```
@@ -92,7 +92,7 @@ _index=sumologic_volume  _sourceCategory="collector_metrics_volume"
 This query runs against the metrics volume index and uses the [outlier](../../../search/search-query-language/search-operators/Manually-Casting-String-Data-to-a-Number.md) operator to find timeslices in which your metric ingestion in DPM was greater than the running average by a statistically significant amount. 
 
 ```sql
-_index=sumologic_volume _sourcecategory=sourcecategory_metrics_volume 
+_index=sumologic_volume _sourcecategory=sourcecategory_metrics_volume
 | parse regex "\"(?<collector>[^\"]+)\"\:\{\"dataPoints\"\:(?<datapoints>\d+)\}" multi
 | timeslice 6h
 | sum(datapoints) as datapoints by _timeslice
