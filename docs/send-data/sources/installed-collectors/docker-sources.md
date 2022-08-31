@@ -3,7 +3,7 @@ id: docker-sources
 title: Docker Sources
 ---
 
-#
+
 
 Docker is a lightweight open platform that provides a way to package applications in containers for a software development environment.
 

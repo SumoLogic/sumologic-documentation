@@ -3,7 +3,7 @@ id: configure-telegraf-input-plugins
 title: Configure Telegraf Input Plugins
 ---
 
-#
+
 
 This topic explains how to configure Telegraf input plugins, and has examples of configuring several input plugins.
 

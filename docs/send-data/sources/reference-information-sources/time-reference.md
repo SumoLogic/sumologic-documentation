@@ -3,7 +3,7 @@ id: time-reference
 title: Timestamps, Time Zones, Time Ranges, and Date Formats
 ---
 
-#
+
 
 We support several options for timestamps, time zones, time ranges, and dates. When collecting log data, the timestamp attached to messages is vital, both for the integrity of the data in your account, and for accurate query results. Because of the importance of timestamps, Sumo Logic indexes the timestamp of each message, making sure that data relevant to a query’s time range is returned properly in search results, which allows you to reconstruct a correct event timeline.
 

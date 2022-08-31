@@ -3,7 +3,6 @@ id: kubernetes-fluentd-plugin
 title: Kubernetes Fluentd plugin
 ---
 
-#
 
 The configuration described on this page is deprecated. Sumo Logic recommends using the comprehensive Kubernetes solution instead.  
 

@@ -3,7 +3,7 @@ id: troubleshooting-json-configure-sources
 title: Troubleshooting JSON to Configure Sources
 ---
 
-#
+
 
 Sources supplied via a JSON file may not be applied to a Collector for a few reasons. This document covers common issues with JSON files when trying to configure Sources.
 

@@ -1,8 +1,9 @@
 ---
 slug: /search/lookup-tables
+title: Lookup Tables
 ---
 
-# Lookup Tables
+
 
 This guide has information about Lookup Tables. 
 

@@ -1,8 +1,9 @@
 ---
 id: manage-and-update-lookup-tables
+title: Manage and Update Lookup Tables
 ---
 
-# Manage and Update Lookup Tables
+
 
 The page has information about updating, exporting, and sharing Lookup Tables. For information about creating a new Lookup Table, see [Create a Lookup Table](create-a-lookup-table.md).
 
@@ -143,7 +144,7 @@ Follow the steps below to completely delete a lookup table:
 ## View Lookup Table update status
 
 When you are viewing a Lookup Table in the Library, you can view information about multi-row updates to the table that are queued up or have been recently completed.   
-  
+
 You can toggle your view between **Lookup Actions Queue** and **Lookup Actions History** with the icons labeled **a** and **b** in the screenshot below, respectively.
 
 ![lookup-actions-history.png](/img/search/lookup-tables/lookup-actions-history.png)

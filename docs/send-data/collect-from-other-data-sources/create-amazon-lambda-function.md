@@ -3,7 +3,6 @@ id: create-amazon-lambda-function
 title: Create a Sumo Lambda Function
 ---
 
-#
 
 Sumo provides a Lambda function for use with Amazon Web Services (AWS). It collects AWS Lambda logs using CloudWatch Logs and it extracts and adds a `RequestId` field to each log line to make correlation easier. 
 

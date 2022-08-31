@@ -3,7 +3,7 @@ id: collect-multiline-logs
 title: Collecting Multiline Logs
 ---
 
-#
+
 
 Sumo Logic Sources by default have multiline processing enabled. Multiline processing is used to ensure a log message that is made up of multiple lines, separated by a line break or carriage return, are properly grouped as a single log message when ingested into Sumo Logic.
 

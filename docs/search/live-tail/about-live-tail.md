@@ -1,8 +1,8 @@
 ---
 id: about-live-tail
+title: About Live Tail
 ---
 
-# About Live Tail
 
 Use Live Tail to see a real-time feed of log events associated with a Source or Collector. These live feeds can help you with development and troubleshooting.
 

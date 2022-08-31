@@ -3,7 +3,7 @@ id: configure-telegraf-output-plugin
 title: Configure Telegraf Output Plugin for Sumo Logic
 ---
 
-#
+
 
 This section has instructions for configuring the Telegraf output plugin for Sumo Logic.
 

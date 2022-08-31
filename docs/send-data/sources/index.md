@@ -1,6 +1,7 @@
 ---
 slug: /send-data/sources
-title: Sources
+title: Sumo Logic Sources
+sidebar_label: Sources
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';

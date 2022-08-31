@@ -3,7 +3,6 @@ id: integrate-halo-event-logs
 title: Integrate Halo Event Logs into Sumo Logic
 ---
 
-#
 
 The Halo Event Connector enables you to pull security event logs from Halo into Sumo Logic, including alerts from your configuration, file integrity, and software vulnerability scans. Halo can also deliver unprecedented visibility of your cloud servers, directly into your log management console. You can track server events such as your server rebooting, shutting down, changing IP addresses, and much more.
 
