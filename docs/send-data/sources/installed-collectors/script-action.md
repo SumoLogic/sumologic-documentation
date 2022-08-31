@@ -3,7 +3,6 @@ id: script-action
 title: Script Action
 ---
 
-#
 
 A Script Action passes the results of a scheduled search to a script or program that runs on a machine with an Installed Collector. The results are temporarily saved to the filesystem in JSON format at:
 

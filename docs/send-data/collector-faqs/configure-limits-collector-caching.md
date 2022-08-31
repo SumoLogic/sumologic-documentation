@@ -3,8 +3,6 @@ id: configure-limits-collector-caching
 title: Configure Limits for Collector Caching
 ---
 
-
-
 Caching of outbound data is supported for Installed Collectors when a Collector is throttled or paused or the connection is broken. Data is cached first in memory and then on disk.
 
 You can configure the amount of space available for caching of log and metric data on disk.

@@ -67,7 +67,7 @@ Use hashtags `#` to indicate the heading level. Always start with H2 headers (`#
 </TabItem>
 <TabItem value="Result">
 
-<img src={useBaseUrl('img/contribution/headersizes.png')} alt="header sizes" width="300"/>
+<img src={useBaseUrl('img/contributing/headersizes.png')} alt="header sizes" width="300"/>
 
 </TabItem>
 </Tabs>

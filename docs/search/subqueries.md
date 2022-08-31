@@ -1,8 +1,8 @@
 ---
 id: subqueries
+title: Subqueries
 ---
 
-# Subqueries
 
 Subqueries allow you to filter and evaluate conditions for a query when you may not be sure of the exact filter or condition criteria but you can write a short query to set them for you. Subqueries use one query to pass results back to another query to narrow down or evaluate the set of messages that are searched in that query. Sometimes this offers a faster approach than a join, where you'd have to unite large sets of data and then search through the results to form a conclusion. If you can do some processing to narrow down the scope of data, you can form a subquery.
 
@@ -95,17 +95,17 @@ This would be converted to a single output as follows:
 
 ### Optional arguments
 
-`from=(<fromTime>) to=(<toTime>)`  
+`from=(<fromTime>) to=(<toTime>)` 
     The `subquery` can contain a different time range for the child query. By default, the child query runs on the same time range as the parent query. You can specify either relative time or absolute time. See [subquery with a different time range](#subquery-with-a-different-time-range) for examples and supported formats.
 
-`maxresults\<in\>`  
+`maxresults\<in\>` 
     You can limit the number of results returned from the child to the parent query. To increase performance, we have made the default 2,500, but you can get up to 10,000 results.
 
 :::note
 The warning message "Subquery returned more records than your current limit allows. Some records might be truncated. You can increase your limit." pertains to this argument. You can adjust your limit to allow more records at the expense of performance.
 :::
 
-`keywords`  
+`keywords` 
     If the keywords clause is *not* specified then the results are returned with the field names, as key-value pairs back to the parent, so those fields should be present in the parent as well in order for it to work properly.
 
 :::note
@@ -130,9 +130,9 @@ The results only contain the values from the key-value pairs, the keys (field n
 ## Limitations
 
 * You have a maximum of 10,000 unique results (rows) from the child query and you are limited to 100MB of memory to return those results. If you see the error message:  
-    
+
     `Subquery reached the maximum memory limit. Some records will be truncated.`   
-    
+
     You have reached your maximum results or memory limit for your child
     query.
 * The Log Search view does not present a histogram for child queries.
@@ -206,7 +206,7 @@ Combine the two queries into a subquery to allow the parent query to harness the
 #### Keywords
 
 With keywords, you can replace the IP address (243.63.233.30) from the parent query with a child query.  
-  
+
 ```sql {2-6}
 _sourceCategory=reinvent/travel/checkout
 [subquery:_sourceCategory=reinvent/travel/nginx
@@ -227,7 +227,7 @@ Since we only want to pass the IP address back as a keyword we specified the 
 #### Without keywords
 
 If the parent query had the IP address specified with a field, such as `src_ip=243.63.233.30`, where `src_ip` is the field name, you can also replace it in the parent query with the child query.  
-  
+
 ```sql {2-6}
 _sourceCategory=reinvent/travel/checkout
 [subquery:_sourceCategory=reinvent/travel/nginx
@@ -270,7 +270,7 @@ _sourceCategory=reinvent/travel/checkout
 You can use a subquery in an if operation since it can return a valid conditional statement, such as A=B. To evaluate a condition as either true or false you need the parent query to also return the same field name as the child query. Either parse the field manually in the query or rely on log metadata.
 
 :::note
-A query using a filter operator like `if` may take longer to run than a query that defines the filter within its search expression. See [best practices](#best-practices) for an example. 
+A query using a filter operator like `if` may take longer to run than a query that defines the filter within its search expression. See [best practices](#best-practices) for an example.
 :::
 
 Once the parent query is ready and recognizes the same field name, in this case `src_ip`, place the child query in the parent query as the if condition. As mentioned in the syntax section, `keywords` is not supported with if operations.
@@ -421,8 +421,8 @@ shipping information from another data source:
 | parse "message=* )" as MsgTxt
 | parse "transaction *\\\"" as trans_id
 | save /transactions/errors
-| compose trans_id keywords 
-] 
+| compose trans_id keywords
+]
 _source=sourceB
 | parse "name: SHIPPER_ID\n value: *\n}" as shipper_id
 | parse "transaction *\\\"" as trans_id
@@ -474,5 +474,5 @@ These concepts are covered in [How to Build a Search](/docs/search/get-started-w
 * If the subquery returns more than 10000 results or exceeds the 100MB memory limit, you will receive the following error message:  
 
     `Subquery reached the maximum memory limit. Some records will be truncated.`  
-    
+
     If this happens, narrow the scope of your child query or reduce the number of results allowed in maxResults.

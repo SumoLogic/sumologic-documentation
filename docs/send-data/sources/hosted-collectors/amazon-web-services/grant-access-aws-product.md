@@ -1,8 +1,8 @@
 ---
 id: grant-access-aws-product
+title: Grant Access to an AWS Product
 ---
 
-# Grant Access to an AWS Product
 
 Sumo Logic requires access to the services in your AWS account(s) in order to collect data. This section has instructions for granting a Sumo Logic source access to AWS services. 
 
@@ -63,7 +63,7 @@ Watch the following video to see the procedure. It uses an S3 source as an examp
         className="video-container"
         display="initial"
         position="relative"
-        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
         />
 
@@ -75,27 +75,27 @@ This procedure applies to the **AWS Access** method part of the source configura
 
 Before generating the template, the source’s configuration must have the AWS-specific fields filled out (for example, Bucket Name, Path Expression, and so on). 
 
-1. Leave the **Access Method** option set to the default option **Role-based access (recommended)**. 
+1. Leave the **Access Method** option set to the default option **Role-based access (recommended)**.
 
     ![access-method.png](/img/send-data/access-method.png)
-    
+
 1. Click **Generate role-based access template**.
-1. A CloudFormation template for the role is displayed in YAML format. 
+1. A CloudFormation template for the role is displayed in YAML format.
 
     ![generated-template.png](/img/send-data/generated-template.png)
 
 1. Click **Download** to save the template.
 1. Navigate to AWS CloudFormation, or click **AWS CloudFormation Console**. The button will take you to open https://console.aws.amazon.com/cloudformation, and will not run the template. You will still need to generate and download the template to proceed.
-1. Click **Create Stack**. 
+1. Click **Create Stack**.
 
     ![create-stack-option.png](/img/send-data/create-stack-option.png)
 
-1. On the **Create Stack** page: 
+1. On the **Create Stack** page:
 
-   1. Choose **Template is ready.** 
+   1. Choose **Template is ready.**
    1. Choose **Upload a template file**.
-   1. Click **Choose file** and navigate to the .yaml file you downloaded from the Sumo Logic source configuration in the earlier step. 
-   1. Click **Next**.  
+   1. Click **Choose file** and navigate to the .yaml file you downloaded from the Sumo Logic source configuration in the earlier step.
+   1. Click **Next**. 
 
     ![save-stack.png](/img/send-data/save-stack.png)
 
@@ -112,15 +112,15 @@ Before generating the template, the source’s configuration must have the AWS-s
 1. On the **Create role** page:
 
    1. Click **Another AWS account** as the type of trusted entity.
-   1. **Account ID**. Enter the following Sumo Logic ID: *926226587429* 
+   1. **Account ID**. Enter the following Sumo Logic ID: *926226587429*
    1. In the **Options** section, checkmark the **Require external ID for better security**. 
    1. **External ID**. The External ID is formed from your Sumo Logic region identifier and your Sumo Logic account identifier in this format: *SumoDeployment:SumoAccountId* where:
-      
-      * *SumoDeployment* is your Sumo Logic deployment entered in lowercase such as au, ca, de, eu, fed, in, jp, us1, or us1. To find your deployment, see Sumo Logic Endpoints by Deployment and Firewall Security. 
-      * *SumoAccountId* is the Organization ID shown on your **Account Overview** in the Sumo Logic UI. You can access it by going to **Administration \> Account \> Account Overview**. 
 
-   1. **Require MFA**. Don’t select this option; it is not supported. 
-   1. Click **Next: Permissions**. 
+      * *SumoDeployment* is your Sumo Logic deployment entered in lowercase such as au, ca, de, eu, fed, in, jp, us1, or us1. To find your deployment, see Sumo Logic Endpoints by Deployment and Firewall Security.
+      * *SumoAccountId* is the Organization ID shown on your **Account Overview** in the Sumo Logic UI. You can access it by going to **Administration \> Account \> Account Overview**.
+
+   1. **Require MFA**. Don’t select this option; it is not supported.
+   1. Click **Next: Permissions**.
 
     ![create-role.png](/img/send-data/create-role.png)
 
@@ -168,27 +168,27 @@ The instructions in this section are for creating a user using the AWS console. 
 
 1. Sign in to the AWS Management Console and open the [IAM console](https://console.aws.amazon.com/iam/).
 1. In the navigation pane of the console, choose **Users** and then choose **Add users**.
-1. On the **Add user** page:  
+1. On the **Add user** page: 
 
-   1. **User name**. Enter a username for the new user. Enter a username for the new user. 
-   1. **Select AWS credentials type**. Click the checkbox next to **Access key - Programmatic access.** 
+   1. **User name**. Enter a username for the new user. Enter a username for the new user.
+   1. **Select AWS credentials type**. Click the checkbox next to **Access key - Programmatic access.**
    1. Click **Next: Permissions**.
 
 1. Select **Attach existing policies directly**.
-1. Click **Create policy**. This should open the **Create policy** page in a separate window. 
+1. Click **Create policy**. This should open the **Create policy** page in a separate window.
 
-   1. Choose the **JSON** tab on the **Create policy** page. 
-   1. Paste in the JSON policy for your source type. 
-   1. Click **Next: Tags**. 
+   1. Choose the **JSON** tab on the **Create policy** page.
+   1. Paste in the JSON policy for your source type.
+   1. Click **Next: Tags**.
 
     ![create-policy-page.png](/img/send-data/create-policy-page.png)
 
 1. Enter tags as desired and click **Next: Review**.
-1. On the **Create policy** page. 
+1. On the **Create policy** page.
 
-   1. **Name**. Enter a name for your policy. Policy names must be unique within your AWS account. Policy names are case-insensitive and can’t be changed after creation. 
-   1. **Description**. (Optional) 
-   1. Click **Create policy**. 
+   1. **Name**. Enter a name for your policy. Policy names must be unique within your AWS account. Policy names are case-insensitive and can’t be changed after creation.
+   1. **Description**. (Optional)
+   1. Click **Create policy**.
 
     ![create-policy-2.png](/img/send-data/create-policy-2.png)
 

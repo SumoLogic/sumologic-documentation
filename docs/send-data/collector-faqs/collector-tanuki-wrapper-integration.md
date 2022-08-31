@@ -3,17 +3,17 @@ id: collector-tanuki-wrapper-integration
 title: Windows - This Collector does not seem to have tanuki wrapper integration enabled
 ---
 
-# Windows:
+## Windows
 
 Error messages on Windows: "This Collector does not seem to have tanuki wrapper integration enabled."
 
-## Question:
+### Question:
 
 When attempting to upgrade a Windows Collector from the UI, the upgrade fails and the following error is reported in the tool tip of the failed Collector:
 
 `"This Collector does not seem to have tanuki wrapper integration enabled."`
 
-## Answer:
+### Answer:
 
 This is a known issue regarding upgrading a Windows collector from versions 19.60-x to the latest released version. The cause is a missing wrapper.dll file, which is required during a pre-check test of the Collector during upgrade. To correct this issue and allow the upgrade to succeed, perform the following steps on the affected host:
 

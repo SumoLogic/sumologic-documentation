@@ -3,7 +3,6 @@ id: verify-collecting-data
 title: How can I tell if I'm collecting data?
 ---
 
-#
 
 After installing a Collector and configuring a Source, your data should appear in Sumo Logic in a matter of minutes. How can you confirm that your data is being collected? Try any of the following options. 
 

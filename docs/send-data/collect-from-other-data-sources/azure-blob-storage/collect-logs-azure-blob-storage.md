@@ -3,7 +3,6 @@ id: collect-logs-azure-blob-storage
 title: Collect Logs from Azure Blob Storage
 ---
 
-#
 
 :::sumo
 This section has instructions for configuring a pipeline for shipping logs available from Azure Blob Storage to an Event Hub, on to an Azure Function, and finally to an HTTP source on an hosted collector in Sumo Logic. 

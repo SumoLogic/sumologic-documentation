@@ -3,7 +3,7 @@ id: vmware-airwatch-integration
 title: VMware AirWatch Integration for Sumo Logic
 ---
 
-#
+
 
 [VMware AirWatch](https://www.air-watch.com/ "https://www.air-watch.com/") is an enterprise mobility management (EMM) software and standalone management systems for content, applications and email. Sumo Logic integrates with VMware AirWatch to provide visibility for monitoring enterprise mobility management in your deployment. The unified digital workspace platform simplifies and secures app access and IT management throughout your environment.
 
