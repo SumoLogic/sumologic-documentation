@@ -1,8 +1,8 @@
 ---
 id: chart-search-results
+title: Chart Search Results
 ---
 
-# Chart Search Results
 
 In the **Aggregates** tab, in addition to the standard table view, you can view search results as a chart, such as a bar or column chart.
 
@@ -27,11 +27,11 @@ Your data may be a string data type instead of a number. Most aggregate operator
 Example:
 
 ```sql
-_sourceCategory=concierge completed execution 
-| parse "Execution duration: * s" as duration 
-| timeslice 5m 
-| first(duration) as duration by _timeslice 
-| num(duration) 
+_sourceCategory=concierge completed execution
+| parse "Execution duration: * s" as duration
+| timeslice 5m
+| first(duration) as duration by _timeslice
+| num(duration)
 | sort by duration
 ```
 

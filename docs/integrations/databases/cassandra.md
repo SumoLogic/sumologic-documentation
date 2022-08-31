@@ -257,7 +257,7 @@ For Non-Kubernetes environments, there are two ways you can set up Cassandra met
 4. Restart Cassandra service.
 5. Next, choose one of the Logs and Metrics collection configuration methods:
 
-<details><summary>Method A: Using Telegraf</summary>
+<details><summary>Method A: Using Telegraf and Installed Collector</summary>
 
 To collect Cassandra metrics for Non-Kubernetes environments, we use the Telegraf operator; to collect Cassandra logs, we use the Sumo Logic Installed Collector. The diagram below illustrates the components of the Cassandra collection in a non-Kubernetes environment. Telegraf runs on the same system as Cassandra and uses the [Jolokia2 input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/jolokia2) to obtain Cassandra metrics, and the Sumo Logic output plugin to send the metrics to Sumo Logic. Logs from Cassandra, on the other hand, are sent to a Sumo Logic Local File source.<br/><img src={useBaseUrl('img/integrations/databases/cassandra1.png')} alt="cassandra" />
 

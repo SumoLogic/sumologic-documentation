@@ -3,8 +3,6 @@ id: collect-metrics-azure-monitor
 title: Collect Metrics from Azure Monitor
 ---
 
-#
-
 This section has instructions for configuring a pipeline for shipping metrics available from Azure Monitor to an Event Hub, on to an Azure Function, and finally to an HTTP source on a hosted collector in Sumo Logic. Azure Monitor collects metrics and well as logs. The pipeline described below is for metrics, not logs. 
 
 For information about Azure metrics, see [Overview of metrics in Microsoft Azure in Azure](https://docs.microsoft.com/en-us/azure/monitoring-and-diagnostics/monitoring-overview-metrics) help.
@@ -78,7 +76,7 @@ Follow these steps to export metrics for a resource to Event Hub.
 1. From the left pane, select **ALL Services.**
 1. Search for and select "Monitor".
 1. In the **Monitor** pane, select **Diagnostic Settings** under **Settings**.
-1. Select the resource for which you want to export metrics. If **diagnostics** is not enabled click **Turn on Diagnostics Settings.**
+1. Select the resource for which you want to export metrics. If **diagnostics** is not enabled, click **Turn on Diagnostics Settings.**
 1. Once diagnostics are enabled, click **Add a diagnostic setting**.
 1. The **Diagnostic Settings** page appears.
 

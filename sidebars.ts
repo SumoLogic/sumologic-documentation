@@ -431,7 +431,7 @@ module.exports = {
         'dashboards-new/drill-down-to-discover-root-causes',
         'dashboards-new/export-dashboard-new',
         'dashboards-new/filter-template-variables',
-        'dashboards-new/explore',
+        'dashboards-new/explore-view',
         'dashboards-new/link-dashboard-to-explore',
         'dashboards-new/link-dashboard-new',
         'dashboards-new/locate-deviations-time-series',
@@ -2267,28 +2267,28 @@ module.exports = {
     },
   ],
   //Contribution guide for documentation
-  contribution: [
+  contributing: [
     {
       type: 'category',
       label: 'Contribution Guide',
       collapsible: false,
       collapsed: false,
-      link: {type: 'doc', id: 'contribution/index'},
+      link: {type: 'doc', id: 'contributing/index'},
       items: [
-        'contribution/create-document',
-        'contribution/markdown-features',
-        'contribution/style-guide',
-        'contribution/word-list',
-        'contribution/code-of-conduct',
-        'contribution/translations',
+        'contributing/create-document',
+        'contributing/markdown-features',
+        'contributing/style-guide',
+        'contributing/word-list',
+        'contributing/code-of-conduct',
+        'contributing/translations',
         {
           type: 'category',
           label: 'Templates',
           collapsible: true,
           collapsed: false,
           items: [
-            'contribution/templates/partner-app',
-            'contribution/templates/template-doc'
+            'contributing/templates/partner-app',
+            'contributing/templates/template-doc'
           ]
         }
       ],
@@ -2386,15 +2386,10 @@ module.exports = {
               collapsed: true,
               items: [
                 'releasenotes/archive/collector/year2021',
-              ],
-            },
-            {
-              type: 'category',
-              label: 'Developer Archive',
-              collapsible: true,
-              collapsed: true,
-              items: [
-                'releasenotes/archive/developer/year2021',
+                'releasenotes/archive/collector/year2020',
+                'releasenotes/archive/collector/year2019',
+                'releasenotes/archive/collector/year2018',
+                'releasenotes/archive/collector/year2017',
               ],
             },
             {
@@ -2404,6 +2399,10 @@ module.exports = {
               collapsed: true,
               items: [
                 'releasenotes/archive/service/year2021',
+                'releasenotes/archive/service/year2020',
+                'releasenotes/archive/service/year2019',
+                'releasenotes/archive/service/year2018',
+                'releasenotes/archive/service/year2017',
               ],
             },
           ]

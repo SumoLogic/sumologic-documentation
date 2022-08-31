@@ -3,7 +3,7 @@ slug: /send-data/installed-collectors/collector-installation-reference
 title: Reference Information for Collector Installation
 ---
 
-#
+
 
 These topics provide supporting information about Collector configuration parameters and options. 
 

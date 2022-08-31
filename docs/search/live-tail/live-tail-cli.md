@@ -1,8 +1,7 @@
 ---
 id: live-tail-cli
+title: Live Tail CLI
 ---
-
-# Live Tail CLI
 
 The Live Tail Command Line Interface (CLI) is a standalone application that allows you to start and use a Live Tail session from the command line.
 
@@ -16,7 +15,7 @@ The Live Tail CLI supports the following operating systems:
 
 The limitations for the Live Tail CLI are the same as the [Live Tail](about-live-tail.md) feature in the Sumo Logic Web Application, but for these exceptions:
 
-* You can tail logs ingested from Sources configured on Installed Collectors and from HTTP and Cloud Syslog Sources on Hosted Collectors. 
+* You can tail logs ingested from Sources configured on Installed Collectors and from HTTP and Cloud Syslog Sources on Hosted Collectors.
 
   :::note
   Data ingested from Amazon S3 can't be tailed because of restrictions from Amazon.

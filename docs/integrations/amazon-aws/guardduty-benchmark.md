@@ -33,7 +33,7 @@ If you have already Amazon GuardDuty data flowing into Sumo Logic, you can skip 
 :::
 
 :::note
-These tasks require the Manage Collectors and Manage Access Keys [role capabilities](https://help.sumologic.com/Manage/Users-and-Roles/Manage-Roles/05-Role-Capabilities).
+These tasks require the Manage Collectors and Manage Access Keys [role capabilities](/docs/manage/users-and-roles/roles/role-capabilities).
 :::
 
 Sumo Logic provides a SAM application based on [AWS Serverless Application Model (SAM) specification](https://docs.aws.amazon.com/lambda/latest/dg/serverless_app.html), and is published in the [AWS Serverless Application Repository](https://aws.amazon.com/serverless/serverlessrepo/). This SAM deployment:

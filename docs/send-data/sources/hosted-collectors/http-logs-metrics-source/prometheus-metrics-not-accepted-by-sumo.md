@@ -3,7 +3,6 @@ id: prometheus-metrics-not-accepted-by-sumo
 title: Types of Prometheus Metrics not Accepted by Sumo
 ---
 
-#
 
 By design, Sumo does not ingest Prometheus comments. Sumo also rejects Prometheus metrics that do not conform to the Prometheus metric format. This page lists the conditions that will cause Sumo to reject Prometheus metrics
 

@@ -3,7 +3,7 @@ id: prerequisites-windows-remote-file-collection
 title: Prerequisites for Windows Remote File Collection
 ---
 
-#
+
 
 Sumo Logic requires a few extra steps when you set up collection in Windows environments. For remote file collection from Windows systems, choose one of these two methods:
 

@@ -1,8 +1,8 @@
 ---
 id: binary-package-install-a-collector
+title: Use the binary package to install a Collector on Windows or macOS
 ---
 
-# Use the binary package to install a Collector on Windows or MacOS
 
 Use the binary package to install a Collector on MacOS or Windows only if you need to use a particular version of JRE. See [Install a Collector on Linux](../linux.md).
 
@@ -15,7 +15,7 @@ Before you begin:
 * Install the version of JRE you want to use. The binary installation process does not include JRE installation. Download the JRE here: \<https://docs.aws.amazon.com/corretto/latest/corretto-8-ug/downloads-list.htm\> 
 * Download the binary file from either of these locations:  
 
-  * Sumo Logic web application: **Manage Collection \> Collection \> Collection \> Add Collector \> Installed Collector \> Install a Binary Package** 
+  * Sumo Logic web application: **Manage Collection \> Collection \> Collection \> Add Collector \> Installed Collector \> Install a Binary Package**
   * Static download link: https://collectors.sumologic.com/rest/download/tar
 
 ## Prepare the binary file
@@ -49,10 +49,10 @@ Optionally, you can configure Source using the Sumo Logic Web Application afte
 
 This option is only supported in specific deployments, ask your Sumo account representative for details.
 
-On Collector version 19.253-3+ you can enable FIPS 140-2 compliant Java Cryptography Extension (JCE) to encrypt your data. Once enabled, the Collector version cannot be downgraded below version 19.253-1. 
-  
+On Collector version 19.253-3+ you can enable FIPS 140-2 compliant Java Cryptography Extension (JCE) to encrypt your data. Once enabled, the Collector version cannot be downgraded below version 19.253-1.
+
 To enable, locate and run the script **configureFipsMode.sh** contained in Collector's installation directory under **/script**:  
-  
+
 ```bash
 $ sh ./script/configureFipsMode.sh
 ```

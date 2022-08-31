@@ -1,8 +1,9 @@
 ---
 id: macos
+title: Install a Collector on MacOS
 ---
 
-# Install a Collector on MacOS
+
 
 Follow the steps in this topic to install or uninstall a Collector on MacOS. See [Installed Collectors](/docs/send-data/installed-collectors) for information on other OSs.
 

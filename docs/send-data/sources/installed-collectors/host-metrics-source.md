@@ -3,7 +3,7 @@ id: host-metrics-source
 title: Host Metrics Source
 ---
 
-#
+
 
 An installed Sumo Logic Collector can collect host metrics pertaining to the local host. The metrics are ingested and become available for metrics visualization. The host metrics are gathered by the open-source [SIGAR library](https://github.com/hyperic/sigar). 
 

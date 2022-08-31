@@ -3,7 +3,7 @@ id: json-parameters-installed-sources
 title: JSON Parameters for Installed Sources
 ---
 
-#
+
 
 This topic describes JSON Source parameters for installed Collectors. See the following topics for additional information:
 

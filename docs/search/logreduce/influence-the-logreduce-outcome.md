@@ -1,8 +1,9 @@
 ---
 id: influence-the-logreduce-outcome
+title: Influence the LogReduce Outcome
 ---
 
-# Influence the LogReduce Outcome
+
 
 The algorithm used for the logreduce operator uses fuzzy logic and soft matching to group messages with similar structures and common repeated text strings into **Signatures**, providing a quick investigative view, or snapshot, for the keywords or time range provided. LogReduce data is based on the data available to the algorithm during the time range of your search.
 

@@ -1,8 +1,8 @@
 ---
 id: troubleshooting-live-tail
+title: Troubleshooting Live Tail
 ---
 
-# Troubleshooting Live Tail
 
 Data ingested from Amazon S3 can't be tailed.
 
