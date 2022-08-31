@@ -2106,6 +2106,7 @@ module.exports = {
             'cse/administration/manage-custom-insight-resolutions',
             'cse/administration/manage-custom-insight-statuses',
             'cse/administration/using-sensor-zones',
+            'cse/administration/inventory-sources-and-data',
           ],
         },
         {
