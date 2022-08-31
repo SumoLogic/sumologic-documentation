@@ -1,8 +1,9 @@
 ---
 id: add-collector-linux-machine-image
+title: Add a Collector to a Linux Machine Image
 ---
 
-# Add a Collector to a Linux Machine Image
+
 
 You can build a Sumo Logic Collector into a Linux machine image such as an Amazon AMI or VMware image.
 
@@ -32,7 +33,7 @@ Collection \> Collection** page, or from the list below.
     :::important
     JSON files need to be UTF-8 encoded.
     ```
-    
+
     ```json title="Sample sources.json"
     {
     "api.version": "v1",

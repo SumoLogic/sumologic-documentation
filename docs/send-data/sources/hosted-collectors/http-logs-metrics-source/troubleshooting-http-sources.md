@@ -3,9 +3,8 @@ id: troubleshooting-http-sources
 title: Troubleshooting HTTP Sources
 ---
 
-#
 
-### Check HTTP status codes
+## Check HTTP status codes
 
 If you believe some data that was uploaded to a source was not ingested, check the HTTP status codes for requests sent to the source. Each request should receive a 200 status code indicating the data was successfully received by Sumo. Status codes other than 200 may indicate an issue with the HTTP source. Key status codes are listed below.
 

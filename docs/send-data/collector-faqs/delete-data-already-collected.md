@@ -3,7 +3,6 @@ id: delete-data-already-collected
 title: Delete data already collected to Sumo Logic
 ---
 
-
 ## Question:
 
 Is it possible to delete data already collected into Sumo Logic? I've ingested some private information into my Sumo Logic account by mistake and I want to remove it so that search results don't show this data. Is this possible?

@@ -3,7 +3,7 @@ id: increase-windows-event-messages-retrieval
 title: Increase the number of Windows Event messages a Collector can retrieve
 ---
 
-#
+
 
 The Sumo Logic Collector currently has a hard limit on the number of events a Source can retrieve from an Event Log Source every second. This limit is set to 512 events every 300ms by default. The following message in the Collector logs reference this setting.
 

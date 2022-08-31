@@ -1,8 +1,9 @@
 ---
 id: transaction-operator
+title: Transaction Operator
 ---
 
-# Transaction Operator
+
 
 No matter what type of data you are analyzing, from tracking website sign ups, to e-commerce data, to watching system activity across a distributed system, the transaction operator can be used in a variety of use cases. Ultimately, data is always ordered, at least by timestamp. But during analysis, the transaction operator can process otherwise unordered data and produce results using ordered data (data that has an ordered flow).
 
@@ -22,7 +23,7 @@ Check out the following overview video. It reviews a search provided in the G S
         className="video-container"
         display="initial"
         position="relative"
-        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
         />
 
@@ -31,7 +32,7 @@ import Iframe from 'react-iframe';
 ## Syntax
 
 ```sql
-transaction on <field1> [, <field2>]... [fringe=<timespec>] with <states> results by [transactions | states | flow] 
+transaction on <field1> [, <field2>]... [fringe=<timespec>] with <states> results by [transactions | states | flow]
 ```
 
 States act as matching statements, searching your log for that specific state. These support wildcards ` *` to match on any characters. For example, in the following log, if one of the states you needed to capture was when a session is started based on your parsed field sessionId:
@@ -172,11 +173,11 @@ If *tw* is the time window for a query, then transactions that satisfy the fol
 **For example:**
 
 ```sql
-... | transaction on sessionid fringe=10m 
-with "Starting session *" as init, 
-with "Initiating countdown *" as countdown_start, 
-with "Countdown reached *" as countdown_done, 
-with "Launch *" as launch 
+... | transaction on sessionid fringe=10m
+with "Starting session *" as init,
+with "Initiating countdown *" as countdown_start,
+with "Countdown reached *" as countdown_done,
+with "Launch *" as launch
 results by transactions
 ```
 
@@ -221,9 +222,9 @@ The fields are assigned a timestamp in milliseconds.
 For example in the query:
 
 ```sql
-_source=Syslog (New session) OR (Session deleted) 
+_source=Syslog (New session) OR (Session deleted)
 | transaction on sessionid with "*New session*" as started, with "*Session deleted*" as ended
-| where started > 0 
+| where started > 0
 | ((_end_time - _start_time)/1000)/60 as time_difference_minutes
 ```
 

@@ -1,8 +1,9 @@
 ---
 id: best-practices-search
+title: Best Practices for Searches
 ---
 
-# Best Practices for Searches
+
 
 ## Be specific with search scope
 
@@ -49,7 +50,7 @@ When filtering data, make the result set you are working with as small as possib
 _sourceCategory=Prod/User/Eventlog user="john" | count by user
 ```
 
-This example assumes that you also leverage a Field Extraction Rule to eliminate any parsing. 
+This example assumes that you also leverage a Field Extraction Rule to eliminate any parsing.
 
 **Least preferred approach:**
 

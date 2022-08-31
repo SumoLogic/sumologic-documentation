@@ -1,8 +1,9 @@
 ---
 id: change-time-range-in-histogram
+title: Change the Time Range in the Histogram
 ---
 
-# Change the Time Range in the Histogram
+
 
 You can highlight a time range in the search results histogram to filter your search results in the **Messages** tab based on that time range.  
 

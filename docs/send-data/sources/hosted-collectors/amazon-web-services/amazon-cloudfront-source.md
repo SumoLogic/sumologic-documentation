@@ -1,8 +1,9 @@
 ---
 id: amazon-cloudfront-source
+title: Amazon CloudFront Source
 ---
 
-# Amazon CloudFront Source
+
 
 Amazon CloudFront is a content delivery network (CDN) that allows an easy way for companies to distribute content to end-users with low latency and high data transfer speeds. When logging is configured, CloudFront creates log files that contain detailed information about every user request that it receives. Add an Amazon CloudFront Source to upload these messages to Sumo Logic.
 

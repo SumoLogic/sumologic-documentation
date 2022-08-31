@@ -1,8 +1,7 @@
 ---
 id: export-results-of-saved-file
+title: Export the Results of a Saved File
 ---
-
-# Export the Results of a Saved File
 
 This was an advanced task designed to fulfill a missing feature in Sumo.
 
@@ -20,15 +19,15 @@ To create keys in your saved file:
 1. In your query that is saving the file with the save operator, you need to add numbers to act as the primary key. You can start at 1 and increment by 1 for each result, as shown. Add a group by if needed (such as a [timeslice](../search-query-language/search-operators/timeslice.md)):
 
     ```sql
-    | 1 as number 
+    | 1 as number
     | accum number as number // by _timeslice
     ```
 
 1. Now that your saved file has numbers as unique keys on each result you can do a lookup so that the matching is done on the keys, like this:
 
     ```sql
-    | 1 as number 
-    | accum number as key 
+    | 1 as number
+    | accum number as key
     | lookup * from shared/file.csv on key=number
     ```
 
@@ -37,10 +36,10 @@ To create keys in your saved file:
 1. If you are appending to your saved file, you can get the file's last key to define the starting key for the append query using the following query:
 
     ```sql
-    | 1 as number 
-    | accum number as key 
-    | lookup _accum from shared/file/forsupport on key=_accum 
-    | max(_accum) 
+    | 1 as number
+    | accum number as key
+    | lookup _accum from shared/file/forsupport on key=_accum
+    | max(_accum)
     | _max + 1 as key
     ```
 

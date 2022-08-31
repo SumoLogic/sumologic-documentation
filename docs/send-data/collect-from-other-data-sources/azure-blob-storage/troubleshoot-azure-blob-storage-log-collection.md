@@ -3,8 +3,6 @@ id: troubleshoot-azure-blob-storage-log-collection
 title: Troubleshoot Azure Blob Storage Log Collection
 ---
 
-#
-
 If logs don't start flowing into Sumo Logic after you perform the [Collect Logs from Azure Blob Storage](collect-logs-azure-blob-storage.md) procedure, see the troubleshooting tips below.
 
 ## Error while deploying the ARM template

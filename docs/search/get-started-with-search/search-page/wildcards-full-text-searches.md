@@ -1,8 +1,9 @@
 ---
 id: wildcards-in-full-text-searches
+title: Wildcards in Full Text Searches
 ---
 
-# Wildcards in Full Text Searches
+ 
 
 This topic covers the details and special cases when using wildcards, for example, within quoted search expressions and within phrase queries.
 

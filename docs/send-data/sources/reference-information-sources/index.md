@@ -3,7 +3,7 @@ slug: /send-data/sources/reference-information-sources
 title: Reference Information for Sources
 ---
 
-#
+
 
 These topics contain reference information for Sources for installed and hosted Collectors.
 

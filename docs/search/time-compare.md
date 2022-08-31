@@ -1,8 +1,9 @@
 ---
 id: time-compare
+title: Time Compare
 ---
 
-# Time Compare
+
 
 ## Time Compare Button
 
@@ -31,7 +32,7 @@ You can also customize the prefix for a query by specifying an alias. See the [A
 
 ### Default Time Compare
 
-Click the **Time Compare** button to run the default timeshift comparison of 1 day. Or select another timeshift comparison from the 
+Click the **Time Compare** button to run the default timeshift comparison of 1 day. Or select another timeshift comparison from the
 menu.
 
 ![time compare UI option aug 24 2021.png](/img/search/timecompare/time-compare-UI-option-aug-24-2021.png)
@@ -63,8 +64,8 @@ For example, if you wanted to compare the behavior of backfill errors on
 continuous queries over the last seven days, use the following query:
 
 ```sql
-backfill error 
-| timeslice by 1m 
+backfill error
+| timeslice by 1m
 | count _timeslice
 ```
 
@@ -202,7 +203,7 @@ For example:
 * Compare can't generate more than **seven** additional queries. An additional query is generated whenever a comparison in time is initiated. Note that multiple comparisons and aggregate comparisons will generate multiple queries. For example, the following queries are not allowed:
 
     ```sql
-    ... | compare timeshift 1d 14 
+    ... | compare timeshift 1d 14
     ```
 
     This query compares with the past 14 days data. It is not allowed as it
@@ -232,9 +233,9 @@ For example:
 Use compare to analyze the change in log counts between two days.
 
 ```sql
-error 
-| timeslice by 1h 
-| count by _timeslice 
+error
+| timeslice by 1h
+| count by _timeslice
 | compare timeshift 2d
 ```
 
@@ -250,9 +251,9 @@ Using the multiple comparison feature, you can compare the number of
 logs against every ten minutes of the past hour:
 
 ```sql
-_sourceHost = prod 
-| timeslice by 1m 
-| count by _timeslice 
+_sourceHost = prod
+| timeslice by 1m
+| count by _timeslice
 | compare timeshift 10m 5
 ```
 
@@ -268,16 +269,16 @@ Alternatively, you can compare against the average of all the ten minute
 periods:
 
 ```sql
-_sourceHost = prod 
-| timeslice by 1m 
-| count by _timeslice 
+_sourceHost = prod
+| timeslice by 1m
+| count by _timeslice
 | compare timeshift 10m 5 avg
 ```
 
 ![TenMinAvg.png](/img/search/timecompare/TenMinAvg.png)
 
 Create a line chart to visualize the results.  
-  
+
 ![TenMinAvgLineChart.png](/img/search/timecompare/TenMinAvgLineChart.png)
 
 ### Compare categorical data parsed from logs
@@ -286,9 +287,9 @@ Use compare to analyze the change in delays on different \_sourceHosts
 using parsed data from logs.
 
 ```sql
-"delay:" 
-| parse "delay: *" as delay 
-| avg(delay) as average_delay_in_millis by _sourceHost 
+"delay:"
+| parse "delay: *" as delay
+| avg(delay) as average_delay_in_millis by _sourceHost
 | compare timeshift 30m
 ```
 
@@ -305,10 +306,10 @@ These results would create a line chart such as the following.
 You can use the compare operator after a transpose operation, such as the following:
 
 ```sql
-_sourceCategory=analytics 
-| timeslice 1m 
-| count by _timeslice, _sourceHost 
-| transpose row _timeslice column _sourceHost as %"nite-analytics-1", %"nite-analytics-2" 
+_sourceCategory=analytics
+| timeslice 1m
+| count by _timeslice, _sourceHost
+| transpose row _timeslice column _sourceHost as %"nite-analytics-1", %"nite-analytics-2"
 | compare with timeshift 15m
 ```
 
@@ -319,11 +320,11 @@ You can use the compare operator to create scheduled search email alerts.
 For example, if you want to be alerted if there is a 15% spike in login failures compared to the average of the last seven days, you'd use the following query:
 
 ```sql
-_sourceCateogy=WebserverLogs "Bad username or password" 
-| timeslice 30m 
-| count _timeslice 
-| compare timeshift 1d 7 avg 
-| abs(_count - _count_7d_avg )/ _count_7d_avg as percentOver 
+_sourceCateogy=WebserverLogs "Bad username or password"
+| timeslice 30m
+| count _timeslice
+| compare timeshift 1d 7 avg
+| abs(_count - _count_7d_avg )/ _count_7d_avg as percentOver
 | where percentOver\> 0.15
 ```
 
@@ -334,7 +335,7 @@ You can then use this query to build the scheduled search email alert.
 1. For **Run frequency**, select the time period at which you want to schedule this search. For this alert, we have selected **Every 2 Hours**.  
 
     ![Save Item.png](/img/search/timecompare/Save-Item.png)
- 
+
 1. For **Send notification**, select **if the following condition is met**.
 1. For **Alert condition**, select **Greater than \>,** and for **Number of results **enter **5**.
 1. For **Alert Type**, select **Email**.

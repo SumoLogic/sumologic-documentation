@@ -1,6 +1,6 @@
 ---
 id: group-messages-based-on-field
-sidebar_label: Group Messages Using a Defined Field
+title: Group Messages Using a Defined Field
 ---
 
 # How to group messages based on a field you define?
@@ -20,4 +20,3 @@ In this query, the sessionize operator uses three parse expressions:
 1. The last log entry in the session is matched. Once this match occurs, the session is deemed to be complete and will not match any further logs.
 
 All the fields extracted are also available as additional fields in the UI and can be used for further analysis.
-

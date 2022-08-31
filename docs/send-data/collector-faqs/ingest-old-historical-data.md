@@ -3,7 +3,6 @@ id: ingest-old-historical-data
 title: How to Ingest Old or Historical Data
 ---
 
-#
 
 The overwhelming majority of log data processed by Sumo are nearly real-time messages. For this reason, Sumo's timestamp detection and data indexing systems are optimized to handle streams of data originating in the recent past.
 

@@ -3,7 +3,7 @@ slug: /send-data/sources/use-json-configure-sources
 title: Use JSON to Configure Sources
 ---
 
-#
+
 
 Sources can be configured by using UTF-8 encoded JSON files. Installed Collectors can use JSON files to configure its Sources when using [Local Configuration File Management](/docs/send-data/sources/use-json-configure-sources/local-configuration-file-management). You can also configure Sources for Hosted and Installed Collectors with the Collector Management API.
 
