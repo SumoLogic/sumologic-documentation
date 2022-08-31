@@ -3,7 +3,7 @@ id: install-syslog-ng
 title: Install syslog-ng
 ---
 
-#
+
 
 Syslog-ng is an open source log management daemon, providing implementation of the syslog protocol for Unix and Unix-like systems. You can install syslog-ng for Source log management. See [Cloud Syslog Source](/docs/send-data/sources/hosted-collectors/cloud-syslog-source) for more information about configuring a Cloud Syslog Source for syslog-ng.
 

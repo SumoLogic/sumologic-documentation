@@ -7,7 +7,18 @@ description: Explore navigation allows you to quickly locate the object in a phy
 
 [Explore navigation](/docs/dashboards-new/explore-view) allows you to quickly locate the object in a physical stack that needs to be debugged. This page walks you through a high-level troubleshooting scenario to illustrate the possibilities.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/CEBN4lRp4SU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<Iframe url="https://www.youtube.com/embed/CEBN4lRp4SU?rel=0"
+        width="854px"
+        height="480px"
+        id="myId"
+        className="video-container"
+        display="initial"
+        position="relative"
+        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+        />
+
+import Iframe from 'react-iframe';
 
 ## Step 1: Analyze a cluster
 
@@ -62,4 +73,3 @@ After further investigation, we discovered that Kenneth left the company and wa
 ## More Information
 
 * [Explore navigation](/docs/dashboards-new/explore-view)
-

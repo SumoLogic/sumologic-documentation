@@ -3,7 +3,7 @@ id: collect-aws-lambda-logs-extension
 title: Collect AWS Lambda Logs using an Extension
 ---
 
-#
+
 
 [AWS Lambda Extensions](https://aws.amazon.com/blogs/compute/introducing-aws-lambda-extensions-in-preview/) enable us to more easily integrate into the AWS Lambda execution environment to control and participate in the AWS Lambda lifecycle and the AWS Lambda Logs API enables us to collect AWS Lambda logs. Sumo Logic, therefore, has developed a new open-source AWS Lambda extension that is a lightweight process that runs within the same execution environment as your Lambda functions and uses the Lambda logs API to send platform, function, and extension logs to Sumo Logic. Sumo Logic's Lambda Extension works with AWS Lambda functions that are built for both x86_64 and ARM 64 (Graviton2) architectures. 
 

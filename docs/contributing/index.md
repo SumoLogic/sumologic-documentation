@@ -1,5 +1,5 @@
 ---
-slug: /contribution
+slug: /contributing
 title: Contributing to Sumo
 ---
 
@@ -41,7 +41,7 @@ You can request a new feature by [submitting a feature request](https://github.c
 
 While reviewing content on the site, you can click **Edit this page**, located at the bottom of each doc page, to directly update and submit changes through the GitHub repo website.
 
-<img src={useBaseUrl('img/contribution/editpage.png')} alt="editpage" width="175"/>
+<img src={useBaseUrl('img/contributing/editpage.png')} alt="editpage" width="175"/>
 
 ### Clone Sumo Docs Repository
 
@@ -77,14 +77,14 @@ $ git commit -m "Updating query for metrics"
 
 1. Create a new branch from your cloned repo/fork using a name that best describes the work or references a GitHub issue number. For example: `<your initials>-tracing-update` or `<your initials>-apps-gitlab`
 1. Edit or create markdown (.md) files in your branch. See [Create a Document](create-document.md) and [Markdown Features](markdown-features.md) for more info.
-1. Commit your changes to the branch with a meaningful message.<br/>![pull request](/img/contribution/commit.png)
+1. Commit your changes to the branch with a meaningful message.<br/>![pull request](/img/contributing/commit.png)
 1. Push your branch to the repo/fork.
 
 #### Create a pull request
 
 Doc team members will review and approve your contributions using GitHub.
 
-1. Visit [GitHub](https://github.com/SumoLogic/sumologic-documentation) after pushing your branch. If you see an option to **Compare & Pull Request** for your branch click this.<br/>![compare](/img/contribution/compare-pr.png)
+1. Visit [GitHub](https://github.com/SumoLogic/sumologic-documentation) after pushing your branch. If you see an option to **Compare & Pull Request** for your branch click this.<br/>![compare](/img/contributing/compare-pr.png)
    * If you don't see it, create a new [pull request](https://github.com/SumoLogic/sumologic-documentation/compare).
       1. Select `main` for the base branch. Select your branch for the **compare**.
       1. Click **Create Pull Request**.
@@ -93,7 +93,7 @@ Doc team members will review and approve your contributions using GitHub.
    * Enter a title for the PR.
    * Include an issue number from GitHub or Jira, etc.
    * Describe what changed, new pages, updates.
-1. Click **Create Pull Request**.<br/> ![pull request](/img/contribution/pull-request.png)
+1. Click **Create Pull Request**.<br/> ![pull request](/img/contributing/pull-request.png)
 
 GitHub will generate a pull request for review. Doc team members will review, provide feedback, and approve. When approved, the Doc team will merge and update staging. Updates to production will be handled by the Doc team.
 

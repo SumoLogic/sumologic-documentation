@@ -1,8 +1,9 @@
 ---
 id: add-saved-search-favorites
+title: Add a Saved Search to Favorites
 ---
 
-# Add a Saved Search to Favorites
+
 
 On the Search page, you can mark a saved search as a favorite by clicking the star icon. When you save a search as a favorite, it will appear in the Library on the Favorites tab.
 
@@ -22,5 +23,5 @@ Mark a saved search as a favorite:
 1. Click the three-dot icon and click **Favorite** from the provided options.   
 
     ![favorite saved ](/img/search/get-started-search/search-page/favorite-saved.png)  
-      
+
     The saved search will now appear in the **Library** on the **Favorites** tab.

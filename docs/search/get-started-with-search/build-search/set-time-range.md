@@ -1,8 +1,9 @@
 ---
 id: set-time-range
+title: Set the Time Range
 ---
 
-# Set the Time Range
+
 
 To set the time range for searches or metrics visualizations, click the time area.
 

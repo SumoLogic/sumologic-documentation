@@ -1,8 +1,9 @@
 ---
 slug: /send-data/sources/hosted-collectors/http-logs-metrics-source
+title: HTTP Logs and Metrics Source
 ---
 
-# HTTP Logs and Metrics Source
+
 
 An HTTP Logs and Metrics Source is an endpoint for receiving log and metric data uploaded to a unique URL generated for the Source. The URL securely encodes the Collector and Source information. You can add as many HTTP Logs and Metrics Sources as you'd like to a single Hosted Collector.
 
@@ -28,7 +29,7 @@ To configure an HTTP Logs and Metrics Source:
 1. **SIEM Processing**. This option is present if Cloud SIEM Enterprise (CSE) is enabled. Click the checkbox to to send the logs collected by the source to CSE.
 1. **Fields.** Click the **+Add Field** link to define the fields you want to associate, each field needs a name (key) and value.
 
-   * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema. 
+   * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
    * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema it is ignored, known as dropped.
 
 1. **Advanced Options for Logs.** Advanced options do *not* apply to uploaded metrics.

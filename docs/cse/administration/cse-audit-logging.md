@@ -137,6 +137,6 @@ Here is an example `InsightCreated` event log.
 
 ## Index retention period 
 
-By default, the retention period of the Audit Event Index is the same as the retention period of your Default Continuous Partition. You can change the retention period by editing the relevant partitions, `sumologic_audit_events` and `sumologic_system_events`. For more information, see Edit a Partition.  
+By default, the retention period of the Audit Event Index is the same as the retention period of your Default Partition. You can change the retention period by editing the relevant partitions, `sumologic_audit_events` and `sumologic_system_events`. For more information, see Edit a Partition.  
    
  

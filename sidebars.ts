@@ -2106,6 +2106,7 @@ module.exports = {
             'cse/administration/manage-custom-insight-resolutions',
             'cse/administration/manage-custom-insight-statuses',
             'cse/administration/using-sensor-zones',
+            'cse/administration/inventory-sources-and-data',
           ],
         },
         {
@@ -2267,28 +2268,28 @@ module.exports = {
     },
   ],
   //Contribution guide for documentation
-  contribution: [
+  contributing: [
     {
       type: 'category',
       label: 'Contribution Guide',
       collapsible: false,
       collapsed: false,
-      link: {type: 'doc', id: 'contribution/index'},
+      link: {type: 'doc', id: 'contributing/index'},
       items: [
-        'contribution/create-document',
-        'contribution/markdown-features',
-        'contribution/style-guide',
-        'contribution/word-list',
-        'contribution/code-of-conduct',
-        'contribution/translations',
+        'contributing/create-document',
+        'contributing/markdown-features',
+        'contributing/style-guide',
+        'contributing/word-list',
+        'contributing/code-of-conduct',
+        'contributing/translations',
         {
           type: 'category',
           label: 'Templates',
           collapsible: true,
           collapsed: false,
           items: [
-            'contribution/templates/partner-app',
-            'contribution/templates/template-doc'
+            'contributing/templates/partner-app',
+            'contributing/templates/template-doc'
           ]
         }
       ],

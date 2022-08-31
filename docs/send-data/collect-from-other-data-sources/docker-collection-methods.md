@@ -3,7 +3,6 @@ id: docker-collection-methods
 title: Docker Collection Methods
 ---
 
-#
 
 This page describes and compares alternative methods for collecting Docker logs and metrics. You can employ these methods in self-managed Docker environments or with managed Docker services like ECS and Swarm.
 

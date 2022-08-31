@@ -1,8 +1,9 @@
 ---
 id: amazon-cloudwatch-source-metrics
+title: Amazon CloudWatch Source for Metrics
 ---
 
-# Amazon CloudWatch Source for Metrics
+
 
 A Sumo Logic CloudWatch Source allows you to gather metrics data from an Amazon resource. 
 
@@ -22,7 +23,7 @@ EC2 metrics have high latency and can increase the costs of your AWS account. Fo
 
 ## About AWS tag filtering
 
-When you configure a CloudWatch source, you have the option of defining *AWS tag filters*. Tag filters allow you to filter the CloudWatch metrics you collect by the AWS tags assigned to your resources. For each AWS namespace, you can define one or more tag-value pairs. 
+When you configure a CloudWatch source, you have the option of defining *AWS tag filters*. Tag filters allow you to filter the CloudWatch metrics you collect by the AWS tags assigned to your resources. For each AWS namespace, you can define one or more tag-value pairs.
 
 :::tip
 Tag filtering is only supported for user-defined AWS tags, not for AWS-generated tags.
@@ -51,7 +52,7 @@ Tag filters will not be applied to previously ingested data, and can take a few 
 AWS tag filtering is supported for the following AWS namespaces.
 
 * AWS/ApiGateway
-* AWS/ApplicationELB 
+* AWS/ApplicationELB
 * AWS/AppStream
 * AWS/CloudFront
 * AWS/DMS
@@ -108,13 +109,13 @@ AWS tag filtering is supported for the following AWS namespaces.
 1. **AWS Tag Filters**. This setting is visible only if you selected one or more of the namespaces listed in [About AWS tag filtering](#about-aws-tag-filtering).
 
    ![aws-tag-filters.png](/img/send-data/aws-tag-filters.png)
-   
+
    Tag filters allow you to filter the CloudWatch metrics you collect by the AWS tags you have assigned to your AWS resources. You can define tag filters for each supported namespace. If you do not define any tag filters, all metrics will be collected for the regions and namespaces you configured for the source above:
-   
-   1. **Namespace**. Select a namespace from the pulldown. 
-   1. **Values**.  Enter one or more tag values. If you specify multiple values, separate them with a semicolon character (;). For example, `stage;prod ` 
+
+   1. **Namespace**. Select a namespace from the pulldown.
+   1. **Values**.  Enter one or more tag values. If you specify multiple values, separate them with a semicolon character (;). For example, `stage;prod `
    1. After you define a filter, a new row appears. You can define another filter for the same namespace, or one for a different one. If you want to filter on an additional tag for the same namespace, select that namespace again from the pulldown, and specify the Key and Values fields.
-   
+
    :::note
    If you filter by metrics from a namespace by multiple tags (different keys) the source will only collect metrics that match *all* tags.
    :::

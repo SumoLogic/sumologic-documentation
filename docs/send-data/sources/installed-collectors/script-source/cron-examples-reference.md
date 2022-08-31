@@ -3,8 +3,6 @@ id: cron-examples-reference
 title: Cron Examples and Reference
 ---
 
-
-
 Sumo Logic uses Quartz CRON expressions. The syntax for a Quartz
 CRON expression is:
 
