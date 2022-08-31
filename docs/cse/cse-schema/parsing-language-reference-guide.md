@@ -2,10 +2,8 @@
 id: parsing-language-reference-guide
 title: Parsing Language Reference Guide
 sidebar_label: Parsing Language Reference
-description: Parsing is the first step in the Cloud SIEM Enterprise (CSE) Record processing pipeline—it is the process of creating a set of key-value pairs that reflect all of the information in an incoming raw message.
+description: Parsing is the first step in the Cloud SIEM Enterprise (CSE) Record processing pipeline
 ---
-
-
 
 This topic describes the CSE parsing language, which you can use to write custom parsers.
 
@@ -13,7 +11,7 @@ This topic describes the CSE parsing language, which you can use to write custom
 
 Parsing is the first step in the Cloud SIEM Enterprise (CSE) [Record processing pipeline](record-processing-pipeline.md) — it is the process of creating a set of key-value pairs that reflect all of the information in an incoming raw message. We refer to the result of the parsing process as a *field dictionary*. The raw message is retained. 
 
-Parsers are written in a specialized Sumo Parsing Language. The parser code resides in one parser configuration obects. At runtime, parser code is executed by the Sumo Logic parsing engine.
+Parsers are written in a specialized Sumo Parsing Language. The parser code resides in a parser configuration obects. At runtime, parser code is executed by the Sumo Logic parsing engine.
 
 ## Key concepts
 
@@ -55,7 +53,7 @@ we would get back this dictionary: 
 
 `{“login”: “TEST”,  “Id”: “123”}`
 
-You can find a regex debugger at�\<https://regoio.herokuapp.com\>.
+You can find a regex debugger at[https://regoio.herokuapp.com/](https://regoio.herokuapp.com/).
 
 :::note
 This debugger uses the GoLang RE2 library, but all RE2 libraries are based on the same codebase and it is a sufficient test mechanism.
