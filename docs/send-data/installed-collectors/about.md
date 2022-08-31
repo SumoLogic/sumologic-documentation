@@ -1,8 +1,8 @@
 ---
 id: about
+title: About Installed Collectors
 ---
 
-# About Installed Collectors
 
 An Installed Collector is a Java agent that receives logs and metrics from its Sources and then encrypts, compresses, and sends the data to the Sumo service. As its name implies, an Installed Collector is installed in your environment, as opposed to a Hosted Collector, which resides on the Sumo service. After installing a Collector, you add Sources, to which the Collector connects to obtain data to send to the Sumo service. 
 

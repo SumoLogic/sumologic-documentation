@@ -3,7 +3,6 @@ id: collect-logs-palo-alto-networks-cortex
 title: Collect Logs from Palo Alto Networks Cortex Data Lake
 ---
 
-#
 
 This page provides you instructions on how to Collect Logs from the Palo Alto Networks Cortex Data Lake.
 

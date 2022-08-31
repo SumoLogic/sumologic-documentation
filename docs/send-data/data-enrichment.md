@@ -1,15 +1,15 @@
 ---
 id: data-enrichment
 slug: data-enrichment
+title: Data Enrichment
 ---
 
-# Data Enrichment
 
 Data enrichment is the process of adding meaningful information to your data so you have more control and an easier time referencing data in searches. It's simply where you add more context to your data.
 
 Sumo Logic supports data enrichment using metadata and lookups.
 
-## Using Metadata 
+## Using Metadata
 Metadata is typically from your system or environment, and adds context about what or where the data came from and any associated services or apps. Logs and metrics use metadata that can be customized to anything you need.
 
 * **Log metadata** - In addition to having more data to reference in query operations, this allows you to define a more specific scope of data in search expressions, improving search performance, and allows more specific search filters in Roles and routing expressions in Partitions.
@@ -18,7 +18,7 @@ Metadata is typically from your system or environment, and adds context about wh
     * You can define fields on data sent to Sumo by manually defining them on Sources and Collectors.
     * You can provide custom fields through [HTTP headers](sources/hosted-collectors/http-logs-metrics-source/upload-logs-http-source.md).
     * Our AWS Metadata Source allows you to collect tags from EC2 instances running on AWS.
- 
+
 
 * **Metric metadata** - Sumo Logic provides a number of features you can use to enrich the metrics you collect with metadata. Metric metadata provides considerable benefits when you query your metrics: you can scope your metric queries to return only the metrics of interest. Metric metadata can also give you insight that can't be gleaned from unadorned metrics, especially in highly containerized and orchestrated environments
   * Metric metadata is referenced in Sumo with [selectors](../metrics/introduction-metrics/overview-sumo-metrics.md) consisting of key-value pairs that are tagged to metrics during collection.
@@ -26,7 +26,7 @@ Metadata is typically from your system or environment, and adds context about wh
     * You can attach custom metadata through [HTTP headers](sources/hosted-collectors/http-logs-metrics-source/upload-logs-http-source.md).
     * You can use the [AWS Metadata (Tag) Source for Metrics](sources/hosted-collectors/amazon-web-services/aws-metadata-tag-source.md) to apply tags from your EC2 instances to host metrics, Graphite metrics, and Carbon 2.0 metrics you collect.
 
-## Using Lookup Tables 
+## Using Lookup Tables
 A [Lookup Table](/docs/search/lookup-tables) is a table of data hosted on Sumo Logic that you can use to enrich the log data received by Sumo Logic. For example, in a Sumo Logic log search, you could refer to a Lookup Table of user account data to map the user ID in an incoming log to a row in the Lookup Table, and return other attributes of that user, for instance, email address or phone number. The fields you look up appear as part of your search results. This data enrichment lets you perform more rich and powerful analytics.  
 
 Once you have a created a Lookup Table, there are several search operators you can use to access it:

@@ -3,7 +3,6 @@ slug: /send-data/sources/installed-collectors/remote-file-source
 title: Remote File Source
 ---
 
-#
 
 Log files collected using a Remote File Source must be encoded in UTF-8 or ASCII. If you are editing a Source, metadata changes are reflected going forward. Metadata for previously collected log data will not be retroactively changed.
 

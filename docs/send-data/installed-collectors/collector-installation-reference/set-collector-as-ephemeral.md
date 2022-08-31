@@ -1,8 +1,9 @@
 ---
 id: set-collector-as-ephemeral
+title: Set a Collector as Ephemeral
 ---
 
-# Set a Collector as Ephemeral
+
 
 During the installation process, if a Collector is flagged as ephemeral, the Collector will be deleted automatically after being offline for 12 hours. This can be helpful when using certain APIs, for example, where Amazon Machine Images (AMIs) are constantly created as new Collectors, but serve a purpose for only a short while. After being offline for a while, the AMI-created Collector is automatically deleted.
 

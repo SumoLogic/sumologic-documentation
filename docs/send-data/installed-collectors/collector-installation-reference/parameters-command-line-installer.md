@@ -1,10 +1,11 @@
 ---
 id: parameters-command-line-installer
+title: Parameters for the Command Line Installer
 ---
 
-# Parameters for the Command Line Installer
 
-The following tables provide and reference the available parameters for Collector installation using the command line installer. For details and example commands on Collector installation, see [Install a Collector on Linux](../linux.md), [Install a Collector on MacOS](../macos.md), and [Install a Collector on Windows](../windows.md). 
+
+The following tables provide and reference the available parameters for Collector installation using the command line installer. For details and example commands on Collector installation, see [Install a Collector on Linux](../linux.md), [Install a Collector on MacOS](../macos.md), and [Install a Collector on Windows](../windows.md).
 
 :::important
 Collector versions 19.253-26+ support wrapper configuration parameters.
@@ -38,7 +39,7 @@ Collector.
 ## user.properties parameters
 
 The command line installer can use all of the parameters available in the [user.properties](user-properties.md) file. To use parameters from user.properties just add a `-V` to the beginning of the parameter without a space character. For example, to use the `sources` parameter you would specify it as `-Vsources`.  
-  
+
 For reference, see the available [user.properties parameters](user-properties.md).
 
 ### Parameters with a different format
@@ -58,7 +59,7 @@ formatting when used with the command line installer.
 
 ## collector.properties parameters
 
-The command line installer can use any of the parameters available in the [collector.properties](collector-properties.md) file. To use parameters from collector.properties just add a `-V` to the beginning of the parameter without a space character. For example, to use the `source.max.threads.num` parameter you would specify it as `-Vsource.max.threads.num`. 
+The command line installer can use any of the parameters available in the [collector.properties](collector-properties.md) file. To use parameters from collector.properties just add a `-V` to the beginning of the parameter without a space character. For example, to use the `source.max.threads.num` parameter you would specify it as `-Vsource.max.threads.num`.
 
 For reference, see the available [collector.properties parameters](collector-properties.md).
 

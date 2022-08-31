@@ -3,7 +3,6 @@ id: collect-with-lambda-function
 title: Collect Amazon CloudWatch Logs using a Lambda Function
 ---
 
-#
 
 The following instructions tell you to how download and configure an AWS Lambda function for Amazon CloudWatch Logs and send then to Sumo Logic.
 

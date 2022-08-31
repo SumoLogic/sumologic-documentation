@@ -1,8 +1,8 @@
 ---
 id: multiple-live-tails
+title: Multiple Live Tails
 ---
 
-# Multiple Live Tails
 
 Sumo Logic Live Tail supports running two Live Tail sessions at a time per tab. You can start a second Live Tail session from the Live Tail page, or from the Search page.
 

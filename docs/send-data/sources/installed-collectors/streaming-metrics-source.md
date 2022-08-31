@@ -3,7 +3,6 @@ id: streaming-metrics-source
 title: Streaming Metrics Source
 ---
 
-#
 
 You can use Sumo’s streaming metrics source with an installed collector to collect metrics from any application that emits metrics over TCP or UDP in the Graphite, Carbon 2.0, or Prometheus plaintext protocols. The streaming metrics source is analogous to a Syslog server, but for receiving metrics rather than logs.
 

@@ -1,8 +1,7 @@
 ---
 id: amazon-path-expressions
+title: Amazon Path Expressions
 ---
-
-# Amazon Path Expressions
 
 ## Rules
 
@@ -14,7 +13,7 @@ For example, the path expression below would result in no file objects being fo
 ` /name/* `
 
 To match all file objects  in the bucket, use a path expression like this:  
-  
+
 `*`
 
 In another example, AWS CloudTrail logging generates a new folder every day that looks like this:

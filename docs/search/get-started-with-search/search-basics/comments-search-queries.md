@@ -1,8 +1,9 @@
 ---
 id: comments-search-queries
+title: Comments in Search Queries
 ---
 
-# Comments in Search Queries
+
 
 On the **Search** page, you can add comments and comment out lines of
 your query using comment formatting, as follows:
@@ -19,7 +20,7 @@ Comments can be useful for the following use cases:
 * Comment out single lines or multiple lines to troubleshoot your query while you are writing it.
 
 When you comment out a line of your search query, the user interface displays the commented text as grey and italic. See the following
-example of commenting out a single line in a query: 
+example of commenting out a single line in a query:
 
 ![one line comment.png](/img/search/get-started-search/search-basics/comments-search-queries/one-line-comment.png)
 

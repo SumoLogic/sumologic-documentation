@@ -1,8 +1,8 @@
 ---
 id: aws-kinesis-firehose-metrics-source
+title: AWS Kinesis Firehose for Metrics Source
 ---
 
-# AWS Kinesis Firehose for Metrics Source
 
 This page has information about Sumo Logic’s AWS Kinesis Firehose for Metrics source.
 
@@ -64,22 +64,22 @@ In this step, you set up the AWS Metric Streams service to stream metrics to Kin
 
     ![create-stack-icon.png](/img/send-data/create-stack-icon.png)
 
-1. On the **Create stack** page: 
+1. On the **Create stack** page:
 
-   1. Click **Template is ready**. 
-   1. Click **Amazon S3 URL** and paste this URL into the URL field:  https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/KinesisFirehoseCWMetrics.template.yaml. 
-   1. Click **Next**. 
+   1. Click **Template is ready**.
+   1. Click **Amazon S3 URL** and paste this URL into the URL field:  https://sumologic-appdev-aws-sam-apps.s3.amazonaws.com/KinesisFirehoseCWMetrics.template.yaml.
+   1. Click **Next**.
 
     ![step4a.png](/img/send-data/step4a.png)
 
-1. On the **Specify stack details** page: 
+1. On the **Specify stack details** page:
 
-   * **Stack name**. Enter a name for the stack.  
-   * **Sumo Logic Kinesis Firehose Metrics Configuration.** (Required) Enter the URL of the AWS Kinesis Firehose for Metrics source. 
-   * **Select Namespaces to collect AWS CloudWatch Metrics**. Enter a comma-delimited list of the namespaces from which you want to collect AWS CloudWatch metrics. 
-   * **Failed Data AWS S3 Bucket Configuration**. Enter "Yes" to create a new bucket, or "No" if you want to use an existing bucket. 
-   * **AWS S3 Bucket Name for Failed Data**. Provide the name of AWS S3 bucket to create, or the name of an existing bucket in the current AWS Account. 
-   * Click **Next**. 
+   * **Stack name**. Enter a name for the stack. 
+   * **Sumo Logic Kinesis Firehose Metrics Configuration.** (Required) Enter the URL of the AWS Kinesis Firehose for Metrics source.
+   * **Select Namespaces to collect AWS CloudWatch Metrics**. Enter a comma-delimited list of the namespaces from which you want to collect AWS CloudWatch metrics.
+   * **Failed Data AWS S3 Bucket Configuration**. Enter "Yes" to create a new bucket, or "No" if you want to use an existing bucket.
+   * **AWS S3 Bucket Name for Failed Data**. Provide the name of AWS S3 bucket to create, or the name of an existing bucket in the current AWS Account.
+   * Click **Next**.
 
     ![stack.png](/img/send-data/stack.png)
 
@@ -128,13 +128,13 @@ Inclusive and exclusive filters can’t be combined. You can choose namespaces t
 1. Open the CloudWatch console at https://console.aws.amazon.com/cloudwatch.
 1. In the navigation pane, choose **Metrics**.
 1. Under **Metrics**, select **Streams**.
-    
+
     ![metric_stream_1.png](/img/send-data/metric_stream_1.png)
 
 1. Select the metric stream and click **Edit**.
 
     ![metric-stream_2.png](/img/send-data/metric-stream_2.png)
-    
+
 1. Click **All metrics** and select the **Exclude metric namespaces** option.
 1. From the list of AWS namespaces, select the namespaces whose metrics you do not want to receive.
 1. Click **Save changes** at the bottom of the page.

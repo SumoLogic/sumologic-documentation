@@ -1,8 +1,8 @@
 ---
 id: built-in-metadata
+title: Built-in Metadata
 ---
 
-# Built-in Metadata
 
 Sumo Logic has several metadata fields that are automatically tagged to ingested data. These metadata fields are referenced by the service in
 many ways, such as the user interface when managing Collection, and can be referenced in search queries.
@@ -14,7 +14,7 @@ many ways, such as the user interface when managing Collection, and can be refer
         className="video-container"
         display="initial"
         position="relative"
-        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
         />
 

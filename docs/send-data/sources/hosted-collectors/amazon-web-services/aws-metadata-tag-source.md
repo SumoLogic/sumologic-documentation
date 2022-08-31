@@ -1,8 +1,9 @@
 ---
 id: aws-metadata-tag-source
+title: AWS Metadata (Tag) Source
 ---
 
-# AWS Metadata (Tag) Source
+
 
 A Sumo Logic AWS Metadata Source allows you to collect tags from EC2 instances running on AWS. Tags are returned in your search results and can be referenced in queries. For information about assigning tags to EC2 instances, see [Tagging Your Amazon EC2 Resources](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html) in AWS help. Only one AWS Metadata Source is required to collect tags from multiple hosts.
 
@@ -40,9 +41,9 @@ Tags are returned in your search results and can be referenced in queries. For i
    * **Description**. Optional description.
    * **Regions**. Select one or more Amazon regions.
    * **Tag Filters.** Leave this field blank to collect all tags configured for the EC2 instance. To collect a subset of tags, follow the instructions in [Define EC2 tag filters](#define-ec2-tag-filters). Review the above [Metrics](#metrics) and [Logs](#logs) sections for important information.
-   * **AWS Access.** Choose between two **Access Method** options. Select **Role-based access** or **Key access** based on the AWS authentication you are providing. Role-based access is preferred, this was completed in step 1, see [Grant Sumo Logic access to an AWS Product](grant-access-aws-product.md). 
+   * **AWS Access.** Choose between two **Access Method** options. Select **Role-based access** or **Key access** based on the AWS authentication you are providing. Role-based access is preferred, this was completed in step 1, see [Grant Sumo Logic access to an AWS Product](grant-access-aws-product.md).
 
-     * For **Role-based access** enter the Role ARN that was provided by AWS after creating the role.  
+     * For **Role-based access** enter the Role ARN that was provided by AWS after creating the role. 
 
         ![Role based access input roleARN.png](/img/send-data/Role-based-access-input-roleARN.png)
      * For **Key access** enter the **Access Key ID** and **Secret Access Key.** See [AWS Access Key ID](http://docs.aws.amazon.com/STS/latest/UsingSTS/UsingTokens.html#RequestWithSTS) and [AWS Secret Access Key](https://aws.amazon.com/iam/) for details.

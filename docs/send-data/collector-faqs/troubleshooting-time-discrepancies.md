@@ -3,7 +3,6 @@ id: troubleshooting-time-discrepancies
 title: Troubleshooting time discrepancies
 ---
 
-#
 
 In most scenarios, the message time and receipt time of a log message in Sumo Logic should be almost the same, within a minute of each other. However, network latency, random (not continuous) spikes in data volume, and service disruptions can cause delays, leading to a discrepancy between message time and receipt time. Large discrepancies can lead to incorrect events being displayed, and may even cause search performance issues. On some occasions, it can also prevent Dashboards from populating with data.
 

@@ -1,8 +1,8 @@
 ---
 id: collector-properties
+title: collector.properties
 ---
 
-# collector.properties
 
 For Collector versions 19.182-25 and later the `collector.properties` file can be modified on existing Collectors allowing you to configure its internal processes for specific uses. This file is generated automatically when installing a Collector.
 
@@ -12,12 +12,12 @@ Starting with collector 19.170+, the installation directory is secured to users 
 
 ## Configure collector.properties
 
-1. Stop the Sumo Logic Collector service. 
+1. Stop the Sumo Logic Collector service.
 
     * On Windows: `net stop sumo-collector`      
     * On Linux: `sudo ./collector stop`    
 1. Navigate to the installation directory of an existing Installed Collector and open the `collector.properties` file in the **config** directory with a text editor. An example path is: `/<sumo_home>/config/collector.properties`
-1. Add the parameters you need, see all of the available parameters in the [collector.properties parameters](#collectorproperties) table below. 
+1. Add the parameters you need, see all of the available parameters in the [collector.properties parameters](#collectorproperties) table below.
 
     :::important
     Keep all of the existing parameters already in the file. If you remove any, the Collector will not be able to restore them and could result in collection issues.
@@ -25,7 +25,7 @@ Starting with collector 19.170+, the installation directory is secured to users 
 
 1. Save the file in the same location. Maintain UTF-8 format.
 1. Start the Sumo Logic Collector service.
-    
+
     * On Windows: `net start sumo-collector`
     * On Linux: `sudo ./collector start`
 
@@ -63,8 +63,8 @@ collector.localfile.inputType = nonblocking
 The table below has parameters that you can manage.
 
 :::important
-Do not modify any other parameters found in the collector.properties file, it could result in collection issues. 
-  
+Do not modify any other parameters found in the collector.properties file, it could result in collection issues.
+
 Collector versions 19.253-26+ support **wrapper** configuration parameters.
 :::
 
@@ -162,4 +162,3 @@ Collector versions 19.253-26+ support **wrapper** configuration parameters.
 | windows.local.jni | boolean  | Enable using JNI for local Windows Event Log Sources. | true |
 | wrapper.out.oom | string   | Custom message to log upon OutOfMemory exception from Wrapper. | The JVM has run out of memory. |
 | wrapper.out.stop | string   | Custom message to log upon stopping the Wrapper. | Wrapper Stopped |
-

@@ -1,8 +1,9 @@
 ---
 id: aws-elastic-load-balancing-source
+title: AWS Elastic Load Balancing Source
 ---
 
-# AWS Elastic Load Balancing Source
+
 
 AWS Elastic Load Balancing (ELB) distributes incoming application traffic across multiple Amazon EC2 instances in the AWS cloud. The access logs for AWS ELB capture detailed information for all requests made to your load balancer and stores them as log files in an Amazon S3 bucket. Add an AWS ELB Source to upload these messages to Sumo Logic.
 
@@ -24,4 +25,3 @@ To enable logging in AWS:
 1. Under **Access Logs**, click **Edit**.
 1. In the **Configure Access Logs** dialog box, click **Enable Access Logs**, then choose an Interval and S3 bucket. This is the S3 bucket that will upload logs to Sumo Logic.
 1. Click **Save**.
-

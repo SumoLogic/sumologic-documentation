@@ -1,8 +1,9 @@
 ---
 id: keyword-search-expressions
+title: Keyword Search Expressions
 ---
 
-# Keyword Search Expressions
+
 
 A Keyword Search Expression defines the scope of data for the query.
 
@@ -101,14 +102,14 @@ After the keyword search expression, to search for case sensitive keywords, you
 For example, if you want to search for the keyword "**info**" in lowercase, you'd use this query:
 
 ```sql
-info 
+info
 | parse regex "(\<sampl\>info)"
 ```
 
 If you want to search for the keyword "**INFO**" in uppercase, you'd use this query:
 
 ```sql
-info 
+info
 | parse regex "(\<sampl\>INFO)"
 ```
 

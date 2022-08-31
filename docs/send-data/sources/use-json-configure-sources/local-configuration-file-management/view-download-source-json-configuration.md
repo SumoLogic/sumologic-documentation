@@ -3,7 +3,7 @@ id: view-download-source-json-configuration
 title: View or Download Source JSON Configuration
 ---
 
-#
+
 
 You can view and copy the Source JSON configuration for a Collector or Source from Sumo Logic:
 

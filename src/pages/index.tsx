@@ -59,7 +59,7 @@ const features = [
     description: (<Translate
       id="landing.feature.searches-logs.desc"
       description="Searches and logs description">
-        Query and analyze log data sent to Sumo Logic, Search Language, LogReduce, LogExplain, and more.
+        Query and analyze your log data sent to Sumo Logic, Search Language, LogReduce, LogExplain, and more.
       </Translate>),
     link: 'docs/search',
   },

@@ -17,7 +17,7 @@
   },
   "link.item.label.Doc Contributions": {
     "message": "Doc Contributions",
-    "description": "The label of footer link with label=Doc Contributions linking to /docs/contribution"
+    "description": "The label of footer link with label=Doc Contributions linking to /docs/contributing"
   },
   "link.item.label.Help Center": {
     "message": "Help Center",

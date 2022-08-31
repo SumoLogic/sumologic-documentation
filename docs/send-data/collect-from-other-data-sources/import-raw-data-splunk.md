@@ -3,7 +3,6 @@ id: import-raw-data-splunk
 title: Import Raw Data from Splunk
 ---
 
-#
 
 :::important
 Although you can import data from Splunk, Sumo Logic does not support Splunk functionality or any commands included below.

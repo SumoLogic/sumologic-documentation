@@ -1,8 +1,9 @@
 ---
 id: search-load-indicator
+title: Search Load Indicator
 ---
 
-# Search Load Indicator
+
 
 Searches vary considerably in the amount of load they place on the system. All of the following can affect the search load:
 

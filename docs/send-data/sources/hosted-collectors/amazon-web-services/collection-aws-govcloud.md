@@ -1,8 +1,8 @@
 ---
 id: collection-aws-govcloud
+title: Collection from AWS GovCloud
 ---
 
-# Collection from AWS GovCloud
 
 AWS GovCloud regions are specific regions authorized to a FedRAMP-High baseline. This region is where users with strict compliance requirements may operate in adherence with ITAR, FedRAMP, and DoD requirements. See [AWS GovCloud](https://aws.amazon.com/govcloud-us/?whats-new-ess.sort-by=item.additionalFields.postDateTime&whats-new-ess.sort-order=desc) for more information.
 

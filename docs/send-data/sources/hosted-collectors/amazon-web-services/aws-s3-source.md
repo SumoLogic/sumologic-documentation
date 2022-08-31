@@ -1,8 +1,9 @@
 ---
 id: aws-s3-source
+title: AWS S3 Source
 ---
 
-# AWS S3 Source
+
 
 Amazon Simple Storage Service (Amazon S3) provides a web services interface that can be used to store and retrieve any amount of data from anywhere on the web. Use an Amazon S3 Source to upload data to Sumo Logic from S3.
 
@@ -40,7 +41,7 @@ When you create an AWS S3 Source, you add it to a Hosted Collector. Before crea
 * Sumo Logic supports log files (S3 objects) that do NOT change after they are uploaded to S3. Support is not provided if your logging approach relies on updating files stored in an S3 bucket. S3 does not have a concept of updating existing files, you can only overwrite an existing file. When this overwrite happens, S3 considers it as a new file object, or a new version of the file, and that file object gets its own unique version ID.
 
     Sumo Logic scans an S3 bucket based on the path expression supplied, or receives an SNS notification when a new file object is created. As part of this, we receive a file name (key) and the object's ID. It's compared against a list of file objects already ingested. If a matching file ID is not found the contents of the file are ingested in full.
-    
+
     When you overwrite a file in S3, the file object gets a new version ID and as a result, Sumo Logic sees it as a new file and ingests all of it. If with each version you post to S3 you are simply adding to the end of the file, then this will lead to duplicate messages ingested, one message for each version of the file you created in S1.   
 * Duplicate logs are collected when changing the AWS versioned APIs setting from Yes to No and the S3 bucket has versioning enabled.
 * Glacier objects will not be collected and are ignored.
@@ -72,7 +73,7 @@ You can adjust the configuration of when and how AWS handles communication attem
         className="video-container"
         display="initial"
         position="relative"
-        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
         />
 
@@ -85,20 +86,20 @@ import Iframe from 'react-iframe';
 1. Select **Amazon S3**.
 1. Enter a name for the new Source. A description is optional.
 1. Select an **S3 region** or keep the default value of **Others**. The S3 region must match the appropriate S3 bucket created in your Amazon account. Selecting an AWS GovCloud region means your data will be leaving a FedRAMP-high environment. Use responsibly to avoid information spillage. See [Collection from AWS GovCloud](collection-aws-govcloud.md) for details.
-1. **Use AWS versioned APIs**? Select **Yes** to collect from managed buckets where versioning is not enabled, such as Cisco Umbrella. This uses the list-object-versions and get-object-version AWS S3 APIs. Selecting **Yes** requires your credentials to have **ListObjectVersions** and **GetObjectVersion** permissions.  If you're collecting from a Cisco Umbrella bucket this must be set to **No**. 
+1. **Use AWS versioned APIs**? Select **Yes** to collect from managed buckets where versioning is not enabled, such as Cisco Umbrella. This uses the list-object-versions and get-object-version AWS S3 APIs. Selecting **Yes** requires your credentials to have **ListObjectVersions** and **GetObjectVersion** permissions.  If you're collecting from a Cisco Umbrella bucket this must be set to **No**.
 
     ![versioned apis options.png](/img/send-data/versioned-apis-options.png)
 
-1. For **Bucket Name**, enter the exact name of your organization's S3 bucket. Be sure to double-check the name as it appears in AWS, for example: 
+1. For **Bucket Name**, enter the exact name of your organization's S3 bucket. Be sure to double-check the name as it appears in AWS, for example:
 
     ![img](/img/send-data/S3_Bucket.png)
 
 1. For **Path Expression**, enter the wildcard pattern that matches the S3 objects you'd like to collect. You can use **one** wildcard (\*) in this string. Recursive path expressions use a single wildcard and do **NOT** use a leading forward slash. [See About Amazon Path Expressions](amazon-path-expressions.md) for details.
-1. **Collection should begin.** Choose or enter how far back you'd like to begin collecting historical logs. You can either: 
+1. **Collection should begin.** Choose or enter how far back you'd like to begin collecting historical logs. You can either:
 
-   * Choose a predefined value from dropdown list, ranging from "Now" to “72 hours ago” to “All Time”. 
+   * Choose a predefined value from dropdown list, ranging from "Now" to “72 hours ago” to “All Time”.
    * Enter a relative value. To enter a relative value, click the **Collection should begin** field and press the delete key on your keyboard to clear the field. Then, enter a relative time expression, for example `-1w`. You can define when you want collection to begin in terms of months (M), weeks (w), days (d), hours (h), and minutes (m).
-  
+
     :::note
     If you paused the Source and want to skip some data when you resume, update the **Collection should begin** setting to a time after it was paused.
     :::
@@ -106,26 +107,26 @@ import Iframe from 'react-iframe';
 1. For **Source Category**, enter any string to tag the output collected from this Source. (Category metadata is stored in a searchable field called \_sourceCategory.)
 1.  **Fields.** Click the **+Add Field** link to define the fields you want to associate, each field needs a name (key) and value.
 
-   * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema. 
+   * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
    * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema it is ignored, known as dropped.
 
-1. For **AWS** **Access** you have two **Access Method** options. Select **Role-based access** or **Key access** based on the AWS authentication you are providing. Role-based access is preferred, this was completed in the prerequisite step [Grant Sumo Logic access to an AWS Product](grant-access-aws-product.md). If you're collecting from a Cisco Umbrella bucket you must use **Key access**. 
+1. For **AWS** **Access** you have two **Access Method** options. Select **Role-based access** or **Key access** based on the AWS authentication you are providing. Role-based access is preferred, this was completed in the prerequisite step [Grant Sumo Logic access to an AWS Product](grant-access-aws-product.md). If you're collecting from a Cisco Umbrella bucket you must use **Key access**.
 
-   * For **Role-based access** enter** **the Role ARN that was provided by AWS after creating the role.  
+   * For **Role-based access** enter** **the Role ARN that was provided by AWS after creating the role. 
 
-        ![Role based access input roleARN.png](/img/send-data/Role-based-access-input-roleARN.png) 
-   
+        ![Role based access input roleARN.png](/img/send-data/Role-based-access-input-roleARN.png)
+
    * For **Key access** enter the **Access Key ID** and **Secret Access Key.** See [AWS Access Key ID](http://docs.aws.amazon.com/STS/latest/UsingSTS/UsingTokens.html#RequestWithSTS) and [AWS Secret Access Key](https://aws.amazon.com/iam/) for details.
 
-1. **Log File Discovery.** You have the option to set up Amazon Simple Notification Service (SNS) to notify Sumo Logic of new items in your S3 bucket. A scan interval is required and automatically applied to detect log files. 
+1. **Log File Discovery.** You have the option to set up Amazon Simple Notification Service (SNS) to notify Sumo Logic of new items in your S3 bucket. A scan interval is required and automatically applied to detect log files.
 
     :::important
     Sumo Logic highly recommends using an SNS Subscription Endpoint for its ability to maintain low-latency collection. This is essential to support up-to-date Alerts.
-    
+
     If you're collecting from a Cisco Umbrella bucket SNS Subscription Endpoint is not supported.
     :::
-    
-    * **Scan Interval.** Sumo Logic will periodically scan your S3 bucket for new items in addition to SNS notifications. **Automatic** is recommended to not incur additional AWS charges. This sets the scan interval based on if subscribed to an SNS topic endpoint and how often new files are detected over time. If the Source is not subscribed to an SNS topic and set to **Automatic** the scan interval is 5 minutes. You may enter a set frequency to scan your S3 bucket for new data. To learn more about Scan Interval considerations, see [About setting the S3 Scan Interval](aws-s3-scan-interval-sources.md). 
+
+    * **Scan Interval.** Sumo Logic will periodically scan your S3 bucket for new items in addition to SNS notifications. **Automatic** is recommended to not incur additional AWS charges. This sets the scan interval based on if subscribed to an SNS topic endpoint and how often new files are detected over time. If the Source is not subscribed to an SNS topic and set to **Automatic** the scan interval is 5 minutes. You may enter a set frequency to scan your S3 bucket for new data. To learn more about Scan Interval considerations, see [About setting the S3 Scan Interval](aws-s3-scan-interval-sources.md).
     * **SNS Subscription Endpoint** (**Highly Recommended**). New files will be collected by Sumo Logic as soon as the notification is received. This will provide faster collection versus having to wait for the next scan to detect the new file.
 
         To set up the subscription you need to get an endpoint URL from Sumo to provide to AWS. This process will save your Source and begin scanning your S3 bucket when the endpoint URL is generated. Click on **Create URL** and use the provided endpoint URL when creating your subscription in step C.     
@@ -171,13 +172,13 @@ The following steps use the AWS SNS Console. You may instead use AWS CloudForma
 1. Set any of the following under **Advanced**:
 
    * **Enable Timestamp Parsing.** This option is selected by default. If it's deselected, no timestamp information is parsed at all.
-     
-     * **Time Zone.** There are two options for Time Zone. You can use the time zone present in your log files, and then choose an option in case time zone information is missing from a log message. Or, you can have Sumo Logic completely disregard any time zone information present in logs by forcing a time zone. It's very important to have the proper time zone set, no matter which option you choose. If the time zone of logs can't be     determined, Sumo Logic assigns logs UTC; if the rest of your logs are from another time zone your search results will be affected. 
+
+     * **Time Zone.** There are two options for Time Zone. You can use the time zone present in your log files, and then choose an option in case time zone information is missing from a log message. Or, you can have Sumo Logic completely disregard any time zone information present in logs by forcing a time zone. It's very important to have the proper time zone set, no matter which option you choose. If the time zone of logs can't be     determined, Sumo Logic assigns logs UTC; if the rest of your logs are from another time zone your search results will be affected.
      * **Timestamp Format.** By default, Sumo Logic will automatically detect the timestamp format of your logs. However, you can manually specify a timestamp format for a Source. See [Timestamps, Time Zones, Time Ranges, and Date Formats](../../reference-information-sources/time-reference.md for more information.
 
    * **Enable Multiline Processing.** See [Collecting Multiline Logs](../../reference-information-sources/collect-multiline-logs.md) for details on multiline processing and its options. This is enabled by default. Use this option if you're working with multiline messages (for example, log4J or exception stack traces). Deselect this option if you want to avoid unnecessary processing when collecting single-message-per-line files (for example, Linux system.log). Choose one of the following:
 
-     * **Infer Boundaries.** Enable when you want Sumo Logic to automatically attempt to determine which lines belong to the same message. If you deselect the Infer Boundaries option, you will need to enter a regular expression in the Boundary Regex field to use for detecting the entire first line of multiline messages. 
+     * **Infer Boundaries.** Enable when you want Sumo Logic to automatically attempt to determine which lines belong to the same message. If you deselect the Infer Boundaries option, you will need to enter a regular expression in the Boundary Regex field to use for detecting the entire first line of multiline messages.
      * **Boundary Regex.** You can specify the boundary between messages using a regular expression. Enter a regular expression that matches the entire first line of every multiline message in your log files.
 
 1. Create any Processing Rules you'd like for the AWS Source.
@@ -187,7 +188,7 @@ The following steps use the AWS SNS Console. You may instead use AWS CloudForma
 
 When collecting from one AWS S3 bucket with multiple Sumo Sources you need to create a separate topic and subscription for each Source. Subscriptions and Sumo Sources should both map to only one endpoint. If you were to have multiple subscriptions Sumo would collect your objects multiple times.
 
-Each topic needs a separate filter (prefix/suffix) so that collection does not overlap. For example, the following image shows a bucket configured with two notifications that have filters (prefix/suffix) set to notify Sumo separately about new objects in different folders. 
+Each topic needs a separate filter (prefix/suffix) so that collection does not overlap. For example, the following image shows a bucket configured with two notifications that have filters (prefix/suffix) set to notify Sumo separately about new objects in different folders.
 
 ![S3 bucket two notifications for SNS.png](/img/send-data/S3-bucket-two-notifications-for-SNS.png)
 
@@ -204,7 +205,7 @@ There is a [community supported script](https://github.com/SumoLogic/sumologic-
 ### Troubleshoot S3 Event Notifications
 
 In the web interface under **Log File Discovery** it shows a red exclamation mark with "Sumo Logic has not received a validation request from AWS".  
-  
+
 ![SNS error](/img/send-data/SNS-red-tick-mark.png)
 
 Steps to troubleshoot:
@@ -214,7 +215,7 @@ Steps to troubleshoot:
 1. If you didn’t use CloudFormation check that the SNS topic has a confirmed subscription to the URL in AWS console. A "Pending Confirmation" state likely means that you entered the wrong URL while creating the subscription.    
 
 In the web interface under **Log File Discovery** it shows a green check with "Sumo Logic has received an AWS validation request at this endpoint." but you still have high latencies.  
-  
+
 ![SNS green tick mark](/img/send-data/sns-green-tick.png)
 
 The green check confirms that the endpoint was used correctly, but it does not mean Sumo is receiving notifications successfully.
