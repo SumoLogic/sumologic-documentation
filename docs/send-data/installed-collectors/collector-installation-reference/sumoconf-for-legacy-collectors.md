@@ -1,8 +1,9 @@
 ---
 id: sumoconf-for-legacy-collectors
+title: sumo.conf for Legacy Collectors
 ---
 
-# sumo.conf for Legacy Collectors
+
 
 For legacy Collectors (releases prior to 19.137), the `sumo.conf` file allows you to pass Collector configuration parameters to Sumo during installation.
 
@@ -16,7 +17,7 @@ To create sumo.conf:
 
 1. Using a text editor (or any similar program) create a new file.
 1. Add all of the required parameters and any optional parameters listed in the table in this topic.
-1. Save the file in UTF-8 encoding to `/etc/sumo.conf` (Mac or Linux) or `C:\\sumo\\sumo.conf` (Windows). 
+1. Save the file in UTF-8 encoding to `/etc/sumo.conf` (Mac or Linux) or `C:\\sumo\\sumo.conf` (Windows).
 
 :::note
 Some scripting utilities, such as PowerShell, default to ANSI. Make sure that the file is saved in UTF-8 encoding.

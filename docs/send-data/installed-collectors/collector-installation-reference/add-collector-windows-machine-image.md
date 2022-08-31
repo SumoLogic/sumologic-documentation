@@ -1,12 +1,13 @@
 ---
 id: add-collector-windows-machine-image
+title: Add a Collector to a Windows Machine Image
 ---
 
-# Add a Collector to a Windows Machine Image
+
 
 Use the information in this topic to build a Sumo Logic Collector into a Windows machine image such as an Amazon AMI, a VMware image, or Azure virtual machine.
 
-Collectors normally register with Sumo Logic during the installation process, but users can pass the **‑VskipRegistration=true** flag to skip registration. This way, the collector is installed as a service that will start and register automatically when the image is launched.
+Collectors normally register with Sumo Logic during the installation process, but users can pass the `‑VskipRegistration=true` flag to skip registration. This way, the collector is installed as a service that will start and register automatically when the image is launched.
 
 ## Initial collector installation
 
@@ -16,8 +17,8 @@ Download the appropriate collector from the **Manage Data \> Collection \> Coll
 
 1. To configure custom sources, create a source JSON file that lists all the sources you want the collector to scan and submit to the Sumo Logic service. These source configurations are only applied during the initial registration of the collector, any updates to the sources.json file will *not* be applied during a simple restart of the collector.
 
-    The following sample JSON file includes Local File Source and Local Windows Event Source configuration samples. For a full list of available source types and parameters, which can be used within the sources.json file, please review the [JSON help documentation](/docs/send-data/sources/use-json-configure-sources). 
-    
+    The following sample JSON file includes Local File Source and Local Windows Event Source configuration samples. For a full list of available source types and parameters, which can be used within the sources.json file, please review the [JSON help documentation](/docs/send-data/sources/use-json-configure-sources).
+
     :::important
     JSON files need to be UTF-8 encoded.
     :::
@@ -53,13 +54,13 @@ Download the appropriate collector from the **Manage Data \> Collection \> Coll
 
 1. Run the installer with the following arguments:
 
-   * `-console` starts the installer in console mode 
+   * `-console` starts the installer in console mode
    * `-q` starts the installer in quiet mode (no UI)
-   * `-VskipRegistration=true` to skip collector registration during installation 
-   * `-Vephemeral=true` to [set the collector as ephemeral](set-collector-as-ephemeral.md) (will be removed after 12 hours offline) 
+   * `-VskipRegistration=true` to skip collector registration during installation
+   * `-Vephemeral=true` to [set the collector as ephemeral](set-collector-as-ephemeral.md) (will be removed after 12 hours offline)
    * `-Vsumo.accessid\<access_i\>` to specify access id generated above  
    * `-Vsumo.accesskey\<access_ke\>` to specify access key generated above  
-   * `-Vsources\<filepat\>` to specify the path to your source JSON file created above 
+   * `-Vsources\<filepat\>` to specify the path to your source JSON file created above
    * (Optional) `-dir` to install into a non-standard installation directory. By default, Windows will install in **C:\\Program Files\\Sumo Logic Collector**.
 
     Example:

@@ -3,7 +3,6 @@ id: collect-statsd-metrics
 title: Collect StatsD Metrics
 ---
 
-#
 
 There are three basic parts to a StatsD implementation: application libraries, a simple protocol used to define the metrics, and a daemon/server that aggregates the metrics for a time window and flushes the aggregated metrics to a metrics back-end system. There are many StatsD libraries and StatsD daemons. If you want to add StatsD to your application and send your metrics to Sumo, we recommend using collectd as your metrics collection agent, with the StatsD input enabled. With Sumo’s collectd Plugin, you can add metadata to your metrics and send your metrics to Sumo in a multi-dimensional, metrics 2.0 format. 
 

@@ -1,3 +1,3 @@
 # Contributing
 
-Please see the [Contributor Guidelines](/docs/contribution) published on our docs site.
+Please see the [Contributor Guidelines](/docs/contributing) published on our docs site.

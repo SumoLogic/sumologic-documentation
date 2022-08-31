@@ -1,8 +1,9 @@
 ---
 id: modify-search-from-messages-tab
+title: Modify a Search from the results table
 ---
 
-# Modify a Search from the results table
+
 
 When you run a search your results are provided in a **Messages** tab. If the search conducted an aggregation you'll also get an **Aggregates** tab. The options to modify your search will differ depending on the tab you're viewing.
 

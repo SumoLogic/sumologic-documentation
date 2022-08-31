@@ -1,8 +1,9 @@
 ---
 id: building-source-json-configuration-file
+title: Building the Source JSON Configuration File
 ---
 
-# Building the Source JSON Configuration File
+
 
 When you need to create a JSON file to configure your Collectors or Sources, the best practice is to use the UI to create your first Collector and Source with your specific parameters that suit your needs, and then use these JSON files as templates to build all other Collectors and Sources. See [View or Download Source JSON Configuration](local-configuration-file-management/view-download-source-json-configuration.md) for details.
 

@@ -3,7 +3,7 @@ id: metadata-naming-conventions
 title: Metadata Naming Conventions
 ---
 
-#
+
 
 Sumo Logic has built-in metadata fields that are tagged to your log messages, such as Source Host and Source Category. This metadata is attached to your log messages at collection-time. These tags are very important since they provide valuable keywords and terms you can use to find targeted results in search queries. 
 

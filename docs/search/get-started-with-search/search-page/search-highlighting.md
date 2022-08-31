@@ -1,8 +1,9 @@
 ---
 id: search-highlighting
+title: Search Highlighting
 ---
 
-# Search Highlighting
+
 
 When you perform a search, and results are returned, your search terms are highlighted in the **Messages** tab.
 

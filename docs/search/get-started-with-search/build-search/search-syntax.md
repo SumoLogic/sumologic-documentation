@@ -1,8 +1,9 @@
 ---
 id: search-syntax-overview
+title: Search Syntax Overview
 ---
 
-# Search Syntax Overview
+
 
 The Sumo Logic Search Language operates on your entire log repository, no matter how many different log sources you have—in real time. The search query language is intuitive and efficient, allowing you to search terabytes of data and see results in seconds.
 

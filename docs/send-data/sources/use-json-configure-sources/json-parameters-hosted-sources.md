@@ -3,7 +3,7 @@ id: json-parameters-hosted-sources
 title: JSON Parameters for Hosted Sources
 ---
 
-#
+
 
 This topic describes JSON Source parameters for Hosted Collectors. See the following topics for additional information:
 

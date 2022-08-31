@@ -1,8 +1,9 @@
 ---
 id: about-search-basics
+title: About Search Basics
 ---
 
-# About Search Basics
+
 
 Our Search Syntax is based on a funnel or "pipeline" concept. The wide mouth of the funnel begins with all your current Sumo Logic data, and
 you narrow the funnel by entering keywords and operators separated by pipes (`|`). Each operator acts on the results from the previous
@@ -37,8 +38,8 @@ This query means:
 As queries get longer and more complex, it is a best practice to format your queries by using a soft return before the pipes, such as:
 
 ```sql
-_sourcecategory=apache 
-| parse "* --" as src_ip 
+_sourcecategory=apache
+| parse "* --" as src_ip
 | count by src_ip | sort _count
 ```
 

@@ -108,7 +108,7 @@ module.exports = {
         redirects: [
           {
             //CID REDIRECTS: Enter a from: of the /cid=##### with the path to the file for to: for each CID!
-            to: '/docs/contribution/markdown-features',
+            to: '/docs/contributing/markdown-features',
             from: '/cid=1234',
           },
         ]
@@ -225,7 +225,7 @@ module.exports = {
                   },
                   {
                     label: 'Manage Sumo',
-                    sublabel: 'Set up and manage Sumo Logic',
+                    sublabel: 'Set up and manage Sumo',
                     to: '/docs/manage',
                     icon: 'start',
                     activeBaseRegex: '^/docs/manage/.*',
@@ -313,14 +313,14 @@ module.exports = {
                   },
                   {
                     label: 'AWS Observability',
-                    sublabel: 'Deploy and collect AWS data',
+                    sublabel: 'Monitor AWS data',
                     to: '/docs/observability/aws-observability-solution',
                     icon: 'polyline',
                     activeBaseRegex: '^/docs/observability/aws-observability-solution/.*',
                   },
                   {
                     label: 'Root Cause Explorer',
-                    sublabel: 'Identify root causes',
+                    sublabel: 'Troubleshoot apps and services',
                     to: '/docs/observability/root-cause-explorer',
                     icon: 'widgets',
                     activeBaseRegex: '^/docs/observability/root-cause-explorer',
@@ -334,7 +334,7 @@ module.exports = {
                 items: [
                   {
                     label: 'Cloud SIEM Enterprise',
-                    sublabel: 'Incident investigation',
+                    sublabel: 'Security event management',
                     to: '/docs/cse',
                     icon: 'security',
                     activeBaseRegex: '^/docs/(cse)/.*',
@@ -386,7 +386,7 @@ module.exports = {
           },
           {
             label: 'Contributing',
-            to: '/docs/contribution',
+            to: '/docs/contributing',
             position: 'left',
           },
           {
@@ -417,7 +417,7 @@ module.exports = {
             items:[
               {
                 label: 'Contribution Guide',
-                href: '/docs/contribution',
+                href: '/docs/contributing',
               },
               {
                 label: 'Docs GitHub',
@@ -481,7 +481,7 @@ module.exports = {
               },
               {
                 label: 'How to Contribute',
-                to: '/docs/contribution',
+                to: '/docs/contributing',
               },
               {
                 label: 'Sumo Logic GitHub',

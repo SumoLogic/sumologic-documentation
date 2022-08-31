@@ -3,7 +3,6 @@ id: existing-collectors-and-sources
 title: Local Configuration File Management for Existing Collectors and Sources
 ---
 
-#
 
 With [Local Configuration File](/docs/send-data/sources/use-json-configure-sources/local-configuration-file-management) management, all configuration is done through a configuration file. This approach allows you to create scripts to configure multiple Collectors and Sources or to create configuration backups.
 

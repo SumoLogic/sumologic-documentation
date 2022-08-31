@@ -1,6 +1,6 @@
 ---
 id: searching-by-keyword-returns-no-results
-sidebar-label: Searching by Keyword Returns no Results
+title: Searching by Keyword Returns no Results
 ---
 
 # Searching by keyword returns no results even though the keyword exists in messages
@@ -38,7 +38,7 @@ Sumo Logic indexes the following keyword values:
 
 We have removed the special characters from the above list for simplification, but those would also be indexed as separate keywords.
 
-To search for messages that include any of the previously indexed values, you need to provide keywords in your query that *specifically match* those terms. Boolean logic and wildcards enable you to search for multiple terms, express logic about term distribution within messages, and specify partial terms with wildcards: use an asterisk (\*), for zero or more characters, or a question mark (?) for a single character. 
+To search for messages that include any of the previously indexed values, you need to provide keywords in your query that *specifically match* those terms. Boolean logic and wildcards enable you to search for multiple terms, express logic about term distribution within messages, and specify partial terms with wildcards: use an asterisk (\*), for zero or more characters, or a question mark (?) for a single character.
 
 :::note
 Keywords are case insensitive.
@@ -58,4 +58,3 @@ If you enter a phrase, or series of keywords, such as an email or IP address, th
 For example, the keyword `com*services` will not find the message, because there are multiple terms attempting to be represented by the wildcard. In this case "*\<period\> test \<period\>*." If you change this keyword to `com.*.services`*, *the query WILL return our message, as the `*` only indicates the individual term of "test"
 
 To search for multiple keyword values in a message, the best practice is to break the keywords into multiple terms. To do this, simply add a space between the terms. When you do this, Sumo Logic will imply an "AND" condition to the keyword search. For example, searching `com services` will search for `com AND services`.
-

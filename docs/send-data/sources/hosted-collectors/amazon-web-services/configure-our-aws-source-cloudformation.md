@@ -1,8 +1,9 @@
 ---
 id: configure-our-aws-source-cloudformation
+title: Configuring your AWS Source with CloudFormation
 ---
 
-# Configuring your AWS Source with CloudFormation
+
 
 You can use AWS CloudFormation to leverage AWS products without creating or configuring any AWS infrastructure. With AWS CloudFormation, you declare all of your resources and dependencies in a template file. The template defines a collection of resources as a single unit called a stack. AWS CloudFormation creates and deletes all member resources of the stack together and manages all dependencies between the resources for you.
 
@@ -26,7 +27,7 @@ Both methods require a YAML file with the template. You can create a file with t
     Make sure that the AWS region is the same as the S3 bucket when uploading the template.
     :::
 
-1. Specify Details. Provide an appropriate **Stack Name**, the S3 **bucket-name** and **endpoint** URL you obtained when creating the Source in Sumo and click **Next**. See [Specifying Stack Name and Parameters](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-using-console-create-stack-parameters.html) for details. 
+1. Specify Details. Provide an appropriate **Stack Name**, the S3 **bucket-name** and **endpoint** URL you obtained when creating the Source in Sumo and click **Next**. See [Specifying Stack Name and Parameters](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-using-console-create-stack-parameters.html) for details.
 
     :::note
     If you downloaded and used the template from the Sumo interface AWS will not prompt you for **Parameters**.
