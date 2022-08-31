@@ -1,8 +1,9 @@
 ---
 id: add-remove-users-role
+title: Add or Remove Users from a Role
 ---
 
-# Add or Remove Users from a Role
+
 
 This section has instructions for added users to a role, and removing users from a role.
 
@@ -16,7 +17,7 @@ This section has instructions for added users to a role, and removing users from
 1. A list of users currently assigned to the role appears.
 
     ![users-assigned-to-role.png](/img/users-and-roles/users-assigned-to-role.png)
-    
+
 1. Click the **Assign Users** field. A list of users that are not currently assigned to the role appears. Click a user’s name to add the user to the role. 
 1. Add additional users to the role, as desired.
 1. Click **Save** when you are done adding users to the role.

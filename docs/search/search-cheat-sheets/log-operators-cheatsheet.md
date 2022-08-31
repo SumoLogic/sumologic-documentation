@@ -1,10 +1,10 @@
 ---
 id: log-operators-cheat-sheet
+title: Log Operators Cheat Sheet
 ---
 
-# Log Operators Cheat Sheet
 
-The Log Operators cheat sheet provides a list of available parsers, aggregators, search operators, and mathematical expressions with links to full details for each item.  For a step-by-step video and tutorial about creating queries, see the [Quick Start Tutorial](/docs/quickstart).  For a complete list of Sumo Logic Search operators, you can download the [PDF version](https://drive.google.com/file/d/1UAMMawIW1st1LTDw9UjdEtivRKvgk-j7). 
+The Log Operators cheat sheet provides a list of available parsers, aggregators, search operators, and mathematical expressions with links to full details for each item.  For a step-by-step video and tutorial about creating queries, see the [Quick Start Tutorial](https://learn.sumologic.com).  For a complete list of Sumo Logic Search operators, you can download the [PDF version](https://drive.google.com/file/d/1UAMMawIW1st1LTDw9UjdEtivRKvgk-j7). 
 
 For a collection of customer-created search queries and their use cases, see the [Sumo Logic Community Query Library](https://community.sumologic.com/s/topic/0TOE0000000g86fOAA/Query-Library).
 
@@ -26,7 +26,7 @@ Sumo provides a number of ways to [parse](/docs/search/search-query-language/pa
 
 ## Aggregating
 
-[Aggregating functions](../search-query-language/group-aggregate-operators) evaluate messages and place them into groups. The group operator is used in 
+[Aggregating functions](../search-query-language/group-aggregate-operators) evaluate messages and place them into groups. The group operator is used in
 conjunction with group-by functions. When using any grouping function, the word by is sufficient for representing the group operator.
 
 :::note

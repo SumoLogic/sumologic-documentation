@@ -102,17 +102,14 @@ _sourceCategory=1pw action
 
 ## Collecting Logs for 1Password
 
-Follow the instructions for setting up [Cloud to Cloud Integration for 1Password App](/docs/send-data/Sources/sources-hosted-collectors/Cloud-to-Cloud-Integration-Framework/1Password-Source) to create the source and use the same source category while installing the app.
+Follow the instructions for setting up [Cloud to Cloud Integration for 1Password App](/docs/send-data/Sources/hosted-collectors/Cloud-to-Cloud-Integration-Framework/1Password-Source) to create the source and use the same source category while installing the app.
 
 ## Installing the 1Password App
 
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
 1. From the **App Catalog**, search for and select the app.
-2. Select the version of the service you're using and click **Add to Library**.
-
-Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/library/install-apps)
-
+2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library.](/docs/get-started/library/install-apps)
 3. To install the app, complete the following fields.
    * **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
    * **Data Source.** Select either of these options for the data source. 
@@ -124,7 +121,6 @@ Version selection is applicable only to a few apps currently. For more informati
 Once an app is installed, it will appear in your **Personal** folder, or other folder that you specified. From here, you can share it with your organization.
 
 Panels will start to fill automatically. It's important to note that each panel slowly fills with data matching the time range query and received since the panel was created. Results won't immediately be available, but with a bit of time, you'll see full graphs and maps.
-
 
 
 ## Viewing 1Password Dashboards

@@ -1,8 +1,8 @@
 ---
 id: existing-collectors-and-sources
+title: Local Configuration File Management for Existing Collectors and Sources
 ---
 
-# Local Configuration File Management for Existing Collectors and Sources
 
 With [Local Configuration File](/docs/send-data/sources/use-json-configure-sources/local-configuration-file-management) management, all configuration is done through a configuration file. This approach allows you to create scripts to configure multiple Collectors and Sources or to create configuration backups.
 
@@ -41,7 +41,7 @@ Prior to version 19.137, the Collector used the `sumo.conf` file for Source c
 1. Add the `syncSources` parameter and set the path to the JSON. Like these example  
 
    * On \*nix, to point to a JSON **file** that defines Sources for a Collector: ` =/path/to/sources.json`  
-   * On \*nix, to point to a **folder** that contains JSON files that define Sources for a Collector: `syncSources=/path/to/sources-folder` 
+   * On \*nix, to point to a **folder** that contains JSON files that define Sources for a Collector: `syncSources=/path/to/sources-folder`
    * On Windows (note the escaped backslashes), to point to a folder that contains JSON files that define Sources for a Collector: `syncSources=C:\\path\\to\\sources-folder\\`
 
 1. Save and close the file.

@@ -1,8 +1,9 @@
 ---
 slug: /send-data/design-your-deployment
+title: Design Your Deployment
 ---
 
-# Design Your Deployment
+
 
 To send your data to Sumo Logic you have a few options. We have two types of installed agents and offer a collector fully hosted by us.
 
@@ -42,11 +43,11 @@ For full details on limitations, what's supported, and what's different see our 
 
 ## Installed Collectors
 
-[Installed Collectors](../installed-collectors/about-installed-collectors.md) are deployed in your environment, on a local machine, a machine in your organization, or even an Amazon Machine Image (AMI). Installed Collectors require a software download and installation. Upgrades to Collector software are released regularly by Sumo Logic.
+[Installed Collectors](../installed-collectors/about.md) are deployed in your environment, on a local machine, a machine in your organization, or even an Amazon Machine Image (AMI). Installed Collectors require a software download and installation. Upgrades to Collector software are released regularly by Sumo Logic.
 
 Consider having an Installed Collector on a dedicated machine when:
 
-* You need to collect data with a [Source only available on Installed Collectors](/docs/send-data/sources/sources-installed-collectors).
+* You need to collect data with a [Source only available on Installed Collectors](/docs/send-data/sources/installed-collectors).
 * You are running a very high-bandwidth network with high logging levels.
 * You want a central collection point for many Sources.
 
@@ -60,7 +61,7 @@ Consider having more than one Installed Collector if:
 * You prefer to install many Collectors, for example, one per machine
     to collect local files.
 
-To help design your deployment see [how Installed Collectors work](../installed-collectors/about-installed-collectors.md) and  [Best Practices: Local and Centralized Data Collection](best-practices-local-centralized-data-collection.md).
+To help design your deployment see [how Installed Collectors work](../installed-collectors/about.md) and  [Best Practices: Local and Centralized Data Collection](best-practices-local-centralized-data-collection.md).
 
 For details on system requirements, see Installed Collector requirements.
 
@@ -70,7 +71,7 @@ Unlike Installed Collectors, [Hosted Collectors](../hosted-collectors.md) don't 
 
 Because there are no performance issues to consider, you can configure as many Sources as you'd like, up to 1,000, for a single Hosted Collector. Consider setting up more than one Hosted Collector if you'd like to tag different data types with different metadata.
 
-See how to [configure a Hosted Collector](../configure-hosted-collector.md) and all of the available [Sources supported on Hosted Collectors](/docs/send-data/sources/sources-hosted-collectors).
+See how to [configure a Hosted Collector](../configure-hosted-collector.md) and all of the available [Sources supported on Hosted Collectors](/docs/send-data/sources/hosted-collectors).
 
 ### Logging levels
 

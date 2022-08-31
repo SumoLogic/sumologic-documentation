@@ -1,8 +1,10 @@
 ---
 id: create-structured-log-mapping
+title: Create a Structured Log Mapping
+sidebar_label: Log Mapping
+description: Learn how to create a log mapping for structured messages.
 ---
 
-# Create a Structured Log Mapping
 
 This topic has instructions for creating a log mapping for structured messages using the CSE UI. Log mapping is the process of telling CSE how to build a Record from the key-value pairs extracted from messages. For more information about log mapping, and how it fits into the Record creation process, see the [Record Processing Pipeline](record-processing-pipeline.md) topic.
 
@@ -56,13 +58,18 @@ You might not map all message fields to schema attributes. Unmapped message fiel
 
 The sections that follow have instructions for setting up each type of mapping:
 
-* [constant mapping](#constant-mapping)
-* [extracted mapping](#extracted-mapping)
-* [format mapping](#format-mapping)
-* [lookup mapping](#lookup-mapping)
-* [split mapping](#split-mapping)
-* [standard mapping](#standard-mapping)
-* [time mapping](#time-mapping)
+- [About the log mapping process](#about-the-log-mapping-process)
+- [Step 1: Choose mapping type and name the mapping](#step-1-choose-mapping-type-and-name-the-mapping)
+- [Step 2: Enter “If Input Matches” values](#step-2-enter-if-input-matches-values)
+- [Step 3: Enter “Then Create Record” values](#step-3-enter-then-create-record-values)
+- [Step 4: Specify field mapping](#step-4-specify-field-mapping)
+  - [constant mapping](#constant-mapping)
+  - [extracted mapping](#extracted-mapping)
+  - [format mapping](#format-mapping)
+  - [lookup mapping](#lookup-mapping)
+  - [split mapping](#split-mapping)
+  - [standard mapping](#standard-mapping)
+  - [time mapping](#time-mapping)
 
 If you are creating a mapping for a source whose messages you want to be processed by CSE's [normalized threat rules](../cse-rules/normalized-threat-rules.md), see [Field Mapping for Security Event Sources](field-mapping-security-event-sources.md).
 
@@ -183,7 +190,7 @@ To map a single input field:
 
 1. Select standard from the **Create a new … mapping field?** pull-down.
 1. **Input Field**. Enter the name of an input field. This is the field from incoming messages whose value you want to write to the CSE attribute you’ll specify later in this procedure.
-1. **Show optional fields**. Expand this section if you want to specify one or more alternative input fields, or set a default value to be mapped to the target in the event that the input field is null. 
+1. **Show optional fields**. Expand this section if you want to specify one or more alternative input fields, or set a default value to be mapped to the target in the event that the input field is null.
 
    1. **Alternate input fields**. Enter one or more fields, separated by spaces. If the Input Field you entered above doesn’t exist in a message, or is null, the value of the first alternative field that exists in the message and isn’t null will be mapped to the CSE attribute you’ll specify later in this procedure.
    1. **Default value**. Enter the value you want to write to the CSE attribute in the event that neither the input field or any alternative fields with non-null values exist in the message.
@@ -206,7 +213,7 @@ To map multiple input fields:
 1. **Add more fields**. Expand this section.
 1. **Input Fields**. Enter the names of the input fields to be combined, separated by spaces. 
 1. **Input Field Delimiter**. Enter the character to use as the delimiter between the input field values.
-1. **Show optional fields**. Click this if you want to specify one or more alternative input fields, or set a default value to be mapped to the target in the event that the input field is null. 
+1. **Show optional fields**. Click this if you want to specify one or more alternative input fields, or set a default value to be mapped to the target in the event that the input field is null.
    1. **Alternate input fields**. Enter one or more fields, separated by spaces. If any of the Input Fields you entered above don’t exist in a message, or are null, the values of the alternative fields you enter will be combined and mapped to the CSE attribute you’ll specify later in this procedure.
    1. **Default value**. Enter the value you want to write to the CSE attribute in the event that neither the input fields or any alternative fields exist with non-null values in the message.
 1. **Output Field**. Select an output field. This is the Record attribute whose value you wish to populate.

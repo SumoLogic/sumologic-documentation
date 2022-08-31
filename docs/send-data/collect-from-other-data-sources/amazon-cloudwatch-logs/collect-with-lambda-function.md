@@ -1,8 +1,8 @@
 ---
 id: collect-with-lambda-function
+title: Collect Amazon CloudWatch Logs using a Lambda Function
 ---
 
-# Collect Amazon CloudWatch Logs using a Lambda Function
 
 The following instructions tell you to how download and configure an AWS Lambda function for Amazon CloudWatch Logs and send then to Sumo Logic.
 
@@ -13,7 +13,7 @@ We strongly recommend the alternative collection process described on [Amazon C
 ## Add a Hosted Collector and HTTP Source
 
 1. In Sumo Logic, configure a [Hosted Collector](../../configure-hosted-collector.md).
-1. In Sumo Logic, configure an [HTTP Source](/docs/send-data/sources/sources-hosted-collectors/http-logs-metrics-source).
+1. In Sumo Logic, configure an [HTTP Source](/docs/send-data/sources/hosted-collectors/http-logs-metrics-source).
 
 :::note
 When you configure the HTTP Source, make sure to save the HTTP Source Address URL. You will need this to configure the Lambda Function.  
@@ -32,19 +32,19 @@ To add an Amazon Lambda function:
 1. Select sumologic-process-logs. The **Create Function** page appears.
 1. In the **Basic information** section:
 
-    ![lambda4.png](/img/send-data/lambda4.png) 
-    
-    * **Name**. Enter a name for the function. 
+    ![lambda4.png](/img/send-data/lambda4.png)
+
+    * **Name**. Enter a name for the function.
     * **Role**. Choose one of the following options:
       * **Choose an existing role.** If you have any appropriate roles, you can select one.
       * **Create new role from template(s)**. If you select this option, you can continue without choosing any policy templates—it will create a role with basic Lambda execution privileges by default.
-    * **Role Name**. Enter a name for the role. 
+    * **Role Name**. Enter a name for the role.
     * **Policy templates**. If you selected **Create new role from template(s) above, you can leave this blank. 
 
 1. In the **cloudwatch-logs** section, you can create a trigger now, or click **Remove** if you prefer to create it later. To create the trigger:
 
-    ![trigger.png](/img/send-data/trigger.png) 
-    
+    ![trigger.png](/img/send-data/trigger.png)
+
     * **Log Group**. Select the log group that serves as the event source. Events sent to the log source will trigger your Lambda function. 
     * **Filter Name**. Enter a filter name.
     * **Filter Pattern**. May be left blank. For information about AWS filter patterns, see [Filter and Pattern Syntax](http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/FilterAndPatternSyntax.html) in AWS help.
@@ -52,7 +52,7 @@ To add an Amazon Lambda function:
 1. On the **Environment Variables** page, create a environment variable named SUMO_ENDPOINT. Set the value of the variable to the URL of the HTTP source to which your logs will be sent. In addition, you can set any of the following optional variables:
 
     ![lambda6.png](/img/send-data/lambda6.png)
-    * ENCODING (Optional)—Encoding to use when decoding CloudWatch log events. Default is utf-1. 
+    * ENCODING (Optional)—Encoding to use when decoding CloudWatch log events. Default is utf-1.
     * SOURCE_CATEGORY_OVERRIDE (Optional)—Override \_sourceCategory value configured for the HTTP source.  
     * SOURCE_HOST_OVERRIDE (Optional)—Override \_sourceHost value configured for the HTTP source.
     * SOURCE_NAME_OVERRIDE (Optional)—Override \_sourceName value configured for the HTTP source.

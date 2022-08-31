@@ -1,8 +1,8 @@
 ---
 slug: /search/search-query-language/math-expressions
+title: Math Expressions
 ---
 
-# Math Expressions
 
 You can use general mathematical expressions on numerical data extracted
 from log lines. 
@@ -41,4 +41,3 @@ The following example uses the pow() function:
 To reference Java's Math class functions, see Oracle's [Math](https://docs.oracle.com/javase/7/docs/api/java/lang/Math.html) documentation.
 
 ## Operators
-

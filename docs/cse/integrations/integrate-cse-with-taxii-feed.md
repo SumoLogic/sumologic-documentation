@@ -1,8 +1,11 @@
 ---
 id: integrate-cse-with-taxii-feed
+title: Integrate CSE with a TAXII Feed
+sidebar_label: TAXII Feed
+description: Learn how to integrate CSE with a TAXII feed.
 ---
 
-# Integrate CSE with a TAXII Feed
+
 
 This topic has instructions for integrating CSE with a TAXII threat intelligence feed. In this configuration, CSE is a TAXII client, and polls a TAXII Server. 
 

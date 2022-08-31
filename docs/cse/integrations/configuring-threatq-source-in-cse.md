@@ -1,8 +1,10 @@
 ---
 id: configuring-threatq-source-in-cse
+title: Configuring a ThreatQ Source in CSE
+sidebar_label: ThreatQ Source
+description: Learn how to set up a ThreatQ source.
 ---
 
-# Configuring a ThreatQ Source in CSE
 
 This topic has information about configuring a ThreatQ source in CSE.
 

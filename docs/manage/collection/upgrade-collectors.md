@@ -1,8 +1,8 @@
 ---
 id: upgrade-collectors
+title: Upgrade Collectors
 ---
 
-# Upgrade Collectors
 
 ## Upgrade Collectors using the Web Application
 
@@ -37,14 +37,14 @@ To install an upgrade on one or more collectors:
 
 1. In the Sumo Logic Web Application select **Manage Data \> Collection \> Collection**.
 1. Click the **Upgrade Collectors** link.
-1. Determine if you'd like to install the upgrade on individual collectors or on all collectors simultaneously. Then, choose one of the following: 
+1. Determine if you'd like to install the upgrade on individual collectors or on all collectors simultaneously. Then, choose one of the following:
 
     * Click **Update** next to the name of a collector to install the upgrade just on that specific collector. This option can be used if a policy prevents you from upgrading every collector at the same time of day, or if you can't deploy the upgrade all at once. Any collectors you choose not to upgrade will remain available in the upgrade dialog box so you can install the upgrade at a later time.
     * If you can safely upgrade all collectors, click **Update All.**
 
     :::note
     We strongly advise you to validate collector upgrades on non-production hosts before upgrading production collectors.
-    ::: 
+    :::
 
     ![Upgrade collectors](/img/collector/upgrade-collectors-1.png)
 
@@ -106,7 +106,7 @@ See the following table for commands:
 | Linux Debian | Upgrade or downgrade command: `sudo dpkg -i\<pathToCollectorDebianFil\>` |
 | Linux 32 or 64 | Upgrade or downgrade command:  `sudo\<pathToCollectorShFil\> -q` |
 | Windows | Upgrade or downgrade command: `SumoCollector.exe -console -q` |
-| MacOS | Use the same steps to [Install a Collector on MacOS](../../send-data/installed-collectors/install-collector-macos.md) without the authentication credentials. |
+| MacOS | Use the same steps to [Install a Collector on MacOS](../../send-data/installed-collectors/macos.md) without the authentication credentials. |
 
 ## Collector Upgrade Best Practices
 
@@ -149,10 +149,10 @@ If you find abnormalities, contact [Sumo Logic Support](https://support.sumologi
 Follow this checklist whenever you make any changes to the collector:
 
 * Have a baseline prior to any changes or updates.
-* Perform any changes within a development or staging environment prior to production. Do this when: 
-  * Upgrading to a new Collector version. 
+* Perform any changes within a development or staging environment prior to production. Do this when:
+  * Upgrading to a new Collector version.
   * Adding new Sources to a Collector.
-  * Modifying existing Collector or Source configurations, such as memory, CPU throttling, etc. 
+  * Modifying existing Collector or Source configurations, such as memory, CPU throttling, etc.
   * Upgrading or patching the host environment.
 * Monitor the staging environment for any significant changes to the following: 
   * Collector service CPU usage patterns
@@ -163,6 +163,6 @@ Follow this checklist whenever you make any changes to the collector:
   * The Collector continues to run over a period of time without errors or failures.
   * Existing Sources continue to read and send data.
   * New Sources read and send data as expected.
-* Validate Host/Application operation 
+* Validate Host/Application operation
   * Other services on the host continue to operate as expected without errors
 * Make sure your monitoring covers a period of time that also includes any normal maintenance operations of the hosts, such as backups, virus scans, etc. to ensure there are no issues that come up during those specific tasks.

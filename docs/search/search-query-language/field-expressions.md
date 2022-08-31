@@ -1,8 +1,8 @@
 ---
 id: field-expressions
+title: Field Expressions
 ---
 
-# Field Expressions
 
 The Sumo Query Language can be used to create fields based on calculated expressions, such as:
 

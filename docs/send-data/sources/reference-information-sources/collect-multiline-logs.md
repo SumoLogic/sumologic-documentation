@@ -1,8 +1,9 @@
 ---
 id: collect-multiline-logs
+title: Collecting Multiline Logs
 ---
 
-# Collecting Multiline Logs
+
 
 Sumo Logic Sources by default have multiline processing enabled. Multiline processing is used to ensure a log message that is made up of multiple lines, separated by a line break or carriage return, are properly grouped as a single log message when ingested into Sumo Logic.
 
@@ -63,7 +64,7 @@ do not match the entire first line:
 ### How Does Multiline Work With Syslog Sources?
 
 Sumo Logic does not provide any options for multiline detection within Syslog Sources. For Syslog messages received over UDP Sumo Logic will treat all content contained within a single syslog request as a single message.  
-  
+
 When syslog messages are received over TCP Sumo Logic will treat each line within a request as a new message. This is because TCP is received as a data stream and the Collector will flush a message whenever a line feed is detected.
 
 ### How Does Multiline Work With HTTP Sources?

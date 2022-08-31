@@ -1,8 +1,8 @@
 ---
 id: source-log-encoding
+title: Source Log Encoding
 ---
 
-# Source Log Encoding
 
 The type of log encoding supported by Sumo Logic depends on the source you are using.
 
@@ -19,7 +19,7 @@ Local file sources support the following encoding:
  * UTF-32BE
  * UTF-32LE
 
-For more information, see [Local File Source](../sources-installed-collectors/local-file-source.md).
+For more information, see [Local File Source](../installed-collectors/local-file-source.md).
 
 ## Remote file sources
 
@@ -28,7 +28,7 @@ Remote file sources support the following encoding:
  * US-ASCII
  * UTF-8
 
-For more information, see [Remote File Source](/docs/send-data/sources/sources-installed-collectors/remote-file-source).
+For more information, see [Remote File Source](/docs/send-data/sources/installed-collectors/remote-file-source).
 
 ## HTTP sources
 
@@ -43,7 +43,7 @@ You can upload UTF-8 log files compressed using the following methods:
 
 Compressed files are decompressed before they are ingested, so they are ingested at the decompressed file size rate.
 
-For more information, see [HTTP Source](/docs/send-data/sources/sources-hosted-collectors/http-logs-metrics-source).
+For more information, see [HTTP Source](/docs/send-data/sources/hosted-collectors/http-logs-metrics-source).
 
 ## AWS S3 sources
 
@@ -51,4 +51,4 @@ AWS S3 sources support the following encoding:
 
  * UTF-8
 
-For more information, see [AWS S3 Source](../sources-hosted-collectors/amazon-web-services/aws-s3-source.md).
+For more information, see [AWS S3 Source](../hosted-collectors/amazon-web-services/aws-s3-source.md).

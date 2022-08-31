@@ -1,8 +1,8 @@
 ---
 id: force-collectors-name-clobber
+title: Force a Collector's Name with Clobber
 ---
 
-# Force a Collector's Name with Clobber
 
 Each collector name must be unique. If you are installing a collector that would have the same name as an existing collector, the system automatically appends a 13-digit unix timestamp to the collector name. If you don't want to use the timestamp in a collector name, you can do either of the following:
 

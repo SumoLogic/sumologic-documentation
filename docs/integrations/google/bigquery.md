@@ -16,7 +16,7 @@ The Google BigQuery App helps you monitor data and activity in your BigQuery dat
 The Google BigQuery App uses:
 * [Google Cloud Audit Logs](https://cloud.google.com/logging/docs/audit/) - Logs events on multiple [GCP services](https://cloud.google.com/logging/docs/audit/#services), including BigQuery.
 
-### Query Sample
+### Sample Query
 
 ```bash title="Created Resources Over Time"
 _sourceCategory=*gcp* logName resource "type":"bigquery_resource"

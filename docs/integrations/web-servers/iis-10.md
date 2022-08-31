@@ -51,7 +51,7 @@ Sumo Logic supports the collection of logs and metrics data from IIS server in s
 
 <img src={useBaseUrl('img/integrations/web-servers/IIS-flow.png')} alt="Collect Internet Information Services (IIS) Logs and Metrics for Standalone environments" />
 
-Sumo Logic uses the Telegraf operator for IIS metric collection and the [Installed Collector](/docs/send-data/installed-collectors/about-installed-collectors) for collecting IIS logs. The diagram below illustrates the components of the IIS collection in a standalone environment. Telegraf uses the [Windows Performance Counters Input Plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/sqlserver) to obtain IIS metrics and the Sumo Logic output plugin to send the metrics to Sumo Logic. Logs from IIS Server are collected by a [Local File Source](/docs/send-data/Sources/sources-installed-collectors/Local-File-Source).
+Sumo Logic uses the Telegraf operator for IIS metric collection and the [Installed Collector](/docs/send-data/installed-collectors/about) for collecting IIS logs. The diagram below illustrates the components of the IIS collection in a standalone environment. Telegraf uses the [Windows Performance Counters Input Plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/sqlserver) to obtain IIS metrics and the Sumo Logic output plugin to send the metrics to Sumo Logic. Logs from IIS Server are collected by a [Local File Source](/docs/send-data/Sources/installed-collectors/Local-File-Source).
 
 
 #### Configure Logs Collection
@@ -72,45 +72,43 @@ IIS Log files are generated as local files. For a standard Windows Server, the d
 
 Within the folder, you will find subfolders for each site configured with IIS. The logs are stored in folders that follow a naming pattern like W3SVC1, W3SVC2, W3SVC3, etc. The number at the end of the folder name corresponds to your site ID. For example, W3SVC2 is for site ID 2.
 
-* **IIS Access Logs (W3C default format)** Sumo Logic expects logs in [W3C](https://docs.microsoft.com/en-us/windows/desktop/http/w3c-logging)format with following fields: \
-`#Fields: date time s-ip cs-method cs-uri-stem cs-uri-query s-port cs-username c-ip cs(User-Agent) cs(Referer) sc-status sc-substatus sc-win32-status time-taken \
-`IIS allows you to choose fields to log in IIS access logs. For explanations on the various fields and their significance see this [link](https://docs.microsoft.com/en-us/windows/desktop/http/w3c-logging).
-* **HTTP Error Logs** Sumo Logic expects Error logs in following format : \
+* **IIS Access Logs (W3C default format)** Sumo Logic expects logs in [W3C](https://docs.microsoft.com/en-us/windows/desktop/http/w3c-logging) format with following fields:
+```
+#Fields: date time s-ip cs-method cs-uri-stem cs-uri-query s-port cs-username c-ip cs(User-Agent) cs(Referer) sc-status sc-substatus sc-win32-status time-taken
+```
+* IIS allows you to choose fields to log in IIS access logs. For explanations on the various fields and their significance see this [link](https://docs.microsoft.com/en-us/windows/desktop/http/w3c-logging).
+* **HTTP Error Logs** Sumo Logic expects Error logs in following format :
 ```
 #Fields: date time c-ip c-port s-ip s-port protocol_version verb cookedurl_query protocol_status siteId Reason_Phrase Queue_Name
 ```
 For information on how to configure HTTP Error Logs, and for explanations on the various HTTP Error Log fields and their significance see this [link](https://support.microsoft.com/en-us/help/820729/error-logging-in-http-apis).
 * **Performance Logs** These logs are output of Perfmon queries which will be configured at Installed Collector, "**Windows Performance**" Source.
 1. **Make sure logging is turned on in IIS Server.**
-* **Enable logging on your IIS Server** Perform the following task, if logging on your IIS Server is not already enabled. \
-**To enable logging on your IIS Server, do the following:
+* **Enable logging on your IIS Server**. Perform the following task, if logging on your IIS Server is not already enabled. \
+To enable logging on your IIS Server, do the following:
 1. Open IIS Manager.
 2. Select the site or server in the **Connections** pane, then double-click **Logging**.
 
 Enhanced logging is only available for site-level logging. If you select the server in the Connections pane, then the Custom Fields section of the W3C Logging Fields dialog is disabled.
 
 1. In the Format field under Log File, select **W3C** and then click Select Fields. IIS App works on default fields selection.
-2. Select following fields, if not already selected. Sumo Logic expects these fields in IIS logs for the IIS App to work by default: \
+2. Select following fields, if not already selected. Sumo Logic expects these fields in IIS logs for the IIS App to work by default:
 ```
 date time s-ip cs-method cs-uri-stem cs-uri-query s-port cs-username c-ip cs(User-Agent) cs(Referer) sc-status sc-substatus sc-win32-status time-taken
 ```
 For more information about IIS log format and log configuration refer [link](https://docs.microsoft.com/en-us/iis/get-started/whats-new-in-iis-85/enhanced-logging-for-iis85).
-* **Verify that log files are created** Perform the following task to ensure that log files are being created.
-
-**To confirm log files are being created, do the following:
-
-1. Open a command-line window and change directories to `C:\inetpub\Logs\LogFiles`. This is the same path you will enter when you configure the Source to collect these files.
-2. Under the \W3SVC1 directory, you should see one or more files with a .log extension. If the file is present, you can collect it.
+* **Verify that log files are created** Perform the following tasks to ensure that log files are being created:
+   1. Open a command-line window and change directories to `C:\inetpub\Logs\LogFiles`. This is the same path you will enter when you configure the Source to collect these files.
+   2. Under the \W3SVC1 directory, you should see one or more files with a .log extension. If the file is present, you can collect it.
 * **Enable HTTP Error Logs on your Windows Server** Perform the following task to enable HTTP Error Logs on your Windows Server, that is hosting the IIS Server.
 
 **To enable HTTP Error Logs on the Windows Server hosting IIS Server, do the following:
 
 1. To configure HTTP Error Logging, refer to this document [link](https://docs.microsoft.com/en-us/windows/desktop/http/configuring-http-server-api-error-logging).
-2. To understand HTTP Error Log format, refer to this document [link](https://docs.microsoft.com/en-us/windows/desktop/http/format-of-the-http-server-api-error-logs). \
-HTTP Error Log files are generated as local files. The default HTTP Error log file location is: `C:\Windows\System32\LogFiles\HTTPERR`
+2. To understand HTTP Error Log format, refer to this document [link](https://docs.microsoft.com/en-us/windows/desktop/http/format-of-the-http-server-api-error-logs). HTTP Error Log files are generated as local files. The default HTTP Error log file location is: `C:\Windows\System32\LogFiles\HTTPERR`
 1. **Configure an Installed Collector.**
 
-If you have not already done so, install and configure an installed collector for Windows by [following the documentation](/docs/send-data/installed-collectors/install-collector-windows).
+If you have not already done so, install and configure an installed collector for Windows by [following the documentation](/docs/send-data/installed-collectors/windows).
 
 1. **Configure Sources.**
 
@@ -121,13 +119,13 @@ This section demonstrates how to configure sources for the following log types:
 * IIS Performance (Perfmon) Logs
 * **Configure Source for IIS Access Logs**
 
-This section demonstrates how to configure a Local File Source for IIS Access Logs, for use with an [Installed Collector](/docs/integrations/microsoft-azure/iis-10-legacy#Configure-a-Collector). You may configure a [Remote File Source](/docs/send-data/Sources/sources-installed-collectors/Remote-File-Source), but the configuration is more complex.
+This section demonstrates how to configure a Local File Source for IIS Access Logs, for use with an [Installed Collector](/docs/integrations/microsoft-azure/iis-10-legacy#Configure-a-Collector). You may configure a [Remote File Source](/docs/send-data/Sources/installed-collectors/Remote-File-Source), but the configuration is more complex.
 
 Sumo Logic recommends using a Local File Source whenever possible.
 
 To configure a local file source for IIS Access Logs, do the following:
 
-1. Configure a [Local File Source](/docs/send-data/Sources/sources-installed-collectors/Local-File-Source).
+1. Configure a [Local File Source](/docs/send-data/Sources/installed-collectors/Local-File-Source).
 2. Specify Local File Source Fields as follows:
     1. **Name**: Required (for example, "IIS")
     2. **Description**. (Optional)
@@ -135,13 +133,15 @@ To configure a local file source for IIS Access Logs, do the following:
     4. **Collection start time**. Choose how far back you would like to begin collecting historical logs. For example, choose 7 days ago to being collecting logs with a last modified date within the last seven days.
     5. **Source Host**. Sumo Logic uses the hostname assigned by the operating system by default, but you can enter a different host name.
     6. **Source Category** (Required). For example, Webserver/IIS/Access.
-    7. **Fields.** Set the following fields: \
-`component = webserver \
-webserver_system = iis \
-webserver_farm = <Your_IISserver_farm_Name>`. Enter **Default** if you do not have one. \
-`environment = <Your_Environment_Name>` (for example, Dev, QA, or Prod) \
+    7. **Fields.** Set the following fields:
+    ```
+    component = webserver
+    webserver_system = iis
+    webserver_farm = <Your_IISserver_farm_Name>. Enter Default if you do not have one
+    environment = <Your_Environment_Name> (for example, Dev, QA, or Prod)
+    ```
 
-<img src={useBaseUrl('img/integrations/web-servers/IIS-access-logs.png')} alt="IIS-access-logs" width="500"/>
+  <img src={useBaseUrl('img/integrations/web-servers/IIS-access-logs.png')} alt="IIS-access-logs" width="500"/>
 
 3. Configure the Advanced section:
     8. Timestamp Parsing Settings: Make sure the setting matches the timezone on the log files.
@@ -150,16 +150,17 @@ webserver_farm = <Your_IISserver_farm_Name>`. Enter **Default** if you do not ha
     11. Timestamp Format: Select the option to Automatically detect the format.
     12. Encoding. UTF-8 is the default, but you can choose another encoding format from the menu if your IIS logs are encoded differently.
     13. Enable Multiline Processing. Uncheck the box to Detect messages spanning multiple lines. Since IIS Error logs are single line log files, disabling this option will ensure that your messages are collected correctly.
-4. Click Save. \
-After a few minutes, your new Source should be propagated down to the Collector and will begin submitting your IIS log files to the Sumo Logic service.
-* Configure Source for HTTP Error Logs
+4. Click Save.
 
+After a few minutes, your new Source should be propagated down to the Collector and will begin submitting your IIS log files to the Sumo Logic service.
+
+* Configure Source for HTTP Error Logs
 This section demonstrates how to configure a Local File Source for HTTP Error Logs, for use with an [Installed Collector](/docs/integrations/microsoft-azure/iis-10-legacy#Configure-a-Collector).
 
 
 To configure a local file source for HTTP Error Logs, do the following:
 
-1. Configure a [Local File Source](/docs/send-data/Sources/sources-installed-collectors/Local-File-Source).
+1. Configure a [Local File Source](/docs/send-data/Sources/installed-collectors/Local-File-Source).
 2. Specify the Local File Source Fields as follows:
     1. **Name**: Required (for example, "HTTP Error Logs")
     2. **Description**. (Optional)
@@ -192,12 +193,12 @@ This section demonstrates how to configure a Windows Performance Source, for use
 Sumo Logic recommends using a Local Windows Performance source whenever possible.
 
 Use the appropriate source for your environment:
-* [Local Windows Performance Monitor Log Source](/docs/send-data/sources/sources-installed-collectors/local-windows-performance-monitor-log-source.md)
-* [Remote Windows Performance Monitor Log Source](/docs/send-data/sources/sources-installed-collectors/remote-windows-performance-monitor-log-source.md)
+* [Local Windows Performance Monitor Log Source](/docs/send-data/sources/installed-collectors/local-windows-performance-monitor-log-source.md)
+* [Remote Windows Performance Monitor Log Source](/docs/send-data/sources/installed-collectors/remote-windows-performance-monitor-log-source.md)
 
 To configure a Source for IIS Performance Logs, do the following:
 
-1. Configure a [Local Windows Performance Monitor Log Source](/docs/send-data/sources/sources-installed-collectors/local-windows-performance-monitor-log-source.md).
+1. Configure a [Local Windows Performance Monitor Log Source](/docs/send-data/sources/installed-collectors/local-windows-performance-monitor-log-source.md).
 2. Configure the Local Windows Performance Source Fields as follows:
     * **Name**: Required (for example, "IIS Performance")
     * **Source Category** (Required). For example, Webserver/IIS/PerfCounter.
@@ -206,7 +207,7 @@ To configure a Source for IIS Performance Logs, do the following:
     * **Fields. **Set the following fields**: \
 `component = webserver \
 webserver_system = iis \
-webserver_farm = <Your_IISserver_farm_Name>`. Enter **Default** if you do not have one. \
+webserver_farm = <Your_IISserver_farm_Name>`. Enter **Default** if you do not have one.
 `environment = <Your_Environment_Name>` (for example, Dev, QA, or Prod) \
 
 3. Under Perfmon Queries Click Add Query.
@@ -222,9 +223,9 @@ webserver_farm = <Your_IISserver_farm_Name>`. Enter **Default** if you do not ha
 
 #### Configure Metrics Collection
 
-##### Set up a Sumo Logic HTTP Source
+#### Set up a Sumo Logic HTTP Source
 
-1. **Configure a Hosted Collector for Metrics.** To create a new Sumo Logic hosted collector, perform the steps in the [Create a Hosted Collector](/docs/send-data/Hosted-Collectors#Create_a_Hosted_Collector) documentation.
+1. **Configure a Hosted Collector for Metrics.** To create a new Sumo Logic hosted collector, perform the steps in the [Create a Hosted Collector](/docs/send-data/configure-hosted-collector.md) documentation.
 2. **Configure an HTTP Logs & Metrics source**:
     1. On the created Hosted Collector on the Collection Management screen, select **Add Source**.
     2. Select **HTTP Logs & Metrics_._**
@@ -235,7 +236,7 @@ webserver_farm = <Your_IISserver_farm_Name>`. Enter **Default** if you do not ha
     4. Take note of the URL provided once you click **Save**. You can retrieve it again by selecting the **Show URL** next to the source on the Collection Management screen.
 
 
-##### Set up Telegraf
+#### Set up Telegraf
 
 1. **Install Telegraf if you haven’t already. **Use the[ following steps](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf.md) to install Telegraf.
 2. **Configure and start Telegraf.** As part of collecting metrics data from Telegraf, we will use the[ Windows Performance Counters Input Plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/sqlserver) to get data from Telegraf and the [Sumo Logic output plugin](https://github.com/SumoLogic/fluentd-output-sumologic) to send data to Sumo Logic.
@@ -416,32 +417,26 @@ webserver_farm = <Your_IISserver_farm_Name>`. Enter **Default** if you do not ha
 
 </details>
 
-
 Enter values for fields annotated with `<VALUE_TO_BE_CHANGED>` to the appropriate values. Do not include the brackets (`< >`) in your final configuration
 
 If you haven’t defined a farm in IIS Server, then enter ‘**default**’ for `webserver_farm`.
 
 * Input plugins section, which is `[[inputs.win_perf_counters]]`:
-
     Configure the Windows Performance Counters Input Plugin for Telegraf see[ this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/win_perf_counters#windows-performance-counters-input-plugin).
-
 * In the tags section, which is `[inputs.win_perf_counters.tags]`:
     * `environment` - This is the deployment environment where the IIS Server farm identified by the value of **servers** resides. For example; dev or QA. While this value is optional we highly recommend setting it.
-    * **webserver_farm **- Enter a name to identify this IIS Server farm This farm name will be shown in our dashboards. Use “**default**” if none is present.
+    * `webserver_farm` - Enter a name to identify this IIS Server farm This farm name will be shown in our dashboards. Use “`default`” if none is present.
 * In the output plugins section, which is `[[outputs.sumologic]]`:
-    * **URL** - This is the HTTP source URL created previously. See this doc for more information on additional parameters for configuring the Sumo Logic Telegraf output plugin.
+    * **`URL`** - This is the HTTP source URL created previously. See this doc for more information on additional parameters for configuring the Sumo Logic Telegraf output plugin.
 
     Here’s an explanation for additional values set by this Telegraf configuration.
 
-
 If you haven’t defined a farm in IIS Server, then enter ‘**default**’ for `webserver_farm`.
 
-
 There are additional values set by the Telegraf configuration.  We recommend not to modify these values as they might cause the Sumo Logic app to not function correctly.
-
 * `data_format: “prometheus”` - In the output `[[outputs.sumologic]]` plugins section. Metrics are sent in the Prometheus format to Sumo Logic.
-* **component** - “webserver” - In the input `[[inputs.win_perf_counters]]` plugins section. This value is used by Sumo Logic apps to identify application components.
-* **webserver_system**- “iis” - In the input plugins sections. This value identifies the webserver system.
+* `component - “webserver”` - In the input `[[inputs.win_perf_counters]]` plugins section. This value is used by Sumo Logic apps to identify application components.
+* `webserver_system - “iis”` - In the input plugins sections. This value identifies the webserver system.
 
 See[ this doc](https://github.com/influxdata/telegraf/blob/master/etc/telegraf.conf) for all other parameters that can be configured in the Telegraf agent globally.
 
@@ -456,18 +451,13 @@ To install these alerts, you need to have the Manage Monitors role capability. A
 
 There are limits to how many alerts can be enabled - see the [Alerts FAQ](/docs/alerts/monitors/monitor-faq.md) for details.
 
-
 ### Method A: Importing a JSON file
 
 1. Download the [JSON file](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/blob/main/monitor_packages/IIS/IIS.json) that describes the monitors.
-2. The [JSON](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/blob/main/monitor_packages/IIS/IIS.json) contains the alerts that are based on Sumo Logic searches that do not have any scope filters and therefore will be applicable to all IIS Server farms, the data for which has been collected via the instructions in the previous sections.  However, if you would like to restrict these alerts to specific farms or environments, update the JSON file by replacing the text `webserver_system=iis` with `<Your Custom Filter>`.  
-
-Custom filter examples:
-
-1. For alerts applicable only to a specific farm, your custom filter would be:  ‘`webserver_farm=iis-standalone.01`‘.
-2. For alerts applicable to all farms that start with `iis-standalone`, your custom filter would be: `webserver_system=iis-standalone*`.
-3. **For alerts applicable to a specific farm within a production environment, your custom filter would be: \
-`webserver_farm=iis-1` AND `environment=standalone` (This assumes you have set the optional environment tag while configuring collection).
+2. The [JSON](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/blob/main/monitor_packages/IIS/IIS.json) contains the alerts that are based on Sumo Logic searches that do not have any scope filters and therefore will be applicable to all IIS Server farms, the data for which has been collected via the instructions in the previous sections.  However, if you would like to restrict these alerts to specific farms or environments, update the JSON file by replacing the text `webserver_system=iis` with `<Your Custom Filter>`. Custom filter examples:
+   * For alerts applicable only to a specific farm, your custom filter would be:  ‘`webserver_farm=iis-standalone.01`‘.
+   * For alerts applicable to all farms that start with `iis-standalone`, your custom filter would be: `webserver_system=iis-standalone*`.
+   * For alerts applicable to a specific farm within a production environment, your custom filter would be: `webserver_farm=iis-1` AND `environment=standalone`. This assumes you have set the optional environment tag while configuring collection.
 4. Go to **Manage Data** > **Alerts** > **Monitors**.
 5. Click **Add.**<br/><img src={useBaseUrl('img/integrations/web-servers/IIS-add.png')} alt="Add Monitor" />
 6. Click Import and then copy-paste the above JSON to import monitors.
@@ -477,40 +467,29 @@ The monitors are disabled by default. Once you have installed the alerts using t
 
 ### Method B: Using a Terraform script
 
-1. **Generate a Sumo Logic access key and ID.** Generate an access key and access ID for a user that has the Manage Monitors role capability in Sumo Logic using these[ instructions](/docs/manage/security/access-keys#manage-your-access-keys-on-preferences-page). Identify which deployment your Sumo Logic account is in, using this [link](https://help.sumologic.com/APIs/General-API-Information/Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security).
+1. **Generate a Sumo Logic access key and ID.** Generate an access key and access ID for a user that has the Manage Monitors role capability in Sumo Logic using these[ instructions](/docs/manage/security/access-keys#manage-your-access-keys-on-preferences-page). Identify which deployment your Sumo Logic account is in, using this [link](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
 2. **[Download and install Terraform 0.13](https://www.terraform.io/downloads.html) or later.**
 3. **Download the Sumo Logic Terraform package for IIS Server alerts.** The alerts package is available in the Sumo Logic GitHub [repository](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/tree/main/monitor_packages/IIS). You can either download it through the “git clone” command or as a zip file.
-
-**Step 4: Alert Configuration.**
-
-After the package has been extracted, navigate to the package directory **terraform-sumologic-sumo-logic-monitor/monitor_packages/IIS/**
+4. Alert Configuration: After the package has been extracted, navigate to the package directory **terraform-sumologic-sumo-logic-monitor/monitor_packages/IIS/**
 
 Edit the **IIS.auto.tfvars** file and add the Sumo Logic Access Key, Access Id and Deployment from Step 1.
-```
+```sql
 access_id   = "<SUMOLOGIC ACCESS ID>"
 access_key  = "<SUMOLOGIC ACCESS KEY>"
 environment = "<SUMOLOGIC DEPLOYMENT>"
 ```
 
-
 The Terraform script installs the alerts without any scope filters, if you would like to restrict the alerts to specific farms or environments, update the variable `iis_data_source`. Custom filter examples:
+   * A specific farm `webserver_farm=iis.standalone.01`.
+   * All farms in an environment ‘environment=standalone'.
+   * For alerts applicable to all farms that start with iis-standalone, your custom filter would be: `webserver_farm=iis-standalone*`.
+   * For alerts applicable to a specific farm within a production environment, your custom filter would be: `webserver_system=iis-1` and `environment=standalone`. This assumes you have set the optional environment tag while configuring collection.
 
+All monitors are disabled by default on installation, if you would like to enable all the monitors, set the parameter `monitors_disabled` to `false` in this file.
 
-1. A specific farm `webserver_farm=iis.standalone.01`.
-2. All farms in an environment ‘environment=standalone'.
-3. For alerts applicable to all farms that start with iis-standalone, your custom filter would be: `webserver_farm=iis-standalone*`.
-4. For alerts applicable to a specific farm within a production environment, your custom filter would be:  \
-`webserver_system=iis-1` and `environment=standalone` (This assumes you have set the optional environment tag while configuring collection).
+By default, the monitors are configured in a monitor **folder** called **IIS**, if you would like to change the name of the folder, update the monitor folder name in “folder” key at `IIS.auto.tfvars` file.
 
-    All monitors are disabled by default on installation, if you would like to enable all the monitors, set the parameter `monitors_disabled` to `false` in this file.
-
-
-    By default, the monitors are configured in a monitor **folder** called **IIS**, if you would like to change the name of the folder, update the monitor folder name in “folder” key at `IIS.auto.tfvars` file.
-
-
-    If you would like the alerts to send email or connection notifications, configure these in the file `IIS_notifications.auto.tfvars`. For configuration examples, refer to the next section.
-
-1. **Email and Connection Notification Configuration Examples** Modify the file `IIS_notifications.auto.tfvars` and populate connection_notifications and email_notifications as per below examples.
+5. If you would like the alerts to send email or connection notifications, modify the file `IIS_notifications.auto.tfvars` and populate `connection_notifications` and `email_notifications` as per below examples.
 
 ```bash title="Pagerduty Connection Example"
 connection_notifications = [
@@ -546,12 +525,11 @@ email_notifications = [
   ]
 ```
 
-1. **Install the Alerts**
-    1. Navigate to the package directory terraform-sumologic-sumo-logic-monitor/monitor_packages/**IIS**/ and run **terraform init. **This will initialize Terraform and will download the required components.
-    2. Run **terraform plan **to view the monitors which will be created/modified by Terraform.
-    3. Run **terraform apply**.
-2. **Post Installation**. If you haven’t enabled alerts and/or configured notifications through the Terraform procedure outlined above, we highly recommend enabling alerts of interest and configuring each enabled alert to send notifications to other users or services. This is detailed in Step 4 of [this document](/docs/alerts/monitors#add-a-monitor).
-
+6. Install the Alerts:
+    1. Navigate to the package directory terraform-sumologic-sumo-logic-monitor/monitor_packages/**IIS**/ and run `terraform init`. This will initialize Terraform and will download the required components.
+    2. Run `terraform plan` to view the monitors which will be created/modified by Terraform.
+    3. Run `terraform apply`.
+7. Post Installation: If you haven’t enabled alerts and/or configured notifications through the Terraform procedure outlined above, we highly recommend enabling alerts of interest and configuring each enabled alert to send notifications to other users or services. This is detailed in Step 4 of [this document](/docs/alerts/monitors#add-a-monitor).
 
 There are limits to how many alerts can be enabled - see the [Alerts FAQ](/docs/alerts/monitors/monitor-faq.md).
 
@@ -565,19 +543,15 @@ To install the app:
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
 1. From the **App Catalog**, search for and select the app**.**
-2. Select the version of the service you're using and click **Add to Library**.
-
-Version selection is applicable only to a few apps currently. For more information, see the[ Install the Apps from the Library](/docs/get-started/library/install-apps).
-
+2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the[ Install the Apps from the Library](/docs/get-started/library/install-apps).
 3. To install the app, complete the following fields.
-    1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
-    2. **Data Source.**
-        * Choose **Enter a Custom Data Filter**, and enter a custom IIS Server farm filter. Examples:
-            1. For all IIS Server farms, `webserver_farm=*`.
-            2. For a specific farm, `webserver_farm=iis.dev.01`.
-            3. Farms within a specific environment, `webserver_farm=iis.dev.01` and `environment=prod` (This assumes you have set the optional environment tag while configuring collection).
-    3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
-    4. Click **Add to Library**.
+   1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
+   2. **Data Source.** Choose **Enter a Custom Data Filter**, and enter a custom IIS Server farm filter. Examples:
+     * For all IIS Server farms, `webserver_farm=*`.
+     * For a specific farm, `webserver_farm=iis.dev.01`.
+     * Farms within a specific environment, `webserver_farm=iis.dev.01` and `environment=prod` (This assumes you have set the optional environment tag while configuring collection).
+3. **Advanced**. Select the **Location in Library** (the default is the Personal folder in the library), or click **New Folder** to add a new folder.
+4. Click **Add to Library**.
 
 Once an app is installed, it will appear in your **Personal** folder, or another folder that you specified. From here, you can share it with your organization.
 

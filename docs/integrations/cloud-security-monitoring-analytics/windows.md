@@ -7,7 +7,7 @@ description: A guide to the Sumo Logic app for Windows - Cloud Security Monitori
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
-<img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/SecMon_Windows.png')} alt="Thumbnail icon" width="70"/>
+<img src={useBaseUrl('img/integrations/cloud-security-monitoring-analytics/SecMon_Windows.png')} alt="Thumbnail icon" width="85"/>
 
 The Cloud Security Monitoring & Analytics for Windows App offers pre-built dashboards and queries to help you track your Windows system, user accounts, login activity, and Windows updates.
 
@@ -75,16 +75,14 @@ _sourceCategory=Labs/windows-jsonformat ( "Audit Policy Change" or "System audit
 
 To configure a collector and source, do the following:
 
-1. Configure an [Installed Windows collector](/docs/send-data/installed-collectors/install-collector-windows) through the user interface or from the command line.
+1. Configure an [Installed Windows collector](/docs/send-data/installed-collectors/windows) through the user interface or from the command line.
 2. Configure either a local or remote Windows Event Log source. To configure a Windows Event Log source set the following:
     * **Event Format.** Select **Collect using JSON format.** Events are formatted into JSON that is designed to work with Sumo Logic features, making it easier for you to reference your data.
     * **Event Collection Level.** When JSON format is selected you have to select Complete Message from the dropdown.
 
-
 **Complete Message** will ingest the entire event content along with metadata.
 
-For more information on local or remote Windows Event Log Source configuration, refer to [Local Windows Event Log Source](/docs/send-data/Sources/sources-installed-collectors/Local-Windows-Event-Log-Source) and [Remote Windows Event Log Source](/docs/send-data/Sources/sources-installed-collectors/Remote-Windows-Event-Log-Source).
-
+For more information on local or remote Windows Event Log Source configuration, refer to [Local Windows Event Log Source](/docs/send-data/Sources/installed-collectors/Local-Windows-Event-Log-Source) and [Remote Windows Event Log Source](/docs/send-data/Sources/installed-collectors/Remote-Windows-Event-Log-Source).
 
 
 ## Installing the Windows Cloud Security App

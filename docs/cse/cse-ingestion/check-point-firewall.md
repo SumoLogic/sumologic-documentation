@@ -2,7 +2,7 @@
 id: check-point-firewall
 title: Check Point Firewall
 sidebar_label: Check Point Firewall
-description: tk
+description: Configure a syslog source to ingest Check Point Firewall log messages to be parsed by CSE’s system parser for Check Point Firewall.
 ---
 
 This section has instructions for collecting Check Point Firewall log messages and sending them to Sumo Logic to be ingested by CSE.

@@ -1,8 +1,10 @@
 ---
 id: write-chain-rule
+title: Write a Chain Rule
+sidebar_label: Chain Rule
+description: Learn how to write a Chain rule.
 ---
 
-# Write a Chain Rule
 
 This topic has information about Chain rules and how to create them in the CSE UI.
 
@@ -20,7 +22,7 @@ A Chain rule is similar to a Threshold rule. A Threshold rule fires when one rul
 1. On the **Create a Rule** page, click **Create** in the Chain card. 
 
     ![select-rule-type.png](/img/cse/select-rule-type.png)
-1. In the rules editor: 
+1. In the rules editor:
 
    1. **Name.** Enter a name for the rule. Signals fired by the rule will have this name.
    1. **Enabled**. By default the rule will be enabled. It's good practice to use the slider to disable the rule so that it won’t be applied to incoming Records until you’ve tested it.       
@@ -31,17 +33,17 @@ A Chain rule is similar to a Threshold rule. A Threshold rule fires when one rul
 
 1. **When ... Records match the expression.** Enter two or more rule expressions. For each, select the number of matches that are required.
 1. **Grouped by**.  By default, a chain rule implicitly groups by the entity field you’ll select below when configuring the **Then Create a Signal** options. You can select additional “group by” fields with the matches grouped by option, so that a Signal is only created if the count for the group is above the threshold count specified above. 
-1. **in ... order.** Choose either: 
+1. **in ... order.** Choose either:
 
-   * **any** if matches can occur in any order. 
+   * **any** if matches can occur in any order.
    * **exact** if matches must occur in the same order as you have ordered the rule expressions. If you choose this option, you can only have two rule expressions.
 
 ## Test your rule expression
-After creating a rule expression, you can test it against existing Records in CSE. 
+After creating a rule expression, you can test it against existing Records in CSE.
 
-1. Click **Test Rule** above the rule expression. 
+1. Click **Test Rule** above the rule expression.
 1. The **If Triggered** section expands, and CSE searches for Records that match the rule expression. If there are no matching Records, you'll see a **There aren't any matches for the expression** message.
-1. If no matches were returned, try changing the time range. 
+1. If no matches were returned, try changing the time range.
 
 :::note
 If you use the Test Rule feature on a rule that has one or more [Rule Tuning Expressions](rule-tuning-expressions.md), you can test it without the tuning expressions, or with selected tuning expressions.

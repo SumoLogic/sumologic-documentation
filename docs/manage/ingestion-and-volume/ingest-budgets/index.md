@@ -1,8 +1,7 @@
 ---
 slug: /manage/ingestion-and-volume/ingest-budgets
+title: Ingest Budgets
 ---
-
-# Ingest Budgets
 
 ## Availability
 
@@ -55,7 +54,7 @@ There are two versions of ingest budgets:
 :::important
 You can edit an existing **V1** budget by providing a **scope** to change it to a **V2** budget that is metadata based. V2 budgets are manageable with the Ingest Budget Management API **V2**.
 :::
-  
+
 Once a **V1** budget is given a **scope** and changed to **V2** it is permanent and can not be reversed.
 
 Stopping collection differences:
@@ -114,26 +113,26 @@ When hovering over a row in the Ingest Budgets table there are icons that appear
 #### Create ingest budget
 
 1. In Sumo Logic select **Manage Data** \> **Collection** \> **Ingest Budgets**.
-1. Click the **+ Add Budget** button on the top right of the table. A panel named **Create Ingest Budget** appears to the right of the Ingest Budgets table. 
+1. Click the **+ Add Budget** button on the top right of the table. A panel named **Create Ingest Budget** appears to the right of the Ingest Budgets table.
 1. Provide the following information, all fields are required except Description.
 
    * **Display Name**. Enter the name you'd like to assign to the new ingest budget.
    * **Scope**. Define the log data to apply to the ingest budget. See [budget assignment](#budget-assignment) for details and review the [rules](#rules) above.
    * **Description** is optional.
-   * **Allocated Capacity**. Set the maximum daily ingestion volume you want for the ingest budget. 
+   * **Allocated Capacity**. Set the maximum daily ingestion volume you want for the ingest budget.
 
      * **Amount**. Enter a value up to 1023.999.
      * **Unit**. Select a unit of memory. Bytes are calculated in base 2 (binary format, 1024 based).\
-   
+
    * **Reset every day at**. Ingest budgets automatically reset their capacity utilization tracking every 24 hours based on the time and time zone you specify.
-     
+
      * **Time**. Set the time of day to reset the capacity tracking.
-     * **Time zone**. Set the time zone of the reset time. 
-     * **Action when capacity reached**. Select the action to take when the ingest budget's capacity is reached. All actions are [audited](#audit-index-queries). 
-       
+     * **Time zone**. Set the time zone of the reset time.
+     * **Action when capacity reached**. Select the action to take when the ingest budget's capacity is reached. All actions are [audited](#audit-index-queries).
+
        * **Stop** Collecting - Collection stops immediately. There are important differences depending on the [Source type](#source-type-behavior) and [version](#versions)
        * **Keep** Collecting - Collection remains the same.
-    
+
    * **Audit Threshold**. The threshold, as a percentage, of when an ingest budget's capacity usage is logged in the Audit Index.
 
 1. When you're finished configuring the ingest budget click **Add**.
@@ -194,7 +193,7 @@ To ensure the combined daily ingestion for the infrastructure components ALB, Ka
     * JBoss logs: "component=JBoss"
 
 1. Create the budgets
-   * Budget #1: 
+   * Budget #1:
      * Scope=“component=\*”
      * Capacity= 1 TB
      * Action = “stop collecting” 
@@ -279,16 +278,16 @@ Ingest budgets that have exceeded their capacity are placed in an **Error** he
 A query to search for all ingest budgets that are over capacity.
 
 ```sql
-_index=sumologic_system_events "IngestBudget" 
-| json "eventType","severityLevel", "resourceIdentity.type" as eventType , severity, resourceType 
+_index=sumologic_system_events "IngestBudget"
+| json "eventType","severityLevel", "resourceIdentity.type" as eventType , severity, resourceType
 | where eventType = "Health-Change" AND resourceType = "IngestBudget" and severity="Error"
 ```  
 
 A query to search for all ingest budgets that are nearing their capacity.
 
 ```sql
-_index=sumologic_system_events "IngestBudget" 
-| json "eventType","severityLevel", "resourceIdentity.type" as eventType , severity, resourceType 
+_index=sumologic_system_events "IngestBudget"
+| json "eventType","severityLevel", "resourceIdentity.type" as eventType , severity, resourceType
 | where eventType = "Health-Change" AND resourceType = "IngestBudget" and severity="Warning"
 ```
 

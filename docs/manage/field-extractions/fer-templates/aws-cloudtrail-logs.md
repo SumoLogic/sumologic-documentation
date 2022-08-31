@@ -1,8 +1,9 @@
 ---
 id: aws-cloudtrail-logs
+title: AWS CloudTrail Logs
 ---
 
-# AWS CloudTrail Logs
+#
 
 **Log Type**: AWS CloudTrail
 

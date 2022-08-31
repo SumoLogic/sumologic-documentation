@@ -1,8 +1,9 @@
 ---
 slug: /search/search-query-language/group-aggregate-operators
+title: Group or Aggregate Operators
 ---
 
-# Group or Aggregate Operators
+
 
 Aggregating functions evaluate messages and place them into groups. The group operator is used in conjunction with group-by functions.
 
@@ -48,7 +49,7 @@ You can use **by** instead of **group by** so `count group by user` is equ
 For example, you can't use:
 
 ```sql
-... | avg(x + y) as average, sum(x+y) as total 
+... | avg(x + y) as average, sum(x+y) as total
 ```
 
 You would need to do that in two separate steps, such as:
@@ -66,7 +67,7 @@ avg(abs_latency)/1000/60 as avg_latency_min
 Instead, you'd need to use two separate lines:
 
 ```sql
-avg(abs_latency_ms) as avg_latency_ms 
+avg(abs_latency_ms) as avg_latency_ms
 | avg_latency_ms / 1000 / 60 as avg_latency_min
 ```
 
@@ -75,28 +76,28 @@ avg(abs_latency_ms) as avg_latency_ms
 ### Sort by _count and limit to 10 results
 
 ```sql
-* | parse "GET * " as url  
-| count by url  
-| sort by _count  
+* | parse "GET * " as url 
+| count by url 
+| sort by _count 
 | limit 10
 ```
 
 ### Count by user
 
 ```sql
-status AND down  
-| parse regex "user=(\<use\>.*?)" 
-| parse regex "host=(\<msg_hos\>.*?)" 
+status AND down 
+| parse regex "user=(\<use\>.*?)"
+| parse regex "host=(\<msg_hos\>.*?)"
 | count by user
 ```
 
 ### Count by the Source IP address
 
 ```sql
-_sourceCategory=apache  
-| parse "* " as src_ip 
-| parse "GET *" as url 
-| count by src_ip 
+_sourceCategory=apache 
+| parse "* " as src_ip
+| parse "GET *" as url
+| count by src_ip
 | sort by _count
 ```
 

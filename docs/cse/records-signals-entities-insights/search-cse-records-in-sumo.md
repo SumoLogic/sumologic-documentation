@@ -1,10 +1,11 @@
 ---
 id: search-cse-records-in-sumo
+title: Searching for CSE Records in Sumo Logic
+sidebar_label: Search Sumo Logic for CSE Records
+description: Learn how to search the Sumo Logic platform for CSE Records.
 ---
 
-# Searching for CSE Records in Sumo Logic
 
-  
 This topic has information about how to search the Sumo Logic platform for Records that have been forwarded from CSE. For more information about performing log searches in Sumo Logic, see Search Basics.
 
 ## Sumo Logic partitions that contain CSE Records
@@ -34,7 +35,7 @@ In Sumo Logic, Records are stored in partitions, which are indexes that enable b
 | Notification                      | sec_record_notification   |
 | NotificationVulnerability         | sec_record_notification   |
 
-  
+
 There is a separate partition for forwarded raw messages for which Records were not created, because no log mapper was available.   
 
 | CSE Record Type | Sumo Logic partition |
@@ -152,7 +153,7 @@ The **Security Record Details** field contains a JSON object with all of the fie
 ![nested-fields.png](/img/cse/nested-fields.png)
 
 You can access the contents of the fields field using a where clause in your query, like this:  
-  
+
 ```
 _index=sec_record_authentication
 | where %"fields.application" = "test_app"

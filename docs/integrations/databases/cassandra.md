@@ -257,14 +257,14 @@ For Non-Kubernetes environments, there are two ways you can set up Cassandra met
 4. Restart Cassandra service.
 5. Next, choose one of the Logs and Metrics collection configuration methods:
 
-<details><summary>Method A: Using Telegraf</summary>
+<details><summary>Method A: Using Telegraf and Installed Collector</summary>
 
 To collect Cassandra metrics for Non-Kubernetes environments, we use the Telegraf operator; to collect Cassandra logs, we use the Sumo Logic Installed Collector. The diagram below illustrates the components of the Cassandra collection in a non-Kubernetes environment. Telegraf runs on the same system as Cassandra and uses the [Jolokia2 input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/jolokia2) to obtain Cassandra metrics, and the Sumo Logic output plugin to send the metrics to Sumo Logic. Logs from Cassandra, on the other hand, are sent to a Sumo Logic Local File source.<br/><img src={useBaseUrl('img/integrations/databases/cassandra1.png')} alt="cassandra" />
 
 This section provides instructions for configuring metrics and logs collection for the Sumo Logic App for Cassandra.
 
 1. **Configure a Hosted Collector**. Create a new Sumo Logic hosted collector by performing the steps under [Configure a Hosted Collector](/docs/send-data/configure-hosted-collector).
-2. **Configure an HTTP Logs and Metrics Source.** Create a new HTTP Logs and Metrics Source in the hosted collector created above by following [these instructions](/docs/send-data/sources/sources-hosted-collectors/http-logs-metrics-source). Make a note of the HTTP Source URL.
+2. **Configure an HTTP Logs and Metrics Source.** Create a new HTTP Logs and Metrics Source in the hosted collector created above by following [these instructions](/docs/send-data/sources/hosted-collectors/http-logs-metrics-source). Make a note of the HTTP Source URL.
 3. **Install Telegraf** using the [following steps](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf.md).
 4. **Configure and start Telegraf**. As part of collecting metrics data from Telegraf, we'll use the [jolokia2 input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/jolokia2) to get data from Telegraf and the [Sumo Logic output plugin](https://github.com/SumoLogic/fluentd-output-sumologic) to send data to Sumo Logic. Create or modify telegraf.conf and copy and paste the text below:
 ```sql
@@ -403,7 +403,7 @@ There are limits to how many alerts can be enabled. For more information, see [M
 2. Download [Terraform 0.13](https://www.terraform.io/downloads.html) or later and install it.
 3. Download the Sumo Logic Terraform package for Cassandra monitors. The alerts package is available in the Sumo Logic github [repository](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/tree/main/monitor_packages/Memcached). You can either download it using the git clone command or as a zip file.
 4. Alert Configuration. After extracting the package, navigate to the  `terraform-sumologic-sumo-logic-monitor/monitor_packages/Cassandra/` directory.
-5. Edit the Cassandra.auto.tfvars file and add the Sumo Logic Access Key and Access ID from Step 1 and your Sumo Logic deployment. If you're not sure of your deployment, see [Sumo Logic Endpoints and Firewall Security](https://help.sumologic.com/APIs/General-API-Information/Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security).
+5. Edit the Cassandra.auto.tfvars file and add the Sumo Logic Access Key and Access ID from Step 1 and your Sumo Logic deployment. If you're not sure of your deployment, see [Sumo Logic Endpoints and Firewall Security](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
 ```bash
 access_id   = "<SUMOLOGIC ACCESS ID>"
 access_key  = "<SUMOLOGIC ACCESS KEY>"

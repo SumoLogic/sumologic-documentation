@@ -1,8 +1,10 @@
 ---
 id: standard-match-lists
+title: Standard Match Lists
+description: See a list of the standard Match Lists in CSE, and what rules rely upon each.
 ---
 
-# Standard Match Lists
+
 
 This topic describes the standard Match Lists that CSE's built-in rules rely upon. For information about Match Lists, what they are for, how they are used, and how to create them, see [Create a Match List](create-match-list.md).
 
@@ -382,7 +384,7 @@ The following CSE rules refer to this Match List:
 
 **Target column:** IP Address
 
-**Description:** 
+**Description:**
 
 Hosts known to be Network Management System (NMS) nodes.
 

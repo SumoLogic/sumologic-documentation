@@ -6,6 +6,8 @@ description: The Sumo Logic App for Puppet helps you monitor Puppet metrics and 
 ---
 
 import useBaseUrl from '@docusaurus/useBaseUrl';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 <img src={useBaseUrl('img/integrations/app-development/puppet.png')} alt="Thumbnail icon" width="50"/>
 
@@ -24,22 +26,19 @@ Sumo’s Puppet Logs source and Puppet Reports source use an installed collector
 * Puppet Server Access logs. For more information about the logs location, see [Puppet Server Logs](https://puppet.com/docs/puppetserver/5.3/config_file_logbackxml.html).
 * Puppet Reports. Puppet generates reports in YAML format. SumoLogic supports report format 10. This is the format of reports output by Puppet versions 5.5.3 and newer. It is backward compatible with report format 9 (in Puppet versions 5.5.0 to 5.5.2). For more information about the puppet reports, see [Puppet Reports](https://puppet.com/docs/puppet/5.5/format_report.html).
 
-
-### Sample Log Messages
-
-```json title=" Puppet Server"
-2018-08-22 00:03:14,141 INFO  [qtp839286351-63] [puppetserver] Puppet Compiled catalog for puppet-node-1 in environment production in 0.18 seconds
-2018-08-22 00:19:33,594 ERROR [qtp839286351-62] [puppetserver] Puppet Could not find node statement with name 'default' or 'puppet-node-2' on node puppet-node-2
-```
-
-```bash title="Puppet Access"
-54.90.112.107 - - [28/Aug/2018:06:42:49 +0000] "PUT /puppet/v3/report/puppet-node-1?environment=production& HTTP/1.1" 200 9 "-" "Puppet/5.5.3 Ruby/2.4.4-p296 (x64-mingw32)" 134
-10.1.3.83 - - [28/Aug/2018:06:44:18 +0000] "GET /puppet/v3/node/puppet-node-3?environment=production&configured_environment=production&transaction_uuid=f95ce8bd-f97e-4d99-9a72-3b010a50ceb1&fail_on_404=true HTTP/1.1" 200 11394 "-" "Puppet/5.5.3 Ruby/2.4.4-p296 (x86_64-linux)" 77
-```
-
 ### Puppet Reports
 
-Puppet reports are in YAML format. Thy must be converted to JSON prior to ingestion to Sumo.
+Puppet reports are in YAML format. They must be converted to JSON prior to ingestion to Sumo.
+
+<Tabs
+  className="unique-tabs"
+  defaultValue="YAML"
+  values={[
+    {label: 'YAML', value: 'YAML'},
+    {label: 'JSON', value: 'JSON'},
+  ]}>
+
+<TabItem value="YAML">
 
 ```yml title="Partial Puppet report in YAML format."
 -- !ruby/object:Puppet::Transaction::Report
@@ -72,9 +71,80 @@ metrics:
       - Total
 ```
 
+</TabItem>
+<TabItem value="JSON">
 
 ```json title="Partial Puppet report in JSON format."
-{"host":"puppet-node-1","time":"2018-08-14T22:22:50.931239059Z","configuration_version":1534247572,"transaction_uuid":"43b51400-e009-4e5e-b856-1dff5dae9c64","report_format":10,"puppet_version":"5.5.3","status":"unchanged","transaction_completed":true,"noop":false,"noop_pending":false,"environment":"production","logs":[{"level":"err","message":"Could not retrieve catalog from remote server: Error 500 on SERVER: Server Error: Syntax error at '}' (file: /etc/puppetlabs/code/environments/production/modules/sumo/manifests/nix_config.pp, line: 185, column: 1) on node puppet-node-1","source":"Puppet","tags":["err"],"time":"2018-08-14T22:22:52.910348336Z","file":null,"line":null},{"level":"notice","message":"Applied catalog in 0.05 seconds","source":"Puppet","tags":["notice"],"time":"2018-08-14T22:22:53.024015171Z","file":null,"line":null}],"metrics":{"resources":{"name":"resources","label":"Resources","values":[["total","Total",10],["skipped","Skipped",0],["failed","Fail
+{
+	"host":"puppet-node-1",
+	"time":"2018-08-14T22:22:50.931239059Z",
+	"configuration_version":1534247572,
+	"transaction_uuid":"43b51400-e009-4e5e-b856-1dff5dae9c64",
+	"report_format":10,
+	"puppet_version":"5.5.3",
+	"status":"unchanged",
+	"transaction_completed":true,
+	"noop":false,
+	"noop_pending":false,
+	"environment":"production",
+	"logs":[
+		{
+			"level":"err",
+			"message":"Could not retrieve catalog from remote server: Error 500 on SERVER: Server Error: Syntax error at '}' (file: /etc/puppetlabs/code/environments/production/modules/sumo/manifests/nix_config.pp, line: 185, column: 1) on node puppet-node-1",
+			"source":"Puppet",
+			"tags":[
+				"err"
+			],
+			"time":"2018-08-14T22:22:52.910348336Z",
+			"file":null,
+			"line":null
+		},
+		{
+			"level":"notice",
+			"message":"Applied catalog in 0.05 seconds",
+			"source":"Puppet",
+			"tags":[
+				"notice"
+			],
+			"time":"2018-08-14T22:22:53.024015171Z",
+			"file":null,
+			"line":null
+		}
+	],
+	"metrics":{
+		"resources":{
+			"name":"resources",
+			"label":"Resources",
+			"values":[
+				[
+					"total",
+					"Total",
+					10
+				],
+				[
+					"skipped",
+					"Skipped",
+					0
+				],
+				[
+					"failed",
+					"\"Fail",
+```
+
+</TabItem>
+</Tabs>
+
+
+### Sample Log Messages
+
+```json title=" Puppet Server"
+2018-08-22 00:03:14,141 INFO  [qtp839286351-63] [puppetserver] Puppet Compiled catalog for puppet-node-1 in environment production in 0.18 seconds
+2018-08-22 00:19:33,594 ERROR [qtp839286351-62] [puppetserver] Puppet Could not find node statement with name 'default' or 'puppet-node-2' on node puppet-node-2
+```
+
+```bash title="Puppet Access"
+54.90.112.107 - - [28/Aug/2018:06:42:49 +0000] "PUT /puppet/v3/report/puppet-node-1?environment=production& HTTP/1.1" 200 9 "-" "Puppet/5.5.3 Ruby/2.4.4-p296 (x64-mingw32)" 134
+10.1.3.83 - - [28/Aug/2018:06:44:18 +0000] "GET /puppet/v3/node/puppet-node-3?environment=production&configured_environment=production&transaction_uuid=f95ce8bd-f97e-4d99-9a72-3b010a50ceb1&fail_on_404=true HTTP/1.1" 200 11394 "-" "Puppet/5.5.3 Ruby/2.4.4-p296 (x86_64-linux)" 77
 ```
 
 ### Sample Query
@@ -86,8 +156,6 @@ _sourceCategory=prod/web/puppet/reports
 | failed_resources/total_resources*100 as failed_res_pct
 | fields failed_res_pct
 ```
-
-
 
 ## Collecting Logs for Puppet
 
@@ -103,7 +171,7 @@ Follow the instructions in [Access Keys](/docs/manage/security/access-keys) to c
 
 ### Step 2: Install collector on Puppet Master
 
-In this step you install a collector on the Puppet Master host. Follow the instructions on [Install a Collector on Linux](/docs/send-data/installed-collectors/install-collector-linux).
+In this step you install a collector on the Puppet Master host. Follow the instructions on [Install a Collector on Linux](/docs/send-data/installed-collectors/linux).
 
 Puppet Master only runs on Linux.
 
@@ -112,23 +180,20 @@ Puppet Master only runs on Linux.
 
 In this step, you add a local file source to the installed collector you created in [Step 2](#Step_2:_Install_collector_on_Puppet_Master). The local file source will receive Puppet Server logs.  
 
-Follow the steps on [Local File Source](/docs/send-data/Sources/sources-installed-collectors/Local-File-Source), with these additional instructions:
+Follow the steps on [Local File Source](/docs/send-data/Sources/installed-collectors/Local-File-Source), with these additional instructions:
 
-* For **File Path**, Enter the puppet server log file path. The default Puppet Server log file is:
-`/var/log/puppetlabs/puppetserver/puppetserver.log`. If your Puppet Server logs are located elsewhere, enter the correct path.  
+* For **File Path**, Enter the puppet server log file path. The default Puppet Server log file is: `/var/log/puppetlabs/puppetserver/puppetserver.log`. If your Puppet Server logs are located elsewhere, enter the correct path.  
 * For **Source Category**, enter a value like: `prod/web/puppet/server`.
 * For **Advanced Options**, accept the default values.
 
 
 ### Step 4: Configure local file source for Puppet Server Access logs
 
-In this step, you add another local file source to the installed collector you created in [Step 2](#Step_2:_Install_collector_on_Puppet_Master). The local file source will receive Puppet Server Access logs.
+In this step, you add another local file source to the installed collector you created in [Step 2](#step-2-install-collector-on-puppet-master). The local file source will receive Puppet Server Access logs.
 
-Follow the steps on [Local File Source](/docs/send-data/Sources/sources-installed-collectors/Local-File-Source), with these additional instructions:
+Follow the steps on [Local File Source](/docs/send-data/Sources/installed-collectors/Local-File-Source), with these additional instructions:
 
-* For **File Path**, Enter the puppet server log file path. The default Puppet Server Access log file is: \
-`/var/log/puppetlabs/puppetserver/puppetserver-access.log \
-`If your Puppet Server Access logs are located elsewhere, enter the correct path.  
+* For **File Path**, Enter the puppet server log file path. The default Puppet Server Access log file is: `/var/log/puppetlabs/puppetserver/puppetserver-access.log`. If your Puppet Server Access logs are located elsewhere, enter the correct path.  
 * For **Source Category**, enter a value like: `prod/web/puppet/access`
 * For **Advanced Options**, accept the default values.
 
@@ -145,11 +210,11 @@ This section has instructions for setting up a Script source that runs a shell s
 The following requirements apply to the script source:
 
 * The user running the collector process must have read and write access to the Puppet Reports directory.
-* The collector executes the script as the user running the collector process. The script outputs data to your machine's stdout or stderror output streams to be collected. For more information see [Script Source](/docs/send-data/Sources/sources-installed-collectors/Script-Source).
+* The collector executes the script as the user running the collector process. The script outputs data to your machine's stdout or stderror output streams to be collected. For more information see [Script Source](/docs/send-data/Sources/installed-collectors/Script-Source).
 * The machine where you run the script must have Ruby installed.
 * The script generates a log in the configured working directory that you can review in case of issues.
 
-For more information see [Script Source](/docs/send-data/Sources/sources-installed-collectors/Script-Source).
+For more information see [Script Source](/docs/send-data/Sources/installed-collectors/Script-Source).
 
 #### To set up a script source
 
@@ -161,19 +226,92 @@ The script requires Ruby on the host machine.
 4. **Name**. (Required).
 5. **Description**. (Optional).
 6. **Source Host**. Enter the hostname or IP address of the source host. The hostname can be a maximum of 128 characters.
-7. **Source Category**. (Required) Enter a value like: \
-`prod/web/puppet/reports `
+7. **Source Category**. (Required) Enter a value like: `prod/web/puppet/reports`
 8. **Frequency**. Default is 15 mins.
-9. **Command**. Leave the default value,  `/bin/sh`, selected.
-10. **Script**. Choose **Type the script to execute** and paste below script in the text box: \
-Expand
-11. **Working Directory**. Default Puppet reports directory:  \
-`/opt/puppetlabs/server/data/puppetserver/reports  \
-`If Puppet is installed in a different location, enter the correct path.
+9. **Command**. Leave the default value, `/bin/sh`, selected.
+10. **Script**. Choose **Type the script to execute** and copy/paste the below script in the text box:
+
+<details><summary>Click to expand</summary>
+
+```
+MaxFileSize=20
+log_file_name=puppet_rpt_conversion.log
+#Get size in bytes**
+    file_size=`du -b puppet_rpt_conversion.log | tr -s '\t' ' ' | cut -d' ' -f1`
+    file_size=$(($file_size/1048576))
+    if [ $file_size -gt "$MaxFileSize" ];then   
+        timestamp=`date +%s`
+        mv puppet_rpt_conversion.log puppet_rpt_conversion.log.$timestamp
+    fi
+echo "YAML to JSON conversion started!!" >> "$log_file_name"
+echo "Start Time: $(date)" >> "$log_file_name"
+if [ ! -e last_run_date.tmp ]
+then
+date "+%Y-%m-%d" --date=1970-01-01 > last_run_date.tmp;
+fi
+find . -maxdepth 2 -type f -name "*.yaml" -newermt "$(cat last_run_date.tmp)" |
+while read f;
+do
+if [ -s "$f" ]
+then
+sed 1d "$f" > tmpfile;
+ruby -rjson -ryaml -e "resource_list = ''
+json = JSON.generate({});data = JSON.parse(json);
+obj = JSON.parse(YAML.load_file('tmpfile').to_json);
+data['host'] = obj['host'];
+data['time'] = obj['time'];
+data['configuration_version'] = obj['configuration_version'];
+data['transaction_uuid'] = obj['transaction_uuid'];
+data['report_format'] = obj['report_format'];
+data['puppet_version'] = obj['puppet_version'];
+data['status'] = obj['status'];
+data['transaction_completed'] = obj['transaction_completed'];
+data['noop'] = obj['noop'];
+data['noop_pending'] = obj['noop_pending'];
+data['environment'] = obj['environment'];
+data['metrics'] = obj['metrics'];
+data['resource_list'] = resource_list;
+i = 0;
+obj['resource_statuses'].each{
+  |j|
+if i == 0 then
+  tempdata = j[0];
+else
+  tempdata = ',' + j[0];
+end
+data['resource_list'] << tempdata;
+i = i + 1;
+};
+
+puts data.to_json;
+obj['resource_statuses'].each{
+  |y|  logsres = y[1];
+  logsres['transaction_uuid'] = obj['transaction_uuid'];
+  logsres['environment'] = obj['environment'];
+  logsres['host'] = obj['host'];
+  puts logsres.to_json;
+  };
+obj['logs'].each {
+  |x|logsjson = x;
+  logsjson['host'] = obj['host'];
+  logsjson['transaction_uuid'] = obj['transaction_uuid'];
+  logsjson['environment'] = obj['environment'];
+  puts logsjson.to_json
+  };"
+echo "$f conversion status:" $? >> "$log_file_name"
+date "+%d-%b-%Y %H:%M:%S" > last_run_date.tmp
+fi
+done
+echo "Conversion Completed. End Time: $(date)" >> "$log_file_name"
+```
+
+</details>
+
+11. **Working Directory**. Default Puppet reports directory: `/opt/puppetlabs/server/data/puppetserver/reports.` If Puppet is installed in a different location, enter the correct path.
 12. Configure **Advanced options**.
     1. **Enable Timestamp Parsing**. This option is checked by default.
     2. **Time Zone**. Default is “Use time zone from log file”.
-    3. **Timestamp Format**. Click **Specify a forma**t.
+    3. **Timestamp Format**. Click **Specify a format**.
         1. **Format**. Enter: `yyyy-MM-dd'T'HH:mm:ss.SSS'Z'`
         2. **Timestamp locator.** Enter: `"time":"(.*?)"`
     4. **Enable Multiline Processing**.

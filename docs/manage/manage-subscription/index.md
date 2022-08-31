@@ -1,8 +1,7 @@
 ---
 slug: /manage/manage-subscription
+title: Manage Subscription
 ---
-
-# Manage Subscription
 
 The topics in this guide provide information on Sumo Logic service agreements, as well as instructions on how to efficiently manage your account. 
 

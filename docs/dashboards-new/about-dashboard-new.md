@@ -3,6 +3,10 @@ slug: /dashboards-new
 title: About Dashboard (New)
 ---
 
+import useBaseUrl from '@docusaurus/useBaseUrl';
+
+<img src={useBaseUrl('img/icons/dashboards.png')} alt="icon" width="75"/>
+
 Dashboard (New) allows you to analyze metric and log data on the same dashboard, in a streamlined user experience. This is exactly what you need to effectively monitor and manage a Kubernetes environment.
 
 Sumo Logic classic [Dashboards](/docs/dashboards) are still available. Now, you have two dashboard options. This page outlines the key differences between the classic Dashboard platform and Dashboard (New), and outlines recommended [best practices](#best-practices) for when to use each. 

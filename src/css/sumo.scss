@@ -479,13 +479,15 @@ html[data-theme='dark'] .navbar-item-github:before {
 .navbar-trial {
   background-color: #06bcee;
   color: white;
-  padding: 8px 25px;
-  font-weight: 600;
+  padding: 6px 12px;
+  font-weight: 300;
+  font-size: 14px;
   text-decoration: none;
   margin-right: 10px;
   border: 1px solid #3578e5;
   cursor: pointer;
   margin-right: 10px;
+  border-radius: 6px;
 }
 
 .navbar-trial:hover {
@@ -528,7 +530,7 @@ html[data-theme='dark'] .navbar-item-github:before {
   color: white;
   padding: 8px 25px;
   font-size: 16px;
-    font-weight: 600;
+  font-weight: 600;
   text-decoration: none;
   margin-right: 10px;
   border: 1px solid #FFFFFF;
@@ -1184,6 +1186,7 @@ html[data-theme='dark'] .card:hover {
     linear-gradient(rgba(0,0,0,0.1),
     rgba(0,0,0,0.00)),
     url("../../static/img/landing/landing-hero.jpg") !important;
+    max-height: 200px;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: bottom center;
@@ -1326,6 +1329,120 @@ html[data-theme='dark'] .featureImage {
   margin-bottom: 0.5rem;
   color: var(--subtle);
 }
+
+
+// Sumo badges
+
+.globalIntelligence {
+  background: #940665;
+  color: var(--ds-gray-100);
+  font-weight: 750;
+  font-size: 14px;
+  padding: .4rem;
+  border-radius: 10px;
+}
+
+
+.beta {
+  background: #C6007E;
+  color: white;
+  font-weight: 600;
+  font-size: 16px;
+  padding: 8px 20px;
+  text-decoration: none;
+  margin-right: 10px;
+  border-radius: 10px;
+}
+
+.beta:hover {
+  background: #C6007E;
+  color: white;
+  font-weight: 600;
+  font-size: 16px;
+  padding: 8px 20px;
+  text-decoration: none;
+  margin-right: 10px;
+  border-radius: 10px;
+  border: .5px solid #FFFFFF;
+}
+
+.essentials {
+  background: #1eb8cc;
+  color: white;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 8px 20px;
+  text-decoration: none;
+  margin-right: 10px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.essentials:hover {
+  background: #1eb8cc;
+  color: white;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 8px 20px;
+  text-decoration: none;
+  border: 1px solid #FFFFFF;
+}
+
+.free {
+  background: #5d5d5d;
+  color: white;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 8px 20px;
+  text-decoration: none;
+  margin-right: 10px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.free:hover {
+  background: #5d5d5d;
+  color: white;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 8px 20px;
+  text-decoration: none;
+  border: 1px solid #FFFFFF;
+}
+
+.enterprise-ops {
+  background: #0092d2;
+  color: white;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 8px 20px;
+  text-decoration: none;
+  margin-right: 10px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.enterprise-ops:hover {
+  background: #0092d2;
+  color: white;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 8px 20px;
+  text-decoration: none;
+  border: 1px solid #FFFFFF;
+}
+
+.deprecated {
+  background: #99750b;
+  color: white;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 8px 20px;
+  text-decoration: none;
+  margin-right: 10px;
+  border-radius: 20px;
+}
+
 
 
 //search

@@ -1,8 +1,8 @@
 ---
 id: data-tiers
+title: Data Tiers
 ---
 
-# Data Tiers
 
 This page describes Sumo Logic's Data Tiers feature. For related information, see [Data Tiers FAQs](data-tiers-faqs.md).
 
@@ -63,9 +63,9 @@ How you can search and use your ingested data varies by the Data Tier it resides
 | Live Tail | ![check](/img/reuse/check.png) |![check](/img/reuse/check.png) |![check](/img/reuse/check.png) |
 | Dashboards | ![check](/img/reuse/check.png) |![x](/img/reuse/x.png) |![x](/img/reuse/x.png) |
 | Monitors | ![check](/img/reuse/check.png) |![x](/img/reuse/x.png) |![x](/img/reuse/x.png) |
-| Scheduled Searches | ![check](/img/reuse/check.png) |![x](/img/reuse/x.png) |![check](/img/reuse/x.png) |
+| Scheduled Searches | ![check](/img/reuse/check.png) |![x](/img/reuse/x.png) | [Beta](/docs/manage/partitions-and-data-tiers/infrequent-tier-search) |
 | Scheduled Views | ![check](/img/reuse/check.png) |![x](/img/reuse/x.png) |![check](/img/reuse/x.png) |
-| API Queries |  ![check](/img/reuse/check.png) |![check](/img/reuse/check.png) |![check](/img/reuse/check.png) 
+| API Queries |  ![check](/img/reuse/check.png) |![check](/img/reuse/check.png) |![check](/img/reuse/check.png)
 
 
 ## How to choose between Frequent and Infrequent 
@@ -88,7 +88,7 @@ For information about searching data tiers, see [Searching Data Tiers](searchin
 
 This section describes the most common error messages for Data Tiers.
 
-* If you try to add a panel to a dashboard that uses data from the Frequent or Infrequent tiers, you receive the following error message, because you can only use data from the Continuous Tier in a dashboard: 
+* If you try to add a panel to a dashboard that uses data from the Frequent or Infrequent tiers, you receive the following error message, because you can only use data from the Continuous Tier in a dashboard:
 
     ```
     This query is not supported in Dashboards/Scheduled Searches because it is not in the Continuous Analytics tier. Please modify query and try again.
@@ -96,7 +96,7 @@ This section describes the most common error messages for Data Tiers.
 
     ![create-panel.png](/img/partitions-and-data-tiers/no-dashboard-support.png)    
 
-* If you try to specify the scope of a Scheduled View or a Scheduled Search using a partition in the Frequent or Infrequent Data tiers, you receive this error message: 
+* If you try to specify the scope of a Scheduled View or a Scheduled Search using a partition in the Frequent or Infrequent Data tiers, you receive this error message:
 
     ```
     This query is not supported in Dashboards/Scheduled Searches because it is not in the Continuous Analytics tier. Please modify query and try again.

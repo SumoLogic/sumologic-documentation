@@ -5,11 +5,11 @@ sidebar_label: View and investigate Traces
 description: Learn how to search and investigate your traces, trace views, and trace events.
 ---
 
-Trace data is visualized through filtered trace lists and icicle charts allowing you to find and troubleshoot faulty transactions easily.
+You can visualize trace data through filtered trace lists and icicle charts. These visualizations will help you find and troubleshoot faulty transactions easily.
 
-Use Traces to search and view traces.
+## Traces page
 
-To open go to **+ New \> Traces**.
+Use Traces to search and view traces. To open, go to **+ New \> Traces**.
 
 ![traces menu option.png](/img/traces/traces-menu-option.png)
 
@@ -76,13 +76,36 @@ Use the eye icon to toggle the visibility of results from a query. When hidden, 
 
 ### Time range 
 
-Results are returned for the time window selected. The traces available (retention) in Trace query is 15 days. See Time Range Expressions for details on defining a time range.
+Results are returned for the time range selected. The traces available (retention) in Trace query is 15 days. Please note that queries above 7 days may be slower to load. See Time Range Expressions for details on defining a time range.
 
 ### Refresh
 
 The results are not automatically updated. If you want to refresh traces, click the refresh button on the top right corner of the page.
 
 ![Refresh.png](/img/traces/Refresh.png)
+
+
+## Trace Duration Breakdown Chart
+
+![breakdown](/img/traces/breakdown2.png)
+
+This chart helps you understand average trace durations in every time bucket as well as time every service contributed to the end to end duration. Use this chart to:
+
+* Quickly understand intermittent duration spikes or slowdowns
+* Immediately spot the offending service by comparing CPC contribution by service
+
+#### Navigation  
+For best results, filter your traces to represent similar traces (traces of same transaction like login). Running this chart for different transaction types will not provide the insights you want. For the same reason, running the chart for all data without any filters is disabled.
+
+The height of the bar represents the average trace duration for each time bucket
+
+Each segment represent a Critical Path Contribution of each service from each trace. Services not present in certain traces do not contribute to the value.
+
+Click on any of the color segments to focus on this service and drill down to selected timeframe.
+
+Click and drag on the chart to zoom.
+
+Multiple query rows are not supported currently. Charts shows data for first active (visible) row only.
 
 ## Trace View
 
@@ -207,7 +230,7 @@ Span Events describe and contextualize the work being done under a Span by traci
 
 For example, during OpenTelemetry Java or Python auto-instrumentation, any exceptions may be traced and attach the exception details automatically onto the relevant span as a Span Event.
 
-You can also manually create Span Events, such as this [*example from Ruby*](https://opentelemetry.io/docs/instrumentation/ruby/events/). 
+You can also manually create Span Events, such as this [example from Ruby](https://opentelemetry.io/docs/instrumentation/ruby/events/). 
 
 Each event tracks a marker in the span timeline showing the start, end, and amount of passed time in a span. For many events that occur in spans, zoom in to expand and review event markers helping them to space out if overlapping or close together. As you hover and select events, associated spans highlight and provide a view of the event in all  spans affected.
 
@@ -228,3 +251,16 @@ A **Details** link displays if additional information is available that may be
 ![span-event-more1.png](/img/traces/span-event-more1.png)
 
 ![span-event-more2.png](/img/traces/span-event-more2.png)
+
+## Span Links
+Tracing focuses on the parent-child relationship between spans which are described by a Span ID, a parent Span ID, and a Trace ID. You can establish more casual relationships between Traces using Span Links.
+
+To give Spans context, links can point to Spans inside a trace or across different traces. For example, with links you can represent batch operations, where a Span is initiated by multiple initiating spans, each representing one item being processed in the batch. The links give you the relationship between the originating and the following trace. Span Links are added by tracing instrumentation at the client side and are automatically shown when detected in data. For details on configuring Span Links, see the [OpenTelemetry specification](https://github.com/open-telemetry/opentelemetry-specification/blob/main/specification/overview.md#links-between-spans).
+
+![links.png](/img/traces/links.png)
+
+You can copy the Span ID, by selecting the Clipboard icon next to the span link.
+
+You can select the Traces icon to view all other traces that link to this Span ID, and it will take you to the Trace View with the linkedSpanId as a filter criteria.
+
+![links.png](/img/traces/links2.png)

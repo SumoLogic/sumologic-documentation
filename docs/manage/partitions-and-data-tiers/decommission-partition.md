@@ -1,8 +1,9 @@
 ---
 id: decommission-partition
+title: Decommission a Partition
 ---
 
-# Decommission a Partition
+#
 
 Once they are created, partitions cannot be deleted, and partition names cannot be reused. This is due to the fact that a partition may include log messages that are not stored anywhere else, and if the partition were to be deleted, the log messages would be lost.
 
@@ -18,7 +19,7 @@ If a partition is no longer needed, you can decommission it. Once a partition i
 
     ![partitions-page.png](/img/partitions-and-data-tiers/partitions-page.png)
 
-1. Click the row for the partition you want to decommission.   
+1. Click the row for the partition you want to decommission.  
 1. The partition details appear on the right side of the page.
 
     ![decommision-button.png](/img/partitions-and-data-tiers/decommision-button.png)

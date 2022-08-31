@@ -254,7 +254,7 @@ This section provides instructions for configuring metrics collection for the Su
 #### Configure Metrics Collection
 
 1. Configure a Hosted Collector: To create a new Sumo Logic hosted collector, perform the steps in the[ Create a Hosted Collector](/docs/send-data/configure-hosted-collector) section of the Sumo Logic documentation.
-2. Configure an HTTP Logs and Metrics Source: Create a new HTTP Logs and Metrics Source in the hosted collector created above by following[ these instructions](/docs/send-data/sources/sources-hosted-collectors/http-logs-metrics-source). Make a note of the **HTTP Source URL**.
+2. Configure an HTTP Logs and Metrics Source: Create a new HTTP Logs and Metrics Source in the hosted collector created above by following[ these instructions](/docs/send-data/sources/hosted-collectors/http-logs-metrics-source). Make a note of the **HTTP Source URL**.
 3. Install Telegraf using [these steps](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf.md).
 4. Configure and start Telegraf: As part of collecting metrics data from Telegraf, we will use the [HAProxy input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/haproxy) to get data from Telegraf and the [Sumo Logic output plugin](https://github.com/influxdata/telegraf/tree/master/plugins/outputs/sumologic) to send data to Sumo Logic.  
 
@@ -303,7 +303,7 @@ This section provides instructions for configuring log collection for HAProxy ru
 
 By default, HAProxy logs are forwarded to Syslog. Configuration in the file **/etc/haproxy/haproxy.cfg** can be modified to send logs to files.
 
-Sumo Logic supports collecting logs both via Syslog and a local log file. Utilizing Sumo Logic [Cloud Syslog](/docs/send-data/Sources/sources-hosted-collectors/Cloud-Syslog-Source) will require TCP TLS Port 6514 to be open in your network. Local log files can be collected via [Installed collectors](/docs/send-data/Installed-Collectors) which will require you to allow outbound traffic to [Sumo Logic endpoints](https://help.sumologic.com/APIs/General-API-Information/Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security) for collection to work. For detailed requirements for Installed collectors, see this [page](/docs/get-started/system-requirements#Installed-Collector-Requirements).
+Sumo Logic supports collecting logs both via Syslog and a local log file. Utilizing Sumo Logic [Cloud Syslog](/docs/send-data/Sources/hosted-collectors/Cloud-Syslog-Source) will require TCP TLS Port 6514 to be open in your network. Local log files can be collected via [Installed collectors](/docs/send-data/Installed-Collectors) which will require you to allow outbound traffic to [Sumo Logic endpoints](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security) for collection to work. For detailed requirements for Installed collectors, see this [page](/docs/get-started/system-requirements#Installed-Collector-Requirements).
 
 
 Based on your infrastructure and networking setup choose one of these methods to collect HAProxy logs and follow the instructions below to set up log collection:
@@ -404,7 +404,7 @@ local2.=notice     /var/log/haproxy-notice.log
 
     **To add a Syslog Source source for HAProxy do the following**
 
-1. Add a [Syslog source](/docs/send-data/Sources/sources-installed-collectors/Syslog-Source) in the installed collector configured in the previous step.
+1. Add a [Syslog source](/docs/send-data/Sources/installed-collectors/Syslog-Source) in the installed collector configured in the previous step.
 2. Configure the Syslog Source fields as follows:
     * **Name.** (Required)
     * **Description.** (Optional)
@@ -425,7 +425,7 @@ local2.=notice     /var/log/haproxy-notice.log
 
     **To add a Local File Source source for HAProxy do the following**
 
-1. Add a[ Local File Source](/docs/send-data/Sources/sources-installed-collectors/Local-File-Source).
+1. Add a[ Local File Source](/docs/send-data/Sources/installed-collectors/Local-File-Source).
 2. Configure the Local File Source fields as follows:
     * **Name.** (Required)
     * **Description.** (Optional)
@@ -489,7 +489,7 @@ However, if you would like to restrict these alerts to specific clusters or envi
 1. Generate an access key and access ID for a user that has the **Manage Monitors** role capability. For instructions see [Access Keys](/docs/manage/security/access-keys#Create_an_access_key_on_Preferences_page).
 2. Download [Terraform 0.13](https://www.terraform.io/downloads.html) or later, and install it.
 3. Download the Sumo Logic Terraform package for HAProxy monitors. The alerts package is available in the [Sumo Logic github repository](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/tree/main/monitor_packages). You can either download it using the git clone command or as a zip file.
-4. Alert Configuration. After extracting the package, navigate to the terraform-sumologic-sumo-logic-monitor/monitor_packages/haproxy/ directory. Edit the haproxy.auto.tfvars file and add the Sumo Logic Access Key and Access ID from Step 1 and your Sumo Logic deployment. If you're not sure of your deployment, see [Sumo Logic Endpoints and Firewall Security](https://help.sumologic.com/APIs/General-API-Information/Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security).
+4. Alert Configuration. After extracting the package, navigate to the terraform-sumologic-sumo-logic-monitor/monitor_packages/haproxy/ directory. Edit the haproxy.auto.tfvars file and add the Sumo Logic Access Key and Access ID from Step 1 and your Sumo Logic deployment. If you're not sure of your deployment, see [Sumo Logic Endpoints and Firewall Security](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
 ```sql
 access_id   = "<SUMOLOGIC ACCESS ID>"
 access_key  = "<SUMOLOGIC ACCESS KEY>"

@@ -10,7 +10,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 The Nginx Plus Ingress Controller for Kubernetes provides enterprise‑grade delivery services for Kubernetes applications, with benefits for users of both Nginx Open Source and Nginx Plus.
 
 :::note
-App supports Logs for Nginx Plus and Metrics for Nginx Plus Ingress Controller.
+This app supports Logs for Nginx Plus and Metrics for Nginx Plus Ingress Controller.
 :::
 
 The Nginx Plus Ingress app is a unified logs and metrics app that helps you monitor the availability, performance, health and resource utilization of your Nginx Plus Ingress web servers. Preconfigured dashboards and searches provide insight into server status, location zones, server zones, upstreams, resolvers, visitor locations, visitor access types, traffic patterns, errors, web server operations and access from known malicious sources.
@@ -19,75 +19,9 @@ The Nginx Plus Ingress app is a unified logs and metrics app that helps you moni
 
 The Sumo Logic App for Nginx Plus Ingress assumes the NCSA extended/combined log file format for Access logs and the default Nginx error log file format for error logs.
 
-All Dashboards (except the Error logs Analysis dashboard) assume the Access log format. The Error logs Analysis Dashboard assumes both Access and Error log formats, so as to correlate information between the two.
+All Dashboards (except the Error logs Analysis dashboard) assume the Access log format. The Error logs Analysis Dashboard assumes both Access and Error log formats, so as to correlate information between the two. For more details on Nginx logs, see [here](http://nginx.org/en/docs/http/ngx_http_log_module.html).
 
-For more details on Nginx logs, see[ http://nginx.org/en/docs/http/ngx_http_log_module.html](http://nginx.org/en/docs/http/ngx_http_log_module.html).
-
-The Sumo Logic App for Nginx Plus Ingress assumes Prometheus format Metrics for Requests, Connections, and Ingress controller.
-
-For more details on Nginx Plus Ingress Metrics, see[ https://docs.nginx.com/nginx-ingress-controller/logging-and-monitoring/prometheus/](https://docs.nginx.com/nginx-ingress-controller/logging-and-monitoring/prometheus/)
-
-
-## Collecting Logs and Metrics for Nginx Plus Ingress
-
-This section provides instructions for configuring log and metric collection for the Sumo Logic App for Nginx Plus Ingress. This includes the following tasks:
-
-In a Kubernetes environment, we use our Sumo Logic Kubernetes collection. You can learn more about this[ here](/docs/observability/kubernetes-solution/collection-setup).
-
-1. **Enable Logging in Nginx Plus Ingress**: Logging is enabled by default to standard output “**stdout**” and standard error “**stderr**”.
-If you need additional logging -  all nginx logs must be redirected to **stdout** and **stderr**.
-2. **Enable Metrics in Nginx Plus Ingress**: Before you configure Sumo Logic to ingest metrics, you must enable the Prometheus metrics in the Nginx Ingress controller and annotate the Nginx pods, so Prometheus can find the Nginx metrics.
-    * For instructions on Nginx, refer to the following documentation[ https://docs.nginx.com/nginx-ingress-controller/logging-and-monitoring/prometheus/](https://docs.nginx.com/nginx-ingress-controller/logging-and-monitoring/prometheus/)
-3. **Deployment of version 1.3**: Ensure you have deployed version 1.3 or higher of the Sumologic-Kubernetes-Collection, to send the logs and metrics to Sumologic. For more information on deploying Sumologic-Kubernetes-Collection,[ visit](/docs/integrations/containers-orchestration/Kubernetes#Collect_Logs_and_Metrics_for_the_Kubernetes_App) here. Once deployed, logs will automatically be picked up and sent by default. Prometheus will scrape the Nginx pods, based on the annotations set in Step 2, for the metrics. Logs and Metrics will automatically be sent to the respective fluentD stateful sets which consistently tag your logs and metrics, then forward them to your Sumo Logic org.
-
-
-### Create Field Extraction Rules
-
-Field Extraction Rules (FERs) tell Sumo Logic which fields to parse out automatically. For instructions, see[ Create a Field Extraction Rule](/docs/manage/field-extractions/create-field-extraction-rule.md).
-
-Nginx assumes the NCSA extended/combined log file format for Access logs and the default Nginx Plus error log file format for error logs.
-
-Both the parse expressions can be used for logs collected from Nginx Plus Server running on Local or container-based systems.
-
-**FER for Access Logs**
-
-If you're using the default Nginx Plus Ingress log format use the following Parse Expression:
-
-
-```
-| json field=_raw "log" as nginx_log_message nodrop
-| if (isEmpty(nginx_log_message), _raw, nginx_log_message) as nginx_log_message
-| parse regex field=nginx_log_message
-"(?<Client_Ip>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})"
-| parse regex field=nginx_log_message "(?<method>[A-Z]+)\s(?<url>\S+)\sHTTP/[\d\.]+\"\s(?<status_code>\d+)\s(?<size>[\d-]+)\s\"(?<referrer>.*?)\"\s\"(?<user_agent>.+?)\"\s(?<request_length>\S+)\s(?<request_time>\S+)\s\[(?<proxy_upstream_name>[^\]]+)\]\s(?<upstream_addr>\S+)\s(?<upstream_response_length>\S+)\s(?<upstream_response_time>\S+)\s(?<upstream_status>\S+)"
-```
-
-
-If you aren’t using the default log format use the below Parse Expression and edit/add fields as needed:
-
-
-```
-| json field=_raw "log" as nginx_log_message nodrop
-| if (isEmpty(nginx_log_message), _raw, nginx_log_message) as nginx_log_message
-| parse regex field=nginx_log_message "(?<Client_Ip>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})"
-| parse regex field=nginx_log_message "(?<Method>[A-Z]+)\s(?<URL>\S+)\sHTTP/[\d\.]+\
-"\s(?<Status_Code>\d+)\s(?<Size>[\d-]+)\s\"(?<Referrer>.*?)\"\s\"(?<User_Agent>.+?)\".*"
-```
-
-
-**FER for Error Logs**
-
-Use the following Parse Expression:
-
-
-```
-| json field=_raw "log" as nginx_log_message nodrop
-| if (isEmpty(nginx_log_message), _raw, nginx_log_message) as nginx_log_message
-| parse regex field=nginx_log_message "\s\[(?<Log_Level>\S+)\]\s\d+#\d+:\s(?:\*\d+\s|)(?<Message>[A-Za-z][^,]+)(?:,|$)"
-| parse field=nginx_log_message "client: *, server: *, request: \"* * HTTP/1.1\", host:
-\"*\"" as Client_Ip, Server, Method, URL, Host nodrop
-```
-
+The Sumo Logic App for Nginx Plus Ingress assumes Prometheus format Metrics for Requests, Connections, and Ingress controller. For more details on Nginx Plus Ingress Metrics, see [here](https://docs.nginx.com/nginx-ingress-controller/logging-and-monitoring/prometheus/)
 
 
 ### Sample Log Messages
@@ -100,12 +34,9 @@ Use the following Parse Expression:
 {"timestamp":1619792989032,"log":"2021/04/29 13:26:05 [error] 190#190: *8248713 open() \"/usr/share/nginx/html/favicon.ico\" failed (2: No such file or directory), client: 10.244.0.132, server: , request: \"GET /favicon.ico HTTP/1.1\", host: \"example.com\", referrer: \"https://example.com/dashboard.html\"","stream":"stderr","time":"2021-04-29T13:26:05.074748065Z"}
 ```
 
-
-
 ### Sample Queries
 
 This sample Query is from the **Visitor Locations **panel of the **Nginx Plus Ingress - Overview** dashboard.
-
 
 ```
 Cluster={{Cluster}} Namespace={{Namespace}} Deployment={{Deployment}} Pod={{Pod}} _sourceCategory = *ingress*
@@ -120,6 +51,60 @@ Cluster={{Cluster}} Namespace={{Namespace}} Deployment={{Deployment}} Pod={{Pod}
 | sort _count
 ```
 
+
+## Collecting Logs and Metrics for Nginx Plus Ingress
+
+This section provides instructions for configuring log and metric collection for the Sumo Logic App for Nginx Plus Ingress. This includes the following tasks:
+
+In a Kubernetes environment, we use our Sumo Logic Kubernetes collection. You can learn more about this [here](/docs/observability/kubernetes-solution/collection-setup).
+
+1. **Enable Logging in Nginx Plus Ingress**: Logging is enabled by default to standard output “**stdout**” and standard error “**stderr**”. If you need additional logging - all nginx logs must be redirected to **stdout** and **stderr**.
+2. **Enable Metrics in Nginx Plus Ingress**: Before you configure Sumo Logic to ingest metrics, you must enable the Prometheus metrics in the Nginx Ingress controller and annotate the Nginx pods, so Prometheus can find the Nginx metrics.
+   * For instructions on Nginx, refer to [this Nginx documentation](https://docs.nginx.com/nginx-ingress-controller/logging-and-monitoring/prometheus/)
+3. **Deployment of version 1.3**: Ensure you have deployed version 1.3 or higher of the Sumologic-Kubernetes-Collection, to send the logs and metrics to Sumologic. For more information on deploying Sumologic-Kubernetes-Collection, [visit here](/docs/integrations/containers-orchestration/kubernetes#collecting-metrics-and-logs-for-the-kubernetes-app). Once deployed, logs will automatically be picked up and sent by default. Prometheus will scrape the Nginx pods, based on the annotations set in Step 2, for the metrics. Logs and Metrics will automatically be sent to the respective fluentD stateful sets which consistently tag your logs and metrics, then forward them to your Sumo Logic org.
+
+
+### Field Extraction Rules
+
+Field Extraction Rules (FERs) tell Sumo Logic which fields to parse out automatically. For instructions, see [Create a Field Extraction Rule](/docs/manage/field-extractions/create-field-extraction-rule.md).
+
+Nginx assumes the NCSA extended/combined log file format for Access logs and the default Nginx Plus error log file format for error logs.
+
+Both the parse expressions can be used for logs collected from Nginx Plus Server running on Local or container-based systems.
+
+**FER for Access Logs**
+
+If you're using the default Nginx Plus Ingress log format use the following Parse Expression:
+
+```
+| json field=_raw "log" as nginx_log_message nodrop
+| if (isEmpty(nginx_log_message), _raw, nginx_log_message) as nginx_log_message
+| parse regex field=nginx_log_message
+"(?<Client_Ip>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})"
+| parse regex field=nginx_log_message "(?<method>[A-Z]+)\s(?<url>\S+)\sHTTP/[\d\.]+\"\s(?<status_code>\d+)\s(?<size>[\d-]+)\s\"(?<referrer>.*?)\"\s\"(?<user_agent>.+?)\"\s(?<request_length>\S+)\s(?<request_time>\S+)\s\[(?<proxy_upstream_name>[^\]]+)\]\s(?<upstream_addr>\S+)\s(?<upstream_response_length>\S+)\s(?<upstream_response_time>\S+)\s(?<upstream_status>\S+)"
+```
+
+If you aren’t using the default log format, use the below Parse Expression and edit/add fields as needed:
+
+```
+| json field=_raw "log" as nginx_log_message nodrop
+| if (isEmpty(nginx_log_message), _raw, nginx_log_message) as nginx_log_message
+| parse regex field=nginx_log_message "(?<Client_Ip>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})"
+| parse regex field=nginx_log_message "(?<Method>[A-Z]+)\s(?<URL>\S+)\sHTTP/[\d\.]+\
+"\s(?<Status_Code>\d+)\s(?<Size>[\d-]+)\s\"(?<Referrer>.*?)\"\s\"(?<User_Agent>.+?)\".*"
+```
+
+**FER for Error Logs**
+
+Use the following Parse Expression:
+
+```
+| json field=_raw "log" as nginx_log_message nodrop
+| if (isEmpty(nginx_log_message), _raw, nginx_log_message) as nginx_log_message
+| parse regex field=nginx_log_message "\s\[(?<Log_Level>\S+)\]\s\d+#\d+:\s(?:\*\d+\s|)(?<Message>[A-Za-z][^,]+)(?:,|$)"
+| parse field=nginx_log_message "client: *, server: *, request: \"* * HTTP/1.1\", host:
+\"*\"" as Client_Ip, Server, Method, URL, Host nodrop
+```
 
 ## Installing Nginx Plus Ingress Monitors
 
@@ -142,36 +127,20 @@ The monitors are disabled by default. Once you have installed the alerts via thi
 
 ### Method B: Using a Terraform script
 
-**Step 1: Generate a Sumo Logic access key and ID**
-
-Generate an [access key](/docs/manage/security/access-keys#create-an-access-key%C2%A0on-preferences-page) and access ID for a user that has the[ Manage Monitors](/docs/manage/users-and-roles/roles/role-capabilities) role capability in Sumo Logic using these instructions. Please identify your Sumo Logic[ deployment](https://help.sumologic.com/APIs/General-API-Information/Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security).
-
-**Step 2:[Download and install Terraform 0.13](https://www.terraform.io/downloads.html)** or later
-
-**Step 3: Download the Sumo Logic Terraform package for Nginx Ingress alerts**
-
-The alerts package is available in the Sumo Logic github[ repository](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/tree/main/monitor_packages/nginx-plus-ingress). You can either download it via the “git clone” command or as a zip file.
-
-**Step 4: Alert Configuration**
-
-After the package has been extracted, navigate to the package directory **terraform-sumologic-sumo-logic-monitor/monitor_packages/nginx-plus-ingress/**
-
-Edit the **nginxplusingress.auto.tfvars** file as per below instruction
-
-1. Add the Sumo Logic Access Key, Access Id, Deployment from Step 1.
-```sql
-access_id   = "<YOUR SUMO ACCESS ID>"
-access_key  = "<YOUR SUMO ACCESS KEY>"
-environment = "<DEPLOYMENT>"
-```
-2. Add the data source values.
-    * `Logs_data_source` - Sumo Logic data source for logs.
-3. All monitors are disabled by default on installation, if you would like to enable all the monitors, set the parameter **monitors_disabled** to **false**.
-4. All monitors are configured in a monitor folder called “**Nginx Plus Ingress**”, if you would like to change the name of the folder, update the parameter **folder**.
-
-**Step 5: Email and Connection Notification Configuration Examples**
-
-Modify the file **nginxplusingress.auto.tfvars** and populate connection_notifications and email_notifications as per below examples.
+1. Generate a Sumo Logic [access key](/docs/manage/security/access-keys#create-an-access-keyon-preferences-page) and access ID for a user that has the[ Manage Monitors](/docs/manage/users-and-roles/roles/role-capabilities) role capability in Sumo Logic using these instructions. Please identify your Sumo Logic[ deployment](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
+2. [Download and install Terraform 0.13](https://www.terraform.io/downloads.html)** or later.
+3. Download the Sumo Logic Terraform package for Nginx Ingress alerts: The alerts package is available in the Sumo Logic github[ repository](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/tree/main/monitor_packages/nginx-plus-ingress). You can either download it via the “git clone” command or as a zip file.
+4. Alert Configuration: After the package has been extracted, navigate to the package directory **terraform-sumologic-sumo-logic-monitor/monitor_packages/nginx-plus-ingress/**. Edit the **nginxplusingress.auto.tfvars** file as per below instructions:
+   1. Add the Sumo Logic Access Key, Access Id, Deployment from Step 1.
+   ```sql
+   access_id   = "<YOUR SUMO ACCESS ID>"
+   access_key  = "<YOUR SUMO ACCESS KEY>"
+   environment = "<DEPLOYMENT>"
+   ```
+   2. Add `Logs_data_source` as the Sumo Logic data source for logs.
+   3. All monitors are disabled by default on installation, if you would like to enable all the monitors, set the parameter **monitors_disabled** to **false**.
+   4. All monitors are configured in a monitor folder called “**Nginx Plus Ingress**”, if you would like to change the name of the folder, update the parameter **folder**.
+5. Email and Connection Notification Configuration Examples: Modify the file **nginxplusingress.auto.tfvars** and populate `connection_notifications` and `email_notifications` as per below examples.
 
 ```bash title="Pagerduty Connection Example"
 connection_notifications = [
@@ -208,15 +177,11 @@ email_notifications = [
 }
 ```
 
-**Step 6: Install the Alerts**
-
-1. Navigate to the package directory **terraform-sumologic-sumo-logic-monitor/monitor_packages/nginx-plus-ingress/** and run **terraform init. **This will initialize Terraform and will download the required components.
-2. Run **terraform plan **to view the monitors resources which will be created/modified by Terraform.
-3. Run t**erraform apply**.
-
-**Step 7: Post Installation steps**
-
-If you haven’t enabled alerts and/or configured notifications via the terraform procedure outlined above, we highly recommend enabling alerts of interest and configuring each enabled alert to send notifications to other people or services. This is detailed in[ Step 4](/docs/alerts/monitors#add-a-monitor).
+6. Install the Alerts:
+   1. Navigate to the package directory **terraform-sumologic-sumo-logic-monitor/monitor_packages/nginx-plus-ingress/** and run **terraform init. **This will initialize Terraform and will download the required components.
+   2. Run `terraform plan` to view the monitors resources which will be created/modified by Terraform.
+   3. Run `terraform apply`.
+7. Post Installation steps: If you haven’t enabled alerts and/or configured notifications via the terraform procedure outlined above, we highly recommend enabling alerts of interest and configuring each enabled alert to send notifications to other people or services. This is detailed in [Step 4](/docs/alerts/monitors#add-a-monitor).
 
 There are limits to how many alerts can be enabled - please see the[ Alerts FAQ](/docs/alerts/monitors/monitor-faq.md).
 
@@ -226,10 +191,7 @@ There are limits to how many alerts can be enabled - please see the[ Alerts FAQ]
 Locate and install the app you need from the **App Catalog**. If you want to see a preview of the dashboards included with the app before installing, click **Preview Dashboards**.
 
 1. From the **App Catalog**, search for and select the app**.**
-2. Select the version of the service you're using and click **Add to Library**.
-
-Version selection is applicable only to a few apps currently. For more information, see the[ Install the Apps from the Library](/docs/get-started/library/install-apps).
-
+2. Select the version of the service you're using and click **Add to Library**. Version selection is applicable only to a few apps currently. For more information, see the [Install the Apps from the Library](/docs/get-started/library/install-apps).
 3. To install the app, complete the following fields.
     1. **App Name.** You can retain the existing name, or enter a name of your choice for the app. 
     2. **Data Source.** Select either of these options for the data source. 
@@ -249,10 +211,9 @@ Panels will start to fill automatically. It's important to note that each panel 
 Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards-new/filter-with-template-variables.md).
 :::
 
-
 ### Overview
 
-The** Nginx Plus Ingress - Overview** dashboard provides an at-a-glance view of the nginx plus server access locations, error logs along with connection metrics.
+The **Nginx Plus Ingress - Overview** dashboard provides an at-a-glance view of the nginx plus server access locations, error logs along with connection metrics.
 
 Use this dashboard to:
 * Gain insights into originated traffic location by region. This can help you allocate computer resources to different regions according to their needs.

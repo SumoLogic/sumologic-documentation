@@ -20,7 +20,6 @@ Each Google Workspace app has its own log that tracks actions in JSON format. Th
 
 The common areas of the logs are:
 
-
 <table>
   <tr>
    <td><strong>Event</strong></td>
@@ -46,7 +45,6 @@ The events sections of logs are:
 ## Apps
 
 ### Google Workspace Login App
-
 
 <table>
   <tr>

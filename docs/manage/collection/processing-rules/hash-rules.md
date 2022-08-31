@@ -1,8 +1,9 @@
 ---
 id: hash-rules
+title: Hash Rules
 ---
 
-# Hash Rules
+
 
 A hash rule is a processing rule that allows you to replace an expression with a hash code generated for that value. Hashed data is completely hidden (obfuscated) before being sent to Sumo Logic. This can be very useful in situations where some type of data must not leave your premises, such as credit cards and social security numbers. Each unique value will have a unique hash code.
 

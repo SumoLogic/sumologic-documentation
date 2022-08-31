@@ -1,8 +1,8 @@
 ---
 slug: /send-data/collect-from-other-data-sources
+title: Collect from Other Data Sources
 ---
 
-# Collect from Other Data Sources
 
 Sumo Logic can collect logs and metrics from a variety of data Sources.
 

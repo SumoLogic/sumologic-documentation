@@ -1,8 +1,8 @@
 ---
 id: use-wildcards-paths
+title: Using Wildcards in Paths
 ---
 
-# Using Wildcards in Paths
 
 Rather than entering each file by name, using wildcards in the Source path allows you to collect all files of a certain type within one or more directories, or many files from many directories. When specifying file names (or paths) in Microsoft Windows and Unix-like operating systems, the asterisk character (\*) substitutes for any zero or more characters, and the question mark (?) substitutes for any one character.
 

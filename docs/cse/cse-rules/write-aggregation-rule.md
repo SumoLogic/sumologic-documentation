@@ -1,8 +1,10 @@
 ---
 id: write-aggregation-rule
+title: Write an Aggregation Rule
+sidebar_label: Aggregation Rule
+description: Learn how to write an Aggregation rule.
 ---
 
-# Write an Aggregation Rule
 
 This topic has information about CSE Aggregation rules and how to write them.
 
@@ -39,7 +41,7 @@ The screenshot below shows the **If Triggered** configuration for the example ru
 1. On the **Create a Rule** page, click **Create** in the **Aggregation** card.
 
     ![select-rule-type.png](/img/cse/select-rule-type.png)
-1. In the rules editor: 
+1. In the rules editor:
 
    1. **Name**. At the top of the Rules Editor, enter a name for the rule. Signals fired by the rule will have the same name as the rule.
    1. **Enabled**. By default the rule will be enabled. It's good practice to use the slider to disable the rule so that it won’t be applied to incoming Records until you’ve tested it.   
@@ -53,11 +55,11 @@ On the left side of the Rules Editor, in the **If Triggered** section, you confi
 1. **When Records matching the expression**. Enter one or more boolean expressions to filter the Records you want to apply the rule to. For example: `!isNull(http_response_statusCode)`
 1. **grouped by**. Specify the Record field or fields by which aggregation results will be grouped. Note that when you define the **On Entity** field for the rule (in [Configure “Then Create a Signal” settings](#write-an-aggregation-rule) below), the field you choose will automatically appear here. If you want to aggregate on other fields, you can select them from the selector list.
 1. **Within**. Select the length of time across which the rule is applied. The options range from 5 minutes to 5 days.
-1. **have aggregations**. To define an aggregation: 
+1. **have aggregations**. To define an aggregation:
 
-   1. **Name**. Give the aggregation a brief, meaningful name. You’ll reference the aggregation by its name in the trigger condition for the rule. 
+   1. **Name**. Give the aggregation a brief, meaningful name. You’ll reference the aggregation by its name in the trigger condition for the rule.
    1. **Function**. Select an aggregation function: `avg`, `count`, `count_distinct`, `first`, `last`, `max`, `min`, or `sum`.
-   1. **Expression**. Enter an expression to filter the Records to be aggregated. For example, the following expression results in the aggregation being applied to Record whose `http_response_statusCode` field is greater than 201. `http_response_statusCode\> 201` 
+   1. **Expression**. Enter an expression to filter the Records to be aggregated. For example, the following expression results in the aggregation being applied to Record whose `http_response_statusCode` field is greater than 201. `http_response_statusCode\> 201`
 
         :::note
         The expression you enter should make sense with the aggregation function you chose. Specifically, if your aggregation function is `count` or `count_distinct`, your expression should return countable results, like the example above. However, if you use another aggregation function—`avg`, `first`, `last`, `max`, `min`, or `sum`--your expression should be a field name, for example: `bytes` or `if(!isEmpty(bytes), bytes, bits)`, and the function will be applied to the value of that field.
@@ -66,11 +68,11 @@ On the left side of the Rules Editor, in the **If Triggered** section, you confi
 1. **that match the following condition**. Enter one or more boolean expressions, based on the results of the configured aggregations, which when true will cause the rule to fire a Signal. For example, given the following expression, a rule will fire a Signal when the sum of `Aggregation-1` and `Aggregation-2` is greater than 1.  `Aggregation-1 + Aggregation-2\> 5`
 
 ## Test your rule expression
-After creating a rule expression, you can test it against existing Records in CSE. 
+After creating a rule expression, you can test it against existing Records in CSE.
 
-1. Click **Test Rule** above the rule expression. 
+1. Click **Test Rule** above the rule expression.
 1. The **If Triggered** section expands, and CSE searches for Records that match the rule expression. If there are no matching Records, you'll see a **There aren't any matches for the expression** message.
-1. If no matches were returned, try changing the time range. 
+1. If no matches were returned, try changing the time range.
 
 :::note
 If you use the Test Rule feature on a rule that has one or more [Rule Tuning Expressions](rule-tuning-expressions.md), you can test it without the tuning expressions, or with selected tuning expressions.

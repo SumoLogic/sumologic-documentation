@@ -1,12 +1,12 @@
 ---
 id: optimizing-search-with-partitions
+title: Optimize Your Search with Partitions
 ---
 
-# Optimize Your Search with Partitions
 
 ## What are Partitions?
 
-A partition stores your data in an index separate from the rest of your account's data so you can optimize searches, [manage variable retention](../manage/partitions-and-data-tiers/manage-indexes-variable-retention.md), and specify certain [data to forward to S3](../manage/data-forwarding/data-forwarding-to-s3.md).
+A partition stores your data in an index separate from the rest of your account's data so you can optimize searches, [manage variable retention](../manage/partitions-and-data-tiers/manage-indexes-variable-retention.md), and specify certain [data to forward to S3](../manage/data-forwarding/amazon-s3-bucket.md).
 
 Partitions route your data to an index becoming a separate subset of data in your account. Creating smaller and separate subsets of data is central to search optimization. When you run a search against an index, results are returned more quickly and efficiently because the search runs against a smaller data set.
 
@@ -94,7 +94,7 @@ Partitions that are too small may cause index fragmentation and degraded search 
 
 This will lead to duplication of data (increasing your billed ingest rate), and degraded performance. Sumo Logic will not return duplicate results, but the process of de-duplication is time consuming and will increase query durations.
 
-### Do not use the NOT operator in partition definitions. 
+### Do not use the NOT operator in partition definitions.
 
 This will likely exclude data that should be contained within your partition and will reduce the chances that your partition will be reused by queries that are rewritten.
 

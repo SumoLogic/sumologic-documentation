@@ -17,13 +17,13 @@ This App is tested with the following Nginx versions:
 * Kubernetes environments: Nginx version 1.21.4
 * Non-Kubernetes environments: Nginx version 1.19.8
 
-## Collecting Logs for Nginx
+## Collecting Logs for the Nginx App
 
 This section provides instructions for configuring log and metric collection for the Sumo Logic App for Nginx. The following tasks are required:
 
 ### Step 1: Configure Fields in Sumo Logic
 
-Create the following Fields in Sumo Logic prior to configuring the collection. This ensures that your logs and metrics are tagged with relevant metadata, which is required by the app dashboards. For information on setting up fields, see [Sumo Logic Fields](/docs/manage/fields.md).
+Create the following fields in Sumo Logic prior to configuring the collection. This ensures that your logs and metrics are tagged with relevant metadata, which is required by the app dashboards. For information on setting up fields, see [Sumo Logic Fields](/docs/manage/fields).
 
 <Tabs
   groupId="k8s-nonk8s"
@@ -87,36 +87,35 @@ In Kubernetes environments, we use the Telegraf Operator, which is packaged with
 
 1. [Set up Kubernetes Collection with the Telegraf Operator](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf).
 2. On your Nginx Pods, add the following annotations:
-```sql
-annotations:
+ ```sql
+ annotations:
     telegraf.influxdata.com/class: sumologic-prometheus
     prometheus.io/scrape: "true"
     prometheus.io/port: "9273"
     telegraf.influxdata.com/inputs: |+
 
-[[inputs.nginx]]
-  urls = ["http://IP_TO_BE_CHANGED/nginx_status"]
-  response_timeout = "5s"
+ [[inputs.nginx]]
+   urls = ["http://IP_TO_BE_CHANGED/nginx_status"]
+    response_timeout = "5s"
 
-  [inputs.nginx.tags]
-  environment="<env_TO_BE_CHANGED>"
-  component="webserver"
-  webserver_system="nginx"
-  webserver_farm="<nginx_TO_BE_CHANGED>"--If you haven’t defined a farm in Nginx, then enter `default` for `webserver_farm`.
-```
+   [inputs.nginx.tags]
+   environment="<env_TO_BE_CHANGED>"
+   component="webserver"
+   webserver_system="nginx"
+   webserver_farm="<nginx_TO_BE_CHANGED>"--If you haven’t defined a farm in Nginx, then enter `default` for `webserver_farm`.
+ ```
 
 Enter in values for the following parameters (marked `CHANGEME` in the snippet above):
-
 * `telegraf.influxdata.com/inputs` - This contains the required configuration for the Telegraf Nginx Input plugin. Please refer[ to this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/redis) for more information on configuring the Nginx input plugin for Telegraf. Note: As telegraf will be run as a sidecar the host should always be localhost.
-    * In the input plugins section, that is :
+    * In the input plugins section, that is `[[inputs.nginx]]`:
         * `urls` - An array of Nginx stub_status URI to gather stats. This can be a comma-separated list to connect to multiple Nginx servers. Please see [this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/nginx#nginx-input-plugin) for more information on additional parameters for configuring the Nginx input plugin for Telegraf.
-    * In the tags section, that is `[inputs.nginx.tags]`
+    * In the tags section, `[inputs.nginx.tags]`
         * `environment` - This is the deployment environment where the Nginx farm identified by the value of `servers` resides. For example: dev, prod or qa. While this value is optional we highly recommend setting it.
         * `webserver_farm `- Enter a name to identify this Nginx farm. This farm name will be shown in the Sumo Logic dashboards.  
 
-:::caution do not modify
+:::caution Do not modify these values
 
-Do not modify the following values, as they will cause the Sumo Logic apps to not function correctly.
+Modifying these values will cause the Sumo Logic apps to not function correctly.
 
 * `telegraf.influxdata.com/class: sumologic-prometheus` - This instructs the Telegraf operator what output to use. This should not be changed.
 * `prometheus.io/scrape: "true"` - This ensures our Prometheus will scrape the metrics.
@@ -150,10 +149,10 @@ This section explains the steps to collect Nginx logs from a Kubernetes environm
      * `environment` - This is the deployment environment where the Nginx farm identified by the value of `servers` resides. For example:- dev, prod, or QA. While this value is optional we highly recommend setting it.
      * `Webserver_farm` - Enter a name to identify this Nginx farm. This farm name will be shown in the Sumo Logic dashboards. If you haven’t defined a farm in Nginx, then enter `default` for `webserver_farm`.
 
-   :::caution do not modify
+   :::caution Do not modify these values
 
-   Do not modify the following values, as they will cause the Sumo Logic apps to not function correctly.
-   * `component“webserver”` - This value is used by Sumo Logic apps to identify application components.
+   Modifying these values will cause the Sumo Logic apps to not function correctly.
+   * `component “webserver”` - This value is used by Sumo Logic apps to identify application components.
    * `webserver_system: “nginx”` - This value identifies the database system.
    :::
 
@@ -204,11 +203,11 @@ This section explains the steps to collect Nginx logs from a Kubernetes environm
 </TabItem>
 <TabItem value="non-k8s">
 
-Sumo Logic uses the Telegraf operator for Nginx metric collection and the [Installed Collector](/docs/send-data/installed-collectors/about-installed-collectors) for collecting Nginx logs. The diagram below illustrates the components of the Nginx collection in a non-Kubernetes environment.
+Sumo Logic uses the Telegraf operator for Nginx metric collection and the [Installed Collector](/docs/send-data/installed-collectors/about) for collecting Nginx logs. The diagram below illustrates the components of the Nginx collection in a non-Kubernetes environment.
 
 <img src={useBaseUrl('img/integrations/web-servers/nginx-nonk8s.png')} alt="Web servers" />
 
-Telegraf uses the[ Nginx input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/nginx) to obtain Nginx metrics and the Sumo Logic output plugin to send the metrics to Sumo Logic. Logs from Nginx are collected by a [Local File Source](/docs/send-data/Sources/sources-installed-collectors/Local-File-Source).
+Telegraf uses the[ Nginx input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/nginx) to obtain Nginx metrics and the Sumo Logic output plugin to send the metrics to Sumo Logic. Logs from Nginx are collected by a [Local File Source](/docs/send-data/Sources/installed-collectors/Local-File-Source).
 
 The process to set up collection for Nginx data is done through the following steps.
 
@@ -217,32 +216,30 @@ The process to set up collection for Nginx data is done through the following st
 Nginx app supports the default access logs and error logs format.
 
 1. **Configure logging in Nginx.** Before you can configure Sumo Logic to ingest logs, you must configure the logging of errors and processed requests in NGINX Open Source and NGINX Plus. For instructions, refer to the following [documentation](https://docs.nginx.com/nginx/admin-guide/monitoring/logging/)
-2. **Configure an Installed Collector.** If you have not already done so, install and configure an installed collector for Windows by [following the documentation](/docs/send-data/installed-collectors/install-collector-windows).
+2. **Configure an Installed Collector.** If you have not already done so, install and configure an installed collector for Windows by [following the documentation](/docs/send-data/installed-collectors/windows).
 3. **Configure a Collector** Use one of the following Sumo Logic Collector options:
     1. To collect logs directly from the Nginx machine, configure an [Installed Collector](/docs/send-data/Installed-Collectors).
-    2. If you're using a service like Fluentd, or you would like to upload your logs manually, [Create a Hosted Collector](/docs/send-data/Hosted-Collectors#Create_a_Hosted_Collector).
-4. **Configure a local file source**
+    2. If you're using a service like Fluentd, or you would like to upload your logs manually, [Create a Hosted Collector](/docs/send-data/configure-hosted-collector).
+4. **Configure a local file source**. Choose a method:
 
 <details><summary>For an Installed Collector</summary>
 
 To collect logs directly from your Nginx machine, use an Installed Collector and a Local File Source.  
 
-1. Add a [Local File Source](/docs/send-data/Sources/sources-installed-collectors/Local-File-Source).
+1. Add a [Local File Source](/docs/send-data/Sources/installed-collectors/Local-File-Source).
 2. Configure the Local File Source fields as follows:
    * **Name**. (Required)
    * **Description**. (Optional)
    * **File Path (Required)**. Enter the path to your error.log or access.log. The files are typically located in /var/log/nginx/error.log. If you're using a customized path, check the **nginx.conf** file for this information. If you're using Passenger, you may have instructed Passenger to log to a specific log using the passenger_log_file option.
    * **Source Host**. Sumo Logic uses the hostname assigned by the OS unless you enter a different hostname.
    * **Source Category**. Enter any string to tag the output collected from this Source, such as Nginx/Access or Nginx/Error. (The Source Category metadata field is a fundamental building block to organize and label Sources. For details see [Best Practices](/docs/send-data/design-deployment/best-practices-source-categories).)
-   * **Fields.** Add the following fields, as show in the screenshot below.
-​​​​
-```sql
-component = webserver
-webserver_system = nginx
-webserver_farm = <Your_nginx_farm_Name> --Use <Default> if you do not have one.
-environment = <Your_Environment_Name> --i.e., Dev, QA, or Prod
-```
-
+   * **Fields.** Add the following fields, as shown in the screenshot below.
+​​    ```
+    component = webserver
+    webserver_system = nginx
+    webserver_farm = <Your_nginx_farm_Name>--Use Default if you do not have one.
+    environment = <Your_Environment_Name>--i.e., Dev, QA, or Prod
+    ```
 3. Configure the Advanced section:
     * Enable Timestamp Parsing. Select Extract timestamp information from log file entries.
     * Time Zone. Automatically detect.
@@ -259,7 +256,7 @@ environment = <Your_Environment_Name> --i.e., Dev, QA, or Prod
 
 If you're using a service like Fluentd, or you would like to upload your logs manually, use a Hosted Collector and an HTTP Source.
 
-1. Add an [HTTP Source](/docs/send-data/sources/sources-hosted-collectors/http-logs-metrics-source).
+1. Add an [HTTP Source](/docs/send-data/sources/hosted-collectors/http-logs-metrics-source).
 2. Configure the HTTP Source fields as follows:
     * **Name**. (Required)
     * **Description**. (Optional)
@@ -281,7 +278,7 @@ If you're using a service like Fluentd, or you would like to upload your logs ma
 
 #### Set up a Sumo Logic HTTP Source
 
-1. **Configure a Hosted Collector for Metrics.** To create a new Sumo Logic hosted collector, perform the steps in the [Create a Hosted Collector](/docs/send-data/Hosted-Collectors#Create_a_Hosted_Collector) documentation.
+1. **Configure a Hosted Collector for Metrics.** To create a new Sumo Logic hosted collector, perform the steps in the [Create a Hosted Collector](/docs/send-data/configure-hosted-collector) documentation.
 2. **Configure an HTTP Logs & Metrics source**:
     1. On the created Hosted Collector on the Collection Management screen, select **Add Source**.
     2. Select **HTTP Logs & Metrics.**
@@ -294,12 +291,11 @@ If you're using a service like Fluentd, or you would like to upload your logs ma
 
 #### Set up Telegraf
 
-1. **Install Telegraf if you haven’t already.** Use the [following steps](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf.md) to install Telegraf.
+1. **Install Telegraf if you haven’t already.** Use the [following steps](/docs/send-data/collect-from-other-data-sources/collect-metrics-telegraf/install-telegraf) to install Telegraf.
 2. **Configure and start Telegraf.**
 3. As part of collecting metrics data from Telegraf, we will use the [nginx input plugin](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/nginx) to get data from Telegraf and the [Sumo Logic output plugin](https://github.com/SumoLogic/fluentd-output-sumologic) to send data to Sumo Logic.
 
 Create or modify `telegraf.conf` and copy and paste the text below:  
-
 ```sql
 [[inputs.nginx]]
   urls = ["http://IP_TO_BE_CHANGED/nginx_status"]
@@ -322,7 +318,7 @@ Enter values for fields annotated with `<VALUE_TO_BE_CHANGED>` to the appropriat
     * `urls` - An array of Nginx stub_status URI to gather stats. For more information on additional parameters to configure the Nginx input plugin for Telegraf see[ this doc](https://github.com/influxdata/telegraf/tree/master/plugins/inputs/nginx#nginx-input-plugin).
 * In the tags section, which is `[inputs.nginx.tags]`:
     * `environment` - This is the deployment environment where the Nginx farm identified by the value of **servers** resides. For example; dev, prod, or QA. While this value is optional we highly recommend setting it.
-    * **`webserver_farm`** - Enter a name to identify this Nginx farm. This farm name will be shown in our dashboards.
+    * `webserver_farm` - Enter a name to identify this Nginx farm. This farm name will be shown in our dashboards.
 * In the output plugins section, which is `[[outputs.sumologic]]`:
     * **`URL`** - This is the HTTP source URL created previously. See this doc for more information on additional parameters for configuring the Sumo Logic Telegraf output plugin.
 
@@ -330,7 +326,7 @@ Here’s an explanation for additional values set by this Telegraf configuration
 
 If you haven’t defined a farm in Nginx, then enter `default` for `webserver_farm`.
 
-There are additional values set by the Telegraf configuration.  We recommend not to modify these values as they might cause the Sumo Logic app to not function correctly.
+There are additional values set by the Telegraf configuration. We recommend not to modify these values as they might cause the Sumo Logic app to not function correctly.
 
 * `data_format: “prometheus”` - In the output `[[outputs.sumologic]]` plugins section. Metrics are sent in the Prometheus format to Sumo Logic.
 * `Component - “webserver”` - In the input `[[inputs.nginx]]` plugins section. This value is used by Sumo Logic apps to identify application components.
@@ -351,7 +347,7 @@ At this point, Telegraf should start collecting the Nginx metrics and forward th
 * To install these alerts, you need to have the Manage Monitors role capability.
 * Alerts can be installed by either importing a JSON file or a Terraform script.
 
-To view the full list, see [Nginx](#nginx-alerts). There are limits to how many alerts can be enabled - see the [Alerts FAQ](/docs/alerts/monitors/monitor-faq.md) for detail.
+To view the full list, see [Nginx](#nginx-alerts). There are limits to how many alerts can be enabled - see the [Alerts FAQ](/docs/alerts/monitors/monitor-faq) for detail.
 
 
 ### Method A: Importing a JSON file
@@ -360,17 +356,17 @@ To view the full list, see [Nginx](#nginx-alerts). There are limits to how many 
 2. The [JSON](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/blob/main/monitor_packages/Nginx/nginx.json) contains the alerts that are based on Sumo Logic searches that do not have any scope filters and therefore will be applicable to all Nginx farms, the data for which has been collected via the instructions in the previous sections.  However, if you would like to restrict these alerts to specific farms or environments, update the JSON file by replacing the text `webserver_system=nginx` with `<Your Custom Filter>`. Custom filter examples:
    * For alerts applicable only to a specific farm, your custom filter would be, `webserver_farm=nginx-standalone.01`.
    * For alerts applicable to all farms that start with nginx-standalone, your custom filter would be, `webserver_system=nginx-standalone*`.
-   * For alerts applicable to a specific farm within a production environment, your custom filter would be,`webserver_farm=nginx-1` and `environment=standalone` (This assumes you have set the optional environment tag while configuring collection).
+   * For alerts applicable to a specific farm within a production environment, your custom filter would be,`webserver_farm=nginx-1` and `environment=standalone`. This assumes you have set the optional environment tag while configuring collection.
 3. Go to Manage Data > Alerts > Monitors.
 4. Click **Add**.
 5. Click Import and then copy-paste the above JSON to import monitors.
 
-The monitors are disabled by default. Once you have installed the alerts using this method, navigate to the Nginx folder under **Monitors** to configure them. See [this](/docs/alerts/monitors/index.md) document to enable monitors to send notifications to teams or connections. See the instructions detailed in Step 4 of this [document](/docs/alerts/monitors#add-a-monitor).
+The monitors are disabled by default. Once you have installed the alerts using this method, navigate to the Nginx folder under **Monitors** to configure them. See the [Monitors document](/docs/alerts/monitors) to enable monitors to send notifications to teams or connections. See the instructions detailed in Step 4 of this [document](/docs/alerts/monitors#add-a-monitor).
 
 
 ### Method B: Using a Terraform script
 
-1. **Generate a Sumo Logic access key and ID** Generate an access key and access ID for a user that has the Manage Monitors role capability in Sumo Logic using these[ instructions](/docs/manage/security/access-keys#manage-your-access-keys-on-preferences-page). Identify which deployment your Sumo Logic account is in, using this [link](https://help.sumologic.com/APIs/General-API-Information/Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security).
+1. **Generate a Sumo Logic access key and ID** Generate an access key and access ID for a user that has the Manage Monitors role capability in Sumo Logic using these[ instructions](/docs/manage/security/access-keys#manage-your-access-keys-on-preferences-page). Identify which deployment your Sumo Logic account is in, using this [link](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
 2. **[Download and install Terraform 0.13](https://www.terraform.io/downloads.html) or later**
 3. **Download the Sumo Logic Terraform package for Nginx alerts** The alerts package is available in the Sumo Logic GitHub [repository](https://github.com/SumoLogic/terraform-sumologic-sumo-logic-monitor/tree/main/monitor_packages/Nginx). You can either download it through the “git clone” command or as a zip file.
 4. **Alert Configuration** After the package has been extracted, navigate to the package directory `terraform-sumologic-sumo-logic-monitor/monitor_packages/Nginx/`.
@@ -409,7 +405,7 @@ connection_notifications = [
 
 Replace `<CONNECTION_ID>` with the connection id of the webhook connection. The webhook connection id can be retrieved by calling the [Monitors API](https://api.sumologic.com/docs/#operation/listConnections).
 
-For overriding payload for different connection types, refer to this [document](/docs/manage/connections-and-integrations/webhook-connections/set-up-webhook-connections.md).
+For overriding payload for different connection types, refer to this [document](/docs/manage/connections-and-integrations/webhook-connections/set-up-webhook-connections).
 
 ```bash title="Email Notifications Example"
 email_notifications = [
@@ -432,7 +428,7 @@ email_notifications = [
 If you haven’t enabled alerts and/or configured notifications through the Terraform procedure outlined above, we highly recommend enabling alerts of interest and configuring each enabled alert to send notifications to other users or services. This is detailed in Step 4 of [this document](/docs/alerts/monitors#add-a-monitor).
 
 :::note
-There are limits to how many alerts can be enabled. See the [Alerts FAQ](/docs/alerts/monitors/monitor-faq.md).
+There are limits to how many alerts can be enabled. See the [Alerts FAQ](/docs/alerts/monitors/monitor-faq).
 :::
 
 
@@ -463,7 +459,7 @@ Panels will start to fill automatically. It's important to note that each panel 
 ## Viewing Nginx Dashboards
 
 :::tip Filter with template variables    
-Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards-new/filter-with-template-variables.md).
+Template variables provide dynamic dashboards that can rescope data on the fly. As you apply variables to troubleshoot through your dashboard, you view dynamic changes to the data for a quicker resolution to the root cause. You can use template variables to drill down and examine the data on a granular level. For more information, see [Filter with template variables](/docs/dashboards-new/filter-template-variables).
 :::
 
 
@@ -586,7 +582,7 @@ Use this dashboard to:
 
 ## Nginx Alerts
 
-Sumo Logic has provided out-of-the-box alerts available through [Sumo Logic monitors](/docs/alerts/monitors/index.md) to help you quickly determine if the Nginx server is available and performing as expected. These alerts are built based on logs and metrics datasets and have preset thresholds based on industry best practices and recommendations. They are as follows:
+Sumo Logic has provided out-of-the-box alerts available through [Sumo Logic monitors](/docs/alerts/monitors) to help you quickly determine if the Nginx server is available and performing as expected. These alerts are built based on logs and metrics datasets and have preset thresholds based on industry best practices and recommendations. They are as follows:
 
 <table>
   <tr>

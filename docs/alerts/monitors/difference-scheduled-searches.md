@@ -22,12 +22,12 @@ Apart from the differences in the use cases, there are a couple of feature diffe
 | Customization of Notification | Yes | Yes |
 | Auto Resolution of Incidents | No | Yes |
 | Send Notification to multiple channels | No | Yes |
-| Disable/Mute Alerts | No | Yes |
+| Disable Alerts | No | Yes (Disable is a manual operation. We don't support scheduled disabling of alerts.) |
 | API Support | Partial* (Supported via content sync API) | Yes |
 | Terraform Support | No<br/>*The Content API resource allows you to manage Schedule Searches, see [https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/content](https://registry.terraform.io/providers/SumoLogic/sumologic/latest/docs/resources/content) | Yes |
 | All Log Operators supported | Yes*<br/>(Some operators are not supported for Real time alerts) | Yes |
 | Outlier based alerts | Yes | Yes |
-| Access Control | Object Level Access Control | Feature Level Access Control |
+| Access Control | Object Level Access Control | Folder Level Access Control (Per request - limited availability - for monitors only.) |
 | Audit Logs for CRUD and System Events (like Notifications Sent, Failures etc.) | Yes | Yes |
 | Control Over Schedule of alert/When alert is evaluated | Yes | No |
 | One Notification per Log Line | Yes | No |

@@ -1,8 +1,8 @@
 ---
 id: role-capabilities
+title: Role Capabilities
 ---
 
-# Role Capabilities
 
 You can assign any of the following capabilities when you [create roles](create-manage-roles.md).
 
@@ -23,7 +23,7 @@ You can assign any of the following capabilities when you [create roles](creat
 | Manage Partitions | View, create, edit, and delete [Partitions](/docs/manage/partitions-and-data-tiers). Note that if you grant a role the Manage Partitions capability, users with that role will also have View Partitions and Manage S3 data forwarding capabilities. |
 | View Scheduled Views | View [Scheduled Views](/docs/manage/scheduled-views). |
 | Manage Scheduled Views  | View, create, edit, and delete [Scheduled Views](/docs/manage/scheduled-views). Note that if you grant a role the Manage Schedule View capability, users with that role will also have View Scheduled View capabilities. |
-| Manage S3 data forwarding | [Manage S3 data forwarding](../../data-forwarding/data-forwarding-to-s3.md) from Sumo Logic to an S3 bucket. |
+| Manage S3 data forwarding | [Manage S3 data forwarding](../../data-forwarding/amazon-s3-bucket.md) from Sumo Logic to an S3 bucket. |
 | Manage Content | Manage the content for your organization. This provides access to [Admin Mode](../../content-sharing/admin-mode.md) in the Library. |
 | Manage Tokens | Manage [Installation Tokens](../../security/installation-tokens.md). |
 | View Account Overview | View the Account Overview page. |
@@ -118,14 +118,14 @@ CSE has been enabled for your account.
 | Manage Tag Schemas | Create, edit, and delete schema key tags, which can be attached to Insights, Signals, Entities, and Rules.  |
 | Manage Favorite Fields | Add and remove favorite fields by clicking the star icon next to the fields in CSE Records. |
 
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+
+
+
+
+
+
+
+
+
+
  

@@ -1,8 +1,9 @@
 ---
 slug: /search/logreduce
+title: LogReduce
 ---
 
-# LogReduce
+
 
 The LogReduce algorithm uses fuzzy logic to cluster messages together based on string and pattern similarity. Use the LogReduce button and operator to quickly assess activity patterns for things like a range of devices or traffic on a website.
 
@@ -20,7 +21,7 @@ Watch our video on LogReduce. 
         className="video-container"
         display="initial"
         position="relative"
-        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allow="accelerometer; autoplay=1; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
         />
 

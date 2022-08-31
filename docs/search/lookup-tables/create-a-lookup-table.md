@@ -1,8 +1,9 @@
 ---
 id: create-a-lookup-table
+title: Create a Lookup Table
 ---
 
-# Create a Lookup Table
+
 
 This section has instructions for creating and and managing Lookup Tables using the Sumo Logic UI.
 
@@ -38,7 +39,7 @@ A Lookup Table can't have a forward slash (/) in its name or be stored in a fol
 
 When you create a Lookup Table schema, note the following requirements:
 
-* The following strings are reserved (case-insensitive) and should not be used as field names: 
+* The following strings are reserved (case-insensitive) and should not be used as field names:
 
     "pkv", "tid-cid-s", "mt", "tid-sk-1", "tid-sk-2", "tid-sk-3", "tid-sk-4", "tid-sk-5", "tid-sk-6", "tid-sk-7", "tid-sk-8", "tid-sk-9", "tid-sk-10", "tid-sk-11", "tid-sk-12", "tid-sk-13", "tid-sk-14", "tid-sk-15", "tid-sk-16", "tid-sk-17", "tid-sk-18", "tid-sk-19", "tid-sk-20", "`_messagetime`", "`_receipttime`", "`_sourceCategory`", "`_sourceHost`", "`_sourceName`", "`_source`", "`_sourceid`", "`_collector`", "`_collectorid`", "`_view`", "`_index`"
 
@@ -91,10 +92,10 @@ schema without populating the table.
    * ***Lookup Name**. Enter a name for the Lookup Table.
    * **Description.** (Optional.)  Enter a description of the Lookup Table.
    * **Do you want a TTL for table entries?** A TTL specifies a time limit beyond which an unchanged row in the table will be unavailable for reads and will be deleted. For example, if you set a TTL of 5 minutes for a lookup table, when 5 minutes pass without a row being updated, that row will no longer be returned by lookups and will be deleted from the lookups table. A TTL is useful for managing the freshness of the data and the size of the table.
-       
+
        1. Click **Yes** if you want to set a TTL.
        1. Enter an integer value in the **Duration** field, and select a unit of time from the pulldown:  **Seconds**, **Minutes** (default), **Hours**, or **Days**.
-   
+
    * **Size Limit Handling**. This option controls how on how additions to the Lookup table will be handled when it reaches its size limit (100 MB)
        * **Stop Incoming Data**. Once the Lookup Table size limit is reached, no new data will be added to the table. 
        * **Delete Old Data**. The rows that have been modified or updated least recently will be replaced by new rows.
@@ -129,7 +130,7 @@ No spaces are allowed between quotes and values for field names. For example, `"
 As you name your fields, note the information in [Reserved keywords](#reserved-keywords).
 
 1. Go to the Sumo Logic Library.
-1. Click **Add New** and then select **New Lookup**. 
+1. Click **Add New** and then select **New Lookup**.
 
     ![new-lookup-button.png](/img/search/lookup-tables/new-lookup-button.png)
 
@@ -138,7 +139,7 @@ As you name your fields, note the information in [Reserved keywords](#reserved-k
    * **Lookup Name**. Enter a name for the Lookup Table.
    * **Description.** (Optional.)  Enter a description of the Lookup Table.
    * **Do you want a TTL for table entries?** A TTL specifies a time limit beyond which an unchanged row in the table will be unavailable for reads and will be deleted. For example, if you set a TTL of 5 minutes for a lookup table, when 5 minutes pass without a row being updated, that row will no longer be returned by lookups and will be deleted from the lookups table. A TTL is useful for managing the freshness of the data and the size of the table. 
-    
+
        1. Click **Yes** if you want to set a TTL.
        1. Enter an integer value in the **Duration** field, and select a unit of time from the pulldown:  **Seconds**, **Minutes**
            (default), **Hours**, or **Days**.
@@ -147,7 +148,7 @@ As you name your fields, note the information in [Reserved keywords](#reserved-k
 1. The **Upload File** section appears.  
 
     ![upload-file.png](/img/search/lookup-tables/upload-file.png)
-   
+
    * **Advanced Upload Settings**. (Optional.) If your .csv file is encoded in a format other than UTF-8, select the format from the pull-down.
 
 1. Click **Upload**.

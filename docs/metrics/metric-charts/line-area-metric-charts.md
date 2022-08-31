@@ -1,7 +1,7 @@
 ---
 id: line-area-metric-charts
 title: Create and Tailor Line and Area Metrics Charts
-sidebar_label: Create and Tailor Line and Area Metrics Charts
+sidebar_label: Line and Area Metrics Charts
 description: How to tailor line charts and area charts for metric queries.
 ---
 

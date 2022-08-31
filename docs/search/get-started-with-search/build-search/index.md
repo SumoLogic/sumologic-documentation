@@ -1,5 +1,6 @@
 ---
 slug: /search/get-started-with-search/build-search
+title: Build Searches
 ---
 
 This guide provides information on building searches.
@@ -56,4 +57,3 @@ For example, look at the following queries:
 * `* | parse "queryTime=* " as queryTime | where queryTime\> 10000 | parse "uid=* " as ``uid`
 
 Because most log lines have a `uid`, but only a small fraction have `queryTime > 10000`, the second query is more efficient.
-

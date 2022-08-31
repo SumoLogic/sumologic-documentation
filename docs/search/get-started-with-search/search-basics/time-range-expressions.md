@@ -1,8 +1,9 @@
 ---
 id: time-range-expressions
+title: Time Range Expressions
 ---
 
-# Time Range Expressions
+
 
 When you are building a search query, you have the option to add a time range expression in the time range field.
 

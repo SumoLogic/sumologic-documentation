@@ -1,8 +1,9 @@
 ---
 id: secure-third-party-service-access
+title: Verification for Secure Third-Party Service Access
 ---
 
-# Verification for Secure Third-Party Service Access
+#
 
 Within Sumo Logic, several links in the **Help** menu connect to third-party services, such as **Documentation**, **Support**, **Feature Request**, and **Community**.
 
@@ -16,7 +17,7 @@ To verify your email:
 1. You will be prompted to verify your email. Click **Send Verification Email**.
 
     ![multi-account](/img/users-and-roles/multi_account_third_party_verify.png)
-    
+
 1. Check your email for the **Sumo Logic Email Verification Request**.
 1. Open the email and click **Verify Your Email**.
 

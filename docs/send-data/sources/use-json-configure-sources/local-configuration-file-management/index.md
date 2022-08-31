@@ -1,8 +1,9 @@
 ---
 slug: /send-data/sources/use-json-configure-sources/local-configuration-file-management
+title: Local Configuration File Management
 ---
 
-# Local Configuration File Management
+
 
 With local configuration file management, you can configure Sources for an Installed Collector in one or more UTF-8 encoded JSON files.
 
@@ -89,7 +90,7 @@ To convert existing Sources from Cloud Management to Local Configuration File Ma
 When using local file configuration management you specify the location of the JSON file or the folder that contains multiple JSON files in the Collector’s `config/user.properties` file. You need to use the `syncSources` parameter to point to your configuration file or folder. See `user.properties` for details on all of the available parameters.
 
 * **syncSources**. Use to define the Sources to configure upon Collector registration. The Source definitions will be continuously monitored and synchronized with the Collector's configuration. 
- 
+
   * On \*nix, to point to a JSON file that defines Sources for a Collector:
 
     `syncSources=/path/to/sources.json`

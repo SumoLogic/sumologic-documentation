@@ -1,8 +1,8 @@
 ---
 id: collect-metrics-vrealize-operations-manager
+title: Collect metrics from VMware vRealize Operations Manager 8 Enterprise
 ---
 
-# Collect metrics from VMware vRealize Operations Manager 8 Enterprise
 
 With vRealize Operations Manager (vRops) software, you can proactively
 identify and solve emerging issues with predictive analysis and smart
@@ -41,7 +41,7 @@ Without adequate permissions (read/write/execute) for the directories in which t
 1. Verify that the user account that will be running the Sumo Logic vRops scripts has full read/write/execute permissions for the directories in which the collection scripts will be extracted. [sumo-vsphere-ulm.zip](https://s3.amazonaws.com/appdevstore/VMWare/sumo-vsphere-ulm.zip)
 
   :::important
-  Without adequate permissions (read/write/execute) for the directories in which the  scripts reside, unexpected script errors will occur. 
+  Without adequate permissions (read/write/execute) for the directories in which the  scripts reside, unexpected script errors will occur.
   :::
 
 1. Edit the **cron_vrops_metrics.sh** script, changing the `SCRIPT_PATH` variable to reflect the **absolute path** where the script resides.
@@ -63,11 +63,11 @@ This section explains how to set up a vCenter server, host, or VM to collect log
 **Collecting metrics**
 
 Collecting performance metrics involves using scripts to call the vRops API to extract performance statistics.   
-  
+
 Metric data collection for vRops servers works by getting data from vRops server in parallel, using multiple threads. The number of threads depends on the amount of data you are collecting and the frequency of the collection.  
-  
+
 The number of threads can be controlled using a property `THREADSIZE_POOL` in the config.json config file. You can also control the number of objects processed by a single thread using the property BATCH_SIZE. The following is a description of all the configuration properties.  
-  
+
 * `BATCH_SIZE`: Default 50, Simultaneous objects processed by a single thread for retrieving the metrics.  
 * `DEFAULT_THREADSIZE_POOL`: Default 4, Number of threads  
 * `SSL_VERIFY`: Default False, if using SSL, set as True  
@@ -75,7 +75,7 @@ The number of threads can be controlled using a property `THREADSIZE_POOL` in th
 * `BACKFILL_HOURS`: Default 1, number of backfill hours for which to get metrics for.  
 * `GET_ALL_METRICS`: Default False, Get all metrics for all resources. Not recommended on Production servers as the number of resources and metrics will be huge.  
 * `resources`: Used for getting specific metrics for specific resources. This is an array of resource objects that specify which metrics to retrieve for which resources. You can add/remove a separate section for each resource along with the metrics to be retrieved.  
-  
+
   For Example:
 
   ```json
@@ -103,7 +103,7 @@ The number of threads can be controlled using a property `THREADSIZE_POOL` in th
 
 To collect performance metrics, do the following:
 
-1. Follow the instructions to configure a [Streaming Metrics Source](../../sources/sources-installed-collectors/streaming-metrics-source.md). Make sure that the Content-Type is set to Carbon1.
+1. Follow the instructions to configure a [Streaming Metrics Source](../../sources/installed-collectors/streaming-metrics-source.md). Make sure that the Content-Type is set to Carbon1.
 
   ![VMware.png](/img/send-data/VMware.png)
 
@@ -155,7 +155,7 @@ Sample CRON job to periodically run the **cron_vrops_metrics.sh** script every 1
 ## Step 4: Encrypt passwords
 
 The scripts support symmetric authenticated cryptography—also known as secret key authentication—using the python Fernet implementation.  
-  
+
 To utilize encryption**, generate a key from the python command line:
 
 ```

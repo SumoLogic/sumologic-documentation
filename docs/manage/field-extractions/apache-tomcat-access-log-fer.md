@@ -1,9 +1,7 @@
 ---
 id: apache-tomcat-access-log-fer
+title: Sample Apache Tomcat 7 Access Log Field Extraction Rule
 ---
-
-# Sample Apache Tomcat 7 Access Log Field Extraction Rule
-
 
 **Rule Name:** Tomcat Access Log  
 
@@ -11,7 +9,7 @@ id: apache-tomcat-access-log-fer
 
 **Rule Description:** Parse the Remote IP address, Method, Requested URL path, HTTP status code, Time Taken, and Bytes Sent.
 
-  
+
 **Sample Log:**
 
 ```
@@ -36,4 +34,3 @@ id: apache-tomcat-access-log-fer
 | bytes_sent |   | 6234 |
 
  
-

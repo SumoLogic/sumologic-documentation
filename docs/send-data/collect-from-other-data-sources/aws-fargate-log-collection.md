@@ -1,8 +1,9 @@
 ---
 id: aws-fargate-log-collection
+title: Collect AWS ECS Fargate Container Logs
 ---
 
-# Collect AWS ECS Fargate Container Logs
+
 
 This page describes how to collect application container logs from AWS ECS clusters launched with AWS Fargate using AWS FireLens. This method also works with ECS clusters with EC2 containers. However, the recommended method for collecting EC2 logs is to utilize the [Docker logging driver](docker-collection-methods.md).
  
@@ -39,7 +40,7 @@ When you configure the HTTP Source, make sure to save the HTTP Source Address UR
 To add a hosted collection and HTTP source, do the following:
 
 1. In Sumo Logic, configure a [Hosted Collector](../configure-hosted-collector.md).
-1. In Sumo Logic, configure an [HTTP Source](/docs/send-data/sources/sources-hosted-collectors/http-logs-metrics-source).
+1. In Sumo Logic, configure an [HTTP Source](/docs/send-data/sources/hosted-collectors/http-logs-metrics-source).
 
 ## Step 2: Create an AWS task definition and service
 
@@ -117,7 +118,7 @@ In the sample JSON we've provided, the [FireLens](https://docs.aws.amazon.com/
 If you would like to keep this configuration, then create a [log group](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/Working-with-log-groups-and-streams.html) named **“awslogs-ecs-fargate-sumo”** in **us-west-1**. Also replace the [task execution role](https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_execution_IAM_role.html) if it is named other than the default **“executionRoleArn”** and populate the **account id** shown in bold in the following example:
 
 ```
-"executionRoleArn": 
+"executionRoleArn":
 "arn:aws:iam::<account_id>:role/ecsTaskExecutionRole"
 ```
 
@@ -157,7 +158,7 @@ You will use the following command syntax to launch the service. The command 
 ```bash
 aws ecs create-service   --cluster fargate-ecs-firelens-cluster       
 --service-name firelens-sumologic-fargate    --task-definition firelens-sumologic-fargate:1   
---desired-count 1   --region us-west-1   --launch-type "FARGATE"   --network-configuration 
+--desired-count 1   --region us-west-1   --launch-type "FARGATE"   --network-configuration
 "awsvpcConfiguration={subnets=[subnet-1,subnet-2],securityGroups=[sg-1],assignPublicIp=ENABLED}"
 ```
 
@@ -194,7 +195,7 @@ When you configure the HTTP Source, make sure to save the HTTP Source Address UR
 To add a hosted collection and HTTP source, do the following:
 
 1. In Sumo Logic, configure a [Hosted Collector](../configure-hosted-collector.md).
-1. In Sumo Logic, configure an [HTTP Source](/docs/send-data/sources/sources-hosted-collectors/http-logs-metrics-source).
+1. In Sumo Logic, configure an [HTTP Source](/docs/send-data/sources/hosted-collectors/http-logs-metrics-source).
 
 ### Step 2: Create the task definition
 
@@ -231,7 +232,7 @@ To create a centralized Fluentd aggregator, do the following:
 1. Forward the logs to the Fluentd aggregator using the following application container log driver configuration. Replace "**fluentdhost**" (shown in bold in the following example) with the actual name of  your Fluentd host.
 
 ```
-"logConfiguration": 
+"logConfiguration":
   {
     "logDriver":"awsfirelens",
     "options": {
@@ -339,7 +340,7 @@ For Fargate, to create, deploy, and use custom fluent bit image, do the follow
   ```
   aws ecs create-service       --cluster fargate-cluster      --service-name firelens-sumologic-fargate-ext-image       
   --task-definition firelens-sumo-fargate-external-config-custom-image:1       --desired-count 1       
-  --region us-west-1       --launch-type "FARGATE"  --network-configuration 
+  --region us-west-1       --launch-type "FARGATE"  --network-configuration
   "awsvpcConfiguration={subnets=[subnet-1,subnet-2],securityGroups=[security group],assignPublicIp=ENABLED}"
   ```
 
