@@ -3,7 +3,7 @@ id: aws-fargate-log-collection
 title: Collect AWS ECS Fargate Container Logs
 ---
 
-#
+
 
 This page describes how to collect application container logs from AWS ECS clusters launched with AWS Fargate using AWS FireLens. This method also works with ECS clusters with EC2 containers. However, the recommended method for collecting EC2 logs is to utilize the [Docker logging driver](docker-collection-methods.md).
  

@@ -1,8 +1,8 @@
 ---
 id: save-search
+title: Save a Search
 ---
 
-# Save a Search
 
 Whether you are running ad hoc searches during a forensic investigation or running standard searches for health checks, you can save any search to run again later.
 

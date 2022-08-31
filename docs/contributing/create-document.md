@@ -15,7 +15,7 @@ Create a markdown file with filename.md in a /docs folder that best matches the 
 
 ## 2. Add doc title and metadata
 
-See [Markdown Features > Front Matter](/docs/contribution/markdown-features#front-matter) to learn how.
+See [Markdown Features > Front Matter](/docs/contributing/markdown-features#front-matter) to learn how.
 
 ## 3. Add doc content
 
@@ -23,7 +23,7 @@ See [Markdown Cheat Sheet](markdown-features.md) to learn about how to write in 
 
 ### Code of Conduct
 
-Help us keep Sumo Logic open and inclusive. Read and follow our [Code of Conduct](/docs/contribution/code-of-conduct).
+Help us keep Sumo Logic open and inclusive. Read and follow our [Code of Conduct](/docs/contributing/code-of-conduct).
 
 ### Images
 
@@ -49,26 +49,26 @@ The `sidebars.ts` file (in repo root) controls the side navigation for the entir
 
 ```js title="sidebars.ts"
 //Contribution guide for documentation
-  contribution: [
+  contributing: [
     {
       type: 'category',
       label: 'Contribution Guide',
       collapsible: true,
       collapsed: false,
-      link: {type: 'doc', id: 'contribution/index'},
+      link: {type: 'doc', id: 'contributing/index'},
       items: [
-        'contribution/create-document',
-        'contribution/markdown-features',
-        'contribution/release-notes',
-        'contribution/build-deploy',
-        'contribution/translations',
+        'contributing/create-document',
+        'contributing/markdown-features',
+        'contributing/release-notes',
+        'contributing/build-deploy',
+        'contributing/translations',
         {
           type: 'category',
           label: 'Templates',
           collapsible: true,
           collapsed: false,
           items: [
-            'contribution/templates/partner-app'
+            'contributing/templates/partner-app'
           ]
         }
       ],
@@ -207,4 +207,4 @@ To end builds and served sites, hit **Ctrl + C**. You can then enter commands ag
 
 ## 6. Submit Your Request
 
-See [Clone Sumo Docs Repository](/docs/contribution#clone-sumo-docs-repository) for instructions.
+See [Clone Sumo Docs Repository](/docs/contributing#clone-sumo-docs-repository) for instructions.

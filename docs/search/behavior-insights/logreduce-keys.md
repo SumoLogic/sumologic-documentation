@@ -1,8 +1,8 @@
 ---
 id: logreduce-keys
+title: LogReduce Keys
 ---
 
-# LogReduce Keys
 
 The **LogReduce Keys** operator allows you to quickly explore JSON or key-value formatted logs by schemas. If you have a large volume of JSON or key-value logs with different formats and aren't sure which ones you need to focus on, this operator can process them into their object schemas so you can review which ones are relevant to your needs.
 
@@ -58,8 +58,8 @@ Results can be returned in two ways:
 ## Examples
 
 ```sql
-_sourcecategory = "Labs/AWS/GuardDuty_V8" 
-| json keys "region", "partition", "resource" 
+_sourcecategory = "Labs/AWS/GuardDuty_V8"
+| json keys "region", "partition", "resource"
 | logreduce keys field=resource
 ```
 
@@ -68,7 +68,7 @@ _sourcecategory = "Labs/AWS/GuardDuty_V8"
 To get a summary of patterns in Kubernetes event logs you can quickly scan for unique schemas with LogReduce Keys:
 
 ```sql
-_sourceCategory="primary-eks/events" 
+_sourceCategory="primary-eks/events"
 | logreduce keys
 ```
 
@@ -85,19 +85,19 @@ Next, use [LogReduce Values to explore the schema based on specific keys](logr
 To get a summary of patterns in AWS CloudTrail logs that reference AccessDenied errors for AWS you'd use a query such as the following:
 
 ```sql {13}
-_sourceCategory=*cloudtrail* *AccessDenied*  
-| json field=_raw "userIdentity.userName" as userName nodrop 
-| json field=_raw "userIdentity.sessionContext.sessionIssuer.userName" as userName_role nodrop 
-| if (isNull(userName), if(!isNull(userName_role),userName_role, "Null_UserName"), userName) as userName  
-| json field=_raw "eventSource" as eventSource 
-| json field=_raw "eventName" as eventName 
-| json field=_raw "awsRegion" as awsRegion 
-| json field=_raw "errorCode" as errorCode nodrop 
-| json field=_raw "errorMessage" as errorMessage nodrop 
-| json field=_raw "requestParameters.bucketName" as bucketName nodrop 
-| json field=_raw "recipientAccountId" as accountId 
-| where errorCode matches "*AccessDenied*" and eventSource matches "s3.amazonaws.com"  and accountId matches "*" 
-| logreduce keys  
+_sourceCategory=*cloudtrail* *AccessDenied* 
+| json field=_raw "userIdentity.userName" as userName nodrop
+| json field=_raw "userIdentity.sessionContext.sessionIssuer.userName" as userName_role nodrop
+| if (isNull(userName), if(!isNull(userName_role),userName_role, "Null_UserName"), userName) as userName 
+| json field=_raw "eventSource" as eventSource
+| json field=_raw "eventName" as eventName
+| json field=_raw "awsRegion" as awsRegion
+| json field=_raw "errorCode" as errorCode nodrop
+| json field=_raw "errorMessage" as errorMessage nodrop
+| json field=_raw "requestParameters.bucketName" as bucketName nodrop
+| json field=_raw "recipientAccountId" as accountId
+| where errorCode matches "*AccessDenied*" and eventSource matches "s3.amazonaws.com"  and accountId matches "*"
+| logreduce keys 
 | sort by _count desc
 ```
 

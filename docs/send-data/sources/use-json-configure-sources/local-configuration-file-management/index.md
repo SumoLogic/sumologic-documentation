@@ -3,7 +3,7 @@ slug: /send-data/sources/use-json-configure-sources/local-configuration-file-man
 title: Local Configuration File Management
 ---
 
-#
+
 
 With local configuration file management, you can configure Sources for an Installed Collector in one or more UTF-8 encoded JSON files.
 

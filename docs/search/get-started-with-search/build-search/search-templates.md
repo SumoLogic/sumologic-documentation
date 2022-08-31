@@ -1,8 +1,9 @@
 ---
 id: search-templates
+title: Search Templates
 ---
 
-# Search Templates
+
 
 Search templates can help you simplify searches for your users by giving them a few easy input choices. You can have search templates  replace any text in a query, including fields, keywords, and arguments to operators. You can also determine what type of information is valid such as text, strings, and keywords.
 
@@ -18,7 +19,7 @@ From any query you create, or an existing one you manage, you can create a searc
 1. Highlight the field, argument, or operator you want to replace and click **Create a parameter** or **alt+v** if you want to use the keyboard shortcut.  
 
     ![template variable selection](/img/search/get-started-search/build-search/search-templates/template-variable-selection.png)
-    
+
     :::note
     You can create a maximum of 10 parameters inside a search.
     :::
@@ -65,11 +66,11 @@ If you want to simplify a user search with a template, you can use label-value p
 For example, if we use the following sample query on how to locate users by IP addresses:
 
 ```sql
-_sourceCategory=service "Successful login from UI" 
-| parse "[auth=User:*:*:*] [remote_ip=*]" as user,user_id,g,remote_ip 
-| where user_id matches joeX 
-| lookup city, region, country_name ,latitude, longitude from geo://location on ip=remote_ip 
-| where region matches CA 
+_sourceCategory=service "Successful login from UI"
+| parse "[auth=User:*:*:*] [remote_ip=*]" as user,user_id,g,remote_ip
+| where user_id matches joeX
+| lookup city, region, country_name ,latitude, longitude from geo://location on ip=remote_ip
+| where region matches CA
 | count by latitude, longitude, user
 ```
 
@@ -115,7 +116,7 @@ Yet even this simple query requires users to know about the query language, the 
 ```sql
 _sourceCategory=apache_error
 | timeslice {{parameter}}m
-| count by _timeslice 
+| count by _timeslice
 ```
 
 Make sure you specify the right data type for timeslice, Number. You don't want users to input a string.

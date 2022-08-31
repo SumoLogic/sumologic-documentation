@@ -1,8 +1,7 @@
 ---
 id: sumo-distribution-opentelemetry
+title: Sumo Logic Distribution for OpenTelemetry
 ---
-
-# Sumo Logic Distribution for OpenTelemetry
 
 OpenTelemetry is the future of agent-based collection for Sumo Logic and OpenTelemtry Distro is our next generation collector built on OpenTelemetry. It provides a single unified agent to send Logs, Metrics, Traces, and Metadata for Observability to Sumo Logic.
 

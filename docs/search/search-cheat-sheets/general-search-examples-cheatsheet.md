@@ -1,9 +1,9 @@
 ---
 id: general-search-examples-cheatsheet
+title: General Search Examples Cheat Sheet
 description: Find query examples in this search cheatsheet.
 ---
 
-# General Search Examples Cheat Sheet
 
 :::sumo Query Library
 For a collection of customer created search queries and their use cases, see the [Sumo Logic Community Query Library](https://community.sumologic.com/s/topic/0TOE0000000g86fOAA/Query-Library).

@@ -1,10 +1,11 @@
 ---
 id: search-large-messages
+title: Search Large Messages
 ---
 
-# Search Large Messages
 
-When collecting log messages or event logs that are larger than 64KB in size, Sumo Logic slices the messages into a stream of smaller message chunks. 
+
+When collecting log messages or event logs that are larger than 64KB in size, Sumo Logic slices the messages into a stream of smaller message chunks.
 
 Chunks are ideally created at a line break depending on the Source type, protocol, and size of the message. Each section of the large messages is annotated with metadata to keep the message in order when viewing or searching the log.
 

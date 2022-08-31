@@ -1,8 +1,9 @@
 ---
 id: aws-kinesis-firehose-logs-source
+title: AWS Kinesis Firehose for Logs Source
 ---
 
-# AWS Kinesis Firehose for Logs Source
+
 
 An AWS Kinesis Firehose for Logs Source allows you to ingest CloudWatch logs or any other logs streamed and delivered via AWS Kinesis Data Firehose.
 
@@ -33,9 +34,9 @@ To create an AWS Kinesis Firehose for Logs Source:
     ![s3 replay enabled on Kinesis Logs Source.png](/img/send-data/s3-replay-enabled-on-Kinesis-Logs-Source.png)  
 
     Kinesis puts undelivered logs into a backup directory within your S3 bucket with the path `http-endpoint-failed/yyyy/MM/dd/00/` (`00` indicates UTC time zone). This is useful when you need to meet compliance requirements.
-    
+
     With this option enabled, you must specify a **Path Expression** that points to this backup directory. Start with the path prefix to your Kinesis bucket and append `http-endpoint-failed/` to it, followed by a wildcard \*. For example, `prefix-http-endpoint-failed/*`.
-    
+
     You can narrow the path by dates if needed. See [Custom Prefixes for Amazon S3 Objects](https://docs.aws.amazon.com/firehose/latest/dev/s3-prefixes.html#firehose-namespace) for details on the format of the backup path. The built-in metadata field `_sourceName` is given the object path name from the backup directory.
 
     :::important
@@ -48,7 +49,7 @@ To create an AWS Kinesis Firehose for Logs Source:
 
 1.  **Fields.** Click the **+Add Field** link to define the fields you want to associate, each field needs a name (key) and value.
 
-   * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema. 
+   * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
    * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema it is ignored, known as dropped.         
 
 1. Set any of the following options under **Advanced**. Advanced options do *not* apply to uploaded metrics.

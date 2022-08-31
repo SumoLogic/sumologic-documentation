@@ -8,7 +8,7 @@ Documentation staff members review issues and pull requests on a regular basis. 
 
 ## Contributing Content
 
-For details on contributions, see [Contributor Guidelines](/docs/contribution) and the [GitHub Wiki](https://github.com/SumoLogic/sumologic-documentation/wiki).
+For details on contributions, see [Contributor Guidelines](/docs/contributing) and the [GitHub Wiki](https://github.com/SumoLogic/sumologic-documentation/wiki).
 
 We recommend forking the repo, creating all content changes in branches, and submitting pull requests. We will work with you to get this content reviewed, tested, and merged for publishing.
 

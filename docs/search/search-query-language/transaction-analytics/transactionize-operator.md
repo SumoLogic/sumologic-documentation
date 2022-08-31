@@ -1,8 +1,9 @@
 ---
 id: transactionize-operator
+title: Transactionize Operator
 ---
 
-# Transactionize Operator
+
 
 The **Transactionize** operator groups log messages that match on any fields you specify. The groups created from the specified fields become the **transactions**.
 
@@ -46,14 +47,14 @@ Syntax section. For example, 
 | `maxLogs = [n]` | The transaction ends if the number of log messages in the transaction exceeds the specified number.
 | `startsWith = [string] [;strict]` | Log messages that match the string start a new transaction. Example: `startsWith="foo"`<br/>By default, this is not strictly enforced and results could include groups that do not start with the specified string. The `;strict` option ensures any non-matching groups are not included. |
 | `endsWith = [string] [;strict]` | Log messages that match the string end the current transaction. Example: `endsWith="foo";strict`<br/>By default, this is not strictly enforced and results could include groups that do not end with the specified string. The `;strict` option ensures any non-matching groups are not included. |
-| `keepOrphans = [true or false]` | true by default. Useful when a field is not a member of the transaction, but you want to keep it for comparison or analysis.​​​​| 
+| `keepOrphans = [true or false]` | true by default. Useful when a field is not a member of the transaction, but you want to keep it for comparison or analysis.​​​​|
 
 ## Limitations
 
 * Transactionize can analyze 50MB of raw logs at a time. When the buffer exceeds this limit, older transactions leaving the buffer might not be grouped with recent transactions entering the buffer, yielding results that might not be grouped correctly. If this is the case, you will get a warning message that reads:  
-      
+
     `The transactionize operator has reached its memory limit; transactions could be emitted prematurely.`  
-      
+
     To address this situation, try one or more of these options:
     * Reduce the [time range](../../get-started-with-search/build-search/set-time-range.md) of your search to reduce the scope.
     * Reduce the scope of your search by using parameters (such as `maxlogs`, `maxspan`, or `endswith`) that are listed above in the [Parameters](#parameters) section.
@@ -83,10 +84,10 @@ nodrop to extract each session ID, then run transactionize to group the
 logs with a query similar to:
 
 ```sql
-| parse "[system=001] [sessionId=*]" as system1Id nodrop 
-| parse "[system=002][sessionId=*]" as system2Id nodrop 
-| parse "[system=003][sessionId=*]" as system3Id nodrop 
-| parse "system=001 with sessionId=*" as system1Id nodrop 
+| parse "[system=001] [sessionId=*]" as system1Id nodrop
+| parse "[system=002][sessionId=*]" as system2Id nodrop
+| parse "[system=003][sessionId=*]" as system3Id nodrop
+| parse "system=001 with sessionId=*" as system1Id nodrop
 | transactionize system1Id, system2Id, system3Id
 ```
 

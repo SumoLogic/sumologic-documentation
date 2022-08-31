@@ -1,8 +1,9 @@
 ---
 id: search-from-field-browser
+title: Search from the Field Browser
 ---
 
-# Search from the Field Browser
+
 
 Depending on the type of field you want to drill down into, you can run searches in two ways:
 

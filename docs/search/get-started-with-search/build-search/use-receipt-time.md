@@ -1,8 +1,8 @@
 ---
 id: use-receipt-time
+title: Use Receipt Time
 ---
 
-# Use Receipt Time
 
 To search data based on the order that Collectors received the messages use **Receipt Time**. This option has the search reference the [metadata](../search-basics/built-in-metadata.md "Search Metadata") field `_receiptTime` instead of `_messageTime`, giving you the abilityto view the difference in the parsed[timestamp](../../../send-data/sources/reference-information-sources/time-reference.md) (`_messageTime`) and receipt time (`_receiptTime`) to pinpoint Sources that may be parsing the message's timestamps incorrectly.
 

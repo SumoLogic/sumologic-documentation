@@ -3,7 +3,6 @@ id: collect-logs-aws-fargate
 title: Collect Logs from AWS Fargate
 ---
 
-#
 
 This page describes how to collect logs from AWS Fargate.
 

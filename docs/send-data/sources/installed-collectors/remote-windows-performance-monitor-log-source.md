@@ -3,7 +3,6 @@ id: remote-windows-performance-monitor-log-source
 title: Remote Windows Performance Monitor Log Source
 ---
 
-#
 
 :::important
 This Source is no longer supported or available with Collector version 19.361-8.
