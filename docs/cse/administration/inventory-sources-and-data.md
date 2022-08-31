@@ -1,10 +1,10 @@
-
 ---
 id: inventory-sources-and-data
 title: Inventory Sources and Data
 sidebar_label: Inventory Sources and Data
 description: Inventory data is information about computers and users in your environment that CSE uses to provide context to Entities in the CSE UI.
 ---
+
 import useBaseUrl from '@docusaurus/useBaseUrl';
 
 This topic has information about _inventory sources_ and the _inventory data_ they collect. 
@@ -19,15 +19,15 @@ The screenshots in this section show how CSE presents inventory data in the UI.
 
 This screenshot shows inventory data for a user for a user on the **Insight Details** page. When you mouse over the **Entity** value a popup appears, and displays any inventory that is available for the Entity.
 
-<img src={useBaseUrl(img/cse/entity-data-popup.png)} alt="entity-inventory.png" />
+<img src={useBaseUrl('img/cse/entity-data-popup.png')} alt="CSE image" width="400" />
 
 This screenshot shows the **Entity Details** page; inventory data is displayed for a user.
 
-<img src={useBaseUrl(img/cse/entity-data-popup.png)} alt="entity-data-popup.png" />
+<img src={useBaseUrl('img/cse/entity-inventory.png')} alt="CSE image" width="400"/>
 
 ## About inventory data sources 
 
-Sumo Logic provides a number of [Sources](/docs/send-data/sources.md) you can use to ingest inventory data from services such as Microsoft Azure AD, Carbon Black, and AWS EC2. Each inventory source is listed in the Inventory Source Mapping section below. The mapping table for each source shows the inventory attributes that are populated and the associated data source field or fields for each.
+Sumo Logic provides a number of [Sources](/docs/send-data/sources) you can use to ingest inventory data from services such as Microsoft Azure AD, Carbon Black, and AWS EC2. Each inventory source is listed in the Inventory Source Mapping section below. The mapping table for each source shows the inventory attributes that are populated and the associated data source field or fields for each.
 
 Some of the inventory sources are strictly for collecting inventory data—such sources usually include “Inventory” in the source name, for example the **Microsoft Azure AD Inventory Source**. A few of the sources that collect inventory data also collect event data. For example, the **Sailpoint Source** collects inventory data about users and also collects events from the SalePoint Search API. 
 
@@ -35,7 +35,7 @@ Some inventory sources provide user inventory information, some provide computer
 
 | Inventory source | Type of source | Inventory data collected | 
 | :-- | :-- | :-- | 
-| (CSE AWS EC2 Inventory Source)[/docs/send-data/sources/hosted-collectors/cloud-to-cloud-integration-framework/cse-aws-ec-inventory-source.md] | Cloud-to-Cloud | Computer | 
+| [CSE AWS EC2 Inventory Source](docs/send-data/sources/hosted-collectors/cloud-to-cloud-integration-framework/cse-aws-ec-inventory-source.md)| Cloud-to-Cloud | Computer |
 | [Microsoft Azure AD Inventory Source](/docs/send-data/sources/hosted-collectors/cloud-to-cloud-integration-framework/microsoft-azure-ad-inventory-source.md) | Cloud-to-Cloud | Computer and User |
 | [Carbon Black Inventory Source](/docs/send-data/sources/hosted-collectors/cloud-to-cloud-integration-framework/carbon-black-inventory-source.md) | Cloud-to-Cloud | Computer |
 | [Google Workspace Source](/docs/send-data/sources/hosted-collectors/cloud-to-cloud-integration-framework/google-workspace-source.md) | Cloud-to-Cloud | User |
@@ -43,7 +43,7 @@ Some inventory sources provide user inventory information, some provide computer
 | [Sailpoint Source](/docs/send-data/sources/hosted-collectors/cloud-to-cloud-integration-framework/sailpoint-source.md) | Cloud-to-Cloud] | User |
 | [SentinelOne Mgmt API Source](/docs/send-data/sources/hosted-collectors/cloud-to-cloud-integration-framework/sentinelone-mgmt-api-source.md) | Cloud-to-Cloud | Computer |
 | [Tenable Source](docs/send-data/sources/hosted-collectors/cloud-to-cloud-integration-framework/tenable-source.md) | Cloud-to-Cloud | Computer |  
-|[Windows Active Directory Inventory Source(]) | Part of Installed Collector | Computer and User |  
+|[Windows Active Directory Inventory Source](docs/send-data/sources/installed-collectors/windows-active-directory-source.md) | Part of Installed Collector | Computer and User |  
 
 ## Best practices for collecting inventory data 
 
