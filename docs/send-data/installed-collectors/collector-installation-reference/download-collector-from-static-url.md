@@ -1,12 +1,13 @@
 ---
 id: download-collector-from-static-url
+title: Download a Collector from a Static URL
 ---
 
-# Download a Collector from a Static URL
+
 
 Use our static URLs to download the most recent version of a Collector. The version of the Collector will be updated each time there is a release or patch.
 
-This document provides static URLs to download our [Installed Collector](../about-installed-collectors.md) agent. If you need our **Distribution of OpenTelemetry**, go to our [GitHub repository](https://github.com/SumoLogic/sumologic-otel-collector/releases).
+This document provides static URLs to download our [Installed Collector](../about.md) agent. If you need our **Distribution of OpenTelemetry**, go to our [GitHub repository](https://github.com/SumoLogic/sumologic-otel-collector/releases).
 
 1. Open a terminal window or command prompt, depending on your host type.
 1. Invoke a web request utility such as wget or Invoke-WebRequest.   For example if you're on a Linux 64-bit host, you can wget the Collector from the command line:
@@ -37,7 +38,7 @@ Older versions of PowerShell might fail to download the installer executable wit
 
 Each Sumo deployment has URLs used to download Collector software. See how to determine which endpoint to use if you are unsure.
 
-The latest release of the Sumo Collector targets the Java 8 runtime. Java 6 and Java 7 are no longer supported as the Collector runtime, and Solaris is no longer supported. When you upgrade Collectors, JRE 8 or later is required. The Sumo Collector with a bundled JRE now ships with JRE 8, so in this case no action is required. 
+The latest release of the Sumo Collector targets the Java 8 runtime. Java 6 and Java 7 are no longer supported as the Collector runtime, and Solaris is no longer supported. When you upgrade Collectors, JRE 8 or later is required. The Sumo Collector with a bundled JRE now ships with JRE 8, so in this case no action is required.
 
 ### AU Collector download URLs
 

@@ -1,8 +1,8 @@
 ---
 id: collect-logs-azure-blob-storage
+title: Collect Logs from Azure Blob Storage
 ---
 
-# Collect Logs from Azure Blob Storage
 
 :::sumo
 This section has instructions for configuring a pipeline for shipping logs available from Azure Blob Storage to an Event Hub, on to an Azure Function, and finally to an HTTP source on an hosted collector in Sumo Logic. 
@@ -36,7 +36,7 @@ To configure an Azure storage account, do the following:
 1. Create a new storage account General-purpose v2 (GPv2) storage account. For instructions, see [Create a storage account](https://docs.microsoft.com/en-us/azure/storage/common/storage-quickstart-create-account?tabs=portal ) in Azure help.
 1. Create a container(Optional) all services in azure create containers automatically. This step is needed only when you are exporting custom logs in some container.
 
-   * In the Azure portal, navigate to the storage account you just created (in the previous step). 
+   * In the Azure portal, navigate to the storage account you just created (in the previous step).
    * Select **Blobs** under **Blob Service**.
    * Select **+ Container**.
    * Enter the Name.
@@ -58,7 +58,7 @@ In this step, you configure an HTTP source to receive logs from the Azure functi
 
 In this step, you use a Sumo-provided Azure Resource Manager (ARM) template to create an Event Hub, three Azure functions, Service Bus Queue, and a Storage Account.
 
-1. Download the [blobreaderdeploy.json](https://raw.githubusercontent.com/SumoLogic/sumologic-azure-function/master/BlockBlobReader/src/blobreaderdeploy.json) ARM template. 
+1. Download the [blobreaderdeploy.json](https://raw.githubusercontent.com/SumoLogic/sumologic-azure-function/master/BlockBlobReader/src/blobreaderdeploy.json) ARM template.
 
     :::note
     The above template uses Consumption Plan which does not support VNet integration, you can use [blobreaderdeploywithPremiumPlan.json](https://raw.githubusercontent.com/SumoLogic/sumologic-azure-function/master/BlockBlobReader/src/blobreaderdeploywithPremiumPlan.json) which uses Elastic Premium plan.
@@ -71,10 +71,10 @@ In this step, you use a Sumo-provided Azure Resource Manager (ARM) template to c
     ![edit-template.png](/img/send-data/edit-template.png)
 
 1. Click **Save**.
-1. On the Custom deployment blade, do the following: 
+1. On the Custom deployment blade, do the following:
 
-   1. Create a new Resource Group (recommended) or select an existing one. 
-   1. Choose Location. 
+   1. Create a new Resource Group (recommended) or select an existing one.
+   1. Choose Location.
    1. Set the values of the following parameters:
 
       * SumoEndpointURL: URL for the HTTP source you configured in [Step 2](#step-2-configure-an-http-source) above.
@@ -102,10 +102,10 @@ In this step, you use a Sumo-provided Azure Resource Manager (ARM) template to c
 
     ![storage-accounts.png](/img/send-data/storage-accounts.png)
 
-1. Under **Table Service** do the following: 
+1. Under **Table Service** do the following:
 
-   1. Click **Tables**. 
-   1. Click **+ Table**. 
+   1. Click **Tables**.
+   1. Click **+ Table**.
    1. For Name, enter **FileOffsetMap**.
 
 1. Click **OK**.
@@ -164,8 +164,8 @@ To authorize the App Service to list the Storage Account key, do the following:
 1. In the Select Managed identities window.
 
    * **Subscription**: Choose Pay as you Go  
-   * Managed Identity: Choose Function App 
-   * **Select**:  **Select SUMOBRDLQProcessor\<unique_prefix\>** and **SUMORTaskConsumer\<unique_prefix\>** app     services which are created by the ARM template. Click **Select**. 
+   * Managed Identity: Choose Function App
+   * **Select**:  **Select SUMOBRDLQProcessor\<unique_prefix\>** and **SUMORTaskConsumer\<unique_prefix\>** app     services which are created by the ARM template. Click **Select**.
 
     ![storage-key-operator.png](/img/send-data/storage-key-operator.png)
 1. Click **Review + assign**
@@ -229,7 +229,7 @@ To create an event grid subscription, do the following:
 
    * Check Enable subject filtering.
    * To filter events by container name, enter the following in the **Subject Begins With** field, replacing `<container_name>` with the name of the container from where you want to export logs.  `/blobServices/default/containers/<container_name>/`
-   
+
    ![img](/img/send-data/AzureBlob_FiltersDialog.png)
 
 1. Click **Create**.
@@ -241,21 +241,21 @@ To create an event grid subscription, do the following:
 Assuming you have used the modified template which uses standard/premium plan for BlobTaskConsumer and [DLQTaskConsumer](https://portal.azure.com/#blade/WebsitesExtension/FunctionMenuBlade/resourceId/%2Fsubscriptions%2Fc088dc46-d692-42ad-a4b6-9a542d28ad2a%2FresourceGroups%2Fleast%2Fproviders%2FMicrosoft.Web%2Fsites%2FSUMOBRDLQProcessorekbxzlepnhs4g%2Ffunctions%2FDLQTaskConsumer) functions. This assumes that your storage account access is enabled for selected networks.
 
 1. Create a subnet in a virtual network using the instructions in the [doc](https://docs.microsoft.com/en-us/azure/virtual-network/virtual-network-manage-subnet#add-a-subnet). If you have multiple accounts in the same region you can skip step 2 below and use the same subnet and add it to the storage account as mentioned in step 3.
-1. Perform below steps for both BlobTaskConsumer and [DLQTaskConsumer](https://portal.azure.com/#blade/WebsitesExtension/FunctionMenuBlade/resourceId/%2Fsubscriptions%2Fc088dc46-d692-42ad-a4b6-9a542d28ad2a%2FresourceGroups%2Fleast%2Fproviders%2FMicrosoft.Web%2Fsites%2FSUMOBRDLQProcessorekbxzlepnhs4g%2Ffunctions%2FDLQTaskConsumer) function apps. 
+1. Perform below steps for both BlobTaskConsumer and [DLQTaskConsumer](https://portal.azure.com/#blade/WebsitesExtension/FunctionMenuBlade/resourceId/%2Fsubscriptions%2Fc088dc46-d692-42ad-a4b6-9a542d28ad2a%2FresourceGroups%2Fleast%2Fproviders%2FMicrosoft.Web%2Fsites%2FSUMOBRDLQProcessorekbxzlepnhs4g%2Ffunctions%2FDLQTaskConsumer) function apps.
 
-   1. Go to **Function App \> Networking**.  
-   1. Under Outbound traffic, click on Vnet Integration.  
+   1. Go to **Function App \> Networking**. 
+   1. Under Outbound traffic, click on Vnet Integration. 
 
-    ![azureblob-outbound](/img/send-data/azureblob-outbound.png) 
-   
+    ![azureblob-outbound](/img/send-data/azureblob-outbound.png)
+
    1. Add the Vnet and subnet created in Step 1.
 
-    ![azureblob-vnet](/img/send-data/azureblob-vnet.png) 
+    ![azureblob-vnet](/img/send-data/azureblob-vnet.png)
 
-   1. Also copy the outbound ip addresses you’ll need to add it in firewall configuration of your storage account. 
+   1. Also copy the outbound ip addresses you’ll need to add it in firewall configuration of your storage account.
 
     ![azureblob-outboundip](/img/send-data/azureblob-outboundip.png)
-    
+
 1. Go to your storage account from where you want to collect logs from. Go to Networking and add the same Vnet and subnet.
 
     ![azureblob-storageacct](/img/send-data/azureblob-storageacct.png)

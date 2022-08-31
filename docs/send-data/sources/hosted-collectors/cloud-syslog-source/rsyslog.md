@@ -1,8 +1,9 @@
 ---
 id: rsyslog
+title: rsyslog
 ---
 
-# rsyslog
+
 
 Sumo Logic supports syslog clients such as rsyslog. This document has instructions on how to configure your server to send syslog data. If syslog data does not appear in Sumo Logic, refer to the Troubleshooting section in [Cloud Syslog Source](/docs/send-data/sources/hosted-collectors/cloud-syslog-source).
 

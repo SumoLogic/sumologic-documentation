@@ -1,8 +1,7 @@
 ---
 id: delete-data-already-collected
+title: Delete data already collected to Sumo Logic
 ---
-
-# Delete data already collected to Sumo Logic
 
 ## Question:
 

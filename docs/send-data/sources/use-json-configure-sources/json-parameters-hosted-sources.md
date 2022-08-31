@@ -1,8 +1,9 @@
 ---
 id: json-parameters-hosted-sources
+title: JSON Parameters for Hosted Sources
 ---
 
-# JSON Parameters for Hosted Sources
+
 
 This topic describes JSON Source parameters for Hosted Collectors. See the following topics for additional information:
 
@@ -34,7 +35,7 @@ The G Suite Apps Audit Source cannot be created with JSON. This Source requires
 | [Remote Windows Event Log Source](json-parameters-installed-sources.md#remote-windows-event-log-source) | RemoteWindowsEventLog |
 | [Local Windows Performance Source](json-parameters-installed-sources.md#local-windows-performance-source) | LocalWindowsPerfMon |
 | [Remote Windows Performance Source](json-parameters-installed-sources.md#remote-windows-performance-source) | RemoteWindowsPerfMon |
-| [Windows Active Directory Inventory Source](json-parameters-installed-sources.md#windows-active-directory-source) | ActiveDirectory | 
+| [Windows Active Directory Inventory Source](json-parameters-installed-sources.md#windows-active-directory-source) | ActiveDirectory |
 | [Syslog Source](json-parameters-installed-sources.md#syslog-source)	 | Syslog |
 | [Script Source](json-parameters-installed-sources.md#script-source) | Script |
 | [Docker Log Source](json-parameters-installed-sources.md#docker-log-source) | DockerLog |

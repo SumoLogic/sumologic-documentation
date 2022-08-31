@@ -1,8 +1,8 @@
 ---
 id: cse-audit-logging
 title: CSE Audit Logging
-sidebar_label: CSE Audit Logging
-description: tk
+sidebar_label: Audit Logging
+description: Learn how to search the Audit Event Index for CSE log events.
 ---
 
 The Audit Event Index provides event logs in JSON format on your account activity so you to monitor and audit changes. By default the Audit Event Index is enabled for CSE and Enterprise accounts. 
@@ -137,6 +137,6 @@ Here is an example `InsightCreated` event log.
 
 ## Index retention period 
 
-By default, the retention period of the Audit Event Index is the same as the retention period of your Default Continuous Partition. You can change the retention period by editing the relevant partitions, `sumologic_audit_events` and `sumologic_system_events`. For more information, see Edit a Partition.  
+By default, the retention period of the Audit Event Index is the same as the retention period of your Default Partition. You can change the retention period by editing the relevant partitions, `sumologic_audit_events` and `sumologic_system_events`. For more information, see Edit a Partition.  
    
  

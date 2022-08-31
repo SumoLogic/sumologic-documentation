@@ -1,8 +1,9 @@
 ---
 slug: /send-data/sources/use-json-configure-sources
+title: Use JSON to Configure Sources
 ---
 
-# Use JSON to Configure Sources
+
 
 Sources can be configured by using UTF-8 encoded JSON files. Installed Collectors can use JSON files to configure its Sources when using [Local Configuration File Management](/docs/send-data/sources/use-json-configure-sources/local-configuration-file-management). You can also configure Sources for Hosted and Installed Collectors with the Collector Management API.
 
@@ -56,7 +57,7 @@ Each source can have its own unique fields in addition to the generic fields lis
 | [Remote Windows Event Log Source](json-parameters-installed-sources.md#remote-windows-event-log-source) | RemoteWindowsEventLog |
 | [Local Windows Performance Source](json-parameters-installed-sources.md#local-windows-performance-source) | LocalWindowsPerfMon |
 | [Remote Windows Performance Source](json-parameters-installed-sources.md#remote-windows-performance-source) | RemoteWindowsPerfMon |
-| [Windows Active Directory Inventory Source](json-parameters-installed-sources.md#windows-active-directory-source) | ActiveDirectory | 
+| [Windows Active Directory Inventory Source](json-parameters-installed-sources.md#windows-active-directory-source) | ActiveDirectory |
 | [Syslog Source](json-parameters-installed-sources.md#syslog-source)	 | Syslog |
 | [Script Source](json-parameters-installed-sources.md#script-source) | Script |
 | [Docker Log Source](json-parameters-installed-sources.md#docker-log-source) | DockerLog |
@@ -333,7 +334,7 @@ To determine the sinkId for a data forwarding destination, you use the Sumo web 
 
 These instruction assume you have already created a data forwarding destination.
 
-1. Follow the instructions in [Configure processing rules for data forwarding](../../../manage/data-forwarding/data-forwarding-installed-collectors.md#configure-processing-rules-for-data-forwarding) to add a data forwarding rule to a source on an installed collector. As part of this process, you will select the data forwarding destination to which you want to forward data.
+1. Follow the instructions in [Configure processing rules for data forwarding](../../../manage/data-forwarding/installed-collectors.md#configure-processing-rules-for-data-forwarding) to add a data forwarding rule to a source on an installed collector. As part of this process, you will select the data forwarding destination to which you want to forward data.
 1. To view the JSON configuration for the source you updated in the previous step:
 
    1. Select **Manage Data \> Collection \> Collection**. 

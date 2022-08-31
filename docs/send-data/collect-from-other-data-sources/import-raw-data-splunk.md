@@ -1,8 +1,8 @@
 ---
 id: import-raw-data-splunk
+title: Import Raw Data from Splunk
 ---
 
-# Import Raw Data from Splunk
 
 :::important
 Although you can import data from Splunk, Sumo Logic does not support Splunk functionality or any commands included below.
@@ -17,4 +17,3 @@ To import raw data from Splunk:
    * Use the Splunk "export eventdata" command. This automatically creates copies of the original raw files for an index. Then you can pick and choose which of these you want to get to Sumo Logic using collector sources and configure each one according to your needs. 
 
 2. Configure Sumo Logic [Sources](/docs/send-data/sources) to pick up the logs from the directories you just exported.
-

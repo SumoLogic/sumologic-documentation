@@ -1,8 +1,8 @@
 ---
 id: integrate-halo-event-logs
+title: Integrate Halo Event Logs into Sumo Logic
 ---
 
-# Integrate Halo Event Logs into Sumo Logic
 
 The Halo Event Connector enables you to pull security event logs from Halo into Sumo Logic, including alerts from your configuration, file integrity, and software vulnerability scans. Halo can also deliver unprecedented visibility of your cloud servers, directly into your log management console. You can track server events such as your server rebooting, shutting down, changing IP addresses, and much more.
 
@@ -18,4 +18,3 @@ The Halo Event Connector is free to use, and will work with any Halo subscriptio
 1. Once you have an API key, follow the steps provided in the [Sumo Logic - Halo Documentation](https://github.com/cloudpassage/halo-event-connector-python/blob/master/Halo-Event-Connector_SumoLogic.pdf), using the files provided on Github https://github.com/cloudpassage/halo-event-connector-python.
 
 The documentation available with those files on GitHub walks you through the process of testing the Halo Event Connector script.  
-

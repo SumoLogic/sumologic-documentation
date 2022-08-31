@@ -2,6 +2,8 @@
 id: metrics
 title: Sumo Logic Metrics APIs
 sidebar_label: Metrics
+description: Use HTTP endpoints to access your metric data.
+
 ---
 
 The Metrics Query API lets you execute Metrics queries from third-party scripts and applications so that you can reformat the results as desired.
@@ -10,6 +12,7 @@ This API follows Representational State Transfer (REST) patterns and is optimize
 
 Refer to [Getting Started](docs/api/index.md) for Authentication and Endpoint information.
 
+Sumo Logic has several deployment types, which vary by geographic location and the date an account is created. Select the documentation link below that corresponds to your deployment. If you're not sure, see [How to determine your endpoint](/docs/api/getting-started#which-endpoint-should-i-should-use).
 
 ## Before You Begin
 
@@ -23,9 +26,9 @@ You will need:
 
 Sumo Logic has deployments that are assigned depending on the geographic location and the date an account is created. For API access, you must manually direct your API client to the correct Sumo Logic API URL.
 
-See [Sumo Logic Endpoints](https://help.sumologic.com/APIs/General-API-Information/Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security) for the list of the URLs.
+See [Sumo Logic Endpoints](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security) for the list of the URLs.
 
-An HTTP 301 Moved error suggests that the wrong endpoint was specified.
+An `HTTP 301 Moved` error suggests that the wrong endpoint was specified.
 
 ## Rate limiting
 
@@ -132,7 +135,7 @@ To execute a metrics query, send a JSON request to the endpoint.
 
 **Example endpoint:** [https://api.sumologic.com/api/v1/metrics/results](https://api.sumologic.com/api/v1/metrics/results)
 
-Sumo Logic endpoints like `api.sumologic.com` are different in deployments outside us1. For example, an API endpoint in Europe would begin `api.eu.sumologic.com`.  A service endpoint in us2 (Western US) would begin service.us2.sumologic.com.  For more information, see [Sumo Logic Endpoints](https://help.sumologic.com/APIs/General-API-Information/Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security).
+Sumo Logic endpoints like `api.sumologic.com` are different in deployments outside us1. For example, an API endpoint in Europe would begin `api.eu.sumologic.com`.  A service endpoint in us2 (Western US) would begin service.us2.sumologic.com.  For more information, see [Sumo Logic Endpoints](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
 
 
 ### Headers
@@ -640,7 +643,7 @@ The result will be a JSON document containing results (or an error) for each que
 
 
 
-### Example Use
+#### Example Use
 
 Example use of this API can be seen in [this Python script](https://gist.github.com/davidandrzej/60df21aaad0c868456ce422fb56d3e09), which queries the API and reformats the results into a [pandas time series DataFrame](http://pandas.pydata.org/pandas-docs/stable/timeseries.html).
 

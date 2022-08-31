@@ -2,16 +2,18 @@
 id: search-job
 title: Sumo Logic Search Job APIs
 sidebar_label: Search Job
+description: The Search Job API provides access to resources and log data from third-party scripts and applications.
 ---
 
-The Search Job API provides third-party scripts and applications access to your log data through access key/access ID authentication. The API follows Representational State Transfer (REST) patterns and is optimized for ease of use and consistency.
+The Search Job API provides third-party scripts and applications access to your log data through access key/access ID authentication. 
 
 :::note
-Search Job APIs are not yet built with OpenAPI specifications and therefore not documented with the rest of the APIs. Instead, navigate to its [documentation page](/docs/api/search-job.md) for details.
+Search Job APIs are not yet built with OpenAPI specifications and therefore not documented with the rest of the APIs. Instead, refer to the instructions below for details.
 :::
 
 Refer to [Getting Started](docs/api/index.md) for Authentication and Endpoint information.
 
+Sumo Logic has several deployment types, which vary by geographic location and the date an account is created. Select the documentation link below that corresponds to your deployment. If you're not sure, see [How to determine your endpoint](/docs/api/getting-started#which-endpoint-should-i-should-use).
 ## Before You Begin
 
 The Search Job API is available to Enterprise accounts.
@@ -42,7 +44,7 @@ The Search Job API is available to Enterprise accounts.
 
 Sumo Logic has deployments that are assigned depending on the geographic location and the date an account is created. For API access, you must manually direct your API client to the correct Sumo Logic API URL.
 
-See [Sumo Logic Endpoints](https://help.sumologic.com/APIs/General-API-Information/Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security) for the list of the URLs.
+See [Sumo Logic Endpoints](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security) for the list of the URLs.
 
 An HTTP 301 Moved error suggests that the wrong endpoint was specified.
 
@@ -120,7 +122,7 @@ Once you reach the limit of 200 active searches, attempting an additional search
 This limit applies only to Search Job API searches, and does not take into account searches run from the Sumo UI, scheduled searches, or dashboard panel searches that are running at the same time. If the search job is not kept alive by API requests every 20-30 seconds, it is canceled.
 
 
-    You can reduce the number of active search jobs by explicitly deleting a search after you receive the results. Deleting searches manually will keep the number of active searches low, reducing the likelihood of hitting the Search Job API throttling limit. See [deleting a search job](https://help.sumologic.com/APIs/Search-Job-API/About-the-Search-Job-API#Deleting_a_search_job) for details.
+    You can reduce the number of active search jobs by explicitly deleting a search after you receive the results. Deleting searches manually will keep the number of active searches low, reducing the likelihood of hitting the Search Job API throttling limit. See [deleting a search job](/docs/api/Search-Job-API/About-the-Search-Job-API#Deleting_a_search_job) for details.
 
 
 
@@ -420,7 +422,7 @@ To create a search job (step 1 in the process flow), send a JSON request to the 
 **Example endpoint:** `https://api.sumologic.com/api/v1/search/jobs`
 
 
-Sumo Logic endpoints like `api.sumologic.com` are different in deployments outside us1. You need to specify your deployment in the endpoint. For example <code>api.<strong>YOUR_DEPLOYMENT</strong>.sumologic.com</code> you would specify <strong><code>YOUR_DEPLOYMENT</code></strong> as either <code>au</code>, <code>ca</code>, <code>de</code>, <code>eu</code>, <code>fed</code>, <code>in</code>, <code>jp</code>,<code> us1</code>, or <code>us2</code>. For us1, use <code>api.sumologic.com</code>. For the others, use <code>api.us2.sumologic.com</code>, and so on. For more information, see [Sumo Logic Endpoints](https://help.sumologic.com/APIs/General-API-Information/Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security).
+Sumo Logic endpoints like `api.sumologic.com` are different in deployments outside us1. You need to specify your deployment in the endpoint. For example <code>api.<strong>YOUR_DEPLOYMENT</strong>.sumologic.com</code> you would specify <strong><code>YOUR_DEPLOYMENT</code></strong> as either <code>au</code>, <code>ca</code>, <code>de</code>, <code>eu</code>, <code>fed</code>, <code>in</code>, <code>jp</code>,<code> us1</code>, or <code>us2</code>. For us1, use <code>api.sumologic.com</code>. For the others, use <code>api.us2.sumologic.com</code>, and so on. For more information, see [Sumo Logic Endpoints](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
 
 
 #### Headers
@@ -615,7 +617,7 @@ curl -b cookies.txt -c cookies.txt -H 'Content-type: application/json'
 --user <ACCESSID>:<ACCESSKEY> https://api.sumologic.com/api/v1/search/jobs
 ```
 
-Sumo Logic endpoints like `api.sumologic.com` are different in deployments outside us1. You need to specify your deployment in the endpoint. For example <code>api.<strong>YOUR_DEPLOYMENT</strong>.sumologic.com</code> you would specify <strong><code>YOUR_DEPLOYMENT</code></strong> as either <code>au</code>, <code>ca</code>, <code>de</code>, <code>eu</code>, <code>fed</code>, <code>in</code>, <code>jp</code>,<code> us1</code>, or <code>us2</code>. For us1, use <code>api.sumologic.com</code>. For the others, use <code>api.us2.sumologic.com</code>, and so on. For more information, see [Sumo Logic Endpoints](https://help.sumologic.com/APIs/General-API-Information/Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security).
+Sumo Logic endpoints like `api.sumologic.com` are different in deployments outside us1. You need to specify your deployment in the endpoint. For example <code>api.<strong>YOUR_DEPLOYMENT</strong>.sumologic.com</code> you would specify <strong><code>YOUR_DEPLOYMENT</code></strong> as either <code>au</code>, <code>ca</code>, <code>de</code>, <code>eu</code>, <code>fed</code>, <code>in</code>, <code>jp</code>,<code> us1</code>, or <code>us2</code>. For us1, use <code>api.sumologic.com</code>. For the others, use <code>api.us2.sumologic.com</code>, and so on. For more information, see [Sumo Logic Endpoints](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
 
 The **createSearchJob.json** file looks like this:
 
@@ -645,7 +647,7 @@ https://api.sumologic.com/api/v1/search/jobs/<SEARCH_JOB_ID>
 ```
 
 
-Sumo Logic endpoints like `api.sumologic.com` are different in deployments outside us1. You need to specify your deployment in the endpoint. For example <code>api.<strong>YOUR_DEPLOYMENT</strong>.sumologic.com</code> you would specify <strong><code>YOUR_DEPLOYMENT</code></strong> as either <code>au</code>, <code>ca</code>, <code>de</code>, <code>eu</code>, <code>fed</code>, <code>in</code>, <code>jp</code>,<code> us1</code>, or <code>us2</code>. For us1, use <code>api.sumologic.com</code>. For the others, use <code>api.us2.sumologic.com</code>, and so on. For more information, see [Sumo Logic Endpoints](https://help.sumologic.com/APIs/General-API-Information/Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security).
+Sumo Logic endpoints like `api.sumologic.com` are different in deployments outside us1. You need to specify your deployment in the endpoint. For example <code>api.<strong>YOUR_DEPLOYMENT</strong>.sumologic.com</code> you would specify <strong><code>YOUR_DEPLOYMENT</code></strong> as either <code>au</code>, <code>ca</code>, <code>de</code>, <code>eu</code>, <code>fed</code>, <code>in</code>, <code>jp</code>,<code> us1</code>, or <code>us2</code>. For us1, use <code>api.sumologic.com</code>. For the others, use <code>api.us2.sumologic.com</code>, and so on. For more information, see [Sumo Logic Endpoints](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
 
 
 #### Query parameters
@@ -694,7 +696,7 @@ curl -v --trace-ascii - -b cookies.txt -c cookies.txt -H 'Accept: application/js
 
 
 56
-Sumo Logic endpoints like `api.sumologic.com` are different in deployments outside us1. You need to specify your deployment in the endpoint. For example <code>api.<strong>YOUR_DEPLOYMENT</strong>.sumologic.com</code> you would specify <strong><code>YOUR_DEPLOYMENT</code></strong> as either <code>au</code>, <code>ca</code>, <code>de</code>, <code>eu</code>, <code>fed</code>, <code>in</code>, <code>jp</code>,<code> us1</code>, or <code>us2</code>. For us1, use <code>api.sumologic.com</code>. For the others, use <code>api.us2.sumologic.com</code>, and so on. For more information, see [Sumo Logic Endpoints](https://help.sumologic.com/APIs/General-API-Information/Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security).
+Sumo Logic endpoints like `api.sumologic.com` are different in deployments outside us1. You need to specify your deployment in the endpoint. For example <code>api.<strong>YOUR_DEPLOYMENT</strong>.sumologic.com</code> you would specify <strong><code>YOUR_DEPLOYMENT</code></strong> as either <code>au</code>, <code>ca</code>, <code>de</code>, <code>eu</code>, <code>fed</code>, <code>in</code>, <code>jp</code>,<code> us1</code>, or <code>us2</code>. For us1, use <code>api.sumologic.com</code>. For the others, use <code>api.us2.sumologic.com</code>, and so on. For more information, see [Sumo Logic Endpoints](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
 
 This is the formatted result document:
 
@@ -800,7 +802,7 @@ The search job status informs the user about the number of found messages. The m
 
 **Example endpoint:** `https://api.sumologic.com/api/v1/search/jobs/<SEARCH_JOB_ID>/messages?offset=<OFFSET>&limit=<LIMIT>`
 
-Sumo Logic endpoints like `api.sumologic.com` are different in deployments outside us1. You need to specify your deployment in the endpoint. For example <code>api.<strong>YOUR_DEPLOYMENT</strong>.sumologic.com</code> you would specify <strong><code>YOUR_DEPLOYMENT</code></strong> as either <code>au</code>, <code>ca</code>, <code>de</code>, <code>eu</code>, <code>fed</code>, <code>in</code>, <code>jp</code>,<code> us1</code>, or <code>us2</code>. For us1, use <code>api.sumologic.com</code>. For the others, use <code>api.us2.sumologic.com</code>, and so on. For more information, see [Sumo Logic Endpoints](https://help.sumologic.com/APIs/General-API-Information/Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security).
+Sumo Logic endpoints like `api.sumologic.com` are different in deployments outside us1. You need to specify your deployment in the endpoint. For example <code>api.<strong>YOUR_DEPLOYMENT</strong>.sumologic.com</code> you would specify <strong><code>YOUR_DEPLOYMENT</code></strong> as either <code>au</code>, <code>ca</code>, <code>de</code>, <code>eu</code>, <code>fed</code>, <code>in</code>, <code>jp</code>,<code> us1</code>, or <code>us2</code>. For us1, use <code>api.sumologic.com</code>. For the others, use <code>api.us2.sumologic.com</code>, and so on. For more information, see [Sumo Logic Endpoints](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
 
 
 #### Query parameters
@@ -858,7 +860,7 @@ curl -b cookies.txt -c cookies.txt -H 'Accept: application/json'
 ```
 
 
-Sumo Logic endpoints like `api.sumologic.com` are different in deployments outside us1. You need to specify your deployment in the endpoint. For example <code>api.<strong>YOUR_DEPLOYMENT</strong>.sumologic.com</code> you would specify <strong><code>YOUR_DEPLOYMENT</code></strong> as either <code>au</code>, <code>ca</code>, <code>de</code>, <code>eu</code>, <code>fed</code>, <code>in</code>, <code>jp</code>,<code> us1</code>, or <code>us2</code>. For us1, use <code>api.sumologic.com</code>. For the others, use <code>api.us2.sumologic.com</code>, and so on. For more information, see [Sumo Logic Endpoints](https://help.sumologic.com/APIs/General-API-Information/Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security).
+Sumo Logic endpoints like `api.sumologic.com` are different in deployments outside us1. You need to specify your deployment in the endpoint. For example <code>api.<strong>YOUR_DEPLOYMENT</strong>.sumologic.com</code> you would specify <strong><code>YOUR_DEPLOYMENT</code></strong> as either <code>au</code>, <code>ca</code>, <code>de</code>, <code>eu</code>, <code>fed</code>, <code>in</code>, <code>jp</code>,<code> us1</code>, or <code>us2</code>. For us1, use <code>api.sumologic.com</code>. For the others, use <code>api.us2.sumologic.com</code>, and so on. For more information, see [Sumo Logic Endpoints](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
 
 <details><summary>This is the formatted result document (click to expand)</summary>
 
@@ -1012,7 +1014,7 @@ The search job status informs the user as to the number of produced records, if 
 **Example endpoint:** `https://api.sumologic.com/api/v1/search/jobs/<SEARCH_JOB_ID>/records?offset=<OFFSET>&limit=<LIMIT>`
 
 
-Sumo Logic endpoints like `api.sumologic.com` are different in deployments outside us1. You need to specify your deployment in the endpoint. For example <code>api.<strong>YOUR_DEPLOYMENT</strong>.sumologic.com</code> you would specify <strong><code>YOUR_DEPLOYMENT</code></strong> as either <code>au</code>, <code>ca</code>, <code>de</code>, <code>eu</code>, <code>fed</code>, <code>in</code>, <code>jp</code>,<code> us1</code>, or <code>us2</code>. For us1, use <code>api.sumologic.com</code>. For the others, use <code>api.us2.sumologic.com</code>, and so on. For more information, see [Sumo Logic Endpoints](https://help.sumologic.com/APIs/General-API-Information/Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security).
+Sumo Logic endpoints like `api.sumologic.com` are different in deployments outside us1. You need to specify your deployment in the endpoint. For example <code>api.<strong>YOUR_DEPLOYMENT</strong>.sumologic.com</code> you would specify <strong><code>YOUR_DEPLOYMENT</code></strong> as either <code>au</code>, <code>ca</code>, <code>de</code>, <code>eu</code>, <code>fed</code>, <code>in</code>, <code>jp</code>,<code> us1</code>, or <code>us2</code>. For us1, use <code>api.sumologic.com</code>. For the others, use <code>api.us2.sumologic.com</code>, and so on. For more information, see [Sumo Logic Endpoints](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
 
 
 #### Query parameters
@@ -1071,7 +1073,7 @@ curl -b cookies.txt -c cookies.txt -H
 'https://api.sumologic.com/api/v1/search/jobs/37589506F194FC80/records?offset=0&limit=1'
 ```
 
-Sumo Logic endpoints like `api.sumologic.com` are different in deployments outside us1. You need to specify your deployment in the endpoint. For example <code>api.<strong>YOUR_DEPLOYMENT</strong>.sumologic.com</code> you would specify <strong><code>YOUR_DEPLOYMENT</code></strong> as either <code>au</code>, <code>ca</code>, <code>de</code>, <code>eu</code>, <code>fed</code>, <code>in</code>, <code>jp</code>,<code> us1</code>, or <code>us2</code>. For us1, use <code>api.sumologic.com</code>. For the others, use <code>api.us2.sumologic.com</code>, and so on. For more information, see [Sumo Logic Endpoints](https://help.sumologic.com/APIs/General-API-Information/Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security).
+Sumo Logic endpoints like `api.sumologic.com` are different in deployments outside us1. You need to specify your deployment in the endpoint. For example <code>api.<strong>YOUR_DEPLOYMENT</strong>.sumologic.com</code> you would specify <strong><code>YOUR_DEPLOYMENT</code></strong> as either <code>au</code>, <code>ca</code>, <code>de</code>, <code>eu</code>, <code>fed</code>, <code>in</code>, <code>jp</code>,<code> us1</code>, or <code>us2</code>. For us1, use <code>api.sumologic.com</code>. For the others, use <code>api.us2.sumologic.com</code>, and so on. For more information, see [Sumo Logic Endpoints](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
 
 This is the formatted result document:
 
@@ -1121,7 +1123,7 @@ https://api.sumologic.com/api/v1/search/jobs/<SEARCH_JOB_ID>
 
 
 71
-Sumo Logic endpoints like `api.sumologic.com` are different in deployments outside us1. You need to specify your deployment in the endpoint. For example <code>api.<strong>YOUR_DEPLOYMENT</strong>.sumologic.com</code> you would specify <strong><code>YOUR_DEPLOYMENT</code></strong> as either <code>au</code>, <code>ca</code>, <code>de</code>, <code>eu</code>, <code>fed</code>, <code>in</code>, <code>jp</code>,<code> us1</code>, or <code>us2</code>. For us1, use <code>api.sumologic.com</code>. For the others, use <code>api.us2.sumologic.com</code>, and so on. For more information, see [Sumo Logic Endpoints](https://help.sumologic.com/APIs/General-API-Information/Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security).
+Sumo Logic endpoints like `api.sumologic.com` are different in deployments outside us1. You need to specify your deployment in the endpoint. For example <code>api.<strong>YOUR_DEPLOYMENT</strong>.sumologic.com</code> you would specify <strong><code>YOUR_DEPLOYMENT</code></strong> as either <code>au</code>, <code>ca</code>, <code>de</code>, <code>eu</code>, <code>fed</code>, <code>in</code>, <code>jp</code>,<code> us1</code>, or <code>us2</code>. For us1, use <code>api.sumologic.com</code>. For the others, use <code>api.us2.sumologic.com</code>, and so on. For more information, see [Sumo Logic Endpoints](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
 
 
 #### Query parameters
@@ -1164,7 +1166,7 @@ https://api.sumologic.com/api/v1/search/jobs/37589506F194FC80
 
 
 74
-Sumo Logic endpoints like `api.sumologic.com` are different in deployments outside us1. You need to specify your deployment in the endpoint. For example <code>api.<strong>YOUR_DEPLOYMENT</strong>.sumologic.com</code> you would specify <strong><code>YOUR_DEPLOYMENT</code></strong> as either <code>au</code>, <code>ca</code>, <code>de</code>, <code>eu</code>, <code>fed</code>, <code>in</code>, <code>jp</code>,<code> us1</code>, or <code>us2</code>. For us1, use <code>api.sumologic.com</code>. For the others, use <code>api.us2.sumologic.com</code>, and so on. For more information, see [Sumo Logic Endpoints](https://help.sumologic.com/APIs/General-API-Information/Sumo-Logic-Endpoints-by-Deployment-and-Firewall-Security).
+Sumo Logic endpoints like `api.sumologic.com` are different in deployments outside us1. You need to specify your deployment in the endpoint. For example <code>api.<strong>YOUR_DEPLOYMENT</strong>.sumologic.com</code> you would specify <strong><code>YOUR_DEPLOYMENT</code></strong> as either <code>au</code>, <code>ca</code>, <code>de</code>, <code>eu</code>, <code>fed</code>, <code>in</code>, <code>jp</code>,<code> us1</code>, or <code>us2</code>. For us1, use <code>api.sumologic.com</code>. For the others, use <code>api.us2.sumologic.com</code>, and so on. For more information, see [Sumo Logic Endpoints](/docs/api/getting-started#sumo-logic-endpoints-by-deployment-and-firewall-security).
 
 
 ### Bash this Search Job

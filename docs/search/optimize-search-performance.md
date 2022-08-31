@@ -1,8 +1,9 @@
 ---
 id: optimize-search-performance
+title: Optimize Search Performance
 ---
 
-# Optimize Search Performance
+
 
 Search optimization tools speed the search process, delivering query results in less time and improving productivity for forensic analysis and log management.
 

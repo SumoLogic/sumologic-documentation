@@ -1,13 +1,14 @@
 ---
 id: local-file-source
+title: Local File Source
 ---
 
-# Local File Source
+
 
 To collect log messages from files on the same machine where a Collector is installed, create a Local File Source.
 
 * The Source will run a scan to the target path every two seconds.
-* Compressed files that end with the following file extensions are not collected: * tar, bz2, gz, z, zip, jar, war, 7z, rar, exe, dll, xz, or /var/log/(lastlog\|btmp\|wtmp) binary files 
+* Compressed files that end with the following file extensions are not collected: * tar, bz2, gz, z, zip, jar, war, 7z, rar, exe, dll, xz, or /var/log/(lastlog\|btmp\|wtmp) binary files
 
 :::note
 tar.gz files are supported.
@@ -51,49 +52,49 @@ When the Sumo collector accesses a log file to read its content, the collector o
 
    * **Name**. Type the name you'd like to display for the new Source. Description is optional.
 
-   * **File Path**. List the full path to the file you want to collect. For files on Windows systems (not including [Windows Events](local-windows-event-log-source.md)), enter the absolute path including the drive letter. Escape special characters with a backslash (\\). If you are collecting from Windows using CIFS/SMB, see [Prerequisites for Remote Windows Event Log Collection](remote-file-source/prerequisites-windows-remote-file-collection.md). Use a single asterisk wildcard \[\*\] for file or folder names \[var/foo/\*.log\]. Use two asterisks \[\*\*\] to recurse within directories and subdirectories \[var/\*\*/\*.log\]. 
-   
+   * **File Path**. List the full path to the file you want to collect. For files on Windows systems (not including [Windows Events](local-windows-event-log-source.md)), enter the absolute path including the drive letter. Escape special characters with a backslash (\\). If you are collecting from Windows using CIFS/SMB, see [Prerequisites for Remote Windows Event Log Collection](remote-file-source/prerequisites-windows-remote-file-collection.md). Use a single asterisk wildcard \[\*\] for file or folder names \[var/foo/\*.log\]. Use two asterisks \[\*\*\] to recurse within directories and subdirectories \[var/\*\*/\*.log\].
+
     :::note
     You can have up to 32 nested symbolic links within a path expression.
     :::
 
-   * **Collection should begin.** Choose or enter how far back you'd like to begin collecting historical logs. This setting applies to the "modified" time of the file, not the time of the individual log lines. For example, if you have a file that contains logs with timestamps spanning an entire week and set this to two days ago, all of the logs from the entire week will be ingested since the file itself was modified more recent than the **collection should begin** timestamp. 
+   * **Collection should begin.** Choose or enter how far back you'd like to begin collecting historical logs. This setting applies to the "modified" time of the file, not the time of the individual log lines. For example, if you have a file that contains logs with timestamps spanning an entire week and set this to two days ago, all of the logs from the entire week will be ingested since the file itself was modified more recent than the **collection should begin** timestamp.
 
      :::note
      Processing rules could be used to filter logs as needed. This is done in step 6 of this document.
      :::
-   
-    Review [timestamp considerations](../reference-information-sources/time-reference.md) to understand how Sumo interprets and processes timestamps. 
-   
-    You can either: 
-    
-     * Choose a predefined value from the dropdown list, ranging from "Now" to “72 hours ago” to “All Time”. 
+
+    Review [timestamp considerations](../reference-information-sources/time-reference.md) to understand how Sumo interprets and processes timestamps.
+
+    You can either:
+
+     * Choose a predefined value from the dropdown list, ranging from "Now" to “72 hours ago” to “All Time”.
      * Enter a relative value. To enter a relative value, click the **Collection should begin** field and press the delete key on your keyboard to clear the field. Then, enter a relative time expression, for example`-1w`. You can define when you want collection to begin in terms of months (M), weeks (w), days (d), hours (h) and minutes (m). When updating the **Collection should begin** setting you will need to restart the Collector
 
    * **Source Host.** The hostname assigned by the operating system is used by default. The Source Host value is tagged to each log and stored in a searchable metadata field called \_sourceHost. Avoid using spaces so you do not have to quote them in keyword search expressions. This can be a maximum of 128 characters.
-    
+
     You can define a Source Host value using system environment variables, see [Configuring sourceCategory and sourceHost using variables](#configuring-sourcecategory-and-sourcehost-using-variables) below for details.
 
    * **Source Category.** The Source Category value is tagged to each log and stored in a searchable metadata field called \_sourceCategory. See our [Best Practices: Good and Bad Source Categories](../../design-deployment/best-practices-source-categories.md). Avoid using spaces so you do not have to quote them in keyword search expressions. This can be a maximum of 1,024 characters.
-    
+
     You can define a Source Category value using system environment variables, see [Configuring sourceCategory and sourceHost using variables](#configuring-sourcecategory-and-sourcehost-using-variables) below for details.
 
    * **Fields.** Click the **+Add Field** link to define the fields you want to associate, each field needs a name (key) and value.
 
-      * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema. 
+      * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
       * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema it is ignored, known as dropped.
 
 1. Set any of the following options under **Advanced**:
 
    * **Denylist.** Enter the path for files to exclude from the Source collection. Wildcard syntax is allowed when specifying unwanted files. For example, if you are collecting` /var/log/*.log` but don’t want to collect `unwanted*.log`, then specify `/var/log/unwanted*.log`. You can also exclude subdirectories, for example, if you are collecting` /var/log/**/*.log` but do not want to collect anything from `/var/log/unwanted `directory, specify `/var/log/unwanted`. You don't need to denylist compressed files that end with the file extensions tar, bz2, gz, z, zip, jar, war, 7z, rar, exe, dll, xz, or /var/log/(lastlog\|btmp\|wtmp) binary files. Sumo Logic, automatically excludes these compressed file extensions when collecting data.  tar.gz files are supported
    * **Enable Timestamp Parsing.** This option is selected by default. If it's deselected, no timestamp information is parsed at all.
-   * **Time Zone.** There are two options for Time Zone. 
-     * You can use the time zone present in your log files, and then choose an option in case time zone information is missing from a log message. 
+   * **Time Zone.** There are two options for Time Zone.
+     * You can use the time zone present in your log files, and then choose an option in case time zone information is missing from a log message.
      * Or, you can have Sumo Logic completely disregard any time zone information present in logs by forcing a time zone. It's very important to have the proper time zone set, no matter which option you choose. If the time zone of logs can't be determined, Sumo Logic assigns logs UTC; if the rest of your logs are from another time zone your search results will be affected.
    * **Timestamp Format.** By default, Sumo Logic will automatically detect the timestamp format of your logs. However, you can manually specify a timestamp format for a Source. See [Timestamps, Time Zones, Time Ranges, and Date Formats](../reference-information-sources/time-reference.md for more information.
    * **Encoding.** UTF-8 is the default, but you can choose another encoding format from the menu.
-   * **Enable Multiline Processing.** See [Collecting Multiline Logs](../reference-information-sources/collect-multiline-logs.md for details on multiline processing and its options. This is enabled by default. Use this option if you're working with multiline messages (for example, log4J or exception stack traces). Deselect this option if you want to avoid unnecessary processing when collecting single-message-per-line files (for example, Linux system.log). Choose one of the following: 
-   
+   * **Enable Multiline Processing.** See [Collecting Multiline Logs](../reference-information-sources/collect-multiline-logs.md for details on multiline processing and its options. This is enabled by default. Use this option if you're working with multiline messages (for example, log4J or exception stack traces). Deselect this option if you want to avoid unnecessary processing when collecting single-message-per-line files (for example, Linux system.log). Choose one of the following:
+
      * **Infer Boundaries.** Enable when you want Sumo Logic to automatically attempt to determine which lines belong to the same message. If you deselect the Infer Boundaries option, you will need to enter a regular expression in the Boundary Regex field to use for detecting the entire first line of multiline messages.
      * **Boundary Regex.** You can specify the boundary between messages using a regular expression. Enter a regular expression that matches the entire first line of every multiline message in your log files.
 
@@ -159,9 +160,9 @@ For the Collector to continue to monitor the rotated log file the path expressio
 ### Overlapping paths
 
 Sources with overlapping File Paths will duplicate ingestion. Each Source independently tracks and collects from its specified File Path.  
-  
+
 To not have this happen you can use the Local File Source **Denylist** feature. This allows you to enter a file path to exclude from the Source collection.   
-  
+
 Otherwise, instead of denylisting certain paths, you can specify specific log formats to include or exclude on each Source with Processing Rules.
 
 ## Troubleshooting
@@ -173,7 +174,7 @@ An issue that could arise is seeing duplicated log messages for a log file that 
 
 Another possible issue is seeing the Collector not ingesting from a file where the first 2kb of the files match another file previously Collected due to fingerprint matching. In this case, the Collector believes it has already read from the file and could wait at the last known line collected before we see collection begin again at that point.
 
-To resolve these issues you can adjust the fingerprint size to match your needs. 
+To resolve these issues you can adjust the fingerprint size to match your needs.
 
 1. Stop the current Collector service/process.
 1. Locate the following Collector configuration file, `/<sumo_install_dir>/config/collector.properties`

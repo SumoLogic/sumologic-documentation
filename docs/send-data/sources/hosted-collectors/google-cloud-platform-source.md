@@ -1,8 +1,8 @@
 ---
 id: google-cloud-platform-source
+title: Google Cloud Platform Source
 ---
 
-# Google Cloud Platform Source
 
 Log data for Google Cloud Platform (GCP) services is collected and exposed through the Google Cloud Stackdriver service. You can export, in real time, the data collected by [Stackdriver](https://cloud.google.com/stackdriver/) to Google Cloud Pub/Sub. We use this Pub/Sub integration to push logs to Sumo Logic in real time.
 

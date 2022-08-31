@@ -1,8 +1,9 @@
 ---
 slug: /send-data/collect-from-other-data-sources/collect-vmware-vrealize
+title: Collect from VMware vRealize
 ---
 
-# Collect from VMware vRealize
+
 
 This page describes how to collect logs from VMware vRealize.
 

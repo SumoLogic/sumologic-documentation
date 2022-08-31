@@ -1,8 +1,9 @@
 ---
 id: set-messages-tab-preferences
+title: Set Messages Tab Preferences
 ---
 
-# Set Messages Tab Preferences
+
 
 ## Display Message Preferences
 
@@ -22,9 +23,9 @@ To set Messages tab preferences, do the following:
 
     ![metadata fields in messages tab.png](/img/search/get-started-search/search-page/metadata-fields.png)
 
-    * **Show URI-decoded format.** By default, UTF characters in JSON are automatically decoded. Toggle this off if you want to intentionally include these when viewing JSON log messages in the UI. 
+    * **Show URI-decoded format.** By default, UTF characters in JSON are automatically decoded. Toggle this off if you want to intentionally include these when viewing JSON log messages in the UI.
     * **Dictionary Term Highlighting.** When selected, the terms "error" and "exception" are displayed in red text.
-    * **Recent Messages First / Oldest Messages First.** By default, **Recent Messages First** is selected, but if you'd prefer to view oldest log messages at the top of the Messages pane, select **Oldest Messages First**. 
+    * **Recent Messages First / Oldest Messages First.** By default, **Recent Messages First** is selected, but if you'd prefer to view oldest log messages at the top of the Messages pane, select **Oldest Messages First**.
     * **View 25 messages per page.** The default is to show 25 log messages per **Page** in the **Messages** tab. You can set this at 15 to 500.
 
 1. Click **Save** to save your changes.

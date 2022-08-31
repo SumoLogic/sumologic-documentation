@@ -1,9 +1,10 @@
 ---
 id: collect-with-amazon-kinesis
+title: Collect Amazon CloudWatch Logs using Amazon Kinesis
 ---
 
 <!-- This was marked as PRIVATE - not in SIDEBARS -->
-# Collect Amazon CloudWatch Logs using Amazon Kinesis
+
 
 :::sumo
 Using the Sumo Logic Kinesis Connector to collect CloudWatch Logs (including VPC FLow Logs) is a community-supported solution. It is not officially supported by Sumo Logic Support. To provide feedback, report a bug, or get help, log into the [Sumo Logic Community](https://community.sumologic.com/s/topic/0TOE0000000g8L6OAI/Apps).

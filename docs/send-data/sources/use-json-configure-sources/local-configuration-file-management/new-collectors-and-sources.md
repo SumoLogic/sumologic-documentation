@@ -1,8 +1,9 @@
 ---
 id: new-collectors-and-sources
+title: Local Configuration File Management for New Collectors and Sources
 ---
 
-# Local Configuration File Management for New Collectors and Sources
+
 
 With local configuration file management, you cannot use the API or the web app for Source configuration. In the web app, the **Add Source** option is disabled on the **Manage Data \> Collection \> Collection** page.
 

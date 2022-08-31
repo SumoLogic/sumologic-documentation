@@ -1,8 +1,10 @@
 ---
 id: create-match-list
+title: Create a Match List
+description: Learn about Match Lists and how to create a Match List.
 ---
 
-# Create a Match List
+
 
 This topic has information about Match Lists, their purpose and usage, and how to create them. 
 
@@ -17,7 +19,7 @@ There’s no reason you can’t use a Match List to define “deny lists” of i
 :::
 
 Here’s an example of a Match List in the CSE UI, at **Content \> Match Lists**. It is a list of trusted domains.  
-  
+
 ![example-match-list.png](/img/cse/example-match-list.png)
 
 Note that the Match List has a **Target Column**, which you define when you create the list. The Target Column indicates what type of Record fields should be compared to the Match List, for example hostnames, URLs, domains, IP addresses, usernames, and so on. For more information, see [How are Match Lists Used?](#how-are-match-lists-used).
@@ -43,7 +45,7 @@ When a Record contains a value that matches one or more Match Lists, two fields 
 * `matchedItems`. CSE adds the actual key-value pairs that were matched. For example, continuing the example above, if “vuln_scanners” Match List contained an entry “5.6.7.8”, and the Record’s `SourceIp` is also “5.6.7.8”, the assuming the SourceIP address in the “vuln_scanners” Match List, the `matchedItems `field would like like this: `matchedItems: [ { value: '5.6.7.8', …other metadata about list item } ]`
 
 Because the information about list matches gets persisted within Records, you can reference it downstream in both rules and search.   
-  
+
 In a rule, you look for matches by extending  a rule expression with an `array_contains` function, for example:
 
 `... AND NOT array_contains(listMatches, "vuln_scanners")`  
@@ -75,11 +77,11 @@ You can also create and manage Match Lists with CSE's REST [API](../administrati
 1. Go to **Content \> Match List** and click **Create**.
 
     ![match-list-create-icon.png](/img/cse/match-list-create-icon.png)
-1. On the **New Match List** popup, enter the following: 
+1. On the **New Match List** popup, enter the following:
 
-    * **Name**. Name of the Match list. If you are creating a standard Match List, make sure the name matches the standard Match List name. For more information, see [Standard Match Lists](standard-match-lists.md).   We recommend no embedded spaces in list names. For example, instead of *my list*, use *my_list*. 
-    * **Description**. Enter a description for the list. Descriptions for standard Match Lists can be found in [Standard Match Lists](standard-match-lists.md). 
-    * **Time to Live (hours)**. (Optional) Enter the number of hours after which the entries on the list should expire. 
+    * **Name**. Name of the Match list. If you are creating a standard Match List, make sure the name matches the standard Match List name. For more information, see [Standard Match Lists](standard-match-lists.md).   We recommend no embedded spaces in list names. For example, instead of *my list*, use *my_list*.
+    * **Description**. Enter a description for the list. Descriptions for standard Match Lists can be found in [Standard Match Lists](standard-match-lists.md).
+    * **Time to Live (hours)**. (Optional) Enter the number of hours after which the entries on the list should expire.
     * **Target Column**. The type of message field to which items on the list should be compared. The **Target Column** for standard Match Lists can be found in [Standard Match Lists](standard-match-lists.md).
     * Click **Create**.    
 
@@ -91,11 +93,11 @@ You can also create and manage Match Lists with CSE's REST [API](../administrati
 1. On the **Match List \> Details** page, click **ADD LIST ITEM**.
 
     ![match-list-add-item-icon.png](/img/cse/match-list-add-item-icon.png)
-1. On the **New Match List Item** popup, enter: 
+1. On the **New Match List Item** popup, enter:
 
-   * **Value**. The value of the entity. Make sure the value you enter is of the same type as the type you selected as the Target Column for the list. For example, if the Target Column is `Domain`, enter a domain. 
-   * **Description**. (Optional) Enter a description of the entity instance you entered. 
-   * **Expiration**. (Optional) The date and time at which the list item should be removed from the list. 
+   * **Value**. The value of the entity. Make sure the value you enter is of the same type as the type you selected as the Target Column for the list. For example, if the Target Column is `Domain`, enter a domain.
+   * **Description**. (Optional) Enter a description of the entity instance you entered.
+   * **Expiration**. (Optional) The date and time at which the list item should be removed from the list.
    * Click **Add** to add the item to the list.    
 
     ![new-match-list-item.png](/img/cse/new-match-list-item.png)

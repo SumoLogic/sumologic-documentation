@@ -1,8 +1,8 @@
 ---
 id: upload-logs-http-source
+title: Upload Logs to an HTTP Source
 ---
 
-# Upload Logs to an HTTP Source
 
 After you have added an [HTTP Logs and Metrics Source](/docs/send-data/sources/hosted-collectors/http-logs-metrics-source) to a [Hosted Collector](../../../configure-hosted-collector.md) you can begin uploading data. You can upload both logs and metrics to the same HTTP source, however not in the same HTTP request. This document provides instructions on uploading logs, if you are uploading metrics see [Upload Metrics to an HTTP Source](upload-metrics-to-http-source.md).
 
@@ -24,7 +24,7 @@ To upload log data with a POST request, include the complete data payload as the
 We recommend that the POST data payload have a size, before compression, of 100KB to 1MB. See [data payload considerations](upload-logs-http-source.md)  for details.
 :::
 
-* Data payload: 
+* Data payload:
 
   * Data line 1
   * Data line 2
@@ -55,10 +55,10 @@ Overridden metadata field values are not returned with [Search Autocomplete](../
 | Setting | Header Name | Header Value |
 |--|--|--|
 | Compressed data | `Content-Encoding` | Values can be either `gzip` or `deflate`<br/>Required if you are uploading compressed data. |
-| Custom Source Name | `X-Sumo-Name` | Desired source name.<br/>Useful if you want to override the source name configured for the source. | 
-| Custom Source Host | `X-Sumo-Host` | Desired host name.<br/>Useful if you want to override the source host configured for the source. | 
+| Custom Source Name | `X-Sumo-Name` | Desired source name.<br/>Useful if you want to override the source name configured for the source. |
+| Custom Source Host | `X-Sumo-Host` | Desired host name.<br/>Useful if you want to override the source host configured for the source. |
 | Custom Source Category | `X-Sumo-Category` | Desired source category.<br/>Useful if you want to override the source category configured for the source. |
-| Fields as custom metadata | `X-Sumo-Fields` | [Fields](../../../../manage/fields.md) need to be in a comma separated list of key-value pairs.  | 
+| Fields as custom metadata | `X-Sumo-Fields` | [Fields](../../../../manage/fields.md) need to be in a comma separated list of key-value pairs.  |
 
 ## Command Line Examples
 
@@ -88,7 +88,7 @@ curl -v -X POST -H 'Content-Encoding:gzip' -T [local_file_name.gz] https://colle
 **POST upload with custom Source Category**
 
 ```bash
-curl -v -X POST -H 'X-Sumo-Category:myNewCategory' -T [local_file_name] https://collectors.sumologic.com/receiver/v1/http/[UniqueHTTPCollectorCode] 
+curl -v -X POST -H 'X-Sumo-Category:myNewCategory' -T [local_file_name] https://collectors.sumologic.com/receiver/v1/http/[UniqueHTTPCollectorCode]
 ```
 
 **POST upload with custom Fields**

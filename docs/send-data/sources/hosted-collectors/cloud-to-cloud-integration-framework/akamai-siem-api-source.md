@@ -1,8 +1,9 @@
 ---
 id: akamai-siem-api-source
+title: Akamai SIEM API Source
 ---
 
-# Akamai SIEM API Source
+#
 
 The Akamai SIEM API Source provides a secure endpoint to receive security events generated on the Akamai platform by leveraging the [V1 SIEM API](https://developer.akamai.com/api/cloud_security/siem/v1.html). It securely stores the required authentication, scheduling, and state tracking information.
 
@@ -73,8 +74,8 @@ To configure an Akamai SIEM API Source:
      * `httpMessage.requestHeaders`
      * `httpMessage.responseHeaders`
      * `httpMessage.query`
-     
-     For example, a log with the values: 
+
+     For example, a log with the values:
 
      ```json
      {
@@ -103,8 +104,8 @@ To configure an Akamai SIEM API Source:
         }
     }
     ```
-     
-    will be decoded as: 
+
+    will be decoded as:
 
     ```json
     {

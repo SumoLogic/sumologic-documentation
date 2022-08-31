@@ -1,8 +1,9 @@
 ---
 id: custom-match-list-columns
+title: Custom Match List Columns
+description: Learn how to define custom columns for use in Match Lists.
 ---
 
-# Custom Match List Columns
 
 This page has information about custom Match List columns 
 

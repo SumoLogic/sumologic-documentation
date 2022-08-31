@@ -1,8 +1,9 @@
 ---
 id: create-manage-orgs
+title: Create and Manage Orgs
 ---
 
-# Create and Manage Orgs
+#
 
 :::note
 If you are a Sumo Logic Service Provider, see [Create and Manage Orgs (Service Providers)](create-manage-orgs-service-providers.md).
@@ -53,8 +54,8 @@ After you create a child org, you can’t delete it.
 
 1. The **Create New Organization** pane appears.
 
-    ![create-new-org-2.png](/img/subscriptions/create-new-org.png) 
-    
+    ![create-new-org-2.png](/img/subscriptions/create-new-org.png)
+
     :::note
     The **Credits Usage** portion of the pane shows information you’ll want to know when you assign credits to the new org: **Total Credits Quota** is the total number of credits for your subscription; **Available Credits** is the number of credits that have not yet been allocated to child orgs.
     :::
@@ -131,13 +132,13 @@ You can see what portion of your subscription credits have been allocated and co
 
 1. The **Credits Usage** section of the pane shows the number and percentage of the credits allocated to the org that have been consumed, along with the total credits that are allocated.
 1. Click **View Details** for more information.
-1. The **\<org-name\> usage details** popup displays the following information.  
+1. The **\<org-name\> usage details** popup displays the following information. 
 
-   * **Allocated Credits**. The total number of credits allocated to the org. 
+   * **Allocated Credits**. The total number of credits allocated to the org.
    * **Credits Used**. The number and percentage of allocated credits that have been used.
-   * For each Product Variable, the following information is shown. 
-   
-     * **Credits Used**. Number of allocated credits that have been used for the Product Variable. 
+   * For each Product Variable, the following information is shown.
+
+     * **Credits Used**. Number of allocated credits that have been used for the Product Variable.
      * **Deployment Charge.** This column is only present if your Sumo Logic subscription includes a deployment charge for child orgs in a different Sumo Logic deployment than the parent org. If present, the column shows the number of credits associated with the Deployment Charge for child org in a different deployment than the parent org.
      * **Usage %**. The percentage of credits allocated to the org that have been used for the Product Variable.
      * **Units**. Shows the volume of log ingest in GB or the DPM (metrics) that is equivalent to the credits used for the Product Variable.        

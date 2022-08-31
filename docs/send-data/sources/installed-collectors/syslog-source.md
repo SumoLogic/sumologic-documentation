@@ -1,8 +1,8 @@
 ---
 id: syslog-source
+title: Syslog Source
 ---
 
-# Syslog Source
 
 A Syslog Source operates like a syslog server listening on the designated port to receive syslog messages. You set your hosts or syslog-enabled devices to send syslog data to the same port you specify when you configure the Syslog Source.   
 
@@ -32,7 +32,7 @@ If you are editing a Source, metadata changes are reflected going forward. Metad
    * **Source Category.** Enter a string to tag the collected messages with the searchable metadata field **\_sourceCategory**. For example, enter **firewall** to tag all collected messages in a field called **\_sourceCategory**. Type **\_sourceCategory=firewall** in the Search field to return results from this Source. For more information, see [Metadata Naming Conventions](../reference-information-sources/metadata-naming-conventions.md) and our [Best Practices: Good and Bad Source Categories](../../design-deployment/best-practices-source-categories.md).
    * **Fields.** Click the **+Add Field** link to define the fields you want to associate, each field needs a name (key) and value.
 
-     * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema. 
+     * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
      * ![orange exclamation point.png](/img/reuse/orange-exclamation-point.png) An orange triangle with an exclamation point is shown when the field doesn't exist in the Fields table schema. In this case, an option to automatically add the nonexistent fields to the Fields table schema is provided. If a field is sent to Sumo that does not exist in the Fields schema it is ignored, known as dropped.
 
 1. Set any of the following under **Advanced**:
@@ -64,7 +64,7 @@ In the syslog configuration file, `facility.level` and `action` must be separat
 
 * `facility.level` is the selector.
 
-  * `facility` is the syslog message facility, which identifies the type of software that generated the message. Default syslog message facilities are – `auth`, `authpriv`, `daemon`, `cron`, `ftp`, `lpr`, `kern`, `mail`, `news`, `syslog`, `user`, and `local0` – `local7`. 
+  * `facility` is the syslog message facility, which identifies the type of software that generated the message. Default syslog message facilities are – `auth`, `authpriv`, `daemon`, `cron`, `ftp`, `lpr`, `kern`, `mail`, `news`, `syslog`, `user`, and `local0` – `local7`.
   * `level` indicates message severity:  `emerg`, `alert`,  `crit`,  `err`,  `warn`,  `notice`, `info`, or `debug`. The syslog agent will send messages with the specified severity level and higher. For example, if you specified `auth.crit`, you would get messages from the authorization system whose severity is `emerg`, `alert`, and `crit`. If you want to get messages of certain severity only, prefix the severity with an equals sign, for example `auth.=crit`
 
 * `action` specifies what to do with the messages. There are a variety of types of actions you can specify. For the purpose of this procedure, you’ll use `action` to specify the address of the collector where you configured the Syslog Source. To send messages via UDP, use this format: `@IP_address`. To send messages via TCP, use this format: `@@IP_address`. If you have configured the Sumo Source to list on a port other than 514, specify the port as well, like this: `@IP_address:port`.
@@ -74,19 +74,19 @@ In the syslog configuration file, `facility.level` and `action` must be separat
 The following line causes messages from all facilities whose severity is `crit` or higher to be sent via UDP to port 514 on the host whose IP address is 168.191.5.65.  (Because port is not specified messages will be sent to the default syslog port, which is 514.)
 
 ```
-*.crit @168.191.5.65 
+*.crit @168.191.5.65
 ```
 
 The following line causes messages whose severity is `crit` or higher from all facilities to be sent via UDP to port 514 on the host whose IP address is 168.191.5.65.
 
 ```
-*.crit @168.191.5.65:514 
+*.crit @168.191.5.65:514
 ```
 
 The following line causes messages whose severity is `crit` or higher from the `auth` facility to be sent via UDP to port 514 on the host whose IP address is 168.191.5.65.
 
 ```
-auth.crit @168.191.5.65:514 
+auth.crit @168.191.5.65:514
 ```
 
 The following line causes messages whose severity is `crit` or higher from the `auth` facility, and messages of all severity levels from the `ftp` facility to be sent via TCP to port 514 on the host whose IP address is 168.191.5.65.
@@ -210,7 +210,7 @@ These steps can help identify the problem:
 
     This example tests messages over TCP on Windows.
     ```
-    ncat.exe -v\<ip_addres\> 1514 
+    ncat.exe -v\<ip_addres\> 1514
     ```
 
     This example tests messages over UDP on Windows.
@@ -219,15 +219,15 @@ These steps can help identify the problem:
 
     This example tests messages over TCP on Linux.
     ```
-    nc -v\<ip_addres\> 1514 
+    nc -v\<ip_addres\> 1514
     ```
 
     This example tests messages over UDP on Linux.
-    
+
     ```
     nc -vu\<ip_addres\> 1514
     ```
-    
+
     Once the client is started with one of the above commands you can enter a message in the command line and press enter/return to send the message. For example,
 
     ![netcat-send.png](/img/send-data/netcat-send.png)

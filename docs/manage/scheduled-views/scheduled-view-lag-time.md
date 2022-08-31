@@ -1,8 +1,9 @@
 ---
 id: scheduled-view-lag-time
+title: Scheduled View Lag Time
 ---
 
-# Scheduled View Lag Time
+
 
 When you view the details of a Scheduled View, you can see who created it, creation date, lag time, query, and any error messages that may have been generated.
 

@@ -72,7 +72,7 @@ This section provides instructions on configuring log collection for the Windows
 
 To configure a collector and source, do the following:
 
-1. Configure an [Installed Windows collector](/docs/send-data/installed-collectors/install-collector-windows) through the user interface or from the command line.
+1. Configure an [Installed Windows collector](/docs/send-data/installed-collectors/windows) through the user interface or from the command line.
 2. Configure either a local or remote Windows Event Log source. To configure a Windows Event Log source, set **Event Format** to **Collect using legacy format**.<br/><img src={useBaseUrl('img/integrations/microsoft-azure/Event_Format_Legacy.png')} alt="Event_Format_Legacy" />
 
 Events retain their default text format from Windows.

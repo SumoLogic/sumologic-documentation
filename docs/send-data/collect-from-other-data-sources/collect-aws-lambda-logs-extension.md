@@ -1,8 +1,9 @@
 ---
 id: collect-aws-lambda-logs-extension
+title: Collect AWS Lambda Logs using an Extension
 ---
 
-# Collect AWS Lambda Logs using an Extension
+
 
 [AWS Lambda Extensions](https://aws.amazon.com/blogs/compute/introducing-aws-lambda-extensions-in-preview/) enable us to more easily integrate into the AWS Lambda execution environment to control and participate in the AWS Lambda lifecycle and the AWS Lambda Logs API enables us to collect AWS Lambda logs. Sumo Logic, therefore, has developed a new open-source AWS Lambda extension that is a lightweight process that runs within the same execution environment as your Lambda functions and uses the Lambda logs API to send platform, function, and extension logs to Sumo Logic. Sumo Logic's Lambda Extension works with AWS Lambda functions that are built for both x86_64 and ARM 64 (Graviton2) architectures. 
 
@@ -62,7 +63,7 @@ To add the Sumo Logic Lambda Extension to your AWS Lambda function, please follo
     ```
 
      * **AWS_REGION.** Replace with the AWS Region of your Lambda function
-     * **VERSION.** The latest version of the Sumo Logic Extension. 
+     * **VERSION.** The latest version of the Sumo Logic Extension.
 
     ![x86_64.png](/img/send-data/x86_64.png)
 
@@ -72,8 +73,8 @@ To add the Sumo Logic Lambda Extension to your AWS Lambda function, please follo
     <AWS_REGION>:956882708938:layer:sumologic-extension-arm64:<VERSION>
     ```
 
-     * **AWS_REGION.** Replace with the AWS Region of your Lambda function 
-     * **VERSION.** The latest version of the Sumo Logic Extension. 
+     * **AWS_REGION.** Replace with the AWS Region of your Lambda function
+     * **VERSION.** The latest version of the Sumo Logic Extension.
 
     ![arm64.png](/img/send-data/arm64.png)
 
@@ -96,7 +97,7 @@ To package the Sumo Logic Lambda Extension with the AWS Lambda function created 
     wget
     https://github.com/SumoLogic/sumologic-lambda-extensions/releases/latest/download/sumologic-extension-arm64.tar.gz
     ```
- 
+
 1. In your AWS Lambda container image Dockerfile, add the command below.
 
   ```bash
@@ -123,16 +124,16 @@ To package the Sumo Logic Lambda Extension with the AWS Lambda function created 
 
 Add the following environment variables to your Lambda function:
 
-| Variable Name | Description | Type | 
+| Variable Name | Description | Type |
 |--|--|--|
-| `SUMO_HTTP_ENDPOINT` | This is the URL of the Sumo Logic HTTP source created in Step 1. | Required | 
+| `SUMO_HTTP_ENDPOINT` | This is the URL of the Sumo Logic HTTP source created in Step 1. | Required |
 | `SUMO_LOG_TYPES` | Please provide a comma-separated list of values that are one or more "platform", "function" or "extension" to indicate which AWS Lambda logs you want to send to Sumo Logic. By default, all of these three values are assumed. | Optional
 | `SUMO_ENABLE_FAILOVER` | Set to True to failover in case you would like the extension to send logs to an AWS S3 bucket. In the case of throttling or, exceptions the default value assumed is False. | Optional
-| `SUMO_S3_BUCKET_NAME` | The name of an AWS S3 bucket. | Optional | 
-| `SUMO_S3_BUCKET_REGION` | The Region where the above AWS S3 bucket is located. | Optional | 
-| `SUMO_MAX_RETRY` | A Number of retries to send logs to Sumo Logic. The default is 0. | Optional | 
-| `SUMO_LOG_LEVEL` | Log level, which can be one of info, error, or debug. The default value is info. | Optional | 
-| `SOURCE_CATEGORY_OVERRIDE` | The Source Category for all incoming data is set to that of the HTTP endpoint by default. You can however override it with this parameter | Optional | 
+| `SUMO_S3_BUCKET_NAME` | The name of an AWS S3 bucket. | Optional |
+| `SUMO_S3_BUCKET_REGION` | The Region where the above AWS S3 bucket is located. | Optional |
+| `SUMO_MAX_RETRY` | A Number of retries to send logs to Sumo Logic. The default is 0. | Optional |
+| `SUMO_LOG_LEVEL` | Log level, which can be one of info, error, or debug. The default value is info. | Optional |
+| `SOURCE_CATEGORY_OVERRIDE` | The Source Category for all incoming data is set to that of the HTTP endpoint by default. You can however override it with this parameter | Optional |
 
 1. Once you have set your parameters, execute your AWS Lambda function, and validate that the logs are coming into Sumo Logic. 
 1. If you have enabled failover, do the following:

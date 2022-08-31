@@ -1,8 +1,9 @@
 ---
 id: troubleshoot-script-source-issues
+title: Troubleshoot Script Source Issues
 ---
 
-# Troubleshoot Script Source Issues
+
 
 This document covers common issues with Script Sources not ingesting log data. If you're having an issue creating a Script Source see the [preparation and configuration steps](/docs/send-data/sources/installed-collectors/script-source) for guidance.
 

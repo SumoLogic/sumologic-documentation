@@ -1,8 +1,8 @@
 ---
 id: view-mappers-for-product
 title: View a List of Log Mappers for a Product
-sidebar_label: View a List of Log Mappers for a Product
-description: tk
+sidebar_label: Viewing Log Mappers for a Product
+description: Learn how to find what mappers CSE provides for a product or service.
 ---
 
 

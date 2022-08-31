@@ -1,8 +1,8 @@
 ---
 id: collector-installation-error-messages
+title: Collector Installation Error Messages
 ---
 
-# Collector Installation Error Messages
 
 For additional information, see Collector Management API.
 

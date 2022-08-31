@@ -1,13 +1,12 @@
 ---
 id: cron-examples-reference
+title: Cron Examples and Reference
 ---
-
-# Cron Examples and Reference
 
 Sumo Logic uses Quartz CRON expressions. The syntax for a Quartz
 CRON expression is:
 
-```
+```bash
 <seconds> <minutes> <hours> <day of the month> <month> <day of the week> <year>
 ```
 
@@ -36,7 +35,7 @@ Cron expressions are comprised of six required fields (seconds, minutes, hours, 
 There are several special characters that are used to specify values:
 
 | Character |  Specifies | Notes |
-|--|--|--| 
+|--|--|--|
 | \* | All values. | `*` in the minute field means every minute. |
 | ? | No specific value in the day of month and day of week fields. | `?` specifies a value in one field, but not the other. |
 | \* | A range. | `10-12` in the hour field means the script will run at 10, 11 and 12 (noon). |

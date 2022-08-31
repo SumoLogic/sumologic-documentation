@@ -1,8 +1,9 @@
 ---
 id: navigate-through-search-results
+title: Navigate through Search Results
 ---
 
-# Navigate through Search Results
+
 
 When you run a search your results are provided in a **Messages** tab. If the search conducted an aggregation you'll also get an **Aggregates** tab.
 

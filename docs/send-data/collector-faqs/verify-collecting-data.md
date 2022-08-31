@@ -1,8 +1,8 @@
 ---
 id: verify-collecting-data
+title: How can I tell if I'm collecting data?
 ---
 
-# How can I tell if I'm collecting data?
 
 After installing a Collector and configuring a Source, your data should appear in Sumo Logic in a matter of minutes. How can you confirm that your data is being collected? Try any of the following options. 
 
@@ -35,7 +35,7 @@ To check a Collector's status:
     * **Linux**: `/opt/SumoCollector/` or `/usr/local/SumoCollector`
     * **Windows**: `C:\Program Files (x86)\Sumo Logic Collector` or `C:\Program Files\Sumo Logic Collector`
 
-1. If the status is "stopped" you can restart the Collector by running `#./collector start`. 
+1. If the status is "stopped" you can restart the Collector by running `#./collector start`.
 
     Running a Collector on Windows? The Collector's status can be found by running services.msc from an Admin cmd.exe shell, or from the Control Panel. The service is listed under SumoLogic Collector; the startup type should be set to Automatic.
 
@@ -52,7 +52,7 @@ To view Source settings:
 1. Under **Advanced**, choose one of the following:
 
     ![img](/img/send-data/timezone_parsing_options.png)
- 
+
    * Extract timestamp information from log file entries. Select this option if you'd like Sumo Logic to always extract timestamps from log messages. If no timestamp is detected, Sumo Logic uses the time when the data is received. Generally, this is the best option (it's also selected by default).
    * Use time zone from log file. Choose a time zone that Sumo Logic can use if log files don't have a time stamp. If a Collector is running on a computer set to the UTC time zone without an offset, Sumo Logic will use this time zone.
    * Ignore time zone from log file. Choose a time zone to override any time zone information found in log files. If you're collecting log files from disparate time zones, choose this option to set all your Sources to the same time zone.
@@ -62,4 +62,3 @@ Changes you make to this option aren't applied retroactively; they are applied 
 :::
 
 For more information, see [Timestamps, Time Zones, Time Ranges, and Date Formats](../sources/reference-information-sources/time-reference.md). 
-

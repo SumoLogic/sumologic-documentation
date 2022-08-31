@@ -2,7 +2,7 @@
 id: palo-alto-firewall
 title: Palo Alto Firewall
 sidebar_label: Palo Alto Firewall
-description: tk
+description: Configure collection of Palo Alto Firewall log messages to be parsed by CSE's system parser for Palo Alto Firewall.
 ---
 
 This section has instructions for collecting Palo Alto Firewall log messages and sending them to Sumo Logic to be ingested by CSE.

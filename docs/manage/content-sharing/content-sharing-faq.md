@@ -1,8 +1,9 @@
 ---
 id: content-sharing-faq
+title: Content Sharing FAQ
 ---
 
-# Content Sharing FAQ
+#
 
 Welcome to Content Sharing. We've provided this FAQ to answer your basic questions around the interface changes that come with Content Sharing.
 

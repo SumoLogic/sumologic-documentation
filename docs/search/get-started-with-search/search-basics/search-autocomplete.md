@@ -1,10 +1,11 @@
 ---
 id: search-autocomplete
+title: Search Autocomplete
 ---
 
-# Search Autocomplete
 
-On the **Search** page, as you begin typing to enter a query in the search text box, the search autocomplete drop-down dialog opens to offer suggestions to make query writing easier. 
+
+On the **Search** page, as you begin typing to enter a query in the search text box, the search autocomplete drop-down dialog opens to offer suggestions to make query writing easier.
 
 RBAC limitations prevent you from seeing options that you are not permitted to see. 
 

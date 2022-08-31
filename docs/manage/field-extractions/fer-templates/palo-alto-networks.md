@@ -1,8 +1,9 @@
 ---
 id: palo-alto-networks
+title: Palo Alto Networks
 ---
 
-# Palo Alto Networks
+#
 
 **Log Type**: Palo Alto Networks
 
@@ -33,7 +34,7 @@ parse "*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*,*
 |  genTime      |   |  2017/07/13 20:39:44 |
 |  src_ip       |   |  10.183.12.108 |
 |  dest_ip      |   |  10.183.51.49 |
-|  natsrc_ip    |   | 0.0.0.0 | 
+|  natsrc_ip    |   | 0.0.0.0 |
 |  natdest_ip   |   | 0.0.0.0  |
 |  ruleName     |   |  WinDomain_AUTH_TO_DC |
 | src_user      |   | sumologic\\tvadmin |

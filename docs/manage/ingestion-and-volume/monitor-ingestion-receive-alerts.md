@@ -1,8 +1,9 @@
 ---
 id: monitor-ingestion-receive-alerts
+title: Monitor Log Ingestion and Receive Alerts
 ---
 
-# Monitor Log Ingestion and Receive Alerts
+
 
 Sumo Logic provides ingest alerts that you can schedule to get timely information about ingestion usage or throttling. With the excepting of the [Throttling alert](monitor-ingestion-receive-alerts.md) described below these alerts apply to logs only, not metrics. 
 
@@ -51,35 +52,35 @@ You must update all of the indicated fields for the search to save successfully
 **Query:**
 
 ```sql
-_index=sumologic_volume and sizeInBytes and _sourceCategory="sourcename_volume" 
-| parse regex "\"(?<sourcename>[^\"]*)\"\:{\"sizeInBytes\"\:(?<bytes>\d+),\"count\"\:(?<count>\d+)\}" multi 
-| timeslice 1d 
-| bytes/1024/1024/1024 as gbytes 
-| sum(gbytes) as gbytes by _timeslice 
-| formatDate(_timeslice, "YY") as year 
-| formatDate(_timeslice, "MM") as month 
-| number(month) 
-| formatDate(_timeslice, "dd") as day 
-| number(day) 
-| formatDate(now(), "MM") as current_month 
-| number(current_month) 
-| formatDate(now(), "dd") as current_day 
-| number(current_day) 
-| X as billing_start //Replace the X with your billing start day which can be found in Manage > Account. 
-| X as billing_end //Replace the X with your billing end day which can be found in Manage > Account 
-| if(current_day < billing_start, current_month-1, current_month) as start_month 
-| if(billing_start=1 && billing_end=31, current_month, if(current_day >= billing_start, current_month+1, current_month)) as end_month 
-| if(((month>start_month AND day<=billing_end) OR (month=start_month AND day>=billing_start)), "true", "false") as include 
-| 1 as day_count 
-| if(start_month in(1,3,5,7,8,10,12), 31, if (start_month in(4,6,9,11), 30, if(year % 4 == 0, 29, 28))) as days_in_start_month 
-| if(end_month in(1,3,5,7,8,10,12), 31, if (end_month in(4,6,9,11), 30, if(year % 4 == 0, 29, 28))) as days_in_end_month 
-| where include="true" 
-| order by _timeslice 
-| sum(gbytes) as gbytes, sum(day_count) as day_count, max(current_month) as current_month, max(current_day) as current_day, max(days_in_start_month) as days_in_start_month, max(days_in_end_month) as days_in_end_month, max(start_month) as start_month, max(end_month) as end_month, max(billing_start) as billing_start, max(billing_end) as billing_end 
-| if(current_month = end_month, billing_end-current_day, if(current_month < end_month, days_in_start_month-current_day+billing_end, 0)) as billing_days_remaining 
-| X as daily_gb_limit //Replace the X with your ingest limit per day which can be found in Manage > Account 
-| daily_gb_limit * (day_count + billing_days_remaining) as expected_ingest_in_billing_cycle 
-| (gbytes/expected_ingest_in_billing_cycle) * 100 as pct_used 
+_index=sumologic_volume and sizeInBytes and _sourceCategory="sourcename_volume"
+| parse regex "\"(?<sourcename>[^\"]*)\"\:{\"sizeInBytes\"\:(?<bytes>\d+),\"count\"\:(?<count>\d+)\}" multi
+| timeslice 1d
+| bytes/1024/1024/1024 as gbytes
+| sum(gbytes) as gbytes by _timeslice
+| formatDate(_timeslice, "YY") as year
+| formatDate(_timeslice, "MM") as month
+| number(month)
+| formatDate(_timeslice, "dd") as day
+| number(day)
+| formatDate(now(), "MM") as current_month
+| number(current_month)
+| formatDate(now(), "dd") as current_day
+| number(current_day)
+| X as billing_start //Replace the X with your billing start day which can be found in Manage > Account.
+| X as billing_end //Replace the X with your billing end day which can be found in Manage > Account
+| if(current_day < billing_start, current_month-1, current_month) as start_month
+| if(billing_start=1 && billing_end=31, current_month, if(current_day >= billing_start, current_month+1, current_month)) as end_month
+| if(((month>start_month AND day<=billing_end) OR (month=start_month AND day>=billing_start)), "true", "false") as include
+| 1 as day_count
+| if(start_month in(1,3,5,7,8,10,12), 31, if (start_month in(4,6,9,11), 30, if(year % 4 == 0, 29, 28))) as days_in_start_month
+| if(end_month in(1,3,5,7,8,10,12), 31, if (end_month in(4,6,9,11), 30, if(year % 4 == 0, 29, 28))) as days_in_end_month
+| where include="true"
+| order by _timeslice
+| sum(gbytes) as gbytes, sum(day_count) as day_count, max(current_month) as current_month, max(current_day) as current_day, max(days_in_start_month) as days_in_start_month, max(days_in_end_month) as days_in_end_month, max(start_month) as start_month, max(end_month) as end_month, max(billing_start) as billing_start, max(billing_end) as billing_end
+| if(current_month = end_month, billing_end-current_day, if(current_month < end_month, days_in_start_month-current_day+billing_end, 0)) as billing_days_remaining
+| X as daily_gb_limit //Replace the X with your ingest limit per day which can be found in Manage > Account
+| daily_gb_limit * (day_count + billing_days_remaining) as expected_ingest_in_billing_cycle
+| (gbytes/expected_ingest_in_billing_cycle) * 100 as pct_used
 | where pct_used > 85
 ```
 
@@ -112,7 +113,7 @@ You must update the indicated field for the search to be successfully saved.
     ```sql
     X as daily_plan_size
     ```
-    
+
     The correct value is on the Account page. Click on your name in the left nav and go to **Administration** \> **Account** \> **Account Overview**. For example, the daily plan size in the following figure is 100.
 
     ![Account](/img/ingestion-and-volume/account-overview.png)
@@ -149,7 +150,7 @@ After completing the setup steps above, schedule the search to run, as follows.�
 This hourly alert is generated when both of the following occur:
 
 * Ingest for any `_sourceCategory` in your account has a 50% spike compared with the maximum log ingest for the same `_sourceCategory` over the **last four weeks** (comparison is with the same hour and day of week).
-* The log volume ingested by the `_sourceCategory` represents at least 25 % of the total data ingested within the hour. 
+* The log volume ingested by the `_sourceCategory` represents at least 25 % of the total data ingested within the hour.
 
 **Setup**
 
@@ -160,32 +161,32 @@ This hourly alert is generated when both of the following occur:
     ```sql
     | where pct_increase  \> 30 and ingest_weight\> 30
     ```
-    
+
     Example: Change the `pct_increase` value higher to make the alert less sensitive.
-    
+
     ```sql
     | where pct_increase  \> 50 and ingest_weight\> 30
     ```
 
-1. (Optional) To change the alert to evaluate a spike in a Collector or Source, do either of the following:  
+1. (Optional) To change the alert to evaluate a spike in a Collector or Source, do either of the following: 
 
-    * To generate an alert on a spike in ingest for a Collector, change the first line of the query replacing `_sourceCategory="sourcecategory_volume"` with `_sourceCategory="collector_volume"` 
+    * To generate an alert on a spike in ingest for a Collector, change the first line of the query replacing `_sourceCategory="sourcecategory_volume"` with `_sourceCategory="collector_volume"`
     * To generate an alert on a spike in ingest for a Source, change the first line of the query replacing   `_sourceCategory="sourcecategory_volume"` with `_sourceCategory="source_volume"`
 
 **Query:**
 
 ```sql
-_index=sumologic_volume sizeInBytes _sourceCategory="sourcecategory_volume" 
-| parse regex "\"(?<sourcecategory>[^\"]+)\"\:{\"sizeInBytes\"\:(?<bytes>\d+),\"count\"\:(?<count>\d+)\}" multi 
-| timeslice 1h 
-| bytes/1024/1024/1024 as gbytes 
-| sum(gbytes) as gbytes by sourcecategory, _timeslice 
-| where !(sourceCategory matches "*_volume") 
-| compare timeshift -1w 4 max 
-| if(isNull(gbytes_4w_max), 0, gbytes_4w_max) as gbytes_4w_max 
-| ((gbytes - gbytes_4w_max) / gbytes) * 100 as pct_increase 
-| total gbytes by _timeslice 
-| (gbytes / _total) * 100 as ingest_weight 
+_index=sumologic_volume sizeInBytes _sourceCategory="sourcecategory_volume"
+| parse regex "\"(?<sourcecategory>[^\"]+)\"\:{\"sizeInBytes\"\:(?<bytes>\d+),\"count\"\:(?<count>\d+)\}" multi
+| timeslice 1h
+| bytes/1024/1024/1024 as gbytes
+| sum(gbytes) as gbytes by sourcecategory, _timeslice
+| where !(sourceCategory matches "*_volume")
+| compare timeshift -1w 4 max
+| if(isNull(gbytes_4w_max), 0, gbytes_4w_max) as gbytes_4w_max
+| ((gbytes - gbytes_4w_max) / gbytes) * 100 as pct_increase
+| total gbytes by _timeslice
+| (gbytes / _total) * 100 as ingest_weight
 | where pct_increase > 50 and ingest_weight > 25 //update pct_increase and/or weight value to adjust alert sensitivity
 ```
 
@@ -221,25 +222,25 @@ attributes `alive` and `LastSeenAlive`.
     ```sql
     | where mins_since_last_logs\>= 60
     ```
-    
+
     For example, if your collectors ingest less often than 60 minutes, 4 hours may be more appropriate and you can change the line to 240 minutes:
 
     ```sql
-    | where mins_since_last_logs\>= 240 
+    | where mins_since_last_logs\>= 240
     ```
 
 **Query:**
 
 ```sql
-_index=sumologic_volume sizeInBytes _sourceCategory="collector_volume" 
-| parse regex "\"(?<collector>[^\"]+)\"\:{\"sizeInBytes\"\:(?<bytes>\d+),\"count\"\:(?<count>\d+)\}" multi 
-| first(_messagetime) as MostRecent, sum(bytes) as TotalVolumeBytes by collector 
-| formatDate(fromMillis(MostRecent),"yyyy/MM/dd HH:mm:ss") as MostRecentTime 
-| toMillis(now()) as currentTime 
-| formatDate(fromMillis(currentTime),"yyyy/MM/dd HH:mm:ss") as SearchTime 
-| (currentTime-MostRecent) / 1000 / 60 as mins_since_last_logs 
-| where mins_since_last_logs >= 60 
-| fields -mostrecent, currenttime 
+_index=sumologic_volume sizeInBytes _sourceCategory="collector_volume"
+| parse regex "\"(?<collector>[^\"]+)\"\:{\"sizeInBytes\"\:(?<bytes>\d+),\"count\"\:(?<count>\d+)\}" multi
+| first(_messagetime) as MostRecent, sum(bytes) as TotalVolumeBytes by collector
+| formatDate(fromMillis(MostRecent),"yyyy/MM/dd HH:mm:ss") as MostRecentTime
+| toMillis(now()) as currentTime
+| formatDate(fromMillis(currentTime),"yyyy/MM/dd HH:mm:ss") as SearchTime
+| (currentTime-MostRecent) / 1000 / 60 as mins_since_last_logs
+| where mins_since_last_logs >= 60
+| fields -mostrecent, currenttime
 | format ("%s Has not collected data in the past 60 minutes", collector) as message
 ```
 

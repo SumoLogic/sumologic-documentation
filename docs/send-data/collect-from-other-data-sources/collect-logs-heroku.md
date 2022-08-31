@@ -1,8 +1,9 @@
 ---
 id: collect-logs-heroku
+title: Collect Logs from Heroku
 ---
 
-# Collect Logs from Heroku
+
 
 You can upload data from your Heroku app directly to Sumo Logic by pointing a [Heroku log drain](https://devcenter.heroku.com/articles/log-drains) to the URL for an HTTP Source. The log drain forwards batches of data directly to the HTTP Source.
 
@@ -14,7 +15,7 @@ First perform the following prerequisites:
 
 ## Upload app data from Heroku
 
-From the Heroku command line, go to the Heroku directory where your application is checked out, and type the following: 
+From the Heroku command line, go to the Heroku directory where your application is checked out, and type the following:
 
 ```
 heroku drains:add
@@ -48,20 +49,20 @@ Then, define an FER in Sumo.
 
 1. Go to **Manage Data \> Logs \> Field Extraction Rules**.
 1. **Rule Name**. Enter a name for the FER.
-1. **Scope**. Specify the \_sourceCategory defined for the source to which you will be forwarding Heroku application logs. For example, if the \_sourceCategory is "heroku", enter: 
+1. **Scope**. Specify the \_sourceCategory defined for the source to which you will be forwarding Heroku application logs. For example, if the \_sourceCategory is "heroku", enter:
 
     ```sql
     _sourceCategory=heroku
     ```
 
-1. **Parse Expression**. For each Heroku application reporting data to Sumo, enter a statement that renames the  \_sourceName from the drain ID to the application name. For example: 
+1. **Parse Expression**. For each Heroku application reporting data to Sumo, enter a statement that renames the  \_sourceName from the drain ID to the application name. For example:
 
     ```
     if (_sourceName="Drain_ID", "Application_Name", _sourceName) as _sourceName
     ```
 
     The FER below changes the value of \_sourceName for two applications. The first line changes \_sourceName  from `d.98ee476d-d2d8-46bf-afc2-740f6f7e5b2a` to `CustApp`. The second line changes \_sourceName from `d.00870f28-53f9-4680-b2ab-2287ec9d8637` to `VendorApp`:
-    
+
     ```sql
     if (_sourceName="d.98ee476d-d2d8-46bf-afc2-740f6f7e5b2a", "CustApp", _sourceName) as _sourceName
     | if (_sourceName="d.00870f28-53f9-4680-b2ab-2287ec9d8637", "VendorApp", _sourceName) as _sourceName

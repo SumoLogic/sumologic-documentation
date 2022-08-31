@@ -7,11 +7,11 @@ description: You'll find a list of new Collector features and relevant bug fixes
 
 Collector Release Notes for the current year are listed here. If you need to see previous Collector Release Notes, check the [archive](/docs/releasenotes/archive).
 
-You can upgrade [Installed Collectors](/docs/send-data/installed-collectors/about-installed-collectors.md) in the following ways:
+You can upgrade [Installed Collectors](/docs/send-data/installed-collectors/about.md) in the following ways:
 
 * [Web Application](/docs/manage/collection/upgrade-collectors.md)
 * [Command Line](/docs/manage/collection/upgrade-collectors.md)
-* [Collector Management API](https://help.sumologic.com/APIs/Collector-Management-API/Upgrade-or-Downgrade-Collectors-Using-the-API)
+* [Collector Management API](/docs/API/Collector#Upgrade-or-Downgrade-Collectors-Using-the-API)
 
 :::note
 Our [static URLs](/docs/send-data/installed-collectors/collector-installation-reference/download-collector-from-static-url.md) are available to download the most recent Collector version.
@@ -37,6 +37,14 @@ Bug Fix: Upgrade Manager fixes were made to avoid a manual restart after a Colle
 ---
 ### May 11, 2022 (19.392-6)
 Security: Upgraded the Collector JRE to [8.332.08.1](https://github.com/corretto/corretto-8/releases/tag/8.332.08.1) to address several CVEs:
+
+| CVE            | CVSS | Component                   |
+|:----------------|:------|:----------------------------|
+| CVE-2022-21476 | 7.5  | security-libs/java.security |
+| CVE-2022-21496 | 5.3  | core-libs/javax.naming      |
+| CVE-2022-21434 | 5.3  | core-libs/java.lang         |
+| CVE-2022-21426 | 5.3  | xml/jaxp                    |
+
 
 For details, see the changelog [here](https://github.com/corretto/corretto-8/blob/release-8.332.08.1/CHANGELOG.md).
 

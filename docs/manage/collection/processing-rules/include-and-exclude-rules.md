@@ -1,8 +1,9 @@
 ---
 id: include-and-exclude-rules
+title: Include and Exclude Rules
 ---
 
-# Include and Exclude Rules
+
 
 You can use include and exclude [processing rules](/docs/manage/collection/processing-rules/create-processing-rule.md) to specify what data is sent to Sumo Logic.
 

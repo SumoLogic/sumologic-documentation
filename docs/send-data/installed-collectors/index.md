@@ -1,8 +1,7 @@
 ---
 slug: /send-data/installed-collectors
+title: Installed Collectors
 ---
-
-# Installed Collectors
 
 import DocCardList from '@theme/DocCardList';
 import {useCurrentSidebarCategory} from '@docusaurus/theme-common';

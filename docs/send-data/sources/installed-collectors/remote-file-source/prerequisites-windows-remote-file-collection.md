@@ -1,8 +1,9 @@
 ---
 id: prerequisites-windows-remote-file-collection
+title: Prerequisites for Windows Remote File Collection
 ---
 
-# Prerequisites for Windows Remote File Collection
+
 
 Sumo Logic requires a few extra steps when you set up collection in Windows environments. For remote file collection from Windows systems, choose one of these two methods:
 
@@ -15,7 +16,7 @@ As an alternative to using SSH for remote Windows collections, Sumo Logic Collec
 
 Here is an overview of the required steps:
 
-* [Install a Collector on Windows](../../../installed-collectors/install-collector-windows.md).
+* [Install a Collector on Windows](../../../installed-collectors/windows.md).
 * On the machine where the files reside (the target or remote machine), use Windows Advanced Sharing options to create a UNC share for the log directory.
 * [Set up a Local File Source](../local-file-source.md).
 
@@ -23,16 +24,16 @@ The Collector must reside within the same Active Directory domain as the target
 
 ## Step 1. Install a Sumo Logic Collector.
 
-[Install a Collector on Windows](../../../installed-collectors/install-collector-windows.md) on a machine within the same Active Directory domain as the target system
+[Install a Collector on Windows](../../../installed-collectors/windows.md) on a machine within the same Active Directory domain as the target system
 where files reside.
 
 ## Step 2. Set UNC share permissions.
 
-1. Set up the UNC share permissions (Share with "Everyone" and "Read-Only") for the folder on the target machine. 
+1. Set up the UNC share permissions (Share with "Everyone" and "Read-Only") for the folder on the target machine.
 
-   * Open Explorer in the machine where the files reside. 
-   * Right-click the log directory, and select **Properties**. 
-   * Click **Advanced Sharing**. 
+   * Open Explorer in the machine where the files reside.
+   * Right-click the log directory, and select **Properties**.
+   * Click **Advanced Sharing**.
    * In the Advanced Sharing dialog, give the log directory a share name (or just use the actual folder name), and then click **Permissions**.
    * Set the permissions for **Everyone** to **Read**.
 

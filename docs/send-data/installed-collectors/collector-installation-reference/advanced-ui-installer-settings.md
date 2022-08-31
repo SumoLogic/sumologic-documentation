@@ -1,8 +1,9 @@
 ---
 id: advanced-ui-installer-settings
+title: Advanced UI Installer Settings
 ---
 
-# Advanced UI Installer Settings
+
 
 These options appear if you click **Advanced Settings** on the Confirmation dialog in the UI Installer. Click each tab to specify settings, and then click **Next** to return to the main UI installer flow.
 
@@ -40,6 +41,6 @@ Configure these settings if you want to use a proxy.
 | Proxy Host | Host name of the proxy server. |
 | Proxy Port | Port used by the proxy server. |
 | Authentication Type | If authentication is required, we support two different types:<br/>Basic Authentication (Username, Password)<br/>NTLM domain used to log into the proxy server. Required only for NTLM authentication. |
-| Proxy User | (Optional) User name to log into proxy server. Required for basic and NTLM authentication. 
+| Proxy User | (Optional) User name to log into proxy server. Required for basic and NTLM authentication.
 | Proxy Password | (Optional) Password to log into proxy server. Required for basic and NTLM authentication. |
 | NTLM Domain | (Optional) NTLM Authentication (Username, Password, NTLM Domain) |
