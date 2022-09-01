@@ -43,10 +43,10 @@ To configure a RUM HTTP Traces source:
 
 1. In the Sumo Logic web interface, select **Manage Data \> Collection \> Collection**. 
 1. On the Collection page, click **Add Source** next to a Hosted Collector.
-1. Select **RUM HTTP Traces**.<br/><img src={useBaseUrl('img/rum/rum-icon.png')} alt="Real User Monitoring" width="120"/><br/>
+1. Select **RUM HTTP Traces**. Complete source and advanced options. A list of FAQs on the page provides help for these options.<br/><img src={useBaseUrl('img/rum/rum-icon.png')} alt="Real User Monitoring" width="120"/><br/>
 1. Under **Source Type: RUM HTTP Traces**, enter the following information:
-   * **Name** (optional) for the Source.
-   * **Description** for the Source.
+   * **Name** for the Source.
+   * **Description** for the Source (optional).
    * **Source Host** and **Source Category** (optional): enter any string to tag the output collected from the source. These are [built-in metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata.md) fields that allow you to organize your data. We recommend you specify a Source Category indicating the data is from a browser.<br/><img src={useBaseUrl('/img/rum/RUM-HTTP-Traces-Source.png')} alt="Real User Monitoring" width="300"/>
 1. Enter **Advanced options for Browser RUM**. A list of FAQs on the page provides help for these options. A table with all the available configuration parameters is available in the [Sumo Logic OpenTelemetry auto-instrumentation for JavaScript](https://github.com/SumoLogic/sumologic-opentelemetry-js) README file.<br/><img src={useBaseUrl('img/rum/RUM-HTTP-Traces-Source-Advanced.png')} alt="Real User Monitoring" width="300"/>
    * **Application Name** (recommended): Add an **Application Name** tag of a text string to show for the app name in spans, for example `bookings-app`. This groups services in the Application Service View. If left blank, services will belong to a "default" application. See [Application Service Dashboards](../traces/working-with-tracing-data/service-map.md) for more information. This setting is saved in the script for `name_of_your_web_application`.
@@ -78,9 +78,8 @@ To configure a RUM HTTP Traces source:
    * **Geolocation recognition**: Select a **Geolocation recognition** option to automatically recognize geographical locations of your end clients from:
      * The country down to state (recommended for global websites)
      * A single country down to city level (recommended for local, country specific websites)
-
 1. When you are finished configuring the Source, click **Submit**.
-1. An HTTP Source Script is displayed in a pop-up with three different formats: synchronous, asynchronous, and npm. These are examples of scripts you can use with all configurations you entered when creating the source, including advanced options. Select a format and click **Copy to Clipboard**. <br/><br/><img src={useBaseUrl('img/rum/RUM-HTTP-Traces-Script.png')} alt="Real User Monitoring" width="400"/>
+1. An HTTP Source Script is displayed in a pop-up with three different formats: synchronous, asynchronous, and npm. These are examples of scripts you can use with all configurations you entered when creating the source, including advanced options. Select a format and click **Copy to Clipboard**. <br/><img src={useBaseUrl('img/rum/RUM-HTTP-Traces-Script.png')} alt="Real User Monitoring" width="400"/>
 
   The script includes a RUM HTTP Traces Source URL for `collectionSourceUrl` in the generated script. This is saved for the script as `sumo_logic_http_traces_source_url`. Your user's browser should be allowed to POST data to this URL.  
 
@@ -176,7 +175,7 @@ initialize({
 </TabItem>
 </Tabs>
 
-RUM script can be also wrapped in the form of a browser extension/plugin for monitoring SaaS applications in environments where you can control user browser configuration (e.g., internal employees). To obtain a customized browser extension for your environment to monitor Real User Experience with Sumo Logic, contact your Account Team or Sumo Logic support.
+RUM scripts can be also wrapped in the form of a browser extension/plugin for monitoring SaaS applications in environments where you can control user browser configuration (e.g., internal employees). To obtain a customized browser extension for your environment to monitor Real User Experience with Sumo Logic, contact your Account Team or Sumo Logic support.
 
 :::tip
 You can view and copy a script anytime by clicking **Show Script** for the source.<br/> ![show-script.png](/img/rum/show-script.png)
@@ -239,9 +238,9 @@ These metrics, which populate in the **UI Paint Timings** panel on RUM dashboard
 | `browser_time_to_fcp` | firstContentfulPaint - span start time (fetch start) |
 | `browser_time_to_lcp` | largestContentfulPaint - span start time (fetch start) |
 
-* [First Paint](https://developer.mozilla.org/en-US/docs/Glossary/First_paint) (`browser_time_to_fp`): measures the time from page fetch start (span start time) to the moment when the browser renders the first pixels to the screen, rendering anything that is visually different from what was on the screen prior to navigation. It answers the question, "Is it happening?" 
-* [First Contentful Paint](https://web.dev/fcp/) (`browser_time_to_fcp`): measures the time from page fetch start (span start time) to the moment when any part of the page's content is rendered on the screen. For this metric, "content" refers to text, images (including background images), `<svg>` elements, or non-white `<canvas>` elements.
-* [Largest Contentful Paint](https://web.dev/lcp/) (`browser_time_to_lcp`): measures the time from page fetch start (span start time) to the moment when the largest image or text block visible within the viewport is rendered.
+* [First Paint](https://developer.mozilla.org/en-US/docs/Glossary/First_paint): measures the time from page fetch start (span start time) to the moment when the browser renders the first pixels to the screen, rendering anything that is visually different from what was on the screen prior to navigation. It answers the question, "Is it happening?" 
+* [First Contentful Paint](https://web.dev/fcp/): measures the time from page fetch start (span start time) to the moment when any part of the page's content is rendered on the screen. For this metric, "content" refers to text, images (including background images), `<svg>` elements, or non-white `<canvas>` elements.
+* [Largest Contentful Paint](https://web.dev/lcp/): measures the time from page fetch start (span start time) to the moment when the largest image or text block visible within the viewport is rendered.
 
 These are only loosely related to navigation timings and in many cases, some of them may appear long after the page is fully loaded in the browser, which indicates rendering slowdowns.
 
@@ -252,9 +251,10 @@ These are only loosely related to navigation timings and in many cases, some of 
 
 | Name | Calculation |
 |:---|:---|
-| `browser_time_fid` | ? |
+| `browser_time_fid` | n/a |
 | `browser_time_to_lcp` | `largestContentfulPaint - span start time (fetch start)` |
-| `browser_cls` | ? |
+| `browser_cls` | n/a |
+| `browser_time_to_fb` | n/a |
 
 CWV focuses on three aspects of the user experience: document loading, interactivity, and visual stability. This includes the following metrics (and their respective thresholds):
 
@@ -264,7 +264,7 @@ CWV focuses on three aspects of the user experience: document loading, interacti
 
   The above three CWV KPIs are captured and displayed on Overview dashboards for Document Load action types. Detailed metrics are available in span metadata for every transaction trace.<br/><img src={useBaseUrl('img/rum/prada-documentload.png')} alt="Real User Monitoring" />
 
-* [Time to First Byte](https://web.dev/ttfb/) (`browser_time_to_fb`): measures the delay between start of the page load and moment when the first byte of the response appears. It helps identify when a web server is too slow to respond to requests. You'll find this metric on the **Navigation Timings** chart.<br/><img src={useBaseUrl('img/rum/nav-timings.png')} alt="Real User Monitoring" />
+* [Time to First Byte](https://web.dev/ttfb/): measures the delay between start of the page load and moment when the first byte of the response appears. It helps identify when a web server is too slow to respond to requests. You'll find this metric on the **Navigation Timings** chart.<br/><img src={useBaseUrl('img/rum/nav-timings.png')} alt="Real User Monitoring" />
 
 
 ### XHR Monitoring Metrics
@@ -337,9 +337,9 @@ Explore organizes RUM data on four levels:
 * **Application**: corresponds to the value of the application tag set in the JavaScript script above. This should correspond to your whole website defined by its business function, such as "Coffee shop".
 * **Service**: corresponds to the name of the service in the JavaScript script above. This should correspond to a JS code executed in the browser, such as "coffee-shop-web". You can have multiple services for each application. 
 * **Action Type**: can be one of:
-   * document loads: representing loading of actual documents and their resources into the browser
-   * XHR actions: representing any interaction with a page like click or submit that executes AJAX requests in the background to communicate with the backend, or
-   * route changes: single-page-app specific way to navigate to a new page/view without having to load a new document.
+   * **document loads**: representing loading of actual documents and their resources into the browser
+   * **XHR actions**: representing any interaction with a page like click or submit that executes AJAX requests in the background to communicate with the backend, or
+   * **route changes**: single-page-app specific way to navigate to a new page/view without having to load a new document.
 * **Action Name**: automatically generated from URLs. No configuration is required. The specifics of it will depend on action type.
 
 Action names can contain asterisks (`*`) to replace automatically-detected dynamic parts of the URL. If you have action names that overlap, the action name with an asterisk contains data for page loads NOT contained in more specific action names:
@@ -365,7 +365,7 @@ Use this dashboard to:
 
 You can select the timing metric type in the **statistic** dropdown on the dashboard header. This will change the browser time metrics types on charts.
 
-You can also click on any data-point on the charts to open a details panel and view the **Infrastructure** tab to drill-down to traces representing user transactions from the selected time point.
+You can also click on any data point on the charts to open a details panel and view the **Infrastructure** tab to drill-down to traces representing user transactions from the selected time point.
 
 ![RUM_Overview.png](/img/rum/RUM_Overview.png)
 
@@ -384,7 +384,7 @@ You can select the timing metric type in the **statistic** dropdown on the dashb
 
 ### RUM Performance Analytics Application/Service
 
-The **RUM Performance Analytics Application-Service** dashboards show the page performance and requests for a cohort of users specified by selecting the desired combination of dimensions.
+The **RUM Performance Analytics Application/Service** dashboards show the page performance and requests for a cohort of users specified by selecting the desired combination of dimensions.
 
 Use this dashboard to:
 * Filter data for specific combinations of browser and/or operating system, and/or geolocation.
