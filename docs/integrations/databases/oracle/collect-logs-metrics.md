@@ -330,7 +330,7 @@ By default, Oracle logs are stored in
 
 
 
-    Audit Logs should be in either `XML, EXTENDED` or `{{OS }}` for app to Work.
+    Audit Logs should be in either `XML, EXTENDED` or `{{OS }}` for app to work.
 
 
 **Step 3. Configure three Local File Sources.**

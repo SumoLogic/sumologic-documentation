@@ -2106,6 +2106,7 @@ module.exports = {
             'cse/administration/manage-custom-insight-resolutions',
             'cse/administration/manage-custom-insight-statuses',
             'cse/administration/using-sensor-zones',
+            'cse/administration/inventory-sources-and-data',
           ],
         },
         {
@@ -2390,6 +2391,9 @@ module.exports = {
                 'releasenotes/archive/collector/year2019',
                 'releasenotes/archive/collector/year2018',
                 'releasenotes/archive/collector/year2017',
+                'releasenotes/archive/collector/year2016',
+                'releasenotes/archive/collector/year2015',
+
               ],
             },
             {
