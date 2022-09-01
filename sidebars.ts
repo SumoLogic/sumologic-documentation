@@ -2391,6 +2391,9 @@ module.exports = {
                 'releasenotes/archive/collector/year2019',
                 'releasenotes/archive/collector/year2018',
                 'releasenotes/archive/collector/year2017',
+                'releasenotes/archive/collector/year2016',
+                'releasenotes/archive/collector/year2015',
+
               ],
             },
             {
