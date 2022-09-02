@@ -87,7 +87,7 @@ _index=sumologic_audit_``events _sourceCategory=accessKeys
 
 ## Metadata assignment
 
-[Metadata](../../search/get-started-with-search/search-basics/built-in-metadata.md) fields are assigned to audit event logs as follows:
+[Metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) fields are assigned to audit event logs as follows:
 
 | Metadata Field | Assignment Description |
 | -- | -- |

@@ -507,7 +507,7 @@ event in groups to be returned.
 
 ### Amazon CloudWatch Source Metrics Source
 
-For information about Sumo Logic's CloudWatch source, see [Amazon CloudWatch Source for Metrics](../send-data/sources/hosted-collectors/amazon-web-services/amazon-cloudwatch-source-metrics.md).
+For information about Sumo Logic's CloudWatch source, see [Amazon CloudWatch Source for Metrics](../send-data/hosted-collectors//amazon-aws/amazon-cloudwatch-source-metrics.md).
 
 ### AWS Inventory Source
 

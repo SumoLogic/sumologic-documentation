@@ -211,7 +211,7 @@ To authenticate Box, do the following:
 
 ### Step 6: Configure a Source
 
-For guidance creating your source category naming convention, see [Best Practices: Good Source Category, Bad Source Category](/docs/send-data/design-deployment/best-practices-source-categories).
+For guidance creating your source category naming convention, see [Best Practices: Good Source Category, Bad Source Category](/docs/send-data/best-practices).
 
 To configure a source, do the following:
 

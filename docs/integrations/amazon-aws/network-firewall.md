@@ -26,7 +26,7 @@ Before you begin, you must:
 
 1. Enable logging from the AWS Network Firewall to an Amazon S3 bucket as described in the [AWS Network Firewall documentation](https://docs.aws.amazon.com/network-firewall/latest/developerguide/logging-s3.html).
 2. Confirm that logs are being delivered to the S3 bucket.
-3. [Grant Sumo Logic Access to the AWS S3 Bucket](/docs/send-data/sources/hosted-collectors/amazon-web-services/grant-access-aws-product.md)
+3. [Grant Sumo Logic Access to the AWS S3 Bucket](/docs/send-data/hosted-collectors/amazon-aws/grant-access-aws-product.md)
 
 
 ## Collecting Logs for AWS Network Firewall
@@ -35,7 +35,7 @@ This section has instructions for collecting logs for the Sumo Logic App for AWS
 
 ### Enable S3 Ingestion
 
-Follow steps to create [AWS S3 Source](/docs/send-data/Sources/hosted-collectors/Amazon-Web-Services/AWS-S3-Source).
+Follow steps to create [AWS S3 Source](/docs/send-data/hosted-collectors/amazon-aws/AWS-S3-Source).
 
 The following is an example of a path expression that supports ingesting alerts.
 

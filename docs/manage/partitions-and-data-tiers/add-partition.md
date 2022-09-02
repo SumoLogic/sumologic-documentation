@@ -50,7 +50,7 @@ If you have a Sumo Logic Enterprise Suite account, you can take advantage of th
 
 1. **Name**. Enter a name for the Partition. Partitions must be named alphanumerically, with no special characters, with the exception of underscores ( `_` ). However, a Partition name cannot start with `sumologic_` or an underscore `_`.
 1. **Data Tier.** (Enterprise Suite accounts only) Click the radio button for the tier where you want the Partition to reside.
-1. **Routing Expression**. Enter a [keyword search expression](../../search/get-started-with-search/build-search/keyword-search-expressions.md) that matches the data you want to have in the Partition, using [built-in metadata](../../search/get-started-with-search/search-basics/built-in-metadata.md) or [custom metadata fields](../fields.md). If you have an Enterprise Suite account, and are going to assign the Partition to the Infrequent Tier, see the information in the "Assigning Data to a Data Tier" section of the [Data Tiers](data-tiers.md) page.
+1. **Routing Expression**. Enter a [keyword search expression](../../search/get-started-with-search/build-search/keyword-search-expressions.md) that matches the data you want to have in the Partition, using [built-in metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) or [custom metadata fields](../fields.md). If you have an Enterprise Suite account, and are going to assign the Partition to the Infrequent Tier, see the information in the "Assigning Data to a Data Tier" section of the [Data Tiers](data-tiers.md) page.
 
     :::note
     The [\_dataTier](searching-data-tiers.md) search modifier is not supported in Partition routing expressions.

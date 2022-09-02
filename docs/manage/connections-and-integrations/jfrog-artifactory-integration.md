@@ -19,7 +19,7 @@ The JFrog Artifactory Sumo Logic integration provides a new Sumo Logic Free acco
 
 **If you have an existing Sumo Logic account:**
 
-You can configure Artifactory Online to send data (described below) to an existing Sumo Logic [HTTP Logs and Metrics](/docs/send-data/sources/hosted-collectors/http-logs-metrics-source) source.
+You can configure Artifactory Online to send data (described below) to an existing Sumo Logic [HTTP Logs and Metrics](/docs/send-data/hosted-collectors/http-logs-metrics-source) source.
 
 ## Artifactory logs
 
@@ -77,7 +77,7 @@ If you already have an existing connection set up via Artifactory Online:
 
 If you already have an existing Sumo Logic Account created outside of Artifactory Online:
 
-1. Select “Connection URL” and copy and paste the URL of an existing Sumo Logic [HTTP Logs and Metrics Source in the Connection URL text box](/docs/send-data/sources/hosted-collectors/http-logs-metrics-source)
+1. Select “Connection URL” and copy and paste the URL of an existing Sumo Logic [HTTP Logs and Metrics Source in the Connection URL text box](/docs/send-data/hosted-collectors/http-logs-metrics-source)
 
     ![jfrog 7](/img/connection-and-integration/jfrog7.png)
 

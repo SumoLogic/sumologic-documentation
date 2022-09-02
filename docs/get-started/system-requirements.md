@@ -19,8 +19,8 @@ Sumo Logic tests the service on several browsers to ensure a consistent experie
 | Microsoft Edge\* | Latest two versions    |
 | Safari\*\*       | Latest two versions    |
 
-\*For non-Safari browsers we support the last two major versions; that is, if the latest browser version is 25.1.5, we support versions from 24.0.0 to 25.1.1. 
-  
+\*For non-Safari browsers we support the last two major versions; that is, if the latest browser version is 25.1.5, we support versions from 24.0.0 to 25.1.1.
+
 \*\*For Safari we support the last two minor versions; that is, if the latest browser version is 25.2.5, we support versions from 25.1.0 to 25.2.1. If the latest version is 25.0.5 and the last 24.x version was 24.4.3, we support versions from 24.4.0 to 25.1.5.
 
 ## Installed Collector Requirements
@@ -34,7 +34,7 @@ Sumo Logic tests the service on several browsers to ensure a consistent experie
 
 ### Memory guidelines
 
-An Installed Collector by default is allocated 128MB of Java heap space (memory), but depending on the operating system running on the machine, whether the machine is 32 bit or 64 bit, and the number of Sources and log messages being collected a Collector may require a significantly higher amount of memory. In particular, If you're using [centralized collection](../send-data/design-deployment/best-practices-local-centralized-data-collection.md), additional memory is required. It's a good idea to have 256MB to 512MB available in case it's needed.
+An Installed Collector by default is allocated 128MB of Java heap space (memory), but depending on the operating system running on the machine, whether the machine is 32 bit or 64 bit, and the number of Sources and log messages being collected a Collector may require a significantly higher amount of memory. In particular, If you're using [centralized collection](/docs/send-data/best-practices), additional memory is required. It's a good idea to have 256MB to 512MB available in case it's needed.
 
 The total physical memory consumption of the Jave Virtual Machine (JVM) process consists of more than just the Java heap space. This can increase the total memory used by the Collector. For example, other things that the process includes could be:
 
@@ -67,7 +67,7 @@ In many cases, you will also notice what appears to be a high amount of "virtual
 Package installers require TLS 1.2 or higher.
 :::
 
-* Windows 7, 32 or 64 bit 
+* Windows 7, 32 or 64 bit
 * Windows 8, 32 or 64 bit
 * Windows 8.1, 32 or 64 bit
 * Windows 10, 32 or 64 bit

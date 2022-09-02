@@ -65,7 +65,7 @@ The Barracuda WAF App provides detailed analytics on system, firewall, and netwo
 
 ### Step 1: Configure a Collector
 
-To create a new Sumo Logic Hosted Collector, perform the steps in [Configure a Hosted Collector](/docs/send-data/configure-hosted-collector).
+To create a new Sumo Logic Hosted Collector, perform the steps in [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
 
 
 ### Step 2: Configure a Source
@@ -75,9 +75,9 @@ Cloud syslog collection supports Barracuda Firmware version 9.2.1 or later. You 
 This section shows you how to configure a source for log collection. In this task you specify the Source Category metadata field, which is a fundamental building block for organizing and labeling sources.
 
 To configure a source, do the following:
-1. Perform the steps in [Configure a Cloud Syslog Source](/docs/send-data/Sources/hosted-collectors/Cloud-Syslog-Source#Configure_a_Cloud_Syslog_Source). and configure the following Source fields:
+1. Perform the steps in [Configure a Cloud Syslog Source](/docs/send-data/hosted-collectors/Cloud-Syslog-Source#Configure_a_Cloud_Syslog_Source). and configure the following Source fields:
     1. **Name**. (Required) Enter a name. The description is optional.
-    2. **Source Category**. (Required) Provide a realistic Source Category for this data type. For example: **prod/barracuda/waf**. For more information, see [Best Practices](/docs/send-data/design-deployment/best-practices-source-categories).
+    2. **Source Category**. (Required) Provide a realistic Source Category for this data type. For example: **prod/barracuda/waf**. For more information, see [Best Practices](/docs/send-data/best-practices).
 2. In the Advanced section, specify the following configurations:
     3. **Enable Timestamp Parsing**. True
     4. **Time Zone**. Logs are in UTC by default

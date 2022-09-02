@@ -5,7 +5,7 @@ title: Sources for Installed Collectors
 
 
 
-You can configure a variety of Sources on [Installed Collectors](../../installed-collectors/about.md).
+You can configure a variety of Sources on [Installed Collectors](/docs/send-data/installed-collectors/about).
 
 import DocCardList from '@theme/DocCardList';
 import {useCurrentSidebarCategory} from '@docusaurus/theme-common';

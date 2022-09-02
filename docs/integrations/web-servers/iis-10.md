@@ -225,7 +225,7 @@ webserver_farm = <Your_IISserver_farm_Name>`. Enter **Default** if you do not ha
 
 #### Set up a Sumo Logic HTTP Source
 
-1. **Configure a Hosted Collector for Metrics.** To create a new Sumo Logic hosted collector, perform the steps in the [Create a Hosted Collector](/docs/send-data/configure-hosted-collector.md) documentation.
+1. **Configure a Hosted Collector for Metrics.** To create a new Sumo Logic hosted collector, perform the steps in the [Create a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector.md) documentation.
 2. **Configure an HTTP Logs & Metrics source**:
     1. On the created Hosted Collector on the Collection Management screen, select **Add Source**.
     2. Select **HTTP Logs & Metrics_._**

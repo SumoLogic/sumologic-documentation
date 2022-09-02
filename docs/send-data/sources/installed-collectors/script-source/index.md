@@ -41,7 +41,7 @@ To configure a Script Source:
 1. Select **Script** for the source type.
 1. Enter a **Name** to display for the new Source. Description is optional. Source name metadata is stored in a searchable field called **\_sourceName**.
 1. For **Source Host**, enter the hostname or the IP address of the machine. The hostname is stored in a searchable field called **\_sourceHost. **The hostname can be a maximum of 128 characters. You can define a Source Host value using system environment variables, see [Configuring sourceCategory and sourceHost using variables](#configuring-a-script-source), below.
-1. For **Source Category**, enter any information you'd like to include in the metadata. This Source Category value is stored in a searchable metadata field called \_sourceCategory. See our [Best Practices: Good and Bad Source Categories](../../../design-deployment/best-practices-source-categories.md). You can define a Source Category value using system environment variables, see [Configuring sourceCategory and sourceHost using variables](#configuring-sourcecategory-and-sourcehost-using-variables), below.
+1. For **Source Category**, enter any information you'd like to include in the metadata. This Source Category value is stored in a searchable metadata field called \_sourceCategory. See our [Best Practices: Good and Bad Source Categories](/docs/send-data/best-practices#good-and-bad-source-categories). You can define a Source Category value using system environment variables, see [Configuring sourceCategory and sourceHost using variables](#configuring-sourcecategory-and-sourcehost-using-variables), below.
 1. **Fields.** Click the **+Add Field** link to define the fields you want to associate, each field needs a name (key) and value.
 
    * ![green check circle.png](/img/reuse/green-check-circle.png) A green circle with a check mark is shown when the field exists in the Fields table schema.
@@ -75,7 +75,7 @@ To configure a Script Source:
    * **Timestamp Parsing**. By default **Extract timestamp information from log file entries** is selected, meaning that we use the timestamp information from the data you collect. Deselecting this option turns off all timestamp parsing.
    * **Time Zone.** Select an option under **Use time zone from log file, but if none present use**. Or, if you'd like to override all time zones from data you collect, choose an option under **Ignore time zone and instead use**.
 
-1. **Enable** **Multiline Processing**, see [Collecting Multiline Logs](../../reference-information-sources/collect-multiline-logs.md) for details on multiline processing and its options.
+1. **Enable** **Multiline Processing**, see [Collecting Multiline Logs](/docs/send-data/sources/reference-information/collect-multiline-logs) for details on multiline processing and its options.
 1. If you'd like to filter data being collected, set **Processing Rule** options. [Hash and Mask filters](/docs/manage/collection/processing-rules/create-processing-rule.md) can be used to obfuscate proprietary information included in data collected from a script source.
 1. Click **Save** to complete the Source setup.
 

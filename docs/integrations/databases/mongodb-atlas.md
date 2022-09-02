@@ -243,7 +243,7 @@ This section shows you how to acquire MongoDB Atlas portal authentication inform
 This section demonstrates how to add a hosted Sumo Logic collector and HTTP Logs and Metrics source, to collect logs for MongoDB Atlas. When you configure the HTTP Source, make sure to save the HTTP Source Address URL. You will need this later to configure the configuration file.
 1. Do one of the following:
    * If you already have a Sumo Logic Hosted Collector, identify the one you want to use; or
-   * Create a new Hosted Collector as described in [Configure a Hosted Collector](/docs/send-data/configure-hosted-collector).
+   * Create a new Hosted Collector as described in [Configure a Hosted Collector](/docs/send-data/hosted-collectors/configure-hosted-collector).
 2. Add two HTTP sources, one for logs and another for metrics.
 3. Go to the source you created for ingesting logs, navigate to **Timestamp Format > Advanced Options**, and click **Specify a format**.
 4. Enter the following information in the respective fields for the **log source**:

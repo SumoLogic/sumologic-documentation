@@ -4,7 +4,7 @@ title: Log and Tracing Data Volume Index
 ---
 
 
-The data volume index is populated with a set of log messages every five minutes. The messages contain information on how much data (by bytes and messages count) your account is ingesting. Your data volume is calculated based on when your logs were received, in Sumo this timestamp is stored with the \_receiptTime [metadata](../../../search/get-started-with-search/search-basics/built-in-metadata.md) field. Each log message includes information based on one of the following index source categories.
+The data volume index is populated with a set of log messages every five minutes. The messages contain information on how much data (by bytes and messages count) your account is ingesting. Your data volume is calculated based on when your logs were received, in Sumo this timestamp is stored with the \_receiptTime [metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata) field. Each log message includes information based on one of the following index source categories.
 
 | Index Log Type | Index Source Category |
 |--------------------|--------------------------------|
@@ -21,7 +21,7 @@ The data volume index is populated with a set of log messages every five minutes
 | SourceHost         | sourcehost_volume              |
 | View               | view_volume                    |
 
-You can query the data volume index just like any other message using the Sumo Logic search page. To see the data created within the data volume index, when you search, specify the **\_index** metadata field with a value of **sumologic_volume**. For more information, see [Search Metadata](../../../search/get-started-with-search/search-basics/built-in-metadata.md).
+You can query the data volume index just like any other message using the Sumo Logic search page. To see the data created within the data volume index, when you search, specify the **\_index** metadata field with a value of **sumologic_volume**. For more information, see [Search Metadata](/docs/search/get-started-with-search/search-basics/built-in-metadata).
 
 ## Sumo Logic App for Data Volume
 
