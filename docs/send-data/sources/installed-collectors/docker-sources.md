@@ -74,7 +74,7 @@ There are alternative methods for collecting Docker logs and metrics. See [Dock
    * **Time Zone**. Default is “Use time zone from log file”.
    * **Timestamp Format**. Default is “Automatically detect the format”.
    * **Encoding**. Default is “UTF-8”.
-   * **Enable Multiline Processing.** The **Detect messages spanning multiple lines** option is checked by default. See [Collecting Multiline Logs](../reference-information/collect-multiline-logs.mdfor details on multiline processing and its options.
+   * **Enable Multiline Processing.** The **Detect messages spanning multiple lines** option is checked by default. See [Collecting Multiline Logs](../reference-information/collect-multiline-logs.md) for details on multiline processing and its options.
 
      * **Infer Boundaries**. This option is checked by default.
      * **Boundary Regex**. If multiple processing is enabled, and **Infer Boundaries** is disabled, enter a regular expression for message boundaries.
